@@ -6,7 +6,7 @@
 * Task ID: MRT-001
 * Task slug: marvel-reading-tracker
 * Plan version: **v2** (revised after critique CR-run-01, disposition REVISE)
-* Planning status: draft — awaiting user review
+* Planning status: **approved by user 2026-08-03** — implementation gated on P00
 * Plan date: 2026-08-03
 * Phase details: .copilot-tracking/details/2026-08-03/marvel-reading-tracker-phase-details.md
 * Plan critique: .copilot-tracking/reviews/plans/2026-08-03/marvel-reading-tracker-plan-critique.md
@@ -157,8 +157,8 @@ could not actually populate the fields the UI needs.
 | Latest critique | .copilot-tracking/reviews/plans/2026-08-03/marvel-reading-tracker-plan-critique.md — **REVISE**, all 16 findings dispositioned in v2 |
 | Relevant research | .copilot-tracking/research/2026-08-03/marvel-reading-tracker-research.md |
 | Changes-record role | .copilot-tracking/changes/2026-08-03/marvel-reading-tracker-changes.md created by implementation |
-| Planning execution and readiness | v2 drafted; NOT ready — awaiting user approval and the P00 gate |
-| Continuation context | Waiting on user review of v2 and P00 deep-link confirmation |
+| Planning execution and readiness | v2 **approved by user 2026-08-03**; implementation gated on the P00 deep-link result |
+| Continuation context | P00-T01 in progress — user verifying reader links against a logged-in session |
 
 ## Sources
 
