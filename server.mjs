@@ -26,7 +26,16 @@ const TYPES = {
 };
 
 function safePath(urlPath) {
-  const decoded = decodeURIComponent(urlPath.split('?')[0].split('#')[0]);
+  // decodeURIComponent throws URIError on a malformed escape such as "/%" or "/a%2". This runs
+  // before the request handler's try block, so an unhandled rejection would terminate the whole
+  // process — and any web page the user has open could trigger it with a single fetch. Treat a
+  // malformed path as simply not found.
+  let decoded;
+  try {
+    decoded = decodeURIComponent(urlPath.split('?')[0].split('#')[0]);
+  } catch {
+    return null;
+  }
   const rel = normalize(decoded).replace(/^([/\\])+/, '');
   const full = resolve(join(ROOT, rel === '' ? 'index.html' : rel));
   // Reject anything that escapes src/ regardless of how it was encoded.
@@ -35,6 +44,18 @@ function safePath(urlPath) {
 }
 
 const server = createServer(async (req, res) => {
+  try {
+    await handle(req, res);
+  } catch (err) {
+    // A request must never be able to kill the process. Without this, any throw in the handler
+    // becomes an unhandled rejection and Node exits, taking the user's session with it.
+    console.error(`Request failed: ${req.method} ${req.url} — ${err?.message ?? err}`);
+    if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' });
+    if (!res.writableEnded) res.end('Internal error');
+  }
+});
+
+async function handle(req, res) {
   if (req.method !== 'GET' && req.method !== 'HEAD') {
     res.writeHead(405, { allow: 'GET, HEAD' }).end('Method Not Allowed');
     return;
@@ -62,7 +83,7 @@ const server = createServer(async (req, res) => {
   } catch {
     res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }).end('Not found');
   }
-});
+}
 
 server.on('error', (err) => {
   if (err.code === 'EADDRINUSE') {

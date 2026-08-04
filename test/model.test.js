@@ -30,8 +30,38 @@ function withList(items = [1, 2, 3], name = 'L') {
 test('normalizeIssue rejects records without a usable id', () => {
   assert.equal(normalizeIssue({ title: 'no id' }), null);
   assert.equal(normalizeIssue({ issueId: 0 }), null);
-  assert.equal(normalizeIssue({ issueId: -5 }), null);
+  assert.equal(normalizeIssue({ issueId: 1.5 }), null);
+  assert.equal(normalizeIssue({ issueId: 'abc' }), null);
   assert.equal(normalizeIssue(null), null);
+});
+
+// Hand-added issues with no marvel.com URL are given a negative synthetic id. Rejecting those
+// meant the entry was silently discarded while the UI reported success.
+test('a hand-added issue with a synthetic negative id is accepted', () => {
+  const n = normalizeIssue({ issueId: -1738000000000, title: 'Something I own in print' });
+  assert.ok(n, 'a synthetic id must not be rejected');
+  assert.equal(n.issueId, -1738000000000);
+  assert.equal(n.title, 'Something I own in print');
+  assert.equal(n.url, null, 'a synthetic id has no marvel.com page, so no link may be invented');
+});
+
+test('a hand-added issue actually lands in the list', () => {
+  let s = createList(createEmptyState(), { name: 'L' });
+  const id = s.listOrder[0];
+  const res = addIssuesToList(s, id, [{
+    issueId: -1738000000000, title: 'By hand', source: 'manual', hydrated: true,
+  }]);
+  assert.equal(res.added, 1, 'the entry must be stored, not silently dropped');
+  assert.deepEqual(res.state.lists[id].itemIds, [-1738000000000]);
+  assert.equal(listItems(res.state, id)[0].title, 'By hand');
+});
+
+test('id zero is still refused, including inside a list', () => {
+  let s = createList(createEmptyState(), { name: 'L' });
+  const id = s.listOrder[0];
+  const res = addIssuesToList(s, id, [{ issueId: 0, title: 'nope' }]);
+  assert.equal(res.added, 0);
+  assert.deepEqual(res.state.lists[id].itemIds, []);
 });
 
 test('normalizeIssue carries the rich fields from /issues/{id}', () => {

@@ -31,7 +31,15 @@ const limiter = new RateLimiter();
 let cache = new ResponseCache({ baseUrl: settings.apiBase });
 let api = new MarvelApi({ baseUrl: settings.apiBase, limiter, cache, onStatus: onApiStatus });
 
-const store = new Store({ onChange: () => renderAll() });
+// A failed write must be visible. The store rolls the change back and reports why, but that
+// report was previously discarded here, so the UI would announce "marked read" while the row
+// silently reverted on the next paint.
+const store = new Store({
+  onChange: (_state, err) => {
+    renderAll();
+    if (err) notify('#save-report', err, 'error');
+  },
+});
 const hydrator = new Hydrator({ api, store, onProgress: renderHydration });
 
 let filter = 'all';
@@ -46,11 +54,45 @@ wireReading();
 wireAdd();
 wireData();
 wireShortcuts();
+wireBlockedBanner();
 renderAll();
 checkHealth();
 refreshCacheUsage();
 
-if (store.lastError) notify('#restore-report', store.lastError, 'error');
+if (store.lastError) notify('#save-report', store.lastError, 'error');
+renderBlocked();
+
+// ------------------------------------------------------------------ unreadable-data recovery
+
+function renderBlocked() {
+  const banner = $('#blocked-banner');
+  banner.hidden = !store.blocked;
+  if (store.blocked) $('#blocked-why').textContent = store.lastError ?? '';
+  // The pre-restore snapshot outlives a reload, so the undo affordance must be restored on
+  // boot rather than only after the restore that created it.
+  const undo = $('#btn-undo-restore');
+  if (undo) undo.hidden = !store.hasPreRestoreSnapshot();
+}
+
+function wireBlockedBanner() {
+  $('#btn-download-salvage').addEventListener('click', () => {
+    const raw = store.salvagedRaw();
+    if (!raw) return notify('#save-report', 'There was nothing left to download.', 'warn');
+    const when = new Date().toISOString().slice(0, 10);
+    download(`marvel-reading-tracker-unreadable-${when}.json`, raw, 'application/json');
+    announce('Downloaded a copy of the unreadable data.');
+  });
+
+  $('#btn-start-fresh').addEventListener('click', () => {
+    if (!confirm('Start fresh?\n\nThis replaces the unreadable saved data with an empty tracker. Download a copy first if you have not already.')) return;
+    if (store.startFresh()) {
+      notify('#save-report', 'Started fresh. Saving is working again.', 'ok');
+      renderBlocked();
+    } else {
+      notify('#save-report', store.lastError ?? 'Could not start fresh.', 'error');
+    }
+  });
+}
 
 // ------------------------------------------------------------------ helpers
 
@@ -295,7 +337,9 @@ function wireReading() {
 function markCurrentRead() {
   const issue = upNext(store.state, activeListId());
   if (!issue) return;
-  store.update((s) => markRead(s, issue.issueId, true));
+  // Only announce success if the write actually stuck — store.update rolls back on failure
+  // and the error is surfaced separately by the onChange handler.
+  if (!isRead(store.update((s) => markRead(s, issue.issueId, true)), issue.issueId)) return;
   const next = upNext(store.state, activeListId());
   announce(next
     ? `${issue.title} marked read. Next up: ${next.title}.`
@@ -364,8 +408,14 @@ function renderHero() {
 
   $('#hero-title').textContent = issue.title;
 
+  // Marvel spells it "penciler" with one l, so /penciller/ never matched and /artist/ matched
+  // "cover artist" instead — the hero credited the cover artist and omitted the interior one.
+  // Cover credits are excluded: they are not the creative team for the story.
   const credits = (issue.creators ?? [])
-    .filter((c) => /writer|penciller|artist/i.test(c.role || ''))
+    .filter((c) => {
+      const role = String(c.role || '');
+      return !/cover/i.test(role) && /writer|pencill?er|artist|inker/i.test(role);
+    })
     .slice(0, 3)
     .map((c) => c.name);
   $('#hero-by').textContent = [issue.seriesName, credits.join(' & ') || null].filter(Boolean).join(' · ');
@@ -857,15 +907,37 @@ function doManual() {
     return notify('#manual-report', 'That URL is not a marvel.com address. Leave it blank if you do not have one.', 'error');
   }
 
+  // A negative synthetic id for entries with no marvel.com URL; namespaced away from real
+  // Marvel ids so the two can never collide.
   const issueId = issueIdFromUrl(url) ?? -Date.now();
   const listId = ensureList('My reading order');
-  store.update((s) => addIssuesToList(s, listId, [{
-    issueId,
-    title,
-    url: url || null,
-    source: 'manual',
-    hydrated: true,
-  }], {}).state);
+
+  // Report what actually happened rather than assuming success — this previously announced
+  // "Added" even when the entry had been silently discarded.
+  let added = 0;
+  let skipped = 0;
+  store.update((s) => {
+    const res = addIssuesToList(s, listId, [{
+      issueId,
+      title,
+      url: url || null,
+      source: 'manual',
+      hydrated: true,
+    }], {});
+    added = res.added;
+    skipped = res.skipped;
+    return res.state;
+  });
+
+  if (added === 0) {
+    return notify(
+      '#manual-report',
+      skipped > 0
+        ? `“${title}” is already in that list, so nothing was added.`
+        : `“${title}” could not be added. Your other lists are unchanged.`,
+      skipped > 0 ? 'warn' : 'error',
+    );
+  }
 
   $('#manual-title').value = '';
   $('#manual-url').value = '';

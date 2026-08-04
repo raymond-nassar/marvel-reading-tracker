@@ -97,7 +97,11 @@ export class RateLimiter {
       if (entry.signal?.aborted) throw abortError();
       let wait = this.waitMs();
       while (wait > 0) {
-        await this.sleep(wait);
+        // The sleep must be interruptible. An entry that has already left the queue is no
+        // longer reachable by the abort listener in schedule(), so a plain sleep would keep a
+        // cancelled request parked for the whole rate-limit window — long enough for the user
+        // to start a second run that then races the first.
+        await this.sleepOrAbort(wait, entry.signal);
         if (entry.signal?.aborted) throw abortError();
         wait = this.waitMs();
       }
@@ -109,6 +113,21 @@ export class RateLimiter {
       this.active -= 1;
       this.pump();
     }
+  }
+
+  sleepOrAbort(ms, signal) {
+    if (!signal) return this.sleep(ms);
+    return new Promise((resolve) => {
+      let settled = false;
+      const finish = () => {
+        if (settled) return;
+        settled = true;
+        signal.removeEventListener?.('abort', finish);
+        resolve();
+      };
+      signal.addEventListener?.('abort', finish, { once: true });
+      this.sleep(ms).then(finish);
+    });
   }
 
   clear() {

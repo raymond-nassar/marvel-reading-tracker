@@ -61,6 +61,24 @@
       <main id="main">
         <div class="wrap">
 
+          <!-- Save failures and unreadable-data warnings surface here, above every view,
+               because they can occur during any action and must not be missed. -->
+          <div id="save-report" role="alert" aria-live="assertive"></div>
+
+          <!-- Shown only when saved data could not be read. Saving stays paused until the
+               user chooses, so the unreadable original is never overwritten. -->
+          <section id="blocked-banner" class="blocked" hidden role="alert">
+            <h2>Your saved data could not be read</h2>
+            <p id="blocked-why"></p>
+            <p>It has <strong>not</strong> been changed or deleted, and saving is paused so it
+              cannot be overwritten. Download a copy first — then you can start fresh.</p>
+            <div class="blocked-actions">
+              <button type="button" class="btn btn-p" id="btn-download-salvage">Download a copy of the unreadable data</button>
+              <button type="button" class="btn" id="btn-start-fresh">Start fresh and resume saving</button>
+            </div>
+          </section>
+
+
           <!-- ---------------------------------------- reading view -->
           <section id="view-read" class="view" aria-labelledby="order-name">
             <div class="head">

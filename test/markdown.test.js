@@ -100,6 +100,46 @@ test('serializer escapes brackets so titles cannot break the link syntax', () =>
   assert.equal(entries[0].issueId, 1);
 });
 
+// Regression: escaping "]" without first escaping "\" silently ate backslashes, so a title
+// round-tripped through export/restore came back altered. Export is the only backup mechanism,
+// so a lossy round trip is data loss.
+test('titles survive a round trip whatever brackets and backslashes they contain', () => {
+  const B = String.fromCharCode(92);
+  const titles = [
+    'Weird ] Title',
+    `Back${B}slash`,
+    `Both ${B}] here`,
+    `Trailing${B}`,
+    `${B}${B} double`,
+    '[Bracketed]',
+    'Plain',
+  ];
+  const md = serializeChecklist({
+    name: 'x',
+    items: titles.map((t, i) => ({ issueId: i + 1, title: t, read: i % 2 === 0 })),
+  });
+  const { entries, unresolved } = parseChecklist(md);
+
+  assert.equal(unresolved.length, 0, 'nothing may degrade to unresolved');
+  assert.deepEqual(entries.map((e) => e.title), titles);
+  assert.deepEqual(entries.map((e) => e.issueId), titles.map((_, i) => i + 1));
+  assert.deepEqual(entries.map((e) => e.read), titles.map((_, i) => i % 2 === 0));
+});
+
+// The link-text pattern uses a nested quantifier, so it is worth proving it stays linear.
+test('a pathological line does not hang the parser', () => {
+  const B = String.fromCharCode(92);
+  for (const input of [
+    `- [ ] [${B.repeat(20000)}`,
+    `- [ ] [${`a${B}`.repeat(10000)}`,
+    `- [ ] [${'a'.repeat(100000)}`,
+  ]) {
+    const started = Date.now();
+    parseChecklist(input);
+    assert.ok(Date.now() - started < 1000, 'parsing must not blow up on unterminated link text');
+  }
+});
+
 test('serializer emits a usable URL when only an id is known', () => {
   const md = serializeChecklist({ name: 'x', items: [{ issueId: 42, title: 'Forty Two', read: false }] });
   assert.match(md, /https:\/\/www\.marvel\.com\/comics\/issue\/42\//);

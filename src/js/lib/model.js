@@ -1,4 +1,4 @@
-// Normalized application state.
+﻿// Normalized application state.
 //
 // Read state is GLOBAL, keyed by issue id, not stored per list. The bundled Hickman minimal
 // (89 issues) and full (219 issues) orders overlap heavily; per-list read flags would let the
@@ -28,20 +28,25 @@ export function newId(prefix = 'list') {
 
 // ---------------------------------------------------------------- issues
 
+// A hand-added issue with no marvel.com URL gets a negative synthetic id (see doManual), which
+// is namespaced away from real Marvel ids. Rejecting those here silently discarded the entry
+// while the UI reported success, so negatives are accepted; only 0 and non-integers are refused.
 export function normalizeIssue(input) {
   const issueId = Number(input?.issueId ?? input?.id);
-  if (!Number.isInteger(issueId) || issueId <= 0) return null;
+  if (!Number.isInteger(issueId) || issueId === 0) return null;
+  const synthetic = issueId < 0;
   return {
     issueId,
     title: String(input.title ?? `Issue ${issueId}`),
     number: input.number ?? null,
-    url: input.url ?? input.detailUrl ?? `https://www.marvel.com/comics/issue/${issueId}/`,
+    // A synthetic id has no marvel.com page, so inventing one would produce a dead link.
+    url: input.url ?? input.detailUrl ?? (synthetic ? null : `https://www.marvel.com/comics/issue/${issueId}/`),
     seriesId: input.seriesId ?? null,
     seriesName: input.seriesName ?? null,
     onSale: input.onSale ?? input.onSaleDate ?? null,
     mu: input.mu ?? input.unlimitedDate ?? null,
     digitalId: input.digitalId ?? null,
-    // Rich fields, only present on /v1/issues/{id} — list endpoints omit them.
+    // Rich fields, only present on /v1/issues/{id} â€” list endpoints omit them.
     // `cover` is { path, ext } WITHOUT the variant suffix; the view appends `/{variant}.{ext}`.
     // We store the URL only and never the image bytes: the browser fetches covers directly
     // from Marvel's own CDN, so this app neither copies nor redistributes artwork.
@@ -106,7 +111,7 @@ export function createList(state, { name, description = '', id = newId(), itemId
     name: String(name || 'Untitled list').slice(0, 200),
     description: String(description || '').slice(0, 2000),
     created: Date.now(),
-    itemIds: dedupe(itemIds.map(Number).filter(Number.isInteger)),
+    itemIds: dedupe(itemIds.map(Number).filter((n) => Number.isInteger(n) && n !== 0)),
   };
   return {
     ...state,
@@ -356,7 +361,7 @@ function coerce(raw) {
       name: String(v.name ?? 'Untitled list'),
       description: String(v.description ?? ''),
       created: Number(v.created) || Date.now(),
-      itemIds: dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter(Number.isInteger)),
+      itemIds: dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter((n) => Number.isInteger(n) && n !== 0)),
     };
   }
   const listOrder = (Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists)).filter((id) => lists[id]);

@@ -367,3 +367,22 @@ progress { accent-color: var(--red); height: 6px; }
   .hero-bg, .hero-fade { display: none; }
   .btn, .quiet, .mini, .ri { border: 1px solid ButtonBorder; }
 }
+
+/* Unreadable-data recovery. Deliberately loud: saving is paused and the user must choose. */
+.blocked {
+  border: 2px solid var(--warn, #d9822b);
+  background: color-mix(in srgb, var(--warn, #d9822b) 12%, var(--panel, #14161c));
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 24px;
+}
+.blocked h2 { margin: 0 0 8px; font-size: 1.15rem; }
+.blocked p { margin: 0 0 10px; max-width: 68ch; line-height: 1.5; }
+.blocked-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+
+#save-report:empty { display: none; }
+#save-report { margin-bottom: 20px; }
+
+@media (forced-colors: active) {
+  .blocked { border: 2px solid CanvasText; background: Canvas; }
+}

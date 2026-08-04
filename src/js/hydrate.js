@@ -41,8 +41,9 @@ export class Hydrator {
       return;
     }
 
-    this.controller = new AbortController();
-    const { signal } = this.controller;
+    const controller = new AbortController();
+    this.controller = controller;
+    const { signal } = controller;
     this.running = true;
     this.done = 0;
     this.total = queue.length;
@@ -62,10 +63,15 @@ export class Hydrator {
         // A single failed lookup must not stall the queue; it stays pending and will be
         // retried the next time hydration runs.
       }
+      // A cancelled run may still be unwinding a long rate-limit wait when the user starts a
+      // new one. Without this guard its teardown would clear the *new* run's fields, leaving
+      // that run invisible to the UI and impossible to cancel.
+      if (this.controller !== controller) return;
       this.done += 1;
       this.onProgress(this.status('running'));
     }
 
+    if (this.controller !== controller) return;
     this.running = false;
     this.controller = null;
     this.onProgress(this.status(signal.aborted ? 'cancelled' : 'complete'));

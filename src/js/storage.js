@@ -9,6 +9,7 @@ import { createEmptyState, migrate, exportBackup, validateBackup } from './lib/m
 export const KEY = 'mrt.state.v2';
 const TEMP_KEY = 'mrt.state.restore.tmp';
 const PRERESTORE_KEY = 'mrt.state.prerestore';
+const SALVAGE_KEY = 'mrt.state.salvage';
 
 export class Store {
   constructor({ storage = globalThis.localStorage, onChange = () => {} } = {}) {
@@ -16,17 +17,59 @@ export class Store {
     this.onChange = onChange;
     this.state = createEmptyState();
     this.lastError = null;
+    // Set when saved data exists but could not be read. While it is set the store refuses to
+    // write, so the unreadable-but-recoverable data on disk is never overwritten.
+    this.blocked = false;
   }
 
+  // A failed load must never lead to data loss. Previously this fell back to empty state and
+  // the very next user action persisted that empty state over the intact original — most
+  // likely to happen on a schema downgrade, which migrate() deliberately throws on. Now the
+  // raw value is copied aside and the store is latched read-only until the user decides.
   load() {
     try {
       const raw = this.storage?.getItem(KEY);
       this.state = raw ? migrate(JSON.parse(raw)) : createEmptyState();
+      this.blocked = false;
     } catch (err) {
-      this.lastError = `Could not read saved data (${err.message}). Starting empty; your old data was left untouched.`;
       this.state = createEmptyState();
+      this.blocked = true;
+      this.salvage();
+      this.lastError =
+        `Could not read your saved data (${err.message}). It has NOT been changed or deleted. `
+        + 'Saving is paused so it cannot be overwritten — download a copy, then choose to start fresh.';
     }
     return this.state;
+  }
+
+  // Keeps the first unreadable value. Never overwrites an existing salvage copy: a second
+  // failed load must not clobber the good original with something already degraded.
+  salvage() {
+    try {
+      const raw = this.storage?.getItem(KEY);
+      if (raw && !this.storage.getItem(SALVAGE_KEY)) this.storage.setItem(SALVAGE_KEY, raw);
+    } catch {
+      /* salvage is best-effort; never let it throw during boot */
+    }
+  }
+
+  salvagedRaw() {
+    try {
+      return this.storage?.getItem(SALVAGE_KEY) ?? this.storage?.getItem(KEY) ?? null;
+    } catch {
+      return null;
+    }
+  }
+
+  // Deliberate, user-initiated escape hatch from the blocked state.
+  startFresh() {
+    this.salvage();
+    this.blocked = false;
+    this.state = createEmptyState();
+    const ok = this.persist(this.state);
+    if (ok) this.lastError = null;
+    this.onChange(this.state, this.lastError);
+    return ok;
   }
 
   // Applies a pure transformation. If persistence fails, the in-memory state is rolled back
@@ -47,6 +90,12 @@ export class Store {
   }
 
   persist(state = this.state) {
+    if (this.blocked) {
+      this.lastError =
+        'Saving is paused because your existing saved data could not be read. '
+        + 'Download a copy of it, then choose "Start fresh" to begin saving again.';
+      return false;
+    }
     if (!this.storage) return true;
     try {
       this.storage.setItem(KEY, JSON.stringify(exportBackup(state)));
@@ -87,6 +136,9 @@ export class Store {
       return { ok: false, errors: [`Could not write the restored data: ${err.message}. Nothing was changed.`] };
     }
 
+    // A successful restore is a deliberate overwrite, so it also clears the block.
+    this.blocked = false;
+    this.lastError = null;
     this.state = state;
     this.onChange(state, null);
     return { ok: true, errors: [] };
