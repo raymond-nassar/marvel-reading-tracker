@@ -1,0 +1,18 @@
+# OS / editor noise
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+.DS_Store
+.vscode/
+.idea/
+
+# Local scratch
+*.log
+tmp/
+scratch/
+
+# Local backups exported from the app
+backups/
+*.backup.json
