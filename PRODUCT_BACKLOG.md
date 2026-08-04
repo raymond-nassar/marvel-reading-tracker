@@ -2,7 +2,7 @@
 
 This backlog describes the next product improvements in plain English. It is intended
 for review before implementation. The goal is to make the tracker useful for many
-Marvel reading lists and events, not only the Jonathan Hickman Secret Wars orders.
+Marvel reading lists and events, not only Jonathan Hickman’s Secret Wars orders.
 
 ## Product direction
 
