@@ -170,13 +170,15 @@ could not actually populate the fields the UI needs.
 ## Phase Checklist
 
 <!-- rpi:phase id=P00 -->
-### [ ] P00: Feasibility gate — reader deep-link contract
+### [x] P00: Feasibility gate — reader deep-link contract
 
 * Intent: Prove the MU reader URL contract before any code depends on it. Closes CR-001.
 * Dependencies: none. **Requires the user, logged into Marvel Unlimited.**
+* Result: **PASS 2026-08-03** — all three sampled eras opened the correct issue. Live-API `digitalId`
+  is authoritative over the stale upstream README. Recorded as CHG-001.
 
 <!-- rpi:task id=P00-T01 -->
-#### [ ] P00-T01: Verify `digitalId` → reader mapping
+#### [x] P00-T01: Verify `digitalId` → reader mapping
 
 * Requirement and evidence: upstream README/API disagree on `digitalId` for issue 52447 (38866 vs 38164).
 * Expected result: user opens a generated sample set (old, recent, unavailable, null-`digitalId`) and confirms each lands on the correct issue; canonical URL contract recorded.

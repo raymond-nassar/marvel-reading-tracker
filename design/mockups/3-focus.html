@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Direction 3 — Focus</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0f1115;
+        --card: #171a20;
+        --line: #242932;
+        --text: #eef1f6;
+        --muted: #8d95a6;
+        --blue: #4f8cff;
+        --green: #43c088;
+        --amber: #eab654;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, "Segoe UI", sans-serif; }
+      button { font: inherit; cursor: pointer; }
+      .back { position: fixed; top: 14px; left: 14px; z-index: 50; background: #000a; border: 1px solid var(--line); color: var(--text); padding: .35rem .7rem; border-radius: 999px; text-decoration: none; font-size: .78rem; }
+
+      .top { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+      .who { display: flex; align-items: center; gap: .6rem; color: var(--muted); font-size: .88rem; }
+      .who select { background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: .35rem .6rem; font: inherit; font-size: .88rem; }
+      .ring { display: flex; align-items: center; gap: .6rem; color: var(--muted); font-size: .84rem; }
+      .ring svg { transform: rotate(-90deg); }
+
+      /* ---------- the one card ---------- */
+      main { max-width: 900px; margin: 0 auto; padding: 1.6rem 2rem 4rem; }
+      .hero { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 2rem; display: grid; grid-template-columns: 208px 1fr; gap: 2rem; box-shadow: 0 24px 70px #00000055; }
+      @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } }
+      .hero img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 12px; border: 1px solid #ffffff14; box-shadow: 0 14px 40px #0007; }
+      .lab { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); font-weight: 700; }
+      .hero h1 { font-size: 2.15rem; line-height: 1.12; margin: .5rem 0 .35rem; letter-spacing: -.025em; }
+      .sub { color: var(--muted); margin: 0 0 1rem; font-size: .95rem; }
+      .desc { color: #c8cfdb; font-size: .97rem; margin: 0 0 1.3rem; }
+      .facts { display: flex; gap: 1.6rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+      .fact .k { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+      .fact .v { font-size: .95rem; font-weight: 550; margin-top: .1rem; }
+      .fact .v.ok { color: var(--green); }
+      .cta { display: flex; gap: .6rem; flex-wrap: wrap; }
+      .btn { border: 0; border-radius: 12px; padding: .85rem 1.5rem; background: var(--blue); color: #fff; font-weight: 650; font-size: .96rem; }
+      .btn:hover { filter: brightness(1.1); }
+      .btn.g { background: #ffffff10; color: var(--text); border: 1px solid var(--line); font-weight: 500; }
+      .kbd { font-size: .74rem; color: #ffffff88; border: 1px solid #ffffff2e; border-radius: 5px; padding: .05rem .3rem; margin-left: .4rem; }
+
+      /* ---------- after ---------- */
+      .after { margin-top: 1.4rem; display: flex; gap: .8rem; align-items: center; color: var(--muted); font-size: .87rem; }
+      .after img { width: 34px; aspect-ratio: 2/3; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); }
+
+      details.list { margin-top: 2.2rem; border-top: 1px solid var(--line); padding-top: 1.2rem; }
+      details.list summary { cursor: pointer; color: var(--muted); font-size: .9rem; list-style: none; display: flex; justify-content: space-between; }
+      details.list summary::-webkit-details-marker { display: none; }
+      details.list summary:hover { color: var(--text); }
+      .rows { margin-top: 1rem; display: grid; gap: .15rem; }
+      .row { display: grid; grid-template-columns: 22px 1fr auto; gap: .8rem; align-items: center; padding: .5rem .6rem; border-radius: 9px; }
+      .row:hover { background: #ffffff08; }
+      .row.read { color: var(--muted); }
+      .row.read .t { text-decoration: line-through; }
+      .t { font-size: .92rem; }
+      .dot { width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid #3c4453; display: grid; place-items: center; font-size: .62rem; background: none; color: #fff; }
+      .row.read .dot { background: var(--green); border-color: var(--green); }
+      .row.now .dot { border-color: var(--blue); box-shadow: 0 0 0 4px #4f8cff22; }
+      .when { font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+    </style>
+  </head>
+  <body>
+    <a class="back" href="./index.html">← All directions</a>
+
+    <div class="top">
+      <div class="who">
+        Reading
+        <select><option>Hickman → Secret Wars (full)</option><option>Hickman (minimal)</option><option>Krakoan Age</option></select>
+      </div>
+      <div class="ring">
+        <svg width="34" height="34" viewBox="0 0 34 34">
+          <circle cx="17" cy="17" r="14" fill="none" stroke="#242932" stroke-width="4" />
+          <circle id="ringArc" cx="17" cy="17" r="14" fill="none" stroke="#4f8cff" stroke-width="4" stroke-linecap="round" stroke-dasharray="88" stroke-dashoffset="88" />
+        </svg>
+        <span id="ringLab">—</span>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero">
+        <img id="img" alt="" />
+        <div>
+          <div class="lab">Read this next</div>
+          <h1 id="title">—</h1>
+          <p class="sub" id="sub">—</p>
+          <p class="desc" id="desc">—</p>
+          <div class="facts" id="facts"></div>
+          <div class="cta">
+            <button class="btn">Open in Marvel Unlimited<span class="kbd">↵</span></button>
+            <button class="btn g">Done, next<span class="kbd">D</span></button>
+            <button class="btn g">Skip</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="after">
+        <span>Then:</span>
+        <img id="a1" alt="" /><span id="a1t"></span>
+        <span>·</span>
+        <img id="a2" alt="" /><span id="a2t"></span>
+      </div>
+
+      <details class="list">
+        <summary><span>Show the whole order</span><span id="sumn">—</span></summary>
+        <div class="rows" id="rows"></div>
+      </details>
+    </main>
+
+    <script src="./mock-data.js"></script>
+    <script>
+      const items = MOCK.items;
+      const cover = (it, v) => it.cover ? `${it.cover.path}/${v}.${it.cover.ext}` : '';
+      const i0 = items.findIndex((i) => !i.read);
+      const it = items[i0];
+      const read = items.filter((i) => i.read).length;
+
+      img.src = cover(it, 'portrait_uncanny');
+      title.textContent = it.title;
+      sub.textContent = [it.seriesName, it.creators?.map((c) => c.name).join(' & ')].filter(Boolean).join(' · ');
+      desc.textContent = it.description || 'No synopsis recorded for this issue.';
+      facts.innerHTML = `
+        <div class="fact"><div class="k">In Unlimited</div><div class="v ok">✓ Expected</div></div>
+        <div class="fact"><div class="k">Pages</div><div class="v">${it.pageCount ?? '—'}</div></div>
+        <div class="fact"><div class="k">Released</div><div class="v">${(it.onSale || '').slice(0, 10)}</div></div>
+        <div class="fact"><div class="k">Position</div><div class="v">${read + 1} of ${MOCK.total}</div></div>`;
+
+      const pct = read / MOCK.total;
+      ringArc.setAttribute('stroke-dashoffset', String(88 - 88 * pct));
+      ringLab.textContent = `${read} of ${MOCK.total}`;
+      sumn.textContent = `${MOCK.total - read} left`;
+
+      const n1 = items[i0 + 1], n2 = items[i0 + 2];
+      a1.src = cover(n1, 'portrait_incredible'); a1t.textContent = n1.title.replace(/\s*\(\d{4}\)/, '');
+      a2.src = cover(n2, 'portrait_incredible'); a2t.textContent = n2.title.replace(/\s*\(\d{4}\)/, '');
+
+      rows.innerHTML = items.map((x, i) => `
+        <div class="row ${x.read ? 'read' : ''} ${i === i0 ? 'now' : ''}">
+          <button class="dot">${x.read ? '✓' : ''}</button>
+          <span class="t">${x.title}</span>
+          <span class="when">${(x.onSale || '').slice(0, 7)}</span>
+        </div>`).join('');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marvel Reading Tracker — pick a direction</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; background: #0d0f13; color: #e8ebf2;
+        font: 15px/1.6 system-ui, "Segoe UI", sans-serif;
+      }
+      header { padding: 3rem 2rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+      h1 { font-size: 2rem; margin: 0 0 .5rem; letter-spacing: -.02em; }
+      .lede { color: #97a1b5; max-width: 68ch; margin: 0; }
+      .grid {
+        display: grid; gap: 1.1rem; padding: 1.5rem 2rem 4rem;
+        max-width: 1100px; margin: 0 auto;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      .card {
+        display: block; text-decoration: none; color: inherit;
+        background: #161a21; border: 1px solid #262c38; border-radius: 14px;
+        padding: 1.2rem; transition: border-color .15s, transform .15s;
+      }
+      .card:hover, .card:focus-visible { border-color: #e23636; transform: translateY(-2px); }
+      .card h2 { margin: .1rem 0 .1rem; font-size: 1.15rem; }
+      .tag { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: #e23636; font-weight: 700; }
+      .card p { color: #97a1b5; font-size: .9rem; margin: .5rem 0 .8rem; }
+      .best { font-size: .82rem; color: #cbd3e1; border-top: 1px solid #262c38; padding-top: .7rem; margin: 0; }
+      .swatch { display: flex; gap: .3rem; margin: .8rem 0 0; }
+      .swatch i { width: 22px; height: 22px; border-radius: 5px; display: block; }
+      .note { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; color: #97a1b5; font-size: .9rem; }
+      .note h3 { color: #e8ebf2; font-size: 1rem; margin-bottom: .3rem; }
+      code { background: #1e232c; padding: .1rem .35rem; border-radius: 4px; font-size: .85em; }
+      a { color: #7fb3ff; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Four directions</h1>
+      <p class="lede">
+        Same data, same features, four different personalities. Open each one, click around a bit,
+        then tell me a number. You can also mix — “number 2, but the dense list from 1” is a
+        perfectly good answer.
+      </p>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="./5-longbox-focus.html" style="border-color:#e23636; grid-column:1/-1">
+        <span class="tag">Direction 5 · proposed</span>
+        <h2>Longbox Focus — the hybrid</h2>
+        <p>
+          Focus's calm single-column flow and fact row, wrapped in Longbox's cover-forward
+          atmosphere and left rail. One confident “read this next” card over its own blurred
+          artwork, a “coming up” shelf, and the full 219-issue list collapsed until you want it.
+          Includes a working <strong>cover art on/off</strong> toggle so you can see the
+          typographic fallback.
+        </p>
+        <div class="swatch"><i style="background:#0f1115"></i><i style="background:#e23636"></i><i style="background:#43c088"></i><i style="background:#242932"></i></div>
+        <p class="best">Start here — this is what I propose building.</p>
+      </a>
+
+      <a class="card" href="./1-longbox.html">
+        <span class="tag">Direction 1</span>
+        <h2>Longbox</h2>
+        <p>Dark, dense, cover-forward. A media library for comics — closest to Plex or Letterboxd. Covers do the navigating.</p>
+        <div class="swatch"><i style="background:#0d0f13"></i><i style="background:#e23636"></i><i style="background:#f2a541"></i><i style="background:#2f3646"></i></div>
+        <p class="best">Best if you want to browse and feel the collection.</p>
+      </a>
+
+      <a class="card" href="./2-continuity.html">
+        <span class="tag">Direction 2</span>
+        <h2>Continuity</h2>
+        <p>A vertical spine you read down, with covers as stops along the way. Order is the visual metaphor, because order is the whole point.</p>
+        <div class="swatch"><i style="background:#faf8f5"></i><i style="background:#1a1a1a"></i><i style="background:#c1121f"></i><i style="background:#d8d2c8"></i></div>
+        <p class="best">Best if the reading <em>order</em> is what you care about most.</p>
+      </a>
+
+      <a class="card" href="./3-focus.html">
+        <span class="tag">Direction 3</span>
+        <h2>Focus</h2>
+        <p>One giant “read this next” card and almost nothing else. The list is there when you want it, hidden when you don't.</p>
+        <div class="swatch"><i style="background:#101215"></i><i style="background:#e8ebf2"></i><i style="background:#4f8cff"></i><i style="background:#1b1f26"></i></div>
+        <p class="best">Best if you just want to be told what to read next.</p>
+      </a>
+
+      <a class="card" href="./4-command.html">
+        <span class="tag">Direction 4</span>
+        <h2>Command</h2>
+        <p>Keyboard-first and information-dense. A table you can fly through, with a <code>⌘K</code> palette for everything. No mouse required.</p>
+        <div class="swatch"><i style="background:#0a0a0b"></i><i style="background:#e8e8ea"></i><i style="background:#8b5cf6"></i><i style="background:#1c1c1f"></i></div>
+        <p class="best">Best if you want speed and control over atmosphere.</p>
+      </a>
+    </div>
+
+    <div class="note">
+      <h3>What's real in these mockups</h3>
+      <p>
+        Everything on screen is real data: real issues from the Hickman → Secret Wars order, real
+        cover art from Marvel's CDN, real dates. The buttons are decorative — I have not wired
+        the logic in yet, and I would rather build it once against a design you actually like.
+      </p>
+      <h3>One thing I got wrong earlier</h3>
+      <p>
+        My research notes said the API had no cover art. That was true of the list endpoints but
+        wrong for <code>/v1/issues/{id}</code>, which returns covers, descriptions, page counts and
+        credits. That is why these mockups can lean on artwork — worth knowing, because it was the
+        single biggest constraint on how good this could look.
+      </p>
+    </div>
+  </body>
+</html>

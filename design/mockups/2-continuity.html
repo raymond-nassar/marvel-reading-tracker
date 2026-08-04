@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Direction 2 — Continuity</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #faf8f5;
+        --ink: #1a1a1a;
+        --ink-2: #6b6560;
+        --rule: #ddd6cb;
+        --red: #c1121f;
+        --gold: #b8860b;
+        --green: #2f7d55;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 "Iowan Old Style", "Palatino Linotype", Georgia, serif; }
+      button { font: inherit; cursor: pointer; }
+      .sans { font-family: system-ui, "Segoe UI", sans-serif; }
+
+      .back { position: fixed; top: 14px; right: 14px; z-index: 50; background: #fff; border: 1px solid var(--rule); color: var(--ink); padding: .35rem .7rem; border-radius: 999px; text-decoration: none; font-size: .78rem; font-family: system-ui, sans-serif; }
+
+      header { max-width: 1080px; margin: 0 auto; padding: 3.2rem 2rem 1.4rem; }
+      .kicker { font-family: system-ui, sans-serif; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--red); font-weight: 700; }
+      h1 { font-size: 2.6rem; margin: .4rem 0 .3rem; letter-spacing: -.02em; font-weight: 600; }
+      .sub { color: var(--ink-2); margin: 0; max-width: 62ch; }
+
+      .meter { max-width: 1080px; margin: 1.6rem auto 0; padding: 0 2rem; display: flex; align-items: center; gap: 1rem; }
+      .meter .track { flex: 1; height: 6px; background: #e7e0d5; border-radius: 3px; overflow: hidden; }
+      .meter .track i { display: block; height: 100%; background: var(--red); }
+      .meter .lab { font-family: system-ui, sans-serif; font-size: .82rem; color: var(--ink-2); white-space: nowrap; }
+
+      .toolbar { max-width: 1080px; margin: 1.4rem auto .4rem; padding: 0 2rem; display: flex; gap: .5rem; flex-wrap: wrap; font-family: system-ui, sans-serif; }
+      .pill { border: 1px solid var(--rule); background: #fff; border-radius: 999px; padding: .3rem .85rem; font-size: .82rem; color: var(--ink-2); }
+      .pill.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+      /* --------------- the spine --------------- */
+      .spine { max-width: 1080px; margin: 0 auto; padding: 1.4rem 2rem 5rem; position: relative; }
+      .spine::before { content: ""; position: absolute; left: calc(2rem + 27px); top: 2.4rem; bottom: 5.6rem; width: 2px; background: linear-gradient(180deg, var(--rule), var(--rule) 70%, transparent); }
+
+      .arc { display: flex; align-items: center; gap: .9rem; margin: 2.2rem 0 1rem; position: relative; }
+      .arc .dot { width: 56px; display: grid; place-items: center; }
+      .arc .dot i { width: 13px; height: 13px; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%; display: block; }
+      .arc h2 { font-size: 1.05rem; margin: 0; letter-spacing: .01em; }
+      .arc .n { font-family: system-ui, sans-serif; font-size: .76rem; color: var(--ink-2); }
+
+      .stop { display: grid; grid-template-columns: 56px 66px 1fr auto; gap: 1rem; align-items: center; padding: .55rem 0; position: relative; }
+      .node { display: grid; place-items: center; }
+      .node i { width: 15px; height: 15px; border-radius: 50%; background: var(--paper); border: 2px solid var(--rule); display: block; }
+      .stop.read .node i { background: var(--green); border-color: var(--green); }
+      .stop.now .node i { background: var(--red); border-color: var(--red); box-shadow: 0 0 0 5px #c1121f22; }
+      .stop img { width: 66px; aspect-ratio: 2/3; object-fit: cover; border-radius: 3px; border: 1px solid var(--rule); box-shadow: 0 3px 10px #0000000f; display: block; }
+      .stop.read img { filter: grayscale(1); opacity: .5; }
+      .t { font-size: 1.02rem; font-weight: 500; }
+      .stop.read .t { color: var(--ink-2); text-decoration: line-through; }
+      .m { font-family: system-ui, sans-serif; font-size: .8rem; color: var(--ink-2); display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-top: .12rem; }
+      .tag { border: 1px solid var(--rule); border-radius: 3px; padding: 0 .35rem; font-size: .72rem; }
+      .tag.ok { color: var(--green); border-color: #2f7d5544; }
+      .tag.unk { color: var(--gold); border-color: #b8860b44; }
+      .act { display: flex; gap: .35rem; font-family: system-ui, sans-serif; opacity: 0; }
+      .stop:hover .act { opacity: 1; }
+      .act button { border: 1px solid var(--rule); background: #fff; border-radius: 5px; padding: .2rem .55rem; font-size: .78rem; color: var(--ink-2); }
+
+      /* --------------- you are here --------------- */
+      .here { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; margin: 1.4rem 0; }
+      .card { background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--red); border-radius: 6px; padding: 1.2rem; display: flex; gap: 1.2rem; box-shadow: 0 6px 22px #00000010; }
+      .card img { width: 122px; aspect-ratio: 2/3; object-fit: cover; border-radius: 4px; border: 1px solid var(--rule); }
+      .card .lab { font-family: system-ui, sans-serif; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red); font-weight: 700; }
+      .card h3 { font-size: 1.5rem; margin: .3rem 0 .2rem; font-weight: 600; letter-spacing: -.01em; }
+      .card .s { color: var(--ink-2); font-size: .92rem; margin: 0 0 .6rem; }
+      .card p.d { font-size: .95rem; color: #3d3936; margin: 0 0 .9rem; max-width: 56ch; }
+      .card .cta { display: flex; gap: .5rem; flex-wrap: wrap; font-family: system-ui, sans-serif; }
+      .btn { border: 1px solid var(--red); background: var(--red); color: #fff; border-radius: 6px; padding: .55rem 1.05rem; font-size: .88rem; font-weight: 600; }
+      .btn.g { background: #fff; color: var(--ink); border-color: var(--rule); font-weight: 500; }
+    </style>
+  </head>
+  <body>
+    <a class="back" href="./index.html">← All directions</a>
+
+    <header>
+      <div class="kicker">Reading order</div>
+      <h1>Hickman → Secret Wars</h1>
+      <p class="sub">
+        The complete saga, in publication-aware reading order. Follow the line down; everything
+        above where you are has been read.
+      </p>
+    </header>
+
+    <div class="meter">
+      <span class="lab" id="mLeft">—</span>
+      <span class="track"><i id="mBar" style="width:0"></i></span>
+      <span class="lab" id="mRight">—</span>
+    </div>
+
+    <div class="toolbar">
+      <button class="pill on">Whole order</button>
+      <button class="pill">Unread only</button>
+      <button class="pill">In Unlimited now</button>
+      <button class="pill">Jump to where I am ↓</button>
+    </div>
+
+    <div class="spine" id="spine"></div>
+
+    <script src="./mock-data.js"></script>
+    <script>
+      const items = MOCK.items;
+      const cover = (it, v) => it.cover ? `${it.cover.path}/${v}.${it.cover.ext}` : '';
+      const nextIdx = items.findIndex((i) => !i.read);
+      const readCount = items.filter((i) => i.read).length;
+
+      document.getElementById('mLeft').textContent = `${readCount} read`;
+      document.getElementById('mRight').textContent = `${219 - readCount} to go`;
+      document.getElementById('mBar').style.width = (readCount / 219 * 100).toFixed(1) + '%';
+
+      const spine = document.getElementById('spine');
+      let html = '';
+      let arcShown = new Set();
+
+      items.forEach((it, i) => {
+        const arc = (it.seriesName || 'Unsorted').replace(/\s*\(\d{4}.*\)$/, '');
+        if (!arcShown.has(arc)) {
+          arcShown.add(arc);
+          html += `<div class="arc"><span class="dot"><i></i></span><div><h2>${arc}</h2><div class="n">${items.filter((x) => (x.seriesName || '').startsWith(arc)).length} issues in this order</div></div></div>`;
+        }
+
+        if (i === nextIdx) {
+          html += `
+          <div class="here">
+            <span></span>
+            <div class="card">
+              <img src="${cover(it, 'portrait_uncanny')}" alt="" />
+              <div>
+                <div class="lab">You are here</div>
+                <h3>${it.title}</h3>
+                <p class="s">${[it.seriesName, it.creators?.[0]?.name].filter(Boolean).join(' · ')}</p>
+                <p class="d">${it.description || 'No synopsis recorded for this issue.'}</p>
+                <div class="cta">
+                  <button class="btn">Read in Marvel Unlimited</button>
+                  <button class="btn g">Mark read &amp; advance</button>
+                  <button class="btn g">Issue page ↗</button>
+                </div>
+              </div>
+            </div>
+          </div>`;
+          return;
+        }
+
+        html += `
+        <div class="stop ${it.read ? 'read' : ''}">
+          <span class="node"><i></i></span>
+          <img src="${cover(it, 'portrait_incredible')}" alt="" loading="lazy" />
+          <div>
+            <div class="t">${it.title}</div>
+            <div class="m">
+              <span>${(it.onSale || '').slice(0, 10)}</span>
+              <span class="tag ${it.mu ? 'ok' : 'unk'}">${it.mu ? 'in Unlimited' : 'unknown'}</span>
+              <span>${it.pageCount ? it.pageCount + 'pp' : ''}</span>
+            </div>
+          </div>
+          <div class="act"><button>Read</button><button>Info</button><button>↑</button><button>↓</button></div>
+        </div>`;
+      });
+
+      spine.innerHTML = html;
+    </script>
+  </body>
+</html>

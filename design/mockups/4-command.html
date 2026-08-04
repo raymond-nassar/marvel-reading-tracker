@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Direction 4 — Command</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0a0a0b;
+        --panel: #121215;
+        --line: #232327;
+        --text: #e9e9ec;
+        --muted: #85858f;
+        --violet: #8b5cf6;
+        --green: #3ecf8e;
+        --amber: #e0b341;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 ui-sans-serif, system-ui, "Segoe UI", sans-serif; }
+      button { font: inherit; cursor: pointer; }
+      .mono { font-family: ui-monospace, "Cascadia Mono", "SF Mono", monospace; }
+      .back { position: fixed; bottom: 14px; left: 14px; z-index: 60; background: var(--panel); border: 1px solid var(--line); color: var(--text); padding: .3rem .65rem; border-radius: 6px; text-decoration: none; font-size: .76rem; }
+
+      /* ---------- chrome ---------- */
+      .bar { display: flex; align-items: center; gap: .8rem; padding: .55rem .9rem; border-bottom: 1px solid var(--line); background: var(--panel); position: sticky; top: 0; z-index: 20; }
+      .logo { width: 20px; height: 20px; border-radius: 5px; background: var(--violet); display: grid; place-items: center; font-size: .72rem; font-weight: 800; }
+      .crumb { color: var(--muted); font-size: .82rem; }
+      .crumb b { color: var(--text); font-weight: 550; }
+      .spacer { flex: 1; }
+      .k { border: 1px solid var(--line); background: #0000; border-radius: 6px; padding: .28rem .55rem; color: var(--muted); font-size: .78rem; display: inline-flex; gap: .4rem; align-items: center; }
+      .k kbd { font-family: ui-monospace, monospace; background: #ffffff10; border-radius: 3px; padding: 0 .25rem; font-size: .72rem; }
+
+      /* ---------- stats strip ---------- */
+      .strip { display: flex; gap: 0; border-bottom: 1px solid var(--line); background: var(--panel); }
+      .stat { padding: .7rem 1.1rem; border-right: 1px solid var(--line); }
+      .stat .n { font-size: 1.15rem; font-weight: 620; font-variant-numeric: tabular-nums; }
+      .stat .l { font-size: .7rem; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-top: .1rem; }
+      .stat .n.v { color: var(--violet); }
+      .stat .n.g { color: var(--green); }
+
+      /* ---------- next ---------- */
+      .next { display: flex; gap: 1rem; align-items: center; padding: .9rem 1.1rem; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, #8b5cf610, transparent 60%); }
+      .next img { width: 46px; aspect-ratio: 2/3; object-fit: cover; border-radius: 3px; border: 1px solid var(--line); }
+      .next .l { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--violet); font-weight: 700; }
+      .next .t { font-size: 1rem; font-weight: 570; margin-top: .1rem; }
+      .next .m { color: var(--muted); font-size: .78rem; }
+      .go { background: var(--violet); color: #fff; border: 0; border-radius: 6px; padding: .5rem .95rem; font-weight: 600; font-size: .84rem; display: inline-flex; gap: .5rem; align-items: center; }
+      .go kbd { background: #ffffff26; border-radius: 3px; padding: 0 .28rem; font-family: ui-monospace, monospace; font-size: .74rem; }
+
+      /* ---------- table ---------- */
+      table { width: 100%; border-collapse: collapse; }
+      thead th { position: sticky; top: 33px; background: var(--panel); text-align: left; font-size: .68rem; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: .5rem .8rem; border-bottom: 1px solid var(--line); }
+      tbody td { padding: .4rem .8rem; border-bottom: 1px solid #ffffff08; font-size: .84rem; }
+      tbody tr:hover { background: #ffffff06; }
+      tbody tr.sel { background: #8b5cf614; box-shadow: inset 2px 0 0 var(--violet); }
+      tbody tr.done { color: var(--muted); }
+      tbody tr.done .ti { text-decoration: line-through; }
+      .num { font-variant-numeric: tabular-nums; color: var(--muted); font-family: ui-monospace, monospace; font-size: .78rem; }
+      .cb { width: 15px; height: 15px; border-radius: 4px; border: 1.4px solid #3a3a42; background: none; display: grid; place-items: center; color: #fff; font-size: .62rem; padding: 0; }
+      tr.done .cb { background: var(--green); border-color: var(--green); }
+      .st { font-size: .7rem; border-radius: 3px; padding: .02rem .35rem; border: 1px solid var(--line); }
+      .st.ok { color: var(--green); border-color: #3ecf8e40; }
+      .st.unk { color: var(--muted); }
+      .st.soon { color: var(--amber); border-color: #e0b34140; }
+      .ti { font-weight: 500; }
+      td.act { text-align: right; white-space: nowrap; }
+      td.act button { background: none; border: 1px solid var(--line); border-radius: 5px; color: var(--muted); padding: .1rem .4rem; font-size: .72rem; margin-left: .2rem; }
+      tr:hover td.act button { color: var(--text); }
+
+      /* ---------- palette ---------- */
+      .scrim { position: fixed; inset: 0; background: #000000a8; backdrop-filter: blur(3px); display: grid; place-items: start center; padding-top: 12vh; z-index: 40; }
+      .pal { width: min(620px, 92vw); background: #141417; border: 1px solid #2c2c33; border-radius: 12px; box-shadow: 0 30px 90px #000c; overflow: hidden; }
+      .pal input { width: 100%; background: none; border: 0; border-bottom: 1px solid var(--line); color: var(--text); padding: .95rem 1.1rem; font: inherit; font-size: 1rem; outline: none; }
+      .pal .grp { font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: .6rem 1.1rem .25rem; }
+      .pal .opt { display: flex; align-items: center; gap: .7rem; padding: .5rem 1.1rem; font-size: .88rem; }
+      .pal .opt.on { background: #8b5cf61f; }
+      .pal .opt .ic { width: 20px; text-align: center; color: var(--muted); }
+      .pal .opt .sp { flex: 1; }
+      .pal .opt kbd { font-family: ui-monospace, monospace; font-size: .7rem; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 .3rem; }
+      .pal .foot { border-top: 1px solid var(--line); padding: .5rem 1.1rem; font-size: .72rem; color: var(--muted); display: flex; gap: 1rem; }
+    </style>
+  </head>
+  <body>
+    <a class="back" href="./index.html">← All directions</a>
+
+    <div class="bar">
+      <span class="logo">M</span>
+      <span class="crumb">Orders / <b>Hickman → Secret Wars</b></span>
+      <span class="spacer"></span>
+      <button class="k" onclick="document.getElementById('scrim').style.display='grid'">Search or run a command <kbd>Ctrl</kbd><kbd>K</kbd></button>
+    </div>
+
+    <div class="strip">
+      <div class="stat"><div class="n" id="s1">—</div><div class="l">Read</div></div>
+      <div class="stat"><div class="n v" id="s2">—</div><div class="l">Remaining</div></div>
+      <div class="stat"><div class="n g" id="s3">—</div><div class="l">In Unlimited</div></div>
+      <div class="stat"><div class="n" id="s4">—</div><div class="l">Series</div></div>
+      <div class="stat"><div class="n" id="s5">—</div><div class="l">Pages left</div></div>
+    </div>
+
+    <div class="next">
+      <img id="ni" alt="" />
+      <div>
+        <div class="l">Next unread</div>
+        <div class="t" id="nt">—</div>
+        <div class="m" id="nm">—</div>
+      </div>
+      <span class="spacer"></span>
+      <button class="go">Open in Unlimited <kbd>↵</kbd></button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:34px"></th>
+          <th style="width:46px">#</th>
+          <th>Issue</th>
+          <th style="width:210px">Series</th>
+          <th style="width:96px">Released</th>
+          <th style="width:110px">Unlimited</th>
+          <th style="width:56px">Pp</th>
+          <th style="width:120px"></th>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+
+    <div class="scrim" id="scrim" style="display:none" onclick="if(event.target===this)this.style.display='none'">
+      <div class="pal">
+        <input placeholder="Jump to an issue, or type a command…" value="secret w" />
+        <div class="grp">Issues</div>
+        <div class="opt on"><span class="ic">▸</span><span class="sp">Secret Wars (2015) #1</span><kbd>↵ open</kbd></div>
+        <div class="opt"><span class="ic">▸</span><span class="sp">Secret Wars (2015) #2</span></div>
+        <div class="opt"><span class="ic">▸</span><span class="sp">Secret Wars (1984) #1</span></div>
+        <div class="grp">Commands</div>
+        <div class="opt"><span class="ic">✓</span><span class="sp">Mark everything above as read</span><kbd>⇧R</kbd></div>
+        <div class="opt"><span class="ic">↓</span><span class="sp">Export this order as Markdown</span><kbd>⇧E</kbd></div>
+        <div class="opt"><span class="ic">+</span><span class="sp">Paste a reading order…</span><kbd>⇧V</kbd></div>
+        <div class="foot"><span><b>↑↓</b> navigate</span><span><b>↵</b> select</span><span><b>esc</b> close</span></div>
+      </div>
+    </div>
+
+    <script src="./mock-data.js"></script>
+    <script>
+      const items = MOCK.items;
+      const cover = (it, v) => it.cover ? `${it.cover.path}/${v}.${it.cover.ext}` : '';
+      const i0 = items.findIndex((i) => !i.read);
+      const nx = items[i0];
+      const read = items.filter((i) => i.read).length;
+
+      s1.textContent = read;
+      s2.textContent = MOCK.total - read;
+      s3.textContent = items.filter((i) => i.mu).length + '/' + items.length;
+      s4.textContent = new Set(items.map((i) => i.seriesName)).size;
+      s5.textContent = items.filter((i) => !i.read).reduce((n, i) => n + (i.pageCount || 0), 0).toLocaleString();
+
+      ni.src = cover(nx, 'portrait_incredible');
+      nt.textContent = nx.title;
+      nm.textContent = [nx.seriesName, nx.creators?.map((c) => c.name).join(', ')].filter(Boolean).join(' — ');
+
+      tb.innerHTML = items.map((x, i) => `
+        <tr class="${x.read ? 'done' : ''} ${i === i0 ? 'sel' : ''}">
+          <td><button class="cb">${x.read ? '✓' : ''}</button></td>
+          <td class="num">${String(i + 121).padStart(3, '0')}</td>
+          <td class="ti">${x.title.replace(/\s*\(\d{4}\)/, '')}</td>
+          <td style="color:var(--muted)">${(x.seriesName || '').replace(/\s*\(.*\)$/, '')}</td>
+          <td class="num">${(x.onSale || '').slice(0, 10)}</td>
+          <td><span class="st ${x.mu ? 'ok' : 'unk'}">${x.mu ? 'expected' : 'unknown'}</span></td>
+          <td class="num">${x.pageCount ?? '—'}</td>
+          <td class="act"><button>read</button><button>info</button><button>↑</button><button>↓</button></td>
+        </tr>`).join('');
+
+      addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); scrim.style.display = 'grid'; }
+        if (e.key === 'Escape') scrim.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>

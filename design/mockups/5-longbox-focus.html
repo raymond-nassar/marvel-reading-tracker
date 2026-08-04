@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Direction 5 — Longbox Focus (proposed)</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0f1115;
+        --rail: #0b0d10;
+        --card: #171a20;
+        --card-2: #1c2028;
+        --line: #242932;
+        --line-2: #2e3540;
+        --text: #eef1f6;
+        --muted: #8d95a6;
+        --red: #e23636;
+        --green: #43c088;
+        --amber: #eab654;
+        --r: 14px;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.6 system-ui, "Segoe UI", sans-serif; }
+      button { font: inherit; cursor: pointer; }
+      :focus-visible { outline: 3px solid #7fb3ff; outline-offset: 2px; border-radius: 6px; }
+      .back { position: fixed; bottom: 14px; left: 14px; z-index: 60; background: var(--card); border: 1px solid var(--line); color: var(--text); padding: .32rem .7rem; border-radius: 999px; text-decoration: none; font-size: .76rem; }
+
+      .shell { display: grid; grid-template-columns: 252px 1fr; min-height: 100vh; }
+      @media (max-width: 880px) { .shell { grid-template-columns: 1fr; } .rail { position: static; height: auto; } }
+
+      /* ============ rail (from Longbox, lightened) ============ */
+      .rail { background: var(--rail); border-right: 1px solid var(--line); padding: 1.3rem .8rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+      .brand { display: flex; align-items: center; gap: .6rem; margin: 0 .4rem 1.6rem; }
+      .brand .mark { width: 28px; height: 28px; border-radius: 8px; background: var(--red); display: grid; place-items: center; font-weight: 800; font-size: .9rem; }
+      .brand b { font-size: .94rem; letter-spacing: -.01em; font-weight: 600; }
+      .rail h3 { font-size: .66rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin: 1.5rem .5rem .5rem; font-weight: 600; }
+      .ri { display: block; width: 100%; text-align: left; background: none; border: 0; color: var(--muted); padding: .5rem .6rem; border-radius: 9px; }
+      .ri:hover { background: #ffffff09; color: var(--text); }
+      .ri.on { background: #ffffff0e; color: var(--text); }
+      .ri .t { display: flex; justify-content: space-between; gap: .5rem; font-size: .875rem; }
+      .ri .bar { height: 3px; background: #2a303c; border-radius: 2px; margin-top: .45rem; overflow: hidden; }
+      .ri .bar i { display: block; height: 100%; background: var(--red); border-radius: 2px; }
+      .ri .n { font-variant-numeric: tabular-nums; font-size: .76rem; color: var(--muted); }
+
+      /* ============ main ============ */
+      main { min-width: 0; }
+      .wrap { max-width: 940px; margin: 0 auto; padding: 1.6rem 2rem 3rem; }
+      @media (max-width: 620px) { .wrap { padding: 1.2rem 1rem 3rem; } }
+
+      .head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+      .head h1 { font-size: 1.25rem; margin: 0; letter-spacing: -.015em; font-weight: 600; }
+      .head .sub { color: var(--muted); font-size: .82rem; margin-top: .1rem; }
+      .headright { display: flex; align-items: center; gap: 1rem; }
+      .ring { display: flex; align-items: center; gap: .55rem; color: var(--muted); font-size: .82rem; }
+      .ring svg { transform: rotate(-90deg); }
+      .tgl { display: inline-flex; align-items: center; gap: .45rem; font-size: .8rem; color: var(--muted); border: 1px solid var(--line); background: none; border-radius: 999px; padding: .3rem .7rem; }
+      .tgl .sw { width: 26px; height: 15px; border-radius: 999px; background: var(--red); position: relative; transition: background .15s; }
+      .tgl .sw::after { content: ""; position: absolute; top: 2px; left: 13px; width: 11px; height: 11px; border-radius: 50%; background: #fff; transition: left .15s; }
+      body.nocovers .tgl .sw { background: #3a4150; }
+      body.nocovers .tgl .sw::after { left: 2px; }
+
+      /* ============ hero: Focus composition + Longbox backdrop ============ */
+      .hero { position: relative; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--card); }
+      .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center 20%; filter: blur(40px) saturate(1.5); transform: scale(1.3); opacity: .3; }
+      body.nocovers .hero-bg { background-image: none !important; opacity: .5; }
+      .hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, #171a2099 0%, #171a20e8 60%, #171a20 100%); }
+      .hero-in { position: relative; padding: 2rem; display: grid; grid-template-columns: 196px 1fr; gap: 1.9rem; }
+      @media (max-width: 700px) { .hero-in { grid-template-columns: 1fr; } .hero-in .art { max-width: 170px; } }
+
+      .art { position: relative; }
+      .art img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 12px; border: 1px solid #ffffff1a; box-shadow: 0 18px 46px #0008; display: block; }
+      body.nocovers .art img { display: none; }
+      .fallback { display: none; width: 100%; aspect-ratio: 2/3; border-radius: 12px; border: 1px solid var(--line-2); padding: 1rem; flex-direction: column; justify-content: space-between; }
+      body.nocovers .fallback { display: flex; }
+      .fallback .fs { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; opacity: .85; line-height: 1.35; }
+      .fallback .fn { font-size: 2.6rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+
+      .eyebrow { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red); font-weight: 800; }
+      .hero h2 { font-size: 2rem; line-height: 1.13; margin: .45rem 0 .3rem; letter-spacing: -.025em; font-weight: 640; }
+      .byline { color: var(--muted); margin: 0 0 .9rem; font-size: .92rem; }
+      .desc { color: #c6cdda; font-size: .95rem; margin: 0 0 1.3rem; max-width: 58ch; }
+      .facts { display: flex; gap: 1.7rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+      .fact .k { font-size: .66rem; letter-spacing: .11em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+      .fact .v { font-size: .93rem; font-weight: 560; margin-top: .12rem; display: flex; align-items: center; gap: .3rem; }
+      .fact .v.ok { color: var(--green); }
+      .cta { display: flex; gap: .55rem; flex-wrap: wrap; }
+      .btn { border: 1px solid transparent; border-radius: 11px; padding: .72rem 1.3rem; background: var(--red); color: #fff; font-weight: 620; font-size: .92rem; display: inline-flex; align-items: center; gap: .5rem; }
+      .btn:hover { filter: brightness(1.1); }
+      .btn.g { background: #ffffff0f; color: var(--text); border-color: var(--line-2); font-weight: 500; }
+      .kbd { font-size: .72rem; opacity: .75; border: 1px solid #ffffff33; border-radius: 4px; padding: 0 .28rem; }
+
+      /* ============ shelf ============ */
+      .sec { margin-top: 2.1rem; }
+      .sec-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .8rem; }
+      .sec-h h3 { font-size: .95rem; margin: 0; font-weight: 600; }
+      .sec-h span { color: var(--muted); font-size: .8rem; }
+      .shelf { display: flex; gap: .8rem; overflow-x: auto; padding-bottom: .6rem; }
+      .tile { flex: 0 0 106px; }
+      .tile .ph { position: relative; }
+      .tile img { width: 106px; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: block; }
+      body.nocovers .tile img { display: none; }
+      .tile .tf { display: none; width: 106px; aspect-ratio: 2/3; border-radius: 8px; border: 1px solid var(--line-2); padding: .55rem; flex-direction: column; justify-content: space-between; }
+      body.nocovers .tile .tf { display: flex; }
+      .tile .tf .s { font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; opacity: .85; line-height: 1.3; }
+      .tile .tf .n { font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em; }
+      .tile .lab { font-size: .75rem; margin-top: .4rem; color: var(--muted); line-height: 1.35; }
+      .tile .lab b { color: var(--text); font-weight: 540; display: block; }
+
+      /* ============ collapsed full order ============ */
+      details.full { margin-top: 2.2rem; border-top: 1px solid var(--line); padding-top: 1.1rem; }
+      details.full > summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: .89rem; padding: .3rem 0; }
+      details.full > summary::-webkit-details-marker { display: none; }
+      details.full > summary:hover { color: var(--text); }
+      details.full > summary .chev { transition: transform .15s; }
+      details.full[open] > summary .chev { transform: rotate(90deg); }
+
+      .filters { display: flex; gap: .4rem; margin: .9rem 0 .7rem; flex-wrap: wrap; }
+      .fp { border: 1px solid var(--line); background: none; color: var(--muted); border-radius: 999px; padding: .26rem .75rem; font-size: .8rem; }
+      .fp.on { background: #ffffff10; color: var(--text); border-color: var(--line-2); }
+
+      .rows { display: grid; gap: .18rem; }
+      .row { display: grid; grid-template-columns: 24px 34px 1fr auto; gap: .75rem; align-items: center; padding: .42rem .55rem; border-radius: 9px; border: 1px solid transparent; }
+      .row:hover { background: #ffffff07; border-color: var(--line); }
+      .row.now { background: #e2363612; border-color: #e2363640; }
+      .row img { width: 34px; aspect-ratio: 2/3; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); display: block; }
+      body.nocovers .row img { display: none; }
+      .row .rf { display: none; width: 34px; aspect-ratio: 2/3; border-radius: 4px; border: 1px solid var(--line-2); align-items: center; justify-content: center; font-size: .68rem; font-weight: 700; }
+      body.nocovers .row .rf { display: flex; }
+      .row.read { opacity: .48; }
+      .row.read .rt { text-decoration: line-through; }
+      .rt { font-size: .89rem; font-weight: 500; }
+      .rm { color: var(--muted); font-size: .76rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .05rem; }
+      .cb { width: 17px; height: 17px; border-radius: 5px; border: 1.5px solid #414a5a; background: none; display: grid; place-items: center; color: #fff; font-size: .65rem; padding: 0; }
+      .row.read .cb { background: var(--green); border-color: var(--green); }
+      .badge { font-size: .68rem; border: 1px solid var(--line); border-radius: 999px; padding: .02rem .42rem; }
+      .badge.ok { color: var(--green); border-color: #43c08840; }
+      .badge.unk { color: var(--muted); }
+      .ract { display: flex; gap: .25rem; opacity: 0; }
+      .row:hover .ract { opacity: 1; }
+      .mini { border: 1px solid var(--line); background: none; color: var(--muted); border-radius: 6px; padding: .16rem .45rem; font-size: .74rem; }
+      .mini:hover { color: var(--text); background: #ffffff0d; }
+
+      footer { border-top: 1px solid var(--line); margin-top: 2.6rem; padding-top: 1rem; color: var(--muted); font-size: .78rem; max-width: 76ch; }
+      footer a { color: #7fb3ff; }
+    </style>
+  </head>
+  <body>
+    <a class="back" href="./index.html">← All directions</a>
+
+    <div class="shell">
+      <aside class="rail">
+        <div class="brand"><span class="mark">M</span><b>Reading Tracker</b></div>
+
+        <h3>Reading orders</h3>
+        <button class="ri on">
+          <span class="t"><span>Hickman → Secret Wars</span><span class="n" id="r1">—</span></span>
+          <span class="bar"><i id="b1" style="width:0"></i></span>
+        </button>
+        <button class="ri">
+          <span class="t"><span>Hickman (minimal)</span><span class="n">0 / 89</span></span>
+          <span class="bar"><i style="width:0"></i></span>
+        </button>
+        <button class="ri">
+          <span class="t"><span>Krakoan Age</span><span class="n">12 / 74</span></span>
+          <span class="bar"><i style="width:16%"></i></span>
+        </button>
+
+        <h3>Library</h3>
+        <button class="ri">Everything read</button>
+        <button class="ri">Progress by series</button>
+        <button class="ri">Added by hand</button>
+
+        <h3>Add</h3>
+        <button class="ri">Search issues</button>
+        <button class="ri">Add a series</button>
+        <button class="ri">Paste a reading order</button>
+
+        <h3>App</h3>
+        <button class="ri">Backup &amp; settings</button>
+      </aside>
+
+      <main>
+        <div class="wrap">
+          <div class="head">
+            <div>
+              <h1 id="orderName">—</h1>
+              <div class="sub" id="orderSub">—</div>
+            </div>
+            <div class="headright">
+              <button class="tgl" id="tgl" aria-pressed="true">
+                <span class="sw"></span><span id="tglLabel">Cover art on</span>
+              </button>
+              <div class="ring">
+                <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
+                  <circle cx="18" cy="18" r="15" fill="none" stroke="#242932" stroke-width="4" />
+                  <circle id="arc" cx="18" cy="18" r="15" fill="none" stroke="#e23636" stroke-width="4" stroke-linecap="round" stroke-dasharray="94.2" stroke-dashoffset="94.2" />
+                </svg>
+                <span id="ringLab">—</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="hero">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="hero-fade"></div>
+            <div class="hero-in">
+              <div class="art">
+                <img id="heroImg" alt="" />
+                <div class="fallback" id="heroFb"><span class="fs" id="heroFs"></span><span class="fn" id="heroFn"></span></div>
+              </div>
+              <div>
+                <div class="eyebrow">Read this next</div>
+                <h2 id="heroTitle">—</h2>
+                <p class="byline" id="heroBy">—</p>
+                <p class="desc" id="heroDesc">—</p>
+                <div class="facts" id="heroFacts"></div>
+                <div class="cta">
+                  <button class="btn">Open in Marvel Unlimited <span class="kbd">↵</span></button>
+                  <button class="btn g">Done, next <span class="kbd">D</span></button>
+                  <button class="btn g">Issue page ↗</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="sec">
+            <div class="sec-h"><h3>Coming up</h3><span>next 8, in order</span></div>
+            <div class="shelf" id="shelf"></div>
+          </section>
+
+          <details class="full">
+            <summary><span><span class="chev">›</span> Show the full order</span><span id="fullN">—</span></summary>
+            <div class="filters">
+              <button class="fp on">All</button><button class="fp">Unread</button><button class="fp">Read</button>
+              <button class="fp">In Unlimited</button><button class="fp">Details pending</button>
+            </div>
+            <div class="rows" id="rows"></div>
+          </details>
+
+          <footer>
+            Unofficial fan project — metadata and links only. No comic content is stored, copied, or served;
+            cover images are loaded directly from Marvel's own servers and can be switched off above.
+            Metadata from the community
+            <a href="https://marvel.emreparker.com" target="_blank" rel="noopener noreferrer">marvel.emreparker.com</a>
+            API. Marvel and all related names are trademarks of Marvel Characters, Inc.
+            Reading requires your own Marvel Unlimited subscription.
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <script src="./mock-data.js"></script>
+    <script>
+      const items = MOCK.items;
+      const cover = (it, v) => it.cover ? `${it.cover.path}/${v}.${it.cover.ext}` : '';
+      const i0 = items.findIndex((i) => !i.read);
+      const nx = items[i0];
+      const read = items.filter((i) => i.read).length;
+      const shortTitle = (t) => t.replace(/\s*\(\d{4}\)/, '');
+      const seriesOnly = (s) => (s || '').replace(/\s*\(.*\)$/, '');
+
+      // Deterministic hue per series, used only when cover art is switched off.
+      function hue(s) { let h = 0; for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) % 360; return h; }
+      function fbStyle(it) {
+        const h = hue(it.seriesName || it.title);
+        return `background:linear-gradient(155deg,hsl(${h} 42% 26%),hsl(${(h + 40) % 360} 38% 14%));color:hsl(${h} 60% 88%)`;
+      }
+
+      orderName.textContent = MOCK.listName;
+      orderSub.textContent = `${MOCK.total} issues · ${new Set(items.map((i) => i.seriesName)).size} series in view`;
+
+      heroImg.src = cover(nx, 'portrait_uncanny');
+      heroBg.style.backgroundImage = `url(${cover(nx, 'detail')})`;
+      heroFb.setAttribute('style', fbStyle(nx));
+      heroFs.textContent = seriesOnly(nx.seriesName);
+      heroFn.textContent = '#' + (nx.number ?? '?');
+      heroTitle.textContent = nx.title;
+      heroBy.textContent = [nx.seriesName, nx.creators?.map((c) => c.name).join(' & ')].filter(Boolean).join(' · ');
+      heroDesc.textContent = nx.description || 'No synopsis recorded for this issue.';
+      heroFacts.innerHTML = `
+        <div class="fact"><div class="k">In Unlimited</div><div class="v ok">✓ Expected</div></div>
+        <div class="fact"><div class="k">Pages</div><div class="v">${nx.pageCount ?? '—'}</div></div>
+        <div class="fact"><div class="k">Released</div><div class="v">${(nx.onSale || '').slice(0, 10)}</div></div>
+        <div class="fact"><div class="k">Position</div><div class="v">${read + 1} of ${MOCK.total}</div></div>`;
+
+      const pct = read / MOCK.total;
+      arc.setAttribute('stroke-dashoffset', String(94.2 - 94.2 * pct));
+      ringLab.textContent = `${read} / ${MOCK.total}`;
+      r1.textContent = `${read} / ${MOCK.total}`;
+      b1.style.width = (pct * 100).toFixed(1) + '%';
+      fullN.textContent = `${MOCK.total - read} unread`;
+
+      shelf.innerHTML = items.filter((i) => !i.read).slice(1, 9).map((it) => `
+        <div class="tile">
+          <div class="ph">
+            <img src="${cover(it, 'portrait_incredible')}" alt="" loading="lazy" />
+            <div class="tf" style="${fbStyle(it)}"><span class="s">${seriesOnly(it.seriesName)}</span><span class="n">#${it.number ?? '?'}</span></div>
+          </div>
+          <div class="lab"><b>${shortTitle(it.title)}</b>${(it.onSale || '').slice(0, 4)}</div>
+        </div>`).join('');
+
+      rows.innerHTML = items.map((it, i) => `
+        <div class="row ${it.read ? 'read' : ''} ${i === i0 ? 'now' : ''}">
+          <button class="cb">${it.read ? '✓' : ''}</button>
+          <div>
+            <img src="${cover(it, 'portrait_incredible')}" alt="" loading="lazy" />
+            <div class="rf" style="${fbStyle(it)}">#${it.number ?? '?'}</div>
+          </div>
+          <div>
+            <div class="rt">${it.title}</div>
+            <div class="rm">
+              <span>${seriesOnly(it.seriesName)}</span>
+              <span class="badge ${it.mu ? 'ok' : 'unk'}">${it.mu ? '✓ Unlimited' : '? unknown'}</span>
+              <span>${(it.onSale || '').slice(0, 10)}</span>
+            </div>
+          </div>
+          <div class="ract"><button class="mini">Read</button><button class="mini">Info</button><button class="mini">↑</button><button class="mini">↓</button></div>
+        </div>`).join('');
+
+      tgl.addEventListener('click', () => {
+        const off = document.body.classList.toggle('nocovers');
+        tgl.setAttribute('aria-pressed', String(!off));
+        tglLabel.textContent = off ? 'Cover art off' : 'Cover art on';
+      });
+    </script>
+  </body>
+</html>

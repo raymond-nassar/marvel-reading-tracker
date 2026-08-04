@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Marvel Reading Tracker</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e23636'/%3E%3Ctext x='16' y='23' font-family='system-ui' font-size='20' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="announcer" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <div class="shell">
+      <!-- ================================================== rail -->
+      <aside class="rail">
+        <div class="brand"><span class="mark" aria-hidden="true">M</span><b>Reading&nbsp;Tracker</b></div>
+
+        <nav aria-labelledby="rail-orders">
+          <h2 id="rail-orders" class="rail-h">Reading orders</h2>
+          <ul id="list-nav" class="rail-list"></ul>
+          <p id="no-lists" class="rail-hint">
+            Nothing yet. Start with a curated order below.
+          </p>
+        </nav>
+
+        <h2 class="rail-h">Start from</h2>
+        <button type="button" class="ri ri-action" data-curated="hickman_minimal.json">
+          Hickman → Secret Wars <span class="ri-sub">minimal · 89 issues</span>
+        </button>
+        <button type="button" class="ri ri-action" data-curated="hickman_full.json">
+          Hickman → Secret Wars <span class="ri-sub">full · 219 issues</span>
+        </button>
+        <button type="button" class="ri ri-action" id="btn-new-list">
+          New empty list
+        </button>
+
+        <nav aria-labelledby="rail-nav">
+          <h2 id="rail-nav" class="rail-h">Library</h2>
+          <button type="button" class="ri" data-view="progress">Progress by series</button>
+
+          <h2 class="rail-h">Add issues</h2>
+          <button type="button" class="ri" data-view="add" data-open="sec-search">Search issues</button>
+          <button type="button" class="ri" data-view="add" data-open="sec-series">Add a whole series</button>
+          <button type="button" class="ri" data-view="add" data-open="sec-creator">Browse a creator</button>
+          <button type="button" class="ri" data-view="add" data-open="sec-import">Paste a reading order</button>
+          <button type="button" class="ri" data-view="add" data-open="sec-manual">Add an issue by hand</button>
+
+          <h2 class="rail-h">App</h2>
+          <button type="button" class="ri" data-view="data">Backup &amp; settings</button>
+        </nav>
+
+        <div class="rail-foot">
+          <span id="api-status" class="pill pill-muted">Checking API…</span>
+          <span id="queue-status" class="pill pill-muted" hidden></span>
+        </div>
+      </aside>
+
+      <!-- ================================================== main -->
+      <main id="main">
+        <div class="wrap">
+
+          <!-- ---------------------------------------- reading view -->
+          <section id="view-read" class="view" aria-labelledby="order-name">
+            <div class="head">
+              <div class="head-left">
+                <h1 id="order-name">Marvel Reading Tracker</h1>
+                <div class="sub" id="order-sub">Curated reading orders, tracked locally.</div>
+              </div>
+              <div class="headright">
+                <button type="button" class="tgl" id="btn-covers" aria-pressed="true">
+                  <span class="sw" aria-hidden="true"></span><span id="covers-label">Cover art on</span>
+                </button>
+                <div class="ring" id="ring-wrap" hidden>
+                  <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+                    <circle cx="18" cy="18" r="15" fill="none" stroke="#242932" stroke-width="4" />
+                    <circle id="ring-arc" cx="18" cy="18" r="15" fill="none" stroke="#e23636"
+                            stroke-width="4" stroke-linecap="round"
+                            stroke-dasharray="94.2" stroke-dashoffset="94.2" />
+                  </svg>
+                  <span id="ring-label"></span>
+                </div>
+              </div>
+            </div>
+
+            <div id="no-active-list" class="empty-state">
+              <h2>Pick something to read</h2>
+              <p>
+                Choose a curated reading order on the left and it imports instantly — no internet
+                needed, because the order ships with the app. Or create an empty list and search
+                for issues yourself.
+              </p>
+            </div>
+
+            <div id="reading-body" hidden>
+              <div class="list-tools">
+                <button type="button" class="quiet" id="btn-rename-list">Rename</button>
+                <button type="button" class="quiet" id="btn-export-md">Export as Markdown</button>
+                <button type="button" class="quiet quiet-danger" id="btn-delete-list">Delete list</button>
+                <span class="grow"></span>
+                <span id="hydration-status" class="rail-hint" hidden></span>
+                <button type="button" class="quiet" id="btn-hydrate" hidden>Fetch missing details</button>
+                <button type="button" class="quiet" id="btn-cancel-hydrate" hidden>Stop</button>
+              </div>
+
+              <!-- hero: read this next -->
+              <section class="hero" id="hero" aria-labelledby="hero-title">
+                <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+                <div class="hero-fade" aria-hidden="true"></div>
+                <div class="hero-in">
+                  <div class="art">
+                    <img id="hero-img" alt="" />
+                    <div class="fallback" id="hero-fb" aria-hidden="true">
+                      <span class="fs" id="hero-fs"></span>
+                      <span class="fn" id="hero-fn"></span>
+                    </div>
+                  </div>
+                  <div class="hero-body">
+                    <p class="eyebrow">Read this next</p>
+                    <h2 id="hero-title">—</h2>
+                    <p class="byline" id="hero-by"></p>
+                    <p class="desc" id="hero-desc"></p>
+                    <dl class="facts" id="hero-facts"></dl>
+                    <div class="cta">
+                      <button type="button" class="btn" id="btn-hero-read">
+                        Open in Marvel Unlimited <kbd>↵</kbd>
+                      </button>
+                      <button type="button" class="btn btn-g" id="btn-hero-done">
+                        Done, next <kbd>D</kbd>
+                      </button>
+                      <a class="btn btn-g" id="btn-hero-info" target="_blank" rel="noopener noreferrer">
+                        Issue page ↗
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div id="all-read" class="empty-state" hidden>
+                <h2>That is the whole order, read.</h2>
+                <p>Every issue in this list is ticked off. Pick another order, or start a new list.</p>
+              </div>
+
+              <!-- coming up -->
+              <section class="sec" id="shelf-sec" aria-labelledby="shelf-h">
+                <div class="sec-h">
+                  <h2 id="shelf-h">Coming up</h2>
+                  <span id="shelf-note">next 8, in order</span>
+                </div>
+                <ol class="shelf" id="shelf"></ol>
+              </section>
+
+              <!-- full order -->
+              <details class="full" id="full">
+                <summary>
+                  <span><span class="chev" aria-hidden="true">›</span> Show the full order</span>
+                  <span id="full-count"></span>
+                </summary>
+
+                <fieldset class="filters">
+                  <legend class="visually-hidden">Filter the list</legend>
+                  <label class="fp"><input type="radio" name="filter" value="all" checked /><span>All</span></label>
+                  <label class="fp"><input type="radio" name="filter" value="unread" /><span>Unread</span></label>
+                  <label class="fp"><input type="radio" name="filter" value="read" /><span>Read</span></label>
+                  <label class="fp"><input type="radio" name="filter" value="unlimited" /><span>In Unlimited</span></label>
+                  <label class="fp"><input type="radio" name="filter" value="pending" /><span>Details pending</span></label>
+                </fieldset>
+
+                <ol class="rows" id="rows"></ol>
+              </details>
+            </div>
+          </section>
+
+          <!-- ---------------------------------------- progress view -->
+          <section id="view-progress" class="view" hidden aria-labelledby="progress-h">
+            <div class="head"><div class="head-left"><h1 id="progress-h">Progress by series</h1>
+              <div class="sub">Counted over unique issues across every list, so an issue in two lists counts once.</div>
+            </div></div>
+            <p class="rail-hint">“Tracked” means what you have added — not the size of the whole series.</p>
+            <div id="series-progress" class="results"></div>
+          </section>
+
+          <!-- ---------------------------------------- add view -->
+          <section id="view-add" class="view" hidden aria-labelledby="add-h">
+            <div class="head"><div class="head-left"><h1 id="add-h">Add issues</h1>
+              <div class="sub" id="add-target"></div>
+            </div></div>
+
+            <details class="card" id="sec-search" open>
+              <summary><h2>Search for issues</h2></summary>
+              <form id="form-search" class="stack">
+                <label for="search-q">Search issue titles</label>
+                <div class="row">
+                  <input type="search" id="search-q" placeholder="e.g. Secret Wars" autocomplete="off" />
+                  <button type="submit" class="btn">Search</button>
+                </div>
+              </form>
+              <div id="search-results" class="results" aria-live="polite"></div>
+            </details>
+
+            <details class="card" id="sec-series">
+              <summary><h2>Add a whole series</h2></summary>
+              <form id="form-series" class="stack">
+                <label for="series-q">Find a series</label>
+                <div class="row">
+                  <input type="search" id="series-q" placeholder="e.g. New Avengers (2013)" autocomplete="off" />
+                  <button type="submit" class="btn">Find</button>
+                </div>
+              </form>
+              <div id="series-results" class="results" aria-live="polite"></div>
+            </details>
+
+            <details class="card" id="sec-creator">
+              <summary><h2>Browse a creator</h2></summary>
+              <form id="form-creator" class="stack">
+                <label for="creator-q">Find a creator</label>
+                <div class="row">
+                  <input type="search" id="creator-q" placeholder="e.g. Hickman" autocomplete="off" />
+                  <button type="submit" class="btn">Find</button>
+                </div>
+              </form>
+              <div id="creator-results" class="results" aria-live="polite"></div>
+            </details>
+
+            <details class="card" id="sec-import">
+              <summary><h2>Paste a reading order</h2></summary>
+              <p class="rail-hint">
+                Accepts Markdown checklists
+                (<code>- [ ] [Title](https://www.marvel.com/comics/issue/123/slug)</code>)
+                or one title per line. Lines ticked <code>- [x]</code> import as already read.
+              </p>
+              <form id="form-import" class="stack">
+                <label for="import-text">Reading order</label>
+                <textarea id="import-text" rows="8" spellcheck="false"></textarea>
+                <div class="row">
+                  <button type="submit" class="btn">Import</button>
+                  <label class="checkbox"><input type="checkbox" id="import-new-list" checked /> Into a new list</label>
+                </div>
+              </form>
+              <div id="import-report" class="results" aria-live="polite"></div>
+            </details>
+
+            <details class="card" id="sec-manual">
+              <summary><h2>Add an issue by hand</h2></summary>
+              <p class="rail-hint">
+                The metadata snapshot ends in 2025, so anything newer will not be found by search.
+                Add it by hand and it still tracks — availability just shows as unknown.
+              </p>
+              <form id="form-manual" class="stack">
+                <label for="manual-title">Title</label>
+                <input type="text" id="manual-title" required placeholder="e.g. The Amazing Spider-Man (2025) #12" />
+                <label for="manual-url">marvel.com issue URL (optional)</label>
+                <input type="url" id="manual-url" placeholder="https://www.marvel.com/comics/issue/…" />
+                <button type="submit" class="btn">Add issue</button>
+              </form>
+              <div id="manual-report" class="results" aria-live="polite"></div>
+            </details>
+          </section>
+
+          <!-- ---------------------------------------- data view -->
+          <section id="view-data" class="view" hidden aria-labelledby="data-h">
+            <div class="head"><div class="head-left"><h1 id="data-h">Backup &amp; settings</h1>
+              <div class="sub">Everything lives in this browser, at this exact address. Nothing is uploaded.</div>
+            </div></div>
+
+            <div class="card card-static">
+              <h2>Backup and restore</h2>
+              <p class="rail-hint">Export regularly — clearing site data for this address erases your progress.</p>
+              <div class="row">
+                <button type="button" id="btn-export-json" class="btn">Download JSON backup</button>
+                <button type="button" id="btn-export-md-2" class="btn btn-g">Export current list as Markdown</button>
+              </div>
+
+              <h3>Restore from a backup</h3>
+              <p class="rail-hint">A snapshot of your current data is kept, so a restore can be undone once.</p>
+              <div class="row">
+                <input type="file" id="restore-file" accept="application/json,.json" aria-label="Backup file to restore" />
+                <button type="button" id="btn-undo-restore" class="quiet" hidden>Undo last restore</button>
+              </div>
+              <div id="restore-report" class="results" aria-live="polite"></div>
+            </div>
+
+            <div class="card card-static">
+              <h2>Cover art</h2>
+              <p class="rail-hint">
+                Covers are loaded straight from Marvel's own servers using the address the metadata API
+                reports. This app stores only that address — never the image itself — and never proxies
+                or re-hosts artwork. Switch covers off and every cover becomes a plain typographic tile.
+              </p>
+              <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
+            </div>
+
+            <div class="card card-static">
+              <h2>Metadata source</h2>
+              <form id="form-settings" class="stack">
+                <label for="api-base">Metadata API base URL</label>
+                <input type="url" id="api-base" />
+                <p class="rail-hint">
+                  The default is the community API this was built against. If it disappears it is
+                  MIT-licensed and self-hostable — point this at your own copy.
+                </p>
+                <button type="submit" class="btn btn-g">Save API URL</button>
+              </form>
+
+              <h3>Cached metadata</h3>
+              <p id="cache-usage" class="rail-hint">—</p>
+              <button type="button" id="btn-clear-cache" class="quiet">Clear cached metadata</button>
+              <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
+            </div>
+
+            <div class="card card-static card-danger">
+              <h2>Danger zone</h2>
+              <button type="button" id="btn-wipe" class="quiet quiet-danger">Erase all local data</button>
+            </div>
+          </section>
+
+          <footer class="app-footer">
+            Unofficial fan project — metadata and links only. No comic content is stored, copied, proxied,
+            or served; cover images load directly from Marvel's own servers and can be switched off.
+            Metadata from the community
+            <a href="https://marvel.emreparker.com" target="_blank" rel="noopener noreferrer">marvel.emreparker.com</a>
+            API (MIT). Marvel and all related names are trademarks of Marvel Characters, Inc.
+            Reading requires your own Marvel Unlimited subscription.
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

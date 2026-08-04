@@ -1,0 +1,1064 @@
+// Application controller.
+//
+// Rendering follows the "Longbox Focus" design: a rail of reading orders, one hero card for
+// the next unread issue, a short cover shelf, and the full order collapsed behind a summary.
+// Cover art is optional everywhere — `body.nocovers` swaps every image for a typographic tile.
+
+import {
+  createList, deleteList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
+  toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
+  setOverride, pendingIssueIds, createEmptyState, coverUrl,
+} from './lib/model.js';
+import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
+import { availability, describe, SHORT, STATE } from './lib/availability.js';
+import { compareIssues } from './lib/sort.js';
+import { Store } from './storage.js';
+import { MarvelApi, DEFAULT_BASE } from './api.js';
+import { ResponseCache } from './cache.js';
+import { RateLimiter } from './lib/limiter.js';
+import { Hydrator } from './hydrate.js';
+import { openIssue as openIssueTab, detailUrl } from './reader.js';
+
+const SETTINGS_KEY = 'mrt.settings';
+const RING_CIRCUMFERENCE = 94.2; // 2πr for r=15, matching the SVG in index.html
+const SHELF_SIZE = 8;
+
+const $ = (sel) => document.querySelector(sel);
+const announcer = $('#announcer');
+
+let settings = loadSettings();
+const limiter = new RateLimiter();
+let cache = new ResponseCache({ baseUrl: settings.apiBase });
+let api = new MarvelApi({ baseUrl: settings.apiBase, limiter, cache, onStatus: onApiStatus });
+
+const store = new Store({ onChange: () => renderAll() });
+const hydrator = new Hydrator({ api, store, onProgress: renderHydration });
+
+let filter = 'all';
+let view = 'read';
+
+// ------------------------------------------------------------------ boot
+
+store.load();
+applyCoversSetting();
+wireNav();
+wireReading();
+wireAdd();
+wireData();
+wireShortcuts();
+renderAll();
+checkHealth();
+refreshCacheUsage();
+
+if (store.lastError) notify('#restore-report', store.lastError, 'error');
+
+// ------------------------------------------------------------------ helpers
+
+function el(tag, props = {}, children = []) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (v == null || v === false) continue;
+    if (k === 'class') node.className = v;
+    else if (k === 'text') node.textContent = v;
+    else if (k.startsWith('on') && typeof v === 'function') node.addEventListener(k.slice(2), v);
+    else if (k === 'dataset') Object.assign(node.dataset, v);
+    else node.setAttribute(k, v === true ? '' : String(v));
+  }
+  for (const c of [].concat(children)) {
+    if (c == null) continue;
+    node.append(typeof c === 'string' ? document.createTextNode(c) : c);
+  }
+  return node;
+}
+
+function announce(msg) {
+  announcer.textContent = '';
+  // Re-setting after a tick makes screen readers re-announce identical messages.
+  setTimeout(() => { announcer.textContent = msg; }, 30);
+}
+
+function notify(sel, msg, kind = 'ok') {
+  const box = $(sel);
+  if (!box) return;
+  box.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
+  announce(msg);
+}
+
+function loadSettings() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
+    return {
+      apiBase: typeof raw.apiBase === 'string' && raw.apiBase ? raw.apiBase : DEFAULT_BASE,
+      covers: raw.covers !== false,
+    };
+  } catch {
+    return { apiBase: DEFAULT_BASE, covers: true };
+  }
+}
+
+function saveSettings() {
+  try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings)); } catch { /* non-fatal */ }
+}
+
+function activeListId() {
+  return store.state.active;
+}
+
+function ymd(v) {
+  return v ? String(v).slice(0, 10) : '';
+}
+
+function seriesOnly(name) {
+  return String(name || '').replace(/\s*\(.*\)\s*$/, '');
+}
+
+function shortTitle(t) {
+  return String(t || '').replace(/\s*\(\d{4}(\s*-\s*\d{4})?\)/, '');
+}
+
+// ------------------------------------------------------------------ cover art
+
+// A deterministic hue per series so the typographic fallback still distinguishes runs
+// at a glance when cover art is switched off.
+function hueOf(s) {
+  let h = 0;
+  for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) % 360;
+  return h;
+}
+
+function fallbackStyle(issue) {
+  const h = hueOf(issue?.seriesName || issue?.title || '');
+  return `background:linear-gradient(155deg,hsl(${h} 42% 26%),hsl(${(h + 40) % 360} 38% 14%));color:hsl(${h} 60% 88%)`;
+}
+
+// Wires an <img>/fallback pair. The fallback is shown when there is no cover URL at all,
+// or when the image fails to load; `body.nocovers` handles the user's preference in CSS.
+function paintCover(img, fb, issue, variant) {
+  fb.setAttribute('style', fallbackStyle(issue));
+  const url = coverUrl(issue, variant);
+  if (!url) {
+    img.removeAttribute('src');
+    img.hidden = true;
+    fb.classList.add('show');
+    return;
+  }
+  img.hidden = false;
+  fb.classList.remove('show');
+  img.onerror = () => { img.hidden = true; fb.classList.add('show'); };
+  img.src = url;
+}
+
+function applyCoversSetting() {
+  document.body.classList.toggle('nocovers', !settings.covers);
+  const btn = $('#btn-covers');
+  if (btn) {
+    btn.setAttribute('aria-pressed', String(settings.covers));
+    $('#covers-label').textContent = settings.covers ? 'Cover art on' : 'Cover art off';
+  }
+  const opt = $('#opt-covers');
+  if (opt) opt.checked = settings.covers;
+}
+
+function setCovers(on) {
+  settings.covers = Boolean(on);
+  saveSettings();
+  applyCoversSetting();
+  renderReading();
+  announce(settings.covers ? 'Cover art on.' : 'Cover art off. Covers are shown as text tiles.');
+}
+
+// ------------------------------------------------------------------ navigation
+
+function wireNav() {
+  for (const btn of document.querySelectorAll('.ri[data-view]')) {
+    btn.addEventListener('click', () => {
+      showView(btn.dataset.view);
+      if (btn.dataset.open) {
+        const d = $(`#${btn.dataset.open}`);
+        if (d) {
+          for (const other of document.querySelectorAll('#view-add .card[open]')) other.open = false;
+          d.open = true;
+          d.querySelector('input, textarea, button')?.focus();
+        }
+      }
+    });
+  }
+
+  $('#btn-new-list').addEventListener('click', () => {
+    const name = prompt('Name for the new list?', 'My reading order');
+    if (!name) return;
+    store.update((s) => createList(s, { name }));
+    const ids = store.state.listOrder;
+    store.update((s) => setActive(s, ids[ids.length - 1]));
+    showView('read');
+    announce(`Created list ${name}.`);
+  });
+
+  for (const btn of document.querySelectorAll('[data-curated]')) {
+    btn.addEventListener('click', () => importCurated(btn.dataset.curated));
+  }
+
+  $('#btn-covers').addEventListener('click', () => setCovers(!settings.covers));
+}
+
+function showView(next) {
+  view = next;
+  for (const name of ['read', 'progress', 'add', 'data']) {
+    $(`#view-${name}`).hidden = name !== next;
+  }
+  for (const btn of document.querySelectorAll('.ri[data-view]')) {
+    btn.setAttribute('aria-current', String(btn.dataset.view === next));
+  }
+  renderRail();
+  window.scrollTo({ top: 0 });
+}
+
+// ------------------------------------------------------------------ rail
+
+function renderRail() {
+  const nav = $('#list-nav');
+  nav.replaceChildren();
+  const { listOrder, lists } = store.state;
+  $('#no-lists').hidden = listOrder.length > 0;
+
+  for (const id of listOrder) {
+    const list = lists[id];
+    const { read, total } = listProgress(store.state, id);
+    const pct = total ? (read / total) * 100 : 0;
+    const current = view === 'read' && id === activeListId();
+
+    nav.append(el('li', {}, el('button', {
+      type: 'button',
+      class: 'ri',
+      'aria-current': String(current),
+      onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
+    }, [
+      el('span', { class: 't' }, [
+        el('span', { text: list.name }),
+        el('span', { class: 'n', text: `${read} / ${total}` }),
+      ]),
+      el('span', { class: 'bar' }, el('i', { style: `width:${pct.toFixed(1)}%` })),
+    ])));
+  }
+}
+
+// ------------------------------------------------------------------ reading view
+
+function wireReading() {
+  for (const radio of document.querySelectorAll('input[name="filter"]')) {
+    radio.addEventListener('change', (e) => { filter = e.target.value; renderRows(); });
+  }
+
+  $('#btn-rename-list').addEventListener('click', () => {
+    const id = activeListId();
+    const list = store.state.lists[id];
+    if (!list) return;
+    const name = prompt('List name', list.name);
+    if (!name) return;
+    store.update((s) => renameList(s, id, name));
+    announce(`Renamed to ${name}.`);
+  });
+
+  $('#btn-delete-list').addEventListener('click', () => {
+    const id = activeListId();
+    const list = store.state.lists[id];
+    if (!list) return;
+    if (!confirm(`Delete "${list.name}"? Your read progress is kept — only the list is removed.`)) return;
+    store.update((s) => deleteList(s, id));
+    announce('List deleted. Reading progress was kept.');
+  });
+
+  $('#btn-export-md').addEventListener('click', exportMarkdown);
+  $('#btn-hydrate').addEventListener('click', () => hydrator.start(activeListId()));
+  $('#btn-cancel-hydrate').addEventListener('click', () => hydrator.cancel());
+
+  $('#btn-hero-read').addEventListener('click', (e) => {
+    const issue = upNext(store.state, activeListId());
+    if (issue) openInReader(issue, e);
+  });
+
+  $('#btn-hero-done').addEventListener('click', () => markCurrentRead());
+}
+
+function markCurrentRead() {
+  const issue = upNext(store.state, activeListId());
+  if (!issue) return;
+  store.update((s) => markRead(s, issue.issueId, true));
+  const next = upNext(store.state, activeListId());
+  announce(next
+    ? `${issue.title} marked read. Next up: ${next.title}.`
+    : `${issue.title} marked read. That is the whole order finished.`);
+}
+
+function renderReading() {
+  const id = activeListId();
+  const list = store.state.lists[id];
+
+  $('#no-active-list').hidden = Boolean(list);
+  $('#reading-body').hidden = !list;
+  $('#ring-wrap').hidden = !list;
+
+  if (!list) {
+    $('#order-name').textContent = 'Marvel Reading Tracker';
+    $('#order-sub').textContent = 'Curated reading orders, tracked locally, linked into the Unlimited reader.';
+    return;
+  }
+
+  const { read, total } = listProgress(store.state, id);
+  const seriesCount = new Set(
+    list.itemIds.map((i) => store.state.issues[i]?.seriesName).filter(Boolean),
+  ).size;
+
+  $('#order-name').textContent = list.name;
+  $('#order-sub').textContent = [
+    `${total} issue${total === 1 ? '' : 's'}`,
+    seriesCount ? `${seriesCount} series` : null,
+    list.description || null,
+  ].filter(Boolean).join(' · ');
+
+  const pct = total ? read / total : 0;
+  $('#ring-arc').setAttribute('stroke-dashoffset', String(RING_CIRCUMFERENCE * (1 - pct)));
+  $('#ring-label').textContent = `${read} / ${total}`;
+  $('#ring-wrap').setAttribute('title', `${Math.round(pct * 100)}% read`);
+
+  renderHero();
+  renderShelf();
+  renderRows();
+  renderHydrateButton();
+}
+
+function renderHero() {
+  const id = activeListId();
+  const issue = upNext(store.state, id);
+  const finished = !issue;
+
+  $('#hero').hidden = finished;
+  $('#all-read').hidden = !finished;
+  $('#shelf-sec').hidden = finished;
+  if (finished) return;
+
+  const override = store.state.overrides[issue.issueId];
+  const av = availability(issue, { override });
+  const position = (store.state.lists[id]?.itemIds.indexOf(issue.issueId) ?? -1) + 1;
+  const total = store.state.lists[id]?.itemIds.length ?? 0;
+
+  paintCover($('#hero-img'), $('#hero-fb'), issue, 'portrait_uncanny');
+  $('#hero-img').alt = coverUrl(issue, 'portrait_uncanny') ? `Cover of ${issue.title}` : '';
+  $('#hero-fs').textContent = seriesOnly(issue.seriesName);
+  $('#hero-fn').textContent = issue.number ? `#${issue.number}` : '';
+
+  const bgUrl = settings.covers ? coverUrl(issue, 'detail') : null;
+  $('#hero-bg').style.backgroundImage = bgUrl ? `url("${bgUrl}")` : 'none';
+
+  $('#hero-title').textContent = issue.title;
+
+  const credits = (issue.creators ?? [])
+    .filter((c) => /writer|penciller|artist/i.test(c.role || ''))
+    .slice(0, 3)
+    .map((c) => c.name);
+  $('#hero-by').textContent = [issue.seriesName, credits.join(' & ') || null].filter(Boolean).join(' · ');
+
+  $('#hero-desc').textContent = issue.description
+    || (issue.hydrated ? 'No synopsis is recorded for this issue.' : 'Details have not been fetched yet.');
+
+  const avClass = av.state === STATE.EXPECTED || av.state === STATE.OVERRIDE_AVAILABLE ? 'ok'
+    : av.state === STATE.SCHEDULED ? 'warn' : '';
+  $('#hero-facts').replaceChildren(
+    fact('In Unlimited', `${SHORT[av.state]} ${describe(issue, { override })}`, avClass),
+    fact('Pages', issue.pageCount ? String(issue.pageCount) : '—'),
+    fact('Released', ymd(issue.onSale) || '—'),
+    fact('Position', total ? `${position} of ${total}` : '—'),
+  );
+
+  const info = $('#btn-hero-info');
+  const infoHref = detailUrl(issue);
+  info.hidden = !infoHref;
+  if (infoHref) {
+    info.href = infoHref;
+    info.setAttribute('aria-label', `Open the marvel.com page for ${issue.title}`);
+  } else {
+    info.removeAttribute('href');
+  }
+}
+
+function fact(key, value, cls = '') {
+  return el('div', {}, [
+    el('dt', { text: key }),
+    el('dd', { class: cls || null, text: value }),
+  ]);
+}
+
+function renderShelf() {
+  const id = activeListId();
+  const shelf = $('#shelf');
+  shelf.replaceChildren();
+
+  const upcoming = listItems(store.state, id).filter((it) => !it.read).slice(1, SHELF_SIZE + 1);
+  $('#shelf-sec').hidden = upcoming.length === 0;
+  $('#shelf-note').textContent = `next ${upcoming.length}, in order`;
+
+  for (const it of upcoming) {
+    const img = el('img', { alt: '', loading: 'lazy' });
+    const fb = el('div', { class: 'tf' }, [
+      el('span', { class: 's', text: seriesOnly(it.seriesName) }),
+      el('span', { class: 'n', text: it.number ? `#${it.number}` : '?' }),
+    ]);
+    paintCover(img, fb, it, 'portrait_incredible');
+
+    shelf.append(el('li', { class: 'tile' }, el('button', {
+      type: 'button',
+      title: `Open ${it.title} in Marvel Unlimited`,
+      'aria-label': `Open ${it.title} in Marvel Unlimited`,
+      onclick: (e) => openInReader(it, e),
+    }, [
+      el('div', { class: 'ph' }, [img, fb]),
+      el('div', { class: 'lab' }, [
+        el('b', { text: shortTitle(it.title) }),
+        ymd(it.onSale).slice(0, 4),
+      ]),
+    ])));
+  }
+}
+
+function renderRows() {
+  const id = activeListId();
+  const rows = $('#rows');
+  rows.replaceChildren();
+  const list = store.state.lists[id];
+  if (!list) return;
+
+  const all = listItems(store.state, id);
+  const currentId = upNext(store.state, id)?.issueId ?? null;
+  const items = all.filter((it) => matchesFilter(it));
+
+  const unread = all.length - all.filter((it) => it.read).length;
+  $('#full-count').textContent = `${unread} unread`;
+
+  if (!items.length) {
+    rows.append(el('li', { class: 'rail-hint', text: 'Nothing matches this filter.' }));
+    return;
+  }
+
+  for (const item of items) {
+    const override = item.override;
+    const av = availability(item, { override });
+    const badgeClass = {
+      [STATE.EXPECTED]: 'badge-expected',
+      [STATE.SCHEDULED]: 'badge-scheduled',
+      [STATE.UNKNOWN]: 'badge-unknown',
+      [STATE.OVERRIDE_AVAILABLE]: 'badge-override-available',
+      [STATE.OVERRIDE_UNAVAILABLE]: 'badge-override-unavailable',
+    }[av.state];
+
+    const img = el('img', { alt: '', loading: 'lazy' });
+    const fb = el('div', { class: 'rf', text: item.number ? `#${item.number}` : '?' });
+    paintCover(img, fb, item, 'portrait_incredible');
+
+    rows.append(el('li', {
+      class: `row${item.read ? ' is-read' : ''}${item.issueId === currentId ? ' now' : ''}`,
+    }, [
+      el('button', {
+        type: 'button',
+        class: 'cb',
+        'aria-pressed': String(item.read),
+        'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,
+        onclick: () => {
+          store.update((s) => toggleRead(s, item.issueId));
+          announce(`${item.title} ${isRead(store.state, item.issueId) ? 'marked read' : 'marked unread'}.`);
+        },
+      }, item.read ? '✓' : ''),
+      el('div', { class: 'thumb' }, [img, fb]),
+      el('div', {}, [
+        el('div', { class: 'rt', text: item.title }),
+        el('div', { class: 'rm' }, [
+          item.seriesName ? el('span', { text: seriesOnly(item.seriesName) }) : null,
+          el('span', {
+            class: `badge ${badgeClass}`,
+            title: describe(item, { override }),
+          }, `${SHORT[av.state]} ${av.state === STATE.EXPECTED ? 'Unlimited' : SHORT_LABEL[av.state] ?? 'unknown'}`),
+          !item.hydrated && item.source !== 'manual'
+            ? el('span', { class: 'badge badge-pending', title: 'Details not fetched yet' }, 'details pending')
+            : null,
+          item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,
+          ymd(item.onSale) ? el('span', { text: ymd(item.onSale) }) : null,
+        ]),
+      ]),
+      el('div', { class: 'ract' }, [
+        el('button', { type: 'button', class: 'mini', 'aria-label': `Read ${item.title} in Marvel Unlimited`, onclick: (e) => openInReader(item, e) }, 'Read'),
+        detailUrl(item)
+          ? el('a', { class: 'mini', href: detailUrl(item), target: '_blank', rel: 'noopener noreferrer', 'aria-label': `marvel.com page for ${item.title}` }, 'Info')
+          : null,
+        el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} up`, onclick: () => store.update((s) => moveItem(s, id, item.issueId, -1)) }, '↑'),
+        el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} down`, onclick: () => store.update((s) => moveItem(s, id, item.issueId, 1)) }, '↓'),
+        el('button', { type: 'button', class: 'mini', 'aria-label': `Change availability for ${item.title}`, onclick: () => cycleOverride(item) }, '⚑'),
+        el('button', { type: 'button', class: 'mini mini-danger', 'aria-label': `Remove ${item.title} from this list`, onclick: () => { store.update((s) => removeFromList(s, id, item.issueId)); announce(`Removed ${item.title}.`); } }, '✕'),
+      ]),
+    ]));
+  }
+
+  if (items.length !== all.length) {
+    rows.append(el('li', { class: 'rail-hint', text: `Showing ${items.length} of ${all.length}.` }));
+  }
+}
+
+const SHORT_LABEL = {
+  [STATE.SCHEDULED]: 'scheduled',
+  [STATE.UNKNOWN]: 'unknown',
+  [STATE.OVERRIDE_AVAILABLE]: 'yours: available',
+  [STATE.OVERRIDE_UNAVAILABLE]: 'yours: not in MU',
+};
+
+function matchesFilter(item) {
+  if (filter === 'all') return true;
+  if (filter === 'read') return item.read;
+  if (filter === 'unread') return !item.read;
+  if (filter === 'pending') return !item.hydrated && item.source !== 'manual';
+  if (filter === 'unlimited') {
+    const s = availability(item, { override: item.override }).state;
+    return s === STATE.EXPECTED || s === STATE.OVERRIDE_AVAILABLE;
+  }
+  return true;
+}
+
+function cycleOverride(item) {
+  const next = item.override === 'available' ? 'unavailable' : item.override === 'unavailable' ? null : 'available';
+  store.update((s) => setOverride(s, item.issueId, next));
+  announce(`${item.title}: ${next ? `marked ${next}` : 'override cleared'}.`);
+}
+
+// ------------------------------------------------------------------ shortcuts
+
+function wireShortcuts() {
+  document.addEventListener('keydown', (e) => {
+    if (view !== 'read' || e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = document.activeElement;
+    // Never hijack a key the focused control already means something to.
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT|BUTTON|A|SUMMARY)$/.test(t.tagName))) return;
+    if (!store.state.lists[activeListId()]) return;
+
+    if (e.key === 'Enter') {
+      const issue = upNext(store.state, activeListId());
+      if (!issue) return;
+      e.preventDefault();
+      openInReader(issue, e);
+    } else if (e.key === 'd' || e.key === 'D') {
+      e.preventDefault();
+      markCurrentRead();
+    }
+  });
+}
+
+// ------------------------------------------------------------------ reader deep links
+
+function openInReader(issue, event) {
+  event?.preventDefault();
+  // window.open must happen synchronously inside the gesture. The digitalId lookup, when one
+  // is needed, happens in the opened tab rather than here — see reader.js.
+  const res = openIssueTab(issue);
+  if (!res.ok) {
+    announce(`${issue.title} has no Marvel reference recorded, so it cannot be opened.`);
+    return;
+  }
+  announce(res.target === 'reader'
+    ? `Opening ${issue.title} in Marvel Unlimited in a new tab.`
+    : `Opening ${issue.title} in a new tab and looking up its Unlimited link.`);
+}
+
+// ------------------------------------------------------------------ hydration
+
+function renderHydrateButton() {
+  const pending = pendingIssueIds(store.state).length;
+  $('#btn-hydrate').hidden = pending === 0 || hydrator.active;
+  $('#btn-hydrate').textContent = `Fetch details for ${pending} issue${pending === 1 ? '' : 's'}`;
+  $('#btn-cancel-hydrate').hidden = !hydrator.active;
+}
+
+function renderHydration(status) {
+  const box = $('#hydration-status');
+  if (!status || status.phase === 'idle') { box.hidden = true; renderHydrateButton(); return; }
+  box.hidden = false;
+  if (status.phase === 'running') {
+    box.textContent = `Fetching details ${status.done} of ${status.total}…`;
+  } else if (status.phase === 'cancelled') {
+    box.textContent = `Stopped after ${status.done} of ${status.total}. Progress was kept.`;
+    announce('Detail fetching stopped. Progress was kept.');
+  } else {
+    box.textContent = 'All details fetched.';
+    announce('All issue details fetched.');
+  }
+  renderHydrateButton();
+}
+
+// ------------------------------------------------------------------ add view
+
+function wireAdd() {
+  $('#form-search').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = $('#search-q').value.trim();
+    if (!q) return;
+    notify('#search-results', 'Searching…', 'ok');
+    try {
+      const items = await api.searchIssues(q, { limit: 50 });
+      renderResults('#search-results', items, (it) => `${it.seriesName ?? ''}${it.onSale ? ` · ${ymd(it.onSale)}` : ''}`);
+    } catch (err) {
+      notify('#search-results', friendly(err), 'error');
+    }
+  });
+
+  $('#form-series').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = $('#series-q').value.trim();
+    if (!q) return;
+    notify('#series-results', 'Searching…', 'ok');
+    try {
+      const series = await api.searchSeries(q, { limit: 40 });
+      const box = $('#series-results');
+      box.replaceChildren();
+      if (!series.length) return notify('#series-results', 'No series matched.', 'warn');
+      for (const s of series) {
+        box.append(el('div', { class: 'result' }, [
+          el('div', { class: 'result-main' }, [
+            el('div', { class: 'result-title', text: s.name }),
+            el('div', { class: 'result-meta', text: `${s.issueCount ?? '?'} issues` }),
+          ]),
+          el('button', { type: 'button', class: 'btn', onclick: () => addSeries(s) }, 'Add all issues'),
+        ]));
+      }
+    } catch (err) {
+      notify('#series-results', friendly(err), 'error');
+    }
+  });
+
+  $('#form-creator').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = $('#creator-q').value.trim();
+    if (!q) return;
+    notify('#creator-results', 'Searching…', 'ok');
+    try {
+      const creators = await api.searchCreators(q, { limit: 40 });
+      const box = $('#creator-results');
+      box.replaceChildren();
+      if (!creators.length) return notify('#creator-results', 'No creators matched.', 'warn');
+      for (const c of creators) {
+        box.append(el('div', { class: 'result' }, [
+          el('div', { class: 'result-main' }, [
+            el('div', { class: 'result-title', text: c.name }),
+            el('div', { class: 'result-meta', text: `${c.issueCount ?? '?'} issues` }),
+          ]),
+          el('button', { type: 'button', class: 'btn btn-g', onclick: () => addCreator(c) }, 'Add all issues'),
+        ]));
+      }
+    } catch (err) {
+      notify('#creator-results', friendly(err), 'error');
+    }
+  });
+
+  $('#form-import').addEventListener('submit', (e) => { e.preventDefault(); doImport(); });
+  $('#form-manual').addEventListener('submit', (e) => { e.preventDefault(); doManual(); });
+}
+
+function renderResults(sel, items, metaFn) {
+  const box = $(sel);
+  box.replaceChildren();
+  if (!items.length) return notify(sel, 'Nothing matched that search.', 'warn');
+  for (const it of items) {
+    box.append(el('div', { class: 'result' }, [
+      el('div', { class: 'result-main' }, [
+        el('div', { class: 'result-title', text: it.title }),
+        el('div', { class: 'result-meta', text: metaFn(it) }),
+      ]),
+      el('button', { type: 'button', class: 'btn', onclick: () => addToActive([it], `Added ${it.title}.`) }, 'Add'),
+    ]));
+  }
+}
+
+function ensureList(name) {
+  let id = activeListId();
+  if (!id) {
+    store.update((s) => createList(s, { name }));
+    id = store.state.listOrder[store.state.listOrder.length - 1];
+    store.update((s) => setActive(s, id));
+  }
+  return id;
+}
+
+function addToActive(issues, message, { sort = false } = {}) {
+  const id = ensureList('My reading order');
+  let added = 0, skipped = 0;
+  store.update((s) => {
+    const res = addIssuesToList(s, id, issues, { sort });
+    added = res.added; skipped = res.skipped;
+    return res.state;
+  });
+  const msg = `${message} ${added} added${skipped ? `, ${skipped} already in the list` : ''}.`;
+  announce(msg);
+  return { added, skipped };
+}
+
+async function addSeries(series) {
+  notify('#series-results', `Loading all issues of ${series.name}…`, 'ok');
+  try {
+    const issues = await api.seriesIssues(series.id, {
+      onProgress: ({ loaded, total }) => announce(`Loaded ${loaded}${total ? ` of ${total}` : ''} issues…`),
+    });
+    // The API returns series issues newest-first; reading order needs oldest-first.
+    const sorted = [...issues].sort(compareIssues);
+    const { added, skipped } = addToActive(sorted, `${series.name}:`);
+    notify('#series-results', `${series.name}: ${added} issues added${skipped ? `, ${skipped} skipped as duplicates` : ''}.`, 'ok');
+  } catch (err) {
+    notify('#series-results', friendly(err), 'error');
+  }
+}
+
+async function addCreator(creator) {
+  notify('#creator-results', `Loading issues credited to ${creator.name}…`, 'ok');
+  try {
+    const issues = await api.creatorIssues(creator.id, {
+      onProgress: ({ loaded, total }) => announce(`Loaded ${loaded}${total ? ` of ${total}` : ''} issues…`),
+    });
+    const sorted = [...issues].sort(compareIssues);
+    const { added, skipped } = addToActive(sorted, `${creator.name}:`);
+    notify('#creator-results',
+      `${creator.name}: ${added} added${skipped ? `, ${skipped} duplicates skipped` : ''}. ` +
+      'Creator records omit Unlimited dates, so availability shows as unknown until details are fetched.',
+      'ok');
+  } catch (err) {
+    notify('#creator-results', friendly(err), 'error');
+  }
+}
+
+function doImport() {
+  const text = $('#import-text').value;
+  if (!text.trim()) return notify('#import-report', 'Paste a reading order first.', 'warn');
+
+  const { entries, unresolved, headings } = parseChecklist(text);
+  const box = $('#import-report');
+  box.replaceChildren();
+
+  if (!entries.length && !unresolved.length) {
+    return notify('#import-report', 'Could not find any issues in that text.', 'warn');
+  }
+
+  const intoNew = $('#import-new-list').checked;
+  let listId;
+  if (intoNew) {
+    const name = headings[0] || `Imported ${new Date().toLocaleDateString()}`;
+    store.update((s) => createList(s, { name, description: 'Imported from a pasted reading order.' }));
+    listId = store.state.listOrder[store.state.listOrder.length - 1];
+    store.update((s) => setActive(s, listId));
+  } else {
+    listId = ensureList('My reading order');
+  }
+
+  // Markdown carries only a title and an id, so metadata starts as pending and is
+  // filled in later rather than guessed at now.
+  const staged = entries.map((e) => ({
+    issueId: e.issueId,
+    title: e.title,
+    url: e.url,
+    source: 'import',
+    hydrated: false,
+  }));
+
+  let added = 0, skipped = 0;
+  store.update((s) => {
+    const res = addIssuesToList(s, listId, staged, {});
+    added = res.added; skipped = res.skipped;
+    let next = res.state;
+    for (const e of entries) if (e.read) next = markRead(next, e.issueId, true);
+    return next;
+  });
+
+  box.append(el('p', { class: 'notice notice-ok', text: `Imported ${added} issue${added === 1 ? '' : 's'}${skipped ? `, ${skipped} already present` : ''}. Details will be fetched in the background.` }));
+
+  if (unresolved.length) {
+    box.append(el('p', { class: 'notice notice-warn', text: `${unresolved.length} line${unresolved.length === 1 ? '' : 's'} had no Marvel issue link. They are listed below rather than dropped — resolve each one deliberately.` }));
+    const wrap = el('div', { class: 'results' });
+    for (const u of unresolved) wrap.append(unresolvedRow(u, listId));
+    box.append(wrap);
+  }
+
+  announce(`Imported ${added} issues.`);
+  hydrator.start(listId);
+}
+
+function unresolvedRow(entry, listId) {
+  const row = el('div', { class: 'result' });
+  const main = el('div', { class: 'result-main' }, [
+    el('div', { class: 'result-title', text: entry.title }),
+    el('div', { class: 'result-meta', text: 'No issue link — search to resolve' }),
+  ]);
+  const btn = el('button', { type: 'button', class: 'btn btn-g' }, 'Find match');
+  btn.addEventListener('click', async () => {
+    btn.disabled = true;
+    try {
+      const candidates = await api.searchIssues(entry.title, { limit: 25 });
+      const res = resolveUniqueExact(entry.title, candidates);
+      if (res.status === 'resolved') {
+        // Auto-accept only a single exact normalized match. Anything else is a choice
+        // for you to make, because silently picking result #1 files the wrong comic.
+        store.update((s) => addIssuesToList(s, listId, [res.match], {}).state);
+        if (entry.read) store.update((s) => markRead(s, res.match.issueId, true));
+        row.replaceChildren(el('p', { class: 'notice notice-ok', text: `Matched: ${res.match.title}` }));
+        announce(`Matched ${entry.title}.`);
+        return;
+      }
+      const choices = el('div', { class: 'results' });
+      const list = res.matches.slice(0, 8);
+      if (!list.length) {
+        row.replaceChildren(el('p', { class: 'notice notice-warn', text: `No candidates found for “${entry.title}”. Add it by hand if you still want to track it.` }));
+        return;
+      }
+      choices.append(el('p', { class: 'rail-hint', text: `Pick the right issue for “${entry.title}”:` }));
+      for (const c of list) {
+        choices.append(el('div', { class: 'result' }, [
+          el('div', { class: 'result-main' }, [
+            el('div', { class: 'result-title', text: c.title }),
+            el('div', { class: 'result-meta', text: `${c.seriesName ?? ''}${c.onSale ? ` · ${ymd(c.onSale)}` : ''}` }),
+          ]),
+          el('button', {
+            type: 'button', class: 'btn',
+            onclick: () => {
+              store.update((s) => addIssuesToList(s, listId, [c], {}).state);
+              if (entry.read) store.update((s) => markRead(s, c.issueId, true));
+              row.replaceChildren(el('p', { class: 'notice notice-ok', text: `Added ${c.title}.` }));
+              announce(`Added ${c.title}.`);
+            },
+          }, 'This one'),
+        ]));
+      }
+      row.replaceChildren(choices);
+    } catch (err) {
+      btn.disabled = false;
+      row.append(el('p', { class: 'notice notice-error', text: friendly(err) }));
+    }
+  });
+  row.append(main, btn);
+  return row;
+}
+
+function doManual() {
+  const title = $('#manual-title').value.trim();
+  const url = $('#manual-url').value.trim();
+  if (!title) return notify('#manual-report', 'A title is required.', 'warn');
+  if (url && !isSafeMarvelUrl(url)) {
+    return notify('#manual-report', 'That URL is not a marvel.com address. Leave it blank if you do not have one.', 'error');
+  }
+
+  const issueId = issueIdFromUrl(url) ?? -Date.now();
+  const listId = ensureList('My reading order');
+  store.update((s) => addIssuesToList(s, listId, [{
+    issueId,
+    title,
+    url: url || null,
+    source: 'manual',
+    hydrated: true,
+  }], {}).state);
+
+  $('#manual-title').value = '';
+  $('#manual-url').value = '';
+  notify('#manual-report', `Added “${title}”. Availability shows as unknown because it is not in the metadata snapshot.`, 'ok');
+}
+
+// ------------------------------------------------------------------ curated orders
+
+async function importCurated(file) {
+  try {
+    // Served from our own origin, so this works with no internet connection.
+    const res = await fetch(`./data/${file}`, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const order = await res.json();
+
+    store.update((s) => createList(s, { name: order.name, description: order.description }));
+    const listId = store.state.listOrder[store.state.listOrder.length - 1];
+    let added = 0;
+    store.update((s) => {
+      const r = addIssuesToList(s, listId, order.items.map((i) => ({ ...i, source: 'curated', hydrated: true })), {});
+      added = r.added;
+      return r.state;
+    });
+    store.update((s) => setActive(s, listId));
+    showView('read');
+    announce(`Imported ${order.name}: ${added} issues. Any issues you had already read stay read.`);
+  } catch (err) {
+    alert(`Could not load that curated order: ${err.message}`);
+  }
+}
+
+// ------------------------------------------------------------------ progress
+
+function renderProgress() {
+  const box = $('#series-progress');
+  const rows = seriesProgress(store.state);
+  box.replaceChildren();
+  if (!rows.length) {
+    box.append(el('p', { class: 'rail-hint', text: 'Nothing tracked yet.' }));
+    return;
+  }
+  for (const r of rows) {
+    const pct = r.tracked ? Math.round((r.read / r.tracked) * 100) : 0;
+    box.append(el('div', { class: 'result' }, [
+      el('div', { class: 'result-main' }, [
+        el('div', { class: 'result-title', text: r.seriesName }),
+        el('div', { class: 'result-meta', text: `${r.read} of ${r.tracked} tracked issues read (${pct}%)` }),
+      ]),
+      el('progress', { max: String(Math.max(1, r.tracked)), value: String(r.read) }),
+    ]));
+  }
+}
+
+// ------------------------------------------------------------------ data view
+
+function exportMarkdown() {
+  const id = activeListId();
+  const list = store.state.lists[id];
+  if (!list) return notify('#restore-report', 'No list is selected.', 'warn');
+  const md = serializeChecklist({
+    name: list.name,
+    description: list.description,
+    items: listItems(store.state, id),
+  });
+  download(`${slug(list.name)}.md`, md, 'text/markdown');
+  announce('Markdown checklist downloaded.');
+}
+
+function wireData() {
+  $('#api-base').value = settings.apiBase;
+  $('#opt-covers').addEventListener('change', (e) => setCovers(e.target.checked));
+
+  $('#btn-export-json').addEventListener('click', () => {
+    download('marvel-reading-tracker-backup.json', JSON.stringify(exportBackup(store.state), null, 2), 'application/json');
+    announce('Backup downloaded.');
+  });
+
+  $('#btn-export-md-2').addEventListener('click', exportMarkdown);
+
+  $('#restore-file').addEventListener('change', async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const text = await file.text();
+    const res = store.restore(text);
+    if (res.ok) {
+      notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once.', 'ok');
+      $('#btn-undo-restore').hidden = false;
+    } else {
+      notify('#restore-report', `Restore refused, nothing was changed: ${res.errors.join(' ')}`, 'error');
+    }
+    e.target.value = '';
+  });
+
+  $('#btn-undo-restore').addEventListener('click', () => {
+    const res = store.undoRestore();
+    notify('#restore-report', res.ok ? 'Restore undone.' : `Could not undo: ${res.errors.join(' ')}`, res.ok ? 'ok' : 'error');
+  });
+
+  $('#form-settings').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const value = $('#api-base').value.trim().replace(/\/+$/, '');
+    try {
+      const u = new URL(value);
+      if (u.protocol !== 'https:' && u.hostname !== '127.0.0.1' && u.hostname !== 'localhost') {
+        throw new Error('Use https, or a local address.');
+      }
+    } catch (err) {
+      return notify('#restore-report', `That API URL is not usable: ${err.message}`, 'error');
+    }
+    settings.apiBase = value;
+    saveSettings();
+    cache = new ResponseCache({ baseUrl: value });
+    api = new MarvelApi({ baseUrl: value, limiter, cache, onStatus: onApiStatus });
+    hydrator.api = api;
+    notify('#restore-report', 'API URL saved. Cached data from the previous URL is kept separate.', 'ok');
+    checkHealth();
+  });
+
+  $('#btn-clear-cache').addEventListener('click', async () => {
+    await cache.clear();
+    await refreshCacheUsage();
+    notify('#restore-report', 'Cached metadata cleared. Lists and reading progress are untouched.', 'ok');
+  });
+
+  $('#btn-wipe').addEventListener('click', () => {
+    if (!confirm('Erase every list and all reading progress in this browser? Export a backup first if you are not sure.')) return;
+    store.update(() => createEmptyState());
+    cache.clear();
+    announce('All local data erased.');
+  });
+}
+
+async function refreshCacheUsage() {
+  try {
+    const u = await cache.usage();
+    $('#cache-usage').textContent = u.count
+      ? `${u.count} cached responses, about ${(u.bytes / 1024 / 1024).toFixed(2)} MB of a ${(u.budget / 1024 / 1024).toFixed(0)} MB budget.`
+      : 'Nothing cached yet.';
+  } catch {
+    $('#cache-usage').textContent = 'Cache unavailable in this browser. The app still works, just with more network requests.';
+  }
+}
+
+function download(filename, text, type) {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const a = el('a', { href: url, download: filename });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function slug(s) {
+  return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'list';
+}
+
+// ------------------------------------------------------------------ status
+
+async function checkHealth() {
+  const pill = $('#api-status');
+  pill.className = 'pill pill-muted';
+  pill.textContent = 'Checking API…';
+  try {
+    const h = await api.health();
+    pill.className = 'pill pill-ok';
+    pill.textContent = `API OK · ${Number(h.issue_count ?? 0).toLocaleString()} issues`;
+  } catch {
+    pill.className = 'pill pill-warn';
+    pill.textContent = 'API unreachable — lists and progress still work';
+  }
+}
+
+function onApiStatus(s) {
+  if (s?.kind === 'backoff') {
+    announce(`The metadata service asked us to slow down. Waiting ${Math.round(s.ms / 1000)} seconds.`);
+  }
+  renderQueue();
+}
+
+function renderQueue() {
+  const pill = $('#queue-status');
+  const depth = limiter.depth;
+  pill.hidden = depth === 0;
+  pill.textContent = depth ? `${depth} request${depth === 1 ? '' : 's'} queued` : '';
+}
+
+function friendly(err) {
+  if (err?.name === 'AbortError') return 'Cancelled.';
+  if (err?.status === 404) return 'Not found in the metadata snapshot.';
+  if (err?.transient) return 'The metadata service is busy. Try again in a moment.';
+  if (err instanceof TypeError) return 'Could not reach the metadata service. Check your connection — your saved lists still work.';
+  return err?.message || 'Something went wrong.';
+}
+
+// ------------------------------------------------------------------ render
+
+function renderAll() {
+  renderRail();
+  renderReading();
+  renderProgress();
+  renderQueue();
+  const list = store.state.lists[activeListId()];
+  $('#add-target').textContent = list
+    ? `Anything you add goes into “${list.name}”.`
+    : 'Anything you add will start a new list.';
+}
+
+setInterval(renderQueue, 1000);

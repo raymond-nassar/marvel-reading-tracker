@@ -1,0 +1,6422 @@
+{
+  "id": "hickman-full",
+  "name": "Hickman to Secret Wars — full",
+  "description": "The complete Hickman saga including tie-ins, ending with Secret Wars (2015).",
+  "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
+  "sourceLicense": "MIT (emreparker/marvel-comics)",
+  "generatedAt": "2026-08-04T06:14:48.703Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 219,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 23648,
+      "title": "Secret Warriors (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23648/secret_warriors_2009_1",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-02-04T00:00:00+0000",
+      "mu": "2009-02-04T00:00:00+0000",
+      "digitalId": 13394,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/51f68aaba7c39",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23812,
+      "title": "Secret Warriors (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/23812/secret_warriors_2009_2",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-03-04T00:00:00+0000",
+      "mu": "2009-03-04T00:00:00+0000",
+      "digitalId": 13561,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/5a8c4e45ba54a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24002,
+      "title": "Secret Warriors (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/24002/secret_warriors_2009_3",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-04-01T00:00:00+0000",
+      "mu": "2010-09-07T00:00:00+0000",
+      "digitalId": 15542,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/a0/5a8c58bb6fe5a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24208,
+      "title": "Secret Warriors (2009) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/24208/secret_warriors_2009_4",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-05-13T00:00:00+0000",
+      "mu": "2009-05-13T00:00:00+0000",
+      "digitalId": 15616,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/5a8c613ca8955",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26287,
+      "title": "Secret Warriors (2009) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/26287/secret_warriors_2009_5",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2009-06-24T00:00:00+0000",
+      "digitalId": 12720,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5a8c663f0b2c6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26288,
+      "title": "Secret Warriors (2009) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/26288/secret_warriors_2009_6",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-07-29T00:00:00+0000",
+      "mu": "2009-07-29T00:00:00+0000",
+      "digitalId": 14874,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/4f6752d5872ad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26289,
+      "title": "Secret Warriors (2009) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/26289/secret_warriors_2009_7",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-08-26T00:00:00+0000",
+      "mu": "2010-01-27T00:00:00+0000",
+      "digitalId": 13781,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/5a8c72aea559c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26290,
+      "title": "Secret Warriors (2009) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/26290/secret_warriors_2009_8",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-09-30T00:00:00+0000",
+      "mu": "2010-11-02T00:00:00+0000",
+      "digitalId": 13474,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/4f677cf58d50c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26291,
+      "title": "Secret Warriors (2009) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/26291/secret_warriors_2009_9",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2010-11-09T00:00:00+0000",
+      "digitalId": 17225,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/4f677e77a5a48",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27422,
+      "title": "Dark Reign: The List - Secret Warriors (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/27422/dark_reign_the_list_-_secret_warriors_2009_1",
+      "seriesId": 8751,
+      "seriesName": "Dark Reign: The List - Secret Warriors (2009)",
+      "onSale": "2009-10-07T00:00:00+0000",
+      "mu": "2011-03-01T10:09:08+0000",
+      "digitalId": 16856,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/30/5b5b3caddbc88",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26283,
+      "title": "Secret Warriors (2009) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/26283/secret_warriors_2009_10",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-11-25T00:00:00+0000",
+      "mu": "2011-02-15T00:00:00+0000",
+      "digitalId": 13629,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/4f67809f03e81",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26284,
+      "title": "Secret Warriors (2009) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/26284/secret_warriors_2009_11",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2009-12-23T00:00:00+0000",
+      "mu": "2010-09-09T00:00:00+0000",
+      "digitalId": 14873,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/51f68aa198b78",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26285,
+      "title": "Secret Warriors (2009) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/26285/secret_warriors_2009_12",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-01-27T00:00:00+0000",
+      "mu": "2010-09-16T00:00:00+0000",
+      "digitalId": 14867,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/f0/4f678969265a9",
+        "ext": "jpg"
+      },
+      "description": "WAKE THE BEAST PART 2 Nick Fury quietly moves his forces into place as the war between Leviathan and Hydra kicks into gear. Also, the long-awaited origin of the mysterious Hive and the identity of Stonewall's father revealed!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30174,
+      "title": "Secret Warriors (2009) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/30174/secret_warriors_2009_13",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-02-24T00:00:00+0000",
+      "mu": "2010-09-23T00:00:00+0000",
+      "digitalId": 13924,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/5a8d7f0c618e5",
+        "ext": "jpg"
+      },
+      "description": "WAKE THE BEAST PART 3 Origins, changes and an ending! This issue has them all! The story of how Strucker and Kraken rebuilt HYDRA. Fury's new direction for the kids. And one of the team members reaches the end of the road.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30175,
+      "title": "Secret Warriors (2009) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/30175/secret_warriors_2009_14",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-03-24T00:00:00+0000",
+      "mu": "2010-09-30T00:00:00+0000",
+      "digitalId": 14167,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/5a8d85635bd78",
+        "ext": "jpg"
+      },
+      "description": "WAKE THE BEAST PART 4 The secret history of Contessa Valentina Allegra de Fontaine: How did Nick Fury's significant other end up working for the hated HYDRA and what's the even more sinister dark secret buried deep in her past?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33699,
+      "title": "Secret Warriors (2009) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/33699/secret_warriors_2009_15",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-04-28T00:00:00-0400",
+      "mu": "2023-06-02T14:37:00-0400",
+      "digitalId": 61565,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/0/04/5a8d8df79ab4d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "FIRM 15",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30177,
+      "title": "Secret Warriors (2009) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/30177/secret_warriors_2009_16",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-05-26T00:00:00+0000",
+      "mu": "2011-01-11T00:00:00+0000",
+      "digitalId": 14749,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/5a8d96114784a",
+        "ext": "jpg"
+      },
+      "description": "WAKE THE BEAST CONCLUSION Leviathan and Hydra go to war. A betrayal from deep within Fury's organization. More clues to the Zodiac event. And the final fate of the man called Kraken.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32930,
+      "title": "Siege: Secret Warriors (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/32930/siege_secret_warriors_2010_1",
+      "seriesId": 9757,
+      "seriesName": "Siege: Secret Warriors (2010)",
+      "onSale": "2010-04-28T00:00:00+0000",
+      "mu": "2011-01-12T00:00:00+0000",
+      "digitalId": 14418,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/517e8034bd15a",
+        "ext": "jpg"
+      },
+      "description": "During the battle at Asgard, the Sentry - under command of Norman Osborn - killed Ares. Now Phobos must avenge his fallen father, begging the question: will any survive his vengeance?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Vitti",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30714,
+      "title": "Secret Warriors (2009) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/30714/secret_warriors_2009_17",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-06-23T00:00:00+0000",
+      "mu": "2011-02-23T15:54:04+0000",
+      "digitalId": 15001,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/5a8d9d81df5cc",
+        "ext": "jpg"
+      },
+      "description": "THE LAST RIDE OF THE HOWLING COMMANDOS PART 1 Relive the glory days of WWII during the reunion of Steve Rogers, Nick Fury and the remaining members of the US's most elite Special Unit from the Greatest Generation!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Alessandro Vitti",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30178,
+      "title": "Secret Warriors (2009) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/30178/secret_warriors_2009_18",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-08-04T00:00:00+0000",
+      "mu": "2011-08-01T00:00:00+0000",
+      "digitalId": 15530,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/50/4f6796327c75c",
+        "ext": "jpg"
+      },
+      "description": "THE LAST RIDE OF THE HOWLING COMMANDOS PART 2 The reunion dinner between Nick Fury and his World War II brothers in arms continues against the backdrop of a suicide mission deep within enemy territory.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30179,
+      "title": "Secret Warriors (2009) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/30179/secret_warriors_2009_19",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-08-25T00:00:00+0000",
+      "mu": "2011-08-09T00:00:00+0000",
+      "digitalId": 15801,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/4f6799e4612c3",
+        "ext": "jpg"
+      },
+      "description": "THE LAST RIDE OF THE HOWLING COMMANDOS CONCLUSION See Steve Rogers and the Howling Commandos kick some tail during WWII!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "FIRM 15",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30180,
+      "title": "Secret Warriors (2009) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/30180/secret_warriors_2009_20",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-09-29T00:00:00+0000",
+      "mu": "2011-08-16T00:00:00+0000",
+      "digitalId": 16291,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/f0/5a8dae719efd6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30181,
+      "title": "Secret Warriors (2009) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/30181/secret_warriors_2009_21",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-10-27T00:00:00+0000",
+      "mu": "2011-10-14T00:00:00+0000",
+      "digitalId": 16996,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/4f79bef17b050",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Vitti",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Mirko Colak",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30182,
+      "title": "Secret Warriors (2009) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/30182/secret_warriors_2009_22",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-11-24T00:00:00+0000",
+      "mu": "2011-11-03T00:00:00+0000",
+      "digitalId": 17922,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/4f79c2b340662",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Vitti",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30183,
+      "title": "Secret Warriors (2009) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/30183/secret_warriors_2009_23",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2010-12-29T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 18696,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/4f79c73bb28c6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Vitti",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36492,
+      "title": "Secret Warriors (2009) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/36492/secret_warriors_2009_25",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2011-03-02T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 19857,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/51f68a9595f5b",
+        "ext": "jpg"
+      },
+      "description": "WHEELS WITHING WHEELS PART 2 What ties Hydra, The Howling Commandos, and Leviathan together? How did Nick Fury, Dum Dum Dugan, Baron Von Strucker, Kraken and Orion become part of the same mysterious organization?",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alessandro Vitti",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36491,
+      "title": "Secret Warriors (2009) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/36491/secret_warriors_2009_26",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2011-04-13T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 20475,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/20/51f68a8968869",
+        "ext": "jpg"
+      },
+      "description": "WHEELS WITHIN WHEELS PART 3 Two men in a room. The history of Hydra, the history of S.H.I.E.LD.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Vitti",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Renaud",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36493,
+      "title": "Secret Warriors (2009) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/36493/secret_warriors_2009_27",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2011-05-25T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 21245,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/51f68a8062d4f",
+        "ext": "jpg"
+      },
+      "description": "WHEELS WITHIN WHEELS PART 4 The penultimate issues of Secret Warriors!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Vitti",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Renaud",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36494,
+      "title": "Secret Warriors (2009) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/36494/secret_warriors_2009_28",
+      "seriesId": 6796,
+      "seriesName": "Secret Warriors (2009 - 2011)",
+      "onSale": "2011-07-27T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 22892,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/51f68a7199ba1",
+        "ext": "jpg"
+      },
+      "description": "WHEELS WITHIN WHEELS PART 5 Series finale! What will happen to Nick Fury? Who lives? Who dies? What is the stunning new direction for the remnants of S.H.I.E.L.D. in the Marvel Universe?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Vitti",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Renaud",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 31599,
+      "title": "S.H.I.E.L.D. (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/31599/shield_2010_1",
+      "seriesId": 8821,
+      "seriesName": "S.H.I.E.L.D. (2010 - 2011)",
+      "onSale": "2010-04-07T00:00:00+0000",
+      "mu": "2011-01-18T00:00:00+0000",
+      "digitalId": 14250,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/b0/5c5894693df39",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30509,
+      "title": "S.H.I.E.L.D. (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/30509/shield_2010_2",
+      "seriesId": 8821,
+      "seriesName": "S.H.I.E.L.D. (2010 - 2011)",
+      "onSale": "2010-06-09T00:00:00+0000",
+      "mu": "2011-01-28T00:00:00+0000",
+      "digitalId": 14887,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/5c58a263b6d40",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30510,
+      "title": "S.H.I.E.L.D. (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/30510/shield_2010_3",
+      "seriesId": 8821,
+      "seriesName": "S.H.I.E.L.D. (2010 - 2011)",
+      "onSale": "2010-08-04T00:00:00+0000",
+      "mu": "2011-07-26T00:00:00+0000",
+      "digitalId": 15508,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/b0/5c58aaaa55db1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30511,
+      "title": "S.H.I.E.L.D. (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/30511/shield_2010_4",
+      "seriesId": 8821,
+      "seriesName": "S.H.I.E.L.D. (2010 - 2011)",
+      "onSale": "2010-10-06T00:00:00+0000",
+      "mu": "2011-10-14T00:00:00+0000",
+      "digitalId": 16517,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/20/5c59989907494",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30512,
+      "title": "S.H.I.E.L.D. (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/30512/shield_2010_5",
+      "seriesId": 8821,
+      "seriesName": "S.H.I.E.L.D. (2010 - 2011)",
+      "onSale": "2010-12-29T00:00:00+0000",
+      "mu": "2013-04-08T16:23:19+0000",
+      "digitalId": 18683,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/5c59a03af3666",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30774,
+      "title": "S.H.I.E.L.D. (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/30774/shield_2010_6",
+      "seriesId": 8821,
+      "seriesName": "S.H.I.E.L.D. (2010 - 2011)",
+      "onSale": "2011-02-16T00:00:00+0000",
+      "mu": "2017-09-21T00:00:00+0000",
+      "digitalId": 19298,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/5c59adc71e3d0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38177,
+      "title": "S.H.I.E.L.D. (2011) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/38177/shield_2011_1",
+      "seriesId": 13744,
+      "seriesName": "S.H.I.E.L.D. (2011 - 2018)",
+      "onSale": "2011-06-01T00:00:00+0000",
+      "mu": "2012-03-23T00:00:00+0000",
+      "digitalId": 21293,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/5c59c10b90fa9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38179,
+      "title": "S.H.I.E.L.D. (2011) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/38179/shield_2011_2",
+      "seriesId": 13744,
+      "seriesName": "S.H.I.E.L.D. (2011 - 2018)",
+      "onSale": "2011-08-03T00:00:00+0000",
+      "mu": "2012-03-29T00:00:00+0000",
+      "digitalId": 23165,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/60/5c59c988e6107",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38180,
+      "title": "S.H.I.E.L.D. (2011) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/38180/shield_2011_3",
+      "seriesId": 13744,
+      "seriesName": "S.H.I.E.L.D. (2011 - 2018)",
+      "onSale": "2011-10-12T00:00:00+0000",
+      "mu": "2012-08-02T00:00:00+0000",
+      "digitalId": 24264,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/30/5c59e0aa4ffb3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38178,
+      "title": "S.H.I.E.L.D. (2011) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/38178/shield_2011_4",
+      "seriesId": 13744,
+      "seriesName": "S.H.I.E.L.D. (2011 - 2018)",
+      "onSale": "2011-12-14T00:00:00+0000",
+      "mu": "2012-08-02T00:00:00+0000",
+      "digitalId": 25051,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/b0/5c59ea987c6f7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gerald Parel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23843,
+      "title": "Dark Reign: Fantastic Four (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23843/dark_reign_fantastic_four_2009_1",
+      "seriesId": 7000,
+      "seriesName": "Dark Reign: Fantastic Four (2009)",
+      "onSale": "2009-03-04T00:00:00+0000",
+      "mu": "2009-03-04T00:00:00+0000",
+      "digitalId": 12993,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/5b5a21fa860b7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lorenzo Ruggiero",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Simone Bianchi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24043,
+      "title": "Dark Reign: Fantastic Four (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/24043/dark_reign_fantastic_four_2009_2",
+      "seriesId": 7000,
+      "seriesName": "Dark Reign: Fantastic Four (2009)",
+      "onSale": "2009-04-01T00:00:00+0000",
+      "mu": "2009-04-01T00:00:00+0000",
+      "digitalId": 15552,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/5b5a26927ffe1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lorenzo Ruggiero",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pasqual Ferry",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24245,
+      "title": "Dark Reign: Fantastic Four (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/24245/dark_reign_fantastic_four_2009_3",
+      "seriesId": 7000,
+      "seriesName": "Dark Reign: Fantastic Four (2009)",
+      "onSale": "2009-05-20T00:00:00+0000",
+      "mu": "2009-05-20T00:00:00+0000",
+      "digitalId": 15301,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/5b5a26e915163",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lorenzo Ruggiero",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pasqual Ferry",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24834,
+      "title": "Dark Reign: Fantastic Four (2009) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/24834/dark_reign_fantastic_four_2009_4",
+      "seriesId": 7000,
+      "seriesName": "Dark Reign: Fantastic Four (2009)",
+      "onSale": "2009-06-17T00:00:00+0000",
+      "mu": "2009-06-17T00:00:00+0000",
+      "digitalId": 15118,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/5b5a296835ef5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lorenzo Ruggiero",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pasqual Ferry",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24835,
+      "title": "Dark Reign: Fantastic Four (2009) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/24835/dark_reign_fantastic_four_2009_5",
+      "seriesId": 7000,
+      "seriesName": "Dark Reign: Fantastic Four (2009)",
+      "onSale": "2009-07-22T00:00:00+0000",
+      "mu": "2009-07-22T00:00:00+0000",
+      "digitalId": 15838,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/30/5b5a2befc4df5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lorenzo Ruggiero",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pasqual Ferry",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25182,
+      "title": "Fantastic Four (1998) #570",
+      "number": "570",
+      "url": "https://www.marvel.com/comics/issue/25182/fantastic_four_1998_570",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2009-08-26T00:00:00+0000",
+      "mu": "2009-08-26T00:00:00+0000",
+      "digitalId": 13541,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/51db29bc24a98",
+        "ext": "jpg"
+      },
+      "description": "The First Issue of Jonathan Hickman's run on Fantastic Four.  It's adventure, it's family, it's tough questions in dark times...See what happens when Reed Richards tries to SOLVE EVERYTHING.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Dale Eaglesham",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25183,
+      "title": "Fantastic Four (1998) #571",
+      "number": "571",
+      "url": "https://www.marvel.com/comics/issue/25183/fantastic_four_1998_571",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2009-09-23T00:00:00+0000",
+      "mu": "2009-11-03T00:00:00+0000",
+      "digitalId": 13542,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/51db29b943d55",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Dale Eaglesham",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25184,
+      "title": "Fantastic Four (1998) #572",
+      "number": "572",
+      "url": "https://www.marvel.com/comics/issue/25184/fantastic_four_1998_572",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2010-04-29T15:40:37+0000",
+      "digitalId": 14456,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/51db29a95ec69",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Dale Eaglesham",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25185,
+      "title": "Fantastic Four (1998) #573",
+      "number": "573",
+      "url": "https://www.marvel.com/comics/issue/25185/fantastic_four_1998_573",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2009-11-25T00:00:00+0000",
+      "mu": "2010-10-28T14:51:27+0000",
+      "digitalId": 14457,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/90/51db29a7d1d00",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Currie",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Dale Eaglesham",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25186,
+      "title": "Fantastic Four (1998) #574",
+      "number": "574",
+      "url": "https://www.marvel.com/comics/issue/25186/fantastic_four_1998_574",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2009-12-23T00:00:00+0000",
+      "mu": "2010-04-29T15:42:21+0000",
+      "digitalId": 14458,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/5ad8ac8ad8131",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Currie",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Neil Edwards",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25187,
+      "title": "Fantastic Four (1998) #575",
+      "number": "575",
+      "url": "https://www.marvel.com/comics/issue/25187/fantastic_four_1998_575",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-01-27T00:00:00+0000",
+      "mu": "2010-11-12T00:00:00+0000",
+      "digitalId": 13716,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/51db2ce101887",
+        "ext": "jpg"
+      },
+      "description": "PRIME ELEMENTS PART 1 Witness the return of the Mole Man and see the Fantastic Four discover the world's smartest Moloid!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Dale Eaglesham",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25188,
+      "title": "Fantastic Four (1998) #576",
+      "number": "576",
+      "url": "https://www.marvel.com/comics/issue/25188/fantastic_four_1998_576",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-02-24T00:00:00+0000",
+      "mu": "2010-11-26T00:00:00+0000",
+      "digitalId": 13923,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/51db2cd16e956",
+        "ext": "jpg"
+      },
+      "description": "PRIME ELEMENTS PART 2 The Fantastic Four head to the bottom of the world to discover the mystery of the Vostok Station!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29597,
+      "title": "Fantastic Four (1998) #577",
+      "number": "577",
+      "url": "https://www.marvel.com/comics/issue/29597/fantastic_four_1998_577",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-03-31T00:00:00+0000",
+      "mu": "2010-12-17T00:00:00+0000",
+      "digitalId": 14229,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/b0/51db2cd00ea78",
+        "ext": "jpg"
+      },
+      "description": "PRIME ELEMENTS PART 3 The Fantastic Four delve into the past of the Inhumans! Behold, the Universal Inhumans!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Dale Eaglesham",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32548,
+      "title": "Fantastic Four (1998) #578",
+      "number": "578",
+      "url": "https://www.marvel.com/comics/issue/32548/fantastic_four_1998_578",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-04-28T00:00:00+0000",
+      "mu": "2010-12-13T15:18:58+0000",
+      "digitalId": 14425,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/51db2cc18d3b6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dale Eaglesham",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29599,
+      "title": "Fantastic Four (1998) #579",
+      "number": "579",
+      "url": "https://www.marvel.com/comics/issue/29599/fantastic_four_1998_579",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-05-26T00:00:00+0000",
+      "mu": "2011-01-28T00:00:00+0000",
+      "digitalId": 14752,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/51db2cbb9ef67",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Currie",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Neil Edwards",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29600,
+      "title": "Fantastic Four (1998) #580",
+      "number": "580",
+      "url": "https://www.marvel.com/comics/issue/29600/fantastic_four_1998_580",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-06-23T00:00:00+0000",
+      "mu": "2011-02-18T00:00:00+0000",
+      "digitalId": 14998,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/51db31d705491",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Neil Edwards",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29601,
+      "title": "Fantastic Four (1998) #581",
+      "number": "581",
+      "url": "https://www.marvel.com/comics/issue/29601/fantastic_four_1998_581",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-07-28T00:00:00+0000",
+      "mu": "2011-06-10T00:00:00+0000",
+      "digitalId": 15381,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5ad8c416528b8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Neary",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Neil Edwards",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29602,
+      "title": "Fantastic Four (1998) #582",
+      "number": "582",
+      "url": "https://www.marvel.com/comics/issue/29602/fantastic_four_1998_582",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-08-25T00:00:00+0000",
+      "mu": "2011-07-08T00:00:00+0000",
+      "digitalId": 15797,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/5ad8df8a6f505",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Neil Edwards",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29603,
+      "title": "Fantastic Four (1998) #583",
+      "number": "583",
+      "url": "https://www.marvel.com/comics/issue/29603/fantastic_four_1998_583",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-09-22T00:00:00+0000",
+      "mu": "2011-09-30T00:00:00+0000",
+      "digitalId": 16163,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/70/5ad8ea01b2f0c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29604,
+      "title": "Fantastic Four (1998) #584",
+      "number": "584",
+      "url": "https://www.marvel.com/comics/issue/29604/fantastic_four_1998_584",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-10-27T00:00:00+0000",
+      "mu": "2011-10-14T00:00:00+0000",
+      "digitalId": 16982,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/5ad8f25f0f6c0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29605,
+      "title": "Fantastic Four (1998) #585",
+      "number": "585",
+      "url": "https://www.marvel.com/comics/issue/29605/fantastic_four_1998_585",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-11-24T00:00:00+0000",
+      "mu": "2010-11-24T00:00:00+0000",
+      "digitalId": 17913,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/20/5ad9fb0c8b0d5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29606,
+      "title": "Fantastic Four (1998) #586",
+      "number": "586",
+      "url": "https://www.marvel.com/comics/issue/29606/fantastic_four_1998_586",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2010-12-22T00:00:00+0000",
+      "mu": "2012-10-05T00:00:00+0000",
+      "digitalId": 18553,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/5ada05d386392",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36060,
+      "title": "Fantastic Four (1998) #587",
+      "number": "587",
+      "url": "https://www.marvel.com/comics/issue/36060/fantastic_four_1998_587",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2011-01-26T00:00:00+0000",
+      "mu": "2011-12-09T00:00:00+0000",
+      "digitalId": 24451,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/5ada1371ca196",
+        "ext": "jpg"
+      },
+      "description": "THREE PART 5 This is the penultimate chapter of THREE! Which member of the Fantastic Four will perish?",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36059,
+      "title": "Fantastic Four (1998) #588",
+      "number": "588",
+      "url": "https://www.marvel.com/comics/issue/36059/fantastic_four_1998_588",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2011-02-23T00:00:00+0000",
+      "mu": "2012-01-06T00:00:00+0000",
+      "digitalId": 19700,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/90/5ada2dff10a81",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Dragotta",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37398,
+      "title": "FF (2011) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37398/ff_2011_1",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-03-23T00:00:00+0000",
+      "mu": "2011-11-15T00:00:00+0000",
+      "digitalId": 20186,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/5ad0de1a029f6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37400,
+      "title": "FF (2011) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/37400/ff_2011_2",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-04-27T00:00:00+0000",
+      "mu": "2012-02-03T00:00:00+0000",
+      "digitalId": 20708,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/51f68be0b365a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37404,
+      "title": "FF (2011) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/37404/ff_2011_3",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-05-11T00:00:00+0000",
+      "mu": "2012-03-15T00:00:00+0000",
+      "digitalId": 20939,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/51f68bd303790",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37403,
+      "title": "FF (2011) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/37403/ff_2011_4",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-05-25T00:00:00+0000",
+      "mu": "2012-03-26T00:00:00+0000",
+      "digitalId": 21213,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/e0/51f68bc07b1ca",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Barry Kitson",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37402,
+      "title": "FF (2011) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/37402/ff_2011_5",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-06-29T00:00:00+0000",
+      "mu": "2012-03-27T00:00:00+0000",
+      "digitalId": 22106,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/51f68bb1f3412",
+        "ext": "jpg"
+      },
+      "description": "The mystery that is...Medusa!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37395,
+      "title": "FF (2011) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/37395/ff_2011_6",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-07-13T00:00:00+0000",
+      "mu": "2012-04-03T00:00:00+0000",
+      "digitalId": 22582,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/5ad1051a44986",
+        "ext": "jpg"
+      },
+      "description": "The return of the king! Black Bolt is back and determined to reclaim his throne.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37401,
+      "title": "FF (2011) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/37401/ff_2011_7",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-07-27T00:00:00+0000",
+      "mu": "2012-04-03T00:00:00+0000",
+      "digitalId": 22861,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/50/5ad10a055632c",
+        "ext": "jpg"
+      },
+      "description": "At what ends will Black Bolt go to in order to become king of the Inhumans once again? And will the prophecies of the War of Four Cities come to pass?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gregg Tocchini",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37397,
+      "title": "FF (2011) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/37397/ff_2011_8",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-08-24T00:00:00+0000",
+      "mu": "2012-04-04T00:00:00+0000",
+      "digitalId": 23564,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/70/5ad10fead7ff8",
+        "ext": "jpg"
+      },
+      "description": "The War of Four Cities escalates and we learn what it is that Marvel's First Family fears most!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38609,
+      "title": "FF (2011) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/38609/ff_2011_9",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-09-28T00:00:00+0000",
+      "mu": "2012-04-04T00:00:00+0000",
+      "digitalId": 24027,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/5ad1145b25fe6",
+        "ext": "jpg"
+      },
+      "description": "The Future Foundation is caught in the middle of the War of Four Cities. Watch as the war expands to encompass the entire Marvel Universe!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephane Perger",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38608,
+      "title": "FF (2011) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/38608/ff_2011_10",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-10-12T00:00:00+0000",
+      "mu": "2012-04-04T00:00:00+0000",
+      "digitalId": 24274,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/4e8626ba91a54",
+        "ext": "jpg"
+      },
+      "description": "Ben Grimm returns as Ronan the Accuser and the armies of the Kree Empire invade the Earth!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38607,
+      "title": "FF (2011) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/38607/ff_2011_11",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-10-26T00:00:00+0000",
+      "mu": "2012-04-04T00:00:00+0000",
+      "digitalId": 24480,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/4f7de154b962b",
+        "ext": "jpg"
+      },
+      "description": "A galactic empire is born as the War of Four Cities comes to a close. What does it mean for Marvel's First Family?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37399,
+      "title": "Fantastic Four (1998) #600",
+      "number": "600",
+      "url": "https://www.marvel.com/comics/issue/37399/fantastic_four_1998_600",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2011-11-23T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 24795,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/57e976329adaf",
+        "ext": "jpg"
+      },
+      "description": "FOREVER PART 1 The 50th anniversary issue of the Fantastic Four! Joins us for the epic celebration of Marvel's First Family with 96 pages of all-new content!",
+      "pageCount": 104,
+      "creators": [
+        {
+          "name": "FIRM 15",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41197,
+      "title": "FF (2011) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/41197/ff_2011_12",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-11-30T00:00:00+0000",
+      "mu": "2012-10-02T00:00:00+0000",
+      "digitalId": 24893,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/51f68cfb59341",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marcelo Sosa",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38796,
+      "title": "Fantastic Four (1998) #601",
+      "number": "601",
+      "url": "https://www.marvel.com/comics/issue/38796/fantastic_four_1998_601",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2011-12-21T00:00:00+0000",
+      "mu": "2011-12-21T00:00:00+0000",
+      "digitalId": 25060,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/60/51dc1b51ab390",
+        "ext": "jpg"
+      },
+      "description": "FOREVER PART 2 Finally, It's Clobberin' Time.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Pennington",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41207,
+      "title": "FF (2011) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/41207/ff_2011_13",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2011-12-28T00:00:00+0000",
+      "mu": "2012-07-05T00:00:00+0000",
+      "digitalId": 25149,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/40/51f68ced1e4ab",
+        "ext": "jpg"
+      },
+      "description": "ALL HOPE LIES IN DOOM PART 2 The Battle between the Council of Reeds and the Future Foundation extends through the Bridge and into the world now controlled by the Mad Celestials.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marcelo Sosa",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38795,
+      "title": "Fantastic Four (1998) #602",
+      "number": "602",
+      "url": "https://www.marvel.com/comics/issue/38795/fantastic_four_1998_602",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-01-25T00:00:00+0000",
+      "mu": "2012-01-25T00:00:00+0000",
+      "digitalId": 25337,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/51dc1b58c4571",
+        "ext": "jpg"
+      },
+      "description": "FOREVER PART 3 The Kree Empire vs. the Annihilation Wave, with Earth's heroes in the middle! And Galactus returns to judge the world!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Barry Kitson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41206,
+      "title": "FF (2011) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/41206/ff_2011_14",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-01-25T00:00:00+0000",
+      "mu": "2012-07-05T00:00:00+0000",
+      "digitalId": 25332,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/60/51f68ce553796",
+        "ext": "jpg"
+      },
+      "description": "ALL HOPE LIES IN DOOM PART 3 \"Help me Doctor Doom, you're my only hope.\"",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marcelo Sosa",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38797,
+      "title": "Fantastic Four (1998) #603",
+      "number": "603",
+      "url": "https://www.marvel.com/comics/issue/38797/fantastic_four_1998_603",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-02-22T00:00:00+0000",
+      "mu": "2013-03-11T00:00:00+0000",
+      "digitalId": 25582,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/80/51dc1b442b14f",
+        "ext": "jpg"
+      },
+      "description": "FOREVER PART 4 It's Galactus versus the Celestials! Plus, the return of the Future Foundation!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41204,
+      "title": "FF (2011) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/41204/ff_2011_15",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-02-29T00:00:00+0000",
+      "mu": "2012-10-19T00:00:00+0000",
+      "digitalId": 25655,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/51f68cd654a40",
+        "ext": "jpg"
+      },
+      "description": "The final chapter for the Council of Reeds! Guest-starring the Power Pack!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 40471,
+      "title": "Fantastic Four (1998) #604",
+      "number": "604",
+      "url": "https://www.marvel.com/comics/issue/40471/fantastic_four_1998_604",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-03-14T00:00:00+0000",
+      "mu": "2012-03-14T00:00:00+0000",
+      "digitalId": 25787,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/56bcad8b08e57",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41201,
+      "title": "FF (2011) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/41201/ff_2011_16",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-03-28T00:00:00+0000",
+      "mu": "2012-10-20T00:00:00+0000",
+      "digitalId": 25877,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5ad60e88504ca",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Bobillo",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 40476,
+      "title": "Fantastic Four (1998) #605",
+      "number": "605",
+      "url": "https://www.marvel.com/comics/issue/40476/fantastic_four_1998_605",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-04-11T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 26076,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/d0/56c600eb91160",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "penciler"
+        },
+        {
+          "name": "FIRM 15",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41200,
+      "title": "FF (2011) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/41200/ff_2011_17",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-04-25T00:00:00+0000",
+      "mu": "2012-04-25T00:00:00+0000",
+      "digitalId": 26214,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/4f9ad00302567",
+        "ext": "jpg"
+      },
+      "description": "Now that he's back among the living, the Human Torch moves in with Spider-Man! Can two superheroes share an apartment without driving each other crazy?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Nick Dragotta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 40464,
+      "title": "Fantastic Four (1998) #606",
+      "number": "606",
+      "url": "https://www.marvel.com/comics/issue/40464/fantastic_four_1998_606",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-05-23T00:00:00+0000",
+      "mu": "2012-05-23T00:00:00+0000",
+      "digitalId": 26515,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/51dc1c8692f28",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41203,
+      "title": "FF (2011) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/41203/ff_2011_18",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-05-30T00:00:00+0000",
+      "mu": "2012-05-30T00:00:00+0000",
+      "digitalId": 26551,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/51f68de7f14e7",
+        "ext": "jpg"
+      },
+      "description": " \"The Future Foundation kids take their first Field Trip -- to the Negative Zone. See what happens when Annihilus goes home. Plus, the return of Future Franklin and Val.\"",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kalman Andrasofszky",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nick Dragotta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 40467,
+      "title": "Fantastic Four (1998) #607",
+      "number": "607",
+      "url": "https://www.marvel.com/comics/issue/40467/fantastic_four_1998_607",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-06-13T00:00:00+0000",
+      "mu": "2013-04-08T15:44:38+0000",
+      "digitalId": 26736,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/51dc1c7c0d748",
+        "ext": "jpg"
+      },
+      "description": "\"The Fantastic Four travel to Wakanda, which means the return of Black Panther to the pages of Fantastic Four. Their mission: what happens when the world completely runs out of Vibranium?\"",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41199,
+      "title": "FF (2011) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/41199/ff_2011_19",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-06-27T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 26956,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/51f68dda99ba8",
+        "ext": "jpg"
+      },
+      "description": "The kids take their second Field Trip -- To Africa! Meet the Science Club of Wakanda. And the Future Foundation gets a brand new member.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 40474,
+      "title": "Fantastic Four (1998) #608",
+      "number": "608",
+      "url": "https://www.marvel.com/comics/issue/40474/fantastic_four_1998_608",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-07-18T00:00:00+0000",
+      "mu": "2013-07-04T00:00:00+0000",
+      "digitalId": 27199,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/51dc1e5fadd9c",
+        "ext": "jpg"
+      },
+      "description": "The Nation of Wakanda is set on a path that will forever change its role in the Marvel Universe. The Panther God chooses the fate of T'Challa. Who will be the Black Panther?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Frank Cho",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41202,
+      "title": "FF (2011) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/41202/ff_2011_20",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-07-25T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 27291,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/51f68dd003c44",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 40479,
+      "title": "Fantastic Four (1998) #609",
+      "number": "609",
+      "url": "https://www.marvel.com/comics/issue/40479/fantastic_four_1998_609",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-08-08T00:00:00+0000",
+      "mu": "2013-03-08T13:22:23+0000",
+      "digitalId": 27409,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/51dc1c950c81d",
+        "ext": "jpg"
+      },
+      "description": "The Defenders from the Future hope to set out on the adventure of a lifetime, and only the Fantastic Four can help them get there.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41198,
+      "title": "FF (2011) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/41198/ff_2011_21",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-08-29T00:00:00+0000",
+      "mu": "2013-07-31T09:04:45+0000",
+      "digitalId": 27523,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/51f68dc239205",
+        "ext": "jpg"
+      },
+      "description": "In a move that surprises everyone, Black Bolt and the Inhumans return to Earth. What does this mean for Marvel's first family?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 40478,
+      "title": "Fantastic Four (1998) #610",
+      "number": "610",
+      "url": "https://www.marvel.com/comics/issue/40478/fantastic_four_1998_610",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-09-12T00:00:00+0000",
+      "mu": "2013-03-08T13:22:57+0000",
+      "digitalId": 27663,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/60/51dc1c76c6eed",
+        "ext": "jpg"
+      },
+      "description": "Crossing over with FF #22, the Fantastic Four must deal with the fallout of the Wizard returning to claim his son - Future Foundation member Bentley 23!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41208,
+      "title": "FF (2011) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/41208/ff_2011_22",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-09-26T00:00:00+0000",
+      "mu": "2013-03-18T00:00:00+0000",
+      "digitalId": 27722,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/51f68db70d1b9",
+        "ext": "jpg"
+      },
+      "description": "Concluding the crossover with FF #610, witness the fallout of Bentley 23's reunion with his father, the Wizard. It's Bad Father, Worse Son.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 40465,
+      "title": "Fantastic Four (1998) #611",
+      "number": "611",
+      "url": "https://www.marvel.com/comics/issue/40465/fantastic_four_1998_611",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2012-10-10T00:00:00+0000",
+      "mu": "2012-10-10T00:00:00+0000",
+      "digitalId": 27791,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/51dc1c677ec93",
+        "ext": "jpg"
+      },
+      "description": "Jonathan Hickman's groundbreaking run comes to an end in this climactic issue!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 41205,
+      "title": "FF (2011) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/41205/ff_2011_23",
+      "seriesId": 13440,
+      "seriesName": "FF (2011 - 2012)",
+      "onSale": "2012-10-24T00:00:00+0000",
+      "mu": "2014-04-29T08:26:04+0000",
+      "digitalId": 27877,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/51f68da85f9b4",
+        "ext": "jpg"
+      },
+      "description": "Old Franklin teaches Young Franklin ?How to Be a God!?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kalman Andrasofszky",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nick Dragotta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33579,
+      "title": "Ultimate Comics Thor (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/33579/ultimate_comics_thor_2010_1",
+      "seriesId": 11272,
+      "seriesName": "Ultimate Comics Thor (2010 - 2011)",
+      "onSale": "2010-10-06T00:00:00+0000",
+      "mu": "2011-10-20T00:00:00+0000",
+      "digitalId": 16044,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/90/5a8edf15a012a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33576,
+      "title": "Ultimate Comics Thor (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/33576/ultimate_comics_thor_2010_2",
+      "seriesId": 11272,
+      "seriesName": "Ultimate Comics Thor (2010 - 2011)",
+      "onSale": "2010-11-10T00:00:00+0000",
+      "mu": "2011-11-03T00:00:00+0000",
+      "digitalId": 17582,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/5a8eeb1362f11",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33577,
+      "title": "Ultimate Comics Thor (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/33577/ultimate_comics_thor_2010_3",
+      "seriesId": 11272,
+      "seriesName": "Ultimate Comics Thor (2010 - 2011)",
+      "onSale": "2010-12-29T00:00:00+0000",
+      "mu": "2010-12-29T00:00:00+0000",
+      "digitalId": 18567,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/5a8efaf54d628",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jason Paz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33578,
+      "title": "Ultimate Comics Thor (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/33578/ultimate_comics_thor_2010_4",
+      "seriesId": 11272,
+      "seriesName": "Ultimate Comics Thor (2010 - 2011)",
+      "onSale": "2011-02-02T00:00:00+0000",
+      "mu": "2011-02-02T00:00:00+0000",
+      "digitalId": 19059,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/5a8f05c7781f4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jason Paz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jeffrey Huet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 39967,
+      "title": "Ultimate Fallout (2011) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/39967/ultimate_fallout_2011_1",
+      "seriesId": 14807,
+      "seriesName": "Ultimate Fallout (2011)",
+      "onSale": "2011-07-13T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 22152,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/5915d70eb1c39",
+        "ext": "jpg"
+      },
+      "description": "Following the tragic events of DEATH OF SPIDER-MAN, prepare for the birth of the new Ultimate Comics Universe.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 39966,
+      "title": "Ultimate Fallout (2011) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/39966/ultimate_fallout_2011_2",
+      "seriesId": 14807,
+      "seriesName": "Ultimate Fallout (2011)",
+      "onSale": "2011-07-20T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 22415,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/5a8edda615e76",
+        "ext": "jpg"
+      },
+      "description": "DEATH OF SPIDER-MAN has sent shockwaves throughout the Ultimate Universe. Find out what happens next!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 39965,
+      "title": "Ultimate Fallout (2011) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/39965/ultimate_fallout_2011_3",
+      "seriesId": 14807,
+      "seriesName": "Ultimate Fallout (2011)",
+      "onSale": "2011-07-27T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 22638,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/5915d72665ef2",
+        "ext": "jpg"
+      },
+      "description": "Witness the fate of the Ultimate Comics Universe after DEATH OF SPIDER-MAN.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andy Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Various",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 39962,
+      "title": "Ultimate Fallout (2011) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/39962/ultimate_fallout_2011_4",
+      "seriesId": 14807,
+      "seriesName": "Ultimate Fallout (2011)",
+      "onSale": "2011-08-03T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 22733,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5915d778aff00",
+        "ext": "jpg"
+      },
+      "description": "Witness the fallout of DEATH OF SPIDER-MAN and the birth of the new ULTIMATE COMCIS UNIVERSE.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 39963,
+      "title": "Ultimate Fallout (2011) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/39963/ultimate_fallout_2011_5",
+      "seriesId": 14807,
+      "seriesName": "Ultimate Fallout (2011)",
+      "onSale": "2011-08-10T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 22824,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/5915d7884dd1a",
+        "ext": "jpg"
+      },
+      "description": "In the penultimate chapter of FALLOUT, the fate of the Ultimate Comics Universe takes shape. Who are the heroes of this new age? Which villains lie in the shadows, waiting for the moment to strike?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 39964,
+      "title": "Ultimate Fallout (2011) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/39964/ultimate_fallout_2011_6",
+      "seriesId": 14807,
+      "seriesName": "Ultimate Fallout (2011)",
+      "onSale": "2011-08-17T00:00:00+0000",
+      "mu": "2013-04-08T16:51:28+0000",
+      "digitalId": 23132,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/5915d75fa6c38",
+        "ext": "jpg"
+      },
+      "description": "The final chapter of FALLOUT is here! Prepare for the new ULTIMATE COMICS universe!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38693,
+      "title": "Ultimate Comics Ultimates (2011) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/38693/ultimate_comics_ultimates_2011_1",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2011-08-24T00:00:00+0000",
+      "mu": "2013-01-18T00:00:00+0000",
+      "digitalId": 22825,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/5a1337407cd83",
+        "ext": "jpg"
+      },
+      "description": "The next era has begun. As they struggle to find their place in the world, the The Ultimates face game-changing threats even they can't handle. And with the heart of the team missing in action, the country's last stand of defense may be on its last legs.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38690,
+      "title": "Ultimate Comics Ultimates (2011) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/38690/ultimate_comics_ultimates_2011_2",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2011-09-28T00:00:00+0000",
+      "mu": "2013-01-21T00:00:00+0000",
+      "digitalId": 23841,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/4e80cb64945d9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38687,
+      "title": "Ultimate Comics Ultimates (2011) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/38687/ultimate_comics_ultimates_2011_3",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2011-10-26T00:00:00+0000",
+      "mu": "2013-01-22T00:00:00+0000",
+      "digitalId": 24078,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/56b38021cf7c4",
+        "ext": "jpg"
+      },
+      "description": "The Children of Tomorrow have transformed the Norse Gods into mortal men! Now, depowered and on the verge of utter destruction, the only hope the Pantheon has lies with Nick Fury and his Ultimates!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38689,
+      "title": "Ultimate Comics Ultimates (2011) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/38689/ultimate_comics_ultimates_2011_4",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2011-11-30T00:00:00+0000",
+      "mu": "2013-01-23T00:00:00+0000",
+      "digitalId": 24301,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/d0/56b8cfc55e18c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38691,
+      "title": "Ultimate Comics Ultimates (2011) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/38691/ultimate_comics_ultimates_2011_5",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2011-12-28T00:00:00+0000",
+      "mu": "2013-02-08T00:00:00+0000",
+      "digitalId": 25144,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/a0/56b90af0ba42c",
+        "ext": "jpg"
+      },
+      "description": "Tomorrow's Children are in control! All hope looks lost for Thor and the Ultimates! The Children's creator has revealed his sinister connection to the Ultimate Universe!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38695,
+      "title": "Ultimate Comics Ultimates (2011) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/38695/ultimate_comics_ultimates_2011_6",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2012-01-25T00:00:00+0000",
+      "mu": "2013-02-11T00:00:00+0000",
+      "digitalId": 25333,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/56bb70a84cc6a",
+        "ext": "jpg"
+      },
+      "description": "Ultimate Falcon makes his triumphant return! And Nick Fury turns to the one man who can save the Ultimates!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38686,
+      "title": "Ultimate Comics Ultimates (2011) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/38686/ultimate_comics_ultimates_2011_7",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2012-02-29T00:00:00+0000",
+      "mu": "2013-03-18T00:00:00+0000",
+      "digitalId": 25656,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/30/56bbaec928986",
+        "ext": "jpg"
+      },
+      "description": "The Ultimates deal with the fallout of the new world! Meanwhile, an old friend returns! After all this, can Nick Fury pick up the pieces of his broken team?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38685,
+      "title": "Ultimate Comics Ultimates (2011) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/38685/ultimate_comics_ultimates_2011_8",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2012-03-28T00:00:00+0000",
+      "mu": "2013-03-18T00:00:00+0000",
+      "digitalId": 25747,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/b0/4f7498e46ec9d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38696,
+      "title": "Ultimate Comics Ultimates (2011) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/38696/ultimate_comics_ultimates_2011_9",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2012-04-25T00:00:00+0000",
+      "mu": "2012-04-25T00:00:00+0000",
+      "digitalId": 25748,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/5a9ecfb933006",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38688,
+      "title": "Ultimate Comics Ultimates (2011) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/38688/ultimate_comics_ultimates_2011_10",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2012-05-09T00:00:00+0000",
+      "mu": "2012-05-09T00:00:00+0000",
+      "digitalId": 25749,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/4fac0a1caaabd",
+        "ext": "jpg"
+      },
+      "description": "In the aftermath of the People vs. the Children, how will Nick Fury and his team of Ultimates move forward?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Luke Ross",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Sam Humphries",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38692,
+      "title": "Ultimate Comics Ultimates (2011) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/38692/ultimate_comics_ultimates_2011_11",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2012-05-30T00:00:00+0000",
+      "mu": "2013-03-18T00:00:00+0000",
+      "digitalId": 25750,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/a0/5a9ee9bb1d19d",
+        "ext": "jpg"
+      },
+      "description": "The Nimrod Fleet continues their brutal massacre of mutants, Stryker is reborn and the face of the United States is changed forever.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sam Humphries",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38694,
+      "title": "Ultimate Comics Ultimates (2011) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/38694/ultimate_comics_ultimates_2011_12",
+      "seriesId": 13936,
+      "seriesName": "Ultimate Comics Ultimates (2011 - 2013)",
+      "onSale": "2012-06-27T00:00:00+0000",
+      "mu": "2013-03-25T00:00:00+0000",
+      "digitalId": 25751,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/04/5a9eef597c1ce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Sam Humphries",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38950,
+      "title": "Ultimate Comics Hawkeye (2011) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/38950/ultimate_comics_hawkeye_2011_1",
+      "seriesId": 14068,
+      "seriesName": "Ultimate Comics Hawkeye (2011)",
+      "onSale": "2011-08-31T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 22735,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/70/4e53b194c0a01",
+        "ext": "jpg"
+      },
+      "description": "Clint Barton, the hero known as Hawkeye, is back and on a mission! Prepare for Hawkeye's climactic return to the Ultimate Comics Universe in the beginning of this pulse-pounding series!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jordi Tarragona",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38951,
+      "title": "Ultimate Comics Hawkeye (2011) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/38951/ultimate_comics_hawkeye_2011_2",
+      "seriesId": 14068,
+      "seriesName": "Ultimate Comics Hawkeye (2011)",
+      "onSale": "2011-09-21T00:00:00+0000",
+      "mu": "2013-04-08T16:53:56+0000",
+      "digitalId": 23768,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/4e7370d0596f7",
+        "ext": "jpg"
+      },
+      "description": "Hawkeye finds himself in the middle of an international arms race where the stakes are higher than ever. At the fringe of obtaining a serum that will change the course of mutant history, has the eagle-eyed hero aimed too high to succeed?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jordi Tarragona",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38944,
+      "title": "Ultimate Comics Hawkeye (2011) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/38944/ultimate_comics_hawkeye_2011_3",
+      "seriesId": 14068,
+      "seriesName": "Ultimate Comics Hawkeye (2011)",
+      "onSale": "2011-10-19T00:00:00+0000",
+      "mu": "2013-04-08T16:55:26+0000",
+      "digitalId": 23932,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/5a971b5176abb",
+        "ext": "jpg"
+      },
+      "description": "Nick Fury has sent Hawkeye on a vital international mission. But with no backup to be had, Clint Barton may find himself on the losing end of a major battle - until Fury sends in unexpected reinforcements: a covert mutant team and The Hulk!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jordi Tarragona",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38943,
+      "title": "Ultimate Comics Hawkeye (2011) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/38943/ultimate_comics_hawkeye_2011_4",
+      "seriesId": 14068,
+      "seriesName": "Ultimate Comics Hawkeye (2011)",
+      "onSale": "2011-11-23T00:00:00+0000",
+      "mu": "2013-04-08T16:55:57+0000",
+      "digitalId": 24794,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/60/50b5272c23e01",
+        "ext": "jpg"
+      },
+      "description": "A newly-developed mutant-serum puts the world on the brink of war! Caught in the international conflict, Hawkeye is outnumbered with all odds against - just as he likes it! If Hawkeye can't save world, then who can?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jordi Tarragona",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "RAFAEL SANDOVAL",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43528,
+      "title": "Avengers (2012) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/43528/avengers_2012_1",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2012-12-05T00:00:00+0000",
+      "mu": "2014-02-27T09:18:00+0000",
+      "digitalId": 28113,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/00/51646f8d43394",
+        "ext": "jpg"
+      },
+      "description": "Marvel Now! adds new faces to Earth's mightiest team of superheroes! The Avengers expand their roster and sphere of influence to a global - and even interplanetary - level!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43532,
+      "title": "Avengers (2012) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/43532/avengers_2012_2",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2012-12-19T00:00:00+0000",
+      "mu": "2014-02-27T09:20:23+0000",
+      "digitalId": 28114,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/c0/510940b04c75c",
+        "ext": "jpg"
+      },
+      "description": "The greatest heroes in comics together on one unbeatable team! Now shipping twice a month, the Avengers \"go large,\" expanding their roster and their sphere of influence to a global and even interplanetary level. When Captain America puts out his call - who will answer? Big threats, big ideas, big idealism - these are the Avengers NOW!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43533,
+      "title": "Avengers (2012) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/43533/avengers_2012_3",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-01-23T00:00:00+0000",
+      "mu": "2014-02-27T09:20:55+0000",
+      "digitalId": 28115,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/51094fe042a9f",
+        "ext": "jpg"
+      },
+      "description": "The New Adam is born! And on Mars, the battle between the Avengers and the Garden comes to its dramatic conclusion!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jerome Opena",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43534,
+      "title": "Avengers (2012) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/43534/avengers_2012_4",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-01-30T00:00:00+0000",
+      "mu": "2014-02-27T09:22:48+0000",
+      "digitalId": 28116,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5109728524b9b",
+        "ext": "jpg"
+      },
+      "description": "The Secret Origin of Hyperion. The Legacy of the Garden unfolds in the Savage Land. \"We'll have to field test our theories here. NOW.\" --Dr. Deeds",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dustin Weaver",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43535,
+      "title": "Avengers (2012) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/43535/avengers_2012_5",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-02-06T00:00:00+0000",
+      "mu": "2014-02-27T09:23:22+0000",
+      "digitalId": 28434,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/51097a8cc8270",
+        "ext": "jpg"
+      },
+      "description": "Meet Smasher, the first human member of the IMPERIAL GUARD and an Avenger. Watch as the Avengers travel across the galaxy to fight off an invading force. Watch as the Imperial Guard are broken on a dead moon.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43536,
+      "title": "Avengers (2012) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/43536/avengers_2012_6",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-02-20T00:00:00+0000",
+      "mu": "2014-02-27T09:23:57+0000",
+      "digitalId": 28435,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/5743669df137c",
+        "ext": "jpg"
+      },
+      "description": "\"GODDESS.\" The Secret Origin of the Universe. Watch as for the first time in history, The UNIVERSE becomes sentient. Watch as Captain Universe deciphers the code that was hidden in the first five issues.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43537,
+      "title": "Avengers (2012) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/43537/avengers_2012_7",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-03-06T00:00:00+0000",
+      "mu": "2013-09-02T00:00:00+0000",
+      "digitalId": 28750,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/a0/574367527b063",
+        "ext": "jpg"
+      },
+      "description": "\"WORLD BREAKER.\" The Avengers must scramble to deal with the threat of another Universal SYSTEM. The New Adam is transformed, and his true self revealed. And the most dangerous hero on Earth is created.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43538,
+      "title": "Avengers (2012) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/43538/avengers_2012_8",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-03-20T00:00:00+0000",
+      "mu": "2013-09-16T00:00:00+0000",
+      "digitalId": 28785,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/574367c37ee7e",
+        "ext": "jpg"
+      },
+      "description": "\"SYSTEM FAILURE.\" The Avengers face off against the World Breaker. Discover the imminent threat to the Avengers World. Watch as we get our first hints as the hidden connections between the events of Avengers and New Avengers.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43539,
+      "title": "Avengers (2012) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/43539/avengers_2012_9",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-04-10T00:00:00+0000",
+      "mu": "2013-10-07T00:00:00+0000",
+      "digitalId": 29225,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/57436a33a9b70",
+        "ext": "jpg"
+      },
+      "description": "\"NEW UNIVERSE.\" Watch as the most dangerous weapon in the Universe is unleashed. Two Universal SYSTEMS collide. What good is a White Event if only leads to the destruction of the planet it was meant to transform?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43540,
+      "title": "Avengers (2012) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/43540/avengers_2012_10",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-04-24T00:00:00+0000",
+      "mu": "2013-10-21T00:00:00+0000",
+      "digitalId": 29488,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/57445b85e2eaf",
+        "ext": "jpg"
+      },
+      "description": "\"VALIDATOR.\" We learn that the Canadian super team Omega Flight got lost in a Garden Origin Site. Discover what happens when the Avengers go in to rescue them. Learn why ADAPTATION is the scariest word in the Marvel Universe.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43541,
+      "title": "Avengers (2012) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/43541/avengers_2012_11",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-05-08T00:00:00+0000",
+      "mu": "2013-11-04T00:00:00+0000",
+      "digitalId": 29489,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/57445c31d6ccc",
+        "ext": "jpg"
+      },
+      "description": "\"WAKE THE DRAGON.\" As Shang-Chi battles an ancient enemy, the Avengers hang out in Hong Kong's swankiest casino. Captain Marvel, Black Widow and Spider-Woman find out it doesn't pay to gamble in the spy business. Cannonball and Sunspot play craps with a bunch of AIM Agents. AND WIN!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43542,
+      "title": "Avengers (2012) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/43542/avengers_2012_12",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-05-22T00:00:00+0000",
+      "mu": "2013-11-18T00:00:00+0000",
+      "digitalId": 29490,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/b0/518814782506c",
+        "ext": "jpg"
+      },
+      "description": "\"CHILDREN OF THE SUN.\" A day in the life of the Avengers...in the Savage Land. The boys go hunting for dinosaurs and end up catching something else entirely. Hyperion and Captain Universe begin the godlike education of the transformed Savage Land children.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43543,
+      "title": "Avengers (2012) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/43543/avengers_2012_13",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-06-05T00:00:00+0000",
+      "mu": "2013-12-02T00:00:00+0000",
+      "digitalId": 29491,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/51968d1a3608d",
+        "ext": "jpg"
+      },
+      "description": "The High Evolutionary stakes his claim on the Children of the Sun. Hyperion learns the true cost of the decisions he's made at the Origin Site in the Savage Land. The Return of techno-titan Terminus.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43544,
+      "title": "Avengers (2012) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/43544/avengers_2012_14",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-06-19T00:00:00+0000",
+      "mu": "2013-12-16T00:00:00+0000",
+      "digitalId": 29492,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/b0/51ae4b71a5505",
+        "ext": "jpg"
+      },
+      "description": "\"THE SIGNAL.\" Prelude to Infinity. All of the Origin Sites go active as the Earth begins to communicate with something much more ancient than human civilizations. The Terror scientists of A.I.M. unveil the S7 program. Prelude to INFINITY: Part One.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Nicholas Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43545,
+      "title": "Avengers (2012) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/43545/avengers_2012_15",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-07-03T00:00:00+0000",
+      "mu": "2014-01-06T00:00:00+0000",
+      "digitalId": 30376,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/51c9eb8ac17b5",
+        "ext": "jpg"
+      },
+      "description": "\"ECHO TERRA\" Prelude to INFINITY: Part Two. Aliens races fleeing an intergalactic terror crash to Earth, just as the Avengers are occupied with the now-active Origin Sites! Captain Universe and Manifold take a trip across the universe.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Nicholas Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43546,
+      "title": "Avengers (2012) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/43546/avengers_2012_16",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-07-17T00:00:00+0000",
+      "mu": "2014-01-13T00:00:00+0000",
+      "digitalId": 30502,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/51d32d095b2b9",
+        "ext": "jpg"
+      },
+      "description": "\"THE TWO WORLDS SOLUTION\" Prelude to INFINITY: Part Three. The battle between the Avengers and Mad Earth heats up. Whatever happened to Ex Nihilo and Abyss, and for that matter, Starbrand and Nightmask as well?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43547,
+      "title": "Avengers (2012) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/43547/avengers_2012_17",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-08-07T00:00:00+0000",
+      "mu": "2014-02-03T00:00:00+0000",
+      "digitalId": 30991,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/51ed8ee693059",
+        "ext": "jpg"
+      },
+      "description": "\"ALL QUIET.\" The Avengers recruit more members to deal with the soon-arriving threat to Earth. The Builders enter the Marvel Universe. The Finale of the Prelude to INFINITY: Part Four.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43548,
+      "title": "Avengers (2012) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/43548/avengers_2012_18",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-08-21T00:00:00+0000",
+      "mu": "2014-02-17T00:00:00+0000",
+      "digitalId": 31056,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/51ffc0f097620",
+        "ext": "jpg"
+      },
+      "description": "\"AVENGERS UNIVERSE.\" Deep in space, the Avengers join the Council of Worlds as they declare war on their cosmic invaders. The rebirth of the Skrull Empire. The first encounter with the Builders.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43549,
+      "title": "Avengers (2012) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/43549/avengers_2012_19",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-09-11T00:00:00+0000",
+      "mu": "2014-03-09T00:00:00+0000",
+      "digitalId": 31493,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/522631288109a",
+        "ext": "jpg"
+      },
+      "description": "INFINITY TIE-IN \"AVENGERS UNIVERSE: II.\" The Avengers, prisoners of war! One last desperate plan. Betrayal in the Galactic Council.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43550,
+      "title": "Avengers (2012) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/43550/avengers_2012_20",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-09-25T00:00:00+0000",
+      "mu": "2014-03-24T00:00:00+0000",
+      "digitalId": 31582,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/523211c544696",
+        "ext": "jpg"
+      },
+      "description": "INFINITY TIE-IN \"AVENGERS UNIVERSE: III\" Unexpected overtures from the Builders. A meeting of Ex Nihilos. Total, unconditional surrender.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46927,
+      "title": "Avengers (2012) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/46927/avengers_2012_21",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-10-16T00:00:00+0000",
+      "mu": "2014-04-14T00:00:00+0000",
+      "digitalId": 31721,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/70/524eeaa9bfd6d",
+        "ext": "jpg"
+      },
+      "description": "INFINITY TIE-IN \"AVENGERS UNIVERSE: IV.\" The final battle for the Marvel universe begins. The fall of a Galactic empire. The rise of a new one.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46928,
+      "title": "Avengers (2012) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/46928/avengers_2012_22",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-10-30T00:00:00+0000",
+      "mu": "2014-04-28T00:00:00+0000",
+      "digitalId": 31798,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/60/526578847a65e",
+        "ext": "jpg"
+      },
+      "description": "INFINITY TIE-IN \"AVENGERS UNIVERSE: V.\" The Avengers return to our Solar System. The battle for Earth starts in the heavens. The Black Order makes their move.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46930,
+      "title": "Avengers (2012) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/46930/avengers_2012_23",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-11-20T00:00:00+0000",
+      "mu": "2014-05-12T00:00:00+0000",
+      "digitalId": 31967,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/f0/527bf83f6dfcd",
+        "ext": "jpg"
+      },
+      "description": "INFINITY TIE-IN \"AVENGERS UNIVERSE: VI.\" The Avengers versus the Black Order. The battle for Earth moves planetside. Thanos takes center stage.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46931,
+      "title": "Avengers (2012) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/46931/avengers_2012_24",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2013-12-25T00:00:00+0000",
+      "mu": "2014-06-23T00:00:00+0000",
+      "digitalId": 32476,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/90/52af620531f1b",
+        "ext": "jpg"
+      },
+      "description": "\"ROGUE PLANET\" - Part 1 of 5. Captain America and Iron Man plan for the next version of the Avengers. A runaway planet is on a collision course with Earth. A visitor from the future helps save the day. AVENGERS #24.NOW = AVENGERS #1 IN ALL-NEW MARVEL NOW!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46933,
+      "title": "Avengers (2012) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/46933/avengers_2012_25",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-01-22T00:00:00+0000",
+      "mu": "2014-07-14T00:00:00+0000",
+      "digitalId": 32797,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/52d5b2602a64f",
+        "ext": "jpg"
+      },
+      "description": "\"THE MIRROR.\" It worked for the X-Men! Would we be so crass as to do it again? Introducing the ALL-NEW AVENGERS! And we've been good up till now, but this issue, an Avenger dies.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46934,
+      "title": "Avengers (2012) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/46934/avengers_2012_26",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-02-12T00:00:00+0000",
+      "mu": "2014-02-12T00:00:00+0000",
+      "digitalId": 32963,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/e0/52fa84c4b0de1",
+        "ext": "jpg"
+      },
+      "description": " \"ADAPT OR DIE.\" The science war overtakes the world(s). The All-New Avengers Strike Back! All the answers to the questions you wished remained hidden. The collision of Avengers and New Avengers is imminent.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48381,
+      "title": "Avengers (2012) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/48381/avengers_2012_27",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-03-26T00:00:00+0000",
+      "mu": "2014-09-22T00:00:00+0000",
+      "digitalId": 33344,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/30/531f3757869cc",
+        "ext": "jpg"
+      },
+      "description": "ADAPT OR DIE. The secret behind the All-New Avengers revealed! The science war overtakes the world(s). All the answers to the questions you wished remained hidden. The collision of Avengers and New Avengers is imminent.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48382,
+      "title": "Avengers (2012) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/48382/avengers_2012_28",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-04-30T00:00:00+0000",
+      "mu": "2014-10-27T00:00:00+0000",
+      "digitalId": 33587,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/5745c1f6a19a2",
+        "ext": "jpg"
+      },
+      "description": "A challenge twenty-eight issues in the making, as Bruce Banner puts the pieces together and confronts Iron Man?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Agustin Alessio",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48383,
+      "title": "Avengers (2012) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/48383/avengers_2012_29",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-05-14T00:00:00+0000",
+      "mu": "2014-11-10T00:00:00+0000",
+      "digitalId": 33848,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/574468a7c66be",
+        "ext": "jpg"
+      },
+      "description": "WHAT DID HE SEE?",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48384,
+      "title": "Avengers (2012) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/48384/avengers_2012_30",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-05-28T00:00:00+0000",
+      "mu": "2014-11-24T00:00:00+0000",
+      "digitalId": 33965,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/5373c9684ca11",
+        "ext": "jpg"
+      },
+      "description": "Now that Captain America knows he was betrayed, how will this affect the Avengers and the secret Illuminati?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48385,
+      "title": "Avengers (2012) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/48385/avengers_2012_31",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-06-18T00:00:00+0000",
+      "mu": "2014-12-15T00:00:00+0000",
+      "digitalId": 33858,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/b0/5392161bbd1ae",
+        "ext": "jpg"
+      },
+      "description": "ORIGINAL SIN tie-in! Propelled fifty years into the future, the Avengers come face-to-face with the legacy of their actions!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48386,
+      "title": "Avengers (2012) #32",
+      "number": "32",
+      "url": "https://www.marvel.com/comics/issue/48386/avengers_2012_32",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-07-09T00:00:00+0000",
+      "mu": "2015-01-12T00:00:00+0000",
+      "digitalId": 34100,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/53b2c02428aef",
+        "ext": "jpg"
+      },
+      "description": "ORIGINAL SIN tie-in! 5000 years into the future. Rogue Planet redux: The mysterious origin of the rogue planet revealed.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48387,
+      "title": "Avengers (2012) #33",
+      "number": "33",
+      "url": "https://www.marvel.com/comics/issue/48387/avengers_2012_33",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-07-30T00:00:00+0000",
+      "mu": "2015-01-26T00:00:00+0000",
+      "digitalId": 34136,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/53cd3764c3f13",
+        "ext": "jpg"
+      },
+      "description": "ORIGINAL SIN tie-in! 50,000 years into the future. Holoworld: Earth's Mightiest Heroes captured in conceptual space. How do you defeat an idea?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48388,
+      "title": "Avengers (2012) #34",
+      "number": "34",
+      "url": "https://www.marvel.com/comics/issue/48388/avengers_2012_34",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-08-27T00:00:00+0000",
+      "mu": "2015-02-23T00:00:00+0000",
+      "digitalId": 34607,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/53f5002b88ac7",
+        "ext": "jpg"
+      },
+      "description": "ORIGINAL SIN tie-in! \"THIS PROBLEM OF AVENGERS.\" The first Avenger meets the last Avenger...And the Avengers World crumbles. You won't believe what comes next.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48389,
+      "title": "Avengers (2012) #35",
+      "number": "35",
+      "url": "https://www.marvel.com/comics/issue/48389/avengers_2012_35",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-09-17T00:00:00+0000",
+      "mu": "2015-03-16T00:00:00+0000",
+      "digitalId": 34774,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/5410aed23a94b",
+        "ext": "jpg"
+      },
+      "description": "Extra-sized issue! IN 8 MONTHS...TIME RUNS OUT!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48390,
+      "title": "Avengers (2012) #36",
+      "number": "36",
+      "url": "https://www.marvel.com/comics/issue/48390/avengers_2012_36",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-10-08T00:00:00+0000",
+      "mu": "2015-04-06T00:00:00+0000",
+      "digitalId": 34882,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/54299756a3c92",
+        "ext": "jpg"
+      },
+      "description": "In 7 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48391,
+      "title": "Avengers (2012) #37",
+      "number": "37",
+      "url": "https://www.marvel.com/comics/issue/48391/avengers_2012_37",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-10-22T00:00:00+0000",
+      "mu": "2015-04-20T00:00:00+0000",
+      "digitalId": 34894,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/54383a52ce8a5",
+        "ext": "jpg"
+      },
+      "description": "In 7 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jamie Mckelvie",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48392,
+      "title": "Avengers (2012) #38",
+      "number": "38",
+      "url": "https://www.marvel.com/comics/issue/48392/avengers_2012_38",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-11T00:00:00+0000",
+      "digitalId": 35385,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/54622b38a92d0",
+        "ext": "jpg"
+      },
+      "description": "In 6 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brandon Peterson",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48393,
+      "title": "Avengers (2012) #39",
+      "number": "39",
+      "url": "https://www.marvel.com/comics/issue/48393/avengers_2012_39",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-12-10T00:00:00+0000",
+      "mu": "2015-06-08T00:00:00+0000",
+      "digitalId": 35747,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/03/54822674178ac",
+        "ext": "jpg"
+      },
+      "description": "In 5 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48394,
+      "title": "Avengers (2012) #40",
+      "number": "40",
+      "url": "https://www.marvel.com/comics/issue/48394/avengers_2012_40",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2015-01-14T00:00:00+0000",
+      "mu": "2015-07-06T00:00:00+0000",
+      "digitalId": 35749,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/54abfb471a37e",
+        "ext": "jpg"
+      },
+      "description": "In 4 months... time runs out!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Dale Keown",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48395,
+      "title": "Avengers (2012) #41",
+      "number": "41",
+      "url": "https://www.marvel.com/comics/issue/48395/avengers_2012_41",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2015-02-04T00:00:00+0000",
+      "mu": "2015-08-03T00:00:00+0000",
+      "digitalId": 35750,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/54c147ab537ab",
+        "ext": "jpg"
+      },
+      "description": "In 3 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48396,
+      "title": "Avengers (2012) #42",
+      "number": "42",
+      "url": "https://www.marvel.com/comics/issue/48396/avengers_2012_42",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2015-03-04T00:00:00+0000",
+      "mu": "2015-09-07T00:00:00+0000",
+      "digitalId": 36844,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/54ece6c21db84",
+        "ext": "jpg"
+      },
+      "description": "In 2 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48397,
+      "title": "Avengers (2012) #43",
+      "number": "43",
+      "url": "https://www.marvel.com/comics/issue/48397/avengers_2012_43",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2015-04-01T00:00:00+0000",
+      "mu": "2015-09-21T00:00:00+0000",
+      "digitalId": 36942,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/03/55119c23c6219",
+        "ext": "jpg"
+      },
+      "description": "In 2 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48398,
+      "title": "Avengers (2012) #44",
+      "number": "44",
+      "url": "https://www.marvel.com/comics/issue/48398/avengers_2012_44",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2015-04-29T00:00:00+0000",
+      "mu": "2015-10-26T00:00:00+0000",
+      "digitalId": 37778,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/553e4ecf080cb",
+        "ext": "jpg"
+      },
+      "description": "Final issue!",
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50951,
+      "title": "Avengers (2012) #34.1",
+      "number": "34.1",
+      "url": "https://www.marvel.com/comics/issue/50951/avengers_2012_34.1",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-09-10T00:00:00+0000",
+      "mu": "2015-03-09T00:00:00+0000",
+      "digitalId": 34832,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/5407727c64fb5",
+        "ext": "jpg"
+      },
+      "description": "Last son of a dead utopia. Father-figure to a new species of humanity. Avenger. Hyperion is all these things... and more! Now the Man From Nowhere searches for an unhinged cop killer, a kidnapped child...and the answers to the questions that haunt him.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dale Keown",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51410,
+      "title": "Avengers (2012) #34.2",
+      "number": "34.2",
+      "url": "https://www.marvel.com/comics/issue/51410/avengers_2012_34.2",
+      "seriesId": 16452,
+      "seriesName": "Avengers (2012 - 2015)",
+      "onSale": "2014-09-15T00:00:00+0000",
+      "mu": "2015-07-13T00:00:00+0000",
+      "digitalId": 36297,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/54aafc92a4536",
+        "ext": "jpg"
+      },
+      "description": "The god-like STARBRAND is losing his grip on his humanity! Can NIGHTMASK bring him back to Earth? And as our planetary defense, we need STARBRAND more than ever! Feel the heat of KOLOBUS...a cosmic threat powerful enough to burn us all down!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Bengal",
+          "role": "penciler"
+        },
+        {
+          "name": "Sam Humphries",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43512,
+      "title": "New Avengers (2013) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/43512/new_avengers_2013_1",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-01-02T00:00:00+0000",
+      "mu": "2013-07-08T00:00:00+0000",
+      "digitalId": 28087,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/5164719b5f233",
+        "ext": "jpg"
+      },
+      "description": "To prevent a collision of universes, the Illuminati must assemble NOW! Led by the Black Panther, the most powerful and brilliant team in the Marvel Universe is up against an infinite legion of parallel realities!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jock",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43516,
+      "title": "New Avengers (2013) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/43516/new_avengers_2013_2",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-01-16T00:00:00+0000",
+      "mu": "2013-07-15T00:00:00+0000",
+      "digitalId": 28088,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/a0/510dc11490922",
+        "ext": "jpg"
+      },
+      "description": "The Illuminati gather to plan for the death of everything. Infinity gems, old wounds, lies, agendas and universal incursions are all on the agenda!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43517,
+      "title": "New Avengers (2013) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/43517/new_avengers_2013_3",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-02-06T00:00:00+0000",
+      "mu": "2013-08-05T00:00:00+0000",
+      "digitalId": 28423,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/510c75dd48ea0",
+        "ext": "jpg"
+      },
+      "description": "\"INFINITY\" The Illuminati experience their first incursion since reforming. Can the loose brotherhood of end times trust each other enough to use the Infinity Gems in unison? And a new member joins the Illuminati!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jock",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43518,
+      "title": "New Avengers (2013) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/43518/new_avengers_2013_4",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-03-20T00:00:00+0000",
+      "mu": "2013-09-23T00:00:00+0000",
+      "digitalId": 28779,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/00/57752b89b5155",
+        "ext": "jpg"
+      },
+      "description": "\"WORLD EATER\" The Illuminati have learned that Earth is the center point for the death of the Universe. If this is true, doesn't that mean destroying it might save everything else? Enter the world eater, Galactus.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jock",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43519,
+      "title": "New Avengers (2013) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/43519/new_avengers_2013_5",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-04-24T00:00:00+0000",
+      "mu": "2013-10-28T00:00:00+0000",
+      "digitalId": 29449,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/577538c2cc58e",
+        "ext": "jpg"
+      },
+      "description": "\"BLACK SWAN.\" Learn the history of the enigmatic Black Swan. What answers can she provide the Illuminati? And watch as the New Avengers do the unthinkable!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jock",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43520,
+      "title": "New Avengers (2013) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/43520/new_avengers_2013_6",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-05-29T00:00:00+0000",
+      "mu": "2013-11-25T00:00:00+0000",
+      "digitalId": 29450,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/03/577545201b3b9",
+        "ext": "jpg"
+      },
+      "description": "Using the knowledge gained from the Black Swan, the Illuminati rework all their plans and cross the uncrossable line. The first secret alliance is formed. If an incursion is normally RED, what does a BLUE one mean?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jock",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43521,
+      "title": "New Avengers (2013) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/43521/new_avengers_2013_7",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-06-19T00:00:00+0000",
+      "mu": "2013-12-16T00:00:00+0000",
+      "digitalId": 29451,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/51b78bdbc8877",
+        "ext": "jpg"
+      },
+      "description": "The cold war between Atlantis and Wakanda heats up. Who is the secret member of the Illuminati that many of the members do not know about? How does Black Bolt lie?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43522,
+      "title": "New Avengers (2013) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/43522/new_avengers_2013_8",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-07-24T00:00:00+0000",
+      "mu": "2014-01-20T00:00:00+0000",
+      "digitalId": 30649,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/51debf44a4418",
+        "ext": "jpg"
+      },
+      "description": "\"LORDS OF CHAOS.\" As casualties pile up in the ongoing war between Wakanda and Atlantis, an Illuminati member is forced to make a hard choice. An Inhuman learns of the Illuminati's plans. Prelude to INFINITY: Everything falls apart.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43523,
+      "title": "New Avengers (2013) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/43523/new_avengers_2013_9",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-08-28T00:00:00+0000",
+      "mu": "2014-02-17T00:00:00+0000",
+      "digitalId": 31066,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/a0/521278dc0080a",
+        "ext": "jpg"
+      },
+      "description": "\"CULL OBSIDIAN.\" The Illuminati on the front line as the Earth is invaded. The House of Black Bolt cracks. Earth falls.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43524,
+      "title": "New Avengers (2013) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/43524/new_avengers_2013_10",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-09-18T00:00:00+0000",
+      "mu": "2014-03-17T00:00:00+0000",
+      "digitalId": 31514,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/522e2d0f381b5",
+        "ext": "jpg"
+      },
+      "description": "Inhuman secrets reveal the desires of Thanos. The machinations of Maximus the Mad. The battle for Earth continues?what an awful time for an incursion.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43525,
+      "title": "New Avengers (2013) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/43525/new_avengers_2013_11",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-10-16T00:00:00+0000",
+      "mu": "2014-05-14T10:10:15+0000",
+      "digitalId": 31729,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/80/57757dcd74891",
+        "ext": "jpg"
+      },
+      "description": "INFINITY TIE-IN - \"\"BUILDING WORLDS.\"\" The Illuminati travel to another Earth during an incursion. Thanos in Necropolis. The Builders on Earth.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43526,
+      "title": "New Avengers (2013) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/43526/new_avengers_2013_12",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-11-27T00:00:00+0000",
+      "mu": "2014-05-26T00:00:00+0000",
+      "digitalId": 32345,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/528a7e752ff49",
+        "ext": "jpg"
+      },
+      "description": "INFINITY TIE-IN - \"\"THE WORLD WE HAVE.\" The House of Black Bolt crumbles. New friends, new enemies.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43527,
+      "title": "New Avengers (2013) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/43527/new_avengers_2013_13",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2013-12-31T00:00:00+0000",
+      "mu": "2014-06-23T00:00:00+0000",
+      "digitalId": 32471,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/70/52b0ac601933c",
+        "ext": "jpg"
+      },
+      "description": "INHUMANITY TIE-IN! \"THE OTHER SIDE.\" With the consequences of Infinity fresh on their minds, tough decisions are made. The gathering of a new Illuminati. We learn more about the other beings related to the Incursions.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Simone Bianchi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48784,
+      "title": "New Avengers (2013) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/48784/new_avengers_2013_14",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-02-05T00:00:00+0000",
+      "mu": "2014-08-04T00:00:00+0000",
+      "digitalId": 32824,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/52e6ca21298c3",
+        "ext": "jpg"
+      },
+      "description": "The secret of the Black Swan?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Simone Bianchi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48785,
+      "title": "New Avengers (2013) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/48785/new_avengers_2013_15",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-03-19T00:00:00+0000",
+      "mu": "2014-09-15T00:00:00+0000",
+      "digitalId": 33028,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/577580a3bd921",
+        "ext": "jpg"
+      },
+      "description": "Meet the Mapmakers, cartographers of the Apocalypse. Doctor Strange sells his soul. Reed Richards and the Illuminati rekindle an old relationship.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Simone Bianchi",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48786,
+      "title": "New Avengers (2013) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/48786/new_avengers_2013_16",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-03-26T00:00:00+0000",
+      "mu": "2014-09-29T00:00:00+0000",
+      "digitalId": 33490,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/5322065bc6e3e",
+        "ext": "jpg"
+      },
+      "description": "\"THE NIGHT BEFORE THE WORLD ENDED.\" No more bloodshed. To save their nations, the proud Black Panther and the arrogant Namor have sued for peace. As members of the Illuminati, the secret organization made up of the Marvel Universe's most powerful heroes, they must work together to stop the extinction of the entire universe! But are their amends too little too late? There's no turning back for the Illuminati after this issue--and they'll pay the price for their sins.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48787,
+      "title": "New Avengers (2013) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/48787/new_avengers_2013_17",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-04-30T00:00:00+0000",
+      "mu": "2014-10-27T00:00:00+0000",
+      "digitalId": 33575,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/a0/577582b58679b",
+        "ext": "jpg"
+      },
+      "description": "Must the New Avengers destroy a perfect world so that the Earth can live?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48788,
+      "title": "New Avengers (2013) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/48788/new_avengers_2013_18",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-05-14T00:00:00+0000",
+      "mu": "2014-11-10T00:00:00+0000",
+      "digitalId": 33875,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/50/5369445139c97",
+        "ext": "jpg"
+      },
+      "description": "In all of creation, only one Earth has successfully met and triumphed over each Incursion that has threatened it: the Earth of the heroes of the Great Society! Guess which Earth is on a collision course with ours?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48789,
+      "title": "New Avengers (2013) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/48789/new_avengers_2013_19",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-06-11T00:00:00+0000",
+      "mu": "2014-12-08T00:00:00+0000",
+      "digitalId": 33845,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/538f824b9b06c",
+        "ext": "jpg"
+      },
+      "description": "It's the battle you didn't know you wanted to see-until now! As the New Avengers take on the combined power of the Great Society-and only a single parallel Earth can survive!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48790,
+      "title": "New Avengers (2013) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/48790/new_avengers_2013_20",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-06-25T00:00:00+0000",
+      "mu": "2014-12-29T00:00:00+0000",
+      "digitalId": 33882,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/5399e4ea43590",
+        "ext": "jpg"
+      },
+      "description": "How far is Doctor Strange willing to go to protect the Earth from the Great Society? Too far?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48791,
+      "title": "New Avengers (2013) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/48791/new_avengers_2013_21",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-07-30T00:00:00+0000",
+      "mu": "2015-01-26T00:00:00+0000",
+      "digitalId": 34147,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/53ce7617680fa",
+        "ext": "jpg"
+      },
+      "description": "A world must die! But which New Avenger will find the strength to press the button? And what will come in the aftermath?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48792,
+      "title": "New Avengers (2013) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/48792/new_avengers_2013_22",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-08-06T00:00:00+0000",
+      "mu": "2015-02-02T00:00:00+0000",
+      "digitalId": 34548,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/a0/53d6b288aecf4",
+        "ext": "jpg"
+      },
+      "description": "\"THIS IS THE VERY END?\" The Illuminati shatters under an exploding planet.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dale Keown",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50095,
+      "title": "New Avengers (2013) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/50095/new_avengers_2013_23",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-08-20T00:00:00+0000",
+      "mu": "2015-02-16T00:00:00+0000",
+      "digitalId": 34624,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/10/53f34c0999706",
+        "ext": "jpg"
+      },
+      "description": "\"OF ALL THAT WE ONCE WERE.\"\" We follow the members of the now-broken Illuminati through their last day on Earth.",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50096,
+      "title": "New Avengers (2013) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/50096/new_avengers_2013_24",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-09-24T00:00:00+0000",
+      "mu": "2015-03-30T00:00:00+0000",
+      "digitalId": 34842,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/50/54174364c0258",
+        "ext": "jpg"
+      },
+      "description": "Extra-sized issue! IN 8 MONTHS?TIME RUNS OUT!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50973,
+      "title": "New Avengers (2013) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/50973/new_avengers_2013_25",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-10-15T00:00:00+0000",
+      "mu": "2015-04-20T00:00:00+0000",
+      "digitalId": 34977,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/543431ed1b3ae",
+        "ext": "jpg"
+      },
+      "description": "In 7 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52257,
+      "title": "New Avengers (2013) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/52257/new_avengers_2013_26",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-18T00:00:00+0000",
+      "digitalId": 35410,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/5464fca1a9672",
+        "ext": "jpg"
+      },
+      "description": "In 6 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52259,
+      "title": "New Avengers (2013) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/52259/new_avengers_2013_27",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-11-26T00:00:00+0000",
+      "mu": "2015-05-25T00:00:00+0000",
+      "digitalId": 35455,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/60/546bbcfa7f23f",
+        "ext": "jpg"
+      },
+      "description": "In 6 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51172,
+      "title": "New Avengers (2013) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/51172/new_avengers_2013_28",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2014-12-24T00:00:00+0000",
+      "mu": "2015-06-29T00:00:00+0000",
+      "digitalId": 35866,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/670687d0b0cf5",
+        "ext": "jpg"
+      },
+      "description": "In 5 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52261,
+      "title": "New Avengers (2013) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/52261/new_avengers_2013_29",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2015-01-28T00:00:00+0000",
+      "mu": "2015-07-27T00:00:00+0000",
+      "digitalId": 36387,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/54b97dc11bea5",
+        "ext": "jpg"
+      },
+      "description": "In 4 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52263,
+      "title": "New Avengers (2013) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/52263/new_avengers_2013_30",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2015-02-25T00:00:00+0000",
+      "mu": "2015-08-17T00:00:00+0000",
+      "digitalId": 36685,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/54e6090362ff0",
+        "ext": "jpg"
+      },
+      "description": "In 3 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52265,
+      "title": "New Avengers (2013) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/52265/new_avengers_2013_31",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2015-03-11T00:00:00+0000",
+      "mu": "2015-09-14T00:00:00+0000",
+      "digitalId": 36916,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/a0/54fdaec70d4e9",
+        "ext": "jpg"
+      },
+      "description": "In 2 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "In-Hyuk Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52266,
+      "title": "New Avengers (2013) #32",
+      "number": "32",
+      "url": "https://www.marvel.com/comics/issue/52266/new_avengers_2013_32",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2015-03-25T00:00:00+0000",
+      "mu": "2015-09-28T00:00:00+0000",
+      "digitalId": 36988,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/5506fe05e43f2",
+        "ext": "jpg"
+      },
+      "description": "In 1 months... time runs out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52267,
+      "title": "New Avengers (2013) #33",
+      "number": "33",
+      "url": "https://www.marvel.com/comics/issue/52267/new_avengers_2013_33",
+      "seriesId": 16451,
+      "seriesName": "New Avengers (2013 - 2015)",
+      "onSale": "2015-04-29T00:00:00+0000",
+      "mu": "2015-10-26T00:00:00+0000",
+      "digitalId": 37706,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/552e8ee78b219",
+        "ext": "jpg"
+      },
+      "description": "Final issue!",
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47120,
+      "title": "Infinity (2013) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/47120/infinity_2013_1",
+      "seriesId": 17735,
+      "seriesName": "Infinity (2013)",
+      "onSale": "2013-08-14T00:00:00+0000",
+      "mu": "2014-02-10T00:00:00+0000",
+      "digitalId": 30683,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/a0/5abc01506bfee",
+        "ext": "jpg"
+      },
+      "description": "The oversized kickoff to the year's most anticipate Blockbuster summer event, chaning the way you view the Marvel Universe! The outbreak of war on two fronts: Earth and Space, with our heroes torn between them. The world-shattering return of Thanos! Includes material from FREE COMIC BOOK DAY: INFINITY.",
+      "pageCount": 64,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47123,
+      "title": "Infinity (2013) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/47123/infinity_2013_2",
+      "seriesId": 17735,
+      "seriesName": "Infinity (2013)",
+      "onSale": "2013-09-04T00:00:00+0000",
+      "mu": "2014-03-03T00:00:00+0000",
+      "digitalId": 31380,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/5abc01d6c9793",
+        "ext": "jpg"
+      },
+      "description": "The Inhumans pay the tribute. Victory in deep space. The secrets of Thanos.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47124,
+      "title": "Infinity (2013) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/47124/infinity_2013_3",
+      "seriesId": 17735,
+      "seriesName": "Infinity (2013)",
+      "onSale": "2013-09-18T00:00:00+0000",
+      "mu": "2014-03-17T00:00:00+0000",
+      "digitalId": 31501,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/80/5abc023d12556",
+        "ext": "jpg"
+      },
+      "description": "Prison break. Stealing a worldkiller. The fall of Attilan.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47125,
+      "title": "Infinity (2013) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/47125/infinity_2013_4",
+      "seriesId": 17735,
+      "seriesName": "Infinity (2013)",
+      "onSale": "2013-10-09T00:00:00+0000",
+      "mu": "2014-04-14T00:00:00+0000",
+      "digitalId": 31528,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/5abc031296f2d",
+        "ext": "jpg"
+      },
+      "description": "Negotiating the fall of worlds. The Illuminati versus Thanos. Thor, God of War.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47126,
+      "title": "Infinity (2013) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/47126/infinity_2013_5",
+      "seriesId": 17735,
+      "seriesName": "Infinity (2013)",
+      "onSale": "2013-10-30T00:00:00+0000",
+      "mu": "2014-04-28T00:00:00+0000",
+      "digitalId": 31741,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/60/5abc036c50a6b",
+        "ext": "jpg"
+      },
+      "description": "The Avengers Universe. The Heroes of Earth rally to defeat Thanos. The war for Earth begins.",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47127,
+      "title": "Infinity (2013) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/47127/infinity_2013_6",
+      "seriesId": 17735,
+      "seriesName": "Infinity (2013)",
+      "onSale": "2013-11-27T00:00:00+0000",
+      "mu": "2014-05-26T00:00:00+0000",
+      "digitalId": 32315,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/80/5abc03d24ae81",
+        "ext": "jpg"
+      },
+      "description": "All roads lead to this! The over-sized conclusion of the Marvel Summer event! The heroes of Earth versus the forces of Thanos!",
+      "pageCount": 64,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52986,
+      "title": "FREE COMIC BOOK DAY 2015 0 (2015)",
+      "number": null,
+      "url": "https://www.marvel.com/comics/issue/52986/free_comic_book_day_2015_0_2015",
+      "seriesId": 19821,
+      "seriesName": "FREE COMIC BOOK DAY 2015 0 (2015)",
+      "onSale": "2015-05-02T00:00:00+0000",
+      "mu": "2015-05-02T00:00:00+0000",
+      "digitalId": 38811,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/30/5649f78660027",
+        "ext": "jpg"
+      },
+      "description": "This May, prepare yourself for the kickoff of the biggest comic event in Marvel history, with a special preview of Marvel's future in Secret Wars #0!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52447,
+      "title": "Secret Wars (2015) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/52447/secret_wars_2015_1",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-05-06T00:00:00+0000",
+      "mu": "2015-11-02T00:00:00+0000",
+      "digitalId": 38164,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5cb736a3cdd49",
+        "ext": "jpg"
+      },
+      "description": "The Final Incursion is happening! The Marvel Universe is colliding with the Ultimate Universe! And neither will survive!",
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52450,
+      "title": "Secret Wars (2015) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/52450/secret_wars_2015_2",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-05-13T00:00:00+0000",
+      "mu": "2015-11-16T00:00:00+0000",
+      "digitalId": 38263,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5cb737237a2de",
+        "ext": "jpg"
+      },
+      "description": "When the Marvel Universe is gone, all that remains is Battleworld! Learn the secrets of this brave new realm in this special oversized issue!",
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52451,
+      "title": "Secret Wars (2015) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/52451/secret_wars_2015_3",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-06-03T00:00:00+0000",
+      "mu": "2015-12-07T00:00:00+0000",
+      "digitalId": 38820,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/03/5cb7377845092",
+        "ext": "jpg"
+      },
+      "description": "All the Devils dance!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52452,
+      "title": "Secret Wars (2015) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/52452/secret_wars_2015_4",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-07-01T00:00:00+0000",
+      "mu": "2015-12-28T00:00:00+0000",
+      "digitalId": 39004,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/5cb73456184e4",
+        "ext": "jpg"
+      },
+      "description": "ALL THE ANGELS SING",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52453,
+      "title": "Secret Wars (2015) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/52453/secret_wars_2015_5",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-08-12T00:00:00+0000",
+      "mu": "2016-02-08T00:00:00+0000",
+      "digitalId": 39684,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5cb736208d76d",
+        "ext": "jpg"
+      },
+      "description": "Owen Reece died for our sins!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52454,
+      "title": "Secret Wars (2015) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/52454/secret_wars_2015_6",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-10-07T00:00:00+0000",
+      "mu": "2016-04-04T00:00:00+0000",
+      "digitalId": 39847,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/5cb73a17a642c",
+        "ext": "jpg"
+      },
+      "description": "The Final War!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52455,
+      "title": "Secret Wars (2015) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/52455/secret_wars_2015_7",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-11-11T00:00:00+0000",
+      "mu": "2016-05-09T00:00:00+0000",
+      "digitalId": 40469,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/5cb73c66beb33",
+        "ext": "jpg"
+      },
+      "description": "The Greatest Sacrifice!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 52456,
+      "title": "Secret Wars (2015) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/52456/secret_wars_2015_8",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-12-09T00:00:00+0000",
+      "mu": "2016-06-13T00:00:00+0000",
+      "digitalId": 40542,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/564ce8a2d5cde",
+        "ext": "jpg"
+      },
+      "description": "Genesis!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 57620,
+      "title": "Secret Wars (2015) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/57620/secret_wars_2015_9",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2016-01-13T00:00:00+0000",
+      "mu": "2016-07-11T00:00:00+0000",
+      "digitalId": 40728,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/569040820cfb9",
+        "ext": "jpg"
+      },
+      "description": "Genesis!",
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

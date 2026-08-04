@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Direction 1 — Longbox</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0d0f13;
+        --surface: #14171d;
+        --surface-2: #1a1e26;
+        --line: #262c38;
+        --text: #e8ebf2;
+        --muted: #8f99ad;
+        --red: #e23636;
+        --amber: #f2a541;
+        --green: #3fb27f;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 system-ui, "Segoe UI", sans-serif; }
+      a { color: inherit; }
+      button { font: inherit; cursor: pointer; }
+      ::selection { background: var(--red); color: #fff; }
+
+      .back { position: fixed; top: 14px; left: 14px; z-index: 50; background: #000a; border: 1px solid var(--line); color: var(--text); padding: .35rem .7rem; border-radius: 999px; text-decoration: none; font-size: .8rem; }
+
+      .shell { display: grid; grid-template-columns: 264px 1fr; min-height: 100vh; }
+
+      /* ---------------- rail ---------------- */
+      .rail { background: #0a0c0f; border-right: 1px solid var(--line); padding: 1.1rem .9rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+      .brand { display: flex; align-items: center; gap: .6rem; margin: 1.6rem 0 1.4rem; }
+      .brand .mark { width: 30px; height: 30px; border-radius: 8px; background: var(--red); display: grid; place-items: center; font-weight: 800; }
+      .brand b { font-size: .98rem; letter-spacing: -.01em; }
+      .rail h3 { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 1.4rem .4rem .5rem; }
+      .railitem { display: block; width: 100%; text-align: left; background: none; border: 0; color: var(--muted); padding: .5rem .6rem; border-radius: 9px; }
+      .railitem:hover { background: var(--surface-2); color: var(--text); }
+      .railitem.on { background: var(--surface-2); color: var(--text); }
+      .railitem .t { display: flex; justify-content: space-between; gap: .5rem; font-size: .89rem; }
+      .railitem .bar { height: 3px; background: #2b3140; border-radius: 2px; margin-top: .45rem; overflow: hidden; }
+      .railitem .bar i { display: block; height: 100%; background: var(--red); }
+      .railitem .n { font-variant-numeric: tabular-nums; color: var(--muted); font-size: .78rem; }
+
+      /* ---------------- hero ---------------- */
+      .hero { position: relative; padding: 2.4rem 2.2rem 1.8rem; overflow: hidden; border-bottom: 1px solid var(--line); }
+      .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center 22%; filter: blur(34px) saturate(1.4); transform: scale(1.25); opacity: .32; }
+      .hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, #0d0f1366 0%, #0d0f13d9 55%, #0d0f13 100%); }
+      .hero-in { position: relative; display: flex; gap: 1.6rem; align-items: flex-end; }
+      .hero img { width: 168px; aspect-ratio: 2/3; object-fit: cover; border-radius: 10px; box-shadow: 0 18px 50px #000a; border: 1px solid #ffffff1a; }
+      .eyebrow { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--red); font-weight: 800; }
+      .hero h1 { font-size: 2rem; line-height: 1.15; margin: .35rem 0 .3rem; letter-spacing: -.02em; }
+      .hero .series { color: var(--muted); margin: 0 0 .7rem; }
+      .hero .blurb { color: #c3cbd9; max-width: 60ch; font-size: .92rem; margin: 0 0 1rem; }
+      .chips { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
+      .chip { font-size: .74rem; border: 1px solid var(--line); background: #ffffff0d; padding: .18rem .55rem; border-radius: 999px; color: var(--muted); }
+      .chip.ok { color: var(--green); border-color: #3fb27f55; }
+      .cta { display: flex; gap: .55rem; flex-wrap: wrap; }
+      .btn { border: 1px solid transparent; border-radius: 10px; padding: .62rem 1.1rem; background: var(--red); color: #fff; font-weight: 600; display: inline-flex; align-items: center; gap: .45rem; }
+      .btn:hover { filter: brightness(1.1); }
+      .btn.ghost { background: #ffffff12; color: var(--text); border-color: var(--line); font-weight: 500; }
+
+      /* ---------------- shelf ---------------- */
+      .sec { padding: 1.6rem 2.2rem; }
+      .sec-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .9rem; }
+      .sec-head h2 { font-size: 1.05rem; margin: 0; letter-spacing: -.01em; }
+      .sec-head span { color: var(--muted); font-size: .84rem; }
+      .shelf { display: flex; gap: .9rem; overflow-x: auto; padding-bottom: .7rem; scrollbar-width: thin; }
+      .tile { flex: 0 0 132px; }
+      .tile .wrap { position: relative; }
+      .tile img { width: 132px; aspect-ratio: 2/3; object-fit: cover; border-radius: 9px; border: 1px solid var(--line); display: block; }
+      .tile.read img { opacity: .38; }
+      .tile .tick { position: absolute; top: 7px; right: 7px; width: 22px; height: 22px; border-radius: 50%; background: #000000b3; border: 1px solid #ffffff33; display: grid; place-items: center; font-size: .7rem; color: #fff; }
+      .tile.read .tick { background: var(--green); border-color: var(--green); }
+      .tile .lab { font-size: .78rem; margin-top: .45rem; color: var(--muted); line-height: 1.35; }
+      .tile .lab b { color: var(--text); font-weight: 550; display: block; }
+
+      /* ---------------- table ---------------- */
+      .rows { display: grid; gap: .3rem; }
+      .row { display: grid; grid-template-columns: 26px 44px 1fr auto; gap: .8rem; align-items: center; padding: .45rem .6rem; border: 1px solid transparent; border-radius: 10px; }
+      .row:hover { background: var(--surface); border-color: var(--line); }
+      .row img { width: 44px; aspect-ratio: 2/3; object-fit: cover; border-radius: 5px; border: 1px solid var(--line); }
+      .row.read { opacity: .5; }
+      .row.read .rt { text-decoration: line-through; }
+      .rt { font-weight: 550; font-size: .92rem; }
+      .rm { color: var(--muted); font-size: .78rem; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+      .box { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid #4a5364; display: grid; place-items: center; background: none; color: #fff; font-size: .7rem; }
+      .row.read .box { background: var(--green); border-color: var(--green); }
+      .ract { display: flex; gap: .3rem; opacity: 0; }
+      .row:hover .ract { opacity: 1; }
+      .mini { border: 1px solid var(--line); background: var(--surface-2); color: var(--muted); border-radius: 7px; padding: .22rem .5rem; font-size: .76rem; }
+      .mini:hover { color: var(--text); }
+      .badge { font-size: .7rem; border: 1px solid var(--line); border-radius: 999px; padding: .04rem .45rem; }
+      .badge.ok { color: var(--green); border-color: #3fb27f44; }
+      .badge.soon { color: var(--amber); border-color: #f2a54144; }
+      .badge.unk { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <a class="back" href="./index.html">← All directions</a>
+
+    <div class="shell">
+      <aside class="rail">
+        <div class="brand"><span class="mark">M</span><b>Reading Tracker</b></div>
+
+        <h3>Reading orders</h3>
+        <button class="railitem on">
+          <span class="t"><span>Hickman → Secret Wars</span><span class="n" id="r1">—</span></span>
+          <span class="bar"><i id="b1" style="width:0"></i></span>
+        </button>
+        <button class="railitem">
+          <span class="t"><span>Hickman (minimal)</span><span class="n">0 / 89</span></span>
+          <span class="bar"><i style="width:0"></i></span>
+        </button>
+        <button class="railitem">
+          <span class="t"><span>Krakoan Age</span><span class="n">12 / 74</span></span>
+          <span class="bar"><i style="width:16%"></i></span>
+        </button>
+
+        <h3>Library</h3>
+        <button class="railitem">Everything I've read</button>
+        <button class="railitem">By series</button>
+        <button class="railitem">Added by hand</button>
+
+        <h3>Add</h3>
+        <button class="railitem">Search issues</button>
+        <button class="railitem">Paste a reading order</button>
+        <button class="railitem">Backup &amp; settings</button>
+      </aside>
+
+      <main>
+        <section class="hero">
+          <div class="hero-bg" id="heroBg"></div>
+          <div class="hero-fade"></div>
+          <div class="hero-in">
+            <img id="heroImg" alt="" />
+            <div>
+              <div class="eyebrow">Up next · issue 34 of 219</div>
+              <h1 id="heroTitle">—</h1>
+              <p class="series" id="heroSeries">—</p>
+              <p class="blurb" id="heroBlurb">—</p>
+              <div class="chips" id="heroChips"></div>
+              <div class="cta">
+                <button class="btn">▶ Continue reading</button>
+                <button class="btn ghost">Mark as read</button>
+                <button class="btn ghost">Issue page ↗</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec">
+          <div class="sec-head"><h2>Coming up</h2><span>next 10 unread, in order</span></div>
+          <div class="shelf" id="shelf"></div>
+        </section>
+
+        <section class="sec">
+          <div class="sec-head"><h2>Full order</h2><span>219 issues · 33 read</span></div>
+          <div class="rows" id="rows"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./mock-data.js"></script>
+    <script>
+      const items = MOCK.items;
+      const cover = (it, v) => it.cover ? `${it.cover.path}/${v}.${it.cover.ext}` : '';
+      const next = items.find((i) => !i.read) || items[0];
+
+      document.getElementById('heroImg').src = cover(next, 'portrait_uncanny');
+      document.getElementById('heroBg').style.backgroundImage = `url(${cover(next, 'detail')})`;
+      document.getElementById('heroTitle').textContent = next.title;
+      document.getElementById('heroSeries').textContent = [next.seriesName, next.creators?.[0]?.name].filter(Boolean).join(' · ');
+      document.getElementById('heroBlurb').textContent = next.description || 'No synopsis in the metadata for this issue.';
+      document.getElementById('heroChips').innerHTML =
+        `<span class="chip ok">✓ Expected in Unlimited</span>` +
+        `<span class="chip">${next.pageCount || '?'} pages</span>` +
+        `<span class="chip">On sale ${(next.onSale || '').slice(0, 10)}</span>` +
+        `<span class="chip">#${next.number ?? '?'}</span>`;
+
+      const readCount = items.filter((i) => i.read).length;
+      document.getElementById('r1').textContent = `${readCount} / 219`;
+      document.getElementById('b1').style.width = (readCount / 219 * 100).toFixed(1) + '%';
+
+      document.getElementById('shelf').innerHTML = items.filter((i) => !i.read).slice(0, 10).map((it) => `
+        <div class="tile">
+          <div class="wrap"><img src="${cover(it, 'portrait_incredible')}" alt="" loading="lazy" /><span class="tick">○</span></div>
+          <div class="lab"><b>${it.title.replace(/\s*\(\d{4}\)/, '')}</b>${(it.onSale || '').slice(0, 4)}</div>
+        </div>`).join('');
+
+      document.getElementById('rows').innerHTML = items.map((it) => `
+        <div class="row ${it.read ? 'read' : ''}">
+          <button class="box">${it.read ? '✓' : ''}</button>
+          <img src="${cover(it, 'portrait_incredible')}" alt="" loading="lazy" />
+          <div>
+            <div class="rt">${it.title}</div>
+            <div class="rm">
+              <span>${it.seriesName || ''}</span>
+              <span class="badge ${it.mu ? 'ok' : 'unk'}">${it.mu ? '✓ Unlimited' : '? unknown'}</span>
+            </div>
+          </div>
+          <div class="ract">
+            <button class="mini">Read</button><button class="mini">Info</button><button class="mini">↑</button><button class="mini">↓</button>
+          </div>
+        </div>`).join('');
+    </script>
+  </body>
+</html>
