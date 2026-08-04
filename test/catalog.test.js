@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory,
-  searchCatalog, groupCatalog, variantLabel, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
+  searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
+  LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
 } from '../src/js/lib/catalog.js';
 
 test('parses a well-formed catalog entry', () => {
@@ -291,5 +292,37 @@ test('the bundled catalog names every variant it groups', async () => {
     if (!group.name) continue;
     const labels = group.lists.map(variantLabel);
     assert.equal(new Set(labels).size, labels.length, `${group.name} has ambiguous variants`);
+  }
+});
+
+// ------------------------------------------------------------------ attribution
+
+test('a source is linked only when it is a real https address', () => {
+  assert.equal(sourceLink({ source: 'https://example.com/order.md' }), 'https://example.com/order.md');
+  assert.equal(sourceLink({ source: 'javascript:alert(1)' }), null);
+  assert.equal(sourceLink({ source: 'http://example.com/order.md' }), null);
+  assert.equal(sourceLink({ source: 'Comic Book Herald' }), null);
+  assert.equal(sourceLink({}), null);
+});
+
+test('attribution falls back to the source when no license is recorded', () => {
+  assert.equal(sourceLabel({ sourceLicense: 'MIT', source: 'https://example.com' }), 'MIT');
+  assert.equal(sourceLabel({ source: 'https://example.com' }), 'https://example.com');
+  assert.equal(sourceLabel({}), null);
+});
+
+test('a last-updated date is shown only when it is a real date', () => {
+  assert.equal(updatedLabel({ updatedAt: '2026-08-04T06:14:48.695Z' }, 'en-GB'), '4 Aug 2026');
+  assert.equal(updatedLabel({ updatedAt: 'sometime last year' }), null);
+  assert.equal(updatedLabel({}), null);
+});
+
+test('every bundled catalog entry carries attribution and a last-updated date', async () => {
+  const url = new URL('../src/data/catalog.json', import.meta.url);
+  const { lists } = parseCatalog(JSON.parse(await readFile(url, 'utf8')));
+  assert.ok(lists.length);
+  for (const list of lists) {
+    assert.ok(sourceLabel(list), `${list.id} has no attribution`);
+    assert.ok(updatedLabel(list, 'en-GB'), `${list.id} has no last-updated date`);
   }
 });

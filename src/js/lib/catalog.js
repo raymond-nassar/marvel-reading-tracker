@@ -44,6 +44,35 @@ export function depthHint(depth) {
 
 const str = (v) => (typeof v === 'string' && v.trim() ? v.trim() : null);
 
+// Attribution is only trustworthy if the reader can follow it, and only safe if what we
+// render as a link is really a web address. Anything else (a bare name, a `javascript:` URL)
+// is still shown as attribution text — the credit is never dropped — but never linked.
+export function sourceLink(list) {
+  const s = str(list?.source);
+  if (!s) return null;
+  try {
+    return new URL(s).protocol === 'https:' ? s : null;
+  } catch {
+    return null;
+  }
+}
+
+// Where an order came from, in the reader's words. The license is part of the credit the
+// upstream curators are owed, so it travels with the name rather than being shown alone.
+export function sourceLabel(list) {
+  return str(list?.sourceLicense) ?? str(list?.source);
+}
+
+// A curated order is a snapshot, so its age is the reader's only signal that a recent event
+// may be missing. An unparseable date is treated as no date rather than shown as "Invalid Date".
+export function updatedLabel(list, locale) {
+  const s = str(list?.updatedAt);
+  if (!s) return null;
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
 const strings = (v) => (Array.isArray(v) ? [...new Set(v.map(str).filter(Boolean))] : []);
 
 // A curated file is fetched from our own origin by name, so it must stay a plain file name.

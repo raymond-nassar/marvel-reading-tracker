@@ -354,6 +354,9 @@ code { background: #ffffff0d; border-radius: 4px; padding: .05rem .3rem; font-si
 }
 .result-group-h { margin: 0; font-size: .95rem; font-weight: 600; }
 .result-group > .result-meta { margin: 0; }
+.result-source { margin: .2rem 0 0; }
+.result-source a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.result-source a:hover { color: var(--text); }
 
 .notice { border-radius: 9px; padding: .55rem .75rem; font-size: .84rem; margin: 0; border: 1px solid var(--line); }
 .notice-ok { color: var(--green); border-color: #43c08840; background: #43c0880f; }

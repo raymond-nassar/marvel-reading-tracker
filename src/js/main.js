@@ -14,7 +14,7 @@ import { availability, describe, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory, searchCatalog,
-  groupCatalog, variantLabel,
+  groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
 } from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -1137,6 +1137,7 @@ function catalogRow(list, { variant = false } = {}) {
           depthHint(list.depth) ? ` ${depthHint(list.depth)}` : null,
         ])
         : null,
+      attributionLine(list),
     ]),
     el('button', {
       class: 'btn btn-p',
@@ -1147,6 +1148,31 @@ function catalogRow(list, { variant = false } = {}) {
       onclick: () => importCurated(list.file),
     }, 'Import'),
   ]);
+}
+
+// Where an order came from and how old it is. A reader deciding whether to trust a curated
+// order needs both: the credit tells them who made it, the date tells them whether a recent
+// event could be missing from a snapshot.
+function attributionLine(list) {
+  const label = sourceLabel(list);
+  const href = sourceLink(list);
+  const updated = updatedLabel(list);
+  if (!label && !updated) return null;
+
+  const parts = [];
+  if (label) {
+    parts.push('Source: ');
+    parts.push(href
+      ? el('a', {
+        href,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        'aria-label': `Source of ${list.name}: ${label}`,
+      }, label)
+      : el('span', { text: label }));
+  }
+  if (updated) parts.push(el('span', { text: `${label ? ' · ' : ''}Updated ${updated}` }));
+  return el('p', { class: 'result-meta result-source' }, parts);
 }
 
 function wireCatalogSearch() {
