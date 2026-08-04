@@ -201,16 +201,28 @@ function wireNav() {
   $('#btn-covers').addEventListener('click', () => setCovers(!settings.covers));
 }
 
-function showView(next) {
+// Moving focus to the new view's heading is what makes the rail usable with a keyboard or a
+// screen reader. Without it, focus stays on the rail button and the view change is silent, so
+// the next Tab continues from the old position and nothing announces where you now are.
+function showView(next, { focus = true } = {}) {
   view = next;
   for (const name of ['read', 'progress', 'add', 'data']) {
     $(`#view-${name}`).hidden = name !== next;
   }
   for (const btn of document.querySelectorAll('.ri[data-view]')) {
-    btn.setAttribute('aria-current', String(btn.dataset.view === next));
+    if (btn.dataset.view === next) btn.setAttribute('aria-current', 'page');
+    else btn.removeAttribute('aria-current');
   }
   renderRail();
   window.scrollTo({ top: 0 });
+
+  if (!focus) return;
+  const section = $(`#view-${next}`);
+  const heading = document.getElementById(section.getAttribute('aria-labelledby'));
+  if (heading) {
+    heading.setAttribute('tabindex', '-1');
+    heading.focus({ preventScroll: true });
+  }
 }
 
 // ------------------------------------------------------------------ rail
@@ -230,7 +242,7 @@ function renderRail() {
     nav.append(el('li', {}, el('button', {
       type: 'button',
       class: 'ri',
-      'aria-current': String(current),
+      'aria-current': current ? 'true' : null,
       onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
     }, [
       el('span', { class: 't' }, [

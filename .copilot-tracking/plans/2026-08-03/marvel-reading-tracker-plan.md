@@ -360,3 +360,55 @@ could not actually populate the fields the UI needs.
 * Implementation artifact: .copilot-tracking/changes/2026-08-03/marvel-reading-tracker-changes.md
 * Ready phase or task: **P00-T01 — blocked pending user approval of v2 and a logged-in verification session**
 * Remaining provisional question or blocker: confirm repo name; clear the P00 deep-link gate.
+
+---
+
+## Amendments after approval
+
+Recorded so the approved plan and the shipped app do not silently diverge. Each links to the
+change log entry carrying the evidence.
+
+### A1 — Cover art is available (corrects the research document) — CHG-003
+
+The plan was written on the finding that the API exposes no cover art. That finding was wrong;
+it came from sampling only list endpoints. `GET /v1/issues/{id}` returns `cover`, `description`,
+`pageCount` and `creators`. Re-vendoring the curated orders yielded 219/219 covers.
+
+Consequences: the UI became visual rather than text-only; `normalizeIssue`/`api.toIssue` carry
+the rich fields; `normalizeCover` upgrades the API's `http://` cover paths to `https://`.
+
+**Added constraint — cover art handling.** The app stores cover **URLs only**, never image bytes,
+and never proxies them; the browser fetches from Marvel's CDN as it would on marvel.com. A
+"Show cover art" toggle (default on) falls back to a typographic treatment. This is a standing
+constraint on future work, not a one-off implementation note.
+
+### A2 — One tab per issue, and no retained window handle — CHG-002
+
+The plan did not address reader tab reuse. It was tested against a live subscription and rejected:
+`read.marvel.com` is a hash-routed SPA that a cross-origin caller cannot re-route.
+
+The more important consequence is that the planned "open a placeholder tab, await the lookup,
+then navigate it" flow was unsafe — it depended on a handle that proved unreliable, and the
+`await` would have moved `window.open` outside the user gesture, risking popup blocking. Replaced
+with a synchronous `window.open` to a same-origin `/open.html` that performs the lookup itself.
+
+### A3 — P05 verification scope
+
+`scripts/check-contract.mjs` was added to pin the upstream contract (24 assumptions). Because the
+app depends on an unofficial third-party API that can change without notice, this is the
+mechanism that distinguishes "we broke it" from "they changed it", and should be run before
+trusting any release.
+
+## Status at close of P05
+
+| Phase | State |
+|---|---|
+| P00 reader deep-link gate | passed (CHG-001) |
+| P01 repo and evidence trail | done |
+| P02 host, store, limiter, cache | done |
+| P03 lists, deep links, availability, accessibility | done |
+| P04 curated orders, hydration, search, backup | done |
+| P05 tests, contract check, review log | done |
+
+Verified: 99/99 unit tests, 24/24 contract assumptions, end-to-end reader launch confirmed by the
+user in Edge.

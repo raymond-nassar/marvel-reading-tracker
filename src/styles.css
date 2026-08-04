@@ -41,6 +41,14 @@ a { color: var(--blue); }
   border-radius: 6px;
 }
 
+/* Headings are focused programmatically when a view changes, purely so screen readers
+   announce the new context. That is not a keyboard landing spot, so it should not draw a
+   focus ring — the ring would appear without the user having pressed anything. */
+h1[tabindex="-1"]:focus,
+h2[tabindex="-1"]:focus {
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; margin: -1px;
   padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
