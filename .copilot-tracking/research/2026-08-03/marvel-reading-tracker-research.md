@@ -94,6 +94,17 @@ and runs natively on ARM64.
 | `localStorage` cleared by browser hygiene tools | Medium | JSON backup/restore + Markdown export |
 | Data ends 2025; newer issues absent | Low | Document it; search degrades gracefully |
 
+## Addendum: `unlimitedDate` data quality (observed 2026-08-03)
+
+While generating the P00 sample set, `/v1/issues/6482` (The Amazing Spider-Man (1963) #1) returned
+`unlimitedDate: 1963-03-01`. Marvel Unlimited did not launch until 2007, so for at least some older
+issues this field mirrors the on-sale date rather than a real catalogue date. By contrast,
+Secret Wars (1984) #1 returned a plausible `2007-11-13`.
+
+Consequence: `unlimitedDate` cannot be treated as authoritative proof of availability. This
+independently confirms critique finding CR-007 and is why the plan renders `expected available`
+rather than a definitive claim, and offers a user override.
+
 ## Planning Readiness
 
 Met. Requirements, acceptance criteria, dependencies, API contract, and rate/pagination limits
