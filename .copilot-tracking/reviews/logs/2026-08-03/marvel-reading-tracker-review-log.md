@@ -93,3 +93,40 @@ All phases complete and verified. The original request — run the Marvel Unlimi
 BlueStacks — was impossible on this hardware (Windows on ARM cannot host an x86 Android emulator,
 as no Windows ARM64 emulator binary exists). The delivered app addresses the underlying goal,
 reading-order tracking, which the user confirmed was the actual need.
+
+## Review round 2 — verification of the round-1 fixes
+
+The same independent reviewer was asked to verify commit `09921d7` and to look specifically for
+problems the fixes themselves introduced. It confirmed four of the eight round-1 fixes as correct
+and complete (server DoS, limiter/hydrator abort, penciler filter, markdown backslash) and found
+six further issues — two of them High, and **both of the Highs were in the recovery path added by
+round 1**. That is the finding worth carrying forward: the code written to prevent data loss was
+itself the most dangerous code in the change.
+
+| # | Severity | Issue | Fix |
+|---|----------|-------|-----|
+| 1 | High | `startFresh()` wiped the original even when the salvage copy had not landed. `salvage()` swallowed every error, and copying the state **doubles** the origin's footprint — so a state near the quota is exactly when the copy fails, and exactly when the banner is telling the user to press the button. | `salvage()` now reads the write back and returns a boolean; `startFresh()` refuses without a verified copy. `confirmedDownloaded` is the deliberate way out once the user has saved the file themselves, so refusing is not a dead end. |
+| 2 | High | The "never overwrite an existing salvage" rule was scoped to the key, not the incident, and the key was never cleared. A second, unrelated corruption months later was left unsalvaged, while `salvagedRaw()` handed the user incident #1's stale blob **presented as their data**. | A second incident is archived under its own key; `salvagedRaw()` tracks the current incident's key and falls back to the live value rather than reaching for the old blob. |
+| 3 | Medium | `serializeChecklist` had its own `issueId != null` fallback, so the negative synthetic ids allowed in round 1 leaked a fabricated `marvel.com/comics/issue/-1754289012345/` link into exported checklists — and did not survive re-import, detaching the entry's read state. | Guarded with `issueId > 0`, matching `normalizeIssue`. The entry now serializes as a plain checkbox, which already round-trips. |
+| 4 | Medium | The persist-failure fix had been applied to 1 of 10 call sites. Worst case: a failed list creation rolled `listOrder` back, so `ids[ids.length - 1]` was a **pre-existing** list that the user was silently switched to while being told their new list was created. | `update()` now sets `lastUpdateOk`; every announcement and navigation consults it. Ids are read from the state `update()` returned, never from `store.state` afterwards. `ensureList` returns `null` rather than an undefined id. |
+| 5 | Medium | `renderBlocked()` was never called after a successful restore, so a recovered user kept staring at a banner saying saving was paused — and the obvious next click, "Start fresh", would have wiped the backup they had just restored. | `renderBlocked()` moved into `renderAll()`, so it cannot go stale in either direction. |
+| 6 | Low | `model.js` had acquired a UTF-8 BOM and a mojibake'd em-dash, indicating the editing path was lossy on non-ASCII — a live hazard for `main.js`, which contains functional glyphs (`✓ ↑ ↓ ✕ ⚑`). | File repaired and re-saved without BOM. Repo-wide sweep run over all 41 tracked text files: clean. `main.js` glyphs verified intact. |
+
+Reviewer confirmed as **not** problems: `restore()` writing `PRERESTORE_KEY`/`KEY` while blocked
+(it snapshots the original first, so nothing is lost), `undoRestore()` on such a snapshot (fails
+cleanly through `validateBackup`), the outer 500 handler after a partial stream (`headersSent`
+guards it), `sleepOrAbort` listener handling in both orderings, and every other consumer of
+`issueId` — hydration, cache keys, sort, availability, series progress, and `reader.js`.
+
+Verification after round 2: **119/119 unit tests pass** (up from 114), including new regressions
+for each of findings 1–4. Malformed-path and traversal probes re-run against the live server with
+`curl --path-as-is`: `/%`, `/a%2`, `/%zz`, `/%c0%af` all 403, traversal 404, server alive.
+
+### Lesson recorded
+
+Round 1 fixed a Critical data-loss defect and, in doing so, introduced two High data-loss defects
+in the recovery path. New safety code deserves the same scrutiny as the code it replaces —
+arguably more, because it runs only when the user's data is already in a bad state and there is
+no second chance. A recovery path should be reviewed on the assumption that every write it makes
+can fail.
+

@@ -182,3 +182,27 @@ test('resolveUniqueExact auto-accepts only a single exact match', () => {
   assert.equal(resolveUniqueExact('', [{ title: 'x' }]).status, 'ambiguous');
   assert.equal(resolveUniqueExact('x', []).status, 'unmatched');
 });
+
+// A hand-added issue gets a negative synthetic id so it can never collide with a real Marvel
+// id. The serializer used to build a marvel.com URL from any non-null id, which published a
+// dead link and broke the round trip: the id pattern will not match a leading "-", so on
+// re-import the entry fell out of `entries` into `unresolved` and its read state detached.
+test('a hand-added issue never becomes a fabricated marvel.com link', () => {
+  const md = serializeChecklist({
+    name: 'Mixed',
+    items: [
+      { issueId: 52447, title: 'Real Issue #1', url: null, read: false },
+      { issueId: -1754289012345, title: 'My Indie Comic #1', url: null, read: true },
+    ],
+  });
+
+  assert.ok(!md.includes('/-'), `no negative id may reach a URL:\n${md}`);
+  assert.match(md, /- \[x\] My Indie Comic #1/, 'it serializes as a plain checkbox instead');
+
+  const { entries, unresolved } = parseChecklist(md);
+  assert.deepEqual(entries.map((e) => e.issueId), [52447]);
+  assert.equal(unresolved.length, 1);
+  assert.equal(unresolved[0].title, 'My Indie Comic #1');
+  assert.equal(unresolved[0].read, true, 'and its read state still round-trips');
+  assert.equal(unresolved[0].url, null, 'with no invented link attached');
+});

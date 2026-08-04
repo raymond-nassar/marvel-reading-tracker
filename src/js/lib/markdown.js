@@ -123,7 +123,7 @@ export function serializeChecklist({ name, description, items }) {
   if (description) lines.push(description, '');
   for (const it of items) {
     const box = it.read ? '- [x]' : '- [ ]';
-    const url = it.url || (it.issueId != null ? `https://www.marvel.com/comics/issue/${it.issueId}/` : null);
+    const url = it.url || (it.issueId > 0 ? `https://www.marvel.com/comics/issue/${it.issueId}/` : null);
     lines.push(url ? `${box} [${escapeLinkText(it.title)}](${url})` : `${box} ${it.title}`);
   }
   lines.push('');

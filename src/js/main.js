@@ -60,9 +60,13 @@ checkHealth();
 refreshCacheUsage();
 
 if (store.lastError) notify('#save-report', store.lastError, 'error');
-renderBlocked();
 
 // ------------------------------------------------------------------ unreadable-data recovery
+
+// Set once the user has saved a copy of the unreadable data to disk themselves. It is the only
+// way out when the browser is too full to hold a second copy, which is exactly the situation
+// where the automatic salvage fails.
+let downloadedSalvage = false;
 
 function renderBlocked() {
   const banner = $('#blocked-banner');
@@ -80,14 +84,14 @@ function wireBlockedBanner() {
     if (!raw) return notify('#save-report', 'There was nothing left to download.', 'warn');
     const when = new Date().toISOString().slice(0, 10);
     download(`marvel-reading-tracker-unreadable-${when}.json`, raw, 'application/json');
+    downloadedSalvage = true;
     announce('Downloaded a copy of the unreadable data.');
   });
 
   $('#btn-start-fresh').addEventListener('click', () => {
     if (!confirm('Start fresh?\n\nThis replaces the unreadable saved data with an empty tracker. Download a copy first if you have not already.')) return;
-    if (store.startFresh()) {
+    if (store.startFresh({ confirmedDownloaded: downloadedSalvage })) {
       notify('#save-report', 'Started fresh. Saving is working again.', 'ok');
-      renderBlocked();
     } else {
       notify('#save-report', store.lastError ?? 'Could not start fresh.', 'error');
     }
@@ -117,6 +121,13 @@ function announce(msg) {
   announcer.textContent = '';
   // Re-setting after a tick makes screen readers re-announce identical messages.
   setTimeout(() => { announcer.textContent = msg; }, 30);
+}
+
+// A success message must never outlive the write it describes. store.update rolls the change
+// back when persistence fails, so every announcement has to consult the result first —
+// otherwise a screen-reader user hears "List deleted" for a deletion that did not happen.
+function announceIfSaved(msg) {
+  if (store.lastUpdateOk) announce(msg);
 }
 
 function notify(sel, msg, kind = 'ok') {
@@ -229,11 +240,16 @@ function wireNav() {
   $('#btn-new-list').addEventListener('click', () => {
     const name = prompt('Name for the new list?', 'My reading order');
     if (!name) return;
-    store.update((s) => createList(s, { name }));
-    const ids = store.state.listOrder;
-    store.update((s) => setActive(s, ids[ids.length - 1]));
+    // The id has to come from the state the store returned, not from store.state afterwards.
+    // A failed write rolls the creation back, and listOrder's last entry would then be an
+    // unrelated pre-existing list that we would silently switch the user to while telling
+    // them their new list was created.
+    const created = store.update((s) => createList(s, { name }));
+    if (!store.lastUpdateOk) return;
+    const id = created.listOrder[created.listOrder.length - 1];
+    store.update((s) => setActive(s, id));
     showView('read');
-    announce(`Created list ${name}.`);
+    announceIfSaved(`Created list ${name}.`);
   });
 
   for (const btn of document.querySelectorAll('[data-curated]')) {
@@ -310,7 +326,7 @@ function wireReading() {
     const name = prompt('List name', list.name);
     if (!name) return;
     store.update((s) => renameList(s, id, name));
-    announce(`Renamed to ${name}.`);
+    announceIfSaved(`Renamed to ${name}.`);
   });
 
   $('#btn-delete-list').addEventListener('click', () => {
@@ -319,7 +335,7 @@ function wireReading() {
     if (!list) return;
     if (!confirm(`Delete "${list.name}"? Your read progress is kept — only the list is removed.`)) return;
     store.update((s) => deleteList(s, id));
-    announce('List deleted. Reading progress was kept.');
+    announceIfSaved('List deleted. Reading progress was kept.');
   });
 
   $('#btn-export-md').addEventListener('click', exportMarkdown);
@@ -526,7 +542,7 @@ function renderRows() {
         'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,
         onclick: () => {
           store.update((s) => toggleRead(s, item.issueId));
-          announce(`${item.title} ${isRead(store.state, item.issueId) ? 'marked read' : 'marked unread'}.`);
+          announceIfSaved(`${item.title} ${isRead(store.state, item.issueId) ? 'marked read' : 'marked unread'}.`);
         },
       }, item.read ? '✓' : ''),
       el('div', { class: 'thumb' }, [img, fb]),
@@ -553,7 +569,7 @@ function renderRows() {
         el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} up`, onclick: () => store.update((s) => moveItem(s, id, item.issueId, -1)) }, '↑'),
         el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} down`, onclick: () => store.update((s) => moveItem(s, id, item.issueId, 1)) }, '↓'),
         el('button', { type: 'button', class: 'mini', 'aria-label': `Change availability for ${item.title}`, onclick: () => cycleOverride(item) }, '⚑'),
-        el('button', { type: 'button', class: 'mini mini-danger', 'aria-label': `Remove ${item.title} from this list`, onclick: () => { store.update((s) => removeFromList(s, id, item.issueId)); announce(`Removed ${item.title}.`); } }, '✕'),
+        el('button', { type: 'button', class: 'mini mini-danger', 'aria-label': `Remove ${item.title} from this list`, onclick: () => { store.update((s) => removeFromList(s, id, item.issueId)); announceIfSaved(`Removed ${item.title}.`); } }, '✕'),
       ]),
     ]));
   }
@@ -585,7 +601,7 @@ function matchesFilter(item) {
 function cycleOverride(item) {
   const next = item.override === 'available' ? 'unavailable' : item.override === 'unavailable' ? null : 'available';
   store.update((s) => setOverride(s, item.issueId, next));
-  announce(`${item.title}: ${next ? `marked ${next}` : 'override cleared'}.`);
+  announceIfSaved(`${item.title}: ${next ? `marked ${next}` : 'override cleared'}.`);
 }
 
 // ------------------------------------------------------------------ shortcuts
@@ -734,11 +750,14 @@ function renderResults(sel, items, metaFn) {
   }
 }
 
+// Returns null when the list could not be created, rather than an undefined id that would be
+// passed downstream as if it were a real list.
 function ensureList(name) {
   let id = activeListId();
   if (!id) {
-    store.update((s) => createList(s, { name }));
-    id = store.state.listOrder[store.state.listOrder.length - 1];
+    const created = store.update((s) => createList(s, { name }));
+    if (!store.lastUpdateOk) return null;
+    id = created.listOrder[created.listOrder.length - 1];
     store.update((s) => setActive(s, id));
   }
   return id;
@@ -746,15 +765,18 @@ function ensureList(name) {
 
 function addToActive(issues, message, { sort = false } = {}) {
   const id = ensureList('My reading order');
+  if (!id) return { added: 0, skipped: 0, ok: false };
   let added = 0, skipped = 0;
   store.update((s) => {
     const res = addIssuesToList(s, id, issues, { sort });
     added = res.added; skipped = res.skipped;
     return res.state;
   });
-  const msg = `${message} ${added} added${skipped ? `, ${skipped} already in the list` : ''}.`;
-  announce(msg);
-  return { added, skipped };
+  // added/skipped are counted inside the updater, which runs before the write. If the write
+  // failed the change was rolled back, so those counts describe nothing that survived.
+  if (!store.lastUpdateOk) return { added: 0, skipped: 0, ok: false };
+  announce(`${message} ${added} added${skipped ? `, ${skipped} already in the list` : ''}.`);
+  return { added, skipped, ok: true };
 }
 
 async function addSeries(series) {
@@ -765,7 +787,8 @@ async function addSeries(series) {
     });
     // The API returns series issues newest-first; reading order needs oldest-first.
     const sorted = [...issues].sort(compareIssues);
-    const { added, skipped } = addToActive(sorted, `${series.name}:`);
+    const { added, skipped, ok } = addToActive(sorted, `${series.name}:`);
+    if (!ok) return notify('#series-results', `${series.name}: nothing was added, because that change could not be saved.`, 'error');
     notify('#series-results', `${series.name}: ${added} issues added${skipped ? `, ${skipped} skipped as duplicates` : ''}.`, 'ok');
   } catch (err) {
     notify('#series-results', friendly(err), 'error');
@@ -779,7 +802,8 @@ async function addCreator(creator) {
       onProgress: ({ loaded, total }) => announce(`Loaded ${loaded}${total ? ` of ${total}` : ''} issues…`),
     });
     const sorted = [...issues].sort(compareIssues);
-    const { added, skipped } = addToActive(sorted, `${creator.name}:`);
+    const { added, skipped, ok } = addToActive(sorted, `${creator.name}:`);
+    if (!ok) return notify('#creator-results', `${creator.name}: nothing was added, because that change could not be saved.`, 'error');
     notify('#creator-results',
       `${creator.name}: ${added} added${skipped ? `, ${skipped} duplicates skipped` : ''}. ` +
       'Creator records omit Unlimited dates, so availability shows as unknown until details are fetched.',
@@ -805,11 +829,15 @@ function doImport() {
   let listId;
   if (intoNew) {
     const name = headings[0] || `Imported ${new Date().toLocaleDateString()}`;
-    store.update((s) => createList(s, { name, description: 'Imported from a pasted reading order.' }));
-    listId = store.state.listOrder[store.state.listOrder.length - 1];
+    const created = store.update((s) => createList(s, { name, description: 'Imported from a pasted reading order.' }));
+    if (!store.lastUpdateOk) {
+      return notify('#import-report', 'Could not create the list, so nothing was imported.', 'error');
+    }
+    listId = created.listOrder[created.listOrder.length - 1];
     store.update((s) => setActive(s, listId));
   } else {
     listId = ensureList('My reading order');
+    if (!listId) return notify('#import-report', 'Could not create a list, so nothing was imported.', 'error');
   }
 
   // Markdown carries only a title and an id, so metadata starts as pending and is
@@ -830,6 +858,12 @@ function doImport() {
     for (const e of entries) if (e.read) next = markRead(next, e.issueId, true);
     return next;
   });
+
+  // The counts were taken inside the updater, before the write. A rolled-back write means
+  // nothing was imported, whatever they say.
+  if (!store.lastUpdateOk) {
+    return notify('#import-report', 'Nothing was imported: that change could not be saved.', 'error');
+  }
 
   box.append(el('p', { class: 'notice notice-ok', text: `Imported ${added} issue${added === 1 ? '' : 's'}${skipped ? `, ${skipped} already present` : ''}. Details will be fetched in the background.` }));
 
@@ -860,6 +894,11 @@ function unresolvedRow(entry, listId) {
         // Auto-accept only a single exact normalized match. Anything else is a choice
         // for you to make, because silently picking result #1 files the wrong comic.
         store.update((s) => addIssuesToList(s, listId, [res.match], {}).state);
+        if (!store.lastUpdateOk) {
+          btn.disabled = false;
+          row.append(el('p', { class: 'notice notice-error', text: 'That match could not be saved.' }));
+          return;
+        }
         if (entry.read) store.update((s) => markRead(s, res.match.issueId, true));
         row.replaceChildren(el('p', { class: 'notice notice-ok', text: `Matched: ${res.match.title}` }));
         announce(`Matched ${entry.title}.`);
@@ -882,6 +921,10 @@ function unresolvedRow(entry, listId) {
             type: 'button', class: 'btn',
             onclick: () => {
               store.update((s) => addIssuesToList(s, listId, [c], {}).state);
+              if (!store.lastUpdateOk) {
+                row.replaceChildren(el('p', { class: 'notice notice-error', text: `${c.title} could not be saved.` }));
+                return;
+              }
               if (entry.read) store.update((s) => markRead(s, c.issueId, true));
               row.replaceChildren(el('p', { class: 'notice notice-ok', text: `Added ${c.title}.` }));
               announce(`Added ${c.title}.`);
@@ -911,6 +954,7 @@ function doManual() {
   // Marvel ids so the two can never collide.
   const issueId = issueIdFromUrl(url) ?? -Date.now();
   const listId = ensureList('My reading order');
+  if (!listId) return notify('#manual-report', 'Could not create a list, so nothing was added.', 'error');
 
   // Report what actually happened rather than assuming success — this previously announced
   // "Added" even when the entry had been silently discarded.
@@ -929,7 +973,7 @@ function doManual() {
     return res.state;
   });
 
-  if (added === 0) {
+  if (!store.lastUpdateOk || added === 0) {
     return notify(
       '#manual-report',
       skipped > 0
@@ -953,14 +997,22 @@ async function importCurated(file) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const order = await res.json();
 
-    store.update((s) => createList(s, { name: order.name, description: order.description }));
-    const listId = store.state.listOrder[store.state.listOrder.length - 1];
+    const created = store.update((s) => createList(s, { name: order.name, description: order.description }));
+    if (!store.lastUpdateOk) {
+      alert('That curated order could not be saved, so nothing was imported.');
+      return;
+    }
+    const listId = created.listOrder[created.listOrder.length - 1];
     let added = 0;
     store.update((s) => {
       const r = addIssuesToList(s, listId, order.items.map((i) => ({ ...i, source: 'curated', hydrated: true })), {});
       added = r.added;
       return r.state;
     });
+    if (!store.lastUpdateOk) {
+      alert('The list was created but its issues could not be saved.');
+      return;
+    }
     store.update((s) => setActive(s, listId));
     showView('read');
     announce(`Imported ${order.name}: ${added} issues. Any issues you had already read stay read.`);
@@ -1066,7 +1118,7 @@ function wireData() {
     if (!confirm('Erase every list and all reading progress in this browser? Export a backup first if you are not sure.')) return;
     store.update(() => createEmptyState());
     cache.clear();
-    announce('All local data erased.');
+    announceIfSaved('All local data erased.');
   });
 }
 
@@ -1143,6 +1195,10 @@ function renderAll() {
   $('#add-target').textContent = list
     ? `Anything you add goes into “${list.name}”.`
     : 'Anything you add will start a new list.';
+  // Kept in renderAll so the banner cannot go stale — in particular a successful restore
+  // clears the block, and leaving the banner up would push the user toward "Start fresh",
+  // which would then wipe the backup they had just restored.
+  renderBlocked();
 }
 
 setInterval(renderQueue, 1000);

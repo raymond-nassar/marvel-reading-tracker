@@ -10,6 +10,7 @@ $RECYCLE.BIN/
 
 # Local scratch
 *.log
+*.err
 tmp/
 scratch/
 

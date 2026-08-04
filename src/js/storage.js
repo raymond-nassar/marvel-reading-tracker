@@ -20,6 +20,10 @@ export class Store {
     // Set when saved data exists but could not be read. While it is set the store refuses to
     // write, so the unreadable-but-recoverable data on disk is never overwritten.
     this.blocked = false;
+    // Where this incident's copy actually landed, or null if no copy exists. Read back from
+    // storage rather than assumed, because setItem can fail silently under quota pressure.
+    this.salvageKey = null;
+    this.lastUpdateOk = true;
   }
 
   // A failed load must never lead to data loss. Previously this fell back to empty state and
@@ -42,49 +46,88 @@ export class Store {
     return this.state;
   }
 
-  // Keeps the first unreadable value. Never overwrites an existing salvage copy: a second
-  // failed load must not clobber the good original with something already degraded.
+  // Sets this incident's value aside and reports whether a copy verifiably exists.
+  //
+  // Two rules matter here. A previous incident's copy must never be clobbered, so if the main
+  // slot already holds different bytes this one is archived under its own key instead of being
+  // dropped — otherwise a second corruption months later would be left with no copy at all
+  // while salvagedRaw() served the stale blob as if it were the user's data. And the write is
+  // read back rather than assumed, because copying the state doubles this origin's footprint,
+  // so the near-quota case is exactly when setItem throws and the copy silently never lands.
   salvage() {
     try {
       const raw = this.storage?.getItem(KEY);
-      if (raw && !this.storage.getItem(SALVAGE_KEY)) this.storage.setItem(SALVAGE_KEY, raw);
+      if (!raw) {
+        this.salvageKey = null;
+        return true; // nothing on disk to lose
+      }
+      const existing = this.storage.getItem(SALVAGE_KEY);
+      const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;
+      if (existing !== raw) this.storage.setItem(key, raw);
+      const ok = this.storage.getItem(key) === raw;
+      this.salvageKey = ok ? key : null;
+      return ok;
     } catch {
-      /* salvage is best-effort; never let it throw during boot */
+      this.salvageKey = null;
+      return false;
     }
   }
 
+  // Offers this incident's copy, falling back to the live value — which, while blocked, is
+  // still the untouched original. Deliberately does not reach for SALVAGE_KEY blindly: that
+  // would hand back an older incident's blob while presenting it as the current data.
   salvagedRaw() {
     try {
-      return this.storage?.getItem(SALVAGE_KEY) ?? this.storage?.getItem(KEY) ?? null;
+      if (this.salvageKey) {
+        const copy = this.storage?.getItem(this.salvageKey);
+        if (copy) return copy;
+      }
+      return this.storage?.getItem(KEY) ?? null;
     } catch {
       return null;
     }
   }
 
-  // Deliberate, user-initiated escape hatch from the blocked state.
-  startFresh() {
-    this.salvage();
+  // Deliberate, user-initiated escape hatch from the blocked state. Refuses unless a copy of
+  // the unreadable data verifiably survives somewhere, so the button the banner tells the user
+  // to press cannot destroy their only copy. confirmedDownloaded is the way out when storage is
+  // too full to hold a copy: the user has already saved the file to disk themselves.
+  startFresh({ confirmedDownloaded = false } = {}) {
+    if (!this.salvage() && !confirmedDownloaded) {
+      this.lastError =
+        'Nothing was cleared: a copy of your unreadable data could not be set aside '
+        + '(browser storage is probably full). Use "Download a copy" first, then try again.';
+      this.onChange(this.state, this.lastError);
+      return false;
+    }
     this.blocked = false;
     this.state = createEmptyState();
     const ok = this.persist(this.state);
     if (ok) this.lastError = null;
+    else this.blocked = true; // could not write the empty state; stay latched
     this.onChange(this.state, this.lastError);
     return ok;
   }
 
   // Applies a pure transformation. If persistence fails, the in-memory state is rolled back
-  // so the UI never displays progress that was not actually saved.
+  // so the UI never displays progress that was not actually saved. lastUpdateOk lets callers
+  // gate their success messages and navigation on the write actually having happened.
   update(fn) {
     const previous = this.state;
     const next = fn(previous);
-    if (next === previous) return previous;
+    if (next === previous) {
+      this.lastUpdateOk = true;
+      return previous;
+    }
     this.state = next;
     if (!this.persist(next)) {
       this.state = previous;
+      this.lastUpdateOk = false;
       this.onChange(previous, this.lastError);
       return previous;
     }
     this.lastError = null;
+    this.lastUpdateOk = true;
     this.onChange(next, null);
     return next;
   }

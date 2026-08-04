@@ -146,3 +146,33 @@ present. One real defect found and fixed: **switching views never moved focus**,
 screen-reader users stayed on the rail button with no announcement of the new context. Focus now
 moves to the destination view's heading. `aria-current="false"` was also replaced with omitting
 the attribute, which is the conventional signal.
+
+### CHG-004 — second review round hardened the recovery path itself
+
+An independent review of the round-1 fixes confirmed four as correct and complete, and found six
+further issues. Both High findings were **in the recovery code added by round 1**:
+
+- `startFresh()` could wipe the original when the salvage copy had not landed — and the write
+  most likely to fail is exactly this one, because copying the state doubles the origin's
+  `localStorage` footprint. `salvage()` now verifies by read-back and returns a boolean;
+  `startFresh()` refuses without a copy, with `confirmedDownloaded` as the deliberate escape
+  once the user has saved the file themselves.
+- The salvage slot was never freed, so a second corruption months later went unsalvaged while
+  the download button served the first incident's stale blob as if it were the user's data.
+  Incidents now archive separately and `salvagedRaw()` tracks the current one.
+
+Also fixed: `serializeChecklist` leaked the new negative synthetic ids into fabricated
+`marvel.com` URLs that did not survive re-import; nine of ten `store.update` call sites still
+announced success without checking the write landed (one of which silently switched the user to
+an unrelated existing list); `renderBlocked()` never ran after a successful restore, leaving a
+recovered user one click away from wiping the backup they had just restored; and `model.js` had
+picked up a UTF-8 BOM plus a mojibake'd em-dash, which mattered because `main.js` carries
+functional glyphs. Repo-wide encoding sweep over all 41 tracked text files: clean.
+
+Tests: **119 passing**, up from 114, with a new regression for each of the four functional
+findings. Server re-probed with `curl --path-as-is`: malformed paths 403, traversal 404, alive.
+
+The lesson worth keeping: round 1 fixed a Critical data-loss defect and introduced two High ones
+in the code written to prevent it. Recovery paths run only when the data is already in a bad
+state, so every write they make must be assumed to fail.
+
