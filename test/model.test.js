@@ -326,3 +326,33 @@ test('listItems reports placeholders for ids with no metadata yet', () => {
   assert.equal(item.hydrated, false);
   assert.ok(item.title);
 });
+
+// Search, series and creator results come from list endpoints, which return neither `cover`
+// nor `digitalId`. Such an issue must stay pending so hydration fills those in - otherwise it
+// sits in the list with no art and, worse, no way to open it in Marvel Unlimited.
+test('an issue added from a list endpoint stays pending until hydrated', async () => {
+  const { toIssue } = await import('../src/js/api.js');
+
+  // Exactly the shape the live API returns from /v1/search/issues and /v1/series/{id}/issues.
+  const fromList = toIssue({
+    id: 52447, title: 'Secret Wars (2015) #1', issueNumber: 1,
+    detailUrl: 'https://www.marvel.com/comics/issue/52447/secret_wars_2015_1',
+    seriesId: 19648, seriesName: 'Secret Wars (2015)',
+    onSaleDate: '2015-05-06', unlimitedDate: '2015-11-09', yearPage: 2015,
+  });
+
+  assert.equal(fromList.cover, null, 'list endpoints omit cover');
+  assert.equal(fromList.digitalId, null, 'list endpoints omit digitalId');
+  assert.equal(fromList.hydrated, false, 'so it must not be treated as complete');
+
+  let s = createList(createEmptyState(), { name: 'From search' });
+  const listId = s.listOrder[0];
+  s = addIssuesToList(s, listId, [fromList]).state;
+
+  assert.deepEqual(pendingIssueIds(s), [52447], 'hydration must know it still needs details');
+  assert.ok(hydrationOrder(s, listId).includes(52447));
+
+  // And once hydrated it drops out of the queue.
+  s = upsertIssue(s, { ...fromList, digitalId: 38164, cover: { path: 'http://x/y', extension: 'jpg' }, hydrated: true });
+  assert.deepEqual(pendingIssueIds(s), []);
+});

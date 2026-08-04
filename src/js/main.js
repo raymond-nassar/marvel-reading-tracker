@@ -739,13 +739,38 @@ function renderResults(sel, items, metaFn) {
   const box = $(sel);
   box.replaceChildren();
   if (!items.length) return notify(sel, 'Nothing matched that search.', 'warn');
+
+  // Name the destination at the point of decision. The same hint sits in the view header, but
+  // the results are far enough down the page that it is easy to miss entirely.
+  const target = store.state.lists[activeListId()];
+  box.append(el('p', {
+    class: 'rail-hint',
+    text: target
+      ? `Adding to “${target.name}”.`
+      : 'Adding will start a new list called “My reading order”.',
+  }));
+
   for (const it of items) {
+    // The confirmation belongs on the control that was clicked. Previously the only feedback
+    // was a screen-reader announcement, so a sighted user had to open the list to find out
+    // whether anything had happened.
+    const btn = el('button', { type: 'button', class: 'btn' }, 'Add');
+    btn.addEventListener('click', () => {
+      const res = addToActive([it], `Added ${it.title}.`);
+      if (!res.ok) {
+        btn.textContent = 'Could not add';
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = res.added ? `Added to ${res.listName}` : 'Already in that list';
+    });
+
     box.append(el('div', { class: 'result' }, [
       el('div', { class: 'result-main' }, [
         el('div', { class: 'result-title', text: it.title }),
         el('div', { class: 'result-meta', text: metaFn(it) }),
       ]),
-      el('button', { type: 'button', class: 'btn', onclick: () => addToActive([it], `Added ${it.title}.`) }, 'Add'),
+      btn,
     ]));
   }
 }
@@ -765,7 +790,7 @@ function ensureList(name) {
 
 function addToActive(issues, message, { sort = false } = {}) {
   const id = ensureList('My reading order');
-  if (!id) return { added: 0, skipped: 0, ok: false };
+  if (!id) return { added: 0, skipped: 0, ok: false, listName: null };
   let added = 0, skipped = 0;
   store.update((s) => {
     const res = addIssuesToList(s, id, issues, { sort });
@@ -774,9 +799,18 @@ function addToActive(issues, message, { sort = false } = {}) {
   });
   // added/skipped are counted inside the updater, which runs before the write. If the write
   // failed the change was rolled back, so those counts describe nothing that survived.
-  if (!store.lastUpdateOk) return { added: 0, skipped: 0, ok: false };
+  if (!store.lastUpdateOk) return { added: 0, skipped: 0, ok: false, listName: null };
+  const listName = store.state.lists[id]?.name ?? 'your list';
   announce(`${message} ${added} added${skipped ? `, ${skipped} already in the list` : ''}.`);
-  return { added, skipped, ok: true };
+
+  // Search, series and creator results come from list endpoints, which return neither `cover`
+  // nor `digitalId` — only /v1/issues/{id} does. Without hydration the issue lands with no art
+  // and, worse, no way to open it in Marvel Unlimited, until the user happens to notice the
+  // "Fetch details" button. Import already did this; every other add path was missing it.
+  // start() is a no-op while a run is in flight, so rapid adds cannot stack up.
+  if (added > 0) hydrator.start(id);
+
+  return { added, skipped, ok: true, listName };
 }
 
 async function addSeries(series) {
