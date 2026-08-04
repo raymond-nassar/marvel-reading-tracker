@@ -82,3 +82,26 @@ export function parseCatalog(raw) {
 
   return { lists, dropped };
 }
+
+// Categories are derived from the lists themselves, so a category never appears with nothing
+// behind it and a newly added list type shows up without a code change. Lists whose type is
+// missing or unrecognised are grouped under "other" rather than being hidden.
+export const UNCATEGORIZED = 'other';
+
+export function catalogCategories(lists) {
+  const counts = new Map();
+  for (const list of lists) {
+    const key = list.type ?? UNCATEGORIZED;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  // Keep the declared type order stable regardless of the manifest's order, with "other" last.
+  const order = [...LIST_TYPES, UNCATEGORIZED];
+  return order
+    .filter((key) => counts.has(key))
+    .map((key) => ({ key, label: key === UNCATEGORIZED ? 'Other' : typeLabel(key), count: counts.get(key) }));
+}
+
+export function filterByCategory(lists, category) {
+  if (!category || category === 'all') return lists;
+  return lists.filter((list) => (list.type ?? UNCATEGORIZED) === category);
+}

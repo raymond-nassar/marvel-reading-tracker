@@ -12,7 +12,7 @@ import {
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { availability, describe, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
-import { parseCatalog, typeLabel, depthLabel } from './lib/catalog.js';
+import { parseCatalog, typeLabel, depthLabel, catalogCategories, filterByCategory } from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
 import { ResponseCache } from './cache.js';
@@ -1024,6 +1024,7 @@ function doManual() {
 // ------------------------------------------------------------------ curated orders
 
 let catalogCache = null;
+let catalogCategory = 'all';
 
 async function loadCatalog() {
   if (catalogCache) return catalogCache;
@@ -1061,11 +1062,23 @@ async function renderCatalog() {
 
   box.replaceChildren();
   if (!catalog.lists.length) {
+    $('#catalog-filters').hidden = true;
     box.append(el('p', { class: 'rail-hint', text: 'No curated reading lists are bundled with this build.' }));
     return;
   }
 
-  for (const list of catalog.lists) {
+  renderCatalogFilters(catalog.lists);
+
+  // Filtering narrows which lists are shown; every list that is shown keeps the full detail a
+  // reader needs to choose, so switching categories never hides a description or issue count.
+  const shown = filterByCategory(catalog.lists, catalogCategory);
+  if (!shown.length) {
+    box.append(el('p', { class: 'rail-hint', text: 'No reading lists in that category.' }));
+    announce('No reading lists in that category.');
+    return;
+  }
+
+  for (const list of shown) {
     const meta = [typeLabel(list.type), depthLabel(list.depth), `about ${list.count} issues`]
       .filter(Boolean).join(' · ');
     box.append(el('div', { class: 'result' }, [
@@ -1085,8 +1098,56 @@ async function renderCatalog() {
 
   // The dropped-entry warning already announced itself; a second announcement would replace it.
   if (!catalog.dropped) {
-    announce(`Catalog shows ${catalog.lists.length} reading ${catalog.lists.length === 1 ? 'list' : 'lists'}.`);
+    const where = catalogCategory === 'all' ? '' : ` in ${categoryLabel(catalog.lists, catalogCategory)}`;
+    announce(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${where}.`);
   }
+}
+
+function categoryLabel(lists, key) {
+  return catalogCategories(lists).find((c) => c.key === key)?.label ?? 'that category';
+}
+
+function renderCatalogFilters(lists) {
+  const box = $('#catalog-filters');
+  const categories = catalogCategories(lists);
+
+  // One category is no choice at all, so the filter would only add noise.
+  box.hidden = categories.length < 2;
+  if (box.hidden) {
+    catalogCategory = 'all';
+    return;
+  }
+
+  // A category can disappear when the bundled data changes; falling back to "all" keeps the
+  // reader looking at a populated catalog instead of a permanently empty one.
+  if (catalogCategory !== 'all' && !categories.some((c) => c.key === catalogCategory)) {
+    catalogCategory = 'all';
+  }
+
+  const options = [{ key: 'all', label: 'All', count: lists.length }, ...categories];
+
+  // Selecting a category re-renders the view. Rebuilding the radios then would destroy the
+  // one the reader just activated and drop keyboard focus out of the filter, so when the
+  // options are unchanged we only move the selection.
+  const existing = [...box.querySelectorAll('input[name="catalog-category"]')];
+  if (existing.length === options.length && existing.every((r, i) => r.value === options[i].key)) {
+    for (const radio of existing) radio.checked = radio.value === catalogCategory;
+    return;
+  }
+
+  box.replaceChildren(
+    el('legend', { class: 'visually-hidden', text: 'Filter the catalog by category' }),
+    ...options.map(({ key, label, count }) => el('label', { class: 'fp' }, [
+      el('input', {
+        type: 'radio',
+        name: 'catalog-category',
+        value: key,
+        checked: key === catalogCategory,
+        onchange: () => { catalogCategory = key; renderCatalog(); },
+      }),
+      el('span', { text: `${label} (${count})` }),
+    ])),
+  );
 }
 
 async function importCurated(file) {

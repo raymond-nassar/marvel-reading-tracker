@@ -253,6 +253,8 @@ details.full > summary:hover { color: var(--text); }
 details.full[open] > summary .chev { transform: rotate(90deg); }
 
 .filters { display: flex; gap: .4rem; margin: .9rem 0 .7rem; flex-wrap: wrap; border: 0; padding: 0; }
+/* display:flex would otherwise defeat the hidden attribute. */
+.filters[hidden] { display: none; }
 .fp { display: inline-flex; }
 .fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .fp span {

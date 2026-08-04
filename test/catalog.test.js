@@ -1,7 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { parseCatalog, typeLabel, depthLabel, LIST_TYPES, READING_DEPTHS } from '../src/js/lib/catalog.js';
+import {
+  parseCatalog, typeLabel, depthLabel, catalogCategories, filterByCategory,
+  LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
+} from '../src/js/lib/catalog.js';
 
 test('parses a well-formed catalog entry', () => {
   const { lists, dropped } = parseCatalog({
@@ -87,4 +90,48 @@ test('the bundled catalog is valid and its counts match the vendored orders', as
     assert.equal(list.count, order.items.length, `${list.id} count is out of date`);
     assert.equal(list.id, order.id);
   }
+});
+
+test('categories are derived from the lists, with counts and a stable order', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'a', file: 'a.json', name: 'A', count: 1, type: 'era' },
+      { id: 'b', file: 'b.json', name: 'B', count: 1, type: 'event' },
+      { id: 'c', file: 'c.json', name: 'C', count: 1, type: 'event' },
+      { id: 'd', file: 'd.json', name: 'D', count: 1 },
+    ],
+  });
+  assert.deepEqual(catalogCategories(lists), [
+    { key: 'event', label: 'Event', count: 2 },
+    { key: 'era', label: 'Era', count: 1 },
+    { key: 'other', label: 'Other', count: 1 },
+  ]);
+});
+
+test('filtering narrows the lists without altering them, and “all” keeps every list', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'a', file: 'a.json', name: 'A', count: 1, type: 'era', description: 'An era.' },
+      { id: 'b', file: 'b.json', name: 'B', count: 1, type: 'event' },
+    ],
+  });
+  const eras = filterByCategory(lists, 'era');
+  assert.deepEqual(eras.map((l) => l.id), ['a']);
+  assert.equal(eras[0].description, 'An era.', 'details must survive filtering');
+  assert.equal(eras[0], lists[0]);
+
+  assert.equal(filterByCategory(lists, 'all').length, 2);
+  assert.equal(filterByCategory(lists, null).length, 2);
+});
+
+test('lists with an unusable type are grouped under “other”, never hidden', () => {
+  const { lists } = parseCatalog({
+    lists: [{ id: 'a', file: 'a.json', name: 'A', count: 1, type: 'anthology' }],
+  });
+  assert.deepEqual(filterByCategory(lists, UNCATEGORIZED).map((l) => l.id), ['a']);
+});
+
+test('an unknown category matches nothing rather than everything', () => {
+  const { lists } = parseCatalog({ lists: [{ id: 'a', file: 'a.json', name: 'A', count: 1, type: 'era' }] });
+  assert.deepEqual(filterByCategory(lists, 'event'), []);
 });
