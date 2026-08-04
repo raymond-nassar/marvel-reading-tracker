@@ -50,6 +50,10 @@ function checkEntry(raw, index, seen) {
   if (raw.expect != null && !(Number.isInteger(raw.expect) && raw.expect > 0)) {
     at('expect must be a positive whole number of issues when present');
   }
+  // A variant name only means something relative to the story it varies from.
+  if (!str(raw.group) && (str(raw.variant) || str(raw.groupName))) {
+    at('variant and groupName need a group to belong to');
+  }
   if (errors.length) return { entry: null, errors };
 
   return {
@@ -67,6 +71,10 @@ function checkEntry(raw, index, seen) {
       depth: raw.depth,
       characters: strings(raw.characters),
       keywords: strings(raw.keywords),
+      // Optional: ties this order to a story that has more than one reading path.
+      group: str(raw.group),
+      groupName: str(raw.groupName),
+      variant: str(raw.variant),
       expect: Number.isInteger(raw.expect) ? raw.expect : null,
     },
     errors: [],

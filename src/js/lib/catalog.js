@@ -75,6 +75,11 @@ function normalizeEntry(raw) {
     source: str(raw.source),
     sourceLicense: str(raw.sourceLicense),
     updatedAt: str(raw.updatedAt),
+    // Two orders for the same story are a choice between reading paths, not two unrelated
+    // lists. `group` names the story they share; `variant` names this particular path.
+    group: str(raw.group),
+    groupName: str(raw.groupName),
+    variant: str(raw.variant),
   };
 }
 
@@ -139,6 +144,8 @@ function fold(v) {
 function haystack(list) {
   return fold([
     list.name,
+    list.groupName,
+    list.variant,
     list.description,
     typeLabel(list.type),
     depthLabel(list.depth),
@@ -154,4 +161,40 @@ export function searchCatalog(lists, query) {
     const text = haystack(list);
     return terms.every((term) => text.includes(term));
   });
+}
+
+// ------------------------------------------------------------------ variants
+
+// A reader choosing between "essential" and "complete" is making one decision about a single
+// story, so the two orders are presented together under the story's name rather than as
+// unrelated catalog entries. A list with no group, or the only surviving member of its group
+// after filtering, stays a plain entry — a heading over one item is noise.
+export function groupCatalog(lists) {
+  const groups = [];
+  const byKey = new Map();
+
+  for (const list of lists) {
+    const key = list.group;
+    if (!key) {
+      groups.push({ key: `list:${list.id}`, name: null, lists: [list] });
+      continue;
+    }
+    const existing = byKey.get(key);
+    if (existing) {
+      existing.lists.push(list);
+      continue;
+    }
+    // The group takes its name from its first member, so a group is never nameless.
+    const group = { key, name: list.groupName ?? list.name, lists: [list] };
+    byKey.set(key, group);
+    groups.push(group);
+  }
+
+  return groups.map((g) => (g.lists.length > 1 ? g : { ...g, name: null }));
+}
+
+// What distinguishes this order from its siblings. Falls back to the reading depth, then the
+// list's own name, so a variant is never presented as an unlabelled duplicate.
+export function variantLabel(list) {
+  return list.variant ?? depthLabel(list.depth) ?? list.name;
 }

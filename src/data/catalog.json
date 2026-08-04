@@ -26,6 +26,9 @@
         "Time Runs Out",
         "incursions"
       ],
+      "group": "hickman-secret-wars",
+      "groupName": "Hickman to Secret Wars",
+      "variant": "Essential reading",
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_minimal.md",
       "sourceLicense": "MIT (emreparker/marvel-comics)",
       "updatedAt": "2026-08-04T06:14:48.695Z"
@@ -57,6 +60,9 @@
         "incursions",
         "tie-ins"
       ],
+      "group": "hickman-secret-wars",
+      "groupName": "Hickman to Secret Wars",
+      "variant": "Complete reading, with tie-ins",
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
       "sourceLicense": "MIT (emreparker/marvel-comics)",
       "updatedAt": "2026-08-04T06:14:48.703Z"

@@ -81,6 +81,7 @@ Each entry needs:
 | `sourceLicense` | Licence of the upstream order |
 | `out` | Plain `*.json` file name to write into `src/data/` |
 | `characters`, `keywords` | Extra terms the catalog search should match |
+| `group`, `groupName`, `variant` | Optional. Ties this order to a story that has more than one reading path — the catalog then groups the versions under `groupName` and labels each with its `variant` |
 | `expect` | Optional expected issue count; a mismatch is reported |
 
 An entry that is missing or malformed fails the vendor run with the reason, so a broken

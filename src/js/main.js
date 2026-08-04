@@ -14,6 +14,7 @@ import { availability, describe, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory, searchCatalog,
+  groupCatalog, variantLabel,
 } from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -1092,30 +1093,21 @@ async function renderCatalog() {
     return;
   }
 
-  for (const list of shown) {
-    const meta = [typeLabel(list.type), `about ${list.count} issues`].filter(Boolean).join(' · ');
-    const depth = depthLabel(list.depth);
-    box.append(el('div', { class: 'result' }, [
-      el('div', { class: 'result-main' }, [
-        el('div', { class: 'result-title', text: list.name }),
-        el('div', { class: 'result-meta', text: meta }),
-        list.description ? el('div', { class: 'result-meta', text: list.description }) : null,
-        // How much reading a list represents is the reason a reader picks between two versions
-        // of the same story, so it is called out rather than buried in the meta line.
-        depth
-          ? el('p', { class: 'result-meta' }, [
-            el('span', { class: 'pill', text: depth }),
-            depthHint(list.depth) ? ` ${depthHint(list.depth)}` : null,
-          ])
-          : null,
-      ]),
-      el('button', {
-        class: 'btn btn-p',
-        type: 'button',
-        'aria-label': `Import ${list.name}`,
-        onclick: () => importCurated(list.file),
-      }, 'Import'),
-    ]));
+  for (const group of groupCatalog(shown)) {
+    // A grouped story is announced once, so the reader sees one decision — which path through
+    // this story — instead of two lists that look unrelated.
+    if (group.name) {
+      box.append(el('div', { class: 'result-group' }, [
+        el('h2', { class: 'result-group-h', text: group.name }),
+        el('p', {
+          class: 'result-meta',
+          text: `${group.lists.length} versions of this reading order — pick how much you want to read.`,
+        }),
+        ...group.lists.map((list) => catalogRow(list, { variant: true })),
+      ]));
+      continue;
+    }
+    box.append(catalogRow(group.lists[0]));
   }
 
   // The dropped-entry warning already announced itself; a second announcement would replace it.
@@ -1124,6 +1116,37 @@ async function renderCatalog() {
     const match = catalogQuery ? ` matching “${catalogQuery}”` : '';
     announce(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${match}${where}.`);
   }
+}
+
+// Inside a group the story's name is already the heading, so the row leads with what actually
+// differs between the versions — the reading path — rather than repeating the title.
+function catalogRow(list, { variant = false } = {}) {
+  const meta = [typeLabel(list.type), `about ${list.count} issues`].filter(Boolean).join(' · ');
+  const depth = depthLabel(list.depth);
+  const title = variant ? variantLabel(list) : list.name;
+  return el('div', { class: 'result' }, [
+    el('div', { class: 'result-main' }, [
+      el('div', { class: 'result-title', text: title }),
+      el('div', { class: 'result-meta', text: meta }),
+      list.description ? el('div', { class: 'result-meta', text: list.description }) : null,
+      // How much reading a list represents is the reason a reader picks between two versions
+      // of the same story, so it is called out rather than buried in the meta line.
+      depth
+        ? el('p', { class: 'result-meta' }, [
+          el('span', { class: 'pill', text: depth }),
+          depthHint(list.depth) ? ` ${depthHint(list.depth)}` : null,
+        ])
+        : null,
+    ]),
+    el('button', {
+      class: 'btn btn-p',
+      type: 'button',
+      // The accessible name always carries the full list name, so a button read out of
+      // context never says only "Import Essential reading".
+      'aria-label': `Import ${list.name}`,
+      onclick: () => importCurated(list.file),
+    }, 'Import'),
+  ]);
 }
 
 function wireCatalogSearch() {

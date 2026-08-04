@@ -50,6 +50,8 @@ test('an incomplete entry is reported with its reason, not silently skipped', ()
     [{ ...valid, type: 'anthology' }, /type must be one of/],
     [{ ...valid, depth: 'skim' }, /depth must be one of/],
     [{ ...valid, expect: 0 }, /expect must be/],
+    [{ ...valid, variant: 'Essential reading' }, /need a group to belong to/],
+    [{ ...valid, groupName: 'Civil War' }, /need a group to belong to/],
     [null, /is not an object/],
   ];
   for (const [entry, pattern] of cases) {
@@ -57,6 +59,15 @@ test('an incomplete entry is reported with its reason, not silently skipped', ()
     assert.equal(entries.length, 0, `accepted ${JSON.stringify(entry)}`);
     assert.match(errors.join('\n'), pattern);
   }
+});
+
+test('an order can declare the event variant it belongs to', () => {
+  const { entries, errors } = parseManifest({
+    lists: [{ ...valid, group: 'civil-war', groupName: 'Civil War', variant: 'Essential reading' }],
+  });
+  assert.deepEqual(errors, []);
+  assert.equal(entries[0].group, 'civil-war');
+  assert.equal(entries[0].variant, 'Essential reading');
 });
 
 test('a duplicate id is rejected rather than vendored twice', () => {
@@ -90,6 +101,9 @@ test('the bundled manifest is valid and describes exactly the bundled catalog', 
     assert.equal(list.sourceLicense, entry.sourceLicense);
     assert.deepEqual(list.characters, entry.characters);
     assert.deepEqual(list.keywords, entry.keywords);
+    assert.equal(list.group, entry.group, `${entry.id} group drifted from the manifest`);
+    assert.equal(list.groupName, entry.groupName);
+    assert.equal(list.variant, entry.variant);
     if (entry.expect != null) assert.equal(list.count, entry.expect, `${entry.id} count drifted`);
   }
 });

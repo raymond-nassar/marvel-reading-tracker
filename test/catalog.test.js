@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory,
-  searchCatalog, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
+  searchCatalog, groupCatalog, variantLabel, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
 } from '../src/js/lib/catalog.js';
 
 test('parses a well-formed catalog entry', () => {
@@ -210,4 +210,86 @@ test('every reading depth has a label and a plain-English explanation', () => {
     assert.ok(depthHint(depth), `${depth} has no explanation`);
   }
   assert.equal(depthHint('skim'), null);
+});
+
+// ------------------------------------------------------------------ variant grouping
+
+const variants = parseCatalog({
+  lists: [
+    {
+      id: 'cw-essential', file: 'cw_e.json', name: 'Civil War — essential', count: 12,
+      type: 'event', depth: 'essential', group: 'civil-war', groupName: 'Civil War',
+      variant: 'Essential reading',
+    },
+    {
+      id: 'cw-full', file: 'cw_f.json', name: 'Civil War — complete', count: 90,
+      type: 'event', depth: 'complete', group: 'civil-war', groupName: 'Civil War',
+      variant: 'Complete reading, with tie-ins',
+    },
+    { id: 'solo', file: 'solo.json', name: 'Annihilation', count: 30, type: 'event' },
+  ],
+}).lists;
+
+test('orders for the same event are grouped together under the event name', () => {
+  const groups = groupCatalog(variants);
+  assert.equal(groups.length, 2);
+  assert.equal(groups[0].name, 'Civil War');
+  assert.deepEqual(groups[0].lists.map((l) => l.id), ['cw-essential', 'cw-full']);
+});
+
+test('a list with no group stays an ungrouped entry', () => {
+  const groups = groupCatalog(variants);
+  assert.equal(groups[1].name, null);
+  assert.deepEqual(groups[1].lists.map((l) => l.id), ['solo']);
+});
+
+test('groups keep the order in which their event first appears', () => {
+  const reordered = [variants[2], variants[0], variants[1]];
+  assert.deepEqual(groupCatalog(reordered).map((g) => g.name), [null, 'Civil War']);
+});
+
+test('a lone surviving variant is not given a heading over a single item', () => {
+  const groups = groupCatalog([variants[0]]);
+  assert.equal(groups.length, 1);
+  assert.equal(groups[0].name, null);
+  assert.equal(groups[0].lists[0].id, 'cw-essential');
+});
+
+test('a group falls back to a member name when groupName is missing', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'a', file: 'a.json', name: 'Inferno — essential', count: 1, group: 'inferno' },
+      { id: 'b', file: 'b.json', name: 'Inferno — complete', count: 2, group: 'inferno' },
+    ],
+  });
+  assert.equal(groupCatalog(lists)[0].name, 'Inferno — essential');
+});
+
+test('every variant is named, falling back to depth and then to the list name', () => {
+  assert.equal(variantLabel(variants[0]), 'Essential reading');
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'a', file: 'a.json', name: 'A', count: 1, group: 'g', depth: 'complete' },
+      { id: 'b', file: 'b.json', name: 'B', count: 1, group: 'g' },
+    ],
+  });
+  assert.equal(variantLabel(lists[0]), 'Complete reading');
+  assert.equal(variantLabel(lists[1]), 'B');
+});
+
+test('search matches the event name and the variant name', () => {
+  assert.deepEqual(
+    searchCatalog(variants, 'civil war tie-ins').map((l) => l.id),
+    ['cw-full'],
+  );
+});
+
+test('the bundled catalog names every variant it groups', async () => {
+  const url = new URL('../src/data/catalog.json', import.meta.url);
+  const { lists } = parseCatalog(JSON.parse(await readFile(url, 'utf8')));
+  for (const group of groupCatalog(lists)) {
+    if (!group.name) continue;
+    const labels = group.lists.map(variantLabel);
+    assert.equal(new Set(labels).size, labels.length, `${group.name} has ambiguous variants`);
+  }
 });
