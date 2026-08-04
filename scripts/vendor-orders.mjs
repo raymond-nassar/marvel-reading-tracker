@@ -26,6 +26,8 @@ const ORDERS = [
     description: 'The essential spine of Jonathan Hickman\u2019s Avengers run through Secret Wars (2015).',
     type: 'creator-run',
     depth: 'essential',
+    characters: ['Avengers', 'Illuminati', 'Black Panther', 'Iron Man', 'Namor', 'Reed Richards', 'Doctor Doom'],
+    keywords: ['Jonathan Hickman', 'Secret Wars', 'New Avengers', 'Infinity', 'Time Runs Out', 'incursions'],
     expect: 89,
   },
   {
@@ -36,6 +38,8 @@ const ORDERS = [
     description: 'The complete Hickman saga including tie-ins, ending with Secret Wars (2015).',
     type: 'creator-run',
     depth: 'complete',
+    characters: ['Avengers', 'Illuminati', 'Black Panther', 'Iron Man', 'Namor', 'Reed Richards', 'Doctor Doom', 'Fantastic Four'],
+    keywords: ['Jonathan Hickman', 'Secret Wars', 'New Avengers', 'Infinity', 'Time Runs Out', 'incursions', 'tie-ins'],
     expect: 219,
   },
 ];
@@ -158,6 +162,8 @@ async function main() {
       type: order.type,
       depth: order.depth,
       count: items.length,
+      characters: order.characters ?? [],
+      keywords: order.keywords ?? [],
       source: payload.source,
       sourceLicense: payload.sourceLicense,
       updatedAt: payload.generatedAt,

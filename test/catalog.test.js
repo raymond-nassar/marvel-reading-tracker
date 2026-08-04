@@ -2,8 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
-  parseCatalog, typeLabel, depthLabel, catalogCategories, filterByCategory,
-  LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
+  parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory,
+  searchCatalog, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
 } from '../src/js/lib/catalog.js';
 
 test('parses a well-formed catalog entry', () => {
@@ -85,6 +85,7 @@ test('the bundled catalog is valid and its counts match the vendored orders', as
     assert.ok(READING_DEPTHS.includes(list.depth), `${list.id} has no valid depth`);
     assert.ok(list.source, `${list.id} has no attribution`);
     assert.ok(list.updatedAt, `${list.id} has no last-updated date`);
+    assert.ok(list.characters.length, `${list.id} has no characters to search by`);
 
     const order = JSON.parse(await readFile(new URL(`../src/data/${list.file}`, import.meta.url), 'utf8'));
     assert.equal(list.count, order.items.length, `${list.id} count is out of date`);
@@ -134,4 +135,79 @@ test('lists with an unusable type are grouped under “other”, never hidden', 
 test('an unknown category matches nothing rather than everything', () => {
   const { lists } = parseCatalog({ lists: [{ id: 'a', file: 'a.json', name: 'A', count: 1, type: 'era' }] });
   assert.deepEqual(filterByCategory(lists, 'event'), []);
+});
+
+const sample = parseCatalog({
+  lists: [
+    {
+      id: 'hickman', file: 'hickman.json', name: 'Hickman to Secret Wars — minimal', count: 89,
+      type: 'creator-run', depth: 'essential',
+      description: 'The essential spine of Jonathan Hickman’s Avengers run.',
+      characters: ['Avengers', 'Black Panther'], keywords: ['Jonathan Hickman', 'Secret Wars'],
+    },
+    {
+      id: 'civil-war', file: 'civil_war.json', name: 'Civil War', count: 40,
+      type: 'event', depth: 'complete',
+      description: 'Registration splits the heroes.',
+      characters: ['Iron Man', 'Captain America', 'Spider-Man'], keywords: ['crossover'],
+    },
+  ],
+}).lists;
+
+const ids = (lists) => lists.map((l) => l.id);
+
+test('search matches a list title', () => {
+  assert.deepEqual(ids(searchCatalog(sample, 'civil war')), ['civil-war']);
+});
+
+test('search matches a character that is not in the title', () => {
+  assert.deepEqual(ids(searchCatalog(sample, 'spider-man')), ['civil-war']);
+  assert.deepEqual(ids(searchCatalog(sample, 'black panther')), ['hickman']);
+});
+
+test('search matches keywords and descriptions', () => {
+  assert.deepEqual(ids(searchCatalog(sample, 'crossover')), ['civil-war']);
+  assert.deepEqual(ids(searchCatalog(sample, 'registration')), ['civil-war']);
+});
+
+test('search ignores case, accents, and punctuation', () => {
+  assert.deepEqual(ids(searchCatalog(sample, 'HICKMAN’S')), ['hickman']);
+  assert.deepEqual(ids(searchCatalog(sample, 'spiderman')), []);
+  assert.deepEqual(ids(searchCatalog(sample, 'spider man')), ['civil-war']);
+});
+
+test('extra terms narrow the results instead of widening them', () => {
+  assert.deepEqual(ids(searchCatalog(sample, 'secret wars avengers')), ['hickman']);
+  assert.deepEqual(ids(searchCatalog(sample, 'secret wars spider-man')), []);
+});
+
+test('an empty or whitespace query returns every list', () => {
+  assert.equal(searchCatalog(sample, '').length, 2);
+  assert.equal(searchCatalog(sample, '   ').length, 2);
+  assert.equal(searchCatalog(sample, undefined).length, 2);
+});
+
+test('search and category filtering compose', () => {
+  assert.deepEqual(ids(searchCatalog(filterByCategory(sample, 'event'), 'iron man')), ['civil-war']);
+  assert.deepEqual(ids(searchCatalog(filterByCategory(sample, 'creator-run'), 'iron man')), []);
+});
+
+test('characters and keywords are normalised, and rubbish entries are dropped', () => {
+  const { lists } = parseCatalog({
+    lists: [{
+      id: 'x', file: 'x.json', name: 'X', count: 1,
+      characters: ['  Namor  ', 'Namor', '', null, 7],
+      keywords: 'not-an-array',
+    }],
+  });
+  assert.deepEqual(lists[0].characters, ['Namor']);
+  assert.deepEqual(lists[0].keywords, []);
+});
+
+test('every reading depth has a label and a plain-English explanation', () => {
+  for (const depth of READING_DEPTHS) {
+    assert.ok(depthLabel(depth), `${depth} has no label`);
+    assert.ok(depthHint(depth), `${depth} has no explanation`);
+  }
+  assert.equal(depthHint('skim'), null);
 });

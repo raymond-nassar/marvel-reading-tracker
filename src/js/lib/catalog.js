@@ -22,6 +22,14 @@ const DEPTH_LABELS = {
   'tie-ins': 'Tie-ins',
 };
 
+// Plain English, because "essential" and "complete" only mean something to readers who
+// already know the convention. This is what tells someone how much reading they are choosing.
+const DEPTH_HINTS = {
+  essential: 'The core issues only — the shortest path through the story.',
+  complete: 'Every issue, including tie-ins and side stories.',
+  'tie-ins': 'The tie-in issues that surround a main story.',
+};
+
 export function typeLabel(type) {
   return TYPE_LABELS[type] ?? 'Reading list';
 }
@@ -30,7 +38,13 @@ export function depthLabel(depth) {
   return DEPTH_LABELS[depth] ?? null;
 }
 
+export function depthHint(depth) {
+  return DEPTH_HINTS[depth] ?? null;
+}
+
 const str = (v) => (typeof v === 'string' && v.trim() ? v.trim() : null);
+
+const strings = (v) => (Array.isArray(v) ? [...new Set(v.map(str).filter(Boolean))] : []);
 
 // A curated file is fetched from our own origin by name, so it must stay a plain file name.
 // Anything with a path separator or traversal segment is treated as invalid data.
@@ -56,6 +70,8 @@ function normalizeEntry(raw) {
     description: str(raw.description),
     type: LIST_TYPES.includes(raw.type) ? raw.type : null,
     depth: READING_DEPTHS.includes(raw.depth) ? raw.depth : null,
+    characters: strings(raw.characters),
+    keywords: strings(raw.keywords),
     source: str(raw.source),
     sourceLicense: str(raw.sourceLicense),
     updatedAt: str(raw.updatedAt),
@@ -104,4 +120,38 @@ export function catalogCategories(lists) {
 export function filterByCategory(lists, category) {
   if (!category || category === 'all') return lists;
   return lists.filter((list) => (list.type ?? UNCATEGORIZED) === category);
+}
+
+// ------------------------------------------------------------------ search
+
+// Readers type what they remember — "civil war", "spider-man", "hickman" — not exact titles,
+// and they should not have to reproduce accents or punctuation to find a list. Every term has
+// to match somewhere, so extra words narrow the results instead of widening them.
+function fold(v) {
+  return String(v ?? '')
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function haystack(list) {
+  return fold([
+    list.name,
+    list.description,
+    typeLabel(list.type),
+    depthLabel(list.depth),
+    ...list.characters,
+    ...list.keywords,
+  ].filter(Boolean).join(' '));
+}
+
+export function searchCatalog(lists, query) {
+  const terms = fold(query).split(' ').filter(Boolean);
+  if (!terms.length) return lists;
+  return lists.filter((list) => {
+    const text = haystack(list);
+    return terms.every((term) => text.includes(term));
+  });
 }

@@ -202,6 +202,13 @@
               <div class="sub">Curated orders bundled with the app. Importing one creates a new list; issues you have already read stay read.</div>
             </div></div>
             <div id="catalog-report"></div>
+            <form id="form-catalog-search" class="stack" role="search">
+              <label for="catalog-q">Search the catalog by title or character</label>
+              <div class="row">
+                <input type="search" id="catalog-q" placeholder="e.g. Secret Wars, Black Panther" autocomplete="off" />
+                <button type="button" class="btn" id="catalog-clear" hidden>Clear</button>
+              </div>
+            </form>
             <fieldset class="filters" id="catalog-filters" hidden>
               <legend class="visually-hidden">Filter the catalog by category</legend>
             </fieldset>

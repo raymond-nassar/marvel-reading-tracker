@@ -211,6 +211,8 @@ body.nocovers .fallback, .fallback.show { display: flex; }
   background: var(--red); color: #fff; font-weight: 620; font-size: .92rem;
   display: inline-flex; align-items: center; gap: .5rem; text-decoration: none;
 }
+/* display:inline-flex would otherwise defeat the hidden attribute. */
+.btn[hidden] { display: none; }
 .btn:hover { filter: brightness(1.1); }
 .btn:disabled { opacity: .5; cursor: default; filter: none; }
 .btn-g { background: #ffffff0f; color: var(--text); border-color: var(--line-2); font-weight: 500; }

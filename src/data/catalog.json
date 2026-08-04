@@ -9,6 +9,23 @@
       "type": "creator-run",
       "depth": "essential",
       "count": 89,
+      "characters": [
+        "Avengers",
+        "Illuminati",
+        "Black Panther",
+        "Iron Man",
+        "Namor",
+        "Reed Richards",
+        "Doctor Doom"
+      ],
+      "keywords": [
+        "Jonathan Hickman",
+        "Secret Wars",
+        "New Avengers",
+        "Infinity",
+        "Time Runs Out",
+        "incursions"
+      ],
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_minimal.md",
       "sourceLicense": "MIT (emreparker/marvel-comics)",
       "updatedAt": "2026-08-04T06:14:48.695Z"
@@ -21,6 +38,25 @@
       "type": "creator-run",
       "depth": "complete",
       "count": 219,
+      "characters": [
+        "Avengers",
+        "Illuminati",
+        "Black Panther",
+        "Iron Man",
+        "Namor",
+        "Reed Richards",
+        "Doctor Doom",
+        "Fantastic Four"
+      ],
+      "keywords": [
+        "Jonathan Hickman",
+        "Secret Wars",
+        "New Avengers",
+        "Infinity",
+        "Time Runs Out",
+        "incursions",
+        "tie-ins"
+      ],
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
       "sourceLicense": "MIT (emreparker/marvel-comics)",
       "updatedAt": "2026-08-04T06:14:48.703Z"

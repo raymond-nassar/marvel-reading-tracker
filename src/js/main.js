@@ -12,7 +12,9 @@ import {
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { availability, describe, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
-import { parseCatalog, typeLabel, depthLabel, catalogCategories, filterByCategory } from './lib/catalog.js';
+import {
+  parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory, searchCatalog,
+} from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
 import { ResponseCache } from './cache.js';
@@ -56,6 +58,7 @@ wireAdd();
 wireData();
 wireShortcuts();
 wireBlockedBanner();
+wireCatalogSearch();
 renderAll();
 checkHealth();
 refreshCacheUsage();
@@ -1025,6 +1028,7 @@ function doManual() {
 
 let catalogCache = null;
 let catalogCategory = 'all';
+let catalogQuery = '';
 
 async function loadCatalog() {
   if (catalogCache) return catalogCache;
@@ -1067,25 +1071,43 @@ async function renderCatalog() {
     return;
   }
 
+  // The categories describe the whole catalog, not the current search, so searching never
+  // makes a category vanish from the filter under the reader's cursor.
   renderCatalogFilters(catalog.lists);
+  $('#catalog-clear').hidden = !catalogQuery;
 
   // Filtering narrows which lists are shown; every list that is shown keeps the full detail a
-  // reader needs to choose, so switching categories never hides a description or issue count.
-  const shown = filterByCategory(catalog.lists, catalogCategory);
+  // reader needs to choose, so searching or switching categories never hides a description,
+  // reading depth, or issue count.
+  const inCategory = filterByCategory(catalog.lists, catalogCategory);
+  const shown = searchCatalog(inCategory, catalogQuery);
+
   if (!shown.length) {
-    box.append(el('p', { class: 'rail-hint', text: 'No reading lists in that category.' }));
-    announce('No reading lists in that category.');
+    const where = catalogCategory === 'all' ? '' : ` in ${categoryLabel(catalog.lists, catalogCategory)}`;
+    const msg = catalogQuery
+      ? `No reading lists match “${catalogQuery}”${where}.`
+      : `No reading lists${where || ' in that category'}.`;
+    box.append(el('p', { class: 'rail-hint', text: msg }));
+    announce(msg);
     return;
   }
 
   for (const list of shown) {
-    const meta = [typeLabel(list.type), depthLabel(list.depth), `about ${list.count} issues`]
-      .filter(Boolean).join(' · ');
+    const meta = [typeLabel(list.type), `about ${list.count} issues`].filter(Boolean).join(' · ');
+    const depth = depthLabel(list.depth);
     box.append(el('div', { class: 'result' }, [
       el('div', { class: 'result-main' }, [
         el('div', { class: 'result-title', text: list.name }),
         el('div', { class: 'result-meta', text: meta }),
         list.description ? el('div', { class: 'result-meta', text: list.description }) : null,
+        // How much reading a list represents is the reason a reader picks between two versions
+        // of the same story, so it is called out rather than buried in the meta line.
+        depth
+          ? el('p', { class: 'result-meta' }, [
+            el('span', { class: 'pill', text: depth }),
+            depthHint(list.depth) ? ` ${depthHint(list.depth)}` : null,
+          ])
+          : null,
       ]),
       el('button', {
         class: 'btn btn-p',
@@ -1099,8 +1121,26 @@ async function renderCatalog() {
   // The dropped-entry warning already announced itself; a second announcement would replace it.
   if (!catalog.dropped) {
     const where = catalogCategory === 'all' ? '' : ` in ${categoryLabel(catalog.lists, catalogCategory)}`;
-    announce(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${where}.`);
+    const match = catalogQuery ? ` matching “${catalogQuery}”` : '';
+    announce(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${match}${where}.`);
   }
+}
+
+function wireCatalogSearch() {
+  const input = $('#catalog-q');
+  // Submitting is a no-op because results already track what has been typed; without this the
+  // form would reload the page and throw the reader back to an empty catalog.
+  $('#form-catalog-search').addEventListener('submit', (e) => e.preventDefault());
+  input.addEventListener('input', () => {
+    catalogQuery = input.value.trim();
+    renderCatalog();
+  });
+  $('#catalog-clear').addEventListener('click', () => {
+    input.value = '';
+    catalogQuery = '';
+    input.focus();
+    renderCatalog();
+  });
 }
 
 function categoryLabel(lists, key) {
