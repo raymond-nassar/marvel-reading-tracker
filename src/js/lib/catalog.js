@@ -1,0 +1,84 @@
+// The curated-list catalog.
+//
+// The catalog is data, not code: `src/data/catalog.json` is generated alongside the vendored
+// orders so its counts cannot drift from the files they describe, and adding a new curated
+// list means adding data only. Everything the UI shows before an import happens comes from
+// here, so an entry that is missing what a reader needs to choose safely (a name, a file to
+// import, or a truthful issue count) is rejected rather than rendered half-blank.
+
+export const LIST_TYPES = ['event', 'character-run', 'creator-run', 'era'];
+export const READING_DEPTHS = ['essential', 'complete', 'tie-ins'];
+
+const TYPE_LABELS = {
+  event: 'Event',
+  'character-run': 'Character run',
+  'creator-run': 'Creator run',
+  era: 'Era',
+};
+
+const DEPTH_LABELS = {
+  essential: 'Essential reading',
+  complete: 'Complete reading',
+  'tie-ins': 'Tie-ins',
+};
+
+export function typeLabel(type) {
+  return TYPE_LABELS[type] ?? 'Reading list';
+}
+
+export function depthLabel(depth) {
+  return DEPTH_LABELS[depth] ?? null;
+}
+
+const str = (v) => (typeof v === 'string' && v.trim() ? v.trim() : null);
+
+// A curated file is fetched from our own origin by name, so it must stay a plain file name.
+// Anything with a path separator or traversal segment is treated as invalid data.
+function safeFile(v) {
+  const s = str(v);
+  if (!s) return null;
+  return /^[A-Za-z0-9._-]+\.json$/.test(s) && !s.startsWith('.') ? s : null;
+}
+
+function normalizeEntry(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const id = str(raw.id);
+  const name = str(raw.name);
+  const file = safeFile(raw.file);
+  const count = Number.isInteger(raw.count) && raw.count >= 0 ? raw.count : null;
+  if (!id || !name || !file || count == null) return null;
+
+  return {
+    id,
+    name,
+    file,
+    count,
+    description: str(raw.description),
+    type: LIST_TYPES.includes(raw.type) ? raw.type : null,
+    depth: READING_DEPTHS.includes(raw.depth) ? raw.depth : null,
+    source: str(raw.source),
+    sourceLicense: str(raw.sourceLicense),
+    updatedAt: str(raw.updatedAt),
+  };
+}
+
+// Returns the usable entries plus a count of entries that had to be dropped, so the view can
+// tell the reader that the catalog is incomplete instead of quietly showing fewer lists.
+export function parseCatalog(raw) {
+  const entries = Array.isArray(raw?.lists) ? raw.lists : [];
+  const lists = [];
+  const seen = new Set();
+  let dropped = 0;
+
+  for (const entry of entries) {
+    const list = normalizeEntry(entry);
+    if (!list || seen.has(list.id)) {
+      dropped += 1;
+      continue;
+    }
+    seen.add(list.id);
+    lists.push(list);
+  }
+
+  return { lists, dropped };
+}

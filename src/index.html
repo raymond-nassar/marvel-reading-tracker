@@ -21,16 +21,13 @@
           <h2 id="rail-orders" class="rail-h">Reading orders</h2>
           <ul id="list-nav" class="rail-list"></ul>
           <p id="no-lists" class="rail-hint">
-            Nothing yet. Start with a curated order below.
+            Nothing yet. Browse the catalog below to start.
           </p>
         </nav>
 
         <h2 class="rail-h">Start from</h2>
-        <button type="button" class="ri ri-action" data-curated="hickman_minimal.json">
-          Hickman → Secret Wars <span class="ri-sub">minimal · 89 issues</span>
-        </button>
-        <button type="button" class="ri ri-action" data-curated="hickman_full.json">
-          Hickman → Secret Wars <span class="ri-sub">full · 219 issues</span>
+        <button type="button" class="ri ri-action" data-view="catalog">
+          Browse the catalog <span class="ri-sub">curated reading orders</span>
         </button>
         <button type="button" class="ri ri-action" id="btn-new-list">
           New empty list
@@ -105,7 +102,7 @@
             <div id="no-active-list" class="empty-state">
               <h2>Pick something to read</h2>
               <p>
-                Choose a curated reading order on the left and it imports instantly — no internet
+                Browse the catalog on the left and import a curated reading order instantly — no internet
                 needed, because the order ships with the app. Or create an empty list and search
                 for issues yourself.
               </p>
@@ -197,6 +194,15 @@
             </div></div>
             <p class="rail-hint">“Tracked” means what you have added — not the size of the whole series.</p>
             <div id="series-progress" class="results"></div>
+          </section>
+
+          <!-- ---------------------------------------- catalog view -->
+          <section id="view-catalog" class="view" hidden aria-labelledby="catalog-h">
+            <div class="head"><div class="head-left"><h1 id="catalog-h">Reading list catalog</h1>
+              <div class="sub">Curated orders bundled with the app. Importing one creates a new list; issues you have already read stay read.</div>
+            </div></div>
+            <div id="catalog-report"></div>
+            <div id="catalog-results" class="results"></div>
           </section>
 
           <!-- ---------------------------------------- add view -->

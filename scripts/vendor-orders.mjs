@@ -11,6 +11,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { RateLimiter } from '../src/js/lib/limiter.js';
 import { parseChecklist } from '../src/js/lib/markdown.js';
+import { parseCatalog } from '../src/js/lib/catalog.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const API = 'https://marvel.emreparker.com/v1';
@@ -23,6 +24,8 @@ const ORDERS = [
     out: 'hickman_minimal.json',
     name: 'Hickman to Secret Wars — minimal',
     description: 'The essential spine of Jonathan Hickman\u2019s Avengers run through Secret Wars (2015).',
+    type: 'creator-run',
+    depth: 'essential',
     expect: 89,
   },
   {
@@ -31,6 +34,8 @@ const ORDERS = [
     out: 'hickman_full.json',
     name: 'Hickman to Secret Wars — full',
     description: 'The complete Hickman saga including tie-ins, ending with Secret Wars (2015).',
+    type: 'creator-run',
+    depth: 'complete',
     expect: 219,
   },
 ];
@@ -99,6 +104,7 @@ async function main() {
   await mkdir(join(ROOT, 'src', 'data'), { recursive: true });
 
   const summary = [];
+  const catalog = [];
   for (const { order, entries, unresolved } of parsed) {
     let missingDigital = 0;
     let missingCover = 0;
@@ -141,7 +147,30 @@ async function main() {
 
     await writeFile(join(ROOT, 'src', 'data', order.out), JSON.stringify(payload, null, 2) + '\n', 'utf8');
     summary.push({ file: order.out, count: items.length, expected: order.expect, missingDigital, missingCover });
+
+    // The catalog entry is derived from the payload we just wrote, so the issue count a
+    // reader sees before importing can never drift from the file they will actually import.
+    catalog.push({
+      id: order.id,
+      file: order.out,
+      name: order.name,
+      description: order.description,
+      type: order.type,
+      depth: order.depth,
+      count: items.length,
+      source: payload.source,
+      sourceLicense: payload.sourceLicense,
+      updatedAt: payload.generatedAt,
+    });
   }
+
+  const checked = parseCatalog({ lists: catalog });
+  if (checked.dropped) throw new Error(`${checked.dropped} catalog entries are not valid; catalog.json not written`);
+  await writeFile(
+    join(ROOT, 'src', 'data', 'catalog.json'),
+    JSON.stringify({ generatedAt: new Date().toISOString(), lists: catalog }, null, 2) + '\n',
+    'utf8',
+  );
 
   console.table(summary);
   const bad = summary.filter((s) => s.count !== s.expected);

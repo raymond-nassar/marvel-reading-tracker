@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-08-04T06:14:48.703Z",
+  "lists": [
+    {
+      "id": "hickman-minimal",
+      "file": "hickman_minimal.json",
+      "name": "Hickman to Secret Wars — minimal",
+      "description": "The essential spine of Jonathan Hickman’s Avengers run through Secret Wars (2015).",
+      "type": "creator-run",
+      "depth": "essential",
+      "count": 89,
+      "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_minimal.md",
+      "sourceLicense": "MIT (emreparker/marvel-comics)",
+      "updatedAt": "2026-08-04T06:14:48.695Z"
+    },
+    {
+      "id": "hickman-full",
+      "file": "hickman_full.json",
+      "name": "Hickman to Secret Wars — full",
+      "description": "The complete Hickman saga including tie-ins, ending with Secret Wars (2015).",
+      "type": "creator-run",
+      "depth": "complete",
+      "count": 219,
+      "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
+      "sourceLicense": "MIT (emreparker/marvel-comics)",
+      "updatedAt": "2026-08-04T06:14:48.703Z"
+    }
+  ]
+}

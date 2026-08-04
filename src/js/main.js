@@ -12,6 +12,7 @@ import {
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { availability, describe, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
+import { parseCatalog, typeLabel, depthLabel } from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
 import { ResponseCache } from './cache.js';
@@ -252,9 +253,6 @@ function wireNav() {
     announceIfSaved(`Created list ${name}.`);
   });
 
-  for (const btn of document.querySelectorAll('[data-curated]')) {
-    btn.addEventListener('click', () => importCurated(btn.dataset.curated));
-  }
 
   $('#btn-covers').addEventListener('click', () => setCovers(!settings.covers));
 }
@@ -264,7 +262,7 @@ function wireNav() {
 // the next Tab continues from the old position and nothing announces where you now are.
 function showView(next, { focus = true } = {}) {
   view = next;
-  for (const name of ['read', 'progress', 'add', 'data']) {
+  for (const name of ['read', 'catalog', 'progress', 'add', 'data']) {
     $(`#view-${name}`).hidden = name !== next;
   }
   for (const btn of document.querySelectorAll('.ri[data-view]')) {
@@ -272,6 +270,7 @@ function showView(next, { focus = true } = {}) {
     else btn.removeAttribute('aria-current');
   }
   renderRail();
+  if (next === 'catalog') renderCatalog();
   window.scrollTo({ top: 0 });
 
   if (!focus) return;
@@ -1023,6 +1022,72 @@ function doManual() {
 }
 
 // ------------------------------------------------------------------ curated orders
+
+let catalogCache = null;
+
+async function loadCatalog() {
+  if (catalogCache) return catalogCache;
+  // Served from our own origin, so the catalog works with no internet connection.
+  const res = await fetch('./data/catalog.json', { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  catalogCache = parseCatalog(await res.json());
+  return catalogCache;
+}
+
+async function renderCatalog() {
+  const box = $('#catalog-results');
+  const report = $('#catalog-report');
+  box.replaceChildren(el('p', { class: 'rail-hint', text: 'Loading the catalog…' }));
+  report.replaceChildren();
+
+  let catalog;
+  try {
+    catalog = await loadCatalog();
+  } catch (err) {
+    box.replaceChildren();
+    notify('#catalog-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error');
+    return;
+  }
+
+  // A dropped entry means the bundled data is wrong, not that the list does not exist. Saying
+  // so is better than showing a shorter catalog that looks complete.
+  if (catalog.dropped) {
+    notify(
+      '#catalog-report',
+      `${catalog.dropped} catalog ${catalog.dropped === 1 ? 'entry is' : 'entries are'} incomplete and cannot be shown.`,
+      'warn',
+    );
+  }
+
+  box.replaceChildren();
+  if (!catalog.lists.length) {
+    box.append(el('p', { class: 'rail-hint', text: 'No curated reading lists are bundled with this build.' }));
+    return;
+  }
+
+  for (const list of catalog.lists) {
+    const meta = [typeLabel(list.type), depthLabel(list.depth), `about ${list.count} issues`]
+      .filter(Boolean).join(' · ');
+    box.append(el('div', { class: 'result' }, [
+      el('div', { class: 'result-main' }, [
+        el('div', { class: 'result-title', text: list.name }),
+        el('div', { class: 'result-meta', text: meta }),
+        list.description ? el('div', { class: 'result-meta', text: list.description }) : null,
+      ]),
+      el('button', {
+        class: 'btn btn-p',
+        type: 'button',
+        'aria-label': `Import ${list.name}`,
+        onclick: () => importCurated(list.file),
+      }, 'Import'),
+    ]));
+  }
+
+  // The dropped-entry warning already announced itself; a second announcement would replace it.
+  if (!catalog.dropped) {
+    announce(`Catalog shows ${catalog.lists.length} reading ${catalog.lists.length === 1 ? 'list' : 'lists'}.`);
+  }
+}
 
 async function importCurated(file) {
   try {
