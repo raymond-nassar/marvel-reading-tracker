@@ -59,21 +59,32 @@ the same address, so it can break the app's saved data on purpose — then put i
 
 <div class="warn">
   <strong>Read this first.</strong> These buttons deliberately damage your saved reading data.
-  Before doing anything else, press <em>Back up my real data</em> below. Every fault is
-  reversible from this page, but the file download is the copy that cannot fail.
+  Before doing anything else, take both copies in step 0 below. Every fault is reversible from
+  this page, but the <code>.json</code> file is the copy that cannot fail.
 </div>
 
 <div class="card card-safe">
   <h2>0. Safety net — do this first</h2>
-  <p>Takes a copy of your current reading data. The snapshot lives under a separate key that
-  none of the faults touch.</p>
+  <p>Two different kinds of copy. Take <strong>both</strong>.</p>
+  <ol style="margin:.5rem 0 .9rem; padding-left:1.15rem">
+    <li><strong>A real file</strong> — a <code>.json</code> text file. Your browser saves it straight
+      to your <strong>Downloads</strong> folder without asking, unless you have turned on
+      <em>Ask me where to save each file</em> in Edge settings. This is the copy that survives
+      anything, including the browser itself.</li>
+    <li><strong>A snapshot inside the browser</strong> — invisible, no file, no dialog. This is what
+      the one-click <em>Restore</em> button below uses, so the faults are quick to undo.</li>
+  </ol>
   <div class="row">
-    <button class="good" id="b-backup">Back up my real data</button>
-    <button class="good" id="b-download">Download a copy to a file</button>
-    <button id="b-restore">Restore my real data</button>
+    <button class="good" id="b-download">1. Save a backup file (.json)</button>
+    <button class="good" id="b-backup">2. Snapshot inside the browser</button>
+  </div>
+  <div class="row" style="margin-top:.4rem">
+    <button id="b-restore">Restore from snapshot</button>
+    <button id="b-restore-file">Restore from a file…</button>
     <button id="b-report">Show storage report</button>
   </div>
-  <div class="out" id="out-safe">Not backed up yet.</div>
+  <input type="file" id="f-restore" accept=".json,application/json" hidden />
+  <div class="out" id="out-safe">Loading…</div>
 </div>
 
 <div class="card">
@@ -85,7 +96,7 @@ the same address, so it can break the app's saved data on purpose — then put i
     <ul>
       <li>A banner appears saying the data could not be read</li>
       <li>Marking something read <strong>fails visibly</strong> — no success message</li>
-      <li>“Download a copy” gives you a file containing <code>{ not valid json</code></li>
+      <li>The app's own “Download a copy” button gives you a file containing <code>{ not valid json</code></li>
       <li>“Start fresh” gives you an empty, working tracker</li>
     </ul>
   </div>
@@ -101,7 +112,7 @@ the same address, so it can break the app's saved data on purpose — then put i
     <strong>Reload the app.</strong> Expected:
     <ul>
       <li>Same banner; saving is blocked</li>
-      <li>“Download a copy” — <strong>open that file and confirm your real lists and read
+      <li>The app's own “Download a copy” button — <strong>open that file and confirm your real lists and read
         progress are inside it</strong></li>
       <li>Then try to restore that file via Settings. It should be <em>refused</em>, because the
         app genuinely cannot read a future schema. <strong>Tell me what the message says</strong> —
@@ -164,10 +175,22 @@ the same address, so it can break the app's saved data on purpose — then put i
 const KEY = 'mrt.state.v2';
 const BACKUP = 'mrt.devtools.backup';
 const FILL = '__mrt_fill_';
+let fileSavedAs = null;
 
 const $ = (id) => document.getElementById(id);
-const say = (id, msg) => { $(id).textContent = msg; };
 const bytes = (n) => (n < 1024 ? `${n} B` : n < 1048576 ? `${(n / 1024).toFixed(1)} KB` : `${(n / 1048576).toFixed(2)} MB`);
+
+// Every button must visibly report itself. A readout that changes quietly reads as "nothing
+// happened", which is exactly how the first version of this page failed.
+function say(id, msg, tone = 'ok') {
+  const el = $(id);
+  el.textContent = msg;
+  el.style.color = tone === 'bad' ? '#f3a0a0' : '#9fd3b4';
+  el.animate(
+    [{ background: tone === 'bad' ? '#3a1720' : '#12351f' }, { background: '#0e0f15' }],
+    { duration: 900, easing: 'ease-out' },
+  );
+}
 
 function summarize(raw) {
   if (raw == null) return 'nothing saved';
@@ -182,58 +205,86 @@ function summarize(raw) {
   }
 }
 
-function refreshSafe() {
+function refreshSafe(note) {
   const live = localStorage.getItem(KEY);
   const snap = localStorage.getItem(BACKUP);
+  const fileNote = fileSavedAs == null
+    ? 'file copy  : NONE — press "1. Save a backup file"'
+    : `file copy  : saved to your Downloads folder as ${fileSavedAs}`;
   say('out-safe',
+    `${note ? `${note}\n\n` : ''}` +
     `live state : ${summarize(live)}\n` +
-    `backup     : ${snap == null ? 'NONE — press "Back up my real data"' : summarize(snap)}`);
+    `snapshot   : ${snap == null ? 'NONE — press "2. Snapshot inside the browser"' : summarize(snap)}\n` +
+    `${fileNote}`,
+    note && /could not|failed|refus/i.test(note) ? 'bad' : 'ok');
 }
 
 $('b-backup').addEventListener('click', () => {
   const live = localStorage.getItem(KEY);
-  if (live == null) { say('out-safe', 'There is nothing saved yet, so there is nothing to back up.'); return; }
+  if (live == null) {
+    refreshSafe('Nothing is saved yet, so there is nothing to snapshot. Use the tracker first.');
+    return;
+  }
   const existing = localStorage.getItem(BACKUP);
-  if (existing != null && !confirm('A backup already exists. Overwrite it with the current live state?')) return;
+  if (existing != null && !confirm('A snapshot already exists. Overwrite it with the current live state?')) return;
   try {
     localStorage.setItem(BACKUP, live);
-    refreshSafe();
+    refreshSafe('Snapshot taken inside the browser. No file was created — that is button 1.');
   } catch (e) {
-    say('out-safe', `Could not write the backup (${e.name}). Free storage first, or use "Download a copy to a file".`);
+    refreshSafe(`Could not write the snapshot (${e.name}). Free storage first, or rely on the file copy.`);
   }
 });
 
 $('b-download').addEventListener('click', () => {
   const raw = localStorage.getItem(BACKUP) ?? localStorage.getItem(KEY);
-  if (raw == null) { say('out-safe', 'Nothing to download.'); return; }
+  if (raw == null) { refreshSafe('Nothing is saved yet, so there is nothing to download.'); return; }
+  const name = `mrt-backup-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}.json`;
   const url = URL.createObjectURL(new Blob([raw], { type: 'application/json' }));
   const a = document.createElement('a');
   a.href = url;
-  a.download = `mrt-safety-copy-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}.json`;
+  a.download = name;
   a.click();
   URL.revokeObjectURL(url);
-  say('out-safe', 'Downloaded. That file is your copy of last resort — it does not depend on the browser.');
+  fileSavedAs = name;
+  refreshSafe(`Saved ${name} — check your Downloads folder now and confirm it is there before continuing.`);
 });
 
 $('b-restore').addEventListener('click', () => {
   const snap = localStorage.getItem(BACKUP);
-  if (snap == null) { say('out-safe', 'No backup exists. Nothing was changed.'); return; }
+  if (snap == null) { refreshSafe('No snapshot exists, so nothing was changed. Use "Restore from a file…" instead.'); return; }
+  applyRestore(snap, 'snapshot');
+});
+
+$('b-restore-file').addEventListener('click', () => $('f-restore').click());
+
+$('f-restore').addEventListener('change', async (ev) => {
+  const file = ev.target.files?.[0];
+  ev.target.value = ''; // let the same file be picked again
+  if (!file) return;
+  const text = await file.text();
+  try { JSON.parse(text); } catch {
+    refreshSafe(`${file.name} is not valid JSON, so it was refused. Nothing was changed.`);
+    return;
+  }
+  applyRestore(text, file.name);
+});
+
+// Deliberately bypasses the app's own schema check: this is the escape hatch for the case where
+// the app refuses a backup it cannot read, so the user is never left with no way back.
+function applyRestore(raw, sourceLabel) {
   freeFill(); // a full quota would otherwise block the restore
   try {
-    localStorage.setItem(KEY, snap);
-    // These are the app's own recovery keys. A stale one from a previous fault would confuse
-    // the next run, so clear them as part of putting things back.
+    localStorage.setItem(KEY, raw);
     for (const k of Object.keys(localStorage)) {
       if (k.startsWith('mrt.state.salvage') || k === 'mrt.state.prerestore' || k === 'mrt.state.restore.tmp') {
         localStorage.removeItem(k);
       }
     }
-    refreshSafe();
-    say('out-safe', `${$('out-safe').textContent}\n\nRestored. Reload the tracker to see it.`);
+    refreshSafe(`Restored from ${sourceLabel}. Reload the tracker tab to see it.`);
   } catch (e) {
-    say('out-safe', `Restore failed (${e.name}). Try "Free storage again" first.`);
+    refreshSafe(`Restore failed (${e.name}). Try "Free storage again" in section 3c first.`);
   }
-});
+}
 
 $('b-report').addEventListener('click', async () => {
   const rows = Object.keys(localStorage)
@@ -313,9 +364,9 @@ $('b-wipe').addEventListener('click', () => {
 
 // Refuses to break anything until a copy exists, since that is the whole point of the safety net.
 function guard() {
-  if (localStorage.getItem(BACKUP) != null) return true;
   if (localStorage.getItem(KEY) == null) return true; // nothing to lose
-  alert('Press "Back up my real data" first — that is what makes these faults safe to run.');
+  if (localStorage.getItem(BACKUP) != null || fileSavedAs != null) return true;
+  alert('Take a backup first (step 0) — that is what makes these faults safe to run.');
   return false;
 }
 
