@@ -48,7 +48,7 @@ const strings = (v) => (Array.isArray(v) ? [...new Set(v.map(str).filter(Boolean
 
 // A curated file is fetched from our own origin by name, so it must stay a plain file name.
 // Anything with a path separator or traversal segment is treated as invalid data.
-function safeFile(v) {
+export function safeFile(v) {
   const s = str(v);
   if (!s) return null;
   return /^[A-Za-z0-9._-]+\.json$/.test(s) && !s.startsWith('.') ? s : null;

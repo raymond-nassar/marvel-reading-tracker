@@ -60,6 +60,32 @@ Metadata comes from the community **Marvel Metadata API**:
 so this app throttles and caches aggressively. The API base URL is configurable, and the upstream
 project is MIT-licensed and self-hostable, so this app is not permanently tied to one host.
 
+## Adding a curated reading list
+
+Curated lists are data, not code. To add one, append an entry to
+[`src/data/curated-lists.json`](src/data/curated-lists.json) and run `npm run vendor`. The
+vendor script fetches the upstream order, pins the enriched issue data into `src/data/`, and
+regenerates `src/data/catalog.json`, so the new list appears in the catalog automatically. No
+application code changes.
+
+Each entry needs:
+
+| Field | Meaning |
+|---|---|
+| `id` | Stable, unique identifier for the list |
+| `name`, `description` | What a reader sees in the catalog |
+| `type` | `event`, `character-run`, `creator-run`, or `era` |
+| `depth` | `essential`, `complete`, or `tie-ins` |
+| `sourceUrl` | `https://` URL of the upstream Markdown checklist to vendor |
+| `sourcePage` | Human-readable attribution link (defaults to `sourceUrl`) |
+| `sourceLicense` | Licence of the upstream order |
+| `out` | Plain `*.json` file name to write into `src/data/` |
+| `characters`, `keywords` | Extra terms the catalog search should match |
+| `expect` | Optional expected issue count; a mismatch is reported |
+
+An entry that is missing or malformed fails the vendor run with the reason, so a broken
+definition can never ship as a quietly shorter catalog.
+
 ## Disclaimer
 
 Unofficial fan project. **Metadata and links only** — no comic content is hosted, stored,
