@@ -464,19 +464,41 @@ function render(event, order) {
   return lines.join('\n');
 }
 
-async function main() {
-  const argv = process.argv.slice(2);
-  const dryRun = argv.includes('--dry-run');
-  const wanted = argv.filter((a) => !a.startsWith('--'));
+// A mistyped flag must not be read as "no flag". `--dryrun` or `--dry_run` would otherwise fall
+// through to a real build and rewrite every order file and its generatedAt stamp -- the exact
+// opposite of what the person typing a safety flag was asking for. `--only=` is the likeliest
+// slip, because this script's closing line tells you to pass it to `npm run vendor`.
+const FLAGS = new Set(['--dry-run', '--audit']);
+
+export function parseArgs(argv) {
+  const unknown = argv.filter((a) => a.startsWith('-') && !FLAGS.has(a));
+  if (unknown.length) {
+    const hint = unknown.some((a) => a.startsWith('--only'))
+      ? ' (--only belongs to `npm run vendor`; this script takes event ids as bare arguments)'
+      : '';
+    throw new Error(
+      `unrecognised option${unknown.length > 1 ? 's' : ''}: ${unknown.join(', ')}${hint}; ` +
+        `this script takes ${[...FLAGS].join(', ')} and event ids: ${EVENTS.map((e) => e.id).join(', ')}`,
+    );
+  }
+  const wanted = argv.filter((a) => !a.startsWith('-'));
   for (const id of wanted) {
     // A typo would otherwise build nothing and look like a success.
     if (!EVENTS.some((e) => e.id === id)) {
       throw new Error(`"${id}" is not an event in this script; known ids: ${EVENTS.map((e) => e.id).join(', ')}`);
     }
   }
-  const targets = wanted.length ? EVENTS.filter((e) => wanted.includes(e.id)) : EVENTS;
+  return {
+    dryRun: argv.includes('--dry-run'),
+    wantsAudit: argv.includes('--audit'),
+    targets: wanted.length ? EVENTS.filter((e) => wanted.includes(e.id)) : EVENTS,
+  };
+}
 
-  if (argv.includes('--audit')) await audit(targets);
+async function main() {
+  const { dryRun, wantsAudit, targets } = parseArgs(process.argv.slice(2));
+
+  if (wantsAudit) await audit(targets);
 
   for (const event of targets) {
     const issues = [];

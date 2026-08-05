@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
-import { EVENTS, normalizeSeriesRows, nameMatches } from '../scripts/build-event-order.mjs';
+import { EVENTS, normalizeSeriesRows, nameMatches, parseArgs } from '../scripts/build-event-order.mjs';
 
 // The completeness audit reads a series index that may be column-oriented, and a reader that
 // cannot see names is indistinguishable from a catalogue with nothing in it: both match zero
@@ -73,6 +73,35 @@ test('every event declares its main series among the series it includes', () => 
   for (const event of EVENTS) {
     assert.ok(event.series.includes(event.main), `${event.id}: main series ${event.main} is not included`);
   }
+});
+
+// A mistyped safety flag must not read as no flag at all. --dryrun once fell through to a real
+// build, rewriting every order file, which is the opposite of what the person typing it wanted.
+test('a mistyped flag is refused rather than ignored', () => {
+  for (const bad of ['--dryrun', '--dry_run', '--Audit', '-audit']) {
+    assert.throws(() => parseArgs([bad]), /unrecognised option/, `${bad} should be refused`);
+  }
+});
+
+test('--only names the vendor script, and says so', () => {
+  assert.throws(() => parseArgs(['--only=house-of-m']), /npm run vendor/);
+});
+
+test('the real flags and event ids still parse', () => {
+  assert.deepEqual(
+    parseArgs(['--dry-run', '--audit', 'civil-war']).targets.map((e) => e.id),
+    ['civil-war'],
+  );
+  const bare = parseArgs([]);
+  assert.equal(bare.dryRun, false);
+  assert.equal(bare.wantsAudit, false);
+  assert.equal(bare.targets.length, EVENTS.length);
+  assert.equal(parseArgs(['--dry-run']).dryRun, true);
+  assert.equal(parseArgs(['--audit']).wantsAudit, true);
+});
+
+test('an unknown event id is refused', () => {
+  assert.throws(() => parseArgs(['civil-war-ii']), /is not an event in this script/);
 });
 
 // Marvel returns some titles with doubled or leading whitespace ("King In Black: Black Panther
