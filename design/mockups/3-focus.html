@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Direction 3 — Focus</title>
+    <title>Direction 3: Focus</title>
     <style>
       :root {
         color-scheme: dark;
@@ -79,7 +79,7 @@
           <circle cx="17" cy="17" r="14" fill="none" stroke="#242932" stroke-width="4" />
           <circle id="ringArc" cx="17" cy="17" r="14" fill="none" stroke="#4f8cff" stroke-width="4" stroke-linecap="round" stroke-dasharray="88" stroke-dashoffset="88" />
         </svg>
-        <span id="ringLab">—</span>
+        <span id="ringLab"></span>
       </div>
     </div>
 
@@ -88,9 +88,9 @@
         <img id="img" alt="" />
         <div>
           <div class="lab">Read this next</div>
-          <h1 id="title">—</h1>
-          <p class="sub" id="sub">—</p>
-          <p class="desc" id="desc">—</p>
+          <h1 id="title"></h1>
+          <p class="sub" id="sub"></p>
+          <p class="desc" id="desc"></p>
           <div class="facts" id="facts"></div>
           <div class="cta">
             <button class="btn">Open in Marvel Unlimited<span class="kbd">↵</span></button>
@@ -108,7 +108,7 @@
       </div>
 
       <details class="list">
-        <summary><span>Show the whole order</span><span id="sumn">—</span></summary>
+        <summary><span>Show the whole order</span><span id="sumn"></span></summary>
         <div class="rows" id="rows"></div>
       </details>
     </main>
@@ -127,7 +127,7 @@
       desc.textContent = it.description || 'No synopsis recorded for this issue.';
       facts.innerHTML = `
         <div class="fact"><div class="k">In Unlimited</div><div class="v ok">✓ Expected</div></div>
-        <div class="fact"><div class="k">Pages</div><div class="v">${it.pageCount ?? '—'}</div></div>
+        <div class="fact"><div class="k">Pages</div><div class="v">${it.pageCount ?? '?'}</div></div>
         <div class="fact"><div class="k">Released</div><div class="v">${(it.onSale || '').slice(0, 10)}</div></div>
         <div class="fact"><div class="k">Position</div><div class="v">${read + 1} of ${MOCK.total}</div></div>`;
 

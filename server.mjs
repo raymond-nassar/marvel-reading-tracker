@@ -28,7 +28,7 @@ const TYPES = {
 function safePath(urlPath) {
   // decodeURIComponent throws URIError on a malformed escape such as "/%" or "/a%2". This runs
   // before the request handler's try block, so an unhandled rejection would terminate the whole
-  // process — and any web page the user has open could trigger it with a single fetch. Treat a
+  // process, and any web page the user has open could trigger it with a single fetch. Treat a
   // malformed path as simply not found.
   let decoded;
   try {
@@ -49,7 +49,7 @@ const server = createServer(async (req, res) => {
   } catch (err) {
     // A request must never be able to kill the process. Without this, any throw in the handler
     // becomes an unhandled rejection and Node exits, taking the user's session with it.
-    console.error(`Request failed: ${req.method} ${req.url} — ${err?.message ?? err}`);
+    console.error(`Request failed: ${req.method} ${req.url}: ${err?.message ?? err}`);
     if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' });
     if (!res.writableEnded) res.end('Internal error');
   }
@@ -99,7 +99,7 @@ server.on('error', (err) => {
 server.listen(PORT, HOST, () => {
   const url = `http://${HOST}:${PORT}/`;
   console.log(`Marvel Reading Tracker running at ${url}`);
-  console.log('Always use this exact address — other addresses are separate browser storage.');
+  console.log('Always use this exact address. Other addresses are separate browser storage.');
   console.log('Press Ctrl+C to stop.');
   if (process.env.MRT_NO_OPEN !== '1') openBrowser(url);
 });

@@ -2,7 +2,7 @@
 //
 // Rendering follows the "Longbox Focus" design: a rail of reading orders, one hero card for
 // the next unread issue, a short cover shelf, and the full order collapsed behind a summary.
-// Cover art is optional everywhere — `body.nocovers` swaps every image for a typographic tile.
+// Cover art is optional everywhere: `body.nocovers` swaps every image for a typographic tile.
 
 import {
   createList, deleteList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
@@ -12,6 +12,10 @@ import {
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { availability, describe, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
+import {
+  parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory, searchCatalog,
+  groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
+} from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
 import { ResponseCache } from './cache.js';
@@ -55,6 +59,7 @@ wireAdd();
 wireData();
 wireShortcuts();
 wireBlockedBanner();
+wireCatalogSearch();
 renderAll();
 checkHealth();
 refreshCacheUsage();
@@ -124,7 +129,7 @@ function announce(msg) {
 }
 
 // A success message must never outlive the write it describes. store.update rolls the change
-// back when persistence fails, so every announcement has to consult the result first —
+// back when persistence fails, so every announcement has to consult the result first,
 // otherwise a screen-reader user hears "List deleted" for a deletion that did not happen.
 function announceIfSaved(msg) {
   if (store.lastUpdateOk) announce(msg);
@@ -223,7 +228,7 @@ function setCovers(on) {
 // ------------------------------------------------------------------ navigation
 
 function wireNav() {
-  for (const btn of document.querySelectorAll('.ri[data-view]')) {
+  for (const btn of document.querySelectorAll('[data-view]')) {
     btn.addEventListener('click', () => {
       showView(btn.dataset.view);
       if (btn.dataset.open) {
@@ -252,10 +257,6 @@ function wireNav() {
     announceIfSaved(`Created list ${name}.`);
   });
 
-  for (const btn of document.querySelectorAll('[data-curated]')) {
-    btn.addEventListener('click', () => importCurated(btn.dataset.curated));
-  }
-
   $('#btn-covers').addEventListener('click', () => setCovers(!settings.covers));
 }
 
@@ -264,7 +265,7 @@ function wireNav() {
 // the next Tab continues from the old position and nothing announces where you now are.
 function showView(next, { focus = true } = {}) {
   view = next;
-  for (const name of ['read', 'progress', 'add', 'data']) {
+  for (const name of ['read', 'catalog', 'progress', 'add', 'data', 'about']) {
     $(`#view-${name}`).hidden = name !== next;
   }
   for (const btn of document.querySelectorAll('.ri[data-view]')) {
@@ -272,6 +273,7 @@ function showView(next, { focus = true } = {}) {
     else btn.removeAttribute('aria-current');
   }
   renderRail();
+  if (next === 'catalog') renderCatalog();
   window.scrollTo({ top: 0 });
 
   if (!focus) return;
@@ -333,7 +335,7 @@ function wireReading() {
     const id = activeListId();
     const list = store.state.lists[id];
     if (!list) return;
-    if (!confirm(`Delete "${list.name}"? Your read progress is kept — only the list is removed.`)) return;
+    if (!confirm(`Delete "${list.name}"? Your read progress is kept; only the list is removed.`)) return;
     store.update((s) => deleteList(s, id));
     announceIfSaved('List deleted. Reading progress was kept.');
   });
@@ -353,7 +355,7 @@ function wireReading() {
 function markCurrentRead() {
   const issue = upNext(store.state, activeListId());
   if (!issue) return;
-  // Only announce success if the write actually stuck — store.update rolls back on failure
+  // Only announce success if the write actually stuck, because store.update rolls back on failure
   // and the error is surfaced separately by the onChange handler.
   if (!isRead(store.update((s) => markRead(s, issue.issueId, true)), issue.issueId)) return;
   const next = upNext(store.state, activeListId());
@@ -425,7 +427,7 @@ function renderHero() {
   $('#hero-title').textContent = issue.title;
 
   // Marvel spells it "penciler" with one l, so /penciller/ never matched and /artist/ matched
-  // "cover artist" instead — the hero credited the cover artist and omitted the interior one.
+  // "cover artist" instead, because the hero credited the cover artist and omitted the interior one.
   // Cover credits are excluded: they are not the creative team for the story.
   const credits = (issue.creators ?? [])
     .filter((c) => {
@@ -443,9 +445,9 @@ function renderHero() {
     : av.state === STATE.SCHEDULED ? 'warn' : '';
   $('#hero-facts').replaceChildren(
     fact('In Unlimited', `${SHORT[av.state]} ${describe(issue, { override })}`, avClass),
-    fact('Pages', issue.pageCount ? String(issue.pageCount) : '—'),
-    fact('Released', ymd(issue.onSale) || '—'),
-    fact('Position', total ? `${position} of ${total}` : '—'),
+    fact('Pages', issue.pageCount ? String(issue.pageCount) : 'Unknown'),
+    fact('Released', ymd(issue.onSale) || 'Unknown'),
+    fact('Position', total ? `${position} of ${total}` : 'Unknown'),
   );
 
   const info = $('#btn-hero-info');
@@ -631,7 +633,7 @@ function wireShortcuts() {
 function openInReader(issue, event) {
   event?.preventDefault();
   // window.open must happen synchronously inside the gesture. The digitalId lookup, when one
-  // is needed, happens in the opened tab rather than here — see reader.js.
+  // is needed, happens in the opened tab rather than here. See reader.js.
   const res = openIssueTab(issue);
   if (!res.ok) {
     announce(`${issue.title} has no Marvel reference recorded, so it cannot be opened.`);
@@ -804,7 +806,7 @@ function addToActive(issues, message, { sort = false } = {}) {
   announce(`${message} ${added} added${skipped ? `, ${skipped} already in the list` : ''}.`);
 
   // Search, series and creator results come from list endpoints, which return neither `cover`
-  // nor `digitalId` — only /v1/issues/{id} does. Without hydration the issue lands with no art
+  // nor `digitalId`; only /v1/issues/{id} does. Without hydration the issue lands with no art
   // and, worse, no way to open it in Marvel Unlimited, until the user happens to notice the
   // "Fetch details" button. Import already did this; every other add path was missing it.
   // start() is a no-op while a run is in flight, so rapid adds cannot stack up.
@@ -902,7 +904,7 @@ function doImport() {
   box.append(el('p', { class: 'notice notice-ok', text: `Imported ${added} issue${added === 1 ? '' : 's'}${skipped ? `, ${skipped} already present` : ''}. Details will be fetched in the background.` }));
 
   if (unresolved.length) {
-    box.append(el('p', { class: 'notice notice-warn', text: `${unresolved.length} line${unresolved.length === 1 ? '' : 's'} had no Marvel issue link. They are listed below rather than dropped — resolve each one deliberately.` }));
+    box.append(el('p', { class: 'notice notice-warn', text: `${unresolved.length} line${unresolved.length === 1 ? '' : 's'} had no Marvel issue link. They are listed below rather than dropped, so you can resolve each one deliberately.` }));
     const wrap = el('div', { class: 'results' });
     for (const u of unresolved) wrap.append(unresolvedRow(u, listId));
     box.append(wrap);
@@ -916,7 +918,7 @@ function unresolvedRow(entry, listId) {
   const row = el('div', { class: 'result' });
   const main = el('div', { class: 'result-main' }, [
     el('div', { class: 'result-title', text: entry.title }),
-    el('div', { class: 'result-meta', text: 'No issue link — search to resolve' }),
+    el('div', { class: 'result-meta', text: 'No issue link, search to resolve' }),
   ]);
   const btn = el('button', { type: 'button', class: 'btn btn-g' }, 'Find match');
   btn.addEventListener('click', async () => {
@@ -990,7 +992,7 @@ function doManual() {
   const listId = ensureList('My reading order');
   if (!listId) return notify('#manual-report', 'Could not create a list, so nothing was added.', 'error');
 
-  // Report what actually happened rather than assuming success — this previously announced
+  // Report what actually happened rather than assuming success. This previously announced
   // "Added" even when the entry had been silently discarded.
   let added = 0;
   let skipped = 0;
@@ -1023,6 +1025,242 @@ function doManual() {
 }
 
 // ------------------------------------------------------------------ curated orders
+
+let catalogLoad = null;
+let catalogCategory = 'all';
+let catalogQuery = '';
+let catalogAnnounceTimer = null;
+
+// Typing in the search box re-renders on every keystroke, so a slow first load could otherwise
+// start a second fetch while the first is still in flight and let the two renders finish out of
+// order. Sharing one promise keeps every render behind the same load; a failure clears it so
+// reopening the view can retry.
+function loadCatalog() {
+  catalogLoad ??= (async () => {
+    // Served from our own origin, so the catalog works with no internet connection.
+    const res = await fetch('./data/catalog.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return parseCatalog(await res.json());
+  })().catch((err) => {
+    catalogLoad = null;
+    throw err;
+  });
+  return catalogLoad;
+}
+
+// The catalog re-renders on every keystroke, so announcing each render would read a fresh result
+// count into a screen reader for every letter typed, and each announcement would cut off the one
+// before it. Waiting for a pause means the reader hears the result of what they actually typed.
+function announceCatalog(msg) {
+  clearTimeout(catalogAnnounceTimer);
+  catalogAnnounceTimer = setTimeout(() => announce(msg), 500);
+}
+
+async function renderCatalog() {
+  const box = $('#catalog-results');
+  const report = $('#catalog-report');
+  box.replaceChildren(el('p', { class: 'rail-hint', text: 'Loading the catalog…' }));
+  report.replaceChildren();
+  // Tied to the query rather than to a successful load, so the button cannot be left behind
+  // offering to clear a search box that an empty or failed catalog still shows.
+  $('#catalog-clear').hidden = !catalogQuery;
+
+  let catalog;
+  try {
+    catalog = await loadCatalog();
+  } catch (err) {
+    box.replaceChildren();
+    $('#catalog-filters').hidden = true;
+    $('#catalog-filters').replaceChildren();
+    notify('#catalog-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error');
+    return;
+  }
+
+  // A dropped entry means the bundled data is wrong, not that the list does not exist. Saying
+  // so is better than showing a shorter catalog that looks complete.
+  if (catalog.dropped) {
+    notify(
+      '#catalog-report',
+      `${catalog.dropped} catalog ${catalog.dropped === 1 ? 'entry is' : 'entries are'} incomplete and cannot be shown.`,
+      'warn',
+    );
+  }
+
+  box.replaceChildren();
+  if (!catalog.lists.length) {
+    $('#catalog-filters').hidden = true;
+    box.append(el('p', { class: 'rail-hint', text: 'No curated reading lists are bundled with this build.' }));
+    return;
+  }
+
+  // The categories describe the whole catalog, not the current search, so searching never
+  // makes a category vanish from the filter under the reader's cursor.
+  renderCatalogFilters(catalog.lists);
+
+  // Filtering narrows which lists are shown; every list that is shown keeps the full detail a
+  // reader needs to choose, so searching or switching categories never hides a description,
+  // reading depth, or issue count.
+  const inCategory = filterByCategory(catalog.lists, catalogCategory);
+  const shown = searchCatalog(inCategory, catalogQuery);
+
+  if (!shown.length) {
+    const where = catalogCategory === 'all' ? '' : ` in ${categoryLabel(catalog.lists, catalogCategory)}`;
+    const msg = catalogQuery
+      ? `No reading lists match “${catalogQuery}”${where}.`
+      : `No reading lists${where || ' in that category'}.`;
+    box.append(el('p', { class: 'rail-hint', text: msg }));
+    announceCatalog(msg);
+    return;
+  }
+
+  for (const group of groupCatalog(shown)) {
+    // A grouped story is announced once, so the reader sees one decision (which path through
+    // this story) instead of two lists that look unrelated.
+    if (group.name) {
+      box.append(el('div', { class: 'result-group' }, [
+        el('h2', { class: 'result-group-h', text: group.name }),
+        el('p', {
+          class: 'result-meta',
+          text: `${group.lists.length} versions of this reading order. Pick how much you want to read.`,
+        }),
+        ...group.lists.map((list) => catalogRow(list, { variant: true })),
+      ]));
+      continue;
+    }
+    box.append(catalogRow(group.lists[0]));
+  }
+
+  // The dropped-entry warning already announced itself; a second announcement would replace it.
+  if (!catalog.dropped) {
+    const where = catalogCategory === 'all' ? '' : ` in ${categoryLabel(catalog.lists, catalogCategory)}`;
+    const match = catalogQuery ? ` matching “${catalogQuery}”` : '';
+    announceCatalog(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${match}${where}.`);
+  }
+}
+
+// Inside a group the story's name is already the heading, so the row leads with what actually
+// differs between the versions, the reading path, rather than repeating the title.
+function catalogRow(list, { variant = false } = {}) {
+  // The count is derived from the file the reader will actually import, so it is exact and
+  // does not need hedging.
+  const meta = [typeLabel(list.type), `${list.count} issue${list.count === 1 ? '' : 's'}`].filter(Boolean).join(' · ');
+  const depth = depthLabel(list.depth);
+  const title = variant ? variantLabel(list) : list.name;
+  return el('div', { class: 'result' }, [
+    el('div', { class: 'result-main' }, [
+      el('div', { class: 'result-title', text: title }),
+      el('div', { class: 'result-meta', text: meta }),
+      list.description ? el('div', { class: 'result-meta', text: list.description }) : null,
+      // How much reading a list represents is the reason a reader picks between two versions
+      // of the same story, so it is called out rather than buried in the meta line.
+      depth
+        ? el('p', { class: 'result-meta' }, [
+          el('span', { class: 'pill', text: depth }),
+          depthHint(list.depth) ? ` ${depthHint(list.depth)}` : null,
+        ])
+        : null,
+      attributionLine(list),
+    ]),
+    el('button', {
+      class: 'btn btn-p',
+      type: 'button',
+      // The accessible name always carries the full list name, so a button read out of
+      // context never says only "Import Essential reading".
+      'aria-label': `Import ${list.name}`,
+      onclick: () => importCurated(list.file),
+    }, 'Import'),
+  ]);
+}
+
+// Where an order came from and when it was pinned. A reader deciding whether to trust a curated
+// order needs both: the credit tells them who made it, the date bounds how recent it can be.
+// The stamp is when the vendor script fetched the order, not when its curator last revised it,
+// so it is labelled as a snapshot rather than claiming the list itself was updated that day.
+function attributionLine(list) {
+  const label = sourceLabel(list);
+  const href = sourceLink(list);
+  const updated = updatedLabel(list);
+  if (!label && !updated) return null;
+
+  const parts = [];
+  if (label) {
+    parts.push('Source: ');
+    parts.push(href
+      ? el('a', {
+        href,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        'aria-label': `Source of ${list.name}: ${label}`,
+      }, label)
+      : el('span', { text: label }));
+  }
+  if (updated) parts.push(el('span', { text: `${label ? ' · ' : ''}Snapshot taken ${updated}` }));
+  return el('p', { class: 'result-meta result-source' }, parts);
+}
+
+function wireCatalogSearch() {
+  const input = $('#catalog-q');
+  // Submitting is a no-op because results already track what has been typed; without this the
+  // form would reload the page and throw the reader back to an empty catalog.
+  $('#form-catalog-search').addEventListener('submit', (e) => e.preventDefault());
+  input.addEventListener('input', () => {
+    catalogQuery = input.value.trim();
+    renderCatalog();
+  });
+  $('#catalog-clear').addEventListener('click', () => {
+    input.value = '';
+    catalogQuery = '';
+    input.focus();
+    renderCatalog();
+  });
+}
+
+function categoryLabel(lists, key) {
+  return catalogCategories(lists).find((c) => c.key === key)?.label ?? 'that category';
+}
+
+function renderCatalogFilters(lists) {
+  const box = $('#catalog-filters');
+  const categories = catalogCategories(lists);
+
+  // One category is no choice at all, so the filter would only add noise.
+  box.hidden = categories.length < 2;
+  if (box.hidden) {
+    catalogCategory = 'all';
+    return;
+  }
+
+  // A category can disappear when the bundled data changes; falling back to "all" keeps the
+  // reader looking at a populated catalog instead of a permanently empty one.
+  if (catalogCategory !== 'all' && !categories.some((c) => c.key === catalogCategory)) {
+    catalogCategory = 'all';
+  }
+
+  const options = [{ key: 'all', label: 'All', count: lists.length }, ...categories];
+
+  // Selecting a category re-renders the view. Rebuilding the radios then would destroy the
+  // one the reader just activated and drop keyboard focus out of the filter, so when the
+  // options are unchanged we only move the selection.
+  const existing = [...box.querySelectorAll('input[name="catalog-category"]')];
+  if (existing.length === options.length && existing.every((r, i) => r.value === options[i].key)) {
+    for (const radio of existing) radio.checked = radio.value === catalogCategory;
+    return;
+  }
+
+  box.replaceChildren(
+    el('legend', { class: 'visually-hidden', text: 'Filter the catalog by category' }),
+    ...options.map(({ key, label, count }) => el('label', { class: 'fp' }, [
+      el('input', {
+        type: 'radio',
+        name: 'catalog-category',
+        value: key,
+        checked: key === catalogCategory,
+        onchange: () => { catalogCategory = key; renderCatalog(); },
+      }),
+      el('span', { text: `${label} (${count})` }),
+    ])),
+  );
+}
 
 async function importCurated(file) {
   try {
@@ -1192,7 +1430,7 @@ async function checkHealth() {
     pill.textContent = `API OK · ${Number(h.issue_count ?? 0).toLocaleString()} issues`;
   } catch {
     pill.className = 'pill pill-warn';
-    pill.textContent = 'API unreachable — lists and progress still work';
+    pill.textContent = 'API unreachable. Lists and progress still work';
   }
 }
 
@@ -1214,7 +1452,7 @@ function friendly(err) {
   if (err?.name === 'AbortError') return 'Cancelled.';
   if (err?.status === 404) return 'Not found in the metadata snapshot.';
   if (err?.transient) return 'The metadata service is busy. Try again in a moment.';
-  if (err instanceof TypeError) return 'Could not reach the metadata service. Check your connection — your saved lists still work.';
+  if (err instanceof TypeError) return 'Could not reach the metadata service. Check your connection; your saved lists still work.';
   return err?.message || 'Something went wrong.';
 }
 
@@ -1229,7 +1467,7 @@ function renderAll() {
   $('#add-target').textContent = list
     ? `Anything you add goes into “${list.name}”.`
     : 'Anything you add will start a new list.';
-  // Kept in renderAll so the banner cannot go stale — in particular a successful restore
+  // Kept in renderAll so the banner cannot go stale. In particular a successful restore
   // clears the block, and leaving the banner up would push the user toward "Start fresh",
   // which would then wipe the backup they had just restored.
   renderBlocked();

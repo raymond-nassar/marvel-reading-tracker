@@ -6,8 +6,8 @@
 // single-page app and a cross-origin reload cannot be forced from script.
 //
 // The tab is pointed at our own /open.html, which performs the digitalId lookup itself. That
-// keeps window.open synchronous inside the click handler — so the browser never treats it as an
-// unsolicited popup — and means no window handle has to be retained afterwards.
+// keeps window.open synchronous inside the click handler, so the browser never treats it as an
+// unsolicited popup, and means no window handle has to be retained afterwards.
 //
 // Contract verified 2026-08-03 (CHG-001): the live API's digitalId is authoritative; the
 // upstream repo README is stale for at least issue 52447.
@@ -67,7 +67,7 @@ export function launchUrl(issue, origin = location.origin) {
 }
 
 // Must be called synchronously from a user gesture, or the browser will block the tab.
-// Returns { ok, target } — `target` is 'reader' when we already knew the digitalId,
+// Returns { ok, target }, where `target` is 'reader' when we already knew the digitalId,
 // 'lookup' when the launcher has to resolve it, and null when the tab was blocked.
 export function openIssue(issue, { origin = location.origin } = {}) {
   if (!isLaunchable(issue)) {

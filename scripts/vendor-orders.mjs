@@ -1,39 +1,35 @@
 // Build-time vendoring of curated reading orders.
-// Fetches the upstream Hickman markdown orders and enriches every issue with the fields the
-// app needs (digitalId, seriesId, onSale, unlimitedDate), writing pinned JSON into src/data/.
+// Reads the curated-list manifest (src/data/curated-lists.json), fetches each upstream markdown
+// order, and enriches every issue with the fields the app needs (digitalId, seriesId, onSale,
+// unlimitedDate), writing pinned JSON plus the catalog manifest into src/data/.
 //
 // Run manually: npm run vendor
+// Adding a curated list is a manifest edit only, with no change to this script or to the app.
 // The output is committed so importing a curated order needs zero network access at runtime,
 // and so we are not exposed to upstream `main` changing under us.
 
-import { writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { RateLimiter } from '../src/js/lib/limiter.js';
 import { parseChecklist } from '../src/js/lib/markdown.js';
+import { parseCatalog } from '../src/js/lib/catalog.js';
+import { parseManifest } from '../src/js/lib/curated.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const API = 'https://marvel.emreparker.com/v1';
-const RAW = 'https://raw.githubusercontent.com/emreparker/marvel-comics/main/data';
+const MANIFEST = join(ROOT, 'src', 'data', 'curated-lists.json');
 
-const ORDERS = [
-  {
-    id: 'hickman-minimal',
-    file: 'hickman_minimal.md',
-    out: 'hickman_minimal.json',
-    name: 'Hickman to Secret Wars — minimal',
-    description: 'The essential spine of Jonathan Hickman\u2019s Avengers run through Secret Wars (2015).',
-    expect: 89,
-  },
-  {
-    id: 'hickman-full',
-    file: 'hickman_full.md',
-    out: 'hickman_full.json',
-    name: 'Hickman to Secret Wars — full',
-    description: 'The complete Hickman saga including tie-ins, ending with Secret Wars (2015).',
-    expect: 219,
-  },
-];
+// A manifest that cannot be read in full is a maintainer error: vendoring the valid subset
+// would quietly ship a catalog missing a list nobody noticed was broken.
+async function loadOrders() {
+  const { entries, errors } = parseManifest(JSON.parse(await readFile(MANIFEST, 'utf8')));
+  if (errors.length) {
+    throw new Error(`curated-lists.json is not valid:\n  - ${errors.join('\n  - ')}`);
+  }
+  if (!entries.length) throw new Error('curated-lists.json defines no reading lists');
+  return entries;
+}
 
 const limiter = new RateLimiter();
 
@@ -72,11 +68,12 @@ function coverBase(cover) {
 }
 
 async function main() {
+  const orders = await loadOrders();
   const parsed = [];
-  for (const order of ORDERS) {
-    const md = await getText(`${RAW}/${order.file}`);
+  for (const order of orders) {
+    const md = await getText(order.sourceUrl);
     const { entries, unresolved } = parseChecklist(md);
-    console.log(`${order.file}: ${entries.length} issues, ${unresolved.length} unresolved`);
+    console.log(`${order.id}: ${entries.length} issues, ${unresolved.length} unresolved`);
     parsed.push({ order, entries, unresolved });
   }
 
@@ -99,6 +96,7 @@ async function main() {
   await mkdir(join(ROOT, 'src', 'data'), { recursive: true });
 
   const summary = [];
+  const catalog = [];
   for (const { order, entries, unresolved } of parsed) {
     let missingDigital = 0;
     let missingCover = 0;
@@ -130,8 +128,8 @@ async function main() {
       id: order.id,
       name: order.name,
       description: order.description,
-      source: `https://github.com/emreparker/marvel-comics/blob/main/data/${order.file}`,
-      sourceLicense: 'MIT (emreparker/marvel-comics)',
+      source: order.sourcePage,
+      sourceLicense: order.sourceLicense,
       generatedAt: new Date().toISOString(),
       apiBase: API,
       count: items.length,
@@ -140,8 +138,36 @@ async function main() {
     };
 
     await writeFile(join(ROOT, 'src', 'data', order.out), JSON.stringify(payload, null, 2) + '\n', 'utf8');
-    summary.push({ file: order.out, count: items.length, expected: order.expect, missingDigital, missingCover });
+    summary.push({ file: order.out, count: items.length, expected: order.expect ?? items.length, missingDigital, missingCover });
+
+    // The catalog entry is derived from the payload we just wrote, so the issue count a
+    // reader sees before importing can never drift from the file they will actually import.
+    catalog.push({
+      id: order.id,
+      file: order.out,
+      name: order.name,
+      description: order.description,
+      type: order.type,
+      depth: order.depth,
+      count: items.length,
+      characters: order.characters ?? [],
+      keywords: order.keywords ?? [],
+      group: order.group,
+      groupName: order.groupName,
+      variant: order.variant,
+      source: payload.source,
+      sourceLicense: payload.sourceLicense,
+      updatedAt: payload.generatedAt,
+    });
   }
+
+  const checked = parseCatalog({ lists: catalog });
+  if (checked.dropped) throw new Error(`${checked.dropped} catalog entries are not valid; catalog.json not written`);
+  await writeFile(
+    join(ROOT, 'src', 'data', 'catalog.json'),
+    JSON.stringify({ generatedAt: new Date().toISOString(), lists: catalog }, null, 2) + '\n',
+    'utf8',
+  );
 
   console.table(summary);
   const bad = summary.filter((s) => s.count !== s.expected);

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Marvel Reading Tracker — pick a direction</title>
+    <title>Marvel Reading Tracker: pick a direction</title>
     <style>
       :root { color-scheme: dark; }
       * { box-sizing: border-box; }
@@ -39,10 +39,10 @@
   </head>
   <body>
     <header>
-      <h1>Four directions</h1>
+      <h1>Five directions</h1>
       <p class="lede">
-        Same data, same features, four different personalities. Open each one, click around a bit,
-        then tell me a number. You can also mix — “number 2, but the dense list from 1” is a
+        Same data, same features, five different personalities. Open each one, click around a bit,
+        then tell me a number. You can also mix: “number 2, but the dense list from 1” is a
         perfectly good answer.
       </p>
     </header>
@@ -50,7 +50,7 @@
     <div class="grid">
       <a class="card" href="./5-longbox-focus.html" style="border-color:#e23636; grid-column:1/-1">
         <span class="tag">Direction 5 · proposed</span>
-        <h2>Longbox Focus — the hybrid</h2>
+        <h2>Longbox Focus, the hybrid</h2>
         <p>
           Focus's calm single-column flow and fact row, wrapped in Longbox's cover-forward
           atmosphere and left rail. One confident “read this next” card over its own blurred
@@ -59,13 +59,13 @@
           typographic fallback.
         </p>
         <div class="swatch"><i style="background:#0f1115"></i><i style="background:#e23636"></i><i style="background:#43c088"></i><i style="background:#242932"></i></div>
-        <p class="best">Start here — this is what I propose building.</p>
+        <p class="best">Start here. This is what I propose building.</p>
       </a>
 
       <a class="card" href="./1-longbox.html">
         <span class="tag">Direction 1</span>
         <h2>Longbox</h2>
-        <p>Dark, dense, cover-forward. A media library for comics — closest to Plex or Letterboxd. Covers do the navigating.</p>
+        <p>Dark, dense, cover-forward. A media library for comics, closest to Plex or Letterboxd. Covers do the navigating.</p>
         <div class="swatch"><i style="background:#0d0f13"></i><i style="background:#e23636"></i><i style="background:#f2a541"></i><i style="background:#2f3646"></i></div>
         <p class="best">Best if you want to browse and feel the collection.</p>
       </a>
@@ -99,15 +99,15 @@
       <h3>What's real in these mockups</h3>
       <p>
         Everything on screen is real data: real issues from the Hickman → Secret Wars order, real
-        cover art from Marvel's CDN, real dates. The buttons are decorative — I have not wired
+        cover art from Marvel's CDN, real dates. The buttons are decorative. I have not wired
         the logic in yet, and I would rather build it once against a design you actually like.
       </p>
       <h3>One thing I got wrong earlier</h3>
       <p>
         My research notes said the API had no cover art. That was true of the list endpoints but
         wrong for <code>/v1/issues/{id}</code>, which returns covers, descriptions, page counts and
-        credits. That is why these mockups can lean on artwork — worth knowing, because it was the
-        single biggest constraint on how good this could look.
+        credits. That is why these mockups can lean on artwork, which is worth knowing because it was one of the
+        main constraints on how this could look.
       </p>
     </div>
   </body>

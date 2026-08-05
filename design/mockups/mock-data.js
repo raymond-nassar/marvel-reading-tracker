@@ -1,6 +1,6 @@
 // Generated from src/data/hickman_full.json - real issues, real covers, real synopses.
 window.MOCK = {
-  "listName": "Hickman to Secret Wars — full",
+  "listName": "Hickman to Secret Wars: full",
   "total": 219,
   "items": [
     {

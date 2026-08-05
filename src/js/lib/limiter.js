@@ -99,7 +99,7 @@ export class RateLimiter {
       while (wait > 0) {
         // The sleep must be interruptible. An entry that has already left the queue is no
         // longer reachable by the abort listener in schedule(), so a plain sleep would keep a
-        // cancelled request parked for the whole rate-limit window — long enough for the user
+        // cancelled request parked for the whole rate-limit window, long enough for the user
         // to start a second run that then races the first.
         await this.sleepOrAbort(wait, entry.signal);
         if (entry.signal?.aborted) throw abortError();

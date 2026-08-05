@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-08-04T06:14:48.703Z",
+  "lists": [
+    {
+      "id": "hickman-minimal",
+      "file": "hickman_minimal.json",
+      "name": "Hickman to Secret Wars: minimal",
+      "description": "The essential spine of Jonathan Hickman's Avengers run through Secret Wars (2015).",
+      "type": "creator-run",
+      "depth": "essential",
+      "count": 89,
+      "characters": [
+        "Avengers",
+        "Illuminati",
+        "Black Panther",
+        "Iron Man",
+        "Namor",
+        "Reed Richards",
+        "Doctor Doom"
+      ],
+      "keywords": [
+        "Jonathan Hickman",
+        "Secret Wars",
+        "New Avengers",
+        "Infinity",
+        "Time Runs Out",
+        "incursions"
+      ],
+      "group": "hickman-secret-wars",
+      "groupName": "Hickman to Secret Wars",
+      "variant": "Essential reading",
+      "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_minimal.md",
+      "sourceLicense": "MIT (emreparker/marvel-comics)",
+      "updatedAt": "2026-08-04T06:14:48.695Z"
+    },
+    {
+      "id": "hickman-full",
+      "file": "hickman_full.json",
+      "name": "Hickman to Secret Wars: full",
+      "description": "The complete Hickman saga including tie-ins, ending with Secret Wars (2015).",
+      "type": "creator-run",
+      "depth": "complete",
+      "count": 219,
+      "characters": [
+        "Avengers",
+        "Illuminati",
+        "Black Panther",
+        "Iron Man",
+        "Namor",
+        "Reed Richards",
+        "Doctor Doom",
+        "Fantastic Four"
+      ],
+      "keywords": [
+        "Jonathan Hickman",
+        "Secret Wars",
+        "New Avengers",
+        "Infinity",
+        "Time Runs Out",
+        "incursions",
+        "tie-ins"
+      ],
+      "group": "hickman-secret-wars",
+      "groupName": "Hickman to Secret Wars",
+      "variant": "Complete reading, with tie-ins",
+      "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
+      "sourceLicense": "MIT (emreparker/marvel-comics)",
+      "updatedAt": "2026-08-04T06:14:48.703Z"
+    }
+  ]
+}
