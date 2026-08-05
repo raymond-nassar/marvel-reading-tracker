@@ -12,7 +12,7 @@ test('parses a well-formed catalog entry', () => {
     lists: [{
       id: 'hickman-minimal',
       file: 'hickman_minimal.json',
-      name: 'Hickman to Secret Wars — minimal',
+      name: 'Hickman to Secret Wars: minimal',
       description: 'The essential spine.',
       type: 'creator-run',
       depth: 'essential',
@@ -141,7 +141,7 @@ test('an unknown category matches nothing rather than everything', () => {
 const sample = parseCatalog({
   lists: [
     {
-      id: 'hickman', file: 'hickman.json', name: 'Hickman to Secret Wars — minimal', count: 89,
+      id: 'hickman', file: 'hickman.json', name: 'Hickman to Secret Wars: minimal', count: 89,
       type: 'creator-run', depth: 'essential',
       description: 'The essential spine of Jonathan Hickman’s Avengers run.',
       characters: ['Avengers', 'Black Panther'], keywords: ['Jonathan Hickman', 'Secret Wars'],
@@ -218,12 +218,12 @@ test('every reading depth has a label and a plain-English explanation', () => {
 const variants = parseCatalog({
   lists: [
     {
-      id: 'cw-essential', file: 'cw_e.json', name: 'Civil War — essential', count: 12,
+      id: 'cw-essential', file: 'cw_e.json', name: 'Civil War: essential', count: 12,
       type: 'event', depth: 'essential', group: 'civil-war', groupName: 'Civil War',
       variant: 'Essential reading',
     },
     {
-      id: 'cw-full', file: 'cw_f.json', name: 'Civil War — complete', count: 90,
+      id: 'cw-full', file: 'cw_f.json', name: 'Civil War: complete', count: 90,
       type: 'event', depth: 'complete', group: 'civil-war', groupName: 'Civil War',
       variant: 'Complete reading, with tie-ins',
     },
@@ -259,11 +259,11 @@ test('a lone surviving variant is not given a heading over a single item', () =>
 test('a group falls back to a member name when groupName is missing', () => {
   const { lists } = parseCatalog({
     lists: [
-      { id: 'a', file: 'a.json', name: 'Inferno — essential', count: 1, group: 'inferno' },
-      { id: 'b', file: 'b.json', name: 'Inferno — complete', count: 2, group: 'inferno' },
+      { id: 'a', file: 'a.json', name: 'Inferno: essential', count: 1, group: 'inferno' },
+      { id: 'b', file: 'b.json', name: 'Inferno: complete', count: 2, group: 'inferno' },
     ],
   });
-  assert.equal(groupCatalog(lists)[0].name, 'Inferno — essential');
+  assert.equal(groupCatalog(lists)[0].name, 'Inferno: essential');
 });
 
 test('every variant is named, falling back to depth and then to the list name', () => {

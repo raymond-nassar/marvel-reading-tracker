@@ -1,4 +1,4 @@
-/* Marvel Reading Tracker — "Longbox Focus"
+/* Marvel Reading Tracker: "Longbox Focus"
    A cover-forward shell (rail, blurred hero backdrop, cover shelf) wrapped around a calm,
    single-column reading flow. Every cover rule has a `body.nocovers` counterpart so the
    layout holds together with artwork switched off. */
@@ -43,7 +43,7 @@ a { color: var(--blue); }
 
 /* Headings are focused programmatically when a view changes, purely so screen readers
    announce the new context. That is not a keyboard landing spot, so it should not draw a
-   focus ring — the ring would appear without the user having pressed anything. */
+   focus ring, so the ring would appear without the user having pressed anything. */
 h1[tabindex="-1"]:focus,
 h2[tabindex="-1"]:focus {
   outline: none;

@@ -67,7 +67,7 @@ async function checkReachable() {
 }
 
 async function checkCors() {
-  section('CORS — the whole app is a static page, so a wildcard origin is load-bearing');
+  section('CORS: the whole app is a static page, so a wildcard origin is load-bearing');
   const res = await get('/issues/52447');
   const allow = res.headers.get('access-control-allow-origin');
   check('Access-Control-Allow-Origin is permissive', allow === '*' || allow === 'null' ? allow === '*' : false,
@@ -75,7 +75,7 @@ async function checkCors() {
 }
 
 async function checkIssueShape() {
-  section('Issue record — the fields the UI renders');
+  section('Issue record: the fields the UI renders');
   const res = await get('/issues/52447');
   const b = res.body ?? {};
   check('GET /issues/{id} returns 200 JSON', res.status === 200 && b && typeof b === 'object');
@@ -87,7 +87,7 @@ async function checkIssueShape() {
   check('digitalId is present and numeric', Number.isInteger(Number(digital)) && Number(digital) > 0,
     `got ${JSON.stringify(digital)}`);
   check('digitalId still matches the P00-verified value (38164)', Number(digital) === 38164,
-    `got ${digital} — if this changed, re-run the P00 gate before shipping`);
+    `got ${digital}; if this changed, re-run the P00 gate before shipping`);
 
   // Discovered late (see plan amendment): only the single-issue endpoint carries these.
   check('cover is present with path + extension',
@@ -101,7 +101,7 @@ async function checkIssueShape() {
 }
 
 async function checkCoverUrl(issue) {
-  section('Cover CDN — we store URLs only and let the browser fetch the bytes');
+  section('Cover CDN: we store URLs only and let the browser fetch the bytes');
   const cover = issue?.cover;
   if (!cover?.path) return check('cover URL is fetchable', false, 'no cover on the sample issue');
 
@@ -121,7 +121,7 @@ async function checkCoverUrl(issue) {
 }
 
 async function checkEnvelopes() {
-  section('Response envelopes — search differs from every other list endpoint');
+  section('Response envelopes: search differs from every other list endpoint');
   const search = await get('/search/issues?q=secret+wars&limit=5');
   const sb = search.body ?? {};
   check('search returns { items, count } and no pagination',
@@ -136,29 +136,29 @@ async function checkEnvelopes() {
 }
 
 async function checkPageLimit() {
-  section('Page size — the limiter and hydrator both assume a 200 ceiling');
+  section('Page size: the limiter and hydrator both assume a 200 ceiling');
   const ok = await get('/issues?year=2015&limit=200');
   check('limit=200 is accepted', ok.status === 200, `HTTP ${ok.status}`);
 
   const over = await get('/issues?year=2015&limit=500');
   check('limit=500 is rejected, so 200 really is the cap', over.status === 422,
-    `HTTP ${over.status} — expected 422`);
+    `HTTP ${over.status}, expected 422`);
 }
 
 async function checkListFieldsAreThin() {
-  section('List endpoints stay thin — this is why lazy hydration exists');
+  section('List endpoints stay thin: this is why lazy hydration exists');
   const res = await get('/search/issues?q=secret+wars&limit=5');
   const first = res.body?.items?.[0];
   if (!first) return check('a search returns at least one item', false, 'no items');
   check('a search returns at least one item', true);
   check('list items carry no cover, so per-issue hydration is still required',
     first.cover == null,
-    first.cover ? 'covers now appear in list responses — hydration could be simplified' : '');
+    first.cover ? 'covers now appear in list responses, so hydration could be simplified' : '');
 }
 
 async function checkSortOrder() {
   section('Series issues arrive newest-first, so the app must re-sort');
-  // Secret Wars (2015) — the series behind the reading orders this app ships with.
+  // Secret Wars (2015): the series behind the reading orders this app ships with.
   const res = await get('/series/19648/issues?limit=10');
   const items = res.body?.items ?? [];
   if (items.length < 2) return check('the series endpoint returns issues', false, `${items.length} items`);
@@ -171,7 +171,7 @@ async function checkSortOrder() {
 }
 
 async function checkRateLimitIsForgiving() {
-  section('Rate limiting — a burst must be throttled, never silently wrong');
+  section('Rate limiting: a burst must be throttled, never silently wrong');
   const res = await get('/issues/6482');
   const remaining = res.headers.get('x-ratelimit-remaining') ?? res.headers.get('ratelimit-remaining');
   check('the API is still answering after a full run', res.status === 200,
@@ -182,7 +182,7 @@ async function checkRateLimitIsForgiving() {
   const mu = b.unlimitedDate ?? b.dates?.unlimited;
   check('unlimitedDate remains unreliable, so the four-state model stays',
     mu == null || String(mu) < '2007-01-01' || true,
-    `issue 6482 reports ${JSON.stringify(mu)} (MU launched in 2007 — this is why we never claim availability as fact)`);
+    `issue 6482 reports ${JSON.stringify(mu)} (MU launched in 2007, which is why we never claim availability as fact)`);
 }
 
 // --------------------------------------------------------------------------- run
@@ -214,7 +214,7 @@ console.log(`${results.length - failed.length}/${results.length} assumptions hol
 
 if (failed.length) {
   console.log('\nDrifted:');
-  for (const f of failed) console.log(`  - ${f.name}${f.detail ? ` — ${f.detail}` : ''}`);
+  for (const f of failed) console.log(`  - ${f.name}${f.detail ? `: ${f.detail}` : ''}`);
   console.log('\nUpdate the plan and the affected module before shipping.');
   process.exit(1);
 }

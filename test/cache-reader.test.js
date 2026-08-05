@@ -162,7 +162,7 @@ test('with neither a safe url nor an issueId there is no detail link', () => {
 });
 
 // The launch page does the digitalId lookup itself, so the app never has to retain a
-// window handle across an await — testing on 2026-08-03 showed handles are unreliable.
+// window handle across an await, because testing on 2026-08-03 showed handles are unreliable.
 test('launchUrl stays same-origin and passes only the reference ids', () => {
   const u = new URL(launchUrl({ issueId: 52447, digitalId: 38164, title: 'Secret Wars #1' }, 'http://127.0.0.1:8787'));
   assert.equal(u.origin, 'http://127.0.0.1:8787');

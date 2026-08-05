@@ -2,8 +2,8 @@
   "lists": [
     {
       "id": "hickman-minimal",
-      "name": "Hickman to Secret Wars — minimal",
-      "description": "The essential spine of Jonathan Hickman’s Avengers run through Secret Wars (2015).",
+      "name": "Hickman to Secret Wars: minimal",
+      "description": "The essential spine of Jonathan Hickman's Avengers run through Secret Wars (2015).",
       "type": "creator-run",
       "depth": "essential",
       "group": "hickman-secret-wars",
@@ -34,7 +34,7 @@
     },
     {
       "id": "hickman-full",
-      "name": "Hickman to Secret Wars — full",
+      "name": "Hickman to Secret Wars: full",
       "description": "The complete Hickman saga including tie-ins, ending with Secret Wars (2015).",
       "type": "creator-run",
       "depth": "complete",

@@ -4,7 +4,7 @@
 // unlimitedDate), writing pinned JSON plus the catalog manifest into src/data/.
 //
 // Run manually: npm run vendor
-// Adding a curated list is a manifest edit only — no change to this script or to the app.
+// Adding a curated list is a manifest edit only, with no change to this script or to the app.
 // The output is committed so importing a curated order needs zero network access at runtime,
 // and so we are not exposed to upstream `main` changing under us.
 

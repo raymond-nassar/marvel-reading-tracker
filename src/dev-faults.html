@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fault injection — Marvel Reading Tracker</title>
+<title>Fault injection: Marvel Reading Tracker</title>
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; }
@@ -55,7 +55,7 @@
 
 <h1>Fault injection harness</h1>
 <p>Phase 3 of the test plan. This page shares storage with the tracker because it is served from
-the same address, so it can break the app's saved data on purpose — then put it back.</p>
+the same address, so it can break the app's saved data on purpose, then put it back.</p>
 
 <div class="warn">
   <strong>Read this first.</strong> These buttons deliberately damage your saved reading data.
@@ -64,14 +64,14 @@ the same address, so it can break the app's saved data on purpose — then put i
 </div>
 
 <div class="card card-safe">
-  <h2>0. Safety net — do this first</h2>
+  <h2>0. Safety net, do this first</h2>
   <p>Two different kinds of copy. Take <strong>both</strong>.</p>
   <ol style="margin:.5rem 0 .9rem; padding-left:1.15rem">
-    <li><strong>A real file</strong> — a <code>.json</code> text file. Your browser saves it straight
+    <li><strong>A real file</strong>: a <code>.json</code> text file. Your browser saves it straight
       to your <strong>Downloads</strong> folder without asking, unless you have turned on
       <em>Ask me where to save each file</em> in Edge settings. This is the copy that survives
       anything, including the browser itself.</li>
-    <li><strong>A snapshot inside the browser</strong> — invisible, no file, no dialog. This is what
+    <li><strong>A snapshot inside the browser</strong>: invisible, no file, no dialog. This is what
       the one-click <em>Restore</em> button below uses, so the faults are quick to undo.</li>
   </ol>
   <div class="row">
@@ -89,13 +89,13 @@ the same address, so it can break the app's saved data on purpose — then put i
 
 <div class="card">
   <h2>3a. Unreadable saved data</h2>
-  <p>Replaces your saved state with text that is not valid JSON — the app cannot parse it at all.</p>
+  <p>Replaces your saved state with text that is not valid JSON, so the app cannot parse it at all.</p>
   <button class="bad" id="b-corrupt">Corrupt the saved state</button>
   <div class="expect">
     <strong>Now open the app and reload it.</strong> Expected:
     <ul>
       <li>A banner appears saying the data could not be read</li>
-      <li>Marking something read <strong>fails visibly</strong> — no success message</li>
+      <li>Marking something read <strong>fails visibly</strong>, with no success message</li>
       <li>The app's own “Download a copy” button gives you a file containing <code>{ not valid json</code></li>
       <li>“Start fresh” gives you an empty, working tracker</li>
     </ul>
@@ -106,16 +106,16 @@ the same address, so it can break the app's saved data on purpose — then put i
 <div class="card">
   <h2>3b. Data written by a newer build</h2>
   <p>Keeps your real data but stamps it with a schema version this build cannot understand. This is
-  the realistic version of the fault — it is what happens if you open an older build later.</p>
+  the realistic version of the fault: it is what happens if you open an older build later.</p>
   <button class="bad" id="b-newer">Stamp state as schema v99</button>
   <div class="expect">
     <strong>Reload the app.</strong> Expected:
     <ul>
       <li>Same banner; saving is blocked</li>
-      <li>The app's own “Download a copy” button — <strong>open that file and confirm your real lists and read
+      <li>The app's own “Download a copy” button. <strong>Open that file and confirm your real lists and read
         progress are inside it</strong></li>
       <li>Then try to restore that file via Settings. It should be <em>refused</em>, because the
-        app genuinely cannot read a future schema. <strong>Tell me what the message says</strong> —
+        app genuinely cannot read a future schema. <strong>Tell me what the message says</strong>,
         if it leaves you stuck with no way forward, that is a finding</li>
       <li>“Start fresh” should then give you a working tracker again</li>
     </ul>
@@ -126,7 +126,7 @@ the same address, so it can break the app's saved data on purpose — then put i
 <div class="card">
   <h2>3c. Storage full</h2>
   <p>Fills the browser's storage for this address so the app has no room left to save. Your data
-  stays readable — writes are what fail.</p>
+  stays readable; writes are what fail.</p>
   <div class="row">
     <button class="bad" id="b-fill">Fill up storage</button>
     <button class="good" id="b-free">Free storage again</button>
@@ -136,7 +136,7 @@ the same address, so it can break the app's saved data on purpose — then put i
     <ul>
       <li>Marking read shows a visible save error <strong>and the checkbox reverts</strong></li>
       <li>No success message for a change that did not save</li>
-      <li>Creating a list either works or fails honestly — you are <strong>not</strong> silently
+      <li>Creating a list either works or fails honestly, so you are <strong>not</strong> silently
         switched to a different existing list</li>
       <li>Adding from search reports failure rather than claiming success</li>
     </ul>
@@ -146,18 +146,18 @@ the same address, so it can break the app's saved data on purpose — then put i
 </div>
 
 <div class="card">
-  <h2>3d & 3e. Network faults — no buttons needed</h2>
+  <h2>3d & 3e. Network faults, no buttons needed</h2>
   <p>These are done in the browser and the app's own settings.</p>
   <ul>
     <li><strong>Offline:</strong> press F12 → <em>Network</em> tab → change <em>No throttling</em>
       to <em>Offline</em>. Then search in the app. Expect a friendly error, no crash, app still
-      usable. Set it back to <em>No throttling</em> and retry — should work without a reload.</li>
+      usable. Set it back to <em>No throttling</em> and retry; it should work without a reload.</li>
     <li><strong>Dead API:</strong> in the app, Settings → API base → <code>http://127.0.0.1:9/v1</code>
       → save → search. Expect a friendly error, not a stack trace. Then restore
       <code>https://marvel.emreparker.com/v1</code>.</li>
     <li><strong>Rate limiting:</strong> import the Hickman <em>full</em> order and let details
       fetch to completion. Expect steady progress, no burst of failures, no stuck counter.
-      Cancel midway and restart — expect no double-running.</li>
+      Cancel midway and restart, and expect no double-running.</li>
   </ul>
 </div>
 
@@ -209,12 +209,12 @@ function refreshSafe(note) {
   const live = localStorage.getItem(KEY);
   const snap = localStorage.getItem(BACKUP);
   const fileNote = fileSavedAs == null
-    ? 'file copy  : NONE — press "1. Save a backup file"'
+    ? 'file copy  : NONE, press "1. Save a backup file"'
     : `file copy  : saved to your Downloads folder as ${fileSavedAs}`;
   say('out-safe',
     `${note ? `${note}\n\n` : ''}` +
     `live state : ${summarize(live)}\n` +
-    `snapshot   : ${snap == null ? 'NONE — press "2. Snapshot inside the browser"' : summarize(snap)}\n` +
+    `snapshot   : ${snap == null ? 'NONE, press "2. Snapshot inside the browser"' : summarize(snap)}\n` +
     `${fileNote}`,
     note && /could not|failed|refus/i.test(note) ? 'bad' : 'ok');
 }
@@ -229,7 +229,7 @@ $('b-backup').addEventListener('click', () => {
   if (existing != null && !confirm('A snapshot already exists. Overwrite it with the current live state?')) return;
   try {
     localStorage.setItem(BACKUP, live);
-    refreshSafe('Snapshot taken inside the browser. No file was created — that is button 1.');
+    refreshSafe('Snapshot taken inside the browser. No file was created; that is button 1.');
   } catch (e) {
     refreshSafe(`Could not write the snapshot (${e.name}). Free storage first, or rely on the file copy.`);
   }
@@ -246,7 +246,7 @@ $('b-download').addEventListener('click', () => {
   a.click();
   URL.revokeObjectURL(url);
   fileSavedAs = name;
-  refreshSafe(`Saved ${name} — check your Downloads folder now and confirm it is there before continuing.`);
+  refreshSafe(`Saved ${name}. Check your Downloads folder now and confirm it is there before continuing.`);
 });
 
 $('b-restore').addEventListener('click', () => {
@@ -319,7 +319,7 @@ $('b-newer').addEventListener('click', () => {
   say('out-3b',
     'State stamped as schema v99 with your real data intact.\n' +
     'Switch to the tracker and reload. The copy it offers you should contain the lists and\n' +
-    'progress listed above — check the downloaded file to be sure.');
+    'progress listed above. Check the downloaded file to be sure.');
   refreshSafe();
 });
 
@@ -333,7 +333,7 @@ $('b-fill').addEventListener('click', () => {
   } catch (e) {
     say('out-3c',
       `Storage is now full after ${written} chunks (${e.name}).\n` +
-      'Go to the tracker — no reload needed — and try marking something read.\n' +
+      'Go to the tracker (no reload needed) and try marking something read.\n' +
       'Press "Free storage again" when you are done.');
   }
 });
@@ -348,7 +348,7 @@ function freeFill() {
 
 $('b-free').addEventListener('click', () => {
   const removed = freeFill();
-  say('out-3c', `Freed ${removed} chunk(s). Saving should work again — try the same action in the tracker.`);
+  say('out-3c', `Freed ${removed} chunk(s). Saving should work again, so try the same action in the tracker.`);
 });
 
 $('b-wipe').addEventListener('click', () => {
@@ -366,7 +366,7 @@ $('b-wipe').addEventListener('click', () => {
 function guard() {
   if (localStorage.getItem(KEY) == null) return true; // nothing to lose
   if (localStorage.getItem(BACKUP) != null || fileSavedAs != null) return true;
-  alert('Take a backup first (step 0) — that is what makes these faults safe to run.');
+  alert('Take a backup first (step 0). That is what makes these faults safe to run.');
   return false;
 }
 

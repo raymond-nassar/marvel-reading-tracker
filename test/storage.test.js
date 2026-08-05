@@ -96,7 +96,7 @@ test('a second failed load does not clobber the first salvage copy', () => {
 
 // The escape hatch must not be able to destroy the thing it exists to protect. Copying the
 // state doubles this origin's footprint, so a state near the quota is exactly the case where
-// the salvage write throws — and that is precisely when the banner is telling the user to
+// the salvage write throws, and that is precisely when the banner is telling the user to
 // press "Start fresh".
 test('start fresh refuses when no copy of the unreadable data survives', () => {
   const storage = fakeStorage({ [KEY]: 'corrupt-and-precious' });

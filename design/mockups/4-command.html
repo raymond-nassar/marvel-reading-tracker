@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Direction 4 — Command</title>
+    <title>Direction 4: Command</title>
     <style>
       :root {
         color-scheme: dark;
@@ -92,19 +92,19 @@
     </div>
 
     <div class="strip">
-      <div class="stat"><div class="n" id="s1">—</div><div class="l">Read</div></div>
-      <div class="stat"><div class="n v" id="s2">—</div><div class="l">Remaining</div></div>
-      <div class="stat"><div class="n g" id="s3">—</div><div class="l">In Unlimited</div></div>
-      <div class="stat"><div class="n" id="s4">—</div><div class="l">Series</div></div>
-      <div class="stat"><div class="n" id="s5">—</div><div class="l">Pages left</div></div>
+      <div class="stat"><div class="n" id="s1"></div><div class="l">Read</div></div>
+      <div class="stat"><div class="n v" id="s2"></div><div class="l">Remaining</div></div>
+      <div class="stat"><div class="n g" id="s3"></div><div class="l">In Unlimited</div></div>
+      <div class="stat"><div class="n" id="s4"></div><div class="l">Series</div></div>
+      <div class="stat"><div class="n" id="s5"></div><div class="l">Pages left</div></div>
     </div>
 
     <div class="next">
       <img id="ni" alt="" />
       <div>
         <div class="l">Next unread</div>
-        <div class="t" id="nt">—</div>
-        <div class="m" id="nm">—</div>
+        <div class="t" id="nt"></div>
+        <div class="m" id="nm"></div>
       </div>
       <span class="spacer"></span>
       <button class="go">Open in Unlimited <kbd>↵</kbd></button>
@@ -157,7 +157,7 @@
 
       ni.src = cover(nx, 'portrait_incredible');
       nt.textContent = nx.title;
-      nm.textContent = [nx.seriesName, nx.creators?.map((c) => c.name).join(', ')].filter(Boolean).join(' — ');
+      nm.textContent = [nx.seriesName, nx.creators?.map((c) => c.name).join(', ')].filter(Boolean).join(' · ');
 
       tb.innerHTML = items.map((x, i) => `
         <tr class="${x.read ? 'done' : ''} ${i === i0 ? 'sel' : ''}">
@@ -167,7 +167,7 @@
           <td style="color:var(--muted)">${(x.seriesName || '').replace(/\s*\(.*\)$/, '')}</td>
           <td class="num">${(x.onSale || '').slice(0, 10)}</td>
           <td><span class="st ${x.mu ? 'ok' : 'unk'}">${x.mu ? 'expected' : 'unknown'}</span></td>
-          <td class="num">${x.pageCount ?? '—'}</td>
+          <td class="num">${x.pageCount ?? '?'}</td>
           <td class="act"><button>read</button><button>info</button><button>↑</button><button>↓</button></td>
         </tr>`).join('');
 
