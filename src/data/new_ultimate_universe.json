@@ -4,216 +4,11 @@
   "description": "Jonathan Hickman's rebuilt Ultimate line in publication-adjacent reading order, from Ultimate Invasion (2023) through Ultimate Impact: Reborn.",
   "source": null,
   "sourceLicense": "Compiled for this project",
-  "generatedAt": "2026-08-05T04:18:50.252Z",
+  "generatedAt": "2026-08-05T04:33:50.342Z",
   "apiBase": "https://marvel.emreparker.com/v1",
   "count": 138,
-  "placeholders": 34,
-  "unresolved": [
-    {
-      "title": "Ultimate X-Men #21",
-      "url": null,
-      "read": false,
-      "index": 104
-    },
-    {
-      "title": "Ultimate Wolverine #11",
-      "url": null,
-      "read": false,
-      "index": 105
-    },
-    {
-      "title": "Ultimate Black Panther #22",
-      "url": null,
-      "read": false,
-      "index": 106
-    },
-    {
-      "title": "The Ultimates #18",
-      "url": null,
-      "read": false,
-      "index": 107
-    },
-    {
-      "title": "Ultimate Universe: Two Years In #1",
-      "url": null,
-      "read": false,
-      "index": 108
-    },
-    {
-      "title": "Ultimate X-Men #22",
-      "url": null,
-      "read": false,
-      "index": 109
-    },
-    {
-      "title": "Ultimate X-Men #23",
-      "url": null,
-      "read": false,
-      "index": 110
-    },
-    {
-      "title": "Ultimate X-Men #24",
-      "url": null,
-      "read": false,
-      "index": 111
-    },
-    {
-      "title": "Ultimate Spider-Man #23",
-      "url": null,
-      "read": false,
-      "index": 112
-    },
-    {
-      "title": "Ultimate Spider-Man #24",
-      "url": null,
-      "read": false,
-      "index": 113
-    },
-    {
-      "title": "Ultimate Black Panther #23",
-      "url": null,
-      "read": false,
-      "index": 114
-    },
-    {
-      "title": "Ultimate Black Panther #24",
-      "url": null,
-      "read": false,
-      "index": 115
-    },
-    {
-      "title": "Ultimate Wolverine #12",
-      "url": null,
-      "read": false,
-      "index": 116
-    },
-    {
-      "title": "Ultimate Endgame #1",
-      "url": null,
-      "read": false,
-      "index": 117
-    },
-    {
-      "title": "The Ultimates #19",
-      "url": null,
-      "read": false,
-      "index": 118
-    },
-    {
-      "title": "The Ultimates #20",
-      "url": null,
-      "read": false,
-      "index": 119
-    },
-    {
-      "title": "Ultimate Wolverine #13",
-      "url": null,
-      "read": false,
-      "index": 120
-    },
-    {
-      "title": "Ultimate Wolverine #14",
-      "url": null,
-      "read": false,
-      "index": 121
-    },
-    {
-      "title": "Ultimate Endgame #2",
-      "url": null,
-      "read": false,
-      "index": 122
-    },
-    {
-      "title": "The Ultimates #21",
-      "url": null,
-      "read": false,
-      "index": 123
-    },
-    {
-      "title": "The Ultimates #22",
-      "url": null,
-      "read": false,
-      "index": 124
-    },
-    {
-      "title": "The Ultimates #23",
-      "url": null,
-      "read": false,
-      "index": 125
-    },
-    {
-      "title": "Ultimate Wolverine #15",
-      "url": null,
-      "read": false,
-      "index": 126
-    },
-    {
-      "title": "Ultimate Wolverine #16",
-      "url": null,
-      "read": false,
-      "index": 127
-    },
-    {
-      "title": "Ultimate Endgame #3",
-      "url": null,
-      "read": false,
-      "index": 128
-    },
-    {
-      "title": "The Ultimates #24",
-      "url": null,
-      "read": false,
-      "index": 129
-    },
-    {
-      "title": "Ultimate Endgame #4",
-      "url": null,
-      "read": false,
-      "index": 130
-    },
-    {
-      "title": "Ultimate Endgame #5",
-      "url": null,
-      "read": false,
-      "index": 131
-    },
-    {
-      "title": "Ultimate Universe: Finale #1",
-      "url": null,
-      "read": false,
-      "index": 132
-    },
-    {
-      "title": "Ultimate Impact – Reborn #1",
-      "url": null,
-      "read": false,
-      "index": 133
-    },
-    {
-      "title": "Ultimate Impact – Reborn #2",
-      "url": null,
-      "read": false,
-      "index": 134
-    },
-    {
-      "title": "Ultimate Impact – Reborn #3",
-      "url": null,
-      "read": false,
-      "index": 135
-    },
-    {
-      "title": "Ultimate Impact – Reborn #4",
-      "url": null,
-      "read": false,
-      "index": 136
-    },
-    {
-      "title": "Ultimate Impact – Reborn #5",
-      "url": null,
-      "read": false,
-      "index": 137
-    }
-  ],
+  "placeholders": 0,
+  "unresolved": [],
   "items": [
     {
       "issueId": 97145,
@@ -3203,10 +2998,10 @@
       ]
     },
     {
-      "issueId": -1019174460,
+      "issueId": 113918,
       "title": "Ultimate X-Men #21",
       "number": "21",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113918/ultimate_x-men_2024_21",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3215,14 +3010,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1995795357,
+      "issueId": 123269,
       "title": "Ultimate Wolverine #11",
       "number": "11",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/123269/ultimate_wolverine_2025_11",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3231,14 +3025,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -525723545,
+      "issueId": 113879,
       "title": "Ultimate Black Panther #22",
       "number": "22",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113879/ultimate_black_panther_2024_22",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3247,14 +3040,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1275081835,
+      "issueId": 113935,
       "title": "The Ultimates #18",
       "number": "18",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113935/ultimates_2024_18",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3263,14 +3055,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1202032047,
+      "issueId": 126712,
       "title": "Ultimate Universe: Two Years In #1",
       "number": "1",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/126712/ultimate_universe_two_years_in_2025_1",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3279,14 +3070,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1035952079,
+      "issueId": 113919,
       "title": "Ultimate X-Men #22",
       "number": "22",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113919/ultimate_x-men_2024_22",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3295,14 +3085,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1052729698,
+      "issueId": 113920,
       "title": "Ultimate X-Men #23",
       "number": "23",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113920/ultimate_x-men_2024_23",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3311,14 +3100,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1069507317,
+      "issueId": 113921,
       "title": "Ultimate X-Men #24",
       "number": "24",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113921/ultimate_x-men_2024_24",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3327,14 +3115,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1669929803,
+      "issueId": 113900,
       "title": "Ultimate Spider-Man #23",
       "number": "23",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113900/ultimate_spider-man_2024_23",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3343,14 +3130,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1787373136,
+      "issueId": 113901,
       "title": "Ultimate Spider-Man #24",
       "number": "24",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113901/ultimate_spider-man_2024_24",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3359,14 +3145,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -542501164,
+      "issueId": 113880,
       "title": "Ultimate Black Panther #23",
       "number": "23",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113880/ultimate_black_panther_2024_23",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3375,14 +3160,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -626389259,
+      "issueId": 113881,
       "title": "Ultimate Black Panther #24",
       "number": "24",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113881/ultimate_black_panther_2024_24",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3391,14 +3175,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1979017738,
+      "issueId": 123270,
       "title": "Ultimate Wolverine #12",
       "number": "12",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/123270/ultimate_wolverine_2025_12",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3407,14 +3190,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -12804338,
+      "issueId": 129224,
       "title": "Ultimate Endgame #1",
       "number": "1",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/129224/ultimate_endgame_2025_1",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3423,14 +3205,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1291859454,
+      "issueId": 113936,
       "title": "The Ultimates #19",
       "number": "19",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113936/ultimates_2024_19",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3439,14 +3220,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1443299310,
+      "issueId": 113937,
       "title": "The Ultimates #20",
       "number": "20",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113937/ultimates_2024_20",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3455,14 +3235,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1962240119,
+      "issueId": 130677,
       "title": "Ultimate Wolverine #13",
       "number": "13",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/130677/ultimate_wolverine_2025_13",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3471,14 +3250,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1945462500,
+      "issueId": 130678,
       "title": "Ultimate Wolverine #14",
       "number": "14",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/130678/ultimate_wolverine_2025_14",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3487,14 +3265,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -29581957,
+      "issueId": 129225,
       "title": "Ultimate Endgame #2",
       "number": "2",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/129225/ultimate_endgame_2025_2",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3503,14 +3280,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1426521691,
+      "issueId": 113938,
       "title": "The Ultimates #21",
       "number": "21",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113938/ultimates_2024_21",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3519,14 +3295,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1476854548,
+      "issueId": 113939,
       "title": "The Ultimates #22",
       "number": "22",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113939/ultimates_2024_22",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3535,14 +3310,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1460076929,
+      "issueId": 113940,
       "title": "The Ultimates #23",
       "number": "23",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113940/ultimates_2024_23",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3551,14 +3325,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1928684881,
+      "issueId": 130679,
       "title": "Ultimate Wolverine #15",
       "number": "15",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/130679/ultimate_wolverine_2025_15",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3567,14 +3340,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1911907262,
+      "issueId": 130680,
       "title": "Ultimate Wolverine #16",
       "number": "16",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/130680/ultimate_wolverine_2025_16",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3583,14 +3355,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -46359576,
+      "issueId": 129226,
       "title": "Ultimate Endgame #3",
       "number": "3",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/129226/ultimate_endgame_2025_3",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3599,14 +3370,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1510409786,
+      "issueId": 113941,
       "title": "The Ultimates #24",
       "number": "24",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/113941/ultimates_2024_24",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3615,14 +3385,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -2076399889,
+      "issueId": 129227,
       "title": "Ultimate Endgame #4",
       "number": "4",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/129227/ultimate_endgame_2025_4",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3631,14 +3400,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -2093177508,
+      "issueId": 129228,
       "title": "Ultimate Endgame #5",
       "number": "5",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/129228/ultimate_endgame_2025_5",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3647,14 +3415,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1879474025,
+      "issueId": 127659,
       "title": "Ultimate Universe: Finale #1",
       "number": "1",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/127659/ultimate_universe_finale_2026_1",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3663,14 +3430,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1512707356,
+      "issueId": 132862,
       "title": "Ultimate Impact – Reborn #1",
       "number": "1",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/132862/ultimate_impact_reborn_2026_1",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3679,14 +3445,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1529484975,
+      "issueId": 132863,
       "title": "Ultimate Impact – Reborn #2",
       "number": "2",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/132863/ultimate_impact_reborn_2026_2",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3695,14 +3460,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1546262594,
+      "issueId": 132864,
       "title": "Ultimate Impact – Reborn #3",
       "number": "3",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/132864/ultimate_impact_reborn_2026_3",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3711,14 +3475,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1563040213,
+      "issueId": 132865,
       "title": "Ultimate Impact – Reborn #4",
       "number": "4",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/132865/ultimate_impact_reborn_2026_4",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3727,14 +3490,13 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     },
     {
-      "issueId": -1579817832,
+      "issueId": 132866,
       "title": "Ultimate Impact – Reborn #5",
       "number": "5",
-      "url": null,
+      "url": "https://www.marvel.com/comics/issue/132866/ultimate_impact_reborn_2026_5",
       "seriesId": null,
       "seriesName": null,
       "onSale": null,
@@ -3743,8 +3505,7 @@
       "cover": null,
       "description": null,
       "pageCount": null,
-      "creators": [],
-      "placeholder": true
+      "creators": []
     }
   ]
 }

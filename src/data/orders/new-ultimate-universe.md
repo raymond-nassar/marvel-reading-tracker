@@ -114,39 +114,39 @@
 - [ ] [Ultimate Spider-Man #22](https://www.marvel.com/comics/issue/113899/ultimate_spider-man_2024_22)
 - [ ] [Ultimate Spider-Man: Incursion #5](https://www.marvel.com/comics/issue/125526/ultimate_spider-man_incursion_2025_5)
 - [ ] [The Ultimates #17](https://www.marvel.com/comics/issue/113934/ultimates_2024_17)
-- [ ] Ultimate X-Men #21
-- [ ] Ultimate Wolverine #11
-- [ ] Ultimate Black Panther #22
-- [ ] The Ultimates #18
+- [ ] [Ultimate X-Men #21](https://www.marvel.com/comics/issue/113918/ultimate_x-men_2024_21)
+- [ ] [Ultimate Wolverine #11](https://www.marvel.com/comics/issue/123269/ultimate_wolverine_2025_11)
+- [ ] [Ultimate Black Panther #22](https://www.marvel.com/comics/issue/113879/ultimate_black_panther_2024_22)
+- [ ] [The Ultimates #18](https://www.marvel.com/comics/issue/113935/ultimates_2024_18)
 
-- [ ] Ultimate Universe: Two Years In #1
+- [ ] [Ultimate Universe: Two Years In #1](https://www.marvel.com/comics/issue/126712/ultimate_universe_two_years_in_2025_1)
 
-- [ ] Ultimate X-Men #22
-- [ ] Ultimate X-Men #23
-- [ ] Ultimate X-Men #24
-- [ ] Ultimate Spider-Man #23
-- [ ] Ultimate Spider-Man #24
-- [ ] Ultimate Black Panther #23
-- [ ] Ultimate Black Panther #24
-- [ ] Ultimate Wolverine #12
+- [ ] [Ultimate X-Men #22](https://www.marvel.com/comics/issue/113919/ultimate_x-men_2024_22)
+- [ ] [Ultimate X-Men #23](https://www.marvel.com/comics/issue/113920/ultimate_x-men_2024_23)
+- [ ] [Ultimate X-Men #24](https://www.marvel.com/comics/issue/113921/ultimate_x-men_2024_24)
+- [ ] [Ultimate Spider-Man #23](https://www.marvel.com/comics/issue/113900/ultimate_spider-man_2024_23)
+- [ ] [Ultimate Spider-Man #24](https://www.marvel.com/comics/issue/113901/ultimate_spider-man_2024_24)
+- [ ] [Ultimate Black Panther #23](https://www.marvel.com/comics/issue/113880/ultimate_black_panther_2024_23)
+- [ ] [Ultimate Black Panther #24](https://www.marvel.com/comics/issue/113881/ultimate_black_panther_2024_24)
+- [ ] [Ultimate Wolverine #12](https://www.marvel.com/comics/issue/123270/ultimate_wolverine_2025_12)
 
-- [ ] Ultimate Endgame #1
-- [ ] The Ultimates #19
-- [ ] The Ultimates #20
-- [ ] Ultimate Wolverine #13
-- [ ] Ultimate Wolverine #14
-- [ ] Ultimate Endgame #2
-- [ ] The Ultimates #21
-- [ ] The Ultimates #22
-- [ ] The Ultimates #23
-- [ ] Ultimate Wolverine #15
-- [ ] Ultimate Wolverine #16
-- [ ] Ultimate Endgame #3
-- [ ] The Ultimates #24
-- [ ] Ultimate Endgame #4
-- [ ] Ultimate Endgame #5
+- [ ] [Ultimate Endgame #1](https://www.marvel.com/comics/issue/129224/ultimate_endgame_2025_1)
+- [ ] [The Ultimates #19](https://www.marvel.com/comics/issue/113936/ultimates_2024_19)
+- [ ] [The Ultimates #20](https://www.marvel.com/comics/issue/113937/ultimates_2024_20)
+- [ ] [Ultimate Wolverine #13](https://www.marvel.com/comics/issue/130677/ultimate_wolverine_2025_13)
+- [ ] [Ultimate Wolverine #14](https://www.marvel.com/comics/issue/130678/ultimate_wolverine_2025_14)
+- [ ] [Ultimate Endgame #2](https://www.marvel.com/comics/issue/129225/ultimate_endgame_2025_2)
+- [ ] [The Ultimates #21](https://www.marvel.com/comics/issue/113938/ultimates_2024_21)
+- [ ] [The Ultimates #22](https://www.marvel.com/comics/issue/113939/ultimates_2024_22)
+- [ ] [The Ultimates #23](https://www.marvel.com/comics/issue/113940/ultimates_2024_23)
+- [ ] [Ultimate Wolverine #15](https://www.marvel.com/comics/issue/130679/ultimate_wolverine_2025_15)
+- [ ] [Ultimate Wolverine #16](https://www.marvel.com/comics/issue/130680/ultimate_wolverine_2025_16)
+- [ ] [Ultimate Endgame #3](https://www.marvel.com/comics/issue/129226/ultimate_endgame_2025_3)
+- [ ] [The Ultimates #24](https://www.marvel.com/comics/issue/113941/ultimates_2024_24)
+- [ ] [Ultimate Endgame #4](https://www.marvel.com/comics/issue/129227/ultimate_endgame_2025_4)
+- [ ] [Ultimate Endgame #5](https://www.marvel.com/comics/issue/129228/ultimate_endgame_2025_5)
 
-- [ ] Ultimate Universe: Finale #1
+- [ ] [Ultimate Universe: Finale #1](https://www.marvel.com/comics/issue/127659/ultimate_universe_finale_2026_1)
 
 - [ ] [Ultimate Impact – Reborn #1](https://www.marvel.com/comics/issue/132862/ultimate_impact_reborn_2026_1)
 - [ ] [Ultimate Impact – Reborn #2](https://www.marvel.com/comics/issue/132863/ultimate_impact_reborn_2026_2)

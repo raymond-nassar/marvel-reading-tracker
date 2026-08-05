@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T04:18:50.257Z",
+  "generatedAt": "2026-08-05T04:33:50.359Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -97,7 +97,7 @@
       "variant": null,
       "source": null,
       "sourceLicense": "Compiled for this project",
-      "updatedAt": "2026-08-05T04:18:50.252Z"
+      "updatedAt": "2026-08-05T04:33:50.342Z"
     }
   ]
 }
