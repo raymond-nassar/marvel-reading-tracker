@@ -9,7 +9,8 @@
     "start": "node server.mjs",
     "test": "node --test \"test/**/*.test.js\"",
     "contract": "node scripts/check-contract.mjs",
-    "vendor": "node scripts/vendor-orders.mjs"
+    "vendor": "node scripts/vendor-orders.mjs",
+    "vendor:index": "node scripts/vendor-index.mjs"
   },
   "engines": {
     "node": ">=20"

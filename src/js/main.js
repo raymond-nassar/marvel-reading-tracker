@@ -707,56 +707,91 @@ function wireAdd() {
     }
   });
 
-  $('#form-series').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const q = $('#series-q').value.trim();
-    if (!q) return;
-    notify('#series-results', 'Searching…', 'ok');
-    try {
-      const series = await api.searchSeries(q, { limit: 40 });
-      const box = $('#series-results');
-      box.replaceChildren();
-      if (!series.length) return notify('#series-results', 'No series matched.', 'warn');
-      for (const s of series) {
-        box.append(el('div', { class: 'result' }, [
-          el('div', { class: 'result-main' }, [
-            el('div', { class: 'result-title', text: s.name }),
-            el('div', { class: 'result-meta', text: `${s.issueCount ?? '?'} issues` }),
-          ]),
-          el('button', { type: 'button', class: 'btn', onclick: () => addSeries(s) }, 'Add all issues'),
-        ]));
-      }
-    } catch (err) {
-      notify('#series-results', friendly(err), 'error');
-    }
+  // Series and creator search reads a vendored index rather than the API, because the API
+  // ignores `q` on those routes (see api.js). The two cards are otherwise identical, so they
+  // are wired once: the only differences are which index they read and what "Add all issues"
+  // does with the result.
+  wireNameSearch({
+    section: '#sec-series', form: '#form-series', input: '#series-q', results: '#series-results',
+    kind: 'series', many: 'series', btnClass: 'btn',
+    search: (q, opts) => api.searchSeries(q, opts), onAdd: addSeries,
   });
 
-  $('#form-creator').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const q = $('#creator-q').value.trim();
-    if (!q) return;
-    notify('#creator-results', 'Searching…', 'ok');
-    try {
-      const creators = await api.searchCreators(q, { limit: 40 });
-      const box = $('#creator-results');
-      box.replaceChildren();
-      if (!creators.length) return notify('#creator-results', 'No creators matched.', 'warn');
-      for (const c of creators) {
-        box.append(el('div', { class: 'result' }, [
-          el('div', { class: 'result-main' }, [
-            el('div', { class: 'result-title', text: c.name }),
-            el('div', { class: 'result-meta', text: `${c.issueCount ?? '?'} issues` }),
-          ]),
-          el('button', { type: 'button', class: 'btn btn-g', onclick: () => addCreator(c) }, 'Add all issues'),
-        ]));
-      }
-    } catch (err) {
-      notify('#creator-results', friendly(err), 'error');
-    }
+  wireNameSearch({
+    section: '#sec-creator', form: '#form-creator', input: '#creator-q', results: '#creator-results',
+    kind: 'creators', many: 'creators', btnClass: 'btn btn-g',
+    search: (q, opts) => api.searchCreators(q, opts), onAdd: addCreator,
   });
 
   $('#form-import').addEventListener('submit', (e) => { e.preventDefault(); doImport(); });
   $('#form-manual').addEventListener('submit', (e) => { e.preventDefault(); doManual(); });
+}
+
+const NAME_SEARCH_LIMIT = 40;
+
+function wireNameSearch({ section, form, input, results, kind, many, btnClass, search, onAdd }) {
+  // The index is a few hundred kilobytes, so it is never part of the initial page load. Opening
+  // the card is the earliest honest signal that a reader intends to search, and starting the
+  // download there means the first search usually finds it already in hand. A reader who never
+  // opens the card never pays for it. Warming is idempotent and a failed warm is ignored: this
+  // is only a head start, and the search itself reports the failure properly.
+  const card = $(section);
+  card.addEventListener('toggle', () => {
+    if (card.open) api.warmNameIndex(kind);
+  });
+
+  $(form).addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = $(input).value.trim();
+    if (!q) return;
+    notify(results, 'Searching…', 'ok');
+    try {
+      const { items, matched, total, generatedAt } = await search(q, { limit: NAME_SEARCH_LIMIT });
+      const box = $(results);
+      box.replaceChildren();
+
+      if (!items.length) {
+        return notify(results, `No ${many} match “${q}”. Searched all ${count(total)} in the index.`, 'warn');
+      }
+
+      // A capped list that does not say it is capped tells the reader the other matches do not
+      // exist. The snapshot date is here for the same reason: this index is pinned at build
+      // time, so a series added upstream last week is genuinely missing until it is rebuilt.
+      const summary = matched > items.length
+        ? `Showing the ${items.length} closest matches of ${count(matched)}. Narrow your search to see the rest.`
+        : `${count(matched)} ${matched === 1 ? 'match' : 'matches'}.`;
+      box.append(el('p', {
+        class: 'rail-hint',
+        text: `${summary} Filtered here from an index of ${count(total)} ${many}${snapshot(generatedAt)}.`,
+      }));
+      announce(summary);
+
+      for (const item of items) {
+        box.append(el('div', { class: 'result' }, [
+          el('div', { class: 'result-main' }, [
+            el('div', { class: 'result-title', text: item.name }),
+            el('div', { class: 'result-meta', text: `${item.issueCount ?? 'an unknown number of'} issues` }),
+          ]),
+          el('button', {
+            type: 'button', class: btnClass,
+            'aria-label': `Add all issues of ${item.name}`,
+            onclick: () => onAdd(item),
+          }, 'Add all issues'),
+        ]));
+      }
+    } catch (err) {
+      notify(results, friendly(err), 'error');
+    }
+  });
+}
+
+const count = (n) => Number(n ?? 0).toLocaleString();
+
+// Reuses the curated catalog's UTC date formatting, for the same reason: a snapshot taken at
+// 06:14Z reads as the previous day everywhere west of UTC-6:14, which is all of the Americas.
+function snapshot(generatedAt) {
+  const when = updatedLabel({ updatedAt: generatedAt });
+  return when ? `, taken ${when}` : '';
 }
 
 function renderResults(sel, items, metaFn) {

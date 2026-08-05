@@ -185,6 +185,64 @@ async function checkRateLimitIsForgiving() {
     `issue 6482 reports ${JSON.stringify(mu)} (MU launched in 2007, which is why we never claim availability as fact)`);
 }
 
+async function checkNameSearchStillMissing() {
+  section('Series and creator name search: the app filters locally because the API cannot');
+  // This is the assertion whose absence let a shipped bug through. `/series?q=` and
+  // `/creators?q=` accept the parameter and ignore it, so the old client-side code asked for
+  // "Hickman" and rendered "#O", "#X", "A CO", each with a one-click "Add all issues" button.
+  // The fix vendors both collections into src/data/ (scripts/vendor-index.mjs) and filters in
+  // lib/nameIndex.js. If any of these four checks fails, upstream has grown real search: delete
+  // the vendored indexes and the local filtering and go back to live queries.
+  for (const [path, q] of [['/series', 'Civil'], ['/creators', 'Hickman']]) {
+    const plain = await getAnswered(`${path}?limit=3`);
+    const filtered = await getAnswered(`${path}?limit=3&q=${q}`);
+    const a = plain.body?.items ?? [];
+    const b = filtered.body?.items ?? [];
+    if (!a.length || !b.length) {
+      check(`${path} answers`, false, `${a.length} and ${b.length} items`);
+      continue;
+    }
+    const same = a.length === b.length && a.every((it, i) => it.id === b[i].id);
+    check(`${path}?q= is still ignored, so the vendored index is still needed`, same,
+      same
+        ? `q=${q} returns the same ${a.length} records as no query at all`
+        : `q=${q} now filters. Upstream may have added real search; re-check and drop the vendored index.`);
+
+    // The index stores [id, name, issueCount]; a rename here would ship a blank result row.
+    const first = a[0] ?? {};
+    check(`${path} records still carry id, name and issueCount`,
+      Number.isInteger(first.id) && typeof first.name === 'string' && first.name.length > 0,
+      `keys: ${Object.keys(first).join(', ')}`);
+  }
+
+  // The other half of the same finding: there is no dedicated search route to use instead.
+  for (const path of ['/search/series', '/search/creators']) {
+    const res = await getAnswered(`${path}?q=test&limit=3`);
+    check(`${path} still does not exist`, res.status === 404,
+      res.status === 404
+        ? 'HTTP 404, as when the local index was introduced'
+        : unanswered(res)
+          ? `HTTP ${res.status}: the API never answered, so this says nothing either way`
+          : `HTTP ${res.status}: this route may now exist, which would replace the vendored index`);
+  }
+}
+
+// A rate-limited or broken response carries no information about what the API supports. Reading
+// one as "this route may now exist" would be the same confidently wrong answer this section
+// exists to catch — it is how a run of this script once reported that upstream had grown a
+// search endpoint when it had only run out of budget. Wait the limit out and ask again.
+const unanswered = (res) => res.status === 429 || res.status >= 500;
+
+async function getAnswered(path, tries = 3) {
+  let res = await get(path);
+  for (let i = 1; i < tries && unanswered(res); i += 1) {
+    const after = Number(res.headers.get('retry-after'));
+    await sleep(Number.isFinite(after) && after > 0 ? Math.min(after, 60) * 1000 : 20_000);
+    res = await get(path);
+  }
+  return res;
+}
+
 // --------------------------------------------------------------------------- run
 
 console.log(`Marvel metadata API contract check\nbase: ${BASE}\n`);
@@ -200,6 +258,7 @@ try {
   await checkCoverUrl(issue);
   await checkEnvelopes();
   await checkPageLimit();
+  await checkNameSearchStillMissing();
   await checkListFieldsAreThin();
   await checkSortOrder();
   await checkRateLimitIsForgiving();
