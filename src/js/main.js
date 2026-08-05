@@ -1224,7 +1224,7 @@ function catalogRow(list, { variant = false } = {}) {
       // The accessible name always carries the full list name, so a button read out of
       // context never says only "Import Essential reading".
       'aria-label': `Import ${list.name}`,
-      onclick: () => importCurated(list.file),
+      onclick: (e) => importCurated(list.file, e.currentTarget),
     }, 'Import'),
   ]);
 }
@@ -1319,7 +1319,21 @@ function renderCatalogFilters(lists) {
   );
 }
 
-async function importCurated(file) {
+// A second click while the first import is still fetching runs the whole import again and mints a
+// second list with the same name and the same issues, because createList() always allocates a new
+// id. Nothing is lost, but the reader is left to notice and delete the duplicate. Latching the
+// run also covers the twin entry shown under a grouped story, where two different buttons import
+// two different files.
+let importing = null;
+
+async function importCurated(file, btn) {
+  if (importing) return;
+  importing = file;
+  const label = btn?.textContent;
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'Importing…';
+  }
   try {
     // Served from our own origin, so this works with no internet connection.
     const res = await fetch(`./data/${file}`, { cache: 'no-cache' });
@@ -1357,6 +1371,15 @@ async function importCurated(file) {
     announce(parts.join(' '));
   } catch (err) {
     alert(`Could not load that curated order: ${err.message}`);
+  } finally {
+    importing = null;
+    // The button survives a successful import only when the reader stays on the catalog; after
+    // showView('read') it is off screen but still in the DOM, so restoring it keeps the catalog
+    // usable when they come back rather than leaving a dead "Importing…" control behind.
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
   }
 }
 

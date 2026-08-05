@@ -186,13 +186,26 @@ test('search matches keywords and descriptions', () => {
 
 test('search ignores case, accents, and punctuation', () => {
   assert.deepEqual(ids(searchCatalog(sample, 'HICKMAN’S')), ['hickman']);
-  assert.deepEqual(ids(searchCatalog(sample, 'spiderman')), []);
   assert.deepEqual(ids(searchCatalog(sample, 'spider man')), ['civil-war']);
+});
+
+// "spiderman" and "xmen" are how these names are typed at least as often as the hyphenated
+// spelling. Folding punctuation to a space alone returned nothing for them, which reads as
+// "we do not have that list" rather than "you punctuated it differently".
+test('a name typed without its punctuation still finds the list', () => {
+  assert.deepEqual(ids(searchCatalog(sample, 'spiderman')), ['civil-war']);
+  assert.deepEqual(ids(searchCatalog(sample, 'SpiderMan')), ['civil-war']);
+  assert.deepEqual(ids(searchCatalog(sample, 'ironman')), ['civil-war']);
+  assert.deepEqual(ids(searchCatalog(sample, 'captainamerica')), ['civil-war']);
+  assert.deepEqual(ids(searchCatalog(sample, 'blackpanther')), ['hickman']);
 });
 
 test('extra terms narrow the results instead of widening them', () => {
   assert.deepEqual(ids(searchCatalog(sample, 'secret wars avengers')), ['hickman']);
   assert.deepEqual(ids(searchCatalog(sample, 'secret wars spider-man')), []);
+  // The de-punctuated form must not let a multi-word query match by running the words together
+  // across unrelated fields, which would turn a narrowing query into a widening one.
+  assert.deepEqual(ids(searchCatalog(sample, 'secretwars spiderman')), []);
 });
 
 test('an empty or whitespace query returns every list', () => {
