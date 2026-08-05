@@ -2,7 +2,7 @@
 //
 // A Markdown checklist only carries a title and an issue id. Everything the UI needs
 // (digitalId, series, dates) requires one /v1/issues/{id} call each, and the rate limiter
-// caps that at 45/minute — roughly five minutes for a 219-issue order. So hydration is
+// caps that at 45/minute, roughly five minutes for a 219-issue order. So hydration is
 // incremental, cancellable, resumable, and prioritises whatever you are about to read.
 
 import { hydrationOrder, upsertIssue } from './lib/model.js';

@@ -69,7 +69,7 @@
             <h2>Your saved data could not be read</h2>
             <p id="blocked-why"></p>
             <p>It has <strong>not</strong> been changed or deleted, and saving is paused so it
-              cannot be overwritten. Download a copy first — then you can start fresh.</p>
+              cannot be overwritten. Download a copy first, then you can start fresh.</p>
             <div class="blocked-actions">
               <button type="button" class="btn btn-p" id="btn-download-salvage">Download a copy of the unreadable data</button>
               <button type="button" class="btn" id="btn-start-fresh">Start fresh and resume saving</button>
@@ -103,8 +103,8 @@
             <div id="no-active-list" class="empty-state">
               <h2>Pick something to read</h2>
               <p>
-                Browse the catalog on the left and import a curated reading order instantly — no internet
-                needed, because the order ships with the app. Or create an empty list and search
+                Browse the catalog on the left and import a curated reading order without an internet
+                connection, because the order ships with the app. Or create an empty list and search
                 for issues yourself.
               </p>
             </div>
@@ -134,7 +134,7 @@
                   </div>
                   <div class="hero-body">
                     <p class="eyebrow">Read this next</p>
-                    <h2 id="hero-title">—</h2>
+                    <h2 id="hero-title"></h2>
                     <p class="byline" id="hero-by"></p>
                     <p class="desc" id="hero-desc"></p>
                     <dl class="facts" id="hero-facts"></dl>
@@ -193,7 +193,7 @@
             <div class="head"><div class="head-left"><h1 id="progress-h">Progress by series</h1>
               <div class="sub">Counted over unique issues across every list, so an issue in two lists counts once.</div>
             </div></div>
-            <p class="rail-hint">“Tracked” means what you have added — not the size of the whole series.</p>
+            <p class="rail-hint">“Tracked” means what you have added, not the size of the whole series.</p>
             <div id="series-progress" class="results"></div>
           </section>
 
@@ -280,7 +280,7 @@
               <summary><h2>Add an issue by hand</h2></summary>
               <p class="rail-hint">
                 The metadata snapshot ends in 2025, so anything newer will not be found by search.
-                Add it by hand and it still tracks — availability just shows as unknown.
+                Add it by hand and it still tracks; availability just shows as unknown.
               </p>
               <form id="form-manual" class="stack">
                 <label for="manual-title">Title</label>
@@ -301,7 +301,7 @@
 
             <div class="card card-static">
               <h2>Backup and restore</h2>
-              <p class="rail-hint">Export regularly — clearing site data for this address erases your progress.</p>
+              <p class="rail-hint">Export regularly. Clearing site data for this address erases your progress.</p>
               <div class="row">
                 <button type="button" id="btn-export-json" class="btn">Download JSON backup</button>
                 <button type="button" id="btn-export-md-2" class="btn btn-g">Export current list as Markdown</button>
@@ -320,7 +320,7 @@
               <h2>Cover art</h2>
               <p class="rail-hint">
                 Covers are loaded straight from Marvel's own servers using the address the metadata API
-                reports. This app stores only that address — never the image itself — and never proxies
+                reports. This app stores only that address, never the image itself, and never proxies
                 or re-hosts artwork. Switch covers off and every cover becomes a plain typographic tile.
               </p>
               <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
@@ -333,13 +333,13 @@
                 <input type="url" id="api-base" />
                 <p class="rail-hint">
                   The default is the community API this was built against. If it disappears it is
-                  MIT-licensed and self-hostable — point this at your own copy.
+                  MIT-licensed and self-hostable, so you can point this at your own copy.
                 </p>
                 <button type="submit" class="btn btn-g">Save API URL</button>
               </form>
 
               <h3>Cached metadata</h3>
-              <p id="cache-usage" class="rail-hint">—</p>
+              <p id="cache-usage" class="rail-hint">Checking cache size…</p>
               <button type="button" id="btn-clear-cache" class="quiet">Clear cached metadata</button>
               <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
             </div>
@@ -367,7 +367,7 @@
               <h3>Metadata and links only</h3>
               <p class="rail-hint">
                 No comic content is stored, copied, proxied, or served. The app tracks which issues you
-                have read and links out to Marvel's own site and reader — reading an issue requires your
+                have read and links out to Marvel's own site and reader. Reading an issue requires your
                 own Marvel Unlimited subscription. Cover images load directly from Marvel's own servers
                 and can be switched off.
               </p>
@@ -378,7 +378,7 @@
                 <a href="https://marvel.emreparker.com" target="_blank" rel="noopener noreferrer">marvel.emreparker.com</a>
                 API, built from
                 <a href="https://github.com/emreparker/marvel-comics" target="_blank" rel="noopener noreferrer">emreparker/marvel-comics</a>
-                (MIT). The snapshot ends in 2025, so very recent issues may be missing — you can still add
+                (MIT). The snapshot ends in 2025, so very recent issues may be missing. You can still add
                 those by hand. The API base URL is configurable under Backup &amp; settings.
               </p>
 
@@ -398,7 +398,7 @@
           </section>
 
           <footer class="app-footer">
-            Unofficial fan project — metadata and links only.
+            Unofficial fan project. Metadata and links only.
             <button type="button" class="linkish" data-view="about">Read the full disclaimers</button>
           </footer>
         </div>

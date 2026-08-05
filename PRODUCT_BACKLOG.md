@@ -2,7 +2,7 @@
 
 This backlog describes the next product improvements in plain English. It is intended
 for review before implementation. The goal is to make the tracker useful for many
-Marvel reading lists and events, not only Jonathan Hickman’s Secret Wars orders.
+Marvel reading lists and events, not only Jonathan Hickman's Secret Wars orders.
 
 ## Product direction
 
@@ -12,9 +12,9 @@ easy to use, and focused on helping users know what to read next.
 
 ## Priority guide
 
-- **P0 — Foundation:** needed before the app can scale beyond the current bundled lists.
-- **P1 — Core product value:** makes finding and following more reading lists useful.
-- **P2 — Later enhancement:** valuable after the broader reading-list experience works well.
+- **P0 Foundation:** needed before the app can scale beyond the current bundled lists.
+- **P1 Core product value:** makes finding and following more reading lists useful.
+- **P2 Later enhancement:** valuable after the broader reading-list experience works well.
 
 ## Epic 1: Curated reading-list catalog
 
@@ -22,20 +22,20 @@ easy to use, and focused on helping users know what to read next.
 
 ### User stories
 
-- **P0 — As a reader, I want to see a catalog of available reading lists so that I can
+- **P0: As a reader, I want to see a catalog of available reading lists so that I can
   choose something other than the Hickman Secret Wars list.**
   - The catalog includes the list name, a short description, approximate issue count,
     and the type of list.
 
-- **P0 — As a reader, I want to browse lists by category so that I can find events,
+- **P0: As a reader, I want to browse lists by category so that I can find events,
   character runs, creator runs, and eras relevant to me.**
   - Categories can be filtered without losing the list details.
 
-- **P1 — As a reader, I want to search the catalog by title or character so that I can
+- **P1: As a reader, I want to search the catalog by title or character so that I can
   quickly find a list I have in mind.**
   - Search results update clearly and show when there are no matches.
 
-- **P1 — As a reader, I want to understand whether a list is essential, complete, or
+- **P1: As a reader, I want to understand whether a list is essential, complete, or
   tie-in focused so that I can choose the amount of reading I want.**
   - Each list displays its reading-depth label before import.
 
@@ -46,20 +46,20 @@ pipeline for event lists.
 
 ### User stories
 
-- **P0 — As a reader, I want several major Marvel event lists available out of the box
+- **P0: As a reader, I want several major Marvel event lists available out of the box
   so that the app feels like a Marvel tracker rather than a single-saga tracker.**
   - The first release includes a balanced sample of events from different eras,
     such as House of M, Civil War, Secret Invasion, Annihilation, and King in Black.
 
-- **P0 — As a product owner, I want each curated list to record its source and version
+- **P0: As a product owner, I want each curated list to record its source and version
   so that users can understand where the order came from and when it was updated.**
   - The list shows attribution and a last-updated date.
 
-- **P1 — As a reader, I want more than one version of an event order so that I can
+- **P1: As a reader, I want more than one version of an event order so that I can
   choose an essential reading path or a complete tie-in path.**
   - Variants are grouped under the same event and clearly named.
 
-- **P1 — As a maintainer, I want to add a new curated list without changing the main
+- **P1: As a maintainer, I want to add a new curated list without changing the main
   application logic so that the catalog can grow safely.**
   - A new list is defined through data and appears automatically in the catalog.
 
@@ -69,20 +69,20 @@ pipeline for event lists.
 
 ### User stories
 
-- **P0 — As a reader, I want to paste a Markdown or plain-text reading order so that
+- **P0: As a reader, I want to paste a Markdown or plain-text reading order so that
   I can track a list from another guide.**
   - The app reports how many entries were imported, how many were unresolved, and
     never silently drops an entry.
 
-- **P1 — As a reader, I want to resolve an unmatched title by choosing from search
+- **P1: As a reader, I want to resolve an unmatched title by choosing from search
   results so that my imported list remains accurate.**
   - The app shows enough title, series, and date information to make a safe choice.
 
-- **P1 — As a reader, I want to create a list by adding series, creators, or individual
+- **P1: As a reader, I want to create a list by adding series, creators, or individual
   issues so that I can build a custom reading path.**
   - Added issues keep their selected order and can be moved or removed.
 
-- **P2 — As a reader, I want to duplicate an existing list so that I can customize it
+- **P2: As a reader, I want to duplicate an existing list so that I can customize it
   without losing the original order.**
   - The copy has its own name and order while preserving shared read progress behavior.
 
@@ -92,23 +92,23 @@ pipeline for event lists.
 
 ### User stories
 
-- **P0 — As a reader, I want to see which list I am currently following so that I do
+- **P0: As a reader, I want to see which list I am currently following so that I do
   not mark progress in the wrong list.**
   - The active list is clearly identified in the navigation and reading view.
 
-- **P1 — As a reader, I want to see event progress by section or series so that I can
+- **P1: As a reader, I want to see event progress by section or series so that I can
   understand where I am within a large crossover.**
   - Progress can be viewed for the list overall and for its constituent series.
 
-- **P1 — As a reader, I want to filter a list to unread, read, available, or pending
+- **P1: As a reader, I want to filter a list to unread, read, available, or pending
   issues so that I can focus on the next useful action.**
   - Filtering does not change the saved reading order.
 
-- **P1 — As a reader, I want to resume from the next unread issue so that I do not have
+- **P1: As a reader, I want to resume from the next unread issue so that I do not have
   to remember where I stopped.**
   - The app presents one clear next issue and advances after it is marked read.
 
-- **P2 — As a reader, I want optional notes on a list or issue so that I can record
+- **P2: As a reader, I want optional notes on a list or issue so that I can record
   context, reactions, or reminders.**
   - Notes remain local and are included in backups.
 
@@ -118,19 +118,19 @@ pipeline for event lists.
 
 ### User stories
 
-- **P0 — As a reader, I want to know when an issue's metadata is incomplete so that I
+- **P0: As a reader, I want to know when an issue's metadata is incomplete so that I
   do not mistake a pending lookup for missing content.**
   - Pending, unknown, and confirmed metadata states are distinct.
 
-- **P1 — As a reader, I want to know whether an issue is expected to be on Marvel
+- **P1: As a reader, I want to know whether an issue is expected to be on Marvel
   Unlimited so that I can plan my reading session.**
   - The wording makes clear when availability is an estimate rather than a guarantee.
 
-- **P1 — As a reader, I want newer issues to remain trackable even when they are absent
+- **P1: As a reader, I want newer issues to remain trackable even when they are absent
   from the metadata snapshot so that the tracker does not become obsolete.**
   - Manual entries can be read, reordered, exported, and backed up.
 
-- **P2 — As a maintainer, I want the app to detect changes in the metadata API contract
+- **P2: As a maintainer, I want the app to detect changes in the metadata API contract
   so that upstream changes do not quietly break the experience.**
   - Contract checks identify missing or changed fields before a release.
 
@@ -140,19 +140,19 @@ pipeline for event lists.
 
 ### User stories
 
-- **P0 — As a reader, I want to export all my lists and progress so that I can recover
+- **P0: As a reader, I want to export all my lists and progress so that I can recover
   from browser storage loss.**
   - A backup restores list names, order, issue data, and read state.
 
-- **P1 — As a reader, I want to move a list between browsers or computers so that my
+- **P1: As a reader, I want to move a list between browsers or computers so that my
   reading progress is not tied to one device.**
   - Exported data can be restored on another supported browser.
 
-- **P1 — As a reader, I want to export one list as Markdown so that I can share or
+- **P1: As a reader, I want to export one list as Markdown so that I can share or
   review it outside the app.**
   - The export preserves order and read/unread state.
 
-- **P2 — As a reader, I want optional synchronization between my devices so that I do
+- **P2: As a reader, I want optional synchronization between my devices so that I do
   not have to manage backups manually.**
   - Sync is opt-in and does not change the local-only behavior for users who do not
     enable it.
@@ -163,15 +163,15 @@ pipeline for event lists.
 
 ### User stories
 
-- **P0 — As a keyboard user, I want to browse, select, and manage reading lists without
+- **P0: As a keyboard user, I want to browse, select, and manage reading lists without
   a mouse so that the app is fully usable with my preferred input method.**
   - Focus order, visible focus, and keyboard actions are consistent.
 
-- **P1 — As a screen-reader user, I want list changes and import results announced so
+- **P1: As a screen-reader user, I want list changes and import results announced so
   that I know what happened without relying on visual updates.**
   - Important actions have meaningful accessible labels and status messages.
 
-- **P1 — As a reader on a small screen, I want the catalog and reading view to remain
+- **P1: As a reader on a small screen, I want the catalog and reading view to remain
   easy to scan so that I can use the app beside Marvel Unlimited.**
   - Long names, progress indicators, and actions remain usable on narrow screens.
 

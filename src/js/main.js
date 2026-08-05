@@ -2,7 +2,7 @@
 //
 // Rendering follows the "Longbox Focus" design: a rail of reading orders, one hero card for
 // the next unread issue, a short cover shelf, and the full order collapsed behind a summary.
-// Cover art is optional everywhere — `body.nocovers` swaps every image for a typographic tile.
+// Cover art is optional everywhere: `body.nocovers` swaps every image for a typographic tile.
 
 import {
   createList, deleteList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
@@ -129,7 +129,7 @@ function announce(msg) {
 }
 
 // A success message must never outlive the write it describes. store.update rolls the change
-// back when persistence fails, so every announcement has to consult the result first —
+// back when persistence fails, so every announcement has to consult the result first,
 // otherwise a screen-reader user hears "List deleted" for a deletion that did not happen.
 function announceIfSaved(msg) {
   if (store.lastUpdateOk) announce(msg);
@@ -336,7 +336,7 @@ function wireReading() {
     const id = activeListId();
     const list = store.state.lists[id];
     if (!list) return;
-    if (!confirm(`Delete "${list.name}"? Your read progress is kept — only the list is removed.`)) return;
+    if (!confirm(`Delete "${list.name}"? Your read progress is kept; only the list is removed.`)) return;
     store.update((s) => deleteList(s, id));
     announceIfSaved('List deleted. Reading progress was kept.');
   });
@@ -356,7 +356,7 @@ function wireReading() {
 function markCurrentRead() {
   const issue = upNext(store.state, activeListId());
   if (!issue) return;
-  // Only announce success if the write actually stuck — store.update rolls back on failure
+  // Only announce success if the write actually stuck, because store.update rolls back on failure
   // and the error is surfaced separately by the onChange handler.
   if (!isRead(store.update((s) => markRead(s, issue.issueId, true)), issue.issueId)) return;
   const next = upNext(store.state, activeListId());
@@ -428,7 +428,7 @@ function renderHero() {
   $('#hero-title').textContent = issue.title;
 
   // Marvel spells it "penciler" with one l, so /penciller/ never matched and /artist/ matched
-  // "cover artist" instead — the hero credited the cover artist and omitted the interior one.
+  // "cover artist" instead, because the hero credited the cover artist and omitted the interior one.
   // Cover credits are excluded: they are not the creative team for the story.
   const credits = (issue.creators ?? [])
     .filter((c) => {
@@ -446,9 +446,9 @@ function renderHero() {
     : av.state === STATE.SCHEDULED ? 'warn' : '';
   $('#hero-facts').replaceChildren(
     fact('In Unlimited', `${SHORT[av.state]} ${describe(issue, { override })}`, avClass),
-    fact('Pages', issue.pageCount ? String(issue.pageCount) : '—'),
-    fact('Released', ymd(issue.onSale) || '—'),
-    fact('Position', total ? `${position} of ${total}` : '—'),
+    fact('Pages', issue.pageCount ? String(issue.pageCount) : 'Unknown'),
+    fact('Released', ymd(issue.onSale) || 'Unknown'),
+    fact('Position', total ? `${position} of ${total}` : 'Unknown'),
   );
 
   const info = $('#btn-hero-info');
@@ -634,7 +634,7 @@ function wireShortcuts() {
 function openInReader(issue, event) {
   event?.preventDefault();
   // window.open must happen synchronously inside the gesture. The digitalId lookup, when one
-  // is needed, happens in the opened tab rather than here — see reader.js.
+  // is needed, happens in the opened tab rather than here. See reader.js.
   const res = openIssueTab(issue);
   if (!res.ok) {
     announce(`${issue.title} has no Marvel reference recorded, so it cannot be opened.`);
@@ -807,7 +807,7 @@ function addToActive(issues, message, { sort = false } = {}) {
   announce(`${message} ${added} added${skipped ? `, ${skipped} already in the list` : ''}.`);
 
   // Search, series and creator results come from list endpoints, which return neither `cover`
-  // nor `digitalId` — only /v1/issues/{id} does. Without hydration the issue lands with no art
+  // nor `digitalId`; only /v1/issues/{id} does. Without hydration the issue lands with no art
   // and, worse, no way to open it in Marvel Unlimited, until the user happens to notice the
   // "Fetch details" button. Import already did this; every other add path was missing it.
   // start() is a no-op while a run is in flight, so rapid adds cannot stack up.
@@ -905,7 +905,7 @@ function doImport() {
   box.append(el('p', { class: 'notice notice-ok', text: `Imported ${added} issue${added === 1 ? '' : 's'}${skipped ? `, ${skipped} already present` : ''}. Details will be fetched in the background.` }));
 
   if (unresolved.length) {
-    box.append(el('p', { class: 'notice notice-warn', text: `${unresolved.length} line${unresolved.length === 1 ? '' : 's'} had no Marvel issue link. They are listed below rather than dropped — resolve each one deliberately.` }));
+    box.append(el('p', { class: 'notice notice-warn', text: `${unresolved.length} line${unresolved.length === 1 ? '' : 's'} had no Marvel issue link. They are listed below rather than dropped, so you can resolve each one deliberately.` }));
     const wrap = el('div', { class: 'results' });
     for (const u of unresolved) wrap.append(unresolvedRow(u, listId));
     box.append(wrap);
@@ -919,7 +919,7 @@ function unresolvedRow(entry, listId) {
   const row = el('div', { class: 'result' });
   const main = el('div', { class: 'result-main' }, [
     el('div', { class: 'result-title', text: entry.title }),
-    el('div', { class: 'result-meta', text: 'No issue link — search to resolve' }),
+    el('div', { class: 'result-meta', text: 'No issue link, search to resolve' }),
   ]);
   const btn = el('button', { type: 'button', class: 'btn btn-g' }, 'Find match');
   btn.addEventListener('click', async () => {
@@ -993,7 +993,7 @@ function doManual() {
   const listId = ensureList('My reading order');
   if (!listId) return notify('#manual-report', 'Could not create a list, so nothing was added.', 'error');
 
-  // Report what actually happened rather than assuming success — this previously announced
+  // Report what actually happened rather than assuming success. This previously announced
   // "Added" even when the entry had been silently discarded.
   let added = 0;
   let skipped = 0;
@@ -1094,14 +1094,14 @@ async function renderCatalog() {
   }
 
   for (const group of groupCatalog(shown)) {
-    // A grouped story is announced once, so the reader sees one decision — which path through
-    // this story — instead of two lists that look unrelated.
+    // A grouped story is announced once, so the reader sees one decision (which path through
+    // this story) instead of two lists that look unrelated.
     if (group.name) {
       box.append(el('div', { class: 'result-group' }, [
         el('h2', { class: 'result-group-h', text: group.name }),
         el('p', {
           class: 'result-meta',
-          text: `${group.lists.length} versions of this reading order — pick how much you want to read.`,
+          text: `${group.lists.length} versions of this reading order. Pick how much you want to read.`,
         }),
         ...group.lists.map((list) => catalogRow(list, { variant: true })),
       ]));
@@ -1119,7 +1119,7 @@ async function renderCatalog() {
 }
 
 // Inside a group the story's name is already the heading, so the row leads with what actually
-// differs between the versions — the reading path — rather than repeating the title.
+// differs between the versions, the reading path, rather than repeating the title.
 function catalogRow(list, { variant = false } = {}) {
   const meta = [typeLabel(list.type), `about ${list.count} issues`].filter(Boolean).join(' · ');
   const depth = depthLabel(list.depth);
@@ -1407,7 +1407,7 @@ async function checkHealth() {
     pill.textContent = `API OK · ${Number(h.issue_count ?? 0).toLocaleString()} issues`;
   } catch {
     pill.className = 'pill pill-warn';
-    pill.textContent = 'API unreachable — lists and progress still work';
+    pill.textContent = 'API unreachable. Lists and progress still work';
   }
 }
 
@@ -1429,7 +1429,7 @@ function friendly(err) {
   if (err?.name === 'AbortError') return 'Cancelled.';
   if (err?.status === 404) return 'Not found in the metadata snapshot.';
   if (err?.transient) return 'The metadata service is busy. Try again in a moment.';
-  if (err instanceof TypeError) return 'Could not reach the metadata service. Check your connection — your saved lists still work.';
+  if (err instanceof TypeError) return 'Could not reach the metadata service. Check your connection; your saved lists still work.';
   return err?.message || 'Something went wrong.';
 }
 
@@ -1444,7 +1444,7 @@ function renderAll() {
   $('#add-target').textContent = list
     ? `Anything you add goes into “${list.name}”.`
     : 'Anything you add will start a new list.';
-  // Kept in renderAll so the banner cannot go stale — in particular a successful restore
+  // Kept in renderAll so the banner cannot go stale. In particular a successful restore
   // clears the block, and leaving the banner up would push the user toward "Start fresh",
   // which would then wipe the backup they had just restored.
   renderBlocked();

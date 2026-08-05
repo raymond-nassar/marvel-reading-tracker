@@ -1,4 +1,4 @@
-// Cache policy — pure, testable, no IndexedDB.
+// Cache policy: pure, testable, no IndexedDB.
 // Durable user state lives in localStorage; this governs the disposable API response cache
 // so it can never grow until it threatens progress persistence.
 

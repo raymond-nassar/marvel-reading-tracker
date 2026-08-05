@@ -27,7 +27,7 @@ export class Store {
   }
 
   // A failed load must never lead to data loss. Previously this fell back to empty state and
-  // the very next user action persisted that empty state over the intact original — most
+  // the very next user action persisted that empty state over the intact original. Most
   // likely to happen on a schema downgrade, which migrate() deliberately throws on. Now the
   // raw value is copied aside and the store is latched read-only until the user decides.
   load() {
@@ -41,7 +41,7 @@ export class Store {
       this.salvage();
       this.lastError =
         `Could not read your saved data (${err.message}). It has NOT been changed or deleted. `
-        + 'Saving is paused so it cannot be overwritten — download a copy, then choose to start fresh.';
+        + 'Saving is paused so it cannot be overwritten. Download a copy, then choose to start fresh.';
     }
     return this.state;
   }
@@ -50,7 +50,7 @@ export class Store {
   //
   // Two rules matter here. A previous incident's copy must never be clobbered, so if the main
   // slot already holds different bytes this one is archived under its own key instead of being
-  // dropped — otherwise a second corruption months later would be left with no copy at all
+  // dropped, otherwise a second corruption months later would be left with no copy at all
   // while salvagedRaw() served the stale blob as if it were the user's data. And the write is
   // read back rather than assumed, because copying the state doubles this origin's footprint,
   // so the near-quota case is exactly when setItem throws and the copy silently never lands.
@@ -73,7 +73,7 @@ export class Store {
     }
   }
 
-  // Offers this incident's copy, falling back to the live value — which, while blocked, is
+  // Offers this incident's copy, falling back to the live value, which, while blocked, is
   // still the untouched original. Deliberately does not reach for SALVAGE_KEY blindly: that
   // would hand back an older incident's blob while presenting it as the current data.
   salvagedRaw() {

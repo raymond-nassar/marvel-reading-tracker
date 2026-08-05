@@ -3,7 +3,7 @@
 // A curated reading list is defined entirely by data: `src/data/curated-lists.json` names the
 // upstream order to vendor and the editorial metadata a reader sees before importing it. The
 // vendor script reads the manifest and derives both the pinned order file and the catalog
-// entry from it, so adding a list means adding a manifest entry — no application logic changes.
+// entry from it, so adding a list means adding a manifest entry, with no application logic changes.
 //
 // A malformed entry is a maintainer's mistake, not a reader's, so it is reported with the
 // reason rather than dropped: silently vendoring a shorter catalog is how a list goes missing

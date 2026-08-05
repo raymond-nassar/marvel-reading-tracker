@@ -46,7 +46,7 @@ export function normalizeIssue(input) {
     onSale: input.onSale ?? input.onSaleDate ?? null,
     mu: input.mu ?? input.unlimitedDate ?? null,
     digitalId: input.digitalId ?? null,
-    // Rich fields, only present on /v1/issues/{id} — list endpoints omit them.
+    // Rich fields, only present on /v1/issues/{id}; list endpoints omit them.
     // `cover` is { path, ext } WITHOUT the variant suffix; the view appends `/{variant}.{ext}`.
     // We store the URL only and never the image bytes: the browser fetches covers directly
     // from Marvel's own CDN, so this app neither copies nor redistributes artwork.

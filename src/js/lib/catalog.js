@@ -25,7 +25,7 @@ const DEPTH_LABELS = {
 // Plain English, because "essential" and "complete" only mean something to readers who
 // already know the convention. This is what tells someone how much reading they are choosing.
 const DEPTH_HINTS = {
-  essential: 'The core issues only — the shortest path through the story.',
+  essential: 'The core issues only, the shortest path through the story.',
   complete: 'Every issue, including tie-ins and side stories.',
   'tie-ins': 'The tie-in issues that surround a main story.',
 };
@@ -46,7 +46,7 @@ const str = (v) => (typeof v === 'string' && v.trim() ? v.trim() : null);
 
 // Attribution is only trustworthy if the reader can follow it, and only safe if what we
 // render as a link is really a web address. Anything else (a bare name, a `javascript:` URL)
-// is still shown as attribution text — the credit is never dropped — but never linked.
+// is still shown as attribution text, so the credit is never dropped, but never linked.
 export function sourceLink(list) {
   const s = str(list?.source);
   if (!s) return null;
@@ -158,7 +158,7 @@ export function filterByCategory(lists, category) {
 
 // ------------------------------------------------------------------ search
 
-// Readers type what they remember — "civil war", "spider-man", "hickman" — not exact titles,
+// Readers type what they remember ("civil war", "spider-man", "hickman") rather than exact titles,
 // and they should not have to reproduce accents or punctuation to find a list. Every term has
 // to match somewhere, so extra words narrow the results instead of widening them.
 function fold(v) {
@@ -197,7 +197,7 @@ export function searchCatalog(lists, query) {
 // A reader choosing between "essential" and "complete" is making one decision about a single
 // story, so the two orders are presented together under the story's name rather than as
 // unrelated catalog entries. A list with no group, or the only surviving member of its group
-// after filtering, stays a plain entry — a heading over one item is noise.
+// after filtering, stays a plain entry, because a heading over one item is noise.
 export function groupCatalog(lists) {
   const groups = [];
   const byKey = new Map();
