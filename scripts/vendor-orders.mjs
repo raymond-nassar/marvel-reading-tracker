@@ -103,6 +103,23 @@ function parseIssueNumber(title) {
   return m ? m[1] : null;
 }
 
+// Marvel's metadata occasionally carries a doubled space inside a title, as in
+// "King In Black: Black Panther  (2021) #1". The extra space is not data, and pinning it verbatim
+// makes it read as our typo rather than theirs, so internal whitespace is collapsed on ingest.
+// This only ever removes redundant spacing and changes no other character.
+//
+// It is applied to titles resolved from the API, never to a placeholder's title: that string is
+// the input to placeholderId(), so rewriting it would change the id and silently reset the
+// reader's progress on that entry.
+//
+// Scope it to titles and series names. Marvel's `description` is their prose, and it double-spaces
+// after sentences on purpose; collapsing that would rewrite their copy to no reader's benefit, and
+// unlike a title it is not a field anything matches, sorts or searches on. A sweep for doubled
+// spaces in src/data therefore still finds them in descriptions, and that is correct, not a miss.
+function cleanText(s) {
+  return String(s ?? '').replace(/\s+/g, ' ').trim();
+}
+
 // Marvel's CDN serves http:// in the API payload but supports https. Normalise so covers
 // are not blocked as mixed content if the app is ever served over https.
 function coverBase(cover) {
@@ -185,11 +202,11 @@ async function main() {
         at: e.index,
         item: {
           issueId: e.issueId,
-          title: d.title ?? e.title,
+          title: cleanText(d.title ?? e.title),
           number: parseIssueNumber(d.title ?? e.title),
           url: d.detailUrl ?? e.url,
           seriesId: d.seriesId ?? null,
-          seriesName: d.seriesName ?? null,
+          seriesName: d.seriesName == null ? null : cleanText(d.seriesName),
           onSale: d.onSaleDate ?? null,
           mu: d.unlimitedDate ?? null,
           digitalId: d.digitalId ?? null,

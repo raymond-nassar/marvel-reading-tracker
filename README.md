@@ -101,6 +101,50 @@ A checklist line with no Marvel link is vendored as a placeholder rather than dr
 reading order stays complete and tickable. Placeholders cannot be opened, and the import
 notice says how many there are.
 
+### Event orders, generated from Marvel's own metadata
+
+The five event lists are not typed by hand. `scripts/build-event-order.mjs` holds, per event,
+the ids of the series Marvel branded with that event's name, fetches their issues, and writes a
+checklist in publication order into `src/data/orders/`:
+
+```
+node scripts/build-event-order.mjs               # every event
+node scripts/build-event-order.mjs civil-war     # one event
+node scripts/build-event-order.mjs --dry-run     # report counts, write nothing
+node scripts/build-event-order.mjs --audit      # check the audit trail is complete, then build
+```
+
+Selecting the series Marvel itself branded and sorting them by on-sale date restates Marvel's
+catalogue rather than reproducing anyone's editorial reading order. The trade-off is stated on
+every list it produces: these orders cover the branded series and **not** crossover chapters
+published in ongoing titles that carry no event branding, such as Amazing Spider-Man #529-538
+during Civil War.
+
+Series are named by id, not matched by name, because a name filter cannot tell an event from its
+own sequel (`Civil War II`), its facsimiles or its handbooks; the script records why each
+rejected series was rejected beside the ones it keeps. Trade collections need no rule, because
+Marvel serves them from `/comics/collection/` instead of `/comics/issue/`. Where several issues
+shipped the same day the main series is listed first, so it is never read after the tie-in that
+reacts to it.
+
+Because selection is by id, a series nobody listed would be silently absent rather than visibly
+wrong, so that record of rejections is checked rather than trusted. `--audit` re-runs the name
+filter across all 6,990 series and fails if any series it matches is in neither the include list
+nor the rejection record. Run it before regenerating an order. It does not assert the reverse —
+the name filter cannot find series Marvel never branded, which is the documented gap above.
+
+The audit pages the API for the catalogue, and will read a committed `src/data/series-index.json`
+instead once one exists. It reads that file out of `HEAD` rather than from the working copy, and
+uses it only when it covers the whole catalogue; a short, malformed or uncommitted index is refused
+out loud and the API is paged instead. Reading the committed bytes is what lets the refusal message
+mean what it says: whether a path is tracked says nothing about whether its contents are still the
+reviewed ones. A shortcut that cannot be checked is a way to be quietly wrong — an index holding
+three series still matches something for every event, so it would pass a bare "did it match
+anything" test while leaving almost the entire catalogue unaudited.
+
+The output is committed, so an order arrives for review as a diff, and re-running the script
+only changes the events whose upstream metadata changed.
+
 ## Searching for a series or a creator
 
 The metadata API has a real search endpoint for issues, but none for series or creators.

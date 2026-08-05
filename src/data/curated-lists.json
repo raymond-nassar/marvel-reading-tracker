@@ -93,6 +93,173 @@
         "relaunch"
       ],
       "expect": 138
+    },
+    {
+      "id": "house-of-m",
+      "name": "House of M",
+      "description": "Wanda Maximoff rewrites the world in Marvel's 2005 event, in publication order: the eight-issue main series, its branded tie-in mini-series, and the Decimation epilogue. Assembled from Marvel series metadata, so it covers the series Marvel branded with the event name and not the House of M chapters published in unbranded ongoing titles such as Wolverine #33-35.",
+      "type": "event",
+      "depth": "complete",
+      "sourceFile": "house-of-m.md",
+      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "out": "house_of_m.json",
+      "characters": [
+        "Scarlet Witch",
+        "Quicksilver",
+        "Magneto",
+        "Wolverine",
+        "Spider-Man",
+        "X-Men",
+        "Avengers",
+        "Doctor Strange",
+        "Emma Frost",
+        "Layla Miller"
+      ],
+      "keywords": [
+        "House of M",
+        "Decimation",
+        "No More Mutants",
+        "Brian Michael Bendis",
+        "Olivier Coipel",
+        "mutants",
+        "2005 event"
+      ],
+      "expect": 20
+    },
+    {
+      "id": "civil-war",
+      "name": "Civil War",
+      "description": "Marvel's 2006 superhuman registration war in publication order: the seven-issue main series plus every mini-series and one-shot Marvel branded with the Civil War name, from Front Line through The Confession. Assembled from Marvel series metadata, so it does not include the crossover chapters published in unbranded ongoing titles such as Amazing Spider-Man #529-538.",
+      "type": "event",
+      "depth": "complete",
+      "sourceFile": "civil-war.md",
+      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "out": "civil_war.json",
+      "characters": [
+        "Iron Man",
+        "Captain America",
+        "Spider-Man",
+        "Mister Fantastic",
+        "Invisible Woman",
+        "Punisher",
+        "She-Hulk",
+        "Young Avengers",
+        "Runaways",
+        "X-Men"
+      ],
+      "keywords": [
+        "Civil War",
+        "Superhuman Registration Act",
+        "Mark Millar",
+        "Steve McNiven",
+        "Stamford",
+        "The Initiative",
+        "unmasking",
+        "2006 event"
+      ],
+      "expect": 31
+    },
+    {
+      "id": "annihilation",
+      "name": "Annihilation",
+      "description": "The 2006 cosmic war that rebuilt Marvel's space corner, in publication order: the Prologue, the four lead-in mini-series, the six-issue main series, and the Heralds of Galactus epilogue. Assembled from Marvel series metadata. Annihilation: Conquest is a separate 2007 sequel event and is not included here.",
+      "type": "event",
+      "depth": "complete",
+      "sourceFile": "annihilation.md",
+      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "out": "annihilation.json",
+      "characters": [
+        "Nova",
+        "Silver Surfer",
+        "Ronan the Accuser",
+        "Super-Skrull",
+        "Drax the Destroyer",
+        "Thanos",
+        "Annihilus",
+        "Galactus",
+        "Star-Lord",
+        "Gamora"
+      ],
+      "keywords": [
+        "Annihilation",
+        "Annihilation Wave",
+        "Negative Zone",
+        "Keith Giffen",
+        "cosmic",
+        "Nova Corps",
+        "2006 event"
+      ],
+      "expect": 25
+    },
+    {
+      "id": "secret-invasion",
+      "name": "Secret Invasion",
+      "description": "The Skrull infiltration of 2008 in publication order: the eight-issue main series plus every mini-series and one-shot Marvel branded with the Secret Invasion name, ending with Dark Reign. Assembled from Marvel series metadata, so it does not include the crossover chapters published in unbranded ongoing titles such as New Avengers and Mighty Avengers.",
+      "type": "event",
+      "depth": "complete",
+      "sourceFile": "secret-invasion.md",
+      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "out": "secret_invasion.json",
+      "characters": [
+        "Skrulls",
+        "Nick Fury",
+        "Iron Man",
+        "Spider-Woman",
+        "Avengers",
+        "Inhumans",
+        "Thor",
+        "Spider-Man",
+        "Runaways",
+        "Young Avengers",
+        "X-Men",
+        "Norman Osborn"
+      ],
+      "keywords": [
+        "Secret Invasion",
+        "Skrull",
+        "Embrace Change",
+        "Brian Michael Bendis",
+        "Leinil Francis Yu",
+        "Dark Reign",
+        "Savage Land",
+        "2008 event"
+      ],
+      "expect": 36
+    },
+    {
+      "id": "king-in-black",
+      "name": "King in Black",
+      "description": "Knull brings the symbiote god-war to Earth in 2020-2021, in publication order: the five-issue main series plus its branded tie-in mini-series and one-shots. Assembled from Marvel series metadata, so it does not include the crossover chapters published in unbranded ongoing titles such as Venom #30-35.",
+      "type": "event",
+      "depth": "complete",
+      "sourceFile": "king-in-black.md",
+      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "out": "king_in_black.json",
+      "characters": [
+        "Knull",
+        "Venom",
+        "Eddie Brock",
+        "Carnage",
+        "Namor",
+        "Spider-Man",
+        "Black Panther",
+        "Captain America",
+        "Ghost Rider",
+        "Valkyrie",
+        "Thunderbolts",
+        "Symbiotes"
+      ],
+      "keywords": [
+        "King in Black",
+        "Knull",
+        "symbiote",
+        "Donny Cates",
+        "Ryan Stegman",
+        "Venom",
+        "Codex",
+        "2020 event"
+      ],
+      "expect": 38
     }
   ]
 }

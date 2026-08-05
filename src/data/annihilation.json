@@ -1,0 +1,753 @@
+{
+  "id": "annihilation",
+  "name": "Annihilation",
+  "description": "The 2006 cosmic war that rebuilt Marvel's space corner, in publication order: the Prologue, the four lead-in mini-series, the six-issue main series, and the Heralds of Galactus epilogue. Assembled from Marvel series metadata. Annihilation: Conquest is a separate 2007 sequel event and is not included here.",
+  "source": null,
+  "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+  "generatedAt": "2026-08-05T06:17:07.278Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 25,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 3985,
+      "title": "ANNIHILATION PROLOGUE 1 (2006) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/3985/annihilation_prologue_1_2006_1",
+      "seriesId": 1077,
+      "seriesName": "ANNIHILATION PROLOGUE 1 (2006)",
+      "onSale": "2006-03-15T00:00:00+0000",
+      "mu": "2006-03-15T00:00:00+0000",
+      "digitalId": 4878,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/03/57865227ac607",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4108,
+      "title": "Annihilation: Silver Surfer (2006) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/4108/annihilation_silver_surfer_2006_1",
+      "seriesId": 1078,
+      "seriesName": "Annihilation: Silver Surfer (2006)",
+      "onSale": "2006-04-05T00:00:00+0000",
+      "mu": "2006-04-05T00:00:00+0000",
+      "digitalId": 1434,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/578671f120fd2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Renato Arlem",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4110,
+      "title": "Annihilation: Super-Skrull (2006) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/4110/annihilation_super-skrull_2006_1",
+      "seriesId": 1080,
+      "seriesName": "Annihilation: Super-Skrull (2006)",
+      "onSale": "2006-04-12T00:00:00+0000",
+      "mu": "2006-04-12T00:00:00+0000",
+      "digitalId": 1435,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/578791d73a15a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gregory Titus",
+          "role": "cover artist"
+        },
+        {
+          "name": "Javier Grillo-Marxuach",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4111,
+      "title": "Annihilation: Nova (2006) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/4111/annihilation_nova_2006_1",
+      "seriesId": 1081,
+      "seriesName": "Annihilation: Nova (2006)",
+      "onSale": "2006-04-19T00:00:00+0000",
+      "mu": "2006-04-19T00:00:00+0000",
+      "digitalId": 10160,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/578551ef6051b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kev Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4109,
+      "title": "Annihilation: Ronan (2006) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/4109/annihilation_ronan_2006_1",
+      "seriesId": 1079,
+      "seriesName": "Annihilation: Ronan (2006)",
+      "onSale": "2006-04-26T00:00:00+0000",
+      "mu": "2006-04-26T00:00:00+0000",
+      "digitalId": 1433,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/57864ff113f2e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jorge Lucas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Simon Furman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4218,
+      "title": "Annihilation: Silver Surfer (2006) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/4218/annihilation_silver_surfer_2006_2",
+      "seriesId": 1078,
+      "seriesName": "Annihilation: Silver Surfer (2006)",
+      "onSale": "2006-05-03T00:00:00+0000",
+      "mu": "2006-05-03T00:00:00+0000",
+      "digitalId": 5084,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/50/578687f70173c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Renato Arlem",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4220,
+      "title": "Annihilation: Super-Skrull (2006) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/4220/annihilation_super-skrull_2006_2",
+      "seriesId": 1080,
+      "seriesName": "Annihilation: Super-Skrull (2006)",
+      "onSale": "2006-05-10T00:00:00+0000",
+      "mu": "2006-05-10T00:00:00+0000",
+      "digitalId": 5087,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/c0/5787988337a8a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gregory Titus",
+          "role": "cover artist"
+        },
+        {
+          "name": "Javier Grillo-Marxuach",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4221,
+      "title": "Annihilation: Nova (2006) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/4221/annihilation_nova_2006_2",
+      "seriesId": 1081,
+      "seriesName": "Annihilation: Nova (2006)",
+      "onSale": "2006-05-17T00:00:00+0000",
+      "mu": "2006-05-17T00:00:00+0000",
+      "digitalId": 5078,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/c0/578557a046083",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kev Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4219,
+      "title": "Annihilation: Ronan (2006) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/4219/annihilation_ronan_2006_2",
+      "seriesId": 1079,
+      "seriesName": "Annihilation: Ronan (2006)",
+      "onSale": "2006-05-24T00:00:00+0000",
+      "mu": "2006-05-24T00:00:00+0000",
+      "digitalId": 5081,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/d0/578660897592d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jorge Lucas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Simon Furman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4315,
+      "title": "Annihilation: Silver Surfer (2006) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/4315/annihilation_silver_surfer_2006_3",
+      "seriesId": 1078,
+      "seriesName": "Annihilation: Silver Surfer (2006)",
+      "onSale": "2006-06-07T00:00:00+0000",
+      "mu": "2006-06-07T00:00:00+0000",
+      "digitalId": 5085,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/80/578693c24666f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Renato Arlem",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4317,
+      "title": "Annihilation: Super-Skrull (2006) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/4317/annihilation_super-skrull_2006_3",
+      "seriesId": 1080,
+      "seriesName": "Annihilation: Super-Skrull (2006)",
+      "onSale": "2006-06-14T00:00:00+0000",
+      "mu": "2006-06-14T00:00:00+0000",
+      "digitalId": 5088,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/51df2f988a27e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gregory Titus",
+          "role": "cover artist"
+        },
+        {
+          "name": "Javier Grillo-Marxuach",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4318,
+      "title": "Annihilation: Nova (2006) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/4318/annihilation_nova_2006_3",
+      "seriesId": 1081,
+      "seriesName": "Annihilation: Nova (2006)",
+      "onSale": "2006-06-21T00:00:00+0000",
+      "mu": "2006-06-21T00:00:00+0000",
+      "digitalId": 5079,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/b0/57863f477cfd8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kev Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4316,
+      "title": "Annihilation: Ronan (2006) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/4316/annihilation_ronan_2006_3",
+      "seriesId": 1079,
+      "seriesName": "Annihilation: Ronan (2006)",
+      "onSale": "2006-06-28T00:00:00+0000",
+      "mu": "2006-06-28T00:00:00+0000",
+      "digitalId": 5082,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/578665baac782",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jorge Lucas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Simon Furman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4470,
+      "title": "Annihilation: Silver Surfer (2006) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/4470/annihilation_silver_surfer_2006_4",
+      "seriesId": 1078,
+      "seriesName": "Annihilation: Silver Surfer (2006)",
+      "onSale": "2006-07-12T00:00:00+0000",
+      "mu": "2006-07-12T00:00:00+0000",
+      "digitalId": 5086,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/51e0622a3d033",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Renato Arlem",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4472,
+      "title": "Annihilation: Super-Skrull (2006) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/4472/annihilation_super-skrull_2006_4",
+      "seriesId": 1080,
+      "seriesName": "Annihilation: Super-Skrull (2006)",
+      "onSale": "2006-07-12T00:00:00+0000",
+      "mu": "2006-07-12T00:00:00+0000",
+      "digitalId": 5089,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/80/5787a44424450",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gregory Titus",
+          "role": "cover artist"
+        },
+        {
+          "name": "Javier Grillo-Marxuach",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4473,
+      "title": "Annihilation: Nova (2006) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/4473/annihilation_nova_2006_4",
+      "seriesId": 1081,
+      "seriesName": "Annihilation: Nova (2006)",
+      "onSale": "2006-07-19T00:00:00+0000",
+      "mu": "2006-07-19T00:00:00+0000",
+      "digitalId": 5080,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/578646de5027a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kev Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4471,
+      "title": "Annihilation: Ronan (2006) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/4471/annihilation_ronan_2006_4",
+      "seriesId": 1079,
+      "seriesName": "Annihilation: Ronan (2006)",
+      "onSale": "2006-07-26T00:00:00+0000",
+      "mu": "2006-07-26T00:00:00+0000",
+      "digitalId": 5083,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/57866a57dd22b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jorge Lucas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Simon Furman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4788,
+      "title": "Annihilation (2006) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/4788/annihilation_2006_1",
+      "seriesId": 3613,
+      "seriesName": "Annihilation (2006 - 2007)",
+      "onSale": "2006-08-09T00:00:00+0000",
+      "mu": "2006-08-09T00:00:00+0000",
+      "digitalId": 4048,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/51b61283075b2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 5078,
+      "title": "Annihilation (2006) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/5078/annihilation_2006_2",
+      "seriesId": 3613,
+      "seriesName": "Annihilation (2006 - 2007)",
+      "onSale": "2006-09-13T00:00:00+0000",
+      "mu": "2006-09-13T00:00:00+0000",
+      "digitalId": 5072,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/51b61244955fe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 5230,
+      "title": "Annihilation (2006) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/5230/annihilation_2006_3",
+      "seriesId": 3613,
+      "seriesName": "Annihilation (2006 - 2007)",
+      "onSale": "2006-10-11T00:00:00+0000",
+      "mu": "2006-10-11T00:00:00+0000",
+      "digitalId": 5073,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/51b612534e2e6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 5529,
+      "title": "Annihilation (2006) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/5529/annihilation_2006_4",
+      "seriesId": 3613,
+      "seriesName": "Annihilation (2006 - 2007)",
+      "onSale": "2006-11-08T00:00:00+0000",
+      "mu": "2006-11-08T00:00:00+0000",
+      "digitalId": 5074,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/60/51b61255041bc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 5655,
+      "title": "Annihilation (2006) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/5655/annihilation_2006_5",
+      "seriesId": 3613,
+      "seriesName": "Annihilation (2006 - 2007)",
+      "onSale": "2006-12-27T00:00:00+0000",
+      "mu": "2006-12-27T00:00:00+0000",
+      "digitalId": 5075,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/c0/51b61262eac63",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 5795,
+      "title": "Annihilation (2006) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/5795/annihilation_2006_6",
+      "seriesId": 3613,
+      "seriesName": "Annihilation (2006 - 2007)",
+      "onSale": "2007-01-31T00:00:00+0000",
+      "mu": "2007-01-31T00:00:00+0000",
+      "digitalId": 5076,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/57850eb63ba98",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 5976,
+      "title": "Annihilation: Heralds of Galactus (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/5976/annihilation_heralds_of_galactus_2007_1",
+      "seriesId": 1864,
+      "seriesName": "Annihilation: Heralds of Galactus (2007)",
+      "onSale": "2007-02-28T00:00:00+0000",
+      "mu": "2007-02-28T00:00:00+0000",
+      "digitalId": 8228,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/70/51e407787996b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Stefano Landini",
+          "role": "cover artist"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Mckone",
+          "role": "penciler"
+        },
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Stuart Moore",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 6175,
+      "title": "Annihilation: Heralds of Galactus (2007) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/6175/annihilation_heralds_of_galactus_2007_2",
+      "seriesId": 1864,
+      "seriesName": "Annihilation: Heralds of Galactus (2007)",
+      "onSale": "2007-04-04T00:00:00+0000",
+      "mu": "2007-04-04T00:00:00+0000",
+      "digitalId": 8229,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/50/51e40822c1b0c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "penciler"
+        },
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}
