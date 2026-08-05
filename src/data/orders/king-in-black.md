@@ -26,7 +26,7 @@ published in ongoing titles that carry no event branding. Edit the script, not t
 - [ ] [King in Black: Gwenom Vs. Carnage (2021) #2](https://www.marvel.com/comics/issue/91752/king_in_black_gwenom_vs_carnage_2021_2)
 - [ ] [King In Black: Marauders (2021) #1](https://www.marvel.com/comics/issue/91756/king_in_black_marauders_2021_1)
 - [ ] [King in Black: Return of the Valkyries (2021) #2](https://www.marvel.com/comics/issue/91766/king_in_black_return_of_the_valkyries_2021_2)
-- [ ] [King In Black: Black Panther  (2021) #1](https://www.marvel.com/comics/issue/91745/king_in_black_black_panther_2021_1)
+- [ ] [King In Black: Black Panther (2021) #1](https://www.marvel.com/comics/issue/91745/king_in_black_black_panther_2021_1)
 - [ ] [King in Black: Thunderbolts (2021) #2](https://www.marvel.com/comics/issue/91761/king_in_black_thunderbolts_2021_2)
 - [ ] [King in Black (2020) #4](https://www.marvel.com/comics/issue/85652/king_in_black_2020_4)
 - [ ] [King in Black: Planet of the Symbiotes (2021) #2](https://www.marvel.com/comics/issue/91758/king_in_black_planet_of_the_symbiotes_2021_2)

@@ -186,6 +186,15 @@ export const EVENTS = [
 // only resolve /comics/issue/ links and would otherwise pin a collection as a placeholder.
 const ISSUE_URL = /^https:\/\/(?:www\.)?marvel\.com\/comics\/issue\/\d+(?:\/|$)/i;
 
+// Marvel's metadata occasionally carries a doubled space inside a title, as in
+// "King In Black: Black Panther  (2021) #1". The extra space is not data: it is noise that would
+// otherwise be copied into the checklist and pinned verbatim, reading as our typo rather than
+// theirs. Collapsing internal whitespace only ever removes redundant spacing and changes no other
+// character, so the title still says exactly what Marvel says it says.
+function cleanText(s) {
+  return String(s ?? '').replace(/\s+/g, ' ').trim();
+}
+
 const limiter = new RateLimiter();
 
 async function getJson(url, attempt = 0) {
@@ -224,12 +233,12 @@ async function seriesIssues(seriesId) {
     }
     kept.push({
       id: item.id,
-      title: String(item.title ?? '').trim(),
+      title: cleanText(item.title),
       url: item.detailUrl,
       onSale: String(item.onSaleDate).slice(0, 10),
       number: issueNumber(item),
       seriesId,
-      seriesName: String(body.series_name ?? '').trim(),
+      seriesName: cleanText(body.series_name),
     });
   }
   if (undated.length) {
@@ -271,14 +280,56 @@ function nameMatches(seriesName, eventName) {
 // merges this check costs zero requests. Until then it pages the API, which is 35 requests at the
 // maximum page size of 200 (limit=201 returns 422). Do not read the session-cache copy of this
 // index: it lost characters to an encoding round-trip and is fit for choosing ids, nothing else.
-async function allSeries() {
+// PR #4 adds a byte-faithful src/data/series-index.json covering all 6,990 series; once that
+// merges this check costs zero requests beyond the one below. Until then it pages the API, which
+// is 35 requests at the maximum page size of 200 (limit=201 returns 422). Do not read the
+// session-cache copy of this index: it lost characters to an encoding round-trip and is fit for
+// choosing ids, nothing else.
+//
+// The local file is a shortcut, and a shortcut that cannot be checked is a way to be quietly
+// wrong: an index that is stale, truncated, or in an unexpected shape reads as a catalogue with
+// nothing in it, and an audit that sees nothing reports nothing to fix. So the file is used only
+// when it can be shown to cover the whole catalogue, and is otherwise refused out loud.
+async function seriesTotal() {
+  const body = await getJson(`${API}/series?limit=1`);
+  const total = Number(body?.total);
+  if (!Number.isFinite(total) || total <= 0) throw new Error('could not read the series total from the API');
+  return total;
+}
+
+async function localSeriesIndex(total) {
+  const path = join(ROOT, 'src', 'data', 'series-index.json');
+  let parsed;
   try {
-    const parsed = JSON.parse(await readFile(join(ROOT, 'src', 'data', 'series-index.json'), 'utf8'));
-    const items = Array.isArray(parsed) ? parsed : parsed?.items;
-    if (Array.isArray(items) && items.length) return { from: 'src/data/series-index.json', items };
-  } catch {
-    /* not merged yet -- page the API instead */
+    parsed = JSON.parse((await readFile(path, 'utf8')).replace(/^\uFEFF/, ''));
+  } catch (err) {
+    return { items: null, why: err.code === 'ENOENT' ? null : `it could not be parsed (${err.message})` };
   }
+  // The file may be column-oriented: a `fields` header naming the columns, with rows as tuples
+  // rather than records. Reading `.name` off a tuple yields undefined, which folds to a blank and
+  // matches no event, so an unrecognised shape must be refused rather than scanned.
+  const fields = Array.isArray(parsed?.fields) ? parsed.fields : null;
+  const rows = Array.isArray(parsed) ? parsed : parsed?.items;
+  if (!Array.isArray(rows)) return { items: null, why: 'it has no array of series' };
+  const items = rows.map((rec) =>
+    Array.isArray(rec) && fields ? Object.fromEntries(fields.map((f, i) => [f, rec[i]])) : rec,
+  );
+  const usable = items.filter((s) => Number.isFinite(Number(s?.id)) && String(s?.name ?? '').trim());
+  if (usable.length !== items.length) {
+    return { items: null, why: `only ${usable.length} of ${items.length} rows carry an id and a name` };
+  }
+  if (items.length !== total) {
+    return { items: null, why: `it holds ${items.length} series but the catalogue has ${total}` };
+  }
+  return { items, why: null };
+}
+
+async function allSeries() {
+  const total = await seriesTotal();
+  const { items: local, why } = await localSeriesIndex(total);
+  if (local) return { from: 'src/data/series-index.json', items: local };
+  if (why) console.warn(`ignoring src/data/series-index.json: ${why}; paging the API instead`);
+
   const items = [];
   for (let offset = 0; ; offset += 200) {
     const body = await getJson(`${API}/series?limit=200&offset=${offset}`);
@@ -286,6 +337,11 @@ async function allSeries() {
     items.push(...page);
     if (!body?.has_next || !page.length) break;
     if (items.length > 50000) throw new Error('series paging did not terminate');
+  }
+  // The same standard the local file is held to: a short read here would mean auditing against a
+  // partial catalogue, which reports fewer problems rather than reporting that it looked at less.
+  if (items.length !== total) {
+    throw new Error(`paged ${items.length} series but the catalogue reports ${total}; the audit would be partial`);
   }
   return { from: `${API}/series`, items };
 }
@@ -302,6 +358,14 @@ async function audit(targets) {
       if (excluded.has(id)) problems.push(`${event.id}: ${id} is listed as both included and excluded`);
     }
     const matched = items.filter((s) => nameMatches(s?.name, event.name));
+    // Every event here matches at least sixteen series, so a zero is always a reader that cannot
+    // see the names rather than a catalogue that has none. Without this the audit has no way to
+    // tell "nothing is wrong" from "I read nothing", and the quiet answer to both is success.
+    if (!matched.length) {
+      throw new Error(
+        `${event.id}: the name filter matched no series at all -- the index is unreadable, not the catalogue empty`,
+      );
+    }
     const missing = matched.filter((s) => !included.has(s.id) && !excluded.has(s.id));
     console.log(
       `  ${event.id.padEnd(16)} ${String(matched.length).padStart(3)} match "${event.name}"  ` +
