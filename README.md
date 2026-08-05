@@ -111,6 +111,7 @@ checklist in publication order into `src/data/orders/`:
 node scripts/build-event-order.mjs               # every event
 node scripts/build-event-order.mjs civil-war     # one event
 node scripts/build-event-order.mjs --dry-run     # report counts, write nothing
+node scripts/build-event-order.mjs --audit      # check the audit trail is complete, then build
 ```
 
 Selecting the series Marvel itself branded and sorting them by on-sale date restates Marvel's
@@ -125,6 +126,12 @@ rejected series was rejected beside the ones it keeps. Trade collections need no
 Marvel serves them from `/comics/collection/` instead of `/comics/issue/`. Where several issues
 shipped the same day the main series is listed first, so it is never read after the tie-in that
 reacts to it.
+
+Because selection is by id, a series nobody listed would be silently absent rather than visibly
+wrong, so that record of rejections is checked rather than trusted. `--audit` re-runs the name
+filter across all 6,990 series and fails if any series it matches is in neither the include list
+nor the rejection record. Run it before regenerating an order. It does not assert the reverse —
+the name filter cannot find series Marvel never branded, which is the documented gap above.
 
 The output is committed, so an order arrives for review as a diff, and re-running the script
 only changes the events whose upstream metadata changed.

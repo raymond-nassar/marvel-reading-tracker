@@ -14,6 +14,7 @@
 //   node scripts/build-event-order.mjs                  # every event
 //   node scripts/build-event-order.mjs civil-war        # one event
 //   node scripts/build-event-order.mjs --dry-run        # print, write nothing
+//   node scripts/build-event-order.mjs --audit          # check the audit trail is complete, then build
 //
 // What it deliberately does NOT do: include crossover chapters published in ongoing titles that
 // Marvel did not brand with the event name (Amazing Spider-Man #529-538 during Civil War, Venom
@@ -34,9 +35,11 @@ const ORDERS_DIR = join(ROOT, 'src', 'data', 'orders');
 // handbooks. `main` is the spine, used only to break ties between issues that shipped the same
 // day so the main series is never read after the tie-in that reacts to it.
 //
-// `excluded` is not used by the code. It is the record of what the name filter matched and why
-// it was rejected, so a future maintainer re-deriving a list can see that the omissions were
-// decided rather than missed.
+// `excluded` is the record of what the name filter matched and why it was rejected, so a future
+// maintainer re-deriving a list can see that the omissions were decided rather than missed. It is
+// not documentation: `--audit` re-runs the name filter against the live catalogue and fails if any
+// series it matches is in neither list, because a record that claims to be complete and is not is
+// the same failure as a reading order that is quietly missing issues.
 export const EVENTS = [
   {
     id: 'house-of-m',
@@ -81,6 +84,10 @@ export const EVENTS = [
         21417, 21691, 21692, 20814, 21693, 21695, 22391, 21696, 20644, 22847, 22128, 21660, 21425,
       ],
       'facsimile reprints': [43627, 43628, 43629],
+      'a 2020 retrospective one-shot, outside the 2006-2007 window': [27948],
+      // Matches both this event's name filter and House of M's, so it has to be accounted for in
+      // both maps: being excluded from one event says nothing about the other.
+      'a 2008-2009 series set in the House of M reality, outside the window': [5730],
       'the Secret Wars (2015) Battleworld tie-in and its 2016 reissues': [19350, 20302, 20733, 20737],
       'film and all-ages adaptations': [21018, 21002, 21433, 21447, 23798],
       'trade collections': [2226, 2429, 2706, 2246, 8894],
@@ -239,6 +246,82 @@ function issueNumber(item) {
   return m ? Number(m[1]) : 0;
 }
 
+// --- completeness audit -----------------------------------------------------------------------
+//
+// Selection is by explicit id, so a series nobody listed is silently absent rather than visibly
+// wrong. That makes `excluded` load-bearing: it is the claim that the omissions were decided. A
+// claim that is not checked drifts, so this checks it -- it re-runs the name filter against the
+// live catalogue and fails if any series the filter matches is in neither `series` nor `excluded`.
+//
+// It deliberately does not assert the reverse. The name filter cannot find series Marvel did not
+// brand with the event name, and those crossover chapters are the known gap each list documents.
+// This audits the record of the name filter, which is all the record ever claimed to be.
+
+// Word-boundary containment on a punctuation-insensitive fold, so "Civil War" matches
+// "Civil War: Front Line" and "Civil War II" (both must be accounted for) but not "Civil Warriors".
+function fold(s) {
+  return ` ${String(s ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()} `;
+}
+
+function nameMatches(seriesName, eventName) {
+  return fold(seriesName).includes(fold(eventName));
+}
+
+// PR #4 adds a byte-faithful src/data/series-index.json covering all 6,990 series; once that
+// merges this check costs zero requests. Until then it pages the API, which is 35 requests at the
+// maximum page size of 200 (limit=201 returns 422). Do not read the session-cache copy of this
+// index: it lost characters to an encoding round-trip and is fit for choosing ids, nothing else.
+async function allSeries() {
+  try {
+    const parsed = JSON.parse(await readFile(join(ROOT, 'src', 'data', 'series-index.json'), 'utf8'));
+    const items = Array.isArray(parsed) ? parsed : parsed?.items;
+    if (Array.isArray(items) && items.length) return { from: 'src/data/series-index.json', items };
+  } catch {
+    /* not merged yet -- page the API instead */
+  }
+  const items = [];
+  for (let offset = 0; ; offset += 200) {
+    const body = await getJson(`${API}/series?limit=200&offset=${offset}`);
+    const page = Array.isArray(body?.items) ? body.items : [];
+    items.push(...page);
+    if (!body?.has_next || !page.length) break;
+    if (items.length > 50000) throw new Error('series paging did not terminate');
+  }
+  return { from: `${API}/series`, items };
+}
+
+async function audit(targets) {
+  const { from, items } = await allSeries();
+  console.log(`audit: ${items.length} series from ${from}`);
+  const problems = [];
+
+  for (const event of targets) {
+    const included = new Set(event.series);
+    const excluded = new Set(Object.values(event.excluded).flat());
+    for (const id of included) {
+      if (excluded.has(id)) problems.push(`${event.id}: ${id} is listed as both included and excluded`);
+    }
+    const matched = items.filter((s) => nameMatches(s?.name, event.name));
+    const missing = matched.filter((s) => !included.has(s.id) && !excluded.has(s.id));
+    console.log(
+      `  ${event.id.padEnd(16)} ${String(matched.length).padStart(3)} match "${event.name}"  ` +
+        `${String(included.size).padStart(2)} included  ${String(excluded.size).padStart(3)} excluded  ` +
+        `${missing.length} unaccounted`,
+    );
+    for (const s of missing) {
+      problems.push(`${event.id}: ${s.id} ${s.name} (issueCount ${s.issueCount ?? '?'})`);
+    }
+  }
+
+  if (problems.length) {
+    throw new Error(
+      `the audit trail is incomplete -- ${problems.length} series match an event name but are in ` +
+        `neither its include list nor its excluded map:\n  ${problems.join('\n  ')}`,
+    );
+  }
+  console.log('audit: every name-matching series is accounted for');
+}
+
 // Publication order, with the main series first when issues shipped on the same day. Marvel ships
 // a week's worth of an event at once, and within that week the main series is the chapter the
 // tie-ins react to, so reading it last would spoil itself. Series name and issue number then make
@@ -291,6 +374,8 @@ async function main() {
     }
   }
   const targets = wanted.length ? EVENTS.filter((e) => wanted.includes(e.id)) : EVENTS;
+
+  if (argv.includes('--audit')) await audit(targets);
 
   for (const event of targets) {
     const issues = [];
