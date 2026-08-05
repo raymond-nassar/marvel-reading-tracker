@@ -1070,6 +1070,8 @@ async function renderCatalog() {
     catalog = await loadCatalog();
   } catch (err) {
     box.replaceChildren();
+    $('#catalog-filters').hidden = true;
+    $('#catalog-filters').replaceChildren();
     notify('#catalog-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error');
     return;
   }
