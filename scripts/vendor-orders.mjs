@@ -111,6 +111,11 @@ function parseIssueNumber(title) {
 // It is applied to titles resolved from the API, never to a placeholder's title: that string is
 // the input to placeholderId(), so rewriting it would change the id and silently reset the
 // reader's progress on that entry.
+//
+// Scope it to titles and series names. Marvel's `description` is their prose, and it double-spaces
+// after sentences on purpose; collapsing that would rewrite their copy to no reader's benefit, and
+// unlike a title it is not a field anything matches, sorts or searches on. A sweep for doubled
+// spaces in src/data therefore still finds them in descriptions, and that is correct, not a miss.
 function cleanText(s) {
   return String(s ?? '').replace(/\s+/g, ' ').trim();
 }

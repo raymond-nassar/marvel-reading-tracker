@@ -80,6 +80,10 @@ test('every event declares its main series among the series it includes', () => 
 // generators normalise it on ingest, which means the committed text deliberately differs from the
 // raw upstream string. That is the fix, not corruption -- so this pins it, because the obvious way
 // to "repair" an apparent mismatch against the API is to put the doubled space back.
+//
+// Deliberately limited to titles and series names. Marvel's `description` is their prose and
+// double-spaces after sentences; a sweep of src/data will find doubled spaces there and that is
+// upstream copy left intact, not a gap in this check.
 const ORDERS = new URL('../src/data/orders/', import.meta.url);
 const PINNED = ['house_of_m', 'civil_war', 'annihilation', 'secret_invasion', 'king_in_black'];
 
