@@ -212,6 +212,12 @@ async function fetchNameIndex(kind) {
 
   let res;
   try {
+    // no-cache, not no-store: the browser still keeps the file, it just revalidates before
+    // reusing it, so re-running the vendor script is picked up on the next load rather than
+    // whenever a heuristic decides. That guarantee is worth having because the index is a
+    // snapshot the view puts a date on, and a stale one would make the view's date a lie.
+    // server.mjs sends an ETag, so revalidating an unchanged index costs a 304, not 345 KB.
+    // This matches how main.js loads catalog.json and the reading orders.
     res = await fetch(new URL(`../data/${spec.file}`, import.meta.url), { cache: 'no-cache' });
   } catch {
     throw unavailable('it could not be fetched');

@@ -69,16 +69,36 @@ async function handle(req, res) {
 
   try {
     let file = target;
-    const info = await stat(file).catch(() => null);
-    if (info?.isDirectory()) file = join(file, 'index.html');
+    let info = await stat(file).catch(() => null);
+    if (info?.isDirectory()) {
+      file = join(file, 'index.html');
+      info = await stat(file).catch(() => null);
+    }
 
-    const body = await readFile(file);
-    res.writeHead(200, {
+    // Everything here is served no-cache, so the browser revalidates on every load and always
+    // sees a rebuilt file immediately. Without a validator it cannot revalidate, only re-fetch:
+    // each reload pulled the whole of every asset, which the vendored search indexes turned into
+    // 455 KB. Size and modification time identify a build well enough to answer that with a 304,
+    // and the stat above has already paid for them.
+    const etag = info ? `"${info.size.toString(16)}-${Math.round(info.mtimeMs).toString(16)}"` : null;
+    const headers = {
       'content-type': TYPES[extname(file).toLowerCase()] ?? 'application/octet-stream',
       'cache-control': 'no-cache',
       'x-content-type-options': 'nosniff',
       'referrer-policy': 'no-referrer',
-    });
+      ...(etag ? { etag } : {}),
+    };
+
+    if (etag && req.headers['if-none-match'] === etag) {
+      res.writeHead(304, headers);
+      res.end();
+      return;
+    }
+
+    // Read after the 304 check, so an unchanged file is never loaded into memory at all. A file
+    // that vanished between the stat and here still falls through to the 404 below.
+    const body = await readFile(file);
+    res.writeHead(200, headers);
     res.end(req.method === 'HEAD' ? undefined : body);
   } catch {
     res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }).end('Not found');

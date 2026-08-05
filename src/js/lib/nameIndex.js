@@ -58,17 +58,24 @@ function normalizeEntry(raw) {
   // Folded once here rather than on every keystroke: 6,990 names are folded in a few
   // milliseconds, but doing it per search would repeat that for every query of the session.
   const folded = foldName(name);
-  return { id: rec.id, name, issueCount, folded, title: titleOf(folded) };
+  return { id: rec.id, name, issueCount, folded, title: titleOf(name) };
 }
 
-// A series is named "Civil War (2006 - 2007)", and nobody types the years. Dropping the
-// trailing numbers leaves the part a reader actually means, so a search for "Civil War" can
-// tell the series called Civil War from the one called Civil War: Front Line. Creator names
-// carry no such suffix, so this is a no-op for them. A name that is nothing but numbers
-// ("2001 (1976)") keeps its folded form rather than collapsing to nothing.
-function titleOf(folded) {
-  const stripped = folded.replace(/(\s+\d+)+$/, '').trim();
-  return stripped || folded;
+// A series is named "Civil War (2006 - 2007)", and nobody types the years. Dropping the years
+// leaves the part a reader actually means, so a search for "Civil War" can tell the series
+// called Civil War from the one called Civil War: Front Line.
+//
+// This works from the raw name rather than the folded one, because folding has already thrown
+// away the parentheses that say which numbers are the year. Marvel names series after numbers
+// — 1602, 1985, 2099, 2020 — so a rule that drops trailing digits from "marvel 1602 2003 2004"
+// cannot stop before the imprint number, and "Marvel 1602" then claims to be the series called
+// Marvel. It outranked the actual Marvel (2020) that way. Taking the last parenthesised group
+// off the raw name instead is exact: only the suffix goes, whatever it contains.
+//
+// Nested parentheses are left alone rather than guessed at, and a name with no suffix (every
+// creator, and any series stored without one) simply folds unchanged.
+function titleOf(name) {
+  return foldName(String(name).replace(/\s*\([^()]*\)\s*$/, ''));
 }
 
 // Returns the usable entries plus how many records had to be dropped, so a caller can say the
@@ -114,7 +121,12 @@ function rank(entry, phrase) {
   if (entry.folded.startsWith(`${phrase} `)) return PREFIX;
   const at = entry.folded.indexOf(phrase);
   if (at < 0) return TERMS_ONLY;
-  return entry.folded[at - 1] === ' ' ? WORD : INSIDE;
+  // Position 0 is a word boundary. Without the first test it reads folded[-1], which is
+  // undefined, so a name that begins with what was typed was scored as a mid-word hit and lost
+  // to every name where the same letters merely followed a space. Only a partial word reaches
+  // here — a whole one is caught by the prefix rule above — so it showed while a reader was
+  // still typing.
+  return at === 0 || entry.folded[at - 1] === ' ' ? WORD : INSIDE;
 }
 
 // Ranked, capped, and honest about how much was left out.

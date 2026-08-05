@@ -116,6 +116,45 @@ test('a whole-word match outranks one buried inside another word', () => {
   assert.deepEqual(names(searchNames(entries, 'war')), ['Civil War (2006)', 'Spectacular Warlock (1975)']);
 });
 
+// The start of a name is a word boundary too. Testing the character before the match without
+// checking for position 0 reads index -1, which is undefined, so a name beginning with what was
+// typed was scored as a mid-word hit. The query is a partial first word on purpose: a whole one
+// is caught by the prefix rule earlier and never reaches this branch, which is why the bug only
+// showed while a reader was partway through typing. The larger issue count is deliberate too —
+// it is what the tiebreak hands the win to if the ranking is wrong.
+test('a match at the very start of a name is a word match, not a mid-word one', () => {
+  const { entries } = index([[1, 'Arvel Crynyd', 1], [2, 'Marvel Team', 99]]);
+  assert.deepEqual(names(searchNames(entries, 'arve')), ['Arvel Crynyd', 'Marvel Team']);
+});
+
+// Marvel names series after numbers — 1602, 1985, 2099, 2020 — so the title cannot be found by
+// dropping trailing digits: "Marvel 1602 (2003 - 2004)" loses its imprint number along with its
+// years and then claims to be the series called Marvel. It outranked the real Marvel (2020)
+// that way, and Spider-Man 2099 outranked Spider-Man.
+test('a numeric imprint is part of the title, not a year to be stripped', () => {
+  const { entries } = index([
+    [1, 'Marvel 1602 (2003 - 2004)', 8],
+    [2, 'Marvel (2020)', 6],
+    [3, 'Marvel 1985 (2008)', 6],
+  ]);
+  assert.equal(names(searchNames(entries, 'marvel'))[0], 'Marvel (2020)');
+
+  const spider = index([
+    [1, 'Spider-Man 2099 (1992 - 1996)', 46],
+    [2, 'Spider-Man (2016 - 2018)', 28],
+  ]);
+  assert.equal(names(searchNames(spider.entries, 'spider-man'))[0], 'Spider-Man (2016 - 2018)');
+});
+
+test('only the trailing parenthesis is treated as the year, wherever else one appears', () => {
+  const { entries } = index([
+    [1, 'Marvel (Team-Up) Annual (1976)', 3],
+    [2, 'Marvel (Team-Up) (1976)', 3],
+  ]);
+  // The suffix goes; a parenthesised group anywhere else is part of the name.
+  assert.equal(names(searchNames(entries, 'marvel team-up'))[0], 'Marvel (Team-Up) (1976)');
+});
+
 // Series names carry a year the reader is not expected to type, so "Civil War" has to be able
 // to tell the series called Civil War from the one called Civil War: Front Line.
 test('the series actually named the query comes before one that merely starts with it', () => {
@@ -233,4 +272,21 @@ test('"Civil War" finds the Civil War series, and a nonsense query finds nothing
   for (const item of civil.items) assert.match(foldName(item.name), /civil.*war|war.*civil/);
 
   assert.equal(searchNames(entries, 'zzqx not a marvel series').matched, 0);
+});
+
+// Marvel's numeric imprints are the case that makes a "strip the trailing numbers" title rule
+// wrong, and the real index is where it showed: "marvel" answered with Marvel 1602 above the
+// series actually called Marvel.
+test('"marvel" finds the series called Marvel, not Marvel 1602', async () => {
+  const url = new URL('../src/data/series-index.json', import.meta.url);
+  const { entries } = parseNameIndex(JSON.parse(await readFile(url, 'utf8')));
+
+  assert.equal(searchNames(entries, 'marvel', { limit: 40 }).items[0].name, 'Marvel (2020)');
+
+  // Every series actually named Spider-Man comes before any of the 2099 imprints.
+  const spider = names(searchNames(entries, 'spider-man', { limit: 40 }));
+  const lastPlain = spider.findLastIndex((n) => /^Spider-Man \(/.test(n));
+  const first2099 = spider.findIndex((n) => n.includes('2099'));
+  assert.ok(first2099 === -1 || lastPlain < first2099,
+    `Spider-Man 2099 (position ${first2099}) came before a Spider-Man series (position ${lastPlain})`);
 });
