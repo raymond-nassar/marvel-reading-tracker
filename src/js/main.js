@@ -257,7 +257,6 @@ function wireNav() {
     announceIfSaved(`Created list ${name}.`);
   });
 
-
   $('#btn-covers').addEventListener('click', () => setCovers(!settings.covers));
 }
 
@@ -1027,17 +1026,34 @@ function doManual() {
 
 // ------------------------------------------------------------------ curated orders
 
-let catalogCache = null;
+let catalogLoad = null;
 let catalogCategory = 'all';
 let catalogQuery = '';
+let catalogAnnounceTimer = null;
 
-async function loadCatalog() {
-  if (catalogCache) return catalogCache;
-  // Served from our own origin, so the catalog works with no internet connection.
-  const res = await fetch('./data/catalog.json', { cache: 'no-cache' });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  catalogCache = parseCatalog(await res.json());
-  return catalogCache;
+// Typing in the search box re-renders on every keystroke, so a slow first load could otherwise
+// start a second fetch while the first is still in flight and let the two renders finish out of
+// order. Sharing one promise keeps every render behind the same load; a failure clears it so
+// reopening the view can retry.
+function loadCatalog() {
+  catalogLoad ??= (async () => {
+    // Served from our own origin, so the catalog works with no internet connection.
+    const res = await fetch('./data/catalog.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return parseCatalog(await res.json());
+  })().catch((err) => {
+    catalogLoad = null;
+    throw err;
+  });
+  return catalogLoad;
+}
+
+// The catalog re-renders on every keystroke, so announcing each render would read a fresh result
+// count into a screen reader for every letter typed, and each announcement would cut off the one
+// before it. Waiting for a pause means the reader hears the result of what they actually typed.
+function announceCatalog(msg) {
+  clearTimeout(catalogAnnounceTimer);
+  catalogAnnounceTimer = setTimeout(() => announce(msg), 500);
 }
 
 async function renderCatalog() {
@@ -1045,6 +1061,9 @@ async function renderCatalog() {
   const report = $('#catalog-report');
   box.replaceChildren(el('p', { class: 'rail-hint', text: 'Loading the catalog…' }));
   report.replaceChildren();
+  // Tied to the query rather than to a successful load, so the button cannot be left behind
+  // offering to clear a search box that an empty or failed catalog still shows.
+  $('#catalog-clear').hidden = !catalogQuery;
 
   let catalog;
   try {
@@ -1075,7 +1094,6 @@ async function renderCatalog() {
   // The categories describe the whole catalog, not the current search, so searching never
   // makes a category vanish from the filter under the reader's cursor.
   renderCatalogFilters(catalog.lists);
-  $('#catalog-clear').hidden = !catalogQuery;
 
   // Filtering narrows which lists are shown; every list that is shown keeps the full detail a
   // reader needs to choose, so searching or switching categories never hides a description,
@@ -1089,7 +1107,7 @@ async function renderCatalog() {
       ? `No reading lists match “${catalogQuery}”${where}.`
       : `No reading lists${where || ' in that category'}.`;
     box.append(el('p', { class: 'rail-hint', text: msg }));
-    announce(msg);
+    announceCatalog(msg);
     return;
   }
 
@@ -1114,14 +1132,16 @@ async function renderCatalog() {
   if (!catalog.dropped) {
     const where = catalogCategory === 'all' ? '' : ` in ${categoryLabel(catalog.lists, catalogCategory)}`;
     const match = catalogQuery ? ` matching “${catalogQuery}”` : '';
-    announce(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${match}${where}.`);
+    announceCatalog(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${match}${where}.`);
   }
 }
 
 // Inside a group the story's name is already the heading, so the row leads with what actually
 // differs between the versions, the reading path, rather than repeating the title.
 function catalogRow(list, { variant = false } = {}) {
-  const meta = [typeLabel(list.type), `about ${list.count} issues`].filter(Boolean).join(' · ');
+  // The count is derived from the file the reader will actually import, so it is exact and
+  // does not need hedging.
+  const meta = [typeLabel(list.type), `${list.count} issue${list.count === 1 ? '' : 's'}`].filter(Boolean).join(' · ');
   const depth = depthLabel(list.depth);
   const title = variant ? variantLabel(list) : list.name;
   return el('div', { class: 'result' }, [
@@ -1150,9 +1170,10 @@ function catalogRow(list, { variant = false } = {}) {
   ]);
 }
 
-// Where an order came from and how old it is. A reader deciding whether to trust a curated
-// order needs both: the credit tells them who made it, the date tells them whether a recent
-// event could be missing from a snapshot.
+// Where an order came from and when it was pinned. A reader deciding whether to trust a curated
+// order needs both: the credit tells them who made it, the date bounds how recent it can be.
+// The stamp is when the vendor script fetched the order, not when its curator last revised it,
+// so it is labelled as a snapshot rather than claiming the list itself was updated that day.
 function attributionLine(list) {
   const label = sourceLabel(list);
   const href = sourceLink(list);
@@ -1171,7 +1192,7 @@ function attributionLine(list) {
       }, label)
       : el('span', { text: label }));
   }
-  if (updated) parts.push(el('span', { text: `${label ? ' · ' : ''}Updated ${updated}` }));
+  if (updated) parts.push(el('span', { text: `${label ? ' · ' : ''}Snapshot taken ${updated}` }));
   return el('p', { class: 'result-meta result-source' }, parts);
 }
 
