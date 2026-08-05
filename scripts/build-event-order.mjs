@@ -24,7 +24,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { RateLimiter } from '../src/js/lib/limiter.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -276,6 +276,27 @@ function fold(s) {
 function nameMatches(seriesName, eventName) {
   return fold(seriesName).includes(fold(eventName));
 }
+export { nameMatches };
+
+// The index may be column-oriented -- a `fields` header naming the columns, with rows as tuples
+// rather than records -- which is the shape the committed index actually uses. Reading `.name` off
+// a tuple yields undefined, which folds to a blank and matches no series, so an audit run against
+// an unmapped tuple file would match nothing, find nothing unaccounted, and report success having
+// checked nothing. Hence the header is honoured, and any shape that does not yield an id and a
+// name on every row is refused rather than scanned.
+export function normalizeSeriesRows(parsed) {
+  const fields = Array.isArray(parsed?.fields) ? parsed.fields : null;
+  const rows = Array.isArray(parsed) ? parsed : parsed?.items;
+  if (!Array.isArray(rows)) return { items: null, why: 'it has no array of series' };
+  const items = rows.map((rec) =>
+    Array.isArray(rec) && fields ? Object.fromEntries(fields.map((f, i) => [f, rec[i]])) : rec,
+  );
+  const usable = items.filter((s) => Number.isFinite(Number(s?.id)) && String(s?.name ?? '').trim());
+  if (usable.length !== items.length) {
+    return { items: null, why: `only ${usable.length} of ${items.length} rows carry an id and a name` };
+  }
+  return { items, why: null };
+}
 
 // PR #4 adds a byte-faithful src/data/series-index.json covering all 6,990 series; once that
 // merges this check costs zero requests beyond the one below. Until then it pages the API, which
@@ -319,19 +340,8 @@ async function localSeriesIndex(total) {
   if (!isTracked(path)) {
     return { items: null, why: 'it is not tracked by git, so nothing has reviewed it' };
   }
-  // The file may be column-oriented: a `fields` header naming the columns, with rows as tuples
-  // rather than records. Reading `.name` off a tuple yields undefined, which folds to a blank and
-  // matches no event, so an unrecognised shape must be refused rather than scanned.
-  const fields = Array.isArray(parsed?.fields) ? parsed.fields : null;
-  const rows = Array.isArray(parsed) ? parsed : parsed?.items;
-  if (!Array.isArray(rows)) return { items: null, why: 'it has no array of series' };
-  const items = rows.map((rec) =>
-    Array.isArray(rec) && fields ? Object.fromEntries(fields.map((f, i) => [f, rec[i]])) : rec,
-  );
-  const usable = items.filter((s) => Number.isFinite(Number(s?.id)) && String(s?.name ?? '').trim());
-  if (usable.length !== items.length) {
-    return { items: null, why: `only ${usable.length} of ${items.length} rows carry an id and a name` };
-  }
+  const { items, why } = normalizeSeriesRows(parsed);
+  if (!items) return { items: null, why };
   if (items.length !== total) {
     return { items: null, why: `it holds ${items.length} series but the catalogue has ${total}` };
   }
@@ -482,7 +492,11 @@ async function main() {
   if (!dryRun) console.log('\nNow run: npm run vendor -- --only=' + targets.map((e) => e.id).join(','));
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exitCode = 1;
-});
+// Importing this module must not build anything: the tests import EVENTS and the row reader to
+// check them without touching the network.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((err) => {
+    console.error(err);
+    process.exitCode = 1;
+  });
+}
