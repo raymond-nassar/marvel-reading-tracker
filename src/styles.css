@@ -370,6 +370,14 @@ progress { accent-color: var(--red); height: 6px; }
   color: var(--muted); font-size: .78rem; max-width: 76ch;
 }
 
+/* The footer states the bare minimum on every screen; the full disclaimers live in About,
+   one click away, so they are never more than a link from wherever the reader is. */
+.linkish {
+  background: none; border: 0; padding: 0; font: inherit; color: inherit;
+  text-decoration: underline; text-underline-offset: 2px; cursor: pointer;
+}
+.linkish:hover { color: var(--text); }
+
 /* ============================================================ preferences */
 
 @media (prefers-reduced-motion: reduce) {

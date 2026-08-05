@@ -228,7 +228,7 @@ function setCovers(on) {
 // ------------------------------------------------------------------ navigation
 
 function wireNav() {
-  for (const btn of document.querySelectorAll('.ri[data-view]')) {
+  for (const btn of document.querySelectorAll('[data-view]')) {
     btn.addEventListener('click', () => {
       showView(btn.dataset.view);
       if (btn.dataset.open) {
@@ -266,7 +266,7 @@ function wireNav() {
 // the next Tab continues from the old position and nothing announces where you now are.
 function showView(next, { focus = true } = {}) {
   view = next;
-  for (const name of ['read', 'catalog', 'progress', 'add', 'data']) {
+  for (const name of ['read', 'catalog', 'progress', 'add', 'data', 'about']) {
     $(`#view-${name}`).hidden = name !== next;
   }
   for (const btn of document.querySelectorAll('.ri[data-view]')) {

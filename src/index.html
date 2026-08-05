@@ -46,6 +46,7 @@
 
           <h2 class="rail-h">App</h2>
           <button type="button" class="ri" data-view="data">Backup &amp; settings</button>
+          <button type="button" class="ri" data-view="about">About this app</button>
         </nav>
 
         <div class="rail-foot">
@@ -349,13 +350,56 @@
             </div>
           </section>
 
+          <!-- ---------------------------------------- about view -->
+          <section id="view-about" class="view" hidden aria-labelledby="about-h">
+            <div class="head"><div class="head-left"><h1 id="about-h">About this app</h1>
+              <div class="sub">What this is, where the data comes from, and what it does not do.</div>
+            </div></div>
+
+            <div class="card card-static">
+              <h2>An unofficial fan project</h2>
+              <p class="rail-hint">
+                This is an unofficial fan project. It is not made by, endorsed by, or affiliated with
+                Marvel or The Walt Disney Company. Marvel, Marvel Unlimited, and all related names,
+                characters, and logos are trademarks of Marvel Characters, Inc.
+              </p>
+
+              <h3>Metadata and links only</h3>
+              <p class="rail-hint">
+                No comic content is stored, copied, proxied, or served. The app tracks which issues you
+                have read and links out to Marvel's own site and reader — reading an issue requires your
+                own Marvel Unlimited subscription. Cover images load directly from Marvel's own servers
+                and can be switched off.
+              </p>
+
+              <h3>Where the metadata comes from</h3>
+              <p class="rail-hint">
+                Issue, series, and creator metadata comes from the community
+                <a href="https://marvel.emreparker.com" target="_blank" rel="noopener noreferrer">marvel.emreparker.com</a>
+                API, built from
+                <a href="https://github.com/emreparker/marvel-comics" target="_blank" rel="noopener noreferrer">emreparker/marvel-comics</a>
+                (MIT). The snapshot ends in 2025, so very recent issues may be missing — you can still add
+                those by hand. The API base URL is configurable under Backup &amp; settings.
+              </p>
+
+              <h3>Curated reading orders</h3>
+              <p class="rail-hint">
+                Bundled reading orders are imported from community sources, not authored here. Each list in
+                the catalog shows its source and the date it was last updated.
+              </p>
+
+              <h3>Your data</h3>
+              <p class="rail-hint">
+                Everything lives in this browser, at this exact address. Nothing is uploaded, there is no
+                account, and no server sees your reading progress. Clearing site data for this address
+                erases it, so export a backup regularly.
+              </p>
+            </div>
+          </section>
+
           <footer class="app-footer">
-            Unofficial fan project — metadata and links only. No comic content is stored, copied, proxied,
-            or served; cover images load directly from Marvel's own servers and can be switched off.
-            Metadata from the community
-            <a href="https://marvel.emreparker.com" target="_blank" rel="noopener noreferrer">marvel.emreparker.com</a>
-            API (MIT). Marvel and all related names are trademarks of Marvel Characters, Inc.
-            Reading requires your own Marvel Unlimited subscription.
+            Unofficial fan project — metadata and links only.
+            <button type="button" class="linkish" data-view="about">Read the full disclaimers</button>
           </footer>
         </div>
       </main>
