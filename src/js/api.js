@@ -3,16 +3,26 @@
 
 import { RateLimiter, abortError } from './lib/limiter.js';
 import { ResponseCache } from './cache.js';
+import { DEFAULT_LIMIT, parseNameIndex, searchNames } from './lib/nameIndex.js';
 
 export const DEFAULT_BASE = 'https://marvel.emreparker.com/v1';
 export const MAX_LIMIT = 200; // limit=500 returns HTTP 422
 
+// Series and creators are searched locally against a vendored index, because the API ignores
+// `q` on those two routes. See lib/nameIndex.js and scripts/vendor-index.mjs.
+const INDEXES = {
+  series: { file: 'series-index.json', label: 'series' },
+  creators: { file: 'creators-index.json', label: 'creator' },
+};
+
 export class MarvelApi {
-  constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {} } = {}) {
+  constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {
     this.baseUrl = baseUrl.replace(/\/+$/, '');
     this.limiter = limiter ?? new RateLimiter();
     this.cache = cache ?? new ResponseCache({ baseUrl: this.baseUrl });
     this.onStatus = onStatus;
+    this.loadIndex = loadIndex ?? fetchNameIndex;
+    this.indexes = new Map();
   }
 
   get queueDepth() {
@@ -74,14 +84,50 @@ export class MarvelApi {
     return toIssue(data);
   }
 
-  async searchSeries(q, { limit = 50, signal } = {}) {
-    const data = await this.get(`/series?q=${encodeURIComponent(q)}&limit=${clampLimit(limit)}`, { signal });
-    return data.items ?? [];
+  // Series and creator search is local, not a request.
+  //
+  // `/series?q=…` and `/creators?q=…` accept the parameter and silently ignore it: the response
+  // is identical to the unfiltered one. Sending it anyway is what made "Add a whole series" and
+  // "Browse a creator" answer every query with the alphabetical head of the collection ("#O",
+  // "#X", "A CO" for a creator search of "Hickman"), each row wired to a one-click "Add all
+  // issues". So the two collections are vendored into src/data/ and filtered here instead.
+  //
+  // Unlike searchIssues these return an envelope rather than a bare array, because a local
+  // search knows how many names actually matched and when its snapshot was taken, and the view
+  // has to be able to say "40 of 312" rather than implying the other 272 do not exist.
+  async searchNameIndex(kind, q, { limit = DEFAULT_LIMIT } = {}) {
+    const index = await this.nameIndex(kind);
+    const { items, matched } = searchNames(index.entries, q, { limit });
+    return { items, matched, limit, generatedAt: index.generatedAt, total: index.total };
   }
 
-  async searchCreators(q, { limit = 50, signal } = {}) {
-    const data = await this.get(`/creators?q=${encodeURIComponent(q)}&limit=${clampLimit(limit)}`, { signal });
-    return data.items ?? [];
+  searchSeries(q, opts) {
+    return this.searchNameIndex('series', q, opts);
+  }
+
+  searchCreators(q, opts) {
+    return this.searchNameIndex('creators', q, opts);
+  }
+
+  // One shared load per index, so two searches started in quick succession cannot fetch the
+  // same file twice. A failure drops the entry so a later search retries rather than replaying
+  // the original error forever.
+  nameIndex(kind) {
+    let pending = this.indexes.get(kind);
+    if (!pending) {
+      pending = this.loadIndex(kind).then(parseNameIndex);
+      pending.catch(() => {
+        if (this.indexes.get(kind) === pending) this.indexes.delete(kind);
+      });
+      this.indexes.set(kind, pending);
+    }
+    return pending;
+  }
+
+  // Lets a view start the download when the reader opens the search, instead of making the
+  // first search wait for it. Failures are the caller's to ignore: this is only a head start.
+  warmNameIndex(kind) {
+    return this.nameIndex(kind).catch(() => null);
   }
 
   // Pages to completion. Guarded so a misbehaving `has_next` cannot loop forever.
@@ -145,6 +191,36 @@ export class ApiError extends Error {
     this.name = 'ApiError';
     this.status = status;
     this.transient = transient;
+  }
+}
+
+// Loads a vendored index from our own origin.
+//
+// The URL is resolved against this module rather than the page, so it does not depend on which
+// HTML file is open or how deep it sits. A failure is reported as a failure: falling back to an
+// unfiltered list would put us straight back to answering "Hickman" with "#O".
+async function fetchNameIndex(kind) {
+  const spec = INDEXES[kind];
+  if (!spec) throw new Error(`Unknown search index "${kind}".`);
+
+  const unavailable = (reason) => new ApiError(
+    `The ${spec.label} index could not be loaded (${reason}), so ${spec.label} search is unavailable. ` +
+    'Reload the page to try again.',
+    null,
+    false,
+  );
+
+  let res;
+  try {
+    res = await fetch(new URL(`../data/${spec.file}`, import.meta.url), { cache: 'no-cache' });
+  } catch {
+    throw unavailable('it could not be fetched');
+  }
+  if (!res.ok) throw unavailable(`HTTP ${res.status}`);
+  try {
+    return await res.json();
+  } catch {
+    throw unavailable('it is not valid JSON');
   }
 }
 

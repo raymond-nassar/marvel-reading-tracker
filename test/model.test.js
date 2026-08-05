@@ -5,7 +5,7 @@ import {
   removeFromList, moveItem, moveItemTo, markRead, toggleRead, isRead, markManyRead,
   setOverride, upNext, listProgress, seriesProgress, listItems, pendingIssueIds,
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
-  normalizeCover, coverUrl, SCHEMA_VERSION, MAX_NAME,
+  normalizeCover, coverUrl, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
 } from '../src/js/lib/model.js';
 
 const issue = (id, over = {}) => ({
@@ -255,6 +255,41 @@ test('names and descriptions are length-capped', () => {
     const { state: after, listId: copyId } = duplicateList(s, a);
     assert.equal(after.lists[copyId].description, 'From Comic Book Herald.');
     assert.equal(after.active, a, 'the model must leave switching lists to the caller');
+  });
+
+  // createList and renameList both clamp, so an over-long description can only reach the store
+  // from outside the model: a restored backup, or state written before the limit existed.
+  // Copying it verbatim would let each duplication carry the oversized value forward instead of
+  // closing the hole. Shipped in 318d2ea with no test.
+  test('a duplicate clamps a description that arrived over-long', () => {
+    const { state, id } = withList([1]);
+    const long = 'd'.repeat(MAX_DESCRIPTION + 500);
+    const restored = {
+      ...state,
+      lists: { ...state.lists, [id]: { ...state.lists[id], description: long } },
+    };
+
+    const { state: after, listId: copyId } = duplicateList(restored, id);
+    assert.equal(after.lists[copyId].description.length, MAX_DESCRIPTION);
+    assert.equal(after.lists[copyId].description, long.slice(0, MAX_DESCRIPTION));
+    // Duplicating is not a repair operation: the original is left exactly as it was found.
+    assert.equal(after.lists[id].description, long);
+
+    // Copying a copy must not reintroduce it either.
+    const second = duplicateList(after, copyId);
+    assert.equal(second.state.lists[second.listId].description.length, MAX_DESCRIPTION);
+  });
+
+  test('a duplicate of a list with no description gets an empty one, not "undefined"', () => {
+    const { state, id } = withList([1]);
+    for (const missing of [undefined, null, 0]) {
+      const bare = {
+        ...state,
+        lists: { ...state.lists, [id]: { ...state.lists[id], description: missing } },
+      };
+      const { state: after, listId: copyId } = duplicateList(bare, id);
+      assert.equal(after.lists[copyId].description, '', `description ${missing} became a string`);
+    }
   });
 
 // ------------------------------------------------------------------ read state
