@@ -317,6 +317,25 @@ test('a last-updated date is shown only when it is a real date', () => {
   assert.equal(updatedLabel({}), null);
 });
 
+// The stamp is a UTC instant, so it has to render as the same day everywhere. Formatted in
+// local time, an early-morning UTC stamp slips to the previous day across the Americas, and
+// two readers comparing the same catalog would see different dates.
+test('the snapshot date is the same day in every timezone', () => {
+  const early = { updatedAt: '2026-08-04T00:30:00.000Z' };
+  const late = { updatedAt: '2026-08-04T23:30:00.000Z' };
+  const saved = process.env.TZ;
+  try {
+    for (const tz of ['UTC', 'America/Los_Angeles', 'America/New_York', 'Asia/Tokyo', 'Pacific/Kiritimati']) {
+      process.env.TZ = tz;
+      assert.equal(updatedLabel(early, 'en-GB'), '4 Aug 2026', `early stamp in ${tz}`);
+      assert.equal(updatedLabel(late, 'en-GB'), '4 Aug 2026', `late stamp in ${tz}`);
+    }
+  } finally {
+    if (saved == null) delete process.env.TZ;
+    else process.env.TZ = saved;
+  }
+});
+
 test('every bundled catalog entry carries attribution and a last-updated date', async () => {
   const url = new URL('../src/data/catalog.json', import.meta.url);
   const { lists } = parseCatalog(JSON.parse(await readFile(url, 'utf8')));

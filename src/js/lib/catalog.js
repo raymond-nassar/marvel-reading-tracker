@@ -65,12 +65,17 @@ export function sourceLabel(list) {
 
 // A curated order is a snapshot, so its age is the reader's only signal that a recent event
 // may be missing. An unparseable date is treated as no date rather than shown as "Invalid Date".
+//
+// The stamp records the UTC instant the order was vendored, so it is formatted in UTC too.
+// Formatting it in the reader's zone would render the same snapshot as two different days
+// depending on where they are: a 06:14Z stamp reads as the previous day anywhere west of
+// UTC-6:14, which is all of the Americas.
 export function updatedLabel(list, locale) {
   const s = str(list?.updatedAt);
   if (!s) return null;
   const d = new Date(s);
   if (Number.isNaN(d.getTime())) return null;
-  return d.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+  return d.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 }
 
 const strings = (v) => (Array.isArray(v) ? [...new Set(v.map(str).filter(Boolean))] : []);
