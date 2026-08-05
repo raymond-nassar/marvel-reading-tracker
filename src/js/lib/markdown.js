@@ -34,13 +34,18 @@ export function isSafeMarvelUrl(url) {
 }
 
 // Returns { entries, unresolved, headings }
-// entry: { issueId|null, title, url|null, read }
+// entry: { issueId|null, title, url|null, read, index }
+//
+// `index` is the item's position in the checklist, counted across both arrays. Splitting a
+// list into resolved and unresolved loses the reading order between them, and reading order is
+// the whole point of these files, so each item carries where it came from.
 export function parseChecklist(text) {
   const entries = [];
   const unresolved = [];
   const headings = [];
   if (typeof text !== 'string') return { entries, unresolved, headings };
 
+  let index = 0;
   for (const rawLine of text.split(/\r?\n/)) {
     const line = rawLine.replace(/\u00a0/g, ' ');
     if (!line.trim()) continue;
@@ -80,12 +85,14 @@ export function parseChecklist(text) {
 
     if (!title) continue;
     const issueId = issueIdFromUrl(url);
+    const at = index;
+    index += 1;
 
     if (issueId != null) {
-      entries.push({ issueId, title, url: url, read });
+      entries.push({ issueId, title, url: url, read, index: at });
     } else {
       // A title we could not map to a Marvel issue id. Never silently dropped.
-      unresolved.push({ title, url: url && isSafeMarvelUrl(url) ? url : null, read });
+      unresolved.push({ title, url: url && isSafeMarvelUrl(url) ? url : null, read, index: at });
     }
   }
 

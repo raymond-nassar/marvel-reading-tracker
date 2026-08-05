@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  createEmptyState, createList, deleteList, renameList, setActive, addIssuesToList,
+  createEmptyState, createList, deleteList, duplicateList, renameList, setActive, addIssuesToList,
   removeFromList, moveItem, moveItemTo, markRead, toggleRead, isRead, markManyRead,
   setOverride, upNext, listProgress, seriesProgress, listItems, pendingIssueIds,
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
-  normalizeCover, coverUrl, SCHEMA_VERSION,
+  normalizeCover, coverUrl, SCHEMA_VERSION, MAX_NAME,
 } from '../src/js/lib/model.js';
 
 const issue = (id, over = {}) => ({
@@ -171,6 +171,91 @@ test('names and descriptions are length-capped', () => {
   assert.equal(l.name.length, 200);
   assert.equal(l.description.length, 2000);
 });
+
+  // ------------------------------------------------------------------ duplicating
+
+  test('a duplicate copies the order and keeps sharing read progress', () => {
+    const { state, id } = withList([1, 2, 3]);
+    const read = markRead(state, 2, true);
+    const { state: after, listId: copyId } = duplicateList(read, id);
+
+    assert.notEqual(copyId, id, 'the copy needs its own id');
+    assert.deepEqual(after.lists[copyId].itemIds, [1, 2, 3], 'order must survive the copy');
+    assert.equal(after.lists[copyId].name, 'L (copy)');
+    // The acceptance criterion: read state is global, so progress is shared rather than cloned.
+    assert.ok(isRead(after, 2));
+    assert.deepEqual(listProgress(after, copyId), { read: 1, total: 3 });
+    assert.deepEqual(listProgress(after, id), { read: 1, total: 3 });
+
+    // ...and marking read through the copy is visible in the original.
+    const later = markRead(after, 1, true);
+    assert.deepEqual(listProgress(later, id), { read: 2, total: 3 });
+  });
+
+  test('editing a duplicate never disturbs the original order', () => {
+    const { state, id } = withList([1, 2, 3]);
+    const { state: after, listId: copyId } = duplicateList(state, id);
+
+    // A shared itemIds reference would make both of these leak across lists.
+    const trimmed = removeFromList(after, copyId, 2);
+    assert.deepEqual(trimmed.lists[copyId].itemIds, [1, 3]);
+    assert.deepEqual(trimmed.lists[id].itemIds, [1, 2, 3], 'the original must keep every issue');
+
+    const moved = moveItem(trimmed, id, 1, 2);
+    assert.deepEqual(moved.lists[id].itemIds, [2, 3, 1]);
+    assert.deepEqual(moved.lists[copyId].itemIds, [1, 3], 'the copy must keep its own order');
+  });
+
+  test('the copy sits next to its original rather than at the end', () => {
+    let s = createList(createEmptyState(), { name: 'A' });
+    s = createList(s, { name: 'B' });
+    const [a, b] = s.listOrder;
+    const { state: after, listId: copyId } = duplicateList(s, a);
+    assert.deepEqual(after.listOrder, [a, copyId, b]);
+  });
+
+  test('duplicating repeatedly produces names you can tell apart', () => {
+    const { state, id } = withList([1], 'Civil War');
+    const first = duplicateList(state, id);
+    const second = duplicateList(first.state, id);
+    const third = duplicateList(second.state, id);
+    assert.equal(first.state.lists[first.listId].name, 'Civil War (copy)');
+    assert.equal(second.state.lists[second.listId].name, 'Civil War (copy 2)');
+    assert.equal(third.state.lists[third.listId].name, 'Civil War (copy 3)');
+  });
+
+  // Appending the suffix and slicing afterwards would cut it straight back off, leaving a copy
+  // indistinguishable from the list it came from.
+  test('a maximally long name still yields a distinguishable copy', () => {
+    const { state, id } = withList([1], 'x'.repeat(MAX_NAME));
+    const { state: after, listId: copyId } = duplicateList(state, id);
+    const copy = after.lists[copyId];
+    assert.ok(copy.name.length <= MAX_NAME);
+    assert.ok(copy.name.endsWith(' (copy)'));
+    assert.notEqual(copy.name, after.lists[id].name);
+  });
+
+  test('an explicit name is honoured and capped, and a missing list is a no-op', () => {
+    const { state, id } = withList([1, 2]);
+    const named = duplicateList(state, id, { name: 'Essentials only' });
+    assert.equal(named.state.lists[named.listId].name, 'Essentials only');
+
+    const long = duplicateList(state, id, { name: 'z'.repeat(500) });
+    assert.equal(long.state.lists[long.listId].name.length, MAX_NAME);
+
+    const missing = duplicateList(state, 'nope');
+    assert.equal(missing.listId, null);
+    assert.equal(missing.state, state, 'a missing list must not produce a new state object');
+  });
+
+  test('duplicating carries the description and does not steal focus', () => {
+    let s = createList(createEmptyState(), { name: 'A', description: 'From Comic Book Herald.' });
+    const [a] = s.listOrder;
+    s = setActive(s, a);
+    const { state: after, listId: copyId } = duplicateList(s, a);
+    assert.equal(after.lists[copyId].description, 'From Comic Book Herald.');
+    assert.equal(after.active, a, 'the model must leave switching lists to the caller');
+  });
 
 // ------------------------------------------------------------------ read state
 

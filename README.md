@@ -14,6 +14,7 @@ you left off in a run. This closes that gap.
 - **One click into the Marvel Unlimited web reader** for the next issue
 - Badge every issue with whether it looks like it is **on Unlimited yet**
 - Import curated **reading orders** (Markdown checklists, or plain issue titles)
+- **Duplicate a list** to try a different path through an event, keeping shared read progress
 - Export to Markdown / JSON, and restore from backup
 
 It is a static site: no install, no account, no build step. Your reading progress is stored
@@ -63,9 +64,14 @@ MIT-licensed and self-hostable, so you can point it at your own copy.
 
 Curated lists are data, not code. To add one, append an entry to
 [`src/data/curated-lists.json`](src/data/curated-lists.json) and run `npm run vendor`. The
-vendor script fetches the upstream order, pins the enriched issue data into `src/data/`, and
+vendor script loads the order, pins the enriched issue data into `src/data/`, and
 regenerates `src/data/catalog.json`, so the new list appears in the catalog. No application
 code changes.
+
+An order comes from exactly one of two places: `sourceUrl` fetches it from an upstream
+publisher over https, or `sourceFile` reads a checklist kept in
+[`src/data/orders/`](src/data/orders). The second is for orders compiled by hand, which would
+otherwise have to be published somewhere else first just to be vendored back in.
 
 Each entry needs:
 
@@ -75,9 +81,10 @@ Each entry needs:
 | `name`, `description` | What a reader sees in the catalog |
 | `type` | `event`, `character-run`, `creator-run`, or `era` |
 | `depth` | `essential`, `complete`, or `tie-ins` |
-| `sourceUrl` | `https://` URL of the upstream Markdown checklist to vendor |
+| `sourceUrl` | `https://` URL of the upstream Markdown checklist to vendor. Mutually exclusive with `sourceFile` |
+| `sourceFile` | Plain `*.md` name in `src/data/orders/`, for an order authored here. Mutually exclusive with `sourceUrl` |
 | `sourcePage` | Human-readable attribution link (defaults to `sourceUrl`) |
-| `sourceLicense` | Licence of the upstream order |
+| `sourceLicense` | Licence of the upstream order, or how a local one was compiled |
 | `out` | Plain `*.json` file name to write into `src/data/` |
 | `characters`, `keywords` | Extra terms the catalog search should match |
 | `group`, `groupName`, `variant` | Optional. Ties this order to a story that has more than one reading path, so the catalog groups the versions under `groupName` and labels each with its `variant` |
@@ -85,6 +92,14 @@ Each entry needs:
 
 An entry that is missing or malformed fails the vendor run with the reason, so a broken
 definition does not ship as a quietly shorter catalog.
+
+`npm run vendor -- --only=<id>` rebuilds a single list. Re-vendoring everything to add one
+costs hundreds of API calls and rewrites the snapshot date on files that did not change.
+Skipped lists keep their pinned JSON, and their catalog entries are rebuilt from it.
+
+A checklist line with no Marvel link is vendored as a placeholder rather than dropped, so the
+reading order stays complete and tickable. Placeholders cannot be opened, and the import
+notice says how many there are.
 
 ## Running it
 

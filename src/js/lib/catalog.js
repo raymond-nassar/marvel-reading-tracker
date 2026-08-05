@@ -88,6 +88,15 @@ export function safeFile(v) {
   return /^[A-Za-z0-9._-]+\.json$/.test(s) && !s.startsWith('.') ? s : null;
 }
 
+// The markdown for an order authored in this repository is read from a fixed directory at
+// vendor time. It is validated the same way as the output name so a manifest can never reach
+// outside that directory, whatever it asks for.
+export function safeOrderFile(v) {
+  const s = str(v);
+  if (!s) return null;
+  return /^[A-Za-z0-9._-]+\.md$/.test(s) && !s.startsWith('.') ? s : null;
+}
+
 function normalizeEntry(raw) {
   if (!raw || typeof raw !== 'object') return null;
   const id = str(raw.id);

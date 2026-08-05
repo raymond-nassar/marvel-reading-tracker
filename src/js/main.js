@@ -5,7 +5,7 @@
 // Cover art is optional everywhere: `body.nocovers` swaps every image for a typographic tile.
 
 import {
-  createList, deleteList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
+  createList, deleteList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
   setOverride, pendingIssueIds, createEmptyState, coverUrl,
 } from './lib/model.js';
@@ -338,6 +338,28 @@ function wireReading() {
     if (!confirm(`Delete "${list.name}"? Your read progress is kept; only the list is removed.`)) return;
     store.update((s) => deleteList(s, id));
     announceIfSaved('List deleted. Reading progress was kept.');
+  });
+
+  $('#btn-duplicate-list').addEventListener('click', () => {
+    const id = activeListId();
+    const list = store.state.lists[id];
+    if (!list) return;
+    // The updater runs exactly once, before the write, so capturing the id here is safe. It is
+    // still only trustworthy after lastUpdateOk confirms the write survived.
+    let copyId = null;
+    const next = store.update((s) => {
+      const res = duplicateList(s, id);
+      copyId = res.listId;
+      return res.state;
+    });
+    if (!store.lastUpdateOk || !copyId) {
+      return announce('That copy could not be saved, so nothing changed.');
+    }
+    store.update((s) => setActive(s, copyId));
+    // Saying where you landed matters more than usual here: the rail now holds two lists with
+    // near-identical names, and the shared read progress surprises people who expect a copy to
+    // start empty.
+    announceIfSaved(`Duplicated as ${next.lists[copyId].name}. You are now editing the copy, and read progress stays shared with the original.`);
   });
 
   $('#btn-export-md').addEventListener('click', exportMarkdown);
@@ -1287,7 +1309,17 @@ async function importCurated(file) {
     }
     store.update((s) => setActive(s, listId));
     showView('read');
-    announce(`Imported ${order.name}: ${added} issues. Any issues you had already read stay read.`);
+
+    // Some curated orders include issues Marvel has not published data for yet. They are
+    // imported as placeholders so the reading order stays complete and tickable; saying so
+    // is the difference between a known gap and a list that looks wrong for no reason.
+    const placeholders = Number(order.placeholders) || 0;
+    const parts = [`Imported ${order.name}: ${added} issues.`];
+    if (placeholders) {
+      parts.push(`${placeholders} of them have no Marvel Unlimited link yet and cannot be opened.`);
+    }
+    parts.push('Any issues you had already read stay read.');
+    announce(parts.join(' '));
   } catch (err) {
     alert(`Could not load that curated order: ${err.message}`);
   }

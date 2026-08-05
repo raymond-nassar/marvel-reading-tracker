@@ -43,6 +43,25 @@ test('lines without a Marvel issue link are surfaced, never dropped', () => {
   assert.equal(unresolved[1].url, null, 'a non-Marvel URL must not be carried through');
 });
 
+test('every item records its position so reading order survives the resolved/unresolved split', () => {
+  const { entries, unresolved } = parseChecklist([
+    '# Heading is not an item',
+    '- [ ] [First](https://www.marvel.com/comics/issue/1/first)',
+    '- [ ] Not Linked Yet',
+    '',
+    'Some prose that is not an item.',
+    '- [x] [Third](https://www.marvel.com/comics/issue/2/third)',
+    '- [ ] Also Not Linked',
+  ].join('\n'));
+
+  assert.deepEqual(entries.map((e) => e.index), [0, 2]);
+  assert.deepEqual(unresolved.map((u) => u.index), [1, 3]);
+
+  // Merging on index has to reproduce the file, or a vendored order would read out of sequence.
+  const merged = [...entries, ...unresolved].sort((a, b) => a.index - b.index).map((i) => i.title);
+  assert.deepEqual(merged, ['First', 'Not Linked Yet', 'Third', 'Also Not Linked']);
+});
+
 test('accepts bullets, asterisks, indentation and non-breaking spaces', () => {
   const { entries } = parseChecklist([
     '  - [ ] [A](https://www.marvel.com/comics/issue/1/a)',
