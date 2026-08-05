@@ -133,6 +133,13 @@ filter across all 6,990 series and fails if any series it matches is in neither 
 nor the rejection record. Run it before regenerating an order. It does not assert the reverse —
 the name filter cannot find series Marvel never branded, which is the documented gap above.
 
+The audit pages the API for the catalogue, and will read a committed `src/data/series-index.json`
+instead once one exists. That file is used only when it is tracked by git and covers the whole
+catalogue; an untracked, short or malformed index is refused out loud and the API is paged
+instead. A shortcut that cannot be checked is a way to be quietly wrong — an index holding three
+series still matches something for every event, so it would pass a bare "did it match anything"
+test while leaving almost the entire catalogue unaudited.
+
 The output is committed, so an order arrives for review as a diff, and re-running the script
 only changes the events whose upstream metadata changed.
 

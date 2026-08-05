@@ -22,6 +22,7 @@
 // run belong to an event, and this script does not make judgement calls. Each list says so.
 
 import { readFile, writeFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { RateLimiter } from '../src/js/lib/limiter.js';
@@ -277,10 +278,6 @@ function nameMatches(seriesName, eventName) {
 }
 
 // PR #4 adds a byte-faithful src/data/series-index.json covering all 6,990 series; once that
-// merges this check costs zero requests. Until then it pages the API, which is 35 requests at the
-// maximum page size of 200 (limit=201 returns 422). Do not read the session-cache copy of this
-// index: it lost characters to an encoding round-trip and is fit for choosing ids, nothing else.
-// PR #4 adds a byte-faithful src/data/series-index.json covering all 6,990 series; once that
 // merges this check costs zero requests beyond the one below. Until then it pages the API, which
 // is 35 requests at the maximum page size of 200 (limit=201 returns 422). Do not read the
 // session-cache copy of this index: it lost characters to an encoding round-trip and is fit for
@@ -290,11 +287,25 @@ function nameMatches(seriesName, eventName) {
 // wrong: an index that is stale, truncated, or in an unexpected shape reads as a catalogue with
 // nothing in it, and an audit that sees nothing reports nothing to fix. So the file is used only
 // when it can be shown to cover the whole catalogue, and is otherwise refused out loud.
+//
+// It must also be tracked by git. Presence on disk is not provenance: an untracked file is one
+// nobody reviewed, and preferring it would let anything that writes to the worktree decide what
+// this audit reads. Requiring `git ls-files` to know it means the shortcut switches on when the
+// index is merged into the repo, which is the event the paragraph above is actually waiting for.
 async function seriesTotal() {
   const body = await getJson(`${API}/series?limit=1`);
   const total = Number(body?.total);
   if (!Number.isFinite(total) || total <= 0) throw new Error('could not read the series total from the API');
   return total;
+}
+
+function isTracked(path) {
+  try {
+    execFileSync('git', ['ls-files', '--error-unmatch', path], { cwd: ROOT, stdio: 'ignore' });
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 async function localSeriesIndex(total) {
@@ -304,6 +315,9 @@ async function localSeriesIndex(total) {
     parsed = JSON.parse((await readFile(path, 'utf8')).replace(/^\uFEFF/, ''));
   } catch (err) {
     return { items: null, why: err.code === 'ENOENT' ? null : `it could not be parsed (${err.message})` };
+  }
+  if (!isTracked(path)) {
+    return { items: null, why: 'it is not tracked by git, so nothing has reviewed it' };
   }
   // The file may be column-oriented: a `fields` header naming the columns, with rows as tuples
   // rather than records. Reading `.name` off a tuple yields undefined, which folds to a blank and
