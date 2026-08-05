@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile, readdir } from 'node:fs/promises';
 import { EVENTS, normalizeSeriesRows, nameMatches } from '../scripts/build-event-order.mjs';
 
 // The completeness audit reads a series index that may be column-oriented, and a reader that
@@ -72,4 +73,44 @@ test('every event declares its main series among the series it includes', () => 
   for (const event of EVENTS) {
     assert.ok(event.series.includes(event.main), `${event.id}: main series ${event.main} is not included`);
   }
+});
+
+// Marvel returns some titles with doubled or leading whitespace ("King In Black: Black Panther
+// (2021)" arrives with two spaces, and the series catalogue contains a leading-space name). Both
+// generators normalise it on ingest, which means the committed text deliberately differs from the
+// raw upstream string. That is the fix, not corruption -- so this pins it, because the obvious way
+// to "repair" an apparent mismatch against the API is to put the doubled space back.
+const ORDERS = new URL('../src/data/orders/', import.meta.url);
+const PINNED = ['house_of_m', 'civil_war', 'annihilation', 'secret_invasion', 'king_in_black'];
+
+test('committed checklists carry no doubled whitespace', async () => {
+  let lines = 0;
+  for (const file of await readdir(ORDERS)) {
+    const text = await readFile(new URL(file, ORDERS), 'utf8');
+    for (const line of text.split('\n')) {
+      lines += 1;
+      assert.ok(!/\S\s{2,}\S/.test(line), `${file}: doubled whitespace in ${JSON.stringify(line)}`);
+    }
+  }
+  // A reader that finds nothing would otherwise pass this without checking anything.
+  assert.ok(lines > 100, `expected the committed orders to have content, read ${lines} lines`);
+});
+
+test('pinned titles are trimmed and free of doubled whitespace', async () => {
+  let checked = 0;
+  for (const name of PINNED) {
+    const url = new URL(`../src/data/${name}.json`, import.meta.url);
+    const { items } = JSON.parse(await readFile(url, 'utf8'));
+    assert.ok(Array.isArray(items) && items.length, `${name}: no items to check`);
+    for (const item of items) {
+      for (const key of ['title', 'seriesName']) {
+        const value = item[key];
+        if (typeof value !== 'string') continue;
+        checked += 1;
+        assert.equal(value, value.trim(), `${name}: untrimmed ${key} ${JSON.stringify(value)}`);
+        assert.ok(!/\s{2,}/.test(value), `${name}: doubled whitespace in ${key} ${JSON.stringify(value)}`);
+      }
+    }
+  }
+  assert.equal(checked, 300, `expected 150 items with a title and a series name, checked ${checked} strings`);
 });
