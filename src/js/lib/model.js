@@ -149,7 +149,7 @@ export function duplicateList(state, listId, { name } = {}) {
   const copy = {
     id,
     name: name ? String(name).slice(0, MAX_NAME) : copyName(state, source.name),
-    description: source.description,
+    description: String(source.description || '').slice(0, MAX_DESCRIPTION),
     created: Date.now(),
     itemIds: [...source.itemIds],
   };
