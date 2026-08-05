@@ -104,12 +104,15 @@ export function getIssue(state, issueId) {
 
 // ---------------------------------------------------------------- lists
 
+export const MAX_NAME = 200;
+export const MAX_DESCRIPTION = 2000;
+
 export function createList(state, { name, description = '', id = newId(), itemIds = [] } = {}) {
   const listId = id;
   const list = {
     id: listId,
-    name: String(name || 'Untitled list').slice(0, 200),
-    description: String(description || '').slice(0, 2000),
+    name: String(name || 'Untitled list').slice(0, MAX_NAME),
+    description: String(description || '').slice(0, MAX_DESCRIPTION),
     created: Date.now(),
     itemIds: dedupe(itemIds.map(Number).filter((n) => Number.isInteger(n) && n !== 0)),
   };
@@ -124,9 +127,53 @@ export function createList(state, { name, description = '', id = newId(), itemId
 export function renameList(state, listId, name, description) {
   const list = state.lists[listId];
   if (!list) return state;
-  const next = { ...list, name: String(name ?? list.name).slice(0, 200) };
-  if (description !== undefined) next.description = String(description).slice(0, 2000);
+  const next = { ...list, name: String(name ?? list.name).slice(0, MAX_NAME) };
+  if (description !== undefined) next.description = String(description).slice(0, MAX_DESCRIPTION);
   return { ...state, lists: { ...state.lists, [listId]: next } };
+}
+
+// Returns { state, listId } because the caller needs the copy's id, and the usual trick of
+// reading the last entry of listOrder does not work here: the copy is inserted next to its
+// original rather than appended.
+//
+// Read progress is deliberately NOT copied. It is global, keyed by issue id (see the note at
+// the top of this file), so the copy shares it with the original automatically: marking an
+// issue read in either one shows it read in both. That is the point of duplicating an event
+// order to try a different path through it, and it is why the copy needs its own itemIds
+// array rather than a shared reference, so reordering one list never disturbs the other.
+export function duplicateList(state, listId, { name } = {}) {
+  const source = state.lists[listId];
+  if (!source) return { state, listId: null };
+
+  const id = newId();
+  const copy = {
+    id,
+    name: name ? String(name).slice(0, MAX_NAME) : copyName(state, source.name),
+    description: source.description,
+    created: Date.now(),
+    itemIds: [...source.itemIds],
+  };
+
+  const listOrder = [...state.listOrder];
+  const at = listOrder.indexOf(listId);
+  listOrder.splice(at < 0 ? listOrder.length : at + 1, 0, id);
+
+  return {
+    state: { ...state, lists: { ...state.lists, [id]: copy }, listOrder, active: state.active ?? id },
+    listId: id,
+  };
+}
+
+// "X" becomes "X (copy)", then "X (copy 2)" on the next duplication, so repeated copies stay
+// tellable apart in the rail. The base is trimmed to make room for the suffix: appending first
+// and slicing afterwards would cut the suffix off a maximally long name, producing a copy whose
+// name was identical to the original.
+function copyName(state, base) {
+  const taken = new Set(Object.values(state.lists).map((l) => l.name));
+  const fit = (suffix) => base.slice(0, MAX_NAME - suffix.length).trimEnd() + suffix;
+  let candidate = fit(' (copy)');
+  for (let n = 2; taken.has(candidate) && n <= 999; n += 1) candidate = fit(` (copy ${n})`);
+  return candidate;
 }
 
 export function deleteList(state, listId) {

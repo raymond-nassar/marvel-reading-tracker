@@ -14,6 +14,7 @@ you left off in a run. This closes that gap.
 - **One click into the Marvel Unlimited web reader** for the next issue
 - Badge every issue with whether it looks like it is **on Unlimited yet**
 - Import curated **reading orders** (Markdown checklists, or plain issue titles)
+- **Duplicate a list** to try a different path through an event, keeping shared read progress
 - Export to Markdown / JSON, and restore from backup
 
 It is a static site: no install, no account, no build step. Your reading progress is stored
