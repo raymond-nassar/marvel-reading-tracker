@@ -194,8 +194,8 @@ async function checkNameSearchStillMissing() {
   // lib/nameIndex.js. If any of these four checks fails, upstream has grown real search: delete
   // the vendored indexes and the local filtering and go back to live queries.
   for (const [path, q] of [['/series', 'Civil'], ['/creators', 'Hickman']]) {
-    const plain = await get(`${path}?limit=3`);
-    const filtered = await get(`${path}?limit=3&q=${q}`);
+    const plain = await getAnswered(`${path}?limit=3`);
+    const filtered = await getAnswered(`${path}?limit=3&q=${q}`);
     const a = plain.body?.items ?? [];
     const b = filtered.body?.items ?? [];
     if (!a.length || !b.length) {
@@ -217,10 +217,30 @@ async function checkNameSearchStillMissing() {
 
   // The other half of the same finding: there is no dedicated search route to use instead.
   for (const path of ['/search/series', '/search/creators']) {
-    const res = await get(`${path}?q=test&limit=3`);
+    const res = await getAnswered(`${path}?q=test&limit=3`);
     check(`${path} still does not exist`, res.status === 404,
-      res.status === 404 ? 'HTTP 404, as when the local index was introduced' : `HTTP ${res.status}: this route may now exist, which would replace the vendored index`);
+      res.status === 404
+        ? 'HTTP 404, as when the local index was introduced'
+        : unanswered(res)
+          ? `HTTP ${res.status}: the API never answered, so this says nothing either way`
+          : `HTTP ${res.status}: this route may now exist, which would replace the vendored index`);
   }
+}
+
+// A rate-limited or broken response carries no information about what the API supports. Reading
+// one as "this route may now exist" would be the same confidently wrong answer this section
+// exists to catch — it is how a run of this script once reported that upstream had grown a
+// search endpoint when it had only run out of budget. Wait the limit out and ask again.
+const unanswered = (res) => res.status === 429 || res.status >= 500;
+
+async function getAnswered(path, tries = 3) {
+  let res = await get(path);
+  for (let i = 1; i < tries && unanswered(res); i += 1) {
+    const after = Number(res.headers.get('retry-after'));
+    await sleep(Number.isFinite(after) && after > 0 ? Math.min(after, 60) * 1000 : 20_000);
+    res = await get(path);
+  }
+  return res;
 }
 
 // --------------------------------------------------------------------------- run

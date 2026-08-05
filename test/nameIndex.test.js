@@ -190,6 +190,16 @@ test('an unknown issue count sorts below a known one rather than ahead of it', (
   assert.deepEqual(names(searchNames(entries, 'run')), ['Beta Run', 'Alpha Run']);
 });
 
+// "We do not know how many issues this adds" and "this adds nothing" are different answers, and
+// parsing keeps them apart. Sorting has to as well, or the distinction is lost at the point the
+// reader actually sees it. There is a real series with a count of zero: 14015, Wolverine Saga.
+// The unknown one is given the shorter name on purpose, so the name-length tiebreak would hand
+// it the win if the counts were still being treated as equal.
+test('a count of zero is still a known count, and outranks an unknown one', () => {
+  const { entries } = index([[1, 'A Run', null], [2, 'Beta Run', 0]]);
+  assert.deepEqual(names(searchNames(entries, 'run')), ['Beta Run', 'A Run']);
+});
+
 test('the same query renders the same order twice, even for identical records', () => {
   const rows = [[1, 'Same Name (2001)', 3], [2, 'Same Name (2001)', 3], [3, 'Same Name (2001)', 3]];
   const { entries } = index(rows);

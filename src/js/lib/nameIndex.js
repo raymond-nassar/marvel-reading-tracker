@@ -1,4 +1,4 @@
-// Local name search over a vendored index.
+﻿// Local name search over a vendored index.
 //
 // The upstream API has no name search for series or creators: `/series?q=…` and
 // `/creators?q=…` accept the parameter and ignore it, returning the alphabetical head of the
@@ -157,9 +157,14 @@ export function searchNames(entries, query, { limit = DEFAULT_LIMIT } = {}) {
   // one-shot collection. Then the shorter name, because less extra text is the more literal
   // answer, and finally the name itself so the order is fully determined and a query never
   // renders differently twice.
+  //
+  // Unknown counts sort below every known one, zero included. normalizeEntry goes out of its
+  // way to keep "no count" distinct from "a count of zero", and folding them together here
+  // would undo that: a name we know nothing about would tie with one we know adds nothing.
+  const size = (entry) => entry.issueCount ?? -1;
   hits.sort((a, b) =>
     a.score - b.score ||
-    (b.entry.issueCount ?? 0) - (a.entry.issueCount ?? 0) ||
+    size(b.entry) - size(a.entry) ||
     a.entry.name.length - b.entry.name.length ||
     (a.entry.name < b.entry.name ? -1 : a.entry.name > b.entry.name ? 1 : 0));
 

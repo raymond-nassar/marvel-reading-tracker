@@ -203,9 +203,12 @@ async function fetchNameIndex(kind) {
   const spec = INDEXES[kind];
   if (!spec) throw new Error(`Unknown search index "${kind}".`);
 
+  // What to do about it has to match what the code actually does. nameIndex() drops the failed
+  // load, so simply searching again starts a fresh attempt — telling the reader to reload would
+  // send them off to lose their place for no reason.
   const unavailable = (reason) => new ApiError(
     `The ${spec.label} index could not be loaded (${reason}), so ${spec.label} search is unavailable. ` +
-    'Reload the page to try again.',
+    'Search again to retry.',
     null,
     false,
   );
