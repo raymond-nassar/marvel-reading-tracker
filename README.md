@@ -145,6 +145,26 @@ anything" test while leaving almost the entire catalogue unaudited.
 The output is committed, so an order arrives for review as a diff, and re-running the script
 only changes the events whose upstream metadata changed.
 
+## Searching for a series or a creator
+
+The metadata API has a real search endpoint for issues, but none for series or creators.
+`/series?q=` and `/creators?q=` accept the query and ignore it, returning the same records as
+no query at all, so a search for a creator called "Hickman" used to answer with "#O", "#X" and
+"A CO" — each offering to add every issue it had to your reading list.
+
+Those two searches are therefore answered locally. `npm run vendor:index` pages the whole of
+`/series` and `/creators` once and writes [`src/data/series-index.json`](src/data/series-index.json)
+and [`src/data/creators-index.json`](src/data/creators-index.json), one `[id, name, issueCount]`
+record each, which is about a third smaller than the equivalent objects. The app fetches the
+file the first time you open one of those two search cards, never on page load, and filters it
+in the browser. If the file cannot be loaded the search says so, and never falls back to
+showing unfiltered results.
+
+Both files are snapshots, like the vendored reading orders: a series added upstream after the
+last run is not findable until `npm run vendor:index` is run again, which is why the results
+say when the snapshot was taken. `npm run contract` asserts that `q` is still ignored upstream,
+so if the API ever grows real search the check fails and these files can be deleted.
+
 ## Running it
 
 ```
