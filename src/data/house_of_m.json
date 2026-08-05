@@ -1,0 +1,698 @@
+{
+  "id": "house-of-m",
+  "name": "House of M",
+  "description": "Wanda Maximoff rewrites the world in Marvel's 2005 event, in publication order: the eight-issue main series, its branded tie-in mini-series, and the Decimation epilogue. Assembled from Marvel series metadata, so it covers the series Marvel branded with the event name and not the House of M chapters published in unbranded ongoing titles such as Wolverine #33-35.",
+  "source": null,
+  "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+  "generatedAt": "2026-08-05T06:17:07.276Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 20,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 2092,
+      "title": "House of M (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/2092/house_of_m_2005_1",
+      "seriesId": 855,
+      "seriesName": "House of M (2005)",
+      "onSale": "2005-06-01T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 1947,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/589b3f23c9324",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2093,
+      "title": "House of M (2005) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/2093/house_of_m_2005_2",
+      "seriesId": 855,
+      "seriesName": "House of M (2005)",
+      "onSale": "2005-06-22T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 1948,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/60/589ddf7524582",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2101,
+      "title": "Spider-Man: House of M (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/2101/spider-man_house_of_m_2005_1",
+      "seriesId": 875,
+      "seriesName": "Spider-Man: House of M (2005)",
+      "onSale": "2005-06-22T00:00:00+0000",
+      "mu": "2005-06-22T00:00:00+0000",
+      "digitalId": 639,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/00/4bb86d0cf217b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        },
+        {
+          "name": "Tom Peyer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2198,
+      "title": "House of M (2005) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/2198/house_of_m_2005_3",
+      "seriesId": 855,
+      "seriesName": "House of M (2005)",
+      "onSale": "2005-07-06T00:00:00+0000",
+      "mu": "2005-07-06T00:00:00+0000",
+      "digitalId": 1949,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/589de984ad1ae",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Mayhew",
+          "role": "penciler"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 4872,
+      "title": "Fantastic Four: House of M (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/4872/fantastic_four_house_of_m_2005_1",
+      "seriesId": 933,
+      "seriesName": "Fantastic Four: House of M (2005)",
+      "onSale": "2005-07-06T00:00:00+0000",
+      "mu": "2005-07-06T00:00:00+0000",
+      "digitalId": 715,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/535190892db5e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Don Hillsman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scot Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "John Layman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2254,
+      "title": "Iron Man: House of M (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/2254/iron_man_house_of_m_2005_1",
+      "seriesId": 936,
+      "seriesName": "Iron Man: House of M (2005)",
+      "onSale": "2005-07-06T00:00:00+0000",
+      "mu": "2005-07-06T00:00:00+0000",
+      "digitalId": 717,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/f0/5b607bc2ea5dd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pat Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2199,
+      "title": "House of M (2005) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/2199/house_of_m_2005_4",
+      "seriesId": 855,
+      "seriesName": "House of M (2005)",
+      "onSale": "2005-07-20T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 1950,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/589deb08e9d30",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2206,
+      "title": "Spider-Man: House of M (2005) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/2206/spider-man_house_of_m_2005_2",
+      "seriesId": 875,
+      "seriesName": "Spider-Man: House of M (2005)",
+      "onSale": "2005-07-20T00:00:00+0000",
+      "mu": "2005-07-20T00:00:00+0000",
+      "digitalId": 1960,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/20/5c9bcb5e3f1cb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        },
+        {
+          "name": "Tom Peyer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2361,
+      "title": "Fantastic Four: House of M (2005) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/2361/fantastic_four_house_of_m_2005_2",
+      "seriesId": 933,
+      "seriesName": "Fantastic Four: House of M (2005)",
+      "onSale": "2005-08-03T00:00:00+0000",
+      "mu": "2005-08-03T00:00:00+0000",
+      "digitalId": 1955,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/03/535190985fc30",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Don Hillsman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scot Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "John Layman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2362,
+      "title": "Iron Man: House of M (2005) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/2362/iron_man_house_of_m_2005_2",
+      "seriesId": 936,
+      "seriesName": "Iron Man: House of M (2005)",
+      "onSale": "2005-08-03T00:00:00+0000",
+      "mu": "2005-08-03T00:00:00+0000",
+      "digitalId": 1958,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/e0/5b60864d5b111",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pat Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2316,
+      "title": "House of M (2005) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/2316/house_of_m_2005_5",
+      "seriesId": 855,
+      "seriesName": "House of M (2005)",
+      "onSale": "2005-08-10T00:00:00+0000",
+      "mu": "2005-08-10T00:00:00+0000",
+      "digitalId": 1951,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/b0/589df7879e1bc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2326,
+      "title": "Spider-Man: House of M (2005) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/2326/spider-man_house_of_m_2005_3",
+      "seriesId": 875,
+      "seriesName": "Spider-Man: House of M (2005)",
+      "onSale": "2005-08-17T00:00:00+0000",
+      "mu": "2005-08-17T00:00:00+0000",
+      "digitalId": 1961,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/4bc47806e85d4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        },
+        {
+          "name": "Tom Peyer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 14511,
+      "title": "House of M (2005) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/14511/house_of_m_2005_6",
+      "seriesId": 855,
+      "seriesName": "House of M (2005)",
+      "onSale": "2005-09-07T00:00:00+0000",
+      "mu": "2005-09-07T00:00:00+0000",
+      "digitalId": 3005,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/a0/589dfcf07689b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2828,
+      "title": "Fantastic Four: House of M (2005) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/2828/fantastic_four_house_of_m_2005_3",
+      "seriesId": 933,
+      "seriesName": "Fantastic Four: House of M (2005)",
+      "onSale": "2005-09-07T00:00:00+0000",
+      "mu": "2005-09-07T00:00:00+0000",
+      "digitalId": 4142,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/535190a2aed55",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Don Hillsman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scot Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "John Layman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2829,
+      "title": "Iron Man: House of M (2005) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/2829/iron_man_house_of_m_2005_3",
+      "seriesId": 936,
+      "seriesName": "Iron Man: House of M (2005)",
+      "onSale": "2005-09-07T00:00:00+0000",
+      "mu": "2005-09-07T00:00:00+0000",
+      "digitalId": 1959,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5b608eb8c2f44",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Pat Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2443,
+      "title": "Spider-Man: House of M (2005) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/2443/spider-man_house_of_m_2005_4",
+      "seriesId": 875,
+      "seriesName": "Spider-Man: House of M (2005)",
+      "onSale": "2005-09-28T00:00:00+0000",
+      "mu": "2005-09-28T00:00:00+0000",
+      "digitalId": 1962,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/50/5c9bcbe5dea6b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        },
+        {
+          "name": "Tom Peyer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2427,
+      "title": "House of M (2005) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/2427/house_of_m_2005_7",
+      "seriesId": 855,
+      "seriesName": "House of M (2005)",
+      "onSale": "2005-10-12T00:00:00+0000",
+      "mu": "2005-10-12T00:00:00+0000",
+      "digitalId": 1952,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/589e0f61e709d",
+        "ext": "jpg"
+      },
+      "description": "You want the penultimate issues of your crossover event to end with a massive brawl and to have long-lasting effects on the Marvel U? Please to enjoy House of M #7. No more mutants!",
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Dell",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2428,
+      "title": "House of M (2005) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/2428/house_of_m_2005_8",
+      "seriesId": 855,
+      "seriesName": "House of M (2005)",
+      "onSale": "2005-11-02T00:00:00+0000",
+      "mu": "2005-11-02T00:00:00+0000",
+      "digitalId": 1953,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/589e106eb6191",
+        "ext": "jpg"
+      },
+      "description": "After all the wild twists, turns and events that took place in the House of M universe, everything should have wrapped up neatly, right? Oh no. The final issue of House of M pushed the Marvel U into an entirely different realm of wild.",
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Dell",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2444,
+      "title": "Spider-Man: House of M (2005) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/2444/spider-man_house_of_m_2005_5",
+      "seriesId": 875,
+      "seriesName": "Spider-Man: House of M (2005)",
+      "onSale": "2005-11-02T00:00:00+0000",
+      "mu": "2005-11-02T00:00:00+0000",
+      "digitalId": 1963,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/5c9bcc6f9224d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        },
+        {
+          "name": "Tom Peyer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3095,
+      "title": "DECIMATION: HOUSE OF M - THE DAY AFTER 1 (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/3095/decimation_house_of_m_-_the_day_after_1_2005_1",
+      "seriesId": 974,
+      "seriesName": "DECIMATION: HOUSE OF M - THE DAY AFTER 1 (2005)",
+      "onSale": "2005-11-09T00:00:00+0000",
+      "mu": "2005-11-09T00:00:00+0000",
+      "digitalId": 470,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/5b327f16191b3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Don Hillsman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Norm Rapmund",
+          "role": "cover artist"
+        },
+        {
+          "name": "Robert Hunter",
+          "role": "cover artist"
+        },
+        {
+          "name": "Aaron Lopresti",
+          "role": "penciler"
+        },
+        {
+          "name": "Randall Green",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Claremont",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

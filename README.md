@@ -101,6 +101,34 @@ A checklist line with no Marvel link is vendored as a placeholder rather than dr
 reading order stays complete and tickable. Placeholders cannot be opened, and the import
 notice says how many there are.
 
+### Event orders, generated from Marvel's own metadata
+
+The five event lists are not typed by hand. `scripts/build-event-order.mjs` holds, per event,
+the ids of the series Marvel branded with that event's name, fetches their issues, and writes a
+checklist in publication order into `src/data/orders/`:
+
+```
+node scripts/build-event-order.mjs               # every event
+node scripts/build-event-order.mjs civil-war     # one event
+node scripts/build-event-order.mjs --dry-run     # report counts, write nothing
+```
+
+Selecting the series Marvel itself branded and sorting them by on-sale date restates Marvel's
+catalogue rather than reproducing anyone's editorial reading order. The trade-off is stated on
+every list it produces: these orders cover the branded series and **not** crossover chapters
+published in ongoing titles that carry no event branding, such as Amazing Spider-Man #529-538
+during Civil War.
+
+Series are named by id, not matched by name, because a name filter cannot tell an event from its
+own sequel (`Civil War II`), its facsimiles or its handbooks; the script records why each
+rejected series was rejected beside the ones it keeps. Trade collections need no rule, because
+Marvel serves them from `/comics/collection/` instead of `/comics/issue/`. Where several issues
+shipped the same day the main series is listed first, so it is never read after the tie-in that
+reacts to it.
+
+The output is committed, so an order arrives for review as a diff, and re-running the script
+only changes the events whose upstream metadata changed.
+
 ## Running it
 
 ```
