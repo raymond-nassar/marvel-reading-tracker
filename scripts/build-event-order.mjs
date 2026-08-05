@@ -313,10 +313,15 @@ export function normalizeSeriesRows(parsed) {
 // nothing in it, and an audit that sees nothing reports nothing to fix. So the file is used only
 // when it can be shown to cover the whole catalogue, and is otherwise refused out loud.
 //
-// It must also be tracked by git. Presence on disk is not provenance: an untracked file is one
-// nobody reviewed, and preferring it would let anything that writes to the worktree decide what
-// this audit reads. Requiring `git ls-files` to know it means the shortcut switches on when the
-// index is merged into the repo, which is the event the paragraph above is actually waiting for.
+// It must also be the committed file, not merely a path git has heard of. Presence on disk is not
+// provenance: preferring whatever sits at that path would let anything that writes to the worktree
+// decide what this audit reads. `git ls-files` would answer whether the path is tracked while
+// saying nothing about whether the bytes still are the reviewed ones, so the content is read out
+// of HEAD instead. That makes "reviewed" literally true, and means an edit to the working copy
+// cannot change what the audit checks against. It also switches the shortcut on at exactly the
+// right moment: when the index is merged, which is the event the paragraph above is waiting for.
+const INDEX_PATH = 'src/data/series-index.json';
+
 async function seriesTotal() {
   const body = await getJson(`${API}/series?limit=1`);
   const total = Number(body?.total);
@@ -324,25 +329,29 @@ async function seriesTotal() {
   return total;
 }
 
-function isTracked(path) {
+// Returns the committed bytes, or null when HEAD has no such file. git writes "does not exist in
+// HEAD" to stderr in that case, which is the ordinary situation on a branch that has not merged
+// the index yet, so stderr is discarded rather than forwarded to the caller as an error.
+function committedIndex() {
   try {
-    execFileSync('git', ['ls-files', '--error-unmatch', path], { cwd: ROOT, stdio: 'ignore' });
-    return true;
+    return execFileSync('git', ['show', `HEAD:${INDEX_PATH}`], {
+      cwd: ROOT,
+      maxBuffer: 64 * 1024 * 1024,
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).toString('utf8');
   } catch {
-    return false;
+    return null;
   }
 }
 
 async function localSeriesIndex(total) {
-  const path = join(ROOT, 'src', 'data', 'series-index.json');
+  const raw = committedIndex();
+  if (raw === null) return { items: null, why: null };
   let parsed;
   try {
-    parsed = JSON.parse((await readFile(path, 'utf8')).replace(/^\uFEFF/, ''));
+    parsed = JSON.parse(raw.replace(/^\uFEFF/, ''));
   } catch (err) {
-    return { items: null, why: err.code === 'ENOENT' ? null : `it could not be parsed (${err.message})` };
-  }
-  if (!isTracked(path)) {
-    return { items: null, why: 'it is not tracked by git, so nothing has reviewed it' };
+    return { items: null, why: `the committed copy could not be parsed (${err.message})` };
   }
   const { items, why } = normalizeSeriesRows(parsed);
   if (!items) return { items: null, why };
@@ -355,8 +364,8 @@ async function localSeriesIndex(total) {
 async function allSeries() {
   const total = await seriesTotal();
   const { items: local, why } = await localSeriesIndex(total);
-  if (local) return { from: 'src/data/series-index.json', items: local };
-  if (why) console.warn(`ignoring src/data/series-index.json: ${why}; paging the API instead`);
+  if (local) return { from: `${INDEX_PATH} at HEAD`, items: local };
+  if (why) console.warn(`ignoring ${INDEX_PATH}: ${why}; paging the API instead`);
 
   const items = [];
   for (let offset = 0; ; offset += 200) {
