@@ -184,6 +184,14 @@ function fold(v) {
     .trim();
 }
 
+// Folding punctuation to a space is right for phrases but wrong for the names readers actually
+// type: "spiderman" and "xmen" are at least as common as "Spider-Man" and "X-Men", and against a
+// spaced haystack they match nothing at all. Each term is therefore also tested against a form
+// with the separators removed. Keeping both forms rather than only the squeezed one means a
+// multi-word query still has to match word by word, so "secret wars" cannot be satisfied by an
+// unrelated run of letters.
+const squeeze = (folded) => folded.replace(/ /g, '');
+
 function haystack(list) {
   return fold([
     list.name,
@@ -202,7 +210,8 @@ export function searchCatalog(lists, query) {
   if (!terms.length) return lists;
   return lists.filter((list) => {
     const text = haystack(list);
-    return terms.every((term) => text.includes(term));
+    const squeezed = squeeze(text);
+    return terms.every((term) => text.includes(term) || squeezed.includes(term));
   });
 }
 
