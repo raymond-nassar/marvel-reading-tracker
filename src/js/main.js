@@ -1309,7 +1309,17 @@ async function importCurated(file) {
     }
     store.update((s) => setActive(s, listId));
     showView('read');
-    announce(`Imported ${order.name}: ${added} issues. Any issues you had already read stay read.`);
+
+    // Some curated orders include issues Marvel has not published data for yet. They are
+    // imported as placeholders so the reading order stays complete and tickable; saying so
+    // is the difference between a known gap and a list that looks wrong for no reason.
+    const placeholders = Number(order.placeholders) || 0;
+    const parts = [`Imported ${order.name}: ${added} issues.`];
+    if (placeholders) {
+      parts.push(`${placeholders} of them have no Marvel Unlimited link yet and cannot be opened.`);
+    }
+    parts.push('Any issues you had already read stay read.');
+    announce(parts.join(' '));
   } catch (err) {
     alert(`Could not load that curated order: ${err.message}`);
   }

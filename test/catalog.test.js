@@ -4,8 +4,19 @@ import { readFile } from 'node:fs/promises';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory,
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
-  LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
+  safeOrderFile, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
 } from '../src/js/lib/catalog.js';
+
+test('safeOrderFile accepts a plain markdown name and nothing that escapes the orders folder', () => {
+  assert.equal(safeOrderFile('new-ultimate-universe.md'), 'new-ultimate-universe.md');
+  assert.equal(safeOrderFile('  spaced.md  '), 'spaced.md');
+  for (const bad of [
+    '../escape.md', 'orders/nested.md', 'C:\\abs.md', '/abs.md', '.hidden.md',
+    'order.json', 'order', 'order.md.json', 'https://example.test/x.md', '', null, undefined, 42,
+  ]) {
+    assert.equal(safeOrderFile(bad), null, `accepted ${JSON.stringify(bad)}`);
+  }
+});
 
 test('parses a well-formed catalog entry', () => {
   const { lists, dropped } = parseCatalog({
@@ -84,7 +95,9 @@ test('the bundled catalog is valid and its counts match the vendored orders', as
   for (const list of lists) {
     assert.ok(LIST_TYPES.includes(list.type), `${list.id} has no valid type`);
     assert.ok(READING_DEPTHS.includes(list.depth), `${list.id} has no valid depth`);
-    assert.ok(list.source, `${list.id} has no attribution`);
+    // What matters is that the reader always sees where an order came from. A list compiled in
+    // this repository has no upstream page to link to, so its license carries the credit.
+    assert.ok(sourceLabel(list), `${list.id} has no attribution`);
     assert.ok(list.updatedAt, `${list.id} has no last-updated date`);
     assert.ok(list.characters.length, `${list.id} has no characters to search by`);
 

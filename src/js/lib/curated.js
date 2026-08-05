@@ -1,15 +1,20 @@
 // The curated-list manifest.
 //
 // A curated reading list is defined entirely by data: `src/data/curated-lists.json` names the
-// upstream order to vendor and the editorial metadata a reader sees before importing it. The
-// vendor script reads the manifest and derives both the pinned order file and the catalog
-// entry from it, so adding a list means adding a manifest entry, with no application logic changes.
+// order to vendor and the editorial metadata a reader sees before importing it. The vendor
+// script reads the manifest and derives both the pinned order file and the catalog entry from
+// it, so adding a list means adding a manifest entry, with no application logic changes.
+//
+// An order comes from exactly one of two places: `sourceUrl` fetches it from an upstream
+// publisher over https, or `sourceFile` reads a checklist authored in this repository. The
+// second exists because not every reading order has an upstream to point at; an order compiled
+// by hand would otherwise have to be published somewhere else first just to be vendored back in.
 //
 // A malformed entry is a maintainer's mistake, not a reader's, so it is reported with the
 // reason rather than dropped: silently vendoring a shorter catalog is how a list goes missing
 // without anyone noticing.
 
-import { LIST_TYPES, READING_DEPTHS, safeFile } from './catalog.js';
+import { LIST_TYPES, READING_DEPTHS, safeFile, safeOrderFile } from './catalog.js';
 
 const str = (v) => (typeof v === 'string' && v.trim() ? v.trim() : null);
 
@@ -38,12 +43,22 @@ function checkEntry(raw, index, seen) {
   const name = str(raw.name);
   const out = safeFile(raw.out);
   const sourceUrl = httpsUrl(raw.sourceUrl);
+  const sourceFile = safeOrderFile(raw.sourceFile);
 
   if (!id) at('has no id');
   else if (seen.has(id)) at(`duplicate id "${id}"`);
   if (!name) at('has no name');
   if (!out) at('has no usable output file name (expected a plain *.json name)');
-  if (!sourceUrl) at('has no https sourceUrl to vendor from');
+  // Exactly one origin. Accepting both would leave which one actually got vendored decided by
+  // the order of checks in another file, and the attribution the reader sees possibly describing
+  // the one that lost. Each way of getting it wrong is named separately, because "no source"
+  // sends a maintainer looking for a missing line when the real problem is a typo in one.
+  if (raw.sourceUrl != null && !sourceUrl) at('has a sourceUrl that is not https');
+  if (raw.sourceFile != null && !sourceFile) at('has a sourceFile that is not a plain *.md name');
+  if (sourceUrl && sourceFile) at('has both sourceUrl and sourceFile; an order comes from one place');
+  else if (!sourceUrl && !sourceFile && raw.sourceUrl == null && raw.sourceFile == null) {
+    at('has no sourceUrl or sourceFile to vendor from');
+  }
   if (!str(raw.sourceLicense)) at('has no sourceLicense');
   if (!LIST_TYPES.includes(raw.type)) at(`type must be one of ${LIST_TYPES.join(', ')}`);
   if (!READING_DEPTHS.includes(raw.depth)) at(`depth must be one of ${READING_DEPTHS.join(', ')}`);
@@ -62,8 +77,10 @@ function checkEntry(raw, index, seen) {
       name,
       out,
       sourceUrl,
+      sourceFile,
       // The page a reader can open is not always the raw file we fetch; fall back to the raw
-      // URL so attribution is never blank.
+      // URL so attribution is never blank. An order authored here has no upstream page, so it
+      // is credited by sourceLicense alone rather than given a link that goes nowhere.
       sourcePage: httpsUrl(raw.sourcePage) ?? sourceUrl,
       sourceLicense: str(raw.sourceLicense),
       description: str(raw.description),

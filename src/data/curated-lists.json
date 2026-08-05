@@ -65,6 +65,34 @@
         "tie-ins"
       ],
       "expect": 219
+    },
+    {
+      "id": "new-ultimate-universe",
+      "name": "The New Ultimate Universe",
+      "description": "Jonathan Hickman's rebuilt Ultimate line in publication-adjacent reading order, from Ultimate Invasion (2023) through Ultimate Impact: Reborn.",
+      "type": "era",
+      "depth": "essential",
+      "sourceFile": "new-ultimate-universe.md",
+      "sourceLicense": "Compiled for this project",
+      "out": "new_ultimate_universe.json",
+      "characters": [
+        "The Maker",
+        "Spider-Man",
+        "Black Panther",
+        "X-Men",
+        "The Ultimates",
+        "Wolverine",
+        "Hawkeye"
+      ],
+      "keywords": [
+        "Jonathan Hickman",
+        "Ultimate Universe",
+        "Ultimate Invasion",
+        "Earth-6160",
+        "Ultimate Endgame",
+        "relaunch"
+      ],
+      "expect": 138
     }
   ]
 }

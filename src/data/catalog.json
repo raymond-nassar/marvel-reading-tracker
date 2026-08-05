@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T06:14:48.703Z",
+  "generatedAt": "2026-08-05T04:18:50.257Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -66,6 +66,38 @@
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
       "sourceLicense": "MIT (emreparker/marvel-comics)",
       "updatedAt": "2026-08-04T06:14:48.703Z"
+    },
+    {
+      "id": "new-ultimate-universe",
+      "file": "new_ultimate_universe.json",
+      "name": "The New Ultimate Universe",
+      "description": "Jonathan Hickman's rebuilt Ultimate line in publication-adjacent reading order, from Ultimate Invasion (2023) through Ultimate Impact: Reborn.",
+      "type": "era",
+      "depth": "essential",
+      "count": 138,
+      "characters": [
+        "The Maker",
+        "Spider-Man",
+        "Black Panther",
+        "X-Men",
+        "The Ultimates",
+        "Wolverine",
+        "Hawkeye"
+      ],
+      "keywords": [
+        "Jonathan Hickman",
+        "Ultimate Universe",
+        "Ultimate Invasion",
+        "Earth-6160",
+        "Ultimate Endgame",
+        "relaunch"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "source": null,
+      "sourceLicense": "Compiled for this project",
+      "updatedAt": "2026-08-05T04:18:50.252Z"
     }
   ]
 }

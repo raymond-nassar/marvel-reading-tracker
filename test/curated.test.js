@@ -39,13 +39,28 @@ test('expect is optional', () => {
   assert.equal(entries[0].expect, null);
 });
 
+test('an order can be authored in this repository instead of fetched', () => {
+  const local = { ...valid, sourceUrl: undefined, sourcePage: undefined, sourceFile: 'civil_war.md' };
+  const { entries, errors } = parseManifest({ lists: [local] });
+  assert.deepEqual(errors, []);
+  assert.equal(entries[0].sourceFile, 'civil_war.md');
+  assert.equal(entries[0].sourceUrl, null);
+  // No upstream page to send the reader to, so attribution rests on the license alone rather
+  // than on a link that goes nowhere.
+  assert.equal(entries[0].sourcePage, null);
+});
+
 test('an incomplete entry is reported with its reason, not silently skipped', () => {
   const cases = [
     [{ ...valid, id: '' }, /has no id/],
     [{ ...valid, name: '' }, /has no name/],
     [{ ...valid, out: '../escape.json' }, /output file name/],
-    [{ ...valid, sourceUrl: 'http://example.test/x.md' }, /https sourceUrl/],
-    [{ ...valid, sourceUrl: 'not a url' }, /https sourceUrl/],
+    [{ ...valid, sourceUrl: 'http://example.test/x.md' }, /sourceUrl that is not https/],
+    [{ ...valid, sourceUrl: 'not a url' }, /sourceUrl that is not https/],
+    [{ ...valid, sourceUrl: undefined, sourcePage: undefined }, /no sourceUrl or sourceFile/],
+    [{ ...valid, sourceUrl: undefined, sourceFile: '../escape.md' }, /sourceFile that is not a plain/],
+    [{ ...valid, sourceUrl: undefined, sourceFile: 'order.json' }, /sourceFile that is not a plain/],
+    [{ ...valid, sourceFile: 'order.md' }, /an order comes from one place/],
     [{ ...valid, sourceLicense: null }, /sourceLicense/],
     [{ ...valid, type: 'anthology' }, /type must be one of/],
     [{ ...valid, depth: 'skim' }, /depth must be one of/],
