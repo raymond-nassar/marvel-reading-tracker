@@ -57,7 +57,8 @@ test('never exceeds either window across a long simulated run', async () => {
   const stamps = [];
 
   for (let i = 0; i < 120; i += 1) {
-    // eslint-disable-next-line no-await-in-loop
+    // Awaiting in sequence is the point: this is what proves the limiter paces calls
+    // rather than letting 120 of them run at once.
     await rl.schedule(async () => { stamps.push(clock.now()); });
   }
 

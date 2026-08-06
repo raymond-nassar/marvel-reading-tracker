@@ -25,6 +25,31 @@ const TYPES = {
   '.webmanifest': 'application/manifest+json',
 };
 
+// The app renders titles, creator names and descriptions that come from a third-party
+// metadata service, so it is worth assuming that response could one day be hostile or
+// compromised. `script-src 'self'` is the directive that actually matters here: it means
+// markup smuggled through a field like an issue title cannot execute. Everything under
+// src/ loads from a file for exactly that reason, so no inline allowance is needed.
+//
+// `connect-src` and `img-src` are deliberately wider than the default endpoint. The API
+// base is user-configurable at runtime (see main.js), and src/open.js accepts any https
+// origin or loopback, so pinning this to marvel.emreparker.com would silently break
+// anyone pointing the app at their own mirror. Restricting the scheme still rules out
+// plaintext http to arbitrary hosts. Covers can come from whatever host the configured
+// API names, and the favicon in index.html is a data: SVG.
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self'",
+  "img-src 'self' https: data:",
+  "font-src 'self'",
+  "connect-src 'self' https: http://127.0.0.1:* http://localhost:*",
+  "object-src 'none'",
+  "base-uri 'none'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+].join('; ');
+
 function safePath(urlPath) {
   // decodeURIComponent throws URIError on a malformed escape such as "/%" or "/a%2". This runs
   // before the request handler's try block, so an unhandled rejection would terminate the whole
@@ -86,6 +111,10 @@ async function handle(req, res) {
       'cache-control': 'no-cache',
       'x-content-type-options': 'nosniff',
       'referrer-policy': 'no-referrer',
+      'content-security-policy': CSP,
+      // frame-ancestors above is the modern control; this is the companion header for
+      // anything that still honours only the older one.
+      'x-frame-options': 'DENY',
       ...(etag ? { etag } : {}),
     };
 

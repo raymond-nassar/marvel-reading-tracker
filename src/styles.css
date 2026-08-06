@@ -14,7 +14,19 @@
   --text: #eef1f6;
   --dim: #c6cdda;
   --muted: #8d95a6;
-  --red: #e23636;
+  /* The foreground for a row that has been read. Dim enough to recede, but a
+     real colour rather than an opacity, so it keeps its own contrast ratio. */
+  --read-fg: #9aa2b2;
+  /* Two reds, because one cannot serve both jobs on a dark page. `--red` is a
+     SURFACE that white text sits on, so it has to be dark enough for white to
+     clear 4.5:1. `--red-text` is red used AS text on the page background, so it
+     has to be light enough to clear 4.5:1 the other way. The old single
+     #e23636 measured 4.36:1 and 4.33:1 respectively, failing both.
+     `--red-text` is set for the lightest background it ever lands on, which is
+     the hero panel, not `--bg`. Measured 4.81:1 against the hero's bounded
+     worst case and 5.70:1 against `--bg`. */
+  --red: #d43333;
+  --red-text: #eb5f5f;
   --green: #43c088;
   --amber: #eab654;
   --blue: #7fb3ff;
@@ -174,7 +186,14 @@ body.nocovers .tgl .sw::after { left: 2px; }
   filter: blur(40px) saturate(1.5); transform: scale(1.3); opacity: .3;
 }
 body.nocovers .hero-bg { background-image: none !important; opacity: .5; }
-.hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, #171a2099 0%, #171a20e8 60%, #171a20 100%); }
+/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art
+   below showed through strongly enough to set the effective background colour
+   of the hero text, which measured anywhere from #222325 to #2e2d30 across the
+   eight catalog series. That made text contrast depend on whichever cover the
+   user imported, and no fixed accent colour can pass against an unbounded
+   range. Raising the top stop keeps a visible tint of the art while giving the
+   text a deterministic backdrop. */
+.hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, #171a20e0 0%, #171a20f5 60%, #171a20 100%); }
 .hero-in { position: relative; padding: 1.7rem 2rem; display: grid; grid-template-columns: 176px 1fr; gap: 1.8rem; }
 @media (max-width: 700px) { .hero-in { grid-template-columns: 1fr; padding: 1.4rem; } .hero-in .art { max-width: 158px; } }
 
@@ -188,12 +207,18 @@ body.nocovers .art img, .art img[hidden] { display: none; }
   display: none; width: 100%; aspect-ratio: 2/3; border-radius: 12px;
   border: 1px solid var(--line-2); padding: 1rem;
   flex-direction: column; justify-content: space-between;
+  /* `--h` is a per-series hue set from JS. The gradient lives here rather than in a
+     style attribute so the page can be served under a strict `style-src 'self'`.
+     A hue past 360 is fine: CSS wraps it, which is what the old modulo did. */
+  --h: 0;
+  background: linear-gradient(155deg, hsl(var(--h) 42% 26%), hsl(calc(var(--h) + 40) 38% 14%));
+  color: hsl(var(--h) 60% 88%);
 }
 body.nocovers .fallback, .fallback.show { display: flex; }
 .fallback .fs { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; opacity: .85; line-height: 1.35; }
 .fallback .fn { font-size: 2.4rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
 
-.eyebrow { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red); font-weight: 800; margin: 0; }
+.eyebrow { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red-text); font-weight: 800; margin: 0; }
 .hero h2 { font-size: 1.9rem; line-height: 1.14; margin: .4rem 0 .3rem; letter-spacing: -.025em; font-weight: 640; }
 .byline { color: var(--muted); margin: 0 0 .8rem; font-size: .9rem; }
 .desc { color: var(--dim); font-size: .93rem; margin: 0 0 1.1rem; max-width: 58ch; }
@@ -216,7 +241,15 @@ body.nocovers .fallback, .fallback.show { display: flex; }
 .btn:hover { filter: brightness(1.1); }
 .btn:disabled { opacity: .5; cursor: default; filter: none; }
 .btn-g { background: #ffffff0f; color: var(--text); border-color: var(--line-2); font-weight: 500; }
-kbd { font: inherit; font-size: .72rem; opacity: .75; border: 1px solid #ffffff33; border-radius: 4px; padding: 0 .28rem; }
+/* No opacity here. The shortcut hint sits on the primary button, and dimming it to
+   75% took it to a measured 3.03:1. It is set apart by its border and its size
+   instead, both of which cost nothing in contrast. */
+kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 .28rem; }
+
+/* Version and data-format numbers in About. Monospaced so a digit cannot be misread
+   when someone copies the build number into a bug report. No colour change, because
+   the surrounding .rail-hint colour is already the audited one. */
+.mono { font-family: ui-monospace, "Cascadia Mono", monospace; }
 
 /* ============================================================ shelf */
 
@@ -240,7 +273,7 @@ body.nocovers .tile .tf, .tile .tf.show { display: flex; }
 .tile .tf .n { font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em; }
 .tile .lab { font-size: .75rem; margin-top: .4rem; color: var(--muted); line-height: 1.35; }
 .tile .lab b { color: var(--text); font-weight: 540; display: block; }
-.tile button:hover .lab b { color: var(--red); }
+.tile button:hover .lab b { color: var(--red-text); }
 
 /* ============================================================ full order */
 
@@ -274,8 +307,16 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 }
 .row:hover { background: #ffffff07; border-color: var(--line); }
 .row.now { background: #e2363612; border-color: #e2363640; }
-.row.is-read { opacity: .48; }
-.row.is-read .rt { text-decoration: line-through; }
+/* A read row recedes through a dimmer title colour, a strikethrough and a filled
+   checkbox. It deliberately does NOT use `opacity` on the row: opacity multiplies
+   every descendant against the page, and at .48 that dropped the meta line and the
+   action labels to a measured 2.34:1 and the availability badge to 2.75:1, all far
+   under the 4.5:1 floor. The read state is still carried by three signals that do
+   not depend on colour alone. */
+.row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }
+.row.is-read .rm { color: var(--muted); }
+/* Only the cover art fades. It carries no text, so 1.4.3 does not govern it. */
+.row.is-read img { opacity: .5; }
 
 .row .thumb { position: relative; }
 .row img { width: 34px; aspect-ratio: 2/3; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); display: block; }

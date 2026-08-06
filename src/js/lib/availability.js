@@ -7,7 +7,12 @@
 //   * comparing a UTC midnight instant against `Date.now()` badges an issue a day early
 //     for anyone west of UTC.
 //
-// So we never claim an issue *is* available. We report one of four explicit states.
+// So we never claim an issue *is* available. We report one of five explicit
+// states. The design started with four, carrying a single `user-override`; that
+// was later split into `override-available` and `override-unavailable` so an
+// explicit "no, I checked, it is not there" is distinguishable from an explicit
+// yes. Keep all five distinct: collapsing them re-introduces the false
+// certainty this module exists to avoid.
 
 export const STATE = {
   UNKNOWN: 'unknown',
