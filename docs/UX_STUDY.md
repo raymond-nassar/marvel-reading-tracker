@@ -67,7 +67,7 @@ Severity: 2, single-rater estimate
 Rationale: occurs on the single most repeated action in the product, persists for the life of the
 list, and grows with list length, but degrades speed rather than blocking the task
 Confidence: Measured
-Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:60-65`, `src/js/main.js:2110-2123`
+Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:60-65`, `src/js/main.js:2120-2133`
 Source: live UI framing, reacted to the store wiring while reading `src/js/main.js`
 Impact: marking one issue read rebuilds the rail, all 219 rows and the progress block, which is
 4,485 DOM nodes and 1,533 row controls, at a median of 21.9 ms synchronous and 75.7 ms to paint,
@@ -86,7 +86,7 @@ Severity: 3, single-rater estimate
 Rationale: affects several primary flows, is permanent rather than transient, and splits the
 product's voice in two at exactly the moments a reader is deciding something
 Confidence: Observed
-Evidence: `src/js/main.js:1900`, `src/js/main.js:869-879`, `src/js/main.js:876-882`, against
+Evidence: `src/js/main.js:1910`, `src/js/main.js:869-879`, `src/js/main.js:876-882`, against
 `src/js/main.js:137-164`
 Source: heuristic 4 sweep, code-only framing
 Impact: the application has a careful in-page notice system with live regions, and then reports
@@ -106,7 +106,7 @@ Severity: 3, single-rater estimate
 Rationale: irreversible, affects data the reader curated by hand, and the inconsistency with
 restore makes the gap harder to anticipate
 Confidence: Observed
-Evidence: `src/js/main.js:876-882`, `src/js/main.js:2004-2007`
+Evidence: `src/js/main.js:876-882`, `src/js/main.js:2014-2017`
 Source: heuristic 3 sweep, code-only framing
 Impact: deletion is guarded only by a native `confirm()` and there is no undo afterwards. Read
 progress survives, because it is global, but the list name and its curated order do not. Restoring
@@ -199,7 +199,7 @@ Not applicable, with reason:
 * 1.4.2 Audio Control, not applicable, for the same reason.
 * 2.2.2 Pause, Stop, Hide, not applicable, because the only moving element is a progress ring
   transition that already respects reduced motion. Evidence: `src/styles.css:248`,
-  `src/styles.css:676-678`.
+  `src/styles.css:677-679`.
 * 3.3.8 Accessible Authentication (Minimum), not applicable, because there is no authentication of
   any kind. Evidence: `absent: password|login|signin|oauth|token, grep across src/`.
 * 3.3.7 Redundant Entry, not applicable, because no flow asks for the same information twice.
@@ -232,7 +232,7 @@ Notable passes, recorded because a reader would reasonably expect them to fail:
 * 3.2.2 On Input passes, overturning a tool result. HTML_CodeSniffer flagged `#form-catalog-search`
   under H32.2 for having no submit button on both scanned surfaces. The form is search-as-you-type
   and calls `preventDefault` on submit, results update in place, and no change of context occurs,
-  so the criterion is met. Evidence: `src/index.html:351-357`, `src/js/main.js:1814-1822`.
+  so the criterion is met. Evidence: `src/index.html:351-357`, `src/js/main.js:1824-1832`.
 
 #### UX-A-001: The primary call to action and the accent text fall below 4.5:1
 
@@ -343,7 +343,7 @@ Severity: 3, single-rater estimate
 Rationale: hides six controls per row on the primary reading path, on every touch device, for the
 life of the product
 Confidence: Measured
-Evidence: `src/styles.css:468-475`, `docs/ux-artifacts/live-inspection.json`
+Evidence: `src/styles.css:469-476`, `docs/ux-artifacts/live-inspection.json`
 Source: mobile viewport framing, criterion 1.4.13
 Impact: the row action container computes to `opacity: 0` at rest and is revealed only on `:hover`
 or `:focus-within`. Keyboard users are served, because the measured tab walk reached every action
@@ -417,7 +417,7 @@ emulated light preference the computed body background stays `rgb(15, 17, 21)` a
 taken under light and dark preference are byte-identical, so the reader's system preference has no
 effect at all. Forced colours and reduced motion are both handled, which shows the gap is a missing
 theme rather than a general disregard for user preferences. Evidence for that contrast:
-`src/styles.css:676-683`.
+`src/styles.css:677-684`.
 Recommendation: derive the palette from tokens and add a light theme behind `prefers-color-scheme`
 with a manual override, reusing the existing forced-colors work as the model
 Backlog item: BL-032
@@ -440,8 +440,8 @@ the distinction most at risk of being lost is the one the product most wants to 
 Recommendation: move the full description into visible or programmatically associated text rather
 than `title`, preserving all five states
 Backlog item: BL-027
-Resolved: the description is now a `visually-hidden` span inside the badge, so it is part of the
-badge's accessible name rather than an attribute beside it, and the pending badge's explanation
+Resolved: the description is now a `visually-hidden` span inside the badge, so it is text a reader
+reaches in sequence rather than an attribute beside it, and the pending badge's explanation
 moved the same way. The Evidence anchor names the badge as it now stands; the Impact above
 describes the `title` it replaced. `describe()` is called unchanged, so all five states stay
 distinct and none of them asserts that an issue is available.
@@ -612,7 +612,7 @@ Backlog item: BL-028
 reduce, with a screenshot captured for each. The light and dark screenshots are byte-identical,
 which is the measurement behind UX-A-008. Reduced motion is genuinely honoured: the progress ring
 transition computes to `none` under the reduce preference. Evidence:
-`docs/ux-artifacts/live-inspection.json`, `src/styles.css:248`, `src/styles.css:676-678`.
+`docs/ux-artifacts/live-inspection.json`, `src/styles.css:248`, `src/styles.css:677-679`.
 
 ## Step 5: Information architecture and generative artifacts
 
@@ -698,12 +698,12 @@ sentence frames rather than quotations. Nobody said these words.
   `src/index.html:264-299` and `src/index.html:291`.
 * When I open a crossover I have never read, I want to know how much reading I am committing to
   before I import it, so I can pick the essential path or the complete path deliberately. Traced to
-  `src/js/main.js:1769-1774`.
+  `src/js/main.js:1779-1784`.
 * When an issue has no metadata yet, I want the app to say so plainly, so I can tell a pending
   lookup apart from a comic that does not exist. Traced to `src/js/main.js:1134-1140`.
 * When I have read half of a long order across several sittings, I want to come back and see where
   I stopped, so I can resume without scrolling to find the boundary. Traced to
-  `src/js/main.js:1952-1970`.
+  `src/js/main.js:1962-1980`.
 * When my browser storage is cleared or I move machines, I want my progress back from a file I
   control, so I can keep my history without an account. Traced to `src/js/lib/model.js:453-477`.
 * When I follow one crossover, I want its progress counted for that list alone, so I can see how

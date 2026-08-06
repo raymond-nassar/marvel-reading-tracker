@@ -39,13 +39,13 @@
     "fp": "87efb34932539235",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:1769-1774|0": {
-    "anchor": "src/js/main.js:1769-1774",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:1779-1784|0": {
+    "anchor": "src/js/main.js:1779-1784",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:1952-1970|0": {
-    "anchor": "src/js/main.js:1952-1970",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:1962-1980|0": {
+    "anchor": "src/js/main.js:1962-1980",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -114,8 +114,8 @@
     "fp": "414c8c4d2ec683f4",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
-  "docs/UX_STUDY.md|sweep-result|src/js/main.js:1814-1822|0": {
-    "anchor": "src/js/main.js:1814-1822",
+  "docs/UX_STUDY.md|sweep-result|src/js/main.js:1824-1832|0": {
+    "anchor": "src/js/main.js:1824-1832",
     "fp": "9b9575dc8a81cd13",
     "head": "function wireCatalogSearch() {"
   },
@@ -129,8 +129,8 @@
     "fp": "8e9f0b814f7bdc04",
     "head": ":focus-visible {"
   },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css:676-678|0": {
-    "anchor": "src/styles.css:676-678",
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:677-679|0": {
+    "anchor": "src/styles.css:677-679",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -144,8 +144,8 @@
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:676-678|0": {
-    "anchor": "src/styles.css:676-678",
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:677-679|0": {
+    "anchor": "src/styles.css:677-679",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -194,8 +194,8 @@
     "fp": "3fb81ae816834465",
     "head": ".cb {"
   },
-  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:468-475|0": {
-    "anchor": "src/styles.css:468-475",
+  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:469-476|0": {
+    "anchor": "src/styles.css:469-476",
     "fp": "173a5898da6079a8",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -234,8 +234,8 @@
     "fp": "1ef02ac278158bc3",
     "head": "<meta name=\"color-scheme\" content=\"dark\" />"
   },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:676-683|0": {
-    "anchor": "src/styles.css:676-683",
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:677-684|0": {
+    "anchor": "src/styles.css:677-684",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -274,8 +274,8 @@
     "fp": "6b0a52cdade44dcb",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:2110-2123|0": {
-    "anchor": "src/js/main.js:2110-2123",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:2120-2133|0": {
+    "anchor": "src/js/main.js:2120-2133",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -289,8 +289,8 @@
     "fp": "9214d23c72a606c7",
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:1900|0": {
-    "anchor": "src/js/main.js:1900",
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:1910|0": {
+    "anchor": "src/js/main.js:1910",
     "fp": "94e13815af1d3dad",
     "head": "alert('That curated order could not be saved, so nothing was imported.');"
   },
@@ -304,8 +304,8 @@
     "fp": "f58b1d12596a76ef",
     "head": "const id = activeListId();"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:2004-2007|0": {
-    "anchor": "src/js/main.js:2004-2007",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:2014-2017|0": {
+    "anchor": "src/js/main.js:2014-2017",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -384,13 +384,13 @@
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:1739|0": {
-    "anchor": "src/js/main.js:1739",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:1749|0": {
+    "anchor": "src/js/main.js:1749",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:1952-1970|0": {
-    "anchor": "src/js/main.js:1952-1970",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:1962-1980|0": {
+    "anchor": "src/js/main.js:1962-1980",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -404,8 +404,8 @@
     "fp": "d554f6098a68aa1e",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2110-2123|0": {
-    "anchor": "src/js/main.js:2110-2123",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2120-2133|0": {
+    "anchor": "src/js/main.js:2120-2133",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -439,8 +439,8 @@
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2004-2007|0": {
-    "anchor": "src/js/main.js:2004-2007",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2014-2017|0": {
+    "anchor": "src/js/main.js:2014-2017",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -449,8 +449,8 @@
     "fp": "f58b1d12596a76ef",
     "head": "const id = activeListId();"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:468-475|0": {
-    "anchor": "src/styles.css:468-475",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:469-476|0": {
+    "anchor": "src/styles.css:469-476",
     "fp": "173a5898da6079a8",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -509,8 +509,8 @@
     "fp": "1350e867b612018d",
     "head": "async function getJson(url, attempt = 0) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2110-2123|0": {
-    "anchor": "src/js/main.js:2110-2123",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2120-2133|0": {
+    "anchor": "src/js/main.js:2120-2133",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -524,8 +524,8 @@
     "fp": "c17ce04e13581723",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:495-496|0": {
-    "anchor": "src/styles.css:495-496",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:496-497|0": {
+    "anchor": "src/styles.css:496-497",
     "fp": "5a5d3c1e791d4bbe",
     "head": ".row { }"
   },
@@ -554,23 +554,23 @@
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:2017-2030|0": {
-    "anchor": "src/js/main.js:2017-2030",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:2027-2040|0": {
+    "anchor": "src/js/main.js:2027-2040",
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:1739|0": {
-    "anchor": "src/js/main.js:1739",
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:1749|0": {
+    "anchor": "src/js/main.js:1749",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:1756-1761|0": {
-    "anchor": "src/js/main.js:1756-1761",
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:1766-1771|0": {
+    "anchor": "src/js/main.js:1766-1771",
     "fp": "767e40003bd5b6e0",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css:468-475|0": {
-    "anchor": "src/styles.css:468-475",
+  "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css:469-476|0": {
+    "anchor": "src/styles.css:469-476",
     "fp": "173a5898da6079a8",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -649,23 +649,23 @@
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:438-461|0": {
-    "anchor": "src/styles.css:438-461",
-    "fp": "1de73e8d4daf96ee",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:438-462|0": {
+    "anchor": "src/styles.css:438-462",
+    "fp": "0ca231bb4e98d821",
     "head": "/* These outlines are faint on purpose, and that is a recorded decision rather than an"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:463|0": {
-    "anchor": "src/styles.css:463",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:464|0": {
+    "anchor": "src/styles.css:464",
     "fp": "7f22dd94b3ebb02f",
     "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:463|1": {
-    "anchor": "src/styles.css:463",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:464|1": {
+    "anchor": "src/styles.css:464",
     "fp": "7f22dd94b3ebb02f",
     "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:676-683|0": {
-    "anchor": "src/styles.css:676-683",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:677-684|0": {
+    "anchor": "src/styles.css:677-684",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -674,13 +674,13 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:2110-2123|0": {
-    "anchor": "src/js/main.js:2110-2123",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:2120-2133|0": {
+    "anchor": "src/js/main.js:2120-2133",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-001|src/js/main.js:1756-1786|0": {
-    "anchor": "src/js/main.js:1756-1786",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-001|src/js/main.js:1766-1796|0": {
+    "anchor": "src/js/main.js:1766-1796",
     "fp": "ef3b6a8363ab903d",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
@@ -699,33 +699,33 @@
     "fp": "414c8c4d2ec683f4",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/js/main.js:1814-1829|0": {
-    "anchor": "src/js/main.js:1814-1829",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/js/main.js:1824-1839|0": {
+    "anchor": "src/js/main.js:1824-1839",
     "fp": "97edef98a6cc84a2",
     "head": "function wireCatalogSearch() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:1760|0": {
-    "anchor": "src/js/main.js:1760",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:1770|0": {
+    "anchor": "src/js/main.js:1770",
     "fp": "e5a85bd0d6aeac2f",
     "head": "const depth = depthLabel(list.depth);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:1769-1774|0": {
-    "anchor": "src/js/main.js:1769-1774",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:1779-1784|0": {
+    "anchor": "src/js/main.js:1779-1784",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-006|src/js/main.js:1792-1812|0": {
-    "anchor": "src/js/main.js:1792-1812",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-006|src/js/main.js:1802-1822|0": {
+    "anchor": "src/js/main.js:1802-1822",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|src/js/main.js:1739|0": {
-    "anchor": "src/js/main.js:1739",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|src/js/main.js:1749|0": {
+    "anchor": "src/js/main.js:1749",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|src/js/main.js:1756-1761|0": {
-    "anchor": "src/js/main.js:1756-1761",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|src/js/main.js:1766-1771|0": {
+    "anchor": "src/js/main.js:1766-1771",
     "fp": "767e40003bd5b6e0",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
@@ -739,23 +739,23 @@
     "fp": "743dcbf0a43f0694",
     "head": "// Returns { entries, unresolved, headings }"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/main.js:1469-1522|0": {
-    "anchor": "src/js/main.js:1469-1522",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/main.js:1472-1525|0": {
+    "anchor": "src/js/main.js:1472-1525",
     "fp": "e469118bcd96fffa",
     "head": "const { entries, unresolved, headings } = parseChecklist(text);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-010|src/js/main.js:1530-1592|0": {
-    "anchor": "src/js/main.js:1530-1592",
-    "fp": "6b3347427113cf61",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-010|src/js/main.js:1533-1602|0": {
+    "anchor": "src/js/main.js:1533-1602",
+    "fp": "b9a201a17e841d23",
     "head": "function unresolvedRow(entry, listId) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:1431-1449|0": {
-    "anchor": "src/js/main.js:1431-1449",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:1434-1452|0": {
+    "anchor": "src/js/main.js:1434-1452",
     "fp": "457a03b1d13a9dd4",
     "head": "async function addSeries(series) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:1594-1638|0": {
-    "anchor": "src/js/main.js:1594-1638",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:1604-1648|0": {
+    "anchor": "src/js/main.js:1604-1648",
     "fp": "5a57b37f0d0a4cae",
     "head": "function doManual() {"
   },
@@ -779,8 +779,8 @@
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:1952-1970|0": {
-    "anchor": "src/js/main.js:1952-1970",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:1962-1980|0": {
+    "anchor": "src/js/main.js:1962-1980",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -819,8 +819,8 @@
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-020|src/js/main.js:1617|0": {
-    "anchor": "src/js/main.js:1617",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-020|src/js/main.js:1627|0": {
+    "anchor": "src/js/main.js:1627",
     "fp": "5435ae20ec2b0bc2",
     "head": "source: 'manual',"
   },
@@ -839,8 +839,8 @@
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:2004-2007|0": {
-    "anchor": "src/js/main.js:2004-2007",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:2014-2017|0": {
+    "anchor": "src/js/main.js:2014-2017",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -894,8 +894,8 @@
     "fp": "350e40827cf70ffd",
     "head": "export class MarvelApi {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:2017-2030|0": {
-    "anchor": "src/js/main.js:2017-2030",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:2027-2040|0": {
+    "anchor": "src/js/main.js:2027-2040",
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -929,8 +929,8 @@
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:2004-2007|0": {
-    "anchor": "src/js/main.js:2004-2007",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:2014-2017|0": {
+    "anchor": "src/js/main.js:2014-2017",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -944,18 +944,18 @@
     "fp": "9214d23c72a606c7",
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1900|0": {
-    "anchor": "src/js/main.js:1900",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1910|0": {
+    "anchor": "src/js/main.js:1910",
     "fp": "94e13815af1d3dad",
     "head": "alert('That curated order could not be saved, so nothing was imported.');"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1911|0": {
-    "anchor": "src/js/main.js:1911",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1921|0": {
+    "anchor": "src/js/main.js:1921",
     "fp": "553b484eaf3636b9",
     "head": "alert('The list was created but its issues could not be saved.');"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1936|0": {
-    "anchor": "src/js/main.js:1936",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1946|0": {
+    "anchor": "src/js/main.js:1946",
     "fp": "bb7e71279397b55e",
     "head": "alert(`Could not load that curated order: ${err.message}`);"
   },
@@ -964,13 +964,13 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#licensing|src/js/main.js:1792-1812|0": {
-    "anchor": "src/js/main.js:1792-1812",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#licensing|src/js/main.js:1802-1822|0": {
+    "anchor": "src/js/main.js:1802-1822",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:2087-2089|0": {
-    "anchor": "src/js/main.js:2087-2089",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:2097-2099|0": {
+    "anchor": "src/js/main.js:2097-2099",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
@@ -999,8 +999,8 @@
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:1952-1970|0": {
-    "anchor": "src/js/main.js:1952-1970",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:1962-1980|0": {
+    "anchor": "src/js/main.js:1962-1980",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -1039,8 +1039,8 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:2110-2122|0": {
-    "anchor": "src/js/main.js:2110-2122",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:2120-2132|0": {
+    "anchor": "src/js/main.js:2120-2132",
     "fp": "ef3cece5d5a24cbb",
     "head": "function renderAll() {"
   },
@@ -1064,8 +1064,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:2110-2122|0": {
-    "anchor": "src/js/main.js:2110-2122",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:2120-2132|0": {
+    "anchor": "src/js/main.js:2120-2132",
     "fp": "ef3cece5d5a24cbb",
     "head": "function renderAll() {"
   },
@@ -1089,8 +1089,8 @@
     "fp": "1350e867b612018d",
     "head": "async function getJson(url, attempt = 0) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:495-496|0": {
-    "anchor": "src/styles.css:495-496",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:496-497|0": {
+    "anchor": "src/styles.css:496-497",
     "fp": "5a5d3c1e791d4bbe",
     "head": ".row { }"
   },
@@ -1099,8 +1099,8 @@
     "fp": "baff944060f60826",
     "head": "// So we never claim an issue *is* available. We report one of five explicit"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-049|src/styles.css:463|0": {
-    "anchor": "src/styles.css:463",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-049|src/styles.css:464|0": {
+    "anchor": "src/styles.css:464",
     "fp": "7f22dd94b3ebb02f",
     "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
   }

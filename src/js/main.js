@@ -1358,12 +1358,15 @@ function renderResults(sel, items, metaFn) {
   // Name the destination at the point of decision. The same hint sits in the view header, but
   // the results are far enough down the page that it is easy to miss entirely.
   const target = store.state.lists[activeListId()];
-  box.append(el('p', {
-    class: 'rail-hint',
-    text: target
-      ? `Adding to “${target.name}”.`
-      : 'Adding will start a new list called “My reading order”.',
-  }));
+  const destination = target
+    ? `Adding to “${target.name}”.`
+    : 'Adding will start a new list called “My reading order”.';
+  box.append(el('p', { class: 'rail-hint', text: destination }));
+
+  // This pane stopped being a live region, so the outcome has to be said here. The empty case
+  // below goes through notify() and still speaks, so without this line a search that found
+  // nothing announced itself and a search that worked did not, which reads as a broken search.
+  announce(`${count(items.length)} ${items.length === 1 ? 'result' : 'results'}. ${destination}`);
 
   for (const it of items) {
     // The confirmation belongs on the control that was clicked. Previously the only feedback
@@ -1557,6 +1560,9 @@ function unresolvedRow(entry, listId) {
       const list = res.matches.slice(0, 8);
       if (!list.length) {
         row.replaceChildren(el('p', { class: 'notice notice-warn', text: `No candidates found for “${entry.title}”. Add it by hand if you still want to track it.` }));
+        // The report pane around this row is no longer live, and the sibling outcomes below
+        // announce themselves, so this one has to as well or the button just goes quiet.
+        announce(`No candidates found for ${entry.title}.`);
         return;
       }
       choices.append(el('p', { class: 'rail-hint', text: `Pick the right issue for “${entry.title}”:` }));
@@ -1584,7 +1590,11 @@ function unresolvedRow(entry, listId) {
       row.replaceChildren(choices);
     } catch (err) {
       btn.disabled = false;
-      row.append(el('p', { class: 'notice notice-error', text: friendly(err) }));
+      // Re-enabling the button is the only other cue that this failed, and a disabled state
+      // returning to enabled is not announced. Without this the lookup fails in silence.
+      const why = friendly(err);
+      row.append(el('p', { class: 'notice notice-error', text: why }));
+      announce(why);
     }
   });
   row.append(main, btn);
