@@ -5,6 +5,8 @@ import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory,
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
   safeOrderFile, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
+  catalogFacets, filterByFacet, facetLabel, isShortOrder, catalogCoverUrl,
+  readingTimeLabel, MINUTES_PER_ISSUE, SHORT_ORDER_MAX,
 } from '../src/js/lib/catalog.js';
 
 test('safeOrderFile accepts a plain markdown name and nothing that escapes the orders folder', () => {
@@ -104,7 +106,106 @@ test('the bundled catalog is valid and its counts match the vendored orders', as
     const order = JSON.parse(await readFile(new URL(`../src/data/${list.file}`, import.meta.url), 'utf8'));
     assert.equal(list.count, order.items.length, `${list.id} count is out of date`);
     assert.equal(list.id, order.id);
+
+    // The card art has to belong to the order it represents. A cover pinned from an issue
+    // that is not in the file is how a catalog ends up illustrated with the wrong comic.
+    assert.ok(list.coverIssueId, `${list.id} has no representative issue for its cover`);
+    const rep = order.items.find((i) => i.issueId === list.coverIssueId);
+    assert.ok(rep, `${list.id} cover issue ${list.coverIssueId} is not in ${list.file}`);
+    assert.deepEqual(list.cover, rep.cover, `${list.id} cover does not match its representative issue`);
+    // Marvel serves http in the API payload; anything pinned must already be https or it is
+    // blocked as mixed content the moment the app is served over TLS.
+    assert.match(list.cover.path, /^https:\/\//, `${list.id} cover is not https`);
   }
+});
+
+test('every catalog cover resolves to a variant URL the browser can request', async () => {
+  const url = new URL('../src/data/catalog.json', import.meta.url);
+  const { lists } = parseCatalog(JSON.parse(await readFile(url, 'utf8')));
+  for (const list of lists) {
+    assert.match(
+      catalogCoverUrl(list),
+      /^https:\/\/.+\/portrait_incredible\.(jpg|png|gif)$/,
+      `${list.id} does not produce a usable cover URL`,
+    );
+  }
+});
+
+test('an entry with no usable cover falls back rather than requesting a broken image', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'x', file: 'x.json', name: 'X', count: 1 },
+      // Marvel's own payload is http; anything that cannot be served over TLS is dropped
+      // rather than rendered as a mixed-content image that silently fails to load.
+      { id: 'y', file: 'y.json', name: 'Y', count: 1, cover: { path: 'ftp://cdn.test/y', ext: 'jpg' }, coverIssueId: 0 },
+    ],
+  });
+  assert.equal(lists[0].cover, null);
+  assert.equal(lists[0].coverIssueId, null);
+  assert.equal(catalogCoverUrl(lists[0]), null);
+  assert.equal(lists[1].cover, null);
+  assert.equal(lists[1].coverIssueId, null);
+  assert.equal(catalogCoverUrl(lists[1]), null);
+});
+
+test('beginner-friendliness is recorded, not inferred, so only an explicit true counts', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'a', file: 'a.json', name: 'A', count: 1, beginner: true },
+      { id: 'b', file: 'b.json', name: 'B', count: 1, beginner: 'yes' },
+      { id: 'c', file: 'c.json', name: 'C', count: 1 },
+    ],
+  });
+  assert.deepEqual(lists.map((l) => l.beginner), [true, false, false]);
+  assert.deepEqual(filterByFacet(lists, 'beginner').map((l) => l.id), ['a']);
+});
+
+test('facets cover the ways a reader chooses, and never offer one that matches nothing', () => {
+  const lists = parseCatalog({
+    lists: [
+      { id: 'a', file: 'a.json', name: 'A', count: 8, type: 'event', beginner: true },
+      { id: 'b', file: 'b.json', name: 'B', count: 200, type: 'creator-run' },
+    ],
+  }).lists;
+
+  const facets = catalogFacets(lists);
+  assert.deepEqual(facets.map((f) => f.key), ['all', 'beginner', 'type:event', 'type:creator-run', 'short']);
+  assert.deepEqual(facets.map((f) => f.count), [2, 1, 1, 1, 1]);
+  // Plural, because a chip labels a set rather than a single list.
+  assert.equal(facetLabel(lists, 'type:event'), 'Events');
+
+  assert.deepEqual(filterByFacet(lists, 'all').map((l) => l.id), ['a', 'b']);
+  assert.deepEqual(filterByFacet(lists, 'short').map((l) => l.id), ['a']);
+  assert.deepEqual(filterByFacet(lists, 'type:creator-run').map((l) => l.id), ['b']);
+
+  // Nothing is short here, so the chip that would lead to an empty grid is not offered.
+  const long = parseCatalog({ lists: [{ id: 'c', file: 'c.json', name: 'C', count: 400, type: 'era' }] }).lists;
+  assert.equal(catalogFacets(long).some((f) => f.key === 'short'), false);
+  assert.equal(catalogFacets(long).some((f) => f.key === 'beginner'), false);
+});
+
+test('a stale facet matches nothing rather than quietly widening to everything', () => {
+  const { lists } = parseCatalog({ lists: [{ id: 'a', file: 'a.json', name: 'A', count: 3 }] });
+  assert.deepEqual(filterByFacet(lists, 'type:motion-comic'), []);
+  assert.deepEqual(filterByFacet(lists, 'nonsense'), []);
+  assert.equal(facetLabel(lists, 'nonsense'), 'that filter');
+});
+
+test('an order under twenty issues is short; exactly twenty is not, as the label says', () => {
+  assert.equal(isShortOrder({ count: 19 }), true);
+  assert.equal(isShortOrder({ count: SHORT_ORDER_MAX }), false);
+  assert.equal(isShortOrder({ count: null }), false);
+  assert.equal(isShortOrder({}), false);
+});
+
+test('reading time is stated in round units and never for an unknown count', () => {
+  assert.equal(readingTimeLabel(1), 'about 20 minutes');
+  assert.equal(readingTimeLabel(4), 'about 80 minutes');
+  assert.equal(readingTimeLabel(5), 'about 2 hours');
+  assert.equal(readingTimeLabel(0), null);
+  assert.equal(readingTimeLabel(null), null);
+  // The assumption behind the estimate is a constant callers can show, not a hidden number.
+  assert.equal(MINUTES_PER_ISSUE, 20);
 });
 
 test('categories are derived from the lists, with counts and a stable order', () => {

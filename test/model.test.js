@@ -5,7 +5,7 @@ import {
   removeFromList, moveItem, moveItemTo, markRead, toggleRead, isRead, markManyRead,
   setOverride, upNext, listProgress, seriesProgress, listItems, pendingIssueIds,
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
-  normalizeCover, coverUrl, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
+  normalizeCover, coverUrl, listForCatalogId, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
 } from '../src/js/lib/model.js';
 
 const issue = (id, over = {}) => ({
@@ -292,8 +292,37 @@ test('a duplicate of a list with no description gets an empty one, not "undefine
   }
 });
 
-// ------------------------------------------------------------------ read state
+test('a list imported from the catalog remembers which entry it came from', () => {
+  const s = createList(createEmptyState(), { name: 'Civil War', catalogId: 'civil-war' });
+  const id = s.listOrder[0];
+  assert.equal(s.lists[id].catalogId, 'civil-war');
+  assert.equal(listForCatalogId(s, 'civil-war').id, id);
+  assert.equal(listForCatalogId(s, 'house-of-m'), null);
+  assert.equal(listForCatalogId(s, null), null);
 
+  // A hand-made list has no catalog entry behind it, so it must not claim one.
+  const plain = createList(createEmptyState(), { name: 'Mine' });
+  assert.equal(plain.lists[plain.listOrder[0]].catalogId, null);
+});
+
+test('the catalog link survives a reload, or "in library" would be wrong after one', () => {
+  const s = createList(createEmptyState(), { name: 'Civil War', catalogId: 'civil-war' });
+  const round = migrate(JSON.parse(JSON.stringify(s)));
+  const id = round.listOrder[0];
+  assert.equal(round.lists[id].catalogId, 'civil-war');
+  assert.equal(listForCatalogId(round, 'civil-war').id, id);
+});
+
+test('a duplicate is the reader\'s own copy, so it does not inherit the catalog link', () => {
+  const s = createList(createEmptyState(), { name: 'Civil War', catalogId: 'civil-war' });
+  const id = s.listOrder[0];
+  const { state: after, listId: copyId } = duplicateList(s, id);
+  assert.equal(after.lists[copyId].catalogId, null);
+  // The original still counts as the imported one, so the card keeps pointing at it.
+  assert.equal(listForCatalogId(after, 'civil-war').id, id);
+});
+
+// ------------------------------------------------------------------ read state
 test('read state is global, so the same issue in two lists is consistent', () => {
   let s = createList(createEmptyState(), { name: 'A' });
   s = createList(s, { name: 'B' });

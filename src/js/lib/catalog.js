@@ -6,14 +6,28 @@
 // here, so an entry that is missing what a reader needs to choose safely (a name, a file to
 // import, or a truthful issue count) is rejected rather than rendered half-blank.
 
+import { normalizeCover } from './model.js';
+
 export const LIST_TYPES = ['event', 'character-run', 'creator-run', 'era'];
 export const READING_DEPTHS = ['essential', 'complete', 'tie-ins'];
+
+// What "short" means on a filter chip. Twenty issues is roughly a weekend, and it is the
+// boundary that separates the self-contained events in the bundled catalog from the runs.
+export const SHORT_ORDER_MAX = 20;
 
 const TYPE_LABELS = {
   event: 'Event',
   'character-run': 'Character run',
   'creator-run': 'Creator run',
   era: 'Era',
+};
+
+// The chip form. A filter names a set, so it reads as a plural.
+const TYPE_FACET_LABELS = {
+  event: 'Events',
+  'character-run': 'Character runs',
+  'creator-run': 'Creator runs',
+  era: 'Eras',
 };
 
 const DEPTH_LABELS = {
@@ -123,6 +137,16 @@ function normalizeEntry(raw) {
     group: str(raw.group),
     groupName: str(raw.groupName),
     variant: str(raw.variant),
+    // A representative issue, so a card can show art before anything is imported. Both
+    // fields come from the vendored Marvel metadata for an issue that is actually in the
+    // order, never from a hand-picked image: `cover` is the CDN base the browser appends a
+    // variant to, exactly as issue covers work everywhere else in the app.
+    coverIssueId: Number.isInteger(raw.coverIssueId) && raw.coverIssueId !== 0 ? raw.coverIssueId : null,
+    cover: normalizeCover(raw.cover),
+    // An editorial judgement, recorded as data rather than guessed from the issue count:
+    // true means the order opens the story it tells, so no prior reading is assumed beyond
+    // general familiarity with the characters.
+    beginner: raw.beginner === true,
   };
 }
 
@@ -168,6 +192,80 @@ export function catalogCategories(lists) {
 export function filterByCategory(lists, category) {
   if (!category || category === 'all') return lists;
   return lists.filter((list) => (list.type ?? UNCATEGORIZED) === category);
+}
+
+// ------------------------------------------------------------------ facets
+
+// Facets are what the landing page and the catalog page both filter by. They are a superset
+// of the type categories: a reader choosing what to start does not think only in Marvel's
+// taxonomy, they also think "something short" or "something I can follow cold". Each facet
+// is derived from the lists themselves and dropped when nothing matches it, so a chip never
+// leads to an empty grid.
+
+export function isShortOrder(list) {
+  return Number.isInteger(list?.count) && list.count < SHORT_ORDER_MAX;
+}
+
+export function isBeginnerOrder(list) {
+  return list?.beginner === true;
+}
+
+export function catalogFacets(lists) {
+  const all = Array.isArray(lists) ? lists : [];
+  const facets = [{ key: 'all', label: 'All', count: all.length }];
+
+  const beginner = all.filter(isBeginnerOrder).length;
+  if (beginner) facets.push({ key: 'beginner', label: 'Beginner-friendly', count: beginner });
+
+  for (const c of catalogCategories(all)) {
+    facets.push({
+      key: `type:${c.key}`,
+      label: c.key === UNCATEGORIZED ? 'Other' : (TYPE_FACET_LABELS[c.key] ?? typeLabel(c.key)),
+      count: c.count,
+    });
+  }
+
+  const short = all.filter(isShortOrder).length;
+  if (short) facets.push({ key: 'short', label: `Short (under ${SHORT_ORDER_MAX} issues)`, count: short });
+
+  return facets;
+}
+
+export function filterByFacet(lists, key) {
+  const all = Array.isArray(lists) ? lists : [];
+  if (!key || key === 'all') return all;
+  if (key === 'beginner') return all.filter(isBeginnerOrder);
+  if (key === 'short') return all.filter(isShortOrder);
+  if (key.startsWith('type:')) return filterByCategory(all, key.slice(5));
+  // An unknown facet matches nothing rather than everything, so a stale saved filter can
+  // never quietly widen into the whole catalog.
+  return [];
+}
+
+export function facetLabel(lists, key) {
+  return catalogFacets(lists).find((f) => f.key === key)?.label ?? 'that filter';
+}
+
+// ------------------------------------------------------------------ covers
+
+// The catalog's own cover, built the same way an issue cover is. Returns null when the
+// entry has no representative issue, so the card falls back to a typographic tile rather
+// than requesting a broken image.
+export function catalogCoverUrl(list, variant = 'portrait_incredible') {
+  const c = normalizeCover(list?.cover);
+  return c ? `${c.path}/${variant}.${c.ext}` : null;
+}
+
+// Roughly how much reading an order is. Twenty minutes an issue is an assumption, so every
+// caller states it next to the number rather than presenting the total as a measurement.
+export const MINUTES_PER_ISSUE = 20;
+
+export function readingTimeLabel(count) {
+  if (!Number.isInteger(count) || count <= 0) return null;
+  const minutes = count * MINUTES_PER_ISSUE;
+  if (minutes < 90) return `about ${minutes} minutes`;
+  const hours = Math.round(minutes / 60);
+  return `about ${hours} hour${hours === 1 ? '' : 's'}`;
 }
 
 // ------------------------------------------------------------------ search
