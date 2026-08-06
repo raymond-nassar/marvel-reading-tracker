@@ -829,6 +829,30 @@ inserting a citation into either renumbered the other and reported drift that ha
 Spurious drift is the expensive kind: it trains a re-bless reflex, and a reflexive re-bless is how a
 real drift gets waved through.
 
+A blessed anchor that stops being collected now fails the build too, which it did not before.
+Coverage guards the walk inside the documents that exist and discovery guards which documents are
+opened, and neither guards loss. Deleting `docs/UX_STUDY.md` in a scratch revision was measured
+rather than argued: seventy-two anchors left the gate while the run printed `coverage:
+PRODUCT_BACKLOG.md 146/146` and exited 0. Renaming it is the plausible version and it also passed
+for the wrong reason, because the seventy-two reappeared under a new document key and the run
+complained about additions rather than about the loss. Each guard was measuring the layer it could
+see and reporting full marks for the layer beneath it, which is the same defect this section
+describes twice already.
+
+Which losses matter is deliberately not judged. Failing only when a whole document disappears would
+be a heuristic about significance, and a heuristic about which anchors are worth counting is exactly
+how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting
+a backlog row now fails until it is re-blessed, which is friction on an ordinary edit rather than on
+a code change. That is the right direction: a claim that has vanished is unverifiable, not free of
+news.
+
+Blessing is the one action the gate cannot check, and the order of operations matters more than it
+looks. Writing the paragraphs above moved this document's own out-of-scope list, which
+`docs/UX_STUDY.md` cites by line, and blessing in the same step as the edit locked the broken anchor
+in silently and reported a clean run. The gate caught it on the next edit, which is the second best
+outcome available. Bless as the last action, with nothing edited after it, and read the check that
+follows rather than the bless that preceded it.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.

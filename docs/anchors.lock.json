@@ -65,9 +65,9 @@
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
   "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md|1": {
-    "anchor": "PRODUCT_BACKLOG.md:1016-1019",
-    "fp": "2622e3ad2443790b",
-    "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
+    "anchor": "PRODUCT_BACKLOG.md:1063-1066",
+    "fp": "ff85d93d4684cfa7",
+    "head": "- Hosting or distributing comic content."
   },
   "docs/UX_STUDY.md|proto-persona#reading-style|src/index.html|0": {
     "anchor": "src/index.html:125-155",

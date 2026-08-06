@@ -362,6 +362,23 @@ for (const f of found) {
 const seen = new Set(found.map((f) => f.key));
 const gone = Object.keys(lock).filter((k) => !seen.has(k));
 
+// A lost anchor is a claim that can no longer be checked, which is not the same as a
+// claim with nothing to report. Coverage cannot see this, because it counts what each
+// surviving document still has: delete a document and every remaining one reports a
+// perfect score while its anchors leave the gate entirely. Renaming one is the
+// plausible version, and it reads as a clean sweep of additions rather than as a loss.
+//
+// Which losses matter is deliberately not judged here. Failing only when a whole
+// document disappears would be a heuristic about significance, and heuristics about
+// which anchors are worth counting are exactly how this gate once covered 37 of 193.
+const corpus = new Set(docs());
+const goneByDoc = new Map();
+for (const k of gone) {
+  const doc = k.split('|')[0];
+  if (!goneByDoc.has(doc)) goneByDoc.set(doc, []);
+  goneByDoc.get(doc).push(k);
+}
+
 const cov = coverage.map((c) => `${c.doc} ${c.captured}/${c.scanned}`).join(', ');
 console.log(`${unchanged} unchanged, ${drifted.length} drifted, ${unkeyed.length} new, ${gone.length} removed`);
 console.log(`coverage: ${cov}\n`);
@@ -381,11 +398,24 @@ for (const u of unkeyed) {
   console.log('');
 }
 
+for (const [doc, keys] of goneByDoc) {
+  const absent = corpus.has(doc) ? '' : ', and the document itself is absent from the corpus';
+  console.log(`GONE   ${doc}: ${keys.length} blessed anchor(s) no longer collected${absent}`);
+  for (const k of keys.slice(0, 4)) console.log(`  ${lock[k].anchor}  ${k}`);
+  if (keys.length > 4) console.log(`  ... and ${keys.length - 4} more`);
+  console.log('');
+}
+
 if (drifted.length || unkeyed.length) {
   console.log('Re-read the cited lines and confirm they still say what the claim says.');
   console.log('Only then re-bless: npm run anchors:bless');
 }
+if (gone.length) {
+  console.log('A blessed claim is no longer being checked. Confirm the claim was meant to');
+  console.log('go, rather than its document being renamed or moved out of the corpus, and');
+  console.log('only then re-bless: npm run anchors:bless');
+}
 
 reportNearMisses();
 
-process.exitCode = drifted.length || unkeyed.length ? 1 : 0;
+process.exitCode = drifted.length || unkeyed.length || gone.length ? 1 : 0;
