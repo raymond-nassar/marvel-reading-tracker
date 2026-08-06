@@ -127,9 +127,29 @@ function coverBase(cover) {
   return { path: String(cover.path).replace(/^http:/, 'https:'), ext: cover.extension };
 }
 
+// The card art for a reading order. `coverIssueId` names the issue an order should be
+// recognised by; without one the first issue in reading order that has art stands in, which
+// is the issue a reader would open first anyway. Either way the image is Marvel's own
+// metadata for an issue that is actually in the order, never a hand-picked promotional
+// image, so nothing here is scraped and the attribution stays truthful.
+function catalogCover(order, payload) {
+  const items = payload.items ?? [];
+  if (order.coverIssueId != null) {
+    const named = items.find((i) => i.issueId === order.coverIssueId);
+    // A silent fallback here would pin art for an issue the curator did not choose and give
+    // no sign that the reference had gone stale.
+    if (!named) throw new Error(`${order.id}: coverIssueId ${order.coverIssueId} is not an issue in this order`);
+    if (!named.cover) throw new Error(`${order.id}: coverIssueId ${order.coverIssueId} has no cover in Marvel's metadata`);
+    return { coverIssueId: named.issueId, cover: named.cover };
+  }
+  const first = items.find((i) => i?.cover?.path && i?.cover?.ext);
+  return first ? { coverIssueId: first.issueId, cover: first.cover } : { coverIssueId: null, cover: null };
+}
+
 // Derived from the payload rather than restated, so the issue count a reader sees before
 // importing can never drift from the file they will actually import.
 function catalogEntry(order, payload) {
+  const { coverIssueId, cover } = catalogCover(order, payload);
   return {
     id: order.id,
     file: order.out,
@@ -143,6 +163,11 @@ function catalogEntry(order, payload) {
     group: order.group,
     groupName: order.groupName,
     variant: order.variant,
+    // An editorial judgement recorded in curated-lists.json, not inferred: true means the
+    // order opens the story it tells, so it assumes no prior reading.
+    beginner: order.beginner === true,
+    coverIssueId,
+    cover,
     source: payload.source,
     sourceLicense: payload.sourceLicense,
     updatedAt: payload.generatedAt,
@@ -152,14 +177,23 @@ function catalogEntry(order, payload) {
 async function main() {
   const orders = await loadOrders();
   const only = parseOnly(process.argv.slice(2));
+  // The catalog carries editorial metadata — descriptions, keywords, beginner, the cover
+  // issue — that changes without any reading order changing. Rebuilding it from the pinned
+  // files costs no API calls and leaves every order's snapshot date alone, so an editorial
+  // edit is not a reason to re-fetch several hundred issues.
+  const catalogOnly = process.argv.slice(2).includes('--catalog-only');
+  if (catalogOnly && only.size) {
+    throw new Error('--catalog-only rebuilds every catalog entry from the pinned files, so it cannot be combined with --only');
+  }
   for (const id of only) {
     // A typo here would otherwise vendor nothing and look like a success.
     if (!orders.some((o) => o.id === id)) {
       throw new Error(`--only names "${id}", which is not a list in curated-lists.json`);
     }
   }
-  const targets = only.size ? orders.filter((o) => only.has(o.id)) : orders;
-  if (only.size) console.log(`Vendoring ${targets.length} of ${orders.length} lists; the rest keep their pinned files.`);
+  const targets = catalogOnly ? [] : (only.size ? orders.filter((o) => only.has(o.id)) : orders);
+  if (catalogOnly) console.log('Rebuilding catalog.json from the pinned order files; no issues are re-fetched.');
+  else if (only.size) console.log(`Vendoring ${targets.length} of ${orders.length} lists; the rest keep their pinned files.`);
 
   const parsed = [];
   for (const order of targets) {
@@ -170,7 +204,7 @@ async function main() {
   }
 
   const ids = [...new Set(parsed.flatMap((p) => p.entries.map((e) => e.issueId)))];
-  console.log(`Hydrating ${ids.length} unique issues (rate limited, expect a few minutes)...`);
+  if (ids.length) console.log(`Hydrating ${ids.length} unique issues (rate limited, expect a few minutes)...`);
 
   const meta = new Map();
   let done = 0;
@@ -303,9 +337,8 @@ async function main() {
     'utf8',
   );
 
-  console.table(summary);
-  const bad = summary.filter((s) => s.count !== s.expected);
-  if (bad.length) {
+  if (summary.length) console.table(summary);
+  const bad = summary.filter((s) => s.count !== s.expected);  if (bad.length) {
     console.warn('WARNING: counts differ from the plan\u2019s expected values:', bad);
   }
 }

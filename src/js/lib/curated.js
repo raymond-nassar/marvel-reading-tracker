@@ -69,6 +69,16 @@ function checkEntry(raw, index, seen) {
   if (!str(raw.group) && (str(raw.variant) || str(raw.groupName))) {
     at('variant and groupName need a group to belong to');
   }
+  // Editorial, so it has to be stated rather than inferred, and a truthy string would make
+  // "beginner": "no" mean beginner-friendly.
+  if (raw.beginner != null && typeof raw.beginner !== 'boolean') {
+    at('beginner must be true or false when present');
+  }
+  // The issue whose cover represents the order. It has to be a real Marvel issue id; the
+  // vendor script additionally checks that the issue is in this order.
+  if (raw.coverIssueId != null && !(Number.isInteger(raw.coverIssueId) && raw.coverIssueId > 0)) {
+    at('coverIssueId must be a positive whole Marvel issue id when present');
+  }
   if (errors.length) return { entry: null, errors };
 
   return {
@@ -92,6 +102,12 @@ function checkEntry(raw, index, seen) {
       group: str(raw.group),
       groupName: str(raw.groupName),
       variant: str(raw.variant),
+      // Optional editorial flag: the order opens the story it tells, so a reader can start
+      // here without having read something else first.
+      beginner: raw.beginner === true,
+      // Optional: the issue whose cover stands for the order on a card. Left null, the
+      // vendor script uses the first issue in the order that has cover art.
+      coverIssueId: Number.isInteger(raw.coverIssueId) && raw.coverIssueId > 0 ? raw.coverIssueId : null,
       expect: Number.isInteger(raw.expect) ? raw.expect : null,
     },
     errors: [],
