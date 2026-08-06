@@ -117,7 +117,7 @@ remaining and is not scored.
 | 3.3 | BL-011 | P1 | series and creator adds at `src/js/main.js:1538-1556`, manual issue add at `src/js/main.js:1708-1752` | Done |
 | 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:988-1008`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:143` | Done |
 | 4.1 | BL-013 | P0 | renderRail marks the active list with `aria-current` and a progress bar at `src/js/main.js:532-557` | Done |
-| 4.2 | BL-014 | P1 | seriesProgress is called on the whole state with no list filter at `src/js/main.js:2075-2093`, and the view states it counts across every list at `src/index.html:346-348` | Partial |
+| 4.2 | BL-014 | P1 | seriesProgress is called on the whole state with no list filter at `src/js/main.js:2081-2099`, and the view states it counts across every list at `src/index.html:346-348` | Partial |
 | 4.3 | BL-015 | P1 | all four named filters plus All at `src/index.html:332-336`, applied without touching stored order at `src/js/main.js:1273-1283` | Done |
 | 4.4 | BL-016 | P1 | hero next-unread and Done, next at `src/index.html:272-307` | Done |
 | 4.5 | BL-017 | P2 | `absent: note\|notes, grep across src/**/*.js returning only an unrelated shelf caption and a code comment` | Not started |
@@ -126,7 +126,7 @@ remaining and is not scored.
 | 5.3 | BL-020 | P1 | manual entries carry `source: 'manual'` at `src/js/main.js:1731` and render, reorder, export and back up like any other issue | Done |
 | 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:248-280` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:13` | Done |
 | 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:453-477` | Done |
-| 6.2 | BL-023 | P1 | same backup file restores on another browser, validated and atomic, with undo at `src/js/main.js:2127-2130` | Done |
+| 6.2 | BL-023 | P1 | same backup file restores on another browser, validated and atomic, with undo at `src/js/main.js:2133-2136` | Done |
 | 6.3 | BL-024 | P1 | Export as Markdown ships as a list tool, confirmed in the live DOM at `docs/ux-artifacts/viewport-sweep-reading.json` | Done |
 | 6.4 | BL-025 | P2 | not applicable. Ruled out by Repository Constraint 3, which forbids accounts and cloud services, and already listed as out of scope at the end of this document | Forbidden, Constraint 3 |
 | 7.1 | BL-026 | P0 | focus order and visible focus pass across 45 measured tab stops in `docs/ux-artifacts/live-inspection.json`, but the shortcut handler bails on any focused control at `src/js/main.js:1293-1311` | Partial |
@@ -139,7 +139,7 @@ Three quantities used to brief this pass disagreed with what the repository actu
 are recorded rather than inherited.
 
 * `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last
-  line number when reading the file. Evidence: `src/js/main.js:2238-2251`.
+  line number when reading the file. Evidence: `src/js/main.js:2244-2257`.
 * `src/js/ui/` does not exist in this worktree. Evidence: `absent: src/js/ui, Test-Path returning
   False and a recursive directory listing of src/`. Git cannot track an empty directory, so an
   empty `src/js/ui/` in another checkout is a local artifact rather than repository content. Either
@@ -187,18 +187,18 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:272-307 |
 | BL-028 | Make the reading view usable on a phone | Story | EP-07 | Leaves alone | 8 | 5 | 5 | 5 | 3.6 | P1 | Measured | Ready | src/styles.css:87-90 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Ready | src/js/api.js:18-26 |
-| BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Ready | src/js/main.js:2075-2093 |
+| BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Ready | src/js/main.js:2081-2099 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Ready | src/js/main.js:69 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Ready | design/mockups/5-longbox-focus.html:169-172 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Ready | scripts/vendor-index.mjs:40-54 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Ready | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
-| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Ready | src/js/main.js:2238-2250 |
+| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Ready | src/js/main.js:2244-2256 |
 | BL-007 | Give the event orders the variants the catalog can already carry | Story | EP-02 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | P1 | Observed | Ready | src/data/catalog.json |
 | BL-032 | Offer a light theme and follow the system preference | Story | EP-08 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Ready | src/styles.css:7 |
 | BL-036 | Make the current view and list addressable in the URL | Story | EP-10 | Leaves alone | 5 | 2 | 3 | 8 | 1.25 | none | Observed | Ready | absent: pushState or replaceState or location.hash or hashchange or popstate or history., grep across src/ |
 | BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Ready | absent: note or notes, grep across src/**/*.js |
-| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:2238-2250 |
+| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:2244-2256 |
 
 ### Parked
 
@@ -472,15 +472,23 @@ report. Both sites key it `catalog-load` at `src/js/main.js:168`, and both succe
 key, which is what stops a loaded catalog from appearing under a banner saying it could not be
 loaded.
 
+A curated import is keyed the same way, by the order rather than by the pane, at
+`src/js/main.js:2010`. The same order can be added from the landing page and imported from the
+catalog row, so keying by pane meant a success from one entry point left the other's failure
+outstanding. Measured in both directions: the reader ended up looking at the card flipped to "In
+library" and the list in the sidebar at `0 / 89`, under a banner saying it could not be loaded and
+that their lists were unchanged, pinned above every view for the rest of the session and announced
+as well.
+
 Only panes carrying `report` are placed this way. `#save-report` is above every view and assertive
 because a persistence failure must not be missed, and the result panes are read next to the form
 that filled them, so relocating either would strip the context that makes the message actionable.
 Without that guard an open dialog captured the storage-full error and the half that says what to do
 about it never reached the reader on any channel.
 
-Thirty-eight scenarios are measured in Edge, including every view that has no pane of its own, the
+Thirty-nine scenarios are measured in Edge, including every view that has no pane of its own, the
 case where a notice already in view must not scroll the page out from under the reader, and each of
-the three defects above.
+the four defects above.
 
 This covers the app pages. `src/dev-faults.js` still uses `confirm()` and `alert()` at
 `src/dev-faults.js:184` and `src/dev-faults.js:198`. It is the fault-injection harness behind
@@ -1221,7 +1229,7 @@ gaps remain.
 
 - Gap: series progress is computed across every list at once rather than for the list being read,
   so a reader inside one crossover sees totals inflated by every other list they have imported.
-  Evidence: `src/js/main.js:2075-2093` (renderProgress calls seriesProgress on the whole state, with
+  Evidence: `src/js/main.js:2081-2099` (renderProgress calls seriesProgress on the whole state, with
   no list filter), `src/index.html:346-348` (the view's own subtitle states it counts across every
   list).
 - Gap: the catalog carries a variant grouping model, but only the Hickman creator run populates it.
@@ -1242,7 +1250,7 @@ block: 4,485 DOM nodes and 1,533 row controls, at a median of 21.9 ms synchronou
 paint, with the first toggle costing 38.9 ms and 144.1 ms. Measured headless on a desktop machine,
 so a phone will be slower.
 
-Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:2238-2251` (renderAll rebuilds
+Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:2244-2257` (renderAll rebuilds
 every region), `src/js/main.js:61-66` (store.onChange is wired straight to renderAll),
 `src/js/main.js:1178-1264` (renderRows builds every row with no virtualisation and no early exit when
 the containing details element is closed).
@@ -1275,7 +1283,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
 - User error protection: gap, narrowed by BL-034. Deleting a list is confirmed in the page rather
   than by a native `confirm()`, but it still cannot be undone afterwards, while restoring a backup
   does have an undo. Evidence:
-  `src/js/main.js:974-986` (delete, confirm only), `src/js/main.js:2127-2130` (undoRestore exists).
+  `src/js/main.js:974-986` (delete, confirm only), `src/js/main.js:2133-2136` (undoRestore exists).
 - User engagement and inclusivity: gap. The interface is hard-locked to a dark scheme, and a light
   preference changes nothing. Measured: under emulated `prefers-color-scheme: light` the body
   background stays `rgb(15, 17, 21)` and the two screenshots are byte-identical.
@@ -1319,7 +1327,7 @@ The clearest debt in the repository, and it is concentrated in one file.
 
 - Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and
   every render function. There is no view layer to change independently.
-  Evidence: `src/js/main.js:2238-2251`, `src/js/main.js:500-528` (showView switches views by
+  Evidence: `src/js/main.js:2244-2257`, `src/js/main.js:500-528` (showView switches views by
   mutating a module-level variable).
 - Testability gap: `src/js/cache.js`, `src/js/hydrate.js` and `src/js/main.js` have no test file,
   and they are exactly the modules holding browser-coupled logic.
@@ -1350,7 +1358,7 @@ Swept in full rather than dispositioned.
 - Replaceability: good. The metadata API base URL is user-configurable and validated, the cache is
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
-  Evidence: `src/js/main.js:2140-2153`, `src/js/lib/cachePolicy.js:16-20`,
+  Evidence: `src/js/main.js:2146-2159`, `src/js/lib/cachePolicy.js:16-20`,
   `src/js/lib/model.js:11` and `src/js/lib/model.js:376-402`.
 - Scalability: not applicable, because the app serves one reader in one browser profile on one
   machine, so there is no dimension along which load grows. The volume question that does matter,
@@ -1368,13 +1376,13 @@ That loss is covered as a reliability and data-durability concern rather than a 
 |----------|---------|
 | First-run experience | Gap. The first-run DOM ships an empty `<h2 id="hero-title">`, so the first heading a screen reader meets on an unseeded install is blank. Evidence: `src/index.html:272-307`, `docs/ux-artifacts/pa11y-landing.json`. |
 | Empty states | No gap. The unseeded landing state explains what the app is for and routes to the catalog rather than showing a bare shell. Evidence: `docs/ux-artifacts/01-landing-firstrun-1280.png`, `src/index.html:34-37`. |
-| Error handling and recovery | Gap, closed by BL-034. Curated import used to report failure through native `alert()` while every other path used the in-page notice system. It now writes to a pane chosen when the message is written, so on the landing page the reason appears beside the catalog it is about rather than stopping the page, and it is not left in a view the reader has already scrolled or navigated away from. Evidence: `src/js/main.js:2020`, `src/js/main.js:2031`, `src/js/main.js:2059` against `src/js/main.js:168-256`. |
+| Error handling and recovery | Gap, closed by BL-034. Curated import used to report failure through native `alert()` while every other path used the in-page notice system. It now writes to a pane chosen when the message is written, so on the landing page the reason appears beside the catalog it is about rather than stopping the page, and it is not left in a view the reader has already scrolled or navigated away from. Evidence: `src/js/main.js:2025`, `src/js/main.js:2036`, `src/js/main.js:2065` against `src/js/main.js:168-256`. |
 | Offline behavior | No gap, and no proposal. Probed as required rather than treated as a caching problem. With the local server running and no internet, the app starts, reads saved state, imports any bundled curated list and marks issues read, because those paths touch only same-origin files. Only cover images, metadata hydration and search degrade, and hydration failure is already surfaced as a pending state rather than as silence. Evidence: `src/data/house_of_m.json`, `src/js/main.js:1238-1244` (pending and by-hand badges), `absent: serviceWorker|navigator.onLine|manifest.json, case-insensitive grep across src/`. Repository Constraint 1 forbids caching cover bytes, so no cover-caching improvement is proposed. |
-| Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:453-477`, `src/js/main.js:2127-2130`. |
+| Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:453-477`, `src/js/main.js:2133-2136`. |
 | Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:376-402`, `test/model.test.js:425-427`. |
-| Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:2215-2217`. |
+| Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:2221-2223`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
-| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepts any base URL and only strips trailing slashes, with the https-or-local check living in the settings form rather than in the client. Evidence: `src/js/api.js:18-26` against `src/js/main.js:2140-2153`. That half stands: the check still lives outside the client, and it is tracked as `BL-045`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
+| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepts any base URL and only strips trailing slashes, with the https-or-local check living in the settings form rather than in the client. Evidence: `src/js/api.js:18-26` against `src/js/main.js:2146-2159`. That half stands: the check still lives outside the client, and it is tracked as `BL-045`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
 | Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-28` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:87-90`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is still open as BL-028. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |

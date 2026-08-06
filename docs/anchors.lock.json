@@ -44,8 +44,8 @@
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:2075-2093|0": {
-    "anchor": "src/js/main.js:2075-2093",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:2081-2099|0": {
+    "anchor": "src/js/main.js:2081-2099",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -59,8 +59,8 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1197-1200|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1197-1200",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1205-1208|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1205-1208",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -279,8 +279,8 @@
     "fp": "6b0a52cdade44dcb",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:2238-2251|0": {
-    "anchor": "src/js/main.js:2238-2251",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:2244-2257|0": {
+    "anchor": "src/js/main.js:2244-2257",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -294,10 +294,10 @@
     "fp": "25b5092070e04396",
     "head": "function open({ title, body, confirmLabel, prefill = null, inputLabel = '' }) {"
   },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:2020|0": {
-    "anchor": "src/js/main.js:2020",
-    "fp": "d231fc672a978e1f",
-    "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error');"
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:2025|0": {
+    "anchor": "src/js/main.js:2025",
+    "fp": "8ab27e651ace604e",
+    "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);"
   },
   "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:230-251|0": {
     "anchor": "src/js/main.js:230-251",
@@ -314,8 +314,8 @@
     "fp": "4154632dc1528b37",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:2127-2130|0": {
-    "anchor": "src/js/main.js:2127-2130",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:2133-2136|0": {
+    "anchor": "src/js/main.js:2133-2136",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -399,8 +399,8 @@
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:2075-2093|0": {
-    "anchor": "src/js/main.js:2075-2093",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:2081-2099|0": {
+    "anchor": "src/js/main.js:2081-2099",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -414,8 +414,8 @@
     "fp": "d554f6098a68aa1e",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2238-2251|0": {
-    "anchor": "src/js/main.js:2238-2251",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2244-2257|0": {
+    "anchor": "src/js/main.js:2244-2257",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -449,8 +449,8 @@
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2127-2130|0": {
-    "anchor": "src/js/main.js:2127-2130",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2133-2136|0": {
+    "anchor": "src/js/main.js:2133-2136",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -519,8 +519,8 @@
     "fp": "1350e867b612018d",
     "head": "async function getJson(url, attempt = 0) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2238-2251|0": {
-    "anchor": "src/js/main.js:2238-2251",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2244-2257|0": {
+    "anchor": "src/js/main.js:2244-2257",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -564,8 +564,8 @@
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:2140-2153|0": {
-    "anchor": "src/js/main.js:2140-2153",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:2146-2159|0": {
+    "anchor": "src/js/main.js:2146-2159",
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -664,6 +664,11 @@
     "fp": "c241bb97d0c6098f",
     "head": "function placeNotices() {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2010|0": {
+    "anchor": "src/js/main.js:2010",
+    "fp": "b6509327e07638dd",
+    "head": "const importKey = `import:${catalogId}`;"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:20-29|0": {
     "anchor": "src/styles.css:20-29",
     "fp": "df31a07909cabda9",
@@ -719,8 +724,8 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:2238-2251|0": {
-    "anchor": "src/js/main.js:2238-2251",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:2244-2257|0": {
+    "anchor": "src/js/main.js:2244-2257",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -824,8 +829,8 @@
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2075-2093|0": {
-    "anchor": "src/js/main.js:2075-2093",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2081-2099|0": {
+    "anchor": "src/js/main.js:2081-2099",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -884,8 +889,8 @@
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:2127-2130|0": {
-    "anchor": "src/js/main.js:2127-2130",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:2133-2136|0": {
+    "anchor": "src/js/main.js:2133-2136",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -944,8 +949,8 @@
     "fp": "350e40827cf70ffd",
     "head": "export class MarvelApi {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:2140-2153|0": {
-    "anchor": "src/js/main.js:2140-2153",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:2146-2159|0": {
+    "anchor": "src/js/main.js:2146-2159",
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -954,20 +959,20 @@
     "fp": "149e996f5c21e16e",
     "head": "const CATALOG_LOAD = 'catalog-load';"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2020|0": {
-    "anchor": "src/js/main.js:2020",
-    "fp": "d231fc672a978e1f",
-    "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error');"
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2025|0": {
+    "anchor": "src/js/main.js:2025",
+    "fp": "8ab27e651ace604e",
+    "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2031|0": {
-    "anchor": "src/js/main.js:2031",
-    "fp": "8bd9baab09cbc604",
-    "head": "notify(report, `${order.name} was created but its issues could not be saved.`, 'error');"
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2036|0": {
+    "anchor": "src/js/main.js:2036",
+    "fp": "3b79eeb6ce509097",
+    "head": "notify(report, `${order.name} was created but its issues could not be saved.`, 'error', importKey);"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2059|0": {
-    "anchor": "src/js/main.js:2059",
-    "fp": "8ea8f97010a5d457",
-    "head": "notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error');"
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2065|0": {
+    "anchor": "src/js/main.js:2065",
+    "fp": "fc2e7b4023138c1b",
+    "head": "notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error', im"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-28|0": {
     "anchor": "package.json:1-28",
@@ -999,8 +1004,8 @@
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:2127-2130|0": {
-    "anchor": "src/js/main.js:2127-2130",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:2133-2136|0": {
+    "anchor": "src/js/main.js:2133-2136",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -1019,8 +1024,8 @@
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:2215-2217|0": {
-    "anchor": "src/js/main.js:2215-2217",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:2221-2223|0": {
+    "anchor": "src/js/main.js:2221-2223",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
@@ -1049,8 +1054,8 @@
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:2075-2093|0": {
-    "anchor": "src/js/main.js:2075-2093",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:2081-2099|0": {
+    "anchor": "src/js/main.js:2081-2099",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -1089,8 +1094,8 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:2238-2250|0": {
-    "anchor": "src/js/main.js:2238-2250",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:2244-2256|0": {
+    "anchor": "src/js/main.js:2244-2256",
     "fp": "ef3cece5d5a24cbb",
     "head": "function renderAll() {"
   },
@@ -1114,8 +1119,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:2238-2250|0": {
-    "anchor": "src/js/main.js:2238-2250",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:2244-2256|0": {
+    "anchor": "src/js/main.js:2244-2256",
     "fp": "ef3cece5d5a24cbb",
     "head": "function renderAll() {"
   },

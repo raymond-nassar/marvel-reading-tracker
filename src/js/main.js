@@ -2003,6 +2003,11 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
   if (importing) return null;
   const file = list.file;
   const catalogId = list.id;
+  // Keyed by the order rather than by the pane, for the reason CATALOG_LOAD is. The same order can
+  // be added from the landing page and from the catalog row, so a failure written into one pane is
+  // the same failure the other entry point would report. Keying by pane left the reader looking at
+  // the list open in front of them under a banner saying it could not be loaded.
+  const importKey = `import:${catalogId}`;
   importing = file;
   const label = btn?.textContent;
   if (btn) {
@@ -2017,7 +2022,7 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
 
     const created = store.update((s) => createList(s, { name: order.name, description: order.description, catalogId }));
     if (!store.lastUpdateOk) {
-      notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error');
+      notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);
       return null;
     }
     const listId = created.listOrder[created.listOrder.length - 1];
@@ -2028,7 +2033,7 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
       return r.state;
     });
     if (!store.lastUpdateOk) {
-      notify(report, `${order.name} was created but its issues could not be saved.`, 'error');
+      notify(report, `${order.name} was created but its issues could not be saved.`, 'error', importKey);
       return null;
     }
     if (navigate) {
@@ -2051,12 +2056,13 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
     parts.push('Any issues you had already read stay read.');
     if (!navigate) parts.push('It is now in your sidebar.');
     // A failure from a previous attempt would otherwise sit under a successful import,
-    // contradicting it.
-    clearNotice(report);
+    // contradicting it. Cleared by the order's key, not by this pane, so an attempt that failed
+    // from the other entry point is cleared too.
+    clearNotice(importKey);
     announce(parts.join(' '));
     return listId;
   } catch (err) {
-    notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error');
+    notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error', importKey);
     return null;
   } finally {
     importing = null;
