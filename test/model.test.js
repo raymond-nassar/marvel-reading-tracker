@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  createEmptyState, createList, deleteList, duplicateList, renameList, setActive, addIssuesToList,
+  createEmptyState, createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList,
   removeFromList, moveItem, moveItemTo, markRead, toggleRead, isRead, markManyRead,
   setOverride, upNext, listProgress, seriesProgress, listItems, pendingIssueIds,
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
@@ -163,6 +163,78 @@ test('deleting the active list moves focus to a surviving one', () => {
   s = setActive(s, a);
   assert.notEqual(deleteList(s, a).active, a);
   assert.ok(deleteList(s, a).active);
+});
+
+test('undoing a delete puts the list back where it was', () => {
+  let s = createList(createEmptyState(), { name: 'A' });
+  s = createList(s, { name: 'B' });
+  s = createList(s, { name: 'C' });
+  const [, b] = s.listOrder;
+  s = setActive(s, b);
+  const list = s.lists[b];
+  const index = s.listOrder.indexOf(b);
+
+  const after = deleteList(s, b);
+  const undone = restoreList(after, list, { index, active: true });
+
+  assert.deepEqual(undone.listOrder, s.listOrder, 'the list returns to its old position, not the end');
+  assert.deepEqual(undone.lists[b], list);
+  assert.equal(undone.active, b, 'the list being read when it was deleted is being read again');
+});
+
+test('a delete and its undo leave read progress untouched either way', () => {
+  const { state, id } = withList([1, 2]);
+  const read = markRead(state, 1, true);
+  const list = read.lists[id];
+
+  const after = deleteList(read, id);
+  assert.ok(isRead(after, 1), 'deleting must not disturb progress');
+
+  const undone = restoreList(after, list, { index: 0 });
+  assert.ok(isRead(undone, 1), 'undoing must not disturb it either');
+  assert.deepEqual(undone.read, read.read);
+});
+
+test('a restore never overwrites a list holding the same id', () => {
+  const { state, id } = withList([1]);
+  const renamed = renameList(state, id, 'Renamed since');
+  assert.equal(restoreList(renamed, state.lists[id], { index: 0 }), renamed);
+});
+
+test('a restore never gives one catalog entry a second list', () => {
+  let s = createList(createEmptyState(), { name: 'House of M', catalogId: 'house-of-m' });
+  const [first] = s.listOrder;
+  const deleted = s.lists[first];
+  s = deleteList(s, first);
+  // What the reader does between the delete and the undo: they add the order again, which mints
+  // a new id, so the id guard above cannot see the collision.
+  const reimported = createList(s, { name: 'House of M', catalogId: 'house-of-m' });
+
+  assert.equal(restoreList(reimported, deleted, { index: 0 }), reimported);
+  assert.equal(
+    Object.values(restoreList(reimported, deleted, { index: 0 }).lists).filter((l) => l.catalogId === 'house-of-m').length,
+    1,
+    'two lists answering to one catalog entry make "in library" point at whichever is found first',
+  );
+});
+
+test('a restore of a list with no catalog entry is not blocked by one', () => {
+  let s = createList(createEmptyState(), { name: 'Mine' });
+  const [a] = s.listOrder;
+  const list = s.lists[a];
+  s = deleteList(s, a);
+  s = createList(s, { name: 'House of M', catalogId: 'house-of-m' });
+  assert.ok(restoreList(s, list, { index: 0 }).lists[a], 'a null catalogId matches nothing');
+});
+
+test('a restore with no usable index appends rather than dropping the list', () => {
+  let s = createList(createEmptyState(), { name: 'A' });
+  const [a] = s.listOrder;
+  const list = s.lists[a];
+  s = deleteList(s, a);
+  assert.deepEqual(restoreList(s, list, { index: 99 }).listOrder, [a]);
+  assert.deepEqual(restoreList(s, list, {}).listOrder, [a]);
+  assert.equal(restoreList(s, null, { index: 0 }), s);
 });
 
 test('names and descriptions are length-capped', () => {

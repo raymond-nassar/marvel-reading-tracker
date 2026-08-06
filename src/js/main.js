@@ -5,7 +5,7 @@
 // Cover art is optional everywhere: `body.nocovers` swaps every image for a typographic tile.
 
 import {
-  createList, deleteList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
+  createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
   setOverride, pendingIssueIds, createEmptyState, coverUrl, listForCatalogId, SCHEMA_VERSION,
 } from './lib/model.js';
@@ -200,7 +200,11 @@ function placeNotices() {
     const own = $(note.sel);
     if (!own) continue;
     let box = own;
-    if (modalPane) box = modalPane;
+    // A notice carrying a control stays in its own pane. Moving a message into the modal makes it
+    // readable where the reader is looking; moving a button there makes it pressable in a context
+    // that has nothing to do with it, and acting on it can navigate the inert page behind the
+    // dialog to a view the reader never asked for.
+    if (modalPane && !note.action) box = modalPane;
     // offsetParent is null only under a display:none ancestor, which is how a view that is not
     // the current one is hidden.
     else if (!own.offsetParent) box = overflow ?? own;
@@ -219,15 +223,28 @@ function placeNotices() {
 
   for (const pane of document.querySelectorAll('.report')) {
     const note = claims.get(pane);
-    pane.replaceChildren(...(note ? [el('p', { class: `notice notice-${note.kind}`, text: note.msg })] : []));
+    pane.replaceChildren(...(note ? [noticeEl(note)] : []));
   }
   return placed;
+}
+
+// A notice with an action is a paragraph with a button in it rather than a message and a separate
+// control, so that the offer is announced with the words that explain it and so that re-rendering
+// the notice cannot leave the button behind in a pane the message has left.
+function noticeEl({ msg, kind, action }) {
+  return el('p', { class: `notice notice-${kind}${action ? ' notice-act' : ''}` }, [
+    el('span', { class: 'grow', text: msg }),
+    action ? el('button', { type: 'button', class: 'quiet', onclick: action.onClick }, action.label) : null,
+  ]);
 }
 
 // The key is what a notice is cleared by, and it defaults to the pane so that most callers need
 // not think about it. It is separate so that a condition reported into more than one pane, such as
 // a catalog load, can be cleared wherever it ended up.
-function notify(sel, msg, kind = 'ok', key = sel) {
+//
+// `action` puts a button in the notice, for a message that offers a way back such as the undo
+// after a delete.
+function notify(sel, msg, kind = 'ok', key = sel, action = null) {
   const own = $(sel);
   if (!own) return;
   // Only the general notice panes move. #save-report sits above every view and is assertive
@@ -235,19 +252,25 @@ function notify(sel, msg, kind = 'ok', key = sel) {
   // form that filled them, so relocating either would lose the context that makes it actionable
   // and would quietly change which channel it goes out on.
   if (!own.classList.contains('report')) {
-    own.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
-    if (!isLive(own)) announce(msg);
+    own.replaceChildren(noticeEl({ msg, kind, action }));
+    if (!isLive(own)) announce(spoken(msg, action));
     return;
   }
   // Re-inserted rather than overwritten in place, because a Map keeps a key at its original
   // position and arrival order is what decides the newest message.
   notices.delete(key);
-  notices.set(key, { sel, msg, kind });
+  notices.set(key, { sel, msg, kind, action });
   const box = placeNotices().get(sel) ?? own;
   // Nothing else scrolls a pane into view, and "nearest" is a no-op once it is fully visible, so
   // this moves the page only when the message would otherwise be missed.
   box.scrollIntoView?.({ block: 'nearest' });
-  if (!isLive(box)) announce(msg);
+  if (!isLive(box)) announce(spoken(msg, action));
+}
+
+// A button that is never spoken is a button a screen reader user cannot know to look for, and the
+// undo is the whole point of the message it sits in.
+function spoken(msg, action) {
+  return action ? `${msg} ${action.label} is available.` : msg;
 }
 
 function clearNotice(key) {
@@ -977,12 +1000,16 @@ function wireReading() {
     if (!list) return;
     const yes = await askConfirm({
       title: `Delete "${list.name}"?`,
-      body: 'Your read progress is kept, and only the list is removed.',
+      body: 'Your read progress is kept, and only the list is removed. This can be undone.',
       confirmLabel: 'Delete list',
     });
     if (!yes) return;
+    // Captured before the delete, because the state afterwards is the one thing that no longer
+    // knows either the list or where in the rail it sat.
+    const deleted = { list, index: store.state.listOrder.indexOf(id), wasActive: store.state.active === id };
     store.update((s) => deleteList(s, id));
-    announceIfSaved('List deleted. Reading progress was kept.');
+    if (!store.lastUpdateOk) return;
+    offerUndoDelete(deleted);
   });
 
   $('#btn-duplicate-list').addEventListener('click', () => {
@@ -1017,6 +1044,87 @@ function wireReading() {
   });
 
   $('#btn-hero-done').addEventListener('click', () => markCurrentRead());
+}
+
+// A deleted list is held for the rest of the session rather than for a few seconds. The undo
+// notice sits above the views because deleting the list you were reading moves you elsewhere,
+// and a timer would take the only way back at the moment the reader was still deciding.
+//
+// Only the most recent delete is held. Keeping every one would offer to restore a list the
+// reader has since deliberately replaced, and nothing here can tell those two cases apart.
+const UNDO_DELETE = 'undo-delete';
+let lastDeleted = null;
+
+function offerUndoDelete(deleted) {
+  lastDeleted = deleted;
+  notify('#app-report', `Deleted ${deleted.list.name}. Reading progress was kept.`, 'ok', UNDO_DELETE, {
+    label: 'Undo delete',
+    onClick: undoDelete,
+  });
+}
+
+// Wholesale replacements of the state, erasing and restoring, drop the offer rather than
+// leaving it pointing into data that is no longer there.
+function forgetDeleted() {
+  lastDeleted = null;
+  clearNotice(UNDO_DELETE);
+}
+
+// An order that is back in the sidebar does not need an offer to bring back the deleted copy of
+// it. Taking that offer would leave two lists answering to one catalog entry, which is the state
+// `duplicateList` clears `catalogId` to avoid: "in library" and "Continue reading" would both
+// resolve to whichever came first in the rail, and the rail would show two entries with the same
+// name and the same progress.
+//
+// It must not be withdrawn in silence. Deleting the list you were reading hands you to the home
+// view, where the card for that order has already reverted to "+ Add to library", so the wrong
+// way back and the right one sit on the same screen. A reader who had renamed or reordered their
+// copy would press it, be told the order is in their sidebar, and lose the route back to that copy
+// in the same tick with nothing said about it. The sentence is returned as well as shown, so the
+// caller can fold it into the announcement it is about to make: two announcements in one tick
+// leave only the last.
+//
+// Both names are needed. What came back is the order under its own name; what cannot be put back
+// is the reader's copy, which they may have renamed. Naming the copy as the thing that returned
+// would report the loss and deny it in the same breath, and send the reader looking in the rail
+// for a list that is not there.
+function forgetDeletedFor(catalogId, orderName) {
+  if (!catalogId || lastDeleted?.list?.catalogId !== catalogId) return null;
+  const { name } = lastDeleted.list;
+  forgetDeleted();
+  const mine = name === orderName ? 'The copy you deleted' : `Your copy, ${name},`;
+  const msg = `${orderName} is back from the catalog. ${mine} with any changes you had made to it, cannot be put back now.`;
+  notify('#app-report', msg, 'ok', UNDO_DELETE);
+  return msg;
+}
+
+function undoDelete() {
+  if (!lastDeleted) return;
+  const { list, index, wasActive } = lastDeleted;
+  // `restoreList` refuses rather than overwrite a live list, and a refusal returns the state
+  // unchanged, which a successful write is indistinguishable from once it is done. So the
+  // blocker is looked for first: reading back afterwards would report the list that blocked
+  // the restore as the list the restore put there.
+  const blocker = store.state.lists[list.id] ?? listForCatalogId(store.state, list.catalogId);
+  if (blocker) {
+    forgetDeleted();
+    notify('#app-report', `${list.name} was not put back: ${blocker.name} is in your sidebar already.`, 'ok', UNDO_DELETE);
+    return;
+  }
+  store.update((s) => restoreList(s, list, { index, active: wasActive }));
+  if (!store.lastUpdateOk) {
+    // The buffer is deliberately kept, and the notice keeps a button, because a write that failed
+    // for want of space can succeed after the reader frees some. Dropping the offer here would
+    // make a recoverable failure permanent.
+    notify('#app-report', `${list.name} could not be put back: that change could not be saved.`, 'error', UNDO_DELETE, {
+      label: 'Try again',
+      onClick: undoDelete,
+    });
+    return;
+  }
+  forgetDeleted();
+  if (wasActive) showView('read');
+  announce(`${list.name} is back in your sidebar, in the position it had.`);
 }
 
 function markCurrentRead() {
@@ -2033,7 +2141,16 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
       return r.state;
     });
     if (!store.lastUpdateOk) {
-      notify(report, `${order.name} was created but its issues could not be saved.`, 'error', importKey);
+      // The list record is written before its issues, so a failure here leaves a shell claiming
+      // the catalog entry with nothing in it. That is not merely untidy: it blocks the undo offer
+      // for a deleted copy of the same order, and `undoDelete` would then discard the reader's
+      // real list in favour of an artefact of a write that failed. Storage being full is the
+      // expected reason to land here, and this second write is the larger of the two, so the
+      // half-import is rolled back rather than left standing.
+      store.update((s) => deleteList(s, listId));
+      notify(report, store.lastUpdateOk
+        ? `${order.name} could not be saved, so nothing was imported.`
+        : `${order.name} was created but its issues could not be saved.`, 'error', importKey);
       return null;
     }
     if (navigate) {
@@ -2055,6 +2172,8 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
     }
     parts.push('Any issues you had already read stay read.');
     if (!navigate) parts.push('It is now in your sidebar.');
+    const withdrawn = forgetDeletedFor(catalogId, order.name);
+    if (withdrawn) parts.push(withdrawn);
     // A failure from a previous attempt would otherwise sit under a successful import,
     // contradicting it. Cleared by the order's key, not by this pane, so an attempt that failed
     // from the other entry point is cleared too.
@@ -2132,6 +2251,9 @@ function wireData() {
     if (res.ok) {
       notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once.', 'ok');
       $('#btn-undo-restore').hidden = false;
+      // The buffered list belongs to the data the restore has just replaced. Offering it back
+      // would splice a list out of the old tracker into the restored one.
+      forgetDeleted();
     } else {
       notify('#restore-report', `Restore refused, nothing was changed: ${res.errors.join(' ')}`, 'error');
     }
@@ -2141,6 +2263,9 @@ function wireData() {
   $('#btn-undo-restore').addEventListener('click', () => {
     const res = store.undoRestore();
     notify('#restore-report', res.ok ? 'Restore undone.' : `Could not undo: ${res.errors.join(' ')}`, res.ok ? 'ok' : 'error');
+    // Undoing a restore swaps the whole state back, exactly as the restore did, so the buffered
+    // list belongs to data that is no longer here in this direction too.
+    if (res.ok) forgetDeleted();
   });
 
   $('#form-settings').addEventListener('submit', (e) => {
@@ -2173,6 +2298,9 @@ function wireData() {
     if (!yes) return;
     store.update(() => createEmptyState());
     cache.clear();
+    // The undo buffer points at a list from the data that has just been erased, so putting it
+    // back would resurrect one list out of a tracker the reader asked to be emptied.
+    forgetDeleted();
     announceIfSaved('All local data erased.');
   });
 }

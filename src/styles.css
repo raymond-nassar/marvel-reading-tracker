@@ -528,6 +528,13 @@ code { background: #ffffff0d; border-radius: 4px; padding: .05rem .3rem; font-si
 .notice-warn { color: var(--amber); border-color: #eab65440; background: #eab6540f; }
 .notice-error { color: #ff9d9d; border-color: #e2363655; background: #e2363612; }
 
+/* A notice that carries an action, such as the undo offered after a list is deleted. The
+   button is sized to the 44px target minimum rather than the notice's own type scale,
+   because it is a real destination for a finger and not a piece of the message. */
+.notice-act { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.notice-act .grow { flex: 1; }
+.notice-act button { min-height: 44px; padding-inline: .9rem; }
+
 progress { accent-color: var(--red); height: 6px; }
 
 .app-footer {
