@@ -1083,11 +1083,17 @@ function forgetDeleted() {
 // in the same tick with nothing said about it. The sentence is returned as well as shown, so the
 // caller can fold it into the announcement it is about to make: two announcements in one tick
 // leave only the last.
-function forgetDeletedFor(catalogId) {
+//
+// Both names are needed. What came back is the order under its own name; what cannot be put back
+// is the reader's copy, which they may have renamed. Naming the copy as the thing that returned
+// would report the loss and deny it in the same breath, and send the reader looking in the rail
+// for a list that is not there.
+function forgetDeletedFor(catalogId, orderName) {
   if (!catalogId || lastDeleted?.list?.catalogId !== catalogId) return null;
   const { name } = lastDeleted.list;
   forgetDeleted();
-  const msg = `${name} is back from the catalog. The copy you deleted, with any changes you had made to it, cannot be put back now.`;
+  const mine = name === orderName ? 'The copy you deleted' : `Your copy, ${name},`;
+  const msg = `${orderName} is back from the catalog. ${mine} with any changes you had made to it, cannot be put back now.`;
   notify('#app-report', msg, 'ok', UNDO_DELETE);
   return msg;
 }
@@ -2166,7 +2172,7 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
     }
     parts.push('Any issues you had already read stay read.');
     if (!navigate) parts.push('It is now in your sidebar.');
-    const withdrawn = forgetDeletedFor(catalogId);
+    const withdrawn = forgetDeletedFor(catalogId, order.name);
     if (withdrawn) parts.push(withdrawn);
     // A failure from a previous attempt would otherwise sit under a successful import,
     // contradicting it. Cleared by the order's key, not by this pane, so an attempt that failed
