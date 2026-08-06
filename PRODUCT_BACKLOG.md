@@ -179,7 +179,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Ready | src/js/main.js:344-350 |
+| BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Ready | src/js/main.js:343-350 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Ready | src/styles.css:396-397 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:364 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:642-660 |
@@ -800,11 +800,34 @@ written in a shape the regex itself does not know. A human still has to read eac
 the gate removes is having to read all of them again on every sweep, which is the whole of the gain
 and the honest limit of it.
 
-The Evidence column of the backlog table above is deliberately outside the gate. Those citations
-record what was true when an item was filed, and some are now false by design: `BL-039` cites the
-absence of a workflow directory that its own delivery created. Writing them without anchor backticks
-keeps them readable as history and stops the checker demanding they be updated into a claim about
-the present that was never intended.
+The Evidence column of the backlog table above is inside the gate, and the six rows that must not be
+are exempted on a marker they declare rather than on how they are punctuated. A claim about a past
+state cites code that is expected to contradict it: `BL-040` cites the scripts block as evidence
+that no lint script existed, and that block now defines one. Gating it would demand a true
+historical record be falsified. So a citation is exempt when it sits inside an `absent:` evidence
+token, and only for as far as that token reaches, which is the backticked span or the table cell it
+begins. The release row cites `absent: CHANGELOG.md and git tags` and then cites two live anchors
+after it, and a rule that ran to end of line would have dropped both.
+
+The earlier version excluded the column by leaving those citations unbackticked, which is
+punctuation that happened to coincide with the decision rather than expressing it. It failed
+silently in both directions: backticking a path for readability would have enrolled twenty-one rows
+unannounced, and a new historical claim written with backticks would have been gated and would have
+failed for being correct. The exemption was resolved rather than identified, which is this
+document's own recurring defect one level up from where it was found.
+
+Twenty-one live anchors joined the gate as a result, and fourteen of them sit on work that has not
+started. Those are the highest-value anchors in the document, because they are the entry point an
+implementer navigates to for code they do not know, and they will sit unread longest, which is
+exactly the interval in which drift is invisible. They were clean when they were enrolled, so the
+exclusion had cost nothing yet. They were clean because they had just been swept by hand, and the
+premise of the gate is that nothing tells you when clean stops being true.
+
+Keys are local for the same reason. A story ID is not unique across the document, so keying an
+anchor on the ID alone merged the two rows that share one into a single ordinal bucket, and
+inserting a citation into either renumbered the other and reported drift that had not happened.
+Spurious drift is the expensive kind: it trains a re-bless reflex, and a reflexive re-bless is how a
+real drift gets waved through.
 
 ## Existing epics and stories
 
@@ -1093,7 +1116,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
   device they are invisible until tapped. Evidence: `src/styles.css:369-376`.
 - User error protection: gap. Deleting a list is guarded only by a native `confirm()` and cannot be
   undone afterwards, while restoring a backup does have an undo. Evidence:
-  `src/js/main.js:344-350` (delete, confirm only), `src/js/main.js:1449-1452` (undoRestore exists).
+  `src/js/main.js:343-350` (delete, confirm only), `src/js/main.js:1449-1452` (undoRestore exists).
 - User engagement and inclusivity: gap. The interface is hard-locked to a dark scheme, and a light
   preference changes nothing. Measured: under emulated `prefers-color-scheme: light` the body
   background stays `rgb(15, 17, 21)` and the two screenshots are byte-identical.

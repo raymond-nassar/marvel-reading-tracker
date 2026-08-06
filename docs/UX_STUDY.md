@@ -86,7 +86,7 @@ Severity: 3, single-rater estimate
 Rationale: affects several primary flows, is permanent rather than transient, and splits the
 product's voice in two at exactly the moments a reader is deciding something
 Confidence: Observed
-Evidence: `src/js/main.js:1354`, `src/js/main.js:337-347`, `src/js/main.js:344-350`, against
+Evidence: `src/js/main.js:1354`, `src/js/main.js:337-347`, `src/js/main.js:343-350`, against
 `src/js/main.js:137-149`
 Source: heuristic 4 sweep, code-only framing
 Impact: the application has a careful in-page notice system with live regions, and then reports
@@ -106,7 +106,7 @@ Severity: 3, single-rater estimate
 Rationale: irreversible, affects data the reader curated by hand, and the inconsistency with
 restore makes the gap harder to anticipate
 Confidence: Observed
-Evidence: `src/js/main.js:344-350`, `src/js/main.js:1449-1452`
+Evidence: `src/js/main.js:343-350`, `src/js/main.js:1449-1452`
 Source: heuristic 3 sweep, code-only framing
 Impact: deletion is guarded only by a native `confirm()` and there is no undo afterwards. Read
 progress survives, because it is global, but the list name and its curated order do not. Restoring

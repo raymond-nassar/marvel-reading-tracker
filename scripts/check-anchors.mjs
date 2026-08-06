@@ -21,22 +21,34 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 const LOCK = 'docs/anchors.lock.json';
 
-// Backticked path:line or path:start-end. Historical citations are deliberately
-// written without backticks so that they are not treated as live anchors.
+// Backticked path:line or path:start-end.
 const ANCHOR = /`([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+)(?:-(\d+))?`/g;
 
-// Citation-shaped text the ANCHOR regex does not collect. This is the one hole the
-// coverage assertion cannot see, because that assertion counts the same regex twice.
-//
-// Unbackticked citations are counted but never listed. They are the deliberate
-// convention for historical evidence, there are around two hundred, and printing
-// them trains a reader to skip the whole notice. The count is shown so a sudden
-// jump is still visible. The other shapes should be zero, so they are listed.
+// The same citation without backticks. The Evidence column of the backlog table is
+// written this way, and those are live anchors, not decoration: they are the entry
+// point an implementer navigates to for work not yet started, read by someone who
+// cannot tell that the anchor is lying. Gating them on punctuation would enroll or
+// exempt rows by accident in both directions, so both forms are collected and the
+// exemption is declared instead.
+const BARE = /(?<![`\w])([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+)(?:-(\d+))?(?![\d`-])/g;
+
+// The declared exemption. A claim about a past state cites code that is expected to
+// contradict it: BL-040 cites the scripts block as evidence that no lint script
+// existed, and that block now defines one. Gating it would demand a true historical
+// record be falsified. The marker states the intent in the text, so a new historical
+// claim written without it fails loudly, which is the right direction to fail in.
+// Its reach is computed in exemptRanges below.
+
+
+// Citation-shaped text neither regex collects. This is the one hole the coverage
+// assertion cannot see, because that assertion counts the same regexes twice.
+// It cannot be an error, since prose may legitimately name a file, so it prints as
+// a notice: a reviewer can tell an intentional mention from a citation that was
+// meant to be gated and is silently not.
 const NEAR_MISS = [
   [/`[A-Za-z0-9_./-]+\.[A-Za-z][A-Za-z0-9]*:\d+(?:-\d+)?`/g, 'extension outside the gate'],
   [/\b[A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)\s+lines?\s+\d+/gi, 'prose line reference'],
 ];
-const HISTORICAL = /(?<!`)\b[A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md):\d+(?:-\d+)?(?![\d`-])/g;
 
 
 const args = process.argv.slice(2);
@@ -108,6 +120,70 @@ function docs() {
   }
 }
 
+// Whether a citation is a claim about a past state. The marker's reach is the
+// backticked token it opens, or the table cell it begins, and no further. Letting it
+// reach to end of line would exempt live anchors that merely follow one: the release
+// row cites `absent: CHANGELOG.md and git tags` and then cites two live anchors after
+// it, and a line-wide rule silently drops both.
+function exemptRanges(text) {
+  const ranges = [];
+
+  // A backticked evidence token, which may wrap across lines.
+  for (const m of text.matchAll(/`([^`]*)`/g)) {
+    if (/^\s*absent:/.test(m[1])) ranges.push([m.index, m.index + m[0].length]);
+  }
+
+  // An unbackticked table cell that begins with the marker.
+  let offset = 0;
+  for (const line of text.split('\n')) {
+    if (line.startsWith('|')) {
+      let from = 1;
+      for (;;) {
+        const bar = line.indexOf('|', from);
+        const cell = line.slice(from, bar === -1 ? line.length : bar);
+        if (/^\s*absent:/.test(cell)) ranges.push([offset + from, offset + from + cell.length]);
+        if (bar === -1) break;
+        from = bar + 1;
+      }
+    }
+    offset += line.length + 1;
+  }
+  return ranges;
+}
+
+// Both citation forms, deduplicated by position. A backticked anchor can also
+// satisfy the bare pattern's neighbours, and counting one citation twice would put
+// the coverage assertion permanently out of balance.
+function citations(text) {
+  const out = new Map();
+  for (const re of [ANCHOR, BARE]) {
+    for (const m of text.matchAll(re)) {
+      const at = m[0].startsWith('`') ? m.index + 1 : m.index;
+      if (out.has(at)) continue;
+      out.set(at, { at, file: m[1], start: Number(m[2]), end: m[3] ? Number(m[3]) : Number(m[2]) });
+    }
+  }
+  return [...out.values()].sort((a, b) => a.at - b.at);
+}
+
+// Naming only, never membership. A heuristic here is safe by construction: the worst
+// it can do is give an anchor an uglier or less stable key, and the anchor is still
+// collected and still checked. That is the whole point of the inversion, and it is
+// why this may read the first cells of a row when the collector may not.
+//
+// The heading is part of the row's identity because a story ID is not unique across
+// the document: BL-028 heads a row in the verification table and another in the
+// backlog table. Keying on the ID alone merges them into one ordinal bucket, and then
+// inserting a citation into either row renumbers the other and reports drift that did
+// not happen. Spurious drift is the expensive kind, because it trains a re-bless
+// reflex, and a reflexive re-bless is how a real drift gets waved through.
+function rowScope(line, heading) {
+  const cells = line.split('|').slice(1);
+  const id = /\bBL-\d+\b/.exec(cells.slice(0, 2).join(' ').replace(/`/g, ''));
+  const label = id ? id[0] : slug((cells[0] ?? '').replace(/`/g, ''));
+  return label ? `${heading}#${label}` : heading;
+}
+
 // The scope is what makes a key survive renumbering. Rows are keyed by their story
 // ID wherever the ID appears in the row, because the three tables in the backlog
 // put it in three different columns, and a matcher that assumes one column is the
@@ -119,49 +195,57 @@ function docs() {
 function collect() {
   const found = [];
   const coverage = [];
+  let exempted = 0;
 
   for (const doc of docs()) {
-    const text = read(doc);
-    if (text === null) continue;
+    const raw = read(doc);
+    if (raw === null) continue;
+
+    // Normalised so a character offset means the same thing on either platform.
+    const text = raw.replace(/\r\n/g, '\n');
+    const ranges = exemptRanges(text);
+    const exempt = (at) => ranges.some(([from, to]) => at >= from && at < to);
 
     // Counted over the whole file, independently of the line walk below, so any
     // walker bug shows up as a shortfall instead of as a clean pass.
-    const scanned = (text.match(ANCHOR) ?? []).length;
+    const scanned = citations(text).filter((c) => !exempt(c.at)).length;
     if (scanned === 0) continue;
 
     let heading = 'preamble';
     let captured = 0;
+    let offset = 0;
     const ordinals = new Map();
 
-    for (const line of text.split(/\r?\n/)) {
+    for (const line of text.split('\n')) {
       const h = /^#{1,6}\s+(.+?)\s*$/.exec(line);
       if (h) heading = slug(h[1]);
 
-      const id = /\bBL-\d+\b/.exec(line.replace(/`/g, ''));
-      const scope = line.startsWith('|') && id ? id[0] : heading;
+      const scope = line.startsWith('|') ? rowScope(line, heading) : heading;
 
-      for (const m of line.matchAll(ANCHOR)) {
-        const file = m[1];
-        const start = Number(m[2]);
-        const end = m[3] ? Number(m[3]) : start;
-        const bucket = `${doc}|${scope}|${file}`;
+      for (const c of citations(line)) {
+        if (exempt(offset + c.at)) {
+          exempted += 1;
+          continue;
+        }
+        const bucket = `${doc}|${scope}|${c.file}`;
         const ordinal = ordinals.get(bucket) ?? 0;
         ordinals.set(bucket, ordinal + 1);
         captured += 1;
         found.push({
           key: `${bucket}|${ordinal}`,
-          anchor: m[0].replace(/`/g, ''),
-          claim: line.slice(Math.max(0, m.index - 90), m.index).replace(/`/g, '').trim(),
-          ...fingerprint(file, start, end),
+          anchor: `${c.file}:${c.start}${c.end === c.start ? '' : `-${c.end}`}`,
+          claim: line.slice(Math.max(0, c.at - 90), c.at).replace(/`/g, '').trim(),
+          ...fingerprint(c.file, c.start, c.end),
         });
       }
+      offset += line.length + 1;
     }
     coverage.push({ doc, scanned, captured });
   }
-  return { found, coverage };
+  return { found, coverage, exempted };
 }
 
-const { found, coverage } = collect();
+const { found, coverage, exempted } = collect();
 
 // Coverage is asserted, not assumed. `found.length === 0` detects total failure and
 // is structurally blind to partial failure, which is the only kind that has ever
@@ -201,12 +285,10 @@ if (dupes.length) {
 // meant to be gated and is silently not.
 function reportNearMisses() {
   const suspicious = [];
-  let historical = 0;
   for (const doc of docs()) {
     const text = read(doc);
     if (text === null) continue;
     const covered = new Set(text.match(ANCHOR) ?? []);
-    historical += (text.match(HISTORICAL) ?? []).length;
     for (const [re, why] of NEAR_MISS) {
       for (const hit of text.match(re) ?? []) {
         if (covered.has(hit)) continue;
@@ -214,8 +296,8 @@ function reportNearMisses() {
       }
     }
   }
-  if (historical) {
-    console.log(`\n${historical} unbackticked citation(s) outside the gate, by convention: historical evidence.`);
+  if (exempted) {
+    console.log(`${exempted} citation(s) exempt by declared "absent:" marker, as claims about a past state.`);
   }
   if (suspicious.length) {
     console.log('NOTICE: citation-shaped strings the gate does not collect. Meant to be anchors?');
