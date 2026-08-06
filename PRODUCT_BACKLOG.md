@@ -177,6 +177,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Ready | src/js/main.js:334-341 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Ready | src/styles.css:331-332 |
+| BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | src/styles.css:340 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:634-650 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Ready | src/js/main.js:138-143 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:125-155 |
@@ -325,7 +326,7 @@ the badge, and that cause is gone: a badge now renders identically whether or no
 read, which is what the task was asking for. Measuring the composited border anyway put
 `.badge-expected` at 1.58:1, but that is unconditional design at `src/styles.css:340` rather than
 anything the read state does, and the badge's meaning is carried by its text label, which passes.
-Worth raising separately rather than folding into this item.
+Raised separately as BL-049 rather than folded into this item.
 
 **BL-031: Put a scrim behind hero text so its contrast stops depending on the cover**
 
@@ -588,6 +589,43 @@ fifth exists, so the next reader is less likely to try collapsing them. No code 
 count, so this was a documentation defect only, which is exactly why it was worth fixing: the
 comment was the only thing telling a reader the model was smaller than it is.
 
+**BL-049: Decide whether the faint badge borders need to meet the 3:1 non-text minimum**
+
+- [ ] Measure the composited border contrast for all four badge variants, not only `.badge-expected`
+- [ ] Decide whether these borders are meaningful non-text indicators under WCAG 2.2 1.4.11 or decoration
+- [ ] If they are meaningful, raise each border to 3:1 without altering the badge text colours
+- [ ] Confirm the badge text contrast and the five-state distinctions are unchanged either way
+- [ ] Record the decision and its reasoning next to the rule, so this is not re-measured a third time
+
+Constraint gate: checked 1 to 11, none breached. Constraint 6 is the live consideration: the five
+availability states must remain distinguishable from one another, so any change to the borders has
+to keep `expected`, `override-available`, `scheduled`, `override-unavailable` and the shared
+`unknown`/`pending` treatment telling themselves apart.
+
+Raised out of BL-030 rather than folded into it. BL-030's third task asked whether badge borders
+clear 3:1 in the read state, and the answer turned out to be that the read state is not what
+governs them. The 2.75:1 figure that task was written against came from the blanket row opacity,
+which is gone; a badge now renders identically whether or not its row is read. Measuring the
+composited border anyway put `.badge-expected` at 1.58:1 against the 3:1 floor, but that is
+unconditional design at `src/styles.css:340`, where the border is 25 percent alpha green.
+
+Whether this is a defect at all is the open question, which is why the first task here is a
+decision and not a fix. WCAG 2.2 1.4.11 applies to graphics required to understand content, and
+each badge's meaning is carried by its text label, which passes. On that reading the border is
+decoration and needs nothing. The counter-argument is that the pill outline is what makes a badge
+read as a badge at all. Either answer is defensible; what is not defensible is leaving it
+unmeasured and unrecorded.
+
+Note that only `.badge-expected` has been measured. `.badge-scheduled` and
+`.badge-override-unavailable` set their own alpha borders at `src/styles.css:341` and
+`src/styles.css:343`, and `.badge-unknown`/`.badge-pending` inherit `var(--line)` from
+`src/styles.css:339`. Those three cases are unmeasured, so the size estimate assumes measuring
+them is cheap rather than assuming they pass.
+
+Automated scanning will not settle this. The axe-core colour-contrast rule evaluates text only and
+never looks at borders, so the 0-violation axe run recorded against BL-029, BL-030 and BL-031 says
+nothing about this item in either direction. It has to be measured deliberately.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -739,12 +777,14 @@ pipeline for event lists.
 
 ### EP-08: Readers who depend on contrast cannot reliably read the interface
 
-**Outcome:** OC-1. Items: BL-029, BL-030, BL-031, BL-032.
+**Outcome:** OC-1. Items: BL-029, BL-030, BL-031, BL-032, BL-049.
 
 Four measured problems share one root: colour decisions were made without a contrast floor. The
 accent fails white text, the read state dims whole rows below the floor, the hero renders text over
 an image whose contrast cannot be known at author time, and there is no alternative to the dark
-scheme.
+scheme. BL-049 was added later from the same root, and is a decision rather than a fix: the badge
+borders are faint enough to fail the non-text floor, but it is genuinely unsettled whether that
+floor applies to them.
 
 ### EP-09: Working through a long order is slower than the list is long
 
