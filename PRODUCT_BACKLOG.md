@@ -115,7 +115,7 @@ remaining and is not scored.
 | 3.1 | BL-009 | P0 | parseChecklist and the import report at `src/js/main.js:922-975`, `src/js/lib/markdown.js:36-99` | Done |
 | 3.2 | BL-010 | P1 | unresolvedRow offers search, auto-accepts a unique exact match, else lists candidates with series and date at `src/js/main.js:983-1045` | Done |
 | 3.3 | BL-011 | P1 | series and creator adds at `src/js/main.js:884-902`, manual issue add at `src/js/main.js:1047-1091` | Done |
-| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:353-358`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:139` | Done |
+| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:352-372`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:139` | Done |
 | 4.1 | BL-013 | P0 | renderRail marks the active list with `aria-current` and a progress bar at `src/js/main.js:299-324` | Done |
 | 4.2 | BL-014 | P1 | seriesProgress is called on the whole state with no list filter at `src/js/main.js:1397-1415`, and the view states it counts across every list at `src/index.html:194-196` | Partial |
 | 4.3 | BL-015 | P1 | all four named filters plus All at `src/index.html:180-184`, applied without touching stored order at `src/js/main.js:622-632` | Done |
@@ -174,6 +174,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:310-319 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:20-29 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
+| BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:112-122 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
@@ -719,21 +720,75 @@ story ID never matched it. Twenty-five further anchors were stale across forty-o
 that table, in the table-stakes rows below it, and in the personas and journeys of
 `docs/UX_STUDY.md`.
 
-The mechanism behind most of them is worth separating from ordinary drift, because it disguises
-itself as maintenance. `e6d27c4` inserted eight lines above that region and left the anchors stale.
-A later commit then applied a correct adjustment of one line, for the import added to
-`src/js/main.js`, to numbers that were already eight lines out. What that leaves is an anchor
-carrying a recent, deliberate and correct-looking edit, so any check asking whether the anchor has
-been maintained answers yes, and a history search on the anchor string shows a considered update
-rather than neglect. A correct delta applied to an incorrect base hides better than plain neglect.
+The mechanism behind most of them is not drift at all, and the difference changes the prevention.
+These anchors were never correct in any commit that contained them. `docs/UX_STUDY.md` was added at
+`240e6d3`, and the story-verification table was written in the same commit, but both were measured
+against the working tree at `b18fc47`. In between, `e6d27c4` had already moved `src/js/main.js` by
+fourteen lines and `src/styles.css` by forty-one, and `240e6d3` touches neither file, so the
+citations were stale the moment they were committed. `src/js/main.js:606-611` shows it plainly: at
+`b18fc47` those lines are the `SHORT_LABEL` declaration the row claims, and at `240e6d3`, where the
+row was born, they are `]));`.
 
-Two cautions came out of the repair. The offset is not uniform: most of `src/js/main.js` had moved
-by eight lines, but the filter predicate had moved by nine, so applying a single delta across a
-file reintroduces the same defect somewhere else. And resolution stays a weak test even for code
+That inverts the obvious reading. `e6d27c4` did not invalidate correct anchors, it landed before
+the anchors existed. So the prevention is not to re-check anchors after changing code, because the
+code had already changed. It is to derive anchors against the tree being committed rather than the
+tree that was measured, which is the rule about deriving anchors only once the prose is final,
+extended from prose to code.
+
+A later commit then made the damage harder to see. `a29aa8b` applied a correct one-line adjustment
+to numbers that were already eight lines out, so the anchors came to carry a recent, deliberate and
+correct-looking edit. Any check asking whether an anchor has been maintained answers yes, and a
+history search on the anchor string shows a considered update rather than neglect. A correct delta
+applied to an incorrect base hides better than plain neglect, and it is why three successive sweeps
+each asked what had changed since the anchor was written, found the one-line adjustment, and left
+the eight lines underneath in place.
+
+Two cautions came out of the repair. The offset is not uniform: most of the cited regions had moved
+by eight lines, but the filter predicate had moved by nine, and the file as a whole had moved by
+ten, so applying a single delta across a file reintroduces the same defect somewhere else. And
+resolution stays a weak test even for code
 targets. Two anchors cited for inconsistent error surfaces resolved to real statements and were
 still wrong, because the claim is about `alert()` call sites while the lines they named held a
 variable assignment and a constant. Locating all three `alert()` sites and reading them is what
 settled those two.
+
+One anchor survived even that pass, and it failed on extent rather than on position. The
+duplicate-list story cited a six-line range holding only the handler's setup, with the
+`duplicateList` call and the shared-progress announcement both outside it. It resolves onto real
+code and reads as precise, which is why every resolution check passed it, and it now cites the
+whole handler. Extent is the property automated checking is worst at, because a wrong extent is
+indistinguishable from a deliberately narrow one.
+
+`BL-050` closes the loop that all of this opened. Five sweeps found one defect class five times,
+because each sweep compared numbers rather than reading lines, and because each matched a different
+subset of the places an anchor can be written. `scripts/check-anchors.mjs` collects every backticked
+`path:line` citation in this document and in `docs/UX_STUDY.md`, across all three table shapes and
+the running prose, and records a fingerprint of the cited lines themselves. The build fails when a
+fingerprint moves, which is the commit that edits or shifts the cited code rather than several
+commits later. It runs in the lint job at `.github/workflows/ci.yml:84-85` and locally as
+`npm run anchors`, wired at `package.json:14-15`.
+
+Its own controls matter more than its passing, because a checker that can only report success is
+indistinguishable from one that is not running. Pointed at the commit that introduced these
+citations it reports eighty-five drifted and exits non-zero, so it would have failed the build that
+created the defect. Pointed at a revision predating the documents it refuses to report a clean pass
+and exits with a fatal error, because finding no anchors means the collector broke rather than that
+everything is well. Moving a single anchor by one line is caught and named. And it caught its first
+live defect during its own delivery: adding the two script lines above shifted four `package.json`
+citations, which were re-read and re-aimed rather than re-blessed.
+
+What it cannot do is worth stating as plainly as what it can. It compares an anchor against its own
+past, not against the claim beside it, so blessing a wrong anchor locks a wrong anchor in
+permanently and silently. Identity is a real improvement on asking whether a line number exists, but
+extent still escapes it, for the reason above. A human still has to read each anchor once. What the
+gate removes is having to read all of them again on every sweep, which is the whole of the gain and
+the honest limit of it.
+
+The Evidence column of the backlog table above is deliberately outside the gate. Those citations
+record what was true when an item was filed, and some are now false by design: `BL-039` cites the
+absence of a workflow directory that its own delivery created. Writing them without anchor backticks
+keeps them readable as history and stops the checker demanding they be updated into a claim about
+the present that was never intended.
 
 ## Existing epics and stories
 
@@ -1005,7 +1060,7 @@ No gap. Co-existence is a non-issue for a single local process, and interoperabi
 both directions: JSON backup for round-tripping and Markdown export for reading elsewhere. Zero
 runtime dependencies and plain ES modules mean nothing to reconcile with a host application.
 
-Evidence: `package.json:1-26` (no `dependencies` key at all, `engines.node >= 20`),
+Evidence: `package.json:1-28` (no `dependencies` key at all, `engines.node >= 20`),
 `src/js/lib/model.js:434-458` (validated backup shape).
 
 The fixed `127.0.0.1:8787` origin is a deliberate storage-bucket decision rather than a
@@ -1085,13 +1140,13 @@ The clearest debt in the repository, and it is concentrated in one file.
 Swept in full rather than dispositioned.
 
 - Installability: good, and suited to an app cloned and run by hand. `npm start` runs the server
-  with no install step, because there is nothing to install. Evidence: `package.json:8-17`.
+  with no install step, because there is nothing to install. Evidence: `package.json:8-19`.
   Changed since: `BL-040` added three devDependencies and a tracked `package-lock.json`, so linting
   now needs `npm install` first. Running the app still does not, and runtime dependencies are still
   zero.
 - Adaptability: good. Plain ES modules with no build step and no bundler mean a Node upgrade
   changes nothing about the client, and `engines.node >= 20` states the floor.
-  Evidence: `package.json:18-20`.
+  Evidence: `package.json:20-22`.
 - Replaceability: good. The metadata API base URL is user-configurable and validated, the cache is
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
@@ -1120,13 +1175,13 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:1532-1534`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepts any base URL and only strips trailing slashes, with the https-or-local check living in the settings form rather than in the client. Evidence: `src/js/api.js:18-26` against `src/js/main.js:1462-1475`. That half stands: the check still lives outside the client, and it is tracked as `BL-045`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
-| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-26` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
+| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-28` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:81-84`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is still open as BL-028. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
 | Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. Partly changed: the suite is 235 after this pass, but the three modules still have no test file, so the gap itself is unchanged. |
 | CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request. |
-| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version to `1.0.0` at `package.json:3`, added `CHANGELOG.md`, and wired a `version` script at `package.json:16` that syncs the version the app reports. |
-| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-26` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:21-25` and a tracked `package-lock.json`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
+| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version to `1.0.0` at `package.json:3`, added `CHANGELOG.md`, and wired a `version` script at `package.json:18` that syncs the version the app reports. |
+| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-28` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:23-27` and a tracked `package-lock.json`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
 | Licensing | No gap. The project is MIT, and every vendored order records its upstream source and licence rather than absorbing it silently. Evidence: `LICENSE`, `src/data/catalog.json` (`source` and `sourceLicense` per list), `src/js/main.js:1245-1265` (attribution rendered in the UI before import). |
 
 ## Appendix B: Priority disagreements
