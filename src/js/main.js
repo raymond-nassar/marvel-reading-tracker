@@ -1075,8 +1075,21 @@ function forgetDeleted() {
 // `duplicateList` clears `catalogId` to avoid: "in library" and "Continue reading" would both
 // resolve to whichever came first in the rail, and the rail would show two entries with the same
 // name and the same progress.
+//
+// It must not be withdrawn in silence. Deleting the list you were reading hands you to the home
+// view, where the card for that order has already reverted to "+ Add to library", so the wrong
+// way back and the right one sit on the same screen. A reader who had renamed or reordered their
+// copy would press it, be told the order is in their sidebar, and lose the route back to that copy
+// in the same tick with nothing said about it. The sentence is returned as well as shown, so the
+// caller can fold it into the announcement it is about to make: two announcements in one tick
+// leave only the last.
 function forgetDeletedFor(catalogId) {
-  if (catalogId && lastDeleted?.list?.catalogId === catalogId) forgetDeleted();
+  if (!catalogId || lastDeleted?.list?.catalogId !== catalogId) return null;
+  const { name } = lastDeleted.list;
+  forgetDeleted();
+  const msg = `${name} is back from the catalog. The copy you deleted, with any changes you had made to it, cannot be put back now.`;
+  notify('#app-report', msg, 'ok', UNDO_DELETE);
+  return msg;
 }
 
 function undoDelete() {
@@ -2122,7 +2135,16 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
       return r.state;
     });
     if (!store.lastUpdateOk) {
-      notify(report, `${order.name} was created but its issues could not be saved.`, 'error', importKey);
+      // The list record is written before its issues, so a failure here leaves a shell claiming
+      // the catalog entry with nothing in it. That is not merely untidy: it blocks the undo offer
+      // for a deleted copy of the same order, and `undoDelete` would then discard the reader's
+      // real list in favour of an artefact of a write that failed. Storage being full is the
+      // expected reason to land here, and this second write is the larger of the two, so the
+      // half-import is rolled back rather than left standing.
+      store.update((s) => deleteList(s, listId));
+      notify(report, store.lastUpdateOk
+        ? `${order.name} could not be saved, so nothing was imported.`
+        : `${order.name} was created but its issues could not be saved.`, 'error', importKey);
       return null;
     }
     if (navigate) {
@@ -2144,11 +2166,12 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
     }
     parts.push('Any issues you had already read stay read.');
     if (!navigate) parts.push('It is now in your sidebar.');
+    const withdrawn = forgetDeletedFor(catalogId);
+    if (withdrawn) parts.push(withdrawn);
     // A failure from a previous attempt would otherwise sit under a successful import,
     // contradicting it. Cleared by the order's key, not by this pane, so an attempt that failed
     // from the other entry point is cleared too.
     clearNotice(importKey);
-    forgetDeletedFor(catalogId);
     announce(parts.join(' '));
     return listId;
   } catch (err) {
