@@ -131,6 +131,17 @@ test('every catalog cover resolves to a variant URL the browser can request', as
   }
 });
 
+test('a cover issue id has to be a positive whole number, matching the manifest rule', () => {
+  const { lists } = parseCatalog({
+    lists: [-1, 0, 4216, 1.5, '4216', null].map((v, i) => (
+      { id: `x${i}`, file: 'x.json', name: 'X', count: 1, coverIssueId: v }
+    )),
+  });
+  // Only the real id survives. A negative number is the one that matters: it is truthy, so
+  // accepting it would let corrupted data reach the preview lookup looking like an id.
+  assert.deepEqual(lists.map((l) => l.coverIssueId), [null, null, 4216, null, null, null]);
+});
+
 test('an entry with no usable cover falls back rather than requesting a broken image', () => {
   const { lists } = parseCatalog({
     lists: [

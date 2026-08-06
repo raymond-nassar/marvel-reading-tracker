@@ -253,14 +253,19 @@ function loadRailed() {
   return null;
 }
 
-function setRailed(next, { announceIt = false } = {}) {
+// Only a deliberate toggle is a preference, so persisting is opt-in. The responsive rule and
+// the first-run default also move the sidebar, and writing those to storage would let the act
+// of resizing a window overwrite a choice the reader actually made.
+function setRailed(next, { announceIt = false, persist = false } = {}) {
   railed = Boolean(next);
   $('#shell').classList.toggle('railed', railed);
   const toggle = $('#btn-rail-toggle');
   toggle.setAttribute('aria-expanded', String(!railed));
   toggle.title = railed ? 'Expand sidebar (Ctrl+\\)' : 'Collapse sidebar (Ctrl+\\)';
   if (!railed) hideRailTip();
-  try { localStorage.setItem(SIDEBAR_KEY, String(railed)); } catch { /* non-fatal */ }
+  if (persist) {
+    try { localStorage.setItem(SIDEBAR_KEY, String(railed)); } catch { /* non-fatal */ }
+  }
   if (announceIt) announce(railed ? 'Sidebar collapsed.' : 'Sidebar expanded.');
 }
 
@@ -269,16 +274,19 @@ function wireSidebar() {
   wasNarrow = window.innerWidth < RAIL_BREAKPOINT;
   // A saved choice is a deliberate one and outranks the responsive default, so a reader who
   // expanded the sidebar on a narrow window does not find it collapsed again on every visit.
+  // The default itself is not written back: until the reader touches the toggle there is no
+  // preference to record, and recording one would freeze the first window size they happened
+  // to open the app at.
   setRailed(saved !== null ? saved : wasNarrow);
 
-  $('#btn-rail-toggle').addEventListener('click', () => setRailed(!railed, { announceIt: true }));
+  $('#btn-rail-toggle').addEventListener('click', () => setRailed(!railed, { announceIt: true, persist: true }));
 
   document.addEventListener('keydown', (e) => {
     // Ctrl+\ and nothing else: the sidebar is chrome, so its shortcut must not fight a
     // text field the way the single-letter reading shortcuts would.
     if (e.key !== '\\' || !e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) return;
     e.preventDefault();
-    setRailed(!railed, { announceIt: true });
+    setRailed(!railed, { announceIt: true, persist: true });
   });
 
   window.addEventListener('resize', () => {
@@ -287,7 +295,10 @@ function wireSidebar() {
     // reader had just made, and a window drag fires hundreds of them.
     if (isNarrow === wasNarrow) return;
     wasNarrow = isNarrow;
-    setRailed(isNarrow);
+    // A narrow window has no room for the full sidebar, so it always collapses. Widening
+    // restores what the reader chose rather than assuming they want it open, so dragging a
+    // window wide does not undo a deliberate collapse.
+    setRailed(isNarrow ? true : (loadRailed() ?? false));
   });
 
   wireRailTips();

@@ -141,7 +141,11 @@ function normalizeEntry(raw) {
     // fields come from the vendored Marvel metadata for an issue that is actually in the
     // order, never from a hand-picked image: `cover` is the CDN base the browser appends a
     // variant to, exactly as issue covers work everywhere else in the app.
-    coverIssueId: Number.isInteger(raw.coverIssueId) && raw.coverIssueId !== 0 ? raw.coverIssueId : null,
+    //
+    // Positive only, matching the manifest validation in curated.js. A negative id is not a
+    // Marvel issue, but it is truthy, so accepting one here would let a corrupted catalog
+    // reach the preview lookup as a plausible-looking id rather than being rejected as data.
+    coverIssueId: Number.isInteger(raw.coverIssueId) && raw.coverIssueId > 0 ? raw.coverIssueId : null,
     cover: normalizeCover(raw.cover),
     // An editorial judgement, recorded as data rather than guessed from the issue count:
     // true means the order opens the story it tells, so no prior reading is assumed beyond
