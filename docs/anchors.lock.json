@@ -1,61 +1,61 @@
 {
   "docs/UX_STUDY.md|as-is-journey-map|src/index.html|0": {
-    "anchor": "src/index.html:194-196",
+    "anchor": "src/index.html:328-330",
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
   "docs/UX_STUDY.md|information-architecture-review|src/index.html|0": {
-    "anchor": "src/index.html:36-50",
-    "fp": "364e990d9ceb707a",
-    "head": "<nav aria-labelledby=\"rail-nav\">"
+    "anchor": "src/index.html:34-52",
+    "fp": "97c58e90a98b2fc5",
+    "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
   "docs/UX_STUDY.md|information-architecture-review|src/index.html|1": {
-    "anchor": "src/index.html:36-50",
-    "fp": "364e990d9ceb707a",
-    "head": "<nav aria-labelledby=\"rail-nav\">"
+    "anchor": "src/index.html:34-52",
+    "fp": "97c58e90a98b2fc5",
+    "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
   "docs/UX_STUDY.md|job-stories|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
+    "anchor": "src/index.html:259-289",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
   "docs/UX_STUDY.md|job-stories|src/index.html|1": {
-    "anchor": "src/index.html:147",
+    "anchor": "src/index.html:281",
     "fp": "a628208c2b24bcfe",
     "head": "Done, next <kbd>D</kbd>"
   },
   "docs/UX_STUDY.md|job-stories|src/index.html|2": {
-    "anchor": "src/index.html:194-196",
+    "anchor": "src/index.html:328-330",
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
   "docs/UX_STUDY.md|job-stories|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:434-458",
+    "anchor": "src/js/lib/model.js:453-477",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
   "docs/UX_STUDY.md|job-stories|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1222-1227",
+    "anchor": "src/js/main.js:1728-1733",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
   "docs/UX_STUDY.md|job-stories|src/js/main.js|1": {
-    "anchor": "src/js/main.js:590-593",
+    "anchor": "src/js/main.js:1096-1099",
     "fp": "cf9f9d54d5388722",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
   "docs/UX_STUDY.md|job-stories|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1397-1415",
+    "anchor": "src/js/main.js:1911-1929",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
   "docs/UX_STUDY.md|keyboard|src/index.html|0": {
-    "anchor": "src/index.html:180-184",
+    "anchor": "src/index.html:314-318",
     "fp": "1988bee5bebf81b7",
     "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
   },
   "docs/UX_STUDY.md|keyboard|src/styles.css|0": {
-    "anchor": "src/styles.css:294",
+    "anchor": "src/styles.css:393",
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
@@ -70,12 +70,12 @@
     "head": "- Hosting or distributing comic content."
   },
   "docs/UX_STUDY.md|proto-persona|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
+    "anchor": "src/index.html:259-289",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
   "docs/UX_STUDY.md|proto-persona|src/js/main.js|0": {
-    "anchor": "src/js/main.js:590-593",
+    "anchor": "src/js/main.js:1096-1099",
     "fp": "cf9f9d54d5388722",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
@@ -85,47 +85,47 @@
     "head": "// Contract verified 2026-08-03 (CHG-001): the live API's digitalId is authoritative; the"
   },
   "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/index.html|0": {
-    "anchor": "src/index.html:66-77",
+    "anchor": "src/index.html:122-133",
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
   "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/index.html|1": {
-    "anchor": "src/index.html:66-77",
+    "anchor": "src/index.html:122-133",
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
   "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/index.html|2": {
-    "anchor": "src/index.html:36-50",
-    "fp": "364e990d9ceb707a",
-    "head": "<nav aria-labelledby=\"rail-nav\">"
+    "anchor": "src/index.html:34-52",
+    "fp": "97c58e90a98b2fc5",
+    "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
   "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:358-384",
+    "anchor": "src/js/lib/model.js:376-402",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
   "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/js/main.js|0": {
-    "anchor": "src/js/main.js:615-620",
+    "anchor": "src/js/main.js:1121-1126",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
   "docs/UX_STUDY.md|sweep-result|src/index.html|0": {
-    "anchor": "src/index.html:207-213",
+    "anchor": "src/index.html:341-347",
     "fp": "414c8c4d2ec683f4",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
   "docs/UX_STUDY.md|sweep-result|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1267-1275",
+    "anchor": "src/js/main.js:1773-1781",
     "fp": "9b9575dc8a81cd13",
     "head": "function wireCatalogSearch() {"
   },
   "docs/UX_STUDY.md|sweep-result|src/styles.css|0": {
-    "anchor": "src/styles.css:149",
+    "anchor": "src/styles.css:248",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
   "docs/UX_STUDY.md|sweep-result|src/styles.css|1": {
-    "anchor": "src/styles.css:448-450",
+    "anchor": "src/styles.css:675-677",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -140,17 +140,17 @@
     "head": "// Generated from src/data/hickman_full.json - real issues, real covers, real synopses."
   },
   "docs/UX_STUDY.md|user-preference-emulation|src/styles.css|0": {
-    "anchor": "src/styles.css:149",
+    "anchor": "src/styles.css:248",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
   "docs/UX_STUDY.md|user-preference-emulation|src/styles.css|1": {
-    "anchor": "src/styles.css:448-450",
+    "anchor": "src/styles.css:675-677",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
   "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/index.html|0": {
-    "anchor": "src/index.html:147",
+    "anchor": "src/index.html:281",
     "fp": "a628208c2b24bcfe",
     "head": "Done, next <kbd>D</kbd>"
   },
@@ -165,37 +165,37 @@
     "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
   },
   "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css|2": {
-    "anchor": "src/styles.css:247",
+    "anchor": "src/styles.css:346",
     "fp": "f549fe8731ac5e8b",
     "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 "
   },
   "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css|0": {
-    "anchor": "src/styles.css:316-317",
+    "anchor": "src/styles.css:415-416",
     "fp": "4867cdf75f778888",
     "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
   },
   "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css|1": {
-    "anchor": "src/styles.css:319",
+    "anchor": "src/styles.css:418",
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
   "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
+    "anchor": "src/index.html:259-289",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
   "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/styles.css|0": {
-    "anchor": "src/styles.css:189-196",
+    "anchor": "src/styles.css:288-295",
     "fp": "8ba45d9dd3e3f769",
     "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
   "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css|0": {
-    "anchor": "src/styles.css:331-334",
+    "anchor": "src/styles.css:430-433",
     "fp": "3fb81ae816834465",
     "head": ".cb {"
   },
   "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css|0": {
-    "anchor": "src/styles.css:369-376",
+    "anchor": "src/styles.css:468-475",
     "fp": "173a5898da6079a8",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -205,22 +205,22 @@
     "head": "<div id=\"announcer\" class=\"visually-hidden\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"></di"
   },
   "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html|1": {
-    "anchor": "src/index.html:64",
+    "anchor": "src/index.html:120",
     "fp": "74bc1ff9b998e6b5",
     "head": "<div id=\"save-report\" role=\"alert\" aria-live=\"assertive\"></div>"
   },
   "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html|2": {
-    "anchor": "src/index.html:235",
+    "anchor": "src/index.html:369",
     "fp": "eab45ce60f505bd9",
     "head": "<div id=\"search-results\" class=\"results\" aria-live=\"polite\"></div>"
   },
   "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/js/main.js|0": {
-    "anchor": "src/js/main.js:137-149",
+    "anchor": "src/js/main.js:130-142",
     "fp": "4f25dd3110664bc5",
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
   "docs/UX_STUDY.md|ux-a-007-the-first-run-dom-ships-an-empty-headin|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
+    "anchor": "src/index.html:259-289",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
@@ -235,102 +235,102 @@
     "head": "color-scheme: dark;"
   },
   "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css|1": {
-    "anchor": "src/styles.css:448-455",
-    "fp": "6a120997ba7f704d",
+    "anchor": "src/styles.css:675-682",
+    "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
   "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js|0": {
-    "anchor": "src/js/main.js:588",
+    "anchor": "src/js/main.js:1094",
     "fp": "f14a891c350f1cad",
     "head": "title: describe(item, { override }),"
   },
   "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js|1": {
-    "anchor": "src/js/main.js:615-620",
+    "anchor": "src/js/main.js:1121-1126",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
   "docs/UX_STUDY.md|ux-d-001-the-mobile-layout-rule-never-takes-effe|src/styles.css|0": {
-    "anchor": "src/styles.css:81-84",
-    "fp": "7678b53ce28b19c2",
+    "anchor": "src/styles.css:87-90",
+    "fp": "6c6878ef6f032cfe",
     "head": "@media (max-width: 880px) {"
   },
   "docs/UX_STUDY.md|ux-d-001-the-mobile-layout-rule-never-takes-effe|src/styles.css|1": {
-    "anchor": "src/styles.css:88-92",
-    "fp": "272de1049e5d1fdd",
+    "anchor": "src/styles.css:94-98",
+    "fp": "78b189bd3b445da3",
     "head": ".rail {"
   },
   "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/index.html|0": {
-    "anchor": "src/index.html:147",
+    "anchor": "src/index.html:281",
     "fp": "a628208c2b24bcfe",
     "head": "Done, next <kbd>D</kbd>"
   },
   "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:642-660",
+    "anchor": "src/js/main.js:1148-1166",
     "fp": "6b0a52cdade44dcb",
     "head": "function wireShortcuts() {"
   },
   "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js|0": {
-    "anchor": "src/js/main.js:43-48",
+    "anchor": "src/js/main.js:53-58",
     "fp": "179d485d49b3bd60",
     "head": "const store = new Store({"
   },
   "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1555-1568",
-    "fp": "96822d1d78e2792c",
+    "anchor": "src/js/main.js:2069-2082",
+    "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
   "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1354",
+    "anchor": "src/js/main.js:1859",
     "fp": "94e13815af1d3dad",
     "head": "alert('That curated order could not be saved, so nothing was imported.');"
   },
   "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|1": {
-    "anchor": "src/js/main.js:337-347",
+    "anchor": "src/js/main.js:841-851",
     "fp": "397bd5507505d94a",
     "head": "const name = prompt('List name', list.name);"
   },
   "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|2": {
-    "anchor": "src/js/main.js:344-350",
+    "anchor": "src/js/main.js:848-854",
     "fp": "f58b1d12596a76ef",
     "head": "const id = activeListId();"
   },
   "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|3": {
-    "anchor": "src/js/main.js:137-149",
+    "anchor": "src/js/main.js:130-142",
     "fp": "4f25dd3110664bc5",
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
   "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:344-350",
+    "anchor": "src/js/main.js:848-854",
     "fp": "f58b1d12596a76ef",
     "head": "const id = activeListId();"
   },
   "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1449-1452",
+    "anchor": "src/js/main.js:1963-1966",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
   "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/index.html|0": {
-    "anchor": "src/index.html:147",
+    "anchor": "src/index.html:281",
     "fp": "a628208c2b24bcfe",
     "head": "Done, next <kbd>D</kbd>"
   },
   "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/js/main.js|0": {
-    "anchor": "src/js/main.js:642-660",
+    "anchor": "src/js/main.js:1148-1166",
     "fp": "6b0a52cdade44dcb",
     "head": "function wireShortcuts() {"
   },
   "docs/UX_STUDY.md|ux-i-001-no-application-state-is-addressable|src/js/main.js|0": {
-    "anchor": "src/js/main.js:275-295",
-    "fp": "75df2fc2e70bc02c",
+    "anchor": "src/js/main.js:381-405",
+    "fp": "8b384f93bdecc497",
     "head": "function showView(next, { focus = true } = {}) {"
   },
   "docs/UX_STUDY.md|ux-i-002-the-filter-selection-resets-on-every-re|src/index.html|0": {
-    "anchor": "src/index.html:180-184",
+    "anchor": "src/index.html:314-318",
     "fp": "1988bee5bebf81b7",
     "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
   },
   "docs/UX_STUDY.md|ux-i-002-the-filter-selection-resets-on-every-re|src/js/main.js|0": {
-    "anchor": "src/js/main.js:51",
+    "anchor": "src/js/main.js:61",
     "fp": "86045517874ce39e",
     "head": "let filter = 'all';"
   },
@@ -340,12 +340,12 @@
     "head": "<h3>Library</h3>"
   },
   "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/index.html|0": {
-    "anchor": "src/index.html:36-38",
-    "fp": "66730adc62188d7a",
-    "head": "<nav aria-labelledby=\"rail-nav\">"
+    "anchor": "src/index.html:34-37",
+    "fp": "dcfa1e8fad538a97",
+    "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
   "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:593",
+    "anchor": "src/js/main.js:1099",
     "fp": "bd66076a7b8dce19",
     "head": "item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,"
   },
@@ -375,17 +375,17 @@
     "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
   },
   "PRODUCT_BACKLOG.md|1-functional-suitability|src/index.html|0": {
-    "anchor": "src/index.html:194-196",
+    "anchor": "src/index.html:328-330",
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
   "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1397-1415",
+    "anchor": "src/js/main.js:1911-1929",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
   "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1192",
+    "anchor": "src/js/main.js:1698",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
@@ -395,17 +395,17 @@
     "head": "// Series and creators are searched locally against a vendored index, because the API ignores"
   },
   "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1555-1568",
-    "fp": "96822d1d78e2792c",
+    "anchor": "src/js/main.js:2069-2082",
+    "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
   "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js|1": {
-    "anchor": "src/js/main.js:43-48",
+    "anchor": "src/js/main.js:53-58",
     "fp": "179d485d49b3bd60",
     "head": "const store = new Store({"
   },
   "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js|2": {
-    "anchor": "src/js/main.js:534-613",
+    "anchor": "src/js/main.js:1040-1119",
     "fp": "d0de6e662e9a576b",
     "head": "function renderRows() {"
   },
@@ -415,7 +415,7 @@
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:434-458",
+    "anchor": "src/js/lib/model.js:453-477",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
@@ -425,27 +425,27 @@
     "head": "<meta name=\"color-scheme\" content=\"dark\" />"
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:615-620",
+    "anchor": "src/js/main.js:1121-1126",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|1": {
-    "anchor": "src/js/main.js:344-350",
+    "anchor": "src/js/main.js:848-854",
     "fp": "f58b1d12596a76ef",
     "head": "const id = activeListId();"
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1449-1452",
+    "anchor": "src/js/main.js:1963-1966",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|3": {
-    "anchor": "src/js/main.js:588",
+    "anchor": "src/js/main.js:1094",
     "fp": "f14a891c350f1cad",
     "head": "title: describe(item, { override }),"
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css|0": {
-    "anchor": "src/styles.css:369-376",
+    "anchor": "src/styles.css:468-475",
     "fp": "173a5898da6079a8",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -455,12 +455,12 @@
     "head": "color-scheme: dark;"
   },
   "PRODUCT_BACKLOG.md|5-reliability|src/index.html|0": {
-    "anchor": "src/index.html:66-77",
+    "anchor": "src/index.html:122-133",
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
   "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:358-384",
+    "anchor": "src/js/lib/model.js:376-402",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -505,22 +505,22 @@
     "head": "async function getJson(url, attempt = 0) {"
   },
   "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1555-1568",
-    "fp": "96822d1d78e2792c",
+    "anchor": "src/js/main.js:2069-2082",
+    "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
   "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js|1": {
-    "anchor": "src/js/main.js:275-295",
-    "fp": "75df2fc2e70bc02c",
+    "anchor": "src/js/main.js:381-405",
+    "fp": "8b384f93bdecc497",
     "head": "function showView(next, { focus = true } = {}) {"
   },
   "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css|0": {
-    "anchor": "src/styles.css:304-307",
+    "anchor": "src/styles.css:403-406",
     "fp": "c17ce04e13581723",
     "head": ".row {"
   },
   "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css|1": {
-    "anchor": "src/styles.css:396-397",
+    "anchor": "src/styles.css:495-496",
     "fp": "5a5d3c1e791d4bbe",
     "head": ".row { }"
   },
@@ -545,68 +545,68 @@
     "head": "export const SCHEMA_VERSION = 2;"
   },
   "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js|1": {
-    "anchor": "src/js/lib/model.js:358-384",
+    "anchor": "src/js/lib/model.js:376-402",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
   "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1462-1475",
+    "anchor": "src/js/main.js:1976-1989",
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
   "PRODUCT_BACKLOG.md|BL-001|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1209-1239",
-    "fp": "5de28c6520c1da93",
+    "anchor": "src/js/main.js:1715-1745",
+    "fp": "ef3b6a8363ab903d",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
   "PRODUCT_BACKLOG.md|BL-002|src/index.html|0": {
-    "anchor": "src/index.html:214-216",
+    "anchor": "src/index.html:348-350",
     "fp": "1af46f8f91b297cc",
     "head": "<fieldset class=\"filters\" id=\"catalog-filters\" hidden>"
   },
   "PRODUCT_BACKLOG.md|BL-002|src/js/main.js|0": {
     "anchor": "src/js/main.js:16",
-    "fp": "be41bc4bd3930679",
-    "head": "parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory, searchCatalog,"
+    "fp": "f97d7eb626217aa3",
+    "head": "parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,"
   },
   "PRODUCT_BACKLOG.md|BL-003|src/index.html|0": {
-    "anchor": "src/index.html:207-213",
+    "anchor": "src/index.html:341-347",
     "fp": "414c8c4d2ec683f4",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
   "PRODUCT_BACKLOG.md|BL-003|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1267-1282",
+    "anchor": "src/js/main.js:1773-1788",
     "fp": "97edef98a6cc84a2",
     "head": "function wireCatalogSearch() {"
   },
   "PRODUCT_BACKLOG.md|BL-004|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1213",
+    "anchor": "src/js/main.js:1719",
     "fp": "e5a85bd0d6aeac2f",
     "head": "const depth = depthLabel(list.depth);"
   },
   "PRODUCT_BACKLOG.md|BL-004|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1222-1227",
+    "anchor": "src/js/main.js:1728-1733",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
   "PRODUCT_BACKLOG.md|BL-006|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1245-1265",
+    "anchor": "src/js/main.js:1751-1771",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
   "PRODUCT_BACKLOG.md|BL-007|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1192",
+    "anchor": "src/js/main.js:1698",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
   "PRODUCT_BACKLOG.md|BL-007|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1209-1214",
+    "anchor": "src/js/main.js:1715-1720",
     "fp": "767e40003bd5b6e0",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
   "PRODUCT_BACKLOG.md|BL-008|scripts/vendor-orders.mjs|0": {
-    "anchor": "scripts/vendor-orders.mjs:167-267",
-    "fp": "e08df3e604b0969f",
+    "anchor": "scripts/vendor-orders.mjs:201-301",
+    "fp": "6227b9932703e063",
     "head": "const { entries, unresolved } = parseChecklist(md);"
   },
   "PRODUCT_BACKLOG.md|BL-009|src/js/lib/markdown.js|0": {
@@ -615,72 +615,72 @@
     "head": "// Returns { entries, unresolved, headings }"
   },
   "PRODUCT_BACKLOG.md|BL-009|src/js/main.js|0": {
-    "anchor": "src/js/main.js:922-975",
+    "anchor": "src/js/main.js:1428-1481",
     "fp": "e469118bcd96fffa",
     "head": "const { entries, unresolved, headings } = parseChecklist(text);"
   },
   "PRODUCT_BACKLOG.md|BL-010|src/js/main.js|0": {
-    "anchor": "src/js/main.js:983-1045",
+    "anchor": "src/js/main.js:1489-1551",
     "fp": "6b3347427113cf61",
     "head": "function unresolvedRow(entry, listId) {"
   },
   "PRODUCT_BACKLOG.md|BL-011|src/js/main.js|0": {
-    "anchor": "src/js/main.js:884-902",
+    "anchor": "src/js/main.js:1390-1408",
     "fp": "457a03b1d13a9dd4",
     "head": "async function addSeries(series) {"
   },
   "PRODUCT_BACKLOG.md|BL-011|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1047-1091",
+    "anchor": "src/js/main.js:1553-1597",
     "fp": "5a57b37f0d0a4cae",
     "head": "function doManual() {"
   },
   "PRODUCT_BACKLOG.md|BL-012|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:139",
+    "anchor": "src/js/lib/model.js:143",
     "fp": "e409e1d7f9185731",
     "head": "// Read progress is deliberately NOT copied. It is global, keyed by issue id (see the note at"
   },
   "PRODUCT_BACKLOG.md|BL-012|src/js/main.js|0": {
-    "anchor": "src/js/main.js:352-372",
+    "anchor": "src/js/main.js:856-876",
     "fp": "ba48dba7ca5b5ba0",
     "head": "$('#btn-duplicate-list').addEventListener('click', () => {"
   },
   "PRODUCT_BACKLOG.md|BL-013|src/js/main.js|0": {
-    "anchor": "src/js/main.js:299-324",
-    "fp": "51032bac9fb6fdc5",
+    "anchor": "src/js/main.js:410-435",
+    "fp": "b81a877a40a9710d",
     "head": "function renderRail() {"
   },
   "PRODUCT_BACKLOG.md|BL-014|src/index.html|0": {
-    "anchor": "src/index.html:194-196",
+    "anchor": "src/index.html:328-330",
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
   "PRODUCT_BACKLOG.md|BL-014|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1397-1415",
+    "anchor": "src/js/main.js:1911-1929",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
   "PRODUCT_BACKLOG.md|BL-015|src/index.html|0": {
-    "anchor": "src/index.html:180-184",
+    "anchor": "src/index.html:314-318",
     "fp": "1988bee5bebf81b7",
     "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
   },
   "PRODUCT_BACKLOG.md|BL-015|src/js/main.js|0": {
-    "anchor": "src/js/main.js:622-632",
+    "anchor": "src/js/main.js:1128-1138",
     "fp": "a3884e91fa5d58c9",
     "head": "function matchesFilter(item) {"
   },
   "PRODUCT_BACKLOG.md|BL-016|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
+    "anchor": "src/index.html:259-289",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
   "PRODUCT_BACKLOG.md|BL-018|src/js/main.js|0": {
-    "anchor": "src/js/main.js:590-593",
+    "anchor": "src/js/main.js:1096-1099",
     "fp": "cf9f9d54d5388722",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
   "PRODUCT_BACKLOG.md|BL-018|src/js/main.js|1": {
-    "anchor": "src/js/main.js:626",
+    "anchor": "src/js/main.js:1132",
     "fp": "2011e7a2e7789b2d",
     "head": "if (filter === 'pending') return !item.hydrated && item.source !== 'manual';"
   },
@@ -690,12 +690,12 @@
     "head": "export const STATE = {"
   },
   "PRODUCT_BACKLOG.md|BL-019|src/js/main.js|0": {
-    "anchor": "src/js/main.js:615-620",
+    "anchor": "src/js/main.js:1121-1126",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
   "PRODUCT_BACKLOG.md|BL-020|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1070",
+    "anchor": "src/js/main.js:1576",
     "fp": "5435ae20ec2b0bc2",
     "head": "source: 'manual',"
   },
@@ -710,38 +710,38 @@
     "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
   },
   "PRODUCT_BACKLOG.md|BL-022|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:434-458",
+    "anchor": "src/js/lib/model.js:453-477",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
   "PRODUCT_BACKLOG.md|BL-023|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1449-1452",
+    "anchor": "src/js/main.js:1963-1966",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
   "PRODUCT_BACKLOG.md|BL-026|src/js/main.js|0": {
-    "anchor": "src/js/main.js:642-660",
+    "anchor": "src/js/main.js:1148-1166",
     "fp": "6b0a52cdade44dcb",
     "head": "function wireShortcuts() {"
   },
   "PRODUCT_BACKLOG.md|BL-027|src/js/main.js|0": {
-    "anchor": "src/js/main.js:137-149",
+    "anchor": "src/js/main.js:130-142",
     "fp": "4f25dd3110664bc5",
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
   "PRODUCT_BACKLOG.md|BL-028|src/styles.css|0": {
-    "anchor": "src/styles.css:81-84",
-    "fp": "7678b53ce28b19c2",
+    "anchor": "src/styles.css:87-90",
+    "fp": "6c6878ef6f032cfe",
     "head": "@media (max-width: 880px) {"
   },
   "PRODUCT_BACKLOG.md|BL-028|src/styles.css|1": {
-    "anchor": "src/styles.css:88-92",
-    "fp": "272de1049e5d1fdd",
+    "anchor": "src/styles.css:94-98",
+    "fp": "78b189bd3b445da3",
     "head": ".rail {"
   },
   "PRODUCT_BACKLOG.md|BL-029|src/styles.css|0": {
-    "anchor": "src/styles.css:81-84",
-    "fp": "7678b53ce28b19c2",
+    "anchor": "src/styles.css:87-90",
+    "fp": "6c6878ef6f032cfe",
     "head": "@media (max-width: 880px) {"
   },
   "PRODUCT_BACKLOG.md|BL-030|server.mjs|0": {
@@ -770,7 +770,7 @@
     "head": "export class MarvelApi {"
   },
   "PRODUCT_BACKLOG.md|BL-030|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1462-1475",
+    "anchor": "src/js/main.js:1976-1989",
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -800,23 +800,23 @@
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
   "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1192",
+    "anchor": "src/js/main.js:1698",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
   "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1209-1214",
+    "anchor": "src/js/main.js:1715-1720",
     "fp": "767e40003bd5b6e0",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
   "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css|0": {
-    "anchor": "src/styles.css:369-376",
+    "anchor": "src/styles.css:468-475",
     "fp": "173a5898da6079a8",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
   "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css|1": {
-    "anchor": "src/styles.css:81-84",
-    "fp": "7678b53ce28b19c2",
+    "anchor": "src/styles.css:87-90",
+    "fp": "6c6878ef6f032cfe",
     "head": "@media (max-width: 880px) {"
   },
   "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml|0": {
@@ -835,17 +835,17 @@
     "head": "// So we never claim an issue *is* available. We report one of five explicit"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js|0": {
-    "anchor": "src/js/main.js:586-593",
+    "anchor": "src/js/main.js:1092-1099",
     "fp": "69839b3df2d455a1",
     "head": "el('span', {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js|1": {
-    "anchor": "src/js/main.js:615-620",
+    "anchor": "src/js/main.js:1121-1126",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js|2": {
-    "anchor": "src/js/main.js:606-611",
+    "anchor": "src/js/main.js:1112-1117",
     "fp": "e123c8467718a553",
     "head": "]),"
   },
@@ -855,48 +855,48 @@
     "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|1": {
-    "anchor": "src/styles.css:247",
+    "anchor": "src/styles.css:346",
     "fp": "f549fe8731ac5e8b",
     "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 "
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|2": {
-    "anchor": "src/styles.css:316-317",
+    "anchor": "src/styles.css:415-416",
     "fp": "4867cdf75f778888",
     "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|3": {
-    "anchor": "src/styles.css:319",
+    "anchor": "src/styles.css:418",
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|4": {
-    "anchor": "src/styles.css:364",
+    "anchor": "src/styles.css:463",
     "fp": "7f22dd94b3ebb02f",
     "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|5": {
-    "anchor": "src/styles.css:189-196",
+    "anchor": "src/styles.css:288-295",
     "fp": "8ba45d9dd3e3f769",
     "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|6": {
-    "anchor": "src/styles.css:364",
+    "anchor": "src/styles.css:463",
     "fp": "7f22dd94b3ebb02f",
     "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|7": {
-    "anchor": "src/styles.css:339-362",
+    "anchor": "src/styles.css:438-461",
     "fp": "1de73e8d4daf96ee",
     "head": "/* These outlines are faint on purpose, and that is a recorded decision rather than an"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|8": {
-    "anchor": "src/styles.css:149",
+    "anchor": "src/styles.css:248",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|9": {
-    "anchor": "src/styles.css:448-455",
-    "fp": "6a120997ba7f704d",
+    "anchor": "src/styles.css:675-682",
+    "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
   "PRODUCT_BACKLOG.md|orientation-disagreements|package.json|0": {
@@ -905,8 +905,8 @@
     "head": "\"test\": \"node --test\","
   },
   "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1555-1568",
-    "fp": "96822d1d78e2792c",
+    "anchor": "src/js/main.js:2069-2082",
+    "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|package.json|0": {
@@ -915,17 +915,17 @@
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
+    "anchor": "src/index.html:259-289",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/index.html|1": {
-    "anchor": "src/index.html:36-38",
-    "fp": "66730adc62188d7a",
-    "head": "<nav aria-labelledby=\"rail-nav\">"
+    "anchor": "src/index.html:34-37",
+    "fp": "dcfa1e8fad538a97",
+    "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:434-458",
+    "anchor": "src/js/lib/model.js:453-477",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
@@ -935,52 +935,52 @@
     "head": "export const SCHEMA_VERSION = 2;"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/lib/model.js|2": {
-    "anchor": "src/js/lib/model.js:358-384",
+    "anchor": "src/js/lib/model.js:376-402",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1354",
+    "anchor": "src/js/main.js:1859",
     "fp": "94e13815af1d3dad",
     "head": "alert('That curated order could not be saved, so nothing was imported.');"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1365",
+    "anchor": "src/js/main.js:1870",
     "fp": "553b484eaf3636b9",
     "head": "alert('The list was created but its issues could not be saved.');"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1382",
+    "anchor": "src/js/main.js:1895",
     "fp": "bb7e71279397b55e",
     "head": "alert(`Could not load that curated order: ${err.message}`);"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|3": {
-    "anchor": "src/js/main.js:137-149",
+    "anchor": "src/js/main.js:130-142",
     "fp": "4f25dd3110664bc5",
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|4": {
-    "anchor": "src/js/main.js:590-593",
+    "anchor": "src/js/main.js:1096-1099",
     "fp": "cf9f9d54d5388722",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|5": {
-    "anchor": "src/js/main.js:1449-1452",
+    "anchor": "src/js/main.js:1963-1966",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|6": {
-    "anchor": "src/js/main.js:1532-1534",
+    "anchor": "src/js/main.js:2046-2048",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|7": {
-    "anchor": "src/js/main.js:1245-1265",
+    "anchor": "src/js/main.js:1751-1771",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|test/model.test.js|0": {
-    "anchor": "test/model.test.js:396-398",
+    "anchor": "test/model.test.js:425-427",
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
   }
