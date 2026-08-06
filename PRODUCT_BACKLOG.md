@@ -760,29 +760,45 @@ whole handler. Extent is the property automated checking is worst at, because a 
 indistinguishable from a deliberately narrow one.
 
 `BL-050` closes the loop that all of this opened. Five sweeps found one defect class five times,
-because each sweep compared numbers rather than reading lines, and because each matched a different
-subset of the places an anchor can be written. `scripts/check-anchors.mjs` collects every backticked
-`path:line` citation in this document and in `docs/UX_STUDY.md`, across all three table shapes and
-the running prose, and records a fingerprint of the cited lines themselves. The build fails when a
-fingerprint moves, which is the commit that edits or shifts the cited code rather than several
-commits later. It runs in the lint job at `.github/workflows/ci.yml:84-85` and locally as
-`npm run anchors`, wired at `package.json:14-15`.
+because each compared line numbers rather than reading lines, and because each matched a different
+subset of the places an anchor can be written. `scripts/check-anchors.mjs` fingerprints the cited
+lines themselves rather than their numbers, so a correct re-aim preserves the fingerprint while
+drift breaks it, and the build fails in the commit that moves the code rather than in a sweep months
+later. It runs in the lint job at `.github/workflows/ci.yml:84-85` and locally as `npm run anchors`,
+wired at `package.json:14-15`.
 
-Its own controls matter more than its passing, because a checker that can only report success is
+Which half of it depends on which is the load-bearing decision. Listing the shapes an anchor can
+appear in would repeat this thread's defect with a longer list, because an enumeration is something
+somebody has to keep complete, and the next shape to appear is covered by neither the list nor any
+check of it. So membership never depends on recognising a shape. The population is a regex scan of
+every Markdown file that `git ls-files` reports, and structure supplies only the key: an anchor
+whose row the walker misreads is still collected, it just gets an uglier name. Coverage is then
+asserted per document on every run, scanned against captured, and a shortfall is fatal.
+
+That assertion exists because counting anchors cannot replace it. A check that the collector found
+more than zero detects total failure and is structurally blind to partial failure, which is the only
+kind that has actually happened: a collector that reads one table shape returns a large, healthy
+number and sails past a zero check while ignoring four fifths of the corpus. Scanned against
+captured is the difference between measuring coverage and assuming it.
+
+The controls matter more than the passing result, because a checker that can only report success is
 indistinguishable from one that is not running. Pointed at the commit that introduced these
-citations it reports eighty-five drifted and exits non-zero, so it would have failed the build that
-created the defect. Pointed at a revision predating the documents it refuses to report a clean pass
-and exits with a fatal error, because finding no anchors means the collector broke rather than that
-everything is well. Moving a single anchor by one line is caught and named. And it caught its first
-live defect during its own delivery: adding the two script lines above shifted four `package.json`
-citations, which were re-read and re-aimed rather than re-blessed.
+citations it reports drift in the dozens and exits non-zero, so it would have failed the build that
+created the defect. Pointed at a revision predating the documents it exits fatal rather than clean.
+Moving one anchor by a single line is caught and named. And reintroducing the single-shape defect
+deliberately is caught by the coverage assertion rather than passing quietly, which is the property
+worth more than the fingerprinting. It also caught its first live defect during its own delivery:
+adding the two script lines above shifted four `package.json` citations, which were re-read and
+re-aimed rather than re-blessed.
 
 What it cannot do is worth stating as plainly as what it can. It compares an anchor against its own
 past, not against the claim beside it, so blessing a wrong anchor locks a wrong anchor in
 permanently and silently. Identity is a real improvement on asking whether a line number exists, but
-extent still escapes it, for the reason above. A human still has to read each anchor once. What the
-gate removes is having to read all of them again on every sweep, which is the whole of the gain and
-the honest limit of it.
+extent still escapes it, for the reason above. The coverage assertion counts the same regex twice,
+so it guards the walk rather than measuring the corpus independently, and it cannot see a citation
+written in a shape the regex itself does not know. A human still has to read each anchor once. What
+the gate removes is having to read all of them again on every sweep, which is the whole of the gain
+and the honest limit of it.
 
 The Evidence column of the backlog table above is deliberately outside the gate. Those citations
 record what was true when an item was filed, and some are now false by design: `BL-039` cites the
