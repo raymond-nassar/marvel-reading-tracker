@@ -166,7 +166,12 @@
                   </div>
                 </div>
                 <div class="chero-body">
-                  <h2 id="chero-h"></h2>
+                  <!-- Given text for the same reason #hero-title is. This heading also names
+                       its own section through aria-labelledby, so an empty one would leave
+                       the section unnamed as well as failing on its own. renderContinue
+                       replaces it with the list name and puts it back when the section
+                       goes away. -->
+                  <h2 id="chero-h">Continue reading</h2>
                   <div class="pbar" id="chero-bar" role="progressbar"
                        aria-label="Reading progress" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0">
                     <i id="chero-fill"></i>
@@ -269,7 +274,12 @@
                   </div>
                   <div class="hero-body">
                     <p class="eyebrow">Read this next</p>
-                    <h2 id="hero-title"></h2>
+                    <!-- Carries real text before the first render. An empty heading is a
+                         WCAG 1.3.1 failure whether or not its section is on screen, and this
+                         one labels the hero, so it cannot simply be dropped. renderHero
+                         replaces it with the issue title and puts it back when a list runs
+                         out. -->
+                    <h2 id="hero-title">Nothing up next</h2>
                     <p class="byline" id="hero-by"></p>
                     <p class="desc" id="hero-desc"></p>
                     <dl class="facts" id="hero-facts"></dl>
@@ -366,7 +376,13 @@
                   <button type="submit" class="btn">Search</button>
                 </div>
               </form>
-              <div id="search-results" class="results" aria-live="polite"></div>
+              <!--
+                These report panes are deliberately not live regions. Each one receives a
+                whole result list at once, so announcing the container meant reading every
+                row aloud, on top of the summary the app already sends to #announcer. The
+                summary is the one channel. See the note on notify() in js/main.js.
+              -->
+              <div id="search-results" class="results"></div>
             </details>
 
             <details class="card" id="sec-series">
@@ -378,7 +394,7 @@
                   <button type="submit" class="btn">Find</button>
                 </div>
               </form>
-              <div id="series-results" class="results" aria-live="polite"></div>
+              <div id="series-results" class="results"></div>
             </details>
 
             <details class="card" id="sec-creator">
@@ -390,7 +406,7 @@
                   <button type="submit" class="btn">Find</button>
                 </div>
               </form>
-              <div id="creator-results" class="results" aria-live="polite"></div>
+              <div id="creator-results" class="results"></div>
             </details>
 
             <details class="card" id="sec-import">
@@ -408,7 +424,7 @@
                   <label class="checkbox"><input type="checkbox" id="import-new-list" checked /> Into a new list</label>
                 </div>
               </form>
-              <div id="import-report" class="results" aria-live="polite"></div>
+              <div id="import-report" class="results"></div>
             </details>
 
             <details class="card" id="sec-manual">
@@ -424,7 +440,7 @@
                 <input type="url" id="manual-url" placeholder="https://www.marvel.com/comics/issue/…" />
                 <button type="submit" class="btn">Add issue</button>
               </form>
-              <div id="manual-report" class="results" aria-live="polite"></div>
+              <div id="manual-report" class="results"></div>
             </details>
           </section>
 
@@ -448,7 +464,7 @@
                 <input type="file" id="restore-file" accept="application/json,.json" aria-label="Backup file to restore" />
                 <button type="button" id="btn-undo-restore" class="quiet" hidden>Undo last restore</button>
               </div>
-              <div id="restore-report" class="results" aria-live="polite"></div>
+              <div id="restore-report" class="results"></div>
             </div>
 
             <div class="card card-static">
@@ -560,7 +576,10 @@
     -->
     <dialog id="preview" class="preview" aria-labelledby="preview-h">
       <div class="preview-head">
-        <h2 id="preview-h"></h2>
+        <!-- Given text for the same reason #hero-title is: an empty heading fails whether
+             or not its dialog has been opened yet. openPreview replaces it with the name of
+             the order being previewed. -->
+        <h2 id="preview-h">Reading order</h2>
         <button type="button" class="quiet" id="preview-close">Close</button>
       </div>
       <p class="result-meta" id="preview-meta"></p>

@@ -447,8 +447,9 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
    interface component, so the first bullet does not reach it: the states that bullet
    protects are a control's own, like checked or disabled. Under the graphical-objects
    bullet the protected part is the one REQUIRED to understand the content, and every
-   availability state is written out in words inside the pill and repeated in full in its
-   `title`. Hide the outline entirely and nothing is lost, because it bounds the label
+   availability state is written out in words inside the pill, with the full sentence carried
+   in a visually-hidden span beside the short label. Hide the outline entirely and nothing is
+   lost, because it bounds the label
    rather than carrying it, which makes it a container edge like a card border. The label
    itself measures 5.94:1 at worst against the 4.5:1 text floor, and because the five
    states are named rather than only tinted, 1.4.1 holds without the border too.
