@@ -1,987 +1,1092 @@
 {
-  "docs/UX_STUDY.md|as-is-journey-map|src/index.html|0": {
+  "docs/UX_STUDY.md|as-is-journey-map#checking-progress|src/index.html:194-196|0": {
     "anchor": "src/index.html:194-196",
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
-  "docs/UX_STUDY.md|information-architecture-review|src/index.html|0": {
+  "docs/UX_STUDY.md|information-architecture-review|src/index.html:36-50|0": {
     "anchor": "src/index.html:36-50",
     "fp": "364e990d9ceb707a",
     "head": "<nav aria-labelledby=\"rail-nav\">"
   },
-  "docs/UX_STUDY.md|information-architecture-review|src/index.html|1": {
+  "docs/UX_STUDY.md|information-architecture-review|src/index.html:36-50|1": {
     "anchor": "src/index.html:36-50",
     "fp": "364e990d9ceb707a",
     "head": "<nav aria-labelledby=\"rail-nav\">"
   },
-  "docs/UX_STUDY.md|job-stories|src/index.html|0": {
+  "docs/UX_STUDY.md|job-stories|src/index.html:125-155|0": {
     "anchor": "src/index.html:125-155",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "docs/UX_STUDY.md|job-stories|src/index.html|1": {
+  "docs/UX_STUDY.md|job-stories|src/index.html:147|0": {
     "anchor": "src/index.html:147",
     "fp": "a628208c2b24bcfe",
     "head": "Done, next <kbd>D</kbd>"
   },
-  "docs/UX_STUDY.md|job-stories|src/index.html|2": {
+  "docs/UX_STUDY.md|job-stories|src/index.html:194-196|0": {
     "anchor": "src/index.html:194-196",
     "fp": "551e047df834303f",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js|0": {
+  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:434-458|0": {
     "anchor": "src/js/lib/model.js:434-458",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js|0": {
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:1222-1227|0": {
     "anchor": "src/js/main.js:1222-1227",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js|1": {
-    "anchor": "src/js/main.js:590-593",
-    "fp": "cf9f9d54d5388722",
-    "head": "!item.hydrated && item.source !== 'manual'"
-  },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js|2": {
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:1397-1415|0": {
     "anchor": "src/js/main.js:1397-1415",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
-  "docs/UX_STUDY.md|keyboard|src/index.html|0": {
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:590-593|0": {
+    "anchor": "src/js/main.js:590-593",
+    "fp": "cf9f9d54d5388722",
+    "head": "!item.hydrated && item.source !== 'manual'"
+  },
+  "docs/UX_STUDY.md|keyboard|src/index.html:180-184|0": {
     "anchor": "src/index.html:180-184",
     "fp": "1988bee5bebf81b7",
     "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
   },
-  "docs/UX_STUDY.md|keyboard|src/styles.css|0": {
+  "docs/UX_STUDY.md|keyboard|src/styles.css:294|0": {
     "anchor": "src/styles.css:294",
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona|PRODUCT_BACKLOG.md|0": {
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1089-1092|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1089-1092",
+    "fp": "ff85d93d4684cfa7",
+    "head": "- Hosting or distributing comic content."
+  },
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:213-214|0": {
     "anchor": "PRODUCT_BACKLOG.md:213-214",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona|PRODUCT_BACKLOG.md|1": {
-    "anchor": "PRODUCT_BACKLOG.md:1016-1019",
-    "fp": "ff85d93d4684cfa7",
-    "head": "- Hosting or distributing comic content."
-  },
-  "docs/UX_STUDY.md|proto-persona|src/index.html|0": {
+  "docs/UX_STUDY.md|proto-persona#reading-style|src/index.html:125-155|0": {
     "anchor": "src/index.html:125-155",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "docs/UX_STUDY.md|proto-persona|src/js/main.js|0": {
-    "anchor": "src/js/main.js:590-593",
-    "fp": "cf9f9d54d5388722",
-    "head": "!item.hydrated && item.source !== 'manual'"
-  },
-  "docs/UX_STUDY.md|proto-persona|src/js/reader.js|0": {
+  "docs/UX_STUDY.md|proto-persona#relationship-to-marvel-unlimited|src/js/reader.js:12|0": {
     "anchor": "src/js/reader.js:12",
     "fp": "e19583cc19f81884",
     "head": "// Contract verified 2026-08-03 (CHG-001): the live API's digitalId is authoritative; the"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/index.html|0": {
-    "anchor": "src/index.html:66-77",
-    "fp": "c6b83ff22c8cca85",
-    "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
+  "docs/UX_STUDY.md|proto-persona#tolerance-for-missing-metadata|src/js/main.js:590-593|0": {
+    "anchor": "src/js/main.js:590-593",
+    "fp": "cf9f9d54d5388722",
+    "head": "!item.hydrated && item.source !== 'manual'"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/index.html|1": {
-    "anchor": "src/index.html:66-77",
-    "fp": "c6b83ff22c8cca85",
-    "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
-  },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/index.html|2": {
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#10|src/index.html:36-50|0": {
     "anchor": "src/index.html:36-50",
     "fp": "364e990d9ceb707a",
     "head": "<nav aria-labelledby=\"rail-nav\">"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:358-384",
-    "fp": "84f006271a9292d6",
-    "head": "const version = Number(raw.schemaVersion ?? 1);"
-  },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/js/main.js|0": {
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#2|src/js/main.js:615-620|0": {
     "anchor": "src/js/main.js:615-620",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "docs/UX_STUDY.md|sweep-result|src/index.html|0": {
-    "anchor": "src/index.html:207-213",
-    "fp": "414c8c4d2ec683f4",
-    "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
-  },
-  "docs/UX_STUDY.md|sweep-result|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1267-1275",
-    "fp": "9b9575dc8a81cd13",
-    "head": "function wireCatalogSearch() {"
-  },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css|0": {
-    "anchor": "src/styles.css:149",
-    "fp": "c05f099c43c67496",
-    "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
-  },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css|1": {
-    "anchor": "src/styles.css:448-450",
-    "fp": "6505ad8d84b22c24",
-    "head": "@media (prefers-reduced-motion: reduce) {"
-  },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css|2": {
-    "anchor": "src/styles.css:50-54",
-    "fp": "8e9f0b814f7bdc04",
-    "head": ":focus-visible {"
-  },
-  "docs/UX_STUDY.md|the-generated-data-file-carries-no-unshipped-int|design/mockups/mock-data.js|0": {
-    "anchor": "design/mockups/mock-data.js:1",
-    "fp": "36a2608a665962a5",
-    "head": "// Generated from src/data/hickman_full.json - real issues, real covers, real synopses."
-  },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css|0": {
-    "anchor": "src/styles.css:149",
-    "fp": "c05f099c43c67496",
-    "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
-  },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css|1": {
-    "anchor": "src/styles.css:448-450",
-    "fp": "6505ad8d84b22c24",
-    "head": "@media (prefers-reduced-motion: reduce) {"
-  },
-  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/index.html|0": {
-    "anchor": "src/index.html:147",
-    "fp": "a628208c2b24bcfe",
-    "head": "Done, next <kbd>D</kbd>"
-  },
-  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css|0": {
-    "anchor": "src/styles.css:20-29",
-    "fp": "df31a07909cabda9",
-    "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
-  },
-  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css|1": {
-    "anchor": "src/styles.css:20-29",
-    "fp": "df31a07909cabda9",
-    "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
-  },
-  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css|2": {
-    "anchor": "src/styles.css:247",
-    "fp": "f549fe8731ac5e8b",
-    "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 "
-  },
-  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css|0": {
-    "anchor": "src/styles.css:316-317",
-    "fp": "4867cdf75f778888",
-    "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
-  },
-  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css|1": {
-    "anchor": "src/styles.css:319",
-    "fp": "6ba162a32bf16415",
-    "head": ".row.is-read img { opacity: .5; }"
-  },
-  "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
-    "fp": "be0ed820dd0e8ce5",
-    "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
-  },
-  "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/styles.css|0": {
-    "anchor": "src/styles.css:189-196",
-    "fp": "8ba45d9dd3e3f769",
-    "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
-  },
-  "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css|0": {
-    "anchor": "src/styles.css:331-334",
-    "fp": "3fb81ae816834465",
-    "head": ".cb {"
-  },
-  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css|0": {
-    "anchor": "src/styles.css:369-376",
-    "fp": "173a5898da6079a8",
-    "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
-  },
-  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html|0": {
-    "anchor": "src/index.html:13",
-    "fp": "59235d10bc8a1e1c",
-    "head": "<div id=\"announcer\" class=\"visually-hidden\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"></di"
-  },
-  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html|1": {
-    "anchor": "src/index.html:64",
-    "fp": "74bc1ff9b998e6b5",
-    "head": "<div id=\"save-report\" role=\"alert\" aria-live=\"assertive\"></div>"
-  },
-  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html|2": {
-    "anchor": "src/index.html:235",
-    "fp": "eab45ce60f505bd9",
-    "head": "<div id=\"search-results\" class=\"results\" aria-live=\"polite\"></div>"
-  },
-  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/js/main.js|0": {
-    "anchor": "src/js/main.js:137-149",
-    "fp": "4f25dd3110664bc5",
-    "head": "// A success message must never outlive the write it describes. store.update rolls the change"
-  },
-  "docs/UX_STUDY.md|ux-a-007-the-first-run-dom-ships-an-empty-headin|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
-    "fp": "be0ed820dd0e8ce5",
-    "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
-  },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/index.html|0": {
-    "anchor": "src/index.html:6",
-    "fp": "1ef02ac278158bc3",
-    "head": "<meta name=\"color-scheme\" content=\"dark\" />"
-  },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css|0": {
-    "anchor": "src/styles.css:7",
-    "fp": "53b9bb8e0988cf2b",
-    "head": "color-scheme: dark;"
-  },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css|1": {
-    "anchor": "src/styles.css:448-455",
-    "fp": "6a120997ba7f704d",
-    "head": "@media (prefers-reduced-motion: reduce) {"
-  },
-  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js|0": {
-    "anchor": "src/js/main.js:588",
-    "fp": "f14a891c350f1cad",
-    "head": "title: describe(item, { override }),"
-  },
-  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js|1": {
-    "anchor": "src/js/main.js:615-620",
-    "fp": "2435be3c1e7a1165",
-    "head": "const SHORT_LABEL = {"
-  },
-  "docs/UX_STUDY.md|ux-d-001-the-mobile-layout-rule-never-takes-effe|src/styles.css|0": {
-    "anchor": "src/styles.css:81-84",
-    "fp": "7678b53ce28b19c2",
-    "head": "@media (max-width: 880px) {"
-  },
-  "docs/UX_STUDY.md|ux-d-001-the-mobile-layout-rule-never-takes-effe|src/styles.css|1": {
-    "anchor": "src/styles.css:88-92",
-    "fp": "272de1049e5d1fdd",
-    "head": ".rail {"
-  },
-  "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/index.html|0": {
-    "anchor": "src/index.html:147",
-    "fp": "a628208c2b24bcfe",
-    "head": "Done, next <kbd>D</kbd>"
-  },
-  "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:642-660",
-    "fp": "6b0a52cdade44dcb",
-    "head": "function wireShortcuts() {"
-  },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js|0": {
-    "anchor": "src/js/main.js:43-48",
-    "fp": "179d485d49b3bd60",
-    "head": "const store = new Store({"
-  },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1555-1568",
-    "fp": "96822d1d78e2792c",
-    "head": "function renderAll() {"
-  },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1354",
-    "fp": "94e13815af1d3dad",
-    "head": "alert('That curated order could not be saved, so nothing was imported.');"
-  },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|1": {
-    "anchor": "src/js/main.js:337-347",
-    "fp": "397bd5507505d94a",
-    "head": "const name = prompt('List name', list.name);"
-  },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|2": {
-    "anchor": "src/js/main.js:344-350",
-    "fp": "f58b1d12596a76ef",
-    "head": "const id = activeListId();"
-  },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|3": {
-    "anchor": "src/js/main.js:137-149",
-    "fp": "4f25dd3110664bc5",
-    "head": "// A success message must never outlive the write it describes. store.update rolls the change"
-  },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:344-350",
-    "fp": "f58b1d12596a76ef",
-    "head": "const id = activeListId();"
-  },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1449-1452",
-    "fp": "c3c96b514329a916",
-    "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
-  },
-  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/index.html|0": {
-    "anchor": "src/index.html:147",
-    "fp": "a628208c2b24bcfe",
-    "head": "Done, next <kbd>D</kbd>"
-  },
-  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/js/main.js|0": {
-    "anchor": "src/js/main.js:642-660",
-    "fp": "6b0a52cdade44dcb",
-    "head": "function wireShortcuts() {"
-  },
-  "docs/UX_STUDY.md|ux-i-001-no-application-state-is-addressable|src/js/main.js|0": {
-    "anchor": "src/js/main.js:275-295",
-    "fp": "75df2fc2e70bc02c",
-    "head": "function showView(next, { focus = true } = {}) {"
-  },
-  "docs/UX_STUDY.md|ux-i-002-the-filter-selection-resets-on-every-re|src/index.html|0": {
-    "anchor": "src/index.html:180-184",
-    "fp": "1988bee5bebf81b7",
-    "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
-  },
-  "docs/UX_STUDY.md|ux-i-002-the-filter-selection-resets-on-every-re|src/js/main.js|0": {
-    "anchor": "src/js/main.js:51",
-    "fp": "86045517874ce39e",
-    "head": "let filter = 'all';"
-  },
-  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|design/mockups/5-longbox-focus.html|0": {
-    "anchor": "design/mockups/5-longbox-focus.html:169-172",
-    "fp": "4b2c34e3e004c761",
-    "head": "<h3>Library</h3>"
-  },
-  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/index.html|0": {
-    "anchor": "src/index.html:36-38",
-    "fp": "66730adc62188d7a",
-    "head": "<nav aria-labelledby=\"rail-nav\">"
-  },
-  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:593",
-    "fp": "bd66076a7b8dce19",
-    "head": "item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,"
-  },
-  "docs/UX_STUDY.md|which-direction-was-adopted|design/mockups/index.html|0": {
-    "anchor": "design/mockups/index.html:51-62",
-    "fp": "c1e3b8df0c99d2cb",
-    "head": "<a class=\"card\" href=\"./5-longbox-focus.html\" style=\"border-color:#e23636; grid-column:1/-1\">"
-  },
-  "docs/UX_STUDY.md|which-direction-was-adopted|src/styles.css|0": {
-    "anchor": "src/styles.css:1-4",
-    "fp": "638937cc7b928b5f",
-    "head": "/* Marvel Reading Tracker: \"Longbox Focus\""
-  },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|package.json|0": {
-    "anchor": "package.json:10",
-    "fp": "3ecaccb832a49e38",
-    "head": "\"test\": \"node --test\","
-  },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|package.json|1": {
-    "anchor": "package.json:13",
-    "fp": "068214563025a9fa",
-    "head": "\"contract\": \"node scripts/check-contract.mjs\","
-  },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|scripts/check-contract.mjs|0": {
-    "anchor": "scripts/check-contract.mjs:248-280",
-    "fp": "756ffa3269a6fcb8",
-    "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
-  },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/index.html|0": {
-    "anchor": "src/index.html:194-196",
-    "fp": "551e047df834303f",
-    "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
-  },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1397-1415",
-    "fp": "cbf68ef6e9ab7285",
-    "head": "function renderProgress() {"
-  },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1192",
-    "fp": "001dea97ca0659d3",
-    "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
-  },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/api.js|0": {
-    "anchor": "src/js/api.js:11-16",
-    "fp": "b5dd33b3dd95fa49",
-    "head": "// Series and creators are searched locally against a vendored index, because the API ignores"
-  },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1555-1568",
-    "fp": "96822d1d78e2792c",
-    "head": "function renderAll() {"
-  },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js|1": {
-    "anchor": "src/js/main.js:43-48",
-    "fp": "179d485d49b3bd60",
-    "head": "const store = new Store({"
-  },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js|2": {
-    "anchor": "src/js/main.js:534-613",
-    "fp": "d0de6e662e9a576b",
-    "head": "function renderRows() {"
-  },
-  "PRODUCT_BACKLOG.md|3-compatibility|package.json|0": {
-    "anchor": "package.json:1-28",
-    "fp": "428acfd44d291197",
-    "head": "{"
-  },
-  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:434-458",
-    "fp": "d167aa9becc8784c",
-    "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
-  },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/index.html|0": {
-    "anchor": "src/index.html:6",
-    "fp": "1ef02ac278158bc3",
-    "head": "<meta name=\"color-scheme\" content=\"dark\" />"
-  },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:615-620",
-    "fp": "2435be3c1e7a1165",
-    "head": "const SHORT_LABEL = {"
-  },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|1": {
-    "anchor": "src/js/main.js:344-350",
-    "fp": "f58b1d12596a76ef",
-    "head": "const id = activeListId();"
-  },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1449-1452",
-    "fp": "c3c96b514329a916",
-    "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
-  },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|3": {
-    "anchor": "src/js/main.js:588",
-    "fp": "f14a891c350f1cad",
-    "head": "title: describe(item, { override }),"
-  },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css|0": {
-    "anchor": "src/styles.css:369-376",
-    "fp": "173a5898da6079a8",
-    "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
-  },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css|1": {
-    "anchor": "src/styles.css:7",
-    "fp": "53b9bb8e0988cf2b",
-    "head": "color-scheme: dark;"
-  },
-  "PRODUCT_BACKLOG.md|5-reliability|src/index.html|0": {
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/index.html:66-77|0": {
     "anchor": "src/index.html:66-77",
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js|0": {
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:358-384|0": {
     "anchor": "src/js/lib/model.js:358-384",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs|0": {
-    "anchor": "server.mjs:112-122",
-    "fp": "6cd80fc67836d175",
-    "head": "const headers = {"
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#9|src/index.html:66-77|0": {
+    "anchor": "src/index.html:66-77",
+    "fp": "c6b83ff22c8cca85",
+    "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs|1": {
-    "anchor": "server.mjs:43-54",
-    "fp": "74672dc47f977dcd",
-    "head": "const CSP = ["
-  },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs|2": {
-    "anchor": "server.mjs:117",
-    "fp": "df82fbfe81bdea26",
-    "head": "'content-security-policy': CSP,"
-  },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs|3": {
-    "anchor": "server.mjs:53",
-    "fp": "3ef5eb39e51b727e",
-    "head": "\"frame-ancestors 'none'\","
-  },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs|4": {
-    "anchor": "server.mjs:120",
-    "fp": "bd315ce426eb6407",
-    "head": "'x-frame-options': 'DENY',"
-  },
-  "PRODUCT_BACKLOG.md|7-maintainability|package.json|0": {
-    "anchor": "package.json:11-12",
-    "fp": "f8f0304159cc6500",
-    "head": "\"lint\": \"eslint .\","
-  },
-  "PRODUCT_BACKLOG.md|7-maintainability|scripts/vendor-index.mjs|0": {
-    "anchor": "scripts/vendor-index.mjs:40-54",
-    "fp": "1350e867b612018d",
-    "head": "async function getJson(url, attempt = 0) {"
-  },
-  "PRODUCT_BACKLOG.md|7-maintainability|scripts/vendor-orders.mjs|0": {
-    "anchor": "scripts/vendor-orders.mjs:48-62",
-    "fp": "1350e867b612018d",
-    "head": "async function getJson(url, attempt = 0) {"
-  },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1555-1568",
-    "fp": "96822d1d78e2792c",
-    "head": "function renderAll() {"
-  },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js|1": {
-    "anchor": "src/js/main.js:275-295",
-    "fp": "75df2fc2e70bc02c",
-    "head": "function showView(next, { focus = true } = {}) {"
-  },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css|0": {
-    "anchor": "src/styles.css:304-307",
-    "fp": "c17ce04e13581723",
-    "head": ".row {"
-  },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css|1": {
-    "anchor": "src/styles.css:396-397",
-    "fp": "5a5d3c1e791d4bbe",
-    "head": ".row { }"
-  },
-  "PRODUCT_BACKLOG.md|8-flexibility|package.json|0": {
-    "anchor": "package.json:8-19",
-    "fp": "ffaa5f81cf8b6ca7",
-    "head": "\"scripts\": {"
-  },
-  "PRODUCT_BACKLOG.md|8-flexibility|package.json|1": {
-    "anchor": "package.json:20-22",
-    "fp": "049db722764e6552",
-    "head": "\"engines\": {"
-  },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/cachePolicy.js|0": {
-    "anchor": "src/js/lib/cachePolicy.js:16-20",
-    "fp": "ba67483977d582c5",
-    "head": "// Scoped by base URL and schema version so switching to a self-hosted mirror, or shipping a"
-  },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:11",
-    "fp": "d66d703756839bee",
-    "head": "export const SCHEMA_VERSION = 2;"
-  },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js|1": {
-    "anchor": "src/js/lib/model.js:358-384",
-    "fp": "84f006271a9292d6",
-    "head": "const version = Number(raw.schemaVersion ?? 1);"
-  },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1462-1475",
-    "fp": "6e3349f5630c2f53",
-    "head": "$('#form-settings').addEventListener('submit', (e) => {"
-  },
-  "PRODUCT_BACKLOG.md|BL-001|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1209-1239",
-    "fp": "5de28c6520c1da93",
-    "head": "function catalogRow(list, { variant = false } = {}) {"
-  },
-  "PRODUCT_BACKLOG.md|BL-002|src/index.html|0": {
-    "anchor": "src/index.html:214-216",
-    "fp": "1af46f8f91b297cc",
-    "head": "<fieldset class=\"filters\" id=\"catalog-filters\" hidden>"
-  },
-  "PRODUCT_BACKLOG.md|BL-002|src/js/main.js|0": {
-    "anchor": "src/js/main.js:16",
-    "fp": "be41bc4bd3930679",
-    "head": "parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory, searchCatalog,"
-  },
-  "PRODUCT_BACKLOG.md|BL-003|src/index.html|0": {
+  "docs/UX_STUDY.md|sweep-result|src/index.html:207-213|0": {
     "anchor": "src/index.html:207-213",
     "fp": "414c8c4d2ec683f4",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
-  "PRODUCT_BACKLOG.md|BL-003|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1267-1282",
-    "fp": "97edef98a6cc84a2",
+  "docs/UX_STUDY.md|sweep-result|src/js/main.js:1267-1275|0": {
+    "anchor": "src/js/main.js:1267-1275",
+    "fp": "9b9575dc8a81cd13",
     "head": "function wireCatalogSearch() {"
   },
-  "PRODUCT_BACKLOG.md|BL-004|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1213",
-    "fp": "e5a85bd0d6aeac2f",
-    "head": "const depth = depthLabel(list.depth);"
-  },
-  "PRODUCT_BACKLOG.md|BL-004|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1222-1227",
-    "fp": "e53c56c7408f1625",
-    "head": "depth"
-  },
-  "PRODUCT_BACKLOG.md|BL-006|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1245-1265",
-    "fp": "b8e6049eda71ed0e",
-    "head": "function attributionLine(list) {"
-  },
-  "PRODUCT_BACKLOG.md|BL-007|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1192",
-    "fp": "001dea97ca0659d3",
-    "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
-  },
-  "PRODUCT_BACKLOG.md|BL-007|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1209-1214",
-    "fp": "767e40003bd5b6e0",
-    "head": "function catalogRow(list, { variant = false } = {}) {"
-  },
-  "PRODUCT_BACKLOG.md|BL-008|scripts/vendor-orders.mjs|0": {
-    "anchor": "scripts/vendor-orders.mjs:167-267",
-    "fp": "e08df3e604b0969f",
-    "head": "const { entries, unresolved } = parseChecklist(md);"
-  },
-  "PRODUCT_BACKLOG.md|BL-009|src/js/lib/markdown.js|0": {
-    "anchor": "src/js/lib/markdown.js:36-99",
-    "fp": "743dcbf0a43f0694",
-    "head": "// Returns { entries, unresolved, headings }"
-  },
-  "PRODUCT_BACKLOG.md|BL-009|src/js/main.js|0": {
-    "anchor": "src/js/main.js:922-975",
-    "fp": "e469118bcd96fffa",
-    "head": "const { entries, unresolved, headings } = parseChecklist(text);"
-  },
-  "PRODUCT_BACKLOG.md|BL-010|src/js/main.js|0": {
-    "anchor": "src/js/main.js:983-1045",
-    "fp": "6b3347427113cf61",
-    "head": "function unresolvedRow(entry, listId) {"
-  },
-  "PRODUCT_BACKLOG.md|BL-011|src/js/main.js|0": {
-    "anchor": "src/js/main.js:884-902",
-    "fp": "457a03b1d13a9dd4",
-    "head": "async function addSeries(series) {"
-  },
-  "PRODUCT_BACKLOG.md|BL-011|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1047-1091",
-    "fp": "5a57b37f0d0a4cae",
-    "head": "function doManual() {"
-  },
-  "PRODUCT_BACKLOG.md|BL-012|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:139",
-    "fp": "e409e1d7f9185731",
-    "head": "// Read progress is deliberately NOT copied. It is global, keyed by issue id (see the note at"
-  },
-  "PRODUCT_BACKLOG.md|BL-012|src/js/main.js|0": {
-    "anchor": "src/js/main.js:352-372",
-    "fp": "ba48dba7ca5b5ba0",
-    "head": "$('#btn-duplicate-list').addEventListener('click', () => {"
-  },
-  "PRODUCT_BACKLOG.md|BL-013|src/js/main.js|0": {
-    "anchor": "src/js/main.js:299-324",
-    "fp": "51032bac9fb6fdc5",
-    "head": "function renderRail() {"
-  },
-  "PRODUCT_BACKLOG.md|BL-014|src/index.html|0": {
-    "anchor": "src/index.html:194-196",
-    "fp": "551e047df834303f",
-    "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
-  },
-  "PRODUCT_BACKLOG.md|BL-014|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1397-1415",
-    "fp": "cbf68ef6e9ab7285",
-    "head": "function renderProgress() {"
-  },
-  "PRODUCT_BACKLOG.md|BL-015|src/index.html|0": {
-    "anchor": "src/index.html:180-184",
-    "fp": "1988bee5bebf81b7",
-    "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
-  },
-  "PRODUCT_BACKLOG.md|BL-015|src/js/main.js|0": {
-    "anchor": "src/js/main.js:622-632",
-    "fp": "a3884e91fa5d58c9",
-    "head": "function matchesFilter(item) {"
-  },
-  "PRODUCT_BACKLOG.md|BL-016|src/index.html|0": {
-    "anchor": "src/index.html:125-155",
-    "fp": "be0ed820dd0e8ce5",
-    "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
-  },
-  "PRODUCT_BACKLOG.md|BL-018|src/js/main.js|0": {
-    "anchor": "src/js/main.js:590-593",
-    "fp": "cf9f9d54d5388722",
-    "head": "!item.hydrated && item.source !== 'manual'"
-  },
-  "PRODUCT_BACKLOG.md|BL-018|src/js/main.js|1": {
-    "anchor": "src/js/main.js:626",
-    "fp": "2011e7a2e7789b2d",
-    "head": "if (filter === 'pending') return !item.hydrated && item.source !== 'manual';"
-  },
-  "PRODUCT_BACKLOG.md|BL-019|src/js/lib/availability.js|0": {
-    "anchor": "src/js/lib/availability.js:17-23",
-    "fp": "9ddcd2397f40d9c8",
-    "head": "export const STATE = {"
-  },
-  "PRODUCT_BACKLOG.md|BL-019|src/js/main.js|0": {
-    "anchor": "src/js/main.js:615-620",
-    "fp": "2435be3c1e7a1165",
-    "head": "const SHORT_LABEL = {"
-  },
-  "PRODUCT_BACKLOG.md|BL-020|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1070",
-    "fp": "5435ae20ec2b0bc2",
-    "head": "source: 'manual',"
-  },
-  "PRODUCT_BACKLOG.md|BL-021|package.json|0": {
-    "anchor": "package.json:13",
-    "fp": "068214563025a9fa",
-    "head": "\"contract\": \"node scripts/check-contract.mjs\","
-  },
-  "PRODUCT_BACKLOG.md|BL-021|scripts/check-contract.mjs|0": {
-    "anchor": "scripts/check-contract.mjs:248-280",
-    "fp": "756ffa3269a6fcb8",
-    "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
-  },
-  "PRODUCT_BACKLOG.md|BL-022|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:434-458",
-    "fp": "d167aa9becc8784c",
-    "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
-  },
-  "PRODUCT_BACKLOG.md|BL-023|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1449-1452",
-    "fp": "c3c96b514329a916",
-    "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
-  },
-  "PRODUCT_BACKLOG.md|BL-026|src/js/main.js|0": {
-    "anchor": "src/js/main.js:642-660",
-    "fp": "6b0a52cdade44dcb",
-    "head": "function wireShortcuts() {"
-  },
-  "PRODUCT_BACKLOG.md|BL-027|src/js/main.js|0": {
-    "anchor": "src/js/main.js:137-149",
-    "fp": "4f25dd3110664bc5",
-    "head": "// A success message must never outlive the write it describes. store.update rolls the change"
-  },
-  "PRODUCT_BACKLOG.md|BL-028|src/styles.css|0": {
-    "anchor": "src/styles.css:81-84",
-    "fp": "7678b53ce28b19c2",
-    "head": "@media (max-width: 880px) {"
-  },
-  "PRODUCT_BACKLOG.md|BL-028|src/styles.css|1": {
-    "anchor": "src/styles.css:88-92",
-    "fp": "272de1049e5d1fdd",
-    "head": ".rail {"
-  },
-  "PRODUCT_BACKLOG.md|BL-029|src/styles.css|0": {
-    "anchor": "src/styles.css:81-84",
-    "fp": "7678b53ce28b19c2",
-    "head": "@media (max-width: 880px) {"
-  },
-  "PRODUCT_BACKLOG.md|BL-030|server.mjs|0": {
-    "anchor": "server.mjs:112-122",
-    "fp": "6cd80fc67836d175",
-    "head": "const headers = {"
-  },
-  "PRODUCT_BACKLOG.md|BL-030|server.mjs|1": {
-    "anchor": "server.mjs:43-54",
-    "fp": "74672dc47f977dcd",
-    "head": "const CSP = ["
-  },
-  "PRODUCT_BACKLOG.md|BL-030|server.mjs|2": {
-    "anchor": "server.mjs:117",
-    "fp": "df82fbfe81bdea26",
-    "head": "'content-security-policy': CSP,"
-  },
-  "PRODUCT_BACKLOG.md|BL-030|server.mjs|3": {
-    "anchor": "server.mjs:120",
-    "fp": "bd315ce426eb6407",
-    "head": "'x-frame-options': 'DENY',"
-  },
-  "PRODUCT_BACKLOG.md|BL-030|src/js/api.js|0": {
-    "anchor": "src/js/api.js:18-26",
-    "fp": "350e40827cf70ffd",
-    "head": "export class MarvelApi {"
-  },
-  "PRODUCT_BACKLOG.md|BL-030|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1462-1475",
-    "fp": "6e3349f5630c2f53",
-    "head": "$('#form-settings').addEventListener('submit', (e) => {"
-  },
-  "PRODUCT_BACKLOG.md|BL-040|package.json|0": {
-    "anchor": "package.json:1-28",
-    "fp": "428acfd44d291197",
-    "head": "{"
-  },
-  "PRODUCT_BACKLOG.md|BL-040|package.json|1": {
-    "anchor": "package.json:23-27",
-    "fp": "62b388bb68c58c87",
-    "head": "\"devDependencies\": {"
-  },
-  "PRODUCT_BACKLOG.md|BL-043|package.json|0": {
-    "anchor": "package.json:3",
-    "fp": "6d50373e8d6e684f",
-    "head": "\"version\": \"1.0.0\","
-  },
-  "PRODUCT_BACKLOG.md|BL-043|package.json|1": {
-    "anchor": "package.json:3",
-    "fp": "6d50373e8d6e684f",
-    "head": "\"version\": \"1.0.0\","
-  },
-  "PRODUCT_BACKLOG.md|BL-043|package.json|2": {
-    "anchor": "package.json:18",
-    "fp": "10904b7f9645e3f0",
-    "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
-  },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1192",
-    "fp": "001dea97ca0659d3",
-    "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
-  },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1209-1214",
-    "fp": "767e40003bd5b6e0",
-    "head": "function catalogRow(list, { variant = false } = {}) {"
-  },
-  "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css|0": {
-    "anchor": "src/styles.css:369-376",
-    "fp": "173a5898da6079a8",
-    "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
-  },
-  "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css|1": {
-    "anchor": "src/styles.css:81-84",
-    "fp": "7678b53ce28b19c2",
-    "head": "@media (max-width: 880px) {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml|0": {
-    "anchor": ".github/workflows/ci.yml:84-85",
-    "fp": "8e2394a0c84490fa",
-    "head": "- name: Check evidence anchors"
-  },
-  "PRODUCT_BACKLOG.md|item-details|package.json|0": {
-    "anchor": "package.json:14-15",
-    "fp": "0476ef7e99533066",
-    "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/availability.js|0": {
-    "anchor": "src/js/lib/availability.js:10",
-    "fp": "baff944060f60826",
-    "head": "// So we never claim an issue *is* available. We report one of five explicit"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js|0": {
-    "anchor": "src/js/main.js:586-593",
-    "fp": "69839b3df2d455a1",
-    "head": "el('span', {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js|1": {
-    "anchor": "src/js/main.js:615-620",
-    "fp": "2435be3c1e7a1165",
-    "head": "const SHORT_LABEL = {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js|2": {
-    "anchor": "src/js/main.js:606-611",
-    "fp": "e123c8467718a553",
-    "head": "]),"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|0": {
-    "anchor": "src/styles.css:20-29",
-    "fp": "df31a07909cabda9",
-    "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|1": {
-    "anchor": "src/styles.css:247",
-    "fp": "f549fe8731ac5e8b",
-    "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 "
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|2": {
-    "anchor": "src/styles.css:316-317",
-    "fp": "4867cdf75f778888",
-    "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|3": {
-    "anchor": "src/styles.css:319",
-    "fp": "6ba162a32bf16415",
-    "head": ".row.is-read img { opacity: .5; }"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|4": {
-    "anchor": "src/styles.css:364",
-    "fp": "7f22dd94b3ebb02f",
-    "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|5": {
-    "anchor": "src/styles.css:189-196",
-    "fp": "8ba45d9dd3e3f769",
-    "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|6": {
-    "anchor": "src/styles.css:364",
-    "fp": "7f22dd94b3ebb02f",
-    "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|7": {
-    "anchor": "src/styles.css:339-362",
-    "fp": "1de73e8d4daf96ee",
-    "head": "/* These outlines are faint on purpose, and that is a recorded decision rather than an"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|8": {
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:149|0": {
     "anchor": "src/styles.css:149",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css|9": {
-    "anchor": "src/styles.css:448-455",
-    "fp": "6a120997ba7f704d",
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:448-450|0": {
+    "anchor": "src/styles.css:448-450",
+    "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|package.json|0": {
-    "anchor": "package.json:10",
-    "fp": "3ecaccb832a49e38",
-    "head": "\"test\": \"node --test\","
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:50-54|0": {
+    "anchor": "src/styles.css:50-54",
+    "fp": "8e9f0b814f7bdc04",
+    "head": ":focus-visible {"
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1555-1568",
-    "fp": "96822d1d78e2792c",
-    "head": "function renderAll() {"
+  "docs/UX_STUDY.md|the-generated-data-file-carries-no-unshipped-int|design/mockups/mock-data.js:1|0": {
+    "anchor": "design/mockups/mock-data.js:1",
+    "fp": "36a2608a665962a5",
+    "head": "// Generated from src/data/hickman_full.json - real issues, real covers, real synopses."
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|package.json|0": {
-    "anchor": "package.json:1-28",
-    "fp": "428acfd44d291197",
-    "head": "{"
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:149|0": {
+    "anchor": "src/styles.css:149",
+    "fp": "c05f099c43c67496",
+    "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/index.html|0": {
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:448-450|0": {
+    "anchor": "src/styles.css:448-450",
+    "fp": "6505ad8d84b22c24",
+    "head": "@media (prefers-reduced-motion: reduce) {"
+  },
+  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/index.html:147|0": {
+    "anchor": "src/index.html:147",
+    "fp": "a628208c2b24bcfe",
+    "head": "Done, next <kbd>D</kbd>"
+  },
+  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css:20-29|0": {
+    "anchor": "src/styles.css:20-29",
+    "fp": "df31a07909cabda9",
+    "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
+  },
+  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css:20-29|1": {
+    "anchor": "src/styles.css:20-29",
+    "fp": "df31a07909cabda9",
+    "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
+  },
+  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css:247|0": {
+    "anchor": "src/styles.css:247",
+    "fp": "f549fe8731ac5e8b",
+    "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 "
+  },
+  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:316-317|0": {
+    "anchor": "src/styles.css:316-317",
+    "fp": "4867cdf75f778888",
+    "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
+  },
+  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:319|0": {
+    "anchor": "src/styles.css:319",
+    "fp": "6ba162a32bf16415",
+    "head": ".row.is-read img { opacity: .5; }"
+  },
+  "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/index.html:125-155|0": {
     "anchor": "src/index.html:125-155",
     "fp": "be0ed820dd0e8ce5",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/index.html|1": {
-    "anchor": "src/index.html:36-38",
-    "fp": "66730adc62188d7a",
-    "head": "<nav aria-labelledby=\"rail-nav\">"
+  "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/styles.css:189-196|0": {
+    "anchor": "src/styles.css:189-196",
+    "fp": "8ba45d9dd3e3f769",
+    "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/lib/model.js|0": {
-    "anchor": "src/js/lib/model.js:434-458",
-    "fp": "d167aa9becc8784c",
-    "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
+  "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css:331-334|0": {
+    "anchor": "src/styles.css:331-334",
+    "fp": "3fb81ae816834465",
+    "head": ".cb {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/lib/model.js|1": {
-    "anchor": "src/js/lib/model.js:11",
-    "fp": "d66d703756839bee",
-    "head": "export const SCHEMA_VERSION = 2;"
+  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:369-376|0": {
+    "anchor": "src/styles.css:369-376",
+    "fp": "173a5898da6079a8",
+    "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/lib/model.js|2": {
-    "anchor": "src/js/lib/model.js:358-384",
-    "fp": "84f006271a9292d6",
-    "head": "const version = Number(raw.schemaVersion ?? 1);"
+  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html:13|0": {
+    "anchor": "src/index.html:13",
+    "fp": "59235d10bc8a1e1c",
+    "head": "<div id=\"announcer\" class=\"visually-hidden\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"></di"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1354",
-    "fp": "94e13815af1d3dad",
-    "head": "alert('That curated order could not be saved, so nothing was imported.');"
+  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html:235|0": {
+    "anchor": "src/index.html:235",
+    "fp": "eab45ce60f505bd9",
+    "head": "<div id=\"search-results\" class=\"results\" aria-live=\"polite\"></div>"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1365",
-    "fp": "553b484eaf3636b9",
-    "head": "alert('The list was created but its issues could not be saved.');"
+  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html:64|0": {
+    "anchor": "src/index.html:64",
+    "fp": "74bc1ff9b998e6b5",
+    "head": "<div id=\"save-report\" role=\"alert\" aria-live=\"assertive\"></div>"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1382",
-    "fp": "bb7e71279397b55e",
-    "head": "alert(`Could not load that curated order: ${err.message}`);"
-  },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|3": {
+  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/js/main.js:137-149|0": {
     "anchor": "src/js/main.js:137-149",
     "fp": "4f25dd3110664bc5",
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|4": {
-    "anchor": "src/js/main.js:590-593",
-    "fp": "cf9f9d54d5388722",
-    "head": "!item.hydrated && item.source !== 'manual'"
+  "docs/UX_STUDY.md|ux-a-007-the-first-run-dom-ships-an-empty-headin|src/index.html:125-155|0": {
+    "anchor": "src/index.html:125-155",
+    "fp": "be0ed820dd0e8ce5",
+    "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|5": {
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/index.html:6|0": {
+    "anchor": "src/index.html:6",
+    "fp": "1ef02ac278158bc3",
+    "head": "<meta name=\"color-scheme\" content=\"dark\" />"
+  },
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:448-455|0": {
+    "anchor": "src/styles.css:448-455",
+    "fp": "6a120997ba7f704d",
+    "head": "@media (prefers-reduced-motion: reduce) {"
+  },
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:7|0": {
+    "anchor": "src/styles.css:7",
+    "fp": "53b9bb8e0988cf2b",
+    "head": "color-scheme: dark;"
+  },
+  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:588|0": {
+    "anchor": "src/js/main.js:588",
+    "fp": "f14a891c350f1cad",
+    "head": "title: describe(item, { override }),"
+  },
+  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:615-620|0": {
+    "anchor": "src/js/main.js:615-620",
+    "fp": "2435be3c1e7a1165",
+    "head": "const SHORT_LABEL = {"
+  },
+  "docs/UX_STUDY.md|ux-d-001-the-mobile-layout-rule-never-takes-effe|src/styles.css:81-84|0": {
+    "anchor": "src/styles.css:81-84",
+    "fp": "7678b53ce28b19c2",
+    "head": "@media (max-width: 880px) {"
+  },
+  "docs/UX_STUDY.md|ux-d-001-the-mobile-layout-rule-never-takes-effe|src/styles.css:88-92|0": {
+    "anchor": "src/styles.css:88-92",
+    "fp": "272de1049e5d1fdd",
+    "head": ".rail {"
+  },
+  "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/index.html:147|0": {
+    "anchor": "src/index.html:147",
+    "fp": "a628208c2b24bcfe",
+    "head": "Done, next <kbd>D</kbd>"
+  },
+  "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/js/main.js:642-660|0": {
+    "anchor": "src/js/main.js:642-660",
+    "fp": "6b0a52cdade44dcb",
+    "head": "function wireShortcuts() {"
+  },
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:1555-1568|0": {
+    "anchor": "src/js/main.js:1555-1568",
+    "fp": "96822d1d78e2792c",
+    "head": "function renderAll() {"
+  },
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:43-48|0": {
+    "anchor": "src/js/main.js:43-48",
+    "fp": "179d485d49b3bd60",
+    "head": "const store = new Store({"
+  },
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:1354|0": {
+    "anchor": "src/js/main.js:1354",
+    "fp": "94e13815af1d3dad",
+    "head": "alert('That curated order could not be saved, so nothing was imported.');"
+  },
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:137-149|0": {
+    "anchor": "src/js/main.js:137-149",
+    "fp": "4f25dd3110664bc5",
+    "head": "// A success message must never outlive the write it describes. store.update rolls the change"
+  },
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:337-347|0": {
+    "anchor": "src/js/main.js:337-347",
+    "fp": "397bd5507505d94a",
+    "head": "const name = prompt('List name', list.name);"
+  },
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:343-350|0": {
+    "anchor": "src/js/main.js:343-350",
+    "fp": "9aa4eaee5abc797f",
+    "head": "$('#btn-delete-list').addEventListener('click', () => {"
+  },
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:1449-1452|0": {
     "anchor": "src/js/main.js:1449-1452",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|6": {
-    "anchor": "src/js/main.js:1532-1534",
-    "fp": "0ae6591eb2d6f0e5",
-    "head": "if (s?.kind === 'backoff') {"
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:343-350|0": {
+    "anchor": "src/js/main.js:343-350",
+    "fp": "9aa4eaee5abc797f",
+    "head": "$('#btn-delete-list').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|7": {
+  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/index.html:147|0": {
+    "anchor": "src/index.html:147",
+    "fp": "a628208c2b24bcfe",
+    "head": "Done, next <kbd>D</kbd>"
+  },
+  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/js/main.js:642-660|0": {
+    "anchor": "src/js/main.js:642-660",
+    "fp": "6b0a52cdade44dcb",
+    "head": "function wireShortcuts() {"
+  },
+  "docs/UX_STUDY.md|ux-i-001-no-application-state-is-addressable|src/js/main.js:275-295|0": {
+    "anchor": "src/js/main.js:275-295",
+    "fp": "75df2fc2e70bc02c",
+    "head": "function showView(next, { focus = true } = {}) {"
+  },
+  "docs/UX_STUDY.md|ux-i-002-the-filter-selection-resets-on-every-re|src/index.html:180-184|0": {
+    "anchor": "src/index.html:180-184",
+    "fp": "1988bee5bebf81b7",
+    "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
+  },
+  "docs/UX_STUDY.md|ux-i-002-the-filter-selection-resets-on-every-re|src/js/main.js:51|0": {
+    "anchor": "src/js/main.js:51",
+    "fp": "86045517874ce39e",
+    "head": "let filter = 'all';"
+  },
+  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|design/mockups/5-longbox-focus.html:169-172|0": {
+    "anchor": "design/mockups/5-longbox-focus.html:169-172",
+    "fp": "4b2c34e3e004c761",
+    "head": "<h3>Library</h3>"
+  },
+  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/index.html:36-38|0": {
+    "anchor": "src/index.html:36-38",
+    "fp": "66730adc62188d7a",
+    "head": "<nav aria-labelledby=\"rail-nav\">"
+  },
+  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/js/main.js:593|0": {
+    "anchor": "src/js/main.js:593",
+    "fp": "bd66076a7b8dce19",
+    "head": "item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,"
+  },
+  "docs/UX_STUDY.md|which-direction-was-adopted|design/mockups/index.html:51-62|0": {
+    "anchor": "design/mockups/index.html:51-62",
+    "fp": "c1e3b8df0c99d2cb",
+    "head": "<a class=\"card\" href=\"./5-longbox-focus.html\" style=\"border-color:#e23636; grid-column:1/-1\">"
+  },
+  "docs/UX_STUDY.md|which-direction-was-adopted|src/styles.css:1-4|0": {
+    "anchor": "src/styles.css:1-4",
+    "fp": "638937cc7b928b5f",
+    "head": "/* Marvel Reading Tracker: \"Longbox Focus\""
+  },
+  "PRODUCT_BACKLOG.md|1-functional-suitability|package.json:10|0": {
+    "anchor": "package.json:10",
+    "fp": "3ecaccb832a49e38",
+    "head": "\"test\": \"node --test\","
+  },
+  "PRODUCT_BACKLOG.md|1-functional-suitability|package.json:13|0": {
+    "anchor": "package.json:13",
+    "fp": "068214563025a9fa",
+    "head": "\"contract\": \"node scripts/check-contract.mjs\","
+  },
+  "PRODUCT_BACKLOG.md|1-functional-suitability|scripts/check-contract.mjs:248-280|0": {
+    "anchor": "scripts/check-contract.mjs:248-280",
+    "fp": "756ffa3269a6fcb8",
+    "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
+  },
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/index.html:194-196|0": {
+    "anchor": "src/index.html:194-196",
+    "fp": "551e047df834303f",
+    "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
+  },
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:1192|0": {
+    "anchor": "src/js/main.js:1192",
+    "fp": "001dea97ca0659d3",
+    "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
+  },
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:1397-1415|0": {
+    "anchor": "src/js/main.js:1397-1415",
+    "fp": "cbf68ef6e9ab7285",
+    "head": "function renderProgress() {"
+  },
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/api.js:11-16|0": {
+    "anchor": "src/js/api.js:11-16",
+    "fp": "b5dd33b3dd95fa49",
+    "head": "// Series and creators are searched locally against a vendored index, because the API ignores"
+  },
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:1555-1568|0": {
+    "anchor": "src/js/main.js:1555-1568",
+    "fp": "96822d1d78e2792c",
+    "head": "function renderAll() {"
+  },
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:43-48|0": {
+    "anchor": "src/js/main.js:43-48",
+    "fp": "179d485d49b3bd60",
+    "head": "const store = new Store({"
+  },
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:534-613|0": {
+    "anchor": "src/js/main.js:534-613",
+    "fp": "d0de6e662e9a576b",
+    "head": "function renderRows() {"
+  },
+  "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-28|0": {
+    "anchor": "package.json:1-28",
+    "fp": "428acfd44d291197",
+    "head": "{"
+  },
+  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:434-458|0": {
+    "anchor": "src/js/lib/model.js:434-458",
+    "fp": "d167aa9becc8784c",
+    "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
+  },
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/index.html:6|0": {
+    "anchor": "src/index.html:6",
+    "fp": "1ef02ac278158bc3",
+    "head": "<meta name=\"color-scheme\" content=\"dark\" />"
+  },
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:1449-1452|0": {
+    "anchor": "src/js/main.js:1449-1452",
+    "fp": "c3c96b514329a916",
+    "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
+  },
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:343-350|0": {
+    "anchor": "src/js/main.js:343-350",
+    "fp": "9aa4eaee5abc797f",
+    "head": "$('#btn-delete-list').addEventListener('click', () => {"
+  },
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:588|0": {
+    "anchor": "src/js/main.js:588",
+    "fp": "f14a891c350f1cad",
+    "head": "title: describe(item, { override }),"
+  },
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:615-620|0": {
+    "anchor": "src/js/main.js:615-620",
+    "fp": "2435be3c1e7a1165",
+    "head": "const SHORT_LABEL = {"
+  },
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:369-376|0": {
+    "anchor": "src/styles.css:369-376",
+    "fp": "173a5898da6079a8",
+    "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
+  },
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:7|0": {
+    "anchor": "src/styles.css:7",
+    "fp": "53b9bb8e0988cf2b",
+    "head": "color-scheme: dark;"
+  },
+  "PRODUCT_BACKLOG.md|5-reliability|src/index.html:66-77|0": {
+    "anchor": "src/index.html:66-77",
+    "fp": "c6b83ff22c8cca85",
+    "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
+  },
+  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:358-384|0": {
+    "anchor": "src/js/lib/model.js:358-384",
+    "fp": "84f006271a9292d6",
+    "head": "const version = Number(raw.schemaVersion ?? 1);"
+  },
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:112-122|0": {
+    "anchor": "server.mjs:112-122",
+    "fp": "6cd80fc67836d175",
+    "head": "const headers = {"
+  },
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:117|0": {
+    "anchor": "server.mjs:117",
+    "fp": "df82fbfe81bdea26",
+    "head": "'content-security-policy': CSP,"
+  },
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:120|0": {
+    "anchor": "server.mjs:120",
+    "fp": "bd315ce426eb6407",
+    "head": "'x-frame-options': 'DENY',"
+  },
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:43-54|0": {
+    "anchor": "server.mjs:43-54",
+    "fp": "74672dc47f977dcd",
+    "head": "const CSP = ["
+  },
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:53|0": {
+    "anchor": "server.mjs:53",
+    "fp": "3ef5eb39e51b727e",
+    "head": "\"frame-ancestors 'none'\","
+  },
+  "PRODUCT_BACKLOG.md|7-maintainability|package.json:11-12|0": {
+    "anchor": "package.json:11-12",
+    "fp": "f8f0304159cc6500",
+    "head": "\"lint\": \"eslint .\","
+  },
+  "PRODUCT_BACKLOG.md|7-maintainability|scripts/vendor-index.mjs:40-54|0": {
+    "anchor": "scripts/vendor-index.mjs:40-54",
+    "fp": "1350e867b612018d",
+    "head": "async function getJson(url, attempt = 0) {"
+  },
+  "PRODUCT_BACKLOG.md|7-maintainability|scripts/vendor-orders.mjs:48-62|0": {
+    "anchor": "scripts/vendor-orders.mjs:48-62",
+    "fp": "1350e867b612018d",
+    "head": "async function getJson(url, attempt = 0) {"
+  },
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:1555-1568|0": {
+    "anchor": "src/js/main.js:1555-1568",
+    "fp": "96822d1d78e2792c",
+    "head": "function renderAll() {"
+  },
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:275-295|0": {
+    "anchor": "src/js/main.js:275-295",
+    "fp": "75df2fc2e70bc02c",
+    "head": "function showView(next, { focus = true } = {}) {"
+  },
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:304-307|0": {
+    "anchor": "src/styles.css:304-307",
+    "fp": "c17ce04e13581723",
+    "head": ".row {"
+  },
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:396-397|0": {
+    "anchor": "src/styles.css:396-397",
+    "fp": "5a5d3c1e791d4bbe",
+    "head": ".row { }"
+  },
+  "PRODUCT_BACKLOG.md|8-flexibility|package.json:20-22|0": {
+    "anchor": "package.json:20-22",
+    "fp": "049db722764e6552",
+    "head": "\"engines\": {"
+  },
+  "PRODUCT_BACKLOG.md|8-flexibility|package.json:8-19|0": {
+    "anchor": "package.json:8-19",
+    "fp": "ffaa5f81cf8b6ca7",
+    "head": "\"scripts\": {"
+  },
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/cachePolicy.js:16-20|0": {
+    "anchor": "src/js/lib/cachePolicy.js:16-20",
+    "fp": "ba67483977d582c5",
+    "head": "// Scoped by base URL and schema version so switching to a self-hosted mirror, or shipping a"
+  },
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:11|0": {
+    "anchor": "src/js/lib/model.js:11",
+    "fp": "d66d703756839bee",
+    "head": "export const SCHEMA_VERSION = 2;"
+  },
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:358-384|0": {
+    "anchor": "src/js/lib/model.js:358-384",
+    "fp": "84f006271a9292d6",
+    "head": "const version = Number(raw.schemaVersion ?? 1);"
+  },
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:1462-1475|0": {
+    "anchor": "src/js/main.js:1462-1475",
+    "fp": "6e3349f5630c2f53",
+    "head": "$('#form-settings').addEventListener('submit', (e) => {"
+  },
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:1192|0": {
+    "anchor": "src/js/main.js:1192",
+    "fp": "001dea97ca0659d3",
+    "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
+  },
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:1209-1214|0": {
+    "anchor": "src/js/main.js:1209-1214",
+    "fp": "767e40003bd5b6e0",
+    "head": "function catalogRow(list, { variant = false } = {}) {"
+  },
+  "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css:369-376|0": {
+    "anchor": "src/styles.css:369-376",
+    "fp": "173a5898da6079a8",
+    "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
+  },
+  "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css:81-84|0": {
+    "anchor": "src/styles.css:81-84",
+    "fp": "7678b53ce28b19c2",
+    "head": "@media (max-width: 880px) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:84-85|0": {
+    "anchor": ".github/workflows/ci.yml:84-85",
+    "fp": "8e2394a0c84490fa",
+    "head": "- name: Check evidence anchors"
+  },
+  "PRODUCT_BACKLOG.md|item-details|package.json:14-15|0": {
+    "anchor": "package.json:14-15",
+    "fp": "0476ef7e99533066",
+    "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/availability.js:10|0": {
+    "anchor": "src/js/lib/availability.js:10",
+    "fp": "baff944060f60826",
+    "head": "// So we never claim an issue *is* available. We report one of five explicit"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:586-593|0": {
+    "anchor": "src/js/main.js:586-593",
+    "fp": "69839b3df2d455a1",
+    "head": "el('span', {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:606-611|0": {
+    "anchor": "src/js/main.js:606-611",
+    "fp": "e123c8467718a553",
+    "head": "]),"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:615-620|0": {
+    "anchor": "src/js/main.js:615-620",
+    "fp": "2435be3c1e7a1165",
+    "head": "const SHORT_LABEL = {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:149|0": {
+    "anchor": "src/styles.css:149",
+    "fp": "c05f099c43c67496",
+    "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:189-196|0": {
+    "anchor": "src/styles.css:189-196",
+    "fp": "8ba45d9dd3e3f769",
+    "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:20-29|0": {
+    "anchor": "src/styles.css:20-29",
+    "fp": "df31a07909cabda9",
+    "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:247|0": {
+    "anchor": "src/styles.css:247",
+    "fp": "f549fe8731ac5e8b",
+    "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 "
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:316-317|0": {
+    "anchor": "src/styles.css:316-317",
+    "fp": "4867cdf75f778888",
+    "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:319|0": {
+    "anchor": "src/styles.css:319",
+    "fp": "6ba162a32bf16415",
+    "head": ".row.is-read img { opacity: .5; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:339-362|0": {
+    "anchor": "src/styles.css:339-362",
+    "fp": "1de73e8d4daf96ee",
+    "head": "/* These outlines are faint on purpose, and that is a recorded decision rather than an"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:364|0": {
+    "anchor": "src/styles.css:364",
+    "fp": "7f22dd94b3ebb02f",
+    "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:364|1": {
+    "anchor": "src/styles.css:364",
+    "fp": "7f22dd94b3ebb02f",
+    "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:448-455|0": {
+    "anchor": "src/styles.css:448-455",
+    "fp": "6a120997ba7f704d",
+    "head": "@media (prefers-reduced-motion: reduce) {"
+  },
+  "PRODUCT_BACKLOG.md|orientation-disagreements|package.json:10|0": {
+    "anchor": "package.json:10",
+    "fp": "3ecaccb832a49e38",
+    "head": "\"test\": \"node --test\","
+  },
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:1555-1568|0": {
+    "anchor": "src/js/main.js:1555-1568",
+    "fp": "96822d1d78e2792c",
+    "head": "function renderAll() {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-001|src/js/main.js:1209-1239|0": {
+    "anchor": "src/js/main.js:1209-1239",
+    "fp": "5de28c6520c1da93",
+    "head": "function catalogRow(list, { variant = false } = {}) {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-002|src/index.html:214-216|0": {
+    "anchor": "src/index.html:214-216",
+    "fp": "1af46f8f91b297cc",
+    "head": "<fieldset class=\"filters\" id=\"catalog-filters\" hidden>"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-002|src/js/main.js:16|0": {
+    "anchor": "src/js/main.js:16",
+    "fp": "be41bc4bd3930679",
+    "head": "parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory, searchCatalog,"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/index.html:207-213|0": {
+    "anchor": "src/index.html:207-213",
+    "fp": "414c8c4d2ec683f4",
+    "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/js/main.js:1267-1282|0": {
+    "anchor": "src/js/main.js:1267-1282",
+    "fp": "97edef98a6cc84a2",
+    "head": "function wireCatalogSearch() {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:1213|0": {
+    "anchor": "src/js/main.js:1213",
+    "fp": "e5a85bd0d6aeac2f",
+    "head": "const depth = depthLabel(list.depth);"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:1222-1227|0": {
+    "anchor": "src/js/main.js:1222-1227",
+    "fp": "e53c56c7408f1625",
+    "head": "depth"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-006|src/js/main.js:1245-1265|0": {
     "anchor": "src/js/main.js:1245-1265",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories|test/model.test.js|0": {
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|src/js/main.js:1192|0": {
+    "anchor": "src/js/main.js:1192",
+    "fp": "001dea97ca0659d3",
+    "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|src/js/main.js:1209-1214|0": {
+    "anchor": "src/js/main.js:1209-1214",
+    "fp": "767e40003bd5b6e0",
+    "head": "function catalogRow(list, { variant = false } = {}) {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:167-267|0": {
+    "anchor": "scripts/vendor-orders.mjs:167-267",
+    "fp": "e08df3e604b0969f",
+    "head": "const { entries, unresolved } = parseChecklist(md);"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/lib/markdown.js:36-99|0": {
+    "anchor": "src/js/lib/markdown.js:36-99",
+    "fp": "743dcbf0a43f0694",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/main.js:922-975|0": {
+    "anchor": "src/js/main.js:922-975",
+    "fp": "e469118bcd96fffa",
+    "head": "const { entries, unresolved, headings } = parseChecklist(text);"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-010|src/js/main.js:983-1045|0": {
+    "anchor": "src/js/main.js:983-1045",
+    "fp": "6b3347427113cf61",
+    "head": "function unresolvedRow(entry, listId) {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:1047-1091|0": {
+    "anchor": "src/js/main.js:1047-1091",
+    "fp": "5a57b37f0d0a4cae",
+    "head": "function doManual() {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:884-902|0": {
+    "anchor": "src/js/main.js:884-902",
+    "fp": "457a03b1d13a9dd4",
+    "head": "async function addSeries(series) {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/lib/model.js:139|0": {
+    "anchor": "src/js/lib/model.js:139",
+    "fp": "e409e1d7f9185731",
+    "head": "// Read progress is deliberately NOT copied. It is global, keyed by issue id (see the note at"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/main.js:352-372|0": {
+    "anchor": "src/js/main.js:352-372",
+    "fp": "ba48dba7ca5b5ba0",
+    "head": "$('#btn-duplicate-list').addEventListener('click', () => {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-013|src/js/main.js:299-324|0": {
+    "anchor": "src/js/main.js:299-324",
+    "fp": "51032bac9fb6fdc5",
+    "head": "function renderRail() {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/index.html:194-196|0": {
+    "anchor": "src/index.html:194-196",
+    "fp": "551e047df834303f",
+    "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:1397-1415|0": {
+    "anchor": "src/js/main.js:1397-1415",
+    "fp": "cbf68ef6e9ab7285",
+    "head": "function renderProgress() {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-015|src/index.html:180-184|0": {
+    "anchor": "src/index.html:180-184",
+    "fp": "1988bee5bebf81b7",
+    "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-015|src/js/main.js:622-632|0": {
+    "anchor": "src/js/main.js:622-632",
+    "fp": "a3884e91fa5d58c9",
+    "head": "function matchesFilter(item) {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-016|src/index.html:125-155|0": {
+    "anchor": "src/index.html:125-155",
+    "fp": "be0ed820dd0e8ce5",
+    "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-018|src/js/main.js:590-593|0": {
+    "anchor": "src/js/main.js:590-593",
+    "fp": "cf9f9d54d5388722",
+    "head": "!item.hydrated && item.source !== 'manual'"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-018|src/js/main.js:626|0": {
+    "anchor": "src/js/main.js:626",
+    "fp": "2011e7a2e7789b2d",
+    "head": "if (filter === 'pending') return !item.hydrated && item.source !== 'manual';"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-019|src/js/lib/availability.js:17-23|0": {
+    "anchor": "src/js/lib/availability.js:17-23",
+    "fp": "9ddcd2397f40d9c8",
+    "head": "export const STATE = {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-019|src/js/main.js:615-620|0": {
+    "anchor": "src/js/main.js:615-620",
+    "fp": "2435be3c1e7a1165",
+    "head": "const SHORT_LABEL = {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-020|src/js/main.js:1070|0": {
+    "anchor": "src/js/main.js:1070",
+    "fp": "5435ae20ec2b0bc2",
+    "head": "source: 'manual',"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-021|package.json:13|0": {
+    "anchor": "package.json:13",
+    "fp": "068214563025a9fa",
+    "head": "\"contract\": \"node scripts/check-contract.mjs\","
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-021|scripts/check-contract.mjs:248-280|0": {
+    "anchor": "scripts/check-contract.mjs:248-280",
+    "fp": "756ffa3269a6fcb8",
+    "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:434-458|0": {
+    "anchor": "src/js/lib/model.js:434-458",
+    "fp": "d167aa9becc8784c",
+    "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:1449-1452|0": {
+    "anchor": "src/js/main.js:1449-1452",
+    "fp": "c3c96b514329a916",
+    "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-026|src/js/main.js:642-660|0": {
+    "anchor": "src/js/main.js:642-660",
+    "fp": "6b0a52cdade44dcb",
+    "head": "function wireShortcuts() {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-027|src/js/main.js:137-149|0": {
+    "anchor": "src/js/main.js:137-149",
+    "fp": "4f25dd3110664bc5",
+    "head": "// A success message must never outlive the write it describes. store.update rolls the change"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-028|src/styles.css:81-84|0": {
+    "anchor": "src/styles.css:81-84",
+    "fp": "7678b53ce28b19c2",
+    "head": "@media (max-width: 880px) {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-028|src/styles.css:88-92|0": {
+    "anchor": "src/styles.css:88-92",
+    "fp": "272de1049e5d1fdd",
+    "head": ".rail {"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-029|src/styles.css:81-84|0": {
+    "anchor": "src/styles.css:81-84",
+    "fp": "7678b53ce28b19c2",
+    "head": "@media (max-width: 880px) {"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:112-122|0": {
+    "anchor": "server.mjs:112-122",
+    "fp": "6cd80fc67836d175",
+    "head": "const headers = {"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:117|0": {
+    "anchor": "server.mjs:117",
+    "fp": "df82fbfe81bdea26",
+    "head": "'content-security-policy': CSP,"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:120|0": {
+    "anchor": "server.mjs:120",
+    "fp": "bd315ce426eb6407",
+    "head": "'x-frame-options': 'DENY',"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:43-54|0": {
+    "anchor": "server.mjs:43-54",
+    "fp": "74672dc47f977dcd",
+    "head": "const CSP = ["
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/api.js:18-26|0": {
+    "anchor": "src/js/api.js:18-26",
+    "fp": "350e40827cf70ffd",
+    "head": "export class MarvelApi {"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:1462-1475|0": {
+    "anchor": "src/js/main.js:1462-1475",
+    "fp": "6e3349f5630c2f53",
+    "head": "$('#form-settings').addEventListener('submit', (e) => {"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-28|0": {
+    "anchor": "package.json:1-28",
+    "fp": "428acfd44d291197",
+    "head": "{"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:23-27|0": {
+    "anchor": "package.json:23-27",
+    "fp": "62b388bb68c58c87",
+    "head": "\"devDependencies\": {"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:18|0": {
+    "anchor": "package.json:18",
+    "fp": "10904b7f9645e3f0",
+    "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:3|0": {
+    "anchor": "package.json:3",
+    "fp": "6d50373e8d6e684f",
+    "head": "\"version\": \"1.0.0\","
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:3|1": {
+    "anchor": "package.json:3",
+    "fp": "6d50373e8d6e684f",
+    "head": "\"version\": \"1.0.0\","
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:434-458|0": {
+    "anchor": "src/js/lib/model.js:434-458",
+    "fp": "d167aa9becc8784c",
+    "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:1449-1452|0": {
+    "anchor": "src/js/main.js:1449-1452",
+    "fp": "c3c96b514329a916",
+    "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#empty-states|src/index.html:36-38|0": {
+    "anchor": "src/index.html:36-38",
+    "fp": "66730adc62188d7a",
+    "head": "<nav aria-labelledby=\"rail-nav\">"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1354|0": {
+    "anchor": "src/js/main.js:1354",
+    "fp": "94e13815af1d3dad",
+    "head": "alert('That curated order could not be saved, so nothing was imported.');"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1365|0": {
+    "anchor": "src/js/main.js:1365",
+    "fp": "553b484eaf3636b9",
+    "head": "alert('The list was created but its issues could not be saved.');"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:137-149|0": {
+    "anchor": "src/js/main.js:137-149",
+    "fp": "4f25dd3110664bc5",
+    "head": "// A success message must never outlive the write it describes. store.update rolls the change"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#error-handling-and-recovery|src/js/main.js:1382|0": {
+    "anchor": "src/js/main.js:1382",
+    "fp": "bb7e71279397b55e",
+    "head": "alert(`Could not load that curated order: ${err.message}`);"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#first-run-experience|src/index.html:125-155|0": {
+    "anchor": "src/index.html:125-155",
+    "fp": "be0ed820dd0e8ce5",
+    "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#licensing|src/js/main.js:1245-1265|0": {
+    "anchor": "src/js/main.js:1245-1265",
+    "fp": "b8e6049eda71ed0e",
+    "head": "function attributionLine(list) {"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:1532-1534|0": {
+    "anchor": "src/js/main.js:1532-1534",
+    "fp": "0ae6591eb2d6f0e5",
+    "head": "if (s?.kind === 'backoff') {"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#offline-behavior|src/js/main.js:590-593|0": {
+    "anchor": "src/js/main.js:590-593",
+    "fp": "cf9f9d54d5388722",
+    "head": "!item.hydrated && item.source !== 'manual'"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-28|0": {
+    "anchor": "package.json:1-28",
+    "fp": "428acfd44d291197",
+    "head": "{"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:11|0": {
+    "anchor": "src/js/lib/model.js:11",
+    "fp": "d66d703756839bee",
+    "head": "export const SCHEMA_VERSION = 2;"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:358-384|0": {
+    "anchor": "src/js/lib/model.js:358-384",
+    "fp": "84f006271a9292d6",
+    "head": "const version = Number(raw.schemaVersion ?? 1);"
+  },
+  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|test/model.test.js:396-398|0": {
     "anchor": "test/model.test.js:396-398",
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:1397-1415|0": {
+    "anchor": "src/js/main.js:1397-1415",
+    "fp": "cbf68ef6e9ab7285",
+    "head": "function renderProgress() {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-026|src/js/main.js:642-660|0": {
+    "anchor": "src/js/main.js:642-660",
+    "fp": "6b0a52cdade44dcb",
+    "head": "function wireShortcuts() {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-027|src/js/main.js:139-144|0": {
+    "anchor": "src/js/main.js:139-144",
+    "fp": "e9c53c5c5ad06b02",
+    "head": "// otherwise a screen-reader user hears \"List deleted\" for a deletion that did not happen."
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-028|src/styles.css:81-84|0": {
+    "anchor": "src/styles.css:81-84",
+    "fp": "7678b53ce28b19c2",
+    "head": "@media (max-width: 880px) {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-029|src/styles.css:20-29|0": {
+    "anchor": "src/styles.css:20-29",
+    "fp": "df31a07909cabda9",
+    "head": "/* Two reds, because one cannot serve both jobs on a dark page. `--red` is a"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-030|src/styles.css:310-319|0": {
+    "anchor": "src/styles.css:310-319",
+    "fp": "a8497ff4e93c6cc6",
+    "head": "/* A read row recedes through a dimmer title colour, a strikethrough and a filled"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-031|src/index.html:125-155|0": {
+    "anchor": "src/index.html:125-155",
+    "fp": "be0ed820dd0e8ce5",
+    "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-032|src/styles.css:7|0": {
+    "anchor": "src/styles.css:7",
+    "fp": "53b9bb8e0988cf2b",
+    "head": "color-scheme: dark;"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:1555-1568|0": {
+    "anchor": "src/js/main.js:1555-1568",
+    "fp": "96822d1d78e2792c",
+    "head": "function renderAll() {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-034|src/js/main.js:337-347|0": {
+    "anchor": "src/js/main.js:337-347",
+    "fp": "397bd5507505d94a",
+    "head": "const name = prompt('List name', list.name);"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-035|src/js/main.js:343-350|0": {
+    "anchor": "src/js/main.js:343-350",
+    "fp": "9aa4eaee5abc797f",
+    "head": "$('#btn-delete-list').addEventListener('click', () => {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-037|src/js/main.js:51|0": {
+    "anchor": "src/js/main.js:51",
+    "fp": "86045517874ce39e",
+    "head": "let filter = 'all';"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-038|design/mockups/5-longbox-focus.html:169-172|0": {
+    "anchor": "design/mockups/5-longbox-focus.html:169-172",
+    "fp": "4b2c34e3e004c761",
+    "head": "<h3>Library</h3>"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:1555-1568|0": {
+    "anchor": "src/js/main.js:1555-1568",
+    "fp": "96822d1d78e2792c",
+    "head": "function renderAll() {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-043|package.json:3|0": {
+    "anchor": "package.json:3",
+    "fp": "6d50373e8d6e684f",
+    "head": "\"version\": \"1.0.0\","
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-044|server.mjs:112-122|0": {
+    "anchor": "server.mjs:112-122",
+    "fp": "6cd80fc67836d175",
+    "head": "const headers = {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-045|src/js/api.js:18-26|0": {
+    "anchor": "src/js/api.js:18-26",
+    "fp": "350e40827cf70ffd",
+    "head": "export class MarvelApi {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-046|scripts/vendor-index.mjs:40-54|0": {
+    "anchor": "scripts/vendor-index.mjs:40-54",
+    "fp": "1350e867b612018d",
+    "head": "async function getJson(url, attempt = 0) {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:396-397|0": {
+    "anchor": "src/styles.css:396-397",
+    "fp": "5a5d3c1e791d4bbe",
+    "head": ".row { }"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-048|src/js/lib/availability.js:10|0": {
+    "anchor": "src/js/lib/availability.js:10",
+    "fp": "baff944060f60826",
+    "head": "// So we never claim an issue *is* available. We report one of five explicit"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-049|src/styles.css:364|0": {
+    "anchor": "src/styles.css:364",
+    "fp": "7f22dd94b3ebb02f",
+    "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
   }
 }

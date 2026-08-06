@@ -179,7 +179,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Ready | src/js/main.js:344-350 |
+| BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Ready | src/js/main.js:343-350 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Ready | src/styles.css:396-397 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:364 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:642-660 |
@@ -800,11 +800,84 @@ written in a shape the regex itself does not know. A human still has to read eac
 the gate removes is having to read all of them again on every sweep, which is the whole of the gain
 and the honest limit of it.
 
-The Evidence column of the backlog table above is deliberately outside the gate. Those citations
-record what was true when an item was filed, and some are now false by design: `BL-039` cites the
-absence of a workflow directory that its own delivery created. Writing them without anchor backticks
-keeps them readable as history and stops the checker demanding they be updated into a claim about
-the present that was never intended.
+The Evidence column of the backlog table above is inside the gate, and the six rows that must not be
+are exempted on a marker they declare rather than on how they are punctuated. A claim about a past
+state cites code that is expected to contradict it: `BL-040` cites the scripts block as evidence
+that no lint script existed, and that block now defines one. Gating it would demand a true
+historical record be falsified. So a citation is exempt when it sits inside an `absent:` evidence
+token, and only for as far as that token reaches, which is the backticked span or the table cell it
+begins. The release row cites `absent: CHANGELOG.md and git tags` and then cites two live anchors
+after it, and a rule that ran to end of line would have dropped both.
+
+The earlier version excluded the column by leaving those citations unbackticked, which is
+punctuation that happened to coincide with the decision rather than expressing it. It failed
+silently in both directions: backticking a path for readability would have enrolled twenty-one rows
+unannounced, and a new historical claim written with backticks would have been gated and would have
+failed for being correct. The exemption was resolved rather than identified, which is this
+document's own recurring defect one level up from where it was found.
+
+Twenty-one live anchors joined the gate as a result, and fourteen of them sit on work that has not
+started. Those are the highest-value anchors in the document, because they are the entry point an
+implementer navigates to for code they do not know, and they will sit unread longest, which is
+exactly the interval in which drift is invisible. They were clean when they were enrolled, so the
+exclusion had cost nothing yet. They were clean because they had just been swept by hand, and the
+premise of the gate is that nothing tells you when clean stops being true.
+
+Keys are local for the same reason. A story ID is not unique across the document, so keying an
+anchor on the ID alone merged the two rows that share one into a single ordinal bucket, and
+inserting a citation into either renumbered the other and reported drift that had not happened.
+Spurious drift is the expensive kind: it trains a re-bless reflex, and a reflexive re-bless is how a
+real drift gets waved through.
+
+A blessed anchor that stops being collected now fails the build too, which it did not before.
+Coverage guards the walk inside the documents that exist and discovery guards which documents are
+opened, and neither guards loss. Deleting `docs/UX_STUDY.md` in a scratch revision was measured
+rather than argued: seventy-two anchors left the gate while the run printed `coverage:
+PRODUCT_BACKLOG.md 146/146` and exited 0. Renaming it is the plausible version and it also passed
+for the wrong reason, because the seventy-two reappeared under a new document key and the run
+complained about additions rather than about the loss. Each guard was measuring the layer it could
+see and reporting full marks for the layer beneath it, which is the same defect this section
+describes twice already.
+
+Which losses matter is deliberately not judged. Failing only when a whole document disappears would
+be a heuristic about significance, and a heuristic about which anchors are worth counting is exactly
+how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting
+a backlog row now fails until it is re-blessed, which is friction on an ordinary edit rather than on
+a code change. That is the right direction: a claim that has vanished is unverifiable, not free of
+news.
+
+Blessing is the one action the gate cannot check, and the order of operations matters more than it
+looks. Writing the paragraphs above moved this document's own out-of-scope list, which
+`docs/UX_STUDY.md` cites by line, and blessing in the same step as the edit locked the broken anchor
+in silently and reported a clean run. The gate caught it on the next edit, which is the second best
+outcome available. Bless as the last action, with nothing edited after it, and read the check that
+follows rather than the bless that preceded it.
+
+Spurious drift was possible until the key changed. Ordinals used to be scoped to a file, so two
+different anchors in one section shared a bucket, and deleting one renumbered the other into its
+slot to be compared against a fingerprint that was never its own. That printed as drift, and the
+report asserted the anchor had once pointed at code it never pointed at. The fabricated part was the
+corroborating detail, made credible by the true details printed beside it. Scoping the ordinal to
+the whole anchor rather than to the file means two entries in a bucket cite identical lines and
+therefore carry identical fingerprints, so a renumber cannot manufacture a mismatch at all. The
+defect is gone by construction rather than by care, which is worth more than a rule telling readers
+to distrust a particular combination of counts.
+
+The cost is that re-aiming an anchor changes its key, so it reports as one addition and one loss
+rather than as drift. Those are paired back together for reporting when a section holds exactly one
+of each for the same file, showing the blessed anchor and the new one side by side; a section with
+several is left unpaired, because guessing which removal explains which addition would invent the
+same kind of persuasive detail the key change removed. Pairing never makes two anchors compare
+equal, so it cannot bring the defect back.
+
+A guard can also be loud and wrong about what it is loud about. Renaming the lock's fingerprint
+field used to report all 218 anchors as drifted, when the truth was that the lock could not be read,
+and the reader is sent hunting for code movements that never happened. The partial version is the
+dangerous one: two entries missing the field reported `216 unchanged, 2 drifted`, which is an
+ordinary-looking result nobody would question. The lock's shape is now asserted before anything is
+compared, so a lock this script cannot read is refused rather than described as movement. That a
+failure is caught says nothing about whether it is diagnosed, and a plausible number is what stops
+you looking.
 
 ## Existing epics and stories
 
@@ -1093,7 +1166,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
   device they are invisible until tapped. Evidence: `src/styles.css:369-376`.
 - User error protection: gap. Deleting a list is guarded only by a native `confirm()` and cannot be
   undone afterwards, while restoring a backup does have an undo. Evidence:
-  `src/js/main.js:344-350` (delete, confirm only), `src/js/main.js:1449-1452` (undoRestore exists).
+  `src/js/main.js:343-350` (delete, confirm only), `src/js/main.js:1449-1452` (undoRestore exists).
 - User engagement and inclusivity: gap. The interface is hard-locked to a dark scheme, and a light
   preference changes nothing. Measured: under emulated `prefers-color-scheme: light` the body
   background stays `rgb(15, 17, 21)` and the two screenshots are byte-identical.
