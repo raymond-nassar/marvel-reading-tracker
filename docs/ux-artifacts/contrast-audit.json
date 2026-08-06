@@ -1,0 +1,171 @@
+{
+  "criterion": "WCAG 2.2 1.4.3 Contrast (Minimum), Level AA",
+  "method": "WCAG relative-luminance formula computed from literal hex values in src/styles.css; opacity rules composited against the stated backdrop",
+  "note": "Computed from source values, not sampled from a rendered page.",
+  "totalSamples": 18,
+  "failingSamples": 6,
+  "results": [
+    {
+      "sample": "--text #eef1f6 on --bg (body copy)",
+      "fontPx": 15,
+      "largeText": false,
+      "ratio": 16.69,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": true
+    },
+    {
+      "sample": "--dim #c6cdda on --card (.desc hero synopsis, .93rem)",
+      "fontPx": 14.9,
+      "largeText": false,
+      "ratio": 10.91,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": true
+    },
+    {
+      "sample": "--muted #8d95a6 on --bg (.rail-hint .8rem, .result-meta .76rem)",
+      "fontPx": 12.2,
+      "largeText": false,
+      "ratio": 6.28,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": false
+    },
+    {
+      "sample": "--muted #8d95a6 on --rail (.ri rail buttons .875rem)",
+      "fontPx": 14,
+      "largeText": false,
+      "ratio": 6.47,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": false
+    },
+    {
+      "sample": "--muted #8d95a6 on --card-2 (.result-meta in results)",
+      "fontPx": 12.2,
+      "largeText": false,
+      "ratio": 5.43,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": false
+    },
+    {
+      "sample": "--green #43c088 on --bg (.badge-expected .68rem)",
+      "fontPx": 10.9,
+      "largeText": false,
+      "ratio": 8.22,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": true
+    },
+    {
+      "sample": "--amber #eab654 on --bg (.badge-scheduled .68rem)",
+      "fontPx": 10.9,
+      "largeText": false,
+      "ratio": 10.18,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": true
+    },
+    {
+      "sample": "--blue #7fb3ff on --bg (links)",
+      "fontPx": 15,
+      "largeText": false,
+      "ratio": 8.81,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": true
+    },
+    {
+      "sample": "#ff8a8a on --bg (.badge-override-unavailable)",
+      "fontPx": 10.9,
+      "largeText": false,
+      "ratio": 8.33,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": true
+    },
+    {
+      "sample": "#ff9d9d on --bg (.notice-error)",
+      "fontPx": 13.4,
+      "largeText": false,
+      "ratio": 9.5,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": true
+    },
+    {
+      "sample": "--red #e23636 on --bg (.eyebrow \"Read this next\" .68rem BOLD 800)",
+      "fontPx": 10.9,
+      "largeText": false,
+      "ratio": 4.33,
+      "requiredAA": 4.5,
+      "passesAA": false,
+      "passesAAA": false
+    },
+    {
+      "sample": "#fff on --red #e23636 (.btn primary label .92rem w620)",
+      "fontPx": 14.7,
+      "largeText": false,
+      "ratio": 4.36,
+      "requiredAA": 4.5,
+      "passesAA": false,
+      "passesAAA": false
+    },
+    {
+      "sample": "ROW READ-STATE: --text at 48% opacity on --bg (.row.is-read .rt)",
+      "fontPx": 14.2,
+      "largeText": false,
+      "ratio": 4.57,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": false
+    },
+    {
+      "sample": "ROW READ-STATE: --muted at 48% opacity on --bg (.row.is-read .rm meta)",
+      "fontPx": 12.2,
+      "largeText": false,
+      "ratio": 2.34,
+      "requiredAA": 4.5,
+      "passesAA": false,
+      "passesAAA": false
+    },
+    {
+      "sample": "ROW READ-STATE: --green at 48% opacity on --bg (.row.is-read badge)",
+      "fontPx": 10.9,
+      "largeText": false,
+      "ratio": 2.75,
+      "requiredAA": 4.5,
+      "passesAA": false,
+      "passesAAA": false
+    },
+    {
+      "sample": "ROW READ-STATE: --muted at 48% on --bg (.row.is-read .mini action labels)",
+      "fontPx": 11.8,
+      "largeText": false,
+      "ratio": 2.34,
+      "requiredAA": 4.5,
+      "passesAA": false,
+      "passesAAA": false
+    },
+    {
+      "sample": ".tile .lab --muted on --bg (shelf caption .75rem)",
+      "fontPx": 11.4,
+      "largeText": false,
+      "ratio": 6.28,
+      "requiredAA": 4.5,
+      "passesAA": true,
+      "passesAAA": false
+    },
+    {
+      "sample": "kbd 75% white on --red (hero shortcut hint .72rem)",
+      "fontPx": 11.5,
+      "largeText": false,
+      "ratio": 3.03,
+      "requiredAA": 4.5,
+      "passesAA": false,
+      "passesAAA": false
+    }
+  ]
+}

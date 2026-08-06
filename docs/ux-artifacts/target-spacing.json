@@ -1,0 +1,95 @@
+{
+  "totalRowTargets": 140,
+  "undersizedCount": 60,
+  "groups": {
+    "cb": {
+      "count": 20,
+      "minW": 17,
+      "minH": 17
+    },
+    "mini": {
+      "count": 100,
+      "minW": 22,
+      "minH": 26
+    },
+    "mini mini-danger": {
+      "count": 20,
+      "minW": 26.1,
+      "minH": 26
+    }
+  },
+  "detail": [
+    {
+      "target": "Mark House of M (2005) #1 as read",
+      "cls": "cb",
+      "w": 17,
+      "h": 17,
+      "nearestTargetCentreDistance": 69.3,
+      "nearestTarget": "Mark House of M (2005) #2 as read",
+      "spacingExceptionMet": true
+    },
+    {
+      "target": "Move House of M (2005) #1 up",
+      "cls": "mini",
+      "w": 22,
+      "h": 26,
+      "nearestTargetCentreDistance": 26,
+      "nearestTarget": "Move House of M (2005) #1 down",
+      "spacingExceptionMet": true
+    },
+    {
+      "target": "Move House of M (2005) #1 down",
+      "cls": "mini",
+      "w": 22,
+      "h": 26,
+      "nearestTargetCentreDistance": 26,
+      "nearestTarget": "Move House of M (2005) #1 up",
+      "spacingExceptionMet": true
+    },
+    {
+      "target": "Mark House of M (2005) #2 as read",
+      "cls": "cb",
+      "w": 17,
+      "h": 17,
+      "nearestTargetCentreDistance": 69.3,
+      "nearestTarget": "Mark House of M (2005) #1 as read",
+      "spacingExceptionMet": true
+    },
+    {
+      "target": "Move House of M (2005) #2 up",
+      "cls": "mini",
+      "w": 22,
+      "h": 26,
+      "nearestTargetCentreDistance": 26,
+      "nearestTarget": "Move House of M (2005) #2 down",
+      "spacingExceptionMet": true
+    },
+    {
+      "target": "Move House of M (2005) #2 down",
+      "cls": "mini",
+      "w": 22,
+      "h": 26,
+      "nearestTargetCentreDistance": 26,
+      "nearestTarget": "Move House of M (2005) #2 up",
+      "spacingExceptionMet": true
+    },
+    {
+      "target": "Mark Spider-Man: House of M (2005) #1 as rea",
+      "cls": "cb",
+      "w": 17,
+      "h": 17,
+      "nearestTargetCentreDistance": 69.3,
+      "nearestTarget": "Mark House of M (2005) #2 as read",
+      "spacingExceptionMet": true
+    },
+    {
+      "target": "Move Spider-Man: House of M (2005) #1 up",
+      "cls": "mini",
+      "w": 22,
+      "h": 26,
+      "nearestTargetCentreDistance": 26,
+      "nearestTarget": "Move Spider-Man: House of M (2005) #1 down",
+      "spacingExceptionMet": true
+    }
+  ]
+}

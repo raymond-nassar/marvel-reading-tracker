@@ -1,0 +1,26 @@
+{
+  "axeVersion": "4.12.1",
+  "url": "http://127.0.0.1:8899/",
+  "counts": {
+    "violations": 1,
+    "incomplete": 1
+  },
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "nodes": 9,
+      "first": ".is-read.row:nth-child(1) > div:nth-child(3) > .rm > span:nth-child(1)"
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "nodes": 26,
+      "first": ".mark"
+    }
+  ]
+}
