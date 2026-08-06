@@ -660,15 +660,20 @@ nothing about this item in either direction. It had to be measured deliberately,
 does it now walks all five variants instead of only the one that happens to render in the seeded
 list.
 
-One thing found on the way: correcting the line numbers this comment shifted exposed three
-evidence anchors in `docs/UX_STUDY.md` that were already wrong before it. All three cited lines
-383-385 or 383-390 of `src/styles.css`, which as that file stood at `a29aa8b` were the `.result`
-card rules rather than anything to do with motion. They now point at the progress-ring transition
-at `src/styles.css:149` and the preference queries at `src/styles.css:448-455`. Those stale
-numbers are deliberately written without the usual anchor backticks: they are a historical
-citation rather than live evidence, and in the anchor form a checker would resolve them against
-today's file and report them as healthy. That is the same weakness that let them rot in the first
-place, since a range that resolves is not necessarily a range that says what the sentence claims.
+One thing found on the way: correcting the line numbers this comment shifted drew attention to
+three evidence anchors in `docs/UX_STUDY.md` that had rotted. All three cited lines 383-385 or
+383-390 of `src/styles.css`. Those numbers were right when the audit took them, against `b18fc47`,
+where they were the reduced-motion query and the pair of preference queries. Shipping the top of
+the backlog at `e6d27c4` grew that file from 409 lines to 450 and pushed those rules down without
+changing them, and the study was written up afterwards still carrying the pre-ship numbers, so by
+the time it was committed at `240e6d3` the same ranges landed on the `.result` card rules. They
+were repaired at `1e3fb64` and shifted once more by this comment, so they now point at the
+progress-ring transition at `src/styles.css:149` and the preference queries at
+`src/styles.css:448-455`. Those stale numbers are deliberately written without the usual anchor
+backticks: they are a historical citation rather than live evidence, and in the anchor form a
+checker would resolve them against today's file and report them as healthy. That is the weakness
+that let them rot, since a range that resolves is not necessarily a range that says what the
+sentence claims.
 
 ## Existing epics and stories
 
@@ -947,7 +952,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
 - Appropriateness recognisability and learnability: good. Labels are written in plain English and
   the availability wording is careful to hedge. Evidence: `src/js/main.js:607-612`.
 - Operability: gap. Row actions sit at `opacity: 0` until hover or focus-within, so on a touch
-  device they are invisible until tapped. Evidence: `src/styles.css:345-352`.
+  device they are invisible until tapped. Evidence: `src/styles.css:369-376`.
 - User error protection: gap. Deleting a list is guarded only by a native `confirm()` and cannot be
   undone afterwards, while restoring a backup does have an undo. Evidence:
   `src/js/main.js:335-342` (delete, confirm only), `src/js/main.js:1449-1452` (undoRestore exists).
@@ -999,7 +1004,7 @@ The clearest debt in the repository, and it is concentrated in one file.
   Evidence: `scripts/vendor-index.mjs:40-54`, `scripts/vendor-orders.mjs:48-62`.
 - Minor analysability gap: the `.row` class carries two unrelated meanings, a reading row and a form
   row, and a leftover empty rule sits between them. Evidence: `src/styles.css:304-307`,
-  `src/styles.css:372-373`.
+  `src/styles.css:396-397`.
 
 #### 8. Flexibility
 
@@ -1097,7 +1102,7 @@ intent that no one stated.
 - What a human should settle: whether a measured 93 pixel horizontal overflow at 320 pixels, plus
   row actions that only appear on hover, plus a mobile layout that has never once shipped because
   its rule is dead, together constitute a P0. Evidence: `docs/ux-artifacts/viewport-sweep-reading.json`,
-  `src/styles.css:345-352`, `src/styles.css:81-84`. The original document's own framing supports
+  `src/styles.css:369-376`, `src/styles.css:81-84`. The original document's own framing supports
   raising it: it describes reading "beside Marvel Unlimited", which is a phone-and-tablet posture.
 
 ### Case 4: nine items created this pass outrank the only open P0 story
