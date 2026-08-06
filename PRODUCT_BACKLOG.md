@@ -684,6 +684,15 @@ claims. It is also why the 24 lines this comment adds were re-derived against ev
 them and confirmed by reading the code each one lands on, rather than trusted to a checker that
 only asks whether the range exists.
 
+The doc-internal anchors are that weakness squared, and one survived every sweep above. This
+document's own out-of-scope list was cited from `docs/UX_STUDY.md` as lines 683-686 of this file,
+and that citation was never correct: at `240e6d3`, the commit that first carried the study, 683-686
+was the EP-05 heading and the out-of-scope list began at 794. It was wrong on arrival rather than
+rotted, which is the harder case, and it survived because a range into a Markdown file that is
+always present and always long resolves cleanly forever while naming nothing related. It also fell
+outside the eleven-anchor sweep, which followed anchors into code files only. A sweep that would
+catch this has to check identity rather than resolution, with `.md` targets in scope.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
