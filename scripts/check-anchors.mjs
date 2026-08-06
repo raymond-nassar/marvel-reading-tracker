@@ -340,6 +340,30 @@ if (raw === null) {
 }
 const lock = JSON.parse(raw);
 
+// Assert the lock's shape before comparing anything against it. Without this, a lock
+// written by a different version of this script compares every real fingerprint against
+// undefined and reports drift. That message is loud but wrong in kind: it says N claims
+// moved when the truth is that the lock cannot be read, and it sends the reader hunting
+// for code movements that never happened. A partial mismatch is the dangerous one, since
+// "216 unchanged, 2 drifted" is an ordinary-looking result that invites exactly that hunt.
+{
+  const entries = Object.entries(lock);
+  const malformed = entries.filter(
+    ([, v]) => !v || typeof v.fp !== 'string' || typeof v.anchor !== 'string',
+  );
+  if (entries.length && malformed.length) {
+    console.error(
+      `FATAL: cannot read ${LOCK}. ${malformed.length} of ${entries.length} entr(ies) lack a ` +
+        'string "fp" or "anchor", so this lock was written by a different version of this ' +
+        'script. Refusing to compare, because every comparison would report drift that has ' +
+        'not happened. Re-bless, or check out a matching lock.',
+    );
+    for (const [k] of malformed.slice(0, 4)) console.error(`  ${k}`);
+    if (malformed.length > 4) console.error(`  ... and ${malformed.length - 4} more`);
+    process.exit(2);
+  }
+}
+
 let unchanged = 0;
 const drifted = [];
 const unkeyed = [];

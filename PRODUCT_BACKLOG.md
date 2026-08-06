@@ -861,6 +861,15 @@ and one file, and it did not remove it. The removed list is the reliable half of
 drift reported alongside a removal in the same bucket should be confirmed against the code before it
 is treated as movement.
 
+A guard can also be loud and wrong about what it is loud about. Renaming the lock's fingerprint
+field used to report all 218 anchors as drifted, when the truth was that the lock could not be read,
+and the reader is sent hunting for code movements that never happened. The partial version is the
+dangerous one: two entries missing the field reported `216 unchanged, 2 drifted`, which is an
+ordinary-looking result nobody would question. The lock's shape is now asserted before anything is
+compared, so a lock this script cannot read is refused rather than described as movement. That a
+failure is caught says nothing about whether it is diagnosed, and a plausible number is what stops
+you looking.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
