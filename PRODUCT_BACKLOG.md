@@ -115,7 +115,7 @@ remaining and is not scored.
 | 3.1 | BL-009 | P0 | parseChecklist and the import report at `src/js/main.js:922-975`, `src/js/lib/markdown.js:36-99` | Done |
 | 3.2 | BL-010 | P1 | unresolvedRow offers search, auto-accepts a unique exact match, else lists candidates with series and date at `src/js/main.js:983-1045` | Done |
 | 3.3 | BL-011 | P1 | series and creator adds at `src/js/main.js:884-902`, manual issue add at `src/js/main.js:1047-1091` | Done |
-| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:353-358`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:139` | Done |
+| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:352-372`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:139` | Done |
 | 4.1 | BL-013 | P0 | renderRail marks the active list with `aria-current` and a progress bar at `src/js/main.js:299-324` | Done |
 | 4.2 | BL-014 | P1 | seriesProgress is called on the whole state with no list filter at `src/js/main.js:1397-1415`, and the view states it counts across every list at `src/index.html:194-196` | Partial |
 | 4.3 | BL-015 | P1 | all four named filters plus All at `src/index.html:180-184`, applied without touching stored order at `src/js/main.js:622-632` | Done |
@@ -719,21 +719,43 @@ story ID never matched it. Twenty-five further anchors were stale across forty-o
 that table, in the table-stakes rows below it, and in the personas and journeys of
 `docs/UX_STUDY.md`.
 
-The mechanism behind most of them is worth separating from ordinary drift, because it disguises
-itself as maintenance. `e6d27c4` inserted eight lines above that region and left the anchors stale.
-A later commit then applied a correct adjustment of one line, for the import added to
-`src/js/main.js`, to numbers that were already eight lines out. What that leaves is an anchor
-carrying a recent, deliberate and correct-looking edit, so any check asking whether the anchor has
-been maintained answers yes, and a history search on the anchor string shows a considered update
-rather than neglect. A correct delta applied to an incorrect base hides better than plain neglect.
+The mechanism behind most of them is not drift at all, and the difference changes the prevention.
+These anchors were never correct in any commit that contained them. `docs/UX_STUDY.md` was added at
+`240e6d3`, and the story-verification table was written in the same commit, but both were measured
+against the working tree at `b18fc47`. In between, `e6d27c4` had already moved `src/js/main.js` by
+fourteen lines and `src/styles.css` by forty-one, and `240e6d3` touches neither file, so the
+citations were stale the moment they were committed. `src/js/main.js:606-611` shows it plainly: at
+`b18fc47` those lines are the `SHORT_LABEL` declaration the row claims, and at `240e6d3`, where the
+row was born, they are `]));`.
 
-Two cautions came out of the repair. The offset is not uniform: most of `src/js/main.js` had moved
-by eight lines, but the filter predicate had moved by nine, so applying a single delta across a
-file reintroduces the same defect somewhere else. And resolution stays a weak test even for code
+That inverts the obvious reading. `e6d27c4` did not invalidate correct anchors, it landed before
+the anchors existed. So the prevention is not to re-check anchors after changing code, because the
+code had already changed. It is to derive anchors against the tree being committed rather than the
+tree that was measured, which is the rule about deriving anchors only once the prose is final,
+extended from prose to code.
+
+A later commit then made the damage harder to see. `a29aa8b` applied a correct one-line adjustment
+to numbers that were already eight lines out, so the anchors came to carry a recent, deliberate and
+correct-looking edit. Any check asking whether an anchor has been maintained answers yes, and a
+history search on the anchor string shows a considered update rather than neglect. A correct delta
+applied to an incorrect base hides better than plain neglect, and it is why three successive sweeps
+each asked what had changed since the anchor was written, found the one-line adjustment, and left
+the eight lines underneath in place.
+
+Two cautions came out of the repair. The offset is not uniform: most of the cited regions had moved
+by eight lines, but the filter predicate had moved by nine, and the file as a whole had moved by
+ten, so applying a single delta across a file reintroduces the same defect somewhere else. And resolution stays a weak test even for code
 targets. Two anchors cited for inconsistent error surfaces resolved to real statements and were
 still wrong, because the claim is about `alert()` call sites while the lines they named held a
 variable assignment and a constant. Locating all three `alert()` sites and reading them is what
 settled those two.
+
+One anchor survived even that pass, and it failed on extent rather than on position. The
+duplicate-list story cited a six-line range holding only the handler's setup, with the
+`duplicateList` call and the shared-progress announcement both outside it. It resolves onto real
+code and reads as precise, which is why every resolution check passed it, and it now cites the
+whole handler. Extent is the property automated checking is worst at, because a wrong extent is
+indistinguishable from a deliberately narrow one.
 
 ## Existing epics and stories
 
