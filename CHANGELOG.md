@@ -21,7 +21,8 @@ quote in a bug report.
   the app's own live region, blocked the page, and on a browser told to suppress them a rename
   silently did nothing while a deletion was answered for you. Curated import failures are
   reported next to the catalog rather than in an `alert()`, so the reason and the thing it is
-  about can be read together.
+  about can be read together, and the notice appears wherever the reader is rather than in a
+  view they may have already left.
 
 ### Fixed
 

@@ -197,7 +197,7 @@
                 <h2 id="home-cat-h">Reading orders</h2>
                 <button type="button" class="linkish" id="home-see-all" hidden></button>
               </div>
-              <div id="home-cat-report"></div>
+              <div id="home-cat-report" class="report"></div>
 
               <fieldset class="filters" id="home-chips" hidden>
                 <legend class="visually-hidden">Filter reading orders</legend>
@@ -347,7 +347,7 @@
             <div class="head"><div class="head-left"><h1 id="catalog-h">Reading list catalog</h1>
               <div class="sub">Curated orders bundled with the app. Importing one creates a new list; issues you have already read stay read.</div>
             </div></div>
-            <div id="catalog-report"></div>
+            <div id="catalog-report" class="report"></div>
             <form id="form-catalog-search" class="stack" role="search">
               <label for="catalog-q">Search the catalog by title or character</label>
               <div class="row">
@@ -585,6 +585,11 @@
       <p class="result-meta" id="preview-meta"></p>
       <p class="rail-hint" id="preview-desc"></p>
       <div id="preview-body"></div>
+      <!-- Adding an order can fail while this dialog is still open. A modal puts the rest
+           of the page in another layer, inert and behind the backdrop, so the pane the
+           catalog would normally use cannot be read. notify() prefers a .report inside
+           the open dialog for that reason. -->
+      <div id="preview-report" class="report"></div>
       <div class="preview-foot">
         <div id="preview-add"></div>
         <span class="grow"></span>

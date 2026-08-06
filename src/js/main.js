@@ -162,14 +162,43 @@ function isLive(node) {
   return false;
 }
 
+// alert() reached the reader wherever they were; a pane fixed in one view does not. With
+// a curated import in flight, three ways the named pane went unseen were measured: the
+// reader switched view, so the pane was inside a hidden one and nothing appeared at all;
+// the preview dialog was still open, so the pane sat behind its backdrop and outside the
+// top layer; and the grid was scrolled, so the pane was 87px above the viewport. The pane
+// is therefore chosen when the message is written rather than when the work started.
+function paneFor(sel) {
+  const asked = $(sel);
+  // Every dialog in this app is opened with showModal(), so an open one is the top layer
+  // and anything behind it is inert and dimmed regardless of where it sits on the page.
+  const modal = $('dialog[open]');
+  if (modal) return modal.querySelector('.report') || asked;
+  // offsetParent is null only when an ancestor is display:none, which is how a view that
+  // is not the current one is hidden.
+  if (asked?.offsetParent) return asked;
+  return [...document.querySelectorAll('.report')].find((n) => n.offsetParent) || asked;
+}
+
+// The pane that received a message is remembered because it may not be the one the caller
+// named, and clearing only the named pane would leave a stale failure on screen beside the
+// success that replaced it.
+const noticeShown = new Map();
+
 function notify(sel, msg, kind = 'ok') {
-  const box = $(sel);
+  const box = paneFor(sel);
   if (!box) return;
+  noticeShown.set(sel, box);
   box.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
+  // Nothing else scrolls a pane into view, and "nearest" is a no-op once it is fully
+  // visible, so this moves the page only when the message would otherwise be missed.
+  box.scrollIntoView?.({ block: 'nearest' });
   if (!isLive(box)) announce(msg);
 }
 
 function clearNotice(sel) {
+  noticeShown.get(sel)?.replaceChildren();
+  noticeShown.delete(sel);
   $(sel)?.replaceChildren();
 }
 
@@ -415,6 +444,22 @@ async function newEmptyList() {
 // Moving focus to the new view's heading is what makes the rail usable with a keyboard or a
 // screen reader. Without it, focus stays on the rail button and the view change is silent, so
 // the next Tab continues from the old position and nothing announces where you now are.
+// A notice can be written and then stranded, because the reader can leave the view while a
+// curated import is still in flight and 219-issue orders make that window real. Moving the
+// message rather than dropping it matters because what it describes, an import that did not
+// happen, is still true after the view changes.
+function rehomeNotices() {
+  const panes = [...document.querySelectorAll('.report')];
+  const target = panes.find((n) => n.offsetParent);
+  if (!target) return;
+  for (const pane of panes) {
+    if (pane === target || pane.offsetParent || !pane.childElementCount) continue;
+    target.append(...pane.childNodes);
+    for (const [sel, box] of noticeShown) if (box === pane) noticeShown.set(sel, target);
+    target.scrollIntoView?.({ block: 'nearest' });
+  }
+}
+
 function showView(next, { focus = true } = {}) {
   // There is nothing to read without an active list, so the reading view hands over to the
   // landing page rather than showing an empty frame with a heading over it.
@@ -432,6 +477,8 @@ function showView(next, { focus = true } = {}) {
   if (next === 'catalog') renderCatalog();
   if (next === 'home') renderHome();
   window.scrollTo({ top: 0 });
+  // After the scroll to the top, so that bringing a moved notice into view is not undone.
+  rehomeNotices();
 
   if (!focus) return;
   const section = $(`#view-${next}`);
@@ -828,7 +875,7 @@ function wirePreview() {
   $('#preview').addEventListener('click', (e) => {
     if (e.target === $('#preview')) $('#preview').close();
   });
-  $('#preview').addEventListener('close', () => { previewList = null; });
+  $('#preview').addEventListener('close', () => { previewList = null; rehomeNotices(); });
 }
 
 async function openPreview(list) {
