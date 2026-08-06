@@ -853,6 +853,14 @@ in silently and reported a clean run. The gate caught it on the next edit, which
 outcome available. Bless as the last action, with nothing edited after it, and read the check that
 follows rather than the bless that preceded it.
 
+One report needs reading with care. Ordinals are positional within a section and a file, so deleting
+a citation renumbers the ones after it in the same bucket. Removing a single prose line carrying two
+citations is reported as two removed and one drifted, and that one drift has not moved: it inherited
+a lower ordinal. Making keys local shrank the blast radius from the whole document to one section
+and one file, and it did not remove it. The removed list is the reliable half of that pair, and a
+drift reported alongside a removal in the same bucket should be confirmed against the code before it
+is treated as movement.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
