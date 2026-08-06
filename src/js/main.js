@@ -38,6 +38,13 @@ const HOME_FILTER_THRESHOLD = 12;
 // Below this viewport width the rail collapses on its own; a manual toggle then wins until
 // the breakpoint is crossed again.
 const RAIL_BREAKPOINT = 1000;
+// What the hero's heading says when there is no next issue to name. The hero is hidden in
+// that state, so this is never read aloud or seen; it exists so the heading is never empty.
+// It has to match the text in index.html, which is what the document starts out holding.
+const HERO_NO_ISSUE = 'Nothing up next';
+// The same for the landing page's continue card, whose heading also names its section. Both
+// have to match the text index.html starts out holding.
+const CONTINUE_NO_LIST = 'Continue reading';
 
 const $ = (sel) => document.querySelector(sel);
 const announcer = $('#announcer');
@@ -134,11 +141,26 @@ function announceIfSaved(msg) {
   if (store.lastUpdateOk) announce(msg);
 }
 
+// A message goes down exactly one channel. Writing into a container that is itself a live
+// region and also copying the text into the announcer made a screen reader say everything
+// twice, so the announcer is used only where the message has no live surface of its own.
+//
+// This is decided by reading the container rather than from a list of ids kept here, so
+// marking a container as a live region later cannot quietly reintroduce the double-speak.
+function isLive(node) {
+  for (let n = node; n && n.getAttribute; n = n.parentElement) {
+    const live = n.getAttribute('aria-live');
+    if (live && live !== 'off') return true;
+    if (['alert', 'status', 'log'].includes(n.getAttribute('role'))) return true;
+  }
+  return false;
+}
+
 function notify(sel, msg, kind = 'ok') {
   const box = $(sel);
   if (!box) return;
   box.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
-  announce(msg);
+  if (!isLive(box)) announce(msg);
 }
 
 function loadSettings() {
@@ -511,7 +533,12 @@ function renderContinue(populated) {
   const id = activeListId();
   const list = store.state.lists[id];
   sec.hidden = !populated || !list;
-  if (sec.hidden) return;
+  // Hidden rather than emptied, so the heading keeps text. It labels this section, so an
+  // empty one costs the section its name too.
+  if (sec.hidden) {
+    $('#chero-h').textContent = CONTINUE_NO_LIST;
+    return;
+  }
 
   const { read, total } = listProgress(store.state, id);
   const issue = upNext(store.state, id);
@@ -947,7 +974,13 @@ function renderHero() {
   $('#hero').hidden = finished;
   $('#all-read').hidden = !finished;
   $('#shelf-sec').hidden = finished;
-  if (finished) return;
+  // The hero is hidden rather than emptied, so its heading has to be given text back. A
+  // heading with no content fails whether or not it is on screen, and the tools that say so
+  // read the document, not what is painted.
+  if (finished) {
+    $('#hero-title').textContent = HERO_NO_ISSUE;
+    return;
+  }
 
   const override = store.state.overrides[issue.issueId];
   const av = availability(issue, { override });
@@ -1090,12 +1123,19 @@ function renderRows() {
         el('div', { class: 'rt', text: item.title }),
         el('div', { class: 'rm' }, [
           item.seriesName ? el('span', { text: seriesOnly(item.seriesName) }) : null,
-          el('span', {
-            class: `badge ${badgeClass}`,
-            title: describe(item, { override }),
-          }, `${SHORT[av.state]} ${av.state === STATE.EXPECTED ? 'Unlimited' : SHORT_LABEL[av.state] ?? 'unknown'}`),
+          // The full availability wording is text inside the badge, not a title attribute.
+          // A title is not reachable by touch, is skipped by several screen readers, and
+          // here it was the only place the hedge behind a two-word badge was written down,
+          // so "Not in Unlimited" read as a fact rather than as what the snapshot shows.
+          el('span', { class: `badge ${badgeClass}` }, [
+            `${SHORT[av.state]} ${av.state === STATE.EXPECTED ? 'Unlimited' : SHORT_LABEL[av.state] ?? 'unknown'}`,
+            el('span', { class: 'visually-hidden', text: `. ${describe(item, { override })}.` }),
+          ]),
           !item.hydrated && item.source !== 'manual'
-            ? el('span', { class: 'badge badge-pending', title: 'Details not fetched yet' }, 'details pending')
+            ? el('span', { class: 'badge badge-pending' }, [
+              'details pending',
+              el('span', { class: 'visually-hidden', text: '. Details have not been fetched yet.' }),
+            ])
             : null,
           item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,
           ymd(item.onSale) ? el('span', { text: ymd(item.onSale) }) : null,

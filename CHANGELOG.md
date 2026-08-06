@@ -12,6 +12,17 @@ upgrading across a MAJOR.
 Releases are tagged `v<version>`. The version shown under **About this app** is the one to
 quote in a bug report.
 
+## Unreleased
+
+### Fixed
+
+- Screen readers no longer say every change twice. Six result panes were live regions that also
+  copied their summary to the announcer, so both were read; now each message goes down exactly
+  one channel. Three headings that were empty until something rendered into them carry text from
+  the start, one of which also names its section. The availability wording moved out of a `title`
+  attribute, which touch users cannot reach and several screen readers skip, into text inside the
+  badge.
+
 ## 1.0.0
 
 The first tracked release. Everything before this point is in the git history but was never
