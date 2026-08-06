@@ -15,7 +15,7 @@ import { compareIssues } from './lib/sort.js';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
-  catalogCoverUrl, readingTimeLabel, MINUTES_PER_ISSUE,
+  catalogCoverUrl, readingTimeLabel,
 } from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -298,7 +298,7 @@ function wireSidebar() {
     // A narrow window has no room for the full sidebar, so it always collapses. Widening
     // restores what the reader chose rather than assuming they want it open, so dragging a
     // window wide does not undo a deliberate collapse.
-    setRailed(isNarrow ? true : (loadRailed() ?? false));
+    setRailed(isNarrow || (loadRailed() ?? false));
   });
 
   wireRailTips();
@@ -561,10 +561,10 @@ function renderYours(populated) {
       'aria-label': `Open ${list.name}, ${read} of ${total} issues read`,
       onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
     }, [
-      el('span', { class: 'yn', text: list.name }),
+      el('span', { class: 'yours-name', text: list.name }),
       el('span', { class: 'pbar', 'aria-hidden': true }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
       // Repeated as text because a bar alone conveys progress by shape only.
-      el('span', { class: 'yc', text: `${read} / ${total}` }),
+      el('span', { class: 'yours-count', text: `${read} / ${total}` }),
     ]));
   }));
 }
@@ -796,7 +796,7 @@ async function openPreview(list) {
   const readingTime = readingTimeLabel(list.count);
   $('#preview-meta').textContent = [
     `${list.count} issue${list.count === 1 ? '' : 's'}`,
-    readingTime ? `${readingTime} at ${MINUTES_PER_ISSUE} minutes an issue` : null,
+    readingTime,
     depthLabel(list.depth),
   ].filter(Boolean).join(' · ');
   $('#preview-desc').textContent = list.description || '';

@@ -577,7 +577,7 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 }
 .yours button:hover { border-color: var(--line-2); background: var(--card-2); }
 .yours .yt { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
-.yours .yn { color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.yours .yours-name { color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ---------------------------------------------------------- catalog cards */
 
