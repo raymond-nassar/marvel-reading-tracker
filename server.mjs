@@ -32,10 +32,13 @@ const TYPES = {
 // src/ loads from a file for exactly that reason, so no inline allowance is needed.
 //
 // `connect-src` and `img-src` are deliberately wider than the default endpoint. The API
-// base is user-configurable at runtime (see main.js), and src/open.js accepts any https
-// origin or loopback, so pinning this to marvel.emreparker.com would silently break
-// anyone pointing the app at their own mirror. Restricting the scheme still rules out
-// plaintext http to arbitrary hosts. Covers can come from whatever host the configured
+// base is user-configurable at runtime, and the rule for what is accepted lives in
+// src/js/lib/apiBase.js: any https origin, or plain http to loopback. Pinning this to
+// marvel.emreparker.com would silently break anyone pointing the app at their own mirror.
+// Restricting the scheme still rules out plaintext http to arbitrary hosts. The loopback
+// entries here have to stay in step with that module, or a base the settings form accepts
+// would be blocked at fetch time with no obvious explanation. Covers can come from
+// whatever host the configured
 // API names, and the favicon in index.html is a data: SVG.
 const CSP = [
   "default-src 'self'",

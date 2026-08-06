@@ -23,6 +23,7 @@ import { RateLimiter } from './lib/limiter.js';
 import { Hydrator } from './hydrate.js';
 import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
+import { isAllowedApiBase } from './lib/apiBase.js';
 
 const SETTINGS_KEY = 'mrt.settings';
 const RING_CIRCUMFERENCE = 94.2; // 2πr for r=15, matching the SVG in index.html
@@ -1461,13 +1462,8 @@ function wireData() {
   $('#form-settings').addEventListener('submit', (e) => {
     e.preventDefault();
     const value = $('#api-base').value.trim().replace(/\/+$/, '');
-    try {
-      const u = new URL(value);
-      if (u.protocol !== 'https:' && u.hostname !== '127.0.0.1' && u.hostname !== 'localhost') {
-        throw new Error('Use https, or a local address.');
-      }
-    } catch (err) {
-      return notify('#restore-report', `That API URL is not usable: ${err.message}`, 'error');
+    if (!isAllowedApiBase(value)) {
+      return notify('#restore-report', 'That API URL is not usable: use https, or http against localhost.', 'error');
     }
     settings.apiBase = value;
     saveSettings();

@@ -14,6 +14,12 @@
 // Content-Security-Policy with `script-src 'self'`. That is the directive that stops a
 // compromised or hostile metadata response from executing script it smuggled into a
 // title or description, so it is worth keeping strict enough to be meaningful.
+//
+// Loaded as a module so it can share the API base rule with the app rather than keeping
+// a second copy of it. open.html loads it at the end of <body>, and module scripts are
+// deferred, so the elements looked up below are parsed by the time this runs.
+
+import { isAllowedApiBase } from './js/lib/apiBase.js';
 
 const q = new URLSearchParams(location.search);
 const digits = (v) => (/^\d{1,12}$/.test(v || '') ? v : null);
@@ -42,8 +48,7 @@ function apiBase() {
   try {
     const raw = JSON.parse(localStorage.getItem('mrt.settings') || '{}');
     const base = String(raw.apiBase || 'https://marvel.emreparker.com/v1').replace(/\/+$/, '');
-    const u = new URL(base);
-    if (u.protocol !== 'https:' && u.hostname !== '127.0.0.1' && u.hostname !== 'localhost') return null;
+    if (!isAllowedApiBase(base)) return null;
     return base;
   } catch {
     return null;
