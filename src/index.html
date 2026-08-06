@@ -12,41 +12,97 @@
     <a class="skip-link" href="#main">Skip to main content</a>
     <div id="announcer" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <div class="shell">
+    <div class="shell" id="shell">
       <!-- ================================================== rail -->
-      <aside class="rail">
-        <div class="brand"><span class="mark" aria-hidden="true">M</span><b>Reading&nbsp;Tracker</b></div>
-
-        <nav aria-labelledby="rail-orders">
-          <h2 id="rail-orders" class="rail-h">Reading orders</h2>
-          <ul id="list-nav" class="rail-list"></ul>
-          <p id="no-lists" class="rail-hint">
-            Nothing yet. Browse the catalog below to start.
-          </p>
-        </nav>
-
-        <h2 class="rail-h">Start from</h2>
-        <button type="button" class="ri ri-action" data-view="catalog">
-          Browse the catalog <span class="ri-sub">curated reading orders</span>
-        </button>
-        <button type="button" class="ri ri-action" id="btn-new-list">
-          New empty list
+      <!--
+        Collapsed, this becomes a 48px icon rail rather than disappearing, so every
+        destination stays one click away. The labels are never removed from the DOM: in
+        rail mode they become the tooltip, which keeps each button's accessible name a
+        real string instead of a glyph. See docs/ux/sidebar-flow.md.
+      -->
+      <aside class="rail" id="sidebar">
+        <button type="button" class="rail-toggle" id="btn-rail-toggle"
+                aria-expanded="true" aria-controls="sidebar-nav" aria-label="Toggle sidebar">
+          <span class="gi" aria-hidden="true">&#xE700;</span>
         </button>
 
-        <nav aria-labelledby="rail-nav">
-          <h2 id="rail-nav" class="rail-h">Library</h2>
-          <button type="button" class="ri" data-view="progress">Progress by series</button>
+        <button type="button" class="brand" data-view="home">
+          <span class="mark" aria-hidden="true">M</span>
+          <b class="lbl">Reading&nbsp;Tracker</b>
+        </button>
 
-          <h2 class="rail-h">Add issues</h2>
-          <button type="button" class="ri" data-view="add" data-open="sec-search">Search issues</button>
-          <button type="button" class="ri" data-view="add" data-open="sec-series">Add a whole series</button>
-          <button type="button" class="ri" data-view="add" data-open="sec-creator">Browse a creator</button>
-          <button type="button" class="ri" data-view="add" data-open="sec-import">Paste a reading order</button>
-          <button type="button" class="ri" data-view="add" data-open="sec-manual">Add an issue by hand</button>
+        <nav id="sidebar-nav" aria-label="Main">
+          <div class="nav-group">
+            <h2 id="rail-orders" class="rail-h">Reading orders</h2>
+            <ul id="list-nav" class="rail-list" aria-labelledby="rail-orders"></ul>
+            <p id="no-lists" class="rail-hint">
+              Nothing yet. Browse the catalog below to start.
+            </p>
+          </div>
 
-          <h2 class="rail-h">App</h2>
-          <button type="button" class="ri" data-view="data">Backup &amp; settings</button>
-          <button type="button" class="ri" data-view="about">About this app</button>
+          <div class="nav-group">
+            <h2 class="rail-h">Start from</h2>
+            <ul class="rail-list">
+              <li><button type="button" class="ri ri-action" data-view="catalog">
+                <span class="gi" aria-hidden="true">&#xE736;</span>
+                <span class="lbl">Browse the catalog <span class="ri-sub">curated reading orders</span></span>
+              </button></li>
+              <li><button type="button" class="ri ri-action" id="btn-new-list">
+                <span class="gi" aria-hidden="true">&#xE710;</span>
+                <span class="lbl">New empty list</span>
+              </button></li>
+            </ul>
+          </div>
+
+          <div class="nav-group">
+            <h2 class="rail-h">Library</h2>
+            <ul class="rail-list">
+              <li><button type="button" class="ri" data-view="progress">
+                <span class="gi" aria-hidden="true">&#xE9D2;</span>
+                <span class="lbl">Progress by series</span>
+              </button></li>
+            </ul>
+          </div>
+
+          <div class="nav-group">
+            <h2 class="rail-h">Add issues</h2>
+            <ul class="rail-list">
+              <li><button type="button" class="ri" data-view="add" data-open="sec-search">
+                <span class="gi" aria-hidden="true">&#xE721;</span>
+                <span class="lbl">Search issues</span>
+              </button></li>
+              <li><button type="button" class="ri" data-view="add" data-open="sec-series">
+                <span class="gi" aria-hidden="true">&#xE8F1;</span>
+                <span class="lbl">Add a whole series</span>
+              </button></li>
+              <li><button type="button" class="ri" data-view="add" data-open="sec-creator">
+                <span class="gi" aria-hidden="true">&#xE77B;</span>
+                <span class="lbl">Browse a creator</span>
+              </button></li>
+              <li><button type="button" class="ri" data-view="add" data-open="sec-import">
+                <span class="gi" aria-hidden="true">&#xE77F;</span>
+                <span class="lbl">Paste a reading order</span>
+              </button></li>
+              <li><button type="button" class="ri" data-view="add" data-open="sec-manual">
+                <span class="gi" aria-hidden="true">&#xE948;</span>
+                <span class="lbl">Add an issue by hand</span>
+              </button></li>
+            </ul>
+          </div>
+
+          <div class="nav-group">
+            <h2 class="rail-h">App</h2>
+            <ul class="rail-list">
+              <li><button type="button" class="ri" data-view="data">
+                <span class="gi" aria-hidden="true">&#xE713;</span>
+                <span class="lbl">Backup &amp; settings</span>
+              </button></li>
+              <li><button type="button" class="ri" data-view="about">
+                <span class="gi" aria-hidden="true">&#xE946;</span>
+                <span class="lbl">About this app</span>
+              </button></li>
+            </ul>
+          </div>
         </nav>
 
         <div class="rail-foot">
@@ -77,16 +133,103 @@
           </section>
 
 
+          <!-- ---------------------------------------- home view -->
+          <!--
+            The landing page. State A (empty library) leads with the catalog itself, because
+            an empty box is not a call to action. State B (library has lists) leads with
+            "Continue reading" and demotes the catalog to "Discover more".
+            See docs/ux/landing-page-flow.md.
+          -->
+          <section id="view-home" class="view" hidden aria-labelledby="home-h">
+            <div class="head">
+              <div class="head-left">
+                <h1 id="home-h">Pick something to read</h1>
+                <div class="sub" id="home-sub">
+                  Every order below ships with the app, so adding one needs no internet connection.
+                </div>
+              </div>
+              <div class="headright">
+                <button type="button" class="tgl" data-covers-toggle aria-pressed="true">
+                  <span class="sw" aria-hidden="true"></span><span class="covers-label">Cover art on</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- State B only: where the reader left off. -->
+            <section id="home-continue" class="chero" hidden aria-labelledby="chero-h">
+              <div class="chero-in">
+                <div class="art">
+                  <img id="chero-img" alt="" />
+                  <div class="fallback" id="chero-fb" aria-hidden="true">
+                    <span class="fs" id="chero-fs"></span>
+                    <span class="fn" id="chero-fn"></span>
+                  </div>
+                </div>
+                <div class="chero-body">
+                  <h2 id="chero-h"></h2>
+                  <div class="pbar" id="chero-bar" role="progressbar"
+                       aria-label="Reading progress" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0">
+                    <i id="chero-fill"></i>
+                  </div>
+                  <p class="chero-count" id="chero-count"></p>
+                  <p class="chero-next" id="chero-next"></p>
+                  <div class="cta">
+                    <button type="button" class="btn" id="btn-chero-read">Read next issue →</button>
+                    <button type="button" class="btn btn-g" id="btn-chero-open">Open the list</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- State B only: everything already in the library, with progress. -->
+            <section class="sec" id="home-yours" hidden aria-labelledby="yours-h">
+              <div class="sec-h"><h2 id="yours-h">Your reading orders</h2></div>
+              <ul class="yours" id="home-yours-list"></ul>
+            </section>
+
+            <section class="sec" id="home-catalog" aria-labelledby="home-cat-h">
+              <div class="sec-h">
+                <h2 id="home-cat-h">Reading orders</h2>
+                <button type="button" class="linkish" id="home-see-all" hidden></button>
+              </div>
+              <div id="home-cat-report"></div>
+
+              <fieldset class="filters" id="home-chips" hidden>
+                <legend class="visually-hidden">Filter reading orders</legend>
+              </fieldset>
+
+              <form id="form-home-q" class="stack home-q" role="search" hidden>
+                <label for="home-q">Filter reading orders by title or character</label>
+                <div class="row">
+                  <input type="search" id="home-q" autocomplete="off" placeholder="e.g. Civil War, Spider-Man" />
+                  <button type="button" class="btn btn-g" id="home-q-clear" hidden>Clear</button>
+                </div>
+              </form>
+
+              <ul class="ogrid" id="home-grid"></ul>
+              <p class="rail-hint" id="home-overflow" hidden></p>
+              <p class="rail-hint attribution">Data provided by Marvel. <span id="marvel-copyright">© MARVEL</span></p>
+            </section>
+
+            <!-- The power-user paths, kept quiet so they never compete with the catalog. -->
+            <div class="escape">
+              <span class="escape-label">Or start from scratch:</span>
+              <button type="button" class="quiet" id="esc-new-list">Create an empty list</button>
+              <button type="button" class="quiet" data-view="add" data-open="sec-search">Search issues</button>
+              <button type="button" class="quiet" data-view="add" data-open="sec-import">Paste a reading order</button>
+            </div>
+          </section>
+
           <!-- ---------------------------------------- reading view -->
-          <section id="view-read" class="view" aria-labelledby="order-name">
+          <section id="view-read" class="view" hidden aria-labelledby="order-name">
             <div class="head">
               <div class="head-left">
                 <h1 id="order-name">Marvel Reading Tracker</h1>
                 <div class="sub" id="order-sub">Curated reading orders, tracked locally.</div>
               </div>
               <div class="headright">
-                <button type="button" class="tgl" id="btn-covers" aria-pressed="true">
-                  <span class="sw" aria-hidden="true"></span><span id="covers-label">Cover art on</span>
+                <button type="button" class="tgl" id="btn-covers" data-covers-toggle aria-pressed="true">
+                  <span class="sw" aria-hidden="true"></span><span class="covers-label" id="covers-label">Cover art on</span>
                 </button>
                 <div class="ring" id="ring-wrap" hidden>
                   <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
@@ -98,15 +241,6 @@
                   <span id="ring-label"></span>
                 </div>
               </div>
-            </div>
-
-            <div id="no-active-list" class="empty-state">
-              <h2>Pick something to read</h2>
-              <p>
-                Browse the catalog on the left and import a curated reading order without an internet
-                connection, because the order ships with the app. Or create an empty list and search
-                for issues yourself.
-              </p>
             </div>
 
             <div id="reading-body" hidden>
@@ -415,6 +549,29 @@
         </div>
       </main>
     </div>
+
+    <!-- Rail-mode tooltip. Purely visual: the button's own label is its accessible name. -->
+    <div class="rail-tip" id="rail-tip" hidden aria-hidden="true"></div>
+
+    <!--
+      Preview of a curated order before committing to it. A native <dialog> is used so the
+      focus trap, the Escape key and the return of focus to the card are the browser's job
+      rather than ours.
+    -->
+    <dialog id="preview" class="preview" aria-labelledby="preview-h">
+      <div class="preview-head">
+        <h2 id="preview-h"></h2>
+        <button type="button" class="quiet" id="preview-close">Close</button>
+      </div>
+      <p class="result-meta" id="preview-meta"></p>
+      <p class="rail-hint" id="preview-desc"></p>
+      <div id="preview-body"></div>
+      <div class="preview-foot">
+        <div id="preview-add"></div>
+        <span class="grow"></span>
+        <span class="rail-hint">Data provided by Marvel.</span>
+      </div>
+    </dialog>
 
     <script type="module" src="./js/main.js"></script>
   </body>

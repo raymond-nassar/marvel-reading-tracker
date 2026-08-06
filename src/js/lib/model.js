@@ -107,13 +107,17 @@ export function getIssue(state, issueId) {
 export const MAX_NAME = 200;
 export const MAX_DESCRIPTION = 2000;
 
-export function createList(state, { name, description = '', id = newId(), itemIds = [] } = {}) {
+export function createList(state, { name, description = '', id = newId(), itemIds = [], catalogId = null } = {}) {
   const listId = id;
   const list = {
     id: listId,
     name: String(name || 'Untitled list').slice(0, MAX_NAME),
     description: String(description || '').slice(0, MAX_DESCRIPTION),
     created: Date.now(),
+    // Which catalog entry this list was imported from, when it was. It is what lets the
+    // catalog show "in library" instead of offering to import a second copy, so it has to
+    // survive a reload rather than being tracked only in memory.
+    catalogId: catalogId ? String(catalogId).slice(0, MAX_NAME) : null,
     itemIds: dedupe(itemIds.map(Number).filter((n) => Number.isInteger(n) && n !== 0)),
   };
   return {
@@ -151,6 +155,10 @@ export function duplicateList(state, listId, { name } = {}) {
     name: name ? String(name).slice(0, MAX_NAME) : copyName(state, source.name),
     description: String(source.description || '').slice(0, MAX_DESCRIPTION),
     created: Date.now(),
+    // A duplicate is the reader's own working copy, so it does not inherit the claim to be
+    // the catalog import. Otherwise two lists would answer to the same catalog entry and
+    // "in library" would point at whichever was found first.
+    catalogId: null,
     itemIds: [...source.itemIds],
   };
 
@@ -189,6 +197,16 @@ export function deleteList(state, listId) {
 
 export function setActive(state, listId) {
   return state.lists[listId] ? { ...state, active: listId } : state;
+}
+
+// The list a catalog entry was imported into, if it is still there. Deleting the list is
+// what puts an order back on offer, so this is read from state rather than remembered.
+export function listForCatalogId(state, catalogId) {
+  if (!catalogId) return null;
+  for (const id of state.listOrder) {
+    if (state.lists[id]?.catalogId === catalogId) return state.lists[id];
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------- items
@@ -408,6 +426,7 @@ function coerce(raw) {
       name: String(v.name ?? 'Untitled list'),
       description: String(v.description ?? ''),
       created: Number(v.created) || Date.now(),
+      catalogId: typeof v.catalogId === 'string' && v.catalogId ? v.catalogId.slice(0, MAX_NAME) : null,
       itemIds: dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter((n) => Number.isInteger(n) && n !== 0)),
     };
   }

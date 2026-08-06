@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T06:45:31.629Z",
+  "generatedAt": "2026-08-06T07:05:11.994Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -29,6 +29,12 @@
       "group": "hickman-secret-wars",
       "groupName": "Hickman to Secret Wars",
       "variant": "Essential reading",
+      "beginner": false,
+      "coverIssueId": 43528,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/00/51646f8d43394",
+        "ext": "jpg"
+      },
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_minimal.md",
       "sourceLicense": "MIT (emreparker/marvel-comics)",
       "updatedAt": "2026-08-04T06:14:48.695Z"
@@ -63,6 +69,12 @@
       "group": "hickman-secret-wars",
       "groupName": "Hickman to Secret Wars",
       "variant": "Complete reading, with tie-ins",
+      "beginner": false,
+      "coverIssueId": 52447,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5cb736a3cdd49",
+        "ext": "jpg"
+      },
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
       "sourceLicense": "MIT (emreparker/marvel-comics)",
       "updatedAt": "2026-08-04T06:14:48.703Z"
@@ -95,6 +107,12 @@
       "group": null,
       "groupName": null,
       "variant": null,
+      "beginner": true,
+      "coverIssueId": 97145,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/648735ebac505",
+        "ext": "jpg"
+      },
       "source": null,
       "sourceLicense": "Compiled for this project",
       "updatedAt": "2026-08-05T04:33:50.342Z"
@@ -131,6 +149,12 @@
       "group": null,
       "groupName": null,
       "variant": null,
+      "beginner": false,
+      "coverIssueId": 2092,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/589b3f23c9324",
+        "ext": "jpg"
+      },
       "source": null,
       "sourceLicense": "Assembled from Marvel series metadata (publication order)",
       "updatedAt": "2026-08-05T06:17:07.276Z"
@@ -168,6 +192,12 @@
       "group": null,
       "groupName": null,
       "variant": null,
+      "beginner": true,
+      "coverIssueId": 4216,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/f0/511307b2f1200",
+        "ext": "jpg"
+      },
       "source": null,
       "sourceLicense": "Assembled from Marvel series metadata (publication order)",
       "updatedAt": "2026-08-05T06:17:07.277Z"
@@ -204,6 +234,12 @@
       "group": null,
       "groupName": null,
       "variant": null,
+      "beginner": true,
+      "coverIssueId": 4788,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/51b61283075b2",
+        "ext": "jpg"
+      },
       "source": null,
       "sourceLicense": "Assembled from Marvel series metadata (publication order)",
       "updatedAt": "2026-08-05T06:17:07.278Z"
@@ -243,6 +279,12 @@
       "group": null,
       "groupName": null,
       "variant": null,
+      "beginner": false,
+      "coverIssueId": 21034,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/5151efbb93d76",
+        "ext": "jpg"
+      },
       "source": null,
       "sourceLicense": "Assembled from Marvel series metadata (publication order)",
       "updatedAt": "2026-08-05T06:17:07.279Z"
@@ -282,6 +324,12 @@
       "group": null,
       "groupName": null,
       "variant": null,
+      "beginner": false,
+      "coverIssueId": 85649,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/601afd588b59d",
+        "ext": "jpg"
+      },
       "source": null,
       "sourceLicense": "Assembled from Marvel series metadata (publication order)",
       "updatedAt": "2026-08-05T06:45:31.621Z"

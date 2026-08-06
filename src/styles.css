@@ -77,9 +77,15 @@ h2[tabindex="-1"]:focus {
 /* ============================================================ shell */
 
 .shell { display: grid; grid-template-columns: 252px 1fr; min-height: 100vh; }
+/* 150ms, and only the column track, so nothing inside the pane reflows twice. */
+.shell { transition: grid-template-columns .15s ease; }
+
+/* Collapsed is a 48px icon rail, not a hidden pane: every destination stays one click
+   away and the tab order is unchanged. See docs/ux/sidebar-flow.md. */
+.shell.railed { grid-template-columns: 48px 1fr; }
 
 @media (max-width: 880px) {
-  .shell { grid-template-columns: 1fr; }
+  .shell, .shell.railed { grid-template-columns: 1fr; }
   .rail { position: static; height: auto; }
 }
 
@@ -88,30 +94,76 @@ h2[tabindex="-1"]:focus {
 .rail {
   background: var(--rail);
   border-right: 1px solid var(--line);
-  padding: 1.3rem .8rem 1rem;
+  padding: .8rem .8rem 1rem;
   position: sticky; top: 0; height: 100vh; overflow-y: auto;
   display: flex; flex-direction: column;
 }
+.railed .rail { padding-left: .3rem; padding-right: .3rem; }
 
-.brand { display: flex; align-items: center; gap: .6rem; margin: 0 .4rem 1.4rem; }
+/* Fluent's PUA glyphs. They are decorative: every button keeps its label in the DOM as
+   the accessible name, so a machine without the font shows a blank box, never a control
+   with no name. */
+.gi {
+  font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets", sans-serif;
+  font-size: 16px; line-height: 1; flex: 0 0 auto;
+  width: 1.25rem; text-align: center;
+}
+
+.rail-toggle {
+  width: 40px; height: 40px; min-height: 40px; border: 0; border-radius: 9px;
+  background: none; color: var(--muted); display: grid; place-items: center;
+  margin: 0 0 .5rem;
+}
+.rail-toggle:hover { background: #ffffff0a; color: var(--text); }
+.railed .rail-toggle { margin-left: auto; margin-right: auto; }
+
+.brand {
+  display: flex; align-items: center; gap: .6rem; margin: 0 0 1rem;
+  background: none; border: 0; color: inherit; text-align: left;
+  padding: .3rem .4rem; border-radius: 9px; width: 100%; min-height: 44px;
+}
+.brand:hover { background: #ffffff0a; }
 .brand .mark {
   width: 28px; height: 28px; border-radius: 8px; background: var(--red);
   display: grid; place-items: center; font-weight: 800; font-size: .9rem; color: #fff;
+  flex: 0 0 auto;
 }
 .brand b { font-size: .94rem; font-weight: 600; }
+.railed .brand { justify-content: center; padding-left: 0; padding-right: 0; }
 
 .rail-h {
   font-size: .66rem; letter-spacing: .13em; text-transform: uppercase;
-  color: var(--muted); margin: 1.4rem .5rem .45rem; font-weight: 600;
+  color: var(--muted); margin: 0 .5rem .45rem; font-weight: 600;
 }
 .rail-list { list-style: none; margin: 0; padding: 0; }
 
-.ri {
-  display: block; width: 100%; text-align: left; background: none; border: 0;
-  color: var(--muted); padding: .5rem .6rem; border-radius: 9px; font-size: .875rem;
+/* Dividers, option C. Two tiers, both CSS borders rather than <hr>, so a screen reader
+   is never handed a separator for something that is purely visual rhythm. */
+.rail-list > li:not(:last-child) { border-bottom: 1px solid rgba(255, 255, 255, .05); }
+.nav-group + .nav-group {
+  border-top: 1px solid rgba(255, 255, 255, .10);
+  margin-top: 12px; padding-top: 12px;
 }
-.ri:hover { background: #ffffff09; color: var(--text); }
-.ri[aria-current="true"], .ri.on { background: #ffffff0e; color: var(--text); }
+
+.ri {
+  position: relative;
+  display: flex; align-items: center; gap: .6rem;
+  width: 100%; text-align: left; background: none; border: 0;
+  color: var(--muted); padding: .5rem .6rem; border-radius: 9px; font-size: .875rem;
+  min-height: 44px;
+}
+.ri:hover { background: rgba(255, 255, 255, .04); color: var(--text); }
+
+/* The selected state is a red accent bar AND a raised surface AND a heavier label, so it
+   never depends on colour alone. */
+.ri[aria-current], .ri.on {
+  background: rgba(255, 255, 255, .08); color: var(--text); font-weight: 600;
+}
+.ri[aria-current]::before, .ri.on::before {
+  content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);
+}
+.ri .lbl { display: block; min-width: 0; flex: 1 1 auto; }
 .ri-sub { display: block; font-size: .74rem; color: var(--muted); }
 .ri-action { color: var(--dim); }
 
@@ -119,6 +171,53 @@ h2[tabindex="-1"]:focus {
 .ri .n { font-variant-numeric: tabular-nums; font-size: .76rem; color: var(--muted); }
 .ri .bar { display: block; height: 3px; background: #2a303c; border-radius: 2px; margin-top: .45rem; overflow: hidden; }
 .ri .bar i { display: block; height: 100%; background: var(--red); border-radius: 2px; }
+
+/* A reading order has no glyph of its own, so its initial stands in for one in rail mode. */
+.ri .init {
+  display: none; flex: 0 0 auto; width: 22px; height: 22px; border-radius: 6px;
+  background: #ffffff12; color: var(--text); font-size: .72rem; font-weight: 700;
+  place-items: center; text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------- rail mode */
+
+/* Labels are hidden visually, never removed, so an icon-only button still has a real
+   accessible name. The visible tooltip is a separate, aria-hidden element parked at the
+   end of <body>: the rail is a scroll container, so anything drawn inside it would be
+   clipped at 48px. */
+.railed .rail-h,
+.railed #no-lists,
+.railed .ri-sub,
+.railed .ri .n,
+.railed .ri .bar { display: none; }
+
+.railed .brand b,
+.railed .ri .lbl {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+.rail-tip {
+  position: fixed; z-index: 60; left: 0; top: 0; pointer-events: none;
+  max-width: 15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  background: var(--card-2); color: var(--text); border: 1px solid var(--line-2);
+  border-radius: 8px; padding: .3rem .55rem; font-size: .8rem;
+  box-shadow: 0 6px 20px #0009;
+}
+.rail-tip[hidden] { display: none; }
+
+/* 44px minimum on an icon-only target, and the glyph centred inside it. */
+.railed .ri { justify-content: center; padding: .5rem 0; min-width: 44px; }
+.railed .ri .init { display: grid; }
+.railed .ri[aria-current]::before, .railed .ri.on::before { height: 70%; }
+.railed .rail-foot { padding-left: 0; padding-right: 0; justify-items: center; }
+
+/* The status pill becomes a dot. Its text stays as the accessible name. */
+.railed .pill { width: 10px; height: 10px; padding: 0; border-radius: 50%; overflow: hidden;
+  color: transparent; border-width: 2px; justify-self: center; }
+.railed .pill-ok { background: var(--green); border-color: var(--green); }
+.railed .pill-warn { background: var(--amber); border-color: var(--amber); }
+.railed .pill-muted { background: var(--muted); border-color: var(--muted); }
 
 .rail-hint { color: var(--muted); font-size: .8rem; margin: .4rem .6rem; }
 .rail-foot { margin-top: auto; padding: 1rem .5rem 0; display: grid; gap: .4rem; }
@@ -443,6 +542,135 @@ progress { accent-color: var(--red); height: 6px; }
 }
 .linkish:hover { color: var(--text); }
 
+/* ============================================================ home */
+
+/* Continue reading. Deliberately lighter than the reading view's hero: it answers one
+   question ("which issue was I on?") and then gets out of the way. */
+.chero {
+  border: 1px solid var(--line); border-radius: 20px; background: var(--card);
+  padding: 1.4rem 1.6rem; margin-bottom: 1.8rem;
+}
+.chero-in { display: grid; grid-template-columns: 106px 1fr; gap: 1.4rem; align-items: start; }
+@media (max-width: 620px) { .chero-in { grid-template-columns: 1fr; } .chero-in .art { max-width: 106px; } }
+.chero h2 { font-size: 1.35rem; margin: .3rem 0 .7rem; font-weight: 640; letter-spacing: -.02em; }
+.chero .art img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
+body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
+/* The shared fallback is sized for the reading view's larger cover, so it is scaled down
+   here rather than being duplicated. */
+.chero .art .fallback { padding: .55rem; border-radius: 10px; }
+.chero .art .fallback .fs { font-size: .58rem; letter-spacing: .06em; }
+.chero .art .fallback .fn { font-size: 1.5rem; }
+.chero-count { color: var(--dim); font-size: .85rem; margin: .4rem 0 0; font-variant-numeric: tabular-nums; }
+.chero-next { color: var(--muted); font-size: .88rem; margin: .15rem 0 1rem; }
+.chero-next b { color: var(--text); font-weight: 560; }
+
+/* The fill is a width, and the count beneath it repeats the same numbers as text, so the
+   bar is never the only way to read the progress. */
+.pbar { height: 8px; border-radius: 999px; background: #2a303c; overflow: hidden; max-width: 32rem; }
+.pbar i { display: block; height: 100%; background: var(--red); border-radius: 999px; }
+
+.yours { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.yours button {
+  width: 100%; text-align: left; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: .6rem .8rem; color: var(--text); min-height: 44px;
+  display: grid; gap: .35rem;
+}
+.yours button:hover { border-color: var(--line-2); background: var(--card-2); }
+.yours .yt { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.yours .yours-name { color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------------------------------------------------------- catalog cards */
+
+.ogrid {
+  list-style: none; margin: .9rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .9rem;
+}
+.ocard {
+  position: relative;
+  display: flex; flex-direction: column;
+  border: 1px solid var(--line); border-radius: var(--r); background: var(--card);
+}
+.ocard:hover { border-color: var(--line-2); }
+.ocard-body { display: flex; gap: .8rem; align-items: flex-start; padding: .85rem .85rem .6rem; }
+.ocard-art { flex: 0 0 58px; }
+.ocard-art img {
+  width: 58px; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px;
+  border: 1px solid var(--line); display: block;
+}
+body.nocovers .ocard-art img, .ocard-art img[hidden] { display: none; }
+.ocard-art .of {
+  display: none; width: 58px; aspect-ratio: 2/3; border-radius: 6px;
+  border: 1px solid var(--line-2); padding: .35rem;
+  flex-direction: column; justify-content: flex-end; gap: .1rem;
+  --h: 0;
+  background: linear-gradient(155deg, hsl(var(--h) 42% 26%), hsl(calc(var(--h) + 40) 38% 14%));
+  color: hsl(var(--h) 60% 88%);
+}
+body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
+.ocard-art .of .ofs {
+  font-size: .58rem; font-weight: 700; letter-spacing: .02em; line-height: 1.2;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
+}
+
+.ocard-text { min-width: 0; }
+.ocard-title { font-size: .92rem; font-weight: 600; margin: 0 0 .2rem; line-height: 1.3; }
+.ocard-desc {
+  color: var(--dim); font-size: .8rem; margin: 0 0 .35rem; line-height: 1.45;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
+.ocard-meta { color: var(--muted); font-size: .74rem; margin: 0 0 .35rem; }
+.ocard-foot {
+  display: flex; flex-direction: column; gap: .4rem;
+  padding: 0 .85rem .85rem; margin-top: auto;
+}
+.ocard-foot .btn { width: 100%; justify-content: center; min-height: 44px; }
+/* The preview covers the whole card, so the body is a large secondary target without the
+   heading and the description being nested inside a button, which is not valid content for
+   one and would flatten the card into a single unreadable label. The primary button is
+   raised above the overlay so it stays a separate, unambiguous action. */
+.ocard-preview {
+  min-height: 44px; background: none; border: 1px solid transparent; color: var(--muted);
+  font: inherit; font-size: .78rem; border-radius: 8px; text-align: center;
+}
+.ocard-preview::after { content: ''; position: absolute; inset: 0; border-radius: var(--r); }
+.ocard-preview:hover { color: var(--text); border-color: var(--line-2); }
+.ocard-foot .btn { position: relative; z-index: 1; }
+.ocard:focus-within { border-color: var(--line-2); }
+/* "In library" is a state, so it is named in the label as well as coloured. */
+.btn-added { background: #ffffff0f; color: var(--green); border-color: #43c08855; font-weight: 600; }
+
+.home-q { max-width: 32rem; margin-top: .8rem; }
+#home-overflow { margin: .9rem .1rem 0; }
+.attribution { margin: 1.1rem .1rem 0; }
+
+.escape {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .4rem;
+  margin-top: 2rem; padding-top: 1.1rem; border-top: 1px solid var(--line);
+}
+.escape-label { color: var(--muted); font-size: .82rem; margin-right: .2rem; }
+
+/* ---------------------------------------------------------- preview dialog */
+
+.preview {
+  width: min(46rem, calc(100vw - 2rem)); max-height: min(44rem, calc(100vh - 4rem));
+  background: var(--card); color: var(--text); border: 1px solid var(--line-2);
+  border-radius: 16px; padding: 1.2rem 1.4rem;
+}
+.preview::backdrop { background: #000000b3; }
+.preview-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.preview-head h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.preview-desc { max-width: 62ch; }
+#preview-body { max-height: 22rem; overflow-y: auto; margin: .8rem 0; }
+.preview-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; counter-reset: pv; }
+.preview-list li {
+  display: flex; gap: .6rem; align-items: baseline; padding: .3rem .1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .05); font-size: .84rem;
+}
+.preview-list li:last-child { border-bottom: 0; }
+.preview-list .pn { color: var(--muted); font-size: .74rem; font-variant-numeric: tabular-nums; min-width: 2.2rem; }
+.preview-foot { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: .9rem; }
+.preview-foot .btn { min-height: 44px; }
+
 /* ============================================================ preferences */
 
 @media (prefers-reduced-motion: reduce) {
@@ -452,6 +680,13 @@ progress { accent-color: var(--red); height: 6px; }
 @media (forced-colors: active) {
   .hero-bg, .hero-fade { display: none; }
   .btn, .quiet, .mini, .ri { border: 1px solid ButtonBorder; }
+  /* The accent bar and the raised surface both disappear in forced colours, so the
+     selected item is marked with a border the mode is required to honour. */
+  .ri[aria-current], .ri.on { border: 2px solid Highlight; }
+  .ocard, .yours button, .preview { border: 1px solid CanvasText; }
+  .pbar { border: 1px solid CanvasText; }
+  .pbar i { background: Highlight; }
+  .rail-tip { border: 1px solid CanvasText; background: Canvas; }
 }
 
 /* Unreadable-data recovery. Deliberately loud: saving is paused and the user must choose. */

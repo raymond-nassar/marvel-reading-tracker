@@ -7,14 +7,15 @@
 import {
   createList, deleteList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
-  setOverride, pendingIssueIds, createEmptyState, coverUrl, SCHEMA_VERSION,
+  setOverride, pendingIssueIds, createEmptyState, coverUrl, listForCatalogId, SCHEMA_VERSION,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { availability, describe, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
 import {
-  parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory, searchCatalog,
-  groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
+  parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,
+  searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
+  catalogCoverUrl, readingTimeLabel,
 } from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -26,8 +27,17 @@ import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
 
 const SETTINGS_KEY = 'mrt.settings';
+const SIDEBAR_KEY = 'sidebar.collapsed';
 const RING_CIRCUMFERENCE = 94.2; // 2πr for r=15, matching the SVG in index.html
 const SHELF_SIZE = 8;
+// The landing page shows this many cards and then hands the rest to the catalog page, so
+// it stays a page you can take in at a glance however far the catalog grows.
+const HOME_GRID_CAP = 12;
+// Above this many orders, scanning stops being enough and the reader needs to type.
+const HOME_FILTER_THRESHOLD = 12;
+// Below this viewport width the rail collapses on its own; a manual toggle then wins until
+// the breakpoint is crossed again.
+const RAIL_BREAKPOINT = 1000;
 
 const $ = (sel) => document.querySelector(sel);
 const announcer = $('#announcer');
@@ -50,23 +60,6 @@ const hydrator = new Hydrator({ api, store, onProgress: renderHydration });
 
 let filter = 'all';
 let view = 'read';
-
-// ------------------------------------------------------------------ boot
-
-store.load();
-applyCoversSetting();
-wireNav();
-wireReading();
-wireAdd();
-wireData();
-wireShortcuts();
-wireBlockedBanner();
-wireCatalogSearch();
-renderAll();
-checkHealth();
-refreshCacheUsage();
-
-if (store.lastError) notify('#save-report', store.lastError, 'error');
 
 // ------------------------------------------------------------------ unreadable-data recovery
 
@@ -197,12 +190,17 @@ function fallbackHue(issue) {
 // Wires an <img>/fallback pair. The fallback is shown when there is no cover URL at all,
 // or when the image fails to load; `body.nocovers` handles the user's preference in CSS.
 function paintCover(img, fb, issue, variant) {
+  paintCoverUrl(img, fb, coverUrl(issue, variant), fallbackHue(issue));
+}
+
+// The hue is passed in rather than derived, because a catalog card's cover belongs to a
+// reading order, not to a single issue.
+function paintCoverUrl(img, fb, url, hue) {
   // Set the hue as a custom property rather than writing a style attribute. Assigning a
   // style attribute is what `style-src-attr` blocks under the server's Content-Security-
   // Policy, and it fired on every cover paint; setting a property through the CSSOM is
   // not a policy violation, so the gradient in styles.css does the drawing.
-  fb.style.setProperty('--h', String(fallbackHue(issue)));
-  const url = coverUrl(issue, variant);
+  fb.style.setProperty('--h', String(hue));
   if (!url) {
     img.removeAttribute('src');
     img.hidden = true;
@@ -217,10 +215,12 @@ function paintCover(img, fb, issue, variant) {
 
 function applyCoversSetting() {
   document.body.classList.toggle('nocovers', !settings.covers);
-  const btn = $('#btn-covers');
-  if (btn) {
+  // There is a toggle on the reading view and another on the landing page, and they are one
+  // setting, so both are written rather than whichever happens to be on screen.
+  for (const btn of document.querySelectorAll('[data-covers-toggle]')) {
     btn.setAttribute('aria-pressed', String(settings.covers));
-    $('#covers-label').textContent = settings.covers ? 'Cover art on' : 'Cover art off';
+    const label = btn.querySelector('.covers-label');
+    if (label) label.textContent = settings.covers ? 'Cover art on' : 'Cover art off';
   }
   const opt = $('#opt-covers');
   if (opt) opt.checked = settings.covers;
@@ -231,7 +231,107 @@ function setCovers(on) {
   saveSettings();
   applyCoversSetting();
   renderReading();
+  renderHome();
   announce(settings.covers ? 'Cover art on.' : 'Cover art off. Covers are shown as text tiles.');
+}
+
+// ------------------------------------------------------------------ sidebar
+
+// Collapsed means a 48px icon rail, not a hidden pane: nothing leaves the tab order and no
+// destination becomes unreachable. See docs/ux/sidebar-flow.md.
+let railed = false;
+// Tracked so the responsive rule fires only when the breakpoint is actually crossed. Without
+// it every resize event would re-apply the default and undo a deliberate toggle.
+let wasNarrow = null;
+
+function loadRailed() {
+  try {
+    const raw = localStorage.getItem(SIDEBAR_KEY);
+    if (raw === 'true') return true;
+    if (raw === 'false') return false;
+  } catch { /* private mode; fall through to the responsive default */ }
+  return null;
+}
+
+// Only a deliberate toggle is a preference, so persisting is opt-in. The responsive rule and
+// the first-run default also move the sidebar, and writing those to storage would let the act
+// of resizing a window overwrite a choice the reader actually made.
+function setRailed(next, { announceIt = false, persist = false } = {}) {
+  railed = Boolean(next);
+  $('#shell').classList.toggle('railed', railed);
+  const toggle = $('#btn-rail-toggle');
+  toggle.setAttribute('aria-expanded', String(!railed));
+  toggle.title = railed ? 'Expand sidebar (Ctrl+\\)' : 'Collapse sidebar (Ctrl+\\)';
+  if (!railed) hideRailTip();
+  if (persist) {
+    try { localStorage.setItem(SIDEBAR_KEY, String(railed)); } catch { /* non-fatal */ }
+  }
+  if (announceIt) announce(railed ? 'Sidebar collapsed.' : 'Sidebar expanded.');
+}
+
+function wireSidebar() {
+  const saved = loadRailed();
+  wasNarrow = window.innerWidth < RAIL_BREAKPOINT;
+  // A saved choice is a deliberate one and outranks the responsive default, so a reader who
+  // expanded the sidebar on a narrow window does not find it collapsed again on every visit.
+  // The default itself is not written back: until the reader touches the toggle there is no
+  // preference to record, and recording one would freeze the first window size they happened
+  // to open the app at.
+  setRailed(saved !== null ? saved : wasNarrow);
+
+  $('#btn-rail-toggle').addEventListener('click', () => setRailed(!railed, { announceIt: true, persist: true }));
+
+  document.addEventListener('keydown', (e) => {
+    // Ctrl+\ and nothing else: the sidebar is chrome, so its shortcut must not fight a
+    // text field the way the single-letter reading shortcuts would.
+    if (e.key !== '\\' || !e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) return;
+    e.preventDefault();
+    setRailed(!railed, { announceIt: true, persist: true });
+  });
+
+  window.addEventListener('resize', () => {
+    const isNarrow = window.innerWidth < RAIL_BREAKPOINT;
+    // Only on the crossing. Applying this on every resize event would undo a toggle the
+    // reader had just made, and a window drag fires hundreds of them.
+    if (isNarrow === wasNarrow) return;
+    wasNarrow = isNarrow;
+    // A narrow window has no room for the full sidebar, so it always collapses. Widening
+    // restores what the reader chose rather than assuming they want it open, so dragging a
+    // window wide does not undo a deliberate collapse.
+    setRailed(isNarrow || (loadRailed() ?? false));
+  });
+
+  wireRailTips();
+}
+
+// The rail is a scroll container, so a tooltip drawn inside it would be clipped at 48px.
+// One fixed-position element outside the rail avoids that. It is decorative: the button's
+// own label stays in the DOM as its accessible name, visually hidden in rail mode.
+function wireRailTips() {
+  const rail = $('#sidebar');
+  const show = (e) => {
+    const target = e.target instanceof Element ? e.target.closest('.ri, .brand, .pill') : null;
+    if (!target || !railed) return hideRailTip();
+    const text = (target.dataset.tip || target.textContent || '').trim();
+    if (!text) return hideRailTip();
+    const tip = $('#rail-tip');
+    tip.textContent = text;
+    tip.hidden = false;
+    const box = target.getBoundingClientRect();
+    tip.style.setProperty('left', `${Math.round(box.right + 8)}px`);
+    tip.style.setProperty('top', `${Math.round(box.top + box.height / 2 - tip.offsetHeight / 2)}px`);
+  };
+  rail.addEventListener('pointerover', show);
+  rail.addEventListener('pointerout', hideRailTip);
+  // Focus as well as hover, or the rail is unusable to anyone navigating by keyboard.
+  rail.addEventListener('focusin', show);
+  rail.addEventListener('focusout', hideRailTip);
+  window.addEventListener('scroll', hideRailTip, true);
+}
+
+function hideRailTip() {
+  const tip = $('#rail-tip');
+  if (tip) tip.hidden = true;
 }
 
 // ------------------------------------------------------------------ navigation
@@ -251,30 +351,40 @@ function wireNav() {
     });
   }
 
-  $('#btn-new-list').addEventListener('click', () => {
-    const name = prompt('Name for the new list?', 'My reading order');
-    if (!name) return;
-    // The id has to come from the state the store returned, not from store.state afterwards.
-    // A failed write rolls the creation back, and listOrder's last entry would then be an
-    // unrelated pre-existing list that we would silently switch the user to while telling
-    // them their new list was created.
-    const created = store.update((s) => createList(s, { name }));
-    if (!store.lastUpdateOk) return;
-    const id = created.listOrder[created.listOrder.length - 1];
-    store.update((s) => setActive(s, id));
-    showView('read');
-    announceIfSaved(`Created list ${name}.`);
-  });
+  for (const btn of ['#btn-new-list', '#esc-new-list']) {
+    $(btn).addEventListener('click', newEmptyList);
+  }
 
-  $('#btn-covers').addEventListener('click', () => setCovers(!settings.covers));
+  for (const btn of document.querySelectorAll('[data-covers-toggle]')) {
+    btn.addEventListener('click', () => setCovers(!settings.covers));
+  }
+}
+
+function newEmptyList() {
+  const name = prompt('Name for the new list?', 'My reading order');
+  if (!name) return;
+  // The id has to come from the state the store returned, not from store.state afterwards.
+  // A failed write rolls the creation back, and listOrder's last entry would then be an
+  // unrelated pre-existing list that we would silently switch the user to while telling
+  // them their new list was created.
+  const created = store.update((s) => createList(s, { name }));
+  if (!store.lastUpdateOk) return;
+  const id = created.listOrder[created.listOrder.length - 1];
+  store.update((s) => setActive(s, id));
+  showView('read');
+  announceIfSaved(`Created list ${name}.`);
 }
 
 // Moving focus to the new view's heading is what makes the rail usable with a keyboard or a
 // screen reader. Without it, focus stays on the rail button and the view change is silent, so
 // the next Tab continues from the old position and nothing announces where you now are.
 function showView(next, { focus = true } = {}) {
+  // There is nothing to read without an active list, so the reading view hands over to the
+  // landing page rather than showing an empty frame with a heading over it.
+  if (next === 'read' && !store.state.lists[activeListId()]) next = 'home';
+
   view = next;
-  for (const name of ['read', 'catalog', 'progress', 'add', 'data', 'about']) {
+  for (const name of ['home', 'read', 'catalog', 'progress', 'add', 'data', 'about']) {
     $(`#view-${name}`).hidden = name !== next;
   }
   for (const btn of document.querySelectorAll('.ri[data-view]')) {
@@ -283,6 +393,7 @@ function showView(next, { focus = true } = {}) {
   }
   renderRail();
   if (next === 'catalog') renderCatalog();
+  if (next === 'home') renderHome();
   window.scrollTo({ top: 0 });
 
   if (!focus) return;
@@ -311,15 +422,409 @@ function renderRail() {
     nav.append(el('li', {}, el('button', {
       type: 'button',
       class: 'ri',
-      'aria-current': current ? 'true' : null,
+      'aria-current': current ? 'page' : null,
+      // A reading order has no glyph of its own, so the tooltip has to be built rather
+      // than read off the button: in rail mode the progress numbers are not on screen.
+      dataset: { tip: `${list.name} — ${read} of ${total} read` },
       onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
     }, [
-      el('span', { class: 't' }, [
-        el('span', { text: list.name }),
-        el('span', { class: 'n', text: `${read} / ${total}` }),
+      // Stands in for an icon in rail mode; hidden from the accessibility tree because
+      // the list's name is right beside it.
+      el('span', { class: 'init', 'aria-hidden': true, text: (list.name || '?').trim().charAt(0) }),
+      el('span', { class: 'lbl' }, [
+        el('span', { class: 't' }, [
+          el('span', { text: list.name }),
+          el('span', { class: 'n', text: `${read} / ${total}` }),
+        ]),
+        el('span', { class: 'bar' }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
       ]),
-      el('span', { class: 'bar' }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
     ])));
+  }
+}
+
+// ------------------------------------------------------------------ reading view
+
+// ------------------------------------------------------------------ landing page
+
+// Filter state lives for the session, not across reloads: it is a way of narrowing what is
+// on screen right now, not a preference. See docs/ux/landing-page-flow.md.
+let homeFacet = 'all';
+let homeQuery = '';
+// The parsed catalog, kept so the grid can re-render synchronously when the library changes
+// and a card has to flip to "In library".
+let homeCatalog = null;
+// Catalog ids that were just added, so the button can show "✓ In library" for a beat before
+// settling into "Open →". Transient by design; a reload shows the settled state.
+const justAdded = new Set();
+
+function wireHome() {
+  $('#form-home-q').addEventListener('submit', (e) => e.preventDefault());
+  const q = $('#home-q');
+  q.addEventListener('input', () => { homeQuery = q.value.trim(); renderHomeCatalog({ announceCount: true }); });
+  $('#home-q-clear').addEventListener('click', () => {
+    q.value = '';
+    homeQuery = '';
+    q.focus();
+    renderHomeCatalog({ announceCount: true });
+  });
+
+  // The whole point of "See all" is that it is the same view of the same catalog, so the
+  // filter and the search box travel with the reader rather than resetting under them.
+  $('#home-see-all').addEventListener('click', () => {
+    catalogFacet = homeFacet;
+    catalogQuery = homeQuery;
+    $('#catalog-q').value = homeQuery;
+    showView('catalog');
+  });
+
+  $('#btn-chero-read').addEventListener('click', (e) => {
+    const issue = upNext(store.state, activeListId());
+    if (issue) openInReader(issue, e);
+  });
+  $('#btn-chero-open').addEventListener('click', () => showView('read'));
+}
+
+function renderHome() {
+  if ($('#view-home').hidden) return;
+  const populated = store.state.listOrder.length > 0;
+
+  $('#home-h').textContent = populated ? 'Continue reading' : 'Pick something to read';
+  $('#home-sub').textContent = populated
+    ? 'Everything you are tracking, and where you left off. All of it is stored on this device.'
+    : 'Every order below ships with the app, so adding one needs no internet connection.';
+  $('#home-cat-h').textContent = populated ? 'Discover more' : 'Reading orders';
+
+  renderContinue(populated);
+  renderYours(populated);
+  renderHomeCatalog();
+
+  // The attribution is required wherever Marvel data is shown, and the year has to be the
+  // current one rather than a string baked into the markup.
+  $('#marvel-copyright').textContent = `© ${new Date().getFullYear()} MARVEL`;
+}
+
+// State B's hero: the list being read, how far through it the reader is, and what is next.
+// There are no read timestamps in the state, so "where you left off" is the active list —
+// the one the reader last opened — rather than a guess at recency.
+function renderContinue(populated) {
+  const sec = $('#home-continue');
+  const id = activeListId();
+  const list = store.state.lists[id];
+  sec.hidden = !populated || !list;
+  if (sec.hidden) return;
+
+  const { read, total } = listProgress(store.state, id);
+  const issue = upNext(store.state, id);
+
+  $('#chero-h').textContent = list.name;
+
+  const bar = $('#chero-bar');
+  bar.setAttribute('aria-valuemax', String(total));
+  bar.setAttribute('aria-valuenow', String(read));
+  // The percentage alone would be a bare number to a screen reader; the text is what says
+  // what the number counts, and it is on screen too rather than being audio-only.
+  bar.setAttribute('aria-valuetext', `${read} of ${total} issues read`);
+  $('#chero-fill').style.setProperty('width', `${total ? ((read / total) * 100).toFixed(1) : 0}%`);
+  $('#chero-count').textContent = `${read} of ${total} issue${total === 1 ? '' : 's'} read`;
+
+  if (issue) {
+    $('#chero-next').textContent = `Next: ${issue.title}`;
+    paintCover($('#chero-img'), $('#chero-fb'), issue, 'portrait_incredible');
+    $('#chero-fs').textContent = seriesOnly(issue.seriesName);
+    $('#chero-fn').textContent = issue.number ? `#${issue.number}` : '';
+    $('#btn-chero-read').hidden = false;
+    $('#btn-chero-read').setAttribute('aria-label', `Read ${issue.title} in Marvel Unlimited`);
+  } else {
+    $('#chero-next').textContent = 'You have read every issue in this order.';
+    // Nothing to open, so the button goes rather than sitting there disabled with no
+    // explanation of why it cannot be used.
+    $('#btn-chero-read').hidden = true;
+    paintCoverUrl($('#chero-img'), $('#chero-fb'), null, hueOf(list.name));
+    $('#chero-fs').textContent = shortTitle(list.name);
+    $('#chero-fn').textContent = '';
+  }
+  $('#btn-chero-open').setAttribute('aria-label', `Open ${list.name}`);
+}
+
+function renderYours(populated) {
+  const sec = $('#home-yours');
+  sec.hidden = !populated;
+  if (sec.hidden) return;
+
+  const box = $('#home-yours-list');
+  box.replaceChildren(...store.state.listOrder.map((id) => {
+    const list = store.state.lists[id];
+    const { read, total } = listProgress(store.state, id);
+    const pct = total ? (read / total) * 100 : 0;
+    return el('li', {}, el('button', {
+      type: 'button',
+      'aria-label': `Open ${list.name}, ${read} of ${total} issues read`,
+      onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
+    }, [
+      el('span', { class: 'yours-name', text: list.name }),
+      el('span', { class: 'pbar', 'aria-hidden': true }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
+      // Repeated as text because a bar alone conveys progress by shape only.
+      el('span', { class: 'yours-count', text: `${read} / ${total}` }),
+    ]));
+  }));
+}
+
+async function renderHomeCatalog({ announceCount = false } = {}) {
+  const grid = $('#home-grid');
+  const report = $('#home-cat-report');
+
+  if (!homeCatalog) {
+    grid.replaceChildren(el('li', { class: 'rail-hint', text: 'Loading reading orders…' }));
+    try {
+      homeCatalog = await loadCatalog();
+    } catch (err) {
+      grid.replaceChildren();
+      $('#home-chips').hidden = true;
+      $('#form-home-q').hidden = true;
+      notify('#home-cat-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error');
+      return;
+    }
+    report.replaceChildren();
+  }
+
+  if (homeCatalog.dropped) {
+    notify(
+      '#home-cat-report',
+      `${homeCatalog.dropped} catalog ${homeCatalog.dropped === 1 ? 'entry is' : 'entries are'} incomplete and cannot be shown.`,
+      'warn',
+    );
+  }
+
+  const all = homeCatalog.lists;
+  if (!all.length) {
+    $('#home-chips').hidden = true;
+    $('#form-home-q').hidden = true;
+    $('#home-see-all').hidden = true;
+    $('#home-overflow').hidden = true;
+    grid.replaceChildren(el('li', { class: 'rail-hint', text: 'No curated reading orders are bundled with this build.' }));
+    return;
+  }
+
+  renderHomeChips(all);
+  // Scanning works up to about a dozen orders; past that the reader needs to be able to
+  // type. Showing the box before then would be a control with nothing to do.
+  $('#form-home-q').hidden = all.length <= HOME_FILTER_THRESHOLD;
+  if ($('#form-home-q').hidden && homeQuery) {
+    homeQuery = '';
+    $('#home-q').value = '';
+  }
+  $('#home-q-clear').hidden = !homeQuery;
+
+  const matched = searchCatalog(filterByFacet(all, homeFacet), homeQuery);
+  const shown = matched.slice(0, HOME_GRID_CAP);
+  const rest = matched.length - shown.length;
+
+  grid.replaceChildren(...shown.map(orderCard));
+
+  if (!matched.length) {
+    const where = homeFacet === 'all' ? '' : ` in ${facetLabel(all, homeFacet)}`;
+    grid.replaceChildren(el('li', {
+      class: 'rail-hint',
+      text: homeQuery
+        ? `No reading orders match “${homeQuery}”${where}.`
+        : `No reading orders${where || ''}.`,
+    }));
+  }
+
+  // The overflow is stated as a number rather than an ellipsis, so the reader knows how much
+  // catalog they have not seen before deciding whether to go looking.
+  $('#home-overflow').hidden = rest <= 0;
+  $('#home-overflow').textContent = rest > 0
+    ? `Showing ${shown.length} of ${matched.length} reading orders.`
+    : '';
+  $('#home-see-all').hidden = matched.length <= HOME_GRID_CAP;
+  $('#home-see-all').textContent = `See all ${matched.length} orders →`;
+  // Only when the reader narrowed something. Announcing on every render would let a routine
+  // count overwrite the confirmation that an order had just been added, which is the message
+  // that actually matters.
+  if (announceCount) {
+    announceCatalog(`${matched.length} reading ${matched.length === 1 ? 'order' : 'orders'} shown.`);
+  }
+}
+
+function renderHomeChips(all) {
+  const box = $('#home-chips');
+  const options = catalogFacets(all);
+  box.hidden = options.length < 2;
+  if (box.hidden) {
+    homeFacet = 'all';
+    return;
+  }
+  if (homeFacet !== 'all' && !options.some((o) => o.key === homeFacet)) homeFacet = 'all';
+
+  // Re-rendering the radios under a reader who just chose one would destroy the element
+  // holding focus, so an unchanged set of options only moves the selection.
+  const existing = [...box.querySelectorAll('input[name="home-facet"]')];
+  if (existing.length === options.length && existing.every((r, i) => r.value === options[i].key)) {
+    for (const radio of existing) radio.checked = radio.value === homeFacet;
+    return;
+  }
+
+  box.replaceChildren(
+    el('legend', { class: 'visually-hidden', text: 'Filter reading orders' }),
+    // Native radios in a fieldset already give a radio group with arrow-key navigation and
+    // a checked state, so nothing here is re-implemented in ARIA.
+    ...options.map(({ key, label, count }) => el('label', { class: 'fp' }, [
+      el('input', {
+        type: 'radio',
+        name: 'home-facet',
+        value: key,
+        checked: key === homeFacet,
+        onchange: () => { homeFacet = key; renderHomeCatalog({ announceCount: true }); },
+      }),
+      el('span', { text: `${label} (${count})` }),
+    ])),
+  );
+}
+
+// One card. The title is an <h3> and the description is a <p>, so neither can sit inside a
+// button: that is not valid content for one, and it would collapse the whole card into a
+// single unreadable accessible name. The preview button is a sibling stretched over the card
+// by CSS instead, which keeps the large click target without the nesting.
+function orderCard(list) {
+  const inLibrary = listForCatalogId(store.state, list.id);
+  const meta = [
+    `${list.count} issue${list.count === 1 ? '' : 's'}`,
+    readingTimeLabel(list.count),
+    typeLabel(list.type),
+  ].filter(Boolean).join(' · ');
+
+  const img = el('img', { alt: '' });
+  const fb = el('div', { class: 'of', 'aria-hidden': true }, [
+    el('span', { class: 'ofs', text: shortTitle(list.name) }),
+  ]);
+  // The cover is decorative: the title is right next to it, so alt text would only repeat it.
+  paintCoverUrl(img, fb, catalogCoverUrl(list), hueOf(list.name));
+
+  return el('li', { class: 'ocard' }, [
+    el('div', { class: 'ocard-body' }, [
+      el('div', { class: 'ocard-art' }, [img, fb]),
+      el('div', { class: 'ocard-text' }, [
+        el('h3', { class: 'ocard-title', text: list.name }),
+        list.description ? el('p', { class: 'ocard-desc', text: list.description }) : null,
+        el('p', { class: 'ocard-meta', text: meta }),
+        // Beginner-friendliness is why many readers pick an order, so it is a visible mark
+        // rather than only a filter you have to know to apply.
+        list.beginner ? el('p', {}, el('span', { class: 'pill', text: 'Beginner-friendly' })) : null,
+      ]),
+    ]),
+    el('div', { class: 'ocard-foot' }, [
+      addButton(list, inLibrary),
+      el('button', {
+        type: 'button',
+        class: 'ocard-preview',
+        'aria-label': `Preview the issue list for ${list.name}`,
+        onclick: () => openPreview(list),
+      }, `${list.count} issues — see the list`),
+    ]),
+  ]);
+}
+
+function addButton(list, inLibrary) {
+  if (inLibrary) {
+    const settled = !justAdded.has(list.id);
+    return el('button', {
+      type: 'button',
+      class: settled ? 'btn btn-g' : 'btn btn-added',
+      'aria-label': settled ? `Open ${list.name}` : `${list.name} is in your library`,
+      onclick: () => {
+        store.update((s) => setActive(s, inLibrary.id));
+        showView('read');
+      },
+    }, settled ? 'Open →' : '✓ In library');
+  }
+  return el('button', {
+    type: 'button',
+    class: 'btn btn-p',
+    // Read out of context, "Add" says nothing; the order's name has to be in the name.
+    'aria-label': `Add ${list.name} to library`,
+    onclick: (e) => addFromCatalog(list, e.currentTarget),
+  }, '+ Add to library');
+}
+
+async function addFromCatalog(list, btn) {
+  // Flipped before the import so the card confirms in place the moment it is clicked, and
+  // rolled back if the write fails rather than leaving a false "in library".
+  justAdded.add(list.id);
+  // Adding must not move the reader, so they can add a second order without finding their
+  // way back. The sidebar and the card are the confirmation.
+  const listId = await importCurated(list, btn, { navigate: false });
+  if (!listId) {
+    justAdded.delete(list.id);
+    renderHomeCatalog();
+    return;
+  }
+  renderHomeCatalog();
+  syncPreviewAdd();
+  // The card settles from "✓ In library" to "Open →" once the confirmation has been read,
+  // so the button ends up saying what it now does.
+  setTimeout(() => {
+    justAdded.delete(list.id);
+    renderHomeCatalog();
+    syncPreviewAdd();
+  }, 1500);
+}
+
+// ------------------------------------------------------------------ preview
+
+let previewLoad = null;
+let previewList = null;
+
+function syncPreviewAdd() {
+  if (!previewList || !$('#preview').open) return;
+  $('#preview-add').replaceChildren(addButton(previewList, listForCatalogId(store.state, previewList.id)));
+}
+
+function wirePreview() {
+  $('#preview-close').addEventListener('click', () => $('#preview').close());
+  // Clicking the backdrop closes, matching the Escape key that <dialog> gives us free.
+  $('#preview').addEventListener('click', (e) => {
+    if (e.target === $('#preview')) $('#preview').close();
+  });
+  $('#preview').addEventListener('close', () => { previewList = null; });
+}
+
+async function openPreview(list) {
+  const dlg = $('#preview');
+  previewList = list;
+  $('#preview-h').textContent = list.name;
+  const readingTime = readingTimeLabel(list.count);
+  $('#preview-meta').textContent = [
+    `${list.count} issue${list.count === 1 ? '' : 's'}`,
+    readingTime,
+    depthLabel(list.depth),
+  ].filter(Boolean).join(' · ');
+  $('#preview-desc').textContent = list.description || '';
+  $('#preview-body').replaceChildren(el('p', { class: 'rail-hint', text: 'Loading the issue list…' }));
+  $('#preview-add').replaceChildren(addButton(list, listForCatalogId(store.state, list.id)));
+  dlg.showModal();
+
+  // A second preview opened while the first is still loading would otherwise race it and
+  // could paint the wrong order's issues into the dialog.
+  const token = {};
+  previewLoad = token;
+  try {
+    const res = await fetch(`./data/${list.file}`, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const order = await res.json();
+    if (previewLoad !== token) return;
+    $('#preview-body').replaceChildren(el('ol', { class: 'preview-list' }, order.items.map((item, i) => el('li', {}, [
+      // Numbered because the order is the point; the reading order is what the reader came
+      // to the preview to see.
+      el('span', { class: 'pn', text: String(i + 1) }),
+      el('span', { text: item.title || 'Untitled issue' }),
+    ]))));
+  } catch (err) {
+    if (previewLoad !== token) return;
+    $('#preview-body').replaceChildren(el('p', {
+      class: 'rail-hint',
+      text: `The issue list could not be loaded: ${err.message}. You can still add the order.`,
+    }));
   }
 }
 
@@ -399,13 +904,15 @@ function renderReading() {
   const id = activeListId();
   const list = store.state.lists[id];
 
-  $('#no-active-list').hidden = Boolean(list);
   $('#reading-body').hidden = !list;
   $('#ring-wrap').hidden = !list;
 
   if (!list) {
+    // Reaching the reading view with no list means the last one was just deleted. The
+    // landing page is the honest place to be, so hand over rather than sit on an empty frame.
     $('#order-name').textContent = 'Marvel Reading Tracker';
     $('#order-sub').textContent = 'Curated reading orders, tracked locally, linked into the Unlimited reader.';
+    if (view === 'read') showView('home');
     return;
   }
 
@@ -1093,7 +1600,7 @@ function doManual() {
 // ------------------------------------------------------------------ curated orders
 
 let catalogLoad = null;
-let catalogCategory = 'all';
+let catalogFacet = 'all';
 let catalogQuery = '';
 let catalogAnnounceTimer = null;
 
@@ -1159,18 +1666,18 @@ async function renderCatalog() {
     return;
   }
 
-  // The categories describe the whole catalog, not the current search, so searching never
-  // makes a category vanish from the filter under the reader's cursor.
+  // The facets describe the whole catalog, not the current search, so searching never
+  // makes a filter vanish from under the reader's cursor.
   renderCatalogFilters(catalog.lists);
 
   // Filtering narrows which lists are shown; every list that is shown keeps the full detail a
-  // reader needs to choose, so searching or switching categories never hides a description,
+  // reader needs to choose, so searching or switching filters never hides a description,
   // reading depth, or issue count.
-  const inCategory = filterByCategory(catalog.lists, catalogCategory);
-  const shown = searchCatalog(inCategory, catalogQuery);
+  const inFacet = filterByFacet(catalog.lists, catalogFacet);
+  const shown = searchCatalog(inFacet, catalogQuery);
 
   if (!shown.length) {
-    const where = catalogCategory === 'all' ? '' : ` in ${categoryLabel(catalog.lists, catalogCategory)}`;
+    const where = catalogFacet === 'all' ? '' : ` in ${facetLabel(catalog.lists, catalogFacet)}`;
     const msg = catalogQuery
       ? `No reading lists match “${catalogQuery}”${where}.`
       : `No reading lists${where || ' in that category'}.`;
@@ -1198,7 +1705,7 @@ async function renderCatalog() {
 
   // The dropped-entry warning already announced itself; a second announcement would replace it.
   if (!catalog.dropped) {
-    const where = catalogCategory === 'all' ? '' : ` in ${categoryLabel(catalog.lists, catalogCategory)}`;
+    const where = catalogFacet === 'all' ? '' : ` in ${facetLabel(catalog.lists, catalogFacet)}`;
     const match = catalogQuery ? ` matching “${catalogQuery}”` : '';
     announceCatalog(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${match}${where}.`);
   }
@@ -1233,7 +1740,7 @@ function catalogRow(list, { variant = false } = {}) {
       // The accessible name always carries the full list name, so a button read out of
       // context never says only "Import Essential reading".
       'aria-label': `Import ${list.name}`,
-      onclick: (e) => importCurated(list.file, e.currentTarget),
+      onclick: (e) => importCurated(list, e.currentTarget),
     }, 'Import'),
   ]);
 }
@@ -1281,35 +1788,29 @@ function wireCatalogSearch() {
   });
 }
 
-function categoryLabel(lists, key) {
-  return catalogCategories(lists).find((c) => c.key === key)?.label ?? 'that category';
-}
-
 function renderCatalogFilters(lists) {
   const box = $('#catalog-filters');
-  const categories = catalogCategories(lists);
+  const options = catalogFacets(lists);
 
-  // One category is no choice at all, so the filter would only add noise.
-  box.hidden = categories.length < 2;
+  // One option is no choice at all, so the filter would only add noise.
+  box.hidden = options.length < 2;
   if (box.hidden) {
-    catalogCategory = 'all';
+    catalogFacet = 'all';
     return;
   }
 
-  // A category can disappear when the bundled data changes; falling back to "all" keeps the
+  // A facet can disappear when the bundled data changes; falling back to "all" keeps the
   // reader looking at a populated catalog instead of a permanently empty one.
-  if (catalogCategory !== 'all' && !categories.some((c) => c.key === catalogCategory)) {
-    catalogCategory = 'all';
+  if (catalogFacet !== 'all' && !options.some((c) => c.key === catalogFacet)) {
+    catalogFacet = 'all';
   }
 
-  const options = [{ key: 'all', label: 'All', count: lists.length }, ...categories];
-
-  // Selecting a category re-renders the view. Rebuilding the radios then would destroy the
+  // Selecting a filter re-renders the view. Rebuilding the radios then would destroy the
   // one the reader just activated and drop keyboard focus out of the filter, so when the
   // options are unchanged we only move the selection.
   const existing = [...box.querySelectorAll('input[name="catalog-category"]')];
   if (existing.length === options.length && existing.every((r, i) => r.value === options[i].key)) {
-    for (const radio of existing) radio.checked = radio.value === catalogCategory;
+    for (const radio of existing) radio.checked = radio.value === catalogFacet;
     return;
   }
 
@@ -1320,8 +1821,8 @@ function renderCatalogFilters(lists) {
         type: 'radio',
         name: 'catalog-category',
         value: key,
-        checked: key === catalogCategory,
-        onchange: () => { catalogCategory = key; renderCatalog(); },
+        checked: key === catalogFacet,
+        onchange: () => { catalogFacet = key; renderCatalog(); },
       }),
       el('span', { text: `${label} (${count})` }),
     ])),
@@ -1335,13 +1836,18 @@ function renderCatalogFilters(lists) {
 // two different files.
 let importing = null;
 
-async function importCurated(file, btn) {
-  if (importing) return;
+// `navigate` is false on the landing page, where adding an order must leave the reader where
+// they were so they can add a second one. The sidebar still updates, because the store change
+// re-renders it; that is the feedback, along with the announcement.
+async function importCurated(list, btn, { navigate = true } = {}) {
+  if (importing) return null;
+  const file = list.file;
+  const catalogId = list.id;
   importing = file;
   const label = btn?.textContent;
   if (btn) {
     btn.disabled = true;
-    btn.textContent = 'Importing…';
+    btn.textContent = 'Adding…';
   }
   try {
     // Served from our own origin, so this works with no internet connection.
@@ -1349,10 +1855,10 @@ async function importCurated(file, btn) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const order = await res.json();
 
-    const created = store.update((s) => createList(s, { name: order.name, description: order.description }));
+    const created = store.update((s) => createList(s, { name: order.name, description: order.description, catalogId }));
     if (!store.lastUpdateOk) {
       alert('That curated order could not be saved, so nothing was imported.');
-      return;
+      return null;
     }
     const listId = created.listOrder[created.listOrder.length - 1];
     let added = 0;
@@ -1363,23 +1869,32 @@ async function importCurated(file, btn) {
     });
     if (!store.lastUpdateOk) {
       alert('The list was created but its issues could not be saved.');
-      return;
+      return null;
     }
-    store.update((s) => setActive(s, listId));
-    showView('read');
+    if (navigate) {
+      store.update((s) => setActive(s, listId));
+      showView('read');
+    } else if (!store.state.active) {
+      // Nothing was being read, so the first order added becomes the one "Continue reading"
+      // resumes. It does not steal the active list from a reader who already had one.
+      store.update((s) => setActive(s, listId));
+    }
 
     // Some curated orders include issues Marvel has not published data for yet. They are
     // imported as placeholders so the reading order stays complete and tickable; saying so
     // is the difference between a known gap and a list that looks wrong for no reason.
     const placeholders = Number(order.placeholders) || 0;
-    const parts = [`Imported ${order.name}: ${added} issues.`];
+    const parts = [`${navigate ? 'Imported' : 'Added'} ${order.name}: ${added} issues.`];
     if (placeholders) {
       parts.push(`${placeholders} of them have no Marvel Unlimited link yet and cannot be opened.`);
     }
     parts.push('Any issues you had already read stay read.');
+    if (!navigate) parts.push('It is now in your sidebar.');
     announce(parts.join(' '));
+    return listId;
   } catch (err) {
     alert(`Could not load that curated order: ${err.message}`);
+    return null;
   } finally {
     importing = null;
     // The button survives a successful import only when the reader stays on the catalog; after
@@ -1555,6 +2070,7 @@ function friendly(err) {
 function renderAll() {
   renderRail();
   renderReading();
+  renderHome();
   renderProgress();
   renderQueue();
   const list = store.state.lists[activeListId()];
@@ -1568,6 +2084,33 @@ function renderAll() {
 }
 
 setInterval(renderQueue, 1000);
+
+// ------------------------------------------------------------------ boot
+
+// Last in the file, not first. Booting from the top would run before the module's `let`
+// bindings are initialised, and reading one of those from inside a boot call is a
+// ReferenceError rather than an undefined — the temporal dead zone does not hoist the way
+// function declarations do.
+store.load();
+applyCoversSetting();
+wireSidebar();
+wireNav();
+wireReading();
+wireAdd();
+wireData();
+wireShortcuts();
+wireBlockedBanner();
+wireCatalogSearch();
+wireHome();
+wirePreview();
+renderAll();
+// A reader with nothing to read has no reading view to show, so the landing page is where
+// they start. One with an active list resumes it, which is the whole point of the app.
+showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: false });
+checkHealth();
+refreshCacheUsage();
+
+if (store.lastError) notify('#save-report', store.lastError, 'error');
 
 // Written once at startup rather than from renderAll, because neither number can change
 // while the page is open, and a bug report needs them to be there whether or not the user
