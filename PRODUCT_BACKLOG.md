@@ -853,13 +853,22 @@ in silently and reported a clean run. The gate caught it on the next edit, which
 outcome available. Bless as the last action, with nothing edited after it, and read the check that
 follows rather than the bless that preceded it.
 
-One report needs reading with care. Ordinals are positional within a section and a file, so deleting
-a citation renumbers the ones after it in the same bucket. Removing a single prose line carrying two
-citations is reported as two removed and one drifted, and that one drift has not moved: it inherited
-a lower ordinal. Making keys local shrank the blast radius from the whole document to one section
-and one file, and it did not remove it. The removed list is the reliable half of that pair, and a
-drift reported alongside a removal in the same bucket should be confirmed against the code before it
-is treated as movement.
+Spurious drift was possible until the key changed. Ordinals used to be scoped to a file, so two
+different anchors in one section shared a bucket, and deleting one renumbered the other into its
+slot to be compared against a fingerprint that was never its own. That printed as drift, and the
+report asserted the anchor had once pointed at code it never pointed at. The fabricated part was the
+corroborating detail, made credible by the true details printed beside it. Scoping the ordinal to
+the whole anchor rather than to the file means two entries in a bucket cite identical lines and
+therefore carry identical fingerprints, so a renumber cannot manufacture a mismatch at all. The
+defect is gone by construction rather than by care, which is worth more than a rule telling readers
+to distrust a particular combination of counts.
+
+The cost is that re-aiming an anchor changes its key, so it reports as one addition and one loss
+rather than as drift. Those are paired back together for reporting when a section holds exactly one
+of each for the same file, showing the blessed anchor and the new one side by side; a section with
+several is left unpaired, because guessing which removal explains which addition would invent the
+same kind of persuasive detail the key change removed. Pairing never makes two anchors compare
+equal, so it cannot bring the defect back.
 
 A guard can also be loud and wrong about what it is loud about. Renaming the lock's fingerprint
 field used to report all 218 anchors as drifted, when the truth was that the lock could not be read,

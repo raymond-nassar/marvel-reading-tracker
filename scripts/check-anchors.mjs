@@ -227,13 +227,23 @@ function collect() {
           exempted += 1;
           continue;
         }
-        const bucket = `${doc}|${scope}|${c.file}`;
+        const anchor = `${c.file}:${c.start}${c.end === c.start ? '' : `-${c.end}`}`;
+        // The ordinal is scoped to the whole anchor, not to the file. Scoping it to the
+        // file lets two different anchors share a bucket, so deleting one renumbers the
+        // other into its slot and the gate compares it against a fingerprint that was
+        // never its own. That is reported as drift, complete with a "blessed" line
+        // asserting the anchor once pointed at code it never pointed at: a fabricated
+        // detail whose credibility comes from the true details printed beside it.
+        // Keying on the anchor means two entries in a bucket cite identical lines and
+        // therefore carry identical fingerprints, so a renumber cannot manufacture a
+        // mismatch. The defect is removed by construction rather than by care.
+        const bucket = `${doc}|${scope}|${anchor}`;
         const ordinal = ordinals.get(bucket) ?? 0;
         ordinals.set(bucket, ordinal + 1);
         captured += 1;
         found.push({
           key: `${bucket}|${ordinal}`,
-          anchor: `${c.file}:${c.start}${c.end === c.start ? '' : `-${c.end}`}`,
+          anchor,
           claim: line.slice(Math.max(0, c.at - 90), c.at).replace(/`/g, '').trim(),
           ...fingerprint(c.file, c.start, c.end),
         });
@@ -404,8 +414,55 @@ for (const k of gone) {
 }
 
 const cov = coverage.map((c) => `${c.doc} ${c.captured}/${c.scanned}`).join(', ');
+
+// An anchor that was re-aimed appears as one addition and one loss, because the anchor
+// text is part of the key. Reported as two unrelated events that is true but illegible:
+// pointing this gate at the commit where these citations were born prints 112 additions
+// and 137 losses and zero drift, so a reader running the documented historical check
+// concludes it cannot see the breakage it was built for. Pairing them back up restores
+// the blessed-versus-now reading without restoring the defect, because the pairing is
+// presentation only and never makes two anchors compare equal. It is deliberately
+// refused unless a scope holds exactly one addition and one loss for the same file,
+// since a guess about which removal explains which addition is the kind of corroborating
+// detail that makes a wrong report persuasive.
+const fileOf = (a) => String(a).split(':')[0];
+const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;
+const newBy = new Map();
+for (const u of unkeyed) {
+  const b = bucketOf(u.key, fileOf(u.anchor));
+  if (!newBy.has(b)) newBy.set(b, []);
+  newBy.get(b).push(u);
+}
+const goneBy = new Map();
+for (const k of gone) {
+  const b = bucketOf(k, fileOf(lock[k].anchor));
+  if (!goneBy.has(b)) goneBy.set(b, []);
+  goneBy.get(b).push(k);
+}
+const reaimed = [];
+const pairedNew = new Set();
+const pairedGone = new Set();
+for (const [b, ns] of newBy) {
+  const gs = goneBy.get(b);
+  if (!gs || ns.length !== 1 || gs.length !== 1) continue;
+  reaimed.push({ from: gs[0], to: ns[0] });
+  pairedNew.add(ns[0].key);
+  pairedGone.add(gs[0]);
+}
+
 console.log(`${unchanged} unchanged, ${drifted.length} drifted, ${unkeyed.length} new, ${gone.length} removed`);
+if (reaimed.length) {
+  console.log(`of which ${reaimed.length} pair as re-aimed anchors, one addition against one loss`);
+}
 console.log(`coverage: ${cov}\n`);
+
+for (const r of reaimed) {
+  console.log(`RE-AIM ${r.to.key}`);
+  console.log(`  claim   : ${r.to.claim}`);
+  console.log(`  was     : ${lock[r.from].anchor}  ->  ${lock[r.from].head}`);
+  console.log(`  now     : ${r.to.anchor}  ->  ${r.to.head ?? `(${r.to.why})`}`);
+  console.log('');
+}
 
 for (const d of drifted) {
   console.log(`DRIFT  ${d.key}`);
@@ -417,12 +474,15 @@ for (const d of drifted) {
 }
 
 for (const u of unkeyed) {
+  if (pairedNew.has(u.key)) continue;
   console.log(`NEW    ${u.key}  ${u.anchor}`);
   console.log(`  now says: ${u.head ?? `(${u.why})`}`);
   console.log('');
 }
 
-for (const [doc, keys] of goneByDoc) {
+for (const [doc, all] of goneByDoc) {
+  const keys = all.filter((k) => !pairedGone.has(k));
+  if (!keys.length) continue;
   const absent = corpus.has(doc) ? '' : ', and the document itself is absent from the corpus';
   console.log(`GONE   ${doc}: ${keys.length} blessed anchor(s) no longer collected${absent}`);
   for (const k of keys.slice(0, 4)) console.log(`  ${lock[k].anchor}  ${k}`);
