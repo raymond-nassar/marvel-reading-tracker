@@ -162,55 +162,97 @@ function isLive(node) {
   return false;
 }
 
+// The catalog is loaded once and shown in two views, so a failure is one condition reported into
+// whichever pane the reader is at. Keying it by the condition rather than by the pane is what lets
+// a later success clear it wherever it was placed.
+const CATALOG_LOAD = 'catalog-load';
+
 // alert() reached the reader wherever they were; a pane fixed in one view does not. With
 // a curated import in flight, three ways the named pane went unseen were measured: the
 // reader switched view, so the pane was inside a hidden one and nothing appeared at all;
 // the preview dialog was still open, so the pane sat behind its backdrop and outside the
-// top layer; and the grid was scrolled, so the pane was 87px above the viewport. The pane
-// is therefore chosen when the message is written rather than when the work started.
-function paneFor(sel) {
-  const asked = $(sel);
-  // Only the general notice panes may be relocated. #save-report sits above every view and
-  // is assertive because a persistence failure must not be missed, and the result panes are
-  // read alongside the form that filled them, so moving either would lose the context that
-  // makes the message actionable and would quietly change which channel it goes out on.
-  if (!asked?.classList.contains('report')) return asked;
-  // Every dialog in this app is opened with showModal(), so an open one is the top layer
-  // and anything behind it is inert and dimmed regardless of where it sits on the page.
-  const modal = $('dialog[open]');
-  if (modal) return modal.querySelector('.report') || asked;
-  // offsetParent is null only when an ancestor is display:none, which is how a view that
-  // is not the current one is hidden.
-  if (asked.offsetParent) return asked;
-  return visibleReport() || asked;
+// top layer; and the grid was scrolled, so the pane was 87px above the viewport.
+//
+// Each notice is remembered rather than only written into the page, because where it belongs can
+// change after it is written. The reader can leave the view while a curated import is still in
+// flight, and 219-issue orders make that window real, or a dialog can open over the pane. Placing
+// every outstanding notice from this record is what keeps one message in exactly one place;
+// moving the nodes about instead left a copy behind in the pane the message started in, and with
+// two outstanding it kept whichever came first in the markup rather than the newer one.
+const notices = new Map();
+
+// #app-report is above every view, so it is the only pane always available to a message whose own
+// pane the reader cannot see. Five of the seven views carry no pane of their own.
+function overflowPane() {
+  const box = $('#app-report');
+  return box?.offsetParent ? box : null;
 }
 
-// #app-report is above every view and so is always the last of these to be hidden, which is
-// what makes a fallback possible at all: five of the seven views carry no pane of their own.
-function visibleReport() {
-  return [...document.querySelectorAll('.report')].find((n) => n.offsetParent) || null;
+function placeNotices() {
+  const overflow = overflowPane();
+  // Every dialog here is opened with showModal(), so an open one is the top layer and anything
+  // behind it is inert and dimmed regardless of where it sits on the page.
+  const modalPane = $('dialog[open]')?.querySelector('.report') ?? null;
+  const placed = new Map();
+  const claims = new Map();
+
+  for (const [, note] of notices) {
+    const own = $(note.sel);
+    if (!own) continue;
+    let box = own;
+    if (modalPane) box = modalPane;
+    // offsetParent is null only under a display:none ancestor, which is how a view that is not
+    // the current one is hidden.
+    else if (!own.offsetParent) box = overflow ?? own;
+    placed.set(note.sel, box);
+    // Later wins a shared pane, and notices is kept in order of arrival, so what the reader sees
+    // is the newest of two outstanding messages rather than whichever pane comes first.
+    claims.set(box, note);
+  }
+
+  // A message already readable in a view's own pane must not be repeated in the shared one. The
+  // same sentence twice on one screen is the visual form of the double-speak BL-027 removed.
+  if (overflow && claims.has(overflow)) {
+    const dup = [...claims].some(([box, note]) => box !== overflow && note.msg === claims.get(overflow).msg);
+    if (dup) claims.delete(overflow);
+  }
+
+  for (const pane of document.querySelectorAll('.report')) {
+    const note = claims.get(pane);
+    pane.replaceChildren(...(note ? [el('p', { class: `notice notice-${note.kind}`, text: note.msg })] : []));
+  }
+  return placed;
 }
 
-// The pane that received a message is remembered because it may not be the one the caller
-// named, and clearing only the named pane would leave a stale failure on screen beside the
-// success that replaced it.
-const noticeShown = new Map();
-
-function notify(sel, msg, kind = 'ok') {
-  const box = paneFor(sel);
-  if (!box) return;
-  noticeShown.set(sel, box);
-  box.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
-  // Nothing else scrolls a pane into view, and "nearest" is a no-op once it is fully
-  // visible, so this moves the page only when the message would otherwise be missed.
+// The key is what a notice is cleared by, and it defaults to the pane so that most callers need
+// not think about it. It is separate so that a condition reported into more than one pane, such as
+// a catalog load, can be cleared wherever it ended up.
+function notify(sel, msg, kind = 'ok', key = sel) {
+  const own = $(sel);
+  if (!own) return;
+  // Only the general notice panes move. #save-report sits above every view and is assertive
+  // because a persistence failure must not be missed, and the result panes are read alongside the
+  // form that filled them, so relocating either would lose the context that makes it actionable
+  // and would quietly change which channel it goes out on.
+  if (!own.classList.contains('report')) {
+    own.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
+    if (!isLive(own)) announce(msg);
+    return;
+  }
+  // Re-inserted rather than overwritten in place, because a Map keeps a key at its original
+  // position and arrival order is what decides the newest message.
+  notices.delete(key);
+  notices.set(key, { sel, msg, kind });
+  const box = placeNotices().get(sel) ?? own;
+  // Nothing else scrolls a pane into view, and "nearest" is a no-op once it is fully visible, so
+  // this moves the page only when the message would otherwise be missed.
   box.scrollIntoView?.({ block: 'nearest' });
   if (!isLive(box)) announce(msg);
 }
 
-function clearNotice(sel) {
-  noticeShown.get(sel)?.replaceChildren();
-  noticeShown.delete(sel);
-  $(sel)?.replaceChildren();
+function clearNotice(key) {
+  notices.delete(key);
+  placeNotices();
 }
 
 function loadSettings() {
@@ -452,24 +494,6 @@ async function newEmptyList() {
   announceIfSaved(`Created list ${name}.`);
 }
 
-// A notice can be written and then stranded, because the reader can leave the view while a
-// curated import is still in flight and 219-issue orders make that window real. Moving the
-// message rather than dropping it matters because what it describes, an import that did not
-// happen, is still true after the view changes.
-function rehomeNotices() {
-  const target = visibleReport();
-  if (!target) return;
-  for (const pane of document.querySelectorAll('.report')) {
-    if (pane === target || pane.offsetParent || !pane.childElementCount) continue;
-    // Replaces rather than appends. notify() only clears the pane it chose, so the copy left
-    // behind in the pane the caller named is the same message, and appending stacked an
-    // identical paragraph per round trip: measured 1, then 2, then 3 in about six clicks.
-    target.replaceChildren(...pane.childNodes);
-    for (const [sel, box] of noticeShown) if (box === pane) noticeShown.set(sel, target);
-    target.scrollIntoView?.({ block: 'nearest' });
-  }
-}
-
 // Moving focus to the new view's heading is what makes the rail usable with a keyboard or a
 // screen reader. Without it, focus stays on the rail button and the view change is silent, so
 // the next Tab continues from the old position and nothing announces where you now are.
@@ -490,8 +514,9 @@ function showView(next, { focus = true } = {}) {
   if (next === 'catalog') renderCatalog();
   if (next === 'home') renderHome();
   window.scrollTo({ top: 0 });
-  // After the scroll to the top, so that bringing a moved notice into view is not undone.
-  rehomeNotices();
+  // After the scroll to the top, so that bringing a message into view is not undone. Which pane
+  // each outstanding notice belongs in has just changed, because a different view is showing.
+  placeNotices();
 
   if (!focus) return;
   const section = $(`#view-${next}`);
@@ -673,7 +698,6 @@ function renderYours(populated) {
 
 async function renderHomeCatalog({ announceCount = false } = {}) {
   const grid = $('#home-grid');
-  const report = $('#home-cat-report');
 
   if (!homeCatalog) {
     grid.replaceChildren(el('li', { class: 'rail-hint', text: 'Loading reading orders…' }));
@@ -683,10 +707,10 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
       grid.replaceChildren();
       $('#home-chips').hidden = true;
       $('#form-home-q').hidden = true;
-      notify('#home-cat-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error');
+      notify('#home-cat-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error', CATALOG_LOAD);
       return;
     }
-    report.replaceChildren();
+    clearNotice(CATALOG_LOAD);
   }
 
   if (homeCatalog.dropped) {
@@ -888,7 +912,7 @@ function wirePreview() {
   $('#preview').addEventListener('click', (e) => {
     if (e.target === $('#preview')) $('#preview').close();
   });
-  $('#preview').addEventListener('close', () => { previewList = null; rehomeNotices(); });
+  $('#preview').addEventListener('close', () => { previewList = null; placeNotices(); });
 }
 
 async function openPreview(list) {
@@ -1761,9 +1785,11 @@ function announceCatalog(msg) {
 
 async function renderCatalog() {
   const box = $('#catalog-results');
-  const report = $('#catalog-report');
   box.replaceChildren(el('p', { class: 'rail-hint', text: 'Loading the catalog…' }));
-  report.replaceChildren();
+  // Cleared by condition rather than by pane, because the same load failure may have been placed
+  // in the shared pane above the views. Emptying only this pane left the reader looking at a
+  // loaded catalog under a banner saying it could not be loaded.
+  clearNotice(CATALOG_LOAD);
   // Tied to the query rather than to a successful load, so the button cannot be left behind
   // offering to clear a search box that an empty or failed catalog still shows.
   $('#catalog-clear').hidden = !catalogQuery;
@@ -1775,7 +1801,7 @@ async function renderCatalog() {
     box.replaceChildren();
     $('#catalog-filters').hidden = true;
     $('#catalog-filters').replaceChildren();
-    notify('#catalog-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error');
+    notify('#catalog-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error', CATALOG_LOAD);
     return;
   }
 
