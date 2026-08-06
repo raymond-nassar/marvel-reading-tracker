@@ -562,7 +562,7 @@ function renderYours(populated) {
       onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
     }, [
       el('span', { class: 'yn', text: list.name }),
-      el('span', { class: 'pbar' }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
+      el('span', { class: 'pbar', 'aria-hidden': true }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
       // Repeated as text because a bar alone conveys progress by shape only.
       el('span', { class: 'yc', text: `${read} / ${total}` }),
     ]));
@@ -1841,8 +1841,8 @@ let importing = null;
 // re-renders it; that is the feedback, along with the announcement.
 async function importCurated(list, btn, { navigate = true } = {}) {
   if (importing) return null;
-  const file = typeof list === 'string' ? list : list.file;
-  const catalogId = typeof list === 'string' ? null : list.id;
+  const file = list.file;
+  const catalogId = list.id;
   importing = file;
   const label = btn?.textContent;
   if (btn) {
