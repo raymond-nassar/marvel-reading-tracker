@@ -120,7 +120,7 @@ remaining and is not scored.
 | 4.4 | BL-016 | P1 | hero next-unread and Done, next at `src/index.html:125-155` | Done |
 | 4.5 | BL-017 | P2 | `absent: note\|notes, grep across src/**/*.js returning only an unrelated shelf caption and a code comment` | Not started |
 | 5.1 | BL-018 | P0 | pending and by-hand badges at `src/js/main.js:582-585`, pending filter at `src/js/main.js:618` | Done |
-| 5.2 | BL-019 | P1 | five-state availability model at `src/js/lib/availability.js:12-18`, hedged short labels at `src/js/main.js:607-612` | Done |
+| 5.2 | BL-019 | P1 | five-state availability model at `src/js/lib/availability.js:17-23`, hedged short labels at `src/js/main.js:607-612` | Done |
 | 5.3 | BL-020 | P1 | manual entries carry `source: 'manual'` at `src/js/main.js:1062` and render, reorder, export and back up like any other issue | Done |
 | 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:248-280` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:11` | Done |
 | 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:434-458` | Done |
@@ -129,7 +129,7 @@ remaining and is not scored.
 | 6.4 | BL-025 | P2 | not applicable. Ruled out by Repository Constraint 3, which forbids accounts and cloud services, and already listed as out of scope at the end of this document | Forbidden, Constraint 3 |
 | 7.1 | BL-026 | P0 | focus order and visible focus pass across 45 measured tab stops in `docs/ux-artifacts/live-inspection.json`, but the shortcut handler bails on any focused control at `src/js/main.js:635-651` | Partial |
 | 7.2 | BL-027 | P1 | announcements exist at `src/js/main.js:139-144`, but they fire into two live regions at once and the first-run heading is empty per `docs/ux-artifacts/pa11y-landing.json` | Partial |
-| 7.3 | BL-028 | P1 | the mobile rail rule at `src/styles.css:69-72` is overridden by `src/styles.css:76-80`, and the reading view overflows by 93 px at 320 px per `docs/ux-artifacts/viewport-sweep-reading.json` | Partial |
+| 7.3 | BL-028 | P1 | the mobile rail rule at `src/styles.css:81-84` is overridden by `src/styles.css:88-92`, and the reading view overflows by 93 px at 320 px per `docs/ux-artifacts/viewport-sweep-reading.json` | Partial |
 
 ### Orientation disagreements
 
@@ -903,7 +903,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
 - Appropriateness recognisability and learnability: good. Labels are written in plain English and
   the availability wording is careful to hedge. Evidence: `src/js/main.js:607-612`.
 - Operability: gap. Row actions sit at `opacity: 0` until hover or focus-within, so on a touch
-  device they are invisible until tapped. Evidence: `src/styles.css:304-311`.
+  device they are invisible until tapped. Evidence: `src/styles.css:345-352`.
 - User error protection: gap. Deleting a list is guarded only by a native `confirm()` and cannot be
   undone afterwards, while restoring a backup does have an undo. Evidence:
   `src/js/main.js:335-342` (delete, confirm only), `src/js/main.js:1449-1452` (undoRestore exists).
@@ -954,8 +954,8 @@ The clearest debt in the repository, and it is concentrated in one file.
 - Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts.
   Evidence: `scripts/vendor-index.mjs:40-54`, `scripts/vendor-orders.mjs:48-62`.
 - Minor analysability gap: the `.row` class carries two unrelated meanings, a reading row and a form
-  row, and a leftover empty rule sits between them. Evidence: `src/styles.css:271-274`,
-  `src/styles.css:331-332`.
+  row, and a leftover empty rule sits between them. Evidence: `src/styles.css:304-307`,
+  `src/styles.css:372-373`.
 
 #### 8. Flexibility
 
@@ -995,7 +995,7 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:87-93`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepts any base URL and only strips trailing slashes, with the https-or-local check living in the settings form rather than in the client. Evidence: `src/js/api.js:18-26` against `src/js/main.js:1454-1464`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
 | Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-18` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
-| Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:69-72`. |
+| Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:81-84`. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
 | Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. |
 | CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. |
@@ -1053,7 +1053,7 @@ intent that no one stated.
 - What a human should settle: whether a measured 93 pixel horizontal overflow at 320 pixels, plus
   row actions that only appear on hover, plus a mobile layout that has never once shipped because
   its rule is dead, together constitute a P0. Evidence: `docs/ux-artifacts/viewport-sweep-reading.json`,
-  `src/styles.css:304-311`, `src/styles.css:69-72`. The original document's own framing supports
+  `src/styles.css:345-352`, `src/styles.css:81-84`. The original document's own framing supports
   raising it: it describes reading "beside Marvel Unlimited", which is a phone-and-tablet posture.
 
 ### Case 4: nine items created this pass outrank the only open P0 story

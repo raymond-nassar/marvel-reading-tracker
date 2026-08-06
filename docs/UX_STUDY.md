@@ -198,7 +198,7 @@ Not applicable, with reason:
   across src/`.
 * 1.4.2 Audio Control, not applicable, for the same reason.
 * 2.2.2 Pause, Stop, Hide, not applicable, because the only moving element is a progress ring
-  transition that already respects reduced motion. Evidence: `src/styles.css:383-385`.
+  transition that already respects reduced motion. Evidence: `src/styles.css:424-426`.
 * 3.3.8 Accessible Authentication (Minimum), not applicable, because there is no authentication of
   any kind. Evidence: `absent: password|login|signin|oauth|token, grep across src/`.
 * 3.3.7 Redundant Entry, not applicable, because no flow asks for the same information twice.
@@ -221,7 +221,7 @@ Notable passes, recorded because a reader would reasonably expect them to fail:
 
 * 2.4.3 Focus Order and 2.4.7 Focus Visible pass. All 45 captured tab stops carry a 3 pixel solid
   outline, and focus order follows reading order. Evidence: `docs/ux-artifacts/live-inspection.json`,
-  `src/styles.css:38-42`.
+  `src/styles.css:50-54`.
 * 2.1.2 No Keyboard Trap passes. A reverse walk escaped to the document body.
   Evidence: `docs/ux-artifacts/live-inspection.json`.
 * 2.5.8 Target Size (Minimum) passes, through the spacing exception rather than through size. This
@@ -320,7 +320,7 @@ Rationale: every row control on the primary reading path, persisting across sess
 conformance pass and an ergonomic problem rather than a barrier
 Confidence: Measured
 Evidence: `docs/ux-artifacts/target-spacing.json`, `docs/ux-artifacts/live-inspection.json`,
-`src/styles.css:290-293`
+`src/styles.css:331-334`
 Source: WCAG 2.2 Level AA sweep, criterion 2.5.8
 Impact: 60 of 140 row targets measure under 24 pixels in at least one dimension. The read toggle is
 17 by 17 and the row action buttons are 22 by 26. The naive verdict is a failure, and it is wrong.
@@ -342,7 +342,7 @@ Severity: 3, single-rater estimate
 Rationale: hides six controls per row on the primary reading path, on every touch device, for the
 life of the product
 Confidence: Measured
-Evidence: `src/styles.css:304-311`, `docs/ux-artifacts/live-inspection.json`
+Evidence: `src/styles.css:345-352`, `docs/ux-artifacts/live-inspection.json`
 Source: mobile viewport framing, criterion 1.4.13
 Impact: the row action container computes to `opacity: 0` at rest and is revealed only on `:hover`
 or `:focus-within`. Keyboard users are served, because the measured tab walk reached every action
@@ -406,7 +406,7 @@ emulated light preference the computed body background stays `rgb(15, 17, 21)` a
 taken under light and dark preference are byte-identical, so the reader's system preference has no
 effect at all. Forced colours and reduced motion are both handled, which shows the gap is a missing
 theme rather than a general disregard for user preferences. Evidence for that contrast:
-`src/styles.css:383-390`.
+`src/styles.css:424-431`.
 Recommendation: derive the palette from tokens and add a light theme behind `prefers-color-scheme`
 with a manual override, reusing the existing forced-colors work as the model
 Backlog item: BL-032
@@ -506,7 +506,7 @@ Shift and Tab. Focus order matched reading order. Every stop carried a visible f
 3 pixel solid outline. No trap was found, and the reverse walk escaped cleanly to the document
 body. Exactly one stop was not visible, a 1 by 1 pixel input at zero opacity, and that is the
 standard visually-hidden filter radio paired with a visible label, not a stray control. Evidence:
-`src/styles.css:261`, `src/index.html:180-184`.
+`src/styles.css:294`, `src/index.html:180-184`.
 
 Dialog focus return was not testable, because the application contains no dialogs at all. The
 measured DOM has zero elements with `role="dialog"`, zero `dialog` elements and zero `aria-modal`
@@ -556,7 +556,7 @@ Rationale: catastrophic in its category. It defeats the entire mobile layout on 
 device class the product is explicitly meant to be used beside, and it will never be noticed by
 reading the media query alone because the media query is correct
 Confidence: Measured
-Evidence: `src/styles.css:69-72`, `src/styles.css:76-80`,
+Evidence: `src/styles.css:81-84`, `src/styles.css:88-92`,
 `docs/ux-artifacts/viewport-sweep-reading.json`
 Source: mobile viewport framing, viewport sweep
 Impact: the stylesheet contains a media query that collapses the rail to `position: static` and
@@ -596,7 +596,7 @@ Backlog item: BL-028
 reduce, with a screenshot captured for each. The light and dark screenshots are byte-identical,
 which is the measurement behind UX-A-008. Reduced motion is genuinely honoured: the progress ring
 transition computes to `none` under the reduce preference. Evidence:
-`docs/ux-artifacts/live-inspection.json`, `src/styles.css:383-385`.
+`docs/ux-artifacts/live-inspection.json`, `src/styles.css:424-426`.
 
 ## Step 5: Information architecture and generative artifacts
 
