@@ -119,6 +119,14 @@
                because they can occur during any action and must not be missed. -->
           <div id="save-report" role="alert" aria-live="assertive"></div>
 
+          <!-- Last resort for a notice whose own pane the reader cannot see. Five of the seven
+               views carry no report pane of their own, so without a destination here a curated
+               import that failed on the landing page had nowhere to go once the reader moved on.
+               Deliberately not a live region: the message was already announced once when it was
+               written, and moving it into an assertive region would say it a second time, which
+               is what BL-027 removed. -->
+          <div id="app-report" class="report"></div>
+
           <!-- Shown only when saved data could not be read. Saving stays paused until the
                user chooses, so the unreadable original is never overwritten. -->
           <section id="blocked-banner" class="blocked" hidden role="alert">

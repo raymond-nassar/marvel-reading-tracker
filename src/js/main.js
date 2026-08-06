@@ -170,14 +170,25 @@ function isLive(node) {
 // is therefore chosen when the message is written rather than when the work started.
 function paneFor(sel) {
   const asked = $(sel);
+  // Only the general notice panes may be relocated. #save-report sits above every view and
+  // is assertive because a persistence failure must not be missed, and the result panes are
+  // read alongside the form that filled them, so moving either would lose the context that
+  // makes the message actionable and would quietly change which channel it goes out on.
+  if (!asked?.classList.contains('report')) return asked;
   // Every dialog in this app is opened with showModal(), so an open one is the top layer
   // and anything behind it is inert and dimmed regardless of where it sits on the page.
   const modal = $('dialog[open]');
   if (modal) return modal.querySelector('.report') || asked;
   // offsetParent is null only when an ancestor is display:none, which is how a view that
   // is not the current one is hidden.
-  if (asked?.offsetParent) return asked;
-  return [...document.querySelectorAll('.report')].find((n) => n.offsetParent) || asked;
+  if (asked.offsetParent) return asked;
+  return visibleReport() || asked;
+}
+
+// #app-report is above every view and so is always the last of these to be hidden, which is
+// what makes a fallback possible at all: five of the seven views carry no pane of their own.
+function visibleReport() {
+  return [...document.querySelectorAll('.report')].find((n) => n.offsetParent) || null;
 }
 
 // The pane that received a message is remembered because it may not be the one the caller
@@ -441,25 +452,27 @@ async function newEmptyList() {
   announceIfSaved(`Created list ${name}.`);
 }
 
-// Moving focus to the new view's heading is what makes the rail usable with a keyboard or a
-// screen reader. Without it, focus stays on the rail button and the view change is silent, so
-// the next Tab continues from the old position and nothing announces where you now are.
 // A notice can be written and then stranded, because the reader can leave the view while a
 // curated import is still in flight and 219-issue orders make that window real. Moving the
 // message rather than dropping it matters because what it describes, an import that did not
 // happen, is still true after the view changes.
 function rehomeNotices() {
-  const panes = [...document.querySelectorAll('.report')];
-  const target = panes.find((n) => n.offsetParent);
+  const target = visibleReport();
   if (!target) return;
-  for (const pane of panes) {
+  for (const pane of document.querySelectorAll('.report')) {
     if (pane === target || pane.offsetParent || !pane.childElementCount) continue;
-    target.append(...pane.childNodes);
+    // Replaces rather than appends. notify() only clears the pane it chose, so the copy left
+    // behind in the pane the caller named is the same message, and appending stacked an
+    // identical paragraph per round trip: measured 1, then 2, then 3 in about six clicks.
+    target.replaceChildren(...pane.childNodes);
     for (const [sel, box] of noticeShown) if (box === pane) noticeShown.set(sel, target);
     target.scrollIntoView?.({ block: 'nearest' });
   }
 }
 
+// Moving focus to the new view's heading is what makes the rail usable with a keyboard or a
+// screen reader. Without it, focus stays on the rail button and the view change is silent, so
+// the next Tab continues from the old position and nothing announces where you now are.
 function showView(next, { focus = true } = {}) {
   // There is nothing to read without an active list, so the reading view hands over to the
   // landing page rather than showing an empty frame with a heading over it.
