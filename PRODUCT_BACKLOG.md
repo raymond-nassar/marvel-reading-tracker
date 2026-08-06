@@ -660,20 +660,29 @@ nothing about this item in either direction. It had to be measured deliberately,
 does it now walks all five variants instead of only the one that happens to render in the seeded
 list.
 
-One thing found on the way: correcting the line numbers this comment shifted drew attention to
-three evidence anchors in `docs/UX_STUDY.md` that had rotted. All three cited lines 383-385 or
-383-390 of `src/styles.css`. Those numbers were right when the audit took them, against `b18fc47`,
-where they were the reduced-motion query and the pair of preference queries. Shipping the top of
-the backlog at `e6d27c4` grew that file from 409 lines to 450 and pushed those rules down without
-changing them, and the study was written up afterwards still carrying the pre-ship numbers, so by
-the time it was committed at `240e6d3` the same ranges landed on the `.result` card rules. They
-were repaired at `1e3fb64` and shifted once more by this comment, so they now point at the
+One thing found on the way, and it grew: correcting the line numbers this comment shifted drew
+attention to three evidence anchors in `docs/UX_STUDY.md` that no longer resolved to anything about
+motion. All three cited lines 383-385 or 383-390 of `src/styles.css`. The first reading was that
+they had always been wrong. They had not. At `b18fc47`, the baseline the audit measured against,
+383-385 really was the reduced-motion query. Shipping the top of the backlog at `e6d27c4` grew that
+file from 409 lines to 450 and pushed those rules down without changing them, and the study was
+written up afterwards still carrying the pre-ship numbers, so the ranges were already stale by the
+time it was committed at `240e6d3`. This is drift the fixes introduced, not sloppiness in the
+original measurement. Swept properly it was eleven anchors across both documents rather than three,
+repaired in `1e3fb64`, and three had drifted far enough to name the wrong rule outright: the claim
+that every tab stop carries a 3 pixel focus outline had come to cite `body`, the note about the
+leftover empty `.row` rule had come to cite the checkbox, and the description of the reading row
+itself had come to cite the cover-tile rules. The three that started this now point at the
 progress-ring transition at `src/styles.css:149` and the preference queries at
-`src/styles.css:448-455`. Those stale numbers are deliberately written without the usual anchor
-backticks: they are a historical citation rather than live evidence, and in the anchor form a
-checker would resolve them against today's file and report them as healthy. That is the weakness
-that let them rot, since a range that resolves is not necessarily a range that says what the
-sentence claims.
+`src/styles.css:448-455`.
+
+Those stale numbers are written above without the usual anchor backticks on purpose. They are a
+historical citation rather than live evidence, and in the anchor form a checker would resolve them
+against today's file and report them as healthy. That is precisely the weakness that let them rot
+unnoticed, because a range that resolves is not necessarily a range that says what the sentence
+claims. It is also why the 24 lines this comment adds were re-derived against every anchor below
+them and confirmed by reading the code each one lands on, rather than trusted to a checker that
+only asks whether the range exists.
 
 ## Existing epics and stories
 
