@@ -667,7 +667,7 @@ they had always been wrong. They had not. At `b18fc47`, the baseline the audit m
 383-385 really was the reduced-motion query. Shipping the top of the backlog at `e6d27c4` grew that
 file from 409 lines to 450 and pushed those rules down without changing them, and the study was
 written up afterwards still carrying the pre-ship numbers, so the ranges were already stale by the
-time it was committed at `240e6d3`. This is drift the fixes introduced, not sloppiness in the
+time it was committed at `240e6d3`. This is drift that one commit introduced, not sloppiness in the
 original measurement. Swept properly it was eleven anchors across both documents rather than three,
 repaired in `1e3fb64`, and three had drifted far enough to name the wrong rule outright: the claim
 that every tab stop carries a 3 pixel focus outline had come to cite `body`, the note about the
