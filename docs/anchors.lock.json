@@ -35,17 +35,17 @@
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
   "docs/UX_STUDY.md|job-stories|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1728-1733",
+    "anchor": "src/js/main.js:1729-1734",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
   "docs/UX_STUDY.md|job-stories|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1096-1099",
+    "anchor": "src/js/main.js:1097-1100",
     "fp": "cf9f9d54d5388722",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
   "docs/UX_STUDY.md|job-stories|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1911-1929",
+    "anchor": "src/js/main.js:1912-1930",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -75,7 +75,7 @@
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
   "docs/UX_STUDY.md|proto-persona|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1096-1099",
+    "anchor": "src/js/main.js:1097-1100",
     "fp": "cf9f9d54d5388722",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
@@ -105,7 +105,7 @@
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
   "docs/UX_STUDY.md|step-1-heuristic-evaluation|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1121-1126",
+    "anchor": "src/js/main.js:1122-1127",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
@@ -115,7 +115,7 @@
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
   "docs/UX_STUDY.md|sweep-result|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1773-1781",
+    "anchor": "src/js/main.js:1774-1782",
     "fp": "9b9575dc8a81cd13",
     "head": "function wireCatalogSearch() {"
   },
@@ -240,12 +240,12 @@
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
   "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1094",
+    "anchor": "src/js/main.js:1095",
     "fp": "f14a891c350f1cad",
     "head": "title: describe(item, { override }),"
   },
   "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1121-1126",
+    "anchor": "src/js/main.js:1122-1127",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
@@ -265,7 +265,7 @@
     "head": "Done, next <kbd>D</kbd>"
   },
   "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1148-1166",
+    "anchor": "src/js/main.js:1149-1167",
     "fp": "6b0a52cdade44dcb",
     "head": "function wireShortcuts() {"
   },
@@ -275,22 +275,22 @@
     "head": "const store = new Store({"
   },
   "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js|1": {
-    "anchor": "src/js/main.js:2069-2082",
+    "anchor": "src/js/main.js:2070-2083",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
   "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1859",
+    "anchor": "src/js/main.js:1860",
     "fp": "94e13815af1d3dad",
     "head": "alert('That curated order could not be saved, so nothing was imported.');"
   },
   "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|1": {
-    "anchor": "src/js/main.js:841-851",
+    "anchor": "src/js/main.js:842-852",
     "fp": "397bd5507505d94a",
     "head": "const name = prompt('List name', list.name);"
   },
   "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js|2": {
-    "anchor": "src/js/main.js:848-854",
+    "anchor": "src/js/main.js:849-855",
     "fp": "f58b1d12596a76ef",
     "head": "const id = activeListId();"
   },
@@ -300,12 +300,12 @@
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
   "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:848-854",
+    "anchor": "src/js/main.js:849-855",
     "fp": "f58b1d12596a76ef",
     "head": "const id = activeListId();"
   },
   "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1963-1966",
+    "anchor": "src/js/main.js:1964-1967",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
@@ -315,7 +315,7 @@
     "head": "Done, next <kbd>D</kbd>"
   },
   "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1148-1166",
+    "anchor": "src/js/main.js:1149-1167",
     "fp": "6b0a52cdade44dcb",
     "head": "function wireShortcuts() {"
   },
@@ -345,7 +345,7 @@
     "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
   "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1099",
+    "anchor": "src/js/main.js:1100",
     "fp": "bd66076a7b8dce19",
     "head": "item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,"
   },
@@ -380,12 +380,12 @@
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
   "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1911-1929",
+    "anchor": "src/js/main.js:1912-1930",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
   "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1698",
+    "anchor": "src/js/main.js:1699",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
@@ -395,7 +395,7 @@
     "head": "// Series and creators are searched locally against a vendored index, because the API ignores"
   },
   "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js|0": {
-    "anchor": "src/js/main.js:2069-2082",
+    "anchor": "src/js/main.js:2070-2083",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -405,7 +405,7 @@
     "head": "const store = new Store({"
   },
   "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1040-1119",
+    "anchor": "src/js/main.js:1041-1120",
     "fp": "d0de6e662e9a576b",
     "head": "function renderRows() {"
   },
@@ -425,22 +425,22 @@
     "head": "<meta name=\"color-scheme\" content=\"dark\" />"
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1121-1126",
+    "anchor": "src/js/main.js:1122-1127",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|1": {
-    "anchor": "src/js/main.js:848-854",
+    "anchor": "src/js/main.js:849-855",
     "fp": "f58b1d12596a76ef",
     "head": "const id = activeListId();"
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1963-1966",
+    "anchor": "src/js/main.js:1964-1967",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
   "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js|3": {
-    "anchor": "src/js/main.js:1094",
+    "anchor": "src/js/main.js:1095",
     "fp": "f14a891c350f1cad",
     "head": "title: describe(item, { override }),"
   },
@@ -505,7 +505,7 @@
     "head": "async function getJson(url, attempt = 0) {"
   },
   "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js|0": {
-    "anchor": "src/js/main.js:2069-2082",
+    "anchor": "src/js/main.js:2070-2083",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -550,12 +550,12 @@
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
   "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1976-1989",
+    "anchor": "src/js/main.js:1977-1990",
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
   "PRODUCT_BACKLOG.md|BL-001|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1715-1745",
+    "anchor": "src/js/main.js:1716-1746",
     "fp": "ef3b6a8363ab903d",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
@@ -575,32 +575,32 @@
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
   "PRODUCT_BACKLOG.md|BL-003|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1773-1788",
+    "anchor": "src/js/main.js:1774-1789",
     "fp": "97edef98a6cc84a2",
     "head": "function wireCatalogSearch() {"
   },
   "PRODUCT_BACKLOG.md|BL-004|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1719",
+    "anchor": "src/js/main.js:1720",
     "fp": "e5a85bd0d6aeac2f",
     "head": "const depth = depthLabel(list.depth);"
   },
   "PRODUCT_BACKLOG.md|BL-004|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1728-1733",
+    "anchor": "src/js/main.js:1729-1734",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
   "PRODUCT_BACKLOG.md|BL-006|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1751-1771",
+    "anchor": "src/js/main.js:1752-1772",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
   "PRODUCT_BACKLOG.md|BL-007|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1698",
+    "anchor": "src/js/main.js:1699",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
   "PRODUCT_BACKLOG.md|BL-007|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1715-1720",
+    "anchor": "src/js/main.js:1716-1721",
     "fp": "767e40003bd5b6e0",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
@@ -615,22 +615,22 @@
     "head": "// Returns { entries, unresolved, headings }"
   },
   "PRODUCT_BACKLOG.md|BL-009|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1428-1481",
+    "anchor": "src/js/main.js:1429-1482",
     "fp": "e469118bcd96fffa",
     "head": "const { entries, unresolved, headings } = parseChecklist(text);"
   },
   "PRODUCT_BACKLOG.md|BL-010|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1489-1551",
+    "anchor": "src/js/main.js:1490-1552",
     "fp": "6b3347427113cf61",
     "head": "function unresolvedRow(entry, listId) {"
   },
   "PRODUCT_BACKLOG.md|BL-011|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1390-1408",
+    "anchor": "src/js/main.js:1391-1409",
     "fp": "457a03b1d13a9dd4",
     "head": "async function addSeries(series) {"
   },
   "PRODUCT_BACKLOG.md|BL-011|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1553-1597",
+    "anchor": "src/js/main.js:1554-1598",
     "fp": "5a57b37f0d0a4cae",
     "head": "function doManual() {"
   },
@@ -640,7 +640,7 @@
     "head": "// Read progress is deliberately NOT copied. It is global, keyed by issue id (see the note at"
   },
   "PRODUCT_BACKLOG.md|BL-012|src/js/main.js|0": {
-    "anchor": "src/js/main.js:856-876",
+    "anchor": "src/js/main.js:857-877",
     "fp": "ba48dba7ca5b5ba0",
     "head": "$('#btn-duplicate-list').addEventListener('click', () => {"
   },
@@ -655,7 +655,7 @@
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
   "PRODUCT_BACKLOG.md|BL-014|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1911-1929",
+    "anchor": "src/js/main.js:1912-1930",
     "fp": "cbf68ef6e9ab7285",
     "head": "function renderProgress() {"
   },
@@ -665,7 +665,7 @@
     "head": "<label class=\"fp\"><input type=\"radio\" name=\"filter\" value=\"all\" checked /><span>All</span></label>"
   },
   "PRODUCT_BACKLOG.md|BL-015|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1128-1138",
+    "anchor": "src/js/main.js:1129-1139",
     "fp": "a3884e91fa5d58c9",
     "head": "function matchesFilter(item) {"
   },
@@ -675,12 +675,12 @@
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
   "PRODUCT_BACKLOG.md|BL-018|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1096-1099",
+    "anchor": "src/js/main.js:1097-1100",
     "fp": "cf9f9d54d5388722",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
   "PRODUCT_BACKLOG.md|BL-018|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1132",
+    "anchor": "src/js/main.js:1133",
     "fp": "2011e7a2e7789b2d",
     "head": "if (filter === 'pending') return !item.hydrated && item.source !== 'manual';"
   },
@@ -690,12 +690,12 @@
     "head": "export const STATE = {"
   },
   "PRODUCT_BACKLOG.md|BL-019|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1121-1126",
+    "anchor": "src/js/main.js:1122-1127",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
   "PRODUCT_BACKLOG.md|BL-020|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1576",
+    "anchor": "src/js/main.js:1577",
     "fp": "5435ae20ec2b0bc2",
     "head": "source: 'manual',"
   },
@@ -715,12 +715,12 @@
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
   "PRODUCT_BACKLOG.md|BL-023|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1963-1966",
+    "anchor": "src/js/main.js:1964-1967",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
   "PRODUCT_BACKLOG.md|BL-026|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1148-1166",
+    "anchor": "src/js/main.js:1149-1167",
     "fp": "6b0a52cdade44dcb",
     "head": "function wireShortcuts() {"
   },
@@ -770,7 +770,7 @@
     "head": "export class MarvelApi {"
   },
   "PRODUCT_BACKLOG.md|BL-030|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1976-1989",
+    "anchor": "src/js/main.js:1977-1990",
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -800,12 +800,12 @@
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
   "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1698",
+    "anchor": "src/js/main.js:1699",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
   "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1715-1720",
+    "anchor": "src/js/main.js:1716-1721",
     "fp": "767e40003bd5b6e0",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
@@ -835,17 +835,17 @@
     "head": "// So we never claim an issue *is* available. We report one of five explicit"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1092-1099",
+    "anchor": "src/js/main.js:1093-1100",
     "fp": "69839b3df2d455a1",
     "head": "el('span', {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1121-1126",
+    "anchor": "src/js/main.js:1122-1127",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1112-1117",
+    "anchor": "src/js/main.js:1113-1118",
     "fp": "e123c8467718a553",
     "head": "]),"
   },
@@ -905,7 +905,7 @@
     "head": "\"test\": \"node --test\","
   },
   "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js|0": {
-    "anchor": "src/js/main.js:2069-2082",
+    "anchor": "src/js/main.js:2070-2083",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -940,17 +940,17 @@
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|0": {
-    "anchor": "src/js/main.js:1859",
+    "anchor": "src/js/main.js:1860",
     "fp": "94e13815af1d3dad",
     "head": "alert('That curated order could not be saved, so nothing was imported.');"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|1": {
-    "anchor": "src/js/main.js:1870",
+    "anchor": "src/js/main.js:1871",
     "fp": "553b484eaf3636b9",
     "head": "alert('The list was created but its issues could not be saved.');"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|2": {
-    "anchor": "src/js/main.js:1895",
+    "anchor": "src/js/main.js:1896",
     "fp": "bb7e71279397b55e",
     "head": "alert(`Could not load that curated order: ${err.message}`);"
   },
@@ -960,22 +960,22 @@
     "head": "// A success message must never outlive the write it describes. store.update rolls the change"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|4": {
-    "anchor": "src/js/main.js:1096-1099",
+    "anchor": "src/js/main.js:1097-1100",
     "fp": "cf9f9d54d5388722",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|5": {
-    "anchor": "src/js/main.js:1963-1966",
+    "anchor": "src/js/main.js:1964-1967",
     "fp": "c3c96b514329a916",
     "head": "notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once."
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|6": {
-    "anchor": "src/js/main.js:2046-2048",
+    "anchor": "src/js/main.js:2047-2049",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories|src/js/main.js|7": {
-    "anchor": "src/js/main.js:1751-1771",
+    "anchor": "src/js/main.js:1752-1772",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },

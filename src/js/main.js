@@ -793,9 +793,10 @@ async function openPreview(list) {
   const dlg = $('#preview');
   previewList = list;
   $('#preview-h').textContent = list.name;
+  const readingTime = readingTimeLabel(list.count);
   $('#preview-meta').textContent = [
     `${list.count} issue${list.count === 1 ? '' : 's'}`,
-    readingTimeLabel(list.count) ? `${readingTimeLabel(list.count)} at ${MINUTES_PER_ISSUE} minutes an issue` : null,
+    readingTime ? `${readingTime} at ${MINUTES_PER_ISSUE} minutes an issue` : null,
     depthLabel(list.depth),
   ].filter(Boolean).join(' · ');
   $('#preview-desc').textContent = list.description || '';
