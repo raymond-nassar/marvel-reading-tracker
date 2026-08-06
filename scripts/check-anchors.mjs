@@ -19,12 +19,25 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const DOCS = ['PRODUCT_BACKLOG.md', 'docs/UX_STUDY.md'];
 const LOCK = 'docs/anchors.lock.json';
 
 // Backticked path:line or path:start-end. Historical citations are deliberately
 // written without backticks so that they are not treated as live anchors.
 const ANCHOR = /`([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+)(?:-(\d+))?`/g;
+
+// Citation-shaped text the ANCHOR regex does not collect. This is the one hole the
+// coverage assertion cannot see, because that assertion counts the same regex twice.
+//
+// Unbackticked citations are counted but never listed. They are the deliberate
+// convention for historical evidence, there are around two hundred, and printing
+// them trains a reader to skip the whole notice. The count is shown so a sudden
+// jump is still visible. The other shapes should be zero, so they are listed.
+const NEAR_MISS = [
+  [/`[A-Za-z0-9_./-]+\.[A-Za-z][A-Za-z0-9]*:\d+(?:-\d+)?`/g, 'extension outside the gate'],
+  [/\b[A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)\s+lines?\s+\d+/gi, 'prose line reference'],
+];
+const HISTORICAL = /(?<!`)\b[A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md):\d+(?:-\d+)?(?![\d`-])/g;
+
 
 const args = process.argv.slice(2);
 const bless = args.includes('--bless');
@@ -73,28 +86,59 @@ function fingerprint(file, start, end) {
 
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
 
+// Every tracked Markdown file, listed by git rather than by this script. Membership
+// in the population must not depend on a name written here: an enumeration is a
+// list someone has to keep complete, and the anchor defects this gate exists to
+// catch were all caused by exactly that.
+function docs() {
+  // No pathspec. `ls-tree` and `ls-files` do not agree on how a bare `*.md`
+  // pathspec matches nested paths, and filtering in one place here is one fewer
+  // behaviour that can differ between the working tree and a historical ref.
+  const cmd = ref === null
+    ? ['ls-files']
+    : ['ls-tree', '-r', '--name-only', ref];
+  try {
+    return execFileSync('git', cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
+      .split('\n')
+      .map((s) => s.trim())
+      .filter((s) => s.endsWith('.md'))
+      .sort();
+  } catch {
+    return [];
+  }
+}
+
 // The scope is what makes a key survive renumbering. Rows are keyed by their story
 // ID wherever the ID appears in the row, because the three tables in the backlog
 // put it in three different columns, and a matcher that assumes one column is the
 // defect this gate exists to catch. Prose is keyed by its nearest heading.
+//
+// Structure decides only the *name*. It never decides membership: an anchor whose
+// shape the walker misreads still gets collected, it just gets an uglier key. That
+// inversion is what stops a new row shape from silently leaving anchors uncovered.
 function collect() {
   const found = [];
-  for (const doc of DOCS) {
+  const coverage = [];
+
+  for (const doc of docs()) {
     const text = read(doc);
     if (text === null) continue;
+
+    // Counted over the whole file, independently of the line walk below, so any
+    // walker bug shows up as a shortfall instead of as a clean pass.
+    const scanned = (text.match(ANCHOR) ?? []).length;
+    if (scanned === 0) continue;
+
     let heading = 'preamble';
+    let captured = 0;
     const ordinals = new Map();
 
     for (const line of text.split(/\r?\n/)) {
       const h = /^#{1,6}\s+(.+?)\s*$/.exec(line);
       if (h) heading = slug(h[1]);
 
-      const isRow = line.startsWith('|');
-      let scope = heading;
-      if (isRow) {
-        const id = /\bBL-\d+\b/.exec(line.replace(/`/g, ''));
-        if (id) scope = id[0];
-      }
+      const id = /\bBL-\d+\b/.exec(line.replace(/`/g, ''));
+      const scope = line.startsWith('|') && id ? id[0] : heading;
 
       for (const m of line.matchAll(ANCHOR)) {
         const file = m[1];
@@ -103,6 +147,7 @@ function collect() {
         const bucket = `${doc}|${scope}|${file}`;
         const ordinal = ordinals.get(bucket) ?? 0;
         ordinals.set(bucket, ordinal + 1);
+        captured += 1;
         found.push({
           key: `${bucket}|${ordinal}`,
           anchor: m[0].replace(/`/g, ''),
@@ -111,11 +156,28 @@ function collect() {
         });
       }
     }
+    coverage.push({ doc, scanned, captured });
   }
-  return found;
+  return { found, coverage };
 }
 
-const found = collect();
+const { found, coverage } = collect();
+
+// Coverage is asserted, not assumed. `found.length === 0` detects total failure and
+// is structurally blind to partial failure, which is the only kind that has ever
+// happened here: a collector that reads one table shape returns a large number and
+// sails past a zero check while ignoring four fifths of the corpus.
+//
+// Both counts come from the same regex, so this is a regression guard on the walk
+// rather than an independent measurement. That is worth having, because the walk is
+// precisely what broke, but it cannot see a citation the regex itself does not
+// know. The near-miss report below is the partial answer to that.
+const short = coverage.filter((c) => c.captured !== c.scanned);
+if (short.length) {
+  console.error(`FATAL: collector under-matched${ref ? ` at ${ref}` : ''}:`);
+  for (const c of short) console.error(`  ${c.doc}: scanned ${c.scanned}, captured ${c.captured}`);
+  process.exit(2);
+}
 
 // A collector that silently matches nothing reports a clean pass, which is exactly
 // the failure this gate exists to prevent. Refuse to run rather than reassure.
@@ -132,6 +194,36 @@ if (dupes.length) {
   process.exit(2);
 }
 
+// Citation-shaped text the ANCHOR regex does not collect. This is the one hole the
+// coverage assertion cannot see, because that assertion counts the same regex twice.
+// It cannot be an error, since prose may legitimately name a file, so it prints as
+// a notice: a reviewer can tell an intentional mention from a citation that was
+// meant to be gated and is silently not.
+function reportNearMisses() {
+  const suspicious = [];
+  let historical = 0;
+  for (const doc of docs()) {
+    const text = read(doc);
+    if (text === null) continue;
+    const covered = new Set(text.match(ANCHOR) ?? []);
+    historical += (text.match(HISTORICAL) ?? []).length;
+    for (const [re, why] of NEAR_MISS) {
+      for (const hit of text.match(re) ?? []) {
+        if (covered.has(hit)) continue;
+        suspicious.push(`  ${doc}  ${hit}  (${why})`);
+      }
+    }
+  }
+  if (historical) {
+    console.log(`\n${historical} unbackticked citation(s) outside the gate, by convention: historical evidence.`);
+  }
+  if (suspicious.length) {
+    console.log('NOTICE: citation-shaped strings the gate does not collect. Meant to be anchors?');
+    for (const s of suspicious.slice(0, 12)) console.log(s);
+    if (suspicious.length > 12) console.log(`  ... and ${suspicious.length - 12} more`);
+  }
+}
+
 if (bless) {
   const unresolvable = found.filter((f) => f.fp === null);
   if (unresolvable.length) {
@@ -144,7 +236,9 @@ if (bless) {
     lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };
   }
   writeFileSync(LOCK, `${JSON.stringify(lock, null, 2)}\n`);
-  console.log(`Blessed ${found.length} anchors -> ${LOCK}`);
+  const cov = coverage.map((c) => `${c.doc} ${c.captured}`).join(', ');
+  console.log(`Blessed ${found.length} anchors across ${coverage.length} docs (${cov}) -> ${LOCK}`);
+  reportNearMisses();
   process.exit(0);
 }
 
@@ -186,7 +280,9 @@ for (const f of found) {
 const seen = new Set(found.map((f) => f.key));
 const gone = Object.keys(lock).filter((k) => !seen.has(k));
 
-console.log(`${unchanged} unchanged, ${drifted.length} drifted, ${unkeyed.length} new, ${gone.length} removed\n`);
+const cov = coverage.map((c) => `${c.doc} ${c.captured}/${c.scanned}`).join(', ');
+console.log(`${unchanged} unchanged, ${drifted.length} drifted, ${unkeyed.length} new, ${gone.length} removed`);
+console.log(`coverage: ${cov}\n`);
 
 for (const d of drifted) {
   console.log(`DRIFT  ${d.key}`);
@@ -207,5 +303,7 @@ if (drifted.length || unkeyed.length) {
   console.log('Re-read the cited lines and confirm they still say what the claim says.');
   console.log('Only then re-bless: npm run anchors:bless');
 }
+
+reportNearMisses();
 
 process.exitCode = drifted.length || unkeyed.length ? 1 : 0;
