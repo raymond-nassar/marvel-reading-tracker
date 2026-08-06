@@ -70,3 +70,16 @@ jobs:
       # commit.
       - name: Run ESLint
         run: npm run lint
+
+      # Every `path:line` citation in PRODUCT_BACKLOG.md and docs/UX_STUDY.md is
+      # fingerprinted by the content of the lines it names, not by the numbers. A
+      # failure here means the cited code moved or changed, so the claim written
+      # about it may no longer be true.
+      #
+      # The fix is to re-read the cited lines and re-aim the anchor at whatever now
+      # says what the claim says. `npm run anchors:bless` accepts the current state
+      # wholesale, which is correct only once you have done that reading. Blessing
+      # to clear a red build locks the wrong lines in permanently and silently,
+      # which is the exact failure this gate exists to end.
+      - name: Check evidence anchors
+        run: npm run anchors
