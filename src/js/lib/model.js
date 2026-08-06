@@ -387,7 +387,7 @@ export function migrate(raw) {
 function coerce(raw) {
   const base = createEmptyState();
   const issues = {};
-  for (const [k, v] of Object.entries(raw.issues ?? {})) {
+  for (const v of Object.values(raw.issues ?? {})) {
     const n = normalizeIssue(v);
     if (n) issues[n.issueId] = n;
   }

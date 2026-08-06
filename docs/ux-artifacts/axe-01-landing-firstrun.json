@@ -1,0 +1,18 @@
+{
+  "axeVersion": "4.12.1",
+  "url": "http://127.0.0.1:8899/",
+  "counts": {
+    "violations": 0,
+    "incomplete": 1
+  },
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "nodes": 1,
+      "first": ".mark"
+    }
+  ]
+}

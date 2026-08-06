@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# The workflow only ever reads the repository. Nothing here publishes or writes.
+permissions:
+  contents: read
+
+# A newer push to the same branch makes an in-flight run irrelevant.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Tests on Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 20 is the floor declared in package.json engines. 24 is what the app is
+        # developed against. Testing both is what stops the floor from rotting.
+        node: ['20', '24']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      # The app itself still ships no runtime dependencies. The lockfile exists only
+      # for the lint tooling, so this installs nothing that reaches the browser.
+      - name: Install
+        run: npm ci
+
+      # `npm test` is deliberately `node --test` with no path argument. Node only
+      # began expanding glob patterns after 20, so a quoted pattern would be read
+      # as a literal filename on the floor version and find nothing. With no
+      # argument Node applies its own discovery rules, which have been stable
+      # since 20 and treat a directory named `test` as all-tests.
+      #
+      # `npm run contract` is deliberately absent. It calls the live metadata API,
+      # so it would fail builds for reasons unrelated to the change under test, and
+      # would put this repository's traffic on a third party's rate limit on every
+      # push. It stays a manual pre-release check.
+      - name: Run tests
+        run: npm test
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      # Reports only. `npm run lint:fix` is the local counterpart; CI never rewrites
+      # the tree, so formatting drift shows up as a failure rather than a surprise
+      # commit.
+      - name: Run ESLint
+        run: npm run lint

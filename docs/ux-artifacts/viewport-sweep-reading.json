@@ -1,0 +1,142 @@
+{
+  "base": "http://127.0.0.1:8899/",
+  "view": "reading (seeded, full list open)",
+  "sweep": [
+    {
+      "width": 320,
+      "scrollWidth": 413,
+      "clientWidth": 320,
+      "bodyScrollWidth": 413,
+      "railPosition": "sticky",
+      "railHeight": 900,
+      "mainTop": 900,
+      "docHeight": 6255,
+      "widestOverflower": {
+        "px": 633.6,
+        "tag": "LI",
+        "cls": "tile"
+      },
+      "horizontalOverflow": true,
+      "overflowPx": 93
+    },
+    {
+      "width": 390,
+      "scrollWidth": 413,
+      "clientWidth": 390,
+      "bodyScrollWidth": 413,
+      "railPosition": "sticky",
+      "railHeight": 900,
+      "mainTop": 900,
+      "docHeight": 6031,
+      "widestOverflower": {
+        "px": 563.6,
+        "tag": "LI",
+        "cls": "tile"
+      },
+      "horizontalOverflow": true,
+      "overflowPx": 23
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "railPosition": "sticky",
+      "railHeight": 900,
+      "mainTop": 900,
+      "docHeight": 3569,
+      "widestOverflower": {
+        "px": 201.6,
+        "tag": "LI",
+        "cls": "tile"
+      },
+      "horizontalOverflow": false,
+      "overflowPx": 0
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "clientWidth": 1280,
+      "bodyScrollWidth": 1280,
+      "railPosition": "sticky",
+      "railHeight": 900,
+      "mainTop": 0,
+      "docHeight": 2517,
+      "widestOverflower": {
+        "px": 54.1,
+        "tag": "DIV",
+        "cls": "hero-bg"
+      },
+      "horizontalOverflow": false,
+      "overflowPx": 0
+    },
+    {
+      "width": 1920,
+      "scrollWidth": 1920,
+      "clientWidth": 1920,
+      "bodyScrollWidth": 1920,
+      "railPosition": "sticky",
+      "railHeight": 900,
+      "mainTop": 0,
+      "docHeight": 2517,
+      "widestOverflower": null,
+      "horizontalOverflow": false,
+      "overflowPx": 0
+    }
+  ],
+  "listTools": [
+    {
+      "text": "Rename",
+      "w": 69.8,
+      "h": 32.1,
+      "display": "block",
+      "visible": true
+    },
+    {
+      "text": "Duplicate",
+      "w": 77.8,
+      "h": 32.1,
+      "display": "block",
+      "visible": true
+    },
+    {
+      "text": "Export as Markdown",
+      "w": 139.8,
+      "h": 32.1,
+      "display": "block",
+      "visible": true
+    },
+    {
+      "text": "Delete list",
+      "w": 80.3,
+      "h": 32.1,
+      "display": "block",
+      "visible": true
+    },
+    {
+      "text": "Fetch details for 0 issues",
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false
+    },
+    {
+      "text": "Stop",
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false
+    }
+  ],
+  "cbSpacing": {
+    "sampled": 6,
+    "centreToCentreY": [
+      69.3,
+      69.3,
+      69.3,
+      69.3,
+      69.3
+    ]
+  },
+  "rowCount": 20
+}

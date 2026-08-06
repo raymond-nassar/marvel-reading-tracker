@@ -173,6 +173,28 @@ npm start
 ```
 
 Serves `src/` on a local static server. `npm test` runs the unit tests.
+`npm run lint` runs ESLint. Both run automatically on every push and pull request.
+
+## Releasing
+
+Versions follow the rule set out in [`src/js/lib/version.js`](src/js/lib/version.js): a MAJOR
+bump means a build older than this one cannot read data saved by it, which matters because
+reading progress lives only in the user's own browser and nothing can migrate it for them.
+
+To cut a release:
+
+1. Write the entry in [CHANGELOG.md](CHANGELOG.md) under the new version number, and commit it.
+2. Run `npm version <major|minor|patch>`. This bumps `package.json` and the lock file, rewrites
+   `APP_VERSION` to match, commits the lot, and creates the `v<version>` tag.
+3. Push with `git push --follow-tags`.
+
+Step 2 rewrites the constant through [`scripts/sync-version.mjs`](scripts/sync-version.mjs),
+wired to npm's `version` lifecycle so it runs after the bump but before the commit. That
+ordering matters: it means the number the browser reads and the number npm recorded agree in
+every commit, rather than disagreeing in the gap between two of them. The constant is
+hand-written rather than generated because the app has no build step, and
+[`test/version.test.js`](test/version.test.js) fails if the two ever drift, so a mismatch
+cannot reach the default branch.
 
 ## Disclaimer
 

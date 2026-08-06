@@ -1,0 +1,36 @@
+{
+  "list": {
+    "title": "Complete reading, with tie-insCreator run · 219 issuesThe co",
+    "advertised": 219
+  },
+  "size": {
+    "rows": 219,
+    "rowButtons": 1533,
+    "totalDomNodes": 4485
+  },
+  "singleReadToggle": [
+    {
+      "syncMs": 38.9,
+      "toPaintMs": 144.1
+    },
+    {
+      "syncMs": 22.7,
+      "toPaintMs": 75.7
+    },
+    {
+      "syncMs": 21.9,
+      "toPaintMs": 63.7
+    },
+    {
+      "syncMs": 20.1,
+      "toPaintMs": 66.8
+    },
+    {
+      "syncMs": 21.6,
+      "toPaintMs": 83.2
+    }
+  ],
+  "medianSyncMs": 21.9,
+  "medianToPaintMs": 75.7,
+  "note": "One read-toggle triggers store.onChange -> renderAll(), which rebuilds the rail, every row and the progress block."
+}

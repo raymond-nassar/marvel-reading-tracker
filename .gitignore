@@ -14,6 +14,10 @@ $RECYCLE.BIN/
 tmp/
 scratch/
 
+# Installed packages. The app itself ships no runtime dependencies; this is only
+# ever the lint tooling, which is restored from package-lock.json.
+node_modules/
+
 # Local backups exported from the app
 backups/
 *.backup.json

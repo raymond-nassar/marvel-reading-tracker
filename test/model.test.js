@@ -46,7 +46,7 @@ test('a hand-added issue with a synthetic negative id is accepted', () => {
 });
 
 test('a hand-added issue actually lands in the list', () => {
-  let s = createList(createEmptyState(), { name: 'L' });
+  const s = createList(createEmptyState(), { name: 'L' });
   const id = s.listOrder[0];
   const res = addIssuesToList(s, id, [{
     issueId: -1738000000000, title: 'By hand', source: 'manual', hydrated: true,
@@ -57,7 +57,7 @@ test('a hand-added issue actually lands in the list', () => {
 });
 
 test('id zero is still refused, including inside a list', () => {
-  let s = createList(createEmptyState(), { name: 'L' });
+  const s = createList(createEmptyState(), { name: 'L' });
   const id = s.listOrder[0];
   const res = addIssuesToList(s, id, [{ issueId: 0, title: 'nope' }]);
   assert.equal(res.added, 0);
@@ -172,125 +172,125 @@ test('names and descriptions are length-capped', () => {
   assert.equal(l.description.length, 2000);
 });
 
-  // ------------------------------------------------------------------ duplicating
+// ------------------------------------------------------------------ duplicating
 
-  test('a duplicate copies the order and keeps sharing read progress', () => {
-    const { state, id } = withList([1, 2, 3]);
-    const read = markRead(state, 2, true);
-    const { state: after, listId: copyId } = duplicateList(read, id);
+test('a duplicate copies the order and keeps sharing read progress', () => {
+  const { state, id } = withList([1, 2, 3]);
+  const read = markRead(state, 2, true);
+  const { state: after, listId: copyId } = duplicateList(read, id);
 
-    assert.notEqual(copyId, id, 'the copy needs its own id');
-    assert.deepEqual(after.lists[copyId].itemIds, [1, 2, 3], 'order must survive the copy');
-    assert.equal(after.lists[copyId].name, 'L (copy)');
-    // The acceptance criterion: read state is global, so progress is shared rather than cloned.
-    assert.ok(isRead(after, 2));
-    assert.deepEqual(listProgress(after, copyId), { read: 1, total: 3 });
-    assert.deepEqual(listProgress(after, id), { read: 1, total: 3 });
+  assert.notEqual(copyId, id, 'the copy needs its own id');
+  assert.deepEqual(after.lists[copyId].itemIds, [1, 2, 3], 'order must survive the copy');
+  assert.equal(after.lists[copyId].name, 'L (copy)');
+  // The acceptance criterion: read state is global, so progress is shared rather than cloned.
+  assert.ok(isRead(after, 2));
+  assert.deepEqual(listProgress(after, copyId), { read: 1, total: 3 });
+  assert.deepEqual(listProgress(after, id), { read: 1, total: 3 });
 
-    // ...and marking read through the copy is visible in the original.
-    const later = markRead(after, 1, true);
-    assert.deepEqual(listProgress(later, id), { read: 2, total: 3 });
-  });
+  // ...and marking read through the copy is visible in the original.
+  const later = markRead(after, 1, true);
+  assert.deepEqual(listProgress(later, id), { read: 2, total: 3 });
+});
 
-  test('editing a duplicate never disturbs the original order', () => {
-    const { state, id } = withList([1, 2, 3]);
-    const { state: after, listId: copyId } = duplicateList(state, id);
+test('editing a duplicate never disturbs the original order', () => {
+  const { state, id } = withList([1, 2, 3]);
+  const { state: after, listId: copyId } = duplicateList(state, id);
 
-    // A shared itemIds reference would make both of these leak across lists.
-    const trimmed = removeFromList(after, copyId, 2);
-    assert.deepEqual(trimmed.lists[copyId].itemIds, [1, 3]);
-    assert.deepEqual(trimmed.lists[id].itemIds, [1, 2, 3], 'the original must keep every issue');
+  // A shared itemIds reference would make both of these leak across lists.
+  const trimmed = removeFromList(after, copyId, 2);
+  assert.deepEqual(trimmed.lists[copyId].itemIds, [1, 3]);
+  assert.deepEqual(trimmed.lists[id].itemIds, [1, 2, 3], 'the original must keep every issue');
 
-    const moved = moveItem(trimmed, id, 1, 2);
-    assert.deepEqual(moved.lists[id].itemIds, [2, 3, 1]);
-    assert.deepEqual(moved.lists[copyId].itemIds, [1, 3], 'the copy must keep its own order');
-  });
+  const moved = moveItem(trimmed, id, 1, 2);
+  assert.deepEqual(moved.lists[id].itemIds, [2, 3, 1]);
+  assert.deepEqual(moved.lists[copyId].itemIds, [1, 3], 'the copy must keep its own order');
+});
 
-  test('the copy sits next to its original rather than at the end', () => {
-    let s = createList(createEmptyState(), { name: 'A' });
-    s = createList(s, { name: 'B' });
-    const [a, b] = s.listOrder;
-    const { state: after, listId: copyId } = duplicateList(s, a);
-    assert.deepEqual(after.listOrder, [a, copyId, b]);
-  });
+test('the copy sits next to its original rather than at the end', () => {
+  let s = createList(createEmptyState(), { name: 'A' });
+  s = createList(s, { name: 'B' });
+  const [a, b] = s.listOrder;
+  const { state: after, listId: copyId } = duplicateList(s, a);
+  assert.deepEqual(after.listOrder, [a, copyId, b]);
+});
 
-  test('duplicating repeatedly produces names you can tell apart', () => {
-    const { state, id } = withList([1], 'Civil War');
-    const first = duplicateList(state, id);
-    const second = duplicateList(first.state, id);
-    const third = duplicateList(second.state, id);
-    assert.equal(first.state.lists[first.listId].name, 'Civil War (copy)');
-    assert.equal(second.state.lists[second.listId].name, 'Civil War (copy 2)');
-    assert.equal(third.state.lists[third.listId].name, 'Civil War (copy 3)');
-  });
+test('duplicating repeatedly produces names you can tell apart', () => {
+  const { state, id } = withList([1], 'Civil War');
+  const first = duplicateList(state, id);
+  const second = duplicateList(first.state, id);
+  const third = duplicateList(second.state, id);
+  assert.equal(first.state.lists[first.listId].name, 'Civil War (copy)');
+  assert.equal(second.state.lists[second.listId].name, 'Civil War (copy 2)');
+  assert.equal(third.state.lists[third.listId].name, 'Civil War (copy 3)');
+});
 
-  // Appending the suffix and slicing afterwards would cut it straight back off, leaving a copy
-  // indistinguishable from the list it came from.
-  test('a maximally long name still yields a distinguishable copy', () => {
-    const { state, id } = withList([1], 'x'.repeat(MAX_NAME));
-    const { state: after, listId: copyId } = duplicateList(state, id);
-    const copy = after.lists[copyId];
-    assert.ok(copy.name.length <= MAX_NAME);
-    assert.ok(copy.name.endsWith(' (copy)'));
-    assert.notEqual(copy.name, after.lists[id].name);
-  });
+// Appending the suffix and slicing afterwards would cut it straight back off, leaving a copy
+// indistinguishable from the list it came from.
+test('a maximally long name still yields a distinguishable copy', () => {
+  const { state, id } = withList([1], 'x'.repeat(MAX_NAME));
+  const { state: after, listId: copyId } = duplicateList(state, id);
+  const copy = after.lists[copyId];
+  assert.ok(copy.name.length <= MAX_NAME);
+  assert.ok(copy.name.endsWith(' (copy)'));
+  assert.notEqual(copy.name, after.lists[id].name);
+});
 
-  test('an explicit name is honoured and capped, and a missing list is a no-op', () => {
-    const { state, id } = withList([1, 2]);
-    const named = duplicateList(state, id, { name: 'Essentials only' });
-    assert.equal(named.state.lists[named.listId].name, 'Essentials only');
+test('an explicit name is honoured and capped, and a missing list is a no-op', () => {
+  const { state, id } = withList([1, 2]);
+  const named = duplicateList(state, id, { name: 'Essentials only' });
+  assert.equal(named.state.lists[named.listId].name, 'Essentials only');
 
-    const long = duplicateList(state, id, { name: 'z'.repeat(500) });
-    assert.equal(long.state.lists[long.listId].name.length, MAX_NAME);
+  const long = duplicateList(state, id, { name: 'z'.repeat(500) });
+  assert.equal(long.state.lists[long.listId].name.length, MAX_NAME);
 
-    const missing = duplicateList(state, 'nope');
-    assert.equal(missing.listId, null);
-    assert.equal(missing.state, state, 'a missing list must not produce a new state object');
-  });
+  const missing = duplicateList(state, 'nope');
+  assert.equal(missing.listId, null);
+  assert.equal(missing.state, state, 'a missing list must not produce a new state object');
+});
 
-  test('duplicating carries the description and does not steal focus', () => {
-    let s = createList(createEmptyState(), { name: 'A', description: 'From Comic Book Herald.' });
-    const [a] = s.listOrder;
-    s = setActive(s, a);
-    const { state: after, listId: copyId } = duplicateList(s, a);
-    assert.equal(after.lists[copyId].description, 'From Comic Book Herald.');
-    assert.equal(after.active, a, 'the model must leave switching lists to the caller');
-  });
+test('duplicating carries the description and does not steal focus', () => {
+  let s = createList(createEmptyState(), { name: 'A', description: 'From Comic Book Herald.' });
+  const [a] = s.listOrder;
+  s = setActive(s, a);
+  const { state: after, listId: copyId } = duplicateList(s, a);
+  assert.equal(after.lists[copyId].description, 'From Comic Book Herald.');
+  assert.equal(after.active, a, 'the model must leave switching lists to the caller');
+});
 
-  // createList and renameList both clamp, so an over-long description can only reach the store
-  // from outside the model: a restored backup, or state written before the limit existed.
-  // Copying it verbatim would let each duplication carry the oversized value forward instead of
-  // closing the hole. Shipped in 318d2ea with no test.
-  test('a duplicate clamps a description that arrived over-long', () => {
-    const { state, id } = withList([1]);
-    const long = 'd'.repeat(MAX_DESCRIPTION + 500);
-    const restored = {
+// createList and renameList both clamp, so an over-long description can only reach the store
+// from outside the model: a restored backup, or state written before the limit existed.
+// Copying it verbatim would let each duplication carry the oversized value forward instead of
+// closing the hole. Shipped in 318d2ea with no test.
+test('a duplicate clamps a description that arrived over-long', () => {
+  const { state, id } = withList([1]);
+  const long = 'd'.repeat(MAX_DESCRIPTION + 500);
+  const restored = {
+    ...state,
+    lists: { ...state.lists, [id]: { ...state.lists[id], description: long } },
+  };
+
+  const { state: after, listId: copyId } = duplicateList(restored, id);
+  assert.equal(after.lists[copyId].description.length, MAX_DESCRIPTION);
+  assert.equal(after.lists[copyId].description, long.slice(0, MAX_DESCRIPTION));
+  // Duplicating is not a repair operation: the original is left exactly as it was found.
+  assert.equal(after.lists[id].description, long);
+
+  // Copying a copy must not reintroduce it either.
+  const second = duplicateList(after, copyId);
+  assert.equal(second.state.lists[second.listId].description.length, MAX_DESCRIPTION);
+});
+
+test('a duplicate of a list with no description gets an empty one, not "undefined"', () => {
+  const { state, id } = withList([1]);
+  for (const missing of [undefined, null, 0]) {
+    const bare = {
       ...state,
-      lists: { ...state.lists, [id]: { ...state.lists[id], description: long } },
+      lists: { ...state.lists, [id]: { ...state.lists[id], description: missing } },
     };
-
-    const { state: after, listId: copyId } = duplicateList(restored, id);
-    assert.equal(after.lists[copyId].description.length, MAX_DESCRIPTION);
-    assert.equal(after.lists[copyId].description, long.slice(0, MAX_DESCRIPTION));
-    // Duplicating is not a repair operation: the original is left exactly as it was found.
-    assert.equal(after.lists[id].description, long);
-
-    // Copying a copy must not reintroduce it either.
-    const second = duplicateList(after, copyId);
-    assert.equal(second.state.lists[second.listId].description.length, MAX_DESCRIPTION);
-  });
-
-  test('a duplicate of a list with no description gets an empty one, not "undefined"', () => {
-    const { state, id } = withList([1]);
-    for (const missing of [undefined, null, 0]) {
-      const bare = {
-        ...state,
-        lists: { ...state.lists, [id]: { ...state.lists[id], description: missing } },
-      };
-      const { state: after, listId: copyId } = duplicateList(bare, id);
-      assert.equal(after.lists[copyId].description, '', `description ${missing} became a string`);
-    }
-  });
+    const { state: after, listId: copyId } = duplicateList(bare, id);
+    assert.equal(after.lists[copyId].description, '', `description ${missing} became a string`);
+  }
+});
 
 // ------------------------------------------------------------------ read state
 

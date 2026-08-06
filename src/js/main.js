@@ -7,7 +7,7 @@
 import {
   createList, deleteList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
-  setOverride, pendingIssueIds, createEmptyState, coverUrl,
+  setOverride, pendingIssueIds, createEmptyState, coverUrl, SCHEMA_VERSION,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { availability, describe, SHORT, STATE } from './lib/availability.js';
@@ -22,6 +22,8 @@ import { ResponseCache } from './cache.js';
 import { RateLimiter } from './lib/limiter.js';
 import { Hydrator } from './hydrate.js';
 import { openIssue as openIssueTab, detailUrl } from './reader.js';
+import { APP_VERSION } from './lib/version.js';
+import { isAllowedApiBase } from './lib/apiBase.js';
 
 const SETTINGS_KEY = 'mrt.settings';
 const RING_CIRCUMFERENCE = 94.2; // 2πr for r=15, matching the SVG in index.html
@@ -30,7 +32,7 @@ const SHELF_SIZE = 8;
 const $ = (sel) => document.querySelector(sel);
 const announcer = $('#announcer');
 
-let settings = loadSettings();
+const settings = loadSettings();
 const limiter = new RateLimiter();
 let cache = new ResponseCache({ baseUrl: settings.apiBase });
 let api = new MarvelApi({ baseUrl: settings.apiBase, limiter, cache, onStatus: onApiStatus });
@@ -113,6 +115,10 @@ function el(tag, props = {}, children = []) {
     else if (k === 'text') node.textContent = v;
     else if (k.startsWith('on') && typeof v === 'function') node.addEventListener(k.slice(2), v);
     else if (k === 'dataset') Object.assign(node.dataset, v);
+    // Presentation goes through the CSSOM, never a style attribute. Writing a style
+    // attribute is what `style-src-attr` blocks under the Content-Security-Policy the
+    // server sends, so `style` here takes an object of declarations.
+    else if (k === 'style') for (const [p, pv] of Object.entries(v)) node.style.setProperty(p, pv);
     else node.setAttribute(k, v === true ? '' : String(v));
   }
   for (const c of [].concat(children)) {
@@ -184,15 +190,18 @@ function hueOf(s) {
   return h;
 }
 
-function fallbackStyle(issue) {
-  const h = hueOf(issue?.seriesName || issue?.title || '');
-  return `background:linear-gradient(155deg,hsl(${h} 42% 26%),hsl(${(h + 40) % 360} 38% 14%));color:hsl(${h} 60% 88%)`;
+function fallbackHue(issue) {
+  return hueOf(issue?.seriesName || issue?.title || '');
 }
 
 // Wires an <img>/fallback pair. The fallback is shown when there is no cover URL at all,
 // or when the image fails to load; `body.nocovers` handles the user's preference in CSS.
 function paintCover(img, fb, issue, variant) {
-  fb.setAttribute('style', fallbackStyle(issue));
+  // Set the hue as a custom property rather than writing a style attribute. Assigning a
+  // style attribute is what `style-src-attr` blocks under the server's Content-Security-
+  // Policy, and it fired on every cover paint; setting a property through the CSSOM is
+  // not a policy violation, so the gradient in styles.css does the drawing.
+  fb.style.setProperty('--h', String(fallbackHue(issue)));
   const url = coverUrl(issue, variant);
   if (!url) {
     img.removeAttribute('src');
@@ -309,7 +318,7 @@ function renderRail() {
         el('span', { text: list.name }),
         el('span', { class: 'n', text: `${read} / ${total}` }),
       ]),
-      el('span', { class: 'bar' }, el('i', { style: `width:${pct.toFixed(1)}%` })),
+      el('span', { class: 'bar' }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
     ])));
   }
 }
@@ -1453,13 +1462,8 @@ function wireData() {
   $('#form-settings').addEventListener('submit', (e) => {
     e.preventDefault();
     const value = $('#api-base').value.trim().replace(/\/+$/, '');
-    try {
-      const u = new URL(value);
-      if (u.protocol !== 'https:' && u.hostname !== '127.0.0.1' && u.hostname !== 'localhost') {
-        throw new Error('Use https, or a local address.');
-      }
-    } catch (err) {
-      return notify('#restore-report', `That API URL is not usable: ${err.message}`, 'error');
+    if (!isAllowedApiBase(value)) {
+      return notify('#restore-report', 'That API URL is not usable: use https, or http against localhost.', 'error');
     }
     settings.apiBase = value;
     saveSettings();
@@ -1564,3 +1568,9 @@ function renderAll() {
 }
 
 setInterval(renderQueue, 1000);
+
+// Written once at startup rather than from renderAll, because neither number can change
+// while the page is open, and a bug report needs them to be there whether or not the user
+// has touched anything.
+$('#about-version').textContent = APP_VERSION;
+$('#about-schema').textContent = String(SCHEMA_VERSION);

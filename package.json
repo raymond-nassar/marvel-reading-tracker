@@ -1,18 +1,26 @@
 {
   "name": "marvel-reading-tracker",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "Local, private reading-order tracker that deep-links into the Marvel Unlimited web reader.",
   "license": "MIT",
   "scripts": {
     "start": "node server.mjs",
-    "test": "node --test \"test/**/*.test.js\"",
+    "test": "node --test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "contract": "node scripts/check-contract.mjs",
     "vendor": "node scripts/vendor-orders.mjs",
-    "vendor:index": "node scripts/vendor-index.mjs"
+    "vendor:index": "node scripts/vendor-index.mjs",
+    "version": "node scripts/sync-version.mjs && git add src/js/lib/version.js"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^9.39.5",
+    "globals": "^17.9.0"
   }
 }
