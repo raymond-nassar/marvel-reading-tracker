@@ -202,12 +202,15 @@ export function deleteList(state, listId) {
 // Read progress is not a consideration in either direction. It is global and keyed by issue
 // id, so deleting a list never touched it and restoring one never has to put it back.
 //
-// A list whose id is present again is not restored. Undo is offered for the rest of the
-// session, so the same buffer can still be live after the reader has imported the same
-// curated order a second time, and overwriting that fresh list with the stale copy would
-// destroy work rather than recover it.
+// A list whose id is present again is not restored, and neither is one whose catalog entry is
+// already answered. Undo is offered for the rest of the session, so the buffer can outlive the
+// deletion by a long way: an undone restore can bring the same id back, and a second import can
+// bring the same order back under a new id. Splicing the stale copy in on top of either would
+// destroy work rather than recover it, or leave two lists claiming one catalog entry, which is
+// exactly the state `duplicateList` strips `catalogId` to avoid.
 export function restoreList(state, list, { index = null, active = false } = {}) {
   if (!list?.id || state.lists[list.id]) return state;
+  if (list.catalogId && listForCatalogId(state, list.catalogId)) return state;
   const listOrder = [...state.listOrder];
   const at = Number.isInteger(index) && index >= 0 && index <= listOrder.length ? index : listOrder.length;
   listOrder.splice(at, 0, list.id);

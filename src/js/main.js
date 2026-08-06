@@ -200,7 +200,11 @@ function placeNotices() {
     const own = $(note.sel);
     if (!own) continue;
     let box = own;
-    if (modalPane) box = modalPane;
+    // A notice carrying a control stays in its own pane. Moving a message into the modal makes it
+    // readable where the reader is looking; moving a button there makes it pressable in a context
+    // that has nothing to do with it, and acting on it can navigate the inert page behind the
+    // dialog to a view the reader never asked for.
+    if (modalPane && !note.action) box = modalPane;
     // offsetParent is null only under a display:none ancestor, which is how a view that is not
     // the current one is hidden.
     else if (!own.offsetParent) box = overflow ?? own;
@@ -1066,9 +1070,28 @@ function forgetDeleted() {
   clearNotice(UNDO_DELETE);
 }
 
+// An order that is back in the sidebar does not need an offer to bring back the deleted copy of
+// it. Taking that offer would leave two lists answering to one catalog entry, which is the state
+// `duplicateList` clears `catalogId` to avoid: "in library" and "Continue reading" would both
+// resolve to whichever came first in the rail, and the rail would show two entries with the same
+// name and the same progress.
+function forgetDeletedFor(catalogId) {
+  if (catalogId && lastDeleted?.list?.catalogId === catalogId) forgetDeleted();
+}
+
 function undoDelete() {
   if (!lastDeleted) return;
   const { list, index, wasActive } = lastDeleted;
+  // `restoreList` refuses rather than overwrite a live list, and a refusal returns the state
+  // unchanged, which a successful write is indistinguishable from once it is done. So the
+  // blocker is looked for first: reading back afterwards would report the list that blocked
+  // the restore as the list the restore put there.
+  const blocker = store.state.lists[list.id] ?? listForCatalogId(store.state, list.catalogId);
+  if (blocker) {
+    forgetDeleted();
+    notify('#app-report', `${list.name} was not put back: ${blocker.name} is in your sidebar already.`, 'ok', UNDO_DELETE);
+    return;
+  }
   store.update((s) => restoreList(s, list, { index, active: wasActive }));
   if (!store.lastUpdateOk) {
     // The buffer is deliberately kept, and the notice keeps a button, because a write that failed
@@ -2125,6 +2148,7 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
     // contradicting it. Cleared by the order's key, not by this pane, so an attempt that failed
     // from the other entry point is cleared too.
     clearNotice(importKey);
+    forgetDeletedFor(catalogId);
     announce(parts.join(' '));
     return listId;
   } catch (err) {
@@ -2210,6 +2234,9 @@ function wireData() {
   $('#btn-undo-restore').addEventListener('click', () => {
     const res = store.undoRestore();
     notify('#restore-report', res.ok ? 'Restore undone.' : `Could not undo: ${res.errors.join(' ')}`, res.ok ? 'ok' : 'error');
+    // Undoing a restore swaps the whole state back, exactly as the restore did, so the buffered
+    // list belongs to data that is no longer here in this direction too.
+    if (res.ok) forgetDeleted();
   });
 
   $('#form-settings').addEventListener('submit', (e) => {

@@ -201,6 +201,32 @@ test('a restore never overwrites a list holding the same id', () => {
   assert.equal(restoreList(renamed, state.lists[id], { index: 0 }), renamed);
 });
 
+test('a restore never gives one catalog entry a second list', () => {
+  let s = createList(createEmptyState(), { name: 'House of M', catalogId: 'house-of-m' });
+  const [first] = s.listOrder;
+  const deleted = s.lists[first];
+  s = deleteList(s, first);
+  // What the reader does between the delete and the undo: they add the order again, which mints
+  // a new id, so the id guard above cannot see the collision.
+  const reimported = createList(s, { name: 'House of M', catalogId: 'house-of-m' });
+
+  assert.equal(restoreList(reimported, deleted, { index: 0 }), reimported);
+  assert.equal(
+    Object.values(restoreList(reimported, deleted, { index: 0 }).lists).filter((l) => l.catalogId === 'house-of-m').length,
+    1,
+    'two lists answering to one catalog entry make "in library" point at whichever is found first',
+  );
+});
+
+test('a restore of a list with no catalog entry is not blocked by one', () => {
+  let s = createList(createEmptyState(), { name: 'Mine' });
+  const [a] = s.listOrder;
+  const list = s.lists[a];
+  s = deleteList(s, a);
+  s = createList(s, { name: 'House of M', catalogId: 'house-of-m' });
+  assert.ok(restoreList(s, list, { index: 0 }).lists[a], 'a null catalogId matches nothing');
+});
+
 test('a restore with no usable index appends rather than dropping the list', () => {
   let s = createList(createEmptyState(), { name: 'A' });
   const [a] = s.listOrder;
