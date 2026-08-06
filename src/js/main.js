@@ -25,6 +25,7 @@ import { Hydrator } from './hydrate.js';
 import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
+import { askConfirm, askText, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
 const SIDEBAR_KEY = 'sidebar.collapsed';
@@ -95,8 +96,13 @@ function wireBlockedBanner() {
     announce('Downloaded a copy of the unreadable data.');
   });
 
-  $('#btn-start-fresh').addEventListener('click', () => {
-    if (!confirm('Start fresh?\n\nThis replaces the unreadable saved data with an empty tracker. Download a copy first if you have not already.')) return;
+  $('#btn-start-fresh').addEventListener('click', async () => {
+    const yes = await askConfirm({
+      title: 'Start fresh?',
+      body: 'This replaces the unreadable saved data with an empty tracker. Download a copy first if you have not already.',
+      confirmLabel: 'Start fresh',
+    });
+    if (!yes) return;
     if (store.startFresh({ confirmedDownloaded: downloadedSalvage })) {
       notify('#save-report', 'Started fresh. Saving is working again.', 'ok');
     } else {
@@ -156,11 +162,97 @@ function isLive(node) {
   return false;
 }
 
-function notify(sel, msg, kind = 'ok') {
-  const box = $(sel);
-  if (!box) return;
-  box.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
+// The catalog is loaded once and shown in two views, so a failure is one condition reported into
+// whichever pane the reader is at. Keying it by the condition rather than by the pane is what lets
+// a later success clear it wherever it was placed.
+const CATALOG_LOAD = 'catalog-load';
+
+// alert() reached the reader wherever they were; a pane fixed in one view does not. With
+// a curated import in flight, three ways the named pane went unseen were measured: the
+// reader switched view, so the pane was inside a hidden one and nothing appeared at all;
+// the preview dialog was still open, so the pane sat behind its backdrop and outside the
+// top layer; and the grid was scrolled, so the pane was 87px above the viewport.
+//
+// Each notice is remembered rather than only written into the page, because where it belongs can
+// change after it is written. The reader can leave the view while a curated import is still in
+// flight, and 219-issue orders make that window real, or a dialog can open over the pane. Placing
+// every outstanding notice from this record is what keeps one message in exactly one place;
+// moving the nodes about instead left a copy behind in the pane the message started in, and with
+// two outstanding it kept whichever came first in the markup rather than the newer one.
+const notices = new Map();
+
+// #app-report is above every view, so it is the only pane always available to a message whose own
+// pane the reader cannot see. Five of the seven views carry no pane of their own.
+function overflowPane() {
+  const box = $('#app-report');
+  return box?.offsetParent ? box : null;
+}
+
+function placeNotices() {
+  const overflow = overflowPane();
+  // Every dialog here is opened with showModal(), so an open one is the top layer and anything
+  // behind it is inert and dimmed regardless of where it sits on the page.
+  const modalPane = $('dialog[open]')?.querySelector('.report') ?? null;
+  const placed = new Map();
+  const claims = new Map();
+
+  for (const [, note] of notices) {
+    const own = $(note.sel);
+    if (!own) continue;
+    let box = own;
+    if (modalPane) box = modalPane;
+    // offsetParent is null only under a display:none ancestor, which is how a view that is not
+    // the current one is hidden.
+    else if (!own.offsetParent) box = overflow ?? own;
+    placed.set(note.sel, box);
+    // Later wins a shared pane, and notices is kept in order of arrival, so what the reader sees
+    // is the newest of two outstanding messages rather than whichever pane comes first.
+    claims.set(box, note);
+  }
+
+  // A message already readable in a view's own pane must not be repeated in the shared one. The
+  // same sentence twice on one screen is the visual form of the double-speak BL-027 removed.
+  if (overflow && claims.has(overflow)) {
+    const dup = [...claims].some(([box, note]) => box !== overflow && note.msg === claims.get(overflow).msg);
+    if (dup) claims.delete(overflow);
+  }
+
+  for (const pane of document.querySelectorAll('.report')) {
+    const note = claims.get(pane);
+    pane.replaceChildren(...(note ? [el('p', { class: `notice notice-${note.kind}`, text: note.msg })] : []));
+  }
+  return placed;
+}
+
+// The key is what a notice is cleared by, and it defaults to the pane so that most callers need
+// not think about it. It is separate so that a condition reported into more than one pane, such as
+// a catalog load, can be cleared wherever it ended up.
+function notify(sel, msg, kind = 'ok', key = sel) {
+  const own = $(sel);
+  if (!own) return;
+  // Only the general notice panes move. #save-report sits above every view and is assertive
+  // because a persistence failure must not be missed, and the result panes are read alongside the
+  // form that filled them, so relocating either would lose the context that makes it actionable
+  // and would quietly change which channel it goes out on.
+  if (!own.classList.contains('report')) {
+    own.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
+    if (!isLive(own)) announce(msg);
+    return;
+  }
+  // Re-inserted rather than overwritten in place, because a Map keeps a key at its original
+  // position and arrival order is what decides the newest message.
+  notices.delete(key);
+  notices.set(key, { sel, msg, kind });
+  const box = placeNotices().get(sel) ?? own;
+  // Nothing else scrolls a pane into view, and "nearest" is a no-op once it is fully visible, so
+  // this moves the page only when the message would otherwise be missed.
+  box.scrollIntoView?.({ block: 'nearest' });
   if (!isLive(box)) announce(msg);
+}
+
+function clearNotice(key) {
+  notices.delete(key);
+  placeNotices();
 }
 
 function loadSettings() {
@@ -382,8 +474,13 @@ function wireNav() {
   }
 }
 
-function newEmptyList() {
-  const name = prompt('Name for the new list?', 'My reading order');
+async function newEmptyList() {
+  const name = await askText({
+    title: 'New reading list',
+    label: 'Name for the new list',
+    value: 'My reading order',
+    confirmLabel: 'Create list',
+  });
   if (!name) return;
   // The id has to come from the state the store returned, not from store.state afterwards.
   // A failed write rolls the creation back, and listOrder's last entry would then be an
@@ -417,6 +514,9 @@ function showView(next, { focus = true } = {}) {
   if (next === 'catalog') renderCatalog();
   if (next === 'home') renderHome();
   window.scrollTo({ top: 0 });
+  // After the scroll to the top, so that bringing a message into view is not undone. Which pane
+  // each outstanding notice belongs in has just changed, because a different view is showing.
+  placeNotices();
 
   if (!focus) return;
   const section = $(`#view-${next}`);
@@ -598,7 +698,6 @@ function renderYours(populated) {
 
 async function renderHomeCatalog({ announceCount = false } = {}) {
   const grid = $('#home-grid');
-  const report = $('#home-cat-report');
 
   if (!homeCatalog) {
     grid.replaceChildren(el('li', { class: 'rail-hint', text: 'Loading reading orders…' }));
@@ -608,10 +707,10 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
       grid.replaceChildren();
       $('#home-chips').hidden = true;
       $('#form-home-q').hidden = true;
-      notify('#home-cat-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error');
+      notify('#home-cat-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error', CATALOG_LOAD);
       return;
     }
-    report.replaceChildren();
+    clearNotice(CATALOG_LOAD);
   }
 
   if (homeCatalog.dropped) {
@@ -780,7 +879,7 @@ async function addFromCatalog(list, btn) {
   justAdded.add(list.id);
   // Adding must not move the reader, so they can add a second order without finding their
   // way back. The sidebar and the card are the confirmation.
-  const listId = await importCurated(list, btn, { navigate: false });
+  const listId = await importCurated(list, btn, { navigate: false, report: '#home-cat-report' });
   if (!listId) {
     justAdded.delete(list.id);
     renderHomeCatalog();
@@ -813,7 +912,7 @@ function wirePreview() {
   $('#preview').addEventListener('click', (e) => {
     if (e.target === $('#preview')) $('#preview').close();
   });
-  $('#preview').addEventListener('close', () => { previewList = null; });
+  $('#preview').addEventListener('close', () => { previewList = null; placeNotices(); });
 }
 
 async function openPreview(list) {
@@ -862,21 +961,26 @@ function wireReading() {
     radio.addEventListener('change', (e) => { filter = e.target.value; renderRows(); });
   }
 
-  $('#btn-rename-list').addEventListener('click', () => {
+  $('#btn-rename-list').addEventListener('click', async () => {
     const id = activeListId();
     const list = store.state.lists[id];
     if (!list) return;
-    const name = prompt('List name', list.name);
+    const name = await askText({ title: 'Rename list', label: 'List name', value: list.name });
     if (!name) return;
     store.update((s) => renameList(s, id, name));
     announceIfSaved(`Renamed to ${name}.`);
   });
 
-  $('#btn-delete-list').addEventListener('click', () => {
+  $('#btn-delete-list').addEventListener('click', async () => {
     const id = activeListId();
     const list = store.state.lists[id];
     if (!list) return;
-    if (!confirm(`Delete "${list.name}"? Your read progress is kept; only the list is removed.`)) return;
+    const yes = await askConfirm({
+      title: `Delete "${list.name}"?`,
+      body: 'Your read progress is kept, and only the list is removed.',
+      confirmLabel: 'Delete list',
+    });
+    if (!yes) return;
     store.update((s) => deleteList(s, id));
     announceIfSaved('List deleted. Reading progress was kept.');
   });
@@ -1681,9 +1785,11 @@ function announceCatalog(msg) {
 
 async function renderCatalog() {
   const box = $('#catalog-results');
-  const report = $('#catalog-report');
   box.replaceChildren(el('p', { class: 'rail-hint', text: 'Loading the catalog…' }));
-  report.replaceChildren();
+  // Cleared by condition rather than by pane, because the same load failure may have been placed
+  // in the shared pane above the views. Emptying only this pane left the reader looking at a
+  // loaded catalog under a banner saying it could not be loaded.
+  clearNotice(CATALOG_LOAD);
   // Tied to the query rather than to a successful load, so the button cannot be left behind
   // offering to clear a search box that an empty or failed catalog still shows.
   $('#catalog-clear').hidden = !catalogQuery;
@@ -1695,7 +1801,7 @@ async function renderCatalog() {
     box.replaceChildren();
     $('#catalog-filters').hidden = true;
     $('#catalog-filters').replaceChildren();
-    notify('#catalog-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error');
+    notify('#catalog-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error', CATALOG_LOAD);
     return;
   }
 
@@ -1889,10 +1995,19 @@ let importing = null;
 // `navigate` is false on the landing page, where adding an order must leave the reader where
 // they were so they can add a second one. The sidebar still updates, because the store change
 // re-renders it; that is the feedback, along with the announcement.
-async function importCurated(list, btn, { navigate = true } = {}) {
+//
+// `report` is where a failure is written. This used to be alert(), which was the only path in
+// the app that stopped the page to report a failure, and the one place a reader could not read
+// the reason and the catalog at the same time.
+async function importCurated(list, btn, { navigate = true, report = '#catalog-report' } = {}) {
   if (importing) return null;
   const file = list.file;
   const catalogId = list.id;
+  // Keyed by the order rather than by the pane, for the reason CATALOG_LOAD is. The same order can
+  // be added from the landing page and from the catalog row, so a failure written into one pane is
+  // the same failure the other entry point would report. Keying by pane left the reader looking at
+  // the list open in front of them under a banner saying it could not be loaded.
+  const importKey = `import:${catalogId}`;
   importing = file;
   const label = btn?.textContent;
   if (btn) {
@@ -1907,7 +2022,7 @@ async function importCurated(list, btn, { navigate = true } = {}) {
 
     const created = store.update((s) => createList(s, { name: order.name, description: order.description, catalogId }));
     if (!store.lastUpdateOk) {
-      alert('That curated order could not be saved, so nothing was imported.');
+      notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);
       return null;
     }
     const listId = created.listOrder[created.listOrder.length - 1];
@@ -1918,7 +2033,7 @@ async function importCurated(list, btn, { navigate = true } = {}) {
       return r.state;
     });
     if (!store.lastUpdateOk) {
-      alert('The list was created but its issues could not be saved.');
+      notify(report, `${order.name} was created but its issues could not be saved.`, 'error', importKey);
       return null;
     }
     if (navigate) {
@@ -1940,10 +2055,14 @@ async function importCurated(list, btn, { navigate = true } = {}) {
     }
     parts.push('Any issues you had already read stay read.');
     if (!navigate) parts.push('It is now in your sidebar.');
+    // A failure from a previous attempt would otherwise sit under a successful import,
+    // contradicting it. Cleared by the order's key, not by this pane, so an attempt that failed
+    // from the other entry point is cleared too.
+    clearNotice(importKey);
     announce(parts.join(' '));
     return listId;
   } catch (err) {
-    alert(`Could not load that curated order: ${err.message}`);
+    notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error', importKey);
     return null;
   } finally {
     importing = null;
@@ -2045,8 +2164,13 @@ function wireData() {
     notify('#restore-report', 'Cached metadata cleared. Lists and reading progress are untouched.', 'ok');
   });
 
-  $('#btn-wipe').addEventListener('click', () => {
-    if (!confirm('Erase every list and all reading progress in this browser? Export a backup first if you are not sure.')) return;
+  $('#btn-wipe').addEventListener('click', async () => {
+    const yes = await askConfirm({
+      title: 'Erase every list and all reading progress?',
+      body: 'This clears everything this browser has stored for the tracker. Export a backup first if you are not sure. It cannot be undone.',
+      confirmLabel: 'Erase everything',
+    });
+    if (!yes) return;
     store.update(() => createEmptyState());
     cache.clear();
     announceIfSaved('All local data erased.');
@@ -2153,6 +2277,7 @@ wireBlockedBanner();
 wireCatalogSearch();
 wireHome();
 wirePreview();
+wireAsk();
 renderAll();
 // A reader with nothing to read has no reading view to show, so the landing page is where
 // they start. One with an active list resumes it, which is the whole point of the app.

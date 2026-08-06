@@ -672,6 +672,24 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .preview-foot { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: .9rem; }
 .preview-foot .btn { min-height: 44px; }
 
+/* ============================================================ ask dialog */
+
+.ask {
+  width: min(30rem, calc(100vw - 2rem));
+  background: var(--card); color: var(--text); border: 1px solid var(--line-2);
+  border-radius: 16px; padding: 1.2rem 1.4rem;
+}
+.ask::backdrop { background: #000000b3; }
+.ask h2 { margin: 0 0 .5rem; font-size: 1.05rem; font-weight: 600; }
+.ask p { margin: 0 0 .9rem; max-width: 52ch; }
+.ask label { display: block; font-size: .82rem; color: var(--muted); margin-bottom: .3rem; }
+/* The shared input rule already carries the colours and the border. Only the box needs
+   saying here: inside a dialog the field is the whole width, and it has to clear the 44px
+   target minimum that a form row elsewhere gets from its neighbours. */
+.ask input { width: 100%; box-sizing: border-box; min-height: 44px; font: inherit; }
+.ask-foot { display: flex; justify-content: flex-end; gap: .6rem; flex-wrap: wrap; }
+.ask-foot .btn { min-height: 44px; }
+
 /* ============================================================ preferences */
 
 @media (prefers-reduced-motion: reduce) {

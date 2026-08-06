@@ -119,6 +119,14 @@
                because they can occur during any action and must not be missed. -->
           <div id="save-report" role="alert" aria-live="assertive"></div>
 
+          <!-- Last resort for a notice whose own pane the reader cannot see. Five of the seven
+               views carry no report pane of their own, so without a destination here a curated
+               import that failed on the landing page had nowhere to go once the reader moved on.
+               Deliberately not a live region: the message was already announced once when it was
+               written, and moving it into an assertive region would say it a second time, which
+               is what BL-027 removed. -->
+          <div id="app-report" class="report"></div>
+
           <!-- Shown only when saved data could not be read. Saving stays paused until the
                user chooses, so the unreadable original is never overwritten. -->
           <section id="blocked-banner" class="blocked" hidden role="alert">
@@ -197,7 +205,7 @@
                 <h2 id="home-cat-h">Reading orders</h2>
                 <button type="button" class="linkish" id="home-see-all" hidden></button>
               </div>
-              <div id="home-cat-report"></div>
+              <div id="home-cat-report" class="report"></div>
 
               <fieldset class="filters" id="home-chips" hidden>
                 <legend class="visually-hidden">Filter reading orders</legend>
@@ -347,7 +355,7 @@
             <div class="head"><div class="head-left"><h1 id="catalog-h">Reading list catalog</h1>
               <div class="sub">Curated orders bundled with the app. Importing one creates a new list; issues you have already read stay read.</div>
             </div></div>
-            <div id="catalog-report"></div>
+            <div id="catalog-report" class="report"></div>
             <form id="form-catalog-search" class="stack" role="search">
               <label for="catalog-q">Search the catalog by title or character</label>
               <div class="row">
@@ -585,11 +593,42 @@
       <p class="result-meta" id="preview-meta"></p>
       <p class="rail-hint" id="preview-desc"></p>
       <div id="preview-body"></div>
+      <!-- Adding an order can fail while this dialog is still open. A modal puts the rest
+           of the page in another layer, inert and behind the backdrop, so the pane the
+           catalog would normally use cannot be read. notify() prefers a .report inside
+           the open dialog for that reason. -->
+      <div id="preview-report" class="report"></div>
       <div class="preview-foot">
         <div id="preview-add"></div>
         <span class="grow"></span>
         <span class="rail-hint">Data provided by Marvel.</span>
       </div>
+    </dialog>
+
+    <!--
+      Naming and confirming, in the page. The browser's own prompt() and confirm() were
+      unstyled, unannounceable through the app's own live region, and on some browsers
+      suppressible by the user, which meant a destructive action could go through with no
+      question asked at all. Built on <dialog> for the same reason the preview is: the focus
+      trap, the Escape key and the return of focus are the browser's job rather than ours.
+    -->
+    <dialog id="ask" class="ask" aria-labelledby="ask-title" aria-describedby="ask-body">
+      <form method="dialog" id="ask-form">
+        <!-- Carries text for the same reason #preview-h does: a heading counts as empty in the
+             document whether or not its dialog has ever been opened, and that is exactly how
+             two of the three empty headings fixed in BL-027 went unreported. Every question
+             replaces this before the dialog is shown. -->
+        <h2 id="ask-title">Confirm</h2>
+        <p id="ask-body" class="rail-hint"></p>
+        <p id="ask-field" hidden>
+          <label for="ask-input" id="ask-label"></label>
+          <input type="text" id="ask-input" maxlength="200" autocomplete="off" />
+        </p>
+        <div class="ask-foot">
+          <button type="button" class="btn btn-g" id="ask-cancel">Cancel</button>
+          <button type="submit" class="btn" id="ask-ok" value="ok">OK</button>
+        </div>
+      </form>
     </dialog>
 
     <script type="module" src="./js/main.js"></script>
