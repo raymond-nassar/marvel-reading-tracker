@@ -5,7 +5,7 @@
 // Cover art is optional everywhere: `body.nocovers` swaps every image for a typographic tile.
 
 import {
-  createList, deleteList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
+  createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
   setOverride, pendingIssueIds, createEmptyState, coverUrl, listForCatalogId, SCHEMA_VERSION,
 } from './lib/model.js';
@@ -219,15 +219,28 @@ function placeNotices() {
 
   for (const pane of document.querySelectorAll('.report')) {
     const note = claims.get(pane);
-    pane.replaceChildren(...(note ? [el('p', { class: `notice notice-${note.kind}`, text: note.msg })] : []));
+    pane.replaceChildren(...(note ? [noticeEl(note)] : []));
   }
   return placed;
+}
+
+// A notice with an action is a paragraph with a button in it rather than a message and a separate
+// control, so that the offer is announced with the words that explain it and so that re-rendering
+// the notice cannot leave the button behind in a pane the message has left.
+function noticeEl({ msg, kind, action }) {
+  return el('p', { class: `notice notice-${kind}${action ? ' notice-act' : ''}` }, [
+    el('span', { class: 'grow', text: msg }),
+    action ? el('button', { type: 'button', class: 'quiet', onclick: action.onClick }, action.label) : null,
+  ]);
 }
 
 // The key is what a notice is cleared by, and it defaults to the pane so that most callers need
 // not think about it. It is separate so that a condition reported into more than one pane, such as
 // a catalog load, can be cleared wherever it ended up.
-function notify(sel, msg, kind = 'ok', key = sel) {
+//
+// `action` puts a button in the notice, for a message that offers a way back such as the undo
+// after a delete.
+function notify(sel, msg, kind = 'ok', key = sel, action = null) {
   const own = $(sel);
   if (!own) return;
   // Only the general notice panes move. #save-report sits above every view and is assertive
@@ -235,19 +248,25 @@ function notify(sel, msg, kind = 'ok', key = sel) {
   // form that filled them, so relocating either would lose the context that makes it actionable
   // and would quietly change which channel it goes out on.
   if (!own.classList.contains('report')) {
-    own.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
-    if (!isLive(own)) announce(msg);
+    own.replaceChildren(noticeEl({ msg, kind, action }));
+    if (!isLive(own)) announce(spoken(msg, action));
     return;
   }
   // Re-inserted rather than overwritten in place, because a Map keeps a key at its original
   // position and arrival order is what decides the newest message.
   notices.delete(key);
-  notices.set(key, { sel, msg, kind });
+  notices.set(key, { sel, msg, kind, action });
   const box = placeNotices().get(sel) ?? own;
   // Nothing else scrolls a pane into view, and "nearest" is a no-op once it is fully visible, so
   // this moves the page only when the message would otherwise be missed.
   box.scrollIntoView?.({ block: 'nearest' });
-  if (!isLive(box)) announce(msg);
+  if (!isLive(box)) announce(spoken(msg, action));
+}
+
+// A button that is never spoken is a button a screen reader user cannot know to look for, and the
+// undo is the whole point of the message it sits in.
+function spoken(msg, action) {
+  return action ? `${msg} ${action.label} is available.` : msg;
 }
 
 function clearNotice(key) {
@@ -977,12 +996,16 @@ function wireReading() {
     if (!list) return;
     const yes = await askConfirm({
       title: `Delete "${list.name}"?`,
-      body: 'Your read progress is kept, and only the list is removed.',
+      body: 'Your read progress is kept, and only the list is removed. This can be undone.',
       confirmLabel: 'Delete list',
     });
     if (!yes) return;
+    // Captured before the delete, because the state afterwards is the one thing that no longer
+    // knows either the list or where in the rail it sat.
+    const deleted = { list, index: store.state.listOrder.indexOf(id), wasActive: store.state.active === id };
     store.update((s) => deleteList(s, id));
-    announceIfSaved('List deleted. Reading progress was kept.');
+    if (!store.lastUpdateOk) return;
+    offerUndoDelete(deleted);
   });
 
   $('#btn-duplicate-list').addEventListener('click', () => {
@@ -1017,6 +1040,49 @@ function wireReading() {
   });
 
   $('#btn-hero-done').addEventListener('click', () => markCurrentRead());
+}
+
+// A deleted list is held for the rest of the session rather than for a few seconds. The undo
+// notice sits above the views because deleting the list you were reading moves you elsewhere,
+// and a timer would take the only way back at the moment the reader was still deciding.
+//
+// Only the most recent delete is held. Keeping every one would offer to restore a list the
+// reader has since deliberately replaced, and nothing here can tell those two cases apart.
+const UNDO_DELETE = 'undo-delete';
+let lastDeleted = null;
+
+function offerUndoDelete(deleted) {
+  lastDeleted = deleted;
+  notify('#app-report', `Deleted ${deleted.list.name}. Reading progress was kept.`, 'ok', UNDO_DELETE, {
+    label: 'Undo delete',
+    onClick: undoDelete,
+  });
+}
+
+// Wholesale replacements of the state, erasing and restoring, drop the offer rather than
+// leaving it pointing into data that is no longer there.
+function forgetDeleted() {
+  lastDeleted = null;
+  clearNotice(UNDO_DELETE);
+}
+
+function undoDelete() {
+  if (!lastDeleted) return;
+  const { list, index, wasActive } = lastDeleted;
+  store.update((s) => restoreList(s, list, { index, active: wasActive }));
+  if (!store.lastUpdateOk) {
+    // The buffer is deliberately kept, and the notice keeps a button, because a write that failed
+    // for want of space can succeed after the reader frees some. Dropping the offer here would
+    // make a recoverable failure permanent.
+    notify('#app-report', `${list.name} could not be put back: that change could not be saved.`, 'error', UNDO_DELETE, {
+      label: 'Try again',
+      onClick: undoDelete,
+    });
+    return;
+  }
+  forgetDeleted();
+  if (wasActive) showView('read');
+  announce(`${list.name} is back in your sidebar, in the position it had.`);
 }
 
 function markCurrentRead() {
@@ -2132,6 +2198,9 @@ function wireData() {
     if (res.ok) {
       notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once.', 'ok');
       $('#btn-undo-restore').hidden = false;
+      // The buffered list belongs to the data the restore has just replaced. Offering it back
+      // would splice a list out of the old tracker into the restored one.
+      forgetDeleted();
     } else {
       notify('#restore-report', `Restore refused, nothing was changed: ${res.errors.join(' ')}`, 'error');
     }
@@ -2173,6 +2242,9 @@ function wireData() {
     if (!yes) return;
     store.update(() => createEmptyState());
     cache.clear();
+    // The undo buffer points at a list from the data that has just been erased, so putting it
+    // back would resurrect one list out of a tracker the reader asked to be emptied.
+    forgetDeleted();
     announceIfSaved('All local data erased.');
   });
 }

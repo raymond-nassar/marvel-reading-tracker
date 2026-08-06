@@ -14,6 +14,16 @@ quote in a bug report.
 
 ## Unreleased
 
+### Added
+
+- Deleting a list can now be undone. The confirmation says so, and afterwards a notice above every
+  view offers "Undo delete" for the rest of the session rather than for a few seconds, because
+  deleting the list you were reading moves you elsewhere and a timer would take the only way back
+  while you were still deciding. The list returns to the position it held in the sidebar, and
+  reading progress was never affected either way, since it is global and kept per issue. Erasing
+  everything or restoring a backup drops the offer, because it would otherwise point at data that
+  is no longer there.
+
 ### Changed
 
 - Naming a list and confirming a destructive action now happen in the page instead of in a
