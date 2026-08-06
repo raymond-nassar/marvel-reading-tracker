@@ -5,7 +5,7 @@
 // user-activation token and the tab gets blocked; doing it after means holding a window
 // handle and navigating it later, which testing on 2026-08-03 showed to be unreliable.
 // So the app opens this page immediately and the lookup happens HERE, in the new tab.
-// No handle is retained, and `opener` can be severed safely.
+// No handle is retained, and `opener` is severed below before any navigation.
 //
 // Deliberately not an open redirector: ids must be digits, the destination is built here,
 // and the API base is read from this origin's own settings rather than from the URL.
@@ -20,6 +20,20 @@
 // deferred, so the elements looked up below are parsed by the time this runs.
 
 import { isAllowedApiBase } from './js/lib/apiBase.js';
+
+// Disown the opener before anything else, and in particular before any navigation.
+// The opener belongs to the tab rather than to the document, so severing it here also
+// covers read.marvel.com and marvel.com, which this tab is about to replace itself with.
+//
+// The app's own launcher already passes 'noopener' (src/js/reader.js), so nothing in this
+// repository needs it. This page is a plain URL, though, and anything else that reaches it,
+// a bookmark, an external link, or another site calling window.open without 'noopener',
+// would otherwise leave the destination holding a handle it can navigate the opener with.
+// Measured before this line existed: the destination did hold one.
+//
+// Nothing here needs the opener. Every path leaves via location.replace, and no message is
+// ever posted back to the app.
+window.opener = null;
 
 const q = new URLSearchParams(location.search);
 const digits = (v) => (/^\d{1,12}$/.test(v || '') ? v : null);
