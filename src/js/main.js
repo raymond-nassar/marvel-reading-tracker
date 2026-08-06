@@ -25,6 +25,7 @@ import { Hydrator } from './hydrate.js';
 import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
+import { askConfirm, askText, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
 const SIDEBAR_KEY = 'sidebar.collapsed';
@@ -95,8 +96,13 @@ function wireBlockedBanner() {
     announce('Downloaded a copy of the unreadable data.');
   });
 
-  $('#btn-start-fresh').addEventListener('click', () => {
-    if (!confirm('Start fresh?\n\nThis replaces the unreadable saved data with an empty tracker. Download a copy first if you have not already.')) return;
+  $('#btn-start-fresh').addEventListener('click', async () => {
+    const yes = await askConfirm({
+      title: 'Start fresh?',
+      body: 'This replaces the unreadable saved data with an empty tracker. Download a copy first if you have not already.',
+      confirmLabel: 'Start fresh',
+    });
+    if (!yes) return;
     if (store.startFresh({ confirmedDownloaded: downloadedSalvage })) {
       notify('#save-report', 'Started fresh. Saving is working again.', 'ok');
     } else {
@@ -161,6 +167,10 @@ function notify(sel, msg, kind = 'ok') {
   if (!box) return;
   box.replaceChildren(el('p', { class: `notice notice-${kind}`, text: msg }));
   if (!isLive(box)) announce(msg);
+}
+
+function clearNotice(sel) {
+  $(sel)?.replaceChildren();
 }
 
 function loadSettings() {
@@ -382,8 +392,13 @@ function wireNav() {
   }
 }
 
-function newEmptyList() {
-  const name = prompt('Name for the new list?', 'My reading order');
+async function newEmptyList() {
+  const name = await askText({
+    title: 'New reading list',
+    label: 'Name for the new list',
+    value: 'My reading order',
+    confirmLabel: 'Create list',
+  });
   if (!name) return;
   // The id has to come from the state the store returned, not from store.state afterwards.
   // A failed write rolls the creation back, and listOrder's last entry would then be an
@@ -780,7 +795,7 @@ async function addFromCatalog(list, btn) {
   justAdded.add(list.id);
   // Adding must not move the reader, so they can add a second order without finding their
   // way back. The sidebar and the card are the confirmation.
-  const listId = await importCurated(list, btn, { navigate: false });
+  const listId = await importCurated(list, btn, { navigate: false, report: '#home-cat-report' });
   if (!listId) {
     justAdded.delete(list.id);
     renderHomeCatalog();
@@ -862,21 +877,26 @@ function wireReading() {
     radio.addEventListener('change', (e) => { filter = e.target.value; renderRows(); });
   }
 
-  $('#btn-rename-list').addEventListener('click', () => {
+  $('#btn-rename-list').addEventListener('click', async () => {
     const id = activeListId();
     const list = store.state.lists[id];
     if (!list) return;
-    const name = prompt('List name', list.name);
+    const name = await askText({ title: 'Rename list', label: 'List name', value: list.name });
     if (!name) return;
     store.update((s) => renameList(s, id, name));
     announceIfSaved(`Renamed to ${name}.`);
   });
 
-  $('#btn-delete-list').addEventListener('click', () => {
+  $('#btn-delete-list').addEventListener('click', async () => {
     const id = activeListId();
     const list = store.state.lists[id];
     if (!list) return;
-    if (!confirm(`Delete "${list.name}"? Your read progress is kept; only the list is removed.`)) return;
+    const yes = await askConfirm({
+      title: `Delete "${list.name}"?`,
+      body: 'Your read progress is kept, and only the list is removed.',
+      confirmLabel: 'Delete list',
+    });
+    if (!yes) return;
     store.update((s) => deleteList(s, id));
     announceIfSaved('List deleted. Reading progress was kept.');
   });
@@ -1889,7 +1909,11 @@ let importing = null;
 // `navigate` is false on the landing page, where adding an order must leave the reader where
 // they were so they can add a second one. The sidebar still updates, because the store change
 // re-renders it; that is the feedback, along with the announcement.
-async function importCurated(list, btn, { navigate = true } = {}) {
+//
+// `report` is where a failure is written. This used to be alert(), which was the only path in
+// the app that stopped the page to report a failure, and the one place a reader could not read
+// the reason and the catalog at the same time.
+async function importCurated(list, btn, { navigate = true, report = '#catalog-report' } = {}) {
   if (importing) return null;
   const file = list.file;
   const catalogId = list.id;
@@ -1907,7 +1931,7 @@ async function importCurated(list, btn, { navigate = true } = {}) {
 
     const created = store.update((s) => createList(s, { name: order.name, description: order.description, catalogId }));
     if (!store.lastUpdateOk) {
-      alert('That curated order could not be saved, so nothing was imported.');
+      notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error');
       return null;
     }
     const listId = created.listOrder[created.listOrder.length - 1];
@@ -1918,7 +1942,7 @@ async function importCurated(list, btn, { navigate = true } = {}) {
       return r.state;
     });
     if (!store.lastUpdateOk) {
-      alert('The list was created but its issues could not be saved.');
+      notify(report, `${order.name} was created but its issues could not be saved.`, 'error');
       return null;
     }
     if (navigate) {
@@ -1940,10 +1964,13 @@ async function importCurated(list, btn, { navigate = true } = {}) {
     }
     parts.push('Any issues you had already read stay read.');
     if (!navigate) parts.push('It is now in your sidebar.');
+    // A failure from a previous attempt would otherwise sit under a successful import,
+    // contradicting it.
+    clearNotice(report);
     announce(parts.join(' '));
     return listId;
   } catch (err) {
-    alert(`Could not load that curated order: ${err.message}`);
+    notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error');
     return null;
   } finally {
     importing = null;
@@ -2045,8 +2072,13 @@ function wireData() {
     notify('#restore-report', 'Cached metadata cleared. Lists and reading progress are untouched.', 'ok');
   });
 
-  $('#btn-wipe').addEventListener('click', () => {
-    if (!confirm('Erase every list and all reading progress in this browser? Export a backup first if you are not sure.')) return;
+  $('#btn-wipe').addEventListener('click', async () => {
+    const yes = await askConfirm({
+      title: 'Erase every list and all reading progress?',
+      body: 'This clears everything this browser has stored for the tracker. Export a backup first if you are not sure. It cannot be undone.',
+      confirmLabel: 'Erase everything',
+    });
+    if (!yes) return;
     store.update(() => createEmptyState());
     cache.clear();
     announceIfSaved('All local data erased.');
@@ -2153,6 +2185,7 @@ wireBlockedBanner();
 wireCatalogSearch();
 wireHome();
 wirePreview();
+wireAsk();
 renderAll();
 // A reader with nothing to read has no reading view to show, so the landing page is where
 // they start. One with an active list resumes it, which is the whole point of the app.

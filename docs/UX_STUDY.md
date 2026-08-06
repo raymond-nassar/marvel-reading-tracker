@@ -49,7 +49,7 @@ Evaluated against all ten of Nielsen's usability heuristics, named by their stan
 | # | Heuristic | Severity | Verdict |
 |---|-----------|----------|---------|
 | 1 | Visibility of system status | 2 | Status is communicated well in words, but the interface stalls visibly on a long list. UX-H-001 |
-| 2 | Match between the system and the real world | 1 | Strong. Labels are written in reader language, and availability wording hedges rather than promises. `src/js/main.js:1162-1167` |
+| 2 | Match between the system and the real world | 1 | Strong. Labels are written in reader language, and availability wording hedges rather than promises. `src/js/main.js:1182-1187` |
 | 3 | User control and freedom | 3 | Restoring a backup can be undone, deleting a list cannot. UX-H-003 |
 | 4 | Consistency and standards | 3 | Two different error and prompt systems run side by side. UX-H-002 |
 | 5 | Error prevention | 1 | Strong. Unreadable saved data pauses writing rather than overwriting, and a future schema is refused. `src/index.html:122-133`, `src/js/lib/model.js:376-402` |
@@ -67,7 +67,7 @@ Severity: 2, single-rater estimate
 Rationale: occurs on the single most repeated action in the product, persists for the life of the
 list, and grows with list length, but degrades speed rather than blocking the task
 Confidence: Measured
-Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:60-65`, `src/js/main.js:2120-2133`
+Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:61-66`, `src/js/main.js:2152-2165`
 Source: live UI framing, reacted to the store wiring while reading `src/js/main.js`
 Impact: marking one issue read rebuilds the rail, all 219 rows and the progress block, which is
 4,485 DOM nodes and 1,533 row controls, at a median of 21.9 ms synchronous and 75.7 ms to paint,
@@ -86,8 +86,8 @@ Severity: 3, single-rater estimate
 Rationale: affects several primary flows, is permanent rather than transient, and splits the
 product's voice in two at exactly the moments a reader is deciding something
 Confidence: Observed
-Evidence: `src/js/main.js:1910`, `src/js/main.js:869-879`, `src/js/main.js:876-882`, against
-`src/js/main.js:137-164`
+Evidence: `src/js/main.js:1934`, `src/js/main.js:880-888`, `src/js/main.js:890-902`, against
+`src/js/main.js:143-170`
 Source: heuristic 4 sweep, code-only framing
 Impact: the application has a careful in-page notice system with live regions, and then reports
 curated import failures through `alert()`, asks for a list name through `prompt()`, and confirms
@@ -97,6 +97,11 @@ in which case a rename silently does nothing.
 Recommendation: move naming and confirmation into the page using the existing notice and dialog
 patterns, and route import failures through `notify()` like every other path
 Backlog item: BL-034
+Resolved: naming and confirmation moved into one `<dialog>` at `src/js/ask.js:48-80`, and the
+three `alert()` calls in `importCurated` now write to a pane the caller names. The Evidence
+anchors name the code as it now stands; the Impact above describes the native dialogs it
+replaced. The suppression case in particular is closed: a browser that blocks dialogs can no
+longer turn a rename into silence, because there is no native dialog left to block.
 
 #### UX-H-003: Deleting a list cannot be undone, while restoring a backup can
 
@@ -106,7 +111,7 @@ Severity: 3, single-rater estimate
 Rationale: irreversible, affects data the reader curated by hand, and the inconsistency with
 restore makes the gap harder to anticipate
 Confidence: Observed
-Evidence: `src/js/main.js:876-882`, `src/js/main.js:2014-2017`
+Evidence: `src/js/main.js:890-902`, `src/js/main.js:2041-2044`
 Source: heuristic 3 sweep, code-only framing
 Impact: deletion is guarded only by a native `confirm()` and there is no undo afterwards. Read
 progress survives, because it is global, but the list name and its curated order do not. Restoring
@@ -115,6 +120,9 @@ model of what is recoverable.
 Recommendation: offer an undo after deletion for the rest of the session, matching the restore
 affordance that already exists
 Backlog item: BL-035
+Partly overtaken: BL-034 replaced the native `confirm()` with the app's own dialog, so the guard
+named in the Impact above is now in-page. The finding itself stands, because a confirmation is
+not an undo and the deletion is still irreversible once answered.
 
 #### UX-H-004: The advertised keyboard shortcut is documented only where it is used
 
@@ -124,7 +132,7 @@ Severity: 2, single-rater estimate
 Rationale: affects repeat use rather than first use, and the cost is a slower path rather than a
 blocked one
 Confidence: Observed
-Evidence: `src/index.html:291`, `src/js/main.js:1189-1207`
+Evidence: `src/index.html:291`, `src/js/main.js:1209-1227`
 Source: heuristic 6 sweep, code-only framing
 Impact: the hero button carries a `kbd` hint, so the shortcut is discoverable at that one spot and
 nowhere else. There is no shortcut reference anywhere in the interface, so a reader who has
@@ -199,7 +207,7 @@ Not applicable, with reason:
 * 1.4.2 Audio Control, not applicable, for the same reason.
 * 2.2.2 Pause, Stop, Hide, not applicable, because the only moving element is a progress ring
   transition that already respects reduced motion. Evidence: `src/styles.css:248`,
-  `src/styles.css:677-679`.
+  `src/styles.css:695-697`.
 * 3.3.8 Accessible Authentication (Minimum), not applicable, because there is no authentication of
   any kind. Evidence: `absent: password|login|signin|oauth|token, grep across src/`.
 * 3.3.7 Redundant Entry, not applicable, because no flow asks for the same information twice.
@@ -232,7 +240,7 @@ Notable passes, recorded because a reader would reasonably expect them to fail:
 * 3.2.2 On Input passes, overturning a tool result. HTML_CodeSniffer flagged `#form-catalog-search`
   under H32.2 for having no submit button on both scanned surfaces. The form is search-as-you-type
   and calls `preventDefault` on submit, results update in place, and no change of context occurs,
-  so the criterion is met. Evidence: `src/index.html:351-357`, `src/js/main.js:1824-1832`.
+  so the criterion is met. Evidence: `src/index.html:351-357`, `src/js/main.js:1844-1852`.
 
 #### UX-A-001: The primary call to action and the accent text fall below 4.5:1
 
@@ -362,7 +370,7 @@ Severity: 2, single-rater estimate
 Rationale: affects every notice in the product, and duplicate speech is disruptive rather than
 blocking
 Confidence: Observed
-Evidence: `src/js/main.js:137-164`, `src/index.html:13`, `src/index.html:120`,
+Evidence: `src/js/main.js:143-170`, `src/index.html:13`, `src/index.html:120`,
 `src/index.html:385`
 Source: WCAG 2.2 Level AA sweep, criterion 4.1.3
 Impact: `notify()` writes its message into a container that already carries a live region role, and
@@ -372,7 +380,7 @@ nothing is missed, is right, but the effect is that every confirmation is spoken
 Recommendation: pick one channel per message, keeping `announce()` for events with no visible
 surface and letting the visible live region speak for itself everywhere else
 Backlog item: BL-027
-Resolved: which channel a message uses is now read off the container at `src/js/main.js:150-157`
+Resolved: which channel a message uses is now read off the container at `src/js/main.js:156-163`
 rather than decided by a list of ids, and the six result panes stopped being live regions. The
 Impact above describes the pre-fix behaviour and is kept as the record of why the item was
 raised. Measured on a first run with storage cleared, the surfaces that speak went from 9 to 3.
@@ -417,7 +425,7 @@ emulated light preference the computed body background stays `rgb(15, 17, 21)` a
 taken under light and dark preference are byte-identical, so the reader's system preference has no
 effect at all. Forced colours and reduced motion are both handled, which shows the gap is a missing
 theme rather than a general disregard for user preferences. Evidence for that contrast:
-`src/styles.css:677-684`.
+`src/styles.css:695-702`.
 Recommendation: derive the palette from tokens and add a light theme behind `prefers-color-scheme`
 with a manual override, reusing the existing forced-colors work as the model
 Backlog item: BL-032
@@ -430,7 +438,7 @@ Severity: 2, single-rater estimate
 Rationale: affects the information most specific to this product, on every row, though a short
 label is always visible alongside it
 Confidence: Observed
-Evidence: `src/js/main.js:1130-1140`, `src/js/main.js:1162-1167`
+Evidence: `src/js/main.js:1150-1160`, `src/js/main.js:1182-1187`
 Source: WCAG 2.2 Level A sweep, criterion 4.1.2
 Impact: the badge shows a short label and puts the full description in a `title` attribute. `title`
 does not appear on touch, is inconsistently surfaced to keyboard users, and is announced
@@ -503,7 +511,7 @@ series. Only Progress by series shipped. A reader therefore has no single place 
 reading history across lists, and no way to find the issues they entered by hand, even though the
 data model already distinguishes both. The manual-entry marker in particular exists and is rendered
 per row, so the grouping view is the only missing piece. Evidence for the existing marker:
-`src/js/main.js:1140`.
+`src/js/main.js:1160`.
 Recommendation: add the two rail entries as filtered views over existing data, reusing the manual
 source marker and the global read map
 Backlog item: BL-038
@@ -537,7 +545,7 @@ Severity: 3, single-rater estimate
 Rationale: breaks the product's only workflow shortcut at exactly the moment a reader would repeat
 it, and the failure is silent
 Confidence: Observed
-Evidence: `src/js/main.js:1189-1207`, `src/index.html:291`
+Evidence: `src/js/main.js:1209-1227`, `src/index.html:291`
 Source: heuristic 7 sweep, code-only framing, confirmed against the live tab ring
 Impact: the shortcut handler returns early when the active element is a button, link or input. The
 hero advertises D for Done, next. Clicking that button leaves it focused, so the very next press of
@@ -612,7 +620,7 @@ Backlog item: BL-028
 reduce, with a screenshot captured for each. The light and dark screenshots are byte-identical,
 which is the measurement behind UX-A-008. Reduced motion is genuinely honoured: the progress ring
 transition computes to `none` under the reduce preference. Evidence:
-`docs/ux-artifacts/live-inspection.json`, `src/styles.css:248`, `src/styles.css:677-679`.
+`docs/ux-artifacts/live-inspection.json`, `src/styles.css:248`, `src/styles.css:695-697`.
 
 ## Step 5: Information architecture and generative artifacts
 
@@ -638,7 +646,7 @@ Rationale: affects every view for the life of the product. It cannot be worked a
 quietly removes browser behaviours the reader already expects
 Confidence: Verified absent, confirmed by measurement
 Evidence: `absent: pushState|replaceState|location.hash|hashchange|popstate|history\., grep across
-src/ returning no matches`, `src/js/main.js:403-427`,
+src/ returning no matches`, `src/js/main.js:418-442`,
 `docs/ux-artifacts/live-inspection.json`
 Source: Step 5 information architecture review, addressability
 Impact: view switching mutates a module-level variable and toggles the `hidden` attribute. No
@@ -659,7 +667,7 @@ Severity: 2, single-rater estimate
 Rationale: affects a control the reader is likely to set once and expect to keep, on every reload,
 though resetting to All is a safe default rather than a harmful one
 Confidence: Observed
-Evidence: `src/js/main.js:68`, `src/index.html:324-328`
+Evidence: `src/js/main.js:69`, `src/index.html:324-328`
 Source: Step 5 information architecture review, addressability
 Impact: the filter lives in a module-level variable initialised to `all` and is never persisted. A
 reader working through a long list with the Unread filter set loses it on every reload and silently
@@ -680,8 +688,8 @@ evidence value and the cheapest question that would confirm or kill it.
 | Relationship to Marvel Unlimited | Active subscriber who reads in the web reader | Strong. The entire product deep-links into the reader and the link contract was validated against a live subscription. `src/js/reader.js:12` | Is the subscription current, and is the web reader the usual way in rather than the mobile app? |
 | Primary device while reading | Desktop or laptop, with the tracker beside the reader | Moderate. The reflow and rail defects would be intolerable if a phone were the main device, and they shipped. `docs/ux-artifacts/viewport-sweep-reading.json` | On the last five reading sessions, what was the tracker open on? |
 | Reading style | Follows a long curated order end to end rather than dipping in | Strong. The product is built around order, resume and next-unread rather than around browsing. `src/index.html:264-299` | When a list is abandoned partway, what caused it? |
-| Tolerance for missing metadata | High, provided the app admits what it does not know | Strong. Pending and by-hand states are surfaced rather than hidden, and this was a deliberate decision. `src/js/main.js:1134-1140` | Would you rather see a guess or a clearly marked gap? |
-| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:213-214`, `PRODUCT_BACKLOG.md:1114-1117` | If sync existed and was opt-in, would you turn it on? |
+| Tolerance for missing metadata | High, provided the app admits what it does not know | Strong. Pending and by-hand states are surfaced rather than hidden, and this was a deliberate decision. `src/js/main.js:1154-1160` | Would you rather see a guess or a clearly marked gap? |
+| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:213-214`, `PRODUCT_BACKLOG.md:1143-1146` | If sync existed and was opt-in, would you turn it on? |
 | Accessibility needs | None known, and unasked | Weak. This is an assumption by absence. No accessibility requirement appears anywhere in the repository, and the shipped contrast and target sizes are consistent with nobody having needed otherwise. | Do you use any system accessibility setting, including text size, contrast or reduced motion? |
 
 Any other user type is speculative: a second reader would most plausibly be someone handed a
@@ -698,12 +706,12 @@ sentence frames rather than quotations. Nobody said these words.
   `src/index.html:264-299` and `src/index.html:291`.
 * When I open a crossover I have never read, I want to know how much reading I am committing to
   before I import it, so I can pick the essential path or the complete path deliberately. Traced to
-  `src/js/main.js:1779-1784`.
+  `src/js/main.js:1799-1804`.
 * When an issue has no metadata yet, I want the app to say so plainly, so I can tell a pending
-  lookup apart from a comic that does not exist. Traced to `src/js/main.js:1134-1140`.
+  lookup apart from a comic that does not exist. Traced to `src/js/main.js:1154-1160`.
 * When I have read half of a long order across several sittings, I want to come back and see where
   I stopped, so I can resume without scrolling to find the boundary. Traced to
-  `src/js/main.js:1962-1980`.
+  `src/js/main.js:1989-2007`.
 * When my browser storage is cleared or I move machines, I want my progress back from a file I
   control, so I can keep my history without an account. Traced to `src/js/lib/model.js:453-477`.
 * When I follow one crossover, I want its progress counted for that list alone, so I can see how

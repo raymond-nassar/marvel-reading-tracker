@@ -592,6 +592,32 @@
       </div>
     </dialog>
 
+    <!--
+      Naming and confirming, in the page. The browser's own prompt() and confirm() were
+      unstyled, unannounceable through the app's own live region, and on some browsers
+      suppressible by the user, which meant a destructive action could go through with no
+      question asked at all. Built on <dialog> for the same reason the preview is: the focus
+      trap, the Escape key and the return of focus are the browser's job rather than ours.
+    -->
+    <dialog id="ask" class="ask" aria-labelledby="ask-title" aria-describedby="ask-body">
+      <form method="dialog" id="ask-form">
+        <!-- Carries text for the same reason #preview-h does: a heading counts as empty in the
+             document whether or not its dialog has ever been opened, and that is exactly how
+             two of the three empty headings fixed in BL-027 went unreported. Every question
+             replaces this before the dialog is shown. -->
+        <h2 id="ask-title">Confirm</h2>
+        <p id="ask-body" class="rail-hint"></p>
+        <p id="ask-field" hidden>
+          <label for="ask-input" id="ask-label"></label>
+          <input type="text" id="ask-input" maxlength="200" autocomplete="off" />
+        </p>
+        <div class="ask-foot">
+          <button type="button" class="btn btn-g" id="ask-cancel">Cancel</button>
+          <button type="submit" class="btn" id="ask-ok" value="ok">OK</button>
+        </div>
+      </form>
+    </dialog>
+
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
