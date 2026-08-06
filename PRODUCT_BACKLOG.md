@@ -9,9 +9,11 @@ built as well as what has not. Of the 28 stories originally written here, 21 shi
 in part, 1 was never started, and 1 is ruled out by a product constraint. The new items come from
 that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Eight items have since been delivered and are marked `Shipped` in the table below: BL-029,
-BL-030, BL-031, BL-039, BL-040, BL-043, BL-044 and BL-048. Their detail blocks record what
-changed, what was measured, and which tasks were deliberately left open. Two remain open on
+Nine items have since been delivered and are marked `Shipped` in the table below: BL-029,
+BL-030, BL-031, BL-039, BL-040, BL-043, BL-044, BL-048 and BL-049. Their detail blocks record
+what changed, what was measured, and which tasks were deliberately left open. BL-049 is the one
+whose delivery was a decision rather than a code change: it was measured in full and closed
+without touching the colours, for the reasons recorded in its block. Two remain open on
 purpose: making the CI run required before merge is a repository setting rather than a change to
 the tree, and tagging a release needs a commit to point at. `CHANGELOG.md` carries the
 user-facing view of the same work.
@@ -177,7 +179,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Ready | src/js/main.js:335-342 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Ready | src/styles.css:331-332 |
-| BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | src/styles.css:340 |
+| BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:364 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:635-651 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Ready | src/js/main.js:139-144 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:125-155 |
@@ -324,7 +326,7 @@ every descendant now computes `opacity: 1`, and axe-core 4.13.0 reported 0 contr
 On the badge check, the 2.75:1 figure this task was written against was the opacity multiplying
 the badge, and that cause is gone: a badge now renders identically whether or not its row is
 read, which is what the task was asking for. Measuring the composited border anyway put
-`.badge-expected` at 1.58:1, but that is unconditional design at `src/styles.css:340` rather than
+`.badge-expected` at 1.58:1, but that is unconditional design at `src/styles.css:364` rather than
 anything the read state does, and the badge's meaning is carried by its text label, which passes.
 Raised separately as BL-049 rather than folded into this item.
 
@@ -591,11 +593,11 @@ comment was the only thing telling a reader the model was smaller than it is.
 
 **BL-049: Decide whether the faint badge borders need to meet the 3:1 non-text minimum**
 
-- [ ] Measure the composited border contrast for all four badge variants, not only `.badge-expected`
-- [ ] Decide whether these borders are meaningful non-text indicators under WCAG 2.2 1.4.11 or decoration
+- [x] Measure the composited border contrast for all four badge variants, not only `.badge-expected`
+- [x] Decide whether these borders are meaningful non-text indicators under WCAG 2.2 1.4.11 or decoration
 - [ ] If they are meaningful, raise each border to 3:1 without altering the badge text colours
-- [ ] Confirm the badge text contrast and the five-state distinctions are unchanged either way
-- [ ] Record the decision and its reasoning next to the rule, so this is not re-measured a third time
+- [x] Confirm the badge text contrast and the five-state distinctions are unchanged either way
+- [x] Record the decision and its reasoning next to the rule, so this is not re-measured a third time
 
 Constraint gate: checked 1 to 11, none breached. Constraint 6 is the live consideration: the five
 availability states must remain distinguishable from one another, so any change to the borders has
@@ -607,24 +609,66 @@ clear 3:1 in the read state, and the answer turned out to be that the read state
 governs them. The 2.75:1 figure that task was written against came from the blanket row opacity,
 which is gone; a badge now renders identically whether or not its row is read. Measuring the
 composited border anyway put `.badge-expected` at 1.58:1 against the 3:1 floor, but that is
-unconditional design at `src/styles.css:340`, where the border is 25 percent alpha green.
+unconditional design at `src/styles.css:364`, where the border is 25 percent alpha green.
 
-Whether this is a defect at all is the open question, which is why the first task here is a
-decision and not a fix. WCAG 2.2 1.4.11 applies to graphics required to understand content, and
-each badge's meaning is carried by its text label, which passes. On that reading the border is
-decoration and needs nothing. The counter-argument is that the pill outline is what makes a badge
-read as a badge at all. Either answer is defensible; what is not defensible is leaving it
-unmeasured and unrecorded.
+Shipped as a decision rather than a change: the borders are decoration, the 3:1 floor does not
+govern them, and the colours were deliberately left alone. The third task is therefore closed
+unticked, because it was conditional on the opposite answer.
 
-Note that only `.badge-expected` has been measured. `.badge-scheduled` and
-`.badge-override-unavailable` set their own alpha borders at `src/styles.css:341` and
-`src/styles.css:343`, and `.badge-unknown`/`.badge-pending` inherit `var(--line)` from
-`src/styles.css:339`. Those three cases are unmeasured, so the size estimate assumes measuring
-them is cheap rather than assuming they pass.
+All five states were measured first, because deciding on one variant would have been guessing
+about the other four. Each border was composited over the full stack of ancestor backgrounds down
+to the first opaque one, rather than over the nearest non-transparent ancestor, and each was taken
+in all four contexts a row actually renders in. Against the plain row background none of them
+clears 3:1: `expected` and `override-available` 1.58:1, `scheduled` 1.71:1,
+`override-unavailable` 1.43:1, and the `unknown`/`pending` pair 1.29:1. The worst case across
+every context is that same pair at 1.22:1 under `.row:hover`. Read and unread compute identically,
+confirming BL-030's finding from the other direction.
+
+Hover was the last context added and it was worth the trouble: it moved both worst cases, the
+border from 1.24:1 to 1.22:1 and the text from 6.00:1 to 5.94:1. Neither changes the conclusion,
+but the first two figures recorded here were the wrong ones, which is the argument for measuring
+the contexts rather than reasoning about which one must be darkest.
+
+The decision is that WCAG 2.2 1.4.11 does not reach these. Its first bullet covers user interface
+components, and a badge is a non-interactive `span` with no control state to identify; the states
+that bullet protects are a control's own, such as checked or disabled. Its second bullet covers
+the part of a graphic *required* to understand the content, and no part of these is: every state
+is written out in words inside the pill at `src/js/main.js:586-593`, drawing on the labels at
+`src/js/main.js:615-620`, and the full sentence is repeated in the `title` attribute from
+`describe`. Delete the outline and the reader still sees "MU Unlimited", "soon scheduled",
+"? unknown", "MU✓ yours: available" or "no yours: not in MU". The outline bounds the label rather
+than carrying it, which puts it in the same class as a card border or a table rule.
+
+Two supporting measurements make that safe to rely on. The badge text passes on its own, at 5.94:1
+in the worst context against the 4.5:1 floor, so nothing is depending on the border to be legible.
+And because the five states are named in words rather than only tinted, 1.4.1 Use of Color holds
+without the border too, so Constraint 6 is not resting on the outline either. Both the text
+colours and the state distinctions are untouched, which is what the fourth task asked for.
+
+The reasoning is recorded at `src/styles.css:339-362`, directly above the rules it governs, along
+with the two conditions that would overturn it. One is these labels being cut back to the bare
+glyphs in `SHORT`, which would make the outline the state indicator and put it under the 3:1
+floor. The other is a second palette: every figure here is composited against the dark theme, so
+BL-032's light theme would void all of them and the measurement would have to be redone per
+theme. That comment is the point of the item. The measurement is cheap and will be cheap again;
+what was expensive was the judgement, and leaving it unwritten is what caused this to be measured
+twice.
 
 Automated scanning will not settle this. The axe-core colour-contrast rule evaluates text only and
 never looks at borders, so the 0-violation axe run recorded against BL-029, BL-030 and BL-031 says
-nothing about this item in either direction. It has to be measured deliberately.
+nothing about this item in either direction. It had to be measured deliberately, and the tool that
+does it now walks all five variants instead of only the one that happens to render in the seeded
+list.
+
+One thing found on the way: correcting the line numbers this comment shifted exposed three
+evidence anchors in `docs/UX_STUDY.md` that were already wrong before it. All three cited lines
+383-385 or 383-390 of `src/styles.css`, which as that file stood at `a29aa8b` were the `.result`
+card rules rather than anything to do with motion. They now point at the progress-ring transition
+at `src/styles.css:149` and the preference queries at `src/styles.css:448-455`. Those stale
+numbers are deliberately written without the usual anchor backticks: they are a historical
+citation rather than live evidence, and in the anchor form a checker would resolve them against
+today's file and report them as healthy. That is the same weakness that let them rot in the first
+place, since a range that resolves is not necessarily a range that says what the sentence claims.
 
 ## Existing epics and stories
 

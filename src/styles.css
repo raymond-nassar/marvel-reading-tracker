@@ -336,6 +336,30 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 
 .rt { font-size: .89rem; font-weight: 500; }
 .rm { color: var(--muted); font-size: .76rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .05rem; }
+/* These outlines are faint on purpose, and that is a recorded decision rather than an
+   oversight. Composited over the backdrop they actually render against, none of the five
+   reaches the 3:1 non-text floor: `expected` and `override-available` 1.58:1, `scheduled`
+   1.71:1, `override-unavailable` 1.43:1, `unknown` and `pending` 1.29:1. Measured in all
+   four rendered row contexts, the worst case is the `unknown` pair at 1.22:1 under
+   `.row:hover`. The read state is not a factor either way; a badge computes identically
+   whether or not its row is read.
+
+   WCAG 2.2 1.4.11 does not govern them. A badge is a non-interactive span, not a user
+   interface component, so the first bullet does not reach it: the states that bullet
+   protects are a control's own, like checked or disabled. Under the graphical-objects
+   bullet the protected part is the one REQUIRED to understand the content, and every
+   availability state is written out in words inside the pill and repeated in full in its
+   `title`. Hide the outline entirely and nothing is lost, because it bounds the label
+   rather than carrying it, which makes it a container edge like a card border. The label
+   itself measures 5.94:1 at worst against the 4.5:1 text floor, and because the five
+   states are named rather than only tinted, 1.4.1 holds without the border too.
+
+   Two things would overturn this. A badge conveying a state its own text does not: cut
+   these labels back to the bare glyphs in `SHORT` and the outline becomes the state
+   indicator, at which point it has to reach 3:1. Or a second theme: every figure above is
+   composited against this dark palette, so BL-032's light theme would void all of them and
+   the measurement would have to be redone per theme. Measured twice now, for BL-030 and
+   BL-049. */
 .badge { font-size: .68rem; border: 1px solid var(--line); border-radius: 999px; padding: .02rem .42rem; white-space: nowrap; }
 .badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }
 .badge-scheduled { color: var(--amber); border-color: #eab65440; }
