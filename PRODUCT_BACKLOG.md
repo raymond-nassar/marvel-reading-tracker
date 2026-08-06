@@ -115,21 +115,21 @@ remaining and is not scored.
 | 3.1 | BL-009 | P0 | parseChecklist and the import report at `src/js/main.js:914-967`, `src/js/lib/markdown.js:36-99` | Done |
 | 3.2 | BL-010 | P1 | unresolvedRow offers search, auto-accepts a unique exact match, else lists candidates with series and date at `src/js/main.js:975-1021` | Done |
 | 3.3 | BL-011 | P1 | series and creator adds at `src/js/main.js:884-902`, manual issue add at `src/js/main.js:1056-1076` | Done |
-| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:344-349`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:139` | Done |
+| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:353-358`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:139` | Done |
 | 4.1 | BL-013 | P0 | renderRail marks the active list with `aria-current` and a progress bar at `src/js/main.js:291-316` | Done |
-| 4.2 | BL-014 | P1 | seriesProgress is called on the whole state with no list filter at `src/js/main.js:1389-1407`, and the view states it counts across every list at `src/index.html:194-196` | Partial |
+| 4.2 | BL-014 | P1 | seriesProgress is called on the whole state with no list filter at `src/js/main.js:1397-1415`, and the view states it counts across every list at `src/index.html:194-196` | Partial |
 | 4.3 | BL-015 | P1 | all four named filters plus All at `src/index.html:180-184`, applied without touching stored order at `src/js/main.js:618` | Done |
 | 4.4 | BL-016 | P1 | hero next-unread and Done, next at `src/index.html:125-155` | Done |
 | 4.5 | BL-017 | P2 | `absent: note\|notes, grep across src/**/*.js returning only an unrelated shelf caption and a code comment` | Not started |
 | 5.1 | BL-018 | P0 | pending and by-hand badges at `src/js/main.js:582-585`, pending filter at `src/js/main.js:618` | Done |
 | 5.2 | BL-019 | P1 | five-state availability model at `src/js/lib/availability.js:17-23`, hedged short labels at `src/js/main.js:607-612` | Done |
 | 5.3 | BL-020 | P1 | manual entries carry `source: 'manual'` at `src/js/main.js:1062` and render, reorder, export and back up like any other issue | Done |
-| 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:248-280` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:11` | Done |
+| 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:248-280` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:13` | Done |
 | 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:434-458` | Done |
 | 6.2 | BL-023 | P1 | same backup file restores on another browser, validated and atomic, with undo at `src/js/main.js:1449-1452` | Done |
 | 6.3 | BL-024 | P1 | Export as Markdown ships as a list tool, confirmed in the live DOM at `docs/ux-artifacts/viewport-sweep-reading.json` | Done |
 | 6.4 | BL-025 | P2 | not applicable. Ruled out by Repository Constraint 3, which forbids accounts and cloud services, and already listed as out of scope at the end of this document | Forbidden, Constraint 3 |
-| 7.1 | BL-026 | P0 | focus order and visible focus pass across 45 measured tab stops in `docs/ux-artifacts/live-inspection.json`, but the shortcut handler bails on any focused control at `src/js/main.js:635-651` | Partial |
+| 7.1 | BL-026 | P0 | focus order and visible focus pass across 45 measured tab stops in `docs/ux-artifacts/live-inspection.json`, but the shortcut handler bails on any focused control at `src/js/main.js:642-660` | Partial |
 | 7.2 | BL-027 | P1 | announcements exist at `src/js/main.js:139-144`, but they fire into two live regions at once and the first-run heading is empty per `docs/ux-artifacts/pa11y-landing.json` | Partial |
 | 7.3 | BL-028 | P1 | the mobile rail rule at `src/styles.css:81-84` is overridden by `src/styles.css:88-92`, and the reading view overflows by 93 px at 320 px per `docs/ux-artifacts/viewport-sweep-reading.json` | Partial |
 
@@ -139,13 +139,14 @@ Three quantities used to brief this pass disagreed with what the repository actu
 are recorded rather than inherited.
 
 * `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last
-  line number when reading the file. Evidence: `src/js/main.js:1547-1562`.
+  line number when reading the file. Evidence: `src/js/main.js:1555-1568`.
 * `src/js/ui/` does not exist in this worktree. Evidence: `absent: src/js/ui, Test-Path returning
   False and a recursive directory listing of src/`. Git cannot track an empty directory, so an
   empty `src/js/ui/` in another checkout is a local artifact rather than repository content. Either
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
-  `package.json:10`, and a full run of `npm test`.
+  `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
+  it to 235; 224 is the figure as audited.
 
 A fourth disagreement is internal to the code and is tracked as a backlog item rather than a note,
 because it misleads a reader of the source: see BL-048.
@@ -170,33 +171,33 @@ existed. Each shipped item's detail block below says what changed and how it was
 
 | ID | Title | Type | Epic | Relationship | V | TC | RE | Size | WSJF | P | Basis | Status | Evidence |
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
-| BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:277 |
-| BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:17 |
+| BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:310-319 |
+| BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:20-29 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
-| BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:87-93 |
+| BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:112-122 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
-| BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-14 and glob of repository root |
+| BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Ready | src/js/main.js:335-342 |
-| BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Ready | src/styles.css:331-332 |
+| BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Ready | src/js/main.js:344-350 |
+| BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Ready | src/styles.css:396-397 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:364 |
-| BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:635-651 |
+| BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:642-660 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Ready | src/js/main.js:139-144 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:125-155 |
-| BL-028 | Make the reading view usable on a phone | Story | EP-07 | Leaves alone | 8 | 5 | 5 | 5 | 3.6 | P1 | Measured | Ready | src/styles.css:69-72 |
+| BL-028 | Make the reading view usable on a phone | Story | EP-07 | Leaves alone | 8 | 5 | 5 | 5 | 3.6 | P1 | Measured | Ready | src/styles.css:81-84 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Ready | src/js/api.js:18-26 |
-| BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Ready | src/js/main.js:1389-1407 |
-| BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Ready | src/js/main.js:329 |
-| BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Ready | src/js/main.js:50 |
+| BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Ready | src/js/main.js:1397-1415 |
+| BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Ready | src/js/main.js:337-347 |
+| BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Ready | src/js/main.js:51 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Ready | design/mockups/5-longbox-focus.html:169-172 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Ready | scripts/vendor-index.mjs:40-54 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Ready | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
-| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Ready | src/js/main.js:1547-1562 |
+| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Ready | src/js/main.js:1555-1568 |
 | BL-007 | Give the event orders the variants the catalog can already carry | Story | EP-02 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | P1 | Observed | Ready | src/data/catalog.json |
 | BL-032 | Offer a light theme and follow the system preference | Story | EP-08 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Ready | src/styles.css:7 |
 | BL-036 | Make the current view and list addressable in the URL | Story | EP-10 | Leaves alone | 5 | 2 | 3 | 8 | 1.25 | none | Observed | Ready | absent: pushState or replaceState or location.hash or hashchange or popstate or history., grep across src/ |
 | BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Ready | absent: note or notes, grep across src/**/*.js |
-| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:1547-1562 |
+| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:1555-1568 |
 
 ### Parked
 
@@ -693,6 +694,23 @@ always present and always long resolves cleanly forever while naming nothing rel
 outside the eleven-anchor sweep, which followed anchors into code files only. A sweep that would
 catch this has to check identity rather than resolution, with `.md` targets in scope.
 
+That sweep has since been run, and it did not stop at Markdown targets. Checking every anchor in
+both documents against the code it actually lands on, rather than against whether it resolves, found
+fifteen further stale anchors across thirty-three citations. Most sat in the Evidence column of the
+backlog table above, which the eleven-anchor sweep never reached because it worked through the
+prose. Four named the wrong thing outright: the red-accent defect cited the read-row comment, the
+content security policy enabler cited the dev server's method check rather than its header block,
+the undo-after-delete story cited the rename handler, and the keyboard story cited the availability
+toggle. Two more had come to rest on a blank line. Each was re-derived by reading what the cited
+range held at `b18fc47`, locating that same code today, and confirming the result by reading the
+lines it now occupies.
+
+Two properties of that method are worth keeping. Deriving a new number by shifting the old one is
+unsafe whenever the anchor's own text also changed, because the shift then gets applied twice, so
+the reliable move is to find the code and read its current position. And the re-aim cannot be left
+to a tool, because an anchor that has already been relocated once will disagree with the baseline by
+construction and be reported as stale when it is in fact correct.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -912,6 +930,12 @@ Swept against ISO/IEC 25010:2023. Every entry carries either a gap with an evide
 lines, `path` alone for a claim that a file exists, and `absent: pattern, method` for a claim that
 something is missing.
 
+Every gap below is the state as measured at `b18fc47`, the audit baseline, and is kept as the record
+of why an item was raised rather than rewritten once the item shipped. Where this pass closed one, a
+`Resolved:` note names the item and points at what shipped, which is the convention the findings in
+`docs/UX_STUDY.md` already use. The anchors are live and point at where the code sits now, so an
+anchor beside a closed gap can land on the fix rather than on the defect it was raised against.
+
 ### Product quality characteristics
 
 #### 1. Functional suitability
@@ -921,7 +945,7 @@ gaps remain.
 
 - Gap: series progress is computed across every list at once rather than for the list being read,
   so a reader inside one crossover sees totals inflated by every other list they have imported.
-  Evidence: `src/js/main.js:1389-1407` (renderProgress calls seriesProgress on the whole state, with
+  Evidence: `src/js/main.js:1397-1415` (renderProgress calls seriesProgress on the whole state, with
   no list filter), `src/index.html:194-196` (the view's own subtitle states it counts across every
   list).
 - Gap: the catalog carries a variant grouping model, but only the Hickman creator run populates it.
@@ -929,9 +953,10 @@ gaps remain.
   choosing an essential path or a complete path applies to one list out of eight.
   Evidence: `src/data/catalog.json` (per-list `group`, `groupName`, `variant` fields),
   `src/js/main.js:1184` (groupCatalog renders variant rows only where a group exists).
-- Correctness is well defended: 224 unit tests pass, and `scripts/check-contract.mjs` pins 24
-  upstream API assumptions so schema drift is distinguishable from an outage.
-  Evidence: `package.json:10-11`, `scripts/check-contract.mjs:248-280`.
+- Correctness is well defended: 224 unit tests pass, 235 since this pass shipped, and
+  `scripts/check-contract.mjs` pins 24 upstream API assumptions so schema drift is distinguishable
+  from an outage.
+  Evidence: `package.json:10`, `package.json:13`, `scripts/check-contract.mjs:248-280`.
 
 #### 2. Performance efficiency
 
@@ -941,8 +966,8 @@ block: 4,485 DOM nodes and 1,533 row controls, at a median of 21.9 ms synchronou
 paint, with the first toggle costing 38.9 ms and 144.1 ms. Measured headless on a desktop machine,
 so a phone will be slower.
 
-Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:1547-1562` (renderAll rebuilds
-every region), `src/js/main.js:42-47` (store.onChange is wired straight to renderAll),
+Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:1555-1568` (renderAll rebuilds
+every region), `src/js/main.js:43-48` (store.onChange is wired straight to renderAll),
 `src/js/main.js:526-605` (renderRows builds every row with no virtualisation and no early exit when
 the containing details element is closed).
 
@@ -956,7 +981,7 @@ No gap. Co-existence is a non-issue for a single local process, and interoperabi
 both directions: JSON backup for round-tripping and Markdown export for reading elsewhere. Zero
 runtime dependencies and plain ES modules mean nothing to reconcile with a host application.
 
-Evidence: `package.json:1-18` (no `dependencies` key at all, `engines.node >= 20`),
+Evidence: `package.json:1-26` (no `dependencies` key at all, `engines.node >= 20`),
 `src/js/lib/model.js:434-458` (validated backup shape).
 
 The fixed `127.0.0.1:8787` origin is a deliberate storage-bucket decision rather than a
@@ -973,7 +998,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
   device they are invisible until tapped. Evidence: `src/styles.css:369-376`.
 - User error protection: gap. Deleting a list is guarded only by a native `confirm()` and cannot be
   undone afterwards, while restoring a backup does have an undo. Evidence:
-  `src/js/main.js:335-342` (delete, confirm only), `src/js/main.js:1449-1452` (undoRestore exists).
+  `src/js/main.js:344-350` (delete, confirm only), `src/js/main.js:1449-1452` (undoRestore exists).
 - User engagement and inclusivity: gap. The interface is hard-locked to a dark scheme, and a light
   preference changes nothing. Measured: under emulated `prefers-color-scheme: light` the body
   background stays `rgb(15, 17, 21)` and the two screenshots are byte-identical.
@@ -994,6 +1019,8 @@ Evidence: `src/index.html:66-77` (blocked banner, saving paused, salvage offered
 - Gap: none of this is verified automatically on change. There is no continuous integration, so the
   224 tests only run when someone remembers. Evidence: `absent: .github/workflows, Get-ChildItem of
   repository root and .github; no pipeline file of any kind`.
+  Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every
+  push and pull request.
 
 #### 6. Security
 
@@ -1001,7 +1028,11 @@ Mapped to the OWASP Top 10 in the table-stakes section below. At characteristic 
 gap worth naming here: the static development server sets `x-content-type-options` and
 `referrer-policy` but no `content-security-policy` and no `x-frame-options`.
 
-Evidence: `server.mjs:87-93`.
+Evidence: `server.mjs:112-122`.
+
+Resolved: `BL-030` shipped both. The policy is assembled at `server.mjs:43-54` and sent at
+`server.mjs:117`, with `frame-ancestors 'none'` at `server.mjs:53` and the companion
+`x-frame-options: DENY` at `server.mjs:120`.
 
 #### 7. Maintainability
 
@@ -1009,15 +1040,16 @@ The clearest debt in the repository, and it is concentrated in one file.
 
 - Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and
   every render function. There is no view layer to change independently.
-  Evidence: `src/js/main.js:1547-1562`, `src/js/main.js:267-287` (showView switches views by
+  Evidence: `src/js/main.js:1555-1568`, `src/js/main.js:267-287` (showView switches views by
   mutating a module-level variable).
 - Testability gap: `src/js/cache.js`, `src/js/hydrate.js` and `src/js/main.js` have no test file,
   and they are exactly the modules holding browser-coupled logic.
   Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ and
   cross-check of every test file name against src/js`.
 - Analysability gap: no linter and no formatter configuration exists, so style drift is caught only
-  by review. Evidence: `absent: eslint|prettier config or lint script, read of package.json:8-14 and
+  by review. Evidence: `absent: eslint|prettier config or lint script, read of package.json:8-17 and
   glob of repository root for .eslintrc*, eslint.config.*, .prettierrc*`.
+  Resolved: `BL-040` added `eslint.config.mjs` and wired `npm run lint` at `package.json:11-12`.
 - Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts.
   Evidence: `scripts/vendor-index.mjs:40-54`, `scripts/vendor-orders.mjs:48-62`.
 - Minor analysability gap: the `.row` class carries two unrelated meanings, a reading row and a form
@@ -1029,10 +1061,13 @@ The clearest debt in the repository, and it is concentrated in one file.
 Swept in full rather than dispositioned.
 
 - Installability: good, and suited to an app cloned and run by hand. `npm start` runs the server
-  with no install step, because there is nothing to install. Evidence: `package.json:8-14`.
+  with no install step, because there is nothing to install. Evidence: `package.json:8-17`.
+  Changed since: `BL-040` added three devDependencies and a tracked `package-lock.json`, so linting
+  now needs `npm install` first. Running the app still does not, and runtime dependencies are still
+  zero.
 - Adaptability: good. Plain ES modules with no build step and no bundler mean a Node upgrade
   changes nothing about the client, and `engines.node >= 20` states the floor.
-  Evidence: `package.json:15-17`.
+  Evidence: `package.json:18-20`.
 - Replaceability: good. The metadata API base URL is user-configurable and validated, the cache is
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
@@ -1054,20 +1089,20 @@ That loss is covered as a reliability and data-durability concern rather than a 
 |----------|---------|
 | First-run experience | Gap. The first-run DOM ships an empty `<h2 id="hero-title">`, so the first heading a screen reader meets on an unseeded install is blank. Evidence: `src/index.html:125-155`, `docs/ux-artifacts/pa11y-landing.json`. |
 | Empty states | No gap. The unseeded landing state explains what the app is for and routes to the catalog rather than showing a bare shell. Evidence: `docs/ux-artifacts/01-landing-firstrun-1280.png`, `src/index.html:36-38`. |
-| Error handling and recovery | Gap. Error surfaces are inconsistent: curated import reports failure through native `alert()`, while every other path uses the in-page notice system. Evidence: `src/js/main.js:1346`, `src/js/main.js:1357`, `src/js/main.js:1374` against `src/js/main.js:139-144`. |
+| Error handling and recovery | Gap. Error surfaces are inconsistent: curated import reports failure through native `alert()`, while every other path uses the in-page notice system. Evidence: `src/js/main.js:1354`, `src/js/main.js:1357`, `src/js/main.js:1374` against `src/js/main.js:139-144`. |
 | Offline behavior | No gap, and no proposal. Probed as required rather than treated as a caching problem. With the local server running and no internet, the app starts, reads saved state, imports any bundled curated list and marks issues read, because those paths touch only same-origin files. Only cover images, metadata hydration and search degrade, and hydration failure is already surfaced as a pending state rather than as silence. Evidence: `src/data/house_of_m.json`, `src/js/main.js:582-585` (pending and by-hand badges), `absent: serviceWorker|navigator.onLine|manifest.json, case-insensitive grep across src/`. Repository Constraint 1 forbids caching cover bytes, so no cover-caching improvement is proposed. |
 | Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:434-458`, `src/js/main.js:1449-1452`. |
 | Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:358-384`, `test/model.test.js:396-398`. |
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:1532-1534`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
-| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:87-93`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepts any base URL and only strips trailing slashes, with the https-or-local check living in the settings form rather than in the client. Evidence: `src/js/api.js:18-26` against `src/js/main.js:1454-1464`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
-| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-18` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
-| Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:81-84`. |
+| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepts any base URL and only strips trailing slashes, with the https-or-local check living in the settings form rather than in the client. Evidence: `src/js/api.js:18-26` against `src/js/main.js:1454-1464`. That half stands: the check still lives outside the client, and it is tracked as `BL-045`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
+| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-26` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
+| Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:81-84`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is still open as BL-028. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
-| Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. |
-| CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. |
-| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. |
-| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-18` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. |
+| Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. Partly changed: the suite is 235 after this pass, but the three modules still have no test file, so the gap itself is unchanged. |
+| CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request. |
+| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version to `1.0.0` at `package.json:3`, added `CHANGELOG.md`, and wired a `version` script at `package.json:16` that syncs the version the app reports. |
+| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-26` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:21-25` and a tracked `package-lock.json`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
 | Licensing | No gap. The project is MIT, and every vendored order records its upstream source and licence rather than absorbing it silently. Evidence: `LICENSE`, `src/data/catalog.json` (`source` and `sourceLicense` per list), `src/js/main.js:1237-1257` (attribution rendered in the UI before import). |
 
 ## Appendix B: Priority disagreements
