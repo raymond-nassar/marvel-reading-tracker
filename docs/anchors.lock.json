@@ -125,7 +125,7 @@
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
   "docs/UX_STUDY.md|sweep-result|src/styles.css|1": {
-    "anchor": "src/styles.css:675-677",
+    "anchor": "src/styles.css:676-678",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -145,7 +145,7 @@
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
   "docs/UX_STUDY.md|user-preference-emulation|src/styles.css|1": {
-    "anchor": "src/styles.css:675-677",
+    "anchor": "src/styles.css:676-678",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -235,7 +235,7 @@
     "head": "color-scheme: dark;"
   },
   "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css|1": {
-    "anchor": "src/styles.css:675-682",
+    "anchor": "src/styles.css:676-683",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -895,7 +895,7 @@
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css|9": {
-    "anchor": "src/styles.css:675-682",
+    "anchor": "src/styles.css:676-683",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },

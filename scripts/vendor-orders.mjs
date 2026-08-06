@@ -338,7 +338,8 @@ async function main() {
   );
 
   if (summary.length) console.table(summary);
-  const bad = summary.filter((s) => s.count !== s.expected);  if (bad.length) {
+  const bad = summary.filter((s) => s.count !== s.expected);
+  if (bad.length) {
     console.warn('WARNING: counts differ from the plan\u2019s expected values:', bad);
   }
 }

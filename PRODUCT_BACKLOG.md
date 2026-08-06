@@ -676,7 +676,7 @@ that every tab stop carries a 3 pixel focus outline had come to cite `body`, the
 leftover empty `.row` rule had come to cite the checkbox, and the description of the reading row
 itself had come to cite the cover-tile rules. The three that started this now point at the
 progress-ring transition at `src/styles.css:248` and the preference queries at
-`src/styles.css:675-682`.
+`src/styles.css:676-683`.
 
 Those stale numbers are written above without the usual anchor backticks on purpose. They are a
 historical citation rather than live evidence, and in the anchor form a checker would resolve them
