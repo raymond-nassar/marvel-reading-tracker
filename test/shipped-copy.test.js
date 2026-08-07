@@ -33,6 +33,11 @@ function walk(dir) {
 // HTML comments and `styles.css` 46, so the distinction decides real lines rather than
 // hypothetical ones. Replaced with a newline rather than removed so line numbers survive.
 function stripComments(text, file) {
+  // Every edge case tried errs towards over-reporting, which is the safe direction here: an
+  // unterminated marker matches nothing and so strips nothing, and choosing the pattern by
+  // extension can only leave a comment standing. The one exception is an opener inside one
+  // string literal closing against a marker in a later one, which would blank the copy
+  // between them. No stylesheet here holds such a string.
   const pattern = file.endsWith('.html') ? /<!--[\s\S]*?-->/g : /\/\*[\s\S]*?\*\//g;
   return text.replace(pattern, (m) => m.replace(/[^\n]/g, ' '));
 }

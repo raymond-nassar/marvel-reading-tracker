@@ -209,7 +209,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:272-307 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
-| BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:42-58 |
+| BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2435-2469 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
@@ -1907,7 +1907,7 @@ shape of defect this repository has been caught by twice: BL-058 found a dash sc
 fail, and BL-056 was filed because the anchors gate reports a sentence as sound however wrong the
 numbers inside it are.
 
-**The mechanism is a test, at `test/shipped-copy.test.js:42-58`, not a second ESLint rule.** ESLint
+**The mechanism is a test, at `test/shipped-copy.test.js:47-63`, not a second ESLint rule.** ESLint
 cannot read HTML or CSS without a parser plugin for each, which is two new tools for 1,626 lines in a
 repository that carries three devDependencies in total. A test needs neither: `npm test` already runs
 in CI on Node 20 and 24, so nothing new had to be wired up, and reading a shipped file from a test
@@ -1937,10 +1937,19 @@ The comment-stripped sweep covers it with no special handling, because the value
 in the text that survives. Recorded rather than built, which is what the task asked for.
 
 The imprecision the block worried about is real and was met head on while researching this. A first
-scan for `content:` declarations reported 18 hits across the stylesheets; 13 of them were
+scan for `content:` declarations reported 18 hits across the stylesheets; 14 of them were
 `justify-content`. Only 4 are `content`, and only one of those four carries a glyph. That measurement
 is why the mechanism question was worth the second task rather than being answered by the first
 plausible regex.
+
+One limit is worth recording rather than leaving for someone to rediscover, and it is the only case
+found that fails in the unsafe direction. Every other edge tried errs towards over-reporting: an
+unterminated comment marker matches nothing and so strips nothing, a stray closing marker does
+nothing, and the pattern being chosen by file extension can only leave a comment standing. The
+exception is a CSS comment opener inside one string literal closing against a marker inside a later
+one, which would blank the copy between them. It cannot fire today, since the only glyph-bearing
+`content` in the stylesheets is the one at `src/styles.css:483`. Closing it would need a tokenizer
+that skips string literals, which is scope this item did not earn.
 
 Scope is walked rather than listed. `server.mjs:12` resolves the served root to `src/`, so `src/` is
 what shipped means, and the walk finds whatever is there. The six files are not written down anywhere
@@ -2090,7 +2099,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2677-2678` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2686-2687` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2100,11 +2109,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:158-160`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2695-2697`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2704-2706`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2523-2525` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2532-2534` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
