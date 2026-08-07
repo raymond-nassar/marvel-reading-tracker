@@ -41,6 +41,19 @@ quote in a bug report.
 
 ### Fixed
 
+- **Marking an issue read no longer throws away where you were.** The shelf and the full reading
+  order are rebuilt from scratch on every change, and the control you had just used was destroyed
+  along with everything else, so the keyboard was handed back to the page body with nothing said and
+  nothing highlighted. Working down a long order by keyboard meant tabbing in from the top again
+  after every single tick, and the same happened on reorder, on the availability flag and on remove.
+  Focus now follows the issue rather than the button: the tracker remembers which issue you were
+  acting on and what you were doing to it, and finds that control again after the rebuild. If the
+  issue disappears from view, because the Unread filter no longer matches the issue you just ticked,
+  focus moves to the issue that took its place, landing on its checkbox rather than on the button
+  under your finger, so a held Enter can never repeat into a removal. If nothing is left at all, you
+  land on the filter you chose, which is what put you there and what will undo it. The page does not
+  scroll when it puts you back somewhere you were already looking.
+
 - The D and Enter shortcuts no longer stop working after you click a button in the reading view.
   The handler stood down whenever anything interactive held focus, and the hero's own "Done, next"
   button is interactive, so clicking it left focus there and the very next press of D did nothing at
