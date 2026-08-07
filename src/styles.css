@@ -493,8 +493,23 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 
 .stack { display: grid; gap: .5rem; }
 .stack label { font-size: .8rem; color: var(--muted); }
-.row { }
-.stack .row, .card .row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; padding: 0; border: 0; }
+/* A form row, which is a different thing from the `.row` a reading list is built from
+   above. Both were called `.row`, and the only reason the page rendered correctly was
+   that this rule was scoped to `.stack` and `.card` and so out-ran the reading-row grid
+   on specificity. That held by luck of placement: the full order at `#rows` sits outside
+   both containers today, and putting a reading list inside a card would have silently
+   restyled every row in it. The name now says which of the two it is, so the scoping
+   goes with it.
+
+   The `padding: 0` and `border: 0` this rule used to carry are gone, and they are not
+   missed for two different reasons. Six of these sit inside a `.stack`, where nothing
+   sets either. The two that sit directly inside a `.card` keep zero padding through the
+   `!important` on `.card-static > *` above, not through anything here: neutralise that
+   one declaration in the live page and both go from 0 to 17.6px. So a `.field-row`
+   placed directly inside a `.card` that is not also `.card-static` would pick up
+   `0 1.1rem`, where the old scoped selector out-ranked that at 0,2,0. None exists, and
+   the guard is deliberately not written speculatively. */
+.field-row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
 input[type="search"], input[type="text"], input[type="url"], textarea {
   background: var(--card-2); border: 1px solid var(--line-2); color: var(--text);
   border-radius: 9px; padding: .5rem .7rem; min-width: 0; flex: 1 1 16rem;

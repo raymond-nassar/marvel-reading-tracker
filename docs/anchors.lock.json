@@ -84,8 +84,8 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1411-1414|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1411-1414",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1458-1461|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1458-1461",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -136,7 +136,7 @@
   },
   "docs/UX_STUDY.md|sweep-result|src/index.html:359-365|0": {
     "anchor": "src/index.html:359-365",
-    "fp": "414c8c4d2ec683f4",
+    "fp": "90461cc45716fa24",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
   "docs/UX_STUDY.md|sweep-result|src/js/main.js:2038-2046|0": {
@@ -154,8 +154,8 @@
     "fp": "8e9f0b814f7bdc04",
     "head": ":focus-visible {"
   },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css:702-704|0": {
-    "anchor": "src/styles.css:702-704",
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:717-719|0": {
+    "anchor": "src/styles.css:717-719",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -169,8 +169,8 @@
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:702-704|0": {
-    "anchor": "src/styles.css:702-704",
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:717-719|0": {
+    "anchor": "src/styles.css:717-719",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -269,8 +269,8 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:702-709|0": {
-    "anchor": "src/styles.css:702-709",
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:717-724|0": {
+    "anchor": "src/styles.css:717-724",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -559,10 +559,10 @@
     "fp": "c17ce04e13581723",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:496-497|0": {
-    "anchor": "src/styles.css:496-497",
-    "fp": "5a5d3c1e791d4bbe",
-    "head": ".row { }"
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:496-512|0": {
+    "anchor": "src/styles.css:496-512",
+    "fp": "98263a714f7751d4",
+    "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
   "PRODUCT_BACKLOG.md|8-flexibility|package.json:20-22|0": {
     "anchor": "package.json:20-22",
@@ -619,6 +619,11 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
+  "PRODUCT_BACKLOG.md|item-details|src/dev-faults.css:47|0": {
+    "anchor": "src/dev-faults.css:47",
+    "fp": "c1dfca58d0503b1f",
+    "head": ".row { display: flex; flex-wrap: wrap; gap: .1rem; align-items: center; }"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/dev-faults.js:184|0": {
     "anchor": "src/dev-faults.js:184",
     "fp": "b6616be2c5c3e26f",
@@ -628,6 +633,21 @@
     "anchor": "src/dev-faults.js:198",
     "fp": "2e52dc8f9f4d044b",
     "head": "alert('Take a backup first (step 0). That is what makes these faults safe to run.');"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:339|0": {
+    "anchor": "src/index.html:339",
+    "fp": "b1fb64a0173d4936",
+    "head": "<ol class=\"rows\" id=\"rows\"></ol>"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:464|0": {
+    "anchor": "src/index.html:464",
+    "fp": "44de7b4587c61ce4",
+    "head": "<div class=\"field-row\">"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:471|0": {
+    "anchor": "src/index.html:471",
+    "fp": "44de7b4587c61ce4",
+    "head": "<div class=\"field-row\">"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/ask.js:32-44|0": {
     "anchor": "src/js/ask.js:32-44",
@@ -774,6 +794,11 @@
     "fp": "f549fe8731ac5e8b",
     "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 "
   },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:403-406|0": {
+    "anchor": "src/styles.css:403-406",
+    "fp": "c17ce04e13581723",
+    "head": ".row {"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:415-416|0": {
     "anchor": "src/styles.css:415-416",
     "fp": "4867cdf75f778888",
@@ -799,8 +824,18 @@
     "fp": "7f22dd94b3ebb02f",
     "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:702-709|0": {
-    "anchor": "src/styles.css:702-709",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:489|0": {
+    "anchor": "src/styles.css:489",
+    "fp": "a5884bb783e5d63e",
+    "head": ".card-static > * { padding: 0 !important; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:496-512|0": {
+    "anchor": "src/styles.css:496-512",
+    "fp": "98263a714f7751d4",
+    "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:717-724|0": {
+    "anchor": "src/styles.css:717-724",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -836,7 +871,7 @@
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/index.html:359-365|0": {
     "anchor": "src/index.html:359-365",
-    "fp": "414c8c4d2ec683f4",
+    "fp": "90461cc45716fa24",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/js/main.js:2038-2053|0": {
@@ -1229,10 +1264,10 @@
     "fp": "1350e867b612018d",
     "head": "async function getJson(url, attempt = 0) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:496-497|0": {
-    "anchor": "src/styles.css:496-497",
-    "fp": "5a5d3c1e791d4bbe",
-    "head": ".row { }"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:496-512|0": {
+    "anchor": "src/styles.css:496-512",
+    "fp": "98263a714f7751d4",
+    "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-048|src/js/lib/availability.js:10|0": {
     "anchor": "src/js/lib/availability.js:10",
