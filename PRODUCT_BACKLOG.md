@@ -1134,7 +1134,7 @@ not badly written; it was written for somebody who already had the project worki
 
 Four failures were graded blockers, meaning a non-engineer could not reach a running app. The
 README named no address anywhere, so a reader who ran the one command it gave had nowhere to go.
-It named no prerequisite, so a reader without Node saw a "not recognised" error the document did
+It named no prerequisite, so a reader without Node saw a "not recognized" error the document did
 not acknowledge. It had no troubleshooting section. And the run instructions sat seventh of ten
 headings, behind vendoring, event-order generation and search-index material that a reader must
 not need.

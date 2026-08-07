@@ -62,7 +62,7 @@ node --version
 ```
 
 You should see a version number of `v20` or higher, like `v20.11.0` or `v24.14.0`. If you
-instead see "not recognised" or "command not found", Node.js is not installed yet.
+instead see "not recognized" or "command not found", Node.js is not installed yet.
 
 ### Step 1: Get the code onto your computer
 
@@ -196,7 +196,7 @@ Then open `http://127.0.0.1:8788/` instead. Please read
 [Always open the same address](#always-open-the-same-address) before you do this, because
 your existing reading progress will not appear at the new address.
 
-**"npm is not recognised" or "command not found"**
+**"npm is not recognized" or "command not found"**
 
 Node.js is not installed, or the terminal was open before you installed it. Install Node.js
 from [nodejs.org](https://nodejs.org), then close the terminal window and open a new one.
