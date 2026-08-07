@@ -16,6 +16,13 @@ quote in a bug report.
 
 ### Changed
 
+- The `.row` class no longer means two different things. A reading row and a form row shared it, and
+  the page only rendered correctly because the form rule was scoped to `.stack` and `.card` and so
+  out-ran the reading-row grid on specificity. That held by luck of placement rather than by design:
+  the full order sits inside neither container today, and putting a reading list inside a card would
+  have silently restyled every row in it. Form rows are now `.field-row`, the reading row keeps
+  `.row`, and the leftover empty rule between them is gone. Nothing changes on screen.
+
 - The README now assumes no prior experience. It was reviewed against a twenty-point readability
   rubric by following it literally in a fresh clone, and thirteen of the twenty criteria failed.
   Four of those failures stopped a non-engineer reaching a running app at all: the document named

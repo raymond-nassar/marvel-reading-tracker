@@ -213,7 +213,7 @@
 
               <form id="form-home-q" class="stack home-q" role="search" hidden>
                 <label for="home-q">Filter reading orders by title or character</label>
-                <div class="row">
+                <div class="field-row">
                   <input type="search" id="home-q" autocomplete="off" placeholder="e.g. Civil War, Spider-Man" />
                   <button type="button" class="btn btn-g" id="home-q-clear" hidden>Clear</button>
                 </div>
@@ -358,7 +358,7 @@
             <div id="catalog-report" class="report"></div>
             <form id="form-catalog-search" class="stack" role="search">
               <label for="catalog-q">Search the catalog by title or character</label>
-              <div class="row">
+              <div class="field-row">
                 <input type="search" id="catalog-q" placeholder="e.g. Secret Wars, Black Panther" autocomplete="off" />
                 <button type="button" class="btn" id="catalog-clear" hidden>Clear</button>
               </div>
@@ -379,7 +379,7 @@
               <summary><h2>Search for issues</h2></summary>
               <form id="form-search" class="stack">
                 <label for="search-q">Search issue titles</label>
-                <div class="row">
+                <div class="field-row">
                   <input type="search" id="search-q" placeholder="e.g. Secret Wars" autocomplete="off" />
                   <button type="submit" class="btn">Search</button>
                 </div>
@@ -397,7 +397,7 @@
               <summary><h2>Add a whole series</h2></summary>
               <form id="form-series" class="stack">
                 <label for="series-q">Find a series</label>
-                <div class="row">
+                <div class="field-row">
                   <input type="search" id="series-q" placeholder="e.g. New Avengers (2013)" autocomplete="off" />
                   <button type="submit" class="btn">Find</button>
                 </div>
@@ -409,7 +409,7 @@
               <summary><h2>Browse a creator</h2></summary>
               <form id="form-creator" class="stack">
                 <label for="creator-q">Find a creator</label>
-                <div class="row">
+                <div class="field-row">
                   <input type="search" id="creator-q" placeholder="e.g. Hickman" autocomplete="off" />
                   <button type="submit" class="btn">Find</button>
                 </div>
@@ -427,7 +427,7 @@
               <form id="form-import" class="stack">
                 <label for="import-text">Reading order</label>
                 <textarea id="import-text" rows="8" spellcheck="false"></textarea>
-                <div class="row">
+                <div class="field-row">
                   <button type="submit" class="btn">Import</button>
                   <label class="checkbox"><input type="checkbox" id="import-new-list" checked /> Into a new list</label>
                 </div>
@@ -461,14 +461,14 @@
             <div class="card card-static">
               <h2>Backup and restore</h2>
               <p class="rail-hint">Export regularly. Clearing site data for this address erases your progress.</p>
-              <div class="row">
+              <div class="field-row">
                 <button type="button" id="btn-export-json" class="btn">Download JSON backup</button>
                 <button type="button" id="btn-export-md-2" class="btn btn-g">Export current list as Markdown</button>
               </div>
 
               <h3>Restore from a backup</h3>
               <p class="rail-hint">A snapshot of your current data is kept, so a restore can be undone once.</p>
-              <div class="row">
+              <div class="field-row">
                 <input type="file" id="restore-file" accept="application/json,.json" aria-label="Backup file to restore" />
                 <button type="button" id="btn-undo-restore" class="quiet" hidden>Undo last restore</button>
               </div>

@@ -9,8 +9,8 @@ built as well as what has not. Of the 28 stories originally written here, 22 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Fourteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
-BL-029, BL-030, BL-031, BL-034, BL-035, BL-039, BL-040, BL-043, BL-044, BL-048, BL-049,
+Fifteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
+BL-029, BL-030, BL-031, BL-034, BL-035, BL-039, BL-040, BL-043, BL-044, BL-047, BL-048, BL-049,
 BL-050 and BL-051. Their detail blocks record
 what changed, what was measured, and which tasks were deliberately left open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
@@ -187,7 +187,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1101-1128 |
-| BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Ready | src/styles.css:496-497 |
+| BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:1401-1419 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:247-268 |
@@ -805,11 +805,58 @@ fetching only from the metadata API.
 
 **BL-047: Split the two meanings of the row class**
 
-- [ ] Rename one of the two uses so a reading row and a form row stop sharing a class
-- [ ] Delete the leftover empty rule
-- [ ] Confirm no selector elsewhere depended on the collision
+- [x] Rename one of the two uses so a reading row and a form row stop sharing a class
+- [x] Delete the leftover empty rule
+- [x] Confirm no selector elsewhere depended on the collision
 
 Constraint gate: checked 1 to 11, none breached. No constraint is engaged.
+
+Shipped. The form row is now `.field-row` at `src/styles.css:496-512` and the reading row keeps
+`.row`, so the thirteen rules that describe a reading row, from `src/styles.css:403-406` down to the
+hover rule on its action buttons, can no longer reach a form. The form row was the side that moved
+because it had one rule against those thirteen, and the empty `.row { }` that sat between them is
+gone.
+
+Nothing depended on the collision, which was checked rather than assumed. All eight form rows in
+`src/index.html` sit inside a `.stack` or a `.card`, so the old `.stack .row, .card .row` selector
+reached every one of them; the reading list at `src/index.html:339` sits inside neither, so it never
+matched. No JavaScript queries either class, and no test names them.
+
+The one thing that did lean on the collision was the pair of `padding: 0` and `border: 0` resets in
+the old rule, and the first pass through this recorded that they existed only to undo the reading
+row's own padding and border. Review found that incomplete and it was wrong for two of the eight.
+Six sit inside a `.stack`, where nothing sets either, so for those the original account holds. The
+two at `src/index.html:464` and `src/index.html:471` are direct children of a `.card card-static`,
+where `.card > *:not(summary)` at 0,1,1 and `.card > *:last-child` at 0,2,0 can both reach them and
+both now out-rank `.field-row` at 0,1,0. What holds their padding at zero is the `!important` on
+`.card-static > *` at `src/styles.css:489`, which the old rule's 0,2,0 had been masking. Measured
+rather than reasoned about: neutralise that one declaration in the live page and both rows go from
+0 to 17.6px of side padding.
+
+That leaves one real change in behaviour, recorded rather than guarded. A form row placed directly
+inside a `.card` that is not also `.card-static` would now take `0 1.1rem`, where the old selector
+out-ranked that. No such element exists, and writing a speculative rule for one would be widening
+the item. BL-038, which adds two Library sub-views, is the plausible way one appears.
+
+The collision was latent rather than live, and that is the reason worth recording: correctness rested
+on where the reading list happens to sit in the markup, not on anything the stylesheet stated. Moving
+a reading list inside a card, which BL-038's two Library sub-views could plausibly do, would have
+restyled every row in it with no failing check anywhere.
+
+`src/dev-faults.css:47` has a third `.row` of its own. It is left alone: `src/dev-faults.html` loads
+only that stylesheet, so the two never meet, and renaming it would have widened this change into a
+file the item does not name.
+
+Verified in Edge at 1280x900 against a real server, with House of M imported for its 20 reading
+rows. Eleven assertions pass: all eight form rows resolve to `display: flex` with zero padding on
+all four sides and no border, the two that depend on the `.card-static` `!important` are identified
+by name, no `div` carries the old class, and a reading row still computes to `display: grid` with
+four tracks and its own 6.72 pixel padding. The check was run against the tree with the fix stashed
+and failed four of its assertions, two of which had passed vacuously on an empty list until the
+count was asserted first. A first version of it asserted `padding-top` alone, which reads 0 whether
+or not `.card > *:not(summary)` applies, because that rule sets `0 1.1rem`; measuring all four
+sides is what makes it able to see the case above. `npm run lint` reports 0, `npm test` 252 pass
+and 0 fail, and `npm run anchors` 0 drifted, 0 new and 0 removed.
 
 **BL-048: Correct the availability comment that names four states**
 
@@ -909,7 +956,7 @@ that every tab stop carries a 3 pixel focus outline had come to cite `body`, the
 leftover empty `.row` rule had come to cite the checkbox, and the description of the reading row
 itself had come to cite the cover-tile rules. The three that started this now point at the
 progress-ring transition at `src/styles.css:248` and the preference queries at
-`src/styles.css:702-709`.
+`src/styles.css:717-724`.
 
 Those stale numbers are written above without the usual anchor backticks on purpose. They are a
 historical citation rather than live evidence, and in the anchor form a checker would resolve them
@@ -1552,7 +1599,10 @@ The clearest debt in the repository, and it is concentrated in one file.
   Evidence: `scripts/vendor-index.mjs:40-54`, `scripts/vendor-orders.mjs:48-62`.
 - Minor analysability gap: the `.row` class carries two unrelated meanings, a reading row and a form
   row, and a leftover empty rule sits between them. Evidence: `src/styles.css:403-406`,
-  `src/styles.css:496-497`.
+  `src/styles.css:496-512`.
+  Resolved: `BL-047` renamed the form row to `.field-row` and deleted the empty rule, so the two
+  meanings no longer share a class. The evidence above now points at the replacement, which records
+  what the collision was.
 
 #### 8. Flexibility
 
