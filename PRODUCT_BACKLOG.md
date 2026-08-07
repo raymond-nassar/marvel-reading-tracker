@@ -9,11 +9,11 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Twenty-four items have since been delivered and are marked `Shipped` in the table below: BL-014,
+Twenty-five items have since been delivered and are marked `Shipped` in the table below: BL-014,
 BL-026, BL-027, BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-039, BL-040, BL-043, BL-044,
-BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052, BL-053, BL-054 and BL-055. Their
-detail blocks record what changed, what was measured, and which tasks were deliberately left open,
-with one exception: BL-050's block was never written, which is filed as BL-057. BL-049 is the one
+BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052, BL-053, BL-054, BL-055 and BL-057.
+Their detail blocks record what changed, what was measured, and which tasks were deliberately left
+open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
 without touching the colours, for the reasons recorded in its block. Six remain open on
 purpose: making the CI run required before merge is a repository setting rather than a change to
@@ -183,8 +183,7 @@ against the existing backlog.
 `Status` is `Ready` for an item still to be picked up and `Shipped` for one delivered since this
 backlog was written. For a `Shipped` row the `Evidence` column still records the state that
 prompted the item, not the state of the code now, because that is what justifies the item having
-existed. Each shipped item's detail block below says what changed and how it was checked, except
-BL-050's, which was never written; see BL-057.
+existed. Each shipped item's detail block below says what changed and how it was checked.
 
 | ID | Title | Type | Epic | Relationship | V | TC | RE | Size | WSJF | P | Basis | Status | Evidence |
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
@@ -192,15 +191,14 @@ BL-050's, which was never written; see BL-057.
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:20-29 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
-| BL-060 | Commit the prompt that is the only source of the eleven Repository Constraints | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 3 | 6.0 | none | Measured | Ready | absent: .github/prompts/product-backlog-ux-study.prompt.md from git ls-files, enumeration of tracked markdown against the working tree |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:112-122 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:150-152 |
-| BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | CHANGELOG.md:94-95 |
-| BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2418-2420 |
+| BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | CHANGELOG.md:125-126 |
+| BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
+| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2503-2509 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1232-1259 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
@@ -232,6 +230,7 @@ BL-050's, which was never written; see BL-057.
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-025 | Optional synchronization between devices | Story | EP-06 | Leaves alone | not scored | not scored | not scored | not scored | not scored | P2 | Observed | Dropped | PRODUCT_BACKLOG.md, out-of-scope list |
 | BL-028 | Make the reading view usable on a phone | Story | EP-07 | Leaves alone | 8 | 5 | 5 | 5 | 3.6 | P1 | Measured | Dropped | src/styles.css:87-90 |
+| BL-060 | Commit the prompt that is the only source of the eleven Repository Constraints | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 3 | 6.0 | none | Measured | Dropped | absent: .github/prompts/product-backlog-ux-study.prompt.md from git ls-files, enumeration of tracked markdown against the working tree |
 
 **BL-025: Optional synchronization between devices**
 
@@ -264,6 +263,47 @@ than open. Two of the four are worth re-reading if the posture ever changes, bec
 purely about width: UX-A-005 hides six controls per row behind `:hover`, which also strands a
 desktop touchscreen, and UX-D-001 leaves a dead media query in the stylesheet that will mislead
 the next person to read it.
+
+**BL-060: Commit the prompt that is the only source of the eleven Repository Constraints**
+
+Parked reason: the prompt was written for a single session's task and is not a document the
+repository needs to keep.
+
+Filed out of the recovery of Constraints 8 and 9. The eleven Repository Constraints that every gate
+line in this document is checked against were never committed. They survive in a prompt file sitting
+untracked in the working tree, and the two numbers that had been given up for lost were recovered
+from it rather than from anything in git. The list is now written into the constraint table in
+`.github/copilot-instructions.md`, so the constraints themselves are durable. Their source is still
+one `git clean` from gone, and the decision here is that this is acceptable.
+
+The judgement that parks it is the owner's, on 2026-08-07: the prompt drove one session's backlog
+and UX study pass, and a spent instruction to an agent is not an artifact the repository owes
+anybody. What had to be preserved was the eleven constraints themselves, and that already happened
+when they were recovered verbatim into the constraint table. The prompt's remaining value is
+provenance, which the table now records in prose instead.
+
+Its three tasks are withdrawn, not deferred, and no constraint was breached: like BL-028, this is a
+product decision rather than a gate result. Its numbers are left in the row above as the record of
+what was given up.
+
+The cost of doing it is worth keeping, because it is the reason this was never a one-line addition.
+The prompt carries three citation-shaped strings inside worked examples of the schema, and the gate
+collects the unbackticked form, so committing it as it stands enrolls three anchors that were never
+claims. One of them is already false: the example places `renderCatalog` at lines 1116 to 1160, and
+that function is at `src/js/main.js:2053` today, with the rename-list handler occupying the lines the
+example names. Blessing that would lock in a fingerprint asserting something the code does not say,
+which is the exact failure the anchors gate exists to end. The declared `absent:` exemption does not
+reach these, since they are neither absent-markers nor marker-led table cells. So the gate would have
+needed the notion of a historical document before the file could land, and that notion now has no
+caller. It is not built.
+
+**Parking it repaired two things its filing had broken**, which is recorded because neither was
+noticed when the item was created. Appendix B states five ranks "of 36", and those five are correct
+only with BL-060 excluded from the table; filing it at rank 5 had silently made all five wrong, and
+removing it makes them right again without any of them being edited. Appendix B also says the highest
+Cost of Delay among the items that remain is 16, which was false while BL-060 sat in the table
+carrying 18. Both were checked by deriving the ranks and the Cost of Delay from the table rather than
+by reading them, and both are true again as of this change.
 
 ## Item details
 
@@ -1324,7 +1364,40 @@ code and reads as precise, which is why every resolution check passed it, and it
 whole handler. Extent is the property automated checking is worst at, because a wrong extent is
 indistinguishable from a deliberately narrow one.
 
-`BL-050` closes the loop that all of this opened. Five sweeps found one defect class five times,
+**BL-050: Fail the build when an evidence anchor stops naming the code it claims**
+
+- [x] Fingerprint the cited lines rather than their numbers, so a correct re-aim passes and drift fails
+- [x] Take the population from `git ls-files` rather than from a list inside the script, and assert coverage per document
+- [x] Declare the historical exemption in the text rather than resolving it by punctuation
+- [x] Fail on a lost anchor, and on a lock the script cannot read, rather than describing either as drift
+- [x] Prove each of those by control, including against the commit where these citations were born
+
+Constraint gate: checked 1 to 11, none breached. Constraint 4 is the live one and permits this: the
+gate is a dev-only script run by `npm run anchors`, and it adds no runtime dependency.
+
+This checklist is reconstructed from the delivered commits rather than ticked as the work went,
+because this item never had one. It is the only row in the ranked table that shipped without a
+heading of its own, and the account below it was written as a continuation of BL-049's block instead,
+which is why a reader looking for `BL-050` found nothing. What this change adds is the heading, the
+checklist, the constraint line and this paragraph. Everything after it is the original record, left
+where it was written and unedited except for the sentence that used to open it, which pointed at
+`all of this` and now names what it points at.
+
+The thread this item closes starts under BL-049, at the paragraph beginning "One thing found on the
+way, and it grew". That is where the stale anchors were first counted, and it is worth reading first:
+the case for a gate is made there, and the gate itself is described here.
+
+Nothing is left open. The two gaps this work exposed were routed onward rather than parked as tasks,
+which is why the ledger above still counts six tasks left open on purpose and not seven. Counts
+stated in prose are the same problem with no gate behind them, filed as BL-056. Citations inside a
+preserved historical document are enrolled when they should be exempt, filed as BL-060 and parked
+with it on 2026-08-07, because the one document that would have needed the exemption is not being
+committed and the gap now has no caller. The limits described at the end of
+this record are limits rather than tasks: they say what fingerprinting cannot do, and no amount of
+work on this item would close them.
+
+It closes the loop that the sweeps recorded under BL-049 opened. Five sweeps found one defect class
+five times,
 because each compared line numbers rather than reading lines, and because each matched a different
 subset of the places an anchor can be written. `scripts/check-anchors.mjs` fingerprints the cited
 lines themselves rather than their numbers, so a correct re-aim preserves the fingerprint while
@@ -1771,7 +1844,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2275-2277` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2359-2361` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -1780,11 +1853,11 @@ the same list: the
 audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
 have since taken it to 294; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:157-159`. Appendix A
 does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
-editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2294-2296`. Overwriting would have destroyed
+editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2378-2380`. Overwriting would have destroyed
 the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2121-2123` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2205-2207` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -1830,6 +1903,7 @@ count above is the evidence that the gap is live rather than theoretical.
 
 - [ ] Derive the ranked-row count, every rank, the status counts and the delivered-id list from the table itself
 - [ ] Compare each against the figures stated in prose, and fail with the derived value when they disagree
+- [ ] Check that every row has a detail block and every detail block has a row, which is the same enumeration over the same table
 - [ ] Run it in CI beside the anchors gate, and record what it caught on its first run
 
 Constraint gate: checked 1 to 11, none breached.
@@ -1855,28 +1929,66 @@ tractable item into the intractable one. If they are wanted later they are a sep
 
 **BL-057: Write the detail block BL-050 never got, which two sentences promise a reader**
 
-- [ ] Record what BL-050 changed, what was measured and which tasks it left open, in the house shape
-- [ ] Remove the two exception clauses once the block exists, rather than leaving them as scar tissue
+- [x] Record what BL-050 changed, what was measured and which tasks it left open, in the house shape
+- [x] Remove the two exception clauses once the block exists, rather than leaving them as scar tissue
 
 Constraint gate: checked 1 to 11, none breached.
 
-Filed out of the second BL-055 review. `BL-050` is the only row in the table, of any status, with no
+Filed out of the second BL-055 review. `BL-050` was the only row in the table, of any status, with no
 detail block, and it was never written rather than deleted: a search of the history for the heading
-returns no commit that ever added one. Two sentences promised otherwise, the delivered-item ledger at
-`PRODUCT_BACKLOG.md:12-16` and the note above the table at `PRODUCT_BACKLOG.md:186-187`, both false
-for one of the twenty-four ids they govern until this change gave each the exception clause it
-carries.
+returns no commit that ever added one. Two sentences promised otherwise, the delivered-item ledger
+above and the note above the table, both false
+for one of the twenty-four ids they governed until BL-055 gave each the exception clause it
+carried. Both clauses are gone now, which is the second task.
 
-Writing the block is not a correction and does not belong in the change that found this. It is new
+Writing the block is not a correction and did not belong in the change that found this. It is new
 research into what a different piece of work changed, what it measured and what it left open, which
 is the shape the routing rule exists to route. What did belong in that change is making the two
-sentences true in the meantime, so each now names the exception. That is the same treatment the
+sentences true in the meantime, so each named the exception. That is the same treatment the
 audited figures get one section up: state the drift beside the claim rather than let the claim stand
 wrong, and remove the clause when the underlying gap closes rather than leaving it permanently.
 
-This sits inside BL-056's declared scope, because the delivered-id ledger is one of the figures that
-item would check, so a gate that existed would have caught it. It is filed separately anyway, because
-BL-056 is the checker and this is the content the checker would have demanded.
+**The block was not missing so much as misfiled, which the item did not anticipate.** The research
+this item asked for found the record already written: `scripts/check-anchors.mjs` is described across
+several hundred words that sit immediately above BL-051, in the right place in the document, with the
+controls, the coverage assertion and the stated limits all recorded. What was missing was the
+heading. The account had been written as a continuation of BL-049's block, whose own digression about
+stale anchors is what produced the gate, and each of the five commits that extended the gate appended
+to that same run of prose. The commit that added the lost-anchor guard says in its message that it
+recorded the result "in the BL-050 section", so the author believed a section existed. Nothing
+disagreed, because nothing checks that a bold heading exists for every row: the search that found
+this was written for BL-055's review and enumerated headings against rows, which no gate does.
+
+That changed what this item had to do, and it is worth saying plainly rather than presenting the
+result as the plan. Writing a fresh block from the commits would have duplicated a record that was
+already accurate, and left two accounts of one gate to drift apart. So the delivered change adds the
+heading, a checklist reconstructed from the five commits, the constraint line and a paragraph saying
+the checklist is reconstructed. One sentence of the original record was edited: it opened
+`BL-050 closes the loop that all of this opened`, where "all of this" reached back across what is now
+a heading boundary, so it names the thread instead.
+
+**The reconstructed checklist is all ticked, and that is a claim worth distrusting.** It was derived
+by reading the five commit messages and the shipped script rather than by inferring intent from the
+result, which is the failure mode a reconstruction invites. Each of the five tasks names a control
+those messages record: fingerprinting, the `git ls-files` population with per-document coverage, the
+declared `absent:` exemption, the fatal on a lost anchor and on an unreadable lock, and the historical
+controls against the birth commit. The two gaps the work left are filed as BL-056 and BL-060 rather
+than carried as open tasks here, so the ledger's count of six tasks left open on purpose is unchanged
+by this item. BL-060 has since been parked, which closes that route without reopening the gap here.
+The limits the record ends on are limits, not tasks: fingerprinting compares an anchor against its own
+past and not against the claim beside it, and no further work on this item would change that.
+
+**Verified by re-running the enumeration that filed it.** Every bold `BL-` heading in this file was
+listed against every row of the three tables: 39 headings against 39 scored and parked rows, with no
+row lacking a heading and no heading lacking a row. Before this change it was 38 against 39. The
+counts in the opening ledger were re-derived from the table rather than incremented, which moved the
+delivered figure from twenty-four to twenty-five and added `BL-057` to the list of ids.
+
+This sat inside BL-056's declared scope, because the delivered-id ledger is one of the figures that
+item would check, so a gate that existed would have caught it. It was filed separately anyway, because
+BL-056 is the checker and this is the content the checker would have demanded. BL-056 now has a second
+job this item found for it: nothing checks that a row has a heading, and that is the same kind of
+enumeration, over the same table, in the same file.
 
 **BL-059: Stop the changelog entry that explains stale figures from carrying two of its own**
 
@@ -1887,7 +1999,7 @@ BL-056 is the checker and this is the content the checker would have demanded.
 Constraint gate: checked 1 to 11, none breached.
 
 Filed out of BL-053. BL-055's changelog entry explains that two audited figures went stale by
-quoting what they are now, at `CHANGELOG.md:94-95`, which puts two live numbers inside a record
+quoting what they are now, at `CHANGELOG.md:125-126`, which puts two live numbers inside a record
 that is meant to be written once and left alone. They have needed editing on each of the two items
 shipped since, BL-054 and BL-053, both times only because a file grew and a test was added. A
 release record that has to be revised whenever unrelated work lands is not recording a release.
@@ -1901,34 +2013,6 @@ to carry it. Deciding that is the item.
 
 Not fixed in BL-053, which had to touch those two numbers and would have been widening its own
 scope to rewrite the entry that holds them.
-
-**BL-060: Commit the prompt that is the only source of the eleven Repository Constraints**
-
-- [ ] Give `scripts/check-anchors.mjs` a way to declare a document historical, so citations inside a preserved artifact are exempt rather than blessed
-- [ ] Commit the prompt, and confirm its three example citations are exempt and not enrolled
-- [ ] Point the constraint table in `.github/copilot-instructions.md` at the committed file instead of at an untracked path
-
-Constraint gate: checked 1 to 11, none breached. Constraint 4 is the live consideration and permits
-this, because the change touches a dev-only script and documentation and adds no runtime dependency.
-Constraint 11 applies to the prose written around it, though not to the prompt itself, which is a
-preserved artifact rather than new copy.
-
-Filed out of the recovery of Constraints 8 and 9. The eleven Repository Constraints that every gate
-line in this document is checked against were never committed. They survive in a prompt file sitting
-untracked in the working tree, and the two numbers that had been given up for lost were recovered
-from it rather than from anything in git. The list is now written into the constraint table in
-`.github/copilot-instructions.md`, so the constraints themselves are durable. Their source is still
-one `git clean` from gone.
-
-Committing it is not a one-line addition, which is why it is filed rather than folded into the
-recovery. The prompt carries three citation-shaped strings inside worked examples of the schema, and
-the gate collects the unbackticked form, so committing it as it stands enrolls three anchors that
-were never claims. One of them is already false: the example places `renderCatalog` at lines 1116 to
-1160, and that function is at `src/js/main.js:2053` today, with the rename-list handler occupying the
-lines the example names. Blessing that would lock in a fingerprint asserting something the code does
-not say, which is the exact failure the anchors gate exists to end. The declared `absent:` exemption
-does not reach these, since they are neither absent-markers nor marker-led table cells, so the gate
-needs the notion of a historical document before the file can land.
 
 ## Existing epics and stories
 
@@ -2362,8 +2446,9 @@ because BL-014, BL-026 and BL-027 have shipped and BL-025 and BL-028 were droppe
 five keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and nine
-further items filed, none of them labelled, which is how it reaches 36 rows now. The ranks below are
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and ten further
+items filed, none of them labelled. One of those ten, BL-060, has been parked in its turn, which is
+how it reaches 36 rows now. The ranks below are
 positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks sixteenth
@@ -2415,9 +2500,13 @@ positions in it as it stands.
   backlog lost to a scope judgement, and both WSJF and the P1 label would have argued for building
   it. Evidence for the state that prompted it is unchanged and still recorded in the reconciliation
   table and in `docs/UX_STUDY.md`.
-- Consequence for the ranking: with BL-028 removed the table was 34 rows, and is 37 now that BL-058,
-  BL-059 and BL-060 have been filed. The highest Cost of Delay among the items that remain is 16,
-  shared by BL-029, BL-039 and BL-050.
+- Consequence for the ranking: with BL-028 removed the table was 34 rows, and is 36 now that BL-058
+  and BL-059 have been filed. BL-060 was filed here too and then parked on 2026-08-07, which is why
+  the count moved by two rather than three. The highest Cost of Delay among the items that remain is
+  16, shared by BL-029, BL-039 and BL-050. That sentence was briefly untrue while BL-060 sat in the
+  table carrying 18, and parking it made the sentence right again rather than requiring an edit. The
+  five ranks quoted below are correct on the same basis: they were computed without BL-060 and are
+  accurate again now that it is out of the table.
 
 ### Case 4: eleven items created this pass outrank the only open P0 story
 

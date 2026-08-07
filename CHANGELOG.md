@@ -41,6 +41,26 @@ quote in a bug report.
 
 ### Changed
 
+- Committing the prompt behind the eleven Repository Constraints is no longer planned, and
+  [`.github/copilot-instructions.md`](.github/copilot-instructions.md) now says so where it used to
+  promise the opposite. The prompt drove a single session's backlog and study pass, and a spent
+  instruction to an agent is not an artifact the repository owes anybody. What mattered was the
+  eleven constraints themselves, and those were already recovered into that file word for word. The
+  practical consequence is worth stating plainly, because the file previously described its table as
+  a copy held until the source landed: that table is now the only copy of the eleven that will exist
+  here, so it is the source rather than a convenience duplicate of one. Parking it also retires the
+  unbuilt "historical document" exemption the anchors gate would have needed, which now has no caller.
+
+- Pull request bodies now open with a plain English summary, and
+  [`.github/copilot-instructions.md`](.github/copilot-instructions.md) says what that means. The
+  request came from the person reviewing them: the technical sections were written for a reader who
+  already knows the codebase, and they were making a review harder rather than easier. Most work
+  here changes documents rather than screens, so the sentence most worth writing is often the one
+  saying that nothing a reader has saved is affected, and that sentence was never being written. The
+  rule names no file, no identifier and no backlog id inside the summary, gives the reason before
+  the mechanism, and caps it at four short paragraphs. The technical sections are unchanged and sit
+  underneath, because the two halves serve different readers and the record needs both.
+
 - The reading filters are defined once. The five choices above the full order used to exist twice
   over, as radio buttons in the page and as a chain of comparisons in the code, and the two had to
   agree without anything checking that they did. Adding a filter to the page and forgetting the
@@ -53,14 +73,25 @@ quote in a bug report.
 
 ### Fixed
 
+- **The evidence-anchor gate now has the backlog entry it shipped without.** `BL-050` built the
+  check that fails the build when a `path:line` citation stops naming the code it claims, and it was
+  the only row in `PRODUCT_BACKLOG.md` with no detail block of its own. Two sentences at the top of
+  that document promised a block for every delivered item, so both had been given an exception clause
+  naming the gap. The research found the account was not missing but misfiled: it had been written as
+  a continuation of the block above it, because the gate grew out of that item's digression about
+  stale anchors and each of the five commits that extended it appended to the same run of prose. It
+  now has a heading, a task list reconstructed from those commits, and a note saying the list is
+  reconstructed. Both exception clauses are gone. Nothing in the app changed.
+
 - **The eleven standing product constraints are now the original text rather than a
   reconstruction.** `.github/copilot-instructions.md` shipped with nine of them rebuilt from how
   they were cited and two marked unrecoverable, because the list had never been committed to this
   repository. The original was found in the prompt that drove the backlog and UX study pass, which
   is still untracked in the working tree. Constraints 8 and 9 are therefore recorded for the first
   time, and six of the nine reconstructions turned out to have drifted from the wording the backlog
-  gate lines were actually checked against. Committing the source file needs a change to the anchors
-  gate first and is filed as BL-060. Nothing in the app changed.
+  gate lines were actually checked against. Committing the source file was filed as BL-060 and parked
+  on 2026-08-07, so the table in that file is not a copy of a source held elsewhere but the source
+  itself. Nothing in the app changed.
 
 - **Marking an issue read no longer throws away where you were.** The shelf and the full reading
   order are rebuilt from scratch on every change, and the control you had just used was destroyed

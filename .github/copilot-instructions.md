@@ -265,6 +265,10 @@ later. Refusals are a backstop, not a design.
 - Include the trailer: `Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>`
 - One major feature per pull request.
 - Record what was verified, with numbers, in the pull request body.
+- **Open every pull request body with a plain English summary, under the heading
+  `## In plain English`.** It goes first, above every section written for a reader who already knows
+  the codebase. The owner reviews these to decide whether a change is right, and asked for them
+  because the technical sections were making that harder rather than easier.
 - Update `CHANGELOG.md` under `## Unreleased` for anything a user or maintainer would notice. CI
   changes count; there is precedent in the 1.0.0 entry.
 - Update `PRODUCT_BACKLOG.md` in the same change that ships the work, not afterwards. Work that
@@ -274,6 +278,25 @@ later. Refusals are a backstop, not a design.
   to product improvements. This is a narrow exemption: repository infrastructure is **not** exempt,
   and BL-039 and BL-040 are the precedent, both CI and lint tooling with full backlog blocks.
   Record instructions changes in `CHANGELOG.md` only.
+
+Plain English means a specific thing here, not a shortened copy of the technical summary:
+
+- **Name no file, no identifier, no command and no backlog id.** If a file matters, say what it
+  does: `PRODUCT_BACKLOG.md` becomes "the project's list of planned improvements". A reader who has
+  to look something up to follow the paragraph has been failed by it.
+- **Say what a person using the app would notice, and say so plainly when the answer is nothing.**
+  Most work in this repository changes documents rather than screens, and "nothing you have saved is
+  affected" is the single most useful sentence such a change can carry.
+- **Give the reason before the mechanism.** What was wrong, why it was worth fixing, then what was
+  done about it.
+- **Prefer the concrete.** "The document promised every finished job has a write-up, and one did
+  not" is worth more than "a documented invariant was violated".
+- **Four short paragraphs at most.** It orients a reader; it does not re-report the work.
+- **Write it after the work, not from the plan**, so it describes what actually shipped. This
+  matters most when research changed the approach, which here it often does.
+
+The technical sections stay exactly as they are. Plain English is added above them, never in place
+of them, because the two serve different readers and the record needs both.
 
 ## Windows PowerShell 5.1
 
@@ -329,12 +352,20 @@ Repository Constraints by number and record the check in the item's detail block
 every gate line in the backlog comes from, and its mandated `Breaches Constraint n` wording is what
 BL-025's parked reason is written in.
 
-That prompt is still **not committed**. It sits untracked in the main checkout at
+That prompt is **not committed, and will not be**. It sits untracked in the main checkout at
 `.github/prompts/product-backlog-ux-study.prompt.md`, byte-identical to the copy the session read
-from its attachments directory. Committing it is filed as its own backlog item rather than done
-here, because it carries three stale example citations that the anchors gate would enroll as live
-claims and one of them is already false. Until that lands, this table is the only committed copy of
-the eleven. Treat it as the record, and do not paraphrase it.
+from its attachments directory. Committing it was filed as BL-060 and parked by the owner on
+2026-08-07: the prompt drove one session's task, and a spent instruction to an agent is not an
+artifact this repository owes anybody. Two things follow, and the second is the one that matters.
+
+Doing it would not have been free. The prompt carries three stale example citations that the anchors
+gate would enroll as live claims, and one of them is already false, so the gate would have needed the
+notion of a historical document first. That work is not built and now has no caller.
+
+**So the table below is the only copy of the eleven that will ever exist in this repository.** It is
+not a convenience copy of a source held elsewhere; it is the source. Treat it as the record, do not
+paraphrase it, and do not edit a row on the assumption that the original can be consulted to settle a
+disagreement, because outside one untracked file on one machine it cannot.
 
 Read the table as a record of what the gate lines were checked against, not as a live checklist. It
 is reproduced as it was written, so parts of it have been overtaken by events. Where that has
