@@ -25,6 +25,7 @@ import { Hydrator } from './hydrate.js';
 import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
+import { shortcutAllowed } from './lib/shortcuts.js';
 import { askConfirm, askText, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
@@ -1203,6 +1204,13 @@ function markCurrentRead() {
   announce(next
     ? `${issue.title} marked read. Next up: ${next.title}.`
     : `${issue.title} marked read. That is the whole order finished.`);
+  // While issues remain, the hero's buttons are static markup that the re-render leaves in
+  // place, so whatever had focus keeps it and D stays live on the next press. Finishing the
+  // order hides the whole hero, which drops the focused button out of the document and sends
+  // focus back to <body>, silently and at the top of the page. The heading that replaced it is
+  // the honest place to land: it is what the reader needs to hear, and it is where the
+  // remaining actions are. The render has already run, synchronously, inside store.update.
+  if (!next) $('#all-read-h').focus({ preventScroll: true });
 }
 
 function renderReading() {
@@ -1468,8 +1476,10 @@ function wireShortcuts() {
   document.addEventListener('keydown', (e) => {
     if (view !== 'read' || e.metaKey || e.ctrlKey || e.altKey) return;
     const t = document.activeElement;
-    // Never hijack a key the focused control already means something to.
-    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT|BUTTON|A|SUMMARY)$/.test(t.tagName))) return;
+    // Only text entry silences a shortcut outright, and Enter is left to whatever the browser
+    // would activate. Refusing every interactive element, as this once did, killed the D the
+    // hero advertises for the rest of the session the moment the reader clicked "Done, next".
+    if (!shortcutAllowed(t, e.key)) return;
     if (!store.state.lists[activeListId()]) return;
 
     if (e.key === 'Enter') {

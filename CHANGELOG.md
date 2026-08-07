@@ -16,6 +16,11 @@ quote in a bug report.
 
 ### Added
 
+- **About this app** now lists the keyboard shortcuts. Enter, D and the sidebar toggle were only
+  ever advertised on the hero button in the reading view, so once you had scrolled past it there was
+  nothing in the interface to remind you what was available. The reference is in one place and the
+  hero keeps its own hint, so the shortcut is still shown at the point of use.
+
 - The filter above the full reading order is remembered. Choosing Unread, Read, In Unlimited or
   Details pending used to last only until the page was reloaded, at which point you were silently
   shown everything again. It is now saved with your other settings and restored on start, so a long
@@ -24,6 +29,18 @@ quote in a bug report.
   storage falls back to All.
 
 ### Fixed
+
+- The D and Enter shortcuts no longer stop working after you click a button in the reading view.
+  The handler stood down whenever anything interactive held focus, and the hero's own "Done, next"
+  button is interactive, so clicking it left focus there and the very next press of D did nothing at
+  all, with nothing on screen to say why. Recovering meant pressing Tab or clicking elsewhere, which
+  is not something you would guess. The handler now asks two narrower questions instead of one broad
+  one: whether the control consumes the characters you type, which stands every shortcut down, and
+  whether the browser would itself act on the key, which stands Enter down on its own. Typing in a
+  search or rename box is unaffected, Enter still submits a form and still follows a link, and D now
+  survives a click. Marking the last issue read hides the hero and used to drop focus on the page
+  body without a word; focus now moves to the "That is the whole order, read" heading, so the
+  keyboard stays where you were working and a screen reader announces where it landed.
 
 - The vendoring scripts no longer hang when the metadata API rate-limits them. Their retry called
   itself from inside the rate limiter's own queue, so a request that was waiting to try again held
