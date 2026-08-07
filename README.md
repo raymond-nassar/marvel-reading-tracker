@@ -269,11 +269,15 @@ and `npm test` work in a fresh copy with nothing installed.
 npm test
 npm run lint
 npm run anchors
+npm run counts
 ```
 
 `npm test` runs the unit tests. `npm run lint` runs ESLint. `npm run anchors` checks that
 every `path:line` citation in the tracked Markdown still points at lines saying what the
-citation claims. All three run in CI on every pull request, and on pushes to `main`.
+citation claims. `npm run counts` recomputes the figures the backlog states about its own
+ranked table, such as how many rows it has and where an item ranks, and fails with the
+derived value when the prose disagrees. All four run in CI on every pull request, and on
+pushes to `main`.
 
 `npm start` serves `src/` on a local static server, as described in
 [Run it on your computer](#run-it-on-your-computer). Set `MRT_PORT` to serve on a different

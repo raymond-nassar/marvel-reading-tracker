@@ -16,6 +16,23 @@ quote in a bug report.
 
 ### Added
 
+- **A count stated in the backlog's prose is now checked against the table it is derived from.**
+  The evidence anchors gate fingerprints the lines a citation names, so it reports a sentence as
+  sound however wrong the numbers inside it have become. That is how one figure here stayed wrong
+  across twelve consecutive shipped items with every check green, and how a pass that went looking
+  for stale figures still missed one it was explicitly hunting. `npm run counts` recomputes the
+  ranked table's row count, each item's rank, the status tally and the list of delivered items, then
+  fails with the derived value when the prose disagrees. It also enumerates rows against detail
+  blocks in both directions, which is the check that would have found the one row that had no block.
+  It runs in continuous integration beside the anchors gate, so there are now four checks rather
+  than three. Scope is deliberately the part a machine can settle: figures derived from the table in
+  the same file. A figure that needs the working tree, such as how many lines a source file has, is
+  out of reach by design, because deciding which number in an arbitrary sentence is derived and from
+  what is not a tractable problem. A claim about a past state is exempted by a marker written into
+  the source, which is invisible when the document is rendered, so satisfying the checker never
+  changes what a reader sees. Pointed at the tree as it stood a few commits ago, it reports fifteen
+  findings, every one of them a real defect that was found by hand at the cost of a research cycle.
+
 - **Progress by series** now counts the list you are reading, not everything you have ever
   imported. Import a second order and the totals used to grow even though nothing about the
   crossover in front of you had changed, which made the one number a reader most wants to act on
