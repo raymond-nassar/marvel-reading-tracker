@@ -14,6 +14,21 @@ quote in a bug report.
 
 ## Unreleased
 
+### Fixed
+
+- A saved API address that is not usable no longer reaches the network layer. The check for it ran
+  only when you typed one into the settings form, but the address is read back out of your browser's
+  storage on every start, where a value written by an older build or edited by hand had never been
+  checked by anything. It is now enforced by the client that does the fetching, so an unusable
+  address cannot get that far from any route. When one is found at startup the app keeps working on
+  the default address and says so, naming both addresses, and it leaves the saved value alone rather
+  than overwriting it, including when you change an unrelated setting such as cover art. The message
+  also warns that issues without a stored Marvel Unlimited link will open on marvel.com rather than
+  in the reader while the saved address is unusable, because the launch page reads the same setting
+  and has no way to explain itself. The message goes away as soon as you save a usable address.
+  Nothing changes for an address that was already usable, including a self-hosted mirror on
+  localhost.
+
 ### Changed
 
 - The `.row` class no longer means two different things. A reading row and a form row shared it, and

@@ -1,10 +1,12 @@
 // The series and creator search path in MarvelApi: loading a vendored index, sharing that load,
 // and what happens when it fails. The ranking itself lives in lib/nameIndex.js and is tested in
-// nameIndex.test.js; this file is about the loading contract around it.
+// nameIndex.test.js; this file is about the loading contract around it, and about the base URL
+// contract the constructor enforces before any of it can run.
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { MarvelApi } from '../src/js/api.js';
+import { cacheKey } from '../src/js/lib/cachePolicy.js';
 
 const INDEX = {
   kind: 'series',
@@ -116,4 +118,58 @@ test('a warmed index is reused rather than fetched again by the search', async (
 test('an unknown index name is refused by the real loader before any request', async () => {
   const api = new MarvelApi();
   await assert.rejects(() => api.searchNameIndex('publishers', 'marvel'), /Unknown search index "publishers"/);
+});
+
+// Which base URLs are usable is decided by lib/apiBase.js and enforced here, in the client that
+// does the fetching, rather than only at the settings form. The form is one of three ways a base
+// reaches this constructor; the other two read stored values that no current code has checked.
+// api-base.test.js covers the rule itself, so these cover only that the client applies it.
+test('a base URL the rule refuses cannot be used to build a client at all', () => {
+  const refused = [
+    'http://evil.example.com',
+    'http://localhost.evil.example.com',
+    'ftp://localhost',
+    'javascript:alert(1)',
+    'data:text/html,<script>alert(1)</script>',
+    'marvel.emreparker.com/v1',
+    '/v1',
+    '',
+    '   ',
+    null,
+  ];
+  assert.equal(refused.length, 10);
+  for (const bad of refused) {
+    assert.throws(
+      () => new MarvelApi({ baseUrl: bad }),
+      TypeError,
+      `expected ${JSON.stringify(bad)} to be refused by the constructor`,
+    );
+  }
+});
+
+// The rule deliberately allows any https origin and plain http to loopback, so that a reader
+// running their own mirror is not locked out. Refusing one of these would be the same defect in
+// the other direction.
+test('an https origin and a loopback mirror are both still accepted', () => {
+  const accepted = ['https://marvel.emreparker.com/v1', 'https://mirror.example/v1', 'http://127.0.0.1:8787/v1', 'http://localhost:8787'];
+  assert.equal(accepted.length, 4);
+  for (const good of accepted) {
+    assert.equal(new MarvelApi({ baseUrl: good }).baseUrl, good);
+  }
+});
+
+test('a trailing slash is stripped before the base URL is checked and before it is used', () => {
+  assert.equal(new MarvelApi({ baseUrl: 'https://mirror.example/v1//' }).baseUrl, 'https://mirror.example/v1');
+});
+
+// Switching mirrors must not serve entries fetched from the previous one. cache-reader.test.js
+// covers the key function; this covers the wiring, since the constructor is what hands its own
+// normalised base to the cache it builds when none is supplied.
+test('the cache the client builds for itself is scoped by that base URL', () => {
+  const one = new MarvelApi({ baseUrl: 'https://one.example/v1' });
+  const two = new MarvelApi({ baseUrl: 'https://two.example/v1' });
+
+  assert.equal(one.cache.key('/issues/1'), cacheKey({ baseUrl: 'https://one.example/v1', schemaVersion: 2, path: '/issues/1' }));
+  assert.notEqual(one.cache.key('/issues/1'), two.cache.key('/issues/1'));
+  assert.equal(new MarvelApi({ baseUrl: 'https://one.example/v1/' }).cache.key('/issues/1'), one.cache.key('/issues/1'));
 });
