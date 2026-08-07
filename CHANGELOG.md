@@ -53,6 +53,16 @@ quote in a bug report.
 
 ### Fixed
 
+- **The evidence-anchor gate now has the backlog entry it shipped without.** `BL-050` built the
+  check that fails the build when a `path:line` citation stops naming the code it claims, and it was
+  the only row in `PRODUCT_BACKLOG.md` with no detail block of its own. Two sentences at the top of
+  that document promised a block for every delivered item, so both had been given an exception clause
+  naming the gap. The research found the account was not missing but misfiled: it had been written as
+  a continuation of the block above it, because the gate grew out of that item's digression about
+  stale anchors and each of the five commits that extended it appended to the same run of prose. It
+  now has a heading, a task list reconstructed from those commits, and a note saying the list is
+  reconstructed. Both exception clauses are gone. Nothing in the app changed.
+
 - **The eleven standing product constraints are now the original text rather than a
   reconstruction.** `.github/copilot-instructions.md` shipped with nine of them rebuilt from how
   they were cited and two marked unrecoverable, because the list had never been committed to this

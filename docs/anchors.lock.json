@@ -89,13 +89,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:2144-2147|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2144-2147",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:2212-2215|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2212-2215",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:240-241|0": {
-    "anchor": "PRODUCT_BACKLOG.md:240-241",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:239-240|0": {
+    "anchor": "PRODUCT_BACKLOG.md:239-240",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
@@ -629,8 +629,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:94-95|0": {
-    "anchor": "CHANGELOG.md:94-95",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:104-105|0": {
+    "anchor": "CHANGELOG.md:104-105",
     "fp": "ee201c44c882bc27",
     "head": "Both were true when audited and neither is true now: the file is 2,637 lines and the suite runs"
   },
@@ -644,33 +644,23 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12-16|0": {
-    "anchor": "PRODUCT_BACKLOG.md:12-16",
-    "fp": "5fb10ef2ec06e3a9",
-    "head": "Twenty-four items have since been delivered and are marked `Shipped` in the table below: BL-014,"
-  },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:157-159|0": {
     "anchor": "PRODUCT_BACKLOG.md:157-159",
     "fp": "dd1a88b7bb98b6c5",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:186-187|0": {
-    "anchor": "PRODUCT_BACKLOG.md:186-187",
-    "fp": "889cc257b9c8892d",
-    "head": "existed. Each shipped item's detail block below says what changed and how it was checked, except"
-  },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2121-2123|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2121-2123",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2189-2191|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2189-2191",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2275-2277|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2275-2277",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2343-2345|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2343-2345",
     "fp": "e0407cb5c55f352f",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2294-2296|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2294-2296",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2362-2364|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2362-2364",
     "fp": "70f2b470e750ff0d",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
@@ -1599,8 +1589,8 @@
     "fp": "77fbcc452d3311ae",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-056|PRODUCT_BACKLOG.md:2418-2420|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2418-2420",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-056|PRODUCT_BACKLOG.md:2486-2488|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2486-2488",
     "fp": "48f4d38c19d7e46f",
     "head": "- Consequence for the ranking: with BL-028 removed the table was 34 rows, and is 37 now that BL-058,"
   },
@@ -1609,8 +1599,8 @@
     "fp": "7a6b3e0fd15becfe",
     "head": "btn.disabled = true;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-059|CHANGELOG.md:94-95|0": {
-    "anchor": "CHANGELOG.md:94-95",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-059|CHANGELOG.md:104-105|0": {
+    "anchor": "CHANGELOG.md:104-105",
     "fp": "ee201c44c882bc27",
     "head": "Both were true when audited and neither is true now: the file is 2,637 lines and the suite runs"
   }
