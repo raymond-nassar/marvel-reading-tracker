@@ -9,9 +9,10 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Twenty-five items have since been delivered and are marked `Shipped` in the table below: BL-014,
+Twenty-six items have since been delivered and are marked `Shipped` in the table below: BL-014,
 BL-026, BL-027, BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-039, BL-040, BL-043, BL-044,
-BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052, BL-053, BL-054, BL-055 and BL-057.
+BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-057 and
+BL-059.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
@@ -195,10 +196,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:150-152 |
-| BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | CHANGELOG.md:125-126 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:151-153 |
+| BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2503-2509 |
+| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2528-2534 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1232-1259 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
@@ -1844,20 +1845,20 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2359-2361` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2384-2386` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the
 audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
-have since taken it to 294; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:157-159`. Appendix A
+have since taken it to 294; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:158-160`. Appendix A
 does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
-editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2378-2380`. Overwriting would have destroyed
+editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2403-2405`. Overwriting would have destroyed
 the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2205-2207` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2230-2232` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -1992,17 +1993,17 @@ enumeration, over the same table, in the same file.
 
 **BL-059: Stop the changelog entry that explains stale figures from carrying two of its own**
 
-- [ ] Decide what a release record should say about a figure that will not stay true
-- [ ] Rewrite the entry so it no longer needs editing when the tree grows
-- [ ] Check the rest of `CHANGELOG.md` for the same shape before closing
+- [x] Decide what a release record should say about a figure that will not stay true
+- [x] Rewrite the entry so it no longer needs editing when the tree grows
+- [x] Check the rest of `CHANGELOG.md` for the same shape before closing
 
 Constraint gate: checked 1 to 11, none breached.
 
-Filed out of BL-053. BL-055's changelog entry explains that two audited figures went stale by
-quoting what they are now, at `CHANGELOG.md:125-126`, which puts two live numbers inside a record
-that is meant to be written once and left alone. They have needed editing on each of the two items
-shipped since, BL-054 and BL-053, both times only because a file grew and a test was added. A
-release record that has to be revised whenever unrelated work lands is not recording a release.
+Filed out of BL-053. BL-055's changelog entry explained that two audited figures went stale by
+quoting what they were at the time of writing, which put two live numbers inside a record that is
+meant to be written once and left alone. They had needed editing on each of the two items shipped
+since, BL-054 and BL-053, both times only because a file grew and a test was added. A release
+record that has to be revised whenever unrelated work lands is not recording a release.
 
 This is the case BL-056 put out of scope in its own words, and for the reason it gave: these two
 figures come from the tree rather than from the ranked table, so no checker reading this repository's
@@ -2013,6 +2014,30 @@ to carry it. Deciding that is the item.
 
 Not fixed in BL-053, which had to touch those two numbers and would have been widening its own
 scope to rewrite the entry that holds them.
+
+Shipped. The rule the item asked for is that a figure belongs in a release record when it is a
+property of the change and does not when it is a property of the tree, because only the second kind
+moves without anyone editing the record. Both audited figures are properties of the audit and stay;
+the two current values were properties of the tree and are gone, replaced by a sentence at
+`CHANGELOG.md:144-147` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:151-153` and
+`PRODUCT_BACKLOG.md:158-160` do each carry a live value and are marked as needing re-derivation, so
+deferring to them loses nothing a reader could previously find.
+
+The same entry carried a third figure of the same kind that the item had not named, in the sentence
+about Appendix A's modularity gap: it put the understatement at a thousand lines, which is the
+difference between the audited count and the tree. That would have gone stale in the ordinary way,
+and BL-042 would have inverted it outright by splitting the file, so the magnitude is dropped and
+the direction kept.
+
+The third task found three more of the shape elsewhere in the file, all now tied to the moment of
+the change they describe rather than left in the present tense: the README correction said there
+were three CI checks, which BL-056 is about to falsify by adding a fourth, and now says the README
+named two when the workflow ran three; a fetch helper "is covered by nine tests", now "shipped with
+nine tests"; and a rewritten README section's longest sentence "is 36 words", now "came down to 36
+words". Each is true permanently rather than until the next unrelated change. Two present-tense
+figures were checked and deliberately left, because both describe what their change did rather than
+what the tree is: a paragraph that "is now three" paragraphs, and a value that "is now two values".
 
 ## Existing epics and stories
 
