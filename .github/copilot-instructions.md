@@ -51,9 +51,20 @@ The workflow is:
 only once you have done the reading. Blessing to clear a red build locks the wrong lines in
 permanently and silently, which is the exact failure the gate exists to end.
 
-This is not hypothetical. A citation of `workflow_dispatch` was written as
-`.github/workflows/ci.yml:12`, which is a comment line; the real line is 15. Printing the line
-caught it before it was blessed. Trusting the green would have preserved the error forever.
+This is not hypothetical. A citation of `workflow_dispatch` in the backlog was written as line 12
+of the workflow file, which is a comment; the real line is `.github/workflows/ci.yml:15`. Printing
+the line caught it before it was blessed. Trusting the green would have preserved the error
+forever.
+
+Two traps in the gate itself, both hit while writing this file:
+
+- **The gate only sees tracked files.** It enumerates with `git ls-files` and keeps everything
+  ending in `.md`, so a new document you have not yet `git add`ed is invisible to it and will pass
+  locally while failing in CI. Run `git add` first, then `npm run anchors`.
+- **Any `path:line` you write in backticks is a live claim**, including one you are quoting as an
+  example of a mistake. Writing the wrong citation inside backticks, even to say it was wrong,
+  creates that citation and the gate will chase it. Describe a wrong line in plain prose, as "line
+  12 of the workflow file", never in the citation form.
 
 Ranges must not end on a blank line.
 
