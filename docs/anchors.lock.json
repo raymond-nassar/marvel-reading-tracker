@@ -84,8 +84,8 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1652-1655|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1652-1655",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1682-1685|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1682-1685",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -618,6 +618,16 @@
     "anchor": "package.json:14-15",
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
+  },
+  "PRODUCT_BACKLOG.md|item-details|README.md:291-295|0": {
+    "anchor": "README.md:291-295",
+    "fp": "01978a99e58bc8ac",
+    "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
+  },
+  "PRODUCT_BACKLOG.md|item-details|README.md:362-373|0": {
+    "anchor": "README.md:362-373",
+    "fp": "b93a929635fd5479",
+    "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/build-event-order.mjs:203|0": {
     "anchor": "scripts/build-event-order.mjs:203",

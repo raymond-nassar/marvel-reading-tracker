@@ -286,9 +286,12 @@ trusting a release.
 ### Adding a curated reading list
 
 Curated lists are data, not code. To add one, append an entry to
-[`src/data/curated-lists.json`](src/data/curated-lists.json) and run `npm run vendor`. The
-vendor script loads the order, pins the enriched issue data into `src/data/`, and
-regenerates `src/data/catalog.json`, so the new list appears in the catalog. No application
+[`src/data/curated-lists.json`](src/data/curated-lists.json) and run `npm run vendor`.
+
+To vendor a list is to fetch it once and commit what came back. The app then reads a file in this
+repository, rather than calling the metadata API while someone is using it. The vendor script
+loads the order, fills in the details of each issue, and writes the result into `src/data/`. It
+then rebuilds `src/data/catalog.json`, so the new list appears in the catalog. No application
 code changes.
 
 An order comes from exactly one of two places: `sourceUrl` fetches it from an upstream
@@ -303,7 +306,7 @@ Each entry needs:
 | `id` | Stable, unique identifier for the list |
 | `name`, `description` | What a reader sees in the catalog |
 | `type` | `event`, `character-run`, `creator-run`, or `era` |
-| `depth` | `essential`, `complete`, or `tie-ins` |
+| `depth` | How much of the story the list covers: `essential`, `complete`, or `tie-ins` |
 | `sourceUrl` | `https://` URL of the upstream Markdown checklist to vendor. Mutually exclusive with `sourceFile` |
 | `sourceFile` | Plain `*.md` name in `src/data/orders/`, for an order authored here. Mutually exclusive with `sourceUrl` |
 | `sourcePage` | Human-readable attribution link (defaults to `sourceUrl`) |
@@ -316,13 +319,13 @@ Each entry needs:
 An entry that is missing or malformed fails the vendor run with the reason, so a broken
 definition does not ship as a quietly shorter catalog.
 
-`npm run vendor -- --only=<id>` rebuilds a single list. Re-vendoring everything to add one
-costs hundreds of API calls and rewrites the snapshot date on files that did not change.
-Skipped lists keep their pinned JSON, and their catalog entries are rebuilt from it.
+`npm run vendor -- --only=<id>` rebuilds a single list. Re-vendoring everything to add one costs
+hundreds of API calls, and it restamps the date on files whose contents did not change. Skipped
+lists keep the JSON already committed for them, and their catalog entries are rebuilt from it.
 
-A checklist line with no Marvel link is vendored as a placeholder rather than dropped, so the
-reading order stays complete and tickable. Placeholders cannot be opened, and the import
-notice says how many there are.
+A checklist line with no Marvel link becomes a placeholder: an entry you can see and tick off,
+but not open, because there is nothing to open. Keeping it means the reading order stays complete
+rather than quietly losing an issue, and the import notice says how many there are.
 
 #### Event orders, generated from Marvel's own metadata
 
@@ -343,28 +346,31 @@ every list it produces: these orders cover the branded series and **not** crosso
 published in ongoing titles that carry no event branding, such as Amazing Spider-Man #529-538
 during Civil War.
 
-Series are named by id, not matched by name, because a name filter cannot tell an event from its
-own sequel (`Civil War II`), its facsimiles or its handbooks; the script records why each
-rejected series was rejected beside the ones it keeps. Trade collections need no rule, because
-Marvel serves them from `/comics/collection/` instead of `/comics/issue/`. Where several issues
-shipped the same day the main series is listed first, so it is never read after the tie-in that
-reacts to it.
+Series are named by id, not matched by name. A name filter cannot tell an event from its own
+sequel (`Civil War II`), its facsimiles or its handbooks, so the script records why each rejected
+series was rejected, beside the ones it keeps. Trade collections need no rule, because Marvel
+serves them from `/comics/collection/` instead of `/comics/issue/`. Where several issues shipped
+the same day the main series is listed first, so it is never read after the tie-in that reacts to
+it.
 
 Because selection is by id, a series nobody listed would be silently absent rather than visibly
 wrong, so that record of rejections is checked rather than trusted. `--audit` re-runs the name
 filter across all 6,990 series and fails if any series it matches is in neither the include list
-nor the rejection record. Run it before regenerating an order. It does not assert the reverse —
+nor the rejection record. Run it before regenerating an order. It does not assert the reverse:
 the name filter cannot find series Marvel never branded, which is the documented gap above.
 
-The audit reads the catalogue from the committed
+The audit needs the whole catalogue to work from. It reads that from the committed
 [`src/data/series-index.json`](src/data/series-index.json) that `npm run vendor:index` writes for
-the search below, and pages the API only when it cannot. It reads that file out of `HEAD` rather
-than from the working copy, and uses it only when it covers the whole catalogue; a short, malformed
-or uncommitted index is refused out loud and the API is paged instead. Reading the committed bytes
-is what lets the refusal message mean what it says: whether a path is tracked says nothing about
-whether its contents are still the reviewed ones. A shortcut that cannot be checked is a way to be
-quietly wrong — an index holding three series still matches something for every event, so it would
-pass a bare "did it match anything" test while leaving almost the entire catalogue unaudited.
+the search below, and pages the API only when it cannot.
+
+It reads the file out of `HEAD`, not from the working copy, and only when the file covers the
+whole catalogue. A short, malformed or uncommitted index is refused out loud, and the API is paged
+instead. Reading the committed bytes is what lets that refusal mean what it says: whether a path
+is tracked says nothing about whether its contents are still the reviewed ones.
+
+The alternative is a shortcut nobody can check. An index holding three series still matches
+something for every event, so it would pass a bare "did it match anything" test while leaving
+almost the entire catalogue unaudited.
 
 The output is committed, so an order arrives for review as a diff, and re-running the script
 only changes the events whose upstream metadata changed.
@@ -372,28 +378,31 @@ only changes the events whose upstream metadata changed.
 ### Searching for a series or a creator
 
 The metadata API has a real search endpoint for issues, but none for series or creators.
-`/series?q=` and `/creators?q=` accept the query and ignore it, returning the same records as
-no query at all, so a search for a creator called "Hickman" used to answer with "#O", "#X" and
-"A CO" — each offering to add every issue it had to your reading list.
+`/series?q=` and `/creators?q=` accept the query and ignore it, returning the same records as no
+query at all. A search for a creator called "Hickman" used to answer with "#O", "#X" and "A CO",
+each offering to add every issue it had to your reading list.
 
 Those two searches are therefore answered locally. `npm run vendor:index` pages the whole of
-`/series` and `/creators` once and writes [`src/data/series-index.json`](src/data/series-index.json)
-and [`src/data/creators-index.json`](src/data/creators-index.json), one `[id, name, issueCount]`
-record each, which is about a third smaller than the equivalent objects. The app fetches the
-file the first time you open one of those two search cards, never on page load, and filters it
-in the browser. If the file cannot be loaded the search says so, and never falls back to
-showing unfiltered results.
+`/series` and `/creators` once, and writes
+[`src/data/series-index.json`](src/data/series-index.json) and
+[`src/data/creators-index.json`](src/data/creators-index.json). Each record is an
+`[id, name, issueCount]` array rather than an object, which is about a third smaller.
 
-Both files are snapshots, like the vendored reading orders: a series added upstream after the
-last run is not findable until `npm run vendor:index` is run again, which is why the results
-say when the snapshot was taken. `npm run contract` asserts that `q` is still ignored upstream,
-so if the API ever grows real search the check fails and these files can be deleted.
+The app fetches the file the first time you open one of those two search cards, never on page
+load, and filters it in the browser. If the file cannot be loaded the search says so, and never
+falls back to showing unfiltered results.
+
+Both files are snapshots, in the same sense as the vendored reading orders: they record what
+upstream held on the day they were built. A series added upstream after the last run is not
+findable until `npm run vendor:index` is run again, which is why the results say when the
+snapshot was taken. `npm run contract` asserts that `q` is still ignored upstream, so if the API
+ever grows real search the check fails and these files can be deleted.
 
 ### Releasing
 
 Versions follow the rule set out in [`src/js/lib/version.js`](src/js/lib/version.js): a MAJOR
-bump means a build older than this one cannot read data saved by it, which matters because
-reading progress lives only in the user's own browser and nothing can migrate it for them.
+bump means a build older than this one cannot read data saved by it. That matters because reading
+progress lives only in the reader's own browser, and nothing can migrate it for them.
 
 To cut a release:
 
