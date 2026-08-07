@@ -347,11 +347,17 @@ export function listProgress(state, listId) {
   return { read, total };
 }
 
-// Aggregated over UNIQUE issue ids across every list, so an issue in two lists counts once.
-export function seriesProgress(state) {
+// Aggregated over UNIQUE issue ids, so an issue in two lists counts once. Given a listId it counts
+// that list alone; a reader inside one crossover was otherwise shown totals inflated by every other
+// list they had imported, which is the number they are least able to act on.
+export function seriesProgress(state, listId = null) {
   const tracked = new Set();
-  for (const listId of state.listOrder) {
-    for (const id of state.lists[listId]?.itemIds ?? []) tracked.add(id);
+  if (listId == null) {
+    for (const id of state.listOrder) {
+      for (const issueId of state.lists[id]?.itemIds ?? []) tracked.add(issueId);
+    }
+  } else {
+    for (const issueId of state.lists[listId]?.itemIds ?? []) tracked.add(issueId);
   }
   const bySeries = new Map();
   for (const id of tracked) {

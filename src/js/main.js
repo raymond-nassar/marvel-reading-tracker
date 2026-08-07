@@ -2282,9 +2282,38 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
 
 // ------------------------------------------------------------------ progress
 
+// Not persisted, unlike the reading filter in BL-037. That one is a lens on a long order a reader
+// works through over days; this one is answered by whichever list they are reading now, so the
+// useful default is the active list every time the view is opened.
+let progressScope = 'list';
+
+function wireProgressScope() {
+  for (const radio of document.querySelectorAll('input[name="progress-scope"]')) {
+    radio.addEventListener('change', () => {
+      if (!radio.checked) return;
+      progressScope = radio.value;
+      renderProgress();
+    });
+  }
+}
+
 function renderProgress() {
   const box = $('#series-progress');
-  const rows = seriesProgress(store.state);
+  const list = store.state.lists[activeListId()];
+  // "This list" cannot mean anything without one, so the scope falls back to every list rather
+  // than rendering an empty view, which reads as "you have tracked nothing" and is a different
+  // claim. The radio is disabled in that state so the fallback is visible rather than silent.
+  const scoped = progressScope === 'list' && Boolean(list);
+  const thisList = $('input[name="progress-scope"][value="list"]');
+  thisList.disabled = !list;
+  for (const radio of document.querySelectorAll('input[name="progress-scope"]')) {
+    radio.checked = radio.value === (scoped ? 'list' : 'all');
+  }
+  $('#progress-sub').textContent = scoped
+    ? `Counted over the issues in “${list.name}”. Choose All lists for everything you track.`
+    : 'Counted over unique issues across every list, so an issue in two lists counts once.';
+
+  const rows = scoped ? seriesProgress(store.state, activeListId()) : seriesProgress(store.state);
   box.replaceChildren();
   if (!rows.length) {
     box.append(el('p', { class: 'rail-hint', text: 'Nothing tracked yet.' }));
@@ -2498,6 +2527,7 @@ wireCatalogSearch();
 wireHome();
 wirePreview();
 wireAsk();
+wireProgressScope();
 renderAll();
 // A reader with nothing to read has no reading view to show, so the landing page is where
 // they start. One with an active list resumes it, which is the whole point of the app.

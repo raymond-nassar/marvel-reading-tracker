@@ -440,6 +440,59 @@ test('series progress counts unique issues once across lists', () => {
   assert.equal(rows[0].read, 1);
 });
 
+test('series progress counts one list alone when given its id', () => {
+  let s = createList(createEmptyState(), { name: 'A' });
+  s = createList(s, { name: 'B' });
+  const [a, b] = s.listOrder;
+  s = addIssuesToList(s, a, [issue(1), issue(2)]).state;
+  s = addIssuesToList(s, b, [issue(2), issue(3)]).state;
+  s = markRead(s, 2, true);
+
+  const inA = seriesProgress(s, a);
+  assert.equal(inA[0].tracked, 2, 'list A holds issues 1 and 2');
+  assert.equal(inA[0].read, 1);
+
+  const inB = seriesProgress(s, b);
+  assert.equal(inB[0].tracked, 2, 'list B holds issues 2 and 3');
+  assert.equal(inB[0].read, 1, 'read state is shared, so issue 2 is read in both');
+
+  assert.equal(seriesProgress(s)[0].tracked, 3, 'the cross-list total is still reachable');
+});
+
+test('series progress for a list that does not exist is empty, not global', () => {
+  let s = createList(createEmptyState(), { name: 'A' });
+  const [a] = s.listOrder;
+  s = addIssuesToList(s, a, [issue(1), issue(2)]).state;
+
+  assert.deepEqual(seriesProgress(s, 'no-such-list'), []);
+  assert.equal(seriesProgress(s)[0].tracked, 2, 'the unscoped call is unaffected');
+});
+
+test('series progress splits a list by series', () => {
+  let s = createList(createEmptyState(), { name: 'A' });
+  s = createList(s, { name: 'B' });
+  const [a, b] = s.listOrder;
+  s = addIssuesToList(s, a, [
+    { ...issue(1), seriesId: 10, seriesName: 'Alpha' },
+    { ...issue(2), seriesId: 20, seriesName: 'Beta' },
+    { ...issue(3), seriesId: 20, seriesName: 'Beta' },
+  ]).state;
+  // A series only the other list carries, so a scoped call that quietly counted every list
+  // would show three rows here rather than two.
+  s = addIssuesToList(s, b, [{ ...issue(4), seriesId: 30, seriesName: 'Gamma' }]).state;
+  s = markRead(s, 3, true);
+
+  const rows = seriesProgress(s, a);
+  assert.deepEqual(rows.map((r) => r.seriesName), ['Alpha', 'Beta'], 'sorted, and Gamma is not here');
+  assert.equal(rows[1].tracked, 2);
+  assert.equal(rows[1].read, 1);
+  assert.deepEqual(
+    seriesProgress(s).map((r) => r.seriesName),
+    ['Alpha', 'Beta', 'Gamma'],
+    'the unscoped call still sees every series',
+  );
+});
+
 test('overrides can be set and cleared', () => {
   const { state } = withList([1]);
   assert.equal(setOverride(state, 1, 'available').overrides[1], 'available');
