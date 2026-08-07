@@ -299,11 +299,16 @@ export function moveItemTo(state, listId, issueId, index) {
 
 // ---------------------------------------------------------------- read state
 
+// The timestamp is coerced here rather than only in `coerce`, because `coerce` runs on the v2
+// branch of `migrate` alone. The v1 branch reaches read state through this function instead, so a
+// v1 backup carrying `readAt: "banana"` used to land unchanged in the read map and reach the
+// screen as "Invalid Date". Written the same way `coerce` writes it, so a value restored from a
+// v1 backup and the same value reloaded from storage cannot disagree.
 export function markRead(state, issueId, read = true, at = Date.now()) {
   const id = Number(issueId);
   if (!Number.isInteger(id)) return state;
   const next = { ...state.read };
-  if (read) next[id] = at;
+  if (read) next[id] = Number(at) || Date.now();
   else delete next[id];
   return { ...state, read: next };
 }

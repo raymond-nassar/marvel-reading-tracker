@@ -59,8 +59,8 @@
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:538-562|0": {
-    "anchor": "src/js/lib/model.js:538-562",
+  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:543-567|0": {
+    "anchor": "src/js/lib/model.js:543-567",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
@@ -94,8 +94,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:2625-2628|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2625-2628",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:2637-2640|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2637-2640",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -129,8 +129,8 @@
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:461-487|0": {
-    "anchor": "src/js/lib/model.js:461-487",
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:466-492|0": {
+    "anchor": "src/js/lib/model.js:466-492",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -469,8 +469,8 @@
     "fp": "04b49028f612d939",
     "head": "{"
   },
-  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:538-562|0": {
-    "anchor": "src/js/lib/model.js:538-562",
+  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:543-567|0": {
+    "anchor": "src/js/lib/model.js:543-567",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
@@ -514,8 +514,8 @@
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:461-487|0": {
-    "anchor": "src/js/lib/model.js:461-487",
+  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:466-492|0": {
+    "anchor": "src/js/lib/model.js:466-492",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -599,8 +599,8 @@
     "fp": "d66d703756839bee",
     "head": "export const SCHEMA_VERSION = 2;"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:461-487|0": {
-    "anchor": "src/js/lib/model.js:461-487",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:466-492|0": {
+    "anchor": "src/js/lib/model.js:466-492",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -629,8 +629,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:261-264|0": {
-    "anchor": "CHANGELOG.md:261-264",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:272-275|0": {
+    "anchor": "CHANGELOG.md:272-275",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -656,31 +656,31 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:158-160|0": {
     "anchor": "PRODUCT_BACKLOG.md:158-160",
-    "fp": "1e814c45a043173f",
+    "fp": "c8e87f2474a0fa29",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:158-160|1": {
     "anchor": "PRODUCT_BACKLOG.md:158-160",
-    "fp": "1e814c45a043173f",
+    "fp": "c8e87f2474a0fa29",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1831-1834|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1831-1834",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1843-1846|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1843-1846",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2602-2604|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2602-2604",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2614-2616|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2614-2616",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2756-2757|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2756-2757",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2768-2769|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2768-2769",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2776-2778|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2776-2778",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2788-2790|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2788-2790",
     "fp": "affcee43c8cd0de5",
     "head": "Evidence: `scripts/lib/fetch-json.mjs:52-61`, `scripts/lib/fetch-json.mjs:22-37`."
   },
@@ -874,23 +874,28 @@
     "fp": "fc9aa4fcc2898856",
     "head": "export function restoreList(state, list, { index = null, active = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:350-361|0": {
-    "anchor": "src/js/lib/model.js:350-361",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:307-314|0": {
+    "anchor": "src/js/lib/model.js:307-314",
+    "fp": "9d3833100d6ca7df",
+    "head": "export function markRead(state, issueId, read = true, at = Date.now()) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:355-366|0": {
+    "anchor": "src/js/lib/model.js:355-366",
     "fp": "8777bc126b77f838",
     "head": "// Aggregated over UNIQUE issue ids, so an issue in two lists counts once. Given a listId it counts"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:381-431|0": {
-    "anchor": "src/js/lib/model.js:381-431",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:386-436|0": {
+    "anchor": "src/js/lib/model.js:386-436",
     "fp": "44ae59dee9aaa6c8",
     "head": "// Which of the reader's lists an issue is in, named, in rail order. Read state and issue"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:500|0": {
-    "anchor": "src/js/lib/model.js:500",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:505|0": {
+    "anchor": "src/js/lib/model.js:505",
     "fp": "3317afe7370b3517",
     "head": "if (Number.isInteger(id)) read[id] = Number(v) || Date.now();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:528|0": {
-    "anchor": "src/js/lib/model.js:528",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:533|0": {
+    "anchor": "src/js/lib/model.js:533",
     "fp": "003c21f2deb00338",
     "head": "active: lists[raw.active] ? raw.active : (listOrder[0] ?? null),"
   },
@@ -1264,8 +1269,8 @@
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|test/library.test.js:164-192|0": {
-    "anchor": "test/library.test.js:164-192",
+  "PRODUCT_BACKLOG.md|item-details|test/library.test.js:196-224|0": {
+    "anchor": "test/library.test.js:196-224",
     "fp": "5abcad23724da836",
     "head": "test('every view main.js switches between has a section in the markup, and the reverse', () => {"
   },
@@ -1459,8 +1464,8 @@
     "fp": "756ffa3269a6fcb8",
     "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:538-562|0": {
-    "anchor": "src/js/lib/model.js:538-562",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:543-567|0": {
+    "anchor": "src/js/lib/model.js:543-567",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
@@ -1579,8 +1584,8 @@
     "fp": "6d50373e8d6e684f",
     "head": "\"version\": \"1.0.0\","
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:538-562|0": {
-    "anchor": "src/js/lib/model.js:538-562",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:543-567|0": {
+    "anchor": "src/js/lib/model.js:543-567",
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
@@ -1624,8 +1629,8 @@
     "fp": "d66d703756839bee",
     "head": "export const SCHEMA_VERSION = 2;"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:461-487|0": {
-    "anchor": "src/js/lib/model.js:461-487",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:466-492|0": {
+    "anchor": "src/js/lib/model.js:466-492",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },

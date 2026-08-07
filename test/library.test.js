@@ -151,6 +151,38 @@ test('a restore cannot put a date on screen that is not one', () => {
   assert.equal(rows.find((r) => r.issueId === 4).readAt, 1700000000000);
 });
 
+// The v1 branch of `migrate` is a separate path that never reaches `coerce`: it rebuilds the state
+// from scratch and writes read state through `markRead`. Restoring a v1 backup is the supported
+// route to it, so testing only the v2 shape above would have pinned the invariant on the one path
+// that already held it and reported a pass while a v1 backup put "Invalid Date" on the page.
+test('a restore from the older format cannot put a date on screen either', () => {
+  const raw = {
+    schemaVersion: 1,
+    lists: {
+      a: {
+        name: 'Old',
+        items: [
+          { issueId: 5, title: 'Bad stamp', read: true, readAt: 'banana' },
+          { issueId: 6, title: 'No stamp', read: true },
+          { issueId: 7, title: 'Real stamp', read: true, readAt: 1700000000000 },
+          { issueId: 8, title: 'Never read', read: false },
+        ],
+      },
+    },
+  };
+  const rows = readIssues(migrate(raw));
+  assert.deepEqual(rows.map((r) => r.issueId).sort((a, b) => a - b), [5, 6, 7]);
+  for (const row of rows) {
+    assert.equal(Number.isFinite(row.readAt), true, `issue ${row.issueId} kept ${row.readAt}`);
+    assert.equal(
+      new Date(row.readAt).toString() === 'Invalid Date',
+      false,
+      `issue ${row.issueId} renders as Invalid Date`,
+    );
+  }
+  assert.equal(rows.find((r) => r.issueId === 7).readAt, 1700000000000);
+});
+
 // ---------------------------------------------------------------- markup agreement
 // The two files are held together here rather than in either of them. `showView` hides every
 // section by name and then focuses the heading of the one it showed, so a route with no section

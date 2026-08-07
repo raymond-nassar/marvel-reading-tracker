@@ -29,6 +29,17 @@ quote in a bug report.
   about your library rather than as something that failed to load. Neither page changes anything;
   they only show you what is already saved.
 
+### Fixed
+
+- **Restoring a backup made by a much older build could show "Invalid Date" as a reading date.**
+  Only backups written by the earliest data format were affected, and only if one of them held
+  something other than a number where the reading date belonged. Restoring such a backup put the
+  words "Invalid Date" on screen wherever that issue's date was shown, and sorted it to an
+  arbitrary place. Nothing was lost and nothing else misbehaved, but it looked like a fault
+  because it was one. Reading dates are now cleaned up wherever they are recorded rather than on
+  one of the two restore paths, so a date the app cannot make sense of becomes the time of the
+  restore instead of appearing as broken text.
+
 - **The no-em-dash rule now covers the page and its styling, not only the JavaScript.** When that
   rule was first automated it was written as a lint rule, and lint reads JavaScript. Every word the
   app puts on screen from the page files or the stylesheets was outside it, so the check reported
