@@ -3,6 +3,7 @@
 
 import { RateLimiter, abortError } from './lib/limiter.js';
 import { ResponseCache } from './cache.js';
+import { isAllowedApiBase } from './lib/apiBase.js';
 import { DEFAULT_LIMIT, parseNameIndex, searchNames } from './lib/nameIndex.js';
 
 export const DEFAULT_BASE = 'https://marvel.emreparker.com/v1';
@@ -17,7 +18,19 @@ const INDEXES = {
 
 export class MarvelApi {
   constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {
-    this.baseUrl = baseUrl.replace(/\/+$/, '');
+    const base = String(baseUrl ?? '').replace(/\/+$/, '');
+    // The settings form is not the only way a base URL reaches this client. loadSettings() reads
+    // one out of localStorage on every boot, and that value outlives the build that wrote it, so
+    // an older version, a hand edit or a restored backup can put anything at all in front of the
+    // fetch in get(). Checking here means a client that would fetch from somewhere the rule
+    // does not allow cannot be built in the first place, which is a stronger guarantee than
+    // remembering to check at each of the three call sites. It throws rather than falling back,
+    // because silently talking to a different service than the one asked for is the failure this
+    // is meant to prevent, not an acceptable recovery from it.
+    if (!isAllowedApiBase(base)) {
+      throw new TypeError(`Refusing ${JSON.stringify(String(baseUrl))} as an API base: use https, or http against localhost.`);
+    }
+    this.baseUrl = base;
     this.limiter = limiter ?? new RateLimiter();
     this.cache = cache ?? new ResponseCache({ baseUrl: this.baseUrl });
     this.onStatus = onStatus;

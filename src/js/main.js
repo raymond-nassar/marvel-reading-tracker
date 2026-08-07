@@ -167,6 +167,11 @@ function isLive(node) {
 // a later success clear it wherever it was placed.
 const CATALOG_LOAD = 'catalog-load';
 
+// The stored API base is checked once at boot, so the complaint about a bad one is a single
+// condition that outlives whichever view the reader happens to land on, and it is cleared by
+// saving a usable base rather than by anything that happens in a particular pane.
+const API_BASE_REJECTED = 'api-base-rejected';
+
 // alert() reached the reader wherever they were; a pane fixed in one view does not. With
 // a curated import in flight, three ways the named pane went unseen were measured: the
 // reader switched view, so the pane was inside a hidden one and nothing appeared at all;
@@ -281,17 +286,35 @@ function clearNotice(key) {
 function loadSettings() {
   try {
     const raw = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
+    const stored = typeof raw.apiBase === 'string' && raw.apiBase ? raw.apiBase.trim().replace(/\/+$/, '') : DEFAULT_BASE;
+    // A stored base is not a checked base. It was written by whatever build was installed at the
+    // time, survives every upgrade after it, and is one devtools edit away from being anything at
+    // all, so the rule is applied on the way out of storage as well as on the way in. MarvelApi
+    // throws on a base it will not use, and that constructor runs before anything is on screen,
+    // so falling back is the only option that leaves a usable app. It is reported rather than
+    // done quietly, because it changes which service the reader is talking to.
+    const ok = isAllowedApiBase(stored);
     return {
-      apiBase: typeof raw.apiBase === 'string' && raw.apiBase ? raw.apiBase : DEFAULT_BASE,
+      apiBase: ok ? stored : DEFAULT_BASE,
       covers: raw.covers !== false,
+      rejectedApiBase: ok ? null : stored,
     };
   } catch {
-    return { apiBase: DEFAULT_BASE, covers: true };
+    return { apiBase: DEFAULT_BASE, covers: true, rejectedApiBase: null };
   }
 }
 
 function saveSettings() {
-  try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings)); } catch { /* non-fatal */ }
+  // Only the two real settings are written. rejectedApiBase is a report about this boot, and
+  // persisting it would turn a one-off complaint into part of the stored record.
+  //
+  // The refused value is written back rather than the fallback, because this is not only called
+  // by the form that changes the base. setCovers() calls it too, so toggling cover art would
+  // otherwise overwrite whatever the reader had configured with the default they were given
+  // instead, unrecoverably and without saying so: the settings field already shows the fallback,
+  // so there would be nothing left on screen holding the old value.
+  const apiBase = settings.rejectedApiBase ?? settings.apiBase;
+  try { localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers })); } catch { /* non-fatal */ }
 }
 
 function activeListId() {
@@ -2275,6 +2298,13 @@ function wireData() {
       return notify('#restore-report', 'That API URL is not usable: use https, or http against localhost.', 'error');
     }
     settings.apiBase = value;
+    // Cleared before the write, not after. saveSettings() prefers the refused value precisely so
+    // that an unrelated write cannot discard it, which would also discard this one if the order
+    // here were the other way round.
+    if (settings.rejectedApiBase) {
+      settings.rejectedApiBase = null;
+      clearNotice(API_BASE_REJECTED);
+    }
     saveSettings();
     cache = new ResponseCache({ baseUrl: value });
     api = new MarvelApi({ baseUrl: value, limiter, cache, onStatus: onApiStatus });
@@ -2414,6 +2444,23 @@ checkHealth();
 refreshCacheUsage();
 
 if (store.lastError) notify('#save-report', store.lastError, 'error');
+
+// Reported after the first render, because a notice placed before there is a view to place it in
+// has nowhere to go. #app-report follows the reader between views, unlike the settings pane this
+// value is edited in, which is only seen by someone who already went looking for it.
+//
+// The launch page reads the same stored value and refuses it too, but it has no default to fall
+// back on and no reason to invent one, so it skips the lookup and sends the tab to marvel.com.
+// That degradation is named here because it happens in a tab this app does not control, where
+// nothing would otherwise explain it.
+if (settings.rejectedApiBase) {
+  notify(
+    '#app-report',
+    `The saved API URL ${settings.rejectedApiBase} is not usable. The tracker is using ${DEFAULT_BASE} for this session, and any issue without a stored Marvel Unlimited link will open on marvel.com rather than in the reader. Set a usable URL under Backup & settings: use https, or http against localhost.`,
+    'warn',
+    API_BASE_REJECTED,
+  );
+}
 
 // Written once at startup rather than from renderAll, because neither number can change
 // while the page is open, and a bug report needs them to be there whether or not the user
