@@ -41,6 +41,16 @@ quote in a bug report.
 
 ### Changed
 
+- Committing the prompt behind the eleven Repository Constraints is no longer planned, and
+  [`.github/copilot-instructions.md`](.github/copilot-instructions.md) now says so where it used to
+  promise the opposite. The prompt drove a single session's backlog and study pass, and a spent
+  instruction to an agent is not an artifact the repository owes anybody. What mattered was the
+  eleven constraints themselves, and those were already recovered into that file word for word. The
+  practical consequence is worth stating plainly, because the file previously described its table as
+  a copy held until the source landed: that table is now the only copy of the eleven that will exist
+  here, so it is the source rather than a convenience duplicate of one. Parking it also retires the
+  unbuilt "historical document" exemption the anchors gate would have needed, which now has no caller.
+
 - Pull request bodies now open with a plain English summary, and
   [`.github/copilot-instructions.md`](.github/copilot-instructions.md) says what that means. The
   request came from the person reviewing them: the technical sections were written for a reader who

@@ -352,12 +352,20 @@ Repository Constraints by number and record the check in the item's detail block
 every gate line in the backlog comes from, and its mandated `Breaches Constraint n` wording is what
 BL-025's parked reason is written in.
 
-That prompt is still **not committed**. It sits untracked in the main checkout at
+That prompt is **not committed, and will not be**. It sits untracked in the main checkout at
 `.github/prompts/product-backlog-ux-study.prompt.md`, byte-identical to the copy the session read
-from its attachments directory. Committing it is filed as its own backlog item rather than done
-here, because it carries three stale example citations that the anchors gate would enroll as live
-claims and one of them is already false. Until that lands, this table is the only committed copy of
-the eleven. Treat it as the record, and do not paraphrase it.
+from its attachments directory. Committing it was filed as BL-060 and parked by the owner on
+2026-08-07: the prompt drove one session's task, and a spent instruction to an agent is not an
+artifact this repository owes anybody. Two things follow, and the second is the one that matters.
+
+Doing it would not have been free. The prompt carries three stale example citations that the anchors
+gate would enroll as live claims, and one of them is already false, so the gate would have needed the
+notion of a historical document first. That work is not built and now has no caller.
+
+**So the table below is the only copy of the eleven that will ever exist in this repository.** It is
+not a convenience copy of a source held elsewhere; it is the source. Treat it as the record, do not
+paraphrase it, and do not edit a row on the assumption that the original can be consulted to settle a
+disagreement, because outside one untracked file on one machine it cannot.
 
 Read the table as a record of what the gate lines were checked against, not as a live checklist. It
 is reproduced as it was written, so parts of it have been overtaken by events. Where that has
