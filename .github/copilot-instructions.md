@@ -37,8 +37,10 @@ Keep using the convention rather than inventing a scratch layout:
 - `Pxx` for phases and `Pxx-Txx` for tasks, carried as `<!-- rpi:phase id=P00 -->` and
   `<!-- rpi:task id=P00-T01 -->` markers immediately before the matching heading in the plan.
 - Plan critiques number findings `CR-xxx` in a table. The changes record uses `CHG-xxx` section
-  headings that name the task they satisfy, and the review log refers back to those ids. Extend
-  those schemes rather than starting a new one.
+  headings, each carrying a date, a trigger and a status. One of the four names the plan task it
+  closes; the rest exist precisely because the work departed from the plan, which is what a changes
+  record is for. Do not invent a task id to hang an unplanned change on, and do not decline to
+  record one because it has no task. The review log then refers back to those `CHG-xxx` ids.
 - Tracking artifacts are working evidence, not product documentation. Keep `.copilot-tracking/`
   paths out of product code, code comments and commit messages. Tooling configuration is exempt
   and has to be, since `eslint.config.mjs` ignores the directory by glob, and documentation may
@@ -123,9 +125,13 @@ release.
 
 ## The evidence anchors gate, and how to not corrupt it
 
-Every `path:line` citation in `PRODUCT_BACKLOG.md` and `docs/UX_STUDY.md` is fingerprinted by the
-**content** of the lines it names, not by the numbers. Editing code moves lines and breaks
+Every `path:line` citation in every tracked Markdown file, this one included, is fingerprinted by
+the **content** of the lines it names, not by the numbers. Editing code moves lines and breaks
 fingerprints. That is the gate working.
+
+Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:101-104` explains why in the
+script itself: an enumeration is a list someone has to keep complete, and every anchor defect the
+gate exists to catch was caused by exactly that.
 
 The workflow is:
 
@@ -216,9 +222,11 @@ supplies the period. This is a rule about that function, not about test naming. 
 `test()` throughout and there are no `describe()` blocks to match.
 
 **Constraint 11 forbids em dashes** in copy you write or edit. Scan the added lines of your diff
-before committing, because they are easy to introduce and invisible in review. Note that this scans
-only added lines, which is what you want: vendored data and the historical tracking artifacts
-already contain dashes and are not yours to rewrite.
+before committing, because they are easy to introduce and invisible in review. The scan flags en
+dashes too, which is deliberate: the en dash half of the constraint is inferred rather than sourced,
+so treat one of those as worth a look rather than an automatic fix. Note it scans only added lines,
+which is what you want, since vendored data and the historical tracking artifacts already contain
+both and are not yours to rewrite.
 
 ```
 git --no-pager diff origin/main --unified=0 | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=s.split(/\r?\n/).filter(l=>l.startsWith('+')&&!l.startsWith('+++')&&/[\u2013\u2014]/.test(l));console.log(b.length);b.forEach(l=>console.log(l));})"
@@ -248,11 +256,11 @@ later. Refusals are a backstop, not a design.
   changes count; there is precedent in the 1.0.0 entry.
 - Update `PRODUCT_BACKLOG.md` in the same change that ships the work, not afterwards. Work that
   lands without a backlog record is work the document now disagrees with.
-- **Repository meta-documentation is exempt from the backlog rule**, this file included. The
-  backlog tracks product work, and every detail block closes with a constraint gate line that
-  cannot be written honestly while constraints 8 and 9 are unknown. Record such changes in
-  `CHANGELOG.md` only. Do not create a backlog item to satisfy the rule and do not write a gate
-  line you did not actually check.
+- **Agent and contributor instructions are exempt from the backlog rule**, this file included. They
+  change how work is done, not what the product does, and the backlog's own opening line scopes it
+  to product improvements. This is a narrow exemption: repository infrastructure is **not** exempt,
+  and BL-039 and BL-040 are the precedent, both CI and lint tooling with full backlog blocks.
+  Record instructions changes in `CHANGELOG.md` only.
 
 ## Windows PowerShell 5.1
 
@@ -319,13 +327,15 @@ owner before relying on a clean gate.
 | 10 | Single-user private application. There is exactly one persona; segment thinking is ruled out. |
 | 11 | No em dashes in prose or UI copy you write or edit. The en dash half is inferred: only the em dash is ever named in the sources. Vendored data under `src/data/` and the dated `.copilot-tracking/` artifacts already contain both and are out of scope; do not rewrite them to satisfy this. |
 
-Two further standing rules from the original build. Both come from the only enumerated constraint
-list that was ever committed, the five-item one under "Standing constraints for future work" in the
-original review log at
-`.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79`. That citation
-is the one deliberate exception to the rule against citing tracking artifacts by line, because this
-table has no other source. Three of the review log's five map onto constraints 1, 6 and 7 above,
-which is part of why those reconstructions can be trusted.
+Two further standing rules from the original build. Both come from the only enumerated list of
+*product* constraints that was ever committed, the five-item one under "Standing constraints for
+future work" in the original review log at
+`.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79`. The research
+artifact carries a second committed "Constraints" table, but it is about host hardware and platform
+viability, so it is not the missing list. That citation is the one deliberate exception to the rule
+against citing tracking artifacts by line, because this table has no other source. Three of the
+review log's five map onto constraints 1, 6 and 7 above, which is part of why those reconstructions
+can be trusted.
 
 The remaining two are recorded here as standing rules rather than as numbered constraints. **They
 are also the leading candidates for the missing 8 and 9**, since exactly two are unmapped and

@@ -14,6 +14,11 @@
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
   },
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:101-104|0": {
+    "anchor": "scripts/check-anchors.mjs:101-104",
+    "fp": "d30721f171c58774",
+    "head": "// Every tracked Markdown file, listed by git rather than by this script. Membership"
+  },
   ".github/copilot-instructions.md|what-the-app-is|src/js/storage.js:9|0": {
     "anchor": "src/js/storage.js:9",
     "fp": "8b1350d747d08b62",
