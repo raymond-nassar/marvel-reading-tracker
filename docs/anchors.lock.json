@@ -84,8 +84,8 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1600-1603|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1600-1603",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1638-1641|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1638-1641",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -536,13 +536,13 @@
   },
   "PRODUCT_BACKLOG.md|7-maintainability|scripts/vendor-index.mjs:40-54|0": {
     "anchor": "scripts/vendor-index.mjs:40-54",
-    "fp": "1350e867b612018d",
-    "head": "async function getJson(url, attempt = 0) {"
+    "fp": "745de1f8edbf0a18",
+    "head": "function parseOnly(argv) {"
   },
   "PRODUCT_BACKLOG.md|7-maintainability|scripts/vendor-orders.mjs:48-62|0": {
     "anchor": "scripts/vendor-orders.mjs:48-62",
-    "fp": "1350e867b612018d",
-    "head": "async function getJson(url, attempt = 0) {"
+    "fp": "9db8194dc92436fe",
+    "head": "async function getText(url) {"
   },
   "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2445-2458|0": {
     "anchor": "src/js/main.js:2445-2458",
@@ -619,6 +619,31 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
+  "PRODUCT_BACKLOG.md|item-details|scripts/build-event-order.mjs:203|0": {
+    "anchor": "scripts/build-event-order.mjs:203",
+    "fp": "2c3648b8f1356780",
+    "head": "const { getJson } = createJsonFetcher();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:37-42|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:37-42",
+    "fp": "692178afd2979f69",
+    "head": "export function createJsonFetcher({"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:51-60|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:51-60",
+    "fp": "7aa18c32ba31e0a8",
+    "head": "async function getJson(url) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-index.mjs:38|0": {
+    "anchor": "scripts/vendor-index.mjs:38",
+    "fp": "2c3648b8f1356780",
+    "head": "const { getJson } = createJsonFetcher();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:46|0": {
+    "anchor": "scripts/vendor-orders.mjs:46",
+    "fp": "2c3648b8f1356780",
+    "head": "const { getJson } = createJsonFetcher();"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/dev-faults.css:47|0": {
     "anchor": "src/dev-faults.css:47",
     "fp": "c1dfca58d0503b1f",
@@ -678,6 +703,11 @@
     "anchor": "src/js/lib/availability.js:10",
     "fp": "baff944060f60826",
     "head": "// So we never claim an issue *is* available. We report one of five explicit"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/limiter.js:91-92|0": {
+    "anchor": "src/js/lib/limiter.js:91-92",
+    "fp": "c8d52f20a95f9202",
+    "head": "async pump() {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:158-161|0": {
     "anchor": "src/js/lib/model.js:158-161",
@@ -889,6 +919,11 @@
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
+  "PRODUCT_BACKLOG.md|item-details|test/limiter.test.js:7-14|0": {
+    "anchor": "test/limiter.test.js:7-14",
+    "fp": "b12fe5d4e197c766",
+    "head": "function fakeClock() {"
+  },
   "PRODUCT_BACKLOG.md|orientation-disagreements|package.json:10|0": {
     "anchor": "package.json:10",
     "fp": "3ecaccb832a49e38",
@@ -956,8 +991,8 @@
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:201-301|0": {
     "anchor": "scripts/vendor-orders.mjs:201-301",
-    "fp": "6227b9932703e063",
-    "head": "const { entries, unresolved } = parseChecklist(md);"
+    "fp": "7be2b2cbaca06406",
+    "head": "}"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/lib/markdown.js:36-99|0": {
     "anchor": "src/js/lib/markdown.js:36-99",
@@ -1314,10 +1349,10 @@
     "fp": "f11249cc46b4b154",
     "head": "constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-046|scripts/vendor-index.mjs:40-54|0": {
-    "anchor": "scripts/vendor-index.mjs:40-54",
-    "fp": "1350e867b612018d",
-    "head": "async function getJson(url, attempt = 0) {"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-046|scripts/lib/fetch-json.mjs:51-60|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:51-60",
+    "fp": "7aa18c32ba31e0a8",
+    "head": "async function getJson(url) {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:496-512|0": {
     "anchor": "src/styles.css:496-512",

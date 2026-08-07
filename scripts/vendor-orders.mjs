@@ -21,7 +21,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { RateLimiter } from '../src/js/lib/limiter.js';
+import { createJsonFetcher } from './lib/fetch-json.mjs';
 import { parseChecklist } from '../src/js/lib/markdown.js';
 import { parseCatalog } from '../src/js/lib/catalog.js';
 import { parseManifest } from '../src/js/lib/curated.js';
@@ -43,23 +43,7 @@ async function loadOrders() {
   return entries;
 }
 
-const limiter = new RateLimiter();
-
-async function getJson(url, attempt = 0) {
-  return limiter.schedule(async () => {
-    const res = await fetch(url, { headers: { accept: 'application/json' } });
-    limiter.observe(res.headers);
-    if (res.status === 429 || res.status >= 500) {
-      if (attempt >= 5) throw new Error(`${res.status} after retries: ${url}`);
-      const wait = limiter.backoff(attempt);
-      limiter.penalize(wait);
-      await new Promise((r) => setTimeout(r, wait));
-      return getJson(url, attempt + 1);
-    }
-    if (!res.ok) throw new Error(`${res.status} ${url}`);
-    return res.json();
-  });
-}
+const { getJson } = createJsonFetcher();
 
 async function getText(url) {
   const res = await fetch(url);

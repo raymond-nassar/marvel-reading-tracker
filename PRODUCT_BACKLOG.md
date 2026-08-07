@@ -9,9 +9,9 @@ built as well as what has not. Of the 28 stories originally written here, 22 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Seventeen items have since been delivered and are marked `Shipped` in the table below: BL-027,
-BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-039, BL-040, BL-043, BL-044, BL-045, BL-047,
-BL-048, BL-049, BL-050 and BL-051. Their detail blocks record
+Eighteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
+BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-039, BL-040, BL-043, BL-044, BL-045, BL-046,
+BL-047, BL-048, BL-049, BL-050 and BL-051. Their detail blocks record
 what changed, what was measured, and which tasks were deliberately left open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
 without touching the colours, for the reasons recorded in its block. Six remain open on
@@ -199,7 +199,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Shipped | src/js/main.js:74 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Ready | design/mockups/5-longbox-focus.html:169-172 |
-| BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Ready | scripts/vendor-index.mjs:40-54 |
+| BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:51-60 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Ready | src/js/main.js:1447-1457 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Ready | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
 | BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Ready | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
@@ -913,13 +913,51 @@ its own assertion, which fails on its own when the preference in `saveSettings` 
 
 **BL-046: Share the retry and backoff between the two vendor scripts**
 
-- [ ] Extract the shared retry and backoff into one module
-- [ ] Use it from both vendor scripts
-- [ ] Keep the existing rate-limit behaviour identical
-- [ ] Cover the extracted module with tests
+- [x] Extract the shared retry and backoff into one module
+- [x] Use it from both vendor scripts
+- [x] Keep the existing rate-limit behaviour identical
+- [x] Cover the extracted module with tests
 
 Constraint gate: checked 1 to 11, none breached. Constraint 2 applies: the shared client must keep
 fetching only from the metadata API.
+
+Shipped, and wider than the title says. The item was written against two vendor scripts; there were
+three copies, because `scripts/build-event-order.mjs` carries the same function. All three were
+byte-identical, 589 characters each from `async function` to the closing brace, so the third was
+taken with the other two rather than left as the one place a rate-limit fix would still have to be
+applied twice. The shared module is
+`scripts/lib/fetch-json.mjs`, a factory at `scripts/lib/fetch-json.mjs:37-42` whose limiter, fetch,
+sleep and attempt count are all injectable, which is what makes it testable on a virtual clock the
+way `src/js/lib/limiter.js` already is. It lives under `scripts/` rather than `src/js/lib/` because
+nothing in it is served to the browser. Each script now reads
+`const { getJson } = createJsonFetcher();` at `scripts/vendor-index.mjs:38`,
+`scripts/vendor-orders.mjs:46` and `scripts/build-event-order.mjs:203`, and none of them used the
+limiter for anything besides `getJson`, so the local binding went with the copy.
+
+The extraction found a deadlock, which was fixed with it. The copies retried by calling themselves
+from inside `limiter.schedule()`, so a retrying request held its concurrency slot while queueing the
+job that would release it, and `pump()` at `src/js/lib/limiter.js:91-92` returns early once `active`
+reaches `concurrency`. Measured against the original shape at its default concurrency of 2: one
+request needing one retry completes in 2 fetches, one request needing two retries stops for ever at
+`active` 2 and `queued` 1, and two requests each needing one retry stop at `active` 2 and `queued` 2.
+Nothing times out. A second retry is not an exotic case and 429s arrive together because rate
+limiting is what produces them, so both shapes are reachable in a normal vendoring run. The fix is
+to schedule each attempt separately and loop outside `schedule()`, at
+`scripts/lib/fetch-json.mjs:51-60`, which also lets the limiter pace the backoff instead of holding a
+slot through it.
+
+Rate-limit behaviour is otherwise unchanged and the tests pin the parts that could drift: six
+attempts in total, matching the copies' `attempt >= 5`; the same two error strings; the same
+`accept: application/json` header; `observe()` on every response so `retry-after` still reaches the
+limiter; and `penalize()` alongside each backoff. `test/fetch-json.test.js` adds nine tests, taking
+the suite from 256 to 265, and runs in 0.15 seconds because the limiter is given the virtual clock
+from `test/limiter.test.js:7-14` rather than a real one, which is worth the injection on its own: the
+same nine tests took 48 seconds against `Date.now`. Three of the nine fail against the pre-change
+shape, checked by swapping the module back to it. They are the ones that would otherwise hang rather
+than fail, so each carries its own deadline; `node --test` has no default timeout, and a hung run is
+indistinguishable from a slow one. Beyond the unit tests, `scripts/vendor-index.mjs` was run
+end to end with `fetch` stubbed to serve one 503 and then a two-record page: it retried, wrote a
+`series-index.json` the app's own parser accepted, and made exactly 2 calls.
 
 **BL-047: Split the two meanings of the row class**
 

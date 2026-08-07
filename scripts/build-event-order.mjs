@@ -25,7 +25,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { RateLimiter } from '../src/js/lib/limiter.js';
+import { createJsonFetcher } from './lib/fetch-json.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const API = 'https://marvel.emreparker.com/v1';
@@ -200,23 +200,7 @@ function cleanText(s) {
   return String(s ?? '').replace(/\s+/g, ' ').trim();
 }
 
-const limiter = new RateLimiter();
-
-async function getJson(url, attempt = 0) {
-  return limiter.schedule(async () => {
-    const res = await fetch(url, { headers: { accept: 'application/json' } });
-    limiter.observe(res.headers);
-    if (res.status === 429 || res.status >= 500) {
-      if (attempt >= 5) throw new Error(`${res.status} after retries: ${url}`);
-      const wait = limiter.backoff(attempt);
-      limiter.penalize(wait);
-      await new Promise((r) => setTimeout(r, wait));
-      return getJson(url, attempt + 1);
-    }
-    if (!res.ok) throw new Error(`${res.status} ${url}`);
-    return res.json();
-  });
-}
+const { getJson } = createJsonFetcher();
 
 // An issue with no on-sale date cannot be placed in a publication order, and a series that
 // returns nothing usable means the metadata moved under us. Both are reported as failures rather
