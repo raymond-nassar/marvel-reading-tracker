@@ -199,7 +199,7 @@ BL-050's, which was never written; see BL-057.
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:150-152 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | CHANGELOG.md:85-86 |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2383-2385 |
+| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2389-2391 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1232-1259 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
@@ -777,11 +777,15 @@ Two smaller decisions, both found by the browser check rather than by reading:
   unrelated write happened to flush it. A review then found the same hole still open for a stored
   value of the wrong type, because `loadSettings` was coercing one to All before `wireReading` could
   recognise it as wrong. Nothing coerces it now; a wrong type takes the same route as a wrong string.
-  An empty radio group is not treated as either, since that says the document is missing rather than
-  the value being bad, and correcting storage on the strength of it would discard a good filter.
-- **The radio is set from the state rather than left to the markup.** The markup always starts on
-  All, and a browser restoring form state across a reload sets the control without telling this
-  module. Either can disagree with what `renderRows` is about to use.
+  An empty radio group was not treated as either, since that said the document was missing rather
+  than the value being bad, and correcting storage on the strength of it would have discarded a good
+  filter. BL-053 removed that case: the group is filled from the list immediately above this check,
+  so a document missing the fieldset now fails at the append instead.
+- **The radio is set from the state rather than left to the browser.** A browser restoring form
+  state across a reload sets the control without telling this module, and it can disagree with what
+  `renderRows` is about to use. The markup was the other source of disagreement, because it always
+  started on All; since BL-053 it authors no radio at all, and this line is what puts the first mark
+  on the group.
 
 The fourth task stays open because BL-036 has not landed. Carrying the filter in the URL is
 conditional on that item, and doing it here would mean inventing the URL scheme BL-036 exists to
@@ -1283,7 +1287,9 @@ These anchors were never correct in any commit that contained them. `docs/UX_STU
 `240e6d3`, and the story-verification table was written in the same commit, but both were measured
 against the working tree at `b18fc47`. In between, `e6d27c4` had already moved `src/js/main.js` by
 fourteen lines and `src/styles.css` by forty-one, and `240e6d3` touches neither file, so the
-citations were stale the moment they were committed. `src/js/main.js:1520-1525` shows it plainly: at
+citations were stale the moment they were committed. Lines 606 to 611 of `src/js/main.js` show it
+plainly, written here in prose because they are a frozen historical reference and a citation would be
+chased by the anchors gate and re-aimed away from the claim: at
 `b18fc47` those lines are the `SHORT_LABEL` declaration the row claims, and at `240e6d3`, where the
 row was born, they are `]));`.
 
@@ -1764,7 +1770,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2240-2242` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2246-2248` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -1773,11 +1779,11 @@ the same list: the
 audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
 have since taken it to 294; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:157-159`. Appendix A
 does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
-editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2259-2261`. Overwriting would have destroyed
+editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2265-2267`. Overwriting would have destroyed
 the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2086-2088` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2092-2094` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,

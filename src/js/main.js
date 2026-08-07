@@ -1100,9 +1100,9 @@ function wireReading() {
     settings.filter = filter;
     saveSettings();
   }
-  // The control is set from the state rather than left to the markup, which always starts on All,
-  // or to the browser's own form restoration on a reload, which restores the control without
-  // telling this module. Either can disagree with what renderRows() is about to use.
+  // The control is set from the state rather than left to the browser's own form restoration on a
+  // reload, which restores it without telling this module. The rendered group starts with nothing
+  // checked, so this is also what puts the first mark on the filter in force.
   const active = radios.find((r) => r.value === filter);
   if (active) active.checked = true;
 
