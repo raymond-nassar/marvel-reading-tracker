@@ -57,9 +57,9 @@ quote in a bug report.
   pass a hundred was a single 138-word paragraph explaining why the series audit reads its index out
   of committed history. That paragraph is now three, one per argument, and the longest sentence in
   the section is 36 words. Five terms a new contributor would not know are handled, the four the
-  task named and one it had not spotted: to vendor a list, `depth` and placeholder are now defined
-  where they are used, while "snapshot date" and "pinned JSON" are simply said differently, which
-  moves "snapshot" to the paragraph that already explained it. Three em dashes are gone. No command,
+  task named and one it had not spotted: to vendor a list, `depth`, placeholder and snapshot are
+  all defined where they are used, the earlier undefined use of "snapshot" is gone, and the
+  phrase "pinned JSON" is now "the JSON already committed". Three em dashes are gone. No command,
   path, field name or claim about behaviour changed, so nothing here alters what the scripts do or
   how to run them.
 

@@ -1419,13 +1419,13 @@ is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on i
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
-The vocabulary was handled by defining three of the four terms and removing the fourth's undefined
-first use. `vendor` is now defined where the word first appears, at `README.md:291-295`, as fetching
-a list once and committing what came back. `depth` gained a gloss in the field table, which had
-listed its three values without ever saying what the field meant. `placeholder` is defined inline at
-its only remaining use. `snapshot` is the fourth, and the one genuinely avoided rather than defined:
-the sentence that said "snapshot date" before anything had defined a snapshot now says the date is
-restamped, which moves the term's first appearance to the paragraph that already explained it.
+The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
+one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
+`README.md:291-295`, as fetching a list once and committing what came back. `depth` gained a gloss
+in the field table, which had listed its three values without ever saying what the field meant.
+`placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
+first use, as recording what upstream held on the day the file was built, and the earlier sentence
+that said "snapshot date" before anything had defined a snapshot now says the date is restamped.
 "pinned JSON" became "the JSON already committed", pinning being a fifth undefined term the task had
 not spotted.
 
