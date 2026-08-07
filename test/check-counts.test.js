@@ -72,6 +72,19 @@ test('an id in the delivered list that is not marked Shipped is caught', () => {
   assert.match(found[0].message, /names BL-017, which the table does not mark Shipped/);
 });
 
+// Comparing the two sides as sets is the obvious way to write this check and it is blind
+// here, because a duplicate is in neither difference. Caught in review of the commit that
+// added the checker, on the argument that the edit which writes an id twice is the same
+// one that writes a detail block twice, and that had already happened.
+test('an id written twice in the delivered list is caught, though it is in neither difference', () => {
+  const text = mutate('below: BL-014,', 'below: BL-014, BL-014,');
+  const d = derive(text);
+  const found = checkLedger(d);
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, /names BL-014 more than once/);
+  assert.match(found[0].message, new RegExp(`lists ${d.shipped.length + 1} id\\(s\\) for ${d.shipped.length} Shipped row\\(s\\)`));
+});
+
 test('a rank left over from a smaller table is caught in both halves', () => {
   const d = derive(REAL);
   const text = mutate('rank 16 of 36', 'rank 15 of 34');

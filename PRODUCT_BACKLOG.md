@@ -157,7 +157,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 294; 224 is the figure as audited.
+  it to 310; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -1845,20 +1845,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2420-2422` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2430-2432` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
-the same list: the
-audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
-have since taken it to 294; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:158-160`. Appendix A
-does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
-editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2439-2441`. Overwriting would have destroyed
-the audit trail these sections exist to keep.
+the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
+figure as audited" at `PRODUCT_BACKLOG.md:158-160`. The clause is quoted only as far as its fixed
+half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
+record would be the same defect in a second place, which is the rule BL-059 later had to state
+outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2449-2451`.
+Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2266-2268` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2276-2278` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -1955,6 +1956,15 @@ sat in the ranked table: every `rank N of M` in Appendix B was wrong in both hal
 spelled-out ordinals with them. That set was also found by hand, during the contrarian pass on
 parking BL-060, and finding it was luck rather than method. Two defects this repository paid for
 twice over are recomputed by this gate in under a second.
+
+**What the review of this commit found.** The delivered-id check compared the two lists as sets,
+which is the obvious way to write it and is blind to an id written twice: a duplicate is in neither
+difference, and the count word beside it is derived from the rows rather than from the list, so it
+agrees too. The gate reported nothing on a ledger that visibly enumerated one id more than the table
+had rows. The check now compares lengths as well and names the repeated id. This is the same edit
+that writes a detail block twice, which the block enumeration had already had to grow a case for,
+and the lesson is that a set comparison answers "which members differ" and was being asked "do these
+two lists agree".
 
 Not closed by this item. The gate reads four claim forms, and the block above names two more figures
 that are derived from the table and remain unchecked: the count of items above a given row, at

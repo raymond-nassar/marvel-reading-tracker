@@ -239,13 +239,20 @@ export function checkLedger(d) {
   const claimed = [...(listText?.[1] ?? '').matchAll(/BL-\d+/g)].map((x) => x[0]);
   const missing = d.shipped.filter((id) => !claimed.includes(id));
   const extra = claimed.filter((id) => !d.shipped.includes(id));
-  if (missing.length || extra.length) {
+  // Set difference alone cannot see a duplicate: an id written twice leaves both
+  // differences empty while the list enumerates one id more than the table has rows, and
+  // the count word is derived from the rows rather than from the list, so it still agrees
+  // too. The edit that writes an id twice is the one that copies a detail block it meant
+  // to move, which checkBlocks below already had to grow a case for.
+  const repeated = [...new Set(claimed.filter((id, n) => claimed.indexOf(id) !== n))];
+  if (missing.length || extra.length || claimed.length !== d.shipped.length) {
     found.push({
       line: i + 1,
       claim: 'the delivered id list',
       message:
         `lists ${claimed.length} id(s) for ${d.shipped.length} Shipped row(s)` +
         (missing.length ? `; missing ${missing.join(', ')}` : '') +
+        (repeated.length ? `; names ${repeated.join(', ')} more than once` : '') +
         (extra.length ? `; names ${extra.join(', ')}, which the table does not mark Shipped` : ''),
     });
   }
