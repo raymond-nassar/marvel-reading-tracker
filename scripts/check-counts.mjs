@@ -304,6 +304,57 @@ export function checkBlocks(d) {
   return found;
 }
 
+// A block that exists twice is caught above by its heading. A block that states one of
+// its own paragraphs twice is not, because it has one heading and one row, and that is
+// the finer form of the same edit: a copy where a move was meant. It reached BL-054 and
+// no gate could see it, since the anchors gate fingerprints only lines something cites
+// and these were not cited.
+//
+// Deliberately not scoped to detail blocks, and deliberately without a minimum length.
+// The defect arrived by copy and paste, which is not a habit that respects a section
+// boundary, and an enumeration of where to look is the thing `scripts/check-anchors.mjs`
+// argues against at length. Measured before it was written: across every tracked
+// Markdown file, exhaustively, at every block length from 8 lines down to 1 and with no
+// length floor at all, it reports exactly one hit, which is the defect. So the check
+// needs no exception list today. That measurement is about the corpus as it stands, not
+// a guarantee about every document that could be written: two identical consecutive
+// table rows, list bullets or lines inside a fenced block would each report, correctly
+// by the rule and unhelpfully in context. If one ever does, that is the decision this
+// design defers rather than one it has already made.
+export function checkRepeats(text) {
+  const lines = text.split(/\r?\n/);
+  // The ceiling is derived rather than picked. A repeat cannot span a blank line, by the
+  // guard below, so both copies must fit inside one blank-free run, which bounds a block
+  // at half the longest such run. Today that is 20 lines against a longest run of 41, so
+  // a fixed 8 would have missed a duplicated paragraph merely for being long, which is
+  // the exact defect this exists to catch. Deriving it cannot.
+  let run = 0;
+  let longest = 0;
+  for (const l of lines) {
+    run = l.trim() === '' ? 0 : run + 1;
+    if (run > longest) longest = run;
+  }
+  const found = [];
+  const claimed = new Set();
+  for (let n = Math.floor(longest / 2); n >= 1; n--) {
+    for (let i = 0; i + 2 * n <= lines.length; i++) {
+      if (claimed.has(i)) continue;
+      const first = lines.slice(i, i + n);
+      // A blank line inside the window would let two unrelated paragraphs that happen to
+      // share a short line pair up across the gap between them.
+      if (first.some((l) => l.trim() === '')) continue;
+      if (first.join('\n') !== lines.slice(i + n, i + 2 * n).join('\n')) continue;
+      for (let k = i; k < i + 2 * n; k += 1) claimed.add(k);
+      found.push({
+        line: i + n + 1,
+        claim: first[0].trim().slice(0, 60),
+        message: `repeats the ${n === 1 ? 'line' : `${n} lines`} above it word for word`,
+      });
+    }
+  }
+  return found;
+}
+
 export function checkAll(text) {
   const derived = derive(text);
   const findings = [
@@ -311,6 +362,7 @@ export function checkAll(text) {
     ...checkOrdinalHeadings(derived),
     ...checkLedger(derived),
     ...checkBlocks(derived),
+    ...checkRepeats(text),
   ].sort((a, b) => a.line - b.line);
   return { derived, findings };
 }
@@ -332,12 +384,26 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.error(`WRONG  ${DOC}:${f.line}  ${f.claim}\n  ${f.message}`);
   }
   if (findings.length) {
-    console.error(
-      `\n${findings.length} stated figure(s) disagree with the table they are derived from. ` +
-        'Each message names the derived value, so the fix is to write that value, or to mark ' +
-        `the claim historical with ${FROZEN} if it is about a past state.`,
-    );
+    // Repeats are not figures and have no derived value to write, so the two classes
+    // are counted apart rather than described by one sentence that fits neither.
+    const repeats = findings.filter((f) => f.message.startsWith('repeats the')).length;
+    const figures = findings.length - repeats;
+    const parts = [];
+    if (figures) {
+      parts.push(
+        `${figures} stated figure(s) disagree with the table they are derived from. ` +
+          'Each message names the derived value, so the fix is to write that value, or to mark ' +
+          `the claim historical with ${FROZEN} if it is about a past state.`,
+      );
+    }
+    if (repeats) {
+      parts.push(
+        `${repeats} passage(s) are stated twice over. Delete the copy the surrounding prose ` +
+          'does not read with, which is usually the second.',
+      );
+    }
+    console.error(`\n${parts.join('\n\n')}`);
     process.exit(1);
   }
-  console.log('every stated figure agrees with the table it is derived from');
+  console.log('every stated figure agrees with the table it is derived from, and nothing is said twice');
 }

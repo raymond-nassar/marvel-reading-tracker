@@ -9,10 +9,10 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Twenty-nine items have since been delivered and are marked `Shipped` in the table below: BL-014,
+Thirty items have since been delivered and are marked `Shipped` in the table below: BL-014,
 BL-026, BL-027, BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-039, BL-040, BL-043, BL-044,
 BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056,
-BL-057, BL-058, BL-059 and BL-061.
+BL-057, BL-058, BL-059, BL-061 and BL-062.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
@@ -210,7 +210,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Ready | eslint.config.mjs:93-97 |
-| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:1765-1768 |
+| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2435-2469 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:204 |
@@ -1762,10 +1762,6 @@ two that pass unfixed are the honest baselines, and they are not the two filter 
 easy to misread: emptying the filtered list is one of the ten that fails. What passes unfixed is the
 scroll position, which never moved, so the third task was already satisfied, and changing the filter,
 because the radio sits outside both rebuilt containers and was never at risk.
-two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is
-easy to misread: emptying the filtered list is one of the ten that fails. What passes unfixed is the
-scroll position, which never moved, so the third task was already satisfied, and changing the filter,
-because the radio sits outside both rebuilt containers and was never at risk.
 
 The last of the twelve is the one worth naming separately, because it exercises the only path in the
 change that can decline to land anywhere. Leaving exactly two unread issues puts one tile on the
@@ -1919,23 +1915,58 @@ commentary than in source, is the decision the first task has to make and record
 
 **BL-062: Delete the paragraph that BL-054's block states twice over**
 
-- [ ] Remove the second copy and confirm the first is the one the surrounding prose reads with
-- [ ] Check the other detail blocks for the same fault
+- [x] Remove the second copy and confirm the first is the one the surrounding prose reads with
+- [x] Check the other detail blocks for the same fault
 
 Constraint gate: checked 1 to 11, none breached.
 
-BL-054's block sets out which of its twelve browser assertions pass against the unfixed tree, and it
-sets it out twice: the four lines at `PRODUCT_BACKLOG.md:1761-1764` are repeated word for word at
-`PRODUCT_BACKLOG.md:1765-1768`. The repetition reads as a stutter rather than as emphasis, and the
-sentence it doubles is the one warning a reader against a specific misreading, so the defect lands on
-the paragraph least able to afford it.
+BL-054's block set out which of its twelve browser assertions pass against the unfixed tree, and it
+set it out twice: four lines repeated word for word. The repetition read as a stutter rather than as
+emphasis, and the sentence it doubled is the one warning a reader against a specific misreading, so
+the defect landed on the paragraph least able to afford it.
+
+The first copy is the one the prose reads with, which is settled rather than assumed: the line above
+it ends on the bare word "The", so the sentence completes into the first copy and the second begins
+mid-clause after a full stop. The second copy was deleted; the retained text is at
+`PRODUCT_BACKLOG.md:1761-1764`.
+
+The second task was the substance. A scan of every tracked Markdown file, at every block length from
+eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
+permanent check worth building rather than a one-off answer worth writing down. The scan needed no
+minimum length and no exception list to stay quiet, so `scripts/check-counts.mjs` now carries it, at
+`scripts/check-counts.mjs:324-356`, and `npm run counts` fails on a repeat.
+
+Putting it in that script rather than in a new one follows what was already there. The counts gate
+already refuses a detail block that appears twice, at `scripts/check-counts.mjs:293-303`, which is
+this same defect one level coarser: an edit that copied where it meant to move. The heading check
+could not see this case, because a block that states its own paragraph twice still has one heading
+and one row, so every enumeration agreed the document was sound.
+
+Deliberately not scoped to detail blocks. Copy and paste does not respect a section boundary, and an
+enumeration of where to look is the thing `scripts/check-anchors.mjs:101-104` argues against, having
+found that every anchor defect the gate exists to catch came from exactly that.
+
+Four tests cover it and all four were proved able to fail. Neutering the check to return nothing
+fails the two that assert a repeat is caught; removing the guard that stops a window spanning a blank
+line fails the one that asserts two paragraphs cannot pair across the gap between them; and the
+fourth, which asserts the committed document is clean, is the one that failed before the deletion
+landed.
+
+Review found a fifth case worth covering. The first draft searched block lengths from a fixed eight
+downwards, a number with no reason behind it, so a duplicated paragraph would have escaped merely for
+running long, which is the defect the check exists to catch. The bound is now derived: a repeat
+cannot span a blank line, by the guard already there, so both copies must sit inside one blank-free
+run and no block can exceed half of the longest. Across the tracked Markdown that run is 41 lines, so
+the real ceiling is 20 rather than 8. A test now duplicates a twelve-line block, which the shipped
+ceiling would have missed.
+
+The gate's summary line was rewritten in the same change, because a repeat is not a figure and has no
+derived value to write, so counting both classes in one sentence would have described neither. The
+two are now counted apart.
 
 Filed out of the BL-058 review rather than fixed in it. The duplication predates that change, which
 neither caused it nor touched those lines, and the change was a focus fix rather than a documentation
-pass. No gate could have caught it: the anchors gate fingerprints cited lines and these are not
-cited, and the counts gate checks figures derived from the ranked table, not prose repeated verbatim.
-The second task exists because a fault that reached one block by copy and paste is the kind that
-reaches others the same way, and nothing has ever looked.
+pass.
 
 **BL-061: Take the two em dashes out of the copy the app puts on screen**
 
@@ -2018,7 +2049,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2605-2606` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2636-2637` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2028,11 +2059,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:158-160`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2623-2625`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2654-2656`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2451-2453` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2482-2484` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -2240,7 +2271,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:224-227` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:236-239` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:151-153` and
 `PRODUCT_BACKLOG.md:158-160` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.

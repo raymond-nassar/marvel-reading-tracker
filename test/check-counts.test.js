@@ -16,6 +16,7 @@ import {
   checkBlocks,
   checkLedger,
   checkRanks,
+  checkRepeats,
   derive,
   numberWord,
   ordinalWord,
@@ -23,6 +24,11 @@ import {
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const REAL = readFileSync(join(ROOT, 'PRODUCT_BACKLOG.md'), 'utf8');
+
+// Read the line ending rather than assuming one. A Windows checkout converts to CRLF and
+// CI does not, so a hardcoded "\r\n" in a mutation target matches nothing on CI and the
+// test fails there having passed locally. That happened on the first push of BL-062.
+const NL = REAL.includes('\r\n') ? '\r\n' : '\n';
 
 // A mutation that silently fails to apply would make its test pass while checking
 // nothing, which is the failure mode these tests exist to rule out elsewhere.
@@ -130,6 +136,51 @@ test('a detail block with no row is caught', () => {
   assert.equal(found.length, 1);
   assert.match(found[0].message, /has a detail block heading but no table row/);
   assert.equal(found[0].claim, 'BL-999');
+});
+
+// The defect these cover is BL-062: BL-054's block stated the same four lines twice, one
+// heading and one row, so every check above it agreed the document was sound.
+test('a paragraph stated twice over is caught', () => {
+  const line = 'because the radio sits outside both rebuilt containers and was never at risk.';
+  const text = mutate(line, `${line}${NL}${line}`);
+  const found = checkRepeats(text);
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, /repeats the line above it word for word/);
+});
+
+test('a multi-line repeat is reported at its true length, not as one line', () => {
+  const pair = 'scroll position, which never moved, so the third task was already satisfied, and '
+    + `changing the filter,${NL}because the radio sits outside both rebuilt containers and was `
+    + 'never at risk.';
+  const text = mutate(pair, `${pair}${NL}${pair}`);
+  const found = checkRepeats(text);
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, /repeats the 2 lines above it word for word/);
+});
+
+// Without this the checker would pair the last line of one paragraph with the first line
+// of the next whenever a document happened to repeat a short line across the gap.
+test('a repeat separated by a blank line is not a repeat', () => {
+  const line = 'because the radio sits outside both rebuilt containers and was never at risk.';
+  const text = mutate(line, `${line}${NL}${NL}${line}`);
+  assert.deepEqual(checkRepeats(text), []);
+});
+
+// A fixed ceiling of 8 shipped in the first draft of this check and would have missed a
+// duplicated paragraph purely for being long, which is the defect it exists to catch. The
+// bound is derived from the longest blank-free run instead, so this fails if that returns.
+test('a repeat longer than any fixed window is still caught', () => {
+  const block = Array.from({ length: 12 }, (_, i) => `line ${i} of a long duplicated paragraph`);
+  const text = `intro${NL}${NL}${block.join(NL)}${NL}${block.join(NL)}${NL}${NL}outro${NL}`;
+  const found = checkRepeats(text);
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, /repeats the 12 lines above it word for word/);
+});
+
+// The point of the check is that it needs no exception list. If the real document ever
+// grows a legitimate repeat, this fails and the decision gets made deliberately.
+test('the document as committed contains no repeat', () => {
+  assert.deepEqual(checkRepeats(REAL), []);
 });
 
 test('a block duplicated by an edit that meant to move it is caught', () => {

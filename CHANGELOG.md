@@ -16,6 +16,18 @@ quote in a bug report.
 
 ### Added
 
+- **The backlog checker now refuses a passage that is written twice.** A detail block in the backlog
+  stated the same four lines over again, word for word, and it was the paragraph warning a reader
+  against a specific misreading, so the stutter landed where it could do most harm. Nothing could
+  have caught it: the citation checker only fingerprints lines something quotes, and these were not
+  quoted, while the count checker looks at numbers. The checker already refused a whole entry that
+  appeared twice, which is the same copy-and-paste slip one size larger, so this is the finer version
+  of a rule that was already there. It deliberately looks at the whole document rather than at the
+  entries alone, because copying and pasting does not respect a section boundary, and it needs no
+  list of exceptions to stay quiet: run over every file in the project before it was written, it
+  found exactly one repeat, which was the defect. Four tests cover it and every one of them was
+  watched failing first.
+
 - **The rule against em dashes in on-screen wording is now enforced by the toolchain.** The
   repository has a standing rule that the words the app shows you contain no em dash, but nothing
   ever checked it, so two had been sitting in shipped wording for months and were found only when
