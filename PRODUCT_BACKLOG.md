@@ -9,17 +9,19 @@ built as well as what has not. Of the 28 stories originally written here, 22 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Thirteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
-BL-029, BL-030, BL-031, BL-034, BL-035, BL-039, BL-040, BL-043, BL-044, BL-048, BL-049 and
-BL-050. Their detail blocks record
+Fourteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
+BL-029, BL-030, BL-031, BL-034, BL-035, BL-039, BL-040, BL-043, BL-044, BL-048, BL-049,
+BL-050 and BL-051. Their detail blocks record
 what changed, what was measured, and which tasks were deliberately left open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
-without touching the colours, for the reasons recorded in its block. Four remain open on
+without touching the colours, for the reasons recorded in its block. Five remain open on
 purpose: making the CI run required before merge is a repository setting rather than a change to
 the tree, tagging a release needs a commit to point at, confirming BL-027 with a screen reader
-is a human check no automated run substitutes for, and BL-031's axe re-run cannot be satisfied as
+is a human check no automated run substitutes for, BL-031's axe re-run cannot be satisfied as
 written, because axe declines to judge text over a gradient and the finding was answered by
-computing the contrast bound instead. `CHANGELOG.md` carries the
+computing the contrast bound instead, and BL-051's README walkthrough has to be done by someone
+who does not write software, which is the one thing its author cannot self-certify.
+`CHANGELOG.md` carries the
 user-facing view of the same work.
 
 ## Product direction
@@ -190,6 +192,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:1401-1419 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:247-268 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:272-307 |
+| BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Ready | src/js/api.js:18-26 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Ready | src/js/main.js:2200-2218 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
@@ -197,6 +200,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Ready | design/mockups/5-longbox-focus.html:169-172 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Ready | scripts/vendor-index.mjs:40-54 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Ready | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
+| BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Ready | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
 | BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Ready | src/js/main.js:2372-2384 |
 | BL-007 | Give the event orders the variants the catalog can already carry | Story | EP-02 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | P1 | Observed | Ready | src/data/catalog.json |
 | BL-032 | Offer a light theme and follow the system preference | Story | EP-08 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Ready | src/styles.css:7 |
@@ -1108,6 +1112,79 @@ compared, so a lock this script cannot read is refused rather than described as 
 failure is caught says nothing about whether it is diagnosed, and a plausible number is what stops
 you looking.
 
+**BL-051: Make the README enough for a non-engineer to run the app**
+
+- [x] Establish by doing rather than by reading: follow the README literally in a clone with nothing installed
+- [x] State the prerequisites, including the Node floor the engines field already declares
+- [x] Write the address out literally, port included, and say what correct output looks like
+- [x] Explain the origin trap in words a reader without a storage model can act on
+- [x] Add a troubleshooting section covering the failures a first run actually produces
+- [x] Separate the newcomer path from the contributor material rather than interleaving them
+- [ ] Have a non-engineer follow it start to finish on a machine that has never run the project
+
+Constraint gate: checked 1 to 11, none breached. Constraint 5 is the live consideration and is the
+reason this item exists at all: storage is bound to the origin with the port included, so a reader
+who takes the server's own suggestion to move ports loses sight of their progress. Constraint 3 is
+the second: the privacy promise is a product commitment, so the README has to state it without
+overstating it. Constraint 11 applies to the rewritten prose, which is new copy throughout.
+
+The trigger was a review against a twenty-point readability rubric, scored Pass, Weak or Fail. Four
+criteria passed, three were weak and thirteen failed. That ratio is the finding. The document was
+not badly written; it was written for somebody who already had the project working.
+
+Four failures were graded blockers, meaning a non-engineer could not reach a running app. The
+README named no address anywhere, so a reader who ran the one command it gave had nowhere to go.
+It named no prerequisite, so a reader without Node saw a "not recognised" error the document did
+not acknowledge. It had no troubleshooting section. And the run instructions sat eighth of nine
+headings, behind vendoring, event-order generation and search-index material that a reader must
+not need.
+
+The blocker that mattered most was found by running the instructions rather than by reading them.
+A literal first run in a fresh clone failed on `EADDRINUSE`, because a server was already holding
+the port. That is the single most likely first-run outcome for anyone who has started the app once
+before, and the document said nothing about it. Reading alone would not have surfaced it, which is
+the argument for treating a documentation review as an experiment.
+
+Two claims were corrected rather than restated. The checks paragraph said lint and tests run on
+every push; the workflow scopes its push trigger to `main`, so a feature branch with no open pull
+request correctly produces no run, and there are three checks rather than two. And the privacy
+line said progress "is not uploaded anywhere", which is true, but sat next to nothing about the
+requests the app does make. A browser capture on a plain page load shows calls to the metadata API
+and cover fetches from Marvel's image servers. Both facts are now stated together, because a
+promise a reader can catch you overstating is worth less than a narrower one they can verify.
+
+The origin warning covers the hostname as well as the port. Both halves were confirmed in a
+browser rather than reasoned about: a probe key written at `127.0.0.1` on one port was absent both
+at a second port and at `localhost` on the original port. The second half is the one nobody warns
+about, and a reader who reaches for `localhost` because it reads more like a word will find an
+empty app and no explanation.
+
+The last task is left open deliberately. Every other check here was made by someone who already
+knew the answer, and the rubric's own definition of done is a person who does not write software
+reaching a working app without asking a question. That cannot be self-certified, and recording it
+as passed on the strength of a careful re-read is exactly the substitution this item was raised to
+correct.
+
+Scope was held to the newcomer path. The contributor sections were moved and grouped, not
+rewritten: their long sentences and their undefined vocabulary are real findings, recorded as
+BL-052, and fixing them here would have widened a documentation change into a rewrite of material
+that is serving its actual audience adequately.
+
+**BL-052: Make the contributor sections of the README readable at the same standard**
+
+- [ ] Shorten the sentences in the vendoring and audit sections, which run to over a hundred words unbroken
+- [ ] Define or avoid the vocabulary a new contributor would not know: vendor, snapshot, placeholder, depth
+- [ ] Decide whether the BlueStacks section belongs in the README at all, or in `docs/`
+
+Constraint gate: checked 1 to 11, none breached. No constraint is engaged: this is prose style in
+material that ships no behaviour.
+
+Split out of BL-051 rather than folded into it. BL-051's rubric scored the whole document, and
+three of its criteria failed on passages that only a contributor reads. Fixing them there would
+have meant editing the em dashes and the historical phrasing in sections whose facts were not
+under review, so the finding is recorded where it can be scheduled against its own audience
+instead of riding along with a change aimed at a different reader.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -1529,7 +1606,7 @@ that table.
 ### Case 1: BL-026 is labelled P0 but ranks twelfth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 12 of 27.
+- Calculated: WSJF 3.67, rank 12 of 29.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by eleven items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -1546,7 +1623,7 @@ that table.
 ### Case 2: BL-007 is labelled P1 but ranks twenty-third
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 23 of 27, below nineteen unlabelled items and three places above the
+- Calculated: WSJF 1.4, rank 25 of 29, below twenty-one unlabelled items and three places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -1570,7 +1647,7 @@ that table.
   backlog lost to a scope judgement, and both WSJF and the P1 label would have argued for building
   it. Evidence for the state that prompted it is unchanged and still recorded in the reconciliation
   table and in `docs/UX_STUDY.md`.
-- Consequence for the ranking: with BL-028 removed the table is 27 rows, and the highest Cost of
+- Consequence for the ranking: with BL-028 removed the table is 29 rows, and the highest Cost of
   Delay among the items that remain is 16, shared by BL-029, BL-039 and BL-050.
 
 ### Case 4: eleven items created this pass outrank the only open P0 story
@@ -1586,9 +1663,9 @@ that table.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 16 of 27. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 13 of 27. Mid-table.
-- BL-017, P2, rank 26 of 27. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 17 of 29. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 13 of 29. Mid-table.
+- BL-017, P2, rank 28 of 29. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

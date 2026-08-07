@@ -84,13 +84,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1322-1325|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1322-1325",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1399-1402|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1399-1402",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:218-219|0": {
-    "anchor": "PRODUCT_BACKLOG.md:218-219",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:222-223|0": {
+    "anchor": "PRODUCT_BACKLOG.md:222-223",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
