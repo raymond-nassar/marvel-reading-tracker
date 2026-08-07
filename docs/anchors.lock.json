@@ -589,8 +589,8 @@
     "fp": "6c6878ef6f032cfe",
     "head": "@media (max-width: 880px) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:84-85|0": {
-    "anchor": ".github/workflows/ci.yml:84-85",
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:93-94|0": {
+    "anchor": ".github/workflows/ci.yml:93-94",
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },

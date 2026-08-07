@@ -26,6 +26,13 @@ quote in a bug report.
 
 ### Changed
 
+- CI can now be started by hand on any branch or tag, from the Actions tab or with
+  `gh workflow run CI --ref <branch>`. It previously ran only in response to a push or a pull
+  request, so a commit could only ever be tested at the moment it arrived. During a GitHub
+  Actions incident on 2026-08-06 run creation stalled for hours and three merges reached the
+  default branch with no run recorded against them, which left nothing to retry: a commit that
+  never got a run has no run to re-run. The manual trigger is the way back from that.
+
 - Naming a list and confirming a destructive action now happen in the page instead of in a
   browser dialog. The old `prompt()` and `confirm()` could not be styled or announced through
   the app's own live region, blocked the page, and on a browser told to suppress them a rename

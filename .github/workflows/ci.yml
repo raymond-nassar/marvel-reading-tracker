@@ -4,6 +4,15 @@ on:
   push:
     branches: [main]
   pull_request:
+  # Both triggers above are tied to a repository event, so a commit can only ever
+  # be tested at the moment it arrives. During the Actions incident of 2026-08-06
+  # run creation stalled for hours: no run was ever created for the merge of #18,
+  # and the run for the merge of #17 sat queued for over an hour before wedging in
+  # a state that refused both cancel and rerun. That left main carrying three
+  # merges with no run to re-run and no way to ask for one, because a commit that
+  # never got a run has nothing to retry. This trigger is the recovery path, and
+  # it is what makes a green result reachable for any ref on demand.
+  workflow_dispatch:
 
 # The workflow only ever reads the repository. Nothing here publishes or writes.
 permissions:
