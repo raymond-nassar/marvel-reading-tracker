@@ -9,9 +9,9 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Twenty-one items have since been delivered and are marked `Shipped` in the table below: BL-014,
+Twenty-two items have since been delivered and are marked `Shipped` in the table below: BL-014,
 BL-026, BL-027, BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-039, BL-040, BL-043, BL-044,
-BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051 and BL-052. Their detail blocks record
+BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052 and BL-055. Their detail blocks record
 what changed, what was measured, and which tasks were deliberately left open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
 without touching the colours, for the reasons recorded in its block. Six remain open on
@@ -147,14 +147,21 @@ Three quantities used to brief this pass disagreed with what the repository actu
 are recorded rather than inherited.
 
 * `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last
-  line number when reading the file. Evidence: `src/js/main.js:2495-2508`.
+  line number when reading the file. Evidence: `src/js/main.js:2495-2508`. The work shipped since has
+  taken it to 2,563; 1,566 is the figure as audited.
 * `src/js/ui/` does not exist in this worktree. Evidence: `absent: src/js/ui, Test-Path returning
   False and a recursive directory listing of src/`. Git cannot track an empty directory, so an
   empty `src/js/ui/` in another checkout is a local artifact rather than repository content. Either
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 235; 224 is the figure as audited.
+  it to 285; 224 is the figure as audited.
+
+Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
+re-derived whenever this section is touched rather than carried forward. That is not a general
+caution: the test figure was written as 235 when nine items had shipped and was still reading 235
+after twelve more had, and the line count had no clause at all while the file grew by 997 lines,
+which is what BL-055 was filed for.
 
 A fourth disagreement is internal to the code and is tracked as a backlog item rather than a note,
 because it misleads a reader of the source: see BL-048.
@@ -187,6 +194,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:149-151 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1168-1195 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
@@ -1585,6 +1593,58 @@ change; BL-026 only added a keyboard route into the same rebuild. Fixing it mean
 identity a row's control keeps across a rebuild, which is the question BL-033 has to answer anyway
 when it re-renders only what changed, so the two are probably one piece of work.
 
+**BL-055: Record the drift in the audited figures instead of letting them go stale**
+
+- [x] Re-derive the size of `src/js/main.js` and record the drift where it is stated as a fact
+- [x] Re-derive the test count in the same list, which had drifted further than the one it corrects
+- [x] Decide, and record, which statements of the figure are live claims and which are snapshots
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and is
+2,563, so the file had grown by 997 lines, 64 per cent, while every statement of its size stood
+still. The maintainability gap at `PRODUCT_BACKLOG.md:1990-1992` uses that size as the argument for
+the gap, which made the understated figure an understatement of the debt.
+
+The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
+because this document already has a convention for the case and applies it one bullet below: the
+audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
+have since taken it to 285; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:156-158`. Appendix A
+does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
+editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2007-2009`. Overwriting would have destroyed
+the audit trail these sections exist to keep.
+
+So the audited figures stand and each now carries its drift. Two of the three statements were
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:1836-1838` is a
+past-tense account of the state that motivated OC-3, and the same sentence says there is no linter
+and no changelog, both of which have since shipped; correcting the number alone would leave a
+coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
+which is the treatment the as-is journey map in the UX study already gets.
+
+The drift clause the convention produces is itself a live number in an otherwise fixed record, which
+is why the test figure was written as 235 when nine items had shipped and was still reading 235
+after twelve more had. That is now stated in the section rather than left as a trap.
+
+This is the defect class the anchors gate cannot see. Every citation around these sentences resolved
+throughout, because the lines they name still exist and still say what they said; only the numbers in
+the prose were wrong. Twelve consecutive shipped items passed every gate over a figure that was
+already wrong, which is the argument for re-deriving counts mechanically rather than reading past
+them.
+
+Verified: the size by `(Get-Content).Count`, the test count by a full run, and the ranks and status
+counts this item's own row shifts by a script that parses the ranked table and excludes the Parked
+table, rather than by hand. Adding one row moved BL-026 from twelfth to thirteenth and BL-007 from
+twenty-seventh to twenty-eighth, and both are stated as facts in Appendix B, so both were corrected.
+
+Not closed by this item: nothing enforces the convention. The anchors gate fingerprints the lines a
+citation names, so it will keep reporting these three sentences as sound however wrong their numbers
+become, which is exactly how the figure survived twelve shipped items. What this item leaves behind
+is a written instruction and a worked example, not a gate. A gate would have to know which numbers in
+prose are derived and from what, and that is a larger piece of work than correcting the figures; it
+is not filed as its own item here, because filing one shifts every rank in the table that Appendix B
+states as a fact, and doing that twice in one change would obscure the corrections this item exists
+to make.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -1931,6 +1991,9 @@ The clearest debt in the repository, and it is concentrated in one file.
   every render function. There is no view layer to change independently.
   Evidence: `src/js/main.js:2495-2508`, `src/js/main.js:559-587` (showView switches views by
   mutating a module-level variable).
+  Still open, and wider than audited: the file is 2,563 lines now, so every item shipped since has
+  been added to the one file this gap is about. `BL-055` corrected the figure; `BL-042` is the item
+  that would close the gap.
 - Testability gap: `src/js/cache.js`, `src/js/hydrate.js` and `src/js/main.js` have no test file,
   and they are exactly the modules holding browser-coupled logic.
   Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ and
@@ -2012,21 +2075,21 @@ because BL-014, BL-026 and BL-027 have shipped and BL-025 and BL-028 were droppe
 five keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and four
-further items filed, none of them labelled, which is how it reaches 31 rows now. The ranks below are
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and five
+further items filed, none of them labelled, which is how it reaches 32 rows now. The ranks below are
 positions in it as it stands.
 
-### Case 1: BL-026 is labelled P0 but ranks twelfth
+### Case 1: BL-026 is labelled P0 but ranks thirteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 12 of 31.
+- Calculated: WSJF 3.67, rank 13 of 32.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
-  It is outranked by eleven items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
+  It is outranked by twelve items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
   below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
   else ships" or "must not be dropped". If the former, the label wins and BL-026 moves to the top
-  regardless of the score. If the latter, the score's ordering is fine, because the eleven items
+  regardless of the score. If the latter, the score's ordering is fine, because the twelve items
   above it total a small amount of work.
 - Complicating evidence: the measured keyboard picture is better than the P0 label implies. All 45
   tab stops carry a visible focus ring, focus order matches reading order, and the reverse walk
@@ -2038,10 +2101,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks twenty-seventh
+### Case 2: BL-007 is labelled P1 but ranks twenty-eighth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 27 of 31, below twenty-three unlabelled items and three places above the
+- Calculated: WSJF 1.4, rank 28 of 32, below twenty-four unlabelled items and three places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -2085,9 +2148,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 17 of 31. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 13 of 31. Mid-table.
-- BL-017, P2, rank 30 of 31. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 18 of 32. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 14 of 32. Mid-table.
+- BL-017, P2, rank 31 of 32. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

@@ -89,13 +89,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1799-1802|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1799-1802",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1859-1862|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1859-1862",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:225-226|0": {
-    "anchor": "PRODUCT_BACKLOG.md:225-226",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:233-234|0": {
+    "anchor": "PRODUCT_BACKLOG.md:233-234",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
@@ -609,12 +609,12 @@
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:2048|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-ei|src/js/main.js:2048|0": {
     "anchor": "src/js/main.js:2048",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:2078-2083|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-ei|src/js/main.js:2078-2083|0": {
     "anchor": "src/js/main.js:2078-2083",
     "fp": "e53c56c7408f1625",
     "head": "depth"
@@ -633,6 +633,26 @@
     "anchor": "package.json:14-15",
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
+  },
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:156-158|0": {
+    "anchor": "PRODUCT_BACKLOG.md:156-158",
+    "fp": "ec86394338023888",
+    "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
+  },
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1836-1838|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1836-1838",
+    "fp": "2622e3ad2443790b",
+    "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
+  },
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1990-1992|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1990-1992",
+    "fp": "0d1bb2a8002219e4",
+    "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
+  },
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2007-2009|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2007-2009",
+    "fp": "70f2b470e750ff0d",
+    "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:291-295|0": {
     "anchor": "README.md:291-295",
@@ -1468,5 +1488,10 @@
     "anchor": "src/js/main.js:1331",
     "fp": "21d958ef5a842201",
     "head": "function renderShelf() {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:149-151|0": {
+    "anchor": "PRODUCT_BACKLOG.md:149-151",
+    "fp": "6130a5d5b0ae8cdd",
+    "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   }
 }
