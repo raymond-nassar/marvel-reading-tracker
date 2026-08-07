@@ -56,8 +56,8 @@
   },
   "docs/UX_STUDY.md|job-stories|src/index.html:349-353|0": {
     "anchor": "src/index.html:349-353",
-    "fp": "cd6684034482b973",
-    "head": "<fieldset class=\"filters\">"
+    "fp": "3d856d97acb5205e",
+    "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
   "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:486-510|0": {
     "anchor": "src/js/lib/model.js:486-510",
@@ -74,9 +74,9 @@
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:2300-2332|0": {
-    "anchor": "src/js/main.js:2300-2332",
-    "fp": "0ac1f7ed2d60369c",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:2300-2334|0": {
+    "anchor": "src/js/main.js:2300-2334",
+    "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
   "docs/UX_STUDY.md|keyboard|src/index.html:332-336|0": {
@@ -89,8 +89,8 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1788-1791|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1788-1791",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1796-1799|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1796-1799",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -314,8 +314,8 @@
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:2493-2506|0": {
-    "anchor": "src/js/main.js:2493-2506",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:2495-2508|0": {
+    "anchor": "src/js/main.js:2495-2508",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -354,8 +354,8 @@
     "fp": "6cbc2f6bdb1dc112",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:2377-2383|0": {
-    "anchor": "src/js/main.js:2377-2383",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:2379-2385|0": {
+    "anchor": "src/js/main.js:2379-2385",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -439,9 +439,9 @@
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:2300-2316|0": {
-    "anchor": "src/js/main.js:2300-2316",
-    "fp": "466c7b12bb06f65c",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:2300-2334|0": {
+    "anchor": "src/js/main.js:2300-2334",
+    "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
   "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/api.js:12-17|0": {
@@ -454,8 +454,8 @@
     "fp": "d554f6098a68aa1e",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2493-2506|0": {
-    "anchor": "src/js/main.js:2493-2506",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2495-2508|0": {
+    "anchor": "src/js/main.js:2495-2508",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -494,8 +494,8 @@
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2377-2383|0": {
-    "anchor": "src/js/main.js:2377-2383",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2379-2385|0": {
+    "anchor": "src/js/main.js:2379-2385",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -559,8 +559,8 @@
     "fp": "7aa18c32ba31e0a8",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2493-2506|0": {
-    "anchor": "src/js/main.js:2493-2506",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2495-2508|0": {
+    "anchor": "src/js/main.js:2495-2508",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -604,8 +604,8 @@
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:2385-2405|0": {
-    "anchor": "src/js/main.js:2385-2405",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:2387-2407|0": {
+    "anchor": "src/js/main.js:2387-2407",
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -711,8 +711,8 @@
   },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:349-353|0": {
     "anchor": "src/index.html:349-353",
-    "fp": "cd6684034482b973",
-    "head": "<fieldset class=\"filters\">"
+    "fp": "3d856d97acb5205e",
+    "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:469|0": {
     "anchor": "src/index.html:469",
@@ -884,28 +884,28 @@
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2312-2314|0": {
-    "anchor": "src/js/main.js:2312-2314",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2314-2316|0": {
+    "anchor": "src/js/main.js:2314-2316",
     "fp": "f65558c74b0b4973",
     "head": "$('#progress-sub').textContent = scoped"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2370|0": {
-    "anchor": "src/js/main.js:2370",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2372|0": {
+    "anchor": "src/js/main.js:2372",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2377-2383|0": {
-    "anchor": "src/js/main.js:2377-2383",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2379-2385|0": {
+    "anchor": "src/js/main.js:2379-2385",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2387-2388|0": {
-    "anchor": "src/js/main.js:2387-2388",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2389-2390|0": {
+    "anchor": "src/js/main.js:2389-2390",
     "fp": "8af48711bb3aab2d",
     "head": "const value = $('#api-base').value.trim().replace(/\\/+$/, '');"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2424|0": {
-    "anchor": "src/js/main.js:2424",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2426|0": {
+    "anchor": "src/js/main.js:2426",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
@@ -1014,8 +1014,8 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:2493-2506|0": {
-    "anchor": "src/js/main.js:2493-2506",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:2495-2508|0": {
+    "anchor": "src/js/main.js:2495-2508",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
   },
@@ -1119,20 +1119,20 @@
     "fp": "b81a877a40a9710d",
     "head": "function renderRail() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/index.html:347|0": {
-    "anchor": "src/index.html:347",
-    "fp": "4fa15a7cc8430788",
-    "head": "<div class=\"sub\" id=\"progress-sub\">Counted over unique issues across every list, so an issue in two "
-  },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/index.html:349-353|0": {
     "anchor": "src/index.html:349-353",
-    "fp": "cd6684034482b973",
-    "head": "<fieldset class=\"filters\">"
+    "fp": "3d856d97acb5205e",
+    "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2300-2316|0": {
-    "anchor": "src/js/main.js:2300-2316",
-    "fp": "466c7b12bb06f65c",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2300-2334|0": {
+    "anchor": "src/js/main.js:2300-2334",
+    "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
+  },
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2314-2316|0": {
+    "anchor": "src/js/main.js:2314-2316",
+    "fp": "f65558c74b0b4973",
+    "head": "$('#progress-sub').textContent = scoped"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-015|src/index.html:332-336|0": {
     "anchor": "src/index.html:332-336",
@@ -1189,8 +1189,8 @@
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:2377-2383|0": {
-    "anchor": "src/js/main.js:2377-2383",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:2379-2385|0": {
+    "anchor": "src/js/main.js:2379-2385",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -1249,8 +1249,8 @@
     "fp": "f11249cc46b4b154",
     "head": "constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:2388-2389|0": {
-    "anchor": "src/js/main.js:2388-2389",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:2390-2391|0": {
+    "anchor": "src/js/main.js:2390-2391",
     "fp": "64a12686aef1eb48",
     "head": "if (!isAllowedApiBase(value)) {"
   },
@@ -1309,8 +1309,8 @@
     "fp": "d167aa9becc8784c",
     "head": "if (raw.schemaVersion == null) errors.push('Missing schemaVersion.');"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:2377-2383|0": {
-    "anchor": "src/js/main.js:2377-2383",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:2379-2385|0": {
+    "anchor": "src/js/main.js:2379-2385",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -1329,8 +1329,8 @@
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:2470-2472|0": {
-    "anchor": "src/js/main.js:2470-2472",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:2472-2474|0": {
+    "anchor": "src/js/main.js:2472-2474",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
@@ -1359,9 +1359,9 @@
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:2300-2316|0": {
-    "anchor": "src/js/main.js:2300-2316",
-    "fp": "466c7b12bb06f65c",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:2300-2334|0": {
+    "anchor": "src/js/main.js:2300-2334",
+    "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-026|src/js/lib/shortcuts.js:26-60|0": {
@@ -1394,8 +1394,8 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:2493-2505|0": {
-    "anchor": "src/js/main.js:2493-2505",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:2495-2507|0": {
+    "anchor": "src/js/main.js:2495-2507",
     "fp": "ef3cece5d5a24cbb",
     "head": "function renderAll() {"
   },
@@ -1419,8 +1419,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:2493-2505|0": {
-    "anchor": "src/js/main.js:2493-2505",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:2495-2507|0": {
+    "anchor": "src/js/main.js:2495-2507",
     "fp": "ef3cece5d5a24cbb",
     "head": "function renderAll() {"
   },

@@ -2300,12 +2300,14 @@ function wireProgressScope() {
 function renderProgress() {
   const box = $('#series-progress');
   const list = store.state.lists[activeListId()];
-  // "This list" cannot mean anything without one, so the scope falls back to every list rather
-  // than rendering an empty view, which reads as "you have tracked nothing" and is a different
-  // claim. The radio is disabled in that state so the fallback is visible rather than silent.
+  // `active` is null only when no list exists, so "This list" has no subject to name: the subtitle
+  // below would dereference it, and the choice would be between two options that both render
+  // "Nothing tracked yet." The whole fieldset is hidden rather than one radio disabled, matching
+  // #home-chips and #catalog-filters, which hide for the same reason. A disabled chip was the first
+  // attempt and was wrong: .fp paints the adjacent span, and with no :disabled rule it rendered
+  // identically to a live one, hover lift included.
   const scoped = progressScope === 'list' && Boolean(list);
-  const thisList = $('input[name="progress-scope"][value="list"]');
-  thisList.disabled = !list;
+  $('#progress-scope').hidden = !list;
   for (const radio of document.querySelectorAll('input[name="progress-scope"]')) {
     radio.checked = radio.value === (scoped ? 'list' : 'all');
   }
