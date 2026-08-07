@@ -25,6 +25,17 @@ quote in a bug report.
 
 ### Fixed
 
+- The vendoring scripts no longer hang when the metadata API rate-limits them. Their retry called
+  itself from inside the rate limiter's own queue, so a request that was waiting to try again held
+  one of the two concurrency slots while queueing the work that would have released it. Two retries
+  of a single request, or one retry each of two requests, filled both slots with jobs waiting on
+  jobs that could not start. Nothing timed out, so the script simply stopped with no error and no
+  output. This is reachable in an ordinary run, because 429 responses are what rate limiting
+  produces and they arrive together. Retries are now queued one attempt at a time, which also means
+  the wait between attempts is paced by the limiter rather than spent holding a slot. The number of
+  attempts, the backoff, the pause applied to other requests and the error messages are all
+  unchanged.
+
 - A saved API address that is not usable no longer reaches the network layer. The check for it ran
   only when you typed one into the settings form, but the address is read back out of your browser's
   storage on every start, where a value written by an older build or edited by hand had never been
@@ -39,6 +50,13 @@ quote in a bug report.
   localhost.
 
 ### Changed
+
+- The three build scripts that page the metadata API now share one rate-limited fetch instead of
+  keeping a byte-identical copy each. `scripts/vendor-index.mjs`, `scripts/vendor-orders.mjs` and
+  `scripts/build-event-order.mjs` call a new `scripts/lib/fetch-json.mjs`, so a change to how the
+  scripts handle a rate limit is made once rather than three times and cannot be applied to two of
+  them by accident. It is covered by nine tests, which is nine more than the copies had. Nothing
+  the scripts write changes.
 
 - The `.row` class no longer means two different things. A reading row and a form row shared it, and
   the page only rendered correctly because the form rule was scoped to `.stack` and `.card` and so
