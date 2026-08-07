@@ -89,8 +89,9 @@ quote in a bug report.
   repository. The original was found in the prompt that drove the backlog and UX study pass, which
   is still untracked in the working tree. Constraints 8 and 9 are therefore recorded for the first
   time, and six of the nine reconstructions turned out to have drifted from the wording the backlog
-  gate lines were actually checked against. Committing the source file needs a change to the anchors
-  gate first and is filed as BL-060. Nothing in the app changed.
+  gate lines were actually checked against. Committing the source file was filed as BL-060 and parked
+  on 2026-08-07, so the table in that file is not a copy of a source held elsewhere but the source
+  itself. Nothing in the app changed.
 
 - **Marking an issue read no longer throws away where you were.** The shelf and the full reading
   order are rebuilt from scratch on every change, and the control you had just used was destroyed
