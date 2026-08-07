@@ -41,6 +41,20 @@ quote in a bug report.
 
 ### Changed
 
+- **A changelog entry no longer needs editing every time an unrelated change lands.** The entry
+  below that explains how two audited figures went stale had been quoting what those figures were
+  today, so it went stale itself twice in two shipped items, both times only because a source file
+  grew and a test was added. The rule now applied is that a figure belongs in a release record when
+  it is a property of the change and does not when it is a property of the tree, because only the
+  second kind moves without anyone editing the record. The audited values stay, since they are the
+  measurement being described. The current values are gone, and the entry points at
+  [`PRODUCT_BACKLOG.md`](PRODUCT_BACKLOG.md) instead, which already carries both live and is marked
+  as needing re-derivation. A third figure of the same kind was found in the same entry and dropped:
+  it put a modularity gap at a thousand lines, which the planned split of that file would have
+  inverted outright. Three more elsewhere in this file are now tied to the moment of the change they
+  describe rather than left in the present tense, one of which was about to be falsified by a fourth
+  continuous integration check.
+
 - Committing the prompt behind the eleven Repository Constraints is no longer planned, and
   [`.github/copilot-instructions.md`](.github/copilot-instructions.md) now says so where it used to
   promise the opposite. The prompt drove a single session's backlog and study pass, and a spent
@@ -122,18 +136,20 @@ quote in a bug report.
 
 - **The audited figures in `PRODUCT_BACKLOG.md` no longer go stale in silence.** The
   reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests.
-  Both were true when audited and neither is true now: the file is 2,637 lines and the suite runs
-  294 tests. The line count had no drift clause at all, and the test count's clause had itself gone
-  stale, written as 235 when nine items had shipped and still reading 235 after twelve more had. The
-  audited figures are preserved, because a record of an audit that is edited to match today's tree
-  stops being a record of that audit; what changes is the clause beside each of them, which now
-  names the current value. That is the convention the reconciliation list's own third bullet already
-  established. The same treatment is applied to the modularity gap in
-  Appendix A, where the size of the file is the argument for the gap and a stale figure understates
-  it by a thousand lines. Appendix B's ranks, its two row counts and the counts of items above
-  BL-026 and BL-007 are recomputed, because that section states in its own words that its ranks are
-  positions in the table "as it stands"; the two headings that describe a past ranking pass are left
-  alone, since they say so themselves.
+  Both were true when audited and neither is true now. The line count had no drift clause at all,
+  and the test count's clause had itself gone stale, written as 235 when nine items had shipped and
+  still reading 235 after twelve more had. The audited figures are preserved, because a record of an
+  audit that is edited to match today's tree stops being a record of that audit; what changes is the
+  clause beside each of them, which now names the current value. That is the convention the
+  reconciliation list's own third bullet already established. Neither current value is repeated
+  here, deliberately: a release record that has to be revised every time unrelated work adds a line
+  or a test is not recording a release. The clause in the backlog is the one place either figure is
+  stated live, and it is where to read it. The same treatment is applied to the modularity gap in
+  Appendix A, where the size of the file is the argument for the gap and the audited figure
+  understates it. Appendix B's ranks, its two row counts and the counts of items above BL-026 and
+  BL-007 are recomputed, because that section states in its own words that its ranks are positions
+  in the table "as it stands"; the two headings that describe a past ranking pass are left alone,
+  since they say so themselves.
 
 - The vendoring scripts no longer hang when the metadata API rate-limits them. Their retry called
   itself from inside the rate limiter's own queue, so a request that was waiting to try again held
@@ -166,7 +182,7 @@ quote in a bug report.
   over a hundred words, as had been recorded. The longest was 48 and only four passed 40. What did
   pass a hundred was a single 138-word paragraph explaining why the series audit reads its index out
   of committed history. That paragraph is now three, one per argument, and the longest sentence in
-  the section is 36 words. Five terms a new contributor would not know are handled, the four the
+  the section came down to 36 words. Five terms a new contributor would not know are handled, the four the
   task named and one it had not spotted: to vendor a list, `depth`, placeholder and snapshot are
   all defined where they are used, the earlier undefined use of "snapshot" is gone, and the
   phrase "pinned JSON" is now "the JSON already committed". Three em dashes are gone. No command,
@@ -177,7 +193,7 @@ quote in a bug report.
   keeping a byte-identical copy each. `scripts/vendor-index.mjs`, `scripts/vendor-orders.mjs` and
   `scripts/build-event-order.mjs` call a new `scripts/lib/fetch-json.mjs`, so a change to how the
   scripts handle a rate limit is made once rather than three times and cannot be applied to two of
-  them by accident. It is covered by nine tests, which is nine more than the copies had. Nothing
+  them by accident. It shipped with nine tests, which is nine more than the copies had. Nothing
   the scripts write changes.
 
 - The `.row` class no longer means two different things. A reading row and a form row shared it, and
@@ -210,8 +226,8 @@ quote in a bug report.
 
 - Two README statements were corrected. It said the tests and linter run "on every push"; the
   workflow scopes its push trigger to `main`, so a feature branch with no open pull request
-  correctly produces no run, and there are three checks rather than two, since the evidence anchors
-  gate runs alongside them. And the privacy line said your progress "is not uploaded anywhere",
+  correctly produces no run, and it named two checks when the workflow ran three, since the evidence
+  anchors gate runs alongside them. And the privacy line said your progress "is not uploaded anywhere",
   which is true but sat alone: the app does download comic details from the metadata API and cover
   images from Marvel's servers on an ordinary page load. Both are now stated together, because the
   promise worth making is the one a reader can check.
