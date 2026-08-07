@@ -9,13 +9,15 @@ built as well as what has not. Of the 28 stories originally written here, 21 shi
 in part, 1 was never started, and 1 is ruled out by a product constraint. The new items come from
 that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Nine items have since been delivered and are marked `Shipped` in the table below: BL-029,
-BL-030, BL-031, BL-039, BL-040, BL-043, BL-044, BL-048 and BL-049. Their detail blocks record
+Thirteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
+BL-029, BL-030, BL-031, BL-034, BL-035, BL-039, BL-040, BL-043, BL-044, BL-048, BL-049 and
+BL-050. Their detail blocks record
 what changed, what was measured, and which tasks were deliberately left open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
-without touching the colours, for the reasons recorded in its block. Two remain open on
+without touching the colours, for the reasons recorded in its block. Three remain open on
 purpose: making the CI run required before merge is a repository setting rather than a change to
-the tree, and tagging a release needs a commit to point at. `CHANGELOG.md` carries the
+the tree, tagging a release needs a commit to point at, and confirming BL-027 with a screen reader
+is a human check no automated run substitutes for. `CHANGELOG.md` carries the
 user-facing view of the same work.
 
 ## Product direction
