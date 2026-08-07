@@ -16,6 +16,7 @@ import {
   checkBlocks,
   checkLedger,
   checkRanks,
+  checkRepeats,
   derive,
   numberWord,
   ordinalWord,
@@ -130,6 +131,40 @@ test('a detail block with no row is caught', () => {
   assert.equal(found.length, 1);
   assert.match(found[0].message, /has a detail block heading but no table row/);
   assert.equal(found[0].claim, 'BL-999');
+});
+
+// The defect these cover is BL-062: BL-054's block stated the same four lines twice, one
+// heading and one row, so every check above it agreed the document was sound.
+test('a paragraph stated twice over is caught', () => {
+  const line = 'because the radio sits outside both rebuilt containers and was never at risk.';
+  const text = mutate(line, `${line}\r\n${line}`);
+  const found = checkRepeats(text);
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, /repeats the line above it word for word/);
+});
+
+test('a multi-line repeat is reported at its true length, not as one line', () => {
+  const pair = 'scroll position, which never moved, so the third task was already satisfied, and '
+    + 'changing the filter,\r\nbecause the radio sits outside both rebuilt containers and was '
+    + 'never at risk.';
+  const text = mutate(pair, `${pair}\r\n${pair}`);
+  const found = checkRepeats(text);
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, /repeats the 2 lines above it word for word/);
+});
+
+// Without this the checker would pair the last line of one paragraph with the first line
+// of the next whenever a document happened to repeat a short line across the gap.
+test('a repeat separated by a blank line is not a repeat', () => {
+  const line = 'because the radio sits outside both rebuilt containers and was never at risk.';
+  const text = mutate(line, `${line}\r\n\r\n${line}`);
+  assert.deepEqual(checkRepeats(text), []);
+});
+
+// The point of the check is that it needs no exception list. If the real document ever
+// grows a legitimate repeat, this fails and the decision gets made deliberately.
+test('the document as committed contains no repeat', () => {
+  assert.deepEqual(checkRepeats(REAL), []);
 });
 
 test('a block duplicated by an edit that meant to move it is caught', () => {
