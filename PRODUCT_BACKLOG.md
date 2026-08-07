@@ -299,12 +299,15 @@ one, hover lift included.
 
 Verified: 285 unit tests pass, 4 of them covering `seriesProgress`, and 3 of those 4 fail when the
 list argument is made inert, the remaining one being a pre-existing guard on cross-list uniqueness.
-10 browser checks in Edge cover both scopes, the switch between them, re-scoping when the active
-list changes, and the no-list fallback. They were checked against four mutations of the shipped tree
-rather than against the pre-change tree, where the selectors are simply absent and every assertion
-fails trivially: making the scoping inert while leaving the markup intact fails checks 4 and 7,
-never hiding the fieldset fails 9, never naming the list in the subtitle fails 2 and 7, and scoping
-to a list that does not exist fails 8.
+11 browser checks in Edge cover both scopes, the switch between them, re-scoping when the active
+list changes, the no-list fallback and the return from it. They were checked against six mutations
+of the shipped tree rather than against the pre-change tree, where the selectors are simply absent
+and every assertion fails trivially: making the scoping inert while leaving the markup intact fails
+checks 4 and 7, never hiding the fieldset fails 9, deleting the hide outright fails 9, inverting it
+fails 3, 9 and 11, never naming the list in the subtitle fails 2 and 7, and scoping to a list that
+does not exist fails 8 and 10. Every mutation is caught. Checks 1, 5 and 6 are caught by none of
+them and are recorded as regression guards on the return path rather than counted as evidence they
+are not: with the scope inert the two counts are equal, so 6 cannot tell them apart.
 
 Constraint gate: checked 1 to 11, none breached. Constraint 4 was the live consideration: the scope
 control is two static radio inputs and a text assignment, so no rendering library was reached for.
