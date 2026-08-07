@@ -336,6 +336,12 @@ here, because it carries three stale example citations that the anchors gate wou
 claims and one of them is already false. Until that lands, this table is the only committed copy of
 the eleven. Treat it as the record, and do not paraphrase it.
 
+Read the table as a record of what the gate lines were checked against, not as a live checklist. It
+is reproduced as it was written, so parts of it have been overtaken by events. Where that has
+happened the notes underneath say so, and the notes are what to act on. Correcting a row in place
+would leave thirty-six gate lines asserting a check against text that no longer exists anywhere,
+which is the failure this recovery undid.
+
 | # | Constraint |
 |---|---|
 | 1 | Never host, proxy, cache, or store comic image bytes. Store cover URLs only. |
@@ -352,10 +358,15 @@ the eleven. Treat it as the record, and do not paraphrase it.
 
 Three notes on the table, none of which alter it.
 
-- **The finding inside constraint 6 is closed.** The comment above the enum in
-  `src/js/lib/availability.js` now names five states and the enum defines five, so the disagreement
-  the constraint tells you to record has since been fixed. The rest of constraint 6 stands, and the
-  five states must stay distinct.
+- **The finding inside constraint 6 is closed, and the row's wording predates the fix.** The row
+  tells you to record a disagreement between the comment above the enum in
+  `src/js/lib/availability.js` and the enum itself. There is no longer one: both now say five. The
+  row also describes the states as ending in a single "explicit user override", which was the
+  four-state design. That override was later split, so the five are `unknown`, `scheduled`,
+  `expected`, `override-available` and `override-unavailable`. The split exists so an explicit "I
+  checked, it is not there" stays distinguishable from an explicit yes, and collapsing either
+  override back into the other loses that. The rest of constraint 6 stands, and all five must stay
+  distinct.
 - **Constraint 5 is why navigation uses the hash.** Nothing may alter the origin, port included.
 - **Constraints 8 and 9 point outward.** Constraint 8's mitigation is the manual entry form, which
   says in the page that the snapshot ends in 2025. Constraint 9's hardware evidence is in
