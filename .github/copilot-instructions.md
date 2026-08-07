@@ -211,6 +211,13 @@ Use the manual trigger:
 gh workflow run CI --ref <branch>
 ```
 
+Before concluding that runs have stopped firing, check whether one was ever meant to. The `push`
+trigger is scoped to `main` alone, so **a push to a feature branch with no open pull request
+correctly produces no run.** Opening the pull request starts one immediately, and every later push
+to that branch fires the `pull_request` trigger. This looks exactly like a broken workflow and is
+not one. Do not "fix" it by widening the `push` trigger to all branches, which would double every
+run once a pull request exists. Use `workflow_dispatch` if you need a result before opening one.
+
 ## Comment and prose style
 
 Comments explain **why**, with measured evidence, not what the line does. "Measured in Edge on a
