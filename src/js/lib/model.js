@@ -299,11 +299,16 @@ export function moveItemTo(state, listId, issueId, index) {
 
 // ---------------------------------------------------------------- read state
 
+// The timestamp is coerced here rather than only in `coerce`, because `coerce` runs on the v2
+// branch of `migrate` alone. The v1 branch reaches read state through this function instead, so a
+// v1 backup carrying `readAt: "banana"` used to land unchanged in the read map and reach the
+// screen as "Invalid Date". Written the same way `coerce` writes it, so a value restored from a
+// v1 backup and the same value reloaded from storage cannot disagree.
 export function markRead(state, issueId, read = true, at = Date.now()) {
   const id = Number(issueId);
   if (!Number.isInteger(id)) return state;
   const next = { ...state.read };
-  if (read) next[id] = at;
+  if (read) next[id] = Number(at) || Date.now();
   else delete next[id];
   return { ...state, read: next };
 }
@@ -376,6 +381,58 @@ export function seriesProgress(state, listId = null) {
     if (isRead(state, id)) row.read += 1;
   }
   return [...bySeries.values()].sort((a, b) => a.seriesName.localeCompare(b.seriesName));
+}
+
+// Which of the reader's lists an issue is in, named, in rail order. Read state and issue
+// metadata both outlive the list that introduced them, by the deliberate choice recorded above
+// `deleteList`, so an issue can be read and belong to nothing at all. The Library views are the
+// first surface that can say so, and they can only say it if this returns nothing rather than
+// guessing at a list.
+export function listsContaining(state, issueId) {
+  const id = Number(issueId);
+  const names = [];
+  for (const listId of state.listOrder) {
+    const list = state.lists[listId];
+    if (list?.itemIds.includes(id)) names.push(list.name);
+  }
+  return names;
+}
+
+// The one row shape both Library views render, so a row that renders in one renders in the other.
+// The fallback matches `listItems`: an id with no metadata is shown as itself rather than dropped,
+// because a read record for an issue the app has otherwise forgotten is exactly what these views
+// exist to make visible.
+function libraryRow(state, issueId) {
+  const id = Number(issueId);
+  const issue = state.issues[id] ?? { issueId: id, title: `Issue ${id}`, hydrated: false, source: 'unknown' };
+  return {
+    ...issue,
+    read: isRead(state, id),
+    readAt: state.read[id] ?? null,
+    lists: listsContaining(state, id),
+  };
+}
+
+// Newest first, because the question this answers is what you have been reading, and the timestamp
+// `markRead` already stores is the only ordering the data supports. The tie break is explicit
+// rather than left to key order: `markManyRead` calls `markRead` in a loop, each with its own
+// `Date.now()`, so a bulk mark produces runs of equal timestamps, and integer-like keys enumerate
+// ascending, which would sort an arbitrary half of one bulk mark above the other.
+export function readIssues(state) {
+  return Object.keys(state.read)
+    .map((id) => libraryRow(state, id))
+    .sort((a, b) => (b.readAt ?? 0) - (a.readAt ?? 0) || a.issueId - b.issueId);
+}
+
+// By title rather than by id. A hand-added entry with a marvel.com URL keeps that issue's real id
+// and one without gets a negative synthetic id from the clock, so the two kinds cannot be ordered
+// against each other by id at all: every entry of the second kind would sort below every entry of
+// the first for no reason a reader could see.
+export function manualIssues(state) {
+  return Object.values(state.issues)
+    .filter((issue) => issue.source === 'manual')
+    .map((issue) => libraryRow(state, issue.issueId))
+    .sort((a, b) => String(a.title).localeCompare(String(b.title)));
 }
 
 export function pendingIssueIds(state) {

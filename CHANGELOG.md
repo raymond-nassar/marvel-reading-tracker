@@ -16,6 +16,30 @@ quote in a bug report.
 
 ### Added
 
+- **Two new Library pages: Everything read, and Added by hand.** The rail's Library section had one
+  entry, Progress by series, where the adopted design showed three. The two missing ones are now
+  there. Everything read lists every issue you have ticked off, newest first, and Added by hand
+  lists every issue you typed in yourself. Each row says which of your lists it belongs to, and
+  each page tells you how many issues it is showing.
+  The interesting part is what Everything read can show that nothing else could. Deleting a reading
+  list has always been careful not to throw away your progress, because the same issue may be in
+  another list too. The side effect was that an issue you read inside a list you later deleted
+  vanished from the app entirely: it was still recorded, but there was no page it appeared on.
+  It appears here, and says "In no list" rather than leaving the space blank, so it reads as a fact
+  about your library rather than as something that failed to load. Neither page changes anything;
+  they only show you what is already saved.
+
+### Fixed
+
+- **Restoring a backup made by a much older build could show "Invalid Date" as a reading date.**
+  Only backups written by the earliest data format were affected, and only if one of them held
+  something other than a number where the reading date belonged. Restoring such a backup put the
+  words "Invalid Date" on screen wherever that issue's date was shown, and sorted it to an
+  arbitrary place. Nothing was lost and nothing else misbehaved, but it looked like a fault
+  because it was one. Reading dates are now cleaned up wherever they are recorded rather than on
+  one of the two restore paths, so a date the app cannot make sense of becomes the time of the
+  restore instead of appearing as broken text.
+
 - **The no-em-dash rule now covers the page and its styling, not only the JavaScript.** When that
   rule was first automated it was written as a lint rule, and lint reads JavaScript. Every word the
   app puts on screen from the page files or the stylesheets was outside it, so the check reported

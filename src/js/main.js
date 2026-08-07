@@ -10,6 +10,7 @@ import {
   setOverride, pendingIssueIds, createEmptyState, coverUrl, listForCatalogId, SCHEMA_VERSION,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
+import { LIBRARY_VIEWS } from './lib/library.js';
 import { availability, describe, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
 import {
@@ -260,7 +261,7 @@ const API_BASE_REJECTED = 'api-base-rejected';
 const notices = new Map();
 
 // #app-report is above every view, so it is the only pane always available to a message whose own
-// pane the reader cannot see. Five of the seven views carry no pane of their own.
+// pane the reader cannot see. Seven of the nine views carry no pane of their own.
 function overflowPane() {
   const box = $('#app-report');
   return box?.offsetParent ? box : null;
@@ -620,6 +621,11 @@ async function newEmptyList() {
   announceIfSaved(`Created list ${name}.`);
 }
 
+// Every section the rail can reach. The Library entries are spread in rather than typed out, so
+// adding one cannot leave `showView` hiding a section it does not know about while trying to focus
+// a heading that is not there.
+const VIEWS = ['home', 'read', 'catalog', 'progress', 'add', 'data', 'about', ...LIBRARY_VIEWS.map((v) => v.value)];
+
 // Moving focus to the new view's heading is what makes the rail usable with a keyboard or a
 // screen reader. Without it, focus stays on the rail button and the view change is silent, so
 // the next Tab continues from the old position and nothing announces where you now are.
@@ -629,7 +635,7 @@ function showView(next, { focus = true } = {}) {
   if (next === 'read' && !store.state.lists[activeListId()]) next = 'home';
 
   view = next;
-  for (const name of ['home', 'read', 'catalog', 'progress', 'add', 'data', 'about']) {
+  for (const name of VIEWS) {
     $(`#view-${name}`).hidden = name !== next;
   }
   for (const btn of document.querySelectorAll('.ri[data-view]')) {
@@ -2468,6 +2474,56 @@ function renderProgress() {
   }
 }
 
+// ------------------------------------------------------------------ library sub-views
+
+// Both sub-views are rendered by one function reading LIBRARY_VIEWS, rather than one function
+// each. Two renderers would be two places for a heading, a subtitle and an empty state to be
+// written, and the second view would be the one that quietly stopped matching the first.
+function renderLibrary() {
+  for (const v of LIBRARY_VIEWS) {
+    const section = $(`#view-${v.value}`);
+    section.querySelector('h1').textContent = v.label;
+    section.querySelector('.sub').textContent = v.sub;
+
+    const box = section.querySelector('.results');
+    const rows = v.select(store.state);
+    box.replaceChildren();
+    if (!rows.length) {
+      box.append(el('p', { class: 'rail-hint', text: v.empty }));
+      continue;
+    }
+    // The count is on screen because it is the number a reader has no other way to get: the
+    // progress view counts what is in a list, and the whole point of these two is what is not.
+    box.append(el('p', { class: 'rail-hint', text: `${rows.length} issue${rows.length === 1 ? '' : 's'}.` }));
+    for (const row of rows) box.append(libraryRow(row, v));
+  }
+}
+
+// "In no list" is said out loud rather than left blank. An issue can be read, or added by hand,
+// and belong to nothing: deleting a list keeps both the issue record and its read state, by the
+// deliberate choice `deleteList` records, and until these views there was no screen anywhere in
+// the app on which such an issue appeared. A blank where the list names go would read as a
+// rendering fault rather than as the fact it is.
+function libraryRow(row, v) {
+  const meta = [
+    row.readAt ? `Read ${new Date(row.readAt).toLocaleDateString()}` : null,
+    row.seriesName ? seriesOnly(row.seriesName) : null,
+    row.lists.length ? `In ${row.lists.join(', ')}` : 'In no list',
+  ].filter(Boolean).join(' · ');
+
+  // The same badge the reading view puts on a hand-added row, so an entry is recognisable as the
+  // same thing in both places. A badge marks a row as unlike its neighbours, which is why the
+  // view where every row is hand-added switches it off rather than repeating it down the page.
+  const badge = v.markHandAdded && row.source === 'manual'
+    ? [' ', el('span', { class: 'badge badge-unknown' }, 'by hand')]
+    : [];
+
+  return el('div', { class: 'result' }, el('div', { class: 'result-main' }, [
+    el('div', { class: 'result-title', text: row.title }),
+    el('div', { class: 'result-meta' }, [el('span', { text: meta }), ...badge]),
+  ]));
+}
+
 // ------------------------------------------------------------------ data view
 
 function exportMarkdown() {
@@ -2632,6 +2688,7 @@ function renderAll() {
   renderReading();
   renderHome();
   renderProgress();
+  renderLibrary();
   renderQueue();
   const list = store.state.lists[activeListId()];
   $('#add-target').textContent = list

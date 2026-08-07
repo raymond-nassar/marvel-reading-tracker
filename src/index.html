@@ -57,9 +57,17 @@
           <div class="nav-group">
             <h2 class="rail-h">Library</h2>
             <ul class="rail-list">
+              <li><button type="button" class="ri" data-view="library-read">
+                <span class="gi" aria-hidden="true">&#xE73E;</span>
+                <span class="lbl">Everything read</span>
+              </button></li>
               <li><button type="button" class="ri" data-view="progress">
                 <span class="gi" aria-hidden="true">&#xE9D2;</span>
                 <span class="lbl">Progress by series</span>
+              </button></li>
+              <li><button type="button" class="ri" data-view="library-manual">
+                <span class="gi" aria-hidden="true">&#xE70F;</span>
+                <span class="lbl">Added by hand</span>
               </button></li>
             </ul>
           </div>
@@ -352,6 +360,24 @@
             </fieldset>
             <p class="rail-hint">“Tracked” means what you have added, not the size of the whole series.</p>
             <div id="series-progress" class="results"></div>
+          </section>
+
+          <!-- ---------------------------------------- library sub-views -->
+          <!-- Headings, subtitles and empty text are all rendered from LIBRARY_VIEWS in
+               src/js/lib/library.js. They are left out of the markup rather than duplicated
+               here, so there is nothing to keep in step. -->
+          <section id="view-library-read" class="view" hidden aria-labelledby="library-read-h">
+            <div class="head"><div class="head-left"><h1 id="library-read-h"></h1>
+              <div class="sub"></div>
+            </div></div>
+            <div class="results"></div>
+          </section>
+
+          <section id="view-library-manual" class="view" hidden aria-labelledby="library-manual-h">
+            <div class="head"><div class="head-left"><h1 id="library-manual-h"></h1>
+              <div class="sub"></div>
+            </div></div>
+            <div class="results"></div>
           </section>
 
           <!-- ---------------------------------------- catalog view -->
