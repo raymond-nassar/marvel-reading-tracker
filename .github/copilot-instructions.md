@@ -265,6 +265,10 @@ later. Refusals are a backstop, not a design.
 - Include the trailer: `Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>`
 - One major feature per pull request.
 - Record what was verified, with numbers, in the pull request body.
+- **Open every pull request body with a plain English summary, under the heading
+  `## In plain English`.** It goes first, above every section written for a reader who already knows
+  the codebase. The owner reviews these to decide whether a change is right, and asked for them
+  because the technical sections were making that harder rather than easier.
 - Update `CHANGELOG.md` under `## Unreleased` for anything a user or maintainer would notice. CI
   changes count; there is precedent in the 1.0.0 entry.
 - Update `PRODUCT_BACKLOG.md` in the same change that ships the work, not afterwards. Work that
@@ -274,6 +278,25 @@ later. Refusals are a backstop, not a design.
   to product improvements. This is a narrow exemption: repository infrastructure is **not** exempt,
   and BL-039 and BL-040 are the precedent, both CI and lint tooling with full backlog blocks.
   Record instructions changes in `CHANGELOG.md` only.
+
+Plain English means a specific thing here, not a shortened copy of the technical summary:
+
+- **Name no file, no identifier, no command and no backlog id.** If a file matters, say what it
+  does: `PRODUCT_BACKLOG.md` becomes "the project's list of planned improvements". A reader who has
+  to look something up to follow the paragraph has been failed by it.
+- **Say what a person using the app would notice, and say so plainly when the answer is nothing.**
+  Most work in this repository changes documents rather than screens, and "nothing you have saved is
+  affected" is the single most useful sentence such a change can carry.
+- **Give the reason before the mechanism.** What was wrong, why it was worth fixing, then what was
+  done about it.
+- **Prefer the concrete.** "The document promised every finished job has a write-up, and one did
+  not" is worth more than "a documented invariant was violated".
+- **Four short paragraphs at most.** It orients a reader; it does not re-report the work.
+- **Write it after the work, not from the plan**, so it describes what actually shipped. This
+  matters most when research changed the approach, which here it often does.
+
+The technical sections stay exactly as they are. Plain English is added above them, never in place
+of them, because the two serve different readers and the record needs both.
 
 ## Windows PowerShell 5.1
 

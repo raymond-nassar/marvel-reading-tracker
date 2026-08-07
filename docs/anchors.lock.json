@@ -629,8 +629,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:104-105|0": {
-    "anchor": "CHANGELOG.md:104-105",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:114-115|0": {
+    "anchor": "CHANGELOG.md:114-115",
     "fp": "ee201c44c882bc27",
     "head": "Both were true when audited and neither is true now: the file is 2,637 lines and the suite runs"
   },
@@ -1599,8 +1599,8 @@
     "fp": "7a6b3e0fd15becfe",
     "head": "btn.disabled = true;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-059|CHANGELOG.md:104-105|0": {
-    "anchor": "CHANGELOG.md:104-105",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-059|CHANGELOG.md:114-115|0": {
+    "anchor": "CHANGELOG.md:114-115",
     "fp": "ee201c44c882bc27",
     "head": "Both were true when audited and neither is true now: the file is 2,637 lines and the suite runs"
   }

@@ -197,7 +197,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:150-152 |
-| BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | CHANGELOG.md:104-105 |
+| BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | CHANGELOG.md:114-115 |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2486-2488 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1232-1259 |
@@ -1955,7 +1955,7 @@ enumeration, over the same table, in the same file.
 Constraint gate: checked 1 to 11, none breached.
 
 Filed out of BL-053. BL-055's changelog entry explains that two audited figures went stale by
-quoting what they are now, at `CHANGELOG.md:104-105`, which puts two live numbers inside a record
+quoting what they are now, at `CHANGELOG.md:114-115`, which puts two live numbers inside a record
 that is meant to be written once and left alone. They have needed editing on each of the two items
 shipped since, BL-054 and BL-053, both times only because a file grew and a test was added. A
 release record that has to be revised whenever unrelated work lands is not recording a release.

@@ -41,6 +41,16 @@ quote in a bug report.
 
 ### Changed
 
+- Pull request bodies now open with a plain English summary, and
+  [`.github/copilot-instructions.md`](.github/copilot-instructions.md) says what that means. The
+  request came from the person reviewing them: the technical sections were written for a reader who
+  already knows the codebase, and they were making a review harder rather than easier. Most work
+  here changes documents rather than screens, so the sentence most worth writing is often the one
+  saying that nothing a reader has saved is affected, and that sentence was never being written. The
+  rule names no file, no identifier and no backlog id inside the summary, gives the reason before
+  the mechanism, and caps it at four short paragraphs. The technical sections are unchanged and sit
+  underneath, because the two halves serve different readers and the record needs both.
+
 - The reading filters are defined once. The five choices above the full order used to exist twice
   over, as radio buttons in the page and as a chain of comparisons in the code, and the two had to
   agree without anything checking that they did. Adding a filter to the page and forgetting the
