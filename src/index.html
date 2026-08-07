@@ -344,8 +344,13 @@
           <!-- ---------------------------------------- progress view -->
           <section id="view-progress" class="view" hidden aria-labelledby="progress-h">
             <div class="head"><div class="head-left"><h1 id="progress-h">Progress by series</h1>
-              <div class="sub">Counted over unique issues across every list, so an issue in two lists counts once.</div>
+              <div class="sub" id="progress-sub">Counted over unique issues across every list, so an issue in two lists counts once.</div>
             </div></div>
+            <fieldset class="filters" id="progress-scope">
+              <legend class="visually-hidden">Choose what to count</legend>
+              <label class="fp"><input type="radio" name="progress-scope" value="list" checked /><span>This list</span></label>
+              <label class="fp"><input type="radio" name="progress-scope" value="all" /><span>All lists</span></label>
+            </fieldset>
             <p class="rail-hint">“Tracked” means what you have added, not the size of the whole series.</p>
             <div id="series-progress" class="results"></div>
           </section>

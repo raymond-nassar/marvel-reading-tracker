@@ -16,6 +16,16 @@ quote in a bug report.
 
 ### Added
 
+- **Progress by series** now counts the list you are reading, not everything you have ever
+  imported. Import a second order and the totals used to grow even though nothing about the
+  crossover in front of you had changed, which made the one number a reader most wants to act on
+  the one number they could not trust. A new choice above the results switches between **This
+  list** and **All lists**, and the subtitle says which of the two it is showing rather than always
+  claiming it counts every list. The cross-list total is still one click away, because sharing read
+  state between lists is deliberate: an issue in two orders is read in both. The choice is not
+  saved between visits, unlike the reading filter, because the useful answer is almost always about
+  the list you are reading now.
+
 - **About this app** now lists the keyboard shortcuts. Enter and D were only ever advertised on the
   hero button in the reading view, so once you had scrolled past it there was nothing in the
   interface to remind you what was available, and the sidebar binding was only ever in the toggle

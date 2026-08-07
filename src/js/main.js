@@ -2282,9 +2282,40 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
 
 // ------------------------------------------------------------------ progress
 
+// Not persisted, unlike the reading filter in BL-037. That one is a lens on a long order a reader
+// works through over days; this one is answered by whichever list they are reading now, so the
+// useful default is the active list every time the view is opened.
+let progressScope = 'list';
+
+function wireProgressScope() {
+  for (const radio of document.querySelectorAll('input[name="progress-scope"]')) {
+    radio.addEventListener('change', () => {
+      if (!radio.checked) return;
+      progressScope = radio.value;
+      renderProgress();
+    });
+  }
+}
+
 function renderProgress() {
   const box = $('#series-progress');
-  const rows = seriesProgress(store.state);
+  const list = store.state.lists[activeListId()];
+  // `active` is null only when no list exists, so "This list" has no subject to name: the subtitle
+  // below would dereference it, and the choice would be between two options that both render
+  // "Nothing tracked yet." The whole fieldset is hidden rather than one radio disabled, matching
+  // #home-chips and #catalog-filters, which hide for the same reason. A disabled chip was the first
+  // attempt and was wrong: .fp paints the adjacent span, and with no :disabled rule it rendered
+  // identically to a live one, hover lift included.
+  const scoped = progressScope === 'list' && Boolean(list);
+  $('#progress-scope').hidden = !list;
+  for (const radio of document.querySelectorAll('input[name="progress-scope"]')) {
+    radio.checked = radio.value === (scoped ? 'list' : 'all');
+  }
+  $('#progress-sub').textContent = scoped
+    ? `Counted over the issues in “${list.name}”. Choose All lists for everything you track.`
+    : 'Counted over unique issues across every list, so an issue in two lists counts once.';
+
+  const rows = scoped ? seriesProgress(store.state, activeListId()) : seriesProgress(store.state);
   box.replaceChildren();
   if (!rows.length) {
     box.append(el('p', { class: 'rail-hint', text: 'Nothing tracked yet.' }));
@@ -2498,6 +2529,7 @@ wireCatalogSearch();
 wireHome();
 wirePreview();
 wireAsk();
+wireProgressScope();
 renderAll();
 // A reader with nothing to read has no reading view to show, so the landing page is where
 // they start. One with an active list resumes it, which is the whole point of the app.
