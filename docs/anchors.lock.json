@@ -84,13 +84,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1310-1313|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1310-1313",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1411-1414|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1411-1414",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:217-218|0": {
-    "anchor": "PRODUCT_BACKLOG.md:217-218",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:222-223|0": {
+    "anchor": "PRODUCT_BACKLOG.md:222-223",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
@@ -594,25 +594,15 @@
     "fp": "6e3349f5630c2f53",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:1963|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-th|src/js/main.js:1963|0": {
     "anchor": "src/js/main.js:1963",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-se|src/js/main.js:1993-1998|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-twenty-th|src/js/main.js:1993-1998|0": {
     "anchor": "src/js/main.js:1993-1998",
     "fp": "e53c56c7408f1625",
     "head": "depth"
-  },
-  "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css:469-476|0": {
-    "anchor": "src/styles.css:469-476",
-    "fp": "173a5898da6079a8",
-    "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
-  },
-  "PRODUCT_BACKLOG.md|case-3-bl-028-carries-the-highest-cost-of-delay-|src/styles.css:87-90|0": {
-    "anchor": "src/styles.css:87-90",
-    "fp": "6c6878ef6f032cfe",
-    "head": "@media (max-width: 880px) {"
   },
   "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:15|0": {
     "anchor": ".github/workflows/ci.yml:15",
@@ -823,6 +813,11 @@
     "anchor": "src/js/main.js:2372-2385",
     "fp": "d9674d2e3b4a83d1",
     "head": "function renderAll() {"
+  },
+  "PRODUCT_BACKLOG.md|parked#BL-028|src/styles.css:87-90|0": {
+    "anchor": "src/styles.css:87-90",
+    "fp": "6c6878ef6f032cfe",
+    "head": "@media (max-width: 880px) {"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-001|src/js/main.js:1980-2010|0": {
     "anchor": "src/js/main.js:1980-2010",
@@ -1163,11 +1158,6 @@
     "anchor": "src/js/main.js:247-268",
     "fp": "47bc9454de2bffac",
     "head": "function notify(sel, msg, kind = 'ok', key = sel, action = null) {"
-  },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-028|src/styles.css:87-90|0": {
-    "anchor": "src/styles.css:87-90",
-    "fp": "6c6878ef6f032cfe",
-    "head": "@media (max-width: 880px) {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-029|src/styles.css:20-29|0": {
     "anchor": "src/styles.css:20-29",

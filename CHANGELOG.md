@@ -14,6 +14,47 @@ quote in a bug report.
 
 ## Unreleased
 
+### Changed
+
+- The README now assumes no prior experience. It was reviewed against a twenty-point readability
+  rubric by following it literally in a fresh clone, and thirteen of the twenty criteria failed.
+  Four of those failures stopped a non-engineer reaching a running app at all: the document named
+  no address to open, named no prerequisite, had no troubleshooting section, and put the run
+  instructions seventh of ten headings behind vendoring and search-index material. It now opens
+  with what the app is and who it is for, then a numbered path from installing Node.js to looking
+  at a working screen, each command saying what you should see when it worked. The address is
+  written out in full, and there is a section on why it must not change: reading progress is filed
+  by your browser under the exact address, so a different port, or `localhost` in place of
+  `127.0.0.1`, shows an empty app while the real progress sits untouched at the old one. Both
+  halves of that were confirmed in a browser rather than reasoned about. Contributor material is
+  unchanged in substance but now grouped under one heading, out of a first-time reader's way.
+
+- The BlueStacks section has moved out of the README to
+  [`docs/WHY_A_BROWSER_APP.md`](docs/WHY_A_BROWSER_APP.md), with its wording unchanged. It records
+  why this is a browser companion rather than a way to run Marvel's Android app on a PC, which is
+  worth keeping so nobody retries the emulator route, but it answered a question nobody trying to
+  run the app is asking and it sat second of the README's headings. A reader met a page of ARM64
+  driver architecture before anything about starting the app. The README links to it from the
+  contributor section.
+
+- Two README statements were corrected. It said the tests and linter run "on every push"; the
+  workflow scopes its push trigger to `main`, so a feature branch with no open pull request
+  correctly produces no run, and there are three checks rather than two, since the evidence anchors
+  gate runs alongside them. And the privacy line said your progress "is not uploaded anywhere",
+  which is true but sat alone: the app does download comic details from the metadata API and cover
+  images from Marvel's servers on an ordinary page load. Both are now stated together, because the
+  promise worth making is the one a reader can check.
+
+- Phone and tablet layout is out of scope. Marvel Unlimited ships iOS and Android apps that already
+  carry reading lists, so the small-screen job is served first-party and building a second, worse
+  one here would not help anyone. The tracker's posture is now stated rather than implied: it is a
+  desktop companion to the Marvel Unlimited **web** reader, which is the platform where no list
+  feature exists. BL-028 moves to the parked table in `PRODUCT_BACKLOG.md` with its score left in
+  place as the record of what was given up, and the four UX findings behind it are marked accepted
+  rather than open. No interface or behaviour changed, so nothing you have saved is affected. This
+  is the largest Cost of Delay in the backlog being retired by a scope decision rather than by
+  work, which is why it is written down at this length.
+
 ### Added
 
 - Contributor instructions at `.github/copilot-instructions.md`, loaded automatically by GitHub

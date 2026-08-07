@@ -1,10 +1,19 @@
 # Marvel Reading Tracker
 
-A small, self-contained companion for reading **Marvel Unlimited** in a web browser.
+A free checklist app for people who read Marvel comics on **Marvel Unlimited**, Marvel's
+comic subscription service. It runs on your own computer, in your web browser.
 
-Marvel Unlimited has no real reading lists. You can throw issues into your Library, but you
-can't keep a long curated reading order as a clean checklist, and you can't easily see where
-you left off in a run. This closes that gap.
+Marvel comics are best read in a particular order, and fans publish carefully worked out
+**reading orders**: numbered lists of which issue to read next. Marvel Unlimited has no real
+way to follow one. You can throw issues into your Library, but you cannot keep a long reading
+order as a clean checklist, and you cannot easily see where you left off. This app closes
+that gap. You keep the list here, tick issues off as you go, and click straight through into
+Marvel Unlimited to read the next one.
+
+It does not contain any comics, and it is not made by Marvel. You still need your own Marvel
+Unlimited subscription to read.
+
+**In a hurry?** Jump to [Run it on your computer](#run-it-on-your-computer).
 
 ## What it does
 
@@ -17,36 +26,214 @@ you left off in a run. This closes that gap.
 - **Duplicate a list** to try a different path through an event, keeping shared read progress
 - Export to Markdown / JSON, and restore from backup
 
-It is a static site: no install, no account, no build step. Your reading progress is stored
-in your browser and is not uploaded anywhere.
+### Your data stays with you
 
-## Why a web app and not BlueStacks
+There are no accounts to create and nothing to sign in to. Your reading progress is saved by
+your own web browser, on your own computer. It is never sent anywhere, and there is no
+analytics or tracking of any kind.
 
-This started as an attempt to run the Marvel Unlimited **Android** app via BlueStacks. That
-did not work on this hardware, and it is worth writing down so nobody retries it:
+To be exact about what does leave your computer: to show you comic titles, dates and cover
+pictures, the app downloads those details from a public comics database and downloads the
+cover images from Marvel's own image servers. That is the same kind of request your browser
+makes when it loads any web page. What is never sent is anything about you: not your lists,
+not your progress, not who you are.
 
-- The machine is **ARM64** (Snapdragon X Elite). BlueStacks' published minimum spec is
-  "Intel or AMD Processor", and its installer ships as `..._amd64_native.exe`.
-- BlueStacks (and NoxPlayer, LDPlayer, MEmu, MuMu) load **kernel-mode hypervisor drivers**.
-  Windows on ARM's x86-64 emulation (Prism) is user-mode only, and kernel drivers have to be
-  compiled natively for ARM64.
-- **Google Play Games on PC** targets x86 Intel/AMD hosts.
-- **Windows Subsystem for Android** was removed from the Microsoft Store on 2025-03-05.
-- The **Android Studio emulator** ships `arm64-v8a` Google Play system images, but Google
-  publishes the Windows emulator binary as x64 only. There is no Windows ARM64 build.
+## Run it on your computer
 
-Marvel supports Marvel Unlimited on Windows through the browser (streaming only; offline
-downloads remain iOS/Android). Edge and Chrome are both ARM64-native here, so a
-browser-based companion runs without an emulation layer in the way.
+The app runs entirely on your own machine. Follow these three steps in order.
+
+### What you need
+
+- **Node.js**, version 20 or newer. This is a free program that runs the small web server
+  this app uses. Download it from [nodejs.org](https://nodejs.org). If you are offered a
+  choice, take the "LTS" version.
+- **Git**, only to copy the code onto your computer. Get it from
+  [git-scm.com](https://git-scm.com). If you would rather not install Git, you can instead
+  use the green "Code" button on the GitHub page and choose "Download ZIP", then unzip it.
+
+You do not need to know how to program, and you do not need to install anything else. The
+app itself has no other parts to download.
+
+To check Node.js is ready, open a terminal (on Windows, "Command Prompt" or "PowerShell"; on
+macOS, "Terminal") and type:
+
+```
+node --version
+```
+
+You should see a version number of `v20` or higher, like `v20.11.0` or `v24.14.0`. If you
+instead see "not recognized" or "command not found", Node.js is not installed yet.
+
+### Step 1: Get the code onto your computer
+
+This copies the project into a new folder and then moves you into that folder.
+
+```
+git clone https://github.com/raymond-nassar/marvel-reading-tracker.git
+cd marvel-reading-tracker
+```
+
+You should now see a lot of file names scroll past, ending with your prompt sitting in the
+new folder. If you downloaded the ZIP instead, just unzip it and `cd` into the folder.
+
+### Step 2: Start the app
+
+```
+npm start
+```
+
+You should see exactly this:
+
+```
+Marvel Reading Tracker running at http://127.0.0.1:8787/
+Always use this exact address. Other addresses are separate browser storage.
+Press Ctrl+C to stop.
+```
+
+If you see that, it worked. Leave this window open. Closing it stops the app.
+
+If you see something else, look at [If something goes wrong](#if-something-goes-wrong)
+below. The most common one by far is that the address is already being used.
+
+### Step 3: Open it in your browser
+
+The app usually opens your browser for you. If it does not, open your browser yourself and
+go to this address, exactly as written:
+
+```
+http://127.0.0.1:8787/
+```
+
+Use a normal browser window: Edge, Chrome, Firefox or Safari. Do not use a preview panel
+built into another program, such as the preview pane in a code editor. Those panels block
+new tabs from opening, and opening the comic reader is the one thing this app exists to do.
+Everything else would look like it works, and then the "Read" button would do nothing at
+all.
+
+### What a working app looks like
+
+You should see a page headed **Pick something to read**, with a sidebar down the left.
+
+- The sidebar starts with **Reading orders**, which says "Nothing yet. Browse the catalog
+  below to start." That is correct on a first run. You have not added anything yet.
+- Below that are links such as **Browse the catalog**, **Progress by series**, **Search
+  issues** and **Paste a reading order**.
+- At the bottom of the sidebar you should see **API OK** followed by a number of issues. That
+  is the app confirming it can reach the comics database.
+
+If **API OK** is missing, the app still runs, but it cannot look up comic details. Check that
+you are online.
+
+To start using it, click **Browse the catalog** and pick a reading order.
+
+### Stopping it, and starting it again another day
+
+To stop the app, click the terminal window where it is running and press **Ctrl+C**. On a
+Mac this is still Ctrl+C, not Command+C. You can then close the window.
+
+Your reading progress is not lost when you stop the app. It stays in your browser.
+
+To start it again another day, open a terminal, go back to the folder, and start it again:
+
+```
+cd marvel-reading-tracker
+npm start
+```
+
+There is no need to repeat step 1. You only download the code once.
+
+## Always open the same address
+
+This is the one thing worth understanding, because getting it wrong looks like losing all
+your work.
+
+Your reading progress is saved by your browser, and your browser files that saved data under
+the exact address you were using at the time. Change any part of the address and the browser
+treats it as a completely different website, with its own separate, empty storage. Your
+progress is not deleted. It is just filed under the old address, and the new one starts blank.
+
+Both of these count as changes, and both catch people out:
+
+- **The number at the end.** `http://127.0.0.1:8788/` is a different place from
+  `http://127.0.0.1:8787/`.
+- **The name at the start.** `http://localhost:8787/` is a different place from
+  `http://127.0.0.1:8787/`, even though both mean "this computer".
+
+So always open `http://127.0.0.1:8787/`. Bookmark it. If you ever have to start the app on a
+different number, remember that your existing progress lives at the old address and will come
+back when you return to it.
+
+## If something goes wrong
+
+**"Port 8787 is already in use."**
+
+Something is already using that address. Usually it is this app, still running in another
+window you forgot about. Try opening `http://127.0.0.1:8787/` in your browser first, because
+the app may well be working already.
+
+If it is genuinely something else, you can start on a different number. The command depends
+on which terminal you are using.
+
+Windows PowerShell:
+
+```
+$env:MRT_PORT=8788; npm start
+```
+
+Windows Command Prompt:
+
+```
+set MRT_PORT=8788 && npm start
+```
+
+macOS or Linux:
+
+```
+MRT_PORT=8788 npm start
+```
+
+Then open `http://127.0.0.1:8788/` instead. Please read
+[Always open the same address](#always-open-the-same-address) before you do this, because
+your existing reading progress will not appear at the new address.
+
+**"npm is not recognized" or "command not found"**
+
+Node.js is not installed, or the terminal was open before you installed it. Install Node.js
+from [nodejs.org](https://nodejs.org), then close the terminal window and open a new one.
+
+**The page is blank, or nothing loads**
+
+Check the terminal window where you ran `npm start` is still open and still shows the
+"running at" message. If it has closed or shows an error, the app is not running. Also check
+you typed the address exactly, including the `http://` at the start.
+
+**The "Read" button does nothing**
+
+Your browser is blocking the new tab. This happens if you opened the app inside a preview
+panel rather than in a real browser window, so open it in Edge, Chrome, Firefox or Safari
+instead. If you are already in a real browser, look for a small "pop-up blocked" icon in the
+address bar and allow pop-ups for this address.
+
+Reading the comics themselves needs your own Marvel Unlimited subscription. This app links
+you to the reader; it does not contain any comics.
+
+**My reading progress has disappeared**
+
+Almost always this means the address changed. Read
+[Always open the same address](#always-open-the-same-address). Go back to
+`http://127.0.0.1:8787/` and your progress should be exactly where you left it.
+
+Progress is also per browser. If you normally use Edge and open the app in Firefox, Firefox
+will start empty. That is expected, and your Edge progress is untouched.
 
 ## Pairs well with
 
 - **[LONGBOX for Marvel Unlimited](https://chromewebstore.google.com/detail/empty-title/jlnbkkddanlogmlkhnbpjbpidofkigfn)**
   (Chrome Web Store, works in Edge): tracks page progress and bookmarks *inside* the reader.
   It has no curated reading orders, so it complements this app rather than replacing it.
-- **[marvelreading.com](https://marvelreading.com)** (CMRO): a long-running community source of
-  curated Marvel reading orders. Use it to decide *what* to read; use this to keep the
-  checklist and jump into the reader.
+- **[marvelreading.com](https://marvelreading.com)** (the Complete Marvel Reading Order, or
+  CMRO): a long-running community source of curated Marvel reading orders. Use it to decide
+  *what* to read; use this to keep the checklist and jump into the reader.
 
 ## Data source
 
@@ -60,7 +247,43 @@ creators, covering 1939 to 2025. It is rate limited to 60 requests/minute, so th
 throttles and caches. The API base URL is configurable, and the upstream project is
 MIT-licensed and self-hostable, so you can point it at your own copy.
 
-## Adding a curated reading list
+## For contributors
+
+Everything below this point is for people changing the app or adding data to it. You do not
+need any of it to read comics.
+
+Background: [why this is a browser app and not an Android emulator](docs/WHY_A_BROWSER_APP.md)
+records the hardware findings behind that decision, so the emulator route does not get retried.
+
+### Checks
+
+```
+npm ci
+```
+
+Installs the linting tools. You only need this to run the linter. The app itself has no
+parts to install, and the tests use the test runner built into Node.js, so both `npm start`
+and `npm test` work in a fresh copy with nothing installed.
+
+```
+npm test
+npm run lint
+npm run anchors
+```
+
+`npm test` runs the unit tests. `npm run lint` runs ESLint. `npm run anchors` checks that
+every `path:line` citation in the tracked Markdown still points at lines saying what the
+citation claims. All three run in CI on every pull request, and on pushes to `main`.
+
+`npm start` serves `src/` on a local static server, as described in
+[Run it on your computer](#run-it-on-your-computer). Set `MRT_PORT` to serve on a different
+port, and `MRT_NO_OPEN=1` to stop it opening a browser for you.
+
+`npm run contract` is deliberately not part of CI. It calls the live metadata API, so it
+would fail builds for reasons unrelated to the change under test. Run it by hand before
+trusting a release.
+
+### Adding a curated reading list
 
 Curated lists are data, not code. To add one, append an entry to
 [`src/data/curated-lists.json`](src/data/curated-lists.json) and run `npm run vendor`. The
@@ -101,7 +324,7 @@ A checklist line with no Marvel link is vendored as a placeholder rather than dr
 reading order stays complete and tickable. Placeholders cannot be opened, and the import
 notice says how many there are.
 
-### Event orders, generated from Marvel's own metadata
+#### Event orders, generated from Marvel's own metadata
 
 The five event lists are not typed by hand. `scripts/build-event-order.mjs` holds, per event,
 the ids of the series Marvel branded with that event's name, fetches their issues, and writes a
@@ -146,7 +369,7 @@ pass a bare "did it match anything" test while leaving almost the entire catalog
 The output is committed, so an order arrives for review as a diff, and re-running the script
 only changes the events whose upstream metadata changed.
 
-## Searching for a series or a creator
+### Searching for a series or a creator
 
 The metadata API has a real search endpoint for issues, but none for series or creators.
 `/series?q=` and `/creators?q=` accept the query and ignore it, returning the same records as
@@ -166,16 +389,7 @@ last run is not findable until `npm run vendor:index` is run again, which is why
 say when the snapshot was taken. `npm run contract` asserts that `q` is still ignored upstream,
 so if the API ever grows real search the check fails and these files can be deleted.
 
-## Running it
-
-```
-npm start
-```
-
-Serves `src/` on a local static server. `npm test` runs the unit tests.
-`npm run lint` runs ESLint. Both run automatically on every push and pull request.
-
-## Releasing
+### Releasing
 
 Versions follow the rule set out in [`src/js/lib/version.js`](src/js/lib/version.js): a MAJOR
 bump means a build older than this one cannot read data saved by it, which matters because
