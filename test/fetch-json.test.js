@@ -25,7 +25,7 @@ function scriptedFetch(statuses, { body = { ok: true }, headersByCall = {} } = {
 }
 
 // A controllable clock, as in test/limiter.test.js: sleeping advances virtual time rather than
-// waiting. Without it these tests take 48 seconds of real time, because penalize() pushes
+// waiting. Without it these tests take roughly 50 seconds of real time, because penalize() pushes
 // pausedUntil forward against Date.now() and the limiter then has to sit out the backoff for real.
 function fakeClock() {
   let t = 1_000_000;
@@ -103,14 +103,17 @@ test('retries stop at six attempts and the error names the status', async () => 
 
 test('each retry waits the band backoff() defines for its attempt, and pauses the limiter with it', async () => {
   const { getJson, retryWaits, limiter } = makeFetcher([503]);
-  let paused = 0;
+  const pausedWith = [];
   const realPenalize = limiter.penalize.bind(limiter);
-  limiter.penalize = (ms) => { paused += 1; realPenalize(ms); };
+  limiter.penalize = (ms) => { pausedWith.push(ms); realPenalize(ms); };
 
   await withDeadline(assert.rejects(() => getJson('/d')), 'the backoff sequence');
 
   assert.equal(retryWaits.length, MAX_ATTEMPTS - 1, 'one backoff between each pair of attempts');
-  assert.equal(paused, MAX_ATTEMPTS - 1, 'every backoff also holds back the other requests');
+  // Recording what penalize() was given, not just that it was called: a count alone leaves
+  // penalize(0) and penalize(wait / 1000) both passing, and the pause is the only thing holding
+  // other requests back while this one waits out its backoff.
+  assert.deepEqual(pausedWith, retryWaits, 'the limiter is paused for the same wait the retry sleeps');
   // Asserting the band rather than just growth, because growth alone is satisfied by any constant
   // and by backoff() being passed a frozen attempt. The band pins the argument too: backoff(a)
   // returns [base/2, base) for base = min(30000, 1000 * 2 ** a), so a wrong attempt lands outside.

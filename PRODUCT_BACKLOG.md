@@ -949,18 +949,24 @@ slot through it.
 Rate-limit behaviour is otherwise unchanged and the tests pin the parts that could drift: six
 attempts in total, matching the copies' `attempt >= 5`; the same two error strings; the same
 `accept: application/json` header; `observe()` on every response so `retry-after` still reaches the
-limiter; and `penalize()` alongside each backoff. Each of those was confirmed by mutating the module
-and watching the suite go red, seven mutations and seven caught, which is a stronger claim than the
-tests passing. Two assertions failed that check on their first draft and were rewritten: growth in
-the backoff was asserted so loosely that a constant satisfied it, and the `retry-after` test was
-being answered by the successful retry, because the stub put the header on every response where a
-real API sends it only on the 429. The first now pins the band `backoff(attempt)` must return for
-each attempt, which a constant, a frozen attempt and a reversed sequence all fall outside; the
-second sends the header on the 429 alone and asserts a 3 second pause, which no attempt-0 backoff
-can reach. `test/fetch-json.test.js` adds nine tests, taking the suite from 256 to 265, and runs in
-0.13 seconds because the limiter is given the virtual clock
-from `test/limiter.test.js:7-14` rather than a real one, which is worth the injection on its own: the
-same nine tests took roughly 50 seconds against `Date.now`. Three of the nine fail against the pre-change
+limiter; and `penalize()` given each backoff, so the pause holds the other requests back. Each of
+those was confirmed by mutating the module and watching the suite go red, eleven mutations and
+eleven caught, which is a stronger claim than the tests passing. Eight of the eleven target the five
+behaviours above, at least one each; the other three bend the backoff itself.
+
+Three assertions failed that check on an earlier draft and were rewritten. Growth in the backoff was
+asserted so loosely that a constant satisfied it; it now pins the band `backoff(attempt)` must
+return for each attempt, which a constant, a frozen attempt and a reversed sequence all fall
+outside. The `retry-after` test was answered by the successful retry, because the stub put the
+header on every response where a real API sends it only on the 429; it now sends the header on the
+429 alone and asserts a 3 second pause, which no attempt-0 backoff can reach. And `penalize()` was
+checked by call count alone, so `penalize(0)` and `penalize(wait / 1000)` both survived; it now
+records the argument and compares it against the wait the retry went on to sleep.
+
+`test/fetch-json.test.js` adds nine tests, taking the suite from 256 to 265, and runs in well under
+a second because the limiter is given the virtual clock from `test/limiter.test.js:7-14` rather than
+a real one, which is worth the injection on its own: the same nine tests took roughly 50 seconds
+against `Date.now`. Three of the nine fail against the pre-change
 shape, checked by swapping the module back to it. They are the ones that would otherwise hang rather
 than fail, so each carries its own deadline; `node --test` has no default timeout, and a hung run is
 indistinguishable from a slow one. Beyond the unit tests, `scripts/vendor-index.mjs` was run
