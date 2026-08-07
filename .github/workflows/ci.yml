@@ -92,3 +92,12 @@ jobs:
       # which is the exact failure this gate exists to end.
       - name: Check evidence anchors
         run: npm run anchors
+
+      # The anchors gate fingerprints the lines a citation names, so it reports a
+      # sentence as sound however wrong the numbers in it have become. That is how one
+      # figure here stayed wrong across twelve consecutive shipped items with every
+      # gate green. This recomputes the figures that are derived from the ranked table
+      # and fails with the derived value, which is the same argument for a machine
+      # rather than a habit that produced the gate above it.
+      - name: Check derived counts
+        run: npm run counts
