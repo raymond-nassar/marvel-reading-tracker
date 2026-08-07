@@ -679,7 +679,7 @@ function renderRail() {
         'aria-current': current ? 'page' : null,
         // A reading order has no glyph of its own, so the tooltip has to be built rather
         // than read off the button: in rail mode the progress numbers are not on screen.
-        dataset: { key: id, act: 'open', tip: `${list.name} — ${read} of ${total} read` },
+        dataset: { key: id, act: 'open', tip: `${list.name}: ${read} of ${total} read` },
         onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
       }, [
         // Stands in for an icon in rail mode; hidden from the accessibility tree because
@@ -989,13 +989,15 @@ function orderCard(list) {
     ]),
     el('div', { class: 'ocard-foot' }, [
       addButton(list, inLibrary),
+      // The count is already on the card, in the meta line above, so repeating it on the button
+      // only needed the dash it was joined with. "See the full list" says what the button does.
       el('button', {
         type: 'button',
         class: 'ocard-preview',
         'aria-label': `Preview the issue list for ${list.name}`,
         dataset: { key: list.id, act: 'preview' },
         onclick: () => openPreview(list),
-      }, `${list.count} issues — see the list`),
+      }, 'See the full list'),
     ]),
   ]);
 }
