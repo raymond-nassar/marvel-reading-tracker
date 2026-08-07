@@ -1,4 +1,4 @@
-# New Ultimate Universe — Issue-by-Issue Reading Checklist
+# New Ultimate Universe: Issue-by-Issue Reading Checklist
 
 - [ ] [Ultimate Invasion #1](https://www.marvel.com/comics/issue/97145/ultimate_invasion_2023_1)
 - [ ] [Ultimate Invasion #2](https://www.marvel.com/comics/issue/97147/ultimate_invasion_2023_2)

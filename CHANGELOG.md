@@ -16,6 +16,20 @@ quote in a bug report.
 
 ### Added
 
+- **The rule against em dashes in on-screen wording is now enforced by the toolchain.** The
+  repository has a standing rule that the words the app shows you contain no em dash, but nothing
+  ever checked it, so two had been sitting in shipped wording for months and were found only when
+  somebody read the source line by line. Worse, the hand-written scan that was meant to catch them
+  was proved unable to fail at all. Two checks now do the job properly. The linter refuses a dash
+  inside any piece of text the app's own code can display, and it works on the parsed structure of
+  the code rather than on its raw text, so it can tell an on-screen word from a note left for a
+  future developer and never complains about the latter. Its reach stops at JavaScript, so wording
+  written directly into the page's HTML or its styling is not covered; that wording was checked by
+  hand and contains none today, and closing the gap properly is filed as its own item. A test refuses
+  one in the title line of the reading checklists, five of which this repository generates and one of
+  which is written by hand. Both were deliberately run against the unfixed code first, and both
+  failed there, which is the only way to know a check can fail at all.
+
 - **A count stated in the backlog's prose is now checked against the table it is derived from.**
   The evidence anchors gate fingerprints the lines a citation names, so it reports a sentence as
   sound however wrong the numbers inside it have become. That is how one figure here stayed wrong
@@ -57,6 +71,16 @@ quote in a bug report.
   storage falls back to All.
 
 ### Changed
+
+- **Two small pieces of on-screen wording were rewritten.** Hovering a list in the sidebar used to
+  show its name and progress joined by a long dash; a colon now does that job, which reads as the
+  label and value it always was. The button under each catalog list used to repeat the issue count
+  before inviting you to open it, and now simply reads "See the full list", because the count is
+  already printed on the same card directly above the button. Dropping it also quietly retired a
+  wording bug that would have said "1 issues" for a single-issue list, which no list in the catalog
+  is small enough to have triggered. The titles of the six reading checklists changed the same way,
+  from a long dash to a colon, which matters because importing one of them takes the list's displayed
+  name straight from that title.
 
 - **A changelog entry no longer needs editing every time an unrelated change lands.** The entry
   below that explains how two audited figures went stale had been quoting what those figures were
@@ -103,6 +127,14 @@ quote in a bug report.
   issues sort into the same five counts as before.
 
 ### Fixed
+
+- **A stale test count and an over-broad claim, both found by review rather than by any gate.** The
+  quality appendix still said 294 tests passed when 311 do, a figure of the kind no automated check
+  reads. And the note recording that this project generates its six reading checklists was wrong
+  about one of them: five are generated and the sixth is written by hand, which matters only because
+  a claim that all six stay identical to a regeneration would have been quietly false for one file
+  forever. The hand-written one was edited to match the other five anyway, and that edit is durable,
+  because nothing regenerates or overwrites it.
 
 - **The evidence-anchor gate now has the backlog entry it shipped without.** `BL-050` built the
   check that fails the build when a `path:line` citation stops naming the code it claims, and it was

@@ -42,6 +42,30 @@ const correctnessRules = {
   // service on purpose, and turning it on required 23 suppressions for correct code.
 };
 
+// Repository Constraint 11: no em dashes in the copy the app puts on screen. Two had been
+// sitting in shipped strings since before the constraint was written down, found only when
+// someone scanned by hand, and the scan that was supposed to catch them could not fail.
+//
+// This runs on the syntax tree rather than on the text of the file, which is the whole point:
+// a comment is neither a Literal nor a TemplateElement, so the six dashes in the comments of
+// this codebase stay legal and no suppression is needed for them. Constraint 11 names shipped
+// surfaces, and only these two node types can become one.
+//
+// The en dash is included because the house rule is wider than the constraint. It is a house
+// rule rather than the constraint, so a hit on one is worth reading before rewriting.
+const noEmDashInShippedCopy = {
+  'no-restricted-syntax': ['error',
+    {
+      selector: 'Literal[value=/[\\u2013\\u2014]/]',
+      message: 'Constraint 11: no en or em dash in a string the app can put on screen.',
+    },
+    {
+      selector: 'TemplateElement[value.raw=/[\\u2013\\u2014]/]',
+      message: 'Constraint 11: no en or em dash in a string the app can put on screen.',
+    },
+  ],
+};
+
 export default [
   {
     ignores: [
@@ -69,6 +93,7 @@ export default [
     // Everything served out of src/ runs in the browser.
     files: ['src/**/*.js'],
     languageOptions: { globals: globals.browser },
+    rules: noEmDashInShippedCopy,
   },
   {
     // The server, the build scripts and the tests run in Node.

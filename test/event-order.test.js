@@ -129,6 +129,32 @@ test('committed checklists carry no doubled whitespace', async () => {
   assert.ok(lines > 100, `expected the committed orders to have content, read ${lines} lines`);
 });
 
+// A checklist heading is the one line of these files this repository writes rather than copies:
+// `render` builds it from the event name, and an imported file's first heading becomes the list's
+// name on screen. So Constraint 11 reaches it, even though the file is data rather than source.
+// Scoped to headings on purpose. The item lines carry Marvel's own titles, and five of them really
+// are spelled with an en dash rather than a hyphen, all in the Ultimate Impact entries of
+// new-ultimate-universe.md, so a whole-file sweep would fail on upstream copy this repository is
+// not entitled to rewrite. The character is described rather than reproduced here so that this
+// comment does not become the thing it is about.
+test('a committed checklist heading carries no en or em dash', async () => {
+  let headings = 0;
+  for (const file of await readdir(ORDERS)) {
+    const text = await readFile(new URL(file, ORDERS), 'utf8');
+    for (const line of text.split('\n')) {
+      if (!line.startsWith('#')) continue;
+      headings += 1;
+      assert.ok(
+        !/[\u2013\u2014]/.test(line),
+        `${file}: Constraint 11, dash in heading ${JSON.stringify(line)}`,
+      );
+    }
+  }
+  // Without this the check passes on an empty directory, which is how a scan that reads
+  // nothing reports a clean result forever.
+  assert.ok(headings >= 6, `expected a heading in every committed order, found ${headings}`);
+});
+
 test('pinned titles are trimmed and free of doubled whitespace', async () => {
   let checked = 0;
   for (const name of PINNED) {

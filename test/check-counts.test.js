@@ -87,7 +87,7 @@ test('an id written twice in the delivered list is caught, though it is in neith
 
 test('a rank left over from a smaller table is caught in both halves', () => {
   const d = derive(REAL);
-  const text = mutate('rank 17 of 38', 'rank 15 of 34');
+  const text = mutate('rank 17 of 39', 'rank 15 of 34');
   const found = checkRanks(derive(text)).filter((f) => f.claim === 'rank 15 of 34');
   assert.equal(found.length, 2);
   assert.match(messages(found), new RegExp(`states a table of 34 rows; the ranked table has ${d.ranked.length}`));
@@ -102,7 +102,7 @@ test('a rank whose subject comes from the nearest heading is still checked', () 
     '### Case 1: BL-014 is labelled P0 but ranks seventeenth',
   );
   const found = checkRanks(derive(text));
-  assert.ok(found.some((f) => /puts BL-014 at rank 17; the table puts it at 23/.test(f.message)));
+  assert.ok(found.some((f) => /puts BL-014 at rank 17; the table puts it at 24/.test(f.message)));
 });
 
 test('an ordinal spelled out in a heading is checked against the table', () => {
@@ -158,11 +158,11 @@ test('the frozen marker exempts a claim about a past state, and only that claim'
 });
 
 test('a frozen marker cannot silence a claim on another line', () => {
-  const text = mutate('rank 23 of 38. Mid-table', `rank 23 of 34. Mid-table ${FROZEN}`)
-    .replace('rank 18 of 38', 'rank 18 of 34');
+  const text = mutate('rank 24 of 39. Mid-table', `rank 24 of 34. Mid-table ${FROZEN}`)
+    .replace('rank 18 of 39', 'rank 18 of 34');
   const found = checkRanks(derive(text));
   assert.ok(found.some((f) => /states a table of 34 rows/.test(f.message) && f.claim === 'rank 18 of 34'));
-  assert.ok(!found.some((f) => f.claim === 'rank 23 of 34'));
+  assert.ok(!found.some((f) => f.claim === 'rank 24 of 34'));
 });
 
 test('number and ordinal words cover the range the document uses and refuse beyond it', () => {
