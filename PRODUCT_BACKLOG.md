@@ -1697,10 +1697,10 @@ tractable item into the intractable one. If they are wanted later they are a sep
 Constraint gate: checked 1 to 11, none breached.
 
 Filed out of the second BL-055 review. `BL-050` is the only row in the table, of any status, with no
-detail block. It was never written rather than deleted: a search of the history for the heading
-returns no commit that ever added one. Two sentences promise otherwise, the delivered-item ledger at
-`PRODUCT_BACKLOG.md:12-16` and the note above the table at `PRODUCT_BACKLOG.md:186-187`, and both are
-therefore false for one of the twenty-two ids they govern.
+detail block, and it was never written rather than deleted: a search of the history for the heading
+returns no commit that ever added one. Two sentences promised otherwise, the delivered-item ledger at
+`PRODUCT_BACKLOG.md:12-16` and the note above the table at `PRODUCT_BACKLOG.md:186-187`, both false
+for one of the twenty-two ids they govern until this change gave each the exception clause it carries.
 
 Writing the block is not a correction and does not belong in the change that found this. It is new
 research into what a different piece of work changed, what it measured and what it left open, which
