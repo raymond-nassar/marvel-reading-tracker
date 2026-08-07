@@ -198,7 +198,7 @@ BL-050's, which was never written; see BL-057.
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:150-152 |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2292-2294 |
+| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2308-2310 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1212-1239 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
@@ -210,7 +210,7 @@ BL-050's, which was never written; see BL-057.
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2366-2400 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:159 |
-| BL-058 | Keep focus on the home grid when an order is added to the library | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Ready | src/js/main.js:2273 |
+| BL-058 | Keep focus on the home grid and the rail when their lists rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Ready | src/js/main.js:2273 |
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Shipped | src/js/main.js:75 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Ready | design/mockups/5-longbox-focus.html:169-172 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
@@ -1614,16 +1614,21 @@ here. When even that is gone the landing is the checked filter radio, which is b
 list is empty and the control that undoes it.
 
 Verified by a browser check in Edge at 1280x900, 12 of 12 assertions passing. They are, in order:
-focus stays on a control after a row checkbox click, and on the same issue; the document does not
-scroll; the availability control survives the rebuild it triggers; the reorder control follows its
-own row down the list; the keyboard route lands on a control; a shelf tile survives a rebuild it did
-not cause; a row filtered away by the act performed on it drops focus neither to `<body>` nor onto
-the wrong row, which is two assertions; emptying the filtered list entirely still leaves focus
-somewhere reachable; changing the filter leaves focus on the filter radio; and the shelf emptying
-under a focused tile lands on the hero rather than nowhere.
+focus stays on a control after a row checkbox click, and on the same issue, which is two
+assertions; the document does not scroll; the availability control survives the rebuild it
+triggers; the reorder control follows its own row down the list; the keyboard route lands on a
+control; a shelf tile survives a rebuild it did not cause; a row filtered away by the act performed
+on it drops focus neither to `<body>` nor onto the wrong row, which is two assertions; emptying the
+filtered list entirely still leaves focus somewhere reachable; changing the filter leaves focus on
+the filter radio; and the shelf emptying under a focused tile lands on the hero rather than nowhere.
 
-Proved able to fail. Against the same tree with `src/js/main.js` replaced by its parent commit,
-10 of the 12 fail and `document.activeElement` reports `BODY` exactly as this block described. The
+Proved able to fail. Against the same tree with `src/js/main.js` taken from `8c44bac`, the last
+commit before the fix landed, and the served file confirmed to no longer contain it, 10 of the 12
+fail and `document.activeElement` reports `BODY` exactly as this block described. The
+two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is
+easy to misread: emptying the filtered list is one of the ten that fails. What passes unfixed is the
+scroll position, which never moved, so the third task was already satisfied, and changing the filter,
+because the radio sits outside both rebuilt containers and was never at risk.
 two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is
 easy to misread: emptying the filtered list is one of the ten that fails. What passes unfixed is the
 scroll position, which never moved, so the third task was already satisfied, and changing the filter,
@@ -1651,15 +1656,17 @@ clean, because `getComputedStyle` still reports `display: grid` and `visibility:
 is what settles it, and the check now opens the disclosure and waits on that before it measures.
 
 Not closed by this item. The review found the same defect on the home grid, where `+ Add to library`
-loses focus to `<body>`, and it is filed as BL-058 rather than folded in here. The mechanism is
-different enough to need its own answer, and widening this change to reach it would have put an
-untested second fix under an already large diff.
+loses focus to `<body>`, and reviewing that finding turned up a second on the reading order rail,
+which loses it on every `renderAll`. Both are filed as BL-058 rather than folded in here. Neither
+shares this item's mechanism, and widening the change to reach them would have put two untested
+fixes under an already large diff.
 
-**BL-058: Keep focus on the home grid when an order is added to the library**
+**BL-058: Keep focus on the home grid and the rail when their lists rebuild**
 
 - [ ] Keep focus on a control after `+ Add to library`, on the one view built to keep the reader put
 - [ ] Decide what the landing is once the button that was pressed no longer exists
-- [ ] Cover it in the same browser check that covers the shelf and the full order
+- [ ] Do the same for the reading order rail, which loses focus to `<body>` on every `renderAll`
+- [ ] Cover both in the same browser check that covers the shelf and the full order
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -1679,14 +1686,23 @@ time after a 1500 ms `setTimeout`, and the re-enable in its `finally` at `src/js
 a node back in an enabled state that has been detached twice over. Any fix has to capture the
 identity before the disable, not at the rebuild.
 
-`renderRail` at `src/js/main.js:635` and `renderYours` at `src/js/main.js:779` rebuild their
-containers the same way, and the scope question about them is not settled. The review that filed this
-item read them as safe because navigation follows them, and that is only half true: `showView` calls
+`renderRail` at `src/js/main.js:635` is the other half, and it is the easier one: its mechanism is
+the plain `replaceChildren` that BL-054 already answered, not the disable that the home grid trips
+over, so the helper should drop straight in. The review that filed this item read both it and
+`renderYours` as safe because navigation follows them, which is only half true: `showView` calls
 `renderRail` at `src/js/main.js:616` and reaches `renderYours` through `renderHome` at
-`src/js/main.js:618`, where the reader is being moved anyway and the focus loss is not observable as
-a loss. But `renderAll` at `src/js/main.js:2561` calls both as well, on every `store.update`, with no
-navigation at all. That route is unmeasured. It is recorded here as unmeasured rather than excluded,
-because excluding it would repeat the mistake this item exists to correct.
+`src/js/main.js:618`, where the reader is being moved anyway, but `renderAll` at
+`src/js/main.js:2561` calls both on every `store.update` with no navigation at all. Measured on that
+route in Edge at 1280x900: with a reading order's button in the rail focused, pressing `d` took the
+order from 0 of 89 read to 1 of 89, left the reader on the read view, and put
+`document.activeElement` at `BODY`. Only `#list-nav` is rebuilt, at `src/js/main.js:637`, so the
+loss is scoped to the per-order entries.
+
+`renderYours` at `src/js/main.js:779` is a different answer, and the reason is a guard rather than a
+call site. The shortcut handler returns unless the read view is showing, at `src/js/main.js:1546`,
+and `#home-yours` sits inside the home view, which is hidden exactly then. Its buttons navigate on
+click at `src/js/main.js:792`. There is no route that rebuilds it while it holds focus, so it is
+excluded on evidence rather than on the reviewer's original reasoning.
 
 **BL-055: Record the drift in the audited figures instead of letting them go stale**
 
@@ -1699,7 +1715,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2151-2153` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2167-2169` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -1708,11 +1724,11 @@ the same list: the
 audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
 have since taken it to 285; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:157-159`. Appendix A
 does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
-editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2168-2170`. Overwriting would have destroyed
+editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2184-2186`. Overwriting would have destroyed
 the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:1997-1999` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2013-2015` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
