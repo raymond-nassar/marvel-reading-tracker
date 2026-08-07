@@ -633,6 +633,7 @@ app already holds.
 - [x] Add a workflow running `npm test` on push and pull request
 - [x] Pin the Node version to the `engines` floor
 - [x] Keep the live contract check out of the default run, since it depends on a third-party API
+- [x] Let the run be started by hand, so a commit that never got a run can still get one
 - [ ] Make the run required before merge
 
 Constraint gate: checked 1 to 11, none breached. Constraint 4 holds, because the workflow uses the
@@ -649,6 +650,22 @@ green run over zero tests. `node --test test/` fails a different way on Node 24,
 `MODULE_NOT_FOUND`. Bare `node --test` is the only form that is portable across 20 to 24; it
 skips `node_modules` and finds the same suite. The workflow at `.github/workflows/ci.yml` runs
 the tests on both 20 and 24 so a repeat of this cannot hide.
+
+The manual trigger was added later, after a GitHub Actions incident on 2026-08-06 showed the cost
+of having only event-driven triggers. Run creation stalled for hours: no run was ever created for
+the merge of BL-035, and the run for the merge of BL-034 sat queued for over an hour before
+reaching a state that refused both cancel and rerun while still reporting itself queued. Three
+merges reached the default branch with nothing recorded against them and no way to ask for a
+result, because a commit that never got a run has no run to re-run. `workflow_dispatch` at
+`.github/workflows/ci.yml:15` is the way back from that, and it is what makes a result reachable
+for any ref on demand. The runs that read `failure` during the incident had every job `cancelled`,
+which is the concurrency group behaving correctly rather than a test failing, so reading that
+column alone would have been misleading.
+
+The concurrency group is deliberately still keyed on the ref alone. A dispatch of a ref that
+already has a run in flight is a newer request for the same code, which is the case the
+`cancel-in-progress` comment already describes; splitting the group by event would leave two runs
+alive testing an identical tree.
 
 **BL-040: Add a linter and formatter**
 
@@ -1270,9 +1287,10 @@ release version to name a build by.
 ## Suggested delivery order
 
 The original order below described the catalog expansion, which has now shipped. It is kept as the
-record of that plan. The order this backlog now suggests is the WSJF sequence in the item table,
-with one adjustment a score cannot express: BL-039 should land early regardless of its rank,
-because every other item is safer to make once the tests run automatically.
+record of that plan. The order this backlog now suggests is the WSJF sequence in the item table.
+The one adjustment a score could not express, that BL-039 should land early regardless of its rank
+because every other item is safer to make once the tests run automatically, has been applied and
+BL-039 has shipped, so the sequence now stands on the scores alone.
 
 1. Build the data-driven curated-list catalog.
 2. Add several non-Hickman event lists with attribution and variants.
@@ -1390,7 +1408,7 @@ Evidence: `src/index.html:130-141` (blocked banner, saving paused, salvage offer
   224 tests only run when someone remembers. Evidence: `absent: .github/workflows, Get-ChildItem of
   repository root and .github; no pipeline file of any kind`.
   Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every
-  push and pull request.
+  push and pull request, and on demand for any ref.
 
 #### 6. Security
 
@@ -1470,7 +1488,7 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:87-90`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is still open as BL-028. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
 | Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. Partly changed: the suite is 235 after this pass, but the three modules still have no test file, so the gap itself is unchanged. |
-| CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request. |
+| CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request, and on demand for any ref. |
 | Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version to `1.0.0` at `package.json:3`, added `CHANGELOG.md`, and wired a `version` script at `package.json:18` that syncs the version the app reports. |
 | Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-28` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:23-27` and a tracked `package-lock.json`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
 | Licensing | No gap. The project is MIT, and every vendored order records its upstream source and licence rather than absorbing it silently. Evidence: `LICENSE`, `src/data/catalog.json` (`source` and `sourceLicense` per list), `src/js/main.js:2016-2036` (attribution rendered in the UI before import). |
