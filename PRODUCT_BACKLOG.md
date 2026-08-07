@@ -209,6 +209,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:272-307 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
+| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:1764-1767 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2433-2467 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:204 |
@@ -1817,7 +1818,9 @@ time after a 1500 ms `setTimeout`, and the re-enable in its `finally` at `src/js
 a node back in an enabled state that has been detached twice over. Any fix has to capture the
 identity before the disable, not at the rebuild.
 
-`renderRail` at `src/js/main.js:658` is the other half. The review that filed this item read both it
+`renderRail` at `src/js/main.js:658` is the other half, and it is the easier one: its mechanism is
+the plain `replaceChildren` that BL-054 already answered, not the disable that the home grid trips
+over, so the helper should drop straight in. The review that filed this item read both it
 and `renderYours` as safe because navigation follows them, which is only half true: `showView` calls
 `renderRail` at `src/js/main.js:639` and reaches `renderYours` through `renderHome` at
 `src/js/main.js:641`, where the reader is being moved anyway, but `renderAll` at
@@ -1833,15 +1836,16 @@ and `#home-yours` sits inside the home view, which is hidden exactly then. Its b
 click at `src/js/main.js:822`. There is no route that rebuilds it while it holds focus, so it is
 excluded on evidence rather than on the reviewer's original reasoning.
 
-**The paragraph above said the BL-054 helper "should drop straight in" for the rail. That was
-wrong, and finding it wrong is what shaped the change.** The helper matches a control by the pair
-`data-act` and `data-issue`, and rail buttons carried neither, so it would have returned at its own
-`if (!act)` guard and preserved nothing at all, silently and with every test still green. The same
-was true of the home grid. The claim was reasonable when it was written, because it was written
+**The `renderRail` paragraph two above said the BL-054 helper "should drop straight in" for the rail.
+That was wrong, and finding it wrong is what shaped the change.** The helper matches a control by the
+pair `data-act` and `data-issue`, and rail buttons carried neither, so it would have returned at its
+own `if (!act)` guard and preserved nothing at all, silently and with every test still green. The
+same was true of the home grid. The claim was reasonable when it was written, because it was written
 about the call site rather than about the markup, and the call site really is the ordinary
-`replaceChildren` BL-054 answered. It is recorded here rather than corrected in place because the
-paragraph is the research that led to the work, and rewriting research to agree with its own outcome
-is how a repository stops being able to tell the two apart.
+`replaceChildren` BL-054 answered. It is left standing and corrected here rather than edited away,
+because the paragraph is the research that led to the work, and rewriting research to agree with its
+own outcome is how a repository stops being able to tell the two apart. It was edited away once, in
+the first commit of this item, which left this paragraph quoting a sentence no reader could find.
 
 So the identity attribute had to reach both containers, and once it did, `issue` was the wrong name
 for it: the thing a control acts on is an issue in the reading lists, a reading order in the rail
@@ -1883,6 +1887,26 @@ Two em dashes in shipped copy were found while scanning the diff for Constraint 
 mechanism, so they are filed as BL-061 rather than folded in. The first sits on a line this change
 rewrites for an unrelated reason, which is why it appears in this diff's added lines.
 
+**BL-062: Delete the paragraph that BL-054's block states twice over**
+
+- [ ] Remove the second copy and confirm the first is the one the surrounding prose reads with
+- [ ] Check the other detail blocks for the same fault
+
+Constraint gate: checked 1 to 11, none breached.
+
+BL-054's block sets out which of its twelve browser assertions pass against the unfixed tree, and it
+sets it out twice: the four lines at `PRODUCT_BACKLOG.md:1760-1763` are repeated word for word at
+`PRODUCT_BACKLOG.md:1764-1767`. The repetition reads as a stutter rather than as emphasis, and the
+sentence it doubles is the one warning a reader against a specific misreading, so the defect lands on
+the paragraph least able to afford it.
+
+Filed out of the BL-058 review rather than fixed in it. The duplication predates that change, which
+neither caused it nor touched those lines, and the change was a focus fix rather than a documentation
+pass. No gate could have caught it: the anchors gate fingerprints cited lines and these are not
+cited, and the counts gate checks figures derived from the ranked table, not prose repeated verbatim.
+The second task exists because a fault that reached one block by copy and paste is the kind that
+reaches others the same way, and nothing has ever looked.
+
 **BL-061: Take the two em dashes out of the copy the app puts on screen**
 
 - [ ] Rewrite the rail tooltip and the preview button label without an em dash
@@ -1895,9 +1919,18 @@ built at `src/js/main.js:682` and reads `<name> — <read> of <total> read`; the
 every catalog card reads `<count> issues — see the list`, at `src/js/main.js:998`. Both are copy the
 reader sees, the first through a tooltip and the second as the button's own text.
 
-Measured rather than assumed: a scan of every tracked file under `src/` for U+2013 and U+2014 found
-eight lines, of which six are code comments and these two are the shipped copy. That is the whole
-extent of it, so the item is one sentence of rewriting in each place rather than a sweep.
+Measured rather than assumed: a scan of every tracked `.js` file under `src/` for U+2013 and U+2014
+found eight lines, of which six are code comments and these two are the shipped copy. Scanning all
+of `src/` instead returns thirty-nine, but the other thirty-one are vendored issue descriptions in
+`src/data/*.json` and the checklist files under `src/data/orders/`, which are not copy this
+repository writes.
+
+One of those thirty-one is not as far out of scope as it looks, which is what the second task is
+for. Each checklist file opens `# <name> — Issue-by-Issue Reading Checklist`, and an imported file's
+first heading becomes the list's name on screen, at `src/js/main.js:1913`. A reader who imports one
+of this repository's own checklists therefore sees an em dash in the rail, in the page title and in
+every place the list is named. Whether that is a breach or a property of the file the reader chose
+is the decision the second task has to make and record.
 
 Filed out of the BL-058 change rather than fixed in it. BL-058 rewrites the tooltip's line for an
 unrelated reason, so the dash appears in its diff as an added line, but the copy is older than that
@@ -1914,7 +1947,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2499-2501` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2534-2536` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -1924,11 +1957,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:158-160`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2518-2520`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2553-2555`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2345-2347` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2380-2382` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -2036,12 +2069,14 @@ and the lesson is that a set comparison answers "which members differ" and was b
 two lists agree".
 
 Not closed by this item. The gate reads four claim forms, and the block above names two more figures
-that are derived from the table and remain unchecked: the count of items above a given row, at
-"outranked by fifteen items sized 1, 2 or 3" and "below twenty-eight unlabelled items", and the
+that are derived from the table and remain unchecked: the count of items above a given row, stated as
+"outranked by N items sized 1, 2 or 3" and "below N unlabelled items", and the
 Cost of Delay orderings. Both are stated in prose too varied to match without inventing a pattern per
 sentence, which is the enumeration anti-pattern `scripts/check-anchors.mjs:101-104` argues against in
 this repository's own words. They are recorded here rather than filed, because the cost of a bespoke
-matcher exceeds the cost of the figure being wrong.
+matcher exceeds the cost of the figure being wrong. The two are quoted by shape rather than by their
+values, which had already drifted twice by the time anyone read this sentence again, and quoting a
+live figure into a record of a past decision is the fault BL-059 had to state outright.
 
 **BL-057: Write the detail block BL-050 never got, which two sentences promise a reader**
 
@@ -2134,7 +2169,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:184-187` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:192-195` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:151-153` and
 `PRODUCT_BACKLOG.md:158-160` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -2595,7 +2630,7 @@ positions in it as it stands.
 ### Case 1: BL-026 is labelled P0 but ranks seventeenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 17 of 37.
+- Calculated: WSJF 3.67, rank 17 of 38.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by sixteen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -2614,10 +2649,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks thirty-third
+### Case 2: BL-007 is labelled P1 but ranks thirty-fourth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 33 of 37, below twenty-nine unlabelled items and three places above the
+- Calculated: WSJF 1.4, rank 34 of 38, below thirty unlabelled items and three places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -2666,9 +2701,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 22 of 37. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 18 of 37. Mid-table.
-- BL-017, P2, rank 36 of 37. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 23 of 38. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 18 of 38. Mid-table.
+- BL-017, P2, rank 37 of 38. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

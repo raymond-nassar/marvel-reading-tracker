@@ -160,6 +160,14 @@ quote in a bug report.
   worse than no check, because it is trusted. The command now writes the change to a file and reads
   it back, and the file records why so it is not shortened again.
 
+- The backlog no longer says twice over which of BL-054's browser checks passed before the fix. Four
+  lines of that record were pasted in a second time, and the sentence they duplicate is the one
+  warning a reader against a specific misreading of the numbers, so the stutter landed where it was
+  least affordable. Filed as BL-062 rather than fixed here, because the duplication predates this
+  change and correcting it would have widened a focus fix into a documentation pass. No gate could
+  have caught it: the anchors gate only fingerprints lines a document cites, and the counts gate only
+  checks figures derived from the ranked table.
+
 - The D and Enter shortcuts no longer stop working after you click a button in the reading view.
   The handler stood down whenever anything interactive held focus, and the hero's own "Done, next"
   button is interactive, so clicking it left focus there and the very next press of D did nothing at
