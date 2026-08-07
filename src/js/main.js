@@ -1204,12 +1204,15 @@ function markCurrentRead() {
   announce(next
     ? `${issue.title} marked read. Next up: ${next.title}.`
     : `${issue.title} marked read. That is the whole order finished.`);
-  // While issues remain, the hero's buttons are static markup that the re-render leaves in
-  // place, so whatever had focus keeps it and D stays live on the next press. Finishing the
-  // order hides the whole hero, which drops the focused button out of the document and sends
-  // focus back to <body>, silently and at the top of the page. The heading that replaced it is
-  // the honest place to land: it is what the reader needs to hear, and it is where the
-  // remaining actions are. The render has already run, synchronously, inside store.update.
+  // The hero's own buttons are static markup that the re-render leaves in place, so pressing D
+  // from the hero keeps focus and stays live on the next press. That is true of the hero only:
+  // the shelf and the full order are rebuilt with replaceChildren, so a control focused there is
+  // destroyed and focus falls to <body>. That is a pre-existing defect on the click route too,
+  // filed as BL-054 rather than widened into this change. Finishing the order hides the whole
+  // hero, which drops the focused button out of the document and sends focus back to <body>,
+  // silently and at the top of the page. The heading that replaced it is the honest place to
+  // land: it is what the reader needs to hear, and it is where the remaining actions are. The
+  // render has already run, synchronously, inside store.update.
   if (!next) $('#all-read-h').focus({ preventScroll: true });
 }
 
@@ -1475,6 +1478,12 @@ function cycleOverride(item) {
 function wireShortcuts() {
   document.addEventListener('keydown', (e) => {
     if (view !== 'read' || e.metaKey || e.ctrlKey || e.altKey) return;
+    // A modal dialog makes the rest of the document inert, but a keydown raised inside it still
+    // bubbles to here, and the view behind the backdrop is still 'read'. Refusing every
+    // interactive element used to block this by accident; asking the narrower question exposes
+    // it. Measured in Edge: D at the "Delete list?" prompt, where showModal() has put focus on
+    // Cancel, marked an issue read behind the backdrop and swallowed the key.
+    if ($('dialog[open]')) return;
     const t = document.activeElement;
     // Only text entry silences a shortcut outright, and Enter is left to whatever the browser
     // would activate. Refusing every interactive element, as this once did, killed the D the

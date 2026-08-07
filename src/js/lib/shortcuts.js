@@ -38,8 +38,10 @@ export function activatesOnEnter(el) {
   if (!el) return false;
   const tag = tagOf(el);
   if (tag === 'BUTTON' || tag === 'SUMMARY') return true;
-  // An anchor with no href is neither activatable nor in the tab ring. The hero's issue-page
-  // link drops its href whenever the issue has no marvel.com page, so this case is reachable.
+  // An anchor with no href is neither activatable nor in the tab ring, so this branch is
+  // defensive rather than reachable: the hero's issue-page link is hidden by the same render
+  // that drops its href, and .btn[hidden] is display:none. Kept because "A" without href is a
+  // real HTML state and the predicate should not depend on that render staying as it is.
   if (tag === 'A') return Boolean(el.href);
   if (tag === 'INPUT') {
     if (ENTER_ACTIVATES_TYPES.has(typeOf(el))) return true;

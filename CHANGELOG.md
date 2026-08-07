@@ -16,9 +16,10 @@ quote in a bug report.
 
 ### Added
 
-- **About this app** now lists the keyboard shortcuts. Enter, D and the sidebar toggle were only
-  ever advertised on the hero button in the reading view, so once you had scrolled past it there was
-  nothing in the interface to remind you what was available. The reference is in one place and the
+- **About this app** now lists the keyboard shortcuts. Enter and D were only ever advertised on the
+  hero button in the reading view, so once you had scrolled past it there was nothing in the
+  interface to remind you what was available, and the sidebar binding was only ever in the toggle
+  button's tooltip, which a touch screen never shows at all. The reference is in one place and the
   hero keeps its own hint, so the shortcut is still shown at the point of use.
 
 - The filter above the full reading order is remembered. Choosing Unread, Read, In Unlimited or
@@ -40,7 +41,9 @@ quote in a bug report.
   search or rename box is unaffected, Enter still submits a form and still follows a link, and D now
   survives a click. Marking the last issue read hides the hero and used to drop focus on the page
   body without a word; focus now moves to the "That is the whole order, read" heading, so the
-  keyboard stays where you were working and a screen reader announces where it landed.
+  keyboard stays where you were working and a screen reader announces where it landed. The shortcuts
+  also stand down entirely while a dialog is open, so pressing D behind the "Delete list?" prompt no
+  longer quietly marks an issue read underneath it.
 
 - The vendoring scripts no longer hang when the metadata API rate-limits them. Their retry called
   itself from inside the rate limiter's own queue, so a request that was waiting to try again held

@@ -109,3 +109,32 @@ test('tag and type comparisons do not depend on how the caller cased them', () =
   assert.equal(isTextEntry(el('INPUT', { type: 'RADIO' })), false);
   assert.equal(activatesOnEnter(el('INPUT', { type: 'FILE' })), true);
 });
+
+// The two sets are the whole of the module's knowledge, and a member removed from either is a
+// silent behaviour change: an input would start swallowing D, or Enter would fire twice on one
+// press. Review found that 11 of the 15 members had no test that would fail if they were deleted,
+// so every member is named here rather than a representative few. The inputs carry no form, so
+// nothing is covered for them by the implicit-submission fallback.
+test('every non-text input type is exempt from text entry, one by one', () => {
+  for (const type of ['button', 'checkbox', 'color', 'file', 'hidden', 'image', 'radio', 'range', 'reset', 'submit']) {
+    assert.equal(isTextEntry(el('INPUT', { type })), false, `${type} should not be text entry`);
+    assert.equal(shortcutAllowed(el('INPUT', { type }), 'd'), true, `d should survive ${type}`);
+  }
+});
+
+test('every input type the browser activates on Enter stands Enter down, one by one', () => {
+  for (const type of ['button', 'file', 'image', 'reset', 'submit']) {
+    assert.equal(activatesOnEnter(el('INPUT', { type })), true, `${type} should activate on Enter`);
+    assert.equal(shortcutAllowed(el('INPUT', { type }), 'Enter'), false, `Enter should stand down on ${type}`);
+    // D is unaffected: only the browser's own use of the key is being avoided.
+    assert.equal(shortcutAllowed(el('INPUT', { type }), 'd'), true, `d should survive ${type}`);
+  }
+});
+
+test('an input type the browser does not activate on Enter leaves Enter to the app', () => {
+  // The counterpart to the test above: without this, deleting the whole set would still pass.
+  for (const type of ['checkbox', 'radio', 'range', 'color']) {
+    assert.equal(activatesOnEnter(el('INPUT', { type })), false, `${type} should not activate on Enter`);
+    assert.equal(shortcutAllowed(el('INPUT', { type }), 'Enter'), true, `Enter should survive ${type}`);
+  }
+});
