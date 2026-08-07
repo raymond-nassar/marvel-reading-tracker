@@ -166,6 +166,17 @@ test('a repeat separated by a blank line is not a repeat', () => {
   assert.deepEqual(checkRepeats(text), []);
 });
 
+// A fixed ceiling of 8 shipped in the first draft of this check and would have missed a
+// duplicated paragraph purely for being long, which is the defect it exists to catch. The
+// bound is derived from the longest blank-free run instead, so this fails if that returns.
+test('a repeat longer than any fixed window is still caught', () => {
+  const block = Array.from({ length: 12 }, (_, i) => `line ${i} of a long duplicated paragraph`);
+  const text = `intro${NL}${NL}${block.join(NL)}${NL}${block.join(NL)}${NL}${NL}outro${NL}`;
+  const found = checkRepeats(text);
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, /repeats the 12 lines above it word for word/);
+});
+
 // The point of the check is that it needs no exception list. If the real document ever
 // grows a legitimate repeat, this fails and the decision gets made deliberately.
 test('the document as committed contains no repeat', () => {

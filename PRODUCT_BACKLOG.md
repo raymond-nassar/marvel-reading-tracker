@@ -210,7 +210,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Ready | eslint.config.mjs:93-97 |
-| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:320-341 |
+| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2435-2469 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:204 |
@@ -1927,13 +1927,14 @@ the defect landed on the paragraph least able to afford it.
 
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
-mid-clause after a full stop. The second was deleted, at `PRODUCT_BACKLOG.md:1761-1764`.
+mid-clause after a full stop. The second copy was deleted; the retained text is at
+`PRODUCT_BACKLOG.md:1761-1764`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
 permanent check worth building rather than a one-off answer worth writing down. The scan needed no
 minimum length and no exception list to stay quiet, so `scripts/check-counts.mjs` now carries it, at
-`scripts/check-counts.mjs:320-341`, and `npm run counts` fails on a repeat.
+`scripts/check-counts.mjs:324-356`, and `npm run counts` fails on a repeat.
 
 Putting it in that script rather than in a new one follows what was already there. The counts gate
 already refuses a detail block that appears twice, at `scripts/check-counts.mjs:293-303`, which is
@@ -1950,6 +1951,14 @@ fails the two that assert a repeat is caught; removing the guard that stops a wi
 line fails the one that asserts two paragraphs cannot pair across the gap between them; and the
 fourth, which asserts the committed document is clean, is the one that failed before the deletion
 landed.
+
+Review found a fifth case worth covering. The first draft searched block lengths from a fixed eight
+downwards, a number with no reason behind it, so a duplicated paragraph would have escaped merely for
+running long, which is the defect the check exists to catch. The bound is now derived: a repeat
+cannot span a blank line, by the guard already there, so both copies must sit inside one blank-free
+run and no block can exceed half of the longest. Across the tracked Markdown that run is 41 lines, so
+the real ceiling is 20 rather than 8. A test now duplicates a twelve-line block, which the shipped
+ceiling would have missed.
 
 The gate's summary line was rewritten in the same change, because a repeat is not a figure and has no
 derived value to write, so counting both classes in one sentence would have described neither. The
@@ -2040,7 +2049,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2627-2628` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2636-2637` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2050,11 +2059,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:158-160`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2645-2647`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2654-2656`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2473-2475` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2482-2484` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,

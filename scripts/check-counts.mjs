@@ -316,12 +316,27 @@ export function checkBlocks(d) {
 // argues against at length. Measured before it was written: across every tracked
 // Markdown file, exhaustively, at every block length from 8 lines down to 1 and with no
 // length floor at all, it reports exactly one hit, which is the defect. So the check
-// needs no exception list, and a second hit means a second defect rather than noise.
+// needs no exception list today. That measurement is about the corpus as it stands, not
+// a guarantee about every document that could be written: two identical consecutive
+// table rows, list bullets or lines inside a fenced block would each report, correctly
+// by the rule and unhelpfully in context. If one ever does, that is the decision this
+// design defers rather than one it has already made.
 export function checkRepeats(text) {
   const lines = text.split(/\r?\n/);
+  // The ceiling is derived rather than picked. A repeat cannot span a blank line, by the
+  // guard below, so both copies must fit inside one blank-free run, which bounds a block
+  // at half the longest such run. Today that is 20 lines against a longest run of 41, so
+  // a fixed 8 would have missed a duplicated paragraph merely for being long, which is
+  // the exact defect this exists to catch. Deriving it cannot.
+  let run = 0;
+  let longest = 0;
+  for (const l of lines) {
+    run = l.trim() === '' ? 0 : run + 1;
+    if (run > longest) longest = run;
+  }
   const found = [];
   const claimed = new Set();
-  for (let n = 8; n >= 1; n--) {
+  for (let n = Math.floor(longest / 2); n >= 1; n--) {
     for (let i = 0; i + 2 * n <= lines.length; i++) {
       if (claimed.has(i)) continue;
       const first = lines.slice(i, i + n);
