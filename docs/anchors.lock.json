@@ -1,8 +1,23 @@
 {
+  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:800-802|0": {
+    "anchor": "docs/UX_STUDY.md:800-802",
+    "fp": "1e64d83a8ff9a25f",
+    "head": "**Puppeteer was installed outside the repository, deliberately.** `node_modules/` is not covered by"
+  },
+  ".github/copilot-instructions.md|standing-product-constraints|.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79|0": {
+    "anchor": ".copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79",
+    "fp": "34ac4c1c9cc700ab",
+    "head": "## Standing constraints for future work"
+  },
   ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|.github/workflows/ci.yml:15|0": {
     "anchor": ".github/workflows/ci.yml:15",
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
+  },
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:101-104|0": {
+    "anchor": "scripts/check-anchors.mjs:101-104",
+    "fp": "d30721f171c58774",
+    "head": "// Every tracked Markdown file, listed by git rather than by this script. Membership"
   },
   ".github/copilot-instructions.md|what-the-app-is|src/js/storage.js:9|0": {
     "anchor": "src/js/storage.js:9",
@@ -69,13 +84,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1308-1311|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1308-1311",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1310-1313|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1310-1313",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:215-216|0": {
-    "anchor": "PRODUCT_BACKLOG.md:215-216",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:217-218|0": {
+    "anchor": "PRODUCT_BACKLOG.md:217-218",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
