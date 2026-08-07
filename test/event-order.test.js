@@ -133,8 +133,10 @@ test('committed checklists carry no doubled whitespace', async () => {
 // `render` builds it from the event name, and an imported file's first heading becomes the list's
 // name on screen. So Constraint 11 reaches it, even though the file is data rather than source.
 // Scoped to headings on purpose. The item lines carry Marvel's own titles, and five of them really
-// are spelled with an en dash ("Ultimate Impact - Reborn #1" is one), so a whole-file sweep would
-// fail on upstream copy this repository is not entitled to rewrite.
+// are spelled with an en dash rather than a hyphen, all in the Ultimate Impact entries of
+// new-ultimate-universe.md, so a whole-file sweep would fail on upstream copy this repository is
+// not entitled to rewrite. The character is described rather than reproduced here so that this
+// comment does not become the thing it is about.
 test('a committed checklist heading carries no en or em dash', async () => {
   let headings = 0;
   for (const file of await readdir(ORDERS)) {
