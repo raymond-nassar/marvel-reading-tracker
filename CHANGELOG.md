@@ -20,7 +20,7 @@ quote in a bug report.
   rubric by following it literally in a fresh clone, and thirteen of the twenty criteria failed.
   Four of those failures stopped a non-engineer reaching a running app at all: the document named
   no address to open, named no prerequisite, had no troubleshooting section, and put the run
-  instructions eighth of nine headings behind vendoring and search-index material. It now opens
+  instructions seventh of ten headings behind vendoring and search-index material. It now opens
   with what the app is and who it is for, then a numbered path from installing Node.js to looking
   at a working screen, each command saying what you should see when it worked. The address is
   written out in full, and there is a section on why it must not change: reading progress is filed
@@ -28,6 +28,14 @@ quote in a bug report.
   `127.0.0.1`, shows an empty app while the real progress sits untouched at the old one. Both
   halves of that were confirmed in a browser rather than reasoned about. Contributor material is
   unchanged in substance but now grouped under one heading, out of a first-time reader's way.
+
+- The BlueStacks section has moved out of the README to
+  [`docs/WHY_A_BROWSER_APP.md`](docs/WHY_A_BROWSER_APP.md), with its wording unchanged. It records
+  why this is a browser companion rather than a way to run Marvel's Android app on a PC, which is
+  worth keeping so nobody retries the emulator route, but it answered a question nobody trying to
+  run the app is asking and it sat second of the README's headings. A reader met a page of ARM64
+  driver architecture before anything about starting the app. The README links to it from the
+  contributor section.
 
 - Two README statements were corrected. It said the tests and linter run "on every push"; the
   workflow scopes its push trigger to `main`, so a feature branch with no open pull request

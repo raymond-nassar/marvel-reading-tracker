@@ -1135,7 +1135,7 @@ not badly written; it was written for somebody who already had the project worki
 Four failures were graded blockers, meaning a non-engineer could not reach a running app. The
 README named no address anywhere, so a reader who ran the one command it gave had nowhere to go.
 It named no prerequisite, so a reader without Node saw a "not recognised" error the document did
-not acknowledge. It had no troubleshooting section. And the run instructions sat eighth of nine
+not acknowledge. It had no troubleshooting section. And the run instructions sat seventh of ten
 headings, behind vendoring, event-order generation and search-index material that a reader must
 not need.
 
@@ -1174,7 +1174,7 @@ that is serving its actual audience adequately.
 
 - [ ] Shorten the sentences in the vendoring and audit sections, which run to over a hundred words unbroken
 - [ ] Define or avoid the vocabulary a new contributor would not know: vendor, snapshot, placeholder, depth
-- [ ] Decide whether the BlueStacks section belongs in the README at all, or in `docs/`
+- [x] Decide whether the BlueStacks section belongs in the README at all, or in `docs/`
 
 Constraint gate: checked 1 to 11, none breached. No constraint is engaged: this is prose style in
 material that ships no behaviour.
@@ -1184,6 +1184,18 @@ three of its criteria failed on passages that only a contributor reads. Fixing t
 have meant editing the em dashes and the historical phrasing in sections whose facts were not
 under review, so the finding is recorded where it can be scheduled against its own audience
 instead of riding along with a change aimed at a different reader.
+
+The third task is closed ahead of the other two, on the repository owner's decision. The
+BlueStacks material moved to `docs/WHY_A_BROWSER_APP.md` with its wording unchanged, and the
+README links to it from the contributor section. It was the largest block of text in the document
+that answered a question nobody trying to run the app is asking, and it sat second of the headings,
+so a reader met a page of ARM64 driver architecture before anything about starting the app.
+
+Moved rather than deleted, though every fact in it survives in more detail in the research
+artifact under `.copilot-tracking/research/` for 2026-08-03, which carries the command output and
+the sources behind each finding. That artifact is dated working evidence and is navigated by id
+rather than cited by line, so it is not somewhere a reader would be sent. The new page says where
+the underlying evidence lives without turning a historical record into a maintained reference.
 
 ## Existing epics and stories
 

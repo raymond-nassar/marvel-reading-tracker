@@ -226,25 +226,6 @@ Almost always this means the address changed. Read
 Progress is also per browser. If you normally use Edge and open the app in Firefox, Firefox
 will start empty. That is expected, and your Edge progress is untouched.
 
-## Why a web app and not BlueStacks
-
-This started as an attempt to run the Marvel Unlimited **Android** app via BlueStacks. That
-did not work on this hardware, and it is worth writing down so nobody retries it:
-
-- The machine is **ARM64** (Snapdragon X Elite). BlueStacks' published minimum spec is
-  "Intel or AMD Processor", and its installer ships as `..._amd64_native.exe`.
-- BlueStacks (and NoxPlayer, LDPlayer, MEmu, MuMu) load **kernel-mode hypervisor drivers**.
-  Windows on ARM's x86-64 emulation (Prism) is user-mode only, and kernel drivers have to be
-  compiled natively for ARM64.
-- **Google Play Games on PC** targets x86 Intel/AMD hosts.
-- **Windows Subsystem for Android** was removed from the Microsoft Store on 2025-03-05.
-- The **Android Studio emulator** ships `arm64-v8a` Google Play system images, but Google
-  publishes the Windows emulator binary as x64 only. There is no Windows ARM64 build.
-
-Marvel supports Marvel Unlimited on Windows through the browser (streaming only; offline
-downloads remain iOS/Android). Edge and Chrome are both ARM64-native here, so a
-browser-based companion runs without an emulation layer in the way.
-
 ## Pairs well with
 
 - **[LONGBOX for Marvel Unlimited](https://chromewebstore.google.com/detail/empty-title/jlnbkkddanlogmlkhnbpjbpidofkigfn)**
@@ -270,6 +251,9 @@ MIT-licensed and self-hostable, so you can point it at your own copy.
 
 Everything below this point is for people changing the app or adding data to it. You do not
 need any of it to read comics.
+
+Background: [why this is a browser app and not an Android emulator](docs/WHY_A_BROWSER_APP.md)
+records the hardware findings behind that decision, so the emulator route does not get retried.
 
 ### Checks
 
