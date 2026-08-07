@@ -149,7 +149,7 @@ are recorded rather than inherited.
 
 * `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last
   line number when reading the file. Evidence: `src/js/main.js:2561-2574`. The work shipped since has
-  taken it to 2,563; 1,566 is the figure as audited.
+  taken it to 2,629; 1,566 is the figure as audited.
 * `src/js/ui/` does not exist in this worktree. Evidence: `absent: src/js/ui, Test-Path returning
   False and a recursive directory listing of src/`. Git cannot track an empty directory, so an
   empty `src/js/ui/` in another checkout is a local artifact rather than repository content. Either
@@ -198,7 +198,7 @@ BL-050's, which was never written; see BL-057.
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:150-152 |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2238-2239 |
+| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2292-2294 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1212-1239 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
@@ -210,6 +210,7 @@ BL-050's, which was never written; see BL-057.
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2366-2400 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:159 |
+| BL-058 | Keep focus on the home grid when an order is added to the library | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Ready | src/js/main.js:2273 |
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Shipped | src/js/main.js:75 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Ready | design/mockups/5-longbox-focus.html:169-172 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
@@ -1612,13 +1613,27 @@ next issue as well. Each list names its least destructive control instead, at
 here. When even that is gone the landing is the checked filter radio, which is both the reason the
 list is empty and the control that undoes it.
 
-Verified by a browser check in Edge at 1280x900, 11 of 11 assertions passing, covering the click
-route, the keyboard route, an issue filtered away by the act performed on it, a shelf tile surviving
-a rebuild it did not cause, and the document scroll position. Proved able to fail: against the same
-tree with `src/js/main.js` stashed, 9 of the 11 fail and `document.activeElement` reports `BODY`
-exactly as this block described. The two that pass unfixed are the honest baselines: the scroll
-position never moved, so the third task was already satisfied, and the filter radio sits outside
-both rebuilt containers and was never at risk.
+Verified by a browser check in Edge at 1280x900, 12 of 12 assertions passing. They are, in order:
+focus stays on a control after a row checkbox click, and on the same issue; the document does not
+scroll; the availability control survives the rebuild it triggers; the reorder control follows its
+own row down the list; the keyboard route lands on a control; a shelf tile survives a rebuild it did
+not cause; a row filtered away by the act performed on it drops focus neither to `<body>` nor onto
+the wrong row, which is two assertions; emptying the filtered list entirely still leaves focus
+somewhere reachable; changing the filter leaves focus on the filter radio; and the shelf emptying
+under a focused tile lands on the hero rather than nowhere.
+
+Proved able to fail. Against the same tree with `src/js/main.js` replaced by its parent commit,
+10 of the 12 fail and `document.activeElement` reports `BODY` exactly as this block described. The
+two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is
+easy to misread: emptying the filtered list is one of the ten that fails. What passes unfixed is the
+scroll position, which never moved, so the third task was already satisfied, and changing the filter,
+because the radio sits outside both rebuilt containers and was never at risk.
+
+The last of the twelve is the one worth naming separately, because it exercises the only path in the
+change that can decline to land anywhere. Leaving exactly two unread issues puts one tile on the
+shelf; marking the first read from the keyboard, so that nothing moves focus off that tile first,
+empties the shelf and hides it under the reader's own focus. Measured: `shelfHidden=true`,
+`heroHidden=false`, and focus on `#btn-hero-done`. Unfixed the same sequence reports `BODY`.
 
 No unit test, and the reason is worth recording rather than leaving as a silence. Every one of the
 285 tests runs over pure modules under `src/js/lib/`; nothing in the suite touches a DOM. The helper
@@ -1635,6 +1650,44 @@ clean, because `getComputedStyle` still reports `display: grid` and `visibility:
 `getBoundingClientRect` still returns a non-zero box. `element.checkVisibility()` returning `false`
 is what settles it, and the check now opens the disclosure and waits on that before it measures.
 
+Not closed by this item. The review found the same defect on the home grid, where `+ Add to library`
+loses focus to `<body>`, and it is filed as BL-058 rather than folded in here. The mechanism is
+different enough to need its own answer, and widening this change to reach it would have put an
+untested second fix under an already large diff.
+
+**BL-058: Keep focus on the home grid when an order is added to the library**
+
+- [ ] Keep focus on a control after `+ Add to library`, on the one view built to keep the reader put
+- [ ] Decide what the landing is once the button that was pressed no longer exists
+- [ ] Cover it in the same browser check that covers the shelf and the full order
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of the BL-054 review, and deliberately not fixed there. `addFromCatalog` at
+`src/js/main.js:979` carries a comment saying adding must not move the reader, and the home grid is
+the one view the app is built to keep them on. It does move them. Measured in Edge at 1280x900,
+clicking `+ Add to library` with the button focused leaves `document.activeElement` at `BODY`
+immediately, while the button is still in the document and merely disabled, and it is still `BODY`
+two seconds later once both rebuilds have run.
+
+The mechanism is not the one BL-054 answered, which is why the helper it shipped does not simply
+drop in. `importCurated` sets `btn.disabled = true` at `src/js/main.js:2273`, and disabling a focused
+control blurs it there and then, before any rebuild has run. By the time `renderHomeCatalog` reaches
+`grid.replaceChildren` at `src/js/main.js:851` there is nothing left to preserve, so a wrapper that
+reads focus at rebuild time reads `BODY` and correctly declines. The grid is then rebuilt a second
+time after a 1500 ms `setTimeout`, and the re-enable in its `finally` at `src/js/main.js:2343` puts
+a node back in an enabled state that has been detached twice over. Any fix has to capture the
+identity before the disable, not at the rebuild.
+
+`renderRail` at `src/js/main.js:635` and `renderYours` at `src/js/main.js:779` rebuild their
+containers the same way, and the scope question about them is not settled. The review that filed this
+item read them as safe because navigation follows them, and that is only half true: `showView` calls
+`renderRail` at `src/js/main.js:616` and reaches `renderYours` through `renderHome` at
+`src/js/main.js:618`, where the reader is being moved anyway and the focus loss is not observable as
+a loss. But `renderAll` at `src/js/main.js:2561` calls both as well, on every `store.update`, with no
+navigation at all. That route is unmeasured. It is recorded here as unmeasured rather than excluded,
+because excluding it would repeat the mistake this item exists to correct.
+
 **BL-055: Record the drift in the audited figures instead of letting them go stale**
 
 - [x] Re-derive the size of `src/js/main.js` and record the drift where it is stated as a fact
@@ -1643,9 +1696,10 @@ is what settles it, and the check now opens the disclosure and waits on that bef
 
 Constraint gate: checked 1 to 11, none breached.
 
-Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and is
-2,563, so the file had grown by 997 lines, 64 per cent, while every statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2097-2099` uses that size as the argument for
+Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
+2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
+statement of its size stood
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2151-2153` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -1654,11 +1708,11 @@ the same list: the
 audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
 have since taken it to 285; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:157-159`. Appendix A
 does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
-editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2114-2116`. Overwriting would have destroyed
+editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2168-2170`. Overwriting would have destroyed
 the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:1943-1945` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:1997-1999` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -2098,7 +2152,7 @@ The clearest debt in the repository, and it is concentrated in one file.
   every render function. There is no view layer to change independently.
   Evidence: `src/js/main.js:2561-2574`, `src/js/main.js:603-631` (showView switches views by
   mutating a module-level variable).
-  Still open, and wider than audited: the file is 2,563 lines now, so every item shipped since has
+  Still open, and wider than audited: the file is 2,629 lines now, so every item shipped since has
   been added to the one file this gap is about. `BL-055` corrected the figure; `BL-042` is the item
   that would close the gap.
 - Testability gap: `src/js/cache.js`, `src/js/hydrate.js` and `src/js/main.js` have no test file,
@@ -2182,14 +2236,14 @@ because BL-014, BL-026 and BL-027 have shipped and BL-025 and BL-028 were droppe
 five keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and seven
-further items filed, none of them labelled, which is how it reaches 34 rows now. The ranks below are
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and eight
+further items filed, none of them labelled, which is how it reaches 35 rows now. The ranks below are
 positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks fifteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 15 of 34.
+- Calculated: WSJF 3.67, rank 15 of 35.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by fourteen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -2208,10 +2262,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks thirtieth
+### Case 2: BL-007 is labelled P1 but ranks thirty-first
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 30 of 34, below twenty-six unlabelled items and three places above the
+- Calculated: WSJF 1.4, rank 31 of 35, below twenty-seven unlabelled items and three places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -2235,8 +2289,9 @@ positions in it as it stands.
   backlog lost to a scope judgement, and both WSJF and the P1 label would have argued for building
   it. Evidence for the state that prompted it is unchanged and still recorded in the reconciliation
   table and in `docs/UX_STUDY.md`.
-- Consequence for the ranking: with BL-028 removed the table is 34 rows, and the highest Cost of
-  Delay among the items that remain is 16, shared by BL-029, BL-039 and BL-050.
+- Consequence for the ranking: with BL-028 removed the table was 34 rows, and is 35 now that BL-058
+  has been filed. The highest Cost of Delay among the items that remain is 16, shared by BL-029,
+  BL-039 and BL-050.
 
 ### Case 4: eleven items created this pass outrank the only open P0 story
 
@@ -2255,9 +2310,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 20 of 34. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 16 of 34. Mid-table.
-- BL-017, P2, rank 33 of 34. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 20 of 35. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 16 of 35. Mid-table.
+- BL-017, P2, rank 34 of 35. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

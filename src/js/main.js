@@ -1410,7 +1410,7 @@ function renderShelf() {
     // The shelf empties when at most one unread issue is left, and the section is hidden with it,
     // so there is nothing inside to land on. "Done, next" continues the same activity and is the
     // control the shelf was helping the reader reach. When the order is finished the hero is hidden
-    // too, and markCurrentRead has already claimed focus for the heading that replaced it.
+    // too, and markCurrentRead claims the heading that replaced it when store.update later returns.
     fallback: () => ($('#hero').hidden ? null : $('#btn-hero-done')),
   });
 }
