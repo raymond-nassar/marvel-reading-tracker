@@ -1419,18 +1419,23 @@ is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on i
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
-The vocabulary was handled by defining two terms and avoiding two. `vendor` is now defined at
-first use, at `README.md:291-295`, as fetching a list once and committing what came back, which is
-the one term a contributor meets before any explanation of it. `depth` gained a gloss in the field
-table. `snapshot` and `placeholder` were avoided instead: the sentence that used "snapshot date"
-before defining it now says the date is restamped, which moves the term's first appearance to the
-paragraph that already explained it, and "pinned JSON" became "the JSON already committed", since
-pinning was a third undefined term the task had not spotted.
+The vocabulary was handled by defining three of the four terms and removing the fourth's undefined
+first use. `vendor` is now defined where the word first appears, at `README.md:291-295`, as fetching
+a list once and committing what came back. `depth` gained a gloss in the field table, which had
+listed its three values without ever saying what the field meant. `placeholder` is defined inline at
+its only remaining use. `snapshot` is the fourth, and the one genuinely avoided rather than defined:
+the sentence that said "snapshot date" before anything had defined a snapshot now says the date is
+restamped, which moves the term's first appearance to the paragraph that already explained it.
+"pinned JSON" became "the JSON already committed", pinning being a fifth undefined term the task had
+not spotted.
 
-Scope was held to prose. No command, path, field name or factual claim changed, which is what
-makes the change reviewable as a diff: `npm run anchors` reports no drift, and the anchors gate
-covers the citations in these sections precisely because they are the parts a rewrite could break
-silently.
+Scope was held to prose, and that is checked rather than asserted: every code span, every link
+target and every fenced block below the contributor heading is identical to the pre-change file, so
+no command, path, flag or field name moved. The anchors gate is not the evidence for that, and
+saying so would overstate it. The lock held no citation into `README.md` before this change, so
+nothing the rewrite did to those sections could have drifted it. The two citations that now exist
+were created here and fingerprinted against the rewritten text, which makes them coverage this
+change adds for future edits rather than a check it passed.
 
 The third task is closed ahead of the other two, on the repository owner's decision. The
 BlueStacks material moved to `docs/WHY_A_BROWSER_APP.md` with its wording unchanged, and the

@@ -56,11 +56,12 @@ quote in a bug report.
   over a hundred words, as had been recorded. The longest was 48 and only four passed 40. What did
   pass a hundred was a single 138-word paragraph explaining why the series audit reads its index out
   of committed history. That paragraph is now three, one per argument, and the longest sentence in
-  the section is 36 words. Four terms a new contributor would not know are handled: to vendor a list
-  is now defined where the word first appears, `depth` is glossed in the field table, and "snapshot
-  date" and "pinned JSON" are simply said differently, which moves "snapshot" to the paragraph that
-  already explained it. Three em dashes are gone. No command, path, field name or claim about
-  behaviour changed, so nothing here alters what the scripts do or how to run them.
+  the section is 36 words. Five terms a new contributor would not know are handled, the four the
+  task named and one it had not spotted: to vendor a list, `depth` and placeholder are now defined
+  where they are used, while "snapshot date" and "pinned JSON" are simply said differently, which
+  moves "snapshot" to the paragraph that already explained it. Three em dashes are gone. No command,
+  path, field name or claim about behaviour changed, so nothing here alters what the scripts do or
+  how to run them.
 
 - The three build scripts that page the metadata API now share one rate-limited fetch instead of
   keeping a byte-identical copy each. `scripts/vendor-index.mjs`, `scripts/vendor-orders.mjs` and
