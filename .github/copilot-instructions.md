@@ -51,18 +51,22 @@ Keep using the convention rather than inventing a scratch layout:
 **The rule that matters most: persist to the artifact, not to the conversation.** Working state
 that only exists in a session is gone the moment the session is.
 
-This repository already paid for that lesson. 27 of the 28 backlog detail blocks carry a
-"Constraint gate: checked 1 to 11, none breached" line, 26 of them with identical wording, and the
-constraints are cited by number more than thirty times across the documents. The enumerated list
-itself was never written to a file. Nine of the eleven were reconstructed from how they are cited,
-three of those nine corroborated by a five-item list in the original review log, and **two are
-simply lost** and can only come back from the repository owner. The gate was recorded as passing
-twenty-seven times against a list nobody could read.
+This repository already paid for that lesson. 36 of the 38 backlog detail blocks carry a
+"Constraint gate: checked 1 to 11, none breached" line, 35 of them with identical wording, and the
+constraints are cited by number more than forty times across the documents. **The enumerated list
+was never committed.** It lived in a prompt file that was never added to git, so every one of those
+gate lines asserted a check against something no reader of this repository could open. Nine of the
+eleven were later reconstructed from how they are cited, and two were marked simply lost.
+
+All eleven have since been recovered verbatim from that same still-untracked file, and the recovery
+found that six of the nine reconstructions had drifted from the original wording. The table below is
+now the original rather than a reading of it.
 
 So when a decision, a constraint or a piece of user direction arrives in conversation, write it into
 a durable artifact in the same turn. If a value is genuinely unrecoverable, record it as a blocker
 and say so plainly. Never invent a plausible-looking replacement, and never quietly drop it. The
-missing constraints are marked "Not recovered" below for exactly that reason.
+eleven came back only because one untracked file happened to survive on one machine, which is luck
+rather than a process, and luck is not a thing to plan the next one around.
 
 ## Research, then plan, then implement
 
@@ -229,12 +233,13 @@ restating the code is noise here.
 supplies the period. This is a rule about that function, not about test naming. The tests use bare
 `test()` throughout and there are no `describe()` blocks to match.
 
-**Constraint 11 forbids em dashes** in copy you write or edit. Scan the added lines of your diff
-before committing, because they are easy to introduce and invisible in review. The scan flags en
-dashes too, which is deliberate: the en dash half of the constraint is inferred rather than sourced,
-so treat one of those as worth a look rather than an automatic fix. Note it scans only added lines,
-which is what you want, since vendored data and the historical tracking artifacts already contain
-both and are not yours to rewrite.
+**Constraint 11 forbids em dashes.** The constraint itself names shipped surfaces; the practice here
+is wider, so scan any copy you write or edit. Scan the added lines of your diff before committing,
+because they are easy to introduce and invisible in review. The scan flags en dashes too, which is
+deliberate: the constraint names only the em dash, so the en dash half is a house rule rather than
+the constraint, and one of those is worth a look rather than an automatic fix. Note it scans only
+added lines, which is what you want, since vendored data and the historical tracking artifacts
+already contain both and are not yours to rewrite.
 
 ```
 git --no-pager diff origin/main --unified=0 | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=s.split(/\r?\n/).filter(l=>l.startsWith('+')&&!l.startsWith('+++')&&/[\u2013\u2014]/.test(l));console.log(b.length);b.forEach(l=>console.log(l));})"
@@ -310,47 +315,68 @@ is `npm i puppeteer-core`, that is the mistake this paragraph exists to stop.
 
 ## Standing product constraints
 
-27 of the 28 backlog detail blocks carry a Constraint gate line, 26 of them reading "checked 1 to
-11, none breached" exactly and the 27th a Constraint 6 variant, so a numbered list of eleven is
-load-bearing. BL-025 has none, because it was removed by the gate
-before it was ever scored; do not "fix" that by inventing a check nobody ran. As described above,
-**the list itself was never committed to this repository.** What follows is reconstructed from how
-each constraint is cited in `PRODUCT_BACKLOG.md` and `docs/UX_STUDY.md`. Constraints 8 and 9 are
-cited by number in the gate line but never by meaning anywhere in the tree, so they could not be
-recovered.
+36 of the 38 backlog detail blocks carry a Constraint gate line, 35 of them reading "checked 1 to
+11, none breached" exactly and the 36th a Constraint 6 variant, so a numbered list of eleven is
+load-bearing. Two blocks carry none, for different reasons. BL-025 was removed by the gate before it
+was ever scored. BL-028 was scored and then parked as a product decision rather than by the gate, and
+its block says in prose that no constraint was breached. Do not "fix" either by inventing a check
+nobody ran.
 
-Treat this as authoritative for 1 to 7, 10 and 11, and get 8 and 9 confirmed by the repository
-owner before relying on a clean gate.
+**The list below is the original, recovered verbatim. It is not a reconstruction.** The source is the
+prompt that drove the backlog and UX study pass on 2026-08-05, under its own heading "Repository
+Constraints". That prompt is what told the pass to "check each candidate against the eleven
+Repository Constraints by number and record the check in the item's detail block", so it is where
+every gate line in the backlog comes from, and its mandated `Breaches Constraint n` wording is what
+BL-025's parked reason is written in.
+
+That prompt is still **not committed**. It sits untracked in the main checkout at
+`.github/prompts/product-backlog-ux-study.prompt.md`, byte-identical to the copy the session read
+from its attachments directory. Committing it is filed as its own backlog item rather than done
+here, because it carries three stale example citations that the anchors gate would enroll as live
+claims and one of them is already false. Until that lands, this table is the only committed copy of
+the eleven. Treat it as the record, and do not paraphrase it.
 
 | # | Constraint |
 |---|---|
-| 1 | Store cover URLs, never image bytes, and never proxy or cache them. The browser fetches from Marvel's CDN directly. |
-| 2 | Orders come from the vendored pipeline and licensed upstream sources. Never scrape marvel.com. |
-| 3 | No accounts, cloud services, analytics or telemetry. The product promise is that nothing is uploaded anywhere. |
-| 4 | No runtime dependencies. Plain JavaScript only; a rendering library is not an option. Tooling that never reaches the browser is fine. |
-| 5 | Storage is bound to the `127.0.0.1:8787` origin, **port included**. A different port is a different localStorage bucket, so serving on another one strands every reader's progress. Nothing may alter the origin, which is why navigation uses the hash. |
-| 6 | Never claim an issue is available in Marvel Unlimited as fact. Keep all five availability states distinct; do not collapse them to a boolean. |
-| 7 | Keep `window.open` synchronous inside the click handler. Never `await` before it, or user activation is lost and the reader tab is blocked. |
-| 8 | Not recovered. Cited by number only. |
-| 9 | Not recovered. Cited by number only. |
-| 10 | Single-user private application. There is exactly one persona; segment thinking is ruled out. |
-| 11 | No em dashes in prose or UI copy you write or edit. The en dash half is inferred: only the em dash is ever named in the sources. Vendored data under `src/data/` and the dated `.copilot-tracking/` artifacts already contain both and are out of scope; do not rewrite them to satisfy this. |
+| 1 | Never host, proxy, cache, or store comic image bytes. Store cover URLs only. |
+| 2 | Never scrape `marvel.com` or `read.marvel.com`. |
+| 3 | No accounts, no cloud services, no analytics, no telemetry. The product promise is that nothing is uploaded anywhere. |
+| 4 | Runtime dependencies stay at zero. Dev tooling through `npx --yes` or `devDependencies` is permitted and may be proposed. |
+| 5 | The `127.0.0.1:8787` origin is load-bearing. A different origin is a different storage bucket and silently loses reading progress. Never propose `localhost` or a flexible origin as an improvement. |
+| 6 | Do not simplify the availability badge to a boolean. Never claim an issue is available, and preserve the distinction between absence of data, a scheduled date, an expectation, and an explicit user override. Issue 6482 reports an `unlimitedDate` of `1963-03-01`, predating the 2007 launch of Marvel Unlimited. The comment above the enum in `src/js/lib/availability.js` names a different count than the enum defines, and that disagreement is a finding to record rather than a number to inherit. |
+| 7 | Do not propose reusing a single reader tab, and do not await the `digitalId` lookup before `window.open`. Both were tested against a live subscription and rejected. The second loses user activation and gets popup blocked. |
+| 8 | Metadata ending in 2025 is a documented boundary with a shipped manual-entry mitigation, not a bug. |
+| 9 | Android emulation is permanently closed with hardware evidence in `README.md`. |
+| 10 | Market-facing framing does not apply. This is a single-user private app, so segments, growth, retention, funnels, and A/B tests are out of scope. |
+| 11 | Match repository writing conventions. Shipped surfaces contain no em dashes. |
 
-Two further standing rules from the original build. Both come from the only enumerated list of
-*product* constraints that was ever committed, the five-item one under "Standing constraints for
-future work" in the original review log at
-`.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79`. The research
-artifact carries a second committed "Constraints" table, but it is about host hardware and platform
-viability, so it is not the missing list. That citation is the one deliberate exception to the rule
-against citing tracking artifacts by line, because this table has no other source. Three of the
-review log's five map onto constraints 1, 6 and 7 above, which is part of why those reconstructions
-can be trusted.
+Three notes on the table, none of which alter it.
 
-The remaining two are recorded here as standing rules rather than as numbered constraints. **They
-are also the leading candidates for the missing 8 and 9**, since exactly two are unmapped and
-exactly two numbers are unrecovered. Treat that as a hypothesis and not a finding: constraints 5
-and 11 are absent from the review log's five as well, and the orderings do not correspond. Put it
-to the repository owner rather than resolving it yourself.
+- **The finding inside constraint 6 is closed.** The comment above the enum in
+  `src/js/lib/availability.js` now names five states and the enum defines five, so the disagreement
+  the constraint tells you to record has since been fixed. The rest of constraint 6 stands, and the
+  five states must stay distinct.
+- **Constraint 5 is why navigation uses the hash.** Nothing may alter the origin, port included.
+- **Constraints 8 and 9 point outward.** Constraint 8's mitigation is the manual entry form, which
+  says in the page that the snapshot ends in 2025. Constraint 9's hardware evidence is in
+  `docs/WHY_A_BROWSER_APP.md`, which `README.md` links precisely so the emulator route is not
+  retried.
+
+**A hypothesis that was tested and refuted.** While 8 and 9 were unrecovered, the two rules below
+were the leading candidates for them, because exactly two were unmapped and exactly two numbers were
+missing. They are not 8 and 9. Both were already in the list: the `digitalId` rule is part of
+constraint 7 and the `unlimitedDate` rule is part of constraint 6. Adopting the guess would have
+written duplicates of 6 and 7 into the two empty rows, and made thirty-six gate lines
+unfalsifiable. It is recorded here so the same inference is not drawn a second time.
+
+The two come from the five-item list under "Standing constraints for future work" in the original
+review log at
+`.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79`, which was the
+only enumerated list of *product* constraints committed to this repository before the table above.
+That citation is the one deliberate exception to the rule against citing tracking artifacts by line,
+because the list has no other committed source. The research artifact carries a second committed
+"Constraints" table, but it is about host hardware and platform viability, so it is not this list
+either.
 
 - Resolve `digitalId` from the live API, never from vendored upstream documentation.
 - `unlimitedDate` is unreliable. Issue 6482 reports `1963-03-01`, which predates Marvel Unlimited's

@@ -192,14 +192,15 @@ BL-050's, which was never written; see BL-057.
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:20-29 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
+| BL-060 | Commit the prompt that is the only source of the eleven Repository Constraints | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 3 | 6.0 | none | Measured | Ready | absent: .github/prompts/product-backlog-ux-study.prompt.md from git ls-files, enumeration of tracked markdown against the working tree |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:112-122 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:150-152 |
-| BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | CHANGELOG.md:85-86 |
+| BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | CHANGELOG.md:94-95 |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2389-2391 |
+| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2418-2420 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1232-1259 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
@@ -1770,7 +1771,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2246-2248` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2275-2277` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -1779,11 +1780,11 @@ the same list: the
 audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
 have since taken it to 294; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:157-159`. Appendix A
 does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
-editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2265-2267`. Overwriting would have destroyed
+editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2294-2296`. Overwriting would have destroyed
 the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2092-2094` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2121-2123` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -1886,7 +1887,7 @@ BL-056 is the checker and this is the content the checker would have demanded.
 Constraint gate: checked 1 to 11, none breached.
 
 Filed out of BL-053. BL-055's changelog entry explains that two audited figures went stale by
-quoting what they are now, at `CHANGELOG.md:85-86`, which puts two live numbers inside a record
+quoting what they are now, at `CHANGELOG.md:94-95`, which puts two live numbers inside a record
 that is meant to be written once and left alone. They have needed editing on each of the two items
 shipped since, BL-054 and BL-053, both times only because a file grew and a test was added. A
 release record that has to be revised whenever unrelated work lands is not recording a release.
@@ -1900,6 +1901,34 @@ to carry it. Deciding that is the item.
 
 Not fixed in BL-053, which had to touch those two numbers and would have been widening its own
 scope to rewrite the entry that holds them.
+
+**BL-060: Commit the prompt that is the only source of the eleven Repository Constraints**
+
+- [ ] Give `scripts/check-anchors.mjs` a way to declare a document historical, so citations inside a preserved artifact are exempt rather than blessed
+- [ ] Commit the prompt, and confirm its three example citations are exempt and not enrolled
+- [ ] Point the constraint table in `.github/copilot-instructions.md` at the committed file instead of at an untracked path
+
+Constraint gate: checked 1 to 11, none breached. Constraint 4 is the live consideration and permits
+this, because the change touches a dev-only script and documentation and adds no runtime dependency.
+Constraint 11 applies to the prose written around it, though not to the prompt itself, which is a
+preserved artifact rather than new copy.
+
+Filed out of the recovery of Constraints 8 and 9. The eleven Repository Constraints that every gate
+line in this document is checked against were never committed. They survive in a prompt file sitting
+untracked in the working tree, and the two numbers that had been given up for lost were recovered
+from it rather than from anything in git. The list is now written into the constraint table in
+`.github/copilot-instructions.md`, so the constraints themselves are durable. Their source is still
+one `git clean` from gone.
+
+Committing it is not a one-line addition, which is why it is filed rather than folded into the
+recovery. The prompt carries three citation-shaped strings inside worked examples of the schema, and
+the gate collects the unbackticked form, so committing it as it stands enrolls three anchors that
+were never claims. One of them is already false: the example places `renderCatalog` at lines 1116 to
+1160, and that function is at `src/js/main.js:2053` today, with the rename-list handler occupying the
+lines the example names. Blessing that would lock in a fingerprint asserting something the code does
+not say, which is the exact failure the anchors gate exists to end. The declared `absent:` exemption
+does not reach these, since they are neither absent-markers nor marker-led table cells, so the gate
+needs the notion of a historical document before the file can land.
 
 ## Existing epics and stories
 
@@ -2386,9 +2415,9 @@ positions in it as it stands.
   backlog lost to a scope judgement, and both WSJF and the P1 label would have argued for building
   it. Evidence for the state that prompted it is unchanged and still recorded in the reconciliation
   table and in `docs/UX_STUDY.md`.
-- Consequence for the ranking: with BL-028 removed the table was 34 rows, and is 36 now that BL-058
-  and BL-059 have been filed. The highest Cost of Delay among the items that remain is 16, shared by
-  BL-029, BL-039 and BL-050.
+- Consequence for the ranking: with BL-028 removed the table was 34 rows, and is 37 now that BL-058,
+  BL-059 and BL-060 have been filed. The highest Cost of Delay among the items that remain is 16,
+  shared by BL-029, BL-039 and BL-050.
 
 ### Case 4: eleven items created this pass outrank the only open P0 story
 
