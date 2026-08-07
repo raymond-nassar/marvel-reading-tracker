@@ -346,10 +346,12 @@ browser checks cover the behaviour the unit tests cannot reach; eight of them fa
 pre-change tree, which is what makes them evidence rather than decoration. The modal check is a
 ninth, and a different shape: it passes against the pre-change tree, for the accidental reason
 above, and fails against the first draft of this change, which is the only tree it could have
-caught. The rest are regression guards that pass either way, the tab-ring walk among them: 151
+caught. The rest are regression guards that pass either way, the tab-ring walk among them: 142
 stops, every one with a visible focus ring, focus order strictly following document order, no stop
 visited twice and the reverse walk escaping cleanly. That walk is deliberately not offered as proof
-of the fix, since the ring was never the defect.
+of the fix, since the ring was never the defect. The walk is measured with the order part read and
+without navigating away and back first, both of which change the ring: an earlier draft of the modal
+check made that round trip and the count moved to 151.
 
 **BL-027: Announce each change once, in a way a screen reader can use**
 
@@ -617,7 +619,7 @@ copy in the same tick with nothing said about it. What came back is the order un
 what cannot be put back is their copy, so naming the copy as the thing that returned would report
 the loss and deny it in the same breath, and send them looking in the rail for a list that is not
 there. The sentence is returned as well as shown, and the caller folds it into the announcement it is
-about to make at `src/js/main.js:2269`, because two announcements in one tick leave only the last.
+about to make at `src/js/main.js:2260`, because two announcements in one tick leave only the last.
 
 A curated import writes twice, the list record and then its issues, so a failure on the second used
 to leave a shell list claiming the catalog entry with no issues in it. That shell then blocked the

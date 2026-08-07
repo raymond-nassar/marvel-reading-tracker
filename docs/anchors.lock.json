@@ -84,8 +84,8 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1761-1764|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1761-1764",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:1763-1766|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1763-1766",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -849,10 +849,10 @@
     "fp": "040ed2d540e2a8c3",
     "head": "if (!store.lastUpdateOk) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2269|0": {
-    "anchor": "src/js/main.js:2269",
-    "fp": "fc2e7b4023138c1b",
-    "head": "notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error', im"
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2260|0": {
+    "anchor": "src/js/main.js:2260",
+    "fp": "fdade8739af79cef",
+    "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2341|0": {
     "anchor": "src/js/main.js:2341",
