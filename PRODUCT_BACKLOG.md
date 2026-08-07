@@ -9,10 +9,10 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Thirty items have since been delivered and are marked `Shipped` in the table below: BL-014,
+Thirty-one items have since been delivered and are marked `Shipped` in the table below: BL-014,
 BL-026, BL-027, BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-039, BL-040, BL-043, BL-044,
 BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056,
-BL-057, BL-058, BL-059, BL-061 and BL-062.
+BL-057, BL-058, BL-059, BL-061, BL-062 and BL-063.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
@@ -157,7 +157,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 311; 224 is the figure as audited.
+  it to 319; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -209,7 +209,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:272-307 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
-| BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Ready | eslint.config.mjs:93-97 |
+| BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:42-58 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2435-2469 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
@@ -1769,8 +1769,8 @@ shelf; marking the first read from the keyboard, so that nothing moves focus off
 empties the shelf and hides it under the reader's own focus. Measured: `shelfHidden=true`,
 `heroHidden=false`, and focus on `#btn-hero-done`. Unfixed the same sequence reports `BODY`.
 
-No unit test, and the reason is worth recording rather than leaving as a silence. Every one of the
-285 tests runs over pure modules under `src/js/lib/`; nothing in the suite touches a DOM. The helper
+No unit test, and the reason is worth recording rather than leaving as a silence. Nothing in the
+suite touches a DOM: the tests run over pure modules and over files read off disk. The helper
 is DOM-bound end to end, and the two things worth asserting about it, that focus lands on a control
 and that it is the right one, cannot be observed without a real focus model. Adding one to reach it
 would mean adding a test-only DOM implementation, which is scope this item did not earn. The browser
@@ -1887,8 +1887,8 @@ since removed both, so those two lines carry the rewritten copy rather than what
 
 **BL-063: Extend the Constraint 11 check past JavaScript to the page and its styling**
 
-- [ ] Decide what mechanism reads the three HTML files and the three stylesheets
-- [ ] Record whether CSS `content` counts as shipped copy, since it reaches the screen without text
+- [x] Decide what mechanism reads the three HTML files and the three stylesheets
+- [x] Record whether CSS `content` counts as shipped copy, since it reaches the screen without text
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -1907,11 +1907,52 @@ shape of defect this repository has been caught by twice: BL-058 found a dash sc
 fail, and BL-056 was filed because the anchors gate reports a sentence as sound however wrong the
 numbers inside it are.
 
-Sized 2 on effort rather than 1 because the mechanism is an open question, not a line to write. A
-plain text sweep over the six files would work and is the obvious answer, but it is the same
-technique whose imprecision made the ESLint rule worth preferring, since it cannot tell an HTML
-comment from a paragraph. Whether that imprecision matters for markup, where there is far less
-commentary than in source, is the decision the first task has to make and record.
+**The mechanism is a test, at `test/shipped-copy.test.js:42-58`, not a second ESLint rule.** ESLint
+cannot read HTML or CSS without a parser plugin for each, which is two new tools for 1,626 lines in a
+repository that carries three devDependencies in total. A test needs neither: `npm test` already runs
+in CI on Node 20 and 24, so nothing new had to be wired up, and reading a shipped file from a test
+follows the checklist-heading test BL-061 itself added.
+
+The plain text sweep the block worried about turned out to be right for markup, but only after
+answering the imprecision objection rather than waving it through. Two answers.
+
+The first is comments, and the deciding evidence is what the rule being extended already does. An em
+dash in a JavaScript comment passes ESLint and an em dash in a JavaScript string does not, which was
+measured by running both through it rather than read off the selectors. Catching an HTML comment
+while ignoring a JavaScript one would apply Constraint 11 more strictly to markup than to the source
+it was written for, so comments are stripped. That decides real lines: `src/index.html` carries 31
+HTML comments and `src/styles.css` 46.
+
+The second is what remains once the comments go, which is everything else, and that is the point.
+A rule aimed at text nodes would have to name the attributes that carry copy, and `title`,
+`aria-label`, `placeholder` and `alt` are an enumeration someone has to keep complete. Sweeping what
+is left names nothing and so forgets nothing. It can over-report, since a URL could in principle hold
+a dash, and over-reporting is the safe direction here: a false positive gets looked at once, a false
+negative ships.
+
+**CSS `content` does count as shipped copy, and the proof is already in the tree.**
+`src/styles.css:483` sets `content` to a right-pointing angle glyph on the card summary marker. It
+reaches the screen with no text node behind it, so the reader sees it and Constraint 11 governs it.
+The comment-stripped sweep covers it with no special handling, because the value is a string literal
+in the text that survives. Recorded rather than built, which is what the task asked for.
+
+The imprecision the block worried about is real and was met head on while researching this. A first
+scan for `content:` declarations reported 18 hits across the stylesheets; 13 of them were
+`justify-content`. Only 4 are `content`, and only one of those four carries a glyph. That measurement
+is why the mechanism question was worth the second task rather than being answered by the first
+plausible regex.
+
+Scope is walked rather than listed. `server.mjs:12` resolves the served root to `src/`, so `src/` is
+what shipped means, and the walk finds whatever is there. The six files are not written down anywhere
+in the check, because a seventh added later is precisely what a written list would miss, which is the
+argument `scripts/check-anchors.mjs:101-104` makes about the anchors gate. The `design/mockups/`
+pages are outside that root and are not served, so they stay out of scope.
+
+Every assertion was proved able to fail before it was trusted. A dash injected into an HTML text
+node, into an HTML attribute value and into a CSS `content` string each fails the sweep, naming the
+file and line; a dash injected into an HTML comment and into a CSS comment each correctly does not.
+The guard against a walk that finds nothing was proved by aiming it at a directory holding no markup,
+where it fails rather than passing over an empty list.
 
 **BL-062: Delete the paragraph that BL-054's block states twice over**
 
@@ -2049,7 +2090,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2636-2637` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2677-2678` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2059,11 +2100,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:158-160`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2654-2656`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2695-2697`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2482-2484` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2523-2525` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -2271,7 +2312,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:236-239` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:248-251` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:151-153` and
 `PRODUCT_BACKLOG.md:158-160` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -2542,7 +2583,7 @@ now.
   choosing an essential path or a complete path applies to one list out of eight.
   Evidence: `src/data/catalog.json` (per-list `group`, `groupName`, `variant` fields),
   `src/js/main.js:2183` (groupCatalog renders variant rows only where a group exists).
-- Correctness is well defended: 224 unit tests pass, 235 when this pass shipped and 311 now, and
+- Correctness is well defended: 224 unit tests pass, 235 when this pass shipped and 319 now, and
   `scripts/check-contract.mjs` pins 24 upstream API assumptions so schema drift is distinguishable
   from an outage.
   Evidence: `package.json:10`, `package.json:13`, `scripts/check-contract.mjs:248-280`.
