@@ -5,9 +5,9 @@ for review before implementation. The goal is to make the tracker useful for man
 Marvel reading lists and events, not only Jonathan Hickman's Secret Wars orders.
 
 It was rewritten after a full pass over the shipped code, so it now records what has already been
-built as well as what has not. Of the 28 stories originally written here, 21 ship in full, 5 ship
-in part, 1 was never started, and 1 is ruled out by a product constraint. The new items come from
-that same pass and from the UX study in `docs/UX_STUDY.md`.
+built as well as what has not. Of the 28 stories originally written here, 22 ship in full, 3 ship
+in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
+decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
 Thirteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
 BL-029, BL-030, BL-031, BL-034, BL-035, BL-039, BL-040, BL-043, BL-044, BL-048, BL-049 and
@@ -71,7 +71,8 @@ split.
 ## Outcomes
 
 * **OC-1: A reader can use the tracker in whatever condition they are reading in.** Covers sight,
-  input method, device size and responsiveness. Epics EP-07, EP-08, EP-09.
+  input method and the cost of working through a long list. Screen size is deliberately not in
+  scope; see the out-of-scope list and BL-028. Epics EP-07, EP-08, EP-09.
 * **OC-2: A reader can find a reading order, follow it, and get back to where they were.** Covers
   discovery, import, progress and returning. Epics EP-01, EP-03, EP-04, EP-10, EP-11.
 * **OC-3: The catalog and the code can grow without breaking the reader's trust.** Covers
@@ -135,7 +136,7 @@ remaining and is not scored.
 | 6.4 | BL-025 | P2 | not applicable. Ruled out by Repository Constraint 3, which forbids accounts and cloud services, and already listed as out of scope at the end of this document | Forbidden, Constraint 3 |
 | 7.1 | BL-026 | P0 | focus order and visible focus pass across 45 measured tab stops in `docs/ux-artifacts/live-inspection.json`, but the shortcut handler bails on any focused control at `src/js/main.js:1401-1419` | Partial |
 | 7.2 | BL-027 | P1 | announcements fired into two live regions at once and the first-run heading was empty per `docs/ux-artifacts/pa11y-landing.json`; both are fixed, and `notify` now picks one channel at `src/js/main.js:150-163` and `src/js/main.js:247-268` | Done, shipped as BL-027 |
-| 7.3 | BL-028 | P1 | the mobile rail rule at `src/styles.css:87-90` is overridden by `src/styles.css:94-98`, and the reading view overflows by 93 px at 320 px per `docs/ux-artifacts/viewport-sweep-reading.json` | Partial |
+| 7.3 | BL-028 | P1 | the mobile rail rule at `src/styles.css:87-90` is overridden by `src/styles.css:94-98`, and the reading view overflows by 93 px at 320 px per `docs/ux-artifacts/viewport-sweep-reading.json` | Dropped, product decision |
 
 ### Orientation disagreements
 
@@ -189,7 +190,6 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Ready | src/js/main.js:1401-1419 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:247-268 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:272-307 |
-| BL-028 | Make the reading view usable on a phone | Story | EP-07 | Leaves alone | 8 | 5 | 5 | 5 | 3.6 | P1 | Measured | Ready | src/styles.css:87-90 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Ready | src/js/api.js:18-26 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Ready | src/js/main.js:2200-2218 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:32-44 |
@@ -209,6 +209,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | ID | Title | Type | Epic | Relationship | V | TC | RE | Size | WSJF | P | Basis | Status | Evidence |
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-025 | Optional synchronization between devices | Story | EP-06 | Leaves alone | not scored | not scored | not scored | not scored | not scored | P2 | Observed | Dropped | PRODUCT_BACKLOG.md, out-of-scope list |
+| BL-028 | Make the reading view usable on a phone | Story | EP-07 | Leaves alone | 8 | 5 | 5 | 5 | 3.6 | P1 | Measured | Dropped | src/styles.css:87-90 |
 
 **BL-025: Optional synchronization between devices**
 
@@ -221,6 +222,26 @@ constraint: the moment a sync service exists, the promise becomes conditional ra
 structural. The gate ran before scoring, so no score was assigned. The reader-facing need behind
 it, moving progress between machines, is already met by BL-023 through export and restore, which
 ships today.
+
+**BL-028: Make the reading view usable on a phone**
+
+Parked reason: The phone and tablet job is already done better by Marvel's own app.
+
+Marvel Unlimited ships native iOS and Android apps that carry reading lists, so a reader on a
+phone or a tablet has a first-party way to keep their place that this tracker cannot improve on.
+Building a second, worse one here would spend the backlog's largest Cost of Delay on a job that is
+not ours. The tracker's posture is now stated rather than implied: it is a desktop companion open
+beside the Marvel Unlimited web reader, which is the platform where no list feature exists. Phone
+and tablet layout is on the out-of-scope list for the same reason.
+
+Unlike BL-025 this item was scored before it was parked, so its numbers are left in the row above
+as the record of what was given up. Its five tasks are withdrawn, not deferred, and no constraint
+was breached: this is a product decision. The four UX findings that fed it, UX-A-004, UX-A-005,
+UX-D-001 and UX-D-002, still point here from `docs/UX_STUDY.md`, and they are now accepted rather
+than open. Two of the four are worth re-reading if the posture ever changes, because they are not
+purely about width: UX-A-005 hides six controls per row behind `:hover`, which also strands a
+desktop touchscreen, and UX-D-001 leaves a dead media query in the stylesheet that will mislead
+the next person to read it.
 
 ## Item details
 
@@ -306,18 +327,6 @@ was written down, so "Not in Unlimited" read as a fact rather than as what the s
 
 A screen reader run is still owed. Nothing automated here substitutes for it, and the numbers
 above measure what the document exposes, not what a reader hears.
-
-**BL-028: Make the reading view usable on a phone**
-
-- [ ] Move the mobile rail rule below the base rule so it stops being dead code
-- [ ] Contain the shelf so the page stops overflowing at 320 and 390 pixels
-- [ ] Reveal row actions at rest on coarse-pointer devices instead of on hover
-- [ ] Grow the hit area of the read toggle and row actions without necessarily growing their visual size
-- [ ] Add a check pinning the computed rail position at a narrow width, and the 26 pixel target gap
-
-Constraint gate: checked 1 to 11, none breached. Constraint 1 was the live consideration: any
-change to how covers are laid out on small screens must continue to reference cover URLs and must
-never store image bytes.
 
 **BL-029: Raise the red accent so white text on it clears 4.5:1**
 
@@ -1245,8 +1254,11 @@ pipeline for event lists.
   - Important actions have meaningful accessible labels and status messages.
 
 - **P1: As a reader on a small screen, I want the catalog and reading view to remain
-  easy to scan so that I can use the app beside Marvel Unlimited.** `BL-028` `Partial`
-  - Long names, progress indicators, and actions remain usable on narrow screens.
+  easy to scan so that I can use the app beside Marvel Unlimited.** `BL-028` `Dropped`
+  - Dropped by product decision. Marvel Unlimited's own iOS and Android apps already carry
+    reading lists, so the phone and tablet job is met first-party. This tracker is a desktop
+    companion to the web reader, which is where no list feature exists. See the parked entry
+    for BL-028.
 
 ### EP-08: Readers who depend on contrast cannot reliably read the interface
 
@@ -1311,6 +1323,8 @@ Item 6 has since been ruled out rather than deferred. See BL-025.
 - Scraping Marvel Unlimited pages.
 - Replacing established community sites that curate reading orders.
 - Requiring accounts or cloud services for the core tracker experience.
+- Phone and tablet layout. Marvel Unlimited's iOS and Android apps already support reading lists,
+  so the tracker targets the desktop browser it sits beside. See BL-028.
 
 ## Appendix A: Maturity assessment
 
@@ -1353,7 +1367,7 @@ Gap, measured rather than inferred. Every state change re-renders the entire app
 read toggle on the 219 issue Hickman full list rebuilds the rail, all 219 rows and the progress
 block: 4,485 DOM nodes and 1,533 row controls, at a median of 21.9 ms synchronous and 75.7 ms to
 paint, with the first toggle costing 38.9 ms and 144.1 ms. Measured headless on a desktop machine,
-so a phone will be slower.
+so a phone will be slower, though phone use is out of scope; see BL-028.
 
 Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:2372-2385` (renderAll rebuilds
 every region), `src/js/main.js:61-66` (store.onChange is wired straight to renderAll),
@@ -1383,8 +1397,11 @@ sub-characteristic level, because the characteristic-level answer would hide the
 
 - Appropriateness recognisability and learnability: good. Labels are written in plain English and
   the availability wording is careful to hedge. Evidence: `src/js/main.js:1374-1379`.
-- Operability: gap. Row actions sit at `opacity: 0` until hover or focus-within, so on a touch
-  device they are invisible until tapped. Evidence: `src/styles.css:469-476`.
+- Operability: gap, accepted. Row actions sit at `opacity: 0` until hover or focus-within, so on a
+  touch device they are invisible until tapped. This was BL-028's third task and is dropped with
+  it, on the ground that phones and tablets are out of scope. It is recorded as an accepted gap
+  rather than a closed one, because a desktop touchscreen still meets it. Evidence:
+  `src/styles.css:469-476`.
 - User error protection: no gap, closed by BL-034 and BL-035. Deleting a list is confirmed in the
   page rather than by a native `confirm()`, and it can now be undone for the rest of the session,
   which is the same affordance restoring a backup already had. Evidence:
@@ -1489,7 +1506,7 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepts any base URL and only strips trailing slashes, with the https-or-local check living in the settings form rather than in the client. Evidence: `src/js/api.js:18-26` against `src/js/main.js:2271-2284`. That half stands: the check still lives outside the client, and it is tracked as `BL-045`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
 | Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-28` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
-| Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:87-90`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is still open as BL-028. |
+| Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:87-90`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is not fixed and will not be: BL-028 is parked, because phone and tablet reading is served by Marvel's own apps. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
 | Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. Partly changed: the suite is 235 after this pass, but the three modules still have no test file, so the gap itself is unchanged. |
 | CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request, and on demand for any ref. |
@@ -1503,19 +1520,20 @@ The `P` labels in this document are the original author's release intent. WSJF i
 mechanical ranking. Neither overwrites the other. Every case where they disagree is listed here for
 a human to settle.
 
-Only six of the 28 original stories are still open work and therefore carry both a label and a
-score. The other 22 are `Done`, `Superseded` or `Dropped` and are not scored, so they cannot
-disagree. The 20 items this pass created carry no label, because inventing one would fabricate an
-intent that no one stated.
+Only five of the 28 original stories are still open work and therefore carry both a label and a
+score. The other 23 are `Done`, `Superseded` or `Dropped` and are not scored, so they cannot
+disagree. The 22 items this pass created carry no label, because inventing one would fabricate an
+intent that no one stated. That is 27 scored rows in all, and the ranks below are positions in
+that table.
 
-### Case 1: BL-026 is labelled P0 but ranks tenth
+### Case 1: BL-026 is labelled P0 but ranks twelfth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 10 of 26.
-- Driver: job size, not value. Its Cost of Delay of 11 is the fifth highest in the backlog. It is
-  outranked by nine items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is smaller
-  still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit below a
-  cheap fix that costs 1.
+- Calculated: WSJF 3.67, rank 12 of 27.
+- Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
+  It is outranked by eleven items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
+  smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
+  below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
   else ships" or "must not be dropped". If the former, the label wins and BL-026 moves to the top
   regardless of the score. If the latter, the score's ordering is fine, because the nine items
@@ -1525,10 +1543,10 @@ intent that no one stated.
   escaped cleanly. Evidence: `docs/ux-artifacts/live-inspection.json`. The remaining defect is
   narrow, which is part of why the size is only 3.
 
-### Case 2: BL-007 is labelled P1 but ranks twenty-second
+### Case 2: BL-007 is labelled P1 but ranks twenty-third
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 22 of 26, below fifteen unlabelled items and immediately above the
+- Calculated: WSJF 1.4, rank 23 of 27, below nineteen unlabelled items and three places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -1538,42 +1556,47 @@ intent that no one stated.
   the one open item whose value depends entirely on an editorial decision nobody has recorded, so
   the score is guessing at the answer.
 
-### Case 3: BL-028 carries the highest Cost of Delay in the backlog and ranks thirteenth
+### Case 3: BL-028 carried the highest Cost of Delay in the backlog and was dropped anyway
 
 - Stated: P1 Core product value.
-- Calculated: WSJF 3.6, rank 13 of 26, despite a Cost of Delay of 18, which is the highest of any
-  item here.
-- Driver: job size 5 alone. Every item above it has a smaller Cost of Delay.
-- What a human should settle: whether a measured 93 pixel horizontal overflow at 320 pixels, plus
-  row actions that only appear on hover, plus a mobile layout that has never once shipped because
-  its rule is dead, together constitute a P0. Evidence: `docs/ux-artifacts/viewport-sweep-reading.json`,
-  `src/styles.css:469-476`, `src/styles.css:87-90`. The original document's own framing supports
-  raising it: it describes reading "beside Marvel Unlimited", which is a phone-and-tablet posture.
+- Calculated: WSJF 3.6 at a Cost of Delay of 18, which was the highest of any item here, held down
+  to rank 15 of 28 by a job size of 5 alone.
+- Settled, and no longer a label-versus-score disagreement. Neither number was the deciding
+  argument. The item was dropped because Marvel Unlimited's iOS and Android apps already carry
+  reading lists, so the reader this item served is better served by software that is not ours. A
+  high Cost of Delay measures how much a problem costs while it stays open, and it says nothing
+  about whether the problem is the product's to solve.
+- What this case is kept for: it is the one item here where the highest measured urgency in the
+  backlog lost to a scope judgement, and both WSJF and the P1 label would have argued for building
+  it. Evidence for the state that prompted it is unchanged and still recorded in the reconciliation
+  table and in `docs/UX_STUDY.md`.
+- Consequence for the ranking: with BL-028 removed the table is 27 rows, and the highest Cost of
+  Delay among the items that remain is 16, shared by BL-029, BL-039 and BL-050.
 
-### Case 4: nine items created this pass outrank the only open P0 story
+### Case 4: eleven items created this pass outrank the only open P0 story
 
 - Stated: nothing. These items have no label because none was ever assigned.
-- Calculated: BL-030, BL-029, BL-039, BL-044, BL-048, BL-040, BL-043, BL-035 and BL-047 all rank
-  above BL-026.
-- Driver: seven of the nine are sized 1 or 2. They are small, evidenced defects and enablers, and
-  WSJF rewards exactly that shape.
+- Calculated: BL-030, BL-029, BL-039, BL-050, BL-044, BL-048, BL-040, BL-043, BL-035, BL-047 and
+  BL-049 all rank above BL-026.
+- Driver: ten of the eleven are sized 1 or 2, and the eleventh, BL-035, is sized 3. They are small,
+  evidenced defects and enablers, and WSJF rewards exactly that shape.
 - What a human should settle: whether an unlabelled item is allowed to precede a P0 at all. If the
   release labels are a gate rather than a sort, then this whole group is blocked behind BL-026, and
   the ranking below the gate is what WSJF is actually for.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 15 of 26. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 11 of 26. Mid-table.
-- BL-017, P2, rank 25 of 26. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 16 of 27. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 13 of 27. Mid-table.
+- BL-017, P2, rank 26 of 27. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
 
 ### One caution about the score itself
 
-BL-042 carries a risk-reduction score of 8, joint highest in the backlog alongside BL-039 and
-BL-041, and still ranks last at 0.55. That is entirely the size 20 denominator. The rank is
+BL-042 carries a risk-reduction score of 8, joint highest in the backlog alongside BL-039, BL-041
+and BL-050, and still ranks last at 0.55. That is entirely the size 20 denominator. The rank is
 arithmetically correct and practically misleading: the item is not low value, it is unsplit. It is
 held at `Proposed` rather than `Ready` for that reason, and the honest reading of its rank is
 "cannot be scheduled yet", not "not worth doing".

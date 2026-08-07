@@ -14,6 +14,18 @@ quote in a bug report.
 
 ## Unreleased
 
+### Changed
+
+- Phone and tablet layout is out of scope. Marvel Unlimited ships iOS and Android apps that already
+  carry reading lists, so the small-screen job is served first-party and building a second, worse
+  one here would not help anyone. The tracker's posture is now stated rather than implied: it is a
+  desktop companion to the Marvel Unlimited **web** reader, which is the platform where no list
+  feature exists. BL-028 moves to the parked table in `PRODUCT_BACKLOG.md` with its score left in
+  place as the record of what was given up, and the four UX findings behind it are marked accepted
+  rather than open. No interface or behaviour changed, so nothing you have saved is affected. This
+  is the largest Cost of Delay in the backlog being retired by a scope decision rather than by
+  work, which is why it is written down at this length.
+
 ### Added
 
 - Contributor instructions at `.github/copilot-instructions.md`, loaded automatically by GitHub
