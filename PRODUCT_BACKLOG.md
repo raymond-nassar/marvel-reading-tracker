@@ -14,10 +14,12 @@ BL-029, BL-030, BL-031, BL-034, BL-035, BL-039, BL-040, BL-043, BL-044, BL-048, 
 BL-050. Their detail blocks record
 what changed, what was measured, and which tasks were deliberately left open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
-without touching the colours, for the reasons recorded in its block. Three remain open on
+without touching the colours, for the reasons recorded in its block. Four remain open on
 purpose: making the CI run required before merge is a repository setting rather than a change to
-the tree, tagging a release needs a commit to point at, and confirming BL-027 with a screen reader
-is a human check no automated run substitutes for. `CHANGELOG.md` carries the
+the tree, tagging a release needs a commit to point at, confirming BL-027 with a screen reader
+is a human check no automated run substitutes for, and BL-031's axe re-run cannot be satisfied as
+written, because axe declines to judge text over a gradient and the finding was answered by
+computing the contrast bound instead. `CHANGELOG.md` carries the
 user-facing view of the same work.
 
 ## Product direction

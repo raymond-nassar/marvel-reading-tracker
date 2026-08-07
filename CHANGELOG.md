@@ -16,6 +16,12 @@ quote in a bug report.
 
 ### Added
 
+- Contributor instructions at `.github/copilot-instructions.md`, loaded automatically by GitHub
+  Copilot in this repository. It records the gates and how to run them, the traps in the evidence
+  anchors check, the workflow the project was originally built with and where its committed
+  artifacts live, and the eleven standing product constraints. Two of those constraints could not
+  be recovered from the tree and are marked as such rather than guessed at.
+
 - Deleting a list can now be undone. The confirmation says so, and afterwards a notice above every
   view offers "Undo delete" for the rest of the session rather than for a few seconds, because
   deleting the list you were reading moves you elsewhere and a timer would take the only way back

@@ -34,21 +34,27 @@ Keep using the convention rather than inventing a scratch layout:
 
 - One stable task id and one lower-kebab-case task slug across every artifact for a task.
 - Dated directories, `YYYY-MM-DD`.
-- `Pxx` for phases, `Pxx-Txx` for tasks. `PC-xxx` only in a plan critique, `RV-xxx` only in a
-  review log. Do not invent a second numbering scheme in the changes record.
-- Tracking artifacts are working evidence, not product documentation. `.copilot-tracking/` paths
-  must stay out of source, code comments and commit messages. Every commit in this repository
-  currently honours that; do not be the first to break it.
+- `Pxx` for phases and `Pxx-Txx` for tasks, carried as `<!-- rpi:phase id=P00 -->` and
+  `<!-- rpi:task id=P00-T01 -->` markers immediately before the matching heading in the plan.
+- Plan critiques number findings `CR-xxx` in a table. The changes record uses `CHG-xxx` section
+  headings that name the task they satisfy, and the review log refers back to those ids. Extend
+  those schemes rather than starting a new one.
+- Tracking artifacts are working evidence, not product documentation. Keep `.copilot-tracking/`
+  paths out of product code, code comments and commit messages. Tooling configuration is exempt
+  and has to be, since `eslint.config.mjs` ignores the directory by glob, and documentation may
+  cite an artifact as evidence, as `PRODUCT_BACKLOG.md` does. Exactly one commit message in the
+  history breaks the rule, and it is the one that added this bullet.
 
 **The rule that matters most: persist to the artifact, not to the conversation.** Working state
 that only exists in a session is gone the moment the session is.
 
-This repository already paid for that lesson. Every backlog detail block ends with "Constraint gate:
-checked 1 to 11, none breached", and the constraints are cited by number more than thirty times
-across the documents. The enumerated list itself was never written to a file. Nine of the eleven
-were reconstructed from how they are cited, three of those nine corroborated by a five-item list in
-the original review log, and **two are simply lost** and can only come back from the repository
-owner. The gate line was written twenty-eight times against a list nobody could read.
+This repository already paid for that lesson. 27 of the 28 backlog detail blocks carry a
+"Constraint gate: checked 1 to 11, none breached" line, 26 of them with identical wording, and the
+constraints are cited by number more than thirty times across the documents. The enumerated list
+itself was never written to a file. Nine of the eleven were reconstructed from how they are cited,
+three of those nine corroborated by a five-item list in the original review log, and **two are
+simply lost** and can only come back from the repository owner. The gate was recorded as passing
+twenty-seven times against a list nobody could read.
 
 So when a decision, a constraint or a piece of user direction arrives in conversation, write it into
 a durable artifact in the same turn. If a value is genuinely unrecoverable, record it as a blocker
@@ -76,10 +82,12 @@ workspace-relative `path:line`; a claim about anything external carries a URL an
 retrieved. That is the same discipline the anchors gate enforces on the product documents, which is
 why the gate feels natural once you are working this way.
 
-One caveat specific to this repository. Line numbers belong in the product documents that the
-anchors gate protects. Inside `.copilot-tracking/` navigate by stable ids, markers and headings
-instead, because nothing re-aims those artifacts when code moves and a stale number there is
-a silent lie.
+One caveat specific to this repository, and the reason is the opposite of the obvious one. The
+anchors gate scans **every tracked Markdown file**, `.copilot-tracking/` included, so a backticked
+`path:line` written into a dated artifact becomes a live claim that CI will chase. Those artifacts
+are a historical record and must not be re-aimed to satisfy a gate. Navigate them by stable ids,
+markers and headings, and keep citations in the product documents, where re-aiming is the correct
+response to drift.
 
 Two scope rules, both of which match how the owner asks for work:
 
@@ -122,7 +130,9 @@ fingerprints. That is the gate working.
 The workflow is:
 
 1. Re-aim each broken citation at whatever now says what the claim says.
-2. `npm run anchors` until it reports **0 drifted**.
+2. `npm run anchors` until it reports **0 drifted, 0 new and 0 removed**. The gate exits 1 on any
+   of those, not just on drift, so watching the drift count alone will report a pass while CI
+   fails. That happened on the first commit of this very file.
 3. **Print the first and last cited line of what you re-aimed and read them.**
 4. `npm run anchors:bless`, then re-run and expect exit 0.
 
@@ -201,10 +211,14 @@ Comments explain **why**, with measured evidence, not what the line does. "Measu
 first run with storage cleared, speaking surfaces went from 9 to 3" is the register. A comment
 restating the code is noise here.
 
-`describe()` returns phrases with no trailing period.
+`describe()` in `src/js/lib/availability.js` returns phrases with no trailing period; the caller
+supplies the period. This is a rule about that function, not about test naming. The tests use bare
+`test()` throughout and there are no `describe()` blocks to match.
 
-**Constraint 11 forbids em dashes and en dashes** in any copy you touch. Scan the added lines of
-your diff before committing, because they are easy to introduce and invisible in review:
+**Constraint 11 forbids em dashes** in copy you write or edit. Scan the added lines of your diff
+before committing, because they are easy to introduce and invisible in review. Note that this scans
+only added lines, which is what you want: vendored data and the historical tracking artifacts
+already contain dashes and are not yours to rewrite.
 
 ```
 git --no-pager diff origin/main --unified=0 | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=s.split(/\r?\n/).filter(l=>l.startsWith('+')&&!l.startsWith('+++')&&/[\u2013\u2014]/.test(l));console.log(b.length);b.forEach(l=>console.log(l));})"
@@ -234,6 +248,11 @@ later. Refusals are a backstop, not a design.
   changes count; there is precedent in the 1.0.0 entry.
 - Update `PRODUCT_BACKLOG.md` in the same change that ships the work, not afterwards. Work that
   lands without a backlog record is work the document now disagrees with.
+- **Repository meta-documentation is exempt from the backlog rule**, this file included. The
+  backlog tracks product work, and every detail block closes with a constraint gate line that
+  cannot be written honestly while constraints 8 and 9 are unknown. Record such changes in
+  `CHANGELOG.md` only. Do not create a backlog item to satisfy the rule and do not write a gate
+  line you did not actually check.
 
 ## Windows PowerShell 5.1
 
@@ -252,8 +271,13 @@ This is the shell in use. It is not bash and not PowerShell 7.
 ## Browser verification
 
 Checks are written with `puppeteer-core` driving installed Edge, at
-`C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`. Import from
-`node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js`.
+`C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`.
+
+**`puppeteer-core` is deliberately not a dependency of this repository and must not become one.**
+It is installed in a scratch directory outside the tree and imported by absolute path from there,
+ending in `lib/puppeteer/puppeteer-core.js`. `docs/UX_STUDY.md:800-802` records that choice and the
+reason: nothing was added to `package.json` and no dependency was introduced. If your first instinct
+is `npm i puppeteer-core`, that is the mistake this paragraph exists to stop.
 
 - Set an explicit viewport, 1280x900. The default is small enough to change layout behaviour.
 - `page.click` fails often with "not clickable". Use `page.evaluate(() => el.click())`.
@@ -270,11 +294,13 @@ Checks are written with `puppeteer-core` driving installed Edge, at
 
 ## Standing product constraints
 
-Every backlog detail block ends with "Constraint gate: checked 1 to 11, none breached", so a
-numbered list of eleven is load-bearing. As described above, **the list itself was never committed
-to this repository.** What follows is reconstructed from how each constraint is cited in
-`PRODUCT_BACKLOG.md` and `docs/UX_STUDY.md`. Constraints 8 and 9 are cited by number in the gate
-line but never by meaning anywhere in the tree, so they could not be recovered.
+27 of the 28 backlog detail blocks carry a "Constraint gate: checked 1 to 11, none breached" line,
+so a numbered list of eleven is load-bearing. BL-025 has none, because it was removed by the gate
+before it was ever scored; do not "fix" that by inventing a check nobody ran. As described above,
+**the list itself was never committed to this repository.** What follows is reconstructed from how
+each constraint is cited in `PRODUCT_BACKLOG.md` and `docs/UX_STUDY.md`. Constraints 8 and 9 are
+cited by number in the gate line but never by meaning anywhere in the tree, so they could not be
+recovered.
 
 Treat this as authoritative for 1 to 7, 10 and 11, and get 8 and 9 confirmed by the repository
 owner before relying on a clean gate.
@@ -285,20 +311,27 @@ owner before relying on a clean gate.
 | 2 | Orders come from the vendored pipeline and licensed upstream sources. Never scrape marvel.com. |
 | 3 | No accounts, cloud services, analytics or telemetry. The product promise is that nothing is uploaded anywhere. |
 | 4 | No runtime dependencies. Plain JavaScript only; a rendering library is not an option. Tooling that never reaches the browser is fine. |
-| 5 | Storage is bound to the `127.0.0.1` origin. Nothing may alter the origin, which is why navigation uses the hash. |
+| 5 | Storage is bound to the `127.0.0.1:8787` origin, **port included**. A different port is a different localStorage bucket, so serving on another one strands every reader's progress. Nothing may alter the origin, which is why navigation uses the hash. |
 | 6 | Never claim an issue is available in Marvel Unlimited as fact. Keep all five availability states distinct; do not collapse them to a boolean. |
 | 7 | Keep `window.open` synchronous inside the click handler. Never `await` before it, or user activation is lost and the reader tab is blocked. |
 | 8 | Not recovered. Cited by number only. |
 | 9 | Not recovered. Cited by number only. |
 | 10 | Single-user private application. There is exactly one persona; segment thinking is ruled out. |
-| 11 | No em dashes or en dashes in any copy. |
+| 11 | No em dashes in prose or UI copy you write or edit. The en dash half is inferred: only the em dash is ever named in the sources. Vendored data under `src/data/` and the dated `.copilot-tracking/` artifacts already contain both and are out of scope; do not rewrite them to satisfy this. |
 
-Two further standing rules from the original build, which sit outside the numbered list. Both come
-from the only enumerated constraint list that was ever committed, the five-item one under
-"Standing constraints for future work" in the original review log at
-`.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79`. Its other
-three items map onto constraints 1, 6 and 7 above, which is part of why those reconstructions can
-be trusted:
+Two further standing rules from the original build. Both come from the only enumerated constraint
+list that was ever committed, the five-item one under "Standing constraints for future work" in the
+original review log at
+`.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79`. That citation
+is the one deliberate exception to the rule against citing tracking artifacts by line, because this
+table has no other source. Three of the review log's five map onto constraints 1, 6 and 7 above,
+which is part of why those reconstructions can be trusted.
+
+The remaining two are recorded here as standing rules rather than as numbered constraints. **They
+are also the leading candidates for the missing 8 and 9**, since exactly two are unmapped and
+exactly two numbers are unrecovered. Treat that as a hypothesis and not a finding: constraints 5
+and 11 are absent from the review log's five as well, and the orderings do not correspond. Put it
+to the repository owner rather than resolving it yourself.
 
 - Resolve `digitalId` from the live API, never from vendored upstream documentation.
 - `unlimitedDate` is unreliable. Issue 6482 reports `1963-03-01`, which predates Marvel Unlimited's
