@@ -9,9 +9,9 @@ built as well as what has not. Of the 28 stories originally written here, 22 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Eighteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
+Nineteen items have since been delivered and are marked `Shipped` in the table below: BL-027,
 BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-039, BL-040, BL-043, BL-044, BL-045, BL-046,
-BL-047, BL-048, BL-049, BL-050 and BL-051. Their detail blocks record
+BL-047, BL-048, BL-049, BL-050, BL-051 and BL-052. Their detail blocks record
 what changed, what was measured, and which tasks were deliberately left open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
 without touching the colours, for the reasons recorded in its block. Six remain open on
@@ -202,7 +202,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Ready | src/js/main.js:1447-1457 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Ready | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
-| BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Ready | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
+| BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Shipped | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
 | BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Ready | src/js/main.js:2445-2457 |
 | BL-007 | Give the event orders the variants the catalog can already carry | Story | EP-02 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | P1 | Observed | Ready | src/data/catalog.json |
 | BL-032 | Offer a light theme and follow the system preference | Story | EP-08 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Ready | src/styles.css:7 |
@@ -1389,18 +1389,53 @@ that is serving its actual audience adequately.
 
 **BL-052: Make the contributor sections of the README readable at the same standard**
 
-- [ ] Shorten the sentences in the vendoring and audit sections, which run to over a hundred words unbroken
-- [ ] Define or avoid the vocabulary a new contributor would not know: vendor, snapshot, placeholder, depth
+- [x] Shorten the sentences in the vendoring and audit sections, which run to over a hundred words unbroken
+- [x] Define or avoid the vocabulary a new contributor would not know: vendor, snapshot, placeholder, depth
 - [x] Decide whether the BlueStacks section belongs in the README at all, or in `docs/`
 
-Constraint gate: checked 1 to 11, none breached. No constraint is engaged: this is prose style in
-material that ships no behaviour.
+Constraint gate: checked 1 to 11, none breached. Constraint 11 is engaged rather than merely
+unbreached: three em dashes stood in the audit and search sections, in material this item was
+raised to rewrite, and rewriting a sentence containing one makes it copy being edited. All three
+are gone.
 
 Split out of BL-051 rather than folded into it. BL-051's rubric scored the whole document, and
 three of its criteria failed on passages that only a contributor reads. Fixing them there would
 have meant editing the em dashes and the historical phrasing in sections whose facts were not
 under review, so the finding is recorded where it can be scheduled against its own audience
 instead of riding along with a change aimed at a different reader.
+
+The first task's premise was wrong, and measuring before editing is what caught it. No sentence
+below the contributor heading ran to over a hundred words: the longest was 48, the mean 19.1, and
+only four exceeded 40. What did exceed a hundred words was a single *paragraph*, the 138-word one
+that explained why the audit reads its index out of `HEAD`. The README below that heading is
+byte-identical to the state BL-052 was filed against, checked with `git show`, so this was an
+imprecise reading when the item was written rather than something that changed underneath it. The
+task text is left as it was written, and corrected here, because a task rewritten to match what
+was found is no longer evidence of what was asked.
+
+So the work was done against the measurement rather than the wording. That 138-word paragraph is
+now three, at `README.md:362-373`, and the four sentences over 40 words are now none: the longest
+is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
+just its length, because it was carrying three separate arguments at once: where the catalogue
+comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
+
+The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
+one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
+`README.md:291-295`, as fetching a list once and committing what came back. `depth` gained a gloss
+in the field table, which had listed its three values without ever saying what the field meant.
+`placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
+first use, as recording what upstream held on the day the file was built, and the earlier sentence
+that said "snapshot date" before anything had defined a snapshot now says the date is restamped.
+"pinned JSON" became "the JSON already committed", pinning being a fifth undefined term the task had
+not spotted.
+
+Scope was held to prose, and that is checked rather than asserted: every code span, every link
+target and every fenced block below the contributor heading is identical to the pre-change file, so
+no command, path, flag or field name moved. The anchors gate is not the evidence for that, and
+saying so would overstate it. The lock held no citation into `README.md` before this change, so
+nothing the rewrite did to those sections could have drifted it. The two citations that now exist
+were created here and fingerprinted against the rewritten text, which makes them coverage this
+change adds for future edits rather than a check it passed.
 
 The third task is closed ahead of the other two, on the repository owner's decision. The
 BlueStacks material moved to `docs/WHY_A_BROWSER_APP.md` with its wording unchanged, and the
