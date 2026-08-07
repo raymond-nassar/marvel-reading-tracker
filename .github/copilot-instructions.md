@@ -241,8 +241,15 @@ the constraint, and one of those is worth a look rather than an automatic fix. N
 added lines, which is what you want, since vendored data and the historical tracking artifacts
 already contain both and are not yours to rewrite.
 
+Write the diff to a file and read it back rather than piping it into `node` on stdin. Piping it
+loses the very characters the scan is looking for: on the BL-058 change the piped form printed 0
+while the file form printed 8, because PowerShell re-encodes what crosses the pipe and both dashes
+fall outside the code page it lands in. A scan that cannot see a dash reports a clean diff for every
+diff, which is worse than not running it.
+
 ```
-git --no-pager diff origin/main --unified=0 | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const b=s.split(/\r?\n/).filter(l=>l.startsWith('+')&&!l.startsWith('+++')&&/[\u2013\u2014]/.test(l));console.log(b.length);b.forEach(l=>console.log(l));})"
+git --no-pager diff origin/main --unified=0 | Out-File -Encoding utf8 "$env:TEMP\dash.diff"
+node -e "const s=require('fs').readFileSync(process.env.TEMP+'/dash.diff','utf8');const b=s.split(/\r?\n/).filter(l=>l.startsWith('+')&&!l.startsWith('+++')&&/[\u2013\u2014]/.test(l));console.log(b.length);b.forEach(l=>console.log(l));"
 ```
 
 ## Where the risk actually is
