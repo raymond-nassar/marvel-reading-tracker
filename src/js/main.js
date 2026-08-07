@@ -149,29 +149,45 @@ function el(tag, props = {}, children = []) {
 // work in BL-026 stopped where it did.
 //
 // A node cannot be restored, because the node is gone. What is restored is the identity the node
-// carried: which issue the control acts on, and which action it is. Both are written onto every
-// control the two lists build, so the same pair can be found again in the rebuilt DOM.
+// carried: which thing the control acts on, and which action it is. Both are written onto every
+// control these lists build, so the same pair can be found again in the rebuilt DOM. That thing is
+// an issue in the reading lists, a reading order in the rail and a catalog entry on the home grid.
+// The key is only ever compared against controls in the same container, so one attribute serves all
+// three; it was named `issue` while the reading lists were the only caller, which stopped being
+// true in BL-058.
 //
 // `primary` is the action to land on when that pair no longer exists anywhere, which happens when
 // the row is filtered away by the very act that was performed on it. Landing on the same action in
 // the row that took its place would put focus on a destructive control the reader did not aim at:
 // Enter auto-repeats on a held key, so restoring "Remove" under a finger already on Enter can
 // delete the next issue too. The row's primary control is the honest landing instead.
-function preservingFocus(container, rebuild, { primary, fallback } = {}) {
+//
+// Capture and restore are separate functions because one caller cannot use them around a single
+// rebuild. Adding from the home grid disables the button it was launched from, and disabling a
+// focused control blurs it there and then, so by the time the grid rebuilds there is nothing left
+// to read. That caller captures before the disable. Everyone else wants the pair together, which is
+// what preservingFocus still is.
+
+// Entries that carry no control are the filter hint and the "showing n of m" footer. Counting
+// them would aim the ordinal at a line that has nothing to focus.
+const focusEntries = (container) => [...container.children].filter((n) => n.querySelector('[data-act]'));
+
+function captureFocus(container) {
   const prior = container.contains(document.activeElement) ? document.activeElement : null;
-  const act = prior?.dataset.act ?? null;
-  const issue = prior?.dataset.issue ?? null;
-  // Entries that carry no control are the filter hint and the "showing n of m" footer. Counting
-  // them would aim the ordinal at a line that has nothing to focus.
-  const entries = () => [...container.children].filter((n) => n.querySelector('[data-act]'));
-  const ordinal = prior ? entries().indexOf(prior.closest('li')) : -1;
+  return {
+    container,
+    act: prior?.dataset.act ?? null,
+    key: prior?.dataset.key ?? null,
+    ordinal: prior ? focusEntries(container).indexOf(prior.closest('li')) : -1,
+  };
+}
 
-  rebuild();
-
-  if (!act) return;
+function restoreFocus(held, { primary, fallback } = {}) {
+  if (!held?.act) return;
+  const { container, act, key, ordinal } = held;
   const controls = [...container.querySelectorAll('[data-act]')];
-  const exact = controls.find((c) => c.dataset.issue === issue && c.dataset.act === act) ?? null;
-  const remaining = entries();
+  const exact = controls.find((c) => c.dataset.key === key && c.dataset.act === act) ?? null;
+  const remaining = focusEntries(container);
   const heir = ordinal < 0 || remaining.length === 0
     ? null
     : remaining[Math.min(ordinal, remaining.length - 1)];
@@ -183,6 +199,12 @@ function preservingFocus(container, rebuild, { primary, fallback } = {}) {
   // into view can only move the page under them. Anything else is somewhere they have not looked
   // yet, so the browser is left to bring it into view.
   target?.focus({ preventScroll: target === exact });
+}
+
+function preservingFocus(container, rebuild, opts) {
+  const held = captureFocus(container);
+  rebuild();
+  restoreFocus(held, opts);
 }
 
 function announce(msg) {
@@ -635,37 +657,44 @@ function showView(next, { focus = true } = {}) {
 
 function renderRail() {
   const nav = $('#list-nav');
-  nav.replaceChildren();
-  const { listOrder, lists } = store.state;
-  $('#no-lists').hidden = listOrder.length > 0;
+  // renderAll rebuilds the rail on every store.update, with no navigation, so a reader who
+  // pressed `d` on the read view with a rail button focused lost focus to <body>. Measured in
+  // Edge at 1280x900: the order went from 0 of 89 read to 1 of 89, the view did not change, and
+  // document.activeElement reported BODY. The other route here is showView, which focuses the
+  // new view's heading afterwards and so is unaffected either way.
+  preservingFocus(nav, () => {
+    nav.replaceChildren();
+    const { listOrder, lists } = store.state;
+    $('#no-lists').hidden = listOrder.length > 0;
 
-  for (const id of listOrder) {
-    const list = lists[id];
-    const { read, total } = listProgress(store.state, id);
-    const pct = total ? (read / total) * 100 : 0;
-    const current = view === 'read' && id === activeListId();
+    for (const id of listOrder) {
+      const list = lists[id];
+      const { read, total } = listProgress(store.state, id);
+      const pct = total ? (read / total) * 100 : 0;
+      const current = view === 'read' && id === activeListId();
 
-    nav.append(el('li', {}, el('button', {
-      type: 'button',
-      class: 'ri',
-      'aria-current': current ? 'page' : null,
-      // A reading order has no glyph of its own, so the tooltip has to be built rather
-      // than read off the button: in rail mode the progress numbers are not on screen.
-      dataset: { tip: `${list.name} — ${read} of ${total} read` },
-      onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
-    }, [
-      // Stands in for an icon in rail mode; hidden from the accessibility tree because
-      // the list's name is right beside it.
-      el('span', { class: 'init', 'aria-hidden': true, text: (list.name || '?').trim().charAt(0) }),
-      el('span', { class: 'lbl' }, [
-        el('span', { class: 't' }, [
-          el('span', { text: list.name }),
-          el('span', { class: 'n', text: `${read} / ${total}` }),
+      nav.append(el('li', {}, el('button', {
+        type: 'button',
+        class: 'ri',
+        'aria-current': current ? 'page' : null,
+        // A reading order has no glyph of its own, so the tooltip has to be built rather
+        // than read off the button: in rail mode the progress numbers are not on screen.
+        dataset: { key: id, act: 'open', tip: `${list.name} — ${read} of ${total} read` },
+        onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
+      }, [
+        // Stands in for an icon in rail mode; hidden from the accessibility tree because
+        // the list's name is right beside it.
+        el('span', { class: 'init', 'aria-hidden': true, text: (list.name || '?').trim().charAt(0) }),
+        el('span', { class: 'lbl' }, [
+          el('span', { class: 't' }, [
+            el('span', { text: list.name }),
+            el('span', { class: 'n', text: `${read} / ${total}` }),
+          ]),
+          el('span', { class: 'bar' }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
         ]),
-        el('span', { class: 'bar' }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
-      ]),
-    ])));
-  }
+      ])));
+    }
+  }, { primary: 'open' });
 }
 
 // ------------------------------------------------------------------ reading view
@@ -802,6 +831,11 @@ function renderYours(populated) {
 
 async function renderHomeCatalog({ announceCount = false } = {}) {
   const grid = $('#home-grid');
+  // Every other route into this function rebuilds the grid while focus is outside it, on the
+  // search box or a filter radio, and a capture from outside the container is empty and restores
+  // nothing. The route that matters is the settle 1500 ms after an add, which destroys the button
+  // focus was just put back on.
+  const held = captureFocus(grid);
 
   if (!homeCatalog) {
     grid.replaceChildren(el('li', { class: 'rail-hint', text: 'Loading reading orders…' }));
@@ -869,12 +903,22 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
     : '';
   $('#home-see-all').hidden = matched.length <= HOME_GRID_CAP;
   $('#home-see-all').textContent = `See all ${matched.length} orders →`;
+  restoreFocus(held, { primary: 'main' });
   // Only when the reader narrowed something. Announcing on every render would let a routine
   // count overwrite the confirmation that an order had just been added, which is the message
   // that actually matters.
   if (announceCount) {
     announceCatalog(`${matched.length} reading ${matched.length === 1 ? 'order' : 'orders'} shown.`);
   }
+}
+
+// The grid rebuild that follows an add runs after an await, and a reader is free to move during
+// it. Focus was lost to <body> by the disable, so <body> is the only state that means "still
+// lost"; anything else is somewhere the reader chose to be, and putting them back would be the
+// same rudeness in the other direction.
+function returnFocus(held) {
+  if (document.activeElement !== document.body) return;
+  restoreFocus(held, { primary: 'main' });
 }
 
 function renderHomeChips(all) {
@@ -949,6 +993,7 @@ function orderCard(list) {
         type: 'button',
         class: 'ocard-preview',
         'aria-label': `Preview the issue list for ${list.name}`,
+        dataset: { key: list.id, act: 'preview' },
         onclick: () => openPreview(list),
       }, `${list.count} issues — see the list`),
     ]),
@@ -956,12 +1001,16 @@ function orderCard(list) {
 }
 
 function addButton(list, inLibrary) {
+  // One act name for both states because it is the slot that persists, not the action. Adding
+  // replaces this button with "✓ In library" and then with "Open →", and the reader who pressed
+  // it should land on whatever the card's main control has become.
   if (inLibrary) {
     const settled = !justAdded.has(list.id);
     return el('button', {
       type: 'button',
       class: settled ? 'btn btn-g' : 'btn btn-added',
       'aria-label': settled ? `Open ${list.name}` : `${list.name} is in your library`,
+      dataset: { key: list.id, act: 'main' },
       onclick: () => {
         store.update((s) => setActive(s, inLibrary.id));
         showView('read');
@@ -973,11 +1022,18 @@ function addButton(list, inLibrary) {
     class: 'btn btn-p',
     // Read out of context, "Add" says nothing; the order's name has to be in the name.
     'aria-label': `Add ${list.name} to library`,
+    dataset: { key: list.id, act: 'main' },
     onclick: (e) => addFromCatalog(list, e.currentTarget),
   }, '+ Add to library');
 }
 
 async function addFromCatalog(list, btn) {
+  // Read before importCurated, which disables this button. Disabling a focused control blurs it
+  // immediately, so a capture taken at rebuild time reads <body> and correctly declines to
+  // restore anything. Measured in Edge at 1280x900: clicking "+ Add to library" left
+  // document.activeElement at BODY while the button was still in the document, and still BODY
+  // two seconds later once both rebuilds had run.
+  const held = captureFocus($('#home-grid'));
   // Flipped before the import so the card confirms in place the moment it is clicked, and
   // rolled back if the write fails rather than leaving a false "in library".
   justAdded.add(list.id);
@@ -986,16 +1042,19 @@ async function addFromCatalog(list, btn) {
   const listId = await importCurated(list, btn, { navigate: false, report: '#home-cat-report' });
   if (!listId) {
     justAdded.delete(list.id);
-    renderHomeCatalog();
+    await renderHomeCatalog();
+    returnFocus(held);
     return;
   }
-  renderHomeCatalog();
+  await renderHomeCatalog();
+  returnFocus(held);
   syncPreviewAdd();
   // The card settles from "✓ In library" to "Open →" once the confirmation has been read,
-  // so the button ends up saying what it now does.
-  setTimeout(() => {
+  // so the button ends up saying what it now does. The rebuild that settles it destroys the
+  // button focus was just put back on, which renderHomeCatalog preserves on its own.
+  setTimeout(async () => {
     justAdded.delete(list.id);
-    renderHomeCatalog();
+    await renderHomeCatalog();
     syncPreviewAdd();
   }, 1500);
 }
@@ -1415,7 +1474,7 @@ function renderShelf() {
         type: 'button',
         title: `Open ${it.title} in Marvel Unlimited`,
         'aria-label': `Open ${it.title} in Marvel Unlimited`,
-        dataset: { issue: it.issueId, act: 'open' },
+        dataset: { key: it.issueId, act: 'open' },
         onclick: (e) => openInReader(it, e),
       }, [
         el('div', { class: 'ph' }, [img, fb]),
@@ -1479,7 +1538,7 @@ function renderRows() {
           class: 'cb',
           'aria-pressed': String(item.read),
           'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,
-          dataset: { issue: item.issueId, act: 'read' },
+          dataset: { key: item.issueId, act: 'read' },
           onclick: () => {
             store.update((s) => toggleRead(s, item.issueId));
             announceIfSaved(`${item.title} ${isRead(store.state, item.issueId) ? 'marked read' : 'marked unread'}.`);
@@ -1509,14 +1568,14 @@ function renderRows() {
           ]),
         ]),
         el('div', { class: 'ract' }, [
-          el('button', { type: 'button', class: 'mini', 'aria-label': `Read ${item.title} in Marvel Unlimited`, dataset: { issue: item.issueId, act: 'open' }, onclick: (e) => openInReader(item, e) }, 'Read'),
+          el('button', { type: 'button', class: 'mini', 'aria-label': `Read ${item.title} in Marvel Unlimited`, dataset: { key: item.issueId, act: 'open' }, onclick: (e) => openInReader(item, e) }, 'Read'),
           detailUrl(item)
-            ? el('a', { class: 'mini', href: detailUrl(item), target: '_blank', rel: 'noopener noreferrer', 'aria-label': `marvel.com page for ${item.title}`, dataset: { issue: item.issueId, act: 'info' } }, 'Info')
+            ? el('a', { class: 'mini', href: detailUrl(item), target: '_blank', rel: 'noopener noreferrer', 'aria-label': `marvel.com page for ${item.title}`, dataset: { key: item.issueId, act: 'info' } }, 'Info')
             : null,
-          el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} up`, dataset: { issue: item.issueId, act: 'up' }, onclick: () => store.update((s) => moveItem(s, id, item.issueId, -1)) }, '↑'),
-          el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} down`, dataset: { issue: item.issueId, act: 'down' }, onclick: () => store.update((s) => moveItem(s, id, item.issueId, 1)) }, '↓'),
-          el('button', { type: 'button', class: 'mini', 'aria-label': `Change availability for ${item.title}`, dataset: { issue: item.issueId, act: 'override' }, onclick: () => cycleOverride(item) }, '⚑'),
-          el('button', { type: 'button', class: 'mini mini-danger', 'aria-label': `Remove ${item.title} from this list`, dataset: { issue: item.issueId, act: 'remove' }, onclick: () => { store.update((s) => removeFromList(s, id, item.issueId)); announceIfSaved(`Removed ${item.title}.`); } }, '✕'),
+          el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} up`, dataset: { key: item.issueId, act: 'up' }, onclick: () => store.update((s) => moveItem(s, id, item.issueId, -1)) }, '↑'),
+          el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} down`, dataset: { key: item.issueId, act: 'down' }, onclick: () => store.update((s) => moveItem(s, id, item.issueId, 1)) }, '↓'),
+          el('button', { type: 'button', class: 'mini', 'aria-label': `Change availability for ${item.title}`, dataset: { key: item.issueId, act: 'override' }, onclick: () => cycleOverride(item) }, '⚑'),
+          el('button', { type: 'button', class: 'mini mini-danger', 'aria-label': `Remove ${item.title} from this list`, dataset: { key: item.issueId, act: 'remove' }, onclick: () => { store.update((s) => removeFromList(s, id, item.issueId)); announceIfSaved(`Removed ${item.title}.`); } }, '✕'),
         ]),
       ]));
     }

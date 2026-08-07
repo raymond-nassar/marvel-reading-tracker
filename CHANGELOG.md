@@ -137,6 +137,29 @@ quote in a bug report.
   land on the filter you chose, which is what put you there and what will undo it. The page does not
   scroll when it puts you back somewhere you were already looking.
 
+- **Adding a reading order, and marking one read, no longer drop the keyboard on the floor.** The
+  landing page is the one screen built to keep you where you are while you add a second or a third
+  order, and it was the screen that moved you most: pressing **+ Add to library** by keyboard handed
+  focus straight back to the page body, and it was still there a second and a half later once the
+  card had settled into **Open**. Getting to the next order meant tabbing in from the top of the
+  page again. The same thing happened in the sidebar list of your orders, which is rebuilt every
+  time anything changes: with one of its buttons focused, pressing D to mark an issue read left you
+  nowhere, on a screen that otherwise had not moved at all. Focus now follows the card, and the
+  sidebar button follows the order it belongs to, so adding an order leaves you on that card as its
+  button turns into **Open**, and marking an issue read leaves you on the same order in the sidebar.
+  If you move somewhere else while the order is being added, you are left alone: you are only put
+  back when nothing else has taken the keyboard in the meantime.
+
+- The check that keeps em dashes out of what you read on screen was reporting every change as clean.
+  One of the eleven standing constraints is that shipped wording contains no em dashes, and
+  [`.github/copilot-instructions.md`](.github/copilot-instructions.md) carried a command for finding
+  any that a change had introduced. The command sent the change through a pipe on the way to the
+  scanner, and Windows PowerShell rewrites text crossing a pipe into a character set that has no
+  dash in it, so the scanner was reading question marks and finding nothing. Run against the change
+  above, the old command found none and the corrected one found eight. A check that cannot fail is
+  worse than no check, because it is trusted. The command now writes the change to a file and reads
+  it back, and the file records why so it is not shortened again.
+
 - The D and Enter shortcuts no longer stop working after you click a button in the reading view.
   The handler stood down whenever anything interactive held focus, and the hero's own "Done, next"
   button is interactive, so clicking it left focus there and the very next press of D did nothing at
