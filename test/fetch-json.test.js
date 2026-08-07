@@ -4,11 +4,15 @@ import { RateLimiter } from '../src/js/lib/limiter.js';
 import { createJsonFetcher, MAX_ATTEMPTS } from '../scripts/lib/fetch-json.mjs';
 
 // Responses are scripted per call so a test can say "503 twice then 200" without a stub library.
-// `headers` is a Map because RateLimiter.observe accepts anything with a get().
-function scriptedFetch(statuses, { body = { ok: true }, headers = {} } = {}) {
+// `headers` is keyed by call index, not applied to every response, because a real API sends
+// Retry-After on the 429 and not on the retry that succeeds. Sharing one header set across both
+// lets a success answer an assertion the failure was supposed to.
+// A Map is used because RateLimiter.observe accepts anything with a get().
+function scriptedFetch(statuses, { body = { ok: true }, headersByCall = {} } = {}) {
   const calls = [];
   const fetchImpl = async (url, init) => {
     const status = statuses[Math.min(calls.length, statuses.length - 1)];
+    const headers = headersByCall[calls.length] || {};
     calls.push({ url, init });
     return {
       status,
@@ -97,7 +101,7 @@ test('retries stop at six attempts and the error names the status', async () => 
   assert.equal(calls.length, MAX_ATTEMPTS);
 });
 
-test('each retry backs off longer than the last, and the limiter is paused with it', async () => {
+test('each retry waits the band backoff() defines for its attempt, and pauses the limiter with it', async () => {
   const { getJson, retryWaits, limiter } = makeFetcher([503]);
   let paused = 0;
   const realPenalize = limiter.penalize.bind(limiter);
@@ -107,17 +111,28 @@ test('each retry backs off longer than the last, and the limiter is paused with 
 
   assert.equal(retryWaits.length, MAX_ATTEMPTS - 1, 'one backoff between each pair of attempts');
   assert.equal(paused, MAX_ATTEMPTS - 1, 'every backoff also holds back the other requests');
-  // backoff() is half fixed and half jittered, so successive floors rather than successive
-  // draws are what is guaranteed to grow.
-  for (let i = 1; i < retryWaits.length; i += 1) {
-    assert.ok(retryWaits[i] > retryWaits[i - 1] / 2, `wait ${i} collapsed to ${retryWaits[i]}`);
-  }
+  // Asserting the band rather than just growth, because growth alone is satisfied by any constant
+  // and by backoff() being passed a frozen attempt. The band pins the argument too: backoff(a)
+  // returns [base/2, base) for base = min(30000, 1000 * 2 ** a), so a wrong attempt lands outside.
+  retryWaits.forEach((wait, attempt) => {
+    const base = Math.min(30_000, 1000 * 2 ** attempt);
+    assert.ok(wait >= base / 2 && wait < base, `wait ${attempt} was ${wait}, outside [${base / 2}, ${base})`);
+  });
 });
 
-test('a retry-after header reaches the limiter', async () => {
-  const { getJson, limiter, clock } = makeFetcher([429, 200], { headers: { 'retry-after': '3' } });
+// Retry-After is sent on the 429 alone, as a real API sends it. The assertion is on the size of
+// the pause, not merely that one exists: 3 seconds is a value no backoff() draw can reach at
+// attempt 0, whose band tops out below 1 second, so only the header can have produced it.
+test('a retry-after header on the rejected response reaches the limiter', async () => {
+  const { getJson, limiter, clock } = makeFetcher([429, 200], {
+    headersByCall: { 0: { 'retry-after': '3' } },
+  });
+  const start = clock.now();
   await getJson('/e');
-  assert.ok(limiter.pausedUntil > clock.now(), 'the limiter should be holding requests back');
+  assert.ok(
+    limiter.pausedUntil >= start + 3000,
+    `the limiter was held back to ${limiter.pausedUntil - start}ms, not the 3000ms the header asked for`,
+  );
 });
 
 // The reason the retry is not nested inside limiter.schedule(). Recursing from inside a

@@ -10,8 +10,9 @@
 import { RateLimiter } from '../../src/js/lib/limiter.js';
 
 // Six attempts in total, the initial one plus five retries, which is what the copies did with
-// `attempt >= 5`. At the limiter's own backoff that is a little over half a minute of trying
-// before a page is called lost.
+// `attempt >= 5`. The five waits between them are drawn from the limiter's own bands, so a page is
+// called lost after about 23 seconds of trying on average, 15.5 at the fastest and just under 31
+// at the slowest.
 export const MAX_ATTEMPTS = 6;
 
 function defaultSleep(ms) {
