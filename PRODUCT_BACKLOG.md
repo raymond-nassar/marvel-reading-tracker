@@ -963,7 +963,7 @@ because each compared line numbers rather than reading lines, and because each m
 subset of the places an anchor can be written. `scripts/check-anchors.mjs` fingerprints the cited
 lines themselves rather than their numbers, so a correct re-aim preserves the fingerprint while
 drift breaks it, and the build fails in the commit that moves the code rather than in a sweep months
-later. It runs in the lint job at `.github/workflows/ci.yml:84-85` and locally as `npm run anchors`,
+later. It runs in the lint job at `.github/workflows/ci.yml:93-94` and locally as `npm run anchors`,
 wired at `package.json:14-15`.
 
 Which half of it depends on which is the load-bearing decision. Listing the shapes an anchor can
