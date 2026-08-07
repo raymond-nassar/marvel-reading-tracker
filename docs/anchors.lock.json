@@ -1,4 +1,9 @@
 {
+  ".github/copilot-instructions.md|standing-product-constraints|.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79|0": {
+    "anchor": ".copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79",
+    "fp": "34ac4c1c9cc700ab",
+    "head": "## Standing constraints for future work"
+  },
   ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|.github/workflows/ci.yml:15|0": {
     "anchor": ".github/workflows/ci.yml:15",
     "fp": "e02400c51488e536",
