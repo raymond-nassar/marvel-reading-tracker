@@ -37,10 +37,11 @@ Keep using the convention rather than inventing a scratch layout:
 - `Pxx` for phases and `Pxx-Txx` for tasks, carried as `<!-- rpi:phase id=P00 -->` and
   `<!-- rpi:task id=P00-T01 -->` markers immediately before the matching heading in the plan.
 - Plan critiques number findings `CR-xxx` in a table. The changes record uses `CHG-xxx` section
-  headings, each carrying a date, a trigger and a status. One of the four names the plan task it
-  closes; the rest exist precisely because the work departed from the plan, which is what a changes
-  record is for. Do not invent a task id to hang an unplanned change on, and do not decline to
-  record one because it has no task. The review log then refers back to those `CHG-xxx` ids.
+  headings. One of the four names the plan task it closes; the rest exist precisely because the
+  work departed from the plan, which is what a changes record is for. Do not invent a task id to
+  hang an unplanned change on, and do not decline to record one because it has no task. The
+  metadata under each heading varies, and `CHG-004` has none, so match the neighbouring entry
+  rather than imposing a shape on the record. The review log refers back to those `CHG-xxx` ids.
 - Tracking artifacts are working evidence, not product documentation. Keep `.copilot-tracking/`
   paths out of product code, code comments and commit messages. Tooling configuration is exempt
   and has to be, since `eslint.config.mjs` ignores the directory by glob, and documentation may
@@ -309,8 +310,9 @@ is `npm i puppeteer-core`, that is the mistake this paragraph exists to stop.
 
 ## Standing product constraints
 
-27 of the 28 backlog detail blocks carry a "Constraint gate: checked 1 to 11, none breached" line,
-so a numbered list of eleven is load-bearing. BL-025 has none, because it was removed by the gate
+27 of the 28 backlog detail blocks carry a Constraint gate line, 26 of them reading "checked 1 to
+11, none breached" exactly and the 27th a Constraint 6 variant, so a numbered list of eleven is
+load-bearing. BL-025 has none, because it was removed by the gate
 before it was ever scored; do not "fix" that by inventing a check nobody ran. As described above,
 **the list itself was never committed to this repository.** What follows is reconstructed from how
 each constraint is cited in `PRODUCT_BACKLOG.md` and `docs/UX_STUDY.md`. Constraints 8 and 9 are
