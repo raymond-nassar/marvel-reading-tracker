@@ -16,6 +16,18 @@ quote in a bug report.
 
 ### Added
 
+- **The no-em-dash rule now covers the page and its styling, not only the JavaScript.** When that
+  rule was first automated it was written as a lint rule, and lint reads JavaScript. Every word the
+  app puts on screen from the page files or the stylesheets was outside it, so the check reported
+  green over ground it never looked at. A test now sweeps everything served, found by walking the
+  folder rather than by a list of the six files that exist today, so a seventh added later is covered
+  without anyone remembering to add it. Comments are skipped, which is not a shortcut: the JavaScript
+  rule already ignores comments, measured by running a dash through one, so catching them here would
+  hold the page to a stricter standard than the code. Styling can also put a character on screen with
+  no words behind it, and the app already does this for the little arrow on a collapsible card, so
+  that counts as on-screen wording too and is covered. Nothing in the app breaks the rule today; this
+  is about the next thing written, not this one.
+
 - **The backlog checker now refuses a passage that is written twice.** A detail block in the backlog
   stated the same four lines over again, word for word, and it was the paragraph warning a reader
   against a specific misreading, so the stutter landed where it could do most harm. Nothing could
