@@ -66,6 +66,11 @@ const store = new Store({
 });
 const hydrator = new Hydrator({ api, store, onProgress: renderHydration });
 
+// One filter, shared by every list, and it now survives a reload. Per list was considered and
+// rejected: the filter already crossed lists within a session, so making it per list would have
+// changed behaviour a reader has today as well as adding state that grows with the library. A
+// reader who sets Unread has said how they want to read, not how they want to read one order.
+// Its restored value is applied in wireReading(), which runs before the first render.
 let filter = 'all';
 let view = 'read';
 
@@ -297,15 +302,20 @@ function loadSettings() {
     return {
       apiBase: ok ? stored : DEFAULT_BASE,
       covers: raw.covers !== false,
+      // Not checked against the filters that exist here, because that is a question about the
+      // document rather than about storage. wireReading() answers it and writes the answer back,
+      // which is why a value of the wrong type is passed through rather than coerced: coercing it
+      // would produce something a radio matches, and the repair would never fire.
+      filter: raw.filter === undefined ? 'all' : raw.filter,
       rejectedApiBase: ok ? null : stored,
     };
   } catch {
-    return { apiBase: DEFAULT_BASE, covers: true, rejectedApiBase: null };
+    return { apiBase: DEFAULT_BASE, covers: true, filter: 'all', rejectedApiBase: null };
   }
 }
 
 function saveSettings() {
-  // Only the two real settings are written. rejectedApiBase is a report about this boot, and
+  // Only the real settings are written. rejectedApiBase is a report about this boot, and
   // persisting it would turn a one-off complaint into part of the stored record.
   //
   // The refused value is written back rather than the fallback, because this is not only called
@@ -314,7 +324,9 @@ function saveSettings() {
   // instead, unrecoverably and without saying so: the settings field already shows the fallback,
   // so there would be nothing left on screen holding the old value.
   const apiBase = settings.rejectedApiBase ?? settings.apiBase;
-  try { localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers })); } catch { /* non-fatal */ }
+  try {
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, filter: settings.filter }));
+  } catch { /* non-fatal */ }
 }
 
 function activeListId() {
@@ -1003,8 +1015,39 @@ async function openPreview(list) {
 // ------------------------------------------------------------------ reading view
 
 function wireReading() {
-  for (const radio of document.querySelectorAll('input[name="filter"]')) {
-    radio.addEventListener('change', (e) => { filter = e.target.value; renderRows(); });
+  const radios = [...document.querySelectorAll('input[name="filter"]')];
+
+  // The radios are the list of what a filter can be, so a stored value is honoured only when one
+  // of them offers it. Keeping a second enumeration here would be a list someone has to keep in
+  // step with the markup, and a filter dropped from the markup could then leave this holding a
+  // value nothing on screen can select or clear. matchesFilter() still enumerates the five, so the
+  // coupling is reduced rather than gone, and the failure changes direction rather than ending: a
+  // radio added to the markup and not to matchesFilter() is honoured and stored here, then filters
+  // nothing there. BL-053 is the item that closes it.
+  const wanted = radios.find((r) => r.value === settings.filter);
+  filter = wanted ? wanted.value : 'all';
+  // An unrecognised value is corrected in storage rather than left there. It is unlike a refused
+  // API base, which is kept because a reader typed it and may want to repair a typo; no control
+  // here can produce this, none can show it, and nothing would ever clear it, so it would sit in
+  // the record being ignored on every boot. An empty radio group means the document is missing
+  // rather than the value being wrong, so nothing is corrected on the strength of it.
+  if (!wanted && radios.length > 0) {
+    settings.filter = filter;
+    saveSettings();
+  }
+  // The control is set from the state rather than left to the markup, which always starts on All,
+  // or to the browser's own form restoration on a reload, which restores the control without
+  // telling this module. Either can disagree with what renderRows() is about to use.
+  const active = radios.find((r) => r.value === filter);
+  if (active) active.checked = true;
+
+  for (const radio of radios) {
+    radio.addEventListener('change', (e) => {
+      filter = e.target.value;
+      settings.filter = filter;
+      saveSettings();
+      renderRows();
+    });
   }
 
   $('#btn-rename-list').addEventListener('click', async () => {

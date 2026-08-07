@@ -14,6 +14,15 @@ quote in a bug report.
 
 ## Unreleased
 
+### Added
+
+- The filter above the full reading order is remembered. Choosing Unread, Read, In Unlimited or
+  Details pending used to last only until the page was reloaded, at which point you were silently
+  shown everything again. It is now saved with your other settings and restored on start, so a long
+  order you are working through the Unread way stays that way. There is one filter, shared by every
+  reading order, which is how it already behaved while the app was open. Anything unrecognised in
+  storage falls back to All.
+
 ### Fixed
 
 - A saved API address that is not usable no longer reaches the network layer. The check for it ran
