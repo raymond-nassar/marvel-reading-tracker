@@ -56,17 +56,19 @@ quote in a bug report.
   longer quietly marks an issue read underneath it.
 
 - **The audited figures in `PRODUCT_BACKLOG.md` no longer go stale in silence.** The
-  reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 235 tests.
-  Both statements were true when audited and neither is true now: the file is 2,563 lines and the
-  suite runs 285 tests. The figures themselves are preserved, because a record of an audit that is
-  edited to match today's tree stops being a record of that audit. Each now carries a drift clause
-  naming the current value beside the audited one, which is the convention the reconciliation list's
-  own third bullet already established. The same treatment is applied to the modularity gap in
+  reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests.
+  Both were true when audited and neither is true now: the file is 2,563 lines and the suite runs
+  285 tests. The line count had no drift clause at all, and the test count's clause had itself gone
+  stale, written as 235 when nine items had shipped and still reading 235 after twelve more had. The
+  audited figures are preserved, because a record of an audit that is edited to match today's tree
+  stops being a record of that audit; what changes is the clause beside each of them, which now
+  names the current value. That is the convention the reconciliation list's own third bullet already
+  established. The same treatment is applied to the modularity gap in
   Appendix A, where the size of the file is the argument for the gap and a stale figure understates
-  it by a thousand lines. Appendix B's ranks, row count and the counts of items above BL-026 and
-  BL-007 are recomputed, because that section states in its own words that its ranks are positions
-  in the table "as it stands"; the two headings that describe a past ranking pass are left alone,
-  since they say so themselves.
+  it by a thousand lines. Appendix B's ranks, its two row counts and the counts of items above
+  BL-026 and BL-007 are recomputed, because that section states in its own words that its ranks are
+  positions in the table "as it stands"; the two headings that describe a past ranking pass are left
+  alone, since they say so themselves.
 
 - The vendoring scripts no longer hang when the metadata API rate-limits them. Their retry called
   itself from inside the rate limiter's own queue, so a request that was waiting to try again held

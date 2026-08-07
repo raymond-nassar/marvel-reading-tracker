@@ -195,6 +195,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:149-151 |
+| BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Ready | PRODUCT_BACKLOG.md:2171-2172 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1168-1195 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:496-512 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
@@ -1603,23 +1604,28 @@ Constraint gate: checked 1 to 11, none breached.
 
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and is
 2,563, so the file had grown by 997 lines, 64 per cent, while every statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:1990-1992` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2030-2032` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
-because this document already has a convention for the case and applies it one bullet below: the
+because this document already has a convention for the case and applies it in the third bullet of
+the same list: the
 audited figure is preserved and the drift is recorded beside it, "the items shipped in this pass
 have since taken it to 285; 224 is the figure as audited" at `PRODUCT_BACKLOG.md:156-158`. Appendix A
 does the same thing in its own idiom, correcting a miscount inside the `Resolved:` line rather than
-editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2007-2009`. Overwriting would have destroyed
+editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2047-2049`. Overwriting would have destroyed
 the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:1836-1838` is a
-past-tense account of the state that motivated OC-3, and the same sentence says there is no linter
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:1876-1878` describes
+the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
-which is the treatment the as-is journey map in the UX study already gets.
+which is the treatment the as-is journey map in the UX study already gets. That precedent is the
+weaker of the two, because the journey map is stamped as a hypothesis in its own text at
+`docs/UX_STUDY.md:742-745` while this paragraph carries no such marker and reads in the present
+tense, so a reader who never opens this block has no way to tell it is frozen. Marking it in place
+would mean editing the snapshot, which is the thing being avoided; the record is here instead.
 
 The drift clause the convention produces is itself a live number in an otherwise fixed record, which
 is why the test figure was written as 235 when nine items had shipped and was still reading 235
@@ -1633,17 +1639,51 @@ them.
 
 Verified: the size by `(Get-Content).Count`, the test count by a full run, and the ranks and status
 counts this item's own row shifts by a script that parses the ranked table and excludes the Parked
-table, rather than by hand. Adding one row moved BL-026 from twelfth to thirteenth and BL-007 from
-twenty-seventh to twenty-eighth, and both are stated as facts in Appendix B, so both were corrected.
+table, rather than by hand. The review of this change found one live figure the first pass had
+missed, a second row count in Appendix B stating the table at 31, which is the same defect class
+being fixed and was caught only by re-deriving rather than reading. Every count in the appendix was
+then re-derived against the final table, with BL-056's row already in it, so no figure here was
+written twice.
 
 Not closed by this item: nothing enforces the convention. The anchors gate fingerprints the lines a
-citation names, so it will keep reporting these three sentences as sound however wrong their numbers
+citation names, so it will keep reporting these sentences as sound however wrong their numbers
 become, which is exactly how the figure survived twelve shipped items. What this item leaves behind
-is a written instruction and a worked example, not a gate. A gate would have to know which numbers in
-prose are derived and from what, and that is a larger piece of work than correcting the figures; it
-is not filed as its own item here, because filing one shifts every rank in the table that Appendix B
-states as a fact, and doing that twice in one change would obscure the corrections this item exists
-to make.
+is a written instruction and a worked example, not a gate, and an instruction is the weakest thing
+this repository knows how to rely on.
+
+That gap is filed as BL-056 rather than left as prose. The first draft of this block declined to
+file it, on the reasoning that adding a second row would shift the Appendix B ranks twice in one
+change. That reasoning was wrong on its own terms: the ranks are derived by a script over the final
+table, so both rows go in and the numbers are written once. It also read as an argument for not
+doing the work, which is the thing this repository routes findings to avoid, and the missed row
+count above is the evidence that the gap is live rather than theoretical.
+
+**BL-056: Fail the build when a derived count in the backlog disagrees with the table it is derived from**
+
+- [ ] Derive the ranked-row count, every rank, the status counts and the delivered-id list from the table itself
+- [ ] Compare each against the figures stated in prose, and fail with the derived value when they disagree
+- [ ] Run it in CI beside the anchors gate, and record what it caught on its first run
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of the BL-055 review. BL-050 already proved the shape works: an evidence claim that no one
+checks is an evidence claim that drifts, and the anchors gate ended that for `path:line` citations by
+failing the build. Counts stated in prose are the same problem with no gate behind them. The three
+worked examples are in BL-055's block, and one of them was missed by the pass that was explicitly
+looking for it, which is the argument for a machine rather than a habit.
+
+The scope that is worth doing is the machine-checkable subset, not a general one. A general checker
+would have to know which number in any sentence is derived and from what, which is not tractable.
+Every figure this item is filed over is derived from the ranked table in this same file: the row
+count, each rank, the ordinal spelled out in a heading, the counts of items above a given row, the
+status tallies and the list of delivered ids in the opening ledger. All of those can be recomputed
+from the table and compared with what the prose says, which is what the throwaway script written
+during BL-055 already did. This item is that script, made durable, wired into CI and given the tests
+that prove it fails when a figure is wrong.
+
+Deliberately out of scope: figures derived from outside this file, the line count of `src/js/main.js`
+and the test total among them. Those need the tree, not the table, and folding them in would turn a
+tractable item into the intractable one. If they are wanted later they are a separate filing.
 
 ## Existing epics and stories
 
@@ -2075,21 +2115,21 @@ because BL-014, BL-026 and BL-027 have shipped and BL-025 and BL-028 were droppe
 five keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and five
-further items filed, none of them labelled, which is how it reaches 32 rows now. The ranks below are
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and six
+further items filed, none of them labelled, which is how it reaches 33 rows now. The ranks below are
 positions in it as it stands.
 
-### Case 1: BL-026 is labelled P0 but ranks thirteenth
+### Case 1: BL-026 is labelled P0 but ranks fourteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 13 of 32.
+- Calculated: WSJF 3.67, rank 14 of 33.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
-  It is outranked by twelve items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
+  It is outranked by thirteen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
   below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
   else ships" or "must not be dropped". If the former, the label wins and BL-026 moves to the top
-  regardless of the score. If the latter, the score's ordering is fine, because the twelve items
+  regardless of the score. If the latter, the score's ordering is fine, because the thirteen items
   above it total a small amount of work.
 - Complicating evidence: the measured keyboard picture is better than the P0 label implies. All 45
   tab stops carry a visible focus ring, focus order matches reading order, and the reverse walk
@@ -2101,10 +2141,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks twenty-eighth
+### Case 2: BL-007 is labelled P1 but ranks twenty-ninth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 28 of 32, below twenty-four unlabelled items and three places above the
+- Calculated: WSJF 1.4, rank 29 of 33, below twenty-five unlabelled items and three places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -2128,7 +2168,7 @@ positions in it as it stands.
   backlog lost to a scope judgement, and both WSJF and the P1 label would have argued for building
   it. Evidence for the state that prompted it is unchanged and still recorded in the reconciliation
   table and in `docs/UX_STUDY.md`.
-- Consequence for the ranking: with BL-028 removed the table is 31 rows, and the highest Cost of
+- Consequence for the ranking: with BL-028 removed the table is 33 rows, and the highest Cost of
   Delay among the items that remain is 16, shared by BL-029, BL-039 and BL-050.
 
 ### Case 4: eleven items created this pass outrank the only open P0 story
@@ -2148,9 +2188,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 18 of 32. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 14 of 32. Mid-table.
-- BL-017, P2, rank 31 of 32. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 19 of 33. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 15 of 33. Mid-table.
+- BL-017, P2, rank 32 of 33. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
