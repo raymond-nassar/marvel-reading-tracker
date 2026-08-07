@@ -140,6 +140,50 @@ function el(tag, props = {}, children = []) {
   return node;
 }
 
+// A list rebuilt with replaceChildren destroys the node that had focus, and the browser drops focus
+// to <body>. Measured in Edge with the full order disclosure open: focus a row's checkbox, click it,
+// read document.activeElement immediately afterwards, and it reports BODY. A reader working down
+// the order lost their place on every mark-read, every reorder and every removal. The hero escapes
+// this because its buttons are static markup the re-render leaves in place, which is why the focus
+// work in BL-026 stopped where it did.
+//
+// A node cannot be restored, because the node is gone. What is restored is the identity the node
+// carried: which issue the control acts on, and which action it is. Both are written onto every
+// control the two lists build, so the same pair can be found again in the rebuilt DOM.
+//
+// `primary` is the action to land on when that pair no longer exists anywhere, which happens when
+// the row is filtered away by the very act that was performed on it. Landing on the same action in
+// the row that took its place would put focus on a destructive control the reader did not aim at:
+// Enter auto-repeats on a held key, so restoring "Remove" under a finger already on Enter can
+// delete the next issue too. The row's primary control is the honest landing instead.
+function preservingFocus(container, rebuild, { primary, fallback } = {}) {
+  const prior = container.contains(document.activeElement) ? document.activeElement : null;
+  const act = prior?.dataset.act ?? null;
+  const issue = prior?.dataset.issue ?? null;
+  // Entries that carry no control are the filter hint and the "showing n of m" footer. Counting
+  // them would aim the ordinal at a line that has nothing to focus.
+  const entries = () => [...container.children].filter((n) => n.querySelector('[data-act]'));
+  const ordinal = prior ? entries().indexOf(prior.closest('li')) : -1;
+
+  rebuild();
+
+  if (!act) return;
+  const controls = [...container.querySelectorAll('[data-act]')];
+  const exact = controls.find((c) => c.dataset.issue === issue && c.dataset.act === act) ?? null;
+  const remaining = entries();
+  const heir = ordinal < 0 || remaining.length === 0
+    ? null
+    : remaining[Math.min(ordinal, remaining.length - 1)];
+  const target = exact
+    ?? heir?.querySelector(`[data-act="${primary}"]`)
+    ?? fallback?.()
+    ?? null;
+  // The control the reader was already on is by definition where they were looking, so scrolling it
+  // into view can only move the page under them. Anything else is somewhere they have not looked
+  // yet, so the browser is left to bring it into view.
+  target?.focus({ preventScroll: target === exact });
+}
+
 function announce(msg) {
   announcer.textContent = '';
   // Re-setting after a tick makes screen readers re-announce identical messages.
@@ -1205,10 +1249,10 @@ function markCurrentRead() {
     ? `${issue.title} marked read. Next up: ${next.title}.`
     : `${issue.title} marked read. That is the whole order finished.`);
   // The hero's own buttons are static markup that the re-render leaves in place, so pressing D
-  // from the hero keeps focus and stays live on the next press. That is true of the hero only:
-  // the shelf and the full order are rebuilt with replaceChildren, so a control focused there is
-  // destroyed and focus falls to <body>. That is a pre-existing defect on the click route too,
-  // filed as BL-054 rather than widened into this change. Finishing the order hides the whole
+  // from the hero keeps focus and stays live on the next press. The shelf and the full order are
+  // rebuilt with replaceChildren, which used to destroy a control focused there and drop focus to
+  // <body>; preservingFocus now restores it by identity, on the click route as well, which is what
+  // BL-054 closed. Finishing the order hides the whole
   // hero, which drops the focused button out of the document and sends focus back to <body>,
   // silently and at the top of the page. The heading that replaced it is the honest place to
   // land: it is what the reader needs to hear, and it is where the remaining actions are. The
@@ -1331,121 +1375,143 @@ function fact(key, value, cls = '') {
 function renderShelf() {
   const id = activeListId();
   const shelf = $('#shelf');
-  shelf.replaceChildren();
 
   const upcoming = listItems(store.state, id).filter((it) => !it.read).slice(1, SHELF_SIZE + 1);
   $('#shelf-sec').hidden = upcoming.length === 0;
   $('#shelf-note').textContent = `next ${upcoming.length}, in order`;
 
-  for (const it of upcoming) {
-    const img = el('img', { alt: '', loading: 'lazy' });
-    const fb = el('div', { class: 'tf' }, [
-      el('span', { class: 's', text: seriesOnly(it.seriesName) }),
-      el('span', { class: 'n', text: it.number ? `#${it.number}` : '?' }),
-    ]);
-    paintCover(img, fb, it, 'portrait_incredible');
+  preservingFocus(shelf, () => {
+    shelf.replaceChildren();
 
-    shelf.append(el('li', { class: 'tile' }, el('button', {
-      type: 'button',
-      title: `Open ${it.title} in Marvel Unlimited`,
-      'aria-label': `Open ${it.title} in Marvel Unlimited`,
-      onclick: (e) => openInReader(it, e),
-    }, [
-      el('div', { class: 'ph' }, [img, fb]),
-      el('div', { class: 'lab' }, [
-        el('b', { text: shortTitle(it.title) }),
-        ymd(it.onSale).slice(0, 4),
-      ]),
-    ])));
-  }
+    for (const it of upcoming) {
+      const img = el('img', { alt: '', loading: 'lazy' });
+      const fb = el('div', { class: 'tf' }, [
+        el('span', { class: 's', text: seriesOnly(it.seriesName) }),
+        el('span', { class: 'n', text: it.number ? `#${it.number}` : '?' }),
+      ]);
+      paintCover(img, fb, it, 'portrait_incredible');
+
+      shelf.append(el('li', { class: 'tile' }, el('button', {
+        type: 'button',
+        title: `Open ${it.title} in Marvel Unlimited`,
+        'aria-label': `Open ${it.title} in Marvel Unlimited`,
+        dataset: { issue: it.issueId, act: 'open' },
+        onclick: (e) => openInReader(it, e),
+      }, [
+        el('div', { class: 'ph' }, [img, fb]),
+        el('div', { class: 'lab' }, [
+          el('b', { text: shortTitle(it.title) }),
+          ymd(it.onSale).slice(0, 4),
+        ]),
+      ])));
+    }
+  }, {
+    primary: 'open',
+    // The shelf empties when at most one unread issue is left, and the section is hidden with it,
+    // so there is nothing inside to land on. "Done, next" continues the same activity and is the
+    // control the shelf was helping the reader reach. When the order is finished the hero is hidden
+    // too, and markCurrentRead claims the heading that replaced it when store.update later returns.
+    fallback: () => ($('#hero').hidden ? null : $('#btn-hero-done')),
+  });
 }
 
 function renderRows() {
   const id = activeListId();
   const rows = $('#rows');
-  rows.replaceChildren();
-  const list = store.state.lists[id];
-  if (!list) return;
 
-  const all = listItems(store.state, id);
-  const currentId = upNext(store.state, id)?.issueId ?? null;
-  const items = all.filter((it) => matchesFilter(it));
+  preservingFocus(rows, () => {
+    rows.replaceChildren();
+    const list = store.state.lists[id];
+    if (!list) return;
 
-  const unread = all.length - all.filter((it) => it.read).length;
-  $('#full-count').textContent = `${unread} unread`;
+    const all = listItems(store.state, id);
+    const currentId = upNext(store.state, id)?.issueId ?? null;
+    const items = all.filter((it) => matchesFilter(it));
 
-  if (!items.length) {
-    rows.append(el('li', { class: 'rail-hint', text: 'Nothing matches this filter.' }));
-    return;
-  }
+    const unread = all.length - all.filter((it) => it.read).length;
+    $('#full-count').textContent = `${unread} unread`;
 
-  for (const item of items) {
-    const override = item.override;
-    const av = availability(item, { override });
-    const badgeClass = {
-      [STATE.EXPECTED]: 'badge-expected',
-      [STATE.SCHEDULED]: 'badge-scheduled',
-      [STATE.UNKNOWN]: 'badge-unknown',
-      [STATE.OVERRIDE_AVAILABLE]: 'badge-override-available',
-      [STATE.OVERRIDE_UNAVAILABLE]: 'badge-override-unavailable',
-    }[av.state];
+    if (!items.length) {
+      rows.append(el('li', { class: 'rail-hint', text: 'Nothing matches this filter.' }));
+      return;
+    }
 
-    const img = el('img', { alt: '', loading: 'lazy' });
-    const fb = el('div', { class: 'rf', text: item.number ? `#${item.number}` : '?' });
-    paintCover(img, fb, item, 'portrait_incredible');
+    for (const item of items) {
+      const override = item.override;
+      const av = availability(item, { override });
+      const badgeClass = {
+        [STATE.EXPECTED]: 'badge-expected',
+        [STATE.SCHEDULED]: 'badge-scheduled',
+        [STATE.UNKNOWN]: 'badge-unknown',
+        [STATE.OVERRIDE_AVAILABLE]: 'badge-override-available',
+        [STATE.OVERRIDE_UNAVAILABLE]: 'badge-override-unavailable',
+      }[av.state];
 
-    rows.append(el('li', {
-      class: `row${item.read ? ' is-read' : ''}${item.issueId === currentId ? ' now' : ''}`,
-    }, [
-      el('button', {
-        type: 'button',
-        class: 'cb',
-        'aria-pressed': String(item.read),
-        'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,
-        onclick: () => {
-          store.update((s) => toggleRead(s, item.issueId));
-          announceIfSaved(`${item.title} ${isRead(store.state, item.issueId) ? 'marked read' : 'marked unread'}.`);
-        },
-      }, item.read ? '✓' : ''),
-      el('div', { class: 'thumb' }, [img, fb]),
-      el('div', {}, [
-        el('div', { class: 'rt', text: item.title }),
-        el('div', { class: 'rm' }, [
-          item.seriesName ? el('span', { text: seriesOnly(item.seriesName) }) : null,
-          // The full availability wording is text inside the badge, not a title attribute.
-          // A title is not reachable by touch, is skipped by several screen readers, and
-          // here it was the only place the hedge behind a two-word badge was written down,
-          // so "Not in Unlimited" read as a fact rather than as what the snapshot shows.
-          el('span', { class: `badge ${badgeClass}` }, [
-            `${SHORT[av.state]} ${av.state === STATE.EXPECTED ? 'Unlimited' : SHORT_LABEL[av.state] ?? 'unknown'}`,
-            el('span', { class: 'visually-hidden', text: `. ${describe(item, { override })}.` }),
+      const img = el('img', { alt: '', loading: 'lazy' });
+      const fb = el('div', { class: 'rf', text: item.number ? `#${item.number}` : '?' });
+      paintCover(img, fb, item, 'portrait_incredible');
+
+      rows.append(el('li', {
+        class: `row${item.read ? ' is-read' : ''}${item.issueId === currentId ? ' now' : ''}`,
+      }, [
+        el('button', {
+          type: 'button',
+          class: 'cb',
+          'aria-pressed': String(item.read),
+          'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,
+          dataset: { issue: item.issueId, act: 'read' },
+          onclick: () => {
+            store.update((s) => toggleRead(s, item.issueId));
+            announceIfSaved(`${item.title} ${isRead(store.state, item.issueId) ? 'marked read' : 'marked unread'}.`);
+          },
+        }, item.read ? '✓' : ''),
+        el('div', { class: 'thumb' }, [img, fb]),
+        el('div', {}, [
+          el('div', { class: 'rt', text: item.title }),
+          el('div', { class: 'rm' }, [
+            item.seriesName ? el('span', { text: seriesOnly(item.seriesName) }) : null,
+            // The full availability wording is text inside the badge, not a title attribute.
+            // A title is not reachable by touch, is skipped by several screen readers, and
+            // here it was the only place the hedge behind a two-word badge was written down,
+            // so "Not in Unlimited" read as a fact rather than as what the snapshot shows.
+            el('span', { class: `badge ${badgeClass}` }, [
+              `${SHORT[av.state]} ${av.state === STATE.EXPECTED ? 'Unlimited' : SHORT_LABEL[av.state] ?? 'unknown'}`,
+              el('span', { class: 'visually-hidden', text: `. ${describe(item, { override })}.` }),
+            ]),
+            !item.hydrated && item.source !== 'manual'
+              ? el('span', { class: 'badge badge-pending' }, [
+                'details pending',
+                el('span', { class: 'visually-hidden', text: '. Details have not been fetched yet.' }),
+              ])
+              : null,
+            item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,
+            ymd(item.onSale) ? el('span', { text: ymd(item.onSale) }) : null,
           ]),
-          !item.hydrated && item.source !== 'manual'
-            ? el('span', { class: 'badge badge-pending' }, [
-              'details pending',
-              el('span', { class: 'visually-hidden', text: '. Details have not been fetched yet.' }),
-            ])
-            : null,
-          item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,
-          ymd(item.onSale) ? el('span', { text: ymd(item.onSale) }) : null,
         ]),
-      ]),
-      el('div', { class: 'ract' }, [
-        el('button', { type: 'button', class: 'mini', 'aria-label': `Read ${item.title} in Marvel Unlimited`, onclick: (e) => openInReader(item, e) }, 'Read'),
-        detailUrl(item)
-          ? el('a', { class: 'mini', href: detailUrl(item), target: '_blank', rel: 'noopener noreferrer', 'aria-label': `marvel.com page for ${item.title}` }, 'Info')
-          : null,
-        el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} up`, onclick: () => store.update((s) => moveItem(s, id, item.issueId, -1)) }, '↑'),
-        el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} down`, onclick: () => store.update((s) => moveItem(s, id, item.issueId, 1)) }, '↓'),
-        el('button', { type: 'button', class: 'mini', 'aria-label': `Change availability for ${item.title}`, onclick: () => cycleOverride(item) }, '⚑'),
-        el('button', { type: 'button', class: 'mini mini-danger', 'aria-label': `Remove ${item.title} from this list`, onclick: () => { store.update((s) => removeFromList(s, id, item.issueId)); announceIfSaved(`Removed ${item.title}.`); } }, '✕'),
-      ]),
-    ]));
-  }
+        el('div', { class: 'ract' }, [
+          el('button', { type: 'button', class: 'mini', 'aria-label': `Read ${item.title} in Marvel Unlimited`, dataset: { issue: item.issueId, act: 'open' }, onclick: (e) => openInReader(item, e) }, 'Read'),
+          detailUrl(item)
+            ? el('a', { class: 'mini', href: detailUrl(item), target: '_blank', rel: 'noopener noreferrer', 'aria-label': `marvel.com page for ${item.title}`, dataset: { issue: item.issueId, act: 'info' } }, 'Info')
+            : null,
+          el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} up`, dataset: { issue: item.issueId, act: 'up' }, onclick: () => store.update((s) => moveItem(s, id, item.issueId, -1)) }, '↑'),
+          el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} down`, dataset: { issue: item.issueId, act: 'down' }, onclick: () => store.update((s) => moveItem(s, id, item.issueId, 1)) }, '↓'),
+          el('button', { type: 'button', class: 'mini', 'aria-label': `Change availability for ${item.title}`, dataset: { issue: item.issueId, act: 'override' }, onclick: () => cycleOverride(item) }, '⚑'),
+          el('button', { type: 'button', class: 'mini mini-danger', 'aria-label': `Remove ${item.title} from this list`, dataset: { issue: item.issueId, act: 'remove' }, onclick: () => { store.update((s) => removeFromList(s, id, item.issueId)); announceIfSaved(`Removed ${item.title}.`); } }, '✕'),
+        ]),
+      ]));
+    }
 
-  if (items.length !== all.length) {
-    rows.append(el('li', { class: 'rail-hint', text: `Showing ${items.length} of ${all.length}.` }));
-  }
+    if (items.length !== all.length) {
+      rows.append(el('li', { class: 'rail-hint', text: `Showing ${items.length} of ${all.length}.` }));
+    }
+  }, {
+    primary: 'read',
+    // Nothing is left to land on only when the filter now excludes everything, which is usually
+    // the reader's own act of marking the last matching issue read. The checked filter is both the
+    // reason the list is empty and the control that undoes it, and it sits inside the same
+    // disclosure, so focus stays where the reader was working.
+    fallback: () => [...document.querySelectorAll('input[name="filter"]')].find((r) => r.checked),
+  });
 }
 
 const SHORT_LABEL = {
