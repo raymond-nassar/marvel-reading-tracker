@@ -327,13 +327,12 @@
                   <span id="full-count"></span>
                 </summary>
 
-                <fieldset class="filters">
+                <!-- Filled once at startup from READING_FILTERS in src/js/lib/readingFilters.js,
+                     which also holds the predicate each one filters by. Written out here as well
+                     and the two drifted apart in silence, so the markup no longer holds a second
+                     copy of the list. -->
+                <fieldset class="filters" id="reading-filters">
                   <legend class="visually-hidden">Filter the list</legend>
-                  <label class="fp"><input type="radio" name="filter" value="all" checked /><span>All</span></label>
-                  <label class="fp"><input type="radio" name="filter" value="unread" /><span>Unread</span></label>
-                  <label class="fp"><input type="radio" name="filter" value="read" /><span>Read</span></label>
-                  <label class="fp"><input type="radio" name="filter" value="unlimited" /><span>In Unlimited</span></label>
-                  <label class="fp"><input type="radio" name="filter" value="pending" /><span>Details pending</span></label>
                 </fieldset>
 
                 <ol class="rows" id="rows"></ol>

@@ -26,6 +26,7 @@ import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
 import { shortcutAllowed } from './lib/shortcuts.js';
+import { READING_FILTERS, DEFAULT_FILTER, matchesReadingFilter } from './lib/readingFilters.js';
 import { askConfirm, askText, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
@@ -72,7 +73,7 @@ const hydrator = new Hydrator({ api, store, onProgress: renderHydration });
 // changed behaviour a reader has today as well as adding state that grows with the library. A
 // reader who sets Unread has said how they want to read, not how they want to read one order.
 // Its restored value is applied in wireReading(), which runs before the first render.
-let filter = 'all';
+let filter = DEFAULT_FILTER;
 let view = 'read';
 
 // ------------------------------------------------------------------ unreadable-data recovery
@@ -1060,23 +1061,42 @@ async function openPreview(list) {
 // ------------------------------------------------------------------ reading view
 
 function wireReading() {
+  // Rendered from READING_FILTERS rather than authored in index.html, so the labels a reader can
+  // choose from and the predicates that decide a row are one list and cannot disagree. Rendered
+  // once, here, and never from renderRows(): rebuilding a radio group destroys the radio the
+  // reader just activated and drops the keyboard out of the filter, which is the defect BL-054
+  // fixed for the rows below and the reason the catalog's own filters are left alone on re-render.
+  //
+  // A radio written into the markup by hand would otherwise survive this append and sit beside the
+  // rendered five, offering a filter with no predicate and no listener behind it, which is the
+  // failure this item exists to end rather than one to reintroduce here. Measured on the tree
+  // before this change, with a sixth radio authored into the fieldset: selecting it showed all 8
+  // rows of an 8 row fixture, stored itself as the active filter, and threw nothing.
+  const stray = [...document.querySelectorAll('input[name="filter"]')];
+  if (stray.length) {
+    throw new Error(`The document holds reading filters (${stray.map((r) => r.value).join(', ')}). `
+      + 'They are rendered from READING_FILTERS in src/js/lib/readingFilters.js; add it there instead.');
+  }
+  $('#reading-filters').append(...READING_FILTERS.map((f) => el('label', { class: 'fp' }, [
+    el('input', { type: 'radio', name: 'filter', value: f.value }),
+    el('span', { text: f.label }),
+  ])));
+
   const radios = [...document.querySelectorAll('input[name="filter"]')];
 
-  // The radios are the list of what a filter can be, so a stored value is honoured only when one
-  // of them offers it. Keeping a second enumeration here would be a list someone has to keep in
-  // step with the markup, and a filter dropped from the markup could then leave this holding a
-  // value nothing on screen can select or clear. matchesFilter() still enumerates the five, so the
-  // coupling is reduced rather than gone, and the failure changes direction rather than ending: a
-  // radio added to the markup and not to matchesFilter() is honoured and stored here, then filters
-  // nothing there. BL-053 is the item that closes it.
+  // A stored value is honoured only when the list offers it. There is no longer a second
+  // enumeration for it to disagree with, but the check earns its place for a reason the markup
+  // never covered: settings are a file the reader can edit and an older build could have written
+  // a filter this one has since dropped. The group cannot be empty here, because it was just
+  // filled from a list that is checked at load for holding the default, so a document missing the
+  // fieldset fails at that append rather than arriving as a value quietly corrected in storage.
   const wanted = radios.find((r) => r.value === settings.filter);
-  filter = wanted ? wanted.value : 'all';
+  filter = wanted ? wanted.value : DEFAULT_FILTER;
   // An unrecognised value is corrected in storage rather than left there. It is unlike a refused
   // API base, which is kept because a reader typed it and may want to repair a typo; no control
   // here can produce this, none can show it, and nothing would ever clear it, so it would sit in
-  // the record being ignored on every boot. An empty radio group means the document is missing
-  // rather than the value being wrong, so nothing is corrected on the strength of it.
-  if (!wanted && radios.length > 0) {
+  // the record being ignored on every boot.
+  if (!wanted) {
     settings.filter = filter;
     saveSettings();
   }
@@ -1426,7 +1446,7 @@ function renderRows() {
 
     const all = listItems(store.state, id);
     const currentId = upNext(store.state, id)?.issueId ?? null;
-    const items = all.filter((it) => matchesFilter(it));
+    const items = all.filter((it) => matchesReadingFilter(filter, it));
 
     const unread = all.length - all.filter((it) => it.read).length;
     $('#full-count').textContent = `${unread} unread`;
@@ -1520,18 +1540,6 @@ const SHORT_LABEL = {
   [STATE.OVERRIDE_AVAILABLE]: 'yours: available',
   [STATE.OVERRIDE_UNAVAILABLE]: 'yours: not in MU',
 };
-
-function matchesFilter(item) {
-  if (filter === 'all') return true;
-  if (filter === 'read') return item.read;
-  if (filter === 'unread') return !item.read;
-  if (filter === 'pending') return !item.hydrated && item.source !== 'manual';
-  if (filter === 'unlimited') {
-    const s = availability(item, { override: item.override }).state;
-    return s === STATE.EXPECTED || s === STATE.OVERRIDE_AVAILABLE;
-  }
-  return true;
-}
 
 function cycleOverride(item) {
   const next = item.override === 'available' ? 'unavailable' : item.override === 'unavailable' ? null : 'available';
