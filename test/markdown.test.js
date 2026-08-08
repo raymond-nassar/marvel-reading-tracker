@@ -225,3 +225,94 @@ test('a hand-added issue never becomes a fabricated marvel.com link', () => {
   assert.equal(unresolved[0].read, true, 'and its read state still round-trips');
   assert.equal(unresolved[0].url, null, 'with no invented link attached');
 });
+
+// A trade order is a checklist with sub-headings, and the sub-heading is the only place the
+// file says which book an issue is collected in. Losing it on the way in or out would turn a
+// trade order back into an ordinary issue list with no visible sign anything had gone.
+test('a sub-heading labels the issues beneath it with their collected edition', () => {
+  const { entries } = parseChecklist([
+    '# The New Ultimate Universe: Collected Editions',
+    '',
+    '## Ultimate Invasion',
+    '',
+    '- [ ] [Ultimate Invasion (2023) #1](https://www.marvel.com/comics/issue/97145/a)',
+    '- [x] [Ultimate Invasion (2023) #2](https://www.marvel.com/comics/issue/97147/a)',
+    '',
+    '## Ultimates Vol. 1: Fix the World',
+    '',
+    '- [ ] [Ultimates (2024) #1](https://www.marvel.com/comics/issue/113211/a)',
+  ].join('\n'));
+
+  assert.deepEqual(entries.map((e) => e.section), [
+    'Ultimate Invasion',
+    'Ultimate Invasion',
+    'Ultimates Vol. 1: Fix the World',
+  ]);
+});
+
+// The list's own name is written as `# name`, so a level-1 heading is a title and not a book.
+// Treating it as one would file every issue in the order under a single section named after
+// the list, which looks like a working trade order and is not one.
+test('a level-1 heading is a title, not a collected edition', () => {
+  const { entries } = parseChecklist([
+    '# My reading order',
+    '- [ ] [One #1](https://www.marvel.com/comics/issue/1/a)',
+  ].join('\n'));
+
+  assert.equal(entries[0].section, null);
+});
+
+// A second `#` further down is the case that looks right while being wrong: without the reset
+// the issues under it keep the last trade's name.
+test('a later level-1 heading ends the section rather than continuing it', () => {
+  const { entries } = parseChecklist([
+    '## Ultimate Invasion',
+    '- [ ] [One #1](https://www.marvel.com/comics/issue/1/a)',
+    '# Appendix',
+    '- [ ] [Two #1](https://www.marvel.com/comics/issue/2/a)',
+  ].join('\n'));
+
+  assert.deepEqual(entries.map((e) => e.section), ['Ultimate Invasion', null]);
+});
+
+// An issue whose title could not be resolved to an id still belongs to a book, and the
+// unresolved path is the one that gets forgotten.
+test('an unresolved line keeps the collected edition it sat under', () => {
+  const { unresolved } = parseChecklist([
+    '## Ultimate Endgame',
+    '- [ ] Some Issue Nobody Can Resolve',
+  ].join('\n'));
+
+  assert.equal(unresolved[0].section, 'Ultimate Endgame');
+});
+
+// Export then re-import is the reader's own backup route. If the books do not survive it,
+// the file they saved is not the list they had.
+test('a trade order survives a round trip through export and import', () => {
+  const items = [
+    { issueId: 97145, title: 'Ultimate Invasion (2023) #1', url: null, read: true, collectedIn: 'Ultimate Invasion' },
+    { issueId: 97147, title: 'Ultimate Invasion (2023) #2', url: null, read: false, collectedIn: 'Ultimate Invasion' },
+    { issueId: 113211, title: 'Ultimates (2024) #1', url: null, read: false, collectedIn: 'Ultimates Vol. 1: Fix the World' },
+  ];
+  const md = serializeChecklist({ name: 'Collected Editions', items });
+
+  assert.match(md, /^## Ultimate Invasion$/m);
+  assert.match(md, /^## Ultimates Vol\. 1: Fix the World$/m);
+
+  const { entries } = parseChecklist(md);
+  assert.deepEqual(
+    entries.map((e) => [e.issueId, e.section, e.read]),
+    items.map((i) => [i.issueId, i.collectedIn, i.read]),
+  );
+});
+
+// An ordinary issue order must serialize exactly as it always did, or every existing order
+// gains a heading it never had.
+test('a list with no collected editions gains no headings', () => {
+  const md = serializeChecklist({
+    name: 'Plain',
+    items: [{ issueId: 1, title: 'One #1', url: null, read: false }],
+  });
+
+  assert.ok(!md.includes('## '), `no sub-heading may appear:\n${md}`);
+});

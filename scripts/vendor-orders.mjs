@@ -142,6 +142,10 @@ function catalogEntry(order, payload) {
     type: order.type,
     depth: order.depth,
     count: payload.count,
+    // Derived from the payload for the same reason the issue count is: a number the reader
+    // sees before importing must come from the file they will actually import. Orders that are
+    // not divided into collected editions report 0, which the catalog renders as nothing.
+    collections: Number.isInteger(payload.collections) ? payload.collections : 0,
     characters: order.characters ?? [],
     keywords: order.keywords ?? [],
     group: order.group,
@@ -234,6 +238,12 @@ async function main() {
           creators: Array.isArray(d.creators)
             ? d.creators.filter((c) => /writer|penciler|artist/i.test(c.role ?? '')).map((c) => ({ name: c.name, role: c.role }))
             : [],
+          // The collected edition this issue belongs to, taken from the checklist's own
+          // sub-headings. It is the curator's grouping, not Marvel's: the metadata API carries
+          // no collection record for anything published after 2023, so there is nothing
+          // upstream to derive it from. Omitted entirely for an order with no sub-headings, so
+          // the orders that predate trade orders re-vendor to the same items they had before.
+          ...(e.section ? { collectedIn: cleanText(e.section) } : {}),
         },
       };
     });
@@ -255,12 +265,18 @@ async function main() {
         pageCount: null,
         creators: [],
         placeholder: true,
+        ...(u.section ? { collectedIn: cleanText(u.section) } : {}),
       },
     }));
 
     // Reading order is the point of these files, so resolved and unresolved lines are merged
     // back into the sequence they were written in rather than appended in a lump.
     const items = [...issueItems, ...placeholderItems].sort((a, b) => a.at - b.at).map((x) => x.item);
+
+    // How many collected editions the order is divided into. Counted from the items rather
+    // than from the headings, because a heading with no issues under it is not a book a reader
+    // can read, and the catalog states this number next to the issue count.
+    const collections = new Set(items.map((i) => i.collectedIn).filter(Boolean)).size;
 
     const dupes = new Set();
     const seenIds = new Set();
@@ -281,6 +297,7 @@ async function main() {
       generatedAt: new Date().toISOString(),
       apiBase: API,
       count: items.length,
+      collections,
       placeholders: placeholderItems.length,
       unresolved,
       items,

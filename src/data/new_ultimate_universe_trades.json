@@ -1,0 +1,3522 @@
+{
+  "id": "new-ultimate-universe-trades",
+  "name": "The New Ultimate Universe: Collected Editions",
+  "description": "The same line read the way it is collected, one section per trade paperback, for readers who buy the books rather than the single issues. Each section is a volume you can buy, and it tracks its own progress. Reading is shared with the issue-by-issue order, so an issue ticked in one is ticked in the other. The volume line-up follows Comic Book Herald's collected-edition guide and is not derived from Marvel metadata, which carries no collection records for this era. Six issues Marvel has not collected are left out: the 2024 Free Comic Book Day issue and the five-part Ultimate Impact: Reborn.",
+  "source": null,
+  "sourceLicense": "Compiled for this project",
+  "generatedAt": "2026-08-08T05:00:40.018Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 132,
+  "collections": 23,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 97145,
+      "title": "Ultimate Invasion (2023) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/97145/ultimate_invasion_2023_1",
+      "seriesId": 33281,
+      "seriesName": "Ultimate Invasion (2023 - Present)",
+      "onSale": "2023-06-21T00:00:00+0000",
+      "mu": "2023-06-02T15:56:00+0000",
+      "digitalId": 62801,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/648735ebac505",
+        "ext": "jpg"
+      },
+      "description": "THE TRANSFORMATION OF THE MARVEL UNIVERSE BEGINS! Superstar creators Jonathan Hickman and Bryan Hitch team up! The Illuminati must form once again to stop the Maker from his plans to destroy - or perhaps rebuild - the universe, with Miles Morales at the center of it all! Bryan's work on THE ULTIMATES helped redefine super hero comics for the 2000s - wait until you see what he and Jonathan have in store for this decade! Including new data pages by Jonathan Hickman - plus exclusive behind-the-scenes material on the world-building that has gone into this project!",
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Andrew Currie",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Donny Cates",
+          "role": "writer"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Invasion"
+    },
+    {
+      "issueId": 97147,
+      "title": "Ultimate Invasion (2023) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/97147/ultimate_invasion_2023_2",
+      "seriesId": 33281,
+      "seriesName": "Ultimate Invasion (2023 - Present)",
+      "onSale": "2023-07-26T00:00:00+0000",
+      "mu": "2023-07-07T12:29:00+0000",
+      "digitalId": 63026,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/64c290223912b",
+        "ext": "jpg"
+      },
+      "description": "The Maker plans to make sure Earth's Mightiest Heroes never become heroes at all. And then he can reshape the universe into exactly what he wants it to be…",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Andrew Currie",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Invasion"
+    },
+    {
+      "issueId": 97148,
+      "title": "Ultimate Invasion (2023) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/97148/ultimate_invasion_2023_3",
+      "seriesId": 33281,
+      "seriesName": "Ultimate Invasion (2023 - Present)",
+      "onSale": "2023-08-30T00:00:00+0000",
+      "mu": "2023-08-29T09:39:00+0000",
+      "digitalId": 63194,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/652991645b40a",
+        "ext": "jpg"
+      },
+      "description": "After KANG descends upon the City of Tomorrow, the Illuminati must regroup! IRON MAN has a heart-to-heart with Tony Stark! DOCTOR DOOM - the anti-Maker - prepares his own plans to deal with this evil Reed Richards… …and the Ultimate Universe that the Maker thought he had rebuilt frays at the edges as they prepare for cosmic war!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Andrew Currie",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Invasion"
+    },
+    {
+      "issueId": 97149,
+      "title": "Ultimate Invasion (2023) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/97149/ultimate_invasion_2023_4",
+      "seriesId": 33281,
+      "seriesName": "Ultimate Invasion (2023 - Present)",
+      "onSale": "2023-09-27T00:00:00+0000",
+      "mu": "2023-09-14T13:13:00+0000",
+      "digitalId": 63693,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/652990058ffd1",
+        "ext": "jpg"
+      },
+      "description": "THE END...OR THE BEGINNING? War breaks out as timelines and universes collide! Iron Man must choose between the lesser of two evils - the Maker or Kang. But what secret does Iron Man know about the men behind the masks? And at the end of it all, the world outside your window will be forever changed! Don't miss this giant-sized, action-packed conclusion - or is it only the beginning...?",
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Andrew Currie",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Invasion"
+    },
+    {
+      "issueId": 112990,
+      "title": "Ultimate Universe (2023) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/112990/ultimate_universe_2023_1",
+      "seriesId": 39482,
+      "seriesName": "Ultimate Universe (2023 - Present)",
+      "onSale": "2023-11-01T00:00:00+0000",
+      "mu": "2023-10-25T00:00:00+0000",
+      "digitalId": 64136,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/a0/654bb102098a1",
+        "ext": "jpg"
+      },
+      "description": "THE SPOILS OF VICTORY! After the worlds-shaking conclusion of ULTIMATE INVASION, a new team of heroes bands together to save the future! From mastermind Jonathan Hickman and superstar artist Stefano Caselli, don't miss out on this foundational issue for the new line of Ultimate Comics!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 1: Fix the World"
+    },
+    {
+      "issueId": 113211,
+      "title": "Ultimates (2024) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/113211/ultimates_2024_1",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2024-06-05T00:00:00+0000",
+      "mu": "2024-05-09T00:00:00+0000",
+      "digitalId": 66651,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/66634dc363119",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATES RETURN TO GREATNESS!  Spinning out of Jonathan Hickman and Stefano Caselli's ULTIMATE UNIVERSE #1, rising stars Deniz Camp (CHILDREN OF THE VAULT, 20th Century Men) and Juan Frigeri (INVINCIBLE IRON MAN) assemble an all-new team of ULTIMATES in a series that kicks off the next chapter of the new Ultimate line. Six months ago, Tony Stark sent Peter Parker a radioactive spider to set him back on the course to become Spider-Man. Since then, Iron Lad (Stark), Captain America, Doom, Thor and Sif have begun to do the same for other lost heroes, building a network of super-powered heroes hungry for change… Now they must band together to destroy the Maker's Council and restore freedom and free will to a world ruled from the shadows!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 1: Fix the World"
+    },
+    {
+      "issueId": 113212,
+      "title": "Ultimates (2024) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/113212/ultimates_2024_2",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2024-07-10T00:00:00+0000",
+      "mu": "2024-06-27T00:00:00+0000",
+      "digitalId": 67877,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/40/66a7f5e6547ed",
+        "ext": "jpg"
+      },
+      "description": "SHOCKING SECRETS OF THE ULTIMATE UNIVERSE REVEALED!  Captain America reckons with the Maker's dismantling of nations…by visiting the White House! Leading to a massive brawl between MIDAS and this young band of freedom fighters… …but Midas has been holding a superhuman hostage as a power source! PLUS: The dark history of what used to be the United States on Earth-6160…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 1: Fix the World"
+    },
+    {
+      "issueId": 113213,
+      "title": "Ultimates (2024) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/113213/ultimates_2024_3",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2024-08-14T00:00:00+0000",
+      "mu": "2024-08-07T00:00:00+0000",
+      "digitalId": 68014,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/664ccf8e7a19d",
+        "ext": "jpg"
+      },
+      "description": "INTRODUCING…THE SHE-HULK!  The Ultimates search for a means of destroying the Maker's most powerful pawn, the Hulk! And in the process they uncover an army of Hulks hidden away from the world… …with She-Hulk at the helm!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 1: Fix the World"
+    },
+    {
+      "issueId": 113214,
+      "title": "Ultimates (2024) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/113214/ultimates_2024_4",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2024-09-04T00:00:00+0000",
+      "mu": "2024-08-29T00:00:00+0000",
+      "digitalId": 68522,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/66d0826e46fc0",
+        "ext": "jpg"
+      },
+      "description": "THE FATE OF THE ULTIMATE FANTASTIC FOUR!  Doom's years of torture at the hands of the Maker finally catch up to him in this secret history of the real Reed Richards! And tensions rise among the Ultimates when Doom might be more fixated on re-creating the life he should have had than the life he's got…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Phil Noto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 1: Fix the World"
+    },
+    {
+      "issueId": 113922,
+      "title": "Ultimates (2024) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/113922/ultimates_2024_5",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2024-10-09T00:00:00+0000",
+      "mu": "2024-09-10T00:00:00+0000",
+      "digitalId": 68944,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/66fc08646155a",
+        "ext": "jpg"
+      },
+      "description": "ULTIMATE HAWKEYE TARGETS CAPTAIN AMERICA! Hawkeye No More? Not for long! A new challenger approaches when an unknown civilian picks up a discarded bow and arrow - and refuses to let the Ultimates reclaim the stolen Stark Tech! Captain America tries to settle the dispute, leading to an action-packed brawl of arrows versus shields! Meanwhile, the Ultimate Hellfire Club is up to something…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 1: Fix the World"
+    },
+    {
+      "issueId": 113923,
+      "title": "Ultimates (2024) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/113923/ultimates_2024_6",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2024-11-06T00:00:00+0000",
+      "mu": "2024-10-16T00:00:00+0000",
+      "digitalId": 69178,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/66c722442d5a7",
+        "ext": "jpg"
+      },
+      "description": "ULTIMATES ASSEMBLE TO TAKE DOWN THE HULK! The entire roster of THE ULTIMATES unites for the first time in this high octane, climactic conclusion of the first arc!  Iron Lad has a plan to defeat the Hulk, the most powerful and imposing member of the Maker's Council - but has he gotten his team in over their heads?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 1: Fix the World"
+    },
+    {
+      "issueId": 112985,
+      "title": "Ultimate Spider-Man (2024) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/112985/ultimate_spider-man_2024_1",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-01-10T00:00:00+0000",
+      "mu": "2024-01-04T00:00:00+0000",
+      "digitalId": 64552,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/6596e0f7d0718",
+        "ext": "jpg"
+      },
+      "description": "THE NEW ULTIMATE SPIDER-MAN FOR A NEW ULTIMATE UNIVERSE! Visionary writer Jonathan Hickman (HOUSE OF X/POWERS OF X) and acclaimed artist Marco Checchetto (DAREDEVIL) bring you a bold new take on Spider-Man, with this, the debut title of the new line of Ultimate Comics! After the events of ULTIMATE INVASION, the world needs a hero…who will rise up to take on that responsibility? Prepare to be entangled in a web of mystery and excitement as the all-new ULTIMATE SPIDER-MAN comic redefines the wall-crawler for the 21st Century!",
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 1: Married with Children"
+    },
+    {
+      "issueId": 112987,
+      "title": "Ultimate Spider-Man (2024) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/112987/ultimate_spider-man_2024_2",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-02-21T00:00:00+0000",
+      "mu": "2024-02-08T00:00:00+0000",
+      "digitalId": 64825,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/65cccf983049b",
+        "ext": "jpg"
+      },
+      "description": "THE MOST SURPRISING SPIDER-MAN STORY OF THE 21ST CENTURY CONTINUES! Spider-Man faces his first super villain! J. Jonah Jameson's quest to uncover who is really pulling the strings of this new Ultimate Universe leads to a shocking revelation! And New York City welcomes its newest hero…the Green Goblin!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 1: Married with Children"
+    },
+    {
+      "issueId": 112988,
+      "title": "Ultimate Spider-Man (2024) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/112988/ultimate_spider-man_2024_3",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-03-27T00:00:00+0000",
+      "mu": "2024-02-08T00:00:00+0000",
+      "digitalId": 65708,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/65f9a38b0f14e",
+        "ext": "jpg"
+      },
+      "description": "PETER PARKER'S NEW LIFE GETS EVEN MORE COMPLICATED… Spider-Man sizes up the new hero Green Goblin!  As they team up to fight a new super villain, secrets about the corporations running North America are revealed… And you'll never guess who discovers Spider-Man's secret identity!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 1: Married with Children"
+    },
+    {
+      "issueId": 112989,
+      "title": "Ultimate Spider-Man (2024) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/112989/ultimate_spider-man_2024_4",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-04-24T00:00:00+0000",
+      "mu": "2024-04-12T00:00:00+0000",
+      "digitalId": 66136,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/50/661540c777769",
+        "ext": "jpg"
+      },
+      "description": "WHO IS THE GREEN GOBLIN? Peter Parker's secret life starts fraying the edges of his personal life! J. Jonah Jameson and Ben Parker's pursuit of truth - or, at least, the news - stirs unrest with the world at large… And now that Spider-Man may not have to operate alone, the real work of rebuilding this corrupt world can begin!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Messina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 1: Married with Children"
+    },
+    {
+      "issueId": 113882,
+      "title": "Ultimate Spider-Man (2024) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/113882/ultimate_spider-man_2024_5",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-05-29T00:00:00+0000",
+      "mu": "2024-05-09T00:00:00+0000",
+      "digitalId": 66649,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/664b9dad6c3ea",
+        "ext": "jpg"
+      },
+      "description": "THE SECRET HISTORY OF HARRY OSBORN! How does the heir apparent of Oscorp become a masked vigilante? And what does Green Goblin know of the true status of the world he lives in? All and more will be revealed!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Messina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 1: Married with Children"
+    },
+    {
+      "issueId": 113883,
+      "title": "Ultimate Spider-Man (2024) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/113883/ultimate_spider-man_2024_6",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-06-19T00:00:00+0000",
+      "mu": "2024-06-19T00:00:00+0000",
+      "digitalId": 67047,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/66634e96d7513",
+        "ext": "jpg"
+      },
+      "description": "THE SHOCKING CONCLUSION OF THE ULTIMATE OPENING ARC! Spider-Man must finally confront the head honcho himself: Wilson Fisk, the Kingpin! Kingpin, as owner and operator of the Daily Bugle, has been working with the Maker's Council to control the spread of information in their favor… Which means he's the first domino that must be toppled to end their regime! PLUS: Mary Jane holds her own. 'Nuff said!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 1: Married with Children"
+    },
+    {
+      "issueId": 112980,
+      "title": "Ultimate Black Panther (2024) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/112980/ultimate_black_panther_2024_1",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-02-07T00:00:00+0000",
+      "mu": "2024-02-07T00:00:00+0000",
+      "digitalId": 64824,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/c0/65b7d795258f9",
+        "ext": "jpg"
+      },
+      "description": "THE NEW ULTIMATE BLACK PANTHER! In the wake of ULTIMATE INVASION, Khonshu and Ra - the force known together as Moon Knight - are seeking to expand their brutal control of the continent of Africa. In response, the lone bulwark against them, the isolated nation of Wakanda, will send forth its champion…its king…the Black Panther! From the creative minds of Bryan Hill (BLADE, KILLMONGER) and Stefano Caselli (X-MEN RED, AVENGERS) comes a bold new take on the world of Black Panther and Wakanda!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 1: Peace and War"
+    },
+    {
+      "issueId": 112982,
+      "title": "Ultimate Black Panther (2024) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/112982/ultimate_black_panther_2024_2",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-03-13T00:00:00+0000",
+      "mu": "2024-02-28T00:00:00+0000",
+      "digitalId": 65707,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/20/65e7393533367",
+        "ext": "jpg"
+      },
+      "description": "WAKANDA BANGS THE DRUMS OF WAR! After Moon Knight's forces attack the stronghold of Wakanda, T'Challa can no longer resist Shuri and the Dora Milaje's calls to action. Grieving and enraged, Black Panther demands to know who has been leaking information about Wakanda to their enemy…and the source shocks him to his core. And a prophecy about T'Challa threatens to upend the war and all of Wakandan life!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 1: Peace and War"
+    },
+    {
+      "issueId": 112983,
+      "title": "Ultimate Black Panther (2024) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/112983/ultimate_black_panther_2024_3",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-04-17T00:00:00+0000",
+      "mu": "2024-04-03T00:00:00+0000",
+      "digitalId": 66135,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/6615411de5549",
+        "ext": "jpg"
+      },
+      "description": "ENTER...STORM AND KILLMONGER! Black Panther takes matters into his own hands and embarks on a covert solo mission to deal with Ra and Khonshu directly! Wakanda's conflict with Moon Knight has escalated. Even with spies all across the continent feeding information, Wakanda is overwhelmed. Everything changes, though, when a pair of freedom fighters enter the fray: Ultimate Killmonger and Ultimate Storm!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 1: Peace and War"
+    },
+    {
+      "issueId": 112984,
+      "title": "Ultimate Black Panther (2024) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/112984/ultimate_black_panther_2024_4",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-05-22T00:00:00+0000",
+      "mu": "2024-05-09T00:00:00+0000",
+      "digitalId": 66648,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/70/663e5c19c99c8",
+        "ext": "jpg"
+      },
+      "description": "SHURI SEIZES THE THRONE! With T'Challa missing and presumed dead, Wakanda needs a new leader. Shuri wants war against Ra and Khonshu more than T'Challa ever did, but at what cost? Meanwhile, Black Panther must learn from his new allies, the freedom fighters Killmonger and Storm!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 1: Peace and War"
+    },
+    {
+      "issueId": 113862,
+      "title": "Ultimate Black Panther (2024) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/113862/ultimate_black_panther_2024_5",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-06-26T00:00:00+0000",
+      "mu": "2024-06-12T00:00:00+0000",
+      "digitalId": 67046,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/50/667977320a022",
+        "ext": "jpg"
+      },
+      "description": "THE BLACK PANTHER MUST TAKE BACK WAKANDA! T'Challa, Killmonger, and Storm arrive in Wakanda so T'Challa can reclaim the throne! And what do the Vodu-Khan, the mysterious, mystical branch of the Dora Milaje, have waiting for him? Plagued by an ominous prophecy, Black Panther must embark on a spiritual journey!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Nieto",
+          "role": "penciler"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 1: Peace and War"
+    },
+    {
+      "issueId": 113863,
+      "title": "Ultimate Black Panther (2024) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/113863/ultimate_black_panther_2024_6",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-07-24T00:00:00+0000",
+      "mu": "2024-07-14T00:00:00+0000",
+      "digitalId": 67874,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/70/66a7f53f68df6",
+        "ext": "jpg"
+      },
+      "description": "BLACK PANTHER'S DARING TRIAL TO FACE RA AND KHONSHU!  While T'Challa has sought to grow his power, so too have the forces of Moon Knight… And with access to a unique new resource, Ra and Khonshu are stronger than ever! How will Wakanda stand in its resistance against the kings of the Upper and Lower Kingdoms? And is T'Challa prepared to bear the consequences of tapping into such dangerous wells of power?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Nieto",
+          "role": "penciler"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 1: Peace and War"
+    },
+    {
+      "issueId": 112996,
+      "title": "Ultimate X-Men (2024) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/112996/ultimate_x-men_2024_1",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-03-06T00:00:00+0000",
+      "mu": "2024-02-22T00:00:00+0000",
+      "digitalId": 65709,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/65e885e02be09",
+        "ext": "jpg"
+      },
+      "description": "Visionary creator PEACH MOMOKO (DEMON DAYS, STAR WARS) creates a new generation of X-Men for an all-new universe!  Hisako Ichiki is a teenage girl who just wants to live a normal life - go to school, hang out with her friends, ignore the political strife broiling over after the events of ULTIMATE INVASION - but life has other plans for her. In Japan, urban legends have sprung to life and brought some unusual new powers with them…Meet Armor, Maystorm and a group of new Ultimate X-Men the likes of which you've never seen before!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 1: Fears and Hates"
+    },
+    {
+      "issueId": 112998,
+      "title": "Ultimate X-Men (2024) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/112998/ultimate_x-men_2024_2",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-04-10T00:00:00+0000",
+      "mu": "2024-03-27T00:00:00+0000",
+      "digitalId": 66137,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/661541c9c99ad",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATE X-MEN GO BACK TO SCHOOL! High school, that is! It's a new school year for Hisako as she tries to get a grasp on her new powers… Where she meets a cool, white-haired punk girl named Mei (A.K.A. Maystorm), who understands all too well the challenge Hisako faces. And they team up to embark on a creepy adventure to learn who is behind the creepy shadow that has been haunting - and taunting - them!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 1: Fears and Hates"
+    },
+    {
+      "issueId": 112999,
+      "title": "Ultimate X-Men (2024) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/112999/ultimate_x-men_2024_3",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-05-15T00:00:00+0000",
+      "mu": "2024-05-01T00:00:00+0000",
+      "digitalId": 66650,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/a0/6657416999c08",
+        "ext": "jpg"
+      },
+      "description": "THE MYSTERIOUS MAYSTORM, REVEALED! Maystorm's origin! Mei Igarashi was a regular girl until she discovered her unusual abilities and her hair changed from brown to white… And how she came to idolize a mysterious freedom fighter in Africa who also harnesses the power of the storm!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 1: Fears and Hates"
+    },
+    {
+      "issueId": 113000,
+      "title": "Ultimate X-Men (2024) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/113000/ultimate_x-men_2024_4",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-06-12T00:00:00+0000",
+      "mu": "2024-05-29T00:00:00+0000",
+      "digitalId": 67048,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/66574166de1d0",
+        "ext": "jpg"
+      },
+      "description": "NEW MUTANTS! Hisako and Mei's classmate, Nico Minoru, has figured out that these two girls possess unusual abilities… But they're not the only ones! Hisako's world gets a whole lot bigger in ULTIMATE X-MEN #4!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 1: Fears and Hates"
+    },
+    {
+      "issueId": 113902,
+      "title": "Ultimate X-Men (2024) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/113902/ultimate_x-men_2024_5",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-07-17T00:00:00+0000",
+      "mu": "2024-07-10T00:00:00+0000",
+      "digitalId": 67876,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/80/66a7f60689e8c",
+        "ext": "jpg"
+      },
+      "description": "THE NEW MUTANTS FACE THEIR FIRST ENEMY! Maystorm isn't the only mutant with electric powers - and Noriko Ashida is here to make sure she knows it! A fun summer festival turns haunted and dangerous as spirits and surges collide! PLUS: The shadow who has been haunting Armor finally reveals his true face!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 1: Fears and Hates"
+    },
+    {
+      "issueId": 113903,
+      "title": "Ultimate X-Men (2024) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/113903/ultimate_x-men_2024_6",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-08-28T00:00:00+0000",
+      "mu": "2024-08-15T00:00:00+0000",
+      "digitalId": 68013,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/664cce95172d2",
+        "ext": "jpg"
+      },
+      "description": "THE ACTION-PACKED FINALE OF THE FIRST ARC! Armor, Maystorm and the rest of the team hunt down the mysterious shadow! But is this group of scrappy teens prepared to face true darkness? And don't miss the reveal of the final member of the group on the last page!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 1: Fears and Hates"
+    },
+    {
+      "issueId": 113884,
+      "title": "Ultimate Spider-Man (2024) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/113884/ultimate_spider-man_2024_7",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-07-31T00:00:00+0000",
+      "mu": "2024-07-24T00:00:00+0000",
+      "digitalId": 67875,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/66212b2c1a5ff",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATES RETURN! NEW ARC STARTS HERE! After their intense battle with the Kingpin, Green Goblin and Spider-Man both know they aren't as ready to reshape the world as they hoped. Harry and Peter get to work, while Ben and Jonah work on \"the truth\"… And problems for their resistance arise when the ULTIMATES return!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 2: The Paper"
+    },
+    {
+      "issueId": 113885,
+      "title": "Ultimate Spider-Man (2024) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/113885/ultimate_spider-man_2024_8",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-08-21T00:00:00+0000",
+      "mu": "2024-08-07T00:00:00+0000",
+      "digitalId": 68012,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/66bb714635a92",
+        "ext": "jpg"
+      },
+      "description": "KINGPIN'S SINISTER SIX!  Kingpin gathers a team to deal with his masked-vigilante problem… But a group of super villains isn't the only challenge Spider-Man will face! Meanwhile, Green Goblin joins forces with…Doc Ock?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 2: The Paper"
+    },
+    {
+      "issueId": 113886,
+      "title": "Ultimate Spider-Man (2024) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/113886/ultimate_spider-man_2024_9",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-09-25T00:00:00+0000",
+      "mu": "2024-09-05T00:00:00+0000",
+      "digitalId": 68520,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/66e347bb0712d",
+        "ext": "jpg"
+      },
+      "description": "THE SINISTER SIX MAKE THEIR FIRST STRIKE! But WHO are the Sinister Six?  The first member throws down with Spider-Man and Green Goblin in this action-packed issue! Plus, with Tony Stark's return, Peter must also explore the limitations of his new suit…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 2: The Paper"
+    },
+    {
+      "issueId": 113887,
+      "title": "Ultimate Spider-Man (2024) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/113887/ultimate_spider-man_2024_10",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-10-16T00:00:00+0000",
+      "mu": "2024-09-10T00:00:00+0000",
+      "digitalId": 68583,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/03/67068368c1c70",
+        "ext": "jpg"
+      },
+      "description": "J. JONAH JAMESON, BEN PARKER AND THE GREEN GOBLIN COLLIDE! Fan-favorite duo Ben Parker and J. Jonah Jameson take center stage in this investigative mystery issue! But in this world of shadows and secrets, every unturned rock leads to danger… And they'll soon have to decide which is the greater challenge - uncovering secrets or keeping them!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Messina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 2: The Paper"
+    },
+    {
+      "issueId": 113888,
+      "title": "Ultimate Spider-Man (2024) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/113888/ultimate_spider-man_2024_11",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-11-20T00:00:00+0000",
+      "mu": "2024-10-16T00:00:00+0000",
+      "digitalId": 69176,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/6733705612a41",
+        "ext": "jpg"
+      },
+      "description": "WHO IS THE ULTIMATE BLACK CAT?  Tensions rise between Spider-Man and Green Goblin in the wake of recent events! And a new villain steps up to the plate! What is her connection to the Black Cat on Kingpin's Sinister Six?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Messina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 2: The Paper"
+    },
+    {
+      "issueId": 113889,
+      "title": "Ultimate Spider-Man (2024) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/113889/ultimate_spider-man_2024_12",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2024-12-18T00:00:00+0000",
+      "mu": "2024-12-18T00:00:00+0000",
+      "digitalId": 69966,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/676039abda516",
+        "ext": "jpg"
+      },
+      "description": "A VERY MERRY SPIDER-CHRISTMAS? Season's greetings from the Parker family! But why is Peter acting so strangely during the most wonderful time of the year? And what's got Gwen so concerned? Don't miss the thrilling conclusion of the second arc - and the first year - of ULTIMATE SPIDER-MAN!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 2: The Paper"
+    },
+    {
+      "issueId": 113864,
+      "title": "Ultimate Black Panther (2024) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/113864/ultimate_black_panther_2024_7",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-08-07T00:00:00+0000",
+      "mu": "2024-08-07T00:00:00+0000",
+      "digitalId": 68011,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/66acfcb1a8158",
+        "ext": "jpg"
+      },
+      "description": " \"WAR OF THE KINGDOMS\" STARTS HERE!  While T'Challa has sought to grow his power, so too have the forces of Moon Knight… And with access to a unique new resource, Ra and Khonshu are stronger than ever! How will Wakanda stand in its resistance against the kings of the Upper and Lower Kingdoms? And is T'Challa prepared to bear the consequences of tapping into such dangerous wells of power?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 2: Gods and Kings"
+    },
+    {
+      "issueId": 113865,
+      "title": "Ultimate Black Panther (2024) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/113865/ultimate_black_panther_2024_8",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-09-11T00:00:00+0000",
+      "mu": "2024-08-29T00:00:00+0000",
+      "digitalId": 68519,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/60/66d0820c1b005",
+        "ext": "jpg"
+      },
+      "description": "BLACK PANTHER AND STORM TAKE THE FIGHT TO MOON KNIGHT! Enough planning - time for a guerrilla counterstrike against Khonshu and Ra! Meanwhile, Killmonger and Okoye seek allies to aid their cause outside of Wakanda… So don't miss the big gun they call in! Ultimate WHO? You'll have to read to find out!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 2: Gods and Kings"
+    },
+    {
+      "issueId": 113866,
+      "title": "Ultimate Black Panther (2024) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/113866/ultimate_black_panther_2024_9",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-10-02T00:00:00+0000",
+      "mu": "2024-09-10T00:00:00+0000",
+      "digitalId": 68942,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/66fc08a84fcfb",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATE SORCERER SUPREME? Magic, mysticism and metal clash! But the source of this magic is not what it appears to be, due to the Maker's reshaping of the world… Black Panther wrestles with this new anti-vibranium - and deals with the devastating consequences! What is the price of such life-bringing power? And what is the price of trying to master it?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 2: Gods and Kings"
+    },
+    {
+      "issueId": 113867,
+      "title": "Ultimate Black Panther (2024) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/113867/ultimate_black_panther_2024_10",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-11-27T00:00:00+0000",
+      "mu": "2024-10-16T00:00:00+0000",
+      "digitalId": 69175,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/67337040e8620",
+        "ext": "jpg"
+      },
+      "description": "THE BLACK PANTHER AND THE STRANGE DOCTOR? A prison break brings unlikely aid to Wakanda, but is this new ally a reliable confidant? Or does the godly Moon Knight have more to offer?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Nieto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 2: Gods and Kings"
+    },
+    {
+      "issueId": 113868,
+      "title": "Ultimate Black Panther (2024) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/113868/ultimate_black_panther_2024_11",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2024-12-25T00:00:00+0000",
+      "mu": "2024-12-17T00:00:00+0000",
+      "digitalId": 69964,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/67603a698d7eb",
+        "ext": "jpg"
+      },
+      "description": "A NEW VILLAIN JOINS THE FRAY! Black Panther's war of attrition against Moon Knight becomes more complicated as Wakanda's defense must become two-pronged! Plus, T'Challa discovers vibranium in his blood, bringing with it even more visions and more mystery…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 2: Gods and Kings"
+    },
+    {
+      "issueId": 113869,
+      "title": "Ultimate Black Panther (2024) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/113869/ultimate_black_panther_2024_12",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-01-08T00:00:00+0000",
+      "mu": "2025-01-02T00:00:00+0000",
+      "digitalId": 69965,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/80/678035f979c62",
+        "ext": "jpg"
+      },
+      "description": "MOON KNIGHT VS. BLACK PANTHER! Moon Knight challenges Black Panther to a one-on-one duel to end the war! But with his army of zealots behind him, would Moon Knight's followers even accept defeat? And the Maker's Council can't be stopped so easily… The epic climax of the first year of ULTIMATE BLACK PANTHER!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 2: Gods and Kings"
+    },
+    {
+      "issueId": 113904,
+      "title": "Ultimate X-Men (2024) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/113904/ultimate_x-men_2024_7",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-09-18T00:00:00+0000",
+      "mu": "2024-09-05T00:00:00+0000",
+      "digitalId": 68521,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/d0/66e348210b2d1",
+        "ext": "jpg"
+      },
+      "description": "MEET THE MUTANTS' NEW MENTOR, PSYLOCKE! After the climactic finale of issue #6 and the surprise new teammate they found, Mei, Hisako, Nico and the mutants need some guidance! Fortunately, the mysterious Kanon is an older student with a surprising amount of expertise…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 2: Children of the Atom"
+    },
+    {
+      "issueId": 113905,
+      "title": "Ultimate X-Men (2024) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/113905/ultimate_x-men_2024_8",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-10-30T00:00:00+0000",
+      "mu": "2024-09-10T00:00:00+0000",
+      "digitalId": 68943,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/66a3ee66a24a8",
+        "ext": "jpg"
+      },
+      "description": "WHO ARE THE CHILDREN OF THE ATOM? What are mutants? Where do they come from? And how has the Maker's Council been keeping them under control? All these dark questions and more start to unravel as our heroes investigate a murder that, for some reason, the authorities keep covering up! And Shadow King advances his sinister plots!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 2: Children of the Atom"
+    },
+    {
+      "issueId": 113906,
+      "title": "Ultimate X-Men (2024) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/113906/ultimate_x-men_2024_9",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-11-13T00:00:00+0000",
+      "mu": "2024-10-16T00:00:00+0000",
+      "digitalId": 69177,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/67337c7d12a5f",
+        "ext": "jpg"
+      },
+      "description": "MAYSTORM VS. SURGE IN A STATIC SKIRMISH! Lightning collides as Maystorm and Surge finally confront each other! But when Surge is left weak and drained of her power, Maystorm has even more questions… And must investigate the mysterious cult Surge is part of and its relationship to the mutants of the Ultimate Universe!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 2: Children of the Atom"
+    },
+    {
+      "issueId": 113907,
+      "title": "Ultimate X-Men (2024) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/113907/ultimate_x-men_2024_10",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2024-12-11T00:00:00+0000",
+      "mu": "2024-12-03T00:00:00+0000",
+      "digitalId": 69968,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/c0/6750d4a205a7a",
+        "ext": "jpg"
+      },
+      "description": "ENTER…VIPER!  Viper enters the stage after a mass raid on the cult known as the Children of the Atom!  What has the Maker's Council been doing with the cult's mutants? And what of the mysterious figure they have been keeping prisoner? Hisako and her friends face a new world order as the raid leaves mutants unleashed!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 2: Children of the Atom"
+    },
+    {
+      "issueId": 113908,
+      "title": "Ultimate X-Men (2024) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/113908/ultimate_x-men_2024_11",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-01-29T00:00:00+0000",
+      "mu": "2025-01-24T00:00:00+0000",
+      "digitalId": 71159,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/70/671934829e970",
+        "ext": "jpg"
+      },
+      "description": "WHO ARE THE X-MEN? RISE OF THE MASKED MUTANTS! Maystorm takes the reins! No more hiding their powers - even if it means hiding their faces! Disenfranchised and despairing after the raid on the Children of the Atom, the man-made mutants seek out leadership - and Maystorm is ready to rise to the occasion!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 2: Children of the Atom"
+    },
+    {
+      "issueId": 113909,
+      "title": "Ultimate X-Men (2024) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/113909/ultimate_x-men_2024_12",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-02-26T00:00:00+0000",
+      "mu": "2025-02-11T00:00:00+0000",
+      "digitalId": 70046,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/67b74a8d04790",
+        "ext": "jpg"
+      },
+      "description": "SHOWDOWN WITH THE SHADOW KING! Maystorm leads her team of masked mutants in a climactic battle against Shadow King! But the confrontation leads to a huge rift between best friends Maystorm and Armor…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 2: Children of the Atom"
+    },
+    {
+      "issueId": 124181,
+      "title": "ULTIMATE UNIVERSE: ONE YEAR IN (2024) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/124181/ultimate_universe_one_year_in_2024_1",
+      "seriesId": 42887,
+      "seriesName": "ULTIMATE UNIVERSE: ONE YEAR IN (2024 - Present)",
+      "onSale": "2024-12-11T00:00:00+0000",
+      "mu": "2024-12-03T00:00:00+0000",
+      "digitalId": 69967,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/6750d4b32c8d6",
+        "ext": "jpg"
+      },
+      "description": "THE CLOCK IS TICKING DOWN TO THE MAKER'S ARRIVAL! Deniz Camp flips the narrative on ULTIMATES and takes us inside the Maker's Council! The heroes of the Ultimate Universe aren't the only ones who have been preparing for the return of the Maker, and the clock is ticking down… This unique one-shot sets the stage for the second year of the Ultimate line and includes the debut of the Ultimate versions of two major Marvel characters!",
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonas Scharf",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rafael Albuquerque",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 2: All Power to the People"
+    },
+    {
+      "issueId": 113924,
+      "title": "Ultimates (2024) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/113924/ultimates_2024_7",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2024-12-04T00:00:00+0000",
+      "mu": "2024-12-04T00:00:00+0000",
+      "digitalId": 69179,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/6750d4be835d4",
+        "ext": "jpg"
+      },
+      "description": "WHO ARE THE ULTIMATES? A NEW STORY ARC BEGINS! Perfect jumping-on point for the uninitiated! The aftermath of the explosive last issue - including the loss of a major member! Join the Ultimates in their secret HQ as they regroup and launch their bold new plan to change the world!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 2: All Power to the People"
+    },
+    {
+      "issueId": 113925,
+      "title": "Ultimates (2024) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/113925/ultimates_2024_8",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-01-01T00:00:00+0000",
+      "mu": "2024-12-20T00:00:00+0000",
+      "digitalId": 69969,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/c0/676445f94d77f",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATE GUARDIANS OF THE GALAXY! America Chavez takes center stage in this issue as a group of galactic travelers from a far-flung, Maker-free future arrive in search of her!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 2: All Power to the People"
+    },
+    {
+      "issueId": 113926,
+      "title": "Ultimates (2024) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/113926/ultimates_2024_9",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-02-05T00:00:00+0000",
+      "mu": "2025-01-28T00:00:00+0000",
+      "digitalId": 69589,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/679ba3a8b0606",
+        "ext": "jpg"
+      },
+      "description": "LUKE CAGE AND THE ULTIMATE PRISON BREAK!  Juan Frigeri joins Deniz Camp to bring us the history and the future of Luke Cage!  Spider-Man isn't the only success story of Ultimates 1.0…meet the man who has been quietly sabotaging the Maker's Council from behind bars!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Chris Allen",
+          "role": "penciler"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 2: All Power to the People"
+    },
+    {
+      "issueId": 113927,
+      "title": "Ultimates (2024) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/113927/ultimates_2024_10",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-03-05T00:00:00+0000",
+      "mu": "2025-02-20T00:00:00+0000",
+      "digitalId": 72241,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/67b74ad8cda33",
+        "ext": "jpg"
+      },
+      "description": "NAMOR AND THE RED SKULL! Captain America and the Human Torch lead a team to recruit their old comrade - Namor! But they'll have to get through the Red Skull Gang first!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 2: All Power to the People"
+    },
+    {
+      "issueId": 113928,
+      "title": "Ultimates (2024) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/113928/ultimates_2024_11",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-04-09T00:00:00+0000",
+      "mu": "2025-03-27T00:00:00+0000",
+      "digitalId": 72596,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/b0/6791568474df7",
+        "ext": "jpg"
+      },
+      "description": "THE WAR FOR ASGARD! A NEW HERO APPROACHES! Time to topple another of the Maker's dominoes: removing LOKI from his seat of power in Asgard! Thor, Sif and She-Hulk journey into mystery for blood, for glory and for rebellion, and discover a surprising new ally!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 2: All Power to the People"
+    },
+    {
+      "issueId": 113929,
+      "title": "Ultimates (2024) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/113929/ultimates_2024_12",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-05-21T00:00:00+0000",
+      "mu": "2025-05-08T00:00:00+0000",
+      "digitalId": 73142,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/6826063442400",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATE FRACTURE! Dissent destroys the Ultimates as a disagreement long developing between two members of the team leads to a devastating departure!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 2: All Power to the People"
+    },
+    {
+      "issueId": 121270,
+      "title": "Ultimate Wolverine (2025) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/121270/ultimate_wolverine_2025_1",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-01-15T00:00:00+0000",
+      "mu": "2025-01-07T00:00:00+0000",
+      "digitalId": 71158,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/678037465ed64",
+        "ext": "jpg"
+      },
+      "description": "THE MAKER'S ULTIMATE WEAPON! From rising star Chris Condon (That Texas Blood) and MOON KNIGHT powerhouse artist Alessandro Cappuccio comes the story of the ULTIMATE WOLVERINE! In order to maintain control of their corner of the Maker's world, three members of his council - Magik, Colossus and Omega Red - deploy their most lethal asset: The Winter Soldier!  But WHO is the weapon behind the mask?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 1: The Winter Soldier"
+    },
+    {
+      "issueId": 121271,
+      "title": "Ultimate Wolverine (2025) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/121271/ultimate_wolverine_2025_2",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-02-19T00:00:00+0000",
+      "mu": "2025-02-05T00:00:00+0000",
+      "digitalId": 71650,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/67ab717a87666",
+        "ext": "jpg"
+      },
+      "description": "THE MAKER'S COUNCIL AND THEIR ULTIMATE WEAPON! Colossus, Omega Red and Magik put the Ultimate Wolverine to the test by seeing how well he handles the OPPOSITION, a group fighting for mutant liberation!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 1: The Winter Soldier"
+    },
+    {
+      "issueId": 121272,
+      "title": "Ultimate Wolverine (2025) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/121272/ultimate_wolverine_2025_3",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-03-26T00:00:00+0000",
+      "mu": "2025-03-06T00:00:00+0000",
+      "digitalId": 72239,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/67d99ed713523",
+        "ext": "jpg"
+      },
+      "description": "WOLVERINE VS. GAMBIT & KITTY PRYDE! The Winter Soldier leads a strike against two members of the Opposition: Kitty Pryde and Gambit! But do the duo recognize the man behind the mask?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 1: The Winter Soldier"
+    },
+    {
+      "issueId": 121273,
+      "title": "Ultimate Wolverine (2025) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/121273/ultimate_wolverine_2025_4",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-04-16T00:00:00+0000",
+      "mu": "2025-04-04T00:00:00+0000",
+      "digitalId": 72716,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/20/679156a053321",
+        "ext": "jpg"
+      },
+      "description": "THE WINTER SOLDIER THAWS? Wolverine's confrontation with Kitty Pryde and Gambit leaves him disoriented, violent and questioning his Maker's Council overlords… who is \"Logan\"?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 1: The Winter Soldier"
+    },
+    {
+      "issueId": 121274,
+      "title": "Ultimate Wolverine (2025) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/121274/ultimate_wolverine_2025_5",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-05-07T00:00:00+0000",
+      "mu": "2025-04-29T00:00:00+0000",
+      "digitalId": 73451,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/6808f3d11ca44",
+        "ext": "jpg"
+      },
+      "description": "ULTIMATE SABRETOOTH CLAWS HIS WAY ONTO THE SCENE! Mysteries of Ultimate Wolverine's past are revealed when a familiar face joins the fray!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Lins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 1: The Winter Soldier"
+    },
+    {
+      "issueId": 121275,
+      "title": "Ultimate Wolverine (2025) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/121275/ultimate_wolverine_2025_6",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-06-04T00:00:00+0000",
+      "mu": "2025-05-22T00:00:00+0000",
+      "digitalId": 74144,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/e0/6841ca016571b",
+        "ext": "jpg"
+      },
+      "description": "REUNION WITH THE OPPOSITION? Guest artist Alex Lins (NAMOR) takes Wolverine on a psychedelic journey through his mind as familiar and unfamiliar faces of the Opposition try to untangle Logan's Winter Soldier programming!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Lins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 1: The Winter Soldier"
+    },
+    {
+      "issueId": 113890,
+      "title": "Ultimate Spider-Man (2024) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/113890/ultimate_spider-man_2024_13",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-01-22T00:00:00+0000",
+      "mu": "2025-01-08T00:00:00+0000",
+      "digitalId": 71157,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/678030c8e16d2",
+        "ext": "jpg"
+      },
+      "description": "KRAVEN'S MOST DANGEROUS GAME! The Sinister Six are all hunting Spider-Man and the Green Goblin for their ringleader, Kingpin - and this time, Kraven has the upper hand in Jonathan Hickman & Marco Checchetto's love letter to \"Kraven's Last Hunt\"!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 3: Family Business"
+    },
+    {
+      "issueId": 113891,
+      "title": "Ultimate Spider-Man (2024) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/113891/ultimate_spider-man_2024_14",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-02-26T00:00:00+0000",
+      "mu": "2025-02-11T00:00:00+0000",
+      "digitalId": 69581,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/67b74a8d0af6c",
+        "ext": "jpg"
+      },
+      "description": "SPIDER-MAN VERSUS KRAVEN! After the horrors Peter and Harry endured during KRAVEN'S HUNT in the last issue, Spider-Man and Green Goblin turn the HUNTER into the HUNTED! But are they still prey in someone else's game?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 3: Family Business"
+    },
+    {
+      "issueId": 113892,
+      "title": "Ultimate Spider-Man (2024) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/113892/ultimate_spider-man_2024_15",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-03-26T00:00:00+0000",
+      "mu": "2025-03-06T00:00:00+0000",
+      "digitalId": 71485,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/67d99ed70d2e1",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATE SANDMAN ATTACKS! As the dust settles from the events of recent issues, Peter, MJ and the kids take a family vacation - but nowhere is safe for Ultimate Spider-Man!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Messina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 3: Family Business"
+    },
+    {
+      "issueId": 113893,
+      "title": "Ultimate Spider-Man (2024) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/113893/ultimate_spider-man_2024_16",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-04-30T00:00:00+0000",
+      "mu": "2025-04-30T00:00:00+0000",
+      "digitalId": 72595,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/680f872a49a0d",
+        "ext": "jpg"
+      },
+      "description": "THE SECRET ORIGIN OF MYSTERIO! Even Kingpin knows little about the criminal in the smoky helmet…but Spider-Man's about to learn more than he bargained for!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 3: Family Business"
+    },
+    {
+      "issueId": 113894,
+      "title": "Ultimate Spider-Man (2024) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/113894/ultimate_spider-man_2024_17",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-05-28T00:00:00+0000",
+      "mu": "2025-05-15T00:00:00+0000",
+      "digitalId": 73141,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/6849a2afd79b1",
+        "ext": "jpg"
+      },
+      "description": "TURF WAR IN NEW YORK! THE SINISTER SIX VS. THE TWO SPIDER-MEN! All is not well in New York with the Sinister Six at war with each other! Fortunately, Spider-Man's not facing this one alone...catch Richard Parker in the BLACK SUIT!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Messina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 3: Family Business"
+    },
+    {
+      "issueId": 113895,
+      "title": "Ultimate Spider-Man (2024) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/113895/ultimate_spider-man_2024_18",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-09-18T00:00:00+0000",
+      "mu": "2025-06-25T00:00:00+0000",
+      "digitalId": 73505,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/67dc3f41d8f5e",
+        "ext": "jpg"
+      },
+      "description": "WAR RAGES ON IN NEW YORK CITY!  Black Cat enlists Richard Parker's aid in the Sinister Six turf war…and Spider-Man gains a surprising ally!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 3: Family Business"
+    },
+    {
+      "issueId": 113870,
+      "title": "Ultimate Black Panther (2024) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/113870/ultimate_black_panther_2024_13",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-02-19T00:00:00+0000",
+      "mu": "2025-02-05T00:00:00+0000",
+      "digitalId": 69578,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/67ab717b679b2",
+        "ext": "jpg"
+      },
+      "description": "ULTIMATE BLACK PANTHER: YEAR TWO STARTS HERE! With MOON KNIGHT defeated and the Maker's Council forced to regroup, T'Challa must learn the secrets of vibranium - because his very life and soul are at risk! The SORCERER SUPREME can help understand the truth of the terrifying element that built Wakanda, but her aid comes with a price…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 3: Darkness and Light"
+    },
+    {
+      "issueId": 113871,
+      "title": "Ultimate Black Panther (2024) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/113871/ultimate_black_panther_2024_14",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-03-19T00:00:00+0000",
+      "mu": "2025-02-27T00:00:00+0000",
+      "digitalId": 71484,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/67d9b60b22827",
+        "ext": "jpg"
+      },
+      "description": "WHO IS THE PROGENITOR? Black Panther's dangerous reliance on vibranium becomes even more volatile when an ancient spirit attacks Wakanda! Only the Sorcerer Supreme can help T'Challa save Wakanda - and possibly his soul - from this fiend!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Nieto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 3: Darkness and Light"
+    },
+    {
+      "issueId": 113872,
+      "title": "Ultimate Black Panther (2024) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/113872/ultimate_black_panther_2024_15",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-04-23T00:00:00+0000",
+      "mu": "2025-04-10T00:00:00+0000",
+      "digitalId": 72594,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/680f876dde205",
+        "ext": "jpg"
+      },
+      "description": "THE NEW BLACK PANTHER! Battle-worn and beleaguered, a stripped-down T'Challa must go back to basics to prepare for battle against the new foes who have turned vibranium and its dark counterpart against him…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 3: Darkness and Light"
+    },
+    {
+      "issueId": 113873,
+      "title": "Ultimate Black Panther (2024) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/113873/ultimate_black_panther_2024_16",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-05-14T00:00:00+0000",
+      "mu": "2025-05-01T00:00:00+0000",
+      "digitalId": 73140,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/680f870da7922",
+        "ext": "jpg"
+      },
+      "description": "Black Panther and Storm team up to uncover why a CIA agent is undertaking covert missions in Wakanda! Will the prophesied union between the king and the mutant freedom fighter come to pass?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Nieto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 3: Darkness and Light"
+    },
+    {
+      "issueId": 113874,
+      "title": "Ultimate Black Panther (2024) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/113874/ultimate_black_panther_2024_17",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-06-11T00:00:00+0000",
+      "mu": "2025-06-11T00:00:00+0000",
+      "digitalId": 73884,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/6841ea4c2a8a3",
+        "ext": "jpg"
+      },
+      "description": "KILLMONGER VS. THE VODU-KHAN! Black Panther has deputized Erik Killmonger in his absence! But T'Challa's mysterious advisors, the Vodu-Khan, do not trust this interloper! Plus, Queen Okoye reveals truths behind her marriage and her mission…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 3: Darkness and Light"
+    },
+    {
+      "issueId": 113875,
+      "title": "Ultimate Black Panther (2024) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/113875/ultimate_black_panther_2024_18",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-07-16T00:00:00+0000",
+      "mu": "2025-07-08T00:00:00+0000",
+      "digitalId": 74282,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/68761fa950f6c",
+        "ext": "jpg"
+      },
+      "description": "BETRAYED BY THE VODU-KHAN?! Despite their promises and prophecies, the VODU-KHAN have positioned themselves against BLACK PANTHER and alongside his enemy! What secrets of vibranium have the Vodu-Khan kept all this time? Without vibranium and without their counsel, how will T'Challa defend against mystic mayhem?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 3: Darkness and Light"
+    },
+    {
+      "issueId": 113910,
+      "title": "Ultimate X-Men (2024) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/113910/ultimate_x-men_2024_13",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-03-19T00:00:00+0000",
+      "mu": "2025-02-27T00:00:00+0000",
+      "digitalId": 70047,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/67d9b5ed242f9",
+        "ext": "jpg"
+      },
+      "description": "THE MUTANT NEW WORLD ORDER? The start of the second year of ULTIMATE X-MEN! Chaos erupts as former Children of the Atom rise up against the society that used and abused them, just as tension between Armor and Maystorm comes to a head in an explosive confrontation!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 3: The Realm of the Mind"
+    },
+    {
+      "issueId": 113911,
+      "title": "Ultimate X-Men (2024) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/113911/ultimate_x-men_2024_14",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-04-02T00:00:00+0000",
+      "mu": "2025-03-18T00:00:00+0000",
+      "digitalId": 72717,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/67d9a04e9e350",
+        "ext": "jpg"
+      },
+      "description": "The Shadow King returns...more powerful than ever! Will Armor be the first to fall?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 3: The Realm of the Mind"
+    },
+    {
+      "issueId": 113912,
+      "title": "Ultimate X-Men (2024) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/113912/ultimate_x-men_2024_15",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-05-07T00:00:00+0000",
+      "mu": "2025-04-29T00:00:00+0000",
+      "digitalId": 73452,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/70/6808f3b9d1968",
+        "ext": "jpg"
+      },
+      "description": "A \"New Age\" is upon us! Witness how Hisako's journey through her inner darkness wreaks havoc on her fellow mutants and reality itself!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 3: The Realm of the Mind"
+    },
+    {
+      "issueId": 113913,
+      "title": "Ultimate X-Men (2024) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/113913/ultimate_x-men_2024_16",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-06-11T00:00:00+0000",
+      "mu": "2025-05-30T00:00:00+0000",
+      "digitalId": 73885,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/30/6841e9fca72e9",
+        "ext": "jpg"
+      },
+      "description": "THE DAWN OF A NEW MUTANT CULT? It's springtime in Hi No Kuni, the period for renewal and new beginnings. But what's new is not always what's better, as Hisako's dark era spreads…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 3: The Realm of the Mind"
+    },
+    {
+      "issueId": 113914,
+      "title": "Ultimate X-Men (2024) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/113914/ultimate_x-men_2024_17",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-07-16T00:00:00+0000",
+      "mu": "2025-07-08T00:00:00+0000",
+      "digitalId": 74287,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/68761fa9496cb",
+        "ext": "jpg"
+      },
+      "description": "OPERATION: RESCUE ARMOR! Hisako has been missing, but Nico's undercover sleuthing finally tracks her down! But the Church of the Children of the Atom aren't going to give up Armor without a fight... What dangers await our X-Men in the Astral Plane?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 3: The Realm of the Mind"
+    },
+    {
+      "issueId": 113915,
+      "title": "Ultimate X-Men (2024) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/113915/ultimate_x-men_2024_18",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-08-06T00:00:00+0000",
+      "mu": "2025-08-05T00:00:00+0000",
+      "digitalId": 75148,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/688a5e7a116ec",
+        "ext": "jpg"
+      },
+      "description": "INSIDE THE ASTRAL PLANE! ARMOR'S SOUL IS ON THE LINE! The Children of the Atom's sinister plot leads to the Astral Plane! The X-Men have journeyed there, but that's only the beginning! What horrors await in the climactic finale of volume 3 of ULTIMATE X-MEN?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 3: The Realm of the Mind"
+    },
+    {
+      "issueId": 125782,
+      "title": "FREE COMIC BOOK DAY 2025: AMAZING SPIDER-MAN/ULTIMATE UNIVERSE (2025) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/125782/free_comic_book_day_2025_amazing_spider-manultimate_universe_2025_1",
+      "seriesId": 43447,
+      "seriesName": "FREE COMIC BOOK DAY 2025: AMAZING SPIDER-MAN/ULTIMATE UNIVERSE (2025 - Present)",
+      "onSale": "2025-05-03T00:00:00+0000",
+      "mu": "2025-04-16T00:00:00+0000",
+      "digitalId": 70295,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/03/679271b069e15",
+        "ext": "jpg"
+      },
+      "description": "Joe Kelly and John Romita Jr. remind us who Peter Parker and SPIDER-MAN are! Plus, an exclusive prologue to this summer's blockbuster ULTIMATE event from Deniz Camp, Cody Ziglar & Jonas Scharf!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonas Scharf",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Patrick Gleason",
+          "role": "penciler"
+        },
+        {
+          "name": "Cody Ziglar",
+          "role": "writer"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        },
+        {
+          "name": "Joe Kelly",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Incursion"
+    },
+    {
+      "issueId": 125522,
+      "title": "Ultimate Spider-Man: Incursion (2025) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/125522/ultimate_spider-man_incursion_2025_1",
+      "seriesId": 43373,
+      "seriesName": "Ultimate Spider-Man: Incursion (2025 - Present)",
+      "onSale": "2025-06-04T00:00:00+0000",
+      "mu": "2025-05-22T00:00:00+0000",
+      "digitalId": 69832,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/6841ca00971f1",
+        "ext": "jpg"
+      },
+      "description": "MILES MORALES CAUGHT IN THE MIDDLE OF A UNIVERSAL COLLISION! Two of today's most exciting writers, DENIZ CAMP (ULTIMATES) and CODY ZIGLAR (MILES MORALES: SPIDER-MAN), join forces for an adventure that will change Miles Morales- and the Ultimate Universe - forever! Drawn by rising star JONAS SCHARF, the brilliantly moody artist who brought you ULTIMATE UNIVERSE: ONE YEAR IN and DARK X-MEN… Before The Maker remade Earth-6160, he left Miles Morales the key to reach his new universe…and when Miles' baby sister, Billie, uses it to travel to the Ultimate Universe, it's up to Spider-Man to save her! But the Ultimate Universe is never safe for any Spider-Man! When the Spot attacks, Miles will have to team up with an all-new Peter Parker - and that's just the start of his journey across Earth-6160…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonas Scharf",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "penciler"
+        },
+        {
+          "name": "Cody Ziglar",
+          "role": "writer"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Incursion"
+    },
+    {
+      "issueId": 125523,
+      "title": "Ultimate Spider-Man: Incursion (2025) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/125523/ultimate_spider-man_incursion_2025_2",
+      "seriesId": 43373,
+      "seriesName": "Ultimate Spider-Man: Incursion (2025 - Present)",
+      "onSale": "2025-07-09T00:00:00+0000",
+      "mu": "2025-06-25T00:00:00+0000",
+      "digitalId": 69833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/685d4d1285a9c",
+        "ext": "jpg"
+      },
+      "description": "MILES AND THE ULTIMATES VS. BLACK PANTHER! MILES MORALES teams up with fan-favorite ULTIMATES team members GIANT-MAN and THE WASP! But BLACK PANTHER doesn't want these Ultimate terrorist interlopers in Wakanda… Plus: The secret history of Janet Van Dyne!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonas Scharf",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "penciler"
+        },
+        {
+          "name": "Cody Ziglar",
+          "role": "writer"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Incursion"
+    },
+    {
+      "issueId": 125524,
+      "title": "Ultimate Spider-Man: Incursion (2025) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/125524/ultimate_spider-man_incursion_2025_3",
+      "seriesId": 43373,
+      "seriesName": "Ultimate Spider-Man: Incursion (2025 - Present)",
+      "onSale": "2025-08-13T00:00:00+0000",
+      "mu": "2025-08-12T00:00:00+0000",
+      "digitalId": 69834,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/40/688a67b3ce6c9",
+        "ext": "jpg"
+      },
+      "description": "MILES' FIRST CONFRONTATION WITH THE MAKER'S COUNCIL! Silver Samurai attacks interloper Miles Morales! Fortunately, a band of mutants calling themselves the X-Men come to his aid! What will Miles make of the dark history of this alternate universe now that he is faced with the reality of what the Maker has done?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonas Scharf",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "penciler"
+        },
+        {
+          "name": "Cody Ziglar",
+          "role": "writer"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Incursion"
+    },
+    {
+      "issueId": 125525,
+      "title": "Ultimate Spider-Man: Incursion (2025) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/125525/ultimate_spider-man_incursion_2025_4",
+      "seriesId": 43373,
+      "seriesName": "Ultimate Spider-Man: Incursion (2025 - Present)",
+      "onSale": "2025-09-10T00:00:00+0000",
+      "mu": "2025-08-27T00:00:00+0000",
+      "digitalId": 69835,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/68ae096ec5e7c",
+        "ext": "jpg"
+      },
+      "description": "MILES MORALES IN THE EURASIAN REPUBLIC! Miles continues his quest for Billie, even though the Maker's Council foils him at every step! What will happen when he runs into the Council's most ruthless rulers - Magik, Colossus and Omega Red? And what is the Council REALLY after with the Maker's card, anyway?! Don't miss the penultimate issue leading up to our climactic finale!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonas Scharf",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "penciler"
+        },
+        {
+          "name": "Cody Ziglar",
+          "role": "writer"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Incursion"
+    },
+    {
+      "issueId": 125526,
+      "title": "Ultimate Spider-Man: Incursion (2025) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/125526/ultimate_spider-man_incursion_2025_5",
+      "seriesId": 43373,
+      "seriesName": "Ultimate Spider-Man: Incursion (2025 - Present)",
+      "onSale": "2025-10-22T00:00:00+0000",
+      "mu": "2025-10-08T00:00:00+0000",
+      "digitalId": 69836,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/10/68e670145278e",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATE EXIT! A SHOWDOWN WITH THE MAKER'S COUNCIL! The clock is ticking for Miles to escape the Ultimate Universe with his baby sister! How will Miles leave a mark on the Ultimate Universe? And how will the Ultimate Universe leave a mark on Miles?!  Don't miss the exciting conclusion…and what it bodes for the future of BOTH UNIVERSES!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jonas Scharf",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "penciler"
+        },
+        {
+          "name": "Cody Ziglar",
+          "role": "writer"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Incursion"
+    },
+    {
+      "issueId": 113930,
+      "title": "Ultimates (2024) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/113930/ultimates_2024_13",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-06-18T00:00:00+0000",
+      "mu": "2025-06-18T00:00:00+0000",
+      "digitalId": 73454,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/6841d059d9591",
+        "ext": "jpg"
+      },
+      "description": "THE SECOND YEAR OF THE ULTIMATES STARTS HERE! Time is of the essence! And no one knows that better than Iron Lad… With the Maker set to be released in six months, it's time to kick off new, more daring actions! Enter: Ultimates 3.0!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 3: Rescue Mission"
+    },
+    {
+      "issueId": 113931,
+      "title": "Ultimates (2024) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/113931/ultimates_2024_14",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-07-30T00:00:00+0000",
+      "mu": "2025-07-30T00:00:00+0000",
+      "digitalId": 74289,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/6876841ebbe66",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATE SCARLET WITCH AND QUICKSILVER! The Ultimates' next mission? Destroy one of the Hellfire Club's strongholds! But a dangerous pair of twins complicates matters…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 3: Rescue Mission"
+    },
+    {
+      "issueId": 113932,
+      "title": "Ultimates (2024) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/113932/ultimates_2024_15",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-08-13T00:00:00+0000",
+      "mu": "2025-08-12T00:00:00+0000",
+      "digitalId": 74867,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/688a67b3f1781",
+        "ext": "jpg"
+      },
+      "description": "THE MONK, THE DRAGON AND THE FIST: SHANG-CHI! The Ultimates return to the site of their untimely deaths at the hands of the Hulk and encounter a young boy who has been starting his own insurgency!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 3: Rescue Mission"
+    },
+    {
+      "issueId": 113933,
+      "title": "Ultimates (2024) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/113933/ultimates_2024_16",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-09-17T00:00:00+0000",
+      "mu": "2025-09-04T00:00:00+0000",
+      "digitalId": 75228,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/68b9f0e1f0e57",
+        "ext": "jpg"
+      },
+      "description": "FROM THE SKIES TO THE STREETS - THE NEW ULTIMATES! The Maker is only three months away and time is running out. But the Ultimates network is bigger than ever now that they're inspiring more and more people to join their cause! A can't-miss street-level adventure from the Ultimates' new recruits!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 3: Rescue Mission"
+    },
+    {
+      "issueId": 113934,
+      "title": "Ultimates (2024) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/113934/ultimates_2024_17",
+      "seriesId": 38865,
+      "seriesName": "Ultimates (2024 - Present)",
+      "onSale": "2025-10-22T00:00:00+0000",
+      "mu": "2025-10-08T00:00:00+0000",
+      "digitalId": 77265,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/68e6701447dcc",
+        "ext": "jpg"
+      },
+      "description": "THE ULTIMATE FANTASTIC FOUR? Now that the Ultimates are using the Immortus Engine to its full capacity, Doom's dream of the Ultimate Fantastic Four may finally be realized…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Phil Noto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dike Ruan",
+          "role": "penciler"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 3: Rescue Mission"
+    },
+    {
+      "issueId": 113935,
+      "title": "The Ultimates #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/113935/ultimates_2024_18",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimates Vol. 3: Rescue Mission"
+    },
+    {
+      "issueId": 129223,
+      "title": "ULTIMATE HAWKEYE (2025) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/129223/ultimate_hawkeye_2025_1",
+      "seriesId": 44291,
+      "seriesName": "ULTIMATE HAWKEYE (2025 - Present)",
+      "onSale": "2025-09-24T00:00:00+0000",
+      "mu": "2025-09-24T00:00:00+0000",
+      "digitalId": 73453,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/68c1c62fe0c72",
+        "ext": "jpg"
+      },
+      "description": "ULTIMATE HAWKEYE STARS IN THEIR OWN SOLO ADVENTURE! Spinning out of THE ULTIMATES, breakout hit character HAWKEYE goes on a covert solo op that will have a massive impact on the future of the Ultimate Universe!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Frigeri",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Sta. Maria",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "B. Earl",
+          "role": "writer"
+        },
+        {
+          "name": "Deniz Camp",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimates Vol. 3: Rescue Mission"
+    },
+    {
+      "issueId": 121276,
+      "title": "Ultimate Wolverine (2025) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/121276/ultimate_wolverine_2025_7",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-07-02T00:00:00+0000",
+      "mu": "2025-07-02T00:00:00+0000",
+      "digitalId": 74437,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/d0/685c541492760",
+        "ext": "jpg"
+      },
+      "description": "…IN LIMBO? Has the OPPOSITION finally helped Logan reclaim his identity? But what lengths will COLOSSUS, MAGIK and OMEGA RED go to keep their prized weapon? And don't miss Ultimate MAGIK revealing the depth of her power!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 2: Logan"
+    },
+    {
+      "issueId": 121277,
+      "title": "Ultimate Wolverine (2025) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/121277/ultimate_wolverine_2025_8",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-08-06T00:00:00+0000",
+      "mu": "2025-08-05T00:00:00+0000",
+      "digitalId": 75143,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/688a5e7a042fe",
+        "ext": "jpg"
+      },
+      "description": "WOLVERINE VS. ULTIMATE ANGEL! The Opposition infiltrates a facility holding a group of high-powered mutants!  And Winter Soldier's handler has a sinister plot to destroy the Opposition once and for all…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 2: Logan"
+    },
+    {
+      "issueId": 121278,
+      "title": "Ultimate Wolverine (2025) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/121278/ultimate_wolverine_2025_9",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-09-10T00:00:00+0000",
+      "mu": "2025-08-27T00:00:00+0000",
+      "digitalId": 75227,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/68ae096ebef6a",
+        "ext": "jpg"
+      },
+      "description": "WOLVERINE VS. ULTIMATE ANGEL! The Opposition infiltrates a facility holding a group of high-powered mutants!  And Winter Soldier's handler has a sinister plot to destroy the Opposition once and for all…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 2: Logan"
+    },
+    {
+      "issueId": 121279,
+      "title": "Ultimate Wolverine (2025) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/121279/ultimate_wolverine_2025_10",
+      "seriesId": 42303,
+      "seriesName": "Ultimate Wolverine (2025 - Present)",
+      "onSale": "2025-10-01T00:00:00+0000",
+      "mu": "2025-09-18T00:00:00+0000",
+      "digitalId": 77516,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/a0/68c9b5c87d6f6",
+        "ext": "jpg"
+      },
+      "description": "WOLVERINE VS. OMEGA RED! The Eurasian Republic leaders have learned that their prize weapon has joined the Opposition! And Wolverine busts out a secret weapon when Omega Red comes to reclaim him…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alessandro Cappuccio",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Condon",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Wolverine Vol. 2: Logan"
+    },
+    {
+      "issueId": 123269,
+      "title": "Ultimate Wolverine #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/123269/ultimate_wolverine_2025_11",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Wolverine Vol. 2: Logan"
+    },
+    {
+      "issueId": 123270,
+      "title": "Ultimate Wolverine #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/123270/ultimate_wolverine_2025_12",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Wolverine Vol. 2: Logan"
+    },
+    {
+      "issueId": 113896,
+      "title": "Ultimate Spider-Man (2024) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/113896/ultimate_spider-man_2024_19",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-07-30T00:00:00+0000",
+      "mu": "2025-07-30T00:00:00+0000",
+      "digitalId": 73506,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/6876841fb304c",
+        "ext": "jpg"
+      },
+      "description": "THREE-WAY DANCE, ALL-OUT WAR! FISK vs. MR. NEGATIVE vs. MYSTERIO with SPIDER-MAN and his allies caught in the middle! Will the SINISTER SIX destroy New York before they destroy each other?!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 4: One Last Day"
+    },
+    {
+      "issueId": 113897,
+      "title": "Ultimate Spider-Man (2024) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/113897/ultimate_spider-man_2024_20",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-08-27T00:00:00+0000",
+      "mu": "2025-08-21T00:00:00+0000",
+      "digitalId": 73507,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/68af15aa26d83",
+        "ext": "jpg"
+      },
+      "description": "MY DINNER WITH HARRY! Harry Osborn lives! Peter and Mary Jane have another fateful dinner with Harry and Gwen…",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Messina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 4: One Last Day"
+    },
+    {
+      "issueId": 113898,
+      "title": "Ultimate Spider-Man (2024) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/113898/ultimate_spider-man_2024_21",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-09-24T00:00:00+0000",
+      "mu": "2025-09-11T00:00:00+0000",
+      "digitalId": 73508,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/68c1c63018dd2",
+        "ext": "jpg"
+      },
+      "description": "THE FINAL MEETING OF THE SINISTER SIX? Blood boils over as these warring villains gather to destroy each other once and for all…or will they reunite against their common enemy, Spider-Man?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Messina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 4: One Last Day"
+    },
+    {
+      "issueId": 113899,
+      "title": "Ultimate Spider-Man (2024) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/113899/ultimate_spider-man_2024_22",
+      "seriesId": 38809,
+      "seriesName": "Ultimate Spider-Man (2024 - Present)",
+      "onSale": "2025-10-22T00:00:00+0000",
+      "mu": "2025-10-08T00:00:00+0000",
+      "digitalId": 73509,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/10/68e6701446e48",
+        "ext": "jpg"
+      },
+      "description": "THE LAST WILL AND TESTAMENT OF [REDACTED]!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Spider-Man Vol. 4: One Last Day"
+    },
+    {
+      "issueId": 113900,
+      "title": "Ultimate Spider-Man #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/113900/ultimate_spider-man_2024_23",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Spider-Man Vol. 4: One Last Day"
+    },
+    {
+      "issueId": 113901,
+      "title": "Ultimate Spider-Man #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/113901/ultimate_spider-man_2024_24",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Spider-Man Vol. 4: One Last Day"
+    },
+    {
+      "issueId": 113876,
+      "title": "Ultimate Black Panther (2024) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/113876/ultimate_black_panther_2024_19",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-08-20T00:00:00+0000",
+      "mu": "2025-08-12T00:00:00+0000",
+      "digitalId": 74865,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/689cdb56a1745",
+        "ext": "jpg"
+      },
+      "description": "VIBRANIUM'S MYSTERIES AND THE BLACK PANTHER! T'Challa leads a campaign against Adi and his associates, the monsters of Vibranium Incarnate! Meanwhile, his trusted confidants must protect Wakanda when the Vodu-Khan want to advance their own prophecies!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Nieto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
+    },
+    {
+      "issueId": 113877,
+      "title": "Ultimate Black Panther (2024) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/113877/ultimate_black_panther_2024_20",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-09-17T00:00:00+0000",
+      "mu": "2025-09-04T00:00:00+0000",
+      "digitalId": 75226,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/68b9f0e10c09c",
+        "ext": "jpg"
+      },
+      "description": "BAST INTERVENES! T'CHALLA ASCENDS?! The prophecy advances…? And T'Challa must go on a spiritual journey to \"come to his full power\"!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Nieto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
+    },
+    {
+      "issueId": 113878,
+      "title": "Ultimate Black Panther (2024) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/113878/ultimate_black_panther_2024_21",
+      "seriesId": 38806,
+      "seriesName": "Ultimate Black Panther (2024 - Present)",
+      "onSale": "2025-10-08T00:00:00+0000",
+      "mu": "2025-09-25T00:00:00+0000",
+      "digitalId": 77239,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/60/68d3f96227286",
+        "ext": "jpg"
+      },
+      "description": "BLACK PANTHER RETURNS TO FACE THE PROGENITORS! The Vodu-Khan have turned on Wakanda! Killmonger and Okoye are vulnerable while Storm and Black Panther are away! Will the mystic journeys Black Panther has endured turn the tide? And will Killmonger learn what happened between Black Panther and Storm?!",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Nieto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
+    },
+    {
+      "issueId": 113879,
+      "title": "Ultimate Black Panther #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/113879/ultimate_black_panther_2024_22",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
+    },
+    {
+      "issueId": 113880,
+      "title": "Ultimate Black Panther #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/113880/ultimate_black_panther_2024_23",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
+    },
+    {
+      "issueId": 113881,
+      "title": "Ultimate Black Panther #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/113881/ultimate_black_panther_2024_24",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
+    },
+    {
+      "issueId": 113916,
+      "title": "Ultimate X-Men (2024) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/113916/ultimate_x-men_2024_19",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-09-03T00:00:00+0000",
+      "mu": "2025-08-26T00:00:00+0000",
+      "digitalId": 75541,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/68ae03d30af6f",
+        "ext": "jpg"
+      },
+      "description": "SHADOWS OF THE KING AND THE ASTRAL PLANE! Has Hisako been saved?! A climactic battle between Armor and Shadow King in the Astral Plane! But what secrets does Kageyama still hold? And what of the Children of the Atom's dependence on his power?",
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
+    },
+    {
+      "issueId": 113917,
+      "title": "Ultimate X-Men (2024) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/113917/ultimate_x-men_2024_20",
+      "seriesId": 38817,
+      "seriesName": "Ultimate X-Men (2024 - Present)",
+      "onSale": "2025-10-01T00:00:00+0000",
+      "mu": "2025-09-18T00:00:00+0000",
+      "digitalId": 77517,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/68c9b5c87d32a",
+        "ext": "jpg"
+      },
+      "description": "REGROUP…AND THE FUTURE OF THE X-MEN…? The X-Men lick their wounds after the climactic battle against the Children of the Atom! But what is Armor's fate? And what happened to her when she chased Shadow King into the astral plane?",
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "PEACH MOMOKO",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
+    },
+    {
+      "issueId": 113918,
+      "title": "Ultimate X-Men #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/113918/ultimate_x-men_2024_21",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
+    },
+    {
+      "issueId": 113919,
+      "title": "Ultimate X-Men #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/113919/ultimate_x-men_2024_22",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
+    },
+    {
+      "issueId": 113920,
+      "title": "Ultimate X-Men #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/113920/ultimate_x-men_2024_23",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
+    },
+    {
+      "issueId": 113921,
+      "title": "Ultimate X-Men #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/113921/ultimate_x-men_2024_24",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
+    },
+    {
+      "issueId": 113936,
+      "title": "The Ultimates #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/113936/ultimates_2024_19",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimates Vol. 4: Uprising"
+    },
+    {
+      "issueId": 113937,
+      "title": "The Ultimates #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/113937/ultimates_2024_20",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimates Vol. 4: Uprising"
+    },
+    {
+      "issueId": 113938,
+      "title": "The Ultimates #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/113938/ultimates_2024_21",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimates Vol. 4: Uprising"
+    },
+    {
+      "issueId": 113939,
+      "title": "The Ultimates #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/113939/ultimates_2024_22",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimates Vol. 4: Uprising"
+    },
+    {
+      "issueId": 113940,
+      "title": "The Ultimates #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/113940/ultimates_2024_23",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimates Vol. 4: Uprising"
+    },
+    {
+      "issueId": 113941,
+      "title": "The Ultimates #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/113941/ultimates_2024_24",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimates Vol. 4: Uprising"
+    },
+    {
+      "issueId": 126712,
+      "title": "Ultimate Universe: Two Years In #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/126712/ultimate_universe_two_years_in_2025_1",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimates Vol. 4: Uprising"
+    },
+    {
+      "issueId": 130677,
+      "title": "Ultimate Wolverine #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/130677/ultimate_wolverine_2025_13",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Wolverine Vol. 3: The Maker's Mark"
+    },
+    {
+      "issueId": 130678,
+      "title": "Ultimate Wolverine #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/130678/ultimate_wolverine_2025_14",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Wolverine Vol. 3: The Maker's Mark"
+    },
+    {
+      "issueId": 130679,
+      "title": "Ultimate Wolverine #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/130679/ultimate_wolverine_2025_15",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Wolverine Vol. 3: The Maker's Mark"
+    },
+    {
+      "issueId": 130680,
+      "title": "Ultimate Wolverine #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/130680/ultimate_wolverine_2025_16",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Wolverine Vol. 3: The Maker's Mark"
+    },
+    {
+      "issueId": 127659,
+      "title": "Ultimate Universe: Finale #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/127659/ultimate_universe_finale_2026_1",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Universe: Finale"
+    },
+    {
+      "issueId": 129224,
+      "title": "Ultimate Endgame #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/129224/ultimate_endgame_2025_1",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Endgame"
+    },
+    {
+      "issueId": 129225,
+      "title": "Ultimate Endgame #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/129225/ultimate_endgame_2025_2",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Endgame"
+    },
+    {
+      "issueId": 129226,
+      "title": "Ultimate Endgame #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/129226/ultimate_endgame_2025_3",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Endgame"
+    },
+    {
+      "issueId": 129227,
+      "title": "Ultimate Endgame #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/129227/ultimate_endgame_2025_4",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Endgame"
+    },
+    {
+      "issueId": 129228,
+      "title": "Ultimate Endgame #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/129228/ultimate_endgame_2025_5",
+      "seriesId": null,
+      "seriesName": null,
+      "onSale": null,
+      "mu": null,
+      "digitalId": null,
+      "cover": null,
+      "description": null,
+      "pageCount": null,
+      "creators": [],
+      "collectedIn": "Ultimate Endgame"
+    }
+  ]
+}

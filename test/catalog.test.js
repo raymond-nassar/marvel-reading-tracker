@@ -6,7 +6,7 @@ import {
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
   safeOrderFile, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
   catalogFacets, filterByFacet, facetLabel, isShortOrder, catalogCoverUrl,
-  readingTimeLabel, MINUTES_PER_ISSUE, SHORT_ORDER_MAX,
+  readingTimeLabel, MINUTES_PER_ISSUE, SHORT_ORDER_MAX, collectionsLabel, isTradeOrder,
 } from '../src/js/lib/catalog.js';
 
 test('safeOrderFile accepts a plain markdown name and nothing that escapes the orders folder', () => {
@@ -482,4 +482,51 @@ test('every bundled catalog entry carries attribution and a last-updated date', 
     assert.ok(sourceLabel(list), `${list.id} has no attribution`);
     assert.ok(updatedLabel(list, 'en-GB'), `${list.id} has no last-updated date`);
   }
+});
+
+// ---------------------------------------------------------------- collected editions
+//
+// Reading in trades is a way of collecting rather than a kind of story, so it is a facet and a
+// meta line rather than a new list type. These check it stays invisible on an ordinary order.
+
+test('an order divided into collected editions says so, and an ordinary one says nothing', () => {
+  assert.equal(collectionsLabel({ collections: 23 }), '23 collected editions');
+  assert.equal(collectionsLabel({ collections: 1 }), '1 collected edition');
+  assert.equal(collectionsLabel({ collections: 0 }), null);
+  assert.equal(collectionsLabel({}), null);
+  assert.equal(collectionsLabel(null), null);
+});
+
+// A count that is not a whole positive number is a broken catalog entry, and "NaN collected
+// editions" on a card is worse than saying nothing.
+test('a nonsense collection count is treated as no collections at all', () => {
+  for (const bad of [-3, 2.5, '23', null, undefined, NaN, Infinity]) {
+    assert.equal(isTradeOrder({ collections: bad }), false, `rejects ${String(bad)}`);
+    assert.equal(collectionsLabel({ collections: bad }), null, `and labels nothing for ${String(bad)}`);
+  }
+});
+
+test('the catalog offers a collected-edition facet only when such an order exists', () => {
+  const plain = parseCatalog({ lists: [{ id: 'a', name: 'A', file: 'a.json', count: 5 }] }).lists;
+  assert.ok(!catalogFacets(plain).some((f) => f.key === 'trade'), 'no facet with nothing to filter');
+
+  const mixed = parseCatalog({
+    lists: [
+      { id: 'a', name: 'A', file: 'a.json', count: 5 },
+      { id: 'b', name: 'B', file: 'b.json', count: 132, collections: 23 },
+    ],
+  }).lists;
+  const facet = catalogFacets(mixed).find((f) => f.key === 'trade');
+  assert.ok(facet, 'the facet appears once an order is divided into books');
+  assert.equal(facet.count, 1);
+  assert.deepEqual(filterByFacet(mixed, 'trade').map((l) => l.id), ['b']);
+});
+
+// parseCatalog builds an explicit object, so a field it does not name is dropped on load and
+// the catalog would go on reporting every order as an ordinary one.
+test('the collection count survives parsing the catalog', () => {
+  const { lists } = parseCatalog({
+    lists: [{ id: 'b', name: 'B', file: 'b.json', count: 132, collections: 23 }],
+  });
+  assert.equal(lists[0].collections, 23);
 });
