@@ -584,16 +584,32 @@ async function main() {
 
 // Silence here would read as "this event has no short path" and as "the short path is up to date"
 // at the same time, so the refusal names itself.
+//
+// It names the reason rather than one reason, because essentialOrder refuses for three and only
+// one of them is about starting in the middle. Reported as a single reason, the other two print a
+// lead of 0 or -1 and a sentence that contradicts itself: "0 issues come before the main series,
+// so reading it alone would start in the middle". Neither is reachable with the five events that
+// ship today, both being properties of data that does not exist yet, which is why this is exported
+// and tested directly rather than left to a build that cannot currently produce it.
+export function essentialRefusal(event, order) {
+  if (!order.length) return 'no short path, because the complete order is empty';
+  const lead = order.findIndex((item) => item.seriesId === event.main);
+  if (lead > 0) {
+    return (
+      `no short path, because ${lead} issue${lead === 1 ? ' comes' : 's come'} ` +
+      'before the main series, so reading it alone would start in the middle'
+    );
+  }
+  if (lead < 0) return 'no short path, because the main series is absent from the complete order';
+  return 'no short path, because the main series is a single issue, which is a one-shot rather than a path';
+}
+
 function reportEssential(event, order, essential, dryRun) {
   if (essential) {
     if (dryRun) console.log(`  ${event.id}: ${essential.length} main-series issues would be written as the short path`);
     return;
   }
-  const lead = order.findIndex((item) => item.seriesId === event.main);
-  console.log(
-    `  ${event.id}: no short path, because ${lead} issue${lead === 1 ? ' comes' : 's come'} ` +
-      'before the main series, so reading it alone would start in the middle',
-  );
+  console.log(`  ${event.id}: ${essentialRefusal(event, order)}`);
 }
 
 // Importing this module must not build anything: the tests import EVENTS and the row reader to

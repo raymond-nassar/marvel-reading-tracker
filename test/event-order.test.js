@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
-import { EVENTS, normalizeSeriesRows, nameMatches, parseArgs, essentialOrder, essentialFileName } from '../scripts/build-event-order.mjs';
+import { EVENTS, normalizeSeriesRows, nameMatches, parseArgs, essentialOrder, essentialFileName, essentialRefusal } from '../scripts/build-event-order.mjs';
 
 // The completeness audit reads a series index that may be column-oriented, and a reader that
 // cannot see names is indistinguishable from a catalogue with nothing in it: both match zero
@@ -216,6 +216,48 @@ test('an empty order is refused rather than yielding an empty variant', () => {
 test('the short path keeps the order it was given, so publication order survives', () => {
   const order = [issue(1, 3), issue(2, 9), issue(1, 1), issue(1, 2)];
   assert.deepEqual(essentialOrder({ main: 1 }, order).map((i) => i.number), [3, 1, 2]);
+});
+
+// essentialOrder refuses for three reasons and only one of them is about starting in the middle,
+// so the printed refusal has to say which. Reported as one reason it contradicts itself: a lead of
+// 0 reads as "0 issues come before the main series, so reading it alone would start in the middle".
+// Only the middle case is reachable from the five events that ship today, which is exactly why the
+// other three are asserted here rather than left to a build that cannot produce them. Raised in
+// review of this change.
+test('each reason the short path is refused is reported as that reason', () => {
+  const middle = essentialRefusal({ main: 1 }, [issue(2, 1), issue(2, 2), issue(1, 1)]);
+  assert.match(middle, /2 issues come before the main series/);
+  assert.match(middle, /start in the middle/);
+
+  assert.match(essentialRefusal({ main: 1 }, [issue(2, 1), issue(1, 1)]), /1 issue comes before/);
+
+  const oneShot = essentialRefusal({ main: 1 }, [issue(1, 1), issue(2, 1)]);
+  assert.match(oneShot, /single issue/);
+  assert.doesNotMatch(oneShot, /come before|comes before/);
+
+  const empty = essentialRefusal({ main: 1 }, []);
+  assert.match(empty, /complete order is empty/);
+  assert.doesNotMatch(empty, /come before|comes before/);
+
+  const absent = essentialRefusal({ main: 1 }, [issue(2, 1), issue(3, 1)]);
+  assert.match(absent, /absent from the complete order/);
+  assert.doesNotMatch(absent, /come before|comes before/);
+});
+
+// Every refusal reason must correspond to a real refusal, or the message is describing a case
+// essentialOrder does not actually have. Pairing them here keeps the two from drifting apart.
+test('every order essentialRefusal explains is one essentialOrder actually refused', () => {
+  const refused = [
+    [issue(2, 1), issue(2, 2), issue(1, 1)],
+    [issue(2, 1), issue(1, 1)],
+    [issue(1, 1), issue(2, 1)],
+    [],
+    [issue(2, 1), issue(3, 1)],
+  ];
+  for (const order of refused) {
+    assert.equal(essentialOrder({ main: 1 }, order), null);
+    assert.match(essentialRefusal({ main: 1 }, order), /^no short path, because /);
+  }
 });
 
 test('the variant checklist is named beside the order it varies from', () => {

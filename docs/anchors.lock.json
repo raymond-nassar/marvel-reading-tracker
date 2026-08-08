@@ -94,8 +94,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:2776-2779|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2776-2779",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:2787-2790|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2787-2790",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -656,31 +656,31 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|0": {
     "anchor": "PRODUCT_BACKLOG.md:160-162",
-    "fp": "0546f6d1ae3b922e",
+    "fp": "18677f55ad89cae3",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|1": {
     "anchor": "PRODUCT_BACKLOG.md:160-162",
-    "fp": "0546f6d1ae3b922e",
+    "fp": "18677f55ad89cae3",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1954-1957|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1954-1957",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1965-1968|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1965-1968",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2753-2755|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2753-2755",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2764-2766|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2764-2766",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2911-2912|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2911-2912",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2922-2923|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2922-2923",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2931-2933|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2931-2933",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2942-2944|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2942-2944",
     "fp": "affcee43c8cd0de5",
     "head": "Evidence: `scripts/lib/fetch-json.mjs:52-61`, `scripts/lib/fetch-json.mjs:22-37`."
   },

@@ -159,7 +159,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 382; 224 is the figure as audited.
+  it to 384; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -354,7 +354,7 @@ is the failure mode of generating two lists from one source.
 Nothing in the app changed. `groupCatalog` at `src/js/lib/catalog.js:326` was already a general
 loop over any number of groups, and the catalog now renders four rather than one.
 
-Verified: 382 unit tests pass, 8 of them new. 12 mutations of the shipped tree are all caught,
+Verified: 384 unit tests pass, 10 of them new. 12 mutations of the shipped tree are all caught,
 covering each clause of the refusal, the file naming, a variant generated for an event that opens
 on a prologue, a generated variant deleted, a pinned variant reversed, a pinned variant one issue
 short, two variants sharing a label, and a complete order losing its group. 12 browser checks in
@@ -367,6 +367,17 @@ One of those browser checks could not fail when first written. It read the row t
 differed. Making both variants share a label did not move it. The real title is `.result-title`,
 written at `src/js/main.js:2214`, and with the selector corrected the same mutation fails it. It is
 counted above only because it was then seen to fail.
+
+Review raised one finding, and it was in the code added to be careful, which is where this
+repository has twice found the most dangerous code in a change. The printed refusal computed one
+reason for all three ways `essentialOrder` can refuse, so the two that are not about starting in
+the middle would have printed a lead of 0 or -1 and a sentence contradicting itself: "0 issues come
+before the main series, so reading it alone would start in the middle". Neither is reachable from
+the five events shipping today, both being properties of data that does not exist yet, so the fix
+was to lift the message into an exported `essentialRefusal` and assert the unreachable cases
+directly rather than leave them to a build that cannot produce them. Both new tests were re-proved
+by mutation: restoring the single-reason body fails the reason test and nothing else, and blanking
+a reason fails the pairing test that holds the reasons and the refusals together.
 
 Constraint gate: checked 1 to 11, none breached. Constraint 2 was the live consideration and holds:
 the new checklists come from the same vendored series metadata as the complete orders, through the
@@ -2197,7 +2208,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:1954-1957`.
+`PRODUCT_BACKLOG.md:1965-1968`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -2318,7 +2329,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2911-2912` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2922-2923` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2328,11 +2339,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:160-162`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2931-2933`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2942-2944`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2753-2755` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2764-2766` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -2817,7 +2828,7 @@ now.
   where one did. The other two are refused rather than left undone, because their main series does
   not open their order and a short path that starts in chapter six is not a shorter path through
   the same story. The evidence above points at the model that was already there and went unused.
-- Correctness is well defended: 224 unit tests pass, 235 when this pass shipped and 382 now, and
+- Correctness is well defended: 224 unit tests pass, 235 when this pass shipped and 384 now, and
   `scripts/check-contract.mjs` pins 24 upstream API assumptions so schema drift is distinguishable
   from an outage.
   Evidence: `package.json:10`, `package.json:13`, `scripts/check-contract.mjs:248-280`.
