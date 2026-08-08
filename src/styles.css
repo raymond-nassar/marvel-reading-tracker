@@ -1,19 +1,67 @@
 /* Marvel Reading Tracker: "Longbox Focus"
    A cover-forward shell (rail, blurred hero backdrop, cover shelf) wrapped around a calm,
    single-column reading flow. Every cover rule has a `body.nocovers` counterpart so the
-   layout holds together with artwork switched off. */
+   layout holds together with artwork switched off.
+
+   Two themes. Every colour below is a token, and every rule reads a token, so a theme is a
+   token set rather than a second stylesheet. Two of those tokens are not colours but bases
+   that the whole surface is mixed from, and they are what make one token set enough:
+
+   `--tint-base` is the colour of every raised or hovered surface, laid over the page at low
+   alpha. On a dark page that is white; on a light page it has to be black, or a hover state
+   is invisible. Each rule keeps its own alpha, because the alphas are deliberately different
+   and collapsing them into a named ramp would flatten distinctions that were tuned.
+
+   `--shadow-alpha` scales every drop shadow, because a shadow tuned to read against #0f1115
+   is a smear against #fbfcfe.
+
+   Colours that are the same in both themes stay in the shared block. Only what genuinely
+   differs is restated, so the light theme is 25 declarations rather than a second palette. */
 
 :root {
+  --r: 14px;
+
+  /* Brand and status hues are shared. They are chosen to clear 4.5:1 on both themes, which is
+     what `npm run palette` checks; a hue that could only manage it on one would have to split
+     into two tokens the way `--red` and `--red-text` already did. */
+  --red: #d43333;
+  --green-line: 67 192 136;
+  --amber-line: 234 182 84;
+  /* The retired red. `--red` replaced it as a surface and `--red-text` as text, per the note
+     below, but it stayed in use as the tint behind danger states, where it never had to meet a
+     contrast floor and so was never revisited. It is named here rather than left as five loose
+     literals; whether the tints should move to `--red` is a visual decision, not a rename. */
+  --red-line: 226 54 54;
+  --on-accent: #fff;
+
+  /* Shadows are black on both themes and only their alpha differs, so this never changes value.
+     It exists so that no rule anywhere carries a literal colour, which is what lets the test
+     that enforces that be absolute. An absolute rule needs no exception list, and an exception
+     list is a thing someone has to keep complete. */
+  --shadow-rgb: 0 0 0;
+}
+
+/* ---------------------------------------------------------------- dark, the default theme */
+
+:root, :root[data-theme="dark"] {
   color-scheme: dark;
+  --tint-base: 255 255 255;
+  --shadow-alpha: 1;
   --bg: #0f1115;
   --rail: #0b0d10;
   --card: #171a20;
+  --card-line: 23 26 32;
   --card-2: #1c2028;
   --line: #242932;
   --line-2: #2e3540;
   --text: #eef1f6;
   --dim: #c6cdda;
   --muted: #8d95a6;
+  --track: #2a303c;
+  --track-2: #3a4150;
+  --cb-line: #414a5a;
+  --panel: #14161c;
+  --warn: #d9822b;
   /* The foreground for a row that has been read. Dim enough to recede, but a
      real colour rather than an opacity, so it keeps its own contrast ratio. */
   --read-fg: #9aa2b2;
@@ -25,12 +73,90 @@
      `--red-text` is set for the lightest background it ever lands on, which is
      the hero panel, not `--bg`. Measured 4.81:1 against the hero's bounded
      worst case and 5.70:1 against `--bg`. */
-  --red: #d43333;
   --red-text: #eb5f5f;
+  /* Danger used as emphasis rather than as body text: a hover, a badge, a notice heading.
+     Lighter than `--red-text` because it lands on the tinted danger surfaces. */
+  --red-fg: #ff8a8a;
+  --red-fg-2: #ff9d9d;
   --green: #43c088;
   --amber: #eab654;
   --blue: #7fb3ff;
-  --r: 14px;
+  /* The placeholder shown where a cover has not loaded. The hue comes from the series id at
+     `src/js/main.js:444`, so only saturation and lightness are the theme's to set. */
+  --fallback-a: hsl(var(--h) 42% 26%);
+  --fallback-b: hsl(calc(var(--h) + 40) 38% 14%);
+  --fallback-fg: hsl(var(--h) 60% 88%);
+}
+
+/* ---------------------------------------------------------------- light
+   Restated twice on purpose, and `test/theme.test.js` asserts the two are identical token for
+   token. Resolving the system preference in JavaScript would need only one copy, but the module
+   is deferred, so the page would paint dark and then flip, and a reader with JavaScript off
+   would never get the light theme at all. The duplication is the cost of getting it right before
+   first paint; the test is what stops the two drifting. */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --tint-base: 0 0 0;
+  --shadow-alpha: .34;
+  --bg: #fbfcfe;
+  --rail: #f2f4f8;
+  --card: #ffffff;
+  --card-line: 255 255 255;
+  --card-2: #f6f8fb;
+  --line: #dde2ea;
+  --line-2: #c8cfda;
+  --text: #12151b;
+  --dim: #3d4450;
+  --muted: #5c6472;
+  --track: #dbe0e9;
+  --track-2: #b8c0cd;
+  --cb-line: #98a1b1;
+  --panel: #ffffff;
+  --warn: #8a4d09;
+  --read-fg: #626a79;
+  --red-text: #b3241f;
+  --red-fg: #9c1c18;
+  --red-fg-2: #9c1c18;
+  --green: #1c6b45;
+  --amber: #6d4e08;
+  --blue: #17509c;
+  --fallback-a: hsl(var(--h) 34% 82%);
+  --fallback-b: hsl(calc(var(--h) + 40) 30% 72%);
+  --fallback-fg: hsl(var(--h) 55% 22%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --tint-base: 0 0 0;
+    --shadow-alpha: .34;
+    --bg: #fbfcfe;
+    --rail: #f2f4f8;
+    --card: #ffffff;
+    --card-line: 255 255 255;
+    --card-2: #f6f8fb;
+    --line: #dde2ea;
+    --line-2: #c8cfda;
+    --text: #12151b;
+    --dim: #3d4450;
+    --muted: #5c6472;
+    --track: #dbe0e9;
+    --track-2: #b8c0cd;
+    --cb-line: #98a1b1;
+    --panel: #ffffff;
+    --warn: #8a4d09;
+    --read-fg: #626a79;
+    --red-text: #b3241f;
+    --red-fg: #9c1c18;
+    --red-fg-2: #9c1c18;
+    --green: #1c6b45;
+    --amber: #6d4e08;
+    --blue: #17509c;
+    --fallback-a: hsl(var(--h) 34% 82%);
+    --fallback-b: hsl(calc(var(--h) + 40) 30% 72%);
+    --fallback-fg: hsl(var(--h) 55% 22%);
+  }
 }
 
 * { box-sizing: border-box; }
@@ -68,7 +194,7 @@ h2[tabindex="-1"]:focus {
 
 .skip-link {
   position: absolute; left: -999px; top: 0; z-index: 100;
-  background: var(--red); color: #fff; padding: .6rem 1rem; border-radius: 0 0 8px 0;
+  background: var(--red); color: var(--on-accent); padding: .6rem 1rem; border-radius: 0 0 8px 0;
 }
 .skip-link:focus { left: 0; }
 
@@ -114,7 +240,7 @@ h2[tabindex="-1"]:focus {
   background: none; color: var(--muted); display: grid; place-items: center;
   margin: 0 0 .5rem;
 }
-.rail-toggle:hover { background: #ffffff0a; color: var(--text); }
+.rail-toggle:hover { background: rgb(var(--tint-base) / 3.922%); color: var(--text); }
 .railed .rail-toggle { margin-left: auto; margin-right: auto; }
 
 .brand {
@@ -122,10 +248,10 @@ h2[tabindex="-1"]:focus {
   background: none; border: 0; color: inherit; text-align: left;
   padding: .3rem .4rem; border-radius: 9px; width: 100%; min-height: 44px;
 }
-.brand:hover { background: #ffffff0a; }
+.brand:hover { background: rgb(var(--tint-base) / 3.922%); }
 .brand .mark {
   width: 28px; height: 28px; border-radius: 8px; background: var(--red);
-  display: grid; place-items: center; font-weight: 800; font-size: .9rem; color: #fff;
+  display: grid; place-items: center; font-weight: 800; font-size: .9rem; color: var(--on-accent);
   flex: 0 0 auto;
 }
 .brand b { font-size: .94rem; font-weight: 600; }
@@ -139,9 +265,9 @@ h2[tabindex="-1"]:focus {
 
 /* Dividers, option C. Two tiers, both CSS borders rather than <hr>, so a screen reader
    is never handed a separator for something that is purely visual rhythm. */
-.rail-list > li:not(:last-child) { border-bottom: 1px solid rgba(255, 255, 255, .05); }
+.rail-list > li:not(:last-child) { border-bottom: 1px solid rgb(var(--tint-base) / 5%); }
 .nav-group + .nav-group {
-  border-top: 1px solid rgba(255, 255, 255, .10);
+  border-top: 1px solid rgb(var(--tint-base) / 10%);
   margin-top: 12px; padding-top: 12px;
 }
 
@@ -152,12 +278,12 @@ h2[tabindex="-1"]:focus {
   color: var(--muted); padding: .5rem .6rem; border-radius: 9px; font-size: .875rem;
   min-height: 44px;
 }
-.ri:hover { background: rgba(255, 255, 255, .04); color: var(--text); }
+.ri:hover { background: rgb(var(--tint-base) / 4%); color: var(--text); }
 
 /* The selected state is a red accent bar AND a raised surface AND a heavier label, so it
    never depends on colour alone. */
 .ri[aria-current], .ri.on {
-  background: rgba(255, 255, 255, .08); color: var(--text); font-weight: 600;
+  background: rgb(var(--tint-base) / 8%); color: var(--text); font-weight: 600;
 }
 .ri[aria-current]::before, .ri.on::before {
   content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
@@ -169,13 +295,13 @@ h2[tabindex="-1"]:focus {
 
 .ri .t { display: flex; justify-content: space-between; gap: .5rem; }
 .ri .n { font-variant-numeric: tabular-nums; font-size: .76rem; color: var(--muted); }
-.ri .bar { display: block; height: 3px; background: #2a303c; border-radius: 2px; margin-top: .45rem; overflow: hidden; }
+.ri .bar { display: block; height: 3px; background: var(--track); border-radius: 2px; margin-top: .45rem; overflow: hidden; }
 .ri .bar i { display: block; height: 100%; background: var(--red); border-radius: 2px; }
 
 /* A reading order has no glyph of its own, so its initial stands in for one in rail mode. */
 .ri .init {
   display: none; flex: 0 0 auto; width: 22px; height: 22px; border-radius: 6px;
-  background: #ffffff12; color: var(--text); font-size: .72rem; font-weight: 700;
+  background: rgb(var(--tint-base) / 7.059%); color: var(--text); font-size: .72rem; font-weight: 700;
   place-items: center; text-transform: uppercase;
 }
 
@@ -202,7 +328,7 @@ h2[tabindex="-1"]:focus {
   max-width: 15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   background: var(--card-2); color: var(--text); border: 1px solid var(--line-2);
   border-radius: 8px; padding: .3rem .55rem; font-size: .8rem;
-  box-shadow: 0 6px 20px #0009;
+  box-shadow: 0 6px 20px rgb(var(--shadow-rgb) / calc(60% * var(--shadow-alpha)));
 }
 .rail-tip[hidden] { display: none; }
 
@@ -226,8 +352,8 @@ h2[tabindex="-1"]:focus {
   font-size: .72rem; border-radius: 999px; padding: .2rem .6rem;
   border: 1px solid var(--line); color: var(--muted); justify-self: start;
 }
-.pill-ok { color: var(--green); border-color: #43c08840; }
-.pill-warn { color: var(--amber); border-color: #eab65440; }
+.pill-ok { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
+.pill-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); }
 
 /* ============================================================ main */
 
@@ -245,6 +371,12 @@ main { min-width: 0; }
 
 .ring { display: flex; align-items: center; gap: .55rem; color: var(--muted); font-size: .82rem; font-variant-numeric: tabular-nums; }
 .ring svg { transform: rotate(-90deg); }
+/* The two strokes were written as attributes on the circles and so were the last colours in the
+   app a theme could not reach. The arc's was the retired #e23636 rather than either red that
+   replaced it, which is what a colour kept outside the palette does. CSS wins over a presentation
+   attribute, so the markup keeps a stroke only as the value shown before the stylesheet loads. */
+.ring .ring-track { stroke: var(--line); }
+.ring .ring-arc { stroke: var(--red-text); }
 #ring-arc { transition: stroke-dashoffset .35s ease; }
 
 .tgl {
@@ -256,9 +388,9 @@ main { min-width: 0; }
 .tgl .sw { width: 26px; height: 15px; border-radius: 999px; background: var(--red); position: relative; transition: background .15s; }
 .tgl .sw::after {
   content: ""; position: absolute; top: 2px; left: 13px; width: 11px; height: 11px;
-  border-radius: 50%; background: #fff; transition: left .15s;
+  border-radius: 50%; background: var(--on-accent); transition: left .15s;
 }
-body.nocovers .tgl .sw { background: #3a4150; }
+body.nocovers .tgl .sw { background: var(--track-2); }
 body.nocovers .tgl .sw::after { left: 2px; }
 
 .list-tools { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: 1rem; }
@@ -267,8 +399,8 @@ body.nocovers .tgl .sw::after { left: 2px; }
   border: 1px solid var(--line); background: none; color: var(--muted);
   border-radius: 8px; padding: .3rem .7rem; font-size: .8rem;
 }
-.quiet:hover { color: var(--text); background: #ffffff0d; }
-.quiet-danger:hover { color: #ff8a8a; border-color: #e2363666; background: #e2363612; }
+.quiet:hover { color: var(--text); background: rgb(var(--tint-base) / 5.098%); }
+.quiet-danger:hover { color: var(--red-fg); border-color: rgb(var(--red-line) / 40%); background: rgb(var(--red-line) / 7.059%); }
 
 .empty-state {
   border: 1px dashed var(--line-2); border-radius: var(--r);
@@ -292,14 +424,14 @@ body.nocovers .hero-bg { background-image: none !important; opacity: .5; }
    user imported, and no fixed accent colour can pass against an unbounded
    range. Raising the top stop keeps a visible tint of the art while giving the
    text a deterministic backdrop. */
-.hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, #171a20e0 0%, #171a20f5 60%, #171a20 100%); }
+.hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(var(--card-line) / 87.843%) 0%, rgb(var(--card-line) / 96.078%) 60%, rgb(var(--card-line)) 100%); }
 .hero-in { position: relative; padding: 1.7rem 2rem; display: grid; grid-template-columns: 176px 1fr; gap: 1.8rem; }
 @media (max-width: 700px) { .hero-in { grid-template-columns: 1fr; padding: 1.4rem; } .hero-in .art { max-width: 158px; } }
 
 .art { position: relative; }
 .art img {
   width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 12px;
-  border: 1px solid #ffffff1a; box-shadow: 0 18px 46px #0008; display: block;
+  border: 1px solid rgb(var(--tint-base) / 10.196%); box-shadow: 0 18px 46px rgb(var(--shadow-rgb) / calc(53.333% * var(--shadow-alpha))); display: block;
 }
 body.nocovers .art img, .art img[hidden] { display: none; }
 .fallback {
@@ -310,8 +442,8 @@ body.nocovers .art img, .art img[hidden] { display: none; }
      style attribute so the page can be served under a strict `style-src 'self'`.
      A hue past 360 is fine: CSS wraps it, which is what the old modulo did. */
   --h: 0;
-  background: linear-gradient(155deg, hsl(var(--h) 42% 26%), hsl(calc(var(--h) + 40) 38% 14%));
-  color: hsl(var(--h) 60% 88%);
+  background: linear-gradient(155deg, var(--fallback-a), var(--fallback-b));
+  color: var(--fallback-fg);
 }
 body.nocovers .fallback, .fallback.show { display: flex; }
 .fallback .fs { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; opacity: .85; line-height: 1.35; }
@@ -332,18 +464,18 @@ body.nocovers .fallback, .fallback.show { display: flex; }
 .cta { display: flex; gap: .55rem; flex-wrap: wrap; }
 .btn {
   border: 1px solid transparent; border-radius: 11px; padding: .68rem 1.25rem;
-  background: var(--red); color: #fff; font-weight: 620; font-size: .92rem;
+  background: var(--red); color: var(--on-accent); font-weight: 620; font-size: .92rem;
   display: inline-flex; align-items: center; gap: .5rem; text-decoration: none;
 }
 /* display:inline-flex would otherwise defeat the hidden attribute. */
 .btn[hidden] { display: none; }
 .btn:hover { filter: brightness(1.1); }
 .btn:disabled { opacity: .5; cursor: default; filter: none; }
-.btn-g { background: #ffffff0f; color: var(--text); border-color: var(--line-2); font-weight: 500; }
+.btn-g { background: rgb(var(--tint-base) / 5.882%); color: var(--text); border-color: var(--line-2); font-weight: 500; }
 /* No opacity here. The shortcut hint sits on the primary button, and dimming it to
    75% took it to a measured 3.03:1. It is set apart by its border and its size
    instead, both of which cost nothing in contrast. */
-kbd { font: inherit; font-size: .72rem; border: 1px solid #ffffff4d; border-radius: 4px; padding: 0 .28rem; }
+kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-radius: 4px; padding: 0 .28rem; }
 
 /* Version and data-format numbers in About. Monospaced so a digit cannot be misread
    when someone copies the build number into a bug report. No colour change, because
@@ -396,7 +528,7 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
   padding: .26rem .75rem; font-size: .8rem; display: inline-block;
 }
 .fp:hover span { color: var(--text); }
-.fp input:checked + span { background: #ffffff10; color: var(--text); border-color: var(--line-2); }
+.fp input:checked + span { background: rgb(var(--tint-base) / 6.275%); color: var(--text); border-color: var(--line-2); }
 .fp input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: 2px; }
 
 .rows { display: grid; gap: .18rem; list-style: none; margin: 0; padding: 0; }
@@ -404,8 +536,8 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
   display: grid; grid-template-columns: 24px 34px 1fr auto; gap: .75rem;
   align-items: center; padding: .42rem .55rem; border-radius: 9px; border: 1px solid transparent;
 }
-.row:hover { background: #ffffff07; border-color: var(--line); }
-.row.now { background: #e2363612; border-color: #e2363640; }
+.row:hover { background: rgb(var(--tint-base) / 2.745%); border-color: var(--line); }
+.row.now { background: rgb(var(--red-line) / 7.059%); border-color: rgb(var(--red-line) / 25.098%); }
 /* A read row recedes through a dimmer title colour, a strikethrough and a filled
    checkbox. It deliberately does NOT use `opacity` on the row: opacity multiplies
    every descendant against the page, and at .48 that dropped the meta line and the
@@ -428,8 +560,8 @@ body.nocovers .row img, .row img[hidden] { display: none; }
 body.nocovers .row .rf, .row .rf.show { display: flex; }
 
 .cb {
-  width: 17px; height: 17px; border-radius: 5px; border: 1.5px solid #414a5a;
-  background: none; display: grid; place-items: center; color: #fff; font-size: .65rem; padding: 0;
+  width: 17px; height: 17px; border-radius: 5px; border: 1.5px solid var(--cb-line);
+  background: none; display: grid; place-items: center; color: var(--on-accent); font-size: .65rem; padding: 0;
 }
 .row.is-read .cb { background: var(--green); border-color: var(--green); }
 
@@ -461,10 +593,10 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
    the measurement would have to be redone per theme. Measured twice now, for BL-030 and
    BL-049. */
 .badge { font-size: .68rem; border: 1px solid var(--line); border-radius: 999px; padding: .02rem .42rem; white-space: nowrap; }
-.badge-expected, .badge-override-available { color: var(--green); border-color: #43c08840; }
-.badge-scheduled { color: var(--amber); border-color: #eab65440; }
+.badge-expected, .badge-override-available { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
+.badge-scheduled { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); }
 .badge-unknown, .badge-pending { color: var(--muted); }
-.badge-override-unavailable { color: #ff8a8a; border-color: #e2363655; }
+.badge-override-unavailable { color: var(--red-fg); border-color: rgb(var(--red-line) / 33.333%); }
 
 .ract { display: flex; gap: .25rem; opacity: 0; }
 .row:hover .ract, .row:focus-within .ract { opacity: 1; }
@@ -472,8 +604,8 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
   border: 1px solid var(--line); background: none; color: var(--muted);
   border-radius: 6px; padding: .16rem .45rem; font-size: .74rem; text-decoration: none;
 }
-.mini:hover { color: var(--text); background: #ffffff0d; }
-.mini-danger:hover { color: #ff8a8a; }
+.mini:hover { color: var(--text); background: rgb(var(--tint-base) / 5.098%); }
+.mini-danger:hover { color: var(--red-fg); }
 
 /* ============================================================ forms, cards, results */
 
@@ -489,7 +621,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 .card-static > * { padding: 0 !important; }
 .card-static h2 { font-size: .95rem; margin: 0 0 .5rem; font-weight: 600; }
 .card-static h3 { font-size: .85rem; margin: 1.3rem 0 .4rem; font-weight: 600; }
-.card-danger { border-color: #e2363633; }
+.card-danger { border-color: rgb(var(--red-line) / 20%); }
 
 .stack { display: grid; gap: .5rem; }
 .stack label { font-size: .8rem; color: var(--muted); }
@@ -517,7 +649,7 @@ input[type="search"], input[type="text"], input[type="url"], textarea {
 textarea { flex: 1 1 auto; width: 100%; resize: vertical; font-family: ui-monospace, "Cascadia Mono", monospace; font-size: .85rem; }
 input[type="file"] { color: var(--muted); font-size: .82rem; }
 .checkbox { display: inline-flex; align-items: center; gap: .4rem; font-size: .84rem; color: var(--dim); }
-code { background: #ffffff0d; border-radius: 4px; padding: .05rem .3rem; font-size: .85em; }
+code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: .05rem .3rem; font-size: .85em; }
 
 .results { display: grid; gap: .4rem; margin-top: .7rem; }
 .result {
@@ -539,9 +671,9 @@ code { background: #ffffff0d; border-radius: 4px; padding: .05rem .3rem; font-si
 .result-source a:hover { color: var(--text); }
 
 .notice { border-radius: 9px; padding: .55rem .75rem; font-size: .84rem; margin: 0; border: 1px solid var(--line); }
-.notice-ok { color: var(--green); border-color: #43c08840; background: #43c0880f; }
-.notice-warn { color: var(--amber); border-color: #eab65440; background: #eab6540f; }
-.notice-error { color: #ff9d9d; border-color: #e2363655; background: #e2363612; }
+.notice-ok { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); background: rgb(var(--green-line) / 5.882%); }
+.notice-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); background: rgb(var(--amber-line) / 5.882%); }
+.notice-error { color: var(--red-fg-2); border-color: rgb(var(--red-line) / 33.333%); background: rgb(var(--red-line) / 7.059%); }
 
 /* A notice that carries an action, such as the undo offered after a list is deleted. The
    button is sized to the 44px target minimum rather than the notice's own type scale,
@@ -589,7 +721,7 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 
 /* The fill is a width, and the count beneath it repeats the same numbers as text, so the
    bar is never the only way to read the progress. */
-.pbar { height: 8px; border-radius: 999px; background: #2a303c; overflow: hidden; max-width: 32rem; }
+.pbar { height: 8px; border-radius: 999px; background: var(--track); overflow: hidden; max-width: 32rem; }
 .pbar i { display: block; height: 100%; background: var(--red); border-radius: 999px; }
 
 .yours { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
@@ -626,8 +758,8 @@ body.nocovers .ocard-art img, .ocard-art img[hidden] { display: none; }
   border: 1px solid var(--line-2); padding: .35rem;
   flex-direction: column; justify-content: flex-end; gap: .1rem;
   --h: 0;
-  background: linear-gradient(155deg, hsl(var(--h) 42% 26%), hsl(calc(var(--h) + 40) 38% 14%));
-  color: hsl(var(--h) 60% 88%);
+  background: linear-gradient(155deg, var(--fallback-a), var(--fallback-b));
+  color: var(--fallback-fg);
 }
 body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .ocard-art .of .ofs {
@@ -660,7 +792,7 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .ocard-foot .btn { position: relative; z-index: 1; }
 .ocard:focus-within { border-color: var(--line-2); }
 /* "In library" is a state, so it is named in the label as well as coloured. */
-.btn-added { background: #ffffff0f; color: var(--green); border-color: #43c08855; font-weight: 600; }
+.btn-added { background: rgb(var(--tint-base) / 5.882%); color: var(--green); border-color: rgb(var(--green-line) / 33.333%); font-weight: 600; }
 
 .home-q { max-width: 32rem; margin-top: .8rem; }
 #home-overflow { margin: .9rem .1rem 0; }
@@ -679,7 +811,7 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
   background: var(--card); color: var(--text); border: 1px solid var(--line-2);
   border-radius: 16px; padding: 1.2rem 1.4rem;
 }
-.preview::backdrop { background: #000000b3; }
+.preview::backdrop { background: rgb(var(--shadow-rgb) / calc(70.196% * var(--shadow-alpha))); }
 .preview-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
 .preview-head h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
 .preview-desc { max-width: 62ch; }
@@ -687,7 +819,7 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .preview-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; counter-reset: pv; }
 .preview-list li {
   display: flex; gap: .6rem; align-items: baseline; padding: .3rem .1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .05); font-size: .84rem;
+  border-bottom: 1px solid rgb(var(--tint-base) / 5%); font-size: .84rem;
 }
 .preview-list li:last-child { border-bottom: 0; }
 .preview-list .pn { color: var(--muted); font-size: .74rem; font-variant-numeric: tabular-nums; min-width: 2.2rem; }
@@ -701,7 +833,7 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
   background: var(--card); color: var(--text); border: 1px solid var(--line-2);
   border-radius: 16px; padding: 1.2rem 1.4rem;
 }
-.ask::backdrop { background: #000000b3; }
+.ask::backdrop { background: rgb(var(--shadow-rgb) / calc(70.196% * var(--shadow-alpha))); }
 .ask h2 { margin: 0 0 .5rem; font-size: 1.05rem; font-weight: 600; }
 .ask p { margin: 0 0 .9rem; max-width: 52ch; }
 .ask label { display: block; font-size: .82rem; color: var(--muted); margin-bottom: .3rem; }
@@ -732,8 +864,8 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 
 /* Unreadable-data recovery. Deliberately loud: saving is paused and the user must choose. */
 .blocked {
-  border: 2px solid var(--warn, #d9822b);
-  background: color-mix(in srgb, var(--warn, #d9822b) 12%, var(--panel, #14161c));
+  border: 2px solid var(--warn);
+  background: color-mix(in srgb, var(--warn) 12%, var(--panel));
   border-radius: 12px;
   padding: 20px 22px;
   margin-bottom: 24px;

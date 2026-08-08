@@ -14,6 +14,7 @@
     "anchors": "node scripts/check-anchors.mjs",
     "anchors:bless": "node scripts/check-anchors.mjs --bless",
     "counts": "node scripts/check-counts.mjs",
+    "palette": "node scripts/check-palette.mjs",
     "vendor": "node scripts/vendor-orders.mjs",
     "vendor:index": "node scripts/vendor-index.mjs",
     "version": "node scripts/sync-version.mjs && git add src/js/lib/version.js"
