@@ -16,6 +16,16 @@ quote in a bug report.
 
 ### Added
 
+- **You can now keep notes on a reading order and on any issue in it.** Every row in a reading
+  order has an "Add a note" control, and each order has a Note button in its toolbar, next to
+  Rename. Notes are yours alone: they are saved on your own device, they show up in your backup
+  file so they survive a move to another computer, and they appear in a Markdown export under
+  whatever they belong to. A note is limited to 2,000 characters. Clearing the box and saving
+  deletes the note, while cancelling leaves it exactly as it was, so you can open one to reread it
+  without risk. A screen reader hears the note itself, not merely that one exists. Nothing about
+  your existing data changes: orders and progress saved before this release load exactly as
+  before, simply with no notes on them yet.
+
 - **A reading order grouped by the trade paperbacks it is collected in.** A lot of people buy Marvel
   in collected editions rather than single issues, and the reading guides written for them are built
   around the volumes. Until now the catalog could only offer a flat run of issues, so a guide like

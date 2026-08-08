@@ -8,6 +8,7 @@ import {
   createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
   setOverride, pendingIssueIds, createEmptyState, coverUrl, listForCatalogId, SCHEMA_VERSION,
+  setIssueNote, setListNote,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { LIBRARY_VIEWS } from './lib/library.js';
@@ -30,7 +31,7 @@ import { shortcutAllowed } from './lib/shortcuts.js';
 import { READING_FILTERS, DEFAULT_FILTER, matchesReadingFilter } from './lib/readingFilters.js';
 import { DEFAULT_THEME, themeAttribute, normaliseTheme } from './lib/theme.js';
 import { VIEWS, formatRoute, parseRoute } from './lib/route.js';
-import { askConfirm, askText, wireAsk } from './ask.js';
+import { askConfirm, askText, askNote, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
 const SIDEBAR_KEY = 'sidebar.collapsed';
@@ -1288,6 +1289,23 @@ function wireReading() {
     announceIfSaved(`Renamed to ${name}.`);
   });
 
+  $('#btn-list-note').addEventListener('click', async () => {
+    const id = activeListId();
+    const list = store.state.lists[id];
+    if (!list) return;
+    const note = await askNote({
+      title: `Note on "${list.name}"`,
+      body: 'Only you see this. It is saved on this device and travels in your backup file.',
+      label: 'Your note about this reading order',
+      value: list.note || '',
+    });
+    // null is backing out, "" is deleting the note. askText folds those together; askNote does
+    // not, which is the whole reason it exists.
+    if (note === null) return;
+    store.update((s) => setListNote(s, id, note));
+    announceIfSaved(note ? 'Note saved.' : 'Note removed.');
+  });
+
   $('#btn-delete-list').addEventListener('click', async () => {
     const id = activeListId();
     const list = store.state.lists[id];
@@ -1472,6 +1490,10 @@ function renderReading() {
   ].filter(Boolean).join(' · ');
 
   const pct = total ? read / total : 0;
+  const listNote = $('#list-note');
+  listNote.textContent = list.note || '';
+  listNote.hidden = !list.note;
+  $('#btn-list-note').textContent = list.note ? 'Edit note' : 'Note';
   $('#ring-arc').setAttribute('stroke-dashoffset', String(RING_CIRCUMFERENCE * (1 - pct)));
   $('#ring-label').textContent = `${read} / ${total}`;
   $('#ring-wrap').setAttribute('title', `${Math.round(pct * 100)}% read`);
@@ -1705,6 +1727,28 @@ function renderRows() {
             item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,
             ymd(item.onSale) ? el('span', { text: ymd(item.onSale) }) : null,
           ]),
+          // The note control sits in the text column, not in `.ract`, which already carries six
+          // buttons and wraps at 320 pixels. One control both shows the note and opens the
+          // editor, so a row with a note is not a row with an extra thing beside it.
+          //
+          // The note is repeated into the label rather than left to name the button by its
+          // contents, because an aria-label replaces the contents in the accessible name. With
+          // the label naming only the action, a screen reader announced "Edit your note on X"
+          // and never the note, so the one reader who cannot see the row would have had to open
+          // the editor on every issue to find out what they had written.
+          //
+          // The note goes last because it is the one part the app does not punctuate. A note
+          // typed as "Wanda breaks reality." read as "here.. Select to edit it." with the action
+          // trailing, so the action leads instead and nothing follows the user's own words.
+          el('button', {
+            type: 'button',
+            class: `rnote${item.note ? ' has-note' : ''}`,
+            'aria-label': item.note
+              ? `Edit your note on ${item.title}. It says: ${item.note}`
+              : `Add a note on ${item.title}`,
+            dataset: { key: item.issueId, act: 'note' },
+            onclick: () => editIssueNote(item),
+          }, item.note ? item.note : 'Add a note'),
         ]),
         el('div', { class: 'ract' }, [
           el('button', { type: 'button', class: 'mini', 'aria-label': `Read ${item.title} in Marvel Unlimited`, dataset: { key: item.issueId, act: 'open' }, onclick: (e) => openInReader(item, e) }, 'Read'),
@@ -1743,6 +1787,22 @@ function cycleOverride(item) {
   const next = item.override === 'available' ? 'unavailable' : item.override === 'unavailable' ? null : 'available';
   store.update((s) => setOverride(s, item.issueId, next));
   announceIfSaved(`${item.title}: ${next ? `marked ${next}` : 'override cleared'}.`);
+}
+
+// The editor is a modal dialog rather than a field in the row. `renderRows` replaces every child
+// of #rows on any state change, and `preservingFocus` restores focus by key and act alone, not
+// the caret or an uncommitted value, so an inline field would lose whatever had been typed into
+// it the moment anything else changed.
+async function editIssueNote(item) {
+  const note = await askNote({
+    title: `Note on "${item.title}"`,
+    body: 'Only you see this. It is saved on this device and travels in your backup file.',
+    label: 'Your note about this issue',
+    value: item.note || '',
+  });
+  if (note === null) return;
+  store.update((s) => setIssueNote(s, item.issueId, note));
+  announceIfSaved(note ? `Note saved on ${item.title}.` : `Note removed from ${item.title}.`);
 }
 
 // ------------------------------------------------------------------ shortcuts
@@ -2671,6 +2731,7 @@ function exportMarkdown() {
   const md = serializeChecklist({
     name: list.name,
     description: list.description,
+    note: list.note,
     items: listItems(store.state, id),
   });
   download(`${slug(list.name)}.md`, md, 'text/markdown');
