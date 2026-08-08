@@ -1,8 +1,8 @@
 {
   ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:909-911|0": {
     "anchor": "docs/UX_STUDY.md:909-911",
-    "fp": "afe603112c572530",
-    "head": "**Six WCAG criteria could not be assessed** and are named in the sweep result above: 1.4.4 Resize"
+    "fp": "1e64d83a8ff9a25f",
+    "head": "**Puppeteer was installed outside the repository, deliberately.** `node_modules/` is not covered by"
   },
   ".github/copilot-instructions.md|standing-product-constraints|.copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79|0": {
     "anchor": ".copilot-tracking/reviews/logs/2026-08-03/marvel-reading-tracker-review-log.md:79",
@@ -94,8 +94,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3895|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3895",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3905|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3905",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -113,6 +113,11 @@
     "anchor": "src/js/main.js:1939-1945",
     "fp": "87efb34932539235",
     "head": "!item.hydrated && item.source !== 'manual'"
+  },
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#10|src/index.html:38-56|0": {
+    "anchor": "src/index.html:38-56",
+    "fp": "97c58e90a98b2fc5",
+    "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
   "docs/UX_STUDY.md|step-1-heuristic-evaluation#2|src/js/main.js:2000-2005|0": {
     "anchor": "src/js/main.js:2000-2005",
@@ -133,11 +138,6 @@
     "anchor": "src/index.html:142-157",
     "fp": "8b3c07e445e71673",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
-  },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation#9|src/index.html:38-56|0": {
-    "anchor": "src/index.html:38-56",
-    "fp": "97c58e90a98b2fc5",
-    "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
   "docs/UX_STUDY.md|sweep-result|src/index.html:404-410|0": {
     "anchor": "src/index.html:404-410",
@@ -634,15 +634,15 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:512-515|0": {
-    "anchor": "CHANGELOG.md:512-515",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:513-516|0": {
+    "anchor": "CHANGELOG.md:513-516",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
   "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:836-839|0": {
     "anchor": "docs/UX_STUDY.md:836-839",
-    "fp": "c96ca4b49e161d70",
-    "head": "from observing anyone. Every low point cites a finding."
+    "fp": "a2ba5dc6346c8d63",
+    "head": "### As-is journey map"
   },
   "PRODUCT_BACKLOG.md|item-details|eslint.config.mjs:93-97|0": {
     "anchor": "eslint.config.mjs:93-97",
@@ -674,18 +674,18 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3869-3871|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3869-3871",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3879-3881|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3879-3881",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4035-4036|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4035-4036",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4045-4046|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4045-4046",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4051-4053|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4051-4053",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4061-4063|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4061-4063",
     "fp": "fb312375e390a000",
     "head": "by review. Evidence: `absent: eslint|prettier config or lint script, read of package.json:8-17 and"
   },
@@ -894,10 +894,10 @@
     "fp": "ea5c94b7dbefac59",
     "head": "Bundled reading orders are imported from community sources, not authored here. Each list in"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:700|0": {
-    "anchor": "src/index.html:700",
-    "fp": "cb8ff3011292d5ac",
-    "head": "<label for=\"ask-area\" id=\"ask-area-label\"></label>"
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:704|0": {
+    "anchor": "src/index.html:704",
+    "fp": "a724fcaa0ccb7e53",
+    "head": "<button type=\"button\" class=\"btn btn-g\" id=\"ask-cancel\">Cancel</button>"
   },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:710|0": {
     "anchor": "src/index.html:710",
@@ -2034,8 +2034,8 @@
     "fp": "ebf9009b57338ced",
     "head": ".filter((s) => s.endsWith('.md'))"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-072|src/styles.css:925|0": {
-    "anchor": "src/styles.css:925",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-072|src/styles.css:933|0": {
+    "anchor": "src/styles.css:933",
     "fp": "1eef54d530f1e5d5",
     "head": ".blocked .btn-g { border-color: var(--muted); }"
   },

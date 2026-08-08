@@ -287,6 +287,7 @@ quote in a bug report.
   before it was chosen, and a first attempt was thrown out because the outline was too faint to
   stand out reliably.
 
+- **The automatic contrast check now covers three more places, including two it previously could not
   work out at all.** Nothing on screen changes. The app has a check that runs on every build and
   measures how well each colour stands out against whatever is behind it, and three red things were
   not being measured: the red square beside "Reading Tracker" at the top of the sidebar, the red bar

@@ -52,10 +52,12 @@ Evaluated against all ten of Nielsen's usability heuristics, named by their stan
 | 2 | Match between the system and the real world | 1 | Strong. Labels are written in reader language, and availability wording hedges rather than promises. `src/js/main.js:2000-2005` |
 | 3 | User control and freedom | 3 | Restoring a backup could be undone, deleting a list could not. Closed by BL-035. UX-H-003 |
 | 4 | Consistency and standards | 3 | Two different error and prompt systems run side by side. UX-H-002 |
-| 5 | Error prevention | 1 | Strong. Unreadable saved data pauses writing rather than overwriting, and a future schema is refused. `src/index.html:142-157`, `src/js/lib/model.js:582-608` || 6 | Recognition rather than recall | 2 | The one keyboard shortcut the interface advertises is documented only at the point of use. UX-H-004 |
+| 5 | Error prevention | 1 | Strong. Unreadable saved data pauses writing rather than overwriting, and a future schema is refused. `src/index.html:142-157`, `src/js/lib/model.js:582-608` |
+| 6 | Recognition rather than recall | 2 | The one keyboard shortcut the interface advertises is documented only at the point of use. UX-H-004 |
 | 7 | Flexibility and efficiency of use | 2 | Only two shortcuts exist and one silently stops working. UX-D-003 |
 | 8 | Aesthetic and minimalist design | 1 | Restrained by design, though each row carries six controls that are hidden until hover. UX-A-005 |
-| 9 | Help users recognize, diagnose, and recover from errors | 1 | Strong where it matters most. The unreadable-data banner explains the cause, preserves the original, and offers a salvage download. `src/index.html:142-157` || 10 | Help and documentation | 2 | An About view and a thorough README, but no in-app reference for shortcuts or filters. `src/index.html:38-56` |
+| 9 | Help users recognize, diagnose, and recover from errors | 1 | Strong where it matters most. The unreadable-data banner explains the cause, preserves the original, and offers a salvage download. `src/index.html:142-157` |
+| 10 | Help and documentation | 2 | An About view and a thorough README, but no in-app reference for shortcuts or filters. `src/index.html:38-56` |
 
 #### UX-H-001: A single read toggle re-renders the entire application
 
@@ -797,7 +799,8 @@ evidence value and the cheapest question that would confirm or kill it.
 | Primary device while reading | Desktop or laptop, with the tracker beside the reader | Moderate. The reflow and rail defects would be intolerable if a phone were the main device, and they shipped. `docs/ux-artifacts/viewport-sweep-reading.json` | On the last five reading sessions, what was the tracker open on? |
 | Reading style | Follows a long curated order end to end rather than dipping in | Strong. The product is built around order, resume and next-unread rather than around browsing. `src/index.html:295-330` | When a list is abandoned partway, what caused it? |
 | Tolerance for missing metadata | High, provided the app admits what it does not know | Strong. Pending and by-hand states are surfaced rather than hidden, and this was a deliberate decision. `src/js/main.js:1939-1945` | Would you rather see a guess or a clearly marked gap? |
-| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:260-261`, `PRODUCT_BACKLOG.md:3895` | If sync existed and was opt-in, would you turn it on? || Accessibility needs | None known, and unasked | Weak. This is an assumption by absence. No accessibility requirement appears anywhere in the repository, and the shipped contrast and target sizes are consistent with nobody having needed otherwise. | Do you use any system accessibility setting, including text size, contrast or reduced motion? |
+| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:260-261`, `PRODUCT_BACKLOG.md:3905` | If sync existed and was opt-in, would you turn it on? |
+| Accessibility needs | None known, and unasked | Weak. This is an assumption by absence. No accessibility requirement appears anywhere in the repository, and the shipped contrast and target sizes are consistent with nobody having needed otherwise. | Do you use any system accessibility setting, including text size, contrast or reduced motion? |
 
 Any other user type is speculative: a second reader would most plausibly be someone handed a
 backup file who wants to follow the same order, which the export and restore paths already

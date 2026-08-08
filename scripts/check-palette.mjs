@@ -120,7 +120,7 @@ export const PAIRS = [
   // mistake hit testing was for.
   ['--red', '--rail', LARGE, 'the brand mark, and the skip link when focused, both on the rail'],
   ['--red', 'the selected rail item', LARGE, 'the accent bar marking the current destination'],
-  ['--red', 'the unreadable-data banner', LARGE, 'the fill of both buttons in the blocked banner'],
+  ['--red', 'the unreadable-data banner', LARGE, 'the fill of the download button in the blocked banner'],
 
   // BL-072. The recovery banner offered two identically loud buttons while its own paragraph told
   // the reader to use one of them first, so the destructive one now takes the ghost treatment the

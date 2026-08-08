@@ -221,7 +221,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2860-2894 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | scripts/check-anchors.mjs:247 |
-| BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:925 |
+| BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:933 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Ready | src/index.html:147-148 |
 | BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Ready | scripts/check-anchors.mjs:116 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
@@ -3227,7 +3227,7 @@ action exactly the same weight as the safe action it tells the reader to take fi
 sort of defect this repository's own rule about recovery paths exists to catch.
 
 `.btn-g` is the app's established answer, used in nine places including the Cancel button of the
-confirm dialog at `src/index.html:700`. The convention there is the same shape as this: the action
+confirm dialog at `src/index.html:704`. The convention there is the same shape as this: the action
 being asked for is `.btn`, the way out is `.btn-g`. Applying it here follows the app rather than
 inventing anything, and it is what `.btn-p` was reaching for, expressed from the other side.
 
@@ -3235,11 +3235,21 @@ inventing anything, and it is what `.btn-p` was reaching for, expressed from the
 is a tint over a tint, and the first version could not express that: `resolveSurface` read its base
 as a token and nothing else, so it resolved one level deep. Nesting it and measuring found the
 generic ghost border at 2.44:1 dark and 2.39:1 light, under the 3:1 a control boundary needs,
-because `--line-2` is calibrated for the page and the card and this banner is a warm tint lighter
-than either. `--muted` is the quietest token that clears on this surface, at 4.29 and 4.39, and
-staying quiet is the point of a ghost. `--warn` clears too, at 4.42 and 4.91, and was rejected for
-the opposite reason: it is the banner's own alarm colour and would pull the eye towards the action
-the paragraph says to take second.
+because `--line-2` is calibrated for the page and the card while the ghost's own fill sits closer in
+luminance to it than either, lighter than the page in dark and darker than it in light. `--muted` is
+the quietest token that clears against that fill, at 4.29 and 4.39, and staying quiet is the point of
+a ghost. `--warn` clears too, at 4.42 and 4.91, and was rejected for the opposite reason: it is the
+banner's own alarm colour and would pull the eye towards the action the paragraph says to take
+second.
+
+**Every figure here is quoted against the button's fill, not against the banner.** Review found the
+first draft of this block and of the stylesheet comment attributing both to the banner, which
+overstates them: against the banner `--line-2` reads 2.90 and 2.73 and `--muted` reads 5.11 and 5.00.
+The same draft called the banner "a warm tint lighter than either", which holds in dark and is false
+in light, where the banner is darker than both the page and the card. The code was right throughout,
+since the `SURFACES` entry and both new pairs name the button rather than the banner; only the prose
+explaining it was wrong. That is the identical misattribution BL-069 recorded one surface earlier,
+made a second time in the block describing how the first one was caught.
 
 **Verified against painted pixels rather than against the arithmetic.** `getComputedStyle` reports
 this button's background as `rgba(255,255,255,0.06)`, the value before compositing, so reading it
@@ -3368,7 +3378,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4035-4036` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4045-4046` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3378,11 +3388,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4051-4053`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4061-4063`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3869-3871` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3879-3881` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3590,7 +3600,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:512-515` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:513-516` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:158-160` and
 `PRODUCT_BACKLOG.md:165-167` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
