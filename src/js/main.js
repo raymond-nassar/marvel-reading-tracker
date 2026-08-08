@@ -784,8 +784,8 @@ function applyRoute(route, { focus, filterIfAbsent }) {
 function showView(next, { focus = true, push = false } = {}) {
   // There is nothing to read without an active list, so the reading view hands over to the
   // landing page rather than showing an empty frame with a heading over it. `Object.hasOwn` for
-  // the same reason as in applyRoute: a bare lookup answers a prototype member truthily, and a
-  // stored `active` naming one would keep the reading view up over a list that is not there.
+  // the same reason as in applyRoute, and past tense for the same reason: the map used to answer a
+  // bare lookup with a prototype member, and BL-068 has since given it none to answer with.
   if (next === 'read' && !Object.hasOwn(store.state.lists, activeListId() ?? '')) next = 'home';
 
   view = next;

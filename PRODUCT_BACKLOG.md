@@ -1545,7 +1545,7 @@ branch alone. The v1 branch rebuilds the state from scratch and writes read stat
 instead, which stored its argument verbatim, so restoring a v1 backup carrying `readAt: "banana"`
 did put "Invalid Date" on the page. Reproduced end to end through `validateBackup` before it was
 believed. The coercion now lives in `markRead` at `src/js/lib/model.js:392-399`, written the same way
-`coerce` writes it at `src/js/lib/model.js:640`, so the two paths cannot disagree and every future
+`coerce` writes it at `src/js/lib/model.js:621`, so the two paths cannot disagree and every future
 caller inherits it.
 
 The test written alongside the original claim exercised only the current-schema shape, so it pinned
@@ -2993,12 +2993,35 @@ unfixed tree before being trusted.
 One stale comment went with the fix. The `main.js` guard added by BL-037 described the list map as a
 plain object and deferred the rest of the fault to this item, and both halves of that sentence stopped
 being true here. The guard itself stays: it asks the question it means rather than relying on the
-map's type, so it is what holds if a later change hands the map a prototype back.
+map's type, so it is what holds if a later change hands the map a prototype back. The review found a
+sibling comment four lines below making the same claim in the present tense, which the first sweep
+missed and the record described as complete; both are now past tense.
+
+Three things the review found that the gates did not, all of them the same shape as the fix itself.
+The source scan matched a single identifier before `.lists`, so it was blind to `store.state.lists`,
+which is how the map is spelled in all fifty-five references in `main.js`, and blind to a spread
+split across lines. That is exactly the wrong file to be blind to, because it is the one file with no
+behavioural coverage at all, so a rebuild introduced there would have been caught by nothing. The
+scan now matches a dotted receiver over the whole file text rather than one identifier per line.
+Separately, `createEmptyState` was the one producing site held by no check: reverting it alone left
+all sixty-eight tests green, because a state with no list in it is never looked up by a colliding
+name. One assertion closes it. Both were proved by mutation after the fix, not asserted.
+
+The third is a process finding worth more than the other two. Re-aiming citations is per citation but
+printing them is naturally per range, and a printer that deduplicates ranges hides the case where two
+different claims are re-aimed onto one line. That happened here: the nineteen lines added to the top
+of `model.js` shifted a BL-058 citation and this item's own, one landed correctly and the other
+landed thirty-eight lines out on top of it, the deduplicated print showed one line that read
+perfectly well for the claim it did belong to, and it was blessed. The gate then certified a false
+claim and reported zero drifted forever after, which is the precise failure the bless step exists to
+prevent. The instructions now say to read one line per citation rather than one per distinct range,
+and to expect those two counts to match.
 
 Verified: 494 tests, 0 fail, lint 0, anchors 0 drifted. On the unfixed tree the six new permanent
-tests fail and the harness reports 15 of 17 failing. Six mutations were tried and all six caught,
-including the coerce-only revert above and a spread put back at a single site, which the source scan
-catches structurally and the rename assertion catches behaviourally.
+tests all fail and the harness reports 15 of 17 failing. Seven mutations were tried and all seven
+caught: the whole module reverted, `coerce` reverted alone, one rename site put back to a spread,
+that same spread split across lines, a spread through a dotted receiver in `main.js`, `withList`
+returning an ordinary object, and `createEmptyState` reverted alone.
 
 **BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
@@ -3059,7 +3082,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3718-3719` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3741-3742` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3069,11 +3092,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:163-165`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3738-3740`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3761-3763`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3560-3562` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3583-3585` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3281,7 +3304,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:448-451` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:454-457` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:156-158` and
 `PRODUCT_BACKLOG.md:163-165` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.

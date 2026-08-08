@@ -806,13 +806,22 @@ test('an ordinary edit leaves the map unable to answer for a name it does not ho
     assert.equal(after.lists[name], undefined, `a list was found under ${name} after a rename`);
   }
   assert.equal(Object.getPrototypeOf(after.lists), null, 'the map has a prototype again after a rename');
+  // The empty map is the one producing site no behavioural assertion reaches, because a state with no
+  // list in it is never looked up by a colliding name. It is held by this line and nothing else.
+  assert.equal(Object.getPrototypeOf(createEmptyState().lists), null, 'a fresh state starts with an ordinary map');
 });
+
 test('no rebuild site spreads the list map back into an ordinary object', () => {
   // The behavioural tests above cover the sites that exist. This covers the site somebody adds next.
   // A spread produces an ordinary object even from a null-prototype one, so a single `{ ...x.lists }`
   // anywhere hands Object.prototype back to the whole map and every guarantee above goes with it.
   // Scanning the source rather than listing the known sites is deliberate: a list of places that
   // must each be written correctly is the defect this fix exists to remove, not a way to enforce it.
+  //
+  // The receiver is matched as a dotted path rather than one identifier, and the scan runs over the
+  // whole file rather than line by line, because the map is reached as `store.state.lists` everywhere
+  // in main.js and a spread may be wrapped. A pattern that only matched `state.lists` on one line was
+  // blind to the entire file with no behavioural coverage, which is where the next site is likeliest.
   const dir = join(ROOT, 'src', 'js');
   const files = [];
   const walk = (d) => {
@@ -825,9 +834,11 @@ test('no rebuild site spreads the list map back into an ordinary object', () => 
   assert.ok(files.length > 5, 'the scan found almost no files, so it proves nothing');
   const offenders = [];
   for (const f of files) {
-    readFileSync(f, 'utf8').split(/\r?\n/).forEach((line, i) => {
-      if (/\{\s*\.\.\.[A-Za-z_$][\w$]*\.lists\b/.test(line)) offenders.push(`${f.slice(ROOT.length + 1)}:${i + 1}`);
-    });
+    const text = readFileSync(f, 'utf8');
+    const re = /\{\s*\.\.\.\s*[\w$]+(?:\s*\.\s*[\w$]+)*\s*\.\s*lists\b/g;
+    for (let m = re.exec(text); m; m = re.exec(text)) {
+      offenders.push(`${f.slice(ROOT.length + 1)}:${text.slice(0, m.index).split(/\r?\n/).length}`);
+    }
   }
   assert.deepEqual(offenders, [], 'the list map is spread into an object literal, which drops its null prototype');
 });
