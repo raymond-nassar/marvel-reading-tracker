@@ -686,14 +686,33 @@ let routeReady = false;
 //
 // The compare against the current hash is not an optimisation. pushState given the address already
 // showing would stack a duplicate entry, so Back would appear to do nothing once per navigation.
-// True while a keyboard traversal of the filter group is open, meaning the entry currently on top
-// was pushed by that traversal and later stops should overwrite it rather than stack on it. Kept
-// beside syncHash rather than inside wireReading because applyRoute has to be able to close it.
+// True while a keyboard traversal of the filter group is open, meaning the reader is part way
+// through choosing and the address has deliberately not been written yet. Kept beside syncHash
+// rather than inside wireReading because syncHash and applyRoute both have to see it.
+//
+// The first design pushed on the traversal's first stop and replaced on every stop after it. Review
+// found that a traversal returning to the filter it started from then replaced the top entry with a
+// copy of the one below it, and a same-document Back between two identical fragments fires no
+// hashchange at all, so the press did nothing. Measured on that tree: ArrowRight then ArrowLeft left
+// history ["#/read/list-a", "#/read/list-a"] and the following Back reported 0 hashchange events
+// with the rows unmoved. That is the very failure the paragraph above says the guard exists to
+// prevent, reached from the other side. A replace cannot remove an entry the run has already
+// pushed, and history.back() is async and races the next arrow press, so the write is held until
+// the traversal ends instead.
 let filterRunOpen = false;
+// What the address claims while a traversal is open, which is the filter in force when it began.
+// Not the same as `filter`, which follows the rows immediately.
+let filterRunBase = null;
 
 function syncHash({ push = false } = {}) {
   if (!routeReady) return;
-  const next = formatRoute({ view, listId: activeListId(), filter });
+  // While a traversal is open the address lags the rows on purpose: the entry on top is the one the
+  // reader arrived on and Back has to return to it. A passive sync fired by something else in that
+  // window would otherwise replace it with the half-chosen address and destroy it. That is reachable
+  // rather than theoretical: background hydration writes through store.update on its own timer, and
+  // every store.update reaches renderAll, which syncs.
+  const shown = filterRunOpen && !push ? filterRunBase : filter;
+  const next = formatRoute({ view, listId: activeListId(), filter: shown });
   if (!next || next === location.hash) return;
 
   // A hash that is not ours is someone else's anchor, and index.html ships one: the skip link
@@ -704,6 +723,17 @@ function syncHash({ push = false } = {}) {
 
   if (push) history.pushState(null, '', next);
   else history.replaceState(null, '', next);
+}
+
+// Committing writes the traversal's one entry; discarding drops it because something else has
+// already decided the address. A commit that lands back on the address the traversal started from
+// meets the compare in syncHash and correctly writes nothing, which is why the whole sweep can
+// leave zero entries as well as one.
+function endFilterRun({ commit }) {
+  if (!filterRunOpen) return;
+  filterRunOpen = false;
+  filterRunBase = null;
+  if (commit) syncHash({ push: true });
 }
 
 // Adopting the list first means the redirect inside showView sees the list the URL asked for
@@ -734,9 +764,10 @@ function applyRoute(route, { focus, filterIfAbsent }) {
   // Before showView, so the passive sync at the end of showView computes the address this route
   // already describes and returns early rather than writing one and being corrected a moment later.
   setFilter(route.filter ?? filterIfAbsent);
-  // A traversal cannot span a navigation, and Back is a navigation. Without this, pressing Back and
-  // then choosing a filter would replace the entry Back had just landed on instead of adding one.
-  filterRunOpen = false;
+  // A traversal cannot span a navigation, and Back is a navigation. Discarded rather than committed,
+  // because the address this route describes is the authoritative one and writing the traversal's
+  // would fight it.
+  endFilterRun({ commit: false });
   showView(route.view, { focus });
 }
 
@@ -1336,32 +1367,62 @@ function wireReading() {
     // Arrow keys move a radio group one stop at a time and fire change at every stop. Measured in
     // Edge on this tree: three presses of ArrowRight left three history entries, and one Back
     // landed two filters short of where the reader began, walking them back through filters they
-    // only passed over on the way to the one they wanted. So the first stop of a traversal pushes
-    // and the rest overwrite it, which leaves one entry whose Back returns to the filter in force
-    // before the traversal started. A change that no arrow key produced is a decision on its own
-    // and always pushes, so two pointer clicks still get an entry each.
+    // only passed over on the way to the one they wanted. So a traversal writes nothing until it
+    // ends and then writes one entry, which leaves the address the reader arrived on underneath it.
+    // A change that no arrow key produced is a decision on its own and writes immediately, so two
+    // pointer clicks still get an entry each.
+    //
+    // Modifiers are excluded because the radio group does not consume them, so no change follows and
+    // the flag would survive into whatever came next. Measured in Edge on this tree: Ctrl+ArrowRight
+    // on a checked radio left the selection where it was and fired no change.
     radio.addEventListener('keydown', (e) => {
-      if (e.key.startsWith('Arrow')) arrowing = true;
+      if (e.key.startsWith('Arrow') && !e.ctrlKey && !e.altKey && !e.metaKey) arrowing = true;
     });
     radio.addEventListener('change', (e) => {
-      setFilter(e.target.value);
-      // Pushes rather than replaces. Choosing a filter is a deliberate act, like clicking the rail,
-      // and pushing is the whole of what "Back works across filter changes" means. The passive
-      // paths still replace, so marking twenty issues read does not put twenty entries in the way.
-      syncHash({ push: !(arrowing && filterRunOpen) });
-      filterRunOpen = arrowing;
+      if (arrowing) {
+        // Captured before setFilter moves it, because this is the address the traversal has to be
+        // able to return to and what a passive sync must keep claiming while it runs.
+        if (!filterRunOpen) {
+          filterRunBase = filter;
+          filterRunOpen = true;
+        }
+        setFilter(e.target.value);
+      } else {
+        // Commits before adopting the new filter, so the traversal's entry records the filter the
+        // traversal actually reached rather than the one replacing it. A pointer press has already
+        // committed through pointerdown and finds nothing to do here; a click with no pointerdown,
+        // which is what assistive technology activating a radio produces, reaches it here instead.
+        // Both routes therefore leave the same two entries.
+        endFilterRun({ commit: true });
+        setFilter(e.target.value);
+        // Pushes rather than replaces. Choosing a filter is a deliberate act, like clicking the
+        // rail, and pushing is the whole of what "Back works across filter changes" means. The
+        // passive paths still replace, so marking twenty issues read does not put twenty entries in
+        // the way.
+        syncHash({ push: true });
+      }
       arrowing = false;
     });
   }
 
-  // An arrow press that changes nothing, on the last radio of the group, fires no change and would
-  // otherwise leave the flag set for whatever came next. A pointer press clears it, and closing the
-  // traversal on the way out of the group means a reader who returns to it later gets a fresh entry
-  // rather than overwriting one from minutes ago.
+  // The traversal ends when the reader leaves the group or reaches for the pointer, and that is when
+  // its one entry is written. focusout bubbles, so moving between two radios inside the group would
+  // otherwise end it at the first stop; relatedTarget outside the group is what distinguishes
+  // leaving from traversing, and a missing one is a window or address bar blur, which is leaving.
+  //
+  // pointerdown is not redundant with the change handler above. Pressing the radio that is already
+  // checked fires no change and does not move focus out of the group, so neither of the other two
+  // would ever run and the traversal would stay open behind a press the reader has plainly finished
+  // making.
   const group = $('#reading-filters');
-  group.addEventListener('pointerdown', () => { arrowing = false; });
+  group.addEventListener('pointerdown', () => {
+    arrowing = false;
+    endFilterRun({ commit: true });
+  });
   group.addEventListener('focusout', (e) => {
-    if (!e.relatedTarget || !group.contains(e.relatedTarget)) filterRunOpen = false;
+    if (e.relatedTarget && group.contains(e.relatedTarget)) return;
+    arrowing = false;
+    endFilterRun({ commit: true });
   });
 
   $('#btn-rename-list').addEventListener('click', async () => {

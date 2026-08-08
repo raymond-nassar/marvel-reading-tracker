@@ -193,42 +193,68 @@ test('main.js writes the hash passively with replaceState, not by assignment', (
 // replace here would leave Back unable to undo a filter change, which is the task BL-037 left open.
 test('main.js pushes when a filter is chosen, so Back can undo it', () => {
   const main = read('src/js/main.js');
-  has(
-    main,
-    /radio\.addEventListener\('change',[^)]*\(e\) => \{\s*setFilter\(e\.target\.value\);[\s\S]{0,600}?syncHash\(\{ push: !\(arrowing && filterRunOpen\) \}\);/,
-    'a filter radio handler that sets the filter and then pushes',
-  );
+  const handler = main.slice(main.indexOf("radio.addEventListener('change'"), main.indexOf("const group = $('#reading-filters')"));
+  has(handler, /setFilter\(e\.target\.value\);/, 'a filter radio handler that sets the filter');
+  has(handler, /syncHash\(\{ push: true \}\);/, 'and then pushes');
 });
 
 // Arrow keys move a radio group one stop at a time and fire change at every stop, so pushing on
 // each one made Back walk a keyboard reader back through filters they only passed over. Measured in
 // Edge on this tree before the fix: three presses of ArrowRight left three entries and one Back
-// landed two filters short. The first stop pushes, the rest overwrite it.
-test('a stop of a keyboard traversal overwrites the entry the traversal pushed', () => {
+// landed two filters short. The traversal now writes nothing until it ends and then writes one.
+test('a keyboard traversal holds its write until it ends', () => {
   const main = read('src/js/main.js');
-  has(main, /radio\.addEventListener\('keydown', \(e\) => \{\s*if \(e\.key\.startsWith\('Arrow'\)\) arrowing = true;/,
-    'an arrow key setting the traversal flag before the change it produces');
+  has(main, /radio\.addEventListener\('keydown', \(e\) => \{\s*if \(e\.key\.startsWith\('Arrow'\) && !e\.ctrlKey && !e\.altKey && !e\.metaKey\) arrowing = true;/,
+    'an arrow key with no modifier setting the traversal flag before the change it produces');
   const handler = main.slice(main.indexOf("radio.addEventListener('change'"), main.indexOf("const group = $('#reading-filters')"));
-  has(handler, /filterRunOpen = arrowing;/, 'the run staying open only for a change an arrow key produced');
+  has(handler, /if \(arrowing\) \{/, 'the handler branching on whether an arrow key produced the change');
+  has(handler, /filterRunBase = filter;\s*filterRunOpen = true;/,
+    'the traversal recording the filter it began from before the first stop moves it');
+  lacks(handler, /if \(arrowing\)[\s\S]*?syncHash\(\{ push: true \}\);[\s\S]*?\} else \{/,
+    'no write on the arrow branch, which is the whole of holding it until the traversal ends');
   has(handler, /arrowing = false;/, 'the arrow flag being cleared by the change it fired');
 });
 
-// A traversal that is left and returned to is two traversals, and moving between radios inside the
-// group is not leaving it, so the check has to look at where focus went.
-test('leaving the filter group closes the traversal, and moving inside it does not', () => {
+// The address lags the rows for as long as a traversal is open, and something else can write in that
+// window: every store.update reaches renderAll, which syncs, and background hydration writes on a
+// timer. Formatting a passive sync with the live filter would replace the entry the reader arrived
+// on with the half-chosen address and destroy the thing Back exists to return to.
+test('a passive sync during a traversal writes the address the traversal began from', () => {
   const main = read('src/js/main.js');
-  has(main, /group\.addEventListener\('focusout', \(e\) => \{\s*if \(!e\.relatedTarget \|\| !group\.contains\(e\.relatedTarget\)\) filterRunOpen = false;/,
-    'a focusout that closes the run only when focus left the group');
-  has(main, /group\.addEventListener\('pointerdown', \(\) => \{ arrowing = false; \}\)/,
-    'a pointer press clearing an arrow flag left set by a press that changed nothing');
+  const body = main.slice(main.indexOf('function syncHash'), main.indexOf('function endFilterRun'));
+  has(body, /const shown = filterRunOpen && !push \? filterRunBase : filter;/,
+    'a passive sync formatting with the base rather than the live filter');
+  has(body, /formatRoute\(\{ view, listId: activeListId\(\), filter: shown \}\)/,
+    'and the route being built from it');
 });
 
-// Back is a navigation and a traversal cannot span one. Without this, choosing a filter after
-// pressing Back would overwrite the entry Back had just landed on instead of adding one.
-test('applyRoute closes any open traversal', () => {
+// A traversal that is left and returned to is two traversals, and moving between radios inside the
+// group is not leaving it, so the check has to look at where focus went. Leaving is also when the
+// traversal's one entry gets written, so these listeners commit rather than discard.
+test('leaving the filter group commits the traversal, and moving inside it does not', () => {
+  const main = read('src/js/main.js');
+  has(main, /group\.addEventListener\('focusout', \(e\) => \{\s*if \(e\.relatedTarget && group\.contains\(e\.relatedTarget\)\) return;\s*arrowing = false;\s*endFilterRun\(\{ commit: true \}\);/,
+    'a focusout that commits the run only when focus left the group');
+  has(main, /group\.addEventListener\('pointerdown', \(\) => \{\s*arrowing = false;\s*endFilterRun\(\{ commit: true \}\);/,
+    'a pointer press committing the run, which is the only listener a press on the checked radio reaches');
+});
+
+// Committing is what writes the traversal's entry, so it has to push. Discarding must not write at
+// all, because the only caller that discards is applyRoute, where the address is already correct.
+test('ending a traversal writes one entry when it commits and none when it does not', () => {
+  const main = read('src/js/main.js');
+  const body = main.slice(main.indexOf('function endFilterRun'), main.indexOf('function endFilterRun') + 400);
+  has(body, /if \(!filterRunOpen\) return;/, 'ending a traversal that is not open doing nothing');
+  has(body, /filterRunOpen = false;\s*filterRunBase = null;/, 'both traversal variables being cleared');
+  has(body, /if \(commit\) syncHash\(\{ push: true \}\);/, 'a commit pushing and a discard writing nothing');
+});
+
+// Back is a navigation and a traversal cannot span one. The landing address is authoritative, so the
+// traversal is discarded rather than committed: committing would write over the address Back chose.
+test('applyRoute discards any open traversal', () => {
   const main = read('src/js/main.js');
   const body = main.slice(main.indexOf('function applyRoute'), main.indexOf('function showView'));
-  has(body, /filterRunOpen = false;/, 'applyRoute closing the run');
+  has(body, /endFilterRun\(\{ commit: false \}\);/, 'applyRoute discarding the run');
 });
 
 // `store.state.lists` is a plain object, so a bare lookup answers `__proto__`, `constructor` and

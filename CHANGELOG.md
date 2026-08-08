@@ -33,6 +33,12 @@ quote in a bug report.
   made-up names used to get past the check, leave the app on a blank screen, and still be there the
   next time you opened it.
 
+  A second review round caught one more, in the arrow-key fix itself. If you arrowed away from a
+  filter and then arrowed straight back to it, Back afterwards did nothing at all: the press
+  registered, but the page did not move. The sweep is now recorded only once you have finished it,
+  which means arrowing back to where you started leaves no trace to press Back through, and the
+  address you arrived on is still the one waiting underneath.
+
 - **You can now keep notes on a reading order and on any issue in it.** Every row in a reading
   order has an "Add a note" control, and each order has a Note button in its toolbar, next to
   Rename. Notes are yours alone: they are saved on your own device, they show up in your backup
