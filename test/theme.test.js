@@ -184,10 +184,20 @@ test('a control boundary is measured against every surface it is drawn on, not j
   // `--track` is here for the same reason and was added later, by review: the trough renders on a
   // card in the reading hero and on the rail in the per-list bars, and listing only the card hid a
   // real degradation when the dark trough was darkened.
+  //
+  // `--red` and `--track-2` were added later still, by review of BL-067, and their absence is what
+  // let that change gate the cover-art switch's off state while leaving the on state of the same
+  // control on the same background unmeasured. This assertion is the thing that was supposed to
+  // force the question and could not, because it said nothing about the two tokens the change was
+  // about. A foreground that gains a surface without this line moving is the defect, so the line
+  // moves with it deliberately.
   const surfaces = (fg) => PAIRS.filter((p) => p[0] === fg).map((p) => p[1]).sort();
   assert.deepEqual(surfaces('--line-2'), ['--bg', '--card', '--card-2']);
   assert.deepEqual(surfaces('--cb-line'), ['--bg', '--card']);
   assert.deepEqual(surfaces('--track'), ['--card', '--rail']);
+  assert.deepEqual(surfaces('--red'), ['--bg', '--card', '--card-2', '--track']);
+  assert.deepEqual(surfaces('--track-2'), ['--bg']);
+  assert.deepEqual(surfaces('--on-accent'), ['--red', '--track-2']);
 });
 
 // Every class this app puts on something a reader operates, found by reading the markup and the

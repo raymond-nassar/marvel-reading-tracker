@@ -71,18 +71,27 @@ export const PAIRS = [
   // BL-067. The cover-art switch and the primary button were the two controls no pair reached, so
   // nothing here would have moved if either had gone invisible. Measured by walking each control's
   // ancestor chain to the first opaque background rather than by reading the stylesheet, over seven
-  // views and both themes: the switch always sits on the page, never on a card, and the primary
-  // button is the other way round, always on a card and never on the page. So each is gated where it
-  // actually renders.
+  // views and both themes.
   //
-  // Only the off state needs new pairs. The on-state track is `--red`, not `--track`, so the knob on
-  // it is the `--on-accent` on `--red` pair already listed above and adding it again would be the
-  // same measurement under a second name. The plan for this item said otherwise and the gate caught
-  // it: a `--on-accent` on `--track` pair measured 1.32:1 in the light theme, which is a real number
-  // about a boundary nothing paints, since `--track` is the unfilled part of a progress bar and
-  // carries no knob.
+  // Review found the first attempt at this block wrong twice over, in the same sentence. It said the
+  // switch is always on the page and the primary button always on a card, and gated the off-state
+  // track on the page while leaving the on-state track of the same control, on the same background,
+  // ungated. Half of one control. `--red` on `--bg` is painted by two separate things: the switch's
+  // on-state track, and the catalog Clear button, which is a `.btn` with a transparent border
+  // falling through to the page. Both measure 3.89:1 dark and 4.73:1 light, so nothing was failing,
+  // but nothing was watching either.
+  //
+  // Neither was visible to the browser pass, and the reason is worth keeping: the Clear button is
+  // `hidden` until a query is typed, and the switch's on state is not the state a fresh fixture
+  // lands in. That is the hole this file's own header names, a rule that paints only in a state no
+  // fixture reaches, and it caught this file rather than the app.
+  //
+  // What the plan got wrong is narrower than it looked. It asked for `--red` on `--bg` and described
+  // it as the knob on the on-state track. The description is garbled, because the knob on the
+  // on-state track is `--on-accent` on `--red`, already listed above. The pair itself was right.
   ['--track-2', '--bg', LARGE, 'the cover-art switch in its off state, which sits on the page'],
   ['--on-accent', '--track-2', LARGE, 'the knob of the cover-art switch on its off-state track'],
+  ['--red', '--bg', LARGE, 'the cover-art switch in its on state, and the catalog Clear button, both on the page'],
   ['--red', '--card', LARGE, 'the fill of a primary button on a card'],
   ['--red', '--card-2', LARGE, 'the fill of a primary button on a raised card'],
 ];

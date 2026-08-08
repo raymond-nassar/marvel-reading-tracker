@@ -139,7 +139,7 @@ quote in a bug report.
   The check that keeps the app's colours honest now also watches this switch and the red buttons,
   which it had never looked at before, so neither can quietly fade again in a future change.
 
-
+- **The outline around every button, checkbox and text box was too faint to see reliably.** Buttons
   like Rename, Note, Duplicate and Delete list, the row actions on each issue, the reading filters,
   the cover-art switch, the line marking an issue you have written a note on, and every saved list in
   the Library were all drawn with a border so close in colour to the page behind it that it barely
