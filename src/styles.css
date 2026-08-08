@@ -400,6 +400,19 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 .fp input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: 2px; }
 
 .rows { display: grid; gap: .18rem; list-style: none; margin: 0; padding: 0; }
+/* A collected edition heading. The read count is text beside the bar rather than only the bar,
+   for the reason the sidebar progress is: a bar alone is not readable to a screen reader and
+   not distinguishable at the low contrast the accent colour lands at. */
+.row-group {
+  display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap;
+  margin: .85rem .1rem .2rem; padding: .3rem .55rem .35rem;
+  border-bottom: 1px solid var(--line);
+}
+.row-group:first-child { margin-top: .1rem; }
+.rg-name { margin: 0; font-size: .92rem; font-weight: 650; letter-spacing: .01em; }
+.rg-count { color: var(--muted); font-size: .78rem; }
+.row-group progress { width: 90px; }
+.row-group.is-done .rg-name { color: var(--read-fg); }
 .row {
   display: grid; grid-template-columns: 24px 34px 1fr auto; gap: .75rem;
   align-items: center; padding: .42rem .55rem; border-radius: 9px; border: 1px solid transparent;
@@ -691,6 +704,9 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 }
 .preview-list li:last-child { border-bottom: 0; }
 .preview-list .pn { color: var(--muted); font-size: .74rem; font-variant-numeric: tabular-nums; min-width: 2.2rem; }
+.preview-list .preview-group { border-bottom: 0; padding: .7rem 0 .15rem; }
+.preview-list .preview-group:first-child { padding-top: 0; }
+.preview-list .preview-group h4 { margin: 0; font-size: .82rem; font-weight: 650; }
 .preview-foot { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: .9rem; }
 .preview-foot .btn { min-height: 44px; }
 

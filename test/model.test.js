@@ -5,7 +5,7 @@ import {
   removeFromList, moveItem, moveItemTo, markRead, toggleRead, isRead, markManyRead,
   setOverride, upNext, listProgress, seriesProgress, listItems, pendingIssueIds,
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
-  normalizeCover, coverUrl, listForCatalogId, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
+  normalizeCover, coverUrl, listForCatalogId, listCollections, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
 } from '../src/js/lib/model.js';
 
 const issue = (id, over = {}) => ({
@@ -629,4 +629,124 @@ test('an issue added from a list endpoint stays pending until hydrated', async (
   // And once hydrated it drops out of the queue.
   s = upsertIssue(s, { ...fromList, digitalId: 38164, cover: { path: 'http://x/y', extension: 'jpg' }, hydrated: true });
   assert.deepEqual(pendingIssueIds(s), []);
+});
+
+// ---------------------------------------------------------------- collected editions
+//
+// The edition lives on the list rather than on the issue, because read state is global and the
+// same issue sits in both the issue-by-issue order and the trade order at once. Storing it on
+// the issue would make importing one order silently relabel the other.
+
+const trade = (id, name) => ({ ...issue(id), collectedIn: name });
+
+test('a list records which collected edition each issue was added under', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 1'), trade(2, 'Vol. 1'), trade(3, 'Vol. 2')], {}).state;
+
+  assert.deepEqual(listItems(s, id).map((i) => i.collectedIn), ['Vol. 1', 'Vol. 1', 'Vol. 2']);
+});
+
+// The edition is a fact about this list. Letting it reach the shared issue record would leak
+// one list's structure into every other list holding the same issue.
+test('the edition never reaches the shared issue record', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 1')], {}).state;
+
+  assert.equal(s.issues[1].collectedIn, undefined);
+});
+
+test('an ordinary order reports no edition at all', () => {
+  let s = createList(createEmptyState(), { name: 'Issues' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [issue(1), issue(2)], {}).state;
+
+  assert.deepEqual(listItems(s, id).map((i) => i.collectedIn), [null, null]);
+  assert.deepEqual(listCollections(s, id), []);
+});
+
+test('collected editions are reported in reading order with their own progress', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 1'), trade(2, 'Vol. 1'), trade(3, 'Vol. 2')], {}).state;
+  s = markRead(s, 1, true);
+
+  assert.deepEqual(
+    listCollections(s, id).map((c) => [c.name, c.read, c.total]),
+    [['Vol. 1', 1, 2], ['Vol. 2', 0, 1]],
+  );
+});
+
+// A book split in two by a move is shown as two runs, because itemIds is the reading order and
+// regrouping them would report an order the list does not have.
+test('a move that splits a book reports it as two runs, not one', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 1'), trade(2, 'Vol. 1'), trade(3, 'Vol. 2')], {}).state;
+  s = moveItemTo(s, id, 3, 1);
+
+  assert.deepEqual(
+    listCollections(s, id).map((c) => [c.name, c.total]),
+    [['Vol. 1', 1], ['Vol. 2', 1], ['Vol. 1', 1]],
+  );
+});
+
+// Re-adding an order the reader already holds must not move an issue into a different book
+// than the one they have been working through.
+test('re-importing does not relabel an issue the list already held', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 1')], {}).state;
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 9'), trade(2, 'Vol. 9')], {}).state;
+
+  assert.deepEqual(listItems(s, id).map((i) => i.collectedIn), ['Vol. 1', 'Vol. 9']);
+});
+
+// Left behind, the entry would put the issue back into a book it had been removed from the
+// moment it was added again, and grow storage for a list that no longer holds it.
+test('removing an issue drops the edition it was filed under', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 1')], {}).state;
+  s = removeFromList(s, id, 1);
+
+  assert.equal(s.lists[id].collectedIn[1], undefined);
+});
+
+test('duplicating a trade order copies its books', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 1'), trade(2, 'Vol. 2')], {}).state;
+  const dup = duplicateList(s, id);
+  s = dup.state;
+
+  assert.deepEqual(listItems(s, dup.listId).map((i) => i.collectedIn), ['Vol. 1', 'Vol. 2']);
+});
+
+// coerce runs on every load, so an entry for an issue the list no longer holds would survive
+// forever otherwise. Saved data is a file the reader can edit, and an older build that removed
+// an issue without knowing about editions is exactly how such an entry gets there.
+test('an edition for an issue the list does not hold is dropped on load', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [trade(1, 'Vol. 1')], {}).state;
+  const raw = JSON.parse(JSON.stringify(s));
+  raw.lists[id].collectedIn['999'] = 'A Book That Is Not Here';
+
+  const loaded = migrate(raw);
+  assert.equal(loaded.lists[id].collectedIn['999'], undefined);
+  assert.equal(loaded.lists[id].collectedIn[1], 'Vol. 1');
+});
+
+// A file the reader can edit can hold anything at all in this field, and an object that is not
+// a map of strings must not reach the view.
+test('a malformed collectedIn is discarded rather than trusted', () => {
+  let s = createList(createEmptyState(), { name: 'Trades' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [issue(1)], {}).state;
+  const raw = JSON.parse(JSON.stringify(s));
+  raw.lists[id].collectedIn = { 1: 42 };
+
+  assert.deepEqual(migrate(raw).lists[id].collectedIn, {});
 });

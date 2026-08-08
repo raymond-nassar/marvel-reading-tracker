@@ -16,6 +16,26 @@ quote in a bug report.
 
 ### Added
 
+- **A reading order grouped by the trade paperbacks it is collected in.** A lot of people buy Marvel
+  in collected editions rather than single issues, and the reading guides written for them are built
+  around the volumes. Until now the catalog could only offer a flat run of issues, so a guide like
+  that lost its volume boundaries on the way in. The New Ultimate Universe is now offered a second
+  way, beside the existing issue-by-issue version: 132 issues under the 23 collected editions that
+  collect them, from Ultimate Invasion through Ultimate Endgame. Each volume is a heading with its
+  own progress, so you can see that you have finished one book and started the next, and the catalog
+  says how many books an order contains before you import it. There is a new filter for finding
+  orders of this kind.
+  Reading is shared between the two versions, which is the point of doing it this way rather than
+  listing the volumes as if they were issues. Tick an issue in one and it is ticked in the other,
+  every issue keeps its real cover and its Marvel Unlimited link, and exporting a grouped order
+  writes the volumes into the file so re-importing it gets them back.
+  Two things are stated plainly rather than glossed over. The volume line-up follows Comic Book
+  Herald's guide and could not be checked against Marvel's own data, because Marvel publishes no
+  collection records at all for this period. And six issues that Marvel has not collected are left
+  out of the grouped version, so it is 132 issues where the issue-by-issue version is 138. Both are
+  written on the card before you import.
+  Nothing about the lists you have already imported changes.
+
 - **A short version of three event reading orders.** The catalog could already show two versions of
   one story side by side, and the Hickman run used it, but every event was offered only in full:
   House of M at 20 issues, Civil War at 31, Secret Invasion at 36. Each of those three now has a

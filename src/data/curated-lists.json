@@ -98,7 +98,44 @@
         "Ultimate Endgame",
         "relaunch"
       ],
+      "group": "new-ultimate-universe",
+      "groupName": "The New Ultimate Universe",
+      "variant": "Every issue, in publication order",
       "expect": 138
+    },
+    {
+      "id": "new-ultimate-universe-trades",
+      "name": "The New Ultimate Universe: Collected Editions",
+      "description": "The same line read the way it is collected, one section per trade paperback, for readers who buy the books rather than the single issues. Each section is a volume you can buy, and it tracks its own progress. Reading is shared with the issue-by-issue order, so an issue ticked in one is ticked in the other. The volume line-up follows Comic Book Herald's collected-edition guide and is not derived from Marvel metadata, which carries no collection records for this era. Six issues Marvel has not collected are left out: the 2024 Free Comic Book Day issue and the five-part Ultimate Impact: Reborn.",
+      "type": "era",
+      "depth": "essential",
+      "beginner": true,
+      "coverIssueId": 97145,
+      "sourceFile": "new-ultimate-universe-trades.md",
+      "sourceLicense": "Compiled for this project",
+      "out": "new_ultimate_universe_trades.json",
+      "characters": [
+        "The Maker",
+        "Spider-Man",
+        "Black Panther",
+        "X-Men",
+        "The Ultimates",
+        "Wolverine",
+        "Hawkeye"
+      ],
+      "keywords": [
+        "Jonathan Hickman",
+        "Ultimate Universe",
+        "trade paperback",
+        "collected editions",
+        "collections",
+        "Comic Book Herald",
+        "Earth-6160"
+      ],
+      "group": "new-ultimate-universe",
+      "groupName": "The New Ultimate Universe",
+      "variant": "By collected edition",
+      "expect": 132
     },
     {
       "id": "house-of-m",
