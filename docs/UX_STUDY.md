@@ -691,8 +691,12 @@ Recommendation: reflect the active view and list in the URL hash and restore fro
 which is the smallest change that returns Back, reload and bookmarking together
 Backlog item: BL-036
 Resolved: BL-036 took the recommendation as written. The evidence above is left describing the
-state that prompted the finding, including the grep that found no routing at all, so its citation
-is re-aimed rather than rewritten; every one of those five terms is now present. The view and the
+state that prompted the finding, including the grep that found no routing at all, because a
+finding's evidence records what was measured when it was raised. Four of those six terms are now
+present: `replaceState`, `location.hash`, `hashchange` and `history.`. Two are still absent, and
+deliberately so. `pushState` is absent because a history entry is created by assigning to
+`location.hash`, which is what a deliberate navigation does, and `popstate` is absent because the
+listener is on `hashchange`, which is the event a fragment change actually raises. The view and the
 active list are carried in the hash, restored on load, and Back and Forward move between views
 rather than out of the app. The hash was the only mechanism available rather than the merely
 preferable one: Repository Constraint 5 binds the storage bucket to one origin, and `server.mjs`

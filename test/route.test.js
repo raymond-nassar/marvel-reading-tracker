@@ -110,10 +110,17 @@ test('main.js takes its view list from the route module rather than keeping a se
   lacks(main, /const VIEWS = \[/, 'a second VIEWS declaration in main.js');
 });
 
-test('main.js listens for hashchange and restores the route at boot', () => {
+// Asserting the handler's body, not just that a listener exists. Removing the applyRoute call
+// leaves both the listener and the boot read in place, so a check for those two strings alone
+// stays green while Back and Forward silently stop working. Measured against that exact mutation.
+test('main.js listens for hashchange and acts on the route it reads', () => {
   const main = read('src/js/main.js');
-  has(main, /addEventListener\('hashchange'/, "a 'hashchange' listener");
-  has(main, /parseRoute\(location\.hash\)/, 'the boot read of location.hash');
+  has(
+    main,
+    /addEventListener\('hashchange',[^)]*\(\) => \{\s*const route = parseRoute\(location\.hash\);\s*if \(route\) applyRoute\(route, \{ focus: true \}\);/,
+    'a hashchange handler that reads the route and applies it with focus',
+  );
+  has(main, /const bootRoute = parseRoute\(location\.hash\)/, 'the boot read of location.hash');
 });
 
 // The passive path must never push. A reader who marks twenty issues read and then presses Back
