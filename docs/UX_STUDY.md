@@ -456,6 +456,17 @@ so what differs is palette alone, which is the intended shape of the change rath
 `docs/ux-artifacts/09-settings-theme-1280.png` shows the override control and
 `docs/ux-artifacts/09-progress-seeded-prefers-light.png` a second surface under the light palette.
 
+The palette gate that shipped alongside those recorded six boundaries below the 3:1 non-text floor
+rather than raising them, to keep that change to a refactor. They were raised under BL-065, and the
+pair that shows it is `docs/ux-artifacts/10-controls-dark-before.png` against
+`docs/ux-artifacts/10-controls-dark-after.png`, with `docs/ux-artifacts/10-controls-light-before.png`
+and `docs/ux-artifacts/10-controls-light-after.png` for the light theme. The "before" halves are
+reproduced by putting the tokens back to their old values through the CSSOM rather than by checking
+out the old tree, so the two halves of each pair differ in nothing else. Layout is identical between
+them, as it was for the pair above, so what differs is the boundary alone.
+`docs/ux-artifacts/10-reading-controls-dark.png` and
+`docs/ux-artifacts/10-reading-controls-light.png` show the whole surface the crops come from.
+
 #### UX-A-009: The full availability description is carried only in a title attribute
 
 Surface: availability badge, reading view rows

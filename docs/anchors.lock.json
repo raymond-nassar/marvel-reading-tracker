@@ -1,6 +1,6 @@
 {
-  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:849-851|0": {
-    "anchor": "docs/UX_STUDY.md:849-851",
+  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:860-862|0": {
+    "anchor": "docs/UX_STUDY.md:860-862",
     "fp": "1e64d83a8ff9a25f",
     "head": "**Puppeteer was installed outside the repository, deliberately.** `node_modules/` is not covered by"
   },
@@ -634,8 +634,8 @@
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
-  "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:776-779|0": {
-    "anchor": "docs/UX_STUDY.md:776-779",
+  "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:787-790|0": {
+    "anchor": "docs/UX_STUDY.md:787-790",
     "fp": "a2ba5dc6346c8d63",
     "head": "### As-is journey map"
   },
