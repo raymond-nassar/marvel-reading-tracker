@@ -915,6 +915,23 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .blocked p { margin: 0 0 10px; max-width: 68ch; line-height: 1.5; }
 .blocked-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 
+/* BL-072. The ghost border is calibrated for the page and the card. On this banner the ghost's own
+   fill sits closer in luminance to `--line-2` than either of those does, warmer and lighter in dark
+   but warmer and darker in light, so the direction differs by theme while the squeeze does not.
+   Measured against that fill, which is what the reader actually sees the border against, `--line-2`
+   falls to 2.44:1 dark and 2.39:1 light, under the 3:1 a control boundary needs. `--muted` is the
+   quietest token that clears there, at 4.29 and 4.39, and staying quiet is the entire point of
+   making the button a ghost. `--warn` clears too, at 4.42 and 4.91, and was rejected for the
+   opposite reason: it is the banner's own alarm colour and would pull the eye towards the action
+   the paragraph above says to take second.
+
+   The figures are quoted against the button's fill rather than the banner deliberately. Against the
+   banner itself `--line-2` reads 2.90 and 2.73 and `--muted` reads 5.11 and 5.00, which would
+   overstate both. A ghost button is a tint over whatever it is dropped onto, so its border is a
+   boundary on that tint, not on the surface underneath. This is the same misattribution BL-069
+   recorded one surface earlier. */
+.blocked .btn-g { border-color: var(--muted); }
+
 #save-report:empty { display: none; }
 #save-report { margin-bottom: 20px; }
 

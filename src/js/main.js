@@ -1185,7 +1185,7 @@ function addButton(list, inLibrary) {
   }
   return el('button', {
     type: 'button',
-    class: 'btn btn-p',
+    class: 'btn',
     // Read out of context, "Add" says nothing; the order's name has to be in the name.
     'aria-label': `Add ${list.name} to library`,
     dataset: { key: list.id, act: 'main' },
@@ -2644,7 +2644,7 @@ function catalogRow(list, { variant = false } = {}) {
       attributionLine(list),
     ]),
     el('button', {
-      class: 'btn btn-p',
+      class: 'btn',
       type: 'button',
       // The accessible name always carries the full list name, so a button read out of
       // context never says only "Import Essential reading".
