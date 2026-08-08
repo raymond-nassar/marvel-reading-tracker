@@ -126,6 +126,22 @@ quote in a bug report.
 
 ### Fixed
 
+- **A restored backup could silently lose a reading list.** This only affected a state file or
+  backup that had been hand-edited, so it is very unlikely to have happened to you, but it was
+  possible and the way it failed was the worst kind: quietly. If a list was stored under one of a
+  handful of reserved names that JavaScript gives every object for free, the app would file it in a
+  place that is real when you ask for it directly but invisible to anything counting through the
+  lists. The list would open and track progress perfectly well, so nothing looked wrong, and then the
+  next backup you exported would be written with no lists in it at all while still naming that list
+  as the one you were reading. Restoring that backup lost it for good. A related version of the same
+  fault let the app start up pointing at a list that was never there, which threw an error during
+  boot and left the address bar dead until the stored file was cleared by hand.
+
+  The app now keeps its lists in a container that has none of those reserved names to begin with, so
+  there is nothing left to collide with. Nothing about your existing lists, progress or backups
+  changes, and no file needs converting. Alongside it, six new automated checks were added, and to
+  make sure they were worth having, each one was first run against the old code to watch it fail.
+
 - **The cover-art switch was almost invisible when it was off.** Turn cover art off and the little
   switch beside the label went pale, to the point where it read as a smudge rather than a control:
   in the light theme both the track and the white dot on it were about as distinct from their

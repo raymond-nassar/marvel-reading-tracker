@@ -59,8 +59,8 @@
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:652-680|0": {
-    "anchor": "src/js/lib/model.js:652-680",
+  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:671-699|0": {
+    "anchor": "src/js/lib/model.js:671-699",
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
@@ -94,8 +94,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3543-3546|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3543-3546",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3581-3584|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3581-3584",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -129,8 +129,8 @@
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:563-589|0": {
-    "anchor": "src/js/lib/model.js:563-589",
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:582-608|0": {
+    "anchor": "src/js/lib/model.js:582-608",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -469,8 +469,8 @@
     "fp": "983f9ab11ea2e4be",
     "head": "{"
   },
-  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:652-680|0": {
-    "anchor": "src/js/lib/model.js:652-680",
+  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:671-699|0": {
+    "anchor": "src/js/lib/model.js:671-699",
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
@@ -514,8 +514,8 @@
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:563-589|0": {
-    "anchor": "src/js/lib/model.js:563-589",
+  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:582-608|0": {
+    "anchor": "src/js/lib/model.js:582-608",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -599,8 +599,8 @@
     "fp": "d66d703756839bee",
     "head": "export const SCHEMA_VERSION = 2;"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:563-589|0": {
-    "anchor": "src/js/lib/model.js:563-589",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:582-608|0": {
+    "anchor": "src/js/lib/model.js:582-608",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -629,8 +629,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:432-435|0": {
-    "anchor": "CHANGELOG.md:432-435",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:448-451|0": {
+    "anchor": "CHANGELOG.md:448-451",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -669,18 +669,18 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3520-3522|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3520-3522",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3558-3560|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3558-3560",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3678-3679|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3678-3679",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3716-3717|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3716-3717",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3698-3700|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3698-3700",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3736-3738|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3736-3738",
     "fp": "affcee43c8cd0de5",
     "head": "Evidence: `scripts/lib/fetch-json.mjs:52-61`, `scripts/lib/fetch-json.mjs:22-37`."
   },
@@ -914,78 +914,78 @@
     "fp": "fe98ae5e903d17b9",
     "head": "function quoteNote(note) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:197-200|0": {
-    "anchor": "src/js/lib/model.js:197-200",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:216-219|0": {
+    "anchor": "src/js/lib/model.js:216-219",
     "fp": "082f8d3733d42e8c",
     "head": "// A duplicate is the reader's own working copy, so it does not inherit the claim to be"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:235|0": {
-    "anchor": "src/js/lib/model.js:235",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:254|0": {
+    "anchor": "src/js/lib/model.js:254",
     "fp": "7e677e3b33cea4ce",
     "head": "const active = state.active === listId ? (listOrder[0] ?? null) : state.active;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:236-237|0": {
-    "anchor": "src/js/lib/model.js:236-237",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:255-256|0": {
+    "anchor": "src/js/lib/model.js:255-256",
     "fp": "1519b242fd9ec11a",
     "head": "// Issue metadata and read state intentionally survive: the same issues may be in other"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:254-266|0": {
-    "anchor": "src/js/lib/model.js:254-266",
-    "fp": "fc9aa4fcc2898856",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:273-285|0": {
+    "anchor": "src/js/lib/model.js:273-285",
+    "fp": "8eea39a20bf5889b",
     "head": "export function restoreList(state, list, { index = null, active = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:268-270|0": {
-    "anchor": "src/js/lib/model.js:268-270",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:287-289|0": {
+    "anchor": "src/js/lib/model.js:287-289",
     "fp": "0986f3ed8eb823a0",
     "head": "export function setActive(state, listId) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:373-380|0": {
-    "anchor": "src/js/lib/model.js:373-380",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:392-399|0": {
+    "anchor": "src/js/lib/model.js:392-399",
     "fp": "9d3833100d6ca7df",
     "head": "export function markRead(state, issueId, read = true, at = Date.now()) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:413-421|0": {
-    "anchor": "src/js/lib/model.js:413-421",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:432-440|0": {
+    "anchor": "src/js/lib/model.js:432-440",
     "fp": "1c7042c5f8e4e566",
     "head": "export function setIssueNote(state, issueId, text) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:452-463|0": {
-    "anchor": "src/js/lib/model.js:452-463",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:471-482|0": {
+    "anchor": "src/js/lib/model.js:471-482",
     "fp": "8777bc126b77f838",
     "head": "// Aggregated over UNIQUE issue ids, so an issue in two lists counts once. Given a listId it counts"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:483-533|0": {
-    "anchor": "src/js/lib/model.js:483-533",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:502-552|0": {
+    "anchor": "src/js/lib/model.js:502-552",
     "fp": "44ae59dee9aaa6c8",
     "head": "// Which of the reader's lists an issue is in, named, in rail order. Read state and issue"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:588-589|0": {
-    "anchor": "src/js/lib/model.js:588-589",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:607-608|0": {
+    "anchor": "src/js/lib/model.js:607-608",
     "fp": "90f527f0d8550a9f",
     "head": "// Newer than we understand: refuse rather than silently mangling it."
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:602|0": {
-    "anchor": "src/js/lib/model.js:602",
-    "fp": "3317afe7370b3517",
-    "head": "if (Number.isInteger(id)) read[id] = Number(v) || Date.now();"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:621|0": {
-    "anchor": "src/js/lib/model.js:621",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:640|0": {
+    "anchor": "src/js/lib/model.js:640",
     "fp": "0c1b3de0385c2af9",
     "head": "lists[k] = {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:636|0": {
-    "anchor": "src/js/lib/model.js:636",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:640|1": {
+    "anchor": "src/js/lib/model.js:640",
+    "fp": "0c1b3de0385c2af9",
+    "head": "lists[k] = {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:655|0": {
+    "anchor": "src/js/lib/model.js:655",
     "fp": "df3f202adf291c82",
     "head": "const listOrder = (Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists)).filter((id) =>"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:647|0": {
-    "anchor": "src/js/lib/model.js:647",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:666|0": {
+    "anchor": "src/js/lib/model.js:666",
     "fp": "003c21f2deb00338",
     "head": "active: lists[raw.active] ? raw.active : (listOrder[0] ?? null),"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:647|1": {
-    "anchor": "src/js/lib/model.js:647",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:666|1": {
+    "anchor": "src/js/lib/model.js:666",
     "fp": "003c21f2deb00338",
     "head": "active: lists[raw.active] ? raw.active : (listOrder[0] ?? null),"
   },
@@ -1524,8 +1524,8 @@
     "fp": "5a57b37f0d0a4cae",
     "head": "function doManual() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/lib/model.js:179|0": {
-    "anchor": "src/js/lib/model.js:179",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/lib/model.js:198|0": {
+    "anchor": "src/js/lib/model.js:198",
     "fp": "e409e1d7f9185731",
     "head": "// Read progress is deliberately NOT copied. It is global, keyed by issue id (see the note at"
   },
@@ -1574,9 +1574,9 @@
     "fp": "fe98ae5e903d17b9",
     "head": "function quoteNote(note) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-017|src/js/lib/model.js:404-433|0": {
-    "anchor": "src/js/lib/model.js:404-433",
-    "fp": "5a7b0a9087d0b27f",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-017|src/js/lib/model.js:423-452|0": {
+    "anchor": "src/js/lib/model.js:423-452",
+    "fp": "12f9a060b264d675",
     "head": "// ---------------------------------------------------------------- notes"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-018|src/js/lib/readingFilters.js:46|0": {
@@ -1614,8 +1614,8 @@
     "fp": "756ffa3269a6fcb8",
     "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:652-680|0": {
-    "anchor": "src/js/lib/model.js:652-680",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:671-699|0": {
+    "anchor": "src/js/lib/model.js:671-699",
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
@@ -1734,8 +1734,8 @@
     "fp": "6d50373e8d6e684f",
     "head": "\"version\": \"1.0.0\","
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:652-680|0": {
-    "anchor": "src/js/lib/model.js:652-680",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:671-699|0": {
+    "anchor": "src/js/lib/model.js:671-699",
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
@@ -1779,13 +1779,13 @@
     "fp": "d66d703756839bee",
     "head": "export const SCHEMA_VERSION = 2;"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:563-589|0": {
-    "anchor": "src/js/lib/model.js:563-589",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:582-608|0": {
+    "anchor": "src/js/lib/model.js:582-608",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|test/model.test.js:550-552|0": {
-    "anchor": "test/model.test.js:550-552",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|test/model.test.js:555-557|0": {
+    "anchor": "test/model.test.js:555-557",
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
   },
@@ -1794,8 +1794,8 @@
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-017|src/js/lib/model.js:413-421|0": {
-    "anchor": "src/js/lib/model.js:413-421",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-017|src/js/lib/model.js:432-440|0": {
+    "anchor": "src/js/lib/model.js:432-440",
     "fp": "1c7042c5f8e4e566",
     "head": "export function setIssueNote(state, issueId, text) {"
   },
@@ -1934,8 +1934,8 @@
     "fp": "fd168a7fecabce4c",
     "head": "body.nocovers .tgl .sw { background: var(--track-2); }"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-068|src/js/lib/model.js:621|0": {
-    "anchor": "src/js/lib/model.js:621",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-068|src/js/lib/model.js:640|0": {
+    "anchor": "src/js/lib/model.js:640",
     "fp": "0c1b3de0385c2af9",
     "head": "lists[k] = {"
   },

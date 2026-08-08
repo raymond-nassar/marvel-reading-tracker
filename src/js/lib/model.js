@@ -10,6 +10,25 @@ import { compareIssues } from './sort.js';
 
 export const SCHEMA_VERSION = 2;
 
+// The list map is keyed by ids that come from a restored backup, so a reader whose file happens to
+// contain a list called `__proto__` or `constructor` used to lose it. An ordinary object answers
+// `lists[id]` from its prototype for those names, so the list read back as something that was never
+// stored, and writing `lists.__proto__ = list` invoked the setter instead of storing a member. It
+// is a null-prototype map now, which has no inherited names to collide with and no setter to invoke.
+//
+// The helpers exist because the map is rebuilt in ten places and `{ ...Object.create(null) }` is an
+// ordinary object again, so a single `Object.create(null)` in one place evaporates on the reader's
+// first rename. A list of sites that must each be written correctly is the same defect as a list of
+// sites that must each be guarded, so the rebuild goes through these rather than through a spread,
+// and a test scans `src/js` to keep the eleventh site from reintroducing it.
+const emptyLists = () => Object.create(null);
+const cloneLists = (lists) => Object.assign(Object.create(null), lists);
+const withList = (lists, id, list) => {
+  const next = cloneLists(lists);
+  next[id] = list;
+  return next;
+};
+
 export function createEmptyState() {
   return {
     schemaVersion: SCHEMA_VERSION,
@@ -20,7 +39,7 @@ export function createEmptyState() {
     // full orders overlap heavily, so a note attached to one path through an issue would be
     // invisible on the other while the reader was looking at the same comic.
     notes: {},
-    lists: {},
+    lists: emptyLists(),
     listOrder: [],
     active: null,
   };
@@ -158,7 +177,7 @@ export function createList(state, { name, description = '', id = newId(), itemId
   };
   return {
     ...state,
-    lists: { ...state.lists, [listId]: list },
+    lists: withList(state.lists, listId, list),
     listOrder: [...state.listOrder, listId],
     active: state.active ?? listId,
   };
@@ -169,7 +188,7 @@ export function renameList(state, listId, name, description) {
   if (!list) return state;
   const next = { ...list, name: String(name ?? list.name).slice(0, MAX_NAME) };
   if (description !== undefined) next.description = String(description).slice(0, MAX_DESCRIPTION);
-  return { ...state, lists: { ...state.lists, [listId]: next } };
+  return { ...state, lists: withList(state.lists, listId, next) };
 }
 
 // Returns { state, listId } because the caller needs the copy's id, and the usual trick of
@@ -210,7 +229,7 @@ export function duplicateList(state, listId, { name } = {}) {
   listOrder.splice(at < 0 ? listOrder.length : at + 1, 0, id);
 
   return {
-    state: { ...state, lists: { ...state.lists, [id]: copy }, listOrder, active: state.active ?? id },
+    state: { ...state, lists: withList(state.lists, id, copy), listOrder, active: state.active ?? id },
     listId: id,
   };
 }
@@ -229,7 +248,7 @@ function copyName(state, base) {
 
 export function deleteList(state, listId) {
   if (!state.lists[listId]) return state;
-  const lists = { ...state.lists };
+  const lists = cloneLists(state.lists);
   delete lists[listId];
   const listOrder = state.listOrder.filter((id) => id !== listId);
   const active = state.active === listId ? (listOrder[0] ?? null) : state.active;
@@ -259,7 +278,7 @@ export function restoreList(state, list, { index = null, active = false } = {}) 
   listOrder.splice(at, 0, list.id);
   return {
     ...state,
-    lists: { ...state.lists, [list.id]: list },
+    lists: withList(state.lists, list.id, list),
     listOrder,
     active: active || state.active == null ? list.id : state.active,
   };
@@ -323,7 +342,7 @@ export function addIssuesToList(state, listId, inputs, { at = null, sort = false
   }
 
   return {
-    state: { ...next, lists: { ...next.lists, [listId]: { ...list, itemIds, collectedIn } } },
+    state: { ...next, lists: withList(next.lists, listId, { ...list, itemIds, collectedIn }) },
     added: fresh.length,
     skipped,
   };
@@ -340,7 +359,7 @@ export function removeFromList(state, listId, issueId) {
   // holds it.
   const collectedIn = { ...(list.collectedIn ?? {}) };
   delete collectedIn[id];
-  return { ...state, lists: { ...state.lists, [listId]: { ...list, itemIds, collectedIn } } };
+  return { ...state, lists: withList(state.lists, listId, { ...list, itemIds, collectedIn }) };
 }
 
 export function moveItem(state, listId, issueId, delta) {
@@ -352,7 +371,7 @@ export function moveItem(state, listId, issueId, delta) {
   const to = clamp(from + delta, 0, itemIds.length - 1);
   if (to === from) return state;
   itemIds.splice(to, 0, ...itemIds.splice(from, 1));
-  return { ...state, lists: { ...state.lists, [listId]: { ...list, itemIds } } };
+  return { ...state, lists: withList(state.lists, listId, { ...list, itemIds }) };
 }
 
 export function moveItemTo(state, listId, issueId, index) {
@@ -429,7 +448,7 @@ export function issueNote(state, issueId) {
 export function setListNote(state, listId, text) {
   const list = state.lists[listId];
   if (!list) return state;
-  return { ...state, lists: { ...state.lists, [listId]: { ...list, note: normalizeNote(text) } } };
+  return { ...state, lists: withList(state.lists, listId, { ...list, note: normalizeNote(text) }) };
 }
 
 // ---------------------------------------------------------------- derived
@@ -614,7 +633,7 @@ function coerce(raw) {
     const note = normalizeNote(v);
     if (Number.isInteger(id) && id !== 0 && note) notes[id] = note;
   }
-  const lists = {};
+  const lists = emptyLists();
   for (const [k, v] of Object.entries(raw.lists ?? {})) {
     if (!v || typeof v !== 'object') continue;
     const itemIds = dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter((n) => Number.isInteger(n) && n !== 0));

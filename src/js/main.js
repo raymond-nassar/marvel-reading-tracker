@@ -749,14 +749,14 @@ function endFilterRun({ commit }) {
 // is the opposite. An address with no filter can be a bookmark made before this shipped, and
 // answering it with All would discard the setting BL-037 exists to keep across a reload, so boot
 // passes whatever was restored from settings.
-// `route.listId` is a string a reader can type, and `store.state.lists` is a plain object, so a
-// bare lookup answers `__proto__`, `constructor` or `toString` with something from Object.prototype
+// `route.listId` is a string a reader can type, and the list map used to be an ordinary object, so a
+// bare lookup answered `__proto__`, `constructor` or `toString` with something from Object.prototype
 // and this guard would pass on a list that does not exist. Measured on the tree before this line
 // changed: opening `#/read/__proto__` persisted `active: "__proto__"` and then threw a TypeError out
 // of listProgress, and because the id survives in storage the same throw happened on the next boot,
 // during module evaluation, which left the hashchange listener unregistered. `Object.hasOwn` asks
-// the question the guard means. The same lookup inside model.js reads a state file rather than an
-// address and is left to BL-068.
+// the question the guard means. BL-068 has since given the map a null prototype, so this now holds
+// twice over, and it stays because it states the question rather than relying on the map's type.
 function applyRoute(route, { focus, filterIfAbsent }) {
   if (route.listId && route.listId !== activeListId() && Object.hasOwn(store.state.lists, route.listId)) {
     store.update((s) => setActive(s, route.listId));
