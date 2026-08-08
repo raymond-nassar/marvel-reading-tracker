@@ -218,6 +218,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2792-2826 |
+| BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | scripts/check-anchors.mjs:247 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:208 |
 | BL-058 | Keep focus on the home grid and the rail when their lists rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | absent: any capture of the focused control before importCurated disables it, read of addFromCatalog and renderRail |
@@ -2792,7 +2793,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2549-2552`.
+`PRODUCT_BACKLOG.md:2550-2553`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -2999,10 +3000,10 @@ missed and the record described as complete; both are now past tense.
 
 Three things the review found that the gates did not, all of them the same shape as the fix itself.
 The source scan matched a single identifier before `.lists`, so it was blind to `store.state.lists`,
-which is how the map is spelled in all fifty-five references in `main.js`, and blind to a spread
-split across lines. That is exactly the wrong file to be blind to, because it is the one file with no
-behavioural coverage at all, so a rebuild introduced there would have been caught by nothing. The
-scan now matches a dotted receiver over the whole file text rather than one identifier per line.
+which is how the map is spelled in every one of its twenty references in `main.js`, and blind to a
+spread split across lines. That is exactly the wrong file to be blind to, because it is the one file
+with no behavioural coverage at all, so a rebuild introduced there would have been caught by nothing.
+The scan now matches a dotted receiver over the whole file text rather than one identifier per line.
 Separately, `createEmptyState` was the one producing site held by no check: reverting it alone left
 all sixty-eight tests green, because a state with no list in it is never looked up by a colliding
 name. One assertion closes it. Both were proved by mutation after the fix, not asserted.
@@ -3018,10 +3019,56 @@ prevent. The instructions now say to read one line per citation rather than one 
 and to expect those two counts to match.
 
 Verified: 494 tests, 0 fail, lint 0, anchors 0 drifted. On the unfixed tree the six new permanent
-tests all fail and the harness reports 15 of 17 failing. Seven mutations were tried and all seven
+tests all fail and the harness reports 15 of 17 failing. Eight mutations were tried and all eight
 caught: the whole module reverted, `coerce` reverted alone, one rename site put back to a spread,
 that same spread split across lines, a spread through a dotted receiver in `main.js`, `withList`
-returning an ordinary object, and `createEmptyState` reverted alone.
+returning an ordinary object, `createEmptyState` reverted alone, and `restoreList` reverted alone.
+Two further probes check the scan does not cry wolf: a comment spelling the forbidden idiom out as a
+warning does not fire it, while real code with a trailing comment on the same line still does.
+
+A second review round found two more of the same shape and both are closed here. `restoreList` was
+held by the source scan and nothing else, so reverting it alone failed structurally and passed
+behaviourally, and that is the undo-after-delete path, which is where this repository has twice found
+the most dangerous code in a change. It now has its own assertion. The scan also fired on any comment
+or string that spelled the idiom out, which is a false alarm that would have landed on the very
+comment a maintainer would write to warn the next person off, and false alarms are how a check gets
+ignored. It skips text after a line comment marker now.
+
+Also worth recording as the same failure this item keeps producing: the "fifty-five references"
+figure in an earlier draft of this block was carried from a review comment rather than counted. It is
+twenty. The review that supplied the number caught it in the next round, which is the argument for
+re-deriving a figure even when it arrives from something as authoritative-looking as a review.
+
+**BL-070: Print each citation's claim beside its line at bless time**
+
+- [ ] Print `claim -> head` per citation on a re-aiming bless, one line per citation
+- [ ] Decide whether two citations resolving to one anchor with unlike claims is worth a notice
+- [ ] Prove it by reproducing the BL-068 collision and watching the print catch it
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of the BL-068 review, which found a citation blessed onto a line that had nothing to do
+with its claim. The failure was not carelessness at the bless step so much as a printer that
+deduplicates: two citations had been re-aimed onto one line, the print showed that line once, and it
+read perfectly well for the claim it did legitimately belong to. The instructions were tightened to
+say read each line beside its own claim sentence, but that is a human discipline, and this repository
+argues in `src/js/lib/model.js` and in BL-068's own scan test that a discipline everyone must
+remember at every site is the defect rather than the fix.
+
+The structural version is close to free, which is why this is Debt rather than a Proposed idea.
+`scripts/check-anchors.mjs:247` already slices the prose immediately preceding each citation into a
+`claim` field, and the bless path at `scripts/check-anchors.mjs:328` then writes only the anchor,
+fingerprint and head, discarding it. So the script already holds both halves of the pairing that step
+3 asks a person to make by hand, and printing them together on the run that re-aims them is the whole
+change. `reportNearMisses` at `scripts/check-anchors.mjs:296` is the precedent for the script
+printing a notice of this kind.
+
+The second task is the open question rather than a decision already taken. A blessed lock currently
+has 90 anchors cited by more than one citation, so a collision cannot be an error and probably cannot
+even be a warning without drowning the useful signal. The narrower version is to notice only when two
+citations in the same document and scope resolve to one anchor while their claim text differs
+materially, which is the exact shape of the BL-068 case. Whether that is worth the false-positive
+budget is the thing to settle when this is picked up.
 
 **BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
@@ -3082,7 +3129,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3741-3742` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3788-3789` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3092,11 +3139,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:163-165`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3761-3763`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3808-3810`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3583-3585` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3630-3632` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3805,7 +3852,7 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Error handling and recovery | Gap, closed by BL-034. Curated import used to report failure through native `alert()` while every other path used the in-page notice system. It now writes to a pane chosen when the message is written, so on the landing page the reason appears beside the catalog it is about rather than stopping the page, and it is not left in a view the reader has already scrolled or navigated away from. Evidence: `src/js/main.js:2710`, `src/js/main.js:2728-2730`, `src/js/main.js:2761` against `src/js/main.js:245-361`. |
 | Offline behavior | No gap, and no proposal. Probed as required rather than treated as a caching problem. With the local server running and no internet, the app starts, reads saved state, imports any bundled curated list and marks issues read, because those paths touch only same-origin files. Only cover images, metadata hydration and search degrade, and hydration failure is already surfaced as a pending state rather than as silence. Evidence: `src/data/house_of_m.json`, `src/js/main.js:1874-1880` (pending and by-hand badges), `absent: serviceWorker|navigator.onLine|manifest.json, case-insensitive grep across src/`. Repository Constraint 1 forbids caching cover bytes, so no cover-caching improvement is proposed. |
 | Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:671-699`, `src/js/main.js:2923-2929`. |
-| Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:582-608`, `test/model.test.js:555-557`. |
+| Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:582-608`, `test/model.test.js:558-560`. |
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3016-3018`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:20-33` and onto the read out of storage at `src/js/main.js:363-387`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:2934-2935`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
@@ -3838,7 +3885,7 @@ positions in it as it stands.
 ### Case 1: BL-026 is labelled P0 but ranks eighteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 18 of 45.
+- Calculated: WSJF 3.67, rank 18 of 46.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -3857,10 +3904,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks thirty-ninth
+### Case 2: BL-007 is labelled P1 but ranks fortieth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 39 of 45, below thirty-five unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 40 of 46, below thirty-six unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -3916,9 +3963,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 25 of 45. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 19 of 45. Mid-table.
-- BL-017, P2, rank 44 of 45. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 25 of 46. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 19 of 46. Mid-table.
+- BL-017, P2, rank 45 of 46. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

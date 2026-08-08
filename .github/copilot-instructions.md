@@ -172,10 +172,18 @@ per citation but printing is naturally per range, so when a script re-aims two d
 onto the **same** line, a printer that deduplicates shows that line once, it reads correctly for
 whichever claim you happen to have in mind, and the second claim is blessed onto a line that has
 nothing to do with it. That is not hypothetical either: adding nineteen lines to the top of a module
-shifted two separate citations, one landed correctly and one landed thirty-eight lines out on top of
-it, and the deduplicated print showed a single line that read perfectly well. A review caught it
-after the bless. **A citation you did not read individually has not been read**, and the count of
-lines you read should equal the count of citations that moved.
+moved 26 citations of that module, 25 landed correctly and one landed thirty-eight lines out on top
+of another, and the deduplicated print showed a single line that read perfectly well. A review caught
+it after the bless. So **read each cited line beside the sentence that cites it**, not on its own:
+the count rule alone is satisfied by a printer that emits the same wrong line twice. A citation you
+did not read against its own claim has not been read.
+
+Those 26 are the honest scale of the chore, and they are the argument for making this mechanical
+rather than careful. `scripts/check-anchors.mjs` already computes the prose immediately before each
+citation and then discards it at bless time, so the pairing step 3 asks you to do by hand is one the
+script could print. That is filed as BL-070 rather than done here. Until it lands, this is a human
+discipline in a repository that elsewhere argues human disciplines are the defect, and it should be
+read as a stopgap.
 
 Ranges must not end on a blank line.
 

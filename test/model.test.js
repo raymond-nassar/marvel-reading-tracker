@@ -185,6 +185,9 @@ test('undoing a delete puts the list back where it was', () => {
   assert.deepEqual(undone.listOrder, s.listOrder, 'the list returns to its old position, not the end');
   assert.deepEqual(undone.lists[b], list);
   assert.equal(undone.active, b, 'the list being read when it was deleted is being read again');
+  // Undo after a delete is a recovery path, and this is the only site whose rebuild no other
+  // assertion reaches, so without this line the source scan is the entire margin for it.
+  assert.equal(Object.getPrototypeOf(undone.lists), null, 'the restored map has a prototype again');
 });
 
 test('a delete and its undo leave read progress untouched either way', () => {
@@ -837,6 +840,11 @@ test('no rebuild site spreads the list map back into an ordinary object', () => 
     const text = readFileSync(f, 'utf8');
     const re = /\{\s*\.\.\.\s*[\w$]+(?:\s*\.\s*[\w$]+)*\s*\.\s*lists\b/g;
     for (let m = re.exec(text); m; m = re.exec(text)) {
+      // A line comment is the natural place to warn somebody off this idiom, and spelling it out
+      // there must not fire the scan the warning is about. A false alarm on the one comment a
+      // maintainer would write to help is how a check earns the reputation that gets it ignored.
+      const lineStart = text.lastIndexOf('\n', m.index) + 1;
+      if (text.slice(lineStart, m.index).includes('//')) continue;
       offenders.push(`${f.slice(ROOT.length + 1)}:${text.slice(0, m.index).split(/\r?\n/).length}`);
     }
   }
