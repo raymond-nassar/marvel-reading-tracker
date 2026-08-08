@@ -1026,15 +1026,15 @@ one, and `test/fetch-json.test.js` says why it scripts responses "without a stub
 dependency was added, runtime or dev.
 
 `src/js/ask.js` was covered as the third module in place of `main.js`. It is browser-coupled in the
-same way, it is 93 lines against main.js's 2,700, and it holds the module-scope `pending` that every
+same way, it is 93 lines against main.js's 2,755, and it holds the module-scope `pending` that every
 question in the app funnels through, so it carries the same class of risk at a fraction of the cost.
 Tests import a fresh copy per case through a cache-busting query, because that module-scope state
 would otherwise leak between them.
 
 Forty tests were added, taking the suite from 334 to 374, and **all forty were mutation tested
-before being believed**. Twenty-one deliberate bugs were introduced one at a time and the suite was
-required to fail on each. Two rounds were needed, and both findings were defects in the tests rather
-than in the modules:
+before being believed**. Twenty-two deliberate bugs were introduced one at a time and the suite was
+required to fail on each. Three rounds were needed, and every finding was a defect in the tests
+rather than in the modules:
 
 - **The two cancellation guards in `src/js/hydrate.js:69` and `src/js/hydrate.js:74` are textually
   identical, and one test was covering both by accident.** Removing the first guard alone left the
@@ -1050,6 +1050,15 @@ than in the modules:
   `node --test` applies no per-test timeout of its own, so CI would have sat there until the job's
   six-hour limit killed it having reported nothing. Every await of a promise the module owns now
   goes through a two-second cap that rejects, so a hang is reported as the failure it is.
+- **The fake IndexedDB shared a reference where the real one clones, and that alone was holding up a
+  test of the cache's recency ordering.** Found in review rather than by the harness, which had no
+  mutation aimed at that line until the review supplied one. `get` in
+  `src/js/cache.js:59-63` sets `lastAccess` on the entry it just read and then persists it with a
+  `put` it deliberately does not await. Real IndexedDB structured-clones on the way out, so only
+  that `put` can persist anything; the fake handed back the stored object itself, so the assignment
+  alone appeared to have worked. Deleting the `put` left the suite green, which meant the recency
+  ordering eviction depends on was pinned by nothing at all. The fake now clones on `get`, `getAll`
+  and `put`, and the deletion fails as it should.
 
 One mutation was refuted rather than caught, and the test was rewritten around what it proved.
 Removing the `if (full)` guard that skips an empty lookup leaves the stored state byte for byte
@@ -2143,7 +2152,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:1900-1903`.
+`PRODUCT_BACKLOG.md:1909-1912`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -2264,7 +2273,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2851-2852` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2860-2861` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2274,11 +2283,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:160-162`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2871-2873`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2880-2882`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2697-2699` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2706-2708` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -2486,7 +2495,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:294-297` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:298-301` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:153-155` and
 `PRODUCT_BACKLOG.md:160-162` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.

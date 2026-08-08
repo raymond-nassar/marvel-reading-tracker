@@ -128,15 +128,19 @@ quote in a bug report.
   browser features they use, so they run in the ordinary test run with nothing new installed. Forty
   tests were added, taking the suite from 334 to 374.
 
-  Every one of the forty was then checked by deliberately breaking the app in twenty-one different
-  ways, one at a time, and confirming the tests noticed. That found three problems, and all three
+  Every one of the forty was then checked by deliberately breaking the app in twenty-two different
+  ways, one at a time, and confirming the tests noticed. That found four problems, and all four
   were in the new tests rather than in the app. Two tests had been quietly covering the same thing
   twice while leaving a real safeguard unchecked, so a genuine bug slipped past them. Three of the
   deliberate breakages made the test run hang forever instead of failing, which on the build server
   would have meant hours of waiting and no explanation; the tests now give up after two seconds and
-  report the failure. And one test only looked like it was working: it checked the app's saved data
+  report the failure. One test only looked like it was working: it checked the app's saved data
   was unchanged, but the fault it was aimed at leaves the data alone and instead saves it again for
-  no reason, so it now counts the saves. Each was fixed and re-checked before this was called done.
+  no reason, so it now counts the saves. And the stand-in for the browser's storage was handing back
+  the stored item itself where the real one hands back a copy, which made a test of "reading an item
+  marks it as recently used" pass even with that step deleted; since the app uses recency to decide
+  what to discard when the store is full, nothing was actually holding that up. The stand-in now
+  copies, like the real thing. Each was fixed and re-checked before this was called done.
 
   The fourth part of the app named in this work, the large file that draws the screen, is not covered
   and could not be. It cannot even be loaded outside a browser, so there is nothing for a test to

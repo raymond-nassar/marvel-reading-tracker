@@ -52,10 +52,18 @@ function fakeIndexedDB({ openFails = false, openThrows = false, openBlocked = fa
       else req.succeed(fn());
       return req;
     };
+    // Real IndexedDB structured-clones on the way in and on the way out, so a caller never holds a
+    // reference into the store and mutating what `get` handed back changes nothing on disk. Sharing
+    // the reference instead is not a harmless simplification: `get` in src/js/cache.js sets
+    // `lastAccess` on the entry it just read and then persists it with a `put` it deliberately does
+    // not await, and against a shared reference the assignment alone appears to have persisted. The
+    // test asserting a read refreshes the access time passed with that `put` deleted, so the LRU
+    // ordering eviction depends on was pinned by nothing. Cloning is what makes it fail.
+    const clone = (v) => (v === undefined ? undefined : structuredClone(v));
     return {
-      get: (key) => run('get', () => data.get(key)),
-      put: (entry) => run('put', () => data.set(entry.key, entry)),
-      getAll: () => run('getAll', () => [...data.values()]),
+      get: (key) => run('get', () => clone(data.get(key))),
+      put: (entry) => run('put', () => data.set(entry.key, clone(entry))),
+      getAll: () => run('getAll', () => [...data.values()].map(clone)),
       delete: (key) => run('delete', () => data.delete(key)),
       clear: () => run('clear', () => data.clear()),
     };
