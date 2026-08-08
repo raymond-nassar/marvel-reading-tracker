@@ -2969,8 +2969,10 @@ since a map with no prototype has no `__proto__` setter for the write to invoke.
 The choice does not survive being made once. `{ ...Object.create(null) }` yields an ordinary object,
 so a single `Object.create(null)` in `coerce` would evaporate on the reader's first rename and take
 every guarantee with it. So the map is built and rebuilt only through three helpers, `emptyLists`,
-`cloneLists` and `withList`, and all ten rebuild sites now route through them: eight renames or edits
-through `withList`, the delete through `cloneLists`, and `createEmptyState` through `emptyLists`.
+`cloneLists` and `withList`, and all eleven sites that produce a list map now route through them:
+eight renames or edits through `withList`, the delete through `cloneLists`, and `createEmptyState`
+and `coerce` through `emptyLists`. Counted from the source rather than carried from the plan, which
+said ten and had left `coerce` out of its own list.
 
 The prediction in the plan that a fix confined to `coerce` would be caught by asserting on the
 restored state was tested and is wrong. Reverting one rebuild site to `{ ...state.lists, [listId]: next }`
@@ -3057,7 +3059,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3716-3717` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3718-3719` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3067,11 +3069,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:163-165`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3736-3738`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3738-3740`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3558-3560` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3560-3562` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,

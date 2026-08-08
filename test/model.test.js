@@ -811,7 +811,7 @@ test('no rebuild site spreads the list map back into an ordinary object', () => 
   // The behavioural tests above cover the sites that exist. This covers the site somebody adds next.
   // A spread produces an ordinary object even from a null-prototype one, so a single `{ ...x.lists }`
   // anywhere hands Object.prototype back to the whole map and every guarantee above goes with it.
-  // Scanning the source rather than listing the ten known sites is deliberate: a list of places that
+  // Scanning the source rather than listing the known sites is deliberate: a list of places that
   // must each be written correctly is the defect this fix exists to remove, not a way to enforce it.
   const dir = join(ROOT, 'src', 'js');
   const files = [];

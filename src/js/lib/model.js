@@ -16,11 +16,11 @@ export const SCHEMA_VERSION = 2;
 // stored, and writing `lists.__proto__ = list` invoked the setter instead of storing a member. It
 // is a null-prototype map now, which has no inherited names to collide with and no setter to invoke.
 //
-// The helpers exist because the map is rebuilt in ten places and `{ ...Object.create(null) }` is an
-// ordinary object again, so a single `Object.create(null)` in one place evaporates on the reader's
+// The helpers exist because the map is produced in eleven places and `{ ...Object.create(null) }` is
+// an ordinary object again, so a single `Object.create(null)` in one place evaporates on the reader's
 // first rename. A list of sites that must each be written correctly is the same defect as a list of
 // sites that must each be guarded, so the rebuild goes through these rather than through a spread,
-// and a test scans `src/js` to keep the eleventh site from reintroducing it.
+// and a test scans `src/js` to keep the next site added from reintroducing it.
 const emptyLists = () => Object.create(null);
 const cloneLists = (lists) => Object.assign(Object.create(null), lists);
 const withList = (lists, id, list) => {
