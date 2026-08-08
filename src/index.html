@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark" />
+    <!-- Both, so the browser paints its own scrollbars and form controls to the reader's
+         preference from the first frame. The module that narrows this to a single value for an
+         explicit override is deferred, so a value of "dark" here would give a reader who prefers
+         light a dark scrollbar against a light page until it ran. -->
+    <meta name="color-scheme" content="dark light" />
     <title>Marvel Reading Tracker</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e23636'/%3E%3Ctext x='16' y='23' font-family='system-ui' font-size='20' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />

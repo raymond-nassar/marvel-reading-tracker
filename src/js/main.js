@@ -506,15 +506,13 @@ function setTheme(next) {
   );
 }
 
-// A reader on 'system' who changes their system setting should see the page follow without a
-// reload. matchMedia fires only while the preference is being followed; on an explicit choice the
-// attribute already wins, so nothing needs doing.
-function watchSystemTheme() {
-  if (typeof window.matchMedia !== 'function') return;
-  const mq = window.matchMedia('(prefers-color-scheme: light)');
-  const onChange = () => { if (settings.theme === 'system') applyThemeSetting(); };
-  if (typeof mq.addEventListener === 'function') mq.addEventListener('change', onChange);
-}
+// No matchMedia listener. One was written here, and deleting it changed nothing a browser could
+// show: with the stylesheet carrying its own `prefers-color-scheme` block, a reader on 'system'
+// already sees the page follow a live preference change with no JavaScript involved. The listener
+// only ever called applyThemeSetting(), and for 'system' every one of that function's effects is a
+// no-op: the attribute is already absent, the meta tag already says "dark light", and the control
+// already reads 'system'. It was found by mutation, not by review: removing it left a browser
+// check that was written to catch exactly that still reporting a pass.
 
 // ------------------------------------------------------------------ sidebar
 
@@ -2752,7 +2750,6 @@ setInterval(renderQueue, 1000);
 store.load();
 applyCoversSetting();
 applyThemeSetting();
-watchSystemTheme();
 wireSidebar();
 wireNav();
 wireReading();
