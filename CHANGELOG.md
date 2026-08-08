@@ -36,6 +36,25 @@ quote in a bug report.
   written on the card before you import.
   Nothing about the lists you have already imported changes.
 
+- **A light theme, and a Theme setting under Data.** The app has only ever had one look, a dark
+  one. There are now three choices: follow whatever your computer is set to, always dark, or
+  always light. The default follows your computer, so if your machine switches to light in the
+  morning the tracker does too, without you touching anything, and switches back at night. Pick
+  dark or light explicitly and that choice sticks and overrides your computer's. It is remembered
+  in this browser alongside your other settings and, like everything else here, is never sent
+  anywhere.
+  Two things worth knowing. The dark theme has not changed at all. Every colour in it was compared
+  before and after this work, all 194 of them, and none moved, so if you never touch the setting
+  you will not notice a thing. And the app now checks its own colours: every text-and-background
+  combination in both themes is measured against the accepted readability standard each time the
+  project builds, rather than being claimed in a comment nobody re-checks.
+  That check found three things that were already too faint before this change, in the dark theme
+  you have been using since the first release: the outlines of bordered buttons and text fields,
+  the outline of an unticked checkbox, and the empty part of a progress bar. They are not made
+  worse by this change and the light theme has the same three. They are recorded and scheduled to
+  be fixed together rather than quietly patched here, because darkening them changes how every
+  button and checkbox in the app looks, which is a bigger decision than adding a theme.
+
 - **A short version of three event reading orders.** The catalog could already show two versions of
   one story side by side, and the Hickman run used it, but every event was offered only in full:
   House of M at 20 issues, Civil War at 31, Secret Invasion at 36. Each of those three now has a
