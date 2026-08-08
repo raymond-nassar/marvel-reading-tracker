@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import {
   createEmptyState, createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList,
   removeFromList, moveItem, moveItemTo, markRead, toggleRead, isRead, markManyRead,
@@ -7,6 +10,8 @@ import {
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
   normalizeCover, coverUrl, listForCatalogId, listCollections, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
 } from '../src/js/lib/model.js';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const issue = (id, over = {}) => ({
   issueId: id,
@@ -180,6 +185,9 @@ test('undoing a delete puts the list back where it was', () => {
   assert.deepEqual(undone.listOrder, s.listOrder, 'the list returns to its old position, not the end');
   assert.deepEqual(undone.lists[b], list);
   assert.equal(undone.active, b, 'the list being read when it was deleted is being read again');
+  // Undo after a delete is a recovery path, and this is the only site whose rebuild no other
+  // assertion reaches, so without this line the source scan is the entire margin for it.
+  assert.equal(Object.getPrototypeOf(undone.lists), null, 'the restored map has a prototype again');
 });
 
 test('a delete and its undo leave read progress untouched either way', () => {
@@ -749,4 +757,96 @@ test('a malformed collectedIn is discarded rather than trusted', () => {
   raw.lists[id].collectedIn = { 1: 42 };
 
   assert.deepEqual(migrate(raw).lists[id].collectedIn, {});
+});
+
+// ---------------------------------------------------------------- list ids that name prototype members
+
+// A backup is JSON, and JSON.parse defines "__proto__" as an own key rather than invoking the
+// setter, so a list saved under that name reaches migrate intact. An ordinary map then lost it on the
+// way in and answered lists[id] for names nobody stored. These fixtures are built from JSON text on
+// purpose: `{ '__proto__': v }` in an object literal sets the prototype even with a quoted key, so a
+// fixture written that way is empty and the test passes or fails for a reason that is not the app's.
+const protoBackup = (name) => JSON.parse(
+  `{"schemaVersion":${SCHEMA_VERSION},"lists":{"__proto__":{"id":"__proto__","name":${JSON.stringify(name)},"itemIds":[1,2,3],"created":1}},"listOrder":["__proto__"],"active":"__proto__"}`,
+);
+
+const PROTO_NAMES = ['constructor', 'toString', 'valueOf', 'hasOwnProperty', '__proto__'];
+
+test('a restored list whose id names a prototype member is kept rather than lost', () => {
+  const s = migrate(protoBackup('Ruined'));
+  assert.ok(Object.hasOwn(s.lists, '__proto__'), 'the list is not an own member of the map');
+  assert.equal(s.lists['__proto__'].name, 'Ruined');
+  assert.deepEqual(Object.keys(exportBackup(s).lists), ['__proto__'], 'the backup written afterwards drops it');
+});
+
+test('a stored active naming a prototype member is not adopted', () => {
+  for (const name of PROTO_NAMES) {
+    const raw = JSON.parse(`{"schemaVersion":${SCHEMA_VERSION},"lists":{"real":{"id":"real","name":"Real","itemIds":[],"created":1}},"listOrder":["real"],"active":${JSON.stringify(name)}}`);
+    assert.equal(migrate(raw).active, 'real', `active fell through to ${name}`);
+  }
+});
+
+test('a stored order naming prototype members keeps only the lists that exist', () => {
+  const raw = JSON.parse(`{"schemaVersion":${SCHEMA_VERSION},"lists":{"real":{"id":"real","name":"Real","itemIds":[],"created":1}},"listOrder":["real","constructor","toString"],"active":"real"}`);
+  assert.deepEqual(migrate(raw).listOrder, ['real']);
+});
+
+test('setActive refuses an id that only the prototype answers for', () => {
+  const s = createList(createEmptyState(), { name: 'Real', id: 'real' });
+  for (const name of PROTO_NAMES) assert.equal(setActive(s, name).active, 'real', `setActive adopted ${name}`);
+});
+
+test('an ordinary edit leaves the map unable to answer for a name it does not hold', () => {
+  // This is the case that catches a fix applied to coerce alone, and the one that was expected to be
+  // covered by the restore case and is not. A rebuild site written as `{ ...state.lists, [id]: v }`
+  // keeps the renamed list, because a computed key is stored as data even for `__proto__`, while
+  // quietly handing the map Object.prototype back. The list survives its own rename and the damage
+  // lands on the next lookup instead, so the assertion has to be about the names nobody stored.
+  let s = createEmptyState();
+  s = createList(s, { name: 'Real', id: 'real' });
+  const after = renameList(s, 'real', 'Renamed');
+  for (const name of PROTO_NAMES) {
+    assert.equal(after.lists[name], undefined, `a list was found under ${name} after a rename`);
+  }
+  assert.equal(Object.getPrototypeOf(after.lists), null, 'the map has a prototype again after a rename');
+  // The empty map is the one producing site no behavioural assertion reaches, because a state with no
+  // list in it is never looked up by a colliding name. It is held by this line and nothing else.
+  assert.equal(Object.getPrototypeOf(createEmptyState().lists), null, 'a fresh state starts with an ordinary map');
+});
+
+test('no rebuild site spreads the list map back into an ordinary object', () => {
+  // The behavioural tests above cover the sites that exist. This covers the site somebody adds next.
+  // A spread produces an ordinary object even from a null-prototype one, so a single `{ ...x.lists }`
+  // anywhere hands Object.prototype back to the whole map and every guarantee above goes with it.
+  // Scanning the source rather than listing the known sites is deliberate: a list of places that
+  // must each be written correctly is the defect this fix exists to remove, not a way to enforce it.
+  //
+  // The receiver is matched as a dotted path rather than one identifier, and the scan runs over the
+  // whole file rather than line by line, because the map is reached as `store.state.lists` everywhere
+  // in main.js and a spread may be wrapped. A pattern that only matched `state.lists` on one line was
+  // blind to the entire file with no behavioural coverage, which is where the next site is likeliest.
+  const dir = join(ROOT, 'src', 'js');
+  const files = [];
+  const walk = (d) => {
+    for (const e of readdirSync(d, { withFileTypes: true })) {
+      if (e.isDirectory()) walk(join(d, e.name));
+      else if (e.name.endsWith('.js')) files.push(join(d, e.name));
+    }
+  };
+  walk(dir);
+  assert.ok(files.length > 5, 'the scan found almost no files, so it proves nothing');
+  const offenders = [];
+  for (const f of files) {
+    const text = readFileSync(f, 'utf8');
+    const re = /\{\s*\.\.\.\s*[\w$]+(?:\s*\.\s*[\w$]+)*\s*\.\s*lists\b/g;
+    for (let m = re.exec(text); m; m = re.exec(text)) {
+      // A line comment is the natural place to warn somebody off this idiom, and spelling it out
+      // there must not fire the scan the warning is about. A false alarm on the one comment a
+      // maintainer would write to help is how a check earns the reputation that gets it ignored.
+      const lineStart = text.lastIndexOf('\n', m.index) + 1;
+      if (text.slice(lineStart, m.index).includes('//')) continue;
+      offenders.push(`${f.slice(ROOT.length + 1)}:${text.slice(0, m.index).split(/\r?\n/).length}`);
+    }
+  }
+  assert.deepEqual(offenders, [], 'the list map is spread into an object literal, which drops its null prototype');
 });

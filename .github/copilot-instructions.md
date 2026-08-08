@@ -144,7 +144,8 @@ The workflow is:
 2. `npm run anchors` until it reports **0 drifted, 0 new and 0 removed**. The gate exits 1 on any
    of those, not just on drift, so watching the drift count alone will report a pass while CI
    fails. That happened on the first commit of this very file.
-3. **Print the first and last cited line of what you re-aimed and read them.**
+3. **Print the first and last cited line of what you re-aimed and read them, one reading per
+   citation rather than one per distinct range.**
 4. `npm run anchors:bless`, then re-run and expect exit 0.
 
 **Step 3 is not optional.** `anchors:bless` accepts the current state wholesale, which is correct
@@ -165,6 +166,24 @@ Two traps in the gate itself, both hit while writing this file:
   example of a mistake. Writing the wrong citation inside backticks, even to say it was wrong,
   creates that citation and the gate will chase it. Describe a wrong line in plain prose, as "line
   12 of the workflow file", never in the citation form.
+
+And one trap in step 3 itself, which is why it now says one reading per citation. Re-aiming is
+per citation but printing is naturally per range, so when a script re-aims two different citations
+onto the **same** line, a printer that deduplicates shows that line once, it reads correctly for
+whichever claim you happen to have in mind, and the second claim is blessed onto a line that has
+nothing to do with it. That is not hypothetical either: adding nineteen lines to the top of a module
+moved 26 citations of that module, 25 landed correctly and one landed thirty-eight lines out on top
+of another, and the deduplicated print showed a single line that read perfectly well. A review caught
+it after the bless. So **read each cited line beside the sentence that cites it**, not on its own:
+the count rule alone is satisfied by a printer that emits the same wrong line twice. A citation you
+did not read against its own claim has not been read.
+
+Those 26 are the honest scale of the chore, and they are the argument for making this mechanical
+rather than careful. `scripts/check-anchors.mjs` already computes the prose immediately before each
+citation and then discards it at bless time, so the pairing step 3 asks you to do by hand is one the
+script could print. That is filed as BL-070 rather than done here. Until it lands, this is a human
+discipline in a repository that elsewhere argues human disciplines are the defect, and it should be
+read as a stopgap.
 
 Ranges must not end on a blank line.
 
