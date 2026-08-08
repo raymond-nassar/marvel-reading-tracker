@@ -1067,6 +1067,12 @@ the row list had to be character for character identical to the cold one, and it
 was then shown to have teeth: keying a row on its id alone makes it report a row still drawn unread
 while the state says it is read.
 
+The pair of screenshots in `docs/ux-artifacts/` was compared pixel by pixel rather than by eye, and
+the comparison is recorded as it came out rather than rounded to "identical". 1253 of 1,152,000
+pixels differ, 0.1 per cent, at a largest difference of 18 of 255 on any channel, and every one of
+them falls inside a single 32 pixel column at x 375 to 406, which is where the cover thumbnails sit.
+Covers are fetched over the network, so their decoding varies between runs. Nothing else moved.
+
 The four guards added to `test/library.test.js` are source-text tests in the register of the wiring
 tests already there, because `src/js/main.js` still cannot be imported in Node. BL-064 owns that,
 and BL-041's third task stays carried to it rather than ticked here. Six mutations were tried
@@ -2854,7 +2860,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2611-2614`.
+`PRODUCT_BACKLOG.md:2617-2620`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3190,7 +3196,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3849-3850` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3863-3864` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3200,11 +3206,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3869-3871`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3884-3886`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3691-3693` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3697-3699` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
