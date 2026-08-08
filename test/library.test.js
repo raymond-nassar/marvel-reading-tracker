@@ -194,8 +194,10 @@ function sectionIds(html) {
 }
 
 test('every view main.js switches between has a section in the markup, and the reverse', () => {
-  const literal = read('src/js/main.js').match(/const VIEWS = \[([^\]]*)\]/);
-  assert.ok(literal, 'main.js no longer declares a VIEWS list this test can read');
+  // The list moved to src/js/lib/route.js in BL-036, so that one declaration backs both what can
+  // be shown and what a URL can address. Read from there, but keep asserting on the markup.
+  const literal = read('src/js/lib/route.js').match(/export const VIEWS = \[([^\]]*)\]/);
+  assert.ok(literal, 'route.js no longer declares a VIEWS list this test can read');
   assert.match(literal[1], /\.\.\.LIBRARY_VIEWS/, 'VIEWS no longer spreads the Library views in');
   const named = [...literal[1].matchAll(/'([a-z0-9-]+)'/g)].map((m) => m[1]);
   const expected = [...named, ...LIBRARY_VIEWS.map((v) => v.value)].sort();

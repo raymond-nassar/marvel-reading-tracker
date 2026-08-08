@@ -16,6 +16,16 @@ quote in a bug report.
 
 ### Added
 
+- **The address bar now knows where you are.** Until now the app lived at one address no matter
+  what you were looking at, so the browser's Back button dropped you out of the app entirely, a
+  reload always dumped you back on the reading view, and there was no way to bookmark a particular
+  order. All three now work the way you would expect from any other site. Move between views and
+  the address updates; press Back and you return to the view you came from; reload and you land
+  exactly where you were, on the same reading order. You can bookmark a specific order, keep two
+  open in two tabs, and send yourself a link that opens straight to the one you meant.
+  If you follow an old link to a list you have since deleted, the app quietly puts you somewhere
+  real and tidies the address rather than showing you an empty page.
+
 - **A light theme, and a Theme setting under Data.** The app has only ever had one look, a dark
   one. There are now three choices: follow whatever your computer is set to, always dark, or
   always light. The default follows your computer, so if your machine switches to light in the
