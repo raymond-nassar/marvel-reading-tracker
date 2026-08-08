@@ -162,6 +162,19 @@ test('the recorded below-floor pairs are exactly the pairs that measure below it
   assert.deepEqual(fixed, [], 'a recorded pair now meets the floor and should be removed from KNOWN');
 });
 
+test('every recorded pair reports its current ratio, not just its existence', () => {
+  // The docs claim the ratio is printed on every CI run, and for a while that was false: the number
+  // was reachable only under a `--report` flag no CI step passes, so a green run said five pairs were
+  // recorded and never said what they measured. A ratio nobody sees cannot be noticed drifting, and
+  // these are the pairs most likely to move, since the gate stays green anywhere below the floor.
+  const { recorded } = unresolved(css);
+  assert.equal(recorded.length, KNOWN.length, 'a recorded pair reports no measurement');
+  for (const f of recorded) {
+    assert.equal(typeof f.ratio, 'number', `${f.fgName} on ${f.bgName} reports no ratio`);
+    assert.ok(f.where, `${f.fgName} on ${f.bgName} reports no place it is rendered`);
+  }
+});
+
 test('the recorded pairs are all non-text boundaries, never body text', () => {
   // Recording a body-text pair would be waiving readability, which is not a trade this list is
   // allowed to make. Every entry has to be a 3:1 boundary, not a 4.5:1 text pair.

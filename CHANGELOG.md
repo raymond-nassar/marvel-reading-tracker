@@ -141,7 +141,9 @@ quote in a bug report.
   adding those checks it found one more: the white tick inside a checked read checkbox is faint
   against the green in the dark theme. Nothing changed there yet, because the green fill behind it
   already makes a checked box unmistakable and the tick is only a reinforcement, but the number is
-  now recorded and printed on every build rather than going unnoticed.
+  now recorded and printed on every build rather than going unnoticed. That printing had to be built:
+  the check used to report only how many faint spots it was carrying, never how faint each one was, so
+  a colour could drift further without anything saying so. It now prints the measurement itself.
 
 - **The outline around every button, checkbox and text box was too faint to see reliably.** Buttons
   like Rename, Note, Duplicate and Delete list, the row actions on each issue, the reading filters,

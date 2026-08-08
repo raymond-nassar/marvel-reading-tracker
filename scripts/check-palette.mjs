@@ -180,6 +180,7 @@ export function check(css, selector, themeName) {
         fgName,
         bgName,
         ratio: r,
+        where,
         message: `${fgName} on ${bgName} measures ${r.toFixed(2)}:1, below the ${floor}:1 floor, and is ${where}`,
       });
     }
@@ -240,6 +241,15 @@ export const KNOWN = [
   // is reinforcement drawn on an already unmistakable fill, which is the same judgement BL-049
   // reached about the badge borders and the same one BL-067 reached about the switch graphic.
   // Choosing the green is BL-069's, and until it does this line is what keeps the number visible.
+  //
+  // The classification is what makes this entry eligible at all, and it deserves stating rather
+  // than assuming, because the test below rejects any recorded pair carrying the 4.5:1 text floor.
+  // WCAG scopes text to characters that express something in human language. A tick is a symbol
+  // that happens to arrive as a font glyph, and here it is never language to anybody: the button
+  // takes its accessible name from the `aria-label` at `src/js/main.js:1854`, which replaces the
+  // glyph in the name computation, so no assistive technology ever reads it. It is a state
+  // indicator drawn on a control, so the floor is the 3:1 of 1.4.11 and not the 4.5:1 of 1.4.3.
+  // If that reading is ever overturned, this entry is not eligible and the green has to change.
   'dark:--on-accent:--green',
 ];
 
@@ -248,7 +258,11 @@ export function unresolved(css) {
   const keys = new Set(found.map((f) => f.key));
   const fresh = found.filter((f) => !KNOWN.includes(f.key));
   const fixed = KNOWN.filter((k) => !keys.has(k));
-  return { fresh, fixed };
+  // `found` comes back too so the passing path can print what each recorded pair currently measures.
+  // Review found the backlog and the changelog both claiming the ratio was printed on every run when
+  // only the count was, and the number was reachable only under a `--report` flag no CI step passes.
+  const recorded = KNOWN.map((k) => found.find((f) => f.key === k)).filter(Boolean);
+  return { fresh, fixed, recorded };
 }
 
 function main() {
@@ -269,7 +283,7 @@ function main() {
     return;
   }
 
-  const { fresh, fixed } = unresolved(css);
+  const { fresh, fixed, recorded } = unresolved(css);
   for (const f of fresh) console.log(`  ${f.themeName}: ${f.message}`);
   for (const k of fixed) {
     console.log(`  ${k} now meets the floor. Remove it from KNOWN in scripts/check-palette.mjs, and from the BL-065 backlog block if that empties it.`);
@@ -281,6 +295,10 @@ function main() {
   }
   const measured = PAIRS.length * 2;
   console.log(`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor, 0 new.`);
+  // The recorded ones print their current ratio rather than only their count. A number nobody can
+  // see cannot be noticed drifting, and these are exactly the pairs a later change is most likely to
+  // move, since the gate stays green anywhere between the floor and 1:1.
+  for (const f of recorded) console.log(`  ${f.ratio === undefined ? '   ?' : `${f.ratio.toFixed(2)}:1`}  ${f.fgName} on ${f.bgName} (${f.themeName}), ${f.where || f.message}`);
 }
 
 if (process.argv[1] && process.argv[1].endsWith('check-palette.mjs')) main();

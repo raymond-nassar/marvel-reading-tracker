@@ -105,12 +105,19 @@ jobs:
       # The contrast ratios this stylesheet claims used to be prose in CSS comments,
       # and one of those comments warned in as many words that a second theme "would
       # void all of these and the measurement would have to be redone per theme".
-      # That is now two palettes and fifty pairs, which is past the point where a
+      # That is now two palettes and dozens of pairs, which is past the point where a
       # comment written once and never re-measured is worth anything.
       #
-      # Six pairs are recorded as below the floor rather than fixed, and the gate is
+      # This comment proved the point on itself. It used to state the pair count and
+      # the recorded count as figures, and both had drifted from the gate by the time
+      # anyone read them again, in a file no gate checks. The counts live in the gate's
+      # own output now, which is re-measured on every run by construction.
+      #
+      # Some pairs are recorded as below the floor rather than fixed, and the gate is
       # exact in both directions: a new pair below the floor fails, and so does a
       # recorded pair that has since been raised. The second half is what stops the
-      # recorded list from outliving the debt it describes.
+      # recorded list from outliving the debt it describes. Each recorded pair prints
+      # its current ratio here, so a number that drifts is visible rather than merely
+      # counted.
       - name: Check palette contrast
         run: npm run palette

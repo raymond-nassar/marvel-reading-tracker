@@ -1,4 +1,4 @@
-# Marvel Reading Tracker Expansion Backlog
+﻿# Marvel Reading Tracker Expansion Backlog
 
 This backlog describes the next product improvements in plain English. It is intended
 for review before implementation. The goal is to make the tracker useful for many
@@ -951,6 +951,17 @@ whose background is a `color-mix` with no hex value this gate can express. Both 
 Writing an assertion that pins a completeness claim is what turned a silent gap into a measured one
 within a single commit, which is the argument for the assertion rather than against it.
 
+**And then the sentence above was itself false.** Recording the pair, this block and the changelog all
+said the ratio was printed on every CI run. It was not. The gate's passing path printed only how many
+pairs were recorded, never what any of them measured; the numbers existed only behind a `--report`
+flag that neither `package.json` nor the workflow passes. So a green run said five pairs were below
+the floor and never said the tick was at 2.30:1. That is the same defect as recording nothing, one
+step further along, because a ratio nobody can see cannot be noticed drifting, and a recorded pair is
+free to move anywhere below its floor without the gate saying a word. The passing path now prints each
+recorded pair with its current ratio and the place it is drawn, and `test/theme.test.js` pins that so
+it cannot quietly revert. The claim was made true rather than weakened to match, which is the same
+disposition this item took to the completeness assertion a paragraph above.
+
 `--track-2` went from `#3a4150` to `#616e8b` in the dark theme and from `#b8c0cd` to `#7b8aa2` in
 both light blocks, holding each theme's hue and saturation and moving lightness only. A single shared
 value was rejected: the band clearing both pages at once is roughly relative luminance 0.117 to
@@ -960,9 +971,11 @@ requires the two light blocks to agree so per-theme values stay enforced. Both n
 silently reintroduce this.
 
 Verified: the gate now measures 72 pairs across the two palettes rather than 60, with five recorded
-below the floor rather than four and none new. 486 tests, 0 fail. 6 of 6 mutations caught, one for each theme
+below the floor rather than four and none new. 487 tests, 0 fail. 7 of 7 mutations caught, one for each theme
 reverting, one for reverting only one of the two light blocks, one for darkening `--card` under the
-button, and one proving each new pair is the only pair that catches its own defect. The knob mutation
+button, and one proving each new pair is the only pair that catches its own defect, plus one removing
+the recorded pairs' ratios from the gate's passing output, which fails the assertion that they report
+what they measure. The knob mutation
 was wrong on its first draft and passed for the wrong reason: reverting the light track was caught by
 the track pair too, so it proved nothing about the knob pair. Replacing it with a pale dark-theme
 track, which clears the page easily but leaves the white knob invisible, isolates it properly. In the
@@ -2760,7 +2773,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2517-2520`.
+`PRODUCT_BACKLOG.md:2530-2533`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -2987,7 +3000,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3646-3647` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3659-3660` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2997,11 +3010,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:163-165`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3666-3668`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3679-3681`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3488-3490` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3501-3503` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3209,7 +3222,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:430-433` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:432-435` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:156-158` and
 `PRODUCT_BACKLOG.md:163-165` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
