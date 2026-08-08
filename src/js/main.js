@@ -29,6 +29,7 @@ import { isAllowedApiBase } from './lib/apiBase.js';
 import { shortcutAllowed } from './lib/shortcuts.js';
 import { READING_FILTERS, DEFAULT_FILTER, matchesReadingFilter } from './lib/readingFilters.js';
 import { DEFAULT_THEME, themeAttribute, normaliseTheme } from './lib/theme.js';
+import { VIEWS, formatRoute, parseRoute } from './lib/route.js';
 import { askConfirm, askText, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
@@ -618,7 +619,9 @@ function hideRailTip() {
 function wireNav() {
   for (const btn of document.querySelectorAll('[data-view]')) {
     btn.addEventListener('click', () => {
-      showView(btn.dataset.view);
+      // A click on the rail is the archetypal navigation, so this is the one that has to leave a
+      // history entry for Back to come back to.
+      showView(btn.dataset.view, { push: true });
       if (btn.dataset.open) {
         const d = $(`#${btn.dataset.open}`);
         if (d) {
@@ -655,19 +658,56 @@ async function newEmptyList() {
   if (!store.lastUpdateOk) return;
   const id = created.listOrder[created.listOrder.length - 1];
   store.update((s) => setActive(s, id));
-  showView('read');
+  showView('read', { push: true });
   announceIfSaved(`Created list ${name}.`);
 }
 
-// Every section the rail can reach. The Library entries are spread in rather than typed out, so
-// adding one cannot leave `showView` hiding a section it does not know about while trying to focus
-// a heading that is not there.
-const VIEWS = ['home', 'read', 'catalog', 'progress', 'add', 'data', 'about', ...LIBRARY_VIEWS.map((v) => v.value)];
+// Every section the rail can reach now lives in lib/route.js, so that one list backs both what
+// showView can display and what a URL can address.
+
+// The URL is written from the state, never the other way round, except at boot and on a Back press.
+// Nothing may be written before boot has had its chance to read the incoming hash: renderAll runs
+// once before the route is restored, and an ungated sync there would overwrite the very address the
+// reader arrived on.
+let routeReady = false;
+
+// `push` separates a deliberate navigation from a passive correction, and the distinction is what
+// keeps Back usable. A reader who marks twenty issues read must not have to press Back twenty times
+// to leave the view, so every passive sync replaces.
+//
+// The compare against the current hash is not an optimisation. Writing a hash fires hashchange,
+// whose handler calls back into showView, which syncs again; comparing first is what stops that
+// from running away.
+function syncHash({ push = false } = {}) {
+  if (!routeReady) return;
+  const next = formatRoute({ view, listId: activeListId() });
+  if (!next || next === location.hash) return;
+
+  // A hash that is not ours is someone else's anchor, and index.html ships one: the skip link
+  // targets #main and pushes a history entry, so an ordinary keyboard user lands here. A passive
+  // sync leaves it alone rather than yanking the page away from where they just jumped. A
+  // deliberate navigation does overwrite it, because the anchor is no longer where they are.
+  if (!push && location.hash && !parseRoute(location.hash)) return;
+
+  if (push) location.hash = next;
+  else history.replaceState(null, '', next);
+}
+
+// Adopting the list first means the redirect inside showView sees the list the URL asked for
+// rather than whichever one happened to be active. A list id that no longer exists is left to
+// setActive, which returns the state untouched, so the trailing sync inside showView corrects the
+// address instead of leaving it claiming a list that is not on screen.
+function applyRoute(route, { focus }) {
+  if (route.listId && route.listId !== activeListId() && store.state.lists[route.listId]) {
+    store.update((s) => setActive(s, route.listId));
+  }
+  showView(route.view, { focus });
+}
 
 // Moving focus to the new view's heading is what makes the rail usable with a keyboard or a
 // screen reader. Without it, focus stays on the rail button and the view change is silent, so
 // the next Tab continues from the old position and nothing announces where you now are.
-function showView(next, { focus = true } = {}) {
+function showView(next, { focus = true, push = false } = {}) {
   // There is nothing to read without an active list, so the reading view hands over to the
   // landing page rather than showing an empty frame with a heading over it.
   if (next === 'read' && !store.state.lists[activeListId()]) next = 'home';
@@ -687,6 +727,9 @@ function showView(next, { focus = true } = {}) {
   // After the scroll to the top, so that bringing a message into view is not undone. Which pane
   // each outstanding notice belongs in has just changed, because a different view is showing.
   placeNotices();
+  // Above the focus-free early return, or every call that passes focus:false would leave the
+  // address bar behind. Boot is one such call.
+  syncHash({ push });
 
   if (!focus) return;
   const section = $(`#view-${next}`);
@@ -724,7 +767,7 @@ function renderRail() {
         // A reading order has no glyph of its own, so the tooltip has to be built rather
         // than read off the button: in rail mode the progress numbers are not on screen.
         dataset: { key: id, act: 'open', tip: `${list.name}: ${read} of ${total} read` },
-        onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
+        onclick: () => { store.update((s) => setActive(s, id)); showView('read', { push: true }); },
       }, [
         // Stands in for an icon in rail mode; hidden from the accessibility tree because
         // the list's name is right beside it.
@@ -773,14 +816,14 @@ function wireHome() {
     catalogFacet = homeFacet;
     catalogQuery = homeQuery;
     $('#catalog-q').value = homeQuery;
-    showView('catalog');
+    showView('catalog', { push: true });
   });
 
   $('#btn-chero-read').addEventListener('click', (e) => {
     const issue = upNext(store.state, activeListId());
     if (issue) openInReader(issue, e);
   });
-  $('#btn-chero-open').addEventListener('click', () => showView('read'));
+  $('#btn-chero-open').addEventListener('click', () => showView('read', { push: true }));
 }
 
 function renderHome() {
@@ -863,7 +906,7 @@ function renderYours(populated) {
     return el('li', {}, el('button', {
       type: 'button',
       'aria-label': `Open ${list.name}, ${read} of ${total} issues read`,
-      onclick: () => { store.update((s) => setActive(s, id)); showView('read'); },
+      onclick: () => { store.update((s) => setActive(s, id)); showView('read', { push: true }); },
     }, [
       el('span', { class: 'yours-name', text: list.name }),
       el('span', { class: 'pbar', 'aria-hidden': true }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
@@ -1060,7 +1103,7 @@ function addButton(list, inLibrary) {
       dataset: { key: list.id, act: 'main' },
       onclick: () => {
         store.update((s) => setActive(s, inLibrary.id));
-        showView('read');
+        showView('read', { push: true });
       },
     }, settled ? 'Open →' : '✓ In library');
   }
@@ -2476,7 +2519,7 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
     }
     if (navigate) {
       store.update((s) => setActive(s, listId));
-      showView('read');
+      showView('read', { push: true });
     } else if (!store.state.active) {
       // Nothing was being read, so the first order added becomes the one "Continue reading"
       // resumes. It does not steal the active list from a reader who already had one.
@@ -2794,6 +2837,11 @@ function renderAll() {
   // clears the block, and leaving the banner up would push the user toward "Start fresh",
   // which would then wipe the backup they had just restored.
   renderBlocked();
+  // The active list changes at more than a dozen places that never navigate, among them
+  // duplicating a list and restoring a backup. This is the one point every one of them passes
+  // through, so syncing here is what stops the address naming a list that is no longer on screen.
+  // It replaces rather than pushes, so none of them can put an entry in front of Back.
+  syncHash();
 }
 
 setInterval(renderQueue, 1000);
@@ -2820,9 +2868,28 @@ wirePreview();
 wireAsk();
 wireProgressScope();
 renderAll();
+// The address bar is now allowed to be written, but not before: renderAll has just run once, and
+// an ungated sync inside it would have overwritten the incoming hash before it was read.
+routeReady = true;
 // A reader with nothing to read has no reading view to show, so the landing page is where
 // they start. One with an active list resumes it, which is the whole point of the app.
-showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: false });
+// An address that names a view wins over both, which is what makes a bookmark, a shared link and
+// a reload land where they say they will. focus:false either way, so arriving at the page never
+// takes focus off the document the reader has not started interacting with yet.
+const bootRoute = parseRoute(location.hash);
+if (bootRoute) applyRoute(bootRoute, { focus: false });
+else showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: false });
+
+// Back and Forward arrive here, as does anyone editing the address by hand. A hash that is not one
+// of ours is left entirely alone: index.html ships a skip link to #main, and answering that with a
+// view change would throw a keyboard user somewhere they did not ask to go.
+//
+// Focus does move here, unlike at boot, because a Back press is a navigation the reader made. A
+// screen reader that is told nothing after it has no way to know the page changed under it.
+window.addEventListener('hashchange', () => {
+  const route = parseRoute(location.hash);
+  if (route) applyRoute(route, { focus: true });
+});
 checkHealth();
 refreshCacheUsage();
 
