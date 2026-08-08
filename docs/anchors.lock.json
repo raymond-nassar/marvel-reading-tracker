@@ -94,8 +94,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3947|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3947",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3953|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3953",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -634,8 +634,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:522-525|0": {
-    "anchor": "CHANGELOG.md:522-525",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:523-526|0": {
+    "anchor": "CHANGELOG.md:523-526",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -674,18 +674,18 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3921-3923|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3921-3923",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3927-3929|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3927-3929",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4087-4088|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4087-4088",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4093-4094|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4093-4094",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4103-4105|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4103-4105",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4109-4111|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4109-4111",
     "fp": "fb312375e390a000",
     "head": "by review. Evidence: `absent: eslint|prettier config or lint script, read of package.json:8-17 and"
   },

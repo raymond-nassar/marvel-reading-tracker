@@ -281,8 +281,9 @@ quote in a bug report.
   repository explains a great deal in words but contains no picture of any kind, so anyone trying to
   describe how the pieces connect has to read the code first. Three diagrams are now planned: which
   parts of the app depend on which, what happens step by step when you mark an issue read, and where
-  your reading progress is actually stored, including the copies the app keeps aside so it can
-  recover if it ever fails to read your data back. They will be written as plain text that the code
+  your reading progress is actually stored, including the spare copies the app keeps so it can put
+  your data back: one for when it cannot read what it saved, and two more for undoing a backup you
+  restored by mistake. They will be written as plain text that the code
   host draws for you, so no new software is added to the project to make them work.
 
 - **The two buttons in the "we could not read your saved data" warning no longer look equally

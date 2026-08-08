@@ -3301,9 +3301,11 @@ Asked for directly by the owner, whose stated purpose is explaining how the app'
 to other people. That framing scopes the item: it buys comprehension, not restructuring, and it must
 not become a reason to move code around. Nothing like it exists today. The `docs/` directory holds the
 UX study, the rationale for building a browser companion rather than an emulator, and four documents
-under `docs/ux` that specify interface flows in prose. None of them names a source module, and no
-tracked file in the repository contains a rendered diagram of any kind, so the code's own shape is the
-one thing the documentation never draws.
+under `docs/ux` that specify interface flows in prose without naming a single source module. The UX
+study does cite source modules, twenty-six times, but it cites them as evidence for findings about the
+interface rather than to describe how the parts fit together, and no tracked file in the repository
+contains a rendered diagram of any kind. The code's own shape is the one thing the documentation
+never draws.
 
 Three diagrams rather than one, because the app has three separable stories and one picture that told
 all three would tell none of them well. The module graph answers what depends on what: a single view
@@ -3316,7 +3318,11 @@ read, which is the loop that makes the app feel like an app: the store mutates, 
 repaints everything, and a failed write reports itself on the way back. The persistence diagram
 answers where a reader's progress actually lives, which is the question the product promise turns on,
 and it is the one with real teeth because `src/js/storage.js:9-12` declares four keys, not one, and
-three of them exist only so a failed read can be recovered from.
+the other three serve two different kinds of recovery rather than one. Only the salvage key is
+reached from a failed read. The other two belong to restoring a backup, one staging the new bytes so
+the swap cannot half-happen and one holding the snapshot that lets the restore be undone, and both
+are written on a path where nothing has gone wrong at all. A diagram that collapsed those into a
+single recovery story would hide the distinction the code is built on.
 
 Mermaid in fenced code blocks, which GitHub renders natively. That keeps runtime dependencies at zero
 and adds no build step, so Constraint 4 is untouched, and it keeps the diagrams in the same review
@@ -3420,7 +3426,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4087-4088` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4093-4094` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3430,11 +3436,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4103-4105`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4109-4111`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3921-3923` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3927-3929` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3642,7 +3648,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:522-525` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:523-526` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:158-160` and
 `PRODUCT_BACKLOG.md:165-167` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4176,9 +4182,9 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and twenty-three
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and twenty-four
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 49 rows now. The ranks below are
+how it reaches 50 rows now. The ranks below are
 positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks eighteenth
