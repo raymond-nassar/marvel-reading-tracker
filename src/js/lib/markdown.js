@@ -124,17 +124,30 @@ export function stripInlineMarkdown(s) {
 }
 
 // Serializes a list back to the same format it can be re-imported from.
-export function serializeChecklist({ name, description, items }) {
+//
+// Notes export but do not re-import: `parseChecklist` has no syntax for them, and inventing one
+// would change a format this app does not own. The lossless path is the JSON backup.
+export function serializeChecklist({ name, description, items, note }) {
   const lines = [];
   if (name) lines.push(`# ${name}`, '');
   if (description) lines.push(description, '');
+  if (note) lines.push(...quoteNote(note), '');
   for (const it of items) {
     const box = it.read ? '- [x]' : '- [ ]';
     const url = it.url || (it.issueId > 0 ? `https://www.marvel.com/comics/issue/${it.issueId}/` : null);
     lines.push(url ? `${box} [${escapeLinkText(it.title)}](${url})` : `${box} ${it.title}`);
+    if (it.note) lines.push(...quoteNote(it.note));
   }
   lines.push('');
   return lines.join('\n');
+}
+
+// Every line prefixed, and the prefix is not decoration. A note beginning "- " or "# " would
+// otherwise be read back as an item or a heading, so exporting a list and re-importing it would
+// invent issues the reader never added. Every pattern in this file anchors on "-", "*" or "#"
+// after optional whitespace alone, so a leading ">" defeats all of them.
+function quoteNote(note) {
+  return String(note).split(/\r?\n/).map((line) => `> ${line}`.trimEnd());
 }
 
 // The backslash must be escaped first, or escaping "]" would corrupt any title that already

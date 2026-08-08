@@ -16,6 +16,15 @@ quote in a bug report.
 
 ### Added
 
+- **You can now keep notes on a reading order and on any issue in it.** Every row in a reading
+  order has an "Add a note" control, and each order has a Note button beside its name. Notes are
+  yours alone: they are saved on your own device, they show up in your backup file so they survive
+  a move to another computer, and they appear in a Markdown export under whatever they belong to.
+  A note is limited to 2,000 characters. Clearing the box and saving deletes the note, while
+  cancelling leaves it exactly as it was, so you can open one to reread it without risk. Nothing
+  about your existing data changes: orders and progress saved before this release load exactly as
+  before, simply with no notes on them yet.
+
 - **The address bar now knows where you are.** Until now the app lived at one address no matter
   what you were looking at, so the browser's Back button dropped you out of the app entirely, a
   reload always dumped you back on the reading view, and there was no way to bookmark a particular

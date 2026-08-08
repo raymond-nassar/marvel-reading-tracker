@@ -16,6 +16,10 @@ export function createEmptyState() {
     issues: {},
     read: {},
     overrides: {},
+    // Keyed by issue id, and global for the same reason read state is: the bundled minimal and
+    // full orders overlap heavily, so a note attached to one path through an issue would be
+    // invisible on the other while the reader was looking at the same comic.
+    notes: {},
     lists: {},
     listOrder: [],
     active: null,
@@ -106,13 +110,18 @@ export function getIssue(state, issueId) {
 
 export const MAX_NAME = 200;
 export const MAX_DESCRIPTION = 2000;
+export const MAX_NOTE = 2000;
 
-export function createList(state, { name, description = '', id = newId(), itemIds = [], catalogId = null } = {}) {
+export function createList(state, { name, description = '', id = newId(), itemIds = [], catalogId = null, note = '' } = {}) {
   const listId = id;
   const list = {
     id: listId,
     name: String(name || 'Untitled list').slice(0, MAX_NAME),
     description: String(description || '').slice(0, MAX_DESCRIPTION),
+    // The reader's own text about this order, kept apart from `description`, which holds the
+    // curated order's authored blurb and is shown in the catalog card and the preview. Letting a
+    // note overwrite that would destroy text the reader never wrote and cannot get back.
+    note: normalizeNote(note),
     created: Date.now(),
     // Which catalog entry this list was imported from, when it was. It is what lets the
     // catalog show "in library" instead of offering to import a second copy, so it has to
@@ -154,6 +163,9 @@ export function duplicateList(state, listId, { name } = {}) {
     id,
     name: name ? String(name).slice(0, MAX_NAME) : copyName(state, source.name),
     description: String(source.description || '').slice(0, MAX_DESCRIPTION),
+    // The note travels with the copy. Duplicating an order is how a reader tries a different path
+    // through it, and what they wrote about the order is still true of the copy.
+    note: source.note ?? '',
     created: Date.now(),
     // A duplicate is the reader's own working copy, so it does not inherit the claim to be
     // the catalog import. Otherwise two lists would answer to the same catalog entry and
@@ -335,6 +347,37 @@ export function setOverride(state, issueId, value) {
   return { ...state, overrides };
 }
 
+// ---------------------------------------------------------------- notes
+
+// Trimmed and capped, and an empty result deletes rather than storing "". That keeps "has a note"
+// a presence check at every call site, and stops a note the reader cleared from riding along in
+// every future backup as an empty string.
+export function normalizeNote(text) {
+  return String(text ?? '').trim().slice(0, MAX_NOTE);
+}
+
+export function setIssueNote(state, issueId, text) {
+  const id = Number(issueId);
+  if (!Number.isInteger(id) || id === 0) return state;
+  const note = normalizeNote(text);
+  const notes = { ...state.notes };
+  if (note) notes[id] = note;
+  else delete notes[id];
+  return { ...state, notes };
+}
+
+export function issueNote(state, issueId) {
+  return state.notes?.[Number(issueId)] ?? '';
+}
+
+// The list's note lives on the list object rather than in a second map, because it dies with the
+// list. An issue note outlives every list that introduced the issue, exactly as read state does.
+export function setListNote(state, listId, text) {
+  const list = state.lists[listId];
+  if (!list) return state;
+  return { ...state, lists: { ...state.lists, [listId]: { ...list, note: normalizeNote(text) } } };
+}
+
 // ---------------------------------------------------------------- derived
 
 export function upNext(state, listId) {
@@ -508,6 +551,15 @@ function coerce(raw) {
   for (const [k, v] of Object.entries(raw.overrides ?? {})) {
     if (v === 'available' || v === 'unavailable') overrides[Number(k)] = v;
   }
+  // Measured before this line existed: a note set on an issue was gone on the next page load,
+  // because this function rebuilds state field by field and anything it does not name is dropped.
+  // The same is true of the list's note below.
+  const notes = {};
+  for (const [k, v] of Object.entries(raw.notes ?? {})) {
+    const id = Number(k);
+    const note = normalizeNote(v);
+    if (Number.isInteger(id) && id !== 0 && note) notes[id] = note;
+  }
   const lists = {};
   for (const [k, v] of Object.entries(raw.lists ?? {})) {
     if (!v || typeof v !== 'object') continue;
@@ -515,6 +567,7 @@ function coerce(raw) {
       id: k,
       name: String(v.name ?? 'Untitled list'),
       description: String(v.description ?? ''),
+      note: normalizeNote(v.note),
       created: Number(v.created) || Date.now(),
       catalogId: typeof v.catalogId === 'string' && v.catalogId ? v.catalogId.slice(0, MAX_NAME) : null,
       itemIds: dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter((n) => Number.isInteger(n) && n !== 0)),
@@ -528,6 +581,7 @@ function coerce(raw) {
     issues,
     read,
     overrides,
+    notes,
     lists,
     listOrder,
     active: lists[raw.active] ? raw.active : (listOrder[0] ?? null),
@@ -553,6 +607,9 @@ export function validateBackup(raw) {
   if (raw.read != null && (typeof raw.read !== 'object' || Array.isArray(raw.read))) {
     errors.push('read must be an object.');
   }
+  if (raw.notes != null && (typeof raw.notes !== 'object' || Array.isArray(raw.notes))) {
+    errors.push('notes must be an object.');
+  }
   if (errors.length) return { ok: false, errors, state: null };
 
   try {
@@ -570,6 +627,10 @@ export function exportBackup(state) {
     issues: state.issues,
     read: state.read,
     overrides: state.overrides,
+    // Named explicitly, like every other key here. This function does not spread, so a map it
+    // does not name never reaches the backup file or localStorage at all. Measured: without this
+    // line an issue note was absent from the exported JSON, not merely dropped on the way back in.
+    notes: state.notes ?? {},
     lists: state.lists,
     listOrder: state.listOrder,
     active: state.active,
@@ -583,6 +644,7 @@ export function listItems(state, listId) {
     ...(state.issues[id] ?? { issueId: id, title: `Issue ${id}`, hydrated: false, source: 'unknown' }),
     read: isRead(state, id),
     override: state.overrides[id] ?? null,
+    note: issueNote(state, id),
   }));
 }
 

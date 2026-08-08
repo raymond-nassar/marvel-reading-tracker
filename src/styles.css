@@ -567,6 +567,24 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 
 .rt { font-size: .89rem; font-weight: 500; }
 .rm { color: var(--muted); font-size: .76rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .05rem; }
+
+/* The note control is a button that reads as text, because it is both the note and the way to
+   edit it. Clamped to three lines so a long note cannot push the rest of the list off screen;
+   the editor shows all of it. `text-align: left` is set because a button centres by default and
+   a centred paragraph of prose reads as a label rather than as the reader's own writing. */
+.rnote {
+  margin-top: .25rem; padding: .15rem 0; border: 0; background: none;
+  color: var(--muted); font: inherit; font-size: .76rem; text-align: left; cursor: pointer;
+  max-width: 60ch; white-space: pre-wrap;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+}
+.rnote:hover { color: var(--text); }
+.rnote.has-note { color: var(--text); border-left: 2px solid var(--line); padding-left: .5rem; }
+
+.list-note {
+  margin: 0 0 1rem; padding: .55rem .75rem; border-left: 2px solid var(--line);
+  color: var(--text); font-size: .85rem; white-space: pre-wrap; max-width: 70ch;
+}
 /* These outlines are faint on purpose, and that is a recorded decision rather than an
    oversight. Composited over the backdrop they actually render against, none of the five
    reaches the 3:1 non-text floor: `expected` and `override-available` 1.58:1, `scheduled`
@@ -841,6 +859,10 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
    saying here: inside a dialog the field is the whole width, and it has to clear the 44px
    target minimum that a form row elsewhere gets from its neighbours. */
 .ask input { width: 100%; box-sizing: border-box; min-height: 44px; font: inherit; }
+/* Only the font and the height need saying. The shared textarea rule already carries the
+   colours, border and radius, but it also sets monospace, which is right for the paste box it
+   was written for and wrong for a note, which is prose. */
+.ask textarea { box-sizing: border-box; font-family: inherit; font-size: 1rem; min-height: 6rem; }
 .ask-foot { display: flex; justify-content: flex-end; gap: .6rem; flex-wrap: wrap; }
 .ask-foot .btn { min-height: 44px; }
 
