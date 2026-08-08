@@ -152,7 +152,7 @@ are recorded rather than inherited.
 
 * `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last
   line number when reading the file. Evidence: `src/js/main.js:2725-2740`. The work shipped since has
-  taken it to 2,755; 1,566 is the figure as audited.
+  taken it to 2,795; 1,566 is the figure as audited.
 * `src/js/ui/` does not exist in this worktree. Evidence: `absent: src/js/ui, Test-Path returning
   False and a recursive directory listing of src/`. Git cannot track an empty directory, so an
   empty `src/js/ui/` in another checkout is a local artifact rather than repository content. Either
@@ -558,7 +558,7 @@ doing this, and no copy change is expected.
 Shipped. One token could not do both jobs, because white-on-red and red-on-background pull in
 opposite directions: the old `#e23636` measured 4.36:1 and 4.33:1 and failed both. It was split
 into `--red` `#d43333` for surfaces behind white text and `--red-text` `#eb5f5f` for red used as
-text, at `src/styles.css:21-29`. The `kbd` tint was removed at `src/styles.css:346` and the
+text, at `src/styles.css:21-29`. The `kbd` tint was removed at `src/styles.css:478` and the
 `.mark` rule in `src/open.html` was corrected. Landing pa11y errors went from 4 to 2, the seeded
 reading view's HTML_CodeSniffer contrast failures went to 0, and axe-core 4.13.0 reported 0
 violations. The two residual pa11y errors are its bundled axe 4.8 reporting undeterminable
@@ -602,7 +602,7 @@ eyebrow kept failing no matter which colour was chosen, because it sits on `.her
 than on `--bg`, and blurred cover art was bleeding through. Pixel-sampling the rendered
 background across all eight catalog series gave a spread of `#222325` to `#2e2d30`, so contrast
 depended on whichever cover the reader imported and no fixed colour could ever pass. The scrim's
-top stop was raised from 60 to 88 percent alpha at `src/styles.css:288-294`. The spread collapsed
+top stop was raised from 60 to 88 percent alpha at `src/styles.css:420-427`. The spread collapsed
 to `#1b1d22` to `#1e2126`, and the computed bound for a pure white cover is `#1f2228`, so the
 backdrop is now bounded for any import rather than merely for the covers that were sampled. All
 19 hero text nodes were checked against that bound.
@@ -1181,7 +1181,7 @@ one, and `test/fetch-json.test.js` says why it scripts responses "without a stub
 dependency was added, runtime or dev.
 
 `src/js/ask.js` was covered as the third module in place of `main.js`. It is browser-coupled in the
-same way, it is 93 lines against main.js's 2,755, and it holds the module-scope `pending` that every
+same way, it is 93 lines against main.js's 2,795, and it holds the module-scope `pending` that every
 question in the app funnels through, so it carries the same class of risk at a fraction of the cost.
 Tests import a fresh copy per case through a cache-busting query, because that module-scope state
 would otherwise leak between them.
@@ -2454,7 +2454,7 @@ and no changelog, both of which have since shipped; correcting the number alone 
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
 which is the treatment the as-is journey map in the UX study already gets. That precedent is the
 weaker of the two, because the journey map is stamped as a hypothesis in its own text at
-`docs/UX_STUDY.md:751-754` while this paragraph carries no such marker and reads in the present
+`docs/UX_STUDY.md:762-765` while this paragraph carries no such marker and reads in the present
 tense, so a reader who never opens this block has no way to tell it is frozen. Marking it in place
 would mean editing the snapshot, which is the thing being avoided; the record is here instead.
 
@@ -3028,7 +3028,7 @@ The clearest debt in the repository, and it is concentrated in one file.
   every render function. There is no view layer to change independently.
   Evidence: `src/js/main.js:2725-2740`, `src/js/main.js:670-698` (showView switches views by
   mutating a module-level variable).
-  Still open, and wider than audited: the file is 2,755 lines now, so nearly every item shipped
+  Still open, and wider than audited: the file is 2,795 lines now, so nearly every item shipped
   since has been added to the one file this gap is about. `BL-053` is the exception in kind rather
   than in size: it moved the reading filter predicates out to `src/js/lib/readingFilters.js` and
   still left `main.js` 8 lines longer, which is the shape of the problem. `BL-038` is the closest

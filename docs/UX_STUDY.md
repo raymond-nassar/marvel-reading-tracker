@@ -271,7 +271,7 @@ fix
 Backlog item: BL-029
 Resolved: the single accent was split into `--red` for surfaces behind white text and
 `--red-text` for red used as text, at `src/styles.css:21-29`, and the `kbd` tint was removed at
-`src/styles.css:346`. The figures in the Evidence artifacts are the pre-fix measurements and are
+`src/styles.css:478`. The figures in the Evidence artifacts are the pre-fix measurements and are
 kept as the record of why the item was raised.
 
 #### UX-A-002: Read rows are dimmed by a blanket opacity that pushes text to 2.34:1
@@ -321,7 +321,7 @@ Recommendation: place a solid or sufficiently opaque scrim between the cover and
 computed background is fixed regardless of cover, which also makes the surface checkable
 Backlog item: BL-031
 Resolved as a side effect of BL-029: the hero scrim's top stop was raised from 60 to 88 percent
-alpha at `src/styles.css:288-294`. Sampling the rendered background across all eight catalog
+alpha at `src/styles.css:420-427`. Sampling the rendered background across all eight catalog
 series narrowed the spread from `#222325`-`#2e2d30` to `#1b1d22`-`#1e2126`, and the computed
 bound for a pure white cover is `#1f2228`, so the background is now fixed enough to check
 against whatever the reader imports rather than varying comic to comic.
@@ -444,6 +444,17 @@ tag carrying both values so the browser's own controls follow the preference fro
 The manual override is a Theme control under Data offering system, dark and light. The forced-colors
 work was indeed the model and is untouched: it uses system colour keywords only, so it is
 palette-independent and still wins over both themes.
+
+The screenshot pair that produced this finding is the direct measure of the fix. Captured the same
+way, seeded the same way and at the same 1280 by 900 viewport,
+`docs/ux-artifacts/06-reading-seeded-prefers-light.png` and
+`docs/ux-artifacts/06-reading-seeded-prefers-dark.png` are byte-identical, which is what "no effect
+at all" above means. Their successors
+`docs/ux-artifacts/09-reading-seeded-prefers-light.png` and
+`docs/ux-artifacts/09-reading-seeded-prefers-dark.png` are not. Layout is unchanged between the two,
+so what differs is palette alone, which is the intended shape of the change rather than a reflow.
+`docs/ux-artifacts/09-settings-theme-1280.png` shows the override control and
+`docs/ux-artifacts/09-progress-seeded-prefers-light.png` a second surface under the light palette.
 
 #### UX-A-009: The full availability description is carried only in a title attribute
 

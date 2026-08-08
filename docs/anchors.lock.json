@@ -1,6 +1,6 @@
 {
-  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:824-826|0": {
-    "anchor": "docs/UX_STUDY.md:824-826",
+  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:835-837|0": {
+    "anchor": "docs/UX_STUDY.md:835-837",
     "fp": "1e64d83a8ff9a25f",
     "head": "**Puppeteer was installed outside the repository, deliberately.** `node_modules/` is not covered by"
   },
@@ -194,10 +194,10 @@
     "fp": "973645583ac99fd4",
     "head": ":root {"
   },
-  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css:346|0": {
-    "anchor": "src/styles.css:346",
-    "fp": "22aec07df6446fbe",
-    "head": ".railed .pill-muted { background: var(--muted); border-color: var(--muted); }"
+  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css:478|0": {
+    "anchor": "src/styles.css:478",
+    "fp": "6e2654e385653c4a",
+    "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-ra"
   },
   "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:547-548|0": {
     "anchor": "src/styles.css:547-548",
@@ -214,10 +214,10 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/styles.css:288-294|0": {
-    "anchor": "src/styles.css:288-294",
-    "fp": "7c0abe2a63b93664",
-    "head": ".ri[aria-current]::before, .ri.on::before {"
+  "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/styles.css:420-427|0": {
+    "anchor": "src/styles.css:420-427",
+    "fp": "d9fb3bc05f56276d",
+    "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
   "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css:562-565|0": {
     "anchor": "src/styles.css:562-565",
@@ -634,8 +634,8 @@
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
-  "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:751-754|0": {
-    "anchor": "docs/UX_STUDY.md:751-754",
+  "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:762-765|0": {
+    "anchor": "docs/UX_STUDY.md:762-765",
     "fp": "a2ba5dc6346c8d63",
     "head": "### As-is journey map"
   },
@@ -651,7 +651,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:153-155|0": {
     "anchor": "PRODUCT_BACKLOG.md:153-155",
-    "fp": "5b4f16e0ec95e83c",
+    "fp": "a7a9cdf997742fa9",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|0": {
@@ -1239,20 +1239,15 @@
     "fp": "973645583ac99fd4",
     "head": ":root {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:288-294|0": {
-    "anchor": "src/styles.css:288-294",
-    "fp": "7c0abe2a63b93664",
-    "head": ".ri[aria-current]::before, .ri.on::before {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:346|0": {
-    "anchor": "src/styles.css:346",
-    "fp": "22aec07df6446fbe",
-    "head": ".railed .pill-muted { background: var(--muted); border-color: var(--muted); }"
-  },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:380|0": {
     "anchor": "src/styles.css:380",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:420-427|0": {
+    "anchor": "src/styles.css:420-427",
+    "fp": "d9fb3bc05f56276d",
+    "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:464|0": {
     "anchor": "src/styles.css:464",
@@ -1263,6 +1258,11 @@
     "anchor": "src/styles.css:464",
     "fp": "9b2fbfdfa254332b",
     "head": ".cta { display: flex; gap: .55rem; flex-wrap: wrap; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:478|0": {
+    "anchor": "src/styles.css:478",
+    "fp": "6e2654e385653c4a",
+    "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-ra"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:535-538|0": {
     "anchor": "src/styles.css:535-538",
@@ -1781,7 +1781,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:153-155|0": {
     "anchor": "PRODUCT_BACKLOG.md:153-155",
-    "fp": "5b4f16e0ec95e83c",
+    "fp": "a7a9cdf997742fa9",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
