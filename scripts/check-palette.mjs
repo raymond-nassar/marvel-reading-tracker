@@ -121,6 +121,14 @@ export const PAIRS = [
   ['--red', '--rail', LARGE, 'the brand mark, and the skip link when focused, both on the rail'],
   ['--red', 'the selected rail item', LARGE, 'the accent bar marking the current destination'],
   ['--red', 'the unreadable-data banner', LARGE, 'the fill of both buttons in the blocked banner'],
+
+  // BL-072. The recovery banner offered two identically loud buttons while its own paragraph told
+  // the reader to use one of them first, so the destructive one now takes the ghost treatment the
+  // rest of the app already uses for a secondary action. That is a new boundary in the two places a
+  // ghost button has any: its label and its border. Both are listed rather than assumed, because
+  // the button that was made quieter is the one it would be worst to make unreadable.
+  ['--text', 'the ghost button on the unreadable-data banner', BODY, 'the label of the start-fresh button'],
+  ['--muted', 'the ghost button on the unreadable-data banner', LARGE, 'the border that sets the start-fresh button apart, at src/styles.css:925'],
 ];
 
 // Two of the surfaces this stylesheet paints on are not tokens and have no hex value to read, so a
@@ -152,6 +160,16 @@ export const SURFACES = {
     on: '--panel',
     css: 'color-mix(in srgb, var(--warn) 12%, var(--panel)), at src/styles.css:909',
   },
+  // Built on a surface rather than a token, which is the case the first version of this could not
+  // express. A ghost button is a tint over whatever it is dropped onto, so on the banner it is a
+  // tint over a tint. Resolving only one level deep would have meant measuring this button against
+  // the panel and reporting a contrast it never has.
+  'the ghost button on the unreadable-data banner': {
+    layer: '--tint-base',
+    fraction: 0.05882,
+    on: 'the unreadable-data banner',
+    css: 'rgb(var(--tint-base) / 5.882%) over the banner, at src/styles.css:474',
+  },
 };
 
 export function parseHex(hex) {
@@ -175,11 +193,25 @@ export function parseColour(value) {
 
 // A fraction of one colour laid over the remainder of another, which is what the browser does for
 // both an alpha composite onto an opaque backdrop and an sRGB colour mix.
-export function resolveSurface(name, tokens) {
-  const surface = SURFACES[name];
+//
+// The base may itself be a surface, because a ghost button on the banner is a tint over a tint.
+// `seen` is not defensive dressing: a surface list is hand written, and two entries naming each
+// other would otherwise recurse until the stack ran out, which reports as a crash rather than as
+// the authoring mistake it is.
+export function resolveSurface(name, tokens, seen = new Set(), surfaces = SURFACES) {
+  const surface = surfaces[name];
   if (!surface) return { message: `${name} is not a surface this file knows how to resolve` };
+  if (seen.has(name)) return { message: `${name} is defined in terms of itself, so it cannot be resolved` };
+  seen.add(name);
   const layer = parseColour(tokens.get(surface.layer) ?? '');
-  const base = parseColour(tokens.get(surface.on) ?? '');
+  let base = null;
+  if (surface.on.startsWith('--')) {
+    base = parseColour(tokens.get(surface.on) ?? '');
+  } else {
+    const under = resolveSurface(surface.on, tokens, seen, surfaces);
+    if (under.message) return under;
+    base = under.colour;
+  }
   // A surface built from a token that is missing or unreadable is a finding rather than a skip, for
   // the same reason a missing token is: silently passing over one is how a pair stops being checked
   // without anybody deciding that it should.

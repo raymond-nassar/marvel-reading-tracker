@@ -147,8 +147,12 @@
             <p>It has <strong>not</strong> been changed or deleted, and saving is paused so it
               cannot be overwritten. Download a copy first, then you can start fresh.</p>
             <div class="blocked-actions">
-              <button type="button" class="btn btn-p" id="btn-download-salvage">Download a copy of the unreadable data</button>
-              <button type="button" class="btn" id="btn-start-fresh">Start fresh and resume saving</button>
+              <button type="button" class="btn" id="btn-download-salvage">Download a copy of the unreadable data</button>
+              <!-- Ghost, not because it matters less, but because the paragraph above orders these
+                   two and identical buttons cannot carry an order. This is the destructive one: it
+                   replaces the unreadable data with an empty tracker. Same convention as the
+                   dialog, where the way out is the ghost and the action being asked for is not. -->
+              <button type="button" class="btn btn-g" id="btn-start-fresh">Start fresh and resume saving</button>
             </div>
           </section>
 

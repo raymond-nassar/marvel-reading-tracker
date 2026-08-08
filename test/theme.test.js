@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import { THEMES, DEFAULT_THEME, themeAttribute, normaliseTheme } from '../src/js/lib/theme.js';
-import { PAIRS, KNOWN, SURFACES, parseHex, parseColour, luminance, ratio, tokensIn, checkAll, unresolved, passingReport, resolveSurface } from '../scripts/check-palette.mjs';
+import { PAIRS, KNOWN, SURFACES, BODY, parseHex, parseColour, luminance, ratio, tokensIn, checkAll, unresolved, passingReport, resolveSurface } from '../scripts/check-palette.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (rel) => readFileSync(join(ROOT, ...rel.split('/')), 'utf8');
@@ -167,6 +167,11 @@ test('a declared surface resolves to what the browser resolves it to', () => {
   const expected = {
     'the selected rail item': { dark: '#1f2023', light: '#dfe0e4' },
     'the unreadable-data banner': { dark: '#2c231e', light: '#f1eae1' },
+    // Read off the painted pixels rather than off `getComputedStyle`, which returns
+    // `rgba(255,255,255,0.06)` here: the value before compositing, so reading it back would have
+    // confirmed the stylesheet and not the render. Sampled from a screenshot of the real recovery
+    // banner, reached by writing unreadable bytes into the storage key before load.
+    'the ghost button on the unreadable-data banner': { dark: '#38302b', light: '#e3dcd4' },
   };
   const hex = (c) => `#${c.map((v) => v.toString(16).padStart(2, '0')).join('')}`;
   for (const [selector, theme] of [[DARK, 'dark'], [LIGHT_ATTR, 'light']]) {
@@ -187,14 +192,102 @@ test('every declared surface is one a pair actually renders on', () => {
   }
 });
 
+test('the recovery banner gives its two actions different weights, and gates the one it quietened', () => {
+  // The banner tells the reader to download a copy first and then start fresh. Two identical
+  // buttons cannot carry that order, and the destructive one is the wrong one to make equally
+  // loud, so the ghost class on it is load bearing rather than cosmetic.
+  const html = read('src/index.html');
+  const actions = html.match(/<div class="blocked-actions">([\s\S]*?)<\/div>/);
+  assert.ok(actions, 'the blocked banner no longer has an actions row');
+  const classOf = (id) => {
+    const m = actions[1].match(new RegExp(`<button[^>]*id="${id}"`));
+    assert.ok(m, `${id} is not in the banner's actions`);
+    return actions[1].match(new RegExp(`class="([^"]*)"[^>]*id="${id}"`))?.[1] ?? '';
+  };
+  assert.ok(!classOf('btn-download-salvage').includes('btn-g'), 'the safe action was made a ghost, so the banner now points at the destructive one');
+  assert.ok(classOf('btn-start-fresh').includes('btn-g'), 'both banner buttons are primary again, so the order the paragraph states is not shown');
+
+  // The pair list is written by hand, so it can drift from the rule it claims to measure. Reading
+  // the declaration back is what stops an edit changing the colour while the gate goes on
+  // measuring the old one and reporting a pass.
+  const rule = css.match(/\.blocked \.btn-g\s*\{([^}]*)\}/);
+  assert.ok(rule, 'the scoped border rule is gone, so the button is back on the token that measures 2.44:1 on this surface');
+  const declared = rule[1].match(/border-color:\s*var\((--[\w-]+)\)/);
+  assert.ok(declared, '.blocked .btn-g no longer takes its border colour from a token');
+  const gated = PAIRS.filter(([, bg]) => bg === 'the ghost button on the unreadable-data banner');
+  assert.ok(
+    gated.some(([fg]) => fg === declared[1]),
+    `the stylesheet borders the banner ghost with ${declared[1]} but the gate measures ${gated.map(([fg]) => fg).join(' and ')}`,
+  );
+
+  // The label is read, so it is measured against the body floor rather than the control floor. It
+  // is checked the same way round as the border, off the declaration, because a pair quietly
+  // deleted from the list is how the button that was made quieter stops being measured at all.
+  const base = css.match(/\n\.btn-g\s*\{([^}]*)\}/);
+  assert.ok(base, 'the ghost button rule is gone');
+  const label = base[1].match(/color:\s*var\((--[\w-]+)\)/);
+  assert.ok(label, '.btn-g no longer takes its text colour from a token');
+  assert.ok(
+    gated.some(([fg, , floor]) => fg === label[1] && floor === BODY),
+    `the banner ghost is labelled in ${label[1]}, which is not measured against the ${BODY}:1 body floor on that surface`,
+  );
+});
+
+test('a surface may be built on another surface, and a cycle is a finding rather than a crash', () => {
+  // The ghost button on the banner is a tint over a tint, which the first version of this could not
+  // express: it read the base as a token and nothing else. Resolving one level deep would have
+  // measured that button against the panel and reported a contrast it never has.
+  const tokens = tokensIn(css, DARK);
+  const nested = SURFACES['the ghost button on the unreadable-data banner'];
+  assert.equal(nested.on, 'the unreadable-data banner', 'the ghost button is no longer built on a surface');
+  assert.ok(!nested.on.startsWith('--'), 'the base is a token, so this no longer proves nesting works');
+
+  // The nesting is what makes the difference, so measure it rather than assert it resolves. Against
+  // the panel the answer would be a different colour entirely.
+  const onSurface = resolveSurface('the ghost button on the unreadable-data banner', tokens).colour;
+  const banner = resolveSurface('the unreadable-data banner', tokens).colour;
+  const panel = parseColour(tokens.get('--panel'));
+  const tint = parseColour(tokens.get('--tint-base'));
+  const overPanel = tint.map((v, i) => Math.round(v * nested.fraction + panel[i] * (1 - nested.fraction)));
+  assert.notDeepEqual(onSurface, overPanel, 'the ghost button resolves as though the banner were not there');
+  const between = onSurface.every((v, i) => (v - banner[i]) * (tint[i] - banner[i]) >= 0);
+  assert.ok(between, 'the ghost button does not sit between the banner and the tint laid over it');
+
+  // A hand written list can name two surfaces in terms of each other. That has to report as the
+  // authoring mistake it is rather than run the stack out, which reads as a crash in the gate and
+  // sends the next reader looking for a bug in the arithmetic instead of a typo in the list.
+  const cyclic = {
+    a: { layer: '--tint-base', fraction: 0.5, on: 'b', css: 'a test fixture' },
+    b: { layer: '--tint-base', fraction: 0.5, on: 'a', css: 'a test fixture' },
+  };
+  const loop = resolveSurface('a', tokens, new Set(), cyclic);
+  assert.ok(loop.message, 'a surface defined in terms of itself resolved to a colour');
+  assert.match(loop.message, /defined in terms of itself/);
+});
+
 test('a surface built from a missing token is a finding, not a skip', () => {
   // The same rule a missing token follows. A surface that cannot be resolved has to fail loudly,
   // because the alternative is a pair that stops being measured with nobody deciding that it should.
   // Proved by removing the token rather than by asserting the code path exists.
+  //
+  // Which surfaces that breaks is derived rather than listed, because a surface can inherit the
+  // dependency from the one it is built on. Naming them here instead would be a list to keep
+  // complete, and it would pass while a newly tinted surface went quietly unchecked.
+  const dependsOnTint = (name) => {
+    const surface = SURFACES[name];
+    if (!surface) return false;
+    return surface.layer === '--tint-base' || dependsOnTint(surface.on);
+  };
+  const affected = Object.keys(SURFACES).filter(dependsOnTint);
+  assert.ok(affected.length > 0, 'no surface is built on --tint-base, so this proves nothing');
+
   const without = css.replace(/--tint-base:\s*[^;]+;/g, '');
   const findings = checkAll(without).filter((f) => /cannot be resolved/.test(f.message));
   assert.ok(findings.length > 0, 'removing --tint-base left every pair on the tinted surface silently unmeasured');
-  assert.ok(findings.every((f) => f.bgName === 'the selected rail item'), 'the finding names the wrong surface');
+  assert.ok(findings.every((f) => affected.includes(f.bgName)), 'the finding names a surface that does not depend on the removed token');
+  for (const name of affected) {
+    assert.ok(findings.some((f) => f.bgName === name), `${name} depends on --tint-base but resolved without it`);
+  }
 });
 
 test('a bare rgb triple parses as a colour, and an out-of-range one does not', () => {

@@ -276,7 +276,17 @@ quote in a bug report.
 
 ### Changed
 
-- **The automatic contrast check now covers three more places, including two it previously could not
+- **The two buttons in the "we could not read your saved data" warning no longer look equally
+  important.** That warning tells you to download a copy first and only then start fresh, but both
+  buttons were the same loud red, so nothing on screen backed up what the words were saying. Now
+  Download a copy is the red one and Start fresh is the quieter outlined one, which is the same
+  pattern the app already uses everywhere else: the thing being suggested is filled in, and the way
+  out sits beside it in outline. Starting fresh deletes the saved data it cannot read, so it is the
+  one worth pausing over. Nothing about what either button does has changed, and both are still
+  perfectly readable in light and dark. The quieter button's outline was measured in both themes
+  before it was chosen, and a first attempt was thrown out because the outline was too faint to
+  stand out reliably.
+
   work out at all.** Nothing on screen changes. The app has a check that runs on every build and
   measures how well each colour stands out against whatever is behind it, and three red things were
   not being measured: the red square beside "Reading Tracker" at the top of the sidebar, the red bar
