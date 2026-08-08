@@ -126,7 +126,20 @@ quote in a bug report.
 
 ### Fixed
 
-- **The outline around every button, checkbox and text box was too faint to see reliably.** Buttons
+- **The cover-art switch was almost invisible when it was off.** Turn cover art off and the little
+  switch beside the label went pale, to the point where it read as a smudge rather than a control:
+  in the light theme both the track and the white dot on it were about as distinct from their
+  surroundings as pale grey on white, and in the dark theme the track nearly disappeared into the
+  page. The words beside it always said "Cover art on" or "Cover art off", so nothing was ever
+  genuinely unreadable, but you had to read the words rather than glance at the switch. The
+  off-state colour is now noticeably darker in both themes, so the switch, the dot inside it, and
+  which way it is pointing are all plain at a glance. Nothing moved or changed size, and the on
+  state is exactly the red it always was.
+
+  The check that keeps the app's colours honest now also watches this switch and the red buttons,
+  which it had never looked at before, so neither can quietly fade again in a future change.
+
+
   like Rename, Note, Duplicate and Delete list, the row actions on each issue, the reading filters,
   the cover-art switch, the line marking an issue you have written a note on, and every saved list in
   the Library were all drawn with a border so close in colour to the page behind it that it barely

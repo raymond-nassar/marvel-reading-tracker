@@ -58,7 +58,7 @@ export const PAIRS = [
   ['--green', '--card', BODY, 'the available badge on a card'],
   ['--amber', '--bg', BODY, 'the scheduled badge on the page'],
   ['--amber', '--card', BODY, 'the scheduled badge on a card'],
-  ['--on-accent', '--red', BODY, 'the label of a primary button'],
+  ['--on-accent', '--red', BODY, 'the label of a primary button, and the knob of the cover-art switch in its on state'],
   ['--line-2', '--bg', LARGE, 'the boundary of a bordered control'],
   ['--line-2', '--card', LARGE, 'the boundary of a button on a card, such as the hero'],
   ['--line-2', '--card-2', LARGE, 'the boundary of a text input against its own fill'],
@@ -68,6 +68,23 @@ export const PAIRS = [
   ['--track', '--rail', LARGE, 'the unfilled part of the per-list progress bar in the rail'],
   ['--red', '--track', LARGE, 'the filled part of a progress bar against the unfilled part'],
   ['--warn', '--panel', LARGE, 'the border of the unreadable-data notice'],
+  // BL-067. The cover-art switch and the primary button were the two controls no pair reached, so
+  // nothing here would have moved if either had gone invisible. Measured by walking each control's
+  // ancestor chain to the first opaque background rather than by reading the stylesheet, over seven
+  // views and both themes: the switch always sits on the page, never on a card, and the primary
+  // button is the other way round, always on a card and never on the page. So each is gated where it
+  // actually renders.
+  //
+  // Only the off state needs new pairs. The on-state track is `--red`, not `--track`, so the knob on
+  // it is the `--on-accent` on `--red` pair already listed above and adding it again would be the
+  // same measurement under a second name. The plan for this item said otherwise and the gate caught
+  // it: a `--on-accent` on `--track` pair measured 1.32:1 in the light theme, which is a real number
+  // about a boundary nothing paints, since `--track` is the unfilled part of a progress bar and
+  // carries no knob.
+  ['--track-2', '--bg', LARGE, 'the cover-art switch in its off state, which sits on the page'],
+  ['--on-accent', '--track-2', LARGE, 'the knob of the cover-art switch on its off-state track'],
+  ['--red', '--card', LARGE, 'the fill of a primary button on a card'],
+  ['--red', '--card-2', LARGE, 'the fill of a primary button on a raised card'],
 ];
 
 export function parseHex(hex) {
