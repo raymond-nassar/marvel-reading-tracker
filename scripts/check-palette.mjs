@@ -106,13 +106,18 @@ export const PAIRS = [
   // Each was measured in Edge by hit testing what is actually behind the element rather than by
   // assuming, and all three clear the floor, so this is coverage rather than a repair.
   //
-  // The rail entry names three painters and not one. The first draft named only the skip link,
-  // which is the least of them because it is invisible until focused, and would have gated a
-  // permanent state indicator under the name of a transient link. `.brand .mark` at
-  // `src/styles.css:253` is the red square at the top of the rail and `.ri[aria-current]::before` at
-  // `src/styles.css:290` is the bar marking the current destination. The hit test settled where the
-  // skip link actually lands: absolutely positioned at the top left with `z-index: 100`, it comes
-  // down on the rail rather than on the page, so all three share one surface at 4.00 and 4.41.
+  // The rail entry names two painters and not one. The first draft named only the skip link, which
+  // is the least of them because it is invisible until focused, and would have gated a permanent
+  // state indicator under the name of a transient link. `.brand .mark` at `src/styles.css:253` is
+  // the red square at the top of the rail, and the hit test settled where the skip link lands:
+  // absolutely positioned at the top left with `z-index: 100`, it comes down on the rail rather
+  // than on the page. Those two share one surface, at 4.00 and 4.41.
+  //
+  // The accent bar is the third painter and is deliberately not on that entry. `.ri[aria-current]`
+  // sets its own background at `src/styles.css:286`, a tint over the rail, and the bar at
+  // `src/styles.css:290` is its `::before`, so it can only ever land on the tint. It reads 3.35 and
+  // 3.68. Putting it on `--rail` with the other two would have overstated it by 0.65, which is the
+  // mistake hit testing was for.
   ['--red', '--rail', LARGE, 'the brand mark, and the skip link when focused, both on the rail'],
   ['--red', 'the selected rail item', LARGE, 'the accent bar marking the current destination'],
   ['--red', 'the unreadable-data banner', LARGE, 'the fill of both buttons in the blocked banner'],
@@ -334,15 +339,16 @@ export const KNOWN = [
   // What decided it is what the choice costs. White on green reaching 3:1 caps the green's relative
   // luminance at 0.3000, and the shipped green is at 0.4067. Every green under that cap reads at
   // most 6.30:1 on the page and 5.81:1 on a card, against 8.22:1 and 7.58:1 today, so clearing the
-  // tick costs the available badge at least 1.92 of its ratio. The nearest feasible green to the
-  // shipped one, #3fa684, lands exactly on 3.00:1 with no margin at all.
+  // tick costs the available badge between 1.77 and 1.92 of its ratio, depending on which surface it
+  // is read against. The nearest feasible green to the shipped one, #3fa684, lands exactly on 3.00:1
+  // with no margin at all.
   //
   // That is a trade of contrast on text for contrast on a glyph, and the glyph is the side that
   // carries nothing. The badge is language a reader has to read. The tick is not read by anybody:
   // the button takes its accessible name from the `aria-label` at `src/js/main.js:1919`, which
   // replaces the glyph in the name computation, and `aria-pressed` at `:1918` carries the state
   // besides. The fill already says the box is checked, emphatically, at 7.58:1 against a card and
-  // 8.22:1 against the page. Taking 1.92 of ratio away from words that are read, to give it to a
+  // 8.22:1 against the page. Taking that much ratio away from words that are read, to give it to a
   // symbol that is not, is a worse outcome for the reader who needs the contrast most.
   //
   // So the tick is reinforcement drawn on an already unmistakable fill, which is the same judgement

@@ -3235,23 +3235,26 @@ link at `src/index.html:16`, which is the least of them: it is invisible until f
 two are on screen in every view. `.brand .mark` at `src/styles.css:253` is the 28px red square at the
 top of the rail, and `.ri[aria-current]::before` at `src/styles.css:290` is the 3px bar marking the
 current destination, which the comment at `src/styles.css:283-284` names as part of the selected
-state. All three measure the same, 4.00 dark and 4.41 light, so nothing is mismeasured, but writing
-the reason string as "the skip link" would have gated a state indicator under the name of a
-transient link. That is the "named one painter, missed the others" pattern this whole item exists to
-close, and the draft reproduced it inside the item about it. The draft's own closing wrinkle turned
-out to be the substance of the work: the accent bar does not sit on the rail. It sits inside
-`.ri[aria-current]`, whose background at `src/styles.css:286` is a translucent tint over the rail, so
-its true surface is a shade off `--rail` and reads 3.35 dark and 3.68 light rather than 4.00 and
-4.41. Measuring it against `--rail` would have overstated it by 0.65. It is therefore two pairs, the
-rail and the tinted item, not one.
+state. Writing the reason string as "the skip link" would have gated a state indicator under the
+name of a transient link. That is the "named one painter, missed the others" pattern this whole item
+exists to close, and the draft reproduced it inside the item about it.
+
+The draft then made a second version of the same mistake, and this is the one that would have shown
+up as a wrong number rather than a wrong name. It assumed all three shared one surface at 4.00 and
+4.41, with the accent bar as a wrinkle to settle later. The wrinkle was the substance. The bar does
+not sit on the rail. It sits inside `.ri[aria-current]`, whose background at `src/styles.css:286` is
+a translucent tint over the rail, and the bar is that element's `::before`, so it can only ever land
+on the tint. It reads 3.35 dark and 3.68 light, not 4.00 and 4.41, and putting it on `--rail` would
+have overstated it by 0.65. It is therefore two pairs, the rail and the tinted item, not one, and
+the brand mark and the skip link are what share the 4.00 and 4.41.
 
 **The blocked banner: the gate learned to resolve it.** Two buttons render inside a banner whose
 background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles.css:909`. The choice
 this block left open was between teaching the gate that form and recording the pair as deliberately
 unmeasured. Teaching it won, because the same mechanism was needed anyway for the accent bar above,
 and a gate with two unmeasured holes in it is a gate that will grow a third. `SURFACES` at
-`scripts/check-palette.mjs:137-150` names a derived background as a fraction of one token over
-another, and `resolveSurface` at `scripts/check-palette.mjs:173-184` computes it. One mechanism
+`scripts/check-palette.mjs:142-155` names a derived background as a fraction of one token over
+another, and `resolveSurface` at `scripts/check-palette.mjs:178-189` computes it. One mechanism
 covers both CSS forms because they are the same arithmetic: laying a translucent layer over an
 opaque backdrop and mixing two opaque colours in sRGB are both a straight interpolation of the gamma
 encoded channels. The tokens are still read out of the stylesheet, so changing `--rail`, `--panel` or
@@ -3276,7 +3279,8 @@ exhaustive search over all 16,777,216 sRGB colours says the trough has 0 feasibl
 tick has 2,153,393, so the two really are different, but it also says what the feasible ones cost.
 White on green at 3:1 caps the green's luminance at 0.3000, and the shipped `#43c088` sits at 0.4067.
 Every feasible green therefore reads at most 6.30:1 against the page and 5.81:1 against a card,
-against 8.22 and 7.58 today, so clearing the tick costs at least 1.92 on the fill. The nearest
+against 8.22 and 7.58 today, so clearing the tick costs between 1.77 and 1.92 on the fill, depending
+on which surface it is read against. The nearest
 feasible green lands on exactly 3.00 with no margin at all. That trade is the wrong way round: it
 spends contrast on the fill, which is what tells a reader the box is checked, to buy contrast on a
 glyph that no one reads, since the button's label at `src/js/main.js:1919` reads "Mark X as unread"
@@ -3300,7 +3304,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3967-3968` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3971-3972` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3310,17 +3314,17 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3988-3990`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3992-3994`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3801-3803` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3805-3807` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
 which is the treatment the as-is journey map in the UX study already gets. That precedent is the
 weaker of the two, because the journey map is stamped as a hypothesis in its own text at
-`docs/UX_STUDY.md:815-818` while this paragraph carries no such marker and reads in the present
+`docs/UX_STUDY.md:816-819` while this paragraph carries no such marker and reads in the present
 tense, so a reader who never opens this block has no way to tell it is frozen. Marking it in place
 would mean editing the snapshot, which is the thing being avoided; the record is here instead.
 
