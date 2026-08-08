@@ -124,6 +124,10 @@ function normalizeEntry(raw) {
     name,
     file,
     count,
+    // How many collected editions the order is divided into, or 0 for an ordinary issue order.
+    // A trade order is a different kind of reading commitment, so the number a reader weighs is
+    // the number of books, not only the number of issues.
+    collections: Number.isInteger(raw.collections) && raw.collections > 0 ? raw.collections : 0,
     description: str(raw.description),
     type: LIST_TYPES.includes(raw.type) ? raw.type : null,
     depth: READING_DEPTHS.includes(raw.depth) ? raw.depth : null,
@@ -229,6 +233,12 @@ export function catalogFacets(lists) {
     });
   }
 
+  // Reading in collected editions is a way of collecting, not a kind of story, so it cuts
+  // across the type chips rather than sitting inside one. It is listed only when such an order
+  // exists, like every other facet here.
+  const trade = all.filter(isTradeOrder).length;
+  if (trade) facets.push({ key: 'trade', label: 'By collected edition', count: trade });
+
   const short = all.filter(isShortOrder).length;
   if (short) facets.push({ key: 'short', label: `Short (under ${SHORT_ORDER_MAX} issues)`, count: short });
 
@@ -239,6 +249,7 @@ export function filterByFacet(lists, key) {
   const all = Array.isArray(lists) ? lists : [];
   if (!key || key === 'all') return all;
   if (key === 'beginner') return all.filter(isBeginnerOrder);
+  if (key === 'trade') return all.filter(isTradeOrder);
   if (key === 'short') return all.filter(isShortOrder);
   if (key.startsWith('type:')) return filterByCategory(all, key.slice(5));
   // An unknown facet matches nothing rather than everything, so a stale saved filter can
@@ -270,6 +281,18 @@ export function readingTimeLabel(count) {
   if (minutes < 90) return `about ${minutes} minutes`;
   const hours = Math.round(minutes / 60);
   return `about ${hours} hour${hours === 1 ? '' : 's'}`;
+}
+
+// What an order is divided into, when it is divided into anything. Returns null for an
+// ordinary issue order so a caller renders nothing rather than "0 collected editions".
+export function collectionsLabel(list) {
+  const n = list?.collections;
+  if (!Number.isInteger(n) || n <= 0) return null;
+  return `${n} collected edition${n === 1 ? '' : 's'}`;
+}
+
+export function isTradeOrder(list) {
+  return Number.isInteger(list?.collections) && list.collections > 0;
 }
 
 // ------------------------------------------------------------------ search

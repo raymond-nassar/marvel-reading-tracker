@@ -112,8 +112,34 @@ export const MAX_NAME = 200;
 export const MAX_DESCRIPTION = 2000;
 export const MAX_NOTE = 2000;
 
-export function createList(state, { name, description = '', id = newId(), itemIds = [], catalogId = null, note = '' } = {}) {
+// A collected edition's name is a book title, so it needs far less room than a list name, and
+// capping it keeps a corrupted or hostile order file from writing an unbounded string into
+// storage once per issue.
+export const MAX_COLLECTION = 200;
+
+// The collected edition an issue belongs to, as a map from issue id to edition name.
+//
+// It lives on the list rather than on the issue because the same issue can sit in an ordinary
+// issue order and in a trade order at the same time, and only the trade order knows it as part
+// of a book. Issues are stored once and shared between lists, so writing it there would leak a
+// trade order's structure into every other list holding that issue.
+//
+// Only ids the list actually holds are kept. A stale entry is invisible until the same issue is
+// added back, at which point it would reappear in a book the reader never put it in.
+function normalizeCollectedIn(raw, itemIds) {
+  const ids = new Set(itemIds);
+  const out = {};
+  for (const [k, v] of Object.entries(raw ?? {})) {
+    const id = Number(k);
+    if (!ids.has(id) || typeof v !== 'string' || !v.trim()) continue;
+    out[id] = v.trim().slice(0, MAX_COLLECTION);
+  }
+  return out;
+}
+
+export function createList(state, { name, description = '', id = newId(), itemIds = [], catalogId = null, note = '', collectedIn = {} } = {}) {
   const listId = id;
+  const ids = dedupe(itemIds.map(Number).filter((n) => Number.isInteger(n) && n !== 0));
   const list = {
     id: listId,
     name: String(name || 'Untitled list').slice(0, MAX_NAME),
@@ -127,7 +153,8 @@ export function createList(state, { name, description = '', id = newId(), itemId
     // catalog show "in library" instead of offering to import a second copy, so it has to
     // survive a reload rather than being tracked only in memory.
     catalogId: catalogId ? String(catalogId).slice(0, MAX_NAME) : null,
-    itemIds: dedupe(itemIds.map(Number).filter((n) => Number.isInteger(n) && n !== 0)),
+    itemIds: ids,
+    collectedIn: normalizeCollectedIn(collectedIn, ids),
   };
   return {
     ...state,
@@ -172,6 +199,10 @@ export function duplicateList(state, listId, { name } = {}) {
     // "in library" would point at whichever was found first.
     catalogId: null,
     itemIds: [...source.itemIds],
+    // The copy is the same books in the same order, so it carries the same edition names. A
+    // reader duplicating a trade order to reshuffle it would otherwise get a flat issue list
+    // and no way to see which volume anything came from.
+    collectedIn: { ...(source.collectedIn ?? {}) },
   };
 
   const listOrder = [...state.listOrder];
@@ -256,11 +287,18 @@ export function addIssuesToList(state, listId, inputs, { at = null, sort = false
 
   let next = state;
   const incoming = [];
+  // Which collected edition each incoming issue belongs to. Read from the input rather than
+  // from the stored issue, because normalizeIssue drops it on purpose: it describes this
+  // list's structure, not the issue.
+  const editions = new Map();
   for (const input of inputs) {
     const issue = normalizeIssue(input);
     if (!issue) continue;
     next = upsertIssue(next, issue);
     incoming.push(issue.issueId);
+    if (typeof input?.collectedIn === 'string' && input.collectedIn.trim()) {
+      editions.set(issue.issueId, input.collectedIn.trim().slice(0, MAX_COLLECTION));
+    }
   }
 
   const ordered = sort
@@ -275,8 +313,17 @@ export function addIssuesToList(state, listId, inputs, { at = null, sort = false
   const index = at == null ? itemIds.length : clamp(at, 0, itemIds.length);
   itemIds.splice(index, 0, ...fresh);
 
+  // Only the issues actually added take an edition name. An issue the list already held keeps
+  // the edition it was added under, so re-importing an order cannot move an issue into a
+  // different book than the one the reader has been working through.
+  const collectedIn = { ...(list.collectedIn ?? {}) };
+  for (const id of fresh) {
+    const name = editions.get(id);
+    if (name) collectedIn[id] = name;
+  }
+
   return {
-    state: { ...next, lists: { ...next.lists, [listId]: { ...list, itemIds } } },
+    state: { ...next, lists: { ...next.lists, [listId]: { ...list, itemIds, collectedIn } } },
     added: fresh.length,
     skipped,
   };
@@ -285,8 +332,15 @@ export function addIssuesToList(state, listId, inputs, { at = null, sort = false
 export function removeFromList(state, listId, issueId) {
   const list = state.lists[listId];
   if (!list) return state;
-  const itemIds = list.itemIds.filter((id) => id !== Number(issueId));
-  return { ...state, lists: { ...state.lists, [listId]: { ...list, itemIds } } };
+  const id = Number(issueId);
+  const itemIds = list.itemIds.filter((n) => n !== id);
+  if (itemIds.length === list.itemIds.length) return state;
+  // Dropped with the issue. Left behind, it would put the issue back into a book it had been
+  // removed from the moment it was added again, and grow storage for a list that no longer
+  // holds it.
+  const collectedIn = { ...(list.collectedIn ?? {}) };
+  delete collectedIn[id];
+  return { ...state, lists: { ...state.lists, [listId]: { ...list, itemIds, collectedIn } } };
 }
 
 export function moveItem(state, listId, issueId, delta) {
@@ -563,6 +617,7 @@ function coerce(raw) {
   const lists = {};
   for (const [k, v] of Object.entries(raw.lists ?? {})) {
     if (!v || typeof v !== 'object') continue;
+    const itemIds = dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter((n) => Number.isInteger(n) && n !== 0));
     lists[k] = {
       id: k,
       name: String(v.name ?? 'Untitled list'),
@@ -570,7 +625,12 @@ function coerce(raw) {
       note: normalizeNote(v.note),
       created: Number(v.created) || Date.now(),
       catalogId: typeof v.catalogId === 'string' && v.catalogId ? v.catalogId.slice(0, MAX_NAME) : null,
-      itemIds: dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter((n) => Number.isInteger(n) && n !== 0)),
+      itemIds,
+      // Rebuilt rather than carried across, so a hand-edited backup cannot name issues the
+      // list does not hold. A list saved before trade orders existed simply has none, which is
+      // why this is not a schema version bump: the field's absence is a valid state, not an
+      // older shape needing migration.
+      collectedIn: normalizeCollectedIn(v.collectedIn, itemIds),
     };
   }
   const listOrder = (Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists)).filter((id) => lists[id]);
@@ -640,11 +700,39 @@ export function exportBackup(state) {
 export function listItems(state, listId) {
   const list = state.lists[listId];
   if (!list) return [];
+  const editions = list.collectedIn ?? {};
   return list.itemIds.map((id) => ({
     ...(state.issues[id] ?? { issueId: id, title: `Issue ${id}`, hydrated: false, source: 'unknown' }),
     read: isRead(state, id),
     override: state.overrides[id] ?? null,
     note: issueNote(state, id),
+    collectedIn: editions[id] ?? null,
+  }));
+}
+
+// The collected editions a list is divided into, in reading order, each with its own progress.
+//
+// Editions are runs of consecutive items rather than a grouping of the whole list, because
+// itemIds is the reading order and the reader may reorder it. A book split in two by a move
+// shows as two runs, which is the truth about the order they are now in; silently regrouping
+// them would show a reading order the list does not have.
+//
+// Returns [] for a list with no editions at all, so a caller can tell "not a trade order" from
+// "a trade order whose books are all empty" without inspecting the items.
+export function listCollections(state, listId) {
+  const items = listItems(state, listId);
+  const runs = [];
+  for (const item of items) {
+    const last = runs[runs.length - 1];
+    if (last && last.name === item.collectedIn) last.items.push(item);
+    else runs.push({ name: item.collectedIn, items: [item] });
+  }
+  if (!runs.some((r) => r.name)) return [];
+  return runs.map((run) => ({
+    name: run.name,
+    items: run.items,
+    total: run.items.length,
+    read: run.items.filter((i) => i.read).length,
   }));
 }
 

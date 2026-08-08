@@ -17,7 +17,7 @@ import { compareIssues } from './lib/sort.js';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
-  catalogCoverUrl, readingTimeLabel,
+  catalogCoverUrl, readingTimeLabel, collectionsLabel,
 } from './lib/catalog.js';
 import { Store } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -1052,6 +1052,7 @@ function orderCard(list) {
   const inLibrary = listForCatalogId(store.state, list.id);
   const meta = [
     `${list.count} issue${list.count === 1 ? '' : 's'}`,
+    collectionsLabel(list),
     readingTimeLabel(list.count),
     typeLabel(list.type),
   ].filter(Boolean).join(' · ');
@@ -1175,6 +1176,7 @@ async function openPreview(list) {
   const readingTime = readingTimeLabel(list.count);
   $('#preview-meta').textContent = [
     `${list.count} issue${list.count === 1 ? '' : 's'}`,
+    collectionsLabel(list),
     readingTime,
     depthLabel(list.depth),
   ].filter(Boolean).join(' · ');
@@ -1192,12 +1194,25 @@ async function openPreview(list) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const order = await res.json();
     if (previewLoad !== token) return;
-    $('#preview-body').replaceChildren(el('ol', { class: 'preview-list' }, order.items.map((item, i) => el('li', {}, [
-      // Numbered because the order is the point; the reading order is what the reader came
-      // to the preview to see.
-      el('span', { class: 'pn', text: String(i + 1) }),
-      el('span', { text: item.title || 'Untitled issue' }),
-    ]))));
+    // Sub-headings for a trade order, so the reader can see the books before importing, which
+    // is the whole reason to pick this variant over the issue-by-issue one. The number keeps
+    // counting across a heading because it numbers the reading order, not the book.
+    let shown = null;
+    const nodes = [];
+    order.items.forEach((item, i) => {
+      const edition = typeof item.collectedIn === 'string' ? item.collectedIn : null;
+      if (edition && edition !== shown) {
+        shown = edition;
+        nodes.push(el('li', { class: 'preview-group' }, [el('h4', { text: edition })]));
+      }
+      nodes.push(el('li', {}, [
+        // Numbered because the order is the point; the reading order is what the reader came
+        // to the preview to see.
+        el('span', { class: 'pn', text: String(i + 1) }),
+        el('span', { text: item.title || 'Untitled issue' }),
+      ]));
+    });
+    $('#preview-body').replaceChildren(el('ol', { class: 'preview-list' }, nodes));
   } catch (err) {
     if (previewLoad !== token) return;
     $('#preview-body').replaceChildren(el('p', {
@@ -1618,6 +1633,24 @@ function renderRows() {
     const currentId = upNext(store.state, id)?.issueId ?? null;
     const items = all.filter((it) => matchesReadingFilter(filter, it));
 
+    // Collected editions, as runs of consecutive items. Progress is counted over every item in
+    // the run and not over the filtered rows below it, because a book is a fixed thing you own:
+    // "2 of 6 read" has to mean the same under every filter, or the heading becomes a second,
+    // quieter reading filter that the reader never set.
+    const runs = [];
+    const runOf = new Map();
+    for (const it of all) {
+      const last = runs[runs.length - 1];
+      if (last && last.name === it.collectedIn) {
+        last.total += 1;
+        if (it.read) last.read += 1;
+      } else {
+        runs.push({ name: it.collectedIn, total: 1, read: it.read ? 1 : 0 });
+      }
+      runOf.set(it.issueId, runs.length - 1);
+    }
+    const hasEditions = runs.some((r) => r.name);
+
     const unread = all.length - all.filter((it) => it.read).length;
     $('#full-count').textContent = `${unread} unread`;
 
@@ -1626,7 +1659,24 @@ function renderRows() {
       return;
     }
 
+    let shownRun = -1;
     for (const item of items) {
+      const runIndex = runOf.get(item.issueId);
+      if (hasEditions && runIndex !== shownRun) {
+        shownRun = runIndex;
+        const run = runs[runIndex];
+        // An item with no edition gets no heading rather than a heading saying so. In a trade
+        // order that only happens to something the reader added by hand, and inventing a book
+        // to put it in would be a claim about what Marvel collected.
+        if (run.name) {
+          rows.append(el('li', { class: `row-group${run.read === run.total ? ' is-done' : ''}` }, [
+            el('h3', { class: 'rg-name', text: run.name }),
+            el('span', { class: 'rg-count', text: `${run.read} of ${run.total} read` }),
+            el('progress', { value: String(run.read), max: String(run.total), 'aria-hidden': 'true' }),
+          ]));
+        }
+      }
+
       const override = item.override;
       const av = availability(item, { override });
       const badgeClass = {
@@ -2072,13 +2122,16 @@ function doImport() {
   }
 
   // Markdown carries only a title and an id, so metadata starts as pending and is
-  // filled in later rather than guessed at now.
+  // filled in later rather than guessed at now. The sub-heading each line sat under is the
+  // exception: it is structure the reader wrote, not metadata to be looked up, so it comes
+  // straight across and a pasted trade order keeps its books.
   const staged = entries.map((e) => ({
     issueId: e.issueId,
     title: e.title,
     url: e.url,
     source: 'import',
     hydrated: false,
+    collectedIn: e.section ?? null,
   }));
 
   let added = 0, skipped = 0;
@@ -2347,7 +2400,11 @@ async function renderCatalog() {
 function catalogRow(list, { variant = false } = {}) {
   // The count is derived from the file the reader will actually import, so it is exact and
   // does not need hedging.
-  const meta = [typeLabel(list.type), `${list.count} issue${list.count === 1 ? '' : 's'}`].filter(Boolean).join(' · ');
+  const meta = [
+    typeLabel(list.type),
+    `${list.count} issue${list.count === 1 ? '' : 's'}`,
+    collectionsLabel(list),
+  ].filter(Boolean).join(' · ');
   const depth = depthLabel(list.depth);
   const title = variant ? variantLabel(list) : list.name;
   return el('div', { class: 'result' }, [

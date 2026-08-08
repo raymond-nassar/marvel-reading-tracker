@@ -331,6 +331,26 @@ A checklist line with no Marvel link becomes a placeholder: an entry you can see
 but not open, because there is nothing to open. Keeping it means the reading order stays complete
 rather than quietly losing an issue, and the import notice says how many there are.
 
+#### Orders grouped by collected edition
+
+A checklist may divide its issues with `##` sub-headings. Each one names a collected edition, and
+the issues beneath it are the issues that edition collects. The reading view then shows the
+heading with its own progress, and the catalog says how many editions the order holds. An order
+with no sub-headings is an ordinary issue order and is unaffected, which is what every order
+shipped before this was.
+
+Only `##` and deeper count. A `#` heading is the order's title, and it also ends any edition
+already open, so an appendix under a second `#` is correctly left in no edition at all.
+
+The grouping is the curator's, not Marvel's, and cannot be checked against the metadata: the API
+serves collections from the same endpoint as issues, but it holds no collection record for
+anything published after 2023, and where a record does exist the issues it collects are prose in
+its description rather than a list. So a grouped order should say in its `description` where its
+volume line-up came from and which issues it leaves out.
+
+Read state is shared. An issue is read or unread for the whole app, so the same issue in a grouped
+order and in an issue-by-issue order is one tick, not two.
+
 #### Event orders, generated from Marvel's own metadata
 
 The five event lists are not typed by hand. `scripts/build-event-order.mjs` holds, per event,

@@ -59,28 +59,28 @@
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:592-620|0": {
-    "anchor": "src/js/lib/model.js:592-620",
+  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:652-680|0": {
+    "anchor": "src/js/lib/model.js:652-680",
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:1671-1677|0": {
-    "anchor": "src/js/main.js:1671-1677",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:1721-1727|0": {
+    "anchor": "src/js/main.js:1721-1727",
     "fp": "87efb34932539235",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:2360-2365|0": {
-    "anchor": "src/js/main.js:2360-2365",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:2417-2422|0": {
+    "anchor": "src/js/main.js:2417-2422",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:2582-2616|0": {
-    "anchor": "src/js/main.js:2582-2616",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:2639-2673|0": {
+    "anchor": "src/js/main.js:2639-2673",
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
-  "docs/UX_STUDY.md|keyboard|src/js/main.js:1229-1232|0": {
-    "anchor": "src/js/main.js:1229-1232",
+  "docs/UX_STUDY.md|keyboard|src/js/main.js:1244-1247|0": {
+    "anchor": "src/js/main.js:1244-1247",
     "fp": "d52c5acfb3ad6365",
     "head": "$('#reading-filters').append(...READING_FILTERS.map((f) => el('label', { class: 'fp' }, ["
   },
@@ -89,13 +89,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:248-249|0": {
-    "anchor": "PRODUCT_BACKLOG.md:248-249",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:250-251|0": {
+    "anchor": "PRODUCT_BACKLOG.md:250-251",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3021-3024|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3021-3024",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3096-3099|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3096-3099",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -109,8 +109,8 @@
     "fp": "e19583cc19f81884",
     "head": "// Contract verified 2026-08-03 (CHG-001): the live API's digitalId is authoritative; the"
   },
-  "docs/UX_STUDY.md|proto-persona#tolerance-for-missing-metadata|src/js/main.js:1671-1677|0": {
-    "anchor": "src/js/main.js:1671-1677",
+  "docs/UX_STUDY.md|proto-persona#tolerance-for-missing-metadata|src/js/main.js:1721-1727|0": {
+    "anchor": "src/js/main.js:1721-1727",
     "fp": "87efb34932539235",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
@@ -119,8 +119,8 @@
     "fp": "97c58e90a98b2fc5",
     "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation#2|src/js/main.js:1729-1734|0": {
-    "anchor": "src/js/main.js:1729-1734",
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#2|src/js/main.js:1779-1784|0": {
+    "anchor": "src/js/main.js:1779-1784",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
@@ -129,8 +129,8 @@
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:509-535|0": {
-    "anchor": "src/js/lib/model.js:509-535",
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:563-589|0": {
+    "anchor": "src/js/lib/model.js:563-589",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -144,8 +144,8 @@
     "fp": "90461cc45716fa24",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
-  "docs/UX_STUDY.md|sweep-result|src/js/main.js:2405-2413|0": {
-    "anchor": "src/js/main.js:2405-2413",
+  "docs/UX_STUDY.md|sweep-result|src/js/main.js:2462-2470|0": {
+    "anchor": "src/js/main.js:2462-2470",
     "fp": "9b9575dc8a81cd13",
     "head": "function wireCatalogSearch() {"
   },
@@ -159,8 +159,8 @@
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css:871-873|0": {
-    "anchor": "src/styles.css:871-873",
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:887-889|0": {
+    "anchor": "src/styles.css:887-889",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -174,8 +174,8 @@
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:871-873|0": {
-    "anchor": "src/styles.css:871-873",
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:887-889|0": {
+    "anchor": "src/styles.css:887-889",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -199,13 +199,13 @@
     "fp": "6e2654e385653c4a",
     "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-ra"
   },
-  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:547-548|0": {
-    "anchor": "src/styles.css:547-548",
+  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:560-561|0": {
+    "anchor": "src/styles.css:560-561",
     "fp": "4867cdf75f778888",
     "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
   },
-  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:550|0": {
-    "anchor": "src/styles.css:550",
+  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:563|0": {
+    "anchor": "src/styles.css:563",
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
@@ -219,13 +219,13 @@
     "fp": "d9fb3bc05f56276d",
     "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
-  "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css:562-565|0": {
-    "anchor": "src/styles.css:562-565",
+  "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css:575-578|0": {
+    "anchor": "src/styles.css:575-578",
     "fp": "8391d947227277c6",
     "head": ".cb {"
   },
-  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:619-620|0": {
-    "anchor": "src/styles.css:619-620",
+  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:632-633|0": {
+    "anchor": "src/styles.css:632-633",
     "fp": "3a7250a4d0e170ae",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -274,18 +274,18 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:871-878|0": {
-    "anchor": "src/styles.css:871-878",
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:887-894|0": {
+    "anchor": "src/styles.css:887-894",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
-  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:1667-1677|0": {
-    "anchor": "src/js/main.js:1667-1677",
+  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:1717-1727|0": {
+    "anchor": "src/js/main.js:1717-1727",
     "fp": "b64520737d749a82",
     "head": "el('span', { class: `badge ${badgeClass}` }, ["
   },
-  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:1729-1734|0": {
-    "anchor": "src/js/main.js:1729-1734",
+  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:1779-1784|0": {
+    "anchor": "src/js/main.js:1779-1784",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
@@ -309,13 +309,13 @@
     "fp": "0c13bbed47c568da",
     "head": "export function isTextEntry(el) {"
   },
-  "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/js/main.js:1760-1783|0": {
-    "anchor": "src/js/main.js:1760-1783",
+  "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/js/main.js:1810-1833|0": {
+    "anchor": "src/js/main.js:1810-1833",
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:2829-2849|0": {
-    "anchor": "src/js/main.js:2829-2849",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:2886-2906|0": {
+    "anchor": "src/js/main.js:2886-2906",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -329,18 +329,18 @@
     "fp": "8ff08d137ac43c24",
     "head": "function open({ title, body, confirmLabel, prefill = null, inputLabel = '', multiline = false }) {"
   },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:1267-1275|0": {
-    "anchor": "src/js/main.js:1267-1275",
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:1282-1290|0": {
+    "anchor": "src/js/main.js:1282-1290",
     "fp": "23cc17f6a74f0d37",
     "head": "$('#btn-rename-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:1294-1310|0": {
-    "anchor": "src/js/main.js:1294-1310",
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:1309-1325|0": {
+    "anchor": "src/js/main.js:1309-1325",
     "fp": "6cbc2f6bdb1dc112",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:2500|0": {
-    "anchor": "src/js/main.js:2500",
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:2557|0": {
+    "anchor": "src/js/main.js:2557",
     "fp": "8ab27e651ace604e",
     "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);"
   },
@@ -349,13 +349,13 @@
     "fp": "47bc9454de2bffac",
     "head": "function notify(sel, msg, kind = 'ok', key = sel, action = null) {"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:1294-1310|0": {
-    "anchor": "src/js/main.js:1294-1310",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:1309-1325|0": {
+    "anchor": "src/js/main.js:1309-1325",
     "fp": "6cbc2f6bdb1dc112",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:2713-2719|0": {
-    "anchor": "src/js/main.js:2713-2719",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:2770-2776|0": {
+    "anchor": "src/js/main.js:2770-2776",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -369,8 +369,8 @@
     "fp": "ea5c94b7dbefac59",
     "head": "Bundled reading orders are imported from community sources, not authored here. Each list in"
   },
-  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/js/main.js:1760-1783|0": {
-    "anchor": "src/js/main.js:1760-1783",
+  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/js/main.js:1810-1833|0": {
+    "anchor": "src/js/main.js:1810-1833",
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
@@ -399,8 +399,8 @@
     "fp": "dcfa1e8fad538a97",
     "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
-  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/js/main.js:1677|0": {
-    "anchor": "src/js/main.js:1677",
+  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/js/main.js:1727|0": {
+    "anchor": "src/js/main.js:1727",
     "fp": "bd66076a7b8dce19",
     "head": "item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,"
   },
@@ -434,13 +434,13 @@
     "fp": "4fa15a7cc8430788",
     "head": "<div class=\"sub\" id=\"progress-sub\">Counted over unique issues across every list, so an issue in two "
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:2330|0": {
-    "anchor": "src/js/main.js:2330",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:2383|0": {
+    "anchor": "src/js/main.js:2383",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:2582-2616|0": {
-    "anchor": "src/js/main.js:2582-2616",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:2639-2673|0": {
+    "anchor": "src/js/main.js:2639-2673",
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
@@ -449,13 +449,13 @@
     "fp": "b5dd33b3dd95fa49",
     "head": "// Series and creators are searched locally against a vendored index, because the API ignores"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:1608-1727|0": {
-    "anchor": "src/js/main.js:1608-1727",
-    "fp": "7946f8023d115e25",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:1623-1777|0": {
+    "anchor": "src/js/main.js:1623-1777",
+    "fp": "720dd3877a66fbf0",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2829-2849|0": {
-    "anchor": "src/js/main.js:2829-2849",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2886-2906|0": {
+    "anchor": "src/js/main.js:2886-2906",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -469,8 +469,8 @@
     "fp": "983f9ab11ea2e4be",
     "head": "{"
   },
-  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:592-620|0": {
-    "anchor": "src/js/lib/model.js:592-620",
+  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:652-680|0": {
+    "anchor": "src/js/lib/model.js:652-680",
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
@@ -479,23 +479,23 @@
     "fp": "1e09601b047cb8d4",
     "head": "<!-- Both, so the browser paints its own scrollbars and form controls to the reader's"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:1398-1425|0": {
-    "anchor": "src/js/main.js:1398-1425",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:1413-1440|0": {
+    "anchor": "src/js/main.js:1413-1440",
     "fp": "f70cfc6c57efd83e",
     "head": "function undoDelete() {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:1667-1677|0": {
-    "anchor": "src/js/main.js:1667-1677",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:1717-1727|0": {
+    "anchor": "src/js/main.js:1717-1727",
     "fp": "b64520737d749a82",
     "head": "el('span', { class: `badge ${badgeClass}` }, ["
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:1729-1734|0": {
-    "anchor": "src/js/main.js:1729-1734",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:1779-1784|0": {
+    "anchor": "src/js/main.js:1779-1784",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2713-2719|0": {
-    "anchor": "src/js/main.js:2713-2719",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2770-2776|0": {
+    "anchor": "src/js/main.js:2770-2776",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -504,8 +504,8 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:619-620|0": {
-    "anchor": "src/styles.css:619-620",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:632-633|0": {
+    "anchor": "src/styles.css:632-633",
     "fp": "3a7250a4d0e170ae",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -514,8 +514,8 @@
     "fp": "c6b83ff22c8cca85",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:509-535|0": {
-    "anchor": "src/js/lib/model.js:509-535",
+  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:563-589|0": {
+    "anchor": "src/js/lib/model.js:563-589",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -559,8 +559,8 @@
     "fp": "7aa18c32ba31e0a8",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2829-2849|0": {
-    "anchor": "src/js/main.js:2829-2849",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:2886-2906|0": {
+    "anchor": "src/js/main.js:2886-2906",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -569,13 +569,13 @@
     "fp": "5fb17598510b56c8",
     "head": "function showView(next, { focus = true, push = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:535-538|0": {
-    "anchor": "src/styles.css:535-538",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:548-551|0": {
+    "anchor": "src/styles.css:548-551",
     "fp": "c17ce04e13581723",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:646-662|0": {
-    "anchor": "src/styles.css:646-662",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:659-675|0": {
+    "anchor": "src/styles.css:659-675",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -599,23 +599,23 @@
     "fp": "d66d703756839bee",
     "head": "export const SCHEMA_VERSION = 2;"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:509-535|0": {
-    "anchor": "src/js/lib/model.js:509-535",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:563-589|0": {
+    "anchor": "src/js/lib/model.js:563-589",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:2721-2741|0": {
-    "anchor": "src/js/main.js:2721-2741",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:2778-2798|0": {
+    "anchor": "src/js/main.js:2778-2798",
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-fi|src/js/main.js:2330|0": {
-    "anchor": "src/js/main.js:2330",
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-si|src/js/main.js:2383|0": {
+    "anchor": "src/js/main.js:2383",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-fi|src/js/main.js:2360-2365|0": {
-    "anchor": "src/js/main.js:2360-2365",
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-si|src/js/main.js:2417-2422|0": {
+    "anchor": "src/js/main.js:2417-2422",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
@@ -629,8 +629,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:350-353|0": {
-    "anchor": "CHANGELOG.md:350-353",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:370-373|0": {
+    "anchor": "CHANGELOG.md:370-373",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -649,38 +649,38 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:154-156|0": {
-    "anchor": "PRODUCT_BACKLOG.md:154-156",
-    "fp": "707315b7986c299c",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:155-157|0": {
+    "anchor": "PRODUCT_BACKLOG.md:155-157",
+    "fp": "4510928eaa8a238b",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:161-163|0": {
-    "anchor": "PRODUCT_BACKLOG.md:161-163",
-    "fp": "98b3117986eb47d8",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:162-164|0": {
+    "anchor": "PRODUCT_BACKLOG.md:162-164",
+    "fp": "76e484be3a906428",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:161-163|1": {
-    "anchor": "PRODUCT_BACKLOG.md:161-163",
-    "fp": "98b3117986eb47d8",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:162-164|1": {
+    "anchor": "PRODUCT_BACKLOG.md:162-164",
+    "fp": "76e484be3a906428",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2199-2202|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2199-2202",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2208-2211|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2208-2211",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2998-3000|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2998-3000",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3073-3075|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3073-3075",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3156-3157|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3156-3157",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3231-3232|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3231-3232",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3176-3178|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3176-3178",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3251-3253|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3251-3253",
     "fp": "affcee43c8cd0de5",
     "head": "Evidence: `scripts/lib/fetch-json.mjs:52-61`, `scripts/lib/fetch-json.mjs:22-37`."
   },
@@ -689,8 +689,8 @@
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:366-377|0": {
-    "anchor": "README.md:366-377",
+  "PRODUCT_BACKLOG.md|item-details|README.md:386-397|0": {
+    "anchor": "README.md:386-397",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -879,13 +879,13 @@
     "fp": "baff944060f60826",
     "head": "// So we never claim an issue *is* available. We report one of five explicit"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/catalog.js:238-247|0": {
-    "anchor": "src/js/lib/catalog.js:238-247",
-    "fp": "876c85e65bf9c2d2",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/catalog.js:248-258|0": {
+    "anchor": "src/js/lib/catalog.js:248-258",
+    "fp": "9ae6cc6d408de165",
     "head": "export function filterByFacet(lists, key) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/catalog.js:326|0": {
-    "anchor": "src/js/lib/catalog.js:326",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/catalog.js:349|0": {
+    "anchor": "src/js/lib/catalog.js:349",
     "fp": "c2b31ff7dbb58fc8",
     "head": "export function groupCatalog(lists) {"
   },
@@ -899,68 +899,68 @@
     "fp": "c8d52f20a95f9202",
     "head": "async pump() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/markdown.js:149-151|0": {
-    "anchor": "src/js/lib/markdown.js:149-151",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/markdown.js:177-179|0": {
+    "anchor": "src/js/lib/markdown.js:177-179",
     "fp": "fe98ae5e903d17b9",
     "head": "function quoteNote(note) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:170-173|0": {
-    "anchor": "src/js/lib/model.js:170-173",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:197-200|0": {
+    "anchor": "src/js/lib/model.js:197-200",
     "fp": "082f8d3733d42e8c",
     "head": "// A duplicate is the reader's own working copy, so it does not inherit the claim to be"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:204|0": {
-    "anchor": "src/js/lib/model.js:204",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:235|0": {
+    "anchor": "src/js/lib/model.js:235",
     "fp": "7e677e3b33cea4ce",
     "head": "const active = state.active === listId ? (listOrder[0] ?? null) : state.active;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:205-206|0": {
-    "anchor": "src/js/lib/model.js:205-206",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:236-237|0": {
+    "anchor": "src/js/lib/model.js:236-237",
     "fp": "1519b242fd9ec11a",
     "head": "// Issue metadata and read state intentionally survive: the same issues may be in other"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:223-235|0": {
-    "anchor": "src/js/lib/model.js:223-235",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:254-266|0": {
+    "anchor": "src/js/lib/model.js:254-266",
     "fp": "fc9aa4fcc2898856",
     "head": "export function restoreList(state, list, { index = null, active = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:237-239|0": {
-    "anchor": "src/js/lib/model.js:237-239",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:268-270|0": {
+    "anchor": "src/js/lib/model.js:268-270",
     "fp": "0986f3ed8eb823a0",
     "head": "export function setActive(state, listId) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:319-326|0": {
-    "anchor": "src/js/lib/model.js:319-326",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:373-380|0": {
+    "anchor": "src/js/lib/model.js:373-380",
     "fp": "9d3833100d6ca7df",
     "head": "export function markRead(state, issueId, read = true, at = Date.now()) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:359-367|0": {
-    "anchor": "src/js/lib/model.js:359-367",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:413-421|0": {
+    "anchor": "src/js/lib/model.js:413-421",
     "fp": "1c7042c5f8e4e566",
     "head": "export function setIssueNote(state, issueId, text) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:398-409|0": {
-    "anchor": "src/js/lib/model.js:398-409",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:452-463|0": {
+    "anchor": "src/js/lib/model.js:452-463",
     "fp": "8777bc126b77f838",
     "head": "// Aggregated over UNIQUE issue ids, so an issue in two lists counts once. Given a listId it counts"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:429-479|0": {
-    "anchor": "src/js/lib/model.js:429-479",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:483-533|0": {
+    "anchor": "src/js/lib/model.js:483-533",
     "fp": "44ae59dee9aaa6c8",
     "head": "// Which of the reader's lists an issue is in, named, in rail order. Read state and issue"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:534-535|0": {
-    "anchor": "src/js/lib/model.js:534-535",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:588-589|0": {
+    "anchor": "src/js/lib/model.js:588-589",
     "fp": "90f527f0d8550a9f",
     "head": "// Newer than we understand: refuse rather than silently mangling it."
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:548|0": {
-    "anchor": "src/js/lib/model.js:548",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:602|0": {
+    "anchor": "src/js/lib/model.js:602",
     "fp": "3317afe7370b3517",
     "head": "if (Number.isInteger(id)) read[id] = Number(v) || Date.now();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:587|0": {
-    "anchor": "src/js/lib/model.js:587",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:647|0": {
+    "anchor": "src/js/lib/model.js:647",
     "fp": "003c21f2deb00338",
     "head": "active: lists[raw.active] ? raw.active : (listOrder[0] ?? null),"
   },
@@ -989,108 +989,108 @@
     "fp": "0c13bbed47c568da",
     "head": "export function isTextEntry(el) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1072|0": {
-    "anchor": "src/js/main.js:1072",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1073|0": {
+    "anchor": "src/js/main.js:1073",
     "fp": "c6a952395c0529d3",
     "head": "el('p', { class: 'ocard-meta', text: meta }),"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1088|0": {
-    "anchor": "src/js/main.js:1088",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1089|0": {
+    "anchor": "src/js/main.js:1089",
     "fp": "0a57ad8201c7ff0b",
     "head": "}, 'See the full list'),"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1088|1": {
-    "anchor": "src/js/main.js:1088",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1089|1": {
+    "anchor": "src/js/main.js:1089",
     "fp": "0a57ad8201c7ff0b",
     "head": "}, 'See the full list'),"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1120|0": {
-    "anchor": "src/js/main.js:1120",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1121|0": {
+    "anchor": "src/js/main.js:1121",
     "fp": "3ec3212a4a80a0c9",
     "head": "async function addFromCatalog(list, btn) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1130|0": {
-    "anchor": "src/js/main.js:1130",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1131|0": {
+    "anchor": "src/js/main.js:1131",
     "fp": "5b9467a6dbd16470",
     "head": "// Adding must not move the reader, so they can add a second order without finding their"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1212-1265|0": {
-    "anchor": "src/js/main.js:1212-1265",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1227-1280|0": {
+    "anchor": "src/js/main.js:1227-1280",
     "fp": "bae01eb8f7054790",
     "head": "function wireReading() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1224-1228|0": {
-    "anchor": "src/js/main.js:1224-1228",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1239-1243|0": {
+    "anchor": "src/js/main.js:1239-1243",
     "fp": "31cdadc3894e99f3",
     "head": "const stray = [...document.querySelectorAll('input[name=\"filter\"]')];"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1229-1232|0": {
-    "anchor": "src/js/main.js:1229-1232",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1244-1247|0": {
+    "anchor": "src/js/main.js:1244-1247",
     "fp": "d52c5acfb3ad6365",
     "head": "$('#reading-filters').append(...READING_FILTERS.map((f) => el('label', { class: 'fp' }, ["
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1365-1368|0": {
-    "anchor": "src/js/main.js:1365-1368",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1380-1383|0": {
+    "anchor": "src/js/main.js:1380-1383",
     "fp": "0303a546d53cec76",
     "head": "function forgetDeleted() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1388-1396|0": {
-    "anchor": "src/js/main.js:1388-1396",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1403-1411|0": {
+    "anchor": "src/js/main.js:1403-1411",
     "fp": "57d5dcc60b96e0ae",
     "head": "function forgetDeletedFor(catalogId, orderName) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1411-1419|0": {
-    "anchor": "src/js/main.js:1411-1419",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1426-1434|0": {
+    "anchor": "src/js/main.js:1426-1434",
     "fp": "89d60f3de33dbfe0",
     "head": "store.update((s) => restoreList(s, list, { index, active: wasActive }));"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1619|0": {
-    "anchor": "src/js/main.js:1619",
-    "fp": "65dd2b88c0b13a58",
-    "head": "const items = all.filter((it) => matchesReadingFilter(filter, it));"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:163-167|0": {
     "anchor": "src/js/main.js:163-167",
     "fp": "d373f73dc14174dd",
     "head": "// `primary` is the action to land on when that pair no longer exists anywhere, which happens when"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1667-1677|0": {
-    "anchor": "src/js/main.js:1667-1677",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1634|0": {
+    "anchor": "src/js/main.js:1634",
+    "fp": "65dd2b88c0b13a58",
+    "head": "const items = all.filter((it) => matchesReadingFilter(filter, it));"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1717-1727|0": {
+    "anchor": "src/js/main.js:1717-1727",
     "fp": "b64520737d749a82",
     "head": "el('span', { class: `badge ${badgeClass}` }, ["
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1667-1677|1": {
-    "anchor": "src/js/main.js:1667-1677",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1717-1727|1": {
+    "anchor": "src/js/main.js:1717-1727",
     "fp": "b64520737d749a82",
     "head": "el('span', { class: `badge ${badgeClass}` }, ["
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1720|0": {
-    "anchor": "src/js/main.js:1720",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1770|0": {
+    "anchor": "src/js/main.js:1770",
     "fp": "81dbc455d847ca75",
     "head": "primary: 'read',"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1729-1734|0": {
-    "anchor": "src/js/main.js:1729-1734",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1779-1784|0": {
+    "anchor": "src/js/main.js:1779-1784",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1762|0": {
-    "anchor": "src/js/main.js:1762",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1812|0": {
+    "anchor": "src/js/main.js:1812",
     "fp": "1750fc696b0cd38a",
     "head": "if (view !== 'read' || e.metaKey || e.ctrlKey || e.altKey) return;"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2062|0": {
-    "anchor": "src/js/main.js:2062",
-    "fp": "a33500273e2d9180",
-    "head": "const name = headings[0] || `Imported ${new Date().toLocaleDateString()}`;"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:208|0": {
     "anchor": "src/js/main.js:208",
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2193|0": {
-    "anchor": "src/js/main.js:2193",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2112|0": {
+    "anchor": "src/js/main.js:2112",
+    "fp": "a33500273e2d9180",
+    "head": "const name = headings[0] || `Imported ${new Date().toLocaleDateString()}`;"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2246|0": {
+    "anchor": "src/js/main.js:2246",
     "fp": "d11f7f94d7f572d4",
     "head": "const issueId = issueIdFromUrl(url) ?? -Date.now();"
   },
@@ -1099,8 +1099,8 @@
     "fp": "c8ff28f8e2ea386d",
     "head": "function isLive(node) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2355|0": {
-    "anchor": "src/js/main.js:2355",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2412|0": {
+    "anchor": "src/js/main.js:2412",
     "fp": "62869c726371d4bf",
     "head": "el('div', { class: 'result-title', text: title }),"
   },
@@ -1109,78 +1109,78 @@
     "fp": "3bbc6dc7c75496e2",
     "head": "const CATALOG_LOAD = 'catalog-load';"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2485|0": {
-    "anchor": "src/js/main.js:2485",
-    "fp": "b6509327e07638dd",
-    "head": "const importKey = `import:${catalogId}`;"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2489|0": {
-    "anchor": "src/js/main.js:2489",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2546|0": {
+    "anchor": "src/js/main.js:2546",
     "fp": "7a6b3e0fd15becfe",
     "head": "btn.disabled = true;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2510-2521|0": {
-    "anchor": "src/js/main.js:2510-2521",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2567-2578|0": {
+    "anchor": "src/js/main.js:2567-2578",
     "fp": "040ed2d540e2a8c3",
     "head": "if (!store.lastUpdateOk) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2542|0": {
-    "anchor": "src/js/main.js:2542",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2599|0": {
+    "anchor": "src/js/main.js:2599",
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2559|0": {
-    "anchor": "src/js/main.js:2559",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2599|1": {
+    "anchor": "src/js/main.js:2599",
+    "fp": "fdade8739af79cef",
+    "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2616|0": {
+    "anchor": "src/js/main.js:2616",
     "fp": "640ca8555353598d",
     "head": "btn.disabled = false;"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2596-2598|0": {
-    "anchor": "src/js/main.js:2596-2598",
-    "fp": "f65558c74b0b4973",
-    "head": "$('#progress-sub').textContent = scoped"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2623-2641|0": {
-    "anchor": "src/js/main.js:2623-2641",
-    "fp": "dfc7d34662a56953",
-    "head": "function renderLibrary() {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:264|0": {
     "anchor": "src/js/main.js:264",
     "fp": "77007c4861c2ec00",
     "head": "const notices = new Map();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2706|0": {
-    "anchor": "src/js/main.js:2706",
-    "fp": "5c0fc3bcf2044a48",
-    "head": "forgetDeleted();"
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2653-2655|0": {
+    "anchor": "src/js/main.js:2653-2655",
+    "fp": "f65558c74b0b4973",
+    "head": "$('#progress-sub').textContent = scoped"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2706|1": {
-    "anchor": "src/js/main.js:2706",
-    "fp": "5c0fc3bcf2044a48",
-    "head": "forgetDeleted();"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2713-2719|0": {
-    "anchor": "src/js/main.js:2713-2719",
-    "fp": "8e57ce8810ab55d4",
-    "head": "$('#btn-undo-restore').addEventListener('click', () => {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2723-2724|0": {
-    "anchor": "src/js/main.js:2723-2724",
-    "fp": "8af48711bb3aab2d",
-    "head": "const value = $('#api-base').value.trim().replace(/\\/+$/, '');"
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2680-2698|0": {
+    "anchor": "src/js/main.js:2680-2698",
+    "fp": "dfc7d34662a56953",
+    "head": "function renderLibrary() {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:273-311|0": {
     "anchor": "src/js/main.js:273-311",
     "fp": "9d801a18615a4de9",
     "head": "function placeNotices() {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2763|0": {
+    "anchor": "src/js/main.js:2763",
+    "fp": "5c0fc3bcf2044a48",
+    "head": "forgetDeleted();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2763|1": {
+    "anchor": "src/js/main.js:2763",
+    "fp": "5c0fc3bcf2044a48",
+    "head": "forgetDeleted();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2770-2776|0": {
+    "anchor": "src/js/main.js:2770-2776",
+    "fp": "8e57ce8810ab55d4",
+    "head": "$('#btn-undo-restore').addEventListener('click', () => {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2780-2781|0": {
+    "anchor": "src/js/main.js:2780-2781",
+    "fp": "8af48711bb3aab2d",
+    "head": "const value = $('#api-base').value.trim().replace(/\\/+$/, '');"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:281-292|0": {
     "anchor": "src/js/main.js:281-292",
     "fp": "78f3a58f75777356",
     "head": "for (const [, note] of notices) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2829|0": {
-    "anchor": "src/js/main.js:2829",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2886|0": {
+    "anchor": "src/js/main.js:2886",
     "fp": "badb42e555d676d1",
     "head": "function renderAll() {"
   },
@@ -1299,48 +1299,48 @@
     "fp": "6e2654e385653c4a",
     "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-ra"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:535-538|0": {
-    "anchor": "src/styles.css:535-538",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:548-551|0": {
+    "anchor": "src/styles.css:548-551",
     "fp": "c17ce04e13581723",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:547-548|0": {
-    "anchor": "src/styles.css:547-548",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:560-561|0": {
+    "anchor": "src/styles.css:560-561",
     "fp": "4867cdf75f778888",
     "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:550|0": {
-    "anchor": "src/styles.css:550",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:563|0": {
+    "anchor": "src/styles.css:563",
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:588-612|0": {
-    "anchor": "src/styles.css:588-612",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:601-625|0": {
+    "anchor": "src/styles.css:601-625",
     "fp": "0ca231bb4e98d821",
     "head": "/* These outlines are faint on purpose, and that is a recorded decision rather than an"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:633|0": {
-    "anchor": "src/styles.css:633",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:646|0": {
+    "anchor": "src/styles.css:646",
     "fp": "ff1cde127301f4d6",
     "head": ".card > summary::before { content: \"›\"; color: var(--muted); transition: transform .15s; display: in"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:633|1": {
-    "anchor": "src/styles.css:633",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:646|1": {
+    "anchor": "src/styles.css:646",
     "fp": "ff1cde127301f4d6",
     "head": ".card > summary::before { content: \"›\"; color: var(--muted); transition: transform .15s; display: in"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:639|0": {
-    "anchor": "src/styles.css:639",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:652|0": {
+    "anchor": "src/styles.css:652",
     "fp": "a5884bb783e5d63e",
     "head": ".card-static > * { padding: 0 !important; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:646-662|0": {
-    "anchor": "src/styles.css:646-662",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:659-675|0": {
+    "anchor": "src/styles.css:659-675",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:871-878|0": {
-    "anchor": "src/styles.css:871-878",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:887-894|0": {
+    "anchor": "src/styles.css:887-894",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -1364,8 +1364,8 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:2829-2849|0": {
-    "anchor": "src/js/main.js:2829-2849",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:2886-2906|0": {
+    "anchor": "src/js/main.js:2886-2906",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -1374,14 +1374,14 @@
     "fp": "6c6878ef6f032cfe",
     "head": "@media (max-width: 880px) {"
   },
-  "PRODUCT_BACKLOG.md|parked|src/js/main.js:2261|0": {
-    "anchor": "src/js/main.js:2261",
+  "PRODUCT_BACKLOG.md|parked|src/js/main.js:2314|0": {
+    "anchor": "src/js/main.js:2314",
     "fp": "546deeb5e4bbb440",
     "head": "async function renderCatalog() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-001|src/js/main.js:2347-2377|0": {
-    "anchor": "src/js/main.js:2347-2377",
-    "fp": "ef3b6a8363ab903d",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-001|src/js/main.js:2400-2434|0": {
+    "anchor": "src/js/main.js:2400-2434",
+    "fp": "70940a058caf7ed2",
     "head": "function catalogRow(list, { variant = false } = {}) {"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-002|src/index.html:407-409|0": {
@@ -1399,23 +1399,23 @@
     "fp": "90461cc45716fa24",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/js/main.js:2405-2420|0": {
-    "anchor": "src/js/main.js:2405-2420",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/js/main.js:2462-2477|0": {
+    "anchor": "src/js/main.js:2462-2477",
     "fp": "97edef98a6cc84a2",
     "head": "function wireCatalogSearch() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:2351|0": {
-    "anchor": "src/js/main.js:2351",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:2408|0": {
+    "anchor": "src/js/main.js:2408",
     "fp": "e5a85bd0d6aeac2f",
     "head": "const depth = depthLabel(list.depth);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:2360-2365|0": {
-    "anchor": "src/js/main.js:2360-2365",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:2417-2422|0": {
+    "anchor": "src/js/main.js:2417-2422",
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-006|src/js/main.js:2383-2403|0": {
-    "anchor": "src/js/main.js:2383-2403",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-006|src/js/main.js:2440-2460|0": {
+    "anchor": "src/js/main.js:2440-2460",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
@@ -1424,43 +1424,43 @@
     "fp": "6cf2e7a03e765847",
     "head": "// The catch, and the reason this is a function with a refusal in it rather than a flag on each"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:185-285|0": {
-    "anchor": "scripts/vendor-orders.mjs:185-285",
-    "fp": "6227b9932703e063",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:189-302|0": {
+    "anchor": "scripts/vendor-orders.mjs:189-302",
+    "fp": "9131d162fa7f9e5d",
     "head": "const { entries, unresolved } = parseChecklist(md);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/lib/markdown.js:36-99|0": {
-    "anchor": "src/js/lib/markdown.js:36-99",
-    "fp": "743dcbf0a43f0694",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/lib/markdown.js:36-112|0": {
+    "anchor": "src/js/lib/markdown.js:36-112",
+    "fp": "11ea9f7c7d5d0af6",
     "head": "// Returns { entries, unresolved, headings }"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/main.js:2051-2104|0": {
-    "anchor": "src/js/main.js:2051-2104",
-    "fp": "e469118bcd96fffa",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/main.js:2101-2157|0": {
+    "anchor": "src/js/main.js:2101-2157",
+    "fp": "92d136c8b0aea78d",
     "head": "const { entries, unresolved, headings } = parseChecklist(text);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-010|src/js/main.js:2112-2181|0": {
-    "anchor": "src/js/main.js:2112-2181",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-010|src/js/main.js:2165-2234|0": {
+    "anchor": "src/js/main.js:2165-2234",
     "fp": "b9a201a17e841d23",
     "head": "function unresolvedRow(entry, listId) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:2013-2031|0": {
-    "anchor": "src/js/main.js:2013-2031",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:2063-2081|0": {
+    "anchor": "src/js/main.js:2063-2081",
     "fp": "457a03b1d13a9dd4",
     "head": "async function addSeries(series) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:2183-2227|0": {
-    "anchor": "src/js/main.js:2183-2227",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:2236-2280|0": {
+    "anchor": "src/js/main.js:2236-2280",
     "fp": "5a57b37f0d0a4cae",
     "head": "function doManual() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/lib/model.js:152|0": {
-    "anchor": "src/js/lib/model.js:152",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/lib/model.js:179|0": {
+    "anchor": "src/js/lib/model.js:179",
     "fp": "e409e1d7f9185731",
     "head": "// Read progress is deliberately NOT copied. It is global, keyed by issue id (see the note at"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/main.js:1312-1332|0": {
-    "anchor": "src/js/main.js:1312-1332",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/main.js:1327-1347|0": {
+    "anchor": "src/js/main.js:1327-1347",
     "fp": "ba48dba7ca5b5ba0",
     "head": "$('#btn-duplicate-list').addEventListener('click', () => {"
   },
@@ -1474,13 +1474,13 @@
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2582-2616|0": {
-    "anchor": "src/js/main.js:2582-2616",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2639-2673|0": {
+    "anchor": "src/js/main.js:2639-2673",
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2596-2598|0": {
-    "anchor": "src/js/main.js:2596-2598",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:2653-2655|0": {
+    "anchor": "src/js/main.js:2653-2655",
     "fp": "f65558c74b0b4973",
     "head": "$('#progress-sub').textContent = scoped"
   },
@@ -1489,8 +1489,8 @@
     "fp": "01520a8ef9a0a11c",
     "head": "export const READING_FILTERS = ["
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-015|src/js/main.js:1619|0": {
-    "anchor": "src/js/main.js:1619",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-015|src/js/main.js:1634|0": {
+    "anchor": "src/js/main.js:1634",
     "fp": "65dd2b88c0b13a58",
     "head": "const items = all.filter((it) => matchesReadingFilter(filter, it));"
   },
@@ -1499,23 +1499,23 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-017|src/js/lib/markdown.js:149-151|0": {
-    "anchor": "src/js/lib/markdown.js:149-151",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-017|src/js/lib/markdown.js:177-179|0": {
+    "anchor": "src/js/lib/markdown.js:177-179",
     "fp": "fe98ae5e903d17b9",
     "head": "function quoteNote(note) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-017|src/js/lib/model.js:359-379|0": {
-    "anchor": "src/js/lib/model.js:359-379",
-    "fp": "fb869edf20515ca2",
-    "head": "export function setIssueNote(state, issueId, text) {"
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-017|src/js/lib/model.js:404-433|0": {
+    "anchor": "src/js/lib/model.js:404-433",
+    "fp": "5a7b0a9087d0b27f",
+    "head": "// ---------------------------------------------------------------- notes"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-018|src/js/lib/readingFilters.js:46|0": {
     "anchor": "src/js/lib/readingFilters.js:46",
     "fp": "15490ff671b09c62",
     "head": "match: (item) => !item.hydrated && item.source !== 'manual',"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-018|src/js/main.js:1671-1677|0": {
-    "anchor": "src/js/main.js:1671-1677",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-018|src/js/main.js:1721-1727|0": {
+    "anchor": "src/js/main.js:1721-1727",
     "fp": "87efb34932539235",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
@@ -1524,13 +1524,13 @@
     "fp": "9ddcd2397f40d9c8",
     "head": "export const STATE = {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-019|src/js/main.js:1729-1734|0": {
-    "anchor": "src/js/main.js:1729-1734",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-019|src/js/main.js:1779-1784|0": {
+    "anchor": "src/js/main.js:1779-1784",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-020|src/js/main.js:2206|0": {
-    "anchor": "src/js/main.js:2206",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-020|src/js/main.js:2259|0": {
+    "anchor": "src/js/main.js:2259",
     "fp": "5435ae20ec2b0bc2",
     "head": "source: 'manual',"
   },
@@ -1544,18 +1544,18 @@
     "fp": "756ffa3269a6fcb8",
     "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:592-620|0": {
-    "anchor": "src/js/lib/model.js:592-620",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:652-680|0": {
+    "anchor": "src/js/lib/model.js:652-680",
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:2713-2719|0": {
-    "anchor": "src/js/main.js:2713-2719",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:2770-2776|0": {
+    "anchor": "src/js/main.js:2770-2776",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-026|src/js/main.js:1760-1783|0": {
-    "anchor": "src/js/main.js:1760-1783",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-026|src/js/main.js:1810-1833|0": {
+    "anchor": "src/js/main.js:1810-1833",
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
@@ -1609,8 +1609,8 @@
     "fp": "f11249cc46b4b154",
     "head": "constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:2724-2725|0": {
-    "anchor": "src/js/main.js:2724-2725",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:2781-2782|0": {
+    "anchor": "src/js/main.js:2781-2782",
     "fp": "64a12686aef1eb48",
     "head": "if (!isAllowedApiBase(value)) {"
   },
@@ -1624,18 +1624,18 @@
     "fp": "290426a7b5f1f608",
     "head": "const CATALOG_LOAD = 'catalog-load';"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2500|0": {
-    "anchor": "src/js/main.js:2500",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2557|0": {
+    "anchor": "src/js/main.js:2557",
     "fp": "8ab27e651ace604e",
     "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2518-2520|0": {
-    "anchor": "src/js/main.js:2518-2520",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2575-2577|0": {
+    "anchor": "src/js/main.js:2575-2577",
     "fp": "f7ec63c05cd8928c",
     "head": "notify(report, store.lastUpdateOk"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2551|0": {
-    "anchor": "src/js/main.js:2551",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:2608|0": {
+    "anchor": "src/js/main.js:2608",
     "fp": "fc2e7b4023138c1b",
     "head": "notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error', im"
   },
@@ -1664,13 +1664,13 @@
     "fp": "6d50373e8d6e684f",
     "head": "\"version\": \"1.0.0\","
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:592-620|0": {
-    "anchor": "src/js/lib/model.js:592-620",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:652-680|0": {
+    "anchor": "src/js/lib/model.js:652-680",
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:2713-2719|0": {
-    "anchor": "src/js/main.js:2713-2719",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:2770-2776|0": {
+    "anchor": "src/js/main.js:2770-2776",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -1684,18 +1684,18 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#licensing|src/js/main.js:2383-2403|0": {
-    "anchor": "src/js/main.js:2383-2403",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#licensing|src/js/main.js:2440-2460|0": {
+    "anchor": "src/js/main.js:2440-2460",
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:2806-2808|0": {
-    "anchor": "src/js/main.js:2806-2808",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:2863-2865|0": {
+    "anchor": "src/js/main.js:2863-2865",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#offline-behavior|src/js/main.js:1671-1677|0": {
-    "anchor": "src/js/main.js:1671-1677",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#offline-behavior|src/js/main.js:1721-1727|0": {
+    "anchor": "src/js/main.js:1721-1727",
     "fp": "87efb34932539235",
     "head": "!item.hydrated && item.source !== 'manual'"
   },
@@ -1709,8 +1709,8 @@
     "fp": "d66d703756839bee",
     "head": "export const SCHEMA_VERSION = 2;"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:509-535|0": {
-    "anchor": "src/js/lib/model.js:509-535",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:563-589|0": {
+    "anchor": "src/js/lib/model.js:563-589",
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -1719,13 +1719,13 @@
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:2582-2616|0": {
-    "anchor": "src/js/main.js:2582-2616",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:2639-2673|0": {
+    "anchor": "src/js/main.js:2639-2673",
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-017|src/js/lib/model.js:359-367|0": {
-    "anchor": "src/js/lib/model.js:359-367",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-017|src/js/lib/model.js:413-421|0": {
+    "anchor": "src/js/lib/model.js:413-421",
     "fp": "1c7042c5f8e4e566",
     "head": "export function setIssueNote(state, issueId, text) {"
   },
@@ -1744,8 +1744,8 @@
     "fp": "78349d165fb018eb",
     "head": "--red: #d43333;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-030|src/styles.css:541-550|0": {
-    "anchor": "src/styles.css:541-550",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-030|src/styles.css:554-563|0": {
+    "anchor": "src/styles.css:554-563",
     "fp": "a8497ff4e93c6cc6",
     "head": "/* A read row recedes through a dimmer title colour, a strikethrough and a filled"
   },
@@ -1754,8 +1754,8 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:2829-2843|0": {
-    "anchor": "src/js/main.js:2829-2843",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:2886-2900|0": {
+    "anchor": "src/js/main.js:2886-2900",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -1764,8 +1764,8 @@
     "fp": "8396d265512d0e49",
     "head": "export function wireAsk() {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-035|src/js/main.js:1398-1425|0": {
-    "anchor": "src/js/main.js:1398-1425",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-035|src/js/main.js:1413-1440|0": {
+    "anchor": "src/js/main.js:1413-1440",
     "fp": "f70cfc6c57efd83e",
     "head": "function undoDelete() {"
   },
@@ -1784,8 +1784,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:2829-2843|0": {
-    "anchor": "src/js/main.js:2829-2843",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:2886-2900|0": {
+    "anchor": "src/js/main.js:2886-2900",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -1809,8 +1809,8 @@
     "fp": "7aa18c32ba31e0a8",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:646-662|0": {
-    "anchor": "src/styles.css:646-662",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:659-675|0": {
+    "anchor": "src/styles.css:659-675",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -1834,9 +1834,9 @@
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:154-156|0": {
-    "anchor": "PRODUCT_BACKLOG.md:154-156",
-    "fp": "707315b7986c299c",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:155-157|0": {
+    "anchor": "PRODUCT_BACKLOG.md:155-157",
+    "fp": "4510928eaa8a238b",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
@@ -1853,5 +1853,10 @@
     "anchor": "test/shipped-copy.test.js:47-63",
     "fp": "39a38dfa1bd1a54f",
     "head": "test('no en or em dash reaches the screen through markup or styling', () => {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-066|src/data/orders/new-ultimate-universe-trades.md:3|0": {
+    "anchor": "src/data/orders/new-ultimate-universe-trades.md:3",
+    "fp": "e36b1a135075a2c6",
+    "head": "## Ultimate Invasion"
   }
 }

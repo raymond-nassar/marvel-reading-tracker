@@ -190,6 +190,36 @@ test('a list with no notes exports exactly as it did before notes existed', () =
   assert.equal(serializeChecklist(args).includes('>'), false);
 });
 
+// Notes (BL-017) and collected editions (BL-066) were built on separate branches and first met in
+// the merge, and they meet inside serializeChecklist, which now writes both a "## " heading per
+// edition and a "> " line per note. Neither branch could have tested the combination. The risk is
+// specific: a quoted note sits between two items, so if quoting failed it would be read back as an
+// item inside whichever book it followed, silently growing that edition by an issue.
+test('a note inside a collected edition does not disturb the edition it sits in', () => {
+  const md = serializeChecklist({
+    name: 'Ultimate Universe',
+    note: 'Start here.\n- not an item',
+    items: [
+      { issueId: 1, title: 'Invasion #1', read: true, collectedIn: 'Ultimate Invasion', note: 'Great opener.' },
+      { issueId: 2, title: 'Invasion #2', read: false, collectedIn: 'Ultimate Invasion', note: '# not a heading' },
+      { issueId: 3, title: 'Universe #1', read: false, collectedIn: 'Ultimate Universe One' },
+    ],
+  });
+  const { entries, unresolved, headings } = parseChecklist(md);
+  assert.equal(entries.length, 3, 'the three real items, and nothing invented from three notes');
+  assert.deepEqual(unresolved, []);
+  assert.deepEqual(
+    entries.map((e) => e.section),
+    ['Ultimate Invasion', 'Ultimate Invasion', 'Ultimate Universe One'],
+    'every issue is read back into the book it was exported from',
+  );
+  assert.deepEqual(
+    headings,
+    ['Ultimate Universe', 'Ultimate Invasion', 'Ultimate Universe One'],
+    'the two edition headings and the list name, and nothing from the notes',
+  );
+});
+
 // ------------------------------------------------------------------ wiring
 
 // ask.js is imported by main.js, which reads `document` at module scope, so this is checked as

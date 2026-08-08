@@ -34,11 +34,17 @@ export function isSafeMarvelUrl(url) {
 }
 
 // Returns { entries, unresolved, headings }
-// entry: { issueId|null, title, url|null, read, index }
+// entry: { issueId|null, title, url|null, read, index, section|null }
 //
 // `index` is the item's position in the checklist, counted across both arrays. Splitting a
 // list into resolved and unresolved loses the reading order between them, and reading order is
 // the whole point of these files, so each item carries where it came from.
+//
+// `section` is the nearest preceding heading of level 2 or deeper, which is how a trade order
+// says which collected edition an issue belongs to. Level 1 is excluded because
+// serializeChecklist writes the list's own name as `# name`, so treating it as a section would
+// put every issue in one section named after the list. An order with no sub-headings, which is
+// every order vendored before trade orders existed, reports `section: null` throughout.
 export function parseChecklist(text) {
   const entries = [];
   const unresolved = [];
@@ -46,13 +52,19 @@ export function parseChecklist(text) {
   if (typeof text !== 'string') return { entries, unresolved, headings };
 
   let index = 0;
+  let section = null;
   for (const rawLine of text.split(/\r?\n/)) {
     const line = rawLine.replace(/\u00a0/g, ' ');
     if (!line.trim()) continue;
 
     const h = /^\s{0,3}(#{1,6})\s+(.*)$/.exec(line);
     if (h) {
-      headings.push(h[2].trim());
+      const title = h[2].trim();
+      headings.push(title);
+      // A level-1 heading ends the current section rather than starting one. Without this a
+      // second `#` further down the file would leave the issues under it still labelled with
+      // the last trade, which is the one wrong answer that looks right.
+      section = h[1].length >= 2 ? (title || null) : null;
       continue;
     }
 
@@ -89,10 +101,10 @@ export function parseChecklist(text) {
     index += 1;
 
     if (issueId != null) {
-      entries.push({ issueId, title, url: url, read, index: at });
+      entries.push({ issueId, title, url: url, read, index: at, section });
     } else {
       // A title we could not map to a Marvel issue id. Never silently dropped.
-      unresolved.push({ title, url: url && isSafeMarvelUrl(url) ? url : null, read, index: at });
+      unresolved.push({ title, url: url && isSafeMarvelUrl(url) ? url : null, read, index: at, section });
     }
   }
 
@@ -127,16 +139,32 @@ export function stripInlineMarkdown(s) {
 //
 // Notes export but do not re-import: `parseChecklist` has no syntax for them, and inventing one
 // would change a format this app does not own. The lossless path is the JSON backup.
+//
+// An item's `collectedIn` is written as a `## ` heading whenever it changes, which is exactly
+// what parseChecklist reads back as a section. Without this, exporting a trade order and
+// re-importing it would silently flatten it into an ordinary issue list, and the reader would
+// have no way to tell from the file that anything had been lost.
 export function serializeChecklist({ name, description, items, note }) {
   const lines = [];
   if (name) lines.push(`# ${name}`, '');
   if (description) lines.push(description, '');
   if (note) lines.push(...quoteNote(note), '');
+  let section;
+  let wroteItem = false;
   for (const it of items) {
+    const next = it.collectedIn || null;
+    if (next !== section) {
+      section = next;
+      if (next) {
+        if (wroteItem) lines.push('');
+        lines.push(`## ${next}`, '');
+      }
+    }
     const box = it.read ? '- [x]' : '- [ ]';
     const url = it.url || (it.issueId > 0 ? `https://www.marvel.com/comics/issue/${it.issueId}/` : null);
     lines.push(url ? `${box} [${escapeLinkText(it.title)}](${url})` : `${box} ${it.title}`);
     if (it.note) lines.push(...quoteNote(it.note));
+    wroteItem = true;
   }
   lines.push('');
   return lines.join('\n');
