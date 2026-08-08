@@ -293,8 +293,11 @@ function main() {
     process.exitCode = 1;
     return;
   }
-  const measured = PAIRS.length * 2;
-  for (const line of passingReport(css, measured)) console.log(line);
+  const lines = passingReport(css);
+  // A null report means the tree is not clean, which the guard above should already have caught.
+  // Asserting it here rather than trusting the ordering keeps the two halves from drifting apart.
+  if (!lines) throw new Error('passingReport refused a tree that the guard above passed as clean');
+  for (const line of lines) console.log(line);
 }
 
 // The passing path's output is built rather than printed inline so a test can assert on it. Review
@@ -302,9 +305,18 @@ function main() {
 // loop and its destructure left the suite green, the gate exit 0, and three prose statements that the
 // ratio is printed on every run false again. The test spawns this script and reads stdout, so the
 // thing the docs claim is the thing that is checked.
-export function passingReport(css, measured) {
-  const { recorded } = unresolved(css);
-  const lines = [`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor, 0 new.`];
+//
+// Everything in the report derives from the module's own data. An earlier version took the pair count
+// as a parameter, which put half the summary line under the caller's control and half under the
+// module's, and the pair count is the one figure that has gone stale in this item's prose three times.
+// It also hardcoded "0 new", which is true only past `main()`'s guard: exported, that made a function
+// that reports green for a red tree. It returns null on a tree with unresolved findings instead, so a
+// caller that skips the check gets nothing rather than a reassuring lie.
+export function passingReport(css) {
+  const { fresh, fixed, recorded } = unresolved(css);
+  if (fresh.length || fixed.length) return null;
+  const measured = PAIRS.length * 2;
+  const lines = [`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor, ${fresh.length} new.`];
   // The recorded ones report their current ratio rather than only their count. A number nobody can
   // see cannot be noticed drifting, and these are exactly the pairs a later change is most likely to
   // move, since the gate stays green anywhere between the floor and 1:1.

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import { THEMES, DEFAULT_THEME, themeAttribute, normaliseTheme } from '../src/js/lib/theme.js';
-import { PAIRS, KNOWN, parseHex, luminance, ratio, tokensIn, checkAll, unresolved } from '../scripts/check-palette.mjs';
+import { PAIRS, KNOWN, parseHex, luminance, ratio, tokensIn, checkAll, unresolved, passingReport } from '../scripts/check-palette.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (rel) => readFileSync(join(ROOT, ...rel.split('/')), 'utf8');
@@ -181,9 +181,25 @@ test('every recorded pair reports its current ratio, not just its existence', ()
     assert.ok(f.where, `${f.fgName} on ${f.bgName} reports no place it is rendered`);
     const line = out.split(/\r?\n/).find((l) => l.includes(`${f.fgName} on ${f.bgName} (${f.themeName})`));
     assert.ok(line, `the gate never prints ${f.fgName} on ${f.bgName} in the ${f.themeName} theme`);
+    // The measured value, not merely the shape of one. Review found that checking only the shape let a
+    // constant pass, which would print a fixed number for a pair that had drifted and defeat the whole
+    // reason the ratio is printed.
+    assert.ok(line.includes(`${f.ratio.toFixed(2)}:1`), `${line.trim()} does not carry its own measured ratio of ${f.ratio.toFixed(2)}:1`);
     assert.match(line, /^\s+\d+\.\d\d:1\s/, `${line.trim()} carries no measured ratio`);
     assert.ok(line.includes(f.where), `${f.fgName} on ${f.bgName} is printed without the place it is drawn`);
   }
+});
+
+test('the passing report refuses a stylesheet that is not passing', () => {
+  // `passingReport` is exported, so its precondition can no longer live in the order of statements
+  // inside `main()`. Review found the earlier version hardcoded "0 new" and built its list from the
+  // recorded keys alone, so called directly on a broken stylesheet it returned a clean-looking report
+  // for a tree with fresh failures in it. Flattening every colour to one grey makes every pair 1:1.
+  const flattened = css.replace(/#[0-9a-fA-F]{3,8}\b/g, '#808080');
+  const { fresh } = unresolved(flattened);
+  assert.ok(fresh.length > 0, 'the flattened stylesheet was supposed to fail, so this proves nothing');
+  assert.equal(passingReport(flattened), null, 'a report was produced for a stylesheet with fresh failures');
+  assert.ok(passingReport(css), 'the real stylesheet passes and must still produce a report');
 });
 
 test('the recorded pairs are all non-text boundaries, never body text', () => {
