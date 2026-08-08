@@ -276,6 +276,15 @@ quote in a bug report.
 
 ### Changed
 
+- **The project's list of planned improvements now includes drawing diagrams of how the app fits
+  together.** Nothing about the app itself changes, and nothing you have saved is affected. The
+  repository explains a great deal in words but contains no picture of any kind, so anyone trying to
+  describe how the pieces connect has to read the code first. Three diagrams are now planned: which
+  parts of the app depend on which, what happens step by step when you mark an issue read, and where
+  your reading progress is actually stored, including the copies the app keeps aside so it can
+  recover if it ever fails to read your data back. They will be written as plain text that the code
+  host draws for you, so no new software is added to the project to make them work.
+
 - **The two buttons in the "we could not read your saved data" warning no longer look equally
   important.** That warning tells you to download a copy first and only then start fresh, but both
   buttons were the same loud red, so nothing on screen backed up what the words were saying. Now

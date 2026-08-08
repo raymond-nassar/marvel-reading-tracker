@@ -224,6 +224,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:933 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Ready | src/index.html:147-148 |
 | BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Ready | scripts/check-anchors.mjs:116 |
+| BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Ready | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:208 |
 | BL-058 | Keep focus on the home grid and the rail when their lists rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | absent: any capture of the focused control before importCurated disables it, read of addFromCatalog and renderRail |
@@ -2885,7 +2886,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2642-2645`.
+`PRODUCT_BACKLOG.md:2643-2646`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3287,6 +3288,47 @@ saying a thing twice in an alert, so there is precedent for the direction.
 Filed rather than folded into BL-072, which changed the weight of the two buttons and touched no
 copy. It is a content decision on a recovery surface and deserves its own change.
 
+**BL-074: Draw the architecture and data flow the code already has**
+
+- [ ] Draw the module graph as ownership, separating what the view file constructs from what it only calls
+- [ ] Draw the data flow of one reading action, from the click through the store to the repaint
+- [ ] Draw the persistence and recovery paths, naming every storage key the app writes
+- [ ] Pitch each diagram at a level that survives BL-042 splitting the view file, or say plainly that it will not
+
+Constraint gate: checked 1 to 11, none breached.
+
+Asked for directly by the owner, whose stated purpose is explaining how the app's components function
+to other people. That framing scopes the item: it buys comprehension, not restructuring, and it must
+not become a reason to move code around. Nothing like it exists today. The `docs/` directory holds the
+UX study, the rationale for building a browser companion rather than an emulator, and four documents
+under `docs/ux` that specify interface flows in prose. None of them names a source module, and no
+tracked file in the repository contains a rendered diagram of any kind, so the code's own shape is the
+one thing the documentation never draws.
+
+Three diagrams rather than one, because the app has three separable stories and one picture that told
+all three would tell none of them well. The module graph answers what depends on what: a single view
+file of 3,201 lines wires a store, a metadata client, a rate limiter, a response cache and a hydrator
+together at `src/js/main.js:60-73`, and behind it sit sixteen library modules, none of which holds
+state of its own at module level. Where state exists it lives in an instance the view file constructs,
+as the rate limiter's queue and its window of recent hits do, which is why the graph is worth drawing
+as ownership rather than as imports. The data flow answers what happens when a reader marks an issue
+read, which is the loop that makes the app feel like an app: the store mutates, its change callback
+repaints everything, and a failed write reports itself on the way back. The persistence diagram
+answers where a reader's progress actually lives, which is the question the product promise turns on,
+and it is the one with real teeth because `src/js/storage.js:9-12` declares four keys, not one, and
+three of them exist only so a failed read can be recovered from.
+
+Mermaid in fenced code blocks, which GitHub renders natively. That keeps runtime dependencies at zero
+and adds no build step, so Constraint 4 is untouched, and it keeps the diagrams in the same review
+flow as the prose rather than in a binary a reviewer cannot diff.
+
+Two cautions the work should carry rather than discover. BL-042 splits the view file into per-view
+modules, so a module graph drawn at file granularity is invalidated the moment it lands; drawing at
+the level of responsibilities instead of filenames costs nothing now and survives that change. And
+every backticked path and line written into a new document becomes a claim the anchors gate will
+chase forever, which matters more here than usual because a document describing structure is exactly
+where citations drift fastest.
+
 **BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
 - [x] Add red on the rail, naming every control that paints it rather than the first one found
@@ -3378,7 +3420,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4045-4046` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4087-4088` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3388,11 +3430,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4061-4063`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4103-4105`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3879-3881` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3921-3923` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3600,7 +3642,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:513-516` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:522-525` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:158-160` and
 `PRODUCT_BACKLOG.md:165-167` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4142,7 +4184,7 @@ positions in it as it stands.
 ### Case 1: BL-026 is labelled P0 but ranks eighteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 18 of 49.
+- Calculated: WSJF 3.67, rank 18 of 50.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -4161,10 +4203,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks forty-third
+### Case 2: BL-007 is labelled P1 but ranks forty-fourth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 43 of 49, below thirty-eight unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 44 of 50, below forty unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -4220,9 +4262,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 25 of 49. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 19 of 49. Mid-table.
-- BL-017, P2, rank 48 of 49. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 25 of 50. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 19 of 50. Mid-table.
+- BL-017, P2, rank 49 of 50. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

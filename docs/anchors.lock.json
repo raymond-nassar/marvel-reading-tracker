@@ -89,13 +89,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:260-261|0": {
-    "anchor": "PRODUCT_BACKLOG.md:260-261",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:261-262|0": {
+    "anchor": "PRODUCT_BACKLOG.md:261-262",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3905|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3905",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3947|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3947",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -614,12 +614,12 @@
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-thi|src/js/main.js:2604|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-fou|src/js/main.js:2604|0": {
     "anchor": "src/js/main.js:2604",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-thi|src/js/main.js:2638-2643|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-fou|src/js/main.js:2638-2643|0": {
     "anchor": "src/js/main.js:2638-2643",
     "fp": "e53c56c7408f1625",
     "head": "depth"
@@ -634,8 +634,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:513-516|0": {
-    "anchor": "CHANGELOG.md:513-516",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:522-525|0": {
+    "anchor": "CHANGELOG.md:522-525",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -669,23 +669,23 @@
     "fp": "76e484be3a906428",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2642-2645|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2642-2645",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2643-2646|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2643-2646",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3879-3881|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3879-3881",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3921-3923|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3921-3923",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4045-4046|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4045-4046",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4087-4088|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4087-4088",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4061-4063|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4061-4063",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4103-4105|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4103-4105",
     "fp": "fb312375e390a000",
     "head": "by review. Evidence: `absent: eslint|prettier config or lint script, read of package.json:8-17 and"
   },
@@ -1319,6 +1319,11 @@
     "fp": "0ce8cd53875d220a",
     "head": "toggle.title = railed ? 'Expand sidebar (Ctrl+\\\\)' : 'Collapse sidebar (Ctrl+\\\\)';"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:60-73|0": {
+    "anchor": "src/js/main.js:60-73",
+    "fp": "986ddd042ebe0e98",
+    "head": "const limiter = new RateLimiter();"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:67-72|0": {
     "anchor": "src/js/main.js:67-72",
     "fp": "179d485d49b3bd60",
@@ -1368,6 +1373,11 @@
     "anchor": "src/js/storage.js:36",
     "fp": "5c5b72f805fd282e",
     "head": "this.state = raw ? migrate(JSON.parse(raw)) : createEmptyState();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:9-12|0": {
+    "anchor": "src/js/storage.js:9-12",
+    "fp": "a7459e56c471d9c8",
+    "head": "export const KEY = 'mrt.state.v2';"
   },
   "PRODUCT_BACKLOG.md|item-details|src/open.js:65|0": {
     "anchor": "src/open.js:65",
