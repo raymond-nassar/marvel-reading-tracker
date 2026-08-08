@@ -1,6 +1,6 @@
 {
-  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:860-862|0": {
-    "anchor": "docs/UX_STUDY.md:860-862",
+  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:874-876|0": {
+    "anchor": "docs/UX_STUDY.md:874-876",
     "fp": "1e64d83a8ff9a25f",
     "head": "**Puppeteer was installed outside the repository, deliberately.** `node_modules/` is not covered by"
   },
@@ -89,13 +89,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:253-254|0": {
-    "anchor": "PRODUCT_BACKLOG.md:253-254",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:254-255|0": {
+    "anchor": "PRODUCT_BACKLOG.md:254-255",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3386-3389|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3386-3389",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3543-3546|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3543-3546",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -609,12 +609,12 @@
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-ei|src/js/main.js:2536|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-ni|src/js/main.js:2536|0": {
     "anchor": "src/js/main.js:2536",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-ei|src/js/main.js:2570-2575|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-ni|src/js/main.js:2570-2575|0": {
     "anchor": "src/js/main.js:2570-2575",
     "fp": "e53c56c7408f1625",
     "head": "depth"
@@ -629,13 +629,13 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:413-416|0": {
-    "anchor": "CHANGELOG.md:413-416",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:432-435|0": {
+    "anchor": "CHANGELOG.md:432-435",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
-  "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:787-790|0": {
-    "anchor": "docs/UX_STUDY.md:787-790",
+  "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:801-804|0": {
+    "anchor": "docs/UX_STUDY.md:801-804",
     "fp": "a2ba5dc6346c8d63",
     "head": "### As-is journey map"
   },
@@ -664,23 +664,23 @@
     "fp": "76e484be3a906428",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2440-2443|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2440-2443",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2549-2552|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2549-2552",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3363-3365|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3363-3365",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3520-3522|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3520-3522",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3521-3522|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3521-3522",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3678-3679|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3678-3679",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3541-3543|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3541-3543",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3698-3700|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3698-3700",
     "fp": "affcee43c8cd0de5",
     "head": "Evidence: `scripts/lib/fetch-json.mjs:52-61`, `scripts/lib/fetch-json.mjs:22-37`."
   },
@@ -793,6 +793,16 @@
     "anchor": "src/index.html:16",
     "fp": "75391d0a544d10fc",
     "head": "<a class=\"skip-link\" href=\"#main\">Skip to main content</a>"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:16|1": {
+    "anchor": "src/index.html:16",
+    "fp": "75391d0a544d10fc",
+    "head": "<a class=\"skip-link\" href=\"#main\">Skip to main content</a>"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:257|0": {
+    "anchor": "src/index.html:257",
+    "fp": "c3b2146ff469aea8",
+    "head": "<span class=\"sw\" aria-hidden=\"true\"></span><span class=\"covers-label\" id=\"covers-label\">Cover art on"
   },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:329|0": {
     "anchor": "src/index.html:329",
@@ -1074,6 +1084,11 @@
     "fp": "65dd2b88c0b13a58",
     "head": "const items = all.filter((it) => matchesReadingFilter(filter, it));"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1854|0": {
+    "anchor": "src/js/main.js:1854",
+    "fp": "6260601161fee24f",
+    "head": "'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1870-1880|0": {
     "anchor": "src/js/main.js:1870-1880",
     "fp": "b64520737d749a82",
@@ -1224,6 +1239,16 @@
     "fp": "ad0aa3d1b00b370d",
     "head": "} catch {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:471|0": {
+    "anchor": "src/js/main.js:471",
+    "fp": "1b55161e8368918f",
+    "head": "if (label) label.textContent = settings.covers ? 'Cover art on' : 'Cover art off';"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:483|0": {
+    "anchor": "src/js/main.js:483",
+    "fp": "2401bbaeaba1e741",
+    "head": "announce(settings.covers ? 'Cover art on.' : 'Cover art off. Covers are shown as text tiles.');"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:545|0": {
     "anchor": "src/js/main.js:545",
     "fp": "0ce8cd53875d220a",
@@ -1289,10 +1314,30 @@
     "fp": "973645583ac99fd4",
     "head": ":root {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:253|0": {
+    "anchor": "src/styles.css:253",
+    "fp": "28fc0d5fe1881ddc",
+    "head": "width: 28px; height: 28px; border-radius: 8px; background: var(--red);"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:283-284|0": {
+    "anchor": "src/styles.css:283-284",
+    "fp": "ad1792470ae8c477",
+    "head": "/* The selected state is a red accent bar AND a raised surface AND a heavier label, so it"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:290|0": {
+    "anchor": "src/styles.css:290",
+    "fp": "041e549f4f8de028",
+    "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:380|0": {
     "anchor": "src/styles.css:380",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:388|0": {
+    "anchor": "src/styles.css:388",
+    "fp": "8f18c88e6812309c",
+    "head": ".tgl .sw { width: 26px; height: 15px; border-radius: 999px; background: var(--red); position: relati"
   },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:420-427|0": {
     "anchor": "src/styles.css:420-427",
@@ -1359,6 +1404,11 @@
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:909|0": {
+    "anchor": "src/styles.css:909",
+    "fp": "3a5c838f7187d084",
+    "head": "background: color-mix(in srgb, var(--warn) 12%, var(--panel));"
+  },
   "PRODUCT_BACKLOG.md|item-details|test/library.test.js:196-226|0": {
     "anchor": "test/library.test.js:196-226",
     "fp": "aaf0e826528174f3",
@@ -1373,6 +1423,11 @@
     "anchor": "test/shipped-copy.test.js:47-63",
     "fp": "39a38dfa1bd1a54f",
     "head": "test('no en or em dash reaches the screen through markup or styling', () => {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|test/theme.test.js:94|0": {
+    "anchor": "test/theme.test.js:94",
+    "fp": "7ddf76fcaefa7ef5",
+    "head": "test('the two light token blocks declare exactly the same tokens', () => {"
   },
   "PRODUCT_BACKLOG.md|orientation-disagreements|package.json:10|0": {
     "anchor": "package.json:10",
@@ -1883,5 +1938,10 @@
     "anchor": "src/js/lib/model.js:621",
     "fp": "0c1b3de0385c2af9",
     "head": "lists[k] = {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-069|src/styles.css:290|0": {
+    "anchor": "src/styles.css:290",
+    "fp": "041e549f4f8de028",
+    "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
   }
 }

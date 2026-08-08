@@ -1,11 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import { THEMES, DEFAULT_THEME, themeAttribute, normaliseTheme } from '../src/js/lib/theme.js';
-import { PAIRS, KNOWN, parseHex, luminance, ratio, tokensIn, checkAll, unresolved } from '../scripts/check-palette.mjs';
+import { PAIRS, KNOWN, parseHex, luminance, ratio, tokensIn, checkAll, unresolved, passingReport } from '../scripts/check-palette.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (rel) => readFileSync(join(ROOT, ...rel.split('/')), 'utf8');
@@ -162,6 +163,45 @@ test('the recorded below-floor pairs are exactly the pairs that measure below it
   assert.deepEqual(fixed, [], 'a recorded pair now meets the floor and should be removed from KNOWN');
 });
 
+test('every recorded pair reports its current ratio, not just its existence', () => {
+  // The docs claim the ratio is printed on every CI run, and for a while that was false: the number
+  // was reachable only under a `--report` flag no CI step passes, so a green run said five pairs were
+  // recorded and never said what they measured. A ratio nobody sees cannot be noticed drifting, and
+  // these are the pairs most likely to move, since the gate stays green anywhere below the floor.
+  //
+  // This spawns the gate rather than calling into it, because the claim is about what a run prints.
+  // The first version of this test asserted on `unresolved`'s return shape, one level below the
+  // claim, and review found the mutation that escaped it: delete the print loop and its destructure
+  // and the suite stayed green while the claim went false again.
+  const out = execFileSync(process.execPath, [join(ROOT, 'scripts', 'check-palette.mjs')], { encoding: 'utf8' });
+  const { recorded } = unresolved(css);
+  assert.equal(recorded.length, KNOWN.length, 'a recorded pair reports no measurement');
+  for (const f of recorded) {
+    assert.equal(typeof f.ratio, 'number', `${f.fgName} on ${f.bgName} reports no ratio`);
+    assert.ok(f.where, `${f.fgName} on ${f.bgName} reports no place it is rendered`);
+    const line = out.split(/\r?\n/).find((l) => l.includes(`${f.fgName} on ${f.bgName} (${f.themeName})`));
+    assert.ok(line, `the gate never prints ${f.fgName} on ${f.bgName} in the ${f.themeName} theme`);
+    // The measured value, not merely the shape of one. Review found that checking only the shape let a
+    // constant pass, which would print a fixed number for a pair that had drifted and defeat the whole
+    // reason the ratio is printed.
+    assert.ok(line.includes(`${f.ratio.toFixed(2)}:1`), `${line.trim()} does not carry its own measured ratio of ${f.ratio.toFixed(2)}:1`);
+    assert.match(line, /^\s+\d+\.\d\d:1\s/, `${line.trim()} carries no measured ratio`);
+    assert.ok(line.includes(f.where), `${f.fgName} on ${f.bgName} is printed without the place it is drawn`);
+  }
+});
+
+test('the passing report refuses a stylesheet that is not passing', () => {
+  // `passingReport` is exported, so its precondition can no longer live in the order of statements
+  // inside `main()`. Review found the earlier version hardcoded "0 new" and built its list from the
+  // recorded keys alone, so called directly on a broken stylesheet it returned a clean-looking report
+  // for a tree with fresh failures in it. Flattening every colour to one grey makes every pair 1:1.
+  const flattened = css.replace(/#[0-9a-fA-F]{3,8}\b/g, '#808080');
+  const { fresh } = unresolved(flattened);
+  assert.ok(fresh.length > 0, 'the flattened stylesheet was supposed to fail, so this proves nothing');
+  assert.equal(passingReport(flattened), null, 'a report was produced for a stylesheet with fresh failures');
+  assert.ok(passingReport(css), 'the real stylesheet passes and must still produce a report');
+});
+
 test('the recorded pairs are all non-text boundaries, never body text', () => {
   // Recording a body-text pair would be waiving readability, which is not a trade this list is
   // allowed to make. Every entry has to be a 3:1 boundary, not a 4.5:1 text pair.
@@ -184,10 +224,20 @@ test('a control boundary is measured against every surface it is drawn on, not j
   // `--track` is here for the same reason and was added later, by review: the trough renders on a
   // card in the reading hero and on the rail in the per-list bars, and listing only the card hid a
   // real degradation when the dark trough was darkened.
+  //
+  // `--red` and `--track-2` were added later still, by review of BL-067, and their absence is what
+  // let that change gate the cover-art switch's off state while leaving the on state of the same
+  // control on the same background unmeasured. This assertion is the thing that was supposed to
+  // force the question and could not, because it said nothing about the two tokens the change was
+  // about. A foreground that gains a surface without this line moving is the defect, so the line
+  // moves with it deliberately.
   const surfaces = (fg) => PAIRS.filter((p) => p[0] === fg).map((p) => p[1]).sort();
   assert.deepEqual(surfaces('--line-2'), ['--bg', '--card', '--card-2']);
   assert.deepEqual(surfaces('--cb-line'), ['--bg', '--card']);
   assert.deepEqual(surfaces('--track'), ['--card', '--rail']);
+  assert.deepEqual(surfaces('--red'), ['--bg', '--card', '--card-2', '--track']);
+  assert.deepEqual(surfaces('--track-2'), ['--bg']);
+  assert.deepEqual(surfaces('--on-accent'), ['--green', '--red', '--track-2']);
 });
 
 // Every class this app puts on something a reader operates, found by reading the markup and the

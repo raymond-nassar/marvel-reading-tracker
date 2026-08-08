@@ -58,7 +58,7 @@ export const PAIRS = [
   ['--green', '--card', BODY, 'the available badge on a card'],
   ['--amber', '--bg', BODY, 'the scheduled badge on the page'],
   ['--amber', '--card', BODY, 'the scheduled badge on a card'],
-  ['--on-accent', '--red', BODY, 'the label of a primary button'],
+  ['--on-accent', '--red', BODY, 'the label of a primary button, and the knob of the cover-art switch in its on state'],
   ['--line-2', '--bg', LARGE, 'the boundary of a bordered control'],
   ['--line-2', '--card', LARGE, 'the boundary of a button on a card, such as the hero'],
   ['--line-2', '--card-2', LARGE, 'the boundary of a text input against its own fill'],
@@ -68,6 +68,40 @@ export const PAIRS = [
   ['--track', '--rail', LARGE, 'the unfilled part of the per-list progress bar in the rail'],
   ['--red', '--track', LARGE, 'the filled part of a progress bar against the unfilled part'],
   ['--warn', '--panel', LARGE, 'the border of the unreadable-data notice'],
+  // BL-067. The cover-art switch and the primary button were the two controls no pair reached, so
+  // nothing here would have moved if either had gone invisible. Measured by walking each control's
+  // ancestor chain to the first opaque background rather than by reading the stylesheet, over seven
+  // views and both themes.
+  //
+  // Review found the first attempt at this block wrong twice over, in the same sentence. It said the
+  // switch is always on the page and the primary button always on a card, and gated the off-state
+  // track on the page while leaving the on-state track of the same control, on the same background,
+  // ungated. Half of one control. `--red` on `--bg` is painted by two separate things: the switch's
+  // on-state track, and the catalog Clear button, which is a `.btn` with a transparent border
+  // falling through to the page. Both measure 3.89:1 dark and 4.73:1 light, so nothing was failing,
+  // but nothing was watching either.
+  //
+  // Neither was visible to the browser pass, and the reason is worth keeping: the Clear button is
+  // `hidden` until a query is typed, and the switch's on state is not the state a fresh fixture
+  // lands in. That is the hole this file's own header names, a rule that paints only in a state no
+  // fixture reaches, and it caught this file rather than the app.
+  //
+  // What the plan got wrong is narrower than it looked. It asked for `--red` on `--bg` and described
+  // it as the knob on the on-state track. The description is garbled, because the knob on the
+  // on-state track is `--on-accent` on `--red`, already listed above. The pair itself was right.
+  ['--track-2', '--bg', LARGE, 'the cover-art switch in its off state, which sits on the page'],
+  ['--on-accent', '--track-2', LARGE, 'the knob of the cover-art switch on its off-state track'],
+  ['--red', '--bg', LARGE, 'the cover-art switch in its on state, and the catalog Clear button, both on the page'],
+  ['--red', '--card', LARGE, 'the fill of a primary button on a card'],
+  ['--red', '--card-2', LARGE, 'the fill of a primary button on a raised card'],
+  // Found by the same review, one token over, and it is the reason the guard in test/theme.test.js
+  // now pins `--on-accent` too. The tick inside a checked checkbox is `--on-accent` on `--green`
+  // (`src/styles.css:580` and `:582`), which is 2.30:1 in the dark theme. It is listed here and
+  // recorded below rather than fixed, because the colour decision belongs to BL-069 and this item
+  // is about measuring what nothing measured. The railed status dot is the other thing painted on
+  // `--green` and it carries no foreground at all, since `.railed .pill` sets `color: transparent`
+  // at `src/styles.css:342-343`, so this is the only pair `--green` backs.
+  ['--on-accent', '--green', LARGE, 'the tick inside a checked read checkbox'],
 ];
 
 export function parseHex(hex) {
@@ -146,6 +180,7 @@ export function check(css, selector, themeName) {
         fgName,
         bgName,
         ratio: r,
+        where,
         message: `${fgName} on ${bgName} measures ${r.toFixed(2)}:1, below the ${floor}:1 floor, and is ${where}`,
       });
     }
@@ -160,7 +195,7 @@ export function checkAll(css) {
   ];
 }
 
-// Four non-text pairs sit below 3:1 and are recorded rather than fixed. BL-065 raised the other four.
+// Five non-text pairs sit below 3:1 and are recorded rather than fixed. BL-065 raised the other four.
 //
 // All four are `--track` against something behind it, and the reason they stay is arithmetic rather
 // than reluctance. `--track` is the trough of a progress bar and the `--red` fill sits directly on
@@ -195,6 +230,27 @@ export const KNOWN = [
   'light:--track:--card',
   'dark:--track:--rail',
   'light:--track:--rail',
+  // The fifth is a different case from the four above and is recorded for a different reason. The
+  // white tick inside a checked read checkbox is 2.30:1 on the dark `--green` fill, and 6.48:1 on
+  // the light one, so only the dark theme is below the floor. Unlike the trough, nothing about the
+  // arithmetic forces it: a darker green would clear it. It is recorded rather than fixed because
+  // the tick is not what tells a reader the box is checked. The fill does, and the fill is
+  // emphatic, at 7.58:1 against a card and 8.22:1 against the page in the dark theme. The state is
+  // also carried in words, since the button's own label at `src/js/main.js:1854` reads "Mark X as
+  // unread" exactly when it is checked, and `aria-pressed` at `:1853` carries it too. So the tick
+  // is reinforcement drawn on an already unmistakable fill, which is the same judgement BL-049
+  // reached about the badge borders and the same one BL-067 reached about the switch graphic.
+  // Choosing the green is BL-069's, and until it does this line is what keeps the number visible.
+  //
+  // The classification is what makes this entry eligible at all, and it deserves stating rather
+  // than assuming, because the test below rejects any recorded pair carrying the 4.5:1 text floor.
+  // WCAG scopes text to characters that express something in human language. A tick is a symbol
+  // that happens to arrive as a font glyph, and here it is never language to anybody: the button
+  // takes its accessible name from the `aria-label` at `src/js/main.js:1854`, which replaces the
+  // glyph in the name computation, so no assistive technology ever reads it. It is a state
+  // indicator drawn on a control, so the floor is the 3:1 of 1.4.11 and not the 4.5:1 of 1.4.3.
+  // If that reading is ever overturned, this entry is not eligible and the green has to change.
+  'dark:--on-accent:--green',
 ];
 
 export function unresolved(css) {
@@ -202,7 +258,11 @@ export function unresolved(css) {
   const keys = new Set(found.map((f) => f.key));
   const fresh = found.filter((f) => !KNOWN.includes(f.key));
   const fixed = KNOWN.filter((k) => !keys.has(k));
-  return { fresh, fixed };
+  // `found` comes back too so the passing path can print what each recorded pair currently measures.
+  // Review found the backlog and the changelog both claiming the ratio was printed on every run when
+  // only the count was, and the number was reachable only under a `--report` flag no CI step passes.
+  const recorded = KNOWN.map((k) => found.find((f) => f.key === k)).filter(Boolean);
+  return { fresh, fixed, recorded };
 }
 
 function main() {
@@ -233,8 +293,37 @@ function main() {
     process.exitCode = 1;
     return;
   }
+  const lines = passingReport(css);
+  // A null report means the tree is not clean, which the guard above should already have caught.
+  // Asserting it here rather than trusting the ordering keeps the two halves from drifting apart.
+  if (!lines) throw new Error('passingReport refused a tree that the guard above passed as clean');
+  for (const line of lines) console.log(line);
+}
+
+// The passing path's output is built rather than printed inline so a test can assert on it. Review
+// found the previous version pinned only `unresolved`, one level below the claim: deleting the print
+// loop and its destructure left the suite green, the gate exit 0, and three prose statements that the
+// ratio is printed on every run false again. The test spawns this script and reads stdout, so the
+// thing the docs claim is the thing that is checked.
+//
+// Everything in the report derives from the module's own data. An earlier version took the pair count
+// as a parameter, which put half the summary line under the caller's control and half under the
+// module's, and the pair count is the one figure that has gone stale in this item's prose three times.
+// It also hardcoded "0 new", which is true only past `main()`'s guard: exported, that made a function
+// that reports green for a red tree. It returns null on a tree with unresolved findings instead, so a
+// caller that skips the check gets nothing rather than a reassuring lie.
+export function passingReport(css) {
+  const { fresh, fixed, recorded } = unresolved(css);
+  if (fresh.length || fixed.length) return null;
   const measured = PAIRS.length * 2;
-  console.log(`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor (BL-065), 0 new.`);
+  const lines = [`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor, ${fresh.length} new.`];
+  // The recorded ones report their current ratio rather than only their count. A number nobody can
+  // see cannot be noticed drifting, and these are exactly the pairs a later change is most likely to
+  // move, since the gate stays green anywhere between the floor and 1:1.
+  for (const f of recorded) {
+    lines.push(`  ${f.ratio === undefined ? '   ?' : `${f.ratio.toFixed(2)}:1`}  ${f.fgName} on ${f.bgName} (${f.themeName}), ${f.where || f.message}`);
+  }
+  return lines;
 }
 
 if (process.argv[1] && process.argv[1].endsWith('check-palette.mjs')) main();
