@@ -213,7 +213,7 @@ Not applicable, with reason:
 * 1.4.2 Audio Control, not applicable, for the same reason.
 * 2.2.2 Pause, Stop, Hide, not applicable, because the only moving element is a progress ring
   transition that already respects reduced motion. Evidence: `src/styles.css:380`,
-  `src/styles.css:887-889`.
+  `src/styles.css:890-892`.
 * 3.3.8 Accessible Authentication (Minimum), not applicable, because there is no authentication of
   any kind. Evidence: `absent: password|login|signin|oauth|token, grep across src/`.
 * 3.3.7 Redundant Entry, not applicable, because no flow asks for the same information twice.
@@ -296,8 +296,8 @@ mark rather than through container opacity, so the state reads without dragging 
 the contrast floor
 Backlog item: BL-030
 Resolved: the container `opacity` was replaced with a dedicated `--read-fg` foreground plus a
-strikethrough, at `src/styles.css:560-561`. The only opacity left on a read row is on the cover
-image at `src/styles.css:563`, which carries no text. Re-measured with six rows actually in the
+strikethrough, at `src/styles.css:563-564`. The only opacity left on a read row is on the cover
+image at `src/styles.css:566`, which carries no text. Re-measured with six rows actually in the
 read state, axe 4.13.0 reported no contrast violations on the surface.
 
 #### UX-A-003: Hero text contrast is undeterminable because it sits on a blurred cover
@@ -335,7 +335,7 @@ Rationale: every row control on the primary reading path, persisting across sess
 conformance pass and an ergonomic problem rather than a barrier
 Confidence: Measured
 Evidence: `docs/ux-artifacts/target-spacing.json`, `docs/ux-artifacts/live-inspection.json`,
-`src/styles.css:575-578`
+`src/styles.css:578-581`
 Source: WCAG 2.2 Level AA sweep, criterion 2.5.8
 Impact: 60 of 140 row targets measure under 24 pixels in at least one dimension. The read toggle is
 17 by 17 and the row action buttons are 22 by 26. The naive verdict is a failure, and it is wrong.
@@ -357,7 +357,7 @@ Severity: 3, single-rater estimate
 Rationale: hides six controls per row on the primary reading path, on every touch device, for the
 life of the product
 Confidence: Measured
-Evidence: `src/styles.css:632-633`, `docs/ux-artifacts/live-inspection.json`
+Evidence: `src/styles.css:635-636`, `docs/ux-artifacts/live-inspection.json`
 Source: mobile viewport framing, criterion 1.4.13
 Impact: the row action container computes to `opacity: 0` at rest and is revealed only on `:hover`
 or `:focus-within`. Keyboard users are served, because the measured tab walk reached every action
@@ -431,7 +431,7 @@ emulated light preference the computed body background stays `rgb(15, 17, 21)` a
 taken under light and dark preference are byte-identical, so the reader's system preference has no
 effect at all. Forced colours and reduced motion are both handled, which shows the gap is a missing
 theme rather than a general disregard for user preferences. Evidence for that contrast:
-`src/styles.css:887-894`.
+`src/styles.css:890-897`.
 Recommendation: derive the palette from tokens and add a light theme behind `prefers-color-scheme`
 with a manual override, reusing the existing forced-colors work as the model
 Backlog item: BL-032
@@ -455,6 +455,17 @@ at all" above means. Their successors
 so what differs is palette alone, which is the intended shape of the change rather than a reflow.
 `docs/ux-artifacts/09-settings-theme-1280.png` shows the override control and
 `docs/ux-artifacts/09-progress-seeded-prefers-light.png` a second surface under the light palette.
+
+The palette gate that shipped alongside those recorded six boundaries below the 3:1 non-text floor
+rather than raising them, to keep that change to a refactor. They were raised under BL-065, and the
+pair that shows it is `docs/ux-artifacts/10-controls-dark-before.png` against
+`docs/ux-artifacts/10-controls-dark-after.png`, with `docs/ux-artifacts/10-controls-light-before.png`
+and `docs/ux-artifacts/10-controls-light-after.png` for the light theme. The "before" halves are
+reproduced by putting the tokens back to their old values through the CSSOM rather than by checking
+out the old tree, so the two halves of each pair differ in nothing else. Layout is identical between
+them, as it was for the pair above, so what differs is the boundary alone.
+`docs/ux-artifacts/10-reading-controls-dark.png` and
+`docs/ux-artifacts/10-reading-controls-light.png` show the whole surface the crops come from.
 
 #### UX-A-009: The full availability description is carried only in a title attribute
 
@@ -652,7 +663,7 @@ Backlog item: BL-028
 reduce, with a screenshot captured for each. The light and dark screenshots are byte-identical,
 which is the measurement behind UX-A-008. Reduced motion is genuinely honoured: the progress ring
 transition computes to `none` under the reduce preference. Evidence:
-`docs/ux-artifacts/live-inspection.json`, `src/styles.css:380`, `src/styles.css:887-889`.
+`docs/ux-artifacts/live-inspection.json`, `src/styles.css:380`, `src/styles.css:890-892`.
 
 ## Step 5: Information architecture and generative artifacts
 
@@ -739,7 +750,7 @@ evidence value and the cheapest question that would confirm or kill it.
 | Primary device while reading | Desktop or laptop, with the tracker beside the reader | Moderate. The reflow and rail defects would be intolerable if a phone were the main device, and they shipped. `docs/ux-artifacts/viewport-sweep-reading.json` | On the last five reading sessions, what was the tracker open on? |
 | Reading style | Follows a long curated order end to end rather than dipping in | Strong. The product is built around order, resume and next-unread rather than around browsing. `src/index.html:291-326` | When a list is abandoned partway, what caused it? |
 | Tolerance for missing metadata | High, provided the app admits what it does not know | Strong. Pending and by-hand states are surfaced rather than hidden, and this was a deliberate decision. `src/js/main.js:1721-1727` | Would you rather see a guess or a clearly marked gap? |
-| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:250-251`, `PRODUCT_BACKLOG.md:3096-3099` | If sync existed and was opt-in, would you turn it on? |
+| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:253-254`, `PRODUCT_BACKLOG.md:3203-3206` | If sync existed and was opt-in, would you turn it on? |
 | Accessibility needs | None known, and unasked | Weak. This is an assumption by absence. No accessibility requirement appears anywhere in the repository, and the shipped contrast and target sizes are consistent with nobody having needed otherwise. | Do you use any system accessibility setting, including text size, contrast or reduced motion? |
 
 Any other user type is speculative: a second reader would most plausibly be someone handed a

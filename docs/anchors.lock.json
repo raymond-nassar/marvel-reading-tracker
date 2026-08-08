@@ -1,6 +1,6 @@
 {
-  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:849-851|0": {
-    "anchor": "docs/UX_STUDY.md:849-851",
+  ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:860-862|0": {
+    "anchor": "docs/UX_STUDY.md:860-862",
     "fp": "1e64d83a8ff9a25f",
     "head": "**Puppeteer was installed outside the repository, deliberately.** `node_modules/` is not covered by"
   },
@@ -89,13 +89,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:250-251|0": {
-    "anchor": "PRODUCT_BACKLOG.md:250-251",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:253-254|0": {
+    "anchor": "PRODUCT_BACKLOG.md:253-254",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3096-3099|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3096-3099",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3203-3206|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3203-3206",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -159,8 +159,8 @@
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css:887-889|0": {
-    "anchor": "src/styles.css:887-889",
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:890-892|0": {
+    "anchor": "src/styles.css:890-892",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -174,8 +174,8 @@
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:887-889|0": {
-    "anchor": "src/styles.css:887-889",
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:890-892|0": {
+    "anchor": "src/styles.css:890-892",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -199,13 +199,13 @@
     "fp": "6e2654e385653c4a",
     "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-ra"
   },
-  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:560-561|0": {
-    "anchor": "src/styles.css:560-561",
+  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:563-564|0": {
+    "anchor": "src/styles.css:563-564",
     "fp": "4867cdf75f778888",
     "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
   },
-  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:563|0": {
-    "anchor": "src/styles.css:563",
+  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:566|0": {
+    "anchor": "src/styles.css:566",
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
@@ -219,13 +219,13 @@
     "fp": "d9fb3bc05f56276d",
     "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
-  "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css:575-578|0": {
-    "anchor": "src/styles.css:575-578",
+  "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css:578-581|0": {
+    "anchor": "src/styles.css:578-581",
     "fp": "8391d947227277c6",
     "head": ".cb {"
   },
-  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:632-633|0": {
-    "anchor": "src/styles.css:632-633",
+  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:635-636|0": {
+    "anchor": "src/styles.css:635-636",
     "fp": "3a7250a4d0e170ae",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -274,8 +274,8 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:887-894|0": {
-    "anchor": "src/styles.css:887-894",
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:890-897|0": {
+    "anchor": "src/styles.css:890-897",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -504,8 +504,8 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:632-633|0": {
-    "anchor": "src/styles.css:632-633",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:635-636|0": {
+    "anchor": "src/styles.css:635-636",
     "fp": "3a7250a4d0e170ae",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -569,13 +569,13 @@
     "fp": "5fb17598510b56c8",
     "head": "function showView(next, { focus = true, push = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:548-551|0": {
-    "anchor": "src/styles.css:548-551",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:551-554|0": {
+    "anchor": "src/styles.css:551-554",
     "fp": "c17ce04e13581723",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:659-675|0": {
-    "anchor": "src/styles.css:659-675",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:662-678|0": {
+    "anchor": "src/styles.css:662-678",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -609,12 +609,12 @@
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-si|src/js/main.js:2383|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-se|src/js/main.js:2383|0": {
     "anchor": "src/js/main.js:2383",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-si|src/js/main.js:2417-2422|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-thirty-se|src/js/main.js:2417-2422|0": {
     "anchor": "src/js/main.js:2417-2422",
     "fp": "e53c56c7408f1625",
     "head": "depth"
@@ -629,13 +629,13 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:370-373|0": {
-    "anchor": "CHANGELOG.md:370-373",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:390-393|0": {
+    "anchor": "CHANGELOG.md:390-393",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
-  "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:776-779|0": {
-    "anchor": "docs/UX_STUDY.md:776-779",
+  "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:787-790|0": {
+    "anchor": "docs/UX_STUDY.md:787-790",
     "fp": "a2ba5dc6346c8d63",
     "head": "### As-is journey map"
   },
@@ -649,38 +649,38 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:155-157|0": {
-    "anchor": "PRODUCT_BACKLOG.md:155-157",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:157-159|0": {
+    "anchor": "PRODUCT_BACKLOG.md:157-159",
     "fp": "4510928eaa8a238b",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:162-164|0": {
-    "anchor": "PRODUCT_BACKLOG.md:162-164",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:164-166|0": {
+    "anchor": "PRODUCT_BACKLOG.md:164-166",
     "fp": "76e484be3a906428",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:162-164|1": {
-    "anchor": "PRODUCT_BACKLOG.md:162-164",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:164-166|1": {
+    "anchor": "PRODUCT_BACKLOG.md:164-166",
     "fp": "76e484be3a906428",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2208-2211|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2208-2211",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2315-2318|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2315-2318",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3073-3075|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3073-3075",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3180-3182|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3180-3182",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3231-3232|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3231-3232",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3338-3339|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3338-3339",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3251-3253|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3251-3253",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3358-3360|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3358-3360",
     "fp": "affcee43c8cd0de5",
     "head": "Evidence: `scripts/lib/fetch-json.mjs:52-61`, `scripts/lib/fetch-json.mjs:22-37`."
   },
@@ -1299,48 +1299,48 @@
     "fp": "6e2654e385653c4a",
     "head": "kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-ra"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:548-551|0": {
-    "anchor": "src/styles.css:548-551",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:551-554|0": {
+    "anchor": "src/styles.css:551-554",
     "fp": "c17ce04e13581723",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:560-561|0": {
-    "anchor": "src/styles.css:560-561",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:563-564|0": {
+    "anchor": "src/styles.css:563-564",
     "fp": "4867cdf75f778888",
     "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:563|0": {
-    "anchor": "src/styles.css:563",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:566|0": {
+    "anchor": "src/styles.css:566",
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:601-625|0": {
-    "anchor": "src/styles.css:601-625",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:604-628|0": {
+    "anchor": "src/styles.css:604-628",
     "fp": "0ca231bb4e98d821",
     "head": "/* These outlines are faint on purpose, and that is a recorded decision rather than an"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:646|0": {
-    "anchor": "src/styles.css:646",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:649|0": {
+    "anchor": "src/styles.css:649",
     "fp": "ff1cde127301f4d6",
     "head": ".card > summary::before { content: \"›\"; color: var(--muted); transition: transform .15s; display: in"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:646|1": {
-    "anchor": "src/styles.css:646",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:649|1": {
+    "anchor": "src/styles.css:649",
     "fp": "ff1cde127301f4d6",
     "head": ".card > summary::before { content: \"›\"; color: var(--muted); transition: transform .15s; display: in"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:652|0": {
-    "anchor": "src/styles.css:652",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:655|0": {
+    "anchor": "src/styles.css:655",
     "fp": "a5884bb783e5d63e",
     "head": ".card-static > * { padding: 0 !important; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:659-675|0": {
-    "anchor": "src/styles.css:659-675",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:662-678|0": {
+    "anchor": "src/styles.css:662-678",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:887-894|0": {
-    "anchor": "src/styles.css:887-894",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:890-897|0": {
+    "anchor": "src/styles.css:890-897",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -1744,8 +1744,8 @@
     "fp": "78349d165fb018eb",
     "head": "--red: #d43333;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-030|src/styles.css:554-563|0": {
-    "anchor": "src/styles.css:554-563",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-030|src/styles.css:557-566|0": {
+    "anchor": "src/styles.css:557-566",
     "fp": "a8497ff4e93c6cc6",
     "head": "/* A read row recedes through a dimmer title colour, a strikethrough and a filled"
   },
@@ -1809,8 +1809,8 @@
     "fp": "7aa18c32ba31e0a8",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:659-675|0": {
-    "anchor": "src/styles.css:659-675",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:662-678|0": {
+    "anchor": "src/styles.css:662-678",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -1834,8 +1834,8 @@
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:155-157|0": {
-    "anchor": "PRODUCT_BACKLOG.md:155-157",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:157-159|0": {
+    "anchor": "PRODUCT_BACKLOG.md:157-159",
     "fp": "4510928eaa8a238b",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
@@ -1858,5 +1858,10 @@
     "anchor": "src/data/orders/new-ultimate-universe-trades.md:3",
     "fp": "e36b1a135075a2c6",
     "head": "## Ultimate Invasion"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-067|src/styles.css:393|0": {
+    "anchor": "src/styles.css:393",
+    "fp": "fd168a7fecabce4c",
+    "head": "body.nocovers .tgl .sw { background: var(--track-2); }"
   }
 }

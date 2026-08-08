@@ -103,6 +103,26 @@ quote in a bug report.
 
 ### Fixed
 
+- **The outline around every button, checkbox and text box was too faint to see reliably.** Buttons
+  like Rename, Note, Duplicate and Delete list, the row actions on each issue, the reading filters,
+  the cover-art switch, the line marking an issue you have written a note on, and every saved list in
+  the Library were all drawn with a border so close in colour to the page behind it that it barely
+  registered, especially on a phone in daylight or on a screen where the brightness has been turned
+  down. The accessibility standard asks for a boundary three times as distinct from its surroundings
+  as those were, and they measured at about a third of what was needed. All of them are now clearly
+  outlined, in both the dark and the light theme.
+  Nothing changed shape, moved, or changed size, and nothing that is not a button or a box changed
+  at all: the fine lines around cards, covers and panels are exactly as they were, because those are
+  decoration rather than something you click.
+
+- **The progress bar's empty part is now distinct enough from its filled part to read at a glance.**
+  It was possible to raise the contrast between the bar and the page behind it instead, which is what
+  the original plan said to do, but every colour that does so in the dark theme is far brighter than
+  the red fill, which would have made a bar that is a quarter full look three-quarters full. That is
+  a worse outcome than the one being fixed, so the empty part was darkened instead, which is the
+  measurement that actually tells you how far through an order you are. Both bars still state the
+  same numbers as text beside them, so the bar is never the only way to read your progress.
+
 - **Restoring a backup made by a much older build could show "Invalid Date" as a reading date.**
   Only backups written by the earliest data format were affected, and only if one of them held
   something other than a number where the reading date belonged. Restoring such a backup put the
