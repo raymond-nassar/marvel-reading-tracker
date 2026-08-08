@@ -467,6 +467,20 @@ them, as it was for the pair above, so what differs is the boundary alone.
 `docs/ux-artifacts/10-reading-controls-dark.png` and
 `docs/ux-artifacts/10-reading-controls-light.png` show the whole surface the crops come from.
 
+BL-065 raised boundaries, which left one filled control unanswered: the cover-art switch, whose
+state is the colour of its track rather than an outline around it. BL-067 raised that, and the pair
+showing it is `docs/ux-artifacts/12-covers-switch-dark-before.png` against
+`docs/ux-artifacts/12-covers-switch-dark-after.png`, with
+`docs/ux-artifacts/12-covers-switch-light-before.png` and
+`docs/ux-artifacts/12-covers-switch-light-after.png` for the light theme. These are captured
+differently from the pair above and the difference matters: the "before" halves come from checking
+the stylesheet out at its previous state rather than from overriding the token through the CSSOM,
+because the off-state track and the knob's off-state position are set by the same rule and driving
+one without the other would picture a state the app never renders. Everything else is held: the
+same seeded fixture, the same view, the same 1280 by 900 viewport at 4x, and the control located by
+id rather than by taking whichever switch rendered first, which on an earlier attempt cropped the
+progress ring beside it in one half of the pair and not the other.
+
 #### UX-A-009: The full availability description is carried only in a title attribute
 
 Surface: availability badge, reading view rows

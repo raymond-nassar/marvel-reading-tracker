@@ -2934,7 +2934,7 @@ and no changelog, both of which have since shipped; correcting the number alone 
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
 which is the treatment the as-is journey map in the UX study already gets. That precedent is the
 weaker of the two, because the journey map is stamped as a hypothesis in its own text at
-`docs/UX_STUDY.md:787-790` while this paragraph carries no such marker and reads in the present
+`docs/UX_STUDY.md:801-804` while this paragraph carries no such marker and reads in the present
 tense, so a reader who never opens this block has no way to tell it is frozen. Marking it in place
 would mean editing the snapshot, which is the thing being avoided; the record is here instead.
 
