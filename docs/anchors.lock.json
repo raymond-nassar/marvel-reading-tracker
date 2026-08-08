@@ -94,8 +94,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:2729-2732|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2729-2732",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:2787-2790|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2787-2790",
     "fp": "ff85d93d4684cfa7",
     "head": "- Hosting or distributing comic content."
   },
@@ -629,8 +629,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:298-301|0": {
-    "anchor": "CHANGELOG.md:298-301",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:311-314|0": {
+    "anchor": "CHANGELOG.md:311-314",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -656,31 +656,31 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|0": {
     "anchor": "PRODUCT_BACKLOG.md:160-162",
-    "fp": "e6564adf45951a8c",
+    "fp": "18677f55ad89cae3",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|1": {
     "anchor": "PRODUCT_BACKLOG.md:160-162",
-    "fp": "e6564adf45951a8c",
+    "fp": "18677f55ad89cae3",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1909-1912|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1909-1912",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1965-1968|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1965-1968",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2706-2708|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2706-2708",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2764-2766|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2764-2766",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2860-2861|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2860-2861",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2922-2923|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2922-2923",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2880-2882|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2880-2882",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2942-2944|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2942-2944",
     "fp": "affcee43c8cd0de5",
     "head": "Evidence: `scripts/lib/fetch-json.mjs:52-61`, `scripts/lib/fetch-json.mjs:22-37`."
   },
@@ -694,15 +694,20 @@
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/build-event-order.mjs:203|0": {
-    "anchor": "scripts/build-event-order.mjs:203",
+  "PRODUCT_BACKLOG.md|item-details|scripts/build-event-order.mjs:207|0": {
+    "anchor": "scripts/build-event-order.mjs:207",
     "fp": "2c3648b8f1356780",
     "head": "const { getJson } = createJsonFetcher();"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/build-event-order.mjs:431|0": {
-    "anchor": "scripts/build-event-order.mjs:431",
-    "fp": "9eba06ad023d613e",
-    "head": "`# ${event.name}: Issue-by-Issue Reading Checklist`,"
+  "PRODUCT_BACKLOG.md|item-details|scripts/build-event-order.mjs:441-451|0": {
+    "anchor": "scripts/build-event-order.mjs:441-451",
+    "fp": "6cf2e7a03e765847",
+    "head": "// The catch, and the reason this is a function with a refusal in it rather than a flag on each"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/build-event-order.mjs:481|0": {
+    "anchor": "scripts/build-event-order.mjs:481",
+    "fp": "0229604f80988ee1",
+    "head": "`# ${event.name}: ${essential ? 'Main Series Reading Checklist' : 'Issue-by-Issue Reading Checklist'"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:101-104|0": {
     "anchor": "scripts/check-anchors.mjs:101-104",
@@ -858,6 +863,11 @@
     "anchor": "src/js/lib/catalog.js:238-247",
     "fp": "876c85e65bf9c2d2",
     "head": "export function filterByFacet(lists, key) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/catalog.js:326|0": {
+    "anchor": "src/js/lib/catalog.js:326",
+    "fp": "c2b31ff7dbb58fc8",
+    "head": "export function groupCatalog(lists) {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/library.js:27-51|0": {
     "anchor": "src/js/lib/library.js:27-51",
@@ -1033,6 +1043,11 @@
     "anchor": "src/js/main.js:2052",
     "fp": "d11f7f94d7f572d4",
     "head": "const issueId = issueIdFromUrl(url) ?? -Date.now();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2214|0": {
+    "anchor": "src/js/main.js:2214",
+    "fp": "62869c726371d4bf",
+    "head": "el('div', { class: 'result-title', text: title }),"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:230-237|0": {
     "anchor": "src/js/main.js:230-237",
@@ -1359,15 +1374,10 @@
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|src/js/main.js:2189|0": {
-    "anchor": "src/js/main.js:2189",
-    "fp": "001dea97ca0659d3",
-    "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
-  },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|src/js/main.js:2219-2224|0": {
-    "anchor": "src/js/main.js:2219-2224",
-    "fp": "e53c56c7408f1625",
-    "head": "depth"
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-007|scripts/build-event-order.mjs:441-451|0": {
+    "anchor": "scripts/build-event-order.mjs:441-451",
+    "fp": "6cf2e7a03e765847",
+    "head": "// The catch, and the reason this is a function with a refusal in it rather than a flag on each"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:185-285|0": {
     "anchor": "scripts/vendor-orders.mjs:185-285",

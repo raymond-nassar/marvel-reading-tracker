@@ -16,6 +16,19 @@ quote in a bug report.
 
 ### Added
 
+- **A short version of three event reading orders.** The catalog could already show two versions of
+  one story side by side, and the Hickman run used it, but every event was offered only in full:
+  House of M at 20 issues, Civil War at 31, Secret Invasion at 36. Each of those three now has a
+  second, shorter option beside it, containing only the main series: 8, 7 and 8 issues. They appear
+  together under one heading, so you pick how much you want to read rather than choosing between
+  what look like two unrelated lists.
+  Annihilation and King in Black deliberately do not get one, and this is the part worth knowing.
+  For both of them the main series is not where the story starts. Annihilation opens with a prologue
+  and four mini-series, seventeen issues before the main series begins, and King in Black opens with
+  a Symbiote Spider-Man issue. A main-series-only list for either would start you in the middle
+  while calling itself the essential path, so the build refuses to make one and says why.
+  Nothing about the lists you have already imported changes.
+
 - **Two new Library pages: Everything read, and Added by hand.** The rail's Library section had one
   entry, Progress by series, where the adopted design showed three. The two missing ones are now
   there. Everything read lists every issue you have ticked off, newest first, and Added by hand
