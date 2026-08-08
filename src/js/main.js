@@ -1680,10 +1680,22 @@ function renderRows() {
           // The note control sits in the text column, not in `.ract`, which already carries six
           // buttons and wraps at 320 pixels. One control both shows the note and opens the
           // editor, so a row with a note is not a row with an extra thing beside it.
+          //
+          // The note is repeated into the label rather than left to name the button by its
+          // contents, because an aria-label replaces the contents in the accessible name. With
+          // the label naming only the action, a screen reader announced "Edit your note on X"
+          // and never the note, so the one reader who cannot see the row would have had to open
+          // the editor on every issue to find out what they had written.
+          //
+          // The note goes last because it is the one part the app does not punctuate. A note
+          // typed as "Wanda breaks reality." read as "here.. Select to edit it." with the action
+          // trailing, so the action leads instead and nothing follows the user's own words.
           el('button', {
             type: 'button',
             class: `rnote${item.note ? ' has-note' : ''}`,
-            'aria-label': item.note ? `Edit your note on ${item.title}` : `Add a note on ${item.title}`,
+            'aria-label': item.note
+              ? `Edit your note on ${item.title}. It says: ${item.note}`
+              : `Add a note on ${item.title}`,
             dataset: { key: item.issueId, act: 'note' },
             onclick: () => editIssueNote(item),
           }, item.note ? item.note : 'Add a note'),

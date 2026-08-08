@@ -233,3 +233,25 @@ test('the note control stays out of the row action cluster, which is already ful
   );
   assert.match(main, /class: `rnote/, 'the note control exists');
 });
+
+// An aria-label replaces the element's contents in the accessible name rather than adding to it,
+// so a label naming only the action hides the note itself from the one reader who cannot see it.
+// Found in review, and nothing else in the suite or the gates would catch it coming back.
+test('a screen reader is told what the note says, not just that one exists', () => {
+  const main = read('src/js/main.js');
+  const label = /'aria-label': item\.note\s*\n?\s*\?\s*`([^`]*)`/.exec(main);
+  assert.ok(label, 'the note control still labels itself conditionally');
+  assert.match(
+    label[1],
+    /\$\{item\.note\}/,
+    'the note text is part of the accessible name, not replaced by it',
+  );
+  assert.match(label[1], /\$\{item\.title\}/, 'and the label still says which issue it is about');
+  // Measured in Edge: a note typed as "Wanda breaks reality." announced as "here.. Select to edit
+  // it." when the action trailed the note. The note is the one part the app does not punctuate.
+  assert.match(
+    label[1],
+    /\$\{item\.note\}$/,
+    'the note ends the label, so the app never punctuates after the reader\u2019s own words',
+  );
+});
