@@ -26,6 +26,13 @@ quote in a bug report.
   off the button you just pressed. Nothing is sent anywhere; the filter lives in the part of the
   address that never leaves your browser.
 
+  Two things a review caught before this shipped. If you move through the filters with the arrow
+  keys, the whole sweep now counts as one decision, so one press of Back returns you to the filter
+  you started from rather than walking you through every filter you passed over on the way. And a
+  link naming a reading order that does not exist is now refused in every case; a handful of
+  made-up names used to get past the check, leave the app on a blank screen, and still be there the
+  next time you opened it.
+
 - **You can now keep notes on a reading order and on any issue in it.** Every row in a reading
   order has an "Add a note" control, and each order has a Note button in its toolbar, next to
   Rename. Notes are yours alone: they are saved on your own device, they show up in your backup

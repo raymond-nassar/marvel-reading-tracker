@@ -686,6 +686,11 @@ let routeReady = false;
 //
 // The compare against the current hash is not an optimisation. pushState given the address already
 // showing would stack a duplicate entry, so Back would appear to do nothing once per navigation.
+// True while a keyboard traversal of the filter group is open, meaning the entry currently on top
+// was pushed by that traversal and later stops should overwrite it rather than stack on it. Kept
+// beside syncHash rather than inside wireReading because applyRoute has to be able to close it.
+let filterRunOpen = false;
+
 function syncHash({ push = false } = {}) {
   if (!routeReady) return;
   const next = formatRoute({ view, listId: activeListId(), filter });
@@ -714,13 +719,24 @@ function syncHash({ push = false } = {}) {
 // is the opposite. An address with no filter can be a bookmark made before this shipped, and
 // answering it with All would discard the setting BL-037 exists to keep across a reload, so boot
 // passes whatever was restored from settings.
+// `route.listId` is a string a reader can type, and `store.state.lists` is a plain object, so a
+// bare lookup answers `__proto__`, `constructor` or `toString` with something from Object.prototype
+// and this guard would pass on a list that does not exist. Measured on the tree before this line
+// changed: opening `#/read/__proto__` persisted `active: "__proto__"` and then threw a TypeError out
+// of listProgress, and because the id survives in storage the same throw happened on the next boot,
+// during module evaluation, which left the hashchange listener unregistered. `Object.hasOwn` asks
+// the question the guard means. The same lookup inside model.js reads a state file rather than an
+// address and is left to BL-068.
 function applyRoute(route, { focus, filterIfAbsent }) {
-  if (route.listId && route.listId !== activeListId() && store.state.lists[route.listId]) {
+  if (route.listId && route.listId !== activeListId() && Object.hasOwn(store.state.lists, route.listId)) {
     store.update((s) => setActive(s, route.listId));
   }
   // Before showView, so the passive sync at the end of showView computes the address this route
   // already describes and returns early rather than writing one and being corrected a moment later.
   setFilter(route.filter ?? filterIfAbsent);
+  // A traversal cannot span a navigation, and Back is a navigation. Without this, pressing Back and
+  // then choosing a filter would replace the entry Back had just landed on instead of adding one.
+  filterRunOpen = false;
   showView(route.view, { focus });
 }
 
@@ -729,8 +745,10 @@ function applyRoute(route, { focus, filterIfAbsent }) {
 // the next Tab continues from the old position and nothing announces where you now are.
 function showView(next, { focus = true, push = false } = {}) {
   // There is nothing to read without an active list, so the reading view hands over to the
-  // landing page rather than showing an empty frame with a heading over it.
-  if (next === 'read' && !store.state.lists[activeListId()]) next = 'home';
+  // landing page rather than showing an empty frame with a heading over it. `Object.hasOwn` for
+  // the same reason as in applyRoute: a bare lookup answers a prototype member truthily, and a
+  // stored `active` naming one would keep the reading view up over a list that is not there.
+  if (next === 'read' && !Object.hasOwn(store.state.lists, activeListId() ?? '')) next = 'home';
 
   view = next;
   for (const name of VIEWS) {
@@ -1288,6 +1306,9 @@ function wireReading() {
   ])));
 
   const radios = [...document.querySelectorAll('input[name="filter"]')];
+  // Set by a keydown just before the change the same press produces, and read by that change to
+  // tell one stop of a traversal from a decision.
+  let arrowing = false;
 
   // A stored value is honoured only when the list offers it. There is no longer a second
   // enumeration for it to disagree with, but the check earns its place for a reason the markup
@@ -1312,14 +1333,36 @@ function wireReading() {
   if (active) active.checked = true;
 
   for (const radio of radios) {
+    // Arrow keys move a radio group one stop at a time and fire change at every stop. Measured in
+    // Edge on this tree: three presses of ArrowRight left three history entries, and one Back
+    // landed two filters short of where the reader began, walking them back through filters they
+    // only passed over on the way to the one they wanted. So the first stop of a traversal pushes
+    // and the rest overwrite it, which leaves one entry whose Back returns to the filter in force
+    // before the traversal started. A change that no arrow key produced is a decision on its own
+    // and always pushes, so two pointer clicks still get an entry each.
+    radio.addEventListener('keydown', (e) => {
+      if (e.key.startsWith('Arrow')) arrowing = true;
+    });
     radio.addEventListener('change', (e) => {
       setFilter(e.target.value);
       // Pushes rather than replaces. Choosing a filter is a deliberate act, like clicking the rail,
       // and pushing is the whole of what "Back works across filter changes" means. The passive
       // paths still replace, so marking twenty issues read does not put twenty entries in the way.
-      syncHash({ push: true });
+      syncHash({ push: !(arrowing && filterRunOpen) });
+      filterRunOpen = arrowing;
+      arrowing = false;
     });
   }
+
+  // An arrow press that changes nothing, on the last radio of the group, fires no change and would
+  // otherwise leave the flag set for whatever came next. A pointer press clears it, and closing the
+  // traversal on the way out of the group means a reader who returns to it later gets a fresh entry
+  // rather than overwriting one from minutes ago.
+  const group = $('#reading-filters');
+  group.addEventListener('pointerdown', () => { arrowing = false; });
+  group.addEventListener('focusout', (e) => {
+    if (!e.relatedTarget || !group.contains(e.relatedTarget)) filterRunOpen = false;
+  });
 
   $('#btn-rename-list').addEventListener('click', async () => {
     const id = activeListId();

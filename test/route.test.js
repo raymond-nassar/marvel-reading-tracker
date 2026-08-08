@@ -195,9 +195,56 @@ test('main.js pushes when a filter is chosen, so Back can undo it', () => {
   const main = read('src/js/main.js');
   has(
     main,
-    /radio\.addEventListener\('change',[^)]*\(e\) => \{\s*setFilter\(e\.target\.value\);[\s\S]{0,600}?syncHash\(\{ push: true \}\);/,
+    /radio\.addEventListener\('change',[^)]*\(e\) => \{\s*setFilter\(e\.target\.value\);[\s\S]{0,600}?syncHash\(\{ push: !\(arrowing && filterRunOpen\) \}\);/,
     'a filter radio handler that sets the filter and then pushes',
   );
+});
+
+// Arrow keys move a radio group one stop at a time and fire change at every stop, so pushing on
+// each one made Back walk a keyboard reader back through filters they only passed over. Measured in
+// Edge on this tree before the fix: three presses of ArrowRight left three entries and one Back
+// landed two filters short. The first stop pushes, the rest overwrite it.
+test('a stop of a keyboard traversal overwrites the entry the traversal pushed', () => {
+  const main = read('src/js/main.js');
+  has(main, /radio\.addEventListener\('keydown', \(e\) => \{\s*if \(e\.key\.startsWith\('Arrow'\)\) arrowing = true;/,
+    'an arrow key setting the traversal flag before the change it produces');
+  const handler = main.slice(main.indexOf("radio.addEventListener('change'"), main.indexOf("const group = $('#reading-filters')"));
+  has(handler, /filterRunOpen = arrowing;/, 'the run staying open only for a change an arrow key produced');
+  has(handler, /arrowing = false;/, 'the arrow flag being cleared by the change it fired');
+});
+
+// A traversal that is left and returned to is two traversals, and moving between radios inside the
+// group is not leaving it, so the check has to look at where focus went.
+test('leaving the filter group closes the traversal, and moving inside it does not', () => {
+  const main = read('src/js/main.js');
+  has(main, /group\.addEventListener\('focusout', \(e\) => \{\s*if \(!e\.relatedTarget \|\| !group\.contains\(e\.relatedTarget\)\) filterRunOpen = false;/,
+    'a focusout that closes the run only when focus left the group');
+  has(main, /group\.addEventListener\('pointerdown', \(\) => \{ arrowing = false; \}\)/,
+    'a pointer press clearing an arrow flag left set by a press that changed nothing');
+});
+
+// Back is a navigation and a traversal cannot span one. Without this, choosing a filter after
+// pressing Back would overwrite the entry Back had just landed on instead of adding one.
+test('applyRoute closes any open traversal', () => {
+  const main = read('src/js/main.js');
+  const body = main.slice(main.indexOf('function applyRoute'), main.indexOf('function showView'));
+  has(body, /filterRunOpen = false;/, 'applyRoute closing the run');
+});
+
+// `store.state.lists` is a plain object, so a bare lookup answers `__proto__`, `constructor` and
+// `toString` with something from Object.prototype. Measured on this tree before the fix: opening
+// `#/read/__proto__` persisted `active: "__proto__"` and threw a TypeError out of listProgress, and
+// the stored id made the same throw happen on the next boot, during module evaluation.
+test('a list id naming a prototype member cannot be adopted from an address', () => {
+  const main = read('src/js/main.js');
+  has(main, /Object\.hasOwn\(store\.state\.lists, route\.listId\)/, 'applyRoute asking whether the list is really there');
+  has(main, /Object\.hasOwn\(store\.state\.lists, activeListId\(\) \?\? ''\)/, 'showView asking the same question');
+  lacks(main, /store\.state\.lists\[route\.listId\]/, 'a bare lookup of a list id from an address');
+  // The bare lookups that remain read an id already in storage, which no address can now put there.
+  // They are reachable only from a hand-edited state file, through coerce, and that is BL-068. The
+  // count is asserted so one added on the address path cannot hide among them.
+  const bare = [...main.matchAll(/store\.state\.lists\[activeListId\(\)\]/g)];
+  assert.equal(bare.length, 5, 'a bare list lookup was added or removed without deciding about BL-068');
 });
 
 // Assigning location.hash fires hashchange, which re-runs applyRoute and moves focus to the view
