@@ -46,6 +46,22 @@ const messages = (findings) => findings.map((f) => f.message).join('\n');
 // pinning a number the document is expected to change.
 const RANKED = derive(REAL).ranked.length;
 
+// The ledger's id list is rebuilt from the ids the document actually names rather than pinned as a
+// literal pair, for the same reason the rank size above is derived. A pinned pair assumes no id
+// will ever land between the two, which held only while ids shipped in allocation order. BL-007
+// shipping broke it: it is an old id that shipped late, so it sorts to the front and the target
+// `below:` followed by the id that used to be first stopped existing. BL-017 is still open and
+// would do it again. Rebuilding also sidesteps the sentence wrapping, since a pinned pair matches
+// nothing when a line break falls between its two ids.
+const LEDGER = /delivered and are marked `Shipped` in the table below:[^.]*\./.exec(REAL);
+
+function mutateLedger(fn) {
+  assert.ok(LEDGER, 'the delivered-ledger sentence is no longer in the document');
+  const ids = [...LEDGER[0].matchAll(/BL-\d+/g)].map((m) => m[0]);
+  const rebuilt = `delivered and are marked \`Shipped\` in the table below: ${fn(ids).join(', ')}.`;
+  return { ids, text: mutate(LEDGER[0], rebuilt) };
+}
+
 test('the real backlog agrees with the table every figure is derived from', () => {
   const { findings } = checkAll(REAL);
   assert.deepEqual(findings, [], `stated figures disagree with the table:\n${messages(findings)}`);
@@ -72,17 +88,19 @@ test('a delivered count carried forward is caught, and the derived value is name
 });
 
 test('an id missing from the delivered list is caught and named', () => {
-  const text = mutate('BL-052, BL-053,', 'BL-052,');
+  const { ids, text } = mutateLedger((all) => all.filter((id) => id !== all[1]));
   const found = checkLedger(derive(text));
   assert.equal(found.length, 1);
-  assert.match(found[0].message, /missing BL-053/);
+  assert.match(found[0].message, new RegExp(`missing ${ids[1]}`));
 });
 
 test('an id in the delivered list that is not marked Shipped is caught', () => {
-  const text = mutate('BL-026, BL-027,', 'BL-017, BL-026, BL-027,');
+  const open = derive(REAL).ranked.find((r) => r.status !== 'Shipped');
+  assert.ok(open, 'every ranked row is Shipped, so this mutation has nothing to add');
+  const { text } = mutateLedger((all) => [open.id, ...all]);
   const found = checkLedger(derive(text));
   assert.equal(found.length, 1);
-  assert.match(found[0].message, /names BL-017, which the table does not mark Shipped/);
+  assert.match(found[0].message, new RegExp(`names ${open.id}, which the table does not mark Shipped`));
 });
 
 // Comparing the two sides as sets is the obvious way to write this check and it is blind
@@ -90,11 +108,11 @@ test('an id in the delivered list that is not marked Shipped is caught', () => {
 // added the checker, on the argument that the edit which writes an id twice is the same
 // one that writes a detail block twice, and that had already happened.
 test('an id written twice in the delivered list is caught, though it is in neither difference', () => {
-  const text = mutate('below: BL-014,', 'below: BL-014, BL-014,');
+  const { ids, text } = mutateLedger((all) => [all[0], ...all]);
   const d = derive(text);
   const found = checkLedger(d);
   assert.equal(found.length, 1);
-  assert.match(found[0].message, /names BL-014 more than once/);
+  assert.match(found[0].message, new RegExp(`names ${ids[0]} more than once`));
   assert.match(found[0].message, new RegExp(`lists ${d.shipped.length + 1} id\\(s\\) for ${d.shipped.length} Shipped row\\(s\\)`));
 });
 

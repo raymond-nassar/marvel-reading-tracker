@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T07:05:11.994Z",
+  "generatedAt": "2026-08-08T03:28:56.385Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -146,9 +146,9 @@
         "mutants",
         "2005 event"
       ],
-      "group": null,
-      "groupName": null,
-      "variant": null,
+      "group": "house-of-m",
+      "groupName": "House of M",
+      "variant": "Every branded issue, including tie-ins",
       "beginner": false,
       "coverIssueId": 2092,
       "cover": {
@@ -158,6 +158,48 @@
       "source": null,
       "sourceLicense": "Assembled from Marvel series metadata (publication order)",
       "updatedAt": "2026-08-05T06:17:07.276Z"
+    },
+    {
+      "id": "house-of-m-essential",
+      "file": "house_of_m_essential.json",
+      "name": "House of M: main series",
+      "description": "Wanda Maximoff rewrites the world in Marvel's 2005 event: the eight-issue main series on its own, without the branded tie-in mini-series or the Decimation epilogue. Derived from the complete order by keeping only the main series, which is where that order already begins.",
+      "type": "event",
+      "depth": "essential",
+      "count": 8,
+      "characters": [
+        "Scarlet Witch",
+        "Quicksilver",
+        "Magneto",
+        "Wolverine",
+        "Spider-Man",
+        "X-Men",
+        "Avengers",
+        "Doctor Strange",
+        "Emma Frost",
+        "Layla Miller"
+      ],
+      "keywords": [
+        "House of M",
+        "No More Mutants",
+        "Brian Michael Bendis",
+        "Olivier Coipel",
+        "mutants",
+        "2005 event",
+        "main series only"
+      ],
+      "group": "house-of-m",
+      "groupName": "House of M",
+      "variant": "The main series only",
+      "beginner": false,
+      "coverIssueId": 2092,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/589b3f23c9324",
+        "ext": "jpg"
+      },
+      "source": null,
+      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "updatedAt": "2026-08-08T03:24:47.183Z"
     },
     {
       "id": "civil-war",
@@ -189,9 +231,9 @@
         "unmasking",
         "2006 event"
       ],
-      "group": null,
-      "groupName": null,
-      "variant": null,
+      "group": "civil-war",
+      "groupName": "Civil War",
+      "variant": "Every branded issue, including tie-ins",
       "beginner": true,
       "coverIssueId": 4216,
       "cover": {
@@ -201,6 +243,48 @@
       "source": null,
       "sourceLicense": "Assembled from Marvel series metadata (publication order)",
       "updatedAt": "2026-08-05T06:17:07.277Z"
+    },
+    {
+      "id": "civil-war-essential",
+      "file": "civil_war_essential.json",
+      "name": "Civil War: main series",
+      "description": "Marvel's 2006 superhuman registration war: the seven-issue main series on its own, without the mini-series and one-shots branded with the Civil War name. Derived from the complete order by keeping only the main series, which is where that order already begins.",
+      "type": "event",
+      "depth": "essential",
+      "count": 7,
+      "characters": [
+        "Iron Man",
+        "Captain America",
+        "Spider-Man",
+        "Mister Fantastic",
+        "Invisible Woman",
+        "Punisher",
+        "She-Hulk",
+        "Young Avengers",
+        "Runaways",
+        "X-Men"
+      ],
+      "keywords": [
+        "Civil War",
+        "Superhuman Registration Act",
+        "Mark Millar",
+        "Steve McNiven",
+        "Stamford",
+        "2006 event",
+        "main series only"
+      ],
+      "group": "civil-war",
+      "groupName": "Civil War",
+      "variant": "The main series only",
+      "beginner": true,
+      "coverIssueId": 4216,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/f0/511307b2f1200",
+        "ext": "jpg"
+      },
+      "source": null,
+      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "updatedAt": "2026-08-08T03:28:56.361Z"
     },
     {
       "id": "annihilation",
@@ -276,9 +360,9 @@
         "Savage Land",
         "2008 event"
       ],
-      "group": null,
-      "groupName": null,
-      "variant": null,
+      "group": "secret-invasion",
+      "groupName": "Secret Invasion",
+      "variant": "Every branded issue, including tie-ins",
       "beginner": false,
       "coverIssueId": 21034,
       "cover": {
@@ -288,6 +372,50 @@
       "source": null,
       "sourceLicense": "Assembled from Marvel series metadata (publication order)",
       "updatedAt": "2026-08-05T06:17:07.279Z"
+    },
+    {
+      "id": "secret-invasion-essential",
+      "file": "secret_invasion_essential.json",
+      "name": "Secret Invasion: main series",
+      "description": "The Skrull infiltration of 2008: the eight-issue main series on its own, without the mini-series and one-shots branded with the Secret Invasion name. Derived from the complete order by keeping only the main series, which is where that order already begins.",
+      "type": "event",
+      "depth": "essential",
+      "count": 8,
+      "characters": [
+        "Skrulls",
+        "Nick Fury",
+        "Iron Man",
+        "Spider-Woman",
+        "Avengers",
+        "Inhumans",
+        "Thor",
+        "Spider-Man",
+        "Runaways",
+        "Young Avengers",
+        "X-Men",
+        "Norman Osborn"
+      ],
+      "keywords": [
+        "Secret Invasion",
+        "Skrull",
+        "Embrace Change",
+        "Brian Michael Bendis",
+        "Leinil Francis Yu",
+        "2008 event",
+        "main series only"
+      ],
+      "group": "secret-invasion",
+      "groupName": "Secret Invasion",
+      "variant": "The main series only",
+      "beginner": false,
+      "coverIssueId": 21034,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/5151efbb93d76",
+        "ext": "jpg"
+      },
+      "source": null,
+      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "updatedAt": "2026-08-08T03:24:47.197Z"
     },
     {
       "id": "king-in-black",

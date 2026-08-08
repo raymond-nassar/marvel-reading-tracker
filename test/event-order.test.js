@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
-import { EVENTS, normalizeSeriesRows, nameMatches, parseArgs } from '../scripts/build-event-order.mjs';
+import { EVENTS, normalizeSeriesRows, nameMatches, parseArgs, essentialOrder, essentialFileName } from '../scripts/build-event-order.mjs';
 
 // The completeness audit reads a series index that may be column-oriented, and a reader that
 // cannot see names is indistinguishable from a catalogue with nothing in it: both match zero
@@ -114,7 +114,16 @@ test('an unknown event id is refused', () => {
 // double-spaces after sentences; a sweep of src/data will find doubled spaces there and that is
 // upstream copy left intact, not a gap in this check.
 const ORDERS = new URL('../src/data/orders/', import.meta.url);
-const PINNED = ['house_of_m', 'civil_war', 'annihilation', 'secret_invasion', 'king_in_black'];
+const PINNED = [
+  'house_of_m',
+  'civil_war',
+  'annihilation',
+  'secret_invasion',
+  'king_in_black',
+  'house_of_m_essential',
+  'civil_war_essential',
+  'secret_invasion_essential',
+];
 
 test('committed checklists carry no doubled whitespace', async () => {
   let lines = 0;
@@ -152,7 +161,7 @@ test('a committed checklist heading carries no en or em dash', async () => {
   }
   // Without this the check passes on an empty directory, which is how a scan that reads
   // nothing reports a clean result forever.
-  assert.ok(headings >= 6, `expected a heading in every committed order, found ${headings}`);
+  assert.ok(headings >= 9, `expected a heading in every committed order, found ${headings}`);
 });
 
 test('pinned titles are trimmed and free of doubled whitespace', async () => {
@@ -171,5 +180,101 @@ test('pinned titles are trimmed and free of doubled whitespace', async () => {
       }
     }
   }
-  assert.equal(checked, 300, `expected 150 items with a title and a series name, checked ${checked} strings`);
+  assert.equal(checked, 346, `expected 173 items with a title and a series name, checked ${checked} strings`);
+});
+
+// ------------------------------------------------------------------ the essential variant
+//
+// `essentialOrder` decides, per event, whether a main-series-only checklist can be offered. The
+// decision is derived rather than curated, so these tests are about the derivation: what matters
+// is that the refusal fires on the events it should and cannot be talked out of by a plausible
+// looking order.
+
+const issue = (seriesId, n) => ({ seriesId, number: n, id: seriesId * 1000 + n });
+
+test('the short path is the main series alone when the main series opens the order', () => {
+  const order = [issue(1, 1), issue(2, 1), issue(1, 2), issue(3, 1), issue(1, 3)];
+  const kept = essentialOrder({ main: 1 }, order);
+  assert.deepEqual(kept.map((i) => i.id), [1001, 1002, 1003]);
+});
+
+test('an order that opens on a tie-in gets no short path, because it would start in the middle', () => {
+  const order = [issue(2, 1), issue(1, 1), issue(1, 2)];
+  assert.equal(essentialOrder({ main: 1 }, order), null);
+});
+
+// One issue is a one-shot, not a path through a story, and pairing it with a complete order would
+// offer the reader a choice between a reading order and a single comic.
+test('a main series of one issue is not offered as a variant', () => {
+  assert.equal(essentialOrder({ main: 1 }, [issue(1, 1), issue(2, 1)]), null);
+});
+
+test('an empty order is refused rather than yielding an empty variant', () => {
+  assert.equal(essentialOrder({ main: 1 }, []), null);
+});
+
+test('the short path keeps the order it was given, so publication order survives', () => {
+  const order = [issue(1, 3), issue(2, 9), issue(1, 1), issue(1, 2)];
+  assert.deepEqual(essentialOrder({ main: 1 }, order).map((i) => i.number), [3, 1, 2]);
+});
+
+test('the variant checklist is named beside the order it varies from', () => {
+  assert.equal(essentialFileName('civil-war.md'), 'civil-war-essential.md');
+  // Only the extension is a suffix worth matching, so an event id containing ".md" mid-name
+  // cannot be truncated.
+  assert.equal(essentialFileName('a.md.b.md'), 'a.md.b-essential.md');
+});
+
+// The load-bearing one. Which events have a short path is a claim about Marvel's publication
+// dates, and the committed orders are the record of those dates, so the claim is checked against
+// them rather than against the list of files someone remembered to generate. Annihilation opens
+// on a prologue and four mini-series and King in Black on a Symbiote Spider-Man issue; both are
+// therefore expected to have no variant, and if that ever stops being true this fails rather than
+// leaving a stale file in place.
+test('every event has a short path exactly when its committed order opens on the main series', async () => {
+  const catalog = JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8'));
+  const files = new Set(await readdir(ORDERS));
+  let withVariant = 0;
+  for (const event of EVENTS) {
+    const entry = catalog.lists.find((l) => l.id === event.id);
+    assert.ok(entry, `${event.id} is not in the catalog`);
+    const { items } = JSON.parse(await readFile(new URL(`../src/data/${entry.file}`, import.meta.url), 'utf8'));
+    const opensOnMain = items[0]?.seriesId === event.main;
+    const name = essentialFileName(event.file);
+    assert.equal(
+      files.has(name),
+      opensOnMain,
+      opensOnMain
+        ? `${event.id} opens on its main series but ${name} was not generated`
+        : `${name} exists, but ${event.id} opens on series ${items[0]?.seriesId}, not its main series ${event.main}`,
+    );
+    if (opensOnMain) withVariant += 1;
+  }
+  assert.equal(withVariant, 3, `expected three events to have a short path, found ${withVariant}`);
+});
+
+// A short path that is not a prefix of the long one is not the same story told shorter, it is a
+// different list wearing the label. Pinning the subsequence catches a variant vendored from a
+// stale checklist, which is the failure mode of generating two files from one source.
+test('each pinned short path is the main-series subsequence of its complete order', async () => {
+  const catalog = JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8'));
+  const load = async (id) => {
+    const entry = catalog.lists.find((l) => l.id === id);
+    assert.ok(entry, `${id} is not in the catalog`);
+    return JSON.parse(await readFile(new URL(`../src/data/${entry.file}`, import.meta.url), 'utf8')).items;
+  };
+  let pairs = 0;
+  for (const event of EVENTS) {
+    if (!catalog.lists.some((l) => l.id === `${event.id}-essential`)) continue;
+    const full = await load(event.id);
+    const short = await load(`${event.id}-essential`);
+    assert.deepEqual(
+      short.map((i) => i.issueId),
+      full.filter((i) => i.seriesId === event.main).map((i) => i.issueId),
+      `${event.id}-essential is not the main series of ${event.id}, in order`,
+    );
+    assert.ok(short.length > 1 && short.length < full.length, `${event.id}-essential saves the reader nothing`);
+    pairs += 1;
+  }
+  assert.equal(pairs, 3, `expected three variant pairs, checked ${pairs}`);
 });
