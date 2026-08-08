@@ -676,12 +676,43 @@ let routeReady = false;
 // keeps Back usable. A reader who marks twenty issues read must not have to press Back twenty times
 // to leave the view, so every passive sync replaces.
 //
-// The compare against the current hash is not an optimisation. Writing a hash fires hashchange,
-// whose handler calls back into showView, which syncs again; comparing first is what stops that
-// from running away.
+// Both branches write history rather than assigning location.hash, and that is the difference that
+// lets a reading filter be pushed. Assigning the hash fires hashchange synchronously, which re-runs
+// applyRoute and moves focus to the view heading. Every caller that pushes a view already reached
+// showView with focus of its own, so that second pass was redundant for them; for a filter radio it
+// would have thrown the keyboard out of the control the reader just pressed, which is the defect
+// BL-054 and BL-058 fixed for the rows. pushState fires no hashchange, and Back over an entry it
+// made still does, both measured in Edge before this was relied on.
+//
+// The compare against the current hash is not an optimisation. pushState given the address already
+// showing would stack a duplicate entry, so Back would appear to do nothing once per navigation.
+// True while a keyboard traversal of the filter group is open, meaning the reader is part way
+// through choosing and the address has deliberately not been written yet. Kept beside syncHash
+// rather than inside wireReading because syncHash and applyRoute both have to see it.
+//
+// The first design pushed on the traversal's first stop and replaced on every stop after it. Review
+// found that a traversal returning to the filter it started from then replaced the top entry with a
+// copy of the one below it, and a same-document Back between two identical fragments fires no
+// hashchange at all, so the press did nothing. Measured on that tree: ArrowRight then ArrowLeft left
+// history ["#/read/list-a", "#/read/list-a"] and the following Back reported 0 hashchange events
+// with the rows unmoved. That is the very failure the paragraph above says the guard exists to
+// prevent, reached from the other side. A replace cannot remove an entry the run has already
+// pushed, and history.back() is async and races the next arrow press, so the write is held until
+// the traversal ends instead.
+let filterRunOpen = false;
+// What the address claims while a traversal is open, which is the filter in force when it began.
+// Not the same as `filter`, which follows the rows immediately.
+let filterRunBase = null;
+
 function syncHash({ push = false } = {}) {
   if (!routeReady) return;
-  const next = formatRoute({ view, listId: activeListId() });
+  // While a traversal is open the address lags the rows on purpose: the entry on top is the one the
+  // reader arrived on and Back has to return to it. A passive sync fired by something else in that
+  // window would otherwise replace it with the half-chosen address and destroy it. That is reachable
+  // rather than theoretical: background hydration writes through store.update on its own timer, and
+  // every store.update reaches renderAll, which syncs.
+  const shown = filterRunOpen && !push ? filterRunBase : filter;
+  const next = formatRoute({ view, listId: activeListId(), filter: shown });
   if (!next || next === location.hash) return;
 
   // A hash that is not ours is someone else's anchor, and index.html ships one: the skip link
@@ -690,18 +721,60 @@ function syncHash({ push = false } = {}) {
   // deliberate navigation does overwrite it, because the anchor is no longer where they are.
   if (!push && location.hash && !parseRoute(location.hash)) return;
 
-  if (push) location.hash = next;
+  if (push) history.pushState(null, '', next);
   else history.replaceState(null, '', next);
+}
+
+// Committing writes the traversal's one entry; discarding drops it because something else has
+// already decided the address. A commit that lands back on the address the traversal started from
+// meets the compare in syncHash and correctly writes nothing, which is why the whole sweep can
+// leave zero entries as well as one.
+function endFilterRun({ commit }) {
+  if (!filterRunOpen) return;
+  filterRunOpen = false;
+  filterRunBase = null;
+  if (commit) syncHash({ push: true });
 }
 
 // Adopting the list first means the redirect inside showView sees the list the URL asked for
 // rather than whichever one happened to be active. A list id that no longer exists is left to
 // setActive, which returns the state untouched, so the trailing sync inside showView corrects the
 // address instead of leaving it claiming a list that is not on screen.
-function applyRoute(route, { focus }) {
-  if (route.listId && route.listId !== activeListId() && store.state.lists[route.listId]) {
+//
+// `filterIfAbsent` is what an address saying nothing about the filter means, and it is not the same
+// answer in the two places this is called from. Back and Forward hand over an address this app
+// wrote, and this app omits the filter only when it is the default, so absent there really does
+// mean All: without that, pressing Back over the moment a filter was chosen would leave the filter
+// in force and rewrite the address to match, which is the one thing this task exists to fix. Boot
+// is the opposite. An address with no filter can be a bookmark made before this shipped, and
+// answering it with All would discard the setting BL-037 exists to keep across a reload, so boot
+// passes whatever was restored from settings.
+// `route.listId` is a string a reader can type, and `store.state.lists` is a plain object, so a
+// bare lookup answers `__proto__`, `constructor` or `toString` with something from Object.prototype
+// and this guard would pass on a list that does not exist. Measured on the tree before this line
+// changed: opening `#/read/__proto__` persisted `active: "__proto__"` and then threw a TypeError out
+// of listProgress, and because the id survives in storage the same throw happened on the next boot,
+// during module evaluation, which left the hashchange listener unregistered. `Object.hasOwn` asks
+// the question the guard means. The same lookup inside model.js reads a state file rather than an
+// address and is left to BL-068.
+function applyRoute(route, { focus, filterIfAbsent }) {
+  if (route.listId && route.listId !== activeListId() && Object.hasOwn(store.state.lists, route.listId)) {
     store.update((s) => setActive(s, route.listId));
   }
+  // Before showView, so the passive sync at the end of showView computes the address this route
+  // already describes and returns early rather than writing one and being corrected a moment later.
+  setFilter(route.filter ?? filterIfAbsent);
+  // A traversal cannot span a navigation, and Back is a navigation. Discarded rather than committed,
+  // because the address this route describes is the authoritative one and writing the traversal's
+  // would fight it.
+  //
+  // Above showView, and that is the whole of it. Below the trailing sync, the run would still be open
+  // when that sync ran, so it would format the address from filterRunBase and leave the address
+  // claiming a filter the rows are not showing. Measured on a modelled stack: pending in force,
+  // ArrowRight once, then Alt+Left leaves the address saying pending over rows showing all, and puts
+  // the same address in two adjacent entries, which is the dead Back this whole design exists to
+  // close.
+  endFilterRun({ commit: false });
   showView(route.view, { focus });
 }
 
@@ -710,8 +783,10 @@ function applyRoute(route, { focus }) {
 // the next Tab continues from the old position and nothing announces where you now are.
 function showView(next, { focus = true, push = false } = {}) {
   // There is nothing to read without an active list, so the reading view hands over to the
-  // landing page rather than showing an empty frame with a heading over it.
-  if (next === 'read' && !store.state.lists[activeListId()]) next = 'home';
+  // landing page rather than showing an empty frame with a heading over it. `Object.hasOwn` for
+  // the same reason as in applyRoute: a bare lookup answers a prototype member truthily, and a
+  // stored `active` naming one would keep the reading view up over a list that is not there.
+  if (next === 'read' && !Object.hasOwn(store.state.lists, activeListId() ?? '')) next = 'home';
 
   view = next;
   for (const name of VIEWS) {
@@ -1224,6 +1299,28 @@ async function openPreview(list) {
 
 // ------------------------------------------------------------------ reading view
 
+// The one way the filter in force changes, whether the reader chose a radio, arrived on a link, or
+// pressed Back. Three copies of this were the alternative, and the copies would have differed:
+// setting it from a route has to move the radio, and setting it from the radio has to store it.
+//
+// The filter is stored wherever it comes from, including from an address. That matches what
+// applyRoute already does with the active list, which setActive writes into persisted state, and it
+// is what makes Back consistent: if pressing Back moved the rows but not the preference, closing
+// the tab and reopening it would show something other than what was last on screen.
+//
+// Returns early when nothing changed, so navigating between views does not rewrite settings on
+// every hop or rebuild rows that are already correct.
+function setFilter(next) {
+  const wanted = READING_FILTERS.some((f) => f.value === next) ? next : DEFAULT_FILTER;
+  if (wanted === filter) return;
+  filter = wanted;
+  settings.filter = wanted;
+  saveSettings();
+  const radio = [...document.querySelectorAll('input[name="filter"]')].find((r) => r.value === wanted);
+  if (radio) radio.checked = true;
+  renderRows();
+}
+
 function wireReading() {
   // Rendered from READING_FILTERS rather than authored in index.html, so the labels a reader can
   // choose from and the predicates that decide a row are one list and cannot disagree. Rendered
@@ -1247,6 +1344,9 @@ function wireReading() {
   ])));
 
   const radios = [...document.querySelectorAll('input[name="filter"]')];
+  // Set by a keydown just before the change the same press produces, and read by that change to
+  // tell one stop of a traversal from a decision.
+  let arrowing = false;
 
   // A stored value is honoured only when the list offers it. There is no longer a second
   // enumeration for it to disagree with, but the check earns its place for a reason the markup
@@ -1271,13 +1371,66 @@ function wireReading() {
   if (active) active.checked = true;
 
   for (const radio of radios) {
+    // Arrow keys move a radio group one stop at a time and fire change at every stop. Measured in
+    // Edge on this tree: three presses of ArrowRight left three history entries, and one Back
+    // landed two filters short of where the reader began, walking them back through filters they
+    // only passed over on the way to the one they wanted. So a traversal writes nothing until it
+    // ends and then writes one entry, which leaves the address the reader arrived on underneath it.
+    // A change that no arrow key produced is a decision on its own and writes immediately, so two
+    // pointer clicks still get an entry each.
+    //
+    // Modifiers are excluded because the radio group does not consume them, so no change follows and
+    // the flag would survive into whatever came next. Measured in Edge on this tree: Ctrl+ArrowRight
+    // on a checked radio left the selection where it was and fired no change.
+    radio.addEventListener('keydown', (e) => {
+      if (e.key.startsWith('Arrow') && !e.ctrlKey && !e.altKey && !e.metaKey) arrowing = true;
+    });
     radio.addEventListener('change', (e) => {
-      filter = e.target.value;
-      settings.filter = filter;
-      saveSettings();
-      renderRows();
+      if (arrowing) {
+        // Captured before setFilter moves it, because this is the address the traversal has to be
+        // able to return to and what a passive sync must keep claiming while it runs.
+        if (!filterRunOpen) {
+          filterRunBase = filter;
+          filterRunOpen = true;
+        }
+        setFilter(e.target.value);
+      } else {
+        // Commits before adopting the new filter, so the traversal's entry records the filter the
+        // traversal actually reached rather than the one replacing it. A pointer press has already
+        // committed through pointerdown and finds nothing to do here; a click with no pointerdown,
+        // which is what assistive technology activating a radio produces, reaches it here instead.
+        // Both routes therefore leave the same two entries.
+        endFilterRun({ commit: true });
+        setFilter(e.target.value);
+        // Pushes rather than replaces. Choosing a filter is a deliberate act, like clicking the
+        // rail, and pushing is the whole of what "Back works across filter changes" means. The
+        // passive paths still replace, so marking twenty issues read does not put twenty entries in
+        // the way.
+        syncHash({ push: true });
+      }
+      arrowing = false;
     });
   }
+
+  // The traversal ends when the reader leaves the group or reaches for the pointer, and that is when
+  // its one entry is written. focusout bubbles, so moving between two radios inside the group would
+  // otherwise end it at the first stop; relatedTarget outside the group is what distinguishes
+  // leaving from traversing, and a missing one is a window or address bar blur, which is leaving.
+  //
+  // pointerdown is not redundant with the change handler above. Pressing the radio that is already
+  // checked fires no change and does not move focus out of the group, so neither of the other two
+  // would ever run and the traversal would stay open behind a press the reader has plainly finished
+  // making.
+  const group = $('#reading-filters');
+  group.addEventListener('pointerdown', () => {
+    arrowing = false;
+    endFilterRun({ commit: true });
+  });
+  group.addEventListener('focusout', (e) => {
+    if (e.relatedTarget && group.contains(e.relatedTarget)) return;
+    arrowing = false;
+    endFilterRun({ commit: true });
+  });
 
   $('#btn-rename-list').addEventListener('click', async () => {
     const id = activeListId();
@@ -2938,7 +3091,7 @@ routeReady = true;
 // a reload land where they say they will. focus:false either way, so arriving at the page never
 // takes focus off the document the reader has not started interacting with yet.
 const bootRoute = parseRoute(location.hash);
-if (bootRoute) applyRoute(bootRoute, { focus: false });
+if (bootRoute) applyRoute(bootRoute, { focus: false, filterIfAbsent: filter });
 else showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: false });
 
 // Back and Forward arrive here, as does anyone editing the address by hand. A hash that is not one
@@ -2949,7 +3102,7 @@ else showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: fals
 // screen reader that is told nothing after it has no way to know the page changed under it.
 window.addEventListener('hashchange', () => {
   const route = parseRoute(location.hash);
-  if (route) applyRoute(route, { focus: true });
+  if (route) applyRoute(route, { focus: true, filterIfAbsent: DEFAULT_FILTER });
 });
 checkHealth();
 refreshCacheUsage();

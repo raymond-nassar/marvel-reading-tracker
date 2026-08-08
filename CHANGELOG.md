@@ -16,6 +16,29 @@ quote in a bug report.
 
 ### Added
 
+- **The filter you have chosen is now part of the link, so you can share or bookmark a filtered
+  view.** Pick Unread on a reading order and the address in the bar becomes something like
+  `#/read/list-abc?filter=unread`. Send that to someone, or bookmark it, and it opens showing the
+  same thing. Your browser's Back button now steps back through filter changes too, so switching to
+  Read and changing your mind is one press away, and the rows move back with it. Two things are
+  deliberately left alone: an ordinary unfiltered view has exactly the address it has always had, so
+  every bookmark you already made still works, and choosing a filter no longer moves your keyboard
+  off the button you just pressed. Nothing is sent anywhere; the filter lives in the part of the
+  address that never leaves your browser.
+
+  Two things a review caught before this shipped. If you move through the filters with the arrow
+  keys, the whole sweep now counts as one decision, so one press of Back returns you to the filter
+  you started from rather than walking you through every filter you passed over on the way. And a
+  link naming a reading order that does not exist is now refused in every case; a handful of
+  made-up names used to get past the check, leave the app on a blank screen, and still be there the
+  next time you opened it.
+
+  A second review round caught one more, in the arrow-key fix itself. If you arrowed away from a
+  filter and then arrowed straight back to it, Back afterwards did nothing at all: the press
+  registered, but the page did not move. The sweep is now recorded only once you have finished it,
+  which means arrowing back to where you started leaves no trace to press Back through, and the
+  address you arrived on is still the one waiting underneath.
+
 - **You can now keep notes on a reading order and on any issue in it.** Every row in a reading
   order has an "Add a note" control, and each order has a Note button in its toolbar, next to
   Rename. Notes are yours alone: they are saved on your own device, they show up in your backup
