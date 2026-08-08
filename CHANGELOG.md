@@ -137,7 +137,11 @@ quote in a bug report.
   state is exactly the red it always was.
 
   The check that keeps the app's colours honest now also watches this switch and the red buttons,
-  which it had never looked at before, so neither can quietly fade again in a future change.
+  which it had never looked at before, so neither can quietly fade again in a future change. While
+  adding those checks it found one more: the white tick inside a checked read checkbox is faint
+  against the green in the dark theme. Nothing changed there yet, because the green fill behind it
+  already makes a checked box unmistakable and the tick is only a reinforcement, but the number is
+  now recorded and printed on every build rather than going unnoticed.
 
 - **The outline around every button, checkbox and text box was too faint to see reliably.** Buttons
   like Rename, Note, Duplicate and Delete list, the row actions on each issue, the reading filters,

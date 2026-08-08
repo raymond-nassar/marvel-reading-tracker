@@ -94,6 +94,14 @@ export const PAIRS = [
   ['--red', '--bg', LARGE, 'the cover-art switch in its on state, and the catalog Clear button, both on the page'],
   ['--red', '--card', LARGE, 'the fill of a primary button on a card'],
   ['--red', '--card-2', LARGE, 'the fill of a primary button on a raised card'],
+  // Found by the same review, one token over, and it is the reason the guard in test/theme.test.js
+  // now pins `--on-accent` too. The tick inside a checked checkbox is `--on-accent` on `--green`
+  // (`src/styles.css:580` and `:582`), which is 2.30:1 in the dark theme. It is listed here and
+  // recorded below rather than fixed, because the colour decision belongs to BL-069 and this item
+  // is about measuring what nothing measured. The railed status dot is the other thing painted on
+  // `--green` and it carries no foreground at all, since `.railed .pill` sets `color: transparent`
+  // at `src/styles.css:342-343`, so this is the only pair `--green` backs.
+  ['--on-accent', '--green', LARGE, 'the tick inside a checked read checkbox'],
 ];
 
 export function parseHex(hex) {
@@ -186,7 +194,7 @@ export function checkAll(css) {
   ];
 }
 
-// Four non-text pairs sit below 3:1 and are recorded rather than fixed. BL-065 raised the other four.
+// Five non-text pairs sit below 3:1 and are recorded rather than fixed. BL-065 raised the other four.
 //
 // All four are `--track` against something behind it, and the reason they stay is arithmetic rather
 // than reluctance. `--track` is the trough of a progress bar and the `--red` fill sits directly on
@@ -221,6 +229,18 @@ export const KNOWN = [
   'light:--track:--card',
   'dark:--track:--rail',
   'light:--track:--rail',
+  // The fifth is a different case from the four above and is recorded for a different reason. The
+  // white tick inside a checked read checkbox is 2.30:1 on the dark `--green` fill, and 6.48:1 on
+  // the light one, so only the dark theme is below the floor. Unlike the trough, nothing about the
+  // arithmetic forces it: a darker green would clear it. It is recorded rather than fixed because
+  // the tick is not what tells a reader the box is checked. The fill does, and the fill is
+  // emphatic, at 7.58:1 against a card and 8.22:1 against the page in the dark theme. The state is
+  // also carried in words, since the button's own label at `src/js/main.js:1854` reads "Mark X as
+  // unread" exactly when it is checked, and `aria-pressed` at `:1853` carries it too. So the tick
+  // is reinforcement drawn on an already unmistakable fill, which is the same judgement BL-049
+  // reached about the badge borders and the same one BL-067 reached about the switch graphic.
+  // Choosing the green is BL-069's, and until it does this line is what keeps the number visible.
+  'dark:--on-accent:--green',
 ];
 
 export function unresolved(css) {
@@ -260,7 +280,7 @@ function main() {
     return;
   }
   const measured = PAIRS.length * 2;
-  console.log(`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor (BL-065), 0 new.`);
+  console.log(`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor, 0 new.`);
 }
 
 if (process.argv[1] && process.argv[1].endsWith('check-palette.mjs')) main();

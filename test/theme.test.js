@@ -197,7 +197,7 @@ test('a control boundary is measured against every surface it is drawn on, not j
   assert.deepEqual(surfaces('--track'), ['--card', '--rail']);
   assert.deepEqual(surfaces('--red'), ['--bg', '--card', '--card-2', '--track']);
   assert.deepEqual(surfaces('--track-2'), ['--bg']);
-  assert.deepEqual(surfaces('--on-accent'), ['--red', '--track-2']);
+  assert.deepEqual(surfaces('--on-accent'), ['--green', '--red', '--track-2']);
 });
 
 // Every class this app puts on something a reader operates, found by reading the markup and the

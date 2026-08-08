@@ -1,4 +1,4 @@
-﻿# Marvel Reading Tracker Expansion Backlog
+# Marvel Reading Tracker Expansion Backlog
 
 This backlog describes the next product improvements in plain English. It is intended
 for review before implementation. The goal is to make the tracker useful for many
@@ -227,7 +227,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | src/js/lib/readingFilters.js:25-48 |
 | BL-067 | Gate the switch and the primary button, which no pair measures | Debt | EP-08 | Leaves alone | 2 | 2 | 2 | 3 | 2.0 | none | Measured | Shipped | src/styles.css:393 |
-| BL-069 | Gate the two remaining red surfaces, one of which the gate cannot yet express | Debt | EP-08 | Leaves alone | 2 | 1 | 2 | 3 | 1.67 | none | Measured | Ready | src/styles.css:197 |
+| BL-069 | Close the three accent boundaries the BL-067 review found and could not gate | Debt | EP-08 | Leaves alone | 2 | 1 | 2 | 3 | 1.67 | none | Measured | Ready | src/styles.css:290 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Shipped | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
 | BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Shipped | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
 | BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Ready | src/js/main.js:3039-3053 |
@@ -737,7 +737,7 @@ badge reasoning in the BL-029 block had already warned that a second theme "woul
 and the measurement would have to be redone per theme". `scripts/check-palette.mjs` shipped
 measuring 50 pairs across the two palettes, each naming the surface it is actually rendered on,
 because a pair nobody renders is a number that can drift unnoticed and a floor met by a combination
-the app never shows is not a floor. The list has grown since, to 60 under BL-065 and 70 under
+the app never shows is not a floor. The list has grown since, to 60 under BL-065 and 72 under
 BL-067, and the gate prints the figure from the list rather than from prose so it cannot go stale
 where it matters.
 It is `npm run palette` rather than `contrast`, which sits one letter from
@@ -912,10 +912,12 @@ state was not merely a faint track, it was a faint track carrying an invisible k
 darkened the track against the page would have left it open. Darkening the track is what closes it,
 so the two moved together, and both are now gated rather than one.
 
-**The primary button never renders on the page.** The second task above says to measure it against
-the page. It renders on `--card` and on `--card-2`, never on `--bg`, and both already passed at
-3.59 and 3.36 in the dark theme and 4.86 and 4.57 in the light. So the honest answer to that task is
-not the pair it named but the two surfaces the button actually uses, and those are what got gated.
+**The primary button renders on two cards, and the page as well.** The second task above says to
+measure it against the page. Most of the buttons render on `--card` and on `--card-2`, at 3.59 and
+3.36 in the dark theme and 4.86 and 4.57 in the light, and all four already passed. The first
+attempt at this item concluded from that survey that the button never renders on `--bg` at all, and
+wrote the conclusion into this block in bold. Review found it false, and the paragraph below records
+how. All three surfaces are gated.
 
 **The plan asked for a pair with a garbled description, and the first attempt threw out the pair
 along with the description.** It listed five pairs, one being `--red` on `--bg`, described as the
@@ -938,11 +940,16 @@ change rather than the app. The guard in `test/theme.test.js` that exists to for
 silent for a mechanical reason: it pins the surface list of three foregrounds by name, and this
 change was about two others. It now pins `--red`, `--track-2` and `--on-accent` as well.
 
-**Two further `--red` surfaces, measured and deferred.** The skip link renders on `--rail` at 4.00
-dark and 4.41 light, and two buttons render on a blocked row whose background is a `color-mix` that
-has no hex value this gate can express. Both clear the floor today. Gating the first is a one-line
-addition and the second needs the gate to resolve `color-mix`, so they are filed together as BL-069
-rather than widened into this change.
+**Three further accent surfaces, and the guard that found them.** Adding `--on-accent` to the
+multi-surface guard immediately failed its own purpose: the assertion said two surfaces were the
+complete set, and there are three. The tick inside a checked read checkbox is `--on-accent` on
+`--green` at 2.30:1 in the dark theme, which is below the floor. That pair is now measured and its
+dark half recorded in `KNOWN` with the reason, so the number is printed on every CI run rather than
+absent; choosing the green is BL-069's. Two `--red` surfaces are deferred there too: red on the rail,
+painted by three separate controls at 4.00 dark and 4.41 light, and two buttons on a blocked row
+whose background is a `color-mix` with no hex value this gate can express. Both clear the floor.
+Writing an assertion that pins a completeness claim is what turned a silent gap into a measured one
+within a single commit, which is the argument for the assertion rather than against it.
 
 `--track-2` went from `#3a4150` to `#616e8b` in the dark theme and from `#b8c0cd` to `#7b8aa2` in
 both light blocks, holding each theme's hue and saturation and moving lightness only. A single shared
@@ -952,8 +959,8 @@ requires the two light blocks to agree so per-theme values stay enforced. Both n
 3:1 against `--card`, which the switch does not sit on today, so a later move onto a card cannot
 silently reintroduce this.
 
-Verified: the gate now measures 70 pairs across the two palettes rather than 60, still with four
-recorded below the floor and none new. 486 tests, 0 fail. 6 of 6 mutations caught, one for each theme
+Verified: the gate now measures 72 pairs across the two palettes rather than 60, with five recorded
+below the floor rather than four and none new. 486 tests, 0 fail. 6 of 6 mutations caught, one for each theme
 reverting, one for reverting only one of the two light blocks, one for darkening `--card` under the
 button, and one proving each new pair is the only pair that catches its own defect. The knob mutation
 was wrong on its first draft and passed for the wrong reason: reverting the light track was caught by
@@ -1988,7 +1995,7 @@ the part of a graphic *required* to understand the content, and no part of these
 is written out in words inside the pill at `src/js/main.js:1870-1880`, drawing on the labels at
 `src/js/main.js:1932-1937`, and the full sentence from `describe` sits in a visually-hidden span
 inside that same pill. Delete the outline and the reader still sees "MU Unlimited", "soon scheduled",
-"? unknown", "MUâœ“ yours: available" or "no yours: not in MU". The outline bounds the label rather
+"? unknown", "MU✓ yours: available" or "no yours: not in MU". The outline bounds the label rather
 than carrying it, which puts it in the same class as a card border or a table rule.
 
 Two supporting measurements make that safe to rely on. The badge text passes on its own, at 5.94:1
@@ -2008,7 +2015,7 @@ twice.
 
 BL-032 has since shipped, and the prediction held exactly: a second palette did void every figure
 above. What it did not do is repeat the measurement by hand. `scripts/check-palette.mjs` now
-measures 70 pairs across both palettes on every CI run, which is the durable answer to a comment
+measures 72 pairs across both palettes on every CI run, which is the durable answer to a comment
 warning that a number would need redoing. The judgement recorded above is what the gate could not
 supply and is why it was worth writing down.
 
@@ -2488,8 +2495,8 @@ the rebuilt DOM. It is a no-op whenever focus is not inside the container it was
 keeps the shelf and the full order from fighting over the same restore when `renderAll` runs both.
 
 Where the pair no longer exists at all, focus goes to the row that took the vacated place, and
-deliberately not to the same control on it. `âš‘` and `âœ•` sit in that strip, and Enter auto-repeats on
-a held key while Space does not, so restoring `âœ•` under a finger already on Enter would delete the
+deliberately not to the same control on it. `⚑` and `✕` sit in that strip, and Enter auto-repeats on
+a held key while Space does not, so restoring `✕` under a finger already on Enter would delete the
 next issue as well. Each list names its least destructive control instead, at
 `src/js/main.js:1965`, and the reasoning is recorded at `src/js/main.js:163-167` rather than only
 here. When even that is gone the landing is the checked filter radio, which is both the reason the
@@ -2753,7 +2760,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2510-2513`.
+`PRODUCT_BACKLOG.md:2517-2520`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -2921,24 +2928,33 @@ reached `coerce` at all, and it built the doctored state from an object literal 
 key to begin with. Both mistakes made the output look like a finding. The numbers above come from
 the corrected run.
 
-**BL-069: Gate the two remaining red surfaces, one of which the gate cannot yet express**
+**BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
-- [ ] Add the skip link's red on the rail to the measured pairs
+- [ ] Add red on the rail, naming every control that paints it rather than the first one found
 - [ ] Teach the gate to resolve a `color-mix` background, or record why it will not
+- [ ] Choose the dark green behind the read tick, or record the 2.30:1 as settled and why
 - [ ] Re-derive the printed pair count wherever it is stated
 
 Constraint gate: checked 1 to 11, none breached.
 
-Filed out of the BL-067 review, which found that `--red` paints more surfaces than that item gated
-and named two more beyond the one it fixed. Both clear the floor today, so this is coverage rather
-than a visible fault, and the reason for filing it is the same reason BL-067 existed: an ungated
+Filed out of the BL-067 review, which found that `--red` and `--on-accent` paint more surfaces than
+that item gated. All three clear the floor or are defensible where they do not, so this is coverage
+rather than a visible fault, and the reason for filing it is the reason BL-067 existed: an ungated
 boundary is one nobody will notice moving.
 
-The skip link at `src/index.html:16` is red on the rail, measured at 4.00 in the dark theme and 4.41
-in the light. That one is a single line in `PAIRS` and could have gone into BL-067, and was kept out
-only so the two land together.
+**Red on the rail, three painters and not one.** The first draft of this block named only the skip
+link at `src/index.html:16`, which is the least of them: it is invisible until focused. The other
+two are on screen in every view. `.brand .mark` at `src/styles.css:253` is the 28px red square at the
+top of the rail, and `.ri[aria-current]::before` at `src/styles.css:290` is the 3px bar marking the
+current destination, which the comment at `src/styles.css:283-284` names as part of the selected
+state. All three measure the same, 4.00 dark and 4.41 light, so nothing is mismeasured, but writing
+the reason string as "the skip link" would have gated a state indicator under the name of a
+transient link. That is the "named one painter, missed the others" pattern this whole item exists to
+close, and the draft reproduced it inside the item about it. One wrinkle to settle when it is picked
+up: the accent bar sits inside `.ri[aria-current]`, whose own background is a translucent tint over
+the rail, so the true surface is a shade off `--rail` in the same way the next paragraph describes.
 
-The second is the reason this is its own item. Two buttons render inside a blocked row whose
+**The blocked row, which the gate cannot express.** Two buttons render inside a blocked row whose
 background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles.css:909`. The gate
 reads hex values out of the stylesheet and computes ratios from them, and there is no hex here to
 read: the value is a function of two other tokens that the browser resolves. Measured in Edge it
@@ -2947,6 +2963,18 @@ a figure it cannot defend. Either the gate learns to evaluate the one `color-mix
 stylesheet uses, which is a real change to `scripts/check-palette.mjs` rather than a line in a list,
 or the pair is recorded as deliberately unmeasured with the reason attached, in the way BL-065
 recorded the four it left below the floor. Deciding which is the work.
+
+**The read tick, which is gated already and needs a colour decision instead.** The white tick inside
+a checked read checkbox is `--on-accent` on `--green`, at 2.30:1 in the dark theme and 6.48:1 in the
+light. BL-067 added the pair and recorded the dark half in `KNOWN` rather than leaving it
+unmeasured, so unlike the two above this one is on the record and printed on every CI run. What is
+left is the choice. Nothing about the arithmetic forces 2.30:1, unlike the progress trough: a darker
+green would clear it, and the cost is that the fill gets heavier. The case for leaving it is that
+the tick is not what tells a reader the box is checked. The fill does, at 7.58:1 against a card and
+8.22:1 against the page in the dark theme, and the state is in words as well, since the button's
+label at `src/js/main.js:1854` reads "Mark X as unread" exactly when it is checked. That is the same
+judgement BL-049 reached about the badge borders. Recording it as settled is a legitimate outcome
+here; leaving it unrecorded is not.
 
 **BL-055: Record the drift in the audited figures instead of letting them go stale**
 
@@ -2959,7 +2987,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3618-3619` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3646-3647` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2969,11 +2997,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:163-165`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3638-3640`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3666-3668`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3460-3462` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3488-3490` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3181,7 +3209,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:426-429` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:430-433` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:156-158` and
 `PRODUCT_BACKLOG.md:163-165` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
