@@ -9,20 +9,22 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Thirty-two items have since been delivered and are marked `Shipped` in the table below: BL-014,
-BL-026, BL-027, BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-038, BL-039, BL-040, BL-043,
-BL-044, BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052, BL-053, BL-054, BL-055,
-BL-056, BL-057, BL-058, BL-059, BL-061, BL-062 and BL-063.
+Thirty-three items have since been delivered and are marked `Shipped` in the table below: BL-014,
+BL-026, BL-027, BL-029, BL-030, BL-031, BL-034, BL-035, BL-037, BL-038, BL-039, BL-040, BL-041,
+BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049, BL-050, BL-051, BL-052, BL-053, BL-054,
+BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062 and BL-063.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
-without touching the colours, for the reasons recorded in its block. Six remain open on
+without touching the colours, for the reasons recorded in its block. Seven remain open on
 purpose: making the CI run required before merge is a repository setting rather than a change to
 the tree, tagging a release needs a commit to point at, confirming BL-027 with a screen reader
 is a human check no automated run substitutes for, BL-031's axe re-run cannot be satisfied as
 written, because axe declines to judge text over a gradient and the finding was answered by
 computing the contrast bound instead, BL-037's URL task is conditional on BL-036 and would mean
-inventing the scheme that item exists to decide, and BL-051's README walkthrough has to be done by
+inventing the scheme that item exists to decide, BL-041's third task is blocked on the view file
+being importable at all and was carried to BL-064 rather than ticked, and BL-051's README walkthrough
+has to be done by
 someone who does not write software, which is the one thing its author cannot self-certify.
 `CHANGELOG.md` carries the
 user-facing view of the same work.
@@ -157,7 +159,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 334; 224 is the figure as audited.
+  it to 374; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -196,7 +198,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:151-153 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:153-155 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
@@ -219,12 +221,13 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Shipped | design/mockups/5-longbox-focus.html:169-172 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | src/js/lib/readingFilters.js:25-48 |
-| BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Ready | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
+| BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Shipped | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
 | BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Shipped | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
 | BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Ready | src/js/main.js:2686-2700 |
 | BL-007 | Give the event orders the variants the catalog can already carry | Story | EP-02 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | P1 | Observed | Ready | src/data/catalog.json |
 | BL-032 | Offer a light theme and follow the system preference | Story | EP-08 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Ready | src/styles.css:7 |
 | BL-036 | Make the current view and list addressable in the URL | Story | EP-10 | Leaves alone | 5 | 2 | 3 | 8 | 1.25 | none | Observed | Ready | absent: pushState or replaceState or location.hash or hashchange or popstate or history., grep across src/ |
+| BL-064 | Make the view file importable so its render paths can be tested | Enabler | EP-12 | Depends on | 3 | 2 | 8 | 13 | 1.0 | none | Measured | Ready | absent: any test importing src/js/main.js, and node -e "import('./src/js/main.js')" exits on ReferenceError: document is not defined |
 | BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Ready | absent: note or notes, grep across src/**/*.js |
 | BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:2686-2700 |
 
@@ -1000,13 +1003,76 @@ disable directive above. Lint now exits 0 and runs as its own job in the workflo
 
 **BL-041: Cover the three browser-coupled modules with tests**
 
-- [ ] Cover `src/js/cache.js` against a fake IndexedDB
-- [ ] Cover `src/js/hydrate.js` for cancellation and resumption
+- [x] Cover `src/js/cache.js` against a fake IndexedDB
+- [x] Cover `src/js/hydrate.js` for cancellation and resumption
 - [ ] Cover the render paths in `src/js/main.js` that BL-033 will change
-- [ ] Run the new tests in the workflow from BL-039
+- [x] Run the new tests in the workflow from BL-039
 
 Constraint gate: checked 1 to 11, none breached. Constraint 4 permits a dev-only test double.
 Splitting this alongside BL-042 will make the third task smaller.
+
+Shipped, with the third task carried to BL-064 rather than ticked. `src/js/main.js` cannot be
+imported in Node at all: `node -e "import('./src/js/main.js')"` fails with `ReferenceError: document
+is not defined` before a single test can run, because the module touches the document at import
+time rather than inside a function. That is not something a test double can reach around, so the
+task needs either BL-042's file split or a DOM implementation as a devDependency, and the choice
+between those is BL-064's to make. This block's own note anticipated it.
+
+The other two modules import cleanly, which is what made them testable without adding anything: both
+touch `indexedDB` and `document` only inside functions, and Node 24 defines neither global, so a
+double installed on `globalThis` is unambiguous rather than fighting a real implementation. The
+doubles are hand-written at the top of each file, which is the existing convention rather than a new
+one, and `test/fetch-json.test.js` says why it scripts responses "without a stub library". No
+dependency was added, runtime or dev.
+
+`src/js/ask.js` was covered as the third module in place of `main.js`. It is browser-coupled in the
+same way, it is 93 lines against main.js's 2,755, and it holds the module-scope `pending` that every
+question in the app funnels through, so it carries the same class of risk at a fraction of the cost.
+Tests import a fresh copy per case through a cache-busting query, because that module-scope state
+would otherwise leak between them.
+
+Forty tests were added, taking the suite from 334 to 374, and **all forty were mutation tested
+before being believed**. Twenty-two deliberate bugs were introduced one at a time and the suite was
+required to fail on each. Three rounds were needed, and every finding was a defect in the tests
+rather than in the modules:
+
+- **The two cancellation guards in `src/js/hydrate.js:69` and `src/js/hydrate.js:74` are textually
+  identical, and one test was covering both by accident.** Removing the first guard alone left the
+  suite green. The double was keyed by issue id, so a second run's lookup for the same issue
+  overwrote the first run's, and the test resolved the wrong call; it also aborted on the signal
+  unconditionally, so cancelling rejected the outstanding lookup immediately and the loop broke out
+  before ever reaching the first guard. The double now keeps calls as a list and aborts on the
+  signal only when asked, and there is one test per guard: a straggler resolving normally after its
+  run was cancelled must not advance the replacement run's counter, and a late abort must not clear
+  the replacement run's fields. Each now fails when and only when its own guard is removed.
+- **Three of the deliberate bugs made the suite hang rather than fail.** Removing the guard that
+  ignores a second start leaves the replacement run awaiting a lookup nobody will answer, and
+  `node --test` applies no per-test timeout of its own, so CI would have sat there until the job's
+  six-hour limit killed it having reported nothing. Every await of a promise the module owns now
+  goes through a two-second cap that rejects, so a hang is reported as the failure it is.
+- **The fake IndexedDB shared a reference where the real one clones, and that alone was holding up a
+  test of the cache's recency ordering.** Found in review rather than by the harness, which had no
+  mutation aimed at that line until the review supplied one. `get` in
+  `src/js/cache.js:59-63` sets `lastAccess` on the entry it just read and then persists it with a
+  `put` it deliberately does not await. Real IndexedDB structured-clones on the way out, so only
+  that `put` can persist anything; the fake handed back the stored object itself, so the assignment
+  alone appeared to have worked. Deleting the `put` left the suite green, which meant the recency
+  ordering eviction depends on was pinned by nothing at all. The fake now clones on `get`, `getAll`
+  and `put`, and the deletion fails as it should.
+
+One mutation was refuted rather than caught, and the test was rewritten around what it proved.
+Removing the `if (full)` guard that skips an empty lookup leaves the stored state byte for byte
+identical, because `upsertIssue` rejects an input with no issue id. What does change is that
+`store.update` is called anyway, and the real store persists on every update, so the guard is what
+stops an empty answer costing a write. Counting the writes is what made the test able to fail, which
+is the same correction BL-035's storage test needed.
+
+Two of BL-056's own tests were fixed in the same change, because filing BL-064 broke them. They
+mutate the real document by matching a rank claim, and both matched on a stated table size that
+adding a row changed, so each failed on its own guard against a mutation that no longer applies.
+The guard behaved exactly as designed, which is why the failure was legible rather than silent, but
+the target is now derived from the ranked table instead of spelled out, so the next item to be filed
+does not break them again.
 
 **BL-042: Break the single view file into per-view modules**
 
@@ -1967,6 +2033,32 @@ mechanism, so they are filed as BL-061 rather than folded in. The first sits on 
 rewrites for an unrelated reason, which is why it appears in this diff's added lines. BL-061 has
 since removed both, so those two lines carry the rewritten copy rather than what was found here.
 
+**BL-064: Make the view file importable so its render paths can be tested**
+
+- [ ] Decide between splitting the file and adding a DOM implementation as a devDependency
+- [ ] Cover the render paths that BL-033 will change
+
+Constraint gate: checked 1 to 11, none breached. Constraint 4 governs half of the first task: a DOM
+implementation would be a devDependency, which is permitted, and runtime dependencies stay at zero
+on either route.
+
+Filed out of BL-041, which shipped its other three tasks and could not ship this one. The blocker is
+not that `src/js/main.js` is long, it is that the module cannot be imported in Node at all:
+`node -e "import('./src/js/main.js')"` exits on `ReferenceError: document is not defined`. It reaches
+for the document while the module is being evaluated rather than inside a function, so the failure
+lands before any test body runs and no double can be installed early enough to prevent it. That is
+the whole difference between this item and the three modules BL-041 did cover, each of which touches
+the browser only inside functions and so imports cleanly against a double on `globalThis`.
+
+Two routes, and the first task is to choose between them on evidence rather than to assume. BL-042
+splits the file into per-view modules, which would make the render paths importable as a side effect
+and is already `Proposed`. The alternative is a DOM implementation as a devDependency, which is
+smaller and independent of that split, but it buys a fourth dev tool for one file in a repository
+that has so far met every testing need with hand-written doubles.
+
+Sized at 13 rather than BL-041's 8 because the dependency is real: taken by the split route this
+cannot start until BL-042 does, and BL-042 is the item held at `Proposed` for being unsplit.
+
 **BL-063: Extend the Constraint 11 check past JavaScript to the page and its styling**
 
 - [x] Decide what mechanism reads the three HTML files and the three stylesheets
@@ -2060,7 +2152,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:1843-1846`.
+`PRODUCT_BACKLOG.md:1909-1912`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -2181,21 +2273,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:2768-2769` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:2860-2861` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:158-160`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:160-162`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2788-2790`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:2880-2882`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2614-2616` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:2706-2708` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -2403,9 +2495,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:272-275` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:151-153` and
-`PRODUCT_BACKLOG.md:158-160` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:298-301` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:153-155` and
+`PRODUCT_BACKLOG.md:160-162` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -2674,7 +2766,7 @@ now.
   choosing an essential path or a complete path applies to one list out of eight.
   Evidence: `src/data/catalog.json` (per-list `group`, `groupName`, `variant` fields),
   `src/js/main.js:2189` (groupCatalog renders variant rows only where a group exists).
-- Correctness is well defended: 224 unit tests pass, 235 when this pass shipped and 334 now, and
+- Correctness is well defended: 224 unit tests pass, 235 when this pass shipped and 374 now, and
   `scripts/check-contract.mjs` pins 24 upstream API assumptions so schema drift is distinguishable
   from an outage.
   Evidence: `package.json:10`, `package.json:13`, `scripts/check-contract.mjs:248-280`.
@@ -2866,7 +2958,7 @@ positions in it as it stands.
 ### Case 1: BL-026 is labelled P0 but ranks seventeenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 17 of 39.
+- Calculated: WSJF 3.67, rank 17 of 40.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by sixteen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -2888,7 +2980,7 @@ positions in it as it stands.
 ### Case 2: BL-007 is labelled P1 but ranks thirty-fifth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 35 of 39, below thirty-one unlabelled items and three places above the
+- Calculated: WSJF 1.4, rank 35 of 40, below thirty-one unlabelled items and four places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -2937,9 +3029,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 24 of 39. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 18 of 39. Mid-table.
-- BL-017, P2, rank 38 of 39. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 24 of 40. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 18 of 40. Mid-table.
+- BL-017, P2, rank 39 of 40. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
