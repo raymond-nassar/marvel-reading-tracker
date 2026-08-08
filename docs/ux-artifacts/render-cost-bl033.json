@@ -1,0 +1,34 @@
+{
+  "task": "BL-033",
+  "measured": "2026-08-07",
+  "browser": "Edge, headless, 1280x900, http://127.0.0.1:8787",
+  "list": {
+    "name": "Hickman to Secret Wars: full",
+    "issues": 219
+  },
+  "method": "Twelve read toggles per run, timing only the synchronous cost of the click handler. An awaited requestAnimationFrame reports one frame, about 16.7ms, however little work was done, so the first pass at this measured frame cadence rather than work and is not comparable with these numbers.",
+  "control": {
+    "orderClosed": "the hero's Done, next button, which is what is on screen while the full order is collapsed",
+    "orderOpen": "the first row's read checkbox"
+  },
+  "before": {
+    "medianMsOrderClosed": 12.7,
+    "medianMsOrderOpen": 14.8,
+    "rowsInDomWhileClosed": 219,
+    "rowsRebuiltPerToggle": 219,
+    "rowsReusedPerToggle": 0
+  },
+  "after": {
+    "medianMsOrderClosed": 1.7,
+    "medianMsOrderOpen": 2.8,
+    "rowsInDomWhileClosed": 0,
+    "rowsRebuiltPerToggle": 2,
+    "rowsReusedPerToggle": 217
+  },
+  "theTwoRebuilt": "the row that was ticked, and the row that becomes up next",
+  "correctness": "After ten mutating actions on the warm tree, marking read and unread, moving items, cycling availability overrides and changing the filter twice, the row list was character for character identical to the same stored state rendered cold after a reload. Keying a row on its id alone makes that comparison differ, which is how the check was shown to have teeth.",
+  "notes": [
+    "The earlier assumption was that the win lay in not rendering the four hidden views. A MutationObserver profile split by view refuted it: hidden views accounted for 36 of 520 nodes, and 93 percent of the churn was the visible reading view rebuilding itself.",
+    "The full order is inside a details element that starts closed, so before this change every one of those 219 rows was built for a container the reader had not opened."
+  ]
+}

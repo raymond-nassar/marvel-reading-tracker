@@ -276,6 +276,24 @@ quote in a bug report.
 
 ### Changed
 
+- **Marking an issue read is now about eight times faster on a long reading order.** Ticking one
+  issue in a 219 issue order used to rebuild all 219 rows to record the one that changed, which took
+  most of a frame and could feel like a stutter on a slower machine. It now rebuilds two rows: the
+  one you ticked, and the one that becomes "read this next". Measured in Microsoft Edge on the
+  Hickman to Secret Wars order, the work behind a tick went from 14.1 to 2.8 milliseconds with the
+  full order open.
+
+  There is a larger saving underneath that one. The full order is the collapsed section headed "Show
+  the full order", and it starts closed, so until now the app was building all 219 of those rows for
+  a panel you had not opened. It waits until you open it. With the order closed, which is how you
+  find it, a tick went from 12.7 to 1.7 milliseconds. The unread count beside the heading still
+  updates immediately, because it is on screen whether the order below it is or not.
+
+  Nothing looks or behaves differently, and that was checked rather than assumed: after ten changes
+  of the kind you would actually make, marking issues read and unread, reordering them, flagging
+  availability and switching filters, the list on screen was compared character for character
+  against the same reading order loaded fresh from scratch, and the two were identical.
+
 - **Three parts of the app that talk to the browser now have tests, where before they had none.**
   These are the piece that remembers downloaded issue details so the app does not fetch them twice,
   the piece that fills in issue details in the background while you read, and the piece that puts

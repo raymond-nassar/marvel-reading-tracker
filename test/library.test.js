@@ -224,3 +224,66 @@ test('each Library rail button carries the label its view is rendered with', () 
     );
   }
 });
+
+// BL-033 stopped the full order from being built while it is closed, which is how it starts. That
+// makes opening it the only thing that can fill it, so the guard and the listener are one
+// mechanism in two files and neither half means anything alone. Removing the listener leaves an
+// order that silently never fills, and nothing in the console says so.
+test('the full order is skipped while closed and filled when it is opened', () => {
+  const main = read('src/js/main.js');
+  const html = read('src/index.html');
+
+  assert.match(html, /<details class="full" id="full">/, 'the markup no longer holds the details the guard names');
+  assert.equal(
+    / open>/.test(html.match(/<details class="full" id="full"[^>]*>/)[0]),
+    false,
+    'the order now starts open, so the skip would never be the first thing a reader meets',
+  );
+  assert.match(
+    main,
+    /if \(!\$\('#full'\)\.open\) \{ rowsPending = true; return; \}/,
+    'renderRows no longer skips the rows while the order is closed',
+  );
+  assert.match(
+    main,
+    /\$\('#full'\)\.addEventListener\('toggle', \(\) => \{\s*if \(\$\('#full'\)\.open && rowsPending\) renderRows\(\);/,
+    'nothing renders the rows when the order is opened, so it would fill only on the next change',
+  );
+});
+
+// The count sits in the <summary>, which stays on screen when the order below it is closed, so it
+// has to be written on the side of the guard that still runs. Moving it back below the return
+// would freeze it at whatever it read when the reader last had the order open.
+test('the unread count is written before the closed-order return, not after it', () => {
+  const main = read('src/js/main.js');
+  const body = main.slice(main.indexOf('function renderRows()'));
+  const count = body.indexOf("$('#full-count').textContent");
+  const guard = body.indexOf("if (!$('#full').open)");
+  assert.ok(count !== -1 && guard !== -1, 'renderRows no longer holds both the count and the guard');
+  assert.ok(count < guard, 'the unread count is now written after the return that skips a closed order');
+});
+
+// The cache key is the whole item on purpose. An enumerated list of the fields a row happens to
+// read is one somebody has to keep complete, and a field left out of it is a row that silently
+// stops updating, which is the whole defect the cache would otherwise buy. `currentId` is the one
+// input that is not part of the item, so it is named separately and must stay named.
+test('a cached row is keyed by the whole item, not by a list of fields', () => {
+  const main = read('src/js/main.js');
+  assert.match(
+    main,
+    /const rowKey = `\$\{JSON\.stringify\(item\)\}\|\$\{item\.issueId === currentId\}`;/,
+    'the row cache key no longer covers every field of the item plus the up-next marker',
+  );
+});
+
+// Reordering these two loops reintroduces the fault the reconciler was written to avoid: a stale
+// node left in front of the reused ones shifts every later index by one, so one rebuilt row moves
+// all the rest. Measured in Edge on the 219 issue list, that was 219 moves rather than 2.
+test('the reconciler drops unwanted nodes before it places the wanted ones', () => {
+  const main = read('src/js/main.js');
+  const fn = main.slice(main.indexOf('function commitRows('));
+  const drop = fn.indexOf('if (!wanted.has(node)) node.remove()');
+  const place = fn.indexOf('container.insertBefore(node');
+  assert.ok(drop !== -1 && place !== -1, 'commitRows no longer both drops and places nodes');
+  assert.ok(drop < place, 'commitRows places nodes before dropping the stale ones, which moves every later row');
+});
