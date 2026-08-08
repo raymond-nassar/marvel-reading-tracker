@@ -676,12 +676,19 @@ let routeReady = false;
 // keeps Back usable. A reader who marks twenty issues read must not have to press Back twenty times
 // to leave the view, so every passive sync replaces.
 //
-// The compare against the current hash is not an optimisation. Writing a hash fires hashchange,
-// whose handler calls back into showView, which syncs again; comparing first is what stops that
-// from running away.
+// Both branches write history rather than assigning location.hash, and that is the difference that
+// lets a reading filter be pushed. Assigning the hash fires hashchange synchronously, which re-runs
+// applyRoute and moves focus to the view heading. Every caller that pushes a view already reached
+// showView with focus of its own, so that second pass was redundant for them; for a filter radio it
+// would have thrown the keyboard out of the control the reader just pressed, which is the defect
+// BL-054 and BL-058 fixed for the rows. pushState fires no hashchange, and Back over an entry it
+// made still does, both measured in Edge before this was relied on.
+//
+// The compare against the current hash is not an optimisation. pushState given the address already
+// showing would stack a duplicate entry, so Back would appear to do nothing once per navigation.
 function syncHash({ push = false } = {}) {
   if (!routeReady) return;
-  const next = formatRoute({ view, listId: activeListId() });
+  const next = formatRoute({ view, listId: activeListId(), filter });
   if (!next || next === location.hash) return;
 
   // A hash that is not ours is someone else's anchor, and index.html ships one: the skip link
@@ -690,7 +697,7 @@ function syncHash({ push = false } = {}) {
   // deliberate navigation does overwrite it, because the anchor is no longer where they are.
   if (!push && location.hash && !parseRoute(location.hash)) return;
 
-  if (push) location.hash = next;
+  if (push) history.pushState(null, '', next);
   else history.replaceState(null, '', next);
 }
 
@@ -698,10 +705,22 @@ function syncHash({ push = false } = {}) {
 // rather than whichever one happened to be active. A list id that no longer exists is left to
 // setActive, which returns the state untouched, so the trailing sync inside showView corrects the
 // address instead of leaving it claiming a list that is not on screen.
-function applyRoute(route, { focus }) {
+//
+// `filterIfAbsent` is what an address saying nothing about the filter means, and it is not the same
+// answer in the two places this is called from. Back and Forward hand over an address this app
+// wrote, and this app omits the filter only when it is the default, so absent there really does
+// mean All: without that, pressing Back over the moment a filter was chosen would leave the filter
+// in force and rewrite the address to match, which is the one thing this task exists to fix. Boot
+// is the opposite. An address with no filter can be a bookmark made before this shipped, and
+// answering it with All would discard the setting BL-037 exists to keep across a reload, so boot
+// passes whatever was restored from settings.
+function applyRoute(route, { focus, filterIfAbsent }) {
   if (route.listId && route.listId !== activeListId() && store.state.lists[route.listId]) {
     store.update((s) => setActive(s, route.listId));
   }
+  // Before showView, so the passive sync at the end of showView computes the address this route
+  // already describes and returns early rather than writing one and being corrected a moment later.
+  setFilter(route.filter ?? filterIfAbsent);
   showView(route.view, { focus });
 }
 
@@ -1224,6 +1243,28 @@ async function openPreview(list) {
 
 // ------------------------------------------------------------------ reading view
 
+// The one way the filter in force changes, whether the reader chose a radio, arrived on a link, or
+// pressed Back. Three copies of this were the alternative, and the copies would have differed:
+// setting it from a route has to move the radio, and setting it from the radio has to store it.
+//
+// The filter is stored wherever it comes from, including from an address. That matches what
+// applyRoute already does with the active list, which setActive writes into persisted state, and it
+// is what makes Back consistent: if pressing Back moved the rows but not the preference, closing
+// the tab and reopening it would show something other than what was last on screen.
+//
+// Returns early when nothing changed, so navigating between views does not rewrite settings on
+// every hop or rebuild rows that are already correct.
+function setFilter(next) {
+  const wanted = READING_FILTERS.some((f) => f.value === next) ? next : DEFAULT_FILTER;
+  if (wanted === filter) return;
+  filter = wanted;
+  settings.filter = wanted;
+  saveSettings();
+  const radio = [...document.querySelectorAll('input[name="filter"]')].find((r) => r.value === wanted);
+  if (radio) radio.checked = true;
+  renderRows();
+}
+
 function wireReading() {
   // Rendered from READING_FILTERS rather than authored in index.html, so the labels a reader can
   // choose from and the predicates that decide a row are one list and cannot disagree. Rendered
@@ -1272,10 +1313,11 @@ function wireReading() {
 
   for (const radio of radios) {
     radio.addEventListener('change', (e) => {
-      filter = e.target.value;
-      settings.filter = filter;
-      saveSettings();
-      renderRows();
+      setFilter(e.target.value);
+      // Pushes rather than replaces. Choosing a filter is a deliberate act, like clicking the rail,
+      // and pushing is the whole of what "Back works across filter changes" means. The passive
+      // paths still replace, so marking twenty issues read does not put twenty entries in the way.
+      syncHash({ push: true });
     });
   }
 
@@ -2938,7 +2980,7 @@ routeReady = true;
 // a reload land where they say they will. focus:false either way, so arriving at the page never
 // takes focus off the document the reader has not started interacting with yet.
 const bootRoute = parseRoute(location.hash);
-if (bootRoute) applyRoute(bootRoute, { focus: false });
+if (bootRoute) applyRoute(bootRoute, { focus: false, filterIfAbsent: filter });
 else showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: false });
 
 // Back and Forward arrive here, as does anyone editing the address by hand. A hash that is not one
@@ -2949,7 +2991,7 @@ else showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: fals
 // screen reader that is told nothing after it has no way to know the page changed under it.
 window.addEventListener('hashchange', () => {
   const route = parseRoute(location.hash);
-  if (route) applyRoute(route, { focus: true });
+  if (route) applyRoute(route, { focus: true, filterIfAbsent: DEFAULT_FILTER });
 });
 checkHealth();
 refreshCacheUsage();

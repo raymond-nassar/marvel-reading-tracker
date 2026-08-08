@@ -16,6 +16,16 @@ quote in a bug report.
 
 ### Added
 
+- **The filter you have chosen is now part of the link, so you can share or bookmark a filtered
+  view.** Pick Unread on a reading order and the address in the bar becomes something like
+  `#/read/list-abc?filter=unread`. Send that to someone, or bookmark it, and it opens showing the
+  same thing. Your browser's Back button now steps back through filter changes too, so switching to
+  Read and changing your mind is one press away, and the rows move back with it. Two things are
+  deliberately left alone: an ordinary unfiltered view has exactly the address it has always had, so
+  every bookmark you already made still works, and choosing a filter no longer moves your keyboard
+  off the button you just pressed. Nothing is sent anywhere; the filter lives in the part of the
+  address that never leaves your browser.
+
 - **You can now keep notes on a reading order and on any issue in it.** Every row in a reading
   order has an "Add a note" control, and each order has a Note button in its toolbar, next to
   Rename. Notes are yours alone: they are saved on your own device, they show up in your backup
