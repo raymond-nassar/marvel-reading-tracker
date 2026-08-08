@@ -265,14 +265,47 @@ test('the unread count is written before the closed-order return, not after it',
 
 // The cache key is the whole item on purpose. An enumerated list of the fields a row happens to
 // read is one somebody has to keep complete, and a field left out of it is a row that silently
-// stops updating, which is the whole defect the cache would otherwise buy. `currentId` is the one
-// input that is not part of the item, so it is named separately and must stay named.
+// stops updating, which is the whole defect the cache would otherwise buy. Two inputs are not part
+// of the item and so must stay named: `currentId`, and today's date, which is what decides whether
+// a badge reads "soon" or "MU" and would otherwise freeze a row built before local midnight.
 test('a cached row is keyed by the whole item, not by a list of fields', () => {
   const main = read('src/js/main.js');
   assert.match(
     main,
-    /const rowKey = `\$\{JSON\.stringify\(item\)\}\|\$\{item\.issueId === currentId\}`;/,
-    'the row cache key no longer covers every field of the item plus the up-next marker',
+    /const rowKey = `\$\{JSON\.stringify\(item\)\}\|\$\{item\.issueId === currentId\}\|\$\{today\}`;/,
+    'the row cache key no longer covers every field of the item plus the up-next marker and the day',
+  );
+  assert.match(
+    main,
+    /const today = localDayString\(\);/,
+    'renderRows no longer reads the day once, so rows in one pass can be judged against different days',
+  );
+  for (const call of [/availability\(item, \{ override, today \}\)/, /describe\(item, \{ override, today \}\)/]) {
+    assert.match(main, call, `a row no longer passes the day it was keyed on into ${call}`);
+  }
+});
+
+// Keying a row costs nothing unless the key is compared. Deleting either comparison leaves every
+// row and every heading reused unconditionally, which is silent: eslint stays clean because the key
+// is still referenced where it is stored, and a row simply keeps the checkmark it was built with.
+// The list reset is the same shape but worse than staleness, because a reused row's move and remove
+// handlers close over the id of the list it was built for.
+test('the row cache is invalidated, not merely populated', () => {
+  const main = read('src/js/main.js');
+  assert.match(
+    main,
+    /if \(cached && cached\.key === rowKey\) \{ desired\.push\(cached\.node\); continue; \}/,
+    'a cached row is no longer compared against its key, so every row is reused whatever changed',
+  );
+  assert.match(
+    main,
+    /if \(cachedHead && cachedHead\.key === headKey\) desired\.push\(cachedHead\.node\);/,
+    'a cached edition heading is no longer compared against its key, so its "n of m read" freezes',
+  );
+  assert.match(
+    main,
+    /if \(id !== rowCacheListId\) \{ rowCache = new Map\(\); rowCacheListId = id; \}/,
+    'the cache no longer resets between lists, so rows leak across lists with the wrong list id bound',
   );
 });
 

@@ -12,7 +12,7 @@ import {
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { LIBRARY_VIEWS } from './lib/library.js';
-import { availability, describe, SHORT, STATE } from './lib/availability.js';
+import { availability, describe, localDayString, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,
@@ -1783,7 +1783,7 @@ function renderShelf() {
 // Rows are kept and reused unless their own data changed, because rebuilding all of them to
 // record that one was ticked is most of the cost of ticking it. Measured in Edge on the 219 issue
 // Hickman list with the order open: a read toggle replaced 219 of 219 rows and the handler ran for
-// 14.1ms. Reusing them takes it to 2 rows and 2.6ms, the two being the ticked row and the one that
+// 14.8ms. Reusing them takes it to 2 rows and 2.8ms, the two being the ticked row and the one that
 // becomes "up next".
 let rowCache = new Map();
 let rowCacheListId = null;
@@ -1824,13 +1824,16 @@ function renderRows() {
 
     // The full order is inside a <details> that starts closed, so on a first visit every one of
     // these rows is built for a container the reader has not opened. Measured in Edge on the 219
-    // issue Hickman list with the order closed: marking one issue read spent 14.1ms building 219
+    // issue Hickman list with the order closed: marking one issue read spent 12.7ms building 219
     // rows that were never shown. Reopening the details renders them, so nothing is lost by
     // waiting until then.
     if (!$('#full').open) { rowsPending = true; return; }
     rowsPending = false;
 
     const currentId = upNext(store.state, id)?.issueId ?? null;
+    // Read once per render and passed in rather than defaulted per call, so that every row in one
+    // pass is judged against the same day and the day is a value the cache key can name.
+    const today = localDayString();
     const items = all.filter((it) => matchesReadingFilter(filter, it));
 
     // Collected editions, as runs of consecutive items. Progress is counted over every item in
@@ -1885,12 +1888,15 @@ function renderRows() {
       // The key is the whole item rather than a list of the fields this row happens to read.
       // An enumerated list is one somebody has to keep complete, and a field left out of it is a
       // row that silently stops updating, which is the defect this cache would otherwise buy.
-      const rowKey = `${JSON.stringify(item)}|${item.issueId === currentId}`;
+      // Two inputs are not in the item and so have to be named: whether this is the up next row,
+      // and today's date, which is what decides whether a badge reads "soon" or "MU". Without the
+      // date a tab left open across midnight reuses the row it built yesterday for good.
+      const rowKey = `${JSON.stringify(item)}|${item.issueId === currentId}|${today}`;
       const cached = rowCache.get(item.issueId);
       if (cached && cached.key === rowKey) { desired.push(cached.node); continue; }
 
       const override = item.override;
-      const av = availability(item, { override });
+      const av = availability(item, { override, today });
       const badgeClass = {
         [STATE.EXPECTED]: 'badge-expected',
         [STATE.SCHEDULED]: 'badge-scheduled',
@@ -1928,7 +1934,7 @@ function renderRows() {
             // so "Not in Unlimited" read as a fact rather than as what the snapshot shows.
             el('span', { class: `badge ${badgeClass}` }, [
               `${SHORT[av.state]} ${av.state === STATE.EXPECTED ? 'Unlimited' : SHORT_LABEL[av.state] ?? 'unknown'}`,
-              el('span', { class: 'visually-hidden', text: `. ${describe(item, { override })}.` }),
+              el('span', { class: 'visually-hidden', text: `. ${describe(item, { override, today })}.` }),
             ]),
             !item.hydrated && item.source !== 'manual'
               ? el('span', { class: 'badge badge-pending' }, [
