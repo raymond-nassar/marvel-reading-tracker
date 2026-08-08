@@ -283,7 +283,7 @@ function main() {
     return;
   }
 
-  const { fresh, fixed, recorded } = unresolved(css);
+  const { fresh, fixed } = unresolved(css);
   for (const f of fresh) console.log(`  ${f.themeName}: ${f.message}`);
   for (const k of fixed) {
     console.log(`  ${k} now meets the floor. Remove it from KNOWN in scripts/check-palette.mjs, and from the BL-065 backlog block if that empties it.`);
@@ -294,11 +294,24 @@ function main() {
     return;
   }
   const measured = PAIRS.length * 2;
-  console.log(`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor, 0 new.`);
-  // The recorded ones print their current ratio rather than only their count. A number nobody can
+  for (const line of passingReport(css, measured)) console.log(line);
+}
+
+// The passing path's output is built rather than printed inline so a test can assert on it. Review
+// found the previous version pinned only `unresolved`, one level below the claim: deleting the print
+// loop and its destructure left the suite green, the gate exit 0, and three prose statements that the
+// ratio is printed on every run false again. The test spawns this script and reads stdout, so the
+// thing the docs claim is the thing that is checked.
+export function passingReport(css, measured) {
+  const { recorded } = unresolved(css);
+  const lines = [`${measured} pairs measured across the dark and light themes, ${KNOWN.length} recorded below the floor, 0 new.`];
+  // The recorded ones report their current ratio rather than only their count. A number nobody can
   // see cannot be noticed drifting, and these are exactly the pairs a later change is most likely to
   // move, since the gate stays green anywhere between the floor and 1:1.
-  for (const f of recorded) console.log(`  ${f.ratio === undefined ? '   ?' : `${f.ratio.toFixed(2)}:1`}  ${f.fgName} on ${f.bgName} (${f.themeName}), ${f.where || f.message}`);
+  for (const f of recorded) {
+    lines.push(`  ${f.ratio === undefined ? '   ?' : `${f.ratio.toFixed(2)}:1`}  ${f.fgName} on ${f.bgName} (${f.themeName}), ${f.where || f.message}`);
+  }
+  return lines;
 }
 
 if (process.argv[1] && process.argv[1].endsWith('check-palette.mjs')) main();

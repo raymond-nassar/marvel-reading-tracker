@@ -962,20 +962,32 @@ recorded pair with its current ratio and the place it is drawn, and `test/theme.
 it cannot quietly revert. The claim was made true rather than weakened to match, which is the same
 disposition this item took to the completeness assertion a paragraph above.
 
+**And the guard for that was itself one level too low.** The first attempt asserted on what
+`unresolved` returns, not on what a run prints, while the block claimed the printing was pinned. Review
+named the mutation that escaped: delete the print loop and its destructure and the suite stays green,
+the gate still exits 0, and all three prose claims go false again. The mutation that had been run was a
+different edit at a different level, one that made the gate throw, so it proved the data path rather
+than the output. The output is built by an exported function now and the test spawns the gate and reads
+its stdout, which is the level the claim is actually about. Three mutations are caught where one was:
+emptying the loop, dropping the ratio, and dropping the place. This is the third time in this item that
+an assertion was written one step short of what the prose beside it claimed, which is worth recording
+as a pattern rather than as three separate slips.
+
 `--track-2` went from `#3a4150` to `#616e8b` in the dark theme and from `#b8c0cd` to `#7b8aa2` in
 both light blocks, holding each theme's hue and saturation and moving lightness only. A single shared
 value was rejected: the band clearing both pages at once is roughly relative luminance 0.117 to
-0.293, so sharing takes less margin than tuning each theme, and `test/theme.test.js:93` already
+0.293, so sharing takes less margin than tuning each theme, and `test/theme.test.js:94` already
 requires the two light blocks to agree so per-theme values stay enforced. Both new values also clear
 3:1 against `--card`, which the switch does not sit on today, so a later move onto a card cannot
 silently reintroduce this.
 
 Verified: the gate now measures 72 pairs across the two palettes rather than 60, with five recorded
-below the floor rather than four and none new. 487 tests, 0 fail. 7 of 7 mutations caught, one for each theme
+below the floor rather than four and none new. 487 tests, 0 fail. 9 of 9 mutations caught, one for each theme
 reverting, one for reverting only one of the two light blocks, one for darkening `--card` under the
-button, and one proving each new pair is the only pair that catches its own defect, plus one removing
-the recorded pairs' ratios from the gate's passing output, which fails the assertion that they report
-what they measure. The knob mutation
+button, and one proving each new pair is the only pair that catches its own defect, plus three on the
+gate's own passing output: emptying the loop that prints the recorded pairs, dropping the ratio from
+each line, and dropping the place it is drawn. All three leave `unresolved` untouched, which is what
+the first version of that guard was watching and why it caught none of them. The knob mutation
 was wrong on its first draft and passed for the wrong reason: reverting the light track was caught by
 the track pair too, so it proved nothing about the knob pair. Replacing it with a pale dark-theme
 track, which clears the page easily but leaves the white knob invisible, isolates it properly. In the
@@ -2773,7 +2785,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2530-2533`.
+`PRODUCT_BACKLOG.md:2542-2545`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3000,7 +3012,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3659-3660` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3671-3672` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3010,11 +3022,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:163-165`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3679-3681`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3691-3693`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3501-3503` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3513-3515` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -167,11 +168,21 @@ test('every recorded pair reports its current ratio, not just its existence', ()
   // was reachable only under a `--report` flag no CI step passes, so a green run said five pairs were
   // recorded and never said what they measured. A ratio nobody sees cannot be noticed drifting, and
   // these are the pairs most likely to move, since the gate stays green anywhere below the floor.
+  //
+  // This spawns the gate rather than calling into it, because the claim is about what a run prints.
+  // The first version of this test asserted on `unresolved`'s return shape, one level below the
+  // claim, and review found the mutation that escaped it: delete the print loop and its destructure
+  // and the suite stayed green while the claim went false again.
+  const out = execFileSync(process.execPath, [join(ROOT, 'scripts', 'check-palette.mjs')], { encoding: 'utf8' });
   const { recorded } = unresolved(css);
   assert.equal(recorded.length, KNOWN.length, 'a recorded pair reports no measurement');
   for (const f of recorded) {
     assert.equal(typeof f.ratio, 'number', `${f.fgName} on ${f.bgName} reports no ratio`);
     assert.ok(f.where, `${f.fgName} on ${f.bgName} reports no place it is rendered`);
+    const line = out.split(/\r?\n/).find((l) => l.includes(`${f.fgName} on ${f.bgName} (${f.themeName})`));
+    assert.ok(line, `the gate never prints ${f.fgName} on ${f.bgName} in the ${f.themeName} theme`);
+    assert.match(line, /^\s+\d+\.\d\d:1\s/, `${line.trim()} carries no measured ratio`);
+    assert.ok(line.includes(f.where), `${f.fgName} on ${f.bgName} is printed without the place it is drawn`);
   }
 });
 
