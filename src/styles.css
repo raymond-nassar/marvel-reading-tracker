@@ -595,7 +595,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
 }
 .rnote:hover { color: var(--text); }
-.rnote.has-note { color: var(--text); border-left: 2px solid var(--line); padding-left: .5rem; }
+.rnote.has-note { color: var(--text); border-left: 2px solid var(--line-2); padding-left: .5rem; }
 
 .list-note {
   margin: 0 0 1rem; padding: .55rem .75rem; border-left: 2px solid var(--line);

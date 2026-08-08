@@ -180,9 +180,56 @@ test('a control boundary is measured against every surface it is drawn on, not j
   // page rather than on a card, a hero button sits on a card rather than on the page, and a text
   // input's border has that input's own fill on its inner side. Measuring one surface and calling
   // the boundary done is how a token passes the gate and still disappears somewhere on screen.
+  //
+  // `--track` is here for the same reason and was added later, by review: the trough renders on a
+  // card in the reading hero and on the rail in the per-list bars, and listing only the card hid a
+  // real degradation when the dark trough was darkened.
   const surfaces = (fg) => PAIRS.filter((p) => p[0] === fg).map((p) => p[1]).sort();
   assert.deepEqual(surfaces('--line-2'), ['--bg', '--card', '--card-2']);
   assert.deepEqual(surfaces('--cb-line'), ['--bg', '--card']);
+  assert.deepEqual(surfaces('--track'), ['--card', '--rail']);
+});
+
+// Every class this app puts on something a reader operates, found by reading the markup and the
+// renderer rather than by listing them here. Both sources are needed: the toolbar buttons are
+// authored in index.html, while the rows are built in main.js.
+function interactiveClasses() {
+  const found = new Set();
+  const add = (attr) => {
+    for (const token of attr.replace(/\$\{[^}]*\}/g, ' ').split(/\s+/)) {
+      if (token) found.add(token);
+    }
+  };
+  const TAGS = 'button|input|select|textarea|a|summary';
+  for (const m of read('src/index.html').matchAll(new RegExp(`<(?:${TAGS})\\s[^>]*class="([^"]*)"`, 'g'))) add(m[1]);
+  // el('button', { class: '...' }) and its backticked form. The object literal is matched lazily up
+  // to the class key, so other attributes before it do not have to be anticipated.
+  for (const m of read('src/js/main.js').matchAll(new RegExp(`el\\(\\s*'(?:${TAGS})'\\s*,\\s*\\{[^{}]*?class:\\s*(?:'([^']*)'|\`([^\`]*)\`)`, 'g'))) add(m[1] ?? m[2]);
+  return found;
+}
+
+test('nothing a reader operates is bordered with the ungated hairline token', () => {
+  // `--line` carries no floor because it is decoration. That is a claim, and this is what stops it
+  // rotting: it cross-references the rules that draw a border in `--line` against the classes the
+  // markup and the renderer actually put on a button, an input or a link.
+  //
+  // The browser pass cannot cover this on its own, which review proved. `.rnote` is `border: 0`
+  // until `.has-note` is set, so a fixture with no notes saved never painted it, and the one
+  // control still on `--line` was invisible to a scan of what is rendered. A rule that paints only
+  // in a state no fixture reaches needs a check that reads rules rather than pixels.
+  const interactive = interactiveClasses();
+  assert.ok(interactive.has('quiet'), 'the class scan found no toolbar buttons, so it is not reading the markup');
+  assert.ok(interactive.has('rnote'), 'the class scan found no rendered controls, so it is not reading main.js');
+
+  const offenders = [];
+  for (const rule of stripComments(css).matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    const [, selector, body] = rule;
+    if (!/border[a-z-]*:[^;]*var\(--line\)/.test(body)) continue;
+    for (const cls of selector.matchAll(/\.([\w-]+)/g)) {
+      if (interactive.has(cls[1])) offenders.push(`${selector.trim().split('\n').pop().trim()} borders .${cls[1]}`);
+    }
+  }
+  assert.deepEqual(offenders, [], 'a control is bordered with --line, which carries no contrast floor');
 });
 
 test('a progress bar is measured where it carries its value, fill against trough', () => {
@@ -207,8 +254,9 @@ test('both themes carry a colour-scheme declaration', () => {
 });
 
 test('every pair resolves in both themes, so nothing is skipped unmeasured', () => {
-  // check() reports a missing token as a finding rather than skipping it, so an empty findings
-  // list here means all fifty were genuinely measured.
+  // check() reports a missing token as a finding rather than skipping it, so an empty findings list
+  // here means every pair in both themes was genuinely measured. The count is derived rather than
+  // written down, because a figure in a comment is one more thing to keep in step with the list.
   const findings = checkAll(css);
   const unresolvable = findings.filter((f) => /not defined|not a plain hex/.test(f.message));
   assert.deepEqual(unresolvable.map((f) => f.message), []);

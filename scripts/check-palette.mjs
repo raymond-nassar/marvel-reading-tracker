@@ -30,6 +30,13 @@ export const LARGE = 3;
 // a claim rather than recording one. The check that keeps this honest is a browser pass that
 // enumerates every rendered interactive element and measures its own border, because a list of
 // control selectors would be a list someone has to keep complete.
+//
+// That pass was not sufficient on its own, and review found the hole. `.rnote` is `border: 0` until
+// `.has-note` is set, so the sixth control still on `--line` painted no border in any fixture and
+// could not be seen by a scan of what is rendered. It measured the same 1.29:1 and moved with the
+// other five. The pass now sets that class and reads all four border sides rather than the top, so
+// a left accent counts: 731 painted boundaries per theme across seven views, none below the floor.
+// A rule that paints only in a state no fixture reaches is the shape of the next such hole.
 export const PAIRS = [
   ['--text', '--bg', BODY, 'body text on the page'],
   ['--text', '--card', BODY, 'body text on a card'],
@@ -58,6 +65,7 @@ export const PAIRS = [
   ['--cb-line', '--card', LARGE, 'the boundary of an unchecked checkbox'],
   ['--cb-line', '--bg', LARGE, 'the boundary of an unchecked checkbox in a row on the page'],
   ['--track', '--card', LARGE, 'the unfilled part of a progress bar'],
+  ['--track', '--rail', LARGE, 'the unfilled part of the per-list progress bar in the rail'],
   ['--red', '--track', LARGE, 'the filled part of a progress bar against the unfilled part'],
   ['--warn', '--panel', LARGE, 'the border of the unreadable-data notice'],
 ];
@@ -152,22 +160,30 @@ export function checkAll(css) {
   ];
 }
 
-// Two non-text pairs sit below 3:1 and are recorded rather than fixed. BL-065 raised the other four.
+// Four non-text pairs sit below 3:1 and are recorded rather than fixed. BL-065 raised the other four.
 //
-// Both are `--track` against the card behind it, and the reason they stay is arithmetic rather than
-// reluctance. `--track` is the trough of a progress bar and the `--red` fill sits directly on it, so
-// the token has to answer to two floors at once. Colours clearing 3:1 against the card AND carrying
-// the fill at 3:1 do exist, but every one of them inverts the bar. In the dark theme each has a
-// relative luminance of at least 0.598, which is 3.6 times the fill's 0.166, so the empty part of
-// the bar would be brighter than the filled part. In the light theme each is at most 0.022, an
+// All four are `--track` against something behind it, and the reason they stay is arithmetic rather
+// than reluctance. `--track` is the trough of a progress bar and the `--red` fill sits directly on
+// it, so the token has to answer to two floors at once. Colours clearing 3:1 against the card AND
+// carrying the fill at 3:1 do exist, but every one of them inverts the bar. In the dark theme each
+// has a relative luminance of at least 0.598, which is 3.6 times the fill's 0.166, so the empty part
+// of the bar would be brighter than the filled part. In the light theme each is at most 0.022, an
 // eighth of the fill, so the trough would be near black on a white card. Either way the bar would
 // report progress backwards, which is a worse outcome for the reader than the recorded ratio.
 //
+// The bar renders on two surfaces, not one, and review found the second: `.pbar` sits on a card and
+// `.ri .bar` sits on the rail. Listing only the card is the same defect BL-065 fixed for `--line-2`
+// and `--cb-line`, and it hid a real degradation, because darkening the dark trough took it from
+// 1.47:1 to 1.30:1 against the rail with nothing recording the move. Both surfaces are listed now,
+// so the trade is on the record in both places rather than only where it was convenient.
+//
 // So the pair that actually carries the value is measured instead: `--red` on `--track` is in the
-// list above at the 3:1 floor and passes in both themes. The dark trough was darkened from #2a303c
-// to #232731 to get there, taking the fill from 2.72 to 3.07; the light theme already measured 3.67.
-// The bar is also never the only way to read progress, because the same numbers are stated as text
-// beside it, at `src/js/main.js:779` in the rail and `src/js/main.js:915` in the saved lists.
+// list above at the 3:1 floor and passes in both themes, which is the same pair the rail bar uses,
+// so the rail improved by exactly the amount the card bar did. The dark trough was darkened from
+// #2a303c to #232731 to get there, taking the fill from 2.72 to 3.07; the light theme already
+// measured 3.67. The bar is also never the only way to read progress, because the same numbers are
+// stated as text beside it, at `src/js/main.js:779` in the rail and `src/js/main.js:915` in the
+// saved lists.
 //
 // They are recorded rather than waived because a gate that quietly tolerates its own findings is not
 // a gate. The baseline is exact in both directions. A new pair below the floor fails, which is the
@@ -177,6 +193,8 @@ export function checkAll(css) {
 export const KNOWN = [
   'dark:--track:--card',
   'light:--track:--card',
+  'dark:--track:--rail',
+  'light:--track:--rail',
 ];
 
 export function unresolved(css) {

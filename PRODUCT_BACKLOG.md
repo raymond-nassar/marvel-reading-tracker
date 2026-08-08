@@ -809,9 +809,10 @@ list is a `.yours button`, and all five were bordered with `--line`, measured at
 theme and 1.27:1 in the light. `--line-2` bordered a hover state and a handful of placeholders. So
 raising `--line-2` alone would have satisfied the item as written and left almost every button in
 the app exactly as unreadable as before. The five control rules were moved onto `--line-2`, which
-now meets the floor, and `--line` stays as it was for the things that are not controls: the
-hairline around cards, images, panels and separators, and the static `.pill` and `.badge` labels.
-Nothing that is not a control changed colour.
+now meets the floor, and a sixth found later by review moved with them, the note control on a row.
+`--line` stays as it was for the things that are not controls: the hairline around cards, images,
+panels and separators, and the static `.pill` and `.badge` labels. Nothing that is not a control
+changed colour.
 
 The third task is not ticked, and it is not deferred either. It cannot be done. `--track` is the
 trough of a progress bar and the `--red` fill sits directly on it, so the token answers to two
@@ -831,17 +832,42 @@ read progress, because both bars state the same numbers as text beside them.
 `--line` is deliberately still not in the pair list, and that is a claim rather than an oversight.
 After this change it borders nothing interactive, so a floor on it would be inventing a
 requirement. What stops that decision rotting is not a list of control selectors, which would be a
-list someone has to keep complete, but a browser pass that enumerates every rendered interactive
-element and measures its own border against its own surroundings. It found 162 of them per theme
-across four views and no longer finds any below the floor. Reverting one rule to `--line` puts
-`button.quiet` back at 1.29:1, which is how that check was shown to be capable of failing.
+list someone has to keep complete.
 
-Verified: 467 tests, 2 new, and 9 of 9 mutations caught, including one for each of the four raised
-values and one for a pair left behind in `KNOWN`. 12 of 12 browser checks in Edge across both
-themes, with the row scan counting 31 painted boundary sites per theme so a check that found
-nothing could not pass quietly; that guard earned itself twice, once when the light pass silently
-scanned the wrong view and once when it never reached the rows at all. 4 of 4 interactive control
-checks, mutation-proved by reverting `.quiet`.
+Two checks hold it up instead, and it took review to find that the first was not enough on its own.
+A browser pass enumerates every rendered interactive element and measures its own border against
+its own surroundings, which covers what the app paints. But `.rnote` is `border: 0` until
+`.has-note` is set, so the note control painted nothing in any fixture, and it was the sixth control
+still bordered with `--line`, at the same 1.29:1 as the other five. A scan of what is rendered
+cannot see a rule that only paints in a state no fixture reaches. The note control moved onto
+`--line-2` with the rest, and the second check reads rules rather than pixels: it cross-references
+every rule that draws a border in `--line` against the classes the markup and the renderer actually
+put on a button, an input or a link, so a control bordered with the ungated token fails the tests
+whether or not anything on screen happens to be showing it.
+
+The browser pass was widened at the same time, from the top border to all four sides, because the
+missed rule was a left accent, and from four views to seven. It now measures 731 painted boundaries
+per theme and finds none below the floor. It also prints every distinct backdrop it measured
+against, which is what settled a second review question: no bordered control is ever drawn on the
+rail, so `--line-2` against `--rail` is not a pair that occurs and was not invented. Reverting one
+rule to `--line` puts `button.quiet` back at 1.29:1, which is how that check was shown to be capable
+of failing.
+
+Review found one more surface, and this one had degraded. The progress bar renders in two places,
+on a card in the reading hero and on the rail in the per-list bars, and only the card was measured.
+Darkening the dark trough therefore took it from 1.47:1 to 1.30:1 against the rail with nothing
+recording the move, which is the same defect this item fixed for `--line-2` and `--cb-line` two
+paragraphs above. Both surfaces are listed now, so `KNOWN` holds four entries rather than two and
+the trade is on the record in both places rather than only where it was convenient. The rail bar
+uses the same `--red` on `--track` pair as the card bar, so it gained the same 2.72 to 3.07.
+
+Verified: 468 tests, 3 new, and 13 of 13 mutations caught, including one for each of the four raised
+values, one for a pair left behind in `KNOWN`, one that puts the note control back on `--line`, and
+one for each half of the rail trough being unlisted or unrecorded. 12 of 12 browser checks in Edge
+across both themes, with the row scan counting 31 painted boundary sites per theme so a check that
+found nothing could not pass quietly; that guard earned itself twice, once when the light pass
+silently scanned the wrong view and once when it never reached the rows at all. 6 of 6 interactive
+control checks over 731 painted boundaries per theme, mutation-proved by reverting `.quiet`.
 
 **BL-067: Gate the switch and the primary button, which no pair measures**
 
@@ -2532,7 +2558,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2289-2292`.
+`PRODUCT_BACKLOG.md:2315-2318`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -2653,7 +2679,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3312-3313` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3338-3339` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -2663,11 +2689,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:164-166`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3332-3334`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3358-3360`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3154-3156` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3180-3182` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -2875,7 +2901,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:388-391` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:390-393` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:157-159` and
 `PRODUCT_BACKLOG.md:164-166` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
