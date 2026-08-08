@@ -9,11 +9,11 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Forty-two items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Forty-three items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
-BL-063, BL-065, BL-066, BL-067 and BL-068.
+BL-063, BL-065, BL-066, BL-067, BL-068 and BL-069.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
@@ -221,6 +221,8 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2860-2894 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | scripts/check-anchors.mjs:247 |
+| BL-072 | Delete the button class the stylesheet never defines | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Ready | src/index.html:150 |
+| BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Ready | scripts/check-anchors.mjs:116 |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:208 |
 | BL-058 | Keep focus on the home grid and the rail when their lists rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | absent: any capture of the focused control before importCurated disables it, read of addFromCatalog and renderRail |
@@ -230,7 +232,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | src/js/lib/readingFilters.js:25-48 |
 | BL-067 | Gate the switch and the primary button, which no pair measures | Debt | EP-08 | Leaves alone | 2 | 2 | 2 | 3 | 2.0 | none | Measured | Shipped | src/styles.css:393 |
-| BL-069 | Close the three accent boundaries the BL-067 review found and could not gate | Debt | EP-08 | Leaves alone | 2 | 1 | 2 | 3 | 1.67 | none | Measured | Ready | src/styles.css:290 |
+| BL-069 | Close the three accent boundaries the BL-067 review found and could not gate | Debt | EP-08 | Leaves alone | 2 | 1 | 2 | 3 | 1.67 | none | Measured | Shipped | src/styles.css:290 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Shipped | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
 | BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Shipped | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
 | BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Shipped | src/js/main.js:3107-3121 |
@@ -2137,7 +2139,7 @@ twice.
 
 BL-032 has since shipped, and the prediction held exactly: a second palette did void every figure
 above. What it did not do is repeat the measurement by hand. `scripts/check-palette.mjs` now
-measures 72 pairs across both palettes on every CI run, which is the durable answer to a comment
+measures 78 pairs across both palettes on every CI run, which is the durable answer to a comment
 warning that a number would need redoing. The judgement recorded above is what the gate could not
 supply and is why it was worth writing down.
 
@@ -2882,7 +2884,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2639-2642`.
+`PRODUCT_BACKLOG.md:2641-2644`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3159,19 +3161,74 @@ citations in the same document and scope resolve to one anchor while their claim
 materially, which is the exact shape of the BL-068 case. Whether that is worth the false-positive
 budget is the thing to settle when this is picked up.
 
+**BL-071: Bring the citations in code comments under the anchors gate**
+
+- [ ] Decide whether a code comment's citation is a claim the gate should own
+- [ ] If it is, widen the population past Markdown and re-bless, watching for a flood of new anchors
+- [ ] Prove it by moving a cited line and watching the gate catch a comment that names it
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of BL-069, which found four of them already wrong. The anchors gate enumerates its
+population with `git ls-files` and then keeps what ends in `.md`, at `scripts/check-anchors.mjs:116`.
+That filter is the whole of the scope decision, and it means a `path:line` written in a code comment
+is unprotected. BL-069 corrected four in `scripts/check-palette.mjs` that had drifted silently, all
+four pointing at code the gate itself has moved since the comments were written.
+
+The population is small and worth stating before anyone assumes otherwise. Counting every citation
+in tracked non-Markdown files gives 706, but 696 of those are inside `docs/anchors.lock.json`, which
+is the gate's own record and must not be gated by the gate. The real number is ten: nine in
+`scripts/check-palette.mjs` and one in `src/styles.css`. All ten resolve today, because BL-069 fixed
+the four that did not.
+
+Ten is small enough that this is a genuine decision rather than an obvious yes. The argument for is
+the one the gate was built on: a citation nobody checks is a citation that will be wrong, and four
+out of ten already were, which is a worse rate than the Markdown corpus has ever shown. The argument
+against is that the lock file would have to exclude itself by name, and the script argues in its own
+comment at `scripts/check-anchors.mjs:101-104` that an enumeration is exactly the defect it exists to
+catch. Whoever picks this up has to answer that, because "skip the lock file" is an enumeration of
+one. The likely shape of an answer is that the lock is excluded structurally, by being the gate's
+output rather than by being named, but that is a design to settle rather than a line to write.
+
+**BL-072: Delete the button class the stylesheet never defines**
+
+- [ ] Remove `btn-p` from the three places that write it, or define it if a primary button is wanted
+- [ ] Decide which, since the class name says an intent the stylesheet never carried out
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of BL-069, where it caused a wrong measurement before it was noticed. `.btn-p` is written
+at `src/index.html:150`, `src/js/main.js:1188` and `src/js/main.js:2647`, and the stylesheet defines
+no rule for it anywhere. Every button carrying it renders exactly as a plain `.btn`. The screenshots
+of the unreadable-data banner in `docs/UX_STUDY.md` are the proof: its two buttons differ by this
+class alone and are pixel-identical.
+
+The cost is not the dead bytes. It is that a reader working out what a control looks like reads the
+class list and believes it, which is what happened in BL-069: the banner's buttons were measured as
+though they carried a border, a boundary was reported at 2.90:1, and the report was wrong. A class
+that names an intent the stylesheet never carried out is worse than no class, because it reads as
+information.
+
+Which way to resolve it is a real question rather than a formality. Deleting it is the smaller
+change and matches what ships today. Defining it would make the download action in that banner look
+primary, which is arguably what the markup was reaching for, since downloading a copy is the action
+that must happen before starting fresh. That is a visible change to a recovery surface, so it is a
+product decision, and this repository's own rule is that recovery paths get reviewed hardest.
+
 **BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
-- [ ] Add red on the rail, naming every control that paints it rather than the first one found
-- [ ] Teach the gate to resolve a `color-mix` background, or record why it will not
-- [ ] Choose the dark green behind the read tick, or record the 2.30:1 as settled and why
-- [ ] Re-derive the printed pair count wherever it is stated
+- [x] Add red on the rail, naming every control that paints it rather than the first one found
+- [x] Teach the gate to resolve a `color-mix` background, or record why it will not
+- [x] Choose the dark green behind the read tick, or record the 2.30:1 as settled and why
+- [x] Re-derive the printed pair count wherever it is stated
 
 Constraint gate: checked 1 to 11, none breached.
 
 Filed out of the BL-067 review, which found that `--red` and `--on-accent` paint more surfaces than
 that item gated. All three clear the floor or are defensible where they do not, so this is coverage
 rather than a visible fault, and the reason for filing it is the reason BL-067 existed: an ungated
-boundary is one nobody will notice moving.
+boundary is one nobody will notice moving. Nothing on screen changes. Three boundaries that were
+unmeasured are now measured on every run, and the pair count goes from 72 to 78.
 
 **Red on the rail, three painters and not one.** The first draft of this block named only the skip
 link at `src/index.html:16`, which is the least of them: it is invisible until focused. The other
@@ -3181,31 +3238,56 @@ current destination, which the comment at `src/styles.css:283-284` names as part
 state. All three measure the same, 4.00 dark and 4.41 light, so nothing is mismeasured, but writing
 the reason string as "the skip link" would have gated a state indicator under the name of a
 transient link. That is the "named one painter, missed the others" pattern this whole item exists to
-close, and the draft reproduced it inside the item about it. One wrinkle to settle when it is picked
-up: the accent bar sits inside `.ri[aria-current]`, whose own background is a translucent tint over
-the rail, so the true surface is a shade off `--rail` in the same way the next paragraph describes.
+close, and the draft reproduced it inside the item about it. The draft's own closing wrinkle turned
+out to be the substance of the work: the accent bar does not sit on the rail. It sits inside
+`.ri[aria-current]`, whose background at `src/styles.css:286` is a translucent tint over the rail, so
+its true surface is a shade off `--rail` and reads 3.35 dark and 3.68 light rather than 4.00 and
+4.41. Measuring it against `--rail` would have overstated it by 0.65. It is therefore two pairs, the
+rail and the tinted item, not one.
 
-**The blocked row, which the gate cannot express.** Two buttons render inside a blocked row whose
-background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles.css:909`. The gate
-reads hex values out of the stylesheet and computes ratios from them, and there is no hex here to
-read: the value is a function of two other tokens that the browser resolves. Measured in Edge it
-comes out around 3.16 dark and 4.07 light, so it clears, but a figure this gate cannot recompute is
-a figure it cannot defend. Either the gate learns to evaluate the one `color-mix` form this
-stylesheet uses, which is a real change to `scripts/check-palette.mjs` rather than a line in a list,
-or the pair is recorded as deliberately unmeasured with the reason attached, in the way BL-065
-recorded the four it left below the floor. Deciding which is the work.
+**The blocked banner: the gate learned to resolve it.** Two buttons render inside a banner whose
+background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles.css:909`. The choice
+this block left open was between teaching the gate that form and recording the pair as deliberately
+unmeasured. Teaching it won, because the same mechanism was needed anyway for the accent bar above,
+and a gate with two unmeasured holes in it is a gate that will grow a third. `SURFACES` at
+`scripts/check-palette.mjs:137-150` names a derived background as a fraction of one token over
+another, and `resolveSurface` at `scripts/check-palette.mjs:173-184` computes it. One mechanism
+covers both CSS forms because they are the same arithmetic: laying a translucent layer over an
+opaque backdrop and mixing two opaque colours in sRGB are both a straight interpolation of the gamma
+encoded channels. The tokens are still read out of the stylesheet, so changing `--rail`, `--panel` or
+`--warn` still moves the number. It was checked against Edge before it was trusted, and the four
+composited values agree with the browser to the byte, which is why the test pins them. The banner
+measures 3.16 dark and 4.07 light.
 
-**The read tick, which is gated already and needs a colour decision instead.** The white tick inside
+**A wrong alarm, and what raised it.** Working out the banner, the two buttons were first read as
+carrying a `--line-2` border, which computes to 2.90 dark and 2.73 light and looked like a real
+failure. It is not one. The `.btn-p` class on the first of them at `src/index.html:150` does not
+exist anywhere in the stylesheet, so both buttons are plain `.btn`, which is a red fill with a
+transparent border. `--line-2` paints nothing there. The screenshots in `docs/UX_STUDY.md` show it:
+two solid red buttons, identical to each other, no outline on either. The lesson is the cheap one,
+that a border token in a rule is not a border on screen until the rule matches, and it cost a
+measurement round.
+
+**The read tick, recorded as settled, on arithmetic the block did not have.** The white tick inside
 a checked read checkbox is `--on-accent` on `--green`, at 2.30:1 in the dark theme and 6.48:1 in the
-light. BL-067 added the pair and recorded the dark half in `KNOWN` rather than leaving it
-unmeasured, so unlike the two above this one is on the record and printed on every CI run. What is
-left is the choice. Nothing about the arithmetic forces 2.30:1, unlike the progress trough: a darker
-green would clear it, and the cost is that the fill gets heavier. The case for leaving it is that
-the tick is not what tells a reader the box is checked. The fill does, at 7.58:1 against a card and
-8.22:1 against the page in the dark theme, and the state is in words as well, since the button's
-label at `src/js/main.js:1919` reads "Mark X as unread" exactly when it is checked. That is the same
-judgement BL-049 reached about the badge borders. Recording it as settled is a legitimate outcome
-here; leaving it unrecorded is not.
+light. This block put the choice as open and observed that "nothing about the arithmetic forces
+2.30:1, unlike the progress trough". That is true, and it is also not the whole picture. An
+exhaustive search over all 16,777,216 sRGB colours says the trough has 0 feasible greens and the
+tick has 2,153,393, so the two really are different, but it also says what the feasible ones cost.
+White on green at 3:1 caps the green's luminance at 0.3000, and the shipped `#43c088` sits at 0.4067.
+Every feasible green therefore reads at most 6.30:1 against the page and 5.81:1 against a card,
+against 8.22 and 7.58 today, so clearing the tick costs at least 1.92 on the fill. The nearest
+feasible green lands on exactly 3.00 with no margin at all. That trade is the wrong way round: it
+spends contrast on the fill, which is what tells a reader the box is checked, to buy contrast on a
+glyph that no one reads, since the button's label at `src/js/main.js:1919` reads "Mark X as unread"
+exactly when it is checked and that is what a screen reader announces. Same judgement as BL-049 on
+the badge borders. Recorded as settled, with the numbers, in `KNOWN`.
+
+**Two follow-ups filed rather than folded in.** Four `path:line` citations in the comments of
+`scripts/check-palette.mjs` had silently drifted, because the anchors gate reads tracked Markdown
+and nothing else, so a citation in a code comment is unprotected. They were corrected here as part
+of touching the file; the general question is BL-071. The `.btn-p` class that raised the false alarm
+above is dead markup and is BL-072.
 
 **BL-055: Record the drift in the audited figures instead of letting them go stale**
 
@@ -3218,7 +3300,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:3885-3886` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:3967-3968` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3228,17 +3310,17 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3906-3908`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:3988-3990`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3719-3721` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:3801-3803` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
 which is the treatment the as-is journey map in the UX study already gets. That precedent is the
 weaker of the two, because the journey map is stamped as a hypothesis in its own text at
-`docs/UX_STUDY.md:801-804` while this paragraph carries no such marker and reads in the present
+`docs/UX_STUDY.md:815-818` while this paragraph carries no such marker and reads in the present
 tense, so a reader who never opens this block has no way to tell it is frozen. Marking it in place
 would mean editing the snapshot, which is the thing being avoided; the record is here instead.
 
@@ -3440,7 +3522,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:478-481` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:502-505` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:158-160` and
 `PRODUCT_BACKLOG.md:165-167` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -3974,15 +4056,15 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and eighteen
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and twenty-two
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 44 rows now. The ranks below are
+how it reaches 48 rows now. The ranks below are
 positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks eighteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 18 of 46.
+- Calculated: WSJF 3.67, rank 18 of 48.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -4001,10 +4083,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks fortieth
+### Case 2: BL-007 is labelled P1 but ranks forty-second
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 40 of 46, below thirty-six unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 42 of 48, below thirty-eight unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -4060,9 +4142,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 25 of 46. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 19 of 46. Mid-table.
-- BL-017, P2, rank 45 of 46. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 25 of 48. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 19 of 48. Mid-table.
+- BL-017, P2, rank 47 of 48. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import { THEMES, DEFAULT_THEME, themeAttribute, normaliseTheme } from '../src/js/lib/theme.js';
-import { PAIRS, KNOWN, parseHex, luminance, ratio, tokensIn, checkAll, unresolved, passingReport } from '../scripts/check-palette.mjs';
+import { PAIRS, KNOWN, SURFACES, parseHex, parseColour, luminance, ratio, tokensIn, checkAll, unresolved, passingReport, resolveSurface } from '../scripts/check-palette.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (rel) => readFileSync(join(ROOT, ...rel.split('/')), 'utf8');
@@ -149,10 +149,64 @@ test('every measured pair names a real place it is rendered', () => {
   // combination the app never shows is not a floor.
   for (const [fg, bg, floor, where] of PAIRS) {
     assert.match(fg, /^--/);
-    assert.match(bg, /^--/);
+    // A background is a token or one of the declared surfaces, and nothing else. Without this the
+    // background field would accept any string, and a typo would become a surface that silently
+    // fails to resolve rather than a pair that is measured.
+    assert.ok(bg.startsWith('--') || Object.hasOwn(SURFACES, bg), `${fg} on ${bg} names neither a token nor a declared surface`);
     assert.ok(floor === 4.5 || floor === 3, `${fg} on ${bg} has an unexpected floor`);
     assert.ok(where && where.length > 8, `${fg} on ${bg} does not say where it is rendered`);
   }
+});
+
+test('a declared surface resolves to what the browser resolves it to', () => {
+  // The two surfaces this file computes are the two it cannot read, so agreeing with itself proves
+  // nothing. These four values came out of `getComputedStyle` in Edge: the banner resolves to
+  // `color(srgb 0.171137 0.137098 0.116863)`, and the selected rail item was composited by walking
+  // its ancestor chain and laying each translucent layer over the one behind it. Pinning them is
+  // what stops the arithmetic being quietly replaced by something that merely passes.
+  const expected = {
+    'the selected rail item': { dark: '#1f2023', light: '#dfe0e4' },
+    'the unreadable-data banner': { dark: '#2c231e', light: '#f1eae1' },
+  };
+  const hex = (c) => `#${c.map((v) => v.toString(16).padStart(2, '0')).join('')}`;
+  for (const [selector, theme] of [[DARK, 'dark'], [LIGHT_ATTR, 'light']]) {
+    const tokens = tokensIn(css, selector);
+    for (const [name, byTheme] of Object.entries(expected)) {
+      const { colour, message } = resolveSurface(name, tokens);
+      assert.ok(colour, `${name} did not resolve in the ${theme} theme: ${message}`);
+      assert.equal(hex(colour), byTheme[theme], `${name} resolves differently from the browser in the ${theme} theme`);
+    }
+  }
+});
+
+test('every declared surface is one a pair actually renders on', () => {
+  // The same rule the pair list lives by. A surface nothing is drawn on is a computation nobody
+  // checks, and it would keep passing after the rule that painted it was deleted.
+  for (const name of Object.keys(SURFACES)) {
+    assert.ok(PAIRS.some(([, bg]) => bg === name), `${name} is declared but no pair is rendered on it`);
+  }
+});
+
+test('a surface built from a missing token is a finding, not a skip', () => {
+  // The same rule a missing token follows. A surface that cannot be resolved has to fail loudly,
+  // because the alternative is a pair that stops being measured with nobody deciding that it should.
+  // Proved by removing the token rather than by asserting the code path exists.
+  const without = css.replace(/--tint-base:\s*[^;]+;/g, '');
+  const findings = checkAll(without).filter((f) => /cannot be resolved/.test(f.message));
+  assert.ok(findings.length > 0, 'removing --tint-base left every pair on the tinted surface silently unmeasured');
+  assert.ok(findings.every((f) => f.bgName === 'the selected rail item'), 'the finding names the wrong surface');
+});
+
+test('a bare rgb triple parses as a colour, and an out-of-range one does not', () => {
+  // `--tint-base` is the only token declared this way, because it is only ever used inside
+  // `rgb(... / n%)`. Accepting it is what lets a tinted surface resolve; accepting `300 0 0` would
+  // let a typo resolve to a colour no browser would paint.
+  assert.deepEqual(parseColour('255 255 255'), [255, 255, 255]);
+  assert.deepEqual(parseColour('0 0 0'), [0, 0, 0]);
+  assert.deepEqual(parseColour('#d43333'), [212, 51, 51]);
+  assert.equal(parseColour('300 0 0'), null);
+  assert.equal(parseColour('255 255'), null);
+  assert.equal(parseColour('not a colour'), null);
 });
 
 test('the recorded below-floor pairs are exactly the pairs that measure below it', () => {
@@ -231,11 +285,16 @@ test('a control boundary is measured against every surface it is drawn on, not j
   // force the question and could not, because it said nothing about the two tokens the change was
   // about. A foreground that gains a surface without this line moving is the defect, so the line
   // moves with it deliberately.
+  // `--red` gained three more surfaces in BL-069, and two of them are not tokens. That is the point
+  // of listing them here: the rail carries the brand mark and the focused skip link, the selected
+  // rail item carries the accent bar that marks the current destination, and the unreadable-data
+  // banner carries both of its buttons. None of the three was measured anywhere before, so `--red`
+  // could have gone invisible on any of them without this file moving.
   const surfaces = (fg) => PAIRS.filter((p) => p[0] === fg).map((p) => p[1]).sort();
   assert.deepEqual(surfaces('--line-2'), ['--bg', '--card', '--card-2']);
   assert.deepEqual(surfaces('--cb-line'), ['--bg', '--card']);
   assert.deepEqual(surfaces('--track'), ['--card', '--rail']);
-  assert.deepEqual(surfaces('--red'), ['--bg', '--card', '--card-2', '--track']);
+  assert.deepEqual(surfaces('--red'), ['--bg', '--card', '--card-2', '--rail', '--track', 'the selected rail item', 'the unreadable-data banner']);
   assert.deepEqual(surfaces('--track-2'), ['--bg']);
   assert.deepEqual(surfaces('--on-accent'), ['--green', '--red', '--track-2']);
 });

@@ -102,13 +102,95 @@ export const PAIRS = [
   // `--green` and it carries no foreground at all, since `.railed .pill` sets `color: transparent`
   // at `src/styles.css:342-343`, so this is the only pair `--green` backs.
   ['--on-accent', '--green', LARGE, 'the tick inside a checked read checkbox'],
+  // BL-069, out of the BL-067 review, which found `--red` painting three surfaces no pair reached.
+  // Each was measured in Edge by hit testing what is actually behind the element rather than by
+  // assuming, and all three clear the floor, so this is coverage rather than a repair.
+  //
+  // The rail entry names three painters and not one. The first draft named only the skip link,
+  // which is the least of them because it is invisible until focused, and would have gated a
+  // permanent state indicator under the name of a transient link. `.brand .mark` at
+  // `src/styles.css:253` is the red square at the top of the rail and `.ri[aria-current]::before` at
+  // `src/styles.css:290` is the bar marking the current destination. The hit test settled where the
+  // skip link actually lands: absolutely positioned at the top left with `z-index: 100`, it comes
+  // down on the rail rather than on the page, so all three share one surface at 4.00 and 4.41.
+  ['--red', '--rail', LARGE, 'the brand mark, and the skip link when focused, both on the rail'],
+  ['--red', 'the selected rail item', LARGE, 'the accent bar marking the current destination'],
+  ['--red', 'the unreadable-data banner', LARGE, 'the fill of both buttons in the blocked banner'],
 ];
+
+// Two of the surfaces this stylesheet paints on are not tokens and have no hex value to read, so a
+// pair rendered on either could not be listed at all and both went ungated. That is the state this
+// list exists to prevent, and the argument for computing them here rather than recording a gap: an
+// unmeasurable boundary is one nobody can notice moving.
+//
+// Both are the same arithmetic, which is the reason one mechanism covers two CSS forms. Laying a
+// translucent layer over an opaque backdrop and mixing two opaque colours in sRGB are both a
+// straight interpolation of the gamma encoded channels, so each is a fraction of one colour plus
+// the remainder of another. The tokens are still read out of the stylesheet, so changing `--rail`,
+// `--panel` or `--warn` still moves the number.
+//
+// Checked against Edge before it was trusted, because arithmetic that agrees with itself proves
+// nothing. `getComputedStyle` resolves the banner to `color(srgb 0.171137 0.137098 0.116863)`,
+// which is #2c231e, and the selected rail item composites to #1f2023; in the light theme they are
+// #f1eae1 and #dfe0e4. All four are what this produces, so the gate and the browser agree to the
+// byte. The test below pins those four values for that reason.
+export const SURFACES = {
+  'the selected rail item': {
+    layer: '--tint-base',
+    fraction: 0.08,
+    on: '--rail',
+    css: 'rgb(var(--tint-base) / 8%) over the rail, at src/styles.css:286',
+  },
+  'the unreadable-data banner': {
+    layer: '--warn',
+    fraction: 0.12,
+    on: '--panel',
+    css: 'color-mix(in srgb, var(--warn) 12%, var(--panel)), at src/styles.css:909',
+  },
+};
 
 export function parseHex(hex) {
   let h = hex.trim().replace(/^#/, '');
   if (h.length === 3) h = [...h].map((c) => c + c).join('');
   if (!/^[0-9a-fA-F]{6}$/.test(h)) return null;
   return [0, 1, 2].map((i) => parseInt(h.slice(i * 2, i * 2 + 2), 16));
+}
+
+// `--tint-base` is declared as a bare `r g b` triple rather than a hex colour, because it is only
+// ever used inside `rgb(... / n%)` where an alpha is appended. A hex parser alone cannot read it,
+// and reading it is what lets a tinted surface be resolved.
+export function parseColour(value) {
+  const hex = parseHex(value);
+  if (hex) return hex;
+  const triple = value.trim().match(/^(\d{1,3})\s+(\d{1,3})\s+(\d{1,3})$/);
+  if (!triple) return null;
+  const rgb = [1, 2, 3].map((i) => Number(triple[i]));
+  return rgb.every((v) => v <= 255) ? rgb : null;
+}
+
+// A fraction of one colour laid over the remainder of another, which is what the browser does for
+// both an alpha composite onto an opaque backdrop and an sRGB colour mix.
+export function resolveSurface(name, tokens) {
+  const surface = SURFACES[name];
+  if (!surface) return { message: `${name} is not a surface this file knows how to resolve` };
+  const layer = parseColour(tokens.get(surface.layer) ?? '');
+  const base = parseColour(tokens.get(surface.on) ?? '');
+  // A surface built from a token that is missing or unreadable is a finding rather than a skip, for
+  // the same reason a missing token is: silently passing over one is how a pair stops being checked
+  // without anybody deciding that it should.
+  if (!layer) return { message: `${surface.layer} is not defined as a colour, so ${name} cannot be resolved` };
+  if (!base) return { message: `${surface.on} is not defined as a colour, so ${name} cannot be resolved` };
+  return { colour: layer.map((v, i) => Math.round(v * surface.fraction + base[i] * (1 - surface.fraction))) };
+}
+
+// A background is either a token or one of the surfaces above. Returning the same shape for both
+// keeps the caller from having to know which it asked for.
+function background(name, tokens) {
+  if (!name.startsWith('--')) return resolveSurface(name, tokens);
+  const raw = tokens.get(name);
+  if (!raw) return { message: `${name} is not defined` };
+  const colour = parseHex(raw);
+  return colour ? { colour } : { message: `${name} is not a plain hex colour, so it cannot be measured` };
 }
 
 // WCAG relative luminance. The 0.03928 knee and the 2.4 exponent are the specification's, not a
@@ -160,20 +242,23 @@ export function check(css, selector, themeName) {
   const findings = [];
   for (const [fgName, bgName, floor, where] of PAIRS) {
     const fgRaw = tokens.get(fgName);
-    const bgRaw = tokens.get(bgName);
     // A missing token is a finding rather than a skip. Silently passing over one is how a pair
     // stops being checked without anybody deciding that it should.
-    if (!fgRaw || !bgRaw) {
-      findings.push({ themeName, fgName, bgName, message: `${!fgRaw ? fgName : bgName} is not defined for the ${themeName} theme` });
+    if (!fgRaw) {
+      findings.push({ themeName, fgName, bgName, message: `${fgName} is not defined for the ${themeName} theme` });
       continue;
     }
     const fg = parseHex(fgRaw);
-    const bg = parseHex(bgRaw);
-    if (!fg || !bg) {
-      findings.push({ themeName, fgName, bgName, message: `${!fg ? fgName : bgName} is not a plain hex colour, so it cannot be measured` });
+    if (!fg) {
+      findings.push({ themeName, fgName, bgName, message: `${fgName} is not a plain hex colour, so it cannot be measured` });
       continue;
     }
-    const r = ratio(fg, bg);
+    const bgResult = background(bgName, tokens);
+    if (!bgResult.colour) {
+      findings.push({ themeName, fgName, bgName, message: `${bgResult.message} for the ${themeName} theme` });
+      continue;
+    }
+    const r = ratio(fg, bgResult.colour);
     if (r < floor) {
       findings.push({
         themeName,
@@ -217,8 +302,14 @@ export function checkAll(css) {
 // so the rail improved by exactly the amount the card bar did. The dark trough was darkened from
 // #2a303c to #232731 to get there, taking the fill from 2.72 to 3.07; the light theme already
 // measured 3.67. The bar is also never the only way to read progress, because the same numbers are
-// stated as text beside it, at `src/js/main.js:779` in the rail and `src/js/main.js:915` in the
+// stated as text beside it, at `src/js/main.js:854` in the rail and `src/js/main.js:990` in the
 // saved lists.
+//
+// Those two citations, and the two in the fifth entry below, were all four lines out of date when
+// BL-069 checked them. Nothing gates a `path:line` written in a code comment: the anchors gate
+// reads tracked Markdown only, so a citation here drifts silently every time the file it names
+// changes. They are corrected rather than removed, and the general problem is filed rather than
+// solved here.
 //
 // They are recorded rather than waived because a gate that quietly tolerates its own findings is not
 // a gate. The baseline is exact in both directions. A new pair below the floor fails, which is the
@@ -232,22 +323,37 @@ export const KNOWN = [
   'light:--track:--rail',
   // The fifth is a different case from the four above and is recorded for a different reason. The
   // white tick inside a checked read checkbox is 2.30:1 on the dark `--green` fill, and 6.48:1 on
-  // the light one, so only the dark theme is below the floor. Unlike the trough, nothing about the
-  // arithmetic forces it: a darker green would clear it. It is recorded rather than fixed because
-  // the tick is not what tells a reader the box is checked. The fill does, and the fill is
-  // emphatic, at 7.58:1 against a card and 8.22:1 against the page in the dark theme. The state is
-  // also carried in words, since the button's own label at `src/js/main.js:1854` reads "Mark X as
-  // unread" exactly when it is checked, and `aria-pressed` at `:1853` carries it too. So the tick
-  // is reinforcement drawn on an already unmistakable fill, which is the same judgement BL-049
-  // reached about the badge borders and the same one BL-067 reached about the switch graphic.
-  // Choosing the green is BL-069's, and until it does this line is what keeps the number visible.
+  // the light one, so only the dark theme is below the floor.
+  //
+  // BL-069 was the item that had to choose, and it chose to leave it. The choice is arithmetic
+  // rather than preference, and the arithmetic is not the trough's. A trough clearing the card, the
+  // rail and its own fill while staying darker than that fill does not exist: a search of all
+  // 16,777,216 sRGB colours returns none. A green clearing all three of its floors does exist, and
+  // 2,153,393 of them do, so this one was a genuine choice.
+  //
+  // What decided it is what the choice costs. White on green reaching 3:1 caps the green's relative
+  // luminance at 0.3000, and the shipped green is at 0.4067. Every green under that cap reads at
+  // most 6.30:1 on the page and 5.81:1 on a card, against 8.22:1 and 7.58:1 today, so clearing the
+  // tick costs the available badge at least 1.92 of its ratio. The nearest feasible green to the
+  // shipped one, #3fa684, lands exactly on 3.00:1 with no margin at all.
+  //
+  // That is a trade of contrast on text for contrast on a glyph, and the glyph is the side that
+  // carries nothing. The badge is language a reader has to read. The tick is not read by anybody:
+  // the button takes its accessible name from the `aria-label` at `src/js/main.js:1919`, which
+  // replaces the glyph in the name computation, and `aria-pressed` at `:1918` carries the state
+  // besides. The fill already says the box is checked, emphatically, at 7.58:1 against a card and
+  // 8.22:1 against the page. Taking 1.92 of ratio away from words that are read, to give it to a
+  // symbol that is not, is a worse outcome for the reader who needs the contrast most.
+  //
+  // So the tick is reinforcement drawn on an already unmistakable fill, which is the same judgement
+  // BL-049 reached about the badge borders and BL-067 about the switch graphic. This line is what
+  // keeps the number visible, and the figures above are what a later change has to argue against
+  // rather than reopen from nothing.
   //
   // The classification is what makes this entry eligible at all, and it deserves stating rather
   // than assuming, because the test below rejects any recorded pair carrying the 4.5:1 text floor.
   // WCAG scopes text to characters that express something in human language. A tick is a symbol
-  // that happens to arrive as a font glyph, and here it is never language to anybody: the button
-  // takes its accessible name from the `aria-label` at `src/js/main.js:1854`, which replaces the
-  // glyph in the name computation, so no assistive technology ever reads it. It is a state
+  // that happens to arrive as a font glyph, and here it is never language to anybody. It is a state
   // indicator drawn on a control, so the floor is the 3:1 of 1.4.11 and not the 4.5:1 of 1.4.3.
   // If that reading is ever overturned, this entry is not eligible and the green has to change.
   'dark:--on-accent:--green',
@@ -274,7 +380,7 @@ function main() {
       console.log(`\n${themeName}`);
       for (const [fgName, bgName, floor] of PAIRS) {
         const fg = parseHex(tokens.get(fgName) || '');
-        const bg = parseHex(tokens.get(bgName) || '');
+        const bg = background(bgName, tokens).colour ?? null;
         const r = fg && bg ? ratio(fg, bg) : null;
         const mark = r === null ? '  ?' : r < floor ? 'FAIL' : '  ok';
         console.log(`  ${mark}  ${(r === null ? '     ' : r.toFixed(2).padStart(5))}  (${floor})  ${fgName} on ${bgName}`);
