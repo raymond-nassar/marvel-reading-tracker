@@ -120,6 +120,28 @@ quote in a bug report.
 
 ### Changed
 
+- **Three parts of the app that talk to the browser now have tests, where before they had none.**
+  These are the piece that remembers downloaded issue details so the app does not fetch them twice,
+  the piece that fills in issue details in the background while you read, and the piece that puts
+  the app's own question boxes on screen in place of the browser's. All three were untested because
+  testing them normally means a real browser; they are covered now by standing in fakes for the two
+  browser features they use, so they run in the ordinary test run with nothing new installed. Forty
+  tests were added, taking the suite from 334 to 374.
+
+  Every one of the forty was then checked by deliberately breaking the app in twenty-one different
+  ways, one at a time, and confirming the tests noticed. That found three problems, and all three
+  were in the new tests rather than in the app. Two tests had been quietly covering the same thing
+  twice while leaving a real safeguard unchecked, so a genuine bug slipped past them. Three of the
+  deliberate breakages made the test run hang forever instead of failing, which on the build server
+  would have meant hours of waiting and no explanation; the tests now give up after two seconds and
+  report the failure. And one test only looked like it was working: it checked the app's saved data
+  was unchanged, but the fault it was aimed at leaves the data alone and instead saves it again for
+  no reason, so it now counts the saves. Each was fixed and re-checked before this was called done.
+
+  The fourth part of the app named in this work, the large file that draws the screen, is not covered
+  and could not be. It cannot even be loaded outside a browser, so there is nothing for a test to
+  take hold of. That is recorded as its own piece of work rather than quietly dropped.
+
 - **Two small pieces of on-screen wording were rewritten.** Hovering a list in the sidebar used to
   show its name and progress joined by a long dash; a colon now does that job, which reads as the
   label and value it always was. The button under each catalog list used to repeat the issue count
