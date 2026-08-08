@@ -767,6 +767,13 @@ function applyRoute(route, { focus, filterIfAbsent }) {
   // A traversal cannot span a navigation, and Back is a navigation. Discarded rather than committed,
   // because the address this route describes is the authoritative one and writing the traversal's
   // would fight it.
+  //
+  // Above showView, and that is the whole of it. Below the trailing sync, the run would still be open
+  // when that sync ran, so it would format the address from filterRunBase and leave the address
+  // claiming a filter the rows are not showing. Measured on a modelled stack: pending in force,
+  // ArrowRight once, then Alt+Left leaves the address saying pending over rows showing all, and puts
+  // the same address in two adjacent entries, which is the dead Back this whole design exists to
+  // close.
   endFilterRun({ commit: false });
   showView(route.view, { focus });
 }

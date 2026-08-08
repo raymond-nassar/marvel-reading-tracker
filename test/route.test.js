@@ -191,11 +191,21 @@ test('main.js writes the hash passively with replaceState, not by assignment', (
 
 // Choosing a filter is the deliberate act this whole scheme exists for, so it has to push. A
 // replace here would leave Back unable to undo a filter change, which is the task BL-037 left open.
-test('main.js pushes when a filter is chosen, so Back can undo it', () => {
+//
+// The order of the three statements is the assertion, not their presence. Committing after setFilter
+// rather than before it formats the traversal's entry from the filter that is replacing it, so it
+// writes what the push below was going to write, and that push then matches the address already
+// showing and writes nothing. The traversal's result is not misplaced, it is never recorded at all,
+// and the path that reaches this is a click carrying no pointerdown, which is what assistive
+// technology produces and the only reason the commit is here.
+test('main.js commits, then sets, then pushes when a filter is chosen', () => {
   const main = read('src/js/main.js');
   const handler = main.slice(main.indexOf("radio.addEventListener('change'"), main.indexOf("const group = $('#reading-filters')"));
-  has(handler, /setFilter\(e\.target\.value\);/, 'a filter radio handler that sets the filter');
-  has(handler, /syncHash\(\{ push: true \}\);/, 'and then pushes');
+  has(
+    handler,
+    /endFilterRun\(\{ commit: true \}\);[\s\S]*?setFilter\(e\.target\.value\);[\s\S]*?syncHash\(\{ push: true \}\);/,
+    'the else branch committing any open traversal before it adopts the new filter and pushes',
+  );
 });
 
 // Arrow keys move a radio group one stop at a time and fire change at every stop, so pushing on
@@ -251,10 +261,21 @@ test('ending a traversal writes one entry when it commits and none when it does 
 
 // Back is a navigation and a traversal cannot span one. The landing address is authoritative, so the
 // traversal is discarded rather than committed: committing would write over the address Back chose.
-test('applyRoute discards any open traversal', () => {
+//
+// Position is the assertion here too. Moved below showView, the run is still open when showView's
+// trailing sync runs, so that sync formats from filterRunBase and the address is left claiming a
+// filter the rows are not showing. Modelled sequence: pending in force, one ArrowRight, then
+// Alt+Left, which reaches applyRoute with the run genuinely open. It leaves a persistent
+// address-versus-rows disagreement and two adjacent identical entries, which is the dead Back this
+// design exists to close.
+test('applyRoute discards any open traversal, and does it before showView', () => {
   const main = read('src/js/main.js');
   const body = main.slice(main.indexOf('function applyRoute'), main.indexOf('function showView'));
-  has(body, /endFilterRun\(\{ commit: false \}\);/, 'applyRoute discarding the run');
+  has(
+    body,
+    /setFilter\([\s\S]*?endFilterRun\(\{ commit: false \}\);[\s\S]*?showView\(route\.view/,
+    'applyRoute discarding the run after setFilter and before showView',
+  );
 });
 
 // `store.state.lists` is a plain object, so a bare lookup answers `__proto__`, `constructor` and
