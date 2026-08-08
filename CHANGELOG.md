@@ -276,6 +276,30 @@ quote in a bug report.
 
 ### Changed
 
+- **The automatic contrast check now covers three more places, including two it previously could not
+  work out at all.** Nothing on screen changes. The app has a check that runs on every build and
+  measures how well each colour stands out against whatever is behind it, and three red things were
+  not being measured: the red square beside "Reading Tracker" at the top of the sidebar, the red bar
+  that marks which sidebar item you are on, and the two buttons in the warning that appears if your
+  saved data cannot be read. All three are comfortably readable today. The reason for adding them is
+  that a colour nobody measures is a colour that can quietly get worse, which is the whole point of
+  having the check.
+
+  Two of the three sit on backgrounds the check could not previously calculate, because they are not
+  a plain colour written down anywhere; they are one colour blended into another, and only the
+  browser worked out the result. The check now does that arithmetic itself, and its answers were
+  compared against a real browser before they were trusted. They agree exactly. That also caught a
+  mistake in the obvious shortcut: the bar marking the selected sidebar item is not sitting on the
+  sidebar, it is sitting on the slightly lighter panel behind the selected item, and measuring it
+  against the sidebar would have overstated how well it stands out.
+
+  One thing was deliberately left as it is. The white tick inside a checked "read" box stands out
+  less against its green than the guideline asks for. Every green that would fix it makes the green
+  itself worse against the page, by a wide margin, and the green fill is what actually tells you the
+  box is checked, along with the button's own label which reads "Mark X as unread" whenever it is
+  ticked. Trading something you read for something you do not is the wrong way round, so the number
+  is recorded as a deliberate decision rather than left looking like an oversight.
+
 - **Marking an issue read is now about seven times faster on a long reading order, in the state you
   meet it in.** Ticking one issue in a 219 issue order used to rebuild all 219 rows to record the
   one that changed, which took most of a frame and could feel like a stutter on a slower machine. It
