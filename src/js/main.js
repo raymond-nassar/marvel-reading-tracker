@@ -28,6 +28,7 @@ import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
 import { shortcutAllowed } from './lib/shortcuts.js';
 import { READING_FILTERS, DEFAULT_FILTER, matchesReadingFilter } from './lib/readingFilters.js';
+import { DEFAULT_THEME, themeAttribute, normaliseTheme } from './lib/theme.js';
 import { askConfirm, askText, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
@@ -371,6 +372,10 @@ function loadSettings() {
     return {
       apiBase: ok ? stored : DEFAULT_BASE,
       covers: raw.covers !== false,
+      // An unknown value falls back to following the system rather than to a fixed theme, so a
+      // settings file from a future build that adds a theme degrades to the reader's own
+      // preference instead of overriding it.
+      theme: normaliseTheme(raw.theme),
       // Not checked against the filters that exist here, because that is a question about the
       // document rather than about storage. wireReading() answers it and writes the answer back,
       // which is why a value of the wrong type is passed through rather than coerced: coercing it
@@ -379,7 +384,7 @@ function loadSettings() {
       rejectedApiBase: ok ? null : stored,
     };
   } catch {
-    return { apiBase: DEFAULT_BASE, covers: true, filter: 'all', rejectedApiBase: null };
+    return { apiBase: DEFAULT_BASE, covers: true, theme: DEFAULT_THEME, filter: 'all', rejectedApiBase: null };
   }
 }
 
@@ -394,7 +399,7 @@ function saveSettings() {
   // so there would be nothing left on screen holding the old value.
   const apiBase = settings.rejectedApiBase ?? settings.apiBase;
   try {
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, filter: settings.filter }));
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, theme: settings.theme, filter: settings.filter }));
   } catch { /* non-fatal */ }
 }
 
@@ -474,6 +479,41 @@ function setCovers(on) {
   renderReading();
   renderHome();
   announce(settings.covers ? 'Cover art on.' : 'Cover art off. Covers are shown as text tiles.');
+}
+
+// ------------------------------------------------------------------ theme
+
+function applyThemeSetting() {
+  const attr = themeAttribute(settings.theme);
+  if (attr) document.documentElement.setAttribute('data-theme', attr);
+  else document.documentElement.removeAttribute('data-theme');
+  // The meta tag tells the browser what to paint the scrollbars and form controls before any CSS
+  // applies. Left saying "dark" it contradicts a light page for the first frame.
+  const meta = document.querySelector('meta[name="color-scheme"]');
+  if (meta) meta.setAttribute('content', attr ?? 'dark light');
+  const opt = $('#opt-theme');
+  if (opt) opt.value = settings.theme;
+}
+
+function setTheme(next) {
+  settings.theme = normaliseTheme(next);
+  saveSettings();
+  applyThemeSetting();
+  announce(
+    settings.theme === 'system'
+      ? 'Theme follows your system setting.'
+      : `Theme set to ${settings.theme}.`,
+  );
+}
+
+// A reader on 'system' who changes their system setting should see the page follow without a
+// reload. matchMedia fires only while the preference is being followed; on an explicit choice the
+// attribute already wins, so nothing needs doing.
+function watchSystemTheme() {
+  if (typeof window.matchMedia !== 'function') return;
+  const mq = window.matchMedia('(prefers-color-scheme: light)');
+  const onChange = () => { if (settings.theme === 'system') applyThemeSetting(); };
+  if (typeof mq.addEventListener === 'function') mq.addEventListener('change', onChange);
 }
 
 // ------------------------------------------------------------------ sidebar
@@ -2542,6 +2582,7 @@ function exportMarkdown() {
 function wireData() {
   $('#api-base').value = settings.apiBase;
   $('#opt-covers').addEventListener('change', (e) => setCovers(e.target.checked));
+  $('#opt-theme').addEventListener('change', (e) => setTheme(e.target.value));
 
   $('#btn-export-json').addEventListener('click', () => {
     download('marvel-reading-tracker-backup.json', JSON.stringify(exportBackup(store.state), null, 2), 'application/json');
@@ -2710,6 +2751,8 @@ setInterval(renderQueue, 1000);
 // function declarations do.
 store.load();
 applyCoversSetting();
+applyThemeSetting();
+watchSystemTheme();
 wireSidebar();
 wireNav();
 wireReading();

@@ -254,8 +254,8 @@
                 </button>
                 <div class="ring" id="ring-wrap" hidden>
                   <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                    <circle cx="18" cy="18" r="15" fill="none" stroke="#242932" stroke-width="4" />
-                    <circle id="ring-arc" cx="18" cy="18" r="15" fill="none" stroke="#e23636"
+                    <circle class="ring-track" cx="18" cy="18" r="15" fill="none" stroke="#242932" stroke-width="4" />
+                    <circle class="ring-arc" id="ring-arc" cx="18" cy="18" r="15" fill="none" stroke="#eb5f5f"
                             stroke-width="4" stroke-linecap="round"
                             stroke-dasharray="94.2" stroke-dashoffset="94.2" />
                   </svg>
@@ -513,6 +513,21 @@
                 or re-hosts artwork. Switch covers off and every cover becomes a plain typographic tile.
               </p>
               <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
+            </div>
+
+            <div class="card card-static">
+              <h2>Theme</h2>
+              <p class="rail-hint">
+                Follow your system setting, or pick one and keep it. The choice is stored in this
+                browser alongside your other settings and is never sent anywhere. High contrast mode
+                and reduced motion are still honoured whichever you pick.
+              </p>
+              <label for="opt-theme">Colour theme</label>
+              <select id="opt-theme">
+                <option value="system">Follow my system setting</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+              </select>
             </div>
 
             <div class="card card-static">
