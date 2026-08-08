@@ -174,6 +174,31 @@ test('the recorded pairs are all non-text boundaries, never body text', () => {
   }
 });
 
+test('a control boundary is measured against every surface it is drawn on, not just one', () => {
+  // The pair list was measured in Edge against what the app actually paints, and three of the
+  // surfaces it found were not the ones the list originally named. A checkbox in a row sits on the
+  // page rather than on a card, a hero button sits on a card rather than on the page, and a text
+  // input's border has that input's own fill on its inner side. Measuring one surface and calling
+  // the boundary done is how a token passes the gate and still disappears somewhere on screen.
+  const surfaces = (fg) => PAIRS.filter((p) => p[0] === fg).map((p) => p[1]).sort();
+  assert.deepEqual(surfaces('--line-2'), ['--bg', '--card', '--card-2']);
+  assert.deepEqual(surfaces('--cb-line'), ['--bg', '--card']);
+});
+
+test('a progress bar is measured where it carries its value, fill against trough', () => {
+  // `--track` on `--card` cannot reach 3:1 while the `--red` fill still reads as the filled part,
+  // so it stays recorded and this pair is measured in its place. Dropping it would leave the bar
+  // with no gated contrast at all, which is worse than the ratio that is recorded.
+  const pair = PAIRS.find(([fg, bg]) => fg === '--red' && bg === '--track');
+  assert.ok(pair, 'the fill of a progress bar is no longer measured against its trough');
+  assert.equal(pair[2], 3);
+  for (const [selector, name] of [[DARK, 'dark'], [LIGHT_ATTR, 'light']]) {
+    const tokens = tokensIn(css, selector);
+    const r = ratio(parseHex(tokens.get('--red')), parseHex(tokens.get('--track')));
+    assert.ok(r >= 3, `the ${name} progress fill measures ${r.toFixed(2)}:1 against its own trough`);
+  }
+});
+
 test('both themes carry a colour-scheme declaration', () => {
   // Without it the browser paints its own form controls and scrollbars for the wrong theme, which
   // is the one part of the page CSS custom properties cannot reach.

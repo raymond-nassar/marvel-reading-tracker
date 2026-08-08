@@ -22,6 +22,14 @@ export const LARGE = 3;
 
 // Foreground, background, floor, and where it is rendered. The last field is the reason the pair
 // is here at all, so a reviewer can check the claim rather than trust the list.
+//
+// `--line` is deliberately absent. It was the border of five controls until BL-065, measured 1.29:1
+// in Edge, and those controls were moved to `--line-2`. What is left on `--line` is a hairline
+// around cards, images, panels and separators, plus the static `.pill` and `.badge` labels, none of
+// which is a user interface component, so 1.4.11 does not reach them and a floor would be inventing
+// a claim rather than recording one. The check that keeps this honest is a browser pass that
+// enumerates every rendered interactive element and measures its own border, because a list of
+// control selectors would be a list someone has to keep complete.
 export const PAIRS = [
   ['--text', '--bg', BODY, 'body text on the page'],
   ['--text', '--card', BODY, 'body text on a card'],
@@ -45,8 +53,12 @@ export const PAIRS = [
   ['--amber', '--card', BODY, 'the scheduled badge on a card'],
   ['--on-accent', '--red', BODY, 'the label of a primary button'],
   ['--line-2', '--bg', LARGE, 'the boundary of a bordered control'],
+  ['--line-2', '--card', LARGE, 'the boundary of a button on a card, such as the hero'],
+  ['--line-2', '--card-2', LARGE, 'the boundary of a text input against its own fill'],
   ['--cb-line', '--card', LARGE, 'the boundary of an unchecked checkbox'],
+  ['--cb-line', '--bg', LARGE, 'the boundary of an unchecked checkbox in a row on the page'],
   ['--track', '--card', LARGE, 'the unfilled part of a progress bar'],
+  ['--red', '--track', LARGE, 'the filled part of a progress bar against the unfilled part'],
   ['--warn', '--panel', LARGE, 'the border of the unreadable-data notice'],
 ];
 
@@ -140,29 +152,30 @@ export function checkAll(css) {
   ];
 }
 
-// Three non-text boundaries sit below 3:1, in both themes, and are recorded rather than fixed.
+// Two non-text pairs sit below 3:1 and are recorded rather than fixed. BL-065 raised the other four.
 //
-// They were already below it in the dark theme that has shipped since the first release, and the
-// light theme mirrors that ramp step for step, so it inherited the same three. Two of them measure
-// the same to two decimal places in both themes, which is what a faithful mirror looks like.
+// Both are `--track` against the card behind it, and the reason they stay is arithmetic rather than
+// reluctance. `--track` is the trough of a progress bar and the `--red` fill sits directly on it, so
+// the token has to answer to two floors at once. Colours clearing 3:1 against the card AND carrying
+// the fill at 3:1 do exist, but every one of them inverts the bar. In the dark theme each has a
+// relative luminance of at least 0.598, which is 3.6 times the fill's 0.166, so the empty part of
+// the bar would be brighter than the filled part. In the light theme each is at most 0.022, an
+// eighth of the fill, so the trough would be near black on a white card. Either way the bar would
+// report progress backwards, which is a worse outcome for the reader than the recorded ratio.
 //
-// They are recorded rather than fixed because raising them is a visible change to every bordered
-// control, every checkbox and every progress bar in an app nobody asked to have restyled, and this
-// change is meant to add a theme rather than redesign the one already there. They are recorded
-// rather than waived because a gate that quietly tolerates its own findings is not a gate. BL-065
-// raises all six together, which is the only way to raise them without the two themes drifting
-// apart, and drifting apart is the exact failure the token refactor exists to prevent.
+// So the pair that actually carries the value is measured instead: `--red` on `--track` is in the
+// list above at the 3:1 floor and passes in both themes. The dark trough was darkened from #2a303c
+// to #232731 to get there, taking the fill from 2.72 to 3.07; the light theme already measured 3.67.
+// The bar is also never the only way to read progress, because the same numbers are stated as text
+// beside it, at `src/js/main.js:779` in the rail and `src/js/main.js:915` in the saved lists.
 //
-// The baseline is exact in both directions. A new pair below the floor fails, which is the obvious
-// half. A listed pair that now passes ALSO fails, which is the half that matters: it is what stops
-// this list outliving the debt it describes, and an accepted-failures list nobody prunes is how a
-// gate turns into a rubber stamp.
+// They are recorded rather than waived because a gate that quietly tolerates its own findings is not
+// a gate. The baseline is exact in both directions. A new pair below the floor fails, which is the
+// obvious half. A listed pair that now passes ALSO fails, which is the half that matters: it is what
+// stops this list outliving the debt it describes, and an accepted-failures list nobody prunes is
+// how a gate turns into a rubber stamp.
 export const KNOWN = [
-  'dark:--line-2:--bg',
-  'dark:--cb-line:--card',
   'dark:--track:--card',
-  'light:--line-2:--bg',
-  'light:--cb-line:--card',
   'light:--track:--card',
 ];
 

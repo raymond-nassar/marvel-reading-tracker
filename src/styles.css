@@ -53,13 +53,13 @@
   --card-line: 23 26 32;
   --card-2: #1c2028;
   --line: #242932;
-  --line-2: #2e3540;
+  --line-2: #666c74;
   --text: #eef1f6;
   --dim: #c6cdda;
   --muted: #8d95a6;
-  --track: #2a303c;
+  --track: #232731;
   --track-2: #3a4150;
-  --cb-line: #414a5a;
+  --cb-line: #5f6774;
   --panel: #14161c;
   --warn: #d9822b;
   /* The foreground for a row that has been read. Dim enough to recede, but a
@@ -105,13 +105,13 @@
   --card-line: 255 255 255;
   --card-2: #f6f8fb;
   --line: #dde2ea;
-  --line-2: #c8cfda;
+  --line-2: #8a8f97;
   --text: #12151b;
   --dim: #3d4450;
   --muted: #5c6472;
   --track: #dbe0e9;
   --track-2: #b8c0cd;
-  --cb-line: #98a1b1;
+  --cb-line: #8a92a1;
   --panel: #ffffff;
   --warn: #8a4d09;
   --read-fg: #626a79;
@@ -137,13 +137,13 @@
     --card-line: 255 255 255;
     --card-2: #f6f8fb;
     --line: #dde2ea;
-    --line-2: #c8cfda;
+    --line-2: #8a8f97;
     --text: #12151b;
     --dim: #3d4450;
     --muted: #5c6472;
     --track: #dbe0e9;
     --track-2: #b8c0cd;
-    --cb-line: #98a1b1;
+    --cb-line: #8a92a1;
     --panel: #ffffff;
     --warn: #8a4d09;
     --read-fg: #626a79;
@@ -381,7 +381,7 @@ main { min-width: 0; }
 
 .tgl {
   display: inline-flex; align-items: center; gap: .45rem; font-size: .8rem;
-  color: var(--muted); border: 1px solid var(--line); background: none;
+  color: var(--muted); border: 1px solid var(--line-2); background: none;
   border-radius: 999px; padding: .3rem .7rem;
 }
 .tgl:hover { color: var(--text); }
@@ -396,7 +396,7 @@ body.nocovers .tgl .sw::after { left: 2px; }
 .list-tools { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: 1rem; }
 
 .quiet {
-  border: 1px solid var(--line); background: none; color: var(--muted);
+  border: 1px solid var(--line-2); background: none; color: var(--muted);
   border-radius: 8px; padding: .3rem .7rem; font-size: .8rem;
 }
 .quiet:hover { color: var(--text); background: rgb(var(--tint-base) / 5.098%); }
@@ -524,11 +524,14 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 .fp { display: inline-flex; }
 .fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .fp span {
-  border: 1px solid var(--line); color: var(--muted); border-radius: 999px;
+  border: 1px solid var(--line-2); color: var(--muted); border-radius: 999px;
   padding: .26rem .75rem; font-size: .8rem; display: inline-block;
 }
 .fp:hover span { color: var(--text); }
-.fp input:checked + span { background: rgb(var(--tint-base) / 6.275%); color: var(--text); border-color: var(--line-2); }
+/* The checked pill no longer differs by border, because every filter pill now carries the boundary
+   that clears 3:1. The state is still carried by the tint and by the label going from `--muted` to
+   `--text`, and by the radio underneath it, which is what a screen reader reads. */
+.fp input:checked + span { background: rgb(var(--tint-base) / 6.275%); color: var(--text); }
 .fp input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: 2px; }
 
 .rows { display: grid; gap: .18rem; list-style: none; margin: 0; padding: 0; }
@@ -632,7 +635,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 .ract { display: flex; gap: .25rem; opacity: 0; }
 .row:hover .ract, .row:focus-within .ract { opacity: 1; }
 .mini {
-  border: 1px solid var(--line); background: none; color: var(--muted);
+  border: 1px solid var(--line-2); background: none; color: var(--muted);
   border-radius: 6px; padding: .16rem .45rem; font-size: .74rem; text-decoration: none;
 }
 .mini:hover { color: var(--text); background: rgb(var(--tint-base) / 5.098%); }
@@ -757,11 +760,11 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 
 .yours { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
 .yours button {
-  width: 100%; text-align: left; background: var(--card); border: 1px solid var(--line);
+  width: 100%; text-align: left; background: var(--card); border: 1px solid var(--line-2);
   border-radius: 10px; padding: .6rem .8rem; color: var(--text); min-height: 44px;
   display: grid; gap: .35rem;
 }
-.yours button:hover { border-color: var(--line-2); background: var(--card-2); }
+.yours button:hover { background: var(--card-2); }
 .yours .yt { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
 .yours .yours-name { color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
