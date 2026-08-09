@@ -1,0 +1,187 @@
+// The collision these tests are built on is not invented. On 2026-08-08 nineteen lines
+// were added to the top of `src/js/lib/model.js`, a re-aiming pass moved twenty-six
+// citations of that module, and one landed thirty-eight lines out on top of another. The
+// blessed lock carried the result: two entries in `PRODUCT_BACKLOG.md`, both in the
+// `item-details` scope, both naming `src/js/lib/model.js:640`, both fingerprinted
+// `0c1b3de0385c2af9`, and one of them asserting a claim about `readAt` over a line that
+// builds a list. The gate reported zero drift over it, correctly and uselessly, because
+// two citations of one line always agree.
+//
+// The step that should have caught it printed distinct ranges, so it printed that line
+// once. It read perfectly well for the claim that did belong to it. Everything below is
+// aimed at that: a report of citations must never be keyed by the thing that collapsed.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+
+import { collisions, pairingLines, pairings } from '../scripts/check-anchors.mjs';
+
+// The two citations as the lock actually held them, ordinals and all. `fp` matches on
+// both because they cite the same line, which is the whole difficulty.
+const COLLIDED = [
+  {
+    key: 'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:640|0',
+    anchor: 'src/js/lib/model.js:640',
+    claim: '`coerce` writes it at',
+    fp: '0c1b3de0385c2af9',
+    head: 'lists[k] = {',
+    tail: null,
+  },
+  {
+    key: 'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:640|1',
+    anchor: 'src/js/lib/model.js:640',
+    claim: 'every stored readAt is coerced to a number by',
+    fp: '0c1b3de0385c2af9',
+    head: 'lists[k] = {',
+    tail: null,
+  },
+];
+
+const lockOf = (cites) => Object.fromEntries(
+  cites.map((c) => [c.key, { anchor: c.anchor, fp: c.fp, head: c.head }]),
+);
+
+test('a citation blessed against the line it already cites is not reprinted', () => {
+  assert.deepEqual(pairings(COLLIDED, lockOf(COLLIDED)), []);
+});
+
+test('every citation is its own record, so two sharing a line print twice', () => {
+  const pairs = pairings(COLLIDED, {});
+
+  // The assertion that fails on a printer keyed by anchor, range or fingerprint. All
+  // three collapse these two to one, and one of them is the false claim.
+  assert.equal(pairs.length, 2);
+  assert.deepEqual(pairs.map((p) => p.claim), [
+    '`coerce` writes it at',
+    'every stored readAt is coerced to a number by',
+  ]);
+  assert.deepEqual(new Set(pairs.map((p) => p.head)), new Set(['lists[k] = {']));
+});
+
+test('a citation re-aimed onto a line another already holds is still its own record', () => {
+  // The half-migrated state the bless was run in: the first citation had already been
+  // re-aimed and blessed, the second arrives on top of it.
+  const settled = lockOf([COLLIDED[0]]);
+  const pairs = pairings(COLLIDED, settled);
+
+  assert.equal(pairs.length, 1);
+  assert.equal(pairs[0].claim, 'every stored readAt is coerced to a number by');
+  assert.equal(pairs[0].was, null);
+});
+
+test('a citation whose line changed under it is reprinted with the new line', () => {
+  const stale = { [COLLIDED[0].key]: { anchor: COLLIDED[0].anchor, fp: 'ffffffffffffffff', head: 'was() {' } };
+  const pairs = pairings([COLLIDED[0]], stale);
+
+  assert.equal(pairs.length, 1);
+  assert.equal(pairs[0].head, 'lists[k] = {');
+  assert.equal(pairs[0].was.head, 'was() {');
+});
+
+test('a range prints its last cited line as well as its first', () => {
+  const ranged = [{
+    key: 'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:640-644|0',
+    anchor: 'src/js/lib/model.js:640-644',
+    claim: 'the list is rebuilt at',
+    fp: 'aaaaaaaaaaaaaaaa',
+    head: 'lists[k] = {',
+    tail: '};',
+  }];
+
+  assert.deepEqual(pairings(ranged, {}), [{
+    key: ranged[0].key,
+    anchor: ranged[0].anchor,
+    claim: 'the list is rebuilt at',
+    head: 'lists[k] = {',
+    tail: '};',
+    why: null,
+    was: null,
+  }]);
+});
+
+test('an unresolvable citation carries its reason rather than a line', () => {
+  const broken = [{
+    key: 'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:9999|0',
+    anchor: 'src/js/lib/model.js:9999',
+    claim: 'the coercion lives at',
+    fp: null,
+    why: 'out of range, file has 700 lines',
+  }];
+
+  const pairs = pairings(broken, {});
+  assert.equal(pairs.length, 1);
+  assert.equal(pairs[0].head, null);
+  assert.equal(pairs[0].why, 'out of range, file has 700 lines');
+});
+
+test('the collision is noticed on the bless that creates it', () => {
+  const clashes = collisions(COLLIDED, lockOf([COLLIDED[0]]));
+
+  assert.equal(clashes.length, 1);
+  assert.equal(clashes[0].anchor, 'src/js/lib/model.js:640');
+  assert.equal(clashes[0].bucket, 'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:640');
+  assert.deepEqual(clashes[0].claims, [
+    '`coerce` writes it at',
+    'every stored readAt is coerced to a number by',
+  ]);
+});
+
+// The narrowing that keeps the notice worth reading. Seventeen buckets in the real lock
+// hold more than one citation of one anchor in one scope, and all seventeen are correct.
+// A notice that fired on them every run would be a thing to scroll past, and scrolling
+// past is how the original was waved through.
+test('a settled collision is silent, however unlike its claims are', () => {
+  assert.deepEqual(collisions(COLLIDED, lockOf(COLLIDED)), []);
+});
+
+test('two citations of one line saying the same thing are not a collision', () => {
+  const same = COLLIDED.map((c, i) => ({ ...c, claim: i === 0 ? '`coerce` writes it at' : 'coerce writes it at:' }));
+  assert.deepEqual(collisions(same, {}), []);
+});
+
+test('citations of one anchor in different scopes are not a collision', () => {
+  const apart = [
+    COLLIDED[0],
+    { ...COLLIDED[1], key: 'PRODUCT_BACKLOG.md|reconciliation|src/js/lib/model.js:640|0' },
+  ];
+  assert.deepEqual(collisions(apart, {}), []);
+});
+
+// A citation that opens a wrapped paragraph has no prose before it on its own line, so
+// the claim extracts empty. Treating two empties as one claim read as "these agree" when
+// nothing had been read, and it really did exempt a live bucket: two citations of
+// `src/js/lib/readingFilters.js:25-48` in one scope, under wholly unlike sentences, both
+// beginning their line. An unreadable claim has to be unlike everything, itself included.
+test('two citations whose claims could not be read are a collision, not an agreement', () => {
+  const blank = COLLIDED.map((c) => ({ ...c, claim: '' }));
+  assert.equal(collisions(blank, {}).length, 1);
+});
+
+// The defect one layer below `pairings`. A printer that collapses by anchor, head or
+// fingerprint restores it exactly, and no assertion on returned records can see that.
+test('the printed report carries one line per citation, not one per line cited', () => {
+  const lines = pairingLines(pairings(COLLIDED, {}));
+  const cited = lines.filter((l) => l.includes('->'));
+
+  assert.equal(cited.length, 2);
+  assert.equal(cited.filter((l) => l.includes('every stored readAt')).length, 1);
+  assert.equal(cited.filter((l) => l.includes('writes it at')).length, 1);
+});
+
+test('a range prints the line that closes it, so the whole claim is read', () => {
+  const [line] = pairingLines(pairings(
+    [{ ...COLLIDED[0], anchor: 'src/js/lib/model.js:640-642', head: 'lists[k] = {', tail: '};' }],
+    {},
+  )).slice(1);
+
+  assert.match(line, /lists\[k\] = \{ {2}\.\.\. {2}\};/);
+});
+
+// A citation the code moved under and one now pointing at different code need different
+// amounts of attention, and the new line alone does not distinguish them.
+test('a citation whose cited content changed shows what it was blessed against', () => {
+  const moved = [{ ...COLLIDED[0], fp: 'ffff', head: 'lists[k] = {' }];
+  const stale = { [COLLIDED[0].key]: { anchor: 'src/js/lib/model.js:601', fp: '0c1b3de0385c2af9', head: 'const read = {};' } };
+
+  assert.equal(pairingLines(pairings(moved, stale)).filter((l) => l.includes('const read = {};')).length, 1);
+  assert.equal(pairingLines(pairings([{ ...COLLIDED[0], fp: 'ffff' }], lockOf(COLLIDED))).filter((l) => l.includes('was  ->')).length, 0);
+});
