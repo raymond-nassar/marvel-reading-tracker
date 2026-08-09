@@ -276,6 +276,22 @@ quote in a bug report.
 
 ### Changed
 
+- **A safety check the project uses on itself now does a job that used to be left to whoever was
+  paying attention.** Nothing about the app changes and nothing you have saved is affected. The
+  project keeps a large number of written claims of the form "this behaviour lives in this exact
+  place in the code", and a check exists to shout when the code moves out from under one. Accepting
+  the new positions was the risky moment: the tool took whatever it was given, so anyone approving a
+  batch of them had to look up each claim by hand and read it against the line it now points at.
+  Once, two separate claims were accidentally pointed at the very same line, the hand-rolled listing
+  showed that line once, it read perfectly well for the claim that genuinely belonged there, and a
+  false claim was locked in and reported as correct from then on. The tool now prints the pairing
+  itself, one entry for every claim rather than one for every line, so two claims sharing a line can
+  no longer hide behind each other, and it prints the last line of a range as well as the first. It
+  also raises a notice when two claims in the same section come to point at the same lines while
+  saying different things, and stays quiet about the ones that have always done so. Fourteen new
+  checks hold that behaviour, built from the real mix-up rather than an invented one; reinstating the
+  old listing turns them red.
+
 - **The project's list of planned improvements now includes drawing diagrams of how the app fits
   together.** Nothing about the app itself changes, and nothing you have saved is affected. The
   repository explains a great deal in words but contains no picture of any kind, so anyone trying to

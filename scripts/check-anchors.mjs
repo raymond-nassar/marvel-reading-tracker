@@ -15,9 +15,16 @@
 // a wrong anchor and it stays blessed. The gain is that a human reads each anchor
 // once, when it is introduced or when its code changes, rather than once per
 // sweep across the whole corpus.
+//
+// That one reading is the weak point, so `--bless` prints the reading rather than
+// trusting anyone to assemble it: every citation whose blessed line is changing,
+// one line each, with the prose that cites the line beside the line itself. One
+// line each rather than one per anchor, because two citations re-aimed onto the
+// same line is the shape that got a false claim blessed here once already.
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
+import { pathToFileURL } from 'node:url';
 
 const LOCK = 'docs/anchors.lock.json';
 
@@ -84,15 +91,21 @@ const linesOf = (path) => {
 
 // Trimmed, with blank lines dropped, so reindentation and trailing-whitespace
 // churn do not raise false alarms while a genuine edit still does.
+//
+// `tail` is the last cited line and is computed for printing only. It is deliberately
+// not written to the lock: the lock already holds every field a comparison needs, and
+// adding one would rewrite all of it for a string nothing compares against.
 function fingerprint(file, start, end) {
   const lines = linesOf(file);
   if (lines === null) return { fp: null, why: 'file missing' };
   if (end > lines.length) return { fp: null, why: `out of range, file has ${lines.length} lines` };
   const body = lines.slice(start - 1, end).map((s) => s.trim()).filter(Boolean).join('\n');
   if (!body) return { fp: null, why: 'resolves to blank lines only' };
+  const kept = body.split('\n');
   return {
     fp: createHash('sha256').update(body).digest('hex').slice(0, 16),
-    head: body.split('\n')[0].slice(0, 100),
+    head: kept[0].slice(0, 100),
+    tail: kept.length > 1 ? kept[kept.length - 1].slice(0, 100) : null,
   };
 }
 
@@ -184,6 +197,27 @@ function rowScope(line, heading) {
   return label ? `${heading}#${label}` : heading;
 }
 
+// The prose immediately before a citation, which is what the reader has to weigh the
+// cited line against. Prose wraps, so a citation frequently opens a line and the
+// sentence making the claim ends on the line above. Reading only the current line lost
+// that entirely for 76 of the 411 citations blessed at the time, better than one in five, and
+// a print that offers no claim for one citation in five cannot be read against its line
+// at all. So walk back over the wrapped lines of the same paragraph. A blank line, a
+// heading and a table row all end the sentence rather than continue it, so each stops
+// the walk: crossing a table row would attribute the row above's prose to this row.
+function claimBefore(lines, i, at) {
+  const flatten = (s) => s.replace(/`/g, '').replace(/\s+/g, ' ').trim();
+  let text = lines[i].slice(0, at);
+  for (let j = i - 1; j >= 0 && flatten(text).length < 90; j -= 1) {
+    const prev = lines[j];
+    if (!prev.trim() || prev.startsWith('|') || /^#{1,6}\s/.test(prev)) break;
+    if (lines[i].startsWith('|')) break;
+    text = `${prev} ${text}`;
+  }
+  const flat = flatten(text);
+  return flat.slice(Math.max(0, flat.length - 90));
+}
+
 // The scope is what makes a key survive renumbering. Rows are keyed by their story
 // ID wherever the ID appears in the row, because the three tables in the backlog
 // put it in three different columns, and a matcher that assumes one column is the
@@ -216,7 +250,9 @@ function collect() {
     let offset = 0;
     const ordinals = new Map();
 
-    for (const line of text.split('\n')) {
+    const lines = text.split('\n');
+    for (let i = 0; i < lines.length; i += 1) {
+      const line = lines[i];
       const h = /^#{1,6}\s+(.+?)\s*$/.exec(line);
       if (h) heading = slug(h[1]);
 
@@ -244,7 +280,7 @@ function collect() {
         found.push({
           key: `${bucket}|${ordinal}`,
           anchor,
-          claim: line.slice(Math.max(0, c.at - 90), c.at).replace(/`/g, '').trim(),
+          claim: claimBefore(lines, i, c.at),
           ...fingerprint(c.file, c.start, c.end),
         });
       }
@@ -255,37 +291,124 @@ function collect() {
   return { found, coverage, exempted };
 }
 
-const { found, coverage, exempted } = collect();
-
-// Coverage is asserted, not assumed. `found.length === 0` detects total failure and
-// is structurally blind to partial failure, which is the only kind that has ever
-// happened here: a collector that reads one table shape returns a large number and
-// sails past a zero check while ignoring four fifths of the corpus.
+// Every citation whose blessed line is about to change, one record per citation.
 //
-// Both counts come from the same regex, so this is a regression guard on the walk
-// rather than an independent measurement. That is worth having, because the walk is
-// precisely what broke, but it cannot see a citation the regex itself does not
-// know. The near-miss report below is the partial answer to that.
-const short = coverage.filter((c) => c.captured !== c.scanned);
-if (short.length) {
-  console.error(`FATAL: collector under-matched${ref ? ` at ${ref}` : ''}:`);
-  for (const c of short) console.error(`  ${c.doc}: scanned ${c.scanned}, captured ${c.captured}`);
-  process.exit(2);
+// The "one record per citation" is the whole of it, and it is why this returns a list
+// rather than a map. Blessing accepts the current state wholesale, so the only thing
+// standing between a mis-aimed anchor and a permanent false claim is a person reading
+// the cited line beside the sentence that cites it. When two citations in one scope
+// are re-aimed onto the same line, a report keyed by anchor collapses them into one
+// entry, that entry reads perfectly well for whichever claim legitimately belongs
+// there, and the other is blessed onto a line that has nothing to do with it. That is
+// not hypothetical: it is how BL-058's readAt claim came to cite `lists[k] = {`.
+//
+// A citation whose fingerprint already matches the lock is left out. It cites the same
+// content it was blessed against, so there is nothing new to read, and printing all of
+// them would bury the handful that changed under four hundred that did not.
+export function pairings(found, lock) {
+  const out = [];
+  for (const f of found) {
+    const was = lock[f.key] ?? null;
+    if (was && was.fp === f.fp) continue;
+    out.push({
+      key: f.key,
+      anchor: f.anchor,
+      claim: f.claim,
+      head: f.head ?? null,
+      tail: f.tail ?? null,
+      why: f.why ?? null,
+      was,
+    });
+  }
+  return out;
 }
 
-// A collector that silently matches nothing reports a clean pass, which is exactly
-// the failure this gate exists to prevent. Refuse to run rather than reassure.
-if (found.length === 0) {
-  console.error(`FATAL: found 0 anchors${ref ? ` at ${ref}` : ''}.`);
-  console.error('The collector matched nothing. That is a broken instrument, not a clean result.');
-  process.exit(2);
+// Claim text reduced to the words it is made of, so that punctuation, backticks and
+// wrapping do not make two renderings of one sentence look like two claims.
+const claimShape = (s) => String(s ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+
+// Two citations in one scope that have come to name the same lines while claiming
+// different things. Narrowed twice, and both narrowings are load-bearing.
+//
+// Narrowed to one scope and one anchor, because sharing an anchor across the document
+// is ordinary: 92 anchors in the blessed lock are cited more than once, and a notice on
+// all of them would be noise. Within a single scope it is rare, at 17 buckets today.
+//
+// Narrowed again to buckets holding at least one citation this bless is changing,
+// because the 17 are all correct and a notice that fires on correct work every time is
+// the thing that trains a reflexive re-bless. At rest this prints nothing. It prints on
+// the bless that creates the collision, which is the one moment a reader can still act
+// on it, and which is exactly when the BL-068 collision was created and waved through.
+export function collisions(found, lock) {
+  const buckets = new Map();
+  for (const f of found) {
+    const bucket = f.key.slice(0, f.key.lastIndexOf('|'));
+    if (!buckets.has(bucket)) buckets.set(bucket, []);
+    buckets.get(bucket).push(f);
+  }
+
+  const out = [];
+  for (const [bucket, cites] of buckets) {
+    if (cites.length < 2) continue;
+    // An unreadable claim is unlike everything, itself included. Two citations that both
+    // open a paragraph extract no prose at all, and treating those two blanks as equal
+    // read as "these citations agree" when nothing had been read: it silently exempted a
+    // live bucket, `src/js/lib/readingFilters.js:25-48` cited twice under wholly unlike
+    // sentences, from a notice added to catch exactly that shape.
+    const shapes = cites.map((c, i) => claimShape(c.claim) || `unreadable ${i}`);
+    if (new Set(shapes).size < 2) continue;
+    const settled = cites.every((c) => {
+      const was = lock[c.key];
+      return was && was.fp === c.fp;
+    });
+    if (settled) continue;
+    out.push({ bucket, anchor: cites[0].anchor, claims: cites.map((c) => c.claim) });
+  }
+  return out;
 }
 
-const dupes = found.map((f) => f.key).filter((k, i, all) => all.indexOf(k) !== i);
-if (dupes.length) {
-  console.error(`FATAL: ${dupes.length} duplicate key(s), so the lock cannot be trusted:`);
-  for (const k of new Set(dupes)) console.error(`  ${k}`);
-  process.exit(2);
+// The pairing a reader has to make, printed rather than left to them to assemble. One
+// line per citation, and the line carries the claim and the cited line together because
+// reading either alone is what the step is trying to stop.
+//
+// Split from the printing so a test can hold the shape. Deduplicating here rather than
+// in `pairings` restores the identical defect one layer lower, where an assertion on
+// returned records cannot see it, so the assertion is made against these lines instead.
+export function pairingLines(pairs) {
+  if (!pairs.length) return ['No citation changes its blessed line, so there is nothing to re-read.'];
+  const each = pairs.length === 1 ? 'citation changes' : 'citations change';
+  const out = [`${pairs.length} ${each} the line it is blessed against. Read each claim against its line:`];
+  for (const p of pairs) {
+    const now = p.head === null ? `(${p.why})` : p.head;
+    const span = p.tail === null ? now : `${now}  ...  ${p.tail}`;
+    out.push(`  ${p.claim || '(no preceding prose)'}  ->  ${p.anchor}  ->  ${span}`);
+    // Only when the content differs, which is the difference between a citation the
+    // code moved under and one now pointing at different code. The first needs a
+    // glance, the second needs the reading, and the reader cannot tell them apart
+    // from the new line alone.
+    if (p.was && p.head !== null && p.was.head !== p.head) {
+      out.push(`      was  ->  ${p.was.anchor}  ->  ${p.was.head}`);
+    }
+  }
+  return out;
+}
+
+function printPairings(pairs) {
+  for (const line of pairingLines(pairs)) console.log(line);
+  console.log('');
+}
+
+function printCollisions(clashes) {
+  if (!clashes.length) return;
+  const each = clashes.length === 1 ? 'anchor is' : 'anchors are';
+  console.log(`NOTICE: ${clashes.length} ${each} now cited twice in one scope under unlike claims.`);
+  console.log('Sharing lines is ordinary. Read these anyway: a re-aim that lands one citation on');
+  console.log('another has this exact shape, and both then carry the same fingerprint forever.');
+  for (const c of clashes) {
+    console.log(`  ${c.anchor}  in  ${c.bucket}`);
+    for (const claim of c.claims) console.log(`    claim: ${claim || '(no preceding prose)'}`);
+  }
+  console.log('');
 }
 
 // Citation-shaped text the ANCHOR regex does not collect. This is the one hole the
@@ -293,7 +416,7 @@ if (dupes.length) {
 // It cannot be an error, since prose may legitimately name a file, so it prints as
 // a notice: a reviewer can tell an intentional mention from a citation that was
 // meant to be gated and is silently not.
-function reportNearMisses() {
+function reportNearMisses(exempted) {
   const suspicious = [];
   for (const doc of docs()) {
     const text = read(doc);
@@ -316,190 +439,259 @@ function reportNearMisses() {
   }
 }
 
-if (bless) {
-  const unresolvable = found.filter((f) => f.fp === null);
-  if (unresolvable.length) {
-    console.error(`FATAL: refusing to bless ${unresolvable.length} anchor(s) that do not resolve:`);
-    for (const u of unresolvable) console.error(`  ${u.key}  ${u.anchor}  (${u.why})`);
+// What was blessed last time, for the bless path, which cannot say which claims are
+// changing without it. Missing and unreadable are both answered with an empty lock,
+// because a first bless has nothing to compare against and every claim in it is new
+// and unread. The check path reads the lock separately and refuses both cases, which
+// is the right answer there and would be the wrong one here.
+function priorLock() {
+  try {
+    const parsed = JSON.parse(readFileSync(LOCK, 'utf8'));
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function main() {
+  const { found, coverage, exempted } = collect();
+
+  // Coverage is asserted, not assumed. `found.length === 0` detects total failure and
+  // is structurally blind to partial failure, which is the only kind that has ever
+  // happened here: a collector that reads one table shape returns a large number and
+  // sails past a zero check while ignoring four fifths of the corpus.
+  //
+  // Both counts come from the same regex, so this is a regression guard on the walk
+  // rather than an independent measurement. That is worth having, because the walk is
+  // precisely what broke, but it cannot see a citation the regex itself does not
+  // know. The near-miss report below is the partial answer to that.
+  const short = coverage.filter((c) => c.captured !== c.scanned);
+  if (short.length) {
+    console.error(`FATAL: collector under-matched${ref ? ` at ${ref}` : ''}:`);
+    for (const c of short) console.error(`  ${c.doc}: scanned ${c.scanned}, captured ${c.captured}`);
     process.exit(2);
   }
-  const lock = {};
-  for (const f of found.sort((a, b) => a.key.localeCompare(b.key))) {
-    lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };
+
+  // A collector that silently matches nothing reports a clean pass, which is exactly
+  // the failure this gate exists to prevent. Refuse to run rather than reassure.
+  if (found.length === 0) {
+    console.error(`FATAL: found 0 anchors${ref ? ` at ${ref}` : ''}.`);
+    console.error('The collector matched nothing. That is a broken instrument, not a clean result.');
+    process.exit(2);
   }
-  writeFileSync(LOCK, `${JSON.stringify(lock, null, 2)}\n`);
-  const cov = coverage.map((c) => `${c.doc} ${c.captured}`).join(', ');
-  console.log(`Blessed ${found.length} anchors across ${coverage.length} docs (${cov}) -> ${LOCK}`);
-  reportNearMisses();
-  process.exit(0);
-}
 
-// The lock always comes from the working tree. Reading it through --ref would make
-// the gate unusable against any revision that predates the lock, which is exactly
-// the revision you want to point it at when checking whether it would have caught
-// a past breakage.
-let raw = null;
-try {
-  raw = readFileSync(LOCK, 'utf8');
-} catch {
-  raw = null;
-}
-if (raw === null) {
-  console.error(`FATAL: ${LOCK} is missing. Run with --bless to create it.`);
-  process.exit(2);
-}
-const lock = JSON.parse(raw);
+  const dupes = found.map((f) => f.key).filter((k, i, all) => all.indexOf(k) !== i);
+  if (dupes.length) {
+    console.error(`FATAL: ${dupes.length} duplicate key(s), so the lock cannot be trusted:`);
+    for (const k of new Set(dupes)) console.error(`  ${k}`);
+    process.exit(2);
+  }
 
-// Assert the lock's shape before comparing anything against it. Without this, a lock
-// written by a different version of this script compares every real fingerprint against
-// undefined and reports drift. That message is loud but wrong in kind: it says N claims
-// moved when the truth is that the lock cannot be read, and it sends the reader hunting
-// for code movements that never happened. A partial mismatch is the dangerous one, since
-// "216 unchanged, 2 drifted" is an ordinary-looking result that invites exactly that hunt.
-{
-  const entries = Object.entries(lock);
-  const malformed = entries.filter(
-    ([, v]) => !v || typeof v.fp !== 'string' || typeof v.anchor !== 'string',
-  );
-  if (entries.length && malformed.length) {
-    console.error(
-      `FATAL: cannot read ${LOCK}. ${malformed.length} of ${entries.length} entr(ies) lack a ` +
-        'string "fp" or "anchor", so this lock was written by a different version of this ' +
-        'script. Refusing to compare, because every comparison would report drift that has ' +
-        'not happened. Re-bless, or check out a matching lock.',
+  if (bless) {
+    const unresolvable = found.filter((f) => f.fp === null);
+    if (unresolvable.length) {
+      console.error(`FATAL: refusing to bless ${unresolvable.length} anchor(s) that do not resolve:`);
+      for (const u of unresolvable) console.error(`  ${u.key}  ${u.anchor}  (${u.why})`);
+      process.exit(2);
+    }
+    found.sort((a, b) => a.key.localeCompare(b.key));
+
+    // Printed before the lock is overwritten, and from the lock that is about to be
+    // overwritten, because afterwards nothing can say which claims were unread.
+    const prior = priorLock();
+    printPairings(pairings(found, prior));
+    printCollisions(collisions(found, prior));
+
+    const lock = {};
+    for (const f of found) {
+      lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };
+    }
+    writeFileSync(LOCK, `${JSON.stringify(lock, null, 2)}\n`);
+    const cov = coverage.map((c) => `${c.doc} ${c.captured}`).join(', ');
+    console.log(`Blessed ${found.length} anchors across ${coverage.length} docs (${cov}) -> ${LOCK}`);
+    reportNearMisses(exempted);
+    process.exit(0);
+  }
+
+  // The lock always comes from the working tree. Reading it through --ref would make
+  // the gate unusable against any revision that predates the lock, which is exactly
+  // the revision you want to point it at when checking whether it would have caught
+  // a past breakage.
+  let raw = null;
+  try {
+    raw = readFileSync(LOCK, 'utf8');
+  } catch {
+    raw = null;
+  }
+  if (raw === null) {
+    console.error(`FATAL: ${LOCK} is missing. Run with --bless to create it.`);
+    process.exit(2);
+  }
+  const lock = JSON.parse(raw);
+
+  // Assert the lock's shape before comparing anything against it. Without this, a lock
+  // written by a different version of this script compares every real fingerprint against
+  // undefined and reports drift. That message is loud but wrong in kind: it says N claims
+  // moved when the truth is that the lock cannot be read, and it sends the reader hunting
+  // for code movements that never happened. A partial mismatch is the dangerous one, since
+  // "216 unchanged, 2 drifted" is an ordinary-looking result that invites exactly that hunt.
+  {
+    const entries = Object.entries(lock);
+    const malformed = entries.filter(
+      ([, v]) => !v || typeof v.fp !== 'string' || typeof v.anchor !== 'string',
     );
-    for (const [k] of malformed.slice(0, 4)) console.error(`  ${k}`);
-    if (malformed.length > 4) console.error(`  ... and ${malformed.length - 4} more`);
-    process.exit(2);
+    if (entries.length && malformed.length) {
+      console.error(
+        `FATAL: cannot read ${LOCK}. ${malformed.length} of ${entries.length} entr(ies) lack a ` +
+          'string "fp" or "anchor", so this lock was written by a different version of this ' +
+          'script. Refusing to compare, because every comparison would report drift that has ' +
+          'not happened. Re-bless, or check out a matching lock.',
+      );
+      for (const [k] of malformed.slice(0, 4)) console.error(`  ${k}`);
+      if (malformed.length > 4) console.error(`  ... and ${malformed.length - 4} more`);
+      process.exit(2);
+    }
   }
-}
 
-let unchanged = 0;
-const drifted = [];
-const unkeyed = [];
+  let unchanged = 0;
+  const drifted = [];
+  const unkeyed = [];
 
-for (const f of found) {
-  const want = lock[f.key];
-  if (!want) {
-    unkeyed.push(f);
-    continue;
+  for (const f of found) {
+    const want = lock[f.key];
+    if (!want) {
+      unkeyed.push(f);
+      continue;
+    }
+    // Never let two unresolvable anchors compare equal. null === null would pass an
+    // anchor that points off the end of the file in both revisions.
+    if (f.fp !== null && f.fp === want.fp) {
+      unchanged += 1;
+      continue;
+    }
+    drifted.push({ ...f, want });
   }
-  // Never let two unresolvable anchors compare equal. null === null would pass an
-  // anchor that points off the end of the file in both revisions.
-  if (f.fp !== null && f.fp === want.fp) {
-    unchanged += 1;
-    continue;
+
+  const seen = new Set(found.map((f) => f.key));
+  const gone = Object.keys(lock).filter((k) => !seen.has(k));
+
+  // A lost anchor is a claim that can no longer be checked, which is not the same as a
+  // claim with nothing to report. Coverage cannot see this, because it counts what each
+  // surviving document still has: delete a document and every remaining one reports a
+  // perfect score while its anchors leave the gate entirely. Renaming one is the
+  // plausible version, and it reads as a clean sweep of additions rather than as a loss.
+  //
+  // Which losses matter is deliberately not judged here. Failing only when a whole
+  // document disappears would be a heuristic about significance, and heuristics about
+  // which anchors are worth counting are exactly how this gate once covered 37 of 193.
+  const corpus = new Set(docs());
+  const goneByDoc = new Map();
+  for (const k of gone) {
+    const doc = k.split('|')[0];
+    if (!goneByDoc.has(doc)) goneByDoc.set(doc, []);
+    goneByDoc.get(doc).push(k);
   }
-  drifted.push({ ...f, want });
+
+  const cov = coverage.map((c) => `${c.doc} ${c.captured}/${c.scanned}`).join(', ');
+
+  // An anchor that was re-aimed appears as one addition and one loss, because the anchor
+  // text is part of the key. Reported as two unrelated events that is true but illegible:
+  // pointing this gate at the commit where these citations were born prints 112 additions
+  // and 137 losses and zero drift, so a reader running the documented historical check
+  // concludes it cannot see the breakage it was built for. Pairing them back up restores
+  // the blessed-versus-now reading without restoring the defect, because the pairing is
+  // presentation only and never makes two anchors compare equal. It is deliberately
+  // refused unless a scope holds exactly one addition and one loss for the same file,
+  // since a guess about which removal explains which addition is the kind of corroborating
+  // detail that makes a wrong report persuasive.
+  const fileOf = (a) => String(a).split(':')[0];
+  const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;
+  const newBy = new Map();
+  for (const u of unkeyed) {
+    const b = bucketOf(u.key, fileOf(u.anchor));
+    if (!newBy.has(b)) newBy.set(b, []);
+    newBy.get(b).push(u);
+  }
+  const goneBy = new Map();
+  for (const k of gone) {
+    const b = bucketOf(k, fileOf(lock[k].anchor));
+    if (!goneBy.has(b)) goneBy.set(b, []);
+    goneBy.get(b).push(k);
+  }
+  const reaimed = [];
+  const pairedNew = new Set();
+  const pairedGone = new Set();
+  for (const [b, ns] of newBy) {
+    const gs = goneBy.get(b);
+    if (!gs || ns.length !== 1 || gs.length !== 1) continue;
+    reaimed.push({ from: gs[0], to: ns[0] });
+    pairedNew.add(ns[0].key);
+    pairedGone.add(gs[0]);
+  }
+
+  console.log(`${unchanged} unchanged, ${drifted.length} drifted, ${unkeyed.length} new, ${gone.length} removed`);
+  if (reaimed.length) {
+    console.log(`of which ${reaimed.length} pair as re-aimed anchors, one addition against one loss`);
+  }
+  console.log(`coverage: ${cov}\n`);
+
+  for (const r of reaimed) {
+    console.log(`RE-AIM ${r.to.key}`);
+    console.log(`  claim   : ${r.to.claim}`);
+    console.log(`  was     : ${lock[r.from].anchor}  ->  ${lock[r.from].head}`);
+    console.log(`  now     : ${r.to.anchor}  ->  ${r.to.head ?? `(${r.to.why})`}`);
+    console.log('');
+  }
+
+  for (const d of drifted) {
+    console.log(`DRIFT  ${d.key}`);
+    console.log(`  claim   : ${d.claim}`);
+    console.log(`  anchor  : ${d.anchor}`);
+    console.log(`  blessed : ${d.want.head}`);
+    console.log(`  now says: ${d.head ?? `(${d.why})`}`);
+    console.log('');
+  }
+
+  // The claim is printed here for the same reason it is printed above a re-aim. A new
+  // citation is the one case where nothing was ever read against this line, so a report
+  // that gave only the line asked the reader to go back to the document to find out what
+  // it was supposed to say, and that is the step that gets skipped.
+  for (const u of unkeyed) {
+    if (pairedNew.has(u.key)) continue;
+    console.log(`NEW    ${u.key}  ${u.anchor}`);
+    console.log(`  claim   : ${u.claim}`);
+    console.log(`  now says: ${u.head ?? `(${u.why})`}`);
+    console.log('');
+  }
+
+  for (const [doc, all] of goneByDoc) {
+    const keys = all.filter((k) => !pairedGone.has(k));
+    if (!keys.length) continue;
+    const absent = corpus.has(doc) ? '' : ', and the document itself is absent from the corpus';
+    console.log(`GONE   ${doc}: ${keys.length} blessed anchor(s) no longer collected${absent}`);
+    for (const k of keys.slice(0, 4)) console.log(`  ${lock[k].anchor}  ${k}`);
+    if (keys.length > 4) console.log(`  ... and ${keys.length - 4} more`);
+    console.log('');
+  }
+
+  printCollisions(collisions(found, lock));
+
+  if (drifted.length || unkeyed.length) {
+    console.log('Re-read the cited lines and confirm they still say what the claim says.');
+    console.log('Only then re-bless: npm run anchors:bless');
+  }
+  if (gone.length) {
+    console.log('A blessed claim is no longer being checked. Confirm the claim was meant to');
+    console.log('go, rather than its document being renamed or moved out of the corpus, and');
+    console.log('only then re-bless: npm run anchors:bless');
+  }
+
+  reportNearMisses(exempted);
+
+  process.exitCode = drifted.length || unkeyed.length || gone.length ? 1 : 0;
 }
 
-const seen = new Set(found.map((f) => f.key));
-const gone = Object.keys(lock).filter((k) => !seen.has(k));
-
-// A lost anchor is a claim that can no longer be checked, which is not the same as a
-// claim with nothing to report. Coverage cannot see this, because it counts what each
-// surviving document still has: delete a document and every remaining one reports a
-// perfect score while its anchors leave the gate entirely. Renaming one is the
-// plausible version, and it reads as a clean sweep of additions rather than as a loss.
-//
-// Which losses matter is deliberately not judged here. Failing only when a whole
-// document disappears would be a heuristic about significance, and heuristics about
-// which anchors are worth counting are exactly how this gate once covered 37 of 193.
-const corpus = new Set(docs());
-const goneByDoc = new Map();
-for (const k of gone) {
-  const doc = k.split('|')[0];
-  if (!goneByDoc.has(doc)) goneByDoc.set(doc, []);
-  goneByDoc.get(doc).push(k);
-}
-
-const cov = coverage.map((c) => `${c.doc} ${c.captured}/${c.scanned}`).join(', ');
-
-// An anchor that was re-aimed appears as one addition and one loss, because the anchor
-// text is part of the key. Reported as two unrelated events that is true but illegible:
-// pointing this gate at the commit where these citations were born prints 112 additions
-// and 137 losses and zero drift, so a reader running the documented historical check
-// concludes it cannot see the breakage it was built for. Pairing them back up restores
-// the blessed-versus-now reading without restoring the defect, because the pairing is
-// presentation only and never makes two anchors compare equal. It is deliberately
-// refused unless a scope holds exactly one addition and one loss for the same file,
-// since a guess about which removal explains which addition is the kind of corroborating
-// detail that makes a wrong report persuasive.
-const fileOf = (a) => String(a).split(':')[0];
-const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;
-const newBy = new Map();
-for (const u of unkeyed) {
-  const b = bucketOf(u.key, fileOf(u.anchor));
-  if (!newBy.has(b)) newBy.set(b, []);
-  newBy.get(b).push(u);
-}
-const goneBy = new Map();
-for (const k of gone) {
-  const b = bucketOf(k, fileOf(lock[k].anchor));
-  if (!goneBy.has(b)) goneBy.set(b, []);
-  goneBy.get(b).push(k);
-}
-const reaimed = [];
-const pairedNew = new Set();
-const pairedGone = new Set();
-for (const [b, ns] of newBy) {
-  const gs = goneBy.get(b);
-  if (!gs || ns.length !== 1 || gs.length !== 1) continue;
-  reaimed.push({ from: gs[0], to: ns[0] });
-  pairedNew.add(ns[0].key);
-  pairedGone.add(gs[0]);
-}
-
-console.log(`${unchanged} unchanged, ${drifted.length} drifted, ${unkeyed.length} new, ${gone.length} removed`);
-if (reaimed.length) {
-  console.log(`of which ${reaimed.length} pair as re-aimed anchors, one addition against one loss`);
-}
-console.log(`coverage: ${cov}\n`);
-
-for (const r of reaimed) {
-  console.log(`RE-AIM ${r.to.key}`);
-  console.log(`  claim   : ${r.to.claim}`);
-  console.log(`  was     : ${lock[r.from].anchor}  ->  ${lock[r.from].head}`);
-  console.log(`  now     : ${r.to.anchor}  ->  ${r.to.head ?? `(${r.to.why})`}`);
-  console.log('');
-}
-
-for (const d of drifted) {
-  console.log(`DRIFT  ${d.key}`);
-  console.log(`  claim   : ${d.claim}`);
-  console.log(`  anchor  : ${d.anchor}`);
-  console.log(`  blessed : ${d.want.head}`);
-  console.log(`  now says: ${d.head ?? `(${d.why})`}`);
-  console.log('');
-}
-
-for (const u of unkeyed) {
-  if (pairedNew.has(u.key)) continue;
-  console.log(`NEW    ${u.key}  ${u.anchor}`);
-  console.log(`  now says: ${u.head ?? `(${u.why})`}`);
-  console.log('');
-}
-
-for (const [doc, all] of goneByDoc) {
-  const keys = all.filter((k) => !pairedGone.has(k));
-  if (!keys.length) continue;
-  const absent = corpus.has(doc) ? '' : ', and the document itself is absent from the corpus';
-  console.log(`GONE   ${doc}: ${keys.length} blessed anchor(s) no longer collected${absent}`);
-  for (const k of keys.slice(0, 4)) console.log(`  ${lock[k].anchor}  ${k}`);
-  if (keys.length > 4) console.log(`  ... and ${keys.length - 4} more`);
-  console.log('');
-}
-
-if (drifted.length || unkeyed.length) {
-  console.log('Re-read the cited lines and confirm they still say what the claim says.');
-  console.log('Only then re-bless: npm run anchors:bless');
-}
-if (gone.length) {
-  console.log('A blessed claim is no longer being checked. Confirm the claim was meant to');
-  console.log('go, rather than its document being renamed or moved out of the corpus, and');
-  console.log('only then re-bless: npm run anchors:bless');
-}
-
-reportNearMisses();
-
-process.exitCode = drifted.length || unkeyed.length || gone.length ? 1 : 0;
+// Run only as a script. Importing it has to be side-effect free, because the pairing
+// helpers above are unit tested and a module that gated the whole repository on import
+// would set an exit code, or call process.exit, inside the test runner.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();

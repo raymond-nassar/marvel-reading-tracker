@@ -134,23 +134,27 @@ Every `path:line` citation in every tracked Markdown file, this one included, is
 the **content** of the lines it names, not by the numbers. Editing code moves lines and breaks
 fingerprints. That is the gate working.
 
-Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:101-104` explains why in the
+Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:114-117` explains why in the
 script itself: an enumeration is a list someone has to keep complete, and every anchor defect the
 gate exists to catch was caused by exactly that.
 
 The workflow is:
 
 1. Re-aim each broken citation at whatever now says what the claim says.
-2. `npm run anchors` until it reports **0 drifted, 0 new and 0 removed**. The gate exits 1 on any
-   of those, not just on drift, so watching the drift count alone will report a pass while CI
-   fails. That happened on the first commit of this very file.
-3. **Print the first and last cited line of what you re-aimed and read them, one reading per
-   citation rather than one per distinct range.**
-4. `npm run anchors:bless`, then re-run and expect exit 0.
+2. `npm run anchors` until nothing is left that you did not intend: 0 drifted, and every
+   addition and loss paired as a re-aim you made on purpose. The gate exits 1 on drift, additions
+   and losses alike, not just on drift, so watching the drift count alone will report a pass while
+   CI fails. That happened on the first commit of this very file.
+3. `npm run anchors:bless`. Before it writes the lock it prints **one line per citation whose
+   blessed line is changing**, carrying the prose that cites the line beside the line itself.
+   **Read every line it prints, each against the claim printed on that same line.**
+4. Re-run `npm run anchors` and expect **0 drifted, 0 new and 0 removed**, and exit 0.
 
 **Step 3 is not optional.** `anchors:bless` accepts the current state wholesale, which is correct
 only once you have done the reading. Blessing to clear a red build locks the wrong lines in
-permanently and silently, which is the exact failure the gate exists to end.
+permanently and silently, which is the exact failure the gate exists to end. The print is produced
+for you now; reading it is still yours, and the lock is written in the same run, so a pairing that
+reads wrong means fix the citation and bless again rather than move on.
 
 This is not hypothetical. A citation of `workflow_dispatch` in the backlog was written as line 12
 of the workflow file, which is a comment; the real line is `.github/workflows/ci.yml:15`. Printing
@@ -167,23 +171,26 @@ Two traps in the gate itself, both hit while writing this file:
   creates that citation and the gate will chase it. Describe a wrong line in plain prose, as "line
   12 of the workflow file", never in the citation form.
 
-And one trap in step 3 itself, which is why it now says one reading per citation. Re-aiming is
-per citation but printing is naturally per range, so when a script re-aims two different citations
-onto the **same** line, a printer that deduplicates shows that line once, it reads correctly for
-whichever claim you happen to have in mind, and the second claim is blessed onto a line that has
-nothing to do with it. That is not hypothetical either: adding nineteen lines to the top of a module
-moved 26 citations of that module, 25 landed correctly and one landed thirty-eight lines out on top
-of another, and the deduplicated print showed a single line that read perfectly well. A review caught
-it after the bless. So **read each cited line beside the sentence that cites it**, not on its own:
-the count rule alone is satisfied by a printer that emits the same wrong line twice. A citation you
-did not read against its own claim has not been read.
+Step 3 used to be a print you rolled by hand, and the reason it is not any more is worth keeping.
+Re-aiming is per citation but printing is naturally per range, so when a script re-aims two
+different citations onto the **same** line, a printer that deduplicates shows that line once, it
+reads correctly for whichever claim you happen to have in mind, and the second claim is blessed
+onto a line that has nothing to do with it. That is not hypothetical either: adding nineteen lines
+to the top of a module moved 26 citations of that module, 25 landed correctly and one landed
+thirty-eight lines out on top of another, and the deduplicated print showed a single line that read
+perfectly well. A review caught it after the bless.
 
-Those 26 are the honest scale of the chore, and they are the argument for making this mechanical
-rather than careful. `scripts/check-anchors.mjs` already computes the prose immediately before each
-citation and then discards it at bless time, so the pairing step 3 asks you to do by hand is one the
-script could print. That is filed as BL-070 rather than done here. Until it lands, this is a human
-discipline in a repository that elsewhere argues human disciplines are the defect, and it should be
-read as a stopgap.
+Those 26 are the honest scale of the chore, and they were the argument for making this mechanical
+rather than careful. The gate now prints the pairing itself, one record per citation, and the
+suite holds that shape: a printer keyed by anchor, range or fingerprint turns the reproduction of
+that collision red. So the rule is no longer a discipline to remember at every site. What is left
+to a person is the reading, and reading a line beside the claim printed next to it is a thing a
+tool cannot do for you.
+
+The bless also prints a **NOTICE** when two citations in one scope come to name the same lines
+under unlike claims, which is the exact shape of that collision. Sharing lines is ordinary, so it
+is not an error and it is deliberately silent once the pair is settled: it fires only on the bless
+that creates or moves one of them, which is the one moment the pairing can still be acted on.
 
 Ranges must not end on a blank line.
 
