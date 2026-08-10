@@ -64,12 +64,22 @@ export class Store {
 
   // Sets this incident's value aside and reports whether a copy verifiably exists.
   //
-  // Two rules matter here. A previous incident's copy must never be clobbered, so if the main
-  // slot already holds different bytes this one is archived under its own key instead of being
-  // dropped, otherwise a second corruption months later would be left with no copy at all
-  // while salvagedRaw() served the stale blob as if it were the user's data. And the write is
-  // read back rather than assumed, because copying the state doubles this origin's footprint,
-  // so the near-quota case is exactly when setItem throws and the copy silently never lands.
+  // Three rules matter here. A previous incident's copy must never be clobbered, so if the main
+  // slot already holds different bytes this one is archived under a name nothing else holds, chosen
+  // by freeArchiveKey(), otherwise a second corruption months later would be left with no copy at
+  // all while salvagedRaw() served the stale blob as if it were the user's data. A copy that already
+  // holds these exact bytes is adopted rather than written again, because the archive key carries
+  // the time of the write, so recomputing it per call made every reload of a blocked page write
+  // the identical bytes under a new name, and startFresh() salvages before clearing, so the button
+  // the banner points at added one more. Measured in Edge: two incidents, two reloads and one
+  // Start fresh left five keys where two were needed. That is not merely wasteful. Near the quota,
+  // where copying the whole state throws but writing a small empty state still succeeds, the
+  // second boot could not write its duplicate and reported that no copy survived, so startFresh()
+  // refused and told the reader nothing had been set aside while the previous boot's copy sat on
+  // disk. Whether a copy exists is a different question from whether one can be written now, and
+  // this asks the first. And the write is read back rather than assumed, because copying the state
+  // doubles this origin's footprint, so the near-quota case is exactly when setItem throws and the
+  // copy silently never lands.
   salvage() {
     try {
       const raw = this.storage?.getItem(KEY);
@@ -77,9 +87,19 @@ export class Store {
         this.salvageKey = null;
         return true; // nothing on disk to lose
       }
-      const existing = this.storage.getItem(SALVAGE_KEY);
-      const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;
-      if (existing !== raw) this.storage.setItem(key, raw);
+      // The main slot is asked directly rather than through the walk, so that a storage which
+      // cannot be enumerated still recognises the copy it is already holding. The walk is an
+      // addition to this question, never a replacement for it: routing the whole question through
+      // it regressed the fallback from the shipped behaviour, writing a duplicate where the shipped
+      // code wrote none, and near quota that failed write is what makes this return false and
+      // startFresh() refuse the reader the way out. Measured at 1 write against 0 before the fix.
+      const held = this.storage.getItem(SALVAGE_KEY) === raw ? SALVAGE_KEY : this.existingCopyOf(raw);
+      if (held) {
+        this.salvageKey = held;
+        return true;
+      }
+      const key = this.freeArchiveKey();
+      this.storage.setItem(key, raw);
       const ok = this.storage.getItem(key) === raw;
       this.salvageKey = ok ? key : null;
       return ok;
@@ -87,6 +107,48 @@ export class Store {
       this.salvageKey = null;
       return false;
     }
+  }
+
+  // A name this copy can take without destroying one already held.
+  //
+  // existingCopyOf() has already ruled out a slot holding these bytes, so every occupied salvage
+  // key holds a different incident's and must not be overwritten. The timestamp alone is not enough
+  // to guarantee that. startFresh() salvages before it clears, so a tab whose live key is rewritten
+  // by another tab between boot and the button reaches a second write inside the same millisecond,
+  // and the identical name clobbered the copy taken moments earlier. Measured with a fake storage
+  // rather than reasoned about, after the opposite was asserted and proved false. The loop
+  // terminates because each pass tries a name no earlier pass tried.
+  freeArchiveKey() {
+    if (this.storage.getItem(SALVAGE_KEY) === null) return SALVAGE_KEY;
+    const stamp = Date.now();
+    let key = `${SALVAGE_KEY}.${stamp}`;
+    for (let n = 1; this.storage.getItem(key) !== null; n += 1) key = `${SALVAGE_KEY}.${stamp}.${n}`;
+    return key;
+  }
+
+  // Which archived salvage slot, if any, already holds exactly these bytes.
+  //
+  // Asking storage rather than tracking the answer in a slot of its own is deliberate: a pointer
+  // is bookkeeping that can drift from what is actually there, and this question has a true answer
+  // storage can be asked directly. Only the salvage family is considered, because nothing but
+  // salvage() writes those keys, whereas restore() overwrites the pre-restore slot.
+  //
+  // The caller checks the main slot before calling this, and must keep doing so. A storage that
+  // cannot be enumerated, or that throws part way through, answers "none" here, and "none" is only
+  // safe because that direct read has already happened: without it the fallback stopped recognising
+  // the copy in the main slot and wrote a duplicate the shipped code never wrote, which near quota
+  // is the failed write that refuses the reader startFresh().
+  existingCopyOf(raw) {
+    try {
+      const total = this.storage?.length ?? 0;
+      for (let i = 0; i < total; i += 1) {
+        const key = this.storage.key(i);
+        if (key?.startsWith(SALVAGE_KEY) && this.storage.getItem(key) === raw) return key;
+      }
+    } catch {
+      /* unreadable is indistinguishable from empty here, and both mean "write one" */
+    }
+    return null;
   }
 
   // Offers this incident's copy, falling back to the live value, which, while blocked, is

@@ -6,12 +6,18 @@ import { createEmptyState, createList, addIssuesToList, markRead, isRead, export
 // Minimal localStorage stand-in. `failWrites` simulates a full quota; `failKey` fails only
 // writes to one key, which is the realistic near-quota shape: copying the whole state aside
 // doubles the footprint and throws, while overwriting it with a small empty state succeeds.
+// `writes` records the keys that were actually written, which is how the salvage tests count
+// copies: the archive key carries a timestamp, so boots inside one millisecond collide on it and
+// leave a single key holding the last of several writes.
 function fakeStorage(seed = {}) {
   const map = new Map(Object.entries(seed));
   return {
     map,
     failWrites: false,
     failKey: null,
+    writes: [],
+    get length() { return map.size; },
+    key(i) { return [...map.keys()][i] ?? null; },
     getItem(k) { return map.has(k) ? map.get(k) : null; },
     setItem(k, v) {
       if (this.failWrites || (this.failKey && k.startsWith(this.failKey))) {
@@ -19,6 +25,7 @@ function fakeStorage(seed = {}) {
         e.name = 'QuotaExceededError';
         throw e;
       }
+      this.writes.push(k);
       map.set(k, String(v));
     },
     removeItem(k) { map.delete(k); },
@@ -163,6 +170,247 @@ test('a second, unrelated incident is salvaged and offered accurately', () => {
   assert.equal(second.startFresh(), true);
   assert.ok([...storage.map.values()].includes('months-of-real-progress-now-unreadable'),
     'a copy must still exist after starting fresh');
+});
+
+// A blocked page is a page the reader reloads, and the archive key carried the time of the write,
+// so the choice of where the copy goes was remade from scratch on every boot and each one wrote
+// the identical bytes under a new name.
+//
+// Counting writes rather than keys is the point of the assertion. Three boots inside one
+// millisecond collide on Date.now() and leave one key holding the last of three writes, so a test
+// that counted keys would pass on the broken code whenever it ran fast enough, which in a unit test
+// is always.
+test('reloading during a second incident does not copy the same bytes aside again', () => {
+  const storage = fakeStorage({ [KEY]: 'incident-one' });
+  new Store({ storage }).load();
+
+  storage.setItem(KEY, 'months-of-real-progress-now-unreadable');
+  storage.writes.length = 0;
+
+  for (let i = 0; i < 3; i += 1) new Store({ storage }).load();
+
+  assert.equal(storage.writes.length, 1,
+    'three boots must set the bytes aside once between them, not once each');
+  assert.equal(
+    [...storage.map.values()].filter((v) => v === 'months-of-real-progress-now-unreadable').length,
+    2,
+    'the live value and exactly one copy of it',
+  );
+  assert.equal(storage.getItem('mrt.state.salvage'), 'incident-one',
+    'and the earlier incident is still there');
+});
+
+// startFresh() salvages before it clears, so on a second incident the reader's own recovery step
+// archived another copy of what the boot they were looking at had already archived.
+test('starting fresh during a second incident adds no copy of its own', () => {
+  const storage = fakeStorage({ [KEY]: 'incident-one' });
+  new Store({ storage }).load();
+  storage.setItem(KEY, 'months-of-real-progress-now-unreadable');
+
+  const store = new Store({ storage });
+  store.load();
+  const copyKey = store.salvageKey;
+  storage.writes.length = 0;
+
+  assert.equal(store.startFresh(), true);
+
+  assert.deepEqual(storage.writes, [KEY],
+    'the only write is the empty state, not another copy alongside it');
+  assert.equal(storage.getItem(copyKey), 'months-of-real-progress-now-unreadable',
+    'and the copy the reader was promised survives');
+});
+
+// The case that makes the repeat a defect rather than housekeeping. Near the quota the copy cannot
+// be written a second time, and answering "does a copy exist" by trying to write one confuses that
+// question with "can one be written now". The copy from the previous boot was on disk throughout,
+// while the hatch refused and told the reader nothing had been set aside.
+test('start fresh uses the copy a previous boot already made rather than refusing', () => {
+  const storage = fakeStorage({ [KEY]: 'incident-one' });
+  new Store({ storage }).load();
+  storage.setItem(KEY, 'months-of-real-progress-now-unreadable');
+
+  new Store({ storage }).load(); // the boot with room, which archives the copy
+  storage.failKey = 'mrt.state.salvage'; // and now there is no room for another
+
+  const store = new Store({ storage });
+  store.load();
+  assert.ok(store.salvageKey, 'the copy on disk must be found, not written over');
+  assert.equal(store.salvagedRaw(), 'months-of-real-progress-now-unreadable');
+
+  assert.equal(store.startFresh(), true, 'the reader must not be refused their own escape hatch');
+  assert.equal(store.blocked, false);
+  assert.ok([...storage.map.values()].includes('months-of-real-progress-now-unreadable'),
+    'and the copy outlives the clearing');
+});
+
+// The seven below guard boundaries the adopting introduces. Unlike the three above they pass on
+// the old code too, because they are not reproductions of the defect: they pin down what may be
+// adopted, so that a later change cannot widen it into serving one incident's bytes for another.
+
+// Enumeration is an addition to this question, never a replacement for it. The shipped code asked
+// the main slot directly and wrote nothing when it already held these bytes, and that answer needed
+// no walk at all. Routing the whole question through the walk regressed exactly this: on a storage
+// with no enumeration the copy in hand went unrecognised and a duplicate was written where the
+// shipped code wrote none. Measured before it was fixed, on this storage: 1 write against 0.
+test('a copy already in the main slot is recognised without enumerating', () => {
+  const bare = new Map([[KEY, 'corrupt-and-precious'], ['mrt.state.salvage', 'corrupt-and-precious']]);
+  let writes = 0;
+  const store = new Store({
+    storage: {
+      getItem: (k) => (bare.has(k) ? bare.get(k) : null),
+      setItem: (k, v) => { writes += 1; bare.set(k, String(v)); },
+      removeItem: (k) => bare.delete(k),
+    },
+  });
+
+  assert.equal(store.salvage(), true);
+  assert.equal(writes, 0);
+  assert.equal(store.salvageKey, 'mrt.state.salvage');
+  assert.equal(bare.size, 2);
+});
+
+// The same regression at the point where it costs the reader something. A duplicate write that is
+// merely wasteful when there is room is a refusal when there is not, because the failed write is
+// what makes salvage() answer false and startFresh() turn down the only way out. The shipped code
+// never attempted that write, so it never had to succeed.
+test('start fresh is not refused on a storage that cannot be enumerated', () => {
+  const bare = new Map([[KEY, 'corrupt-and-precious'], ['mrt.state.salvage', 'corrupt-and-precious']]);
+  const store = new Store({
+    storage: {
+      getItem: (k) => (bare.has(k) ? bare.get(k) : null),
+      setItem: () => { const e = new Error('quota'); e.name = 'QuotaExceededError'; throw e; },
+      removeItem: (k) => bare.delete(k),
+    },
+  });
+
+  assert.equal(store.salvage(), true);
+  assert.equal(store.salvageKey, 'mrt.state.salvage');
+  assert.equal(store.salvagedRaw(), 'corrupt-and-precious');
+});
+
+// Identity here is byte identity, deliberately, and never the clock. A dated copy holding some
+// other incident is not this incident's copy however recently it was written.
+test('a dated copy of a different incident is never adopted for this one', () => {
+  const storage = fakeStorage({
+    [KEY]: 'incident-three',
+    'mrt.state.salvage': 'incident-one',
+    'mrt.state.salvage.111': 'incident-two',
+  });
+  const store = new Store({ storage });
+
+  assert.equal(store.salvage(), true);
+  assert.notEqual(store.salvageKey, 'mrt.state.salvage.111');
+  assert.equal(storage.getItem(store.salvageKey), 'incident-three');
+  assert.equal(storage.getItem('mrt.state.salvage.111'), 'incident-two',
+    'and the incident it does hold is untouched');
+  assert.equal(storage.getItem('mrt.state.salvage'), 'incident-one');
+});
+
+// Only the salvage family may be adopted. restore() overwrites the pre-restore slot, so a copy
+// found there is not one this store may promise to still be holding later.
+test('the pre-restore snapshot is never adopted as a salvage copy', () => {
+  const storage = fakeStorage({ [KEY]: 'live-bytes', 'mrt.state.prerestore': 'live-bytes' });
+  const store = new Store({ storage });
+
+  assert.equal(store.salvage(), true);
+  assert.equal(store.salvageKey, 'mrt.state.salvage');
+  assert.equal(storage.getItem('mrt.state.salvage'), 'live-bytes');
+});
+
+// Looking for an existing copy is an optimisation, and an optimisation must never be the reason a
+// recovery is refused. A storage that cannot be enumerated answers "no copy", which is the answer
+// that leads to writing one.
+test('a storage that cannot be enumerated still gets a copy', () => {
+  const bare = new Map([[KEY, 'corrupt-and-precious']]);
+  const store = new Store({
+    storage: {
+      getItem: (k) => (bare.has(k) ? bare.get(k) : null),
+      setItem: (k, v) => bare.set(k, String(v)),
+      removeItem: (k) => bare.delete(k),
+    },
+  });
+
+  assert.equal(store.salvage(), true);
+  assert.equal(bare.get('mrt.state.salvage'), 'corrupt-and-precious');
+});
+
+// An absent enumeration API is not the only way this fails, and the two do not share a path: with no
+// `length` the loop is never entered, so the case above exercises the `?? 0` fallback and never
+// reaches the catch. Measured by removing the catch and letting the throw escape: the suite stayed at
+// 599 pass, 0 fail, so nothing covered it. It matters because that throw would escape into salvage()'s
+// own catch, which returns false, and a false there is what makes startFresh() refuse the reader the
+// only way out they have.
+test('a storage that throws when asked to enumerate still gets a copy', () => {
+  const bare = new Map([[KEY, 'corrupt-and-precious']]);
+  const store = new Store({
+    storage: {
+      get length() { throw new Error('enumeration denied'); },
+      key: () => null,
+      getItem: (k) => (bare.has(k) ? bare.get(k) : null),
+      setItem: (k, v) => bare.set(k, String(v)),
+      removeItem: (k) => bare.delete(k),
+    },
+  });
+
+  assert.equal(store.salvage(), true);
+  assert.equal(store.salvageKey, 'mrt.state.salvage');
+  assert.equal(bare.get('mrt.state.salvage'), 'corrupt-and-precious');
+});
+
+// Throwing at the second key rather than at `length` is a third path: the walk has begun and a
+// partial answer is on the table, so the code has to discard it rather than treat what it saw as the
+// whole story. Answering "none" from a partial walk is safe in the one direction that matters, since
+// it writes a copy that may duplicate one it never reached, and never adopts one it cannot confirm.
+test('a storage that throws part way through enumeration still gets a copy', () => {
+  const bare = new Map([['mrt.state.salvage.older', 'another-incident'], [KEY, 'corrupt-and-precious']]);
+  const store = new Store({
+    storage: {
+      length: 2,
+      key: (i) => {
+        if (i > 0) throw new Error('gone mid-walk');
+        return 'mrt.state.salvage.older';
+      },
+      getItem: (k) => (bare.has(k) ? bare.get(k) : null),
+      setItem: (k, v) => bare.set(k, String(v)),
+      removeItem: (k) => bare.delete(k),
+    },
+  });
+
+  assert.equal(store.salvage(), true);
+  assert.equal(store.salvageKey, 'mrt.state.salvage');
+  assert.equal(bare.get('mrt.state.salvage'), 'corrupt-and-precious');
+  assert.equal(bare.get('mrt.state.salvage.older'), 'another-incident');
+});
+
+// The archive exists so one incident's copy cannot destroy another's, and the timestamp alone did
+// not deliver that. startFresh() salvages before it clears, so when another tab rewrites the live
+// key between the boot and the button, the second write lands in the same millisecond as the first
+// and took the same name. The copy the reader had already been promised was overwritten by it.
+//
+// This is a clobber, so counting writes is not enough here: both trees write twice. What separates
+// them is how many copies survive.
+test('a second copy taken in the same millisecond does not overwrite the first', () => {
+  const storage = fakeStorage({ [KEY]: 'incident-one' });
+  new Store({ storage }).load();
+  storage.setItem(KEY, 'incident-two');
+
+  const store = new Store({ storage });
+  store.load();
+  const firstCopy = store.salvageKey;
+  assert.equal(storage.getItem(firstCopy), 'incident-two');
+
+  // Another tab of the same origin writes the live key while this one sits blocked.
+  storage.setItem(KEY, 'incident-three-from-another-tab');
+  assert.equal(store.startFresh(), true);
+
+  const archived = [...storage.map.entries()]
+    .filter(([k]) => k.startsWith('mrt.state.salvage.'))
+    .map(([, v]) => v);
+  assert.equal(archived.length, 2, 'both archived copies must survive, not one on top of the other');
+  assert.ok(archived.includes('incident-two'), 'the copy the reader was already promised');
+  assert.ok(archived.includes('incident-three-from-another-tab'), 'and the one taken on the way out');
+  assert.equal(storage.getItem('mrt.state.salvage'), 'incident-one',
+    'and the first incident is still in the main slot');
 });
 
 test('update reports whether the change was actually saved', () => {
