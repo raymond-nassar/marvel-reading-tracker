@@ -276,6 +276,24 @@ quote in a bug report.
 
 ### Changed
 
+- **The "we could not read your saved data" warning no longer tells you the same thing twice.** It
+  used to give you the reason and the advice, then repeat the advice underneath in slightly
+  different words, and both of those also appeared in the red strip along the top, so every
+  sentence was on screen three times over. The one thing worth reading, which is why your data
+  could not be read, was buried in the middle of wording you had already been told to skip. The
+  reason now stands on its own and the advice is said once, directly under it. None of the
+  reassurance is gone: your data has still not been changed or deleted, saving is still paused so
+  nothing can overwrite it, and downloading a copy before starting fresh is still what the warning
+  asks you to do.
+
+  The same thing happened if you tried to add a reading order while that warning was up. The
+  message saying the change had not been saved repeated the advice a second time, right above the
+  paragraph that already said it. It now tells you only what you could not otherwise know: that the
+  change was not saved, and that saving starts again once you have decided what to do. One message
+  still repeats itself on purpose, the one that appears if starting fresh cannot go ahead because
+  your browser has no room to set a copy aside, because that one is sending you back to download
+  the copy by hand rather than restating advice.
+
 - **The safety check that guards written claims about the code now guards the ones written in the
   code as well.** Nothing about the app changes and nothing you have saved is affected. The project
   keeps hundreds of claims of the form "this behaviour lives in this exact place in the code", and a

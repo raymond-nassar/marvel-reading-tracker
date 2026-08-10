@@ -39,9 +39,14 @@ export class Store {
       this.state = createEmptyState();
       this.blocked = true;
       this.salvage();
-      this.lastError =
-        `Could not read your saved data (${err.message}). It has NOT been changed or deleted. `
-        + 'Saving is paused so it cannot be overwritten. Download a copy, then choose to start fresh.';
+      // The reason and nothing else. What to do about it is the banner's own paragraph, which
+      // said the same three sentences over again: measured in Edge against a schema-version
+      // failure, every one of them was on screen three times, because this string is rendered
+      // into the banner and into the assertive save pane at once and the paragraph repeats it.
+      // The paragraph is the copy that survives, because the banner repaints from lastError,
+      // so a later failure while blocked overwrites this text, and instructions carried here
+      // would go with it exactly when the recovery is going badly.
+      this.lastError = `Could not read your saved data (${err.message}).`;
     }
     return this.state;
   }
@@ -134,9 +139,15 @@ export class Store {
 
   persist(state = this.state) {
     if (this.blocked) {
+      // The news, and not the two steps out, which the banner states already. This message
+      // reaches the banner as well as the save report, because the banner repaints from
+      // lastError, so a reader who tried to save while blocked was told to download a copy
+      // and start fresh twice over, in adjacent paragraphs. Saying the pause ends on a choice
+      // is what this one adds and the standing copy cannot: it answers what happened to the
+      // change that was just attempted.
       this.lastError =
-        'Saving is paused because your existing saved data could not be read. '
-        + 'Download a copy of it, then choose "Start fresh" to begin saving again.';
+        'That change was not saved. Choose what to do about the data that could not be read, '
+        + 'and saving will start again.';
       return false;
     }
     if (!this.storage) return true;

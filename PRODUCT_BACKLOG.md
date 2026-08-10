@@ -9,11 +9,11 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Forty-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Forty-seven items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
-BL-063, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071 and BL-072.
+BL-063, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072 and BL-073.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
@@ -222,7 +222,8 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2860-2894 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:359 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:933 |
-| BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Ready | src/index.html:147-148 |
+| BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Shipped | src/index.html:147-148 |
+| BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Ready | src/js/main.js:93 |
 | BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:147 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Ready | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
@@ -2886,7 +2887,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2643-2646`.
+`PRODUCT_BACKLOG.md:2644-2647`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3372,17 +3373,18 @@ the tenth, deleting the label pair, was missed until the check was tied to the s
 
 **BL-073: Say the recovery instructions once instead of twice**
 
-- [ ] Decide which of the two paragraphs owns the guidance, and cut it from the other
-- [ ] Keep the reason the data could not be read, which is the part only the error knows
+- [x] Decide which of the two paragraphs owns the guidance, and cut it from the other
+- [x] Keep the reason the data could not be read, which is the part only the error knows
 
 Constraint gate: checked 1 to 11, none breached.
 
 Seen in the BL-072 screenshots rather than looked for. The banner renders two paragraphs that say
-almost the same thing. The error line built at `src/js/storage.js` and written into `#blocked-why`
-ends "It has NOT been changed or deleted. Saving is paused so it cannot be overwritten. Download a
-copy, then choose to start fresh." The static paragraph at `src/index.html:147-148` then says "It
-has not been changed or deleted, and saving is paused so it cannot be overwritten. Download a copy
-first, then you can start fresh."
+almost the same thing. The error line built in the store and written into `#blocked-why` ended "It
+has NOT been changed or deleted. Saving is paused so it cannot be overwritten. Download a copy, then
+choose to start fresh." The static paragraph at `src/index.html:147-148` then says "It has not been
+changed or deleted, and saving is paused so it cannot be overwritten. Download a copy first, then
+you can start fresh." The store's half is quoted as it was filed and is no longer what the code
+says, so it is named in prose rather than cited.
 
 The duplication is not merely untidy. The one thing on that screen only the error knows is why the
 data could not be read, and repeating the reassurance twice pushes that reason into the middle of a
@@ -3391,6 +3393,52 @@ saying a thing twice in an alert, so there is precedent for the direction.
 
 Filed rather than folded into BL-072, which changed the weight of the two buttons and touched no
 copy. It is a content decision on a recovery surface and deserves its own change.
+
+**It was three times, not twice, and the third was the loudest.** Counted in Edge against a real
+schema-version failure rather than read off the source: every one of the three instructions was on
+the screen three times. `src/js/main.js:3178` hands the same load error to the save report, an
+assertive live region above the banner, so the string was painted there and in `#blocked-why` and
+paraphrased again by the standing paragraph. The row was filed off a screenshot of the banner
+alone, which is where the miscount came from. After the change each instruction is on screen once.
+
+**The paragraph owns the guidance because it is the only one of the two that lasts.**
+`src/js/main.js:90-98` repaints `#blocked-why` from `store.lastError` on every render, so that slot
+holds whatever failed most recently, not the failure that raised the banner. Instructions written
+into it are destroyed by the next failure, which is to say exactly when the recovery is going
+badly. The markup paragraph is unconditional and cannot be overwritten, so it keeps the advice and
+the store keeps the reason. That also settled the accessibility question the other way round from
+the obvious one: `role="alert"` is `aria-live="assertive"` with `aria-atomic="true"`, MDN's ARIA
+alert role reference, retrieved 2026-08-09, so the region is announced whole and nothing was lost
+by moving a sentence out of the string and into the paragraph beside it.
+
+**Cutting the load error alone would have left the defect reachable.** A second writer sets
+`lastError` while blocked, the refusal in `persist`, and it carried the same two instructions. It
+is reachable by adding anything to the library while the banner is up, which is a plausible thing
+to try, and driving that path in the browser put the pair back on screen twice. It now reports only
+what the reader cannot see, that the change was not saved and that saving resumes on a choice. This
+was found by stressing the recovery path rather than by reading the diff, which is precisely the
+shape this repository's rule about recovery code warns of: the least exercised paths in the app are
+the ones that only run once something has already gone wrong.
+
+**One message is allowed to repeat the standing copy, and the difference is the point.** The
+refusal in `startFresh` still says to download a copy. It is not restating the advice, it is
+redirecting: the automatic copy did not land, storage is probably full, and the way through is to
+save the file by hand and press again. The rule this change applies is that a message may repeat
+the banner only when it adds something the banner cannot say. The refusal adds a distinct failure
+and a distinct route; the refused write added nothing but its own news.
+
+**The reason is still on screen twice, and fixing that here would have been a different change.**
+The save report and the banner both show it, and the banner shows the newest failure rather than
+the one that blocked saving, so the reason can be pushed off the screen by a later error. Holding
+the blocking reason in its own field would end both, and it is a behaviour change rather than a
+copy decision, so it is filed as BL-075 rather than folded in here.
+
+Verified with 529 tests passing, lint clean, and two browser runs against the real banner in Edge:
+the instruction count went from three to one, and a seven-point stress of the blocked paths, write
+refused, banner repainted, original bytes intact, copy set aside, banner withdrawn on choice,
+passed in full. The new check was proved to fail three ways before it was trusted, once with the
+guidance back in each of the two store messages and once with the paragraph deleted from the
+markup.
 
 **BL-074: Draw the architecture and data flow the code already has**
 
@@ -3438,6 +3486,37 @@ the level of responsibilities instead of filenames costs nothing now and survive
 every backticked path and line written into a new document becomes a claim the anchors gate will
 chase forever, which matters more here than usual because a document describing structure is exactly
 where citations drift fastest.
+
+**BL-075: Keep the reason saving is paused where the reader can still see it**
+
+- [ ] Hold the reason the read failed in its own value, so a later failure cannot displace it
+- [ ] Decide where a failure that happens while saving is paused is reported instead
+- [ ] Say the reason once, since two regions paint it on the first render
+- [ ] Clear it when the reader resolves the block, and check the banner goes with it
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of BL-073, which cut the duplicated advice off this banner and could not fix this without
+becoming a behaviour change. The banner's explanation line is repainted from the store's last error
+on every render, so it holds whatever failed most recently rather than the failure that paused
+saving. Measured in Edge: with the banner up for an unreadable schema version, adding one reading
+order replaces the version reason with the refusal to save, and the reason the reader is on that
+screen at all is gone from the banner. It goes from the save report above in the same instant
+rather than surviving there, because both regions are painted from the same last-error value by
+the one change callback at `src/js/main.js:67-72`, so nothing left on screen says why saving is
+paused.
+
+The same value is also painted twice on the first render, once into the save report and once into
+the banner, which is the residual half of BL-073's finding. Both come from one cause. The store has
+one slot for the newest error and the banner reads that slot, so the banner cannot distinguish the
+condition it is describing from an event that happened during it.
+
+The shape of the answer is a value that is set when the read fails and cleared when the block is
+resolved, with everything else that fails in the meantime reported only where transient notices go.
+It is the code that runs after something has already gone wrong, which is where the two most
+serious findings in this repository's review history were, so the cases to press on are the ones
+where the recovery is offered twice, where it is resolved in another tab, and where the reason is
+cleared while the banner is still on screen.
 
 **BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
@@ -3530,7 +3609,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4197-4198` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4276-4277` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3540,11 +3619,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4218-4220`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4297-4299`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4031-4033` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4110-4112` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3752,7 +3831,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:555-558` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:573-576` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:158-160` and
 `PRODUCT_BACKLOG.md:165-167` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4286,15 +4365,15 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and twenty-four
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and twenty-five
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 50 rows now. The ranks below are
+how it reaches 51 rows now. The ranks below are
 positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks eighteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 18 of 50.
+- Calculated: WSJF 3.67, rank 18 of 51.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -4313,10 +4392,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks forty-fourth
+### Case 2: BL-007 is labelled P1 but ranks forty-fifth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 44 of 50, below forty unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 45 of 51, below forty unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -4372,9 +4451,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 25 of 50. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 19 of 50. Mid-table.
-- BL-017, P2, rank 49 of 50. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 25 of 51. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 19 of 51. Mid-table.
+- BL-017, P2, rank 50 of 51. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
