@@ -20,6 +20,13 @@ itself is loaded at `src/index.html:710`. The launch page, which is the tab a re
 into, is loaded at `src/open.html:19`. A fault-injection harness that exists for development and is
 no part of the running app is loaded at `src/dev-faults.html:129`.
 
+The module the tracker page loads is not the view layer itself but a fourteen-line entry whose whole
+body is a call to `boot()`, at `src/js/app.js:12-14`. The indirection is the seam that makes the view
+layer testable: loading it used to be the same act as starting the application, so a test could not
+reach a render function without booting an app that then never exited. The entry has to be a module
+rather than an inline script because the server sends `script-src 'self'`, which an inline script
+would need a nonce to satisfy.
+
 Nothing bundles or transpiles. The browser loads ES modules directly from `src/`, which is why the
 import graph below is also the load graph.
 
@@ -29,12 +36,13 @@ Imports say what a file mentions. Ownership says who made the thing and who can 
 is the question a reader of this app actually has, because almost every module here is a bag of
 pure functions and the interesting state sits in five objects that one file constructs.
 
-Those five are built together at `src/js/main.js:59-73`. Read that block and you have read the
+Those five are built together at `src/js/main.js:64-78`. Read that block and you have read the
 application's wiring.
 
 ```mermaid
 flowchart TD
-  idx["index.html"] --> view["View layer: every screen and every event handler"]
+  idx["index.html"] --> app["app.js: the entry, calls boot()"]
+  app --> view["View layer: every screen and every event handler"]
   opn["open.html"] --> launch["Launch page: resolves the reader link in the new tab"]
   dev["dev-faults.html"] --> harness["Fault harness: development only"]
 
@@ -86,7 +94,7 @@ view layer itself created and can throw away.
 
 **Two of the five are replaceable at runtime, and they are replaced together.** Saving a new API
 base builds a fresh cache and a fresh client and hands the new client to the hydrator, at
-`src/js/main.js:3014-3016`. The hydrator itself is not rebuilt; only its reference to the client is
+`src/js/main.js:3027-3029`. The hydrator itself is not rebuilt; only its reference to the client is
 swapped. The rate limiter is deliberately not rebuilt either, because the budget it tracks belongs
 to the reader's connection rather than to whichever base URL is configured. The store is never
 replaced at all.
@@ -141,14 +149,14 @@ sequenceDiagram
 The parts of that worth saying in words.
 
 **The transform is pure and the store is the only writer.** The button's handler at
-`src/js/main.js:1921-1924` hands the store a function; the function itself, at
+`src/js/main.js:1934-1937` hands the store a function; the function itself, at
 `src/js/lib/model.js:401-403`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
 `src/js/storage.js:120-138`.
 
 **The repaint is synchronous, and it is inside the write.** By the time `update` returns, the
 change callback has already run and the screen already shows the result. That is why the
-announcement can be gated on the outcome: `src/js/main.js:223-225` speaks only if the write
+announcement can be gated on the outcome: `src/js/main.js:231-233` speaks only if the write
 actually stuck, so a screen reader never hears "marked read" for a row that has already reverted.
 
 **A failed write repaints too.** The rollback path calls the same callback with the previous state,
@@ -156,13 +164,13 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3107-3127`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3120-3140`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
-by identity afterwards, at `src/js/main.js:1814`, which is what keeps the keyboard where the reader
+by identity afterwards, at `src/js/main.js:1833`, which is what keeps the keyboard where the reader
 left it. The row list is committed by moving nodes rather than replacing the container, at
-`src/js/main.js:1799-1807`.
+`src/js/main.js:1807-1815`.
 
 **Background work uses the same door.** Hydration writes each fetched issue through the same
 `update` call, at `src/js/hydrate.js:59`, so a metadata fill arriving while the reader is reading
@@ -224,8 +232,8 @@ Every name the app writes, and why it exists:
 | `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:201-205`. It is deliberately never removed, so the undo survives a reload. |
 | `mrt.state.salvage` | a failed read, and only when the slot is empty or already holds the same bytes | nothing | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
 | `mrt.state.salvage.TIMESTAMP` | a failed read when the slot already holds a different incident, at `src/js/storage.js:70` | nothing | So a second corruption months later cannot clobber the copy taken for the first one. |
-| `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:404` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
-| `sidebar.collapsed` | the sidebar toggle, at `src/js/main.js:548` | nothing | Whether the rail is collapsed. Wrapped in its own try, because losing it is not worth an error. |
+| `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:412` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
+| `sidebar.collapsed` | the sidebar toggle, at `src/js/main.js:556` | nothing | Whether the rail is collapsed. Wrapped in its own try, because losing it is not worth an error. |
 
 Seven names in all: six fixed, and one family whose suffix is the moment it was written. Two of the
 seven belong to the view layer rather than to the store, which is why an enumeration taken from the

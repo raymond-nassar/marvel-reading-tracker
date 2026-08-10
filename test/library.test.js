@@ -268,12 +268,22 @@ test('the unread count is written before the closed-order return, not after it',
 // stops updating, which is the whole defect the cache would otherwise buy. Two inputs are not part
 // of the item and so must stay named: `currentId`, and today's date, which is what decides whether
 // a badge reads "soon" or "MU" and would otherwise freeze a row built before local midnight.
+//
+// What the key does is now proved by calling it, in `test/render-rows.test.js`, which BL-064 made
+// possible by giving the key a name and the module an export. What is left here is the half that
+// no unit test can reach: that `renderRows` reads the day once and hands that same day to both
+// judgements, so every row in one pass is scored against one date.
 test('a cached row is keyed by the whole item, not by a list of fields', () => {
   const main = read('src/js/main.js');
   assert.match(
     main,
-    /const rowKey = `\$\{JSON\.stringify\(item\)\}\|\$\{item\.issueId === currentId\}\|\$\{today\}`;/,
+    /return `\$\{JSON\.stringify\(item\)\}\|\$\{item\.issueId === currentId\}\|\$\{today\}`;/,
     'the row cache key no longer covers every field of the item plus the up-next marker and the day',
+  );
+  assert.match(
+    main,
+    /const rowKey = rowCacheKey\(item, currentId, today\);/,
+    'renderRows no longer keys its rows through rowCacheKey, so the tested key may not be the used one',
   );
   assert.match(
     main,
