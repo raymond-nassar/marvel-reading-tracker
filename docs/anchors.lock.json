@@ -94,10 +94,10 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4050|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4050",
-    "fp": "e83952ca82c91fd5",
-    "head": "- Replacing established community sites that curate reading orders."
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4057|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4057",
+    "fp": "feb71ffdf55c404d",
+    "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
   "docs/UX_STUDY.md|proto-persona#reading-style|src/index.html:295-330|0": {
     "anchor": "src/index.html:295-330",
@@ -674,20 +674,20 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4024-4026|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4024-4026",
-    "fp": "0d86859d7139eeb9",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4031-4033|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4031-4033",
+    "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4190-4191|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4190-4191",
-    "fp": "0523304d493783be",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4197-4198|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4197-4198",
+    "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4206-4208|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4206-4208",
-    "fp": "cfa09807fd560de2",
-    "head": "- Analysability gap: no linter and no formatter configuration exists, so style drift is caught only"
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4218-4220|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4218-4220",
+    "fp": "70f2b470e750ff0d",
+    "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:295-299|0": {
     "anchor": "README.md:295-299",

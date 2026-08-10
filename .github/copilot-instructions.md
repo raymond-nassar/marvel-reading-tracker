@@ -197,7 +197,18 @@ under unlike claims, which is the exact shape of that collision. Sharing lines i
 is not an error and it is deliberately silent once the pair is settled: it fires only on the bless
 that creates or moves one of them, which is the one moment the pairing can still be acted on.
 
-Ranges must not end on a blank line.
+Ranges must not end on a blank line, and must not begin on one either. The second half is newer and
+is the harder of the two to catch, because the bless print cannot show it. The head recorded for a
+range is its first *non-blank* line, so a range that has slid one line early onto a blank keeps a
+head identical to the one blessed before it moved. The print then reads as an unchanged head with a
+changed anchor, which is exactly what a correct re-aim looks like, while the range silently covers
+one line fewer than the claim needs. Four citations landed that way in one commit here, and a
+review caught them by re-deriving the shift arithmetic rather than by reading the print.
+
+That is also the argument for re-running the arithmetic after the last edit rather than after the
+last edit you were thinking about. All four came from a re-aiming script that ran correctly and was
+then invalidated by a one-line paragraph rewrite made afterwards in the same file. If anything at
+all changes after a re-aim, the re-aim is stale.
 
 ## Claims the gates do not check
 
