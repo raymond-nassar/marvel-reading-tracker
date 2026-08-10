@@ -24,6 +24,166 @@
     "fp": "8b1350d747d08b62",
     "head": "export const KEY = 'mrt.state.v2';"
   },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/hydrate.js:59|0": {
+    "anchor": "src/js/hydrate.js:59",
+    "fp": "2e19500d63dda59d",
+    "head": "this.store.update((s) => upsertIssue(s, { ...full, hydrated: true }));"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/lib/model.js:401-403|0": {
+    "anchor": "src/js/lib/model.js:401-403",
+    "fp": "d3c89ab1f16d81ee",
+    "head": "export function toggleRead(state, issueId) {"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:1799-1807|0": {
+    "anchor": "src/js/main.js:1799-1807",
+    "fp": "6861d9e44581d7c4",
+    "head": "function commitRows(container, desired) {"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:1814|0": {
+    "anchor": "src/js/main.js:1814",
+    "fp": "931bd75b9e4067fe",
+    "head": "preservingFocus(rows, () => {"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:1921-1924|0": {
+    "anchor": "src/js/main.js:1921-1924",
+    "fp": "fe152ee33152803c",
+    "head": "onclick: () => {"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:223-225|0": {
+    "anchor": "src/js/main.js:223-225",
+    "fp": "b70cf478e0e33507",
+    "head": "function announceIfSaved(msg) {"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3107-3127|0": {
+    "anchor": "src/js/main.js:3107-3127",
+    "fp": "b4277228bfc7a3f5",
+    "head": "function renderAll() {"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:120-138|0": {
+    "anchor": "src/js/storage.js:120-138",
+    "fp": "d357b0022373a5de",
+    "head": "update(fn) {"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:167-199|0": {
+    "anchor": "src/js/storage.js:167-199",
+    "fp": "7330b6e5bf39b463",
+    "head": "restore(rawJson) {"
+  },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:33-52|0": {
+    "anchor": "src/js/storage.js:33-52",
+    "fp": "1e2caa03fdc02f9b",
+    "head": "load() {"
+  },
+  "docs/ARCHITECTURE.md|one-thing-the-drawing-found|test/storage.test.js:139-165|0": {
+    "anchor": "test/storage.test.js:139-165",
+    "fp": "220bf1eb3736428e",
+    "head": "test('a second, unrelated incident is salvaged and offered accurately', () => {"
+  },
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|scripts/vendor-orders.mjs:27|0": {
+    "anchor": "scripts/vendor-orders.mjs:27",
+    "fp": "2691c5a6c7db0bcf",
+    "head": "import { parseManifest } from '../src/js/lib/curated.js';"
+  },
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/api.js:34-35|0": {
+    "anchor": "src/js/api.js:34-35",
+    "fp": "84b15a5ad93ade0c",
+    "head": "this.limiter = limiter ?? new RateLimiter();"
+  },
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/lib/limiter.js:11-20|0": {
+    "anchor": "src/js/lib/limiter.js:11-20",
+    "fp": "ba2f2ef80f02d08a",
+    "head": "export class RateLimiter {"
+  },
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:3014-3016|0": {
+    "anchor": "src/js/main.js:3014-3016",
+    "fp": "8f226e48e15a5fea",
+    "head": "cache = new ResponseCache({ baseUrl: value });"
+  },
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:59-73|0": {
+    "anchor": "src/js/main.js:59-73",
+    "fp": "25594a2e90e2a22e",
+    "head": "const settings = loadSettings();"
+  },
+  "docs/ARCHITECTURE.md|the-three-entry-points|src/dev-faults.html:129|0": {
+    "anchor": "src/dev-faults.html:129",
+    "fp": "0c6537943c08c527",
+    "head": "<script type=\"module\" src=\"./dev-faults.js\"></script>"
+  },
+  "docs/ARCHITECTURE.md|the-three-entry-points|src/index.html:710|0": {
+    "anchor": "src/index.html:710",
+    "fp": "9289d91ca04a95b0",
+    "head": "<script type=\"module\" src=\"./js/main.js\"></script>"
+  },
+  "docs/ARCHITECTURE.md|the-three-entry-points|src/open.html:19|0": {
+    "anchor": "src/open.html:19",
+    "fp": "2c436fb3c32130cb",
+    "head": "<script type=\"module\" src=\"./open.js\"></script>"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-settings|src/js/main.js:404|0": {
+    "anchor": "src/js/main.js:404",
+    "fp": "77ea0da3e49aa7ca",
+    "head": "localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, theme: setting"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-prerestore|src/js/storage.js:201-205|0": {
+    "anchor": "src/js/storage.js:201-205",
+    "fp": "db3282016d907f31",
+    "head": "undoRestore() {"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-restore-tmp|src/js/storage.js:180-183|0": {
+    "anchor": "src/js/storage.js:180-183",
+    "fp": "a7fc6602008b0dc5",
+    "head": "this.storage?.setItem(TEMP_KEY, serialized);"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-salvage-timestamp|src/js/storage.js:70|0": {
+    "anchor": "src/js/storage.js:70",
+    "fp": "8d381b958fbec113",
+    "head": "const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-v2|src/js/storage.js:155|0": {
+    "anchor": "src/js/storage.js:155",
+    "fp": "fedfbf25d012845e",
+    "head": "this.storage.setItem(KEY, JSON.stringify(exportBackup(state)));"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#sidebar-collapsed|src/js/main.js:548|0": {
+    "anchor": "src/js/main.js:548",
+    "fp": "d1cd028d4d972b4e",
+    "head": "try { localStorage.setItem(SIDEBAR_KEY, String(railed)); } catch { /* non-fatal */ }"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|server.mjs:13-14|0": {
+    "anchor": "server.mjs:13-14",
+    "fp": "a82da73f9e1d4ef4",
+    "head": "const HOST = '127.0.0.1';"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|src/dev-faults.js:5-6|0": {
+    "anchor": "src/dev-faults.js:5-6",
+    "fp": "ab6f24d8bd04a2f0",
+    "head": "const BACKUP = 'mrt.devtools.backup';"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|src/js/cache.js:3-5|0": {
+    "anchor": "src/js/cache.js:3-5",
+    "fp": "58a9d1ead8970668",
+    "head": "// This is why the app is served from http://127.0.0.1:8787 rather than opened as a file:"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|src/js/cache.js:9-11|0": {
+    "anchor": "src/js/cache.js:9-11",
+    "fp": "c03449b9fc2d5b2d",
+    "head": "const DB_NAME = 'mrt-cache';"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|src/js/main.js:36-37|0": {
+    "anchor": "src/js/main.js:36-37",
+    "fp": "9179653f1e66ad0d",
+    "head": "const SETTINGS_KEY = 'mrt.settings';"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|src/js/storage.js:9-12|0": {
+    "anchor": "src/js/storage.js:9-12",
+    "fp": "a7459e56c471d9c8",
+    "head": "export const KEY = 'mrt.state.v2';"
+  },
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|src/open.js:63|0": {
+    "anchor": "src/open.js:63",
+    "fp": "9f4e8a74882b0cdb",
+    "head": "const raw = JSON.parse(localStorage.getItem('mrt.settings') || '{}');"
+  },
   "docs/UX_STUDY.md|as-is-journey-map#checking-progress|src/index.html:368-370|0": {
     "anchor": "src/index.html:368-370",
     "fp": "b55b83b7f56cfa67",
@@ -89,13 +249,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:262-263|0": {
-    "anchor": "PRODUCT_BACKLOG.md:262-263",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:263-264|0": {
+    "anchor": "PRODUCT_BACKLOG.md:263-264",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4136|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4136",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4208|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4208",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -614,12 +774,12 @@
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-fif|src/js/main.js:2604|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-six|src/js/main.js:2604|0": {
     "anchor": "src/js/main.js:2604",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-fif|src/js/main.js:2638-2643|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-six|src/js/main.js:2638-2643|0": {
     "anchor": "src/js/main.js:2638-2643",
     "fp": "e53c56c7408f1625",
     "head": "depth"
@@ -634,8 +794,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:573-576|0": {
-    "anchor": "CHANGELOG.md:573-576",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:591-594|0": {
+    "anchor": "CHANGELOG.md:591-594",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -669,33 +829,33 @@
     "fp": "76e484be3a906428",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2644-2647|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2644-2647",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2645-2648|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2645-2648",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4110-4112|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4110-4112",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4182-4184|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4182-4184",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4276-4277|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4276-4277",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4348-4349|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4348-4349",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4297-4299|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4297-4299",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4369-4371|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4369-4371",
     "fp": "70f2b470e750ff0d",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:295-299|0": {
-    "anchor": "README.md:295-299",
+  "PRODUCT_BACKLOG.md|item-details|README.md:298-302|0": {
+    "anchor": "README.md:298-302",
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:386-397|0": {
-    "anchor": "README.md:386-397",
+  "PRODUCT_BACKLOG.md|item-details|README.md:389-400|0": {
+    "anchor": "README.md:389-400",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -814,6 +974,11 @@
     "fp": "bfa656a9707f58db",
     "head": "name: order.name,"
   },
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:27|0": {
+    "anchor": "scripts/vendor-orders.mjs:27",
+    "fp": "2691c5a6c7db0bcf",
+    "head": "import { parseManifest } from '../src/js/lib/curated.js';"
+  },
   "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:46|0": {
     "anchor": "scripts/vendor-orders.mjs:46",
     "fp": "2c3648b8f1356780",
@@ -928,6 +1093,11 @@
     "anchor": "src/js/api.js:20-33",
     "fp": "f11249cc46b4b154",
     "head": "constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/api.js:34-35|0": {
+    "anchor": "src/js/api.js:34-35",
+    "fp": "84b15a5ad93ade0c",
+    "head": "this.limiter = limiter ?? new RateLimiter();"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/ask.js:35-47|0": {
     "anchor": "src/js/ask.js:35-47",
@@ -1304,6 +1474,11 @@
     "fp": "8af48711bb3aab2d",
     "head": "const value = $('#api-base').value.trim().replace(/\\/+$/, '');"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3014-3016|0": {
+    "anchor": "src/js/main.js:3014-3016",
+    "fp": "8f226e48e15a5fea",
+    "head": "cache = new ResponseCache({ baseUrl: value });"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3107|0": {
     "anchor": "src/js/main.js:3107",
     "fp": "badb42e555d676d1",
@@ -1323,6 +1498,11 @@
     "anchor": "src/js/main.js:352-356",
     "fp": "a302dc0a5ea41bed",
     "head": "// A button that is never spoken is a button a screen reader user cannot know to look for, and the"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:36-37|0": {
+    "anchor": "src/js/main.js:36-37",
+    "fp": "9179653f1e66ad0d",
+    "head": "const SETTINGS_KEY = 'mrt.settings';"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:363-387|0": {
     "anchor": "src/js/main.js:363-387",
@@ -1419,7 +1599,17 @@
     "fp": "5c5b72f805fd282e",
     "head": "this.state = raw ? migrate(JSON.parse(raw)) : createEmptyState();"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:70|0": {
+    "anchor": "src/js/storage.js:70",
+    "fp": "8d381b958fbec113",
+    "head": "const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:9-12|0": {
+    "anchor": "src/js/storage.js:9-12",
+    "fp": "a7459e56c471d9c8",
+    "head": "export const KEY = 'mrt.state.v2';"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:9-12|1": {
     "anchor": "src/js/storage.js:9-12",
     "fp": "a7459e56c471d9c8",
     "head": "export const KEY = 'mrt.state.v2';"
@@ -1558,6 +1748,11 @@
     "anchor": "test/shipped-copy.test.js:47-63",
     "fp": "39a38dfa1bd1a54f",
     "head": "test('no en or em dash reaches the screen through markup or styling', () => {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|test/storage.test.js:139-165|0": {
+    "anchor": "test/storage.test.js:139-165",
+    "fp": "220bf1eb3736428e",
+    "head": "test('a second, unrelated incident is salvaged and offered accurately', () => {"
   },
   "PRODUCT_BACKLOG.md|item-details|test/theme.test.js:94|0": {
     "anchor": "test/theme.test.js:94",
@@ -2103,6 +2298,11 @@
     "anchor": "src/js/main.js:93",
     "fp": "ee839e58ae0a15b3",
     "head": "if (store.blocked) $('#blocked-why').textContent = store.lastError ?? '';"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-076|src/js/storage.js:70|0": {
+    "anchor": "src/js/storage.js:70",
+    "fp": "8d381b958fbec113",
+    "head": "const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;"
   },
   "scripts/check-palette.mjs|preamble|src/js/main.js:1919|0": {
     "anchor": "src/js/main.js:1919",

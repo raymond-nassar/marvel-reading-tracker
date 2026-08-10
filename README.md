@@ -255,6 +255,9 @@ need any of it to read comics.
 Background: [why this is a browser app and not an Android emulator](docs/WHY_A_BROWSER_APP.md)
 records the hardware findings behind that decision, so the emulator route does not get retried.
 
+Structure: [how the app is put together](docs/ARCHITECTURE.md) draws the module graph as ownership,
+one reading action from the click to the repaint, and every place the app stores anything.
+
 ### Checks
 
 ```
