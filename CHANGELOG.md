@@ -169,8 +169,18 @@ quote in a bug report.
   something new" across a reload. It never removes anything, and it only ever sets aside fewer copies
   than before, never more, so nothing that was being kept for you stops being kept. Where a browser
   will not let the app look at what it is already holding, it sets a copy aside exactly as it always
-  did, so this can never become the reason a recovery is turned down. Six automated checks were
-  added, three of which were watched failing against the old behaviour first.
+  did, so this can never become the reason a recovery is turned down. Seven automated checks were
+  added, four of which were watched failing against the old behaviour first.
+
+  One more fault came out of testing that claim rather than trusting it, and it was the serious one.
+  Copies kept from an earlier occasion are named after the moment they were taken, and two taken in
+  the same thousandth of a second got the same name, so the second quietly replaced the first. That
+  was thought to be impossible, on the grounds that a page cannot load twice that fast. It does not
+  need to: choosing to start over also sets a copy aside, so a single page load already does it
+  twice, and if you have the app open in another window that changes your data in between, the two
+  copies differ and both are kept. The app now picks a name nothing is using rather than assuming the
+  clock will not repeat. Losing one of those copies would have meant losing the only remaining record
+  of that data, which is the one thing this whole feature exists to prevent.
 
 - **A restored backup could silently lose a reading list.** This only affected a state file or
   backup that had been hand-edited, so it is very unlikely to have happened to you, but it was

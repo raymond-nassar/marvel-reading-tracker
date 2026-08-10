@@ -152,7 +152,7 @@ The parts of that worth saying in words.
 `src/js/main.js:1934-1937` hands the store a function; the function itself, at
 `src/js/lib/model.js:401-403`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
-`src/js/storage.js:155-173`.
+`src/js/storage.js:172-190`.
 
 **The repaint is synchronous, and it is inside the write.** By the time `update` returns, the
 change callback has already run and the screen already shows the result. That is why the
@@ -178,7 +178,7 @@ repaints through exactly the path drawn above. No ordinary change reaches the st
 `update`, but it is not the only thing that can set the state, and a guard added inside it would
 not cover the rest. Boot reads the state in, at `src/js/storage.js:33-52`. Restoring a backup and
 starting fresh each replace the whole state rather than transforming it, and both appear in the
-next section. Restoring is the one that writes the key directly, at `src/js/storage.js:202-234`,
+next section. Restoring is the one that writes the key directly, at `src/js/storage.js:219-251`,
 which also puts it past the latch a failed read sets; the comment there says that is deliberate,
 because a restore is a chosen overwrite.
 
@@ -229,11 +229,11 @@ Every name the app writes, and why it exists:
 
 | Key | Written by | Cleared by | Why it exists |
 |---|---|---|---|
-| `mrt.state.v2` | every saved change, at `src/js/storage.js:190` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
-| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:215-218` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
-| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:236-240`. It is deliberately never removed, so the undo survives a reload. |
+| `mrt.state.v2` | every saved change, at `src/js/storage.js:207` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
+| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:232-235` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
+| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:253-257`. It is deliberately never removed, so the undo survives a reload. |
 | `mrt.state.salvage` | a failed read, and only when no salvage copy already holds these bytes and the slot is empty | nothing | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
-| `mrt.state.salvage.TIMESTAMP` | a failed read when no salvage copy holds these bytes and the slot holds a different incident's, at `src/js/storage.js:84` | nothing | So a second corruption months later cannot clobber the copy taken for the first one. |
+| `mrt.state.salvage.TIMESTAMP` | a failed read when no salvage copy holds these bytes and the slot holds a different incident's, at `src/js/storage.js:84` | nothing | So a second corruption months later cannot clobber the copy taken for the first one. The name is checked to be free before it is used, at `src/js/storage.js:104-110`, because the timestamp alone does not guarantee it. |
 | `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:412` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
 | `sidebar.collapsed` | the sidebar toggle, at `src/js/main.js:556` | nothing | Whether the rail is collapsed. Wrapped in its own try, because losing it is not worth an error. |
 
@@ -280,6 +280,13 @@ reload, because `startFresh()` salvages before it clears, so the button the bann
 one more inside a single boot. And the cost was not only space: near the quota the duplicates
 consumed the room the next copy needed, so a later boot reported that nothing had been set aside
 while the previous boot's copy sat on disk, and the escape hatch refused on that false report.
+
+Pressing the fix turned up a third, worse fault that reading had also missed. Because
+`startFresh()` salvages inside the same boot, two archived copies could take the same timestamped
+name and the second overwrote the first, destroying a copy the reader had already been promised.
+The archived name is now checked to be free before it is used. The lesson is the one this section
+was drawn to make: the fault was found by attacking a claim, not by re-reading the code that made
+it.
 
 ## What a per-view split does to these diagrams
 

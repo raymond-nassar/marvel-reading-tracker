@@ -3707,16 +3707,25 @@ answer to; and the standing copy was cut with measurement in BL-073 immediately 
 changes is that the false refusal stops, so nobody is told a copy could not be set aside while one
 exists.
 
-Noted and deliberately not fixed: two dated copies written inside the same millisecond would share a
-name, and the second would clobber the first, which is the one thing the archive exists to prevent.
-It is unreachable in the product, because two boots cannot fall inside one millisecond, and it is
-reachable only from a test loop, where it cost an hour of this task's research before it was
-recognised. Adding a retry loop to recovery code for a case the product cannot reach is the kind of
-defensive code this repository's instructions single out as the most dangerous in any change, so the
-hazard is recorded here rather than coded around. The accumulation it does not address is BL-078.
+Asserted, tested, and found false, which is the part worth recording. This block first said that two
+dated copies written inside the same millisecond would share a name and clobber one another, but that
+the case was unreachable in the product because two boots cannot fall inside one millisecond, so the
+hazard was recorded rather than coded around. The reasoning was sound and the premise was wrong. It
+does not need two boots. `startFresh()` salvages before it clears, so one boot already writes twice,
+and when another tab of the same origin rewrites the live key between the boot and the button the
+second write has genuinely different bytes, cannot be adopted, and takes the same name as the first.
+The copy the reader had already been promised was overwritten by the copy taken on the way out. That
+is the one thing the archive exists to prevent, so it is fixed here rather than filed: the archived
+name is now chosen by asking which name is free rather than by trusting the clock to be unique. It
+was found by pressing the claim rather than by re-reading it, which is what the contrarian wave is
+for. The accumulation across genuinely different incidents, which this still does not address, is
+BL-078.
 
-Verified: 545 tests pass, 6 of them new, and the three that reproduce the defect were watched failing
-with only `src/js/storage.js` stashed. A browser check in Edge at 1280x900 goes 8 of 8 on this change
+Verified: 546 tests pass, 7 of them new, and the four that reproduce a defect were watched failing
+with only `src/js/storage.js` stashed. Three of those count writes rather than keys, because boots
+inside one millisecond share a key and an assertion on the final contents passes on the broken code;
+the fourth counts surviving copies instead, because a clobber writes twice on either tree and only
+the survivors separate them. A browser check in Edge at 1280x900 goes 8 of 8 on this change
 and 6 of 8 on the shipped code, the two failures being the repeat write and the Start fresh write. It
 asserts that Edge's storage can be enumerated rather than assuming it, since the fix rests on that.
 
@@ -3838,7 +3847,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4505-4506` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4514-4515` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3848,11 +3857,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:161-163`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4526-4528`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4535-4537`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4339-4341` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4348-4350` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4060,7 +4069,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:635-638` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:645-648` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:154-156` and
 `PRODUCT_BACKLOG.md:161-163` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.

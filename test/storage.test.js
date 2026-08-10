@@ -292,6 +292,37 @@ test('a storage that cannot be enumerated still gets a copy', () => {
   assert.equal(bare.get('mrt.state.salvage'), 'corrupt-and-precious');
 });
 
+// The archive exists so one incident's copy cannot destroy another's, and the timestamp alone did
+// not deliver that. startFresh() salvages before it clears, so when another tab rewrites the live
+// key between the boot and the button, the second write lands in the same millisecond as the first
+// and took the same name. The copy the reader had already been promised was overwritten by it.
+//
+// This is a clobber, so counting writes is not enough here: both trees write twice. What separates
+// them is how many copies survive.
+test('a second copy taken in the same millisecond does not overwrite the first', () => {
+  const storage = fakeStorage({ [KEY]: 'incident-one' });
+  new Store({ storage }).load();
+  storage.setItem(KEY, 'incident-two');
+
+  const store = new Store({ storage });
+  store.load();
+  const firstCopy = store.salvageKey;
+  assert.equal(storage.getItem(firstCopy), 'incident-two');
+
+  // Another tab of the same origin writes the live key while this one sits blocked.
+  storage.setItem(KEY, 'incident-three-from-another-tab');
+  assert.equal(store.startFresh(), true);
+
+  const archived = [...storage.map.entries()]
+    .filter(([k]) => k.startsWith('mrt.state.salvage.'))
+    .map(([, v]) => v);
+  assert.equal(archived.length, 2, 'both archived copies must survive, not one on top of the other');
+  assert.ok(archived.includes('incident-two'), 'the copy the reader was already promised');
+  assert.ok(archived.includes('incident-three-from-another-tab'), 'and the one taken on the way out');
+  assert.equal(storage.getItem('mrt.state.salvage'), 'incident-one',
+    'and the first incident is still in the main slot');
+});
+
 test('update reports whether the change was actually saved', () => {
   const storage = fakeStorage({ [KEY]: goodBackup() });
   const store = new Store({ storage });

@@ -54,9 +54,9 @@ export class Store {
   // Sets this incident's value aside and reports whether a copy verifiably exists.
   //
   // Three rules matter here. A previous incident's copy must never be clobbered, so if the main
-  // slot already holds different bytes this one is archived under its own key instead of being
-  // dropped, otherwise a second corruption months later would be left with no copy at all
-  // while salvagedRaw() served the stale blob as if it were the user's data. A copy that already
+  // slot already holds different bytes this one is archived under a name nothing else holds, chosen
+  // by freeArchiveKey(), otherwise a second corruption months later would be left with no copy at
+  // all while salvagedRaw() served the stale blob as if it were the user's data. A copy that already
   // holds these exact bytes is adopted rather than written again, because the archive key carries
   // the time of the write, so recomputing it per call made every reload of a blocked page write
   // the identical bytes under a new name, and startFresh() salvages before clearing, so the button
@@ -81,7 +81,7 @@ export class Store {
         this.salvageKey = held;
         return true;
       }
-      const key = this.storage.getItem(SALVAGE_KEY) ? `${SALVAGE_KEY}.${Date.now()}` : SALVAGE_KEY;
+      const key = this.freeArchiveKey();
       this.storage.setItem(key, raw);
       const ok = this.storage.getItem(key) === raw;
       this.salvageKey = ok ? key : null;
@@ -90,6 +90,23 @@ export class Store {
       this.salvageKey = null;
       return false;
     }
+  }
+
+  // A name this copy can take without destroying one already held.
+  //
+  // existingCopyOf() has already ruled out a slot holding these bytes, so every occupied salvage
+  // key holds a different incident's and must not be overwritten. The timestamp alone is not enough
+  // to guarantee that. startFresh() salvages before it clears, so a tab whose live key is rewritten
+  // by another tab between boot and the button reaches a second write inside the same millisecond,
+  // and the identical name clobbered the copy taken moments earlier. Measured with a fake storage
+  // rather than reasoned about, after the opposite was asserted and proved false. The loop
+  // terminates because each pass tries a name no earlier pass tried.
+  freeArchiveKey() {
+    if (this.storage.getItem(SALVAGE_KEY) === null) return SALVAGE_KEY;
+    const stamp = Date.now();
+    let key = `${SALVAGE_KEY}.${stamp}`;
+    for (let n = 1; this.storage.getItem(key) !== null; n += 1) key = `${SALVAGE_KEY}.${stamp}.${n}`;
+    return key;
   }
 
   // Which salvage slot, if any, already holds exactly these bytes.
