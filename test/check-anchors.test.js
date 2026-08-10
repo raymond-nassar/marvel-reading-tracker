@@ -13,7 +13,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { blankEdgeOf, citations, claimBefore, collisions, firstTime, pairingLines, pairings, relativeCitations, relativeVerdict } from '../scripts/check-anchors.mjs';
+import { PROSE, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, firstTime, pairingLines, pairings, relativeCitations, relativeVerdict } from '../scripts/check-anchors.mjs';
+
+const JS = commentSyntax('a.mjs');
 
 // The two citations as the lock actually held them, ordinals and all. `fp` matches on
 // both because they cite the same line, which is the whole difficulty.
@@ -204,14 +206,14 @@ test('a bare citation is collected in prose and ignored in code', () => {
   const line = 'the walker lives at src/js/lib/model.js:640 today';
 
   assert.equal(citations(line).length, 1);
-  assert.equal(citations(line, false).length, 0);
+  assert.equal(citations(line, JS).length, 0);
 });
 
 test('a backticked citation is collected in both, since a comment makes a claim too', () => {
   const line = `the walker lives at ${cite('src/js/lib/model.js:640')} today`;
 
   assert.equal(citations(line).length, 1);
-  assert.equal(citations(line, false).length, 1);
+  assert.equal(citations(line, JS).length, 1);
 });
 
 // The one form that has to survive the split untouched. A backticked anchor also satisfies the
@@ -229,8 +231,8 @@ test('a comment marker is stripped from a claim in code and kept in prose', () =
   const lines = [`// the numbers are stated as text beside it, at ${cite('src/js/main.js:854')} in the rail`];
   const at = lines[0].indexOf('src/js/main.js:854');
 
-  assert.ok(!claimBefore(lines, 0, at, false).includes('//'));
-  assert.ok(claimBefore(lines, 0, at, true).includes('//'));
+  assert.ok(!claimBefore(lines, 0, at, JS).includes('//'));
+  assert.ok(claimBefore(lines, 0, at, PROSE).includes('//'));
 });
 
 // A citation in prose usually closes a sentence. One in a comment routinely opens it, and the
@@ -239,7 +241,7 @@ test('a claim is read forward when the citation opens the comment', () => {
   const lines = [`// ${cite('server.mjs:12')} resolves the served root to src/, so that is what shipped means`];
   const at = lines[0].indexOf('server.mjs:12');
 
-  assert.match(claimBefore(lines, 0, at, false), /resolves the served root/);
+  assert.match(claimBefore(lines, 0, at, JS), /resolves the served root/);
 });
 
 // Walking back over wrapped comment lines is what makes a claim readable at all, but a comment
@@ -255,7 +257,7 @@ test('the walk back over a comment stops at the first line that is not one', () 
   ];
   const at = lines[2].indexOf('src/js/main.js:434-435');
 
-  assert.equal(claimBefore(lines, 2, at, false), 'the hue comes from the series name at');
+  assert.equal(claimBefore(lines, 2, at, JS), 'the hue comes from the series name at');
 });
 
 // The forward read is the one part of the claim walk that is not conditioned on prose, so a
@@ -266,7 +268,7 @@ test('a forward read in a table row stops at the cell boundary', () => {
   const lines = [`| ${cite('src/js/main.js:12')} | second cell | third cell |`];
   const at = lines[0].indexOf('src/js/main.js:12');
 
-  assert.ok(!claimBefore(lines, 0, at, true).includes('second cell'));
+  assert.ok(!claimBefore(lines, 0, at, PROSE).includes('second cell'));
 });
 
 // BL-077. The form that started this: a line number with no path in front of it, leaning on a
@@ -296,9 +298,9 @@ test('in code the form counts in a comment and not in a string literal', () => {
   const comment = `  // the tick sits at ${rel(582)} in the dark theme`;
   const literal = `  const fixture = 'the tick sits at ${rel(582)}';`;
 
-  assert.equal(relativeCitations(comment, false).length, 1);
-  assert.equal(relativeCitations(literal, false).length, 0);
-  assert.equal(relativeCitations(literal, true).length, 1);
+  assert.equal(relativeCitations(comment, JS).length, 1);
+  assert.equal(relativeCitations(literal, JS).length, 0);
+  assert.equal(relativeCitations(literal, PROSE).length, 1);
 });
 
 // A full citation must not be caught by the rule against the short one, or the gate would refuse
@@ -487,4 +489,126 @@ test('a second citation of a line already blessed in that scope is a first sight
   const second = { ...FRESH, key: 'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:700|1' };
 
   assert.deepEqual(firstTime([second], blessed).map((f) => f.key), [second.key]);
+});
+
+// BL-079. Everything below is the only evidence this change has, and that is worth saying
+// plainly rather than dressing up. Measured over the whole tree, widening the comment syntax
+// changes nothing the gate collects, prints or records today: 20 citations outside Markdown
+// before and after, 0 claims different, 0 new lock entries, 0 new notices and 0 new refusals.
+// The hole is real and is closed before it is used, so a test is the only thing that can show
+// the difference and a test that passes either way would show nothing.
+
+test('the comment opener is keyed on the path, and Markdown is prose', () => {
+  assert.equal(commentSyntax('README.md'), PROSE);
+  assert.equal(commentSyntax('.github/workflows/ci.yml').open.source, commentSyntax('.gitignore').open.source);
+  assert.equal(commentSyntax('src/index.html').open.test('  <!-- a note -->'), true);
+  assert.equal(commentSyntax('package.json').open, null);
+  assert.equal(commentSyntax('run.cmd').open.test(':: a note'), true);
+  assert.equal(commentSyntax('src/js/main.js').open.test('// a note'), true);
+  assert.equal(commentSyntax('LICENSE').open.source, commentSyntax('src/styles.css').open.source);
+});
+
+// The only comments in the one batch script this repository has open with `rem`, and the first
+// assertion this change shipped tested `::` alone. It passed against a pattern that misses every
+// comment in the file it was written for: measured, a `::`-only opener returns false on
+// `rem Marvel Reading Tracker - start the local app.`, which is a line of that script. The
+// uppercase and `remove` cases are here because the `/i` flag and the word boundary each carried
+// no case either, and a stripper that fires on `remove` eats the first word of the sentence.
+test('a batch comment opens with rem as well as ::, and rem is a whole word', () => {
+  const cmd = commentSyntax('run.cmd');
+  const lines = [`rem the app is started from here, at ${cite('run.cmd:6')}`];
+  const at = lines[0].indexOf('run.cmd:6');
+
+  assert.equal(cmd.open.test('rem Marvel Reading Tracker - start the local app.'), true);
+  assert.equal(cmd.open.test('REM an upper case comment'), true);
+  assert.equal(cmd.open.test('remove the temporary file'), false);
+  assert.equal(claimBefore(lines, 0, at, cmd), 'the app is started from here, at');
+});
+
+// The gate reads the workflow file, and a hash opened nothing there before this. A relative
+// citation written into a workflow comment was invisible to the rule that refuses the form,
+// which is the same silence BL-071 widened the population to end.
+test('a relative citation in a workflow comment is found, and one in a value is not', () => {
+  const comment = `  # the concurrency group is set at ${rel(15)} above`;
+  const value = `  run: echo 'set at ${rel(15)}'`;
+  const yml = commentSyntax('.github/workflows/ci.yml');
+
+  assert.equal(relativeCitations(comment, yml).length, 1);
+  assert.equal(relativeCitations(value, yml).length, 0);
+  assert.equal(relativeCitations(comment, commentSyntax('a.mjs')).length, 0);
+});
+
+test('a hash is stripped from a claim in a workflow comment', () => {
+  // The fixture says "never null" on purpose. `bare` guards a null closer with `?? /(?:)$/`,
+  // and hash syntax is the shape whose closer is null, so without the guard `replace(null, '')`
+  // coerces to the substring "null" and deletes it from the claim. Measured: the guarded form
+  // returns "a null claim" and the unguarded form returns "a  claim". No other fixture contains
+  // the word, so removing the guard was a silent pass before this.
+  const lines = [`  # the trigger is scoped to main, never null, at ${cite('.github/workflows/ci.yml:15')} deliberately`];
+  const at = lines[0].indexOf('.github/workflows/ci.yml:15');
+  const claim = claimBefore(lines, 0, at, commentSyntax('.github/workflows/ci.yml'));
+
+  assert.ok(!claim.includes('#'));
+  assert.match(claim, /the trigger is scoped to main, never null, at/);
+});
+
+// The half fix this change nearly shipped. A YAML comment necessarily opens with a hash and a
+// space, which is also the Markdown heading shape, so an unscoped heading test ends the walk on
+// the very lines the widening exists to let it read. Recognising them and then terminating on
+// them looks finished and reads as a one-line claim.
+//
+// The fixture is unindented deliberately, and the first draft of it was not. Indented, the
+// heading pattern never matches, because it anchors the hash to the start of the line, so the
+// test passed with the scoping removed and proved nothing. Top-level workflow comments are
+// written at column zero, which is the case that matters and the case that fails.
+test('a workflow comment above another does not end the walk as a heading', () => {
+  const lines = [
+    '# the push trigger is scoped to main alone, so a branch with no',
+    `# pull request correctly produces no run, at ${cite('.github/workflows/ci.yml:15')}`,
+  ];
+  const at = lines[1].indexOf('.github/workflows/ci.yml:15');
+
+  assert.match(claimBefore(lines, 1, at, commentSyntax('.github/workflows/ci.yml')), /scoped to main alone/);
+});
+
+test('an HTML comment carries a claim and its marker is stripped', () => {
+  const lines = [`  <!-- the reader launches from here, at ${cite('src/index.html:132')} -->`];
+  const at = lines[0].indexOf('src/index.html:132');
+  const claim = claimBefore(lines, 0, at, commentSyntax('src/index.html'));
+
+  assert.ok(!claim.includes('<!--'));
+  assert.match(claim, /the reader launches from here, at/);
+});
+
+// That fixture never reaches the closing marker, and the first draft of this change had no test
+// that did. Its backward text is 32 characters, over the floor `claimBefore` returns at, so the
+// read stops on its own line and both assertions above pass with the closer removed. Reaching it
+// takes a citation early enough on its line to send the walk up to the line before. Measured:
+// without the closer the claim reads "the reader launches from here --> at", with the marker of
+// one line spliced into the middle of the sentence the next line finishes.
+test('a closing HTML marker is stripped from the line above a citation', () => {
+  const lines = [
+    '  <!-- the reader launches from here -->',
+    `  <!-- at ${cite('src/index.html:132')} -->`,
+  ];
+  const at = lines[1].indexOf('src/index.html:132');
+  const claim = claimBefore(lines, 1, at, commentSyntax('src/index.html'));
+
+  assert.ok(!claim.includes('-->'));
+  assert.match(claim, /the reader launches from here at/);
+});
+
+// Why the syntaxes are keyed on the path rather than unioned into one pattern. A hash opens a
+// comment in YAML and a private class field in JavaScript, and two scripts here already open
+// with a hashbang. Under a union all three would be read as sentences addressed to a reader
+// and the stripper would splice the remainder of the field declaration into a claim.
+test('a hash in JavaScript is not a comment, and an asterisk in JSON is not one either', () => {
+  const js = commentSyntax('src/js/lib/model.js');
+  const field = `  #count = 0; // set at ${rel(12)}`;
+
+  assert.equal(js.open.test('#!/usr/bin/env node'), false);
+  assert.equal(js.open.test('  #count = 0;'), false);
+  assert.equal(relativeCitations(field, js).length, 0);
+  assert.equal(commentSyntax('src/data/catalog.json').open, null);
+  assert.equal(relativeCitations(`  "note": "*star at ${rel(12)}"`, commentSyntax('src/data/catalog.json')).length, 0);
 });

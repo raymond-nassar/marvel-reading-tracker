@@ -16,6 +16,23 @@ quote in a bug report.
 
 ### Added
 
+- **The check that keeps the project's written claims honest now understands comments in every kind
+  of file it reads, not just in program code.** Nothing about the app changes and nothing you have
+  saved is affected. The check reads every file in the project, but it only ever recognised a comment
+  the way one programming language writes them. A note in the build configuration, in a web page or in
+  the ignore list was read as machinery rather than as a sentence, so a pointer written into one was
+  never examined and the rule that catches badly written pointers could not fire there at all. The
+  irony was in the project's own advice, which tells a writer to describe a wrong line in words and
+  uses a line of the build configuration as its example, in exactly the file where the rule was blind.
+
+  This changes nothing visible today, and that is worth saying plainly rather than dressing up. Every
+  pointer outside the written documents was compared before and after: twenty before, twenty after,
+  and not one description of a claim came out different. The lines newly recognised as comments hold
+  no pointers at all. The hole is closed before anyone falls into it, so the tests are the only
+  evidence there is, and eleven deliberately broken versions of the check were watched failing to earn
+  them. Three of those eleven exist because review found rules that looked tested and were not, and
+  each of the three now has a case that fails without it.
+
 - **The check that keeps the project's written claims honest now says which of its pointers have
   never been checked before.** Nothing about the app changes and nothing you have saved is affected.
   When a pointer to a line of code is recorded for the very first time, there is nothing to compare
