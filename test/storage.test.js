@@ -45,7 +45,10 @@ test('unreadable saved data is never overwritten by subsequent edits', () => {
 
   store.load();
   assert.equal(store.blocked, true, 'the store must latch read-only');
-  assert.match(store.lastError, /NOT been changed/i);
+  // Shape rather than wording, because the reason inside the brackets is V8's and moves
+  // between releases. What the reassurance and the instructions became is held by
+  // test/recovery-copy.test.js: they are the banner's copy now, not this string's.
+  assert.match(store.lastError, /^Could not read your saved data \(.+\)\.$/);
 
   // Simulate the user carrying on regardless.
   store.update((s) => createList(s, { name: 'New list' }));

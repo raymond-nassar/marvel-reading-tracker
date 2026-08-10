@@ -89,13 +89,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:261-262|0": {
-    "anchor": "PRODUCT_BACKLOG.md:261-262",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:262-263|0": {
+    "anchor": "PRODUCT_BACKLOG.md:262-263",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4057|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4057",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4136|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4136",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -614,12 +614,12 @@
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-fou|src/js/main.js:2604|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-fif|src/js/main.js:2604|0": {
     "anchor": "src/js/main.js:2604",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-fou|src/js/main.js:2638-2643|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-fif|src/js/main.js:2638-2643|0": {
     "anchor": "src/js/main.js:2638-2643",
     "fp": "e53c56c7408f1625",
     "head": "depth"
@@ -634,8 +634,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:555-558|0": {
-    "anchor": "CHANGELOG.md:555-558",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:573-576|0": {
+    "anchor": "CHANGELOG.md:573-576",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -669,23 +669,23 @@
     "fp": "76e484be3a906428",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2643-2646|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2643-2646",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2644-2647|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2644-2647",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4031-4033|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4031-4033",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4110-4112|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4110-4112",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4197-4198|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4197-4198",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4276-4277|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4276-4277",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4218-4220|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4218-4220",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4297-4299|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4297-4299",
     "fp": "70f2b470e750ff0d",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
@@ -1309,6 +1309,11 @@
     "fp": "badb42e555d676d1",
     "head": "function renderAll() {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3178|0": {
+    "anchor": "src/js/main.js:3178",
+    "fp": "bbee3e70e1957e2a",
+    "head": "if (store.lastError) notify('#save-report', store.lastError, 'error');"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:329|0": {
     "anchor": "src/js/main.js:329",
     "fp": "f45f92986e6c37d0",
@@ -1359,6 +1364,11 @@
     "fp": "179d485d49b3bd60",
     "head": "const store = new Store({"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:67-72|1": {
+    "anchor": "src/js/main.js:67-72",
+    "fp": "179d485d49b3bd60",
+    "head": "const store = new Store({"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:799|0": {
     "anchor": "src/js/main.js:799",
     "fp": "6d11fe4e815534fb",
@@ -1388,6 +1398,11 @@
     "anchor": "src/js/main.js:845",
     "fp": "81c8050eab207d08",
     "head": "dataset: { key: id, act: 'open', tip: `${list.name}: ${read} of ${total} read` },"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:90-98|0": {
+    "anchor": "src/js/main.js:90-98",
+    "fp": "8967da6a7dcc0b63",
+    "head": "function renderBlocked() {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:972|0": {
     "anchor": "src/js/main.js:972",
@@ -2083,6 +2098,11 @@
     "anchor": "src/index.html:147-148",
     "fp": "d7a3227a190c6c48",
     "head": "<p>It has <strong>not</strong> been changed or deleted, and saving is paused so it"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-075|src/js/main.js:93|0": {
+    "anchor": "src/js/main.js:93",
+    "fp": "ee839e58ae0a15b3",
+    "head": "if (store.blocked) $('#blocked-why').textContent = store.lastError ?? '';"
   },
   "scripts/check-palette.mjs|preamble|src/js/main.js:1919|0": {
     "anchor": "src/js/main.js:1919",
