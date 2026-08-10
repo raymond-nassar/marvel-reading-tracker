@@ -16,6 +16,25 @@ quote in a bug report.
 
 ### Added
 
+- **The check that keeps the project's written claims honest now says which of its pointers have
+  never been checked before.** Nothing about the app changes and nothing you have saved is affected.
+  When a pointer to a line of code is recorded for the very first time, there is nothing to compare
+  it against, so the check accepts whatever it happens to name and reports that all is well. That is
+  true and useless: a pointer aimed at the wrong place on the day it was written stays wrong forever,
+  and the last batch of these produced five wrong ones, three of them naming a completely different
+  part of the file. Those pointers are now marked as new when they are recorded, so the person
+  approving them knows which ones only they can check.
+
+  The check also now refuses a pointer to a span of lines that starts or finishes on an empty one.
+  A span written one line too wide still displays correctly, because the display skips empty lines,
+  so it reads perfectly while covering a line the sentence was never about. A span can also acquire
+  the fault without anyone touching it: moving a paragraph break in the code slides the empty line
+  to the edge of a span already recorded, and nothing the check compares changes, so it used to stay
+  silent. It is therefore looked for on every run and not only when new pointers are approved. Every
+  one of the 492 existing pointers was measured first and none had this fault, so the rule was
+  adopted with no backlog of exceptions to grant. It then caught one straight away, and the one it
+  caught belonged to this change.
+
 - **The check that keeps the project's written claims honest can now see a shorthand it used to
   miss.** Nothing about the app changes and nothing you have saved is affected. The project's
   documents point at exact lines of code, and an automated check makes sure those pointers still

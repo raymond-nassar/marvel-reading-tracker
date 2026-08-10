@@ -13,7 +13,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { citations, claimBefore, collisions, pairingLines, pairings, relativeCitations, relativeVerdict } from '../scripts/check-anchors.mjs';
+import { blankEdgeOf, citations, claimBefore, collisions, firstTime, pairingLines, pairings, relativeCitations, relativeVerdict } from '../scripts/check-anchors.mjs';
 
 // The two citations as the lock actually held them, ordinals and all. `fp` matches on
 // both because they cite the same line, which is the whole difficulty.
@@ -333,4 +333,158 @@ test('the same form is only named against a revision, which cannot be edited to 
 test('a tree with no hits says nothing either way', () => {
   assert.equal(relativeVerdict(0, null), 'none');
   assert.equal(relativeVerdict(0, 'origin/main'), 'none');
+});
+
+// A blank first or last line is the one defect in a range that reading the print cannot
+// find, because the print is built from the fingerprint and the fingerprint drops blank
+// lines before it takes a head. The reader is shown a line that reads correctly for the
+// claim while the range blessed around it is a line wider than the claim.
+test('a range that begins on a blank line is named, and one that ends on one is too', () => {
+  const lines = ['alpha', '', 'beta', 'gamma', ''];
+
+  assert.equal(blankEdgeOf(lines, 2, 4), 'begins on a blank line');
+  assert.equal(blankEdgeOf(lines, 3, 5), 'ends on a blank line');
+  assert.equal(blankEdgeOf(lines, 2, 5), 'begins and ends on a blank line');
+  assert.equal(blankEdgeOf(lines, 3, 4), null);
+});
+
+// Whitespace counts as blank. A range closing on a line of spaces reads as closing on
+// nothing, and the rule is about what the range covers rather than what it contains.
+test('a line of whitespace closes a range as blank', () => {
+  assert.equal(blankEdgeOf(['alpha', '   '], 1, 2), 'ends on a blank line');
+});
+
+// A single-line anchor never reaches the rule: a blank one has no body to fingerprint and
+// is refused earlier as blank lines only, so answering here would be a second verdict on
+// a citation already rejected.
+test('a single-line anchor is not a range and is left alone', () => {
+  assert.equal(blankEdgeOf(['', 'beta'], 1, 1), null);
+});
+
+// The whole of the first-time rule is that both the key and the content must be unknown.
+// Testing the key alone calls every re-aim new, which buries the citations that genuinely
+// were never checked under the dozens that the gate has already agreed about.
+const FRESH = {
+  key: 'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:700|0',
+  anchor: 'src/js/lib/model.js:700',
+  claim: 'the new claim at',
+  fp: 'aaaa1111bbbb2222',
+  head: 'const fresh = 1;',
+  tail: null,
+};
+
+test('a citation the lock has never held, under key or content, is first time', () => {
+  assert.deepEqual(firstTime([FRESH], {}).map((f) => f.key), [FRESH.key]);
+});
+
+test('a re-aim is not first time, because its fingerprint is one the gate already agreed to', () => {
+  const blessed = {
+    'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:640|0': {
+      anchor: 'src/js/lib/model.js:640',
+      fp: FRESH.fp,
+      head: FRESH.head,
+    },
+  };
+
+  assert.deepEqual(firstTime([FRESH], blessed), []);
+});
+
+test('a citation already under its own key is not first time', () => {
+  const blessed = { [FRESH.key]: { anchor: FRESH.anchor, fp: FRESH.fp, head: FRESH.head } };
+
+  assert.deepEqual(firstTime([FRESH], blessed), []);
+});
+
+// An unresolvable citation is refused before the bless prints anything, so calling it
+// first time would put a citation that cannot be read into the list of ones to read.
+test('a citation that does not resolve is not reported as first time', () => {
+  assert.deepEqual(firstTime([{ ...FRESH, fp: null }], {}), []);
+});
+
+// The mark has to survive the same collapse the report itself was built to survive. Two
+// first-time citations of one anchor must be marked twice, or the reader reads one line
+// and believes they have read both.
+test('every first-time citation is marked, including two that share an anchor', () => {
+  const fresh = new Set(COLLIDED.map((c) => c.key));
+  const marked = pairingLines(pairings(COLLIDED, {}), fresh).filter((l) => l.includes('NEW  '));
+
+  assert.equal(marked.length, 2);
+  assert.equal(marked.filter((l) => l.includes('every stored readAt')).length, 1);
+  assert.equal(marked.filter((l) => l.includes('writes it at')).length, 1);
+});
+
+test('a citation the gate has seen before carries no mark', () => {
+  const fresh = new Set([COLLIDED[0].key]);
+  const lines = pairingLines(pairings(COLLIDED, {}), fresh);
+
+  assert.equal(lines.filter((l) => l.includes('NEW  ')).length, 1);
+  assert.equal(lines.filter((l) => l.includes('1 is marked NEW')).length, 1);
+});
+
+test('a report with nothing new says nothing about new, rather than saying none', () => {
+  assert.equal(pairingLines(pairings(COLLIDED, {})).filter((l) => l.includes('NEW')).length, 0);
+});
+
+// The fingerprint half is asked at the citation's own site, not across the corpus, and
+// these two are the reason. Identical lines are ordinary here rather than exotic: two
+// guards in the hydrator are written the same way, and 176 of the 492 entries blessed
+// when this was written carried a fingerprint some other entry also carried. A
+// corpus-wide test reads a claim nobody has ever checked as already checked the moment
+// its lines happen to match one of them, anywhere, and the collision notice cannot stand
+// in for it because that is scoped to one document, scope and anchor.
+test('a first sighting in another document is not excused by content blessed elsewhere', () => {
+  const elsewhere = {
+    'docs/ARCHITECTURE.md|the-store|src/js/lib/model.js:640|0': {
+      anchor: 'src/js/lib/model.js:640',
+      fp: FRESH.fp,
+      head: FRESH.head,
+    },
+  };
+
+  assert.deepEqual(firstTime([FRESH], elsewhere).map((f) => f.key), [FRESH.key]);
+  assert.deepEqual(collisions([FRESH], elsewhere), []);
+});
+
+test('a first sighting in another scope of one document is not excused either', () => {
+  const otherScope = {
+    'PRODUCT_BACKLOG.md|appendix-b|src/js/lib/model.js:640|0': {
+      anchor: 'src/js/lib/model.js:640',
+      fp: FRESH.fp,
+      head: FRESH.head,
+    },
+  };
+
+  assert.deepEqual(firstTime([FRESH], otherScope).map((f) => f.key), [FRESH.key]);
+});
+
+// The suppression that is kept has to be kept exactly, or the rule trades one kind of
+// noise for another: a re-aim holds its document, its scope and its ordinal and moves
+// only the anchor, so it must stay unmarked under the narrower test as well.
+test('a re-aim at its own site stays unmarked under the narrower test', () => {
+  const sameSite = {
+    'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:640|0': {
+      anchor: 'src/js/lib/model.js:640',
+      fp: FRESH.fp,
+      head: FRESH.head,
+    },
+  };
+
+  assert.deepEqual(firstTime([FRESH], sameSite), []);
+});
+
+// The ordinal is part of the site, and dropping it would reintroduce the collapse this
+// report was built to survive, one layer up. A second citation of a line the scope
+// already cites is a first sighting of its own: nobody has read that sentence against
+// that line, however often the line itself has been read.
+test('a second citation of a line already blessed in that scope is a first sighting', () => {
+  const blessed = {
+    'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:700|0': {
+      anchor: FRESH.anchor,
+      fp: FRESH.fp,
+      head: FRESH.head,
+    },
+  };
+  const second = { ...FRESH, key: 'PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:700|1' };
+
+  assert.deepEqual(firstTime([second], blessed).map((f) => f.key), [second.key]);
 });
