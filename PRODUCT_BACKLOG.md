@@ -1,4 +1,4 @@
-﻿# Marvel Reading Tracker Expansion Backlog
+# Marvel Reading Tracker Expansion Backlog
 
 This backlog describes the next product improvements in plain English. It is intended
 for review before implementation. The goal is to make the tracker useful for many
@@ -152,8 +152,8 @@ Three quantities used to brief this pass disagreed with what the repository actu
 are recorded rather than inherited.
 
 * `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last
-  line number when reading the file. Evidence: `src/js/main.js:3259-3279`. The work shipped since has
-  taken it to 3,366; 1,566 is the figure as audited.
+  line number when reading the file. Evidence: `src/js/main.js:3294-3314`. The work shipped since has
+  taken it to 3,400; 1,566 is the figure as audited.
 * `src/js/ui/` does not exist in this worktree. Evidence: `absent: src/js/ui, Test-Path returning
   False and a recursive directory listing of src/`. Git cannot track an empty directory, so an
   empty `src/js/ui/` in another checkout is a local artifact rather than repository content. Either
@@ -227,7 +227,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:271 |
 | BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1035 |
 | BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:381-419 |
-| BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:212-235 |
+| BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:222-245 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:232 |
@@ -241,14 +241,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-069 | Close the three accent boundaries the BL-067 review found and could not gate | Debt | EP-08 | Leaves alone | 2 | 1 | 2 | 3 | 1.67 | none | Measured | Shipped | src/styles.css:290 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Shipped | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
 | BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Shipped | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
-| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Shipped | src/js/main.js:3259-3273 |
+| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Shipped | src/js/main.js:3294-3308 |
 | BL-007 | Give the event orders the variants the catalog can already carry | Story | EP-02 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | P1 | Observed | Shipped | src/data/catalog.json |
 | BL-032 | Offer a light theme and follow the system preference | Story | EP-08 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Shipped | src/styles.css |
 | BL-065 | Raise the six non-text boundaries that sit below 3:1 | Debt | EP-08 | Depends on | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Shipped | scripts/check-palette.mjs |
 | BL-036 | Make the current view and list addressable in the URL | Story | EP-10 | Leaves alone | 5 | 2 | 3 | 8 | 1.25 | none | Observed | Shipped | src/js/lib/route.js:35-43 |
 | BL-064 | Make the view file importable so its render paths can be tested | Enabler | EP-12 | Depends on | 3 | 2 | 8 | 13 | 1.0 | none | Measured | Shipped | src/js/app.js:12 |
 | BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Shipped | src/js/lib/model.js:432-440 |
-| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:3259-3273 |
+| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:3294-3308 |
 
 ### Parked
 
@@ -2711,7 +2711,7 @@ over, so the helper should drop straight in. The review that filed this item rea
 and `renderYours` as safe because navigation follows them, which is only half true: `showView` calls
 `renderRail` at `src/js/main.js:826` and reaches `renderYours` through `renderHome` at
 `src/js/main.js:828`, where the reader is being moved anyway, but `renderAll` at
-`src/js/main.js:3259` calls both on every `store.update` with no navigation at all. Measured on that
+`src/js/main.js:3294` calls both on every `store.update` with no navigation at all. Measured on that
 route in Edge at 1280x900: with a reading order's button in the rail focused, pressing `d` took the
 order from 0 of 89 read to 1 of 89, left the reader on the read view, and put
 `document.activeElement` at `BODY`. Only `#list-nav` is rebuilt, at `src/js/main.js:860`, so the
@@ -2809,7 +2809,7 @@ no dependency could have added one. Both named routes address importability; onl
 addressed callability, and the split is sized 20 and held at `Proposed` for being unsplit.
 
 So the third route: separate what the module defines from what it does when it loads. The load-time
-sequence moved into an exported `boot()` at `src/js/main.js:3292`, and `src/js/app.js` is the entry
+sequence moved into an exported `boot()` at `src/js/main.js:3327`, and `src/js/app.js` is the entry
 the page loads now, whose whole body is a call to it. The one document read that ran during
 evaluation, a lookup of the live region, became a lookup on use. The module now imports in bare Node
 with no double of any kind installed, and the process exits, which is the check that the interval
@@ -3929,7 +3929,7 @@ schema-version failure rather than read off the source: every one of the three i
 the screen three times. Boot handed whatever error it found to the save report, an assertive live
 region above the banner, and the load failure was such an error at the time, so the string was
 painted there and in `#blocked-why` and paraphrased again by the standing paragraph. BL-075 removed
-that boot report, and the comment now standing in its place at `src/js/main.js:3337-3341` records
+that boot report, and the comment now standing in its place at `src/js/main.js:3372-3376` records
 why. The row was filed off a screenshot of the banner alone, which is where the miscount came from.
 After the change each instruction is on screen once. BL-075 has since taken the load failure out of
 that slot, so this path no longer reaches it.
@@ -3995,7 +3995,7 @@ never draws.
 
 Three diagrams rather than one, because the app has three separable stories and one picture that told
 all three would tell none of them well. The module graph answers what depends on what: a single view
-file of 3,366 lines wires a store, a metadata client, a rate limiter, a response cache and a hydrator
+file of 3,400 lines wires a store, a metadata client, a rate limiter, a response cache and a hydrator
 together at `src/js/main.js:65-78`, and behind it sit sixteen library modules, none of which holds
 state of its own at module level. Where state exists it lives in an instance the view file constructs,
 as the rate limiter's queue and its window of recent hits do, which is why the graph is worth drawing
@@ -4313,35 +4313,59 @@ write the expiry rule and finding that every version of it deleted something on 
 the banner is telling the reader to download this incident's copy or start fresh, and both need the
 copy that is at that moment the live one. Its row renders a hint in place of the button, so the offer
 is never made; `forgetSalvage()` refuses it as well, as a backstop rather than as the design, which is
-the shape the BL-035 review asked for. The refusal is scoped to `blocked`, so once the reader resolves
-the incident that same copy becomes theirs to remove. Refusing it for ever would have made the copies
-this item is about the one kind that can never be cleared.
+the shape the BL-035 review asked for. The refusal lifts once the incident is resolved, so that same
+copy becomes the reader's to remove. Refusing it for ever would have made the copies this item is
+about the one kind that can never be cleared.
+
+**Which copy is live is asked of storage, not of this tab, and the first version got that wrong.**
+The review found it and it reproduced first try. `blocked` and `salvageKey` are per `Store`
+instance, so a tab open since before the data went bad has neither set. Two instances over one
+storage: the second saw the copy as live, the first saw it as removable, and `forgetSalvage()` agreed
+with the first because its backstop read the same two fields, so the screen and its backstop failed
+together rather than one covering the other. That tab is not blocked, so its next ordinary edit
+overwrites the main slot, and a probe confirmed the unreadable original was then recoverable from
+nowhere. A copy is live when it holds exactly what the main slot holds, which is the question
+`existingCopyOf()` already asks of storage for the same reason: a pointer is bookkeeping that can
+drift, and this has an answer storage can be asked directly. The per-tab test is kept as an OR and a
+mutation confirms it is now defence in depth rather than load-bearing. The protection lifts by itself
+when the main slot changes, so no tab has to be told that another one resolved the block. Two real
+pages in Edge over one storage carry the case, since the claim is about `localStorage` being shared
+between them and that is a property of the browser rather than of the module.
 
 **Three answers rather than two, for the same reason constraint 6 keeps five.** `salvageCopies()`
 returns `null` when the storage will not enumerate and an empty list when it enumerates and finds
 nothing, and the screen says "this browser will not list them" for the first and "nothing is being
 kept" for the second. Collapsing them is a one-word change that would tell a reader whose copies are
 all still on disk that they are carrying nothing, on the screen whose only job is to say what is
-being carried.
+being carried. The distinction survives into the click handler too: a copy missing from the list
+because the browser declined to enumerate is not a copy that was removed, and saying so would be the
+one wrong thing to say here.
 
 **The listing writes nothing.** It is the one screen whose subject is running out of room, so
 spending the budget to report on it would be self-defeating; a test counts the writes rather than
 inspecting the result, because an assertion on the final contents passes on a version that writes and
 then tidies up.
 
-Verified: 612 tests pass, 9 of them new, and none of the nine can be watched failing on a reverted
+Verified: 614 tests pass, 11 of them new, and none of the eleven can be watched failing on a reverted
 tree, because the code they guard does not exist there. Each was instead watched failing under a
-mutation that removes the single protection it names, and all ten mutations were caught by the guard
-that names them, with the file restored identically afterwards. One of the ten did not fire on the
-first run, and that was the finding rather than the nuisance: `null` coerces to zero in arithmetic, so
-subtracting the two dates sorts an undated copy last by accident for every timestamp after 1970, and
-the sentinel version cannot be told from the broken one. The test now seeds a copy stamped at the
-epoch, which a device with a dead clock genuinely produces, and that is the only value that separates
-them.
+mutation that removes the single protection it names, and all twelve mutations were scored as
+expected, with the file restored identically afterwards. One did not fire on the first run, and that
+was the finding rather than the nuisance: `null` coerces to zero in arithmetic, so subtracting the two
+dates sorts an undated copy last by accident for every timestamp after 1970, and the sentinel version
+cannot be told from the broken one. The test now seeds a copy stamped at the epoch, which a device
+with a dead clock genuinely produces, and that is the only value that separates them.
 
-A browser check in Edge at 1280x900 goes 12 of 12 on this change and 1 of 12 on the shipped code,
-where the screen does not exist; the single pass there measures a property of the browser rather than
-of the app. It drives two genuine incidents, because one incident produces one copy and a list of one
+The mutation harness itself failed the same way once, and it is worth recording because it is the
+mirror of the rule about a check that has never been seen to fail. It parsed the runner's output for
+`not ok`, which is TAP, while `node --test` defaults to a reporter that prints a heavy cross, so it
+read every mutation as survived. It reported the first real guard as untested when the guard was
+sound. A harness that cannot see a failure scores every mutation the same way, so it now asks for TAP
+explicitly and refuses to score at all unless its named failures agree with the summary count.
+
+A browser check in Edge at 1280x900 goes 19 of 19 on this change and 3 of 19 on the shipped code. The
+three that pass there are honest: one measures a property of the browser, and two describe behaviour
+that already exists, since a second tab does block and salvage today and nothing removes a copy today.
+The check drives two genuine incidents, because one incident produces one copy and a list of one
 cannot show an ordering or a withdrawn offer.
 
 The size shown against each copy is twice its length, and the first version of the comment saying so
@@ -4352,6 +4376,18 @@ one of plain letters and one led by an accented character, were accepted to the 
 so the cost is per character and does not vary with the content. The factor survived the measurement
 and the sentence around it did not, which is the argument for measuring a claim that is only going to
 be read.
+
+Two smaller corrections came out of the same review. A copy's date is shown to the second rather than
+to the day, because two copies taken on one day rendered the same sentence in the row, in the
+accessible name and in a confirmation that calls the removal unrecoverable, leaving the reader
+choosing between them with nothing to choose on. Two copies inside one second still read alike; those
+are the collision case `freeArchiveKey()` handles, where the copies are moments apart and the
+millisecond separating them is in the key rather than in anything worth showing. And the label
+compared its timestamp against `null` rather than testing it for truth, because a stamp of zero is a
+real value the layer below reports on purpose, and treating it as absent discarded in the last step
+the distinction the module was built to keep. The step that checks it asserts that a date is shown at
+all rather than which date: the epoch renders as the last day of 1969 west of Greenwich, and the first
+version of that assertion failed against correct code because it was asserting the tester's timezone.
 
 **BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
@@ -4444,7 +4480,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5111-5112` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5147-5148` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4454,11 +4490,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:161-163`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5132-5134`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5168-5170`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4945-4947` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4981-4983` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4666,7 +4702,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:812-815` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:816-819` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:154-156` and
 `PRODUCT_BACKLOG.md:161-163` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5022,7 +5058,7 @@ block: 4,485 DOM nodes and 1,533 row controls, at a median of 21.9 ms synchronou
 paint, with the first toggle costing 38.9 ms and 144.1 ms. Measured headless on a desktop machine,
 so a phone will be slower, though phone use is out of scope; see BL-028.
 
-Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:3259-3279` (renderAll rebuilds
+Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:3294-3314` (renderAll rebuilds
 every region), `src/js/main.js:72-77` (store.onChange is wired straight to renderAll),
 `src/js/main.js:1851-2034` (renderRows, which then built every row with no virtualisation and no
 early exit when the containing details element is closed).
@@ -5110,9 +5146,9 @@ The clearest debt in the repository, and it is concentrated in one file.
 
 - Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and
   every render function. There is no view layer to change independently.
-  Evidence: `src/js/main.js:3259-3279`, `src/js/main.js:811-828` (showView switches views by
+  Evidence: `src/js/main.js:3294-3314`, `src/js/main.js:811-828` (showView switches views by
   mutating a module-level variable).
-  Still open, and wider than audited: the file is 3,366 lines now, so nearly every item shipped
+  Still open, and wider than audited: the file is 3,400 lines now, so nearly every item shipped
   since has been added to the one file this gap is about. `BL-053` is the exception in kind rather
   than in size: it moved the reading filter predicates out to `src/js/lib/readingFilters.js` and
   still left `main.js` 8 lines longer, which is the shape of the problem. `BL-038` is the closest
@@ -5176,7 +5212,7 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Offline behavior | No gap, and no proposal. Probed as required rather than treated as a caching problem. With the local server running and no internet, the app starts, reads saved state, imports any bundled curated list and marks issues read, because those paths touch only same-origin files. Only cover images, metadata hydration and search degrade, and hydration failure is already surfaced as a pending state rather than as silence. Evidence: `src/data/house_of_m.json`, `src/js/main.js:1975-1981` (pending and by-hand badges), `absent: serviceWorker|navigator.onLine|manifest.json, case-insensitive grep across src/`. Repository Constraint 1 forbids caching cover bytes, so no cover-caching improvement is proposed. |
 | Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:671-699`, `src/js/main.js:3027-3033`. |
 | Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:582-608`, `test/model.test.js:558-560`. |
-| Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3236-3238`. |
+| Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3271-3273`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:20-33` and onto the read out of storage at `src/js/main.js:390-414`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3038-3039`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
 | Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-29` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |

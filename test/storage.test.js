@@ -538,6 +538,48 @@ test('a removal that did not take is reported as a failure', () => {
   assert.equal(new Store({ storage: throwing }).forgetSalvage('mrt.state.salvage'), false);
 });
 
+// Two tabs are two Store instances over one storage, and blocked and salvageKey are per instance.
+// A tab that read the data before it went bad has neither set, so before this was derived from
+// storage that tab alone offered Remove on the copy the other tab was blocked on, and its next
+// ordinary edit overwrote the original the copy was the last record of.
+test('a tab that is not blocked still protects the copy another tab is blocked on', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const readable = new Store({ storage });
+  readable.load();
+  assert.equal(readable.blocked, false, 'this tab read the data and knows nothing of what follows');
+
+  const unreadable = JSON.stringify({ schemaVersion: 99 });
+  storage.setItem(KEY, unreadable);
+  const blocked = new Store({ storage });
+  blocked.load();
+  const live = blocked.salvageKey;
+  assert.equal(blocked.blocked, true);
+
+  assert.equal(readable.salvageCopies().find((c) => c.key === live).live, true, 'the screen in the other tab must not offer it');
+  assert.equal(readable.forgetSalvage(live), false, 'and the backstop must not agree with a screen that did');
+  assert.equal(storage.getItem(live), unreadable, 'the copy survives the tab that could not see why it mattered');
+});
+
+// The protection is the copy matching what the main slot holds, so it lifts by itself the moment
+// the main slot holds something else. Any tab starting fresh or restoring achieves that, which is
+// why no tab has to be told that another one resolved the block.
+test('the protection lifts for a bystander tab once the main slot holds something else', () => {
+  const storage = fakeStorage({ [KEY]: JSON.stringify({ schemaVersion: 99 }) });
+  const blocked = new Store({ storage });
+  blocked.load();
+  const live = blocked.salvageKey;
+
+  // Never loaded, so blocked is false and salvageKey is null: the shape a tab open since before
+  // the data went bad is in, and the only shape the in-memory check cannot speak for.
+  const bystander = new Store({ storage });
+  assert.equal(bystander.forgetSalvage(live), false, 'while the unreadable data is still in the main slot');
+
+  assert.equal(blocked.startFresh(), true);
+  assert.equal(bystander.salvageCopies().find((c) => c.key === live).live, false, 'it needed no telling');
+  assert.equal(bystander.forgetSalvage(live), true);
+  assert.equal(storage.getItem(live), null);
+});
+
 test('update reports whether the change was actually saved', () => {
   const storage = fakeStorage({ [KEY]: goodBackup() });
   const store = new Store({ storage });

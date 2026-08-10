@@ -3085,9 +3085,27 @@ function wireData() {
 // understated every figure by half on the one screen whose subject is running out of room.
 const salvageKb = (chars) => Math.max(1, Math.round((chars * 2) / 1024));
 
-const salvageWhen = (at) => (at
-  ? new Date(at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
-  : null);
+// Date and time to the second, not date alone. Copies are keyed to the millisecond and two can be
+// taken on one day, and the reader choosing between them in a dialog that calls the removal
+// unrecoverable has only this string to choose with. Measured: two copies a few milliseconds apart
+// both rendered "Copy taken on 9 August 2026", with identical accessible names and an identical
+// confirmation. Seconds separate two incidents; two copies inside one second still read alike, and
+// those are the collision case freeArchiveKey() handles, where the copies are moments apart and
+// the millisecond that distinguishes them is in the key rather than in anything worth showing.
+//
+// Compared against null rather than tested for truth, because a copy stamped at the epoch is a
+// real case a device with a dead clock produces, and the layer below reports 0 and null as
+// different values on purpose. Treating 0 as absent would discard that in the last step.
+const salvageWhen = (at) => (at === null || at === undefined
+  ? null
+  : new Date(at).toLocaleString(undefined, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }));
 
 // The reader's view of what is being kept on their behalf. Read from storage on every call rather
 // than from anything held in memory, because another tab can have taken a copy or removed one
@@ -3136,12 +3154,19 @@ function renderSalvage() {
             'aria-label': `Download the ${when ? `copy taken on ${when}` : 'copy with no date recorded'}`,
             text: 'Download',
           }),
-          // The offer is withdrawn rather than refused: while this copy is the one the recovery
-          // banner is telling the reader to download or start fresh from, removing it is the one
-          // thing that would leave them with nothing, and a button that explains itself only
-          // after the click has already asked them to try.
+          // The offer is withdrawn rather than refused: while this copy is the last record of data
+          // the app cannot read, removing it is the one thing that would leave the reader with
+          // nothing, and a button that explains itself only after the click has already asked them
+          // to try. The sentence depends on whether this tab is the one that is blocked, because
+          // liveness is a property of storage and the banner is a property of the tab: a second
+          // tab that read the data before it went bad shows the row with no warning above it.
           c.live
-            ? el('span', { class: 'rail-hint', text: 'Kept until the warning above is resolved' })
+            ? el('span', {
+              class: 'rail-hint',
+              text: store.blocked
+                ? 'Kept until the warning above is resolved'
+                : 'Kept while the data it copies is still saved here',
+            })
             : el('button', {
               type: 'button',
               class: 'quiet quiet-danger',
@@ -3162,10 +3187,16 @@ function wireSalvage() {
     const btn = e.target.closest('[data-act]');
     if (!btn) return;
     const { act, key } = btn.dataset;
-    const copy = store.salvageCopies()?.find((c) => c.key === key);
+    const copies = store.salvageCopies();
+    const copy = copies?.find((c) => c.key === key);
     if (!copy) {
       renderSalvage();
-      return notify('#salvage-report', 'That copy is no longer there. The list has been refreshed.', 'warn');
+      // Two reasons the copy is not in the list, and only one of them means it is gone. A browser
+      // that declined to enumerate has not told us anything was removed, and saying so would be
+      // the one wrong thing to say on the screen whose subject is what is still being kept.
+      return notify('#salvage-report', copies === null
+        ? 'This browser will not let the app list what it has stored, so that copy cannot be acted on here. Nothing has been removed.'
+        : 'That copy is no longer there. The list has been refreshed.', 'warn');
     }
     const when = salvageWhen(copy.at);
     const named = when ? `taken on ${when}` : 'with no date recorded';
@@ -3173,7 +3204,11 @@ function wireSalvage() {
     if (act === 'download') {
       const raw = store.salvageRawAt(key);
       if (!raw) return notify('#salvage-report', 'That copy could not be read back, so nothing was downloaded.', 'warn');
-      download(`marvel-reading-tracker-unreadable-${when ? new Date(copy.at).toISOString().slice(0, 10) : 'undated'}.json`, raw, 'application/json');
+      // To the second, for the same reason the row is: two copies taken on one day would otherwise
+      // arrive as one name and a browser-appended (1), leaving the reader unable to tell which is
+      // which after the screen that could have told them is closed.
+      const stamp = copy.at === null ? 'undated' : new Date(copy.at).toISOString().slice(0, 19).replace(/:/g, '-');
+      download(`marvel-reading-tracker-unreadable-${stamp}.json`, raw, 'application/json');
       return notify('#salvage-report', `Downloaded the copy ${named}. It is still being kept here as well.`, 'ok');
     }
 

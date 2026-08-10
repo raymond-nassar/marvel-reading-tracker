@@ -152,7 +152,7 @@ The parts of that worth saying in words.
 `src/js/main.js:1957-1960` hands the store a function; the function itself, at
 `src/js/lib/model.js:401-403`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
-`src/js/storage.js:279-297`.
+`src/js/storage.js:296-314`.
 
 **The repaint is synchronous, and it is inside the write.** By the time `update` returns, the
 change callback has already run and the screen already shows the result. That is why the
@@ -164,7 +164,7 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3259-3279`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3294-3314`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
@@ -178,7 +178,7 @@ repaints through exactly the path drawn above. No ordinary change reaches the st
 `update`, but it is not the only thing that can set the state, and a guard added inside it would
 not cover the rest. Boot reads the state in, at `src/js/storage.js:37-63`. Restoring a backup and
 starting fresh each replace the whole state rather than transforming it, and both appear in the
-next section. Restoring is the one that writes the key directly, at `src/js/storage.js:325-358`,
+next section. Restoring is the one that writes the key directly, at `src/js/storage.js:342-375`,
 which also puts it past the latch a failed read sets; the comment there says that is deliberate,
 because a restore is a chosen overwrite.
 
@@ -229,9 +229,9 @@ Every name the app writes, and why it exists:
 
 | Key | Written by | Cleared by | Why it exists |
 |---|---|---|---|
-| `mrt.state.v2` | every saved change, at `src/js/storage.js:313` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
-| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:338-341` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
-| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:360-364`. It is deliberately never removed, so the undo survives a reload. |
+| `mrt.state.v2` | every saved change, at `src/js/storage.js:330` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
+| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:355-358` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
+| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:377-381`. It is deliberately never removed, so the undo survives a reload. |
 | `mrt.state.salvage` | a failed read, and only when the slot is empty or already holds the same bytes | the reader, from Backup and settings | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
 | `mrt.state.salvage.TIMESTAMP` | a failed read when the slot already holds a different incident, at `src/js/storage.js:121-127` | the reader, from Backup and settings | So a second corruption months later cannot clobber the copy taken for the first one. A `.N` is appended when that name is taken too, which one boot can reach on its own, because starting fresh salvages before it clears. |
 | `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:431` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
@@ -247,6 +247,14 @@ wants data the app itself could not read, so they are listed on the Backup and s
 removed one at a time by the reader. The copy belonging to an incident that is currently blocking
 saving is listed but not offered, because the banner is at that moment telling the reader to download
 it or start fresh and both need it; that offer returns once the block is resolved.
+
+Which copy that is gets asked of storage rather than of the tab doing the asking, at
+`src/js/storage.js:222-245`: a copy is protected when it holds exactly what the main slot holds. The
+flags recording that this tab is blocked belong to one `Store` instance, and a second tab open since
+before the data went bad has none of them set, so deriving it from them left that tab offering to
+remove the copy the first tab was relying on. The arrows into the main slot are what makes that
+serious: an unblocked tab keeps writing, so it would have overwritten the original moments after
+removing the only other record of it.
 
 Three things around the edges of that table.
 
@@ -299,7 +307,7 @@ it.
 
 ## What a per-view split does to these diagrams
 
-BL-042 proposes breaking the 3,366 line view file into per-view modules. A diagram drawn at the
+BL-042 proposes breaking the 3,400 line view file into per-view modules. A diagram drawn at the
 level of function names inside that file would be falsified the day it lands, so each of the three
 above was pitched to survive it. Two do. One survives in shape but has a detail that will need
 rewriting, and it is more useful to say which than to claim all three are safe.

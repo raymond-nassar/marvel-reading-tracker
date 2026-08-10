@@ -29,8 +29,12 @@ quote in a bug report.
   data it could not read itself. The one copy it will not let you remove is the one belonging to a
   problem that is currently stopping saves, because the message on screen is at that moment offering
   to download it or start fresh and both need it; that copy becomes removable as soon as you have
-  dealt with the problem. If your browser will not list what it is storing, the screen says so
-  rather than claiming you have nothing.
+  dealt with the problem. That protection now holds even if you have the app open in a second tab
+  that was already running before the problem appeared, which a review found it did not: that tab had
+  no way of knowing anything had gone wrong and would have let you remove the copy. Each copy is
+  listed with the time it was taken as well as the date, so two taken on the same day can be told
+  apart. If your browser will not list what it is storing, the screen says so rather than claiming
+  you have nothing.
 
 - **The check that catches a paragraph written twice now looks at the whole document, not just the
   next few lines.** Nothing about the app changes and nothing you have saved is affected. Until now

@@ -209,9 +209,20 @@ export class Store {
   // The copy in the undated slot carries no date because freeArchiveKey() gives the first free
   // slot the bare name, and only the copies that find it occupied are stamped. That is a property
   // of the naming rather than of the copy, so it is reported as absent rather than guessed at.
+  //
+  // live is asked of storage rather than of this instance's own flags, for the reason
+  // existingCopyOf() gives: a pointer is bookkeeping that can drift, and this question has an
+  // answer storage can be asked directly. The flags are per tab, and a tab that read the data
+  // before it became unreadable has blocked false and salvageKey null, so it alone would offer
+  // Remove on the copy another tab is blocked on. Measured with two Store instances over one
+  // storage: the second tab saw live true, the first saw live false, forgetSalvage() agreed with
+  // the first because its backstop reads the same two fields, and one ordinary edit in that tab
+  // then overwrote the original the copy was the last record of. The in-memory term is kept as
+  // well, so a store holding a key storage has since lost still protects it.
   salvageCopies() {
     const out = [];
     try {
+      const current = this.storage?.getItem(KEY) ?? null;
       const total = this.storage?.length ?? 0;
       for (let i = 0; i < total; i += 1) {
         const key = this.storage.key(i);
@@ -223,7 +234,7 @@ export class Store {
           key,
           chars: raw.length,
           at: stamp ? Number(stamp[1]) : null,
-          live: this.blocked && key === this.salvageKey,
+          live: (this.blocked && key === this.salvageKey) || (current !== null && raw === current),
         });
       }
     } catch {
@@ -253,14 +264,20 @@ export class Store {
   //
   // The key arrives from the UI rather than from this module, so the family check is a guard on
   // untrusted input and not a tidiness test: without it this method removes mrt.state.v2 or the
-  // pre-restore snapshot for any caller that asks. The copy of the incident that is blocking
-  // saving right now is refused, because the banner is at that moment telling the reader to
-  // download it or start fresh and both need it to be there. That is a backstop; the screen
-  // withdraws the offer instead of presenting one that will be refused.
+  // pre-restore snapshot for any caller that asks. A copy of what the main slot still holds is
+  // refused, because the banner is at that moment telling the reader to download it or start fresh
+  // and both need it to be there. That is a backstop; the screen withdraws the offer instead of
+  // presenting one that will be refused.
   forgetSalvage(key) {
     if (typeof key !== 'string' || !key.startsWith(SALVAGE_KEY)) return false;
     if (this.blocked && key === this.salvageKey) return false;
     try {
+      // The same question salvageCopies() asks, and asked here rather than only there because a
+      // backstop that reads the same two per-tab flags as the screen fails in the same case the
+      // screen does. A copy holding exactly what the main slot holds is the second of two records
+      // of that data, and the main slot is the one an unblocked tab overwrites on its next edit.
+      const current = this.storage.getItem(KEY);
+      if (current !== null && this.storage.getItem(key) === current) return false;
       this.storage.removeItem(key);
       // Read back for the same reason the write is: removeItem can be a no-op behind a storage
       // that reports success it did not have, and telling the reader a copy is gone when it is
