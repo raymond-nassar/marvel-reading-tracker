@@ -225,6 +225,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-077 | Bring relative citations under the anchors gate, or stop writing them | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:282-297 |
 | BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:843 |
 | BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:271 |
+| BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Ready | scripts/check-anchors.mjs:944 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:213 |
@@ -2945,7 +2946,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2648-2651`.
+`PRODUCT_BACKLOG.md:2649-2652`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3644,6 +3645,48 @@ guard on a null closer had no case at all, and without it `replace(null, '')` co
 it. Eleven patched builds fail twenty times between them across all eight new tests, and none of the
 eleven is green.
 
+**BL-080: Pair a citation whose scope alone was renamed, rather than report a loss and an addition**
+
+- [ ] Pair an addition against a loss in the same document whose anchor and fingerprint are both identical, and whose scope alone differs
+- [ ] Report that pair as a rename, so a reader is not asked to prove a loss was not a loss
+- [ ] Keep the existing refusal to guess, since a pairing that guesses is the defect this gate exists to catch
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of the BL-078 and BL-079 pass, where two people hit it independently within the same hour and
+reasoned their way out of it identically both times. The gate already pairs one addition against one
+loss and prints the result as a re-aim, and it refuses that pairing unless a single bucket holds
+exactly one of each, at `scripts/check-anchors.mjs:960-966`. The bucket carries the scope, at
+`scripts/check-anchors.mjs:944`, so a citation whose scope slug is renamed while its anchor and its
+content both stay put drops out of the pairing and prints as an unrelated addition beside an unrelated
+loss.
+
+The rename is not exotic, because prose scopes are keyed on the nearest heading and several headings in
+this document state a rank. Inserting one item above them rewords every heading below. Reconstructing
+the lock across every commit that has touched it, the heading naming BL-007's rank alone has produced
+this exact shape twelve times on twenty-four anchors, between 6 and 9 August, each time moving two
+citations of `src/js/main.js` from one rank word to the next with the anchors and the lines they name
+unchanged. Three fell across the first two days, five on the third as the rank climbed from
+thirty-eighth to forty-fourth, and four more in a single evening on the fourth, ending at fiftieth.
+Filing this item was the twelfth. That last one is the one worth keeping, because the act of writing
+the item down produced the defect the item is about, which is as good a case for building it as any
+measurement could be.
+
+What makes it worth building rather than tolerating is that the gate already holds everything the
+reasoning needs. An addition and a loss carrying an identical anchor and an identical fingerprint
+cannot be a loss, because nothing about what is cited has changed, only the name of the region the
+citation sits in. That identity is decisive in a way the existing one is not: the existing pairing
+matches on document, scope and file, and then insists on a count of one on each side precisely because
+it cannot tell which loss explains which addition. Matching the anchor and the fingerprint tells it,
+so reporting a rename does not weaken the refusal to guess that the comment above that pairing defends.
+The document must still be held, or a genuine loss in one document could be absorbed by an unrelated
+new citation of the same lines in another.
+
+Left open on purpose: whether a recognised rename should still make the gate exit 1. It should. A
+rename absorbed silently would let a real loss hide behind a real rename in the same run, which is the
+shape of every defect this gate has caught so far. Printing it as its own kind while still exiting 1
+spares the reader the reasoning without sparing them the reading.
+
 **BL-072: Give the recovery banner's two actions different weights**
 
 - [x] Remove `btn-p` from the three places that write it, or define it if a primary button is wanted
@@ -4027,7 +4070,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4694-4695` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4737-4738` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4037,11 +4080,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:161-163`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4715-4717`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4758-4760`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4528-4530` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4571-4573` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4249,7 +4292,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:678-681` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:689-692` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:154-156` and
 `PRODUCT_BACKLOG.md:161-163` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4783,14 +4826,14 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and twenty-nine
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and thirty
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 55 rows now. The ranks below are positions in it as it stands.
+how it reaches 56 rows now. The ranks below are positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks eighteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 18 of 55.
+- Calculated: WSJF 3.67, rank 18 of 56.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -4809,10 +4852,10 @@ how it reaches 55 rows now. The ranks below are positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks forty-ninth
+### Case 2: BL-007 is labelled P1 but ranks fiftieth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 49 of 55, below forty-five unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 50 of 56, below forty-six unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -4868,9 +4911,9 @@ how it reaches 55 rows now. The ranks below are positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 25 of 55. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 19 of 55. Mid-table.
-- BL-017, P2, rank 54 of 55. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 25 of 56. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 19 of 56. Mid-table.
+- BL-017, P2, rank 55 of 56. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

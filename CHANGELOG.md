@@ -16,6 +16,17 @@ quote in a bug report.
 
 ### Added
 
+- **Two things this pass learned the hard way are now written down instead of remembered.** Nothing
+  about the app changes and nothing you have saved is affected. Both concern the check that keeps the
+  project's written claims honest, and both cost time twice before being recorded. The first is that
+  when two people are working on branches that have to be merged into each other, choosing one side
+  of a clash silently invalidates work already done to re-point a claim at its new location: the
+  pointer still looks right and still points at real text, so nothing complains. The contributor
+  guide now says so, and says to re-derive a pointer by searching for the text it was recorded
+  against rather than by counting lines. The second is a job filed for later, to have the check
+  recognise that a claim has simply been renamed rather than lost, which two people worked out by
+  hand within two days of each other.
+
 - **The check that keeps the project's written claims honest now understands comments in every kind
   of file it reads, not just in program code.** Nothing about the app changes and nothing you have
   saved is affected. The check reads every file in the project, but it only ever recognised a comment

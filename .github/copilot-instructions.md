@@ -213,6 +213,21 @@ last edit you were thinking about. All four came from a re-aiming script that ra
 then invalidated by a one-line paragraph rewrite made afterwards in the same file. If anything at
 all changes after a re-aim, the re-aim is stale.
 
+Resolving a conflict is that same rule, and it is the quietest case of it. Taking one side of a
+conflict hunk is an edit, so it invalidates any re-aim computed against the other side, and it leaves
+no mark: the citation stays well-formed and still names real text in a real file. Two rebases here
+landed that way, one leaving three citations drifted and the other leaving seven pointing at the
+wrong content inside the right file. Expect it whenever two branches are rebased against each other,
+and re-verify every citation in every document you touched against the final tree rather than
+trusting a pass made before the rebase.
+
+Derive each new target by searching the file for the head text the lock already holds, never by
+adding an offset to the old number. That does not replace the arithmetic above, which is how a re-aim
+is checked once you have one; it is how to get one, and it is the half that survives an edit somebody
+else made. Two things to know if you script it: the lock stores the head trimmed and truncated to
+about a hundred characters, so the comparison has to be a trimmed prefix rather than an equality, and
+the report truncates its list of losses, so the count printed there is not the count to work from.
+
 ## Claims the gates do not check
 
 The anchors gate protects `path:line` citations. It does not protect anything else you assert, and
