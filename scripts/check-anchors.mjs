@@ -228,16 +228,67 @@ function exemptRanges(text) {
   return ranges;
 }
 
+// What opens a comment, which the gate has to know because outside Markdown the only text
+// addressed to a reader is a comment, and three separate rules turn on that. It was one
+// JavaScript-shaped pattern written out three times, plus a fourth that strips the opener,
+// and the corpus is not all JavaScript: `git ls-files` reaches 55 .js files but also 31
+// .json, 11 .mjs, 9 .html, 3 .css, a .yml, a .gitignore, a .cmd and a LICENSE. A workflow
+// comment, an HTML comment and a .gitignore comment were all read as program text.
+//
+// Keyed on the path rather than unioned into one pattern, because the syntaxes disagree.
+// A hash opens a comment in YAML and a private class field in JavaScript, and two files
+// here already open with a hashbang, at `scripts/check-contract.mjs:1` and
+// `scripts/vendor-index.mjs:1`. A union would read all three as prose and `strip` would
+// splice the remainder of a future `#count = 0;` into a claim. Keying on the path also
+// makes the single definition worth having: a caller that hands over a path gets the
+// right answer for that file rather than the union of every file.
+//
+// JSON answers "none" rather than falling through to the default, because a string value
+// beginning with an asterisk is data and not a sentence. Verified as a no-op today: no
+// tracked .json line matches the default pattern. LICENSE keeps the default for the same
+// reason in reverse. It has no comment syntax, but it has no leading-asterisk line and no
+// citation either, so inventing one for it would be a rule with no case to answer.
+export const PROSE = { prose: true, open: null, strip: null, close: null };
+
+const SYNTAX = {
+  slash: {
+    prose: false,
+    open: /^\s*(?:\/\/|\/\*|\*)/,
+    strip: /^\s*(?:\/\/+|\/\*+|\*)\s?/,
+    close: /\s*\*\/\s*$/,
+  },
+  hash: { prose: false, open: /^\s*#/, strip: /^\s*#+\s?/, close: null },
+  angle: {
+    prose: false,
+    open: /^\s*(?:<!--|\/\/|\/\*|\*)/,
+    strip: /^\s*(?:<!-+|\/\/+|\/\*+|\*)\s?/,
+    close: /\s*(?:-+!?>|\*\/)\s*$/,
+  },
+  batch: { prose: false, open: /^\s*(?:::|rem\b)/i, strip: /^\s*(?:::+|rem\b)\s?/i, close: null },
+  none: { prose: false, open: null, strip: null, close: null },
+};
+
+export function commentSyntax(path) {
+  const name = path.replace(/^.*[\\/]/, '');
+  const ext = /\.([^.]+)$/.exec(name)?.[1]?.toLowerCase() ?? name.toLowerCase();
+  if (ext === 'md') return PROSE;
+  if (ext === 'yml' || ext === 'yaml' || name === '.gitignore') return SYNTAX.hash;
+  if (ext === 'html' || ext === 'htm') return SYNTAX.angle;
+  if (ext === 'json') return SYNTAX.none;
+  if (ext === 'cmd' || ext === 'bat') return SYNTAX.batch;
+  return SYNTAX.slash;
+}
+
 // Where the relative form counts, which is the same split BL-071 drew and for the same reason.
 // In Markdown every line is addressed to a reader, so a relative citation anywhere in one is a
 // claim. In code only a comment is, and the rest is a program: this gate's own test builds its
 // fixtures out of exactly this shape, and a rule that read string literals would fail on the
 // tests written to prove the rule. Being in a comment is the only signal the text carries, so
 // it is the one this draws on, as `reportNearMisses` already does for the bare form.
-export function relativeCitations(text, prose = true) {
+export function relativeCitations(text, syntax = PROSE) {
   const out = [];
   text.split('\n').forEach((line, i) => {
-    if (!prose && !/^\s*(?:\/\/|\/\*|\*)/.test(line)) return;
+    if (!syntax.prose && !(syntax.open?.test(line) ?? false)) return;
     for (const m of line.matchAll(RELATIVE)) {
       out.push({ line: i + 1, at: m.index, ref: m[1], text: line.trim() });
     }
@@ -274,9 +325,9 @@ export function relativeVerdict(count, ref = null) {
 // are synthetic inputs. One of them names a line past the end of its file on purpose,
 // so the unresolvable path has something to resolve to nothing. Collecting it would
 // require the fixture to resolve, which is the single thing it exists not to do.
-export function citations(text, prose = true) {
+export function citations(text, syntax = PROSE) {
   const out = new Map();
-  for (const re of prose ? [ANCHOR, BARE] : [ANCHOR]) {
+  for (const re of syntax.prose ? [ANCHOR, BARE] : [ANCHOR]) {
     for (const m of text.matchAll(re)) {
       const at = m[0].startsWith('`') ? m.index + 1 : m.index;
       if (out.has(at)) continue;
@@ -320,15 +371,24 @@ function rowScope(line, heading) {
 // heading. And the walk stops at the first line that is not itself a comment, so a
 // comment sitting directly on top of code cannot absorb the code above it.
 //
+// The heading test is scoped to prose for the same reason, and finding that it was not
+// is what made this one change rather than two. A YAML comment necessarily opens with a
+// hash and a space, so an unscoped heading test ends the walk on the very lines that
+// widening the comment syntax was meant to let it read. Recognising them and then
+// terminating on them is a half fix that looks finished. Scoping is safe in the other
+// direction because no .js, .mjs or .css line can begin with a hash and a space.
+//
 // Everything here decides print only, never membership or fingerprint, so a heuristic
 // is safe the same way the scope heuristic is: the worst it can do is print an uglier
 // claim, and the claim is still printed beside its line.
-export function claimBefore(lines, i, at, prose = true) {
+export function claimBefore(lines, i, at, syntax = PROSE) {
   const flatten = (s) => s.replace(/`/g, '').replace(/\s+/g, ' ').trim();
-  const bare = (s) => (prose ? s : s.replace(/^\s*(?:\/\/+|\/\*+|\*)\s?/, '').replace(/\s*\*\/\s*$/, ''));
-  const marked = (s) => /^\s*(?:\/\/|\/\*|\*)/.test(s);
-  const ends = (s) => !s.trim() || s.startsWith('|') || /^#{1,6}\s/.test(s)
-    || (!prose && (!marked(s) || !flatten(bare(s))));
+  const bare = (s) => (syntax.prose || !syntax.strip
+    ? s
+    : s.replace(syntax.strip, '').replace(syntax.close ?? /(?:)$/, ''));
+  const marked = (s) => syntax.open?.test(s) ?? false;
+  const ends = (s) => !s.trim() || s.startsWith('|') || (syntax.prose && /^#{1,6}\s/.test(s))
+    || (!syntax.prose && (!marked(s) || !flatten(bare(s))));
 
   let text = bare(lines[i].slice(0, at));
   for (let j = i - 1; j >= 0 && flatten(text).length < 90; j -= 1) {
@@ -387,13 +447,13 @@ function collect() {
 
     // Normalised so a character offset means the same thing on either platform.
     const text = raw.replace(/\r\n/g, '\n');
-    const prose = doc.endsWith('.md');
+    const syntax = commentSyntax(doc);
     const ranges = exemptRanges(text);
     const exempt = (at) => ranges.some(([from, to]) => at >= from && at < to);
 
     // Counted over the whole file, independently of the line walk below, so any
     // walker bug shows up as a shortfall instead of as a clean pass.
-    const scanned = citations(text, prose).filter((c) => !exempt(c.at)).length;
+    const scanned = citations(text, syntax).filter((c) => !exempt(c.at)).length;
     if (scanned === 0) continue;
 
     let heading = 'preamble';
@@ -409,7 +469,7 @@ function collect() {
 
       const scope = line.startsWith('|') ? rowScope(line, heading) : heading;
 
-      for (const c of citations(line, prose)) {
+      for (const c of citations(line, syntax)) {
         if (exempt(offset + c.at)) {
           exempted += 1;
           continue;
@@ -431,7 +491,7 @@ function collect() {
         found.push({
           key: `${bucket}|${ordinal}`,
           anchor,
-          claim: claimBefore(lines, i, c.at, prose),
+          claim: claimBefore(lines, i, c.at, syntax),
           ...fingerprint(c.file, c.start, c.end),
         });
       }
@@ -646,10 +706,11 @@ function reportNearMisses(exempted) {
     // sentence around it is addressed to a reader, so a bare citation in one is a claim
     // and is now ungated with nothing said about it. Being in a comment is the only
     // signal the text carries, so it is the one this draws on.
-    if (!doc.endsWith('.md')) {
+    const syntax = commentSyntax(doc);
+    if (!syntax.prose && syntax.open) {
       const lines = text.split('\n');
       for (let i = 0; i < lines.length; i += 1) {
-        if (!/^\s*(?:\/\/|\/\*|\*)/.test(lines[i])) continue;
+        if (!syntax.open.test(lines[i])) continue;
         for (const hit of lines[i].match(BARE) ?? []) {
           suspicious.push(`  ${doc}:${i + 1}  ${hit}  (bare citation in a comment)`);
         }
@@ -693,7 +754,7 @@ function main() {
   for (const doc of docs()) {
     const text = read(doc);
     if (text === null) continue;
-    for (const r of relativeCitations(text, doc.endsWith('.md'))) {
+    for (const r of relativeCitations(text, commentSyntax(doc))) {
       relative.push(`  ${doc}:${r.line}  \`${r.ref}\`\n      ${r.text.slice(0, 110)}`);
     }
   }
