@@ -92,10 +92,29 @@ let view = 'read';
 // where the automatic salvage fails.
 let downloadedSalvage = false;
 
+// The banner as the last render left it, so its withdrawal can take the notices that were about
+// it. While the banner is up, everything the save report can hold is about the block: a refused
+// write, the refusal to start fresh, and the empty-download warning are its only writers in that
+// state. So the moment saving works again, whatever is still in there points at a banner that is
+// no longer on screen. A restore is the path that exposed this, because it reports its own
+// success to the restore pane and leaves the save report untouched.
+let blockedBannerWasUp = false;
+
 function renderBlocked() {
   const banner = $('#blocked-banner');
   banner.hidden = !store.blocked;
-  if (store.blocked) $('#blocked-why').textContent = store.lastError ?? '';
+  // Painted from the reason the read failed rather than from the newest error, so a write
+  // refused while blocked no longer displaces the one thing on this screen that the standing
+  // copy cannot know. Written only when it differs, because this runs on every render and
+  // assigning an identical string still replaces the text node inside a role="alert", which
+  // invites the same sentence to be read out again on every save the reader makes.
+  const why = $('#blocked-why');
+  const reason = store.blockedReason ?? '';
+  if (why.textContent !== reason) why.textContent = reason;
+  // Below the hide, so a cleared reason is never on screen: the banner has already gone by the
+  // time the text it held is emptied.
+  if (blockedBannerWasUp && !store.blocked) $('#save-report').replaceChildren();
+  blockedBannerWasUp = store.blocked;
   // The pre-restore snapshot outlives a reload, so the undo affordance must be restored on
   // boot rather than only after the restore that created it.
   const undo = $('#btn-undo-restore');
@@ -119,10 +138,10 @@ function wireBlockedBanner() {
       confirmLabel: 'Start fresh',
     });
     if (!yes) return;
+    // Not reported on failure: both failing exits assign lastError and then call onChange,
+    // which already notifies here. Measured in Edge, 2 identical strings per refusal, now 1.
     if (store.startFresh({ confirmedDownloaded: downloadedSalvage })) {
       notify('#save-report', 'Started fresh. Saving is working again.', 'ok');
-    } else {
-      notify('#save-report', store.lastError ?? 'Could not start fresh.', 'error');
     }
   });
 }
@@ -3194,7 +3213,11 @@ export function boot() {
   checkHealth();
   refreshCacheUsage();
 
-  if (store.lastError) notify('#save-report', store.lastError, 'error');
+  // Nothing reports store.lastError here. Every writer of it calls onChange in the same step, and
+  // that callback already notifies #save-report, so a line here can only repeat what is on screen.
+  // Measured in Edge with a route write failing during boot: 2 writes of the identical string into
+  // a region that is role="alert" aria-live="assertive". It read as a backstop while a failed load
+  // also set lastError, and that stopped being true when the reason moved to its own slot.
 
   // Reported after the first render, because a notice placed before there is a view to place it in
   // has nowhere to go. #app-report follows the reader between views, unlike the settings pane this

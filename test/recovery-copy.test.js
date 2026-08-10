@@ -53,11 +53,11 @@ const INSTRUCTIONS = [
   ['download a copy before starting fresh', /download a copy/i],
 ];
 
-// Both writers, because the banner shows whichever ran last. Anything the store puts in this
-// slot while blocked sits directly above the standing copy, so a message that repeats it is on
-// the screen twice however well it reads on its own.
+// Both writers, because both are on screen: the load failure is the banner's explanation line
+// and a refusal goes to the assertive save pane directly above the standing copy. Either one
+// that repeats an instruction puts it on the screen twice however well it reads on its own.
 function saidWhileBlocked() {
-  const onLoad = blockedStore().lastError;
+  const onLoad = blockedStore().blockedReason;
 
   const store = blockedStore();
   store.update((s) => ({ ...s, listOrder: ['forced'] }));
@@ -94,6 +94,6 @@ test('the refusal to start fresh may repeat itself, because it is redirecting', 
 // The standing copy cannot know why the load failed, and the reader needs it: a schema from a
 // newer build and a corrupted file are the same banner with different answers to "now what".
 test('the store error keeps the reason, which the standing copy cannot know', () => {
-  assert.match(blockedStore().lastError, /Unsupported schema version 99/);
+  assert.match(blockedStore().blockedReason, /Unsupported schema version 99/);
   assert.doesNotMatch(bannerProse(), /schema/i);
 });
