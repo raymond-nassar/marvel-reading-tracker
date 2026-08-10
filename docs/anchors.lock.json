@@ -259,8 +259,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4749|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4749",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4814|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4814",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -799,8 +799,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:742-745|0": {
-    "anchor": "CHANGELOG.md:742-745",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:752-755|0": {
+    "anchor": "CHANGELOG.md:752-755",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -839,18 +839,18 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4723-4725|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4723-4725",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4788-4790|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4788-4790",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4889-4890|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4889-4890",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4954-4955|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4954-4955",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4910-4912|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4910-4912",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4975-4977|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4975-4977",
     "fp": "70f2b470e750ff0d",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
@@ -1009,15 +1009,20 @@
     "fp": "4f9ce96ed4803f69",
     "head": "const counts = new Map();"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:324-356|0": {
-    "anchor": "scripts/check-counts.mjs:324-356",
-    "fp": "2fe3ce75d00f3ad3",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:324-354|0": {
+    "anchor": "scripts/check-counts.mjs:324-354",
+    "fp": "d7beb53265223213",
     "head": "export function checkRepeats(text) {"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:340-346|0": {
     "anchor": "scripts/check-counts.mjs:340-346",
     "fp": "94d23f13cd148b10",
     "head": "for (let i = 0; i + 2 * n <= lines.length; i++) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:381-419|0": {
+    "anchor": "scripts/check-counts.mjs:381-419",
+    "fp": "f9f93904c5f4d86d",
+    "head": "const MIN_DISTANT = 3;"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:151-174|0": {
     "anchor": "scripts/check-palette.mjs:151-174",
@@ -2334,9 +2339,9 @@
     "fp": "8523742f20d6685b",
     "head": "const noEmDashInShippedCopy = {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-062|scripts/check-counts.mjs:324-356|0": {
-    "anchor": "scripts/check-counts.mjs:324-356",
-    "fp": "2fe3ce75d00f3ad3",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-062|scripts/check-counts.mjs:324-354|0": {
+    "anchor": "scripts/check-counts.mjs:324-354",
+    "fp": "d7beb53265223213",
     "head": "export function checkRepeats(text) {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-063|test/shipped-copy.test.js:47-63|0": {
@@ -2419,10 +2424,10 @@
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-081|scripts/check-counts.mjs:340-346|0": {
-    "anchor": "scripts/check-counts.mjs:340-346",
-    "fp": "94d23f13cd148b10",
-    "head": "for (let i = 0; i + 2 * n <= lines.length; i++) {"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-081|scripts/check-counts.mjs:381-419|0": {
+    "anchor": "scripts/check-counts.mjs:381-419",
+    "fp": "f9f93904c5f4d86d",
+    "head": "const MIN_DISTANT = 3;"
   },
   "scripts/check-anchors.mjs|preamble|scripts/check-contract.mjs:1|0": {
     "anchor": "scripts/check-contract.mjs:1",

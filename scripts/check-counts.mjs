@@ -325,7 +325,7 @@ export function checkRepeats(text) {
   const lines = text.split(/\r?\n/);
   // The ceiling is derived rather than picked. A repeat cannot span a blank line, by the
   // guard below, so both copies must fit inside one blank-free run, which bounds a block
-  // at half the longest such run. Today that is 20 lines against a longest run of 41, so
+  // at half the longest such run. Today that is 29 lines against a longest run of 59, so
   // a fixed 8 would have missed a duplicated paragraph merely for being long, which is
   // the exact defect this exists to catch. Deriving it cannot.
   let run = 0;
@@ -352,6 +352,72 @@ export function checkRepeats(text) {
       });
     }
   }
+
+  // Then the same question asked of the whole document, because the walk above only ever
+  // compares a block against the block touching it. The copy that prompted this sat 45
+  // lines below its original in the draft of BL-075, which put pre-implementation framing
+  // after the verification numbers that closed the block, and the gate said nothing was
+  // said twice. Measured against that draft the walk above reports 0 and this pass
+  // reports the one duplication, at four window sizes: 4 repeats at three lines, 3 at
+  // four, 2 at five, 1 at six and 0 at seven, which is the overlap signature of a single
+  // six-line block rather than five separate faults. That draft survives only in a local
+  // checkpoint ref on one machine and is on no branch, so the test for this cites no
+  // commit and rebuilds the shape instead, from a real paragraph of the real document
+  // pasted at the same distance.
+  //
+  // The floor of three is measured, not guessed, and it is the whole of the second task
+  // this item was filed with: once the copies can be anywhere, adjacency is no longer
+  // doing the work of deciding what a legitimate repeat is. Counting every repeated
+  // blank-free window across the six tracked prose documents gives 124 at one line, 4 at
+  // two and 0 at three and at every size above it. Every one of the 128 is meant: the
+  // constraint gate line stands 25 times in this document and accounts for 24 of its 26
+  // one-line repeats, and the four at two
+  // lines are a table header, a fenced `npm start`, a WCAG criterion line and a bare
+  // ```mermaid fence. So three is the smallest size at which a repeat is not already
+  // ordinary practice here, and a floor set any lower would report 128 things that are
+  // correct. It is a reading of this corpus rather than a rule about prose, and if a
+  // legitimate three-line repeat is ever written the honest response is to raise it and
+  // record why, not to add an exception.
+  const MIN_DISTANT = 3;
+  for (let n = longest; n >= MIN_DISTANT; n -= 1) {
+    const firstSeen = new Map();
+    for (let i = 0; i + n <= lines.length; i += 1) {
+      const window = lines.slice(i, i + n);
+      if (window.some((l) => l.trim() === '')) continue;
+      const key = window.join('\n');
+      if (!firstSeen.has(key)) {
+        firstSeen.set(key, i);
+        continue;
+      }
+      const origin = firstSeen.get(key);
+      // Both copies are claimed, not just the second. With two copies it makes no
+      // difference, because the overlap test below inspects the origin as well as the
+      // duplicate, so a claimed duplicate already suppresses every smaller window. It is
+      // the third copy that needs it: leaving the origin unclaimed lets it pair again with
+      // the next copy along, and the same paragraph is reported twice carrying the same
+      // origin line number, which reads as two faults where there is one. Measured on a
+      // six-line block written three times: 1 finding as here, 2 with this claim removed.
+      //
+      // A hit from the adjacency walk above can hide a paste from this pass, because the
+      // lines it claimed split the pasted block into runs shorter than the floor. A
+      // paragraph containing one internally doubled line, pasted 40 lines away, is
+      // reported only as the two one-line adjacency hits. That is an under-report rather
+      // than a silent pass, since the gate still fails on those hits, which is why it is
+      // recorded here rather than fixed by re-anchoring around claimed lines.
+      let overlaps = false;
+      for (let k = origin; k < origin + n; k += 1) if (claimed.has(k)) overlaps = true;
+      for (let k = i; k < i + n; k += 1) if (claimed.has(k)) overlaps = true;
+      if (overlaps) continue;
+      for (let k = origin; k < origin + n; k += 1) claimed.add(k);
+      for (let k = i; k < i + n; k += 1) claimed.add(k);
+      found.push({
+        line: i + 1,
+        claim: window[0].trim().slice(0, 60),
+        message: `repeats the ${n} lines at line ${origin + 1} word for word`,
+      });
+    }
+  }
+
   return found;
 }
 

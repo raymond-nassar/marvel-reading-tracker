@@ -9,12 +9,12 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Fifty-four items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Fifty-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
-BL-075, BL-077, BL-078, BL-079 and BL-080.
+BL-075, BL-077, BL-078, BL-079, BL-080 and BL-081.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Seven remain
@@ -214,7 +214,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
-| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
+| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-354 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2892-2926 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:494 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:933 |
@@ -226,7 +226,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:934 |
 | BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:271 |
 | BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1035 |
-| BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | scripts/check-counts.mjs:340-346 |
+| BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:381-419 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:232 |
@@ -2953,7 +2953,9 @@ The second task was the substance. A scan of every tracked Markdown file, at eve
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
 permanent check worth building rather than a one-off answer worth writing down. The scan needed no
 minimum length and no exception list to stay quiet, so `scripts/check-counts.mjs` now carries it, at
-`scripts/check-counts.mjs:324-356`, and `npm run counts` fails on a repeat.
+`scripts/check-counts.mjs:324-354`, and `npm run counts` fails on a repeat. That remains true of this
+scan, which is why the citation names it rather than the whole function: the whole-document pass
+BL-081 added later does need a floor, and the reason is recorded there.
 
 Putting it in that script rather than in a new one follows what was already there. The counts gate
 already refuses a detail block that appears twice, at `scripts/check-counts.mjs:293-303`, which is
@@ -3733,9 +3735,9 @@ to drift alone, three do.
 
 **BL-081: Let the repetition check see a copy that is not next to its original**
 
-- [ ] Compare each blank-free window against the whole document, not only the block after it
-- [ ] Decide what a legitimate repeat is, since some lines are meant to appear more than once
-- [ ] Prove it against the copy that got past the gate, which this repository's history still holds
+- [x] Compare each blank-free window against the whole document, not only the block after it
+- [x] Decide what a legitimate repeat is, since some lines are meant to appear more than once
+- [x] Prove it against the copy that got past the gate, which this repository's history still holds
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -3758,6 +3760,69 @@ the real work and not a formality. Adjacency made the question of a legitimate r
 identical paragraphs touching are almost never intended, and a whole-document comparison has to
 answer it: the ceiling derivation above the loop already records that a repeat cannot span a blank
 line, and that guard is doing more work than it looks like once the two copies can be anywhere.
+
+**Shipped.** The adjacency walk is untouched and a second pass runs after it, at
+`scripts/check-counts.mjs:381-419`, descending from the longest possible repeat down to a floor and
+comparing every blank-free window against every earlier one. Both passes share the one `claimed`
+set, so a block the adjacency walk has already reported is not reported again by the second.
+
+That sharing has a cost worth stating rather than discovering later. A hit from the adjacency walk
+splits a pasted block into runs shorter than the floor, so a paragraph containing one internally
+doubled line, pasted 40 lines away, is reported only as the two one-line adjacency hits and never
+named as a paste. It is an under-report and not a silent pass, since the gate still fails on those
+hits, which is why it is recorded beside the code rather than fixed by re-anchoring around claimed
+lines.
+
+While in the function, the ceiling comment's two figures were re-derived and were both stale: the
+longest blank-free run in this document is 59 and not 41, so the derived ceiling is 29 and not 20.
+That is a pre-existing figure rather than one this change introduced, corrected because the new
+pass reads the same `longest` value and would otherwise inherit a comment that disagrees with it.
+
+**The second task was the work, and the answer is three lines, measured.** The item guessed at four
+by measuring the one draft it was filed from. Counting every repeated blank-free window across the
+six tracked prose documents instead gives 124 at one line, 4 at two, and 0 at three and at every
+size above it. All 128 are meant: the constraint gate line stands 25 times in this document and
+accounts for 24 of its 26 one-line repeats, and the four two-line repeats are a table header, a
+fenced `npm start`, a WCAG criterion line and a bare mermaid fence. Three is therefore the smallest
+size at which a repeat is not already ordinary practice here, and it is a reading of this corpus
+rather than a rule about prose.
+
+That floor is falsifiable rather than asserted, which is the part worth keeping. Lowering it to two
+and running the suite fails 8 tests, and the failures include the check that the document as
+committed contains no repeat, so the four legitimate two-line repeats are not a prediction about
+what a lower floor would report but a measurement of it. Removing the blank-line guard from the new
+pass fails 10, sharing 7 of those 8. So both decisions are held up by the real document rather than
+by a fixture, and the two sets are named here rather than being called the same set, which they are
+not.
+
+**Claiming both copies rather than only the later one needs a third copy to show at all.** The
+overlap test inspects the origin as well as the duplicate, so with two copies a claimed duplicate
+already suppresses every smaller window and claiming the origin changes nothing. It is the third
+copy that needs it: an unclaimed origin pairs again with the next copy along, and the same paragraph
+is reported twice carrying the same origin line number, which reads as two faults where there is
+one. Measured on a six-line block written three times: 1 finding as shipped, 2 with the origin claim
+removed. This paragraph replaces one claiming a duplication would report five times, which review
+showed was false, and the test that was said to hold the decision passed with the decision reversed.
+A sixth test on a triplicate now holds it, and it is the only test the origin claim can fail.
+
+**The third task was completed by refusing the method it named.** The draft that got past the gate
+does still exist, and running the new pass against it reports the duplication where the shipped
+walk reports nothing. But it exists only in a local checkpoint ref on one machine, on no branch and
+on no remote, so a test that read it would have passed here and failed in CI and in every other
+clone, which is the class of fault the line-ending note at the top of the counts test was written
+about. The test rebuilds the shape instead: it locates a real blank-free six-line paragraph in the
+real document, pastes a copy 45 lines further down, and asserts one finding of six lines. It
+asserts the paragraph was located, so a document that changed shape under it fails rather than
+quietly checking nothing.
+
+Six tests were added and each was proven able to fail, which took four mutations rather than one:
+deleting the pass fails 4, lowering the floor fails 8, dropping the blank-line guard fails 10, and
+leaving the origin unclaimed fails 1. A refusal cannot be proven by deleting the pass, because a
+pass that does not exist refuses everything, so each refusal was failed separately by the wrong
+version of the decision it holds. Review found one that could not fail at all: its fixture's longest
+blank-free run was two, below the floor, so the loop it was named for never started and the guard it
+tested was never reached. It now carries an unrelated run of three for that reason, and fails when
+the guard is dropped.
 
 **BL-072: Give the recovery banner's two actions different weights**
 
@@ -4222,7 +4287,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4889-4890` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4954-4955` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4232,11 +4297,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:161-163`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4910-4912`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4975-4977`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4723-4725` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4788-4790` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4444,7 +4509,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:742-745` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:752-755` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:154-156` and
 `PRODUCT_BACKLOG.md:161-163` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.

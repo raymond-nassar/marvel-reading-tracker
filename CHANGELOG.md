@@ -16,6 +16,16 @@ quote in a bug report.
 
 ### Added
 
+- **The check that catches a paragraph written twice now looks at the whole document, not just the
+  next few lines.** Nothing about the app changes and nothing you have saved is affected. Until now
+  the check only noticed a repeated block when the copy sat immediately after the original, so a
+  paragraph pasted further down went unreported. That happened in a real draft, where a copy sitting
+  45 lines below its original put stale framing after the numbers that closed a section, and the
+  check said nothing was repeated. It now compares every block against every earlier one in the same
+  document. The smallest repeat it reports is three lines, which was measured rather than picked:
+  across the project's six written documents there are 128 shorter repeats and every one of them is
+  deliberate, while there are none at three lines or longer.
+
 - **The check that keeps the project's written claims honest can now tell a renamed claim from a lost
   one.** Nothing about the app changes and nothing you have saved is affected. Every claim in the
   project's documents is recorded against the exact wording of the lines it points at, and also
