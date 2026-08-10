@@ -90,7 +90,7 @@ retrieved. That is the same discipline the anchors gate enforces on the product 
 why the gate feels natural once you are working this way.
 
 One caveat specific to this repository, and the reason is the opposite of the obvious one. The
-anchors gate scans **every tracked Markdown file**, `.copilot-tracking/` included, so a backticked
+anchors gate scans **every tracked file**, `.copilot-tracking/` included, so a backticked
 `path:line` written into a dated artifact becomes a live claim that CI will chase. Those artifacts
 are a historical record and must not be re-aimed to satisfy a gate. Navigate them by stable ids,
 markers and headings, and keep citations in the product documents, where re-aiming is the correct
@@ -130,11 +130,11 @@ release.
 
 ## The evidence anchors gate, and how to not corrupt it
 
-Every `path:line` citation in every tracked Markdown file, this one included, is fingerprinted by
+Every `path:line` citation in every tracked file, this one included, is fingerprinted by
 the **content** of the lines it names, not by the numbers. Editing code moves lines and breaks
 fingerprints. That is the gate working.
 
-Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:114-117` explains why in the
+Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:121-124` explains why in the
 script itself: an enumeration is a list someone has to keep complete, and every anchor defect the
 gate exists to catch was caused by exactly that.
 
@@ -163,9 +163,14 @@ forever.
 
 Two traps in the gate itself, both hit while writing this file:
 
-- **The gate only sees tracked files.** It enumerates with `git ls-files` and keeps everything
-  ending in `.md`, so a new document you have not yet `git add`ed is invisible to it and will pass
-  locally while failing in CI. Run `git add` first, then `npm run anchors`.
+- **The gate only sees tracked files.** It enumerates with `git ls-files`, so a new file you have
+  not yet `git add`ed is invisible to it and will pass locally while failing in CI. Run `git add`
+  first, then `npm run anchors`.
+- **Outside Markdown, only a backticked citation is collected.** In a document both forms are, but
+  in code a bare `path:line` inside a string literal is a value the program computes with rather
+  than a claim, and the gate's own test fixtures are exactly that. So a citation you write in a
+  code comment is live and gated; one you write as test data must be left bare, and assembled
+  rather than typed if the fixture itself needs the backticks.
 - **Any `path:line` you write in backticks is a live claim**, including one you are quoting as an
   example of a mistake. Writing the wrong citation inside backticks, even to say it was wrong,
   creates that citation and the gate will chase it. Describe a wrong line in plain prose, as "line
