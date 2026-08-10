@@ -13,7 +13,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { citations, claimBefore, collisions, pairingLines, pairings, relativeCitations } from '../scripts/check-anchors.mjs';
+import { citations, claimBefore, collisions, pairingLines, pairings, relativeCitations, relativeVerdict } from '../scripts/check-anchors.mjs';
 
 // The two citations as the lock actually held them, ordinals and all. `fp` matches on
 // both because they cite the same line, which is the whole difficulty.
@@ -317,4 +317,20 @@ test('each hit reports the line it sits on', () => {
   const text = ['first', 'second', `third, at ${rel(99)}`].join('\n');
 
   assert.deepEqual(relativeCitations(text).map((r) => r.line), [3]);
+});
+
+// The rule is about what may be written, so it binds the tree being written and not one that
+// already shipped. Refusing under --ref would make every revision holding the form unqueryable
+// for drift, which is the single thing --ref is for.
+test('the form is refused against the working tree', () => {
+  assert.equal(relativeVerdict(2, null), 'fatal');
+});
+
+test('the same form is only named against a revision, which cannot be edited to satisfy it', () => {
+  assert.equal(relativeVerdict(2, 'origin/main'), 'notice');
+});
+
+test('a tree with no hits says nothing either way', () => {
+  assert.equal(relativeVerdict(0, null), 'none');
+  assert.equal(relativeVerdict(0, 'origin/main'), 'none');
 });

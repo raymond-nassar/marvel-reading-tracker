@@ -41,6 +41,16 @@ quote in a bug report.
   person to read is now on the project's list of planned improvements rather than done here, so that
   this change stays about the one thing it set out to fix.
 
+  A review of the change then found that refusing the shorthand had broken a second, quieter use of
+  the check. As well as checking the project as it stands, it can be pointed at an older version to
+  ask whether it would have caught a problem at the time. Because older versions contain the very
+  shorthand now banned, the check refused to run against any of them, which took away the only thing
+  that mode is for. A version that has already been published cannot be rewritten to satisfy a rule
+  invented afterwards, so the shorthand is now refused only in the version being written, and merely
+  pointed out in an older one. A third weakness the review found, that the check only recognises
+  comments written the way JavaScript writes them and so overlooks several other kinds of file it
+  already reads, is filed as a separate planned improvement rather than fixed here.
+
 - **The project now has diagrams of how the app fits together, which it never had before.** Nothing
   about the app changes and nothing you have saved is affected. The repository explains itself at
   length in words, but until now there was no picture anywhere in it, so anyone wanting to describe

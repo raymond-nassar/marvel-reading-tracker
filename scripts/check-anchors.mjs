@@ -225,6 +225,18 @@ export function relativeCitations(text, prose = true) {
   return out;
 }
 
+// What to do about a hit, which depends entirely on whether the text can still be edited.
+// Against the working tree the form is refused, because that is a tree someone is writing and
+// the rule is about what may be written. Under --ref the content already shipped and cannot be
+// rewritten to satisfy a rule adopted after it, so refusing would make every revision holding
+// the form unqueryable for drift, which is the one use --ref exists for. History is reported,
+// not policed. Named and exported rather than left inline so the distinction can be pinned by
+// a test without spawning a process against a real revision.
+export function relativeVerdict(count, ref = null) {
+  if (count === 0) return 'none';
+  return ref === null ? 'fatal' : 'notice';
+}
+
 // Both citation forms in prose, deduplicated by position. A backticked anchor can also
 // satisfy the bare pattern's neighbours, and counting one citation twice would put the
 // coverage assertion permanently out of balance.
@@ -595,6 +607,9 @@ function main() {
   // Before anything else, and before the bless path in particular. A relative citation is a
   // claim the gate cannot check, so blessing a tree that holds one records a lock that looks
   // complete and is not. Refusing here means the two paths cannot disagree about it.
+  //
+  // Whether a hit is refused or merely named is `relativeVerdict`'s decision, and the reason
+  // it is not refused under --ref is given there.
   const relative = [];
   for (const doc of docs()) {
     const text = read(doc);
@@ -603,15 +618,25 @@ function main() {
       relative.push(`  ${doc}:${r.line}  \`${r.ref}\`\n      ${r.text.slice(0, 110)}`);
     }
   }
-  if (relative.length) {
+  const verdict = relativeVerdict(relative.length, ref);
+  if (verdict === 'notice') {
+    const each = relative.length === 1 ? 'citation' : 'citations';
+    console.error(`NOTICE: ${ref} contains ${relative.length} ${each} naming a line with no path in front of it:`);
+    for (const r of relative) console.error(r);
+    console.error('');
+    console.error('The gate never collected that form, so no drift is reported for these and none');
+    console.error('ever was. They are named rather than refused, because a revision cannot be');
+    console.error('rewritten to satisfy a rule adopted after it.');
+    console.error('');
+  } else if (verdict === 'fatal') {
     const each = relative.length === 1 ? 'citation names a line' : 'citations name lines';
     console.error(`FATAL: ${relative.length} ${each} with no path in front of it:`);
     for (const r of relative) console.error(r);
     console.error('');
-    console.error('This gate begins matching at a filename, so it never saw these claims and');
-    console.error('reported no drift while one of them was thirteen lines wrong. Write the path');
-    console.error('in full. To describe a wrong line rather than cite one, say so in prose:');
-    console.error('"line 12 of the workflow file", never in the citation form.');
+    console.error('This gate begins matching at a filename, so it never sees this form and reports');
+    console.error('no drift however stale it gets. One written here went thirteen lines stale that');
+    console.error('way. Write the path in full. To describe a wrong line rather than cite one, say');
+    console.error('so in prose: "line 12 of the workflow file", never in the citation form.');
     process.exit(2);
   }
 
