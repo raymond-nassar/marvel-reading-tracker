@@ -243,7 +243,10 @@ test('a claim is read forward when the citation opens the comment', () => {
 });
 
 // Walking back over wrapped comment lines is what makes a claim readable at all, but a comment
-// sitting directly on top of code must not absorb the line above it into the sentence.
+// sitting directly on top of code must not absorb the line above it into the sentence. The
+// assertion is an equality rather than a substring: the old walk did absorb the line, and the
+// 90-character window then clipped the first two characters off `fileURLToPath`, so a check for
+// its absence passed on the broken code by an accident of where the truncation fell.
 test('the walk back over a comment stops at the first line that is not one', () => {
   const lines = [
     "const ROOT = resolve(fileURLToPath(new URL('./src', import.meta.url)));",
@@ -251,8 +254,17 @@ test('the walk back over a comment stops at the first line that is not one', () 
     `// ${cite('src/js/main.js:434-435')}, so only lightness is the theme's`,
   ];
   const at = lines[2].indexOf('src/js/main.js:434-435');
-  const claim = claimBefore(lines, 2, at, false);
 
-  assert.match(claim, /the hue comes from the series name at/);
-  assert.ok(!claim.includes('fileURLToPath'));
+  assert.equal(claimBefore(lines, 2, at, false), 'the hue comes from the series name at');
+});
+
+// The forward read is the one part of the claim walk that is not conditioned on prose, so a
+// Markdown table row is the case where forwards and backwards have to agree. Backwards a row is
+// refused outright, and a forward read that ran past the cell boundary would attribute the next
+// two columns to this one.
+test('a forward read in a table row stops at the cell boundary', () => {
+  const lines = [`| ${cite('src/js/main.js:12')} | second cell | third cell |`];
+  const at = lines[0].indexOf('src/js/main.js:12');
+
+  assert.ok(!claimBefore(lines, 0, at, true).includes('second cell'));
 });

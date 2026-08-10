@@ -343,10 +343,10 @@ export function checkAll(css) {
 // saved lists.
 //
 // Those two citations, and the two in the fifth entry below, were all four lines out of date when
-// BL-069 checked them. Nothing gates a `path:line` written in a code comment: the anchors gate
-// reads tracked Markdown only, so a citation here drifts silently every time the file it names
-// changes. They are corrected rather than removed, and the general problem is filed rather than
-// solved here.
+// BL-069 checked them, because nothing then gated a `path:line` written in a code comment: the
+// anchors gate read tracked Markdown only, so a citation here drifted silently every time the file
+// it named changed. BL-071 has since widened it to every tracked file, and the twelve citations in
+// this one are now fingerprinted like any other. One of them was still wrong when they enrolled.
 //
 // They are recorded rather than waived because a gate that quietly tolerates its own findings is not
 // a gate. The baseline is exact in both directions. A new pair below the floor fails, which is the

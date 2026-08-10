@@ -126,9 +126,11 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g
 // The one exclusion is this gate's own lock, and it is structural rather than named.
 // LOCK is the path this script writes, so the rule is that the gate does not read its
 // own output, and the constant that states where the output goes is the same one that
-// keeps it out. Nothing has to stay in step with anything. Reading it would enroll
-// every citation a second time, because a blessed head or tail is a copy of a cited
-// line, and each copy would then need re-aiming every time the lock was rewritten.
+// keeps it out. Nothing has to stay in step with anything. The lock quotes a head line
+// for every anchor, so reading it would turn this gate's record of a claim into a second
+// claim about the same line, and rewriting the lock would become a reason to rewrite it
+// again. Those quotes happen to carry no backticks, so the rule below would drop them
+// anyway, but that is a property of today's data rather than a guarantee.
 //
 // Binary files are dropped by `read` rather than by extension, for the same reason.
 function docs() {
@@ -269,8 +271,21 @@ export function claimBefore(lines, i, at, prose = true) {
   // claim of "//" and nothing else. Where almost nothing precedes a citation, what
   // follows it is the claim, taken from the citation outwards for the same reason the
   // other branch is taken backwards from it.
-  let after = bare(lines[i].slice(at));
-  for (let j = i + 1; j < lines.length && flatten(after).length < 90; j += 1) {
+  //
+  // This one is not conditioned on prose, unlike the two above, and deliberately so: a
+  // Markdown citation that opens its line has the same empty claim for the same reason,
+  // and six did, three of them printing "Evidence:" and one printing nothing at all. The
+  // anchor itself is skipped, because a claim that only repeats the citation printed on
+  // the line above it says nothing. A table row is the one place the two directions
+  // differ. Backwards a row is refused outright; forwards a cell boundary ends the
+  // sentence exactly as a row boundary does, so the read stops at the next pipe and
+  // never leaves the row.
+  const row = lines[i].startsWith('|');
+  const rest = lines[i].slice(at);
+  const self = rest.match(/^`?[A-Za-z0-9_./-]+\.[A-Za-z][A-Za-z0-9]*:\d+(?:-\d+)?`?/);
+  let after = bare(self ? rest.slice(self[0].length) : rest);
+  if (row) [after] = after.split('|');
+  for (let j = i + 1; !row && j < lines.length && flatten(after).length < 90; j += 1) {
     if (ends(lines[j])) break;
     after = `${after} ${bare(lines[j])}`;
   }
@@ -487,6 +502,23 @@ function reportNearMisses(exempted) {
       for (const hit of text.match(re) ?? []) {
         if (covered.has(hit)) continue;
         suspicious.push(`  ${doc}  ${hit}  (${why})`);
+      }
+    }
+
+    // Widening the population past Markdown created a third near miss, and leaving it
+    // unreported would have reproduced the silence that widening was meant to end. Only
+    // the backticked form counts outside prose, because a bare citation there is usually
+    // a string literal the program computes with. A comment is the exception: the
+    // sentence around it is addressed to a reader, so a bare citation in one is a claim
+    // and is now ungated with nothing said about it. Being in a comment is the only
+    // signal the text carries, so it is the one this draws on.
+    if (!doc.endsWith('.md')) {
+      const lines = text.split('\n');
+      for (let i = 0; i < lines.length; i += 1) {
+        if (!/^\s*(?:\/\/|\/\*|\*)/.test(lines[i])) continue;
+        for (const hit of lines[i].match(BARE) ?? []) {
+          suspicious.push(`  ${doc}:${i + 1}  ${hit}  (bare citation in a comment)`);
+        }
       }
     }
   }

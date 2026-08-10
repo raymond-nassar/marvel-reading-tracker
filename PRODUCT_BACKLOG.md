@@ -220,10 +220,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2860-2894 |
-| BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:344 |
+| BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:359 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:933 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Ready | src/index.html:147-148 |
-| BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:145 |
+| BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:147 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Ready | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:208 |
@@ -3149,11 +3149,11 @@ argues in `src/js/lib/model.js` and in BL-068's own scan test that a discipline 
 remember at every site is the defect rather than the fix.
 
 The structural version is close to free, which is why this is Debt rather than a Proposed idea.
-`scripts/check-anchors.mjs:344` already slices the prose immediately preceding each citation into a
-`claim` field, and the bless path at `scripts/check-anchors.mjs:568` then writes only the anchor,
+`scripts/check-anchors.mjs:359` already slices the prose immediately preceding each citation into a
+`claim` field, and the bless path at `scripts/check-anchors.mjs:600` then writes only the anchor,
 fingerprint and head, discarding it. So the script already holds both halves of the pairing that step
 3 asks a person to make by hand, and printing them together on the run that re-aims them is the whole
-change. `reportNearMisses` at `scripts/check-anchors.mjs:480` is the precedent for the script
+change. `reportNearMisses` at `scripts/check-anchors.mjs:495` is the precedent for the script
 printing a notice of this kind.
 
 Shipped as written. `--bless` now prints one record per citation whose blessed line is changing,
@@ -3232,7 +3232,7 @@ gate's own test, one of them naming a line past the end of its file on purpose s
 path has something to resolve to nothing. Gating that one would require the fixture to resolve,
 which is the single thing it exists not to do.
 
-So outside Markdown only the backticked form is collected, at `scripts/check-anchors.mjs:187-198`.
+So outside Markdown only the backticked form is collected, at `scripts/check-anchors.mjs:189-201`.
 That is the opposite call from the one Markdown makes, and it is made for the same reason rather
 than in spite of it: collect the form that asserts something. In Markdown both forms do, because the
 backlog's Evidence column is written bare. In code the two separate by role, and measured across the
@@ -3243,7 +3243,7 @@ backticked to say what they had always meant. Fourteen citations enrolled: twelv
 The objection this item was filed against is the lock excluding itself by name, since the script
 argues in its own comment at `scripts/check-anchors.mjs:121-124` that an enumeration is exactly the
 defect it exists to catch, and "skip the lock file" is an enumeration of one. It is excluded
-structurally at `scripts/check-anchors.mjs:145`, by the same `LOCK` constant that says where the
+structurally at `scripts/check-anchors.mjs:147`, by the same `LOCK` constant that says where the
 output is written, so the rule is that the gate does not read its own output and nothing has to be
 kept in step. Binary files are dropped the same way, by a NUL byte at `scripts/check-anchors.mjs:68`
 rather than by an extension list, which matters more than it sounds: 43 tracked PNGs would otherwise
@@ -3251,7 +3251,7 @@ have had to be named.
 
 Widening found two wrong citations immediately, which is a rate of two in fourteen on first contact
 and the argument for the item in one line. The palette checker claimed the start-fresh button's
-border was set at a line that is prose inside a comment, twelve lines above the rule that sets it.
+border was set at a line that is prose inside a comment, eight lines above the rule that sets it.
 The stylesheet claimed the cover placeholder's hue came from the series id at a line that is also a
 comment, when it comes from the series name at `src/js/main.js:434-435`. Both are re-aimed, and the
 second's prose corrected with it.
@@ -3264,10 +3264,31 @@ repository already has that rule for a wrong line described in prose, and it app
 One thing had to be repaired rather than merely widened. The claim printed beside each line at bless
 time, which is all BL-070 shipped, degrades badly in code: comment markers splice `//` into the
 middle of a sentence, and a citation that opens a comment printed a claim of `//` and nothing else.
-`claimBefore` at `scripts/check-anchors.mjs:230-249` now strips the marker outside prose, stops at
+`claimBefore` at `scripts/check-anchors.mjs:232-251` now strips the marker outside prose, stops at
 the first line that is not a comment so a comment cannot absorb the code above it, and reads forward
-from the citation when almost nothing precedes it. Prose behaviour is unchanged by construction,
-since every one of those is conditioned on the same flag.
+from the citation when almost nothing precedes it.
+
+The first two of those are conditioned on the prose flag, so Markdown is untouched by them. The
+third is not, and that is the deliberate half: a Markdown citation that opens its line has the same
+empty claim for the same reason, and six did, three printing `Evidence:` and one printing nothing at
+all. So the forward read applies everywhere, it skips the anchor itself rather than repeating the
+citation printed directly above it, and it stops at a cell boundary inside a table row, since
+forwards a cell ends the sentence exactly as a row does backwards. Nothing here reaches the lock:
+the claim is derived at print time and only `anchor`, `fp` and `head` are written, so none of it
+can churn a fingerprint.
+
+One near miss came with the split and is reported rather than accepted. A bare citation outside
+prose is a string literal in the ordinary case and correctly ignored, but a bare citation inside a
+comment is a claim, and would have been ungated in the same silence the item exists to end. Being
+in a comment is the only signal the text carries, so that is where `reportNearMisses` draws the
+line, at `scripts/check-anchors.mjs:508-523`, and it prints a notice rather than failing, because
+prose may legitimately name a file.
+
+The sharp edge is worth stating, because the first draft of the tests hit it. A backticked citation
+inside a string literal is indistinguishable from one in a comment, and five fixtures enrolled
+themselves as live anchors that would have drifted whenever an unrelated module moved. The fixtures
+now assemble their backticks at runtime, which is the rule under test applied to the test, and the
+contributor instructions gained a bullet saying so.
 
 **BL-072: Give the recovery banner's two actions different weights**
 
@@ -3503,7 +3524,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4170-4171` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4190-4191` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3513,11 +3534,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4186-4188`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4206-4208`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4004-4006` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4024-4026` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,

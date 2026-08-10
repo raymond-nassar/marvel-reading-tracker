@@ -94,10 +94,10 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4030|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4030",
-    "fp": "feb71ffdf55c404d",
-    "head": "- Requiring accounts or cloud services for the core tracker experience."
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4050|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4050",
+    "fp": "e83952ca82c91fd5",
+    "head": "- Replacing established community sites that curate reading orders."
   },
   "docs/UX_STUDY.md|proto-persona#reading-style|src/index.html:295-330|0": {
     "anchor": "src/index.html:295-330",
@@ -674,20 +674,20 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4004-4006|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4004-4006",
-    "fp": "2622e3ad2443790b",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4024-4026|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4024-4026",
+    "fp": "0d86859d7139eeb9",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4170-4171|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4170-4171",
-    "fp": "e3df6f39cf8f0a0d",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4190-4191|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4190-4191",
+    "fp": "0523304d493783be",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4186-4188|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4186-4188",
-    "fp": "fb312375e390a000",
-    "head": "by review. Evidence: `absent: eslint|prettier config or lint script, read of package.json:8-17 and"
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4206-4208|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4206-4208",
+    "fp": "cfa09807fd560de2",
+    "head": "- Analysability gap: no linter and no formatter configuration exists, so style drift is caught only"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:295-299|0": {
     "anchor": "README.md:295-299",
@@ -734,33 +734,38 @@
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:145|0": {
-    "anchor": "scripts/check-anchors.mjs:145",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:147|0": {
+    "anchor": "scripts/check-anchors.mjs:147",
     "fp": "e6cb2cb5ab856c46",
     "head": ".filter((s) => s.length > 0 && s !== LOCK)"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:187-198|0": {
-    "anchor": "scripts/check-anchors.mjs:187-198",
-    "fp": "3c6ddf07df3a013b",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:189-201|0": {
+    "anchor": "scripts/check-anchors.mjs:189-201",
+    "fp": "867a8c3bf79a2cb4",
     "head": "// Outside prose only the backticked form is collected. That is the opposite call from"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:230-249|0": {
-    "anchor": "scripts/check-anchors.mjs:230-249",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:232-251|0": {
+    "anchor": "scripts/check-anchors.mjs:232-251",
     "fp": "e82159fcccbab775",
     "head": "// The prose immediately before a citation, which is what the reader has to weigh the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:344|0": {
-    "anchor": "scripts/check-anchors.mjs:344",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:359|0": {
+    "anchor": "scripts/check-anchors.mjs:359",
     "fp": "c02761494a9bf2f2",
     "head": "claim: claimBefore(lines, i, c.at, prose),"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:480|0": {
-    "anchor": "scripts/check-anchors.mjs:480",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:495|0": {
+    "anchor": "scripts/check-anchors.mjs:495",
     "fp": "82d76e7ed94dfdf4",
     "head": "function reportNearMisses(exempted) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:568|0": {
-    "anchor": "scripts/check-anchors.mjs:568",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:508-523|0": {
+    "anchor": "scripts/check-anchors.mjs:508-523",
+    "fp": "8eb99b68bb1f6b47",
+    "head": "// Widening the population past Markdown created a third near miss, and leaving it"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:600|0": {
+    "anchor": "scripts/check-anchors.mjs:600",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
@@ -2059,13 +2064,13 @@
     "fp": "041e549f4f8de028",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:344|0": {
-    "anchor": "scripts/check-anchors.mjs:344",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:359|0": {
+    "anchor": "scripts/check-anchors.mjs:359",
     "fp": "c02761494a9bf2f2",
     "head": "claim: claimBefore(lines, i, c.at, prose),"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:145|0": {
-    "anchor": "scripts/check-anchors.mjs:145",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:147|0": {
+    "anchor": "scripts/check-anchors.mjs:147",
     "fp": "e6cb2cb5ab856c46",
     "head": ".filter((s) => s.length > 0 && s !== LOCK)"
   },
