@@ -16,6 +16,24 @@ quote in a bug report.
 
 ### Added
 
+- **The check that keeps the project's written claims honest can now tell a renamed claim from a lost
+  one.** Nothing about the app changes and nothing you have saved is affected. Every claim in the
+  project's documents is recorded against the exact wording of the lines it points at, and also
+  against the name of the section it sits in. Renaming a section therefore made the check announce
+  that a claim had vanished and an unrelated new one had appeared, when in truth nothing had moved at
+  all. Two people worked that out by hand within an hour of each other, which is what prompted this.
+  The check now says plainly when a claim's section was merely renamed, while still stopping, so that
+  a claim which really did go missing cannot hide behind one that did not. Run over every recorded
+  version of the project's history before this change, it recognises twenty-four such renames across
+  twelve rounds of changes, which is exactly the set that prompted it.
+
+- **The contributor guide gained a caution about counting how far a line has moved.** Nothing about
+  the app changes and nothing you have saved is affected. When a change adds lines without removing
+  any, the record of that change describes where they went in a way that is easy to read as covering
+  one line more than it does. Read that way, it put a pointer nine lines past what it was meant to
+  name. The guide now says how to read it, and notes that this was caught only because the same
+  distance was worked out twice by two different methods and the two answers disagreed.
+
 - **Two things this pass learned the hard way are now written down instead of remembered.** Nothing
   about the app changes and nothing you have saved is affected. Both concern the check that keeps the
   project's written claims honest, and both cost time twice before being recorded. The first is that
