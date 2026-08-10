@@ -59,13 +59,13 @@
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:120-138|0": {
-    "anchor": "src/js/storage.js:120-138",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:155-173|0": {
+    "anchor": "src/js/storage.js:155-173",
     "fp": "d357b0022373a5de",
     "head": "update(fn) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:167-199|0": {
-    "anchor": "src/js/storage.js:167-199",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:202-234|0": {
+    "anchor": "src/js/storage.js:202-234",
     "fp": "7330b6e5bf39b463",
     "head": "restore(rawJson) {"
   },
@@ -74,8 +74,13 @@
     "fp": "1e2caa03fdc02f9b",
     "head": "load() {"
   },
-  "docs/ARCHITECTURE.md|one-thing-the-drawing-found|test/storage.test.js:139-165|0": {
-    "anchor": "test/storage.test.js:139-165",
+  "docs/ARCHITECTURE.md|one-thing-the-drawing-found|src/js/storage.js:79-83|0": {
+    "anchor": "src/js/storage.js:79-83",
+    "fp": "00b770ce88686796",
+    "head": "const held = this.existingCopyOf(raw);"
+  },
+  "docs/ARCHITECTURE.md|one-thing-the-drawing-found|test/storage.test.js:146-172|0": {
+    "anchor": "test/storage.test.js:146-172",
     "fp": "220bf1eb3736428e",
     "head": "test('a second, unrelated incident is salvaged and offered accurately', () => {"
   },
@@ -129,23 +134,23 @@
     "fp": "77ea0da3e49aa7ca",
     "head": "localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, theme: setting"
   },
-  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-prerestore|src/js/storage.js:201-205|0": {
-    "anchor": "src/js/storage.js:201-205",
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-prerestore|src/js/storage.js:236-240|0": {
+    "anchor": "src/js/storage.js:236-240",
     "fp": "db3282016d907f31",
     "head": "undoRestore() {"
   },
-  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-restore-tmp|src/js/storage.js:180-183|0": {
-    "anchor": "src/js/storage.js:180-183",
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-restore-tmp|src/js/storage.js:215-218|0": {
+    "anchor": "src/js/storage.js:215-218",
     "fp": "a7fc6602008b0dc5",
     "head": "this.storage?.setItem(TEMP_KEY, serialized);"
   },
-  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-salvage-timestamp|src/js/storage.js:70|0": {
-    "anchor": "src/js/storage.js:70",
-    "fp": "8d381b958fbec113",
-    "head": "const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;"
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-salvage-timestamp|src/js/storage.js:84|0": {
+    "anchor": "src/js/storage.js:84",
+    "fp": "5b0a5f399663e48e",
+    "head": "const key = this.storage.getItem(SALVAGE_KEY) ? `${SALVAGE_KEY}.${Date.now()}` : SALVAGE_KEY;"
   },
-  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-v2|src/js/storage.js:155|0": {
-    "anchor": "src/js/storage.js:155",
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-v2|src/js/storage.js:190|0": {
+    "anchor": "src/js/storage.js:190",
     "fp": "fedfbf25d012845e",
     "head": "this.storage.setItem(KEY, JSON.stringify(exportBackup(state)));"
   },
@@ -254,13 +259,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:259-260|0": {
-    "anchor": "PRODUCT_BACKLOG.md:259-260",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:261-262|0": {
+    "anchor": "PRODUCT_BACKLOG.md:261-262",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4293|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4293",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4365|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4365",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -779,12 +784,12 @@
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-sev|src/js/main.js:2617|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-eig|src/js/main.js:2617|0": {
     "anchor": "src/js/main.js:2617",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-sev|src/js/main.js:2651-2656|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-eig|src/js/main.js:2651-2656|0": {
     "anchor": "src/js/main.js:2651-2656",
     "fp": "e53c56c7408f1625",
     "head": "depth"
@@ -799,8 +804,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:607-610|0": {
-    "anchor": "CHANGELOG.md:607-610",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:635-638|0": {
+    "anchor": "CHANGELOG.md:635-638",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -819,38 +824,38 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:153-155|0": {
-    "anchor": "PRODUCT_BACKLOG.md:153-155",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:154-156|0": {
+    "anchor": "PRODUCT_BACKLOG.md:154-156",
     "fp": "68a9242a03c5218c",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|0": {
-    "anchor": "PRODUCT_BACKLOG.md:160-162",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:161-163|0": {
+    "anchor": "PRODUCT_BACKLOG.md:161-163",
     "fp": "6469f5690f9c1d55",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|1": {
-    "anchor": "PRODUCT_BACKLOG.md:160-162",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:161-163|1": {
+    "anchor": "PRODUCT_BACKLOG.md:161-163",
     "fp": "6469f5690f9c1d55",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2645-2648|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2645-2648",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2647-2650|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2647-2650",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4267-4269|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4267-4269",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4339-4341|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4339-4341",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4433-4434|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4433-4434",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4505-4506|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4505-4506",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4454-4456|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4454-4456",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4526-4528|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4526-4528",
     "fp": "70f2b470e750ff0d",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
@@ -1614,10 +1619,10 @@
     "fp": "5c5b72f805fd282e",
     "head": "this.state = raw ? migrate(JSON.parse(raw)) : createEmptyState();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:70|0": {
-    "anchor": "src/js/storage.js:70",
-    "fp": "8d381b958fbec113",
-    "head": "const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;"
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:79-83|0": {
+    "anchor": "src/js/storage.js:79-83",
+    "fp": "00b770ce88686796",
+    "head": "const held = this.existingCopyOf(raw);"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:9-12|0": {
     "anchor": "src/js/storage.js:9-12",
@@ -1764,8 +1769,8 @@
     "fp": "39a38dfa1bd1a54f",
     "head": "test('no en or em dash reaches the screen through markup or styling', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|test/storage.test.js:139-165|0": {
-    "anchor": "test/storage.test.js:139-165",
+  "PRODUCT_BACKLOG.md|item-details|test/storage.test.js:146-172|0": {
+    "anchor": "test/storage.test.js:146-172",
     "fp": "220bf1eb3736428e",
     "head": "test('a second, unrelated incident is salvaged and offered accurately', () => {"
   },
@@ -2249,8 +2254,8 @@
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:153-155|0": {
-    "anchor": "PRODUCT_BACKLOG.md:153-155",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:154-156|0": {
+    "anchor": "PRODUCT_BACKLOG.md:154-156",
     "fp": "68a9242a03c5218c",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
@@ -2319,15 +2324,20 @@
     "fp": "ee839e58ae0a15b3",
     "head": "if (store.blocked) $('#blocked-why').textContent = store.lastError ?? '';"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-076|src/js/storage.js:70|0": {
-    "anchor": "src/js/storage.js:70",
-    "fp": "8d381b958fbec113",
-    "head": "const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-076|src/js/storage.js:79-83|0": {
+    "anchor": "src/js/storage.js:79-83",
+    "fp": "00b770ce88686796",
+    "head": "const held = this.existingCopyOf(raw);"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-077|scripts/check-palette.mjs:99|0": {
     "anchor": "scripts/check-palette.mjs:99",
     "fp": "ffddd7f01674d122",
     "head": "// (`src/styles.css:580` and `:582`), which is 2.30:1 in the dark theme. It is listed here and"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-078|src/js/storage.js:84|0": {
+    "anchor": "src/js/storage.js:84",
+    "fp": "5b0a5f399663e48e",
+    "head": "const key = this.storage.getItem(SALVAGE_KEY) ? `${SALVAGE_KEY}.${Date.now()}` : SALVAGE_KEY;"
   },
   "scripts/check-palette.mjs|preamble|src/js/main.js:1931|0": {
     "anchor": "src/js/main.js:1931",

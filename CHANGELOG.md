@@ -28,11 +28,11 @@ quote in a bug report.
   The third one turned out to be the useful one. Setting out to name every place the app writes to
   found seven rather than the four the plan expected, because two of them are written elsewhere in
   the app and one is a family of spare copies named after the moment they were taken. Drawing that
-  also turned up a real fault, which is written down to be fixed rather than fixed here: if the app
-  cannot read your saved data for a second time, months after a first time, reloading the page while
-  it is stuck keeps taking another spare copy of the same thing, every reload, at exactly the moment
-  your browser storage is most likely to be full. It is harmless the first time this ever happens to
-  you, and the repeat is the part nothing was checking for.
+  also turned up a real fault, which is fixed further down these same notes: if the app cannot read
+  your saved data for a second time, months after a first time, reloading the page while it is stuck
+  kept taking another spare copy of the same thing, every reload, at exactly the moment your browser
+  storage is most likely to be full. It was harmless the first time this ever happens to you, and the
+  repeat was the part nothing was checking for.
 
 - **The filter you have chosen is now part of the link, so you can share or bookmark a filtered
   view.** Pick Unread on a reading order and the address in the bar becomes something like
@@ -143,6 +143,34 @@ quote in a bug report.
   they only show you what is already saved.
 
 ### Fixed
+
+- **Reloading a page that cannot read your saved data no longer keeps taking a fresh spare copy of
+  it, and no longer makes the app wrongly refuse to start you over.** This only reaches you the
+  second time the app has ever failed to read your data, so most people will never see it, and
+  nothing you have saved is affected either way. When a load fails, the app sets your unreadable
+  data aside so you can download it, and if it is already holding an older set from a previous
+  occasion it files the new one under its own name rather than writing over what it has. That part
+  was right. What was wrong is that it worked out what to do again from scratch every time the page
+  loaded, so each reload of a page that was still stuck put aside another copy of exactly the same
+  thing. Three reloads left three copies of one identical set.
+
+  The cost is not the wasted room on its own, it is what the wasted room then does. All of this
+  happens when your browser storage is close to full, which is the usual reason a load fails in the
+  first place, so the copies eat the very space they need. On a later reload there was no room left,
+  the app took that to mean nothing had been set aside at all, and the button offering to start you
+  over with a clean slate then refused, telling you your unreadable data could not be kept safe while
+  a copy of it was sitting there untouched. Nobody was permanently stuck, since downloading a copy
+  freed the button again, but you were pushed through a step you did not need by a message that was
+  not true.
+
+  The app now recognises when it is already holding exactly the data it is about to set aside and
+  keeps the copy it has instead of making another. It compares the data itself rather than going by
+  the time, which is what lets it tell "this is the same trouble I was already in" from "this is
+  something new" across a reload. It never removes anything, and it only ever sets aside fewer copies
+  than before, never more, so nothing that was being kept for you stops being kept. Where a browser
+  will not let the app look at what it is already holding, it sets a copy aside exactly as it always
+  did, so this can never become the reason a recovery is turned down. Six automated checks were
+  added, three of which were watched failing against the old behaviour first.
 
 - **A restored backup could silently lose a reading list.** This only affected a state file or
   backup that had been hand-edited, so it is very unlikely to have happened to you, but it was

@@ -152,7 +152,7 @@ The parts of that worth saying in words.
 `src/js/main.js:1934-1937` hands the store a function; the function itself, at
 `src/js/lib/model.js:401-403`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
-`src/js/storage.js:120-138`.
+`src/js/storage.js:155-173`.
 
 **The repaint is synchronous, and it is inside the write.** By the time `update` returns, the
 change callback has already run and the screen already shows the result. That is why the
@@ -178,7 +178,7 @@ repaints through exactly the path drawn above. No ordinary change reaches the st
 `update`, but it is not the only thing that can set the state, and a guard added inside it would
 not cover the rest. Boot reads the state in, at `src/js/storage.js:33-52`. Restoring a backup and
 starting fresh each replace the whole state rather than transforming it, and both appear in the
-next section. Restoring is the one that writes the key directly, at `src/js/storage.js:167-199`,
+next section. Restoring is the one that writes the key directly, at `src/js/storage.js:202-234`,
 which also puts it past the latch a failed read sets; the comment there says that is deliberate,
 because a restore is a chosen overwrite.
 
@@ -204,11 +204,13 @@ flowchart TD
   subgraph bootpath["Boot, and the one path where something has gone wrong"]
     boot["read mrt.state.v2"] --> readable{"readable?"}
     readable -->|"yes"| running["app runs, saving allowed"]
-    readable -->|"no"| aside["copy the unreadable bytes aside"]
-    aside --> slot{"is the salvage slot empty, or holding these same bytes?"}
-    slot -->|"yes"| s1["mrt.state.salvage"]
+    readable -->|"no"| aside["the unreadable bytes must be kept safe"]
+    aside --> slot{"does a salvage copy already hold these exact bytes?"}
+    slot -->|"yes"| adopt["adopt the copy already on disk; write nothing"]
+    slot -->|"no, and the plain slot is free"| s1["mrt.state.salvage"]
     slot -->|"no, an older incident is in it"| s2["mrt.state.salvage.TIMESTAMP"]
-    s1 --> paused["saving paused; the banner offers a download and a fresh start"]
+    adopt --> paused["saving paused; the banner offers a download and a fresh start"]
+    s1 --> paused
     s2 --> paused
   end
 
@@ -227,11 +229,11 @@ Every name the app writes, and why it exists:
 
 | Key | Written by | Cleared by | Why it exists |
 |---|---|---|---|
-| `mrt.state.v2` | every saved change, at `src/js/storage.js:155` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
-| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:180-183` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
-| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:201-205`. It is deliberately never removed, so the undo survives a reload. |
-| `mrt.state.salvage` | a failed read, and only when the slot is empty or already holds the same bytes | nothing | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
-| `mrt.state.salvage.TIMESTAMP` | a failed read when the slot already holds a different incident, at `src/js/storage.js:70` | nothing | So a second corruption months later cannot clobber the copy taken for the first one. |
+| `mrt.state.v2` | every saved change, at `src/js/storage.js:190` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
+| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:215-218` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
+| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:236-240`. It is deliberately never removed, so the undo survives a reload. |
+| `mrt.state.salvage` | a failed read, and only when no salvage copy already holds these bytes and the slot is empty | nothing | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
+| `mrt.state.salvage.TIMESTAMP` | a failed read when no salvage copy holds these bytes and the slot holds a different incident's, at `src/js/storage.js:84` | nothing | So a second corruption months later cannot clobber the copy taken for the first one. |
 | `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:412` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
 | `sidebar.collapsed` | the sidebar toggle, at `src/js/main.js:556` | nothing | Whether the rail is collapsed. Wrapped in its own try, because losing it is not worth an error. |
 
@@ -260,16 +262,24 @@ storage can tell them apart, not because the tracker ever writes them.
 
 Drawing the salvage path surfaced a defect that reading it did not. When a second incident is
 salvaged, the copy goes under a dated name because the plain slot still holds the first incident's
-bytes. That decision is remade from scratch on every boot, and the date is taken at the time of the
-write, so reloading the page while still blocked writes another dated copy of the same bytes. Three
-boots leave three identical copies, measured with a fake storage against the shipped module.
+bytes. That decision was remade from scratch on every boot, and the date is taken at the time of the
+write, so reloading the page while still blocked wrote another dated copy of the same bytes. Three
+boots left three identical copies, measured with a fake storage against the module as it then stood.
 
-It costs nothing on a first incident. There is a test for a second, unrelated incident, at
-`test/storage.test.js:139-165`, so the dated key itself is covered; what no test does is load twice
-inside one incident, which is why the repeat is untested rather than tolerated. It costs a copy of
+It cost nothing on a first incident. There is a test for a second, unrelated incident, at
+`test/storage.test.js:146-172`, so the dated key itself was covered; what no test did was load twice
+inside one incident, which is why the repeat was untested rather than tolerated. It cost a copy of
 the reader's whole state per reload on a second one, in exactly the near-quota situation the
-salvage code was written to survive. It is filed as BL-076 and is not fixed here: this document
-changes no code.
+salvage code was written to survive.
+
+It was filed as BL-076 and fixed there rather than here, because this document changes no code. A
+salvage slot already holding these exact bytes is now adopted rather than written again, at
+`src/js/storage.js:79-83`, so the drawing above shows a branch that did not exist when it was first
+drawn. Implementing it found two things this section had understated. The repeat was not only per
+reload, because `startFresh()` salvages before it clears, so the button the banner points at wrote
+one more inside a single boot. And the cost was not only space: near the quota the duplicates
+consumed the room the next copy needed, so a later boot reported that nothing had been set aside
+while the previous boot's copy sat on disk, and the escape hatch refused on that false report.
 
 ## What a per-view split does to these diagrams
 
