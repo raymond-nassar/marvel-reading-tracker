@@ -16,6 +16,24 @@ quote in a bug report.
 
 ### Added
 
+- **The project now has diagrams of how the app fits together, which it never had before.** Nothing
+  about the app changes and nothing you have saved is affected. The repository explains itself at
+  length in words, but until now there was no picture anywhere in it, so anyone wanting to describe
+  how the parts connect had to read the code first. There are now three, in a new document for
+  people looking at the code: which parts of the app own which, what happens step by step between
+  pressing a tick and the screen changing, and where your reading progress is actually kept. They
+  are written as plain text that the code host draws for you, so nothing new was added to the
+  project to make them work.
+
+  The third one turned out to be the useful one. Setting out to name every place the app writes to
+  found seven rather than the four the plan expected, because two of them are written elsewhere in
+  the app and one is a family of spare copies named after the moment they were taken. Drawing that
+  also turned up a real fault, which is written down to be fixed rather than fixed here: if the app
+  cannot read your saved data for a second time, months after a first time, reloading the page while
+  it is stuck keeps taking another spare copy of the same thing, every reload, at exactly the moment
+  your browser storage is most likely to be full. It is harmless the first time this ever happens to
+  you, and the repeat is the part nothing was checking for.
+
 - **The filter you have chosen is now part of the link, so you can share or bookmark a filtered
   view.** Pick Unread on a reading order and the address in the bar becomes something like
   `#/read/list-abc?filter=unread`. Send that to someone, or bookmark it, and it opens showing the

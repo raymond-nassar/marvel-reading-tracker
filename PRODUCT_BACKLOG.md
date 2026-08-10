@@ -9,11 +9,11 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Forty-seven items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Forty-eight items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
-BL-063, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072 and BL-073.
+BL-063, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073 and BL-074.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one
 whose delivery was a decision rather than a code change: it was measured in full and closed
@@ -224,8 +224,9 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:933 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Shipped | src/index.html:147-148 |
 | BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Ready | src/js/main.js:93 |
+| BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | src/js/storage.js:70 |
 | BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:147 |
-| BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Ready | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
+| BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:208 |
 | BL-058 | Keep focus on the home grid and the rail when their lists rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | absent: any capture of the focused control before importCurated disables it, read of addFromCatalog and renderRail |
@@ -2489,14 +2490,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:386-397`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:389-400`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:295-299`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:298-302`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -2887,7 +2888,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2644-2647`.
+`PRODUCT_BACKLOG.md:2645-2648`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3442,10 +3443,10 @@ markup.
 
 **BL-074: Draw the architecture and data flow the code already has**
 
-- [ ] Draw the module graph as ownership, separating what the view file constructs from what it only calls
-- [ ] Draw the data flow of one reading action, from the click through the store to the repaint
-- [ ] Draw the persistence and recovery paths, naming every storage key the app writes
-- [ ] Pitch each diagram at a level that survives BL-042 splitting the view file, or say plainly that it will not
+- [x] Draw the module graph as ownership, separating what the view file constructs from what it only calls
+- [x] Draw the data flow of one reading action, from the click through the store to the repaint
+- [x] Draw the persistence and recovery paths, naming every storage key the app writes
+- [x] Pitch each diagram at a level that survives BL-042 splitting the view file, or say plainly that it will not
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -3487,6 +3488,45 @@ every backticked path and line written into a new document becomes a claim the a
 chase forever, which matters more here than usual because a document describing structure is exactly
 where citations drift fastest.
 
+Shipped as three diagrams in `docs/ARCHITECTURE.md`, linked from the contributor section of
+`README.md` beside the emulator rationale, which is where a reader who has decided to look at the
+code arrives. All three render on the code host and add nothing to the project: the blocks were
+parsed against the same diagram library the host uses, installed in a scratch directory outside the
+tree and never referenced from `package.json`, and the check was proved able to fail by feeding it a
+deliberately broken block first.
+
+Drawing as ownership rather than as imports paid for itself three times, and each is written into
+the document because an import graph would have said the opposite. The metadata client builds its own
+limiter and cache when handed neither, at `src/js/api.js:34-35`, and the app always hands it both,
+which is what keeps one request budget across the page. Saving a new API base replaces the cache and
+the client and leaves the limiter alone, at `src/js/main.js:3014-3016`, because the budget belongs to
+the connection rather than to the base URL. And one of the sixteen library modules is not in the
+browser graph at all: `src/js/lib/curated.js` is imported outside the tests only by the vendoring
+script, at `scripts/vendor-orders.mjs:27`, so fifteen are reachable from the page and a graph drawn
+from the directory listing would have been wrong by one.
+
+The third task's enumeration came out at seven names rather than the four the block above predicted,
+which is the reason it asked for every key rather than the store's keys. Four are declared at
+`src/js/storage.js:9-12`, two more belong to the view file at `src/js/main.js:36-37`, and the
+seventh is a family whose suffix is the moment it was written. The response cache is not among them,
+because it lives in IndexedDB precisely so it cannot compete for quota with a reader's progress.
+
+The fourth task is answered per diagram rather than in general, because the honest answer differs.
+The module graph and the persistence diagram survive a split: the first names responsibilities and
+owned instances, and BL-042's own second task commits to keeping the store wiring in one place; the
+second names keys and their writers, and moving the two lines that write the view file's own keys
+changes neither name nor value. The reading action survives in shape but carries one claim that a
+split can falsify, and the document says so where the claim is made. That the repaint is synchronous
+inside the write is a property of the store's change callback being called directly, and it is what
+lets the announcement be gated on the write having stuck. A split that put a scheduler between them
+would make that section wrong rather than merely re-aimable.
+
+Drawing the salvage path found a defect that reading it had not, filed as BL-076 and deliberately not
+fixed here, because this item buys comprehension and changes no code. The decision to write a dated
+copy is remade on every boot, so reloading while blocked during a second incident writes another
+copy of the same bytes: three boots leave three, measured against the shipped module with a fake
+storage.
+
 **BL-075: Keep the reason saving is paused where the reader can still see it**
 
 - [ ] Hold the reason the read failed in its own value, so a later failure cannot displace it
@@ -3517,6 +3557,38 @@ It is the code that runs after something has already gone wrong, which is where 
 serious findings in this repository's review history were, so the cases to press on are the ones
 where the recovery is offered twice, where it is resolved in another tab, and where the reason is
 cleared while the banner is still on screen.
+
+**BL-076: Stop a reload during a second incident writing another dated salvage copy**
+
+- [ ] Write the dated copy once per incident rather than once per boot
+- [ ] Cover the reload during a second incident, which no test exercises today
+- [ ] Decide what the banner should say when a dated copy already exists
+
+Constraint gate: checked 1 to 11, none breached.
+
+Found by drawing the persistence paths for BL-074, which is the kind of defect a diagram finds and a
+read does not: nothing about the code is wrong on the line, and the fault is in a decision being
+remade on a path the reader can repeat. When a load fails, the unreadable bytes are copied aside. If
+the salvage slot already holds a different incident's bytes, the copy goes under a dated name
+instead, at `src/js/storage.js:70`, so an old copy cannot be clobbered by a new one. That is right.
+What is wrong is that the choice is recomputed from scratch on every boot and the date is taken at
+the moment of the write, so the second, third and fourth reload of a page that is still blocked each
+write another dated copy of the identical bytes. Measured with a fake storage against the shipped
+module: three boots during one second incident leave three dated keys holding the same string.
+
+It costs nothing during a first incident. There is a test for a second, unrelated
+incident, at `test/storage.test.js:139-165`, which reaches the dated branch by salvaging one, but it
+never loads twice inside that incident, so the repeat is untested rather than tolerated. It costs a
+copy of the reader's whole state per reload during a second one, in exactly the near-quota condition
+the salvage code exists to survive, and a reader whose storage is too full to hold one copy is the
+reader the recovery banner is talking to. This is the shape the repository's own instructions warn
+about, where the most dangerous code in a change is the code added to prevent data loss.
+
+Sized 2 because the fix is a condition rather than a redesign, and scored Measured because the
+repeat was reproduced rather than reasoned about. The third task is a real question and not a
+formality: once a dated copy exists, the banner's offer to download a copy points at one slot, and
+what a reader should be told when there are several is a content decision the fix should not make by
+accident.
 
 **BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
@@ -3609,7 +3681,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4276-4277` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4348-4349` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3619,11 +3691,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4297-4299`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4369-4371`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4110-4112` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4182-4184` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -3831,7 +3903,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:573-576` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:591-594` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:158-160` and
 `PRODUCT_BACKLOG.md:165-167` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4365,15 +4437,15 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and twenty-five
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and twenty-six
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 51 rows now. The ranks below are
+how it reaches 52 rows now. The ranks below are
 positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks eighteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 18 of 51.
+- Calculated: WSJF 3.67, rank 18 of 52.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -4392,10 +4464,10 @@ positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks forty-fifth
+### Case 2: BL-007 is labelled P1 but ranks forty-sixth
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 45 of 51, below forty unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 46 of 52, below forty-two unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -4451,9 +4523,9 @@ positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 25 of 51. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 19 of 51. Mid-table.
-- BL-017, P2, rank 50 of 51. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 25 of 52. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 19 of 52. Mid-table.
+- BL-017, P2, rank 51 of 52. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
