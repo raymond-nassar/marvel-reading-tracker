@@ -9,12 +9,12 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Fifty items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Fifty-one items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
-BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074 and
-BL-077.
+BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
+BL-077 and BL-078.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Seven remain
@@ -216,15 +216,15 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-356 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2873-2907 |
-| BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:414 |
+| BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:434 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:933 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Shipped | src/index.html:147-148 |
 | BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Ready | src/js/main.js:98 |
 | BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | src/js/storage.js:70 |
-| BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:173 |
-| BL-077 | Bring relative citations under the anchors gate, or stop writing them | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:211-226 |
-| BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | scripts/check-anchors.mjs:691 |
-| BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | scripts/check-anchors.mjs:220 |
+| BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:193 |
+| BL-077 | Bring relative citations under the anchors gate, or stop writing them | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:231-246 |
+| BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:782 |
+| BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | scripts/check-anchors.mjs:240 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:213 |
@@ -2921,7 +2921,7 @@ that skips string literals, which is scope this item did not earn.
 Scope is walked rather than listed. `server.mjs:12` resolves the served root to `src/`, so `src/` is
 what shipped means, and the walk finds whatever is there. The six files are not written down anywhere
 in the check, because a seventh added later is precisely what a written list would miss, which is the
-argument `scripts/check-anchors.mjs:147-150` makes about the anchors gate. The `design/mockups/`
+argument `scripts/check-anchors.mjs:167-170` makes about the anchors gate. The `design/mockups/`
 pages are outside that root and are not served, so they stay out of scope.
 
 Every assertion was proved able to fail before it was trusted. A dash injected into an HTML text
@@ -2960,7 +2960,7 @@ could not see this case, because a block that states its own paragraph twice sti
 and one row, so every enumeration agreed the document was sound.
 
 Deliberately not scoped to detail blocks. Copy and paste does not respect a section boundary, and an
-enumeration of where to look is the thing `scripts/check-anchors.mjs:147-150` argues against, having
+enumeration of where to look is the thing `scripts/check-anchors.mjs:167-170` argues against, having
 found that every anchor defect the gate exists to catch came from exactly that.
 
 Four tests cover it and all four were proved able to fail. Neutering the check to return nothing
@@ -3208,11 +3208,11 @@ argues in `src/js/lib/model.js` and in BL-068's own scan test that a discipline 
 remember at every site is the defect rather than the fix.
 
 The structural version is close to free, which is why this is Debt rather than a Proposed idea.
-`scripts/check-anchors.mjs:414` already slices the prose immediately preceding each citation into a
-`claim` field, and the bless path at `scripts/check-anchors.mjs:691` then writes only the anchor,
+`scripts/check-anchors.mjs:434` already slices the prose immediately preceding each citation into a
+`claim` field, and the bless path at `scripts/check-anchors.mjs:782` then writes only the anchor,
 fingerprint and head, discarding it. So the script already holds both halves of the pairing that step
 3 asks a person to make by hand, and printing them together on the run that re-aims them is the whole
-change. `reportNearMisses` at `scripts/check-anchors.mjs:550` is the precedent for the script
+change. `reportNearMisses` at `scripts/check-anchors.mjs:629` is the precedent for the script
 printing a notice of this kind.
 
 Shipped as written. `--bless` now prints one record per citation whose blessed line is changing,
@@ -3291,7 +3291,7 @@ gate's own test, one of them naming a line past the end of its file on purpose s
 path has something to resolve to nothing. Gating that one would require the fixture to resolve,
 which is the single thing it exists not to do.
 
-So outside Markdown only the backticked form is collected, at `scripts/check-anchors.mjs:244-256`.
+So outside Markdown only the backticked form is collected, at `scripts/check-anchors.mjs:264-276`.
 That is the opposite call from the one Markdown makes, and it is made for the same reason rather
 than in spite of it: collect the form that asserts something. In Markdown both forms do, because the
 backlog's Evidence column is written bare. In code the two separate by role, and measured across the
@@ -3300,9 +3300,9 @@ backticked to say what they had always meant. Fourteen citations enrolled: twelv
 `src/styles.css` and one in `test/shipped-copy.test.js`.
 
 The objection this item was filed against is the lock excluding itself by name, since the script
-argues in its own comment at `scripts/check-anchors.mjs:147-150` that an enumeration is exactly the
+argues in its own comment at `scripts/check-anchors.mjs:167-170` that an enumeration is exactly the
 defect it exists to catch, and "skip the lock file" is an enumeration of one. It is excluded
-structurally at `scripts/check-anchors.mjs:173`, by the same `LOCK` constant that says where the
+structurally at `scripts/check-anchors.mjs:193`, by the same `LOCK` constant that says where the
 output is written, so the rule is that the gate does not read its own output and nothing has to be
 kept in step. Binary files are dropped the same way, by a NUL byte at `scripts/check-anchors.mjs:94`
 rather than by an extension list, which matters more than it sounds: 43 tracked PNGs would otherwise
@@ -3323,7 +3323,7 @@ repository already has that rule for a wrong line described in prose, and it app
 One thing had to be repaired rather than merely widened. The claim printed beside each line at bless
 time, which is all BL-070 shipped, degrades badly in code: comment markers splice `//` into the
 middle of a sentence, and a citation that opens a comment printed a claim of `//` and nothing else.
-`claimBefore` at `scripts/check-anchors.mjs:287-306` now strips the marker outside prose, stops at
+`claimBefore` at `scripts/check-anchors.mjs:307-326` now strips the marker outside prose, stops at
 the first line that is not a comment so a comment cannot absorb the code above it, and reads forward
 from the citation when almost nothing precedes it.
 
@@ -3346,7 +3346,7 @@ One near miss came with the split and is reported rather than accepted. A bare c
 prose is a string literal in the ordinary case and correctly ignored, but a bare citation inside a
 comment is a claim, and would have been ungated in the same silence the item exists to end. Being
 in a comment is the only signal the text carries, so that is where `reportNearMisses` draws the
-line, at `scripts/check-anchors.mjs:563-578`, and it prints a notice rather than failing, because
+line, at `scripts/check-anchors.mjs:642-657`, and it prints a notice rather than failing, because
 prose may legitimately name a file.
 
 The sharp edge is worth stating, because the first draft of the tests hit it. A backticked citation
@@ -3401,11 +3401,11 @@ the lock is excluded from the population: the known one, the one in this block, 
 comment. Three of those four were in prose about the defect rather than in code committing it, which
 is the honest shape of the thing and the reason the rule cannot be illustrated by example.
 
-The check runs before the bless path rather than beside it, at `scripts/check-anchors.mjs:607-641`,
+The check runs before the bless path rather than beside it, at `scripts/check-anchors.mjs:686-720`,
 because blessing a tree that holds one of these records a lock that looks complete and is not.
 Where it counts follows the split BL-071 drew: every line of a Markdown file is addressed to a
 reader, so a relative citation anywhere in one is a claim, while in code only a comment is, at
-`scripts/check-anchors.mjs:211-226`. That is not a nicety. This gate's own test builds its fixtures
+`scripts/check-anchors.mjs:231-246`. That is not a nicety. This gate's own test builds its fixtures
 out of exactly this shape, so a rule that read string literals would have failed on the tests
 written to prove the rule.
 
@@ -3416,7 +3416,7 @@ a past revision is to ask whether it would have caught a past breakage. Measured
 `--ref HEAD` exited 0 while `--ref origin/main` exited 2 with nothing said about drift. The remedy it
 printed, to write the path in full, is also unactionable against a revision, because a commit that
 has shipped cannot be edited to satisfy a rule adopted after it. The distinction now has one
-definition, at `scripts/check-anchors.mjs:235-238`, and two tests hold the two halves apart, because
+definition, at `scripts/check-anchors.mjs:255-258`, and two tests hold the two halves apart, because
 a policy that lives inside a conditional in `main` can only be checked by running the whole gate.
 
 Both citations in the paragraph above were wrong when first written, by nineteen lines and by
@@ -3461,9 +3461,9 @@ complaint.
 
 **BL-078: Print a first-time citation at bless time, since it has nothing to be compared against**
 
-- [ ] Print every citation whose anchor and fingerprint are both absent from the previous lock
-- [ ] Print each one beside the prose that cites it, one reading per citation
-- [ ] Refuse a range that begins or ends on a blank line
+- [x] Print every citation whose anchor and fingerprint are both absent from the previous lock
+- [x] Print each one beside the prose that cites it, one reading per citation
+- [x] Refuse a range that begins or ends on a blank line
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -3474,7 +3474,7 @@ there is no previous fingerprint to compare, so the bless records whatever the c
 point at and reports no drift, correctly, because nothing drifted. The reader is the only check, and
 the print gives the reader nothing to read.
 
-The evidence is the bless path itself at `scripts/check-anchors.mjs:691`, which writes the anchor,
+The evidence is the bless path itself at `scripts/check-anchors.mjs:782`, which writes the anchor,
 the fingerprint and the head line into the lock with no reference to a previous entry. Everything
 needed is already computed: `collect` carries the prose before each citation, and comparing against
 the committed lock is one read of `git show HEAD:docs/anchors.lock.json`.
@@ -3488,6 +3488,76 @@ Deliberately not proposed: failing the bless on a first-time citation. It would 
 citation a two-step operation and the gate cannot tell a correct one from an incorrect one, which is
 the whole reason a person has to read it. Printing is the intervention that matches what is known.
 
+Delivered, with four decisions worth the record.
+
+The mark went into the existing report rather than beside it. A separate list would print the same
+citation twice and leave the reader choosing which copy to read, so `firstTime` returns the records
+and `pairingLines` marks them in place, with a count in the header so the number is not something
+the reader has to tally. The marking is asserted per citation rather than per anchor, because the
+collapse BL-070 was written against would otherwise return one layer higher: two first-time
+citations of one anchor have to be marked twice or a reader reads one line and believes both are
+covered.
+
+First time means the lock has never held the citation under either its key or its content, and the
+second half is the load-bearing one. Re-aiming rewrites the anchor, and the anchor is part of the
+key, so a test on the key alone calls every re-aim new. Re-aiming is the common case here rather
+than the rare one: a change that moves a module by a few lines rewrites the anchor of every citation
+of it, so keying on that alone would announce dozens of new citations on a change that introduced
+none. A re-aim carries a fingerprint the lock already holds, which is this gate having
+agreed once that the content matched.
+
+Matching that fingerprint anywhere in the corpus was too generous, and a review of this change found
+the hole before it shipped. 176 of the 492 entries share a fingerprint with some other entry, mostly
+because a rule stated twice in a file is stated in the same words both times, so a citation written
+for the very first time in one document was excused by an identical line blessed in another and the
+mark it exists to print never appeared. `collisions` is no backstop, because it groups by anchor and
+a wrongly aimed citation is at a different anchor by definition. The match is therefore made at the
+site, meaning the document, the section and the ordinal, all three of which a re-aim keeps and only
+the anchor moves. Both rules were measured against this change's own re-aims and neither announces
+any of them, so the narrowing costs nothing on the case it was built for. What the site rule still
+cannot separate is a new citation landing at the very site and ordinal of a blessed one, on content
+that blessed one already matched, and from the lock alone nothing can. The claim is the narrower one
+for that reason: every first sighting elsewhere in the corpus is announced, not every first sighting.
+
+The blank line rule became a refusal rather than a notice, and it refuses at bless time because that
+is when a range is recorded. It is the one defect in a range that reading the print cannot find:
+`fingerprint` drops blank lines before it takes a head, so a range written a line too wide prints
+the first line that has content in it, reads correctly against its claim, and is blessed around a
+line the claim does not cover. Refusing was affordable because the tree already complied. All 492
+anchors in the lock this change started from were measured and none began or ended on a blank line,
+so the rule starts from zero rather than from a backlog of exceptions.
+
+Bless time alone was not enough, which the same review demonstrated in a scratch repository. Dropping
+blank lines from the fingerprint is exactly what lets a compliant range acquire the fault later:
+sliding a paragraph break inside a cited range onto its last line leaves the fingerprint
+byte-identical, so the check reported one unchanged citation and exited 0 while the range had stopped
+covering what its sentence is about. The defect would then surface as a refusal aimed at whoever next
+blessed for an unrelated reason, which is the shape of failure this gate is supposed to end rather
+than create. The check path now names it and fails too. Under `--ref` it is a notice instead, on the
+same reasoning the relative citation rule already carries, since a revision that has shipped cannot
+be rewritten to satisfy a rule adopted after it. That leaves one verdict written twice, close beside
+`relativeVerdict` and not sharing it, which was a deliberate choice to avoid churning code and
+citations that had only just landed and is worth revisiting the next time either rule is touched.
+
+It then caught one immediately, and the one it caught was this change's own. Growing the gate by a
+hundred and seventeen lines pushed a citation of `claimBefore` onto a blank last line, and the
+refusal named it before the re-aiming pass reached it.
+
+One thing went wrong that is worth more than the feature. The harness written to prove these tests
+could fail reported all three patched builds green. It keyed on a spawned process throwing, and the
+test runner here defaults to the spec reporter rather than TAP, so the lines it searched for never
+existed and a failed run and a failed spawn were indistinguishable from a pass. Rewritten to key on
+the exit code, the three patches failed five tests between them. A prover that cannot fail is worth
+less than no prover, because it is believed.
+
+It then earned its keep a second time. Carried forward to cover the review's fixes, it reported that
+removing the ordinal from the site changed nothing, which meant no test held that part of the rule
+in place. Dropping the ordinal would have reintroduced the very collapse this item was written to
+survive, one layer up: a second citation of a line its section already cites is a first sighting of
+its own, and without the ordinal it would have been silently excused. The test that pins it was
+written because a sabotage went green, not because anyone thought of the case. Five patched builds
+now fail ten times between them across nine distinct tests.
+
 **BL-079: Teach the gate the comment syntax of every file it already reads**
 
 - [ ] Widen the comment predicate to the syntaxes the corpus actually contains
@@ -3497,11 +3567,11 @@ the whole reason a person has to read it. Printing is the intervention that matc
 Constraint gate: checked 1 to 11, none breached.
 
 Filed out of BL-077's review. The gate reads every tracked file, because `docs()` deliberately passes
-no pathspec at `scripts/check-anchors.mjs:163-165`, and binary content is dropped by the reader
+no pathspec at `scripts/check-anchors.mjs:183-185`, and binary content is dropped by the reader
 rather than by extension. So the corpus holds YAML, CSS and HTML as well as JavaScript. But every
 place that asks whether a line is a comment asks it in JavaScript only, with
-`/^\s*(?:\/\/|\/\*|\*)/`, at `scripts/check-anchors.mjs:220`, `scripts/check-anchors.mjs:309` and
-`scripts/check-anchors.mjs:573`. A YAML comment opens with a hash, an HTML comment with an angle
+`/^\s*(?:\/\/|\/\*|\*)/`, at `scripts/check-anchors.mjs:240`, `scripts/check-anchors.mjs:329` and
+`scripts/check-anchors.mjs:652`. A YAML comment opens with a hash, an HTML comment with an angle
 bracket, and neither is recognised anywhere.
 
 The predicate is character-identical at all three, so this is one rule written out three times and
@@ -3905,7 +3975,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4572-4573` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:4642-4643` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -3915,11 +3985,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:161-163`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4593-4595`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4663-4665`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4406-4408` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4476-4478` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4030,7 +4100,7 @@ Not closed by this item. The gate reads four claim forms, and the block above na
 that are derived from the table and remain unchecked: the count of items above a given row, stated as
 "outranked by N items sized 1, 2 or 3" and "below N unlabelled items", and the
 Cost of Delay orderings. Both are stated in prose too varied to match without inventing a pattern per
-sentence, which is the enumeration anti-pattern `scripts/check-anchors.mjs:147-150` argues against in
+sentence, which is the enumeration anti-pattern `scripts/check-anchors.mjs:167-170` argues against in
 this repository's own words. They are recorded here rather than filed, because the cost of a bespoke
 matcher exceeds the cost of the figure being wrong. The two are quoted by shape rather than by their
 values, which had already drifted twice by the time anyone read this sentence again, and quoting a
@@ -4127,7 +4197,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:642-645` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:661-664` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:154-156` and
 `PRODUCT_BACKLOG.md:161-163` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.

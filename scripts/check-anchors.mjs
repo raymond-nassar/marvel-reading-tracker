@@ -122,12 +122,31 @@ const linesOf = (path) => {
   return cache.get(path);
 };
 
+// Whether a range begins or ends on a blank line, which is the one defect in a range
+// that reading the bless print cannot catch. `fingerprint` drops blank lines before it
+// takes `head` and `tail`, so a range written one line too wide prints the first line
+// that has content in it, reads perfectly against its claim, and is blessed a line
+// wider than the claim it stands for. The reader is shown the correct line and the
+// wrong range, and there is nothing in the print to tell them apart.
+//
+// A single-line anchor cannot reach here, because a blank one resolves to no body at
+// all and `fingerprint` already refuses it as blank lines only.
+export function blankEdgeOf(lines, start, end) {
+  if (end <= start) return null;
+  const first = String(lines[start - 1] ?? '').trim() === '';
+  const last = String(lines[end - 1] ?? '').trim() === '';
+  if (first && last) return 'begins and ends on a blank line';
+  if (first) return 'begins on a blank line';
+  if (last) return 'ends on a blank line';
+  return null;
+}
+
 // Trimmed, with blank lines dropped, so reindentation and trailing-whitespace
 // churn do not raise false alarms while a genuine edit still does.
 //
-// `tail` is the last cited line and is computed for printing only. It is deliberately
-// not written to the lock: the lock already holds every field a comparison needs, and
-// adding one would rewrite all of it for a string nothing compares against.
+// `tail` and `blankEdge` are computed for printing and refusal only. Neither is written
+// to the lock: the lock already holds every field a comparison needs, and adding one
+// would rewrite all of it for a value nothing compares against.
 function fingerprint(file, start, end) {
   const lines = linesOf(file);
   if (lines === null) return { fp: null, why: 'file missing' };
@@ -139,6 +158,7 @@ function fingerprint(file, start, end) {
     fp: createHash('sha256').update(body).digest('hex').slice(0, 16),
     head: kept[0].slice(0, 100),
     tail: kept.length > 1 ? kept[kept.length - 1].slice(0, 100) : null,
+    blankEdge: blankEdgeOf(lines, start, end),
   };
 }
 
@@ -454,6 +474,54 @@ export function pairings(found, lock) {
   return out;
 }
 
+// The citations this bless is recording against nothing. There is no earlier
+// fingerprint for them, so the gate has nothing to compare and reports zero drift
+// truthfully while the anchor may name any lines at all. Every anchor defect that has
+// survived a bless in this repository was of this shape: BL-077 produced five, and
+// three of the five named an entirely different passage.
+//
+// Both the key and the fingerprint have to be absent, and the second condition is the
+// load-bearing one. Re-aiming a citation rewrites its anchor, the anchor is part of the
+// key, so a test on the key alone calls every re-aim new and buries the handful that
+// are under the dozens that are not. The commit that added this re-aimed 30 citations:
+// a key-only test announces all 30, and this one announces none of them.
+//
+// The fingerprint is matched at the citation's own site rather than across the whole
+// corpus, and that narrowing is not fussiness. 176 of the 492 entries blessed at the
+// time carried a fingerprint some other entry also carried, and three fingerprints were
+// reached by more than one distinct anchor: `src/js/hydrate.js:69` and
+// `src/js/hydrate.js:74` are two different guards, one inside the loop over items and
+// one after it, written identically. A corpus-wide test reads a brand new claim as
+// already checked the moment its lines happen to match any other citation anywhere,
+// which in this corpus is the ordinary case rather than an exotic one, and `collisions`
+// cannot catch it because that is scoped to a single document, scope and anchor.
+//
+// Matching at the site keeps the whole of the re-aim suppression, because a re-aim keeps
+// its document, its scope and its ordinal and moves only the anchor. Measured both ways
+// over the 30 re-aims this arrived with, both rules announce none of them. The ordinal
+// belongs in the site for the same reason the mark is asserted per citation rather than
+// per anchor: a second citation of a line its scope already cites is a first sighting of
+// its own, since nobody has read that sentence against that line however often the line
+// has been read.
+//
+// What the site rule still cannot separate is a genuinely new citation that lands at the
+// same site and the same ordinal as a blessed one, on content that blessed one already
+// matched. From the lock alone that is indistinguishable from a re-aim, and `collisions`
+// does not reach it either, since a different anchor puts it in a different bucket. The
+// claim here is therefore the narrow one: every first sighting elsewhere in the corpus is
+// announced, not every first sighting anywhere.
+const siteOf = (key) => {
+  const parts = key.split('|');
+  return parts.length === 4 ? `${parts[0]}|${parts[1]}|${parts[3]}` : key;
+};
+
+export function firstTime(found, lock) {
+  const blessed = new Set(Object.entries(lock).map(([k, e]) => `${siteOf(k)}|${e.fp}`));
+  return found.filter(
+    (f) => f.fp !== null && !(f.key in lock) && !blessed.has(`${siteOf(f.key)}|${f.fp}`),
+  );
+}
+
 // Claim text reduced to the words it is made of, so that punctuation, backticks and
 // wrapping do not make two renderings of one sentence look like two claims.
 const claimShape = (s) => String(s ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -502,30 +570,41 @@ export function collisions(found, lock) {
 // line per citation, and the line carries the claim and the cited line together because
 // reading either alone is what the step is trying to stop.
 //
+// `freshKeys` marks the citations being blessed against nothing, which read exactly
+// like the rest and are the only ones where the reading is the whole of the check. They
+// are marked in place rather than listed separately because a second list would print
+// the same citation twice and leave the reader deciding which copy to read.
+//
 // Split from the printing so a test can hold the shape. Deduplicating here rather than
 // in `pairings` restores the identical defect one layer lower, where an assertion on
 // returned records cannot see it, so the assertion is made against these lines instead.
-export function pairingLines(pairs) {
+export function pairingLines(pairs, freshKeys = new Set()) {
   if (!pairs.length) return ['No citation changes its blessed line, so there is nothing to re-read.'];
   const each = pairs.length === 1 ? 'citation changes' : 'citations change';
   const out = [`${pairs.length} ${each} the line it is blessed against. Read each claim against its line:`];
+  const fresh = pairs.filter((p) => freshKeys.has(p.key)).length;
+  if (fresh) {
+    const verb = fresh === 1 ? 'is' : 'are';
+    out.push(`${fresh} ${verb} marked NEW: nothing was compared, so reading it is the only check there is.`);
+  }
   for (const p of pairs) {
+    const mark = freshKeys.has(p.key) ? 'NEW  ' : '     ';
     const now = p.head === null ? `(${p.why})` : p.head;
     const span = p.tail === null ? now : `${now}  ...  ${p.tail}`;
-    out.push(`  ${p.claim || '(no preceding prose)'}  ->  ${p.anchor}  ->  ${span}`);
+    out.push(`  ${mark}${p.claim || '(no preceding prose)'}  ->  ${p.anchor}  ->  ${span}`);
     // Only when the content differs, which is the difference between a citation the
     // code moved under and one now pointing at different code. The first needs a
     // glance, the second needs the reading, and the reader cannot tell them apart
     // from the new line alone.
     if (p.was && p.head !== null && p.was.head !== p.head) {
-      out.push(`      was  ->  ${p.was.anchor}  ->  ${p.was.head}`);
+      out.push(`           was  ->  ${p.was.anchor}  ->  ${p.was.head}`);
     }
   }
   return out;
 }
 
-function printPairings(pairs) {
-  for (const line of pairingLines(pairs)) console.log(line);
+function printPairings(pairs, freshKeys) {
+  for (const line of pairingLines(pairs, freshKeys)) console.log(line);
   console.log('');
 }
 
@@ -678,12 +757,24 @@ function main() {
       for (const u of unresolvable) console.error(`  ${u.key}  ${u.anchor}  (${u.why})`);
       process.exit(2);
     }
+    // Refused rather than printed, because this is the one defect in a range that the
+    // print below cannot show: `blankEdgeOf` explains why the line a reader would check
+    // it against is the correct one. A range is narrowed by editing the citation, which
+    // is work the author can do and the reader cannot.
+    const edged = found.filter((f) => f.blankEdge);
+    if (edged.length) {
+      console.error(`FATAL: refusing to bless ${edged.length} range(s) whose first or last cited line is blank:`);
+      for (const e of edged) console.error(`  ${e.key}  ${e.anchor}  (${e.blankEdge})`);
+      console.error('Narrow each range to the lines its claim is about, then bless again.');
+      process.exit(2);
+    }
     found.sort((a, b) => a.key.localeCompare(b.key));
 
     // Printed before the lock is overwritten, and from the lock that is about to be
     // overwritten, because afterwards nothing can say which claims were unread.
     const prior = priorLock();
-    printPairings(pairings(found, prior));
+    const fresh = new Set(firstTime(found, prior).map((f) => f.key));
+    printPairings(pairings(found, prior), fresh);
     printCollisions(collisions(found, prior));
 
     const lock = {};
@@ -858,6 +949,31 @@ function main() {
     console.log('');
   }
 
+  // The rule the bless path refuses on, asked of a tree nobody is blessing. It has to be
+  // asked twice because `fingerprint` drops blank lines before hashing, so a reflow that
+  // moves a blank line from inside a cited range to its edge leaves the fingerprint
+  // byte-identical: the check reports no drift, every run stays green, and the defect
+  // surfaces only when somebody blesses for an unrelated reason and is stopped by a
+  // citation they did not write and cannot judge. Reported here so it fails in the commit
+  // that causes it, which is the premise this whole gate rests on.
+  //
+  // Refused against the working tree and merely reported under --ref, which is the split
+  // `relativeVerdict` already draws and draws for the same reason: a range in a tree
+  // someone is writing can be narrowed, and one in a revision that already shipped cannot
+  // be rewritten to satisfy a rule adopted after it.
+  const edged = found.filter((f) => f.blankEdge);
+  for (const e of edged) {
+    console.log(`EDGED  ${e.key}`);
+    console.log(`  claim   : ${e.claim}`);
+    console.log(`  anchor  : ${e.anchor}  (${e.blankEdge})`);
+    console.log('');
+  }
+  if (edged.length && ref === null) {
+    console.log('Narrow each range to the lines its claim is about, then re-bless.');
+  } else if (edged.length) {
+    console.log(`NOTICE: ${edged.length} range(s) above are in a past revision and cannot be narrowed.`);
+  }
+
   printCollisions(collisions(found, lock));
 
   if (drifted.length || unkeyed.length) {
@@ -872,7 +988,8 @@ function main() {
 
   reportNearMisses(exempted);
 
-  process.exitCode = drifted.length || unkeyed.length || gone.length ? 1 : 0;
+  process.exitCode = drifted.length || unkeyed.length || gone.length
+    || (ref === null && edged.length) ? 1 : 0;
 }
 
 // Run only as a script. Importing it has to be side-effect free, because the pairing
