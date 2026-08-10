@@ -3280,8 +3280,8 @@ can churn a fingerprint.
 Five of those six now read as sentences. The sixth does not, and it is worth saying which way that
 falls: its citation ends the line, so skipping the anchor leaves nothing to read forward into and
 the claim falls back to the `Evidence:` it printed before. That is the fallback working rather than
-failing, since the alternative was printing the citation back at a reader who has it on the line
-above, but the count of what improved is five and not six.
+failing, since the alternative was printing the citation back at a reader who already has it, but
+the count of what improved is five and not six.
 
 One near miss came with the split and is reported rather than accepted. A bare citation outside
 prose is a string literal in the ordinary case and correctly ignored, but a bare citation inside a

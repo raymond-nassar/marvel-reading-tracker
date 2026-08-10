@@ -202,8 +202,11 @@ is the harder of the two to catch, because the bless print cannot show it. The h
 range is its first *non-blank* line, so a range that has slid one line early onto a blank keeps a
 head identical to the one blessed before it moved. The print then reads as an unchanged head with a
 changed anchor, which is exactly what a correct re-aim looks like, while the range silently covers
-one line fewer than the claim needs. Four citations landed that way in one commit here, and a
-review caught them by re-deriving the shift arithmetic rather than by reading the print.
+one line fewer than the claim needs. Two citations landed that way in one commit here. Two more in
+the same commit slid onto non-blank lines, so the print did show their heads changing, and reading
+it missed them anyway. A review caught all four by re-deriving the shift arithmetic. That is the
+stronger lesson of the two: half the cases were invisible to the print, and the print was no help
+on the other half either. The arithmetic is the check.
 
 That is also the argument for re-running the arithmetic after the last edit rather than after the
 last edit you were thinking about. All four came from a re-aiming script that ran correctly and was
