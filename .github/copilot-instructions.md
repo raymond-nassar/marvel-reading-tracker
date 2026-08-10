@@ -234,13 +234,17 @@ every shift from the hunks instead found exactly that one mismatch out of a hund
 citations, and nothing else. So run both and reconcile them. Where they disagree, one is wrong, and a
 head that is repeated in its file is the first thing to check.
 
-Three things to know if you script either half. The lock stores the head trimmed and truncated to
+Four things to know if you script either half. The lock stores the head trimmed and truncated to
 about a hundred characters, so the comparison has to be a trimmed prefix rather than an equality. The
-report truncates its list of losses, so the count printed there is not the count to work from. And an
+report truncates its list of losses, so the count printed there is not the count to work from. An
 arithmetic pass has to be driven from your re-aim mapping or from the claim, never from the lock key:
 joining the two locks on the key only compares citations whose anchor is unchanged, which is precisely
 the set that did not move, so it prunes itself to nothing while reporting a clean pass. One did that
-over 222 citations without ever examining a citation that had moved.
+over 222 citations without ever examining a citation that had moved. And a pure insertion is recorded
+by `git diff` as `-N,0`, meaning "after old line N", so old line N itself must not take that hunk's
+offset while every line after it must. Treating the two hunk shapes alike put a citation of the
+`bucketOf` line nine lines past where it belonged, and the head search was the only thing that
+disagreed, which is the reconciliation earning its keep in the direction nobody expects.
 
 An applied re-aim is not idempotent. Run the mapping a second time and it re-applies to citations that
 already hold their new value, and where one citation's new anchor is another claim's old anchor, the

@@ -626,6 +626,97 @@ export function collisions(found, lock) {
   return out;
 }
 
+// A citation whose scope alone was renamed, paired back up rather than reported as an
+// unrelated addition beside an unrelated loss.
+//
+// Two conditions, and the second exists because the first is not enough on its own. The
+// identity is document, anchor, ordinal and fingerprint together, which sounds decisive
+// and is not: the ordinal counts within `doc|scope|anchor`, so two citations of one anchor
+// under two different headings both carry ordinal 0, and citing the same lines always
+// yields the same fingerprint. 159 of the 504 blessed keys today sit on an identity shared
+// with at least one other key, and this very item's own delivery paragraph created such a
+// pair. So identity alone would let a genuine loss under one heading be explained away by
+// an unrelated new citation of the same lines under another.
+//
+// The falsifier is that a renamed heading leaves nothing behind. If the old scope is still
+// collected somewhere in the document then it was not renamed, whatever else is true, and
+// the pair is refused. Run over the history that guard rejects exactly one pair, and that
+// one is a citation moved from `item-details` into a newly created `parked` section while
+// `item-details` kept a hundred others: a move, which is a loss and an addition, and not a
+// rename at all.
+//
+// Necessary rather than sufficient. A real loss under a heading that genuinely did vanish,
+// landing in the same run as an unrelated new citation of those same lines, would still
+// pair. Nothing in the lock can separate those, because it stores the anchor and the
+// fingerprint but not the claim, so the report cannot even show a reader the two sentences
+// disagree. That residue is why this pairs the count of one on each side as well.
+//
+// The rest is not exotic and not cheap to reason out by hand. Prose scopes are keyed on the
+// nearest heading and several headings in the backlog state a rank, so inserting one item
+// rewords every heading below it. The heading naming BL-007's rank alone has produced this
+// shape twelve times on twenty-four anchors, and filing the item asking for this was the
+// twelfth. Two people reasoned their way out of it identically within one hour.
+export function scopeRenames(unkeyed, gone, lock, liveScopes = null) {
+  const partsOf = (k) => {
+    const p = String(k).split('|');
+    return { doc: p[0], scope: p[1], anchor: p[2], ordinal: p[3] };
+  };
+  // Never let two unresolvable anchors match. A null fingerprint means the anchor points
+  // at nothing, and two of those are equal only in the sense that neither can be checked.
+  const identityOf = (k, fp) => {
+    if (fp === null || fp === undefined) return null;
+    const { doc, anchor, ordinal } = partsOf(k);
+    return `${doc}|${anchor}|${ordinal}|${fp}`;
+  };
+
+  const byId = (items, keyOf, fpOf) => {
+    const m = new Map();
+    for (const it of items) {
+      const id = identityOf(keyOf(it), fpOf(it));
+      if (id === null) continue;
+      if (!m.has(id)) m.set(id, []);
+      m.get(id).push(it);
+    }
+    return m;
+  };
+
+  const news = byId(unkeyed, (u) => u.key, (u) => u.fp);
+  const losses = byId(gone, (k) => k, (k) => lock[k]?.fp);
+
+  const out = [];
+  for (const [id, ns] of news) {
+    const gs = losses.get(id);
+    if (!gs || ns.length !== 1 || gs.length !== 1) continue;
+    const from = partsOf(gs[0]);
+    const to = partsOf(ns[0].key);
+    // Same scope is not a rename. It cannot arise from this identity today, because an
+    // equal key would not be unkeyed, but asserting it here keeps the claim the report
+    // makes true of whatever the key format becomes.
+    if (from.scope === to.scope) continue;
+    if (liveScopes && liveScopes.has(`${from.doc}|${from.scope}`)) continue;
+    out.push({
+      from: gs[0],
+      to: ns[0],
+      fromScope: from.scope,
+      toScope: to.scope,
+    });
+  }
+  return out;
+}
+
+// The gate's verdict, separated from the run that reaches it so it can be asserted.
+//
+// It is here because of what it has to keep true. A recognised rename is printed as its
+// own kind and still counted as an addition and a loss, so a run holding nothing but a
+// rename still fails. Absorbing one would let a real loss hide behind a real rename in the
+// same run, which is the shape of every defect this gate has caught. That decision lived
+// only in the expression below until a review pointed out that the test claiming to defend
+// it asserted a pure function had not mutated its arguments, which no change to the verdict
+// could ever falsify.
+export function failing({ drifted = 0, unkeyed = 0, gone = 0, edged = 0, ref = null }) {
+  return Boolean(drifted || unkeyed || gone || (ref === null && edged));
+}
+
 // The pairing a reader has to make, printed rather than left to them to assemble. One
 // line per citation, and the line carries the claim and the cited line together because
 // reading either alone is what the step is trying to stop.
@@ -942,14 +1033,30 @@ function main() {
   // detail that makes a wrong report persuasive.
   const fileOf = (a) => String(a).split(':')[0];
   const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;
+
+  // Renames are taken out first. A scope rename and a re-aim are disjoint by definition,
+  // since one keeps the anchor and the other changes it, but leaving a renamed pair in
+  // the re-aim buckets would let it be the second entry that tips a bucket past the count
+  // of one and suppresses a genuine re-aim beside it.
+  //
+  // The live scopes are the ones the current pass collected. A heading that is genuinely
+  // renamed is absent from that set, so passing it is what lets the pairing tell a rename
+  // from a citation moved between two sections that both still exist.
+  const liveScopes = new Set(found.map((f) => f.key.split('|').slice(0, 2).join('|')));
+  const renamed = scopeRenames(unkeyed, gone, lock, liveScopes);
+  const renamedNew = new Set(renamed.map((r) => r.to.key));
+  const renamedGone = new Set(renamed.map((r) => r.from));
+
   const newBy = new Map();
   for (const u of unkeyed) {
+    if (renamedNew.has(u.key)) continue;
     const b = bucketOf(u.key, fileOf(u.anchor));
     if (!newBy.has(b)) newBy.set(b, []);
     newBy.get(b).push(u);
   }
   const goneBy = new Map();
   for (const k of gone) {
+    if (renamedGone.has(k)) continue;
     const b = bucketOf(k, fileOf(lock[k].anchor));
     if (!goneBy.has(b)) goneBy.set(b, []);
     goneBy.get(b).push(k);
@@ -966,10 +1073,29 @@ function main() {
   }
 
   console.log(`${unchanged} unchanged, ${drifted.length} drifted, ${unkeyed.length} new, ${gone.length} removed`);
+  if (renamed.length) {
+    const each = renamed.length === 1 ? 'pairs' : 'pair';
+    console.log(
+      `of which ${renamed.length} ${each} as scope renames, identical anchor and content under a new heading`,
+    );
+  }
   if (reaimed.length) {
     console.log(`of which ${reaimed.length} pair as re-aimed anchors, one addition against one loss`);
   }
   console.log(`coverage: ${cov}\n`);
+
+  // Printed as its own kind, and still counted as an addition and a loss so the gate
+  // exits 1. A rename absorbed silently would let a real loss hide behind a real rename
+  // in the same run, which is the shape of every defect this gate has caught. This spares
+  // the reader the reasoning without sparing them the reading.
+  for (const r of renamed) {
+    console.log(`RENAME ${r.to.anchor}`);
+    console.log(`  claim   : ${r.to.claim}`);
+    console.log(`  scope   : ${r.fromScope}  ->  ${r.toScope}`);
+    console.log(`  line    : ${r.to.head ?? `(${r.to.why})`}`);
+    console.log('  the anchor and its content are unchanged, so this is a rename and not a loss');
+    console.log('');
+  }
 
   for (const r of reaimed) {
     console.log(`RE-AIM ${r.to.key}`);
@@ -993,7 +1119,7 @@ function main() {
   // that gave only the line asked the reader to go back to the document to find out what
   // it was supposed to say, and that is the step that gets skipped.
   for (const u of unkeyed) {
-    if (pairedNew.has(u.key)) continue;
+    if (pairedNew.has(u.key) || renamedNew.has(u.key)) continue;
     console.log(`NEW    ${u.key}  ${u.anchor}`);
     console.log(`  claim   : ${u.claim}`);
     console.log(`  now says: ${u.head ?? `(${u.why})`}`);
@@ -1001,7 +1127,7 @@ function main() {
   }
 
   for (const [doc, all] of goneByDoc) {
-    const keys = all.filter((k) => !pairedGone.has(k));
+    const keys = all.filter((k) => !pairedGone.has(k) && !renamedGone.has(k));
     if (!keys.length) continue;
     const absent = corpus.has(doc) ? '' : ', and the document itself is absent from the corpus';
     console.log(`GONE   ${doc}: ${keys.length} blessed anchor(s) no longer collected${absent}`);
@@ -1049,8 +1175,13 @@ function main() {
 
   reportNearMisses(exempted);
 
-  process.exitCode = drifted.length || unkeyed.length || gone.length
-    || (ref === null && edged.length) ? 1 : 0;
+  process.exitCode = failing({
+    drifted: drifted.length,
+    unkeyed: unkeyed.length,
+    gone: gone.length,
+    edged: edged.length,
+    ref,
+  }) ? 1 : 0;
 }
 
 // Run only as a script. Importing it has to be side-effect free, because the pairing

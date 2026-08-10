@@ -13,7 +13,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { PROSE, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, firstTime, pairingLines, pairings, relativeCitations, relativeVerdict } from '../scripts/check-anchors.mjs';
+import { PROSE, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, failing, firstTime, pairingLines, pairings, relativeCitations, relativeVerdict, scopeRenames } from '../scripts/check-anchors.mjs';
 
 const JS = commentSyntax('a.mjs');
 
@@ -611,4 +611,126 @@ test('a hash in JavaScript is not a comment, and an asterisk in JSON is not one 
   assert.equal(relativeCitations(field, js).length, 0);
   assert.equal(commentSyntax('src/data/catalog.json').open, null);
   assert.equal(relativeCitations(`  "note": "*star at ${rel(12)}"`, commentSyntax('src/data/catalog.json')).length, 0);
+});
+
+// The rename these tests are built on is not invented either. Filing BL-080 pushed BL-007
+// down one rank, the heading naming that rank was reworded, and two citations of the view
+// module moved scope from `...ranks-forty-fif` to `...ranks-forty-six` with their anchors
+// and their content untouched. The gate reported two losses and two additions, and two
+// people in two sessions each reasoned out by hand that neither was real.
+const RENAMED_FROM = 'PRODUCT_BACKLOG.md|bl-007-ranks-forty-fif|src/js/main.js:116|0';
+const RENAMED_TO = {
+  key: 'PRODUCT_BACKLOG.md|bl-007-ranks-forty-six|src/js/main.js:116|0',
+  anchor: 'src/js/main.js:116',
+  claim: 'the refusal is withdrawn on the falling edge at',
+  fp: '7d21a4c9e0b83f16',
+  head: '    if (wasBlocked && !store.blocked) {',
+  tail: null,
+};
+const RENAME_LOCK = {
+  [RENAMED_FROM]: { anchor: 'src/js/main.js:116', fp: '7d21a4c9e0b83f16', head: '    if (wasBlocked && !store.blocked) {' },
+};
+
+test('an addition and a loss differing only in scope pair as one rename', () => {
+  const pairs = scopeRenames([RENAMED_TO], [RENAMED_FROM], RENAME_LOCK);
+
+  assert.equal(pairs.length, 1);
+  assert.equal(pairs[0].from, RENAMED_FROM);
+  assert.equal(pairs[0].to.key, RENAMED_TO.key);
+  assert.equal(pairs[0].fromScope, 'bl-007-ranks-forty-fif');
+  assert.equal(pairs[0].toScope, 'bl-007-ranks-forty-six');
+});
+
+// The pair is reported and not absorbed. A run whose only finding is a recognised rename
+// still fails, so a genuine loss cannot hide behind a real rename in the same run. An
+// earlier version of this asserted that `scopeRenames` had not mutated the arrays passed
+// to it, which is true of any pure function and could not have failed if the verdict
+// itself changed. A review pointed that out. This one reads the verdict.
+test('a run whose only finding is a rename still fails', () => {
+  const pairs = scopeRenames([RENAMED_TO], [RENAMED_FROM], RENAME_LOCK);
+
+  assert.equal(pairs.length, 1);
+  assert.equal(failing({ drifted: 0, unkeyed: 1, gone: 1 }), true);
+  assert.equal(failing({ drifted: 0, unkeyed: 0, gone: 0 }), false);
+});
+
+// The counts the verdict reads are the raw ones, so subtracting a recognised rename from
+// either of them is what this is here to forbid.
+test('discounting a recognised rename from either count would pass a failing run', () => {
+  assert.equal(failing({ unkeyed: 1 - 1, gone: 1 - 1 }), false);
+  assert.equal(failing({ unkeyed: 1, gone: 1 }), true);
+});
+
+// A blank edge is only fatal when the run is not comparing against a named ref, since a
+// historical tree cannot be edited to fix one.
+test('a blank edge fails a working run and not a historical one', () => {
+  assert.equal(failing({ edged: 1, ref: null }), true);
+  assert.equal(failing({ edged: 1, ref: 'origin/main' }), false);
+});
+
+// The identity alone cannot tell these apart, and that is the point. The ordinal counts
+// within one scope, so two citations of one anchor under two headings both carry ordinal
+// 0 and both fingerprint the same lines. Without the falsifier a citation genuinely
+// deleted from a section that still exists is explained away by an unrelated new citation
+// of the same lines elsewhere in the document.
+test('a loss from a section that still exists is not a rename', () => {
+  const elsewhere = { ...RENAMED_TO, key: 'PRODUCT_BACKLOG.md|the-backlog#BL-082|src/js/main.js:116|0' };
+  const live = new Set(['PRODUCT_BACKLOG.md|bl-007-ranks-forty-fif']);
+
+  assert.equal(scopeRenames([elsewhere], [RENAMED_FROM], RENAME_LOCK).length, 1);
+  assert.deepEqual(scopeRenames([elsewhere], [RENAMED_FROM], RENAME_LOCK, live), []);
+});
+
+// A heading that was genuinely renamed leaves nothing behind, so the falsifier has to let
+// that case through while rejecting the one above.
+test('a loss from a section that no longer exists is still a rename', () => {
+  const live = new Set(['PRODUCT_BACKLOG.md|bl-007-ranks-forty-six', 'PRODUCT_BACKLOG.md|item-details']);
+
+  assert.equal(scopeRenames([RENAMED_TO], [RENAMED_FROM], RENAME_LOCK, live).length, 1);
+});
+
+// The falsifier is scoped per document. Another document keeping a section of the same
+// name says nothing about this one, and treating the scope name as global would refuse
+// every rename of a heading whose slug happens to be shared.
+test('a section of the same name in another document does not block the pairing', () => {
+  const live = new Set(['docs/UX_STUDY.md|bl-007-ranks-forty-fif']);
+
+  assert.equal(scopeRenames([RENAMED_TO], [RENAMED_FROM], RENAME_LOCK, live).length, 1);
+});
+
+// The fingerprint is what makes the pairing a statement of fact rather than a guess. Same
+// heading rename, same anchor, but the lines behind it now say something else: that is a
+// citation whose claim has to be read again, and calling it a rename would say it need
+// not be.
+test('a scope rename over content that changed is not a rename', () => {
+  const moved = { ...RENAMED_TO, fp: 'ffffffffffffffff' };
+
+  assert.deepEqual(scopeRenames([moved], [RENAMED_FROM], RENAME_LOCK), []);
+});
+
+// Two anchors that resolve to nothing are not equal, they are both unreadable. Matching
+// them would pair citations whose content nobody can compare, which is the one case the
+// fingerprint test exists to exclude.
+test('two unresolvable anchors do not pair with each other', () => {
+  const missing = { ...RENAMED_TO, fp: null, head: null, why: 'file not found' };
+  const lock = { [RENAMED_FROM]: { anchor: 'src/js/main.js:116', fp: null, head: null } };
+
+  assert.deepEqual(scopeRenames([missing], [RENAMED_FROM], lock), []);
+});
+
+// The count of one on each side is kept from the re-aim pairing, and for the same reason.
+// Where two candidates match one identity there is no fact saying which loss explains
+// which addition, so the report says nothing rather than picking.
+test('two candidates on one side refuse to pair rather than guess', () => {
+  const second = { ...RENAMED_TO, key: 'PRODUCT_BACKLOG.md|bl-007-ranks-forty-sev|src/js/main.js:116|0' };
+
+  assert.deepEqual(scopeRenames([RENAMED_TO, second], [RENAMED_FROM], RENAME_LOCK), []);
+});
+
+// The document is held rather than dropped, or a citation genuinely lost from one document
+// would be explained away by an unrelated new citation of the same lines in another.
+test('a loss in one document is not explained by an addition in another', () => {
+  const elsewhere = { ...RENAMED_TO, key: 'docs/ARCHITECTURE.md|the-write-path|src/js/main.js:116|0' };
+
+  assert.deepEqual(scopeRenames([elsewhere], [RENAMED_FROM], RENAME_LOCK), []);
 });
