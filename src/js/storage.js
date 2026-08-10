@@ -199,6 +199,80 @@ export class Store {
     return ok;
   }
 
+  // What is being kept aside on the reader's behalf, newest first.
+  //
+  // Returns null rather than [] when storage cannot be enumerated, because "there is nothing" and
+  // "this browser will not say" are different answers and only one of them means the reader is
+  // carrying nothing. Collapsing them would put an empty list in front of someone whose copies are
+  // all still there. Reads only; a screen that reports on the near-quota budget must not spend it.
+  //
+  // The copy in the undated slot carries no date because freeArchiveKey() gives the first free
+  // slot the bare name, and only the copies that find it occupied are stamped. That is a property
+  // of the naming rather than of the copy, so it is reported as absent rather than guessed at.
+  salvageCopies() {
+    const out = [];
+    try {
+      const total = this.storage?.length ?? 0;
+      for (let i = 0; i < total; i += 1) {
+        const key = this.storage.key(i);
+        if (!key?.startsWith(SALVAGE_KEY)) continue;
+        const raw = this.storage.getItem(key);
+        if (raw === null) continue;
+        const stamp = /^\.(\d+)(?:\.\d+)?$/.exec(key.slice(SALVAGE_KEY.length));
+        out.push({
+          key,
+          chars: raw.length,
+          at: stamp ? Number(stamp[1]) : null,
+          live: this.blocked && key === this.salvageKey,
+        });
+      }
+    } catch {
+      return null;
+    }
+    // Undated last rather than first: it is the only one whose position cannot be argued for, and
+    // putting an unknown at the top would claim it is the newest.
+    return out.sort((a, b) => (b.at ?? -Infinity) - (a.at ?? -Infinity));
+  }
+
+  // Reads back one named copy, for the reader who wants the file rather than the row. Guarded the
+  // same way forgetSalvage() is, and for the same reason: the key comes from the screen, and
+  // without the family check this hands back mrt.state.v2 to anything that asks for it.
+  salvageRawAt(key) {
+    if (typeof key !== 'string' || !key.startsWith(SALVAGE_KEY)) return null;
+    try {
+      return this.storage?.getItem(key) ?? null;
+    } catch {
+      return null;
+    }
+  }
+
+  // Removes one copy, at the reader's explicit request. Nothing else in this module removes one:
+  // not startFresh(), not restore(), not a later incident. A rule for when a copy stops being
+  // worth keeping would have to know whether the reader still wants data this app could not read,
+  // and it cannot, so the only rule is that they say so.
+  //
+  // The key arrives from the UI rather than from this module, so the family check is a guard on
+  // untrusted input and not a tidiness test: without it this method removes mrt.state.v2 or the
+  // pre-restore snapshot for any caller that asks. The copy of the incident that is blocking
+  // saving right now is refused, because the banner is at that moment telling the reader to
+  // download it or start fresh and both need it to be there. That is a backstop; the screen
+  // withdraws the offer instead of presenting one that will be refused.
+  forgetSalvage(key) {
+    if (typeof key !== 'string' || !key.startsWith(SALVAGE_KEY)) return false;
+    if (this.blocked && key === this.salvageKey) return false;
+    try {
+      this.storage.removeItem(key);
+      // Read back for the same reason the write is: removeItem can be a no-op behind a storage
+      // that reports success it did not have, and telling the reader a copy is gone when it is
+      // not is the one error this screen must not make in that direction.
+      if (this.storage.getItem(key) !== null) return false;
+    } catch {
+      return false;
+    }
+    if (key === this.salvageKey) this.salvageKey = null;
+    return true;
+  }
+
   // Applies a pure transformation. If persistence fails, the in-memory state is rolled back
   // so the UI never displays progress that was not actually saved. lastUpdateOk lets callers
   // gate their success messages and navigation on the write actually having happened.

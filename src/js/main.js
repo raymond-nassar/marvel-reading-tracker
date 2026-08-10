@@ -826,6 +826,10 @@ function showView(next, { focus = true, push = false } = {}) {
   renderRail();
   if (next === 'catalog') renderCatalog();
   if (next === 'home') renderHome();
+  // Here rather than in renderAll, because what this list reports is not part of the state every
+  // render repaints: it changes when a read fails at boot, when the reader removes a copy, and in
+  // another tab. Rebuilding it on arrival covers all three and leaves renderAll's fan-out alone.
+  if (next === 'data') renderSalvage();
   window.scrollTo({ top: 0 });
   // After the scroll to the top, so that bringing a message into view is not undone. Which pane
   // each outstanding notice belongs in has just changed, because a different view is showing.
@@ -3072,6 +3076,122 @@ function wireData() {
   });
 }
 
+// Measured in Edge rather than assumed, and the first attempt at this comment got it wrong. The
+// largest value a cleared page accepted under a one-character key was 5,242,879 characters, which
+// with the key is 5,242,880, and that is 10 MiB at two bytes per character rather than the 5 MiB
+// first written here. Two runs filling the same room with 'x' and with an accented character were
+// accepted to the identical character, so the cost is per character and does not depend on the
+// content. So a copy occupies twice its length, and reporting the length alone would have
+// understated every figure by half on the one screen whose subject is running out of room.
+const salvageKb = (chars) => Math.max(1, Math.round((chars * 2) / 1024));
+
+const salvageWhen = (at) => (at
+  ? new Date(at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
+  : null);
+
+// The reader's view of what is being kept on their behalf. Read from storage on every call rather
+// than from anything held in memory, because another tab can have taken a copy or removed one
+// since this tab booted, and a stale list here offers a Remove for a copy that is already gone.
+function renderSalvage() {
+  const box = $('#salvage-list');
+  if (!box) return;
+  const copies = store.salvageCopies();
+
+  // Three answers, not two. A browser that will not enumerate its own storage has not told us
+  // there is nothing; it has declined to say, and a reader whose copies are all still there must
+  // not be shown an empty list. The download in the recovery banner is unaffected either way,
+  // because it reads one known key rather than walking them.
+  if (copies === null) {
+    box.replaceChildren(el('p', {
+      class: 'rail-hint',
+      text: 'This browser will not let the app list what it has stored, so any copies it is holding '
+        + 'cannot be shown here. Nothing has been removed.',
+    }));
+    return;
+  }
+  if (copies.length === 0) {
+    box.replaceChildren(el('p', { class: 'rail-hint', text: 'Nothing is being kept aside. Your saved data has always been readable.' }));
+    return;
+  }
+
+  const total = copies.reduce((n, c) => n + c.chars, 0);
+  box.replaceChildren(
+    el('p', {
+      class: 'rail-hint',
+      text: `${copies.length} ${copies.length === 1 ? 'copy is' : 'copies are'} being kept, `
+        + `taking about ${salvageKb(total)} KB.`,
+    }),
+    el('ul', { class: 'rows' }, copies.map((c) => {
+      const when = salvageWhen(c.at);
+      return el('li', { class: 'salvage-row' }, [
+        el('div', { class: 'salvage-what' }, [
+          el('span', { class: 'salvage-when', text: when ? `Copy taken on ${when}` : 'Copy with no date recorded' }),
+          el('span', { class: 'salvage-size', text: `about ${salvageKb(c.chars)} KB` }),
+        ]),
+        el('div', { class: 'field-row' }, [
+          el('button', {
+            type: 'button',
+            class: 'quiet',
+            dataset: { act: 'download', key: c.key },
+            'aria-label': `Download the ${when ? `copy taken on ${when}` : 'copy with no date recorded'}`,
+            text: 'Download',
+          }),
+          // The offer is withdrawn rather than refused: while this copy is the one the recovery
+          // banner is telling the reader to download or start fresh from, removing it is the one
+          // thing that would leave them with nothing, and a button that explains itself only
+          // after the click has already asked them to try.
+          c.live
+            ? el('span', { class: 'rail-hint', text: 'Kept until the warning above is resolved' })
+            : el('button', {
+              type: 'button',
+              class: 'quiet quiet-danger',
+              dataset: { act: 'forget', key: c.key },
+              'aria-label': `Remove the ${when ? `copy taken on ${when}` : 'copy with no date recorded'}`,
+              text: 'Remove',
+            }),
+        ]),
+      ]);
+    })),
+  );
+}
+
+function wireSalvage() {
+  // One listener on the container, because the rows are rebuilt after every removal and listeners
+  // bound to the buttons would go with them.
+  $('#salvage-list').addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-act]');
+    if (!btn) return;
+    const { act, key } = btn.dataset;
+    const copy = store.salvageCopies()?.find((c) => c.key === key);
+    if (!copy) {
+      renderSalvage();
+      return notify('#salvage-report', 'That copy is no longer there. The list has been refreshed.', 'warn');
+    }
+    const when = salvageWhen(copy.at);
+    const named = when ? `taken on ${when}` : 'with no date recorded';
+
+    if (act === 'download') {
+      const raw = store.salvageRawAt(key);
+      if (!raw) return notify('#salvage-report', 'That copy could not be read back, so nothing was downloaded.', 'warn');
+      download(`marvel-reading-tracker-unreadable-${when ? new Date(copy.at).toISOString().slice(0, 10) : 'undated'}.json`, raw, 'application/json');
+      return notify('#salvage-report', `Downloaded the copy ${named}. It is still being kept here as well.`, 'ok');
+    }
+
+    const yes = await askConfirm({
+      title: 'Remove this copy?',
+      body: `This deletes the copy ${named}. It is a copy of saved data this app could not read, so `
+        + 'there is nothing else to recover it from. Download it first if you are not sure.',
+      confirmLabel: 'Remove copy',
+    });
+    if (!yes) return;
+    const gone = store.forgetSalvage(key);
+    renderSalvage();
+    notify('#salvage-report', gone
+      ? `Removed the copy ${named}, freeing about ${salvageKb(copy.chars)} KB.`
+      : 'That copy could not be removed, so it is still being kept.', gone ? 'ok' : 'warn');
+  });
+}
+
 async function refreshCacheUsage() {
   try {
     const u = await cache.usage();
@@ -3180,6 +3300,7 @@ export function boot() {
   wireReading();
   wireAdd();
   wireData();
+  wireSalvage();
   wireShortcuts();
   wireBlockedBanner();
   wireCatalogSearch();

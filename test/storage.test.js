@@ -413,6 +413,131 @@ test('a second copy taken in the same millisecond does not overwrite the first',
     'and the first incident is still in the main slot');
 });
 
+// ------------------------------------------------- what is kept, and how it stops being kept
+
+// The reader can see what is held on their behalf. Everything before this item kept copies for
+// ever and showed them nothing, so the first they would learn of the accumulation was a write
+// failing. The list is read from storage on every call rather than cached, because another tab
+// can have added or removed one since this one booted.
+test('the copies being kept are listed newest first, with the undated one last', () => {
+  const storage = fakeStorage({
+    'mrt.state.salvage': 'first-incident',
+    // A device whose clock never started reports the epoch, and it is the one stamp that separates
+    // "no date recorded" from a date: null coerces to 0 in arithmetic, so every other value orders
+    // an undated copy correctly by accident rather than by the sentinel that is written to do it.
+    'mrt.state.salvage.0': 'dead-clock-incident',
+    'mrt.state.salvage.2000': 'second-incident',
+    'mrt.state.salvage.9000': 'third-incident',
+    [KEY]: 'live',
+    'mrt.state.prerestore': 'not-a-salvage-copy',
+  });
+  const copies = new Store({ storage }).salvageCopies();
+
+  assert.deepEqual(copies.map((c) => c.key), [
+    'mrt.state.salvage.9000',
+    'mrt.state.salvage.2000',
+    'mrt.state.salvage.0',
+    'mrt.state.salvage',
+  ], 'the pre-restore snapshot and the live key are not copies, and the undated one cannot claim to be newer than the epoch');
+  assert.deepEqual(copies.map((c) => c.at), [9000, 2000, 0, null]);
+  assert.equal(copies[0].chars, 'third-incident'.length);
+});
+
+// A collision suffix is still that copy's timestamp. Reporting the whole suffix as the date would
+// have produced a date in the far future for the one case freeArchiveKey exists to handle.
+test('a copy whose name carries a collision suffix still reports its own date', () => {
+  const storage = fakeStorage({ 'mrt.state.salvage.1700000000000.3': 'collided' });
+  assert.equal(new Store({ storage }).salvageCopies()[0].at, 1700000000000);
+});
+
+// Three answers, not two. "This browser will not say" is not "there is nothing", and a reader
+// whose copies are all still on disk must never be shown an empty list.
+test('a storage that cannot be enumerated is distinguished from one holding nothing', () => {
+  const empty = fakeStorage();
+  assert.deepEqual(new Store({ storage: empty }).salvageCopies(), [], 'nothing kept');
+
+  const opaque = fakeStorage({ 'mrt.state.salvage': 'held' });
+  Object.defineProperty(opaque, 'length', { get() { throw new Error('denied'); } });
+  assert.equal(new Store({ storage: opaque }).salvageCopies(), null, 'declined to say, which is not the same answer');
+});
+
+// Listing what is kept must not spend the budget it is reporting on. This is the one screen whose
+// subject is running out of room, so a write here would be the defect it exists to describe.
+test('listing the copies writes nothing', () => {
+  const storage = fakeStorage({ 'mrt.state.salvage': 'held', 'mrt.state.salvage.4000': 'also-held' });
+  const store = new Store({ storage });
+  storage.writes.length = 0;
+  store.salvageCopies();
+  store.salvageRawAt('mrt.state.salvage');
+  assert.deepEqual(storage.writes, []);
+});
+
+// The key arrives from the screen rather than from inside the module, so both readers of it guard
+// the family. Without the guard these two methods hand back and delete the live state.
+test('a key outside the salvage family is neither read back nor removed', () => {
+  const storage = fakeStorage({ [KEY]: 'live', 'mrt.state.prerestore': 'snapshot' });
+  const store = new Store({ storage });
+
+  assert.equal(store.salvageRawAt(KEY), null);
+  assert.equal(store.salvageRawAt('mrt.state.prerestore'), null);
+  assert.equal(store.forgetSalvage(KEY), false);
+  assert.equal(store.forgetSalvage('mrt.state.prerestore'), false);
+  assert.equal(store.forgetSalvage(null), false);
+  assert.equal(storage.getItem(KEY), 'live', 'the live state is untouched');
+  assert.equal(storage.getItem('mrt.state.prerestore'), 'snapshot', 'so is the undo snapshot');
+});
+
+test('a copy the reader asks to remove is removed, and the rest are left alone', () => {
+  const storage = fakeStorage({ 'mrt.state.salvage': 'keep-me', 'mrt.state.salvage.5000': 'remove-me' });
+  const store = new Store({ storage });
+
+  assert.equal(store.forgetSalvage('mrt.state.salvage.5000'), true);
+  assert.equal(storage.getItem('mrt.state.salvage.5000'), null);
+  assert.equal(storage.getItem('mrt.state.salvage'), 'keep-me');
+});
+
+// The copy of the incident that is blocking saving right now is the one the banner is telling the
+// reader to download or start fresh from. Removing it is the only action on this screen that could
+// leave them with nothing, so it is refused here as a backstop and not offered on screen at all.
+test('the copy of the incident still blocking saving is refused', () => {
+  const storage = fakeStorage({ [KEY]: 'unreadable' });
+  const store = new Store({ storage });
+  store.load();
+
+  assert.equal(store.blocked, true);
+  const live = store.salvageKey;
+  assert.equal(store.salvageCopies().find((c) => c.key === live).live, true, 'and the screen is told which one it is');
+  assert.equal(store.forgetSalvage(live), false);
+  assert.equal(storage.getItem(live), 'unreadable', 'the reader is not left with nothing');
+});
+
+// Once the block is resolved that same copy is the reader's to remove. Refusing it for ever would
+// have made the only copy the item is about the one copy that can never be cleared.
+test('the same copy can be removed once the block is resolved', () => {
+  const storage = fakeStorage({ [KEY]: 'unreadable' });
+  const store = new Store({ storage });
+  store.load();
+  const live = store.salvageKey;
+  assert.equal(store.startFresh(), true);
+
+  assert.equal(store.blocked, false);
+  assert.equal(store.forgetSalvage(live), true);
+  assert.equal(storage.getItem(live), null);
+  assert.equal(store.salvageKey, null, 'and the store stops naming a copy that is gone');
+});
+
+// removeItem can be a no-op behind a storage that reports a success it did not have. Telling the
+// reader a copy is gone when it is still there is the one error this screen must not make.
+test('a removal that did not take is reported as a failure', () => {
+  const storage = fakeStorage({ 'mrt.state.salvage': 'stubborn' });
+  storage.removeItem = () => {};
+  assert.equal(new Store({ storage }).forgetSalvage('mrt.state.salvage'), false);
+
+  const throwing = fakeStorage({ 'mrt.state.salvage': 'stubborn' });
+  throwing.removeItem = () => { throw new Error('denied'); };
+  assert.equal(new Store({ storage: throwing }).forgetSalvage('mrt.state.salvage'), false);
+});
+
 test('update reports whether the change was actually saved', () => {
   const storage = fakeStorage({ [KEY]: goodBackup() });
   const store = new Store({ storage });
