@@ -96,11 +96,12 @@ export const PAIRS = [
   ['--red', '--card-2', LARGE, 'the fill of a primary button on a raised card'],
   // Found by the same review, one token over, and it is the reason the guard in test/theme.test.js
   // now pins `--on-accent` too. The tick inside a checked checkbox is `--on-accent` on `--green`
-  // (`src/styles.css:580` and `:582`), which is 2.30:1 in the dark theme. It is listed here and
-  // recorded below rather than fixed, because the colour decision belongs to BL-069 and this item
-  // is about measuring what nothing measured. The railed status dot is the other thing painted on
-  // `--green` and it carries no foreground at all, since `.railed .pill` sets `color: transparent`
-  // at `src/styles.css:342-343`, so this is the only pair `--green` backs.
+  // (`src/styles.css:580` and `src/styles.css:582`), which is 2.30:1 in the dark theme. It is
+  // listed here and recorded below rather than fixed, because the colour decision belongs to
+  // BL-069 and this item is about measuring what nothing measured. The railed status dot is the
+  // other thing painted on `--green` and it carries no foreground at all, since `.railed .pill`
+  // sets `color: transparent` at `src/styles.css:342-343`, so this is the only pair `--green`
+  // backs.
   ['--on-accent', '--green', LARGE, 'the tick inside a checked read checkbox'],
   // BL-069, out of the BL-067 review, which found `--red` painting three surfaces no pair reached.
   // Each was measured in Edge by hit testing what is actually behind the element rather than by
