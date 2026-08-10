@@ -94,7 +94,7 @@ view layer itself created and can throw away.
 
 **Two of the five are replaceable at runtime, and they are replaced together.** Saving a new API
 base builds a fresh cache and a fresh client and hands the new client to the hydrator, at
-`src/js/main.js:3027-3029`. The hydrator itself is not rebuilt; only its reference to the client is
+`src/js/main.js:3046-3048`. The hydrator itself is not rebuilt; only its reference to the client is
 swapped. The rate limiter is deliberately not rebuilt either, because the budget it tracks belongs
 to the reader's connection rather than to whichever base URL is configured. The store is never
 replaced at all.
@@ -149,14 +149,14 @@ sequenceDiagram
 The parts of that worth saying in words.
 
 **The transform is pure and the store is the only writer.** The button's handler at
-`src/js/main.js:1934-1937` hands the store a function; the function itself, at
+`src/js/main.js:1953-1956` hands the store a function; the function itself, at
 `src/js/lib/model.js:401-403`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
-`src/js/storage.js:120-138`.
+`src/js/storage.js:143-161`.
 
 **The repaint is synchronous, and it is inside the write.** By the time `update` returns, the
 change callback has already run and the screen already shows the result. That is why the
-announcement can be gated on the outcome: `src/js/main.js:231-233` speaks only if the write
+announcement can be gated on the outcome: `src/js/main.js:250-252` speaks only if the write
 actually stuck, so a screen reader never hears "marked read" for a row that has already reverted.
 
 **A failed write repaints too.** The rollback path calls the same callback with the previous state,
@@ -164,21 +164,21 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3120-3140`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3139-3159`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
-by identity afterwards, at `src/js/main.js:1833`, which is what keeps the keyboard where the reader
+by identity afterwards, at `src/js/main.js:1852`, which is what keeps the keyboard where the reader
 left it. The row list is committed by moving nodes rather than replacing the container, at
-`src/js/main.js:1807-1815`.
+`src/js/main.js:1826-1834`.
 
 **Background work uses the same door.** Hydration writes each fetched issue through the same
 `update` call, at `src/js/hydrate.js:59`, so a metadata fill arriving while the reader is reading
 repaints through exactly the path drawn above. No ordinary change reaches the state except through
 `update`, but it is not the only thing that can set the state, and a guard added inside it would
-not cover the rest. Boot reads the state in, at `src/js/storage.js:33-52`. Restoring a backup and
+not cover the rest. Boot reads the state in, at `src/js/storage.js:37-63`. Restoring a backup and
 starting fresh each replace the whole state rather than transforming it, and both appear in the
-next section. Restoring is the one that writes the key directly, at `src/js/storage.js:167-199`,
+next section. Restoring is the one that writes the key directly, at `src/js/storage.js:189-222`,
 which also puts it past the latch a failed read sets; the comment there says that is deliberate,
 because a restore is a chosen overwrite.
 
@@ -227,13 +227,13 @@ Every name the app writes, and why it exists:
 
 | Key | Written by | Cleared by | Why it exists |
 |---|---|---|---|
-| `mrt.state.v2` | every saved change, at `src/js/storage.js:155` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
-| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:180-183` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
-| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:201-205`. It is deliberately never removed, so the undo survives a reload. |
+| `mrt.state.v2` | every saved change, at `src/js/storage.js:177` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
+| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:202-205` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
+| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:224-228`. It is deliberately never removed, so the undo survives a reload. |
 | `mrt.state.salvage` | a failed read, and only when the slot is empty or already holds the same bytes | nothing | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
-| `mrt.state.salvage.TIMESTAMP` | a failed read when the slot already holds a different incident, at `src/js/storage.js:70` | nothing | So a second corruption months later cannot clobber the copy taken for the first one. |
-| `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:412` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
-| `sidebar.collapsed` | the sidebar toggle, at `src/js/main.js:556` | nothing | Whether the rail is collapsed. Wrapped in its own try, because losing it is not worth an error. |
+| `mrt.state.salvage.TIMESTAMP` | a failed read when the slot already holds a different incident, at `src/js/storage.js:81` | nothing | So a second corruption months later cannot clobber the copy taken for the first one. |
+| `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:431` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
+| `sidebar.collapsed` | the sidebar toggle, at `src/js/main.js:575` | nothing | Whether the rail is collapsed. Wrapped in its own try, because losing it is not worth an error. |
 
 Seven names in all: six fixed, and one family whose suffix is the moment it was written. Two of the
 seven belong to the view layer rather than to the store, which is why an enumeration taken from the
@@ -265,7 +265,7 @@ write, so reloading the page while still blocked writes another dated copy of th
 boots leave three identical copies, measured with a fake storage against the shipped module.
 
 It costs nothing on a first incident. There is a test for a second, unrelated incident, at
-`test/storage.test.js:139-165`, so the dated key itself is covered; what no test does is load twice
+`test/storage.test.js:140-166`, so the dated key itself is covered; what no test does is load twice
 inside one incident, which is why the repeat is untested rather than tolerated. It costs a copy of
 the reader's whole state per reload on a second one, in exactly the near-quota situation the
 salvage code was written to survive. It is filed as BL-076 and is not fixed here: this document
@@ -273,7 +273,7 @@ changes no code.
 
 ## What a per-view split does to these diagrams
 
-BL-042 proposes breaking the 3,201 line view file into per-view modules. A diagram drawn at the
+BL-042 proposes breaking the 3,244 line view file into per-view modules. A diagram drawn at the
 level of function names inside that file would be falsified the day it lands, so each of the three
 above was pitched to survive it. Two do. One survives in shape but has a detail that will need
 rewriting, and it is more useful to say which than to claim all three are safe.

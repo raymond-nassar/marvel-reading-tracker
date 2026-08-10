@@ -48,7 +48,7 @@ test('unreadable saved data is never overwritten by subsequent edits', () => {
   // Shape rather than wording, because the reason inside the brackets is V8's and moves
   // between releases. What the reassurance and the instructions became is held by
   // test/recovery-copy.test.js: they are the banner's copy now, not this string's.
-  assert.match(store.lastError, /^Could not read your saved data \(.+\)\.$/);
+  assert.match(store.blockedReason, /^Could not read your saved data \(.+\)\.$/);
 
   // Simulate the user carrying on regardless.
   store.update((s) => createList(s, { name: 'New list' }));
@@ -79,6 +79,7 @@ test('start fresh is the only way out, and it is deliberate', () => {
   assert.equal(store.startFresh(), true);
   assert.equal(store.blocked, false);
   assert.equal(store.lastError, null);
+  assert.equal(store.blockedReason, null, 'and the reason goes with the block');
   assert.equal(storage.getItem('mrt.state.salvage'), 'corrupt', 'the original is still recoverable');
 
   // Saving works again.
@@ -218,6 +219,105 @@ test('the change handler receives null when a write succeeds', () => {
   store.load();
   store.update((s) => createList(s, { name: 'A' }));
   assert.equal(seen.at(-1), null);
+});
+
+// ---------------------------------------------------------------- the reason saving is paused
+
+// The banner's explanation line used to be painted from lastError, which holds whatever failed
+// most recently. Every write attempted while blocked is refused, so the first thing the reader
+// did after arriving on that screen replaced the reason they were on it. Measured in Edge before
+// the fix: adding one reading order while blocked left neither the banner nor the save report
+// saying why saving was paused.
+test('the reason saving is paused survives a write refused while it is paused', () => {
+  const storage = fakeStorage({ [KEY]: JSON.stringify({ schemaVersion: 99, lists: {} }) });
+  const store = new Store({ storage });
+  store.load();
+
+  const reason = store.blockedReason;
+  assert.match(reason, /Unsupported schema version 99/, 'the read failure is the reason');
+
+  store.update((s) => createList(s, { name: 'carrying on regardless' }));
+
+  assert.match(store.lastError, /That change was not saved/, 'the refusal is news of its own');
+  assert.equal(store.blockedReason, reason, 'but it must not become the reason saving is paused');
+});
+
+// Said once. The reason reached the banner and the assertive save pane together on the first
+// render, because boot reported lastError and the banner read the same slot. Leaving lastError
+// unset at load makes the duplication impossible rather than guarded by a condition a later edit
+// could drop. The boot report has since gone too: onChange already notifies every error in the
+// step that sets it, so the line could only ever repeat what was on screen.
+test('a failed load leaves nothing for the boot notice to repeat', () => {
+  const store = new Store({ storage: fakeStorage({ [KEY]: 'corrupt' }) });
+  store.load();
+  assert.equal(store.blocked, true);
+  assert.equal(store.lastError, null, 'the reason belongs to the banner alone');
+});
+
+// The recovery failing is the case this repository has twice been bitten by. Starting fresh
+// clears the block on the way in and re-latches if the empty state cannot be written, and the
+// data is still unreadable at that point, so the reason must be exactly what it was.
+test('a start fresh that cannot write keeps the reason, because the data is still unreadable', () => {
+  const storage = fakeStorage({ [KEY]: 'corrupt-and-precious' });
+  const store = new Store({ storage });
+  store.load();
+  const reason = store.blockedReason;
+  // Asserted for what it is, not merely for staying equal to itself: comparing it to a value
+  // read before the attempt passes trivially when there is no such value at all.
+  assert.match(reason, /^Could not read your saved data \(.+\)\.$/);
+
+  storage.failWrites = true;
+  assert.equal(store.startFresh(), false, 'the write of the empty state must fail');
+  assert.equal(store.blocked, true, 'so the store stays latched');
+  assert.equal(store.blockedReason, reason, 'and the banner still has a reason to show');
+  assert.match(store.lastError, /storage is full/i, 'while the save report carries the attempt');
+  assert.equal(storage.getItem(KEY), 'corrupt-and-precious', 'the original must survive');
+});
+
+// A store can only be latched by a failed read or by that re-latch, so this pairs with the test
+// above: neither route may leave the banner up with nothing in it.
+test('a latched store always has a reason, even with no read failure to keep', () => {
+  const storage = fakeStorage();
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.blocked, false, 'an empty storage is a first run');
+
+  storage.failWrites = true;
+  assert.equal(store.startFresh(), false);
+  assert.equal(store.blocked, true);
+  assert.match(store.blockedReason, /storage is full/i, 'the write that latched it is the reason');
+});
+
+// The fourth task of BL-075: clearing the reason must take the banner with it. The store half of
+// that is the value; renderBlocked hides the banner in the same paint, which is verified in the
+// browser because there is no DOM here.
+test('resolving the block clears the reason, by either route out', () => {
+  const viaFresh = new Store({ storage: fakeStorage({ [KEY]: 'corrupt' }) });
+  viaFresh.load();
+  assert.ok(viaFresh.blockedReason, 'the fixture must actually reach the blocked state');
+  assert.equal(viaFresh.startFresh(), true);
+  assert.equal(viaFresh.blockedReason, null);
+
+  const viaRestore = new Store({ storage: fakeStorage({ [KEY]: 'corrupt' }) });
+  viaRestore.load();
+  assert.ok(viaRestore.blockedReason);
+  assert.equal(viaRestore.restore(goodBackup()).ok, true);
+  assert.equal(viaRestore.blockedReason, null);
+});
+
+// The remaining way out is a read that simply works. Nothing in the app re-reads today, so this
+// pairing would hold on call-site discipline alone, and discipline is the thing a later caller
+// has no way of knowing it is relying on.
+test('a read that works clears a reason the previous read left behind', () => {
+  const storage = fakeStorage({ [KEY]: 'corrupt' });
+  const store = new Store({ storage });
+  store.load();
+  assert.ok(store.blockedReason, 'the fixture must actually reach the blocked state');
+
+  storage.setItem(KEY, goodBackup());
+  store.load();
+  assert.equal(store.blocked, false, 'the data reads now');
+  assert.equal(store.blockedReason, null, 'so no reason may outlive the block it explained');
 });
 
 // ---------------------------------------------------------------- restore

@@ -221,12 +221,33 @@ wrong content inside the right file. Expect it whenever two branches are rebased
 and re-verify every citation in every document you touched against the final tree rather than
 trusting a pass made before the rebase.
 
-Derive each new target by searching the file for the head text the lock already holds, never by
-adding an offset to the old number. That does not replace the arithmetic above, which is how a re-aim
-is checked once you have one; it is how to get one, and it is the half that survives an edit somebody
-else made. Two things to know if you script it: the lock stores the head trimmed and truncated to
-about a hundred characters, so the comparison has to be a trimmed prefix rather than an equality, and
-the report truncates its list of losses, so the count printed there is not the count to work from.
+Derive each new target twice, once by searching the file for the head text the lock already holds and
+once from the diff's own hunks, because each method is unsound exactly where the other holds. An
+earlier version of this paragraph said to use the search and never the arithmetic. That was wrong, and
+the session that had recommended it to me was the one that measured it wrong. Searching for the head
+survives an edit somebody else made after your pass, which an offset does not. It is also unsound on
+any head that is not unique in its file, and heads repeat far more than you would guess: the line
+`if (!store.lastUpdateOk) {` occurs seven times in the view module today. A nearest-hit tie-break
+picked the wrong copy of it and put a citation eight lines above the passage its sentence described.
+Nothing caught that, because a first-time citation has no earlier fingerprint to drift from. Deriving
+every shift from the hunks instead found exactly that one mismatch out of a hundred and ten moved
+citations, and nothing else. So run both and reconcile them. Where they disagree, one is wrong, and a
+head that is repeated in its file is the first thing to check.
+
+Three things to know if you script either half. The lock stores the head trimmed and truncated to
+about a hundred characters, so the comparison has to be a trimmed prefix rather than an equality. The
+report truncates its list of losses, so the count printed there is not the count to work from. And an
+arithmetic pass has to be driven from your re-aim mapping or from the claim, never from the lock key:
+joining the two locks on the key only compares citations whose anchor is unchanged, which is precisely
+the set that did not move, so it prunes itself to nothing while reporting a clean pass. One did that
+over 222 citations without ever examining a citation that had moved.
+
+An applied re-aim is not idempotent. Run the mapping a second time and it re-applies to citations that
+already hold their new value, and where one citation's new anchor is another claim's old anchor, the
+second pass carries it on again and collapses two claims onto one line. The bless print reads
+perfectly well either way, so the print will not save you. Compute the mapping once, apply it once,
+and if you have to run again, recompute it against the tree you actually have rather than replaying
+the one you had.
 
 ## Claims the gates do not check
 
@@ -255,6 +276,17 @@ A check that has never been seen to fail is not evidence. One written here passe
 tree because a size-based storage fault fired on the wrong write, since the deleted list's issue
 metadata survives the delete and made the first write the large one. It looked green and proved
 nothing. Counting the calls instead of their size fixed it.
+
+Use the stash rather than `git checkout HEAD -- <file>` to undo the broken tree. The checkout form
+discards the index as well as the working copy, so any fix you had staged but not committed goes with
+it and there is no reflog entry to recover it from. That happened here mid-review and destroyed two
+finished fixes, which then had to be reconstructed from the review notes.
+
+Prefer the smallest revert that makes the check fail. Reverting whole modules tells you the suite
+notices the change; reverting one line tells you which line each test defends. One item here reverted
+both modules and got ten failures, then removed a single assignment from the success branch of `load()`
+and got exactly one, naming the test that guards it. The second measurement is the one worth writing
+down.
 
 ## Reading CI honestly
 

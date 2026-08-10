@@ -22,10 +22,24 @@ quote in a bug report.
   when two people are working on branches that have to be merged into each other, choosing one side
   of a clash silently invalidates work already done to re-point a claim at its new location: the
   pointer still looks right and still points at real text, so nothing complains. The contributor
-  guide now says so, and says to re-derive a pointer by searching for the text it was recorded
-  against rather than by counting lines. The second is a job filed for later, to have the check
+  guide now says so. The second is a job filed for later, to have the check
   recognise that a claim has simply been renamed rather than lost, which two people worked out by
   hand within two days of each other.
+
+- **The advice that pass wrote down turned out to be half wrong, and is now corrected.** Nothing
+  about the app changes and nothing you have saved is affected. It said to re-point a claim by
+  searching for the text the claim was recorded against, rather than by counting how far the lines
+  had moved. Searching is the safer method when somebody else edits the file underneath you, but it
+  fails badly when the recorded text is a line that appears more than once, which is common: one
+  line of the app's main file that a claim had been recorded against appears seven times in it. The
+  search silently picked the wrong copy and left a claim pointing eight lines away from the passage
+  it described, where nothing could detect it, because a brand new claim has no earlier record to be
+  compared with. Counting the lines found that one error among a hundred and ten moved claims and
+  found nothing else. The guide now says to do both and compare the answers. It also records that
+  re-pointing claims is not safe to run twice, because the second run moves claims that had already
+  been fixed, and that undoing a deliberately broken copy of the code with a checkout rather than a
+  stash throws away work you had staged but not yet committed, which happened here and cost two
+  finished fixes.
 
 - **The check that keeps the project's written claims honest now understands comments in every kind
   of file it reads, not just in program code.** Nothing about the app changes and nothing you have
@@ -225,6 +239,27 @@ quote in a bug report.
   they only show you what is already saved.
 
 ### Fixed
+
+- **When the app cannot read your saved data, it now keeps telling you why.** The message that
+  explains what went wrong sits at the top of the recovery screen, and it used to be replaced by
+  whatever happened next. Since saving is paused while you are on that screen, the very next thing
+  you tried to do would refuse to save, and that refusal took the explanation's place. Both the
+  banner and the notice above it lost it in the same moment, so the one thing on that screen that
+  nothing else could tell you, the actual reason your data could not be read, was gone within
+  seconds of arriving, and reloading the page was the only way to see it again.
+
+  The explanation is now kept apart from passing notices, so it stays put for as long as saving is
+  paused, and anything that fails in the meantime is reported above it rather than over it. It is
+  also shown once on the first screen instead of in two places at once. When you resolve the
+  situation, by starting fresh or by restoring a backup, the explanation and the notices about it
+  are cleared along with the banner, so nothing is left pointing at a screen that has gone. Nothing
+  you have saved is affected, and the advice about downloading a copy before starting fresh is
+  unchanged.
+
+  One more instance of the same fault was found while reviewing this, and fixed with it. If your
+  browser is too full for the app to start fresh, that refusal was announced twice in a row rather
+  than once. Screen readers interrupt for this particular notice, because a failure to save must not
+  be missed, so hearing it twice was worse than merely untidy.
 
 - **A restored backup could silently lose a reading list.** This only affected a state file or
   backup that had been hand-edited, so it is very unlikely to have happened to you, but it was

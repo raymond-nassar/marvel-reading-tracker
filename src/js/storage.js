@@ -20,6 +20,10 @@ export class Store {
     // Set when saved data exists but could not be read. While it is set the store refuses to
     // write, so the unreadable-but-recoverable data on disk is never overwritten.
     this.blocked = false;
+    // Why saving is paused, held apart from lastError because that slot carries whatever failed
+    // most recently and every write attempted while blocked is refused. Set when the read fails
+    // and cleared only when the block is genuinely resolved, so it outlives the refusals.
+    this.blockedReason = null;
     // Where this incident's copy actually landed, or null if no copy exists. Read back from
     // storage rather than assumed, because setItem can fail silently under quota pressure.
     this.salvageKey = null;
@@ -35,18 +39,25 @@ export class Store {
       const raw = this.storage?.getItem(KEY);
       this.state = raw ? migrate(JSON.parse(raw)) : createEmptyState();
       this.blocked = false;
+      // A read that works is a genuine resolution, so the reason goes with the latch rather than
+      // outliving it. Left behind, it would be preferred by the ??= in startFresh over the write
+      // error that actually re-latched the store, and the banner would name a schema fault that
+      // had already been read past while the real full-quota failure sat only in the save report.
+      this.blockedReason = null;
     } catch (err) {
       this.state = createEmptyState();
       this.blocked = true;
       this.salvage();
       // The reason and nothing else. What to do about it is the banner's own paragraph, which
       // said the same three sentences over again: measured in Edge against a schema-version
-      // failure, every one of them was on screen three times, because this string is rendered
+      // failure, every one of them was on screen three times, because this string was rendered
       // into the banner and into the assertive save pane at once and the paragraph repeats it.
-      // The paragraph is the copy that survives, because the banner repaints from lastError,
-      // so a later failure while blocked overwrites this text, and instructions carried here
-      // would go with it exactly when the recovery is going badly.
-      this.lastError = `Could not read your saved data (${err.message}).`;
+      //
+      // Its own slot rather than lastError, because the banner repaints on every render and
+      // lastError holds the newest failure. Sharing the slot meant one refused write replaced
+      // the reason saving was paused, in the banner and the save report in the same instant, so
+      // nothing on screen said why the reader was on that screen at all.
+      this.blockedReason = `Could not read your saved data (${err.message}).`;
     }
     return this.state;
   }
@@ -108,8 +119,20 @@ export class Store {
     this.blocked = false;
     this.state = createEmptyState();
     const ok = this.persist(this.state);
-    if (ok) this.lastError = null;
-    else this.blocked = true; // could not write the empty state; stay latched
+    if (ok) {
+      this.lastError = null;
+      // Saving works again, so the reason it was paused is no longer true. Cleared here rather
+      // than on the way in, because the write below can fail and leave the store latched, and
+      // the read failure would still be the reason.
+      this.blockedReason = null;
+    } else {
+      this.blocked = true; // could not write the empty state; stay latched
+      // Kept, not replaced: the data still cannot be read, which is why saving is paused, while
+      // the write that just failed is news for the save report. Falls back to that write only
+      // when there is no read failure to keep, so a latched store is never left with a banner
+      // and nothing to put in it.
+      this.blockedReason ??= this.lastError;
+    }
     this.onChange(this.state, this.lastError);
     return ok;
   }
@@ -139,12 +162,11 @@ export class Store {
 
   persist(state = this.state) {
     if (this.blocked) {
-      // The news, and not the two steps out, which the banner states already. This message
-      // reaches the banner as well as the save report, because the banner repaints from
-      // lastError, so a reader who tried to save while blocked was told to download a copy
-      // and start fresh twice over, in adjacent paragraphs. Saying the pause ends on a choice
-      // is what this one adds and the standing copy cannot: it answers what happened to the
-      // change that was just attempted.
+      // The news, and not the two steps out, which the banner states already. It goes to the
+      // save report alone now: the banner carries the reason saving is paused, which this is
+      // not, and which a refused write must no longer be able to overwrite. Saying the pause
+      // ends on a choice is what this one adds and the standing copy cannot: it answers what
+      // happened to the change that was just attempted.
       this.lastError =
         'That change was not saved. Choose what to do about the data that could not be read, '
         + 'and saving will start again.';
@@ -193,6 +215,7 @@ export class Store {
     // A successful restore is a deliberate overwrite, so it also clears the block.
     this.blocked = false;
     this.lastError = null;
+    this.blockedReason = null;
     this.state = state;
     this.onChange(state, null);
     return { ok: true, errors: [] };
