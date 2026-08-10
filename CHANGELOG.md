@@ -16,6 +16,26 @@ quote in a bug report.
 
 ### Added
 
+- **You can now see the copies the app keeps when it cannot read your saved data, and remove the
+  ones you no longer want.** When a save turns out to be unreadable, the app puts a copy of it
+  safely aside before it does anything else, so nothing is ever thrown away on your behalf. Until
+  now those copies were invisible and permanent: nothing ever removed one, not starting fresh, not
+  restoring a backup, and there was no screen that admitted they existed. Someone who had hit the
+  problem two or three times over a few years was carrying two or three whole copies of everything
+  they had, and the first they would hear about it was a save failing for lack of room.
+  **Backup & settings** now lists them, with the date each was taken and roughly how much room it
+  takes, and a button to download or remove each one. Nothing expires on its own and nothing is
+  removed without you asking, because no rule the app could apply would know whether you still want
+  data it could not read itself. The one copy it will not let you remove is the one belonging to a
+  problem that is currently stopping saves, because the message on screen is at that moment offering
+  to download it or start fresh and both need it; that copy becomes removable as soon as you have
+  dealt with the problem. That protection now holds even if you have the app open in a second tab
+  that was already running before the problem appeared, which a review found it did not: that tab had
+  no way of knowing anything had gone wrong and would have let you remove the copy. Each copy is
+  listed with the time it was taken as well as the date, so two taken on the same day can be told
+  apart. If your browser will not list what it is storing, the screen says so rather than claiming
+  you have nothing.
+
 - **The check that catches a paragraph written twice now looks at the whole document, not just the
   next few lines.** Nothing about the app changes and nothing you have saved is affected. Until now
   the check only noticed a repeated block when the copy sat immediately after the original, so a

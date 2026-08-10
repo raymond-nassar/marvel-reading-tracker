@@ -676,6 +676,17 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
    `0 1.1rem`, where the old scoped selector out-ranked that at 0,2,0. None exists, and
    the guard is deliberately not written speculatively. */
 .field-row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+/* One kept copy. Its own rule rather than `.result` because the two describe different things and
+   the wrapping differs: a copy carries a date and a size that must stay together when the actions
+   drop below them on a narrow window, which `.result`'s single flex line does not do. Colours are
+   the pair `.rail-hint` already uses on this background, so no new boundary is introduced. */
+.salvage-row {
+  display: flex; align-items: center; justify-content: space-between; gap: .8rem; flex-wrap: wrap;
+  padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 10px; background: var(--card-2);
+}
+.salvage-what { display: grid; gap: .1rem; }
+.salvage-when { font-size: .86rem; }
+.salvage-size { color: var(--muted); font-size: .78rem; }
 input[type="search"], input[type="text"], input[type="url"], textarea {
   background: var(--card-2); border: 1px solid var(--line-2); color: var(--text);
   border-radius: 9px; padding: .5rem .7rem; min-width: 0; flex: 1 1 16rem;

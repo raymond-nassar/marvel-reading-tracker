@@ -563,6 +563,18 @@
               <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
             </div>
 
+            <div class="card card-static">
+              <h2>Copies kept after a failed read</h2>
+              <p class="rail-hint">
+                If the app ever cannot read your saved data, it sets a copy of that data aside before
+                it does anything else, so nothing is lost while you decide what to do. Those copies
+                are kept until you remove them here, and they sit in the same browser storage as your
+                lists and progress.
+              </p>
+              <div id="salvage-list"></div>
+              <div id="salvage-report" class="results"></div>
+            </div>
+
             <div class="card card-static card-danger">
               <h2>Danger zone</h2>
               <button type="button" id="btn-wipe" class="quiet quiet-danger">Erase all local data</button>
