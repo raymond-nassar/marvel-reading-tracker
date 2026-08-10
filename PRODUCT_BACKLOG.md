@@ -9,12 +9,12 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Fifty-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Fifty-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
-BL-075, BL-077, BL-078, BL-079, BL-080 and BL-081.
+BL-075, BL-076, BL-077, BL-078, BL-079, BL-080 and BL-081.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Seven remain
@@ -220,13 +220,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:933 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Shipped | src/index.html:147-148 |
 | BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Shipped | src/js/storage.js:60 |
-| BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | src/js/storage.js:81 |
+| BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:90-100 |
 | BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:193 |
 | BL-077 | Bring relative citations under the anchors gate, or stop writing them | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:282-297 |
 | BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:934 |
 | BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:271 |
 | BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1035 |
 | BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:381-419 |
+| BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | src/js/storage.js:101 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:232 |
@@ -2947,7 +2948,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2650-2653`.
+`PRODUCT_BACKLOG.md:2651-2654`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4166,9 +4167,9 @@ this repository treats as no evidence, and it was rewritten to click the catalog
 
 **BL-076: Stop a reload during a second incident writing another dated salvage copy**
 
-- [ ] Write the dated copy once per incident rather than once per boot
-- [ ] Cover the reload during a second incident, which no test exercises today
-- [ ] Decide what the banner should say when a dated copy already exists
+- [x] Write the dated copy once per incident rather than once per boot
+- [x] Cover the reload during a second incident, which no test exercises today
+- [x] Decide what the banner should say when a dated copy already exists
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -4176,14 +4177,17 @@ Found by drawing the persistence paths for BL-074, which is the kind of defect a
 read does not: nothing about the code is wrong on the line, and the fault is in a decision being
 remade on a path the reader can repeat. When a load fails, the unreadable bytes are copied aside. If
 the salvage slot already holds a different incident's bytes, the copy goes under a dated name
-instead, at `src/js/storage.js:81`, so an old copy cannot be clobbered by a new one. That is right.
+instead, so an old copy cannot be clobbered by a new one. That is right.
 What is wrong is that the choice is recomputed from scratch on every boot and the date is taken at
 the moment of the write, so the second, third and fourth reload of a page that is still blocked each
 write another dated copy of the identical bytes. Measured with a fake storage against the shipped
-module: three boots during one second incident leave three dated keys holding the same string.
+module: three boots during one second incident attempt three writes. Only two keys survive there,
+because a fake storage runs all three inside one millisecond and they collide on the same dated name.
+Three distinct copies is a browser measurement, where the boots are milliseconds apart. The
+collision is not a mitigation, and is itself the clobber `freeArchiveKey()` was added to prevent.
 
 It costs nothing during a first incident. There is a test for a second, unrelated
-incident, at `test/storage.test.js:140-166`, which reaches the dated branch by salvaging one, but it
+incident, at `test/storage.test.js:147-173`, which reaches the dated branch by salvaging one, but it
 never loads twice inside that incident, so the repeat is untested rather than tolerated. It costs a
 copy of the reader's whole state per reload during a second one, in exactly the near-quota condition
 the salvage code exists to survive, and a reader whose storage is too full to hold one copy is the
@@ -4195,6 +4199,107 @@ repeat was reproduced rather than reasoned about. The third task is a real quest
 formality: once a dated copy exists, the banner's offer to download a copy points at one slot, and
 what a reader should be told when there are several is a content decision the fix should not make by
 accident.
+
+Shipped, and implementing it found the item had understated itself twice. The repeat is not only per
+reload: `startFresh()` salvages before it clears, so the button the banner points at wrote one more
+inside a single boot. In Edge, two genuine incidents plus two reloads plus one Start fresh left five
+salvage keys where two were needed. And the cost is not only space. Run against the near-quota shape
+the suite already models, where copying the whole state throws while writing a small empty state
+succeeds, the second boot cannot write its duplicate, so the store answers that no copy survived and
+the escape hatch refuses, telling the reader their unreadable data could not be set aside while the
+copy written on the previous boot is on disk untouched. The duplicates consume the quota that causes
+that refusal, so the path manufactures the condition that disables it. A reader is not stranded,
+since downloading a copy lets the hatch run, but they are pushed through a step they do not need by
+a claim that is false.
+
+One condition covers all three, which is why the size held. Whether a copy exists and whether one can
+be written now are different questions, and the code asked the second while reporting the first, at
+`src/js/storage.js:90-100`. A salvage slot already holding these exact bytes is now adopted rather
+than written again, so writes are a strict subset of what they were: every branch that wrote before
+still writes when no copy exists, and none writes that did not. Identity is byte identity and never
+the clock, which is what makes "the same incident" mean anything across a reload. Only the salvage
+family is scanned, because `restore()` overwrites the pre-restore slot and a copy found there is not
+one this store may promise is still held. The main slot is still read directly rather than through
+the scan, at `src/js/storage.js:96`, so the scan is an addition to the question and never a
+replacement for it. That distinction is load-bearing and was got wrong first: routing the whole
+question through the scan meant a storage that cannot be enumerated stopped recognising the copy in
+its own main slot, and wrote a duplicate where the shipped code wrote none, measured at 1 write
+against 0. Near quota that write fails, and a failed write there is exactly what refuses the reader
+`startFresh()`, so the optimisation had quietly reintroduced the defect it was written to remove.
+With the direct read restored, a storage that cannot be enumerated, or that throws part way through
+the scan, falls back to precisely the shipped behaviour, so the optimisation can never be the reason
+a recovery is refused.
+
+Task three, decided rather than defaulted: the banner says nothing new. The download button already
+hands back this incident's bytes and stays correct when a copy is adopted instead of written; a
+reader cannot reach older copies from the interface, so naming them raises a question the app has no
+answer to; and the standing copy was cut with measurement in BL-073 immediately before this. What
+changes is that the false refusal stops, so nobody is told a copy could not be set aside while one
+exists.
+
+Asserted, tested, and found false, which is the part worth recording. This block first said that two
+dated copies written inside the same millisecond would share a name and clobber one another, but that
+the case was unreachable in the product because two boots cannot fall inside one millisecond, so the
+hazard was recorded rather than coded around. The reasoning was sound and the premise was wrong. It
+does not need two boots. `startFresh()` salvages before it clears, so one boot already writes twice,
+and when another tab of the same origin rewrites the live key between the boot and the button the
+second write has genuinely different bytes, cannot be adopted, and takes the same name as the first.
+The copy the reader had already been promised was overwritten by the copy taken on the way out. That
+is the one thing the archive exists to prevent, so it is fixed here rather than filed: the archived
+name is now chosen by asking which name is free rather than by trusting the clock to be unique. It
+was found by pressing the claim rather than by re-reading it, which is what the contrarian wave is
+for. The accumulation across genuinely different incidents, which this still does not address, is
+BL-082.
+
+Verified: 603 tests pass, 11 of them new, and the four that reproduce a defect were watched failing
+with only `src/js/storage.js` put back to the shipped version, at 599 pass and 4 fail. Two of those
+count writes rather than keys, because boots inside one millisecond share a key and an assertion on
+the final contents passes on the broken code; a third asserts the escape hatch is not refused while
+the salvage write is failing, which is the reader-facing half of the defect and counts nothing; the
+fourth counts surviving copies, because a clobber writes twice on either tree and only the survivors
+separate them. The other seven guard the new code rather than reproducing the old defect, so
+reverting cannot exercise them; each was watched failing under a mutation that removes the one
+protection it names. Four of the seven exist only because that exercise found gaps. Removing the
+catch inside `existingCopyOf` and letting the failure escape left the suite entirely green, because
+the storage the enumeration test uses has no `length` at all and never enters the loop, so two tests
+now cover the throwing paths. Review then found a worse one: the walk had *replaced* the direct read
+of the main slot rather than adding to it, so on a storage that cannot be enumerated the copy already
+in hand went unrecognised, and the fallback wrote a duplicate where the shipped code wrote none.
+Measured at 1 write against 0, and near quota that failed write is what makes `startFresh()` refuse.
+The main slot is now asked directly first, and two tests hold it. A browser check in Edge at
+1280x900 goes 7 of 7 on this change and 5 of 7 on the shipped code, the two failures being the repeat
+write and the Start fresh write, where the shipped code leaves five copies for the two incidents that
+need two. It asserts that Edge's storage can be enumerated rather than assuming it, since the fix
+rests on that. The check has to drive two separate incidents to be worth running: during a single one
+the shipped code already adopts the copy it is holding, so a one-incident version scores 6 of 6 on
+both trees and is evidence of nothing.
+
+**BL-082: Give the salvage copies a life beyond the incident that wrote them**
+
+- [ ] Decide when, if ever, a salvage copy stops being worth keeping
+- [ ] Give the reader a way to see what is being kept on their behalf, or a reason they should not
+- [ ] Keep whatever is decided inside the near-quota budget the salvage path already defends
+
+Constraint gate: checked 1 to 11, none breached.
+
+Filed out of BL-076, which stopped the same bytes being copied twice but left untouched what happens
+across genuinely different incidents. Every distinct incident permanently keeps a full copy of the
+reader's state, and nothing in the app ever removes one: not starting fresh, not restoring a backup,
+not a later incident. Read the module through and no path deletes a salvage key.
+
+That is the right default, because deleting the reader's only copy of unreadable data is the failure
+the whole path exists to prevent, and it is why this is Debt rather than a defect. But it grows
+without limit in the one area whose entire purpose is surviving a full origin, and the copies are of
+the whole state rather than a fragment of it. A reader with several incidents over a few years is
+carrying several copies of everything they have, with no way to see them and no way to remove them,
+and the first they will learn of it is a write failing.
+
+The second task is the harder half and should not be answered by adding a manager to the banner. The
+banner is talking to a reader in the middle of an incident, and BL-073 cut it down for good measured
+reasons; a list of old copies is the wrong thing to put in front of someone who has just been told
+their data cannot be read. Settings is the more likely home. Scored Measured because the growth was
+observed directly rather than inferred: the browser check written for BL-076 shows five keys reached
+by ordinary use before the fix, and two afterwards, with neither number ever falling.
 
 **BL-069: Close the three accent boundaries the BL-067 review found and could not gate**
 
@@ -4287,7 +4392,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:4954-4955` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5059-5060` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4297,11 +4402,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:161-163`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:4975-4977`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5080-5082`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4788-4790` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4893-4895` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4509,7 +4614,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:752-755` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:796-799` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:154-156` and
 `PRODUCT_BACKLOG.md:161-163` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5043,14 +5148,14 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and thirty-one
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and thirty-two
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 57 rows now. The ranks below are positions in it as it stands.
+how it reaches 58 rows now. The ranks below are positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks eighteenth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 18 of 57.
+- Calculated: WSJF 3.67, rank 18 of 58.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -5069,10 +5174,10 @@ how it reaches 57 rows now. The ranks below are positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks fifty-first
+### Case 2: BL-007 is labelled P1 but ranks fifty-second
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 51 of 57, below forty-seven unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 52 of 58, below forty-eight unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -5128,9 +5233,9 @@ how it reaches 57 rows now. The ranks below are positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 25 of 57. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 19 of 57. Mid-table.
-- BL-017, P2, rank 56 of 57. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 25 of 58. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 19 of 58. Mid-table.
+- BL-017, P2, rank 57 of 58. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
