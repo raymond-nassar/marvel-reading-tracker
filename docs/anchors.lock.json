@@ -14,8 +14,8 @@
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
   },
-  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:121-124|0": {
-    "anchor": "scripts/check-anchors.mjs:121-124",
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:147-150|0": {
+    "anchor": "scripts/check-anchors.mjs:147-150",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
@@ -254,13 +254,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:259-260|0": {
-    "anchor": "PRODUCT_BACKLOG.md:259-260",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:262-263|0": {
+    "anchor": "PRODUCT_BACKLOG.md:262-263",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4293|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4293",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4432|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4432",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -779,12 +779,12 @@
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-sev|src/js/main.js:2617|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-nin|src/js/main.js:2617|0": {
     "anchor": "src/js/main.js:2617",
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-sev|src/js/main.js:2651-2656|0": {
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-ranks-forty-nin|src/js/main.js:2651-2656|0": {
     "anchor": "src/js/main.js:2651-2656",
     "fp": "e53c56c7408f1625",
     "head": "depth"
@@ -799,8 +799,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:607-610|0": {
-    "anchor": "CHANGELOG.md:607-610",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:642-645|0": {
+    "anchor": "CHANGELOG.md:642-645",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -819,38 +819,38 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:153-155|0": {
-    "anchor": "PRODUCT_BACKLOG.md:153-155",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:154-156|0": {
+    "anchor": "PRODUCT_BACKLOG.md:154-156",
     "fp": "68a9242a03c5218c",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|0": {
-    "anchor": "PRODUCT_BACKLOG.md:160-162",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:161-163|0": {
+    "anchor": "PRODUCT_BACKLOG.md:161-163",
     "fp": "6469f5690f9c1d55",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-162|1": {
-    "anchor": "PRODUCT_BACKLOG.md:160-162",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:161-163|1": {
+    "anchor": "PRODUCT_BACKLOG.md:161-163",
     "fp": "6469f5690f9c1d55",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2645-2648|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2645-2648",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2648-2651|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2648-2651",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4267-4269|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4267-4269",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4406-4408|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4406-4408",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4433-4434|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4433-4434",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4572-4573|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4572-4573",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4454-4456|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4454-4456",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4593-4595|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4593-4595",
     "fp": "70f2b470e750ff0d",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
@@ -879,63 +879,103 @@
     "fp": "0229604f80988ee1",
     "head": "`# ${event.name}: ${essential ? 'Main Series Reading Checklist' : 'Issue-by-Issue Reading Checklist'"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:121-124|0": {
-    "anchor": "scripts/check-anchors.mjs:121-124",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:147-150|0": {
+    "anchor": "scripts/check-anchors.mjs:147-150",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:121-124|1": {
-    "anchor": "scripts/check-anchors.mjs:121-124",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:147-150|1": {
+    "anchor": "scripts/check-anchors.mjs:147-150",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:121-124|2": {
-    "anchor": "scripts/check-anchors.mjs:121-124",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:147-150|2": {
+    "anchor": "scripts/check-anchors.mjs:147-150",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:121-124|3": {
-    "anchor": "scripts/check-anchors.mjs:121-124",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:147-150|3": {
+    "anchor": "scripts/check-anchors.mjs:147-150",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:147|0": {
-    "anchor": "scripts/check-anchors.mjs:147",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:163-165|0": {
+    "anchor": "scripts/check-anchors.mjs:163-165",
+    "fp": "c9e7e9a264fdf5b6",
+    "head": "// No pathspec. `ls-tree` and `ls-files` do not agree on how a bare pathspec matches"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:173|0": {
+    "anchor": "scripts/check-anchors.mjs:173",
     "fp": "e6cb2cb5ab856c46",
     "head": ".filter((s) => s.length > 0 && s !== LOCK)"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:189-201|0": {
-    "anchor": "scripts/check-anchors.mjs:189-201",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:211-226|0": {
+    "anchor": "scripts/check-anchors.mjs:211-226",
+    "fp": "966e65f8ef78b894",
+    "head": "// Where the relative form counts, which is the same split BL-071 drew and for the same reason."
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:220|0": {
+    "anchor": "scripts/check-anchors.mjs:220",
+    "fp": "82369d86abda7fe1",
+    "head": "if (!prose && !/^\\s*(?:\\/\\/|\\/\\*|\\*)/.test(line)) return;"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:235-238|0": {
+    "anchor": "scripts/check-anchors.mjs:235-238",
+    "fp": "279e053febd9af8a",
+    "head": "export function relativeVerdict(count, ref = null) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:244-256|0": {
+    "anchor": "scripts/check-anchors.mjs:244-256",
     "fp": "867a8c3bf79a2cb4",
     "head": "// Outside prose only the backticked form is collected. That is the opposite call from"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:232-251|0": {
-    "anchor": "scripts/check-anchors.mjs:232-251",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:287-306|0": {
+    "anchor": "scripts/check-anchors.mjs:287-306",
     "fp": "e82159fcccbab775",
     "head": "// The prose immediately before a citation, which is what the reader has to weigh the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:359|0": {
-    "anchor": "scripts/check-anchors.mjs:359",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:309|0": {
+    "anchor": "scripts/check-anchors.mjs:309",
+    "fp": "f2f50234d9e962f4",
+    "head": "const marked = (s) => /^\\s*(?:\\/\\/|\\/\\*|\\*)/.test(s);"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:414|0": {
+    "anchor": "scripts/check-anchors.mjs:414",
     "fp": "c02761494a9bf2f2",
     "head": "claim: claimBefore(lines, i, c.at, prose),"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:495|0": {
-    "anchor": "scripts/check-anchors.mjs:495",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:550|0": {
+    "anchor": "scripts/check-anchors.mjs:550",
     "fp": "82d76e7ed94dfdf4",
     "head": "function reportNearMisses(exempted) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:508-523|0": {
-    "anchor": "scripts/check-anchors.mjs:508-523",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:563-578|0": {
+    "anchor": "scripts/check-anchors.mjs:563-578",
     "fp": "8eb99b68bb1f6b47",
     "head": "// Widening the population past Markdown created a third near miss, and leaving it"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:600|0": {
-    "anchor": "scripts/check-anchors.mjs:600",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:573|0": {
+    "anchor": "scripts/check-anchors.mjs:573",
+    "fp": "2d561d2b0eb4a758",
+    "head": "if (!/^\\s*(?:\\/\\/|\\/\\*|\\*)/.test(lines[i])) continue;"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:607-641|0": {
+    "anchor": "scripts/check-anchors.mjs:607-641",
+    "fp": "51318115f8153593",
+    "head": "// Before anything else, and before the bless path in particular. A relative citation is a"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:691|0": {
+    "anchor": "scripts/check-anchors.mjs:691",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:68|0": {
-    "anchor": "scripts/check-anchors.mjs:68",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:691|1": {
+    "anchor": "scripts/check-anchors.mjs:691",
+    "fp": "9cb52e9dbec90feb",
+    "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:94|0": {
+    "anchor": "scripts/check-anchors.mjs:94",
     "fp": "dc0f54892037a5a6",
     "head": "const isBinary = (text) => text.includes('\\0');"
   },
@@ -949,20 +989,20 @@
     "fp": "2fe3ce75d00f3ad3",
     "head": "export function checkRepeats(text) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:150-173|0": {
-    "anchor": "scripts/check-palette.mjs:150-173",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:151-174|0": {
+    "anchor": "scripts/check-palette.mjs:151-174",
     "fp": "ac96ab83fae43f81",
     "head": "export const SURFACES = {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:201-221|0": {
-    "anchor": "scripts/check-palette.mjs:201-221",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:202-222|0": {
+    "anchor": "scripts/check-palette.mjs:202-222",
     "fp": "b6895a31841079f2",
     "head": "export function resolveSurface(name, tokens, seen = new Set(), surfaces = SURFACES) {"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:99|0": {
     "anchor": "scripts/check-palette.mjs:99",
-    "fp": "ffddd7f01674d122",
-    "head": "// (`src/styles.css:580` and `:582`), which is 2.30:1 in the dark theme. It is listed here and"
+    "fp": "17cd08d933e798c7",
+    "head": "// (`src/styles.css:580` and `src/styles.css:582`), which is 2.30:1 in the dark theme. It is"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:38-43|0": {
     "anchor": "scripts/lib/fetch-json.mjs:38-43",
@@ -2249,8 +2289,8 @@
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:153-155|0": {
-    "anchor": "PRODUCT_BACKLOG.md:153-155",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:154-156|0": {
+    "anchor": "PRODUCT_BACKLOG.md:154-156",
     "fp": "68a9242a03c5218c",
     "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last"
   },
@@ -2294,13 +2334,13 @@
     "fp": "041e549f4f8de028",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:359|0": {
-    "anchor": "scripts/check-anchors.mjs:359",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:414|0": {
+    "anchor": "scripts/check-anchors.mjs:414",
     "fp": "c02761494a9bf2f2",
     "head": "claim: claimBefore(lines, i, c.at, prose),"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:147|0": {
-    "anchor": "scripts/check-anchors.mjs:147",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:173|0": {
+    "anchor": "scripts/check-anchors.mjs:173",
     "fp": "e6cb2cb5ab856c46",
     "head": ".filter((s) => s.length > 0 && s !== LOCK)"
   },
@@ -2324,10 +2364,20 @@
     "fp": "8d381b958fbec113",
     "head": "const key = !existing || existing === raw ? SALVAGE_KEY : `${SALVAGE_KEY}.${Date.now()}`;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-077|scripts/check-palette.mjs:99|0": {
-    "anchor": "scripts/check-palette.mjs:99",
-    "fp": "ffddd7f01674d122",
-    "head": "// (`src/styles.css:580` and `:582`), which is 2.30:1 in the dark theme. It is listed here and"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-077|scripts/check-anchors.mjs:211-226|0": {
+    "anchor": "scripts/check-anchors.mjs:211-226",
+    "fp": "966e65f8ef78b894",
+    "head": "// Where the relative form counts, which is the same split BL-071 drew and for the same reason."
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-078|scripts/check-anchors.mjs:691|0": {
+    "anchor": "scripts/check-anchors.mjs:691",
+    "fp": "9cb52e9dbec90feb",
+    "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-079|scripts/check-anchors.mjs:220|0": {
+    "anchor": "scripts/check-anchors.mjs:220",
+    "fp": "82369d86abda7fe1",
+    "head": "if (!prose && !/^\\s*(?:\\/\\/|\\/\\*|\\*)/.test(line)) return;"
   },
   "scripts/check-palette.mjs|preamble|src/js/main.js:1931|0": {
     "anchor": "src/js/main.js:1931",
@@ -2383,6 +2433,11 @@
     "anchor": "src/styles.css:580",
     "fp": "320a3385e009719a",
     "head": "background: none; display: grid; place-items: center; color: var(--on-accent); font-size: .65rem; pa"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:582|0": {
+    "anchor": "src/styles.css:582",
+    "fp": "0ece0218c15b9625",
+    "head": ".row.is-read .cb { background: var(--green); border-color: var(--green); }"
   },
   "scripts/check-palette.mjs|preamble|src/styles.css:909|0": {
     "anchor": "src/styles.css:909",

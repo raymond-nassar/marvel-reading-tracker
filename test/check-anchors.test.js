@@ -13,7 +13,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { citations, claimBefore, collisions, pairingLines, pairings } from '../scripts/check-anchors.mjs';
+import { citations, claimBefore, collisions, pairingLines, pairings, relativeCitations, relativeVerdict } from '../scripts/check-anchors.mjs';
 
 // The two citations as the lock actually held them, ordinals and all. `fp` matches on
 // both because they cite the same line, which is the whole difficulty.
@@ -267,4 +267,70 @@ test('a forward read in a table row stops at the cell boundary', () => {
   const at = lines[0].indexOf('src/js/main.js:12');
 
   assert.ok(!claimBefore(lines, 0, at, true).includes('second cell'));
+});
+
+// BL-077. The form that started this: a line number with no path in front of it, leaning on a
+// full citation earlier in the sentence. Both regexes above begin matching at a filename, so
+// neither ever saw one, and the palette script carried a claim thirteen lines wrong under a gate
+// reporting no drift. These fixtures are assembled the same way and for a stronger reason than
+// the ones above: written literally they would be the very thing the gate now refuses, and this
+// file would fail the check it exists to prove.
+const rel = (n) => '\u0060:' + n + '\u0060';
+
+test('a line number with no path is found in prose', () => {
+  const found = relativeCitations(`the tick sits at ${rel(582)} in the dark theme`);
+
+  assert.deepEqual(found.map((r) => r.ref), [':582']);
+});
+
+test('a range with no path is found too, since either form drifts the same way', () => {
+  assert.deepEqual(relativeCitations(`and again at ${rel('342-343')} below`).map((r) => r.ref), [':342-343']);
+});
+
+// The split BL-071 drew, applied here. A comment is addressed to a reader and a string literal is
+// not, and the distinction is load-bearing rather than tidy: the fixtures in this very file put
+// this shape inside string literals, so a rule that read them would fail on the tests written to
+// prove it. The assertion is that both sides hold, because a rule that fired nowhere in code
+// would pass this file for the wrong reason.
+test('in code the form counts in a comment and not in a string literal', () => {
+  const comment = `  // the tick sits at ${rel(582)} in the dark theme`;
+  const literal = `  const fixture = 'the tick sits at ${rel(582)}';`;
+
+  assert.equal(relativeCitations(comment, false).length, 1);
+  assert.equal(relativeCitations(literal, false).length, 0);
+  assert.equal(relativeCitations(literal, true).length, 1);
+});
+
+// A full citation must not be caught by the rule against the short one, or the gate would refuse
+// every document it protects. The pairing is the exact shape the palette script writes, which is
+// what makes it worth asserting rather than assuming.
+test('a citation carrying its path is untouched by the rule against the one without', () => {
+  const line = `(${cite('src/styles.css:580')} and ${cite('src/styles.css:582')})`;
+
+  assert.deepEqual(relativeCitations(line), []);
+  assert.equal(citations(line).length, 2);
+});
+
+// The line number is reported, because a message naming the file and not the line sends a reader
+// hunting through a four-hundred-line comment for a colon.
+test('each hit reports the line it sits on', () => {
+  const text = ['first', 'second', `third, at ${rel(99)}`].join('\n');
+
+  assert.deepEqual(relativeCitations(text).map((r) => r.line), [3]);
+});
+
+// The rule is about what may be written, so it binds the tree being written and not one that
+// already shipped. Refusing under --ref would make every revision holding the form unqueryable
+// for drift, which is the single thing --ref is for.
+test('the form is refused against the working tree', () => {
+  assert.equal(relativeVerdict(2, null), 'fatal');
+});
+
+test('the same form is only named against a revision, which cannot be edited to satisfy it', () => {
+  assert.equal(relativeVerdict(2, 'origin/main'), 'notice');
+});
+
+test('a tree with no hits says nothing either way', () => {
+  assert.equal(relativeVerdict(0, null), 'none');
+  assert.equal(relativeVerdict(0, 'origin/main'), 'none');
 });

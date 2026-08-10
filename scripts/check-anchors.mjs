@@ -39,6 +39,32 @@ const ANCHOR = /`([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+)(?:-(\
 // exemption is declared instead.
 const BARE = /(?<![`\w])([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+)(?:-(\d+))?(?![\d`-])/g;
 
+// A line number written with no path in front of it, as a backticked colon and digits,
+// leaning on a full citation earlier in the sentence to say which file it means. Neither
+// regex above collects it, because both begin at a filename, so a comment could name a
+// line, be read as naming a line, and drift with nothing watching. That is the defect
+// BL-071 was raised to end, surviving inside the widening that ended it, and one of the
+// two that existed had already gone stale by thirteen lines before anyone noticed.
+//
+// BL-077 asked whether to resolve this form against the nearest preceding full path or to
+// forbid it, and the answer is to forbid it, for three reasons that all point one way.
+// Detection is needed either way, so the choice is only what to do with a hit, and
+// resolution decides *which file* the claim is about. Every other heuristic here is
+// confined to naming or printing, never membership, precisely because a wrong guess there
+// costs an uglier key and a wrong guess about a path costs a false claim. Resolution would
+// also write into the lock an anchor whose citation text cannot be found in the document
+// that supposedly makes it, since the string it records was never written there. And the
+// form is unreadable to a person for the same reason it is unreadable to the gate: read as
+// a search hit, in a diff, or in the lock's own quoted head line, a bare line number names
+// nothing. Resolving it would serve the gate and not the reader, and the reader is who
+// this is for.
+//
+// Written out longhand above rather than shown, because this rule cannot be illustrated by
+// example without breaking itself. The first draft of this comment used one and the check
+// below caught it twice within a minute of being written, which is the shortest interval
+// between a gate and its author in this repository and the best evidence it works.
+const RELATIVE = /`(:\d+(?:-\d+)?)`/g;
+
 // The declared exemption. A claim about a past state cites code that is expected to
 // contradict it: BL-040 cites the scripts block as evidence that no lint script
 // existed, and that block now defines one. Gating it would demand a true historical
@@ -180,6 +206,35 @@ function exemptRanges(text) {
     offset += line.length + 1;
   }
   return ranges;
+}
+
+// Where the relative form counts, which is the same split BL-071 drew and for the same reason.
+// In Markdown every line is addressed to a reader, so a relative citation anywhere in one is a
+// claim. In code only a comment is, and the rest is a program: this gate's own test builds its
+// fixtures out of exactly this shape, and a rule that read string literals would fail on the
+// tests written to prove the rule. Being in a comment is the only signal the text carries, so
+// it is the one this draws on, as `reportNearMisses` already does for the bare form.
+export function relativeCitations(text, prose = true) {
+  const out = [];
+  text.split('\n').forEach((line, i) => {
+    if (!prose && !/^\s*(?:\/\/|\/\*|\*)/.test(line)) return;
+    for (const m of line.matchAll(RELATIVE)) {
+      out.push({ line: i + 1, at: m.index, ref: m[1], text: line.trim() });
+    }
+  });
+  return out;
+}
+
+// What to do about a hit, which depends entirely on whether the text can still be edited.
+// Against the working tree the form is refused, because that is a tree someone is writing and
+// the rule is about what may be written. Under --ref the content already shipped and cannot be
+// rewritten to satisfy a rule adopted after it, so refusing would make every revision holding
+// the form unqueryable for drift, which is the one use --ref exists for. History is reported,
+// not policed. Named and exported rather than left inline so the distinction can be pinned by
+// a test without spawning a process against a real revision.
+export function relativeVerdict(count, ref = null) {
+  if (count === 0) return 'none';
+  return ref === null ? 'fatal' : 'notice';
 }
 
 // Both citation forms in prose, deduplicated by position. A backticked anchor can also
@@ -548,6 +603,42 @@ function priorLock() {
 
 function main() {
   const { found, coverage, exempted } = collect();
+
+  // Before anything else, and before the bless path in particular. A relative citation is a
+  // claim the gate cannot check, so blessing a tree that holds one records a lock that looks
+  // complete and is not. Refusing here means the two paths cannot disagree about it.
+  //
+  // Whether a hit is refused or merely named is `relativeVerdict`'s decision, and the reason
+  // it is not refused under --ref is given there.
+  const relative = [];
+  for (const doc of docs()) {
+    const text = read(doc);
+    if (text === null) continue;
+    for (const r of relativeCitations(text, doc.endsWith('.md'))) {
+      relative.push(`  ${doc}:${r.line}  \`${r.ref}\`\n      ${r.text.slice(0, 110)}`);
+    }
+  }
+  const verdict = relativeVerdict(relative.length, ref);
+  if (verdict === 'notice') {
+    const each = relative.length === 1 ? 'citation' : 'citations';
+    console.error(`NOTICE: ${ref} contains ${relative.length} ${each} naming a line with no path in front of it:`);
+    for (const r of relative) console.error(r);
+    console.error('');
+    console.error('The gate never collected that form, so no drift is reported for these and none');
+    console.error('ever was. They are named rather than refused, because a revision cannot be');
+    console.error('rewritten to satisfy a rule adopted after it.');
+    console.error('');
+  } else if (verdict === 'fatal') {
+    const each = relative.length === 1 ? 'citation names a line' : 'citations name lines';
+    console.error(`FATAL: ${relative.length} ${each} with no path in front of it:`);
+    for (const r of relative) console.error(r);
+    console.error('');
+    console.error('This gate begins matching at a filename, so it never sees this form and reports');
+    console.error('no drift however stale it gets. One written here went thirteen lines stale that');
+    console.error('way. Write the path in full. To describe a wrong line rather than cite one, say');
+    console.error('so in prose: "line 12 of the workflow file", never in the citation form.');
+    process.exit(2);
+  }
 
   // Coverage is asserted, not assumed. `found.length === 0` detects total failure and
   // is structurally blind to partial failure, which is the only kind that has ever

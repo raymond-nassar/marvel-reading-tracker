@@ -16,6 +16,41 @@ quote in a bug report.
 
 ### Added
 
+- **The check that keeps the project's written claims honest can now see a shorthand it used to
+  miss.** Nothing about the app changes and nothing you have saved is affected. The project's
+  documents point at exact lines of code, and an automated check makes sure those pointers still
+  say what they claimed when the code moves. Two of them had been written in a shorthand that named
+  a line without naming which file it was in, leaning on a pointer earlier in the same sentence.
+  The check begins looking at a filename, so it never noticed those two existed, and one of them
+  had already come to point at the wrong thing while every check reported everything fine.
+
+  The shorthand is now refused outright rather than made to work, because a line number with no
+  file in front of it is unreadable to a person too: found in a search result, or in a list of
+  changes, it names nothing at all. Teaching the check to guess the file would have helped the
+  check and not the reader. Writing the file name out costs one repetition and it is now required.
+
+  The rule caught its own author three times while being written, twice inside the very comment
+  explaining it, which is the shortest gap between a rule and someone breaking it in this project
+  so far.
+
+  Checking the pointers this change touched turned up a separate weakness worth writing down. When a
+  pointer is written for the very first time there is nothing to compare it against, so the check
+  records wherever it happens to land and reports that all is well. Five pointers written for this
+  change were wrong, three of them aimed at an entirely different passage than the sentence claimed,
+  and all five were found only by opening the file and reading. Making the check print those for a
+  person to read is now on the project's list of planned improvements rather than done here, so that
+  this change stays about the one thing it set out to fix.
+
+  A review of the change then found that refusing the shorthand had broken a second, quieter use of
+  the check. As well as checking the project as it stands, it can be pointed at an older version to
+  ask whether it would have caught a problem at the time. Because older versions contain the very
+  shorthand now banned, the check refused to run against any of them, which took away the only thing
+  that mode is for. A version that has already been published cannot be rewritten to satisfy a rule
+  invented afterwards, so the shorthand is now refused only in the version being written, and merely
+  pointed out in an older one. A third weakness the review found, that the check only recognises
+  comments written the way JavaScript writes them and so overlooks several other kinds of file it
+  already reads, is filed as a separate planned improvement rather than fixed here.
+
 - **The project now has diagrams of how the app fits together, which it never had before.** Nothing
   about the app changes and nothing you have saved is affected. The repository explains itself at
   length in words, but until now there was no picture anywhere in it, so anyone wanting to describe
