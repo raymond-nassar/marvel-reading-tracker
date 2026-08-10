@@ -14,10 +14,10 @@
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
   },
-  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:114-117|0": {
-    "anchor": "scripts/check-anchors.mjs:114-117",
-    "fp": "d30721f171c58774",
-    "head": "// Every tracked Markdown file, listed by git rather than by this script. Membership"
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:121-124|0": {
+    "anchor": "scripts/check-anchors.mjs:121-124",
+    "fp": "462c466e0674790c",
+    "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
   ".github/copilot-instructions.md|what-the-app-is|src/js/storage.js:9|0": {
     "anchor": "src/js/storage.js:9",
@@ -94,8 +94,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:3995|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3995",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:4057|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4057",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -634,8 +634,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:539-542|0": {
-    "anchor": "CHANGELOG.md:539-542",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:555-558|0": {
+    "anchor": "CHANGELOG.md:555-558",
     "fp": "2653fc9707ce7f87",
     "head": "reconciliation list's own third bullet already established. Neither current value is repeated"
   },
@@ -674,20 +674,20 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:3969-3971|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3969-3971",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4031-4033|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4031-4033",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4135-4136|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4135-4136",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4197-4198|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4197-4198",
     "fp": "e3df6f39cf8f0a0d",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4151-4153|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4151-4153",
-    "fp": "fb312375e390a000",
-    "head": "by review. Evidence: `absent: eslint|prettier config or lint script, read of package.json:8-17 and"
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4218-4220|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4218-4220",
+    "fp": "70f2b470e750ff0d",
+    "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:295-299|0": {
     "anchor": "README.md:295-299",
@@ -714,45 +714,65 @@
     "fp": "0229604f80988ee1",
     "head": "`# ${event.name}: ${essential ? 'Main Series Reading Checklist' : 'Issue-by-Issue Reading Checklist'"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:114-117|0": {
-    "anchor": "scripts/check-anchors.mjs:114-117",
-    "fp": "d30721f171c58774",
-    "head": "// Every tracked Markdown file, listed by git rather than by this script. Membership"
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:121-124|0": {
+    "anchor": "scripts/check-anchors.mjs:121-124",
+    "fp": "462c466e0674790c",
+    "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:114-117|1": {
-    "anchor": "scripts/check-anchors.mjs:114-117",
-    "fp": "d30721f171c58774",
-    "head": "// Every tracked Markdown file, listed by git rather than by this script. Membership"
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:121-124|1": {
+    "anchor": "scripts/check-anchors.mjs:121-124",
+    "fp": "462c466e0674790c",
+    "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:114-117|2": {
-    "anchor": "scripts/check-anchors.mjs:114-117",
-    "fp": "d30721f171c58774",
-    "head": "// Every tracked Markdown file, listed by git rather than by this script. Membership"
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:121-124|2": {
+    "anchor": "scripts/check-anchors.mjs:121-124",
+    "fp": "462c466e0674790c",
+    "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:114-117|3": {
-    "anchor": "scripts/check-anchors.mjs:114-117",
-    "fp": "d30721f171c58774",
-    "head": "// Every tracked Markdown file, listed by git rather than by this script. Membership"
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:121-124|3": {
+    "anchor": "scripts/check-anchors.mjs:121-124",
+    "fp": "462c466e0674790c",
+    "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:129|0": {
-    "anchor": "scripts/check-anchors.mjs:129",
-    "fp": "ebf9009b57338ced",
-    "head": ".filter((s) => s.endsWith('.md'))"
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:147|0": {
+    "anchor": "scripts/check-anchors.mjs:147",
+    "fp": "e6cb2cb5ab856c46",
+    "head": ".filter((s) => s.length > 0 && s !== LOCK)"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:283|0": {
-    "anchor": "scripts/check-anchors.mjs:283",
-    "fp": "99901e5d7db1139c",
-    "head": "claim: claimBefore(lines, i, c.at),"
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:189-201|0": {
+    "anchor": "scripts/check-anchors.mjs:189-201",
+    "fp": "867a8c3bf79a2cb4",
+    "head": "// Outside prose only the backticked form is collected. That is the opposite call from"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:419|0": {
-    "anchor": "scripts/check-anchors.mjs:419",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:232-251|0": {
+    "anchor": "scripts/check-anchors.mjs:232-251",
+    "fp": "e82159fcccbab775",
+    "head": "// The prose immediately before a citation, which is what the reader has to weigh the"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:359|0": {
+    "anchor": "scripts/check-anchors.mjs:359",
+    "fp": "c02761494a9bf2f2",
+    "head": "claim: claimBefore(lines, i, c.at, prose),"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:495|0": {
+    "anchor": "scripts/check-anchors.mjs:495",
     "fp": "82d76e7ed94dfdf4",
     "head": "function reportNearMisses(exempted) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:507|0": {
-    "anchor": "scripts/check-anchors.mjs:507",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:508-523|0": {
+    "anchor": "scripts/check-anchors.mjs:508-523",
+    "fp": "8eb99b68bb1f6b47",
+    "head": "// Widening the population past Markdown created a third near miss, and leaving it"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:600|0": {
+    "anchor": "scripts/check-anchors.mjs:600",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:68|0": {
+    "anchor": "scripts/check-anchors.mjs:68",
+    "fp": "dc0f54892037a5a6",
+    "head": "const isBinary = (text) => text.includes('\\0');"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:293-303|0": {
     "anchor": "scripts/check-counts.mjs:293-303",
@@ -766,7 +786,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:150-173|0": {
     "anchor": "scripts/check-palette.mjs:150-173",
-    "fp": "881f5d32074a0dd3",
+    "fp": "ac96ab83fae43f81",
     "head": "export const SURFACES = {"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:201-221|0": {
@@ -1308,6 +1328,11 @@
     "anchor": "src/js/main.js:388-401",
     "fp": "ad0aa3d1b00b370d",
     "head": "} catch {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:434-435|0": {
+    "anchor": "src/js/main.js:434-435",
+    "fp": "0e7acbb25b031850",
+    "head": "function fallbackHue(issue) {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:471|0": {
     "anchor": "src/js/main.js:471",
@@ -2039,15 +2064,15 @@
     "fp": "041e549f4f8de028",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:283|0": {
-    "anchor": "scripts/check-anchors.mjs:283",
-    "fp": "99901e5d7db1139c",
-    "head": "claim: claimBefore(lines, i, c.at),"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:359|0": {
+    "anchor": "scripts/check-anchors.mjs:359",
+    "fp": "c02761494a9bf2f2",
+    "head": "claim: claimBefore(lines, i, c.at, prose),"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:129|0": {
-    "anchor": "scripts/check-anchors.mjs:129",
-    "fp": "ebf9009b57338ced",
-    "head": ".filter((s) => s.endsWith('.md'))"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:147|0": {
+    "anchor": "scripts/check-anchors.mjs:147",
+    "fp": "e6cb2cb5ab856c46",
+    "head": ".filter((s) => s.length > 0 && s !== LOCK)"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-072|src/styles.css:933|0": {
     "anchor": "src/styles.css:933",
@@ -2058,5 +2083,75 @@
     "anchor": "src/index.html:147-148",
     "fp": "d7a3227a190c6c48",
     "head": "<p>It has <strong>not</strong> been changed or deleted, and saving is paused so it"
+  },
+  "scripts/check-palette.mjs|preamble|src/js/main.js:1919|0": {
+    "anchor": "src/js/main.js:1919",
+    "fp": "6260601161fee24f",
+    "head": "'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,"
+  },
+  "scripts/check-palette.mjs|preamble|src/js/main.js:854|0": {
+    "anchor": "src/js/main.js:854",
+    "fp": "b16e0bda4cf16693",
+    "head": "el('span', { class: 'n', text: `${read} / ${total}` }),"
+  },
+  "scripts/check-palette.mjs|preamble|src/js/main.js:990|0": {
+    "anchor": "src/js/main.js:990",
+    "fp": "cc302385421d7624",
+    "head": "el('span', { class: 'yours-count', text: `${read} / ${total}` }),"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:253|0": {
+    "anchor": "src/styles.css:253",
+    "fp": "28fc0d5fe1881ddc",
+    "head": "width: 28px; height: 28px; border-radius: 8px; background: var(--red);"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:286|0": {
+    "anchor": "src/styles.css:286",
+    "fp": "0aa89ba98945a96a",
+    "head": "background: rgb(var(--tint-base) / 8%); color: var(--text); font-weight: 600;"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:286|1": {
+    "anchor": "src/styles.css:286",
+    "fp": "0aa89ba98945a96a",
+    "head": "background: rgb(var(--tint-base) / 8%); color: var(--text); font-weight: 600;"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:290|0": {
+    "anchor": "src/styles.css:290",
+    "fp": "041e549f4f8de028",
+    "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:342-343|0": {
+    "anchor": "src/styles.css:342-343",
+    "fp": "2582660c450fe8a6",
+    "head": ".railed .pill { width: 10px; height: 10px; padding: 0; border-radius: 50%; overflow: hidden;"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:474|0": {
+    "anchor": "src/styles.css:474",
+    "fp": "ac33ce5101f943fc",
+    "head": ".btn-g { background: rgb(var(--tint-base) / 5.882%); color: var(--text); border-color: var(--line-2)"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:580|0": {
+    "anchor": "src/styles.css:580",
+    "fp": "320a3385e009719a",
+    "head": "background: none; display: grid; place-items: center; color: var(--on-accent); font-size: .65rem; pa"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:909|0": {
+    "anchor": "src/styles.css:909",
+    "fp": "3a5c838f7187d084",
+    "head": "background: color-mix(in srgb, var(--warn) 12%, var(--panel));"
+  },
+  "scripts/check-palette.mjs|preamble|src/styles.css:933|0": {
+    "anchor": "src/styles.css:933",
+    "fp": "1eef54d530f1e5d5",
+    "head": ".blocked .btn-g { border-color: var(--muted); }"
+  },
+  "src/styles.css|preamble|src/js/main.js:434-435|0": {
+    "anchor": "src/js/main.js:434-435",
+    "fp": "0e7acbb25b031850",
+    "head": "function fallbackHue(issue) {"
+  },
+  "test/shipped-copy.test.js|preamble|server.mjs:12|0": {
+    "anchor": "server.mjs:12",
+    "fp": "c03f3efe7acb81be",
+    "head": "const ROOT = resolve(fileURLToPath(new URL('./src', import.meta.url)));"
   }
 }

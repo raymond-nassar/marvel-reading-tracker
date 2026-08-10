@@ -62,19 +62,26 @@ const args = process.argv.slice(2);
 const bless = args.includes('--bless');
 const ref = args.includes('--ref') ? args[args.indexOf('--ref') + 1] : null;
 
+// A NUL byte means the file is not text, which is how git itself decides. Deciding by
+// extension instead would be the enumeration `docs` above refuses, and it would have
+// to be kept in step with whatever gets committed next.
+const isBinary = (text) => text.includes('\0');
+
 const read = (path) => {
   if (ref === null) {
     try {
-      return readFileSync(path, 'utf8');
+      const text = readFileSync(path, 'utf8');
+      return isBinary(text) ? null : text;
     } catch {
       return null;
     }
   }
   try {
-    return execFileSync('git', ['show', `${ref}:${path}`], {
+    const text = execFileSync('git', ['show', `${ref}:${path}`], {
       encoding: 'utf8',
       maxBuffer: 64 * 1024 * 1024,
     });
+    return isBinary(text) ? null : text;
   } catch {
     return null;
   }
@@ -111,14 +118,25 @@ function fingerprint(file, start, end) {
 
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
 
-// Every tracked Markdown file, listed by git rather than by this script. Membership
-// in the population must not depend on a name written here: an enumeration is a
-// list someone has to keep complete, and the anchor defects this gate exists to
-// catch were all caused by exactly that.
+// Every tracked file, listed by git rather than by this script. Membership in the
+// population must not depend on a name written here: an enumeration is a list someone
+// has to keep complete, and the anchor defects this gate exists to catch were all
+// caused by exactly that.
+//
+// The one exclusion is this gate's own lock, and it is structural rather than named.
+// LOCK is the path this script writes, so the rule is that the gate does not read its
+// own output, and the constant that states where the output goes is the same one that
+// keeps it out. Nothing has to stay in step with anything. The lock quotes a head line
+// for every anchor, so reading it would turn this gate's record of a claim into a second
+// claim about the same line, and rewriting the lock would become a reason to rewrite it
+// again. Those quotes happen to carry no backticks, so the rule below would drop them
+// anyway, but that is a property of today's data rather than a guarantee.
+//
+// Binary files are dropped by `read` rather than by extension, for the same reason.
 function docs() {
-  // No pathspec. `ls-tree` and `ls-files` do not agree on how a bare `*.md`
-  // pathspec matches nested paths, and filtering in one place here is one fewer
-  // behaviour that can differ between the working tree and a historical ref.
+  // No pathspec. `ls-tree` and `ls-files` do not agree on how a bare pathspec matches
+  // nested paths, and filtering in one place here is one fewer behaviour that can
+  // differ between the working tree and a historical ref.
   const cmd = ref === null
     ? ['ls-files']
     : ['ls-tree', '-r', '--name-only', ref];
@@ -126,7 +144,7 @@ function docs() {
     return execFileSync('git', cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
       .split('\n')
       .map((s) => s.trim())
-      .filter((s) => s.endsWith('.md'))
+      .filter((s) => s.length > 0 && s !== LOCK)
       .sort();
   } catch {
     return [];
@@ -164,12 +182,26 @@ function exemptRanges(text) {
   return ranges;
 }
 
-// Both citation forms, deduplicated by position. A backticked anchor can also
-// satisfy the bare pattern's neighbours, and counting one citation twice would put
-// the coverage assertion permanently out of balance.
-function citations(text) {
+// Both citation forms in prose, deduplicated by position. A backticked anchor can also
+// satisfy the bare pattern's neighbours, and counting one citation twice would put the
+// coverage assertion permanently out of balance.
+//
+// Outside prose only the backticked form is collected. That is the opposite call from
+// the one above and it is made for the same reason, which is to collect the form that
+// asserts something to a reader. In Markdown both forms do, because the backlog's
+// Evidence column is written bare and those are live anchors. In code the two forms
+// separate by role rather than by punctuation: a backticked path:line sits in a
+// comment, where it is prose making a claim, and a bare one sits inside a string
+// literal, where it is a value the program computes with.
+//
+// Measured across this repository when the population was widened, the split was
+// exact, and the one file holding bare citations is this gate's own test, where they
+// are synthetic inputs. One of them names a line past the end of its file on purpose,
+// so the unresolvable path has something to resolve to nothing. Collecting it would
+// require the fixture to resolve, which is the single thing it exists not to do.
+export function citations(text, prose = true) {
   const out = new Map();
-  for (const re of [ANCHOR, BARE]) {
+  for (const re of prose ? [ANCHOR, BARE] : [ANCHOR]) {
     for (const m of text.matchAll(re)) {
       const at = m[0].startsWith('`') ? m.index + 1 : m.index;
       if (out.has(at)) continue;
@@ -205,17 +237,60 @@ function rowScope(line, heading) {
 // at all. So walk back over the wrapped lines of the same paragraph. A blank line, a
 // heading and a table row all end the sentence rather than continue it, so each stops
 // the walk: crossing a table row would attribute the row above's prose to this row.
-function claimBefore(lines, i, at) {
+//
+// Outside prose the sentence is carried by a comment, which changes two things. The
+// marker opening each line is not part of the claim, so leaving it in splices "//" into
+// the middle of a sentence and spends the window on punctuation; it is stripped, and
+// only outside prose, because a leading "*" in Markdown is a bullet and a "#" is a
+// heading. And the walk stops at the first line that is not itself a comment, so a
+// comment sitting directly on top of code cannot absorb the code above it.
+//
+// Everything here decides print only, never membership or fingerprint, so a heuristic
+// is safe the same way the scope heuristic is: the worst it can do is print an uglier
+// claim, and the claim is still printed beside its line.
+export function claimBefore(lines, i, at, prose = true) {
   const flatten = (s) => s.replace(/`/g, '').replace(/\s+/g, ' ').trim();
-  let text = lines[i].slice(0, at);
+  const bare = (s) => (prose ? s : s.replace(/^\s*(?:\/\/+|\/\*+|\*)\s?/, '').replace(/\s*\*\/\s*$/, ''));
+  const marked = (s) => /^\s*(?:\/\/|\/\*|\*)/.test(s);
+  const ends = (s) => !s.trim() || s.startsWith('|') || /^#{1,6}\s/.test(s)
+    || (!prose && (!marked(s) || !flatten(bare(s))));
+
+  let text = bare(lines[i].slice(0, at));
   for (let j = i - 1; j >= 0 && flatten(text).length < 90; j -= 1) {
     const prev = lines[j];
-    if (!prev.trim() || prev.startsWith('|') || /^#{1,6}\s/.test(prev)) break;
+    if (ends(prev)) break;
     if (lines[i].startsWith('|')) break;
-    text = `${prev} ${text}`;
+    text = `${bare(prev)} ${text}`;
   }
   const flat = flatten(text);
-  return flat.slice(Math.max(0, flat.length - 90));
+  if (flat.length >= 20) return flat.slice(Math.max(0, flat.length - 90));
+
+  // A citation in prose usually closes a sentence, so the words before it are the claim.
+  // One in a comment routinely opens the sentence instead, and then everything before it
+  // is the marker: the citation of the served root in the shipped-copy test printed a
+  // claim of "//" and nothing else. Where almost nothing precedes a citation, what
+  // follows it is the claim, taken from the citation outwards for the same reason the
+  // other branch is taken backwards from it.
+  //
+  // This one is not conditioned on prose, unlike the two above, and deliberately so: a
+  // Markdown citation that opens its line has the same empty claim for the same reason,
+  // and six did, three of them printing "Evidence:" and one printing nothing at all. The
+  // anchor itself is skipped, because a claim that only repeats the citation printed on
+  // the line above it says nothing. A table row is the one place the two directions
+  // differ. Backwards a row is refused outright; forwards a cell boundary ends the
+  // sentence exactly as a row boundary does, so the read stops at the next pipe and
+  // never leaves the row.
+  const row = lines[i].startsWith('|');
+  const rest = lines[i].slice(at);
+  const self = rest.match(/^`?[A-Za-z0-9_./-]+\.[A-Za-z][A-Za-z0-9]*:\d+(?:-\d+)?`?/);
+  let after = bare(self ? rest.slice(self[0].length) : rest);
+  if (row) [after] = after.split('|');
+  for (let j = i + 1; !row && j < lines.length && flatten(after).length < 90; j += 1) {
+    if (ends(lines[j])) break;
+    after = `${after} ${bare(lines[j])}`;
+  }
+  const tail = flatten(after);
+  return tail.length > flat.length ? tail.slice(0, 90) : flat.slice(Math.max(0, flat.length - 90));
 }
 
 // The scope is what makes a key survive renumbering. Rows are keyed by their story
@@ -237,12 +312,13 @@ function collect() {
 
     // Normalised so a character offset means the same thing on either platform.
     const text = raw.replace(/\r\n/g, '\n');
+    const prose = doc.endsWith('.md');
     const ranges = exemptRanges(text);
     const exempt = (at) => ranges.some(([from, to]) => at >= from && at < to);
 
     // Counted over the whole file, independently of the line walk below, so any
     // walker bug shows up as a shortfall instead of as a clean pass.
-    const scanned = citations(text).filter((c) => !exempt(c.at)).length;
+    const scanned = citations(text, prose).filter((c) => !exempt(c.at)).length;
     if (scanned === 0) continue;
 
     let heading = 'preamble';
@@ -258,7 +334,7 @@ function collect() {
 
       const scope = line.startsWith('|') ? rowScope(line, heading) : heading;
 
-      for (const c of citations(line)) {
+      for (const c of citations(line, prose)) {
         if (exempt(offset + c.at)) {
           exempted += 1;
           continue;
@@ -280,7 +356,7 @@ function collect() {
         found.push({
           key: `${bucket}|${ordinal}`,
           anchor,
-          claim: claimBefore(lines, i, c.at),
+          claim: claimBefore(lines, i, c.at, prose),
           ...fingerprint(c.file, c.start, c.end),
         });
       }
@@ -353,7 +429,7 @@ export function collisions(found, lock) {
     // An unreadable claim is unlike everything, itself included. Two citations that both
     // open a paragraph extract no prose at all, and treating those two blanks as equal
     // read as "these citations agree" when nothing had been read: it silently exempted a
-    // live bucket, `src/js/lib/readingFilters.js:25-48` cited twice under wholly unlike
+    // live bucket, the reading-filters list at lines 25 to 48 cited twice under wholly unlike
     // sentences, from a notice added to catch exactly that shape.
     const shapes = cites.map((c, i) => claimShape(c.claim) || `unreadable ${i}`);
     if (new Set(shapes).size < 2) continue;
@@ -426,6 +502,23 @@ function reportNearMisses(exempted) {
       for (const hit of text.match(re) ?? []) {
         if (covered.has(hit)) continue;
         suspicious.push(`  ${doc}  ${hit}  (${why})`);
+      }
+    }
+
+    // Widening the population past Markdown created a third near miss, and leaving it
+    // unreported would have reproduced the silence that widening was meant to end. Only
+    // the backticked form counts outside prose, because a bare citation there is usually
+    // a string literal the program computes with. A comment is the exception: the
+    // sentence around it is addressed to a reader, so a bare citation in one is a claim
+    // and is now ungated with nothing said about it. Being in a comment is the only
+    // signal the text carries, so it is the one this draws on.
+    if (!doc.endsWith('.md')) {
+      const lines = text.split('\n');
+      for (let i = 0; i < lines.length; i += 1) {
+        if (!/^\s*(?:\/\/|\/\*|\*)/.test(lines[i])) continue;
+        for (const hit of lines[i].match(BARE) ?? []) {
+          suspicious.push(`  ${doc}:${i + 1}  ${hit}  (bare citation in a comment)`);
+        }
       }
     }
   }

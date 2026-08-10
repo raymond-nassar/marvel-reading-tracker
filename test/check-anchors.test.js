@@ -2,7 +2,7 @@
 // were added to the top of `src/js/lib/model.js`, a re-aiming pass moved twenty-six
 // citations of that module, and one landed thirty-eight lines out on top of another. The
 // blessed lock carried the result: two entries in `PRODUCT_BACKLOG.md`, both in the
-// `item-details` scope, both naming `src/js/lib/model.js:640`, both fingerprinted
+// `item-details` scope, both naming line 640 of the model module, both fingerprinted
 // `0c1b3de0385c2af9`, and one of them asserting a claim about `readAt` over a line that
 // builds a list. The gate reported zero drift over it, correctly and uselessly, because
 // two citations of one line always agree.
@@ -13,7 +13,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { collisions, pairingLines, pairings } from '../scripts/check-anchors.mjs';
+import { citations, claimBefore, collisions, pairingLines, pairings } from '../scripts/check-anchors.mjs';
 
 // The two citations as the lock actually held them, ordinals and all. `fp` matches on
 // both because they cite the same line, which is the whole difficulty.
@@ -148,9 +148,10 @@ test('citations of one anchor in different scopes are not a collision', () => {
 
 // A citation that opens a wrapped paragraph has no prose before it on its own line, so
 // the claim extracts empty. Treating two empties as one claim read as "these agree" when
-// nothing had been read, and it really did exempt a live bucket: two citations of
-// `src/js/lib/readingFilters.js:25-48` in one scope, under wholly unlike sentences, both
-// beginning their line. An unreadable claim has to be unlike everything, itself included.
+// nothing had been read, and it really did exempt a live bucket: two citations of the
+// reading-filters list, lines 25 to 48 of that module, in one scope, under wholly unlike
+// sentences, both beginning their line. An unreadable claim has to be unlike everything,
+// itself included.
 test('two citations whose claims could not be read are a collision, not an agreement', () => {
   const blank = COLLIDED.map((c) => ({ ...c, claim: '' }));
   assert.equal(collisions(blank, {}).length, 1);
@@ -184,4 +185,86 @@ test('a citation whose cited content changed shows what it was blessed against',
 
   assert.equal(pairingLines(pairings(moved, stale)).filter((l) => l.includes('const read = {};')).length, 1);
   assert.equal(pairingLines(pairings([{ ...COLLIDED[0], fp: 'ffff' }], lockOf(COLLIDED))).filter((l) => l.includes('was  ->')).length, 0);
+});
+
+// BL-071 widened the population past Markdown, and the whole of that decision is which form
+// counts as a claim where. In prose both do, because the backlog's Evidence column is bare.
+// In code the bare form is a string literal the program computes with, and the fixtures above
+// are the proof: one of them names a line past the end of its file on purpose, so collecting
+// it would demand the fixture resolve.
+//
+// Which is why the backticks below are assembled rather than typed. A fixture written with
+// them adjacent to a path is indistinguishable from a claim, and five of these enrolled
+// themselves as live anchors when they were first written that way, so a fixture citing a
+// module would have drifted every time an unrelated module moved. Keeping the path bare in
+// the source is the rule under test, applied to the test.
+const cite = (path) => '\u0060' + path + '\u0060';
+
+test('a bare citation is collected in prose and ignored in code', () => {
+  const line = 'the walker lives at src/js/lib/model.js:640 today';
+
+  assert.equal(citations(line).length, 1);
+  assert.equal(citations(line, false).length, 0);
+});
+
+test('a backticked citation is collected in both, since a comment makes a claim too', () => {
+  const line = `the walker lives at ${cite('src/js/lib/model.js:640')} today`;
+
+  assert.equal(citations(line).length, 1);
+  assert.equal(citations(line, false).length, 1);
+});
+
+// The one form that has to survive the split untouched. A backticked anchor also satisfies the
+// bare pattern's neighbours, and counting it twice puts the coverage assertion permanently out
+// of balance, which is the assertion that catches a walker bug.
+test('a citation carrying both forms is still counted once', () => {
+  const line = `compare ${cite('src/js/lib/model.js:640')} with src/js/lib/model.js:641`;
+
+  assert.deepEqual(citations(line).map((c) => c.start), [640, 641]);
+});
+
+// The claim printed beside each line is all BL-070 shipped, and in code it arrives wrapped in
+// comment markers. Splicing "//" into the middle of a sentence spends the window on punctuation.
+test('a comment marker is stripped from a claim in code and kept in prose', () => {
+  const lines = [`// the numbers are stated as text beside it, at ${cite('src/js/main.js:854')} in the rail`];
+  const at = lines[0].indexOf('src/js/main.js:854');
+
+  assert.ok(!claimBefore(lines, 0, at, false).includes('//'));
+  assert.ok(claimBefore(lines, 0, at, true).includes('//'));
+});
+
+// A citation in prose usually closes a sentence. One in a comment routinely opens it, and the
+// served-root citation in the shipped-copy test really did print a claim of "//" and nothing else.
+test('a claim is read forward when the citation opens the comment', () => {
+  const lines = [`// ${cite('server.mjs:12')} resolves the served root to src/, so that is what shipped means`];
+  const at = lines[0].indexOf('server.mjs:12');
+
+  assert.match(claimBefore(lines, 0, at, false), /resolves the served root/);
+});
+
+// Walking back over wrapped comment lines is what makes a claim readable at all, but a comment
+// sitting directly on top of code must not absorb the line above it into the sentence. The
+// assertion is an equality rather than a substring: the old walk did absorb the line, and the
+// 90-character window then clipped the first two characters off `fileURLToPath`, so a check for
+// its absence passed on the broken code by an accident of where the truncation fell.
+test('the walk back over a comment stops at the first line that is not one', () => {
+  const lines = [
+    "const ROOT = resolve(fileURLToPath(new URL('./src', import.meta.url)));",
+    '// the hue comes from the series name at',
+    `// ${cite('src/js/main.js:434-435')}, so only lightness is the theme's`,
+  ];
+  const at = lines[2].indexOf('src/js/main.js:434-435');
+
+  assert.equal(claimBefore(lines, 2, at, false), 'the hue comes from the series name at');
+});
+
+// The forward read is the one part of the claim walk that is not conditioned on prose, so a
+// Markdown table row is the case where forwards and backwards have to agree. Backwards a row is
+// refused outright, and a forward read that ran past the cell boundary would attribute the next
+// two columns to this one.
+test('a forward read in a table row stops at the cell boundary', () => {
+  const lines = [`| ${cite('src/js/main.js:12')} | second cell | third cell |`];
+  const at = lines[0].indexOf('src/js/main.js:12');
+
+  assert.ok(!claimBefore(lines, 0, at, true).includes('second cell'));
 });

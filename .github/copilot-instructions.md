@@ -90,7 +90,7 @@ retrieved. That is the same discipline the anchors gate enforces on the product 
 why the gate feels natural once you are working this way.
 
 One caveat specific to this repository, and the reason is the opposite of the obvious one. The
-anchors gate scans **every tracked Markdown file**, `.copilot-tracking/` included, so a backticked
+anchors gate scans **every tracked file**, `.copilot-tracking/` included, so a backticked
 `path:line` written into a dated artifact becomes a live claim that CI will chase. Those artifacts
 are a historical record and must not be re-aimed to satisfy a gate. Navigate them by stable ids,
 markers and headings, and keep citations in the product documents, where re-aiming is the correct
@@ -130,11 +130,11 @@ release.
 
 ## The evidence anchors gate, and how to not corrupt it
 
-Every `path:line` citation in every tracked Markdown file, this one included, is fingerprinted by
+Every `path:line` citation in every tracked file, this one included, is fingerprinted by
 the **content** of the lines it names, not by the numbers. Editing code moves lines and breaks
 fingerprints. That is the gate working.
 
-Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:114-117` explains why in the
+Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:121-124` explains why in the
 script itself: an enumeration is a list someone has to keep complete, and every anchor defect the
 gate exists to catch was caused by exactly that.
 
@@ -163,9 +163,14 @@ forever.
 
 Two traps in the gate itself, both hit while writing this file:
 
-- **The gate only sees tracked files.** It enumerates with `git ls-files` and keeps everything
-  ending in `.md`, so a new document you have not yet `git add`ed is invisible to it and will pass
-  locally while failing in CI. Run `git add` first, then `npm run anchors`.
+- **The gate only sees tracked files.** It enumerates with `git ls-files`, so a new file you have
+  not yet `git add`ed is invisible to it and will pass locally while failing in CI. Run `git add`
+  first, then `npm run anchors`.
+- **Outside Markdown, only a backticked citation is collected.** In a document both forms are, but
+  in code a bare `path:line` inside a string literal is a value the program computes with rather
+  than a claim, and the gate's own test fixtures are exactly that. So a citation you write in a
+  code comment is live and gated; one you write as test data must be left bare, and assembled
+  rather than typed if the fixture itself needs the backticks.
 - **Any `path:line` you write in backticks is a live claim**, including one you are quoting as an
   example of a mistake. Writing the wrong citation inside backticks, even to say it was wrong,
   creates that citation and the gate will chase it. Describe a wrong line in plain prose, as "line
@@ -192,7 +197,21 @@ under unlike claims, which is the exact shape of that collision. Sharing lines i
 is not an error and it is deliberately silent once the pair is settled: it fires only on the bless
 that creates or moves one of them, which is the one moment the pairing can still be acted on.
 
-Ranges must not end on a blank line.
+Ranges must not end on a blank line, and must not begin on one either. The second half is newer and
+is the harder of the two to catch, because the bless print cannot show it. The head recorded for a
+range is its first *non-blank* line, so a range that has slid one line early onto a blank keeps a
+head identical to the one blessed before it moved. The print then reads as an unchanged head with a
+changed anchor, which is exactly what a correct re-aim looks like, while the range silently covers
+one line fewer than the claim needs. Two citations landed that way in one commit here. Two more in
+the same commit slid onto non-blank lines, so the print did show their heads changing, and reading
+it missed them anyway. A review caught all four by re-deriving the shift arithmetic. That is the
+stronger lesson of the two: half the cases were invisible to the print, and the print was no help
+on the other half either. The arithmetic is the check.
+
+That is also the argument for re-running the arithmetic after the last edit rather than after the
+last edit you were thinking about. All four came from a re-aiming script that ran correctly and was
+then invalidated by a one-line paragraph rewrite made afterwards in the same file. If anything at
+all changes after a re-aim, the re-aim is stale.
 
 ## Claims the gates do not check
 

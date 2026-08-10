@@ -128,7 +128,7 @@ export const PAIRS = [
   // ghost button has any: its label and its border. Both are listed rather than assumed, because
   // the button that was made quieter is the one it would be worst to make unreadable.
   ['--text', 'the ghost button on the unreadable-data banner', BODY, 'the label of the start-fresh button'],
-  ['--muted', 'the ghost button on the unreadable-data banner', LARGE, 'the border that sets the start-fresh button apart, at src/styles.css:925'],
+  ['--muted', 'the ghost button on the unreadable-data banner', LARGE, 'the border that sets the start-fresh button apart, at `src/styles.css:933`'],
 ];
 
 // Two of the surfaces this stylesheet paints on are not tokens and have no hex value to read, so a
@@ -152,13 +152,13 @@ export const SURFACES = {
     layer: '--tint-base',
     fraction: 0.08,
     on: '--rail',
-    css: 'rgb(var(--tint-base) / 8%) over the rail, at src/styles.css:286',
+    css: 'rgb(var(--tint-base) / 8%) over the rail, at `src/styles.css:286`',
   },
   'the unreadable-data banner': {
     layer: '--warn',
     fraction: 0.12,
     on: '--panel',
-    css: 'color-mix(in srgb, var(--warn) 12%, var(--panel)), at src/styles.css:909',
+    css: 'color-mix(in srgb, var(--warn) 12%, var(--panel)), at `src/styles.css:909`',
   },
   // Built on a surface rather than a token, which is the case the first version of this could not
   // express. A ghost button is a tint over whatever it is dropped onto, so on the banner it is a
@@ -168,7 +168,7 @@ export const SURFACES = {
     layer: '--tint-base',
     fraction: 0.05882,
     on: 'the unreadable-data banner',
-    css: 'rgb(var(--tint-base) / 5.882%) over the banner, at src/styles.css:474',
+    css: 'rgb(var(--tint-base) / 5.882%) over the banner, at `src/styles.css:474`',
   },
 };
 
@@ -343,10 +343,10 @@ export function checkAll(css) {
 // saved lists.
 //
 // Those two citations, and the two in the fifth entry below, were all four lines out of date when
-// BL-069 checked them. Nothing gates a `path:line` written in a code comment: the anchors gate
-// reads tracked Markdown only, so a citation here drifts silently every time the file it names
-// changes. They are corrected rather than removed, and the general problem is filed rather than
-// solved here.
+// BL-069 checked them, because nothing then gated a `path:line` written in a code comment: the
+// anchors gate read tracked Markdown only, so a citation here drifted silently every time the file
+// it named changed. BL-071 has since widened it to every tracked file, and the twelve citations in
+// this one are now fingerprinted like any other. One of them was still wrong when they enrolled.
 //
 // They are recorded rather than waived because a gate that quietly tolerates its own findings is not
 // a gate. The baseline is exact in both directions. A new pair below the floor fails, which is the

@@ -276,6 +276,22 @@ quote in a bug report.
 
 ### Changed
 
+- **The safety check that guards written claims about the code now guards the ones written in the
+  code as well.** Nothing about the app changes and nothing you have saved is affected. The project
+  keeps hundreds of claims of the form "this behaviour lives in this exact place in the code", and a
+  check shouts when the code moves out from under one. It only ever read the project's documents,
+  so the same kind of claim written as a note beside the code itself was unguarded, and an earlier
+  round of work had already found four of those quietly pointing at the wrong lines. The check now
+  reads every tracked file. Turning it on found two more wrong on the first run: one said a button's
+  outline was set at a line that is only a written note eight lines above the rule that really sets
+  it, and one said a placeholder's colour came from a comic's series number when it comes from the
+  series name. Both are corrected. The check skips its own record of accepted positions, and works
+  that out from where it writes that record rather than from a list of names to keep up to date, so
+  there is nothing to forget. It also skips pictures. The note it prints beside each claim, so a
+  person can read the claim against the line, had to be taught to read notes written in code: it was
+  splicing comment marks into the middle of a sentence and, where a claim opened a note rather than
+  closed one, printing nothing at all.
+
 - **A safety check the project uses on itself now does a job that used to be left to whoever was
   paying attention.** Nothing about the app changes and nothing you have saved is affected. The
   project keeps a large number of written claims of the form "this behaviour lives in this exact

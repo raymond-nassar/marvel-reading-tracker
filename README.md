@@ -273,7 +273,7 @@ npm run counts
 ```
 
 `npm test` runs the unit tests. `npm run lint` runs ESLint. `npm run anchors` checks that
-every `path:line` citation in the tracked Markdown still points at lines saying what the
+every `path:line` citation in the tracked files still points at lines saying what the
 citation claims. `npm run counts` recomputes the figures the backlog states about its own
 ranked table, such as how many rows it has and where an item ranks, and fails with the
 derived value when the prose disagrees. All four run in CI on every pull request, and on
