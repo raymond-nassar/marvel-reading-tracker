@@ -54,7 +54,12 @@ const HERO_NO_ISSUE = 'Nothing up next';
 const CONTINUE_NO_LIST = 'Continue reading';
 
 const $ = (sel) => document.querySelector(sel);
-const announcer = $('#announcer');
+// Read on use rather than at module load. This one query was the only thing this module did to
+// the document while it was being evaluated, and it was what made the file impossible to import
+// in Node: the ReferenceError landed before any test body ran, so no double could be installed
+// early enough to prevent it. Resolved once per announcement rather than cached, because
+// announcements are user-paced and a lookup costs nothing beside the 30ms wait below.
+const announcer = () => $('#announcer');
 
 const settings = loadSettings();
 const limiter = new RateLimiter();
@@ -212,9 +217,12 @@ function preservingFocus(container, rebuild, opts) {
 }
 
 function announce(msg) {
-  announcer.textContent = '';
+  // Resolved once and reused, so both writes land on the same element even if the document
+  // changes under us between them.
+  const node = announcer();
+  node.textContent = '';
   // Re-setting after a tick makes screen readers re-announce identical messages.
-  setTimeout(() => { announcer.textContent = msg; }, 30);
+  setTimeout(() => { node.textContent = msg; }, 30);
 }
 
 // A success message must never outlive the write it describes. store.update rolls the change
@@ -1796,7 +1804,7 @@ let rowsPending = false;
 // for is removed first, because a stale node left in front of the reused ones shifts every later
 // index by one and turns a single rebuilt row into a move of all the rest. insertBefore then moves
 // a node already in the tree rather than copying it, so a reordered item costs one move.
-function commitRows(container, desired) {
+export function commitRows(container, desired) {
   const wanted = new Set(desired);
   for (const node of [...container.childNodes]) if (!wanted.has(node)) node.remove();
   let i = 0;
@@ -1804,6 +1812,17 @@ function commitRows(container, desired) {
     if (container.childNodes[i] !== node) container.insertBefore(node, container.childNodes[i] ?? null);
     i += 1;
   }
+}
+
+// The key is the whole item rather than a list of the fields a row happens to read. An
+// enumerated list is one somebody has to keep complete, and a field left out of it is a row
+// that silently stops updating, which is the defect this cache would otherwise buy.
+//
+// Two inputs are not in the item and so have to be named: whether this is the up next row,
+// and today's date, which is what decides whether a badge reads "soon" or "MU". Without the
+// date a tab left open across midnight reuses the row it built yesterday for good.
+export function rowCacheKey(item, currentId, today) {
+  return `${JSON.stringify(item)}|${item.issueId === currentId}|${today}`;
 }
 
 function renderRows() {
@@ -1885,13 +1904,7 @@ function renderRows() {
         }
       }
 
-      // The key is the whole item rather than a list of the fields this row happens to read.
-      // An enumerated list is one somebody has to keep complete, and a field left out of it is a
-      // row that silently stops updating, which is the defect this cache would otherwise buy.
-      // Two inputs are not in the item and so have to be named: whether this is the up next row,
-      // and today's date, which is what decides whether a badge reads "soon" or "MU". Without the
-      // date a tab left open across midnight reuses the row it built yesterday for good.
-      const rowKey = `${JSON.stringify(item)}|${item.issueId === currentId}|${today}`;
+      const rowKey = rowCacheKey(item, currentId, today);
       const cached = rowCache.get(item.issueId);
       if (cached && cached.key === rowKey) { desired.push(cached.node); continue; }
 
@@ -3126,76 +3139,83 @@ function renderAll() {
   syncHash();
 }
 
-setInterval(renderQueue, 1000);
-
 // ------------------------------------------------------------------ boot
 
-// Last in the file, not first. Booting from the top would run before the module's `let`
-// bindings are initialised, and reading one of those from inside a boot call is a
-// ReferenceError rather than an undefined — the temporal dead zone does not hoist the way
-// function declarations do.
-store.load();
-applyCoversSetting();
-applyThemeSetting();
-wireSidebar();
-wireNav();
-wireReading();
-wireAdd();
-wireData();
-wireShortcuts();
-wireBlockedBanner();
-wireCatalogSearch();
-wireHome();
-wirePreview();
-wireAsk();
-wireProgressScope();
-renderAll();
-// The address bar is now allowed to be written, but not before: renderAll has just run once, and
-// an ungated sync inside it would have overwritten the incoming hash before it was read.
-routeReady = true;
-// A reader with nothing to read has no reading view to show, so the landing page is where
-// they start. One with an active list resumes it, which is the whole point of the app.
-// An address that names a view wins over both, which is what makes a bookmark, a shared link and
-// a reload land where they say they will. focus:false either way, so arriving at the page never
-// takes focus off the document the reader has not started interacting with yet.
-const bootRoute = parseRoute(location.hash);
-if (bootRoute) applyRoute(bootRoute, { focus: false, filterIfAbsent: filter });
-else showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: false });
-
-// Back and Forward arrive here, as does anyone editing the address by hand. A hash that is not one
-// of ours is left entirely alone: index.html ships a skip link to #main, and answering that with a
-// view change would throw a keyboard user somewhere they did not ask to go.
+// Everything above defines; this does. Keeping the two apart is what lets the module be
+// imported at all: evaluating it used to run the whole sequence below, so a test that wanted
+// one render function got a booting application instead, and in Node it got a ReferenceError
+// before that. src/js/app.js is the entry the page loads, and calling boot() is all it does.
 //
-// Focus does move here, unlike at boot, because a Back press is a navigation the reader made. A
-// screen reader that is told nothing after it has no way to know the page changed under it.
-window.addEventListener('hashchange', () => {
-  const route = parseRoute(location.hash);
-  if (route) applyRoute(route, { focus: true, filterIfAbsent: DEFAULT_FILTER });
-});
-checkHealth();
-refreshCacheUsage();
+// Still last in the file, and still for the original reason. Booting from the top would run
+// before the module's `let` bindings are initialised, and reading one of those from inside a
+// boot call is a ReferenceError rather than an undefined, because the temporal dead zone does
+// not hoist the way function declarations do.
+export function boot() {
+  setInterval(renderQueue, 1000);
 
-if (store.lastError) notify('#save-report', store.lastError, 'error');
+  store.load();
+  applyCoversSetting();
+  applyThemeSetting();
+  wireSidebar();
+  wireNav();
+  wireReading();
+  wireAdd();
+  wireData();
+  wireShortcuts();
+  wireBlockedBanner();
+  wireCatalogSearch();
+  wireHome();
+  wirePreview();
+  wireAsk();
+  wireProgressScope();
+  renderAll();
+  // The address bar is now allowed to be written, but not before: renderAll has just run once, and
+  // an ungated sync inside it would have overwritten the incoming hash before it was read.
+  routeReady = true;
+  // A reader with nothing to read has no reading view to show, so the landing page is where
+  // they start. One with an active list resumes it, which is the whole point of the app.
+  // An address that names a view wins over both, which is what makes a bookmark, a shared link and
+  // a reload land where they say they will. focus:false either way, so arriving at the page never
+  // takes focus off the document the reader has not started interacting with yet.
+  const bootRoute = parseRoute(location.hash);
+  if (bootRoute) applyRoute(bootRoute, { focus: false, filterIfAbsent: filter });
+  else showView(store.state.lists[activeListId()] ? 'read' : 'home', { focus: false });
 
-// Reported after the first render, because a notice placed before there is a view to place it in
-// has nowhere to go. #app-report follows the reader between views, unlike the settings pane this
-// value is edited in, which is only seen by someone who already went looking for it.
-//
-// The launch page reads the same stored value and refuses it too, but it has no default to fall
-// back on and no reason to invent one, so it skips the lookup and sends the tab to marvel.com.
-// That degradation is named here because it happens in a tab this app does not control, where
-// nothing would otherwise explain it.
-if (settings.rejectedApiBase) {
-  notify(
-    '#app-report',
-    `The saved API URL ${settings.rejectedApiBase} is not usable. The tracker is using ${DEFAULT_BASE} for this session, and any issue without a stored Marvel Unlimited link will open on marvel.com rather than in the reader. Set a usable URL under Backup & settings: use https, or http against localhost.`,
-    'warn',
-    API_BASE_REJECTED,
-  );
+  // Back and Forward arrive here, as does anyone editing the address by hand. A hash that is not one
+  // of ours is left entirely alone: index.html ships a skip link to #main, and answering that with a
+  // view change would throw a keyboard user somewhere they did not ask to go.
+  //
+  // Focus does move here, unlike at boot, because a Back press is a navigation the reader made. A
+  // screen reader that is told nothing after it has no way to know the page changed under it.
+  window.addEventListener('hashchange', () => {
+    const route = parseRoute(location.hash);
+    if (route) applyRoute(route, { focus: true, filterIfAbsent: DEFAULT_FILTER });
+  });
+  checkHealth();
+  refreshCacheUsage();
+
+  if (store.lastError) notify('#save-report', store.lastError, 'error');
+
+  // Reported after the first render, because a notice placed before there is a view to place it in
+  // has nowhere to go. #app-report follows the reader between views, unlike the settings pane this
+  // value is edited in, which is only seen by someone who already went looking for it.
+  //
+  // The launch page reads the same stored value and refuses it too, but it has no default to fall
+  // back on and no reason to invent one, so it skips the lookup and sends the tab to marvel.com.
+  // That degradation is named here because it happens in a tab this app does not control, where
+  // nothing would otherwise explain it.
+  if (settings.rejectedApiBase) {
+    notify(
+      '#app-report',
+      `The saved API URL ${settings.rejectedApiBase} is not usable. The tracker is using ${DEFAULT_BASE} for this session, and any issue without a stored Marvel Unlimited link will open on marvel.com rather than in the reader. Set a usable URL under Backup & settings: use https, or http against localhost.`,
+      'warn',
+      API_BASE_REJECTED,
+    );
+  }
+
+  // Written once at startup rather than from renderAll, because neither number can change
+  // while the page is open, and a bug report needs them to be there whether or not the user
+  // has touched anything.
+  $('#about-version').textContent = APP_VERSION;
+  $('#about-schema').textContent = String(SCHEMA_VERSION);
 }
-
-// Written once at startup rather than from renderAll, because neither number can change
-// while the page is open, and a bug report needs them to be there whether or not the user
-// has touched anything.
-$('#about-version').textContent = APP_VERSION;
-$('#about-schema').textContent = String(SCHEMA_VERSION);

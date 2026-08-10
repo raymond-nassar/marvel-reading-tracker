@@ -294,6 +294,22 @@ quote in a bug report.
 
 ### Changed
 
+- **The largest file in the project can now be tested directly, which it never could before.**
+  Nothing about the app changes and nothing you have saved is affected. Most of the code here is
+  checked by tests that run it, but the file that draws every screen could not be loaded by a test
+  at all: loading it was the same act as starting the whole app, and outside a browser it stopped
+  with an error before any test could begin. So the parts of it that decide when a row on screen
+  needs redrawing were checked by reading the code as text and looking for the right words, which
+  passes just as happily if the words are right and the behaviour is wrong. The starting-up part is
+  now separate from the rest, so a test can load the file without launching anything, and those two
+  decisions are now checked by running them. Ten new checks, and each was first shown to fail
+  against a deliberately broken copy so that none of them is a check that cannot fail. One of them
+  catches a fault that had already happened once and cost a real slowdown, where redrawing one row
+  quietly moved every row below it; that check counts the work done rather than the result, because
+  the broken version still produced the right screen. The app itself was then opened in a browser
+  and put through eight checks to confirm it still starts, still moves between screens, and still
+  speaks to screen readers.
+
 - **The "we could not read your saved data" warning no longer tells you the same thing twice.** It
   used to give you the reason and the advice, then repeat the advice underneath in slightly
   different words, and both of those also appeared in the red strip along the top, so every
