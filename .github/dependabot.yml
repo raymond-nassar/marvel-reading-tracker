@@ -1,0 +1,54 @@
+version: 2
+
+# The app ships zero runtime dependencies, so every package below is development tooling and
+# reaches nobody who uses the app. That is the whole reason this file can afford to be quiet:
+# a version bump here cannot regress the browser, only the linter and the CI run, and both of
+# those fail loudly on the very next pull request.
+#
+# The advisory threshold, decided here because a threshold that lives in someone's head is not
+# one. GitHub's Dependabot security updates are enabled on this repository and open a pull
+# request for any severity, which is the right setting when the whole graph is three declared
+# packages and what they pull in: there is no volume to triage. What the threshold governs is
+# how fast each one has to be taken.
+#
+#   critical or high  Merge before the next change to the default branch. These run against a
+#                     maintainer's checkout and inside CI, which is where a compromised lint
+#                     plugin would do its damage.
+#   moderate or low   Ride the weekly group below. `npm audit` reported 0 vulnerabilities over
+#                     the 90 packages it counted when this was written, so nothing is being
+#                     deferred by saying so.
+#   any severity in a runtime dependency
+#                     Treat as a product vulnerability under `SECURITY.md`, not as tooling.
+#                     There are none, and `test/security-policy.test.js` fails if that changes,
+#                     which is what makes the row above safe to write.
+
+updates:
+  # Grouped into a single pull request because every package in this ecosystem is dev tooling
+  # with the same blast radius, and three separate pull requests a week for three packages is
+  # the noise this item was raised to avoid. Weekly rather than daily for the same reason.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      dev-tooling:
+        patterns:
+          - "*"
+    # A group cannot merge until it is reviewed, so the limit exists to stop a stalled week
+    # from queueing behind the next one rather than to ration proposals.
+    open-pull-requests-limit: 2
+
+  # The workflow pins actions by major tag today, so this ecosystem is what notices when a
+  # major moves. It stays useful after the pins become commit SHAs: Dependabot updates a
+  # SHA-pinned action and rewrites the version comment beside it.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 2
