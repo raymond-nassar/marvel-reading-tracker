@@ -9,12 +9,13 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Sixty-one items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Sixty-two items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
-BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-089, BL-096 and BL-100.
+BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-089, BL-095, BL-096 and
+BL-100.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Nine remain
@@ -210,8 +211,8 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
-| BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Observed | Ready | .github/workflows/ci.yml:27-100 |
-| BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Ready | .github/workflows/ci.yml:38-48 |
+| BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:85-87 |
+| BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Ready | .github/workflows/ci.yml:60-73 |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:112-122 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
@@ -223,7 +224,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Ready | src/js/storage.js:290-335 |
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:32 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:163-175 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:164-176 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-70 |
@@ -2330,7 +2331,7 @@ because each compared line numbers rather than reading lines, and because each m
 subset of the places an anchor can be written. `scripts/check-anchors.mjs` fingerprints the cited
 lines themselves rather than their numbers, so a correct re-aim preserves the fingerprint while
 drift breaks it, and the build fails in the commit that moves the code rather than in a sweep months
-later. It runs in the lint job at `.github/workflows/ci.yml:102-103` and locally as `npm run anchors`,
+later. It runs in the lint job at `.github/workflows/ci.yml:134-136` and locally as `npm run anchors`,
 wired at `package.json:14-15`.
 
 Which half of it depends on which is the load-bearing decision. Listing the shapes an anchor can
@@ -2982,7 +2983,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2685-2688`.
+`PRODUCT_BACKLOG.md:2686-2689`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4514,21 +4515,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5800-5802` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5824-5826` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:173-175`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:174-176`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5821-5824`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5845-5848`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5634-5636` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5658-5660` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4736,9 +4737,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:914-923` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:163-167` and
-`PRODUCT_BACKLOG.md:173-175` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:932-941` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:164-168` and
+`PRODUCT_BACKLOG.md:174-176` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -4986,7 +4987,7 @@ Constraint gate: checked 1 to 11, none breached.
 Fork pull requests already run with a read-only token, no repository secret and no privileged event,
 which is the right baseline. The two actions still execute through mutable major tags, checkout keeps
 its token by default, and `npm ci` is an execution boundary a contributor can change through the
-manifest. Evidence: `.github/workflows/ci.yml:1-19`, `.github/workflows/ci.yml:38-48`.
+manifest. Evidence: `.github/workflows/ci.yml:1-19`, `.github/workflows/ci.yml:60-73`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -5138,16 +5139,39 @@ not cover the HTTP contract or the macOS and Linux launcher branches. Evidence:
 
 **BL-095: Put explicit deadlines on CI jobs**
 
-- [ ] Measure normal and slow recent job durations
-- [ ] Add per-job deadlines with room for a cold install
-- [ ] Preserve concurrency cancellation and manual dispatch
-- [ ] Make a timeout distinguishable from a test or gate failure
+- [x] Measure normal and slow recent job durations
+- [x] Add per-job deadlines with room for a cold install
+- [x] Preserve concurrency cancellation and manual dispatch
+- [x] Make a timeout distinguishable from a test or gate failure
 
 Constraint gate: checked 1 to 11, none breached.
 
-Neither job sets `timeout-minutes`. Local tests contain focused deadlines, but a future install,
-test or gate can still consume the platform's much larger default window and delay useful feedback.
-Evidence: `.github/workflows/ci.yml:27-100`.
+Neither job set `timeout-minutes`, so both inherited the platform default of six hours. The
+durations say how far from reality that was: over 241 runs and 676 successful jobs, the worst whole
+job was 32 seconds and the worst single step was 20 seconds of `setup-node`. Nothing in this
+repository has ever taken minutes, so six hours was not a deadline, it was the absence of one.
+
+The last task turned out to decide the design, and it needed measuring rather than reading. A probe
+workflow put the same deliberate overrun under both placements and read the conclusions back from
+the API: a job-level deadline ends the job `cancelled`, and a step-level one ends it `failure` with
+the overrunning step marked. `cancelled` is exactly what the concurrency group produces when a newer
+push supersedes a run, and the contributor guide teaches in as many words that such a run means
+nothing is broken. A job-level deadline alone would therefore have created the one failure this
+project is trained to dismiss, which is worse than the six hours it replaced.
+
+So the deadline that fires is the step's. Every step carries one, sized at six times or more the
+worst that step has ever taken, and each job's deadline exceeds the sum of its steps' by at least a
+minute, which is two orders of magnitude more than the eight seconds of runner setup and teardown
+that sit outside the steps. That ordering keeps the ambiguous outcome unreachable for anything that
+hangs inside a step. It is also invisible in the file, being arithmetic between numbers written
+eighty lines apart, so a test holds it: every job has a deadline, every step has one, and the job's
+clears the sum. A fourth test holds the test's own hand-rolled parser to the file's count of
+deadlines, so a step the parser failed to see cannot pass as a step that has one. Eight mutations
+were each shown red, and the four tests split cleanly across them rather than all firing at once.
+The concurrency group, the manual dispatch trigger and the full-history checkout are untouched.
+
+Evidence: `.github/workflows/ci.yml:43-53`, `.github/workflows/ci.yml:30-34`,
+`test/ci-deadlines.test.js:119-128`, `test/ci-deadlines.test.js:135-145`.
 
 **BL-096: Publish a security policy and private reporting route**
 
@@ -5257,7 +5281,7 @@ Constraint gate: checked 1 to 11, none breached.
 No ownership file or issue and pull-request templates exist. The internal instructions require a
 plain-English opening and verification counts, but an external contributor never sees that shape in
 the contribution flow. Branch rules are a settings-only check and must be verified separately.
-Evidence: `.github/copilot-instructions.md:367-399`,
+Evidence: `.github/copilot-instructions.md:380-412`,
 `absent: CODEOWNERS and issue or pull request templates, tracked-file inventory`.
 
 **BL-099: Clarify the license and provenance boundary for committed data**
@@ -5351,7 +5375,7 @@ branches and no tags, and 9 of those 22 are the head branches of pull requests t
 merged. Nothing here deletes them, because deleting a branch is a repository operation rather than a
 change to the tree, and it is filed as BL-103. Cloning this machine's own copy receives 36 instead,
 which is a local accumulation and not something publication would expose. Evidence:
-`scripts/check-publication.mjs:156-190`, `.github/workflows/ci.yml:63-76`.
+`scripts/check-publication.mjs:156-190`, `.github/workflows/ci.yml:89-105`.
 
 **BL-101: Withdraw the undo-restore offer when erasing everything**
 
