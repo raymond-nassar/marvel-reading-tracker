@@ -269,13 +269,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:291-292|0": {
-    "anchor": "PRODUCT_BACKLOG.md:291-292",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:293-294|0": {
+    "anchor": "PRODUCT_BACKLOG.md:293-294",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5384|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5384",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5418|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5418",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -839,8 +839,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:857-866|0": {
-    "anchor": "CHANGELOG.md:857-866",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:868-877|0": {
+    "anchor": "CHANGELOG.md:868-877",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -874,44 +874,44 @@
     "fp": "3407c971ff683a01",
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:158-162|0": {
-    "anchor": "PRODUCT_BACKLOG.md:158-162",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:160-164|0": {
+    "anchor": "PRODUCT_BACKLOG.md:160-164",
     "fp": "4a89a7d9f02e050f",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:168-170|0": {
-    "anchor": "PRODUCT_BACKLOG.md:168-170",
-    "fp": "b63b407f0e29e3f3",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:170-172|0": {
+    "anchor": "PRODUCT_BACKLOG.md:170-172",
+    "fp": "8ba06a61213955d9",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:168-170|1": {
-    "anchor": "PRODUCT_BACKLOG.md:168-170",
-    "fp": "b63b407f0e29e3f3",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:170-172|1": {
+    "anchor": "PRODUCT_BACKLOG.md:170-172",
+    "fp": "8ba06a61213955d9",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2677-2680|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2677-2680",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2679-2682|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2679-2682",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5358-5360|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5358-5360",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5392-5394|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5392-5394",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5524-5526|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5524-5526",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5558-5560|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5558-5560",
     "fp": "2f7e750267ca9c0c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5545-5548|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5545-5548",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5579-5582|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5579-5582",
     "fp": "ec5e4ca8fe8fb6c8",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:250-447|0": {
-    "anchor": "README.md:250-447",
-    "fp": "e7106791f5f0f9db",
+  "PRODUCT_BACKLOG.md|item-details|README.md:250-452|0": {
+    "anchor": "README.md:250-452",
+    "fp": "fb7e65f0ac57e219",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:29-39|0": {
@@ -919,13 +919,13 @@
     "fp": "413b46d0983adb66",
     "head": "### Your data stays with you"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:298-302|0": {
-    "anchor": "README.md:298-302",
+  "PRODUCT_BACKLOG.md|item-details|README.md:303-307|0": {
+    "anchor": "README.md:303-307",
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:389-400|0": {
-    "anchor": "README.md:389-400",
+  "PRODUCT_BACKLOG.md|item-details|README.md:394-405|0": {
+    "anchor": "README.md:394-405",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -1329,6 +1329,11 @@
     "fp": "24fc4e0169a550e3",
     "head": "if (this.controller !== controller) return;"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/apiBase.js:26-38|0": {
+    "anchor": "src/js/lib/apiBase.js:26-38",
+    "fp": "32e71035ced922be",
+    "head": "export function isAllowedApiBase(value) {"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/availability.js:10|0": {
     "anchor": "src/js/lib/availability.js:10",
     "fp": "baff944060f60826",
@@ -1473,6 +1478,11 @@
     "anchor": "src/js/lib/shortcuts.js:26-60",
     "fp": "0c13bbed47c568da",
     "head": "export function isTextEntry(el) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/version.js:5-9|0": {
+    "anchor": "src/js/lib/version.js:5-9",
+    "fp": "3e2c4d78c29c3429",
+    "head": "//   MAJOR  changes the stored data in a way an older build cannot read. Anyone who has"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1003|0": {
     "anchor": "src/js/main.js:1003",
@@ -2504,9 +2514,9 @@
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:158-170|0": {
-    "anchor": "PRODUCT_BACKLOG.md:158-170",
-    "fp": "70d8b1a32e6c4eaa",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:160-172|0": {
+    "anchor": "PRODUCT_BACKLOG.md:160-172",
+    "fp": "e94470e35a2b4ad5",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
@@ -2664,9 +2674,14 @@
     "fp": "e551917ff25b6ce7",
     "head": "test:"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:250-290|0": {
-    "anchor": "README.md:250-290",
-    "fp": "e8b50522f72e61cd",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-096|SECURITY.md:28-38|0": {
+    "anchor": "SECURITY.md:28-38",
+    "fp": "cad02b9529f1d710",
+    "head": "**Do not open a public issue, discussion or pull request for a suspected vulnerability.** A public"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:250-295|0": {
+    "anchor": "README.md:250-295",
+    "fp": "affead99e99ed544",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-099|src/data/curated-lists.json:78-116|0": {
@@ -2768,6 +2783,36 @@
     "anchor": "src/styles.css:944",
     "fp": "1eef54d530f1e5d5",
     "head": ".blocked .btn-g { border-color: var(--muted); }"
+  },
+  "SECURITY.md|in-scope|.github/workflows/ci.yml:18-19|0": {
+    "anchor": ".github/workflows/ci.yml:18-19",
+    "fp": "95da3e6147977222",
+    "head": "permissions:"
+  },
+  "SECURITY.md|in-scope|src/js/lib/apiBase.js:26-38|0": {
+    "anchor": "src/js/lib/apiBase.js:26-38",
+    "fp": "32e71035ced922be",
+    "head": "export function isAllowedApiBase(value) {"
+  },
+  "SECURITY.md|what-already-reduces-risk-here|server.mjs:112-122|0": {
+    "anchor": "server.mjs:112-122",
+    "fp": "6cd80fc67836d175",
+    "head": "const headers = {"
+  },
+  "SECURITY.md|what-already-reduces-risk-here|server.mjs:43-54|0": {
+    "anchor": "server.mjs:43-54",
+    "fp": "74672dc47f977dcd",
+    "head": "const CSP = ["
+  },
+  "SECURITY.md|what-is-supported|src/js/lib/version.js:5-9|0": {
+    "anchor": "src/js/lib/version.js:5-9",
+    "fp": "3e2c4d78c29c3429",
+    "head": "//   MAJOR  changes the stored data in a way an older build cannot read. Anyone who has"
+  },
+  "SECURITY.md|what-this-project-is-because-it-decides-what-a-v|package.json:26-28|0": {
+    "anchor": "package.json:26-28",
+    "fp": "04eff6c81ce2b80f",
+    "head": "\"@stylistic/eslint-plugin\": \"^5.10.0\","
   },
   "src/styles.css|preamble|src/js/main.js:461-462|0": {
     "anchor": "src/js/main.js:461-462",
