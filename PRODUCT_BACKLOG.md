@@ -206,11 +206,11 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:341-408 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
-| BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:30-38 |
+| BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:36-44 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
-| BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Observed | Ready | .github/workflows/ci.yml:27-99 |
+| BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Observed | Ready | .github/workflows/ci.yml:27-100 |
 | BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Ready | .github/workflows/ci.yml:38-48 |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:112-122 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
@@ -2330,7 +2330,7 @@ because each compared line numbers rather than reading lines, and because each m
 subset of the places an anchor can be written. `scripts/check-anchors.mjs` fingerprints the cited
 lines themselves rather than their numbers, so a correct re-aim preserves the fingerprint while
 drift breaks it, and the build fails in the commit that moves the code rather than in a sweep months
-later. It runs in the lint job at `.github/workflows/ci.yml:101-102` and locally as `npm run anchors`,
+later. It runs in the lint job at `.github/workflows/ci.yml:102-103` and locally as `npm run anchors`,
 wired at `package.json:14-15`.
 
 Which half of it depends on which is the load-bearing decision. Listing the shapes an anchor can
@@ -4514,7 +4514,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5778-5780` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5800-5802` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4524,11 +4524,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:173-175`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5799-5802`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5821-5824`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5612-5614` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5634-5636` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4736,7 +4736,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:908-917` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:914-923` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:163-167` and
 `PRODUCT_BACKLOG.md:173-175` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5147,7 +5147,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 Neither job sets `timeout-minutes`. Local tests contain focused deadlines, but a future install,
 test or gate can still consume the platform's much larger default window and delay useful feedback.
-Evidence: `.github/workflows/ci.yml:27-99`.
+Evidence: `.github/workflows/ci.yml:27-100`.
 
 **BL-096: Publish a security policy and private reporting route**
 
@@ -5314,22 +5314,44 @@ authorship identities in the history are already `noreply` addresses.
 `npm run publication` checks both halves, and `npm run publication:surface` swaps the second one to
 the branches the remote advertises. It is wired into CI, and that step is the reason the lint job
 now checks out at `fetch-depth: 0` while every other job here stays shallow: a shallow clone has one
-commit, so the history half would have reported a true green about almost nothing. The gate detects
-a shallow clone and names the population it actually read rather than passing quietly, which is what
-makes that failure visible instead of merely absent.
+commit, so the history half would have been answered over almost nothing. The gate exits 2 rather
+than 0 in that state, and 2 means "could not answer" rather than "clean", which is the distinction
+the whole script turns on.
 
-Verified: nine mutations, each turning at least one of the four new tests red. Three delete an
-ignore rule, one removes a signature from the gate, one loosens the identifier signature until
-ordinary prose matches it, two break the exemption list, and the last commits a string shaped like
-an access key in a throwaway clone, which turns both the test and the gate itself red and names the
-file. A fresh clone installs, and every gate passes from it.
+That distinction is the review's doing, and it is worth recording that the first version did not
+make it. A code review of this item found nine defects, seven of them a way the scan could report
+success without having looked. The gate exempted two whole files at every revision, so a real
+credential committed to either was invisible to the gate and to the test that double-checks it, and
+one of those two files matched nothing at all, so the exemption bought a blind spot in the script
+the mechanism rests on and nothing else. An allowance is now one exact hit in one exact file, so a
+second, unplanned one in the same file still fails. Blobs over the size limit, blobs holding a NUL
+byte and exempted blobs were dropped from the count with no mention, so the population line claimed
+more than it had read; what was left out is now named in the line itself, and text with a byte order
+mark is decoded instead of discarded, which matters because the shell this repository is developed
+in writes UTF-16 by default and captured logs are the artifact class most likely to carry a path.
+The shallow check sat in an `else if` after the surface branch and so could never run in the mode
+the comment above calls authoritative. `--surface` described the last fetch as what the remote
+advertises, and now asks the remote. `git ls-files` quoted any path outside plain ASCII, the quoted
+form was not one `git show` accepts, and the failure was swallowed, so an unreadable file and a
+clean one printed the same. The pattern for a Windows profile path accepted only the raw backslash
+form, which is the one a person spots by eye and not one of the four further shapes a tool writes it
+in: escaped for a string literal, forward slashed, quoted, and as a file url.
+
+Verified: nineteen mutations, each turning at least one of the eleven tests in this gate's suite red.
+Eight are the original set, which delete an ignore rule, remove or loosen a signature, break the
+allowance list, or commit a string shaped like an access key in a throwaway clone; that last one
+turns the gate itself red too, and names the file. Eleven more were written against the review, one
+per defect above, including two that pin the workflow's full-depth checkout: one deletes the setting
+and one moves it to the other job, and the second is the one that matters, because the first version
+of that test never split the file into jobs and so was true of any workflow mentioning both things
+anywhere. A fresh clone installs, and every gate passes from it.
 
 One thing the clone measured that this item does not fix. A clone of the remote receives 22
 branches and no tags, and 9 of those 22 are the head branches of pull requests that have already
 merged. Nothing here deletes them, because deleting a branch is a repository operation rather than a
 change to the tree, and it is filed as BL-103. Cloning this machine's own copy receives 36 instead,
 which is a local accumulation and not something publication would expose. Evidence:
-`scripts/check-publication.mjs:104-114`, `.github/workflows/ci.yml:63-75`.
+`scripts/check-publication.mjs:156-190`, `.github/workflows/ci.yml:63-76`.
 
 **BL-101: Withdraw the undo-restore offer when erasing everything**
 
@@ -5393,7 +5415,7 @@ This is untidiness rather than exposure, which is why it is scored the way it is
 every one of those branches and found nothing to remediate, so the content is the same content, and
 the cost of leaving it is that a reader has to work out which of 22 branches is live. The third task
 is the one that keeps this closed, because the first two are a cleanup that will be back within a
-month otherwise. Evidence: `scripts/check-publication.mjs:104-114`.
+month otherwise. Evidence: `scripts/check-publication.mjs:156-190`.
 
 **BL-104: Let the anchors gate see a citation of a file with no extension**
 

@@ -26,12 +26,18 @@ quote in a bug report.
   current version of the files. The answer today is that there is nothing to clean up, and that
   answer is now re-checked automatically instead of being a thing somebody once looked into.
 
-  Getting the second check right meant discarding the first attempt at it. Asking this machine for
-  everything it holds turns up hundreds of internal working markers that no copy of the project ever
-  receives, so a check built that way would have complained forever about things nobody could
-  remove. What it looks at now is what a copy of the project would actually contain, and it says
-  which of the two it read, so a check that has been given nothing to look at reports that rather
-  than quietly reporting success.
+  Getting the second check right meant discarding the first attempt at it, twice. Asking this
+  machine for everything it holds turns up hundreds of internal working markers that no copy of the
+  project ever receives, so a check built that way would have complained forever about things nobody
+  could remove. What it looks at now is what a copy of the project would actually contain. Then a
+  review found that the check was quietly reporting success over things it had never looked at: two
+  files it had been told to skip entirely, anything too large, anything it mistook for a picture, and
+  on an abbreviated copy of the project, essentially everything. It now says out loud what it left
+  out, skips one known example at a time rather than a whole file, reads the text format this
+  project's own tools write by default instead of discarding it, asks the service what copies exist
+  rather than trusting what it last heard, and refuses to answer at all when it has been handed too
+  little to answer from. It also now recognises a folder path from this machine in the four further
+  shapes a program writes one in, having previously only recognised the one a person would spot.
 
 - **The project now watches its own development tooling for known security problems, and says how
   fast each one has to be dealt with.** Nothing about the app changes and nothing you have saved is

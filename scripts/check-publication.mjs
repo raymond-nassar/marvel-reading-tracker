@@ -10,13 +10,19 @@
 //   Boundary   The ignore rules that keep local-only content local are actually in force. Reads the
 //              working tree, so it holds on any clone including a shallow one.
 //   History    Nothing personal or credential-shaped is committed anywhere a reader could reach.
-//              Needs history, so on a shallow clone it says so rather than passing quietly.
+//              Needs history, so on a shallow clone it refuses to answer rather than passing.
 //
 // Run it with no arguments for both halves against whatever history is present. `--surface`
 // scans what a clone of the remote would receive rather than the local object store, which is the
 // distinction the header comment on PATTERNS explains and the reason this script exists at all.
+//
+// Three exit codes, and the third is the one that matters. 0 is clean over a population it could
+// actually read. 1 is findings. 2 is "could not answer", which is what a shallow clone, a missing
+// remote, a stale view of one, or git itself failing all produce. The first version of this script
+// returned 0 for most of those, and a gate that reports success when it has been given nothing to
+// look at is worse than no gate, because it reads identically in a summary.
 
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawnSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -40,8 +46,14 @@ export const PROTECTED = [
 // Shapes that must not reach a published tree. Each is a signature rather than a guess at a value:
 // a match is a thing that looks like a credential or like one machine's private detail, and the
 // gate's answer to a match is to stop rather than to judge.
+//
+// The first pattern accepts both separators and a doubled one because the raw form is the form
+// this repository is least likely to leak. Everything here is developed under a Windows profile
+// directory, and a path that reaches a JSON file, a lockfile, a `file://` URL or any JavaScript
+// string literal arrives escaped or forward-slashed. The narrow version of this pattern matched
+// the one form a person would notice by eye and missed the four a machine writes.
 export const PATTERNS = [
-  ['a path inside one machine\'s user profile', /[A-Za-z]:\\Users\\[A-Za-z0-9._-]+/g],
+  ['a path inside one machine\'s user profile', /[A-Za-z]:[\\/]{1,2}Users[\\/]{1,2}[A-Za-z0-9._-]+/g],
   ['a path inside one machine\'s home directory', /(?:^|[\s"'(])\/(?:home|Users)\/[A-Za-z0-9._-]+\//gm],
   ['a session or workspace identifier', /\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b/gi],
   ['an AWS access key id', /\bAKIA[0-9A-Z]{16}\b/g],
@@ -55,49 +67,89 @@ export const PATTERNS = [
 // Written into the tree deliberately, as the example of the thing being looked for. A gate that
 // cannot be told about its own documentation fails on the sentence that explains it, which is a
 // failure nobody can act on and everybody learns to ignore.
-export const EXEMPT = new Set(['scripts/check-publication.mjs', 'test/publication-gate.test.js']);
+//
+// The allowance is one exact hit in one exact file, not a file. It used to be a file, and that was
+// a hole rather than a shortcut: a whole-file exemption skips every pattern at every revision, so a
+// real credential committed to an exempt path was invisible to this gate and to the test that
+// double-checks it. Two files were exempt and one of them, this one, matched nothing at all, so the
+// exemption bought a permanent blind spot in the single file the whole mechanism rests on and
+// nothing else. Keyed this way, a fourth unplanned credential-shaped string in the fixture file
+// still fails.
+//
+// Each key is assembled rather than written out for the same reason the fixtures it describes are:
+// a literal here would be a real string of that shape in a real file, and this file is now scanned
+// like every other.
+const FIXTURES_FILE = 'test/publication-gate.test.js';
+export const ALLOWED = new Map([
+  [`${FIXTURES_FILE}|a path inside one machine's home directory|/ho` + 'me/somebody/',
+    'the positive fixture for the home-directory pattern'],
+  [`${FIXTURES_FILE}|a session or workspace identifier|577facd0-f9e4` + '-4c0a-a5ff-77182d49c2c5',
+    'the positive fixture for the identifier pattern, which is this session\'s own id'],
+  [`${FIXTURES_FILE}|a private key block|-----BEGIN RSA ` + 'PRIVATE KEY-----',
+    'the positive fixture for the private key pattern, a header with no key under it'],
+]);
 
 export function findings(label, text, sink) {
   for (const [name, re] of PATTERNS) {
     const hits = text.match(re);
     if (!hits) continue;
-    if (!sink.has(name)) sink.set(name, []);
-    for (const hit of new Set(hits)) sink.get(name).push({ label, hit: hit.trim().slice(0, 80) });
+    for (const hit of new Set(hits)) {
+      const trimmed = hit.trim();
+      if (ALLOWED.has(`${label}|${name}|${trimmed}`)) continue;
+      if (!sink.has(name)) sink.set(name, []);
+      sink.get(name).push({ label, hit: trimmed.slice(0, 80) });
+    }
   }
 }
 
 // ------------------------------------------------------------------ the boundary half
 
+// Two probes per root, one nested and one directly beneath it, because a rule can be narrowed to
+// cover the first and not the second. `.copilot-tracking/*/*` passed the nested probe while leaving
+// a file at the root of it committable by an ordinary `git add -A`, which is the whole fault this
+// half exists to catch.
+//
+// `core.excludesFile` is emptied so the answer is about this repository's rules rather than about
+// whatever the machine running it happens to ignore globally. A rule in `.git/info/exclude` still
+// counts and cannot be turned off this way, so a local pass is not the last word; CI runs this on a
+// clean checkout, which has no `info/exclude`, and that is the leg that settles it.
 export function boundaryFaults() {
   const faults = [];
+  const errors = [];
   for (const [root, why] of PROTECTED) {
-    // A path that does not exist, so the answer is about the rule rather than about a file. `git
-    // check-ignore` exits 1 when the path is not ignored, which is the fault this is looking for.
-    const probe = `${root}2099-01-01/would-a-new-artifact-be-held-out.md`;
-    let ignored = false;
-    try {
-      git(['check-ignore', '--quiet', '--no-index', '--', probe]);
-      ignored = true;
-    } catch {
-      ignored = false;
+    // Paths that do not exist, so the answer is about the rule rather than about a file.
+    const probes = [`${root}2099-01-01/would-a-new-artifact-be-held-out.md`, `${root}would-a-new-artifact-be-held-out.md`];
+    for (const probe of probes) {
+      // `git check-ignore` exits 0 when ignored and 1 when not. Anything else is git failing to
+      // answer, which used to be folded into "not ignored" and reported as a policy violation with
+      // a message that sent the reader after the wrong thing entirely.
+      const run = spawnSync('git', ['-c', 'core.excludesFile=', 'check-ignore', '--quiet', '--no-index', '--', probe], { cwd: ROOT });
+      if (run.status === 0) continue;
+      if (run.status === 1) {
+        faults.push(`${probe} is not ignored, so a new file there would be committed by an ordinary \`git add -A\`. It holds ${why}.`);
+        continue;
+      }
+      errors.push(`git could not answer whether ${probe} is ignored (status ${run.status}): ${String(run.stderr).trim()}`);
     }
-    if (!ignored) faults.push(`${root} is not ignored, so a new file there would be committed by an ordinary \`git add -A\`. It holds ${why}.`);
   }
-  return faults;
+  return { faults, errors };
 }
 
 // ------------------------------------------------------------------ the content half
 
+// A file git could not read is not a file that read clean. `ls-files` quotes any path outside plain
+// ASCII under the default `core.quotePath`, and the quoted form is not a path `git show` accepts, so
+// the first version of this skipped every such file silently and reported the tree clean. Turning
+// quoting off and splitting on NUL is the fix; the surviving read failure becomes a fault, because
+// "could not look" and "looked and found nothing" must not print the same.
 function trackedBlobs() {
-  const files = git(['ls-files']).split('\n').map((s) => s.trim()).filter(Boolean);
+  const files = git(['-c', 'core.quotePath=false', 'ls-files', '-z']).split('\u0000').filter(Boolean);
   return files.map((file) => {
-    let text = null;
     try {
-      text = git(['show', `HEAD:${file}`]);
-    } catch {
-      text = null;
+      return { file, body: execFileSync('git', ['show', `HEAD:${file}`], { cwd: ROOT, maxBuffer: 512e6 }), error: null };
+    } catch (e) {
+      return { file, body: null, error: String(e.message).split('\n')[0] };
     }
-    return { file, text };
   });
 }
 
@@ -106,11 +158,35 @@ function trackedBlobs() {
 // whose commit messages are all session identifiers, and scanning it reported 316 of them. None is
 // advertised by the remote, so none would ever be published, and a gate built on `--all` would
 // have been permanently red over content no one could remove.
+//
+// Remote-tracking refs are a cache of the last fetch, not the remote. Asking the remote directly and
+// refusing to answer on any disagreement is the difference between reporting what would be published
+// and reporting what this machine last happened to hear about it.
 function surfaceObjects() {
   const tracking = git(['for-each-ref', '--format=%(refname)', 'refs/remotes/origin'])
     .split('\n').map((s) => s.trim()).filter(Boolean).filter((r) => !r.endsWith('/HEAD'));
-  if (tracking.length === 0) return null;
-  return tracking;
+  if (tracking.length === 0) return { refs: null, why: 'No remote-tracking refs. --surface scans what a clone of the remote would receive, so there is nothing to scan.' };
+
+  let advertised;
+  try {
+    advertised = git(['ls-remote', '--heads', 'origin']).split('\n')
+      .map((s) => s.trim()).filter(Boolean)
+      .map((line) => line.split('\t')[1]).filter(Boolean)
+      .map((ref) => ref.replace(/^refs\/heads\//, ''));
+  } catch (e) {
+    return { refs: null, why: `Could not ask the remote what it advertises, so the local tracking refs cannot be trusted to be that population: ${String(e.message).split('\n')[0]}` };
+  }
+
+  const local = tracking.map((r) => r.replace(/^refs\/remotes\/origin\//, ''));
+  const missing = advertised.filter((b) => !local.includes(b));
+  const stale = local.filter((b) => !advertised.includes(b));
+  if (missing.length || stale.length) {
+    const parts = [];
+    if (missing.length) parts.push(`${missing.length} advertised branch(es) this clone has never fetched (${missing.slice(0, 5).join(', ')})`);
+    if (stale.length) parts.push(`${stale.length} tracking ref(s) the remote no longer advertises (${stale.slice(0, 5).join(', ')})`);
+    return { refs: null, why: `The local view of the remote is out of date, so --surface would report on the wrong population: ${parts.join(' and ')}. Run \`git fetch --prune\` and try again.` };
+  }
+  return { refs: tracking, why: null };
 }
 
 function scanCommits(refs, sink) {
@@ -126,6 +202,20 @@ function scanCommits(refs, sink) {
   return count;
 }
 
+// A byte-order mark means text this repository is especially likely to produce and least likely to
+// look at. PowerShell 5.1 is the shell here and its `>` and `Set-Content` write UTF-16LE by default,
+// so a captured log or transcript is full of NUL bytes and was being discarded as binary. That is
+// the artifact class most likely to carry a path or a token, so it is decoded rather than skipped.
+export function decode(body) {
+  if (body.length >= 2 && body[0] === 0xff && body[1] === 0xfe) return body.subarray(2).toString('utf16le');
+  if (body.length >= 2 && body[0] === 0xfe && body[1] === 0xff) {
+    const swapped = Buffer.from(body.subarray(2));
+    if (swapped.length % 2 === 0) { swapped.swap16(); return swapped.toString('utf16le'); }
+  }
+  if (body.includes(0)) return null;
+  return body.toString('utf8');
+}
+
 function scanBlobs(refs, sink) {
   const objects = git(['rev-list', '--objects', ...refs]).split('\n').map((s) => s.trim()).filter(Boolean);
   const names = new Map();
@@ -137,12 +227,15 @@ function scanBlobs(refs, sink) {
     input: [...names.keys()].join('\n'),
   });
   const wanted = [];
+  const report = { scanned: 0, large: 0, binary: 0, unreadable: 0 };
   for (const line of check.split('\n')) {
     const [sha, type, size] = line.trim().split(' ');
-    if (type !== 'blob' || Number(size) >= 4e6) continue;
-    const name = names.get(sha) || sha.slice(0, 8);
-    if (EXEMPT.has(name)) continue;
-    wanted.push({ sha, name });
+    if (type !== 'blob') continue;
+    // Four megabytes is where a blob stops plausibly being text somebody wrote. The count is
+    // printed rather than dropped, because a population line that silently omits its exclusions
+    // is a claim wider than the thing it was measured over.
+    if (Number(size) >= 4e6) { report.large += 1; continue; }
+    wanted.push({ sha, name: names.get(sha) || sha.slice(0, 8) });
   }
   // One `git cat-file --batch` for every blob rather than one spawn each. At a thousand blobs the
   // per-spawn cost was most of the runtime, and a gate slow enough to notice is one that gets moved
@@ -153,50 +246,74 @@ function scanBlobs(refs, sink) {
     maxBuffer: 512e6,
   });
   let at = 0;
-  let scanned = 0;
   for (const { name } of wanted) {
     const nl = raw.indexOf(0x0a, at);
     if (nl < 0) break;
-    const size = Number(raw.toString('utf8', at, nl).trim().split(' ')[2]);
+    const header = raw.toString('utf8', at, nl).trim().split(' ');
+    // A header without a size means git answered `missing` or `ambiguous`. Advancing by a NaN
+    // would desync every blob after it and report the rest of the population clean, so this stops
+    // being a parse and becomes a fault.
+    if (header.length < 3) { report.unreadable += 1; at = nl + 1; continue; }
+    const size = Number(header[2]);
     const body = raw.subarray(nl + 1, nl + 1 + size);
     at = nl + 1 + size + 1;
-    if (body.includes(0)) continue;
-    scanned += 1;
-    findings(name, body.toString('utf8'), sink);
+    const text = decode(body);
+    if (text === null) { report.binary += 1; continue; }
+    report.scanned += 1;
+    findings(name, text, sink);
   }
-  return scanned;
+  return report;
+}
+
+// What was left out is part of what was read. Anything excluded is named here so the population
+// line describes the scan that happened rather than the one it resembles.
+export function excluded(report) {
+  const parts = [];
+  if (report.large) parts.push(`${report.large} skipped as 4 MB or larger`);
+  if (report.binary) parts.push(`${report.binary} skipped as binary`);
+  if (report.unreadable) parts.push(`${report.unreadable} git could not read`);
+  return parts.length ? `, ${parts.join(', ')}` : '';
 }
 
 function isShallow() {
-  try { return git(['rev-parse', '--is-shallow-repository']).trim() === 'true'; } catch { return false; }
+  return git(['rev-parse', '--is-shallow-repository']).trim() === 'true';
 }
 
 // ------------------------------------------------------------------ report
 
 function main() {
-  const faults = boundaryFaults();
+  const { faults, errors } = boundaryFaults();
   const sink = new Map();
   let population;
+  let unanswered = null;
 
-  if (SURFACE) {
-    const refs = surfaceObjects();
-    if (refs === null) {
-      console.error('No remote-tracking refs. --surface scans what a clone of the remote would receive, so there is nothing to scan.');
-      return 2;
-    }
-    const blobs = scanBlobs(refs, sink);
-    const commits = scanCommits(refs, sink);
-    population = `${refs.length} branch(es) the remote advertises, ${blobs} blob(s) and ${commits} commit message(s)`;
-  } else if (isShallow()) {
-    for (const { file, text } of trackedBlobs()) {
-      if (text === null || EXEMPT.has(file) || text.includes('\u0000')) continue;
+  // Hoisted above the mode dispatch. It used to sit in an `else if` after the surface branch, so
+  // `--surface` could never reach it, and that is the one invocation where a truncated scan reading
+  // as a complete one does the most damage: it is the mode the workflow comment and the changelog
+  // both name as the population that matters on the day someone publishes.
+  if (isShallow()) {
+    let unreadable = 0;
+    for (const { file, body, error } of trackedBlobs()) {
+      if (body === null) { unreadable += 1; errors.push(`could not read ${file} at HEAD: ${error}`); continue; }
+      const text = decode(body);
+      if (text === null) continue;
       findings(file, text, sink);
     }
-    population = 'the tracked working tree only, because this clone is shallow and has no history to read';
+    population = `the tracked working tree only, because this clone is shallow and has no history to read${unreadable ? `, ${unreadable} of which git could not read` : ''}`;
+    unanswered = 'This clone is shallow, so the history half of this gate was not answered. Nothing above is evidence that the history is clean. Re-run on a full clone, or in CI, where the checkout for this step sets `fetch-depth: 0`.';
+  } else if (SURFACE) {
+    const { refs, why } = surfaceObjects();
+    if (refs === null) {
+      console.error(why);
+      return 2;
+    }
+    const report = scanBlobs(refs, sink);
+    const commits = scanCommits(refs, sink);
+    population = `${refs.length} branch(es) the remote advertises, ${report.scanned} blob(s)${excluded(report)} and ${commits} commit message(s)`;
   } else {
-    const blobs = scanBlobs(['HEAD'], sink);
+    const report = scanBlobs(['HEAD'], sink);
     const commits = scanCommits(['HEAD'], sink);
-    population = `every commit reachable from HEAD, ${blobs} blob(s) and ${commits} commit message(s)`;
+    population = `every commit reachable from HEAD, ${report.scanned} blob(s)${excluded(report)} and ${commits} commit message(s)`;
   }
 
   const revision = git(['rev-parse', 'HEAD']).trim();
@@ -214,16 +331,32 @@ function main() {
       console.log(`            ${JSON.stringify(hit)}  in ${label}`);
     }
   }
+  for (const error of errors) console.log(`\nUNANSWERED  ${error}`);
 
-  if (faults.length === 0 && total === 0) {
-    console.log('\nNothing to remediate. Record this revision and this population beside any claim that the history is clean.');
-    return 0;
+  if (faults.length > 0 || total > 0) {
+    console.log('\nA finding here is not automatically a leak. Read each one: the answer is either to remove it,');
+    console.log('or to record why it is deliberate, and a hit that is deliberate belongs in ALLOWED, named exactly.');
+    return 1;
   }
-  console.log('\nA finding here is not automatically a leak. Read each one: the answer is either to remove it,');
-  console.log('or to record why it is deliberate, and a shape that is deliberate everywhere belongs in EXEMPT.');
-  return 1;
+  if (errors.length > 0 || unanswered) {
+    if (unanswered) console.log(`\n${unanswered}`);
+    console.log('\nThis run did not establish that the population is clean. Treat it as unanswered rather than as a pass.');
+    return 2;
+  }
+  console.log('\nNothing to remediate. Record this revision and this population beside any claim that the history is clean.');
+  return 0;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  process.exit(main());
+  let code;
+  try {
+    code = main();
+  } catch (e) {
+    // Anything thrown here is git or the filesystem refusing to co-operate. It used to surface as
+    // an uncaught exception and exit 1, which is the code that means "findings were found", so an
+    // infrastructure failure and a real leak were indistinguishable by exit code.
+    console.error(`The publication gate could not run: ${String(e && e.message).split('\n')[0]}`);
+    code = 2;
+  }
+  process.exit(code);
 }

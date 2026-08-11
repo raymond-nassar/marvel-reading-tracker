@@ -66,10 +66,11 @@ jobs:
     steps:
       # The full history, unlike every other checkout here. The publication gate below
       # scans commit messages and every blob any commit ever held, and the default
-      # shallow fetch gives it one commit to look at. The gate detects that and says
-      # which population it read rather than passing quietly, so a shallow clone would
-      # not have produced a false green; it would have produced a true green about
-      # almost nothing, which is worse, because it reads the same in a summary.
+      # shallow fetch gives it one commit to look at. In that state the gate refuses to
+      # answer rather than reporting a clean scan of almost nothing, so dropping this
+      # setting turns the step red instead of leaving it green over a single commit.
+      # A test pins the pairing, because this was the one decision in this file with
+      # nothing but a comment behind it, and a comment is not a check.
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
