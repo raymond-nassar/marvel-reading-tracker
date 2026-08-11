@@ -164,7 +164,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 575; 224 is the figure as audited.
+  it to 614; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -213,11 +213,11 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Ready | src/js/main.js:3010-3025 |
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Ready | src/js/storage.js:290-335 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Ready | absent: .github/dependabot.yml, tracked-file inventory and GitHub settings query |
-| BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Observed | Ready | absent: CODEOWNERS and issue or pull request templates, tracked-file inventory |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:155-167 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
+| BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Ready | absent: .github/dependabot.yml, tracked-file inventory and GitHub settings query |
+| BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Observed | Ready | absent: CODEOWNERS and issue or pull request templates, tracked-file inventory |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1604-1631 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:662-678 |
@@ -230,10 +230,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
-| BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-086 | Keep cover requests inside the stated trust boundary | Defect | EP-05 | Extends BL-044 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/lib/model.js:94-115 |
 | BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Ready | server.mjs:76-168 |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | absent: committed browser-runner script, tracked-file inventory and package scripts |
+| BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-354 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2896-2930 |
@@ -5546,18 +5546,18 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and thirty-two
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and fifty
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 58 rows now. The ranks below are positions in it as it stands.
+how it reaches 76 rows now. The ranks below are positions in it as it stands.
 
 ### Case 1: BL-026 is labelled P0 but ranks thirty-first
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
 - Calculated: WSJF 3.67, rank 31 of 76.
-- Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
-  It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
-  smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
-  below a cheap fix that costs 1.
+- Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
+  It is outranked by thirty items, fifteen of them sized 1, 2 or 3 whose Cost of Delay is lower but
+  whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will
+  always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
   else ships" or "must not be dropped". If the former, the label wins and BL-026 moves to the top
   regardless of the score. If the latter, the score's ordering is fine, because the items
@@ -5606,13 +5606,14 @@ how it reaches 58 rows now. The ranks below are positions in it as it stands.
   backlog lost to a scope judgement, and both WSJF and the P1 label would have argued for building
   it. Evidence for the state that prompted it is unchanged and still recorded in the reconciliation
   table and in `docs/UX_STUDY.md`.
-- Consequence for the ranking: with BL-028 removed the table was 34 rows, and is 36 now that BL-058
-  and BL-059 have been filed. BL-060 was filed here too and then parked on 2026-08-07, which is why
+- Consequence for the ranking: with BL-028 removed the table was 34 rows, and was 36 once BL-058
+  and BL-059 had been filed. BL-060 was filed here too and then parked on 2026-08-07, which is why
   the count moved by two rather than three. The highest Cost of Delay among the items that remain is
-  16, shared by BL-029, BL-039 and BL-050. That sentence was briefly untrue while BL-060 sat in the
-  table carrying 18, and parking it made the sentence right again rather than requiring an edit. The
-  five ranks quoted below are correct on the same basis: they were computed without BL-060 and are
-  accurate again now that it is out of the table.
+  29, shared by BL-083 and BL-099. That figure was 16, shared by BL-029, BL-039 and BL-050, until
+  the 2026-08-10 study filed four items scoring above the 18 BL-028 carried. It had also been
+  briefly untrue while BL-060 sat in the table carrying 18, and parking it made the sentence right
+  again rather than requiring an edit. The five ranks quoted below are correct on the same basis:
+  they were computed without BL-060 and are accurate again now that it is out of the table.
 
 ### Case 4: eleven items created this pass outrank the only open P0 story
 
@@ -5640,8 +5641,9 @@ how it reaches 58 rows now. The ranks below are positions in it as it stands.
 
 ### One caution about the score itself
 
-BL-042 carries a risk-reduction score of 8, joint highest in the backlog alongside BL-039, BL-041
-and BL-050, and still ranks last at 0.55. That is entirely the size 20 denominator. The rank is
+BL-042 carries a risk-reduction score of 8, which was joint highest in the backlog until the
+2026-08-10 study filed four items at 13, and still ranks last at 0.55. That is entirely the size 20
+denominator. The rank is
 arithmetically correct and practically misleading: the item is not low value, it is unsplit. It is
 held at `Proposed` rather than `Ready` for that reason, and the honest reading of its rank is
 "cannot be scheduled yet", not "not worth doing".

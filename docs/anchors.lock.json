@@ -264,9 +264,14 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5291-5292|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5291-5292",
-    "fp": "31a154fd1d1ceb92",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:287-288|0": {
+    "anchor": "PRODUCT_BACKLOG.md:287-288",
+    "fp": "539875df9040cb38",
+    "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
+  },
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5291|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5291",
+    "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
   "docs/UX_STUDY.md|proto-persona#reading-style|src/index.html:295-330|0": {
@@ -871,12 +876,12 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:165-167|0": {
     "anchor": "PRODUCT_BACKLOG.md:165-167",
-    "fp": "e22faa3ae332a029",
+    "fp": "94d0a1a201dbb097",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:165-167|1": {
     "anchor": "PRODUCT_BACKLOG.md:165-167",
-    "fp": "e22faa3ae332a029",
+    "fp": "94d0a1a201dbb097",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2673-2676|0": {
@@ -2486,7 +2491,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:155-167|0": {
     "anchor": "PRODUCT_BACKLOG.md:155-167",
-    "fp": "0a62eec427074755",
+    "fp": "12993ae12e4904fb",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
