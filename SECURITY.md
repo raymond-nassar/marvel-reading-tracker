@@ -4,8 +4,9 @@
 
 Marvel Reading Tracker is a static site that runs from your own machine. There is no server to
 attack, no account to take over and no database holding anyone else's data. The app has no runtime
-dependencies at all, so nothing in `package.json` reaches the browser: the three packages listed at
-`package.json:26-28` are the lint tooling and run only on a maintainer's machine and in CI.
+dependencies at all, so nothing in `package.json` reaches the browser. Everything it declares is
+development tooling: the three packages listed at `package.json:26-28` are the linter and the two
+packages its configuration needs, and they run only on a maintainer's machine and in CI.
 Your reading progress lives in one browser storage key and never leaves the machine it was made on.
 
 That shape rules most classic vulnerability categories out and leaves a smaller set that matters a
@@ -33,9 +34,12 @@ Use GitHub's private vulnerability reporting, on the repository's **Security** t
 vulnerability**. That route creates a private draft advisory that only you and the maintainer can
 see, and it is the only channel this project accepts.
 
-If that option is not visible on the Security tab, the repository is not yet public and the setting
-cannot be enabled, because GitHub offers private vulnerability reporting on public repositories.
-While that is the case there are no external users to be at risk and no report to make.
+If that option is not on the Security tab, it has not been turned on. It is off by default, and on
+this repository it cannot be turned on yet at all, because GitHub offers private vulnerability
+reporting on public repositories and this one is still private. In either case, open an issue saying
+only that you have a security report and asking how to send it. **Put no details in it**: not the
+symptom, not the file, not the steps. That issue is a request for a channel, not a report, and one
+will be arranged in reply.
 
 Please include what you would want if you were on the other side of it: what you did, what happened,
 what you expected, which browser and version, and whether any saved reading data was affected. A
@@ -66,12 +70,13 @@ the reasoning you were given is yours to quote.
 - **The development server**, `server.mjs`, which serves the app on the loopback origin. Path
   traversal out of the served directory, or a response that would let a page from elsewhere read
   what it serves, are both in scope.
-- **The metadata endpoint allowlist** at `src/js/lib/apiBase.js:26-38`. It exists so a stored
-  setting cannot put a reader's requests on the network in the clear, and a way past it is in
-  scope.
-- **Generated and vendored data.** The files under `src/data/` are produced by the scripts in
-  `scripts/`, and content in them that could execute, exfiltrate or mislead when rendered is in
-  scope, as is anything in the generators that would let an upstream response do that.
+- **The rule for which metadata API base a stored setting may name**, at
+  `src/js/lib/apiBase.js:26-38`. It is not a list of permitted hosts, and deliberately not: anyone
+  may point the app at their own mirror. What it does is forbid cleartext anywhere but loopback, so
+  a way past that, or a way to set a base the rule should have rejected, is in scope.
+- **Generated and vendored data.** Content under `src/data/`, whether written by the scripts in
+  `scripts/` or kept by hand, that could execute, exfiltrate or mislead when rendered is in scope,
+  as is anything in the generators that would let an upstream response do that.
 - **Dependencies**, meaning the lint tooling and the GitHub Actions used by the workflow. They do
   not reach the browser, but they do run against a maintainer's checkout and in CI.
 - **The workflows** in `.github/workflows/`. The CI workflow reads the repository and nothing else,
@@ -99,10 +104,14 @@ the reasoning you were given is yours to quote.
 
 Recorded so a report can start from what is true rather than from what a scanner assumed.
 
-- The app sends no data anywhere. No accounts, no cloud services, no analytics, no telemetry.
-- The development server sends a content security policy on every response, built at
-  `server.mjs:43-54`, alongside `nosniff`, `no-referrer` and `X-Frame-Options: DENY`, set at
-  `server.mjs:112-122`.
+- Nothing you create is uploaded anywhere. No accounts, no cloud services, no analytics, no
+  telemetry. The app does make outbound requests: it reads comic titles and dates from a public
+  metadata API and loads cover images from Marvel's own servers, so those hosts see that a request
+  was made. Your reading progress is not in any of them.
+- The development server sends a content security policy on every response that serves a file,
+  built at `server.mjs:43-54`, alongside `nosniff`, `no-referrer` and `X-Frame-Options: DENY`, set
+  at `server.mjs:112-122`. Its error responses carry none of the four, which is recorded here
+  because this list is meant to be what is true rather than what was intended.
 - The repository holds no secrets. Nothing in the scripts or the workflow reads a credential, and
   the metadata API needs no key.
 - CI runs on every pull request with `contents: read` and nothing else.

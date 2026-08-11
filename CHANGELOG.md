@@ -16,16 +16,17 @@ quote in a bug report.
 
 ### Added
 
-- **The project now has a published security policy, and a private route for reporting a
+- **The project now has a published security policy, which names a private route for reporting a
   vulnerability rather than an issue anyone can read.** Nothing about the app changes and nothing
   you have saved is affected. The policy says plainly what a vulnerability can even be in an app
-  with no server, no accounts and nothing uploaded anywhere: the most serious thing that can go
-  wrong here is something that silently loses or corrupts the reading progress you have built up,
-  and that is now treated as a security issue rather than an ordinary bug. It also says what is not
-  in scope, including Marvel's own services, the outside metadata service the app reads from, and
-  the deliberately destructive testing page that warns you before every button. Reports go through
-  a private channel that only you and the maintainer can see, and the policy asks you not to open a
-  public issue for one, because a public report is a disclosure you cannot take back.
+  with no server, no accounts and nothing you create uploaded anywhere: the most serious thing that
+  can go wrong here is something that silently loses or corrupts the reading progress you have built
+  up, and that is now treated as a security issue rather than an ordinary bug. It also says what is
+  not in scope, including Marvel's own services, the outside metadata service the app reads from,
+  and the deliberately destructive testing page that warns you before every button. The private
+  channel itself is not switched on yet, because the service only offers it once a project is
+  visible to the public and this one is not. The policy says so rather than promising a mailbox
+  nobody is reading, and tells you how to ask for a channel without putting any detail in the open.
 
 - **The roadmap now records what must be fixed before the repository is opened to outside
   contributors.** Nothing about the app changes and nothing you have saved is affected. A new
