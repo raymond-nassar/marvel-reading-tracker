@@ -30,6 +30,10 @@ done by someone who does not write software, which is the one thing its author c
 `CHANGELOG.md` carries the
 user-facing view of the same work.
 
+Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 repository assurance and
+open-source readiness study. They are `Ready`: the study records gaps for later implementation and
+does not mix those fixes into the roadmap change that identified them.
+
 ## Product direction
 
 Users should be able to discover, import, follow, and customize reading lists for
@@ -192,14 +196,26 @@ existed. Each shipped item's detail block below says what changed and how it was
 | ID | Title | Type | Epic | Relationship | V | TC | RE | Size | WSJF | P | Basis | Status | Evidence |
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
+| BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Ready | src/js/storage.js:337-373 |
+| BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Ready | absent: SECURITY.md, tracked-file inventory and repository root listing |
+| BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Ready | .gitignore:1-24 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
+| BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Observed | Ready | .github/workflows/ci.yml:27-91 |
+| BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Ready | .github/workflows/ci.yml:38-48 |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:112-122 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
+| BL-099 | Clarify the license and provenance boundary for committed data | Debt | EP-12 | Leaves alone | 8 | 8 | 13 | 5 | 5.8 | none | Observed | Ready | src/data/curated-lists.json:78-116 |
+| BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/index.html:503 |
+| BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/styles.css:817-820 |
+| BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Ready | src/js/main.js:3010-3025 |
+| BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Ready | src/js/storage.js:290-335 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:154-156 |
+| BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Ready | absent: .github/dependabot.yml, tracked-file inventory and GitHub settings query |
+| BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Observed | Ready | absent: CODEOWNERS and issue or pull request templates, tracked-file inventory |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:155-167 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
@@ -208,11 +224,16 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:640 |
+| BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3233-3281 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
+| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:250-290 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
+| BL-086 | Keep cover requests inside the stated trust boundary | Defect | EP-05 | Extends BL-044 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/lib/model.js:94-115 |
+| BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Ready | server.mjs:76-168 |
+| BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | absent: committed browser-runner script, tracked-file inventory and package scripts |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-354 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2896-2930 |
@@ -235,6 +256,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Shipped | src/js/main.js:85 |
 | BL-066 | Offer a reading order grouped by the collected editions it is sold in | Story | EP-02 | Leaves alone | 5 | 2 | 5 | 5 | 2.4 | none | Measured | Shipped | src/data/orders/new-ultimate-universe-trades.md:3 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Shipped | design/mockups/5-longbox-focus.html:169-172 |
+| BL-092 | Bring the fault harness under the alternate-page accessibility baseline | Debt | EP-07 | Leaves BL-034 alone | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | src/dev-faults.js:12-22 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | src/js/lib/readingFilters.js:25-48 |
 | BL-067 | Gate the switch and the primary button, which no pair measures | Debt | EP-08 | Leaves alone | 2 | 2 | 2 | 3 | 2.0 | none | Measured | Shipped | src/styles.css:393 |
@@ -2948,7 +2970,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2651-2654`.
+`PRODUCT_BACKLOG.md:2673-2676`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4480,21 +4502,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5147-5148` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5431-5433` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:161-163`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:165-167`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5168-5170`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5452-5455`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:4981-4983` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5265-5267` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4702,9 +4724,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:816-819` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:154-156` and
-`PRODUCT_BACKLOG.md:161-163` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:821-830` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:155-159` and
+`PRODUCT_BACKLOG.md:165-167` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -4787,6 +4809,268 @@ Verified with 20 new tests, 440 passing in total, and 18 browser checks in Edge 
 test was mutation checked rather than merely watched to pass: breaking `listItems`, the re-import
 guard, the removal path, the load-time prune and the three catalog behaviours in turn failed exactly
 the intended tests and nothing else.
+
+**BL-083: Make backup restore truthful under every write failure**
+
+- [ ] Model failure at each restore write and cleanup stage
+- [ ] Never return failure with durable state changed and in-memory state stale
+- [ ] Reconcile the screen from durable storage whenever the main-key swap may have happened
+- [ ] Make the result message describe the durable outcome
+
+Constraint gate: checked 1 to 11, none breached.
+
+The restore writes the replacement to the main key before removing its staging key. If that cleanup
+throws, the catch reports that nothing changed while storage already holds the replacement and the
+screen still holds the old state. A focused storage probe reproduced that split. This follows up the
+atomicity claim under BL-023 rather than adding another backup feature. Evidence:
+`src/js/storage.js:337-373`, `src/js/main.js:3010-3025`.
+
+**BL-084: Prevent one tab from overwriting another tab's progress**
+
+- [ ] Add a durable revision or equivalent compare-before-write contract
+- [ ] Detect a newer value before replacing the full state
+- [ ] Reconcile, block or ask rather than silently choosing one tab's state
+- [ ] Test concurrent edits, restore, wipe and blocked-recovery paths
+
+Constraint gate: checked 1 to 11, none breached.
+
+Each tab loads a full snapshot and each update rewrites the whole backup. There is no storage-event
+listener, browser lock or revision check, so a stale tab can replace a newer tab's work. Two stores
+over one storage reproduced the loss. BL-075 records a related stale recovery observation, but it
+does not own ordinary writes. Evidence: `src/js/storage.js:290-335`, `src/js/main.js:64-78`.
+
+**BL-085: Bound backup restore before parsing and persistence**
+
+- [ ] Reject files above an evidence-based byte limit before reading and parsing them
+- [ ] Cap collection counts and string lengths during restore
+- [ ] Apply the same list-name and description limits used by ordinary creation
+- [ ] Refuse before mutating a key when staging plus snapshotting cannot fit
+
+Constraint gate: checked 1 to 11, none breached.
+
+The file picker reads any selected file fully before validation. Structural validation checks object
+shapes but caps neither collections nor strings, and restore coercion skips the normal list-name and
+description limits. This is a user-selected availability risk, not a remote attack. Evidence:
+`src/js/main.js:3010-3025`, `src/js/lib/model.js:612-699`.
+
+**BL-086: Keep cover requests inside the stated trust boundary**
+
+- [ ] Inventory legitimate cover hosts used by bundled data and the supported metadata service
+- [ ] Reject or require consent for an unrecognised cover host
+- [ ] Keep the image CSP and URL policy in step
+- [ ] Prove a hostile HTTPS cover address makes no request
+
+Constraint gate: checked 1 to 11, none breached.
+
+Cover normalization accepts any HTTPS host and the CSP permits images from every HTTPS origin. A
+compromised or user-selected metadata service can therefore trigger a tracking request to a third
+party while the interface says covers come from Marvel's servers. The fix must continue to store
+URLs only, never image bytes, so Constraint 1 remains intact. Evidence:
+`src/js/lib/model.js:94-115`, `server.mjs:25-48`, `src/index.html:524-530`.
+
+**BL-087: State the network privacy boundary where the promise appears**
+
+- [ ] Replace absolute in-app wording with the precise README distinction
+- [ ] Name metadata queries and direct cover requests without implying progress is sent
+- [ ] Keep the no-account, no-analytics, no-telemetry and local-progress promises explicit
+- [ ] Check first run, Backup and settings, About and README for one consistent claim
+
+Constraint gate: checked 1 to 11, none breached.
+
+The README says correctly that reading data stays local while metadata and covers are downloaded.
+The app itself says nothing is uploaded. Search text and requested issue identifiers do cross the
+machine boundary, and image hosts receive ordinary requests. Reading progress, notes and identity
+remain local or absent. Evidence: `README.md:29-39`, `src/index.html:500-555`,
+`src/js/api.js:90-102`.
+
+**BL-088: Pin and harden workflow actions for untrusted contributions**
+
+- [ ] Replace action tags with reviewed full commit revisions and readable version comments
+- [ ] Stop checkout persisting credentials where later steps do not need them
+- [ ] Prove the locked lint graph works with dependency lifecycle scripts disabled
+- [ ] Define how pinned actions are reviewed and updated
+
+Constraint gate: checked 1 to 11, none breached.
+
+Fork pull requests already run with a read-only token, no repository secret and no privileged event,
+which is the right baseline. The two actions still execute through mutable major tags, checkout keeps
+its token by default, and `npm ci` is an execution boundary a contributor can change through the
+manifest. Evidence: `.github/workflows/ci.yml:1-19`, `.github/workflows/ci.yml:38-48`.
+
+**BL-089: Turn on repository security and dependency monitoring**
+
+- [ ] Enable Dependabot alerts, security updates and low-noise update proposals
+- [ ] Enable secret scanning and push protection where the repository plan supports them
+- [ ] Decide and document an advisory threshold for the development graph
+- [ ] Keep runtime dependencies at zero and report development tooling separately
+
+Constraint gate: checked 1 to 11, none breached.
+
+The current lockfile audited with zero known vulnerabilities, but GitHub reported Dependabot alerts
+and secret scanning disabled. No committed update configuration or advisory gate repeats the check.
+Development dependencies execute in CI even though they never reach the browser. Evidence:
+`package.json:20-29`, `package-lock.json:1-21`, `absent: .github/dependabot.yml, tracked-file inventory`.
+
+**BL-090: Announce passive service, cache and hydration status changes once**
+
+- [ ] Inventory content that changes without moving focus
+- [ ] Give each qualifying state one polite or assertive channel
+- [ ] Avoid announcing every queue tick when start, failure and completion are enough
+- [ ] Verify timing and repetition in the screen-reader run still owed by BL-027
+
+Constraint gate: checked 1 to 11, none breached.
+
+API health, queue depth, cache usage and hydration progress are updated visually outside the shared
+announcement route. Their elements have neither a status role nor a live-region attribute. BL-027
+fixed messages travelling through two channels; these travel through none. Evidence:
+`src/index.html:121-122`, `src/js/main.js:3233-3281`.
+
+**BL-091: Let catalog descriptions survive the WCAG text-spacing override**
+
+- [ ] Remove or adapt the two-line clamp when required text spacing is applied
+- [ ] Keep card actions aligned without hiding description content
+- [ ] Test the catalog under the WCAG line, letter, word and paragraph spacing values
+- [ ] Cover both themes and the longest bundled description
+
+Constraint gate: checked 1 to 11, none breached.
+
+The catalog clamps every description to two lines and hides overflow. In Edge, applying the WCAG
+text-spacing values left the painted box at 38 pixels while descriptions needed between 77 and 518
+pixels, clipping the text without page overflow. This is a current measured failure, not the dropped
+phone-layout work in BL-028. Evidence: `src/styles.css:817-820`.
+
+**BL-092: Bring the fault harness under the alternate-page accessibility baseline**
+
+- [ ] Make each action result a named atomic status or alert
+- [ ] Suppress its result animation when reduced motion is requested
+- [ ] Check focus, contrast, keyboard order and 200 percent text resize
+- [ ] Keep destructive operations fail closed and document the shared storage origin
+
+Constraint gate: checked 1 to 11, none breached.
+
+The developer harness writes every result into a plain visual container and always runs a 900 ms
+animation. A live browser check confirmed that none of its outputs has status semantics. BL-034
+explicitly excluded this developer-only page, so the item does not reopen application dialogs.
+Evidence: `src/dev-faults.js:12-22`, `src/dev-faults.html:37-39`.
+
+**BL-093: Make real-browser regression evidence reproducible**
+
+- [ ] Commit the critical Edge scenarios already used manually
+- [ ] Keep the browser driver outside runtime and development dependencies
+- [ ] Give each scenario deterministic fixtures and a proved failing mutation
+- [ ] Document one command, prerequisites, assertion counts, artifacts and cleanup
+
+Constraint gate: checked 1 to 11, none breached.
+
+The backlog and UX artifacts record substantial browser verification, but the executable scripts
+live outside the tree. A clean clone cannot rerun import, navigation, persistence, recovery and
+reader-handoff evidence. This extends BL-041's unit coverage rather than claiming the interface is
+untested. Evidence: `absent: committed browser-runner script, tracked-file inventory and package scripts`,
+`docs/UX_STUDY.md:896-933`.
+
+**BL-094: Test the local host and launcher contract**
+
+- [ ] Start the server on an ephemeral loopback port in tests
+- [ ] Verify methods, malformed and escaping paths, ETags, headers and shutdown
+- [ ] Extract launcher command selection as pure data for Windows, macOS and Linux
+- [ ] Decide from measured failures whether an operating-system CI smoke is warranted
+
+Constraint gate: checked 1 to 11, none breached.
+
+The server is the install and runtime boundary, but no test starts it or verifies its observable
+contract. A Windows smoke succeeded during the study; that rejects a current startup defect but does
+not cover the HTTP contract or the macOS and Linux launcher branches. Evidence:
+`server.mjs:76-168`, `absent: server behavior test, search of test directory`.
+
+**BL-095: Put explicit deadlines on CI jobs**
+
+- [ ] Measure normal and slow recent job durations
+- [ ] Add per-job deadlines with room for a cold install
+- [ ] Preserve concurrency cancellation and manual dispatch
+- [ ] Make a timeout distinguishable from a test or gate failure
+
+Constraint gate: checked 1 to 11, none breached.
+
+Neither job sets `timeout-minutes`. Local tests contain focused deadlines, but a future install,
+test or gate can still consume the platform's much larger default window and delay useful feedback.
+Evidence: `.github/workflows/ci.yml:27-91`.
+
+**BL-096: Publish a security policy and private reporting route**
+
+- [ ] Add supported versions, private reporting, acknowledgement and disclosure guidance
+- [ ] Tell reporters not to publish suspected vulnerabilities as ordinary issues
+- [ ] Enable private vulnerability reporting and verify the Security tab presents the route
+- [ ] Define security scope for data loss, generated data, dependencies and workflows
+
+Constraint gate: checked 1 to 11, none breached.
+
+No security policy or supported private route exists. A public repository needs a safe path before
+the first report, not after a vulnerability has already been disclosed in an issue. The repository
+setting is a separate task outcome and cannot be claimed by adding the file alone. Evidence:
+`absent: SECURITY.md, tracked-file inventory and repository root listing`.
+
+**BL-097: Publish contribution, conduct, support and maintainer governance**
+
+- [ ] Add a concise public contribution guide that preserves the repository's quality rules
+- [ ] Explain the destructive fault harness and required backup before use
+- [ ] Adopt a code of conduct with a monitored enforcement contact
+- [ ] Route support, metadata outages, Marvel service issues and security reports correctly
+- [ ] State how roadmap, release, moderation and maintainer decisions are made
+
+Constraint gate: checked 1 to 11, none breached.
+
+The README explains tools and data generation well, but it does not define contribution scope,
+conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
+are valuable history and are not a concise public policy. Evidence: `README.md:250-447`,
+`absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
+
+**BL-098: Define review ownership and contribution intake**
+
+- [ ] Add ownership for workflows, persistence, recovery, generated data and release metadata
+- [ ] Add a pull request template for impact, scope, evidence and provenance
+- [ ] Add focused bug, feature and data-order issue forms
+- [ ] Route security reports privately rather than through a public form
+- [ ] Verify branch rules require the intended reviews and checks
+
+Constraint gate: checked 1 to 11, none breached.
+
+No ownership file or issue and pull-request templates exist. The internal instructions require a
+plain-English opening and verification counts, but an external contributor never sees that shape in
+the contribution flow. Branch rules are a settings-only check and must be verified separately.
+Evidence: `.github/copilot-instructions.md:367-399`,
+`absent: CODEOWNERS and issue or pull request templates, tracked-file inventory`.
+
+**BL-099: Clarify the license and provenance boundary for committed data**
+
+- [ ] Inventory each committed data file by origin, copied fields and upstream terms
+- [ ] Separate provenance descriptions from legal-license fields
+- [ ] Give locally compiled orders a reviewable source trail or independent derivation record
+- [ ] State exactly what MIT covers and what remains subject to third-party terms
+- [ ] Obtain legal review before describing the complete data tree as MIT-licensed
+
+Constraint gate: checked 1 to 11, none breached.
+
+The MIT license clearly covers repository-authored source. Values such as "Compiled for this
+project" describe origin, not legal terms, and one collected-edition order names an external guide
+in prose while its structured source is null. The study makes no legal conclusion about
+redistribution; it records that the boundary needs review before publication. Evidence:
+`src/data/curated-lists.json:78-116`, `src/data/new_ultimate_universe_trades.json:1-9`.
+
+**BL-100: Establish a pre-publication content and history gate**
+
+- [ ] Decide which tracking artifacts and prompts are public evidence and which stay local
+- [ ] Protect intentionally local content with ignore rules or a staging allowlist
+- [ ] Run a dedicated full-history secret scan and record its revision and result
+- [ ] Review history for session identifiers, private statements, personal paths and generated data
+- [ ] Re-clone the publication candidate and verify setup, policies, notices and gates
+
+Constraint gate: checked 1 to 11, none breached.
+
+The history pattern scan found no common credential signature, but it is not a provider-complete
+secret scan. Current untracked prompts and research include local operational detail, while the
+ignore file does not protect paths policy says should remain untracked. Publication needs a
+deliberate boundary and a clean-clone proof. Evidence: `.gitignore:1-24`,
+`.github/copilot-instructions.md:449-466`.
 
 ## Existing epics and stories
 
@@ -5224,6 +5508,32 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-29` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:25-29` and a tracked `package-lock.json`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
 | Licensing | No gap. The project is MIT, and every vendored order records its upstream source and licence rather than absorbing it silently. Evidence: `LICENSE`, `src/data/catalog.json` (`source` and `sourceLicense` per list), `src/js/main.js:2697-2717` (attribution rendered in the UI before import). |
 
+### 2026-08-10 assurance and open-source delta
+
+The historical assessment above remains the record of the state that produced BL-029 through
+BL-052. A current delta reassessed the final tree before planned open-source publication. It filed
+BL-083 through BL-100 and found no reason to reopen shipped or deliberately dropped work.
+
+Security and privacy: restore truthfulness, stale-tab overwrites, unbounded backup import, cover-host
+trust, precise network wording, immutable workflow inputs and continuous repository security
+monitoring are open. The current package audit found zero known vulnerabilities, the server remains
+loopback-only, and no injection sink, credential store, analytics client or comic-image storage was
+found.
+
+Accessibility: passive service statuses, catalog text clipping under the WCAG text-spacing override,
+and the developer fault harness are open. Historical contrast, focus, dialog and theme findings stay
+closed; phone reflow remains the accepted BL-028 decision.
+
+Responsible AI: not applicable, because the product contains no model, inference, prompt execution,
+generated content, recommendation engine or automated decision. Development prompts are not shipped
+inputs. Any future model-backed feature must reopen that decision before implementation.
+
+External contributors: ordinary fork pull requests already run with a read-only token, no referenced
+secret and no privileged event. Publication still needs security reporting, public contribution and
+governance policy, review ownership and templates, a legally reviewed data boundary, and a content
+and history gate. Branch rules, outside-collaborator workflow approval, private vulnerability
+reporting and security-feature settings must be verified on GitHub because files cannot prove them.
+
 ## Appendix B: Priority disagreements
 
 The `P` labels in this document are the original author's release intent. WSJF is a separate,
@@ -5240,10 +5550,10 @@ open when the pass ran, so the table was 28 rows then. BL-028 has since been par
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
 how it reaches 58 rows now. The ranks below are positions in it as it stands.
 
-### Case 1: BL-026 is labelled P0 but ranks eighteenth
+### Case 1: BL-026 is labelled P0 but ranks thirty-first
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 18 of 58.
+- Calculated: WSJF 3.67, rank 31 of 76.
 - Driver: job size, not value. Its Cost of Delay of 11 is the fourth highest figure in the backlog.
   It is outranked by seventeen items sized 1, 2 or 3 whose Cost of Delay is lower but whose size is
   smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will always sit
@@ -5262,10 +5572,10 @@ how it reaches 58 rows now. The ranks below are positions in it as it stands.
   Nothing was harmed by waiting, so treat a Foundation label as "must not be dropped" unless a
   future item's own evidence says otherwise.
 
-### Case 2: BL-007 is labelled P1 but ranks fifty-second
+### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 52 of 58, below forty-eight unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 70 of 76, below sixty-six unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -5321,9 +5631,9 @@ how it reaches 58 rows now. The ranks below are positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 25 of 58. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 19 of 58. Mid-table.
-- BL-017, P2, rank 57 of 58. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 42 of 76. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 33 of 76. Mid-table.
+- BL-017, P2, rank 75 of 76. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

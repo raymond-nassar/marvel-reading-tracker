@@ -118,32 +118,32 @@ test('an id written twice in the delivered list is caught, though it is in neith
 
 test('a rank left over from a smaller table is caught in both halves', () => {
   const d = derive(REAL);
-  const text = mutate(`rank 18 of ${RANKED}`, 'rank 15 of 34');
+  const text = mutate(`rank 31 of ${RANKED}`, 'rank 15 of 34');
   const found = checkRanks(derive(text)).filter((f) => f.claim === 'rank 15 of 34');
   assert.equal(found.length, 2);
   assert.match(messages(found), new RegExp(`states a table of 34 rows; the ranked table has ${d.ranked.length}`));
-  assert.match(messages(found), /puts BL-026 at rank 15; the table puts it at 18/);
+  assert.match(messages(found), /puts BL-026 at rank 15; the table puts it at 31/);
 });
 
 test('a rank whose subject comes from the nearest heading is still checked', () => {
   // The Case 1 bullet names no id; the subject is the heading above it. Renaming the
   // heading's id changes which item the claim is about, and the checker must follow.
   const text = mutate(
-    '### Case 1: BL-026 is labelled P0 but ranks eighteenth',
-    '### Case 1: BL-014 is labelled P0 but ranks eighteenth',
+    '### Case 1: BL-026 is labelled P0 but ranks thirty-first',
+    '### Case 1: BL-014 is labelled P0 but ranks thirty-first',
   );
   const found = checkRanks(derive(text));
-  assert.ok(found.some((f) => /puts BL-014 at rank 18; the table puts it at 25/.test(f.message)));
+  assert.ok(found.some((f) => /puts BL-014 at rank 31; the table puts it at 42/.test(f.message)));
 });
 
 test('an ordinal spelled out in a heading is checked against the table', () => {
   const text = mutate(
-    'BL-026 is labelled P0 but ranks eighteenth',
-    'BL-026 is labelled P0 but ranks fifteenth',
+    'BL-026 is labelled P0 but ranks thirty-first',
+    'BL-026 is labelled P0 but ranks thirtieth',
   );
   const { findings } = checkAll(text);
   assert.ok(findings.some(
-    (f) => /spells BL-026's rank as fifteenth; the table puts it eighteenth/.test(f.message),
+    (f) => /spells BL-026's rank as thirtieth; the table puts it thirty-first/.test(f.message),
   ));
 });
 
@@ -328,11 +328,11 @@ test('the frozen marker exempts a claim about a past state, and only that claim'
 });
 
 test('a frozen marker cannot silence a claim on another line', () => {
-  const text = mutate(`rank 25 of ${RANKED}. Mid-table`, `rank 25 of 34. Mid-table ${FROZEN}`)
-    .replace(`rank 19 of ${RANKED}`, 'rank 19 of 34');
+  const text = mutate(`rank 42 of ${RANKED}. Mid-table`, `rank 42 of 34. Mid-table ${FROZEN}`)
+    .replace(`rank 33 of ${RANKED}`, 'rank 33 of 34');
   const found = checkRanks(derive(text));
-  assert.ok(found.some((f) => /states a table of 34 rows/.test(f.message) && f.claim === 'rank 19 of 34'));
-  assert.ok(!found.some((f) => f.claim === 'rank 25 of 34'));
+  assert.ok(found.some((f) => /states a table of 34 rows/.test(f.message) && f.claim === 'rank 33 of 34'));
+  assert.ok(!found.some((f) => f.claim === 'rank 42 of 34'));
 });
 
 test('number and ordinal words cover the range the document uses and refuse beyond it', () => {
