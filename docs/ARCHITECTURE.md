@@ -94,7 +94,7 @@ view layer itself created and can throw away.
 
 **Two of the five are replaceable at runtime, and they are replaced together.** Saving a new API
 base builds a fresh cache and a fresh client and hands the new client to the hydrator, at
-`src/js/main.js:3050-3052`. The hydrator itself is not rebuilt; only its reference to the client is
+`src/js/main.js:3059-3061`. The hydrator itself is not rebuilt; only its reference to the client is
 swapped. The rate limiter is deliberately not rebuilt either, because the budget it tracks belongs
 to the reader's connection rather than to whichever base URL is configured. The store is never
 replaced at all.
@@ -164,7 +164,7 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3294-3314`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3303-3323`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
@@ -178,9 +178,10 @@ repaints through exactly the path drawn above. No ordinary change reaches the st
 `update`, but it is not the only thing that can set the state, and a guard added inside it would
 not cover the rest. Boot reads the state in, at `src/js/storage.js:37-63`. Restoring a backup and
 starting fresh each replace the whole state rather than transforming it, and both appear in the
-next section. Restoring is the one that writes the key directly, at `src/js/storage.js:342-375`,
-which also puts it past the latch a failed read sets; the comment there says that is deliberate,
-because a restore is a chosen overwrite.
+next section. Restoring is the one that writes the key directly, at `src/js/storage.js:351-398`,
+which also puts it past the latch a failed read sets; the comment above the step that adopts a
+restored state, at `src/js/storage.js:440-448`, says that is deliberate, because a restore is a
+chosen overwrite.
 
 ## Where a reader's data lives
 
@@ -230,8 +231,8 @@ Every name the app writes, and why it exists:
 | Key | Written by | Cleared by | Why it exists |
 |---|---|---|---|
 | `mrt.state.v2` | every saved change, at `src/js/storage.js:330` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
-| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:355-358` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. |
-| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:377-381`. It is deliberately never removed, so the undo survives a reload. |
+| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:378-382` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. A removal that itself throws leaves the key behind, which costs nothing: the next restore overwrites it and nothing reads it in between. |
+| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:473-477`. It is deliberately never removed, so the undo survives a reload. |
 | `mrt.state.salvage` | a failed read, and only when the slot is empty or already holds the same bytes | the reader, from Backup and settings | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
 | `mrt.state.salvage.TIMESTAMP` | a failed read when the slot already holds a different incident, at `src/js/storage.js:121-127` | the reader, from Backup and settings | So a second corruption months later cannot clobber the copy taken for the first one. A `.N` is appended when that name is taken too, which one boot can reach on its own, because starting fresh salvages before it clears. |
 | `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:431` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
@@ -284,7 +285,7 @@ only two keys survive, since all three land in one millisecond and collide on th
 three distinct copies is what the browser leaves, where the boots are milliseconds apart.
 
 It cost nothing on a first incident. There is a test for a second, unrelated incident, at
-`test/storage.test.js:147-173`, so the dated key itself was covered; what no test did was load twice
+`test/storage.test.js:157-183`, so the dated key itself was covered; what no test did was load twice
 inside one incident, which is why the repeat was untested rather than tolerated. It cost a copy of
 the reader's whole state per reload on a second one, in exactly the near-quota situation the
 salvage code was written to survive.
@@ -307,7 +308,7 @@ it.
 
 ## What a per-view split does to these diagrams
 
-BL-042 proposes breaking the 3,400 line view file into per-view modules. A diagram drawn at the
+BL-042 proposes breaking the 3,409 line view file into per-view modules. A diagram drawn at the
 level of function names inside that file would be falsified the day it lands, so each of the three
 above was pitched to survive it. Two do. One survives in shape but has a detail that will need
 rewriting, and it is more useful to say which than to claim all three are safe.

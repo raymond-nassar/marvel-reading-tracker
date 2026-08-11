@@ -299,6 +299,30 @@ quote in a bug report.
 
 ### Fixed
 
+- **Restoring a backup no longer tells you nothing was changed when your saved data has already been
+  replaced.** Restoring is done in stages: the app puts the new data aside, takes a snapshot of what
+  is there now so the restore can be undone, swaps the new data in, and then tidies up. Five things
+  can go wrong across those stages, and until now all five produced the same message, "nothing was
+  changed". For the last two that was untrue. If the tidying-up step failed, your saved data already
+  held the restored backup while the screen still showed the data it had replaced, and the app told
+  you the restore had not happened. Carrying on from there was the real damage: the next ordinary
+  edit you made, marking one issue read, saved the screen you were looking at over the backup you
+  had just successfully restored.
+
+  The app now asks your browser what it is actually holding before it says anything. If your backup
+  is there, the restore is reported as the success it is and the screen is brought into line with
+  it. If it is not there, nothing was changed and that is what you are told. In the rare case where
+  the browser stops answering part way through, the app says plainly that it cannot tell what your
+  saved data now holds and asks you to reload, and it pauses saving until you have decided what to
+  do, which is the same protection it already applies to data it cannot read.
+
+  Two smaller problems came out of the same work. A restore that failed used to spend the undo an
+  earlier restore had earned: the snapshot it takes before the swap had already overwritten the
+  older one, so the **Undo restore** button would have handed you back the data you were already
+  looking at. That snapshot is now put back as it was found when the restore turns out not to have
+  happened. And a restore that never took place no longer leaves an **Undo restore** button offering
+  to undo it.
+
 - **Reloading a page that cannot read your saved data no longer keeps taking a fresh spare copy of
   it, and no longer makes the app wrongly refuse to start you over.** This only reaches you the
   second time the app has ever failed to read your data, so most people will never see it, and

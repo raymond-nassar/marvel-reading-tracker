@@ -338,45 +338,141 @@ export class Store {
     }
   }
 
-  // Atomic: validate, stage, snapshot, swap. A malformed backup mutates nothing.
+  // Validate, stage, snapshot, swap, clean up. A malformed backup mutates nothing.
+  //
+  // Only the first three of those five stages can fail without the saved data changing, and the
+  // shipped code reported all five alike: one catch, one sentence, "Nothing was changed". A
+  // storage probe drove the cleanup removal to throw and got that sentence back while the main key
+  // already held the replacement and the screen still showed the data it had replaced, so the next
+  // ordinary edit wrote the stale screen over the restore the reader had been told did not happen.
+  // Hence `changed`, which every return now carries: false when the saved data is as it was, true
+  // when it holds the backup, and null when storage will not say which. The message describes that
+  // outcome instead of asserting one.
   restore(rawJson) {
     let parsed;
     try {
       parsed = typeof rawJson === 'string' ? JSON.parse(rawJson) : rawJson;
     } catch (err) {
-      return { ok: false, errors: [`Not valid JSON: ${err.message}`] };
+      return { ok: false, changed: false, errors: [`Not valid JSON: ${err.message}`] };
     }
 
     const { ok, errors, state } = validateBackup(parsed);
-    if (!ok) return { ok: false, errors };
+    if (!ok) return { ok: false, changed: false, errors };
 
     const serialized = JSON.stringify(exportBackup(state));
+    // Read before anything is written, because a restore that turns out not to have happened has
+    // to put this slot back as it found it, and a slot cannot be put back to a value nobody read.
+    // undefined is that third answer, "this storage would not say", and rewindSnapshot() declines
+    // it rather than treating it as the absence null means.
+    let heldSnapshot;
+    try {
+      heldSnapshot = this.storage?.getItem(PRERESTORE_KEY) ?? null;
+    } catch {
+      heldSnapshot = undefined;
+    }
+
+    // Set between the snapshot and the swap, so it answers the one question the catch cannot
+    // answer for itself: whether the throw arrived before the main key was ever addressed.
+    let swapReached = false;
     try {
       this.storage?.setItem(TEMP_KEY, serialized);
       this.storage?.setItem(PRERESTORE_KEY, this.storage.getItem(KEY) ?? '');
+      swapReached = true;
       this.storage?.setItem(KEY, serialized);
       this.storage?.removeItem(TEMP_KEY);
     } catch (err) {
-      try {
-        this.storage?.removeItem(TEMP_KEY);
-      } catch {
-        /* ignore */
+      this.discardStaging();
+      if (!swapReached) {
+        // setItem throws instead of writing, so a throw here leaves the snapshot slot untouched
+        // as well as the main key. Nothing to rewind, and nothing to reconcile.
+        return {
+          ok: false,
+          changed: false,
+          errors: [`Could not write the restored data: ${err.message}. Nothing was changed.`],
+        };
       }
-      return { ok: false, errors: [`Could not write the restored data: ${err.message}. Nothing was changed.`] };
+      return this.settleAfterSwap({ serialized, state, heldSnapshot, err });
     }
 
-    // A successful restore is a deliberate overwrite, so it also clears the block.
+    return this.adoptRestored(state);
+  }
+
+  // What the saved data actually holds, once a failure has left that in doubt.
+  //
+  // Asked of storage rather than inferred from which call threw, because the two failures that
+  // reach here are indistinguishable from the outside: a swap that threw and a cleanup that threw
+  // after the swap landed both arrive as one exception. Storage has the answer, so it is asked.
+  settleAfterSwap({ serialized, state, heldSnapshot, err }) {
+    let durable;
+    try {
+      durable = this.storage?.getItem(KEY) ?? null;
+    } catch (readErr) {
+      // Neither reconcilable nor safely writable: latch instead of guessing, which is what the
+      // store already does whenever it cannot read what it would be overwriting.
+      this.blocked = true;
+      this.blockedReason = `Could not read your saved data (${readErr.message}).`;
+      this.onChange(this.state, this.lastError);
+      return {
+        ok: false,
+        changed: null,
+        errors: [`Could not finish restoring (${err.message}), and this browser will not say what your saved data now holds.`],
+      };
+    }
+
+    // The swap landed and the cleanup is what failed. The reader asked for their backup and their
+    // backup is what is saved, so this is a success with a staging key left behind, which the next
+    // restore overwrites and nothing reads in the meantime.
+    if (durable === serialized) return this.adoptRestored(state);
+
+    this.rewindSnapshot(heldSnapshot);
+    // Reconciled from storage rather than assumed to be the state this instance already held: the
+    // swap is known not to have produced the backup, which is not the same as knowing it produced
+    // nothing. load() re-reads, and latches if what it finds cannot be read.
+    this.load();
+    this.onChange(this.state, this.lastError);
+    return {
+      ok: false,
+      changed: false,
+      errors: [`Could not write the restored data: ${err.message}. Nothing was changed.`],
+    };
+  }
+
+  // A successful restore is a deliberate overwrite, so it also clears the block.
+  adoptRestored(state) {
     this.blocked = false;
     this.lastError = null;
     this.blockedReason = null;
     this.state = state;
     this.onChange(state, null);
-    return { ok: true, errors: [] };
+    return { ok: true, changed: true, errors: [] };
+  }
+
+  discardStaging() {
+    try {
+      this.storage?.removeItem(TEMP_KEY);
+    } catch {
+      /* the staging key is overwritten by the next restore and read by nothing before then */
+    }
+  }
+
+  // Puts the undo slot back as the restore found it.
+  //
+  // A restore that did not happen must not spend the one undo the reader had. Without this, a
+  // failed second restore left the slot holding the current data, so the button offered to undo
+  // the first restore and would have swapped in what was already on screen.
+  rewindSnapshot(held) {
+    if (held === undefined) return;
+    try {
+      if (held === null) this.storage?.removeItem(PRERESTORE_KEY);
+      else this.storage?.setItem(PRERESTORE_KEY, held);
+    } catch {
+      /* the slot keeps a snapshot of live data, which undoRestore() applies as a no-op */
+    }
   }
 
   undoRestore() {
     const prev = this.storage?.getItem(PRERESTORE_KEY);
-    if (!prev) return { ok: false, errors: ['No pre-restore snapshot available.'] };
+    if (!prev) return { ok: false, changed: false, errors: ['No pre-restore snapshot available.'] };
     return this.restore(prev);
   }
 

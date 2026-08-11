@@ -15,10 +15,17 @@ function fakeStorage(seed = {}) {
     map,
     failWrites: false,
     failKey: null,
+    // A cleanup that throws and a read that throws are the two stages the write flags cannot
+    // reach, and they are the stages the restore reconciliation exists for.
+    failRemoveKey: null,
+    failReadKey: null,
     writes: [],
     get length() { return map.size; },
     key(i) { return [...map.keys()][i] ?? null; },
-    getItem(k) { return map.has(k) ? map.get(k) : null; },
+    getItem(k) {
+      if (this.failReadKey && k.startsWith(this.failReadKey)) throw new Error('unreadable');
+      return map.has(k) ? map.get(k) : null;
+    },
     setItem(k, v) {
       if (this.failWrites || (this.failKey && k.startsWith(this.failKey))) {
         const e = new Error('quota');
@@ -28,7 +35,10 @@ function fakeStorage(seed = {}) {
       this.writes.push(k);
       map.set(k, String(v));
     },
-    removeItem(k) { map.delete(k); },
+    removeItem(k) {
+      if (this.failRemoveKey && k.startsWith(this.failRemoveKey)) throw new Error('locked');
+      map.delete(k);
+    },
   };
 }
 
@@ -781,4 +791,98 @@ test('a successful restore clears a blocked store', () => {
   assert.equal(store.blocked, false);
   store.update((s) => createList(s, { name: 'works again' }));
   assert.equal(JSON.parse(storage.getItem(KEY)).listOrder.length, 2);
+});
+
+// ------------------------------------------------- restore failures, told apart from each other
+
+function replacementBackup() {
+  let other = createList(createEmptyState(), { name: 'Replacement' });
+  other = addIssuesToList(other, other.listOrder[0], [{ issueId: 42, title: 'Different' }]).state;
+  return JSON.stringify(exportBackup(other));
+}
+
+// The defect this section exists for. The swap had already landed and the removal of the staging
+// key was what threw, and every caller was told nothing had changed.
+test('a restore whose cleanup fails reports the data that is actually saved', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  const replacement = replacementBackup();
+  storage.failRemoveKey = 'mrt.state.restore.tmp';
+
+  const res = store.restore(replacement);
+
+  assert.equal(res.ok, true, 'the reader asked for their backup and their backup is what is saved');
+  assert.equal(res.changed, true);
+  assert.equal(storage.getItem(KEY), replacement, 'the saved data holds the backup');
+  assert.equal(isRead(store.state, 1), false, 'the screen holds the restored data, not the replaced data');
+  assert.equal(store.state.listOrder.length, 1);
+});
+
+// The stale screen is the harm, not the wrong sentence: an unreconciled store writes what it is
+// still showing over the restore on the reader's next ordinary edit.
+test('a cleanup failure does not leave the next edit writing the replaced data back', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  storage.failRemoveKey = 'mrt.state.restore.tmp';
+  store.restore(replacementBackup());
+
+  store.update((s) => createList(s, { name: 'an ordinary edit' }));
+
+  const saved = JSON.parse(storage.getItem(KEY));
+  assert.equal(saved.listOrder.length, 2, 'the edit landed on the restored data');
+  assert.equal(Object.keys(saved.read ?? {}).length, 0, 'the replaced data did not come back');
+});
+
+test('a restore that could not be written does not spend the undo an earlier one earned', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.restore(replacementBackup()).ok, true);
+
+  storage.failKey = KEY;
+  const res = store.restore(JSON.stringify(exportBackup(createEmptyState())));
+  assert.equal(res.ok, false);
+  assert.equal(res.changed, false);
+  storage.failKey = null;
+
+  assert.equal(store.undoRestore().ok, true);
+  assert.ok(isRead(store.state, 1), 'the undo still reaches the data the first restore replaced');
+});
+
+test('a restore that could not be written offers no undo where there was none', () => {
+  const original = goodBackup();
+  const storage = fakeStorage({ [KEY]: original });
+  const store = new Store({ storage });
+  store.load();
+  storage.failKey = KEY;
+
+  assert.equal(store.restore(replacementBackup()).ok, false);
+
+  assert.equal(store.hasPreRestoreSnapshot(), false,
+    'a restore that did not happen has nothing to undo');
+  assert.equal(storage.getItem(KEY), original, 'the saved data is untouched');
+  assert.ok(isRead(store.state, 1), 'and so is the screen');
+});
+
+test('a browser that will not say what it holds latches the store instead of guessing', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  // The staging removal is the last stage, so failing the read from inside it is how storage stops
+  // answering at exactly the moment the outcome has to be established.
+  const removeItem = storage.removeItem.bind(storage);
+  storage.removeItem = (k) => {
+    storage.failReadKey = KEY;
+    removeItem(k);
+    throw new Error('locked');
+  };
+
+  const res = store.restore(replacementBackup());
+
+  assert.equal(res.ok, false);
+  assert.equal(res.changed, null, 'unknown is its own answer, distinct from unchanged');
+  assert.equal(store.blocked, true, 'nothing may be written over a value that cannot be read');
+  assert.match(store.blockedReason, /Could not read your saved data/);
 });

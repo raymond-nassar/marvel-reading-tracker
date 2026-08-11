@@ -3019,7 +3019,16 @@ function wireData() {
       // would splice a list out of the old tracker into the restored one.
       forgetDeleted();
     } else {
-      notify('#restore-report', `Restore refused, nothing was changed: ${res.errors.join(' ')}`, 'error');
+      // The lead sentence comes from what the store found in storage, not from this call site.
+      // It used to read "nothing was changed" whatever had happened, including after a swap that
+      // had already landed.
+      const lead = res.changed === null
+        ? 'Restore did not finish, and this browser will not say what your saved data now holds. Reload the page.'
+        : 'Restore refused, nothing was changed.';
+      notify('#restore-report', `${lead} ${res.errors.join(' ')}`, 'error');
+      // A restore that did not happen leaves no undo to offer, and one that could not be confirmed
+      // has nothing an undo could reliably swap back.
+      $('#btn-undo-restore').hidden = !store.hasPreRestoreSnapshot();
     }
     e.target.value = '';
   });
