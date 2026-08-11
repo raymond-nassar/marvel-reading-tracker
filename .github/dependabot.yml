@@ -14,13 +14,22 @@ version: 2
 #   critical or high  Merge before the next change to the default branch. These run against a
 #                     maintainer's checkout and inside CI, which is where a compromised lint
 #                     plugin would do its damage.
-#   moderate or low   Ride the weekly group below. `npm audit` reported 0 vulnerabilities over
-#                     the 90 packages it counted when this was written, so nothing is being
-#                     deferred by saying so.
+#   moderate or low   Take at the weekly cadence rather than interrupting work for it. Note
+#                     that a security pull request arrives when the advisory does, not on the
+#                     schedule below: the schedule paces version updates, and the cadence here
+#                     is how quickly a person has to answer one.
 #   any severity in a runtime dependency
 #                     Treat as a product vulnerability under `SECURITY.md`, not as tooling.
 #                     There are none, and `test/security-policy.test.js` fails if that changes,
 #                     which is what makes the row above safe to write.
+#
+# `npm audit` reported 0 vulnerabilities over the 90 packages it counted when this was written,
+# so none of the three rows is deferring a backlog that already exists.
+#
+# There is no `open-pull-requests-limit` here, and its absence is deliberate rather than an
+# omission. It caps version updates only, security pull requests are exempt from it by
+# documented design, and a group matching `*` leaves no ungrouped straggler for it to cap. A
+# limit that can never bind is a setting a later reader has to reason about for nothing.
 
 updates:
   # Grouped into a single pull request because every package in this ecosystem is dev tooling
@@ -35,9 +44,13 @@ updates:
       dev-tooling:
         patterns:
           - "*"
-    # A group cannot merge until it is reviewed, so the limit exists to stop a stalled week
-    # from queueing behind the next one rather than to ration proposals.
-    open-pull-requests-limit: 2
+      # A group covers version updates only unless it says so, so without this second rule an
+      # advisory against two packages at once would open two pull requests and the grouping
+      # above would be a promise the file does not keep in the one case that matters most.
+      dev-tooling-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
 
   # The workflow pins actions by major tag today, so this ecosystem is what notices when a
   # major moves. It stays useful after the pins become commit SHAs: Dependabot updates a
@@ -51,4 +64,7 @@ updates:
       actions:
         patterns:
           - "*"
-    open-pull-requests-limit: 2
+      actions-security:
+        applies-to: security-updates
+        patterns:
+          - "*"

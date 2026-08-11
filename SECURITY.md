@@ -119,10 +119,13 @@ Recorded so a report can start from what is true rather than from what a scanner
   the metadata API needs no key.
 - Dependabot alerts and Dependabot security updates are both switched on, so an advisory against
   the lint tooling or the workflow's actions arrives as a pull request rather than as silence.
-  Secret scanning is not on, and cannot be: GitHub answers a request to enable it on this
-  repository with "Secret scanning is not available for this repository". Push protection depends
-  on it, and a request to enable that one is accepted and then changes nothing, which is worth
-  knowing before anyone reads that success as coverage.
+  Secret scanning is not on, and cannot be while this repository is private: GitHub answers a
+  request to enable it here with "Secret scanning is not available for this repository", and it is
+  free on any public repository, so publishing is what would make it available rather than a
+  purchase. Anyone can see the state without a write: asking for its alerts answers 404 "Secret
+  scanning is disabled on this repository". Push protection depends on it, and a request to enable
+  that one is accepted and then changes nothing, which is worth knowing before anyone reads that
+  success as coverage.
 - CI runs on every pull request with `contents: read` and nothing else.
 - Every claim of the form `path:line` in every tracked file is fingerprinted against the lines it
   names, so documentation that has drifted from the code fails the build rather than misleading a

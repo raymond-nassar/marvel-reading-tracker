@@ -28,8 +28,8 @@ fuller, BL-033's rail task was answered by measuring the rail at 9 nodes and 2 o
 read toggle, which is not what that item was raised about, BL-051's README walkthrough has to be
 done by someone who does not write software, which is the one thing its author cannot self-certify,
 and BL-096's reporting route cannot be turned on while this repository is private, which was checked
-against the endpoint rather than assumed, and BL-089's secret scanning cannot be turned on at all,
-which GitHub says in as many words when asked.
+against the endpoint rather than assumed, and BL-089's secret scanning cannot be turned on for the
+same reason, which GitHub says in as many words when asked.
 `CHANGELOG.md` carries the
 user-facing view of the same work.
 
@@ -172,7 +172,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 629; 224 is the figure as audited.
+  it to 630; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -225,7 +225,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:163-175 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:25-40 |
+| BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-70 |
 | BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Observed | Ready | absent: CODEOWNERS and issue or pull request templates, tracked-file inventory |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1604-1631 |
@@ -4512,7 +4512,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5665-5667` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5681-5683` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4522,11 +4522,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:173-175`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5686-5689`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5702-5705`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5499-5501` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5515-5517` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4734,7 +4734,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:880-889` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:882-891` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:163-167` and
 `PRODUCT_BACKLOG.md:173-175` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4992,47 +4992,63 @@ Development dependencies execute in CI even though they never reach the browser.
 `package.json:20-29`, `package-lock.json:1-21`, `absent: .github/dependabot.yml, tracked-file inventory`.
 
 Shipped, with the second task deliberately left open. Both halves of the monitoring were off before
-this: the alerts endpoint answered 404 and automated security fixes reported disabled. Both were
-turned on and then read back rather than assumed, and the alerts endpoint that had answered 403 now
-returns an empty list, which is the state a working monitor is meant to be in when there is nothing
-wrong. `npm audit` agrees: 0 vulnerabilities over the 90 packages it counts.
+this: asking whether vulnerability alerts were enabled answered 404, and automated security fixes
+reported disabled. Both were turned on and then read back rather than assumed. The alerts list is a
+different endpoint from the enablement one, it had answered 403 while the feature was off, and it
+now returns an empty array, which is the state a working monitor is meant to be in when there is
+nothing wrong. `npm audit` agrees: 0 vulnerabilities over the 90 packages it counts.
 
 Secret scanning is the task left unticked, and the clause "where the repository plan supports them"
-is why it can be left there honestly. GitHub refuses it outright on this repository, answering a
-request to enable it with a 422 and "Secret scanning is not available for this repository". Push
+is why it can be left there honestly. GitHub refuses it on this repository, answering a request to
+enable it with a 422 and "Secret scanning is not available for this repository". The reason is
+visibility rather than price: the feature is free on any public repository, so publishing this one
+would make it available, which is why the box is unticked rather than struck out. `BL-100` is the
+item that decides publication, and enabling this is part of what that decision buys. Push
 protection is worse than refused: the request to enable that one is accepted with a 200, and the
 repository then reads back with push protection still disabled, because it depends on the scanning
 that is unavailable. A success that changes nothing is exactly the kind of green this repository
-has learned not to trust, so it is written down in `SECURITY.md` next to what is genuinely on. The
-box stays unticked because a reader scanning the ticks would otherwise read it as protection that
-is running.
+has learned not to trust, so it is written down in `SECURITY.md` next to what is genuinely on,
+along with the read-only way to see the state, which is that asking for the alerts answers 404 and
+says the scanning is disabled. The box stays unticked because a reader scanning the ticks would
+otherwise read it as protection that is running.
 
-The threshold is in `.github/dependabot.yml:8-23`, in the file that acts on it, because a threshold
+The threshold is in `.github/dependabot.yml:8-24`, in the file that acts on it, because a threshold
 kept somewhere else is one nobody consults at the moment it applies. It turns on where the package
 runs rather than on severity alone: a critical or high advisory against tooling that executes in a
 maintainer's checkout and in CI is merged before the next change to the default branch, a moderate
-or low one rides the weekly group, and an advisory against a runtime dependency is a product
-vulnerability under the security policy rather than a tooling update. That last row is safe to
-write only because a test already fails if a runtime dependency ever appears.
+or low one is taken at the weekly cadence instead of interrupting work, and an advisory against a
+runtime dependency is a product vulnerability under the security policy rather than a tooling
+update. That last row is safe to write only because a test already fails if a runtime dependency
+ever appears. The rows govern how fast a person answers, not when the pull request appears: a
+security pull request arrives when the advisory does, whatever the schedule says.
 
-Low-noise is a shape rather than a wish. Both ecosystems propose weekly, not daily, and each groups
-its whole set into one pull request, so the three lint packages cannot produce three separate
-reviews in a week. The `github-actions` entry exists because the workflow calls actions through
+Low-noise is a shape rather than a wish, and it took two rules per ecosystem rather than the
+obvious one. Both ecosystems propose weekly rather than daily, and each groups its whole set into a
+single pull request, so the three lint packages cannot produce three separate reviews in a week.
+A group covers version updates only unless it says otherwise, so each ecosystem carries a second
+group declaring itself for security updates, without which an advisory hitting two packages at once
+would have opened two pull requests and the grouping would have failed in precisely the case it
+was written for. The `github-actions` entry exists because the workflow calls actions through
 mutable major tags today, which is the drift nothing else here would notice, and it keeps earning
 its place after `BL-088` pins those to commit SHAs, since Dependabot updates a pinned SHA and
-rewrites the version comment beside it.
+rewrites the version comment beside it. There is no `open-pull-requests-limit`, and that absence is
+deliberate: it caps version updates only, security pull requests are exempt from it, and a group
+matching everything leaves no ungrouped straggler for it to cap.
 
-Verified: two tests were added and both were watched failing. The failure they defend is that
+Verified: three tests were added and each was watched failing. The failure they defend is that
 Dependabot fails open, so a config that omits an ecosystem is accepted, reports nothing, and looks
 exactly like a quiet week. The expectations are therefore derived from the repository rather than
-read out of the config being checked: an npm entry is required because the manifest declares
-packages, and a `github-actions` entry because a workflow calls actions. Five mutations were run,
-three against the config and two against what it describes: dropping the actions entry, adding an
-entry for an ecosystem the repository does not contain, moving the npm entry off the root, removing
-its schedule, and stripping every `uses:` line from the workflow so the second entry goes stale.
-Each turns exactly one of the two red. The first attempt at three of those mutations matched
-nothing, because the config is CRLF and the patterns were not, and the harness refused to run
-rather than reporting the checks unfailable.
+read out of the config being checked: the ecosystems that ought to be watched are computed by
+matching every tracked file against a table of manifest shapes, so a Python or Go or Rust manifest
+arriving in a later change fails the check rather than passing unnoticed, which a two-line
+enumeration of what is here today could never do. Nine mutations were run, seven against the config
+and two against what it describes: dropping the actions entry, adding an entry for an ecosystem the
+repository does not contain, moving the npm entry off the root, removing its schedule, misspelling
+its interval, deleting its groups block, removing the `applies-to` that makes the second group
+cover security updates, committing a Python manifest nothing watches, and stripping every `uses:`
+line from the workflow so the actions entry goes stale. Each turns exactly one of the three red.
+The first attempt at three of those mutations matched nothing, because the config is CRLF and the
+patterns were not, and the harness refused to run rather than reporting the checks unfailable.
 
 The config is read without a YAML parser, on purpose. Adding one would mean adding a dependency to
 the very graph this item exists to keep at zero and to watch.

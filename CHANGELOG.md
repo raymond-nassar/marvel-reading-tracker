@@ -20,12 +20,14 @@ quote in a bug report.
   fast each one has to be dealt with.** Nothing about the app changes and nothing you have saved is
   affected, because none of the packages involved reaches your browser: they are the tools used to
   check the code before it ships. Automatic alerts and automatic repair proposals are now switched
-  on, and a weekly check groups any updates into a single review rather than a stream of separate
-  ones. The rule for how urgently to act is now written down beside the settings that act on it,
+  on. Routine updates are collected into one weekly review rather than arriving as a stream of
+  separate ones, and a repair for a genuine security problem arrives as soon as the problem is
+  known rather than waiting for that weekly slot, with everything it touches gathered into a single
+  review. The rule for how urgently to act is now written down beside the settings that act on it,
   rather than being decided afresh each time. One protection could not be turned on: the service
-  does not offer secret scanning on a project of this kind, and a request to enable the related
-  push protection is accepted and then quietly does nothing, so that is written down too rather
-  than left to look like cover the project does not have.
+  does not offer secret scanning while a project is private, which this one still is, and a request
+  to enable the related push protection is accepted and then quietly does nothing, so that is
+  written down too rather than left to look like cover the project does not have.
 
 - **The project now has a published security policy, which names a private route for reporting a
   vulnerability rather than an issue anyone can read.** Nothing about the app changes and nothing
