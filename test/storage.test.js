@@ -808,6 +808,17 @@ function replacementBackup() {
   return JSON.stringify(exportBackup(other));
 }
 
+// restore() re-serialises through exportBackup(), so the saved copy carries the moment of the
+// restore rather than the moment the backup was taken. Comparing the two strings whole therefore
+// asserts something the code never promised, and it passed only because both stamps usually land
+// in the same millisecond. On CI they did not: one run differed by exactly 1 ms and reddened the
+// build for a reason no reader could act on.
+function withoutStamp(json) {
+  const parsed = JSON.parse(json);
+  delete parsed.exportedAt;
+  return parsed;
+}
+
 // The defect this section exists for. The swap had already landed and the removal of the staging
 // key was what threw, and every caller was told nothing had changed.
 test('a restore whose cleanup fails reports the data that is actually saved', () => {
@@ -821,7 +832,8 @@ test('a restore whose cleanup fails reports the data that is actually saved', ()
 
   assert.equal(res.ok, true, 'the reader asked for their backup and their backup is what is saved');
   assert.equal(res.changed, true);
-  assert.equal(storage.getItem(KEY), replacement, 'the saved data holds the backup');
+  assert.deepEqual(withoutStamp(storage.getItem(KEY)), withoutStamp(replacement),
+    'the saved data holds the backup');
   assert.equal(isRead(store.state, 1), false, 'the screen holds the restored data, not the replaced data');
   assert.equal(store.state.listOrder.length, 1);
 });

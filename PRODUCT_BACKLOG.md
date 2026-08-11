@@ -4512,7 +4512,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5681-5683` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5690-5692` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4522,11 +4522,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:173-175`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5702-5705`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5711-5714`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5515-5517` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5524-5526` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4904,6 +4904,15 @@ repairs is defended by exactly one test, measured by reverting each in turn: rem
 and removing the withdrawal from the rewind turns a third. Lint clean. `docs/ARCHITECTURE.md` now
 records that a staging key can outlive the restore that wrote it. The offer left live by
 **Erase everything** is a different code path and is filed as `BL-101` rather than fixed here.
+
+One of those tests was flaky and CI found it, on a run for a later item in this branch. It compared
+the saved copy against the backup string whole, but `restore()` re-serialises through
+`exportBackup()`, so the saved copy carries the moment of the restore rather than the moment the
+backup was taken. The two stamps normally land in the same millisecond, which is why it passed
+locally every time; one CI run separated them by exactly 1 ms and reddened the build for a reason
+no reader could act on. The comparison now excludes the stamp and asserts on the data, and it was
+watched failing twice with the stamp excluded, once against a saved copy holding the wrong value
+and once against a payload the backup did not contain, so narrowing it did not make it vacuous.
 
 **BL-084: Prevent one tab from overwriting another tab's progress**
 
