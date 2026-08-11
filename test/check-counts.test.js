@@ -46,6 +46,18 @@ const messages = (findings) => findings.map((f) => f.message).join('\n');
 // pinning a number the document is expected to change.
 const RANKED = derive(REAL).ranked.length;
 
+// The rank an item holds moves whenever a row is filed above it, which is the same failure the
+// derived size above was written to end, arriving one column over. Three of these were pinned and
+// all three broke at once when BL-103 and BL-104 were filed above BL-026: the tests failed for a
+// reason that had nothing to do with the checker, which is exactly what the note above forbids.
+const RANKS = new Map(derive(REAL).ranked.map((r, i) => [r.id, i + 1]));
+
+function rankOf(id) {
+  const rank = RANKS.get(id);
+  assert.ok(rank, `${id} is no longer a row in the ranked table`);
+  return rank;
+}
+
 // The ledger's id list is rebuilt from the ids the document actually names rather than pinned as a
 // literal pair, for the same reason the rank size above is derived. A pinned pair assumes no id
 // will ever land between the two, which held only while ids shipped in allocation order. BL-007
@@ -118,32 +130,38 @@ test('an id written twice in the delivered list is caught, though it is in neith
 
 test('a rank left over from a smaller table is caught in both halves', () => {
   const d = derive(REAL);
-  const text = mutate(`rank 32 of ${RANKED}`, 'rank 15 of 34');
+  const rank = rankOf('BL-026');
+  const text = mutate(`rank ${rank} of ${RANKED}`, 'rank 15 of 34');
   const found = checkRanks(derive(text)).filter((f) => f.claim === 'rank 15 of 34');
   assert.equal(found.length, 2);
   assert.match(messages(found), new RegExp(`states a table of 34 rows; the ranked table has ${d.ranked.length}`));
-  assert.match(messages(found), /puts BL-026 at rank 15; the table puts it at 32/);
+  assert.match(messages(found), new RegExp(`puts BL-026 at rank 15; the table puts it at ${rank}`));
 });
 
 test('a rank whose subject comes from the nearest heading is still checked', () => {
   // The Case 1 bullet names no id; the subject is the heading above it. Renaming the
   // heading's id changes which item the claim is about, and the checker must follow.
+  const rank = rankOf('BL-026');
   const text = mutate(
-    '### Case 1: BL-026 is labelled P0 but ranks thirty-second',
-    '### Case 1: BL-014 is labelled P0 but ranks thirty-second',
+    `### Case 1: BL-026 is labelled P0 but ranks ${ordinalWord(rank)}`,
+    `### Case 1: BL-014 is labelled P0 but ranks ${ordinalWord(rank)}`,
   );
   const found = checkRanks(derive(text));
-  assert.ok(found.some((f) => /puts BL-014 at rank 32; the table puts it at 43/.test(f.message)));
+  assert.ok(found.some(
+    (f) => new RegExp(`puts BL-014 at rank ${rank}; the table puts it at ${rankOf('BL-014')}`).test(f.message),
+  ));
 });
 
 test('an ordinal spelled out in a heading is checked against the table', () => {
+  const stated = ordinalWord(rankOf('BL-026'));
+  const wrong = ordinalWord(rankOf('BL-026') + 1);
   const text = mutate(
-    'BL-026 is labelled P0 but ranks thirty-second',
-    'BL-026 is labelled P0 but ranks thirtieth',
+    `BL-026 is labelled P0 but ranks ${stated}`,
+    `BL-026 is labelled P0 but ranks ${wrong}`,
   );
   const { findings } = checkAll(text);
   assert.ok(findings.some(
-    (f) => /spells BL-026's rank as thirtieth; the table puts it thirty-second/.test(f.message),
+    (f) => new RegExp(`spells BL-026's rank as ${wrong}; the table puts it ${stated}`).test(f.message),
   ));
 });
 
@@ -328,11 +346,13 @@ test('the frozen marker exempts a claim about a past state, and only that claim'
 });
 
 test('a frozen marker cannot silence a claim on another line', () => {
-  const text = mutate(`rank 43 of ${RANKED}. Mid-table`, `rank 43 of 34. Mid-table ${FROZEN}`)
-    .replace(`rank 34 of ${RANKED}`, 'rank 34 of 34');
+  const marked = rankOf('BL-014');
+  const subject = rankOf('BL-027');
+  const text = mutate(`rank ${marked} of ${RANKED}. Mid-table`, `rank ${marked} of 34. Mid-table ${FROZEN}`)
+    .replace(`rank ${subject} of ${RANKED}`, `rank ${subject} of 34`);
   const found = checkRanks(derive(text));
-  assert.ok(found.some((f) => /states a table of 34 rows/.test(f.message) && f.claim === 'rank 34 of 34'));
-  assert.ok(!found.some((f) => f.claim === 'rank 43 of 34'));
+  assert.ok(found.some((f) => /states a table of 34 rows/.test(f.message) && f.claim === `rank ${subject} of 34`));
+  assert.ok(!found.some((f) => f.claim === `rank ${marked} of 34`));
 });
 
 test('number and ordinal words cover the range the document uses and refuse beyond it', () => {

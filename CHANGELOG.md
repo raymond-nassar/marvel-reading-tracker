@@ -16,6 +16,23 @@ quote in a bug report.
 
 ### Added
 
+- **The project now checks, before anyone could ever make it public, that nothing private has been
+  written into its history.** Nothing about the app changes and nothing you have saved is affected.
+  Two separate things are checked on every change. The first is that the working notes each writing
+  session leaves behind stay on the machine that wrote them, which is now enforced by a rule rather
+  than by anyone remembering; the six notes that were deliberately published as the project's design
+  rationale are untouched. The second is that nothing looking like a password, a key or one
+  machine's private folder path has ever been committed, anywhere in the record, not merely in the
+  current version of the files. The answer today is that there is nothing to clean up, and that
+  answer is now re-checked automatically instead of being a thing somebody once looked into.
+
+  Getting the second check right meant discarding the first attempt at it. Asking this machine for
+  everything it holds turns up hundreds of internal working markers that no copy of the project ever
+  receives, so a check built that way would have complained forever about things nobody could
+  remove. What it looks at now is what a copy of the project would actually contain, and it says
+  which of the two it read, so a check that has been given nothing to look at reports that rather
+  than quietly reporting success.
+
 - **The project now watches its own development tooling for known security problems, and says how
   fast each one has to be dealt with.** Nothing about the app changes and nothing you have saved is
   affected, because none of the packages involved reaches your browser: they are the tools used to
@@ -574,6 +591,15 @@ quote in a bug report.
   storage falls back to All.
 
 ### Changed
+
+- **A set of internal checks stopped needing to be hand-edited every time a job is added to the
+  project's list of planned work.** Nothing about the app changes and nothing you have saved is
+  affected. Those checks work by deliberately spoiling a copy of the planning document and
+  confirming the automatic proofreader notices, and three of them named a job's position in the
+  ranked list as a fixed number. Filing anything above that job moved it, and the checks then failed
+  for a reason that had nothing to do with what they were meant to test. They now work the position
+  out from the list itself, which is what the surrounding note already said should be done and what
+  the rest of the same file already did.
 
 - **The largest file in the project can now be tested directly, which it never could before.**
   Nothing about the app changes and nothing you have saved is affected. Most of the code here is
