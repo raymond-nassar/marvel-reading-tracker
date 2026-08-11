@@ -54,8 +54,8 @@
     "fp": "b70cf478e0e33507",
     "head": "function announceIfSaved(msg) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3294-3314|0": {
-    "anchor": "src/js/main.js:3294-3314",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3307-3327|0": {
+    "anchor": "src/js/main.js:3307-3327",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -64,9 +64,9 @@
     "fp": "d357b0022373a5de",
     "head": "update(fn) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:342-375|0": {
-    "anchor": "src/js/storage.js:342-375",
-    "fp": "f63c2ec61331e3f3",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:351-408|0": {
+    "anchor": "src/js/storage.js:351-408",
+    "fp": "7800da8389db62ab",
     "head": "restore(rawJson) {"
   },
   "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:37-63|0": {
@@ -74,13 +74,18 @@
     "fp": "fab0742b01e76115",
     "head": "load() {"
   },
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/storage.js:466-474|0": {
+    "anchor": "src/js/storage.js:466-474",
+    "fp": "c10d8af0b6ad7801",
+    "head": "// A successful restore is a deliberate overwrite, so it also clears the block."
+  },
   "docs/ARCHITECTURE.md|one-thing-the-drawing-found|src/js/storage.js:90-100|0": {
     "anchor": "src/js/storage.js:90-100",
     "fp": "8a51ad8622832a60",
     "head": "// The main slot is asked directly rather than through the walk, so that a storage which"
   },
-  "docs/ARCHITECTURE.md|one-thing-the-drawing-found|test/storage.test.js:147-173|0": {
-    "anchor": "test/storage.test.js:147-173",
+  "docs/ARCHITECTURE.md|one-thing-the-drawing-found|test/storage.test.js:164-190|0": {
+    "anchor": "test/storage.test.js:164-190",
     "fp": "220bf1eb3736428e",
     "head": "test('a second, unrelated incident is salvaged and offered accurately', () => {"
   },
@@ -99,8 +104,8 @@
     "fp": "ba2f2ef80f02d08a",
     "head": "export class RateLimiter {"
   },
-  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:3050-3052|0": {
-    "anchor": "src/js/main.js:3050-3052",
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:3063-3065|0": {
+    "anchor": "src/js/main.js:3063-3065",
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
   },
@@ -134,14 +139,14 @@
     "fp": "77ea0da3e49aa7ca",
     "head": "localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, theme: setting"
   },
-  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-prerestore|src/js/storage.js:377-381|0": {
-    "anchor": "src/js/storage.js:377-381",
-    "fp": "db3282016d907f31",
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-prerestore|src/js/storage.js:514-531|0": {
+    "anchor": "src/js/storage.js:514-531",
+    "fp": "d0ddabeee321f509",
     "head": "undoRestore() {"
   },
-  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-restore-tmp|src/js/storage.js:355-358|0": {
-    "anchor": "src/js/storage.js:355-358",
-    "fp": "a7fc6602008b0dc5",
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-restore-tmp|src/js/storage.js:382-387|0": {
+    "anchor": "src/js/storage.js:382-387",
+    "fp": "226b51fd48953d63",
     "head": "this.storage?.setItem(TEMP_KEY, serialized);"
   },
   "docs/ARCHITECTURE.md|where-a-reader-s-data-lives#mrt-state-salvage-timestamp|src/js/storage.js:121-127|0": {
@@ -264,13 +269,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:287-288|0": {
-    "anchor": "PRODUCT_BACKLOG.md:287-288",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:291-292|0": {
+    "anchor": "PRODUCT_BACKLOG.md:291-292",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5291|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5291",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5384|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5384",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -494,8 +499,8 @@
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:3294-3314|0": {
-    "anchor": "src/js/main.js:3294-3314",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:3307-3327|0": {
+    "anchor": "src/js/main.js:3307-3327",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -534,8 +539,8 @@
     "fp": "6cbc2f6bdb1dc112",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:3027-3033|0": {
-    "anchor": "src/js/main.js:3027-3033",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:3040-3046|0": {
+    "anchor": "src/js/main.js:3040-3046",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -634,8 +639,8 @@
     "fp": "01ce4a9569fb8998",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:3294-3314|0": {
-    "anchor": "src/js/main.js:3294-3314",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:3307-3327|0": {
+    "anchor": "src/js/main.js:3307-3327",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -674,8 +679,8 @@
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:3027-3033|0": {
-    "anchor": "src/js/main.js:3027-3033",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:3040-3046|0": {
+    "anchor": "src/js/main.js:3040-3046",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -739,8 +744,8 @@
     "fp": "7aa18c32ba31e0a8",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:3294-3314|0": {
-    "anchor": "src/js/main.js:3294-3314",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:3307-3327|0": {
+    "anchor": "src/js/main.js:3307-3327",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -784,8 +789,8 @@
     "fp": "84f006271a9292d6",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:3035-3055|0": {
-    "anchor": "src/js/main.js:3035-3055",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:3048-3068|0": {
+    "anchor": "src/js/main.js:3048-3068",
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -834,8 +839,8 @@
     "fp": "8e2394a0c84490fa",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:821-830|0": {
-    "anchor": "CHANGELOG.md:821-830",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:857-866|0": {
+    "anchor": "CHANGELOG.md:857-866",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -869,38 +874,38 @@
     "fp": "3407c971ff683a01",
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:155-159|0": {
-    "anchor": "PRODUCT_BACKLOG.md:155-159",
-    "fp": "fae902c8b4b96024",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:158-162|0": {
+    "anchor": "PRODUCT_BACKLOG.md:158-162",
+    "fp": "4a89a7d9f02e050f",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:165-167|0": {
-    "anchor": "PRODUCT_BACKLOG.md:165-167",
-    "fp": "94d0a1a201dbb097",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:168-170|0": {
+    "anchor": "PRODUCT_BACKLOG.md:168-170",
+    "fp": "b63b407f0e29e3f3",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:165-167|1": {
-    "anchor": "PRODUCT_BACKLOG.md:165-167",
-    "fp": "94d0a1a201dbb097",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:168-170|1": {
+    "anchor": "PRODUCT_BACKLOG.md:168-170",
+    "fp": "b63b407f0e29e3f3",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2673-2676|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2673-2676",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2677-2680|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2677-2680",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5265-5267|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5265-5267",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5358-5360|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5358-5360",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5431-5433|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5431-5433",
-    "fp": "46e35973591086b8",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5524-5526|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5524-5526",
+    "fp": "2f7e750267ca9c0c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5452-5455|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5452-5455",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5545-5548|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5545-5548",
     "fp": "ec5e4ca8fe8fb6c8",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
@@ -1674,63 +1679,68 @@
     "fp": "9d801a18615a4de9",
     "head": "function placeNotices() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3010-3025|0": {
-    "anchor": "src/js/main.js:3010-3025",
-    "fp": "42147e73ead223e4",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3010-3038|0": {
+    "anchor": "src/js/main.js:3010-3038",
+    "fp": "aee9a1684024c966",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3010-3025|1": {
-    "anchor": "src/js/main.js:3010-3025",
-    "fp": "42147e73ead223e4",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3010-3038|1": {
+    "anchor": "src/js/main.js:3010-3038",
+    "fp": "aee9a1684024c966",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3020|0": {
-    "anchor": "src/js/main.js:3020",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3024|0": {
+    "anchor": "src/js/main.js:3024",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3020|1": {
-    "anchor": "src/js/main.js:3020",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3024|1": {
+    "anchor": "src/js/main.js:3024",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3027-3033|0": {
-    "anchor": "src/js/main.js:3027-3033",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3040-3046|0": {
+    "anchor": "src/js/main.js:3040-3046",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3037-3038|0": {
-    "anchor": "src/js/main.js:3037-3038",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3050-3051|0": {
+    "anchor": "src/js/main.js:3050-3051",
     "fp": "8af48711bb3aab2d",
     "head": "const value = $('#api-base').value.trim().replace(/\\/+$/, '');"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3050-3052|0": {
-    "anchor": "src/js/main.js:3050-3052",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3063-3065|0": {
+    "anchor": "src/js/main.js:3063-3065",
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3076-3089|0": {
+    "anchor": "src/js/main.js:3076-3089",
+    "fp": "a35da2b617934cea",
+    "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:308-319|0": {
     "anchor": "src/js/main.js:308-319",
     "fp": "78f3a58f75777356",
     "head": "for (const [, note] of notices) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3233-3281|0": {
-    "anchor": "src/js/main.js:3233-3281",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3246-3294|0": {
+    "anchor": "src/js/main.js:3246-3294",
     "fp": "a2c2ec214f45e640",
     "head": "$('#cache-usage').textContent = u.count"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3294|0": {
-    "anchor": "src/js/main.js:3294",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3307|0": {
+    "anchor": "src/js/main.js:3307",
     "fp": "badb42e555d676d1",
     "head": "function renderAll() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3327|0": {
-    "anchor": "src/js/main.js:3327",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3340|0": {
+    "anchor": "src/js/main.js:3340",
     "fp": "ae8c800634b48bfe",
     "head": "export function boot() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3372-3376|0": {
-    "anchor": "src/js/main.js:3372-3376",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3385-3389|0": {
+    "anchor": "src/js/main.js:3385-3389",
     "fp": "5bf111284df2b094",
     "head": "// Nothing reports store.lastError here. Every writer of it calls onChange in the same step, and"
   },
@@ -1829,15 +1839,20 @@
     "fp": "81c8050eab207d08",
     "head": "dataset: { key: id, act: 'open', tip: `${list.name}: ${read} of ${total} read` },"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:181-183|0": {
+    "anchor": "src/js/storage.js:181-183",
+    "fp": "ce3a24422d43eb6e",
+    "head": "this.blocked = false;"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:290-335|0": {
     "anchor": "src/js/storage.js:290-335",
     "fp": "e53c72f921dcbb6a",
     "head": "return true;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:337-373|0": {
-    "anchor": "src/js/storage.js:337-373",
-    "fp": "c9554f9ff7680458",
-    "head": "return false;"
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:341-408|0": {
+    "anchor": "src/js/storage.js:341-408",
+    "fp": "9800e481bbea2ca2",
+    "head": "// Validate, stage, snapshot, swap, clean up. A malformed backup mutates nothing."
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:40|0": {
     "anchor": "src/js/storage.js:40",
@@ -2004,8 +2019,8 @@
     "fp": "39a38dfa1bd1a54f",
     "head": "test('no en or em dash reaches the screen through markup or styling', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|test/storage.test.js:147-173|0": {
-    "anchor": "test/storage.test.js:147-173",
+  "PRODUCT_BACKLOG.md|item-details|test/storage.test.js:164-190|0": {
+    "anchor": "test/storage.test.js:164-190",
     "fp": "220bf1eb3736428e",
     "head": "test('a second, unrelated incident is salvaged and offered accurately', () => {"
   },
@@ -2019,8 +2034,8 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:3294-3314|0": {
-    "anchor": "src/js/main.js:3294-3314",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:3307-3327|0": {
+    "anchor": "src/js/main.js:3307-3327",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -2204,8 +2219,8 @@
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:3027-3033|0": {
-    "anchor": "src/js/main.js:3027-3033",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:3040-3046|0": {
+    "anchor": "src/js/main.js:3040-3046",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -2264,8 +2279,8 @@
     "fp": "f11249cc46b4b154",
     "head": "constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:3038-3039|0": {
-    "anchor": "src/js/main.js:3038-3039",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:3051-3052|0": {
+    "anchor": "src/js/main.js:3051-3052",
     "fp": "64a12686aef1eb48",
     "head": "if (!isAllowedApiBase(value)) {"
   },
@@ -2324,8 +2339,8 @@
     "fp": "2795bfe71979156c",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:3027-3033|0": {
-    "anchor": "src/js/main.js:3027-3033",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:3040-3046|0": {
+    "anchor": "src/js/main.js:3040-3046",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -2344,8 +2359,8 @@
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:3271-3273|0": {
-    "anchor": "src/js/main.js:3271-3273",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:3284-3286|0": {
+    "anchor": "src/js/main.js:3284-3286",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
@@ -2409,8 +2424,8 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:3294-3308|0": {
-    "anchor": "src/js/main.js:3294-3308",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:3307-3321|0": {
+    "anchor": "src/js/main.js:3307-3321",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -2439,8 +2454,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:3294-3308|0": {
-    "anchor": "src/js/main.js:3294-3308",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:3307-3321|0": {
+    "anchor": "src/js/main.js:3307-3321",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -2489,9 +2504,9 @@
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:155-167|0": {
-    "anchor": "PRODUCT_BACKLOG.md:155-167",
-    "fp": "12993ae12e4904fb",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:158-170|0": {
+    "anchor": "PRODUCT_BACKLOG.md:158-170",
+    "fp": "70d8b1a32e6c4eaa",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
@@ -2594,19 +2609,19 @@
     "fp": "a217fd173d10b27a",
     "head": "salvageCopies() {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-083|src/js/storage.js:337-373|0": {
-    "anchor": "src/js/storage.js:337-373",
-    "fp": "c9554f9ff7680458",
-    "head": "return false;"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-083|src/js/storage.js:341-408|0": {
+    "anchor": "src/js/storage.js:341-408",
+    "fp": "9800e481bbea2ca2",
+    "head": "// Validate, stage, snapshot, swap, clean up. A malformed backup mutates nothing."
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-084|src/js/storage.js:290-335|0": {
     "anchor": "src/js/storage.js:290-335",
     "fp": "e53c72f921dcbb6a",
     "head": "return true;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-085|src/js/main.js:3010-3025|0": {
-    "anchor": "src/js/main.js:3010-3025",
-    "fp": "42147e73ead223e4",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-085|src/js/main.js:3010-3038|0": {
+    "anchor": "src/js/main.js:3010-3038",
+    "fp": "aee9a1684024c966",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-086|src/js/lib/model.js:94-115|0": {
@@ -2624,8 +2639,8 @@
     "fp": "7e27891e914b428a",
     "head": "- uses: actions/checkout@v4"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3233-3281|0": {
-    "anchor": "src/js/main.js:3233-3281",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3246-3294|0": {
+    "anchor": "src/js/main.js:3246-3294",
     "fp": "a2c2ec214f45e640",
     "head": "$('#cache-usage').textContent = u.count"
   },
@@ -2658,6 +2673,11 @@
     "anchor": "src/data/curated-lists.json:78-116",
     "fp": "963484076e3115dc",
     "head": "\"depth\": \"essential\","
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:3076-3089|0": {
+    "anchor": "src/js/main.js:3076-3089",
+    "fp": "a35da2b617934cea",
+    "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
   "scripts/check-anchors.mjs|preamble|scripts/check-contract.mjs:1|0": {
     "anchor": "scripts/check-contract.mjs:1",
