@@ -16,6 +16,17 @@ quote in a bug report.
 
 ### Added
 
+- **The roadmap now records what must be fixed before the repository is opened to outside
+  contributors.** Nothing about the app changes and nothing you have saved is affected. A new
+  current-state study checked security, privacy, data recovery, accessibility, Responsible AI,
+  testing, operations, licensing and contribution safety against the code that ships now, rather
+  than repeating the historical audit. It found eighteen pieces of work and gave each one an
+  evidence-backed backlog entry. The most urgent are a restore path that can report failure after
+  changing saved data, a missing private route for vulnerability reports, and a publication gate
+  for secrets, history and content that was meant to stay local. Fork pull requests already run
+  without repository secrets and with read-only access, the current dependency audit is clean, and
+  the product has no AI feature, so none of those was presented as a failure it does not have.
+
 - **You can now see the copies the app keeps when it cannot read your saved data, and remove the
   ones you no longer want.** When a save turns out to be unreadable, the app puts a copy of it
   safely aside before it does anything else, so nothing is ever thrown away on your behalf. Until
