@@ -3014,7 +3014,11 @@ function wireData() {
     const res = store.restore(text);
     if (res.ok) {
       notify('#restore-report', 'Restored. Your previous data was snapshotted, so this can be undone once.', 'ok');
-      $('#btn-undo-restore').hidden = false;
+      // Asked of the store rather than assumed from the success. A first restore into an empty
+      // tracker snapshots an empty main key, which is no snapshot at all, and this line used to
+      // un-hide the button anyway, after the repaint had correctly hidden it. Clicking it answered
+      // "No pre-restore snapshot available."
+      $('#btn-undo-restore').hidden = !store.hasPreRestoreSnapshot();
       // The buffered list belongs to the data the restore has just replaced. Offering it back
       // would splice a list out of the old tracker into the restored one.
       forgetDeleted();
@@ -3026,8 +3030,8 @@ function wireData() {
         ? 'Restore did not finish, and this browser will not say what your saved data now holds. Reload the page.'
         : 'Restore refused, nothing was changed.';
       notify('#restore-report', `${lead} ${res.errors.join(' ')}`, 'error');
-      // A restore that did not happen leaves no undo to offer, and one that could not be confirmed
-      // has nothing an undo could reliably swap back.
+      // Whether an undo is offered is a question about the snapshot slot, which these failures
+      // leave in three different states, so it is asked rather than inferred from the failure.
       $('#btn-undo-restore').hidden = !store.hasPreRestoreSnapshot();
     }
     e.target.value = '';

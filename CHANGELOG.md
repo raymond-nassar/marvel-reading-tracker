@@ -323,6 +323,18 @@ quote in a bug report.
   happened. And a restore that never took place no longer leaves an **Undo restore** button offering
   to undo it.
 
+  A review of that repair found four more problems, three of them in the repair itself, and they are
+  fixed here too. A browser that stopped answering part way through a restore could leave the app
+  unable to finish drawing the page, so the message explaining what had happened never appeared and
+  the file you had chosen stayed stuck in the box, unable to be chosen again. Putting the undo
+  snapshot back could itself fail silently, which left your live data sitting in the undo slot and
+  **Undo restore** claiming to have worked when it had done nothing; the app now checks that repair
+  landed and withdraws the offer when it did not, and refuses an undo that would change nothing. The
+  successful restore was still being reported from the fact that the browser did not complain, rather
+  than from asking it what it now holds, which is the exact assumption this whole change exists to
+  remove. And restoring a backup into a tracker that was empty offered an **Undo restore** button
+  that then had nothing to go back to.
+
 - **Reloading a page that cannot read your saved data no longer keeps taking a fresh spare copy of
   it, and no longer makes the app wrongly refuse to start you over.** This only reaches you the
   second time the app has ever failed to read your data, so most people will never see it, and

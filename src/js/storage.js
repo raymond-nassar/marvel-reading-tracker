@@ -374,9 +374,14 @@ export class Store {
     // Set between the snapshot and the swap, so it answers the one question the catch cannot
     // answer for itself: whether the throw arrived before the main key was ever addressed.
     let swapReached = false;
+    // What the main key held going in, kept so a read-back that matches neither the backup nor
+    // this can be called what it is. Without it the mismatch branch said "Nothing was changed"
+    // for every non-match, which is a claim about a value it had thrown away.
+    let priorMain;
     try {
       this.storage?.setItem(TEMP_KEY, serialized);
-      this.storage?.setItem(PRERESTORE_KEY, this.storage.getItem(KEY) ?? '');
+      priorMain = this.storage?.getItem(KEY) ?? '';
+      this.storage?.setItem(PRERESTORE_KEY, priorMain);
       swapReached = true;
       this.storage?.setItem(KEY, serialized);
       this.storage?.removeItem(TEMP_KEY);
@@ -391,37 +396,53 @@ export class Store {
           errors: [`Could not write the restored data: ${err.message}. Nothing was changed.`],
         };
       }
-      return this.settleAfterSwap({ serialized, state, heldSnapshot, err });
+      return this.settleAfterSwap({ serialized, state, heldSnapshot, priorMain, err });
     }
 
-    return this.adoptRestored(state);
+    // A swap that did not throw is not a swap that landed. setItem can report a success it did not
+    // have under quota pressure, which is why salvage() reads its own write back and forgetSalvage()
+    // reads its own removal back. Taking the absence of a throw as proof is the inference this whole
+    // path exists to remove, so the ordinary outcome is reconciled through the same read-back as the
+    // failing one rather than being the one place that still assumes.
+    return this.settleAfterSwap({ serialized, state, heldSnapshot, priorMain, err: null });
   }
 
-  // What the saved data actually holds, once a failure has left that in doubt.
+  // What the saved data actually holds, once a write has been attempted.
   //
-  // Asked of storage rather than inferred from which call threw, because the two failures that
-  // reach here are indistinguishable from the outside: a swap that threw and a cleanup that threw
-  // after the swap landed both arrive as one exception. Storage has the answer, so it is asked.
-  settleAfterSwap({ serialized, state, heldSnapshot, err }) {
+  // Asked of storage rather than inferred from which call threw, or from no call throwing, because
+  // the outcomes that reach here are indistinguishable from the outside: a swap that threw, a
+  // cleanup that threw after the swap landed, and a swap that reported success without storing all
+  // arrive looking alike. Storage has the answer, so it is asked.
+  settleAfterSwap({ serialized, state, heldSnapshot, priorMain, err }) {
+    // With no storage at all every write above was a no-op through optional chaining, so there is
+    // nothing to read back and nothing this could reconcile against. The app always constructs the
+    // store with localStorage; this is the shape a test double takes.
+    if (!this.storage) return this.adoptRestored(state);
+
     let durable;
     try {
-      durable = this.storage?.getItem(KEY) ?? null;
+      durable = this.storage.getItem(KEY) ?? '';
     } catch (readErr) {
       // Neither reconcilable nor safely writable: latch instead of guessing, which is what the
       // store already does whenever it cannot read what it would be overwriting.
       this.blocked = true;
       this.blockedReason = `Could not read your saved data (${readErr.message}).`;
-      this.onChange(this.state, this.lastError);
-      return {
+      const reason = err ? `Could not finish restoring (${err.message}), and this` : 'This';
+      const result = {
         ok: false,
         changed: null,
-        errors: [`Could not finish restoring (${err.message}), and this browser will not say what your saved data now holds.`],
+        errors: [`${reason} browser will not say what your saved data now holds.`],
       };
+      // Notified last. renderAll() reads storage again on the way through, and a storage that has
+      // just stopped answering reads does not answer that one either, so a throw from an observer
+      // used to unwind out of restore() and leave the reader with no message at all.
+      this.onChange(this.state, this.lastError);
+      return result;
     }
 
-    // The swap landed and the cleanup is what failed. The reader asked for their backup and their
-    // backup is what is saved, so this is a success with a staging key left behind, which the next
-    // restore overwrites and nothing reads in the meantime.
+    // The swap landed. Either the cleanup is what failed, or nothing failed at all. The reader
+    // asked for their backup and their backup is what is saved, so both are successes; the first
+    // leaves a staging key behind, which the next restore overwrites and nothing reads before then.
     if (durable === serialized) return this.adoptRestored(state);
 
     this.rewindSnapshot(heldSnapshot);
@@ -429,12 +450,17 @@ export class Store {
     // swap is known not to have produced the backup, which is not the same as knowing it produced
     // nothing. load() re-reads, and latches if what it finds cannot be read.
     this.load();
+    const cause = err
+      ? `Could not write the restored data: ${err.message}.`
+      : 'This browser reported a successful write that did not land.';
+    // Compared against what went in rather than asserted. "Nothing was changed" is only true of a
+    // key that still holds what it held, and a key holding a third thing is a case this can see and
+    // must not describe as either outcome.
+    const result = durable === priorMain
+      ? { ok: false, changed: false, errors: [`${cause} Nothing was changed.`] }
+      : { ok: false, changed: null, errors: [`${cause} Your saved data is now neither what it was nor the backup.`] };
     this.onChange(this.state, this.lastError);
-    return {
-      ok: false,
-      changed: false,
-      errors: [`Could not write the restored data: ${err.message}. Nothing was changed.`],
-    };
+    return result;
   }
 
   // A successful restore is a deliberate overwrite, so it also clears the block.
@@ -455,28 +481,63 @@ export class Store {
     }
   }
 
-  // Puts the undo slot back as the restore found it.
+  // Puts the undo slot back as the restore found it, or empties it when it cannot.
   //
   // A restore that did not happen must not spend the one undo the reader had. Without this, a
   // failed second restore left the slot holding the current data, so the button offered to undo
   // the first restore and would have swapped in what was already on screen.
+  //
+  // The repair runs in the storage that has just refused a write, so it is read back rather than
+  // assumed, for the same reason salvage() reads its own write back. A repair that did not land
+  // leaves live data in the slot, which is that same false offer arriving by another route, so the
+  // slot is emptied instead. An offer withdrawn is worse than one honoured and better than one that
+  // would do nothing while announcing that it had.
   rewindSnapshot(held) {
     if (held === undefined) return;
     try {
       if (held === null) this.storage?.removeItem(PRERESTORE_KEY);
       else this.storage?.setItem(PRERESTORE_KEY, held);
+      if ((this.storage?.getItem(PRERESTORE_KEY) ?? null) === held) return;
     } catch {
-      /* the slot keeps a snapshot of live data, which undoRestore() applies as a no-op */
+      // Falls through to the withdrawal below. A repair that threw and a repair that reported a
+      // success it did not have leave the same thing in the slot: the live data.
+    }
+    try {
+      this.storage?.removeItem(PRERESTORE_KEY);
+    } catch {
+      // Even the withdrawal was refused, so the slot still holds live data. undoRestore() compares
+      // it against the main key and declines a snapshot that would change nothing, which is the
+      // backstop for exactly this.
     }
   }
 
   undoRestore() {
-    const prev = this.storage?.getItem(PRERESTORE_KEY);
+    let prev;
+    let live;
+    try {
+      prev = this.storage?.getItem(PRERESTORE_KEY);
+      live = this.storage?.getItem(KEY);
+    } catch (err) {
+      return { ok: false, changed: false, errors: [`Could not read the pre-restore snapshot: ${err.message}.`] };
+    }
     if (!prev) return { ok: false, changed: false, errors: ['No pre-restore snapshot available.'] };
+    // A snapshot identical to what is already saved undoes nothing, so reporting it as undone would
+    // be the same false success this path exists to remove. It is the shape rewindSnapshot() leaves
+    // behind when even its withdrawal is refused.
+    if (prev === live) {
+      return { ok: false, changed: false, errors: ['There is nothing to undo: the snapshot matches your saved data.'] };
+    }
     return this.restore(prev);
   }
 
+  // Asked on every repaint, including the repaint that follows a read failure, so a throw here
+  // unwound out of onChange, out of settleAfterSwap() and out of restore() itself, and the reader
+  // was told nothing at all about a restore that had already changed their saved data.
   hasPreRestoreSnapshot() {
-    return Boolean(this.storage?.getItem(PRERESTORE_KEY));
+    try {
+      return Boolean(this.storage?.getItem(PRERESTORE_KEY));
+    } catch {
+      return false;
+    }
   }
 }

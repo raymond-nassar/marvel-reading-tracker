@@ -19,10 +19,16 @@ function fakeStorage(seed = {}) {
     // reach, and they are the stages the restore reconciliation exists for.
     failRemoveKey: null,
     failReadKey: null,
+    // A storage that stops answering reads does not stop for one key, and a setItem can report a
+    // success it did not have. Neither shape can be made with the key-scoped flags above, and both
+    // are what the restore reconciliation is for.
+    failReads: false,
+    silentKey: null,
     writes: [],
     get length() { return map.size; },
     key(i) { return [...map.keys()][i] ?? null; },
     getItem(k) {
+      if (this.failReads) throw new Error('unreadable');
       if (this.failReadKey && k.startsWith(this.failReadKey)) throw new Error('unreadable');
       return map.has(k) ? map.get(k) : null;
     },
@@ -33,6 +39,7 @@ function fakeStorage(seed = {}) {
         throw e;
       }
       this.writes.push(k);
+      if (this.silentKey && k.startsWith(this.silentKey)) return;
       map.set(k, String(v));
     },
     removeItem(k) {
@@ -885,4 +892,131 @@ test('a browser that will not say what it holds latches the store instead of gue
   assert.equal(res.changed, null, 'unknown is its own answer, distinct from unchanged');
   assert.equal(store.blocked, true, 'nothing may be written over a value that cannot be read');
   assert.match(store.blockedReason, /Could not read your saved data/);
+});
+
+// ------------------------------------------ the same failures, put to the app's own observers
+
+// A review of the five tests above found the fault they inject is narrower than the sentence they
+// are written about, and the difference is where the defect lives. `failReadKey` stops one key
+// answering; a browser that stops answering reads stops for all of them, and the repaint that
+// follows a latch reads a second key. The store below is wired the way the app wires it.
+const PRERESTORE_KEY = 'mrt.state.prerestore';
+
+test('a browser that stops answering reads still gets its answer back to the reader', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  // renderAll() asks the store whether to offer an undo, which is another read of the storage that
+  // has just stopped answering. That throw unwound out of the observer, out of settleAfterSwap()
+  // and out of restore() itself, so the handler never ran its notify and the reader was told
+  // nothing at all about a restore that had already changed their saved data.
+  let repaints = 0;
+  store.onChange = () => {
+    repaints += 1;
+    store.hasPreRestoreSnapshot();
+  };
+  const removeItem = storage.removeItem.bind(storage);
+  storage.removeItem = (k) => {
+    storage.failReads = true;
+    removeItem(k);
+    throw new Error('locked');
+  };
+
+  const res = store.restore(replacementBackup());
+
+  assert.equal(res.changed, null, 'the caller is told, rather than the throw reaching it');
+  assert.equal(store.blocked, true);
+  assert.equal(repaints, 1, 'and the repaint that carries the block to the screen still ran');
+});
+
+// The branch a genuine quota failure takes first, which none of the five reached: `failKey` fails
+// writes to the main key only, so both the staging write and the snapshot write succeeded and every
+// one of them landed on the swap. Near quota the staging write is the first full-size allocation
+// and therefore the first to be refused.
+test('a quota failure at the first staging write changes nothing and mints no undo', () => {
+  const original = goodBackup();
+  const storage = fakeStorage({ [KEY]: original });
+  const store = new Store({ storage });
+  store.load();
+  storage.failWrites = true;
+
+  const res = store.restore(replacementBackup());
+
+  assert.equal(res.ok, false);
+  assert.equal(res.changed, false);
+  assert.equal(storage.getItem(KEY), original, 'the saved data is untouched');
+  assert.equal(storage.getItem('mrt.state.restore.tmp'), null, 'nothing was staged');
+  assert.equal(store.hasPreRestoreSnapshot(), false, 'and no undo was minted for a restore that did not happen');
+});
+
+// setItem can report a success it did not have, which is why salvage() reads its own write back.
+// The swap was the one write in this path still taking the absence of a throw as proof.
+test('a swap this browser accepted without storing is not reported as a restore', () => {
+  const original = goodBackup();
+  const storage = fakeStorage({ [KEY]: original });
+  const store = new Store({ storage });
+  store.load();
+  storage.silentKey = KEY;
+
+  const res = store.restore(replacementBackup());
+
+  assert.equal(res.ok, false, 'no throw is not the same as a write that landed');
+  assert.equal(res.changed, false);
+  assert.equal(storage.getItem(KEY), original, 'the saved data is what it always was');
+  assert.ok(isRead(store.state, 1), 'and the screen was reconciled back to agree with it');
+});
+
+// The repair rewindSnapshot() makes runs in the storage that has just refused a write, so it is the
+// operation most likely to be refused in turn. Left alone it puts live data in the undo slot, and
+// the button then announced "Restore undone" for a swap of the data already on screen.
+test('a rewind this browser refused withdraws the undo rather than offering a no-op', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.restore(replacementBackup()).ok, true);
+  const earned = storage.getItem(PRERESTORE_KEY);
+  assert.ok(earned, 'the first restore earned an undo');
+
+  let snapshotWrites = 0;
+  const setItem = storage.setItem.bind(storage);
+  storage.setItem = (k, v) => {
+    if (k === KEY) {
+      const e = new Error('quota');
+      e.name = 'QuotaExceededError';
+      throw e;
+    }
+    // The repair is the second write to this slot in one restore. The first is the snapshot the
+    // swap was about to earn, and it succeeded before the room ran out.
+    if (k === PRERESTORE_KEY && ++snapshotWrites === 2) throw new Error('quota');
+    setItem(k, v);
+  };
+
+  const res = store.restore(JSON.stringify(exportBackup(createEmptyState())));
+
+  assert.equal(res.changed, false);
+  assert.equal(store.hasPreRestoreSnapshot(), false, 'an offer it cannot honour is withdrawn');
+  const undo = store.undoRestore();
+  assert.equal(undo.ok, false, 'rather than reported as undone when nothing was');
+  assert.match(undo.errors.join(' '), /No pre-restore snapshot available/);
+});
+
+// undefined is the third answer, "this storage would not say", and it is not the absence null
+// means. Deleting the slot on it would destroy an undo on the strength of a failed read.
+test('a snapshot slot that would not be read is neither deleted nor announced as an undo', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.restore(replacementBackup()).ok, true);
+
+  storage.failReadKey = PRERESTORE_KEY;
+  storage.failKey = KEY;
+  const res = store.restore(JSON.stringify(exportBackup(createEmptyState())));
+  storage.failReadKey = null;
+  storage.failKey = null;
+
+  assert.equal(res.changed, false);
+  assert.notEqual(storage.getItem(PRERESTORE_KEY), null, 'a slot nobody could read is not deleted');
+  const undo = store.undoRestore();
+  assert.equal(undo.ok, false, 'and a snapshot of the live data is refused, not announced as undone');
+  assert.match(undo.errors.join(' '), /nothing to undo/);
 });
