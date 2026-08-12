@@ -33,12 +33,14 @@ your own web browser, on your own computer. It is never sent anywhere, and there
 analytics or tracking of any kind.
 
 To be exact about what does leave your computer: when the app starts it asks the comics database
-whether it is reachable, so it can tell you when it is not. To show you comic titles, dates and
-cover pictures, it downloads those details from that same public comics database and downloads
-the cover images from Marvel's own image servers. That is the same kind of request your browser
-makes when it loads any web page. Those requests do reveal which issues you are looking at,
-because asking for an issue's details or its cover picture is exactly what they are. What is
-never sent is your reading progress, your notes, or anything identifying you.
+whether it is reachable, so it can tell you when it is not. Searching for issues sends what you
+typed; searching the catalog, series or creators is answered from files already on this machine.
+To show you comic titles, dates and cover pictures, it downloads those details from that same
+public comics database and downloads the cover images from Marvel's own image servers. That is
+the same kind of request your browser makes when it loads any web page. Those requests do reveal
+which issues you are looking at, because asking for an issue's details or its cover picture is
+exactly what they are. Turning cover art off hides the covers without stopping them being
+requested. What is never sent is your reading progress, your notes, or anything identifying you.
 
 ## Run it on your computer
 

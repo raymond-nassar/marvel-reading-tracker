@@ -108,9 +108,11 @@ the reasoning you were given is yours to quote.
 Recorded so a report can start from what is true rather than from what a scanner assumed.
 
 - Nothing you create is uploaded anywhere. No accounts, no cloud services, no analytics, no
-  telemetry. The app does make outbound requests: it reads comic titles and dates from a public
-  metadata API and loads cover images from Marvel's own servers, so those hosts see that a request
-  was made. Your reading progress is not in any of them.
+  telemetry. The app does make outbound requests: opening it asks a public metadata API whether it
+  is reachable, it asks that same comics database for comic titles and dates, and it loads covers
+  from Marvel's own image servers. Those requests name the issue being asked about, so both hosts
+  see which issues you are looking at. Your reading progress and your notes are never sent to any
+  of them.
 - The development server sends a content security policy on every response that serves a file,
   built at `server.mjs:43-54`, alongside `nosniff`, `no-referrer` and `X-Frame-Options: DENY`, set
   at `server.mjs:112-122`. Its error responses carry none of the four, which is recorded here

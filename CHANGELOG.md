@@ -22,11 +22,13 @@ quote in a bug report.
   on the same subject. What is on screen now is the accurate version. Your reading progress and
   your notes are saved by your own browser and are never sent anywhere; there is no account, no
   analytics and no tracking. Starting the app asks the comics database whether it is reachable,
-  which is what the status light reports. Looking something up sends what you typed. Filling in
+  which is what the status light reports. Searching for issues sends what you typed; searching the
+  catalogue, series or creators is answered from files already on your machine. Filling in
   missing details sends every issue number still missing them, across every list you keep. Cover
-  pictures are fetched from Marvel's own image servers as they appear. Opening an issue hands that
-  one issue to Marvel's reader, and asks the comics database for the reader link when this copy
-  does not already have it.
+  pictures are fetched from Marvel's own image servers as they appear, and turning cover art off
+  hides them without stopping them being fetched. Opening an issue asks the comics database for the
+  reader link when this copy does not already have it, then hands that one issue to Marvel's reader,
+  or to marvel.com when there is no reader link.
 
   The read-me was the precise one and was still wrong in one clause, in the opposite direction. It
   promised your lists are never sent, and the issue numbers in a list are exactly what a request for
@@ -34,19 +36,26 @@ quote in a bug report.
   the other oversold what stays by naming something the requests give away, which is the same
   mistake twice.
 
-  A check now holds all three places to one claim, and it is deliberately hard to satisfy by
+  A check now holds all five places to one claim, and it is deliberately hard to satisfy by
   deleting a promise rather than by qualifying it. Writing it turned up that its first version
   defended only half of what it appeared to: reverting the read-me on its own left it green. A
   review then found the same hole a second time. The check covered the two long statements and not
   the one-line summary that started all this, so that line could be put back word for word and
-  everything stayed green. It is covered now.
+  everything stayed green. A third review found two more places making the same claim, the security
+  policy and the cover art card, and both are covered now too.
 
   The same review found this entry had itself gone one better than the truth in two places, which
   is the habit the whole change is about. It said turning cover art off stops the cover requests.
-  It does not: the setting hides the pictures after they have been asked for. Measured in a real
-  browser with the setting off from the very first paint, the same eight requests go out either
-  way. And it promised your lists are never sent, in the paragraph above the one explaining that
-  the read-me was wrong to promise exactly that.
+  It does not: the setting hides the pictures, and it never stops them being asked for, before or
+  after. Measured in a real browser with the setting off from the very first paint, the same eight
+  requests go out either way. And it promised your lists are never sent, in the paragraph above the
+  one explaining that the read-me was wrong to promise exactly that.
+
+  A third review found two more. Saying "looking something up sends what you typed" was true of one
+  of the four search boxes: only the issue search leaves your machine, and the catalogue, series and
+  creator searches are answered from files already on it. And the first correction to the cover art
+  sentence was true about the past and silent about the future, which is the half a reader standing
+  at that switch actually needs.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two

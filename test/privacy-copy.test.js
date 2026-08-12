@@ -4,20 +4,22 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// The network privacy claim is written in three places: a subtitle on Backup and settings, the
-// About view's "Your data" section, and the README. Nothing joined them up, so each could be
-// edited while reading only one third of what a reader ends up believing, and they drifted into
-// disagreeing. The app said nothing is uploaded; the README said correctly that details and
-// covers are downloaded.
+// The network privacy claim is written in four places: a subtitle on Backup and settings, the
+// About view's "Your data" section, the README, and the security policy. Nothing joined them up,
+// so each could be edited while reading only one quarter of what a reader ends up believing, and
+// they drifted into disagreeing. The app said nothing is uploaded; the README said correctly that
+// details and covers are downloaded; the policy named the downloads and said only that the hosts
+// saw "that a request was made", which is the same understatement one level quieter.
 //
 // The absolute is the easy sentence to write and the hard one to keep true, because every new
-// outbound request falsifies it silently. So this holds all three to the same shape: name the
+// outbound request falsifies it silently. So this holds them to the same shape: name the
 // promises that are kept, and name the requests that are made, in every place the subject comes
 // up. It fails in both directions, which is the point, since deleting the qualification would
 // otherwise read as tightening the promise.
 //
-// The two full statements carry both halves. The subtitle is a summary with no room for the
-// requests, so it is held to the absolutes alone, which is the half it got wrong.
+// The three full statements carry both halves. The subtitle and the Cover art card are summaries
+// with no room for the requests, so they are held to the absolutes alone, which is the half each
+// of them got wrong.
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -41,13 +43,27 @@ function section(html, startsWith, endsWith) {
   return prose(html.slice(from, to));
 }
 
+// Markdown between two headings, with the closing heading asserted the way section() asserts its
+// delimiter. Slicing on a heading that has been renamed silently returns the whole document, and
+// a rule that is satisfied somewhere else in a 500-line file then passes for the wrong reason.
+function between(md, startsWith, endsWith) {
+  const from = md.indexOf(startsWith);
+  assert.notEqual(from, -1, `the document must still carry ${startsWith}`);
+  const to = md.indexOf(endsWith, from + startsWith.length);
+  assert.notEqual(to, -1, `${startsWith} must still be followed by ${endsWith}`);
+  return md.slice(from, to);
+}
+
 // Every surface that tells a reader where their data goes. The README is one of them: it is the
-// document a new reader starts from and the only one they see before running anything.
+// document a new reader starts from and the only one they see before running anything. The
+// security policy is another, and the README sends readers to it, so a weaker version of the
+// claim there is the same defect in the place a careful reader checks second.
 function surfaces() {
   const html = read('src/index.html');
   return [
     ['the About view', section(html, '<h3>Your data</h3>', '<h3>This build</h3>')],
-    ['the README', read('README.md').split('## Run it on your computer')[0]],
+    ['the README', between(read('README.md'), '### Your data stays with you', '## Run it on your computer')],
+    ['the security policy', between(read('SECURITY.md'), '## What already reduces risk here', '- The development server')],
   ];
 }
 
@@ -56,11 +72,16 @@ function surfaces() {
 // the requests, so holding it to the full shape would only force the qualification somewhere
 // it cannot go. It is held to the absolutes instead, which is the half a one-line summary can
 // break on its own, and the half it did break.
+//
+// The Cover art card is the fourth, and it is the natural home of the covers overclaim because
+// it is the card that owns the switch. Review found the rule forbidding that claim could not
+// reach it: the extraction stopped short of the card at both ends.
 function claimSites() {
   const html = read('src/index.html');
   return [
     ...surfaces(),
     ['the Backup and settings subtitle', section(html, '<h1 id="data-h">', '</div></div>')],
+    ['the Cover art card', section(html, '<h2>Cover art</h2>', '</div>')],
   ];
 }
 
@@ -76,11 +97,18 @@ const PROMISES = [
 // this item was filed to remove, however carefully the promises themselves are worded. Naming
 // the requests is not enough on its own: the README named both downloads and still told a
 // reader their lists were never sent, so what the requests disclose has to be stated too.
+//
+// The disclosure rule needs the verb as well as the noun. "which issues" on its own is a phrase
+// this app has every reason to use about itself, so a review showed the disclosing sentence
+// could be deleted and the rule still met by a feature bullet describing what the app tracks.
 const REQUESTS = [
   ['metadata is fetched', /(?:sends|asks|downloads)[^.]*(?:metadata API|comics database)/i],
-  ['the app contacts the API on startup', /(?:starts|opening the app)[^.]*reachable/i],
+  ['the app contacts the API on startup', /(?:starts|opening (?:the app|it))[^.]*reachable/i],
   ['covers are fetched from Marvel', /cover[^.]*Marvel'?s? (?:own )?image servers/i],
-  ['the requests disclose which issues', /which issues|issues you are looking at|issue numbers/i],
+  [
+    'the requests disclose which issues',
+    /(?:sees?|reveals?|discloses?)[^.]*(?:which issues|issues you are looking at|issue numbers)/i,
+  ],
 ];
 
 test('every surface that makes the privacy claim keeps the promises and names the requests', () => {
@@ -108,14 +136,23 @@ test('every surface that makes the privacy claim keeps the promises and names th
 // setting was said to stop the cover requests. It does not. setCovers writes a class and
 // re-renders, paintCoverUrl assigns img.src with no reference to the setting, and display: none
 // does not cancel a fetch. Measured in Edge with the setting off from the first paint: 8
-// requests to i.annihil.us, the same 8 as with it on.
+// requests to i.annihil.us, the same 8 as with it on. It is written both ways round and with
+// either name for the setting, because the card that owns the switch calls it "covers" and the
+// About view calls it "cover art".
+//
+// The pronoun pair is there because a sentence-scoped pattern is evaded by a full stop. "Your
+// lists are yours alone. They are never sent anywhere." is the same promise as the one that was
+// removed, and the single-sentence forms miss it entirely.
 const ABSOLUTES = [
   /nothing is uploaded/i,
   /no server sees/i,
   /nothing (?:is )?(?:ever )?(?:sent|leaves)(?! is)/i,
   /(?:never sent|not sent|ever sent|never leaves?)[^.]*\blists?\b/i,
   /\blists?\b[^.]*(?:never sent|not sent|ever sent|never leaves?)/i,
-  /cover art off[^.]*(?:stops?|prevents?|ends?)[^.]*request/i,
+  /\blists?\b[^.]*\.\s*(?:and )?(?:they|these|those)\b[^.]*(?:never sent|not sent|ever sent|never leaves?)/i,
+  /(?:cover art|covers) off[^.]*(?<!\bnot )(?<!\bnever )(?<!\bwithout )(?:stops?|stopping|prevents?|preventing|ends?)[^.]*requests?/i,
+  /(?:cover art|covers) off[^.]*(?:nothing is requested|\bno requests?\b|no longer requested|(?:is|are) not requested|never requested)/i,
+  /(?:\bno\b|\bnothing\b|\bnever\b)[^.]*requests?[^.]*(?:cover art|covers) (?:is |are )?(?:switched |turned )?off/i,
 ];
 
 test('no surface reinstates an unqualified claim that nothing is sent', () => {

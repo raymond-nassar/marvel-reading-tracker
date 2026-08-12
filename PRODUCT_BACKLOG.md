@@ -245,7 +245,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3246-3294 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
-| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:265-310 |
+| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:267-312 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
@@ -603,7 +603,7 @@ the focused button out of the document and sends focus to the top of the page wi
 announced. It now lands on the all-read heading at `src/index.html:333`, which is both what the
 reader needs to hear and where the remaining actions are.
 
-The About view carries the shortcut reference at `src/index.html:625-632`, naming all three
+The About view carries the shortcut reference at `src/index.html:626-633`, naming all three
 bindings. Only two of them were advertised in the interface, on the hero's `kbd` hints; `Ctrl` +
 `\` for the sidebar was written into the toggle button's tooltip at `src/js/main.js:572` and
 nowhere else, which asks for a deliberate hover on a pointer and shows nothing at all on a touch
@@ -769,7 +769,7 @@ as five loose literals.
 
 The light palette is written out twice, once for `:root[data-theme="light"]` and once inside the
 `prefers-color-scheme` query. The duplication is deliberate: the module is deferred at
-`src/index.html:737`, so resolving the theme in JavaScript would paint dark and then flip, and
+`src/index.html:740`, so resolving the theme in JavaScript would paint dark and then flip, and
 would leave the page dark entirely for a reader with JavaScript off. A test asserts the two blocks
 are identical token for token, which is what makes the duplication safe to keep rather than merely
 necessary.
@@ -2539,14 +2539,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:447-458`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:449-460`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:355-359`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:357-361`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -3906,7 +3906,7 @@ action exactly the same weight as the safe action it tells the reader to take fi
 sort of defect this repository's own rule about recovery paths exists to catch.
 
 `.btn-g` is the app's established answer, used in nine places including the Cancel button of the
-confirm dialog at `src/index.html:731`. The convention there is the same shape as this: the action
+confirm dialog at `src/index.html:734`. The convention there is the same shape as this: the action
 being asked for is `.btn`, the way out is `.btn-g`. Applying it here follows the app rather than
 inventing anything, and it is what `.btn-p` was reaching for, expressed from the other side.
 
@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6092-6094` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6126-6128` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6113-6116`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6147-6150`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5926-5928` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5960-5962` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1020-1029` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1029-1038` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4966,7 +4966,7 @@ Cover normalization accepts any HTTPS host and the CSP permits images from every
 compromised or user-selected metadata service can therefore trigger a tracking request to a third
 party while the interface says covers come from Marvel's servers. The fix must continue to store
 URLs only, never image bytes, so Constraint 1 remains intact. Evidence:
-`src/js/lib/model.js:94-115`, `server.mjs:25-48`, `src/index.html:524-530`.
+`src/js/lib/model.js:94-115`, `server.mjs:25-48`, `src/index.html:524-531`.
 
 **BL-087: State the network privacy boundary where the promise appears**
 
@@ -4980,17 +4980,25 @@ Constraint gate: checked 1 to 11, none breached.
 The README says correctly that reading data stays local while metadata and covers are downloaded.
 The app itself says nothing is uploaded. Search text and requested issue identifiers do cross the
 machine boundary, and image hosts receive ordinary requests. Reading progress, notes and identity
-remain local or absent. Evidence: `README.md:29-41`, `src/index.html:500-555`,
+remain local or absent. Evidence: `README.md:29-43`, `src/index.html:500-556`,
 `src/js/api.js:90-102`.
 
 Shipped. Four destinations were enumerated from the code rather than from the copy, because the
 copy was the thing under suspicion. The metadata API is asked whether it is reachable on every
 boot, from `checkHealth` with caching off, so a cold start with no list and no search still
-contacts it. It also receives the search text and, through `src/js/hydrate.js:55`, one request per
-issue whose details are missing. Marvel's image host receives a request per cover displayed.
-Marvel's reader receives the one issue a click opens, and the metadata API is asked for that
-issue's reader link when this copy does not hold it. Read state, notes and identity are sent to
-none of them, and no account exists to hold them.
+contacts it. It also receives the text typed into the issue search, and, through
+`src/js/hydrate.js:55`, one request per issue whose details are missing. Marvel's image host
+receives a request per cover displayed. Marvel's reader receives the one issue a click opens, and
+the metadata API is asked for that issue's reader link when this copy does not hold it. The fourth
+is `www.marvel.com`, which receives that same issue whenever no reader link can be resolved, from
+`src/open.js:50`. Read state, notes and identity are sent to none of them, and no account exists to
+hold them.
+
+The three other search boxes send nothing, which the first draft of the copy got wrong in the
+generous direction by saying "searching sends what you typed". Series and creator search is
+answered from two collections vendored into `src/data/`, and the catalog search filters
+`data/catalog.json`, all three fetched from this origin. The remedy is the same one the item is
+about: name which search leaves rather than let one verb cover four boxes.
 
 The README was already the precise version and was still wrong in one clause. It promised "not your
 lists", and the issue numbers in a list are exactly what a request for that issue's details or its
@@ -5010,10 +5018,18 @@ cover requests. `setCovers` writes a body class and re-renders, `paintCoverUrl` 
 with no reference to the setting, and `display: none` does not cancel a fetch, so the switch hides
 pictures that have already been asked for. Measured in Edge with the setting off from the first
 paint: eight requests to `i.annihil.us`, the same eight as with it on. Turning it off is itself a
-re-render, so it issues a fresh round. The copy now says the requests have already been made, and
-gating them on the setting is filed as `BL-108`. The second was scope: a hydration run is not
-confined to the list that started it, because `pendingIssueIds` collects from every list in
-`listOrder` and `hydrationOrder` appends all of them behind the priority head.
+re-render, so it issues a fresh round. Gating them on the setting is filed as `BL-108`. The second
+was scope: a hydration run is not confined to the list that started it, because `pendingIssueIds`
+collects from every list in `listOrder` and `hydrationOrder` appends all of them behind the priority
+head.
+
+The replacement sentence was wrong in its turn, and the third round is the one worth recording,
+because the error was a tense. "The requests have already been made" is true and answers a question
+nobody at that switch is asking. Someone reading it is deciding about the next screen, not the last
+one, and covers are requested exactly the same from that moment onwards. Saying the switch hides
+them without stopping them being requested is the same fact stated where the decision is. That is
+this item's whole failure mode in miniature: a true sentence can still mislead by being true about
+the wrong time.
 
 Verified: three tests added, each watched failing. Reverting both surfaces fails two of the three.
 Reverting each surface alone still fails two, which is the measurement that mattered: the first
@@ -5025,13 +5041,28 @@ rule above would be satisfiable by deleting promises instead of qualifying claim
 
 Review then found that hole a second time in a place the measurement had not looked. The check read
 the two long statements and not the subtitle, which is the line the item cites as its evidence, so
-the old absolute could be restored word for word with the suite green. The subtitle is now a third
-site held to the absolutes alone, since a one-line summary has no room for the requests and forcing
-them into it would only move the overclaim. Ten mutations were run against the finished rules, each
-applied to the real file and reverted: every one is caught. One first survived and was the harness
-at fault rather than the rule, since the README says twice that it sends something to the database
-and the mutation removed only one of them, which is the same document-level reading the rules
-themselves take.
+the old absolute could be restored word for word with the suite green. Then a third round found two
+more sites and three rules that could not refuse the sentence they name. The claim turned out to be
+written in five places, not three: the security policy makes it too, and the README sends readers
+there, and it stopped exactly where the new rule says naming the downloads is not sufficient. The
+Cover art card is the fifth, and it is the natural home of the covers overclaim because it owns the
+switch, yet the extraction reached neither end of it. Both are claim sites now, the policy held to
+the full shape and the card to the absolutes, as the subtitle is.
+
+The three weak rules were each weak in a different way, and all three are worth naming because the
+shapes recur. The disclosure rule matched the bare phrase "which issues", which is a phrase this app
+has every reason to use about itself, so the disclosing sentence could be deleted and the rule met by
+a line about what the app tracks; it now needs a verb of revealing as well. Two absolutes were scoped
+to one sentence, so a full stop evaded them: "Your lists are yours alone. They are never sent
+anywhere." was caught by nothing. And the README slice was cut with a bare `split` on a heading, so
+renaming that heading would silently have widened it to the whole file and left every rule satisfied
+somewhere else; it now asserts its delimiters the way the markup extraction always did.
+
+Fifteen mutations were run against the finished rules, each applied to the real file and reverted:
+every one is caught, including all five the review demonstrated. One mutation first survived and the
+harness was at fault rather than the rule, since the README says twice that it sends something to the
+database and the mutation removed only one of them, which is the same document-level reading the
+rules themselves take.
 
 **BL-088: Pin and harden workflow actions for untrusted contributions**
 
@@ -5099,7 +5130,7 @@ here because it described the tags this item replaced.
 
 Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
 `.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:74-108`,
-`test/ci-supply-chain.test.js:124-142`, `README.md:313-348`.
+`test/ci-supply-chain.test.js:124-142`, `README.md:315-350`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -5378,7 +5409,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:265-505`,
+are valuable history and are not a concise public policy. Evidence: `README.md:267-507`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 **BL-098: Define review ownership and contribution intake**
@@ -5720,18 +5751,21 @@ Constraint gate: checked 1 to 11, none breached.
 
 Raised by the review of `BL-087` and routed here rather than fixed there, because that item is a
 copy change and this one is a behaviour change. `BL-087` first shipped a sentence saying the switch
-stops the requests. It does not. `applyCoversSetting` toggles a body class, every `body.nocovers`
-rule in `src/styles.css` is `display: none`, and `paintCoverUrl` assigns `img.src` with no reference
-to the setting, so the request has been made before anything is hidden. Measured in Edge with the
-setting off from the first paint: eight requests to `i.annihil.us`, the same eight as with it on.
-Evidence: `src/js/main.js:485-488`, `src/js/main.js:491-492`.
+stops the requests. It does not. `applyCoversSetting` toggles a body class, the five rules that hide
+a cover `<img>` under that class are `display: none`, and `paintCoverUrl` assigns `img.src` with no
+reference to the setting, so the request has been made before anything is hidden. Measured in Edge
+with the setting off from the first paint: eight requests to `i.annihil.us`, the same eight as with
+it on. Evidence: `src/js/main.js:485-488`, `src/js/main.js:491-492`, `src/styles.css:436`.
 
 Two details make this larger than moving one condition. `setCovers` calls `renderReading` and
 `renderHome`, so switching covers off is itself a re-render and currently issues a fresh round of
-the requests it is meant to end. And the author already applied the gate correctly in one place,
-for the hero background at `src/js/main.js:1724`, which is why the omission on the image beside it
-reads as an oversight rather than a decision. Turning the setting back on has to fetch what was
-skipped, or the switch becomes one-way until a reload.
+the requests it is meant to end. And the pattern this item wants already exists in the file, twice
+over, for the hero backdrop alone: `src/js/main.js:1724` reads the setting before building the URL,
+and `src/styles.css:419` sets `background-image: none` under the same class, which does suppress a
+request because a computed `none` is never fetched. That is the one place covers are genuinely not
+requested when the setting is off, and it is why the omission on the `<img>` beside it reads as an
+oversight rather than a decision. Turning the setting back on has to fetch what was skipped, or the
+switch becomes one-way until a reload.
 
 ## Existing epics and stories
 
