@@ -5169,12 +5169,12 @@ hangs inside a step. It is also invisible in the file, being arithmetic between 
 eighty lines apart, so a test holds it: every job has a deadline, every step has one, and the job's
 clears the sum. A fourth test holds the test's own hand-rolled parser to the file's own count of
 steps and of deadlines, both read off the text rather than off the parse, so neither a deadline the
-parser mislaid nor a step it never saw can pass as compliant. Seventeen mutations
+parser mislaid nor a step it never saw can pass as compliant. Nineteen mutations
 were each shown to behave as designed, and the four tests split cleanly across them rather than all firing at once.
 The concurrency group, the manual dispatch trigger and the full-history checkout are untouched.
 
 Evidence: `.github/workflows/ci.yml:43-53`, `.github/workflows/ci.yml:30-34`,
-`test/ci-deadlines.test.js:149-158`, `test/ci-deadlines.test.js:170-199`.
+`test/ci-deadlines.test.js:149-158`, `test/ci-deadlines.test.js:170-203`.
 
 **BL-096: Publish a security policy and private reporting route**
 

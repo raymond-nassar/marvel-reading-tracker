@@ -172,7 +172,11 @@ test('the parser accounts for every step and every deadline the file declares', 
   // Any first key, not just the three this file happens to use. The parser's own opener accepts
   // any key, so a narrower rule here turns an ordinary `- id:` or `- if:` step into a red build
   // that blames the parser for a step the parser got right. Both were tried and both did that.
-  const declaredSteps = lines.filter((line) => /^\s*- [A-Za-z0-9_-]+:/.test(line)).length;
+  // Counting starts at `jobs:` for the same reason: a sequence item under `on:`, such as the
+  // `- cron:` of a schedule trigger, is a mapping in a sequence exactly as a step is, and nothing
+  // about the line itself says otherwise. Measured: adding one takes the count to 13 against 12.
+  const stepRegion = lines.slice(lines.findIndex((line) => /^jobs:/.test(line)));
+  const declaredSteps = stepRegion.filter((line) => /^\s*- [A-Za-z0-9_-]+:/.test(line)).length;
   const declaredDeadlines = lines.filter((line) => /^\s*timeout-minutes:/.test(line)).length;
 
   const foundSteps = jobs.reduce((total, job) => total + job.steps.length, 0);
