@@ -43,8 +43,8 @@ record what changed. BL-101 through BL-107 are the seven items here that came fr
 BL-101 through BL-105 were each raised by the review of one of the items above them and routed to
 the backlog rather than folded into it, because each belongs to a different file from the one under
 repair. Filing them rather than fixing them in place is what keeps one change to one concern, and
-each names the review that raised it. The last two came from no review either: BL-106 was asked for
-directly by the owner, and BL-107 was found while writing BL-106's record.
+each names the review that raised it. The last two were raised by nobody's review: BL-106 was asked
+for directly by the owner, and BL-107 was found while writing BL-106's record.
 
 ## Product direction
 
@@ -5620,7 +5620,7 @@ here says: `src/data/orders/new-ultimate-universe-trades.md:3-5` states the sequ
 this project's own work and scopes the debt to the division into volumes alone, and
 `docs/DATA_PROVENANCE.md:92` files the order under "Compiled for this project". Review found the
 same overclaim in the changelog, where it went further and said the committed record already backed
-it. Both now use the record's own verb.
+it. Both now scope the debt the way the record does.
 
 That is worth more than a note about wording. `BL-099` was filed to stop this document and the
 running app claiming more than the record supports, and its own block records the same fault running
