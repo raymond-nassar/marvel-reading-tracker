@@ -57,10 +57,10 @@ jobs:
       # Whole jobs worst: lint 27s, tests 32s. Every deadline below is at least
       # twelve times the worst that step has ever taken, so a cold npm cache or a
       # slow registry stays green and only a hang goes red.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         timeout-minutes: 2
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         timeout-minutes: 4
         with:
           node-version: ${{ matrix.node }}
@@ -99,12 +99,12 @@ jobs:
       # setting turns the step red instead of leaving it green over a single commit.
       # A test pins the pairing, because this was the one decision in this file with
       # nothing but a comment behind it, and a comment is not a check.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         timeout-minutes: 2
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         timeout-minutes: 4
         with:
           node-version: '24'
