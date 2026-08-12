@@ -9,15 +9,15 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Fifty-eight items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Fifty-nine items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
-BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082 and BL-083.
+BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083 and BL-096.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
-full and closed without touching the colours, for the reasons recorded in its block. Seven remain
+full and closed without touching the colours, for the reasons recorded in its block. Eight remain
 open on purpose: making the CI run required before merge is a repository setting rather than a
 change to the tree, tagging a release needs a commit to point at, confirming BL-027 with a screen
 reader is a human check no automated run substitutes for, BL-031's axe re-run cannot be satisfied as
@@ -25,17 +25,20 @@ written, because axe declines to judge text over a gradient and the finding was 
 computing the contrast bound instead, BL-065's third task was answered by measurement rather than
 ticked, because no colour raises that pair without reversing which end of a progress bar looks
 fuller, BL-033's rail task was answered by measuring the rail at 9 nodes and 2 of them churning on a
-read toggle, which is not what that item was raised about, and BL-051's README walkthrough has to be
-done by someone who does not write software, which is the one thing its author cannot self-certify.
+read toggle, which is not what that item was raised about, BL-051's README walkthrough has to be
+done by someone who does not write software, which is the one thing its author cannot self-certify,
+and BL-096's reporting route cannot be turned on while this repository is private, which was checked
+against the endpoint rather than assumed.
 `CHANGELOG.md` carries the
 user-facing view of the same work.
 
 Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 repository assurance and
-open-source readiness study. Seventeen of them are still `Ready`: the study records gaps for later
-implementation and does not mix those fixes into the roadmap change that identified them. BL-083 has
-since been delivered, and its detail block records what changed. BL-101 is the one item here that
-came from neither pass: it was raised by the review of BL-083 and routed to the backlog rather than
-folded into it, because it belongs to a different code path.
+open-source readiness study. Sixteen of them are still `Ready`: the study records gaps for later
+implementation and does not mix those fixes into the roadmap change that identified them. BL-083 and
+BL-096 have since been delivered, and their detail blocks record what changed. BL-101 and BL-102 are
+the two items here that came from neither pass: each was raised by the review of the item above it
+and routed to the backlog rather than folded into it, because each belongs to a different file from
+the one under repair.
 
 ## Product direction
 
@@ -167,7 +170,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 624; 224 is the figure as audited.
+  it to 627; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -200,7 +203,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:341-408 |
-| BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Ready | absent: SECURITY.md, tracked-file inventory and repository root listing |
+| BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
 | BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Ready | .gitignore:1-24 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
@@ -217,7 +220,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Ready | src/js/main.js:3010-3038 |
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Ready | src/js/storage.js:290-335 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:158-170 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:161-173 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Ready | absent: .github/dependabot.yml, tracked-file inventory and GitHub settings query |
@@ -230,7 +233,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:640 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3246-3294 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
-| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:250-290 |
+| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:250-295 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
@@ -261,6 +264,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-066 | Offer a reading order grouped by the collected editions it is sold in | Story | EP-02 | Leaves alone | 5 | 2 | 5 | 5 | 2.4 | none | Measured | Shipped | src/data/orders/new-ultimate-universe-trades.md:3 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Shipped | design/mockups/5-longbox-focus.html:169-172 |
 | BL-092 | Bring the fault harness under the alternate-page accessibility baseline | Debt | EP-07 | Leaves BL-034 alone | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | src/dev-faults.js:12-22 |
+| BL-102 | Send the security headers on the dev server's error responses too | Debt | EP-12 | Follows BL-096 | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | server.mjs:86-96 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | src/js/lib/readingFilters.js:25-48 |
 | BL-067 | Gate the switch and the primary button, which no pair measures | Debt | EP-08 | Leaves alone | 2 | 2 | 2 | 3 | 2.0 | none | Measured | Shipped | src/styles.css:393 |
@@ -2522,14 +2526,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:389-400`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:394-405`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:298-302`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:303-307`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -2974,7 +2978,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2677-2680`.
+`PRODUCT_BACKLOG.md:2681-2684`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4506,21 +4510,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5524-5526` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5617-5619` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:168-170`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:171-173`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5545-5548`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5638-5641`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5358-5360` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5451-5453` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4728,9 +4732,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:857-866` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:158-162` and
-`PRODUCT_BACKLOG.md:168-170` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:869-878` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:161-165` and
+`PRODUCT_BACKLOG.md:171-173` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -5071,10 +5075,10 @@ Evidence: `.github/workflows/ci.yml:27-91`.
 
 **BL-096: Publish a security policy and private reporting route**
 
-- [ ] Add supported versions, private reporting, acknowledgement and disclosure guidance
-- [ ] Tell reporters not to publish suspected vulnerabilities as ordinary issues
+- [x] Add supported versions, private reporting, acknowledgement and disclosure guidance
+- [x] Tell reporters not to publish suspected vulnerabilities as ordinary issues
 - [ ] Enable private vulnerability reporting and verify the Security tab presents the route
-- [ ] Define security scope for data loss, generated data, dependencies and workflows
+- [x] Define security scope for data loss, generated data, dependencies and workflows
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -5082,6 +5086,71 @@ No security policy or supported private route exists. A public repository needs 
 the first report, not after a vulnerability has already been disclosed in an issue. The repository
 setting is a separate task outcome and cannot be claimed by adding the file alone. Evidence:
 `absent: SECURITY.md, tracked-file inventory and repository root listing`.
+
+Shipped, with the third task deliberately left open. It cannot be done yet, and that was measured
+rather than assumed: GitHub offers private vulnerability reporting on public repositories, this one
+is still private, and both `GET` and `PUT` on the private vulnerability reporting endpoint answer
+404. `BL-100` is the item that decides publication, so this task belongs to that moment. The policy
+is written so it is true on both sides of it: it names private reporting as the only channel and
+says what it means if the option is not on the Security tab yet, rather than promising a route that
+does not answer.
+
+Supported versions were the other question a template would have got wrong. There are no releases
+and no tags, so a version table would have listed builds that do not exist. What is supported is the
+current state of the default branch, and the version policy that does matter here is the one about
+stored data at `src/js/lib/version.js:5-9`, because a MAJOR change is the one an older build cannot
+read.
+
+Scope is written from what this repository actually is rather than from a generic list. Losing or
+corrupting saved reading progress is named as the highest severity category, which is the honest
+ranking for an app with no server and no accounts. The dev server, the rule for which API base a
+stored setting may name at `src/js/lib/apiBase.js:26-38`, the generated data under `src/data/`, the
+lint tooling and the workflows are in scope. Marvel's own services, the third-party metadata API,
+the documented 2025 metadata boundary and the fault harness that damages data by design are out of
+it, each with the reason beside it.
+
+Verified: the policy's load-bearing claim is now machine-checked. It says the app has no runtime
+dependencies, which is what makes a dependency report a report about lint tooling rather than about
+anything a reader runs, and nothing checked that before. Three tests were added and each was watched
+failing against the one fact it defends. Four mutations were run against them: adding a runtime
+dependency, deleting the sentence that claims there are none, deleting the sentence that names the
+three lint packages, and adding a fourth lint package. Each turns exactly one of the three red, and
+the four between them reach all three. The first version of the second test passed on a policy that
+no longer made the claim, because the phrase wraps across a line in the hard-wrapped file and the
+raw text was being matched; collapsing whitespace fixed it, and the mutation now refuses to run if
+it matches nothing, so an unreachable check cannot report itself as unfailable again.
+
+Review round: seven findings, all in text this item introduced, all fixed rather than routed. Four
+were claims the policy made that the code does not support. It said the dev server sends a content
+security policy on every response; the header block at `server.mjs:112-122` is reached only on the
+200 and 304 paths, and the 403, 404, 405 and 500 exits carry none of it, so the sentence now says
+"every response that serves a file" and records the gap in the same bullet. It said the app "sends
+no data anywhere", which contradicts the README's own carve-out: the app does fetch metadata and
+cover images, so the bullet now uses Constraint 3's wording, that nothing you create is uploaded
+anywhere, and names what does go out. It called `isAllowedApiBase` an endpoint allowlist, which
+overstates it: `src/js/lib/apiBase.js:26-38` accepts any `https:` origin and forbids cleartext off
+loopback, and pinning a host is refused on purpose so a reader can point the app at their own
+mirror. And it said everything under `src/data/` is produced by the scripts, when
+`src/data/curated-lists.json` is an input to the generator and the order checklists are kept by
+hand.
+
+The fifth was the one worth the round on its own. The reporting section told a reader that an absent
+Security tab option means the repository is not yet public. That does not follow: private
+vulnerability reporting is off by default on public repositories too, and enabling it is an unticked
+task on this item while publication is a different item. The reachable state was therefore public,
+setting off, option absent, and a genuine reporter being told there was nothing to report. The
+section now conditions on the setting rather than on visibility and gives a route that always
+answers, an issue asking for a channel with no detail in it.
+
+The sixth was in the evidence above rather than in the product. The block claimed each mutation
+turned exactly one test red, and the two prose assertions in fact shared a single sentence, so
+deleting that sentence turned two red and neither guard was independent of the other. The sentence
+was split in two, which is why the claim about runtime dependencies and the claim about the three
+lint packages now stand as separate sentences at `SECURITY.md:6-9`; a fourth mutation was added for
+the second of them, and all four now turn exactly one red, which is what the paragraph above
+records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as shipped
+fact while the policy and this block both say it cannot be enabled yet. That entry now says what the
+policy says.
 
 **BL-097: Publish contribution, conduct, support and maintainer governance**
 
@@ -5095,7 +5164,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:250-447`,
+are valuable history and are not a concise public policy. Evidence: `README.md:250-452`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 **BL-098: Define review ownership and contribution intake**
@@ -5164,6 +5233,30 @@ reader is told their data is gone and is then shown a button that brings a copy 
 is lost either way, so this is a truthfulness defect rather than a data-loss one, which is why it is
 scored below the item that raised it. The answer should be decided once for both routes rather than
 per button, and the erase route's own copy is the wording to hold it to.
+
+**BL-102: Send the security headers on the dev server's error responses too**
+
+- [ ] Build the header set once and use it on every exit from the request handler
+- [ ] Give the 403 and 405 replies a content type, which they currently answer without
+- [ ] Test that a request which cannot be served still carries the four headers
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by the review of `BL-096` and routed here rather than fixed there, because that item published a
+policy and this one changes the server. The header set at `server.mjs:112-122` carries the content
+security policy, `nosniff`, `no-referrer` and `X-Frame-Options: DENY`, and it is assembled inside the
+success path, so only the 200 and 304 replies ever send it. The 405 and 403 exits at `server.mjs:86-96`
+send neither those nor a content type, and the 404 and 500 exits send a content type alone. Measured by
+starting the server and reading the replies: a served file carried all four, a missing file carried
+`content-type` only, a rejected path carried nothing, and a POST carried `allow` only.
+
+Nothing here is reachable by an attacker who is not already on the machine, since the server binds
+loopback and serves the app's own files, which is why the policy puts missing hardening with no
+reachable consequence out of scope for a vulnerability report and why this is scored as debt. It is
+worth closing anyway: a plain-text body sent with no content type is exactly what `nosniff` exists to
+stop being guessed at, and a header set that four of six exits skip is a set whose guarantee cannot be
+stated in one sentence. `BL-096` had to write the exception into the security policy instead, which is
+the shape of a claim waiting to be simplified.
 
 ## Existing epics and stories
 
@@ -5646,7 +5739,7 @@ how it reaches 76 rows now. The ranks below are positions in it as it stands.
 ### Case 1: BL-026 is labelled P0 but ranks thirty-second
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 32 of 77.
+- Calculated: WSJF 3.67, rank 32 of 78.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
   It is outranked by thirty items, fifteen of them sized 1, 2 or 3 whose Cost of Delay is lower but
   whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will
@@ -5668,7 +5761,7 @@ how it reaches 76 rows now. The ranks below are positions in it as it stands.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 71 of 77, below sixty-seven unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 72 of 78, below sixty-eight unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -5725,9 +5818,9 @@ how it reaches 76 rows now. The ranks below are positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 43 of 77. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 34 of 77. Mid-table.
-- BL-017, P2, rank 76 of 77. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 43 of 78. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 34 of 78. Mid-table.
+- BL-017, P2, rank 77 of 78. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

@@ -258,6 +258,11 @@ records the hardware findings behind that decision, so the emulator route does n
 Structure: [how the app is put together](docs/ARCHITECTURE.md) draws the module graph as ownership,
 one reading action from the click to the repaint, and every place the app stores anything.
 
+Security: [the security policy](SECURITY.md) says what counts as a vulnerability in an app with no
+server and no accounts, and how to report one privately. The short version is that anything which
+silently loses or corrupts saved reading progress is treated as a security issue, and that a
+suspected vulnerability should never be opened as an ordinary issue.
+
 ### Checks
 
 ```
