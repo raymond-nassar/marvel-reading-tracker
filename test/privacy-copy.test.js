@@ -4,9 +4,10 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// The network privacy claim is written in four places: a subtitle on Backup and settings, the
-// About view's "Your data" section, the README, and the security policy. Nothing joined them up,
-// so each could be edited while reading only one quarter of what a reader ends up believing, and
+// The network privacy claim is written in six places: a subtitle on Backup and settings, the
+// About view's "Your data" section, the README, the security policy, the Cover art card and the
+// About view's "Metadata and links only" card. Nothing joined them up, so each could be edited
+// while reading only one sixth of what a reader ends up believing, and
 // they drifted into disagreeing. The app said nothing is uploaded; the README said correctly that
 // details and covers are downloaded; the policy named the downloads and said only that the hosts
 // saw "that a request was made", which is the same understatement one level quieter.
@@ -17,9 +18,10 @@ import { fileURLToPath } from 'node:url';
 // up. It fails in both directions, which is the point, since deleting the qualification would
 // otherwise read as tightening the promise.
 //
-// The three full statements carry both halves. The subtitle and the Cover art card are summaries
-// with no room for the requests, so they are held to the absolutes alone, which is the half each
-// of them got wrong.
+// The three full statements carry both halves. The subtitle and the two cards are summaries
+// with no room for the requests, so they are held to the absolutes alone. Only the subtitle had
+// broken that half; the cards are here because they are where the claim is most natural to
+// write, which review demonstrated twice by finding it half written in both.
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -67,21 +69,28 @@ function surfaces() {
   ];
 }
 
-// The Backup and settings subtitle is a third site of the same claim, and it is where the
+// The Backup and settings subtitle is a fourth site of the same claim, and it is where the
 // absolute was actually found: it read "Nothing is uploaded." A subtitle has no room to name
 // the requests, so holding it to the full shape would only force the qualification somewhere
 // it cannot go. It is held to the absolutes instead, which is the half a one-line summary can
 // break on its own, and the half it did break.
 //
-// The Cover art card is the fourth, and it is the natural home of the covers overclaim because
+// The Cover art card is the fifth, and it is the natural home of the covers overclaim because
 // it is the card that owns the switch. Review found the rule forbidding that claim could not
 // reach it: the extraction stopped short of the card at both ends.
+//
+// The "Metadata and links only" card is the sixth, four cards above the corrected one on the
+// same screen, and it said cover images "load directly from Marvel's own servers and can be
+// switched off". Two predicates on one subject, the first about loading, so the second reads as
+// though the loading is what stops. That is the implication this item spent three rounds
+// removing from five other sentences, surviving in the one place nothing reached.
 function claimSites() {
   const html = read('src/index.html');
   return [
     ...surfaces(),
     ['the Backup and settings subtitle', section(html, '<h1 id="data-h">', '</div></div>')],
     ['the Cover art card', section(html, '<h2>Cover art</h2>', '</div>')],
+    ['the metadata and links card', section(html, '<h3>Metadata and links only</h3>', '</p>')],
   ];
 }
 
@@ -144,22 +153,50 @@ test('every surface that makes the privacy claim keeps the promises and names th
 // lists are yours alone. They are never sent anywhere." is the same promise as the one that was
 // removed, and the single-sentence forms miss it entirely.
 const ABSOLUTES = [
-  /nothing is uploaded/i,
+  /nothing[^.]{0,30}\bis uploaded\b/i,
   /no server sees/i,
   /nothing (?:is )?(?:ever )?(?:sent|leaves)(?! is)/i,
   /(?:never sent|not sent|ever sent|never leaves?)[^.]*\blists?\b/i,
   /\blists?\b[^.]*(?:never sent|not sent|ever sent|never leaves?)/i,
   /\blists?\b[^.]*\.\s*(?:and )?(?:they|these|those)\b[^.]*(?:never sent|not sent|ever sent|never leaves?)/i,
-  /(?:cover art|covers) off[^.]*(?<!\bnot )(?<!\bnever )(?<!\bwithout )(?:stops?|stopping|prevents?|preventing|ends?)[^.]*requests?/i,
-  /(?:cover art|covers) off[^.]*(?:nothing is requested|\bno requests?\b|no longer requested|(?:is|are) not requested|never requested)/i,
-  /(?:\bno\b|\bnothing\b|\bnever\b)[^.]*requests?[^.]*(?:cover art|covers) (?:is |are )?(?:switched |turned )?off/i,
 ];
+
+// The covers claim needs a different instrument, and the first two attempts at it are the
+// argument for this one. A list of patterns for the lie was evaded six ways in a minute, by
+// saying "downloads" or "fetches" instead of "requests", by putting a word between "no" and
+// "requests", and by writing "switch it off", which is the most natural phrasing on the card
+// that owns the switch. The same list then rejected the most direct honest sentence there is,
+// "the app still sends requests", because "ends?" matches inside "sends"; a check whose cheapest
+// repair is to weaken the copy is worse than no check.
+//
+// So this reads sentences rather than tokens. A sentence about the switch that asserts the
+// requests cease has to acknowledge that they do not, which is the thing the copy exists to
+// say. Windows of two sentences are read as well as single ones, because a full stop evaded the
+// lists promise the same way.
+const SWITCH = /\b(?:switch|turn|toggle)\w*\b[^.]{0,30}\boff\b|\b(?:cover art|covers|cover images?)\b[^.]{0,30}\boff\b/i;
+const CEASES =
+  /\b(?:stops?|stopped|stopping|prevents?|prevented|preventing|ends?|ended|ending|ceases?|ceased|halts?)\b[^.]*\b(?:requests?|requested|downloads?|downloaded|fetch(?:es|ed)?|loading|sending)\b|\b(?:requests?|downloads?|fetch(?:es|ing)?|loading|sending)\b[^.]*\b(?:stops?|stopped|ceases?|ceased|halts?)\b|\b(?:no|nothing|never|none)\b[^.]{0,60}\b(?:requested|downloaded|fetched|loaded|asked for|sent|requests?|downloads?|fetches)\b/i;
+const STILL_HAPPENS =
+  /\bstill\b[^.]*\b(?:requests?|requested|sends?|sent|fetch(?:es|ed)?|downloads?|downloaded|loads?|loaded|asked)\b|\b(?:does|do|did|will|would) not stop\b|\bwithout stopping\b|\bnot stop\b|\bregardless\b|\banyway\b/i;
+
+function coversLie(text) {
+  const sentences = text.split(/(?<=[.!?])\s+/);
+  const windows = sentences.concat(
+    sentences.slice(0, -1).map((s, i) => `${s} ${sentences[i + 1]}`),
+  );
+  return windows.find((w) => SWITCH.test(w) && CEASES.test(w) && !STILL_HAPPENS.test(w)) ?? null;
+}
 
 test('no surface reinstates an unqualified claim that nothing is sent', () => {
   for (const [where, text] of claimSites()) {
     for (const absolute of ABSOLUTES) {
       assert.doesNotMatch(text, absolute, `${where} must not claim ${absolute}`);
     }
+    assert.equal(
+      coversLie(text),
+      null,
+      `${where} says the covers switch stops the requests, and it does not`,
+    );
   }
 });
 

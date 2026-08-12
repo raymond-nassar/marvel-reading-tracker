@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6134-6136` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6171-6173` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6155-6158`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6192-6195`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5968-5970` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6005-6007` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1029-1038` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1048-1057` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5041,15 +5041,15 @@ rule above would be satisfiable by deleting promises instead of qualifying claim
 
 Review then found that hole a second time in a place the measurement had not looked. The check read
 the two long statements and not the subtitle, which is the line the item cites as its evidence, so
-the old absolute could be restored word for word with the suite green. Then a third round found two
+the old absolute could be restored word for word with the suite green. Later rounds found three
 more sites and three rules that could not refuse the sentence they name. The claim turned out to be
-written in five places, not three: the security policy makes it too, and the README sends readers
+written in six places, not three: the security policy makes it too, and the README sends readers
 there, and it stopped exactly where the new rule says naming the downloads is not sufficient. The
 Cover art card is the fifth, and it is the natural home of the covers overclaim because it owns the
-switch, yet the extraction reached neither end of it. Both are claim sites now, the policy held to
-the full shape and the card to the absolutes, as the subtitle is.
+switch, yet the extraction reached neither end of it. The sixth is described below. All are claim
+sites now, the policy held to the full shape and the cards to the absolutes, as the subtitle is.
 
-A sixth site was considered and deliberately left out. The changelog states the claim too, in the
+One further site was considered and deliberately left out. The changelog states the claim too, in the
 entry describing this very change, and enrolling it would hold every past entry to the rule as well.
 Those entries are a record of what was believed when they were written, and a check that can force a
 correction into them is a check that can rewrite history to stay green. The two wrong sentences in
@@ -5066,11 +5066,48 @@ anywhere." was caught by nothing. And the README slice was cut with a bare `spli
 renaming that heading would silently have widened it to the whole file and left every rule satisfied
 somewhere else; it now asserts its delimiters the way the markup extraction always did.
 
-Fifteen mutations were run against the finished rules, each applied to the real file and reverted:
-every one is caught, including all five the review demonstrated. One mutation first survived and the
-harness was at fault rather than the rule, since the README says twice that it sends something to the
-database and the mutation removed only one of them, which is the same document-level reading the
-rules themselves take.
+Fifteen mutations were run against the rules as they then stood, each applied to the real file and
+reverted: every one is caught, including all five the review demonstrated. One mutation first
+survived and the harness was at fault rather than the rule, since the README says twice that it sends
+something to the database and the mutation removed only one of them, which is the same
+document-level reading the rules themselves take.
+
+A third round found the claim in a sixth place and found the covers rule broken in both directions
+at once. The About view's "Metadata and links only" card, at `src/index.html:601-604`, is the sixth,
+and before this change it said cover images "load directly from Marvel's own servers and can be
+switched off": two predicates on one subject, the first about loading, so the second reads as
+though the loading is what stops. That is the implication three rounds had been spent removing from
+five other sentences, surviving four cards above the corrected one on the same screen, in the one
+place no extraction reached. It is now a claim site, and the sentence is split so the second half has
+its own subject and says the pictures are still loaded. Implication is not a thing a rule can catch,
+which is the honest limit here: what the site membership buys is that the catchable forms cannot come
+back, not that this particular sentence could have been refused.
+
+The covers rule itself was a pattern list, and a pattern list was the wrong instrument. It was evaded
+six ways in a minute by swapping the noun to "downloads" or "fetches", by putting one word between
+"no" and "requests", and by writing "switch it off", which is the most natural phrasing on the card
+that owns the switch. In the same pass it rejected the most direct honest sentence there is, "the app
+still sends requests", because `ends?` matches inside "sends"; a check whose cheapest repair is to
+weaken the copy is worse than no check at all. It now reads sentences: a sentence about the switch
+that asserts the requests cease has to acknowledge that they do not, which is the thing the copy
+exists to say, and windows of two sentences are read as well as single ones because a full stop had
+already evaded the lists rule once.
+
+The security policy was found still holding the absolute that started this item, in a stronger form
+than the one removed. "Nothing you create is uploaded anywhere" covers the lists, and the issue
+numbers in a list are exactly what a request for that issue carries. The forbidding pattern missed it
+by two words, so the identical claim was forbidden on five surfaces and permitted on the sixth, which
+this change had just enrolled precisely because it makes the claim. The pattern is widened and the
+sentence is scoped to what is true: no accounts, no cloud services, no analytics, no telemetry. The
+same bullet also put one verb over a set it does not hold across, saying "those requests name the
+issue" of three requests of which the reachability check names nothing, which is the identical error
+this round had just fixed for search.
+
+Twenty mutations now run against the finished rules and all twenty are caught, including every
+evasion each of the three reviews demonstrated. The proof harness itself needed one fix, and it is
+the one worth naming: a transient file lock failed a restore and left a mutation in the working tree,
+which is the only way a harness that exists to prove a check can instead do harm. It now retries and
+refuses to continue rather than carrying on with a mutated file.
 
 **BL-088: Pin and harden workflow actions for untrusted contributions**
 

@@ -28,7 +28,8 @@ quote in a bug report.
   pictures are fetched from Marvel's own image servers as they appear, and turning cover art off
   hides them without stopping them being fetched. Opening an issue asks the comics database for the
   reader link when this copy does not already have it, then hands that one issue to Marvel's reader,
-  or to marvel.com when there is no reader link.
+  or to marvel.com whenever no reader link can be found, including when the database cannot be
+  reached.
 
   The read-me was the precise one and was still wrong in one clause, in the opposite direction. It
   promised your lists are never sent, and the issue numbers in a list are exactly what a request for
@@ -36,13 +37,14 @@ quote in a bug report.
   the other oversold what stays by naming something the requests give away, which is the same
   mistake twice.
 
-  A check now holds all five places to one claim, and it is deliberately hard to satisfy by
+  A check now holds all six places to one claim, and it is deliberately hard to satisfy by
   deleting a promise rather than by qualifying it. Writing it turned up that its first version
   defended only half of what it appeared to: reverting the read-me on its own left it green. A
   review then found the same hole a second time. The check covered the two long statements and not
   the one-line summary that started all this, so that line could be put back word for word and
-  everything stayed green. A third review found two more places making the same claim, the security
-  policy and the cover art card, and both are covered now too.
+  everything stayed green. Later reviews found three more places making the same claim, the security
+  policy, the cover art card and a card four above it on the same screen, and all three are covered
+  now too.
 
   The same review found this entry had itself gone one better than the truth in two places, which
   is the habit the whole change is about. It said turning cover art off stops the cover requests.
@@ -56,6 +58,23 @@ quote in a bug report.
   creator searches are answered from files already on it. And the first correction to the cover art
   sentence was true about the past and silent about the future, which is the half a reader standing
   at that switch actually needs.
+
+  A fourth review found the same claim in one more place, and it is the one that says most about how
+  hard this is. Four cards above the corrected one, on the same screen, a line said cover pictures
+  "load directly from Marvel's own servers and can be switched off". Nothing there is false, and the
+  two halves share a subject whose first verb is about loading, so it reads as though the loading is
+  what stops. That is the same misreading the change had already been rewritten three times to
+  prevent, sitting untouched in the one place nothing had looked. It now says the pictures can be
+  hidden but are still loaded.
+
+  The same review found the security policy still carrying the sentence this whole change removed,
+  in a wider form: nothing you create is uploaded anywhere. Your lists are something you create, and
+  the issue numbers in one are exactly what the app asks about. It now says what is true instead,
+  that there are no accounts, no cloud services, no analytics and no telemetry, and lets the
+  sentences after it describe what is asked for.
+
+  Twenty deliberately broken versions of these sentences are now tried against the check, including
+  every one a reviewer found a way past. All twenty are refused.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two
