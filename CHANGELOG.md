@@ -19,12 +19,14 @@ quote in a bug report.
 - **The app now says exactly what leaves your computer, instead of saying nothing does.** Two
   screens told you nothing is uploaded. That was the wrong kind of reassurance: it is easy to write,
   hard to keep true, and it disagreed with the read-me, which described the two downloads correctly
-  on the same subject. What is on screen now is the accurate version. Your reading progress, your
-  notes and your lists are saved by your own browser and are never sent anywhere; there is no
-  account, no analytics and no tracking. Looking something up sends what you typed, filling in the
-  details of a list you imported sends the issue numbers it is filling in, cover pictures are
-  fetched from Marvel's own image servers as they appear, and opening an issue hands that one issue
-  to Marvel's reader. Turning cover art off stops the cover requests entirely.
+  on the same subject. What is on screen now is the accurate version. Your reading progress and
+  your notes are saved by your own browser and are never sent anywhere; there is no account, no
+  analytics and no tracking. Starting the app asks the comics database whether it is reachable,
+  which is what the status light reports. Looking something up sends what you typed. Filling in
+  missing details sends every issue number still missing them, across every list you keep. Cover
+  pictures are fetched from Marvel's own image servers as they appear. Opening an issue hands that
+  one issue to Marvel's reader, and asks the comics database for the reader link when this copy
+  does not already have it.
 
   The read-me was the precise one and was still wrong in one clause, in the opposite direction. It
   promised your lists are never sent, and the issue numbers in a list are exactly what a request for
@@ -34,7 +36,17 @@ quote in a bug report.
 
   A check now holds all three places to one claim, and it is deliberately hard to satisfy by
   deleting a promise rather than by qualifying it. Writing it turned up that its first version
-  defended only half of what it appeared to: reverting the read-me on its own left it green.
+  defended only half of what it appeared to: reverting the read-me on its own left it green. A
+  review then found the same hole a second time. The check covered the two long statements and not
+  the one-line summary that started all this, so that line could be put back word for word and
+  everything stayed green. It is covered now.
+
+  The same review found this entry had itself gone one better than the truth in two places, which
+  is the habit the whole change is about. It said turning cover art off stops the cover requests.
+  It does not: the setting hides the pictures after they have been asked for. Measured in a real
+  browser with the setting off from the very first paint, the same eight requests go out either
+  way. And it promised your lists are never sent, in the paragraph above the one explaining that
+  the read-me was wrong to promise exactly that.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two

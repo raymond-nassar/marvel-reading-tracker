@@ -15,6 +15,9 @@ import { fileURLToPath } from 'node:url';
 // promises that are kept, and name the requests that are made, in every place the subject comes
 // up. It fails in both directions, which is the point, since deleting the qualification would
 // otherwise read as tightening the promise.
+//
+// The two full statements carry both halves. The subtitle is a summary with no room for the
+// requests, so it is held to the absolutes alone, which is the half it got wrong.
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -48,6 +51,19 @@ function surfaces() {
   ];
 }
 
+// The Backup and settings subtitle is a third site of the same claim, and it is where the
+// absolute was actually found: it read "Nothing is uploaded." A subtitle has no room to name
+// the requests, so holding it to the full shape would only force the qualification somewhere
+// it cannot go. It is held to the absolutes instead, which is the half a one-line summary can
+// break on its own, and the half it did break.
+function claimSites() {
+  const html = read('src/index.html');
+  return [
+    ...surfaces(),
+    ['the Backup and settings subtitle', section(html, '<h1 id="data-h">', '</div></div>')],
+  ];
+}
+
 // Kept, and stated as kept. Each is a promise the code actually honours: no account exists, no
 // analytics or tracking is loaded, and neither read state nor notes is ever sent.
 const PROMISES = [
@@ -61,8 +77,9 @@ const PROMISES = [
 // the requests is not enough on its own: the README named both downloads and still told a
 // reader their lists were never sent, so what the requests disclose has to be stated too.
 const REQUESTS = [
-  ['metadata is fetched', /metadata|comics database/i],
-  ['covers are fetched from Marvel', /cover/i],
+  ['metadata is fetched', /(?:sends|asks|downloads)[^.]*(?:metadata API|comics database)/i],
+  ['the app contacts the API on startup', /(?:starts|opening the app)[^.]*reachable/i],
+  ['covers are fetched from Marvel', /cover[^.]*Marvel'?s? (?:own )?image servers/i],
   ['the requests disclose which issues', /which issues|issues you are looking at|issue numbers/i],
 ];
 
@@ -83,16 +100,26 @@ test('every surface that makes the privacy claim keeps the promises and names th
 // ordered by what you have not read yet, so the order of those requests is derived from progress
 // even though the progress itself never leaves. The last pattern is the README's own version,
 // which named both downloads and then promised the lists were not sent, when the issue numbers
-// in a list are precisely what a request for that issue's details or cover carries.
+// in a list are precisely what a request for that issue's details or cover carries. It reads in
+// both directions because the promise is as natural to write after the noun as before it, and a
+// one-directional pattern let "your lists are never sent anywhere" through.
+//
+// The last is a different shape of the same error and the one this item shipped by accident: a
+// setting was said to stop the cover requests. It does not. setCovers writes a class and
+// re-renders, paintCoverUrl assigns img.src with no reference to the setting, and display: none
+// does not cancel a fetch. Measured in Edge with the setting off from the first paint: 8
+// requests to i.annihil.us, the same 8 as with it on.
 const ABSOLUTES = [
   /nothing is uploaded/i,
   /no server sees/i,
   /nothing (?:is )?(?:ever )?(?:sent|leaves)(?! is)/i,
-  /(?:never sent|not sent|never leaves)[^.]*\blists?\b/i,
+  /(?:never sent|not sent|ever sent|never leaves?)[^.]*\blists?\b/i,
+  /\blists?\b[^.]*(?:never sent|not sent|ever sent|never leaves?)/i,
+  /cover art off[^.]*(?:stops?|prevents?|ends?)[^.]*request/i,
 ];
 
 test('no surface reinstates an unqualified claim that nothing is sent', () => {
-  for (const [where, text] of surfaces()) {
+  for (const [where, text] of claimSites()) {
     for (const absolute of ABSOLUTES) {
       assert.doesNotMatch(text, absolute, `${where} must not claim ${absolute}`);
     }
