@@ -131,18 +131,23 @@ list somebody has to keep complete.
 
 ## Where the chain stops, and why no other chain replaces it
 
-The first hand in that chain closed. Marvel's developer portal was retired on 2025-10-29, and the
-cache the other two are built on stops on exactly that date. Walking every 2025 record in the
-vendored mirror gives a maximum on-sale date of 2025-10-29, a query for 2026 returns nothing at
-all, and the monthly totals for July to October 2025 run 85, 78, 76 and 83, so a full month of
-output is followed immediately by silence. That is not a mirror lagging behind a live source. It
-is a source that stopped, and waiting does not change it.
+The first hand in that chain closed. Marvel's developer portal was retired on 2025-10-29, per the
+deprecation notice carried by [`fakeheal/marvel-sdk`](https://github.com/fakeheal/marvel-sdk),
+retrieved 2026-08-12, and the cache the other two are built on stops on exactly that date. Walking
+every 2025 record in the vendored mirror gives a maximum on-sale date of 2025-10-29, a query for
+2026 returns nothing at all, and the monthly totals for July to October 2025 run 85, 78, 76 and 83,
+so a full month of output is followed immediately by silence. That is not a mirror lagging behind a
+live source. It is a source that stopped, and waiting does not change it.
 
 The consequence is already committed. 63 of the 751 curated items across the twelve orders hold a
-record whose every metadata field is null, all of them in the two Ultimate universe orders.
-Nothing already saved is affected: every cover already stored still loads, verified on 2026-08-12
-against Marvel's image host, which continues to serve what it always served. The loss is
-prospective only.
+record carrying nothing beyond the issue's id, title, number and marvel.com link, with every other
+field of the thirteen listed above null or empty. All 63 are in the two Ultimate universe orders,
+and because those two overlap they are 34 distinct issues rather than 63.
+
+Nothing already saved is affected. The tree holds 473 distinct cover URLs across 688 records; 60
+of them, sampled evenly across the whole set on 2026-08-12, all returned an image. That is a
+sample and not the population, so the claim it supports is that nothing suggests the stored URLs
+have stopped working. The loss is prospective only.
 
 Three databases were assessed on 2026-08-12 as a possible second hand, and the licence question
 this document exists to keep straight is what separates them.

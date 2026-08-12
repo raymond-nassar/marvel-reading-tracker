@@ -4533,7 +4533,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6678-6680` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6683-6685` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4543,11 +4543,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:185-187`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6697-6701`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6702-6706`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6512-6514` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6517-6519` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4755,7 +4755,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1341-1350` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1343-1352` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:175-179` and
 `PRODUCT_BACKLOG.md:185-187` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6264,14 +6264,17 @@ need it. `pendingIssueIds` collects tracked issues that are not hydrated and wer
 `hydrated: true`, which is right for the 688 items that carry metadata and wrong for the 63 that
 carry none, where `normalizeIssue` would otherwise infer the flag from whether the item has a
 `digitalId` or a `seriesId`. Measured by replaying a real import through the app's own modules: 0
-issues report as pending as shipped, 63 with the flag inferred per item, and 0 either way for each of
-the ten orders that have no gaps. Evidence: `src/js/main.js:2820`, `src/js/lib/model.js:88`,
+issues report as pending as shipped and 34 with the flag inferred, and 0 either way for each of the
+ten orders that have no gaps. The 63 items are 34 distinct issues, because the two Ultimate orders
+overlap and `pendingIssueIds` collects into a set keyed by issue id across every list, so the item
+count and the figure a reader would ever see are different numbers and only the second belongs on a
+button. Evidence: `src/js/main.js:2820`, `src/js/lib/model.js:88`,
 `src/js/lib/model.js:554`.
 
 Inferring the flag on its own would be the wrong fix, and that is the substance of this item rather
-than a caution attached to it. It lights up **Fetch details for 63 issues**, and upstream answers 404
-to every one of those ids, so the button would spend a whole minute of a 60 request budget to change
-nothing. A silent omission would become a loud promise. What is missing is the distinction this app
+than a caution attached to it. It lights up **Fetch details for 34 issues**, and upstream answers 404
+to every one of those ids, so the button would spend around twenty seconds of the reader's own
+request budget, which this app holds at 45 a minute and 20 in any ten seconds, to change nothing. A silent omission would become a loud promise. What is missing is the distinction this app
 already draws about availability, where five states are kept apart so that a definite no is never
 confused with an absence of data: not fetched yet is worth retrying, and upstream does not hold this
 is worth showing and not worth retrying. The hydrator cannot tell them apart because it discards the
@@ -6313,8 +6316,10 @@ where this data originated, was retired on that same date, so the snapshot is a 
 rather than a lagging one. Evidence: `scripts/check-contract.mjs:62-67`.
 
 The honest framing is a watch on a source believed dead rather than an expectation of recovery, and
-that is the argument for building it rather than against. The belief is load-bearing for two other
-items and it is a belief, held on two figures agreeing. Instrumenting it costs one assertion on a
+that is the argument for building it rather than against. The retirement is documented outside this
+repository and the provenance document now cites it, but nothing inside the repository observes it:
+what this check can see is two figures agreeing, and that agreement is load-bearing for two other
+items. Instrumenting it costs one assertion on a
 request the check already makes, and it is the only thing that would say so if the belief were wrong.
 This check is deliberately outside CI, because it calls a live third party, so it is a release
 question rather than a build one.

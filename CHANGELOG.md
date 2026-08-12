@@ -16,24 +16,26 @@ quote in a bug report.
 
 ### Changed
 
-- **Twelve reading orders quietly contain 63 issues the app knows nothing about, and the project's
+- **Twelve reading orders quietly contain 63 entries the app knows almost nothing about, and the project's
   record of where its data comes from now explains why.** Marvel shut its metadata service down on
   2025-10-29. Everything published after that date is missing, and the two Ultimate universe orders
-  are where it shows: 34 issues in one and 29 in the other arrive with no title, no date and no
-  cover. Nothing you have saved is affected and every cover already stored still loads, so this is
-  about issues added from now on, not about anything already on your screen.
+  are where it shows: 34 entries in one and 29 in the other arrive carrying nothing but the issue's
+  name, its number and a link to it. No date, no cover, no credits. Those two sets overlap, so what
+  is missing is 34 issues rather than 63. Nothing you have saved is affected, and 60 covers sampled
+  from across the ones already stored all still load, so this is about issues added from here on
+  rather than anything already on your screen.
 
   Three other comic databases were checked to see whether they could fill the hole. One of them,
-  run by a long-established non-profit, does have the missing issues and does permit its records to
-  be reused. None of the three can supply cover pictures. The most promising one hands out a
+  run by a long-established non-profit, has the three that were checked and does permit its records
+  to be reused. None of the three can supply cover pictures. The most promising one hands out a
   picture address that its own servers then refuse to serve, which was confirmed by opening that
   address in a real browser rather than by reading anyone's documentation. So the honest answer is
   that the written details are recoverable and the artwork is not, and that split is now written
   down where the rest of the data's history is kept.
 
   Three separate faults were found while establishing this, and all three are about the app being
-  misleading rather than broken. It marks those 63 issues as fully described when they are empty,
-  it never mentions that an order arrived incomplete, and the check that watches the comics
+  misleading rather than broken. It marks those 63 entries as fully described when they are all but
+  empty, it never mentions that an order arrived incomplete, and the check that watches the comics
   database only asks whether it answers, not whether it still covers anything. All three are now on
   the project's list of planned improvements. Reading the list back also turned up two counts in it
   that had been left behind by earlier work, and those are corrected.
