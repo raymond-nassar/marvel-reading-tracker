@@ -78,7 +78,10 @@ the reasoning you were given is yours to quote.
   `scripts/` or kept by hand, that could execute, exfiltrate or mislead when rendered is in scope,
   as is anything in the generators that would let an upstream response do that.
 - **Dependencies**, meaning the lint tooling and the GitHub Actions used by the workflow. They do
-  not reach the browser, but they do run against a maintainer's checkout and in CI.
+  not reach the browser, but they do run against a maintainer's checkout and in CI. How quickly an
+  advisory against one of them has to be acted on is written down in `.github/dependabot.yml`, with
+  the reasoning, so the threshold is something you can read rather than something you have to ask
+  about.
 - **The workflows** in `.github/workflows/`. The CI workflow reads the repository and nothing else,
   declared at `.github/workflows/ci.yml:18-19`, and anything that would give it more than that is in
   scope.
@@ -114,6 +117,15 @@ Recorded so a report can start from what is true rather than from what a scanner
   because this list is meant to be what is true rather than what was intended.
 - The repository holds no secrets. Nothing in the scripts or the workflow reads a credential, and
   the metadata API needs no key.
+- Dependabot alerts and Dependabot security updates are both switched on, so an advisory against
+  the lint tooling or the workflow's actions arrives as a pull request rather than as silence.
+  Secret scanning is not on, and cannot be while this repository is private: GitHub answers a
+  request to enable it here with "Secret scanning is not available for this repository", and it is
+  free on any public repository, so publishing is what would make it available rather than a
+  purchase. Anyone can see the state without a write: asking for its alerts answers 404 "Secret
+  scanning is disabled on this repository". Push protection depends on it, and a request to enable
+  that one is accepted and then changes nothing, which is worth knowing before anyone reads that
+  success as coverage.
 - CI runs on every pull request with `contents: read` and nothing else.
 - Every claim of the form `path:line` in every tracked file is fingerprinted against the lines it
   names, so documentation that has drifted from the code fails the build rather than misleading a
