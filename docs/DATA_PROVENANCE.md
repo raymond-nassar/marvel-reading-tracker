@@ -129,6 +129,47 @@ refuses all ten of the old prose values by construction rather than by anyone re
 check. The shape test is the point. An enumeration of permitted identifiers would be one more
 list somebody has to keep complete.
 
+## Where the chain stops, and why no other chain replaces it
+
+The first hand in that chain closed. Marvel's developer portal was retired on 2025-10-29, and the
+cache the other two are built on stops on exactly that date. Walking every 2025 record in the
+vendored mirror gives a maximum on-sale date of 2025-10-29, a query for 2026 returns nothing at
+all, and the monthly totals for July to October 2025 run 85, 78, 76 and 83, so a full month of
+output is followed immediately by silence. That is not a mirror lagging behind a live source. It
+is a source that stopped, and waiting does not change it.
+
+The consequence is already committed. 63 of the 751 curated items across the twelve orders hold a
+record whose every metadata field is null, all of them in the two Ultimate universe orders.
+Nothing already saved is affected: every cover already stored still loads, verified on 2026-08-12
+against Marvel's image host, which continues to serve what it always served. The loss is
+prospective only.
+
+Three databases were assessed on 2026-08-12 as a possible second hand, and the licence question
+this document exists to keep straight is what separates them.
+
+| Source | What it conveys | What was verified |
+|---|---|---|
+| Grand Comics Database | CC BY-SA 4.0 over its records. Redistribution is permitted with attribution, and share-alike would put a second licence in this tree | Holds all three example issues, unauthenticated, with on-sale date, UPC and credits |
+| Comic Vine | Term 5 of its API terms reads "Don't redistribute in another form. Do not edit, manipulate or reproduce on any other medium." A vendored file here is that | One example issue confirmed present, by page load |
+| Metron | Terms could not be read directly. A secondary source reports personal, non-commercial, transitory viewing only, with mirroring and public display prohibited. Recorded as unverified | Nothing. The API answers 401 without an account |
+
+Cover art and issue details have different answers, and the split is the useful finding. Details
+can be had, cleanly, from the first of those three. Covers cannot be had from any of them.
+Marvel's own image paths are opaque hashes, so one cannot be computed for an issue it never
+published metadata for. The Grand Comics Database does return a cover URL, but that URL is
+refused: on 2026-08-12 its image host answered 403 with a challenge page rather than an image, to
+a HEAD request, to a plain GET, to a request carrying a current browser user agent, and to
+requests carrying both its own issue page and this app's origin as referer. Because a challenge
+page is exactly what a real browser might pass, the same URL was then opened in installed Edge,
+where it also returned 403, rendered nothing, and never fired a load event as a cross-origin
+image. The Marvel control in that same browser session rendered at 553 by 850.
+
+Repository Constraint 1 permits storing a cover URL and forbids hosting, proxying or caching the
+bytes. It is not the binding limit here. There is no cover URL to store.
+
+Taking the missing records from each issue's own page on marvel.com is closed before it is
+evaluated, by Repository Constraint 2.
+
 ## The open question
 
 Every acceptance item of BL-099 is met except one, and it is the one that cannot be met by

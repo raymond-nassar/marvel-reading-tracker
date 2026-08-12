@@ -14,6 +14,30 @@ quote in a bug report.
 
 ## Unreleased
 
+### Changed
+
+- **Twelve reading orders quietly contain 63 issues the app knows nothing about, and the project's
+  record of where its data comes from now explains why.** Marvel shut its metadata service down on
+  2025-10-29. Everything published after that date is missing, and the two Ultimate universe orders
+  are where it shows: 34 issues in one and 29 in the other arrive with no title, no date and no
+  cover. Nothing you have saved is affected and every cover already stored still loads, so this is
+  about issues added from now on, not about anything already on your screen.
+
+  Three other comic databases were checked to see whether they could fill the hole. One of them,
+  run by a long-established non-profit, does have the missing issues and does permit its records to
+  be reused. None of the three can supply cover pictures. The most promising one hands out a
+  picture address that its own servers then refuse to serve, which was confirmed by opening that
+  address in a real browser rather than by reading anyone's documentation. So the honest answer is
+  that the written details are recoverable and the artwork is not, and that split is now written
+  down where the rest of the data's history is kept.
+
+  Three separate faults were found while establishing this, and all three are about the app being
+  misleading rather than broken. It marks those 63 issues as fully described when they are empty,
+  it never mentions that an order arrived incomplete, and the check that watches the comics
+  database only asks whether it answers, not whether it still covers anything. All three are now on
+  the project's list of planned improvements. Reading the list back also turned up two counts in it
+  that had been left behind by earlier work, and those are corrected.
+
 ### Added
 
 - **The app now says exactly what leaves your computer, instead of saying nothing does.** Two

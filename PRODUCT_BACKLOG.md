@@ -47,6 +47,13 @@ keeps one change to one concern, and each names the review that raised it. The o
 raised by nobody's review: BL-106 was asked for directly by the owner, and BL-107 was found while
 writing BL-106's record.
 
+BL-109, BL-110 and BL-111 come from a third pass, a research task on 2026-08-12 asking where cover
+art and issue details could come from for the issues the vendored snapshot left empty. Its answer was
+that they can come from nowhere the current source reaches, because that source is complete rather
+than behind, and the three items are the defects the research found on this side of that boundary
+rather than the question it was asked. All three are `Ready`, and none of them needs a new data
+source.
+
 ## Product direction
 
 Users should be able to discover, import, follow, and customize reading lists for
@@ -229,9 +236,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-counts.mjs:225-258 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3826-3829 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3836-3839 |
+| BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Ready | scripts/check-contract.mjs:62-67 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:168-180 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:175-187 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
@@ -244,6 +252,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:640 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3246-3294 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
+| BL-110 | Count the issues an order imported empty, and say so | Defect | EP-05 | Extends BL-009 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:2849 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
 | BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:269-314 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
@@ -253,6 +262,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Ready | server.mjs:76-168 |
 | BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/main.js:485-488 |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | absent: committed browser-runner script, tracked-file inventory and package scripts |
+| BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | src/js/main.js:2820 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:324-354 |
@@ -2991,7 +3001,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2694-2697`.
+`PRODUCT_BACKLOG.md:2704-2707`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4523,21 +4533,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6597-6599` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6678-6680` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:185-187`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6616-6620`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6697-6701`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6431-6433` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6512-6514` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,9 +4755,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1317-1326` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
-`PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:1341-1350` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:175-179` and
+`PRODUCT_BACKLOG.md:185-187` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -6238,6 +6248,77 @@ requested when the setting is off, and it is why the omission on the `<img>` bes
 oversight rather than a decision. Turning the setting back on has to fetch what was skipped, or the
 switch becomes one-way until a reload.
 
+**BL-109: Tell an issue upstream refused apart from one nobody has asked about**
+
+- [ ] Stop asserting that every curated item arrived with its metadata
+- [ ] Keep the reason a lookup failed instead of discarding it
+- [ ] Leave a refusal out of the retry queue and out of the count on its button
+- [ ] Show which of the two states an issue is in, on the issue itself
+
+Constraint gate: checked 1 to 11, none breached.
+
+The app carries a complete backfill mechanism and curated import switches it off for the issues that
+need it. `pendingIssueIds` collects tracked issues that are not hydrated and were not added by hand,
+`hydrationOrder` walks them starting from what the reader is about to read, and the result is a
+`details pending` badge and a **Fetch details for N issues** button. Import then maps every item to
+`hydrated: true`, which is right for the 688 items that carry metadata and wrong for the 63 that
+carry none, where `normalizeIssue` would otherwise infer the flag from whether the item has a
+`digitalId` or a `seriesId`. Measured by replaying a real import through the app's own modules: 0
+issues report as pending as shipped, 63 with the flag inferred per item, and 0 either way for each of
+the ten orders that have no gaps. Evidence: `src/js/main.js:2820`, `src/js/lib/model.js:88`,
+`src/js/lib/model.js:554`.
+
+Inferring the flag on its own would be the wrong fix, and that is the substance of this item rather
+than a caution attached to it. It lights up **Fetch details for 63 issues**, and upstream answers 404
+to every one of those ids, so the button would spend a whole minute of a 60 request budget to change
+nothing. A silent omission would become a loud promise. What is missing is the distinction this app
+already draws about availability, where five states are kept apart so that a definite no is never
+confused with an absence of data: not fetched yet is worth retrying, and upstream does not hold this
+is worth showing and not worth retrying. The hydrator cannot tell them apart because it discards the
+error deliberately, so that a failure stays pending and is tried again. That is the right behaviour
+for a timeout and the wrong one for a refusal. Evidence: `src/js/hydrate.js:61-65`.
+
+**BL-110: Count the issues an order imported empty, and say so**
+
+- [ ] Count an item whose lookup was refused, separately from a line that never had a link
+- [ ] Report that number in the sentence already written to disclose a gap
+- [ ] Test both kinds of gap, and an order with neither
+
+Constraint gate: checked 1 to 11, none breached.
+
+Import already means to disclose a gap and its comment already says why, that admitting one is the
+difference between a known gap and a list that looks wrong for no reason. The number it reads is the
+wrong one. `order.placeholders` is set by the vendor script from `unresolved`, which is checklist
+lines carrying no link at all, and a line that carries a link whose lookup was then refused produces
+a fully formed record with every field null and no mark on it of what happened. Both Ultimate
+Universe orders are entirely of the second kind: `placeholders` reads 0 in each while 34 and 29 of
+their items hold nothing beyond an id, a title and a URL, so the sentence never fires. Across all
+twelve orders no item at all carries `placeholder: true`, which makes the only gap this sentence can
+report the one kind this repository does not currently have. Evidence: `src/js/main.js:2846-2853`,
+`scripts/vendor-orders.mjs:219-250`, `scripts/vendor-orders.mjs:303`.
+
+**BL-111: Check the metadata source for what it covers, not only what it returns**
+
+- [ ] Assert the issue count the health endpoint already returns beside its status
+- [ ] Assert the issue count of a series whose order stops short of its published run
+- [ ] Write the figures down as a dated observation, not as a level expected to rise
+
+Constraint gate: checked 1 to 11, none breached.
+
+The contract check pins the shape of every response the app depends on and asserts nothing about what
+the source contains. It asks the health endpoint only whether the API answers, and that same response
+carries the issue count. Measured on 2026-08-12: 37,526 issues, a latest on sale date of 2025-10-29
+across all 785 records held for that year, and nothing at all for 2026. Marvel's own developer API,
+where this data originated, was retired on that same date, so the snapshot is a finished record
+rather than a lagging one. Evidence: `scripts/check-contract.mjs:62-67`.
+
+The honest framing is a watch on a source believed dead rather than an expectation of recovery, and
+that is the argument for building it rather than against. The belief is load-bearing for two other
+items and it is a belief, held on two figures agreeing. Instrumenting it costs one assertion on a
+request the check already makes, and it is the only thing that would say so if the belief were wrong.
+This check is deliberately outside CI, because it calls a live third party, so it is a release
+question rather than a build one.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -6712,21 +6793,21 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and fifty-seven
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and sixty-one
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 83 rows now. The ranks below are positions in it as it stands.
+how it reaches 87 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
 each sit one row below an item they outscore. Every one of those eight rows has shipped, so the
 order is a record rather than a queue and re-sorting it would change no decision while moving ranks
 this appendix cites. It is written down instead of fixed for that reason.
 
-### Case 1: BL-026 is labelled P0 but ranks thirty-seventh
+### Case 1: BL-026 is labelled P0 but ranks thirty-ninth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 37 of 84.
+- Calculated: WSJF 3.67, rank 39 of 87.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
-  It is outranked by thirty-six items, twenty of them sized 1, 2 or 3 whose Cost of Delay is
+  It is outranked by thirty-eight items, twenty-two of them sized 1, 2 or 3 whose Cost of Delay is
   lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
   costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
@@ -6746,7 +6827,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 78 of 84, below seventy-three unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 81 of 87, below seventy-seven unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -6803,9 +6884,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 49 of 84. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 39 of 84. Mid-table.
-- BL-017, P2, rank 83 of 84. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 52 of 87. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 41 of 87. Mid-table.
+- BL-017, P2, rank 86 of 87. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
