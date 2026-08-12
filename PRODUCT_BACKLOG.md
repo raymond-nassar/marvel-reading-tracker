@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6372-6374` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6420-6422` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6391-6395`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6439-6443`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6206-6208` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6254-6256` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1161-1170` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1189-1198` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5150,7 +5150,7 @@ view and the README name the covers by noun in the very clause that asserts and 
 names the image. A noun tie would convict the metadata card alone, on "but they are still requested".
 Counting the acknowledgements that contain a pronoun and reporting that number as the ones that depend
 on one is how a figure of three was published for a fact about one. Punctuation was the wrong
-instrument twice over: re-measured against the 43 true sentences now in the tree, the comma exclusion
+instrument twice over: re-measured against the 44 true sentences now in the tree, the comma exclusion
 refuses 5 of them and the conjunction exclusion 2, while a comma splice walks through both needing
 neither mark. Those two figures were "seven" and "four" here for two rounds, which was the count
 against a 38-sentence corpus that no longer exists, and the earlier wording read as though they were
@@ -5216,12 +5216,13 @@ restored every pardon: "the details for the covers are still fetched" reads as a
 about the covers to any rule that only asks whether the word is in the clause, and it is a clause
 about the details. It reached both shipped cards, which the pronoun version had not. Three of the
 seven pronoun evasions rewrite straight into it. So the noun is now read the same way the pronoun is.
-A covers noun counts unless every occurrence of it in the clause hangs off some other noun through
+A covers noun counted unless every occurrence of it in the clause hung off some other noun through
 "for", "of" or "about", and a word about requesting is the one thing it can hang off and still be
 about them, because the shipped copy writes it that way: "the app still asks for the image". Only
-those three prepositions are read as post-modifiers. Reading "with" as one refused "even with cover
-art off there is no reduction in requests", which is a plain true sentence and the measurement caught
-it. The same round found the noun test had dropped the lookahead that tells our noun from the verb, so
+those three prepositions were read as post-modifiers, because reading "with" as one refused "even
+with cover art off there is no reduction in requests", which is a plain true sentence and the
+measurement caught it. The eleventh round reopened that trade and took the other side of it. The
+same round found the noun test had dropped the lookahead that tells our noun from the verb, so
 "the export covers what was downloaded anyway" was pardoning a lie; the exclusion is now written once
 and shared rather than copied, because two copies are two lists to keep in step.
 
@@ -5240,17 +5241,54 @@ in the punctuation or the word order separates it from "hides the covers but doe
 Telling those apart needs to know that "hides" is a verb and "details" is a noun. That is parsing, and
 every list written in this file in place of parsing has been evaded within a round.
 
-What is left is a residual of three and a recorded set of twelve refusals, and both are now in the
+An eleventh round found the enumeration back for the sixth round running, this time in the span the
+noun rule allowed between the preposition and the covers word. That span was a list of nineteen
+determiners, so "the details for the hidden covers are still fetched" walked straight through it, and
+seven evasions of that shape were written and all seven pardoned. The answer this time is not another
+list but a list that cannot be incomplete: prepositions are a closed class, so the whole class is
+written out, fifty-three of them, and the span between one and the covers word becomes any run of
+words at all. Each of the fifty additions to the previous three was measured alone and then all
+together, and none of them refuses a true sentence, pardons a false one, closes an escape, accepts a
+refusal, breaks a repair or fails a shipped surface. Reading the nearest attachment rather than the
+first is what pays for that: in "the same number of requests for the covers" the nearest thing the
+covers hang off is "requests", which is a request word, so the clause is about them whatever sits
+further left.
+
+Two things fell out of that rule and are worth recording apart from it. The word "number" had been
+admitted as a request word only to paper over the first-match reading of that same sentence; reading
+the nearest attachment answers it properly, so "number" earns nothing, and dropping it closes "the
+number of covers is unchanged". And the two halves of the check, the one asking whether a clause
+names the covers and the one resolving what "they" refers to, had grown separate determiner lists
+doing the same job. The antecedent test now calls the asserting test, so one rule decides both
+positions and the second list goes with the first.
+
+The candidate that scored highest against the twenty-three attacks this round produced is not the one
+that shipped. Excluding a covers word that starts a noun phrase closed fifteen of them at no cost to
+the corpus, and a determiner head test closed seventeen, against nineteen for the rule that shipped.
+The argument against the other two is the direction they fail in: both decide by a word list, so a
+determiner the list has not heard of makes them pardon silently, which "The details some covers
+carry" demonstrates. The shipped rule fails by refusing, which is loud, repairable and recorded. One
+such refusal was bought this round and is the thirteenth entry in that list: "Even with cover art off
+there is no reduction in requests" hangs its only covers word off "Even". Ignoring a preposition that
+opens its clause would recover it, and was measured as pardoning four sentences whose head noun
+carries no determiner, so it was refused on the numbers rather than on principle.
+
+Four of the twenty-three survive, and they are one shape: a covers word inside a modifier of some
+other head noun with no preposition to hang it off, "the details some covers carry" and "the metadata
+that describes covers" among them. That is the shape already recorded as an escape in the asserting
+clause, so the four are recorded as escapes as well rather than guessed at.
+
+What is left is a residual of seven and a recorded set of thirteen refusals, and both are now in the
 repository instead of being described here. That distinction is the eighth round's most useful
 finding. Both this section and the changelog said a proof would disagree with anyone who closed a
 pardon or accepted a refusal, and no such proof was in the repository: it was a scratch file on one
-machine, absent from CI and unreachable by any reader. The corpus is a test now. It holds 43 sentences
-written to be true, 71 written to be false, the 3 that still pardon themselves, and the 12 true
+machine, absent from CI and unreachable by any reader. The corpus is a test now. It holds 44 sentences
+written to be true, 92 written to be false, the 7 that still pardon themselves, and the 13 true
 sentences the check refuses, each stored beside a repair that is separately asserted to pass and to be
-one of the 43. Closing an escape or accepting a refusal turns the suite red, which is what the
+one of the 44. Closing an escape or accepting a refusal turns the suite red, which is what the
 sentence claimed all along.
 
-The twelve are a regression list and not a bound on what the check refuses, and calling them a cost
+The thirteen are a regression list and not a bound on what the check refuses, and calling them a cost
 was the round-eight overclaim recurring one level down: it reads as though they were all of it. They
 are not close to all of it. Twenty-eight further true sentences were written in the register a
 maintainer editing this copy would actually use, and fourteen were refused, "hiding the covers saves
@@ -5258,24 +5296,27 @@ no requests" among them. What the list buys is that a refusal already known cann
 accepted. What it does not buy is a number for how much true English this instrument costs, and no
 instrument of this kind is going to have one.
 
-The three remaining escapes are one across a full stop, which no rule about clauses inside a sentence
-reaches, one that hangs the true clause off the false one with no subject of its own, and one that
-buries a covers noun in a reduced relative clause. The twelve
-refusals fall into four classes. Four say "the requests" without saying which, and two lean on "one"
-or "each" as a covers pronoun, which this round stopped reading as one because "each of your lists is
-unchanged" pardoned a lie with it; all six are repaired by naming the covers, at the cost of a word.
+The seven remaining escapes are one across a full stop, which no rule about clauses inside a sentence
+reaches, one that hangs the true clause off the false one with no subject of its own, and five that
+bury a covers noun in a modifier of some other head noun with nothing to hang it off. The thirteen
+refusals fall into five classes. Four say "the requests" without saying which, and two lean on "one"
+or "each" as a covers pronoun, which the ninth round stopped reading as one because "each of your
+lists is unchanged" pardoned a lie with it; five of those six are repaired by naming the covers, at
+the cost of a word, and the sixth costs a word and a reordering, because naming the covers in "The
+requests are, in fact, unchanged" leaves the parenthetical standing between the subject and its verb.
 The next five do name the covers in the sentence but not in the asserting clause, because a
 parenthetical or a coordinator sits between the subject and its verb: "the covers, even when hidden,
 continue to be requested" is refused, and the clause doing the asserting is "continue to be
 requested", which has no subject in it at all. All five repair by moving the parenthetical, four of
 them to the end of the sentence and the fifth to the front, which neither adds nor removes a word, so
 the claim that every repair adds truth rather than removing it was itself an overclaim and is gone.
-The twelfth is the object-pronoun case the subject tie brought with it, described above. Walking left
+The twelfth is the object-pronoun case the subject tie brought with it, and the thirteenth is the
+clause-initial preposition the eleventh round bought, both described above. Walking left
 to find the subject would accept the middle five, and it was measured against this corpus: it
-pardons 30 of the 71 false sentences and accepts all twelve
+pardons 51 of the 92 false sentences and accepts all thirteen
 refusals, because a leftward walk lends a subject across clause boundaries in whichever direction
 happens to help. That is the second instrument returning under a new name, and it is refused on the
-numbers rather than on principle. Two refusals share a repair, so the twelve have eleven distinct
+numbers rather than on principle. Two refusals share a repair, so the thirteen have twelve distinct
 repaired forms.
 
 Thirty-seven mutations run against the finished rules on the real files and all thirty-seven are
@@ -5294,7 +5335,14 @@ alone, and every one turns the suite red naming the test that defends it; three 
 round's, and each of those names the sentence that defends it, one of which had to be written because
 the first two mutations left it unwritten and the gap showed as a mutation nothing caught. Five more
 undo the tenth round's, one for each piece of it, and every one turns the suite red naming the single
-sentence that piece defends. The proof
+sentence that piece defends. Six more undo the eleventh round's, and every one of those turns the
+suite red naming the sentence that piece defends. Two of the six first reported caught while proving
+nothing, which is the failure this repository's rule about proving a check can fail is aimed at. The
+mutation was applied with a replacement string carrying a dollar sign immediately before a backtick,
+which JavaScript reads as a back-reference to the text preceding the match, so what landed in the
+mutant was a syntax error rather than a weakened rule. A mutation that stops the file parsing is
+caught by every check in it and defends none of them. Applying the replacement through a function
+rather than a string fixed both, and both then failed on an assertion naming the sentence. The proof
 harness itself needed one fix, and it is the one worth naming: a transient file lock failed a restore
 and left a mutation in the working tree, which is the only way a harness that exists to prove a check
 can instead do harm. It now retries and refuses to continue rather than carrying on with a mutated
