@@ -114,32 +114,61 @@ quote in a bug report.
   to the subject, and one of the three recorded a round earlier as unclosable. That third one was
   recorded as unclosable on the reasoning that binding the acknowledgement to the covers would
   convict three of the four acknowledgements the app actually ships, because they say "them" and
-  "they". Both halves of that were true and the conclusion was not: admitting the pronouns alongside
-  the nouns convicts none of them.
+  "they". The first half of that was true and the second was not. Three of them do contain a pronoun,
+  but only one rests on it: two name the covers by noun in the same breath and a third names the
+  image, so a noun-only tie would convict one sentence, not three. Counting the sentences that
+  contain a pronoun and publishing that number as the sentences that need one is how the figure was
+  reached.
+
+  A ninth review then found the covers tie making the same mistake as the finite-verb list, from the
+  other side. It asked whether the asserting clause contained a covers word, and "them", "they",
+  "these" and "those" were on that list wherever they appeared. Containing is not being about: "the
+  details for them are still fetched" is a clause about the metadata, and dropping it onto the end of
+  a lie turned the lie into a pass. Seven shapes of that insertion are now held as false sentences,
+  two of them the very entries this file had listed as evasions kept shut. The tie now asks what the
+  clause is about. A covers noun counts anywhere in it; of the pronouns only "they" counts, and only
+  at the head, because "them" is never a subject and "these" and "those" are determiners as often as
+  pronouns. Against the corpus as it then stood it cost nothing at all, and every shipped sentence
+  still passes. It does have one cost, and finding it needed the other half of the proof: rewriting
+  the shipped card into another true phrasing produced "they can be hidden, and hiding them changes
+  nothing about what is requested", which the tie refuses, because what is hidden sits in the object
+  of "hiding" rather than in the subject. It is repaired by naming the covers, and it is now recorded
+  as the twelfth refusal rather than argued away, since it is close to wording the card could
+  plausibly have shipped.
 
   The price is now in the repository rather than in this paragraph. Both documents used to say that a
   proof would disagree with anyone who quietly closed one of these limits, and no such proof was in
-  the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 42
-  sentences written to be true, 56 written to be false, the 2 passages that still pardon themselves,
-  and the 11 true sentences the check refuses, each stored beside a repair that is itself asserted to
+  the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 43
+  sentences written to be true, 63 written to be false, the 2 passages that still pardon themselves,
+  and 12 true sentences the check refuses, each stored beside a repair that is itself asserted to
   pass. Closing an escape or accepting a refusal turns the suite red rather than passing silently,
   which is what those sentences claimed all along.
 
-  Six of those 11 refusals do not name the covers in the clause that asserts: four say "the requests"
-  without saying which, and two lean on "one" or "each" as a word for the covers, which the check
-  stopped accepting this round because "each of your lists is unchanged" pardoned a lie with it. Those
-  six are repaired by naming the covers. The other five do name them in the sentence but not in the
-  asserting clause, because a parenthetical sits between the subject and its verb, and all five repair
-  by moving the parenthetical to the end rather than by adding anything. So the claim that every
-  repair adds truth rather than removing it, which this entry made for three rounds, was not quite
-  right either. Walking left to find the subject would accept all five, and it was measured: it also
-  pardons nineteen of the fifty-six false sentences. A passage that says two things and means one of
-  them still needs a reader.
+  Those 12 are a regression list, not a bill. Calling them the cost of the check, which this entry
+  did, reads as though they were every true sentence it refuses, and they are nowhere near it:
+  twenty-eight more were written in the words a maintainer would actually use and fourteen of them
+  were refused. What the list buys is that a refusal already known cannot start being accepted
+  without the suite saying so.
+
+  Six of the 12 do not name the covers in the clause that asserts: four say "the requests" without
+  saying which, and two lean on "one" or "each" as a word for the covers, which the check stopped
+  accepting this round because "each of your lists is unchanged" pardoned a lie with it. Those six
+  are repaired by naming the covers. The next five do name them in the sentence but not in the
+  asserting clause, because a parenthetical sits between the subject and its verb, and all five
+  repair by moving that parenthetical rather than by adding anything, four of them to the end of the
+  sentence and one to the front. So the claim that every repair adds truth rather than removing it,
+  which this entry made for three rounds, was not quite right either. The twelfth is the
+  object-pronoun sentence described above. Walking left to find the subject would accept the middle
+  five, and it was measured: it also pardons twenty-six of the sixty-three
+  false sentences. A passage that says two things and means one of them still needs a reader.
 
   Thirty-seven deliberately broken versions of the shipped sentences are tried against the real files
   and all thirty-seven are refused. Fifteen true rewrites in different true words are tried as well,
-  and all fifteen are accepted. Eight ways of undoing this round's repairs were each applied on their
-  own, and every one turns the suite red, naming which test defends it.
+  and fourteen are accepted; the fifteenth is the sentence the subject tie costs, and it is the
+  second round running in which this half of the proof, and only this half, found a cost. Eight ways
+  of undoing the eighth round's repairs were each applied on
+  their own, and three more undo the ninth round's; every one turns the suite red, naming which test
+  or which sentence defends it.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two

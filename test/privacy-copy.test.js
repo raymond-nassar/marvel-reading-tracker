@@ -179,11 +179,15 @@ const ABSOLUTES = [
 // must acknowledge that the requests continue. There is no lie vocabulary left to evade, since
 // nothing is searching for one, and the repair to a refused sentence is to name the covers rather
 // than to drop a true word. That is not quite the clean asymmetry it was once claimed to be: five
-// of the eleven refusals below repair by moving a parenthetical to the end of the sentence, which
-// adds nothing and removes nothing. The refused sentences are listed with their repairs at the foot
-// of this file rather than counted here, because a count in prose is a claim nothing checks. An
-// absence of false positives is not a property any instrument of this kind will have; knowing which
-// ones, by name, is.
+// of the twelve refusals below repair by moving a parenthetical, four to the end of the sentence and
+// one to the front, which adds nothing and removes nothing. The refused sentences are listed with
+// their repairs at the foot of this file rather than counted here, because a count in prose is a
+// claim nothing checks. That list is a regression list and not a bound: it holds the refusals review
+// has found, so that one of them cannot quietly start being accepted, and it is nowhere near all of
+// them. Round nine wrote twenty-eight further true sentences in the register a maintainer editing
+// this copy would use, and fourteen were refused, "hiding the covers saves no requests" among them.
+// An absence of false positives is not a property any instrument of this kind will have, and a
+// complete list of them is not one either.
 //
 // What this does not catch is a window that makes the cease-claim and acknowledges the requests
 // in the same breath, which is a contradiction rather than an overclaim, and is a thing for a
@@ -284,20 +288,43 @@ const ACKNOWLEDGES = new RegExp(
 // Admitting it accepts the first and pardons the second. Refusing it costs the first, which is
 // repaired by moving "in fact" to the front of the sentence.
 //
-// The reference is narrow for the same reason. "them", "they", "these" and "those" stand in for the
-// covers; "one" and "each" do not, they are quantifiers, and this repository writes about lists with
-// them. Leaving them in pardoned "no cover is requested, and each of your lists is unchanged". The
-// price of taking them out is one true sentence, "though each one is requested", which is repaired
-// by writing "though each cover is requested".
+// The reference to the covers has to be the clause's subject rather than any word inside it, and
+// admitting the pronouns anywhere in the clause was the same mistake as the finite-verb list one
+// section above, made in the other direction. A word present in an open list pardoned silently.
+// With "them", "they", "these" and "those" read anywhere, "the details for them are still fetched"
+// and "though these titles are unchanged" both counted as acknowledgements about the covers, and a
+// two-word insertion that changed nothing about their falsehood turned recorded lies into passes.
+// Seven shapes of that insertion are in the false list below, and the reference this replaced
+// pardons exactly those seven and nothing else in it. Two of the seven are the entries filed there
+// as evasions a wider reference would have opened, so the reference called narrow was opening them
+// itself.
+//
+// A covers noun is admitted anywhere, because a clause that names the covers is about them wherever
+// the noun sits. Of the pronouns only "they" is admitted, and only at the head of the clause. "them"
+// is never a subject in English; "these" and "those" are determiners as often as pronouns, and it
+// was the determiner uses that carried the evasions. "they" is neither, so at the head of a clause
+// it is the subject rather than evidence about one. A pronoun subject written any other way is
+// refused, which is the loud direction, and the refusals are listed at the foot of this file.
+//
+// "one" and "each" are excluded for a different reason: they are quantifiers, and this repository
+// writes about lists with them. Leaving them in pardoned "no cover is requested, and each of your
+// lists is unchanged". The price is one true sentence, "though each one is requested", repaired by
+// writing "though each cover is requested".
 //
 // Walking left instead, so that a subject separated from its verb by a parenthetical could be
 // found, was measured and rejected. "The covers, even when hidden, continue to be requested" is a
 // real sentence and it is refused. But a leftward walk lends a subject across clause boundaries in
-// both directions, and against this corpus it pardons 19 of the 56 false sentences while accepting
-// all 11 refusals. A rule that recovers eleven true sentences by excusing nineteen false ones is the
-// second instrument returning under a new name.
-const ABOUT_COVERS =
-  /\b(?:cover art|covers?|cover images?|cover pictures?|artwork|images?|pictures?|them|they|these|those)\b/i;
+// both directions, and against this corpus it pardons 26 of the 63 false sentences while accepting
+// all 12 refusals. A rule that recovers twelve true sentences by excusing twenty-six false ones is
+// the second instrument returning under a new name.
+const COVERS_NOUN =
+  /\b(?:cover art|covers?|cover images?|cover pictures?|artwork|images?|pictures?)\b/i;
+const COVERS_SUBJECT =
+  /^\s*(?:and |but |though |although |yet |or |so |then |while |when |whereas )*they\b/i;
+
+function aboutCovers(clause) {
+  return COVERS_NOUN.test(clause) || COVERS_SUBJECT.test(clause);
+}
 const ADVERBIAL_ONLY =
   /^\s*(?:and |but |though |although |yet |or |so |even )*(?:regardless|anyway|(?:exactly )?as before|all the same|no different|as always|in fact|even so|either way)\s*$/i;
 const CLAUSE_BREAK = /[.;,]/;
@@ -316,7 +343,7 @@ function acknowledges(text) {
     const head = clauseAround(text, found.index);
     const tail = clauseAround(text, found.index + found[0].length - 1);
     const asserting = tail !== head && !ADVERBIAL_ONLY.test(tail) ? tail : head;
-    if (ABOUT_COVERS.test(asserting)) return true;
+    if (aboutCovers(asserting)) return true;
   }
   return false;
 }
@@ -382,9 +409,9 @@ test('a promise about one thing may still be absolute, and one still is', () => 
 // check that reports only what it catches is the one that grew the overclaims this item exists to
 // undo.
 
-// Written to be true, and every one must pass. Ten are the repaired forms of refusals below. Eight
-// must never be treated as being about the covers switch at all, four of them because they use
-// "covers" as an ordinary verb.
+// Written to be true, and every one must pass. Eleven are the repaired forms of refusals below.
+// Eight must never be treated as being about the covers switch at all, four of them because they
+// use "covers" as an ordinary verb.
 const HONEST_SENTENCES = [
   'Turning covers off does not mean nothing is requested.',
   'Switch covers off and nothing changes: every cover is requested exactly as before.',
@@ -395,6 +422,7 @@ const HONEST_SENTENCES = [
   'With cover art off the app still sends the same requests.',
   'Switch covers off and every cover becomes a plain typographic tile, but the image behind it is still requested.',
   'Cover images load directly from Marvel\u2019s own servers. They can be hidden, but they are still requested.',
+  'Cover images load directly from Marvel\u2019s own servers. They can be hidden, and hiding the covers changes nothing about what is requested.',
   'switching cover art off hides the covers but does not stop them being requested',
   'Show cover art',
   'Covers are loaded straight from Marvel\u2019s own servers using the address the metadata API reports.',
@@ -476,6 +504,20 @@ const DISHONEST_SENTENCES = [
   // The evasions a wider reference would have opened, kept shut by the narrow one.
   'Switch covers off and no cover is requested; the requests to the metadata service are unchanged.',
   'Switch covers off and no cover is requested, though the requests for titles are unchanged.',
+  // The same two, and five more of their shape, with a covers pronoun dropped into a clause that is
+  // about something else. Every one of these passed while the reference read the whole clause for a
+  // pronoun, because presence was being taken for subjecthood. "them" is the object of a preposition
+  // in three of them, and "these" and "those" are determiners on a non-covers noun in three more, so
+  // in none of those six does the pronoun refer to the covers at all. The seventh is why "they" is
+  // admitted only at the head of a clause and not merely inside one: in "the details they carry" it
+  // is the subject of a relative clause whose head noun is the details.
+  'Switch covers off and no cover is requested; the details for them are still fetched.',
+  'Switch covers off and no cover is requested, your notes about them are unchanged.',
+  'Turning cover art off stops the covers being downloaded, and your lists of them are unchanged.',
+  'Switch covers off and no cover is requested; these requests to the metadata service are unchanged.',
+  'Switch covers off and no cover is requested, though these titles are unchanged.',
+  'Switch covers off and no cover is requested, though those details are unchanged.',
+  'Switch covers off and no cover is requested; the details they carry are still fetched.',
   // Two escapes through "without", one past the twenty-character gap and one past the list.
   'Without ever showing you the cover art, nothing is requested.',
   'Without the images, no request goes out to Marvel.',
@@ -519,8 +561,8 @@ const RECORDED_ESCAPES = [
   'Switch covers off and no cover is requested, or your notes sent, as before.',
 ];
 
-// True sentences this instrument refuses, with the repair beside each. They fall into three classes,
-// and the third is the interesting one.
+// True sentences this instrument refuses, with the repair beside each. They fall into four classes,
+// and the last two are the interesting ones.
 //
 // Four say "the requests" without saying which requests, and two lean on "one" or "each" as a
 // pronoun for the covers, which this instrument deliberately does not read as one because "each of
@@ -531,13 +573,23 @@ const RECORDED_ESCAPES = [
 // assertion: a parenthetical or a coordinator sits between the subject and its verb, leaving clauses
 // like "continue to be requested" and "is still requested" with no subject in them at all. Walking
 // left to find the subject would accept all five, and it was measured against this corpus: it also
-// pardons 19 of the 56 sentences below and accepts all 11 of these refusals, because a leftward walk
+// pardons 26 of the 63 sentences below and accepts all 11 of these refusals, because a leftward walk
 // lends a subject across clause boundaries in whichever direction happens to help. All five repair by
-// moving the parenthetical to the end, which adds nothing and removes nothing, and is why the comment
-// at the head of this file no longer claims every repair adds a word.
+// moving the parenthetical, four to the end of the sentence and one to the front, which adds nothing
+// and removes nothing, and is why the comment at the head of this file no longer claims every repair
+// adds a word.
+//
+// The twelfth arrived with the subject tie this round added, and is the cost of it. "Hiding them
+// changes nothing about what is requested" refers to the covers with "them", which is never a
+// subject in English, so the tie will not read it as one: the clause asserts about the hiding, and
+// what is hidden sits in the object. Admitting "them" after a hiding or a stopping verb would
+// recover the sentence, and was measured as recovering nothing else, but it would do so by
+// enumerating verbs, which is the shape of instrument this round replaced. Naming the covers
+// repairs it, so it costs a word like the first six. It is recorded rather than argued away
+// because it is close to the copy the metadata card actually ships.
 //
 // Each repaired form is in HONEST_SENTENCES, so this list cannot be satisfied by wording nobody
-// would write. Two refusals share a repair, so the eleven have ten distinct repaired forms.
+// would write. Two refusals share a repair, so the twelve have eleven distinct repaired forms.
 const RECORDED_REFUSALS = [
   ['Switch covers off and nothing on screen is a picture; the requests are unchanged.',
     'Switch covers off and nothing on screen is a picture; the requests for the covers are unchanged.'],
@@ -561,6 +613,8 @@ const RECORDED_REFUSALS = [
     'Cover art is still requested once you switch it off.'],
   ['The image behind each tile, hidden or not, is requested exactly as before.',
     'The image behind each tile is requested exactly as before, hidden or not.'],
+  ['Cover images load directly from Marvel\u2019s own servers. They can be hidden, and hiding them changes nothing about what is requested.',
+    'Cover images load directly from Marvel\u2019s own servers. They can be hidden, and hiding the covers changes nothing about what is requested.'],
 ];
 
 test('every sentence written to be true is accepted', () => {
@@ -623,7 +677,7 @@ test('the structural counts claimed above the corpus are the counts it has', () 
   const repairs = new Set(RECORDED_REFUSALS.map(([, repaired]) => repaired));
   assert.equal(
     repairs.size,
-    10,
-    `the comment above HONEST_SENTENCES says ten of them are repaired forms, and there are ${repairs.size} distinct repairs`,
+    11,
+    `the comment above HONEST_SENTENCES says eleven of them are repaired forms, and there are ${repairs.size} distinct repairs`,
   );
 });
