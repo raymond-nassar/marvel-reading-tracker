@@ -169,7 +169,10 @@ test('each job deadline stays out of the way until every step has used its own',
 // step it had never examined.
 test('the parser accounts for every step and every deadline the file declares', () => {
   const lines = workflow.split(/\r?\n/);
-  const declaredSteps = lines.filter((line) => /^\s*- (uses|name|run):/.test(line)).length;
+  // Any first key, not just the three this file happens to use. The parser's own opener accepts
+  // any key, so a narrower rule here turns an ordinary `- id:` or `- if:` step into a red build
+  // that blames the parser for a step the parser got right. Both were tried and both did that.
+  const declaredSteps = lines.filter((line) => /^\s*- [A-Za-z0-9_-]+:/.test(line)).length;
   const declaredDeadlines = lines.filter((line) => /^\s*timeout-minutes:/.test(line)).length;
 
   const foundSteps = jobs.reduce((total, job) => total + job.steps.length, 0);
@@ -179,6 +182,18 @@ test('the parser accounts for every step and every deadline the file declares', 
   );
 
   assert.ok(declaredSteps > 0 && declaredDeadlines > 0, 'the file declares steps and deadlines at all');
-  assert.equal(foundSteps, declaredSteps, 'every step written in the file was seen by the parser');
+  // Which side is short decides who is wrong, so the message has to say. Short on the parse is the
+  // fault this test exists for. Short on the text is this check's own known limit: a line inside a
+  // block scalar can look like a step opener, and no rule that reads the file as text can tell.
+  assert.equal(
+    foundSteps,
+    declaredSteps,
+    foundSteps < declaredSteps
+      ? `the parser found ${foundSteps} steps where the file writes ${declaredSteps} step openers, so it `
+        + 'is missing one and the three tests above never examined it. If the extra opener is a line '
+        + 'inside a block scalar rather than a real step, this counting rule is what needs narrowing'
+      : `the parser found ${foundSteps} steps where the file writes ${declaredSteps} step openers, so `
+        + 'the parser is seeing something the counting rule does not recognise as a step opener',
+  );
   assert.equal(foundDeadlines, declaredDeadlines, 'every deadline written in the file was attributed to a job or a step');
 });

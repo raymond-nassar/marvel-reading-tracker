@@ -5169,12 +5169,12 @@ hangs inside a step. It is also invisible in the file, being arithmetic between 
 eighty lines apart, so a test holds it: every job has a deadline, every step has one, and the job's
 clears the sum. A fourth test holds the test's own hand-rolled parser to the file's own count of
 steps and of deadlines, both read off the text rather than off the parse, so neither a deadline the
-parser mislaid nor a step it never saw can pass as compliant. Fourteen mutations
+parser mislaid nor a step it never saw can pass as compliant. Seventeen mutations
 were each shown to behave as designed, and the four tests split cleanly across them rather than all firing at once.
 The concurrency group, the manual dispatch trigger and the full-history checkout are untouched.
 
 Evidence: `.github/workflows/ci.yml:43-53`, `.github/workflows/ci.yml:30-34`,
-`test/ci-deadlines.test.js:149-158`, `test/ci-deadlines.test.js:170-184`.
+`test/ci-deadlines.test.js:149-158`, `test/ci-deadlines.test.js:170-199`.
 
 **BL-096: Publish a security policy and private reporting route**
 
@@ -5964,9 +5964,9 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and fifty-four
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and fifty-five
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 80 rows now. The ranks below are positions in it as it stands.
+how it reaches 81 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
 each sit one row below an item they outscore. Every one of those eight rows has shipped, so the

@@ -2079,9 +2079,9 @@
     "fp": "421df666e8117d81",
     "head": "test('each job deadline stays out of the way until every step has used its own', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|test/ci-deadlines.test.js:170-184|0": {
-    "anchor": "test/ci-deadlines.test.js:170-184",
-    "fp": "9f19168bb9a16e42",
+  "PRODUCT_BACKLOG.md|item-details|test/ci-deadlines.test.js:170-199|0": {
+    "anchor": "test/ci-deadlines.test.js:170-199",
+    "fp": "6c1abdef1ebc5d2e",
     "head": "test('the parser accounts for every step and every deadline the file declares', () => {"
   },
   "PRODUCT_BACKLOG.md|item-details|test/library.test.js:196-226|0": {

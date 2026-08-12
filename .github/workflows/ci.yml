@@ -54,9 +54,9 @@ jobs:
       #
       # The numbers are 241 CI runs, 676 successful jobs, worst case per step:
       # checkout 5s, setup-node 20s, install 8s, tests 6s, eslint 4s, each gate 1s.
-      # Whole jobs worst: lint 27s, tests 32s. Every deadline below is at least six
-      # times the worst that step has ever taken, so a cold npm cache or a slow
-      # registry stays green and only a hang goes red.
+      # Whole jobs worst: lint 27s, tests 32s. Every deadline below is at least
+      # twelve times the worst that step has ever taken, so a cold npm cache or a
+      # slow registry stays green and only a hang goes red.
       - uses: actions/checkout@v4
         timeout-minutes: 2
 
