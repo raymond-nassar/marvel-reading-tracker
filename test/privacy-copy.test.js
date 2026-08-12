@@ -177,25 +177,41 @@ const ABSOLUTES = [
 // A check whose cheapest repair is to weaken the copy is worse than no check, and both attempts
 // had that property. So this stops looking for the lie. A window that is about the covers switch
 // must acknowledge that the requests continue. There is no lie vocabulary left to evade, since
-// nothing is searching for one, and no true sentence can fail for being true, since the only way
-// to fail is to leave the acknowledgement out. Every repair is an addition of the truth.
+// nothing is searching for one, and every repair is an addition of the truth rather than a removal.
+// Four true sentences are refused even so, each for saying "the requests" without saying which
+// requests, and each repaired by naming the covers. The direction of the repair is the property
+// worth having; an absence of false positives is not one any instrument of this kind will have.
 //
 // What this does not catch is a window that makes the cease-claim and acknowledges the requests
 // in the same breath, which is a contradiction rather than an overclaim, and is a thing for a
-// reader to catch. Saying otherwise would be the same overclaim one level up.
+// reader to catch. Saying otherwise would be the same overclaim one level up. Three passages of
+// that shape are held as expected escapes by the proof that exercises this file, so closing one
+// cannot be reported without the proof disagreeing.
 //
 // The other limit is that "a window about the covers switch" is itself an enumeration, and moving
 // the enumeration from the lie to the switch does not abolish it. Review escaped the requirement
-// four times by writing "without cover art" and "disable the images", which never reach it.
-// Widening this list is close to monotone but not free: bare "images" and "pictures" are here
-// because "disable the images" is how the escape was written, and they cost a true sentence that
-// pairs one of them with a hiding word, which has to be reworded rather than qualified. "without"
-// is deliberately not in the list for that reason, and is matched only next to a covers term.
-const COVERS = /\b(?:cover art|covers?|cover images?|cover pictures?|artwork|images?|pictures?)\b/i;
+// four times by writing "without cover art" and "disable the images", which reached no pattern
+// here, and twice more once "without" was added, by walking past its gap and by naming the images
+// rather than the covers. Widening this list is close to monotone but not free: bare "images" and
+// "pictures" are here because "disable the images" is how the escape was written, and they cost a
+// true sentence that pairs one of them with a hiding word, which has to be reworded rather than
+// qualified. "without" is deliberately not in that list for the same reason, and is matched only
+// next to a covers term.
+//
+// "covers" is also a verb, and the collision is not theoretical: "a backup covers every list you
+// keep, and nothing in it is hidden from you" was demanded an acknowledgement it has no business
+// carrying. Every reading of it as our noun is followed by a preposition or a verb, and every
+// reading of it as a verb by the thing covered, so a determiner after it means it is not ours.
+const COVERS =
+  /\b(?:cover art|cover images?|cover pictures?|artwork|images?|pictures?|cover|covers(?!\s+(?:a|an|the|every|all|each|both|most|your|my|its|their)\b))\b/i;
 const TURNED_OFF =
   /\b(?:off|hidden|hide|hides|hiding|unchecked|unchecking|unticked|unticking|disable|disabled|disabling|suppress(?:ed|es|ing)?|no longer shown)\b/i;
+// Thirty characters, not twenty: "without ever showing you the cover art" needs twenty-two, and
+// review walked out through the gap at twenty. "the images" earns its place separately, because
+// "without the images, no request goes out" is the switch and "a plain JSON file without images"
+// is not, and the article is the only thing that tells them apart.
 const WITHOUT_COVERS =
-  /\bwithout\b[^.;]{0,20}\b(?:cover art|covers?|cover images?|cover pictures?|artwork)\b/i;
+  /\bwithout\b[^.;]{0,30}\b(?:cover art|covers?|cover images?|cover pictures?|artwork|the images?|the pictures?)\b/i;
 const SWITCHED =
   /\b(?:switch\w*|turn\w*|toggl\w*|uncheck\w*|untick\w*|disabl\w*|hid(?:e|es|den|ing))\b[^.]{0,40}\boff\b/i;
 const CLEARED =
@@ -204,22 +220,28 @@ const CLEARED =
 // The forms the truth is actually written in. A form missing here fails a true sentence, and the
 // repair is to say it more plainly, never to say less: that asymmetry is the whole design.
 //
-// Every branch has to name a request, and the gap may not cross a conjunction. Neither is
-// tidiness. Review pardoned three lies with a true clause about something else entirely sitting
-// beside them, because "unchanged", "regardless" and "as before" carry no subject: "switching
-// cover art off stops them being requested, and your notes are unchanged" passed. Requiring the
-// noun left two of those alive, since "requested, and your notes are unchanged" puts the two
-// within twenty-one characters of each other. Excluding the comma killed them and cost six true
-// sentences with it, "the image is requested, regardless" among them, because a comma before an
-// appositive is not a new subject. It is "and" that carries one. So the gap crosses a comma and
-// not a conjunction, which is the distinction the evidence actually supports.
+// Every branch has to name a request, and the acknowledgement has to be about the covers. Neither
+// is tidiness. Review pardoned three lies with a true clause about something else entirely sitting
+// beside them, because "unchanged", "regardless" and "as before" carry no subject of their own:
+// "switching cover art off stops them being requested, and your notes are unchanged" passed.
+//
+// Punctuation was tried first as the fix and is the wrong instrument. Measured against the thirty
+// eight true sentences the proof now holds, refusing a gap that crosses a comma refuses seven of
+// them, "the image is requested, regardless" among them; refusing one that crosses a conjunction
+// refuses four, two of those the same, and a comma splice still walks through needing neither.
+// What actually separates the two cases is the subject: "your notes" is a different one,
+// "regardless" is not a subject at all. So the gap crosses anything short of a full stop, and the
+// tie is to the subject instead.
 const ASKED =
   '(?:requests?|requested|sends?|sent|fetch(?:es|ed|ing)?|downloads?|downloaded|asks?|asked|asking)';
 const NOT_STOP =
   "(?:cannot|can't|can not|could not|couldn't|does not|doesn't|do not|don't|did not|didn't|will not|won't|would not|wouldn't)\\s+(?:stop|mean|prevent|reduce|change|halt|cancel)\\w*";
 const UNCHANGED =
   '(?:unchanged|regardless|anyway|(?:exactly )?as before|all the same|no different|continues?|carry on|carries on)';
-const GAP = '(?:(?!\\b(?:and|but|yet|though|although|while|whereas)\\b)[^.;])';
+// This branch stands alone, with no request word beside it, so it has to carry one itself. Left
+// bare as "the same number", it pardoned "every list keeps the same number of issues".
+const SAME_REQUESTS = '\\bthe same (?:number of )?(?:requests?|fetches|downloads?)\\b';
+const GAP = '[^.;]';
 const ACKNOWLEDGES = new RegExp(
   [
     `\\bstill\\b${GAP}{0,40}\\b${ASKED}\\b`,
@@ -227,12 +249,42 @@ const ACKNOWLEDGES = new RegExp(
     `\\bwithout stopping\\b${GAP}{0,40}\\b${ASKED}\\b`,
     `\\bno (?:reduction|change|fewer|difference)\\b${GAP}{0,40}\\b${ASKED}\\b`,
     `\\b(?:nothing changes?|changes? nothing)\\b${GAP}{0,40}\\b${ASKED}\\b`,
-    `\\bthe same (?:requests?|number)\\b`,
+    SAME_REQUESTS,
     `\\b${ASKED}\\b${GAP}{0,30}\\b${UNCHANGED}\\b`,
     `\\b${UNCHANGED}\\b${GAP}{0,30}\\b${ASKED}\\b`,
   ].join('|'),
   'i',
 );
+
+// Which clause is doing the asserting. A trailing clause carrying a finite verb is a sentence of
+// its own and has to name the covers itself; one that carries no verb is an adverbial hanging off
+// the clause before it, and takes that clause's subject. That is the difference between "no cover
+// is requested, your notes are unchanged" and "the image is requested, regardless", which are
+// identical to any rule written about the punctuation between them.
+const ABOUT_COVERS =
+  /\b(?:cover art|covers?|cover images?|cover pictures?|artwork|images?|pictures?|them|they|one|each|these|those)\b/i;
+const FINITE =
+  /\b(?:is|are|was|were|am|be|been|being|goes|go|went|keeps?|kept|remains?|remained|stays?|stayed|sends?|has|have|had|does|do|did|makes?|happens?|occurs?|arrives?|leaves?|carries|carry|continues?)\b/i;
+const CLAUSE_BREAK = /[.;,]/;
+
+function clauseAround(text, index) {
+  let start = index;
+  while (start > 0 && !CLAUSE_BREAK.test(text[start - 1])) start -= 1;
+  let end = index;
+  while (end < text.length && !CLAUSE_BREAK.test(text[end])) end += 1;
+  return text.slice(start, end);
+}
+
+function acknowledges(text) {
+  const scan = new RegExp(ACKNOWLEDGES.source, 'gi');
+  for (let found = scan.exec(text); found; found = scan.exec(text)) {
+    const head = clauseAround(text, found.index);
+    const tail = clauseAround(text, found.index + found[0].length - 1);
+    const asserting = tail !== head && FINITE.test(tail) ? tail : head;
+    if (ABOUT_COVERS.test(asserting)) return true;
+  }
+  return false;
+}
 
 function aboutTheSwitch(window) {
   return (
@@ -254,7 +306,7 @@ function unacknowledged(text) {
       if (j >= sentences.length) continue;
       const window = sentences.slice(i, j + 1).join(' ');
       const context = sentences.slice(Math.max(0, i - 1), j + 2).join(' ');
-      if (aboutTheSwitch(window) && !ACKNOWLEDGES.test(context)) return window;
+      if (aboutTheSwitch(window) && !acknowledges(context)) return window;
     }
   }
   return null;

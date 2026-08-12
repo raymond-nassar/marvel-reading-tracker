@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6215-6217` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6236-6238` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6234-6238`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6255-6259`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6049-6051` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6070-6072` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1073-1082` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1088-1097` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5104,9 +5104,10 @@ evade, and the cheapest repair to a failing sentence is to add the truth rather 
 metadata card's "still loaded" became "still requested" in the same pass, since loading is what the
 page does and requesting is what the network does, and only the second is the subject.
 
-Three limits are worth stating plainly, because the item's own failure mode is claiming an instrument
-is better than it is, and two of the three were found by review inside the sentence that claimed the
-limits were smaller.
+Three limits were stated last round, because the item's own failure mode is claiming an instrument is
+better than it is. Two of them were found by review inside the sentence that claimed the limits were
+smaller, and the third turned out to be smaller than it had been stated to be, which is the same
+failure pointing the other way.
 
 The first is that "a window about the covers switch" is an enumeration. Inverting the check moved the
 enumeration off the lie and onto the switch, it did not abolish it. A sixth round escaped the
@@ -5115,32 +5116,52 @@ the switch patterns and so were never asked for the truth at all. Widening this 
 monotone, but the seventh round measured the "close": bare "images" and "pictures" had to go in for
 "disable the images", and they convict a true sentence that pairs one of them with a hiding word,
 which then has to be reworded rather than qualified. The word "without" is out of the list for that
-reason and is matched only beside a covers term.
+reason and is matched only beside a covers term, and the seventh round walked out of that too, once
+past its twenty-character gap and once by naming the images rather than the covers. Its gap is now
+thirty characters, "the images" is matched beside it and bare "images" still is not, since "a plain
+JSON file without images" is not the switch and the article is the only thing that says so. "covers"
+is also a verb, and "a backup covers every list you keep, and nothing in it is hidden from you" was
+being asked for an acknowledgement it has no business carrying; a determiner after the word now says
+it is not ours.
 
 The second is that the acknowledgement is an enumeration too, and this is the one the round before
 had denied by naming only the first. A form missing from it fails a true sentence. Tying every branch
-to a request noun closed three pardons and excluding the comma closed two more, and the comma
-exclusion cost seven true sentences to do it, "the image is requested, regardless" and "the same
-requests are made" among them. A comma before an appositive is not a new subject; "and" is what
-carries one, so the gap now crosses a comma and not a conjunction. The dropped "the same requests"
-branch is restored, and the copy's own verb "asks" is in the list it had been missing from.
+to a request noun closed one pardon and excluding the comma closed two more, and the comma exclusion
+cost seven of the thirty-eight true sentences now held to do it, "the image is requested, regardless"
+among them. "The same requests are made" was refused for a different reason, that its branch had been
+dropped; the branch is restored, narrowed so that "the same number of issues" no longer counts as a
+request, and the copy's own verb "asks" is in the list it had been missing from.
 
-The third cannot be closed, and saying otherwise is the overclaim this whole item exists to end. The
-check cannot tell which requests an acknowledgement is about, so "no cover is requested; the details
-are still fetched" passes on all four covers surfaces: one true half about the metadata requests
-pardons one false half about the covers. Requiring a covers noun in the acknowledging clause would
-convict three of the four acknowledgements shipped here, measured, because they say "them" and
-"they", and that is design two returning under a new name. A passage that says two things and means
-one of them is a contradiction rather than an overclaim, and it needs a reader.
+The third was called unclosable last round and that was wrong, which is worth recording as plainly as
+the limit itself. The claim was that the check cannot tell which requests an acknowledgement is about,
+and that tying it to a covers noun would convict three of the four acknowledgements shipped here
+because they say "them" and "they". Both halves were true and the conclusion drawn from them was not:
+admitting the pronouns as well as the nouns convicts none of the four. Punctuation was the wrong
+instrument twice over, the comma refusing seven true sentences and the conjunction four, while a comma
+splice walks through both needing neither mark. What separates "no cover is requested, your notes are
+unchanged" from "the image is requested, regardless" is the subject, not the mark before it: one has a
+different subject and the other has no subject at all. So the acknowledgement now has to name the
+covers, by noun or by pronoun, in whichever clause is making the assertion, and a trailing clause is
+making one exactly when it carries a finite verb of its own. That closes three of the four passages
+recorded as unreachable, and four of the six the seventh round demonstrated.
 
-Thirty mutations now run against the finished rules and all thirty are caught, including every
-evasion the seven review rounds demonstrated. Twelve more run the other way: a true sentence
-rewritten into a different true phrasing has to leave the suite green. That is the half no lie
-mutation can express, it is the half both earlier instruments failed, and it is the half that caught
-the repair above: four of the first five were refused by the instrument two rounds ago and seven more
-by the fix one round ago. The proof harness itself needed one fix, and it is the one worth naming: a
-transient file lock failed a restore and left a mutation in the working tree, which is the only way a
-harness that exists to prove a check can instead do harm. It now retries and refuses to continue
+What is left is a residual of three and a cost of four, and both are asserted rather than described.
+Three passages still pardon themselves: one across a full stop, which no rule about clauses reaches,
+and two that hang the true clause off the false one with no verb in it, so it reads as an adverbial of
+the lie's own subject. Four true sentences are refused, each for saying "the requests" without saying
+which requests, each repaired by naming them, and each repair held beside the refusal so it is
+demonstrated rather than promised. Both lists are held in the proof as expectations, so closing a
+pardon or accepting a refusal cannot be reported without the proof disagreeing. A passage that says
+two things and means one of them is a contradiction rather than an overclaim, and it needs a reader.
+
+Thirty-seven mutations now run against the finished rules and all thirty-seven are caught. Fifteen
+more run the other way: a true sentence rewritten into a different true phrasing has to leave the
+suite green. That is the half no lie mutation can express, it is the half both earlier instruments
+failed, and it is the half that caught every repair above: four of the first five were refused by the
+instrument two rounds ago, and the two punctuation repairs since then refuse seven and four of the
+true sentences respectively. The proof harness itself needed one fix, and it is the one worth naming:
+a transient file lock failed a restore and left a mutation in the working tree, which is the only way
+a harness that exists to prove a check can instead do harm. It now retries and refuses to continue
 rather than carrying on with a mutated file.
 
 The security policy was found still holding the absolute that started this item, in a stronger form
