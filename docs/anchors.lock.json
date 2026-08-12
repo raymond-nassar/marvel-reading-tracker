@@ -269,13 +269,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:299-300|0": {
-    "anchor": "PRODUCT_BACKLOG.md:299-300",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:302-303|0": {
+    "anchor": "PRODUCT_BACKLOG.md:302-303",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5660|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5660",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5709|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5709",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -804,8 +804,8 @@
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:367-399|0": {
-    "anchor": ".github/copilot-instructions.md:367-399",
+  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:380-412|0": {
+    "anchor": ".github/copilot-instructions.md:380-412",
     "fp": "eaed0b26a1cb1201",
     "head": "- Commit messages explain why the change is right, in the same register as the comments."
   },
@@ -819,9 +819,9 @@
     "fp": "30b65b3dff660d69",
     "head": "name: CI"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:102-103|0": {
-    "anchor": ".github/workflows/ci.yml:102-103",
-    "fp": "8e2394a0c84490fa",
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:134-136|0": {
+    "anchor": ".github/workflows/ci.yml:134-136",
+    "fp": "f74e9b7abbf725e0",
     "head": "- name: Check evidence anchors"
   },
   "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:15|0": {
@@ -829,23 +829,28 @@
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:27-100|0": {
-    "anchor": ".github/workflows/ci.yml:27-100",
-    "fp": "a6e39a9b81053802",
-    "head": "test:"
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:30-34|0": {
+    "anchor": ".github/workflows/ci.yml:30-34",
+    "fp": "26b91d70c40baf88",
+    "head": "# The outer backstop, not the mechanism. Every step below carries its own deadline"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:38-48|0": {
-    "anchor": ".github/workflows/ci.yml:38-48",
-    "fp": "7e27891e914b428a",
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:43-53|0": {
+    "anchor": ".github/workflows/ci.yml:43-53",
+    "fp": "5681dec687477971",
+    "head": "# Deadlines are on the steps, and the reason is measured rather than stylistic."
+  },
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:60-73|0": {
+    "anchor": ".github/workflows/ci.yml:60-73",
+    "fp": "f86ad08dce5d926a",
     "head": "- uses: actions/checkout@v4"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:63-76|0": {
-    "anchor": ".github/workflows/ci.yml:63-76",
-    "fp": "bbd815681702df56",
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:89-105|0": {
+    "anchor": ".github/workflows/ci.yml:89-105",
+    "fp": "dbfa18e0a9a77318",
     "head": "lint:"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:914-923|0": {
-    "anchor": "CHANGELOG.md:914-923",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:932-941|0": {
+    "anchor": "CHANGELOG.md:932-941",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -879,38 +884,38 @@
     "fp": "3407c971ff683a01",
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:163-167|0": {
-    "anchor": "PRODUCT_BACKLOG.md:163-167",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:165-169|0": {
+    "anchor": "PRODUCT_BACKLOG.md:165-169",
     "fp": "4a89a7d9f02e050f",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:173-175|0": {
-    "anchor": "PRODUCT_BACKLOG.md:173-175",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:175-177|0": {
+    "anchor": "PRODUCT_BACKLOG.md:175-177",
     "fp": "0a706ae279a3cb68",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:173-175|1": {
-    "anchor": "PRODUCT_BACKLOG.md:173-175",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:175-177|1": {
+    "anchor": "PRODUCT_BACKLOG.md:175-177",
     "fp": "0a706ae279a3cb68",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2685-2688|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2685-2688",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2688-2691|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2688-2691",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5634-5636|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5634-5636",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5683-5685|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5683-5685",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5800-5802|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5800-5802",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5849-5851|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5849-5851",
     "fp": "2f7e750267ca9c0c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5821-5824|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5821-5824",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5870-5873|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5870-5873",
     "fp": "ec5e4ca8fe8fb6c8",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
@@ -1083,6 +1088,11 @@
     "anchor": "scripts/check-anchors.mjs:94",
     "fp": "dc0f54892037a5a6",
     "head": "const isBinary = (text) => text.includes('\\0');"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:225-258|0": {
+    "anchor": "scripts/check-counts.mjs:225-258",
+    "fp": "a37667913815bc23",
+    "head": "const word = /^([A-Za-z-]+) items have since been delivered/.exec(d.lines[i])?.[1] ?? null;"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:293-303|0": {
     "anchor": "scripts/check-counts.mjs:293-303",
@@ -2064,6 +2074,16 @@
     "fp": "3a5c838f7187d084",
     "head": "background: color-mix(in srgb, var(--warn) 12%, var(--panel));"
   },
+  "PRODUCT_BACKLOG.md|item-details|test/ci-deadlines.test.js:149-158|0": {
+    "anchor": "test/ci-deadlines.test.js:149-158",
+    "fp": "421df666e8117d81",
+    "head": "test('each job deadline stays out of the way until every step has used its own', () => {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|test/ci-deadlines.test.js:170-203|0": {
+    "anchor": "test/ci-deadlines.test.js:170-203",
+    "fp": "4de108b8d5f4e06f",
+    "head": "test('the parser accounts for every step and every deadline the file declares', () => {"
+  },
   "PRODUCT_BACKLOG.md|item-details|test/library.test.js:196-226|0": {
     "anchor": "test/library.test.js:196-226",
     "fp": "aaf0e826528174f3",
@@ -2564,8 +2584,8 @@
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:163-175|0": {
-    "anchor": "PRODUCT_BACKLOG.md:163-175",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:165-177|0": {
+    "anchor": "PRODUCT_BACKLOG.md:165-177",
     "fp": "bf99b80d6f8745ff",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
@@ -2694,9 +2714,9 @@
     "fp": "6fad27f41f5632cb",
     "head": "<div class=\"sub\">Everything lives in this browser, at this exact address. Nothing is uploaded.</div>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-088|.github/workflows/ci.yml:38-48|0": {
-    "anchor": ".github/workflows/ci.yml:38-48",
-    "fp": "7e27891e914b428a",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-088|.github/workflows/ci.yml:60-73|0": {
+    "anchor": ".github/workflows/ci.yml:60-73",
+    "fp": "f86ad08dce5d926a",
     "head": "- uses: actions/checkout@v4"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-089|.github/dependabot.yml:34-70|0": {
@@ -2724,10 +2744,10 @@
     "fp": "a6bd614952b576d4",
     "head": "await handle(req, res);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-095|.github/workflows/ci.yml:27-100|0": {
-    "anchor": ".github/workflows/ci.yml:27-100",
-    "fp": "a6e39a9b81053802",
-    "head": "test:"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-095|.github/workflows/ci.yml:85-87|0": {
+    "anchor": ".github/workflows/ci.yml:85-87",
+    "fp": "5369e6f0f1243202",
+    "head": "- name: Run tests"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-096|SECURITY.md:29-42|0": {
     "anchor": "SECURITY.md:29-42",
@@ -2763,6 +2783,11 @@
     "anchor": "scripts/check-anchors.mjs:32",
     "fp": "dda7109a4205f5b2",
     "head": "const ANCHOR = /`([A-Za-z0-9_./-]+\\.(?:js|mjs|css|html|json|yml|md)):(\\d+)(?:-(\\d+))?`/g;"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-105|scripts/check-counts.mjs:225-258|0": {
+    "anchor": "scripts/check-counts.mjs:225-258",
+    "fp": "a37667913815bc23",
+    "head": "const word = /^([A-Za-z-]+) items have since been delivered/.exec(d.lines[i])?.[1] ?? null;"
   },
   "scripts/check-anchors.mjs|preamble|scripts/check-contract.mjs:1|0": {
     "anchor": "scripts/check-contract.mjs:1",

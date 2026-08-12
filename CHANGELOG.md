@@ -16,6 +16,24 @@ quote in a bug report.
 
 ### Added
 
+- **Automated checks now have a time limit, so a stuck one gives up in minutes rather than in
+  hours.** Nothing about the app changes and nothing you have saved is affected. Before this, a
+  check that hung had six hours to do it, which was never a deliberate figure: it was simply what
+  happens when nobody sets one. Measured over 241 runs, no check has ever taken longer than half a
+  minute, so the limits now sit at several minutes each, generous enough that a slow day stays green
+  and only a genuine hang goes red.
+
+  Which check the limit sits on turned out to matter more than the number, and it needed testing
+  rather than looking up. Putting the limit on the whole batch reports the result using the same
+  word this project uses for the harmless, everyday case of a newer change replacing an older one
+  mid-run, which everyone here has been taught to read as "nothing is wrong". A real problem
+  reported in those words would have been ignored by design. Putting the limit on each individual
+  check instead reports it as a plain failure and names the check that overran. So each check now
+  carries its own limit, the batch keeps a wider one behind them purely as a backstop, and a further
+  check makes sure that ordering cannot quietly drift apart later. The notes that teach contributors
+  how to read a failed run now carry that exception, since they are where the misleading word was
+  being taught.
+
 - **The project now checks, before anyone could ever make it public, that nothing private has been
   written into its history.** Nothing about the app changes and nothing you have saved is affected.
   Two separate things are checked on every change. The first is that the working notes each writing

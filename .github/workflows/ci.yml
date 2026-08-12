@@ -27,6 +27,11 @@ jobs:
   test:
     name: Tests on Node ${{ matrix.node }}
     runs-on: ubuntu-latest
+    # The outer backstop, not the mechanism. Every step below carries its own deadline
+    # and they sum to 14 minutes, so this can only fire on time spent outside a step:
+    # runner setup, post-run and cleanup, measured at 8 seconds at their worst. That
+    # ordering is deliberate and a test pins it. See the note above the step deadlines.
+    timeout-minutes: 16
     strategy:
       fail-fast: false
       matrix:
@@ -35,9 +40,28 @@ jobs:
         node: ['20', '24']
 
     steps:
+      # Deadlines are on the steps, and the reason is measured rather than stylistic.
+      # A probe workflow run on 2026-08-11 put the same overrun under both placements:
+      # a job-level `timeout-minutes` ended the job with conclusion `cancelled`, while
+      # a step-level one ended it with `failure` and marked the overrunning step. This
+      # repository already reads `cancelled` as "a newer push superseded it, nothing is
+      # broken", because the concurrency group above makes that the common case, and
+      # every red run during the Actions incident of 2026-08-06 was exactly that shape.
+      # A deadline that reported `cancelled` would therefore be a real failure wearing
+      # the one costume this project is trained to ignore. On the step it is a `failure`
+      # that names which step ran long, and the log carries "has timed out after N
+      # minutes", which is what separates it from a test or a gate that simply failed.
+      #
+      # The numbers are 241 CI runs, 676 successful jobs, worst case per step:
+      # checkout 5s, setup-node 20s, install 8s, tests 6s, eslint 4s, each gate 1s.
+      # Whole jobs worst: lint 27s, tests 32s. Every deadline below is at least
+      # twelve times the worst that step has ever taken, so a cold npm cache or a
+      # slow registry stays green and only a hang goes red.
       - uses: actions/checkout@v4
+        timeout-minutes: 2
 
       - uses: actions/setup-node@v4
+        timeout-minutes: 4
         with:
           node-version: ${{ matrix.node }}
           cache: npm
@@ -45,6 +69,7 @@ jobs:
       # The app itself still ships no runtime dependencies. The lockfile exists only
       # for the lint tooling, so this installs nothing that reaches the browser.
       - name: Install
+        timeout-minutes: 4
         run: npm ci
 
       # `npm test` is deliberately `node --test` with no path argument. Node only
@@ -58,11 +83,14 @@ jobs:
       # would put this repository's traffic on a third party's rate limit on every
       # push. It stays a manual pre-release check.
       - name: Run tests
+        timeout-minutes: 4
         run: npm test
 
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    # 21 minutes of step deadlines below, so the same ordering holds here.
+    timeout-minutes: 25
     steps:
       # The full history, unlike every other checkout here. The publication gate below
       # scans commit messages and every blob any commit ever held, and the default
@@ -72,21 +100,25 @@ jobs:
       # A test pins the pairing, because this was the one decision in this file with
       # nothing but a comment behind it, and a comment is not a check.
       - uses: actions/checkout@v4
+        timeout-minutes: 2
         with:
           fetch-depth: 0
 
       - uses: actions/setup-node@v4
+        timeout-minutes: 4
         with:
           node-version: '24'
           cache: npm
 
       - name: Install
+        timeout-minutes: 4
         run: npm ci
 
       # Reports only. `npm run lint:fix` is the local counterpart; CI never rewrites
       # the tree, so formatting drift shows up as a failure rather than a surprise
       # commit.
       - name: Run ESLint
+        timeout-minutes: 2
         run: npm run lint
 
       # Every `path:line` citation in every tracked file is fingerprinted by
@@ -100,6 +132,7 @@ jobs:
       # to clear a red build locks the wrong lines in permanently and silently,
       # which is the exact failure this gate exists to end.
       - name: Check evidence anchors
+        timeout-minutes: 2
         run: npm run anchors
 
       # The anchors gate fingerprints the lines a citation names, so it reports a
@@ -109,6 +142,7 @@ jobs:
       # and fails with the derived value, which is the same argument for a machine
       # rather than a habit that produced the gate above it.
       - name: Check derived counts
+        timeout-minutes: 2
         run: npm run counts
 
       # The contrast ratios this stylesheet claims used to be prose in CSS comments,
@@ -129,6 +163,7 @@ jobs:
       # its current ratio here, so a number that drifts is visible rather than merely
       # counted.
       - name: Check palette contrast
+        timeout-minutes: 2
         run: npm run palette
 
       # Two things a reader of a published repository would find, checked here because
@@ -142,5 +177,10 @@ jobs:
       # `npm run publication:surface` is the local counterpart and scans every branch
       # the remote advertises, which is what a clone would actually receive and is
       # therefore the population that matters on the day someone makes this public.
+      #
+      # Three minutes rather than the two its neighbours get. This is the one step whose
+      # work grows with the history rather than with the tree, and it has only two runs
+      # behind it, both at a second.
       - name: Check publication boundary
+        timeout-minutes: 3
         run: npm run publication

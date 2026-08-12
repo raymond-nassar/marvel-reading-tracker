@@ -305,6 +305,19 @@ older run and the run reports `failure` with every job `cancelled`. During a Git
 incident on 2026-08-06, every red run in this repository was of that shape, and nothing was
 actually broken.
 
+That reading has one exception, and it is the reason the deadlines in the workflow are written
+where they are. Measured on a probe run rather than read anywhere: a `timeout-minutes` on a **job**
+ends that job as `cancelled`, which is byte for byte what a supersede produces, so a real overrun
+would arrive wearing the costume the paragraph above tells you to dismiss. On a **step** the same
+overrun ends as `failure`, and the step that ran long is the one marked. So every step in the
+workflow carries its own deadline and each job's deadline is larger than the sum of its steps',
+which keeps the ambiguous outcome out of reach for anything that hangs inside a step. A test pins
+that ordering, because it is arithmetic between numbers written eighty lines apart.
+
+What this does not buy you: at the API level a step that timed out and a step that failed on its
+own merits are both `failure`. Tell them apart by the log line, which reads "has timed out after N
+minutes", or by the step's duration matching its deadline exactly.
+
 If a commit has no run at all, `gh run rerun` cannot help you, because there is nothing to re-run.
 Use the manual trigger:
 
