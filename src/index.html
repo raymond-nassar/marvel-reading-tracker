@@ -500,7 +500,7 @@
           <!-- ---------------------------------------- data view -->
           <section id="view-data" class="view" hidden aria-labelledby="data-h">
             <div class="head"><div class="head-left"><h1 id="data-h">Backup &amp; settings</h1>
-              <div class="sub">Everything lives in this browser, at this exact address. Nothing is uploaded.</div>
+              <div class="sub">Your reading progress lives in this browser, at this exact address, and is never sent anywhere.</div>
             </div></div>
 
             <div class="card card-static">
@@ -633,9 +633,18 @@
 
               <h3>Your data</h3>
               <p class="rail-hint">
-                Everything lives in this browser, at this exact address. Nothing is uploaded, there is no
-                account, and no server sees your reading progress. Clearing site data for this address
-                erases it, so export a backup regularly.
+                Everything you save lives in this browser, at this exact address: your lists, your
+                reading progress and your notes. There is no account to create, and no analytics or
+                tracking of any kind. Your progress and your notes are never sent anywhere. Clearing
+                site data for this address erases them, so export a backup regularly.
+              </p>
+              <p class="rail-hint">
+                What does leave this machine is what any web page fetches. Searching sends what you
+                typed to the metadata API named above, and filling in details for an imported list
+                sends the issue numbers it is filling in. Cover art is requested from Marvel's image
+                servers as it appears, so those servers see which issues are on screen; switching
+                cover art off under Backup and settings stops those requests. Opening an issue hands
+                that one issue to Marvel's reader, which is what the button is for.
               </p>
 
               <h3>This build</h3>

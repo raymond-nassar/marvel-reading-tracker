@@ -9,13 +9,13 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Sixty-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Sixty-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
-BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-088, BL-089, BL-095,
-BL-096, BL-099, BL-100 and BL-106.
+BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-087, BL-088, BL-089,
+BL-095, BL-096, BL-099, BL-100 and BL-106.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Ten remain
@@ -220,7 +220,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-099 | Clarify the license and provenance boundary for committed data | Debt | EP-12 | Leaves alone | 8 | 8 | 13 | 5 | 5.8 | none | Measured | Shipped | src/data/curated-lists.json:80-120 |
-| BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/index.html:503 |
+| BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/index.html:503 |
 | BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/styles.css:817-820 |
 | BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/js/main.js:3076-3089 |
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Ready | src/js/main.js:3010-3038 |
@@ -244,7 +244,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3246-3294 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
-| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:263-308 |
+| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:264-309 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
@@ -767,7 +767,7 @@ as five loose literals.
 
 The light palette is written out twice, once for `:root[data-theme="light"]` and once inside the
 `prefers-color-scheme` query. The duplication is deliberate: the module is deferred at
-`src/index.html:725`, so resolving the theme in JavaScript would paint dark and then flip, and
+`src/index.html:734`, so resolving the theme in JavaScript would paint dark and then flip, and
 would leave the page dark entirely for a reader with JavaScript off. A test asserts the two blocks
 are identical token for token, which is what makes the duplication safe to keep rather than merely
 necessary.
@@ -2537,14 +2537,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:445-456`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:446-457`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:353-357`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:354-358`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -3904,7 +3904,7 @@ action exactly the same weight as the safe action it tells the reader to take fi
 sort of defect this repository's own rule about recovery paths exists to catch.
 
 `.btn-g` is the app's established answer, used in nine places including the Cancel button of the
-confirm dialog at `src/index.html:719`. The convention there is the same shape as this: the action
+confirm dialog at `src/index.html:728`. The convention there is the same shape as this: the action
 being asked for is `.btn`, the way out is `.btn-g`. Applying it here follows the app rather than
 inventing anything, and it is what `.btn-p` was reaching for, expressed from the other side.
 
@@ -4521,7 +4521,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6016-6018` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6043-6045` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4531,11 +4531,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:177-179`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6037-6040`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6064-6067`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5850-5852` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5877-5879` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4743,7 +4743,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:988-997` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1008-1017` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:167-171` and
 `PRODUCT_BACKLOG.md:177-179` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4968,18 +4968,45 @@ URLs only, never image bytes, so Constraint 1 remains intact. Evidence:
 
 **BL-087: State the network privacy boundary where the promise appears**
 
-- [ ] Replace absolute in-app wording with the precise README distinction
-- [ ] Name metadata queries and direct cover requests without implying progress is sent
-- [ ] Keep the no-account, no-analytics, no-telemetry and local-progress promises explicit
-- [ ] Check first run, Backup and settings, About and README for one consistent claim
+- [x] Replace absolute in-app wording with the precise README distinction
+- [x] Name metadata queries and direct cover requests without implying progress is sent
+- [x] Keep the no-account, no-analytics, no-telemetry and local-progress promises explicit
+- [x] Check first run, Backup and settings, About and README for one consistent claim
 
 Constraint gate: checked 1 to 11, none breached.
 
 The README says correctly that reading data stays local while metadata and covers are downloaded.
 The app itself says nothing is uploaded. Search text and requested issue identifiers do cross the
 machine boundary, and image hosts receive ordinary requests. Reading progress, notes and identity
-remain local or absent. Evidence: `README.md:29-39`, `src/index.html:500-555`,
+remain local or absent. Evidence: `README.md:29-40`, `src/index.html:500-555`,
 `src/js/api.js:90-102`.
+
+Shipped. Three destinations were enumerated from the code rather than from the copy, because the
+copy was the thing under suspicion. The metadata API receives the search text and, through
+`src/js/hydrate.js:55`, one request per issue whose details are missing, which for an imported list
+is the list. Marvel's image host receives a request per cover displayed, and covers are on unless
+switched off. Marvel's reader receives the one issue a click opens. Read state, notes and identity
+are sent to none of them, and no account exists to hold them.
+
+The README was already the precise version and was still wrong in one clause. It promised "not your
+lists", and the issue numbers in a list are exactly what a request for that issue's details or its
+cover carries. That is the same overclaim as the app's, arrived at from the opposite direction: the
+app understated what leaves by naming nothing, the README overstated what stays by naming a
+category the requests disclose.
+
+The absolute the in-app copy is not allowed to reinstate now includes "no server sees your reading
+progress", which the code cannot promise even though the progress itself never leaves.
+`hydrationOrder` prioritises the unread head of the list, so the order those requests arrive in is
+derived from read state. The remedy is to promise what is true, that progress is never sent, rather
+than to make a claim about what a recipient could infer.
+
+Verified: three tests added, each watched failing. Reverting both surfaces fails two of the three.
+Reverting each surface alone still fails two, which is the measurement that mattered: the first
+version of the check passed with the README reverted, so half of it defended nothing. The rule that
+closed the gap is that naming the downloads is not sufficient on its own, since the README named
+both and still promised the lists were not sent. The third test holds the theme setting's absolute
+in place, because a promise about one thing may be absolute when it is true, and without it the
+rule above would be satisfiable by deleting promises instead of qualifying claims.
 
 **BL-088: Pin and harden workflow actions for untrusted contributions**
 
@@ -5047,7 +5074,7 @@ here because it described the tags this item replaced.
 
 Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
 `.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:74-108`,
-`test/ci-supply-chain.test.js:124-142`, `README.md:311-346`.
+`test/ci-supply-chain.test.js:124-142`, `README.md:312-347`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -5326,7 +5353,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:263-503`,
+are valuable history and are not a concise public policy. Evidence: `README.md:264-504`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 **BL-098: Define review ownership and contribution intake**

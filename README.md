@@ -35,8 +35,9 @@ analytics or tracking of any kind.
 To be exact about what does leave your computer: to show you comic titles, dates and cover
 pictures, the app downloads those details from a public comics database and downloads the
 cover images from Marvel's own image servers. That is the same kind of request your browser
-makes when it loads any web page. What is never sent is anything about you: not your lists,
-not your progress, not who you are.
+makes when it loads any web page. Those requests do reveal which issues you are looking at,
+because asking for an issue's details or its cover picture is exactly what they are. What is
+never sent is your reading progress, your notes, or anything identifying you.
 
 ## Run it on your computer
 

@@ -16,6 +16,26 @@ quote in a bug report.
 
 ### Added
 
+- **The app now says exactly what leaves your computer, instead of saying nothing does.** Two
+  screens told you nothing is uploaded. That was the wrong kind of reassurance: it is easy to write,
+  hard to keep true, and it disagreed with the read-me, which described the two downloads correctly
+  on the same subject. What is on screen now is the accurate version. Your reading progress, your
+  notes and your lists are saved by your own browser and are never sent anywhere; there is no
+  account, no analytics and no tracking. Looking something up sends what you typed, filling in the
+  details of a list you imported sends the issue numbers it is filling in, cover pictures are
+  fetched from Marvel's own image servers as they appear, and opening an issue hands that one issue
+  to Marvel's reader. Turning cover art off stops the cover requests entirely.
+
+  The read-me was the precise one and was still wrong in one clause, in the opposite direction. It
+  promised your lists are never sent, and the issue numbers in a list are exactly what a request for
+  that issue's cover or details carries. So one document undersold what leaves by naming nothing and
+  the other oversold what stays by naming something the requests give away, which is the same
+  mistake twice.
+
+  A check now holds all three places to one claim, and it is deliberately hard to satisfy by
+  deleting a promise rather than by qualifying it. Writing it turned up that its first version
+  defended only half of what it appeared to: reverting the read-me on its own left it green.
+
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two
   companion sites already listed there, and it earns the place twice over: it publishes the
