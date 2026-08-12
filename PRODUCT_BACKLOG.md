@@ -39,12 +39,12 @@ Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 reposito
 open-source readiness study. Eleven of them are still `Ready`: the study records gaps for later
 implementation and does not mix those fixes into the roadmap change that identified them. BL-083,
 BL-088, BL-089, BL-095, BL-096, BL-099 and BL-100 have since been delivered, and their detail blocks
-record what changed. BL-101 through BL-105 are the five items here that came from neither pass: each was
-raised by the review of one of the items above it and routed to the backlog rather than folded
-into it, because each belongs to a different file from the one under repair. Filing them rather
-than fixing them in place is what keeps one change to one concern, and each names the review that
-raised it. BL-106 and BL-107 came from neither pass and from no review: the first was asked for
-directly by the owner, and the second was found while writing the first's record.
+record what changed. BL-101 through BL-107 are the seven items here that came from neither pass.
+BL-101 through BL-105 were each raised by the review of one of the items above them and routed to
+the backlog rather than folded into it, because each belongs to a different file from the one under
+repair. Filing them rather than fixing them in place is what keeps one change to one concern, and
+each names the review that raised it. The last two came from no review either: BL-106 was asked for
+directly by the owner, and BL-107 was found while writing BL-106's record.
 
 ## Product direction
 
@@ -4521,7 +4521,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6015-6017` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6016-6018` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4531,11 +4531,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:177-179`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6036-6039`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6037-6040`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5849-5851` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5850-5852` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4743,7 +4743,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:986-995` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:988-997` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:167-171` and
 `PRODUCT_BACKLOG.md:177-179` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5608,10 +5608,10 @@ Constraint gate: checked 1 to 11, none breached.
 
 Asked for directly by the owner rather than raised by a study or a review, which is why it names no
 finding. The gap it closes was measurable all the same: the site is named in ten tracked files on
-`main` and in none of the places a reader looks. The catalog card, the provenance record and the
-order's own header all say that one bundled order's volume division follows its collected-edition
-guide, while the README's list of companion sites carried two entries and not this one. A project
-can rely on a source everywhere except where it says who it relies on, and this one did.
+`main`, and in none of them a new reader starts. The catalog card names it on screen, and the
+provenance record and the order's own header both record that one bundled order's volume division
+follows its collected-edition guide. What carried no mention was the one document a new reader opens
+first, whose list of companion sites had two entries and not this one.
 
 Shipped as a third entry beside the two already there, saying what the site publishes and what this
 project owes it. The wording is the part worth recording, because the first draft overstated the
@@ -5623,10 +5623,11 @@ same overclaim in the changelog, where it went further and said the committed re
 it. Both now use the record's own verb.
 
 That is worth more than a note about wording. `BL-099` was filed to stop this document and the
-running app claiming more than the record supports, and its own review twice caught the correction
-overclaiming in a new direction. The same failure recurred here, inside the change that credits the
-source that item's boundary depends on. What catches it is reading the record beside the sentence,
-not remembering what the record says.
+running app claiming more than the record supports, and its own block records the same fault running
+the other way: the About view told a reader the bundled orders were not authored here when ten of
+the twelve are. Claiming too much and claiming too little are one failure, which is reading a
+sentence against what you remember of the record rather than against the record. It recurred here,
+inside the change that credits the source that item's boundary depends on.
 
 The record you are reading was nearly not written. The argument for omitting it was that neither
 entry already in that README section shipped under a backlog item, which is true and is not
@@ -5650,11 +5651,11 @@ times in the commit that wrote that sentence. It stood 49 times in the commit be
 the two blocks this change adds make it 51.
 
 Which kind of sentence it is decides what to do with it, which is why the first task is a decision
-and not an edit. Read as a claim about the document today it is simply stale, and this is the third
-time this document has carried one, after `BL-055` and `BL-059`. Read as the measurement that chose
-three lines over four it is still true, and re-deriving it would replace the evidence for a decision
-with numbers that had no part in making it. The figures are load-bearing either way, so they need to
-say which they are.
+and not an edit. Read as a claim about the document today it is simply stale, and this is the fourth
+time this document has carried one, after `BL-055`, `BL-059` and `BL-105`. Read as the measurement
+that chose three lines over four it is still true, and re-deriving it would replace the evidence for
+a decision with numbers that had no part in making it. The figures are load-bearing either way, so
+they need to say which they are.
 
 ## Existing epics and stories
 
@@ -6130,9 +6131,9 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and fifty-five
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and fifty-seven
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 81 rows now. The ranks below are positions in it as it stands.
+how it reaches 83 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
 each sit one row below an item they outscore. Every one of those eight rows has shipped, so the
