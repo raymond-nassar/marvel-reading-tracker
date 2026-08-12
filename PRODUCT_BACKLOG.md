@@ -598,7 +598,7 @@ the focused button out of the document and sends focus to the top of the page wi
 announced. It now lands on the all-read heading at `src/index.html:333`, which is both what the
 reader needs to hear and where the remaining actions are.
 
-The About view carries the shortcut reference at `src/index.html:618-625`, naming all three
+The About view carries the shortcut reference at `src/index.html:624-631`, naming all three
 bindings. Only two of them were advertised in the interface, on the hero's `kbd` hints; `Ctrl` +
 `\` for the sidebar was written into the toggle button's tooltip at `src/js/main.js:572` and
 nowhere else, which asks for a deliberate hover on a pointer and shows nothing at all on a touch
@@ -764,7 +764,7 @@ as five loose literals.
 
 The light palette is written out twice, once for `:root[data-theme="light"]` and once inside the
 `prefers-color-scheme` query. The duplication is deliberate: the module is deferred at
-`src/index.html:722`, so resolving the theme in JavaScript would paint dark and then flip, and
+`src/index.html:724`, so resolving the theme in JavaScript would paint dark and then flip, and
 would leave the page dark entirely for a reader with JavaScript off. A test asserts the two blocks
 are identical token for token, which is what makes the duplication safe to keep rather than merely
 necessary.
@@ -3901,7 +3901,7 @@ action exactly the same weight as the safe action it tells the reader to take fi
 sort of defect this repository's own rule about recovery paths exists to catch.
 
 `.btn-g` is the app's established answer, used in nine places including the Cancel button of the
-confirm dialog at `src/index.html:716`. The convention there is the same shape as this: the action
+confirm dialog at `src/index.html:718`. The convention there is the same shape as this: the action
 being asked for is `.btn`, the way out is `.btn-g`. Applying it here follows the app rather than
 inventing anything, and it is what `.btn-p` was reaching for, expressed from the other side.
 
@@ -4518,7 +4518,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5941-5943` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5949-5951` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4528,11 +4528,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:176-178`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5962-5965`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5970-5973`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5775-5777` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5783-5785` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4740,7 +4740,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:966-975` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:968-977` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:166-170` and
 `PRODUCT_BACKLOG.md:176-178` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5389,11 +5389,19 @@ the rule is now keyed on shape: every order this repository authors must record 
 naming either the script that generates it or the provenance record. Adding an order without a trail
 fails whether or not anyone remembers to add its filename to a list.
 
-Verified: six tests were added and each was watched failing before the fix, one of them replacing a
-test whose claim the split made false, so the suite grew by five. The parser output for both
+Verified: seven tests were added and each was watched failing before the fix, one of them replacing a
+test whose claim the split made false, so the suite grew by six. The parser output for both
 hand-compiled orders is byte-identical before and after the headers were added, at 138 and 132
 entries with the same sections and the same ids, so nothing a reader sees moved. Evidence:
 `docs/DATA_PROVENANCE.md`, `src/js/lib/curated.js:23-26`.
+
+Review found the shape check let a non-string through, which is worth recording because the defect
+was the coercion rather than the pattern. `String(true)` is SPDX-shaped, so a boolean passed, and the
+reader then stored it through the same helper that yields `null` for anything that is not a string.
+The entry came out saying no licence was established, which is the one thing this field exists to be
+able to say and nobody had said it. The type is now checked rather than coerced. The same round
+removed three shipped claims of MIT over the data, one of which was false in a second way: the About
+view told a reader that bundled orders were not authored here, when ten of the twelve are.
 
 **BL-100: Establish a pre-publication content and history gate**
 

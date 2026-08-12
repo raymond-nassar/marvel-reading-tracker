@@ -240,7 +240,7 @@ will start empty. That is expected, and your Edge progress is untouched.
 Metadata comes from the community **Marvel Metadata API**:
 
 - API: <https://marvel.emreparker.com>
-- Source: [`emreparker/marvel-comics`](https://github.com/emreparker/marvel-comics) (MIT)
+- Source: [`emreparker/marvel-comics`](https://github.com/emreparker/marvel-comics)
 
 At the time of writing the upstream project reports 37,526 issues, 6,990 series and 4,341
 creators, covering 1939 to 2025. It is rate limited to 60 requests/minute, so this app

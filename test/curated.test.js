@@ -71,6 +71,18 @@ test('a null licence is accepted, because no licence conveyed is the ordinary ca
   assert.equal(entries[0].sourceOrigin, valid.sourceOrigin);
 });
 
+// BL-099 review. A non-string value used to pass the shape check, because String(true) is
+// SPDX-shaped, and was then stored as null by the same coercion that reads the field. The entry
+// came out claiming no licence was conveyed, which is a claim nobody in the manifest had made.
+// Refusing the type keeps null meaning only what a null was written to mean.
+test('a licence that is not a string is refused rather than coerced into no licence', () => {
+  for (const bad of [true, 123, ['MIT'], { name: 'MIT' }]) {
+    const { entries, errors } = parseManifest({ lists: [{ ...valid, sourceLicense: bad }] });
+    assert.equal(entries.length, 0, `accepted the non-string licence ${JSON.stringify(bad)}`);
+    assert.match(errors.join('\n'), /must be an SPDX expression/);
+  }
+});
+
 test('an incomplete entry is reported with its reason, not silently skipped', () => {
   const cases = [
     [{ ...valid, id: '' }, /has no id/],

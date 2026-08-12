@@ -70,7 +70,12 @@ function checkEntry(raw, index, seen) {
   // anything, and the two that named a licence named one the upstream states for its Python
   // distribution rather than for the file vendored here. So the shape is checked: a licence is
   // an SPDX expression and nothing else, which refuses every one of those ten by construction.
-  if (raw.sourceLicense != null && !SPDX.test(String(raw.sourceLicense).trim())) {
+  //
+  // The type is checked rather than coerced, because coercing loses the one distinction this
+  // field exists to keep. `String(true)` is SPDX-shaped and passes, and the value is then stored
+  // through str(), which yields null for a non-string. A boolean would have been recorded as "no
+  // licence established", which is a claim nobody made.
+  if (raw.sourceLicense != null && !(typeof raw.sourceLicense === 'string' && SPDX.test(raw.sourceLicense.trim()))) {
     at('sourceLicense must be an SPDX expression, or null when no licence is conveyed with the order; describe where it came from in sourceOrigin');
   }
   if (!LIST_TYPES.includes(raw.type)) at(`type must be one of ${LIST_TYPES.join(', ')}`);

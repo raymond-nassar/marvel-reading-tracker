@@ -16,13 +16,19 @@ not been published.
 
 [`LICENSE`](../LICENSE) is a grant made by this repository's copyright holder over the material
 this repository authors. That is the application source under `src/js/`, the build and check
-scripts under `scripts/`, the tests, the styles, the documents, and the reading orders compiled
-here under [`src/data/orders/`](../src/data/orders).
+scripts under `scripts/`, the tests, the styles and the documents.
 
 A grant reaches only what the grantor holds. It says nothing about material this repository did
 not author, and it cannot: nobody can license out what is not theirs. So the MIT text does not
 reach the issue metadata described below, and the presence of a licence file at the root is not
 a statement that everything beneath it is covered by it.
+
+The reading orders under [`src/data/orders/`](../src/data/orders) are the case that same rule does
+not settle, and this document does not settle it either. What was made here is a selection and an
+arrangement: which issues to include, in what sequence, cut into which sections. What those files
+name is Marvel's, issue by issue. Whether a selection of that kind is this repository's to license
+is the fourth of the open questions at the end of this document, so it is left there rather than
+answered here by assertion.
 
 ## The chain the metadata came down
 
