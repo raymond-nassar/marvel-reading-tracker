@@ -157,6 +157,7 @@ function catalogEntry(order, payload) {
     coverIssueId,
     cover,
     source: payload.source,
+    sourceOrigin: payload.sourceOrigin,
     sourceLicense: payload.sourceLicense,
     updatedAt: payload.generatedAt,
   };
@@ -293,6 +294,7 @@ async function main() {
       name: order.name,
       description: order.description,
       source: order.sourcePage,
+      sourceOrigin: order.sourceOrigin,
       sourceLicense: order.sourceLicense,
       generatedAt: new Date().toISOString(),
       apiBase: API,

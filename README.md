@@ -244,8 +244,15 @@ Metadata comes from the community **Marvel Metadata API**:
 
 At the time of writing the upstream project reports 37,526 issues, 6,990 series and 4,341
 creators, covering 1939 to 2025. It is rate limited to 60 requests/minute, so this app
-throttles and caches. The API base URL is configurable, and the upstream project is
-MIT-licensed and self-hostable, so you can point it at your own copy.
+throttles and caches. The API base URL is configurable and the upstream is self-hostable, so
+you can point it at your own copy.
+
+The upstream states MIT for its code, and that statement is narrower than it looks: the
+repository carries no licence file, and the declaration in its packaging covers the Python
+distribution rather than the reading orders this project vendored from it. The metadata itself
+originates with Marvel and is not the upstream's to license on. What that means for this
+repository, file by file, is written down in
+[the data provenance record](docs/DATA_PROVENANCE.md).
 
 ## For contributors
 
@@ -359,7 +366,8 @@ Each entry needs:
 | `sourceUrl` | `https://` URL of the upstream Markdown checklist to vendor. Mutually exclusive with `sourceFile` |
 | `sourceFile` | Plain `*.md` name in `src/data/orders/`, for an order authored here. Mutually exclusive with `sourceUrl` |
 | `sourcePage` | Human-readable attribution link (defaults to `sourceUrl`) |
-| `sourceLicense` | Licence of the upstream order, or how a local one was compiled |
+| `sourceOrigin` | Prose: where the order came from and who compiled it. This is what the catalog shows |
+| `sourceLicense` | An SPDX expression, or `null` when no licence is conveyed with the order. Not a place for prose |
 | `out` | Plain `*.json` file name to write into `src/data/` |
 | `characters`, `keywords` | Extra terms the catalog search should match |
 | `group`, `groupName`, `variant` | Optional. Ties this order to a story that has more than one reading path, so the catalog groups the versions under `groupName` and labels each with its `variant` |
@@ -496,4 +504,9 @@ subscription. Marvel and all related trademarks are the property of their respec
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE). That grant covers what this repository authors: the app, the
+scripts, the tests and the documents. It does not reach the Marvel metadata committed under
+`src/data/`, which is not this project's to license on.
+[The data provenance record](docs/DATA_PROVENANCE.md) sets out the boundary file by file, and
+records the legal review still outstanding before the tree as a whole could be described as
+MIT-licensed.

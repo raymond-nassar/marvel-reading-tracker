@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T05:00:55.215Z",
+  "generatedAt": "2026-08-12T01:01:05.819Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -37,7 +37,8 @@
         "ext": "jpg"
       },
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_minimal.md",
-      "sourceLicense": "MIT (emreparker/marvel-comics)",
+      "sourceOrigin": "Vendored from emreparker/marvel-comics",
+      "sourceLicense": null,
       "updatedAt": "2026-08-04T06:14:48.695Z"
     },
     {
@@ -78,7 +79,8 @@
         "ext": "jpg"
       },
       "source": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
-      "sourceLicense": "MIT (emreparker/marvel-comics)",
+      "sourceOrigin": "Vendored from emreparker/marvel-comics",
+      "sourceLicense": null,
       "updatedAt": "2026-08-04T06:14:48.703Z"
     },
     {
@@ -117,7 +119,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Compiled for this project",
+      "sourceOrigin": "Compiled for this project",
+      "sourceLicense": null,
       "updatedAt": "2026-08-05T04:33:50.342Z"
     },
     {
@@ -157,7 +160,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Compiled for this project",
+      "sourceOrigin": "Compiled for this project",
+      "sourceLicense": null,
       "updatedAt": "2026-08-08T05:00:40.018Z"
     },
     {
@@ -200,7 +204,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "updatedAt": "2026-08-05T06:17:07.276Z"
     },
     {
@@ -243,7 +248,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "updatedAt": "2026-08-08T03:24:47.183Z"
     },
     {
@@ -287,7 +293,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "updatedAt": "2026-08-05T06:17:07.277Z"
     },
     {
@@ -330,7 +337,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "updatedAt": "2026-08-08T03:28:56.361Z"
     },
     {
@@ -373,7 +381,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "updatedAt": "2026-08-05T06:17:07.278Z"
     },
     {
@@ -419,7 +428,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "updatedAt": "2026-08-05T06:17:07.279Z"
     },
     {
@@ -464,7 +474,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "updatedAt": "2026-08-08T03:24:47.197Z"
     },
     {
@@ -510,7 +521,8 @@
         "ext": "jpg"
       },
       "source": null,
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "updatedAt": "2026-08-05T06:45:31.621Z"
     }
   ]

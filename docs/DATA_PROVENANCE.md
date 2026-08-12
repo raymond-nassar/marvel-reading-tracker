@@ -1,0 +1,149 @@
+# Data provenance and the licence boundary
+
+This repository ships an MIT licence and a tree of committed data. Those are two different
+things, and until BL-099 the data described itself in a way that blurred them: one field named
+`sourceLicense` held, for ten of twelve reading orders, a sentence about where the order came
+from rather than any grant of anything.
+
+This document is the inventory that field was standing in for. It records, for every committed
+data file, where it came from, which fields were copied, and what the upstream actually states.
+
+**It draws no legal conclusion, and it is not legal advice.** Whether the tree as a whole may be
+redistributed is an open question recorded at the end, and it is the reason this repository has
+not been published.
+
+## What the MIT licence covers
+
+[`LICENSE`](../LICENSE) is a grant made by this repository's copyright holder over the material
+this repository authors. That is the application source under `src/js/`, the build and check
+scripts under `scripts/`, the tests, the styles, the documents, and the reading orders compiled
+here under [`src/data/orders/`](../src/data/orders).
+
+A grant reaches only what the grantor holds. It says nothing about material this repository did
+not author, and it cannot: nobody can license out what is not theirs. So the MIT text does not
+reach the issue metadata described below, and the presence of a licence file at the root is not
+a statement that everything beneath it is covered by it.
+
+## The chain the metadata came down
+
+Every issue-level record in this repository arrived through three hands, and it is worth naming
+all three because each one narrows what the last can offer.
+
+1. **Marvel's own API**, which is where the records originate and which has since been shut
+   down.
+2. **[marvel.geoffrich.net](https://marvel.geoffrich.net)**, a site holding cached Marvel API
+   data, which is where the upstream project says it collected from.
+3. **[`emreparker/marvel-comics`](https://github.com/emreparker/marvel-comics)**, which built the
+   cache into a searchable API at `https://marvel.emreparker.com/v1` and is what this repository
+   fetched from.
+
+The upstream project describes itself in its own README as an unofficial fan project providing
+metadata and links only, and states that Marvel and all related trademarks are the property of
+their respective owners. Retrieved 2026-08-11.
+
+### What the upstream conveys, precisely
+
+This matters because two reading orders here used to claim `MIT (emreparker/marvel-comics)` as
+their licence, and that claim was wider than what is on offer.
+
+- The repository has **no `LICENSE` file**. GitHub's licence detection returns `null` for it and
+  the licence endpoint answers 404. Retrieved 2026-08-11.
+- Its README carries an MIT badge and a `## License` heading whose body is the single word `MIT`.
+  That states an intention; it does not convey the licence text, which MIT itself requires to
+  travel with copies.
+- Its `pyproject.toml` declares `license = "MIT"` for the Python distribution named
+  `marvel-metadata`, and that distribution's own build configuration packages
+  `src/marvel_metadata` and nothing else. The `data/` directory holding the reading orders this
+  repository vendored is not part of it.
+
+So the honest reading is that the upstream states MIT over its code. The two Markdown checklists
+vendored from its `data/` directory sit outside the distribution that declaration scopes itself
+to, and no licence text accompanies them. That is why `sourceLicense` is now `null` for those two
+orders: **null means nobody granted anything for this file, not that the file is unencumbered.**
+
+## Inventory
+
+### Reading orders, pinned
+
+Twelve files under [`src/data/`](../src/data), one per curated list, holding 751 issue records
+covering 507 distinct issues. Each record copies from the upstream API: `issueId`, `title`,
+`number`, `url`, `seriesId`, `seriesName`, `onSale`, `mu`, `digitalId`, `pageCount`, a `cover`
+object of `path` and `ext`, a `description`, and `creators` of `name` and `role`. Across the
+twelve, 688 records carry a cover URL, 685 carry creator credits and 508 carry a Marvel
+description.
+
+`description` is the field to look at hardest. The others are facts about a publication: which
+issue, in which series, on what date, at which id. A description is Marvel's own marketing prose,
+reproduced verbatim, and 508 of them are committed here.
+
+Cover art is referenced and never copied. `cover.path` is a URL on Marvel's image host and the
+app renders it from there, so no image bytes are hosted, proxied, cached or stored. That is a
+standing constraint of this project rather than an incidental property of the schema.
+
+| Origin | Lists | What was compiled here |
+|---|---|---|
+| Assembled from Marvel series metadata (publication order) | 8 | The selection of series, and the rule that branded series are in and unbranded crossover chapters are out. Generated by [`scripts/build-event-order.mjs`](../scripts/build-event-order.mjs), so the derivation is a script anyone can read and re-run |
+| Compiled for this project | 2 | The whole sequence, by hand. See the trail at the top of each file in [`src/data/orders/`](../src/data/orders) |
+| Vendored from `emreparker/marvel-comics` | 2 | Nothing. The order is the upstream curator's; only the issue lookups were done here |
+
+### Series and creator indexes
+
+[`src/data/series-index.json`](../src/data/series-index.json) holds 6,990 series and
+[`src/data/creators-index.json`](../src/data/creators-index.json) holds 4,341 creators, each as a
+positional array of `id`, `name` and `issueCount`. These are the upstream API's full listings,
+committed so the catalog audit can work from bytes in the repository rather than several thousand
+live requests. Names of series and of creators are facts about publications and about people; the
+selection here is not editorial, because it is simply all of them.
+
+### Order checklists
+
+The ten Markdown files in [`src/data/orders/`](../src/data/orders) are authored in this
+repository. Eight are generated by a committed script from series metadata, and each says so in
+its own first paragraph. Two are compiled by hand, and since BL-099 each carries a trail
+recording how it was derived, including the one case where an outside guide was used as a
+reference: the collected-edition line-up follows Comic Book Herald's guide, which the order's
+catalog card has always said in as many words.
+
+### Everything else
+
+Source, scripts, tests, styles and documents are authored here and are what the MIT grant is
+about.
+
+## What each field means now
+
+| Field | Holds |
+|---|---|
+| `sourceOrigin` | Prose. Where the order came from and who compiled it. Always present. This is what the catalog shows a reader, because it is the credit that is owed |
+| `sourceLicense` | An SPDX expression, or `null`. Only a licence actually conveyed with the vendored order. `null` on all twelve today |
+| `sourcePage` | A link a reader can follow to the upstream, when there is one |
+
+The validator in [`src/js/lib/curated.js`](../src/js/lib/curated.js) enforces the shape rather
+than a list of known identifiers: a licence is an SPDX expression and a sentence is not, which
+refuses all ten of the old prose values by construction rather than by anyone remembering to
+check. The shape test is the point. An enumeration of permitted identifiers would be one more
+list somebody has to keep complete.
+
+## The open question
+
+Every acceptance item of BL-099 is met except one, and it is the one that cannot be met by
+writing anything:
+
+> Obtain legal review before describing the complete data tree as MIT-licensed.
+
+That review has not happened. Until it does, this repository does not claim the data tree is
+MIT-licensed, and this document exists so that nobody infers the claim from the licence file's
+position at the root.
+
+The specific questions a review would need to answer, recorded so the work is not re-derived:
+
+- Whether reproducing 508 Marvel issue descriptions verbatim is within any exception, and whether
+  the answer changes if the field is dropped and the app shows nothing in its place.
+- Whether the series and creator listings, being facts, carry protection as a compilation at
+  6,990 and 4,341 entries respectively.
+- Whether a licence stated in a README, with no licence text and a package declaration scoped to
+  a source directory, conveys anything for two files outside that directory.
+- Whether a reading order, being a selection and arrangement, is this project's to license when
+  the selection was made here, and whose it is when it was not.
+
+Until then the safe reading is the narrow one: the MIT grant covers what this repository wrote,
+and the committed metadata is Marvel's, held here under no stated permission.

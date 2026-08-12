@@ -13,7 +13,8 @@
       "variant": "Essential reading",
       "sourceUrl": "https://raw.githubusercontent.com/emreparker/marvel-comics/main/data/hickman_minimal.md",
       "sourcePage": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_minimal.md",
-      "sourceLicense": "MIT (emreparker/marvel-comics)",
+      "sourceOrigin": "Vendored from emreparker/marvel-comics",
+      "sourceLicense": null,
       "out": "hickman_minimal.json",
       "characters": [
         "Avengers",
@@ -47,7 +48,8 @@
       "variant": "Complete reading, with tie-ins",
       "sourceUrl": "https://raw.githubusercontent.com/emreparker/marvel-comics/main/data/hickman_full.md",
       "sourcePage": "https://github.com/emreparker/marvel-comics/blob/main/data/hickman_full.md",
-      "sourceLicense": "MIT (emreparker/marvel-comics)",
+      "sourceOrigin": "Vendored from emreparker/marvel-comics",
+      "sourceLicense": null,
       "out": "hickman_full.json",
       "characters": [
         "Avengers",
@@ -79,7 +81,8 @@
       "beginner": true,
       "coverIssueId": 97145,
       "sourceFile": "new-ultimate-universe.md",
-      "sourceLicense": "Compiled for this project",
+      "sourceOrigin": "Compiled for this project",
+      "sourceLicense": null,
       "out": "new_ultimate_universe.json",
       "characters": [
         "The Maker",
@@ -112,7 +115,8 @@
       "beginner": true,
       "coverIssueId": 97145,
       "sourceFile": "new-ultimate-universe-trades.md",
-      "sourceLicense": "Compiled for this project",
+      "sourceOrigin": "Compiled for this project",
+      "sourceLicense": null,
       "out": "new_ultimate_universe_trades.json",
       "characters": [
         "The Maker",
@@ -149,7 +153,8 @@
       "variant": "Every branded issue, including tie-ins",
       "coverIssueId": 2092,
       "sourceFile": "house-of-m.md",
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "out": "house_of_m.json",
       "characters": [
         "Scarlet Witch",
@@ -186,7 +191,8 @@
       "variant": "The main series only",
       "coverIssueId": 2092,
       "sourceFile": "house-of-m-essential.md",
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "out": "house_of_m_essential.json",
       "characters": [
         "Scarlet Witch",
@@ -223,7 +229,8 @@
       "variant": "Every branded issue, including tie-ins",
       "coverIssueId": 4216,
       "sourceFile": "civil-war.md",
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "out": "civil_war.json",
       "characters": [
         "Iron Man",
@@ -261,7 +268,8 @@
       "variant": "The main series only",
       "coverIssueId": 4216,
       "sourceFile": "civil-war-essential.md",
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "out": "civil_war_essential.json",
       "characters": [
         "Iron Man",
@@ -295,7 +303,8 @@
       "beginner": true,
       "coverIssueId": 4788,
       "sourceFile": "annihilation.md",
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "out": "annihilation.json",
       "characters": [
         "Nova",
@@ -332,7 +341,8 @@
       "variant": "Every branded issue, including tie-ins",
       "coverIssueId": 21034,
       "sourceFile": "secret-invasion.md",
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "out": "secret_invasion.json",
       "characters": [
         "Skrulls",
@@ -372,7 +382,8 @@
       "variant": "The main series only",
       "coverIssueId": 21034,
       "sourceFile": "secret-invasion-essential.md",
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "out": "secret_invasion_essential.json",
       "characters": [
         "Skrulls",
@@ -408,7 +419,8 @@
       "beginner": false,
       "coverIssueId": 85649,
       "sourceFile": "king-in-black.md",
-      "sourceLicense": "Assembled from Marvel series metadata (publication order)",
+      "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
+      "sourceLicense": null,
       "out": "king_in_black.json",
       "characters": [
         "Knull",
