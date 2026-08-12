@@ -16,6 +16,335 @@ quote in a bug report.
 
 ### Added
 
+- **The app now says exactly what leaves your computer, instead of saying nothing does.** Two
+  screens told you nothing is uploaded. That was the wrong kind of reassurance: it is easy to write,
+  hard to keep true, and it disagreed with the read-me, which described the two downloads correctly
+  on the same subject. What is on screen now is the accurate version. Your reading progress and
+  your notes are saved by your own browser and are never sent anywhere; there is no account, no
+  analytics and no tracking. Starting the app asks the comics database whether it is reachable,
+  which is what the status light reports. Searching for issues sends what you typed, and so does
+  asking an imported line to find its own match; searching the catalogue, series or creators is
+  answered from files already on your machine, but adding a whole series or a creator's issues then
+  asks the database for every issue it lists, which is the longest run of requests the app makes.
+  Filling in
+  missing details sends every issue number still missing them, across every list you keep. Cover
+  pictures are fetched from Marvel's own image servers as they appear, and turning cover art off
+  hides them without stopping them being fetched. Opening an issue asks the comics database for the
+  reader link when this copy does not already have it, then hands that one issue to Marvel's reader,
+  or to marvel.com whenever no reader link can be found, including when the database cannot be
+  reached.
+
+  The read-me was the precise one and was still wrong in one clause, in the opposite direction. It
+  promised your lists are never sent, and the issue numbers in a list are exactly what a request for
+  that issue's cover or details carries. So one document undersold what leaves by naming nothing and
+  the other oversold what stays by naming something the requests give away, which is the same
+  mistake twice.
+
+  A check now holds all six places to one claim, and it is deliberately hard to satisfy by
+  deleting a promise rather than by qualifying it. Writing it turned up that its first version
+  defended only half of what it appeared to: reverting the read-me on its own left it green. A
+  review then found the same hole a second time. The check covered the two long statements and not
+  the one-line summary that started all this, so that line could be put back word for word and
+  everything stayed green. Later reviews found three more places making the same claim, the security
+  policy, the cover art card and a card four above it on the same screen, and all three are covered
+  now too.
+
+  The same review found this entry had itself gone one better than the truth in two places, which
+  is the habit the whole change is about. It said turning cover art off stops the cover requests.
+  It does not: the setting hides the pictures, and it never stops them being asked for, before or
+  after. Measured in a real browser with the setting off from the very first paint, the same eight
+  requests go out either way. And it promised your lists are never sent, in the paragraph above the
+  one explaining that the read-me was wrong to promise exactly that.
+
+  A third review found two more. Saying "looking something up sends what you typed" was true of one
+  of the four search boxes: only the issue search leaves your machine, and the catalogue, series and
+  creator searches are answered from files already on it. And the first correction to the cover art
+  sentence was true about the past and silent about the future, which is the half a reader standing
+  at that switch actually needs.
+
+  A fourth review found the same claim in one more place, and it is the one that says most about how
+  hard this is. Four cards above the corrected one, on the same screen, a line said cover pictures
+  "load directly from Marvel's own servers and can be switched off". Nothing there is false, and the
+  two halves share a subject whose first verb is about loading, so it reads as though the loading is
+  what stops. That is the same misreading the change had already been rewritten three times to
+  prevent, sitting untouched in the one place nothing had looked. It now says the pictures can be
+  hidden but are still requested, which is the word that names the thing that actually happens: the
+  page loads either way, and it is the request to Marvel that a reader is being told about.
+
+  The same review found the security policy still carrying the sentence this whole change removed,
+  in a wider form: nothing you create is uploaded anywhere. Your lists are something you create, and
+  the issue numbers in one are exactly what the app asks about. It now says what is true instead,
+  that there are no accounts, no cloud services, no analytics and no telemetry, and lets the
+  sentences after it describe what is asked for.
+
+  A fifth review found no new wrong sentence, and found instead that the check guarding them was
+  wrong in both directions. It had been written to spot the false claim, and every way of spotting a
+  false claim also catches the true one, because "no cover is requested" and "there is no reduction
+  in requests" are built from the same words and mean opposite things. Seven true sentences were
+  being reported as lies, including "switching cover art off cannot stop the requests", while four
+  false ones went through simply by saying "hide" or "unchecked" instead of "off". A check whose
+  easiest repair is to make the writing less honest is worse than no check.
+
+  So it no longer looks for the false claim at all. Any sentence that mentions the cover art switch,
+  in the words the check knows for it, has to say that the pictures are still asked for, in words the
+  check knows for that, and the cheapest repair is to add the truth rather than remove it. Both of
+  those lists are enumerations and neither is complete. A sixth review got past the first four times
+  by writing "without cover art" and "disable the images", and a seventh got past it twice more. Both
+  rounds of gaps are closed and it remains a list.
+
+  The harder problem took four rounds and three wrong answers. A true clause about something else
+  will pardon a false one sitting beside it: "no cover is requested, your notes are unchanged" says
+  one true thing and one false thing, and the check was reading the true half. The first two attempts
+  reached for the punctuation, refusing an acknowledgement separated from its request by a comma and
+  then one separated by a conjunction. Both were rejected as written, because at that width they are
+  the wrong instrument: run against the 55 true sentences the check is now proved against, and against
+  the coordinator list as the fourteenth round leaves it, the first refuses 6 of them and the second 9.
+  Both together refuse 10. That cost is real, and so is what it buys, which earlier drafts left out:
+  the first closes 7 of the 18 recorded escapes, the second 4, and both together 8. The case for
+  applying them per branch is that doing so closes the same escapes for none of the cost. What separates the two
+  cases is not the punctuation but the subject: "your notes" is a different subject, and "regardless"
+  is not a subject at all. So the acknowledgement now has to be about the covers, by name or by
+  pronoun, in whichever clause is making the assertion. A thirteenth round then found both marks are
+  right after all for the branches that carry their own subject, and they are applied there.
+
+  The third wrong answer was deciding which clause that is. A trailing clause was treated as making
+  its own assertion when it carried a verb from a list of thirty, and as leaning on the clause before
+  it otherwise. That is the wrong way round, and an eighth review demonstrated why with four
+  sentences whose verbs were "loads", "look", "survive" and "behaves". A verb missing from the list
+  made a false clause look like it was leaning on its neighbour, so it borrowed a subject about the
+  covers and passed, and nothing was refused to signal it. All four had been caught two rounds
+  earlier. The test is now inverted: a trailing clause asserts unless it is one of a listed set of
+  subjectless fragments, so a gap in the list refuses a true sentence instead, which is loud and
+  repairable. The same review found "one" and "each" being read as covers pronouns, which pardoned
+  "no cover is requested, and each of your lists is unchanged". They are gone.
+
+  Together those close five of the six passages the seventh review got past, four of them by the tie
+  to the subject, and one of the three recorded a round earlier as unclosable. That third one was
+  recorded as unclosable on the reasoning that binding the acknowledgement to the covers would
+  convict three of the four acknowledgements the app actually ships, because they say "them" and
+  "they". The first half of that was true and the second was not. Three of them do contain a pronoun,
+  but only one rests on it: two name the covers by noun in the same breath and a third names the
+  image, so a noun-only tie would convict one sentence, not three. Counting the sentences that
+  contain a pronoun and publishing that number as the sentences that need one is how the figure was
+  reached.
+
+  A ninth review then found the covers tie making the same mistake as the finite-verb list, from the
+  other side. It asked whether the asserting clause contained a covers word, and "them", "they",
+  "these" and "those" were on that list wherever they appeared. Containing is not being about: "the
+  details for them are still fetched" is a clause about the metadata, and dropping it onto the end of
+  a lie turned the lie into a pass. Seven shapes of that insertion are now held as false sentences,
+  two of them the very entries this file had listed as evasions kept shut. The tie now asks what the
+  clause is about. Of the pronouns only "they" counts, and only
+  at the head, because "them" is never a subject and "these" and "those" are determiners as often as
+  pronouns. The noun was left readable anywhere. Against the corpus as it then stood it cost nothing
+  at all, and every shipped sentence
+  still passes. It does have one cost, and finding it needed the other half of the proof: rewriting
+  the shipped card into another true phrasing produced "they can be hidden, and hiding them changes
+  nothing about what is requested", which the tie refuses, because what is hidden sits in the object
+  of "hiding" rather than in the subject. It is repaired by naming the covers, and it is now recorded
+  as the twelfth refusal rather than argued away, since it is close to wording the card could
+  plausibly have shipped.
+
+  A tenth review found the same mistake once more, in the half left alone. Writing the antecedent out
+  where the pronoun had been refused restored every pardon: "the details for the covers are still
+  fetched" is a clause about the details, and a rule that only asks whether the word is present cannot
+  tell it from "the requests for the covers are unchanged". It reached both of the cards on the
+  settings page, which the pronoun version had not. The noun is now read the way the pronoun is. It
+  counted unless every occurrence of it hung off some other noun through "for", "of" or "about", and a
+  word about requesting is the one thing it can hang off and still be about the covers, because the
+  shipped copy writes it that way: "the app still asks for the image". The same review found a
+  clause-initial "they" being taken as a reference to the covers whatever it actually referred to, so
+  the antecedent is now resolved by walking back to the nearest preceding clause and on through any
+  further "they", which is the chain the metadata card itself uses. Eight of the nine sentences the
+  review wrote to break it are caught and are held as false sentences. The ninth is recorded as a
+  third escape: a covers noun buried in a reduced relative clause, "the details the covers carry are
+  still fetched", which nothing short of parsing separates from "hides the covers but does not stop
+  them".
+
+  An eleventh review found the enumeration back again, for the sixth review running, this time in the
+  gap the noun rule allowed between the preposition and the covers word. That gap was a list of
+  eighteen determiners, so "the details for the hidden covers are still fetched" stepped straight over
+  it, and seven sentences of that shape all pardoned. The fix is not another list but one that cannot
+  be incomplete: prepositions are a closed class in English, so all fifty-three are written out and the
+  gap becomes any run of words at all. Each of the fifty new ones was measured on its own and then all
+  together, and none of them refuses a true sentence, pardons a false one, closes an escape, accepts a
+  refusal, breaks a repair or fails a shipped surface. What pays for that is reading the nearest
+  attachment rather than the first, and doing so also earned the word "number" out of the request
+  words, where it had only ever been papering over the first-match reading, closing "the number of
+  covers is unchanged" as it went. The two halves of the check had grown a determiner list each, doing
+  the same job twice; the antecedent half now calls the asserting half, so one rule decides both.
+
+  Two candidate rules scored better against the twenty-three sentences written to break the check, and
+  neither shipped, which is worth recording precisely because the numbers favoured them. Both decide by
+  a word list, so a determiner they have not heard of makes them pardon in silence, while the rule that
+  shipped fails by refusing, which is loud and repairable. It bought exactly one such refusal, "Even
+  with cover art off there is no reduction in requests", now the thirteenth entry on that list with its
+  repair beside it. Four of the twenty-three still pardon, all four the same shape, and they join the
+  recorded escapes rather than being quietly left out.
+
+  A twelfth review took the noun rule's two halves separately and got through both. The word the
+  covers hang off was read from the same list the acknowledgement itself is built from, and that list
+  holds the participles, because "still requested" is how the copy says it. A participle is also the
+  one form of a verb that can attach to the noun in front of it, so "the details requested for the
+  covers are still fetched" gives the covers a request word to hang off and hands back every pardon
+  the round before had closed. Reading only the forms that cannot be a participle fixes it, and still
+  accepts both ways the shipped copy writes the word, "the requests for the covers" and "the app still
+  asks for the image". Seven sentences of that shape are held as false now, and all seven are caught.
+
+  The other half failed more quietly. That gap was written as word characters, so a character outside
+  that class made the whole attachment pattern find nothing, and finding nothing was read as attaching
+  to nothing, which is the answer that lets a sentence through. The one gap the rule could not read
+  was the one gap it excused. A bracket did it, a quotation mark did it, a hyphen inside the noun did
+  it, and so did bold text, a code span and a link, which matters because two of the six surfaces
+  checked are read as raw markdown. The gap is now anything at all short of a clause end, which is
+  what this entry had already claimed it was. Both fixes were measured apart and together, and neither
+  refuses a true sentence, pardons a false one, closes an escape, accepts a refusal, breaks a repair
+  or fails a surface.
+
+  Three numbers this entry stated were wrong and are corrected rather than repeated. The determiner
+  list replaced last round held eighteen, not nineteen. Walking left accepts most of the recorded
+  refusals rather than all of them. And the cost of reading every preposition was described as a
+  clause-opening preposition capturing the covers word beside it, when it captures every covers word
+  in the clause: "Even without cover art the app still requests every cover" has two and loses both,
+  and is recorded as the fourteenth refusal, repaired by deleting a word.
+
+  Two limits are recorded rather than closed, because closing either costs more true English than it
+  buys. A trailing fragment with no content of its own is handed back to the clause in front of it,
+  which is right when that clause is the true half and wrong when it is the lie, and "no cover is
+  requested, regardless" is built out of a covers word and a request word so it reads as its own
+  acknowledgement. Removing the six words that do this refuses six true sentences and does not close
+  the shape, since dropping the comma evades it again. And the rule that stops "a backup covers every
+  list you keep" being read as a claim about pictures also decides whether a passage is examined at
+  all, where it works the other way round: "hide the covers you have not read and Marvel is never
+  asked for them" is never looked at. Reading the word a second way there catches it and refuses four
+  ordinary sentences. Nine escapes are recorded across the two, so closing either later turns the
+  suite red.
+
+  The price is now in the repository rather than in this paragraph. Both documents used to say that a
+  proof would disagree with anyone who quietly closed one of these limits, and no such proof was in
+  the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 55
+  sentences written to be true, 121 written to be false, the 18 passages that still pardon themselves,
+  and 25 true sentences the check refuses, each stored beside a repair that is itself asserted to
+  pass. Closing an escape or accepting a refusal turns the suite red rather than passing silently,
+  which is what those sentences claimed all along.
+
+  Those 25 are a regression list, not a bill. Calling them the cost of the check, which this entry
+  did, reads as though they were every true sentence it refuses, and they are nowhere near it:
+  twenty-eight more were written in the words a maintainer would actually use and fourteen of them
+  were refused. What the list buys is that a refusal already known cannot start being accepted
+  without the suite saying so.
+
+  Six of the 25 do not name the covers in the clause that asserts: four say "the requests" without
+  saying which, and two lean on "one" or "each" as a word for the covers, which the check stopped
+  accepting in the ninth round because "each of your lists is unchanged" pardoned a lie with it. Five
+  of those six are repaired by naming the covers; the sixth needs the parenthetical moved as well. The
+  next five do name them in the sentence but not in the
+  asserting clause, because a parenthetical sits between the subject and its verb, and all five
+  repair by moving that parenthetical rather than by adding anything, four of them to the end of the
+  sentence and one to the front. So the claim that every repair adds truth rather than removing it,
+  which this entry made for three rounds, was not quite right either. The twelfth is the
+  object-pronoun sentence described above, the next two are the clause-opening preposition, the
+  next six are the thirteenth round's, described below, and the last five are the fourteenth's.
+  Walking left to find the subject would accept the middle
+  five, and it was measured: it also pardons fifty-seven of the hundred and twenty-one
+  false sentences. A passage that says two things and means one of them still needs a reader.
+
+  A thirteenth review got through the rule that decides which clause is doing the asserting, twice. A
+  sentence with no full stop, semicolon or comma in it is a single clause, so the clause being checked
+  was the whole sentence, and the words that switch the covers off supplied the mention of covers the
+  check was looking for. Anything resembling an acknowledgement anywhere in the sentence then excused
+  the lie beside it. The mirror of that was the distance allowed between an acknowledgement's two
+  halves, which could cross a comma while the clause reader treated a comma as a clause end, so the
+  two halves were checked against clauses neither of them was in. Twelve sentences of those two shapes
+  are held as false now and all twelve are caught. The fix is the punctuation rule this entry rejected
+  three rounds ago, applied to the branches that carry their own subject and to none of the others,
+  which is the distinction the earlier measurement had missed: applied to all of them it refuses ten
+  true sentences, though it also closes eight of the recorded escapes, which earlier drafts of this
+  paragraph left out and which is why the per-branch form is the better answer rather than the only
+  one. It costs two true
+  sentences, both of which have a comma form this check refused before the change and refuses after
+  it, so the rule is more consistent rather than stricter. The round before was also found too strict
+  in the opposite direction, refusing "a request is still sent for each cover" along with the evasion
+  it was aimed at; a participle counts again when a form of "be" or a request noun stands in front of
+  it, which recovers three true sentences and reopens none of the seven evasions. Four true sentences
+  of the same shape are still refused and are recorded with repairs.
+
+  A fourteenth review found that whole rule resting on a list of seven words, and re-joined the lies
+  it had just closed with a conjunction outside the list: "because", "when", "if", "since", "then",
+  "after", "but" and "yet". All forty variants passed again. That is the same failure this item has
+  paid for five times: a rule written as a list somebody wrote out by hand, where the missing word is
+  the way through. The list holds twenty words now, and widening it was measured as costing nothing at
+  all, refusing no true sentence, pardoning no false one and breaking no repair, while catching
+  twenty-six of the forty. Six of the rest are the price of leaving "but" and "yet" out, which the
+  About view's own sentence needs, and eight the price of letting a trailing fragment keep its wider
+  reach. One of each is recorded as an escape rather than all fourteen, because both families run to
+  as many sentences as there are conjunctions, and a list of them would be the same mistake again.
+
+  Widening the list costs five true sentences, every one of them two things said about one subject:
+  "the covers are hidden and still requested" cuts at the "and" and leaves the second half with no
+  subject in it. Not cutting when the following words have no subject of their own would accept all
+  five, and it is written down as rejected rather than passed over, because every way of testing for
+  that is another hand-written list. One of the five is the About view's shipped sentence with "and"
+  in place of its "but", which says what the class costs better than any argument: the rule does not
+  care which word joins two predicates, and the copy does. All five are recorded with repairs.
+
+  Thirty-seven deliberately broken versions of the shipped sentences are tried against the real files
+  and all thirty-seven are refused. Fifteen true rewrites in different true words are tried as well,
+  and thirteen are accepted. Exactly two are not: the sentence the subject tie costs, and the one the
+  thirteenth round costs, "the image is requested and unchanged", which that round already
+  records as a refusal with its repair, so the file-level harness and the corpus in the tree name the
+  same sentence independently. A third rewrite stopped passing in the eighth round and was then
+  repaired in the list itself, so what the fifteen hold is its repaired form and it passes; naming it
+  alongside the other two, as this entry did, made three failures out of a list that has two. It found a
+  third in the tenth round, "the app still asks for the image", and that one was repaired in the
+  instrument rather than in the corpus, because the copy's own verb is a fair way to write it. Eight
+  ways of undoing the eighth round's repairs were each applied on
+  their own, three more undo the ninth round's, five more undo the tenth round's, six more undo the
+  eleventh round's, five more undo the twelfth round's, six more undo the thirteenth round's and six
+  more undo the fourteenth round's; every
+  one turns the suite red, naming which
+  test or which sentence defends it. Two
+  of the eleventh round's six first reported caught while proving nothing, because the replacement text
+  used to
+  build the broken version carried a dollar sign before a backtick, which JavaScript reads as a
+  reference back into the match, so the broken version would not parse. A version that will not parse
+  fails every check in the file and defends none of them, and both were rebuilt until they failed on
+  the sentence they are there to defend. The count of distinct repairs needed no broken version to
+  prove it can fail: adding the fourteenth refusal turned it red by itself. Two of the fourteenth
+  round's six needed correcting before they proved anything: one replaced a word everywhere in the
+  file and hit an earlier occurrence than the rule, and one was aimed at a sentence that turned out to
+  be caught for an unrelated reason, so removing the word it was meant to defend changed nothing. Both
+  showed up as a broken version reporting no failure, which is the only signal that catches this.
+
+  A fifteenth review found the last count in the guard that nothing checked, and it had gone stale
+  exactly as the case for checking counts predicts. The note above the true sentences says how many
+  of them are repaired forms of refused ones; it said nineteen and there are twenty-four, because the
+  round before added five and updated every count except the one no test read. It is checked now, and
+  it counts the entries rather than the distinct forms, which is what lets it fail on its own: every
+  repair is already required to be held as a true sentence, one requirement per refusal, so the only
+  way the two numbers can disagree is the same repaired sentence written into the list twice. Writing
+  one in twice turns that check red and nothing else.
+
+  The same review found something the guard cannot reach at all, and it is this item's original fault
+  surviving where the rule does not look. All three places that set out what leaves your machine
+  listed the reachability check, the issue search, the detail fetch, the cover fetch and the reader
+  link, and left out the largest request the app makes: adding a whole series, or everything a
+  creator worked on, asks the comics database for every issue it lists and keeps asking until it has
+  them all. Two of the three then said in the same breath that searching for a series or a creator is
+  answered from files already on the machine, which is true of the search and not of the add that
+  follows it, so the sentence pointed away from what was missing. The guard works by taking any
+  sentence about the covers switch and requiring it to admit the covers are still fetched; a sentence
+  nobody wrote is outside it by construction. All three now name the series and creator fetch,
+  asking an imported line to find its own match is named beside the search it resembles, and the
+  clause is held by a rule rather than left as prose that could be dropped without anything noticing.
+  Deleting it from any one of the three turns the suite red naming that one.
+
+  The harness that proves these checks can fail needed a fix before it proved anything, and it is a
+  version of the same lesson: launching the test runner one particular way on this machine exits with
+  no status and no output, which the harness read as a failing baseline, so it stopped and reported
+  nothing. Running the tests the way the project itself does restored a real baseline, and all four
+  new broken versions then failed on the check they are there to defend.
+
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two
   companion sites already listed there, and it earns the place twice over: it publishes the

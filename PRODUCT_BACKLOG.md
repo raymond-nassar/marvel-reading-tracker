@@ -9,13 +9,13 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Sixty-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Sixty-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
-BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-088, BL-089, BL-095,
-BL-096, BL-099, BL-100 and BL-106.
+BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-087, BL-088, BL-089,
+BL-095, BL-096, BL-099, BL-100 and BL-106.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Ten remain
@@ -36,15 +36,16 @@ no document can supply, least of all the document written to ask for it.
 user-facing view of the same work.
 
 Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 repository assurance and
-open-source readiness study. Eleven of them are still `Ready`: the study records gaps for later
+open-source readiness study. Ten of them are still `Ready`: the study records gaps for later
 implementation and does not mix those fixes into the roadmap change that identified them. BL-083,
-BL-088, BL-089, BL-095, BL-096, BL-099 and BL-100 have since been delivered, and their detail blocks
-record what changed. BL-101 through BL-107 are the seven items here that came from neither pass.
-BL-101 through BL-105 were each raised by the review of one of the items above them and routed to
-the backlog rather than folded into it, because each belongs to a different file from the one under
-repair. Filing them rather than fixing them in place is what keeps one change to one concern, and
-each names the review that raised it. The last two were raised by nobody's review: BL-106 was asked
-for directly by the owner, and BL-107 was found while writing BL-106's record.
+BL-087, BL-088, BL-089, BL-095, BL-096, BL-099 and BL-100 have since been delivered, and their
+detail blocks record what changed. BL-101 through BL-108 are the eight items here that came from
+neither pass. BL-101 through BL-105 and BL-108 were each raised by the review of one of the items
+above them and routed to the backlog rather than folded into it, because each belongs to a
+different file from the one under repair. Filing them rather than fixing them in place is what
+keeps one change to one concern, and each names the review that raised it. The other two were
+raised by nobody's review: BL-106 was asked for directly by the owner, and BL-107 was found while
+writing BL-106's record.
 
 ## Product direction
 
@@ -220,7 +221,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-099 | Clarify the license and provenance boundary for committed data | Debt | EP-12 | Leaves alone | 8 | 8 | 13 | 5 | 5.8 | none | Measured | Shipped | src/data/curated-lists.json:80-120 |
-| BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/index.html:503 |
+| BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/index.html:503 |
 | BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/styles.css:817-820 |
 | BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/js/main.js:3076-3089 |
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Ready | src/js/main.js:3010-3038 |
@@ -228,9 +229,9 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-counts.mjs:225-258 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3824-3827 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3826-3829 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:167-179 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:168-180 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
@@ -244,12 +245,13 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3246-3294 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
-| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:263-308 |
+| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:269-314 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-086 | Keep cover requests inside the stated trust boundary | Defect | EP-05 | Extends BL-044 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/lib/model.js:94-115 |
 | BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Ready | server.mjs:76-168 |
+| BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/main.js:485-488 |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | absent: committed browser-runner script, tracked-file inventory and package scripts |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
@@ -601,7 +603,7 @@ the focused button out of the document and sends focus to the top of the page wi
 announced. It now lands on the all-read heading at `src/index.html:333`, which is both what the
 reader needs to hear and where the remaining actions are.
 
-The About view carries the shortcut reference at `src/index.html:625-632`, naming all three
+The About view carries the shortcut reference at `src/index.html:626-633`, naming all three
 bindings. Only two of them were advertised in the interface, on the hero's `kbd` hints; `Ctrl` +
 `\` for the sidebar was written into the toggle button's tooltip at `src/js/main.js:572` and
 nowhere else, which asks for a deliberate hover on a pointer and shows nothing at all on a touch
@@ -767,7 +769,7 @@ as five loose literals.
 
 The light palette is written out twice, once for `:root[data-theme="light"]` and once inside the
 `prefers-color-scheme` query. The duplication is deliberate: the module is deferred at
-`src/index.html:725`, so resolving the theme in JavaScript would paint dark and then flip, and
+`src/index.html:743`, so resolving the theme in JavaScript would paint dark and then flip, and
 would leave the page dark entirely for a reader with JavaScript off. A test asserts the two blocks
 are identical token for token, which is what makes the duplication safe to keep rather than merely
 necessary.
@@ -2537,14 +2539,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:445-456`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:451-462`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:353-357`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:359-363`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -2989,7 +2991,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2692-2695`.
+`PRODUCT_BACKLOG.md:2694-2697`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3904,7 +3906,7 @@ action exactly the same weight as the safe action it tells the reader to take fi
 sort of defect this repository's own rule about recovery paths exists to catch.
 
 `.btn-g` is the app's established answer, used in nine places including the Cancel button of the
-confirm dialog at `src/index.html:719`. The convention there is the same shape as this: the action
+confirm dialog at `src/index.html:737`. The convention there is the same shape as this: the action
 being asked for is `.btn`, the way out is `.btn-g`. Applying it here follows the app rather than
 inventing anything, and it is what `.btn-p` was reaching for, expressed from the other side.
 
@@ -4521,21 +4523,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6016-6018` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6597-6599` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:177-179`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6037-6040`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6616-6620`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5850-5852` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6431-6433` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4743,9 +4745,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:988-997` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:167-171` and
-`PRODUCT_BACKLOG.md:177-179` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:1317-1326` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
+`PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -4964,22 +4966,574 @@ Cover normalization accepts any HTTPS host and the CSP permits images from every
 compromised or user-selected metadata service can therefore trigger a tracking request to a third
 party while the interface says covers come from Marvel's servers. The fix must continue to store
 URLs only, never image bytes, so Constraint 1 remains intact. Evidence:
-`src/js/lib/model.js:94-115`, `server.mjs:25-48`, `src/index.html:524-530`.
+`src/js/lib/model.js:94-115`, `server.mjs:25-48`, `src/index.html:524-531`.
 
 **BL-087: State the network privacy boundary where the promise appears**
 
-- [ ] Replace absolute in-app wording with the precise README distinction
-- [ ] Name metadata queries and direct cover requests without implying progress is sent
-- [ ] Keep the no-account, no-analytics, no-telemetry and local-progress promises explicit
-- [ ] Check first run, Backup and settings, About and README for one consistent claim
+- [x] Replace absolute in-app wording with the precise README distinction
+- [x] Name metadata queries and direct cover requests without implying progress is sent
+- [x] Keep the no-account, no-analytics, no-telemetry and local-progress promises explicit
+- [x] Check first run, Backup and settings, About and README for one consistent claim
 
 Constraint gate: checked 1 to 11, none breached.
 
 The README says correctly that reading data stays local while metadata and covers are downloaded.
 The app itself says nothing is uploaded. Search text and requested issue identifiers do cross the
 machine boundary, and image hosts receive ordinary requests. Reading progress, notes and identity
-remain local or absent. Evidence: `README.md:29-39`, `src/index.html:500-555`,
+remain local or absent. Evidence: `README.md:29-45`, `src/index.html:500-556`,
 `src/js/api.js:90-102`.
+
+Shipped. Four destinations were enumerated from the code rather than from the copy, because the
+copy was the thing under suspicion. The metadata API is asked whether it is reachable on every
+boot, from `checkHealth` with caching off, so a cold start with no list and no search still
+contacts it. It also receives the text typed into the issue search, and, through
+`src/js/hydrate.js:55`, one request per issue whose details are missing. Marvel's image host
+receives a request per cover displayed. Marvel's reader receives the one issue a click opens, and
+the metadata API is asked for that issue's reader link when this copy does not hold it. The fourth
+is `www.marvel.com`, which receives that same issue whenever no reader link can be resolved, from
+`src/open.js:50`. Read state, notes and identity are sent to none of them, and no account exists to
+hold them.
+
+The three other search boxes send nothing, which the first draft of the copy got wrong in the
+generous direction by saying "searching sends what you typed". Series and creator search is
+answered from two collections vendored into `src/data/`, and the catalog search filters
+`data/catalog.json`, all three fetched from this origin. The remedy is the same one the item is
+about: name which search leaves rather than let one verb cover four boxes.
+
+The README was already the precise version and was still wrong in one clause. It promised "not your
+lists", and the issue numbers in a list are exactly what a request for that issue's details or its
+cover carries. That is the same overclaim as the app's, arrived at from the opposite direction: the
+app understated what leaves by naming nothing, the README overstated what stays by naming a
+category the requests disclose.
+
+The absolute the in-app copy is not allowed to reinstate now includes "no server sees your reading
+progress", which the code cannot promise even though the progress itself never leaves.
+`hydrationOrder` prioritises the unread head of the list, so the order those requests arrive in is
+derived from read state. The remedy is to promise what is true, that progress is never sent, rather
+than to make a claim about what a recipient could infer.
+
+Review found the first version of this change had made the same mistake twice more, which is why
+the rule list grew rather than the copy shrinking. It claimed switching cover art off stops the
+cover requests. `setCovers` writes a body class and re-renders, `paintCoverUrl` assigns `img.src`
+with no reference to the setting, and `display: none` does not cancel a fetch, so the switch hides
+pictures that have already been asked for. Measured in Edge with the setting off from the first
+paint: eight requests to `i.annihil.us`, the same eight as with it on. Turning it off is itself a
+re-render, so it issues a fresh round. Gating them on the setting is filed as `BL-108`. The second
+was scope: a hydration run is not confined to the list that started it, because `pendingIssueIds`
+collects from every list in `listOrder` and `hydrationOrder` appends all of them behind the priority
+head.
+
+One qualification on that code walk, found by the eighth review and worth carrying here rather than
+only in `BL-108`. Every cover `<img>` goes through `paintCoverUrl`, which is why the eight are the
+same eight, but one cover request in the file is not an `<img>` and does read the setting:
+`src/js/main.js:1724` builds the reading hero's backdrop URL only when covers are on, and a computed
+`background-image: none` is never fetched. So "the same requests either way" is true of the pictures
+the copy is about and false of the surface as a whole, and the shipped sentences survive because they
+are about pictures rather than about totals. The one gated path is the reason `BL-108` reads as an
+oversight rather than a decision, and it is recorded there.
+
+The replacement sentence was wrong in its turn, and the third round is the one worth recording,
+because the error was a tense. "The requests have already been made" is true and answers a question
+nobody at that switch is asking. Someone reading it is deciding about the next screen, not the last
+one, and covers are requested exactly the same from that moment onwards. Saying the switch hides
+them without stopping them being requested is the same fact stated where the decision is. That is
+this item's whole failure mode in miniature: a true sentence can still mislead by being true about
+the wrong time.
+
+Verified: three tests added, each watched failing. Reverting both surfaces fails two of the three.
+Reverting each surface alone still fails two, which is the measurement that mattered: the first
+version of the check passed with the README reverted, so half of it defended nothing. The rule that
+closed the gap is that naming the downloads is not sufficient on its own, since the README named
+both and still promised the lists were not sent. The third test holds the theme setting's absolute
+in place, because a promise about one thing may be absolute when it is true, and without it the
+rule above would be satisfiable by deleting promises instead of qualifying claims.
+
+Review then found that hole a second time in a place the measurement had not looked. The check read
+the two long statements and not the subtitle, which is the line the item cites as its evidence, so
+the old absolute could be restored word for word with the suite green. Later rounds found three
+more sites and three rules that could not refuse the sentence they name. The claim turned out to be
+written in six places, not three: the security policy makes it too, and the README sends readers
+there, and it stopped exactly where the new rule says naming the downloads is not sufficient. The
+Cover art card is the fifth, and it is the natural home of the covers overclaim because it owns the
+switch, yet the extraction reached neither end of it. The sixth is described below. All are claim
+sites now, the policy held to the full shape and the cards to the absolutes, as the subtitle is.
+
+One further site was considered and deliberately left out. The changelog states the claim too, in the
+entry describing this very change, and enrolling it would hold every past entry to the rule as well.
+Those entries are a record of what was believed when they were written, and a check that can force a
+correction into them is a check that can rewrite history to stay green. The two wrong sentences in
+this change's own entry were fixed by reading, which is the right instrument for a document whose
+value is that it does not change. Recorded here because a later reader will notice the omission and
+should not have to guess whether it was an oversight.
+
+The three weak rules were each weak in a different way, and all three are worth naming because the
+shapes recur. The disclosure rule matched the bare phrase "which issues", which is a phrase this app
+has every reason to use about itself, so the disclosing sentence could be deleted and the rule met by
+a line about what the app tracks; it now needs a verb of revealing as well. Two absolutes were scoped
+to one sentence, so a full stop evaded them: "Your lists are yours alone. They are never sent
+anywhere." was caught by nothing. And the README slice was cut with a bare `split` on a heading, so
+renaming that heading would silently have widened it to the whole file and left every rule satisfied
+somewhere else; it now asserts its delimiters the way the markup extraction always did.
+
+Fifteen mutations were run against the rules as they then stood, each applied to the real file and
+reverted: every one is caught, including all five the review demonstrated. One mutation first
+survived and the harness was at fault rather than the rule, since the README says twice that it sends
+something to the database and the mutation removed only one of them, which is the same
+document-level reading the rules themselves take.
+
+A third round found the claim in a sixth place and found the covers rule broken in both directions
+at once. The About view's "Metadata and links only" card, at `src/index.html:601-604`, is the sixth,
+and before this change it said cover images "load directly from Marvel's own servers and can be
+switched off": two predicates on one subject, the first about loading, so the second reads as
+though the loading is what stops. That is the implication three rounds had been spent removing from
+five other sentences, surviving four cards above the corrected one on the same screen, in the one
+place no extraction reached. It is now a claim site, and the sentence is split so the second half has
+its own subject and says the pictures are still requested. Implication is not a thing a rule can
+catch, which is the honest limit here: what the site membership buys is that the catchable forms
+cannot come back, not that this particular sentence could have been refused.
+
+The covers rule itself has now been three instruments, and the first two are the argument for the
+third. A pattern list for the lie was evaded six ways in a minute by swapping the noun to
+"downloads" or "fetches", by putting one word between "no" and "requests", and by writing "switch it
+off", which is the most natural phrasing on the card that owns the switch. In the same pass it
+rejected the most direct honest sentence there is, "the app still sends requests", because `ends?`
+matches inside "sends". Reading sentences rather than tokens lost the same way from the other side.
+Requiring a cease-claim meant treating every "no", "nothing" and "never" near a request noun as a
+lie, which is how honest denials are written, so seven true sentences were reported as lies,
+"switching cover art off cannot stop the requests" among them; and pardoning any window that said
+"still" let three lies through, because "the page still loads instantly" is true and about something
+else entirely.
+
+A check whose cheapest repair is to weaken the copy is worse than no check at all, and both
+instruments had that property. The third stops looking for the lie. A window about the covers switch
+has to acknowledge that the requests continue, and the acknowledgement may sit in a neighbouring
+sentence, because "Switch covers off and every cover becomes a tile. The image is still requested."
+is an ordinary way to write it. Nothing searches for a lie vocabulary any more, so there is none to
+evade, and the cheapest repair to a failing sentence is to add the truth rather than take it out. The
+metadata card's "still loaded" became "still requested" in the same pass, since loading is what the
+page does and requesting is what the network does, and only the second is the subject.
+
+Three limits were stated last round, because the item's own failure mode is claiming an instrument is
+better than it is. Two of them were found by review inside the sentence that claimed the limits were
+smaller, and the third turned out to be smaller than it had been stated to be, which is the same
+failure pointing the other way.
+
+The first is that "a window about the covers switch" is an enumeration. Inverting the check moved the
+enumeration off the lie and onto the switch, it did not abolish it. A sixth round escaped the
+requirement four times by writing "without cover art" and "disable the images", which reached none of
+the switch patterns and so were never asked for the truth at all. Widening this list is close to
+monotone, but the seventh round measured the "close": bare "images" and "pictures" had to go in for
+"disable the images", and they convict a true sentence that pairs one of them with a hiding word,
+which then has to be reworded rather than qualified. The word "without" is out of the list for that
+reason and is matched only beside a covers term, and the seventh round walked out of that too, once
+past its twenty-character gap and once by naming the images rather than the covers. Its gap is now
+thirty characters, "the images" is matched beside it and bare "images" still is not, since "a plain
+JSON file without images" is not the switch and the article is the only thing that says so. "covers"
+is also a verb, and "a backup covers every list you keep, and nothing in it is hidden from you" was
+being asked for an acknowledgement it has no business carrying; a determiner after the word now says
+it is not ours.
+
+The second is that the acknowledgement is an enumeration too, and this is the one the round before
+had denied by naming only the first. A form missing from it fails a true sentence. Tying every branch
+to a request noun closed one pardon and excluding the comma closed two more, and the comma exclusion
+cost true sentences to do it, "the image is requested, regardless" among them. "The same requests are
+made" was refused for a different reason, that its branch had been dropped; the branch is restored,
+narrowed so that "the same number of issues" no longer counts as a request, and the copy's own verb
+"asks" is in the list it had been missing from.
+
+The third was called unclosable last round and that was wrong, which is worth recording as plainly as
+the limit itself. The claim was that the check cannot tell which requests an acknowledgement is about,
+and that tying it to a covers noun would convict three of the four acknowledgements shipped here
+because they say "them" and "they". The first half was true; the second was wrong in both of its
+parts. Three of the four do contain a pronoun, but only one of them rests on it, because the About
+view and the README name the covers by noun in the very clause that asserts and the Cover art card
+names the image. A noun tie would convict the metadata card alone, on "but they are still requested".
+Counting the acknowledgements that contain a pronoun and reporting that number as the ones that depend
+on one is how a figure of three was published for a fact about one. Punctuation was the wrong
+instrument at the width it was tried and the right one branch by branch, which took until the
+thirteenth round to see. Re-measured against the 51 true sentences now in the tree, refusing a gap
+that crosses a comma on every branch refuses 6 of them and ending every clause at a coordinator as
+well refuses 2 more, and all eight are one shape: an adverbial saying nothing has changed, reached
+across the mark from the clause that names the request. Nothing else is refused either way and no
+false sentence is pardoned, which is why the thirteenth round applies both marks to the branches
+carrying their own subject and to no others. Those two figures have been published here as "seven"
+and "four", then as "5" and "2", against corpora of 38 and 44 sentences that no longer exist, and
+each time the wording read as though they were properties of the instruments rather than of whatever
+they were run against. What separates "no cover
+is requested, your notes are unchanged" from "the image is requested, regardless" is the subject, not
+the mark before it: one has a different subject and the other has no subject at all. So the
+acknowledgement has to name the covers in whichever clause is making the assertion, and the round
+after this one had to narrow what counts as naming them.
+
+Deciding which clause that is took two goes, and the eighth round found the first one backwards. A
+trailing clause was treated as asserting when it carried a verb drawn from a list of thirty, and as
+leaning on the clause before it otherwise. A finite verb is an open class, so a verb outside that list
+made a false clause look like it was leaning on its neighbour; it borrowed a subject about the covers
+and passed, with nothing refused anywhere to signal it. Review demonstrated it with "loads", "look",
+"survive" and "behaves", all four of which the instrument two rounds earlier had caught. The test is
+inverted now: a trailing clause asserts unless it is one of a listed set of subjectless fragments, so
+a gap in that list refuses a true sentence instead. The same round found "one" and "each" being read
+as covers pronouns, which pardoned "no cover is requested, and each of your lists is unchanged", and
+they are out. Between them these close five of the six passages the seventh round demonstrated, four
+by the subject tie, and one of the three then recorded as unreachable.
+
+"unchanged" is deliberately not in that list of fragments, and it is the single place where the two
+directions collide head on. "The requests for covers are, in fact, unchanged" and "no cover is
+requested, unchanged" have exactly the same shape: a head naming the covers and a bare "unchanged"
+behind a comma. No rule about the trailing clause can accept one and refuse the other. Admitting it
+takes the truth and the lie together; refusing it loses the truth and keeps the lie out, and the truth
+is repaired by moving "in fact" to the front of the sentence. Costing a truth is the affordable
+direction, so that is the one taken.
+
+Round nine then found the covers tie itself making the enumeration mistake the round before had just
+finished removing from the trailing-clause test, in the opposite direction. The tie asked whether the
+asserting clause contained any of "cover art", "covers", "images", "pictures", "them", "they", "these"
+or "those". Containing is not being about. "The details for them are still fetched" and "though these
+titles are unchanged" are clauses about the metadata, and dropping either onto the end of a lie turned
+that lie into a pass. Seven shapes of that insertion are now in the false list, and two of them are
+the entries the list had filed as evasions a wider reference would have opened, so the reference
+called narrow was opening them itself. A word present in an open list pardons silently, exactly as a
+word missing from one did, and the two lists had been inverted one at a time.
+
+The fix asks what the clause is about instead of what it contains. Of the pronouns only "they" counts,
+and only at the head of the clause: "them" is never a subject in English, "these" and "those" are
+determiners as often as pronouns and it was the determiner uses that carried the evasions, and "they"
+is neither, so at the head of a clause it is the subject rather than evidence about one. The noun half
+was left alone, on the reasoning that a clause naming the covers is about them wherever the noun sits.
+Measured against the corpus as it then stood this cost nothing: no true sentence refused, no false one
+pardoned, no recorded refusal accepted, no escape closed, and all six shipped surfaces still pass,
+which follows from only one of the four acknowledgements resting on a pronoun and resting on it as a
+subject. A pronoun subject written any other way is now refused, which is the loud direction.
+
+It does have a cost, and the corpus did not hold it, which is the regression-list point arriving
+about its own instrument. The real-file harness rewrites the shipped copy into other true phrasings,
+and one of those, "they can be hidden, and hiding them changes nothing about what is requested", the
+tie refuses: what is hidden sits in the object of "hiding", and an object pronoun is not a subject.
+Admitting "them" after a hiding or a stopping verb recovers it and was measured as recovering nothing
+else, but it recovers it by enumerating verbs, which is the shape of instrument this round replaced.
+So it is repaired by naming the covers and recorded as the twelfth refusal instead. It is close to
+the copy the metadata card actually ships, which is the reason for recording it rather than treating
+it as contrived.
+
+A tenth round found the same mistake a third time, in the half that had not been touched. Leaving the
+noun readable anywhere meant that writing the antecedent out where the pronoun had been refused
+restored every pardon: "the details for the covers are still fetched" reads as an acknowledgement
+about the covers to any rule that only asks whether the word is in the clause, and it is a clause
+about the details. It reached both shipped cards, which the pronoun version had not. Three of the
+seven pronoun evasions rewrite straight into it. So the noun is now read the same way the pronoun is.
+A covers noun counted unless every occurrence of it in the clause hung off some other noun through
+"for", "of" or "about", and a word about requesting is the one thing it can hang off and still be
+about them, because the shipped copy writes it that way: "the app still asks for the image". Only
+those three prepositions were read as post-modifiers, because reading "with" as one refused "even
+with cover art off there is no reduction in requests", which is a plain true sentence and the
+measurement caught it. The eleventh round reopened that trade and took the other side of it. The
+same round found the noun test had dropped the lookahead that tells our noun from the verb, so
+"the export covers what was downloaded anyway" was pardoning a lie; the exclusion is now written once
+and shared rather than copied, because two copies are two lists to keep in step.
+
+The same round found subjecthood had been read as reference. A clause-initial "they" was taken as a
+reference to the covers whatever it referred to, so "the details are separate, they are still fetched"
+pardoned. The antecedent is now resolved rather than assumed: it is the head of the nearest preceding
+clause, and where that head is itself a "they" the walk continues, which the shipped metadata card
+needs, because it says "cover images load directly from Marvel's own servers. They can be hidden, but
+they are still requested" across two links of that chain. A "they" with no covers antecedent to find
+is refused. Measured against the corpus this cost nothing: no true sentence refused, no false one
+pardoned, no recorded refusal accepted, no escape closed, no recorded repair broken and no shipped
+surface failing. Eight of the nine sentences the review wrote to break it are caught and are now in
+the false list. The ninth is not, and is recorded as a third escape rather than guessed at: a covers
+noun inside a reduced relative clause, "the details the covers carry are still fetched", where nothing
+in the punctuation or the word order separates it from "hides the covers but does not stop them".
+Telling those apart needs to know that "hides" is a verb and "details" is a noun. That is parsing, and
+every list written in this file in place of parsing has been evaded within a round.
+
+An eleventh round found the enumeration back for the sixth round running, this time in the span the
+noun rule allowed between the preposition and the covers word. That span was a list of eighteen
+determiners, so "the details for the hidden covers are still fetched" walked straight through it, and
+seven evasions of that shape were written and all seven pardoned. The answer this time is not another
+list but a list that cannot be incomplete: prepositions are a closed class, so the whole class is
+written out, fifty-three of them, and the span between one and the covers word becomes any run of
+words at all. Each of the fifty additions to the previous three was measured alone and then all
+together, and none of them refuses a true sentence, pardons a false one, closes an escape, accepts a
+refusal, breaks a repair or fails a shipped surface. Reading the nearest attachment rather than the
+first is what pays for that: in "the same number of requests for the covers" the nearest thing the
+covers hang off is "requests", which is a request word, so the clause is about them whatever sits
+further left.
+
+Two things fell out of that rule and are worth recording apart from it. The word "number" had been
+admitted as a request word only to paper over the first-match reading of that same sentence; reading
+the nearest attachment answers it properly, so "number" earns nothing, and dropping it closes "the
+number of covers is unchanged". And the two halves of the check, the one asking whether a clause
+names the covers and the one resolving what "they" refers to, had grown separate determiner lists
+doing the same job. The antecedent test now calls the asserting test, so one rule decides both
+positions and the second list goes with the first.
+
+The candidate that scored highest against the twenty-three attacks this round produced is not the one
+that shipped. Excluding a covers word that starts a noun phrase closed fifteen of them at no cost to
+the corpus, and a determiner head test closed seventeen, against nineteen for the rule that shipped.
+The argument against the other two is the direction they fail in: both decide by a word list, so a
+determiner the list has not heard of makes them pardon silently, which "The details some covers
+carry" demonstrates. The shipped rule fails by refusing, which is loud, repairable and recorded. One
+such refusal was bought this round and is the thirteenth entry in that list: "Even with cover art off
+there is no reduction in requests" hangs its only covers word off "Even". Ignoring a preposition that
+opens its clause would recover it, and was measured as pardoning four sentences whose head noun
+carries no determiner, so it was refused on the numbers rather than on principle.
+
+Four of the twenty-three survive, and they are one shape: a covers word inside a modifier of some
+other head noun with no preposition to hang it off, "the details some covers carry" and "the metadata
+that describes covers" among them. That is the shape already recorded as an escape in the asserting
+clause, so the four are recorded as escapes as well rather than guessed at.
+
+A twelfth round attacked the two halves of that noun rule separately and got through both. The word
+the covers hang off was read from the same list the acknowledgement is built from, and that list holds
+the participles, because "still requested" is how the copy says it. A participle is also the one verb
+form that can post-modify the noun in front of it, so writing "the details requested for the covers
+are still fetched" gives the covers a request word to hang off and hands back every pardon the
+attachment rule had just closed. Reading only the forms that cannot be a past participle fixes it and
+still admits both ways the shipped copy writes the word: "the requests for the covers" as a noun and
+"the app still asks for the image" as a finite verb. Seven evasions of that shape are recorded and all
+seven are caught.
+
+The other half failed in the quieter direction. That span was written as word characters, so a
+character outside that class made the whole attachment pattern match nothing, and matching nothing was
+read as hanging off nothing, which is the answer that pardons. The one span the rule could not read
+was the one span it excused. A bracket did it, a quotation mark did it, and a hyphen inside the noun
+did it. Two of the six shipped surfaces make that more than hypothetical: those two are read as raw
+markdown, because the helper that slices a document hands over what it finds rather than stripping the
+markup the way the one for the app's own markup does, so emphasis, code spans and links are exactly
+the characters that appear there. The span is now anything at all short of a clause end, which is
+what the round before had claimed it already was, and which is safe because the span is only ever read
+inside a single clause. Both fixes were measured separately and together: neither refuses a true
+sentence, pardons a false one, closes an escape, accepts a refusal, breaks a repair or fails a shipped
+surface, and together they catch all thirteen evasions the round produced.
+
+Three counts stated in this section were wrong and are corrected rather than carried forward. The
+determiner list the eleventh round replaced held eighteen entries, not nineteen. The leftward walk
+accepts most of the recorded refusals and not all of them, the ones it cannot reach having no
+preceding clause to lend a subject from, which the next sentence of the same passage already implied
+by saying the walk recovers a number rather than the lot. And the cost of reading the whole
+preposition class was described
+as a clause-opening preposition capturing the covers word beside it, when the span reaches to the end
+of the clause and so captures every covers word after it: "Even without cover art the app still
+requests every cover" has two and loses both. It is recorded as the fourteenth refusal, repaired by
+deleting one word.
+
+Two limits found this round are recorded rather than closed, because closing either costs more true
+English than it buys. The rule that hands a subjectless trailing fragment back to the clause in front
+of it assumes that clause is the true half. When the fragment carries no content at all the clause in
+front of it is the lie, and "no cover is requested, regardless" is built out of a covers word and a
+request word, so it reads as its own acknowledgement. Removing the six words that do this costs six
+true sentences, "the image is requested, regardless" among them, and does not close the shape either,
+because dropping the comma leaves no trailing clause to classify at all. Separately, the exclusion
+that stops "a backup covers every list you keep" being read as a claim about pictures is shared with
+the test for whether a passage is about the covers switch, and there it inverts: "hide the covers you
+have not read and Marvel is never asked for them" is never examined at all, because "you" excuses it
+first. Reading the noun a second way for that test alone catches both and refuses four true sentences,
+every one an ordinary use of the verb. Nine escapes are recorded across the two shapes, so closing
+either later turns the suite red.
+
+A thirteenth round attacked the clause reader itself and got through it twice. A sentence with no
+full stop, semicolon or comma inside it is one clause, so the clause an acknowledgement was checked
+against was the whole sentence, and the switch phrase at the front of it supplied the covers word
+that check was looking for. Anything at all resembling an acknowledgement anywhere in the sentence
+then pardoned the lie beside it, and "switch covers off and no cover is requested and the details are
+still fetched" passed while its semicolon twin was caught. The mirror of that was the span between an
+acknowledgement's two halves, which excluded a full stop and a semicolon but not a comma while the
+clause reader split on all three: one match could begin in one clause and end in another, so "the
+tiles are still there, no cover is requested" put the acknowledging word in one clause and the
+request in the next and the lie became its own acknowledgement. Six shapes of each are recorded and
+all twelve are caught.
+
+The fix is the same instrument the third round rejected, applied per branch rather than to all of
+them, and the measurement is why. Measured against the coordinator list as the fourteenth round
+leaves it, refusing a gap that crosses a comma everywhere refuses 6 true sentences, ending every
+clause at a coordinator everywhere refuses 9, and both together refuse 10. Those costs were once
+recorded on their own, which flattered the conclusion, because the wholesale forms also buy
+something: the comma rule everywhere closes 7 of the 18 recorded escapes, the coordinator rule
+everywhere closes 4, and both together close 8. The case for the per-branch form is that it closes
+the same escapes for none of the cost, not that the wholesale form is worthless. So the branches
+whose two halves are one assertion take both marks and the ones that lean take neither, and "but"
+and "yet" are absent from
+the coordinator list because the shipped copy hangs its own acknowledgement off one. Two review
+suggestions were measured and rejected on the same numbers: requiring the whole match to stay in one
+clause refuses seven true sentences, and treating every coordinator as a clause end breaks the About
+view's own shipped sentence. The change costs two true sentences, both of which were accepted before
+it, and both of which have a comma form that was refused before it and is refused now, so it makes
+the rule consistent rather than stricter. Both are recorded with repairs.
+
+The round-twelve participle rule was also found too wide in the other direction. Refusing every
+participle closes "the details requested for the covers are still fetched", but English writes the
+truth in the passive and it closed that too: "a request is still sent for each cover" was refused. A
+participle counts again when a form of "be" or a request noun stands in front of it, which separates
+the passive from the post-modifier and recovers three true sentences without reopening any of the
+thirteen evasions the round before had closed. Four true sentences of the same shape are still
+refused, because "the bytes fetched for the covers are unchanged" and "the details requested for the
+covers are still fetched" differ only in whether bytes are requests, which is knowledge about the
+world rather than about the sentence. All four are recorded with repairs. One test title was also
+found asserting a bound nothing tests, saying the recorded escapes were "still only these" when what
+the test checks is that each of them is still open, and it is reworded to say that.
+
+The fourteenth round found that whole conclusion resting on a list of seven words. Review re-joined
+the lies the thirteenth round had just closed with a conjunction outside that list, "because", "when",
+"if", "since", "then", "after", "but" and "yet", and all forty variants pardoned again. This is the
+failure this item has now paid for five times: a rule written as a list somebody enumerated by hand,
+where the missing word is the evasion. The list is twenty words now, and extending it was measured as
+completely free against the corpus and the six shipped surfaces, refusing nothing, pardoning nothing
+and breaking no repair. It takes twenty-six of the forty. Of the fourteen left, six are the price of
+keeping "but" and "yet" out, which the About view's own sentence requires, and eight are the price of
+letting a trailing adverbial keep the wider gap, which is the whole of what that branch is for. Both
+families are unbounded in the joining word, so one representative of each is recorded as an escape
+rather than an enumeration that goes stale the moment somebody writes a conjunction nobody thought
+of, and the residual below is no longer described as a bound.
+
+The wider list costs five true sentences, and they are one shape: predicate coordination over a
+shared subject. "The covers are hidden and still requested" states two things about one subject, and
+cutting at the coordinator leaves the second half with no subject in it. Not cutting when the
+following segment has no subject of its own would accept all five and is the obvious repair, and it
+is written down as rejected rather than left unsaid, because every candidate test for "has a subject
+of its own" is another hand-written list, and four such lists in this file have been walked through
+inside the round that added them. One of the five is the About view's shipped sentence with "and"
+written for its "but", which is the clearest statement of what the class costs: the rule is
+indifferent to which conjunction joins two predicates and the copy is not. All five are recorded with
+repairs.
+
+Review round fifteen found the last unasserted count in the corpus comments, and it had gone stale
+exactly as the argument for asserting counts predicts. The comment above the true sentences says how
+many of them are repaired forms of refusals; it read nineteen and the tree holds twenty-four, because
+round fourteen added five refusals and updated every count except the one nothing checked. The
+neighbouring two counts in the same comment block were asserted in round thirteen and both stayed
+right. So the third is asserted now, and it is counted over the entries rather than over the set of
+repairs, which is what lets it fail on its own: every repair is already asserted to be held as a true
+sentence, one assertion per refusal, so the only way the two counts can disagree is a repaired form
+written into the true list twice, and nothing else in the file forbids that. Duplicating one turns
+exactly that assertion red and nothing else.
+
+The same round found a hole the guard cannot reach by construction, and it is the original defect of
+this item surviving in the one place the rule does not look. All three surfaces that enumerate what
+leaves the machine listed the reachability check, the issue search, the detail fetch, the cover
+fetch and the reader link, and left out the largest request the app makes: adding a whole series or a
+creator's issues pages the metadata API to completion at `src/js/api.js:147-161`, up to sixty
+requests, from `src/js/main.js:2323` and `src/js/main.js:2339`. Two of the three said in the same
+breath that "searching the catalog, series or creators is answered from files already on this
+machine", which is true of the search and not of the add that follows it, so the sentence pointed
+away from the omission. The guard inverts sentences that are about the covers switch; a sentence
+nobody wrote is outside it. All three surfaces now name the series and creator fetch, the imported
+line's "Find match" at `src/js/main.js:2432` is named alongside the search it resembles, and the
+clause is held by a rule in the request table rather than left as prose that can be dropped without
+anything noticing. Removing it from any one of the three turns the suite red naming that surface.
+
+What is left is a residual of eighteen and a recorded set of twenty-five refusals, and both are now in the
+repository instead of being described here. That distinction is the eighth round's most useful
+finding. Both this section and the changelog said a proof would disagree with anyone who closed a
+pardon or accepted a refusal, and no such proof was in the repository: it was a scratch file on one
+machine, absent from CI and unreachable by any reader. The corpus is a test now. It holds 55 sentences
+written to be true, 121 written to be false, the 18 that still pardon themselves, and the 25 true
+sentences the check refuses, each stored beside a repair that is separately asserted to pass and to be
+one of the 55. Closing an escape or accepting a refusal turns the suite red, which is what the
+sentence claimed all along.
+
+The twenty-five are a regression list and not a bound on what the check refuses, and calling them a cost
+was the round-eight overclaim recurring one level down: it reads as though they were all of it. They
+are not close to all of it. Twenty-eight further true sentences were written in the register a
+maintainer editing this copy would actually use, and fourteen were refused, "hiding the covers saves
+no requests" among them. What the list buys is that a refusal already known cannot quietly start being
+accepted. What it does not buy is a number for how much true English this instrument costs, and no
+instrument of this kind is going to have one.
+
+The eighteen remaining escapes are one across a full stop, which no rule about clauses inside a
+sentence reaches, one that hangs the true clause off the false one with no subject of its own, five
+that bury a covers noun in a modifier of some other head noun with nothing to hang it off, seven where
+a trailing fragment carrying no content hands the assertion back to the lie's own clause, two the
+covers verb exclusion hides before the check can start, and two that stand for the families the
+coordinator rule leaves open, one joined by "but" and one where a trailing adverbial keeps the wider
+gap. Those last two are representatives and not a count: both families run to as many sentences as
+there are conjunctions, which is why the residual is a record of shapes rather than a number that
+bounds anything. The twenty-five
+refusals fall into eight classes. Four say "the requests" without saying which, and two lean on "one"
+or "each" as a covers pronoun, which the ninth round stopped reading as one because "each of your
+lists is unchanged" pardoned a lie with it; five of those six are repaired by naming the covers, at
+the cost of a word, and the sixth costs a word and a reordering, because naming the covers in "The
+requests are, in fact, unchanged" leaves the parenthetical standing between the subject and its verb.
+The next five do name the covers in the sentence but not in the asserting clause, because a
+parenthetical or a coordinator sits between the subject and its verb: "the covers, even when hidden,
+continue to be requested" is refused, and the clause doing the asserting is "continue to be
+requested", which has no subject in it at all. All five repair by moving the parenthetical, four of
+them to the end of the sentence and the fifth to the front, which neither adds nor removes a word, so
+the claim that every repair adds truth rather than removing it was itself an overclaim and is gone.
+The twelfth is the object-pronoun case the subject tie brought with it, and the next two are the
+clause-opening preposition the eleventh round bought, both described above. The next six are the
+thirteenth round's, four for separating a passive from a post-modifier and two for ending a clause at
+a coordinator, and the last five are the fourteenth round's, every one of them predicate coordination
+over a subject the two halves share. Walking left
+to find the subject would accept the middle five, and it was measured against this corpus: it
+pardons 57 of the 121 false sentences and accepts twenty-one of the twenty-five
+refusals, because a leftward walk lends a subject across clause boundaries in whichever direction
+happens to help. That is the second instrument returning under a new name, and it is refused on the
+numbers rather than on principle. Two refusals share a repair, and one of the fourteenth round's
+repairs to a sentence already recorded as the shipped copy, so the twenty-five have twenty-four
+distinct repaired forms.
+
+Thirty-seven mutations run against the finished rules on the real files and all thirty-seven are
+caught. Fifteen more run the other way: a true sentence rewritten into a different true phrasing has
+to leave the suite green. That is the half no lie mutation can express and the half both earlier
+instruments failed, and it is the half that has now caught a cost in each of three rounds. Thirteen of
+the fifteen pass, and exactly two do not. "Hiding them changes nothing about what is requested"
+stopped passing in the ninth round when the subject tie landed, and "The image is requested and
+unchanged" stopped passing in the thirteenth when a coordinator began ending a clause. Each is
+recorded as a refusal with its repair, and the second of them was recorded from the rules before this
+harness was re-run, so the file-level proof and the corpus in the tree reached it independently. A
+third rewrite, "Every one is requested regardless", stopped passing in the eighth round when "one"
+left the reference; unlike the other two it was repaired in the list itself, so what the fifteen now
+hold is its repaired form and it passes. Naming all three as current failures, as an earlier draft of
+this paragraph did, contradicted the thirteen in the same sentence. The tenth
+round briefly cost a further one, "the app still asks for the image", which is the shipped copy's own
+verb: hanging the covers noun off a request word was
+written as a noun test first, and the harness caught it in the same run that proposed it, so the test
+reads the same word list the acknowledgement itself is built from and the rewrite passes again.
+Separately, eight ways of undoing the eighth round's repairs were each applied
+alone, and every one turns the suite red naming the test that defends it; three more undo the ninth
+round's, and each of those names the sentence that defends it, one of which had to be written because
+the first two mutations left it unwritten and the gap showed as a mutation nothing caught. Five more
+undo the tenth round's, one for each piece of it, and every one turns the suite red naming the single
+sentence that piece defends. Six more undo the eleventh round's, and every one of those turns the
+suite red naming the sentence that piece defends. Two of the six first reported caught while proving
+nothing, which is the failure this repository's rule about proving a check can fail is aimed at. The
+mutation was applied with a replacement string carrying a dollar sign immediately before a backtick,
+which JavaScript reads as a back-reference to the text preceding the match, so what landed in the
+mutant was a syntax error rather than a weakened rule. A mutation that stops the file parsing is
+caught by every check in it and defends none of them. Applying the replacement through a function
+rather than a string fixed both, and both then failed on an assertion naming the sentence. Five more
+undo the twelfth round's, and every one of those turns the suite red naming the sentence or the escape
+that piece defends. Six more undo the thirteenth round's, one for each rule it adds and one for each
+direction of the participle rule, and every one turns the suite red naming the sentence it defends.
+The count of distinct repairs needed no mutation to prove it can fail: adding the
+fourteenth refusal turned it red on its own, which is what a count asserted rather than written in
+prose is for. Six more undo the fourteenth round's coordinator list, one reverting it to its seven
+words and four removing a single new word each, with a sixth turning the clause break off for every
+branch, and every one turns the suite red naming a sentence it pardons. Getting to that took two
+corrections worth recording: a mutation written as a bare word replacement across the whole file hit
+an earlier occurrence than the rule, and one of the four sentences chosen to defend a new word turned
+out to be caught for an unrelated reason, so the mutation that removed it reported clean while proving
+nothing. Both were found by the mutation reporting NOT CAUGHT rather than by reading the rule. The proof
+harness itself needed one fix, and it is the one worth naming: a transient file lock failed a restore
+and left a mutation in the working tree, which is the only way a harness that exists to prove a check
+can instead do harm. It now retries and refuses to continue rather than carrying on with a mutated
+file. Four more prove the fifteenth round's two additions: duplicating a repaired form in the true
+list turns the new count red on its own, and deleting the series and creator clause from each of the
+three enumerating surfaces in turn turns the request table red naming that surface. The harness
+needed a fix of its own first, and it is a variant of the same defect: spawning `npm.cmd` through
+`execFileSync` here exits with a null status and captures no output at all, which the harness read as
+a red baseline, so it refused to run and proved nothing. Driving `node --test` through the shell, as
+the script itself does, restored a green baseline.
+
+The security policy was found still holding the absolute that started this item, in a stronger form
+than the one removed. "Nothing you create is uploaded anywhere" covers the lists, and the issue
+numbers in a list are exactly what a request for that issue carries. The forbidding pattern missed it
+by two words, so the identical claim was forbidden on four surfaces and permitted on the security
+policy, which the round before had enrolled precisely because it makes the claim. The pattern is
+widened and the sentence is scoped to what is true: no accounts, no cloud services, no analytics, no
+telemetry. The same bullet also put one verb over a set it does not hold across, saying "those
+requests name the issue" of three requests of which the reachability check names nothing, which is
+the identical error this round had just fixed for search.
 
 **BL-088: Pin and harden workflow actions for untrusted contributions**
 
@@ -5047,7 +5601,7 @@ here because it described the tags this item replaced.
 
 Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
 `.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:74-108`,
-`test/ci-supply-chain.test.js:124-142`, `README.md:311-346`.
+`test/ci-supply-chain.test.js:124-142`, `README.md:317-352`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -5326,7 +5880,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:263-503`,
+are valuable history and are not a concise public policy. Evidence: `README.md:269-509`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 **BL-098: Define review ownership and contribution intake**
@@ -5656,6 +6210,33 @@ time this document has carried one, after `BL-055`, `BL-059` and `BL-105`. Read 
 that chose three lines over four it is still true, and re-deriving it would replace the evidence for
 a decision with numbers that had no part in making it. The figures are load-bearing either way, so
 they need to say which they are.
+
+**BL-108: Make the cover art switch stop the cover requests it hides**
+
+- [ ] Gate the cover request itself on the setting, not only the painting of it
+- [ ] Fetch the covers that were skipped when the setting is turned back on
+- [ ] Cover the two eager images the reading and catalog heroes paint directly
+- [ ] Measure the request count with the setting off from the first paint, not only after a toggle
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by the review of `BL-087` and routed here rather than fixed there, because that item is a
+copy change and this one is a behaviour change. `BL-087` first shipped a sentence saying the switch
+stops the requests. It does not. `applyCoversSetting` toggles a body class, the five rules that hide
+a cover `<img>` under that class are `display: none`, and `paintCoverUrl` assigns `img.src` with no
+reference to the setting, so the request has been made before anything is hidden. Measured in Edge
+with the setting off from the first paint: eight requests to `i.annihil.us`, the same eight as with
+it on. Evidence: `src/js/main.js:485-488`, `src/js/main.js:491-492`, `src/styles.css:436`.
+
+Two details make this larger than moving one condition. `setCovers` calls `renderReading` and
+`renderHome`, so switching covers off is itself a re-render and currently issues a fresh round of
+the requests it is meant to end. And the pattern this item wants already exists in the file, twice
+over, for the hero backdrop alone: `src/js/main.js:1724` reads the setting before building the URL,
+and `src/styles.css:419` sets `background-image: none` under the same class, which does suppress a
+request because a computed `none` is never fetched. That is the one place covers are genuinely not
+requested when the setting is off, and it is why the omission on the `<img>` beside it reads as an
+oversight rather than a decision. Turning the setting back on has to fetch what was skipped, or the
+switch becomes one-way until a reload.
 
 ## Existing epics and stories
 
@@ -6143,7 +6724,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 1: BL-026 is labelled P0 but ranks thirty-seventh
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 37 of 83.
+- Calculated: WSJF 3.67, rank 37 of 84.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
   It is outranked by thirty-six items, twenty of them sized 1, 2 or 3 whose Cost of Delay is
   lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -6165,7 +6746,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 77 of 83, below seventy-three unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 78 of 84, below seventy-three unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -6222,9 +6803,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 48 of 83. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 39 of 83. Mid-table.
-- BL-017, P2, rank 82 of 83. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 49 of 84. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 39 of 84. Mid-table.
+- BL-017, P2, rank 83 of 84. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

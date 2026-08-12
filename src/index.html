@@ -500,7 +500,7 @@
           <!-- ---------------------------------------- data view -->
           <section id="view-data" class="view" hidden aria-labelledby="data-h">
             <div class="head"><div class="head-left"><h1 id="data-h">Backup &amp; settings</h1>
-              <div class="sub">Everything lives in this browser, at this exact address. Nothing is uploaded.</div>
+              <div class="sub">Your reading progress lives in this browser, at this exact address, and is never sent anywhere.</div>
             </div></div>
 
             <div class="card card-static">
@@ -525,7 +525,8 @@
               <p class="rail-hint">
                 Covers are loaded straight from Marvel's own servers using the address the metadata API
                 reports. This app stores only that address, never the image itself, and never proxies
-                or re-hosts artwork. Switch covers off and every cover becomes a plain typographic tile.
+                or re-hosts artwork. Switch covers off and every cover becomes a plain typographic
+                tile, but the image behind it is still requested.
               </p>
               <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
             </div>
@@ -599,8 +600,8 @@
               <p class="rail-hint">
                 No comic content is stored, copied, proxied, or served. The app tracks which issues you
                 have read and links out to Marvel's own site and reader. Reading an issue requires your
-                own Marvel Unlimited subscription. Cover images load directly from Marvel's own servers
-                and can be switched off.
+                own Marvel Unlimited subscription. Cover images load directly from Marvel's own servers.
+                They can be hidden, but they are still requested.
               </p>
 
               <h3>Where the metadata comes from</h3>
@@ -633,9 +634,26 @@
 
               <h3>Your data</h3>
               <p class="rail-hint">
-                Everything lives in this browser, at this exact address. Nothing is uploaded, there is no
-                account, and no server sees your reading progress. Clearing site data for this address
-                erases it, so export a backup regularly.
+                Everything you save lives in this browser, at this exact address: your lists, your
+                reading progress and your notes. There is no account to create, and no analytics or
+                tracking of any kind. Your progress and your notes are never sent anywhere. Clearing
+                site data for this address erases them, so export a backup regularly.
+              </p>
+              <p class="rail-hint">
+                What does leave this machine is the ordinary business of fetching what is on
+                screen. Opening the app asks the metadata API named above whether it is reachable,
+                which is what the status pill reports. Searching for issues sends what you typed,
+                and so does asking an imported line to find its own match; searching the catalog,
+                series or creators is answered from files already on this machine, but adding a
+                whole series or a creator's issues then asks the metadata API for every issue it
+                lists, which is the longest run of requests the app makes. Filling in details sends
+                every issue number still missing them, across every list you keep, starting with
+                the one you are about to read. Cover art is
+                requested from Marvel's image servers as it appears, so those servers see which
+                issues are on screen; switching cover art off hides the covers but does not stop
+                them being requested. Opening an issue asks the metadata API for the reader link
+                when this copy does not already have it, then hands that one issue to Marvel's
+                reader, or to marvel.com whenever no reader link can be resolved.
               </p>
 
               <h3>This build</h3>
