@@ -183,9 +183,15 @@ const ABSOLUTES = [
 // What this does not catch is a window that makes the cease-claim and acknowledges the requests
 // in the same breath, which is a contradiction rather than an overclaim, and is a thing for a
 // reader to catch. Saying otherwise would be the same overclaim one level up.
-const COVERS = /\b(?:cover art|covers?|cover images?|artwork)\b/i;
+//
+// The other limit is that "a window about the covers switch" is itself an enumeration, and moving
+// the enumeration from the lie to the switch does not abolish it. Review escaped the requirement
+// four times by writing "without cover art" and "disable the images", which never reach it. The
+// difference from the instruments before is that widening this list is monotone: it can only
+// demand the acknowledgement in more places, never accuse a sentence of lying.
+const COVERS = /\b(?:cover art|covers?|cover images?|artwork|images?|pictures?)\b/i;
 const TURNED_OFF =
-  /\b(?:off|hidden|hide|hides|hiding|unchecked|unchecking|unticked|unticking|disabled|disabling)\b/i;
+  /\b(?:off|hidden|hide|hides|hiding|unchecked|unchecking|unticked|unticking|disable|disabled|disabling|without|suppress(?:ed|es|ing)?|no longer shown)\b/i;
 const SWITCHED =
   /\b(?:switch\w*|turn\w*|toggl\w*|uncheck\w*|untick\w*|disabl\w*|hid(?:e|es|den|ing))\b[^.]{0,40}\boff\b/i;
 const CLEARED =
@@ -193,8 +199,32 @@ const CLEARED =
 
 // The forms the truth is actually written in. A form missing here fails a true sentence, and the
 // repair is to say it more plainly, never to say less: that asymmetry is the whole design.
-const ACKNOWLEDGES =
-  /\bstill\b[^.]{0,40}\b(?:requests?|requested|sends?|sent|fetch(?:es|ed)?|downloads?|downloaded|asked)\b|\b(?:cannot|can't|can not|could not|couldn't|does not|doesn't|do not|don't|did not|didn't|will not|won't|would not|wouldn't)\s+(?:stop|mean|prevent|reduce|change|halt|cancel)\w*\b|\bno (?:reduction|change|fewer|difference)\b|\bnothing changes?\b|\bchanges? nothing\b|\bunchanged\b|\b(?:exactly )?as before\b|\bthe same (?:requests?|number)\b|\bregardless\b|\banyway\b|\ball the same\b|\bwithout stopping\b/i;
+//
+// Every branch has to name a request, and the gap may not cross a clause boundary. Neither is
+// tidiness. Review pardoned three lies with a true clause about something else entirely sitting
+// beside them, because "unchanged", "regardless" and "as before" carry no subject: "switching
+// cover art off stops them being requested, and your notes are unchanged" passed. Requiring the
+// noun left two of those alive, since "requested, and your notes are unchanged" puts the two
+// within twenty-one characters of each other. A comma or a semicolon starts a new clause, and an
+// acknowledgement in a different clause is about a different subject. All four shipped
+// acknowledgements put the noun a few words from the phrase with nothing between.
+const ASKED = '(?:requests?|requested|sends?|sent|fetch(?:es|ed|ing)?|downloads?|downloaded|asked|asking)';
+const NOT_STOP =
+  "(?:cannot|can't|can not|could not|couldn't|does not|doesn't|do not|don't|did not|didn't|will not|won't|would not|wouldn't)\\s+(?:stop|mean|prevent|reduce|change|halt|cancel)\\w*";
+const UNCHANGED = '(?:unchanged|regardless|anyway|as before|all the same|no different)';
+const GAP = '[^.,;]';
+const ACKNOWLEDGES = new RegExp(
+  [
+    `\\bstill\\b${GAP}{0,40}\\b${ASKED}\\b`,
+    `\\b${NOT_STOP}\\b${GAP}{0,40}\\b${ASKED}\\b`,
+    `\\bwithout stopping\\b${GAP}{0,40}\\b${ASKED}\\b`,
+    `\\bno (?:reduction|change|fewer|difference)\\b${GAP}{0,40}\\b${ASKED}\\b`,
+    `\\b(?:nothing changes?|changes? nothing)\\b${GAP}{0,40}\\b${ASKED}\\b`,
+    `\\b${ASKED}\\b${GAP}{0,30}\\b${UNCHANGED}\\b`,
+    `\\b${UNCHANGED}\\b${GAP}{0,30}\\b${ASKED}\\b`,
+  ].join('|'),
+  'i',
+);
 
 function aboutTheSwitch(window) {
   return (

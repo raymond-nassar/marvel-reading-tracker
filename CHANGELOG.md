@@ -82,17 +82,19 @@ quote in a bug report.
   false ones went through simply by saying "hide" or "unchecked" instead of "off". A check whose
   easiest repair is to make the writing less honest is worse than no check.
 
-  So it no longer looks for the false claim at all. Any sentence that mentions the cover art switch
-  now has to say that the pictures are still asked for, in that sentence or the one beside it. There
-  is nothing left to phrase around, because nothing is hunting for a phrase, and no true sentence can
-  fail for being true, because the only way to fail is to leave the truth out. Every repair is now an
-  addition.
+  So it no longer looks for the false claim at all. Any sentence that mentions the cover art switch,
+  in the words the check knows for it, now has to say that the pictures are still asked for, in that
+  sentence or the one beside it. No true sentence can fail for being true, because the only way to
+  fail is to leave the truth out, and every repair is an addition. What is left is that the check
+  still has to recognise a mention of the switch, and a sixth review escaped it four times by writing
+  "without cover art" and "disable the images". Those words are known now. The difference from before
+  is that adding more of them can only ask for the truth in more places, never accuse a sentence of
+  lying.
 
-  Twenty-five deliberately broken versions of these sentences are tried against the check, including
-  every one a reviewer found a way past, and all twenty-five are refused. Five true sentences
-  rewritten in different true words are tried as well, and all five are accepted. That second set is
-  the one no broken version can stand in for, and four of the five were being refused before this
-  round.
+  Thirty deliberately broken versions of these sentences are tried against the check, including every
+  one a reviewer found a way past, and all thirty are refused. Six true sentences rewritten in
+  different true words are tried as well, and all six are accepted. That second set is the one no
+  broken version can stand in for, and four of the first five were being refused two rounds ago.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two
