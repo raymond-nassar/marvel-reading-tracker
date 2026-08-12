@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6126-6128` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6134-6136` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6147-6150`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6155-6158`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5960-5962` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5968-5970` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -5048,6 +5048,14 @@ there, and it stopped exactly where the new rule says naming the downloads is no
 Cover art card is the fifth, and it is the natural home of the covers overclaim because it owns the
 switch, yet the extraction reached neither end of it. Both are claim sites now, the policy held to
 the full shape and the card to the absolutes, as the subtitle is.
+
+A sixth site was considered and deliberately left out. The changelog states the claim too, in the
+entry describing this very change, and enrolling it would hold every past entry to the rule as well.
+Those entries are a record of what was believed when they were written, and a check that can force a
+correction into them is a check that can rewrite history to stay green. The two wrong sentences in
+this change's own entry were fixed by reading, which is the right instrument for a document whose
+value is that it does not change. Recorded here because a later reader will notice the omission and
+should not have to guess whether it was an oversight.
 
 The three weak rules were each weak in a different way, and all three are worth naming because the
 shapes recur. The disclosure rule matched the bare phrase "which issues", which is a phrase this app
