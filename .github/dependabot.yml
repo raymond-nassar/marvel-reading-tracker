@@ -52,9 +52,10 @@ updates:
         patterns:
           - "*"
 
-  # The workflow pins actions by major tag today, so this ecosystem is what notices when a
-  # major moves. It stays useful after the pins become commit SHAs: Dependabot updates a
-  # SHA-pinned action and rewrites the version comment beside it.
+  # The workflow pins actions to commit revisions, so this ecosystem is what moves them. A pin
+  # cannot drift on its own, which is the point of it, and the cost is that nothing updates it
+  # either. Dependabot raises a SHA-pinned action and rewrites the version comment beside it,
+  # which is what keeps a deliberate pin from quietly becoming an abandoned one.
   - package-ecosystem: github-actions
     directory: /
     schedule:

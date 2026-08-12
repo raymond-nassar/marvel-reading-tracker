@@ -274,8 +274,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5709|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5709",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5745|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5745",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -819,15 +819,25 @@
     "fp": "30b65b3dff660d69",
     "head": "name: CI"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:134-136|0": {
-    "anchor": ".github/workflows/ci.yml:134-136",
-    "fp": "f74e9b7abbf725e0",
-    "head": "- name: Check evidence anchors"
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:107-125|0": {
+    "anchor": ".github/workflows/ci.yml:107-125",
+    "fp": "a89cc7b7da106242",
+    "head": "lint:"
+  },
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:120-125|0": {
+    "anchor": ".github/workflows/ci.yml:120-125",
+    "fp": "a2ad9d6c48bf4c79",
+    "head": "- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"
   },
   "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:15|0": {
     "anchor": ".github/workflows/ci.yml:15",
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
+  },
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:154-156|0": {
+    "anchor": ".github/workflows/ci.yml:154-156",
+    "fp": "f74e9b7abbf725e0",
+    "head": "- name: Check evidence anchors"
   },
   "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:30-34|0": {
     "anchor": ".github/workflows/ci.yml:30-34",
@@ -839,18 +849,18 @@
     "fp": "5681dec687477971",
     "head": "# Deadlines are on the steps, and the reason is measured rather than stylistic."
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:60-73|0": {
-    "anchor": ".github/workflows/ci.yml:60-73",
-    "fp": "f86ad08dce5d926a",
-    "head": "- uses: actions/checkout@v4"
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:68-73|0": {
+    "anchor": ".github/workflows/ci.yml:68-73",
+    "fp": "51373fcfc91d4d96",
+    "head": "- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:89-105|0": {
-    "anchor": ".github/workflows/ci.yml:89-105",
-    "fp": "dbfa18e0a9a77318",
-    "head": "lint:"
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:85-91|0": {
+    "anchor": ".github/workflows/ci.yml:85-91",
+    "fp": "e0f120e4b6e16833",
+    "head": "# `--ignore-scripts` because a manifest is contributor-editable: an install"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:932-941|0": {
-    "anchor": "CHANGELOG.md:932-941",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:941-950|0": {
+    "anchor": "CHANGELOG.md:941-950",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -904,24 +914,24 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5683-5685|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5683-5685",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5719-5721|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5719-5721",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5849-5851|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5849-5851",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5885-5887|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5885-5887",
     "fp": "2f7e750267ca9c0c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5870-5873|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5870-5873",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5906-5909|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5906-5909",
     "fp": "ec5e4ca8fe8fb6c8",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:250-452|0": {
-    "anchor": "README.md:250-452",
-    "fp": "fb7e65f0ac57e219",
+  "PRODUCT_BACKLOG.md|item-details|README.md:250-485|0": {
+    "anchor": "README.md:250-485",
+    "fp": "5d65886a021010d2",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:29-39|0": {
@@ -929,13 +939,18 @@
     "fp": "413b46d0983adb66",
     "head": "### Your data stays with you"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:303-307|0": {
-    "anchor": "README.md:303-307",
+  "PRODUCT_BACKLOG.md|item-details|README.md:298-329|0": {
+    "anchor": "README.md:298-329",
+    "fp": "a5a2da4f69384ca3",
+    "head": "### Reviewing an update to a pinned action"
+  },
+  "PRODUCT_BACKLOG.md|item-details|README.md:336-340|0": {
+    "anchor": "README.md:336-340",
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:394-405|0": {
-    "anchor": "README.md:394-405",
+  "PRODUCT_BACKLOG.md|item-details|README.md:427-438|0": {
+    "anchor": "README.md:427-438",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -2084,6 +2099,16 @@
     "fp": "4de108b8d5f4e06f",
     "head": "test('the parser accounts for every step and every deadline the file declares', () => {"
   },
+  "PRODUCT_BACKLOG.md|item-details|test/ci-supply-chain.test.js:41-56|0": {
+    "anchor": "test/ci-supply-chain.test.js:41-56",
+    "fp": "6c58ddf2fbbe16d1",
+    "head": "test('every action is pinned to a full commit revision, never a tag or a branch', () => {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|test/ci-supply-chain.test.js:72-101|0": {
+    "anchor": "test/ci-supply-chain.test.js:72-101",
+    "fp": "2f8b422e3007da0d",
+    "head": "test('no checkout leaves its token behind in the git config', () => {"
+  },
   "PRODUCT_BACKLOG.md|item-details|test/library.test.js:196-226|0": {
     "anchor": "test/library.test.js:196-226",
     "fp": "aaf0e826528174f3",
@@ -2714,14 +2739,14 @@
     "fp": "6fad27f41f5632cb",
     "head": "<div class=\"sub\">Everything lives in this browser, at this exact address. Nothing is uploaded.</div>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-088|.github/workflows/ci.yml:60-73|0": {
-    "anchor": ".github/workflows/ci.yml:60-73",
-    "fp": "f86ad08dce5d926a",
-    "head": "- uses: actions/checkout@v4"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-088|.github/workflows/ci.yml:68-91|0": {
+    "anchor": ".github/workflows/ci.yml:68-91",
+    "fp": "7f403c886abe3065",
+    "head": "- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-089|.github/dependabot.yml:34-70|0": {
-    "anchor": ".github/dependabot.yml:34-70",
-    "fp": "e10e50c8387bd0f0",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-089|.github/dependabot.yml:34-71|0": {
+    "anchor": ".github/dependabot.yml:34-71",
+    "fp": "91ecdec9e58cc941",
     "head": "updates:"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3246-3294|0": {
@@ -2744,8 +2769,8 @@
     "fp": "a6bd614952b576d4",
     "head": "await handle(req, res);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-095|.github/workflows/ci.yml:85-87|0": {
-    "anchor": ".github/workflows/ci.yml:85-87",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-095|.github/workflows/ci.yml:103-105|0": {
+    "anchor": ".github/workflows/ci.yml:103-105",
     "fp": "5369e6f0f1243202",
     "head": "- name: Run tests"
   },
