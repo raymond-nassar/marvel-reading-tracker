@@ -274,8 +274,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5745|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5745",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:5763|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5763",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -854,13 +854,18 @@
     "fp": "51373fcfc91d4d96",
     "head": "- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"
   },
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:68-91|0": {
+    "anchor": ".github/workflows/ci.yml:68-91",
+    "fp": "a975783509d372b6",
+    "head": "- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"
+  },
   "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:85-91|0": {
     "anchor": ".github/workflows/ci.yml:85-91",
-    "fp": "e0f120e4b6e16833",
+    "fp": "295f2fa9e46efe7a",
     "head": "# `--ignore-scripts` because a manifest is contributor-editable: an install"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:941-950|0": {
-    "anchor": "CHANGELOG.md:941-950",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:942-951|0": {
+    "anchor": "CHANGELOG.md:942-951",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -914,24 +919,24 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5719-5721|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5719-5721",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5737-5739|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5737-5739",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5885-5887|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5885-5887",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5903-5905|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5903-5905",
     "fp": "2f7e750267ca9c0c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5906-5909|0": {
-    "anchor": "PRODUCT_BACKLOG.md:5906-5909",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:5924-5927|0": {
+    "anchor": "PRODUCT_BACKLOG.md:5924-5927",
     "fp": "ec5e4ca8fe8fb6c8",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:250-485|0": {
-    "anchor": "README.md:250-485",
-    "fp": "5d65886a021010d2",
+  "PRODUCT_BACKLOG.md|item-details|README.md:250-489|0": {
+    "anchor": "README.md:250-489",
+    "fp": "369bce9494594803",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:29-39|0": {
@@ -939,18 +944,18 @@
     "fp": "413b46d0983adb66",
     "head": "### Your data stays with you"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:298-329|0": {
-    "anchor": "README.md:298-329",
-    "fp": "a5a2da4f69384ca3",
+  "PRODUCT_BACKLOG.md|item-details|README.md:298-333|0": {
+    "anchor": "README.md:298-333",
+    "fp": "3eae5484d412a37e",
     "head": "### Reviewing an update to a pinned action"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:336-340|0": {
-    "anchor": "README.md:336-340",
+  "PRODUCT_BACKLOG.md|item-details|README.md:340-344|0": {
+    "anchor": "README.md:340-344",
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:427-438|0": {
-    "anchor": "README.md:427-438",
+  "PRODUCT_BACKLOG.md|item-details|README.md:431-442|0": {
+    "anchor": "README.md:431-442",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -2099,15 +2104,15 @@
     "fp": "4de108b8d5f4e06f",
     "head": "test('the parser accounts for every step and every deadline the file declares', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|test/ci-supply-chain.test.js:41-56|0": {
-    "anchor": "test/ci-supply-chain.test.js:41-56",
-    "fp": "6c58ddf2fbbe16d1",
-    "head": "test('every action is pinned to a full commit revision, never a tag or a branch', () => {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|test/ci-supply-chain.test.js:72-101|0": {
-    "anchor": "test/ci-supply-chain.test.js:72-101",
-    "fp": "2f8b422e3007da0d",
+  "PRODUCT_BACKLOG.md|item-details|test/ci-supply-chain.test.js:124-142|0": {
+    "anchor": "test/ci-supply-chain.test.js:124-142",
+    "fp": "f4239ed7071716e4",
     "head": "test('no checkout leaves its token behind in the git config', () => {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|test/ci-supply-chain.test.js:74-108|0": {
+    "anchor": "test/ci-supply-chain.test.js:74-108",
+    "fp": "c30e81873a614053",
+    "head": "test('every action is pinned to a full commit revision, never a tag or a branch', () => {"
   },
   "PRODUCT_BACKLOG.md|item-details|test/library.test.js:196-226|0": {
     "anchor": "test/library.test.js:196-226",
@@ -2741,7 +2746,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-088|.github/workflows/ci.yml:68-91|0": {
     "anchor": ".github/workflows/ci.yml:68-91",
-    "fp": "7f403c886abe3065",
+    "fp": "a975783509d372b6",
     "head": "- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-089|.github/dependabot.yml:34-71|0": {

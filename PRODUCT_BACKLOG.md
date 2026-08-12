@@ -2533,14 +2533,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:427-438`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:431-442`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:336-340`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:340-344`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -4517,7 +4517,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5885-5887` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5903-5905` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4527,11 +4527,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:175-177`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5906-5909`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5924-5927`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5719-5721` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5737-5739` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4739,7 +4739,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:941-950` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:942-951` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:165-169` and
 `PRODUCT_BACKLOG.md:175-177` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4989,9 +4989,7 @@ Constraint gate: checked 1 to 11, none breached.
 Fork pull requests already run with a read-only token, no repository secret and no privileged event,
 which is the right baseline. The two actions executed through mutable major tags, checkout kept its
 token by default, and `npm ci` was an execution boundary a contributor could change through the
-manifest. Evidence: `.github/workflows/ci.yml:1-19`, `absent: any mutable major tag, any checkout
-keeping its credentials, or any npm ci without --ignore-scripts, read of the uses: and run: lines in
-.github/workflows/ci.yml`.
+manifest. Evidence: `.github/workflows/ci.yml:1-19`, `.github/workflows/ci.yml:68-91`.
 
 Shipped. All four `uses:` lines now name a full commit revision with the version written beside it,
 both checkouts drop their credentials, and both installs skip dependency lifecycle scripts.
@@ -5005,12 +5003,12 @@ rather than abandoned. Checked before deciding rather than assumed: `checkout` d
 byte identical `action.yml` at `v4` and `v7.0.1` apart from that runtime, and `setup-node` drops only
 `always-auth` from its inputs, which this workflow never passed. So the pins are the current major.
 
-Ignoring install scripts was measured rather than hoped: 0 of the 91 packages the lockfile names
+Ignoring install scripts was measured rather than hoped: 0 of the 90 packages the lockfile names
 declares one, so the flag changes nothing that gets installed today and closes the boundary before
 something does. Lint and the full suite were run under `npm ci --ignore-scripts` to confirm it.
 
-Verified: six tests were added and each was watched failing. Eleven mutations were run and each turns
-exactly the intended one red: a tag in place of a revision, a branch name, a seven-character
+Verified: seven tests were added and each was watched failing. Nineteen mutations were run and each
+turns exactly the intended one red: a tag in place of a revision, a branch name, a seven-character
 revision, a missing version comment, a comment that is a date rather than a version, each checkout
 losing its `persist-credentials` line, that line set to `true` in as many words, an install without
 the flag, a package acquiring an install script in the lockfile, and a second workflow file that is
@@ -5020,12 +5018,32 @@ remember to extend, and the first proof run showed the mutation passing because 
 untracked, which is the same tracked-file property the anchors gate has and is correct for CI, where
 a contributor's workflow arrives tracked or not at all.
 
+Review found six more shapes, every one of which the first version of these checks read as green,
+and they are worth recording because five of the six were failures of parsing rather than of policy.
+A checkout was recognised only when `uses:` was its opening key, so the ordinary `- name:` form was
+never examined at all and defaulted to keeping its token; the guard that the list was non-empty did
+not help, because the two compliant checkouts kept the count above zero. `uses:` was matched against
+a literal `"- "`, so a step written `-   uses:` was invisible to every check at once. A container
+image was read by the rule written for actions, which got it backwards in both directions: the
+mutable `docker://alpine:3.19` has no `@` and was skipped as though it were a local path, while the
+correctly digest-pinned form was the only container reference the check could fail. `npm i` was not
+read as an install, leaving the boundary one character wide. Nothing looked outside
+`.github/workflows`, so a composite action was the one place `uses:` could still be written
+unchecked. The sixth is policy rather than parsing: `npm rebuild` and `npx` both run package code
+the install flag exists to prevent, so a seventh test now refuses them. Each is now a mutation, and
+the parsing is done once by a shared step splitter rather than by four regexes that had drifted
+apart.
+
+The count was wrong too, in three places at once. The lockfile has 91 entries, but one of them keys
+the project itself rather than a locked package, so the honest figure is 90, which is what `BL-089`
+already said two sections away.
+
 The `github-actions` entry `BL-089` added is what now moves these pins, and its comment was rewritten
 here because it described the tags this item replaced.
 
 Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
-`.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:41-56`,
-`test/ci-supply-chain.test.js:72-101`, `README.md:298-329`.
+`.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:74-108`,
+`test/ci-supply-chain.test.js:124-142`, `README.md:298-333`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -5304,7 +5322,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:250-485`,
+are valuable history and are not a concise public policy. Evidence: `README.md:250-489`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 **BL-098: Define review ownership and contribution intake**

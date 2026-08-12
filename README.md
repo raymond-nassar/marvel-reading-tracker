@@ -313,9 +313,12 @@ rewrites the version comment in the same pull request. Three things are worth ch
 before merging one:
 
 - The comment and the revision agree. Ask GitHub what the tag points at,
-  `gh api repos/actions/checkout/git/ref/tags/v7.0.1`, and compare it to the revision in
+  `gh api repos/actions/checkout/commits/v7.0.1`, and compare it to the revision in
   the diff. A revision that does not match the version claimed beside it is the whole
   attack this pinning exists to stop, and it is the one thing a reader cannot check by eye.
+  Read the tag through `commits` rather than through its ref: an annotated tag's ref names the
+  tag object rather than the commit, so the ref route answers a different question and reports a
+  mismatch on a perfectly good pin.
 - The action still declares the inputs this workflow passes it, and a major bump has not
   removed one. Its `action.yml` at the new revision lists them.
 - The runtime it declares is one the runners still support. A revision never follows its
@@ -323,10 +326,11 @@ before merging one:
   it deliberately. That is the reason these are pinned to the current major rather than to
   the version they were first written against.
 
-A test enforces the shape rather than the judgement: every call is a full revision, every
-revision carries a readable version comment, no checkout keeps its credentials, and no
-install step runs dependency lifecycle scripts. It reads every workflow the repository
-tracks, so a second workflow added later is covered without anyone remembering to add it.
+Tests enforce the shape rather than the judgement: every call is a full revision, every
+revision carries a readable version comment, a container image is named by digest, no checkout
+keeps its credentials, no install step runs dependency lifecycle scripts, and nothing runs the
+package code that flag skips. They read every workflow and composite action the repository
+tracks, so a second one added later is covered without anyone remembering to add it.
 
 ### Adding a curated reading list
 

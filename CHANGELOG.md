@@ -23,7 +23,8 @@ quote in a bug report.
   names an exact version it has looked at, and an automatic weekly proposal offers newer ones for
   review instead. The checks also stop handing those tools a key they never needed, and stop letting
   a change to the project's own dependency list run code of its own during setup. Tests hold all
-  four of those properties so a later edit cannot quietly drop one.
+  four of those properties so a later edit cannot quietly drop one, and they read every automated
+  check the project has rather than the one they were written against.
 
 - **Automated checks now have a time limit, so a stuck one gives up in minutes rather than in
   hours.** Nothing about the app changes and nothing you have saved is affected. Before this, a
