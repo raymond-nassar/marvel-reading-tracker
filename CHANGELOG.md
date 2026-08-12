@@ -18,10 +18,10 @@ quote in a bug report.
 
 - **The project now says plainly where its comic data came from, and no longer claims a licence
   over parts of it that were never the project's to license.** Nothing you have saved is affected,
-  and the only thing that changes on screen is three sentences that were saying the wrong thing, two
-  of them on the About page and one on the Backup and settings screen. One told you the bundled
-  reading lists were not put together here, when most of them are. The comic details shown in the app
-  were never written here:
+  and on screen only four sentences change. Three were saying the wrong thing, two of those on the
+  About page and one on the Backup and settings screen, and one of the three told you the bundled
+  reading lists were not put together here when most of them are. The fourth was reworded to match
+  and says the same thing it did. The comic details shown in the app were never written here:
   they came from Marvel, passed through two other people's projects, and arrived with terms nobody
   had written down. A new page in the documentation traces that path hand by hand, lists exactly
   what was copied and how much of it, and states what the project's own licence does and does not
