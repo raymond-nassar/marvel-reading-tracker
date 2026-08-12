@@ -155,7 +155,7 @@ quote in a bug report.
 
   An eleventh review found the enumeration back again, for the sixth review running, this time in the
   gap the noun rule allowed between the preposition and the covers word. That gap was a list of
-  nineteen determiners, so "the details for the hidden covers are still fetched" stepped straight over
+  eighteen determiners, so "the details for the hidden covers are still fetched" stepped straight over
   it, and seven sentences of that shape all pardoned. The fix is not another list but one that cannot
   be incomplete: prepositions are a closed class in English, so all fifty-three are written out and the
   gap becomes any run of words at all. Each of the fifty new ones was measured on its own and then all
@@ -174,21 +174,59 @@ quote in a bug report.
   repair beside it. Four of the twenty-three still pardon, all four the same shape, and they join the
   recorded escapes rather than being quietly left out.
 
+  A twelfth review took the noun rule's two halves separately and got through both. The word the
+  covers hang off was read from the same list the acknowledgement itself is built from, and that list
+  holds the participles, because "still requested" is how the copy says it. A participle is also the
+  one form of a verb that can attach to the noun in front of it, so "the details requested for the
+  covers are still fetched" gives the covers a request word to hang off and hands back every pardon
+  the round before had closed. Reading only the forms that cannot be a participle fixes it, and still
+  accepts both ways the shipped copy writes the word, "the requests for the covers" and "the app still
+  asks for the image". Seven sentences of that shape are held as false now, and all seven are caught.
+
+  The other half failed more quietly. That gap was written as word characters, so a character outside
+  that class made the whole attachment pattern find nothing, and finding nothing was read as attaching
+  to nothing, which is the answer that lets a sentence through. The one gap the rule could not read
+  was the one gap it excused. A bracket did it, a quotation mark did it, a hyphen inside the noun did
+  it, and so did bold text, a code span and a link, which matters because two of the six surfaces
+  checked are read as raw markdown. The gap is now anything at all short of a clause end, which is
+  what this entry had already claimed it was. Both fixes were measured apart and together, and neither
+  refuses a true sentence, pardons a false one, closes an escape, accepts a refusal, breaks a repair
+  or fails a surface.
+
+  Three numbers this entry stated were wrong and are corrected rather than repeated. The determiner
+  list replaced last round held eighteen, not nineteen. Walking left accepts twelve of the recorded
+  refusals rather than all of them. And the cost of reading every preposition was described as a
+  clause-opening preposition capturing the covers word beside it, when it captures every covers word
+  in the clause: "Even without cover art the app still requests every cover" has two and loses both,
+  and is recorded as the fourteenth refusal, repaired by deleting a word.
+
+  Two limits are recorded rather than closed, because closing either costs more true English than it
+  buys. A trailing fragment with no content of its own is handed back to the clause in front of it,
+  which is right when that clause is the true half and wrong when it is the lie, and "no cover is
+  requested, regardless" is built out of a covers word and a request word so it reads as its own
+  acknowledgement. Removing the six words that do this refuses five true sentences and does not close
+  the shape, since dropping the comma evades it again. And the rule that stops "a backup covers every
+  list you keep" being read as a claim about pictures also decides whether a passage is examined at
+  all, where it works the other way round: "hide the covers you have not read and Marvel is never
+  asked for them" is never looked at. Reading the word a second way there catches it and refuses four
+  ordinary sentences. Nine escapes are recorded across the two, so closing either later turns the
+  suite red.
+
   The price is now in the repository rather than in this paragraph. Both documents used to say that a
   proof would disagree with anyone who quietly closed one of these limits, and no such proof was in
   the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 44
-  sentences written to be true, 92 written to be false, the 7 passages that still pardon themselves,
-  and 13 true sentences the check refuses, each stored beside a repair that is itself asserted to
+  sentences written to be true, 105 written to be false, the 16 passages that still pardon themselves,
+  and 14 true sentences the check refuses, each stored beside a repair that is itself asserted to
   pass. Closing an escape or accepting a refusal turns the suite red rather than passing silently,
   which is what those sentences claimed all along.
 
-  Those 13 are a regression list, not a bill. Calling them the cost of the check, which this entry
+  Those 14 are a regression list, not a bill. Calling them the cost of the check, which this entry
   did, reads as though they were every true sentence it refuses, and they are nowhere near it:
   twenty-eight more were written in the words a maintainer would actually use and fourteen of them
   were refused. What the list buys is that a refusal already known cannot start being accepted
   without the suite saying so.
 
-  Six of the 13 do not name the covers in the clause that asserts: four say "the requests" without
+  Six of the 14 do not name the covers in the clause that asserts: four say "the requests" without
   saying which, and two lean on "one" or "each" as a word for the covers, which the check stopped
   accepting in the ninth round because "each of your lists is unchanged" pardoned a lie with it. Five
   of those six are repaired by naming the covers; the sixth needs the parenthetical moved as well. The
@@ -197,9 +235,9 @@ quote in a bug report.
   repair by moving that parenthetical rather than by adding anything, four of them to the end of the
   sentence and one to the front. So the claim that every repair adds truth rather than removing it,
   which this entry made for three rounds, was not quite right either. The twelfth is the
-  object-pronoun sentence described above and the thirteenth is the clause-initial preposition.
+  object-pronoun sentence described above and the last two are the clause-opening preposition.
   Walking left to find the subject would accept the middle
-  five, and it was measured: it also pardons fifty-one of the ninety-two
+  five, and it was measured: it also pardons sixty-four of the hundred and five
   false sentences. A passage that says two things and means one of them still needs a reader.
 
   Thirty-seven deliberately broken versions of the shipped sentences are tried against the real files
@@ -209,13 +247,16 @@ quote in a bug report.
   third in the tenth round, "the app still asks for the image", and that one was repaired in the
   instrument rather than in the corpus, because the copy's own verb is a fair way to write it. Eight
   ways of undoing the eighth round's repairs were each applied on
-  their own, three more undo the ninth round's, five more undo the tenth round's and six more undo the
-  eleventh round's; every one turns the suite red, naming which test or which sentence defends it. Two
-  of that last six first reported caught while proving nothing, because the replacement text used to
+  their own, three more undo the ninth round's, five more undo the tenth round's, six more undo the
+  eleventh round's and five more undo the twelfth round's; every one turns the suite red, naming which
+  test or which sentence defends it. Two
+  of the eleventh round's six first reported caught while proving nothing, because the replacement text
+  used to
   build the broken version carried a dollar sign before a backtick, which JavaScript reads as a
   reference back into the match, so the broken version would not parse. A version that will not parse
   fails every check in the file and defends none of them, and both were rebuilt until they failed on
-  the sentence they are there to defend.
+  the sentence they are there to defend. The count of distinct repairs needed no broken version to
+  prove it can fail: adding the fourteenth refusal turned it red by itself.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two
