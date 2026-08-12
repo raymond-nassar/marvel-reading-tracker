@@ -295,6 +295,43 @@ port, and `MRT_NO_OPEN=1` to stop it opening a browser for you.
 would fail builds for reasons unrelated to the change under test. Run it by hand before
 trusting a release.
 
+### Reviewing an update to a pinned action
+
+The workflow calls each third-party action by a full commit revision rather than by a tag,
+with the version it corresponds to written in a comment beside it:
+
+```
+- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+```
+
+A tag is a pointer the action's owner can move at any time. Calling one means agreeing in
+advance to run whatever they publish next, on a runner that holds a token for this
+repository. A revision cannot be moved, so what was reviewed is what runs.
+
+Dependabot proposes the updates. It understands this form, so it raises the revision and
+rewrites the version comment in the same pull request. Three things are worth checking
+before merging one:
+
+- The comment and the revision agree. Ask GitHub what the tag points at,
+  `gh api repos/actions/checkout/commits/v7.0.1`, and compare it to the revision in
+  the diff. A revision that does not match the version claimed beside it is the whole
+  attack this pinning exists to stop, and it is the one thing a reader cannot check by eye.
+  Read the tag through `commits` rather than through its ref: an annotated tag's ref names the
+  tag object rather than the commit, so the ref route answers a different question and reports a
+  mismatch on a perfectly good pin.
+- The action still declares the inputs this workflow passes it, and a major bump has not
+  removed one. Its `action.yml` at the new revision lists them.
+- The runtime it declares is one the runners still support. A revision never follows its
+  tag, so an action left pinned to an old major keeps its old runtime until someone moves
+  it deliberately. That is the reason these are pinned to the current major rather than to
+  the version they were first written against.
+
+Tests enforce the shape rather than the judgement: every call is a full revision, every
+revision carries a readable version comment, a container image is named by digest, no checkout
+keeps its credentials, no install step runs dependency lifecycle scripts, and nothing runs the
+package code that flag skips. They read every workflow and composite action the repository
+tracks, so a second one added later is covered without anyone remembering to add it.
+
 ### Adding a curated reading list
 
 Curated lists are data, not code. To add one, append an entry to

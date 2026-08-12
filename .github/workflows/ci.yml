@@ -57,10 +57,24 @@ jobs:
       # Whole jobs worst: lint 27s, tests 32s. Every deadline below is at least
       # twelve times the worst that step has ever taken, so a cold npm cache or a
       # slow registry stays green and only a hang goes red.
-      - uses: actions/checkout@v4
+      # Pinned to a full commit revision rather than a tag. A tag is a mutable pointer
+      # the action's owner can move, so `@v7` is a promise to run whatever they publish
+      # next, on a runner that holds a token. The revision below is the one reviewed.
+      # It is deliberately the current major: a pinned revision never follows its tag,
+      # so pinning v4 would have frozen its node20 runtime in place with nothing left
+      # to move it. Checked before pinning: v4 and v7 declare an identical action.yml
+      # apart from that runtime. Dependabot proposes the next revision and rewrites the
+      # comment beside it, which is the update route and the reason for the comment.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         timeout-minutes: 2
+        with:
+          # Nothing in this job pushes, so the token has no work to do after checkout.
+          # Left on, it is written into the git config and readable by every later step.
+          persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      # setup-node v7 drops only `always-auth` from v4's inputs, which this file never
+      # used. The two it does use are unchanged.
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         timeout-minutes: 4
         with:
           node-version: ${{ matrix.node }}
@@ -68,9 +82,13 @@ jobs:
 
       # The app itself still ships no runtime dependencies. The lockfile exists only
       # for the lint tooling, so this installs nothing that reaches the browser.
+      # `--ignore-scripts` because a manifest is contributor-editable: an install
+      # script is arbitrary code a pull request can add, running before any review
+      # step. Measured: 0 of the 90 locked packages declare one, so this costs
+      # nothing today and closes the boundary before one arrives.
       - name: Install
         timeout-minutes: 4
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       # `npm test` is deliberately `node --test` with no path argument. Node only
       # began expanding glob patterns after 20, so a quoted pattern would be read
@@ -99,12 +117,14 @@ jobs:
       # setting turns the step red instead of leaving it green over a single commit.
       # A test pins the pairing, because this was the one decision in this file with
       # nothing but a comment behind it, and a comment is not a check.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         timeout-minutes: 2
         with:
           fetch-depth: 0
+          # This job reads more history than any other and still never writes.
+          persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         timeout-minutes: 4
         with:
           node-version: '24'
@@ -112,7 +132,7 @@ jobs:
 
       - name: Install
         timeout-minutes: 4
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       # Reports only. `npm run lint:fix` is the local counterpart; CI never rewrites
       # the tree, so formatting drift shows up as a failure rather than a surprise

@@ -16,6 +16,16 @@ quote in a bug report.
 
 ### Added
 
+- **The automated checks now run a fixed, reviewed version of the third-party tools they borrow,
+  rather than whatever the latest version happens to be that day.** Nothing about the app changes
+  and nothing you have saved is affected. Those tools are maintained by other people, and asking
+  for the newest one meant agreeing in advance to run whatever they published next. The project now
+  names an exact version it has looked at, and an automatic weekly proposal offers newer ones for
+  review instead. The checks also stop handing those tools a key they never needed, and stop letting
+  a change to the project's own dependency list run code of its own during setup. Tests hold all
+  four of those properties so a later edit cannot quietly drop one, and they read every automated
+  check the project has rather than the one they were written against.
+
 - **Automated checks now have a time limit, so a stuck one gives up in minutes rather than in
   hours.** Nothing about the app changes and nothing you have saved is affected. Before this, a
   check that hung had six hours to do it, which was never a deliberate figure: it was simply what
