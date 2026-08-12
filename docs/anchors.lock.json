@@ -864,8 +864,8 @@
     "fp": "295f2fa9e46efe7a",
     "head": "# `--ignore-scripts` because a manifest is contributor-editable: an install"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:969-978|0": {
-    "anchor": "CHANGELOG.md:969-978",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:977-986|0": {
+    "anchor": "CHANGELOG.md:977-986",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -934,8 +934,8 @@
     "fp": "ec5e4ca8fe8fb6c8",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:257-497|0": {
-    "anchor": "README.md:257-497",
+  "PRODUCT_BACKLOG.md|item-details|README.md:263-503|0": {
+    "anchor": "README.md:263-503",
     "fp": "e70598daf3d2ce79",
     "head": "## For contributors"
   },
@@ -944,18 +944,18 @@
     "fp": "413b46d0983adb66",
     "head": "### Your data stays with you"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:305-340|0": {
-    "anchor": "README.md:305-340",
+  "PRODUCT_BACKLOG.md|item-details|README.md:311-346|0": {
+    "anchor": "README.md:311-346",
     "fp": "3eae5484d412a37e",
     "head": "### Reviewing an update to a pinned action"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:347-351|0": {
-    "anchor": "README.md:347-351",
+  "PRODUCT_BACKLOG.md|item-details|README.md:353-357|0": {
+    "anchor": "README.md:353-357",
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:439-450|0": {
-    "anchor": "README.md:439-450",
+  "PRODUCT_BACKLOG.md|item-details|README.md:445-456|0": {
+    "anchor": "README.md:445-456",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -2789,8 +2789,8 @@
     "fp": "a76c62ab06ae335e",
     "head": "**Do not open a public issue, discussion or pull request for a suspected vulnerability.** A public"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:257-302|0": {
-    "anchor": "README.md:257-302",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:263-308|0": {
+    "anchor": "README.md:263-308",
     "fp": "affead99e99ed544",
     "head": "## For contributors"
   },

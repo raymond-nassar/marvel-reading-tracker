@@ -16,6 +16,14 @@ quote in a bug report.
 
 ### Added
 
+- **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
+  Nothing in the app changes and nothing you have saved is affected. It sits alongside the two
+  companion sites already listed there, and it earns the place twice over: it publishes the
+  editorial guides that explain what is worth reading and why, rather than only what order to read
+  it in, and one of the reading lists that ships with this app was compiled from its guide to the
+  collected editions. That second fact was already recorded in the provenance notes and in the list
+  itself, so the only thing missing was the credit where a new reader would look for it.
+
 - **The project now says plainly where its comic data came from, and no longer claims a licence
   over parts of it that were never the project's to license.** Nothing you have saved is affected,
   and on screen only four sentences change. Three were saying the wrong thing, two of those on the
