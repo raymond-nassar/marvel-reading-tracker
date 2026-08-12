@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6520-6522` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6523-6525` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6539-6543`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6542-6546`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6354-6356` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6357-6359` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1252-1261` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1254-1263` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5413,15 +5413,18 @@ happens to help. That is the second instrument returning under a new name, and i
 numbers rather than on principle. Two refusals share a repair, so the twenty have nineteen distinct
 repaired forms.
 
-Forty-three mutations run against the finished rules on the real files and all forty-three are
+Thirty-seven mutations run against the finished rules on the real files and all thirty-seven are
 caught. Fifteen more run the other way: a true sentence rewritten into a different true phrasing has
 to leave the suite green. That is the half no lie mutation can express and the half both earlier
-instruments failed, and it is the half that has now caught a cost in each of two rounds. Fourteen of
+instruments failed, and it is the half that has now caught a cost in each of three rounds. Thirteen of
 the fifteen pass. "Every one is requested regardless" stopped passing in the eighth round when "one"
 left the reference, and "hiding them changes nothing about what is requested" stopped passing in the
 ninth when the subject tie landed. Each is repaired by naming the cover, and both the refused and the
-repaired form of each are recorded. The tenth round briefly cost a fifteenth, "the app still asks for
-the image", which is the shipped copy's own verb: hanging the covers noun off a request word was
+repaired form of each are recorded. "The image is requested and unchanged" stopped passing in the
+thirteenth round when a coordinator began ending a clause, and that round records it as a refusal with
+its repair before this harness was re-run, so the two found the same sentence independently. The tenth
+round briefly cost a further one, "the app still asks for the image", which is the shipped copy's own
+verb: hanging the covers noun off a request word was
 written as a noun test first, and the harness caught it in the same run that proposed it, so the test
 reads the same word list the acknowledgement itself is built from and the rewrite passes again.
 Separately, eight ways of undoing the eighth round's repairs were each applied

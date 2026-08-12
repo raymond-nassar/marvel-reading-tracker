@@ -261,10 +261,12 @@ quote in a bug report.
   it, which recovers three true sentences and reopens none of the seven evasions. Four true sentences
   of the same shape are still refused and are recorded with repairs.
 
-  Forty-three deliberately broken versions of the shipped sentences are tried against the real files
-  and all forty-three are refused. Fifteen true rewrites in different true words are tried as well,
-  and fourteen are accepted; the fifteenth is the sentence the subject tie costs, and it is the
-  second round running in which this half of the proof, and only this half, found a cost. It found a
+  Thirty-seven deliberately broken versions of the shipped sentences are tried against the real files
+  and all thirty-seven are refused. Fifteen true rewrites in different true words are tried as well,
+  and thirteen are accepted. The fourteenth is the sentence the subject tie costs. The fifteenth is
+  the one the thirteenth round costs, "the image is requested and unchanged", which that round already
+  records as a refusal with its repair, so the file-level harness and the corpus in the tree name the
+  same sentence independently. It found a
   third in the tenth round, "the app still asks for the image", and that one was repaired in the
   instrument rather than in the corpus, because the copy's own verb is a fair way to write it. Eight
   ways of undoing the eighth round's repairs were each applied on
