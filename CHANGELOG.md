@@ -89,32 +89,57 @@ quote in a bug report.
   by writing "without cover art" and "disable the images", and a seventh got past it twice more. Both
   rounds of gaps are closed and it remains a list.
 
-  The harder problem took three rounds and two wrong answers. A true clause about something else
+  The harder problem took four rounds and three wrong answers. A true clause about something else
   will pardon a false one sitting beside it: "no cover is requested, your notes are unchanged" says
-  one true thing and one false thing, and the check was reading the true half. Both attempts to fix
-  that reached for the punctuation, refusing an acknowledgement separated from its request by a
-  comma and then one separated by a conjunction. Measured against the thirty-eight true sentences
-  the check is now proved against, the first refuses seven of them and the second four, while a
-  comma splice walks through both needing neither mark. What separates the two cases is not the
-  punctuation but the subject: "your notes" is a different subject, and "regardless" is not a
-  subject at all. So the acknowledgement now has to be about the covers, by name or by pronoun, in
-  whichever clause is making the assertion. That closes three of the four passages recorded as
-  unreachable last round, and four of the six this round found.
+  one true thing and one false thing, and the check was reading the true half. The first two attempts
+  reached for the punctuation, refusing an acknowledgement separated from its request by a comma and
+  then one separated by a conjunction. Run against the 42 true sentences the check is now proved
+  against, the first refuses 5 of them and the second 2, while a comma splice walks through both
+  needing neither mark. What separates the two cases is not the punctuation but the subject: "your
+  notes" is a different subject, and "regardless" is not a subject at all. So the acknowledgement now
+  has to be about the covers, by name or by pronoun, in whichever clause is making the assertion.
 
-  The price is recorded rather than described. Four true sentences are refused, each for saying "the
-  requests" without saying which requests, and each repaired by naming the covers; the repaired
-  wording is held in the proof beside the refused wording, so the repair is demonstrated and not
-  merely promised. Three passages still pardon themselves, one across a full stop and two by hanging
-  the true clause off the false one with no verb of its own. Those three are held as expected
-  escapes, so nobody can report them closed without the proof disagreeing. A passage that says two
-  things and means one of them still needs a reader.
+  The third wrong answer was deciding which clause that is. A trailing clause was treated as making
+  its own assertion when it carried a verb from a list of thirty, and as leaning on the clause before
+  it otherwise. That is the wrong way round, and an eighth review demonstrated why with four
+  sentences whose verbs were "loads", "look", "survive" and "behaves". A verb missing from the list
+  made a false clause look like it was leaning on its neighbour, so it borrowed a subject about the
+  covers and passed, and nothing was refused to signal it. All four had been caught two rounds
+  earlier. The test is now inverted: a trailing clause asserts unless it is one of a listed set of
+  subjectless fragments, so a gap in the list refuses a true sentence instead, which is loud and
+  repairable. The same review found "one" and "each" being read as covers pronouns, which pardoned
+  "no cover is requested, and each of your lists is unchanged". They are gone.
 
-  Thirty-seven deliberately broken versions of these sentences are tried against the check and all
-  thirty-seven are refused. Fifteen true sentences rewritten in different true words are tried as
-  well, and all fifteen are accepted. That second set is the one no broken version can stand in for:
-  four of the first five were being refused two rounds ago by the instrument this one replaced, and
-  the two punctuation repairs since then refuse seven and four of the true sentences respectively,
-  every one of them a sentence the check exists to allow.
+  Together those close five of the six passages the seventh review got past, four of them by the tie
+  to the subject, and one of the three recorded a round earlier as unclosable. That third one was
+  recorded as unclosable on the reasoning that binding the acknowledgement to the covers would
+  convict three of the four acknowledgements the app actually ships, because they say "them" and
+  "they". Both halves of that were true and the conclusion was not: admitting the pronouns alongside
+  the nouns convicts none of them.
+
+  The price is now in the repository rather than in this paragraph. Both documents used to say that a
+  proof would disagree with anyone who quietly closed one of these limits, and no such proof was in
+  the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 42
+  sentences written to be true, 56 written to be false, the 2 passages that still pardon themselves,
+  and the 11 true sentences the check refuses, each stored beside a repair that is itself asserted to
+  pass. Closing an escape or accepting a refusal turns the suite red rather than passing silently,
+  which is what those sentences claimed all along.
+
+  Six of those 11 refusals do not name the covers in the clause that asserts: four say "the requests"
+  without saying which, and two lean on "one" or "each" as a word for the covers, which the check
+  stopped accepting this round because "each of your lists is unchanged" pardoned a lie with it. Those
+  six are repaired by naming the covers. The other five do name them in the sentence but not in the
+  asserting clause, because a parenthetical sits between the subject and its verb, and all five repair
+  by moving the parenthetical to the end rather than by adding anything. So the claim that every
+  repair adds truth rather than removing it, which this entry made for three rounds, was not quite
+  right either. Walking left to find the subject would accept all five, and it was measured: it also
+  pardons nineteen of the fifty-six false sentences. A passage that says two things and means one of
+  them still needs a reader.
+
+  Thirty-seven deliberately broken versions of the shipped sentences are tried against the real files
+  and all thirty-seven are refused. Fifteen true rewrites in different true words are tried as well,
+  and all fifteen are accepted. Eight ways of undoing this round's repairs were each applied on their
+  own, and every one turns the suite red, naming which test defends it.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two

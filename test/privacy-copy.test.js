@@ -177,16 +177,19 @@ const ABSOLUTES = [
 // A check whose cheapest repair is to weaken the copy is worse than no check, and both attempts
 // had that property. So this stops looking for the lie. A window that is about the covers switch
 // must acknowledge that the requests continue. There is no lie vocabulary left to evade, since
-// nothing is searching for one, and every repair is an addition of the truth rather than a removal.
-// Four true sentences are refused even so, each for saying "the requests" without saying which
-// requests, and each repaired by naming the covers. The direction of the repair is the property
-// worth having; an absence of false positives is not one any instrument of this kind will have.
+// nothing is searching for one, and the repair to a refused sentence is to name the covers rather
+// than to drop a true word. That is not quite the clean asymmetry it was once claimed to be: five
+// of the eleven refusals below repair by moving a parenthetical to the end of the sentence, which
+// adds nothing and removes nothing. The refused sentences are listed with their repairs at the foot
+// of this file rather than counted here, because a count in prose is a claim nothing checks. An
+// absence of false positives is not a property any instrument of this kind will have; knowing which
+// ones, by name, is.
 //
 // What this does not catch is a window that makes the cease-claim and acknowledges the requests
 // in the same breath, which is a contradiction rather than an overclaim, and is a thing for a
-// reader to catch. Saying otherwise would be the same overclaim one level up. Three passages of
-// that shape are held as expected escapes by the proof that exercises this file, so closing one
-// cannot be reported without the proof disagreeing.
+// reader to catch. Saying otherwise would be the same overclaim one level up. Two passages of that
+// shape are listed at the foot of this file as expected escapes, so closing one turns the suite red
+// rather than passing silently.
 //
 // The other limit is that "a window about the covers switch" is itself an enumeration, and moving
 // the enumeration from the lie to the switch does not abolish it. Review escaped the requirement
@@ -200,10 +203,13 @@ const ABSOLUTES = [
 //
 // "covers" is also a verb, and the collision is not theoretical: "a backup covers every list you
 // keep, and nothing in it is hidden from you" was demanded an acknowledgement it has no business
-// carrying. Every reading of it as our noun is followed by a preposition or a verb, and every
-// reading of it as a verb by the thing covered, so a determiner after it means it is not ours.
+// carrying. Every reading of it as our noun is followed by a preposition or a verb, so what follows
+// tells the two apart. What follows the verb is an enumeration and not a rule, which is worth being
+// plain about, because "covers everything you keep" and "covers what you keep" are outside the list
+// below and are read as the noun. That direction is the affordable one: a word missing here refuses
+// a true sentence that then has to be reworded, rather than excusing a false one.
 const COVERS =
-  /\b(?:cover art|cover images?|cover pictures?|artwork|images?|pictures?|cover|covers(?!\s+(?:a|an|the|every|all|each|both|most|your|my|its|their)\b))\b/i;
+  /\b(?:cover art|cover images?|cover pictures?|artwork|images?|pictures?|cover|covers(?!\s+(?:a|an|the|every|everything|everyone|all|anything|any|each|both|most|whatever|what|your|my|its|their|you|us)\b))\b/i;
 const TURNED_OFF =
   /\b(?:off|hidden|hide|hides|hiding|unchecked|unchecking|unticked|unticking|disable|disabled|disabling|suppress(?:ed|es|ing)?|no longer shown)\b/i;
 // Thirty characters, not twenty: "without ever showing you the cover art" needs twenty-two, and
@@ -218,20 +224,22 @@ const CLEARED =
   /\b(?:clear|clears|cleared|clearing|uncheck\w*|untick\w*)\b[^.]{0,25}\b(?:checkbox|check box|box|tick)\b/i;
 
 // The forms the truth is actually written in. A form missing here fails a true sentence, and the
-// repair is to say it more plainly, never to say less: that asymmetry is the whole design.
+// repair is to say it more plainly rather than to say less. That is the direction worth having,
+// though it is not absolute: one refusal at the foot of this file repairs by reordering.
 //
 // Every branch has to name a request, and the acknowledgement has to be about the covers. Neither
 // is tidiness. Review pardoned three lies with a true clause about something else entirely sitting
 // beside them, because "unchanged", "regardless" and "as before" carry no subject of their own:
 // "switching cover art off stops them being requested, and your notes are unchanged" passed.
 //
-// Punctuation was tried first as the fix and is the wrong instrument. Measured against the thirty
-// eight true sentences the proof now holds, refusing a gap that crosses a comma refuses seven of
-// them, "the image is requested, regardless" among them; refusing one that crosses a conjunction
-// refuses four, two of those the same, and a comma splice still walks through needing neither.
-// What actually separates the two cases is the subject: "your notes" is a different one,
-// "regardless" is not a subject at all. So the gap crosses anything short of a full stop, and the
-// tie is to the subject instead.
+// Punctuation was tried first as the fix and is the wrong instrument. Measured against the 42 true
+// sentences at the foot of this file, refusing a gap that crosses a comma refuses 5 of them, "the
+// image is requested, regardless" among them; refusing one that crosses a conjunction refuses 2, and
+// a comma splice still walks through needing neither. Those two figures were 7 and 4 for two rounds,
+// which was the count against a smaller corpus and read as though it were a property of the
+// instruments rather than of what they were run against. What actually separates the two cases is
+// the subject: "your notes" is a different one, "regardless" is not a subject at all. So the gap
+// crosses anything short of a full stop, and the tie is to the subject instead.
 const ASKED =
   '(?:requests?|requested|sends?|sent|fetch(?:es|ed|ing)?|downloads?|downloaded|asks?|asked|asking)';
 const NOT_STOP =
@@ -256,15 +264,42 @@ const ACKNOWLEDGES = new RegExp(
   'i',
 );
 
-// Which clause is doing the asserting. A trailing clause carrying a finite verb is a sentence of
-// its own and has to name the covers itself; one that carries no verb is an adverbial hanging off
-// the clause before it, and takes that clause's subject. That is the difference between "no cover
-// is requested, your notes are unchanged" and "the image is requested, regardless", which are
-// identical to any rule written about the punctuation between them.
+// Which clause is doing the asserting. A trailing clause that makes its own assertion has to name
+// the covers itself; one that is a bare adverbial hangs off the clause before it and takes that
+// clause's subject. That is the difference between "no cover is requested, your notes are
+// unchanged" and "the image is requested, regardless", which are identical to any rule written
+// about the punctuation between them.
+//
+// Deciding that by looking for a finite verb was the obvious way round and it was the wrong way
+// round. A finite verb is an open class, so a verb missing from the list made the trailing clause
+// look adverbial, the subject was inherited from the lie's own half, and the lie passed. Nothing
+// was refused to signal it. Review demonstrated it with "loads", "look", "survive" and "behaves",
+// each of which had been caught by the instrument before. So the test is inverted: a trailing
+// clause asserts unless it is one of the listed subjectless fragments. Now a fragment missing from
+// the list refuses a true sentence, which is loud, repairable, and listed at the foot of this file.
+//
+// "unchanged" is deliberately not in that list, and it is the one entry where the two directions
+// collide. "The requests for covers are, in fact, unchanged" and "no cover is requested, unchanged"
+// have the same shape exactly: a head naming the covers and a bare "unchanged" behind a comma.
+// Admitting it accepts the first and pardons the second. Refusing it costs the first, which is
+// repaired by moving "in fact" to the front of the sentence.
+//
+// The reference is narrow for the same reason. "them", "they", "these" and "those" stand in for the
+// covers; "one" and "each" do not, they are quantifiers, and this repository writes about lists with
+// them. Leaving them in pardoned "no cover is requested, and each of your lists is unchanged". The
+// price of taking them out is one true sentence, "though each one is requested", which is repaired
+// by writing "though each cover is requested".
+//
+// Walking left instead, so that a subject separated from its verb by a parenthetical could be
+// found, was measured and rejected. "The covers, even when hidden, continue to be requested" is a
+// real sentence and it is refused. But a leftward walk lends a subject across clause boundaries in
+// both directions, and against this corpus it pardons 19 of the 56 false sentences while accepting
+// all 11 refusals. A rule that recovers eleven true sentences by excusing nineteen false ones is the
+// second instrument returning under a new name.
 const ABOUT_COVERS =
-  /\b(?:cover art|covers?|cover images?|cover pictures?|artwork|images?|pictures?|them|they|one|each|these|those)\b/i;
-const FINITE =
-  /\b(?:is|are|was|were|am|be|been|being|goes|go|went|keeps?|kept|remains?|remained|stays?|stayed|sends?|has|have|had|does|do|did|makes?|happens?|occurs?|arrives?|leaves?|carries|carry|continues?)\b/i;
+  /\b(?:cover art|covers?|cover images?|cover pictures?|artwork|images?|pictures?|them|they|these|those)\b/i;
+const ADVERBIAL_ONLY =
+  /^\s*(?:and |but |though |although |yet |or |so |even )*(?:regardless|anyway|(?:exactly )?as before|all the same|no different|as always|in fact|even so|either way)\s*$/i;
 const CLAUSE_BREAK = /[.;,]/;
 
 function clauseAround(text, index) {
@@ -280,7 +315,7 @@ function acknowledges(text) {
   for (let found = scan.exec(text); found; found = scan.exec(text)) {
     const head = clauseAround(text, found.index);
     const tail = clauseAround(text, found.index + found[0].length - 1);
-    const asserting = tail !== head && FINITE.test(tail) ? tail : head;
+    const asserting = tail !== head && !ADVERBIAL_ONLY.test(tail) ? tail : head;
     if (ABOUT_COVERS.test(asserting)) return true;
   }
   return false;
@@ -334,4 +369,261 @@ test('a promise about one thing may still be absolute, and one still is', () => 
   const theme = section(html, '<h2>Theme</h2>', '<h2>Metadata source</h2>');
   assert.match(theme, /never sent anywhere/i, 'the theme setting genuinely never leaves');
   assert.doesNotMatch(theme, /nothing is uploaded/i, 'but it is a promise about the setting only');
+});
+
+// The corpus. Everything above is an instrument, and an instrument nobody can re-run is an
+// assertion. These four lists were built by eight rounds of review trying to break the rule, and
+// until now they lived in a scratch file outside the repository while both the changelog and the
+// backlog said a proof would disagree with anyone who closed an escape. Nothing could. They are
+// here now, so the claim is true and the counts in those documents are derived rather than
+// remembered.
+//
+// Two of the lists record costs rather than successes, and they are the point of the exercise. A
+// check that reports only what it catches is the one that grew the overclaims this item exists to
+// undo.
+
+// Written to be true, and every one must pass. Ten are the repaired forms of refusals below. Eight
+// must never be treated as being about the covers switch at all, four of them because they use
+// "covers" as an ordinary verb.
+const HONEST_SENTENCES = [
+  'Turning covers off does not mean nothing is requested.',
+  'Switch covers off and nothing changes: every cover is requested exactly as before.',
+  'Even with cover art off there is no reduction in requests.',
+  'Turning cover art off changes nothing about what is requested.',
+  'Switching cover art off cannot stop the requests.',
+  'Switch covers off and the app still sends requests for every cover.',
+  'With cover art off the app still sends the same requests.',
+  'Switch covers off and every cover becomes a plain typographic tile, but the image behind it is still requested.',
+  'Cover images load directly from Marvel\u2019s own servers. They can be hidden, but they are still requested.',
+  'switching cover art off hides the covers but does not stop them being requested',
+  'Show cover art',
+  'Covers are loaded straight from Marvel\u2019s own servers using the address the metadata API reports.',
+  'Turn covers off and the app requests every one of them regardless.',
+  'Hiding the covers does not prevent the requests.',
+  'Switch covers off and the app requests every one of them anyway.',
+  'Without cover art the app still requests every cover.',
+  'Cover art is requested from Marvel\u2019s image servers as it appears, so those servers see which issues are on screen; switching cover art off hides the covers but does not stop them being requested.',
+  'Switch covers off and every cover becomes a tile. The image is requested, regardless.',
+  'Switch covers off and every cover becomes a tile. The image is requested, as before.',
+  'Switch covers off and every cover becomes a tile. The image behind it is requested, exactly as before.',
+  'Turn cover art off and the app still asks for the image.',
+  'Turn cover art off and the requests to Marvel\u2019s image servers continue.',
+  'Switch covers off and every cover becomes a tile, but the image is requested and the traffic to Marvel is unchanged.',
+  'Switch covers off and every cover becomes a tile. The image is requested and unchanged.',
+  'Switch covers off and every cover becomes a tile. The image is requested although you never see it, exactly as before.',
+  'Switch covers off and every cover becomes a tile. The image is requested, though hidden, as before.',
+  'Switch covers off and nothing on screen is a picture; the requests for the covers are unchanged.',
+  'Switch covers off and every cover becomes a tile, but the same requests for covers are made.',
+  'Switch covers off and every cover becomes a tile, but the same number of requests for covers goes out.',
+  'Switch covers off and no cover is shown, though each cover is requested exactly as before.',
+  'Switch covers off and every cover becomes a tile. In fact, the requests for covers are unchanged.',
+  'switching cover art off hides the covers, and every cover is requested regardless.',
+  'The covers continue to be requested, even when hidden.',
+  'Covers are requested regardless, whether shown or hidden.',
+  'Cover art is still requested once you switch it off.',
+  'The image behind each tile is requested exactly as before, hidden or not.',
+  'A backup is a plain JSON file without images.',
+  'The tracker works without pictures if you prefer.',
+  'A backup covers every list you keep, and nothing in it is hidden from you.',
+  'A backup covers everything you keep, and nothing in it is hidden from you.',
+  'A backup covers what you keep, and nothing in it is hidden from you.',
+  'The export covers anything you have hidden.',
+];
+// Written to be false, and every one must be caught. Each claims or implies that switching the
+// covers off stops the requests. Grouped by the review round that produced them, because the
+// grouping is the evidence that each repair was needed rather than imagined.
+const DISHONEST_SENTENCES = [
+  'Switching cover art off stops the downloads.',
+  'Turning cover art off stops the fetches.',
+  'Cover art off means no cover requests.',
+  "Switch covers off and Marvel's servers are never asked for them.",
+  'Switch it off and the requests stop.',
+  'Cover art off means nothing is downloaded.',
+  'You can switch covers off. Then nothing is requested.',
+  'Toggle covers off and the images are no longer fetched.',
+  'With cover art off the fetching ceases.',
+  'Switching covers off prevents the loading.',
+  'Switch covers off and no cover is requested; the page still loads instantly.',
+  'Turn covers off and no cover is ever requested, so the list still loads faster.',
+  'Unchecking Show cover art means the images are never requested.',
+  'Clear the checkbox and no cover is downloaded.',
+  'With cover art disabled, no request is made.',
+  'Hide the covers and Marvel is never asked for them.',
+  'Switch covers off to save bandwidth.',
+  'Turning cover art off keeps Marvel from seeing which issues you open.',
+  'Without cover art, every cover becomes a plain typographic tile and nothing is requested.',
+  'Disable the images and nothing is downloaded.',
+  'Cover images load directly from Marvel\u2019s own servers. Without cover art none is requested.',
+  'Without cover art, no cover images are downloaded.',
+  'Switch covers off and no cover is requested. The address stored is unchanged.',
+  'switching cover art off stops them being requested, and your notes are unchanged',
+  'Turning cover art off stops the covers being downloaded, and your lists are unchanged.',
+  'Switch covers off and nothing is requested. There is no change to your lists.',
+  'Switch covers off and nothing is requested. Your lists open exactly as before.',
+  'Switch covers off and nothing is requested. Your progress is kept regardless.',
+  'Switch covers off and nothing is requested. The tiles look fine anyway.',
+  'Switch covers off and nothing is requested. Switching it does not change what you have saved.',
+  // A true clause about the metadata requests, pardoning a false one about the covers. Closed by
+  // requiring the acknowledgement to be about the covers.
+  'Switch covers off and no cover is requested; the details are still fetched.',
+  'switching cover art off stops them being requested. The details are still fetched either way.',
+  'Turning cover art off stops the covers being requested. The details are still downloaded.',
+  // Comma splices and coordinators, which no rule about punctuation ever reached.
+  'Switch covers off and no cover is requested, your notes are unchanged.',
+  'Switch covers off and no cover is requested, the address stored is unchanged.',
+  'Switch covers off and no cover is requested, so the address stored is unchanged.',
+  'Switch covers off and no cover is requested. Every list keeps the same number of issues.',
+  // The evasions a wider reference would have opened, kept shut by the narrow one.
+  'Switch covers off and no cover is requested; the requests to the metadata service are unchanged.',
+  'Switch covers off and no cover is requested, though the requests for titles are unchanged.',
+  // Two escapes through "without", one past the twenty-character gap and one past the list.
+  'Without ever showing you the cover art, nothing is requested.',
+  'Without the images, no request goes out to Marvel.',
+  // Trailing clauses whose verb was missing from the finite-verb list this round deleted. Every
+  // one was caught by the instrument two rounds ago and pardoned by its replacement, which is why
+  // the default is now the other way round.
+  'Switch covers off and no cover is requested, and the page loads exactly as before.',
+  'Switch covers off and no cover is requested, and your saved lists look no different.',
+  'Switching cover art off stops them being requested, and your notes survive unchanged.',
+  'Turning cover art off stops the covers being requested, and the reader link behaves exactly as before.',
+  // Quantifiers read as covers pronouns. This repository writes about lists with "each".
+  'Switch covers off and no cover is requested, and each of your lists is unchanged.',
+  'Switch covers off and no cover is requested, each list is unchanged.',
+  'Switch covers off and no cover is requested; the details are still fetched for each issue.',
+  // Bare trailing fragments, built to abuse each entry admitted to ADVERBIAL_ONLY. If one of these
+  // passes, a word in that list is inheriting a subject from the clause that told the lie.
+  'Switch covers off and no cover is requested, hidden.',
+  'Switch covers off and no cover is requested, hidden or not.',
+  'Switch covers off and no cover is requested, though hidden.',
+  'Switch covers off and no cover is requested, whether shown or hidden.',
+  'Switch covers off and no cover is requested, unchanged.',
+  'Switch covers off and no cover is requested, in fact.',
+  'Switch covers off and no cover is requested, either way.',
+  // Recorded as an unclosable escape for two rounds, on the reasoning that binding the
+  // acknowledgement to a covers noun would convict the shipped copy. Admitting the pronouns
+  // alongside the nouns convicts none of it, and this is caught.
+  'Switch covers off and no cover is requested, with the address stored unchanged.',
+];
+// The two passages this instrument does not catch. Both say a true thing and a false thing in one
+// breath, and the true half is what excuses the false one. The first splits them across a full
+// stop, which no rule about clauses inside a sentence can reach. The second hangs the true clause
+// off the lie with no subject of its own, so it is read as an adverbial of the lie's subject, which
+// is exactly what it looks like. A passage that contradicts itself needs a reader, and claiming
+// otherwise would be the overclaim this whole item exists to undo.
+//
+// They are asserted as escaping so that closing one turns this red. That is not a wish for them to
+// stay open: a round that closes one should say so and move it up into the list above. What must
+// not happen is closing one silently, which is how a limit stops being recorded.
+const RECORDED_ESCAPES = [
+  'They can be hidden, and then they are not requested at all. Titles and dates are still fetched.',
+  'Switch covers off and no cover is requested, or your notes sent, as before.',
+];
+
+// True sentences this instrument refuses, with the repair beside each. They fall into three classes,
+// and the third is the interesting one.
+//
+// Four say "the requests" without saying which requests, and two lean on "one" or "each" as a
+// pronoun for the covers, which this instrument deliberately does not read as one because "each of
+// your lists is unchanged" pardoned a lie with it. All six are repaired by naming the covers, so
+// they cost a word.
+//
+// The other five do name the covers, in the same sentence, but not in the clause that makes the
+// assertion: a parenthetical or a coordinator sits between the subject and its verb, leaving clauses
+// like "continue to be requested" and "is still requested" with no subject in them at all. Walking
+// left to find the subject would accept all five, and it was measured against this corpus: it also
+// pardons 19 of the 56 sentences below and accepts all 11 of these refusals, because a leftward walk
+// lends a subject across clause boundaries in whichever direction happens to help. All five repair by
+// moving the parenthetical to the end, which adds nothing and removes nothing, and is why the comment
+// at the head of this file no longer claims every repair adds a word.
+//
+// Each repaired form is in HONEST_SENTENCES, so this list cannot be satisfied by wording nobody
+// would write. Two refusals share a repair, so the eleven have ten distinct repaired forms.
+const RECORDED_REFUSALS = [
+  ['Switch covers off and nothing on screen is a picture; the requests are unchanged.',
+    'Switch covers off and nothing on screen is a picture; the requests for the covers are unchanged.'],
+  ['Switch covers off and every cover becomes a tile, but the same requests are made.',
+    'Switch covers off and every cover becomes a tile, but the same requests for covers are made.'],
+  ['Switch covers off and every cover becomes a tile, but the same number of requests goes out.',
+    'Switch covers off and every cover becomes a tile, but the same number of requests for covers goes out.'],
+  ['Switch covers off and every cover becomes a tile. The requests are, in fact, unchanged.',
+    'Switch covers off and every cover becomes a tile. In fact, the requests for covers are unchanged.'],
+  ['Switch covers off and no cover is shown, though each one is requested exactly as before.',
+    'Switch covers off and no cover is shown, though each cover is requested exactly as before.'],
+  ['Switch covers off and every cover becomes a tile. The requests for covers are, in fact, unchanged.',
+    'Switch covers off and every cover becomes a tile. In fact, the requests for covers are unchanged.'],
+  ['switching cover art off hides the covers, and every one is requested regardless.',
+    'switching cover art off hides the covers, and every cover is requested regardless.'],
+  ['The covers, even when hidden, continue to be requested.',
+    'The covers continue to be requested, even when hidden.'],
+  ['Covers, whether shown or hidden, are requested regardless.',
+    'Covers are requested regardless, whether shown or hidden.'],
+  ['Cover art, once you switch it off, is still requested.',
+    'Cover art is still requested once you switch it off.'],
+  ['The image behind each tile, hidden or not, is requested exactly as before.',
+    'The image behind each tile is requested exactly as before, hidden or not.'],
+];
+
+test('every sentence written to be true is accepted', () => {
+  for (const sentence of HONEST_SENTENCES) {
+    assert.equal(unacknowledged(sentence), null, `refused a true sentence: ${sentence}`);
+  }
+});
+
+test('every sentence written to be false is caught', () => {
+  for (const sentence of DISHONEST_SENTENCES) {
+    assert.notEqual(unacknowledged(sentence), null, `pardoned a false sentence: ${sentence}`);
+  }
+});
+
+test('the escapes this instrument does not close are still open, and still only these', () => {
+  for (const sentence of RECORDED_ESCAPES) {
+    assert.equal(
+      unacknowledged(sentence),
+      null,
+      `this escape is now caught, which is good: move it into DISHONEST_SENTENCES and say so in the item, rather than deleting it from here: ${sentence}`,
+    );
+  }
+});
+
+test('the true sentences this instrument refuses are still refused, and each repair works', () => {
+  for (const [refused, repaired] of RECORDED_REFUSALS) {
+    assert.notEqual(
+      unacknowledged(refused),
+      null,
+      `this refusal is now accepted, which is good: move it into HONEST_SENTENCES and say so in the item: ${refused}`,
+    );
+    assert.equal(unacknowledged(repaired), null, `the recorded repair does not work: ${repaired}`);
+    assert.ok(
+      HONEST_SENTENCES.includes(repaired),
+      `the repair must also be held as a true sentence: ${repaired}`,
+    );
+  }
+});
+
+// The comment above HONEST_SENTENCES states two counts, and a count in prose is a claim nothing
+// checks, which is the defect the whole corpus was landed to end. So they are asserted here. Both
+// failures are instructions rather than verdicts: a sentence that stops being read as a covers
+// window may well belong in the list, but the comment then has to say so.
+test('the structural counts claimed above the corpus are the counts it has', () => {
+  const notAboutSwitch = HONEST_SENTENCES.filter((sentence) => {
+    const parts = sentence.split(/(?<=[.!?])\s+/);
+    for (let i = 0; i < parts.length; i += 1) {
+      for (const j of [i, i + 1]) {
+        if (j < parts.length && aboutTheSwitch(parts.slice(i, j + 1).join(' '))) return false;
+      }
+    }
+    return true;
+  });
+  assert.equal(
+    notAboutSwitch.length,
+    8,
+    `the comment above HONEST_SENTENCES says eight of them are not about the covers switch, and ${notAboutSwitch.length} are: ${notAboutSwitch.join(' | ')}`,
+  );
+
+  const repairs = new Set(RECORDED_REFUSALS.map(([, repaired]) => repaired));
+  assert.equal(
+    repairs.size,
+    10,
+    `the comment above HONEST_SENTENCES says ten of them are repaired forms, and there are ${repairs.size} distinct repairs`,
+  );
 });
