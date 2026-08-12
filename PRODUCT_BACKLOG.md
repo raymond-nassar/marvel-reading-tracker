@@ -9,12 +9,12 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Sixty items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Sixty-one items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
-BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-089 and BL-096.
+BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-089, BL-096 and BL-100.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Nine remain
@@ -34,13 +34,13 @@ same reason, which GitHub says in as many words when asked.
 user-facing view of the same work.
 
 Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 repository assurance and
-open-source readiness study. Fifteen of them are still `Ready`: the study records gaps for later
+open-source readiness study. Fourteen of them are still `Ready`: the study records gaps for later
 implementation and does not mix those fixes into the roadmap change that identified them. BL-083,
-BL-089 and BL-096 have since been delivered, and their detail blocks record what changed. BL-101 and
-BL-102 are
-the two items here that came from neither pass: each was raised by the review of the item above it
-and routed to the backlog rather than folded into it, because each belongs to a different file from
-the one under repair.
+BL-089, BL-096 and BL-100 have since been delivered, and their detail blocks record what changed.
+BL-101, BL-102, BL-103 and BL-104 are
+the four items here that came from neither pass: each was raised by the review of one of the items
+above it and routed to the backlog rather than folded into it, because each belongs to a different
+file from the one under repair.
 
 ## Product direction
 
@@ -172,7 +172,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 630; 224 is the figure as audited.
+  it to 634; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -206,11 +206,11 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:341-408 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
-| BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Ready | .gitignore:1-24 |
+| BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:36-44 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
-| BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Observed | Ready | .github/workflows/ci.yml:27-91 |
+| BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Observed | Ready | .github/workflows/ci.yml:27-100 |
 | BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Ready | .github/workflows/ci.yml:38-48 |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:112-122 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
@@ -221,6 +221,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Ready | src/js/main.js:3076-3089 |
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Ready | src/js/main.js:3010-3038 |
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Ready | src/js/storage.js:290-335 |
+| BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:32 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:163-175 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
@@ -234,6 +235,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:640 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3246-3294 |
+| BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
 | BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:250-295 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
@@ -2328,7 +2330,7 @@ because each compared line numbers rather than reading lines, and because each m
 subset of the places an anchor can be written. `scripts/check-anchors.mjs` fingerprints the cited
 lines themselves rather than their numbers, so a correct re-aim preserves the fingerprint while
 drift breaks it, and the build fails in the commit that moves the code rather than in a sweep months
-later. It runs in the lint job at `.github/workflows/ci.yml:93-94` and locally as `npm run anchors`,
+later. It runs in the lint job at `.github/workflows/ci.yml:102-103` and locally as `npm run anchors`,
 wired at `package.json:14-15`.
 
 Which half of it depends on which is the load-bearing decision. Listing the shapes an anchor can
@@ -2980,7 +2982,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2683-2686`.
+`PRODUCT_BACKLOG.md:2685-2688`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4512,7 +4514,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5690-5692` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:5800-5802` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4522,11 +4524,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:173-175`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5711-5714`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5821-5824`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5524-5526` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5634-5636` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4734,7 +4736,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:882-891` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:914-923` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:163-167` and
 `PRODUCT_BACKLOG.md:173-175` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4998,7 +5000,7 @@ Constraint gate: checked 1 to 11, none breached.
 The current lockfile audited with zero known vulnerabilities, but GitHub reported Dependabot alerts
 and secret scanning disabled. No committed update configuration or advisory gate repeats the check.
 Development dependencies execute in CI even though they never reach the browser. Evidence:
-`package.json:20-29`, `package-lock.json:1-21`, `absent: .github/dependabot.yml, tracked-file inventory`.
+`package.json:22-31`, `package-lock.json:1-21`, `absent: .github/dependabot.yml, tracked-file inventory`.
 
 Shipped, with the second task deliberately left open. Both halves of the monitoring were off before
 this: asking whether vulnerability alerts were enabled answered 404, and automated security fixes
@@ -5011,8 +5013,9 @@ Secret scanning is the task left unticked, and the clause "where the repository 
 is why it can be left there honestly. GitHub refuses it on this repository, answering a request to
 enable it with a 422 and "Secret scanning is not available for this repository". The reason is
 visibility rather than price: the feature is free on any public repository, so publishing this one
-would make it available, which is why the box is unticked rather than struck out. `BL-100` is the
-item that decides publication, and enabling this is part of what that decision buys. Push
+would make it available, which is why the box is unticked rather than struck out. `BL-100` has since
+put the gate that publication needs in place, so what is left is the decision itself, and enabling
+this is part of what that decision buys. Push
 protection is worse than refused: the request to enable that one is accepted with a 200, and the
 repository then reads back with push protection still disabled, because it depends on the scanning
 that is unavailable. A success that changes nothing is exactly the kind of green this repository
@@ -5144,7 +5147,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 Neither job sets `timeout-minutes`. Local tests contain focused deadlines, but a future install,
 test or gate can still consume the platform's much larger default window and delay useful feedback.
-Evidence: `.github/workflows/ci.yml:27-91`.
+Evidence: `.github/workflows/ci.yml:27-100`.
 
 **BL-096: Publish a security policy and private reporting route**
 
@@ -5163,7 +5166,8 @@ setting is a separate task outcome and cannot be claimed by adding the file alon
 Shipped, with the third task deliberately left open. It cannot be done yet, and that was measured
 rather than assumed: GitHub offers private vulnerability reporting on public repositories, this one
 is still private, and both `GET` and `PUT` on the private vulnerability reporting endpoint answer
-404. `BL-100` is the item that decides publication, so this task belongs to that moment. The policy
+404. `BL-100` has since built the gate that publication needs, but it does not publish anything, so
+this task still belongs to the moment that decision is taken. The policy
 is written so it is true on both sides of it: it names private reporting as the only channel and
 says what it means if the option is not on the Security tab yet, rather than promising a route that
 does not answer.
@@ -5274,19 +5278,80 @@ redistribution; it records that the boundary needs review before publication. Ev
 
 **BL-100: Establish a pre-publication content and history gate**
 
-- [ ] Decide which tracking artifacts and prompts are public evidence and which stay local
-- [ ] Protect intentionally local content with ignore rules or a staging allowlist
-- [ ] Run a dedicated full-history secret scan and record its revision and result
-- [ ] Review history for session identifiers, private statements, personal paths and generated data
-- [ ] Re-clone the publication candidate and verify setup, policies, notices and gates
+- [x] Decide which tracking artifacts and prompts are public evidence and which stay local
+- [x] Protect intentionally local content with ignore rules or a staging allowlist
+- [x] Run a dedicated full-history secret scan and record its revision and result
+- [x] Review history for session identifiers, private statements, personal paths and generated data
+- [x] Re-clone the publication candidate and verify setup, policies, notices and gates
 
 Constraint gate: checked 1 to 11, none breached.
 
-The history pattern scan found no common credential signature, but it is not a provider-complete
-secret scan. Current untracked prompts and research include local operational detail, while the
-ignore file does not protect paths policy says should remain untracked. Publication needs a
-deliberate boundary and a clean-clone proof. Evidence: `.gitignore:1-24`,
-`.github/copilot-instructions.md:449-466`.
+The boundary is a rule rather than a list. `.gitignore:36-37` now holds out the whole of the
+tracking root and the prompts root, and the paragraph above those two lines says why that is safe:
+git ignores have no effect on a file that is already tracked, so the six committed artifacts of the
+first task keep working while everything a later session writes is held out by construction. The
+alternative was an allowlist of filenames, which is the enumeration this repository has twice been
+bitten by, and the reason is written into `scripts/check-anchors.mjs:167-170` for the same class of
+defect.
+
+That citation of the ignore file is the one claim in this block the evidence gate is not watching.
+The gate collects a citation by its extension and an ignore file has none, so the claim is not
+enrolled, and the near-miss notice that exists to catch exactly this misses it too because it also
+begins at a dot-and-extension. There were already two such citations here before this item, and it
+holds them true by luck rather than by a check. It is filed as BL-104 rather than fixed here,
+because it is a defect in a different gate from the one this item built.
+
+The scan found nothing, and the interesting part is which population it ran against. The obvious
+one is wrong. `git rev-list --objects --all` reaches this machine's local object store, whose
+tooling namespace carries 293 checkpoint commits whose messages are literally a session identifier
+and a workspace identifier; scanning it reported 316 of them. Not one is advertised by the remote,
+so not one would ever be published, and a gate built on `--all` would have been permanently red
+over content nobody can remove and no clone ever receives. The population that matters is what the
+remote advertises: at `5f78f68`, 22 branches, 1,075 blobs and 252 commit messages, and it is clean.
+The same scan reachable from `HEAD` covers 992 blobs and 206 commit messages, also clean. All four
+authorship identities in the history are already `noreply` addresses.
+
+`npm run publication` checks both halves, and `npm run publication:surface` swaps the second one to
+the branches the remote advertises. It is wired into CI, and that step is the reason the lint job
+now checks out at `fetch-depth: 0` while every other job here stays shallow: a shallow clone has one
+commit, so the history half would have been answered over almost nothing. The gate exits 2 rather
+than 0 in that state, and 2 means "could not answer" rather than "clean", which is the distinction
+the whole script turns on.
+
+That distinction is the review's doing, and it is worth recording that the first version did not
+make it. A code review of this item found nine defects, seven of them a way the scan could report
+success without having looked. The gate exempted two whole files at every revision, so a real
+credential committed to either was invisible to the gate and to the test that double-checks it, and
+one of those two files matched nothing at all, so the exemption bought a blind spot in the script
+the mechanism rests on and nothing else. An allowance is now one exact hit in one exact file, so a
+second, unplanned one in the same file still fails. Blobs over the size limit, blobs holding a NUL
+byte and exempted blobs were dropped from the count with no mention, so the population line claimed
+more than it had read; what was left out is now named in the line itself, and text with a byte order
+mark is decoded instead of discarded, which matters because the shell this repository is developed
+in writes UTF-16 by default and captured logs are the artifact class most likely to carry a path.
+The shallow check sat in an `else if` after the surface branch and so could never run in the mode
+the comment above calls authoritative. `--surface` described the last fetch as what the remote
+advertises, and now asks the remote. `git ls-files` quoted any path outside plain ASCII, the quoted
+form was not one `git show` accepts, and the failure was swallowed, so an unreadable file and a
+clean one printed the same. The pattern for a Windows profile path accepted only the raw backslash
+form, which is the one a person spots by eye and not one of the four further shapes a tool writes it
+in: escaped for a string literal, forward slashed, quoted, and as a file url.
+
+Verified: nineteen mutations, each turning at least one of the eleven tests in this gate's suite red.
+Eight are the original set, which delete an ignore rule, remove or loosen a signature, break the
+allowance list, or commit a string shaped like an access key in a throwaway clone; that last one
+turns the gate itself red too, and names the file. Eleven more were written against the review, one
+per defect above, including two that pin the workflow's full-depth checkout: one deletes the setting
+and one moves it to the other job, and the second is the one that matters, because the first version
+of that test never split the file into jobs and so was true of any workflow mentioning both things
+anywhere. A fresh clone installs, and every gate passes from it.
+
+One thing the clone measured that this item does not fix. A clone of the remote receives 22
+branches and no tags, and 9 of those 22 are the head branches of pull requests that have already
+merged. Nothing here deletes them, because deleting a branch is a repository operation rather than a
+change to the tree, and it is filed as BL-103. Cloning this machine's own copy receives 36 instead,
+which is a local accumulation and not something publication would expose. Evidence:
+`scripts/check-publication.mjs:156-190`, `.github/workflows/ci.yml:63-76`.
 
 **BL-101: Withdraw the undo-restore offer when erasing everything**
 
@@ -5330,6 +5395,51 @@ worth closing anyway: a plain-text body sent with no content type is exactly wha
 stop being guessed at, and a header set that four of six exits skip is a set whose guarantee cannot be
 stated in one sentence. `BL-096` had to write the exception into the security policy instead, which is
 the shape of a claim waiting to be simplified.
+
+**BL-103: Retire the branches publication would put on display**
+
+- [ ] Delete the head branches of pull requests that have already merged
+- [ ] Decide what happens to the branches that never became a pull request
+- [ ] Turn on automatic head-branch deletion so the list does not refill
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by `BL-100` and routed here rather than folded into it, because deleting a branch is a
+repository operation and that item changed the tree. Publication publishes every branch the remote
+advertises, not just the default one. Measured against the live remote: 22 heads, no tags, and 9 of
+those 22 are the head branches of pull requests that are already merged, so what a new reader would
+find is a branch list where most entries are finished work that nobody removed. Squash merges are
+why: the merge leaves the branch behind, and nothing here deletes it.
+
+This is untidiness rather than exposure, which is why it is scored the way it is. `BL-100` scanned
+every one of those branches and found nothing to remediate, so the content is the same content, and
+the cost of leaving it is that a reader has to work out which of 22 branches is live. The third task
+is the one that keeps this closed, because the first two are a cleanup that will be back within a
+month otherwise. Evidence: `scripts/check-publication.mjs:156-190`.
+
+**BL-104: Let the anchors gate see a citation of a file with no extension**
+
+- [ ] Collect a citation whose path carries no extension, in both the backticked and bare forms
+- [ ] Make the near-miss notice fire on the shape it currently cannot see
+- [ ] Test that a citation of an ignore file drifts when the lines it names move
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by `BL-100` and routed here rather than fixed there, because that item wrote a boundary and
+this one changes the gate that watches claims about it. Both collectors at
+`scripts/check-anchors.mjs:32` and the bare form below it require a filename to end in one of seven
+extensions, so a path with no extension at all is not a citation as far as the gate is concerned. A
+file whose whole name is its suffix is the ordinary case of that, and this repository cites one:
+the ignore file is named twice in this document, once by the hygiene section and once by `BL-100`,
+and neither citation is enrolled. Both happen to be true today, which is luck rather than a check.
+
+The part that makes it worth fixing rather than accepting is the silence. The near-miss notice
+exists precisely so a citation that is not gated is at least visible to a reviewer, but its pattern
+begins at a dot followed by an extension, so it fails on this shape for the same reason the
+collectors do. The result is a citation that reads exactly like every gated one, drifts exactly like
+every gated one, and warns nobody. `BL-079` widened this gate once already, on the comment syntax it
+reads rather than the names it accepts, so this is the same lesson arriving at the other end of the
+same regexes.
 
 ## Existing epics and stories
 
@@ -5624,7 +5734,7 @@ No gap. Co-existence is a non-issue for a single local process, and interoperabi
 both directions: JSON backup for round-tripping and Markdown export for reading elsewhere. Zero
 runtime dependencies and plain ES modules mean nothing to reconcile with a host application.
 
-Evidence: `package.json:1-29` (no `dependencies` key at all, `engines.node >= 20`),
+Evidence: `package.json:1-31` (no `dependencies` key at all, `engines.node >= 20`),
 `src/js/lib/model.js:671-699` (validated backup shape).
 
 The fixed `127.0.0.1:8787` origin is a deliberate storage-bucket decision rather than a
@@ -5723,13 +5833,13 @@ The clearest debt in the repository, and it is concentrated in one file.
 Swept in full rather than dispositioned.
 
 - Installability: good, and suited to an app cloned and run by hand. `npm start` runs the server
-  with no install step, because there is nothing to install. Evidence: `package.json:8-20`.
+  with no install step, because there is nothing to install. Evidence: `package.json:8-22`.
   Changed since: `BL-040` added three devDependencies and a tracked `package-lock.json`, so linting
   now needs `npm install` first. Running the app still does not, and runtime dependencies are still
   zero.
 - Adaptability: good. Plain ES modules with no build step and no bundler mean a Node upgrade
   changes nothing about the client, and `engines.node >= 20` states the floor.
-  Evidence: `package.json:22-24`.
+  Evidence: `package.json:24-26`.
 - Replaceability: good. The metadata API base URL is user-configurable and validated, the cache is
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
@@ -5758,13 +5868,13 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3284-3286`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:20-33` and onto the read out of storage at `src/js/main.js:390-414`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3051-3052`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
-| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-29` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
+| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-31` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:213-216`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is not fixed and will not be: BL-028 is parked, because phone and tablet reading is served by Marvel's own apps. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
 | Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. Partly changed: the suite is 235 after this pass, but the three modules still have no test file, so the gap itself is unchanged. |
 | CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request, and on demand for any ref. |
-| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version to `1.0.0` at `package.json:3`, added `CHANGELOG.md`, and wired a `version` script at `package.json:20` that syncs the version the app reports. |
-| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-29` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:25-29` and a tracked `package-lock.json`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
+| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version to `1.0.0` at `package.json:3`, added `CHANGELOG.md`, and wired a `version` script at `package.json:22` that syncs the version the app reports. |
+| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-31` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:27-31` and a tracked `package-lock.json`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
 | Licensing | No gap. The project is MIT, and every vendored order records its upstream source and licence rather than absorbing it silently. Evidence: `LICENSE`, `src/data/catalog.json` (`source` and `sourceLicense` per list), `src/js/main.js:2697-2717` (attribution rendered in the UI before import). |
 
 ### 2026-08-10 assurance and open-source delta
@@ -5805,18 +5915,23 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and fifty
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and fifty-four
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 76 rows now. The ranks below are positions in it as it stands.
+how it reaches 80 rows now. The ranks below are positions in it as it stands.
 
-### Case 1: BL-026 is labelled P0 but ranks thirty-second
+Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
+each sit one row below an item they outscore. Every one of those eight rows has shipped, so the
+order is a record rather than a queue and re-sorting it would change no decision while moving ranks
+this appendix cites. It is written down instead of fixed for that reason.
+
+### Case 1: BL-026 is labelled P0 but ranks thirty-fourth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 32 of 78.
+- Calculated: WSJF 3.67, rank 34 of 80.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
-  It is outranked by thirty items, fifteen of them sized 1, 2 or 3 whose Cost of Delay is lower but
-  whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that costs 3 will
-  always sit below a cheap fix that costs 1.
+  It is outranked by thirty-three items, seventeen of them sized 1, 2 or 3 whose Cost of Delay is
+  lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
+  costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
   else ships" or "must not be dropped". If the former, the label wins and BL-026 moves to the top
   regardless of the score. If the latter, the score's ordering is fine, because the items
@@ -5834,7 +5949,7 @@ how it reaches 76 rows now. The ranks below are positions in it as it stands.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 72 of 78, below sixty-eight unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 74 of 80, below seventy unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -5891,9 +6006,9 @@ how it reaches 76 rows now. The ranks below are positions in it as it stands.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 43 of 78. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 34 of 78. Mid-table.
-- BL-017, P2, rank 77 of 78. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 45 of 80. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 36 of 80. Mid-table.
+- BL-017, P2, rank 79 of 80. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

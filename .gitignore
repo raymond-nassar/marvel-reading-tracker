@@ -21,3 +21,17 @@ node_modules/
 # Local backups exported from the app
 backups/
 *.backup.json
+
+# Working artifacts, held local by rule rather than by anyone remembering. `.copilot-tracking/`
+# holds one directory per phase per session; six of those files, all from the first task, are
+# committed and are the closest thing this repository has to a design rationale. Everything a later
+# session writes there is working evidence for that session and stays on the machine that wrote it.
+# `.github/prompts/` holds spent instructions to an agent, which BL-060 parked rather than commit.
+#
+# A rule rather than a list, because a list is a thing someone has to keep complete. Git ignores
+# have no effect on a file that is already tracked, so the six committed artifacts are untouched
+# while everything added later is held out by construction, and nobody has to maintain an
+# exception for them. `npm run publication` checks that both rules are still in force, because an
+# ignore rule that has been deleted looks exactly like one that was never needed.
+.copilot-tracking/
+.github/prompts/

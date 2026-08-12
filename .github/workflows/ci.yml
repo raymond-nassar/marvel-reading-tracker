@@ -64,7 +64,16 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
+      # The full history, unlike every other checkout here. The publication gate below
+      # scans commit messages and every blob any commit ever held, and the default
+      # shallow fetch gives it one commit to look at. In that state the gate refuses to
+      # answer rather than reporting a clean scan of almost nothing, so dropping this
+      # setting turns the step red instead of leaving it green over a single commit.
+      # A test pins the pairing, because this was the one decision in this file with
+      # nothing but a comment behind it, and a comment is not a check.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -121,3 +130,17 @@ jobs:
       # counted.
       - name: Check palette contrast
         run: npm run palette
+
+      # Two things a reader of a published repository would find, checked here because
+      # both are decisions rather than code and a decision that is not checked stops
+      # being one. The first is that the ignore rules keeping one session's working
+      # notes local are still in force; the second is that nothing credential-shaped or
+      # personal to one machine is committed anywhere in the history.
+      #
+      # It reads history reachable from the ref under test, which on a pull request is
+      # the merge commit, so it covers both the branch and what it is merging into.
+      # `npm run publication:surface` is the local counterpart and scans every branch
+      # the remote advertises, which is what a clone would actually receive and is
+      # therefore the population that matters on the day someone makes this public.
+      - name: Check publication boundary
+        run: npm run publication
