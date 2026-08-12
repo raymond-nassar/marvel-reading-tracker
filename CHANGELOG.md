@@ -83,18 +83,23 @@ quote in a bug report.
   easiest repair is to make the writing less honest is worse than no check.
 
   So it no longer looks for the false claim at all. Any sentence that mentions the cover art switch,
-  in the words the check knows for it, now has to say that the pictures are still asked for, in that
-  sentence or the one beside it. No true sentence can fail for being true, because the only way to
-  fail is to leave the truth out, and every repair is an addition. What is left is that the check
-  still has to recognise a mention of the switch, and a sixth review escaped it four times by writing
-  "without cover art" and "disable the images". Those words are known now. The difference from before
-  is that adding more of them can only ask for the truth in more places, never accuse a sentence of
-  lying.
+  in the words the check knows for it, has to say that the pictures are still asked for, in words the
+  check knows for that, and the cheapest repair is to add the truth rather than remove it. Both of
+  those lists are enumerations and neither is complete. A sixth review got past the first four times
+  by writing "without cover art" and "disable the images"; a seventh found the second refusing seven
+  true sentences, "the image is requested, regardless" among them, because a comma had been treated
+  as the start of a new subject when it is "and" that carries one. Both are fixed and both remain
+  lists. A third limit cannot be fixed at all: the check cannot tell which requests a true clause is
+  about, so "no cover is requested; the details are still fetched" passes, one true half pardoning
+  one false half. Tying the acknowledgement to the covers instead would convict three of the four
+  sentences shipped here, which say "them" and "they", so that repair is not available. A passage
+  that says two things and means one of them still needs a reader.
 
   Thirty deliberately broken versions of these sentences are tried against the check, including every
-  one a reviewer found a way past, and all thirty are refused. Six true sentences rewritten in
-  different true words are tried as well, and all six are accepted. That second set is the one no
-  broken version can stand in for, and four of the first five were being refused two rounds ago.
+  one a reviewer found a way past, and all thirty are refused. Twelve true sentences rewritten in
+  different true words are tried as well, and all twelve are accepted. That second set is the one no
+  broken version can stand in for: four of the first five were being refused two rounds ago, and
+  seven more were being refused one round ago by the repair meant to close a hole.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two

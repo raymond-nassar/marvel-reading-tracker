@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6203-6205` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6215-6217` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6222-6226`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6234-6238`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6037-6039` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6049-6051` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1068-1077` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1073-1082` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5099,28 +5099,49 @@ A check whose cheapest repair is to weaken the copy is worse than no check at al
 instruments had that property. The third stops looking for the lie. A window about the covers switch
 has to acknowledge that the requests continue, and the acknowledgement may sit in a neighbouring
 sentence, because "Switch covers off and every cover becomes a tile. The image is still requested."
-is an ordinary way to write it. There is no lie vocabulary left to evade, since nothing searches for
-one, and no true sentence can fail for being true, since the only way to fail is to omit the
-acknowledgement, so every repair is an addition of the truth. What it does not catch is a window that
-makes the cease-claim and acknowledges the requests in the same breath, which is a contradiction
-rather than an overclaim and a thing for a reader rather than a rule. Claiming otherwise would be the
-same overclaim one level up. The metadata card's "still loaded" became "still requested" in the same
-pass, since loading is what the page does and requesting is what the network does, and only the
-second is the subject.
+is an ordinary way to write it. Nothing searches for a lie vocabulary any more, so there is none to
+evade, and the cheapest repair to a failing sentence is to add the truth rather than take it out. The
+metadata card's "still loaded" became "still requested" in the same pass, since loading is what the
+page does and requesting is what the network does, and only the second is the subject.
 
-Two limits are worth stating plainly, because the item's own failure mode is claiming an instrument
-is better than it is. The first is that "a window about the covers switch" is itself an enumeration:
-inverting the check moved the enumeration off the lie and onto the switch, it did not abolish it. A
-sixth round escaped the requirement four times by writing "without cover art" and "disable the
-images", which reached none of the three switch patterns and so never met the requirement at all.
-Those words are in the list now, and the difference from the instruments before is that widening this
-list is monotone. It can only demand the acknowledgement in more places; it can never accuse a
-sentence of lying. The second limit is the contradiction above, now narrower: the same round pardoned
-three lies with a true clause about notes, lists or a stored address sitting beside them, because
-"unchanged", "regardless" and "as before" carry no subject at all. Every branch now has to name a
-request, and the gap may not cross a comma or a semicolon, since an acknowledgement in a different
-clause is about a different subject. All four shipped acknowledgements put the noun a few words from
-the phrase with nothing between, so the tie cost nothing.
+Three limits are worth stating plainly, because the item's own failure mode is claiming an instrument
+is better than it is, and two of the three were found by review inside the sentence that claimed the
+limits were smaller.
+
+The first is that "a window about the covers switch" is an enumeration. Inverting the check moved the
+enumeration off the lie and onto the switch, it did not abolish it. A sixth round escaped the
+requirement four times by writing "without cover art" and "disable the images", which reached none of
+the switch patterns and so were never asked for the truth at all. Widening this list is close to
+monotone, but the seventh round measured the "close": bare "images" and "pictures" had to go in for
+"disable the images", and they convict a true sentence that pairs one of them with a hiding word,
+which then has to be reworded rather than qualified. The word "without" is out of the list for that
+reason and is matched only beside a covers term.
+
+The second is that the acknowledgement is an enumeration too, and this is the one the round before
+had denied by naming only the first. A form missing from it fails a true sentence. Tying every branch
+to a request noun closed three pardons and excluding the comma closed two more, and the comma
+exclusion cost seven true sentences to do it, "the image is requested, regardless" and "the same
+requests are made" among them. A comma before an appositive is not a new subject; "and" is what
+carries one, so the gap now crosses a comma and not a conjunction. The dropped "the same requests"
+branch is restored, and the copy's own verb "asks" is in the list it had been missing from.
+
+The third cannot be closed, and saying otherwise is the overclaim this whole item exists to end. The
+check cannot tell which requests an acknowledgement is about, so "no cover is requested; the details
+are still fetched" passes on all four covers surfaces: one true half about the metadata requests
+pardons one false half about the covers. Requiring a covers noun in the acknowledging clause would
+convict three of the four acknowledgements shipped here, measured, because they say "them" and
+"they", and that is design two returning under a new name. A passage that says two things and means
+one of them is a contradiction rather than an overclaim, and it needs a reader.
+
+Thirty mutations now run against the finished rules and all thirty are caught, including every
+evasion the seven review rounds demonstrated. Twelve more run the other way: a true sentence
+rewritten into a different true phrasing has to leave the suite green. That is the half no lie
+mutation can express, it is the half both earlier instruments failed, and it is the half that caught
+the repair above: four of the first five were refused by the instrument two rounds ago and seven more
+by the fix one round ago. The proof harness itself needed one fix, and it is the one worth naming: a
+transient file lock failed a restore and left a mutation in the working tree, which is the only way a
+harness that exists to prove a check can instead do harm. It now retries and refuses to continue
+rather than carrying on with a mutated file.
 
 The security policy was found still holding the absolute that started this item, in a stronger form
 than the one removed. "Nothing you create is uploaded anywhere" covers the lists, and the issue
@@ -5131,15 +5152,6 @@ widened and the sentence is scoped to what is true: no accounts, no cloud servic
 telemetry. The same bullet also put one verb over a set it does not hold across, saying "those
 requests name the issue" of three requests of which the reachability check names nothing, which is
 the identical error this round had just fixed for search.
-
-Thirty mutations now run against the finished rules and all thirty are caught, including every
-evasion the six review rounds demonstrated. Six more run the other way: a true sentence rewritten
-into a different true phrasing has to leave the suite green. That is the half no lie mutation can
-express, it is the half both earlier instruments failed, and four of the first five were reported as
-lies by the instrument two rounds ago. The proof harness itself needed one fix, and it is the one
-worth naming: a transient file lock failed a restore and left a mutation in the working tree, which
-is the only way a harness that exists to prove a check can instead do harm. It now retries and
-refuses to continue rather than carrying on with a mutated file.
 
 **BL-088: Pin and harden workflow actions for untrusted contributions**
 

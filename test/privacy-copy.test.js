@@ -186,12 +186,16 @@ const ABSOLUTES = [
 //
 // The other limit is that "a window about the covers switch" is itself an enumeration, and moving
 // the enumeration from the lie to the switch does not abolish it. Review escaped the requirement
-// four times by writing "without cover art" and "disable the images", which never reach it. The
-// difference from the instruments before is that widening this list is monotone: it can only
-// demand the acknowledgement in more places, never accuse a sentence of lying.
-const COVERS = /\b(?:cover art|covers?|cover images?|artwork|images?|pictures?)\b/i;
+// four times by writing "without cover art" and "disable the images", which never reach it.
+// Widening this list is close to monotone but not free: bare "images" and "pictures" are here
+// because "disable the images" is how the escape was written, and they cost a true sentence that
+// pairs one of them with a hiding word, which has to be reworded rather than qualified. "without"
+// is deliberately not in the list for that reason, and is matched only next to a covers term.
+const COVERS = /\b(?:cover art|covers?|cover images?|cover pictures?|artwork|images?|pictures?)\b/i;
 const TURNED_OFF =
-  /\b(?:off|hidden|hide|hides|hiding|unchecked|unchecking|unticked|unticking|disable|disabled|disabling|without|suppress(?:ed|es|ing)?|no longer shown)\b/i;
+  /\b(?:off|hidden|hide|hides|hiding|unchecked|unchecking|unticked|unticking|disable|disabled|disabling|suppress(?:ed|es|ing)?|no longer shown)\b/i;
+const WITHOUT_COVERS =
+  /\bwithout\b[^.;]{0,20}\b(?:cover art|covers?|cover images?|cover pictures?|artwork)\b/i;
 const SWITCHED =
   /\b(?:switch\w*|turn\w*|toggl\w*|uncheck\w*|untick\w*|disabl\w*|hid(?:e|es|den|ing))\b[^.]{0,40}\boff\b/i;
 const CLEARED =
@@ -200,19 +204,22 @@ const CLEARED =
 // The forms the truth is actually written in. A form missing here fails a true sentence, and the
 // repair is to say it more plainly, never to say less: that asymmetry is the whole design.
 //
-// Every branch has to name a request, and the gap may not cross a clause boundary. Neither is
+// Every branch has to name a request, and the gap may not cross a conjunction. Neither is
 // tidiness. Review pardoned three lies with a true clause about something else entirely sitting
 // beside them, because "unchanged", "regardless" and "as before" carry no subject: "switching
 // cover art off stops them being requested, and your notes are unchanged" passed. Requiring the
 // noun left two of those alive, since "requested, and your notes are unchanged" puts the two
-// within twenty-one characters of each other. A comma or a semicolon starts a new clause, and an
-// acknowledgement in a different clause is about a different subject. All four shipped
-// acknowledgements put the noun a few words from the phrase with nothing between.
-const ASKED = '(?:requests?|requested|sends?|sent|fetch(?:es|ed|ing)?|downloads?|downloaded|asked|asking)';
+// within twenty-one characters of each other. Excluding the comma killed them and cost six true
+// sentences with it, "the image is requested, regardless" among them, because a comma before an
+// appositive is not a new subject. It is "and" that carries one. So the gap crosses a comma and
+// not a conjunction, which is the distinction the evidence actually supports.
+const ASKED =
+  '(?:requests?|requested|sends?|sent|fetch(?:es|ed|ing)?|downloads?|downloaded|asks?|asked|asking)';
 const NOT_STOP =
   "(?:cannot|can't|can not|could not|couldn't|does not|doesn't|do not|don't|did not|didn't|will not|won't|would not|wouldn't)\\s+(?:stop|mean|prevent|reduce|change|halt|cancel)\\w*";
-const UNCHANGED = '(?:unchanged|regardless|anyway|as before|all the same|no different)';
-const GAP = '[^.,;]';
+const UNCHANGED =
+  '(?:unchanged|regardless|anyway|(?:exactly )?as before|all the same|no different|continues?|carry on|carries on)';
+const GAP = '(?:(?!\\b(?:and|but|yet|though|although|while|whereas)\\b)[^.;])';
 const ACKNOWLEDGES = new RegExp(
   [
     `\\bstill\\b${GAP}{0,40}\\b${ASKED}\\b`,
@@ -220,6 +227,7 @@ const ACKNOWLEDGES = new RegExp(
     `\\bwithout stopping\\b${GAP}{0,40}\\b${ASKED}\\b`,
     `\\bno (?:reduction|change|fewer|difference)\\b${GAP}{0,40}\\b${ASKED}\\b`,
     `\\b(?:nothing changes?|changes? nothing)\\b${GAP}{0,40}\\b${ASKED}\\b`,
+    `\\bthe same (?:requests?|number)\\b`,
     `\\b${ASKED}\\b${GAP}{0,30}\\b${UNCHANGED}\\b`,
     `\\b${UNCHANGED}\\b${GAP}{0,30}\\b${ASKED}\\b`,
   ].join('|'),
@@ -230,7 +238,8 @@ function aboutTheSwitch(window) {
   return (
     (COVERS.test(window) && TURNED_OFF.test(window)) ||
     SWITCHED.test(window) ||
-    CLEARED.test(window)
+    CLEARED.test(window) ||
+    WITHOUT_COVERS.test(window)
   );
 }
 
