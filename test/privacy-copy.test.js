@@ -212,8 +212,12 @@ const ABSOLUTES = [
 // plain about, because "covers everything you keep" and "covers what you keep" are outside the list
 // below and are read as the noun. That direction is the affordable one: a word missing here refuses
 // a true sentence that then has to be reworded, rather than excusing a false one.
-const COVERS =
-  /\b(?:cover art|cover images?|cover pictures?|artwork|images?|pictures?|cover|covers(?!\s+(?:a|an|the|every|everything|everyone|all|anything|any|each|both|most|whatever|what|your|my|its|their|you|us)\b))\b/i;
+const NOT_OURS =
+  '(?!\\s+(?:a|an|the|every|everything|everyone|all|anything|any|each|both|most|whatever|what|your|my|its|their|you|us)\\b)';
+const COVERS = new RegExp(
+  `\\b(?:cover art|cover images?|cover pictures?|artwork|images?|pictures?|cover|covers${NOT_OURS})\\b`,
+  'i',
+);
 const TURNED_OFF =
   /\b(?:off|hidden|hide|hides|hiding|unchecked|unchecking|unticked|unticking|disable|disabled|disabling|suppress(?:ed|es|ing)?|no longer shown)\b/i;
 // Thirty characters, not twenty: "without ever showing you the cover art" needs twenty-two, and
@@ -236,7 +240,7 @@ const CLEARED =
 // beside them, because "unchanged", "regardless" and "as before" carry no subject of their own:
 // "switching cover art off stops them being requested, and your notes are unchanged" passed.
 //
-// Punctuation was tried first as the fix and is the wrong instrument. Measured against the 42 true
+// Punctuation was tried first as the fix and is the wrong instrument. Measured against the 43 true
 // sentences at the foot of this file, refusing a gap that crosses a comma refuses 5 of them, "the
 // image is requested, regardless" among them; refusing one that crosses a conjunction refuses 2, and
 // a comma splice still walks through needing neither. Those two figures were 7 and 4 for two rounds,
@@ -295,16 +299,41 @@ const ACKNOWLEDGES = new RegExp(
 // and "though these titles are unchanged" both counted as acknowledgements about the covers, and a
 // two-word insertion that changed nothing about their falsehood turned recorded lies into passes.
 // Seven shapes of that insertion are in the false list below, and the reference this replaced
-// pardons exactly those seven and nothing else in it. Two of the seven are the entries filed there
-// as evasions a wider reference would have opened, so the reference called narrow was opening them
-// itself.
+// pardoned exactly those seven of the sixty-three entries the list then held and nothing else in it.
+// Two of the seven are the entries filed there as evasions a wider reference would have opened, so
+// the reference called narrow was opening them itself.
 //
-// A covers noun is admitted anywhere, because a clause that names the covers is about them wherever
-// the noun sits. Of the pronouns only "they" is admitted, and only at the head of the clause. "them"
-// is never a subject in English; "these" and "those" are determiners as often as pronouns, and it
-// was the determiner uses that carried the evasions. "they" is neither, so at the head of a clause
-// it is the subject rather than evidence about one. A pronoun subject written any other way is
-// refused, which is the loud direction, and the refusals are listed at the foot of this file.
+// Tying the pronoun to the head of the clause and leaving the noun readable anywhere then repeated
+// the mistake a third time, in the half that had not been touched. Writing the antecedent out where
+// the pronoun had been refused restored every pardon: "the details for the covers are still
+// fetched" reads as an acknowledgement about the covers to any rule that only asks whether the word
+// is in the clause, and it is a clause about the details. It reached both shipped cards. So the
+// noun is read the same way the pronoun is. A covers noun counts unless every occurrence of it in
+// the clause hangs off some other noun through "for", "of" or "about", which is the shape of "the
+// details for the covers" and not of "the requests for the covers": what the preposition attaches
+// to decides it, and a word about requesting is the one thing it can attach to and still be about
+// them. That word is the same list the acknowledgement itself is built from, in either part of
+// speech, because the shipped copy writes it as a verb: "the app still asks for the image".
+// Only those three prepositions are read this way, because they post-modify a noun. "with" does
+// not, and reading it as though it did refused "even with cover art off there is no reduction in
+// requests", which is a plain true sentence.
+//
+// Of the pronouns only "they" is admitted, and only at the head of the clause. "them" is never a
+// subject in English; "these" and "those" are determiners as often as pronouns, and it was the
+// determiner uses that carried the evasions. "they" is neither, so at the head of a clause it is a
+// subject. But a subject is not a reference, and treating the one as the other pardoned "the
+// details are separate, they are still fetched" and four more like it, where the clause before
+// hands "they" an antecedent that is not the covers. So the antecedent is resolved: it is the head
+// of the nearest preceding clause, and where that head is itself a "they" the walk continues, which
+// is what the shipped metadata card needs, since it says "cover images ... they can be hidden, but
+// they are still requested" across two links of that chain. A pronoun subject with no covers
+// antecedent to find is refused, which is the loud direction.
+//
+// One shape is not closed and is recorded as an escape rather than guessed at: a covers noun inside
+// a reduced relative clause, "the details the covers carry are still fetched", where nothing in the
+// punctuation or the word order distinguishes it from "hides the covers but does not stop them".
+// Telling those apart needs to know that "hides" is a verb and "details" is a noun, which is
+// parsing, and every list written here instead of parsing has been evaded within a round.
 //
 // "one" and "each" are excluded for a different reason: they are quantifiers, and this repository
 // writes about lists with them. Leaving them in pardoned "no cover is requested, and each of your
@@ -314,16 +343,45 @@ const ACKNOWLEDGES = new RegExp(
 // Walking left instead, so that a subject separated from its verb by a parenthetical could be
 // found, was measured and rejected. "The covers, even when hidden, continue to be requested" is a
 // real sentence and it is refused. But a leftward walk lends a subject across clause boundaries in
-// both directions, and against this corpus it pardons 26 of the 63 false sentences while accepting
-// all 12 refusals. A rule that recovers twelve true sentences by excusing twenty-six false ones is
+// both directions, and against this corpus it pardons 30 of the 71 false sentences while accepting
+// all 12 refusals. A rule that recovers twelve true sentences by excusing thirty false ones is
 // the second instrument returning under a new name.
-const COVERS_NOUN =
-  /\b(?:cover art|covers?|cover images?|cover pictures?|artwork|images?|pictures?)\b/i;
-const COVERS_SUBJECT =
-  /^\s*(?:and |but |though |although |yet |or |so |then |while |when |whereas )*they\b/i;
+const COVERS_WORD = `(?:cover art|cover images?|cover pictures?|artwork|images?|pictures?|cover|covers${NOT_OURS})`;
+const LEAD = '(?:and |but |though |although |yet |or |so |then |while |when |whereas |even )*';
+const DET = '(?:the |a |an |every |each |any |all |both |these |those |this |that |its |their |your |our |same |plain )*';
+// The same lookahead COVERS carries, spelled once and shared, for the same reason: "covers" is also
+// a verb, and "the export covers what was downloaded anyway" was reading as a clause about the
+// pictures. Two copies of that exclusion would be two lists to keep in step, which is the defect
+// this file keeps paying for.
+const COVERS_NOUN = new RegExp(`\\b${COVERS_WORD}\\b`, 'gi');
+const HUNG_OFF = new RegExp(`\\b(\\w+)\\s+(?:for|of|about)\\s+${DET}$`, 'i');
+// What it hangs off has to be a word about requesting, in either part of speech, because the
+// shipped copy's own verb writes it as one: "the app still asks for the image" is an
+// acknowledgement and "the details for the image are still fetched" is not.
+const REQUEST_WORD = new RegExp(`^(?:${ASKED}|number)$`, 'i');
+const COVERS_HEAD = new RegExp(`^\\s*${LEAD}${DET}${COVERS_WORD}\\b`, 'i');
+const THEY_HEAD = new RegExp(`^\\s*${LEAD}they\\b`, 'i');
 
-function aboutCovers(clause) {
-  return COVERS_NOUN.test(clause) || COVERS_SUBJECT.test(clause);
+function coversNamed(clause) {
+  const scan = new RegExp(COVERS_NOUN.source, 'gi');
+  for (let hit = scan.exec(clause); hit; hit = scan.exec(clause)) {
+    const hungOff = HUNG_OFF.exec(clause.slice(0, hit.index));
+    if (!hungOff || REQUEST_WORD.test(hungOff[1])) return true;
+  }
+  return false;
+}
+
+function theyMeansCovers(before) {
+  const clauses = before.split(/[.;,!?]/).filter((part) => part.trim() !== '');
+  for (let i = clauses.length - 1; i >= 0; i -= 1) {
+    if (COVERS_HEAD.test(clauses[i])) return true;
+    if (!THEY_HEAD.test(clauses[i])) return false;
+  }
+  return false;
+}
+
+function aboutCovers(clause, before) {
+  return coversNamed(clause) || (THEY_HEAD.test(clause) && theyMeansCovers(before));
 }
 const ADVERBIAL_ONLY =
   /^\s*(?:and |but |though |although |yet |or |so |even )*(?:regardless|anyway|(?:exactly )?as before|all the same|no different|as always|in fact|even so|either way)\s*$/i;
@@ -334,7 +392,7 @@ function clauseAround(text, index) {
   while (start > 0 && !CLAUSE_BREAK.test(text[start - 1])) start -= 1;
   let end = index;
   while (end < text.length && !CLAUSE_BREAK.test(text[end])) end += 1;
-  return text.slice(start, end);
+  return { clause: text.slice(start, end), before: text.slice(0, start) };
 }
 
 function acknowledges(text) {
@@ -342,8 +400,9 @@ function acknowledges(text) {
   for (let found = scan.exec(text); found; found = scan.exec(text)) {
     const head = clauseAround(text, found.index);
     const tail = clauseAround(text, found.index + found[0].length - 1);
-    const asserting = tail !== head && !ADVERBIAL_ONLY.test(tail) ? tail : head;
-    if (aboutCovers(asserting)) return true;
+    const asserting =
+      tail.clause !== head.clause && !ADVERBIAL_ONLY.test(tail.clause) ? tail : head;
+    if (aboutCovers(asserting.clause, asserting.before)) return true;
   }
   return false;
 }
@@ -399,7 +458,7 @@ test('a promise about one thing may still be absolute, and one still is', () => 
 });
 
 // The corpus. Everything above is an instrument, and an instrument nobody can re-run is an
-// assertion. These four lists were built by eight rounds of review trying to break the rule, and
+// assertion. These four lists were built by ten rounds of review trying to break the rule, and
 // until now they lived in a scratch file outside the repository while both the changelog and the
 // backlog said a proof would disagree with anyone who closed an escape. Nothing could. They are
 // here now, so the claim is true and the counts in those documents are derived rather than
@@ -545,13 +604,37 @@ const DISHONEST_SENTENCES = [
   // acknowledgement to a covers noun would convict the shipped copy. Admitting the pronouns
   // alongside the nouns convicts none of it, and this is caught.
   'Switch covers off and no cover is requested, with the address stored unchanged.',
+  // The noun half of the same evasion, found the round after the pronoun half was closed. Writing
+  // the antecedent out where the pronoun had been refused restored every pardon, because a rule
+  // that only asks whether the word is in the clause cannot tell "the details for the covers" from
+  // "the requests for the covers". The first three are those rewrites; the fourth reached both
+  // shipped cards before this round.
+  'Switch covers off and no cover is requested; the details for the covers are still fetched.',
+  'Switch covers off and no cover is requested, your notes about the cover art are unchanged.',
+  'Turning cover art off stops the covers being downloaded, and your lists of the images are unchanged.',
+  'Switch covers off and no cover is requested; the metadata for the covers is still fetched.',
+  // A covers noun is also a verb, and the verb reading was pardoning a clause about an export.
+  'Switch covers off and no cover is requested; the export covers what was downloaded anyway.',
+  // A clause-initial "they" whose antecedent is not the covers. Reading subjecthood as reference
+  // pardoned all three: the nearest clause head is the details, the metadata service and the notes
+  // in turn, and in none of them do the pictures appear at all.
+  'Switch covers off and no cover is requested. The details are separate, they are still fetched.',
+  'Switch covers off and no cover is requested. The metadata service is untouched, they are unchanged.',
+  'Switch covers off and no cover is requested. Your notes are stored locally, they are unchanged.',
 ];
-// The two passages this instrument does not catch. Both say a true thing and a false thing in one
-// breath, and the true half is what excuses the false one. The first splits them across a full
-// stop, which no rule about clauses inside a sentence can reach. The second hangs the true clause
-// off the lie with no subject of its own, so it is read as an adverbial of the lie's subject, which
-// is exactly what it looks like. A passage that contradicts itself needs a reader, and claiming
-// otherwise would be the overclaim this whole item exists to undo.
+// The three passages this instrument does not catch. The first two say a true thing and a false
+// thing in one breath, and the true half is what excuses the false one. The first splits them across
+// a full stop, which no rule about clauses inside a sentence can reach. The second hangs the true
+// clause off the lie with no subject of its own, so it is read as an adverbial of the lie's subject,
+// which is exactly what it looks like. A passage that contradicts itself needs a reader, and
+// claiming otherwise would be the overclaim this whole item exists to undo.
+//
+// The third is a covers noun inside a reduced relative clause, which is the one shape of the noun
+// evasion this round could not close. Nothing in the punctuation or the word order separates "the
+// details the covers carry" from "hides the covers but does not stop them": telling them apart needs
+// to know that "hides" is a verb and "details" is a noun. That is parsing, and every list written in
+// this file in place of parsing has been evaded within a round, so it is recorded rather than
+// guessed at.
 //
 // They are asserted as escaping so that closing one turns this red. That is not a wish for them to
 // stay open: a round that closes one should say so and move it up into the list above. What must
@@ -559,6 +642,7 @@ const DISHONEST_SENTENCES = [
 const RECORDED_ESCAPES = [
   'They can be hidden, and then they are not requested at all. Titles and dates are still fetched.',
   'Switch covers off and no cover is requested, or your notes sent, as before.',
+  'Switch covers off and no cover is requested; the details the covers carry are still fetched.',
 ];
 
 // True sentences this instrument refuses, with the repair beside each. They fall into four classes,
@@ -573,7 +657,7 @@ const RECORDED_ESCAPES = [
 // assertion: a parenthetical or a coordinator sits between the subject and its verb, leaving clauses
 // like "continue to be requested" and "is still requested" with no subject in them at all. Walking
 // left to find the subject would accept all five, and it was measured against this corpus: it also
-// pardons 26 of the 63 sentences below and accepts all 11 of these refusals, because a leftward walk
+// pardons 30 of the 71 sentences below and accepts all 12 of these refusals, because a leftward walk
 // lends a subject across clause boundaries in whichever direction happens to help. All five repair by
 // moving the parenthetical, four to the end of the sentence and one to the front, which adds nothing
 // and removes nothing, and is why the comment at the head of this file no longer claims every repair

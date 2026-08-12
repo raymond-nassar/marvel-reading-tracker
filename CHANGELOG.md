@@ -93,7 +93,7 @@ quote in a bug report.
   will pardon a false one sitting beside it: "no cover is requested, your notes are unchanged" says
   one true thing and one false thing, and the check was reading the true half. The first two attempts
   reached for the punctuation, refusing an acknowledgement separated from its request by a comma and
-  then one separated by a conjunction. Run against the 42 true sentences the check is now proved
+  then one separated by a conjunction. Run against the 43 true sentences the check is now proved
   against, the first refuses 5 of them and the second 2, while a comma splice walks through both
   needing neither mark. What separates the two cases is not the punctuation but the subject: "your
   notes" is a different subject, and "regardless" is not a subject at all. So the acknowledgement now
@@ -126,9 +126,10 @@ quote in a bug report.
   details for them are still fetched" is a clause about the metadata, and dropping it onto the end of
   a lie turned the lie into a pass. Seven shapes of that insertion are now held as false sentences,
   two of them the very entries this file had listed as evasions kept shut. The tie now asks what the
-  clause is about. A covers noun counts anywhere in it; of the pronouns only "they" counts, and only
+  clause is about. Of the pronouns only "they" counts, and only
   at the head, because "them" is never a subject and "these" and "those" are determiners as often as
-  pronouns. Against the corpus as it then stood it cost nothing at all, and every shipped sentence
+  pronouns. The noun was left readable anywhere. Against the corpus as it then stood it cost nothing
+  at all, and every shipped sentence
   still passes. It does have one cost, and finding it needed the other half of the proof: rewriting
   the shipped card into another true phrasing produced "they can be hidden, and hiding them changes
   nothing about what is requested", which the tie refuses, because what is hidden sits in the object
@@ -136,10 +137,26 @@ quote in a bug report.
   as the twelfth refusal rather than argued away, since it is close to wording the card could
   plausibly have shipped.
 
+  A tenth review found the same mistake once more, in the half left alone. Writing the antecedent out
+  where the pronoun had been refused restored every pardon: "the details for the covers are still
+  fetched" is a clause about the details, and a rule that only asks whether the word is present cannot
+  tell it from "the requests for the covers are unchanged". It reached both of the cards on the
+  settings page, which the pronoun version had not. The noun is now read the way the pronoun is. It
+  counts unless every occurrence of it hangs off some other noun through "for", "of" or "about", and a
+  word about requesting is the one thing it can hang off and still be about the covers, because the
+  shipped copy writes it that way: "the app still asks for the image". The same review found a
+  clause-initial "they" being taken as a reference to the covers whatever it actually referred to, so
+  the antecedent is now resolved by walking back to the nearest preceding clause and on through any
+  further "they", which is the chain the metadata card itself uses. Eight of the nine sentences the
+  review wrote to break it are caught and are held as false sentences. The ninth is recorded as a
+  third escape: a covers noun buried in a reduced relative clause, "the details the covers carry are
+  still fetched", which nothing short of parsing separates from "hides the covers but does not stop
+  them".
+
   The price is now in the repository rather than in this paragraph. Both documents used to say that a
   proof would disagree with anyone who quietly closed one of these limits, and no such proof was in
   the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 43
-  sentences written to be true, 63 written to be false, the 2 passages that still pardon themselves,
+  sentences written to be true, 71 written to be false, the 3 passages that still pardon themselves,
   and 12 true sentences the check refuses, each stored beside a repair that is itself asserted to
   pass. Closing an escape or accepting a refusal turns the suite red rather than passing silently,
   which is what those sentences claimed all along.
@@ -159,16 +176,18 @@ quote in a bug report.
   sentence and one to the front. So the claim that every repair adds truth rather than removing it,
   which this entry made for three rounds, was not quite right either. The twelfth is the
   object-pronoun sentence described above. Walking left to find the subject would accept the middle
-  five, and it was measured: it also pardons twenty-six of the sixty-three
+  five, and it was measured: it also pardons thirty of the seventy-one
   false sentences. A passage that says two things and means one of them still needs a reader.
 
   Thirty-seven deliberately broken versions of the shipped sentences are tried against the real files
   and all thirty-seven are refused. Fifteen true rewrites in different true words are tried as well,
   and fourteen are accepted; the fifteenth is the sentence the subject tie costs, and it is the
-  second round running in which this half of the proof, and only this half, found a cost. Eight ways
-  of undoing the eighth round's repairs were each applied on
-  their own, and three more undo the ninth round's; every one turns the suite red, naming which test
-  or which sentence defends it.
+  second round running in which this half of the proof, and only this half, found a cost. It found a
+  third in the tenth round, "the app still asks for the image", and that one was repaired in the
+  instrument rather than in the corpus, because the copy's own verb is a fair way to write it. Eight
+  ways of undoing the eighth round's repairs were each applied on
+  their own, three more undo the ninth round's and five more undo the tenth round's; every one turns
+  the suite red, naming which test or which sentence defends it.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two
