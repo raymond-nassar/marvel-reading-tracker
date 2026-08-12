@@ -29,11 +29,11 @@ quote in a bug report.
   not. The argument for skipping the record was that neither companion site already listed in the
   read-me was added under one, and that turned out not to be a precedent: both were added before the
   list and its rules existed. Writing the record moved two entries into the ranking, and eleven lines
-  elsewhere in that document state a figure that depends on where entries sit in it. All eleven had
-  to change. The check that guards those figures derives eight of them and is blind to the other
-  three, so a review caught those, which is the same fault the document files jobs about. It also
-  turned up a figure that was true when it was written and has drifted a long way since, which is now
-  filed as its own job rather than fixed here.
+  elsewhere in that document state a figure derived from that table. All eleven had to change. The
+  check that guards those figures sees seven of them and is blind to four, and a review caught three
+  of those four, which is the same fault the document files jobs about. It also turned up a figure
+  that was true when it was written and has drifted a long way since, which is now filed as its own
+  job rather than fixed here.
 
 - **The project now says plainly where its comic data came from, and no longer claims a licence
   over parts of it that were never the project's to license.** Nothing you have saved is affected,
