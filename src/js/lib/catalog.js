@@ -71,10 +71,22 @@ export function sourceLink(list) {
   }
 }
 
-// Where an order came from, in the reader's words. The license is part of the credit the
-// upstream curators are owed, so it travels with the name rather than being shown alone.
+// Where an order came from, in the reader's words. This is provenance, not terms: it says who
+// compiled the order and from what, which is the credit the curators are owed. It was one field
+// with the licence until BL-099, and ten of the twelve values it held were sentences like this
+// one rather than a grant, so reading it as a licence was reading it wrong.
+//
+// The fallback chain is widest last, so a list written before the split still shows something
+// rather than dropping the credit entirely.
 export function sourceLabel(list) {
-  return str(list?.sourceLicense) ?? str(list?.source);
+  return str(list?.sourceOrigin) ?? str(list?.sourceLicense) ?? str(list?.source);
+}
+
+// The licence conveyed with the vendored order, when one is. Null is the ordinary answer and
+// means nobody granted anything for this file, not that it is unencumbered. See
+// `docs/DATA_PROVENANCE.md` for what this project's own MIT grant does and does not reach.
+export function sourceLicense(list) {
+  return str(list?.sourceLicense);
 }
 
 // A curated order is a snapshot, so its age is the reader's only signal that a recent event
@@ -134,6 +146,7 @@ function normalizeEntry(raw) {
     characters: strings(raw.characters),
     keywords: strings(raw.keywords),
     source: str(raw.source),
+    sourceOrigin: str(raw.sourceOrigin),
     sourceLicense: str(raw.sourceLicense),
     updatedAt: str(raw.updatedAt),
     // Two orders for the same story are a choice between reading paths, not two unrelated

@@ -20,6 +20,11 @@ const str = (v) => (typeof v === 'string' && v.trim() ? v.trim() : null);
 
 const strings = (v) => (Array.isArray(v) ? [...new Set(v.map(str).filter(Boolean))] : []);
 
+// An SPDX expression: identifiers of letters, digits, dot, plus and hyphen, optionally joined by
+// AND, OR or WITH. Deliberately not a list of known identifiers, which is the enumeration this
+// repository has been bitten by; the shape is what distinguishes a licence from a sentence.
+const SPDX = /^[A-Za-z0-9.+-]+(?: (?:AND|OR|WITH) [A-Za-z0-9.+-]+)*$/;
+
 // Orders are fetched over the network at vendor time, so the manifest may only point at https.
 function httpsUrl(v) {
   const s = str(v);
@@ -59,7 +64,20 @@ function checkEntry(raw, index, seen) {
   else if (!sourceUrl && !sourceFile && raw.sourceUrl == null && raw.sourceFile == null) {
     at('has no sourceUrl or sourceFile to vendor from');
   }
-  if (!str(raw.sourceLicense)) at('has no sourceLicense');
+  if (!str(raw.sourceOrigin)) at('has no sourceOrigin');
+  // Origin and licence are different claims and were one field until BL-099. Ten of the twelve
+  // values that field held were prose about where an order came from, which is not a grant of
+  // anything, and the two that named a licence named one the upstream states for its Python
+  // distribution rather than for the file vendored here. So the shape is checked: a licence is
+  // an SPDX expression and nothing else, which refuses every one of those ten by construction.
+  //
+  // The type is checked rather than coerced, because coercing loses the one distinction this
+  // field exists to keep. `String(true)` is SPDX-shaped and passes, and the value is then stored
+  // through str(), which yields null for a non-string. A boolean would have been recorded as "no
+  // licence established", which is a claim nobody made.
+  if (raw.sourceLicense != null && !(typeof raw.sourceLicense === 'string' && SPDX.test(raw.sourceLicense.trim()))) {
+    at('sourceLicense must be an SPDX expression, or null when no licence is conveyed with the order; describe where it came from in sourceOrigin');
+  }
   if (!LIST_TYPES.includes(raw.type)) at(`type must be one of ${LIST_TYPES.join(', ')}`);
   if (!READING_DEPTHS.includes(raw.depth)) at(`depth must be one of ${READING_DEPTHS.join(', ')}`);
   if (raw.expect != null && !(Number.isInteger(raw.expect) && raw.expect > 0)) {
@@ -90,8 +108,9 @@ function checkEntry(raw, index, seen) {
       sourceFile,
       // The page a reader can open is not always the raw file we fetch; fall back to the raw
       // URL so attribution is never blank. An order authored here has no upstream page, so it
-      // is credited by sourceLicense alone rather than given a link that goes nowhere.
+      // is credited by sourceOrigin alone rather than given a link that goes nowhere.
       sourcePage: httpsUrl(raw.sourcePage) ?? sourceUrl,
+      sourceOrigin: str(raw.sourceOrigin),
       sourceLicense: str(raw.sourceLicense),
       description: str(raw.description),
       type: raw.type,

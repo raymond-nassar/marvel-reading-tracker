@@ -12,7 +12,8 @@ const valid = {
   depth: 'essential',
   sourceUrl: 'https://example.test/civil_war.md',
   sourcePage: 'https://example.test/civil_war',
-  sourceLicense: 'MIT (example)',
+  sourceOrigin: 'Vendored from example.test',
+  sourceLicense: null,
   out: 'civil_war.json',
   characters: ['Iron Man'],
   keywords: ['crossover'],
@@ -45,9 +46,41 @@ test('an order can be authored in this repository instead of fetched', () => {
   assert.deepEqual(errors, []);
   assert.equal(entries[0].sourceFile, 'civil_war.md');
   assert.equal(entries[0].sourceUrl, null);
-  // No upstream page to send the reader to, so attribution rests on the license alone rather
+  // No upstream page to send the reader to, so attribution rests on the origin alone rather
   // than on a link that goes nowhere.
   assert.equal(entries[0].sourcePage, null);
+});
+
+// BL-099. Origin and licence were one field, and ten of the twelve values it held were prose
+// about where an order came from. Prose is not a grant, so the shape is checked: anything that
+// is not an SPDX expression is refused, which is every one of those ten.
+test('a licence is an SPDX expression and provenance prose is not accepted as one', () => {
+  for (const spdx of ['MIT', 'CC0-1.0', 'Apache-2.0', 'MIT OR Apache-2.0', 'GPL-2.0-only WITH Classpath-exception-2.0']) {
+    const { entries, errors } = parseManifest({ lists: [{ ...valid, sourceLicense: spdx }] });
+    assert.deepEqual(errors, [], `rejected the SPDX expression ${spdx}`);
+    assert.equal(entries[0].sourceLicense, spdx);
+  }
+});
+
+// Null is the ordinary answer and has to stay distinguishable from a licence. It means nobody
+// granted anything for this file, which is not the same claim as the file being unencumbered.
+test('a null licence is accepted, because no licence conveyed is the ordinary case', () => {
+  const { entries, errors } = parseManifest({ lists: [{ ...valid, sourceLicense: null }] });
+  assert.deepEqual(errors, []);
+  assert.equal(entries[0].sourceLicense, null);
+  assert.equal(entries[0].sourceOrigin, valid.sourceOrigin);
+});
+
+// BL-099 review. A non-string value used to pass the shape check, because String(true) is
+// SPDX-shaped, and was then stored as null by the same coercion that reads the field. The entry
+// came out claiming no licence was conveyed, which is a claim nobody in the manifest had made.
+// Refusing the type keeps null meaning only what a null was written to mean.
+test('a licence that is not a string is refused rather than coerced into no licence', () => {
+  for (const bad of [true, 123, ['MIT'], { name: 'MIT' }]) {
+    const { entries, errors } = parseManifest({ lists: [{ ...valid, sourceLicense: bad }] });
+    assert.equal(entries.length, 0, `accepted the non-string licence ${JSON.stringify(bad)}`);
+    assert.match(errors.join('\n'), /must be an SPDX expression/);
+  }
 });
 
 test('an incomplete entry is reported with its reason, not silently skipped', () => {
@@ -61,7 +94,10 @@ test('an incomplete entry is reported with its reason, not silently skipped', ()
     [{ ...valid, sourceUrl: undefined, sourceFile: '../escape.md' }, /sourceFile that is not a plain/],
     [{ ...valid, sourceUrl: undefined, sourceFile: 'order.json' }, /sourceFile that is not a plain/],
     [{ ...valid, sourceFile: 'order.md' }, /an order comes from one place/],
-    [{ ...valid, sourceLicense: null }, /sourceLicense/],
+    [{ ...valid, sourceOrigin: null }, /has no sourceOrigin/],
+    [{ ...valid, sourceLicense: 'MIT (emreparker/marvel-comics)' }, /must be an SPDX expression/],
+    [{ ...valid, sourceLicense: 'Compiled for this project' }, /must be an SPDX expression/],
+    [{ ...valid, sourceLicense: 'Assembled from Marvel series metadata (publication order)' }, /must be an SPDX expression/],
     [{ ...valid, type: 'anthology' }, /type must be one of/],
     [{ ...valid, depth: 'skim' }, /depth must be one of/],
     [{ ...valid, expect: 0 }, /expect must be/],
@@ -113,6 +149,7 @@ test('the bundled manifest is valid and describes exactly the bundled catalog', 
     assert.equal(list.type, entry.type);
     assert.equal(list.depth, entry.depth);
     assert.equal(list.source, entry.sourcePage);
+    assert.equal(list.sourceOrigin, entry.sourceOrigin, `${entry.id} origin drifted from the manifest`);
     assert.equal(list.sourceLicense, entry.sourceLicense);
     assert.deepEqual(list.characters, entry.characters);
     assert.deepEqual(list.keywords, entry.keywords);
@@ -120,5 +157,65 @@ test('the bundled manifest is valid and describes exactly the bundled catalog', 
     assert.equal(list.groupName, entry.groupName);
     assert.equal(list.variant, entry.variant);
     if (entry.expect != null) assert.equal(list.count, entry.expect, `${entry.id} count drifted`);
+  }
+});
+
+// BL-099. The catalog is rebuilt from the pinned files rather than from the manifest, so a
+// pinned file that keeps a stale origin puts a claim in front of a reader that the manifest no
+// longer makes. The two are checked against each other rather than each against a copy of the
+// expected text, which somebody would then have to keep up to date.
+test('every pinned order file states the same origin and licence as the manifest', async () => {
+  const manifest = JSON.parse(await readFile(new URL('../src/data/curated-lists.json', import.meta.url), 'utf8'));
+  const { entries } = parseManifest(manifest);
+  assert.ok(entries.length > 0);
+
+  for (const entry of entries) {
+    const pinned = JSON.parse(await readFile(new URL(`../src/data/${entry.out}`, import.meta.url), 'utf8'));
+    assert.equal(pinned.sourceOrigin, entry.sourceOrigin, `${entry.id}: pinned origin disagrees with the manifest`);
+    assert.equal(pinned.sourceLicense ?? null, entry.sourceLicense, `${entry.id}: pinned licence disagrees with the manifest`);
+    // A pinned file is the copy the reader is actually served, so the shape is checked here too
+    // rather than only where the manifest is parsed.
+    if (pinned.sourceLicense != null) {
+      assert.match(
+        String(pinned.sourceLicense),
+        /^[A-Za-z0-9.+-]+( (AND|OR|WITH) [A-Za-z0-9.+-]+)*$/,
+        `${entry.id}: pinned licence is not an SPDX expression`,
+      );
+    }
+  }
+});
+
+// BL-099 acceptance: locally compiled orders need a reviewable derivation record. Every order
+// under src/data/orders is authored here, and eight of the ten are written by a script, which
+// puts the trail in by construction. The other two carry one only if somebody wrote it, which
+// is exactly the kind of thing that rots, so all ten are checked rather than trusted.
+//
+// The check is not keyed on which files are which. Naming the two by hand would be an
+// enumeration somebody has to keep complete, and the eleventh order is the one it would miss.
+test('every order authored here records how it was derived', async () => {
+  const manifest = JSON.parse(await readFile(new URL('../src/data/curated-lists.json', import.meta.url), 'utf8'));
+  const { entries } = parseManifest(manifest);
+  const local = entries.filter((e) => e.sourceFile);
+  assert.ok(local.length > 0, 'no locally authored orders to check');
+
+  for (const entry of local) {
+    const md = await readFile(new URL(`../src/data/orders/${entry.sourceFile}`, import.meta.url), 'utf8');
+    const lines = md.split(/\r?\n/);
+    const first = lines.findIndex((l) => /^\s*- \[[ xX]\]/.test(l));
+    assert.ok(first > 0, `${entry.sourceFile}: no checklist items found`);
+    // Everything above the first tickable line, minus the title and any sub-heading, is the
+    // trail. A title alone is what the two hand-compiled files had before BL-099.
+    const trail = lines.slice(0, first).filter((l) => l.trim() && !/^#/.test(l)).join(' ');
+    assert.ok(
+      trail.length > 200,
+      `${entry.sourceFile}: has no derivation trail above its first checklist item`,
+    );
+    // A trail is reviewable if it can be followed: either to the script that wrote the file, or
+    // to the record that says how a hand-compiled sequence was arrived at.
+    assert.match(
+      trail,
+      /scripts\/[\w-]+\.mjs|DATA_PROVENANCE\.md/,
+      `${entry.sourceFile}: trail names neither a generating script nor the provenance record`,
+    );
   }
 });

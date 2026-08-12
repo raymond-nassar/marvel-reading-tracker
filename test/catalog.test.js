@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory,
-  searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
+  searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, sourceLicense, updatedLabel,
   safeOrderFile, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
   catalogFacets, filterByFacet, facetLabel, isShortOrder, catalogCoverUrl,
   readingTimeLabel, MINUTES_PER_ISSUE, SHORT_ORDER_MAX, collectionsLabel, isTradeOrder,
@@ -443,10 +443,25 @@ test('a source is linked only when it is a real https address', () => {
   assert.equal(sourceLink({}), null);
 });
 
-test('attribution falls back to the source when no license is recorded', () => {
+test('attribution prefers the origin, and never goes blank while any credit exists', () => {
+  assert.equal(
+    sourceLabel({ sourceOrigin: 'Compiled for this project', sourceLicense: 'MIT', source: 'https://example.com' }),
+    'Compiled for this project',
+  );
+  // BL-099 split one field into two. A catalog written before the split has no origin, and the
+  // credit it does carry is still owed, so the older fields remain as fallbacks.
   assert.equal(sourceLabel({ sourceLicense: 'MIT', source: 'https://example.com' }), 'MIT');
   assert.equal(sourceLabel({ source: 'https://example.com' }), 'https://example.com');
   assert.equal(sourceLabel({}), null);
+});
+
+// A licence and a credit are different claims, so they are read by different functions. Null is
+// the ordinary answer and means no licence was conveyed, not that the order is unencumbered.
+test('the licence is read separately from the credit, and is usually absent', () => {
+  assert.equal(sourceLicense({ sourceOrigin: 'Compiled for this project', sourceLicense: null }), null);
+  assert.equal(sourceLicense({ sourceOrigin: 'Compiled for this project' }), null);
+  assert.equal(sourceLicense({ sourceLicense: 'CC0-1.0' }), 'CC0-1.0');
+  assert.equal(sourceLicense({}), null);
 });
 
 test('a last-updated date is shown only when it is a real date', () => {

@@ -16,6 +16,33 @@ quote in a bug report.
 
 ### Added
 
+- **The project now says plainly where its comic data came from, and no longer claims a licence
+  over parts of it that were never the project's to license.** Nothing you have saved is affected,
+  and on screen only four sentences change. Three were saying the wrong thing, two of those on the
+  About page and one on the Backup and settings screen, and one of the three told you the bundled
+  reading lists were not put together here when most of them are. The fourth was reworded to match
+  and says the same thing it did. The comic details shown in the app were never written here:
+  they came from Marvel, passed through two other people's projects, and arrived with terms nobody
+  had written down. A new page in the documentation traces that path hand by hand, lists exactly
+  what was copied and how much of it, and states what the project's own licence does and does not
+  cover. It deliberately stops short of saying whether any of it can be republished, because that is
+  a question for a lawyer and not for a document, and it is now recorded as an open question rather
+  than quietly assumed to be settled.
+
+  One check turned an assumption into a correction. The project the data was taken from was believed
+  to be MIT-licensed, and it does say so on its front page. Looking properly found it has no licence
+  file at all, and that the one place it does declare MIT names its program code and says nothing at
+  all about the folder this data came from. So the honest answer is that permission was given for the
+  code and never mentioned for the data, and that is now what the project says rather than the more
+  comfortable version.
+
+  Alongside that, each reading list used to describe where it came from in the same field meant for
+  its licence, so a reader could not tell which of the two they were being told. Those are now
+  separate, the licence field will only accept something written in the standard shape a licence name
+  takes or an explicit "not established", and every list the project compiles itself has to record
+  how it was put together. That last rule is written so that a new list added later is covered
+  automatically, rather than only the ones anybody thought to name.
+
 - **The automated checks now run a fixed, reviewed version of the third-party tools they borrow,
   rather than whatever the latest version happens to be that day.** Nothing about the app changes
   and nothing you have saved is affected. Those tools are maintained by other people, and asking

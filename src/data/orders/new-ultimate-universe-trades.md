@@ -1,5 +1,21 @@
 # New Ultimate Universe: Collected Editions Reading Order
 
+Compiled by hand for this project. The issues and their ids are the same ones as the
+issue-by-issue order beside this file, derived the same way; what is added here is the division
+into volumes, and only that division is new.
+
+The volume line-up follows Comic Book Herald's collected-edition guide for the line, read as a
+reference and re-expressed here. It is not derived from Marvel metadata and cannot be checked
+against it: the metadata mirror serves collections from the same endpoint as issues but holds no
+collection record for anything published after 2023, and paging every record found 22 collections
+in 2023, none in 2024, none in 2025, and no Ultimate collection in any year. Six issues Marvel
+has not collected are left out: the 2024 Free Comic Book Day issue and the five-part Ultimate
+Impact: Reborn.
+
+Because the line-up cannot be verified against Marvel, the order says so on its catalog card
+rather than presenting it as Marvel's own. See
+[the data provenance record](../../../docs/DATA_PROVENANCE.md) for what that means for reuse.
+
 ## Ultimate Invasion
 
 - [ ] [Ultimate Invasion (2023) #1](https://www.marvel.com/comics/issue/97145/ultimate_invasion_2023_1)
