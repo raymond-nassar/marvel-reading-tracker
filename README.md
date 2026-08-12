@@ -234,6 +234,12 @@ will start empty. That is expected, and your Edge progress is untouched.
 - **[marvelreading.com](https://marvelreading.com)** (the Complete Marvel Reading Order, or
   CMRO): a long-running community source of curated Marvel reading orders. Use it to decide
   *what* to read; use this to keep the checklist and jump into the reader.
+- **[Comic Book Herald](https://www.comicbookherald.com)**: editorial reading guides for Marvel by
+  era, event and character, carrying the context and the recommendations that a bare ordering
+  leaves out, and collected-edition guides for readers who buy the books rather than the single
+  issues. This project exists partly because of it: the bundled New Ultimate Universe trade order
+  was compiled here, but its division into volumes follows that collected-edition guide, read as a
+  reference. Read it to decide what is worth reading and why; use this to track where you are in it.
 
 ## Data source
 
