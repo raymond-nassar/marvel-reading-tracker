@@ -274,8 +274,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:6333|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6333",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:6380|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6380",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -864,8 +864,8 @@
     "fp": "295f2fa9e46efe7a",
     "head": "# `--ignore-scripts` because a manifest is contributor-editable: an install"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1230-1239|0": {
-    "anchor": "CHANGELOG.md:1230-1239",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1252-1261|0": {
+    "anchor": "CHANGELOG.md:1252-1261",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -924,18 +924,18 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6307-6309|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6307-6309",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6354-6356|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6354-6356",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6473-6475|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6473-6475",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6520-6522|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6520-6522",
     "fp": "2f7e750267ca9c0c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6492-6496|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6492-6496",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6539-6543|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6539-6543",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },

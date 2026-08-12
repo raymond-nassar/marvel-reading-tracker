@@ -179,8 +179,10 @@ const ABSOLUTES = [
 // must acknowledge that the requests continue. There is no lie vocabulary left to evade, since
 // nothing is searching for one, and the repair to a refused sentence is to name the covers rather
 // than to drop a true word. That is not quite the clean asymmetry it was once claimed to be: five
-// of the fourteen refusals below repair by moving a parenthetical, four to the end of the sentence and
-// one to the front, which adds nothing and removes nothing. The refused sentences are listed with
+// of the twenty refusals below repair by moving a parenthetical, four to the end of the sentence and
+// one to the front, which adds nothing and removes nothing. Two more repair by moving the assertion
+// into the clause that names the covers, one by reordering a coordination and one by changing a
+// predicate into an adverbial. The refused sentences are listed with
 // their repairs at the foot of this file rather than counted here, because a count in prose is a
 // claim nothing checks. That list is a regression list and not a bound: it holds the refusals review
 // has found, so that one of them cannot quietly start being accepted, and it is nowhere near all of
@@ -242,44 +244,64 @@ const CLEARED =
 
 // The forms the truth is actually written in. A form missing here fails a true sentence, and the
 // repair is to say it more plainly rather than to say less. That is the direction worth having,
-// though it is not absolute: one refusal at the foot of this file repairs by reordering.
+// though it is not absolute: some refusals at the foot of this file repair by reordering.
 //
 // Every branch has to name a request, and the acknowledgement has to be about the covers. Neither
 // is tidiness. Review pardoned three lies with a true clause about something else entirely sitting
 // beside them, because "unchanged", "regardless" and "as before" carry no subject of their own:
 // "switching cover art off stops them being requested, and your notes are unchanged" passed.
 //
-// Punctuation was tried first as the fix and is the wrong instrument. Measured against the 44 true
-// sentences at the foot of this file, refusing a gap that crosses a comma refuses 5 of them, "the
-// image is requested, regardless" among them; refusing one that crosses a conjunction refuses 2, and
-// a comma splice still walks through needing neither. Those two figures were 7 and 4 for two rounds,
-// which was the count against a smaller corpus and read as though it were a property of the
-// instruments rather than of what they were run against. What actually separates the two cases is
-// the subject: "your notes" is a different one, "regardless" is not a subject at all. So the gap
-// crosses anything short of a full stop, and the tie is to what the clause is about instead.
+// Punctuation was tried as one rule for every branch and is the wrong instrument at that width,
+// though the right one branch by branch. Measured against the 51 true sentences at the foot of this
+// file, refusing a gap that crosses a comma everywhere refuses 6 of them, "the image is requested,
+// regardless" among them, and ending every clause at a coordinator as well refuses 2 more. All
+// eight are one sentence written eight ways: an adverbial saying nothing has changed, reached
+// across the mark from the clause that names the request. Nothing else is refused either way and no
+// false sentence is pardoned, which is why both instruments are applied per branch below rather
+// than dropped, and why the earlier reading of these figures as a reason to drop them was wrong.
+// What separates the two cases is the subject: "your notes" is a different one, "regardless" is not
+// a subject at all. So a branch whose halves are one assertion may cross neither mark, a branch
+// whose other half carries no subject may cross both, and the tie is to what the clause is about.
 const ASKED =
   '(?:requests?|requested|sends?|sent|fetch(?:es|ed|ing)?|downloads?|downloaded|asks?|asked|asking)';
 const NOT_STOP =
   "(?:cannot|can't|can not|could not|couldn't|does not|doesn't|do not|don't|did not|didn't|will not|won't|would not|wouldn't)\\s+(?:stop|mean|prevent|reduce|change|halt|cancel)\\w*";
-const UNCHANGED =
-  '(?:unchanged|regardless|anyway|(?:exactly )?as before|all the same|no different|continues?|carry on|carries on)';
+// The words that say nothing has changed divide in two, and the division decides how far each
+// branch may reach. An adverbial carries no subject of its own, so it leans on the clause before
+// it and the acknowledgement has to reach across a comma to find it: "the image is requested,
+// regardless" is one assertion written in two pieces. A predicate carries its own subject, so
+// reaching across a comma pairs a request word in one clause with a subject in another, which is
+// two assertions read as one.
+const ADVERBIAL_UNCHANGED = '(?:regardless|anyway|(?:exactly )?as before|all the same|no different)';
+const PREDICATE_UNCHANGED = '(?:unchanged|continues?|carry on|carries on)';
 // This branch stands alone, with no request word beside it, so it has to carry one itself. Left
 // bare as "the same number", it pardoned "every list keeps the same number of issues".
 const SAME_REQUESTS = '\\bthe same (?:number of )?(?:requests?|fetches|downloads?)\\b';
+// Two gaps, not one. A branch whose halves are one assertion may not cross a clause end, and a
+// comma is a clause end everywhere else in this file. Left able to cross one, "the tiles are
+// still there, no cover is requested" put "still" in one clause and the request in the next, and
+// the lie was read as its own acknowledgement. The adverbial branches keep the wider gap, because
+// crossing a comma is the whole of what they are for.
 const GAP = '[^.;]';
-const ACKNOWLEDGES = new RegExp(
-  [
-    `\\bstill\\b${GAP}{0,40}\\b${ASKED}\\b`,
-    `\\b${NOT_STOP}\\b${GAP}{0,40}\\b${ASKED}\\b`,
-    `\\bwithout stopping\\b${GAP}{0,40}\\b${ASKED}\\b`,
-    `\\bno (?:reduction|change|fewer|difference)\\b${GAP}{0,40}\\b${ASKED}\\b`,
-    `\\b(?:nothing changes?|changes? nothing)\\b${GAP}{0,40}\\b${ASKED}\\b`,
-    SAME_REQUESTS,
-    `\\b${ASKED}\\b${GAP}{0,30}\\b${UNCHANGED}\\b`,
-    `\\b${UNCHANGED}\\b${GAP}{0,30}\\b${ASKED}\\b`,
-  ].join('|'),
-  'i',
-);
+const TIGHT_GAP = '[^.;,]';
+// Whether a coordinator ends a clause is decided per branch, by the same reasoning. A branch
+// asserting something about a request asserts it of one coordinate clause, so "no cover is
+// requested and the details are still fetched" is two claims and the second is the one being
+// made. The adverbial branches are not, because "turn covers off and the app requests every one
+// of them regardless" is a single claim written across a coordinator. "but" and "yet" are
+// deliberately absent from the list: the shipped copy hangs its own acknowledgement off one.
+const ACKNOWLEDGES = [
+  [`\\bstill\\b${TIGHT_GAP}{0,40}\\b${ASKED}\\b`, true],
+  [`\\b${NOT_STOP}\\b${TIGHT_GAP}{0,40}\\b${ASKED}\\b`, true],
+  [`\\bwithout stopping\\b${TIGHT_GAP}{0,40}\\b${ASKED}\\b`, true],
+  [`\\bno (?:reduction|change|fewer|difference)\\b${TIGHT_GAP}{0,40}\\b${ASKED}\\b`, true],
+  [`\\b(?:nothing changes?|changes? nothing)\\b${TIGHT_GAP}{0,40}\\b${ASKED}\\b`, true],
+  [SAME_REQUESTS, false],
+  [`\\b${ASKED}\\b${GAP}{0,30}\\b${ADVERBIAL_UNCHANGED}\\b`, false],
+  [`\\b${ADVERBIAL_UNCHANGED}\\b${GAP}{0,30}\\b${ASKED}\\b`, false],
+  [`\\b${ASKED}\\b${TIGHT_GAP}{0,30}\\b${PREDICATE_UNCHANGED}\\b`, true],
+  [`\\b${PREDICATE_UNCHANGED}\\b${TIGHT_GAP}{0,30}\\b${ASKED}\\b`, true],
+];
 
 // Which clause is doing the asserting. A trailing clause that makes its own assertion has to name
 // the covers itself; one that is a bare adverbial hangs off the clause before it and takes that
@@ -379,8 +401,8 @@ const ACKNOWLEDGES = new RegExp(
 // Walking left instead, so that a subject separated from its verb by a parenthetical could be
 // found, was measured and rejected. "The covers, even when hidden, continue to be requested" is a
 // real sentence and it is refused. But a leftward walk lends a subject across clause boundaries in
-// both directions, and against this corpus it pardons 64 of the 105 false sentences while accepting
-// 12 of the 14 refusals. A rule that recovers twelve true sentences by excusing sixty-four false
+// both directions, and against this corpus it pardons 53 of the 117 false sentences while accepting
+// 16 of the 20 refusals. A rule that recovers sixteen true sentences by excusing fifty-three false
 // ones is the second instrument returning under a new name.
 const COVERS_WORD = `(?:cover art|cover images?|cover pictures?|artwork|images?|pictures?|cover|covers${NOT_OURS})`;
 const LEAD = '(?:and |but |though |although |yet |or |so |then |while |when |whereas |even )*';
@@ -421,12 +443,27 @@ const HUNG_OFF = new RegExp(`\\b(\\w+)\\s+(?:${PREPOSITION})\\s+(?=[^.;,]*$)`, '
 //
 // This is deliberately not the list the acknowledgement itself is built from, though it was for a
 // round. A past participle is the one form that can post-modify the head noun in front of it, so
-// admitting the participles hands the evasion back the word it was closed with: in "the details
-// requested for the covers are still fetched" the covers hang off "requested", which is a request
-// word, and the clause about the details reads as one about the covers again. Seven of the false
-// sentences below are that insertion. So only the forms that cannot be a past participle count
-// here.
-const REQUEST_WORD = /^(?:requests?|sends?|fetch(?:es)?|downloads?|asks?)$/i;
+// admitting the participles wholesale hands the evasion back the word it was closed with: in "the
+// details requested for the covers are still fetched" the covers hang off "requested", and the
+// clause about the details reads as one about the covers again.
+//
+// Refusing every participle instead was the round after that, and it was too much. English writes
+// the truth in the passive, and "a request is still sent for each cover" is refused by a rule that
+// only knows finite forms. What separates the two is what stands in front of the participle: a
+// form of "be" makes it the verb of a passive, and a request noun makes it a modifier of something
+// that is itself a request. "the details requested" has neither, which is why it stays closed.
+// Four true sentences are still refused by this and are recorded at the foot of the file, because
+// "the bytes fetched for the covers are unchanged" and "the details requested for the covers are
+// still fetched" have one shape between them and no rule here can take one and leave the other.
+const FINITE_REQUEST = /^(?:requests?|sends?|fetch(?:es)?|downloads?|asks?)$/i;
+const PARTICIPLE_REQUEST = /^(?:requested|sent|fetched|downloaded|asked)$/i;
+const BE_BEFORE = /\b(?:is|are|was|were|be|been|being)\s+(?:\w+\s+){0,2}$/i;
+const REQUEST_NOUN_BEFORE = /\b(?:requests?|fetches|downloads?)\s+$/i;
+function isRequestWord(word, before) {
+  if (FINITE_REQUEST.test(word)) return true;
+  if (!PARTICIPLE_REQUEST.test(word)) return false;
+  return BE_BEFORE.test(before) || REQUEST_NOUN_BEFORE.test(before);
+}
 const THEY_HEAD = new RegExp(`^\\s*${LEAD}they\\b`, 'i');
 
 // The nearest attachment, not the first. "The same number of requests for the covers" attaches the
@@ -437,7 +474,9 @@ const THEY_HEAD = new RegExp(`^\\s*${LEAD}they\\b`, 'i');
 function hangsOff(before) {
   const scan = new RegExp(HUNG_OFF.source, 'gi');
   let nearest = null;
-  for (let hit = scan.exec(before); hit; hit = scan.exec(before)) nearest = hit[1];
+  for (let hit = scan.exec(before); hit; hit = scan.exec(before)) {
+    nearest = { word: hit[1], before: before.slice(0, hit.index) };
+  }
   return nearest;
 }
 
@@ -445,13 +484,21 @@ function coversNamed(clause) {
   const scan = new RegExp(COVERS_NOUN.source, 'gi');
   for (let hit = scan.exec(clause); hit; hit = scan.exec(clause)) {
     const noun = hangsOff(clause.slice(0, hit.index));
-    if (noun === null || REQUEST_WORD.test(noun)) return true;
+    if (noun === null || isRequestWord(noun.word, noun.before)) return true;
   }
   return false;
 }
 
-function theyMeansCovers(before) {
-  const clauses = before.split(/[.;,!?]/).filter((part) => part.trim() !== '');
+// A coordinator that ends a clause leaves the coordinator itself behind as a segment, and a
+// segment holding nothing but a joining word names nothing. Read as a clause it is not about the
+// covers, so the backwards walk for what "they" refers to stops on it and answers no. Skipping it
+// is only correct where the coordinator was treated as a clause end in the first place, which is
+// why the branch decides this too rather than the walk deciding it for every branch.
+const JOINER_ONLY = /^\s*(?:and|or|so|but|yet|although|though|while|whereas)?\s*$/i;
+
+function theyMeansCovers(before, skipJoiners) {
+  let clauses = before.split(/[.;,!?]/).filter((part) => part.trim() !== '');
+  if (skipJoiners) clauses = clauses.filter((part) => !JOINER_ONLY.test(part));
   for (let i = clauses.length - 1; i >= 0; i -= 1) {
     if (coversNamed(clauses[i])) return true;
     if (!THEY_HEAD.test(clauses[i])) return false;
@@ -459,29 +506,44 @@ function theyMeansCovers(before) {
   return false;
 }
 
-function aboutCovers(clause, before) {
-  return coversNamed(clause) || (THEY_HEAD.test(clause) && theyMeansCovers(before));
+function aboutCovers(clause, before, skipJoiners) {
+  return coversNamed(clause) || (THEY_HEAD.test(clause) && theyMeansCovers(before, skipJoiners));
 }
 const ADVERBIAL_ONLY =
   /^\s*(?:and |but |though |although |yet |or |so |even )*(?:regardless|anyway|(?:exactly )?as before|all the same|no different|as always|in fact|even so|either way)\s*$/i;
 const CLAUSE_BREAK = /[.;,]/;
+const COORDINATOR = /\b(?:and|or|so|although|though|while|whereas)\b/;
 
-function clauseAround(text, index) {
+function clauseMarks(text, coordinatorEnds) {
+  const marks = new Set();
+  for (let i = 0; i < text.length; i += 1) if (CLAUSE_BREAK.test(text[i])) marks.add(i);
+  if (!coordinatorEnds) return marks;
+  const scan = new RegExp(COORDINATOR.source, 'gi');
+  for (let hit = scan.exec(text); hit; hit = scan.exec(text)) {
+    for (let i = hit.index; i < hit.index + hit[0].length; i += 1) marks.add(i);
+  }
+  return marks;
+}
+
+function clauseAround(text, index, marks) {
   let start = index;
-  while (start > 0 && !CLAUSE_BREAK.test(text[start - 1])) start -= 1;
+  while (start > 0 && !marks.has(start - 1)) start -= 1;
   let end = index;
-  while (end < text.length && !CLAUSE_BREAK.test(text[end])) end += 1;
+  while (end < text.length && !marks.has(end)) end += 1;
   return { clause: text.slice(start, end), before: text.slice(0, start) };
 }
 
 function acknowledges(text) {
-  const scan = new RegExp(ACKNOWLEDGES.source, 'gi');
-  for (let found = scan.exec(text); found; found = scan.exec(text)) {
-    const head = clauseAround(text, found.index);
-    const tail = clauseAround(text, found.index + found[0].length - 1);
-    const asserting =
-      tail.clause !== head.clause && !ADVERBIAL_ONLY.test(tail.clause) ? tail : head;
-    if (aboutCovers(asserting.clause, asserting.before)) return true;
+  for (const [source, coordinatorEnds] of ACKNOWLEDGES) {
+    const marks = clauseMarks(text, coordinatorEnds);
+    const scan = new RegExp(source, 'gi');
+    for (let found = scan.exec(text); found; found = scan.exec(text)) {
+      const head = clauseAround(text, found.index, marks);
+      const tail = clauseAround(text, found.index + found[0].length - 1, marks);
+      const asserting =
+        tail.clause !== head.clause && !ADVERBIAL_ONLY.test(tail.clause) ? tail : head;
+      if (aboutCovers(asserting.clause, asserting.before, coordinatorEnds)) return true;
+    }
   }
   return false;
 }
@@ -537,7 +599,7 @@ test('a promise about one thing may still be absolute, and one still is', () => 
 });
 
 // The corpus. Everything above is an instrument, and an instrument nobody can re-run is an
-// assertion. These four lists were built by twelve rounds of review trying to break the rule, and
+// assertion. These four lists were built by thirteen rounds of review trying to break the rule, and
 // until now they lived in a scratch file outside the repository while both the changelog and the
 // backlog said a proof would disagree with anyone who closed an escape. Nothing could. They are
 // here now, so the claim is true and the counts in those documents are derived rather than
@@ -547,7 +609,7 @@ test('a promise about one thing may still be absolute, and one still is', () => 
 // check that reports only what it catches is the one that grew the overclaims this item exists to
 // undo.
 
-// Written to be true, and every one must pass. Thirteen are the repaired forms of refusals below.
+// Written to be true, and every one must pass. Nineteen are the repaired forms of refusals below.
 // Eight must never be treated as being about the covers switch at all, four of them because they
 // use "covers" as an ordinary verb.
 const HONEST_SENTENCES = [
@@ -577,8 +639,6 @@ const HONEST_SENTENCES = [
   'Switch covers off and every cover becomes a tile. The image behind it is requested, exactly as before.',
   'Turn cover art off and the app still asks for the image.',
   'Turn cover art off and the requests to Marvel\u2019s image servers continue.',
-  'Switch covers off and every cover becomes a tile, but the image is requested and the traffic to Marvel is unchanged.',
-  'Switch covers off and every cover becomes a tile. The image is requested and unchanged.',
   'Switch covers off and every cover becomes a tile. The image is requested although you never see it, exactly as before.',
   'Switch covers off and every cover becomes a tile. The image is requested, though hidden, as before.',
   'Switch covers off and nothing on screen is a picture; the requests for the covers are unchanged.',
@@ -591,6 +651,22 @@ const HONEST_SENTENCES = [
   'Covers are requested regardless, whether shown or hidden.',
   'Cover art is still requested once you switch it off.',
   'The image behind each tile is requested exactly as before, hidden or not.',
+  // The passive. English writes this truth in it more naturally than in any other voice, and for
+  // one round the rule that closed the "details requested for the covers" evasion refused all of
+  // it. These three are readmitted by what stands in front of the participle rather than by the
+  // participle itself.
+  'With cover art off, a request is still sent for each cover.',
+  'Cover art is hidden, but the requests sent for the covers are unchanged.',
+  'Switch cover art off, and the requests sent for the covers are unchanged.',
+  // The repaired forms of the six refusals added in the same round. The first four name a request
+  // where the refused form named its object; the last two put the assertion about the requests in
+  // the clause that carries it.
+  'Turn cover art off, and the requests for the covers are unchanged.',
+  'Switch covers off, and the request for every cover is unchanged.',
+  'Hide the covers, and the download for each cover is unchanged.',
+  'With covers hidden, the requests for the covers are still sent.',
+  'Switch covers off and every cover becomes a tile, but the traffic to Marvel is unchanged and the image is requested.',
+  'Switch covers off and every cover becomes a tile. The image is requested, exactly as before.',
   'A backup is a plain JSON file without images.',
   'The tracker works without pictures if you prefer.',
   'A backup covers every list you keep, and nothing in it is hidden from you.',
@@ -767,6 +843,28 @@ const DISHONEST_SENTENCES = [
   'Switch covers off and no cover is requested; the details for **the covers** are still fetched.',
   'Switch covers off and no cover is requested; the details for `hidden` covers are still fetched.',
   'Switch covers off and no cover is requested; the details for [the covers](x) are still fetched.',
+  // A sentence with no full stop, semicolon or comma inside it is one clause, so the clause the
+  // acknowledgement is checked against was the whole sentence, and the switch phrase's own covers
+  // word satisfied the check for it. Anything at all that looked like an acknowledgement anywhere
+  // in the sentence then pardoned the lie in front of it. Coordinators end a clause now, for the
+  // branches whose two halves are one assertion.
+  'Switch covers off and no cover is requested and the details are still fetched.',
+  'Switch covers off and no cover is requested and your notes are unchanged.',
+  'Turning cover art off stops the covers being downloaded and your lists are unchanged.',
+  'With cover art off no image is requested and the metadata is still fetched.',
+  'Turn covers off and nothing is fetched from Marvel although the titles are still downloaded.',
+  'Switch covers off and no cover is requested and the details requested for the covers are still fetched.',
+  // The mirror of that: the span between an acknowledgement's two halves excluded a full stop and
+  // a semicolon but not a comma, while the clause reader split on all three. One match could
+  // therefore begin in one clause and end in another, and the halves were read against clauses
+  // neither of them was in. The first three put the acknowledging word in front of the lie, the
+  // last three behind it.
+  'Switch cover art off and the tiles are still there, no cover is requested.',
+  'The titles are still there, and no cover is requested once you switch cover art off.',
+  'Turn cover art off and the layout is still fast, no image is downloaded.',
+  'Switch covers off and no cover is requested, and hidden covers continue to work.',
+  'Turn cover art off and nothing is fetched, and the covers stay unchanged.',
+  'Switch covers off and no cover is requested, so your covers stay unchanged.',
 ];
 // The sixteen passages this instrument does not catch. The first two say a true thing and a false
 // thing in one breath, and the true half is what excuses the false one. The first splits them across
@@ -826,8 +924,8 @@ const RECORDED_ESCAPES = [
   'Hide the covers your lists name and nothing is requested.',
 ];
 
-// True sentences this instrument refuses, with the repair beside each. They fall into five classes,
-// and the last three are the interesting ones.
+// True sentences this instrument refuses, with the repair beside each. They fall into seven classes,
+// and the middle three are the interesting ones.
 //
 // Four say "the requests" without saying which requests, and two lean on "one" or "each" as a
 // pronoun for the covers, which this instrument deliberately does not read as one because "each of
@@ -841,7 +939,7 @@ const RECORDED_ESCAPES = [
 // assertion: a parenthetical or a coordinator sits between the subject and its verb, leaving clauses
 // like "continue to be requested" and "is still requested" with no subject in them at all. Walking
 // left to find the subject would accept all five, and it was measured against this corpus: it also
-// pardons 64 of the 105 sentences below and accepts 12 of these 14 refusals, because a leftward walk
+// pardons 53 of the 117 sentences below and accepts 16 of these 20 refusals, because a leftward walk
 // lends a subject across clause boundaries in whichever direction happens to help. All five repair by
 // moving the parenthetical, four to the end of the sentence and one to the front, which adds nothing
 // and removes nothing, and is why the comment at the head of this file no longer claims every repair
@@ -856,7 +954,7 @@ const RECORDED_ESCAPES = [
 // five. It is recorded rather than argued away because it is close to the copy the metadata card
 // actually ships.
 //
-// The last two are the cost of reading the whole preposition class, and they are the same cost in
+// The next two are the cost of reading the whole preposition class, and they are the same cost in
 // two shapes. "Even with cover art off there is no reduction in requests" hangs its only covers word
 // off "Even", so the clause reads as one about something else. "Even without cover art the app still
 // requests every cover" has two covers words and neither survives, because the span between a
@@ -868,8 +966,26 @@ const RECORDED_ESCAPES = [
 // sentences that repair by deleting or naming a word are the cheaper of the two, and refusing is the
 // loud direction.
 //
+// The next four are the price of separating a passive from a post-modifier. A participle counts as
+// something that requests only when a form of "be" or a request noun stands in front of it, which
+// takes "a request is still sent for each cover" and leaves "the details requested for the covers"
+// closed. What it also leaves closed is the true version of that same shape: "the bytes fetched for
+// the covers are unchanged" hangs the covers off a participle modifying a noun that is not a
+// request, which is the evasion's shape exactly. Reading the difference means knowing that bytes
+// are not requests and details are not covers, which is knowledge about the world rather than about
+// the sentence. All four repair by naming a request where the refused form named its object.
+//
+// The last two are the price of ending a clause at a coordinator. The branches that assert
+// something about a request assert it of one coordinate clause, so "the image is requested and the
+// traffic to Marvel is unchanged" is read as two claims and checked against the second, which does
+// not name the covers. Both were accepted before that change, and writing a comma in front of the
+// coordinator was refused before it and is refused now, so the change made the rule consistent
+// rather than stricter. They repair by putting the assertion in the clause that carries the covers,
+// one by reordering and one by using an adverbial, which is the form that is allowed to lean on the
+// clause before it.
+//
 // Each repaired form is in HONEST_SENTENCES, so this list cannot be satisfied by wording nobody
-// would write. Two refusals share a repair, so the fourteen have thirteen distinct repaired forms.
+// would write. Two refusals share a repair, so the twenty have nineteen distinct repaired forms.
 const RECORDED_REFUSALS = [
   ['Switch covers off and nothing on screen is a picture; the requests are unchanged.',
     'Switch covers off and nothing on screen is a picture; the requests for the covers are unchanged.'],
@@ -899,6 +1015,18 @@ const RECORDED_REFUSALS = [
     'Even with cover art off there is no reduction in requests for the covers.'],
   ['Even without cover art the app still requests every cover.',
     'Without cover art the app still requests every cover.'],
+  ['Turn cover art off, and the bytes fetched for the covers are unchanged.',
+    'Turn cover art off, and the requests for the covers are unchanged.'],
+  ['Switch covers off, and the address requested for every cover is unchanged.',
+    'Switch covers off, and the request for every cover is unchanged.'],
+  ['Hide the covers, and the data downloaded for each cover is unchanged.',
+    'Hide the covers, and the download for each cover is unchanged.'],
+  ['With covers hidden, the questions asked about the covers are still sent.',
+    'With covers hidden, the requests for the covers are still sent.'],
+  ['Switch covers off and every cover becomes a tile, but the image is requested and the traffic to Marvel is unchanged.',
+    'Switch covers off and every cover becomes a tile, but the traffic to Marvel is unchanged and the image is requested.'],
+  ['Switch covers off and every cover becomes a tile. The image is requested and unchanged.',
+    'Switch covers off and every cover becomes a tile. The image is requested, exactly as before.'],
 ];
 
 test('every sentence written to be true is accepted', () => {
@@ -913,7 +1041,7 @@ test('every sentence written to be false is caught', () => {
   }
 });
 
-test('the escapes this instrument does not close are still open, and still only these', () => {
+test('each of the sixteen recorded escapes is still open', () => {
   for (const sentence of RECORDED_ESCAPES) {
     assert.equal(
       unacknowledged(sentence),
@@ -961,7 +1089,7 @@ test('the structural counts claimed above the corpus are the counts it has', () 
   const repairs = new Set(RECORDED_REFUSALS.map(([, repaired]) => repaired));
   assert.equal(
     repairs.size,
-    13,
-    `the comment above HONEST_SENTENCES says thirteen of them are repaired forms, and there are ${repairs.size} distinct repairs`,
+    19,
+    `the comment above HONEST_SENTENCES says nineteen of them are repaired forms, and there are ${repairs.size} distinct repairs`,
   );
 });

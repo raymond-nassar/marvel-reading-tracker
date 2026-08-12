@@ -93,11 +93,13 @@ quote in a bug report.
   will pardon a false one sitting beside it: "no cover is requested, your notes are unchanged" says
   one true thing and one false thing, and the check was reading the true half. The first two attempts
   reached for the punctuation, refusing an acknowledgement separated from its request by a comma and
-  then one separated by a conjunction. Run against the 44 true sentences the check is now proved
-  against, the first refuses 5 of them and the second 2, while a comma splice walks through both
-  needing neither mark. What separates the two cases is not the punctuation but the subject: "your
-  notes" is a different subject, and "regardless" is not a subject at all. So the acknowledgement now
-  has to be about the covers, by name or by pronoun, in whichever clause is making the assertion.
+  then one separated by a conjunction. Both were rejected as written, because at that width they are
+  the wrong instrument: run against the 51 true sentences the check is now proved against, the first
+  refuses 6 of them and the second 2 more, and all eight are the same shape. What separates the two
+  cases is not the punctuation but the subject: "your notes" is a different subject, and "regardless"
+  is not a subject at all. So the acknowledgement now has to be about the covers, by name or by
+  pronoun, in whichever clause is making the assertion. A thirteenth round then found both marks are
+  right after all for the branches that carry their own subject, and they are applied there.
 
   The third wrong answer was deciding which clause that is. A trailing clause was treated as making
   its own assertion when it carried a verb from a list of thirty, and as leaning on the clause before
@@ -194,7 +196,7 @@ quote in a bug report.
   or fails a surface.
 
   Three numbers this entry stated were wrong and are corrected rather than repeated. The determiner
-  list replaced last round held eighteen, not nineteen. Walking left accepts twelve of the recorded
+  list replaced last round held eighteen, not nineteen. Walking left accepts most of the recorded
   refusals rather than all of them. And the cost of reading every preposition was described as a
   clause-opening preposition capturing the covers word beside it, when it captures every covers word
   in the clause: "Even without cover art the app still requests every cover" has two and loses both,
@@ -214,19 +216,19 @@ quote in a bug report.
 
   The price is now in the repository rather than in this paragraph. Both documents used to say that a
   proof would disagree with anyone who quietly closed one of these limits, and no such proof was in
-  the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 44
-  sentences written to be true, 105 written to be false, the 16 passages that still pardon themselves,
-  and 14 true sentences the check refuses, each stored beside a repair that is itself asserted to
+  the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 51
+  sentences written to be true, 117 written to be false, the 16 passages that still pardon themselves,
+  and 20 true sentences the check refuses, each stored beside a repair that is itself asserted to
   pass. Closing an escape or accepting a refusal turns the suite red rather than passing silently,
   which is what those sentences claimed all along.
 
-  Those 14 are a regression list, not a bill. Calling them the cost of the check, which this entry
+  Those 20 are a regression list, not a bill. Calling them the cost of the check, which this entry
   did, reads as though they were every true sentence it refuses, and they are nowhere near it:
   twenty-eight more were written in the words a maintainer would actually use and fourteen of them
   were refused. What the list buys is that a refusal already known cannot start being accepted
   without the suite saying so.
 
-  Six of the 14 do not name the covers in the clause that asserts: four say "the requests" without
+  Six of the 20 do not name the covers in the clause that asserts: four say "the requests" without
   saying which, and two lean on "one" or "each" as a word for the covers, which the check stopped
   accepting in the ninth round because "each of your lists is unchanged" pardoned a lie with it. Five
   of those six are repaired by naming the covers; the sixth needs the parenthetical moved as well. The
@@ -235,20 +237,40 @@ quote in a bug report.
   repair by moving that parenthetical rather than by adding anything, four of them to the end of the
   sentence and one to the front. So the claim that every repair adds truth rather than removing it,
   which this entry made for three rounds, was not quite right either. The twelfth is the
-  object-pronoun sentence described above and the last two are the clause-opening preposition.
+  object-pronoun sentence described above, the next two are the clause-opening preposition, and the
+  last six are the thirteenth round's, described below.
   Walking left to find the subject would accept the middle
-  five, and it was measured: it also pardons sixty-four of the hundred and five
+  five, and it was measured: it also pardons fifty-three of the hundred and seventeen
   false sentences. A passage that says two things and means one of them still needs a reader.
 
-  Thirty-seven deliberately broken versions of the shipped sentences are tried against the real files
-  and all thirty-seven are refused. Fifteen true rewrites in different true words are tried as well,
+  A thirteenth review got through the rule that decides which clause is doing the asserting, twice. A
+  sentence with no full stop, semicolon or comma in it is a single clause, so the clause being checked
+  was the whole sentence, and the words that switch the covers off supplied the mention of covers the
+  check was looking for. Anything resembling an acknowledgement anywhere in the sentence then excused
+  the lie beside it. The mirror of that was the distance allowed between an acknowledgement's two
+  halves, which could cross a comma while the clause reader treated a comma as a clause end, so the
+  two halves were checked against clauses neither of them was in. Twelve sentences of those two shapes
+  are held as false now and all twelve are caught. The fix is the punctuation rule this entry rejected
+  three rounds ago, applied to the branches that carry their own subject and to none of the others,
+  which is the distinction the earlier measurement had missed: applied to all of them it refuses eight
+  true sentences and every one of the eight is a branch that leans on its neighbour. It costs two true
+  sentences, both of which have a comma form this check refused before the change and refuses after
+  it, so the rule is more consistent rather than stricter. The round before was also found too strict
+  in the opposite direction, refusing "a request is still sent for each cover" along with the evasion
+  it was aimed at; a participle counts again when a form of "be" or a request noun stands in front of
+  it, which recovers three true sentences and reopens none of the seven evasions. Four true sentences
+  of the same shape are still refused and are recorded with repairs.
+
+  Forty-three deliberately broken versions of the shipped sentences are tried against the real files
+  and all forty-three are refused. Fifteen true rewrites in different true words are tried as well,
   and fourteen are accepted; the fifteenth is the sentence the subject tie costs, and it is the
   second round running in which this half of the proof, and only this half, found a cost. It found a
   third in the tenth round, "the app still asks for the image", and that one was repaired in the
   instrument rather than in the corpus, because the copy's own verb is a fair way to write it. Eight
   ways of undoing the eighth round's repairs were each applied on
   their own, three more undo the ninth round's, five more undo the tenth round's, six more undo the
-  eleventh round's and five more undo the twelfth round's; every one turns the suite red, naming which
+  eleventh round's, five more undo the twelfth round's and six more undo the thirteenth round's; every
+  one turns the suite red, naming which
   test or which sentence defends it. Two
   of the eleventh round's six first reported caught while proving nothing, because the replacement text
   used to
