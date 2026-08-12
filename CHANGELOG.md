@@ -65,7 +65,8 @@ quote in a bug report.
   two halves share a subject whose first verb is about loading, so it reads as though the loading is
   what stops. That is the same misreading the change had already been rewritten three times to
   prevent, sitting untouched in the one place nothing had looked. It now says the pictures can be
-  hidden but are still loaded.
+  hidden but are still requested, which is the word that names the thing that actually happens: the
+  page loads either way, and it is the request to Marvel that a reader is being told about.
 
   The same review found the security policy still carrying the sentence this whole change removed,
   in a wider form: nothing you create is uploaded anywhere. Your lists are something you create, and
@@ -73,8 +74,25 @@ quote in a bug report.
   that there are no accounts, no cloud services, no analytics and no telemetry, and lets the
   sentences after it describe what is asked for.
 
-  Twenty deliberately broken versions of these sentences are now tried against the check, including
-  every one a reviewer found a way past. All twenty are refused.
+  A fifth review found no new wrong sentence, and found instead that the check guarding them was
+  wrong in both directions. It had been written to spot the false claim, and every way of spotting a
+  false claim also catches the true one, because "no cover is requested" and "there is no reduction
+  in requests" are built from the same words and mean opposite things. Seven true sentences were
+  being reported as lies, including "switching cover art off cannot stop the requests", while four
+  false ones went through simply by saying "hide" or "unchecked" instead of "off". A check whose
+  easiest repair is to make the writing less honest is worse than no check.
+
+  So it no longer looks for the false claim at all. Any sentence that mentions the cover art switch
+  now has to say that the pictures are still asked for, in that sentence or the one beside it. There
+  is nothing left to phrase around, because nothing is hunting for a phrase, and no true sentence can
+  fail for being true, because the only way to fail is to leave the truth out. Every repair is now an
+  addition.
+
+  Twenty-five deliberately broken versions of these sentences are tried against the check, including
+  every one a reviewer found a way past, and all twenty-five are refused. Five true sentences
+  rewritten in different true words are tried as well, and all five are accepted. That second set is
+  the one no broken version can stand in for, and four of the five were being refused before this
+  round.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two

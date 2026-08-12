@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6171-6173` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6190-6192` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6192-6195`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6209-6213`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6005-6007` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6024-6026` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1048-1057` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1066-1075` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5079,35 +5079,54 @@ switched off": two predicates on one subject, the first about loading, so the se
 though the loading is what stops. That is the implication three rounds had been spent removing from
 five other sentences, surviving four cards above the corrected one on the same screen, in the one
 place no extraction reached. It is now a claim site, and the sentence is split so the second half has
-its own subject and says the pictures are still loaded. Implication is not a thing a rule can catch,
-which is the honest limit here: what the site membership buys is that the catchable forms cannot come
-back, not that this particular sentence could have been refused.
+its own subject and says the pictures are still requested. Implication is not a thing a rule can
+catch, which is the honest limit here: what the site membership buys is that the catchable forms
+cannot come back, not that this particular sentence could have been refused.
 
-The covers rule itself was a pattern list, and a pattern list was the wrong instrument. It was evaded
-six ways in a minute by swapping the noun to "downloads" or "fetches", by putting one word between
-"no" and "requests", and by writing "switch it off", which is the most natural phrasing on the card
-that owns the switch. In the same pass it rejected the most direct honest sentence there is, "the app
-still sends requests", because `ends?` matches inside "sends"; a check whose cheapest repair is to
-weaken the copy is worse than no check at all. It now reads sentences: a sentence about the switch
-that asserts the requests cease has to acknowledge that they do not, which is the thing the copy
-exists to say, and windows of two sentences are read as well as single ones because a full stop had
-already evaded the lists rule once.
+The covers rule itself has now been three instruments, and the first two are the argument for the
+third. A pattern list for the lie was evaded six ways in a minute by swapping the noun to
+"downloads" or "fetches", by putting one word between "no" and "requests", and by writing "switch it
+off", which is the most natural phrasing on the card that owns the switch. In the same pass it
+rejected the most direct honest sentence there is, "the app still sends requests", because `ends?`
+matches inside "sends". Reading sentences rather than tokens lost the same way from the other side.
+Requiring a cease-claim meant treating every "no", "nothing" and "never" near a request noun as a
+lie, which is how honest denials are written, so seven true sentences were reported as lies,
+"switching cover art off cannot stop the requests" among them; and pardoning any window that said
+"still" let three lies through, because "the page still loads instantly" is true and about something
+else entirely.
+
+A check whose cheapest repair is to weaken the copy is worse than no check at all, and both
+instruments had that property. The third stops looking for the lie. A window about the covers switch
+has to acknowledge that the requests continue, and the acknowledgement may sit in a neighbouring
+sentence, because "Switch covers off and every cover becomes a tile. The image is still requested."
+is an ordinary way to write it. There is no lie vocabulary left to evade, since nothing searches for
+one, and no true sentence can fail for being true, since the only way to fail is to omit the
+acknowledgement, so every repair is an addition of the truth. What it does not catch is a window that
+makes the cease-claim and acknowledges the requests in the same breath, which is a contradiction
+rather than an overclaim and a thing for a reader rather than a rule. Claiming otherwise would be the
+same overclaim one level up. The metadata card's "still loaded" became "still requested" in the same
+pass, since loading is what the page does and requesting is what the network does, and only the
+second is the subject.
 
 The security policy was found still holding the absolute that started this item, in a stronger form
 than the one removed. "Nothing you create is uploaded anywhere" covers the lists, and the issue
 numbers in a list are exactly what a request for that issue carries. The forbidding pattern missed it
-by two words, so the identical claim was forbidden on five surfaces and permitted on the sixth, which
-this change had just enrolled precisely because it makes the claim. The pattern is widened and the
+by two words, so the identical claim was forbidden on four surfaces and permitted on the security
+policy, which the round before had enrolled precisely because it makes the claim. The pattern is
+widened and the
 sentence is scoped to what is true: no accounts, no cloud services, no analytics, no telemetry. The
 same bullet also put one verb over a set it does not hold across, saying "those requests name the
 issue" of three requests of which the reachability check names nothing, which is the identical error
 this round had just fixed for search.
 
-Twenty mutations now run against the finished rules and all twenty are caught, including every
-evasion each of the three reviews demonstrated. The proof harness itself needed one fix, and it is
-the one worth naming: a transient file lock failed a restore and left a mutation in the working tree,
-which is the only way a harness that exists to prove a check can instead do harm. It now retries and
-refuses to continue rather than carrying on with a mutated file.
+Twenty-five mutations now run against the finished rules and all twenty-five are caught, including
+every evasion the four review rounds demonstrated. Five more run the other way: a true sentence
+rewritten into a different true phrasing has to leave the suite green. That is the half no lie
+mutation can express, it is the half both earlier instruments failed, and four of the five were
+reported as lies by the instrument this round replaced. The proof harness itself needed one fix, and
+it is the one worth naming: a transient file lock failed a restore and left a mutation in the working
+tree, which is the only way a harness that exists to prove a check can instead do harm. It now
+retries and refuses to continue rather than carrying on with a mutated file.
 
 **BL-088: Pin and harden workflow actions for untrusted contributions**
 

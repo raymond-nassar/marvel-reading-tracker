@@ -161,30 +161,64 @@ const ABSOLUTES = [
   /\blists?\b[^.]*\.\s*(?:and )?(?:they|these|those)\b[^.]*(?:never sent|not sent|ever sent|never leaves?)/i,
 ];
 
-// The covers claim needs a different instrument, and the first two attempts at it are the
-// argument for this one. A list of patterns for the lie was evaded six ways in a minute, by
-// saying "downloads" or "fetches" instead of "requests", by putting a word between "no" and
-// "requests", and by writing "switch it off", which is the most natural phrasing on the card
-// that owns the switch. The same list then rejected the most direct honest sentence there is,
-// "the app still sends requests", because "ends?" matches inside "sends"; a check whose cheapest
-// repair is to weaken the copy is worse than no check.
+// The covers claim needs a different instrument, and the two attempts before this one are the
+// argument for its shape. Both looked for the lie, and both lost on the same two sides at once.
 //
-// So this reads sentences rather than tokens. A sentence about the switch that asserts the
-// requests cease has to acknowledge that they do not, which is the thing the copy exists to
-// say. Windows of two sentences are read as well as single ones, because a full stop evaded the
-// lists promise the same way.
-const SWITCH = /\b(?:switch|turn|toggle)\w*\b[^.]{0,30}\boff\b|\b(?:cover art|covers|cover images?)\b[^.]{0,30}\boff\b/i;
-const CEASES =
-  /\b(?:stops?|stopped|stopping|prevents?|prevented|preventing|ends?|ended|ending|ceases?|ceased|halts?)\b[^.]*\b(?:requests?|requested|downloads?|downloaded|fetch(?:es|ed)?|loading|sending)\b|\b(?:requests?|downloads?|fetch(?:es|ing)?|loading|sending)\b[^.]*\b(?:stops?|stopped|ceases?|ceased|halts?)\b|\b(?:no|nothing|never|none)\b[^.]{0,60}\b(?:requested|downloaded|fetched|loaded|asked for|sent|requests?|downloads?|fetches)\b/i;
-const STILL_HAPPENS =
-  /\bstill\b[^.]*\b(?:requests?|requested|sends?|sent|fetch(?:es|ed)?|downloads?|downloaded|loads?|loaded|asked)\b|\b(?:does|do|did|will|would) not stop\b|\bwithout stopping\b|\bnot stop\b|\bregardless\b|\banyway\b/i;
+// A list of patterns for the lie was evaded six ways in a minute, by saying "downloads" or
+// "fetches" instead of "requests", by putting a word between "no" and "requests", and by writing
+// "switch it off". The same list rejected the most direct honest sentence there is, "the app
+// still sends requests", because "ends?" matches inside "sends". Reading sentences instead of
+// tokens did no better: requiring a cease-claim meant treating every "no", "nothing" and "never"
+// near a request noun as a lie, which is how honest denials are written, so seven true sentences
+// were reported as lies, "cannot stop the requests" among them. Pardoning a window that said
+// "still" then let three lies through, because "the page still loads instantly" is true and has
+// nothing to do with the covers.
+//
+// A check whose cheapest repair is to weaken the copy is worse than no check, and both attempts
+// had that property. So this stops looking for the lie. A window that is about the covers switch
+// must acknowledge that the requests continue. There is no lie vocabulary left to evade, since
+// nothing is searching for one, and no true sentence can fail for being true, since the only way
+// to fail is to leave the acknowledgement out. Every repair is an addition of the truth.
+//
+// What this does not catch is a window that makes the cease-claim and acknowledges the requests
+// in the same breath, which is a contradiction rather than an overclaim, and is a thing for a
+// reader to catch. Saying otherwise would be the same overclaim one level up.
+const COVERS = /\b(?:cover art|covers?|cover images?|artwork)\b/i;
+const TURNED_OFF =
+  /\b(?:off|hidden|hide|hides|hiding|unchecked|unchecking|unticked|unticking|disabled|disabling)\b/i;
+const SWITCHED =
+  /\b(?:switch\w*|turn\w*|toggl\w*|uncheck\w*|untick\w*|disabl\w*|hid(?:e|es|den|ing))\b[^.]{0,40}\boff\b/i;
+const CLEARED =
+  /\b(?:clear|clears|cleared|clearing|uncheck\w*|untick\w*)\b[^.]{0,25}\b(?:checkbox|check box|box|tick)\b/i;
 
-function coversLie(text) {
-  const sentences = text.split(/(?<=[.!?])\s+/);
-  const windows = sentences.concat(
-    sentences.slice(0, -1).map((s, i) => `${s} ${sentences[i + 1]}`),
+// The forms the truth is actually written in. A form missing here fails a true sentence, and the
+// repair is to say it more plainly, never to say less: that asymmetry is the whole design.
+const ACKNOWLEDGES =
+  /\bstill\b[^.]{0,40}\b(?:requests?|requested|sends?|sent|fetch(?:es|ed)?|downloads?|downloaded|asked)\b|\b(?:cannot|can't|can not|could not|couldn't|does not|doesn't|do not|don't|did not|didn't|will not|won't|would not|wouldn't)\s+(?:stop|mean|prevent|reduce|change|halt|cancel)\w*\b|\bno (?:reduction|change|fewer|difference)\b|\bnothing changes?\b|\bchanges? nothing\b|\bunchanged\b|\b(?:exactly )?as before\b|\bthe same (?:requests?|number)\b|\bregardless\b|\banyway\b|\ball the same\b|\bwithout stopping\b/i;
+
+function aboutTheSwitch(window) {
+  return (
+    (COVERS.test(window) && TURNED_OFF.test(window)) ||
+    SWITCHED.test(window) ||
+    CLEARED.test(window)
   );
-  return windows.find((w) => SWITCH.test(w) && CEASES.test(w) && !STILL_HAPPENS.test(w)) ?? null;
+}
+
+// Windows of two sentences are read as well as single ones, because a full stop evaded the
+// lists promise the same way. The acknowledgement is looked for in the neighbouring sentences
+// too: "Switch covers off and every cover becomes a tile. The image is still requested." is a
+// perfectly ordinary way to write it, and demanding both halves of one sentence would fail it.
+function unacknowledged(text) {
+  const sentences = text.split(/(?<=[.!?])\s+/);
+  for (let i = 0; i < sentences.length; i += 1) {
+    for (const j of [i, i + 1]) {
+      if (j >= sentences.length) continue;
+      const window = sentences.slice(i, j + 1).join(' ');
+      const context = sentences.slice(Math.max(0, i - 1), j + 2).join(' ');
+      if (aboutTheSwitch(window) && !ACKNOWLEDGES.test(context)) return window;
+    }
+  }
+  return null;
 }
 
 test('no surface reinstates an unqualified claim that nothing is sent', () => {
@@ -193,9 +227,9 @@ test('no surface reinstates an unqualified claim that nothing is sent', () => {
       assert.doesNotMatch(text, absolute, `${where} must not claim ${absolute}`);
     }
     assert.equal(
-      coversLie(text),
+      unacknowledged(text),
       null,
-      `${where} says the covers switch stops the requests, and it does not`,
+      `${where} writes about the covers switch without saying the covers are still requested`,
     );
   }
 });
