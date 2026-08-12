@@ -9,13 +9,13 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Sixty-four items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Sixty-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-088, BL-089, BL-095,
-BL-096, BL-099 and BL-100.
+BL-096, BL-099, BL-100 and BL-106.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Ten remain
@@ -43,7 +43,8 @@ record what changed. BL-101 through BL-105 are the five items here that came fro
 raised by the review of one of the items above it and routed to the backlog rather than folded
 into it, because each belongs to a different file from the one under repair. Filing them rather
 than fixing them in place is what keeps one change to one concern, and each names the review that
-raised it.
+raised it. BL-106 and BL-107 came from neither pass and from no review: the first was asked for
+directly by the owner, and the second was found while writing the first's record.
 
 ## Product direction
 
@@ -226,8 +227,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Ready | src/js/storage.js:290-335 |
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-counts.mjs:225-258 |
+| BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3824-3827 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:166-178 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:167-179 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
@@ -2986,7 +2989,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2689-2692`.
+`PRODUCT_BACKLOG.md:2692-2695`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4518,21 +4521,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:5954-5956` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6015-6017` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:176-178`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:177-179`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:5975-5978`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6036-6039`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5788-5790` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:5849-5851` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4740,9 +4743,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:977-986` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:166-170` and
-`PRODUCT_BACKLOG.md:176-178` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:986-995` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:167-171` and
+`PRODUCT_BACKLOG.md:177-179` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -5595,6 +5598,64 @@ different id ranges; one is derived and one is prose. Deriving the second is sma
 that matters is the one that proves it: put the wording back that shipped with `BL-095`, which said
 fourteen were `Ready` when thirteen were and omitted one delivered id, and watch it fail.
 
+**BL-106: Credit Comic Book Herald where a new reader would look for it**
+
+- [x] Add the site to the README's list of companion sites, saying what it publishes
+- [x] State this project's debt to it in the same terms the committed record already uses
+- [x] Check the credit claims nothing the record does not
+
+Constraint gate: checked 1 to 11, none breached.
+
+Asked for directly by the owner rather than raised by a study or a review, which is why it names no
+finding. The gap it closes was measurable all the same: the site is named in ten tracked files on
+`main` and in none of the places a reader looks. The catalog card, the provenance record and the
+order's own header all say that one bundled order's volume division follows its collected-edition
+guide, while the README's list of companion sites carried two entries and not this one. A project
+can rely on a source everywhere except where it says who it relies on, and this one did.
+
+Shipped as a third entry beside the two already there, saying what the site publishes and what this
+project owes it. The wording is the part worth recording, because the first draft overstated the
+debt. It said the trade order was compiled from that guide, which is wider than anything committed
+here says: `src/data/orders/new-ultimate-universe-trades.md:3-5` states the sequence and its ids as
+this project's own work and scopes the debt to the division into volumes alone, and
+`docs/DATA_PROVENANCE.md:92` files the order under "Compiled for this project". Review found the
+same overclaim in the changelog, where it went further and said the committed record already backed
+it. Both now use the record's own verb.
+
+That is worth more than a note about wording. `BL-099` was filed to stop this document and the
+running app claiming more than the record supports, and its own review twice caught the correction
+overclaiming in a new direction. The same failure recurred here, inside the change that credits the
+source that item's boundary depends on. What catches it is reading the record beside the sentence,
+not remembering what the record says.
+
+The record you are reading was nearly not written. The argument for omitting it was that neither
+entry already in that README section shipped under a backlog item, which is true and is not
+precedent: both arrived in the scaffolding commit that predates this document and its rule. Work
+that landed before a process existed does not show the process permits landing without it.
+
+**BL-107: Date or re-derive the repeat figures BL-058 states as current**
+
+- [ ] Decide whether the paragraph reports a measurement made then or a fact about the document now
+- [ ] Re-derive every figure in it, or date it and name what it was measured against
+- [ ] Prove the choice holds by checking whether the next item to ship falsifies it again
+
+Constraint gate: checked 1 to 11, none breached.
+
+Found while writing `BL-106`'s record rather than by a review, and routed here rather than fixed
+there, because that item credits a website and this one settles a measurement. `BL-058`'s block
+reports the counts that chose the repeat gate's three-line floor, and states them in the present
+tense: that the constraint gate line stands 25 times in this document and accounts for 24 of its 26
+one-line repeats, out of 124 one-line and 4 two-line repeats across six documents. It did stand 25
+times in the commit that wrote that sentence. It stood 49 times in the commit before this one, and
+the two blocks this change adds make it 51.
+
+Which kind of sentence it is decides what to do with it, which is why the first task is a decision
+and not an edit. Read as a claim about the document today it is simply stale, and this is the third
+time this document has carried one, after `BL-055` and `BL-059`. Read as the measurement that chose
+three lines over four it is still true, and re-deriving it would replace the evidence for a decision
+with numbers that had no part in making it. The figures are load-bearing either way, so they need to
+say which they are.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -6078,12 +6139,12 @@ each sit one row below an item they outscore. Every one of those eight rows has 
 order is a record rather than a queue and re-sorting it would change no decision while moving ranks
 this appendix cites. It is written down instead of fixed for that reason.
 
-### Case 1: BL-026 is labelled P0 but ranks thirty-fifth
+### Case 1: BL-026 is labelled P0 but ranks thirty-seventh
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 35 of 81.
+- Calculated: WSJF 3.67, rank 37 of 83.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
-  It is outranked by thirty-four items, eighteen of them sized 1, 2 or 3 whose Cost of Delay is
+  It is outranked by thirty-six items, twenty of them sized 1, 2 or 3 whose Cost of Delay is
   lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
   costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
@@ -6103,7 +6164,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 75 of 81, below seventy-one unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 77 of 83, below seventy-three unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -6160,9 +6221,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 46 of 81. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 37 of 81. Mid-table.
-- BL-017, P2, rank 80 of 81. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 48 of 83. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 39 of 83. Mid-table.
+- BL-017, P2, rank 82 of 83. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

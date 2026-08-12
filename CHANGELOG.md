@@ -20,9 +20,18 @@ quote in a bug report.
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two
   companion sites already listed there, and it earns the place twice over: it publishes the
   editorial guides that explain what is worth reading and why, rather than only what order to read
-  it in, and one of the reading lists that ships with this app was compiled from its guide to the
-  collected editions. That second fact was already recorded in the provenance notes and in the list
-  itself, so the only thing missing was the credit where a new reader would look for it.
+  it in, and one of the reading lists that ships with this app was put together here but takes its
+  division into volumes from that site's guide to the collected editions. That second fact was
+  already recorded in the provenance notes and in the list itself, in those same terms, so the only
+  thing missing was the credit where a new reader would look for it.
+
+  The project's ranked list of planned improvements records this change too, which it nearly did
+  not. The argument for skipping the record was that neither companion site already listed in the
+  read-me was added under one, and that turned out not to be a precedent: both were added before the
+  list and its rules existed. Writing the record moved two entries into the ranking and six stated
+  figures with them, each re-derived from the table rather than nudged. It also turned up a figure
+  that was true when it was written and has drifted a long way since, which is now filed as its own
+  job rather than fixed here.
 
 - **The project now says plainly where its comic data came from, and no longer claims a licence
   over parts of it that were never the project's to license.** Nothing you have saved is affected,
