@@ -110,10 +110,22 @@ const PROMISES = [
 // The disclosure rule needs the verb as well as the noun. "which issues" on its own is a phrase
 // this app has every reason to use about itself, so a review showed the disclosing sentence
 // could be deleted and the rule still met by a feature bullet describing what the app tracks.
+//
+// The series and creator row was added in round fifteen. All three surfaces enumerated the
+// requests and left this one out, and two of them said in the same breath that "searching the
+// catalog, series or creators is answered from files already on this machine", which is true of
+// the search and not of the add that follows it. Adding a series pages the metadata API to
+// completion, up to sixty requests, and is the longest run the app makes. An enumeration that
+// reads as complete and omits the largest item is the defect this whole item exists to undo, so
+// the clause is held by a rule rather than left as prose somebody can quietly drop.
 const REQUESTS = [
   ['metadata is fetched', /(?:sends|asks|downloads)[^.]*(?:metadata API|comics database)/i],
   ['the app contacts the API on startup', /(?:starts|opening (?:the app|it))[^.]*reachable/i],
   ['covers are fetched from Marvel', /cover[^.]*Marvel'?s? (?:own )?image servers/i],
+  [
+    'adding a series or a creator fetches every issue',
+    /adding[^.;]*(?:series|creator)[^.;]*(?:asks|sends|requests)[^.;]*every issue/i,
+  ],
   [
     'the requests disclose which issues',
     /(?:sees?|reveals?|discloses?)[^.]*(?:which issues|issues you are looking at|issue numbers)/i,
@@ -624,9 +636,9 @@ test('a promise about one thing may still be absolute, and one still is', () => 
 // check that reports only what it catches is the one that grew the overclaims this item exists to
 // undo.
 
-// Written to be true, and every one must pass. Nineteen are the repaired forms of refusals below.
-// Eight must never be treated as being about the covers switch at all, four of them because they
-// use "covers" as an ordinary verb.
+// Written to be true, and every one must pass. Twenty-four are the repaired forms of refusals
+// below. Eight must never be treated as being about the covers switch at all, four of them because
+// they use "covers" as an ordinary verb.
 const HONEST_SENTENCES = [
   'Turning covers off does not mean nothing is requested.',
   'Switch covers off and nothing changes: every cover is requested exactly as before.',
@@ -1130,10 +1142,12 @@ test('the true sentences this instrument refuses are still refused, and each rep
   }
 });
 
-// The comment above HONEST_SENTENCES states two counts, and a count in prose is a claim nothing
-// checks, which is the defect the whole corpus was landed to end. So they are asserted here. Both
-// failures are instructions rather than verdicts: a sentence that stops being read as a covers
-// window may well belong in the list, but the comment then has to say so.
+// The comments above the corpus state three counts, and a count in prose is a claim nothing
+// checks, which is the defect the whole corpus was landed to end. So all three are asserted here.
+// The third was added in round fifteen, after review found it was the one count of the three left
+// unasserted and the only one that had gone stale: it read nineteen while the tree held
+// twenty-four. Both failures are instructions rather than verdicts: a sentence that stops being
+// read as a covers window may well belong in the list, but the comment then has to say so.
 test('the structural counts claimed above the corpus are the counts it has', () => {
   const notAboutSwitch = HONEST_SENTENCES.filter((sentence) => {
     const parts = sentence.split(/(?<=[.!?])\s+/);
@@ -1155,5 +1169,16 @@ test('the structural counts claimed above the corpus are the counts it has', () 
     repairs.size,
     24,
     `the comment above RECORDED_REFUSALS says twenty-four of them are distinct repaired forms, and there are ${repairs.size}`,
+  );
+
+  // Counted over the entries rather than the set, which is what makes this fail on its own rather
+  // than restating the assertion above it: every repair being held as a true sentence is already
+  // asserted per refusal, so the only way these two counts can disagree is a repaired form written
+  // into HONEST_SENTENCES twice, and nothing else in the file forbids that.
+  const heldAsTrue = HONEST_SENTENCES.filter((sentence) => repairs.has(sentence));
+  assert.equal(
+    heldAsTrue.length,
+    24,
+    `the comment above HONEST_SENTENCES says twenty-four of them are repaired forms of refusals, and ${heldAsTrue.length} are`,
   );
 });

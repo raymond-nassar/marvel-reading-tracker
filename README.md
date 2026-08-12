@@ -34,9 +34,11 @@ analytics or tracking of any kind.
 
 To be exact about what does leave your computer: when the app starts it asks the comics database
 whether it is reachable, so it can tell you when it is not. Searching for issues sends what you
-typed; searching the catalog, series or creators is answered from files already on this machine.
-To show you comic titles, dates and cover pictures, it downloads those details from that same
-public comics database and downloads the cover images from Marvel's own image servers. That is
+typed, and so does asking an imported line to find its own match; searching the catalog, series or
+creators is answered from files already on this machine, but adding a whole series or a creator's
+issues then asks that database for every issue it lists, which is the longest run of requests the
+app makes. To show you comic titles, dates and cover pictures, it downloads those details from that
+same public comics database and downloads the cover images from Marvel's own image servers. That is
 the same kind of request your browser makes when it loads any web page. Those requests do reveal
 which issues you are looking at, because asking for an issue's details or its cover picture is
 exactly what they are. Turning cover art off hides the covers without stopping them being

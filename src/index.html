@@ -642,10 +642,13 @@
               <p class="rail-hint">
                 What does leave this machine is the ordinary business of fetching what is on
                 screen. Opening the app asks the metadata API named above whether it is reachable,
-                which is what the status pill reports. Searching for issues sends what you typed;
-                searching the catalog, series or creators is answered from files already on this
-                machine. Filling in details sends every issue number still missing them, across
-                every list you keep, starting with the one you are about to read. Cover art is
+                which is what the status pill reports. Searching for issues sends what you typed,
+                and so does asking an imported line to find its own match; searching the catalog,
+                series or creators is answered from files already on this machine, but adding a
+                whole series or a creator's issues then asks the metadata API for every issue it
+                lists, which is the longest run of requests the app makes. Filling in details sends
+                every issue number still missing them, across every list you keep, starting with
+                the one you are about to read. Cover art is
                 requested from Marvel's image servers as it appears, so those servers see which
                 issues are on screen; switching cover art off hides the covers but does not stop
                 them being requested. Opening an issue asks the metadata API for the reader link

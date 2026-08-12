@@ -22,8 +22,11 @@ quote in a bug report.
   on the same subject. What is on screen now is the accurate version. Your reading progress and
   your notes are saved by your own browser and are never sent anywhere; there is no account, no
   analytics and no tracking. Starting the app asks the comics database whether it is reachable,
-  which is what the status light reports. Searching for issues sends what you typed; searching the
-  catalogue, series or creators is answered from files already on your machine. Filling in
+  which is what the status light reports. Searching for issues sends what you typed, and so does
+  asking an imported line to find its own match; searching the catalogue, series or creators is
+  answered from files already on your machine, but adding a whole series or a creator's issues then
+  asks the database for every issue it lists, which is the longest run of requests the app makes.
+  Filling in
   missing details sends every issue number still missing them, across every list you keep. Cover
   pictures are fetched from Marvel's own image servers as they appear, and turning cover art off
   hides them without stopping them being fetched. Opening an issue asks the comics database for the
@@ -312,6 +315,35 @@ quote in a bug report.
   file and hit an earlier occurrence than the rule, and one was aimed at a sentence that turned out to
   be caught for an unrelated reason, so removing the word it was meant to defend changed nothing. Both
   showed up as a broken version reporting no failure, which is the only signal that catches this.
+
+  A fifteenth review found the last count in the guard that nothing checked, and it had gone stale
+  exactly as the case for checking counts predicts. The note above the true sentences says how many
+  of them are repaired forms of refused ones; it said nineteen and there are twenty-four, because the
+  round before added five and updated every count except the one no test read. It is checked now, and
+  it counts the entries rather than the distinct forms, which is what lets it fail on its own: every
+  repair is already required to be held as a true sentence, one requirement per refusal, so the only
+  way the two numbers can disagree is the same repaired sentence written into the list twice. Writing
+  one in twice turns that check red and nothing else.
+
+  The same review found something the guard cannot reach at all, and it is this item's original fault
+  surviving where the rule does not look. All three places that set out what leaves your machine
+  listed the reachability check, the issue search, the detail fetch, the cover fetch and the reader
+  link, and left out the largest request the app makes: adding a whole series, or everything a
+  creator worked on, asks the comics database for every issue it lists and keeps asking until it has
+  them all. Two of the three then said in the same breath that searching for a series or a creator is
+  answered from files already on the machine, which is true of the search and not of the add that
+  follows it, so the sentence pointed away from what was missing. The guard works by taking any
+  sentence about the covers switch and requiring it to admit the covers are still fetched; a sentence
+  nobody wrote is outside it by construction. All three now name the series and creator fetch,
+  asking an imported line to find its own match is named beside the search it resembles, and the
+  clause is held by a rule rather than left as prose that could be dropped without anything noticing.
+  Deleting it from any one of the three turns the suite red naming that one.
+
+  The harness that proves these checks can fail needed a fix before it proved anything, and it is a
+  version of the same lesson: launching the test runner one particular way on this machine exits with
+  no status and no output, which the harness read as a failing baseline, so it stopped and reported
+  nothing. Running the tests the way the project itself does restored a real baseline, and all four
+  new broken versions then failed on the check they are there to defend.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two

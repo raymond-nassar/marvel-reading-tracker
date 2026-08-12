@@ -245,7 +245,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3246-3294 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
-| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:267-312 |
+| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:269-314 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:356-377 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
@@ -769,7 +769,7 @@ as five loose literals.
 
 The light palette is written out twice, once for `:root[data-theme="light"]` and once inside the
 `prefers-color-scheme` query. The duplication is deliberate: the module is deferred at
-`src/index.html:740`, so resolving the theme in JavaScript would paint dark and then flip, and
+`src/index.html:743`, so resolving the theme in JavaScript would paint dark and then flip, and
 would leave the page dark entirely for a reader with JavaScript off. A test asserts the two blocks
 are identical token for token, which is what makes the duplication safe to keep rather than merely
 necessary.
@@ -2539,14 +2539,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:449-460`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:451-462`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:357-361`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:359-363`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -3906,7 +3906,7 @@ action exactly the same weight as the safe action it tells the reader to take fi
 sort of defect this repository's own rule about recovery paths exists to catch.
 
 `.btn-g` is the app's established answer, used in nine places including the Cancel button of the
-confirm dialog at `src/index.html:734`. The convention there is the same shape as this: the action
+confirm dialog at `src/index.html:737`. The convention there is the same shape as this: the action
 being asked for is `.btn`, the way out is `.btn-g`. Applying it here follows the app rather than
 inventing anything, and it is what `.btn-p` was reaching for, expressed from the other side.
 
@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6566-6568` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6597-6599` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6585-6589`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6616-6620`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6400-6402` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6431-6433` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1285-1294` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1317-1326` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4980,7 +4980,7 @@ Constraint gate: checked 1 to 11, none breached.
 The README says correctly that reading data stays local while metadata and covers are downloaded.
 The app itself says nothing is uploaded. Search text and requested issue identifiers do cross the
 machine boundary, and image hosts receive ordinary requests. Reading progress, notes and identity
-remain local or absent. Evidence: `README.md:29-43`, `src/index.html:500-556`,
+remain local or absent. Evidence: `README.md:29-45`, `src/index.html:500-556`,
 `src/js/api.js:90-102`.
 
 Shipped. Four destinations were enumerated from the code rather than from the copy, because the
@@ -5321,7 +5321,7 @@ Two limits found this round are recorded rather than closed, because closing eit
 English than it buys. The rule that hands a subjectless trailing fragment back to the clause in front
 of it assumes that clause is the true half. When the fragment carries no content at all the clause in
 front of it is the lie, and "no cover is requested, regardless" is built out of a covers word and a
-request word, so it reads as its own acknowledgement. Removing the six words that do this costs five
+request word, so it reads as its own acknowledgement. Removing the six words that do this costs six
 true sentences, "the image is requested, regardless" among them, and does not close the shape either,
 because dropping the comma leaves no trailing clause to classify at all. Separately, the exclusion
 that stops "a backup covers every list you keep" being read as a claim about pictures is shared with
@@ -5395,6 +5395,31 @@ inside the round that added them. One of the five is the About view's shipped se
 written for its "but", which is the clearest statement of what the class costs: the rule is
 indifferent to which conjunction joins two predicates and the copy is not. All five are recorded with
 repairs.
+
+Review round fifteen found the last unasserted count in the corpus comments, and it had gone stale
+exactly as the argument for asserting counts predicts. The comment above the true sentences says how
+many of them are repaired forms of refusals; it read nineteen and the tree holds twenty-four, because
+round fourteen added five refusals and updated every count except the one nothing checked. The
+neighbouring two counts in the same comment block were asserted in round thirteen and both stayed
+right. So the third is asserted now, and it is counted over the entries rather than over the set of
+repairs, which is what lets it fail on its own: every repair is already asserted to be held as a true
+sentence, one assertion per refusal, so the only way the two counts can disagree is a repaired form
+written into the true list twice, and nothing else in the file forbids that. Duplicating one turns
+exactly that assertion red and nothing else.
+
+The same round found a hole the guard cannot reach by construction, and it is the original defect of
+this item surviving in the one place the rule does not look. All three surfaces that enumerate what
+leaves the machine listed the reachability check, the issue search, the detail fetch, the cover
+fetch and the reader link, and left out the largest request the app makes: adding a whole series or a
+creator's issues pages the metadata API to completion at `src/js/api.js:147-161`, up to sixty
+requests, from `src/js/main.js:2323` and `src/js/main.js:2339`. Two of the three said in the same
+breath that "searching the catalog, series or creators is answered from files already on this
+machine", which is true of the search and not of the add that follows it, so the sentence pointed
+away from the omission. The guard inverts sentences that are about the covers switch; a sentence
+nobody wrote is outside it. All three surfaces now name the series and creator fetch, the imported
+line's "Find match" at `src/js/main.js:2432` is named alongside the search it resembles, and the
+clause is held by a rule in the request table rather than left as prose that can be dropped without
+anything noticing. Removing it from any one of the three turns the suite red naming that surface.
 
 What is left is a residual of eighteen and a recorded set of twenty-five refusals, and both are now in the
 repository instead of being described here. That distinction is the eighth round's most useful
@@ -5492,7 +5517,13 @@ nothing. Both were found by the mutation reporting NOT CAUGHT rather than by rea
 harness itself needed one fix, and it is the one worth naming: a transient file lock failed a restore
 and left a mutation in the working tree, which is the only way a harness that exists to prove a check
 can instead do harm. It now retries and refuses to continue rather than carrying on with a mutated
-file.
+file. Four more prove the fifteenth round's two additions: duplicating a repaired form in the true
+list turns the new count red on its own, and deleting the series and creator clause from each of the
+three enumerating surfaces in turn turns the request table red naming that surface. The harness
+needed a fix of its own first, and it is a variant of the same defect: spawning `npm.cmd` through
+`execFileSync` here exits with a null status and captures no output at all, which the harness read as
+a red baseline, so it refused to run and proved nothing. Driving `node --test` through the shell, as
+the script itself does, restored a green baseline.
 
 The security policy was found still holding the absolute that started this item, in a stronger form
 than the one removed. "Nothing you create is uploaded anywhere" covers the lists, and the issue
@@ -5570,7 +5601,7 @@ here because it described the tags this item replaced.
 
 Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
 `.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:74-108`,
-`test/ci-supply-chain.test.js:124-142`, `README.md:315-350`.
+`test/ci-supply-chain.test.js:124-142`, `README.md:317-352`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -5849,7 +5880,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:267-507`,
+are valuable history and are not a concise public policy. Evidence: `README.md:269-509`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 **BL-098: Define review ownership and contribution intake**
