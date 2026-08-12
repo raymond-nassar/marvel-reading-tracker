@@ -94,8 +94,11 @@ quote in a bug report.
   one true thing and one false thing, and the check was reading the true half. The first two attempts
   reached for the punctuation, refusing an acknowledgement separated from its request by a comma and
   then one separated by a conjunction. Both were rejected as written, because at that width they are
-  the wrong instrument: run against the 51 true sentences the check is now proved against, the first
-  refuses 6 of them and the second 2 more, and all eight are the same shape. What separates the two
+  the wrong instrument: run against the 55 true sentences the check is now proved against, and against
+  the coordinator list as the fourteenth round leaves it, the first refuses 6 of them and the second 9.
+  Both together refuse 10. That cost is real, and so is what it buys, which earlier drafts left out:
+  the first closes 7 of the 18 recorded escapes, the second 4, and both together 8. The case for
+  applying them per branch is that doing so closes the same escapes for none of the cost. What separates the two
   cases is not the punctuation but the subject: "your notes" is a different subject, and "regardless"
   is not a subject at all. So the acknowledgement now has to be about the covers, by name or by
   pronoun, in whichever clause is making the assertion. A thirteenth round then found both marks are
@@ -206,7 +209,7 @@ quote in a bug report.
   buys. A trailing fragment with no content of its own is handed back to the clause in front of it,
   which is right when that clause is the true half and wrong when it is the lie, and "no cover is
   requested, regardless" is built out of a covers word and a request word so it reads as its own
-  acknowledgement. Removing the six words that do this refuses five true sentences and does not close
+  acknowledgement. Removing the six words that do this refuses six true sentences and does not close
   the shape, since dropping the comma evades it again. And the rule that stops "a backup covers every
   list you keep" being read as a claim about pictures also decides whether a passage is examined at
   all, where it works the other way round: "hide the covers you have not read and Marvel is never
@@ -216,19 +219,19 @@ quote in a bug report.
 
   The price is now in the repository rather than in this paragraph. Both documents used to say that a
   proof would disagree with anyone who quietly closed one of these limits, and no such proof was in
-  the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 51
-  sentences written to be true, 117 written to be false, the 16 passages that still pardon themselves,
-  and 20 true sentences the check refuses, each stored beside a repair that is itself asserted to
+  the repository: it was a scratch file on one machine. The whole corpus is now a test. It holds 55
+  sentences written to be true, 121 written to be false, the 18 passages that still pardon themselves,
+  and 25 true sentences the check refuses, each stored beside a repair that is itself asserted to
   pass. Closing an escape or accepting a refusal turns the suite red rather than passing silently,
   which is what those sentences claimed all along.
 
-  Those 20 are a regression list, not a bill. Calling them the cost of the check, which this entry
+  Those 25 are a regression list, not a bill. Calling them the cost of the check, which this entry
   did, reads as though they were every true sentence it refuses, and they are nowhere near it:
   twenty-eight more were written in the words a maintainer would actually use and fourteen of them
   were refused. What the list buys is that a refusal already known cannot start being accepted
   without the suite saying so.
 
-  Six of the 20 do not name the covers in the clause that asserts: four say "the requests" without
+  Six of the 25 do not name the covers in the clause that asserts: four say "the requests" without
   saying which, and two lean on "one" or "each" as a word for the covers, which the check stopped
   accepting in the ninth round because "each of your lists is unchanged" pardoned a lie with it. Five
   of those six are repaired by naming the covers; the sixth needs the parenthetical moved as well. The
@@ -237,10 +240,10 @@ quote in a bug report.
   repair by moving that parenthetical rather than by adding anything, four of them to the end of the
   sentence and one to the front. So the claim that every repair adds truth rather than removing it,
   which this entry made for three rounds, was not quite right either. The twelfth is the
-  object-pronoun sentence described above, the next two are the clause-opening preposition, and the
-  last six are the thirteenth round's, described below.
+  object-pronoun sentence described above, the next two are the clause-opening preposition, the
+  next six are the thirteenth round's, described below, and the last five are the fourteenth's.
   Walking left to find the subject would accept the middle
-  five, and it was measured: it also pardons fifty-three of the hundred and seventeen
+  five, and it was measured: it also pardons fifty-seven of the hundred and twenty-one
   false sentences. A passage that says two things and means one of them still needs a reader.
 
   A thirteenth review got through the rule that decides which clause is doing the asserting, twice. A
@@ -252,8 +255,10 @@ quote in a bug report.
   two halves were checked against clauses neither of them was in. Twelve sentences of those two shapes
   are held as false now and all twelve are caught. The fix is the punctuation rule this entry rejected
   three rounds ago, applied to the branches that carry their own subject and to none of the others,
-  which is the distinction the earlier measurement had missed: applied to all of them it refuses eight
-  true sentences and every one of the eight is a branch that leans on its neighbour. It costs two true
+  which is the distinction the earlier measurement had missed: applied to all of them it refuses ten
+  true sentences, though it also closes eight of the recorded escapes, which earlier drafts of this
+  paragraph left out and which is why the per-branch form is the better answer rather than the only
+  one. It costs two true
   sentences, both of which have a comma form this check refused before the change and refuses after
   it, so the rule is more consistent rather than stricter. The round before was also found too strict
   in the opposite direction, refusing "a request is still sent for each cover" along with the evasion
@@ -261,17 +266,39 @@ quote in a bug report.
   it, which recovers three true sentences and reopens none of the seven evasions. Four true sentences
   of the same shape are still refused and are recorded with repairs.
 
+  A fourteenth review found that whole rule resting on a list of seven words, and re-joined the lies
+  it had just closed with a conjunction outside the list: "because", "when", "if", "since", "then",
+  "after", "but" and "yet". All forty variants passed again. That is the same failure this item has
+  paid for five times: a rule written as a list somebody wrote out by hand, where the missing word is
+  the way through. The list holds twenty words now, and widening it was measured as costing nothing at
+  all, refusing no true sentence, pardoning no false one and breaking no repair, while catching
+  twenty-six of the forty. Six of the rest are the price of leaving "but" and "yet" out, which the
+  About view's own sentence needs, and eight the price of letting a trailing fragment keep its wider
+  reach. One of each is recorded as an escape rather than all fourteen, because both families run to
+  as many sentences as there are conjunctions, and a list of them would be the same mistake again.
+
+  Widening the list costs five true sentences, every one of them two things said about one subject:
+  "the covers are hidden and still requested" cuts at the "and" and leaves the second half with no
+  subject in it. Not cutting when the following words have no subject of their own would accept all
+  five, and it is written down as rejected rather than passed over, because every way of testing for
+  that is another hand-written list. One of the five is the About view's shipped sentence with "and"
+  in place of its "but", which says what the class costs better than any argument: the rule does not
+  care which word joins two predicates, and the copy does. All five are recorded with repairs.
+
   Thirty-seven deliberately broken versions of the shipped sentences are tried against the real files
   and all thirty-seven are refused. Fifteen true rewrites in different true words are tried as well,
-  and thirteen are accepted. The fourteenth is the sentence the subject tie costs. The fifteenth is
-  the one the thirteenth round costs, "the image is requested and unchanged", which that round already
+  and thirteen are accepted. Exactly two are not: the sentence the subject tie costs, and the one the
+  thirteenth round costs, "the image is requested and unchanged", which that round already
   records as a refusal with its repair, so the file-level harness and the corpus in the tree name the
-  same sentence independently. It found a
+  same sentence independently. A third rewrite stopped passing in the eighth round and was then
+  repaired in the list itself, so what the fifteen hold is its repaired form and it passes; naming it
+  alongside the other two, as this entry did, made three failures out of a list that has two. It found a
   third in the tenth round, "the app still asks for the image", and that one was repaired in the
   instrument rather than in the corpus, because the copy's own verb is a fair way to write it. Eight
   ways of undoing the eighth round's repairs were each applied on
   their own, three more undo the ninth round's, five more undo the tenth round's, six more undo the
-  eleventh round's, five more undo the twelfth round's and six more undo the thirteenth round's; every
+  eleventh round's, five more undo the twelfth round's, six more undo the thirteenth round's and six
+  more undo the fourteenth round's; every
   one turns the suite red, naming which
   test or which sentence defends it. Two
   of the eleventh round's six first reported caught while proving nothing, because the replacement text
@@ -280,7 +307,11 @@ quote in a bug report.
   reference back into the match, so the broken version would not parse. A version that will not parse
   fails every check in the file and defends none of them, and both were rebuilt until they failed on
   the sentence they are there to defend. The count of distinct repairs needed no broken version to
-  prove it can fail: adding the fourteenth refusal turned it red by itself.
+  prove it can fail: adding the fourteenth refusal turned it red by itself. Two of the fourteenth
+  round's six needed correcting before they proved anything: one replaced a word everywhere in the
+  file and hit an earlier occurrence than the rule, and one was aimed at a sentence that turned out to
+  be caught for an unrelated reason, so removing the word it was meant to defend changed nothing. Both
+  showed up as a broken version reporting no failure, which is the only signal that catches this.
 
 - **The read-me now credits Comic Book Herald, which is one of the reasons this project exists.**
   Nothing in the app changes and nothing you have saved is affected. It sits alongside the two

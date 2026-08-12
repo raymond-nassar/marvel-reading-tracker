@@ -4523,7 +4523,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6523-6525` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6566-6568` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4533,11 +4533,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:178-180`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6542-6546`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6585-6589`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6357-6359` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6400-6402` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4745,7 +4745,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1254-1263` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1285-1294` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:168-172` and
 `PRODUCT_BACKLOG.md:178-180` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5344,14 +5344,18 @@ request in the next and the lie became its own acknowledgement. Six shapes of ea
 all twelve are caught.
 
 The fix is the same instrument the third round rejected, applied per branch rather than to all of
-them, and the measurement is why. Refusing a gap that crosses a comma everywhere refuses 6 true
-sentences and ending every clause at a coordinator as well refuses 2 more, and all eight are one
-shape: an adverbial saying nothing has changed, leaning on the clause in front of it across the mark.
-That is exactly the shape those branches exist for. So the branches whose two halves are one
-assertion take both marks and the ones that lean take neither, and "but" and "yet" are absent from
+them, and the measurement is why. Measured against the coordinator list as the fourteenth round
+leaves it, refusing a gap that crosses a comma everywhere refuses 6 true sentences, ending every
+clause at a coordinator everywhere refuses 9, and both together refuse 10. Those costs were once
+recorded on their own, which flattered the conclusion, because the wholesale forms also buy
+something: the comma rule everywhere closes 7 of the 18 recorded escapes, the coordinator rule
+everywhere closes 4, and both together close 8. The case for the per-branch form is that it closes
+the same escapes for none of the cost, not that the wholesale form is worthless. So the branches
+whose two halves are one assertion take both marks and the ones that lean take neither, and "but"
+and "yet" are absent from
 the coordinator list because the shipped copy hangs its own acknowledgement off one. Two review
 suggestions were measured and rejected on the same numbers: requiring the whole match to stay in one
-clause refuses five true sentences, and treating every coordinator as a clause end breaks the About
+clause refuses seven true sentences, and treating every coordinator as a clause end breaks the About
 view's own shipped sentence. The change costs two true sentences, both of which were accepted before
 it, and both of which have a comma form that was refused before it and is refused now, so it makes
 the rule consistent rather than stricter. Both are recorded with repairs.
@@ -5368,17 +5372,41 @@ world rather than about the sentence. All four are recorded with repairs. One te
 found asserting a bound nothing tests, saying the recorded escapes were "still only these" when what
 the test checks is that each of them is still open, and it is reworded to say that.
 
-What is left is a residual of sixteen and a recorded set of twenty refusals, and both are now in the
+The fourteenth round found that whole conclusion resting on a list of seven words. Review re-joined
+the lies the thirteenth round had just closed with a conjunction outside that list, "because", "when",
+"if", "since", "then", "after", "but" and "yet", and all forty variants pardoned again. This is the
+failure this item has now paid for five times: a rule written as a list somebody enumerated by hand,
+where the missing word is the evasion. The list is twenty words now, and extending it was measured as
+completely free against the corpus and the six shipped surfaces, refusing nothing, pardoning nothing
+and breaking no repair. It takes twenty-six of the forty. Of the fourteen left, six are the price of
+keeping "but" and "yet" out, which the About view's own sentence requires, and eight are the price of
+letting a trailing adverbial keep the wider gap, which is the whole of what that branch is for. Both
+families are unbounded in the joining word, so one representative of each is recorded as an escape
+rather than an enumeration that goes stale the moment somebody writes a conjunction nobody thought
+of, and the residual below is no longer described as a bound.
+
+The wider list costs five true sentences, and they are one shape: predicate coordination over a
+shared subject. "The covers are hidden and still requested" states two things about one subject, and
+cutting at the coordinator leaves the second half with no subject in it. Not cutting when the
+following segment has no subject of its own would accept all five and is the obvious repair, and it
+is written down as rejected rather than left unsaid, because every candidate test for "has a subject
+of its own" is another hand-written list, and four such lists in this file have been walked through
+inside the round that added them. One of the five is the About view's shipped sentence with "and"
+written for its "but", which is the clearest statement of what the class costs: the rule is
+indifferent to which conjunction joins two predicates and the copy is not. All five are recorded with
+repairs.
+
+What is left is a residual of eighteen and a recorded set of twenty-five refusals, and both are now in the
 repository instead of being described here. That distinction is the eighth round's most useful
 finding. Both this section and the changelog said a proof would disagree with anyone who closed a
 pardon or accepted a refusal, and no such proof was in the repository: it was a scratch file on one
-machine, absent from CI and unreachable by any reader. The corpus is a test now. It holds 51 sentences
-written to be true, 117 written to be false, the 16 that still pardon themselves, and the 20 true
+machine, absent from CI and unreachable by any reader. The corpus is a test now. It holds 55 sentences
+written to be true, 121 written to be false, the 18 that still pardon themselves, and the 25 true
 sentences the check refuses, each stored beside a repair that is separately asserted to pass and to be
-one of the 51. Closing an escape or accepting a refusal turns the suite red, which is what the
+one of the 55. Closing an escape or accepting a refusal turns the suite red, which is what the
 sentence claimed all along.
 
-The twenty are a regression list and not a bound on what the check refuses, and calling them a cost
+The twenty-five are a regression list and not a bound on what the check refuses, and calling them a cost
 was the round-eight overclaim recurring one level down: it reads as though they were all of it. They
 are not close to all of it. Twenty-eight further true sentences were written in the register a
 maintainer editing this copy would actually use, and fourteen were refused, "hiding the covers saves
@@ -5386,12 +5414,16 @@ no requests" among them. What the list buys is that a refusal already known cann
 accepted. What it does not buy is a number for how much true English this instrument costs, and no
 instrument of this kind is going to have one.
 
-The sixteen remaining escapes are one across a full stop, which no rule about clauses inside a
+The eighteen remaining escapes are one across a full stop, which no rule about clauses inside a
 sentence reaches, one that hangs the true clause off the false one with no subject of its own, five
 that bury a covers noun in a modifier of some other head noun with nothing to hang it off, seven where
-a trailing fragment carrying no content hands the assertion back to the lie's own clause, and two the
-covers verb exclusion hides before the check can start. The twenty
-refusals fall into seven classes. Four say "the requests" without saying which, and two lean on "one"
+a trailing fragment carrying no content hands the assertion back to the lie's own clause, two the
+covers verb exclusion hides before the check can start, and two that stand for the families the
+coordinator rule leaves open, one joined by "but" and one where a trailing adverbial keeps the wider
+gap. Those last two are representatives and not a count: both families run to as many sentences as
+there are conjunctions, which is why the residual is a record of shapes rather than a number that
+bounds anything. The twenty-five
+refusals fall into eight classes. Four say "the requests" without saying which, and two lean on "one"
 or "each" as a covers pronoun, which the ninth round stopped reading as one because "each of your
 lists is unchanged" pardoned a lie with it; five of those six are repaired by naming the covers, at
 the cost of a word, and the sixth costs a word and a reordering, because naming the covers in "The
@@ -5403,26 +5435,31 @@ requested", which has no subject in it at all. All five repair by moving the par
 them to the end of the sentence and the fifth to the front, which neither adds nor removes a word, so
 the claim that every repair adds truth rather than removing it was itself an overclaim and is gone.
 The twelfth is the object-pronoun case the subject tie brought with it, and the next two are the
-clause-opening preposition the eleventh round bought, both described above. The last six are the
+clause-opening preposition the eleventh round bought, both described above. The next six are the
 thirteenth round's, four for separating a passive from a post-modifier and two for ending a clause at
-a coordinator. Walking left
+a coordinator, and the last five are the fourteenth round's, every one of them predicate coordination
+over a subject the two halves share. Walking left
 to find the subject would accept the middle five, and it was measured against this corpus: it
-pardons 53 of the 117 false sentences and accepts sixteen of the twenty
+pardons 57 of the 121 false sentences and accepts twenty-one of the twenty-five
 refusals, because a leftward walk lends a subject across clause boundaries in whichever direction
 happens to help. That is the second instrument returning under a new name, and it is refused on the
-numbers rather than on principle. Two refusals share a repair, so the twenty have nineteen distinct
-repaired forms.
+numbers rather than on principle. Two refusals share a repair, and one of the fourteenth round's
+repairs to a sentence already recorded as the shipped copy, so the twenty-five have twenty-four
+distinct repaired forms.
 
 Thirty-seven mutations run against the finished rules on the real files and all thirty-seven are
 caught. Fifteen more run the other way: a true sentence rewritten into a different true phrasing has
 to leave the suite green. That is the half no lie mutation can express and the half both earlier
 instruments failed, and it is the half that has now caught a cost in each of three rounds. Thirteen of
-the fifteen pass. "Every one is requested regardless" stopped passing in the eighth round when "one"
-left the reference, and "hiding them changes nothing about what is requested" stopped passing in the
-ninth when the subject tie landed. Each is repaired by naming the cover, and both the refused and the
-repaired form of each are recorded. "The image is requested and unchanged" stopped passing in the
-thirteenth round when a coordinator began ending a clause, and that round records it as a refusal with
-its repair before this harness was re-run, so the two found the same sentence independently. The tenth
+the fifteen pass, and exactly two do not. "Hiding them changes nothing about what is requested"
+stopped passing in the ninth round when the subject tie landed, and "The image is requested and
+unchanged" stopped passing in the thirteenth when a coordinator began ending a clause. Each is
+recorded as a refusal with its repair, and the second of them was recorded from the rules before this
+harness was re-run, so the file-level proof and the corpus in the tree reached it independently. A
+third rewrite, "Every one is requested regardless", stopped passing in the eighth round when "one"
+left the reference; unlike the other two it was repaired in the list itself, so what the fifteen now
+hold is its repaired form and it passes. Naming all three as current failures, as an earlier draft of
+this paragraph did, contradicted the thirteen in the same sentence. The tenth
 round briefly cost a further one, "the app still asks for the image", which is the shipped copy's own
 verb: hanging the covers noun off a request word was
 written as a noun test first, and the harness caught it in the same run that proposed it, so the test
@@ -5445,7 +5482,13 @@ that piece defends. Six more undo the thirteenth round's, one for each rule it a
 direction of the participle rule, and every one turns the suite red naming the sentence it defends.
 The count of distinct repairs needed no mutation to prove it can fail: adding the
 fourteenth refusal turned it red on its own, which is what a count asserted rather than written in
-prose is for. The proof
+prose is for. Six more undo the fourteenth round's coordinator list, one reverting it to its seven
+words and four removing a single new word each, with a sixth turning the clause break off for every
+branch, and every one turns the suite red naming a sentence it pardons. Getting to that took two
+corrections worth recording: a mutation written as a bare word replacement across the whole file hit
+an earlier occurrence than the rule, and one of the four sentences chosen to defend a new word turned
+out to be caught for an unrelated reason, so the mutation that removed it reported clean while proving
+nothing. Both were found by the mutation reporting NOT CAUGHT rather than by reading the rule. The proof
 harness itself needed one fix, and it is the one worth naming: a transient file lock failed a restore
 and left a mutation in the working tree, which is the only way a harness that exists to prove a check
 can instead do harm. It now retries and refuses to continue rather than carrying on with a mutated
