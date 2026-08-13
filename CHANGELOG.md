@@ -39,12 +39,21 @@ issues.
 
 A backup naming the same list over and over in its running order used to be carried through entry by
 entry. 300,000 repetitions of a single list fitted comfortably inside every other limit, survived a
-reload, and made the app add 300,000 tabs to the rail on every update. Repeats are collapsed now.
+reload, and made the app add 300,000 tabs to the rail on every update. Repeats are collapsed now,
+including the ones written in a form that is not quite a name: a first attempt at this collapsed only
+the plainest of them, and a file naming the same list 300,000 times in a slightly different way went
+through it untouched.
 
 Restoring a backup with a great many lists in it is no longer slow out of all proportion to its size.
 The step that puts each list into the running order compared it against every list already there, so
 the work grew with the square of the count: a 5.4 MiB file of 250,000 lists took 26.6 seconds, during
 which the tab did nothing at all. It now takes a tenth of a second.
+
+Restoring a backup written by the very first version of this app is no longer slow in the same way.
+Those backups keep their issues inside their lists, and every issue was being added in a way that
+recopied the whole collection, so the work again grew with the square of the count: a 6.1 MiB file of
+250,000 issues took 96 seconds and then gave up with an error no reader could act on. It now takes a
+tenth of a second and finishes.
 
 An over-long issue link or cover URL is dropped rather than shortened, because a shortened link is a
 link to the wrong page.

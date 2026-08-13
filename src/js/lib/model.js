@@ -170,7 +170,8 @@ export const MAX_URL = 500;
 // not the only caller: undoing a restore feeds the pre-restore snapshot back through this same
 // check, so a ceiling below what the app can hold would have refused a recovery of the app's own
 // data. The ceiling here is six times the issues holdable and three times the lists, and below the
-// 355,000 issues an eight mebibyte file can declare, so it still refuses counts absurd on their face.
+// 374,382 issues an eight mebibyte file can declare in the cheapest packing that still coerces, so it
+// still refuses counts absurd on their face.
 export const MAX_ISSUES = 250000;
 export const MAX_LISTS = 250000;
 
@@ -361,15 +362,27 @@ export function addIssuesToList(state, listId, inputs, { at = null, sort = false
   // from the stored issue, because normalizeIssue drops it on purpose: it describes this
   // list's structure, not the issue.
   const editions = new Map();
+  // upsertIssue copies the whole issues map on every call, so adding n issues cost n copies and this
+  // loop was quadratic. Nothing shipped reaches that: the largest curated order is a few hundred.
+  // The version 1 restore route does, because it hands a list's entire carrier to one call, and the
+  // raised ceiling admits 250,000 of them: measured, 120,000 items took 22.7 seconds and 250,000 took
+  // 96 before failing. The same issues declared the version 2 way take 100 milliseconds. The merge
+  // below is the one upsertIssue performs, still against the running map so a repeat inside a single
+  // import merges as it did, but the map and the state are each built once.
+  const issues = { ...state.issues };
   for (const input of inputs) {
     const issue = normalizeIssue(input);
     if (!issue) continue;
-    next = upsertIssue(next, issue);
+    const prev = issues[issue.issueId];
+    issues[issue.issueId] = prev
+      ? { ...prev, ...stripNulls(issue), hydrated: issue.hydrated || prev.hydrated }
+      : issue;
     incoming.push(issue.issueId);
     if (typeof input?.collectedIn === 'string' && input.collectedIn.trim()) {
       editions.set(issue.issueId, input.collectedIn.trim().slice(0, MAX_COLLECTION));
     }
   }
+  next = { ...state, issues };
 
   const ordered = sort
     ? [...incoming].sort((a, b) => compareIssues(next.issues[a], next.issues[b]))
@@ -379,9 +392,14 @@ export function addIssuesToList(state, listId, inputs, { at = null, sort = false
   const fresh = dedupe(ordered).filter((id) => !existing.has(id));
   const skipped = ordered.length - fresh.length;
 
-  const itemIds = [...list.itemIds];
-  const index = at == null ? itemIds.length : clamp(at, 0, itemIds.length);
-  itemIds.splice(index, 0, ...fresh);
+  // Splicing with a spread passes every inserted id as a separate argument, so the insert gave out
+  // at the argument limit rather than at any bound this app states: measured on the version 1
+  // restore route, 125,000 ids inserted and 130,000 threw "Maximum call stack size exceeded", which
+  // the restore then reported to the reader as its refusal reason. The limit is an engine detail and
+  // not a number worth stating, so the insert is written not to have one.
+  const held = list.itemIds;
+  const index = at == null ? held.length : clamp(at, 0, held.length);
+  const itemIds = held.slice(0, index).concat(fresh, held.slice(index));
 
   // Only the issues actually added take an edition name. An issue the list already held keeps
   // the edition it was added under, so re-importing an order cannot move an issue into a
@@ -703,11 +721,20 @@ function coerce(raw) {
       collectedIn: normalizeCollectedIn(v.collectedIn, itemIds),
     };
   }
+  // Filtered to strings before anything else, because the membership test is a property lookup and
+  // the dedupe is a Set: the lookup coerces its key, the Set compares identity, and the two disagree
+  // on every value that is not already a string. An entry of [1] stringifies to "1", so it passed the
+  // lookup against a list keyed "1", and each array was a distinct identity, so the dedupe kept every
+  // one: 300,000 of those still reached the rail after the dedupe was added, on the same 1.14
+  // mebibyte file. Nothing this app writes is a non-string, and dropping one costs at most its
+  // position, since the backfill below returns the list itself.
+  const named = (Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists))
+    .filter((id) => typeof id === 'string');
   // Deduplicated because the filter tests membership rather than uniqueness, so one valid id
   // repeated survived once per repetition: 300,000 entries naming a single list fitted in a
   // 1.14 mebibyte file, cleared every ceiling, and made the rail append 300,000 nodes on every
   // update. Deduplicated, the order is bounded by the number of lists, which is already capped.
-  const listOrder = dedupe((Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists)).filter((id) => lists[id]));
+  const listOrder = dedupe(named.filter((id) => lists[id]));
   // Backfilled through a Set rather than Array.includes, which made this loop quadratic in the
   // number of lists. That cost 3 milliseconds while the ceiling was 1,000 and 26.6 seconds once it
   // was 250,000, on a 5.38 mebibyte file that clears the size guard and every count check, so the

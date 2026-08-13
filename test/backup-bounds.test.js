@@ -87,6 +87,20 @@ test('a listOrder repeating one valid id collapses to a single entry', () => {
   assert.deepEqual(v.state.listOrder, ['a']);
 });
 
+// The dedupe is a Set and the membership filter is a property lookup, so the two disagreed on
+// everything that was not already a string: the lookup coerces its key, the Set compares identity.
+// An entry of [1] stringifies to "1", so it named a list keyed "1" and passed, and every copy was a
+// fresh identity, so a dedupe added to stop exactly this kept all 300,000 of them. The worst shape
+// measured was 2,796,179 entries of [] against a list keyed "", in a file two bytes inside the guard.
+test('a listOrder repeating a non-string that names a valid list collapses too', () => {
+  const v = restore({
+    lists: { 1: { id: '1', name: 'L', itemIds: [] } },
+    listOrder: Array.from({ length: 50000 }, () => [1]),
+  });
+  assert.equal(v.ok, true);
+  assert.deepEqual(v.state.listOrder, ['1'], 'what the app writes is strings, and so is what it reads back');
+});
+
 test('a listOrder still orders the lists it names, and still gains the ones it omits', () => {
   const v = restore({
     lists: {
@@ -256,6 +270,51 @@ test('lists are backfilled into the order in time that does not grow with their 
   assert.equal(v.state.listOrder[0], 'l0');
   assert.ok(Date.now() - started < 3000, 'the quadratic form took about seven seconds on this input');
 });
+
+// The other half of the clause the ceiling has to satisfy. A ceiling above anything an eight
+// mebibyte file could declare would never fire, and the figure for that was quoted wrong too: 355,000
+// where the crossing point is 374,382. A marginal rate taken on a few thousand records is
+// self-referential, because at 400,000 issues the ids are six digits and not four. So this asserts
+// the claim itself, on the cheapest shape that still coerces, rather than any rate derived from it.
+test('the count ceiling is reachable inside a file the size guard permits, so it is not dead code', () => {
+  const issues = {};
+  for (let i = 1; i <= MAX_ISSUES + 1; i += 1) issues[i] = { id: i };
+  const v2 = { schemaVersion: 2, issues };
+  assert.ok(JSON.stringify(v2).length <= MAX_BACKUP_BYTES,
+    'a file declaring one over the ceiling has to clear the size guard, or the count never runs');
+  assert.equal(validateBackup(v2).ok, false, 'and having cleared it, has to be refused by the count');
+
+  const items = [];
+  for (let i = 1; i <= MAX_ISSUES + 1; i += 1) items.push({ id: i });
+  const v1 = { schemaVersion: 1, lists: { a: { name: 'L', items } } };
+  assert.ok(JSON.stringify(v1).length <= MAX_BACKUP_BYTES, 'the same has to hold for the version 1 carrier');
+  const refused = validateBackup(v1);
+  assert.equal(refused.ok, false);
+  // Named, because ok:false is also what a collapse further in produces, and that is exactly what
+  // this assertion was quietly settling for: with the count removed it still passed, on a stack
+  // overflow from the insert below.
+  assert.ok(refused.errors.some((e) => e.includes('inside its lists')),
+    'refused by the count it declares, not by something giving out later');
+});
+
+// A bound above the point where the code gives out is not a bound. The version 1 route hands every
+// carried issue to one call, and that call copied the whole issues map per issue and then inserted
+// them all as arguments, so the ceiling it was given was one the path could not reach: 120,000 items
+// took 22.7 seconds and 250,000, which every check admits, took 96 before failing with "Maximum call
+// stack size exceeded" as its refusal text. Both are linear now, and the same input takes 127
+// milliseconds. Asserted at the ceiling itself, because that is the number the checks promise.
+test('a version 1 backup at the ceiling restores, rather than giving out on the way in', () => {
+  const items = [];
+  for (let i = 1; i <= MAX_ISSUES; i += 1) items.push({ issueId: i, title: 'T' });
+  const started = Date.now();
+  const v = validateBackup({ schemaVersion: 1, lists: { a: { name: 'L', items } } });
+  assert.equal(v.ok, true, v.errors?.join(' '));
+  assert.equal(Object.keys(v.state.issues).length, MAX_ISSUES);
+  assert.equal(v.state.lists[v.state.listOrder[0]].itemIds.length, MAX_ISSUES);
+  assert.ok(Date.now() - started < 20000, 'the quadratic form took 96 seconds on this input');
+});
+
+// Stated as arithmetic because this is the clause the ceiling has to satisfy, and the first draft
 // failed it by a factor of three and a half while reading as though it had been checked. The floor
 // is measured here rather than quoted, because quoting is how it went wrong twice: the first draft
 // quoted 923, the second quoted 292 and 185, and a review quoted 233 and 137. The costs are 267 and
