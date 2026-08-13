@@ -36,7 +36,7 @@ Imports say what a file mentions. Ownership says who made the thing and who can 
 is the question a reader of this app actually has, because almost every module here is a bag of
 pure functions and the interesting state sits in five objects that one file constructs.
 
-Those five are built together at `src/js/main.js:64-78`. Read that block and you have read the
+Those five are built together at `src/js/main.js:65-79`. Read that block and you have read the
 application's wiring.
 
 ```mermaid
@@ -94,7 +94,7 @@ view layer itself created and can throw away.
 
 **Two of the five are replaceable at runtime, and they are replaced together.** Saving a new API
 base builds a fresh cache and a fresh client and hands the new client to the hydrator, at
-`src/js/main.js:3063-3065`. The hydrator itself is not rebuilt; only its reference to the client is
+`src/js/main.js:3090-3092`. The hydrator itself is not rebuilt; only its reference to the client is
 swapped. The rate limiter is deliberately not rebuilt either, because the budget it tracks belongs
 to the reader's connection rather than to whichever base URL is configured. The store is never
 replaced at all.
@@ -149,14 +149,14 @@ sequenceDiagram
 The parts of that worth saying in words.
 
 **The transform is pure and the store is the only writer.** The button's handler at
-`src/js/main.js:1957-1960` hands the store a function; the function itself, at
+`src/js/main.js:1984-1987` hands the store a function; the function itself, at
 `src/js/lib/model.js:401-403`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
 `src/js/storage.js:296-314`.
 
 **The repaint is synchronous, and it is inside the write.** By the time `update` returns, the
 change callback has already run and the screen already shows the result. That is why the
-announcement can be gated on the outcome: `src/js/main.js:250-252` speaks only if the write
+announcement can be gated on the outcome: `src/js/main.js:251-253` speaks only if the write
 actually stuck, so a screen reader never hears "marked read" for a row that has already reverted.
 
 **A failed write repaints too.** The rollback path calls the same callback with the previous state,
@@ -164,13 +164,13 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3307-3327`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3334-3354`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
-by identity afterwards, at `src/js/main.js:1856`, which is what keeps the keyboard where the reader
+by identity afterwards, at `src/js/main.js:1883`, which is what keeps the keyboard where the reader
 left it. The row list is committed by moving nodes rather than replacing the container, at
-`src/js/main.js:1830-1838`.
+`src/js/main.js:1857-1865`.
 
 **Background work uses the same door.** Hydration writes each fetched issue through the same
 `update` call, at `src/js/hydrate.js:59`, so a metadata fill arriving while the reader is reading
@@ -187,7 +187,7 @@ chosen overwrite.
 
 This is the question the product promise turns on, and the answer is more than one key. The store
 declares four at `src/js/storage.js:9-12`, the view layer writes two more of its own at
-`src/js/main.js:36-37`, and the response cache is not in `localStorage` at all.
+`src/js/main.js:37-38`, and the response cache is not in `localStorage` at all.
 
 Two of the extra keys belong to restoring a backup, which is a path where nothing has gone wrong.
 One belongs to a failed read, which is a path where something has. Collapsing those into a single
@@ -235,8 +235,8 @@ Every name the app writes, and why it exists:
 | `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:514-531`. It is deliberately never removed, so the undo survives a reload. |
 | `mrt.state.salvage` | a failed read, and only when the slot is empty or already holds the same bytes | the reader, from Backup and settings | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
 | `mrt.state.salvage.TIMESTAMP` | a failed read when the slot already holds a different incident, at `src/js/storage.js:121-127` | the reader, from Backup and settings | So a second corruption months later cannot clobber the copy taken for the first one. A `.N` is appended when that name is taken too, which one boot can reach on its own, because starting fresh salvages before it clears. |
-| `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:431` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
-| `sidebar.collapsed` | the sidebar toggle, at `src/js/main.js:575` | nothing | Whether the rail is collapsed. Wrapped in its own try, because losing it is not worth an error. |
+| `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:432` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
+| `sidebar.collapsed` | the sidebar toggle, at `src/js/main.js:576` | nothing | Whether the rail is collapsed. Wrapped in its own try, because losing it is not worth an error. |
 
 Seven names in all: six fixed, and one family whose suffix is the moment it was written. Two of the
 seven belong to the view layer rather than to the store, which is why an enumeration taken from the
