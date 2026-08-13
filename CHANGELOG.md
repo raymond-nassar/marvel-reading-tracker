@@ -23,10 +23,19 @@ file picked by mistake costs nothing to reject.
 
 Restoring a hand-edited backup now applies the same limits as creating a list by hand. A list name is
 capped at 200 characters and its description at 2,000, matching ordinary creation, and issue title,
-series name, description and creator names are capped alongside them. Previously all of these came
-through at whatever length the file declared. A backup may now declare at most 10,000 issues and
-1,000 lists, refused before the state is built rather than after; the twelve shipped orders come to
-507 issues, so nothing this app writes is near either ceiling.
+series name, description, creator names and every date, id and short code an issue carries are
+capped alongside them. Previously all of these came through at whatever length the file declared,
+and a single issue could build a seven-million-character tracker on its own.
+
+A backup may also declare at most 250,000 issues and 250,000 lists, refused before the state is
+built rather than after. That ceiling is set above anything you could reach rather than as a size
+limit: it is around seven times what browser storage holds, so it cannot refuse a tracker you built
+yourself, and it cannot refuse the copy the app keeps so that you can undo a restore. A tracker too
+large for your browser is still refused by the save itself, with the message it always gave.
+
+A backup naming the same list over and over in its running order used to be carried through entry by
+entry. 300,000 repetitions of a single list fitted comfortably inside every other limit, survived a
+reload, and made the app add 300,000 tabs to the rail on every update. Repeats are collapsed now.
 
 An over-long issue link or cover URL is dropped rather than shortened, because a shortened link is a
 link to the wrong page.

@@ -75,6 +75,65 @@ test('a cover extension is bounded, so a padded one cannot ride in on the filena
   assert.equal(normalizeCover({ path: 'https://x.example/a', extension: long(50000) }).ext.length <= 8, true);
 });
 
+// The list order is filtered for membership, not uniqueness, so a repeated valid id was carried
+// once per repetition. 300,000 entries naming one list fitted in a 1.14 mebibyte file, cleared
+// every ceiling, and made the rail append a node per entry on every update.
+test('a listOrder repeating one valid id collapses to a single entry', () => {
+  const v = restore({
+    lists: { a: { id: 'a', name: 'L', itemIds: [] } },
+    listOrder: Array.from({ length: 50000 }, () => 'a'),
+  });
+  assert.equal(v.ok, true);
+  assert.deepEqual(v.state.listOrder, ['a']);
+});
+
+test('a listOrder still orders the lists it names, and still gains the ones it omits', () => {
+  const v = restore({
+    lists: {
+      a: { id: 'a', name: 'A', itemIds: [] },
+      b: { id: 'b', name: 'B', itemIds: [] },
+      c: { id: 'c', name: 'C', itemIds: [] },
+    },
+    listOrder: ['c', 'a', 'c'],
+  });
+  assert.equal(v.ok, true);
+  assert.deepEqual(v.state.listOrder, ['c', 'a', 'b']);
+});
+
+// Five string fields were capped and seven scalars were not, so one issue could carry a
+// seven-million-character state past every count ceiling and the file guard together.
+test('every scalar an issue carries is bounded, not only the ones the view renders long', () => {
+  const v = restore({
+    issues: {
+      1: {
+        issueId: 1, title: 'T',
+        number: long(50000), seriesId: long(50000), onSale: long(50000), mu: long(50000),
+        digitalId: long(50000), source: long(50000), hydrated: long(50000),
+      },
+    },
+  });
+  assert.equal(v.ok, true);
+  const issue = v.state.issues[1];
+  for (const field of ['number', 'seriesId', 'onSale', 'mu', 'digitalId', 'source', 'hydrated']) {
+    assert.equal(issue[field].length, MAX_NAME, `${field} must be bounded`);
+  }
+  assert.ok(JSON.stringify(v.state).length < 5000, 'one issue must not be able to build an unbounded state');
+});
+
+test('an ordinary scalar passes through the bound untouched', () => {
+  const issue = normalizeIssue({
+    issueId: 1, title: 'T', number: 22, seriesId: 30000, digitalId: 60000,
+    onSale: '2024-01-01T00:00:00-0500', mu: '2024-04-01T00:00:00-0400', source: 'api', hydrated: true,
+  });
+  assert.equal(issue.number, 22);
+  assert.equal(issue.seriesId, 30000);
+  assert.equal(issue.digitalId, 60000);
+  assert.equal(issue.onSale, '2024-01-01T00:00:00-0500');
+  assert.equal(issue.mu, '2024-04-01T00:00:00-0400');
+  assert.equal(issue.source, 'api');
+  assert.equal(issue.hydrated, true);
+});
+
 test('a backup declaring more issues than the app can hold is refused before it is built', () => {
   const issues = {};
   const read = {};
@@ -102,19 +161,42 @@ test('one list declaring more issues than the app can hold is refused', () => {
 });
 
 // The ceiling has to sit above anything the app could itself have written, or it would refuse a
-// backup this app produced. Twelve shipped orders come to 507 unique issues, so the honest worst
-// case is a twentieth of the ceiling.
-test('the largest backup the ceilings permit still restores', () => {
+// backup this app produced, and undoing a restore feeds the pre-restore snapshot back through this
+// same check, so a ceiling set too low would refuse a recovery of the app's own data. A first draft
+// took the hydrated issue at 923 characters as the floor; the cheapest shape is the Markdown import
+// at 292 characters in a saved state, so the most generous origin a browser grants holds about
+// 35,900 of them. The count below is above that and still far under the ceiling.
+test('a tracker larger than any origin can hold still restores, because the ceiling is not a quota', () => {
   const issues = {};
-  for (let i = 1; i <= MAX_ISSUES; i += 1) issues[i] = { issueId: i, title: 'T' };
-  const v = restore({ issues });
+  const itemIds = [];
+  for (let i = 1; i <= 40000; i += 1) {
+    issues[i] = {
+      issueId: i, title: `S (2024) #${i}`, url: `https://www.marvel.com/comics/issue/${i}/`,
+      source: 'import', hydrated: false,
+    };
+    itemIds.push(i);
+  }
+  const v = restore({ issues, lists: { a: { id: 'a', name: 'L', itemIds } } });
   assert.equal(v.ok, true);
-  assert.equal(Object.keys(v.state.issues).length, MAX_ISSUES);
+  assert.equal(Object.keys(v.state.issues).length, 40000);
+  assert.equal(v.state.lists.a.itemIds.length, 40000);
+});
+
+// Stated as arithmetic because this is the clause the ceiling has to satisfy, and the first draft
+// failed it by a factor of three and a half while reading as though it had been checked.
+test('the count ceiling sits above what the most generous origin could hold', () => {
+  const cheapestIssueInAState = 292;
+  const cheapestListInAState = 185;
+  const mostGenerousOrigin = 10 * 1000 * 1000;
+  assert.ok(MAX_ISSUES > mostGenerousOrigin / cheapestIssueInAState,
+    'a ceiling below what the origin holds would refuse a tracker a user can reach by importing');
+  assert.ok(MAX_LISTS > mostGenerousOrigin / cheapestListInAState,
+    'the same argument applies to lists, which are created without a cap');
 });
 
 test('the file-size ceiling sits well above the largest backup this app can write', () => {
   // 1,560,536 characters, measured with all twelve orders imported, every issue read and every
-  // issue annotated to the note cap. Four-byte characters throughout would make that about 4.6 MB.
+  // issue annotated to the note cap. Four-byte characters throughout make that 6,242,144 bytes.
   assert.ok(MAX_BACKUP_BYTES > 1560536 * 4, 'the ceiling must clear the worst honest backup in four-byte characters');
   assert.ok(MAX_BACKUP_BYTES <= 16 * 1024 * 1024, 'a ceiling this generous stops being a bound');
 });

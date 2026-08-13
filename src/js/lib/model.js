@@ -61,14 +61,14 @@ export function normalizeIssue(input) {
   return {
     issueId,
     title: String(input.title ?? `Issue ${issueId}`).slice(0, MAX_NAME),
-    number: input.number ?? null,
+    number: clampScalar(input.number ?? null),
     // A synthetic id has no marvel.com page, so inventing one would produce a dead link.
     url: clampUrl(input.url ?? input.detailUrl ?? (synthetic ? null : `https://www.marvel.com/comics/issue/${issueId}/`)),
-    seriesId: input.seriesId ?? null,
+    seriesId: clampScalar(input.seriesId ?? null),
     seriesName: input.seriesName == null ? null : String(input.seriesName).slice(0, MAX_NAME),
-    onSale: input.onSale ?? input.onSaleDate ?? null,
-    mu: input.mu ?? input.unlimitedDate ?? null,
-    digitalId: input.digitalId ?? null,
+    onSale: clampScalar(input.onSale ?? input.onSaleDate ?? null),
+    mu: clampScalar(input.mu ?? input.unlimitedDate ?? null),
+    digitalId: clampScalar(input.digitalId ?? null),
     // Rich fields, only present on /v1/issues/{id}; list endpoints omit them.
     // `cover` is { path, ext } WITHOUT the variant suffix; the view appends `/{variant}.{ext}`.
     // We store the URL only and never the image bytes: the browser fetches covers directly
@@ -82,10 +82,10 @@ export function normalizeIssue(input) {
         .slice(0, 24)
         .map((c) => ({ name: String(c.name).slice(0, MAX_NAME), role: String(c.role ?? '').slice(0, MAX_NAME) }))
       : null,
-    source: input.source ?? 'api',
+    source: clampScalar(input.source ?? 'api'),
     // "pending" means imported from Markdown and not yet enriched. The UI shows this
     // honestly rather than guessing at missing fields.
-    hydrated: input.hydrated ?? (input.digitalId != null || input.seriesId != null),
+    hydrated: clampScalar(input.hydrated ?? (input.digitalId != null || input.seriesId != null)),
   };
 }
 
@@ -109,6 +109,16 @@ function clampUrl(url) {
   if (url == null) return null;
   const s = String(url);
   return s.length > MAX_URL ? null : s;
+}
+
+// The scalar fields carry a date, an id, a short code or a flag, and every one of them was passed
+// through from a backup untouched, so a hand-edited file put a seven-million-character string where
+// a number belongs and cleared every count ceiling with a single issue. Numbers, booleans and nulls
+// pass unchanged; a string is held to the name cap, which is more than twice the longest real value
+// any of these fields takes. Truncating rather than refusing is right here because none of them is a
+// link, so a shortened value is a wrong label rather than a page that does not exist.
+function clampScalar(v) {
+  return typeof v === 'string' && v.length > MAX_NAME ? v.slice(0, MAX_NAME) : v;
 }
 
 // Builds a displayable cover URL. Returns null when there is no cover, so callers
@@ -149,21 +159,26 @@ export const MAX_NOTE = 2000;
 // twice above anything real, so nothing this app has ever displayed is truncated by them.
 export const MAX_URL = 500;
 
-// Ceilings rather than budgets. Every shipped order together holds 507 unique issues, and the
-// heaviest tracker this app can build, all twelve imported with every issue read and annotated to
-// the note cap, serializes to 1,405,283 characters. Origin storage is roughly five million, so a
-// tracker of ten thousand issues cannot be saved whatever shape it takes. Refusing at that ceiling
-// turns a hand-edited backup into one sentence instead of a quota failure partway through a
-// restore, and cannot refuse a backup this app could itself have written.
-export const MAX_ISSUES = 10000;
-export const MAX_LISTS = 1000;
+// Ceilings rather than budgets, and derived from the cheapest record this app can write rather than
+// the richest, because the check must never refuse a backup the app itself produced. A first draft
+// took the hydrated issue at 923 characters as the floor and set the ceiling at ten thousand; the
+// cheapest shape is the Markdown import, which costs 292 characters in a saved state, and a list
+// costs 185. The most generous origin any browser grants is roughly ten million characters, so no
+// tracker this app can save holds more than about 35,900 issues or 56,600 lists, and that first
+// ceiling would have refused a tracker a user could reach by importing. Restoring is not the only
+// caller: undoing a restore feeds the pre-restore snapshot back through this same check, so a
+// ceiling below what the app can hold would have refused a recovery of the app's own data. The
+// ceiling here sits seven times above anything holdable, and below the 355,000 issues an eight
+// mebibyte file can declare, so it still refuses a file whose counts are absurd on their face.
+export const MAX_ISSUES = 250000;
+export const MAX_LISTS = 250000;
 
 // Checked against the file's declared size before a byte of it is read, so a file picked by mistake
 // costs nothing to refuse. The heaviest backup this app can write is 1,560,536 characters as
 // downloaded, measured with all twelve orders imported, every issue read and every issue annotated
-// to the note cap. Written entirely in four-byte characters that same backup would be about 4.6
-// megabytes, so eight leaves room above anything honest while still refusing a file picked in
-// error before it is loaded into memory.
+// to the note cap. Written entirely in four-byte characters that same backup would be 6,242,144
+// bytes, a little under six mebibytes, so eight leaves room above anything honest while still
+// refusing a file picked in error before it is loaded into memory.
 export const MAX_BACKUP_BYTES = 8 * 1024 * 1024;
 
 // A collected edition's name is a book title, so it needs far less room than a list name, and
@@ -687,7 +702,11 @@ function coerce(raw) {
       collectedIn: normalizeCollectedIn(v.collectedIn, itemIds),
     };
   }
-  const listOrder = (Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists)).filter((id) => lists[id]);
+  // Deduplicated because the filter tests membership rather than uniqueness, so one valid id
+  // repeated survived once per repetition: 300,000 entries naming a single list fitted in a
+  // 1.14 mebibyte file, cleared every ceiling, and made the rail append 300,000 nodes on every
+  // update. Deduplicated, the order is bounded by the number of lists, which is already capped.
+  const listOrder = dedupe((Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists)).filter((id) => lists[id]));
   for (const id of Object.keys(lists)) if (!listOrder.includes(id)) listOrder.push(id);
 
   return {
@@ -726,10 +745,12 @@ export function validateBackup(raw) {
   }
   if (errors.length) return { ok: false, errors, state: null };
 
-  // Counted before coercion, because coercion is what builds the oversized object. A backup
-  // declaring 60,000 issues coerced to a state serializing at 17,764,645 characters, measured
-  // before this check existed, which is more than three times what any origin will store. Refusing
-  // here costs one pass over the keys and replaces a quota failure with a sentence.
+  // Counted before coercion, because coercion is what builds the oversized object: an issue costs
+  // 23.6 characters at its cheapest in a file and 280 once coerced, an amplification of nearly
+  // twelve. The ceiling sits above anything this app can hold, so a tracker too large for the
+  // origin is still accepted here and still refused by the write, with the honest quota message it
+  // already had. What this buys is refusing a file whose declared counts are absurd on their face,
+  // for one pass over the keys, before coercion allocates for them.
   for (const [label, value, cap] of [
     ['issues', raw.issues, MAX_ISSUES],
     ['read markers', raw.read, MAX_ISSUES],
