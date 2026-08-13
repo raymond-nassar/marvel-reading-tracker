@@ -14,6 +14,68 @@ quote in a bug report.
 
 ## Unreleased
 
+### Bounded what a restored backup may contain (BL-085)
+
+A backup file is now refused before it is read if it is larger than 8 MiB. The largest backup this
+app can write is 1,560,536 characters, measured with all twelve shipped orders imported, every issue
+read and every issue annotated to the note cap, so the limit sits far above anything honest while a
+file picked by mistake costs nothing to reject.
+
+Restoring a hand-edited backup now applies the same limits as creating a list by hand. A list name is
+capped at 200 characters and its description at 2,000, matching ordinary creation, and issue title,
+series name, description, creator names and every date, id and short code an issue carries are
+capped alongside them. Previously all of these came through at whatever length the file declared,
+and a single issue could build a seven-million-character tracker on its own.
+
+A backup may also declare at most 250,000 issues and 250,000 lists, refused before the state is
+built rather than after. That ceiling is set above anything you could reach rather than as a size
+limit: it is around six times the issues and three times the lists that browser storage holds, so it
+cannot refuse a tracker you built yourself, and it cannot refuse the copy the app keeps so that you
+can undo a restore. A tracker too large for your browser is still refused by the save itself, with
+the message it always gave. Backups written by the very first version of this app are counted too.
+They keep their issues inside their lists rather than in a list of their own, and until now that
+meant they were not counted at all: a 1.5 MiB file of that shape passed every check and built 50,000
+issues.
+
+That ceiling reached further than it was measured for. It also counted your read markers, your
+availability overrides and your notes, and those are far smaller than an issue, so browser storage
+holds several times more of them than the ceiling allowed. A reader who had annotated more than
+250,000 issues would have been told their own saved data was too large to give back: the app would
+save it happily, and then refuse it when they pressed **Undo last restore**. Those three now have a
+ceiling of their own, set above what a browser can hold, so the app can never refuse you a copy of
+your own tracker. Nothing you have saved is affected, and no ordinary tracker comes near either
+number.
+
+A backup naming the same list over and over in its running order used to be carried through entry by
+entry. 300,000 repetitions of a single list fitted comfortably inside every other limit, survived a
+reload, and made the app add 300,000 tabs to the rail on every update. Repeats are collapsed now,
+including the ones written in a form that is not quite a name: a first attempt at this collapsed only
+the plainest of them, and a file naming the same list 300,000 times in a slightly different way went
+through it untouched.
+
+Restoring a backup with a great many lists in it is no longer slow out of all proportion to its size.
+The step that puts each list into the running order compared it against every list already there, so
+the work grew with the square of the count: a 5.4 MiB file of 250,000 lists took 26.6 seconds, during
+which the tab did nothing at all. It now takes a tenth of a second.
+
+Restoring a backup written by the very first version of this app is no longer slow in the same way.
+Those backups keep their issues inside their lists, and every issue was being added in a way that
+recopied the whole collection, so the work again grew with the square of the count: a 6.1 MiB file of
+250,000 issues took 96 seconds and then gave up with an error no reader could act on. It now takes a
+tenth of a second and finishes.
+
+The same was true twice more in the same step, for the two things one of those old backups is mostly
+made of, and the first attempt at the paragraph above did not cover them. Every reading order added
+recopied all the orders already added, and every issue marked as read recopied every issue marked as
+read so far. Both grew with the square of the count again, and the orders were much the worse of the
+two: a file of 5,000 empty orders is a sixth of a mebibyte, small enough that nothing about it looks
+demanding, and it froze the tab for nearly 17 seconds. A file with 80,000 issues marked as read took
+over 9. Restoring either now takes a few hundredths of a second, and the largest files these limits
+allow finish in well under a second.
+
+An over-long issue link or cover URL is dropped rather than shortened, because a shortened link is a
+link to the wrong page.
+
 ### Fixed
 
 - **Erasing all your data now takes the leftover restore copy with it.** The confirmation says it
@@ -1379,6 +1441,18 @@ quote in a bug report.
   keyboard stays where you were working and a screen reader announces where it landed. The shortcuts
   also stand down entirely while a dialog is open, so pressing D behind the "Delete list?" prompt no
   longer quietly marks an issue read underneath it.
+
+- **Restoring a backup with a great many reading lists no longer loses one of them.** Every list
+  gets an identifier made from the current time and six random characters. That was safe while
+  restoring was slow, because no two lists were ever made in the same instant. Making the restore
+  fast, which is the other half of this release, put about two thousand of them into every
+  thousandth of a second, and two lists occasionally drew the same six characters. When that
+  happened one list quietly replaced the other and the reader was simply short a list, with nothing
+  on screen to say so. Measured over sixty restores of a file holding the largest number of lists
+  the app accepts, four lost a list. Identifiers now count upwards from a random starting point
+  instead of being drawn fresh each time, so two can no longer coincide, and the same sixty restores
+  lose nothing. Restoring is also slightly faster than before, since counting is cheaper than
+  drawing. Nothing you have already saved is affected, and no identifier already stored changes.
 
 - **The audited figures in `PRODUCT_BACKLOG.md` no longer go stale in silence.** The
   reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests.

@@ -45,8 +45,36 @@ export function createEmptyState() {
   };
 }
 
+// A per-load start, then counting up, rather than six fresh random characters each time.
+//
+// The stamp only separates ids minted in different milliseconds, so everything minted inside one
+// millisecond used to be told apart by 36^6 of randomness alone. That was safe while the only bulk
+// mint was too slow to fill a millisecond. It is not any more: restoring a version 1 backup at the
+// 250,000-list ceiling spreads its 250,000 mints over about 500 milliseconds, so roughly 610 land in
+// each of some 410 stamps, and that is a birthday draw over 78 million same-stamp pairs. It loses:
+// 78 million against 36^6 is 0.036 expected collisions per restore. Measured on this tree, 4 of 60
+// restores at the ceiling collided, each one silently dropping a list, because a repeated id
+// overwrites lists[id] while listOrder keeps both entries and the map ends one short of the order.
+//
+// Those figures replace an earlier 130 milliseconds, 2,000 to a stamp and 244 million pairs, which
+// were about three times too high and disagreed with the 858 milliseconds this same fixture is
+// recorded as taking two paragraphs later in the backlog. The stamps are read back out of the ids
+// the shipped mint produced rather than timed around it, so the count needs no instrumentation.
+//
+// Counting up cannot repeat until 36^6 ids have been minted in a single load, which nothing here
+// approaches. The random start is what keeps two loads landing in the same millisecond as unlikely
+// to meet as they were before.
+//
+// padStart holds the suffix at six characters so the ids stay the length the stored payload was
+// measured at. It is deliberately not asserted anywhere: the counter starts at a random point in
+// the space, so a load reaches a short number only by starting within 36^5 of zero, and a test of
+// it would pass for the other thirty-five thirty-sixths of runs whatever the code did.
+const ID_SPACE = 36 ** 6;
+let idCounter = Math.floor(Math.random() * ID_SPACE);
+
 export function newId(prefix = 'list') {
-  return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+  idCounter = (idCounter + 1) % ID_SPACE;
+  return `${prefix}-${Date.now().toString(36)}-${idCounter.toString(36).padStart(6, '0')}`;
 }
 
 // ---------------------------------------------------------------- issues
@@ -60,32 +88,32 @@ export function normalizeIssue(input) {
   const synthetic = issueId < 0;
   return {
     issueId,
-    title: String(input.title ?? `Issue ${issueId}`),
-    number: input.number ?? null,
+    title: String(input.title ?? `Issue ${issueId}`).slice(0, MAX_NAME),
+    number: clampScalar(input.number ?? null),
     // A synthetic id has no marvel.com page, so inventing one would produce a dead link.
-    url: input.url ?? input.detailUrl ?? (synthetic ? null : `https://www.marvel.com/comics/issue/${issueId}/`),
-    seriesId: input.seriesId ?? null,
-    seriesName: input.seriesName ?? null,
-    onSale: input.onSale ?? input.onSaleDate ?? null,
-    mu: input.mu ?? input.unlimitedDate ?? null,
-    digitalId: input.digitalId ?? null,
+    url: clampUrl(input.url ?? input.detailUrl ?? (synthetic ? null : `https://www.marvel.com/comics/issue/${issueId}/`)),
+    seriesId: clampScalar(input.seriesId ?? null),
+    seriesName: input.seriesName == null ? null : String(input.seriesName).slice(0, MAX_NAME),
+    onSale: clampScalar(input.onSale ?? input.onSaleDate ?? null),
+    mu: clampScalar(input.mu ?? input.unlimitedDate ?? null),
+    digitalId: clampScalar(input.digitalId ?? null),
     // Rich fields, only present on /v1/issues/{id}; list endpoints omit them.
     // `cover` is { path, ext } WITHOUT the variant suffix; the view appends `/{variant}.{ext}`.
     // We store the URL only and never the image bytes: the browser fetches covers directly
     // from Marvel's own CDN, so this app neither copies nor redistributes artwork.
     cover: normalizeCover(input.cover),
-    description: input.description ?? null,
+    description: input.description == null ? null : String(input.description).slice(0, MAX_DESCRIPTION),
     pageCount: Number(input.pageCount) > 0 ? Number(input.pageCount) : null,
     creators: Array.isArray(input.creators)
       ? input.creators
         .filter((c) => c && typeof c.name === 'string')
         .slice(0, 24)
-        .map((c) => ({ name: String(c.name), role: String(c.role ?? '') }))
+        .map((c) => ({ name: String(c.name).slice(0, MAX_NAME), role: String(c.role ?? '').slice(0, MAX_NAME) }))
       : null,
-    source: input.source ?? 'api',
+    source: clampScalar(input.source ?? 'api'),
     // "pending" means imported from Markdown and not yet enriched. The UI shows this
     // honestly rather than guessing at missing fields.
-    hydrated: input.hydrated ?? (input.digitalId != null || input.seriesId != null),
+    hydrated: clampScalar(input.hydrated ?? (input.digitalId != null || input.seriesId != null)),
   };
 }
 
@@ -97,7 +125,28 @@ export function normalizeCover(cover) {
   const path = typeof cover.path === 'string' ? cover.path.replace(/^http:\/\//i, 'https://') : null;
   const ext = cover.ext ?? cover.extension ?? 'jpg';
   if (!path || !/^https:\/\//i.test(path)) return null;
-  return { path, ext: String(ext).replace(/[^a-z0-9]/gi, '') || 'jpg' };
+  // Truncating a URL would produce a link to nothing, so an over-long one is refused outright the
+  // same way a non-https one is. The longest real cover path across every shipped order is 58.
+  if (path.length > MAX_URL) return null;
+  return { path, ext: String(ext).replace(/[^a-z0-9]/gi, '').slice(0, 8) || 'jpg' };
+}
+
+// A truncated link is a link to the wrong page, so an over-long one becomes no link at all and the
+// view falls back to showing no external link rather than a broken one.
+function clampUrl(url) {
+  if (url == null) return null;
+  const s = String(url);
+  return s.length > MAX_URL ? null : s;
+}
+
+// The scalar fields carry a date, an id, a short code or a flag, and every one of them was passed
+// through from a backup untouched, so a hand-edited file put a seven-million-character string where
+// a number belongs and cleared every count ceiling with a single issue. Numbers, booleans and nulls
+// pass unchanged; a string is held to the name cap, which is more than twice the longest real value
+// any of these fields takes. Truncating rather than refusing is right here because none of them is a
+// link, so a shortened value is a wrong label rather than a page that does not exist.
+function clampScalar(v) {
+  return typeof v === 'string' && v.length > MAX_NAME ? v.slice(0, MAX_NAME) : v;
 }
 
 // Builds a displayable cover URL. Returns null when there is no cover, so callers
@@ -130,6 +179,60 @@ export function getIssue(state, issueId) {
 export const MAX_NAME = 200;
 export const MAX_DESCRIPTION = 2000;
 export const MAX_NOTE = 2000;
+
+// Measured across all 751 issue records in the twelve shipped orders before these caps were
+// applied to the import and restore paths: the longest title is 72 characters, the longest series
+// name 79, the longest description 800, the longest detail URL 110, the longest cover path 58, the
+// longest creator name 22 and the longest role 16. The caps above and below therefore sit at least
+// twice above anything real, so nothing this app has ever displayed is truncated by them.
+export const MAX_URL = 500;
+
+// Ceilings rather than budgets, and derived from the cheapest record this app can write rather than
+// the richest, because the check must never refuse a backup the app itself produced. A first draft
+// took the hydrated issue at 923 characters as the floor and set the ceiling at ten thousand. The
+// floor is far below that: a coerced issue is a fixed thirteen fields whether or not any of them
+// carries text, so the cheapest costs 267 characters at the margin in the form storage writes, and
+// the cheapest list costs 127. The most generous origin any browser grants is 10,485,760
+// characters, so no tracker this app can save holds more than about 39,300 issues or 82,600 lists,
+// and that first ceiling would have refused a tracker a user could reach by importing. Restoring is
+// not the only caller: undoing a restore feeds the pre-restore snapshot back through this same
+// check, so a ceiling below what the app can hold would have refused a recovery of the app's own
+// data. The ceiling here is six times the issues holdable and three times the lists, and below the
+// 374,382 issues an eight mebibyte file can declare in the cheapest packing that still coerces, so it
+// still refuses counts absurd on their face.
+export const MAX_ISSUES = 250000;
+export const MAX_LISTS = 250000;
+
+// The same ceiling was applied to read markers, availability overrides and notes as well, and the
+// derivation above was never run for any of them. It does not hold. Those three carry a value of a
+// few characters against a key that is the issue id, so at the margin they cost 9, 19 and 11
+// characters where an issue costs 267, and the same origin holds about 1,165,000 read markers,
+// 551,000 overrides and 953,000 notes. A ceiling of 250,000 therefore sat below what the app can
+// hold in three of the five maps it governed, and the clause that mattered was the undo one: a
+// reader who restored at the ceiling, annotated one more issue and then restored something else
+// could not get their own data back, because undoRestore feeds the pre-restore snapshot through
+// this same check and it refused at 250,001. The app blessed N and then refused its own snapshot at
+// N+1, which is the data loss the ceiling was raised to prevent, arriving by the door it was
+// watching.
+//
+// The two goals genuinely conflict here and the clause wins. There is no ceiling that both accepts
+// everything the app can hold and refuses an eight mebibyte file declaring 772,000 read markers,
+// because the app really can hold 963,000 of them. Refusing the reader's own data is data loss;
+// coercing an oversized file is a transient allocation the origin write then refuses with the quota
+// message it already had. So these three are held above what the origin can hold, which leaves them
+// guarding against a corrupted snapshot rather than against a file, the file being bounded by
+// MAX_BACKUP_BYTES first. Exempting undoRestore from the check instead was the other way out, and
+// was not taken: a recovery path that skips the validation every other path runs is the shape of
+// defect this app has already been bitten by twice.
+export const MAX_MARKERS = 1500000;
+
+// Checked against the file's declared size before a byte of it is read, so a file picked by mistake
+// costs nothing to refuse. The heaviest backup this app can write is 1,560,536 characters as
+// downloaded, measured with all twelve orders imported, every issue read and every issue annotated
+// to the note cap. Written entirely in four-byte characters that same backup would be 6,242,144
+// bytes, a little under six mebibytes, so eight leaves room above anything honest while still
+// refusing a file picked in error before it is loaded into memory.
+export const MAX_BACKUP_BYTES = 8 * 1024 * 1024;
 
 // A collected edition's name is a book title, so it needs far less room than a list name, and
 // capping it keeps a corrupted or hostile order file from writing an unbounded string into
@@ -310,15 +413,27 @@ export function addIssuesToList(state, listId, inputs, { at = null, sort = false
   // from the stored issue, because normalizeIssue drops it on purpose: it describes this
   // list's structure, not the issue.
   const editions = new Map();
+  // upsertIssue copies the whole issues map on every call, so adding n issues cost n copies and this
+  // loop was quadratic. Nothing shipped reaches that: the largest curated order is a few hundred.
+  // The version 1 restore route does, because it hands a list's entire carrier to one call, and the
+  // raised ceiling admits 250,000 of them: measured, 120,000 items took 22.7 seconds and 250,000 took
+  // 96 before failing. The same issues declared the version 2 way take 100 milliseconds. The merge
+  // below is the one upsertIssue performs, still against the running map so a repeat inside a single
+  // import merges as it did, but the map and the state are each built once.
+  const issues = { ...state.issues };
   for (const input of inputs) {
     const issue = normalizeIssue(input);
     if (!issue) continue;
-    next = upsertIssue(next, issue);
+    const prev = issues[issue.issueId];
+    issues[issue.issueId] = prev
+      ? { ...prev, ...stripNulls(issue), hydrated: issue.hydrated || prev.hydrated }
+      : issue;
     incoming.push(issue.issueId);
     if (typeof input?.collectedIn === 'string' && input.collectedIn.trim()) {
       editions.set(issue.issueId, input.collectedIn.trim().slice(0, MAX_COLLECTION));
     }
   }
+  next = { ...state, issues };
 
   const ordered = sort
     ? [...incoming].sort((a, b) => compareIssues(next.issues[a], next.issues[b]))
@@ -328,9 +443,14 @@ export function addIssuesToList(state, listId, inputs, { at = null, sort = false
   const fresh = dedupe(ordered).filter((id) => !existing.has(id));
   const skipped = ordered.length - fresh.length;
 
-  const itemIds = [...list.itemIds];
-  const index = at == null ? itemIds.length : clamp(at, 0, itemIds.length);
-  itemIds.splice(index, 0, ...fresh);
+  // Splicing with a spread passes every inserted id as a separate argument, so the insert gave out
+  // at the argument limit rather than at any bound this app states: measured on the version 1
+  // restore route, 125,000 ids inserted and 130,000 threw "Maximum call stack size exceeded", which
+  // the restore then reported to the reader as its refusal reason. The limit is an engine detail and
+  // not a number worth stating, so the insert is written not to have one.
+  const held = list.itemIds;
+  const index = at == null ? held.length : clamp(at, 0, held.length);
+  const itemIds = held.slice(0, index).concat(fresh, held.slice(index));
 
   // Only the issues actually added take an edition name. An issue the list already held keeps
   // the edition it was added under, so re-importing an order cannot move an issue into a
@@ -586,22 +706,72 @@ export function migrate(raw) {
   if (version < 2) {
     // v1 stored full item objects inside each list, with a per-list `read` boolean.
     // Collapse to global read state; if an issue was read anywhere, it is read.
-    let next = createEmptyState();
-    const lists = Array.isArray(raw.lists) ? raw.lists : Object.values(raw.lists ?? {});
-    for (const oldList of lists) {
+    //
+    // Built into accumulators and assembled once, the way coerce() does on the other branch, rather
+    // than threading an immutable state through createList, addIssuesToList and markRead one element
+    // at a time. Each of those copies a whole map per call, so this loop was quadratic three times
+    // over and the ceilings admit 250,000 of either shape. Only the copy inside addIssuesToList was
+    // measured and removed before, and the fixture written to prove it carried one list and no
+    // `read` flag, which is the field the sentence above says defines the format, so it was the one
+    // shape that missed both of the others. Measured on this tree: 5,000 empty lists is 0.17 of a
+    // mebibyte, two per cent of the size guard, and took 16.8 seconds, and 80,000 items carrying
+    // `read` took 9.3 seconds at 3.19. Both are linear now.
+    const issues = {};
+    const read = {};
+    const lists = emptyLists();
+    const listOrder = [];
+    let active = null;
+    const carriers = Array.isArray(raw.lists) ? raw.lists : Object.values(raw.lists ?? {});
+    for (const oldList of carriers) {
       const items = Array.isArray(oldList?.items) ? oldList.items : [];
-      next = createList(next, {
-        name: oldList?.name ?? 'Imported list',
-        description: oldList?.description ?? '',
-      });
-      const listId = next.listOrder[next.listOrder.length - 1];
-      const res = addIssuesToList(next, listId, items);
-      next = res.state;
-      for (const it of items) {
-        if (it?.read) next = markRead(next, it.issueId ?? it.id, true, it.readAt ?? Date.now());
+      const listId = newId();
+      const itemIds = [];
+      const held = new Set();
+      // Read from the input rather than from the stored issue, and last one wins, because that is
+      // what the Map this replaces did: it was written per input and read once per kept id.
+      const editions = new Map();
+      for (const input of items) {
+        const issue = normalizeIssue(input);
+        if (issue) {
+          const prev = issues[issue.issueId];
+          issues[issue.issueId] = prev
+            ? { ...prev, ...stripNulls(issue), hydrated: issue.hydrated || prev.hydrated }
+            : issue;
+          if (!held.has(issue.issueId)) {
+            held.add(issue.issueId);
+            itemIds.push(issue.issueId);
+          }
+          if (typeof input?.collectedIn === 'string' && input.collectedIn.trim()) {
+            editions.set(issue.issueId, input.collectedIn.trim().slice(0, MAX_COLLECTION));
+          }
+        }
+        // Asked of every item, not only of the ones that became issues, because markRead was called
+        // the same way: it takes any integer, so a v1 file marking id 0 read still lands in the map
+        // even though normalizeIssue refuses that id. Kept rather than tidied, because coerce accepts
+        // the same key on the other branch and the two branches must not disagree about a stored file.
+        if (!input?.read) continue;
+        const id = Number(input.issueId ?? input.id);
+        if (Number.isInteger(id)) read[id] = Number(input.readAt ?? Date.now()) || Date.now();
       }
+      const collectedIn = {};
+      for (const id of itemIds) {
+        const name = editions.get(id);
+        if (name) collectedIn[id] = name;
+      }
+      lists[listId] = {
+        id: listId,
+        name: String((oldList?.name ?? 'Imported list') || 'Untitled list').slice(0, MAX_NAME),
+        description: String((oldList?.description ?? '') || '').slice(0, MAX_DESCRIPTION),
+        note: normalizeNote(''),
+        created: Date.now(),
+        catalogId: null,
+        itemIds,
+        collectedIn,
+      };
+      listOrder.push(listId);
+      active ??= listId;
     }
-    return next;
+    return { ...createEmptyState(), issues, read, lists, listOrder, active };
   }
 
   // Newer than we understand: refuse rather than silently mangling it.
@@ -639,8 +809,8 @@ function coerce(raw) {
     const itemIds = dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter((n) => Number.isInteger(n) && n !== 0));
     lists[k] = {
       id: k,
-      name: String(v.name ?? 'Untitled list'),
-      description: String(v.description ?? ''),
+      name: String(v.name ?? 'Untitled list').slice(0, MAX_NAME),
+      description: String(v.description ?? '').slice(0, MAX_DESCRIPTION),
       note: normalizeNote(v.note),
       created: Number(v.created) || Date.now(),
       catalogId: typeof v.catalogId === 'string' && v.catalogId ? v.catalogId.slice(0, MAX_NAME) : null,
@@ -652,8 +822,27 @@ function coerce(raw) {
       collectedIn: normalizeCollectedIn(v.collectedIn, itemIds),
     };
   }
-  const listOrder = (Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists)).filter((id) => lists[id]);
-  for (const id of Object.keys(lists)) if (!listOrder.includes(id)) listOrder.push(id);
+  // Filtered to strings before anything else, because the membership test is a property lookup and
+  // the dedupe is a Set: the lookup coerces its key, the Set compares identity, and the two disagree
+  // on every value that is not already a string. An entry of [1] stringifies to "1", so it passed the
+  // lookup against a list keyed "1", and each array was a distinct identity, so the dedupe kept every
+  // one: 300,000 of those still reached the rail after the dedupe was added, on the same 1.14
+  // mebibyte file. Nothing this app writes is a non-string, and dropping one costs at most its
+  // position, since the backfill below returns the list itself.
+  const named = (Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists))
+    .filter((id) => typeof id === 'string');
+  // Deduplicated because the filter tests membership rather than uniqueness, so one valid id
+  // repeated survived once per repetition: 300,000 entries naming a single list fitted in a
+  // 1.14 mebibyte file, cleared every ceiling, and made the rail append 300,000 nodes on every
+  // update. Deduplicated, the order is bounded by the number of lists, which is already capped.
+  const listOrder = dedupe(named.filter((id) => lists[id]));
+  // Backfilled through a Set rather than Array.includes, which made this loop quadratic in the
+  // number of lists. That cost 3 milliseconds while the ceiling was 1,000 and 26.6 seconds once it
+  // was 250,000, on a 5.38 mebibyte file that clears the size guard and every count check, so the
+  // tab froze before a byte was written. The same input takes 125 milliseconds through a Set, and
+  // the order it produces is the one Array.includes produced.
+  const seen = new Set(listOrder);
+  for (const id of Object.keys(lists)) if (!seen.has(id)) listOrder.push(id);
 
   return {
     ...base,
@@ -688,6 +877,45 @@ export function validateBackup(raw) {
   }
   if (raw.notes != null && (typeof raw.notes !== 'object' || Array.isArray(raw.notes))) {
     errors.push('notes must be an object.');
+  }
+  if (errors.length) return { ok: false, errors, state: null };
+
+  // Counted before coercion, because coercion is what builds the oversized object: an issue costs
+  // 23.6 characters at its cheapest in a file and 280 once coerced, an amplification of nearly
+  // twelve. Each ceiling sits above anything this app can hold in the map it governs, so a tracker
+  // too large for the origin is still accepted here and still refused by the write, with the honest
+  // quota message it already had. What this buys is refusing counts absurd on their face, for one
+  // pass over the keys, before coercion allocates for them. The three cheap maps take a ceiling of
+  // their own because one number could not cover both: see the note above MAX_MARKERS.
+  for (const [label, value, cap] of [
+    ['issues', raw.issues, MAX_ISSUES],
+    ['read markers', raw.read, MAX_MARKERS],
+    ['availability overrides', raw.overrides, MAX_MARKERS],
+    ['notes', raw.notes, MAX_MARKERS],
+    ['lists', raw.lists, MAX_LISTS],
+  ]) {
+    if (!value || typeof value !== 'object') continue;
+    const n = Object.keys(value).length;
+    if (n > cap) errors.push(`Backup declares ${n} ${label}, and this app holds at most ${cap}.`);
+  }
+  if (raw.lists && typeof raw.lists === 'object' && !Array.isArray(raw.lists)) {
+    // A version 1 backup has no top-level issues map: it carries whole issue objects inside each
+    // list's `items`, which migrate reads and turns into exactly that many issues. The loop above
+    // therefore scored a v1 file at zero however large it was, and 50,000 items in a 1.50 mebibyte
+    // file built 50,000 issues in 3.8 seconds. Summed rather than checked per list, because one map
+    // is what they become.
+    let carried = 0;
+    for (const v of Object.values(raw.lists)) {
+      const n = Array.isArray(v?.itemIds) ? v.itemIds.length : 0;
+      if (Array.isArray(v?.items)) carried += v.items.length;
+      if (n > MAX_ISSUES) {
+        errors.push(`One list declares ${n} issues, and this app holds at most ${MAX_ISSUES} in a list.`);
+        break;
+      }
+    }
+    if (carried > MAX_ISSUES) {
+      errors.push(`Backup declares ${carried} issues inside its lists, and this app holds at most ${MAX_ISSUES}.`);
+    }
   }
   if (errors.length) return { ok: false, errors, state: null };
 
