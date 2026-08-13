@@ -6,7 +6,7 @@
 // rendered controls that carry both a visible label and an aria-label failed, because every name
 // was written beside its label instead of out of it. "+ Add to library" answered to "Add House
 // of M to library", which does not contain "add to library" once the order's name is spliced
-// into the middle of it.
+// into the middle of it. The measurement is recorded at docs/ux-artifacts/label-in-name.json.
 //
 // The point of routing them through here is that the caller no longer supplies a name. It
 // supplies the label it is about to show and the context to add, so a name that omits the label

@@ -1797,10 +1797,12 @@ function renderShelf() {
 
     for (const it of upcoming) {
       const img = el('img', { alt: '', loading: 'lazy' });
-      // The fallback is what gets drawn when the cover fails to load, so it stands in for an image
-      // the markup already declares decorative with alt="". Left exposed it joins the button's
-      // visible label, and its series name and issue number then bracket the caption's title, which
-      // is the same split this change exists to remove.
+      // The fallback is drawn whenever the cover is missing, either because it failed to load or
+      // because the reader turned cover art off, so it is a first-class state rather than an error
+      // path. Either way it stands in for an image the markup already declares decorative with
+      // alt="". Left exposed it joins the button's visible label, and its series name and issue
+      // number then bracket the caption's title, which is the same split this change exists to
+      // remove.
       const fb = el('div', { class: 'tf', 'aria-hidden': true }, [
         el('span', { class: 's', text: seriesOnly(it.seriesName) }),
         el('span', { class: 'n', text: it.number ? `#${it.number}` : '?' }),

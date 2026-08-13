@@ -23,7 +23,10 @@ quote in a bug report.
   click never happened. That was true of every button of its kind in the app. Counted in a real
   browser with an order open, 124 of the 303 buttons and links on screen could not be activated
   this way. All 124 now can, and they still say which order or issue they act on, which is what a
-  screen reader needs. Nothing looks different and nothing you have saved is affected.
+  screen reader needs. Nothing on screen moves and nothing you have saved is affected. The one thing
+  you may notice is the tooltip that appears when you rest the pointer on a cover in the "Coming up"
+  strip: it now reads the same words as the caption underneath it rather than a differently worded
+  sentence.
 
   A related worry turned out to be groundless and was dropped rather than fixed. The project's list
   of planned improvements said the two-line description on each catalog card would lose text when a
