@@ -30,6 +30,13 @@ quote in a bug report.
   One thing erasing still does not reach is a rescue copy the app took of saved data it could not
   read. Those stay listed on the same screen with their own remove buttons, so you can see what is
   left and clear each one yourself.
+- **A note for maintainers: the map of what the app stores was wrong about two of its own names.**
+  The table listing every name the app writes to browser storage said the undo copy a restore leaves
+  behind was removed by nothing, and that the leftover staging copy could only ever be cleared by
+  erasing. Neither was true. A restore that fails empties the undo slot rather than leave an offer
+  that would swap in what is already on screen, and any later restore clears a stranded staging copy
+  in passing. Nothing you have saved is affected: the code has always behaved this way, and only the
+  written description of it was wrong.
 - **Buttons now answer to the words printed on them, so voice control can reach them.** Someone
   who drives a computer by speaking says what they can see: "click add to library". A button here
   showed "+ Add to library" but was described to the software as "Add House of M to library", with

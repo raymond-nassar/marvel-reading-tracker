@@ -4548,7 +4548,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6865-6867` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6884-6886` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4558,11 +4558,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6884-6888`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6903-6907`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6699-6701` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6718-6720` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4770,7 +4770,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1378-1387` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1385-1394` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:187-191` and
 `PRODUCT_BACKLOG.md:197-199` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6126,12 +6126,16 @@ browser holds. So the rule the two routes now share is not "withdraw on both". I
 the route the reader took promised that the data the offer would return is gone. A test pins the
 start fresh half, so reversing that decision silently turns the suite red.
 
-Eight tests, in `test/storage.test.js:1041-1194`. Each of the two lines that carry the rule was
-reverted on its own and named exactly one defender: dropping the withdrawal reddens the erase test
-alone, and dropping only its `lastUpdateOk` guard reddens the refused-write test alone. Four of the
-five fail against `origin/main`; the fifth is the start fresh guard, which passes there because that
-route was already correct, so it was proved capable of failing by adding the withdrawal to
-`startFresh()` and watching it redden. 682 tests pass, lint clean.
+Eight tests, in `test/storage.test.js:1041-1194`. Each of the three lines that carries the rule was
+reverted on its own and named its own defenders. Dropping the withdrawal reddens both tests that
+assert what a written erase leaves in storage, because the staging one closes by naming the whole key
+set. Dropping the `discardStaging()` call reddens that staging test alone. Dropping only the
+`lastUpdateOk` guard reddens the two that hold a refused erase to leaving both copies exactly where
+they were. Deleting the read-back in `forgetPreRestore()` reddens exactly one, the silent-removal
+test, and the erase route as it stood before this change reddens two. The start fresh guard is red
+under none of them, because that route was already correct, so it was proved capable of failing by
+adding the withdrawal to `startFresh()` and watching it redden on its own. 682 tests pass, lint
+clean.
 
 The review found three things and all three were fixed here rather than filed, because each is the
 same promise as the item. **The storage-key table in `docs/ARCHITECTURE.md` still said the snapshot
@@ -6150,9 +6154,22 @@ read-back left the suite green. A `silentRemoveKey` flag was added, the removal 
 one test.
 
 One claim written while fixing the first of those was false and was caught by measuring it. The
-replacement paragraph asserted that erasing removes the salvage copies too. It does not:
-`salvageCopies()` answers 1 before and 1 after. The document now says so, and the question of which
-promise should win is filed as `BL-113` rather than settled inside the item that raised it.
+replacement paragraph asserted that erasing removes the salvage copies too. It does not: on a run
+where the erase actually lands, `salvageCopies()` answers 1 both before and after. The document now
+says so, and the question of which promise should win is filed as `BL-113` rather than settled inside
+the item that raised it.
+
+A second round found that those fixes had made four more claims false, every one of them in prose
+rather than in code. Two were in the very rows the first round had rewritten. **The staging row said
+the erase was the only thing that clears a copy a throw had stranded**, when any later restore clears
+one at `src/js/storage.js:387`. **The snapshot row said nothing but the erase removes it**, when
+`rewindSnapshot()` empties the slot after a failed restore and two tests that predate this change
+pass because it does. That is the round-one defect arriving inside its own fix: a table denying a
+removal the module performs. The other two were counts. The paragraph above still described a
+five-test matrix with one defender each, when the staging fix had given two of the mutants a second
+defender, and filing `BL-113` shifted figures in Appendix B that `npm run counts` does not read,
+the table size stated in prose and how many items outrank `BL-026`. Every figure in this block was
+re-derived by running the reverts again rather than by reasoning about them.
 
 **BL-102: Send the security headers on the dev server's error responses too**
 
@@ -6490,8 +6507,10 @@ Constraint gate: checked 1 to 11, none breached.
 Raised by the review of `BL-101` and routed here rather than folded into it. That item made erasing
 everything clear both restore-family keys, on the rule that a route withdraws an offer when its own
 wording promises the data behind it is gone. The erase dialog says it clears everything this browser
-has stored for the tracker. Measured by salvaging an unreadable key and then erasing:
-`salvageCopies()` answers 1 before and 1 after, and `mrt.state.salvage` is still in storage.
+has stored for the tracker. Measured on a run where the erase actually lands, which needs the block
+cleared first, because a blocked store refuses the write and nothing behind that guard runs at all:
+after salvaging an unreadable key, starting fresh, and then erasing, `salvageCopies()` answers 1 both
+before and after and `mrt.state.salvage` is still in storage.
 
 It is not the same defect and is scored below the one that raised it. A salvage copy is listed on
 Backup and settings, the same screen the erase button is on, with its own remove control, so it
@@ -6980,9 +6999,9 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and sixty-two
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and sixty-three
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 88 rows now. The ranks below are positions in it as it stands.
+how it reaches 89 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
 each sit one row below an item they outscore. Every one of those eight rows has shipped, so the
@@ -6994,7 +7013,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
 - Calculated: WSJF 3.67, rank 41 of 89.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
-  It is outranked by thirty-nine items, twenty-two of them sized 1, 2 or 3 whose Cost of Delay is
+  It is outranked by forty items, twenty-three of them sized 1, 2 or 3 whose Cost of Delay is
   lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
   costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
