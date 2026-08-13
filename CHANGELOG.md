@@ -14,6 +14,23 @@ quote in a bug report.
 
 ## Unreleased
 
+### Bounded what a restored backup may contain (BL-085)
+
+A backup file is now refused before it is read if it is larger than 8 MiB. The largest backup this
+app can write is 1,560,536 characters, measured with all twelve shipped orders imported, every issue
+read and every issue annotated to the note cap, so the limit sits far above anything honest while a
+file picked by mistake costs nothing to reject.
+
+Restoring a hand-edited backup now applies the same limits as creating a list by hand. A list name is
+capped at 200 characters and its description at 2,000, matching ordinary creation, and issue title,
+series name, description and creator names are capped alongside them. Previously all of these came
+through at whatever length the file declared. A backup may now declare at most 10,000 issues and
+1,000 lists, refused before the state is built rather than after; the twelve shipped orders come to
+507 issues, so nothing this app writes is near either ceiling.
+
+An over-long issue link or cover URL is dropped rather than shortened, because a shortened link is a
+link to the wrong page.
+
 ### Fixed
 
 - **Erasing all your data now takes the leftover restore copy with it.** The confirmation says it

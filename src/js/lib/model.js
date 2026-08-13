@@ -60,12 +60,12 @@ export function normalizeIssue(input) {
   const synthetic = issueId < 0;
   return {
     issueId,
-    title: String(input.title ?? `Issue ${issueId}`),
+    title: String(input.title ?? `Issue ${issueId}`).slice(0, MAX_NAME),
     number: input.number ?? null,
     // A synthetic id has no marvel.com page, so inventing one would produce a dead link.
-    url: input.url ?? input.detailUrl ?? (synthetic ? null : `https://www.marvel.com/comics/issue/${issueId}/`),
+    url: clampUrl(input.url ?? input.detailUrl ?? (synthetic ? null : `https://www.marvel.com/comics/issue/${issueId}/`)),
     seriesId: input.seriesId ?? null,
-    seriesName: input.seriesName ?? null,
+    seriesName: input.seriesName == null ? null : String(input.seriesName).slice(0, MAX_NAME),
     onSale: input.onSale ?? input.onSaleDate ?? null,
     mu: input.mu ?? input.unlimitedDate ?? null,
     digitalId: input.digitalId ?? null,
@@ -74,13 +74,13 @@ export function normalizeIssue(input) {
     // We store the URL only and never the image bytes: the browser fetches covers directly
     // from Marvel's own CDN, so this app neither copies nor redistributes artwork.
     cover: normalizeCover(input.cover),
-    description: input.description ?? null,
+    description: input.description == null ? null : String(input.description).slice(0, MAX_DESCRIPTION),
     pageCount: Number(input.pageCount) > 0 ? Number(input.pageCount) : null,
     creators: Array.isArray(input.creators)
       ? input.creators
         .filter((c) => c && typeof c.name === 'string')
         .slice(0, 24)
-        .map((c) => ({ name: String(c.name), role: String(c.role ?? '') }))
+        .map((c) => ({ name: String(c.name).slice(0, MAX_NAME), role: String(c.role ?? '').slice(0, MAX_NAME) }))
       : null,
     source: input.source ?? 'api',
     // "pending" means imported from Markdown and not yet enriched. The UI shows this
@@ -97,7 +97,18 @@ export function normalizeCover(cover) {
   const path = typeof cover.path === 'string' ? cover.path.replace(/^http:\/\//i, 'https://') : null;
   const ext = cover.ext ?? cover.extension ?? 'jpg';
   if (!path || !/^https:\/\//i.test(path)) return null;
-  return { path, ext: String(ext).replace(/[^a-z0-9]/gi, '') || 'jpg' };
+  // Truncating a URL would produce a link to nothing, so an over-long one is refused outright the
+  // same way a non-https one is. The longest real cover path across every shipped order is 58.
+  if (path.length > MAX_URL) return null;
+  return { path, ext: String(ext).replace(/[^a-z0-9]/gi, '').slice(0, 8) || 'jpg' };
+}
+
+// A truncated link is a link to the wrong page, so an over-long one becomes no link at all and the
+// view falls back to showing no external link rather than a broken one.
+function clampUrl(url) {
+  if (url == null) return null;
+  const s = String(url);
+  return s.length > MAX_URL ? null : s;
 }
 
 // Builds a displayable cover URL. Returns null when there is no cover, so callers
@@ -130,6 +141,30 @@ export function getIssue(state, issueId) {
 export const MAX_NAME = 200;
 export const MAX_DESCRIPTION = 2000;
 export const MAX_NOTE = 2000;
+
+// Measured across all 751 issue records in the twelve shipped orders before these caps were
+// applied to the import and restore paths: the longest title is 72 characters, the longest series
+// name 79, the longest description 800, the longest detail URL 110, the longest cover path 58, the
+// longest creator name 22 and the longest role 16. The caps above and below therefore sit at least
+// twice above anything real, so nothing this app has ever displayed is truncated by them.
+export const MAX_URL = 500;
+
+// Ceilings rather than budgets. Every shipped order together holds 507 unique issues, and the
+// heaviest tracker this app can build, all twelve imported with every issue read and annotated to
+// the note cap, serializes to 1,405,283 characters. Origin storage is roughly five million, so a
+// tracker of ten thousand issues cannot be saved whatever shape it takes. Refusing at that ceiling
+// turns a hand-edited backup into one sentence instead of a quota failure partway through a
+// restore, and cannot refuse a backup this app could itself have written.
+export const MAX_ISSUES = 10000;
+export const MAX_LISTS = 1000;
+
+// Checked against the file's declared size before a byte of it is read, so a file picked by mistake
+// costs nothing to refuse. The heaviest backup this app can write is 1,560,536 characters as
+// downloaded, measured with all twelve orders imported, every issue read and every issue annotated
+// to the note cap. Written entirely in four-byte characters that same backup would be about 4.6
+// megabytes, so eight leaves room above anything honest while still refusing a file picked in
+// error before it is loaded into memory.
+export const MAX_BACKUP_BYTES = 8 * 1024 * 1024;
 
 // A collected edition's name is a book title, so it needs far less room than a list name, and
 // capping it keeps a corrupted or hostile order file from writing an unbounded string into
@@ -639,8 +674,8 @@ function coerce(raw) {
     const itemIds = dedupe((Array.isArray(v.itemIds) ? v.itemIds : []).map(Number).filter((n) => Number.isInteger(n) && n !== 0));
     lists[k] = {
       id: k,
-      name: String(v.name ?? 'Untitled list'),
-      description: String(v.description ?? ''),
+      name: String(v.name ?? 'Untitled list').slice(0, MAX_NAME),
+      description: String(v.description ?? '').slice(0, MAX_DESCRIPTION),
       note: normalizeNote(v.note),
       created: Number(v.created) || Date.now(),
       catalogId: typeof v.catalogId === 'string' && v.catalogId ? v.catalogId.slice(0, MAX_NAME) : null,
@@ -688,6 +723,32 @@ export function validateBackup(raw) {
   }
   if (raw.notes != null && (typeof raw.notes !== 'object' || Array.isArray(raw.notes))) {
     errors.push('notes must be an object.');
+  }
+  if (errors.length) return { ok: false, errors, state: null };
+
+  // Counted before coercion, because coercion is what builds the oversized object. A backup
+  // declaring 60,000 issues coerced to a state serializing at 17,764,645 characters, measured
+  // before this check existed, which is more than three times what any origin will store. Refusing
+  // here costs one pass over the keys and replaces a quota failure with a sentence.
+  for (const [label, value, cap] of [
+    ['issues', raw.issues, MAX_ISSUES],
+    ['read markers', raw.read, MAX_ISSUES],
+    ['availability overrides', raw.overrides, MAX_ISSUES],
+    ['notes', raw.notes, MAX_ISSUES],
+    ['lists', raw.lists, MAX_LISTS],
+  ]) {
+    if (!value || typeof value !== 'object') continue;
+    const n = Object.keys(value).length;
+    if (n > cap) errors.push(`Backup declares ${n} ${label}, and this app holds at most ${cap}.`);
+  }
+  if (raw.lists && typeof raw.lists === 'object' && !Array.isArray(raw.lists)) {
+    for (const v of Object.values(raw.lists)) {
+      const n = Array.isArray(v?.itemIds) ? v.itemIds.length : 0;
+      if (n > MAX_ISSUES) {
+        errors.push(`One list declares ${n} issues, and this app holds at most ${MAX_ISSUES} in a list.`);
+        break;
+      }
+    }
   }
   if (errors.length) return { ok: false, errors, state: null };
 

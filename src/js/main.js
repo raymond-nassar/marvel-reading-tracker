@@ -8,7 +8,7 @@ import {
   createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
   setOverride, pendingIssueIds, coverUrl, listForCatalogId, SCHEMA_VERSION,
-  setIssueNote, setListNote,
+  setIssueNote, setListNote, MAX_BACKUP_BYTES,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { LIBRARY_VIEWS } from './lib/library.js';
@@ -1884,6 +1884,26 @@ export function rowCacheKey(item, currentId, today) {
   return `${JSON.stringify(item)}|${item.issueId === currentId}|${today}`;
 }
 
+// Sizes appear in a refusal, which is the one place a reader has to be able to compare two numbers
+// at a glance, so both sides of the sentence are written in the same unit and to one decimal. A
+// megabyte here is the 1,048,576 the file manager shows, not the round million.
+export function describeSize(bytes) {
+  const n = Number(bytes);
+  if (!Number.isFinite(n) || n < 0) return 'an unknown size';
+  if (n < 1024) return `${Math.round(n)} bytes`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  return `${(n / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+// Returns the sentence to show, or null to go ahead and read the file. Split out from the handler
+// so the decision can be measured directly: a test that reads the handler's source instead would
+// still pass with the comparison deleted, because the constant's name survives in the import list.
+export function backupFileRefusal(file) {
+  const size = Number(file?.size);
+  if (!Number.isFinite(size) || size <= MAX_BACKUP_BYTES) return null;
+  return `That file is ${describeSize(size)}. A backup this app writes is far smaller than the ${describeSize(MAX_BACKUP_BYTES)} limit, so this one was not read and nothing was changed.`;
+}
+
 function renderRows() {
   const id = activeListId();
   const rows = $('#rows');
@@ -3046,6 +3066,15 @@ function wireData() {
   $('#restore-file').addEventListener('change', async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
+    // Asked of the file's declared size, so a file picked by mistake is refused before `text()`
+    // pulls it into memory. The check is here rather than in the store because by the time the
+    // store sees a backup it is already a string, which is the cost this avoids.
+    const refusal = backupFileRefusal(file);
+    if (refusal) {
+      notify('#restore-report', refusal, 'error');
+      e.target.value = '';
+      return;
+    }
     const text = await file.text();
     const res = store.restore(text);
     if (res.ok) {
