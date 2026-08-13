@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  validateBackup, normalizeIssue, normalizeCover,
+  validateBackup, normalizeIssue, normalizeCover, exportBackup,
   MAX_NAME, MAX_DESCRIPTION, MAX_URL, MAX_ISSUES, MAX_LISTS, MAX_BACKUP_BYTES,
 } from '../src/js/lib/model.js';
 import { describeSize, backupFileRefusal } from '../src/js/main.js';
@@ -163,9 +163,9 @@ test('one list declaring more issues than the app can hold is refused', () => {
 // The ceiling has to sit above anything the app could itself have written, or it would refuse a
 // backup this app produced, and undoing a restore feeds the pre-restore snapshot back through this
 // same check, so a ceiling set too low would refuse a recovery of the app's own data. A first draft
-// took the hydrated issue at 923 characters as the floor; the cheapest shape is the Markdown import
-// at 292 characters in a saved state, so the most generous origin a browser grants holds about
-// 35,900 of them. The count below is above that and still far under the ceiling.
+// took the hydrated issue at 923 characters as the floor; the cheapest coerced issue costs 267
+// characters at the margin, so the most generous origin a browser grants holds about 39,300 of
+// them. The count below is above that and still far under the ceiling.
 test('a tracker larger than any origin can hold still restores, because the ceiling is not a quota', () => {
   const issues = {};
   const itemIds = [];
@@ -182,15 +182,108 @@ test('a tracker larger than any origin can hold still restores, because the ceil
   assert.equal(v.state.lists.a.itemIds.length, 40000);
 });
 
-// Stated as arithmetic because this is the clause the ceiling has to satisfy, and the first draft
-// failed it by a factor of three and a half while reading as though it had been checked.
+// Nothing pinned the comparison itself. Changing `n > cap` to `n >= cap` left the whole suite green,
+// and that mutation refuses a backup holding exactly as many as it says it holds, which is the false
+// refusal the ceiling exists to avoid. The values are zeroes because the count is taken before
+// coercion, so a map of 250,000 of them costs one pass over the keys and builds nothing.
+test('a backup holding exactly the ceiling is accepted, because the ceiling is the last count allowed', () => {
+  const issues = {};
+  for (let i = 1; i <= MAX_ISSUES; i += 1) issues[i] = 0;
+  assert.equal(restore({ issues }).ok, true);
+  const lists = {};
+  for (let i = 1; i <= MAX_LISTS; i += 1) lists[`l${i}`] = 0;
+  assert.equal(restore({ lists }).ok, true);
+});
+
+test('one over the ceiling is refused, so the bound is the count and not the shape', () => {
+  const issues = {};
+  for (let i = 1; i <= MAX_ISSUES + 1; i += 1) issues[i] = 0;
+  assert.equal(restore({ issues }).ok, false);
+  const lists = {};
+  for (let i = 1; i <= MAX_LISTS + 1; i += 1) lists[`l${i}`] = 0;
+  assert.equal(restore({ lists }).ok, false);
+});
+
+// A version 1 backup has no issues map at all: it carries whole issue objects inside each list's
+// items, and migrate turns every one of them into an issue. Counting the issues map alone therefore
+// scored a v1 file at zero however large it was, and 50,000 items in a 1.50 mebibyte file cleared
+// every check and built 50,000 issues in 3.8 seconds.
+test('a version 1 backup is counted too, though it carries its issues inside its lists', () => {
+  const items = Array.from({ length: MAX_ISSUES + 1 }, () => 0);
+  const v = validateBackup({ schemaVersion: 1, lists: { a: { id: 'a', name: 'L', items } } });
+  assert.equal(v.ok, false);
+  assert.equal(v.state, null);
+  assert.ok(v.errors.some((e) => e.includes('inside its lists')));
+});
+
+test('the version 1 count is the total across lists, because one issues map is what they become', () => {
+  const half = Math.ceil((MAX_ISSUES + 1) / 2);
+  const v = validateBackup({
+    schemaVersion: 1,
+    lists: {
+      a: { id: 'a', name: 'A', items: Array.from({ length: half }, () => 0) },
+      b: { id: 'b', name: 'B', items: Array.from({ length: half }, () => 0) },
+    },
+  });
+  assert.equal(v.ok, false, 'neither list is over the ceiling on its own, and together they are');
+});
+
+test('an ordinary version 1 backup still restores', () => {
+  const v = validateBackup({
+    schemaVersion: 1,
+    lists: { a: { name: 'Imported', items: [{ issueId: 1, title: 'A' }, { issueId: 2, title: 'B', read: true }] } },
+  });
+  assert.equal(v.ok, true);
+  assert.equal(Object.keys(v.state.issues).length, 2);
+  assert.equal(v.state.read[2] != null, true);
+});
+
+// The backfill under the dedupe was `listOrder.includes(id)` inside a loop over every list, which is
+// quadratic. At the old ceiling of 1,000 lists that cost 3 milliseconds; at 250,000 it cost 26.6
+// seconds, on a 5.38 mebibyte file that clears the size guard and every count check, so raising the
+// ceiling froze the tab before a byte was written. Timing is too fragile to assert closely, so the
+// size is picked to put the two forms far apart and the budget in the gap: this whole test takes 397
+// milliseconds through the Set and about seven seconds through Array.includes, so the budget below
+// has seven times the headroom it needs and the quadratic form misses it by more than twice.
+test('lists are backfilled into the order in time that does not grow with their square', () => {
+  const lists = {};
+  for (let i = 0; i < 120000; i += 1) lists[`l${i}`] = { name: 'L' };
+  const started = Date.now();
+  const v = restore({ lists });
+  assert.equal(v.ok, true);
+  assert.equal(v.state.listOrder.length, 120000);
+  assert.equal(new Set(v.state.listOrder).size, 120000);
+  assert.equal(v.state.listOrder[0], 'l0');
+  assert.ok(Date.now() - started < 3000, 'the quadratic form took about seven seconds on this input');
+});
+// failed it by a factor of three and a half while reading as though it had been checked. The floor
+// is measured here rather than quoted, because quoting is how it went wrong twice: the first draft
+// quoted 923, the second quoted 292 and 185, and a review quoted 233 and 137. The costs are 267 and
+// 127. Differenced between two sizes so the fixed part of the file drops out, and taken on
+// exportBackup because that is the form storage writes to the origin.
 test('the count ceiling sits above what the most generous origin could hold', () => {
-  const cheapestIssueInAState = 292;
-  const cheapestListInAState = 185;
-  const mostGenerousOrigin = 10 * 1000 * 1000;
-  assert.ok(MAX_ISSUES > mostGenerousOrigin / cheapestIssueInAState,
+  const marginalCost = (build) => {
+    const size = (n) => JSON.stringify(exportBackup(build(n))).length;
+    return (size(6000) - size(2000)) / 4000;
+  };
+  const cheapestIssues = (n) => {
+    const issues = {};
+    for (let i = 1; i <= n; i += 1) issues[i] = { issueId: i, title: '', number: '', seriesName: '' };
+    const v = restore({ issues });
+    assert.equal(Object.keys(v.state.issues).length, n, 'a shape that does not survive coercion is not a floor');
+    return v.state;
+  };
+  const cheapestLists = (n) => {
+    const lists = {};
+    for (let i = 0; i < n; i += 1) lists[String.fromCharCode(0x100 + i)] = { name: '' };
+    const v = restore({ lists });
+    assert.equal(Object.keys(v.state.lists).length, n, 'a shape that does not survive coercion is not a floor');
+    return v.state;
+  };
+  const mostGenerousOrigin = 10 * 1024 * 1024;
+  assert.ok(MAX_ISSUES > mostGenerousOrigin / marginalCost(cheapestIssues),
     'a ceiling below what the origin holds would refuse a tracker a user can reach by importing');
-  assert.ok(MAX_LISTS > mostGenerousOrigin / cheapestListInAState,
+  assert.ok(MAX_LISTS > mostGenerousOrigin / marginalCost(cheapestLists),
     'the same argument applies to lists, which are created without a cap');
 });
 

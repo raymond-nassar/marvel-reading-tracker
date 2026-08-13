@@ -29,13 +29,22 @@ and a single issue could build a seven-million-character tracker on its own.
 
 A backup may also declare at most 250,000 issues and 250,000 lists, refused before the state is
 built rather than after. That ceiling is set above anything you could reach rather than as a size
-limit: it is around seven times what browser storage holds, so it cannot refuse a tracker you built
-yourself, and it cannot refuse the copy the app keeps so that you can undo a restore. A tracker too
-large for your browser is still refused by the save itself, with the message it always gave.
+limit: it is around six times the issues and three times the lists that browser storage holds, so it
+cannot refuse a tracker you built yourself, and it cannot refuse the copy the app keeps so that you
+can undo a restore. A tracker too large for your browser is still refused by the save itself, with
+the message it always gave. Backups written by the very first version of this app are counted too.
+They keep their issues inside their lists rather than in a list of their own, and until now that
+meant they were not counted at all: a 1.5 MiB file of that shape passed every check and built 50,000
+issues.
 
 A backup naming the same list over and over in its running order used to be carried through entry by
 entry. 300,000 repetitions of a single list fitted comfortably inside every other limit, survived a
 reload, and made the app add 300,000 tabs to the rail on every update. Repeats are collapsed now.
+
+Restoring a backup with a great many lists in it is no longer slow out of all proportion to its size.
+The step that puts each list into the running order compared it against every list already there, so
+the work grew with the square of the count: a 5.4 MiB file of 250,000 lists took 26.6 seconds, during
+which the tab did nothing at all. It now takes a tenth of a second.
 
 An over-long issue link or cover URL is dropped rather than shortened, because a shortened link is a
 link to the wrong page.

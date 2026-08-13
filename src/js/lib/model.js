@@ -161,15 +161,16 @@ export const MAX_URL = 500;
 
 // Ceilings rather than budgets, and derived from the cheapest record this app can write rather than
 // the richest, because the check must never refuse a backup the app itself produced. A first draft
-// took the hydrated issue at 923 characters as the floor and set the ceiling at ten thousand; the
-// cheapest shape is the Markdown import, which costs 292 characters in a saved state, and a list
-// costs 185. The most generous origin any browser grants is roughly ten million characters, so no
-// tracker this app can save holds more than about 35,900 issues or 56,600 lists, and that first
-// ceiling would have refused a tracker a user could reach by importing. Restoring is not the only
-// caller: undoing a restore feeds the pre-restore snapshot back through this same check, so a
-// ceiling below what the app can hold would have refused a recovery of the app's own data. The
-// ceiling here sits seven times above anything holdable, and below the 355,000 issues an eight
-// mebibyte file can declare, so it still refuses a file whose counts are absurd on their face.
+// took the hydrated issue at 923 characters as the floor and set the ceiling at ten thousand. The
+// floor is far below that: a coerced issue is a fixed thirteen fields whether or not any of them
+// carries text, so the cheapest costs 267 characters at the margin in the form storage writes, and
+// the cheapest list costs 127. The most generous origin any browser grants is 10,485,760
+// characters, so no tracker this app can save holds more than about 39,300 issues or 82,600 lists,
+// and that first ceiling would have refused a tracker a user could reach by importing. Restoring is
+// not the only caller: undoing a restore feeds the pre-restore snapshot back through this same
+// check, so a ceiling below what the app can hold would have refused a recovery of the app's own
+// data. The ceiling here is six times the issues holdable and three times the lists, and below the
+// 355,000 issues an eight mebibyte file can declare, so it still refuses counts absurd on their face.
 export const MAX_ISSUES = 250000;
 export const MAX_LISTS = 250000;
 
@@ -707,7 +708,13 @@ function coerce(raw) {
   // 1.14 mebibyte file, cleared every ceiling, and made the rail append 300,000 nodes on every
   // update. Deduplicated, the order is bounded by the number of lists, which is already capped.
   const listOrder = dedupe((Array.isArray(raw.listOrder) ? raw.listOrder : Object.keys(lists)).filter((id) => lists[id]));
-  for (const id of Object.keys(lists)) if (!listOrder.includes(id)) listOrder.push(id);
+  // Backfilled through a Set rather than Array.includes, which made this loop quadratic in the
+  // number of lists. That cost 3 milliseconds while the ceiling was 1,000 and 26.6 seconds once it
+  // was 250,000, on a 5.38 mebibyte file that clears the size guard and every count check, so the
+  // tab froze before a byte was written. The same input takes 125 milliseconds through a Set, and
+  // the order it produces is the one Array.includes produced.
+  const seen = new Set(listOrder);
+  for (const id of Object.keys(lists)) if (!seen.has(id)) listOrder.push(id);
 
   return {
     ...base,
@@ -763,12 +770,22 @@ export function validateBackup(raw) {
     if (n > cap) errors.push(`Backup declares ${n} ${label}, and this app holds at most ${cap}.`);
   }
   if (raw.lists && typeof raw.lists === 'object' && !Array.isArray(raw.lists)) {
+    // A version 1 backup has no top-level issues map: it carries whole issue objects inside each
+    // list's `items`, which migrate reads and turns into exactly that many issues. The loop above
+    // therefore scored a v1 file at zero however large it was, and 50,000 items in a 1.50 mebibyte
+    // file built 50,000 issues in 3.8 seconds. Summed rather than checked per list, because one map
+    // is what they become.
+    let carried = 0;
     for (const v of Object.values(raw.lists)) {
       const n = Array.isArray(v?.itemIds) ? v.itemIds.length : 0;
+      if (Array.isArray(v?.items)) carried += v.items.length;
       if (n > MAX_ISSUES) {
         errors.push(`One list declares ${n} issues, and this app holds at most ${MAX_ISSUES} in a list.`);
         break;
       }
+    }
+    if (carried > MAX_ISSUES) {
+      errors.push(`Backup declares ${carried} issues inside its lists, and this app holds at most ${MAX_ISSUES}.`);
     }
   }
   if (errors.length) return { ok: false, errors, state: null };

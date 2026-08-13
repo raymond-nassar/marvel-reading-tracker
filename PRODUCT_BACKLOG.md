@@ -164,17 +164,17 @@ remaining and is not scored.
 | 3.1 | BL-009 | P0 | parseChecklist and the import report at `src/js/main.js:2414-2470`, `src/js/lib/markdown.js:36-112` | Done |
 | 3.2 | BL-010 | P1 | unresolvedRow offers search, auto-accepts a unique exact match, else lists candidates with series and date at `src/js/main.js:2478-2547` | Done |
 | 3.3 | BL-011 | P1 | series and creator adds at `src/js/main.js:2376-2394`, manual issue add at `src/js/main.js:2549-2593` | Done |
-| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:1534-1554`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:248` | Done |
+| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:1534-1554`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:249` | Done |
 | 4.1 | BL-013 | P0 | renderRail marks the active list with `aria-current` and a progress bar at `src/js/main.js:853-893` | Done |
 | 4.2 | BL-014 | P1 | the progress view is scoped to the active list at `src/js/main.js:2952-2986`, with a scope control at `src/index.html:371-375` and a subtitle that stops claiming every list at `src/js/main.js:2966-2968` | Done, shipped as BL-014 |
 | 4.3 | BL-015 | P1 | all four named filters plus All at `src/js/lib/readingFilters.js:25-48`, applied without touching stored order at `src/js/main.js:1935` | Done |
 | 4.4 | BL-016 | P1 | hero next-unread and Done, next at `src/index.html:295-330` | Done |
-| 4.5 | BL-017 | P2 | notes on both shapes at `src/js/lib/model.js:473-502`, quoted into the Markdown export at `src/js/lib/markdown.js:177-179` | Done, shipped as BL-017 |
+| 4.5 | BL-017 | P2 | notes on both shapes at `src/js/lib/model.js:474-503`, quoted into the Markdown export at `src/js/lib/markdown.js:177-179` | Done, shipped as BL-017 |
 | 5.1 | BL-018 | P0 | pending and by-hand badges at `src/js/main.js:2031-2037`, pending filter at `src/js/lib/readingFilters.js:46` | Done |
 | 5.2 | BL-019 | P1 | five-state availability model at `src/js/lib/availability.js:17-23`, hedged short labels at `src/js/main.js:2092-2097` | Done |
 | 5.3 | BL-020 | P1 | manual entries carry `source: 'manual'` at `src/js/main.js:2572` and render, reorder, export and back up like any other issue | Done |
 | 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:248-280` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:13` | Done |
-| 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:725-755` | Done |
+| 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:732-762` | Done |
 | 6.2 | BL-023 | P1 | same backup file restores on another browser, validated and atomic, with undo at `src/js/main.js:3105-3111` | Done |
 | 6.3 | BL-024 | P1 | Export as Markdown ships as a list tool, confirmed in the live DOM at `docs/ux-artifacts/viewport-sweep-reading.json` | Done |
 | 6.4 | BL-025 | P2 | not applicable. Ruled out by Repository Constraint 3, which forbids accounts and cloud services, and already listed as out of scope at the end of this document | Forbidden, Constraint 3 |
@@ -196,7 +196,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 703; 224 is the figure as audited.
+  it to 709; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -249,7 +249,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-counts.mjs:225-258 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3851-3854 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3852-3855 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Ready | scripts/check-contract.mjs:62-67 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:187-199 |
@@ -262,7 +262,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:662-678 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
-| BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:690 |
+| BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:691 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3320-3368 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
 | BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/storage.js:260-263 |
@@ -297,6 +297,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:233 |
 | BL-058 | Keep focus on the home grid and the rail when their lists rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | absent: any capture of the focused control before importCurated disables it, read of addFromCatalog and renderRail |
+| BL-114 | Bound what a single render paints, not just what a restore builds | Enabler | EP-06 | Follows BL-085 | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Ready | src/js/main.js:1012 |
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Shipped | src/js/main.js:86 |
 | BL-066 | Offer a reading order grouped by the collected editions it is sold in | Story | EP-02 | Leaves alone | 5 | 2 | 5 | 5 | 2.4 | none | Measured | Shipped | src/data/orders/new-ultimate-universe-trades.md:19 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Shipped | design/mockups/5-longbox-focus.html:169-172 |
@@ -314,7 +315,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-065 | Raise the six non-text boundaries that sit below 3:1 | Debt | EP-08 | Depends on | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Shipped | scripts/check-palette.mjs |
 | BL-036 | Make the current view and list addressable in the URL | Story | EP-10 | Leaves alone | 5 | 2 | 3 | 8 | 1.25 | none | Observed | Shipped | src/js/lib/route.js:35-43 |
 | BL-064 | Make the view file importable so its render paths can be tested | Enabler | EP-12 | Depends on | 3 | 2 | 8 | 13 | 1.0 | none | Measured | Shipped | src/js/app.js:12 |
-| BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Shipped | src/js/lib/model.js:482-490 |
+| BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Shipped | src/js/lib/model.js:483-491 |
 | BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:3381-3395 |
 
 ### Parked
@@ -478,7 +479,7 @@ keyed on those ids.
 - [x] Update the view subtitle, which currently states the count spans every list
 - [x] Keep the global unique-issue count reachable, since sharing read state across lists is deliberate
 
-Shipped. `seriesProgress` takes an optional list id at `src/js/lib/model.js:521-532`; omitting it
+Shipped. `seriesProgress` takes an optional list id at `src/js/lib/model.js:522-533`; omitting it
 keeps the cross-list aggregate the old callers relied on, so the global unique-issue count is a call
 away rather than gone. The progress view gained a two-option scope control at
 `src/index.html:371-375`, matching the reading filter's fieldset pattern rather than inventing a
@@ -491,8 +492,8 @@ answered by whichever list they are reading now, so the active list is the right
 the view opens.
 
 The case worth naming is no active list. `state.active` is null only when no list exists at all:
-`deleteList` falls back to the first surviving list at `src/js/lib/model.js:304` and load normalises
-a stale id at `src/js/lib/model.js:720`, so the two cannot come apart. That invariant also rules out
+`deleteList` falls back to the first surviving list at `src/js/lib/model.js:305` and load normalises
+a stale id at `src/js/lib/model.js:727`, so the two cannot come apart. That invariant also rules out
 the obvious justification for the fallback: it is not there to avoid an empty view, because with no
 list the global count renders "Nothing tracked yet." as well. It is there because the subtitle names
 the list, so scoping without one would dereference it. The whole fieldset is hidden in that state,
@@ -531,7 +532,7 @@ Shipped, and the first task's own wording was the trap. "Behind a schema migrati
 version bump, and a bump would have made every existing reader's data unreadable. `migrate` returns
 early when the version matches and takes the upgrade path only below 2, so a stored version 2 blob
 against a `SCHEMA_VERSION` of 3 matches neither branch and reaches the throw at
-`src/js/lib/model.js:657-658`, which latches the "Could not read your saved data" banner. Measured
+`src/js/lib/model.js:658-659`, which latches the "Could not read your saved data" banner. Measured
 before the field was added: versions 2.5, 3 and 4 all throw today, 1 and 2 load. Notes are
 therefore additive and the version is unchanged, which is also what the changelog's own MINOR
 definition asks for.
@@ -542,7 +543,7 @@ keys one at a time rather than spreading, so an unnamed map never reaches the ba
 storage in the first place. The second was found only by running a probe against the real functions
 after the plan had asserted the opposite, which is the contrarian wave doing its job.
 
-An issue note is global, keyed by issue id at `src/js/lib/model.js:482-490`, for the same reason
+An issue note is global, keyed by issue id at `src/js/lib/model.js:483-491`, for the same reason
 read state is: the bundled minimal and full orders overlap heavily, so a note tied to one path
 through an issue would vanish when the reader took another. A list note is a field on the list,
 because it dies with the list, and it is deliberately separate from `description`, which holds the
@@ -1290,7 +1291,7 @@ Done here, in BL-035: the undo after a delete, and the wording that goes with it
 Constraint gate: checked 1 to 11, none breached. No constraint is engaged; the undo buffer is
 in-memory and local.
 
-Shipped. `restoreList` at `src/js/lib/model.js:323-335` puts a list back at the index it held,
+Shipped. `restoreList` at `src/js/lib/model.js:324-336` puts a list back at the index it held,
 because appending it to the end would be a different list order from the one the reader built, and
 a rail that silently reorders itself is not an undo. The caller holds both the removed list object
 and its index, since `deleteList` is the only thing that knows both and neither survives in the
@@ -1302,7 +1303,7 @@ come back on its own: undoing a restore can bring the same id back, and importin
 order again brings the same order back under a new id. `restoreList` refuses both, returning the
 state unchanged, because splicing the stale copy in would either overwrite work or leave two lists
 answering to one catalog entry. That second state is the one `duplicateList` clears `catalogId` to
-avoid at `src/js/lib/model.js:266-269`: "in library" and "Continue reading" would both resolve to
+avoid at `src/js/lib/model.js:267-270`: "in library" and "Continue reading" would both resolve to
 whichever list came first in the rail, and the rail would show two entries with the same name and
 the same progress. Both refusals are covered by tests.
 
@@ -1431,7 +1432,7 @@ before writing, which is not an optimisation: writing a hash fires `hashchange`,
 calls back into `showView`, which syncs again. The comparison is what stops that running away.
 
 **A stale list id is corrected rather than obeyed.** `setActive` returns the state untouched when
-the id is unknown, at `src/js/lib/model.js:337-339`, so an address naming a deleted list would
+the id is unknown, at `src/js/lib/model.js:338-340`, so an address naming a deleted list would
 otherwise leave a different order on screen while the address claimed the missing one. The reading
 view hands over to the landing page when there is no list at all, and the trailing sync rewrites
 the address to whatever is actually showing.
@@ -1661,12 +1662,12 @@ choice above.
 Constraint gate: checked 1 to 11, none breached. No constraint is engaged; both views read data the
 app already holds.
 
-Shipped. The two selectors are `readIssues` and `manualIssues` in `src/js/lib/model.js:552-602`,
+Shipped. The two selectors are `readIssues` and `manualIssues` in `src/js/lib/model.js:553-603`,
 sitting in the derived section beside `seriesProgress`, and the pages themselves are described once
 in `src/js/lib/library.js:27-51` and rendered by a single function at `src/js/main.js:2993-3011`.
 
 The reason Everything read reads the read map rather than walking the lists is the sentence above
-`deleteList` at `src/js/lib/model.js:305-306`: issue metadata and read state survive the deletion of
+`deleteList` at `src/js/lib/model.js:306-307`: issue metadata and read state survive the deletion of
 the list that introduced them, deliberately, so that deleting one list never destroys progress
 shared with another. The consequence was that an issue you read inside an order you later deleted
 appeared on no screen in the app at all. The progress view iterates `listOrder`, the reading view
@@ -1712,8 +1713,8 @@ is not a usable number. Review found that guard sits in `coerce`, which runs on 
 branch alone. The v1 branch rebuilds the state from scratch and writes read state through `markRead`
 instead, which stored its argument verbatim, so restoring a v1 backup carrying `readAt: "banana"`
 did put "Invalid Date" on the page. Reproduced end to end through `validateBackup` before it was
-believed. The coercion now lives in `markRead` at `src/js/lib/model.js:442-449`, written the same way
-`coerce` writes it at `src/js/lib/model.js:671`, so the two paths cannot disagree and every future
+believed. The coercion now lives in `markRead` at `src/js/lib/model.js:443-450`, written the same way
+`coerce` writes it at `src/js/lib/model.js:672`, so the two paths cannot disagree and every future
 caller inherits it.
 
 The test written alongside the original claim exercised only the current-schema shape, so it pinned
@@ -3016,7 +3017,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2719-2722`.
+`PRODUCT_BACKLOG.md:2720-2723`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3143,9 +3144,9 @@ members answer truthy to an index and none of them answers true to `Object.hasOw
 `constructor`, `toString`, `hasOwnProperty`, `valueOf` and `isPrototypeOf`.
 
 `coerce` in `src/js/lib/model.js` reads a stored id by index three times. It writes each list with
-`lists[k] = {...}` at `src/js/lib/model.js:690`, filters the stored order with `lists[id]` at
-`src/js/lib/model.js:709`, and picks the active list with `lists[raw.active]` at
-`src/js/lib/model.js:720`.
+`lists[k] = {...}` at `src/js/lib/model.js:691`, filters the stored order with `lists[id]` at
+`src/js/lib/model.js:710`, and picks the active list with `lists[raw.active]` at
+`src/js/lib/model.js:727`.
 
 Measured on the tree as it stands, driving `migrate` with state parsed from real JSON text, which is
 how a restored backup arrives. Two results, and the second is the serious one.
@@ -4548,7 +4549,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6968-6970` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7029-7031` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4558,11 +4559,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6987-6991`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7048-7052`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6802-6804` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6863-6865` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4770,7 +4771,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1410-1419` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1419-1428` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:187-191` and
 `PRODUCT_BACKLOG.md:197-199` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4977,7 +4978,7 @@ Constraint gate: checked 1 to 11, none breached.
 The file picker read any selected file fully before validation. Structural validation checked object
 shapes but capped neither collections nor strings, and restore coercion skipped the list-name and
 description limits ordinary creation applies. This is a user-selected availability risk, not a remote
-attack. Evidence: `src/js/main.js:3066-3094`, `src/js/lib/model.js:662-755`.
+attack. Evidence: `src/js/main.js:3066-3094`, `src/js/lib/model.js:663-762`.
 
 Four measurements sized every ceiling, all taken against the twelve shipped orders, which come to
 507 unique issues. A backup of every order as imported is 374,432 characters; with every issue read
@@ -4998,18 +4999,21 @@ characters.
 The count leak was separate. A backup declaring 60,000 issues coerced to a state serializing at
 17,764,645 characters, an amplification of nearly twelve over the 23.6 characters an issue costs at
 its cheapest in a file, and nothing checked before coercion ran. Counts are refused before coercion
-now, but setting the ceiling took two attempts and the first was wrong in the direction that
-matters. It read the worst case off the hydrated issue at 923 characters, concluded a
-5-million-character origin holds a few thousand, and set 10,000 issues and 1,000 lists as numbers
-the app could not reach. The app reaches them easily. The cheapest shape it writes is a
-Markdown-imported issue at 292 characters in a saved state, so the same origin holds about 17,100 of
-them, and a list costs 185, so it holds tens of thousands of those. Both ceilings sat below data a
-user could produce by importing, and restoring is not the only caller: undoing a restore feeds the
-pre-restore snapshot back through the same check, so a ceiling that low would have refused a
-recovery of the app's own data. Both sit at 250,000 now, seven times above what the most generous
-origin any browser grants could hold, and below the 355,000 issues an eight-mebibyte file can
-declare, so the check still refuses a file whose counts are absurd on their face while binding on
-nothing real.
+now, but setting the ceiling took three attempts and the first two were wrong the same way. The
+first read the worst case off the hydrated issue at 923 characters, concluded a 5-million-character
+origin holds a few thousand, and set 10,000 issues and 1,000 lists as numbers the app could not
+reach. The app reaches them easily, and restoring is not the only caller: undoing a restore feeds
+the pre-restore snapshot back through the same check, so a ceiling that low would have refused a
+recovery of the app's own data. The second attempt raised them to 250,000 and quoted a floor of 292
+characters for an issue and 185 for a list. Those were quoted, not measured, and a review quoting
+233 and 137 back was wrong in the other direction. Measured at the margin on the form storage
+actually writes, differenced between two sizes so the fixed part of the file drops out, a coerced
+issue costs 267 characters and a coerced list 127: an issue is thirteen fields whether or not any of
+them carries text, and that fixed shape is the floor. The most generous origin any browser grants
+therefore holds about 39,300 issues or 82,600 lists, so 250,000 is six times the issues and three
+times the lists, not the seven times claimed, and still below the 355,000 issues an eight-mebibyte
+file can declare. The conclusion survived all three attempts and none of the three arithmetics
+agreed, which is why the floor is now measured inside a test rather than written into a comment.
 
 Raising it means being honest about what the check buys. A tracker too large for the origin is
 accepted here and refused by the write, with the quota message it already had. The ceiling stops a
@@ -5022,6 +5026,29 @@ for membership rather than uniqueness, so one valid id repeated survived once pe
 every ceiling, survived reload because loading re-coerces, and made the rail append 300,000 nodes on
 every update. Deduplicating it bounds it by the number of lists.
 
+Raising the list ceiling then uncovered a second cost behind the same line, and it is a cost this
+change introduced rather than one it found. The statement under the dedupe backfills any list absent
+from the running order, and it tested membership with `Array.includes`, which is linear inside a loop over
+every list and so quadratic overall. At the old ceiling of 1,000 lists that cost 3 milliseconds and
+nothing showed. At 250,000 it costs 26.6 seconds, on a 5.38-mebibyte file that clears the size guard
+and every count check, so the ceiling that was raised to stop refusing honest data bought a frozen
+tab instead. A `Set` does the same work in 125 milliseconds and produces the same order. The lesson is
+the one this item keeps teaching: a bound was changed without measuring the code the bound feeds.
+
+The version 1 path was the count that got past the counting itself. A version 1 backup has no issues
+map at all, because it carries whole issue objects inside each list's `items`, and migration turns
+every one of them into an issue. The count loop read the issues map and the per-list `itemIds`,
+neither of which a version 1 file has, so it scored every such file at zero however large it was:
+50,000 items in a 1.50-mebibyte file cleared every check and built 50,000 issues in 3.8 seconds, and
+eight mebibytes holds about 320,000. The carrier is counted now, summed across lists rather than
+checked per list, because one issues map is what they become.
+
+One consequence of the raised ceiling is accepted rather than fixed, and recorded here so it is not
+mistaken for an oversight. A restore of 250,000 distinct lists still paints one tile per list, at
+`src/js/main.js:1012` and again on the rail, because neither render is bounded by anything. That is a
+rendering bound rather than a restore bound, it predates this item, and no origin holds a state that
+large in the first place, so it is filed as BL-114 rather than folded in here.
+
 The file-size limit of 8 MiB is set the same way as the counts: the worst honest backup written
 entirely in four-byte characters is 6,242,144 bytes, a little under six mebibytes.
 
@@ -5031,6 +5058,14 @@ no temporary or snapshot key was left behind, and the message named what had hap
 band ran `wrote tmp | wrote prerestore | REFUSED v2 | removed tmp | removed prerestore`. Adding a
 pre-flight fit check would have duplicated a guarantee the write path already makes, and a second
 check that can disagree with the first is a defect waiting to be filed.
+
+The three defects above were held to the same standard as the first pass: seven mutations, each
+reddening exactly the test named for it and no other. Two of them exist to separate claims that a
+coarser check would have run together, one distinguishing a summed version 1 count from a per-list
+maximum and one moving the ceiling comparison by a single count in each direction. The boundary
+mutation is the one worth recording, because changing `n > cap` to `n >= cap` left all 703 tests of
+the previous round green while making the app refuse a backup holding exactly the number it declares,
+which is the precise false refusal the whole derivation above exists to avoid.
 
 Every one of the twenty-five bounded lines was reverted singly and the test it defends recorded by name,
 rather than reverting the modules and counting the wreckage. That exercise found two of the new tests
@@ -6453,7 +6488,7 @@ ten orders that have no gaps. The 63 items are 34 distinct issues, because the t
 overlap and `pendingIssueIds` collects into a set keyed by issue id across every list, so the item
 count and the figure a reader would ever see are different numbers and only the second belongs on a
 button. Evidence: `src/js/main.js:2876`, `src/js/lib/model.js:88`,
-`src/js/lib/model.js:604`.
+`src/js/lib/model.js:605`.
 
 Inferring the flag on its own would be the wrong fix, and that is the substance of this item rather
 than a caution attached to it. It lights up **Fetch details for 34 issues**, and upstream answers 404
@@ -6608,6 +6643,32 @@ data it could not read itself. Erasing wholesale would overturn that, and it is 
 this repository has twice found the most dangerous code in a change to have: a path that destroys the
 last copy of data nobody could open. The alternative is narrowing the dialog's wording rather than
 widening what it does, and either answer needs the owner rather than a reviewer.
+
+**BL-114: Bound what a single render paints, not just what a restore builds**
+
+- [ ] Measure what the home tiles and the rail cost at a list count a restore can produce
+- [ ] Decide whether to bound the render, the state, or neither, and record which
+- [ ] Hold whichever answer is chosen to a test
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by the review of `BL-085` and routed here rather than folded into it. That item raised the
+restore ceiling on lists from 1,000 to 250,000, on the argument that a ceiling below what the app can
+hold refuses honest data, and fixed the quadratic backfill that raise exposed. What it did not change
+is that a state which arrives with 250,000 lists is painted one tile per list at `src/js/main.js:1012`
+and one node per list on the rail, neither of them bounded.
+
+It is scored below the item that raised it, and deliberately. No origin holds a state that large: the
+most generous grants about 82,600 lists, and a state that will not fit is refused by the write with
+the quota message it always gave. So the shape that reaches these renders is a restore of a
+hand-edited file that is then refused on the way to storage, which paints before it refuses. That is a
+transient freeze on a file a user hand-built, not a loss of anything.
+
+It is filed rather than fixed because the fix is a decision, not a repair. Bounding the render means
+choosing what a reader sees when a list is not painted, and a tile silently missing from the home
+screen is a worse failure than a slow one. Bounding the state instead would reintroduce exactly the
+ceiling-as-quota that BL-085 spent three attempts establishing this app must not have. Doing neither
+is defensible on the evidence above. The measurement is cheap and should come before the choice.
 
 ## Existing epics and stories
 
@@ -6903,7 +6964,7 @@ both directions: JSON backup for round-tripping and Markdown export for reading 
 runtime dependencies and plain ES modules mean nothing to reconcile with a host application.
 
 Evidence: `package.json:1-31` (no `dependencies` key at all, `engines.node >= 20`),
-`src/js/lib/model.js:725-755` (validated backup shape).
+`src/js/lib/model.js:732-762` (validated backup shape).
 
 The fixed `127.0.0.1:8787` origin is a deliberate storage-bucket decision rather than a
 compatibility gap, so it is recorded here and not proposed for change.
@@ -6940,7 +7001,7 @@ than overwriting, offers a salvage download, and explains itself. A backup from 
 refused rather than mangled. A fault-injection harness ships alongside the app.
 
 Evidence: `src/index.html:142-157` (blocked banner, saving paused, salvage offered),
-`src/js/lib/model.js:632-658` (migrate refuses an unsupported schema version),
+`src/js/lib/model.js:633-659` (migrate refuses an unsupported schema version),
 `src/dev-faults.html` (fault-injection harness).
 
 - Gap: none of this is verified automatically on change. There is no continuous integration, so the
@@ -7012,7 +7073,7 @@ Swept in full rather than dispositioned.
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
   Evidence: `src/js/main.js:3113-3133`, `src/js/lib/cachePolicy.js:16-20`,
-  `src/js/lib/model.js:11` and `src/js/lib/model.js:632-658`.
+  `src/js/lib/model.js:11` and `src/js/lib/model.js:633-659`.
 - Scalability: not applicable, because the app serves one reader in one browser profile on one
   machine, so there is no dimension along which load grows. The volume question that does matter,
   a single list of a few hundred issues, is recorded under performance efficiency above.
@@ -7031,8 +7092,8 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Empty states | No gap. The unseeded landing state explains what the app is for and routes to the catalog rather than showing a bare shell. Evidence: `docs/ux-artifacts/01-landing-firstrun-1280.png`, `src/index.html:38-41`. |
 | Error handling and recovery | Gap, closed by BL-034. Curated import used to report failure through native `alert()` while every other path used the in-page notice system. It now writes to a pane chosen when the message is written, so on the landing page the reason appears beside the catalog it is about rather than stopping the page, and it is not left in a view the reader has already scrolled or navigated away from. Evidence: `src/js/main.js:2870`, `src/js/main.js:2888-2890`, `src/js/main.js:2921` against `src/js/main.js:273-389`. |
 | Offline behavior | No gap, and no proposal. Probed as required rather than treated as a caching problem. With the local server running and no internet, the app starts, reads saved state, imports any bundled curated list and marks issues read, because those paths touch only same-origin files. Only cover images, metadata hydration and search degrade, and hydration failure is already surfaced as a pending state rather than as silence. Evidence: `src/data/house_of_m.json`, `src/js/main.js:2031-2037` (pending and by-hand badges), `absent: serviceWorker|navigator.onLine|manifest.json, case-insensitive grep across src/`. Repository Constraint 1 forbids caching cover bytes, so no cover-caching improvement is proposed. |
-| Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:725-755`, `src/js/main.js:3105-3111`. |
-| Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:632-658`, `test/model.test.js:558-560`. |
+| Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:732-762`, `src/js/main.js:3105-3111`. |
+| Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:633-659`, `test/model.test.js:558-560`. |
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3358-3360`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:20-33` and onto the read out of storage at `src/js/main.js:391-415`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3116-3117`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
@@ -7095,7 +7156,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 1: BL-026 is labelled P0 but ranks forty-first
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 41 of 89.
+- Calculated: WSJF 3.67, rank 41 of 90.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
   It is outranked by forty items, twenty-three of them sized 1, 2 or 3 whose Cost of Delay is
   lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -7117,7 +7178,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 83 of 89, below seventy-nine unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 84 of 90, below eighty unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -7174,9 +7235,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 54 of 89. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 43 of 89. Mid-table.
-- BL-017, P2, rank 88 of 89. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 54 of 90. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 43 of 90. Mid-table.
+- BL-017, P2, rank 89 of 90. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
