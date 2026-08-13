@@ -4549,7 +4549,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7186-7188` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7200-7202` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4559,11 +4559,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7205-7209`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7219-7223`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7020-7022` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7034-7036` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -5143,7 +5143,7 @@ size of the map, which is now holding an invariant rather than reporting a good 
 
 A sixth round then found those three figures overstated. The paragraph above first read "about 2,000
 ids inside one stamp" and "244 million same-stamp pairs", from a mint span given as 130 milliseconds,
-and the same numbers were written into the module and the ceiling test. They disagreed with the 858
+and the same figures sat in the module and in two test comments. They disagreed with the 858
 milliseconds recorded four paragraphs above for that same fixture, which is the tell: the mint is one
 call per list inside that loop, so its span cannot be a seventh of the run that contains it. Measured
 by reading the stamps back out of the ids the shipped mint produced, which needs no instrumentation
@@ -5158,6 +5158,20 @@ was removed rather than kept. It could not fail. The counter starts at a random 
 so a load produces a short number only by starting within 36^5 of zero, and the check would have
 passed for thirty-five runs in thirty-six whatever the code did. The padding stays in the mint,
 because it is correct; what it does not have is a test pretending to defend it.
+
+A seventh round found that correction incomplete. Two of the three sites were amended and the third
+was not, so this pull request went on asserting about six hundred to a stamp in the module and about
+two thousand in the model suite, for the same scenario. The sentence recording the correction is how
+the third stayed hidden: it named the places that had been opened, so it read as an account of where
+the figure lived while being a list of the fixes already made. Searching the tree for the retracted
+number, rather than for the file it was noticed in, is what would have caught it, and it is the move
+worth keeping, because a figure that is wrong in one place is a figure that has been copied.
+
+The same round found the mutation count below stale by one. Round six added a test to the file that
+mutation is measured against, while editing this document, and the count of what stays green was
+carried forward rather than re-derived. It has now been re-derived by running the mutation again,
+which is the only way it could have been. Both findings are one failure at two sizes: a number that
+lives in several places goes stale in the ones nobody opened, and no gate here reads a number.
 
 That the ceiling was unreachable had been hidden by an assertion that accepted the wrong evidence.
 The test asking whether an over-ceiling version 1 backup is refused checked only that the restore
@@ -5180,7 +5194,7 @@ band ran `wrote tmp | wrote prerestore | REFUSED v2 | removed tmp | removed prer
 pre-flight fit check would have duplicated a guarantee the write path already makes, and a second
 check that can disagree with the first is a defect waiting to be filed.
 
-The nine defects above were held to the same standard as the first pass: fifteen mutations, each
+The eleven defects above were held to the same standard as the first pass: fifteen mutations, each
 reddening only the tests that defend the claim it breaks, and nothing else. Two of them exist to separate claims that a
 coarser check would have run together, one distinguishing a summed version 1 count from a per-list
 maximum and one moving the ceiling comparison by a single count in each direction. The boundary
@@ -5222,7 +5236,7 @@ The other round four mutation is the one that shows why the second finding matte
 50,000 element array with `deepEqual`, which renders both sides into its message, and the process ran
 out of memory building that string. A suite that dies cannot say which claim broke, and under the
 spec reporter it reads as one failing file. The assertion now checks the length first, on its own, so
-the same mutation reddens exactly one test and leaves the other thirty-one passing.
+the same mutation reddens exactly one test and leaves the other thirty-two passing.
 
 Every one of the twenty-five bounded lines was reverted singly and the test it defends recorded by name,
 rather than reverting the modules and counting the wreckage. That exercise found two of the new tests

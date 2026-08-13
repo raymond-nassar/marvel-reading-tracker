@@ -855,7 +855,7 @@ test('no rebuild site spreads the list map back into an ordinary object', () => 
 // The clock is frozen because the stamp is the part of an id that does not need testing. What was
 // wrong was the other part: everything minted inside one millisecond was told apart by six random
 // base-36 characters alone, and once the version 1 restore path was made linear it began minting
-// about 2,000 ids per stamp. Freezing the clock puts every id in this test into one stamp, which is
+// about 610 ids per stamp. Freezing the clock puts every id in this test into one stamp, which is
 // the worst case of exactly the claim, and it makes the check deterministic rather than a draw.
 //
 // The size is chosen so the check can actually fail. Under the random form 300,000 ids in one stamp
