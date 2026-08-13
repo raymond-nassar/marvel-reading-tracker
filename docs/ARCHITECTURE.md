@@ -164,7 +164,7 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3343-3363`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3352-3372`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
@@ -231,8 +231,8 @@ Every name the app writes, and why it exists:
 | Key | Written by | Cleared by | Why it exists |
 |---|---|---|---|
 | `mrt.state.v2` | every saved change, at `src/js/storage.js:330` | erasing everything, which writes an empty state rather than removing the key | The lists, the reading progress, the notes and the availability overrides. This is the reader's data. |
-| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:382-387` | the same restore, on the line after the swap, and again if the write throws | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. A removal that itself throws leaves the key behind, which costs nothing: the next restore overwrites it and nothing reads it in between. |
-| `mrt.state.prerestore` | the same restore, one line later | nothing | The snapshot that makes a restore undoable, read back by `src/js/storage.js:514-531`. It is deliberately never removed, so the undo survives a reload. |
+| `mrt.state.restore.tmp` | a restore, before anything is swapped, at `src/js/storage.js:382-387` | the same restore, on the line after the swap, and again if the write throws; any later restore, which overwrites it and then removes it; and the reader's erase | Staging, so the swap cannot half happen. It exists only for the moment between validating a backup and installing it. A removal that itself throws leaves the key behind holding a whole tracker, which nothing reads and nothing offers, so it sits there until the next restore or an erase clears it. Erasing discards it because that dialog says this browser has nothing left, and it is the only route that clears one without a restore. |
+| `mrt.state.prerestore` | the same restore, one line later | the reader's erase, and `rewindSnapshot()` at `src/js/storage.js:495-512`, in two of its four routes | The snapshot that makes a restore undoable, read back by `src/js/storage.js:514-531`. It outlives a reload, and `startFresh()` deliberately leaves it, because the undo it leaves standing still hands the reader's lists back. A restore that succeeds replaces it. A restore that fails takes one of four routes. It puts back an earlier snapshot it read, so the undo that earlier restore earned survives. It empties the slot when there was no earlier snapshot to put back. It empties the slot when the browser refuses to put one back, rather than leave an offer to swap in what is already on screen. And when the slot could not be read at all it is left alone, still holding the copy this restore minted a moment earlier, which `undoRestore()` then declines because it matches the saved data. Erasing everything is the only route that removes a snapshot still worth having, because only that dialog promises the data behind it is gone. |
 | `mrt.state.salvage` | a failed read, and only when the slot is empty or already holds the same bytes | the reader, from Backup and settings | A copy of data that could not be read, kept because saving is paused and the original must not be overwritten. |
 | `mrt.state.salvage.TIMESTAMP` | a failed read when the slot already holds a different incident, at `src/js/storage.js:121-127` | the reader, from Backup and settings | So a second corruption months later cannot clobber the copy taken for the first one. A `.N` is appended when that name is taken too, which one boot can reach on its own, because starting fresh salvages before it clears. |
 | `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter, at `src/js/main.js:432` | nothing | Preferences, not data. Deliberately outside the state so a settings write can never fail a progress write. |
@@ -242,12 +242,24 @@ Seven names in all: six fixed, and one family whose suffix is the moment it was 
 seven belong to the view layer rather than to the store, which is why an enumeration taken from the
 storage module alone would have found four.
 
-The two salvage rows are the only ones whose Cleared by column names a person. Nothing in the app
-removes a salvage copy on its own, because no rule it could apply would know whether the reader still
-wants data the app itself could not read, so they are listed on the Backup and settings screen and
-removed one at a time by the reader. The copy belonging to an incident that is currently blocking
-saving is listed but not offered, because the banner is at that moment telling the reader to download
-it or start fresh and both need it; that offer returns once the block is resolved.
+The two salvage rows are the only ones whose Cleared by column names a person choosing that copy in
+particular. Nothing in the app removes a salvage copy on its own, because no rule it could apply would
+know whether the reader still wants data the app itself could not read, so they are listed on the
+Backup and settings screen and removed one at a time by the reader. The copy belonging to an incident
+that is currently blocking saving is listed but not offered, because the banner is at that moment
+telling the reader to download it or start fresh and both need it; that offer returns once the block
+is resolved.
+
+The erase names itself in three rows, and that is a different kind of naming. It clears those keys
+wholesale rather than choosing between them, and only because its own dialog says everything this
+browser holds for the tracker is gone. **It does not reach the salvage copies.** Measuring that needs
+a run where the erase actually lands, because a blocked store refuses the write and nothing behind
+that guard runs, so a copy would survive either way and the reading would prove nothing: after
+starting fresh to clear the block and then erasing, `salvageCopies()` answers 1 both before and
+after, and `salvagedRaw()` still returns the bytes that could not be read. Whether that is right is
+filed as `BL-113` rather than settled here, because the copies are listed on the same screen as the
+erase button, each with its own remove control, and so survive in plain sight, which is a different
+thing from the undo snapshot that survived behind a button claiming it had gone.
 
 Which copy that is gets asked of storage rather than of the tab doing the asking, at
 `src/js/storage.js:222-245`: a copy is protected when it holds exactly what the main slot holds. The
@@ -285,7 +297,7 @@ only two keys survive, since all three land in one millisecond and collide on th
 three distinct copies is what the browser leaves, where the boots are milliseconds apart.
 
 It cost nothing on a first incident. There is a test for a second, unrelated incident, at
-`test/storage.test.js:164-190`, so the dated key itself was covered; what no test did was load twice
+`test/storage.test.js:169-195`, so the dated key itself was covered; what no test did was load twice
 inside one incident, which is why the repeat was untested rather than tolerated. It cost a copy of
 the reader's whole state per reload on a second one, in exactly the near-quota situation the
 salvage code was written to survive.
@@ -308,7 +320,7 @@ it.
 
 ## What a per-view split does to these diagrams
 
-BL-042 proposes breaking the 3,449 line view file into per-view modules. A diagram drawn at the
+BL-042 proposes breaking the 3,458 line view file into per-view modules. A diagram drawn at the
 level of function names inside that file would be falsified the day it lands, so each of the three
 above was pitched to survive it. Two do. One survives in shape but has a detail that will need
 rewriting, and it is more useful to say which than to claim all three are safe.

@@ -16,6 +16,26 @@ quote in a bug report.
 
 ### Fixed
 
+- **Erasing all your data now takes the leftover restore copy with it.** The confirmation says it
+  clears everything this browser has stored and that it cannot be undone. It did not: if you had
+  restored a backup at any point, a whole second copy of your tracker stayed behind, the **Undo
+  last restore** button stayed on screen, and pressing it genuinely brought the erased lists back.
+  That copy is now removed, and only once the erase itself has been written, so a browser that
+  refuses the write leaves both your data and the working undo exactly where they were. If a
+  browser refuses to remove the copy, the page says so and names the button that still holds it.
+  Starting fresh from the unreadable-data screen deliberately keeps its copy: that route promises
+  only to replace saved data it could not read, and the undo it offers still gets your lists back.
+  A second leftover goes with it: if a past restore failed to tidy up after itself, the app could be
+  holding a spare copy of your tracker that nothing ever showed you, and erasing now clears that too.
+  One thing erasing still does not reach is a rescue copy the app took of saved data it could not
+  read. Those stay listed on the same screen with their own remove buttons, so you can see what is
+  left and clear each one yourself.
+- **A note for maintainers: the map of what the app stores was wrong about one of its own names.**
+  The table listing every name the app writes to browser storage said the copy behind the undo button
+  was removed by nothing and was deliberately never removed. That was not true: when a restore fails
+  and there is no earlier undo to put back, the app clears that slot rather than leave a button
+  offering to swap in data that is already on screen. Nothing you have saved is affected. This change
+  does not alter that behaviour, and only the written description of it was wrong.
 - **Buttons now answer to the words printed on them, so voice control can reach them.** Someone
   who drives a computer by speaking says what they can see: "click add to library". A button here
   showed "+ Add to library" but was described to the software as "Add House of M to library", with
