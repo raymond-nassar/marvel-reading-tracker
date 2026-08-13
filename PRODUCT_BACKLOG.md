@@ -56,6 +56,11 @@ than behind, and the three items are the defects the research found on this side
 rather than the question it was asked. All three are `Ready`, and none of them needs a new data
 source.
 
+BL-113 came from the review of BL-101 and is the narrower half of the same question, left open on
+purpose: erasing everything now clears both restore-family keys, and the salvage copies it does not
+reach are governed by a deliberate rule that only the reader removes one. Which promise wins is a
+product decision rather than a defect to fix inside the change that raised it.
+
 BL-112 is the only item so far raised by a refutation. It was found while measuring BL-091, and it
 is `Shipped` rather than `Ready` because the measurement that produced it was already the research
 its fix needed. That is the one case where filing and fixing in the same change keeps a concern
@@ -191,7 +196,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 679; 224 is the figure as audited.
+  it to 682; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -244,10 +249,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-counts.mjs:225-258 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3845-3848 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3851-3854 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Ready | scripts/check-contract.mjs:62-67 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:182-194 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:187-199 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
@@ -260,6 +265,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:640 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3291-3339 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
+| BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/storage.js:260-263 |
 | BL-110 | Count the issues an order imported empty, and say so | Defect | EP-05 | Extends BL-009 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:2885 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
 | BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:269-314 |
@@ -3010,7 +3016,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2713-2716`.
+`PRODUCT_BACKLOG.md:2719-2722`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4249,7 +4255,7 @@ Three distinct copies is a browser measurement, where the boots are milliseconds
 collision is not a mitigation, and is itself the clobber `freeArchiveKey()` was added to prevent.
 
 It costs nothing during a first incident. There is a test for a second, unrelated
-incident, at `test/storage.test.js:164-190`, which reaches the dated branch by salvaging one, but it
+incident, at `test/storage.test.js:169-195`, which reaches the dated branch by salvaging one, but it
 never loads twice inside that incident, so the repeat is untested rather than tolerated. It costs a
 copy of the reader's whole state per reload during a second one, in exactly the near-quota condition
 the salvage code exists to survive, and a reader whose storage is too full to hold one copy is the
@@ -4542,21 +4548,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6811-6813` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6865-6867` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:192-194`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6830-6834`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6884-6888`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6645-6647` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6699-6701` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4764,9 +4770,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1373-1382` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:182-186` and
-`PRODUCT_BACKLOG.md:192-194` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:1378-1387` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:187-191` and
+`PRODUCT_BACKLOG.md:197-199` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -6101,7 +6107,7 @@ the button stayed on screen, and `undoRestore()` answered `ok` and put the erase
 was not only an offer that outlived its promise. It was a second copy of the data, undeleted, after a
 dialog saying this browser has nothing left.
 
-The withdrawal lives in `src/js/storage.js:557-577` rather than at the button, so the order it
+The withdrawal lives in `src/js/storage.js:557-584` rather than at the button, so the order it
 depends on is testable: the snapshot goes only once `update()` reports the erase actually landed,
 because a refused write leaves the tracker where it was and an undo against data that is still there
 is truthful. The removal is read back, for the same reason every other write in this module is, and
@@ -6120,12 +6126,33 @@ browser holds. So the rule the two routes now share is not "withdraw on both". I
 the route the reader took promised that the data the offer would return is gone. A test pins the
 start fresh half, so reversing that decision silently turns the suite red.
 
-Five tests, in `test/storage.test.js:1036-1137`. Each of the two lines that carry the rule was
+Eight tests, in `test/storage.test.js:1041-1194`. Each of the two lines that carry the rule was
 reverted on its own and named exactly one defender: dropping the withdrawal reddens the erase test
 alone, and dropping only its `lastUpdateOk` guard reddens the refused-write test alone. Four of the
 five fail against `origin/main`; the fifth is the start fresh guard, which passes there because that
 route was already correct, so it was proved capable of failing by adding the withdrawal to
-`startFresh()` and watching it redden. 679 tests pass, lint clean.
+`startFresh()` and watching it redden. 682 tests pass, lint clean.
+
+The review found three things and all three were fixed here rather than filed, because each is the
+same promise as the item. **The storage-key table in `docs/ARCHITECTURE.md` still said the snapshot
+key was cleared by nothing and was deliberately never removed**, which this change makes false in the
+one document whose job is to enumerate every key and who clears it. The anchor gate could not catch
+it: the row's only citation is `undoRestore()`, and every line this change adds to that module is
+below it, so nothing moved. **The staging key survived the erase holding a whole serialized
+tracker**, reachable whenever a prior restore's own cleanup removal threw, which the suite already
+pinned as possible. Nothing offers that key, so it was an undisclosed leftover rather than a live
+false offer, but the dialog says this browser has nothing left and that is the sentence it made
+wrong. `eraseAll()` now discards it, behind the same `lastUpdateOk` guard for the same reason.
+**The read-back in `forgetPreRestore()` was defended by no test**, because the test double's only
+removal fault was a throw, which the `catch` answers before the read-back line runs. Deleting the
+read-back left the suite green. A `silentRemoveKey` flag was added, the removal counterpart of the
+`silentKey` the same double already had for writes, and deleting the read-back now reddens exactly
+one test.
+
+One claim written while fixing the first of those was false and was caught by measuring it. The
+replacement paragraph asserted that erasing removes the salvage copies too. It does not:
+`salvageCopies()` answers 1 before and 1 after. The document now says so, and the question of which
+promise should win is filed as `BL-113` rather than settled inside the item that raised it.
 
 **BL-102: Send the security headers on the dev server's error responses too**
 
@@ -6451,6 +6478,33 @@ dropping symbols is licensed for an accessible name, where punctuation is ignore
 for text on screen, so a tooltip built from the reduced label would lose the issue number's "#" two
 pixels above a caption that still shows it. Evidence:
 `docs/ux-artifacts/label-in-name.json`.
+
+**BL-113: Decide whether erasing everything reaches the salvage copies**
+
+- [ ] Decide whether the erase promise covers data the app could not read
+- [ ] Hold whichever answer is chosen to a test, so it cannot be reversed in silence
+- [ ] Say on the erase dialog what it does and does not reach, if anything survives it
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by the review of `BL-101` and routed here rather than folded into it. That item made erasing
+everything clear both restore-family keys, on the rule that a route withdraws an offer when its own
+wording promises the data behind it is gone. The erase dialog says it clears everything this browser
+has stored for the tracker. Measured by salvaging an unreadable key and then erasing:
+`salvageCopies()` answers 1 before and 1 after, and `mrt.state.salvage` is still in storage.
+
+It is not the same defect and is scored below the one that raised it. A salvage copy is listed on
+Backup and settings, the same screen the erase button is on, with its own remove control, so it
+survives in plain sight rather than behind a button claiming it had gone. Nothing about it is
+undisclosed, which is what made the undo snapshot worth fixing inside `BL-101`.
+
+It is also a decision rather than a repair, which is why it is filed instead of fixed. The salvage
+family carries an explicit rule at `src/js/storage.js:260-263` that nothing in the module removes a
+copy except the reader, because no rule the app could apply would know whether the reader still wants
+data it could not read itself. Erasing wholesale would overturn that, and it is exactly the shape
+this repository has twice found the most dangerous code in a change to have: a path that destroys the
+last copy of data nobody could open. The alternative is narrowing the dialog's wording rather than
+widening what it does, and either answer needs the owner rather than a reviewer.
 
 ## Existing epics and stories
 
@@ -6935,10 +6989,10 @@ each sit one row below an item they outscore. Every one of those eight rows has 
 order is a record rather than a queue and re-sorting it would change no decision while moving ranks
 this appendix cites. It is written down instead of fixed for that reason.
 
-### Case 1: BL-026 is labelled P0 but ranks fortieth
+### Case 1: BL-026 is labelled P0 but ranks forty-first
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 40 of 88.
+- Calculated: WSJF 3.67, rank 41 of 89.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
   It is outranked by thirty-nine items, twenty-two of them sized 1, 2 or 3 whose Cost of Delay is
   lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -6960,7 +7014,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 82 of 88, below seventy-eight unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 83 of 89, below seventy-nine unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -7017,9 +7071,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 53 of 88. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 42 of 88. Mid-table.
-- BL-017, P2, rank 87 of 88. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 54 of 89. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 43 of 89. Mid-table.
+- BL-017, P2, rank 88 of 89. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

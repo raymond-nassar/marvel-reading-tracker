@@ -25,6 +25,11 @@ quote in a bug report.
   browser refuses to remove the copy, the page says so and names the button that still holds it.
   Starting fresh from the unreadable-data screen deliberately keeps its copy: that route promises
   only to replace saved data it could not read, and the undo it offers still gets your lists back.
+  A second leftover goes with it: if a past restore failed to tidy up after itself, the app could be
+  holding a spare copy of your tracker that nothing ever showed you, and erasing now clears that too.
+  One thing erasing still does not reach is a rescue copy the app took of saved data it could not
+  read. Those stay listed on the same screen with their own remove buttons, so you can see what is
+  left and clear each one yourself.
 - **Buttons now answer to the words printed on them, so voice control can reach them.** Someone
   who drives a computer by speaking says what they can see: "click add to library". A button here
   showed "+ Add to library" but was described to the software as "Add House of M to library", with

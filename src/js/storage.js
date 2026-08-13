@@ -555,9 +555,9 @@ export class Store {
   }
 
   // Erasing everything, as the reader asks for it from the data screen. Held here rather than at
-  // the button so the order is testable: the snapshot goes only once the erase has actually been
-  // written, because a refused write leaves the data where it was and the offer truthful against
-  // it.
+  // the button so the order is testable: the two leftovers go only once the erase has actually
+  // been written, because a refused write leaves the data where it was and the offer truthful
+  // against it.
   //
   // This is the one whole-state route that withdraws the snapshot, and the reason is its own
   // wording. Its dialog says it clears everything this browser has stored and that it cannot be
@@ -572,7 +572,14 @@ export class Store {
   // that refuses the removal is exactly the case the caller has to describe.
   eraseAll() {
     this.update(() => createEmptyState());
-    if (this.lastUpdateOk) this.forgetPreRestore();
+    if (this.lastUpdateOk) {
+      this.forgetPreRestore();
+      // The staging key is left behind by a restore whose own cleanup removal threw, which the
+      // suite pins as reachable, and it holds a whole serialized tracker. Nothing offers it, so it
+      // is not a false offer like the snapshot was, but the dialog says this browser has nothing
+      // left and an undisclosed copy is the thing that sentence is wrong about.
+      this.discardStaging();
+    }
     return { ok: this.lastUpdateOk, snapshotKept: this.hasPreRestoreSnapshot() };
   }
 }

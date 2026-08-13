@@ -24,6 +24,10 @@ function fakeStorage(seed = {}) {
     // are what the restore reconciliation is for.
     failReads: false,
     silentKey: null,
+    // The removal counterpart of silentKey, and the only shape that reaches the read-back in
+    // forgetPreRestore(). A removeItem that throws is caught before the read-back runs, so a
+    // removal that reports a success it did not have is what actually holds that line in place.
+    silentRemoveKey: null,
     writes: [],
     get length() { return map.size; },
     key(i) { return [...map.keys()][i] ?? null; },
@@ -44,6 +48,7 @@ function fakeStorage(seed = {}) {
     },
     removeItem(k) {
       if (this.failRemoveKey && k.startsWith(this.failRemoveKey)) throw new Error('locked');
+      if (this.silentRemoveKey && k.startsWith(this.silentRemoveKey)) return;
       map.delete(k);
     },
   };
@@ -1134,4 +1139,56 @@ test('withdrawing the snapshot reports what storage actually holds', () => {
   assert.equal(store.forgetPreRestore(), true);
   assert.equal(storage.getItem(PRERESTORE_KEY), null);
   assert.equal(store.forgetPreRestore(), true, 'and an empty slot is already withdrawn');
+});
+
+// The read-back in forgetPreRestore() is what this holds in place. A removeItem that throws is
+// caught before the read-back can run, so the only shape that reaches it is a storage reporting a
+// removal it did not perform. Without the read-back the method answers true and the caller is told
+// a copy is gone while it is still there.
+test('a removal that silently does not happen is not reported as a withdrawal', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup(), [PRERESTORE_KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+
+  storage.silentRemoveKey = PRERESTORE_KEY;
+  assert.equal(store.forgetPreRestore(), false, 'because the value is still there to read');
+  assert.notEqual(storage.getItem(PRERESTORE_KEY), null);
+  assert.equal(store.eraseAll().snapshotKept, true, 'and the caller is told, so the page can say so');
+});
+
+// The other leftover the erase promise covers. A restore whose own cleanup removal threw leaves the
+// staging key holding a whole serialized tracker, which the suite pins as reachable above. Nothing
+// in the app offers it, so it is an undisclosed copy rather than a false offer, but the dialog says
+// this browser has nothing left and that is the sentence it makes wrong.
+test('erasing everything discards the staging copy a failed restore cleanup left behind', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  storage.failRemoveKey = 'mrt.state.restore.tmp';
+  assert.equal(store.restore(replacementBackup()).ok, true);
+  storage.failRemoveKey = null;
+  assert.notEqual(storage.getItem('mrt.state.restore.tmp'), null, 'the fixture must actually strand it');
+
+  assert.equal(store.eraseAll().ok, true);
+
+  assert.equal(storage.getItem('mrt.state.restore.tmp'), null);
+  assert.deepEqual([...storage.map.keys()], [KEY], 'nothing but the empty tracker is left');
+});
+
+// Same guard as the snapshot has, for the same reason. A refused erase leaves the tracker where it
+// was, and the staging copy is the only remaining trace of the restore that produced it.
+test('an erase that could not be written keeps the staging copy too', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  storage.failRemoveKey = 'mrt.state.restore.tmp';
+  assert.equal(store.restore(replacementBackup()).ok, true);
+  storage.failRemoveKey = null;
+  const staged = storage.getItem('mrt.state.restore.tmp');
+
+  storage.failWrites = true;
+  assert.equal(store.eraseAll().ok, false);
+  storage.failWrites = false;
+
+  assert.equal(storage.getItem('mrt.state.restore.tmp'), staged, 'untouched, byte for byte');
 });
