@@ -16,6 +16,15 @@ quote in a bug report.
 
 ### Fixed
 
+- **Erasing all your data now takes the leftover restore copy with it.** The confirmation says it
+  clears everything this browser has stored and that it cannot be undone. It did not: if you had
+  restored a backup at any point, a whole second copy of your tracker stayed behind, the **Undo
+  last restore** button stayed on screen, and pressing it genuinely brought the erased lists back.
+  That copy is now removed, and only once the erase itself has been written, so a browser that
+  refuses the write leaves both your data and the working undo exactly where they were. If a
+  browser refuses to remove the copy, the page says so and names the button that still holds it.
+  Starting fresh from the unreadable-data screen deliberately keeps its copy: that route promises
+  only to replace saved data it could not read, and the undo it offers still gets your lists back.
 - **Buttons now answer to the words printed on them, so voice control can reach them.** Someone
   who drives a computer by speaking says what they can see: "click add to library". A button here
   showed "+ Add to library" but was described to the software as "Add House of M to library", with

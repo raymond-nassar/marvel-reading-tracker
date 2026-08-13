@@ -54,8 +54,8 @@
     "fp": "b70cf478e0e33507",
     "head": "function announceIfSaved(msg) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3343-3363|0": {
-    "anchor": "src/js/main.js:3343-3363",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3352-3372|0": {
+    "anchor": "src/js/main.js:3352-3372",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -274,8 +274,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:6638|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6638",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:6671|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6671",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -499,8 +499,8 @@
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:3343-3363|0": {
-    "anchor": "src/js/main.js:3343-3363",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:3352-3372|0": {
+    "anchor": "src/js/main.js:3352-3372",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -639,8 +639,8 @@
     "fp": "e1d8813ef23057fd",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:3343-3363|0": {
-    "anchor": "src/js/main.js:3343-3363",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:3352-3372|0": {
+    "anchor": "src/js/main.js:3352-3372",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -744,8 +744,8 @@
     "fp": "7aa18c32ba31e0a8",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:3343-3363|0": {
-    "anchor": "src/js/main.js:3343-3363",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:3352-3372|0": {
+    "anchor": "src/js/main.js:3352-3372",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -864,8 +864,8 @@
     "fp": "295f2fa9e46efe7a",
     "head": "# `--ignore-scripts` because a manifest is contributor-editable: an install"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1364-1373|0": {
-    "anchor": "CHANGELOG.md:1364-1373",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1373-1382|0": {
+    "anchor": "CHANGELOG.md:1373-1382",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -906,17 +906,17 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:182-186|0": {
     "anchor": "PRODUCT_BACKLOG.md:182-186",
-    "fp": "11c5575cfc269760",
+    "fp": "48571b240b0503e4",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:192-194|0": {
     "anchor": "PRODUCT_BACKLOG.md:192-194",
-    "fp": "61088fc7632737eb",
+    "fp": "a4ee4c2f10be9dea",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:192-194|1": {
     "anchor": "PRODUCT_BACKLOG.md:192-194",
-    "fp": "61088fc7632737eb",
+    "fp": "a4ee4c2f10be9dea",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2713-2716|0": {
@@ -924,18 +924,18 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6612-6614|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6612-6614",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6645-6647|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6645-6647",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6778-6780|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6778-6780",
-    "fp": "9185228ac2639eab",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6811-6813|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6811-6813",
+    "fp": "8846a147db7a42bd",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6797-6801|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6797-6801",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6830-6834|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6830-6834",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -1914,28 +1914,33 @@
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3112-3125|0": {
-    "anchor": "src/js/main.js:3112-3125",
-    "fp": "a35da2b617934cea",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3112-3134|0": {
+    "anchor": "src/js/main.js:3112-3134",
+    "fp": "e44471191b3654e7",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3282-3330|0": {
-    "anchor": "src/js/main.js:3282-3330",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3119-3133|0": {
+    "anchor": "src/js/main.js:3119-3133",
+    "fp": "0564b73c45379041",
+    "head": "const { snapshotKept } = store.eraseAll();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3291-3339|0": {
+    "anchor": "src/js/main.js:3291-3339",
     "fp": "a2c2ec214f45e640",
     "head": "$('#cache-usage').textContent = u.count"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3343|0": {
-    "anchor": "src/js/main.js:3343",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3352|0": {
+    "anchor": "src/js/main.js:3352",
     "fp": "badb42e555d676d1",
     "head": "function renderAll() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3376|0": {
-    "anchor": "src/js/main.js:3376",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3385|0": {
+    "anchor": "src/js/main.js:3385",
     "fp": "ae8c800634b48bfe",
     "head": "export function boot() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3421-3425|0": {
-    "anchor": "src/js/main.js:3421-3425",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3430-3434|0": {
+    "anchor": "src/js/main.js:3430-3434",
     "fp": "5bf111284df2b094",
     "head": "// Nothing reports store.lastError here. Every writer of it calls onChange in the same step, and"
   },
@@ -2063,6 +2068,11 @@
     "anchor": "src/js/storage.js:40",
     "fp": "5c5b72f805fd282e",
     "head": "this.state = raw ? migrate(JSON.parse(raw)) : createEmptyState();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:557-577|0": {
+    "anchor": "src/js/storage.js:557-577",
+    "fp": "1dbb34aa1b626938",
+    "head": "// Erasing everything, as the reader asks for it from the data screen. Held here rather than at"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:9-12|0": {
     "anchor": "src/js/storage.js:9-12",
@@ -2254,6 +2264,11 @@
     "fp": "39a38dfa1bd1a54f",
     "head": "test('no en or em dash reaches the screen through markup or styling', () => {"
   },
+  "PRODUCT_BACKLOG.md|item-details|test/storage.test.js:1036-1137|0": {
+    "anchor": "test/storage.test.js:1036-1137",
+    "fp": "a57a49d08f09f5b6",
+    "head": "// ------------------------------------------------ erasing everything, and the offer that outlived "
+  },
   "PRODUCT_BACKLOG.md|item-details|test/storage.test.js:164-190|0": {
     "anchor": "test/storage.test.js:164-190",
     "fp": "220bf1eb3736428e",
@@ -2269,8 +2284,8 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:3343-3363|0": {
-    "anchor": "src/js/main.js:3343-3363",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:3352-3372|0": {
+    "anchor": "src/js/main.js:3352-3372",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -2594,8 +2609,8 @@
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:3320-3322|0": {
-    "anchor": "src/js/main.js:3320-3322",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:3329-3331|0": {
+    "anchor": "src/js/main.js:3329-3331",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
@@ -2659,8 +2674,8 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:3343-3357|0": {
-    "anchor": "src/js/main.js:3343-3357",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:3352-3366|0": {
+    "anchor": "src/js/main.js:3352-3366",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -2689,8 +2704,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:3343-3357|0": {
-    "anchor": "src/js/main.js:3343-3357",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:3352-3366|0": {
+    "anchor": "src/js/main.js:3352-3366",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -2741,7 +2756,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:182-194|0": {
     "anchor": "PRODUCT_BACKLOG.md:182-194",
-    "fp": "7ec6a13cfd68c507",
+    "fp": "9c1345f50953b145",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
@@ -2879,8 +2894,8 @@
     "fp": "91ecdec9e58cc941",
     "head": "updates:"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3282-3330|0": {
-    "anchor": "src/js/main.js:3282-3330",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3291-3339|0": {
+    "anchor": "src/js/main.js:3291-3339",
     "fp": "a2c2ec214f45e640",
     "head": "$('#cache-usage').textContent = u.count"
   },
@@ -2924,9 +2939,9 @@
     "fp": "b40fb8cc4678105d",
     "head": "// Roots whose contents are working evidence for one session rather than product documentation."
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:3112-3125|0": {
-    "anchor": "src/js/main.js:3112-3125",
-    "fp": "a35da2b617934cea",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:3112-3134|0": {
+    "anchor": "src/js/main.js:3112-3134",
+    "fp": "e44471191b3654e7",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-102|server.mjs:86-96|0": {

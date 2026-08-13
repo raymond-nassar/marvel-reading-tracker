@@ -7,7 +7,7 @@
 import {
   createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
-  setOverride, pendingIssueIds, createEmptyState, coverUrl, listForCatalogId, SCHEMA_VERSION,
+  setOverride, pendingIssueIds, coverUrl, listForCatalogId, SCHEMA_VERSION,
   setIssueNote, setListNote,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
@@ -3116,12 +3116,21 @@ function wireData() {
       confirmLabel: 'Erase everything',
     });
     if (!yes) return;
-    store.update(() => createEmptyState());
+    const { snapshotKept } = store.eraseAll();
     cache.clear();
     // The undo buffer points at a list from the data that has just been erased, so putting it
     // back would resurrect one list out of a tracker the reader asked to be emptied.
     forgetDeleted();
-    announceIfSaved('All local data erased.');
+    // The button's visibility belongs to renderBlocked(), and the withdrawal happens after the
+    // repaint the erase itself triggered, so the question is put again here rather than left to
+    // whatever unrelated render comes next.
+    renderBlocked();
+    // Said only when it is true. A storage that refuses the removal leaves a whole copy of the
+    // tracker behind a live button, after a dialog that promised nothing would survive, and the
+    // reader can act on that only if they are told which button it is.
+    announceIfSaved(snapshotKept
+      ? 'Lists and reading progress erased. One copy could not be removed and is still in this browser, behind "Undo last restore".'
+      : 'All local data erased.');
   });
 }
 

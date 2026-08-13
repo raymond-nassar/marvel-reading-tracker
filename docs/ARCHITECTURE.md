@@ -164,7 +164,7 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3343-3363`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3352-3372`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
@@ -308,7 +308,7 @@ it.
 
 ## What a per-view split does to these diagrams
 
-BL-042 proposes breaking the 3,449 line view file into per-view modules. A diagram drawn at the
+BL-042 proposes breaking the 3,458 line view file into per-view modules. A diagram drawn at the
 level of function names inside that file would be falsified the day it lands, so each of the three
 above was pitched to survive it. Two do. One survives in shape but has a detail that will need
 rewriting, and it is more useful to say which than to claim all three are safe.

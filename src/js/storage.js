@@ -540,4 +540,39 @@ export class Store {
       return false;
     }
   }
+
+  // Withdraws the undo-restore offer by removing the copy behind it. Read back for the same
+  // reason every other write in this module is: removeItem can be a no-op behind a storage that
+  // reports a success it did not have, and the screen asks immediately afterwards whether the
+  // offer should still be on show.
+  forgetPreRestore() {
+    try {
+      this.storage?.removeItem(PRERESTORE_KEY);
+      return (this.storage?.getItem(PRERESTORE_KEY) ?? null) === null;
+    } catch {
+      return false;
+    }
+  }
+
+  // Erasing everything, as the reader asks for it from the data screen. Held here rather than at
+  // the button so the order is testable: the snapshot goes only once the erase has actually been
+  // written, because a refused write leaves the data where it was and the offer truthful against
+  // it.
+  //
+  // This is the one whole-state route that withdraws the snapshot, and the reason is its own
+  // wording. Its dialog says it clears everything this browser has stored and that it cannot be
+  // undone, and the snapshot is not merely a button: it is a whole second copy of the tracker,
+  // which outlived that promise and answered an undo with ok. startFresh() deliberately does not
+  // withdraw. That route replaces the unreadable main key and promises nothing wider, the
+  // snapshot is a different key that is still readable, and measured against a corrupt main key
+  // the undo it offers hands the reader's lists back intact. Withdrawing there would be a
+  // recovery path destroying the last recovery left.
+  //
+  // snapshotKept is asked of storage rather than inferred from the removal, because a storage
+  // that refuses the removal is exactly the case the caller has to describe.
+  eraseAll() {
+    this.update(() => createEmptyState());
+    if (this.lastUpdateOk) this.forgetPreRestore();
+    return { ok: this.lastUpdateOk, snapshotKept: this.hasPreRestoreSnapshot() };
+  }
 }

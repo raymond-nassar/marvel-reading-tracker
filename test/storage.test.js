@@ -1032,3 +1032,106 @@ test('a snapshot slot that would not be read is neither deleted nor announced as
   assert.equal(undo.ok, false, 'and a snapshot of the live data is refused, not announced as undone');
   assert.match(undo.errors.join(' '), /nothing to undo/);
 });
+
+// ------------------------------------------------ erasing everything, and the offer that outlived it
+
+// The defect BL-101 records. The erase dialog says it clears everything this browser has stored
+// and that it cannot be undone, and the pre-restore snapshot is written by restore() alone, so
+// nothing on the erase route ever touched it. Measured against the shipped store before the fix:
+// the slot still held the whole tracker, hasPreRestoreSnapshot() was true so the button was on
+// screen, and undoRestore() answered ok true and put the erased lists back.
+test('erasing everything takes the undo-restore snapshot with it', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.restore(replacementBackup()).ok, true);
+  assert.equal(store.hasPreRestoreSnapshot(), true, 'the fixture must actually create a snapshot');
+
+  const res = store.eraseAll();
+
+  assert.equal(res.ok, true);
+  assert.equal(res.snapshotKept, false);
+  assert.equal(store.hasPreRestoreSnapshot(), false, 'which is the question the screen asks');
+  assert.equal(storage.getItem(PRERESTORE_KEY), null, 'and the copy itself is gone, not just the offer');
+  assert.equal(store.undoRestore().ok, false, 'so the promise is not contradicted by a working undo');
+  assert.equal(JSON.parse(storage.getItem(KEY)).listOrder.length, 0);
+});
+
+// The order is the whole point. A refused write leaves the tracker exactly where it was, and an
+// undo offered against data that is still there is truthful, so withdrawing it would destroy a
+// copy on behalf of an erase that never happened.
+test('an erase that could not be written keeps the snapshot it did not earn', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.restore(replacementBackup()).ok, true);
+  const snapshot = storage.getItem(PRERESTORE_KEY);
+
+  storage.failWrites = true;
+  const res = store.eraseAll();
+  storage.failWrites = false;
+
+  assert.equal(res.ok, false);
+  assert.equal(res.snapshotKept, true);
+  assert.equal(storage.getItem(PRERESTORE_KEY), snapshot, 'untouched, byte for byte');
+  assert.equal(store.undoRestore().ok, true, 'and the offer still does what it says');
+});
+
+// Reported rather than assumed, because the caller has to describe this case and cannot see it.
+// A storage that accepts removeItem and keeps the value leaves a whole copy of the tracker behind
+// a live button after a dialog promising nothing would survive.
+test('an erase whose withdrawal does not land says the snapshot is still held', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.restore(replacementBackup()).ok, true);
+
+  storage.failRemoveKey = PRERESTORE_KEY;
+  const res = store.eraseAll();
+  storage.failRemoveKey = null;
+
+  assert.equal(res.ok, true, 'the erase itself landed');
+  assert.equal(res.snapshotKept, true, 'and the caller is told the copy did not go');
+  assert.equal(store.hasPreRestoreSnapshot(), true);
+});
+
+// The decision BL-101 asks for, held as behaviour rather than as prose. Start fresh is the other
+// route that replaces the whole state, and it must not withdraw: its dialog promises to replace
+// the unreadable saved data and nothing wider, the snapshot is a different key that is still
+// readable, and the undo it leaves standing hands the reader their lists back.
+test('starting fresh keeps the snapshot, because the undo it offers still recovers data', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const first = new Store({ storage });
+  first.load();
+  assert.equal(first.restore(replacementBackup()).ok, true);
+
+  storage.setItem(KEY, '{ not json');
+  const second = new Store({ storage });
+  second.load();
+  assert.equal(second.blocked, true, 'the fixture must actually reach the blocked state');
+  assert.equal(second.startFresh(), true);
+
+  assert.equal(second.hasPreRestoreSnapshot(), true);
+  const undone = second.undoRestore();
+  assert.equal(undone.ok, true);
+  const back = JSON.parse(storage.getItem(KEY));
+  assert.equal(back.listOrder.length, 1);
+  assert.equal(Object.values(back.lists)[0].name, 'Hickman', 'the tracker from before the restore');
+});
+
+// Read back for the same reason every other write in this module is. A storage that reports a
+// removal it did not perform must not be believed, because the answer decides whether an offer
+// the reader has just been told is gone stays on screen.
+test('withdrawing the snapshot reports what storage actually holds', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup(), [PRERESTORE_KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+
+  storage.failRemoveKey = PRERESTORE_KEY;
+  assert.equal(store.forgetPreRestore(), false, 'a removal that threw is not a withdrawal');
+  storage.failRemoveKey = null;
+
+  assert.equal(store.forgetPreRestore(), true);
+  assert.equal(storage.getItem(PRERESTORE_KEY), null);
+  assert.equal(store.forgetPreRestore(), true, 'and an empty slot is already withdrawn');
+});
