@@ -4548,7 +4548,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6884-6886` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6896-6898` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4558,11 +4558,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6903-6907`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6915-6919`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6718-6720` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6730-6732` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -6159,17 +6159,29 @@ where the erase actually lands, `salvageCopies()` answers 1 both before and afte
 says so, and the question of which promise should win is filed as `BL-113` rather than settled inside
 the item that raised it.
 
-A second round found that those fixes had made four more claims false, every one of them in prose
+A second round found that those fixes had made five more claims false, every one of them in prose
 rather than in code. Two were in the very rows the first round had rewritten. **The staging row said
 the erase was the only thing that clears a copy a throw had stranded**, when any later restore clears
 one at `src/js/storage.js:387`. **The snapshot row said nothing but the erase removes it**, when
-`rewindSnapshot()` empties the slot after a failed restore and two tests that predate this change
-pass because it does. That is the round-one defect arriving inside its own fix: a table denying a
-removal the module performs. The other two were counts. The paragraph above still described a
-five-test matrix with one defender each, when the staging fix had given two of the mutants a second
-defender, and filing `BL-113` shifted figures in Appendix B that `npm run counts` does not read,
-the table size stated in prose and how many items outrank `BL-026`. Every figure in this block was
-re-derived by running the reverts again rather than by reasoning about them.
+`rewindSnapshot()` also empties that slot after a failed restore that has no earlier snapshot to put
+back, which two tests predating this change already pinned. That is the round-one defect arriving
+inside its own fix: a table denying a removal the module performs. A third was the paragraph under
+the table, which still said the erase appeared in two rows after the same fix had put it in three.
+The last two were counts. The paragraph above still described a five-test matrix with one defender
+each, when the staging fix had given two of the mutants a second defender, and filing `BL-113`
+shifted figures in Appendix B that `npm run counts` does not read, the table size stated in prose
+and how many items outrank `BL-026`. Every figure in this block was re-derived by running the
+reverts again rather than by reasoning about them.
+
+A third round found the same cell wrong a third time, which is the finding worth keeping. The
+replacement said a failed restore empties the snapshot slot. It does so only when there is no
+earlier snapshot to put back or the browser refuses to put it back; with an earlier snapshot and a
+repair that lands, `rewindSnapshot()` returns early and the undo survives, which a test older than
+this branch already pins. The cell now names the branch rather than summarising it, because three
+summaries of it have now been wrong. The same round corrected the changelog note written in the
+second: it recorded two shipped documentation defects when only one had shipped, the other being a
+clause this branch introduced and removed without ever merging it, which is a repair of its own
+damage rather than news.
 
 **BL-102: Send the security headers on the dev server's error responses too**
 

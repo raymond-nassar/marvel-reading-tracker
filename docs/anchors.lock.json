@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:6744|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6744",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:6756|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6756",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -929,18 +929,18 @@
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6718-6720|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6718-6720",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6730-6732|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6730-6732",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6884-6886|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6884-6886",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6896-6898|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6896-6898",
     "fp": "8846a147db7a42bd",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6903-6907|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6903-6907",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:6915-6919|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6915-6919",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
