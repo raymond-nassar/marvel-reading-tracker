@@ -45,8 +45,30 @@ export function createEmptyState() {
   };
 }
 
+// A per-load start, then counting up, rather than six fresh random characters each time.
+//
+// The stamp only separates ids minted in different milliseconds, so everything minted inside one
+// millisecond used to be told apart by 36^6 of randomness alone. That was safe while the only bulk
+// mint was too slow to fill a millisecond. It is not any more: restoring a version 1 backup at the
+// 250,000-list ceiling now mints all of them in about 130 milliseconds, roughly 2,000 to a stamp,
+// which is a birthday draw over 244 million same-stamp pairs. It loses. Measured on this tree, 4 of
+// 60 restores at the ceiling collided, each one silently dropping a list, because a repeated id
+// overwrites lists[id] while listOrder keeps both entries and the map ends one short of the order.
+//
+// Counting up cannot repeat until 36^6 ids have been minted in a single load, which nothing here
+// approaches. The random start is what keeps two loads landing in the same millisecond as unlikely
+// to meet as they were before.
+//
+// padStart holds the suffix at six characters so the ids stay the length the stored payload was
+// measured at. It is deliberately not asserted anywhere: the counter starts at a random point in
+// the space, so a load reaches a short number only by starting within 36^5 of zero, and a test of
+// it would pass for the other thirty-five thirty-sixths of runs whatever the code did.
+const ID_SPACE = 36 ** 6;
+let idCounter = Math.floor(Math.random() * ID_SPACE);
+
 export function newId(prefix = 'list') {
-  return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+  idCounter = (idCounter + 1) % ID_SPACE;
+  return `${prefix}-${Date.now().toString(36)}-${idCounter.toString(36).padStart(6, '0')}`;
 }
 
 // ---------------------------------------------------------------- issues

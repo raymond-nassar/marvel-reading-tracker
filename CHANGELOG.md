@@ -1433,6 +1433,18 @@ link to the wrong page.
   also stand down entirely while a dialog is open, so pressing D behind the "Delete list?" prompt no
   longer quietly marks an issue read underneath it.
 
+- **Restoring a backup with a great many reading lists no longer loses one of them.** Every list
+  gets an identifier made from the current time and six random characters. That was safe while
+  restoring was slow, because no two lists were ever made in the same instant. Making the restore
+  fast, which is the other half of this release, put about two thousand of them into every
+  thousandth of a second, and two lists occasionally drew the same six characters. When that
+  happened one list quietly replaced the other and the reader was simply short a list, with nothing
+  on screen to say so. Measured over sixty restores of a file holding the largest number of lists
+  the app accepts, four lost a list. Identifiers now count upwards from a random starting point
+  instead of being drawn fresh each time, so two can no longer coincide, and the same sixty restores
+  lose nothing. Restoring is also slightly faster than before, since counting is cheaper than
+  drawing. Nothing you have already saved is affected, and no identifier already stored changes.
+
 - **The audited figures in `PRODUCT_BACKLOG.md` no longer go stale in silence.** The
   reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests.
   Both were true when audited and neither is true now. The line count had no drift clause at all,

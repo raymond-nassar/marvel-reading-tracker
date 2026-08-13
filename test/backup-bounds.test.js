@@ -340,9 +340,12 @@ test('a version 1 backup at the list ceiling restores, rather than crawling thro
   const v = validateBackup(backup);
   assert.equal(v.ok, true, v.errors?.join(' '));
   assert.equal(v.state.listOrder.length, MAX_LISTS);
-  // Not a restatement of the line above. Each list is given a generated id, and this route was
-  // previously too slow to mint 250,000 of them, so two colliding would silently drop a list from
-  // the map while leaving the order the right length. Measured at this ceiling: none collide.
+  // Not a restatement of the line above. Each list is given a generated id, and a repeated id
+  // silently drops a list from the map while leaving the order the right length. This was written
+  // first as "measured at this ceiling: none collide", on one clean run. It was 97 per cent true:
+  // the mint was random per id and the fixed route is fast enough to put 2,000 of them in one
+  // millisecond stamp, so 4 of 60 runs lost a list. newId counts up now, so this is an invariant
+  // rather than a good draw, and the assertion is what holds it to that.
   assert.equal(Object.keys(v.state.lists).length, MAX_LISTS, 'two lists were given the same id');
   assert.ok(Date.now() - started < 20000, 'the quadratic form took 16.8 seconds on a fiftieth of this');
 });

@@ -9,6 +9,7 @@ import {
   setOverride, upNext, listProgress, seriesProgress, listItems, pendingIssueIds,
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
   normalizeCover, coverUrl, listForCatalogId, listCollections, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
+  newId,
 } from '../src/js/lib/model.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -849,4 +850,29 @@ test('no rebuild site spreads the list map back into an ordinary object', () => 
     }
   }
   assert.deepEqual(offenders, [], 'the list map is spread into an object literal, which drops its null prototype');
+});
+
+// The clock is frozen because the stamp is the part of an id that does not need testing. What was
+// wrong was the other part: everything minted inside one millisecond was told apart by six random
+// base-36 characters alone, and once the version 1 restore path was made linear it began minting
+// about 2,000 ids per stamp. Freezing the clock puts every id in this test into one stamp, which is
+// the worst case of exactly the claim, and it makes the check deterministic rather than a draw.
+//
+// The size is chosen so the check can actually fail. Under the random form 300,000 ids in one stamp
+// give 4.5e10 pairs against 36^6, so about 20.7 collisions are expected and a clean run has a
+// probability around 1e-9. Under the counting form a repeat is impossible below 36^6 ids. Watched
+// failing with the random form restored: 299,979 of 300,000 were distinct, 21 collisions against
+// the 20.7 the arithmetic predicts.
+test('ids minted in bulk within one millisecond are all distinct', () => {
+  const realNow = Date.now;
+  Date.now = () => 1755000000000;
+  try {
+    const seen = new Set();
+    for (let i = 0; i < 300000; i += 1) seen.add(newId());
+    // The count rather than the ids, so a failure prints two numbers instead of building a diff of
+    // 300,000 strings, which is how the listOrder assertion in backup-bounds took its own file down.
+    assert.equal(seen.size, 300000, 'two ids minted in the same millisecond were identical');
+  } finally {
+    Date.now = realNow;
+  }
 });
