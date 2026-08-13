@@ -1810,11 +1810,11 @@ function renderShelf() {
       paintCover(img, fb, it, 'portrait_incredible');
 
       // The tile prints the title with its year stripped out and then prints the year separately,
-      // so a name built from the unshortened title splices "(2005)" back into the middle of the
-      // words the tile shows. One binding for the painted run keeps the name and the tile together.
+      // so a name built from the unshortened title splices "(2005)" back into the middle. The year
+      // is absent for 34 of the Ultimate order's 138 issues, so it joins rather than interpolates.
       const short = shortTitle(it.title);
       const year = ymd(it.onSale).slice(0, 4);
-      const label = `${short} ${year}`;
+      const label = [short, year].filter(Boolean).join(' ');
       const context = 'Open in Marvel Unlimited';
       // The tooltip is painted text, so it carries the label exactly as the caption prints it.
       // Only the accessible name goes through labelWords, and its symbol stripping is licensed
