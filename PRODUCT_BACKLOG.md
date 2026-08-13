@@ -4548,7 +4548,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:6896-6898` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:6906-6908` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4558,11 +4558,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6915-6919`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:6925-6929`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6730-6732` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:6740-6742` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4770,7 +4770,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1385-1394` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1384-1393` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:187-191` and
 `PRODUCT_BACKLOG.md:197-199` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6182,6 +6182,16 @@ summaries of it have now been wrong. The same round corrected the changelog note
 second: it recorded two shipped documentation defects when only one had shipped, the other being a
 clause this branch introduced and removed without ever merging it, which is a repair of its own
 damage rather than news.
+
+A fourth round found the naming was still a summary. `rewindSnapshot()` takes four routes rather
+than three, and the one the count left out is the one that contradicts the sentence beside it: when
+the slot cannot be read at all the function declines at `src/js/storage.js:496` and leaves the copy
+this restore minted a moment earlier, so an undo an earlier restore had earned is lost rather than
+survived, and `undoRestore()` then refuses because that copy matches the saved data. A test older
+than this branch pins that route too. The cell now names all four rather than counting them. The
+commit message that shipped the third round's fix carries the same wrong denominator and cannot be
+corrected after the fact, which is the argument for treating a count as something to re-derive at
+every site rather than to carry from one to the next.
 
 **BL-102: Send the security headers on the dev server's error responses too**
 

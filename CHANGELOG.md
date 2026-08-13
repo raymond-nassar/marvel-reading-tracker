@@ -32,11 +32,10 @@ quote in a bug report.
   left and clear each one yourself.
 - **A note for maintainers: the map of what the app stores was wrong about one of its own names.**
   The table listing every name the app writes to browser storage said the copy behind the undo button
-  was removed by nothing and was deliberately never removed. That was not true, and had not been true
-  for some time: when a restore fails and there is no earlier undo to put back, the app clears that
-  slot rather than leave a button offering to swap in data that is already on screen. Nothing you
-  have saved is affected. The code has always behaved this way and only the written description of it
-  was wrong.
+  was removed by nothing and was deliberately never removed. That was not true: when a restore fails
+  and there is no earlier undo to put back, the app clears that slot rather than leave a button
+  offering to swap in data that is already on screen. Nothing you have saved is affected. This change
+  does not alter that behaviour, and only the written description of it was wrong.
 - **Buttons now answer to the words printed on them, so voice control can reach them.** Someone
   who drives a computer by speaking says what they can see: "click add to library". A button here
   showed "+ Add to library" but was described to the software as "Add House of M to library", with
