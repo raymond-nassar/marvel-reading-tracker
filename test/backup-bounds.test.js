@@ -98,6 +98,11 @@ test('a listOrder repeating a non-string that names a valid list collapses too',
     listOrder: Array.from({ length: 50000 }, () => [1]),
   });
   assert.equal(v.ok, true);
+  // The length first, and on its own, because deepEqual renders both operands into its message and
+  // with the filter removed the left one is 50,000 arrays. Node built that diff until the process
+  // ran out of memory, which reports as the whole file failing rather than as this claim failing,
+  // and a suite that cannot say which claim broke is the failure this file's own proof warns about.
+  assert.equal(v.state.listOrder.length, 1, 'every copy survived, so the filter is not collapsing them');
   assert.deepEqual(v.state.listOrder, ['1'], 'what the app writes is strings, and so is what it reads back');
 });
 
@@ -312,6 +317,49 @@ test('a version 1 backup at the ceiling restores, rather than giving out on the 
   assert.equal(Object.keys(v.state.issues).length, MAX_ISSUES);
   assert.equal(v.state.lists[v.state.listOrder[0]].itemIds.length, MAX_ISSUES);
   assert.ok(Date.now() - started < 20000, 'the quadratic form took 96 seconds on this input');
+});
+
+// The fixture above carries one list and no read flag, and a version 1 backup is defined by the
+// other two: migrate's own comment says v1 stored full item objects inside each list with a per-list
+// `read` boolean. So the one shape that was pinned was the only one that missed the two copies still
+// being made per element, in createList and in markRead. Measured before this was fixed: 5,000 empty
+// lists is 0.17 of a mebibyte, two per cent of the size guard, and took 16.8 seconds, while 80,000
+// items carrying `read` took 9.3 at 3.19. Both curves quadrupled on each doubling. Fixed, they are
+// 12 and 26 milliseconds.
+//
+// Both are asserted at the count ceiling rather than at the size the old code choked on, and the
+// list shape carries no name so that 250,000 of them still fit inside the size guard, which for a
+// named list binds ten lists early, at 249,990.
+test('a version 1 backup at the list ceiling restores, rather than crawling through it', () => {
+  const lists = {};
+  for (let i = 0; i < MAX_LISTS; i += 1) lists[`l${i}`] = { items: [] };
+  const backup = { schemaVersion: 1, lists };
+  assert.ok(JSON.stringify(backup).length <= MAX_BACKUP_BYTES,
+    'a fixture the size guard would refuse proves nothing about the counts behind it');
+  const started = Date.now();
+  const v = validateBackup(backup);
+  assert.equal(v.ok, true, v.errors?.join(' '));
+  assert.equal(v.state.listOrder.length, MAX_LISTS);
+  // Not a restatement of the line above. Each list is given a generated id, and this route was
+  // previously too slow to mint 250,000 of them, so two colliding would silently drop a list from
+  // the map while leaving the order the right length. Measured at this ceiling: none collide.
+  assert.equal(Object.keys(v.state.lists).length, MAX_LISTS, 'two lists were given the same id');
+  assert.ok(Date.now() - started < 20000, 'the quadratic form took 16.8 seconds on a fiftieth of this');
+});
+
+test('a version 1 backup whose items carry the read flag restores at the ceiling too', () => {
+  const items = [];
+  for (let i = 1; i <= MAX_ISSUES; i += 1) items.push({ issueId: i, read: 1 });
+  const backup = { schemaVersion: 1, lists: { a: { name: 'L', items } } };
+  assert.ok(JSON.stringify(backup).length <= MAX_BACKUP_BYTES,
+    'a fixture the size guard would refuse proves nothing about the counts behind it');
+  const started = Date.now();
+  const v = validateBackup(backup);
+  assert.equal(v.ok, true, v.errors?.join(' '));
+  assert.equal(Object.keys(v.state.issues).length, MAX_ISSUES);
+  // The read map is the one the old code copied per marker, so its size is what this test is about.
+  assert.equal(Object.keys(v.state.read).length, MAX_ISSUES);
+  assert.ok(Date.now() - started < 20000, 'the quadratic form took 9.3 seconds on a third of this');
 });
 
 // Stated as arithmetic because this is the clause the ceiling has to satisfy, and the first draft

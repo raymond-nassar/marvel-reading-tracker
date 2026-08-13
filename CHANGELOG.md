@@ -55,6 +55,15 @@ recopied the whole collection, so the work again grew with the square of the cou
 250,000 issues took 96 seconds and then gave up with an error no reader could act on. It now takes a
 tenth of a second and finishes.
 
+The same was true twice more in the same step, for the two things one of those old backups is mostly
+made of, and the first attempt at the paragraph above did not cover them. Every reading order added
+recopied all the orders already added, and every issue marked as read recopied every issue marked as
+read so far. Both grew with the square of the count again, and the orders were much the worse of the
+two: a file of 5,000 empty orders is a sixth of a mebibyte, small enough that nothing about it looks
+demanding, and it froze the tab for nearly 17 seconds. A file with 80,000 issues marked as read took
+over 9. Restoring either now takes a few hundredths of a second, and the largest files these limits
+allow finish in well under a second.
+
 An over-long issue link or cover URL is dropped rather than shortened, because a shortened link is a
 link to the wrong page.
 

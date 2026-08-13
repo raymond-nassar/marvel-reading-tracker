@@ -655,22 +655,72 @@ export function migrate(raw) {
   if (version < 2) {
     // v1 stored full item objects inside each list, with a per-list `read` boolean.
     // Collapse to global read state; if an issue was read anywhere, it is read.
-    let next = createEmptyState();
-    const lists = Array.isArray(raw.lists) ? raw.lists : Object.values(raw.lists ?? {});
-    for (const oldList of lists) {
+    //
+    // Built into accumulators and assembled once, the way coerce() does on the other branch, rather
+    // than threading an immutable state through createList, addIssuesToList and markRead one element
+    // at a time. Each of those copies a whole map per call, so this loop was quadratic three times
+    // over and the ceilings admit 250,000 of either shape. Only the copy inside addIssuesToList was
+    // measured and removed before, and the fixture written to prove it carried one list and no
+    // `read` flag, which is the field the sentence above says defines the format, so it was the one
+    // shape that missed both of the others. Measured on this tree: 5,000 empty lists is 0.17 of a
+    // mebibyte, two per cent of the size guard, and took 16.8 seconds, and 80,000 items carrying
+    // `read` took 9.3 seconds at 3.19. Both are linear now.
+    const issues = {};
+    const read = {};
+    const lists = emptyLists();
+    const listOrder = [];
+    let active = null;
+    const carriers = Array.isArray(raw.lists) ? raw.lists : Object.values(raw.lists ?? {});
+    for (const oldList of carriers) {
       const items = Array.isArray(oldList?.items) ? oldList.items : [];
-      next = createList(next, {
-        name: oldList?.name ?? 'Imported list',
-        description: oldList?.description ?? '',
-      });
-      const listId = next.listOrder[next.listOrder.length - 1];
-      const res = addIssuesToList(next, listId, items);
-      next = res.state;
-      for (const it of items) {
-        if (it?.read) next = markRead(next, it.issueId ?? it.id, true, it.readAt ?? Date.now());
+      const listId = newId();
+      const itemIds = [];
+      const held = new Set();
+      // Read from the input rather than from the stored issue, and last one wins, because that is
+      // what the Map this replaces did: it was written per input and read once per kept id.
+      const editions = new Map();
+      for (const input of items) {
+        const issue = normalizeIssue(input);
+        if (issue) {
+          const prev = issues[issue.issueId];
+          issues[issue.issueId] = prev
+            ? { ...prev, ...stripNulls(issue), hydrated: issue.hydrated || prev.hydrated }
+            : issue;
+          if (!held.has(issue.issueId)) {
+            held.add(issue.issueId);
+            itemIds.push(issue.issueId);
+          }
+          if (typeof input?.collectedIn === 'string' && input.collectedIn.trim()) {
+            editions.set(issue.issueId, input.collectedIn.trim().slice(0, MAX_COLLECTION));
+          }
+        }
+        // Asked of every item, not only of the ones that became issues, because markRead was called
+        // the same way: it takes any integer, so a v1 file marking id 0 read still lands in the map
+        // even though normalizeIssue refuses that id. Kept rather than tidied, because coerce accepts
+        // the same key on the other branch and the two branches must not disagree about a stored file.
+        if (!input?.read) continue;
+        const id = Number(input.issueId ?? input.id);
+        if (Number.isInteger(id)) read[id] = Number(input.readAt ?? Date.now()) || Date.now();
       }
+      const collectedIn = {};
+      for (const id of itemIds) {
+        const name = editions.get(id);
+        if (name) collectedIn[id] = name;
+      }
+      lists[listId] = {
+        id: listId,
+        name: String((oldList?.name ?? 'Imported list') || 'Untitled list').slice(0, MAX_NAME),
+        description: String((oldList?.description ?? '') || '').slice(0, MAX_DESCRIPTION),
+        note: normalizeNote(''),
+        created: Date.now(),
+        catalogId: null,
+        itemIds,
+        collectedIn,
+      };
+      listOrder.push(listId);
+      active ??= listId;
     }
-    return next;
+    return { ...createEmptyState(), issues, read, lists, listOrder, active };
   }
 
   // Newer than we understand: refuse rather than silently mangling it.
