@@ -37,6 +37,15 @@ They keep their issues inside their lists rather than in a list of their own, an
 meant they were not counted at all: a 1.5 MiB file of that shape passed every check and built 50,000
 issues.
 
+That ceiling reached further than it was measured for. It also counted your read markers, your
+availability overrides and your notes, and those are far smaller than an issue, so browser storage
+holds several times more of them than the ceiling allowed. A reader who had annotated more than
+250,000 issues would have been told their own saved data was too large to give back: the app would
+save it happily, and then refuse it when they pressed **Undo last restore**. Those three now have a
+ceiling of their own, set above what a browser can hold, so the app can never refuse you a copy of
+your own tracker. Nothing you have saved is affected, and no ordinary tracker comes near either
+number.
+
 A backup naming the same list over and over in its running order used to be carried through entry by
 entry. 300,000 repetitions of a single list fitted comfortably inside every other limit, survived a
 reload, and made the app add 300,000 tabs to the rail on every update. Repeats are collapsed now,

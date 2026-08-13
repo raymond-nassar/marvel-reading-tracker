@@ -3,8 +3,10 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   validateBackup, normalizeIssue, normalizeCover, exportBackup,
-  MAX_NAME, MAX_DESCRIPTION, MAX_URL, MAX_ISSUES, MAX_LISTS, MAX_BACKUP_BYTES,
+  MAX_NAME, MAX_DESCRIPTION, MAX_URL, MAX_ISSUES, MAX_LISTS, MAX_MARKERS, MAX_BACKUP_BYTES,
 } from '../src/js/lib/model.js';
+import { createEmptyState, createList } from '../src/js/lib/model.js';
+import { Store } from '../src/js/storage.js';
 import { describeSize, backupFileRefusal } from '../src/js/main.js';
 
 // A backup is the one input to this app that a person can hand-edit, and until these caps existed
@@ -342,10 +344,11 @@ test('a version 1 backup at the list ceiling restores, rather than crawling thro
   assert.equal(v.state.listOrder.length, MAX_LISTS);
   // Not a restatement of the line above. Each list is given a generated id, and a repeated id
   // silently drops a list from the map while leaving the order the right length. This was written
-  // first as "measured at this ceiling: none collide", on one clean run. It was 97 per cent true:
-  // the mint was random per id and the fixed route is fast enough to put 2,000 of them in one
-  // millisecond stamp, so 4 of 60 runs lost a list. newId counts up now, so this is an invariant
-  // rather than a good draw, and the assertion is what holds it to that.
+  // first as "measured at this ceiling: none collide", on one clean run. It was 96 per cent true:
+  // the mint was random per id and the fixed route is fast enough to put about 610 of them in each
+  // millisecond stamp, which is 78 million same-stamp pairs against 36^6, so 4 of 60 runs lost a
+  // list. newId counts up now, so this is an invariant rather than a good draw, and the assertion
+  // is what holds it to that.
   assert.equal(Object.keys(v.state.lists).length, MAX_LISTS, 'two lists were given the same id');
   assert.ok(Date.now() - started < 20000, 'the quadratic form took 16.8 seconds on a fiftieth of this');
 });
@@ -390,11 +393,77 @@ test('the count ceiling sits above what the most generous origin could hold', ()
     assert.equal(Object.keys(v.state.lists).length, n, 'a shape that does not survive coercion is not a floor');
     return v.state;
   };
+  // The three below were governed by MAX_ISSUES for four rounds while only the two above were ever
+  // measured, and all three failed the clause: at the margin a read marker costs 9 characters, an
+  // override 19 and a note 11, against an issue's 267. Checked here where they are applied, because
+  // asserting the clause for two of the five maps it governs is how it went unnoticed.
+  const cheapestReads = (n) => {
+    const read = {};
+    for (let i = 1; i <= n; i += 1) read[i] = 1;
+    const v = restore({ read });
+    assert.equal(Object.keys(v.state.read).length, n, 'a shape that does not survive coercion is not a floor');
+    return v.state;
+  };
+  const cheapestOverrides = (n) => {
+    const overrides = {};
+    for (let i = 1; i <= n; i += 1) overrides[i] = 'available';
+    const v = restore({ overrides });
+    assert.equal(Object.keys(v.state.overrides).length, n, 'a shape that does not survive coercion is not a floor');
+    return v.state;
+  };
+  const cheapestNotes = (n) => {
+    const notes = {};
+    for (let i = 1; i <= n; i += 1) notes[i] = 'x';
+    const v = restore({ notes });
+    assert.equal(Object.keys(v.state.notes).length, n, 'a shape that does not survive coercion is not a floor');
+    return v.state;
+  };
   const mostGenerousOrigin = 10 * 1024 * 1024;
   assert.ok(MAX_ISSUES > mostGenerousOrigin / marginalCost(cheapestIssues),
     'a ceiling below what the origin holds would refuse a tracker a user can reach by importing');
   assert.ok(MAX_LISTS > mostGenerousOrigin / marginalCost(cheapestLists),
     'the same argument applies to lists, which are created without a cap');
+  assert.ok(MAX_MARKERS > mostGenerousOrigin / marginalCost(cheapestReads),
+    'a read marker is a number against an issue id, so the origin holds far more of them than issues');
+  assert.ok(MAX_MARKERS > mostGenerousOrigin / marginalCost(cheapestOverrides),
+    'an availability override is one of two short words, so the same argument applies');
+  assert.ok(MAX_MARKERS > mostGenerousOrigin / marginalCost(cheapestNotes),
+    'a note is capped in length but a one-character note is cheaper than any issue');
+});
+
+// The arithmetic above is the clause; this is what breaching it did to a reader, and it is here
+// because every defect these reviews have found was an assertion standing next to the claim rather
+// than on it. Driven through the real Store so the refusal has to survive persist, the pre-restore
+// snapshot and undoRestore, which is the path that turns a strict ceiling into lost data: the app
+// accepts a tracker at the ceiling, saves it one entry larger without complaint, and then refuses
+// to give that back. Notes are the map used because they are the cheapest of the three the ceiling
+// governed while nobody had measured them.
+test('a tracker the app agreed to hold can still be recovered after a restore', () => {
+  const map = new Map();
+  const storage = {
+    get length() { return map.size; },
+    key: (i) => [...map.keys()][i] ?? null,
+    getItem: (k) => (map.has(k) ? map.get(k) : null),
+    setItem: (k, v) => { map.set(k, String(v)); },
+    removeItem: (k) => { map.delete(k); },
+  };
+  const withNotes = (n) => {
+    const notes = {};
+    for (let i = 1; i <= n; i += 1) notes[i] = 'x';
+    return JSON.stringify({ ...exportBackup(createList(createEmptyState(), { name: 'Everything' })), notes });
+  };
+
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.restore(withNotes(MAX_ISSUES)).ok, true, 'a tracker at the old ceiling is accepted');
+  store.update((s) => ({ ...s, notes: { ...s.notes, 999999: 'one more' } }));
+  assert.equal(Object.keys(store.state.notes).length, MAX_ISSUES + 1, 'and the app saves it one larger');
+
+  assert.equal(store.restore(withNotes(3)).ok, true);
+  const undone = store.undoRestore();
+  assert.equal(undone.ok, true, undone.errors?.join(' '));
+  assert.equal(Object.keys(store.state.notes).length, MAX_ISSUES + 1,
+    'the ceiling refused the reader their own data back, which is the loss it was raised to prevent');
 });
 
 test('the file-size ceiling sits well above the largest backup this app can write', () => {

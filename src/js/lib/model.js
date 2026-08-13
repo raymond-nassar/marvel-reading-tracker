@@ -50,10 +50,16 @@ export function createEmptyState() {
 // The stamp only separates ids minted in different milliseconds, so everything minted inside one
 // millisecond used to be told apart by 36^6 of randomness alone. That was safe while the only bulk
 // mint was too slow to fill a millisecond. It is not any more: restoring a version 1 backup at the
-// 250,000-list ceiling now mints all of them in about 130 milliseconds, roughly 2,000 to a stamp,
-// which is a birthday draw over 244 million same-stamp pairs. It loses. Measured on this tree, 4 of
-// 60 restores at the ceiling collided, each one silently dropping a list, because a repeated id
+// 250,000-list ceiling spreads its 250,000 mints over about 500 milliseconds, so roughly 610 land in
+// each of some 410 stamps, and that is a birthday draw over 78 million same-stamp pairs. It loses:
+// 78 million against 36^6 is 0.036 expected collisions per restore. Measured on this tree, 4 of 60
+// restores at the ceiling collided, each one silently dropping a list, because a repeated id
 // overwrites lists[id] while listOrder keeps both entries and the map ends one short of the order.
+//
+// Those figures replace an earlier 130 milliseconds, 2,000 to a stamp and 244 million pairs, which
+// were about three times too high and disagreed with the 858 milliseconds this same fixture is
+// recorded as taking two paragraphs later in the backlog. The stamps are read back out of the ids
+// the shipped mint produced rather than timed around it, so the count needs no instrumentation.
 //
 // Counting up cannot repeat until 36^6 ids have been minted in a single load, which nothing here
 // approaches. The random start is what keeps two loads landing in the same millisecond as unlikely
@@ -196,6 +202,29 @@ export const MAX_URL = 500;
 // still refuses counts absurd on their face.
 export const MAX_ISSUES = 250000;
 export const MAX_LISTS = 250000;
+
+// The same ceiling was applied to read markers, availability overrides and notes as well, and the
+// derivation above was never run for any of them. It does not hold. Those three carry a value of a
+// few characters against a key that is the issue id, so at the margin they cost 9, 19 and 11
+// characters where an issue costs 267, and the same origin holds about 1,165,000 read markers,
+// 551,000 overrides and 953,000 notes. A ceiling of 250,000 therefore sat below what the app can
+// hold in three of the five maps it governed, and the clause that mattered was the undo one: a
+// reader who restored at the ceiling, annotated one more issue and then restored something else
+// could not get their own data back, because undoRestore feeds the pre-restore snapshot through
+// this same check and it refused at 250,001. The app blessed N and then refused its own snapshot at
+// N+1, which is the data loss the ceiling was raised to prevent, arriving by the door it was
+// watching.
+//
+// The two goals genuinely conflict here and the clause wins. There is no ceiling that both accepts
+// everything the app can hold and refuses an eight mebibyte file declaring 772,000 read markers,
+// because the app really can hold 963,000 of them. Refusing the reader's own data is data loss;
+// coercing an oversized file is a transient allocation the origin write then refuses with the quota
+// message it already had. So these three are held above what the origin can hold, which leaves them
+// guarding against a corrupted snapshot rather than against a file, the file being bounded by
+// MAX_BACKUP_BYTES first. Exempting undoRestore from the check instead was the other way out, and
+// was not taken: a recovery path that skips the validation every other path runs is the shape of
+// defect this app has already been bitten by twice.
+export const MAX_MARKERS = 1500000;
 
 // Checked against the file's declared size before a byte of it is read, so a file picked by mistake
 // costs nothing to refuse. The heaviest backup this app can write is 1,560,536 characters as
@@ -853,15 +882,16 @@ export function validateBackup(raw) {
 
   // Counted before coercion, because coercion is what builds the oversized object: an issue costs
   // 23.6 characters at its cheapest in a file and 280 once coerced, an amplification of nearly
-  // twelve. The ceiling sits above anything this app can hold, so a tracker too large for the
-  // origin is still accepted here and still refused by the write, with the honest quota message it
-  // already had. What this buys is refusing a file whose declared counts are absurd on their face,
-  // for one pass over the keys, before coercion allocates for them.
+  // twelve. Each ceiling sits above anything this app can hold in the map it governs, so a tracker
+  // too large for the origin is still accepted here and still refused by the write, with the honest
+  // quota message it already had. What this buys is refusing counts absurd on their face, for one
+  // pass over the keys, before coercion allocates for them. The three cheap maps take a ceiling of
+  // their own because one number could not cover both: see the note above MAX_MARKERS.
   for (const [label, value, cap] of [
     ['issues', raw.issues, MAX_ISSUES],
-    ['read markers', raw.read, MAX_ISSUES],
-    ['availability overrides', raw.overrides, MAX_ISSUES],
-    ['notes', raw.notes, MAX_ISSUES],
+    ['read markers', raw.read, MAX_MARKERS],
+    ['availability overrides', raw.overrides, MAX_MARKERS],
+    ['notes', raw.notes, MAX_MARKERS],
     ['lists', raw.lists, MAX_LISTS],
   ]) {
     if (!value || typeof value !== 'object') continue;
