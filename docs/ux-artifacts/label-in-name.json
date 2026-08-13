@@ -39,13 +39,13 @@
     {
       "label": "House of M #1 2005",
       "nameBefore": "Open House of M (2005) #1 in Marvel Unlimited",
-      "nameAfter": "House of M #1 2005: Open in Marvel Unlimited"
+      "nameAfter": "House of M 1 2005: Open in Marvel Unlimited"
     },
     {
       "label": "House of M 3 / 20",
-      "nameBefore": "House of M, 3 of 20 issues read. Open this list",
-      "nameAfter": "House of M 3 / 20: issues read. Open this list"
+      "nameBefore": "Open House of M, 3 of 20 issues read",
+      "nameAfter": "House of M 3 20: issues read. Open this list"
     }
   ],
-  "note": "The script is not committed, in keeping with the browser checks this repository writes by hand and does not run in CI. This file is the record of what it measured. The three figures that are identical on both sides are the check that the two runs saw the same app: a change in scored, notRendered or symbolicLabelOnly would mean the sides are not comparable."
+  "note": "The script is not committed, in keeping with the browser checks this repository writes by hand and does not run in CI. This file is the record of what it measured. The three figures that are identical on both sides are the check that the two runs saw the same app: a change in scored, notRendered or symbolicLabelOnly would mean the sides are not comparable. Each nameAfter is the shipped labelledName() called on the label and context beside it rather than a transcription, because a hand-written example is exactly where the symbol stripping would be reported as not happening; each nameBefore is the string origin/main builds at that site."
 }

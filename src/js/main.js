@@ -1814,11 +1814,18 @@ function renderShelf() {
       // words the tile shows. One binding for the painted run keeps the name and the tile together.
       const short = shortTitle(it.title);
       const year = ymd(it.onSale).slice(0, 4);
-      const name = labelledName(`${short} ${year}`, 'Open in Marvel Unlimited');
+      const label = `${short} ${year}`;
+      const context = 'Open in Marvel Unlimited';
+      // The tooltip is painted text, so it carries the label exactly as the caption prints it.
+      // Only the accessible name goes through labelWords, and its symbol stripping is licensed
+      // for names rather than for anything visible: a tooltip reading "House of M 1 2005" two
+      // pixels above a caption reading "House of M #1" would be a fresh mismatch of the same
+      // kind this change removes. Both are built from one binding so they cannot drift apart.
+      const name = labelledName(label, context);
 
       shelf.append(el('li', { class: 'tile' }, el('button', {
         type: 'button',
-        title: name,
+        title: `${label}: ${context}`,
         'aria-label': name,
         dataset: { key: it.issueId, act: 'open' },
         onclick: (e) => openInReader(it, e),
