@@ -31,6 +31,7 @@ import { shortcutAllowed } from './lib/shortcuts.js';
 import { READING_FILTERS, DEFAULT_FILTER, matchesReadingFilter } from './lib/readingFilters.js';
 import { DEFAULT_THEME, themeAttribute, normaliseTheme } from './lib/theme.js';
 import { VIEWS, formatRoute, parseRoute } from './lib/route.js';
+import { labelledName } from './lib/accname.js';
 import { askConfirm, askText, askNote, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
@@ -987,7 +988,9 @@ function renderContinue(populated) {
     $('#chero-fs').textContent = seriesOnly(issue.seriesName);
     $('#chero-fn').textContent = issue.number ? `#${issue.number}` : '';
     $('#btn-chero-read').hidden = false;
-    $('#btn-chero-read').setAttribute('aria-label', `Read ${issue.title} in Marvel Unlimited`);
+    // The label is read off the button rather than repeated here, so editing the markup cannot
+    // leave the name behind still claiming the old words.
+    $('#btn-chero-read').setAttribute('aria-label', labelledName($('#btn-chero-read').textContent, `${issue.title} in Marvel Unlimited`));
   } else {
     $('#chero-next').textContent = 'You have read every issue in this order.';
     // Nothing to open, so the button goes rather than sitting there disabled with no
@@ -997,7 +1000,7 @@ function renderContinue(populated) {
     $('#chero-fs').textContent = shortTitle(list.name);
     $('#chero-fn').textContent = '';
   }
-  $('#btn-chero-open').setAttribute('aria-label', `Open ${list.name}`);
+  $('#btn-chero-open').setAttribute('aria-label', labelledName($('#btn-chero-open').textContent, list.name));
 }
 
 function renderYours(populated) {
@@ -1010,15 +1013,18 @@ function renderYours(populated) {
     const list = store.state.lists[id];
     const { read, total } = listProgress(store.state, id);
     const pct = total ? (read / total) * 100 : 0;
+    // The tile prints the count as "3 / 20" and the old name said "3 of 20", so the inserted word
+    // split the run the tile shows. The name is built from the painted text for that reason.
+    const count = `${read} / ${total}`;
     return el('li', {}, el('button', {
       type: 'button',
-      'aria-label': `Open ${list.name}, ${read} of ${total} issues read`,
+      'aria-label': labelledName(`${list.name} ${count}`, 'issues read. Open this list'),
       onclick: () => { store.update((s) => setActive(s, id)); showView('read', { push: true }); },
     }, [
       el('span', { class: 'yours-name', text: list.name }),
       el('span', { class: 'pbar', 'aria-hidden': true }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
       // Repeated as text because a bar alone conveys progress by shape only.
-      el('span', { class: 'yours-count', text: `${read} / ${total}` }),
+      el('span', { class: 'yours-count', text: count }),
     ]));
   }));
 }
@@ -1186,15 +1192,22 @@ function orderCard(list) {
       addButton(list, inLibrary),
       // The count is already on the card, in the meta line above, so repeating it on the button
       // only needed the dash it was joined with. "See the full list" says what the button does.
-      el('button', {
-        type: 'button',
-        class: 'ocard-preview',
-        'aria-label': `Preview the issue list for ${list.name}`,
-        dataset: { key: list.id, act: 'preview' },
-        onclick: () => openPreview(list),
-      }, 'See the full list'),
+      previewButton(list),
     ]),
   ]);
+}
+
+// One binding for the words, used as the visible text and as the base of the accessible name,
+// so the two cannot be edited apart.
+function previewButton(list) {
+  const text = 'See the full list';
+  return el('button', {
+    type: 'button',
+    class: 'ocard-preview',
+    'aria-label': labelledName(text, list.name),
+    dataset: { key: list.id, act: 'preview' },
+    onclick: () => openPreview(list),
+  }, text);
 }
 
 function addButton(list, inLibrary) {
@@ -1203,25 +1216,28 @@ function addButton(list, inLibrary) {
   // it should land on whatever the card's main control has become.
   if (inLibrary) {
     const settled = !justAdded.has(list.id);
+    const text = settled ? 'Open →' : '✓ In library';
     return el('button', {
       type: 'button',
       class: settled ? 'btn btn-g' : 'btn btn-added',
-      'aria-label': settled ? `Open ${list.name}` : `${list.name} is in your library`,
+      'aria-label': labelledName(text, list.name),
       dataset: { key: list.id, act: 'main' },
       onclick: () => {
         store.update((s) => setActive(s, inLibrary.id));
         showView('read', { push: true });
       },
-    }, settled ? 'Open →' : '✓ In library');
+    }, text);
   }
+  const text = '+ Add to library';
   return el('button', {
     type: 'button',
     class: 'btn',
-    // Read out of context, "Add" says nothing; the order's name has to be in the name.
-    'aria-label': `Add ${list.name} to library`,
+    // Read out of context, "Add to library" says nothing about which order, so the name adds it
+    // after the label rather than inside it, which is what left the label unsayable before.
+    'aria-label': labelledName(text, list.name),
     dataset: { key: list.id, act: 'main' },
     onclick: (e) => addFromCatalog(list, e.currentTarget),
-  }, '+ Add to library');
+  }, text);
 }
 
 async function addFromCatalog(list, btn) {
@@ -1755,7 +1771,7 @@ function renderHero() {
   info.hidden = !infoHref;
   if (infoHref) {
     info.href = infoHref;
-    info.setAttribute('aria-label', `Open the marvel.com page for ${issue.title}`);
+    info.setAttribute('aria-label', labelledName(info.textContent, `${issue.title} on marvel.com`));
   } else {
     info.removeAttribute('href');
   }
@@ -1781,23 +1797,43 @@ function renderShelf() {
 
     for (const it of upcoming) {
       const img = el('img', { alt: '', loading: 'lazy' });
-      const fb = el('div', { class: 'tf' }, [
+      // The fallback is drawn whenever the cover is missing, either because it failed to load or
+      // because the reader turned cover art off, so it is a first-class state rather than an error
+      // path. Either way it stands in for an image the markup already declares decorative with
+      // alt="". Left exposed it joins the button's visible label, and its series name and issue
+      // number then bracket the caption's title, which is the same split this change exists to
+      // remove.
+      const fb = el('div', { class: 'tf', 'aria-hidden': true }, [
         el('span', { class: 's', text: seriesOnly(it.seriesName) }),
         el('span', { class: 'n', text: it.number ? `#${it.number}` : '?' }),
       ]);
       paintCover(img, fb, it, 'portrait_incredible');
 
+      // The tile prints the title with its year stripped out and then prints the year separately,
+      // so a name built from the unshortened title splices "(2005)" back into the middle. The year
+      // is absent for 34 of the Ultimate order's 138 issues, so it joins rather than interpolates.
+      const short = shortTitle(it.title);
+      const year = ymd(it.onSale).slice(0, 4);
+      const label = [short, year].filter(Boolean).join(' ');
+      const context = 'Open in Marvel Unlimited';
+      // The tooltip is painted text, so it carries the label exactly as the caption prints it.
+      // Only the accessible name goes through labelWords, and its symbol stripping is licensed
+      // for names rather than for anything visible: a tooltip reading "House of M 1 2005" two
+      // pixels above a caption reading "House of M #1" would be a fresh mismatch of the same
+      // kind this change removes. Both are built from one binding so they cannot drift apart.
+      const name = labelledName(label, context);
+
       shelf.append(el('li', { class: 'tile' }, el('button', {
         type: 'button',
-        title: `Open ${it.title} in Marvel Unlimited`,
-        'aria-label': `Open ${it.title} in Marvel Unlimited`,
+        title: `${label}: ${context}`,
+        'aria-label': name,
         dataset: { key: it.issueId, act: 'open' },
         onclick: (e) => openInReader(it, e),
       }, [
         el('div', { class: 'ph' }, [img, fb]),
         el('div', { class: 'lab' }, [
-          el('b', { text: shortTitle(it.title) }),
-          ymd(it.onSale).slice(0, 4),
+          el('b', { text: short }),
+          year,
         ]),
       ])));
     }
@@ -2007,7 +2043,7 @@ function renderRows() {
         el('div', { class: 'ract' }, [
           el('button', { type: 'button', class: 'mini', 'aria-label': `Read ${item.title} in Marvel Unlimited`, dataset: { key: item.issueId, act: 'open' }, onclick: (e) => openInReader(item, e) }, 'Read'),
           detailUrl(item)
-            ? el('a', { class: 'mini', href: detailUrl(item), target: '_blank', rel: 'noopener noreferrer', 'aria-label': `marvel.com page for ${item.title}`, dataset: { key: item.issueId, act: 'info' } }, 'Info')
+            ? el('a', { class: 'mini', href: detailUrl(item), target: '_blank', rel: 'noopener noreferrer', 'aria-label': labelledName('Info', `${item.title} on marvel.com`), dataset: { key: item.issueId, act: 'info' } }, 'Info')
             : null,
           el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} up`, dataset: { key: item.issueId, act: 'up' }, onclick: () => store.update((s) => moveItem(s, id, item.issueId, -1)) }, '↑'),
           el('button', { type: 'button', class: 'mini', 'aria-label': `Move ${item.title} down`, dataset: { key: item.issueId, act: 'down' }, onclick: () => store.update((s) => moveItem(s, id, item.issueId, 1)) }, '↓'),

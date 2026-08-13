@@ -14,6 +14,27 @@ quote in a bug report.
 
 ## Unreleased
 
+### Fixed
+
+- **Buttons now answer to the words printed on them, so voice control can reach them.** Someone
+  who drives a computer by speaking says what they can see: "click add to library". A button here
+  showed "+ Add to library" but was described to the software as "Add House of M to library", with
+  the order's name pushed into the middle of the phrase, so the spoken words did not match and the
+  click never happened. That was true of every button of its kind in the app. Counted in a real
+  browser with an order open, 124 of the 303 buttons and links on screen could not be activated
+  this way. All 124 now can, and they still say which order or issue they act on, which is what a
+  screen reader needs. Nothing on screen moves and nothing you have saved is affected. The one thing
+  you may notice is the tooltip that appears when you rest the pointer on a cover in the "Coming up"
+  strip: it now reads the same words as the caption underneath it rather than a differently worded
+  sentence.
+
+  A related worry turned out to be groundless and was dropped rather than fixed. The project's list
+  of planned improvements said the two-line description on each catalog card would lose text when a
+  reader turns up the spacing between lines and letters, which some people need in order to read at
+  all. Measured with those settings on, the box gets taller rather than shorter and still shows two
+  lines, and the full text was already one click away in the card's preview. The measurement is
+  written down so the next person does not repeat it.
+
 ### Changed
 
 - **Twelve reading orders quietly contain 63 entries the app knows almost nothing about, and the project's

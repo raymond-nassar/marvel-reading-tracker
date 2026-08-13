@@ -59,7 +59,8 @@ App launch, or clicking the brand lockup in the sidebar.
 - [ ] Grid is a `<ul>`/`<li>`; each card an `<li>` with an `<h3>` title
 - [ ] Card has one primary `<button>`; the body link is separate and not nested
 - [ ] `+ Add to library` has an accessible name including the order title
-      (e.g. `aria-label="Add Civil War to library"`)
+      (e.g. `aria-label="Add to library: Civil War"`, with the label's own words
+      first so a speech user can activate it by what they can see)
 - [ ] `aria-live="polite"` region announces "Civil War added to your library"
 - [ ] Filter chips: `role="radiogroup"` with `aria-checked`, arrow-key navigation
 - [ ] Progress bar: `role="progressbar"` with `aria-valuenow/min/max` + text label

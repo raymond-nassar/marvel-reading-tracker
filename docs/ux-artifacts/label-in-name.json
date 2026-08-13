@@ -1,0 +1,51 @@
+{
+  "criterion": "WCAG 2.2 SC 2.5.3 Label in Name (Level A)",
+  "measured": "2026-08-12",
+  "browser": "Edge, puppeteer-core, 1280x900",
+  "state": "first run with storage cleared, House of M imported from the catalog, home and read views both visited",
+  "method": "A control is scored when it carries an aria-label and its visible text reduces to at least one word. Visible text is read from the control and its descendants, skipping any subtree that is aria-hidden or that checkVisibility() reports as not rendered, which is what a browser does when it computes the name. Both sides are reduced the same way: lowercased, with characters that are not letters, digits or marks treated as separators. A control passes when the reduced label appears as a contiguous run of words in the reduced name. Every navigation asserts that it arrived, so a view that fails to open fails the run rather than contributing unrendered controls.",
+  "runs": {
+    "before": {
+      "ref": "origin/main",
+      "served": "git archive checkout of origin/main on 127.0.0.1:8787, confirmed pre-fix by asserting its main.js does not contain labelledName",
+      "scored": 303,
+      "failing": 124,
+      "notRendered": 36,
+      "symbolicLabelOnly": 447
+    },
+    "after": {
+      "ref": "bl-091-text-spacing",
+      "scored": 303,
+      "failing": 0,
+      "notRendered": 36,
+      "symbolicLabelOnly": 447
+    }
+  },
+  "failingBefore": {
+    "rowInfoLinks": 89,
+    "catalogPreviewButtons": 12,
+    "addButtons": 11,
+    "shelfTiles": 8,
+    "heroCallsToAction": 2,
+    "heroIssueLink": 1,
+    "libraryTile": 1
+  },
+  "examples": [
+    {
+      "label": "+ Add to library",
+      "nameBefore": "Add House of M: main series to library",
+      "nameAfter": "Add to library: House of M: main series"
+    },
+    {
+      "label": "House of M #1 2005",
+      "nameBefore": "Open House of M (2005) #1 in Marvel Unlimited",
+      "nameAfter": "House of M 1 2005: Open in Marvel Unlimited"
+    },
+    {
+      "label": "House of M 3 / 20",
+      "nameBefore": "Open House of M, 3 of 20 issues read",
+      "nameAfter": "House of M 3 20: issues read. Open this list"
+    }
+  ],
+  "note": "The script is not committed, in keeping with the browser checks this repository writes by hand and does not run in CI. This file is the record of what it measured. The three figures that are identical on both sides are the check that the two runs saw the same app: a change in scored, notRendered or symbolicLabelOnly would mean the sides are not comparable. Each nameAfter is the shipped labelledName() called on the label and context beside it rather than a transcription, because a hand-written example is exactly where the symbol stripping would be reported as not happening; each nameBefore is the string origin/main builds at that site."
+}
