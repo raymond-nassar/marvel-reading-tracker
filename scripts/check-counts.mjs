@@ -269,8 +269,13 @@ function flatten(lines) {
 // A figure is recognised only when it is written as a number word, which is what keeps a
 // quotation of the shape from being read as an instance of it: the backlog states the
 // forms as "N items have since been delivered" and "N of them are still `Ready`", and N
-// is not a number. The direction of that skip is the safe one, since a figure that has
-// gone stale is still a number word and is still caught.
+// is not a number. The skip has to take the whole claim with it rather than the figure
+// alone, because reading an id list out of a sentence that states no figure finds no ids
+// and reports every Shipped row missing. That is wider than it sounds, and review measured
+// what it costs: writing the opening count as a digit stopped the gate checking that
+// paragraph's id list as well, silently, where the sentence-anchored version it replaced
+// still caught a dropped id. So the backstop in `checkLedger` counts only the claims this
+// function could read, which turns each of those cases into a finding instead.
 function wordNumber(word) {
   const w = (word ?? '').toLowerCase();
   for (let n = 0; n <= 99; n += 1) if (numberWord(n) === w) return n;
@@ -322,13 +327,18 @@ export function checkLedger(d) {
     .map((m) => ({ at: m.index, from: m[1], to: m[2], text: `${m[1]} through ${m[2]}` }));
   const inRange = (cohort) => (cohort ? ` in ${cohort.text}` : '');
 
-  let claims = 0;
+  let readable = 0;
   for (const m of flat.text.matchAll(DELIVERED)) {
     const stated = m[1] === undefined ? null : wordNumber(m[1]);
     if (m[1] !== undefined && stated === null) continue;
-    claims += 1;
     const line = flat.lineOf(m.index);
     const cohort = cohortAt(cohorts, m.index);
+    // Counted only for the whole table, and only when the figure could be read. The cohort
+    // paragraph's claim is anchored on an id rather than a count word, so it is readable by
+    // construction and would keep the backstop quiet however the opening sentence was
+    // written. Gating on both is what lets a deleted, reworded or digit-written opening
+    // ledger reach the backstop rather than pass in silence.
+    if (cohort === null) readable += 1;
     const shipped = rowsOf(d, cohort).filter((r) => r.status === 'Shipped').map((r) => r.id);
     const want = numberWord(shipped.length);
 
@@ -377,11 +387,11 @@ export function checkLedger(d) {
     }
   }
 
-  if (claims === 0) {
+  if (readable === 0) {
     found.push({
       line: 0,
       claim: 'the delivered ledger',
-      message: 'no "items have since been delivered" sentence found, so nothing states the count',
+      message: 'nothing above the table states a delivered count as a number word, so neither that count nor its id list is being checked',
     });
   }
   return found.sort((a, b) => a.line - b.line);

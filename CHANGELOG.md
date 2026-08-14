@@ -27,10 +27,11 @@ nine were waiting when eight were and leaving a finished item out of its roll ca
 across two rounds of work and every automatic check passed the whole time, until somebody happened
 to spot it by eye.
 
-The checker was rewritten to look for the shape of those sentences rather than for one particular
-sentence, so both paragraphs are now checked by the same handful of lines and a third would be
-checked for free. It also works out which sentences are describing the check itself rather than
-making a claim, which matters because the record of this very change quotes both shapes.
+The checker now looks for the shape of those sentences instead of one particular sentence, so both
+paragraphs are checked by the same handful of lines and a third would be checked for free. It also
+works out which sentences are describing the check rather than making a claim, which matters because
+the written record of this change quotes both shapes. A review of the change found one way the new
+checker could fall silent instead of complaining, and it now says so out loud rather than passing.
 
 ### The citation checker now sees claims about files with no extension (BL-104)
 

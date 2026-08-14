@@ -248,6 +248,42 @@ test('the delivered shape quoted above the table is not read as a delivered clai
   assert.deepEqual(checkLedger(derive(text)), []);
 });
 
+// The two tests above rebuild the id list on one line, which destroys the very line break
+// the flattening exists to read across, so neither can fail without it. Review measured
+// that: joining the roadmap with a newline instead of a space leaves the whole suite green
+// and the gate reporting the document clean, while the historical defect this item was
+// raised about goes undetected. Dropping an id from the line the sentence wraps on is the
+// mutation that keeps the wrap, and it is the one that holds the flattening up.
+test('an id dropped from the line the cohort sentence wraps on is caught', () => {
+  const lines = REAL.split(NL);
+  const w = lines.findIndex((l) => / have since been$/.test(l));
+  assert.ok(w !== -1, 'the cohort sentence no longer wraps, so this mutation exercises nothing');
+  const ids = [...lines[w].matchAll(/BL-\d+/g)].map((m) => m[0]);
+  assert.ok(ids.length > 1, 'the wrapped line no longer carries an id this can drop');
+  lines[w] = lines[w].replace(`${ids[0]}, `, '');
+  assert.notEqual(lines[w], REAL.split(NL)[w], 'the mutation did not apply');
+  const found = checkLedger(derive(lines.join(NL)));
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, new RegExp(`missing ${ids[0]}`));
+});
+
+// An opening ledger the checker cannot read a figure in used to be skipped whole, id list
+// and all, with nothing said. Review measured the cost against the version this replaced:
+// writing the count as a digit and dropping an id from the list gave two findings there and
+// none here. The skip is still right, because a sentence stating no figure lists no ids; it
+// is the silence that was wrong.
+test('an opening ledger whose figure cannot be read is reported rather than skipped', () => {
+  const d = derive(REAL);
+  const text = mutate(
+    `${cap(numberWord(d.shipped.length))} items have since been delivered`,
+    `${d.shipped.length} items have since been delivered`,
+  );
+  const found = checkLedger(derive(text));
+  assert.equal(found.length, 1);
+  assert.equal(found[0].claim, 'the delivered ledger');
+  assert.match(found[0].message, /neither that count nor its id list is being checked/);
+});
+
 test('a rank left over from a smaller table is caught in both halves', () => {
   const d = derive(REAL);
   const rank = rankOf('BL-026');
