@@ -6891,8 +6891,8 @@ reddens it again, which is the half that would otherwise pass while the document
 part company. Seven sentences elsewhere counted those packages and had to move with them. Two
 were found while the change was being made and five by review, across three rounds, each of
 which followed a sweep that had been called complete. The last of the seven survived two of
-those sweeps because it wraps across a line break, so no search for the phrase could match it
-and both sweeps reported the file clean while the sentence sat two lines above another the
+those sweeps because it wraps across a line break, so no search for the phrase could match it and
+both sweeps reported the file clean while the sentence sat twenty-six lines above another the
 first round had already corrected. Joining the comment lines before matching is what found it,
 and it is the sharper form of the rule: search the tree for the old number, not for the
 sentence you remember writing. An eighth was left exactly as it was, and it is the one to
@@ -6960,15 +6960,15 @@ every test passes on both sides of it, so there was no earlier point at which it
 shown to do anything.
 
 One figure moved that no gate watches. Appendix B states the size of the ranked table in prose, as
-the 28 rows it held at the original pass plus the items filed since, less the two later parked, and
-every one of the twenty-two values it has held was right when it was written. It went stale in
-`e6376e0`, which filed BL-114 as a follow-up and left the sentence reading 89 while the table had
-reached 90. The two rows added here took the gap to three. It now reads sixty-six further items and
-92 rows, derived twice over: from the length of the table itself, and from the 95 rows the document
-holds less the 28 counted then and BL-025, which was parked before it was ever scored and so was
-never in the table. Corrected rather than gated, because two figures of exactly this class already
-carry a deliberate decision not to file, on the ground that a matcher written per sentence costs
-more than the figure being wrong. Evidence: `PRODUCT_BACKLOG.md:4675-4683`.
+the 28 rows it held at the original pass plus the items filed since, less the two later parked. It
+has been rewritten by hand twenty-four times, and one of those writes was wrong the moment it was
+made: `55c2809` stated 37 against a table of 38. It then went stale in `e6376e0`, which filed
+BL-114 and left it reading 89 while the table had reached 90, and the two rows here took the gap to
+three. It now reads sixty-six further items and 92 rows, derived twice over: from the length of the
+table, and from the 95 rows the document holds less the 28 counted then and BL-025, parked before
+it was ever scored and so never in the table. Corrected rather than gated, because two figures of
+this class already carry a deliberate decision not to file, on the ground that a matcher written
+per sentence costs more than the figure being wrong. Evidence: `PRODUCT_BACKLOG.md:4675-4683`.
 
 ## Existing epics and stories
 
