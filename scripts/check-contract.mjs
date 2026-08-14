@@ -11,6 +11,8 @@
 // Exit code 0 = every assumption still holds. 1 = at least one has drifted.
 // This performs read-only GETs and stays well under the documented 60 req/min.
 
+import { readFileSync } from 'node:fs';
+
 const args = process.argv.slice(2);
 const argOf = (name, fallback) => {
   const i = args.indexOf(name);
@@ -63,7 +65,77 @@ async function checkReachable() {
   section('Reachability');
   const res = await get('/health');
   check('the API answers', res.status === 200, `HTTP ${res.status} from ${res.url}`);
-  return res.status === 200;
+  return res;
+}
+
+// What the source holds, read on 2026-08-13. Marvel's own developer portal was retired on
+// 2025-10-29 and the cache this API is built on stops on that same date, so these are the
+// measurements of a finished source rather than a floor expected to rise. That is why they are
+// equalities. A figure that moves in either direction is news about the source, not progress
+// towards a target, and docs/DATA_PROVENANCE.md is the first thing to re-read when one does.
+const OBSERVED_ON = '2026-08-13';
+const OBSERVED_ISSUES = 37526;
+
+// Ultimate Black Panther, whose own record still called it "(2024 - Present)" when this was read on
+// 2026-08-13, while its newest issue is dated 2025-10-08. Issue 113879, the #22 that follows it,
+// answered 404 that same day where 113878 answered 200, so the end of the source falls between two
+// consecutive ids. The curated order names issues past that end, which is the whole reason this
+// series was chosen over one the source covers completely.
+const OBSERVED_SERIES = 38806;
+const OBSERVED_SERIES_ISSUES = 21;
+const OBSERVED_ORDER = '../src/data/new_ultimate_universe.json';
+
+async function checkCoverage(health) {
+  section('Coverage: what the source holds, not merely whether it answers');
+
+  // The count rides along on the reachability request, so watching it costs nothing.
+  const count = Number(health.body?.issue_count);
+  check('the issue count the health endpoint reports is unchanged',
+    count === OBSERVED_ISSUES,
+    `${count} against ${OBSERVED_ISSUES} read on ${OBSERVED_ON}`);
+
+  const res = await getAnswered(`/series/${OBSERVED_SERIES}`);
+  if (unanswered(res)) {
+    return check('the issue count of a series the orders outrun is unchanged', false,
+      `HTTP ${res.status}: the API never answered, so this says nothing either way`);
+  }
+  const held = Number(res.body?.issueCount);
+  const name = String(res.body?.seriesName ?? '').replace(/\s*\(.*$/, '');
+  check('the issue count of a series the orders outrun is unchanged',
+    held === OBSERVED_SERIES_ISSUES,
+    `${name || OBSERVED_SERIES} holds ${held} against ${OBSERVED_SERIES_ISSUES} read on ${OBSERVED_ON}, newest dated ${String(res.body?.lastIssueDate ?? '').slice(0, 10)}`);
+
+  // The order is committed and the source is not, so the distance between them is the retirement
+  // made visible: each issue the order names past the end of the source was hydrated into a title,
+  // a number and a marvel.com link with every other field empty. Both sides are derived, so this
+  // keeps holding if the order grows and stops holding the moment the source does. The join is the
+  // marvel.com slug rather than the title, because a record the source could not fill keeps the
+  // curated title, "Ultimate Black Panther #22", where a filled one takes the source's own,
+  // "Ultimate Black Panther (2024) #21". Matching on the title finds only the three empty ones.
+  //
+  // The series prefix comes off a filled record by removing that record's own issue number, not a
+  // run of digits. Review found that stripping digits loses an issue numbered 34.1 from both sides
+  // at once, which leaves the identity balanced while dropping the very kind of record it counts.
+  // Two issues already in the tree are numbered that way, 34.1 and 34.2, committed as four records
+  // because the two Hickman orders overlap. A filled record whose link does not end in its own
+  // number reduces to nothing, which fails the guard below rather than passing quietly.
+  const claim = 'the order names exactly as many unfillable issues as the source is short of';
+  const items = JSON.parse(readFileSync(new URL(OBSERVED_ORDER, import.meta.url), 'utf8')).items ?? [];
+  const segment = (i) => String(i.url ?? '').split('/').pop();
+  const prefixOf = (i) => {
+    const seg = segment(i);
+    const suffix = `_${i.number}`;
+    return seg.endsWith(suffix) ? seg.slice(0, -suffix.length) : '';
+  };
+  const filled = items.filter((i) => i.seriesId === OBSERVED_SERIES);
+  const prefix = filled.length ? prefixOf(filled[0]) : '';
+  if (!prefix || !filled.every((i) => prefixOf(i) === prefix)) {
+    return check(claim, false, `no single marvel.com slug covers the order's records for series ${OBSERVED_SERIES}`);
+  }
+  const ours = items.filter((i) => segment(i).startsWith(`${prefix}_`));
+  const bare = ours.filter((i) => i.onSale == null && i.cover == null);
+  check(claim, ours.length - held === bare.length,
+    `the order names ${ours.length}, the source holds ${held}, and ${bare.length} of those records came back empty`);
 }
 
 async function checkCors() {
@@ -248,11 +320,12 @@ async function getAnswered(path, tries = 3) {
 console.log(`Marvel metadata API contract check\nbase: ${BASE}\n`);
 
 try {
-  const up = await checkReachable();
-  if (!up) {
+  const health = await checkReachable();
+  if (health.status !== 200) {
     console.log('\nThe API is unreachable; skipping the rest.');
     process.exit(1);
   }
+  await checkCoverage(health);
   await checkCors();
   const issue = await checkIssueShape();
   await checkCoverUrl(issue);

@@ -9,14 +9,14 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Seventy-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Seventy-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
-BL-088, BL-089, BL-095, BL-096, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106, BL-107, BL-112,
-BL-115 and BL-116.
+BL-088, BL-089, BL-095, BL-096, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106, BL-107, BL-111,
+BL-112, BL-115 and BL-116.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Ten remain
@@ -55,8 +55,8 @@ BL-109, BL-110 and BL-111 come from a third pass, a research task on 2026-08-12 
 art and issue details could come from for the issues the vendored snapshot left empty. Its answer was
 that they can come from nowhere the current source reaches, because that source is complete rather
 than behind, and the three items are the defects the research found on this side of that boundary
-rather than the question it was asked. All three are `Ready`, and none of them needs a new data
-source.
+rather than the question it was asked. BL-111 has since shipped; BL-109 and BL-110 are still `Ready`,
+and neither of them needs a new data source.
 
 BL-113 came from the review of BL-101 and is the narrower half of the same question, left open on
 purpose: erasing everything now clears both restore-family keys, and the salvage copies it does not
@@ -175,7 +175,7 @@ remaining and is not scored.
 | 5.1 | BL-018 | P0 | pending and by-hand badges at `src/js/main.js:2044-2050`, pending filter at `src/js/lib/readingFilters.js:46` | Done |
 | 5.2 | BL-019 | P1 | five-state availability model at `src/js/lib/availability.js:17-23`, hedged short labels at `src/js/main.js:2105-2110` | Done |
 | 5.3 | BL-020 | P1 | manual entries carry `source: 'manual'` at `src/js/main.js:2585` and render, reorder, export and back up like any other issue | Done |
-| 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:248-280` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:13` | Done |
+| 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:320-353` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:13` | Done |
 | 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:860-891` | Done |
 | 6.2 | BL-023 | P1 | same backup file restores on another browser, validated and atomic, with undo at `src/js/main.js:3118-3124` | Done |
 | 6.3 | BL-024 | P1 | Export as Markdown ships as a list tool, confirmed in the live DOM at `docs/ux-artifacts/viewport-sweep-reading.json` | Done |
@@ -253,7 +253,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:323-398 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
 | BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3861-3864 |
-| BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Ready | scripts/check-contract.mjs:62-67 |
+| BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:189-201 |
@@ -4560,7 +4560,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7659-7661` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7703-7705` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4570,11 +4570,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:199-201`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7678-7682`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7722-7726`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7493-7495` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7537-7539` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4782,7 +4782,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1568-1577` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1586-1595` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:189-193` and
 `PRODUCT_BACKLOG.md:199-201` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -7017,27 +7017,71 @@ report the one kind this repository does not currently have. Evidence: `src/js/m
 
 **BL-111: Check the metadata source for what it covers, not only what it returns**
 
-- [ ] Assert the issue count the health endpoint already returns beside its status
-- [ ] Assert the issue count of a series whose order stops short of its published run
-- [ ] Write the figures down as a dated observation, not as a level expected to rise
+- [x] Assert the issue count the health endpoint already returns beside its status
+- [x] Assert the issue count of a series whose order stops short of its published run
+- [x] Write the figures down as a dated observation, not as a level expected to rise
 
 Constraint gate: checked 1 to 11, none breached.
 
-The contract check pins the shape of every response the app depends on and asserts nothing about what
-the source contains. It asks the health endpoint only whether the API answers, and that same response
-carries the issue count. Measured on 2026-08-12: 37,526 issues, a latest on sale date of 2025-10-29
-across all 785 records held for that year, and nothing at all for 2026. Marvel's own developer API,
-where this data originated, was retired on that same date, so the snapshot is a finished record
-rather than a lagging one. Evidence: `scripts/check-contract.mjs:62-67`.
+The contract check pinned the shape of every response the app depends on and asserted nothing about
+what the source contains. It asked the health endpoint only whether the API answers, and that same
+response carries the issue count. Read live on 2026-08-13: 37,526 issues, 785 of them dated in 2025,
+and nothing at all for 2026. The provenance document reaches the same end from the other side,
+walking the vendored mirror to a maximum on sale date of 2025-10-29, which is the day Marvel's own
+developer API, where this data originated, was retired. The snapshot is a finished record rather than
+a lagging one. Evidence: `scripts/check-contract.mjs:88-139`.
 
 The honest framing is a watch on a source believed dead rather than an expectation of recovery, and
 that is the argument for building it rather than against. The retirement is documented outside this
-repository and the provenance document now cites it, but nothing inside the repository observes it:
-what this check can see is two figures agreeing, and that agreement is load-bearing for two other
-items. Instrumenting it costs one assertion on a
-request the check already makes, and it is the only thing that would say so if the belief were wrong.
-This check is deliberately outside CI, because it calls a live third party, so it is a release
-question rather than a build one.
+repository and the provenance document cites it, but nothing inside the repository observed it. This
+check is deliberately outside CI, because it calls a live third party, so it is a release question
+rather than a build one.
+
+Verified: three assertions for one extra request, 33 checks over 17 requests against 30 over 16, and
+the run is green. Read on 2026-08-13, the health endpoint reports 37,526 issues, the same figure it
+reported on 2026-08-12, and an unfiltered issue list reports a total of 37,526 as well, so the
+number is corroborated rather than merely self-reported. Series 38806, Ultimate Black Panther, holds
+21 issues and dates its newest 2025-10-08 while its own record still calls it "(2024 - Present)".
+Issue 113879, the #22 that follows, answers 404 where 113878 answers 200 with a cover, so the end of
+the source falls between two consecutive ids.
+
+The third assertion is the one that ties the source to what this repository ships. The curated order
+names 24 issues of that series, the source holds 21, and exactly 3 of the order's records carry a
+title, a number and a marvel.com link with every other field empty. Both sides are derived from the
+data rather than written down, so the identity keeps holding if the order grows and stops holding the
+moment the source does. All three assertions were watched failing: moving either observed figure by
+one turns that assertion red, and blanking a record the source can fill turns the identity red at 24
+minus 21 against 4. Dropping an unfillable issue from the order leaves it green at 23, 21 and 2,
+which is the derivation behaving correctly rather than a hole in it.
+
+Two figures were measured and then deliberately not asserted. A query for 2026 returns nothing, which
+is the emptiness the provenance document already records, and 2025 holds 785 records, a figure this
+document had from an earlier pass rather than that one. Neither was asserted, because a year total
+catches nothing the whole-source count does not catch first and each one costs a request. The issue
+count is what notices growth anywhere; the series count is what notices growth where the orders need
+it.
+
+The first version of the third check matched the order's records by title and found 3 where it should
+have found 24, which the first live run reported as a failure. A record the source filled takes the
+source's own title, "Ultimate Black Panther (2024) #21", and a record it could not fill keeps the
+curated one, "Ultimate Black Panther #22", so the title is the one field that differs between the two
+halves being counted. The join is the marvel.com slug instead, which both halves carry identically,
+and it is read off a record the source did fill rather than written into the script.
+
+Review found a second fault in that same join. The first slug took the series prefix off by stripping
+a trailing run of digits, which loses an issue numbered 34.1 from the named side and the empty side
+at once, so the identity stays balanced while dropping the very kind of record it counts. Two issues
+already committed are numbered that way, 34.1 and 34.2, held as four records because the two Hickman
+orders overlap. The prefix now comes off by removing a filled record's own issue number, and a filled
+record whose link does not end in that number reduces to nothing and fails the guard rather than
+passing quietly. Both branches were watched: with a synthetic 24.1 added to the order the old join
+still reported 24 named and 3 empty while the new one reports 25 and 4, and giving one filled record
+an unrelated link fires the guard. The shipped tree reports 24, 21 and 3 under either join, so the
+figures above are unchanged.
+
+BL-110 is the other half of this and stays open. What is measured here is the source side of that
+gap, from outside; what that item is raised about is the order files recording nothing about which of
+their own records came back empty, which is why `placeholders` reads 0 in a file holding 34 of them.
 
 **BL-112: Let a speech user say what a button says**
 
@@ -7560,7 +7604,7 @@ now.
 - Correctness is well defended: 224 unit tests pass, 235 when this pass shipped and 403 now, and
   `scripts/check-contract.mjs` pins 24 upstream API assumptions so schema drift is distinguishable
   from an outage.
-  Evidence: `package.json:10`, `package.json:13`, `scripts/check-contract.mjs:248-280`.
+  Evidence: `package.json:10`, `package.json:13`, `scripts/check-contract.mjs:320-353`.
 
 #### 2. Performance efficiency
 
