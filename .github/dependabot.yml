@@ -7,7 +7,7 @@ version: 2
 #
 # The advisory threshold, decided here because a threshold that lives in someone's head is not
 # one. GitHub's Dependabot security updates are enabled on this repository and open a pull
-# request for any severity, which is the right setting when the whole graph is three declared
+# request for any severity, which is the right setting when the whole graph is four declared
 # packages and what they pull in: there is no volume to triage. What the threshold governs is
 # how fast each one has to be taken.
 #
@@ -33,7 +33,7 @@ version: 2
 
 updates:
   # Grouped into a single pull request because every package in this ecosystem is dev tooling
-  # with the same blast radius, and three separate pull requests a week for three packages is
+  # with the same blast radius, and four separate pull requests a week for four packages is
   # the noise this item was raised to avoid. Weekly rather than daily for the same reason.
   - package-ecosystem: npm
     directory: /

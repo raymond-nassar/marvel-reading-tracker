@@ -361,13 +361,27 @@ test('number and ordinal words cover the range the document uses and refuse beyo
   assert.equal(numberWord(26), 'twenty-six');
   assert.equal(numberWord(30), 'thirty');
   assert.equal(numberWord(61), 'sixty-one');
-  assert.equal(numberWord(70), null);
+  assert.equal(numberWord(70), 'seventy');
+  assert.equal(numberWord(99), 'ninety-nine');
+  assert.equal(numberWord(100), null);
   assert.equal(ordinalWord(1), 'first');
   assert.equal(ordinalWord(16), 'sixteenth');
   assert.equal(ordinalWord(20), 'twentieth');
   assert.equal(ordinalWord(30), 'thirtieth');
   assert.equal(ordinalWord(32), 'thirty-second');
-  assert.equal(ordinalWord(70), null);
+  assert.equal(ordinalWord(70), 'seventieth');
+  assert.equal(ordinalWord(92), 'ninety-second');
+  assert.equal(ordinalWord(100), null);
+});
+
+// The ceiling is the reason the table has to stay ahead of the document rather than level
+// with it. These two assertions fail the moment the backlog grows past what the words
+// reach, which is a build failure rather than a checker that stops checking, and that is
+// the whole point of refusing instead of falling back to digits.
+test('the words reach past every figure the document actually states', () => {
+  const d = derive(REAL);
+  assert.notEqual(numberWord(d.shipped.length), null);
+  assert.notEqual(ordinalWord(d.ranked.length), null);
 });
 
 test('a document missing one of its three regions fails loudly rather than silently', () => {

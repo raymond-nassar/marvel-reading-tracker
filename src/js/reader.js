@@ -74,7 +74,7 @@ export function openIssue(issue, { origin = location.origin } = {}) {
     return { ok: false, target: null, reason: 'no-reference' };
   }
 
-  let win = null;
+  let win;
   try {
     win = window.open(launchUrl(issue, origin), '_blank', 'noopener');
   } catch {

@@ -69,7 +69,10 @@ export function parseChecklist(text) {
     }
 
     let read = false;
-    let title = null;
+    // No initialiser, unlike its neighbours: every branch below either sets a title or skips the
+    // line, so a starting value here would be one no read can ever see. `url` keeps its null
+    // because the two plain-checkbox branches leave it unset and the issue-id lookup still reads it.
+    let title;
     let url = null;
 
     const cl = CHECKBOX_LINK_RE.exec(line);

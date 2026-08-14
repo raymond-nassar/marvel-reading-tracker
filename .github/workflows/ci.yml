@@ -84,7 +84,7 @@ jobs:
       # for the lint tooling, so this installs nothing that reaches the browser.
       # `--ignore-scripts` because a manifest is contributor-editable: an install
       # script is arbitrary code a pull request can add, running before any review
-      # step. Measured: 0 of the 90 locked packages declare one, so this costs
+      # step. Measured: 0 of the 76 locked packages declare one, so this costs
       # nothing today and closes the boundary before one arrives.
       - name: Install
         timeout-minutes: 4

@@ -14,6 +14,33 @@ quote in a bug report.
 
 ## Unreleased
 
+### Extended the number-spelling range a build check had run out of (BL-116)
+
+Nothing about the app changes and nothing you have saved is affected. One of the checks that runs
+before any change is accepted compares numbers written out as words in the project's planning
+documents against the real totals, and it only knew how to spell numbers up to sixty-nine. Finishing
+the seventieth job took it past that.
+
+It was built to stop rather than guess, which is what happened, so the failure was loud instead of
+silent. It can now spell up to ninety-nine, and a new check makes sure it can always spell the
+largest number those documents actually use, so the next time the range runs out it will say so
+directly instead of surfacing as several unrelated failures.
+
+### Updated the linter to ESLint 10 (BL-115)
+
+Nothing about the app changes and nothing you have saved is affected. This is the tool that checks
+the project's own code for mistakes, and it had been stuck on an old version because the update
+arrived broken.
+
+The new version stopped including a piece it used to come with, so the update could not even start
+until that piece was asked for by name. Once it ran it pointed out four things in the code: three
+variables given a starting value that nothing could ever read, and one place where an error was
+reported onward with its explanation but without the original error attached, which is the sort of
+thing that makes a failure harder to diagnose later. All four were fixed rather than silenced.
+
+Fixing it also caught the security notes describing the project's tooling by a count that the update
+had made wrong, and that sentence was corrected at the same time.
+
 ### Bounded what a restored backup may contain (BL-085)
 
 A backup file is now refused before it is read if it is larger than 8 MiB. The largest backup this
