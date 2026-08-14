@@ -14,6 +14,20 @@ quote in a bug report.
 
 ## Unreleased
 
+### The citation checker now sees claims about files with no extension (BL-104)
+
+Nothing about the app changes and nothing you have saved is affected. This is one of the checks that
+runs before any change is accepted, watching the notes scattered through the project that point at a
+particular line of a particular file, so that those notes cannot quietly go stale when the lines
+move underneath them.
+
+The check recognised a file only when its name ended in one of seven familiar suffixes. Two notes
+pointing at the file that decides what this project keeps out of version control were therefore
+never watched at all, and both happened still to be right, which is luck rather than a check. A file
+is now recognised by being a file in the project rather than by how its name ends, so those two are
+watched like every other note, and a note pointing at a dot-named file that does not exist is called
+out instead of passing in silence.
+
 ### Two tabs no longer overwrite each other's progress (BL-084)
 
 If you had the app open in more than one tab, whichever tab you clicked in second would quietly wipe

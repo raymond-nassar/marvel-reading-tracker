@@ -39,6 +39,25 @@ const ANCHOR = /`([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+)(?:-(\
 // exemption is declared instead.
 const BARE = /(?<![`\w])([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+)(?:-(\d+))?(?![\d`-])/g;
 
+// A path the extension list does not name, admitted by what it is rather than by what it
+// is called. Both patterns above require a filename ending in one of seven extensions, so
+// a file whose whole name is its suffix is not a citation as far as this gate is
+// concerned, and this repository cites one twice.
+//
+// Widening the shape instead was measured and refused. A pattern that accepts any
+// extensionless name matches 105 further strings across the tracked corpus and not one of
+// them is a citation: 83 are contrast ratios, 20 the served origin repeated in prose, one
+// a container tag and one a standards reference. So membership comes from the tracked list
+// instead, which is the same list the population itself is drawn from, and nothing here
+// has to be kept in step with anything. That is the rule stated at the population below,
+// applied at the other end.
+//
+// The residue is that a citation of an extensionless file which stops being tracked stops
+// being collected rather than failing to resolve. It is still reported, as a loss against
+// the lock, and a loss fails this gate for the same reason a drift does.
+const NAMED = /`([A-Za-z0-9_./-]+):(\d+)(?:-(\d+))?`/g;
+const NAMED_BARE = /(?<![`\w])([A-Za-z0-9_./-]+):(\d+)(?:-(\d+))?(?![\d`-])/g;
+
 // A line number written with no path in front of it, as a backticked colon and digits,
 // leaning on a full citation earlier in the sentence to say which file it means. Neither
 // regex above collects it, because both begin at a filename, so a comment could name a
@@ -73,14 +92,34 @@ const RELATIVE = /`(:\d+(?:-\d+)?)`/g;
 // Its reach is computed in exemptRanges below.
 
 
-// Citation-shaped text neither regex collects. This is the one hole the coverage
+// Citation-shaped text the collectors do not take. This is the one hole the coverage
 // assertion cannot see, because that assertion counts the same regexes twice.
 // It cannot be an error, since prose may legitimately name a file, so it prints as
 // a notice: a reviewer can tell an intentional mention from a citation that was
 // meant to be gated and is silently not.
+//
+// A rule marked prose-only runs where the bare form is a citation and nowhere else, which
+// is the same split the collectors draw. Announcing a bare hit in code would report every
+// string literal a program computes with.
 const NEAR_MISS = [
   [/`[A-Za-z0-9_./-]+\.[A-Za-z][A-Za-z0-9]*:\d+(?:-\d+)?`/g, 'extension outside the gate'],
   [/\b[A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)\s+lines?\s+\d+/gi, 'prose line reference'],
+  // The dot-named shape, which is the one the rule above cannot see: its pattern begins at
+  // a name followed by a dot, so a file whose name opens with the dot fails it for the same
+  // reason the collectors did. Scoped to a leading dot rather than to every extensionless
+  // name because the loose form has 105 hits here and no citations, while not one of those
+  // 105 begins with a dot. It is the leading dot that separates them, and not the presence
+  // of a dot: 76 of the 105 carry one, since a contrast ratio is written 4.5:1.
+  //
+  // The name has to hold a character that is not a digit, so that a ratio written without
+  // its leading zero is not announced as a missing file. None is written that way here, but
+  // 83 of those 105 hits are ratios, so the shape is one keystroke from arriving.
+  //
+  // Both forms, because both are collected in prose. Leaving the bare half out would have
+  // reproduced the silence this rule exists to end, in the column of the backlog table that
+  // writes its citations bare.
+  [/`(?:[A-Za-z0-9_.-]+\/)*\.[A-Za-z0-9_-]*[A-Za-z_-][A-Za-z0-9_-]*:\d+(?:-\d+)?`/g, 'dot-named file that is not tracked'],
+  [/(?<![`\w])(?:[A-Za-z0-9_.-]+\/)*\.[A-Za-z0-9_-]*[A-Za-z_-][A-Za-z0-9_-]*:\d+(?:-\d+)?(?![\d`-])/g, 'dot-named file that is not tracked', true],
 ];
 
 
@@ -179,7 +218,13 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g
 // anyway, but that is a property of today's data rather than a guarantee.
 //
 // Binary files are dropped by `read` rather than by extension, for the same reason.
+//
+// Memoised because the list is now read four times in a run rather than three, the fourth
+// being the membership test the extensionless collector makes. `ref` is fixed for the
+// process, so the answer cannot change under the cache.
+let listed = null;
 function docs() {
+  if (listed !== null) return listed;
   // No pathspec. `ls-tree` and `ls-files` do not agree on how a bare pathspec matches
   // nested paths, and filtering in one place here is one fewer behaviour that can
   // differ between the working tree and a historical ref.
@@ -187,14 +232,15 @@ function docs() {
     ? ['ls-files']
     : ['ls-tree', '-r', '--name-only', ref];
   try {
-    return execFileSync('git', cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
+    listed = execFileSync('git', cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
       .split('\n')
       .map((s) => s.trim())
       .filter((s) => s.length > 0 && s !== LOCK)
       .sort();
   } catch {
-    return [];
+    listed = [];
   }
+  return listed;
 }
 
 // Whether a citation is a claim about a past state. The marker's reach is the
@@ -325,13 +371,25 @@ export function relativeVerdict(count, ref = null) {
 // are synthetic inputs. One of them names a line past the end of its file on purpose,
 // so the unresolvable path has something to resolve to nothing. Collecting it would
 // require the fixture to resolve, which is the single thing it exists not to do.
-export function citations(text, syntax = PROSE) {
+//
+// `known` is the tracked list, and it decides membership for the extensionless forms
+// alone. Absent, they collect nothing, which is what a caller holding a fragment of text
+// and no repository should get: the shape carries no signal on its own, so with no list
+// to check it against there is nothing to be sure of.
+export function citations(text, syntax = PROSE, known = null) {
   const out = new Map();
+  const add = (m) => {
+    const at = m[0].startsWith('`') ? m.index + 1 : m.index;
+    if (out.has(at)) return;
+    out.set(at, { at, file: m[1], start: Number(m[2]), end: m[3] ? Number(m[3]) : Number(m[2]) });
+  };
+
   for (const re of syntax.prose ? [ANCHOR, BARE] : [ANCHOR]) {
-    for (const m of text.matchAll(re)) {
-      const at = m[0].startsWith('`') ? m.index + 1 : m.index;
-      if (out.has(at)) continue;
-      out.set(at, { at, file: m[1], start: Number(m[2]), end: m[3] ? Number(m[3]) : Number(m[2]) });
+    for (const m of text.matchAll(re)) add(m);
+  }
+  if (known) {
+    for (const re of syntax.prose ? [NAMED, NAMED_BARE] : [NAMED]) {
+      for (const m of text.matchAll(re)) if (known.has(m[1])) add(m);
     }
   }
   return [...out.values()].sort((a, b) => a.at - b.at);
@@ -439,6 +497,7 @@ export function claimBefore(lines, i, at, syntax = PROSE) {
 function collect() {
   const found = [];
   const coverage = [];
+  const known = new Set(docs());
   let exempted = 0;
 
   for (const doc of docs()) {
@@ -453,7 +512,7 @@ function collect() {
 
     // Counted over the whole file, independently of the line walk below, so any
     // walker bug shows up as a shortfall instead of as a clean pass.
-    const scanned = citations(text, syntax).filter((c) => !exempt(c.at)).length;
+    const scanned = citations(text, syntax, known).filter((c) => !exempt(c.at)).length;
     if (scanned === 0) continue;
 
     let heading = 'preamble';
@@ -469,7 +528,7 @@ function collect() {
 
       const scope = line.startsWith('|') ? rowScope(line, heading) : heading;
 
-      for (const c of citations(line, syntax)) {
+      for (const c of citations(line, syntax, known)) {
         if (exempt(offset + c.at)) {
           exempted += 1;
           continue;
@@ -772,40 +831,68 @@ function printCollisions(clashes) {
   console.log('');
 }
 
-// Citation-shaped text the ANCHOR regex does not collect. This is the one hole the
-// coverage assertion cannot see, because that assertion counts the same regex twice.
-// It cannot be an error, since prose may legitimately name a file, so it prints as
-// a notice: a reviewer can tell an intentional mention from a citation that was
-// meant to be gated and is silently not.
+// Citation-shaped text the collectors do not take. This is the one hole the coverage
+// assertion cannot see, because that assertion counts the same regexes twice. It cannot
+// be an error, since prose may legitimately name a file, so it prints as a notice: a
+// reviewer can tell an intentional mention from a citation that was meant to be gated
+// and is silently not.
+//
+// Split from the printing so the rules can be asserted without a repository under them.
+// The one that made this worth splitting is the dot-named rule, whose whole content is
+// which side of the collected line a hit falls on, and that turns on `known` rather than
+// on the text. A test that cannot vary `known` cannot reach either side of it.
+export function nearMisses(text, syntax = PROSE, known = null) {
+  const out = [];
+
+  // What the collectors take is what this must not repeat. The backticked extensionless
+  // form is now collected when its path is tracked, so the same string is a citation in
+  // one repository and a near miss in another, and only this set can tell them apart.
+  // The bare form is collected on the same terms in prose, and has to be held out on the
+  // same terms too, or a citation that is gated would be announced as one that is not.
+  const covered = new Set(text.match(ANCHOR) ?? []);
+  if (known) {
+    for (const m of text.matchAll(NAMED)) if (known.has(m[1])) covered.add(m[0]);
+    if (syntax.prose) {
+      for (const m of text.matchAll(NAMED_BARE)) if (known.has(m[1])) covered.add(m[0]);
+    }
+  }
+
+  for (const [re, why, proseOnly] of NEAR_MISS) {
+    if (proseOnly && !syntax.prose) continue;
+    for (const hit of text.match(re) ?? []) {
+      if (covered.has(hit)) continue;
+      out.push({ line: null, hit, why });
+    }
+  }
+
+  // Widening the population past Markdown created a third near miss, and leaving it
+  // unreported would have reproduced the silence that widening was meant to end. Only
+  // the backticked form counts outside prose, because a bare citation there is usually
+  // a string literal the program computes with. A comment is the exception: the
+  // sentence around it is addressed to a reader, so a bare citation in one is a claim
+  // and is now ungated with nothing said about it. Being in a comment is the only
+  // signal the text carries, so it is the one this draws on.
+  if (!syntax.prose && syntax.open) {
+    const lines = text.split('\n');
+    for (let i = 0; i < lines.length; i += 1) {
+      if (!syntax.open.test(lines[i])) continue;
+      for (const hit of lines[i].match(BARE) ?? []) {
+        out.push({ line: i + 1, hit, why: 'bare citation in a comment' });
+      }
+    }
+  }
+  return out;
+}
+
 function reportNearMisses(exempted) {
+  const known = new Set(docs());
   const suspicious = [];
   for (const doc of docs()) {
     const text = read(doc);
     if (text === null) continue;
-    const covered = new Set(text.match(ANCHOR) ?? []);
-    for (const [re, why] of NEAR_MISS) {
-      for (const hit of text.match(re) ?? []) {
-        if (covered.has(hit)) continue;
-        suspicious.push(`  ${doc}  ${hit}  (${why})`);
-      }
-    }
-
-    // Widening the population past Markdown created a third near miss, and leaving it
-    // unreported would have reproduced the silence that widening was meant to end. Only
-    // the backticked form counts outside prose, because a bare citation there is usually
-    // a string literal the program computes with. A comment is the exception: the
-    // sentence around it is addressed to a reader, so a bare citation in one is a claim
-    // and is now ungated with nothing said about it. Being in a comment is the only
-    // signal the text carries, so it is the one this draws on.
-    const syntax = commentSyntax(doc);
-    if (!syntax.prose && syntax.open) {
-      const lines = text.split('\n');
-      for (let i = 0; i < lines.length; i += 1) {
-        if (!syntax.open.test(lines[i])) continue;
-        for (const hit of lines[i].match(BARE) ?? []) {
-          suspicious.push(`  ${doc}:${i + 1}  ${hit}  (bare citation in a comment)`);
-        }
-      }
+    for (const m of nearMisses(text, commentSyntax(doc), known)) {
+      const where = m.line === null ? doc : `${doc}:${m.line}`;
+      suspicious.push(`  ${where}  ${m.hit}  (${m.why})`);
     }
   }
   if (exempted) {

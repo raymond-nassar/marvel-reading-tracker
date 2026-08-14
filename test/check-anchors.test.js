@@ -13,7 +13,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { PROSE, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, failing, firstTime, pairingLines, pairings, relativeCitations, relativeVerdict, scopeRenames } from '../scripts/check-anchors.mjs';
+import { PROSE, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, failing, firstTime, nearMisses, pairingLines, pairings, relativeCitations, relativeVerdict, scopeRenames } from '../scripts/check-anchors.mjs';
 
 const JS = commentSyntax('a.mjs');
 
@@ -223,6 +223,114 @@ test('a citation carrying both forms is still counted once', () => {
   const line = `compare ${cite('src/js/lib/model.js:640')} with src/js/lib/model.js:641`;
 
   assert.deepEqual(citations(line).map((c) => c.start), [640, 641]);
+});
+
+// BL-104. Both patterns above begin at a filename ending in one of seven extensions, so a file
+// whose whole name is its suffix was not a citation at all, and this repository cites one twice.
+// Widening the shape was measured and refused: an extensionless pattern matches 105 further
+// strings here, 83 of them contrast ratios, 20 the served origin, one a container tag and one a
+// standards reference, and none a citation. So the tracked list decides, and these two hold the
+// direction that decision runs in.
+const IGNORED = new Set(['.gitignore']);
+
+test('an extensionless path is collected in both forms once it names a tracked file', () => {
+  const ticked = `the runtime artifacts are held out at ${cite('.gitignore:12-13')} today`;
+  const bare = 'the runtime artifacts are held out at .gitignore:12-13 today';
+
+  assert.deepEqual(citations(ticked, PROSE, IGNORED).map((c) => c.file), ['.gitignore']);
+  assert.deepEqual(citations(bare, PROSE, IGNORED).map((c) => c.start), [12]);
+  assert.equal(citations(ticked, JS, IGNORED).length, 1);
+  assert.equal(citations(bare, JS, IGNORED).length, 0);
+});
+
+// The half that keeps the widening from costing anything. A ratio and an origin are the two
+// shapes prose here actually produces, at 103 of the 105 hits between them, and both must stay
+// out. The other two are a container tag and a standards reference, one hit each.
+test('an extensionless path nothing tracks is not a citation, whatever its shape', () => {
+  const ratio = `contrast reaches ${cite('4.5:1')} against the surface`;
+  const origin = `served from ${cite('127.0.0.1:8787')} throughout`;
+
+  assert.equal(citations(ratio, PROSE, IGNORED).length, 0);
+  assert.equal(citations(origin, PROSE, IGNORED).length, 0);
+  assert.equal(citations(`held out at ${cite('.gitignore:12-13')}`, PROSE, new Set()).length, 0);
+});
+
+// With no list there is nothing to be sure of, so a caller holding a fragment of text and no
+// repository gets the old answer rather than a guess. Every fixture above this line relies on it.
+test('an extensionless path is left alone when there is no list to check it against', () => {
+  const line = `the runtime artifacts are held out at ${cite('.gitignore:12-13')} today`;
+
+  assert.equal(citations(line).length, 0);
+  assert.equal(citations(line, PROSE, null).length, 0);
+});
+
+// The whole of BL-104's third criterion, and the assertion that falsifies is the first. Before
+// this widening the collector returned nothing for the line below, so `found` was empty, nothing
+// was compared and the verdict was a pass while the claim went stale. Drift is not separately
+// wired for this shape: being collected is what puts a citation inside the comparison that
+// already exists, which is why proving collection proves the rest.
+test('a citation of an ignore file drifts when the lines it names move', () => {
+  const doc = `the runtime artifacts are held out at ${cite('.gitignore:12-13')} today`;
+  const key = 'PRODUCT_BACKLOG.md|repository-hygiene|.gitignore:12-13|0';
+  const blessed = { [key]: { anchor: '.gitignore:12-13', fp: 'blessed', head: '*.log' } };
+
+  const found = citations(doc, PROSE, IGNORED).map((c) => ({
+    key,
+    anchor: `${c.file}:${c.start}-${c.end}`,
+    claim: 'the runtime artifacts are held out at',
+    fp: 'moved',
+    head: 'tmp/',
+  }));
+
+  assert.equal(found.length, 1);
+  assert.equal(pairings(found, blessed).length, 1);
+  assert.equal(failing({ drifted: pairings(found, blessed).length }), true);
+});
+
+// BL-104's second criterion. The near-miss notice exists so that a citation nothing gates is at
+// least visible, and its first rule begins at a name followed by a dot, so it failed on the
+// dot-named shape for the same reason the collectors did. These five hold both sides of the
+// line it now draws, in both forms, and two of them hold the noise it must not make: 105 strings
+// here are extensionless and citation-shaped, and a notice on all of them is a notice nobody reads.
+test('a citation of a dot-named file nothing tracks is named as a near miss', () => {
+  const line = `held out at ${cite('.npmrc:3')} since the start`;
+
+  const why = nearMisses(line, PROSE, new Set()).map((m) => m.why);
+
+  assert.deepEqual(why, ['dot-named file that is not tracked']);
+});
+
+test('the same citation says nothing once the file it names is tracked', () => {
+  const line = `held out at ${cite('.gitignore:12-13')} since the start`;
+
+  assert.equal(nearMisses(line, PROSE, IGNORED).length, 0);
+  assert.equal(nearMisses(line, PROSE, new Set()).length, 1);
+});
+
+test('a ratio and an origin are not near misses, however citation-shaped they read', () => {
+  const line = `contrast reaches ${cite('4.5:1')} on ${cite('127.0.0.1:8787')} throughout`;
+
+  assert.deepEqual(nearMisses(line, PROSE, new Set()), []);
+});
+
+// Review of this item found the notice covering only the backticked half of what the collectors
+// take, which left a bare citation of an untracked dot-named file silent in exactly the way this
+// item was raised to end. The backlog's Evidence column writes its citations bare, so that is the
+// half the defect would actually have arrived through.
+test('a bare citation of a dot-named file nothing tracks is a near miss in prose only', () => {
+  const line = 'held out at .npmrc:3 since the start';
+
+  assert.deepEqual(nearMisses(line, PROSE, new Set()).map((m) => m.why), ['dot-named file that is not tracked']);
+  assert.deepEqual(nearMisses(line, JS, new Set()), []);
+  assert.deepEqual(nearMisses(line, PROSE, new Set(['.npmrc'])), []);
+});
+
+// A ratio written without its leading zero is the one string this rule's shape cannot tell from a
+// dotfile, and 83 of the 105 measured hits are ratios. Requiring a character that is not a digit
+// is what keeps the notice quiet about arithmetic.
+test('a ratio written without its leading zero is not read as a dot-named file', () => {
+  assert.deepEqual(nearMisses(`contrast reaches ${cite('.5:1')} there`, PROSE, new Set()), []);
+  assert.deepEqual(nearMisses('contrast reaches .75:1-2 there', PROSE, new Set()), []);
 });
 
 // The claim printed beside each line is all BL-070 shipped, and in code it arrives wrapped in

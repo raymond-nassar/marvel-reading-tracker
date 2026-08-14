@@ -134,7 +134,7 @@ Every `path:line` citation in every tracked file, this one included, is fingerpr
 the **content** of the lines it names, not by the numbers. Editing code moves lines and breaks
 fingerprints. That is the gate working.
 
-Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:167-170` explains why in the
+Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:206-209` explains why in the
 script itself: an enumeration is a list someone has to keep complete, and every anchor defect the
 gate exists to catch was caused by exactly that.
 
