@@ -9,13 +9,14 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Seventy-three items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Seventy-four items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
-BL-088, BL-089, BL-095, BL-096, BL-099, BL-100, BL-101, BL-104, BL-106, BL-112, BL-115 and BL-116.
+BL-088, BL-089, BL-095, BL-096, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106, BL-112, BL-115 and
+BL-116.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Ten remain
@@ -249,13 +250,13 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Shipped | src/js/main.js:3079-3107 |
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Shipped | src/js/storage.js:426-450 |
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
-| BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-counts.mjs:232-265 |
+| BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:318-388 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3856-3859 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3857-3860 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Ready | scripts/check-contract.mjs:62-67 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:188-200 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:189-201 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
@@ -282,7 +283,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | src/js/main.js:2889 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
-| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:331-361 |
+| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:452-482 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2965-2999 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:553 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:944 |
@@ -294,7 +295,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:1021 |
 | BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:317 |
 | BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1122 |
-| BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:388-426 |
+| BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:509-547 |
 | BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:291-314 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
@@ -3021,18 +3022,18 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2724-2727`.
+`PRODUCT_BACKLOG.md:2725-2728`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
 permanent check worth building rather than a one-off answer worth writing down. The scan needed no
 minimum length and no exception list to stay quiet, so `scripts/check-counts.mjs` now carries it, at
-`scripts/check-counts.mjs:331-361`, and `npm run counts` fails on a repeat. That remains true of this
+`scripts/check-counts.mjs:452-482`, and `npm run counts` fails on a repeat. That remains true of this
 scan, which is why the citation names it rather than the whole function: the whole-document pass
 BL-081 added later does need a floor, and the reason is recorded there.
 
 Putting it in that script rather than in a new one follows what was already there. The counts gate
-already refuses a detail block that appears twice, at `scripts/check-counts.mjs:300-310`, which is
+already refuses a detail block that appears twice, at `scripts/check-counts.mjs:421-431`, which is
 this same defect one level coarser: an edit that copied where it meant to move. The heading check
 could not see this case, because a block that states its own paragraph twice still has one heading
 and one row, so every enumeration agreed the document was sound.
@@ -3817,7 +3818,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 Filed out of BL-075's review, which found the defect the gate is named for sitting inside the change
 that ran it. `checkRepeats` compares a window against the window immediately following it, at
-`scripts/check-counts.mjs:347-353`, so it catches a block directly followed by its copy and nothing
+`scripts/check-counts.mjs:468-474`, so it catches a block directly followed by its copy and nothing
 else. BL-075's first draft repeated a six-line paragraph forty-five lines further down, which put
 pre-implementation framing after the verification numbers that closed the block, and the gate printed
 that nothing was said twice.
@@ -3836,7 +3837,7 @@ answer it: the ceiling derivation above the loop already records that a repeat c
 line, and that guard is doing more work than it looks like once the two copies can be anywhere.
 
 **Shipped.** The adjacency walk is untouched and a second pass runs after it, at
-`scripts/check-counts.mjs:388-426`, descending from the longest possible repeat down to a floor and
+`scripts/check-counts.mjs:509-547`, descending from the longest possible repeat down to a floor and
 comparing every blank-free window against every earlier one. Both passes share the one `claimed`
 set, so a block the adjacency walk has already reported is not reported again by the second.
 
@@ -4553,21 +4554,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7475-7477` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7537-7539` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:198-200`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:199-201`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7494-7498`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7556-7560`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7309-7311` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7371-7373` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4775,9 +4776,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1521-1530` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:188-192` and
-`PRODUCT_BACKLOG.md:198-200` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:1539-1548` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:189-193` and
+`PRODUCT_BACKLOG.md:199-201` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -6673,16 +6674,16 @@ evidence for it, and recording which is which is worth more here than the count 
 
 **BL-105: Derive the roadmap paragraph's status split in the counts gate**
 
-- [ ] Derive the "N of them are still `Ready`" figure from the table rows in that id range
-- [ ] Derive the list of delivered ids in the same sentence from the same rows
-- [ ] Prove both fail by putting the stale wording back
+- [x] Derive the "N of them are still `Ready`" figure from the table rows in that id range
+- [x] Derive the list of delivered ids in the same sentence from the same rows
+- [x] Prove both fail by putting the stale wording back
 
 Constraint gate: checked 1 to 11, none breached.
 
 Raised by `BL-095` and routed here rather than fixed there, because that item put deadlines on a
 workflow and this one changes the gate that reads this document. The counts gate already derives the
 opening paragraph's "N items have since been delivered" sentence and its list of ids, at
-`scripts/check-counts.mjs:232-265`. It does not derive the second paragraph, which makes the same two
+`scripts/check-counts.mjs:318-388`. It does not derive the second paragraph, which makes the same two
 statements about the eighteen items of the 2026-08-10 study: how many of them are still `Ready`, and
 which have shipped. Both went stale as those items shipped, and every gate stayed green.
 
@@ -6690,8 +6691,69 @@ That is the same defect `BL-059` was raised for and the same one this document h
 times, so the interesting part is not the wrong number but that the fix for it was written to one
 sentence rather than to the shape of the sentence. Two paragraphs make the same claim about two
 different id ranges; one is derived and one is prose. Deriving the second is small, and the check
-that matters is the one that proves it: put the wording back that shipped with `BL-095`, which said
-fourteen were `Ready` when thirteen were and omitted one delivered id, and watch it fail.
+that matters is the one that proves it: put the stale wording back and watch it fail.
+
+Delivered by generalising the check rather than adding a second one. `checkLedger` now resolves the
+subject of a ledger claim the way `subjectOf` resolves the subject of a rank claim: by the nearest
+preceding id range, with a claim that has none being about the ranked table as a whole. The two
+shapes are matched against the roadmap flattened to one string, because the second paragraph breaks
+its sentence between "have since been" and "delivered" and no line-by-line match can see it. Both
+paragraphs are now derived by the same six lines, and adding a third would need no code at all.
+
+Three details were forced by measurement rather than chosen. The status name is read from the
+backticks the sentence writes it in, so the check is not limited to the statuses in use today. The
+id list is read from the sentence the phrase sits in rather than from one side of it, because the
+two paragraphs put their lists on opposite sides: the first introduces its list with a colon after
+the phrase and the second runs its list in before. And a figure counts as a claim only when it is
+written as a number word, which is what stops this block from being read as making the claims it
+describes.
+
+That last guard is not the only thing standing between the checker and this block. The claims are
+read only above `## The backlog`, which is the one region that introduces a cohort, so everything in
+the item details is out of scope outright. Both were measured as load-bearing, in opposite places: a
+quotation below the table is caught by the region and a quotation above it by the number word. The
+second guard had no test defending it until the falsification found that removing it broke nothing,
+which is the case the rule about proving a check can fail exists to surface.
+
+Falsified by six reverts, each the smallest expression that removes one half of the change, with the
+failing tests measured rather than reasoned about:
+
+| Revert | Tests failing |
+|---|---|
+| Read the whole document rather than the region above the table | 1, the quotation below the table |
+| Drop the number-word guard on the status claim | 1, the non-number figure |
+| Drop the number-word guard on the delivered claim | 1, the quotation above the table |
+| Hardcode `Ready` rather than read the status from the backticks | 1, the count of another status |
+| Resolve no cohort, so every claim is about the whole table | 12, the whole ledger suite |
+| Read the id list from one side of the phrase rather than the sentence | 12, the whole ledger suite |
+
+The two twelves are honest rather than coarse. Both reverts make the real document fail its own
+check, which is the strongest evidence that the second paragraph is derived now and was not before:
+the first computes its figures over 93 rows instead of 18, and the second reads its id list as the
+one id that follows the phrase. A revert that turns the document red cannot fail a smaller number of
+tests than the number that read the document.
+
+One check was measured and deliberately left out. Each paragraph also states the size of its own
+cohort, as "Eighteen further items" and "the eight items here", and neither is derived. Every form
+loose enough to catch both also matches "one of the items above them" in the sentence after the
+second, where "one" is a number word and the finding would be false. Tightening it into two literal
+anchors would be the enumeration this repository keeps paying for, so it is recorded here as refused
+rather than missed. The count that goes stale as items ship is the status split, and that one is now
+derived; a cohort size changes only when its range does, which is the same edit that writes it.
+
+The one thing this item got wrong was its own example. It said the stale wording shipped with
+`BL-095`, saying fourteen were `Ready` when thirteen were and omitting a delivered id. Replaying every
+revision of this file that carries the sentence, and scoring each against the table in that same
+revision, says otherwise: `BL-095`'s commit stated thirteen, thirteen was right, and its id list was
+complete. The paragraph was accurate in fifteen of the seventeen revisions that carried it.
+
+The two it was wrong in are both on 2026-08-13, and they carried both defects at once: nine stated
+against eight `Ready`, and a list of eight ids for nine `Shipped` rows, missing `BL-085`. It went wrong
+in the commit that shipped `BL-085` itself, stood through the ESLint 10 upgrade, and was corrected by
+hand in the `BL-084` change. So the premise holds and the illustration does not, which is worth more
+to the record than the illustration was: a defect that survives two commits and is then fixed by
+someone noticing is the exact shape of thing a derived figure ends, and nothing here had to be
+taken on trust to say so.
 
 **BL-106: Credit Comic Book Herald where a new reader would look for it**
 
@@ -7114,7 +7176,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4677-4685`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4678-4686`.
 
 ## Existing epics and stories
 
