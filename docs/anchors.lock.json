@@ -14,8 +14,8 @@
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
   },
-  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:192-195|0": {
-    "anchor": "scripts/check-anchors.mjs:192-195",
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:206-209|0": {
+    "anchor": "scripts/check-anchors.mjs:206-209",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:7309|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7309",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:7335|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7335",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -951,21 +951,21 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4677-4685|0": {
     "anchor": "PRODUCT_BACKLOG.md:4677-4685",
-    "fp": "45bb2f6b52b3fec9",
+    "fp": "c21e48cf7e7cc497",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7283-7285|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7283-7285",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7309-7311|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7309-7311",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7449-7451|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7449-7451",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7475-7477|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7475-7477",
     "fp": "3bbc47b7c09ce03c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7468-7472|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7468-7472",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7494-7498|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7494-7498",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -1009,138 +1009,138 @@
     "fp": "0229604f80988ee1",
     "head": "`# ${event.name}: ${essential ? 'Main Series Reading Checklist' : 'Issue-by-Issue Reading Checklist'"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1001|0": {
-    "anchor": "scripts/check-anchors.mjs:1001",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1021|0": {
+    "anchor": "scripts/check-anchors.mjs:1021",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1001|1": {
-    "anchor": "scripts/check-anchors.mjs:1001",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1021|1": {
+    "anchor": "scripts/check-anchors.mjs:1021",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1102|0": {
-    "anchor": "scripts/check-anchors.mjs:1102",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1122|0": {
+    "anchor": "scripts/check-anchors.mjs:1122",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1102|1": {
-    "anchor": "scripts/check-anchors.mjs:1102",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1122|1": {
+    "anchor": "scripts/check-anchors.mjs:1122",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1113|0": {
-    "anchor": "scripts/check-anchors.mjs:1113",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1133|0": {
+    "anchor": "scripts/check-anchors.mjs:1133",
     "fp": "20b9af2aa5430e31",
     "head": "const renamed = scopeRenames(unkeyed, gone, lock, liveScopes);"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1134-1140|0": {
-    "anchor": "scripts/check-anchors.mjs:1134-1140",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1154-1160|0": {
+    "anchor": "scripts/check-anchors.mjs:1154-1160",
     "fp": "0f3e96ed0e6e42d8",
     "head": "for (const [b, ns] of newBy) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:119|0": {
-    "anchor": "scripts/check-anchors.mjs:119",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:133|0": {
+    "anchor": "scripts/check-anchors.mjs:133",
     "fp": "dc0f54892037a5a6",
     "head": "const isBinary = (text) => text.includes('\\0');"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:192-195|0": {
-    "anchor": "scripts/check-anchors.mjs:192-195",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:206-209|0": {
+    "anchor": "scripts/check-anchors.mjs:206-209",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:192-195|1": {
-    "anchor": "scripts/check-anchors.mjs:192-195",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:206-209|1": {
+    "anchor": "scripts/check-anchors.mjs:206-209",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:192-195|2": {
-    "anchor": "scripts/check-anchors.mjs:192-195",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:206-209|2": {
+    "anchor": "scripts/check-anchors.mjs:206-209",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:192-195|3": {
-    "anchor": "scripts/check-anchors.mjs:192-195",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:206-209|3": {
+    "anchor": "scripts/check-anchors.mjs:206-209",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:192-195|4": {
-    "anchor": "scripts/check-anchors.mjs:192-195",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:206-209|4": {
+    "anchor": "scripts/check-anchors.mjs:206-209",
     "fp": "462c466e0674790c",
     "head": "// Every tracked file, listed by git rather than by this script. Membership in the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:214-216|0": {
-    "anchor": "scripts/check-anchors.mjs:214-216",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:228-230|0": {
+    "anchor": "scripts/check-anchors.mjs:228-230",
     "fp": "c9e7e9a264fdf5b6",
     "head": "// No pathspec. `ls-tree` and `ls-files` do not agree on how a bare pathspec matches"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:224|0": {
-    "anchor": "scripts/check-anchors.mjs:224",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:238|0": {
+    "anchor": "scripts/check-anchors.mjs:238",
     "fp": "e6cb2cb5ab856c46",
     "head": ".filter((s) => s.length > 0 && s !== LOCK)"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:314-329|0": {
-    "anchor": "scripts/check-anchors.mjs:314-329",
-    "fp": "0bfa4a558f67527c",
-    "head": "// Where the relative form counts, which is the same split BL-071 drew and for the same reason."
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:32|0": {
     "anchor": "scripts/check-anchors.mjs:32",
     "fp": "dda7109a4205f5b2",
     "head": "const ANCHOR = /`([A-Za-z0-9_./-]+\\.(?:js|mjs|css|html|json|yml|md)):(\\d+)(?:-(\\d+))?`/g;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:323|0": {
-    "anchor": "scripts/check-anchors.mjs:323",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:328-343|0": {
+    "anchor": "scripts/check-anchors.mjs:328-343",
+    "fp": "0bfa4a558f67527c",
+    "head": "// Where the relative form counts, which is the same split BL-071 drew and for the same reason."
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:337|0": {
+    "anchor": "scripts/check-anchors.mjs:337",
     "fp": "c429ed0edb9e7b6b",
     "head": "if (!syntax.prose && !(syntax.open?.test(line) ?? false)) return;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:338-341|0": {
-    "anchor": "scripts/check-anchors.mjs:338-341",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:352-355|0": {
+    "anchor": "scripts/check-anchors.mjs:352-355",
     "fp": "279e053febd9af8a",
     "head": "export function relativeVerdict(count, ref = null) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:347-359|0": {
-    "anchor": "scripts/check-anchors.mjs:347-359",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:361-373|0": {
+    "anchor": "scripts/check-anchors.mjs:361-373",
     "fp": "867a8c3bf79a2cb4",
     "head": "// Outside prose only the backticked form is collected. That is the opposite call from"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:402-428|0": {
-    "anchor": "scripts/check-anchors.mjs:402-428",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:416-442|0": {
+    "anchor": "scripts/check-anchors.mjs:416-442",
     "fp": "8bd270ad19cf1ae6",
     "head": "// The prose immediately before a citation, which is what the reader has to weigh the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:433|0": {
-    "anchor": "scripts/check-anchors.mjs:433",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:447|0": {
+    "anchor": "scripts/check-anchors.mjs:447",
     "fp": "4b80dfe5a50e2da3",
     "head": "const marked = (s) => syntax.open?.test(s) ?? false;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:539|0": {
-    "anchor": "scripts/check-anchors.mjs:539",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:553|0": {
+    "anchor": "scripts/check-anchors.mjs:553",
     "fp": "48c96e3374e4aff6",
     "head": "claim: claimBefore(lines, i, c.at, syntax),"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:704-750|0": {
-    "anchor": "scripts/check-anchors.mjs:704-750",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:718-764|0": {
+    "anchor": "scripts/check-anchors.mjs:718-764",
     "fp": "1e8c08864276e37f",
     "head": "export function scopeRenames(unkeyed, gone, lock, liveScopes = null) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:848-863|0": {
-    "anchor": "scripts/check-anchors.mjs:848-863",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:868-883|0": {
+    "anchor": "scripts/check-anchors.mjs:868-883",
     "fp": "a803afb540b17fb1",
     "head": "// Widening the population past Markdown created a third near miss, and leaving it"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:858|0": {
-    "anchor": "scripts/check-anchors.mjs:858",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:878|0": {
+    "anchor": "scripts/check-anchors.mjs:878",
     "fp": "2ed4c83265d83333",
     "head": "if (!syntax.open.test(lines[i])) continue;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:867|0": {
-    "anchor": "scripts/check-anchors.mjs:867",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:887|0": {
+    "anchor": "scripts/check-anchors.mjs:887",
     "fp": "82d76e7ed94dfdf4",
     "head": "function reportNearMisses(exempted) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:905-939|0": {
-    "anchor": "scripts/check-anchors.mjs:905-939",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:925-959|0": {
+    "anchor": "scripts/check-anchors.mjs:925-959",
     "fp": "c0ce026f923c4d6d",
     "head": "// Before anything else, and before the bless path in particular. A relative citation is a"
   },
@@ -2874,13 +2874,13 @@
     "fp": "041e549f4f8de028",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:539|0": {
-    "anchor": "scripts/check-anchors.mjs:539",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:553|0": {
+    "anchor": "scripts/check-anchors.mjs:553",
     "fp": "48c96e3374e4aff6",
     "head": "claim: claimBefore(lines, i, c.at, syntax),"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:224|0": {
-    "anchor": "scripts/check-anchors.mjs:224",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:238|0": {
+    "anchor": "scripts/check-anchors.mjs:238",
     "fp": "e6cb2cb5ab856c46",
     "head": ".filter((s) => s.length > 0 && s !== LOCK)"
   },
@@ -2904,23 +2904,23 @@
     "fp": "8a51ad8622832a60",
     "head": "// The main slot is asked directly rather than through the walk, so that a storage which"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-077|scripts/check-anchors.mjs:314-329|0": {
-    "anchor": "scripts/check-anchors.mjs:314-329",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-077|scripts/check-anchors.mjs:328-343|0": {
+    "anchor": "scripts/check-anchors.mjs:328-343",
     "fp": "0bfa4a558f67527c",
     "head": "// Where the relative form counts, which is the same split BL-071 drew and for the same reason."
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-078|scripts/check-anchors.mjs:1001|0": {
-    "anchor": "scripts/check-anchors.mjs:1001",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-078|scripts/check-anchors.mjs:1021|0": {
+    "anchor": "scripts/check-anchors.mjs:1021",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-079|scripts/check-anchors.mjs:303|0": {
-    "anchor": "scripts/check-anchors.mjs:303",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-079|scripts/check-anchors.mjs:317|0": {
+    "anchor": "scripts/check-anchors.mjs:317",
     "fp": "18f94cbda3c2e5ec",
     "head": "export function commentSyntax(path) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-080|scripts/check-anchors.mjs:1102|0": {
-    "anchor": "scripts/check-anchors.mjs:1102",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-080|scripts/check-anchors.mjs:1122|0": {
+    "anchor": "scripts/check-anchors.mjs:1122",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },

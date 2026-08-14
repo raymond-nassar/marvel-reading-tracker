@@ -228,8 +228,9 @@ test('a citation carrying both forms is still counted once', () => {
 // BL-104. Both patterns above begin at a filename ending in one of seven extensions, so a file
 // whose whole name is its suffix was not a citation at all, and this repository cites one twice.
 // Widening the shape was measured and refused: an extensionless pattern matches 105 further
-// strings here, all of them contrast ratios, the served origin and a container tag, and none a
-// citation. So the tracked list decides, and these two hold the direction that decision runs in.
+// strings here, 83 of them contrast ratios, 20 the served origin, one a container tag and one a
+// standards reference, and none a citation. So the tracked list decides, and these two hold the
+// direction that decision runs in.
 const IGNORED = new Set(['.gitignore']);
 
 test('an extensionless path is collected in both forms once it names a tracked file', () => {
@@ -243,7 +244,8 @@ test('an extensionless path is collected in both forms once it names a tracked f
 });
 
 // The half that keeps the widening from costing anything. A ratio and an origin are the two
-// shapes prose here actually produces, at 105 hits between them, and both must stay out.
+// shapes prose here actually produces, at 103 of the 105 hits between them, and both must stay
+// out. The other two are a container tag and a standards reference, one hit each.
 test('an extensionless path nothing tracks is not a citation, whatever its shape', () => {
   const ratio = `contrast reaches ${cite('4.5:1')} against the surface`;
   const origin = `served from ${cite('127.0.0.1:8787')} throughout`;
@@ -287,9 +289,9 @@ test('a citation of an ignore file drifts when the lines it names move', () => {
 
 // BL-104's second criterion. The near-miss notice exists so that a citation nothing gates is at
 // least visible, and its first rule begins at a name followed by a dot, so it failed on the
-// dot-named shape for the same reason the collectors did. These three hold both sides of the
-// line it now draws, and the third holds the noise it must not make: 105 strings here are
-// extensionless and citation-shaped, and a notice on all of them is a notice nobody reads.
+// dot-named shape for the same reason the collectors did. These five hold both sides of the
+// line it now draws, in both forms, and two of them hold the noise it must not make: 105 strings
+// here are extensionless and citation-shaped, and a notice on all of them is a notice nobody reads.
 test('a citation of a dot-named file nothing tracks is named as a near miss', () => {
   const line = `held out at ${cite('.npmrc:3')} since the start`;
 
@@ -309,6 +311,26 @@ test('a ratio and an origin are not near misses, however citation-shaped they re
   const line = `contrast reaches ${cite('4.5:1')} on ${cite('127.0.0.1:8787')} throughout`;
 
   assert.deepEqual(nearMisses(line, PROSE, new Set()), []);
+});
+
+// Review of this item found the notice covering only the backticked half of what the collectors
+// take, which left a bare citation of an untracked dot-named file silent in exactly the way this
+// item was raised to end. The backlog's Evidence column writes its citations bare, so that is the
+// half the defect would actually have arrived through.
+test('a bare citation of a dot-named file nothing tracks is a near miss in prose only', () => {
+  const line = 'held out at .npmrc:3 since the start';
+
+  assert.deepEqual(nearMisses(line, PROSE, new Set()).map((m) => m.why), ['dot-named file that is not tracked']);
+  assert.deepEqual(nearMisses(line, JS, new Set()), []);
+  assert.deepEqual(nearMisses(line, PROSE, new Set(['.npmrc'])), []);
+});
+
+// A ratio written without its leading zero is the one string this rule's shape cannot tell from a
+// dotfile, and 83 of the 105 measured hits are ratios. Requiring a character that is not a digit
+// is what keeps the notice quiet about arithmetic.
+test('a ratio written without its leading zero is not read as a dot-named file', () => {
+  assert.deepEqual(nearMisses(`contrast reaches ${cite('.5:1')} there`, PROSE, new Set()), []);
+  assert.deepEqual(nearMisses('contrast reaches .75:1-2 there', PROSE, new Set()), []);
 });
 
 // The claim printed beside each line is all BL-070 shipped, and in code it arrives wrapped in

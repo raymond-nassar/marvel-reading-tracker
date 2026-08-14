@@ -46,10 +46,11 @@ const BARE = /(?<![`\w])([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+
 //
 // Widening the shape instead was measured and refused. A pattern that accepts any
 // extensionless name matches 105 further strings across the tracked corpus and not one of
-// them is a citation: they are contrast ratios, the served origin repeated in prose, and a
-// container tag. So membership comes from the tracked list instead, which is the same list
-// the population itself is drawn from, and nothing here has to be kept in step with
-// anything. That is the rule stated at the population below, applied at the other end.
+// them is a citation: 83 are contrast ratios, 20 the served origin repeated in prose, one
+// a container tag and one a standards reference. So membership comes from the tracked list
+// instead, which is the same list the population itself is drawn from, and nothing here
+// has to be kept in step with anything. That is the rule stated at the population below,
+// applied at the other end.
 //
 // The residue is that a citation of an extensionless file which stops being tracked stops
 // being collected rather than failing to resolve. It is still reported, as a loss against
@@ -91,21 +92,34 @@ const RELATIVE = /`(:\d+(?:-\d+)?)`/g;
 // Its reach is computed in exemptRanges below.
 
 
-// Citation-shaped text neither regex collects. This is the one hole the coverage
+// Citation-shaped text the collectors do not take. This is the one hole the coverage
 // assertion cannot see, because that assertion counts the same regexes twice.
 // It cannot be an error, since prose may legitimately name a file, so it prints as
 // a notice: a reviewer can tell an intentional mention from a citation that was
 // meant to be gated and is silently not.
+//
+// A rule marked prose-only runs where the bare form is a citation and nowhere else, which
+// is the same split the collectors draw. Announcing a bare hit in code would report every
+// string literal a program computes with.
 const NEAR_MISS = [
   [/`[A-Za-z0-9_./-]+\.[A-Za-z][A-Za-z0-9]*:\d+(?:-\d+)?`/g, 'extension outside the gate'],
   [/\b[A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)\s+lines?\s+\d+/gi, 'prose line reference'],
   // The dot-named shape, which is the one the rule above cannot see: its pattern begins at
   // a name followed by a dot, so a file whose name opens with the dot fails it for the same
-  // reason the collectors did. Scoped to that shape rather than to every extensionless name
-  // because the loose form has 105 hits here and no citations, while this one has none that
-  // the collectors do not already take. It therefore fires on exactly one thing, a citation
-  // of a dot-named file that is not tracked, which is a claim about a file that is not there.
-  [/`(?:[A-Za-z0-9_.-]+\/)*\.[A-Za-z0-9_-]+:\d+(?:-\d+)?`/g, 'dot-named file that is not tracked'],
+  // reason the collectors did. Scoped to a leading dot rather than to every extensionless
+  // name because the loose form has 105 hits here and no citations, while not one of those
+  // 105 begins with a dot. It is the leading dot that separates them, and not the presence
+  // of a dot: 76 of the 105 carry one, since a contrast ratio is written 4.5:1.
+  //
+  // The name has to hold a character that is not a digit, so that a ratio written without
+  // its leading zero is not announced as a missing file. None is written that way here, but
+  // 83 of those 105 hits are ratios, so the shape is one keystroke from arriving.
+  //
+  // Both forms, because both are collected in prose. Leaving the bare half out would have
+  // reproduced the silence this rule exists to end, in the column of the backlog table that
+  // writes its citations bare.
+  [/`(?:[A-Za-z0-9_.-]+\/)*\.[A-Za-z0-9_-]*[A-Za-z_-][A-Za-z0-9_-]*:\d+(?:-\d+)?`/g, 'dot-named file that is not tracked'],
+  [/(?<![`\w])(?:[A-Za-z0-9_.-]+\/)*\.[A-Za-z0-9_-]*[A-Za-z_-][A-Za-z0-9_-]*:\d+(?:-\d+)?(?![\d`-])/g, 'dot-named file that is not tracked', true],
 ];
 
 
@@ -833,12 +847,18 @@ export function nearMisses(text, syntax = PROSE, known = null) {
   // What the collectors take is what this must not repeat. The backticked extensionless
   // form is now collected when its path is tracked, so the same string is a citation in
   // one repository and a near miss in another, and only this set can tell them apart.
+  // The bare form is collected on the same terms in prose, and has to be held out on the
+  // same terms too, or a citation that is gated would be announced as one that is not.
   const covered = new Set(text.match(ANCHOR) ?? []);
   if (known) {
     for (const m of text.matchAll(NAMED)) if (known.has(m[1])) covered.add(m[0]);
+    if (syntax.prose) {
+      for (const m of text.matchAll(NAMED_BARE)) if (known.has(m[1])) covered.add(m[0]);
+    }
   }
 
-  for (const [re, why] of NEAR_MISS) {
+  for (const [re, why, proseOnly] of NEAR_MISS) {
+    if (proseOnly && !syntax.prose) continue;
     for (const hit of text.match(re) ?? []) {
       if (covered.has(hit)) continue;
       out.push({ line: null, hit, why });
