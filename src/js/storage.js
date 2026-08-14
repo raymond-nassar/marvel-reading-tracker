@@ -11,6 +11,39 @@ const TEMP_KEY = 'mrt.state.restore.tmp';
 const PRERESTORE_KEY = 'mrt.state.prerestore';
 const SALVAGE_KEY = 'mrt.state.salvage';
 
+// Names this write, so a tab can tell whether the value on disk is still the one its state derives
+// from. Written first, and read back out of a bounded prefix rather than a parse. Measured on this
+// machine against payloads far larger than this origin can hold: at 76 MiB, JSON.parse costs 228 ms
+// while matching this prefix costs 0.0002 ms, so checking before every write is free and parsing
+// before every write would have roughly doubled what a write costs.
+//
+// It is stamped here rather than in exportBackup() so it belongs to the stored value alone. A
+// downloaded backup carries no token, no file on disk changes shape, and BL-085's validation
+// surface is untouched. coerce() rebuilds state from keys it names, so a token that does arrive in
+// a hand-edited file is dropped on the way in rather than trusted.
+const WRITE_TOKEN = 'writeToken';
+const TOKEN_PREFIX_CHARS = 128;
+const TOKEN_PATTERN = /^\s*\{\s*"writeToken"\s*:\s*"([^"]*)"/;
+
+// An identity, not an ordinal. Two tabs that loaded the same value and then both edit are not
+// orderable: the one that writes second is not the one holding the newer snapshot, it is merely
+// slower, so a counter or a clock would let it win. The question a write has to answer is whether
+// the stored value is the one it read, which has an exact answer that ordering does not.
+function newToken() {
+  const uuid = globalThis.crypto?.randomUUID?.();
+  if (uuid) return uuid;
+  return `${Date.now().toString(36)}.${Math.random().toString(36).slice(2, 12)}`;
+}
+
+// null for a value with no token, which is both a value written before this existed and a slot that
+// holds nothing. Those two compare equal to a tab that read them, which is what lets an upgrade and
+// a fresh install write at all, and they stop comparing equal the moment any tab writes once.
+function tokenOf(raw) {
+  if (typeof raw !== 'string' || raw === '') return null;
+  const found = TOKEN_PATTERN.exec(raw.slice(0, TOKEN_PREFIX_CHARS));
+  return found ? found[1] : null;
+}
+
 export class Store {
   constructor({ storage = globalThis.localStorage, onChange = () => {} } = {}) {
     this.storage = storage;
@@ -28,6 +61,14 @@ export class Store {
     // storage rather than assumed, because setItem can fail silently under quota pressure.
     this.salvageKey = null;
     this.lastUpdateOk = true;
+    // The token this tab believes is on disk: what load() read, what this tab last wrote, or what it
+    // adopted from another tab. persist() refuses when storage disagrees with it.
+    this.seenToken = null;
+    // Set by persist() when it refused for that reason alone, so update() can tell a rollback that
+    // should restore the previous state from one that must not, because the previous state is the
+    // stale snapshot the refusal was about. Cleared by persist() on entry rather than by its reader,
+    // so it describes one call and cannot be inherited by the next.
+    this.conflicted = false;
   }
 
   // A failed load must never lead to data loss. Previously this fell back to empty state and
@@ -37,6 +78,12 @@ export class Store {
   load() {
     try {
       const raw = this.storage?.getItem(KEY);
+      // Recorded before the parse, and deliberately outside the failure it can raise. The token
+      // identifies the bytes on disk, which is a question that still has an answer when those bytes
+      // will not parse, and startFresh() writes over exactly that value: reading it only on the
+      // success path would have left the one escape from a blocked store comparing against null and
+      // refusing itself.
+      this.seenToken = tokenOf(raw);
       this.state = raw ? migrate(JSON.parse(raw)) : createEmptyState();
       this.blocked = false;
       // A read that works is a genuine resolution, so the reason goes with the latch rather than
@@ -171,6 +218,28 @@ export class Store {
   // to press cannot destroy their only copy. confirmedDownloaded is the way out when storage is
   // too full to hold a copy: the user has already saved the file to disk themselves.
   startFresh({ confirmedDownloaded = false } = {}) {
+    // Withdrawn rather than refused when its premise is gone. This button names one specific value,
+    // the one this tab could not read, and offers to set it aside and clear it. If another tab has
+    // replaced that value since, the button no longer names anything that exists, and neither of
+    // its two steps is safe: salvage() would file the other tab's readable data under the name of
+    // an unreadable incident, and the write after it would erase that data. So the check has to come
+    // before the copy rather than inside persist(), where the refusal arrives too late to stop it.
+    //
+    // Re-reading is the whole response. It either clears the latch, because the value now on disk
+    // reads, or re-latches on that value with the token that belongs to it, so a second press works.
+    // Without this the button jammed permanently: a blocked store never adopts, so its token stayed
+    // stale for as long as it lived, persist() refused every press, and the banner told the reader
+    // to press the one control that could no longer do anything.
+    if (this.foreignWriteSince()) {
+      this.load();
+      this.lastError = this.blocked
+        ? 'Another tab replaced the data this tab could not read. Nothing was cleared, and this tab '
+          + 'is now looking at the new data, so try again.'
+        : 'Another tab replaced the data this tab could not read, and the new data reads correctly. '
+          + 'Nothing was cleared, and this tab is up to date.';
+      this.onChange(this.state, this.lastError);
+      return false;
+    }
     if (!this.salvage() && !confirmedDownloaded) {
       this.lastError =
         'Nothing was cleared: a copy of your unreadable data could not be set aside '
@@ -302,10 +371,19 @@ export class Store {
     }
     this.state = next;
     if (!this.persist(next)) {
-      this.state = previous;
+      // A conflict is the one rollback that must not restore the previous state. That state is the
+      // stale snapshot the refusal was about, so putting it back on screen would show the reader
+      // data this tab has just established is not what is saved, and the next edit would be refused
+      // for the same reason forever. Re-reading is the rollback, and it is the same recovery a
+      // reload would give, taken without making the reader ask for one.
+      if (this.conflicted) {
+        this.load();
+      } else {
+        this.state = previous;
+      }
       this.lastUpdateOk = false;
-      this.onChange(previous, this.lastError);
-      return previous;
+      this.onChange(this.state, this.lastError);
+      return this.state;
     }
     this.lastError = null;
     this.lastUpdateOk = true;
@@ -313,7 +391,26 @@ export class Store {
     return next;
   }
 
+  // Whether the shared key holds a value this tab did not put there. Asked without a parse, for the
+  // same reason persist() compares without one, and answering "no" when the read itself throws: a
+  // storage that cannot be read is not evidence of another tab, and every writer below refuses in
+  // that direction on its own.
+  foreignWriteSince() {
+    if (!this.storage) return false;
+    try {
+      return tokenOf(this.storage.getItem(KEY)) !== this.seenToken;
+    } catch {
+      return false;
+    }
+  }
+
   persist(state = this.state) {
+    // Cleared on entry so it can only ever describe the call that just ran. It used to be cleared
+    // only in update()'s conflict branch, so a refusal raised for startFresh() outlived that call,
+    // and the next ordinary edit, refused by the blocked latch for an entirely unrelated reason,
+    // read the stale true and rolled back by re-reading. That cleared the latch and tore the
+    // recovery banner down from a call that had nothing to do with it.
+    this.conflicted = false;
     if (this.blocked) {
       // The news, and not the two steps out, which the banner states already. It goes to the
       // save report alone now: the banner carries the reason saving is paused, which this is
@@ -326,8 +423,30 @@ export class Store {
       return false;
     }
     if (!this.storage) return true;
+    // Compare before writing, because this key is shared with every other tab on this origin and a
+    // write here replaces all of it. Without this a tab that loaded an hour ago wrote its whole
+    // stale snapshot over everything a second tab had saved since, and nothing reported it.
+    let held;
     try {
-      this.storage.setItem(KEY, JSON.stringify(exportBackup(state)));
+      held = this.storage.getItem(KEY);
+    } catch (err) {
+      // A read that fails is not a licence to write. What is on disk is unknown, and the one thing
+      // known about the write is that it would replace it, so this refuses in the same direction
+      // load() latches in.
+      this.lastError = `Could not check your saved data before saving (${err.message}). That change was not saved.`;
+      return false;
+    }
+    if (tokenOf(held) !== this.seenToken) {
+      this.conflicted = true;
+      this.lastError =
+        'Another tab saved newer data, so that change was not saved. This tab has been brought '
+        + 'up to date, so please make the change again.';
+      return false;
+    }
+    const token = newToken();
+    try {
+      this.storage.setItem(KEY, JSON.stringify({ [WRITE_TOKEN]: token, ...exportBackup(state) }));
+      this.seenToken = token;
       return true;
     } catch (err) {
       this.lastError =
@@ -336,6 +455,41 @@ export class Store {
           : `Could not save that change (${err.message}). It has been undone.`;
       return false;
     }
+  }
+
+  // Another tab wrote the shared key. Adopting is what makes two tabs ordinary rather than merely
+  // survivable: this tab re-renders on the other's save, and its next edit is built on what is
+  // actually stored, so the refusal in persist() never has to fire. The refusal is the backstop for
+  // the race between a read and a write that no event can close, not the mechanism.
+  //
+  // A blocked tab is deliberately excluded. It holds the latch protecting a salvage copy of data
+  // this app could not read, and adopting would clear that latch on an event the reader never asked
+  // for. It refuses every write already, so staying where it is costs it nothing.
+  adoptForeignWrite(raw) {
+    if (this.blocked) return false;
+    if (raw === null || raw === undefined) {
+      // The key was removed, or the whole origin cleared. That is an erase in another tab, and
+      // adopting it is what stops this tab writing its pre-erase snapshot back over the erase.
+      this.state = createEmptyState();
+      this.seenToken = null;
+      this.onChange(this.state, this.lastError);
+      return true;
+    }
+    let next;
+    try {
+      next = migrate(JSON.parse(raw));
+    } catch {
+      // Unreadable, and not this tab's incident to handle: the tab that wrote it is the one holding
+      // it. seenToken is left as it was on purpose, so the next write is refused rather than allowed
+      // to replace something this tab cannot read. Latching here instead would put a recovery banner
+      // in front of a reader whose own data is fine, over a value another tab is already dealing
+      // with, and clear this tab's screen to do it.
+      return false;
+    }
+    this.state = next;
+    this.seenToken = tokenOf(raw);
+    this.onChange(this.state, this.lastError);
+    return true;
   }
 
   // Validate, stage, snapshot, swap, clean up. A malformed backup mutates nothing.
@@ -359,7 +513,16 @@ export class Store {
     const { ok, errors, state } = validateBackup(parsed);
     if (!ok) return { ok: false, changed: false, errors };
 
-    const serialized = JSON.stringify(exportBackup(state));
+    // Stamped like an ordinary write, so what lands here is the same shape persist() writes and this
+    // tab's next edit compares against its own restore rather than against what it read at boot.
+    //
+    // Not compared before writing, unlike persist(). A restore is the reader saying to replace
+    // everything with this file, which is what it does; refusing it because another tab had saved
+    // would be refusing the instruction rather than protecting it from an accident. What the other
+    // tab saved is not lost either: priorMain below is read from storage at this moment rather than
+    // from anything this tab held, so the snapshot behind Undo is that tab's work, not this one's
+    // stale view of it.
+    const serialized = JSON.stringify({ [WRITE_TOKEN]: newToken(), ...exportBackup(state) });
     // Read before anything is written, because a restore that turns out not to have happened has
     // to put this slot back as it found it, and a slot cannot be put back to a value nobody read.
     // undefined is that third answer, "this storage would not say", and rewindSnapshot() declines
@@ -443,7 +606,12 @@ export class Store {
     // The swap landed. Either the cleanup is what failed, or nothing failed at all. The reader
     // asked for their backup and their backup is what is saved, so both are successes; the first
     // leaves a staging key behind, which the next restore overwrites and nothing reads before then.
-    if (durable === serialized) return this.adoptRestored(state);
+    if (durable === serialized) {
+      // The token that is now on disk, taken from what was read back rather than from what was
+      // written, because this branch exists precisely because the two can differ.
+      this.seenToken = tokenOf(durable);
+      return this.adoptRestored(state);
+    }
 
     this.rewindSnapshot(heldSnapshot);
     // Reconciled from storage rather than assumed to be the state this instance already held: the

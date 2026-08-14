@@ -14,6 +14,28 @@ quote in a bug report.
 
 ## Unreleased
 
+### Two tabs no longer overwrite each other's progress (BL-084)
+
+If you had the app open in more than one tab, whichever tab you clicked in second would quietly wipe
+out everything the other one had marked since you opened it. Nothing warned you, and the lost
+progress was not recoverable. This was reproduced with two real tabs: one issue was marked read in
+each, and only one of them survived.
+
+Two tabs now stay in step. Marking something read in one tab updates the other straight away,
+without a reload, so the two agree and both tabs' work is kept. If a tab somehow falls behind
+anyway, its next change is refused rather than applied, and it tells you plainly that another tab
+saved something newer and asks you to make the change again, which now works.
+
+Nothing you have already saved is affected, and backup files you download are unchanged, so a backup
+taken before this update still restores exactly as it did.
+
+One more fix came out of reviewing the above. If the app cannot read your saved data it shows a
+recovery notice offering to set that data aside and start you off empty. In a second tab, that
+offer could get stuck: the button did nothing, however many times it was pressed, and the notice
+went on pointing at it. It could also hand back the wrong copy of your data if you asked to download
+one. The offer is now withdrawn as soon as it stops making sense, and it says why, instead of
+failing silently.
+
 ### Extended the number-spelling range a build check had run out of (BL-116)
 
 Nothing about the app changes and nothing you have saved is affected. One of the checks that runs
