@@ -9,14 +9,14 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Seventy-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Seventy-seven items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
-BL-088, BL-089, BL-095, BL-096, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106, BL-107, BL-111,
-BL-112, BL-115 and BL-116.
+BL-088, BL-089, BL-095, BL-096, BL-097, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106, BL-107,
+BL-111, BL-112, BL-115 and BL-116.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Ten remain
@@ -37,9 +37,9 @@ no document can supply, least of all the document written to ask for it.
 user-facing view of the same work.
 
 Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 repository assurance and
-open-source readiness study. Seven of them are still `Ready`: the study records gaps for later
+open-source readiness study. Six of them are still `Ready`: the study records gaps for later
 implementation and does not mix those fixes into the roadmap change that identified them. BL-083,
-BL-084, BL-085, BL-087, BL-088, BL-089, BL-095, BL-096, BL-099 and BL-100 have since been
+BL-084, BL-085, BL-087, BL-088, BL-089, BL-095, BL-096, BL-097, BL-099 and BL-100 have since been
 delivered, and their detail blocks record what changed. BL-091 is the one the study got wrong:
 re-measuring it refuted its premise, so it is `Dropped` and its block records the measurement
 rather than the fix.
@@ -272,7 +272,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/storage.js:329-332 |
 | BL-110 | Count the issues an order imported empty, and say so | Defect | EP-05 | Extends BL-009 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:2918 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
-| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:269-314 |
+| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Shipped | README.md:269-330 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:370-391 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
@@ -2570,14 +2570,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:451-462`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:467-478`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:359-363`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:375-379`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -4560,7 +4560,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7703-7705` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7756-7758` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4570,11 +4570,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:199-201`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7722-7726`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7775-7779`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7537-7539` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7590-7592` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4782,7 +4782,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1586-1595` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1618-1627` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:189-193` and
 `PRODUCT_BACKLOG.md:199-201` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6021,7 +6021,7 @@ here because it described the tags this item replaced.
 
 Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
 `.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:74-108`,
-`test/ci-supply-chain.test.js:124-142`, `README.md:317-352`.
+`test/ci-supply-chain.test.js:124-142`, `README.md:333-368`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -6304,18 +6304,71 @@ says what the policy says.
 
 **BL-097: Publish contribution, conduct, support and maintainer governance**
 
-- [ ] Add a concise public contribution guide that preserves the repository's quality rules
-- [ ] Explain the destructive fault harness and required backup before use
-- [ ] Adopt a code of conduct with a monitored enforcement contact
-- [ ] Route support, metadata outages, Marvel service issues and security reports correctly
-- [ ] State how roadmap, release, moderation and maintainer decisions are made
+- [x] Add a concise public contribution guide that preserves the repository's quality rules
+- [x] Explain the destructive fault harness and required backup before use
+- [x] Adopt a code of conduct with a monitored enforcement contact
+- [x] Route support, metadata outages, Marvel service issues and security reports correctly
+- [x] State how roadmap, release, moderation and maintainer decisions are made
 
 Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:269-509`,
+are valuable history and are not a concise public policy. Evidence: `README.md:269-525`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
+
+Shipped as four documents, a test that keeps them honest, and one correction to the README that the
+work turned up. `CONTRIBUTING.md` is 209 lines, `GOVERNANCE.md` 94, `SUPPORT.md` 87 and
+`CODE_OF_CONDUCT.md` 61.
+
+The framing is the part worth defending. Nobody outside this repository can see it, open an issue or
+send a change, because it is private, so a contribution guide written as though external
+contributors already existed would be a fiction. Each document says plainly that it describes how
+contributing will work rather than how it currently happens, which is the same shape the security
+policy already uses for a private reporting route that cannot be switched on yet. The standard
+itself is not aspirational and is applied to every change already.
+
+The code of conduct is written for this project rather than adopted from a template, and it names
+two reporting routes rather than one. An ordinary concern goes to a public issue. A concern about
+the maintainer goes to GitHub's own abuse form instead, because a person cannot judge a complaint
+about themselves and a single-maintainer project is exactly where that gap opens. There is no
+private channel to the maintainer today, and the document says so with the reason rather than
+implying one exists: no address is published, and GitHub's private routes are unavailable while the
+repository is private.
+
+One measured finding changed the work rather than being recorded beside it. The README told a
+contributor to run four checks and said all four run in CI. CI runs six: the colour contrast check
+and the publication boundary check were both missing, so anyone following the README would have been
+green locally and red on the pull request, with the README as the thing that misled them. Both are
+now listed in both documents, and the contributing guide's count of them is derived from the
+workflow rather than typed.
+
+`test/governance-docs.test.js` holds seven assertions and computes every expectation from the
+repository rather than from the documents it checks. It resolves all 28 relative links in the four
+documents, 8 of which name a heading fragment, so a renamed section fails instead of rendering; it
+reads the gate set out of the workflow and requires each one to appear in a fenced block a
+contributor can copy, with the stated count matching; it holds the contract check outside CI, which
+is the reason the guide tells you to run it by hand; and it recomputes the 97 detail blocks and 93
+constraint checks the governance record states. Ten mutations were run against it one at a time and
+each turned exactly the intended assertion red. The first pass of one of them stayed green, because
+removing a check from the runnable block left the prose beside it still naming the check, which is
+why that assertion now reads the fenced blocks rather than the whole document.
+
+Two figures are worth recording because they were measured rather than assumed. Of the 97 items
+with a detail block, 93 carry a constraint check, and the four without one are the four that were
+dropped. And BL-098, which follows this item, is the intake machinery that these documents are the
+policy layer for: it was researched and built first, then held back and shipped after this one,
+because no shipped item in this backlog has ever preceded a dependency that was still `Ready`.
+
+Adding this item's id to the roadmap's second cohort sentence broke three tests in the counts suite,
+and the reason is worth keeping. That sentence wraps, and the checker flattens the region so a claim
+can be read across the break, but the three tests that prove the flattening located the break by the
+words that happened to fall at it. One more id took the line from 90 columns to 98 and moved the
+break one word left, so the pattern matched nothing and the locator reported that the sentence no
+longer wrapped at all, which is the one thing it was written to notice. Both now find the break from
+where the sentence starts and ends instead. The rewritten locator was measured against the fix it
+defends rather than assumed to still work: joining the flattened region with a newline instead of a
+space, a one character change, turns exactly one test red, and it is that one.
 
 **BL-098: Define review ownership and contribution intake**
 

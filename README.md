@@ -282,6 +282,18 @@ server and no accounts, and how to report one privately. The short version is th
 silently loses or corrupts saved reading progress is treated as a security issue, and that a
 suspected vulnerability should never be opened as an ordinary issue.
 
+Contributing: [the contributing guide](CONTRIBUTING.md) sets out what this project will decline
+whatever the merits, how a change is judged, and why the fault harness needs two backups taken
+before you open it. Read it before writing anything.
+
+Getting help: [the support guide](SUPPORT.md) covers where to take a question, how to tell a
+metadata outage from a bug in this app, and which problems belong to Marvel or to the upstream
+database rather than here.
+
+Conduct and decisions: [the code of conduct](CODE_OF_CONDUCT.md) applies to everything in this
+repository, and [the governance record](GOVERNANCE.md) says how roadmap, release, moderation and
+maintainer decisions get made.
+
 ### Checks
 
 ```
@@ -297,14 +309,18 @@ npm test
 npm run lint
 npm run anchors
 npm run counts
+npm run palette
+npm run publication
 ```
 
 `npm test` runs the unit tests. `npm run lint` runs ESLint. `npm run anchors` checks that
 every `path:line` citation in the tracked files still points at lines saying what the
 citation claims. `npm run counts` recomputes the figures the backlog states about its own
 ranked table, such as how many rows it has and where an item ranks, and fails with the
-derived value when the prose disagrees. All four run in CI on every pull request, and on
-pushes to `main`.
+derived value when the prose disagrees. `npm run palette` checks colour contrast against the
+thresholds the interface promises. `npm run publication` checks that nothing in the tracked files
+or in the history would be a problem if this repository were made public. All six run in CI on
+every pull request, and on pushes to `main`.
 
 `npm start` serves `src/` on a local static server, as described in
 [Run it on your computer](#run-it-on-your-computer). Set `MRT_PORT` to serve on a different

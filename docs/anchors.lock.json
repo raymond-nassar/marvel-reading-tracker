@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:7563|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7563",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:7616|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7616",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -874,8 +874,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1586-1595|0": {
-    "anchor": "CHANGELOG.md:1586-1595",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1618-1627|0": {
+    "anchor": "CHANGELOG.md:1618-1627",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -954,24 +954,24 @@
     "fp": "c21e48cf7e7cc497",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7537-7539|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7537-7539",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7590-7592|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7590-7592",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7703-7705|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7703-7705",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7756-7758|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7756-7758",
     "fp": "3bbc47b7c09ce03c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7722-7726|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7722-7726",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7775-7779|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7775-7779",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:269-509|0": {
-    "anchor": "README.md:269-509",
-    "fp": "e70598daf3d2ce79",
+  "PRODUCT_BACKLOG.md|item-details|README.md:269-525|0": {
+    "anchor": "README.md:269-525",
+    "fp": "52af08de5229d58c",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:29-45|0": {
@@ -979,18 +979,18 @@
     "fp": "83629030186d0633",
     "head": "### Your data stays with you"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:317-352|0": {
-    "anchor": "README.md:317-352",
+  "PRODUCT_BACKLOG.md|item-details|README.md:333-368|0": {
+    "anchor": "README.md:333-368",
     "fp": "3eae5484d412a37e",
     "head": "### Reviewing an update to a pinned action"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:359-363|0": {
-    "anchor": "README.md:359-363",
+  "PRODUCT_BACKLOG.md|item-details|README.md:375-379|0": {
+    "anchor": "README.md:375-379",
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:451-462|0": {
-    "anchor": "README.md:451-462",
+  "PRODUCT_BACKLOG.md|item-details|README.md:467-478|0": {
+    "anchor": "README.md:467-478",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -3014,9 +3014,9 @@
     "fp": "a76c62ab06ae335e",
     "head": "**Do not open a public issue, discussion or pull request for a suspected vulnerability.** A public"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:269-314|0": {
-    "anchor": "README.md:269-314",
-    "fp": "affead99e99ed544",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:269-330|0": {
+    "anchor": "README.md:269-330",
+    "fp": "6cbbb89a32d95e85",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-099|src/data/curated-lists.json:80-120|0": {
