@@ -14,6 +14,32 @@ quote in a bug report.
 
 ## Unreleased
 
+### There are now written answers to how to help, where to ask, and who decides (BL-097)
+
+Nothing about the app changes and nothing you have saved is affected. What is new is four documents
+for anyone who wants to do more than read comics with it.
+
+Until now the only guidance was buried in a long section of the front page written for people who
+already knew the project, plus a security policy. There was nothing saying what kinds of change this
+project will turn down whatever their merits, nothing setting a standard for how people treat each
+other, nothing telling you where a question belongs when the answer is that it belongs with Marvel
+or with the outside comic database rather than here, and nothing explaining how anything gets
+decided or in what order.
+
+So: a guide for people making changes, which is blunt about what will be declined and warns twice
+about a page in the app whose buttons destroy your saved reading on purpose, since it exists to test
+that the app can put it back. A short code of conduct, which names a way to raise a concern about
+the maintainer that does not go through the maintainer. A guide to getting help, which separates a
+problem with this app from a problem with Marvel's own service or with the outside database it reads
+from. And a record of who decides what, including the honest note that there is one person, no
+succession plan, and a written reason behind every decision instead.
+
+Writing them turned up a real error. The front page told anyone changing the app to run four checks
+before opening a request, and said those four were what runs automatically. Six run automatically.
+Someone following the instructions exactly would have seen everything pass on their own machine and
+then failed on two checks they had never been told about. Both are now listed, and a test recounts
+them from the automation itself in both places that state the number, so it cannot drift again.
+
 ### The release check now asks what the comic database holds, not just whether it answers (BL-111)
 
 Nothing about the app changes and nothing you have saved is affected. Before a release, a check runs
