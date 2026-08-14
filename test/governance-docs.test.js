@@ -87,34 +87,38 @@ test('every command the guides tell you to run is a script this repository has',
   assert.ok(checked > 0, 'no commands found, so this check would pass vacuously');
 });
 
-test('the contributing guide lists exactly the checks CI runs, and counts them correctly', () => {
+test('every document that lists the checks lists exactly the ones CI runs, and counts them', () => {
   // Read the gate set out of the workflow. A gate added there and not here would leave a
-  // contributor green locally and red on the pull request, with the guide as the thing that
-  // misled them.
+  // contributor green locally and red on the pull request, with the document as the thing that
+  // misled them. Both documents that state the number are checked, because the README is the one
+  // that carried the wrong number: it told a contributor to run four and said four run in CI,
+  // while the workflow ran six.
   const inCi = checksInCi();
   assert.ok(inCi.size >= 2, `only ${inCi.size} checks found in the workflow`);
 
-  const guide = text['CONTRIBUTING.md'];
-  // Checked inside the fenced blocks rather than anywhere in the document, because the block is
-  // what a contributor copies. Prose describing a check it no longer tells you to run reads as
-  // coverage and is not.
-  const runnable = [...guide.matchAll(/```[^\n]*\n([\s\S]*?)```/g)].map((m) => m[1]).join('\n');
-  for (const gate of inCi) {
-    const command = gate === 'test' ? 'npm test' : `npm run ${gate}`;
-    assert.ok(
-      new RegExp(`^${command}\\s*$`, 'm').test(runnable),
-      `no fenced block in the guide tells you to run ${command}, which CI runs`,
+  const words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  for (const name of ['CONTRIBUTING.md', 'README.md']) {
+    const doc = name === 'README.md' ? read(name) : text[name];
+    // Checked inside the fenced blocks rather than anywhere in the document, because the block is
+    // what a contributor copies. Prose describing a check it no longer tells you to run reads as
+    // coverage and is not.
+    const runnable = [...doc.matchAll(/```[^\n]*\n([\s\S]*?)```/g)].map((m) => m[1]).join('\n');
+    for (const gate of inCi) {
+      const command = gate === 'test' ? 'npm test' : `npm run ${gate}`;
+      assert.ok(
+        new RegExp(`^${command}\\s*$`, 'm').test(runnable),
+        `no fenced block in ${name} tells you to run ${command}, which CI runs`,
+      );
+    }
+
+    const stated = /All (\w+) run in CI/.exec(doc);
+    assert.ok(stated, `${name} no longer states how many checks run in CI`);
+    assert.equal(
+      stated[1],
+      words[inCi.size],
+      `${name} says All ${stated[1]} run in CI, and the workflow runs ${inCi.size}`,
     );
   }
-
-  const words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-  const stated = /All (\w+) run in CI/.exec(guide);
-  assert.ok(stated, 'the guide no longer states how many checks run in CI');
-  assert.equal(
-    stated[1],
-    words[inCi.size],
-    `the guide says All ${stated[1]} run in CI, and the workflow runs ${inCi.size}`,
-  );
 });
 
 test('the contract check is still outside CI, which is why the guide says to run it by hand', () => {

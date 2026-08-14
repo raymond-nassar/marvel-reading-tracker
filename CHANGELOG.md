@@ -38,13 +38,7 @@ Writing them turned up a real error. The front page told anyone changing the app
 before opening a request, and said those four were what runs automatically. Six run automatically.
 Someone following the instructions exactly would have seen everything pass on their own machine and
 then failed on two checks they had never been told about. Both are now listed, and a test recounts
-them from the automation itself, so the number cannot drift again.
-
-It also broke three of the project's own consistency checks, which is worth mentioning because it
-would have kept happening. One sentence in the plan lists every finished item and runs over more
-than one line, and three checks located the place it breaks by the exact words that sat either side
-of the break. Adding one more item to that list moved the words. The checks now find the break from
-the sentence itself, so the next item added cannot move it out from under them.
+them from the automation itself in both places that state the number, so it cannot drift again.
 
 ### The release check now asks what the comic database holds, not just whether it answers (BL-111)
 

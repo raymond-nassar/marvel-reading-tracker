@@ -94,9 +94,9 @@ No em dashes anywhere in anything a reader sees. Commas, colons and full stops i
 A pull request opens with a plain English summary, before any section written for someone who
 already knows the codebase. Name no file and no identifier in it: say what the thing does instead.
 Say what a person using the app would notice, and say so plainly when the answer is nothing, which
-it often is. Give the reason before the mechanism. Four short paragraphs at most. The template that
-appears when you open a pull request asks for this first, and it asks first because the technical
-sections were making it harder to tell whether a change was right.
+it often is. Give the reason before the mechanism. Four short paragraphs at most. It goes first
+because the technical sections were making it harder to tell whether a change was right, not
+easier.
 
 ## The checks
 
@@ -149,9 +149,10 @@ it dangerous.
 
 **Take both backups before you open it.** The page offers two and they are not alternatives: a
 downloaded file, which survives anything that happens to the browser, and a snapshot inside the
-browser, which is what the app's own restore path reads. Several of the faults damage the thing the
-in-browser snapshot lives beside, and one of them fills the storage for the address so completely
-that nothing further can be written, so the downloaded file is the copy that gets you back.
+browser, which is what the page's own one-click restore uses. The snapshot lives in the same storage
+the faults damage, and the button that removes all tracker data removes it too, along with every
+other key the app owns. After that one the downloaded file is the only copy left, which is why the
+page calls it the copy that cannot fail.
 
 Reporting that this page destroys data is reporting what it is for. Reporting that it destroyed
 data it should not have, or that a recovery path did not put things back the way it said it did, is

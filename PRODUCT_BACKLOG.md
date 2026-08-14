@@ -4560,7 +4560,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7756-7758` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7763-7765` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4570,11 +4570,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:199-201`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7775-7779`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7782-7786`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7590-7592` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7597-7599` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4782,7 +4782,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1618-1627` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1612-1621` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:189-193` and
 `PRODUCT_BACKLOG.md:199-201` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6318,7 +6318,7 @@ are valuable history and are not a concise public policy. Evidence: `README.md:2
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 Shipped as four documents, a test that keeps them honest, and one correction to the README that the
-work turned up. `CONTRIBUTING.md` is 209 lines, `GOVERNANCE.md` 94, `SUPPORT.md` 87 and
+work turned up. `CONTRIBUTING.md` is 210 lines, `GOVERNANCE.md` 94, `SUPPORT.md` 87 and
 `CODE_OF_CONDUCT.md` 61.
 
 The framing is the part worth defending. Nobody outside this repository can see it, open an issue or
@@ -6340,35 +6340,42 @@ One measured finding changed the work rather than being recorded beside it. The 
 contributor to run four checks and said all four run in CI. CI runs six: the colour contrast check
 and the publication boundary check were both missing, so anyone following the README would have been
 green locally and red on the pull request, with the README as the thing that misled them. Both are
-now listed in both documents, and the contributing guide's count of them is derived from the
-workflow rather than typed.
+now listed in both documents, and both counts are derived from the workflow rather than typed. The
+test covers the README as well as the guide because the README is the document that was wrong, and
+an assertion that reads only the new documents would leave the original defect free to recur where
+it originally happened.
 
 `test/governance-docs.test.js` holds seven assertions and computes every expectation from the
 repository rather than from the documents it checks. It resolves all 28 relative links in the four
 documents, 8 of which name a heading fragment, so a renamed section fails instead of rendering; it
 reads the gate set out of the workflow and requires each one to appear in a fenced block a
-contributor can copy, with the stated count matching; it holds the contract check outside CI, which
-is the reason the guide tells you to run it by hand; and it recomputes the 97 detail blocks and 93
-constraint checks the governance record states. Ten mutations were run against it one at a time and
-each turned exactly the intended assertion red. The first pass of one of them stayed green, because
-removing a check from the runnable block left the prose beside it still naming the check, which is
-why that assertion now reads the fenced blocks rather than the whole document.
+contributor can copy in both documents that list them, with each stated count matching; it holds the
+contract check outside CI, which is the reason the guide tells you to run it by hand; and it
+recomputes the 97 detail blocks and 93 constraint checks the governance record states. Twelve
+mutations were run against it one at a time and each turned exactly the intended assertion red. Two
+of them did not, on their first pass, and both were harness faults rather than test faults: removing
+a check from the runnable block left the prose beside it still naming the check, which is why that
+assertion now reads the fenced blocks rather than the whole document, and a mutation target written
+with a hardcoded line ending matched nothing at all, which is a green that proves less than nothing.
+
+Review found three false statements in one paragraph, and they were all in the paragraph about the
+fault harness, which is the paragraph that tells a contributor how to get their reading back after
+deliberately destroying it. It said the in-browser snapshot is what the app's own restore path
+reads, and it is not: that key is written and read only by the harness page's own restore button,
+so a contributor who followed the guide to the tracker's settings would have found nothing there.
+It said the storage-full fault is what makes the downloaded file the copy that matters, and it is
+not: both restore routes free the filled keys before writing, precisely so a full quota cannot
+block a restore. The fault that really does leave the file as the only way back is the one that
+removes every key the app owns, snapshot included, and the guide did not mention it. The
+instruction to take both backups was right; every reason it gave was wrong. The repository's own
+instructions already record that twice the most dangerous code in a change was the code added to
+prevent data loss. The prose written about that code is apparently no different.
 
 Two figures are worth recording because they were measured rather than assumed. Of the 97 items
 with a detail block, 93 carry a constraint check, and the four without one are the four that were
 dropped. And BL-098, which follows this item, is the intake machinery that these documents are the
-policy layer for: it was researched and built first, then held back and shipped after this one,
-because no shipped item in this backlog has ever preceded a dependency that was still `Ready`.
-
-Adding this item's id to the roadmap's second cohort sentence broke three tests in the counts suite,
-and the reason is worth keeping. That sentence wraps, and the checker flattens the region so a claim
-can be read across the break, but the three tests that prove the flattening located the break by the
-words that happened to fall at it. One more id took the line from 90 columns to 98 and moved the
-break one word left, so the pattern matched nothing and the locator reported that the sentence no
-longer wrapped at all, which is the one thing it was written to notice. Both now find the break from
-where the sentence starts and ends instead. The rewritten locator was measured against the fix it
-defends rather than assumed to still work: joining the flattened region with a newline instead of a
-space, a one character change, turns exactly one test red, and it is that one.
+policy layer for: it is researched and built but held back until this one had shipped, because no
+shipped item in this backlog has ever preceded a dependency that was still `Ready`.
 
 **BL-098: Define review ownership and contribution intake**
 

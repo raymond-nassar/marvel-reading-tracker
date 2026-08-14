@@ -133,12 +133,7 @@ test('an id written twice in the delivered list is caught, though it is in neith
 // statements about a cohort of the table and was prose. Replaying every revision that
 // carried it scores it wrong in 2 of 17, both on 2026-08-13, and wrong in both halves at
 // once: nine stated against eight Ready, and eight ids listed for nine Shipped rows.
-//
-// Every gap in the sentence is `\s+` because the wrap moves each time an id joins the list.
-// It was pinned to a single space everywhere but one gap, and adding BL-097 to the cohort
-// pushed the line from 90 columns to 98 and moved the break one word left, which matched
-// nothing and failed three tests here for a reason that was not the checker's.
-const COHORT = /(BL-\d+(?:,\s+BL-\d+)*\s+and\s+BL-\d+)\s+have\s+since\s+been\s+delivered,/.exec(REAL);
+const COHORT = /(BL-\d+(?:,\s+BL-\d+)*\s+and\s+BL-\d+) have since been\s+delivered,/.exec(REAL);
 
 // The cohort's range, its statuses and its id list are all read from the document, for the
 // same reason the whole-table ledger's are. Every one of them changes as the items in the
@@ -259,23 +254,12 @@ test('the delivered shape quoted above the table is not read as a delivered clai
 // and the gate reporting the document clean, while the historical defect this item was
 // raised about goes undetected. Dropping an id from the line the sentence wraps on is the
 // mutation that keeps the wrap, and it is the one that holds the flattening up.
-//
-// The wrapped line is found from where the sentence itself starts and ends rather than by
-// the words that happened to fall at the break, for the reason recorded above the cohort
-// pattern: adding one id to the list moves the break, and a pinned phrase then locates
-// nothing while reporting that the sentence no longer wraps at all.
 test('an id dropped from the line the cohort sentence wraps on is caught', () => {
-  assert.ok(COHORT, 'the cohort delivered sentence is no longer in the document');
   const lines = REAL.split(NL);
-  const first = REAL.slice(0, COHORT.index).split(NL).length - 1;
-  const last = REAL.slice(0, COHORT.index + COHORT[0].length).split(NL).length - 1;
-  assert.ok(last > first, 'the cohort sentence no longer wraps, so this mutation exercises nothing');
-  const w = lines.slice(first, last).reduce(
-    (best, l, i) => ([...l.matchAll(/BL-\d+/g)].length > 1 ? first + i : best),
-    -1,
-  );
-  assert.notEqual(w, -1, 'no wrapped line of the sentence carries an id this can drop');
+  const w = lines.findIndex((l) => / have since been$/.test(l));
+  assert.ok(w !== -1, 'the cohort sentence no longer wraps, so this mutation exercises nothing');
   const ids = [...lines[w].matchAll(/BL-\d+/g)].map((m) => m[0]);
+  assert.ok(ids.length > 1, 'the wrapped line no longer carries an id this can drop');
   lines[w] = lines[w].replace(`${ids[0]}, `, '');
   assert.notEqual(lines[w], REAL.split(NL)[w], 'the mutation did not apply');
   const found = checkLedger(derive(lines.join(NL)));
