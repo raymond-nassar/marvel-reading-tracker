@@ -33,7 +33,7 @@ version: 2
 
 updates:
   # Grouped into a single pull request because every package in this ecosystem is dev tooling
-  # with the same blast radius, and three separate pull requests a week for three packages is
+  # with the same blast radius, and four separate pull requests a week for four packages is
   # the noise this item was raised to avoid. Weekly rather than daily for the same reason.
   - package-ecosystem: npm
     directory: /

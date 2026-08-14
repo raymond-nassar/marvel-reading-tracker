@@ -2950,7 +2950,7 @@ numbers inside it are.
 
 **The mechanism is a test, at `test/shipped-copy.test.js:47-63`, not a second ESLint rule.** ESLint
 cannot read HTML or CSS without a parser plugin for each, which is two new tools for 1,626 lines in a
-repository that carries three devDependencies in total. A test needs neither: `npm test` already runs
+repository that carried three devDependencies in total. A test needs neither: `npm test` already runs
 in CI on Node 20 and 24, so nothing new had to be wired up, and reading a shipped file from a test
 follows the checklist-heading test BL-061 itself added.
 
@@ -4551,7 +4551,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7303-7305` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7312-7314` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4561,11 +4561,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7322-7326`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7331-7335`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7137-7139` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7146-7148` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -6888,11 +6888,20 @@ all four packages in its message, so the document was corrected in the same chan
 drifting quietly. Watched failing in both halves rather than assumed: the count half reddened before
 the policy was touched, and setting the policy back to the old number while leaving the count correct
 reddens it again, which is the half that would otherwise pass while the document and the manifest
-part company. Three sentences elsewhere counted those packages and had to move with them,
-and one of them is the reason to enjoy this: the mutation invented to prove the guard could fail was
-"adding a fourth lint package", written when there was no prospect of a fourth. There is one now, it
-arrived by the front door rather than as a mutation, and the guard caught it exactly as the mutation
-said it would. That account is left as it was written, because it records what was measured then.
+part company. Five sentences elsewhere counted those packages and had to move with them, and four
+of the five were found by a review after the first sweep had been called complete, which is the
+argument for searching the tree for the old number rather than for the places you remember
+writing it. A sixth was left exactly as it was, and it is the one to enjoy: the mutation invented
+to prove the guard could fail was "adding a fourth lint package", written when there was no
+prospect of a fourth. There is one now, it arrived by the front door rather than as a mutation,
+and the guard caught it exactly as the mutation said it would. That account is left as it was
+written, because it records what was measured then.
+
+A different count moved with it. The lockfile fell from 90 locked packages to 76, because ESLint
+10 carries fewer of its own, and the workflow comment justifying an install that ignores scripts
+states that figure in the present tense, so it is corrected. Two neighbouring statements of the
+same 90 are not, because each says in as many words that it records what was counted when it was
+written, and the test holding the claim up checks the property rather than the number.
 
 One consequence is recorded rather than fixed. ESLint 10 accepts `^20.19.0 || ^22.13.0 || >=24`
 where this repository declares `>=20`, so the tooling now wants a higher floor than the app does.
@@ -6926,7 +6935,7 @@ A checker that had fallen back to digits would have passed while its own documen
 its message said 70.
 
 Two things were done rather than one. The obvious half is the range, which now reaches ninety-nine,
-chosen because the ranked table holds ninety-one rows and the next ceiling worth stopping at is the
+chosen because the ranked table holds ninety-two rows and the next ceiling worth stopping at is the
 one where hundreds start needing a different shape of word. The half worth more is a new check that
 asks the two functions to cover the largest figures the document actually states, the shipped count
 and the ranked row count, and fails if either comes back refused. The old arrangement put the
@@ -7377,7 +7386,7 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. Partly changed: the suite is 235 after this pass, but the three modules still have no test file, so the gap itself is unchanged. |
 | CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request, and on demand for any ref. |
 | Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version to `1.0.0` at `package.json:3`, added `CHANGELOG.md`, and wired a `version` script at `package.json:22` that syncs the version the app reports. |
-| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-32` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:27-32` and a tracked `package-lock.json`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
+| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-32` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:27-32` and a tracked `package-lock.json`, and `BL-115` took that to four, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
 | Licensing | No gap. The project is MIT, and every vendored order records its upstream source and licence rather than absorbing it silently. Evidence: `LICENSE`, `src/data/catalog.json` (`source` and `sourceLicense` per list), `src/js/main.js:2753-2773` (attribution rendered in the UI before import). |
 
 ### 2026-08-10 assurance and open-source delta
