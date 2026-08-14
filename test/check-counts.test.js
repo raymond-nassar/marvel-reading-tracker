@@ -265,8 +265,10 @@ test('an id dropped from the line the cohort sentence wraps on is caught', () =>
   const before = REAL.slice(0, COHORT.index).split(NL).length - 1;
   const after = REAL.slice(0, COHORT.index + COHORT[0].length).split(NL).length - 1;
   assert.ok(after > before, 'the cohort sentence no longer wraps, so this mutation exercises nothing');
-  // The last line the sentence spans is excluded: dropping an id there leaves the break
-  // itself untouched, which is the one thing this mutation exists to keep.
+  // The final line the sentence spans is excluded, and the line chosen has to carry more than
+  // one id. Both are about the mutation applying at all: the list's last id is written after
+  // "and" rather than followed by ", ", so dropping it is a no-op, and the tail of the sentence
+  // carries no id to drop.
   const w = [...Array(after - before).keys()]
     .map((i) => before + i)
     .reverse()

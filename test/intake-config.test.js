@@ -154,8 +154,14 @@ test('no issue form asks for a label this repository would drop', () => {
     'wontfix',
   ]);
   for (const form of forms) {
+    // GitHub documents labels as an array or a comma-delimited string, so a form may write it
+    // in block style or bare. Only the flow sequence is read here, and a shape this cannot read
+    // is a failure rather than a skip, for the same reason an unreadable ownership pattern is:
+    // a matcher that quietly returns nothing reports every form clean.
+    const key = /^labels:/m.test(form.text);
     const declared = /^labels:\s*\[([^\]]*)\]\s*$/m.exec(form.text);
-    if (!declared) continue;
+    if (!key) continue;
+    assert.ok(declared, `${form.name} declares labels in a shape this check cannot read`);
     const labels = declared[1]
       .split(',')
       .map((label) => label.trim().replace(/^["']|["']$/g, ''))
@@ -164,6 +170,63 @@ test('no issue form asks for a label this repository would drop', () => {
       assert.ok(defaults.has(label), `${form.name} asks for ${label}, which is not a default label`);
     }
   }
+});
+
+// Nothing in this repository parses YAML, and adding a parser would cost the property that the
+// test suite runs in a fresh copy with nothing installed. So the check below is narrow on
+// purpose: it reads the one construct that actually breaks a hand-written form. A plain scalar
+// cannot contain a colon followed by a space, because the parser reads the second colon as a
+// nested key. That is not a hypothetical: `data-order.yml` shipped into review with a colon in
+// its description, every text assertion above passed, and GitHub would have refused to offer
+// the form at all. The symptom is invisible from the repository, which is what every check in
+// this file is for.
+function plainScalarFaults(text) {
+  const lines = text.split(/\r?\n/);
+  const faults = [];
+  let blockIndent = null;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
+    // Lines inside a block scalar are literal text. The prose bodies are full of colons and
+    // reading them as mappings would report a fault on every form.
+    if (blockIndent !== null) {
+      if (line.trim() === '' || line.match(/^\s*/)[0].length > blockIndent) continue;
+      blockIndent = null;
+    }
+    if (line.trim() === '' || /^\s*#/.test(line)) continue;
+    const match = /^(\s*)(?:-\s+)?([A-Za-z_][\w-]*):(?:\s+(.*))?$/.exec(line);
+    if (!match) continue;
+    const [, indent, key, raw] = match;
+    const value = (raw ?? '').trim();
+    if (/^[|>][-+]?$/.test(value)) {
+      blockIndent = indent.length;
+      continue;
+    }
+    if (value === '' || /^["'[{]/.test(value)) continue;
+    if (value.includes(': ')) faults.push(`${key} on line ${i + 1} contains a colon and a space`);
+    if (value.endsWith(':')) faults.push(`${key} on line ${i + 1} ends with a colon`);
+    if (/^[&*!%@`]/.test(value)) faults.push(`${key} on line ${i + 1} opens with ${value[0]}`);
+  }
+  return faults;
+}
+
+test('no intake file writes a plain scalar the YAML parser would reject', () => {
+  const files = [
+    ['.github/ISSUE_TEMPLATE/config.yml', issueConfig],
+    ...forms.map((form) => [`.github/ISSUE_TEMPLATE/${form.name}`, form.text]),
+  ];
+  for (const [name, text] of files) {
+    assert.deepEqual(plainScalarFaults(text), [], `${name} would not parse`);
+  }
+});
+
+// The detector has to be wrong in the safe direction too. A quoted value may contain anything,
+// and so may the body of a block scalar, so a check that flagged either would be turned off by
+// the first person it inconvenienced.
+test('the plain scalar check accepts what YAML accepts', () => {
+  assert.deepEqual(plainScalarFaults('description: "a: b"'), []);
+  assert.deepEqual(plainScalarFaults('labels: [bug, question]'), []);
+  assert.deepEqual(plainScalarFaults('value: |\n  a: b\n  c: d\n'), []);
+  assert.equal(plainScalarFaults('description: a: b').length, 1);
 });
 
 test('the pull request template asks for the opening the instructions require', () => {

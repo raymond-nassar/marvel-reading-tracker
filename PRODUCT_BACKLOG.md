@@ -4561,7 +4561,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7825-7827` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7850-7852` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4571,11 +4571,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:200-202`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7844-7848`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7869-7873`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7659-7661` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7684-7686` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -6428,22 +6428,47 @@ detail and says not to paste anything private, so turning blank issues off would
 instruction with nowhere to land. A test now holds the two documents together, because nothing else
 does.
 
-Ten assertions cover the intake files, and each was watched failing before it was kept. They exist
-because every failure mode here is silent. A CODEOWNERS rule naming a path that no longer exists is
-not rejected and produces no warning: it simply stops matching, and the area it was written to
-protect goes unowned while the file still reads as though it is covered. A pattern with no owner
-after it is valid and un-assigns whatever an earlier rule assigned, which looks identical to a rule
-that assigns. A label a form asks for that the repository does not have is dropped at creation
-without a word, so the forms are checked against GitHub's nine default labels rather than against a
-list this repository maintains. A contact link pointing at a moved document renders as an ordinary
-link and 404s only for the person following it. And an unreadable pattern shape is a failure rather
-than a miss, because a matcher that quietly returned false for a shape it did not understand would
-report every area unowned, or worse, report an area owned by a rule it had misread.
+Twelve assertions cover the intake files, and each was watched failing before it was kept. They
+exist because every failure mode here is silent. A CODEOWNERS rule naming a path that no longer
+exists is not rejected and produces no warning: it simply stops matching, and the area it was
+written to protect goes unowned while the file still reads as though it is covered. A pattern with
+no owner after it is valid and un-assigns whatever an earlier rule assigned, which looks identical
+to a rule that assigns. A label a form asks for that the repository does not have is dropped at
+creation without a word, so the forms are checked against GitHub's nine default labels rather than
+against a list this repository maintains. A contact link pointing at a moved document renders as
+an ordinary link and 404s only for the person following it. And an unreadable pattern shape is a
+failure rather than a miss, because a matcher that quietly returned false for a shape it did not
+understand would report every area unowned, or worse, report an area owned by a rule it had
+misread.
 
 One assertion is about this repository's own gates rather than about GitHub. No intake file may
 carry a file-and-line citation, because the evidence gate would collect it as a live claim and bless
 it into the lock, where an example written for someone else to fill in would then have to be
 maintained forever as though it described this codebase.
+
+Review found the form for correcting a reading order was not valid YAML and would never have been
+offered at all. Its description contained a colon followed by a space inside an unquoted value,
+which ends the plain scalar and makes the parser read the rest as a nested key. Every text assertion
+above passed on it, the suite was green, and the six gates were green, because nothing in this
+repository parses YAML. Adding a parser would cost the property that the tests run in a fresh copy
+with nothing installed, so the check written instead is narrow on purpose: it reads the constructs
+that actually break a hand-written form, a colon and a space in a plain scalar, a value ending in a
+colon, and a value opening with a YAML indicator, while exempting quoted values and the bodies of
+block scalars, which are prose and full of colons. Restoring the defect turns exactly that one test
+red. A second assertion checks the detector is wrong in the safe direction too, since one that
+flagged a quoted colon would be switched off by the first person it inconvenienced.
+
+The same review found the label check skipped any form that wrote its labels in block style or as a
+bare comma-separated string, both of which GitHub accepts. That is the enumeration failure this file
+already refuses elsewhere, where an ownership pattern it cannot read is a failure rather than a
+miss. A form that declares labels in a shape the check cannot read is now a failure, and writing
+this repository's one labelled form in block style turns that test red.
+
+Two limits worth stating rather than discovering later. Every `required: true` in these forms is
+inert while this repository is private, because GitHub honours that validation only on public
+repositories, so the forms will collect incomplete reports until publication and then start
+enforcing. And the ownership file's 403 was measured twice, on 2026-08-13 and again on 2026-08-14,
+which the file now says rather than dating one measurement and leaving the other implied.
 
 The predicted breakage arrived exactly as recorded. Adding this item's id to the cohort sentence
 pushed the line past the wrap and moved the break, and three tests in `test/check-counts.test.js`

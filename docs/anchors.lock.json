@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:7685|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7685",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:7710|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7710",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -954,18 +954,18 @@
     "fp": "c21e48cf7e7cc497",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7659-7661|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7659-7661",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7684-7686|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7684-7686",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7825-7827|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7825-7827",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7850-7852|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7850-7852",
     "fp": "3bbc47b7c09ce03c",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7844-7848|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7844-7848",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7869-7873|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7869-7873",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -3021,7 +3021,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-098|.github/CODEOWNERS:1-51|0": {
     "anchor": ".github/CODEOWNERS:1-51",
-    "fp": "ec4b5c4af2be8499",
+    "fp": "acacdcedbf011dd1",
     "head": "# Review ownership for this repository."
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-099|src/data/curated-lists.json:80-120|0": {

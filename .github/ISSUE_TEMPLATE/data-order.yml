@@ -2,7 +2,7 @@
 # catalogue data, and a label the repository does not have is dropped silently when the issue is
 # created, which would leave the form promising a triage signal it never delivers.
 name: Correct a reading order or an issue's details
-description: Report something wrong in the catalogue: a wrong position, a missing issue, or missing details.
+description: A wrong position, a missing issue, or missing details in the catalogue.
 body:
   - type: markdown
     attributes:

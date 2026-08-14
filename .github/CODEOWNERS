@@ -5,7 +5,7 @@
 # does not request review from a pull request's own author. Requiring code owner approval is a
 # branch protection setting, and branch protection is unavailable here: both the rulesets endpoint
 # and the branch protection endpoint answer HTTP 403, "Upgrade to GitHub Pro or make this
-# repository public to enable this feature", measured on 2026-08-13.
+# repository public to enable this feature", measured on 2026-08-13 and again on 2026-08-14.
 #
 # What it does do is state which areas need the most careful reading, so that a second reviewer,
 # whenever there is one, inherits the judgement instead of rediscovering it. The areas below are
