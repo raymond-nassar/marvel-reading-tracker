@@ -1,0 +1,63 @@
+name: Suggest an improvement
+description: Ask for something the app does not do yet.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a private reading tracker for one person at a time. It has no accounts and no
+        server, and it is not trying to grow an audience, so the useful shape of a request here
+        is a reading problem you keep hitting rather than a feature other apps have.
+
+  - type: textarea
+    id: job
+    attributes:
+      label: What are you trying to do?
+      description: >-
+        Describe the reading you are trying to get through, not the feature. The feature is
+        easier to design once the job is clear.
+      placeholder: |
+        I read one long order across two devices and I lose my place when I switch.
+    validations:
+      required: true
+
+  - type: textarea
+    id: today
+    attributes:
+      label: What do you do today instead?
+      description: >-
+        Whatever you currently do, however awkward. A workaround that is nearly good enough is
+        the strongest argument that the gap is real.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What do you think would help?
+      description: Optional. Leave it out if you would rather describe only the problem.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: promises
+    attributes:
+      label: Promises this app will not trade away
+      description: >-
+        These are settled, and a request that needs one of them broken will be declined however
+        good it is otherwise. Tick each one you are confident your idea does not need. Leaving
+        one unticked is fine and is not a reason to hold the request back: it just tells us where
+        the conversation has to start.
+      options:
+        - label: It does not need an account, a server, or anything uploaded off the device.
+        - label: It does not need comic artwork to be copied or stored by this project.
+        - label: It does not need pages on the publisher's own sites to be scraped.
+        - label: It does not need a package this app would have to load in the browser.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        Requests are recorded in the project's list of planned improvements and ranked there
+        against everything else waiting, so a reply may take a while and may be a considered no.

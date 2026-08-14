@@ -133,7 +133,7 @@ test('an id written twice in the delivered list is caught, though it is in neith
 // statements about a cohort of the table and was prose. Replaying every revision that
 // carried it scores it wrong in 2 of 17, both on 2026-08-13, and wrong in both halves at
 // once: nine stated against eight Ready, and eight ids listed for nine Shipped rows.
-const COHORT = /(BL-\d+(?:,\s+BL-\d+)*\s+and\s+BL-\d+) have since been\s+delivered,/.exec(REAL);
+const COHORT = /(BL-\d+(?:,\s+BL-\d+)*\s+and\s+BL-\d+)\s+have\s+since\s+been\s+delivered,/.exec(REAL);
 
 // The cohort's range, its statuses and its id list are all read from the document, for the
 // same reason the whole-table ledger's are. Every one of them changes as the items in the
@@ -254,12 +254,25 @@ test('the delivered shape quoted above the table is not read as a delivered clai
 // and the gate reporting the document clean, while the historical defect this item was
 // raised about goes undetected. Dropping an id from the line the sentence wraps on is the
 // mutation that keeps the wrap, and it is the one that holds the flattening up.
+//
+// The wrapped line is found from the sentence's own span rather than from the words it
+// happens to break between. Pinning the break to a phrase pins the sentence's wrapping,
+// and adding one id to the list moves it: BL-098 did exactly that, and this test failed
+// for a reason that had nothing to do with what it checks.
 test('an id dropped from the line the cohort sentence wraps on is caught', () => {
+  assert.ok(COHORT, 'the cohort delivered sentence is no longer in the document');
   const lines = REAL.split(NL);
-  const w = lines.findIndex((l) => / have since been$/.test(l));
-  assert.ok(w !== -1, 'the cohort sentence no longer wraps, so this mutation exercises nothing');
+  const before = REAL.slice(0, COHORT.index).split(NL).length - 1;
+  const after = REAL.slice(0, COHORT.index + COHORT[0].length).split(NL).length - 1;
+  assert.ok(after > before, 'the cohort sentence no longer wraps, so this mutation exercises nothing');
+  // The last line the sentence spans is excluded: dropping an id there leaves the break
+  // itself untouched, which is the one thing this mutation exists to keep.
+  const w = [...Array(after - before).keys()]
+    .map((i) => before + i)
+    .reverse()
+    .find((i) => (lines[i].match(/BL-\d+/g) ?? []).length > 1);
+  assert.ok(w !== undefined, 'no wrapped line carries an id this can drop');
   const ids = [...lines[w].matchAll(/BL-\d+/g)].map((m) => m[0]);
-  assert.ok(ids.length > 1, 'the wrapped line no longer carries an id this can drop');
   lines[w] = lines[w].replace(`${ids[0]}, `, '');
   assert.notEqual(lines[w], REAL.split(NL)[w], 'the mutation did not apply');
   const found = checkLedger(derive(lines.join(NL)));

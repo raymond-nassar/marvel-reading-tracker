@@ -1,0 +1,71 @@
+# Deliberately no labels. None of this repository's labels describes a correction to shipped
+# catalogue data, and a label the repository does not have is dropped silently when the issue is
+# created, which would leave the form promising a triage signal it never delivers.
+name: Correct a reading order or an issue's details
+description: Report something wrong in the catalogue: a wrong position, a missing issue, or missing details.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, one thing that is expected rather than broken: the catalogue was built from
+        a snapshot that ends in 2025. Comics published after that have no cover and no details,
+        and the app says so where it shows them. There is an entry form inside the app for adding
+        those by hand. That is the intended route, so a report of "no cover art on a 2026 issue"
+        will be closed as working correctly.
+
+        A report about anything published in 2025 or earlier is worth filing.
+
+  - type: input
+    id: order
+    attributes:
+      label: Which reading order
+      description: The name as it appears in the app.
+      placeholder: "House of M"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issues
+    attributes:
+      label: Which issues
+      description: One per line, with the series name and the issue number.
+      placeholder: |
+        Ultimate Black Panther #22
+        Ultimate Black Panther #23
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong
+      options:
+        - "An issue is in the wrong position in the order"
+        - "An issue is missing from the order"
+        - "An issue is in the order that should not be"
+        - "The cover or the details are missing"
+        - "The cover or the details are wrong"
+        - "What it says about availability to read is wrong"
+    validations:
+      required: true
+
+  - type: input
+    id: published
+    attributes:
+      label: When was it published
+      description: >-
+        Roughly is fine. This decides whether the report is inside the snapshot or past its end.
+      placeholder: "March 2025"
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: How do you know
+      description: >-
+        Where the correct information comes from, so it can be checked rather than taken on
+        trust. A link to the publisher's own page for the issue is ideal. Please do not attach
+        artwork: this project stores addresses of covers and never copies of them.
+    validations:
+      required: true

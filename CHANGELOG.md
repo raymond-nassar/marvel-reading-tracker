@@ -14,6 +14,27 @@ quote in a bug report.
 
 ## Unreleased
 
+### Opening an issue or a change now gives you the right form to fill in (BL-098)
+
+Nothing about the app changes and nothing you have saved is affected. What is new is what you see
+when you go to report something.
+
+Reporting a fault, asking for a feature and pointing out a wrong reading order need different things
+from you, and asking for all of them in one empty box gets none of them. There are now three forms
+that ask for what each actually needs, and a set of links beside them for the questions that have an
+answer somewhere else: the security policy, the reasons this is a companion rather than a reader,
+where to ask for help, and the list of what is already planned, which may well include your idea.
+
+You can still open a completely blank issue, and that is deliberate rather than left alone. The
+security policy tells anyone who cannot report a vulnerability privately to open an issue saying
+only that they have one and asking how to send it. Every form here asks for detail and tells you not
+to paste anything private, so removing the blank option would leave that instruction nowhere to go.
+A check now holds those two documents together.
+
+Opening a change now brings up a form as well, asking for the plain summary first and then the
+evidence and the numbers. That is the standard this project already held itself to privately; it is
+now visible to anyone who has never read the internal notes.
+
 ### There are now written answers to how to help, where to ask, and who decides (BL-097)
 
 Nothing about the app changes and nothing you have saved is affected. What is new is four documents

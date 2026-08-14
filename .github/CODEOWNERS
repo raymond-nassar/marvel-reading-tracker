@@ -1,0 +1,51 @@
+# Review ownership for this repository.
+#
+# This file routes nothing today, and saying so is the point of writing it down. The repository
+# has one collaborator, who is also the author of every pull request opened against it, and GitHub
+# does not request review from a pull request's own author. Requiring code owner approval is a
+# branch protection setting, and branch protection is unavailable here: both the rulesets endpoint
+# and the branch protection endpoint answer HTTP 403, "Upgrade to GitHub Pro or make this
+# repository public to enable this feature", measured on 2026-08-13.
+#
+# What it does do is state which areas need the most careful reading, so that a second reviewer,
+# whenever there is one, inherits the judgement instead of rediscovering it. The areas below are
+# the ones where a mistake is expensive rather than the ones that change most often, and the
+# ordering matters: a later match wins, so the narrowest rules are last.
+
+# Everything, unless a later line takes precedence.
+*                               @raymond-nassar
+
+# Automation. A workflow change cannot be verified by reading the diff, because the thing it
+# changes is what runs on the next push rather than what the file says.
+/.github/workflows/             @raymond-nassar
+/.github/dependabot.yml         @raymond-nassar
+/.github/CODEOWNERS             @raymond-nassar
+
+# Persistence. One browser storage key holds everything a reader has, and no server can put it
+# back. A defect here is the most expensive kind this project can ship.
+/src/js/storage.js              @raymond-nassar
+/src/js/cache.js                @raymond-nassar
+/test/storage.test.js           @raymond-nassar
+/test/cache-db.test.js          @raymond-nassar
+/test/concurrent-tabs.test.js   @raymond-nassar
+
+# Recovery. Twice now the most dangerous code in a change was the code added to prevent data
+# loss: it runs only when something has already gone wrong, so it is the least exercised path in
+# the app and the one review has to work hardest on.
+/test/backup-bounds.test.js     @raymond-nassar
+/test/recovery-copy.test.js     @raymond-nassar
+/src/dev-faults.js              @raymond-nassar
+
+# Generated data. These files are written by the vendoring scripts and read by the app, so a
+# hand edit here is invisible until the next regeneration silently reverts it.
+/src/data/                      @raymond-nassar
+/scripts/vendor-orders.mjs      @raymond-nassar
+/scripts/vendor-index.mjs       @raymond-nassar
+/scripts/build-event-order.mjs  @raymond-nassar
+
+# Release metadata. The version number describes stored data rather than features, so getting it
+# wrong tells a reader their backup is safe to skip when it is not.
+/package.json                   @raymond-nassar
+/src/js/lib/version.js          @raymond-nassar
+/scripts/sync-version.mjs       @raymond-nassar
+/CHANGELOG.md                   @raymond-nassar
