@@ -4551,7 +4551,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7314-7316` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7329-7331` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4561,11 +4561,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7333-7337`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7348-7352`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7148-7150` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7163-7165` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -6888,14 +6888,18 @@ all four packages in its message, so the document was corrected in the same chan
 drifting quietly. Watched failing in both halves rather than assumed: the count half reddened before
 the policy was touched, and setting the policy back to the old number while leaving the count correct
 reddens it again, which is the half that would otherwise pass while the document and the manifest
-part company. Six sentences elsewhere counted those packages and had to move with them. Two were
-found while the change was being made and four by review, after the sweep had twice been called
-complete, which is the argument for searching the tree for the old number rather than for the
-places you remember writing it. A seventh was left exactly as it was, and it is the one to enjoy:
-the mutation invented to prove the guard could fail was "adding a fourth lint package", written
-when there was no prospect of a fourth. There is one now, it arrived by the front door rather
-than as a mutation, and the guard caught it exactly as the mutation said it would. That account
-is left as it was written, because it records what was measured then.
+part company. Seven sentences elsewhere counted those packages and had to move with them. Two
+were found while the change was being made and five by review, across three rounds, each of
+which followed a sweep that had been called complete. The last of the seven survived two of
+those sweeps because it wraps across a line break, so no search for the phrase could match it
+and both sweeps reported the file clean while the sentence sat two lines above another the
+first round had already corrected. Joining the comment lines before matching is what found it,
+and it is the sharper form of the rule: search the tree for the old number, not for the
+sentence you remember writing. An eighth was left exactly as it was, and it is the one to
+enjoy: the mutation invented to prove the guard could fail was "adding a fourth lint package",
+written when there was no prospect of a fourth. There is one now, it arrived by the front door
+rather than as a mutation, and the guard caught it exactly as the mutation said it would. That
+account is left as it was written, because it records what was measured then.
 
 A different count moved with it. The lockfile fell from 90 locked packages to 76, because ESLint
 10 carries fewer of its own, and the workflow comment justifying an install that ignores scripts
@@ -6954,6 +6958,17 @@ This shipped inside the ESLint 10 change rather than after it because that chang
 delivered count to seventy. Ahead of that moment the extension is unobservable, since every gate and
 every test passes on both sides of it, so there was no earlier point at which it could have been
 shown to do anything.
+
+One figure moved that no gate watches. Appendix B states the size of the ranked table in prose, as
+the 28 rows it held at the original pass plus the items filed since, less the two later parked, and
+every one of the twenty-two values it has held was right when it was written. It went stale in
+`e6376e0`, which filed BL-114 as a follow-up and left the sentence reading 89 while the table had
+reached 90. The two rows added here took the gap to three. It now reads sixty-six further items and
+92 rows, derived twice over: from the length of the table itself, and from the 95 rows the document
+holds less the 28 counted then and BL-025, which was parked before it was ever scored and so was
+never in the table. Corrected rather than gated, because two figures of exactly this class already
+carry a deliberate decision not to file, on the ground that a matcher written per sentence costs
+more than the figure being wrong. Evidence: `PRODUCT_BACKLOG.md:4675-4683`.
 
 ## Existing epics and stories
 
@@ -7429,9 +7444,9 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and sixty-three
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and sixty-six
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 89 rows now. The ranks below are positions in it as it stands.
+how it reaches 92 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
 each sit one row below an item they outscore. Every one of those eight rows has shipped, so the
