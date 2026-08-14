@@ -14,6 +14,24 @@ quote in a bug report.
 
 ## Unreleased
 
+### The release check now asks what the comic database holds, not just whether it answers (BL-111)
+
+Nothing about the app changes and nothing you have saved is affected. Before a release, a check runs
+against the outside comic database this project takes its issue details from. It confirmed that the
+database was answering and that its replies had the shape the app expects, and it never asked how
+much the database actually contains.
+
+That matters because the database has stopped growing. The publisher's own data service shut down at
+the end of October 2025, and the copy this project reads from ends on exactly that day. That belief
+is written down in several places here, and until now nothing in the project would have told anyone
+if it turned out to be wrong.
+
+The check now measures three things on every run: how many issues the database holds altogether, how
+many it holds for Ultimate Black Panther, whose reading order here runs three issues past the end of
+it, and whether those unfillable issues still add up against what the database says it has. All
+three are recorded as counts taken on a named day rather than as targets to grow towards, so a
+number that moves in either direction is reported as news about the source rather than as progress.
+
 ### Notes that chose the repeat checker now say when they were measured (BL-107)
 
 Nothing about the app changes and nothing you have saved is affected. One of the checks on this
