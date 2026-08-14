@@ -31,9 +31,11 @@ test('the security policy still says so, so the check and the claim cannot part 
 });
 
 test('the packages the policy calls lint tooling are all it declares', () => {
-  // The policy says "the three packages". A fourth added later would make that sentence wrong in
-  // a document whose whole value is that a reporter can trust it.
+  // The policy says "the four packages". A fifth added later would make that sentence wrong in
+  // a document whose whole value is that a reporter can trust it. It was three until ESLint 10
+  // stopped bundling its own recommended rule set, which is a package appearing without anything
+  // new being wanted, and so is exactly the drift this asserts on.
   const dev = Object.keys(pkg.devDependencies ?? {});
-  assert.equal(dev.length, 3, `devDependencies are now ${dev.length}: ${dev.join(', ')}`);
-  assert.match(policy, /the three packages listed at/);
+  assert.equal(dev.length, 4, `devDependencies are now ${dev.length}: ${dev.join(', ')}`);
+  assert.match(policy, /the four packages listed at/);
 });

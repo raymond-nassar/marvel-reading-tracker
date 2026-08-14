@@ -326,7 +326,7 @@ async function main() {
     try {
       payload = JSON.parse(await readFile(path, 'utf8'));
     } catch (err) {
-      throw new Error(`${order.id} was skipped but has no pinned ${order.out} to reuse (${err.message}); run without --only`);
+      throw new Error(`${order.id} was skipped but has no pinned ${order.out} to reuse (${err.message}); run without --only`, { cause: err });
     }
     catalogById.set(order.id, catalogEntry(order, payload));
   }

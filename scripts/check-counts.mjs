@@ -46,14 +46,21 @@ const ORDINAL_WORDS = [
   'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth', 'twentieth',
 ];
 
-const TENS = { 20: 'twenty', 30: 'thirty', 40: 'forty', 50: 'fifty', 60: 'sixty' };
+const TENS = {
+  20: 'twenty', 30: 'thirty', 40: 'forty', 50: 'fifty', 60: 'sixty', 70: 'seventy',
+  80: 'eighty', 90: 'ninety',
+};
 const ORDINAL_TENS = {
   20: 'twentieth', 30: 'thirtieth', 40: 'fortieth', 50: 'fiftieth', 60: 'sixtieth',
+  70: 'seventieth', 80: 'eightieth', 90: 'ninetieth',
 };
 
-// Spelled out because the document spells them out. Returning null above sixty rather
-// than falling back to digits keeps the failure visible: a backlog that outgrows this
-// wants the range extended, not a checker that quietly stops checking.
+// Spelled out because the document spells them out. Returning null above ninety-nine
+// rather than falling back to digits keeps the failure visible: a backlog that outgrows
+// this wants the range extended, not a checker that quietly stops checking. It has
+// outgrown it once already, when the seventieth item shipped and five tests went red at
+// the same moment as the gate, so the extension is what the ceiling is for rather than a
+// sign it was set wrong.
 export function numberWord(n) {
   if (n >= 0 && n <= 20) return NUMBER_WORDS[n];
   const tens = Math.floor(n / 10) * 10;

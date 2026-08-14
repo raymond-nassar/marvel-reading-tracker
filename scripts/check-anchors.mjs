@@ -944,7 +944,7 @@ function main() {
   // the gate unusable against any revision that predates the lock, which is exactly
   // the revision you want to point it at when checking whether it would have caught
   // a past breakage.
-  let raw = null;
+  let raw;
   try {
     raw = readFileSync(LOCK, 'utf8');
   } catch {
