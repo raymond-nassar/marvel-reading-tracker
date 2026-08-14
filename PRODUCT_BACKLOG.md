@@ -9,17 +9,17 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Seventy-seven items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Seventy-eight items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
-BL-088, BL-089, BL-095, BL-096, BL-097, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106, BL-107,
-BL-111, BL-112, BL-115 and BL-116.
+BL-088, BL-089, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106,
+BL-107, BL-111, BL-112, BL-115 and BL-116.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
-full and closed without touching the colours, for the reasons recorded in its block. Ten remain
+full and closed without touching the colours, for the reasons recorded in its block. Eleven remain
 open on purpose: making the CI run required before merge is a repository setting rather than a
 change to the tree, tagging a release needs a commit to point at, confirming BL-027 with a screen
 reader is a human check no automated run substitutes for, BL-031's axe re-run cannot be satisfied as
@@ -31,17 +31,18 @@ read toggle, which is not what that item was raised about, BL-051's README walkt
 done by someone who does not write software, which is the one thing its author cannot self-certify,
 BL-096's reporting route cannot be turned on while this repository is private, which was checked
 against the endpoint rather than assumed, BL-089's secret scanning cannot be turned on for the
-same reason, which GitHub says in as many words when asked, and BL-099's legal review is a judgement
-no document can supply, least of all the document written to ask for it.
+same reason, which GitHub says in as many words when asked, BL-098's branch rules cannot be verified
+because both endpoints that would report them answer 403 on this plan, and BL-099's legal review is
+a judgement no document can supply, least of all the document written to ask for it.
 `CHANGELOG.md` carries the
 user-facing view of the same work.
 
 Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 repository assurance and
-open-source readiness study. Six of them are still `Ready`: the study records gaps for later
+open-source readiness study. Five of them are still `Ready`: the study records gaps for later
 implementation and does not mix those fixes into the roadmap change that identified them. BL-083,
-BL-084, BL-085, BL-087, BL-088, BL-089, BL-095, BL-096, BL-097, BL-099 and BL-100 have since been
-delivered, and their detail blocks record what changed. BL-091 is the one the study got wrong:
-re-measuring it refuted its premise, so it is `Dropped` and its block records the measurement
+BL-084, BL-085, BL-087, BL-088, BL-089, BL-095, BL-096, BL-097, BL-098, BL-099 and BL-100 have
+since been delivered, and their detail blocks record what changed. BL-091 is the one the study got
+wrong: re-measuring it refuted its premise, so it is `Dropped` and its block records the measurement
 rather than the fix.
 BL-101 through BL-108 are the eight items here that came from
 neither pass. BL-101 through BL-105 and BL-108 were each raised by the review of one of the items
@@ -252,15 +253,15 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:323-398 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3861-3864 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3862-3865 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:189-201 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:190-202 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
-| BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Observed | Ready | absent: CODEOWNERS and issue or pull request templates, tracked-file inventory |
+| BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/CODEOWNERS:1-51 |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1633-1660 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:662-678 |
@@ -3023,7 +3024,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2726-2729`.
+`PRODUCT_BACKLOG.md:2727-2730`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4560,21 +4561,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7765-7767` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7850-7852` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:199-201`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:200-202`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7784-7788`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7869-7873`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7599-7601` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7684-7686` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4782,9 +4783,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1612-1621` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:189-193` and
-`PRODUCT_BACKLOG.md:199-201` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:1633-1642` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:190-194` and
+`PRODUCT_BACKLOG.md:200-202` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -6381,10 +6382,10 @@ shipped item in this backlog has ever preceded a dependency that was still `Read
 
 **BL-098: Define review ownership and contribution intake**
 
-- [ ] Add ownership for workflows, persistence, recovery, generated data and release metadata
-- [ ] Add a pull request template for impact, scope, evidence and provenance
-- [ ] Add focused bug, feature and data-order issue forms
-- [ ] Route security reports privately rather than through a public form
+- [x] Add ownership for workflows, persistence, recovery, generated data and release metadata
+- [x] Add a pull request template for impact, scope, evidence and provenance
+- [x] Add focused bug, feature and data-order issue forms
+- [x] Route security reports privately rather than through a public form
 - [ ] Verify branch rules require the intended reviews and checks
 
 Constraint gate: checked 1 to 11, none breached.
@@ -6394,6 +6395,90 @@ plain-English opening and verification counts, but an external contributor never
 the contribution flow. Branch rules are a settings-only check and must be verified separately.
 Evidence: `.github/copilot-instructions.md:380-412`,
 `absent: CODEOWNERS and issue or pull request templates, tracked-file inventory`.
+
+Shipped, with the fifth task open and recorded as a blocker rather than ticked, in the shape BL-099
+set. Branch rules cannot be verified because they cannot be read: both the rulesets endpoint and the
+branch protection endpoint answer HTTP 403 with "Upgrade to GitHub Pro or make this repository
+public to enable this feature", measured on 2026-08-14. That is the same wall BL-096's private
+reporting route and BL-089's secret scanning hit, and the same answer applies: the task stays open
+and says why, because ticking it on the strength of having written a file that describes ownership
+would claim a check nobody ran.
+
+The ownership file opens by saying that it routes nothing today, which is the substance of the item
+rather than a caveat on it. There is one collaborator, every pull request is opened by that person,
+and GitHub does not request review from a pull request's own author, so no rule in the file can fire
+until there is a second person. What it does carry is the judgement about which areas are expensive
+to get wrong: automation, because a workflow change cannot be verified by reading the diff, since
+what it changes is what runs on the next push; persistence, because one browser key holds everything
+a reader has and no server can put it back; recovery, because twice now the most dangerous code in a
+change was the code added to prevent data loss; generated data, because a hand edit there is
+invisible until the next regeneration silently reverts it; and release metadata, because the version
+number describes stored data rather than features, so getting it wrong tells a reader their backup
+is safe to skip when it is not.
+
+The three issue forms and the pull request template are the same standard this repository already
+holds itself to, made visible to someone who has never read the internal instructions. The template
+opens with the plain-English section, and the test reads the required heading out of the instructions
+rather than repeating it, so renaming it in one place fails instead of drifting.
+
+Blank issues stay enabled, and that is a promise the security policy already made rather than a
+default nobody changed. The policy tells a reporter who cannot use private reporting to open an issue
+saying only that they have a security report and asking how to send it. Every form here asks for
+detail and says not to paste anything private, so turning blank issues off would leave that
+instruction with nowhere to land. A test now holds the two documents together, because nothing else
+does.
+
+Twelve assertions cover the intake files, and each was watched failing before it was kept. They
+exist because every failure mode here is silent. A CODEOWNERS rule naming a path that no longer
+exists is not rejected and produces no warning: it simply stops matching, and the area it was
+written to protect goes unowned while the file still reads as though it is covered. A pattern with
+no owner after it is valid and un-assigns whatever an earlier rule assigned, which looks identical
+to a rule that assigns. A label a form asks for that the repository does not have is dropped at
+creation without a word, so the forms are checked against GitHub's nine default labels rather than
+against a list this repository maintains. A contact link pointing at a moved document renders as
+an ordinary link and 404s only for the person following it. And an unreadable pattern shape is a
+failure rather than a miss, because a matcher that quietly returned false for a shape it did not
+understand would report every area unowned, or worse, report an area owned by a rule it had
+misread.
+
+One assertion is about this repository's own gates rather than about GitHub. No intake file may
+carry a file-and-line citation, because the evidence gate would collect it as a live claim and bless
+it into the lock, where an example written for someone else to fill in would then have to be
+maintained forever as though it described this codebase.
+
+Review found the form for correcting a reading order was not valid YAML and would never have been
+offered at all. Its description contained a colon followed by a space inside an unquoted value,
+which ends the plain scalar and makes the parser read the rest as a nested key. Every text assertion
+above passed on it, the suite was green, and the six gates were green, because nothing in this
+repository parses YAML. Adding a parser would cost the property that the tests run in a fresh copy
+with nothing installed, so the check written instead is narrow on purpose: it reads the constructs
+that actually break a hand-written form, a colon and a space in a plain scalar, a value ending in a
+colon, and a value opening with a YAML indicator, while exempting quoted values and the bodies of
+block scalars, which are prose and full of colons. Restoring the defect turns exactly that one test
+red. A second assertion checks the detector is wrong in the safe direction too, since one that
+flagged a quoted colon would be switched off by the first person it inconvenienced.
+
+The same review found the label check skipped any form that wrote its labels in block style or as a
+bare comma-separated string, both of which GitHub accepts. That is the enumeration failure this file
+already refuses elsewhere, where an ownership pattern it cannot read is a failure rather than a
+miss. A form that declares labels in a shape the check cannot read is now a failure, and writing
+this repository's one labelled form in block style turns that test red.
+
+Two limits worth stating rather than discovering later. Every `required: true` in these forms is
+inert while this repository is private, because GitHub honours that validation only on public
+repositories, so the forms will collect incomplete reports until publication and then start
+enforcing. And the ownership file's 403 was measured twice, on 2026-08-13 and again on 2026-08-14,
+which the file now says rather than dating one measurement and leaving the other implied.
+
+The predicted breakage arrived exactly as recorded. Adding this item's id to the cohort sentence
+pushed the line past the wrap and moved the break, and three tests in `test/check-counts.test.js`
+failed for a reason that had nothing to do with what they check: two matched the sentence with
+single spaces between "have since been", and one located the wrapped line by the literal phrase the
+sentence used to break after. The pattern is now whitespace-tolerant throughout and the wrapped line
+is derived from the sentence's own span, excluding the final line, since dropping an id there would
+leave the break itself untouched. The repair was proved rather than assumed: changing the flattening
+in `scripts/check-counts.mjs` from joining lines with a space to joining them with a newline turns
+exactly one test red, and it is the rewritten one.
 
 **BL-099: Clarify the license and provenance boundary for committed data**
 
@@ -7404,7 +7489,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4684-4692`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4685-4693`.
 
 ## Existing epics and stories
 
@@ -7986,3 +8071,4 @@ denominator. The rank is
 arithmetically correct and practically misleading: the item is not low value, it is unsplit. It is
 held at `Proposed` rather than `Ready` for that reason, and the honest reading of its rank is
 "cannot be scheduled yet", not "not worth doing".
+

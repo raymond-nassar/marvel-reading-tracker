@@ -1,0 +1,83 @@
+name: Something is broken
+description: Report behaviour that does not match what the app promises.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not paste anything private here. This is a public form and issues on this
+        repository are readable by anyone who can see it.
+
+        If you have found a security problem, close this form and read the security policy
+        instead. It explains how to report privately.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you do, and what did the app do instead of what you expected?
+      placeholder: |
+        I marked an issue as read, reloaded the page, and it was unread again.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reading-data
+    attributes:
+      label: Did this affect reading progress you had saved?
+      description: >-
+        Answer as best you can. Nothing you record is uploaded anywhere, so there is no copy for
+        anyone else to inspect, which makes your answer the only evidence of it.
+      options:
+        - "No, my progress is intact"
+        - "Yes, some progress is missing"
+        - "Yes, everything is gone"
+        - "I do not know"
+    validations:
+      required: true
+
+  - type: input
+    id: address
+    attributes:
+      label: The address in the browser bar
+      description: >-
+        Copy it exactly, port included. Progress is stored per address, so opening the app at a
+        different one shows an empty tracker even though nothing has been lost.
+      placeholder: "http://127.0.0.1:8787/"
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: "Edge 128.0.2739.42 on Windows 11"
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Anything red in the browser console
+      description: >-
+        Open the developer tools, reload, and copy any errors. Leave this empty if there are none.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else worth knowing
+      description: >-
+        Whether it happens every time, whether it started after something in particular, or
+        anything you tried that changed it.
+    validations:
+      required: false

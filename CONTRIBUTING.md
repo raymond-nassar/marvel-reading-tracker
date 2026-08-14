@@ -96,7 +96,8 @@ already knows the codebase. Name no file and no identifier in it: say what the t
 Say what a person using the app would notice, and say so plainly when the answer is nothing, which
 it often is. Give the reason before the mechanism. Four short paragraphs at most. It goes first
 because the technical sections were making it harder to tell whether a change was right, not
-easier.
+easier. The template that appears when you open a pull request puts it first for the same reason,
+and its other sections are the rest of this document in the order a reviewer reads them.
 
 ## The checks
 

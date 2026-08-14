@@ -1,0 +1,30 @@
+# blank_issues_enabled must stay true. The security policy tells a reporter who cannot use private
+# vulnerability reporting to open an issue saying only that they have a security report and asking
+# how to send it. Private reporting is unavailable while this repository is private, so that
+# fallback is the live route rather than a spare one. Turning blank issues off would leave a
+# reporter with three public forms, each of which asks for detail and tells them not to paste
+# anything private, and no way to ask for a channel. The forms below are a convenience; this line
+# is a promise the security policy already made.
+blank_issues_enabled: true
+
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/raymond-nassar/marvel-reading-tracker/blob/main/SECURITY.md
+    about: >-
+      Never in a public issue. The policy explains how to report privately and what is in scope,
+      including which parts of the app destroy data on purpose.
+  - name: Ask for help rather than report a fault
+    url: https://github.com/raymond-nassar/marvel-reading-tracker/blob/main/SUPPORT.md
+    about: >-
+      Sorts a problem with this app from a problem with Marvel's service, with the upstream comic
+      database, or with the point the metadata stops. Two of those three have answers elsewhere.
+  - name: Why this is a browser companion and not a reader
+    url: https://github.com/raymond-nassar/marvel-reading-tracker/blob/main/docs/WHY_A_BROWSER_APP.md
+    about: >-
+      The app cannot show you the comics themselves, and the reasons are measured rather than
+      assumed. Worth reading before asking for it.
+  - name: What is already planned
+    url: https://github.com/raymond-nassar/marvel-reading-tracker/blob/main/PRODUCT_BACKLOG.md
+    about: >-
+      Everything waiting to be built, ranked, with the reasoning for each. Your idea may be on it
+      already.
