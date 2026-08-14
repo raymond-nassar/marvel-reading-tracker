@@ -4551,7 +4551,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7329-7331` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7336-7338` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4561,11 +4561,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7348-7352`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7355-7359`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7163-7165` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7170-7172` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -6966,9 +6966,16 @@ made: `55c2809` stated 37 against a table of 38. It then went stale in `e6376e0`
 BL-114 and left it reading 89 while the table had reached 90, and the two rows here took the gap to
 three. It now reads sixty-six further items and 92 rows, derived twice over: from the length of the
 table, and from the 95 rows the document holds less the 28 counted then and BL-025, parked before
-it was ever scored and so never in the table. Corrected rather than gated, because two figures of
-this class already carry a deliberate decision not to file, on the ground that a matcher written
-per sentence costs more than the figure being wrong. Evidence: `PRODUCT_BACKLOG.md:4675-4683`.
+it was ever scored and so never in the table.
+
+Counting those writes took three tries, and the reason is worth more than the count. The first scan
+matched the sentence's two halves with a pattern that allowed no full stop between them, and twice
+in its history it was punctuated as two sentences rather than one, so those two writes were skipped
+in silence rather than merged. That is the same fault as the wrapped line above, one level up: a
+pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
+Corrected rather than gated, because two figures of this class already carry a deliberate decision
+not to file, on the ground that a matcher written per sentence costs more than the figure being
+wrong. Evidence: `PRODUCT_BACKLOG.md:4675-4683`.
 
 ## Existing epics and stories
 
