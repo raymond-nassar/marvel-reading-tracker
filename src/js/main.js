@@ -19,7 +19,7 @@ import {
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
   catalogCoverUrl, readingTimeLabel, collectionsLabel,
 } from './lib/catalog.js';
-import { Store } from './storage.js';
+import { Store, KEY as STATE_KEY } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
 import { ResponseCache } from './cache.js';
 import { RateLimiter } from './lib/limiter.js';
@@ -77,6 +77,19 @@ const store = new Store({
   },
 });
 const hydrator = new Hydrator({ api, store, onProgress: renderHydration });
+
+// One key, every tab. A save in another tab is news here, and taking it is what keeps two tabs
+// ordinary: this tab re-renders on their save, so its next edit is built on what is actually stored
+// and the store's compare-before-write never has to refuse it.
+//
+// key is null when the whole origin is cleared rather than one key removed, which is an erase this
+// tab must not write its old snapshot back over, so it is passed on as the same absence.
+// addEventListener is optional-called because this module is imported by tests in Node, where the
+// global has no listener to add and there is no second tab to hear from.
+globalThis.addEventListener?.('storage', (event) => {
+  if (event.key !== null && event.key !== STATE_KEY) return;
+  store.adoptForeignWrite(event.key === null ? null : event.newValue);
+});
 
 // One filter, shared by every list, and it now survives a reload. Per list was considered and
 // rejected: the filter already crossed lists within a session, so making it per list would have

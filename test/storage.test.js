@@ -818,9 +818,15 @@ function replacementBackup() {
 // asserts something the code never promised, and it passed only because both stamps usually land
 // in the same millisecond. On CI they did not: one run differed by exactly 1 ms and reddened the
 // build for a reason no reader could act on.
+//
+// The write token is dropped for the same reason and is the same kind of thing: metadata the store
+// stamps on the value it saves, naming that write so another tab can tell it apart from its own. It
+// is absent from the backup being compared against because it is absent from every backup file, by
+// construction. What this comparison is for is the content, and neither field is content.
 function withoutStamp(json) {
   const parsed = JSON.parse(json);
   delete parsed.exportedAt;
+  delete parsed.writeToken;
   return parsed;
 }
 
