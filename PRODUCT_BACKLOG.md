@@ -9,14 +9,14 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Seventy-four items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Seventy-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
-BL-088, BL-089, BL-095, BL-096, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106, BL-112, BL-115 and
-BL-116.
+BL-088, BL-089, BL-095, BL-096, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106, BL-107, BL-112,
+BL-115 and BL-116.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
 full and closed without touching the colours, for the reasons recorded in its block. Ten remain
@@ -252,7 +252,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:323-398 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3857-3860 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3861-3864 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Ready | scripts/check-contract.mjs:62-67 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
@@ -283,7 +283,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | src/js/main.js:2889 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
-| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:462-492 |
+| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:462-496 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:2965-2999 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:553 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:944 |
@@ -295,7 +295,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:1021 |
 | BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:317 |
 | BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1122 |
-| BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:519-557 |
+| BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:533-571 |
 | BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:291-314 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
@@ -306,6 +306,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-066 | Offer a reading order grouped by the collected editions it is sold in | Story | EP-02 | Leaves alone | 5 | 2 | 5 | 5 | 2.4 | none | Measured | Shipped | src/data/orders/new-ultimate-universe-trades.md:19 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Shipped | design/mockups/5-longbox-focus.html:169-172 |
 | BL-117 | Give the ceiling timings a budget that survives a loaded machine | Debt | EP-12 | Leaves BL-085 alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | test/backup-bounds.test.js:353 |
+| BL-118 | Notice a distant repeat in the prose documents the gate never reads | Enabler | EP-12 | Extends BL-058 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Ready | scripts/check-counts.mjs:590 |
 | BL-092 | Bring the fault harness under the alternate-page accessibility baseline | Debt | EP-07 | Leaves BL-034 alone | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | src/dev-faults.js:12-22 |
 | BL-102 | Send the security headers on the dev server's error responses too | Debt | EP-12 | Follows BL-096 | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | server.mjs:86-96 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
@@ -3022,13 +3023,13 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2725-2728`.
+`PRODUCT_BACKLOG.md:2726-2729`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
 permanent check worth building rather than a one-off answer worth writing down. The scan needed no
 minimum length and no exception list to stay quiet, so `scripts/check-counts.mjs` now carries it, at
-`scripts/check-counts.mjs:462-492`, and `npm run counts` fails on a repeat. That remains true of this
+`scripts/check-counts.mjs:462-496`, and `npm run counts` fails on a repeat. That remains true of this
 scan, which is why the citation names it rather than the whole function: the whole-document pass
 BL-081 added later does need a floor, and the reason is recorded there.
 
@@ -3818,7 +3819,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 Filed out of BL-075's review, which found the defect the gate is named for sitting inside the change
 that ran it. `checkRepeats` compares a window against the window immediately following it, at
-`scripts/check-counts.mjs:478-484`, so it catches a block directly followed by its copy and nothing
+`scripts/check-counts.mjs:482-488`, so it catches a block directly followed by its copy and nothing
 else. BL-075's first draft repeated a six-line paragraph forty-five lines further down, which put
 pre-implementation framing after the verification numbers that closed the block, and the gate printed
 that nothing was said twice.
@@ -3837,7 +3838,7 @@ answer it: the ceiling derivation above the loop already records that a repeat c
 line, and that guard is doing more work than it looks like once the two copies can be anywhere.
 
 **Shipped.** The adjacency walk is untouched and a second pass runs after it, at
-`scripts/check-counts.mjs:519-557`, descending from the longest possible repeat down to a floor and
+`scripts/check-counts.mjs:533-571`, descending from the longest possible repeat down to a floor and
 comparing every blank-free window against every earlier one. Both passes share the one `claimed`
 set, so a block the adjacency walk has already reported is not reported again by the second.
 
@@ -3849,18 +3850,23 @@ hits, which is why it is recorded beside the code rather than fixed by re-anchor
 lines.
 
 While in the function, the ceiling comment's two figures were re-derived and were both stale: the
-longest blank-free run in this document is 59 and not 41, so the derived ceiling is 29 and not 20.
-That is a pre-existing figure rather than one this change introduced, corrected because the new
-pass reads the same `longest` value and would otherwise inherit a comment that disagrees with it.
+longest blank-free run in this document was 59 and not 41 when this shipped, so the derived
+ceiling was 29 and not 20. That is a pre-existing figure rather than one this change introduced,
+corrected because the new pass reads the same `longest` value and would otherwise inherit a
+comment that disagrees with it. Both drifted again, to 95 and 47 when read on 2026-08-14 before
+`BL-107` landed, which is the case for deriving rather than a fault, since the code recomputes
+them on every run and only a figure written beside it can go stale. `BL-107` dated them.
 
 **The second task was the work, and the answer is three lines, measured.** The item guessed at four
-by measuring the one draft it was filed from. Counting every repeated blank-free window across the
-six tracked prose documents instead gives 124 at one line, 4 at two, and 0 at three and at every
-size above it. All 128 are meant: the constraint gate line stands 25 times in this document and
-accounts for 24 of its 26 one-line repeats, and the four two-line repeats are a table header, a
-fenced `npm start`, a WCAG criterion line and a bare mermaid fence. Three is therefore the smallest
-size at which a repeat is not already ordinary practice here, and it is a reading of this corpus
-rather than a rule about prose.
+by measuring the one draft it was filed from. Counting every repeated blank-free window within each
+tracked Markdown file outside `.copilot-tracking/`, `src/data/orders/` and `docs/ux/`, seven of them
+on 2026-08-10, instead gave 124 at one line, 4 at two, and 0 at three and at every size above it.
+All 128 were meant: the constraint gate line stood 25 times in this document and accounted for 24 of
+its 26 one-line repeats, and the four two-line repeats were a table header, a fenced `npm start`, a
+WCAG criterion line and a bare mermaid fence. Three is therefore the smallest size at which a repeat
+is not already ordinary practice here, and it is a reading of this corpus rather than a rule about
+prose. Neither the population nor the counting rule was written down here until `BL-107` added them,
+and `BL-107` records what that omission cost.
 
 That floor is falsifiable rather than asserted, which is the part worth keeping. Lowering it to two
 and running the suite fails 8 tests, and the failures include the check that the document as
@@ -4554,7 +4560,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7559-7561` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7659-7661` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4564,11 +4570,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:199-201`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7578-7582`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7678-7682`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7393-7395` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7493-7495` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4776,7 +4782,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1540-1549` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1568-1577` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:189-193` and
 `PRODUCT_BACKLOG.md:199-201` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5055,6 +5061,36 @@ and the fixed one does not. Filed rather than fixed under BL-084, whose review s
 it is a test-harness question with nothing to do with the write contract that change was about.
 
 Evidence: `test/backup-bounds.test.js:353`.
+
+**BL-118: Notice a distant repeat in the prose documents the gate never reads**
+
+- [ ] Decide which documents the scan reads, by deriving the set rather than listing it
+- [ ] Report a finding against the file it is in, not against the one document the gate names
+- [ ] Keep the three-line floor honest by re-reading it against whatever population is chosen
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by the delivery of `BL-107` and routed here rather than fixed there, because that item
+dates a measurement and this one changes what is measured. The comment above the repeat floor says
+that a legitimate three-line repeat should be raised and recorded rather than excepted, but the
+gate reads one file, so in every other prose document nothing would raise it. The floor was read
+from a population and is enforced on one member of it.
+
+The work is not the loop, which already compares every window against every earlier one. It is
+deciding the population and reporting against the right file. Deriving the set from `git ls-files`
+rather than naming it is what keeps this from becoming the enumeration the anchors script warns
+about, and it matters here: the seven counted on 2026-08-10 were nine on 2026-08-14, since a
+security policy and a provenance document have been added since.
+
+Measured before filing, so the change is expected to report nothing on the tree it lands in: read
+on 2026-08-14, 0 repeats at three lines and above across all 29 tracked markdown files, and 4 at
+two lines, every one of them deliberate. That holds while each file is its own corpus, which is
+the reading the first task should choose. Pooling all 29 into one corpus instead reports 6 at
+three lines, every one of them in the generated order files, which is an argument for deriving the
+set rather than taking every tracked Markdown file. That makes this an enabler rather than a
+defect, and it is the reason the value is 2 rather than higher.
+
+Evidence: `scripts/check-counts.mjs:590`.
 
 **BL-085: Bound backup restore before parsing and persistence**
 
@@ -6815,9 +6851,9 @@ that landed before a process existed does not show the process permits landing w
 
 **BL-107: Date or re-derive the repeat figures BL-058 states as current**
 
-- [ ] Decide whether the paragraph reports a measurement made then or a fact about the document now
-- [ ] Re-derive every figure in it, or date it and name what it was measured against
-- [ ] Prove the choice holds by checking whether the next item to ship falsifies it again
+- [x] Decide whether the paragraph reports a measurement made then or a fact about the document now
+- [x] Re-derive every figure in it, or date it and name what it was measured against
+- [x] Prove the choice holds by checking whether the next item to ship falsifies it again
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -6835,6 +6871,70 @@ time this document has carried one, after `BL-055`, `BL-059` and `BL-105`. Read 
 that chose three lines over four it is still true, and re-deriving it would replace the evidence for
 a decision with numbers that had no part in making it. The figures are load-bearing either way, so
 they need to say which they are.
+
+**Shipped as a measurement made then, dated rather than re-derived.** The figures sit above the
+constant they choose, `MIN_DISTANT`, as its derivation, so replacing them with today's numbers
+would leave the constant justified by counts that had no part in choosing it. Each now carries the
+day it was read and the population it was read from, and a second reading of the same corpus is
+recorded beside it rather than in place of it.
+
+**The item named one site and there are four.** These figures are written twice, here and in the
+comment above the constant, and the ceiling figures a few lines above them had gone stale in both
+places as well: this block said the longest blank-free run in this document is 59 and the ceiling
+derived from it 29, and they read 95 and 47 on 2026-08-14 before this change landed. Dating the
+paragraph alone would have left the source asserting in the present tense the thing this item was
+raised to stop, which is why the row's single citation is not the scope.
+
+**All five figures reproduce, and the defect is that the sentence named neither its population nor
+its method.** The item weighed a stale claim about now against a still-true measurement from then.
+Reproducing it against the tree that shipped it answers a question the item did not think to ask,
+which is what was counted and how.
+
+| Figure as written | At the commit that wrote it | On 2026-08-14 before this change |
+|---|---|---|
+| 124 one-line repeats | 124 | 165 |
+| 4 two-line repeats | 4 | 4 |
+| 0 at three lines and above | 0 | 0 |
+| the gate line stands 25 times | 25 | 59 |
+| 24 of its 26 one-line repeats | 24 of 26 | 58 of 61 |
+
+That reproduction took two attempts, and the first one is the finding. "The six prose documents" is
+a description rather than an enumeration, and the population it was taken to mean, seven documents
+minus the agent instructions, gave 113 against the 2026-08-10 tree rather than 124, which reads as a
+figure somebody invented. It was not invented. The population is every tracked Markdown file outside
+`.copilot-tracking/`, `src/data/orders/` and `docs/ux/`, seven of them on 2026-08-10 and nine when
+read again on 2026-08-14, and one of the seven contributed no repeats at all, which is why six and
+seven cannot be told apart from the total. Counted that way, within each document rather than over
+the set as a whole, it is exactly 124. This block asserted the opposite until a review of it
+re-derived the figure a second way, and the answer is not to be more careful next time but to write
+the population and the counting rule down, which both sites now do.
+
+**The third task is answered by the same replay, and the floor holds.** Two lines has measured 4 in
+every revision from the one that shipped it to this one, and three lines has measured 0 in every
+one of them, while the corpus those were read from grew from 124 one-line repeats to 165 and the
+constraint gate line went from 25 to 59. Widening the population rather than the window says the
+same thing: read on 2026-08-14, 0 at three lines and above across all 29 tracked markdown files,
+the historical tracking artifacts included, and the four at two lines were still the same four,
+still a table header, a fenced `npm start`, a WCAG criterion line and a mermaid fence. A floor read
+from a corpus that grew by 41 one-line repeats without moving it is better evidence than the
+reading that chose it. Both of these carry their day for the same reason the figures they check
+now do.
+
+**What dating buys is that the next item cannot falsify it.** Shipping this one adds a block and a
+constraint gate line and so moves three of the five figures again, the one-line total from 165 to
+167, the gate line from 59 to 60 and the third row from 58 of 61 to 59 of 63, which is precisely why
+they are written as readings on a day rather than as facts about a document. The counts gate already
+has a marker for this class of claim, `<!-- counts:frozen -->`, and it does not apply here: it
+exempts a figure the gate derives, and the gate derives none of these. The precedent it sets is the
+useful part, which is that a claim about a past state has to say so in the source.
+
+**One finding is routed rather than fixed.** The comment says that if a legitimate three-line
+repeat is ever written the honest response is to raise it and record why. Only this document is
+scanned, so in every other document that response waits on somebody noticing, and the promise is
+wider than the check behind it. Widening the scan is a different change from dating a measurement,
+and `BL-118` carries it.
+
+Evidence: `scripts/check-counts.mjs:464-472`, `scripts/check-counts.mjs:510-532`.
 
 **BL-108: Make the cover art switch stop the cover requests it hides**
 
@@ -7198,7 +7298,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4678-4686`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4684-4692`.
 
 ## Existing epics and stories
 
@@ -7686,7 +7786,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 1: BL-026 is labelled P0 but ranks forty-third
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 43 of 93.
+- Calculated: WSJF 3.67, rank 43 of 94.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
   It is outranked by forty-two items, twenty-five of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -7708,7 +7808,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 87 of 93, below eighty-three unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 88 of 94, below eighty-four unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -7765,9 +7865,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 56 of 93. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 45 of 93. Mid-table.
-- BL-017, P2, rank 92 of 93. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 56 of 94. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 45 of 94. Mid-table.
+- BL-017, P2, rank 93 of 94. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

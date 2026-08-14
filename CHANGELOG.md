@@ -14,6 +14,34 @@ quote in a bug report.
 
 ## Unreleased
 
+### Notes that chose the repeat checker now say when they were measured (BL-107)
+
+Nothing about the app changes and nothing you have saved is affected. One of the checks on this
+project's own writing looks for paragraphs that have been pasted twice. It ignores anything shorter
+than three lines, and the note explaining why three counted every repeated passage across the
+project's written documents to arrive at that number.
+
+The note was written in the present tense, so it read as a description of the documents as they are
+rather than as a count taken on a particular day, and the documents have grown a good deal since.
+Re-taking the count went wrong twice over. The note said six documents without saying which six, so
+a first attempt counted the wrong six, came out at 113 against the 124 claimed, and concluded the
+original number had been invented. A review re-derived it a second way and found the opposite: with
+the right set of documents every one of the five numbers reproduces exactly.
+
+So the note's real fault was never a wrong number. It was that it described what it had counted
+instead of saying it, which left a correct measurement looking made up. Every number now carries
+the day it was taken and a rule for working out which documents were read, in both places the note
+appears, and the same was done for a second pair of figures beside it that had genuinely drifted.
+The wrong turn is written down too, since it is the evidence for why saying which documents matters.
+
+The decision itself survives untouched, and re-taking the count is what shows why: the reason for
+choosing three has held in every version of the documents since, while the corpus it was read from
+grew by about a third.
+
+A gap this turned up is written down for later rather than fixed here: the note promises that a
+genuine three-line repeat would be raised and explained, but only one of the documents is actually
+scanned, so everywhere else that promise waits on somebody noticing.
+
 ### The count checker now reads the roadmap's second summary too (BL-105)
 
 Nothing about the app changes and nothing you have saved is affected. The project's list of planned

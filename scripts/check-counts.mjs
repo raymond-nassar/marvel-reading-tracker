@@ -463,9 +463,13 @@ export function checkRepeats(text) {
   const lines = text.split(/\r?\n/);
   // The ceiling is derived rather than picked. A repeat cannot span a blank line, by the
   // guard below, so both copies must fit inside one blank-free run, which bounds a block
-  // at half the longest such run. Today that is 29 lines against a longest run of 59, so
-  // a fixed 8 would have missed a duplicated paragraph merely for being long, which is
-  // the exact defect this exists to catch. Deriving it cannot.
+  // at half the longest such run. That was 29 against a longest run of 59 when this pass
+  // was written on 2026-08-10, and 47 against 95 when read again on 2026-08-14 before this
+  // change landed. The growth is the argument rather than an aside: a fixed 8 would have
+  // missed a duplicated paragraph merely for being long, which is the exact defect this
+  // exists to catch, and a fixed 29 chosen on the first of those dates would already miss
+  // one by the second. Deriving it cannot go stale, so only a figure written beside it
+  // can, which is why both carry the day they were read.
   let run = 0;
   let longest = 0;
   for (const l of lines) {
@@ -505,17 +509,27 @@ export function checkRepeats(text) {
   //
   // The floor of three is measured, not guessed, and it is the whole of the second task
   // this item was filed with: once the copies can be anywhere, adjacency is no longer
-  // doing the work of deciding what a legitimate repeat is. Counting every repeated
-  // blank-free window across the six tracked prose documents gives 124 at one line, 4 at
-  // two and 0 at three and at every size above it. Every one of the 128 is meant: the
-  // constraint gate line stands 25 times in this document and accounts for 24 of its 26
-  // one-line repeats, and the four at two
-  // lines are a table header, a fenced `npm start`, a WCAG criterion line and a bare
-  // ```mermaid fence. So three is the smallest size at which a repeat is not already
-  // ordinary practice here, and a floor set any lower would report 128 things that are
-  // correct. It is a reading of this corpus rather than a rule about prose, and if a
-  // legitimate three-line repeat is ever written the honest response is to raise it and
-  // record why, not to add an exception.
+  // doing the work of deciding what a legitimate repeat is. Counted on 2026-08-10 across
+  // every tracked Markdown file outside `.copilot-tracking/`, `src/data/orders/` and
+  // `docs/ux/`, seven of them then, and counted within each document rather than over the
+  // set as a whole, the repeated blank-free windows came to 124 at one line, 4 at two, and
+  // 0 at three and at every size above it. Every one of the 128 was meant: the constraint
+  // gate line stood 25 times in the backlog and accounted for 24 of its 26 one-line
+  // repeats, and the four at two lines were a table header, a fenced `npm start`, a WCAG
+  // criterion line and a bare ```mermaid fence. So three is the smallest size at which a
+  // repeat is not already ordinary practice here.
+  //
+  // That population and that method are written down because neither is recoverable from
+  // the figure: counting that same 2026-08-10 tree but leaving the agent instructions out
+  // of the seven gives 113, which reads as though 124 had been invented. It had not. Read
+  // again on 2026-08-14, before this change landed, the population was nine documents and
+  // the one-line figure 165, with the gate line standing 59 times; two lines was still 4
+  // and the same four, three still 0, and 0 also across all 29 tracked Markdown files. The
+  // floor held while the corpus grew from 124 one-line repeats to 165, which is better
+  // evidence for it than the original count was. If a legitimate three-line repeat is ever
+  // written the honest response is to raise it and record why, not to add an exception.
+  // Only this document is scanned, so in the others that response waits on somebody
+  // noticing.
   const MIN_DISTANT = 3;
   for (let n = longest; n >= MIN_DISTANT; n -= 1) {
     const firstSeen = new Map();
