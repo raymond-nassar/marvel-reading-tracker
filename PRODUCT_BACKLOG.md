@@ -4560,7 +4560,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7763-7765` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7765-7767` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4570,11 +4570,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:199-201`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7782-7786`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7784-7788`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7597-7599` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7599-7601` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -6361,8 +6361,10 @@ with a hardcoded line ending matched nothing at all, which is a green that prove
 Review found three false statements in one paragraph, and they were all in the paragraph about the
 fault harness, which is the paragraph that tells a contributor how to get their reading back after
 deliberately destroying it. It said the in-browser snapshot is what the app's own restore path
-reads, and it is not: that key is written and read only by the harness page's own restore button,
-so a contributor who followed the guide to the tracker's settings would have found nothing there.
+reads, and it is not: that key is written and read only inside the harness page's own script, by its
+snapshot button and by its restore, download and status paths, so nothing in the app reads it at
+all, and a contributor who followed the guide to the tracker's settings would have found nothing
+there.
 It said the storage-full fault is what makes the downloaded file the copy that matters, and it is
 not: both restore routes free the filled keys before writing, precisely so a full quota cannot
 block a restore. The fault that really does leave the file as the only way back is the one that
