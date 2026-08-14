@@ -229,7 +229,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | ID | Title | Type | Epic | Relationship | V | TC | RE | Size | WSJF | P | Basis | Status | Evidence |
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
-| BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:454-530 |
+| BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
 | BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:49-52 |
 | BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:36-44 |
@@ -247,11 +247,11 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Dropped | src/styles.css:817-820 |
 | BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/js/main.js:3154-3176 |
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Shipped | src/js/main.js:3079-3107 |
-| BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Shipped | src/js/storage.js:385-409 |
+| BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Shipped | src/js/storage.js:426-450 |
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-counts.mjs:232-265 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3855-3858 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:3856-3859 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Ready | scripts/check-contract.mjs:62-67 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
@@ -268,7 +268,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:810 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3333-3381 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
-| BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/storage.js:306-309 |
+| BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/storage.js:329-332 |
 | BL-110 | Count the issues an order imported empty, and say so | Defect | EP-05 | Extends BL-009 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:2918 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
 | BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Ready | README.md:269-314 |
@@ -287,15 +287,15 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:494 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:944 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Shipped | src/index.html:147-148 |
-| BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Shipped | src/js/storage.js:106 |
-| BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:136-146 |
+| BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Shipped | src/js/storage.js:107 |
+| BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:137-147 |
 | BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:193 |
 | BL-077 | Bring relative citations under the anchors gate, or stop writing them | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:282-297 |
 | BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:934 |
 | BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:271 |
 | BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1035 |
 | BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:388-426 |
-| BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:268-291 |
+| BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:291-314 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:246 |
@@ -304,6 +304,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Shipped | src/js/main.js:99 |
 | BL-066 | Offer a reading order grouped by the collected editions it is sold in | Story | EP-02 | Leaves alone | 5 | 2 | 5 | 5 | 2.4 | none | Measured | Shipped | src/data/orders/new-ultimate-universe-trades.md:19 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Shipped | design/mockups/5-longbox-focus.html:169-172 |
+| BL-117 | Give the ceiling timings a budget that survives a loaded machine | Debt | EP-12 | Leaves BL-085 alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | test/backup-bounds.test.js:353 |
 | BL-092 | Bring the fault harness under the alternate-page accessibility baseline | Debt | EP-07 | Leaves BL-034 alone | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | src/dev-faults.js:12-22 |
 | BL-102 | Send the security headers on the dev server's error responses too | Debt | EP-12 | Follows BL-096 | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | server.mjs:86-96 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
@@ -1711,7 +1712,7 @@ than coerced.
 One risk was gone looking for and found open. Everything read prints a date, so what a restore can
 put in the read map is this view's problem too, and a backup carrying a string where a timestamp
 belongs would put "Invalid Date" on screen. The first pass concluded it could not: `store.load` runs
-every saved state through `migrate` at `src/js/storage.js:86`, and `migrate` replaces any value that
+every saved state through `migrate` at `src/js/storage.js:87`, and `migrate` replaces any value that
 is not a usable number. Review found that guard sits in `coerce`, which runs on the current-schema
 branch alone. The v1 branch rebuilds the state from scratch and writes read state through `markRead`
 instead, which stored its argument verbatim, so restoring a v1 backup carrying `readAt: "banana"`
@@ -3020,7 +3021,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2723-2726`.
+`PRODUCT_BACKLOG.md:2724-2727`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4286,13 +4287,13 @@ a claim that is false.
 
 One condition covers all three, which is why the size held. Whether a copy exists and whether one can
 be written now are different questions, and the code asked the second while reporting the first, at
-`src/js/storage.js:136-146`. A salvage slot already holding these exact bytes is now adopted rather
+`src/js/storage.js:137-147`. A salvage slot already holding these exact bytes is now adopted rather
 than written again, so writes are a strict subset of what they were: every branch that wrote before
 still writes when no copy exists, and none writes that did not. Identity is byte identity and never
 the clock, which is what makes "the same incident" mean anything across a reload. Only the salvage
 family is scanned, because `restore()` overwrites the pre-restore slot and a copy found there is not
 one this store may promise is still held. The main slot is still read directly rather than through
-the scan, at `src/js/storage.js:142`, so the scan is an addition to the question and never a
+the scan, at `src/js/storage.js:143`, so the scan is an addition to the question and never a
 replacement for it. That distinction is load-bearing and was got wrong first: routing the whole
 question through the scan meant a storage that cannot be enumerated stopped recognising the copy in
 its own main slot, and wrote a duplicate where the shipped code wrote none, measured at 1 write
@@ -4552,7 +4553,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7373-7375` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7424-7426` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4562,11 +4563,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:198-200`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7392-7396`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7443-7447`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7207-7209` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7258-7260` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4774,7 +4775,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1500-1509` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1507-1516` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:188-192` and
 `PRODUCT_BACKLOG.md:198-200` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4873,7 +4874,7 @@ The restore writes the replacement to the main key before removing its staging k
 throws, the catch reports that nothing changed while storage already holds the replacement and the
 screen still holds the old state. A focused storage probe reproduced that split. This follows up the
 atomicity claim under BL-023 rather than adding another backup feature. Evidence:
-`src/js/storage.js:454-530`, `src/js/main.js:3079-3107`.
+`src/js/storage.js:495-571`, `src/js/main.js:3079-3107`.
 
 Shipped. Five stages can fail and the shipped code told all five the same story. The restore now
 carries `changed` on every return, and the two stages that can leave the saved data altered ask
@@ -4992,17 +4993,67 @@ because it holds the latch protecting a salvage copy and adopting would clear it
 reader never asked for. Every failure direction is a refusal: an unreadable prefix, a read that
 throws, a foreign write that will not parse.
 
+Not adopting is what made the escape from a blocked tab the most dangerous code in this change, and
+the review found it there. A blocked store's token is fixed for as long as it lives, and
+`startFresh()` writes through `persist()`, so once any other tab wrote, every press was refused for
+the rest of the session while the banner went on naming that button as the way out. The route in is
+the ordinary one, because the value neither tab can read is the shared one: both are blocked, and one
+of them starting fresh is how a reader would begin. `startFresh()` also salvages before it clears,
+and a refusal inside `persist()` arrives after the copy has been taken, so the other tab's readable
+data was filed as this tab's unreadable incident and offered back under "Download a copy". The button
+now asks before it copies and withdraws rather than refuses: it re-reads, which either lifts the
+latch because the value now on disk reads, or re-latches on that value with the token belonging to
+it, so the next press works. Withdrawing an offer at the moment it stops making sense, rather than
+refusing it later, is the standing rule here, and it is the right shape for this too.
+
+The second finding was a flag that outlived its call. `conflicted` tells `update()` which rollback to
+take, and only `update()` cleared it, so a refusal raised for `startFresh()` was still set when the
+reader made an ordinary edit. That edit, refused by the blocked latch for a reason that is not a
+conflict at all, read the leftover and rolled back by re-reading; re-reading clears the latch, so an
+unrelated edit tore the recovery banner down and saving resumed on the strength of a flag left behind
+by a different call. `persist()` clears it on entry now, so it can only ever describe the call that
+just ran.
+
 A tab saved before this change carries no token, and tokenless compares equal to tokenless, so an
 upgrading reader is not refused; the comparison starts biting the moment any tab writes once.
 
-Nineteen tests in `test/concurrent-tabs.test.js`, all watched failing. Reverting both modules fails
-15 of the 19, and the 4 that still pass are guards against regressions the fix could have introduced
-rather than tests of the fix, which is why the whole-module measurement is not the useful one.
-Removing the single line that records the token seen at load fails exactly 1, the test that a tab
-told it lost can make the change again and keep it. Reverting only the conflict-aware rollback fails
-exactly 2. The browser check fails 6 of its 8 against the unfixed tree, and the saved data there
-holds only the second tab's issue, which is the defect itself rather than a proxy for it.
-Evidence: `src/js/storage.js:385-409`, `src/js/main.js:81-92`.
+Twenty-four tests in `test/concurrent-tabs.test.js`, all watched failing. Reverting both modules
+fails 15 of the 19 written for the contract itself, and the 4 that still pass are guards against
+regressions the fix could have introduced rather than tests of the fix, which is why the
+whole-module measurement is not the useful one. Removing the single line that records the token seen
+at load fails exactly 1, the test that a tab told it lost can make the change again and keep it.
+Reverting only the conflict-aware rollback fails exactly 2. Of the 5 written for the review findings,
+4 fail against the module as first written; the fifth passes there, because the jam prevented the
+erase for a reason that had nothing to do with wanting the data kept, and it says so in the file
+rather than being counted as evidence. The browser check fails 6 of its 8 against the unfixed tree,
+and the saved data there holds only the second tab's issue, which is the defect itself rather than a
+proxy for it.
+Evidence: `src/js/storage.js:426-450`, `src/js/main.js:81-92`.
+
+**BL-117: Give the ceiling timings a budget that survives a loaded machine**
+
+- [ ] Decide what the two ceiling assertions are actually defending
+- [ ] Replace the wall-clock budget with a measure that does not move with machine load
+- [ ] Keep the quadratic form failing, which is the only thing the assertion is for
+
+Constraint gate: checked 1 to 11, none breached.
+
+Two restore tests at the collection ceilings assert a wall clock: `Date.now() - started < 20000`,
+against a quadratic form that took 16.8 seconds on a fiftieth of the data. Run alone the list-ceiling
+test takes 2.6 seconds, so the budget looks generous. Run inside the full suite on a loaded machine
+it took 779 seconds and failed, which is 300 times its solo cost and 39 times its budget. Nothing was
+wrong with the code: `node --test` runs files in parallel, and the whole suite was competing for one
+machine.
+
+So the assertion is not measuring what it claims. A budget wide enough to survive that would be wide
+enough to pass the quadratic form it exists to catch, which is the shape of every wall-clock
+assertion run under contention. What is actually being defended is an asymptotic claim, that the
+route is linear in the number of lists rather than quadratic, and a ratio between two sizes measures
+that without depending on how fast the machine is: the quadratic form quadruples on each doubling,
+and the fixed one does not. Filed rather than fixed under BL-084, whose review surfaced it, because
+it is a test-harness question with nothing to do with the write contract that change was about.
+
+Evidence: `test/backup-bounds.test.js:353`.
 
 **BL-085: Bound backup restore before parsing and persistence**
 
@@ -6399,7 +6450,7 @@ Constraint gate: checked 1 to 11, none breached.
 Raised by the review of `BL-083` and routed here rather than fixed there, because it is a different
 code path from the restore this one repaired. Two routes replace the whole state at once, the erase
 button at `src/js/main.js:3154-3176` and the escape hatch out of the blocked state at
-`src/js/storage.js:227-229`, and neither touches the undo snapshot. Only `restore()` and its own
+`src/js/storage.js:250-252`, and neither touches the undo snapshot. Only `restore()` and its own
 rewind ever write that key, so **Undo restore** stays live indefinitely after a confirmation that
 says in as many words that erasing cannot be undone. The offer works, which is the problem: the
 reader is told their data is gone and is then shown a button that brings a copy of it back. Nothing
@@ -6414,7 +6465,7 @@ the button stayed on screen, and `undoRestore()` answered `ok` and put the erase
 was not only an offer that outlived its promise. It was a second copy of the data, undeleted, after a
 dialog saying this browser has nothing left.
 
-The withdrawal lives in `src/js/storage.js:684-711` rather than at the button, so the order it
+The withdrawal lives in `src/js/storage.js:725-752` rather than at the button, so the order it
 depends on is testable: the snapshot goes only once `update()` reports the erase actually landed,
 because a refused write leaves the tracker where it was and an undo against data that is still there
 is truthful. The removal is read back, for the same reason every other write in this module is, and
@@ -6469,7 +6520,7 @@ the item that raised it.
 A second round found that those fixes had made five more claims false, every one of them in prose
 rather than in code. Two were in the very rows the first round had rewritten. **The staging row said
 the erase was the only thing that clears a copy a throw had stranded**, when any later restore clears
-one at `src/js/storage.js:509`. **The snapshot row said nothing but the erase removes it**, when
+one at `src/js/storage.js:550`. **The snapshot row said nothing but the erase removes it**, when
 `rewindSnapshot()` also empties that slot after a failed restore that has no earlier snapshot to put
 back, which two tests predating this change already pinned. That is the round-one defect arriving
 inside its own fix: a table denying a removal the module performs. A third was the paragraph under
@@ -6492,7 +6543,7 @@ damage rather than news.
 
 A fourth round found the naming was still a summary. `rewindSnapshot()` takes four routes rather
 than three, and the one the count left out is the one that contradicts the sentence beside it: when
-the slot cannot be read at all the function declines at `src/js/storage.js:623` and leaves the copy
+the slot cannot be read at all the function declines at `src/js/storage.js:664` and leaves the copy
 this restore minted a moment earlier, so an undo an earlier restore had earned is lost rather than
 survived, and `undoRestore()` then refuses because that copy matches the saved data. A test older
 than this branch pins that route too. The cell now names all four rather than counting them. The
@@ -6847,7 +6898,7 @@ survives in plain sight rather than behind a button claiming it had gone. Nothin
 undisclosed, which is what made the undo snapshot worth fixing inside `BL-101`.
 
 It is also a decision rather than a repair, which is why it is filed instead of fixed. The salvage
-family carries an explicit rule at `src/js/storage.js:306-309` that nothing in the module removes a
+family carries an explicit rule at `src/js/storage.js:329-332` that nothing in the module removes a
 copy except the reader, because no rule the app could apply would know whether the reader still wants
 data it could not read itself. Erasing wholesale would overturn that, and it is exactly the shape
 this repository has twice found the most dangerous code in a change to have: a path that destroys the
@@ -6978,7 +7029,7 @@ A checker that had fallen back to digits would have passed while its own documen
 its message said 70.
 
 Two things were done rather than one. The obvious half is the range, which now reaches ninety-nine,
-chosen because the ranked table holds ninety-two rows and the next ceiling worth stopping at is the
+chosen because the ranked table holds ninety-three rows and the next ceiling worth stopping at is the
 one where hundreds start needing a different shape of word. The half worth more is a new check that
 asks the two functions to cover the largest figures the document actually states, the shipped count
 and the ranked row count, and fails if either comes back refused. The old arrangement put the
@@ -7012,7 +7063,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4676-4684`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4677-4685`.
 
 ## Existing epics and stories
 
@@ -7500,7 +7551,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 1: BL-026 is labelled P0 but ranks forty-third
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 43 of 92.
+- Calculated: WSJF 3.67, rank 43 of 93.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
   It is outranked by forty-two items, twenty-five of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -7522,7 +7573,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 86 of 92, below eighty-two unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 87 of 93, below eighty-three unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -7579,9 +7630,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 56 of 92. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 45 of 92. Mid-table.
-- BL-017, P2, rank 91 of 92. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 56 of 93. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 45 of 93. Mid-table.
+- BL-017, P2, rank 92 of 93. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

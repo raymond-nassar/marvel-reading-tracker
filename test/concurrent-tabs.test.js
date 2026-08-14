@@ -338,3 +338,118 @@ test('a storage that will not say what it holds is not written over', () => {
   assert.equal(store.lastUpdateOk, false);
   assert.equal(storage.getItem(KEY), before, 'the saved data must be exactly as it was');
 });
+
+// ------------------------------------------------------- the escape hatch out of the blocked tab
+
+// The jam this contract created and BL-084's review found. A blocked store never adopts, so its
+// token is fixed for as long as it lives, and startFresh() writes through persist(). Once any other
+// tab wrote, every press was refused, forever, while the banner went on telling the reader to press
+// it. Both tabs are blocked in the natural case, because the value neither can read is the shared
+// one, so one of them starting fresh is the ordinary way to reach this.
+test('the escape from a blocked tab is not jammed by another tab having taken it first', () => {
+  const storage = fakeStorage({ [KEY]: '{ CORRUPT not json' });
+  const a = new Store({ storage });
+  const b = new Store({ storage });
+  a.load();
+  b.load();
+  assert.equal(a.blocked && b.blocked, true, 'precondition: one unreadable value latched both');
+
+  assert.equal(b.startFresh(), true, 'the reader takes the offer in the tab they are looking at');
+
+  assert.equal(a.startFresh(), false, 'and in the other tab it declines, rather than erasing');
+  assert.equal(a.blocked, false, 'because the value it could not read is gone and this one reads');
+  assert.equal(a.blockedReason, null, 'so the banner it was pressing from comes down');
+  assert.match(a.lastError, /^Another tab replaced the data this tab could not read, and the new/);
+});
+
+// The harm the jam was hiding. startFresh() salvages and then clears, and neither step is safe once
+// the value has been replaced: the clear would erase whatever the other tab put there. A refusal
+// inside persist() arrives after the copy has already been taken, which is why the check is at the
+// top of the call instead.
+//
+// A guard rather than evidence, and it says so because it passes on the unfixed module: the jam
+// prevented the erase there, for a reason that had nothing to do with wanting the data kept. What
+// it pins is that the data survives however the withdrawal is arrived at. The test above it is the
+// one that fails without the fix.
+test('starting fresh does not erase the library another tab made while this tab was blocked', () => {
+  const storage = fakeStorage({ [KEY]: '{ CORRUPT not json' });
+  const a = new Store({ storage });
+  const b = new Store({ storage });
+  a.load();
+  b.load();
+  b.startFresh();
+  b.update((s) => createList(s, { name: 'Rebuilt by hand' }));
+
+  b.update((s) => markRead(addIssuesToList(s, s.listOrder[0], [{ issueId: 2, title: 'Two' }]).state, 2, true));
+
+  assert.equal(a.startFresh(), false);
+
+  const saved = savedState(storage);
+  assert.equal(saved.listOrder.length, 1, 'the other tab\u2019s list is still there');
+  assert.equal(isRead(saved, 2), true, 'and so is what was read in it');
+});
+
+// The second-order harm. salvage() re-points salvageKey at whatever the main key holds now, so a
+// press that got as far as salvaging handed "Download a copy" the other tab's readable data under
+// the name of this tab's unreadable incident.
+test('starting fresh does not file another tab\u2019s data as this tab\u2019s unreadable copy', () => {
+  const storage = fakeStorage({ [KEY]: '{ CORRUPT not json' });
+  const a = new Store({ storage });
+  const b = new Store({ storage });
+  a.load();
+  b.load();
+  const atBoot = a.salvagedRaw();
+  b.startFresh();
+  b.update((s) => createList(s, { name: 'Rebuilt by hand' }));
+
+  a.startFresh();
+
+  assert.equal(a.salvagedRaw(), atBoot, 'the copy on offer is still the data that would not read');
+});
+
+// The other direction, and the reason re-reading is the response rather than an exemption. When the
+// replacement will not read either, the tab re-latches on it, but with the token that belongs to it,
+// so the button works on the next press instead of being refused for the rest of the session.
+test('a blocked tab can start fresh on the press after the one that withdrew', () => {
+  const storage = fakeStorage({ [KEY]: '{ CORRUPT not json' });
+  const stale = new Store({ storage });
+  stale.load();
+  // A newer build of the app in the other tab, which is the case load() names: a valid, stamped
+  // value this build refuses, so the replacement latches the tab exactly as the first value did.
+  storage.setItem(KEY, JSON.stringify({
+    writeToken: 'a-token-a-newer-build-wrote',
+    ...exportBackup(seedState()),
+    schemaVersion: 99,
+  }));
+
+  assert.equal(stale.startFresh(), false, 'the first press withdraws, because the premise moved');
+  assert.equal(stale.blocked, true, 'and the new value latches it just as the old one did');
+  assert.match(stale.lastError, /so try again\.$/);
+
+  assert.equal(stale.startFresh(), true, 'the press the message asks for works');
+  assert.equal(stale.blocked, false);
+  assert.equal(savedState(storage).listOrder.length, 0);
+});
+
+// conflicted said which rollback update() should take, and only update() cleared it. A refusal
+// raised for startFresh() therefore outlived its call, and the next ordinary edit, refused by the
+// blocked latch for a reason that is not a conflict at all, read the leftover true and rolled back
+// by re-reading. That cleared the latch, so an unrelated edit tore down the recovery banner and the
+// store started saving again on the strength of a flag left behind by a different call.
+test('a refusal raised for one call is not inherited by the next', () => {
+  const storage = fakeStorage({ [KEY]: '{ CORRUPT not json' });
+  const a = new Store({ storage });
+  const b = new Store({ storage });
+  a.load();
+  b.load();
+  b.startFresh();
+  a.startFresh();
+  a.blocked = true; // the reader ignored the message and carried on in the tab still showing it
+  a.blockedReason = 'Could not read your saved data (x).';
+
+  a.update((s) => createList(s, { name: 'Anything' }));
+
+  assert.equal(a.blocked, true, 'a refused edit must not lift the latch');
+  assert.equal(a.blockedReason, 'Could not read your saved data (x).', 'nor take the banner down');
+  assert.equal(a.lastUpdateOk, false);
+});

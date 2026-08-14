@@ -66,7 +66,8 @@ export class Store {
     this.seenToken = null;
     // Set by persist() when it refused for that reason alone, so update() can tell a rollback that
     // should restore the previous state from one that must not, because the previous state is the
-    // stale snapshot the refusal was about.
+    // stale snapshot the refusal was about. Cleared by persist() on entry rather than by its reader,
+    // so it describes one call and cannot be inherited by the next.
     this.conflicted = false;
   }
 
@@ -217,6 +218,28 @@ export class Store {
   // to press cannot destroy their only copy. confirmedDownloaded is the way out when storage is
   // too full to hold a copy: the user has already saved the file to disk themselves.
   startFresh({ confirmedDownloaded = false } = {}) {
+    // Withdrawn rather than refused when its premise is gone. This button names one specific value,
+    // the one this tab could not read, and offers to set it aside and clear it. If another tab has
+    // replaced that value since, the button no longer names anything that exists, and neither of
+    // its two steps is safe: salvage() would file the other tab's readable data under the name of
+    // an unreadable incident, and the write after it would erase that data. So the check has to come
+    // before the copy rather than inside persist(), where the refusal arrives too late to stop it.
+    //
+    // Re-reading is the whole response. It either clears the latch, because the value now on disk
+    // reads, or re-latches on that value with the token that belongs to it, so a second press works.
+    // Without this the button jammed permanently: a blocked store never adopts, so its token stayed
+    // stale for as long as it lived, persist() refused every press, and the banner told the reader
+    // to press the one control that could no longer do anything.
+    if (this.foreignWriteSince()) {
+      this.load();
+      this.lastError = this.blocked
+        ? 'Another tab replaced the data this tab could not read. Nothing was cleared, and this tab '
+          + 'is now looking at the new data, so try again.'
+        : 'Another tab replaced the data this tab could not read, and the new data reads correctly. '
+          + 'Nothing was cleared, and this tab is up to date.';
+      this.onChange(this.state, this.lastError);
+      return false;
+    }
     if (!this.salvage() && !confirmedDownloaded) {
       this.lastError =
         'Nothing was cleared: a copy of your unreadable data could not be set aside '
@@ -354,7 +377,6 @@ export class Store {
       // for the same reason forever. Re-reading is the rollback, and it is the same recovery a
       // reload would give, taken without making the reader ask for one.
       if (this.conflicted) {
-        this.conflicted = false;
         this.load();
       } else {
         this.state = previous;
@@ -369,7 +391,26 @@ export class Store {
     return next;
   }
 
+  // Whether the shared key holds a value this tab did not put there. Asked without a parse, for the
+  // same reason persist() compares without one, and answering "no" when the read itself throws: a
+  // storage that cannot be read is not evidence of another tab, and every writer below refuses in
+  // that direction on its own.
+  foreignWriteSince() {
+    if (!this.storage) return false;
+    try {
+      return tokenOf(this.storage.getItem(KEY)) !== this.seenToken;
+    } catch {
+      return false;
+    }
+  }
+
   persist(state = this.state) {
+    // Cleared on entry so it can only ever describe the call that just ran. It used to be cleared
+    // only in update()'s conflict branch, so a refusal raised for startFresh() outlived that call,
+    // and the next ordinary edit, refused by the blocked latch for an entirely unrelated reason,
+    // read the stale true and rolled back by re-reading. That cleared the latch and tore the
+    // recovery banner down from a call that had nothing to do with it.
+    this.conflicted = false;
     if (this.blocked) {
       // The news, and not the two steps out, which the banner states already. It goes to the
       // save report alone now: the banner carries the reason saving is paused, which this is
