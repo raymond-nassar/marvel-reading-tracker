@@ -4551,7 +4551,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7312-7314` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:7314-7316` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4561,11 +4561,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:197-199`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7331-7335`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7333-7337`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7146-7148` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7148-7150` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -5856,9 +5856,9 @@ rather than abandoned. Checked before deciding rather than assumed: `checkout` d
 byte identical `action.yml` at `v4` and `v7.0.1` apart from that runtime, and `setup-node` drops only
 `always-auth` from its inputs, which this workflow never passed. So the pins are the current major.
 
-Ignoring install scripts was measured rather than hoped: 0 of the 90 packages the lockfile names
-declares one, so the flag changes nothing that gets installed today and closes the boundary before
-something does. Lint and the full suite were run under `npm ci --ignore-scripts` to confirm it.
+Ignoring install scripts was measured rather than hoped: 0 of the 90 packages the lockfile named
+when this shipped declares one, so the flag changed nothing installed then and closes the boundary
+before something does. Lint and the full suite were run under `npm ci --ignore-scripts` to confirm.
 
 Verified: seven tests were added and each was watched failing. Nineteen mutations were run and each
 turns exactly the intended one red: a tag in place of a revision, a branch name, a seven-character
@@ -5887,9 +5887,9 @@ the install flag exists to prevent, so a seventh test now refuses them. Each is 
 the parsing is done once by a shared step splitter rather than by four regexes that had drifted
 apart.
 
-The count was wrong too, in three places at once. The lockfile has 91 entries, but one of them keys
-the project itself rather than a locked package, so the honest figure is 90, which is what `BL-089`
-already said two sections away.
+The count was wrong too, in three places at once. The lockfile had 91 entries then, but one of them
+keys the project itself rather than a locked package, so the honest figure was 90, which is what
+`BL-089` already said two sections away.
 
 The `github-actions` entry `BL-089` added is what now moves these pins, and its comment was rewritten
 here because it described the tags this item replaced.
@@ -5917,7 +5917,7 @@ this: asking whether vulnerability alerts were enabled answered 404, and automat
 reported disabled. Both were turned on and then read back rather than assumed. The alerts list is a
 different endpoint from the enablement one, it had answered 403 while the feature was off, and it
 now returns an empty array, which is the state a working monitor is meant to be in when there is
-nothing wrong. `npm audit` agrees: 0 vulnerabilities over the 90 packages it counts.
+nothing wrong. `npm audit` agreed: 0 vulnerabilities over the 90 packages it counted then.
 
 Secret scanning is the task left unticked, and the clause "where the repository plan supports them"
 is why it can be left there honestly. GitHub refuses it on this repository, answering a request to
@@ -6170,12 +6170,12 @@ answers, an issue asking for a channel with no detail in it.
 The sixth was in the evidence above rather than in the product. The block claimed each mutation
 turned exactly one test red, and the two prose assertions in fact shared a single sentence, so
 deleting that sentence turned two red and neither guard was independent of the other. The sentence
-was split in two, which is why the claim about runtime dependencies and the claim about the three
-lint packages now stand as separate sentences at `SECURITY.md:6-9`; a fourth mutation was added for
-the second of them, and all four now turn exactly one red, which is what the paragraph above
-records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as shipped
-fact while the policy and this block both say it cannot be enabled yet. That entry now says what the
-policy says.
+was split in two, which is why the claim about runtime dependencies and the claim about the
+declared dev packages now stand as separate sentences at `SECURITY.md:6-9`; a fourth mutation was
+added for the second of them, and all four now turn exactly one red, which is what the paragraph
+above records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as
+shipped fact while the policy and this block both say it cannot be enabled yet. That entry now
+says what the policy says.
 
 **BL-097: Publish contribution, conduct, support and maintainer governance**
 
@@ -6888,20 +6888,22 @@ all four packages in its message, so the document was corrected in the same chan
 drifting quietly. Watched failing in both halves rather than assumed: the count half reddened before
 the policy was touched, and setting the policy back to the old number while leaving the count correct
 reddens it again, which is the half that would otherwise pass while the document and the manifest
-part company. Five sentences elsewhere counted those packages and had to move with them, and four
-of the five were found by a review after the first sweep had been called complete, which is the
-argument for searching the tree for the old number rather than for the places you remember
-writing it. A sixth was left exactly as it was, and it is the one to enjoy: the mutation invented
-to prove the guard could fail was "adding a fourth lint package", written when there was no
-prospect of a fourth. There is one now, it arrived by the front door rather than as a mutation,
-and the guard caught it exactly as the mutation said it would. That account is left as it was
-written, because it records what was measured then.
+part company. Six sentences elsewhere counted those packages and had to move with them. Two were
+found while the change was being made and four by review, after the sweep had twice been called
+complete, which is the argument for searching the tree for the old number rather than for the
+places you remember writing it. A seventh was left exactly as it was, and it is the one to enjoy:
+the mutation invented to prove the guard could fail was "adding a fourth lint package", written
+when there was no prospect of a fourth. There is one now, it arrived by the front door rather
+than as a mutation, and the guard caught it exactly as the mutation said it would. That account
+is left as it was written, because it records what was measured then.
 
 A different count moved with it. The lockfile fell from 90 locked packages to 76, because ESLint
 10 carries fewer of its own, and the workflow comment justifying an install that ignores scripts
-states that figure in the present tense, so it is corrected. Two neighbouring statements of the
-same 90 are not, because each says in as many words that it records what was counted when it was
-written, and the test holding the claim up checks the property rather than the number.
+states that figure in the present tense, so it is corrected. Five other statements of the same 90
+are records of what was counted at the time. Two already said so in as many words and are
+untouched; the three that did not are dated rather than restated, because the item that measured
+them is shipped and its account is the record of what it found. What holds the claim up in either
+case is a test that checks the property rather than the number.
 
 One consequence is recorded rather than fixed. ESLint 10 accepts `^20.19.0 || ^22.13.0 || >=24`
 where this repository declares `>=20`, so the tooling now wants a higher floor than the app does.
