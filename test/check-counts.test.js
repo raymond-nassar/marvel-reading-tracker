@@ -128,6 +128,162 @@ test('an id written twice in the delivered list is caught, though it is in neith
   assert.match(found[0].message, new RegExp(`lists ${d.shipped.length + 1} id\\(s\\) for ${d.shipped.length} Shipped row\\(s\\)`));
 });
 
+// The four tests above all aim at the roadmap's opening paragraph, which is the sentence
+// BL-059 was written to. The five below aim at the second one, which makes the same two
+// statements about a cohort of the table and was prose. Replaying every revision that
+// carried it scores it wrong in 2 of 17, both on 2026-08-13, and wrong in both halves at
+// once: nine stated against eight Ready, and eight ids listed for nine Shipped rows.
+const COHORT = /(BL-\d+(?:,\s+BL-\d+)*\s+and\s+BL-\d+) have since been\s+delivered,/.exec(REAL);
+
+// The cohort's range, its statuses and its id list are all read from the document, for the
+// same reason the whole-table ledger's are. Every one of them changes as the items in the
+// range ship, and a pinned copy would fail for a reason that is not the checker's.
+const RANGE = /(BL-\d+) through (BL-\d+), come from/.exec(REAL);
+
+function cohortRows() {
+  assert.ok(RANGE, 'the cohort range is no longer stated in the roadmap');
+  const [lo, hi] = [RANGE[1], RANGE[2]].map((id) => Number(id.slice(3)));
+  const d = derive(REAL);
+  return [...d.ranked, ...d.parkedRows].filter((r) => {
+    const n = Number(r.id.slice(3));
+    return n >= lo && n <= hi;
+  });
+}
+
+function mutateCohort(fn) {
+  assert.ok(COHORT, 'the cohort delivered sentence is no longer in the document');
+  const ids = [...COHORT[0].matchAll(/BL-\d+/g)].map((m) => m[0]);
+  const rebuilt = `${fn(ids).join(', ')} have since been delivered,`;
+  return { ids, text: mutate(COHORT[0], rebuilt) };
+}
+
+test('a cohort status count carried forward is caught, and the cohort is named', () => {
+  const ready = cohortRows().filter((r) => r.status === 'Ready').length;
+  const text = mutate(
+    `${cap(numberWord(ready))} of them are still \`Ready\``,
+    `${cap(numberWord(ready + 7))} of them are still \`Ready\``,
+  );
+  const found = checkLedger(derive(text));
+  assert.equal(found.length, 1);
+  assert.match(
+    found[0].message,
+    new RegExp(`${ready} rows in ${RANGE[1]} through ${RANGE[2]} are marked Ready, so this should read ${cap(numberWord(ready))}`),
+  );
+});
+
+// The status name is read from the backticks rather than assumed to be `Ready`, so the
+// same sentence written about any other status is checked too. Nothing in the document
+// makes that claim today, which is the point: a checker that only knows the statuses now
+// in use is the enumeration this repository keeps paying for.
+test('a cohort count is checked against whatever status the sentence names', () => {
+  const ready = cohortRows().filter((r) => r.status === 'Ready').length;
+  const dropped = cohortRows().filter((r) => r.status === 'Dropped').length;
+  const text = mutate(
+    `${cap(numberWord(ready))} of them are still \`Ready\``,
+    `${cap(numberWord(ready))} of them are still \`Dropped\``,
+  );
+  const found = checkLedger(derive(text));
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, new RegExp(`${dropped} rows in .* are marked Dropped`));
+});
+
+test('an id missing from the cohort delivered list is caught and named', () => {
+  const { ids, text } = mutateCohort((all) => all.filter((id) => id !== all[1]));
+  const found = checkLedger(derive(text));
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, new RegExp(`missing ${ids[1]}`));
+  assert.match(found[0].message, new RegExp(`Shipped row\\(s\\) in ${RANGE[1]} through ${RANGE[2]}`));
+});
+
+// The two paragraphs put their id lists on opposite sides of the phrase that carries the
+// claim: the first introduces its list with a colon after, the second runs its list in
+// before. Reading the sentence the phrase sits in covers both, and this test is what says
+// so, because a checker anchored on either side alone passes the other paragraph blind.
+test('an open id claimed as delivered is caught in the cohort paragraph too', () => {
+  const open = cohortRows().find((r) => r.status !== 'Shipped');
+  assert.ok(open, 'every row in the cohort is Shipped, so this mutation has nothing to add');
+  const { text } = mutateCohort((all) => [open.id, ...all]);
+  const found = checkLedger(derive(text));
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, new RegExp(`names ${open.id}, which the table does not mark Shipped`));
+});
+
+// A document that describes its own checks writes the shape of a sentence without making
+// it, and BL-105's block does exactly that three times. Two things keep those from being
+// read as claims. This is the first: the region above the table is the only place a cohort
+// is introduced, so nothing below it is a ledger claim however closely it reads as one.
+test('a sentence below the table that reads like a ledger claim is not one', () => {
+  const at = REAL.indexOf('## The backlog');
+  const quoted = /(\w+) of them are still `Ready`/.exec(REAL.slice(at));
+  assert.ok(quoted, 'nothing below the table quotes the cohort status shape');
+  const ready = cohortRows().filter((r) => r.status === 'Ready').length;
+  const wrong = `${cap(numberWord(ready + 3))} of them are still \`Ready\``;
+  const text = REAL.slice(0, at) + REAL.slice(at).replace(quoted[0], wrong);
+  assert.ok(text !== REAL, 'the mutation did not apply');
+  assert.deepEqual(checkLedger(derive(text)), []);
+});
+
+// And this is the second: a figure is a claim only when it is written as a number word.
+// It is what lets a paragraph above the table quote the shape, which the roadmap does not
+// do today but which the checker should not make impossible. The skip runs in the safe
+// direction, since a figure that has gone stale is still a number word.
+test('a ledger sentence whose figure is not a number word states nothing to check', () => {
+  const ready = cohortRows().filter((r) => r.status === 'Ready').length;
+  const text = mutate(
+    `${cap(numberWord(ready))} of them are still \`Ready\``,
+    'Several of them are still `Ready`',
+  );
+  assert.deepEqual(checkLedger(derive(text)), []);
+});
+
+// The same guard on the other shape, which the region scoping cannot stand in for once the
+// quotation is written above the table rather than below it. Without it the quoted sentence
+// is read as a claim listing no ids at all, and the finding names the whole table. Measured:
+// removing the guard alone leaves every test here passing until this one exists.
+test('the delivered shape quoted above the table is not read as a delivered claim', () => {
+  const text = mutate(
+    '`CHANGELOG.md` carries the',
+    'The shape being checked is "N items have since been delivered". `CHANGELOG.md` carries the',
+  );
+  assert.deepEqual(checkLedger(derive(text)), []);
+});
+
+// The two tests above rebuild the id list on one line, which destroys the very line break
+// the flattening exists to read across, so neither can fail without it. Review measured
+// that: joining the roadmap with a newline instead of a space leaves the whole suite green
+// and the gate reporting the document clean, while the historical defect this item was
+// raised about goes undetected. Dropping an id from the line the sentence wraps on is the
+// mutation that keeps the wrap, and it is the one that holds the flattening up.
+test('an id dropped from the line the cohort sentence wraps on is caught', () => {
+  const lines = REAL.split(NL);
+  const w = lines.findIndex((l) => / have since been$/.test(l));
+  assert.ok(w !== -1, 'the cohort sentence no longer wraps, so this mutation exercises nothing');
+  const ids = [...lines[w].matchAll(/BL-\d+/g)].map((m) => m[0]);
+  assert.ok(ids.length > 1, 'the wrapped line no longer carries an id this can drop');
+  lines[w] = lines[w].replace(`${ids[0]}, `, '');
+  assert.notEqual(lines[w], REAL.split(NL)[w], 'the mutation did not apply');
+  const found = checkLedger(derive(lines.join(NL)));
+  assert.equal(found.length, 1);
+  assert.match(found[0].message, new RegExp(`missing ${ids[0]}`));
+});
+
+// An opening ledger the checker cannot read a figure in used to be skipped whole, id list
+// and all, with nothing said. Review measured the cost against the version this replaced:
+// writing the count as a digit and dropping an id from the list gave two findings there and
+// none here. The skip is still right, because a sentence stating no figure lists no ids; it
+// is the silence that was wrong.
+test('an opening ledger whose figure cannot be read is reported rather than skipped', () => {
+  const d = derive(REAL);
+  const text = mutate(
+    `${cap(numberWord(d.shipped.length))} items have since been delivered`,
+    `${d.shipped.length} items have since been delivered`,
+  );
+  const found = checkLedger(derive(text));
+  assert.equal(found.length, 1);
+  assert.equal(found[0].claim, 'the delivered ledger');
+  assert.match(found[0].message, /neither that count nor its id list is being checked/);
+});
+
 test('a rank left over from a smaller table is caught in both halves', () => {
   const d = derive(REAL);
   const rank = rankOf('BL-026');

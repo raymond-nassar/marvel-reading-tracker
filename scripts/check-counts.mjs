@@ -218,52 +218,183 @@ export function checkOrdinalHeadings(d) {
   return found;
 }
 
+// A cohort is the set of rows an id range names, and the roadmap makes the same two
+// statements about more than one of them: how many are still `Ready`, and which have
+// shipped. BL-059 derived those for the whole table by matching the one sentence that
+// made them, so the second paragraph making them stayed prose and went stale as its
+// items shipped, with every gate green. The fix was written to a sentence rather than
+// to the shape of a sentence, which is the defect worth recording here.
+//
+// So the subject of a ledger claim is resolved the way `subjectOf` resolves the subject
+// of a rank claim, by the nearest preceding mention, and a claim with no range before it
+// is about the ranked table as a whole, which is what "the table below" names.
+const RANGE = /`?(BL-\d+)`? through `?(BL-\d+)`?/g;
+
+// Scoped to the roadmap above the table, which is the only region that introduces a
+// cohort. Outside it the nearest preceding range can be thousands of lines back and mean
+// nothing about the sentence it would be attached to, and a detail block that quotes the
+// shape of one of these sentences would be read as making it. BL-105's own block quotes
+// both shapes, three times between them, which is how the boundary came to be measured
+// rather than assumed.
+export function roadmap(d) {
+  const end = locate(d.lines).backlog;
+  return d.lines.slice(0, end === null ? d.lines.length : end);
+}
+
+// Both sentences wrap, and one of them breaks between "have since been" and "delivered",
+// so a claim cannot be matched line by line. Matching the region as one string and
+// mapping the offset back is what lets the shape be written as it reads.
+function flatten(lines) {
+  const starts = [];
+  let at = 0;
+  for (const l of lines) {
+    starts.push(at);
+    at += l.length + 1;
+  }
+  return {
+    text: lines.join(' '),
+    lineOf(offset) {
+      let lo = 0;
+      let hi = starts.length - 1;
+      while (lo < hi) {
+        const mid = (lo + hi + 1) >> 1;
+        if (starts[mid] <= offset) lo = mid;
+        else hi = mid - 1;
+      }
+      return lo + 1;
+    },
+  };
+}
+
+// A figure is recognised only when it is written as a number word, which is what keeps a
+// quotation of the shape from being read as an instance of it: the backlog states the
+// forms as "N items have since been delivered" and "N of them are still `Ready`", and N
+// is not a number. The skip has to take the whole claim with it rather than the figure
+// alone, because reading an id list out of a sentence that states no figure finds no ids
+// and reports every Shipped row missing. That is wider than it sounds, and review measured
+// what it costs: writing the opening count as a digit stopped the gate checking that
+// paragraph's id list as well, silently, where the sentence-anchored version it replaced
+// still caught a dropped id. So the backstop in `checkLedger` counts only the claims this
+// function could read, which turns each of those cases into a finding instead.
+function wordNumber(word) {
+  const w = (word ?? '').toLowerCase();
+  for (let n = 0; n <= 99; n += 1) if (numberWord(n) === w) return n;
+  return null;
+}
+
+function cohortAt(cohorts, offset) {
+  let best = null;
+  for (const c of cohorts) {
+    if (c.at >= offset) break;
+    best = c;
+  }
+  return best;
+}
+
+// A range names its items wherever they sit, so a cohort is drawn from both tables while
+// the whole-table default is the ranked one alone. They agree today only because every
+// parked row is `Dropped`; the difference is real the moment one is not, and the sentence
+// that says "in the table below" is the one that means the ranked table.
+function rowsOf(d, cohort) {
+  if (!cohort) return d.ranked;
+  const lo = Number(cohort.from.slice(3));
+  const hi = Number(cohort.to.slice(3));
+  return [...d.ranked, ...d.parkedRows].filter((r) => {
+    const n = Number(r.id.slice(3));
+    return n >= lo && n <= hi;
+  });
+}
+
+// The sentence carrying the claim, which is what the id list is read from. Either side of
+// the phrase may hold the list: the first paragraph introduces it with a colon after, the
+// second runs it in before. Reading the sentence rather than one anchored side is what
+// covers both without a pattern per paragraph.
+function sentenceAround(text, at) {
+  const from = text.lastIndexOf('.', at) + 1;
+  const to = text.indexOf('.', at);
+  return text.slice(from, to === -1 ? text.length : to);
+}
+
+// A claim is anchored on a count word or on an id, never on the bare phrase, because the
+// bare phrase is what a document quoting itself writes.
+const DELIVERED = /(?:([A-Za-z-]+) items|BL-\d+) have since been delivered/g;
+const REMAINING = /([A-Za-z-]+) of them are still `([A-Za-z]+)`/g;
+
 export function checkLedger(d) {
   const found = [];
-  const i = d.lines.findIndex((l) => /items have since been delivered/.test(l));
-  if (i === -1) {
-    return [{
+  const flat = flatten(roadmap(d));
+  const cohorts = [...flat.text.matchAll(RANGE)]
+    .map((m) => ({ at: m.index, from: m[1], to: m[2], text: `${m[1]} through ${m[2]}` }));
+  const inRange = (cohort) => (cohort ? ` in ${cohort.text}` : '');
+
+  let readable = 0;
+  for (const m of flat.text.matchAll(DELIVERED)) {
+    const stated = m[1] === undefined ? null : wordNumber(m[1]);
+    if (m[1] !== undefined && stated === null) continue;
+    const line = flat.lineOf(m.index);
+    const cohort = cohortAt(cohorts, m.index);
+    // Counted only for the whole table, and only when the figure could be read. The cohort
+    // paragraph's claim is anchored on an id rather than a count word, so it is readable by
+    // construction and would keep the backstop quiet however the opening sentence was
+    // written. Gating on both is what lets a deleted, reworded or digit-written opening
+    // ledger reach the backstop rather than pass in silence.
+    if (cohort === null) readable += 1;
+    const shipped = rowsOf(d, cohort).filter((r) => r.status === 'Shipped').map((r) => r.id);
+    const want = numberWord(shipped.length);
+
+    if (stated !== null && stated !== shipped.length) {
+      found.push({
+        line,
+        claim: `${m[1]} items have since been delivered`,
+        message: `${shipped.length} rows${inRange(cohort)} are marked Shipped, so this should read ${titleCase(want)}`,
+      });
+    }
+
+    const claimed = [...sentenceAround(flat.text, m.index).matchAll(/BL-\d+/g)].map((x) => x[0]);
+    const missing = shipped.filter((id) => !claimed.includes(id));
+    const extra = claimed.filter((id) => !shipped.includes(id));
+    // Set difference alone cannot see a duplicate: an id written twice leaves both
+    // differences empty while the list enumerates one id more than the table has rows, and
+    // the count word is derived from the rows rather than from the list, so it still agrees
+    // too. The edit that writes an id twice is the one that copies a detail block it meant
+    // to move, which checkBlocks below already had to grow a case for.
+    const repeated = [...new Set(claimed.filter((id, n) => claimed.indexOf(id) !== n))];
+    if (missing.length || extra.length || claimed.length !== shipped.length) {
+      found.push({
+        line,
+        claim: 'the delivered id list',
+        message:
+          `lists ${claimed.length} id(s) for ${shipped.length} Shipped row(s)${inRange(cohort)}` +
+          (missing.length ? `; missing ${missing.join(', ')}` : '') +
+          (repeated.length ? `; names ${repeated.join(', ')} more than once` : '') +
+          (extra.length ? `; names ${extra.join(', ')}, which the table does not mark Shipped` : ''),
+      });
+    }
+  }
+
+  for (const m of flat.text.matchAll(REMAINING)) {
+    const stated = wordNumber(m[1]);
+    if (stated === null) continue;
+    const cohort = cohortAt(cohorts, m.index);
+    const status = m[2];
+    const n = rowsOf(d, cohort).filter((r) => r.status === status).length;
+    if (stated !== n) {
+      found.push({
+        line: flat.lineOf(m.index),
+        claim: `${m[1]} of them are still \`${status}\``,
+        message: `${n} rows${inRange(cohort)} are marked ${status}, so this should read ${titleCase(numberWord(n))}`,
+      });
+    }
+  }
+
+  if (readable === 0) {
+    found.push({
       line: 0,
       claim: 'the delivered ledger',
-      message: 'no "items have since been delivered" sentence found, so nothing states the count',
-    }];
-  }
-
-  const word = /^([A-Za-z-]+) items have since been delivered/.exec(d.lines[i])?.[1] ?? null;
-  const want = numberWord(d.shipped.length);
-  if (word === null || word.toLowerCase() !== want) {
-    found.push({
-      line: i + 1,
-      claim: `${word} items have since been delivered`,
-      message: `${d.shipped.length} rows are marked Shipped, so this should read ${titleCase(want)}`,
+      message: 'nothing above the table states a delivered count as a number word, so neither that count nor its id list is being checked',
     });
   }
-
-  // The sentence wraps, and its id list ends at the full stop that closes it, so the
-  // list is read from the joined text rather than line by line.
-  const joined = d.lines.slice(i, i + 12).join(' ');
-  const listText = /delivered and are marked `Shipped` in the table below:([^.]*)\./.exec(joined);
-  const claimed = [...(listText?.[1] ?? '').matchAll(/BL-\d+/g)].map((x) => x[0]);
-  const missing = d.shipped.filter((id) => !claimed.includes(id));
-  const extra = claimed.filter((id) => !d.shipped.includes(id));
-  // Set difference alone cannot see a duplicate: an id written twice leaves both
-  // differences empty while the list enumerates one id more than the table has rows, and
-  // the count word is derived from the rows rather than from the list, so it still agrees
-  // too. The edit that writes an id twice is the one that copies a detail block it meant
-  // to move, which checkBlocks below already had to grow a case for.
-  const repeated = [...new Set(claimed.filter((id, n) => claimed.indexOf(id) !== n))];
-  if (missing.length || extra.length || claimed.length !== d.shipped.length) {
-    found.push({
-      line: i + 1,
-      claim: 'the delivered id list',
-      message:
-        `lists ${claimed.length} id(s) for ${d.shipped.length} Shipped row(s)` +
-        (missing.length ? `; missing ${missing.join(', ')}` : '') +
-        (repeated.length ? `; names ${repeated.join(', ')} more than once` : '') +
-        (extra.length ? `; names ${extra.join(', ')}, which the table does not mark Shipped` : ''),
-    });
-  }
-  return found;
+  return found.sort((a, b) => a.line - b.line);
 }
 
 // The same enumeration over the same table that found BL-050 had no detail block. It

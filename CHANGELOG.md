@@ -14,6 +14,25 @@ quote in a bug report.
 
 ## Unreleased
 
+### The count checker now reads the roadmap's second summary too (BL-105)
+
+Nothing about the app changes and nothing you have saved is affected. The project's list of planned
+improvements opens with two summary paragraphs: one about everything in the list, and one about the
+eighteen items that came out of a single review. Both say how many are still waiting and which have
+been finished.
+
+Only the first was checked against the list underneath it. The second was ordinary prose, so when
+items in it were finished nothing noticed. Twice it went wrong, both times on the same day, saying
+nine were waiting when eight were and leaving a finished item out of its roll call. It stayed wrong
+across two rounds of work and every automatic check passed the whole time, until somebody happened
+to spot it by eye.
+
+The checker now looks for the shape of those sentences instead of one particular sentence, so both
+paragraphs are checked by the same handful of lines and a third would be checked for free. It also
+works out which sentences are describing the check rather than making a claim, which matters because
+the written record of this change quotes both shapes. A review of the change found one way the new
+checker could fall silent instead of complaining, and it now says so out loud rather than passing.
+
 ### The citation checker now sees claims about files with no extension (BL-104)
 
 Nothing about the app changes and nothing you have saved is affected. This is one of the checks that
