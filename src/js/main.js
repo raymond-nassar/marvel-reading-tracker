@@ -3559,10 +3559,45 @@ async function checkHealth() {
   }
 }
 
+// A backoff is worth hearing. The same backoff four hundred times is not.
+//
+// Measured in Edge on 2026-08-15 against a service stubbed to answer 503: one request announced
+// four waits and the first two were both "Waiting 1 seconds", because backoff() draws attempt 0
+// from [500, 1000) and attempt 1 from [1000, 2000) and both round to 1. That is one request.
+// attempt resets to 0 on every get() and the hydrator continues past a failed lookup rather than
+// stopping, so a 219-issue order against a service that never answers reaches 876 announcements
+// drawn from eight distinct sentences.
+//
+// So the repeat cannot be bounded by the retry chain, which is four long and starts again on the
+// next issue, and it cannot be bounded by queue depth either: the hydrator awaits one issue at a
+// time, so depth returns to zero between every pair of requests and anything edged on that would
+// reset 219 times. What separates "still stalled" from "stalled again" is an answer from the
+// service, which is why api.js reports one and this is the only thing that clears the memory.
+//
+// A set rather than the last-value guard stateAnnouncer uses, because the waits inside one stall
+// are not monotonic. Attempt 1 can draw one second after attempt 0 drew one, and the first
+// attempt of the next request draws from [500, 1000) again after the last one drew eight seconds,
+// so a guard that only remembers the previous wait lets the repeat through in both directions.
+export function backoffAnnouncer(speak) {
+  const said = new Set();
+  return (s) => {
+    if (s?.kind === 'ok') {
+      said.clear();
+      return false;
+    }
+    if (s?.kind !== 'backoff') return false;
+    const secs = Math.round(s.ms / 1000);
+    if (said.has(secs)) return false;
+    said.add(secs);
+    speak(`The metadata service asked us to slow down. Waiting ${secs} second${secs === 1 ? '' : 's'}.`);
+    return true;
+  };
+}
+
+const announceBackoff = backoffAnnouncer(announce);
+
 function onApiStatus(s) {
-  if (s?.kind === 'backoff') {
-    announce(`The metadata service asked us to slow down. Waiting ${Math.round(s.ms / 1000)} seconds.`);
-  }
+  announceBackoff(s);
   renderQueue();
 }
 
@@ -3570,7 +3605,7 @@ function onApiStatus(s) {
 // the queue empties between every pair of requests: a 219-issue order crosses the empty boundary
 // 219 times, and anything edge-triggered here would speak on each crossing. What a reader needs
 // from a run is its start and its end, and #hydration-status carries both. The one queue
-// condition worth hearing is a backoff, which onApiStatus announces directly.
+// condition worth hearing is a backoff, which onApiStatus hands to the announcer above.
 function renderQueue() {
   const pill = $('#queue-status');
   const depth = limiter.depth;

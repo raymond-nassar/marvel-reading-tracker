@@ -16,8 +16,15 @@ const INDEXES = {
   creators: { file: 'creators-index.json', label: 'creator' },
 };
 
+// fetch and sleep are injectable for the same reason RateLimiter takes now and sleep: the retry
+// chain is four attempts deep and waits between them, so a test that drives it against a service
+// answering 503 sits for about fifteen seconds of real time and cannot see the responses it is
+// asserting about. Both default to the globals, and fetch is read through a wrapper rather than
+// captured, so a page that replaces globalThis.fetch after this module loads is still honoured.
 export class MarvelApi {
-  constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {
+  constructor({
+    baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex, fetch: fetchImpl, sleep: sleepImpl,
+  } = {}) {
     const base = String(baseUrl ?? '').replace(/\/+$/, '');
     // The settings form is not the only way a base URL reaches this client. loadSettings() reads
     // one out of localStorage on every boot, and that value outlives the build that wrote it, so
@@ -35,6 +42,8 @@ export class MarvelApi {
     this.cache = cache ?? new ResponseCache({ baseUrl: this.baseUrl });
     this.onStatus = onStatus;
     this.loadIndex = loadIndex ?? fetchNameIndex;
+    this.fetch = fetchImpl ?? ((...args) => globalThis.fetch(...args));
+    this.sleep = sleepImpl ?? sleep;
     this.indexes = new Map();
   }
 
@@ -49,7 +58,7 @@ export class MarvelApi {
     }
 
     const run = async () => {
-      const res = await fetch(this.baseUrl + path, {
+      const res = await this.fetch(this.baseUrl + path, {
         headers: { accept: 'application/json' },
         signal,
       });
@@ -62,6 +71,11 @@ export class MarvelApi {
         this.onStatus({ kind: 'backoff', ms: wait, status: res.status });
         throw new RetrySignal(wait);
       }
+      // The service answered. Reported even for a 404 or another refusal, because what this
+      // says is that the service is responding rather than that the answer was welcome, and
+      // that is the only thing that can tell a caller a run of backoffs has ended. Nothing is
+      // reported when the retries are exhausted above: that is the service still not answering.
+      this.onStatus({ kind: 'ok', status: res.status });
       if (res.status === 404) throw new ApiError('Not found.', 404, false);
       if (!res.ok) throw new ApiError(`Request failed (HTTP ${res.status}).`, res.status, false);
       return res.json();
@@ -73,7 +87,7 @@ export class MarvelApi {
       return data;
     } catch (err) {
       if (err instanceof RetrySignal) {
-        await sleep(err.wait, signal);
+        await this.sleep(err.wait, signal);
         return this.get(path, { signal, cache, attempt: attempt + 1 });
       }
       throw err;

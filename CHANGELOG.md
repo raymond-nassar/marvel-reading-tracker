@@ -14,6 +14,30 @@ quote in a bug report.
 
 ## Unreleased
 
+### A slow metadata service no longer repeats itself at you (BL-124)
+
+When the service this app fetches issue details from asks it to slow down, it waits and tries
+again, and it says so, because a wait you cannot see looks like an app that has frozen. It said so
+far too often. Fetching details for a long reading order asks the service once per issue, and if
+the service is down every one of those asks produces up to four of these messages, so a 219-issue
+order could announce the same handful of sentences 876 times. Two of them in a row were usually
+word for word identical.
+
+Each different wait is now said once, and stays quiet until the service actually answers, at which
+point the next stall is treated as news again. That last part is the whole of the decision: going
+quiet forever would be worse than repeating, because a second problem an hour later is something
+you want to hear about. So the app now waits to be told the service has replied before it will say
+any of it again.
+
+The message also had a grammar fault, reading "Waiting 1 seconds", which is fixed. Nothing you
+have saved is affected, and the app waits and retries exactly as it did before. The only change is
+how much it says while it does.
+
+For maintainers: review of this change found three statements in the project documents of how
+large the main view file is, all left at the size it was before. They now agree with the file,
+and the list of planned improvements carries a new entry for the check that would have caught
+them, since none of the existing ones can.
+
 ### Erasing everything now says what it does not reach (BL-113)
 
 In plain English: when this app cannot read your saved data, it puts a copy of it aside rather than

@@ -9,15 +9,15 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Eighty-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Eighty-seven items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
 BL-088, BL-089, BL-090, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101, BL-103, BL-104,
-BL-105, BL-106, BL-107, BL-108, BL-110, BL-111, BL-112, BL-113, BL-115, BL-116, BL-121, BL-122 and
-BL-123.
+BL-105, BL-106, BL-107, BL-108, BL-110, BL-111, BL-112, BL-113, BL-115, BL-116, BL-121, BL-122,
+BL-123 and BL-124.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -196,15 +196,15 @@ Three quantities used to brief this pass disagreed with what the repository actu
 are recorded rather than inherited.
 
 * `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last
-  line number when reading the file. Evidence: `src/js/main.js:3591-3611`. The work shipped since has
-  taken it to 3,697; 1,566 is the figure as audited.
+  line number when reading the file. Evidence: `src/js/main.js:3626-3646`. The work shipped since has
+  taken it to 3,732; 1,566 is the figure as audited.
 * `src/js/ui/` does not exist in this worktree. Evidence: `absent: src/js/ui, Test-Path returning
   False and a recursive directory listing of src/`. Git cannot track an empty directory, so an
   empty `src/js/ui/` in another checkout is a local artifact rather than repository content. Either
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 846; 224 is the figure as audited.
+  it to 860; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -258,17 +258,17 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:351-426 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3873-3876 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3874-3877 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1375-1376 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1376-1377 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:195-207 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-124 | Stop the rate-limit backoff saying the same wait twice, and say it grammatically | Defect | EP-07 | Extends BL-090 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | src/js/main.js:3563-3565 |
+| BL-124 | Stop the rate-limit backoff saying the same wait twice, and say it grammatically | Defect | EP-07 | Extends BL-090 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | src/js/main.js:3599-3602 |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
 | BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/CODEOWNERS:1-51 |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
@@ -277,7 +277,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:861 |
-| BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:3546-3574 |
+| BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:3546-3609 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | 9 of the 22 heads git ls-remote advertised when this was filed were the head branches of already-merged pull requests |
 | BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/storage.js:329-332 |
 | BL-110 | Count the issues an order imported empty, and say so | Defect | EP-05 | Extends BL-009 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:3019 |
@@ -291,7 +291,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/main.js:563-567 |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | absent: committed browser-runner script, tracked-file inventory and package scripts |
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | src/js/main.js:2987 |
-| BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:20-33 |
+| BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:25-40 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:490-524 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:3062-3096 |
@@ -307,6 +307,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1316 |
 | BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:561-599 |
 | BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:291-314 |
+| BL-125 | Fail the build when a stated line count disagrees with the file it counts | Enabler | EP-12 | Extends BL-056 | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | absent: any comparison of a stated line count against the file it counts, read of the counts gate and the anchors gate |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:247 |
@@ -327,14 +328,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-069 | Close the three accent boundaries the BL-067 review found and could not gate | Debt | EP-08 | Leaves alone | 2 | 1 | 2 | 3 | 1.67 | none | Measured | Shipped | src/styles.css:290 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Shipped | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
 | BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Shipped | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
-| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Shipped | src/js/main.js:3591-3605 |
+| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Shipped | src/js/main.js:3626-3640 |
 | BL-007 | Give the event orders the variants the catalog can already carry | Story | EP-02 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | P1 | Observed | Shipped | src/data/catalog.json |
 | BL-032 | Offer a light theme and follow the system preference | Story | EP-08 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Shipped | src/styles.css |
 | BL-065 | Raise the six non-text boundaries that sit below 3:1 | Debt | EP-08 | Depends on | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Shipped | scripts/check-palette.mjs |
 | BL-036 | Make the current view and list addressable in the URL | Story | EP-10 | Leaves alone | 5 | 2 | 3 | 8 | 1.25 | none | Observed | Shipped | src/js/lib/route.js:35-43 |
 | BL-064 | Make the view file importable so its render paths can be tested | Enabler | EP-12 | Depends on | 3 | 2 | 8 | 13 | 1.0 | none | Measured | Shipped | src/js/app.js:12 |
 | BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Shipped | src/js/lib/model.js:603-611 |
-| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:3591-3605 |
+| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:3626-3640 |
 
 ### Parked
 
@@ -1969,7 +1970,7 @@ runtime, so pinning it to `marvel.emreparker.com` would silently break self-host
 Constraint gate: checked 1 to 11, none breached. See the correction below on how Constraint 2 is
 actually held, which is not by the URL check.
 
-Shipped. The check now runs in the `MarvelApi` constructor at `src/js/api.js:20-33`, which throws a
+Shipped. The check now runs in the `MarvelApi` constructor at `src/js/api.js:25-40`, which throws a
 `TypeError` on a base the rule refuses. The form was never the only way a base reached the client.
 `loadSettings` reads one straight out of `localStorage` on every boot, and that value outlives the
 build that wrote it, so an older version, a restored backup or one devtools edit could put anything
@@ -2798,7 +2799,7 @@ over, so the helper should drop straight in. The review that filed this item rea
 and `renderYours` as safe because navigation follows them, which is only half true: `showView` calls
 `renderRail` at `src/js/main.js:914` and reaches `renderYours` through `renderHome` at
 `src/js/main.js:916`, where the reader is being moved anyway, but `renderAll` at
-`src/js/main.js:3591` calls both on every `store.update` with no navigation at all. Measured on that
+`src/js/main.js:3626` calls both on every `store.update` with no navigation at all. Measured on that
 route in Edge at 1280x900: with a reading order's button in the rail focused, pressing `d` took the
 order from 0 of 89 read to 1 of 89, left the reader on the read view, and put
 `document.activeElement` at `BODY`. Only `#list-nav` is rebuilt, at `src/js/main.js:950`, so the
@@ -2896,7 +2897,7 @@ no dependency could have added one. Both named routes address importability; onl
 addressed callability, and the split is sized 20 and held at `Proposed` for being unsplit.
 
 So the third route: separate what the module defines from what it does when it loads. The load-time
-sequence moved into an exported `boot()` at `src/js/main.js:3624`, and `src/js/app.js` is the entry
+sequence moved into an exported `boot()` at `src/js/main.js:3659`, and `src/js/app.js` is the entry
 the page loads now, whose whole body is a call to it. The one document read that ran during
 evaluation, a lookup of the live region, became a lookup on use. The module now imports in bare Node
 with no double of any kind installed, and the process exits, which is the check that the interval
@@ -3035,7 +3036,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2738-2741`.
+`PRODUCT_BACKLOG.md:2739-2742`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4021,7 +4022,7 @@ schema-version failure rather than read off the source: every one of the three i
 the screen three times. Boot handed whatever error it found to the save report, an assertive live
 region above the banner, and the load failure was such an error at the time, so the string was
 painted there and in `#blocked-why` and paraphrased again by the standing paragraph. BL-075 removed
-that boot report, and the comment now standing in its place at `src/js/main.js:3669-3673` records
+that boot report, and the comment now standing in its place at `src/js/main.js:3704-3708` records
 why. The row was filed off a screenshot of the banner alone, which is where the miscount came from.
 After the change each instruction is on screen once. BL-075 has since taken the load failure out of
 that slot, so this path no longer reaches it.
@@ -4087,7 +4088,7 @@ never draws.
 
 Three diagrams rather than one, because the app has three separable stories and one picture that told
 all three would tell none of them well. The module graph answers what depends on what: a single view
-file of 3,697 lines wires a store, a metadata client, a rate limiter, a response cache and a hydrator
+file of 3,732 lines wires a store, a metadata client, a rate limiter, a response cache and a hydrator
 together at `src/js/main.js:67-80`, and behind it sit sixteen library modules, none of which holds
 state of its own at module level. Where state exists it lives in an instance the view file constructs,
 as the rate limiter's queue and its window of recent hits do, which is why the graph is worth drawing
@@ -4122,7 +4123,7 @@ deliberately broken block first.
 
 Drawing as ownership rather than as imports paid for itself three times, and each is written into
 the document because an import graph would have said the opposite. The metadata client builds its own
-limiter and cache when handed neither, at `src/js/api.js:34-35`, and the app always hands it both,
+limiter and cache when handed neither, at `src/js/api.js:41-42`, and the app always hands it both,
 which is what keeps one request budget across the page. Saving a new API base replaces the cache and
 the client and leaves the limiter alone, at `src/js/main.js:3312-3314`, because the budget belongs to
 the connection rather than to the base URL. And one of the sixteen library modules is not in the
@@ -4572,7 +4573,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8506-8508` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8601-8603` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4582,11 +4583,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:205-207`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8525-8529`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8620-8624`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8340-8342` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8435-8437` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4794,7 +4795,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1814-1823` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1838-1847` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:195-199` and
 `PRODUCT_BACKLOG.md:205-207` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5463,7 +5464,7 @@ The README says correctly that reading data stays local while metadata and cover
 The app itself says nothing is uploaded. Search text and requested issue identifiers do cross the
 machine boundary, and image hosts receive ordinary requests. Reading progress, notes and identity
 remain local or absent. Evidence: `README.md:29-45`, `src/index.html:500-556`,
-`src/js/api.js:90-102`.
+`src/js/api.js:104-116`.
 
 Shipped. Four destinations were enumerated from the code rather than from the copy, because the
 copy was the thing under suspicion. The metadata API is asked whether it is reachable on every
@@ -5896,7 +5897,7 @@ The same round found a hole the guard cannot reach by construction, and it is th
 this item surviving in the one place the rule does not look. All three surfaces that enumerate what
 leaves the machine listed the reachability check, the issue search, the detail fetch, the cover
 fetch and the reader link, and left out the largest request the app makes: adding a whole series or a
-creator's issues pages the metadata API to completion at `src/js/api.js:147-161`, up to sixty
+creator's issues pages the metadata API to completion at `src/js/api.js:161-175`, up to sixty
 requests, from `src/js/main.js:2490` and `src/js/main.js:2506`. Two of the three said in the same
 breath that "searching the catalog, series or creators is answered from files already on this
 machine", which is true of the search and not of the add that follows it, so the sentence pointed
@@ -6177,7 +6178,7 @@ Constraint gate: checked 1 to 11, none breached.
 API health, queue depth, cache usage and hydration progress are updated visually outside the shared
 announcement route. Their elements have neither a status role nor a live-region attribute. BL-027
 fixed messages travelling through two channels; these travel through none. Evidence:
-`src/index.html:121-122`, `src/js/main.js:3546-3574`.
+`src/index.html:121-122`, `src/js/main.js:3546-3609`.
 
 **Delivered** for two of the four surfaces, with the other two left silent deliberately and the
 reasons written into the code beside them. The inventory is the part of this item that changed the
@@ -6244,7 +6245,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2462`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2463`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -7852,7 +7853,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4696-4704`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4697-4705`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -7867,7 +7868,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:3336`, `src/js/main.js:3273` and `src/js/main.js:3294`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1375-1376`.
+`PRODUCT_BACKLOG.md:1376-1377`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -7953,7 +7954,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4701-4702`.
+at `PRODUCT_BACKLOG.md:4702-4703`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8087,11 +8088,13 @@ first read fifteen, which was true of the tree the measurement was taken against
 tree it was written into, because shipping this item took its own row out of the population the
 figure counts. It then read fourteen, which counts the one `Proposed` row beside the `Ready` ones,
 where the status key at `PRODUCT_BACKLOG.md:231` defines an item still to be picked up as `Ready`.
-Thirteen is the figure under the document's own definition, against eighty-six that are not. Nothing
-derives either number: the counts gate prints the status tallies on every run, and reading that print
-back against the sentence is a habit rather than a check. Both pairs survive all four combinations of
-the two choices, so no conclusion here turns on which is taken. It is recorded because the claim this
-item corrects went stale by exactly this mechanism, one row at a time.
+Thirteen was the figure under the document's own definition when this shipped, against eighty-six
+that were not. Nothing derives either number: the counts gate prints the status tallies on every run,
+and reading that print back against the sentence is a habit rather than a check. Both pairs survive
+all four combinations of the two choices, so no conclusion here turns on which is taken. It is
+recorded because the claim this item corrects went stale by exactly this mechanism, one row at a
+time, and it has moved three times since, twice by an item shipping and once by one being filed,
+which is why `BL-125` is filed against the gap rather than the figure.
 
 The decision recorded for an unshipped row is to name it and leave the order alone, with the score
 governing wherever position and score disagree. The argument first written for it was that nothing
@@ -8117,24 +8120,24 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4696-4699` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4697-4700` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
 
 **BL-124: Stop the rate-limit backoff saying the same wait twice, and say it grammatically**
 
-- [ ] Decide what ends a stall, so a later backoff of the same length is still heard
-- [ ] Announce each distinct wait once within one stall
-- [ ] Pluralise the wait, which currently reads "Waiting 1 seconds"
-- [ ] Prove it against a stubbed service that answers 503
+- [x] Decide what ends a stall, so a later backoff of the same length is still heard
+- [x] Announce each distinct wait once within one stall
+- [x] Pluralise the wait, which currently reads "Waiting 1 seconds"
+- [x] Prove it against a stubbed service that answers 503
 
 Constraint gate: checked 1 to 11, none breached.
 
 Found while verifying BL-090 in Edge on 2026-08-15. Pointed at a service stubbed to answer 503, the
 announcer received four backoff messages before the request gave up, and the first two were
 identical: "Waiting 1 seconds", "Waiting 1 seconds", "Waiting 3 seconds", "Waiting 6 seconds". Both
-faults are on one line at `src/js/main.js:3563-3565`.
+faults were on one line, inside `onApiStatus` at `src/js/main.js:3599-3602`.
 
 This is deliberately not folded into BL-090, whose third task is about queue ticks rather than about
 how a failure is worded, and which leaves the backoff announced because a stall is worth hearing.
@@ -8146,6 +8149,98 @@ reasoning is why this is a separate item rather than three more lines in that on
 
 The pluralisation could be fixed alone and is the smaller half, but it sits inside the same template
 string, so splitting them would mean editing that line twice.
+
+**Decided and delivered: a stall ends when the service answers.** Not when the retry chain ends, and
+not when the queue drains. The chain was ruled out on arithmetic: `attempt` resets to 0 on every
+`get()` at `src/js/api.js:54`, so the four backoffs a request can produce are one request's worth,
+and the hydrator continues past a failed lookup rather than stopping at `src/js/hydrate.js:61-65`.
+A 219-issue order against a service that never answers therefore reaches 876 announcements drawn
+from eight distinct sentences, because `backoff()` at `src/js/lib/limiter.js:66-69` can only reach
+attempts 0 to 3 and those bands round to the integers 1 through 8. Queue depth was ruled out for the
+reason filed above and confirmed at `src/js/hydrate.js:52-72`: the hydrator awaits one issue at a
+time, so depth returns to zero between every pair of requests and an edge on it would reset the
+guard 219 times over.
+
+So the client now reports that the service answered. `src/js/api.js:78` sits past the branch that
+refuses to call a 429 or a 5xx an answer and ahead of the one that refuses a 404, which is
+deliberate: a 404 means the service is responding, and responding is the whole of what this reports.
+Nothing is reported when the retries are exhausted, because that is the service still not answering.
+A cache hit reports nothing either, since it returns at `src/js/api.js:55-58` without asking anyone.
+
+The guard is a set rather than the keyed last-value guard `BL-090` added, and the difference is not
+stylistic. The waits inside one stall are not monotonic: attempt 1 draws from [1000, 2000) and can
+round to the same 1 second attempt 0 drew, which is the reported fault, and the next request opens
+at attempt 0 again after the last one drew eight seconds. A guard remembering only the previous wait
+lets the repeat through in both directions. `backoffAnnouncer` at `src/js/main.js:3581-3595` keeps
+the set, clears it on an answer, and composes the sentence, so `onApiStatus` is two calls long.
+
+Fourteen tests in `test/backoff-announce.test.js`: seven on the policy, five driving the client
+against a service stubbed to answer 503, and two reading the two modules. The client half needed
+`fetch` and `sleep` injected into `MarvelApi` at `src/js/api.js:25-27`, because a four-attempt
+chain waits about fifteen seconds of real time; that follows `RateLimiter`, which already takes
+`now` and `sleep` at `src/js/lib/limiter.js:12`, and `createJsonFetcher`, which already takes both
+at `scripts/lib/fetch-json.mjs:38-41`. Three of the fourteen are there for what the other eleven
+cannot see, and none of the three is a count. One asserts a stall is audible at all and that its
+whole sentence is well formed, against a wait the limiter chose rather than one the test chose.
+One reads `src/js/main.js`, because a call site that composes the sentence inline again leaves
+every other test here green: the policy tests import the policy, and the client tests hand the
+client an announcer of their own. One reads `src/js/api.js` to pin the answer between the retry
+branch and the 404, which no test reaches by behaviour, because none of them asks for an issue
+that is missing. Eight mutants, one per decision above, were all caught.
+
+A fifteenth was written and then split in two, which is worth recording because the split is the
+point. Asserting the announcement count against the real `backoff()` is a coin toss: the draw is
+random inside each attempt's band, so four attempts round to four distinct integers about as often
+as they collide, and the first version of that test failed on the second full run. The count is now
+asserted against the draw that was measured, scripted onto the limiter, and a separate test runs
+fifty stalls against the real draw asserting only what is true of every draw, that no sentence is
+said twice. A scripted sequence proves the reported case; the sweep proves there is no sequence the
+guard lets through.
+
+The reported sequence is now three sentences rather than four, and reads "Waiting 1 second."
+rather than "Waiting 1 seconds". The floor is pinned across the two modules rather than clamped in
+one: `backoff(0)` draws from [500, 1000), so the smallest wait the limiter can produce rounds to 1
+and "Waiting 0 seconds" is unreachable rather than merely unobserved. A test holds that claim
+instead of a defensive branch nothing can reach.
+
+Two findings came out of review, and both were about the record rather than the code. Three live
+statements of the size of `src/js/main.js` were left at the figure they had before this change,
+while the drift clause that exists to carry that figure was updated: two of the three are in this
+document and one is in `docs/ARCHITECTURE.md`, and all three were true when they were written.
+All three are re-derived and agree now, and `BL-125` is filed for the check that would have
+noticed, because nothing here does. The second finding was this block overstating why three of the
+fourteen tests exist. It said the other eleven could all pass while the app said nothing, and five
+of them assert an exact sentence or an exact count of one, so silence fails each. The paragraph
+above is the corrected one, and the comment in the test file that it was compressing was wrong in
+the same way and was corrected with it.
+
+**BL-125: Fail the build when a stated line count disagrees with the file it counts**
+
+- [ ] Derive the files a stated size could be about rather than naming the sites that state one
+- [ ] Read the figure out of the prose, in each spelling the documents already use
+- [ ] Report a stale statement against the file it is written in, and say what the size is now
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by the review of `BL-124` and routed here rather than fixed there, because that item
+corrected the stale figures and this one is about why nothing noticed them. `BL-055` shipped the
+drift clauses, which are the one place a figure is expected to age and is deliberately dated.
+Every statement outside them is a plain assertion, and three of those aged while the dated one was
+kept current, which is the failure that item was raised to end reappearing somewhere it did not
+look.
+
+Neither gate can see it. The counts gate reads the ranked table and recomputes what the prose
+derives from it, so it counts rows and never lines. The anchors gate fingerprints the lines a
+citation names, so a sentence that states a size without citing anything is not a claim it holds.
+A stale size is a well-formed number in a well-formed sentence, which is the one shape both are
+blind to, and it has now gone wrong twice.
+
+The work is deciding what counts as a claim rather than writing the comparison, which is three
+lines. Both spellings in the tree name their file within a sentence of the number, so the pattern
+is small enough to derive and the population too small to be worth a general parser. Deriving it
+rather than listing the sites is what keeps this from becoming the enumeration the anchors script
+warns about, and it is why this is sized 2 rather than 1. Evidence: absent, read of
+`scripts/check-counts.mjs` and `scripts/check-anchors.mjs`.
 
 ## Existing epics and stories
 
@@ -8417,7 +8512,7 @@ block: 4,485 DOM nodes and 1,533 row controls, at a median of 21.9 ms synchronou
 paint, with the first toggle costing 38.9 ms and 144.1 ms. Measured headless on a desktop machine,
 so a phone will be slower, though phone use is out of scope; see BL-028.
 
-Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:3591-3611` (renderAll rebuilds
+Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:3626-3646` (renderAll rebuilds
 every region), `src/js/main.js:74-79` (store.onChange is wired straight to renderAll),
 `src/js/main.js:2002-2185` (renderRows, which then built every row with no virtualisation and no
 early exit when the containing details element is closed).
@@ -8505,9 +8600,9 @@ The clearest debt in the repository, and it is concentrated in one file.
 
 - Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and
   every render function. There is no view layer to change independently.
-  Evidence: `src/js/main.js:3591-3611`, `src/js/main.js:899-916` (showView switches views by
+  Evidence: `src/js/main.js:3626-3646`, `src/js/main.js:899-916` (showView switches views by
   mutating a module-level variable).
-  Still open, and wider than audited: the file is 3,697 lines now, so nearly every item shipped
+  Still open, and wider than audited: the file is 3,732 lines now, so nearly every item shipped
   since has been added to the one file this gap is about. `BL-053` is the exception in kind rather
   than in size: it moved the reading filter predicates out to `src/js/lib/readingFilters.js` and
   still left `main.js` 8 lines longer, which is the shape of the problem. `BL-038` is the closest
@@ -8571,9 +8666,9 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Offline behavior | No gap, and no proposal. Probed as required rather than treated as a caching problem. With the local server running and no internet, the app starts, reads saved state, imports any bundled curated list and marks issues read, because those paths touch only same-origin files. Only cover images, metadata hydration and search degrade, and hydration failure is already surfaced as a pending state rather than as silence. Evidence: `src/data/house_of_m.json`, `src/js/main.js:2126-2132` (pending and by-hand badges), `absent: serviceWorker|navigator.onLine|manifest.json, case-insensitive grep across src/`. Repository Constraint 1 forbids caching cover bytes, so no cover-caching improvement is proposed. |
 | Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:911-942`, `src/js/main.js:3289-3295`. |
 | Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:753-829`, `test/model.test.js:559-561`. |
-| Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3563-3565`. |
+| Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3599-3602`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
-| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:20-33` and onto the read out of storage at `src/js/main.js:465-489`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3300-3301`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
+| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:25-40` and onto the read out of storage at `src/js/main.js:465-489`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3300-3301`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
 | Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-32` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:213-216`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is not fixed and will not be: BL-028 is parked, because phone and tablet reading is served by Marvel's own apps. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
@@ -8621,11 +8716,11 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and seventy-four
-further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 100 rows now. The ranks below are positions in it as it stands.
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and
+seventy-five further items filed, none of them labelled, one of which, BL-060, was parked in its
+turn, which is how it reaches 101 rows now. The ranks below are positions in it as it stands.
 
-Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 100
+Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 101
 ranked rows, six adjacent pairs sit with the lower score above the higher: BL-062 below BL-063,
 BL-072 below BL-070, BL-075 below BL-073, BL-077 below BL-071, BL-117 below BL-038, and BL-120 below
 BL-119. Twelve rows are involved and nine of them have shipped. The four this paragraph used to name
@@ -8634,13 +8729,13 @@ counted, and wrong outright in resting the decision on all of them having shippe
 
 Adjacency is also the wrong unit for the three rows that have not shipped. A reader choosing what to
 do next reads the rows still to be picked up and skips the rest, so a shipped row sitting between two
-open rows hides an inversion from a scan of neighbours. Thirteen rows carry `Ready`, which is what
+open rows hides an inversion from a scan of neighbours. Twelve rows carry `Ready`, which is what
 the status key at `PRODUCT_BACKLOG.md:231` means by an item still to be picked up. Measured over
-those thirteen alone there are two inversions: BL-117 at 3.0 sits below BL-114 at 2.67, four places
+those twelve alone there are two inversions: BL-117 at 3.0 sits below BL-114 at 2.67, four places
 down with three shipped rows between them, and BL-120 at 2.5 sits below BL-119 at 2.0. The first is
 invisible to the scan above, which pairs BL-117 with BL-038 and reports a disagreement between two
 rows nobody has to choose between. Counting the one `Proposed` row alongside them, the only other row
-neither shipped nor dropped, moves the population to fourteen and leaves both pairs exactly as they
+neither shipped nor dropped, moves the population to thirteen and leaves both pairs exactly as they
 are.
 
 So what this appendix does with an inversion in a row that has not shipped is name it, and leave the
@@ -8660,7 +8755,7 @@ rebuilds every row's rank from the table and fails any `rank N of M` stated agai
 word in a heading. Sorting the table and running the gate turns four claims red, all of them in this
 appendix, so a re-sort cannot quietly invalidate what is written about the order.
 
-The cost is what decides it. A stable sort by score moves 37 of the 100 rows, and the six pairs do not
+The cost is what decides it. A stable sort by score moves 38 of the 101 rows, and the six pairs do not
 reduce to six swaps: exchanging the members of each pair in a single pass leaves six inversions
 again, because a swap can lift a row above a third one it also outscores. Nothing gates the order
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
@@ -8669,7 +8764,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 1: BL-026 is labelled P0 but ranks forty-seventh
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 47 of 100.
+- Calculated: WSJF 3.67, rank 47 of 101.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
   It is outranked by forty-five items, twenty-eight of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -8691,7 +8786,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 94 of 100, below ninety unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 95 of 101, below ninety-one unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -8748,9 +8843,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 60 of 100. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 49 of 100. Mid-table.
-- BL-017, P2, rank 99 of 100. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 60 of 101. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 49 of 101. Mid-table.
+- BL-017, P2, rank 100 of 101. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
