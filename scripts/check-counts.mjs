@@ -22,6 +22,7 @@
 // compares the prose against the table, so a table that is itself wrong will be
 // agreed with.
 import { readFileSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -560,14 +561,35 @@ export function checkRepeats(text) {
   // That population and that method are written down because neither is recoverable from
   // the figure: counting that same 2026-08-10 tree but leaving the agent instructions out
   // of the seven gives 113, which reads as though 124 had been invented. It had not. Read
-  // again on 2026-08-14, before this change landed, the population was nine documents and
-  // the one-line figure 165, with the gate line standing 59 times; two lines was still 4
-  // and the same four, three still 0, and 0 also across all 29 tracked Markdown files. The
-  // floor held while the corpus grew from 124 one-line repeats to 165, which is better
+  // again on 2026-08-14, before the distant pass landed, the population was nine documents
+  // and the one-line figure 165, with the gate line standing 59 times; two lines was still
+  // 4 and the same four, three still 0, and 0 also across all 29 tracked Markdown files.
+  // The floor held while the corpus grew from 124 one-line repeats to 165, which is better
   // evidence for it than the original count was. If a legitimate three-line repeat is ever
   // written the honest response is to raise it and record why, not to add an exception.
-  // Only this document is scanned, so in the others that response waits on somebody
-  // noticing.
+  //
+  // Read a third time on 2026-08-15, against the population `proseDoc` derives rather than
+  // the one a measurement chose: 18 documents of the 36 tracked Markdown files, and 0 at
+  // three lines and above, 4 at two and 37 at one. The four at two lines are the same four,
+  // in the same documents. Two of the three earlier readings counted a population that
+  // could not be reconstructed from the code, because no code held it; this one is the set
+  // the gate itself walks, so the next reading can be taken by running it. The floor has
+  // now held across three populations of seven, nine and eighteen documents.
+  //
+  // The one-line figure needs its method named, because a review re-derived it as 39 and
+  // both answers are right. 37 is this pass run with its floor lowered to one, which claims
+  // the lines of every repeat it reports, so a line inside a longer repeat is not counted
+  // again on its own. 39 is the count of distinct single lines that occur more than once,
+  // with no claiming at all. The larger figures at three lines and above do not move between
+  // the two methods, and it is the claiming rather than the population that separates them.
+  //
+  // The 1 in `n >= 1` above and the 3 here are not the same kind of number, and the reason
+  // is the corpus rather than the distance. Each document is read as its own corpus, and
+  // that is what keeps the floor at three honest: pooling the 18 into one corpus reports 2
+  // repeats at three lines and above, and both are fenced command blocks that CONTRIBUTING
+  // and README each state in full, one of them nine lines long. Neither is a defect and
+  // neither document could sensibly drop it, so a pooled reading would need the exception
+  // list this design is written to avoid.
   const MIN_DISTANT = 3;
   for (let n = longest; n >= MIN_DISTANT; n -= 1) {
     const firstSeen = new Map();
@@ -611,21 +633,96 @@ export function checkRepeats(text) {
   return found;
 }
 
-export function checkAll(text) {
-  const derived = derive(text);
-  const findings = [
+export function checkFigures(derived) {
+  return [
     ...checkRanks(derived),
     ...checkOrdinalHeadings(derived),
     ...checkLedger(derived),
     ...checkBlocks(derived),
+  ];
+}
+
+export function checkAll(text) {
+  const derived = derive(text);
+  const findings = [
+    ...checkFigures(derived),
     ...checkRepeats(text),
   ].sort((a, b) => a.line - b.line);
   return { derived, findings };
 }
 
+// Which documents the repeat pass reads. Three rules, each about a property of the path
+// rather than about a file somebody remembered, because the alternative is the list the
+// anchors gate argues against at length and the thing this item was filed to end was a
+// population of exactly one.
+//
+// Markdown, because the check is about prose. A run of identical lines is ordinary in
+// code: a switch arm, a test case and a CSS rule all repeat their own shape, and the
+// repeats found in `src/js/main.js` at every floor down to three are all of that kind.
+const PROSE = /\.md$/;
+// The dated artifacts, by the same rule and for the same reason as the sizes gate. They
+// are a record of passes that happened and are not ours to rewrite, so a repeat inside
+// one is not a finding anybody is allowed to act on.
+const HISTORICAL = /^\.copilot-tracking\//;
+// The app's data, which is Markdown here because a reading order reads well as a
+// checklist rather than because anybody wrote it as prose. Eight of the twelve say in
+// their own first paragraph that a script writes them, and the other four are the same
+// kind of thing maintained by hand; either way a repeated run of issue lines is a
+// question for the order or its generator and not for a prose gate. The rule is the
+// directory rather than the eight declarations, so a ninth generated file is covered on
+// the day it lands rather than on the day somebody notices.
+const DATA = /^src\/data\//;
+
+// Exported so the three rules can be tested for what they do rather than for what the
+// tree happens to contain today.
+export const proseDoc = (path) => PROSE.test(path) && !HISTORICAL.test(path) && !DATA.test(path);
+
+export function trackedFiles(root) {
+  return execSync('git ls-files', { cwd: root, encoding: 'utf8' })
+    .split(/\r?\n/)
+    .filter(Boolean);
+}
+
+// BL-118. The repeat pass over every prose document, each read as its own corpus. A finding
+// carries the file it is in, which the pass could not do before: it printed one document's
+// name against every finding because it only ever read that document, and a message naming
+// the wrong file is worse than no message at all.
+//
+// A tracked file that will not open is a fault rather than a skip. `git ls-files` lists a
+// file that has been deleted from the working tree, and it quotes any path outside plain
+// ASCII under the default `core.quotePath`, which is not a name `readFileSync` accepts. Both
+// would otherwise be dropped silently while the closing line still counted them, so the gate
+// would report a population larger than the one it read. "Could not look" and "looked and
+// found nothing" must not print the same, which is the reason `scripts/check-publication.mjs`
+// gives at `scripts/check-publication.mjs:140-144` for the same decision.
+export function checkProse(root, files = trackedFiles(root)) {
+  const docs = files.filter(proseDoc);
+  const findings = [];
+  for (const file of docs) {
+    let text;
+    try {
+      text = readFileSync(join(root, file), 'utf8');
+    } catch (e) {
+      throw new Error(`${file} is tracked but could not be read, so it was not scanned: ${e.message}`, { cause: e });
+    }
+    for (const f of checkRepeats(text)) findings.push({ file, ...f });
+  }
+  return { docs, findings };
+}
+
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-  const { derived, findings } = checkAll(readFileSync(join(root, DOC), 'utf8'));
+  const derived = derive(readFileSync(join(root, DOC), 'utf8'));
+  // The figure checks read the ranked table and only this document has one. The repeat
+  // pass reads every prose document, this one included, which is why it is called here
+  // rather than through `checkAll`: calling both would report every repeat in the backlog
+  // twice, once against the right file and once against the same file by another route.
+  const prose = checkProse(root);
+  const findings = [
+    ...checkFigures(derived).map((f) => ({ file: DOC, ...f })),
+    ...prose.findings,
+  ].sort((a, b) => (a.file === b.file ? a.line - b.line : a.file < b.file ? -1 : 1));
 
   const tally = Object.entries(derived.status)
     .sort((a, b) => b[1] - a[1])
@@ -637,7 +734,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   );
 
   for (const f of findings) {
-    console.error(`WRONG  ${DOC}:${f.line}  ${f.claim}\n  ${f.message}`);
+    console.error(`WRONG  ${f.file}:${f.line}  ${f.claim}\n  ${f.message}`);
   }
   if (findings.length) {
     // Repeats are not figures and have no derived value to write, so the two classes
@@ -661,5 +758,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.error(`\n${parts.join('\n\n')}`);
     process.exit(1);
   }
-  console.log('every stated figure agrees with the table it is derived from, and nothing is said twice');
+  console.log(
+    'every stated figure agrees with the table it is derived from, and nothing is said ' +
+      `twice in any of the ${prose.docs.length} prose documents`,
+  );
 }

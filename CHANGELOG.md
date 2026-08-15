@@ -14,6 +14,25 @@ quote in a bug report.
 
 ## Unreleased
 
+### The check for accidentally duplicated text now reads every document, not just one (BL-118)
+
+In plain English: nothing you have saved is affected, and nothing on screen has changed. This is a
+check that runs when the project's own documents are edited.
+
+One of those checks looks for a passage that has been pasted twice into the same document, which is
+an easy mistake to make when moving a paragraph around and a hard one to spot afterwards. It only
+ever read one of the project's documents. The rule it enforced had been decided by reading seven of
+them, so the other seventeen were being held to a promise nobody was keeping. A duplicated paragraph
+in the contributor guide, the readme or the architecture notes would simply not have been noticed.
+
+It now reads all eighteen, and it works out which eighteen by looking at the project rather than
+from a list somebody has to remember to update, so a document added next week is covered the day it
+arrives. Generated files and the dated working notes are left out on purpose, for reasons written
+down beside the rule. A complaint now names the document it was found in, which it could not do
+before, since it only knew about one.
+
+Read on the day it shipped: nothing is duplicated in any of the eighteen.
+
 ### An X-Men reading order, from the 1963 debut to the Mutant Massacre (BL-127)
 
 In plain English: the catalog had twelve reading orders and none of them was about the X-Men. There
