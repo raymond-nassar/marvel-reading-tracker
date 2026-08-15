@@ -14,6 +14,28 @@ quote in a bug report.
 
 ## Unreleased
 
+### A note about the backlog's own ordering was counting wrong (BL-123)
+
+The project's list of planned improvements is kept roughly in the order the scoring says to work in,
+and an appendix at the end explains the places where the order and the score disagree. It said there
+were four such places and that all the work involved was already finished, so the order was a record
+of what had been done rather than a plan for what to do next.
+
+Both parts had gone out of date as more items were added. Counted again from the table itself rather
+than by reading the sentence, there are six, and three of the items involved have not been done yet.
+More usefully, counting neighbouring rows turned out to be the wrong way to ask the question: someone
+deciding what to work on next reads only the unfinished rows, so a finished row sitting between two
+unfinished ones hides a disagreement. Asked that way there are two, and one of them was invisible to
+the first method.
+
+The appendix now names both, and says plainly what it does about them: the score decides, the order is
+left alone. Re-sorting would move more than a third of the rows in the list, would need doing again
+the next time an item was added, and would not change a single decision, because the score already
+settles those.
+
+Nothing you can see changes, and nothing you have saved is affected. This is a correction to the
+project's own planning notes.
+
 ### The project's own checks now catch a citation used twice in one sentence (BL-122)
 
 The last entry describes a sentence that named three things and gave the same address for two of them.

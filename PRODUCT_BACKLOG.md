@@ -9,14 +9,14 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Eighty-three items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Eighty-four items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
 BL-088, BL-089, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101, BL-103, BL-104, BL-105,
-BL-106, BL-107, BL-108, BL-110, BL-111, BL-112, BL-115, BL-116, BL-121 and BL-122.
+BL-106, BL-107, BL-108, BL-110, BL-111, BL-112, BL-115, BL-116, BL-121, BL-122 and BL-123.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -259,7 +259,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
 | BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1370-1371 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
-| BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:8422-8423 |
+| BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:191-203 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
@@ -4567,7 +4567,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8300-8302` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8336-8338` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4577,11 +4577,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:201-203`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8319-8323`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8355-8359`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8134-8136` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8170-8172` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4789,7 +4789,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1718-1727` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1740-1749` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:191-195` and
 `PRODUCT_BACKLOG.md:201-203` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -7914,32 +7914,68 @@ review's finding on the reported line, it is the whole of what looked for this b
 
 **BL-123: Re-derive the appendix claim that rank and score disagree in four places**
 
-- [ ] Re-derive the inversions from the ranked table as it now stands
-- [ ] Restate the claim about their status, or drop it if it no longer holds
-- [ ] Say what the appendix does with an inversion in a row that has not shipped
+- [x] Re-derive the inversions from the ranked table as it now stands
+- [x] Restate the claim about their status, or drop it if it no longer holds
+- [x] Say what the appendix does with an inversion in a row that has not shipped
 
 Constraint gate: checked 1 to 11, none breached.
 
-Appendix B opens by saying rank and score have come apart in four places, naming four items, and
-then rests the decision not to re-sort on all of them having shipped: re-sorting a record of past
-decisions changes nothing, where re-sorting a queue would. Both halves have been overtaken. Measured
-on 2026-08-14 across the 98 ranked rows, six adjacent pairs sit with the lower score above the
-higher, and three of the rows involved are `Ready` rather than `Shipped`.
+Appendix B opened by saying rank and score have come apart in four places, naming four items, and
+then rested the decision not to re-sort on all of them having shipped. Both halves had been overtaken.
+Re-derived on 2026-08-14 by a script that parses the ranked table rather than by reading it: six
+adjacent pairs sit with the lower score above the higher, twelve rows are involved, and nine of those
+twelve have shipped. The four named are still four of the six, so the sentence was right about what
+it named and wrong about what it counted, and the sentence after it was wrong outright.
 
-The four named are still four of the six and are still shipped, so the sentence is not wrong about
-what it names. It is wrong about what it counts, and the sentence after it is wrong outright: not
-every row involved has shipped, so the reason given for leaving the order alone no longer covers the
-whole set it is offered for.
+The contrarian pass moved the answer rather than confirming it, which is the part worth recording.
+Six is the count over adjacent table rows, and adjacency is the wrong unit for the question an
+unshipped row raises. A reader choosing what to do next reads the thirteen rows still to be picked up
+and skips the eighty-six that are not, so a shipped row between two open rows hides an inversion
+from a scan of neighbours. Measured over those thirteen alone there are two, and only one of the two
+appears in the six: BL-117 at 3.0 sits below BL-114 at 2.67, four places down with three shipped rows
+between them, which the adjacency scan reports instead as BL-117 against BL-038, a pair nobody has to
+choose between. Filing this item from the whole-table measure alone would have restated one wrong
+number as another and left the live pair unnamed.
 
-Filed rather than fixed in `BL-121`, which found it, because the correction is not a matter of
-writing two different numbers. An inversion in a `Ready` row is a live ordering question rather than
-a record, and answering it is a decision about how this appendix treats an unshipped row, not an
-edit. No gate derives either figure, which is `BL-056`'s deliberate decision recorded at
-`PRODUCT_BACKLOG.md:4696-4697` and not something to revisit here.
+The count of open rows moved twice while this was being written, and no gate caught either move. It
+first read fifteen, which was true of the tree the measurement was taken against and false of the
+tree it was written into, because shipping this item took its own row out of the population the
+figure counts. It then read fourteen, which counts the one `Proposed` row beside the `Ready` ones,
+where the status key at `PRODUCT_BACKLOG.md:227` defines an item still to be picked up as `Ready`.
+Thirteen is the figure under the document's own definition, against eighty-six that are not. Nothing
+derives either number: the counts gate prints the status tallies on every run, and reading that print
+back against the sentence is a habit rather than a check. Both pairs survive all four combinations of
+the two choices, so no conclusion here turns on which is taken. It is recorded because the claim this
+item corrects went stale by exactly this mechanism, one row at a time.
 
-Not closed by this item: gating it. The two figures are prose derived from the ranked table, which
-is the class `BL-056` measured and declined to match per sentence, and nothing here changes that
-arithmetic.
+The decision recorded for an unshipped row is to name it and leave the order alone, with the score
+governing wherever position and score disagree. The argument first written for it was that nothing
+derives the figures read off the order, so an order kept sorted by hand would be one more figure
+maintained by memory. That was false, and a review caught it before this shipped. `checkRanks` and
+`checkOrdinalHeadings` in `scripts/check-counts.mjs` rebuild every row's rank from the table, so a
+stale rank fails the build; sorting the table turns four claims red, all of them in Appendix B.
+Re-sorting is therefore safe, and it is declined on cost rather than on risk: a stable sort moves 37
+of the 99 rows, one pass of local swaps leaves six inversions rather than none, nothing gates the
+order itself so it drifts again with the next filing, and the rule above leaves no decision resting
+on it. The evidence that the rule already describes practice is Case 1, where eleven cheaper items
+were built before BL-026 and BL-026 followed. That case tests the score against the label only, since
+all eleven also sat above BL-026 in the table.
+
+Why the rows were not simply moved into place: there are four of them rather than three, and they
+were not filed together. BL-117, BL-118, BL-119 and BL-120 hold four consecutive positions as a block
+immediately above BL-092 and BL-102, the two open rows that were already there, and each arrived in
+its own change: `5893dd1`, `0c14bd1`, `2415c89` and `6a8c18c`. Their order within the block is the
+order they were filed in rather than the order their scores give, which is how BL-117 at 3.0 came to
+sit below rows scoring 2.5, 2.4 and 2.0. Not every recent row landed that way, so this is a habit to note
+rather than a rule: BL-114 was filed at 2.67 and sits among the other 2.67 rows. Moving any of them
+is a different change from correcting a sentence that miscounts, and the order they would be moved
+into is the one this item has just declined to treat as authoritative.
+
+Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4691-4694` are the counts of items above
+a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
+prose too varied to match without a pattern per sentence. The two live inversions are named in the
+appendix instead, so the figure a reader acts on is written down even though no gate derives it.
 
 ## Existing epics and stories
 
@@ -8419,10 +8455,46 @@ open when the pass ran, so the table was 28 rows then. BL-028 has since been par
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
 how it reaches 99 rows now. The ranks below are positions in it as it stands.
 
-Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
-each sit one row below an item they outscore. Every one of those eight rows has shipped, so the
-order is a record rather than a queue and re-sorting it would change no decision while moving ranks
-this appendix cites. It is written down instead of fixed for that reason.
+Positions, not scores, and the two have come apart in six places. Read on 2026-08-14 across the 99
+ranked rows, six adjacent pairs sit with the lower score above the higher: BL-062 below BL-063,
+BL-072 below BL-070, BL-075 below BL-073, BL-077 below BL-071, BL-117 below BL-038, and BL-120 below
+BL-119. Twelve rows are involved and nine of them have shipped. The four this paragraph used to name
+are still four of the six, so it was not wrong about what it named; it was wrong about what it
+counted, and wrong outright in resting the decision on all of them having shipped.
+
+Adjacency is also the wrong unit for the three rows that have not shipped. A reader choosing what to
+do next reads the rows still to be picked up and skips the rest, so a shipped row sitting between two
+open rows hides an inversion from a scan of neighbours. Thirteen rows carry `Ready`, which is what
+the status key at `PRODUCT_BACKLOG.md:227` means by an item still to be picked up. Measured over
+those thirteen alone there are two inversions: BL-117 at 3.0 sits below BL-114 at 2.67, four places
+down with three shipped rows between them, and BL-120 at 2.5 sits below BL-119 at 2.0. The first is
+invisible to the scan above, which pairs BL-117 with BL-038 and reports a disagreement between two
+rows nobody has to choose between. Counting the one `Proposed` row alongside them, the only other row
+neither shipped nor dropped, moves the population to fourteen and leaves both pairs exactly as they
+are.
+
+So what this appendix does with an inversion in a row that has not shipped is name it, and leave the
+order alone. Naming is a courtesy to a reader scanning the order; it is not what settles the next
+item, because the score already settles that. Where a row's position and its score disagree, the
+score governs. Case 1 below is the one time that was tested at any scale, and it held: eleven cheaper
+items were built before BL-026 and BL-026 followed, which is the order the score gave rather than the
+order the label gave. Be exact about what that tested, though, because all eleven of those items also
+sit above BL-026 in the table. Position and score agreed there, so the case is evidence that a score
+beats a label and no evidence at all that a score beats a position. The rule is extended to positions
+on the strength of the argument below, not on a precedent.
+
+Re-sorting is declined on cost, not on risk. The risk would be that figures read off the order go
+stale unnoticed, and that one is already covered: `checkRanks` at `scripts/check-counts.mjs:160-192`
+rebuilds every row's rank from the table and fails any `rank N of M` stated against it, and
+`checkOrdinalHeadings` at `scripts/check-counts.mjs:194-218` does the same for a rank spelled as a
+word in a heading. Sorting the table and running the gate turns four claims red, all of them in this
+appendix, so a re-sort cannot quietly invalidate what is written about the order.
+
+The cost is what decides it. A stable sort by score moves 37 of the 99 rows, and the six pairs do not
+reduce to six swaps: exchanging the members of each pair in a single pass leaves six inversions
+again, because a swap can lift a row above a third one it also outscores. Nothing gates the order
+itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
+resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
 ### Case 1: BL-026 is labelled P0 but ranks forty-sixth
 
