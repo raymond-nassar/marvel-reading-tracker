@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Ninety-three items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Ninety-four items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -17,7 +17,7 @@ BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, 
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-086, BL-087,
 BL-088, BL-089, BL-090, BL-093, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101,
 BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-114,
-BL-115, BL-116, BL-121, BL-122, BL-123, BL-124 and BL-125.
+BL-115, BL-116, BL-117, BL-121, BL-122, BL-123, BL-124 and BL-125.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -318,7 +318,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Shipped | src/js/main.js:100 |
 | BL-066 | Offer a reading order grouped by the collected editions it is sold in | Story | EP-02 | Leaves alone | 5 | 2 | 5 | 5 | 2.4 | none | Measured | Shipped | src/data/orders/new-ultimate-universe-trades.md:19 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Shipped | design/mockups/5-longbox-focus.html:169-172 |
-| BL-117 | Give the ceiling timings a budget that survives a loaded machine | Debt | EP-12 | Leaves BL-085 alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | test/backup-bounds.test.js:355 |
+| BL-117 | Give the ceiling timings a budget that survives a loaded machine | Debt | EP-12 | Leaves BL-085 alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | test/backup-bounds.test.js:290 |
 | BL-118 | Notice a distant repeat in the prose documents the gate never reads | Enabler | EP-12 | Extends BL-058 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Ready | scripts/check-counts.mjs:628 |
 | BL-119 | Show an order's gap on the catalog row, before it is imported | Story | EP-05 | Follows BL-110 | 3 | 1 | 2 | 3 | 2.0 | none | Measured | Ready | src/js/main.js:2874-2878 |
 | BL-120 | Notice when the published branch list refills | Enabler | EP-12 | Follows BL-103 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Ready | .github/workflows/ci.yml:214-216 |
@@ -4579,7 +4579,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8987-8989` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9037-9039` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4589,11 +4589,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:206-208`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9006-9010`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9056-9060`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8821-8823` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8871-8873` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4801,7 +4801,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1986-1995` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2009-2018` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:196-200` and
 `PRODUCT_BACKLOG.md:206-208` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5058,9 +5058,9 @@ Evidence: `src/js/storage.js:426-450`, `src/js/main.js:82-93`.
 
 **BL-117: Give the ceiling timings a budget that survives a loaded machine**
 
-- [ ] Decide what the two ceiling assertions are actually defending
-- [ ] Replace the wall-clock budget with a measure that does not move with machine load
-- [ ] Keep the quadratic form failing, which is the only thing the assertion is for
+- [x] Decide what the two ceiling assertions are actually defending
+- [x] Replace the wall-clock budget with a measure that does not move with machine load
+- [x] Keep the quadratic form failing, which is the only thing the assertion is for
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -5079,7 +5079,57 @@ that without depending on how fast the machine is: the quadratic form quadruples
 and the fixed one does not. Filed rather than fixed under BL-084, whose review surfaced it, because
 it is a test-harness question with nothing to do with the write contract that change was about.
 
-Evidence: `test/backup-bounds.test.js:355`.
+**The count above is wrong, and it is the first thing this found.** The item says two ceiling
+assertions. `test/backup-bounds.test.js` carried four wall clocks, and even reading "at the
+collection ceilings" narrowly it is three, since the fourth guards the version 2 backfill at a fixed
+120,000 lists rather than at a ceiling. All four were replaced, because all four defend the same kind
+of claim and leaving one behind would have left the flakiest measure in the file for whichever of
+them was slowest. A fifth wall clock lives outside this item's scope, at
+`test/markdown.test.js:158`, and was measured and left alone: it guards a nested quantifier against
+catastrophic backtracking, its three inputs cost 0.139, 0.136 and 0.871 milliseconds against a 1000
+millisecond budget, so its headroom is 1,148 times where the failure reported above was a 300 times
+inflation. Widening this change to reach it would have been scope creep against a measured margin.
+
+The doubling the item proposes is too tight to use. Measured on this tree, the four shapes read 2.15,
+2.27, 2.56 and 2.95 across a doubling, against a quadratic prediction of 4, so the worst of them
+leaves a quarter of the gap. The real code is not cleanly linear at these sizes, and the ratio has to
+be read across a spread wide enough for that to stop mattering. At sixteen times the data a linear
+route predicts 16 and a quadratic one 256, and the four read 20.9, 11.5, 26.0 and 23.8 on a quiet
+machine. The budget is 96, roughly the geometric middle of the worst reading and the quadratic
+figure.
+
+That the ratio holds under load is the claim the item turns on, so it was measured rather than
+argued. With sixteen processes saturating twelve cores and holding 6.4 gibibytes, the same four read
+19.8, 23.0, 28.4 and 33.1, while the absolute timings they are built from inflated by about 1.6. The
+whole suite under twelve such processes ran 942 tests green in 10.7 seconds against 7.0 idle. What
+could not be reproduced on this machine is the 300 times inflation the item reports, so the honest
+claim is narrower than "survives any load": the measure no longer depends on how fast the machine is,
+and a hostile machine moved it by less than half.
+
+Each of the four was proved able to fail, by putting back the one copy it exists to catch and running
+with the module restored from a file copy afterwards rather than from git, since a checkout would
+discard the index too. Restoring `Array.includes` to the version 2 backfill reddens the backfill test
+alone, at 242.6 against the predicted 256. Restoring the whole-map copy per list reads 1,594, per
+issue 921, and per read marker 620, each against the same budget of 96. The three version 1 shapes
+were run at a reduced ceiling so the broken form would finish at all, which is the residual this
+leaves: a genuine quadratic regression still has to run to completion before the ratio can be taken,
+so at the shipped ceiling it would be caught by a step deadline before it was caught by an assertion.
+The wall clock it replaces had exactly the same property, since it was also read after the call
+returned.
+
+Two load-independent alternatives were tried first and rejected on measurement. Counting garbage
+collections is a proxy for allocation volume rather than for machine speed, and it separates the two
+forms by orders of magnitude, but the healthy readings are 0 to 14 for the same shape on the same
+machine, so its floor is noise and the measurement has to be taken across a macrotask to be read at
+all. Counting operations from outside the call is not available: all four quadratic forms copy an
+accumulator the migration builds, never the fixture it is handed, so nothing a test can instrument
+sees them.
+
+The file did not get slower for this. It builds a second fixture at a sixteenth of each ceiling and
+runs each of the four measurements twice, taking the floor because contention only ever adds time,
+and `validateBackup` was checked not to touch the backup it is handed so one fixture serves both
+runs. Measured whole-file cost: 5.5 seconds against 8.2 before. Evidence:
+`test/backup-bounds.test.js:264-290`.
 
 **BL-118: Notice a distant repeat in the prose documents the gate never reads**
 
@@ -9109,28 +9159,29 @@ turn, which is how it reaches 102 rows now. The ranks below are positions in it 
 Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 101
 ranked rows, six adjacent pairs sit with the lower score above the higher: BL-062 below BL-063,
 BL-072 below BL-070, BL-075 below BL-073, BL-077 below BL-071, BL-117 below BL-038, and BL-120 below
-BL-119. Twelve rows are involved and nine of them have shipped. The four this paragraph used to name
+BL-119. Twelve rows are involved and ten of them have shipped. The four this paragraph used to name
 are still four of the six, so it was not wrong about what it named; it was wrong about what it
 counted, and wrong outright in resting the decision on all of them having shipped.
 
-Adjacency is also the wrong unit for the three rows that have not shipped. A reader choosing what to
+Adjacency is also the wrong unit for the rows that have not shipped. A reader choosing what to
 do next reads the rows still to be picked up and skips the rest, so a shipped row sitting between two
-open rows hides an inversion from a scan of neighbours. Seven rows carry `Ready`, which is what
+open rows hides an inversion from a scan of neighbours. Six rows carry `Ready`, which is what
 the status key at `PRODUCT_BACKLOG.md:232` means by an item still to be picked up. Measured over
-those seven alone there are two inversions: BL-117 at 3.0 sits below BL-126 at 2.67, four places
-down with three shipped rows between them, and BL-120 at 2.5 sits below BL-119 at 2.0. The first is
-invisible to the scan above, which pairs BL-117 with BL-038 and reports a disagreement between two
-rows nobody has to choose between. Counting the one `Proposed` row alongside them, the only other row
-neither shipped nor dropped, moves the population to eight and leaves both pairs exactly as they
-are.
+those six alone there is one inversion: BL-120 at 2.5 sits below BL-119 at 2.0, one place down with
+nothing between them. Counting the one `Proposed` row alongside them, the only other row neither
+shipped nor dropped, moves the population to seven and leaves that pair exactly as it is.
 
-Neither the count nor the first pair is stable, and shipping an item is what moves them. This
-paragraph named BL-114 until BL-114 shipped, at which point the same inversion re-formed one row
-lower against BL-126, which sits at the same 2.67 in the same block of equal scores. Nothing checks
-that: the counts gate reads the ledger figures and the id list, not a pair of ids named in prose, so
-an item shipping leaves this paragraph naming a row that is no longer in the population it claims to
-measure. Re-derive it from the table whenever a row's status changes, rather than reading it as
-settled.
+**That one pair is adjacent in the full table too, so as this is written the argument above has no
+live example.** It had two until BL-117 shipped: BL-117 at 3.0 sat below BL-126 at 2.67, four places
+down with three shipped rows between them, and the scan of neighbours reported it instead as a
+disagreement between BL-117 and BL-038, two rows nobody has to choose between. The argument is kept
+rather than deleted because what makes such a pair appear or vanish is a row shipping, not anything
+anyone decided, and the same shape re-formed twice in three items: this paragraph named BL-114 until
+BL-114 shipped, at which point it re-formed one row lower against BL-126, and then BL-117 shipped in
+its turn. Nothing checks that: the counts gate reads the ledger figures and the id list, not a pair
+of ids named in prose, so an item shipping leaves this paragraph naming a row that is no longer in
+the population it claims to measure. Re-derive it from the table whenever a row's status changes,
+rather than reading it as settled.
 
 So what this appendix does with an inversion in a row that has not shipped is name it, and leave the
 order alone. Naming is a courtesy to a reader scanning the order; it is not what settles the next
@@ -9149,7 +9200,7 @@ rebuilds every row's rank from the table and fails any `rank N of M` stated agai
 word in a heading. Sorting the table and running the gate turns four claims red, all of them in this
 appendix, so a re-sort cannot quietly invalidate what is written about the order.
 
-The cost is what decides it. A stable sort by score moves 38 of the 101 rows, and the six pairs do not
+The cost is what decides it. A stable sort by score moves 39 of the 102 rows, and the six pairs do not
 reduce to six swaps: exchanging the members of each pair in a single pass leaves six inversions
 again, because a swap can lift a row above a third one it also outscores. Nothing gates the order
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
