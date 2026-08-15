@@ -14,6 +14,30 @@ quote in a bug report.
 
 ## Unreleased
 
+### A test that guards restore speed no longer fails just because the machine is busy (BL-117)
+
+Nothing in the app changes and nothing you have saved is affected. This is entirely about the
+project's own automated checks.
+
+Four of those checks exist to catch a specific kind of mistake: a change that makes restoring a very
+large backup get slower and slower the bigger it gets, rather than slower in proportion. They caught
+it by timing the work with a stopwatch and complaining if it took longer than a fixed number of
+seconds. The trouble with a stopwatch is that it measures the computer as much as the code. One of
+these checks takes about a second on a quiet machine, and on a busy one it once took thirteen
+minutes and reported a failure, when there was nothing wrong at all.
+
+The checks now compare how long the work takes on a large amount of data against how long it takes
+on a sixteenth of it. A well-behaved routine takes about sixteen times as long; a badly behaved one
+takes about two hundred and fifty times as long. That comparison barely moves when the machine is
+busy, because both halves slow down together. Measured with sixteen other programs deliberately
+hogging the machine, the readings shifted by less than half, where the stopwatch they replace can
+shift by hundreds.
+
+Each of the four was checked by putting the old, slow behaviour back and confirming the check went
+red, so none of them is a check that has never been seen to fail. Comparing two amounts of data means
+doing the work twice over, so the checks now take about a second and a half longer to finish than
+they did. That is the price of a reading that does not depend on how busy the machine is.
+
 ### Restoring a backup that is too big to keep no longer risks drawing it first (BL-114)
 
 Nothing in the app changes, nothing you have saved is affected, and nothing on screen looks

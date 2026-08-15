@@ -264,21 +264,70 @@ test('an ordinary version 1 backup still restores', () => {
 // The backfill under the dedupe was `listOrder.includes(id)` inside a loop over every list, which is
 // quadratic. At the old ceiling of 1,000 lists that cost 3 milliseconds; at 250,000 it cost 26.6
 // seconds, on a 5.38 mebibyte file that clears the size guard and every count check, so raising the
-// ceiling froze the tab before a byte was written. Timing is too fragile to assert closely, so the
-// size is picked to put the two forms far apart and the budget in the gap: this whole test takes 397
-// milliseconds through the Set and about seven seconds through Array.includes, so the budget below
-// has seven times the headroom it needs and the quadratic form misses it by more than twice.
+// ceiling froze the tab before a byte was written.
+//
+// A wall clock measures the machine rather than the route, which is what the four tests below are
+// about. Run alone the list-ceiling test costs about a second; run inside the full suite on a loaded
+// machine it took 779 seconds and missed its 20 second budget, with nothing wrong with the code,
+// because `node --test` runs files in parallel and the whole suite was competing for one machine. A
+// budget wide enough to survive that would be wide enough to admit the quadratic form the test
+// exists to catch.
+//
+// What each of them defends is asymptotic, so they assert a growth ratio instead. Every shape is
+// validated at its ceiling and at a sixteenth of it, and sixteen times the data costs about sixteen
+// times as long through a linear route and about 256 times as long through a quadratic one. Measured
+// on this tree the four read 20.9, 11.5, 26.0 and 23.8 on a quiet machine, and 19.8, 23.0, 28.4 and
+// 33.1 with sixteen processes saturating twelve cores and holding 6.4 gibibytes, so a hostile
+// machine moved them by less than half while it moved the absolute timings by 1.6. The budget is 96,
+// about three times the worst of those and about a third of the quadratic figure.
+//
+// Each timing is the floor of two runs, because contention only ever adds time, and validateBackup
+// does not touch the backup it is handed, so one fixture serves both runs. The floor matters most on
+// the smaller one: inflating that reads as a lower ratio, which is the direction that hides a
+// regression rather than the direction that invents one. A second run costs a seventeenth of the
+// pair, since the smaller fixture is a sixteenth of the work.
+const GROWTH_SPREAD = 16;
+const GROWTH_BUDGET = 96;
+
+function growthRatio(build, size, run = validateBackup) {
+  const floorOf = (backup) => {
+    let least = Infinity;
+    let out = null;
+    for (let i = 0; i < 2; i += 1) {
+      const started = performance.now();
+      out = run(backup);
+      const took = performance.now() - started;
+      if (took < least) least = took;
+    }
+    return { least, out };
+  };
+  const backup = build(size);
+  const small = floorOf(build(Math.floor(size / GROWTH_SPREAD)));
+  const big = floorOf(backup);
+  return {
+    v: big.out,
+    backup,
+    ratio: big.least / small.least,
+    took: `${small.least.toFixed(0)} then ${big.least.toFixed(0)} milliseconds`,
+  };
+}
+
 test('lists are backfilled into the order in time that does not grow with their square', () => {
-  const lists = {};
-  for (let i = 0; i < 120000; i += 1) lists[`l${i}`] = { name: 'L' };
-  const started = Date.now();
-  const v = restore({ lists });
+  const build = (n) => {
+    const lists = {};
+    for (let i = 0; i < n; i += 1) lists[`l${i}`] = { name: 'L' };
+    return { lists };
+  };
+  const { v, ratio, took } = growthRatio(build, 120000, restore);
   assert.equal(v.ok, true);
   assert.equal(v.state.listOrder.length, 120000);
   assert.equal(new Set(v.state.listOrder).size, 120000);
   assert.equal(v.state.listOrder[0], 'l0');
-  assert.ok(Date.now() - started < 3000, 'the quadratic form took about seven seconds on this input');
+  assert.ok(ratio < GROWTH_BUDGET,
+    `sixteen times the lists cost ${ratio.toFixed(1)} times as long (${took}); `
+    + 'the Set reads about 16 and Array.includes about 256');
 });
+
 
 // The other half of the clause the ceiling has to satisfy. A ceiling above anything an eight
 // mebibyte file could declare would never fire, and the figure for that was quoted wrong too: 355,000
@@ -313,14 +362,18 @@ test('the count ceiling is reachable inside a file the size guard permits, so it
 // stack size exceeded" as its refusal text. Both are linear now, and the same input takes 127
 // milliseconds. Asserted at the ceiling itself, because that is the number the checks promise.
 test('a version 1 backup at the ceiling restores, rather than giving out on the way in', () => {
-  const items = [];
-  for (let i = 1; i <= MAX_ISSUES; i += 1) items.push({ issueId: i, title: 'T' });
-  const started = Date.now();
-  const v = validateBackup({ schemaVersion: 1, lists: { a: { name: 'L', items } } });
+  const build = (n) => {
+    const items = [];
+    for (let i = 1; i <= n; i += 1) items.push({ issueId: i, title: 'T' });
+    return { schemaVersion: 1, lists: { a: { name: 'L', items } } };
+  };
+  const { v, ratio, took } = growthRatio(build, MAX_ISSUES);
   assert.equal(v.ok, true, v.errors?.join(' '));
   assert.equal(Object.keys(v.state.issues).length, MAX_ISSUES);
   assert.equal(v.state.lists[v.state.listOrder[0]].itemIds.length, MAX_ISSUES);
-  assert.ok(Date.now() - started < 20000, 'the quadratic form took 96 seconds on this input');
+  assert.ok(ratio < GROWTH_BUDGET,
+    `sixteen times the items cost ${ratio.toFixed(1)} times as long (${took}); `
+    + 'the linear route reads about 16 and the quadratic form about 256');
 });
 
 // The fixture above carries one list and no read flag, and a version 1 backup is defined by the
@@ -335,13 +388,14 @@ test('a version 1 backup at the ceiling restores, rather than giving out on the 
 // list shape carries no name so that 250,000 of them still fit inside the size guard, which for a
 // named list binds ten lists early, at 249,990.
 test('a version 1 backup at the list ceiling restores, rather than crawling through it', () => {
-  const lists = {};
-  for (let i = 0; i < MAX_LISTS; i += 1) lists[`l${i}`] = { items: [] };
-  const backup = { schemaVersion: 1, lists };
+  const build = (n) => {
+    const lists = {};
+    for (let i = 0; i < n; i += 1) lists[`l${i}`] = { items: [] };
+    return { schemaVersion: 1, lists };
+  };
+  const { v, backup, ratio, took } = growthRatio(build, MAX_LISTS);
   assert.ok(JSON.stringify(backup).length <= MAX_BACKUP_BYTES,
     'a fixture the size guard would refuse proves nothing about the counts behind it');
-  const started = Date.now();
-  const v = validateBackup(backup);
   assert.equal(v.ok, true, v.errors?.join(' '));
   assert.equal(v.state.listOrder.length, MAX_LISTS);
   // Not a restatement of the line above. Each list is given a generated id, and a repeated id
@@ -352,22 +406,27 @@ test('a version 1 backup at the list ceiling restores, rather than crawling thro
   // list. newId counts up now, so this is an invariant rather than a good draw, and the assertion
   // is what holds it to that.
   assert.equal(Object.keys(v.state.lists).length, MAX_LISTS, 'two lists were given the same id');
-  assert.ok(Date.now() - started < 20000, 'the quadratic form took 16.8 seconds on a fiftieth of this');
+  assert.ok(ratio < GROWTH_BUDGET,
+    `sixteen times the lists cost ${ratio.toFixed(1)} times as long (${took}); `
+    + 'the linear route reads about 16 and the quadratic form about 256');
 });
 
 test('a version 1 backup whose items carry the read flag restores at the ceiling too', () => {
-  const items = [];
-  for (let i = 1; i <= MAX_ISSUES; i += 1) items.push({ issueId: i, read: 1 });
-  const backup = { schemaVersion: 1, lists: { a: { name: 'L', items } } };
+  const build = (n) => {
+    const items = [];
+    for (let i = 1; i <= n; i += 1) items.push({ issueId: i, read: 1 });
+    return { schemaVersion: 1, lists: { a: { name: 'L', items } } };
+  };
+  const { v, backup, ratio, took } = growthRatio(build, MAX_ISSUES);
   assert.ok(JSON.stringify(backup).length <= MAX_BACKUP_BYTES,
     'a fixture the size guard would refuse proves nothing about the counts behind it');
-  const started = Date.now();
-  const v = validateBackup(backup);
   assert.equal(v.ok, true, v.errors?.join(' '));
   assert.equal(Object.keys(v.state.issues).length, MAX_ISSUES);
   // The read map is the one the old code copied per marker, so its size is what this test is about.
   assert.equal(Object.keys(v.state.read).length, MAX_ISSUES);
-  assert.ok(Date.now() - started < 20000, 'the quadratic form took 9.3 seconds on a third of this');
+  assert.ok(ratio < GROWTH_BUDGET,
+    `sixteen times the markers cost ${ratio.toFixed(1)} times as long (${took}); `
+    + 'the linear route reads about 16 and the quadratic form about 256');
 });
 
 // Stated as arithmetic because this is the clause the ceiling has to satisfy, and the first draft
