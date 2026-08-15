@@ -14,6 +14,23 @@ quote in a bug report.
 
 ## Unreleased
 
+### "Details pending" no longer means two different things (BL-109)
+
+Some comics have no entry at all in the metadata snapshot this app reads. Ultimate Black Panther #22
+to #24 are the well known ones, but there are 34 of them across the reading lists you can import.
+Until now the app labelled those "details pending" and offered a button reading **Fetch details for
+34 issues**, which was a promise it could not keep: every one of those lookups comes back saying no
+such issue exists, so the button spent your request allowance and changed nothing.
+
+The app now tells the two apart. An issue nothing has looked up yet still says "details pending" and
+is still worth fetching. An issue the snapshot has no record of says "no details held", says why on
+its own page, and is left out of both the fetch button and the **Details pending** filter, so
+neither offers you work that cannot be done. The app does not quietly retry one of these on its own;
+the label lifts if you later add the same issue from a search or a series that does carry details.
+
+Nothing you have saved is affected and no re-import is needed. A tracker imported before this change
+corrects itself the next time you open the app.
+
 ### The browser evidence can now be rerun by anyone (BL-093)
 
 Quite a lot of what this project claims about how the app behaves came from driving a real browser

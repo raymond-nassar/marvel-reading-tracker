@@ -765,8 +765,8 @@ export function pairings(found, lock) {
 // The fingerprint is matched at the citation's own site rather than across the whole
 // corpus, and that narrowing is not fussiness. 176 of the 492 entries blessed at the
 // time carried a fingerprint some other entry also carried, and three fingerprints were
-// reached by more than one distinct anchor: `src/js/hydrate.js:69` and
-// `src/js/hydrate.js:74` are two different guards, one inside the loop over items and
+// reached by more than one distinct anchor: `src/js/hydrate.js:77` and
+// `src/js/hydrate.js:82` are two different guards, one inside the loop over items and
 // one after it, written identically. A corpus-wide test reads a brand new claim as
 // already checked the moment its lines happen to match any other citation anywhere,
 // which in this corpus is the ordinary case rather than an exotic one, and `collisions`

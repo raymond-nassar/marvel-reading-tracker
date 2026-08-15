@@ -186,8 +186,8 @@ test('one list declaring more issues than the app can hold is refused', () => {
 // The ceiling has to sit above anything the app could itself have written, or it would refuse a
 // backup this app produced, and undoing a restore feeds the pre-restore snapshot back through this
 // same check, so a ceiling set too low would refuse a recovery of the app's own data. A first draft
-// took the hydrated issue at 923 characters as the floor; the cheapest coerced issue costs 267
-// characters at the margin, so the most generous origin a browser grants holds about 39,300 of
+// took the hydrated issue at 923 characters as the floor; the cheapest coerced issue costs 290
+// characters at the margin, so the most generous origin a browser grants holds about 36,200 of
 // them. The count below is above that and still far under the ceiling.
 test('a tracker larger than any origin can hold still restores, because the ceiling is not a quota', () => {
   const issues = {};
@@ -373,9 +373,12 @@ test('a version 1 backup whose items carry the read flag restores at the ceiling
 // Stated as arithmetic because this is the clause the ceiling has to satisfy, and the first draft
 // failed it by a factor of three and a half while reading as though it had been checked. The floor
 // is measured here rather than quoted, because quoting is how it went wrong twice: the first draft
-// quoted 923, the second quoted 292 and 185, and a review quoted 233 and 137. The costs are 267 and
+// quoted 923, the second quoted 292 and 185, and a review quoted 233 and 137. The costs are 290 and
 // 127. Differenced between two sizes so the fixed part of the file drops out, and taken on
-// exportBackup because that is the form storage writes to the origin.
+// exportBackup because that is the form storage writes to the origin. The first figure moves every
+// time a field is added to normalizeIssue, which is why it is measured below rather than pinned:
+// BL-109's refusal flag took it from 267 to 290 and this test stayed green throughout, as it should,
+// because the clause it asserts is unaffected by a 23 character shift.
 test('the count ceiling sits above what the most generous origin could hold', () => {
   const marginalCost = (build) => {
     const size = (n) => JSON.stringify(exportBackup(build(n))).length;
@@ -397,7 +400,7 @@ test('the count ceiling sits above what the most generous origin could hold', ()
   };
   // The three below were governed by MAX_ISSUES for four rounds while only the two above were ever
   // measured, and all three failed the clause: at the margin a read marker costs 9 characters, an
-  // override 19 and a note 11, against an issue's 267. Checked here where they are applied, because
+  // override 19 and a note 11, against an issue's 290. Checked here where they are applied, because
   // asserting the clause for two of the five maps it governs is how it went unnoticed.
   const cheapestReads = (n) => {
     const read = {};

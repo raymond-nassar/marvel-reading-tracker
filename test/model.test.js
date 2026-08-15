@@ -9,7 +9,7 @@ import {
   setOverride, upNext, listProgress, seriesProgress, listItems, pendingIssueIds,
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
   normalizeCover, coverUrl, listForCatalogId, listCollections, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
-  newId, hasMetadata, countOrderGaps, orderGapSentences,
+  newId, hasMetadata, countOrderGaps, orderGapSentences, markDetailsRefused,
 } from '../src/js/lib/model.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -1015,4 +1015,155 @@ test('import builds its gap disclosure from the items, not from the order payloa
     !/order\.placeholders/.test(body),
     'import reads the placeholder count off the order payload again, which is 0 for every order this app ships',
   );
+});
+
+// The same shape of check for the same reason, and it is the one assertion that can fail if import
+// starts asserting metadata it does not have again. Every other check of the refusal builds its own
+// state and so passes with this call site reverted; the defect was never in the model.
+//
+// 688 of the 751 curated items carry metadata and 63 do not, so `hydrated: true` over the map was a
+// statement about the whole file that was false for 34 distinct issues.
+test('import lets each curated item speak for itself rather than asserting metadata over the file', () => {
+  const main = readFileSync(join(ROOT, 'src', 'js', 'main.js'), 'utf8');
+  const body = main.slice(main.indexOf('async function importCurated('), main.indexOf('// ------------------------------------------------------------------ progress'));
+  assert.ok(body.length > 0, 'importCurated is no longer where this check looks for it');
+  // Comments stripped before the search, because the comment at the call site names the thing it
+  // says is not there. A source check that reads prose as code fails on the fix that satisfies it.
+  const code = body.replace(/^\s*\/\/.*$/gm, '');
+  assert.match(code, /source: 'curated'/, 'curated items no longer say where they came from, which is what marks the empty ones refused');
+  assert.ok(
+    !/hydrated:\s*true/.test(code),
+    'import asserts every curated item arrived with its details again, which is false for 63 of them',
+  );
+});
+
+// ------------------------------------------------- a refusal is not a thing still to be tried
+
+// Two absences had been one. An issue holding no metadata was called "pending" whether nobody had
+// asked about it yet or upstream had already answered that it holds no such issue, and the second
+// is not something waiting to happen. A curated order is the output of a completed vendoring run,
+// so an item arriving from one with nothing on it has already been asked about, and the answer was
+// no. That is knowable at the moment it is added, without asking anything.
+test('a curated item that arrived with nothing is refused, not pending', () => {
+  const n = normalizeIssue({ issueId: 7, title: 'X', source: 'curated' });
+  assert.equal(n.detailsRefused, true);
+  assert.equal(n.hydrated, false, 'a refusal must not also read as fetched, or nothing ever says so');
+});
+
+test('a curated item that arrived with metadata is neither refused nor pending', () => {
+  const n = normalizeIssue({ issueId: 7, title: 'X', source: 'curated', digitalId: 900 });
+  assert.equal(n.detailsRefused, false);
+  assert.equal(n.hydrated, true);
+});
+
+// The distinction is between sources, not between empty and full. A checklist imported from
+// Markdown carries no metadata either, and that one genuinely is waiting: nothing has looked it up.
+test('an issue imported from a checklist is still pending, having never been asked about', () => {
+  const n = normalizeIssue({ issueId: 7, title: 'X', source: 'import' });
+  assert.equal(n.detailsRefused, false);
+  assert.equal(n.hydrated, false);
+});
+
+// No migration was written for this, and the reason it needs none is that coerce runs every stored
+// issue back through normalizeIssue on load. A tracker imported before this existed therefore
+// corrects itself the next time it is opened rather than staying wrong until a re-import. The
+// stored hydrated: true is the false assertion import used to make over the whole file.
+test('a tracker imported before this existed is corrected when it next loads', () => {
+  const raw = {
+    schemaVersion: SCHEMA_VERSION,
+    issues: { 7: { issueId: 7, title: 'Ultimate Black Panther (2024) #22', source: 'curated', hydrated: true } },
+    lists: { a: { id: 'a', name: 'L', itemIds: [7] } },
+    listOrder: ['a'],
+  };
+  const s = migrate(raw);
+  assert.equal(s.issues[7].detailsRefused, true);
+  assert.equal(s.issues[7].hydrated, false);
+  assert.equal(s.issues[7].title, 'Ultimate Black Panther (2024) #22', 'coercion rewrote the title it was correcting the flag on');
+});
+
+// The flag has to survive the round trip on its own, or a refusal met at runtime is forgotten the
+// next time the app opens and the issue rejoins the queue it had left.
+test('a refusal recorded at runtime survives a save and a load', () => {
+  const stored = { issueId: 7, title: 'X', source: 'import', hydrated: false, detailsRefused: true };
+  assert.equal(normalizeIssue(stored).detailsRefused, true);
+});
+
+// Not clampScalar, which would take any truthy value. A hand-edited backup saying "yes" must not
+// become a refusal, because the reader has no control that clears one.
+test('only a true boolean is read as a refusal, so a hand-edited backup cannot invent one', () => {
+  assert.equal(normalizeIssue({ issueId: 7, source: 'import', detailsRefused: 'yes' }).detailsRefused, false);
+  assert.equal(normalizeIssue({ issueId: 7, source: 'import', detailsRefused: 1 }).detailsRefused, false);
+});
+
+// This set is both the retry queue and the number printed on the button that offers to work through
+// it, so a refusal left in it spends the reader's own request budget to be told the same thing
+// again, and promises details that are never going to arrive.
+test('a refused issue is not offered for fetching', () => {
+  let s = createList(createEmptyState(), { name: 'L' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [
+    { issueId: 1, title: 'A', source: 'import' },
+    { issueId: 2, title: 'B', source: 'curated' },
+  ]).state;
+  assert.deepEqual(pendingIssueIds(s), [1], 'the refused issue is still queued for a lookup that can only fail');
+});
+
+// Written through its own updater rather than through upsertIssue, and this is why: upsertIssue
+// normalizes what it is handed, a bare { issueId } normalizes to a title of "Issue 7", that is not
+// null so stripNulls keeps it, and the merge would replace the real title with a placeholder. The
+// bug would show as issue titles turning into their own numbers as lookups failed.
+test('recording a refusal does not overwrite what is already known about the issue', () => {
+  let s = createList(createEmptyState(), { name: 'L' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [{ issueId: 7, title: 'Real Title (2024) #1', source: 'import', seriesName: 'Real Series' }]).state;
+  const after = markDetailsRefused(s, 7);
+  assert.equal(after.issues[7].detailsRefused, true);
+  assert.equal(after.issues[7].title, 'Real Title (2024) #1');
+  assert.equal(after.issues[7].seriesName, 'Real Series');
+});
+
+test('recording a refusal twice, or for an issue that is not held, changes nothing', () => {
+  let s = createList(createEmptyState(), { name: 'L' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [{ issueId: 7, title: 'A', source: 'import' }]).state;
+  const once = markDetailsRefused(s, 7);
+  assert.equal(markDetailsRefused(once, 7), once, 'a second write is a second persist to the origin for no change');
+  assert.equal(markDetailsRefused(s, 999), s, 'an issue the tracker does not hold was written into it');
+});
+
+// A later successful sighting has to clear the flag, or an issue upstream has since gained a record
+// for stays marked as refused forever. stripNulls keeps false, so the incoming answer wins.
+test('a successful lookup clears a refusal rather than leaving it stuck', () => {
+  let s = createList(createEmptyState(), { name: 'L' });
+  const id = s.listOrder[0];
+  s = addIssuesToList(s, id, [{ issueId: 7, title: 'A', source: 'curated' }]).state;
+  assert.equal(s.issues[7].detailsRefused, true);
+  s = upsertIssue(s, { issueId: 7, title: 'A', source: 'api', digitalId: 42, hydrated: true });
+  assert.equal(s.issues[7].detailsRefused, false);
+  assert.equal(s.issues[7].hydrated, true);
+});
+
+// The unit tests above would all pass against data nobody ships. This is the claim that matters:
+// the shipped catalog really does contain items that no lookup will ever answer for, and the number
+// of issues the app was offering to fetch was that many too high. Derived from the files rather
+// than from a list of which orders are affected.
+test('the bundled orders really do contain issues no lookup can answer for', () => {
+  const dataDir = join(ROOT, 'src', 'data');
+  const catalog = JSON.parse(readFileSync(join(dataDir, 'catalog.json'), 'utf8'));
+  const lists = catalog.lists ?? catalog;
+
+  let s = createEmptyState();
+  for (const list of lists) {
+    const order = JSON.parse(readFileSync(join(dataDir, list.file), 'utf8'));
+    s = createList(s, { name: list.name });
+    const id = s.listOrder[s.listOrder.length - 1];
+    s = addIssuesToList(s, id, order.items.map((i) => ({ ...i, source: 'curated' }))).state;
+  }
+
+  const refused = Object.values(s.issues).filter((i) => i.detailsRefused);
+  // 63 items across two orders, which are 34 distinct issues because the two Ultimate orders
+  // overlap. Read on 2026-08-14; written down as an observation rather than a floor, so
+  // re-vendoring an order means editing this line deliberately.
+  assert.equal(refused.length, 34);
+  assert.equal(pendingIssueIds(s).length, 0, 'the app is still offering to fetch details that do not exist');
 });

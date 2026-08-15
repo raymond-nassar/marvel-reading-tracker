@@ -1843,8 +1843,9 @@ function renderHero() {
     .map((c) => c.name);
   $('#hero-by').textContent = [issue.seriesName, credits.join(' & ') || null].filter(Boolean).join(' · ');
 
-  $('#hero-desc').textContent = issue.description
-    || (issue.hydrated ? 'No synopsis is recorded for this issue.' : 'Details have not been fetched yet.');
+  // Three states, not two. "Details have not been fetched yet" is a promise that something is
+  // coming, and for an issue the snapshot has no record of, nothing is.
+  $('#hero-desc').textContent = synopsisFallback(issue);
 
   const avClass = av.state === STATE.EXPECTED || av.state === STATE.OVERRIDE_AVAILABLE ? 'ok'
     : av.state === STATE.SCHEDULED ? 'warn' : '';
@@ -1977,6 +1978,57 @@ export function commitRows(container, desired) {
 // would make the switch one way until a reload.
 export function rowCacheKey(item, currentId, today, covers) {
   return `${JSON.stringify(item)}|${item.issueId === currentId}|${today}|${covers !== false}`;
+}
+
+// Three states where a row had two, split out from the row builder so the decision can be measured
+// directly rather than through a DOM. There is nothing pending about an issue upstream has already
+// answered about, and saying "details pending" over it was a promise the app could not keep: the
+// same 404 arrives every time it is asked again.
+//
+// The visible text carries the state and the hidden half carries the reason, which is the same
+// division the availability badge beside it uses. Both are short enough not to wrap a row at 320
+// pixels, and "no details held" is deliberately about the snapshot rather than about the issue: the
+// comic exists, the record of it does not.
+//
+// A held record answers before a refusal does. normalizeIssue keeps the two apart, but the merge
+// does not: hydrated is OR-preserved across an upsert while detailsRefused is last write wins, so
+// an issue can carry both after it is added twice from unlike sources. Asking the refusal first
+// then reported "no record" over a record the tracker was holding. Reproduced by adding issue 7
+// from a search and then importing an Ultimate order whose entry for it is empty.
+export function detailsState(item) {
+  if (item?.hydrated) return null;
+  if (item?.detailsRefused) return 'norecord';
+  if (item?.source !== 'manual') return 'pending';
+  return null;
+}
+
+export const DETAILS_BADGE = {
+  norecord: {
+    text: 'no details held',
+    hint: 'The metadata snapshot has no record of this issue, so there are no details to fetch.',
+  },
+  pending: { text: 'details pending', hint: 'Details have not been fetched yet.' },
+};
+
+function detailsBadge(item) {
+  const state = detailsState(item);
+  if (!state) return null;
+  const { text, hint } = DETAILS_BADGE[state];
+  return el('span', { class: `badge badge-${state}` }, [
+    text,
+    el('span', { class: 'visually-hidden', text: `. ${hint}` }),
+  ]);
+}
+
+// The same three states on the issue page, where the sentence stands alone rather than beside a
+// label. "Details have not been fetched yet" told a reader to wait for something that was never
+// coming, which is the whole of what this item was about. The order matches detailsState for the
+// same reason: a record the tracker holds is not one the snapshot has no record of.
+export function synopsisFallback(issue) {
+  if (issue?.description) return issue.description;
+  if (issue?.hydrated) return 'No synopsis is recorded for this issue.';
+  if (issue?.detailsRefused) return DETAILS_BADGE.norecord.hint;
+  return 'Details have not been fetched yet.';
 }
 
 // Sizes appear in a refusal, which is the one place a reader has to be able to compare two numbers
@@ -2123,12 +2175,7 @@ function renderRows() {
               `${SHORT[av.state]} ${av.state === STATE.EXPECTED ? 'Unlimited' : SHORT_LABEL[av.state] ?? 'unknown'}`,
               el('span', { class: 'visually-hidden', text: `. ${describe(item, { override, today })}.` }),
             ]),
-            !item.hydrated && item.source !== 'manual'
-              ? el('span', { class: 'badge badge-pending' }, [
-                'details pending',
-                el('span', { class: 'visually-hidden', text: '. Details have not been fetched yet.' }),
-              ])
-              : null,
+            detailsBadge(item),
             item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,
             ymd(item.onSale) ? el('span', { text: ymd(item.onSale) }) : null,
           ]),
@@ -2984,7 +3031,12 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
     const listId = created.listOrder[created.listOrder.length - 1];
     let added = 0;
     store.update((s) => {
-      const r = addIssuesToList(s, listId, order.items.map((i) => ({ ...i, source: 'curated', hydrated: true })), {});
+      // No `hydrated: true` here. It was asserted over the whole file, which is right for the 688
+      // items that carry metadata and a false statement about the 63 that carry none. normalizeIssue
+      // infers it from the item instead, and marks the empty ones as refused rather than pending,
+      // because a curated order is the output of a completed vendoring run and those were already
+      // looked up.
+      const r = addIssuesToList(s, listId, order.items.map((i) => ({ ...i, source: 'curated' })), {});
       added = r.added;
       return r.state;
     });

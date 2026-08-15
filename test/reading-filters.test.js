@@ -64,6 +64,11 @@ test('Details pending means waiting on the API, so a manual issue is never pendi
   assert.equal(matchesReadingFilter('pending', item({ hydrated: true })), false);
   // Nothing upstream is coming for one of these, so it would otherwise sit in this list forever.
   assert.equal(matchesReadingFilter('pending', item({ hydrated: false, source: 'manual' })), false);
+  // The same is true of an issue upstream has already refused, for a different reason: that one was
+  // asked about and the answer was that no such record exists. Without this the filter offers the
+  // reader 34 issues whose details are never going to arrive, which is a worse omission than
+  // silence because it is a promise.
+  assert.equal(matchesReadingFilter('pending', item({ hydrated: false, detailsRefused: true })), false);
 });
 
 test('In Unlimited keeps the five availability states distinct', () => {

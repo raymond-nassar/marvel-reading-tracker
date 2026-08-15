@@ -5,7 +5,7 @@
 // caps that at 45/minute, roughly five minutes for a 219-issue order. So hydration is
 // incremental, cancellable, resumable, and prioritises whatever you are about to read.
 
-import { hydrationOrder, upsertIssue } from './lib/model.js';
+import { hydrationOrder, upsertIssue, markDetailsRefused } from './lib/model.js';
 
 export class Hydrator {
   constructor({ api, store, onProgress = () => {} } = {}) {
@@ -60,8 +60,16 @@ export class Hydrator {
         }
       } catch (err) {
         if (err?.name === 'AbortError') break;
-        // A single failed lookup must not stall the queue; it stays pending and will be
-        // retried the next time hydration runs.
+        // A single failed lookup must not stall the queue. Which of two things it means decides
+        // whether it should be tried again, and discarding the error made them one thing.
+        //
+        // A timeout, a busy service or a lost connection says nothing about the issue, so it stays
+        // pending and the next run picks it up. A 404 is the service answering, and answering that
+        // it does not hold this issue. Trying that again spends the reader's request budget to
+        // receive the same refusal, so it is recorded and leaves the queue. `api.issue` throws
+        // ApiError carrying the status, which is the same field `friendly` already reads to say
+        // "Not found in the metadata snapshot."
+        if (err?.status === 404) this.store.update((s) => markDetailsRefused(s, issueId));
       }
       // A cancelled run may still be unwinding a long rate-limit wait when the user starts a
       // new one. Without this guard its teardown would clear the *new* run's fields, leaving

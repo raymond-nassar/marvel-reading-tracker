@@ -629,7 +629,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 .badge { font-size: .68rem; border: 1px solid var(--line); border-radius: 999px; padding: .02rem .42rem; white-space: nowrap; }
 .badge-expected, .badge-override-available { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
 .badge-scheduled { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); }
-.badge-unknown, .badge-pending { color: var(--muted); }
+.badge-unknown, .badge-pending, .badge-norecord { color: var(--muted); }
 .badge-override-unavailable { color: var(--red-fg); border-color: rgb(var(--red-line) / 33.333%); }
 
 .ract { display: flex; gap: .25rem; opacity: 0; }

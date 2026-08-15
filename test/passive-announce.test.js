@@ -15,7 +15,7 @@ function heard() {
 }
 
 // Replays what Hydrator does to onProgress: one 'running' when the queue is built, one more per
-// issue finished, then a single closing phase. `src/js/hydrate.js:50-77`.
+// issue finished, then a single closing phase. `src/js/hydrate.js:50-85`.
 function runHydration(announce, { total, stopAfter = null }) {
   announce(hydrationAnnouncement({ phase: 'running', done: 0, total }));
   const last = stopAfter ?? total;
@@ -174,7 +174,7 @@ function channel() {
 }
 
 // This is addToActive: it confirms the add, then starts the hydrator, whose start() reports
-// 'running' before its first await. `src/js/main.js:2475` and `src/js/hydrate.js:50`.
+// 'running' before its first await. `src/js/main.js:2522` and `src/js/hydrate.js:50`.
 test('a confirmation and the hydration start raised together are both heard', () => {
   const c = channel();
   c.announce('Added 20 issues to Reading.');
