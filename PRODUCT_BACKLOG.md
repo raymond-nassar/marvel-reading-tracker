@@ -4579,7 +4579,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9037-9039` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9043-9045` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4589,11 +4589,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:206-208`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9056-9060`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9062-9066`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8871-8873` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8877-8879` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4801,7 +4801,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2009-2018` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2010-2019` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:196-200` and
 `PRODUCT_BACKLOG.md:206-208` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5125,11 +5125,17 @@ all. Counting operations from outside the call is not available: all four quadra
 accumulator the migration builds, never the fixture it is handed, so nothing a test can instrument
 sees them.
 
-The file did not get slower for this. It builds a second fixture at a sixteenth of each ceiling and
-runs each of the four measurements twice, taking the floor because contention only ever adds time,
-and `validateBackup` was checked not to touch the backup it is handed so one fixture serves both
-runs. Measured whole-file cost: 5.5 seconds against 8.2 before. Evidence:
-`test/backup-bounds.test.js:264-290`.
+The file costs more for this, and the first version of this record claimed the opposite. It builds a
+second fixture at a sixteenth of each ceiling and runs each of the four measurements twice, taking
+the floor because contention only ever adds time, and `validateBackup` was checked not to touch the
+backup it is handed so one fixture serves both runs. That is 2.125 times the validation work with
+nothing removed to pay for it, so it could only get slower. Measured on an idle machine by
+alternating the two versions of the file: 4.0 seconds against 5.6 for the file alone, and 5.0 against
+6.7 for the whole suite. The suite pays 1.7 seconds of the file's 1.6, which is how it is known that
+this file sets the suite's wall time rather than running beside something longer. The figure first
+written here, 5.5 against 8.2, had the after right and the before wrong: the 8.2 was read under the
+contention this item is about, so it was never comparable to an idle reading, and quoting it turned
+a 1.6 second cost into a saving. Evidence: `test/backup-bounds.test.js:264-290`.
 
 **BL-118: Notice a distant repeat in the prose documents the gate never reads**
 
@@ -9156,7 +9162,7 @@ open when the pass ran, so the table was 28 rows then. BL-028 has since been par
 seventy-six further items filed, none of them labelled, one of which, BL-060, was parked in its
 turn, which is how it reaches 102 rows now. The ranks below are positions in it as it stands.
 
-Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 101
+Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 102
 ranked rows, six adjacent pairs sit with the lower score above the higher: BL-062 below BL-063,
 BL-072 below BL-070, BL-075 below BL-073, BL-077 below BL-071, BL-117 below BL-038, and BL-120 below
 BL-119. Twelve rows are involved and ten of them have shipped. The four this paragraph used to name

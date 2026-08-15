@@ -34,8 +34,9 @@ hogging the machine, the readings shifted by less than half, where the stopwatch
 shift by hundreds.
 
 Each of the four was checked by putting the old, slow behaviour back and confirming the check went
-red, so none of them is a check that has never been seen to fail. The whole set of checks also runs
-slightly faster than before.
+red, so none of them is a check that has never been seen to fail. Comparing two amounts of data means
+doing the work twice over, so the checks now take about a second and a half longer to finish than
+they did. That is the price of a reading that does not depend on how busy the machine is.
 
 ### Restoring a backup that is too big to keep no longer risks drawing it first (BL-114)
 
