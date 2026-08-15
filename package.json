@@ -19,6 +19,8 @@
     "publication:surface": "node scripts/check-publication.mjs --surface",
     "vendor": "node scripts/vendor-orders.mjs",
     "vendor:index": "node scripts/vendor-index.mjs",
+    "browser": "node scripts/browser-check.mjs",
+    "browser:prove": "node scripts/browser-check.mjs --prove",
     "version": "node scripts/sync-version.mjs && git add src/js/lib/version.js"
   },
   "engines": {

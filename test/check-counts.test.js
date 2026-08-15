@@ -160,11 +160,19 @@ function mutateCohort(fn) {
   return { ids, text: mutate(COHORT[0], rebuilt) };
 }
 
+// The verb is read from the document rather than written into the mutation target. The cohort's
+// `Ready` count reaches one, at which point the sentence is correctly written "One of them is
+// still `Ready`", and a target that spelled "are" would stop matching and fail these tests for a
+// reason that is not the checker's.
+const REMAINING_SENTENCE = /(\w+) of them (is|are) still `Ready`/.exec(REAL);
+
 test('a cohort status count carried forward is caught, and the cohort is named', () => {
   const ready = cohortRows().filter((r) => r.status === 'Ready').length;
+  assert.ok(REMAINING_SENTENCE, 'the cohort remaining sentence is no longer in the document');
+  const verb = REMAINING_SENTENCE[2];
   const text = mutate(
-    `${cap(numberWord(ready))} of them are still \`Ready\``,
-    `${cap(numberWord(ready + 7))} of them are still \`Ready\``,
+    `${cap(numberWord(ready))} of them ${verb} still \`Ready\``,
+    `${cap(numberWord(ready + 7))} of them ${verb} still \`Ready\``,
   );
   const found = checkLedger(derive(text));
   assert.equal(found.length, 1);
@@ -178,16 +186,46 @@ test('a cohort status count carried forward is caught, and the cohort is named',
 // same sentence written about any other status is checked too. Nothing in the document
 // makes that claim today, which is the point: a checker that only knows the statuses now
 // in use is the enumeration this repository keeps paying for.
+//
+// The substituted status is chosen for having a different count from the one the sentence
+// states, and is not pinned. `Dropped` was pinned here and stopped being a mutation the day
+// BL-093 shipped: it took the cohort to one Ready and one Dropped, so the rewritten sentence
+// was true, the checker correctly said nothing, and the test failed having found the right
+// answer. A mutation that stops being a mutation is the failure this whole file is about.
 test('a cohort count is checked against whatever status the sentence names', () => {
-  const ready = cohortRows().filter((r) => r.status === 'Ready').length;
-  const dropped = cohortRows().filter((r) => r.status === 'Dropped').length;
+  const rows = cohortRows();
+  const ready = rows.filter((r) => r.status === 'Ready').length;
+  const counts = new Map();
+  for (const r of derive(REAL).ranked) counts.set(r.status, rows.filter((x) => x.status === r.status).length);
+  const [status, n] = [...counts].find(([s, c]) => s !== 'Ready' && c !== ready) ?? [];
+  assert.ok(status, 'no other status has a cohort count that differs, so this mutation states nothing new');
+
+  const verb = REMAINING_SENTENCE[2];
   const text = mutate(
-    `${cap(numberWord(ready))} of them are still \`Ready\``,
-    `${cap(numberWord(ready))} of them are still \`Dropped\``,
+    `${cap(numberWord(ready))} of them ${verb} still \`Ready\``,
+    `${cap(numberWord(ready))} of them ${verb} still \`${status}\``,
   );
   const found = checkLedger(derive(text));
   assert.equal(found.length, 1);
-  assert.match(found[0].message, new RegExp(`${dropped} rows in .* are marked Dropped`));
+  assert.match(found[0].message, new RegExp(`${n} rows in .* are marked ${status}`));
+});
+
+// Both verbs have to be readable, and the singular is the one that is easy to lose: REMAINING is
+// not counted by the readable backstop, so a pattern that stopped matching would leave the claim
+// silently unchecked rather than reported. Written against the plural too, so that narrowing the
+// pattern the other way is caught by the same test.
+test('the remaining-count claim is read whether it is written singular or plural', () => {
+  const ready = cohortRows().filter((r) => r.status === 'Ready').length;
+  const verb = REMAINING_SENTENCE[2];
+  for (const other of ['is', 'are']) {
+    const text = mutate(
+      `${cap(numberWord(ready))} of them ${verb} still \`Ready\``,
+      `${cap(numberWord(ready + 7))} of them ${other} still \`Ready\``,
+    );
+    const found = checkLedger(derive(text));
+    assert.equal(found.length, 1, `the ${other} form was not read`);
+    assert.match(found[0].message, new RegExp(`so this should read ${cap(numberWord(ready))}`));
+  }
 });
 
 test('an id missing from the cohort delivered list is caught and named', () => {
@@ -232,9 +270,10 @@ test('a sentence below the table that reads like a ledger claim is not one', () 
 // direction, since a figure that has gone stale is still a number word.
 test('a ledger sentence whose figure is not a number word states nothing to check', () => {
   const ready = cohortRows().filter((r) => r.status === 'Ready').length;
+  const verb = REMAINING_SENTENCE[2];
   const text = mutate(
-    `${cap(numberWord(ready))} of them are still \`Ready\``,
-    'Several of them are still `Ready`',
+    `${cap(numberWord(ready))} of them ${verb} still \`Ready\``,
+    `Several of them ${verb} still \`Ready\``,
   );
   assert.deepEqual(checkLedger(derive(text)), []);
 });

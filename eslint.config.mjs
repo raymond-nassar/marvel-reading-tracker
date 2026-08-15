@@ -104,4 +104,13 @@ export default [
     files: ['design/**/*.js'],
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
+  {
+    // The browser check is a Node program that carries browser code inside it: the functions
+    // handed to puppeteer are serialised and run in the page, so `window` and `document` are
+    // defined for them and for nothing else in the file. Linting it as Node alone reported 38
+    // undefined globals for code that is correct, and linting it as browser alone would hide a
+    // real mistake in the Node half. Both sets is the honest description of what the file is.
+    files: ['scripts/browser-check.mjs'],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+  },
 ];
