@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T01:01:05.819Z",
+  "generatedAt": "2026-08-15T08:14:08.754Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -524,6 +524,104 @@
       "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
       "sourceLicense": null,
       "updatedAt": "2026-08-05T06:45:31.621Z"
+    },
+    {
+      "id": "xmen-claremont",
+      "file": "xmen_claremont.json",
+      "name": "X-Men: Silver Age to Claremont",
+      "description": "The X-Men from their 1963 debut to the year after the Mutant Massacre, in one order: the Lee and Kirby run, Giant-Size X-Men and the Claremont and Cockrum relaunch, the Phoenix, Dark Phoenix and Brood sagas, Days of Future Past, God Loves Man Kills, and the arrival of the New Mutants and X-Factor. Compiled by hand from a reader's outline of Comic Book Herald's guides, read as a reference and re-expressed here, so the order is not derived from Marvel metadata and cannot be checked against it. The Mutant Massacre is read in the crossover's own interleaved order. X-Men #67-93 are left out because all 27 are reprints of issues this order already carries and Marvel holds no metadata for the reprint years. The outline ran out partway through X-Factor's second year, so this stops at X-Factor #23 and reaches neither Fall of the Mutants nor Inferno.",
+      "type": "character-run",
+      "depth": "essential",
+      "count": 318,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Professor X",
+        "Cyclops",
+        "Jean Grey",
+        "Wolverine",
+        "Storm",
+        "Nightcrawler",
+        "Colossus",
+        "Kitty Pryde",
+        "Magneto",
+        "New Mutants",
+        "X-Factor"
+      ],
+      "keywords": [
+        "Chris Claremont",
+        "Dark Phoenix Saga",
+        "Days of Future Past",
+        "Mutant Massacre",
+        "Brood Saga",
+        "Second Genesis",
+        "New Mutants",
+        "X-Factor",
+        "Silver Age",
+        "Comic Book Herald"
+      ],
+      "group": "xmen-claremont",
+      "groupName": "X-Men: Silver Age to Claremont",
+      "variant": "The spine, without the optional reading",
+      "beginner": true,
+      "coverIssueId": 12413,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/589ddfc222e9c",
+        "ext": "jpg"
+      },
+      "source": null,
+      "sourceOrigin": "Compiled for this project",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-15T07:57:51.550Z"
+    },
+    {
+      "id": "xmen-claremont-complete",
+      "file": "xmen_claremont_complete.json",
+      "name": "X-Men: Silver Age to Claremont, with the optional reading",
+      "description": "The same order as the spine beside it, plus the two sections the outline marked optional. Compiled by hand from the same reader's outline of Comic Book Herald's guides. The Silver Age add-ons are the guest appearances that carried the X-Men through the years their own title was running reprints, scattered across Amazing Adventures, Spider-Man, the Hulk, the Avengers, Captain America, the Defenders and Giant-Size Fantastic Four. The modern retellings revisit the same years from the outside: The Hidden Years, Grand Design, Season One and the whole of First Class. X-Men Annual #1 and #2 are listed without a link, because Marvel's metadata carries that series only from #3.",
+      "type": "character-run",
+      "depth": "complete",
+      "count": 404,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Professor X",
+        "Cyclops",
+        "Jean Grey",
+        "Wolverine",
+        "Storm",
+        "Nightcrawler",
+        "Colossus",
+        "Kitty Pryde",
+        "Magneto",
+        "New Mutants",
+        "X-Factor"
+      ],
+      "keywords": [
+        "Chris Claremont",
+        "Dark Phoenix Saga",
+        "Days of Future Past",
+        "Mutant Massacre",
+        "The Hidden Years",
+        "Grand Design",
+        "First Class",
+        "Season One",
+        "Silver Age",
+        "Comic Book Herald"
+      ],
+      "group": "xmen-claremont",
+      "groupName": "X-Men: Silver Age to Claremont",
+      "variant": "With the optional add-ons and retellings",
+      "beginner": false,
+      "coverIssueId": 12413,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/589ddfc222e9c",
+        "ext": "jpg"
+      },
+      "source": null,
+      "sourceOrigin": "Compiled for this project",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-15T07:57:51.563Z"
     }
   ]
 }

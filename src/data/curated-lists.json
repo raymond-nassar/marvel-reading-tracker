@@ -447,6 +447,92 @@
         "2020 event"
       ],
       "expect": 38
+    },
+    {
+      "id": "xmen-claremont",
+      "name": "X-Men: Silver Age to Claremont",
+      "description": "The X-Men from their 1963 debut to the year after the Mutant Massacre, in one order: the Lee and Kirby run, Giant-Size X-Men and the Claremont and Cockrum relaunch, the Phoenix, Dark Phoenix and Brood sagas, Days of Future Past, God Loves Man Kills, and the arrival of the New Mutants and X-Factor. Compiled by hand from a reader's outline of Comic Book Herald's guides, read as a reference and re-expressed here, so the order is not derived from Marvel metadata and cannot be checked against it. The Mutant Massacre is read in the crossover's own interleaved order. X-Men #67-93 are left out because all 27 are reprints of issues this order already carries and Marvel holds no metadata for the reprint years. The outline ran out partway through X-Factor's second year, so this stops at X-Factor #23 and reaches neither Fall of the Mutants nor Inferno.",
+      "type": "character-run",
+      "depth": "essential",
+      "beginner": true,
+      "group": "xmen-claremont",
+      "groupName": "X-Men: Silver Age to Claremont",
+      "variant": "The spine, without the optional reading",
+      "coverIssueId": 12413,
+      "sourceFile": "xmen-claremont.md",
+      "sourceOrigin": "Compiled for this project",
+      "sourceLicense": null,
+      "out": "xmen_claremont.json",
+      "characters": [
+        "X-Men",
+        "Professor X",
+        "Cyclops",
+        "Jean Grey",
+        "Wolverine",
+        "Storm",
+        "Nightcrawler",
+        "Colossus",
+        "Kitty Pryde",
+        "Magneto",
+        "New Mutants",
+        "X-Factor"
+      ],
+      "keywords": [
+        "Chris Claremont",
+        "Dark Phoenix Saga",
+        "Days of Future Past",
+        "Mutant Massacre",
+        "Brood Saga",
+        "Second Genesis",
+        "New Mutants",
+        "X-Factor",
+        "Silver Age",
+        "Comic Book Herald"
+      ],
+      "expect": 318
+    },
+    {
+      "id": "xmen-claremont-complete",
+      "name": "X-Men: Silver Age to Claremont, with the optional reading",
+      "description": "The same order as the spine beside it, plus the two sections the outline marked optional. Compiled by hand from the same reader's outline of Comic Book Herald's guides. The Silver Age add-ons are the guest appearances that carried the X-Men through the years their own title was running reprints, scattered across Amazing Adventures, Spider-Man, the Hulk, the Avengers, Captain America, the Defenders and Giant-Size Fantastic Four. The modern retellings revisit the same years from the outside: The Hidden Years, Grand Design, Season One and the whole of First Class. X-Men Annual #1 and #2 are listed without a link, because Marvel's metadata carries that series only from #3.",
+      "type": "character-run",
+      "depth": "complete",
+      "beginner": false,
+      "group": "xmen-claremont",
+      "groupName": "X-Men: Silver Age to Claremont",
+      "variant": "With the optional add-ons and retellings",
+      "coverIssueId": 12413,
+      "sourceFile": "xmen-claremont-complete.md",
+      "sourceOrigin": "Compiled for this project",
+      "sourceLicense": null,
+      "out": "xmen_claremont_complete.json",
+      "characters": [
+        "X-Men",
+        "Professor X",
+        "Cyclops",
+        "Jean Grey",
+        "Wolverine",
+        "Storm",
+        "Nightcrawler",
+        "Colossus",
+        "Kitty Pryde",
+        "Magneto",
+        "New Mutants",
+        "X-Factor"
+      ],
+      "keywords": [
+        "Chris Claremont",
+        "Dark Phoenix Saga",
+        "Days of Future Past",
+        "Mutant Massacre",
+        "The Hidden Years",
+        "Grand Design",
+        "First Class",
+        "Season One",
+        "Silver Age",
+        "Comic Book Herald"
+      ],
+      "expect": 404
     }
   ]
 }
