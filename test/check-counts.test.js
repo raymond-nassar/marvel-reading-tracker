@@ -4,24 +4,28 @@
 // has actually shipped or nearly shipped: a ledger count carried forward, an id list
 // that lost a member, a rank left over from an earlier table, a detail block that was
 // never written, and a block duplicated by an edit that meant to move it.
-import { readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
+  DOC,
   FROZEN,
   WORD,
   checkAll,
   checkBlocks,
   checkLedger,
   checkOrdinalHeadings,
+  checkProse,
   checkRanks,
   checkRepeats,
   derive,
   numberWord,
   ordinalWord,
+  proseDoc,
   wordNumber,
 } from '../scripts/check-counts.mjs';
 
@@ -437,6 +441,92 @@ test('a repeat longer than any fixed window is still caught', () => {
 // grows a legitimate repeat, this fails and the decision gets made deliberately.
 test('the document as committed contains no repeat', () => {
   assert.deepEqual(checkRepeats(REAL), []);
+});
+
+// BL-118. The three rules are tested for what each does, not for what the tree happens to
+// hold today, which is the same reason the sizes gate exports its own predicate. Testing
+// them through the tree would pass on a tree that simply contains no counter-example, and
+// the population has grown from seven documents to eighteen in five days.
+test('the prose population is decided by rules about the path', () => {
+  assert.equal(proseDoc('PRODUCT_BACKLOG.md'), true);
+  assert.equal(proseDoc('docs/ARCHITECTURE.md'), true);
+  assert.equal(proseDoc('.github/copilot-instructions.md'), true);
+
+  assert.equal(proseDoc('src/js/main.js'), false, 'a repeated run of lines is ordinary in code');
+  assert.equal(proseDoc('docs/anchors.lock.json'), false);
+
+  assert.equal(proseDoc('.copilot-tracking/plans/2026-08-03/a-plan.md'), false);
+  assert.equal(proseDoc('docs/copilot-tracking-notes.md'), true, 'the rule anchors at the start of the path');
+
+  assert.equal(proseDoc('src/data/orders/house-of-m.md'), false);
+  assert.equal(proseDoc('src/data/orders/a-future-order.md'), false, 'the rule is the directory, not the file');
+  assert.equal(proseDoc('docs/data/notes.md'), true, 'the rule anchors at the start of the path');
+});
+
+// The population is derived from the tree rather than written down, so this asserts the
+// derivation reaches documents nobody listed. SECURITY.md and docs/DATA_PROVENANCE.md are
+// the two that arrived after the floor was first measured and were the reason the count of
+// seven read as nine four days later.
+test('the population is derived, so documents added later are in it', () => {
+  const { docs } = checkProse(ROOT);
+  for (const f of ['PRODUCT_BACKLOG.md', 'README.md', 'SECURITY.md', 'docs/DATA_PROVENANCE.md']) {
+    assert.ok(docs.includes(f), `${f} is not in the population`);
+  }
+  assert.ok(!docs.some((f) => f.startsWith('src/data/')), 'a data file is being read as prose');
+  assert.ok(!docs.some((f) => f.startsWith('.copilot-tracking/')), 'a dated artifact is being read as prose');
+  assert.ok(docs.length > 1, 'the population is still one document');
+});
+
+// The whole of the first task. Before this the pass read one document, so a repeat written
+// into any other prose file was invisible; the floor of three was read from a population
+// and enforced on one member of it.
+test('the tree as committed contains no repeat in any prose document', () => {
+  const { docs, findings } = checkProse(ROOT);
+  assert.deepEqual(
+    findings.map((f) => `${f.file}:${f.line} ${f.message}`),
+    [],
+    `a passage is stated twice over in ${docs.length} scanned documents`,
+  );
+});
+
+// The second task. A finding used to be printed against the one document the gate names
+// whatever file it was in, and a message naming the wrong file is worse than no message.
+// The fixture is written to a temporary root rather than into the repository, so the test
+// cannot leave a repeat behind if it fails partway.
+test('a repeat is reported against the document it is in', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'counts-prose-'));
+  try {
+    const block = Array.from({ length: 4 }, (_, i) => `line ${i} of a paragraph pasted into a guide`);
+    const filler = Array.from({ length: 45 }, (_, i) => `unrelated sentence number ${i} in between`);
+    const text = ['intro', '', ...block, '', ...filler, '', ...block, ''].join('\n');
+    writeFileSync(join(dir, 'GUIDE.md'), text);
+
+    const { findings } = checkProse(dir, ['GUIDE.md']);
+    assert.equal(findings.length, 1);
+    assert.equal(findings[0].file, 'GUIDE.md');
+    assert.notEqual(findings[0].file, DOC);
+    assert.match(findings[0].message, /repeats the 4 lines at line 3 word for word/);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+// Each document is its own corpus, and that is what holds the floor at three. Pooled, the
+// eighteen report two repeats at three lines and above, both of them fenced command blocks
+// that CONTRIBUTING and README each state in full. Neither is a defect, so a pooled reading
+// would need the exception list this design exists to avoid.
+test('two documents stating the same passage are not a repeat', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'counts-corpus-'));
+  try {
+    const block = ['```', 'npm ci', 'npm test', '```'].join('\n');
+    writeFileSync(join(dir, 'README.md'), `install${'\n'}${'\n'}${block}${'\n'}`);
+    writeFileSync(join(dir, 'CONTRIBUTING.md'), `install${'\n'}${'\n'}${block}${'\n'}`);
+
+    const { findings } = checkProse(dir, ['README.md', 'CONTRIBUTING.md']);
+    assert.deepEqual(findings, []);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });
 
 // BL-081. The walk above compares a block only against the block touching it, so a copy

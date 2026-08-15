@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Ninety-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Ninety-seven items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -17,7 +17,7 @@ BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, 
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-086, BL-087,
 BL-088, BL-089, BL-090, BL-093, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101,
 BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-114,
-BL-115, BL-116, BL-117, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126 and BL-127.
+BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126 and BL-127.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -239,7 +239,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
-| BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:51-54 |
+| BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:52-55 |
 | BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:36-44 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
@@ -257,7 +257,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Shipped | src/js/main.js:3303-3331 |
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Shipped | src/js/storage.js:426-450 |
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
-| BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:359-434 |
+| BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
 | BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3881-3884 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
@@ -294,7 +294,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | src/js/lib/model.js:206 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:25-40 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
-| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:500-534 |
+| BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:501-535 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:3115-3149 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:710 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:944 |
@@ -306,7 +306,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:1215 |
 | BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:317 |
 | BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1316 |
-| BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:571-609 |
+| BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:586-624 |
 | BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:291-314 |
 | BL-125 | Fail the build when a stated line count disagrees with the file it counts | Enabler | EP-12 | Extends BL-056 | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-sizes.mjs:31 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
@@ -320,7 +320,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-066 | Offer a reading order grouped by the collected editions it is sold in | Story | EP-02 | Leaves alone | 5 | 2 | 5 | 5 | 2.4 | none | Measured | Shipped | src/data/orders/new-ultimate-universe-trades.md:19 |
 | BL-038 | Build the two Library sub-views the adopted design specified | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 3 | 2.0 | none | Observed | Shipped | design/mockups/5-longbox-focus.html:169-172 |
 | BL-117 | Give the ceiling timings a budget that survives a loaded machine | Debt | EP-12 | Leaves BL-085 alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | test/backup-bounds.test.js:290 |
-| BL-118 | Notice a distant repeat in the prose documents the gate never reads | Enabler | EP-12 | Extends BL-058 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Ready | scripts/check-counts.mjs:628 |
+| BL-118 | Notice a distant repeat in the prose documents the gate never reads | Enabler | EP-12 | Extends BL-058 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Shipped | scripts/check-counts.mjs:679-692 |
 | BL-119 | Show an order's gap on the catalog row, before it is imported | Story | EP-05 | Follows BL-110 | 3 | 1 | 2 | 3 | 2.0 | none | Measured | Ready | src/js/main.js:2874-2878 |
 | BL-120 | Notice when the published branch list refills | Enabler | EP-12 | Follows BL-103 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Ready | .github/workflows/ci.yml:214-216 |
 | BL-092 | Bring the fault harness under the alternate-page accessibility baseline | Debt | EP-07 | Leaves BL-034 alone | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | src/dev-faults.js:12-22 |
@@ -3049,12 +3049,12 @@ The second task was the substance. A scan of every tracked Markdown file, at eve
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
 permanent check worth building rather than a one-off answer worth writing down. The scan needed no
 minimum length and no exception list to stay quiet, so `scripts/check-counts.mjs` now carries it, at
-`scripts/check-counts.mjs:500-534`, and `npm run counts` fails on a repeat. That remains true of this
+`scripts/check-counts.mjs:501-535`, and `npm run counts` fails on a repeat. That remains true of this
 scan, which is why the citation names it rather than the whole function: the whole-document pass
 BL-081 added later does need a floor, and the reason is recorded there.
 
 Putting it in that script rather than in a new one follows what was already there. The counts gate
-already refuses a detail block that appears twice, at `scripts/check-counts.mjs:469-479`, which is
+already refuses a detail block that appears twice, at `scripts/check-counts.mjs:470-480`, which is
 this same defect one level coarser: an edit that copied where it meant to move. The heading check
 could not see this case, because a block that states its own paragraph twice still has one heading
 and one row, so every enumeration agreed the document was sound.
@@ -3839,7 +3839,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 Filed out of BL-075's review, which found the defect the gate is named for sitting inside the change
 that ran it. `checkRepeats` compares a window against the window immediately following it, at
-`scripts/check-counts.mjs:520-526`, so it catches a block directly followed by its copy and nothing
+`scripts/check-counts.mjs:521-527`, so it catches a block directly followed by its copy and nothing
 else. BL-075's first draft repeated a six-line paragraph forty-five lines further down, which put
 pre-implementation framing after the verification numbers that closed the block, and the gate printed
 that nothing was said twice.
@@ -3858,7 +3858,7 @@ answer it: the ceiling derivation above the loop already records that a repeat c
 line, and that guard is doing more work than it looks like once the two copies can be anywhere.
 
 **Shipped.** The adjacency walk is untouched and a second pass runs after it, at
-`scripts/check-counts.mjs:571-609`, descending from the longest possible repeat down to a floor and
+`scripts/check-counts.mjs:586-624`, descending from the longest possible repeat down to a floor and
 comparing every blank-free window against every earlier one. Both passes share the one `claimed`
 set, so a block the adjacency walk has already reported is not reported again by the second.
 
@@ -4580,7 +4580,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9226-9228` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9261-9263` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4590,11 +4590,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:206-208`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9245-9249`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9280-9284`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9060-9062` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9095-9097` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4802,7 +4802,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2060-2069` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2079-2088` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:196-200` and
 `PRODUCT_BACKLOG.md:206-208` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5140,9 +5140,9 @@ a 1.6 second cost into a saving. Evidence: `test/backup-bounds.test.js:264-290`.
 
 **BL-118: Notice a distant repeat in the prose documents the gate never reads**
 
-- [ ] Decide which documents the scan reads, by deriving the set rather than listing it
-- [ ] Report a finding against the file it is in, not against the one document the gate names
-- [ ] Keep the three-line floor honest by re-reading it against whatever population is chosen
+- [x] Decide which documents the scan reads, by deriving the set rather than listing it
+- [x] Report a finding against the file it is in, not against the one document the gate names
+- [x] Keep the three-line floor honest by re-reading it against whatever population is chosen
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -5166,7 +5166,42 @@ three lines, every one of them in the generated order files, which is an argumen
 set rather than taking every tracked Markdown file. That makes this an enabler rather than a
 defect, and it is the reason the value is 2 rather than higher.
 
-Evidence: `scripts/check-counts.mjs:628`.
+Evidence: `scripts/check-counts.mjs:679-692`.
+
+Shipped as three rules about the path rather than a list of files. A document is prose if it ends
+in `.md`, is not under `.copilot-tracking/`, and is not under `src/data/`. The first two are the
+same shape the size gate already uses, and the third is the one that needed deciding: the order
+files are Markdown, but they are the app's data, they are generated, and a checklist that lists a
+title once per issue repeats by design. A rule about the directory was chosen over a rule about a
+file declaring itself generated, because only 8 of the 12 order files carry the "Edit the script,
+not this file." line and one of them says in the page that it is not generated by a script, so a
+self-declaration rule would have read four of them as prose. The directory rule covers the
+thirteenth order on the day it lands.
+
+Each document is its own corpus, and that is the decision the floor of three rests on. Read on
+2026-08-15 against the 18 documents the rules derive from the 36 tracked Markdown files: 0 repeats
+at three lines and above, 4 at two lines, 37 at one. The four at two lines are the same four the
+2026-08-10 reading found, in the same documents, and every one is deliberate. Pooling those same 18
+into a single corpus instead reports 2 at three lines and above, both of them fenced command blocks
+that `CONTRIBUTING.md` and `README.md` each state in full, one of them nine lines long. Neither is a
+defect, so a pooled reading would have needed the exception list this design exists to avoid. The
+floor has now held across populations of seven, nine and eighteen.
+
+The finding count is per distinct repeated passage rather than per occurrence, which is why 37 at one
+line reads lower than the 124 the comment above the floor records from 2026-08-10. That earlier
+number counted window pairs. Both are true of the same tree, and the newer one is what the gate
+prints.
+
+Each new test was shown to fail, and separately, so each names what it defends. Narrowing the
+population back to the one document the gate used to read fails 3 of them. Removing only the
+data-directory rule fails 2, one of which is the assertion that no generated file reaches the pass.
+Making a finding carry the gate's own document instead of the file it was read from fails exactly 1,
+which is the second task of the item. Pooling the population into one corpus fails 2, and one of
+those is the real tree, so the corpus decision is held by a check rather than by a paragraph.
+
+Verified with the full gate set: lint 0, 47 tests in the counts suite and 962 across the suite with
+0 failing, and the counts gate now closing on the number of documents it read rather than a fixed
+sentence, so the figure cannot go stale.
 
 **BL-119: Show an order's gap on the catalog row, before it is imported**
 
@@ -6343,8 +6378,8 @@ Extending the number words past ninety-nine left all three of their readers stil
 and two of the three failed silently rather than loudly: the rank-heading pattern captured "a" out
 of "ranks a hundred and third" and reported drift no wording could satisfy, while the delivered and
 remaining counts skipped the claim entirely, which also stops the id list beside them being checked.
-All three are built from one shared fragment now, at `scripts/check-counts.mjs:220`, and the
-word-to-number reader follows the writer's own ceiling at `scripts/check-counts.mjs:311` rather than
+All three are built from one shared fragment now, at `scripts/check-counts.mjs:221`, and the
+word-to-number reader follows the writer's own ceiling at `scripts/check-counts.mjs:312` rather than
 repeating a number. The guard test meant to catch exactly this looked only at the writers, so it
 stayed green throughout; it holds every word the writer produces to being readable back now, which
 turns both of the original readers red.
@@ -6512,7 +6547,7 @@ wants: this one writes corrupt state and starts fresh, and structurally cannot r
 progress saved at `127.0.0.1:8787`. It follows that there are no artifacts and no cleanup, which is
 what the documentation says rather than a promise to tidy up.
 
-`scripts/check-counts.mjs:351-357` changed with it, for a reason this item caused rather than
+`scripts/check-counts.mjs:352-358` changed with it, for a reason this item caused rather than
 found. Shipping BL-093 takes the cohort's `Ready` count to one, and the sentence stating it is then
 correctly written "One of them is still `Ready`". The gate's pattern only accepted "are", and that
 claim is not covered by the readable backstop, so the grammatical sentence would have gone unread
@@ -7303,7 +7338,7 @@ Constraint gate: checked 1 to 11, none breached.
 Raised by `BL-095` and routed here rather than fixed there, because that item put deadlines on a
 workflow and this one changes the gate that reads this document. The counts gate already derives the
 opening paragraph's "N items have since been delivered" sentence and its list of ids, at
-`scripts/check-counts.mjs:359-434`. It does not derive the second paragraph, which makes the same two
+`scripts/check-counts.mjs:360-435`. It does not derive the second paragraph, which makes the same two
 statements about the eighteen items of the 2026-08-10 study: how many of them are still `Ready`, and
 which have shipped. Both went stale as those items shipped, and every gate stayed green.
 
@@ -7513,12 +7548,12 @@ exempts a figure the gate derives, and the gate derives none of these. The prece
 useful part, which is that a claim about a past state has to say so in the source.
 
 **One finding is routed rather than fixed.** The comment says that if a legitimate three-line
-repeat is ever written the honest response is to raise it and record why. Only this document is
-scanned, so in every other document that response waits on somebody noticing, and the promise is
-wider than the check behind it. Widening the scan is a different change from dating a measurement,
-and `BL-118` carries it.
+repeat is ever written the honest response is to raise it and record why. Only this document was
+scanned when this item shipped, so in every other document that response waited on somebody
+noticing, and the promise was wider than the check behind it. Widening the scan was a different
+change from dating a measurement, and `BL-118` has since carried it.
 
-Evidence: `scripts/check-counts.mjs:502-510`, `scripts/check-counts.mjs:548-570`.
+Evidence: `scripts/check-counts.mjs:503-511`, `scripts/check-counts.mjs:549-571`.
 
 **BL-108: Make the cover art switch stop the cover requests it hides**
 
@@ -8168,7 +8203,7 @@ Constraint gate: checked 1 to 11, none breached.
 The counts gate spells its numbers out because the document does, and it deliberately refused to
 spell anything above sixty rather than printing digits. The comment above the two tables said why in
 advance: a backlog that outgrows the range wants the range extended, not a checker that quietly
-stops checking. Evidence: `scripts/check-counts.mjs:51-54` and `scripts/check-counts.mjs:60-66`.
+stops checking. Evidence: `scripts/check-counts.mjs:52-55` and `scripts/check-counts.mjs:61-67`.
 
 It outgrew it here. Shipping the seventieth item made the ledger sentence read Seventy, the gate
 could not spell that, and it reported the derived value as null. Five tests in the same file went
@@ -9384,9 +9419,9 @@ beats a label and no evidence at all that a score beats a position. The rule is 
 on the strength of the argument below, not on a precedent.
 
 Re-sorting is declined on cost, not on risk. The risk would be that figures read off the order go
-stale unnoticed, and that one is already covered: `checkRanks` at `scripts/check-counts.mjs:179-211`
+stale unnoticed, and that one is already covered: `checkRanks` at `scripts/check-counts.mjs:180-212`
 rebuilds every row's rank from the table and fails any `rank N of M` stated against it, and
-`checkOrdinalHeadings` at `scripts/check-counts.mjs:224-248` does the same for a rank spelled as a
+`checkOrdinalHeadings` at `scripts/check-counts.mjs:225-249` does the same for a rank spelled as a
 word in a heading. Sorting the table and running the gate turns four claims red, all of them in this
 appendix, so a re-sort cannot quietly invalidate what is written about the order.
 
