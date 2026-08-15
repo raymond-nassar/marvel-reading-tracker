@@ -14,6 +14,29 @@ quote in a bug report.
 
 ## Unreleased
 
+### An X-Men reading order, from the 1963 debut to the Mutant Massacre (BL-127)
+
+In plain English: the catalog had twelve reading orders and none of them was about the X-Men. There
+are now two more that are, and they are the same story at two lengths. The shorter one is the spine:
+the X-Men from their first issue in 1963, through the 1975 relaunch that brought in Storm,
+Nightcrawler and Colossus, the Phoenix and Dark Phoenix sagas, Days of Future Past, the Brood, and on
+into the New Mutants, X-Factor and the Mutant Massacre. That is 318 issues. The longer one adds
+another 86: the guest appearances that kept the X-Men going through the years their own title was
+running nothing but reprints, and the modern series that retell those same years from the outside.
+
+They come from a reader's outline of Comic Book Herald's guides, and the card for each says so,
+because the running order is a person's judgement and there is no Marvel data that can confirm it.
+Every issue in both orders has a cover and opens in the reader.
+
+Two things are missing on purpose and both are named on the card. X-Men #67 to #93 are not there:
+all 27 are reprints of issues the order already has, and Marvel keeps no record of them at all, so
+they could only have appeared as rows with nothing behind them. Four issues appear as plain text
+with no link, because Marvel has no record of those either, but they are real chapters of the story
+rather than reprints and leaving them out would have moved the issues around them out of order.
+
+The outline ran out partway through X-Factor's second year, so the order stops there. Fall of the
+Mutants, Inferno and everything after are not in it yet. Nothing you have already saved is affected.
+
 ### A test that guards restore speed no longer fails just because the machine is busy (BL-117)
 
 Nothing in the app changes and nothing you have saved is affected. This is entirely about the

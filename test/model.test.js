@@ -990,11 +990,15 @@ test('the bundled orders carry a gap the payload field never reported', () => {
   }
 
   assert.ok(empty > 0, 'no bundled order has an item that came back empty, so this check proves nothing');
-  assert.equal(claimed, 0, 'the payload field now reports something; re-derive the figures in the record');
-  assert.equal(placeholders, 0, 'a bundled order now has a placeholder; re-derive the figures in the record');
-  // Read on 2026-08-14 across the twelve bundled orders. Written down as an observation rather
-  // than a floor: it moves whenever an order is re-vendored, and moving it should mean editing
-  // this line deliberately rather than watching a range quietly widen.
+  // Read on 2026-08-15 across the fourteen bundled orders. Written down as observations rather
+  // than floors: they move whenever an order is added or re-vendored, and moving one should mean
+  // editing this line deliberately rather than watching a range quietly widen.
+  //
+  // The placeholder figures were 0 until the X-Men order arrived with six, which is what finally
+  // gives the agreement assertion above something to compare: before it, every order either read 0
+  // or carried no field at all, so it could not have caught a payload disagreeing with its items.
+  assert.equal(claimed, 6, 'the payload placeholder total moved; re-derive the figures in the record');
+  assert.equal(placeholders, 6, 'the bundled placeholder total moved; re-derive the figures in the record');
   assert.equal(empty, 63);
   assert.equal(affected, 2);
 });
@@ -1164,6 +1168,14 @@ test('the bundled orders really do contain issues no lookup can answer for', () 
   // 63 items across two orders, which are 34 distinct issues because the two Ultimate orders
   // overlap. Read on 2026-08-14; written down as an observation rather than a floor, so
   // re-vendoring an order means editing this line deliberately.
-  assert.equal(refused.length, 34);
+  //
+  // Deliberately edited on 2026-08-15, from 34 to 40. The X-Men orders added six checklist lines
+  // carrying no Marvel link, which vendor as placeholders with negative ids, and a placeholder is
+  // refused on arrival for the same reason an empty item is: no lookup will ever answer for it.
+  // The six are two distinct issues in the spine and four in the complete variant, counted twice
+  // over because a placeholder's id is hashed from the order it sits in as well as its title. The
+  // Ultimate figure is unchanged at 34, which is the check that this grew for the stated reason
+  // rather than because an order regressed.
+  assert.equal(refused.length, 40);
   assert.equal(pendingIssueIds(s).length, 0, 'the app is still offering to fetch details that do not exist');
 });

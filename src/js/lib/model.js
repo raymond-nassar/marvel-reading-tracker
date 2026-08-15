@@ -119,7 +119,7 @@ function refusedOnArrival(input) {
 // so they are counted apart and said apart.
 //
 // Counted from the items rather than read from the payload's own `placeholders` field. That field
-// counts only the first kind, two of the twelve shipped orders were vendored before it existed and
+// counts only the first kind, two of the fourteen shipped orders were vendored before it existed and
 // carry no count at all, and a hand-edited file could carry a stale one. The items are what the
 // reader actually receives, so they are what is counted.
 export function countOrderGaps(order) {
