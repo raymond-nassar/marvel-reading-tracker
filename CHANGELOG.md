@@ -14,6 +14,58 @@ quote in a bug report.
 
 ## Unreleased
 
+### A checklist for the day this project is opened to the public (BL-129)
+
+In plain English: nothing you have saved is affected, and nothing on screen has changed. This is a
+note left for whoever eventually makes the project's code visible to everyone.
+
+Several places in the project say, in so many words, that outsiders cannot see it yet. The security
+policy tells anyone who finds a flaw to do something awkward, because the private way of reporting
+one is not offered on a hidden project. The contributing guide explains how changes would be sent
+if anyone could send them. All of that is honest, all of it stops being true the moment the project
+is opened up, and none of the automatic checks would notice a sentence that had quietly gone out of
+date, because they check facts about the code rather than sentences about the situation.
+
+So every statement of that kind was hunted down and written on one page: sixteen of them, across
+eight files. With them are the three protections that cost nothing once a project is public and
+cannot be switched on at all before then, which are spotting a password committed by accident, a
+private channel for reporting a security flaw, and rules that stop the main copy of the code being
+changed carelessly. The first of those has to be switched on before one of the others will do
+anything, and asking for them in the wrong order looks like it worked. That is the sort of thing
+that is easy to get wrong from memory and easy to get right from a list.
+
+The page does not argue that the project should be opened up. That still waits on the unanswered
+legal question about the Marvel comic information stored here, which the page names at the top as
+the thing to settle before any of the rest of it matters.
+
+### The record of where the data came from now counts its own contents correctly (BL-128)
+
+In plain English: nothing you have saved is affected, and nothing on screen has changed. This
+corrects a number in the page explaining which parts of this project are Marvel's and which are the
+project's own.
+
+That page counts the marketing blurbs copied from Marvel, because reproducing them word for word is
+the part of the stored data most likely to need permission. It gave the figure three times. Two said
+798 and one still said 508, which was the count before two new reading orders were added. Every other
+figure on the page was recounted at the time and that one was missed. It happened to be the copy
+sitting inside the list of questions a lawyer would be asked, which is the worst place for it to
+hide, because someone answering that question would have been answering about the wrong amount of
+material.
+
+The same page also promised that every stored comic copies a set list of details from Marvel, and
+six of them copy nothing whatsoever. Those six stand in for comics Marvel's own records have no
+entry for, so instead of Marvel's reference number they carry one invented here, deliberately
+negative so it can never be mistaken for the real thing. That is now written down. It is also kept
+firmly apart from a separate group of sixty-three thin entries that fail for the opposite reason,
+which are easy to confuse and would give the wrong total if added together by mistake.
+
+Adding two entries to the project's list of planned work meant recounting what that list says about
+itself, and three of its own figures turned out to have been wrong already: how many rows it holds,
+how many jobs are still waiting to be picked up, and how far a re-sort of it would move things.
+Nothing checks those three, and the passage stating them tells its reader to recount them whenever
+the list changes. A fourth figure of the same kind is checked by an automatic test, and that test
+failed the moment the new entries were added, which is a fair illustration of the difference.
+
 ### The check for accidentally duplicated text now reads every document, not just one (BL-118)
 
 In plain English: nothing you have saved is affected, and nothing on screen has changed. This is a
@@ -25,7 +77,7 @@ ever read one of the project's documents. The rule it enforced had been decided 
 them, so the other seventeen were being held to a promise nobody was keeping. A duplicated paragraph
 in the contributor guide, the readme or the architecture notes would simply not have been noticed.
 
-It now reads all eighteen, and it works out which eighteen by looking at the project rather than
+It now reads all nineteen, and it works out which nineteen by looking at the project rather than
 from a list somebody has to remember to update, so a document added next week is covered the day it
 arrives. Generated files and the dated working notes are left out on purpose, for reasons written
 down beside the rule. A complaint now names the document it was found in, which it could not do
