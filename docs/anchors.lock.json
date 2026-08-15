@@ -274,13 +274,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:344-345|0": {
-    "anchor": "PRODUCT_BACKLOG.md:344-345",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:346-347|0": {
+    "anchor": "PRODUCT_BACKLOG.md:346-347",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:7954|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7954",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8058|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8058",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -809,6 +809,11 @@
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
+  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:169-171|0": {
+    "anchor": ".github/copilot-instructions.md:169-171",
+    "fp": "ed4f9606558b8b5e",
+    "head": "- **Outside Markdown, only a backticked citation is collected.** In a document both forms are, but"
+  },
   "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:380-412|0": {
     "anchor": ".github/copilot-instructions.md:380-412",
     "fp": "eaed0b26a1cb1201",
@@ -879,8 +884,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1682-1691|0": {
-    "anchor": "CHANGELOG.md:1682-1691",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1698-1707|0": {
+    "anchor": "CHANGELOG.md:1698-1707",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -939,9 +944,9 @@
     "fp": "a64dc944f3b68444",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1368-1369|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1368-1369",
-    "fp": "82367a4ef6efb3a3",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1370-1371|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1370-1371",
+    "fp": "7231dcb5f75d55f6",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:191-195|0": {
@@ -959,28 +964,38 @@
     "fp": "f9d80a20a6e4a82a",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2731-2734|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2731-2734",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2733-2736|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2733-2736",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4689-4697|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4689-4697",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4691-4699|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4691-4699",
     "fp": "c21e48cf7e7cc497",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:7928-7930|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7928-7930",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4696-4697|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4696-4697",
+    "fp": "2ad4882c21a2f44c",
+    "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
+  },
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4696-4697|1": {
+    "anchor": "PRODUCT_BACKLOG.md:4696-4697",
+    "fp": "2ad4882c21a2f44c",
+    "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
+  },
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8032-8034|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8032-8034",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8094-8096|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8094-8096",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8198-8200|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8198-8200",
     "fp": "61ba99b5375e59ac",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8113-8117|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8113-8117",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8217-8221|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8217-8221",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -1133,6 +1148,11 @@
     "anchor": "scripts/check-anchors.mjs:553",
     "fp": "48c96e3374e4aff6",
     "head": "claim: claimBefore(lines, i, c.at, syntax),"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:651-653|0": {
+    "anchor": "scripts/check-anchors.mjs:651-653",
+    "fp": "cfb1a6c69abcd7ab",
+    "head": "// Narrowed to one scope and one anchor, because sharing an anchor across the document"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:718-764|0": {
     "anchor": "scripts/check-anchors.mjs:718-764",
@@ -1609,6 +1629,11 @@
     "fp": "082f8d3733d42e8c",
     "head": "// A duplicate is the reader's own working copy, so it does not inherit the claim to be"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:370-373|1": {
+    "anchor": "src/js/lib/model.js:370-373",
+    "fp": "082f8d3733d42e8c",
+    "head": "// A duplicate is the reader's own working copy, so it does not inherit the claim to be"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:408|0": {
     "anchor": "src/js/lib/model.js:408",
     "fp": "7e677e3b33cea4ce",
@@ -1620,6 +1645,11 @@
     "head": "// Issue metadata and read state intentionally survive: the same issues may be in other"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:427-439|0": {
+    "anchor": "src/js/lib/model.js:427-439",
+    "fp": "8eea39a20bf5889b",
+    "head": "export function restoreList(state, list, { index = null, active = false } = {}) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:427-439|1": {
     "anchor": "src/js/lib/model.js:427-439",
     "fp": "8eea39a20bf5889b",
     "head": "export function restoreList(state, list, { index = null, active = false } = {}) {"
@@ -1809,15 +1839,45 @@
     "fp": "0303a546d53cec76",
     "head": "function forgetDeleted() {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1614-1617|1": {
+    "anchor": "src/js/main.js:1614-1617",
+    "fp": "0303a546d53cec76",
+    "head": "function forgetDeleted() {"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1637-1645|0": {
     "anchor": "src/js/main.js:1637-1645",
     "fp": "57d5dcc60b96e0ae",
     "head": "function forgetDeletedFor(catalogId, orderName) {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1637-1645|1": {
+    "anchor": "src/js/main.js:1637-1645",
+    "fp": "57d5dcc60b96e0ae",
+    "head": "function forgetDeletedFor(catalogId, orderName) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1640|0": {
+    "anchor": "src/js/main.js:1640",
+    "fp": "5c0fc3bcf2044a48",
+    "head": "forgetDeleted();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1656|0": {
+    "anchor": "src/js/main.js:1656",
+    "fp": "5c0fc3bcf2044a48",
+    "head": "forgetDeleted();"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1660-1668|0": {
     "anchor": "src/js/main.js:1660-1668",
     "fp": "89d60f3de33dbfe0",
     "head": "store.update((s) => restoreList(s, list, { index, active: wasActive }));"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1660-1668|1": {
+    "anchor": "src/js/main.js:1660-1668",
+    "fp": "89d60f3de33dbfe0",
+    "head": "store.update((s) => restoreList(s, list, { index, active: wasActive }));"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1671|0": {
+    "anchor": "src/js/main.js:1671",
+    "fp": "5c0fc3bcf2044a48",
+    "head": "forgetDeleted();"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:1767|0": {
     "anchor": "src/js/main.js:1767",
@@ -1954,6 +2014,11 @@
     "fp": "040ed2d540e2a8c3",
     "head": "if (!store.lastUpdateOk) {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2913-2924|1": {
+    "anchor": "src/js/main.js:2913-2924",
+    "fp": "040ed2d540e2a8c3",
+    "head": "if (!store.lastUpdateOk) {"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2935-2941|0": {
     "anchor": "src/js/main.js:2935-2941",
     "fp": "e24ba789073145b4",
@@ -1965,6 +2030,11 @@
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2944|1": {
+    "anchor": "src/js/main.js:2944",
+    "fp": "fdade8739af79cef",
+    "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2944|2": {
     "anchor": "src/js/main.js:2944",
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
@@ -2024,7 +2094,17 @@
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3137-3143|1": {
+    "anchor": "src/js/main.js:3137-3143",
+    "fp": "8e57ce8810ab55d4",
+    "head": "$('#btn-undo-restore').addEventListener('click', () => {"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3142|0": {
+    "anchor": "src/js/main.js:3142",
+    "fp": "8a9fef9441555e07",
+    "head": "if (res.ok) forgetDeleted();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3142|1": {
     "anchor": "src/js/main.js:3142",
     "fp": "8a9fef9441555e07",
     "head": "if (res.ok) forgetDeleted();"
@@ -2049,6 +2129,11 @@
     "fp": "e44471191b3654e7",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3173-3195|1": {
+    "anchor": "src/js/main.js:3173-3195",
+    "fp": "e44471191b3654e7",
+    "head": "$('#btn-wipe').addEventListener('click', async () => {"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3180-3194|0": {
     "anchor": "src/js/main.js:3180-3194",
     "fp": "0564b73c45379041",
@@ -2059,7 +2144,22 @@
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3184|1": {
+    "anchor": "src/js/main.js:3184",
+    "fp": "5c0fc3bcf2044a48",
+    "head": "forgetDeleted();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3184|2": {
+    "anchor": "src/js/main.js:3184",
+    "fp": "5c0fc3bcf2044a48",
+    "head": "forgetDeleted();"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:323-334|0": {
+    "anchor": "src/js/main.js:323-334",
+    "fp": "78f3a58f75777356",
+    "head": "for (const [, note] of notices) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:323-334|1": {
     "anchor": "src/js/main.js:323-334",
     "fp": "78f3a58f75777356",
     "head": "for (const [, note] of notices) {"
@@ -2089,12 +2189,22 @@
     "fp": "f45f92986e6c37d0",
     "head": "function notify(sel, msg, kind = 'ok', key = sel, action = null) {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:371|1": {
+    "anchor": "src/js/main.js:371",
+    "fp": "f45f92986e6c37d0",
+    "head": "function notify(sel, msg, kind = 'ok', key = sel, action = null) {"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:38-39|0": {
     "anchor": "src/js/main.js:38-39",
     "fp": "9179653f1e66ad0d",
     "head": "const SETTINGS_KEY = 'mrt.settings';"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:394-398|0": {
+    "anchor": "src/js/main.js:394-398",
+    "fp": "a302dc0a5ea41bed",
+    "head": "// A button that is never spoken is a button a screen reader user cannot know to look for, and the"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:394-398|1": {
     "anchor": "src/js/main.js:394-398",
     "fp": "a302dc0a5ea41bed",
     "head": "// A button that is never spoken is a button a screen reader user cannot know to look for, and the"
@@ -3134,8 +3244,8 @@
     "fp": "7db7b41bf9740239",
     "head": "export function checkLedger(d) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:3866-3869|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3866-3869",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:3868-3871|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3868-3871",
     "fp": "90f2aa6431ce6b0c",
     "head": "by measuring the one draft it was filed from. Counting every repeated blank-free window within each"
   },
@@ -3199,10 +3309,20 @@
     "fp": "bd0da58f7569ec11",
     "head": "- name: Check publication boundary"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1368-1369|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1368-1369",
-    "fp": "82367a4ef6efb3a3",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1370-1371|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1370-1371",
+    "fp": "7231dcb5f75d55f6",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:651-653|0": {
+    "anchor": "scripts/check-anchors.mjs:651-653",
+    "fp": "cfb1a6c69abcd7ab",
+    "head": "// Narrowed to one scope and one anchor, because sharing an anchor across the document"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-123|PRODUCT_BACKLOG.md:8320-8321|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8320-8321",
+    "fp": "6df6a9fd9aa25849",
+    "head": "Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077"
   },
   "scripts/check-anchors.mjs|preamble|scripts/check-contract.mjs:1|0": {
     "anchor": "scripts/check-contract.mjs:1",

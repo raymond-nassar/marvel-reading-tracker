@@ -14,6 +14,22 @@ quote in a bug report.
 
 ## Unreleased
 
+### One project record pointed at the wrong line of code (BL-121)
+
+The project keeps a written record of how each part of the app works, and every claim in it names the
+exact lines of code it is about. One sentence described three different things the app does when it
+throws away the offer to undo a deleted list, and gave three addresses for them, but two of the three
+addresses were the same one. The line that erases everything was not named at all.
+
+Nothing you can see was wrong, and nothing you have saved is affected. This is a mistake in the
+project's own documentation, not in the app.
+
+It went unnoticed because the automated check that keeps those addresses honest reads the code at
+each address and confirms it says what the sentence claims, which both copies did. What it cannot
+read is that a list of three was answered with two. All thirteen addresses in that part of the record
+have now been read against the code they name; the other twelve were right. Two further problems
+found along the way have been added to the project's list of planned improvements.
+
 ### Switching cover art off now stops the covers being requested (BL-108)
 
 The cover art switch had a gap between what it said and what it did. Turning it off replaced every
