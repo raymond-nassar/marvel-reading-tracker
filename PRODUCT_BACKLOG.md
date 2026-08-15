@@ -9,15 +9,15 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Ninety-two items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Ninety-three items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-086, BL-087,
 BL-088, BL-089, BL-090, BL-093, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101,
-BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-115, BL-116,
-BL-121, BL-122, BL-123, BL-124 and BL-125.
+BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-114,
+BL-115, BL-116, BL-121, BL-122, BL-123, BL-124 and BL-125.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -205,7 +205,7 @@ are recorded rather than inherited.
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 939; 224 is the figure as audited.
+  it to 942; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -313,7 +313,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:247 |
 | BL-058 | Keep focus on the home grid and the rail when their lists rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | absent: any capture of the focused control before importCurated disables it, read of addFromCatalog and renderRail |
-| BL-114 | Bound what a single render paints, not just what a restore builds | Enabler | EP-06 | Follows BL-085 | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Ready | src/js/main.js:1101 |
+| BL-114 | Bound what a single render paints, not just what a restore builds | Enabler | EP-06 | Follows BL-085 | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:1101 |
 | BL-126 | Record what a vendoring lookup was told, rather than one empty item for every failure | Debt | EP-05 | Follows BL-109 | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Ready | scripts/vendor-orders.mjs:200-209 |
 | BL-037 | Keep the chosen filter across a reload | Story | EP-10 | Leaves alone | 3 | 1 | 1 | 2 | 2.5 | none | Observed | Shipped | src/js/main.js:100 |
 | BL-066 | Offer a reading order grouped by the collected editions it is sold in | Story | EP-02 | Leaves alone | 5 | 2 | 5 | 5 | 2.4 | none | Measured | Shipped | src/data/orders/new-ultimate-universe-trades.md:19 |
@@ -4579,7 +4579,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8941-8943` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8987-8989` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4589,11 +4589,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:206-208`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8960-8964`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9006-9010`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8775-8777` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8821-8823` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4801,7 +4801,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1962-1971` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1986-1995` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:196-200` and
 `PRODUCT_BACKLOG.md:206-208` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -7000,7 +7000,7 @@ browser holds. So the rule the two routes now share is not "withdraw on both". I
 the route the reader took promised that the data the offer would return is gone. A test pins the
 start fresh half, so reversing that decision silently turns the suite red.
 
-Eight tests, in `test/storage.test.js:1047-1200`. Each of the three lines that carries the rule was
+Eight tests, in `test/storage.test.js:1158-1311`. Each of the three lines that carries the rule was
 reverted on its own and named its own defenders. Dropping the withdrawal reddens both tests that
 assert what a written erase leaves in storage, because the staging one closes by naming the whole key
 set. Dropping the `discardStaging()` call reddens that staging test alone. Dropping only the
@@ -7944,9 +7944,9 @@ presence and so is the one of the three a count cannot make.
 
 **BL-114: Bound what a single render paints, not just what a restore builds**
 
-- [ ] Measure what the home tiles and the rail cost at a list count a restore can produce
-- [ ] Decide whether to bound the render, the state, or neither, and record which
-- [ ] Hold whichever answer is chosen to a test
+- [x] Measure what the home tiles and the rail cost at a list count a restore can produce
+- [x] Decide whether to bound the render, the state, or neither, and record which
+- [x] Hold whichever answer is chosen to a test
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -7956,17 +7956,63 @@ hold refuses honest data, and fixed the quadratic backfill that raise exposed. W
 is that a state which arrives with 250,000 lists is painted one tile per list at `src/js/main.js:1101`
 and one node per list on the rail, neither of them bounded.
 
-It is scored below the item that raised it, and deliberately. No origin holds a state that large: the
-most generous grants about 82,600 lists, and a state that will not fit is refused by the write with
-the quota message it always gave. So the shape that reaches these renders is a restore of a
-hand-edited file that is then refused on the way to storage, which paints before it refuses. That is a
-transient freeze on a file a user hand-built, not a loss of anything.
+The answer is neither, and the measurement is why. **The premise does not hold: a restore too large
+to store is never painted as the backup.** Driven through the app's own file input in headless Edge at
+1280x900, a backup of 13,000 lists was refused in 62 milliseconds with the rail left at 0 nodes and
+the origin untouched. Which of the three writes a restore makes is refused first depends on the
+sizes, and only the writes before `swapReached` skip the notification entirely. At 13,000 the
+staging copy fitted and the swap did not, so `settleAfterSwap` reconciled and repainted; what it
+repainted is the tracker that was there, which was empty, and that is why the rail read 0. What
+never runs on either branch is `adoptRestored`, so the backup itself is never handed to a render.
+The shape the item was filed against, the backup painted and then refused, is not a shape this code
+produces.
 
-It is filed rather than fixed because the fix is a decision, not a repair. Bounding the render means
-choosing what a reader sees when a list is not painted, and a tile silently missing from the home
-screen is a worse failure than a slow one. Bounding the state instead would reintroduce exactly the
-ceiling-as-quota that BL-085 spent three attempts establishing this app must not have. Doing neither
-is defensible on the evidence above. The measurement is cheap and should come before the choice.
+What a restore can land is also far below the count ceiling, and for a reason that has nothing to do
+with counts. `restore()` stages the serialized backup under a temporary key before it writes the
+main one, so the peak occupancy is two copies of the backup plus whatever the tracker already held.
+Edge granted this origin about 5.2 million characters, which is half the 10,485,760 the ceiling
+derivation in `src/js/lib/model.js:305-306` calls the most generous any browser grants. That figure
+is an upper bound across browsers and the derivation needs it to be, so a browser granting less does
+not disturb it; it does mean the reachable count here is smaller still. Measured: 12,000 named lists
+restored and painted, 13,000 was refused, and the boundary sits where two copies stop fitting.
+
+At that reachable ceiling the cost is not a freeze. The 12,000-list restore took 619 milliseconds
+end to end, which is parse, validate, write and a full repaint of both surfaces. Seeded directly and
+reloaded, the curve is linear in the list count and not quadratic: 250 lists booted in 67
+milliseconds, 1,000 in 177, 4,000 in 611, 8,000 in 1,081 and 16,000 in 2,247, with one repaint of
+both surfaces costing 59, 247, 457 and 984 milliseconds at the same counts. That is about 0.06
+milliseconds per list to repaint, and a reader who has hand-built a 12,000-list file is the only one
+who reaches it.
+
+So bounding the render would buy nothing that is reachable, and it would cost something real. The
+item says it itself: a tile silently missing from the home screen is a worse failure than a slow
+one. Bounding the state instead would reintroduce the ceiling-as-quota BL-085 spent three attempts
+establishing this app must not have.
+
+What holds the decision is the property it rests on, not the timings, which are one run on one
+machine. Three tests in `test/storage.test.js` now assert that a render is only ever handed a state
+storage accepted. The first takes the shape that refuses before the swap is reached, a storage with
+room to stage the backup but not to snapshot the tracker beside it, and asserts that nothing is
+repainted at all. The second takes the other refusal, where the swap itself is refused, and asserts
+that what the observer is handed is the tracker that is here rather than the backup. The third
+asserts the clause behind the reachable ceiling, that room for two copies restores where room for
+one and a half does not, without pinning either to a number. Evidence:
+`test/storage.test.js:1094-1116`, `test/storage.test.js:1137`.
+
+Each was proved able to fail before it was accepted, by the smallest change that should break it.
+Notifying the observer on the refusal that precedes the swap reddens the first alone. Handing
+`settleAfterSwap`'s notification the refused state rather than the reconciled one reddens the second
+alone. Removing the staging write reddens the first and third, and one older test that was already
+watching that key, which is the cross-check that the third is about the staging copy and not about
+room in general.
+
+One thing this did not change and deliberately leaves open. Growth by ordinary use is not staged:
+`persist()` writes the main key alone, so a tracker that grew rather than arrived can reach the
+whole origin rather than half of it, roughly 25,000 named lists. Nobody reaches that by importing
+curated orders, of which the catalog carries twelve, and every edit that gets there is one list
+larger than the last, so there is no moment at which a render is asked for something it was not
+asked for a moment earlier. It is recorded here because it is the one door the tests above do not
+watch, not because it is a hazard.
 
 **BL-115: Complete the ESLint 10 upgrade the grouped proposal could not**
 
@@ -9057,8 +9103,8 @@ those seven keep a score too, BL-025 having been dropped before it was ever scor
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
 open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and
-seventy-five further items filed, none of them labelled, one of which, BL-060, was parked in its
-turn, which is how it reaches 101 rows now. The ranks below are positions in it as it stands.
+seventy-six further items filed, none of them labelled, one of which, BL-060, was parked in its
+turn, which is how it reaches 102 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 101
 ranked rows, six adjacent pairs sit with the lower score above the higher: BL-062 below BL-063,
@@ -9069,14 +9115,22 @@ counted, and wrong outright in resting the decision on all of them having shippe
 
 Adjacency is also the wrong unit for the three rows that have not shipped. A reader choosing what to
 do next reads the rows still to be picked up and skips the rest, so a shipped row sitting between two
-open rows hides an inversion from a scan of neighbours. Nine rows carry `Ready`, which is what
+open rows hides an inversion from a scan of neighbours. Seven rows carry `Ready`, which is what
 the status key at `PRODUCT_BACKLOG.md:232` means by an item still to be picked up. Measured over
-those nine alone there are two inversions: BL-117 at 3.0 sits below BL-114 at 2.67, four places
+those seven alone there are two inversions: BL-117 at 3.0 sits below BL-126 at 2.67, four places
 down with three shipped rows between them, and BL-120 at 2.5 sits below BL-119 at 2.0. The first is
 invisible to the scan above, which pairs BL-117 with BL-038 and reports a disagreement between two
 rows nobody has to choose between. Counting the one `Proposed` row alongside them, the only other row
-neither shipped nor dropped, moves the population to ten and leaves both pairs exactly as they
+neither shipped nor dropped, moves the population to eight and leaves both pairs exactly as they
 are.
+
+Neither the count nor the first pair is stable, and shipping an item is what moves them. This
+paragraph named BL-114 until BL-114 shipped, at which point the same inversion re-formed one row
+lower against BL-126, which sits at the same 2.67 in the same block of equal scores. Nothing checks
+that: the counts gate reads the ledger figures and the id list, not a pair of ids named in prose, so
+an item shipping leaves this paragraph naming a row that is no longer in the population it claims to
+measure. Re-derive it from the table whenever a row's status changes, rather than reading it as
+settled.
 
 So what this appendix does with an inversion in a row that has not shipped is name it, and leave the
 order alone. Naming is a courtesy to a reader scanning the order; it is not what settles the next
