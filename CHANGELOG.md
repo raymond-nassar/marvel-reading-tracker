@@ -14,6 +14,32 @@ quote in a bug report.
 
 ## Unreleased
 
+### The browser evidence can now be rerun by anyone (BL-093)
+
+Quite a lot of what this project claims about how the app behaves came from driving a real browser
+through it and watching. That work was real, but it was done with scripts kept outside the project,
+so nobody who downloaded a copy could repeat any of it. The evidence existed and the means to check
+it did not.
+
+`npm run browser` now does it. It opens Edge, imports a reading list, moves between screens with the
+address bar and the Back button, marks an issue read and reloads to see it survive, damages the
+saved data on purpose to check the app offers help rather than wiping it, and clicks through to a
+comic to check the reading tab opens straight away. Twenty-seven checks, about two and a half
+seconds.
+
+**It cannot touch anything you have saved.** It runs the app on a spare address rather than the
+usual one, and the app keeps its data separately for each address, so everything this check saves
+and then deliberately breaks belongs to a copy that is thrown away when it finishes. There is
+nothing to clean up afterwards.
+
+It is not part of the automatic checks, because those run on a machine with no browser installed,
+and it needs one component that is deliberately not shipped with this project. If that component is
+missing it says so and tells you how to install it, rather than pretending the app is broken.
+
+A second command, `npm run browser:prove`, breaks the app five different ways on purpose and checks
+that each break is noticed. A check that has never been seen to fail proves nothing, and one of the
+five was not being noticed until this found it.
+
 ### The little server that runs the app is now tested (BL-094)
 
 Opening the app starts a small program on your own machine that hands the pages to your browser. It

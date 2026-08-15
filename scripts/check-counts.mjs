@@ -65,7 +65,7 @@ const ORDINAL_TENS = {
 //
 // The band above ninety-nine reads "a hundred and ninety-three" rather than "one hundred and
 // ninety-three" because that is how the backlog already writes a figure of that size, at
-// `PRODUCT_BACKLOG.md:2467`. Both are correct English and only one of them matches the
+// `PRODUCT_BACKLOG.md:2468`. Both are correct English and only one of them matches the
 // document, which is the only thing these words are for. The ceiling stops below two hundred
 // because no document here writes a figure that large, so its wording would be guessed
 // rather than matched, and a guess is what the null is here to prevent.
@@ -346,7 +346,13 @@ function sentenceAround(text, at) {
 // A claim is anchored on a count word or on an id, never on the bare phrase, because the
 // bare phrase is what a document quoting itself writes.
 const DELIVERED = new RegExp(`(?:(${WORD}) items|BL-\\d+) have since been delivered`, 'g');
-const REMAINING = new RegExp(`(${WORD}) of them are still \`([A-Za-z]+)\``, 'g');
+// The verb is part of the pattern and both forms are accepted, because the count this sentence
+// carries reaches one. "One of them are still `Ready`" is not English, and a gate that only knew
+// the plural would force the document to write it or, far worse, would match nothing and go
+// quiet: REMAINING is not counted by the `readable` backstop below, so an unmatched claim is
+// unchecked rather than reported. That is the silent skip the comment above wordNumber describes,
+// arriving by a different door.
+const REMAINING = new RegExp(`(${WORD}) of them (?:is|are) still \`([A-Za-z]+)\``, 'g');
 
 export function checkLedger(d) {
   const found = [];
@@ -409,7 +415,9 @@ export function checkLedger(d) {
     if (stated !== n) {
       found.push({
         line: flat.lineOf(m.index),
-        claim: `${m[1]} of them are still \`${status}\``,
+        // Quoted from the match rather than rebuilt with a chosen verb, so the finding names the
+        // sentence as the document writes it and can be searched for.
+        claim: m[0],
         message: `${n} rows${inRange(cohort)} are marked ${status}, so this should read ${titleCase(numberWord(n))}`,
       });
     }

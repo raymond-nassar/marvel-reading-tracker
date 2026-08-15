@@ -333,6 +333,51 @@ port, and `MRT_NO_OPEN=1` to stop it opening a browser for you.
 would fail builds for reasons unrelated to the change under test. Run it by hand before
 trusting a release.
 
+### The browser check
+
+```
+npm run browser
+```
+
+Drives installed Microsoft Edge through the five journeys the app exists for: importing a
+curated order, moving between views with the address bar and the Back button, keeping progress
+across a reload, meeting unreadable saved data with an offer rather than a wipe, and opening the
+reader tab inside the click that asked for it. It makes 27 assertions across those five and takes
+about 2.5 seconds.
+
+It needs two things that are not installed for you. The first is a browser driver, which is
+**deliberately not a dependency of this repository** and must not become one: nothing the app
+serves depends on it, and `npm ci` should stay as small as it is. Install it outside the tree:
+
+```
+mkdir ~/.mrt-scratch && cd ~/.mrt-scratch
+npm init -y && npm i puppeteer-core
+```
+
+The second is Edge itself, at one of the usual install paths. If either lives somewhere else,
+`MRT_PUPPETEER` and `MRT_EDGE` name them. A missing prerequisite exits **2** and prints how to
+fix it, which is a different answer from a failed assertion exiting 1: "the driver is not here"
+and "the app is broken" should not look alike. `MRT_HEADED=1` shows the browser doing the work.
+
+It is not part of CI, because CI has neither Edge nor the driver.
+
+**It writes nothing you have to clean up, and it cannot touch your reading progress.** The check
+serves the app on an ephemeral port rather than 8787, and a different port is a different storage
+bucket, so what it saves and corrupts is discarded with the browser it ran in. That is the same
+rule as [Always open the same address](#always-open-the-same-address), pointed the other way: what
+makes the app fussy about its address is what makes this check safe to run. Catalog data is
+stubbed with a three-issue fixture, so no vendored file is read and no network request is made.
+
+```
+npm run browser:prove
+```
+
+Runs each of the five scenarios again under five injected faults, and checks that each fault turns
+the scenario aimed at it red. A check that has never been seen to fail is not evidence, and this is
+where that is demonstrated rather than asserted: it reports the named assertion each fault breaks.
+It takes about three minutes, nearly all of it waiting out the timeouts a broken app produces, so
+it is a thing to run when the scenarios change rather than on every commit.
+
 ### Reviewing an update to a pinned action
 
 The workflow calls each third-party action by a full commit revision rather than by a tag,
