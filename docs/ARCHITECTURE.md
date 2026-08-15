@@ -100,7 +100,7 @@ to the reader's connection rather than to whichever base URL is configured. The 
 replaced at all.
 
 **The client can build its own limiter and cache, and in this app never does.** `MarvelApi` falls
-back to constructing both when it is handed neither, at `src/js/api.js:34-35`. That fallback is for
+back to constructing both when it is handed neither, at `src/js/api.js:41-42`. That fallback is for
 tests and for any future caller; the running app always passes its own, which is what keeps one
 budget across every request the page makes.
 
@@ -164,7 +164,7 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3591-3611`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3626-3646`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
