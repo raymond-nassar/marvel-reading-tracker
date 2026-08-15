@@ -172,17 +172,17 @@ remaining and is not scored.
 | 3.1 | BL-009 | P0 | parseChecklist and the import report at `src/js/main.js:2525-2581`, `src/js/lib/markdown.js:36-115` | Done |
 | 3.2 | BL-010 | P1 | unresolvedRow offers search, auto-accepts a unique exact match, else lists candidates with series and date at `src/js/main.js:2589-2658` | Done |
 | 3.3 | BL-011 | P1 | series and creator adds at `src/js/main.js:2487-2505`, manual issue add at `src/js/main.js:2660-2704` | Done |
-| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:1623-1643`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:362` | Done |
+| 3.4 | BL-012 | P2 | duplicate at `src/js/main.js:1623-1643`, with read progress deliberately shared rather than copied per `src/js/lib/model.js:368` | Done |
 | 4.1 | BL-013 | P0 | renderRail marks the active list with `aria-current` and a progress bar at `src/js/main.js:942-982` | Done |
 | 4.2 | BL-014 | P1 | the progress view is scoped to the active list at `src/js/main.js:3062-3096`, with a scope control at `src/index.html:371-375` and a subtitle that stops claiming every list at `src/js/main.js:3076-3078` | Done, shipped as BL-014 |
 | 4.3 | BL-015 | P1 | all four named filters plus All at `src/js/lib/readingFilters.js:25-48`, applied without touching stored order at `src/js/main.js:2030` | Done |
 | 4.4 | BL-016 | P1 | hero next-unread and Done, next at `src/index.html:295-330` | Done |
-| 4.5 | BL-017 | P2 | notes on both shapes at `src/js/lib/model.js:604-633`, quoted into the Markdown export at `src/js/lib/markdown.js:180-182` | Done, shipped as BL-017 |
+| 4.5 | BL-017 | P2 | notes on both shapes at `src/js/lib/model.js:610-639`, quoted into the Markdown export at `src/js/lib/markdown.js:180-182` | Done, shipped as BL-017 |
 | 5.1 | BL-018 | P0 | pending and by-hand badges at `src/js/main.js:2126-2132`, pending filter at `src/js/lib/readingFilters.js:46` | Done |
 | 5.2 | BL-019 | P1 | five-state availability model at `src/js/lib/availability.js:17-23`, hedged short labels at `src/js/main.js:2187-2192` | Done |
 | 5.3 | BL-020 | P1 | manual entries carry `source: 'manual'` at `src/js/main.js:2683` and render, reorder, export and back up like any other issue | Done |
 | 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:320-353` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:13` | Done |
-| 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:921-952` | Done |
+| 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:927-958` | Done |
 | 6.2 | BL-023 | P1 | same backup file restores on another browser, validated and atomic, with undo at `src/js/main.js:3289-3295` | Done |
 | 6.3 | BL-024 | P1 | Export as Markdown ships as a list tool, confirmed in the live DOM at `docs/ux-artifacts/viewport-sweep-reading.json` | Done |
 | 6.4 | BL-025 | P2 | not applicable. Ruled out by Repository Constraint 3, which forbids accounts and cloud services, and already listed as out of scope at the end of this document | Forbidden, Constraint 3 |
@@ -276,7 +276,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:662-678 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
-| BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:871 |
+| BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:877 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:3546-3609 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | 9 of the 22 heads git ls-remote advertised when this was filed were the head branches of already-merged pull requests |
 | BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/storage.js:329-332 |
@@ -286,7 +286,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:431-452 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
-| BL-086 | Keep cover requests inside the stated trust boundary | Defect | EP-05 | Extends BL-044 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/lib/model.js:179-188 |
+| BL-086 | Keep cover requests inside the stated trust boundary | Defect | EP-05 | Extends BL-044 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/lib/model.js:179-194 |
 | BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Ready | server.mjs:85-177 |
 | BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/main.js:563-567 |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | absent: committed browser-runner script, tracked-file inventory and package scripts |
@@ -334,7 +334,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-065 | Raise the six non-text boundaries that sit below 3:1 | Debt | EP-08 | Depends on | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Shipped | scripts/check-palette.mjs |
 | BL-036 | Make the current view and list addressable in the URL | Story | EP-10 | Leaves alone | 5 | 2 | 3 | 8 | 1.25 | none | Observed | Shipped | src/js/lib/route.js:35-43 |
 | BL-064 | Make the view file importable so its render paths can be tested | Enabler | EP-12 | Depends on | 3 | 2 | 8 | 13 | 1.0 | none | Measured | Shipped | src/js/app.js:12 |
-| BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Shipped | src/js/lib/model.js:613-621 |
+| BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Shipped | src/js/lib/model.js:619-627 |
 | BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:3626-3640 |
 
 ### Parked
@@ -498,7 +498,7 @@ keyed on those ids.
 - [x] Update the view subtitle, which currently states the count spans every list
 - [x] Keep the global unique-issue count reachable, since sharing read state across lists is deliberate
 
-Shipped. `seriesProgress` takes an optional list id at `src/js/lib/model.js:652-663`; omitting it
+Shipped. `seriesProgress` takes an optional list id at `src/js/lib/model.js:658-669`; omitting it
 keeps the cross-list aggregate the old callers relied on, so the global unique-issue count is a call
 away rather than gone. The progress view gained a two-option scope control at
 `src/index.html:371-375`, matching the reading filter's fieldset pattern rather than inventing a
@@ -511,8 +511,8 @@ answered by whichever list they are reading now, so the active list is the right
 the view opens.
 
 The case worth naming is no active list. `state.active` is null only when no list exists at all:
-`deleteList` falls back to the first surviving list at `src/js/lib/model.js:418` and load normalises
-a stale id at `src/js/lib/model.js:916`, so the two cannot come apart. That invariant also rules out
+`deleteList` falls back to the first surviving list at `src/js/lib/model.js:424` and load normalises
+a stale id at `src/js/lib/model.js:922`, so the two cannot come apart. That invariant also rules out
 the obvious justification for the fallback: it is not there to avoid an empty view, because with no
 list the global count renders "Nothing tracked yet." as well. It is there because the subtitle names
 the list, so scoping without one would dereference it. The whole fieldset is hidden in that state,
@@ -551,7 +551,7 @@ Shipped, and the first task's own wording was the trap. "Behind a schema migrati
 version bump, and a bump would have made every existing reader's data unreadable. `migrate` returns
 early when the version matches and takes the upgrade path only below 2, so a stored version 2 blob
 against a `SCHEMA_VERSION` of 3 matches neither branch and reaches the throw at
-`src/js/lib/model.js:838-839`, which latches the "Could not read your saved data" banner. Measured
+`src/js/lib/model.js:844-845`, which latches the "Could not read your saved data" banner. Measured
 before the field was added: versions 2.5, 3 and 4 all throw today, 1 and 2 load. Notes are
 therefore additive and the version is unchanged, which is also what the changelog's own MINOR
 definition asks for.
@@ -562,7 +562,7 @@ keys one at a time rather than spreading, so an unnamed map never reaches the ba
 storage in the first place. The second was found only by running a probe against the real functions
 after the plan had asserted the opposite, which is the contrarian wave doing its job.
 
-An issue note is global, keyed by issue id at `src/js/lib/model.js:613-621`, for the same reason
+An issue note is global, keyed by issue id at `src/js/lib/model.js:619-627`, for the same reason
 read state is: the bundled minimal and full orders overlap heavily, so a note tied to one path
 through an issue would vanish when the reader took another. A list note is a field on the list,
 because it dies with the list, and it is deliberately separate from `description`, which holds the
@@ -1310,7 +1310,7 @@ Done here, in BL-035: the undo after a delete, and the wording that goes with it
 Constraint gate: checked 1 to 11, none breached. No constraint is engaged; the undo buffer is
 in-memory and local.
 
-Shipped. `restoreList` at `src/js/lib/model.js:437-449` puts a list back at the index it held,
+Shipped. `restoreList` at `src/js/lib/model.js:443-455` puts a list back at the index it held,
 because appending it to the end would be a different list order from the one the reader built, and
 a rail that silently reorders itself is not an undo. The caller holds both the removed list object
 and its index, since `deleteList` is the only thing that knows both and neither survives in the
@@ -1322,7 +1322,7 @@ come back on its own: undoing a restore can bring the same id back, and importin
 order again brings the same order back under a new id. `restoreList` refuses both, returning the
 state unchanged, because splicing the stale copy in would either overwrite work or leave two lists
 answering to one catalog entry. That second state is the one `duplicateList` clears `catalogId` to
-avoid at `src/js/lib/model.js:380-383`: "in library" and "Continue reading" would both resolve to
+avoid at `src/js/lib/model.js:386-389`: "in library" and "Continue reading" would both resolve to
 whichever list came first in the rail, and the rail would show two entries with the same name and
 the same progress. Both refusals are covered by tests.
 
@@ -1451,7 +1451,7 @@ before writing, which is not an optimisation: writing a hash fires `hashchange`,
 calls back into `showView`, which syncs again. The comparison is what stops that running away.
 
 **A stale list id is corrected rather than obeyed.** `setActive` returns the state untouched when
-the id is unknown, at `src/js/lib/model.js:451-453`, so an address naming a deleted list would
+the id is unknown, at `src/js/lib/model.js:457-459`, so an address naming a deleted list would
 otherwise leave a different order on screen while the address claimed the missing one. The reading
 view hands over to the landing page when there is no list at all, and the trailing sync rewrites
 the address to whatever is actually showing.
@@ -1681,12 +1681,12 @@ choice above.
 Constraint gate: checked 1 to 11, none breached. No constraint is engaged; both views read data the
 app already holds.
 
-Shipped. The two selectors are `readIssues` and `manualIssues` in `src/js/lib/model.js:683-733`,
+Shipped. The two selectors are `readIssues` and `manualIssues` in `src/js/lib/model.js:689-739`,
 sitting in the derived section beside `seriesProgress`, and the pages themselves are described once
 in `src/js/lib/library.js:27-51` and rendered by a single function at `src/js/main.js:3103-3121`.
 
 The reason Everything read reads the read map rather than walking the lists is the sentence above
-`deleteList` at `src/js/lib/model.js:419-420`: issue metadata and read state survive the deletion of
+`deleteList` at `src/js/lib/model.js:425-426`: issue metadata and read state survive the deletion of
 the list that introduced them, deliberately, so that deleting one list never destroys progress
 shared with another. The consequence was that an issue you read inside an order you later deleted
 appeared on no screen in the app at all. The progress view iterates `listOrder`, the reading view
@@ -1732,8 +1732,8 @@ is not a usable number. Review found that guard sits in `coerce`, which runs on 
 branch alone. The v1 branch rebuilds the state from scratch and writes read state through `markRead`
 instead, which stored its argument verbatim, so restoring a v1 backup carrying `readAt: "banana"`
 did put "Invalid Date" on the page. Reproduced end to end through `validateBackup` before it was
-believed. The coercion now lives in `markRead` at `src/js/lib/model.js:573-580`, written the same way
-`coerce` writes it at `src/js/lib/model.js:852`, so the two paths cannot disagree and every future
+believed. The coercion now lives in `markRead` at `src/js/lib/model.js:579-586`, written the same way
+`coerce` writes it at `src/js/lib/model.js:858`, so the two paths cannot disagree and every future
 caller inherits it.
 
 The test written alongside the original claim exercised only the current-schema shape, so it pinned
@@ -3167,9 +3167,9 @@ members answer truthy to an index and none of them answers true to `Object.hasOw
 `constructor`, `toString`, `hasOwnProperty`, `valueOf` and `isPrototypeOf`.
 
 `coerce` in `src/js/lib/model.js` reads a stored id by index three times. It writes each list with
-`lists[k] = {...}` at `src/js/lib/model.js:871`, filters the stored order with `lists[id]` at
-`src/js/lib/model.js:899`, and picks the active list with `lists[raw.active]` at
-`src/js/lib/model.js:916`.
+`lists[k] = {...}` at `src/js/lib/model.js:877`, filters the stored order with `lists[id]` at
+`src/js/lib/model.js:905`, and picks the active list with `lists[raw.active]` at
+`src/js/lib/model.js:922`.
 
 Measured on the tree as it stands, driving `migrate` with state parsed from real JSON text, which is
 how a restored backup arrives. Two results, and the second is the serious one.
@@ -4577,7 +4577,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8637-8639` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8651-8653` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4587,11 +4587,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:205-207`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8656-8660`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8670-8674`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8471-8473` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8485-8487` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4799,7 +4799,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1861-1870` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1868-1877` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:195-199` and
 `PRODUCT_BACKLOG.md:205-207` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5172,7 +5172,7 @@ Constraint gate: checked 1 to 11, none breached.
 The file picker read any selected file fully before validation. Structural validation checked object
 shapes but capped neither collections nor strings, and restore coercion skipped the list-name and
 description limits ordinary creation applies. This is a user-selected availability risk, not a remote
-attack. Evidence: `src/js/main.js:3250-3278`, `src/js/lib/model.js:843-952`.
+attack. Evidence: `src/js/main.js:3250-3278`, `src/js/lib/model.js:849-958`.
 
 Four measurements sized every ceiling, all taken against the twelve shipped orders, which come to
 507 unique issues. A backup of every order as imported is 374,432 characters; with every issue read
@@ -5474,6 +5474,18 @@ development server sends, so the URL policy and the directive cannot drift apart
 whole `host` rather than `hostname`, so a port cannot be smuggled past it, and requires `https`, so
 a downgrade cannot either.
 
+Review found the pin could be walked through rather than around. The check reads a parsed copy of
+the address, and the first implementation then stored the string the service had sent, so a
+character the URL parser escapes travelled on unescaped. The double quote is one. A cover path
+carrying one really is on the pinned host, so it was accepted, and the hero background is built as
+`url("<address>")`, so that quote closed the layer and a second one naming any host could follow it
+inside the same declaration. The browser policy blocked the request, which is why nothing left the
+machine under `npm start`, but the policy was then carrying the pin by itself and five shipped
+sentences credit the refusal rather than the policy. `allowedCoverUrl` now returns the parsed
+address serialized again, so what is stored is the string the check was made against, and the
+escaping happens at the one place an address is admitted rather than at each place one is
+interpolated. All 700 bundled covers serialize to themselves, so nothing that ships changes.
+
 A mutation run is what makes the four boxes evidence rather than assertion. Nine single-edit
 mutants were applied one at a time, each restored and the file checked byte-identical afterwards:
 dropping the host check, comparing by suffix so `evil-i.annihil.us` passes, using `hostname` so a
@@ -5482,10 +5494,12 @@ port passes, dropping the scheme clause, widening `img-src` back to all of `http
 giving a bundled catalog entry a foreign host. Eight were caught on the first pass. The survivor
 was real: nothing asserted that a plain `http` address on the pinned host is refused, which is the
 one case where the host is right and the scheme is not. With that assertion added the run caught
-all nine.
+all nine. The fix above added a tenth decision to defend, keeping the sender's string rather than
+the parsed address, and the run was extended to match: ten of ten caught, the tenth by the single
+test written for it.
 
-Evidence: `src/js/lib/coverHost.js:25`, `src/js/lib/coverHost.js:45`, `src/js/lib/model.js:179-188`,
-`server.mjs:52-58`, `src/index.html:526-531`.
+Evidence: `src/js/lib/coverHost.js:25`, `src/js/lib/coverHost.js:46`, `src/js/lib/coverHost.js:55`,
+`src/js/lib/model.js:179-194`, `server.mjs:52-58`, `src/index.html:526-531`.
 
 **BL-087: State the network privacy boundary where the promise appears**
 
@@ -7420,7 +7434,7 @@ ten orders that have no gaps. The 63 items are 34 distinct issues, because the t
 overlap and `pendingIssueIds` collects into a set keyed by issue id across every list, so the item
 count and the figure a reader would ever see are different numbers and only the second belongs on a
 button. Evidence: `src/js/main.js:2987`, `src/js/lib/model.js:168`,
-`src/js/lib/model.js:735`.
+`src/js/lib/model.js:741`.
 
 Inferring the flag on its own would be the wrong fix, and that is the substance of this item rather
 than a caution attached to it. It lights up **Fetch details for 34 issues**, and upstream answers 404
@@ -7928,8 +7942,8 @@ the sentence's point about that path is that a button labelled undo swaps the st
 handler shows and the bare call does not.
 
 The second task found nothing else to fix. All thirteen citations in that block were read against
-the code they name, and the twelve besides this one are sound: `src/js/lib/model.js:437-449` is
-`restoreList`, `src/js/lib/model.js:380-383` is the comment on a duplicate not inheriting the
+the code they name, and the twelve besides this one are sound: `src/js/lib/model.js:443-455` is
+`restoreList`, `src/js/lib/model.js:386-389` is the comment on a duplicate not inheriting the
 catalog claim, `src/js/main.js:1676-1679` is `forgetDeleted` itself, `src/js/main.js:1699-1707` is
 `forgetDeletedFor`, `src/js/main.js:3022` is its one call, `src/js/main.js:2991-3002` is the
 half-import rollback, `src/js/main.js:431` is `notify` with its `action` parameter,
@@ -8572,7 +8586,7 @@ both directions: JSON backup for round-tripping and Markdown export for reading 
 runtime dependencies and plain ES modules mean nothing to reconcile with a host application.
 
 Evidence: `package.json:1-32` (no `dependencies` key at all, `engines.node >= 20`),
-`src/js/lib/model.js:921-952` (validated backup shape).
+`src/js/lib/model.js:927-958` (validated backup shape).
 
 The fixed `127.0.0.1:8787` origin is a deliberate storage-bucket decision rather than a
 compatibility gap, so it is recorded here and not proposed for change.
@@ -8609,7 +8623,7 @@ than overwriting, offers a salvage download, and explains itself. A backup from 
 refused rather than mangled. A fault-injection harness ships alongside the app.
 
 Evidence: `src/index.html:142-157` (blocked banner, saving paused, salvage offered),
-`src/js/lib/model.js:763-839` (migrate refuses an unsupported schema version),
+`src/js/lib/model.js:769-845` (migrate refuses an unsupported schema version),
 `src/dev-faults.html` (fault-injection harness).
 
 - Gap: none of this is verified automatically on change. There is no continuous integration, so the
@@ -8681,7 +8695,7 @@ Swept in full rather than dispositioned.
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
   Evidence: `src/js/main.js:3297-3317`, `src/js/lib/cachePolicy.js:16-20`,
-  `src/js/lib/model.js:12` and `src/js/lib/model.js:763-839`.
+  `src/js/lib/model.js:12` and `src/js/lib/model.js:769-845`.
 - Scalability: not applicable, because the app serves one reader in one browser profile on one
   machine, so there is no dimension along which load grows. The volume question that does matter,
   a single list of a few hundred issues, is recorded under performance efficiency above.
@@ -8700,8 +8714,8 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Empty states | No gap. The unseeded landing state explains what the app is for and routes to the catalog rather than showing a bare shell. Evidence: `docs/ux-artifacts/01-landing-firstrun-1280.png`, `src/index.html:38-41`. |
 | Error handling and recovery | Gap, closed by BL-034. Curated import used to report failure through native `alert()` while every other path used the in-page notice system. It now writes to a pane chosen when the message is written, so on the landing page the reason appears beside the catalog it is about rather than stopping the page, and it is not left in a view the reader has already scrolled or navigated away from. Evidence: `src/js/main.js:2981`, `src/js/main.js:2999-3001`, `src/js/main.js:3031` against `src/js/main.js:347-463`. |
 | Offline behavior | No gap, and no proposal. Probed as required rather than treated as a caching problem. With the local server running and no internet, the app starts, reads saved state, imports any bundled curated list and marks issues read, because those paths touch only same-origin files. Only cover images, metadata hydration and search degrade, and hydration failure is already surfaced as a pending state rather than as silence. Evidence: `src/data/house_of_m.json`, `src/js/main.js:2126-2132` (pending and by-hand badges), `absent: serviceWorker|navigator.onLine|manifest.json, case-insensitive grep across src/`. Repository Constraint 1 forbids caching cover bytes, so no cover-caching improvement is proposed. |
-| Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:921-952`, `src/js/main.js:3289-3295`. |
-| Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:12`, `src/js/lib/model.js:763-839`, `test/model.test.js:559-561`. |
+| Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:927-958`, `src/js/main.js:3289-3295`. |
+| Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:12`, `src/js/lib/model.js:769-845`, `test/model.test.js:559-561`. |
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3599-3602`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:121-131`. Resolved: `BL-030` shipped both, assembled at `server.mjs:52-63` and sent at `server.mjs:126` and `server.mjs:129`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:25-40` and onto the read out of storage at `src/js/main.js:465-489`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3300-3301`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |

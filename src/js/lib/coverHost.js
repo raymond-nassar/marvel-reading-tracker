@@ -33,14 +33,30 @@ export const COVER_IMAGE_HOST = 'i.annihil.us';
 // `host` rather than `hostname`, so a port cannot be smuggled in: the pinned host reached on port
 // 8080 is a different endpoint from the CDN and is refused, which matches the directive, since a
 // source expression without a port permits only the default one.
-export function isAllowedCoverUrl(value) {
+export function allowedCoverUrl(value) {
   let u;
   try {
     u = new URL(String(value));
   } catch {
-    return false;
+    return null;
   }
-  // Stated positively, the way isAllowedApiBase states its schemes: a URL has to match both
-  // clauses to be allowed, so an unexpected scheme is refused by default rather than by omission.
-  return u.protocol === 'https:' && u.host === COVER_IMAGE_HOST;
+  // Written as the one pair of values that is accepted, the way isAllowedApiBase enumerates its
+  // schemes, so an unexpected scheme is refused by default rather than by omission from a list of
+  // known-bad ones. The early return inverts that pair to reach the refusal; it does not widen it.
+  if (u.protocol !== 'https:' || u.host !== COVER_IMAGE_HOST) return null;
+  // The serialized URL, not the caller's string. Comparing a parsed copy and then keeping the
+  // original leaves the parser's escaping behind, and one of the characters it escapes is the
+  // double quote. A cover path carrying one really is on the pinned host, so it passes, and the
+  // hero background is built as url("<address>"), so the quote closes that layer and a second
+  // layer naming any host can follow it. Returning the serialized form percent-encodes the quote
+  // at the one place a cover address is admitted rather than at each place one is interpolated,
+  // which is the property the rest of this file claims. Nothing shipped changes: all 700 bundled
+  // cover paths serialize to themselves.
+  return u.href;
+}
+
+// The question rather than the admission, for callers testing an address they are not about to
+// store. Both forms answer from the same parse so they cannot come apart.
+export function isAllowedCoverUrl(value) {
+  return allowedCoverUrl(value) !== null;
 }

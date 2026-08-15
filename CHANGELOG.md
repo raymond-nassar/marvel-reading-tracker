@@ -37,6 +37,13 @@ the app lets you point it at your own copy of the comics database, and pinning w
 that. True of the database, but the app never asks the database for a picture, only for an address
 inside its answer, so your own copy keeps working exactly as before.
 
+One gap in this turned up in review. The app read each address properly to check it, then kept the
+original text rather than the version it had just read. That let a piece of punctuation hidden
+inside an otherwise genuine Marvel address smuggle a second address, on any server at all, in
+behind it. The check now keeps what it read, so the punctuation is written out harmlessly. Nothing
+you can see changes: every cover that ships with the app is already written exactly the way the
+check writes it.
+
 ### A slow metadata service no longer repeats itself at you (BL-124)
 
 When the service this app fetches issue details from asks it to slow down, it waits and tries

@@ -150,7 +150,7 @@ The parts of that worth saying in words.
 
 **The transform is pure and the store is the only writer.** The button's handler at
 `src/js/main.js:2108-2111` hands the store a function; the function itself, at
-`src/js/lib/model.js:582-584`, returns a new state and touches nothing. Everything that decides
+`src/js/lib/model.js:588-590`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
 `src/js/storage.js:365-392`.
 

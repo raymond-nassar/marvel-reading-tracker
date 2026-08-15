@@ -63,6 +63,27 @@ test('a port, an embedded credential or plain http does not make a host the CDN'
   assert.equal(isAllowedCoverUrl(`http://${COVER_IMAGE_HOST}/u/x`), false);
 });
 
+// The pin walked through rather than around. The check reads a parsed copy of the address, so
+// whatever it stores has to be that parse serialized: a path carrying a double quote really is on
+// the pinned host and is accepted, and if the sender's string were kept the quote would close the
+// url("...") the hero background is built as, letting a second layer naming any host follow it
+// inside the same declaration. Held at the chokepoint, measured at the sink.
+test('a quote in a cover path cannot open a second layer in the hero background', () => {
+  const hostile = { path: `https://${COVER_IMAGE_HOST}/u/x"),url("https://tracker.example/p`, extension: 'jpg' };
+  const url = coverUrl(normalizeIssue({ issueId: 1, title: 'T', cover: hostile }), 'detail');
+  assert.ok(url, 'the address is on the pinned host, so it is accepted rather than refused');
+  assert.ok(!url.includes('"'), `a quote survived into the built URL: ${url}`);
+  assert.equal(new URL(url).host, COVER_IMAGE_HOST, 'the built URL must still resolve to the CDN');
+
+  // The declaration exactly as renderHero builds it, whose shape is pinned by the census below.
+  // Layers are counted by the string delimiters rather than by occurrences of `url(`: the encoded
+  // path still reads `url(` as text, harmlessly, because it sits inside the one quoted string. Two
+  // quotes means that string is opened once and closed once, which is what one layer is.
+  const declaration = `url("${url}")`;
+  assert.equal((declaration.match(/"/g) ?? []).length, 2, `${declaration} closes its string early, so it paints more than one layer`);
+  assert.equal(new URL(declaration.slice(5, -2)).host, COVER_IMAGE_HOST, 'the one layer must name the CDN');
+});
+
 // The point of refusing at normalizeCover rather than at the point of painting: no URL is ever
 // built, so there is nothing for a caller to request even if it ignores the setting entirely.
 test('a hostile cover yields no URL for any builder to request', () => {
@@ -78,29 +99,51 @@ test('a hostile cover cannot ride in on a restored backup', () => {
   assert.equal(issue.cover, null, 'the address is dropped rather than stored unusable');
 });
 
-// The inventory the pin was chosen from. If a future vendoring run introduces a host that is not
-// the pinned one, every cover in that order would silently become a typographic tile; this fails
-// instead, and names the file, so the pin is revisited deliberately rather than discovered later.
-test('every cover in the bundled reading orders is on the pinned host', () => {
+// The inventory the pin was chosen from, walked once and read by the two tests below. Every
+// bundled order is scanned rather than a sample, because the claim each makes is about all of them.
+function scanBundledCovers() {
   const dir = join(ROOT, 'src/data');
   const hosts = new Map();
+  const reserialized = [];
   let covers = 0;
   const scan = (node, file) => {
     if (!node || typeof node !== 'object') return;
     if (Array.isArray(node)) { node.forEach((n) => scan(n, file)); return; }
     if (node.cover && typeof node.cover === 'object' && typeof node.cover.path === 'string') {
       covers += 1;
+      const upgraded = node.cover.path.replace(/^http:/, 'https:');
       let host;
-      try { host = new URL(node.cover.path.replace(/^http:/, 'https:')).host; } catch { host = `unparseable in ${file}`; }
+      try { host = new URL(upgraded).host; } catch { host = `unparseable in ${file}`; }
       hosts.set(host, (hosts.get(host) ?? 0) + 1);
+      const stored = normalizeCover(node.cover)?.path;
+      if (stored !== upgraded) reserialized.push({ file, upgraded, stored });
     }
     for (const k of Object.keys(node)) scan(node[k], file);
   };
   for (const f of readdirSync(dir).filter((n) => n.endsWith('.json'))) {
     scan(JSON.parse(readFileSync(join(dir, f), 'utf8')), f);
   }
+  return { covers, hosts, reserialized };
+}
+
+// If a future vendoring run introduces a host that is not the pinned one, every cover in that
+// order would silently become a typographic tile; this fails instead, and names the file, so the
+// pin is revisited deliberately rather than discovered later.
+test('every cover in the bundled reading orders is on the pinned host', () => {
+  const { covers, hosts } = scanBundledCovers();
   assert.ok(covers > 0, 'the bundled orders must still carry covers for this to measure anything');
   assert.deepEqual([...hosts.keys()], [COVER_IMAGE_HOST], `bundled covers name ${[...hosts.keys()].join(', ')}`);
+});
+
+// What is stored is the parsed address serialized again rather than the string the file carries,
+// which is what keeps the check and the stored value the same string. That rewrite is only ever
+// visible on an address that was not already in normal form, and nothing shipped is: every bundled
+// cover serializes to itself. This says so if a vendoring run ever introduces one that does not,
+// since a stored path quietly differing from its source file is worth knowing about.
+test('serializing the address changes no cover that ships', () => {
+  const { covers, reserialized } = scanBundledCovers();
+  assert.ok(covers > 0, 'the bundled orders must still carry covers for this to measure anything');
+  assert.deepEqual(reserialized, [], 'a bundled cover path is stored differently from how it is written');
 });
 
 // The half of the pin the browser enforces. server.mjs imports the constant, so the two cannot

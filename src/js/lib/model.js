@@ -7,7 +7,7 @@
 // Lists therefore hold ordered ID references only, and every issue's metadata is stored once.
 
 import { compareIssues } from './sort.js';
-import { isAllowedCoverUrl } from './coverHost.js';
+import { allowedCoverUrl } from './coverHost.js';
 
 export const SCHEMA_VERSION = 2;
 
@@ -174,18 +174,24 @@ export function normalizeIssue(input) {
 // does not block the image as mixed content.
 export function normalizeCover(cover) {
   if (!cover || typeof cover !== 'object') return null;
-  const path = typeof cover.path === 'string' ? cover.path.replace(/^http:\/\//i, 'https://') : null;
+  const raw = typeof cover.path === 'string' ? cover.path.replace(/^http:\/\//i, 'https://') : null;
   const ext = cover.ext ?? cover.extension ?? 'jpg';
-  if (!path) return null;
+  if (!raw) return null;
   // This is the only place a cover URL is admitted, and every request for one is built from what
   // it returns, so refusing here is what makes the host pin a pin rather than a preference. The
-  // scheme is checked inside isAllowedCoverUrl, which is why there is no separate https test.
+  // scheme is checked inside allowedCoverUrl, which is why there is no separate https test.
+  //
+  // What comes back is the parsed address serialized again, so what gets stored is the string the
+  // check was made against rather than the one the service sent. Keeping the sender's string would
+  // let a character the parser escapes travel on unescaped into the CSS the hero background is
+  // built from.
   //
   // A refused cover becomes no cover, the same answer an over-long one gets, so the view falls
   // back to the typographic tile it already draws for an issue that never had one. Keeping the
   // address instead would store a URL the app has just decided it will never request, and a
   // restored backup carrying one would put it back on every load.
-  if (!isAllowedCoverUrl(path)) return null;
+  const path = allowedCoverUrl(raw);
+  if (!path) return null;
   // Truncating a URL would produce a link to nothing, so an over-long one is refused outright the
   // same way a non-https one is. The longest real cover path across every shipped order is 58.
   if (path.length > MAX_URL) return null;
