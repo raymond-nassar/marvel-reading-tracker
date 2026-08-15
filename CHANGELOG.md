@@ -14,6 +14,23 @@ quote in a bug report.
 
 ## Unreleased
 
+### An import that arrives short of details now tells you how many (BL-110)
+
+Two of the twelve bundled reading orders contain issues that Marvel's own data no longer holds
+anything about: 63 of them, in the two Ultimate Universe orders. They import as normal and appear in
+your list with a title, a number and a link, but no cover and nothing to open in Marvel Unlimited.
+Nothing was said about that, so the list simply looked wrong.
+
+Importing now says so. If any issues arrived that way you are told how many, and if any issues have
+no Marvel Unlimited link at all you are told that as a separate number, because those two things are
+not the same and only one of them means the issue cannot be opened. Nothing you have already saved
+changes, and no import behaves differently: the only difference is that the gap is admitted instead
+of left to be discovered.
+
+The number used to be read from a field the reading orders carry, and that field only ever counted
+the second kind. It read zero for every order this app ships, including the two that have the gap,
+so the sentence never appeared. It is now counted from the issues themselves.
+
 ### Opening an issue or a change now gives you the right form to fill in (BL-098)
 
 Nothing about the app changes and nothing you have saved is affected. What is new is what you see

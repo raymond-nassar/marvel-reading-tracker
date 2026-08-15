@@ -79,6 +79,57 @@ export function newId(prefix = 'list') {
 
 // ---------------------------------------------------------------- issues
 
+// Whether a record arrived carrying anything beyond the line it was read from. Only
+// /v1/issues/{id} returns these two fields, so holding neither means no lookup ever answered for
+// this issue, whatever the reason. Exported because the same question is asked from two places
+// that must not come to answer it differently: here, to infer the hydrated flag for an issue
+// added without one, and by countOrderGaps, to count how many of an order's items arrived empty.
+export function hasMetadata(input) {
+  return input?.digitalId != null || input?.seriesId != null;
+}
+
+// A curated order can fall short of complete metadata in two unrelated ways, and a reader told
+// about only one of them is left to wonder about the other.
+//
+// A checklist line carrying no Marvel link at all is vendored as a placeholder: a negative id and
+// nothing else, so the app will not offer to open it. A line that carried a link whose lookup was
+// then refused upstream becomes a fully formed record with a real, positive id and every metadata
+// field empty, and nothing on it records what happened. The two look nothing alike to a reader,
+// so they are counted apart and said apart.
+//
+// Counted from the items rather than read from the payload's own `placeholders` field. That field
+// counts only the first kind, two of the twelve shipped orders were vendored before it existed and
+// carry no count at all, and a hand-edited file could carry a stale one. The items are what the
+// reader actually receives, so they are what is counted.
+export function countOrderGaps(order) {
+  const items = Array.isArray(order?.items) ? order.items : [];
+  let placeholders = 0;
+  let empty = 0;
+  for (const item of items) {
+    // Exclusive, because a placeholder holds no metadata either and would otherwise be reported
+    // twice, under two different explanations of the same missing issue.
+    if (item?.placeholder === true) placeholders += 1;
+    else if (!hasMetadata(item)) empty += 1;
+  }
+  return { placeholders, empty };
+}
+
+// Said in the order a reader meets them. The second sentence deliberately claims nothing about
+// whether the issue can be opened: those items carry a real, positive issue id, so the app does
+// open a tab for them and the lookup fails in the tab. Repeating "cannot be opened" here would be
+// a false promise of the same shape as the silence it replaces.
+export function orderGapSentences(order) {
+  const { placeholders, empty } = countOrderGaps(order);
+  const out = [];
+  if (placeholders) {
+    out.push(`${placeholders} of them ${placeholders === 1 ? 'has' : 'have'} no Marvel Unlimited link yet and cannot be opened.`);
+  }
+  if (empty) {
+    out.push(`${empty} of them came with no details at all, so ${empty === 1 ? 'it shows' : 'they show'} no cover and ${empty === 1 ? 'has' : 'have'} no Unlimited link.`);
+  }
+  return out;
+}
+
 // A hand-added issue with no marvel.com URL gets a negative synthetic id (see doManual), which
 // is namespaced away from real Marvel ids. Rejecting those here silently discarded the entry
 // while the UI reported success, so negatives are accepted; only 0 and non-integers are refused.
@@ -113,7 +164,7 @@ export function normalizeIssue(input) {
     source: clampScalar(input.source ?? 'api'),
     // "pending" means imported from Markdown and not yet enriched. The UI shows this
     // honestly rather than guessing at missing fields.
-    hydrated: clampScalar(input.hydrated ?? (input.digitalId != null || input.seriesId != null)),
+    hydrated: clampScalar(input.hydrated ?? hasMetadata(input)),
   };
 }
 

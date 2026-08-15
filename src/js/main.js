@@ -8,7 +8,7 @@ import {
   createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
   setOverride, pendingIssueIds, coverUrl, listForCatalogId, SCHEMA_VERSION,
-  setIssueNote, setListNote, MAX_BACKUP_BYTES,
+  setIssueNote, setListNote, MAX_BACKUP_BYTES, orderGapSentences,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { LIBRARY_VIEWS } from './lib/library.js';
@@ -2912,14 +2912,13 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
       store.update((s) => setActive(s, listId));
     }
 
-    // Some curated orders include issues Marvel has not published data for yet. They are
-    // imported as placeholders so the reading order stays complete and tickable; saying so
-    // is the difference between a known gap and a list that looks wrong for no reason.
-    const placeholders = Number(order.placeholders) || 0;
+    // Some curated orders are short of metadata, in two ways that look nothing alike to a reader
+    // and had been reported as one. Saying so is the difference between a known gap and a list
+    // that looks wrong for no reason. The counts come from the items rather than from the
+    // order's own `placeholders` field, which counts only the first kind and reads 0 for every
+    // order this app currently ships while 63 items across two of them hold nothing at all.
     const parts = [`${navigate ? 'Imported' : 'Added'} ${order.name}: ${added} issues.`];
-    if (placeholders) {
-      parts.push(`${placeholders} of them have no Marvel Unlimited link yet and cannot be opened.`);
-    }
+    parts.push(...orderGapSentences(order));
     parts.push('Any issues you had already read stay read.');
     if (!navigate) parts.push('It is now in your sidebar.');
     const withdrawn = forgetDeletedFor(catalogId, order.name);

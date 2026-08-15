@@ -9,7 +9,7 @@ import {
   setOverride, upNext, listProgress, seriesProgress, listItems, pendingIssueIds,
   hydrationOrder, migrate, validateBackup, exportBackup, normalizeIssue, upsertIssue,
   normalizeCover, coverUrl, listForCatalogId, listCollections, SCHEMA_VERSION, MAX_NAME, MAX_DESCRIPTION,
-  newId,
+  newId, hasMetadata, countOrderGaps, orderGapSentences,
 } from '../src/js/lib/model.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -875,4 +875,144 @@ test('ids minted in bulk within one millisecond are all distinct', () => {
   } finally {
     Date.now = realNow;
   }
+});
+
+// BL-110. An order is short of metadata in two unrelated ways and import reported only one of
+// them, from a payload field that reads 0 for every order this app ships. These fix the count at
+// the level the reader is told about it, which is where the defect was.
+test('the two kinds of gap in an order are counted apart', () => {
+  const order = {
+    items: [
+      { issueId: 1, seriesId: 10, digitalId: 100 },
+      { issueId: 2, seriesId: null, digitalId: null },
+      { issueId: 3, seriesId: null, digitalId: null },
+      { issueId: -4, seriesId: null, digitalId: null, placeholder: true },
+    ],
+  };
+  assert.deepEqual(countOrderGaps(order), { placeholders: 1, empty: 2 });
+});
+
+test('a placeholder is not also counted as an item that came back empty', () => {
+  // A placeholder holds no metadata either, so an inclusive count would report the same missing
+  // issue twice under two explanations. One issue, one gap, one number.
+  const order = { items: [{ issueId: -1, placeholder: true }] };
+  const { placeholders, empty } = countOrderGaps(order);
+  assert.equal(placeholders, 1);
+  assert.equal(empty, 0);
+});
+
+test('an order with neither kind of gap reports neither, and says nothing', () => {
+  const order = { items: [{ issueId: 1, seriesId: 10, digitalId: 100 }, { issueId: 2, seriesId: 11, digitalId: 101 }] };
+  assert.deepEqual(countOrderGaps(order), { placeholders: 0, empty: 0 });
+  assert.deepEqual(orderGapSentences(order), []);
+});
+
+test('an item counts as carrying metadata on either field, not only on both', () => {
+  // The two fields arrive from the same endpoint, so in the shipped data they are present or
+  // absent together. Requiring both would start counting a real record as a gap the first time
+  // upstream returns one without a digitalId, which is an issue that exists and is not on
+  // Unlimited rather than an issue nothing answered for.
+  assert.equal(hasMetadata({ seriesId: 10, digitalId: null }), true);
+  assert.equal(hasMetadata({ seriesId: null, digitalId: 100 }), true);
+  assert.equal(hasMetadata({ seriesId: null, digitalId: null }), false);
+  assert.equal(hasMetadata(null), false);
+});
+
+test('the counts come from the items, not from the order payload that claims them', () => {
+  // The payload field is what import used to read. Two of the shipped orders predate it entirely,
+  // and it counts only the first kind of gap, so it is exactly the number this item exists to
+  // stop trusting. An order asserting nothing is missing does not get to be believed over its
+  // own items.
+  const order = {
+    placeholders: 0,
+    items: [{ issueId: 1, seriesId: null, digitalId: null }, { issueId: -2, placeholder: true }],
+  };
+  assert.deepEqual(countOrderGaps(order), { placeholders: 1, empty: 1 });
+
+  const noItems = { placeholders: 7 };
+  assert.deepEqual(countOrderGaps(noItems), { placeholders: 0, empty: 0 });
+});
+
+test('both gaps are disclosed, and the second sentence does not repeat what the first one promises', () => {
+  const order = {
+    items: [
+      { issueId: 1, seriesId: 10, digitalId: 100 },
+      { issueId: 2, seriesId: null, digitalId: null },
+      { issueId: -3, placeholder: true },
+    ],
+  };
+  const said = orderGapSentences(order);
+  assert.equal(said.length, 2);
+  assert.match(said[0], /^1 of them has no Marvel Unlimited link yet and cannot be opened\.$/);
+  assert.match(said[1], /^1 of them came with no details at all, so it shows no cover and has no Unlimited link\.$/);
+  // An item that came back empty carries a real, positive issue id, so the app does open a tab
+  // for it and the lookup fails there. Claiming it cannot be opened would be false in the
+  // opposite direction from the silence this replaces.
+  assert.ok(!said[1].includes('cannot be opened'));
+});
+
+test('a gap of one is not described in the plural', () => {
+  const one = orderGapSentences({ items: [{ issueId: 1, seriesId: null, digitalId: null }] });
+  assert.equal(one.length, 1);
+  assert.ok(one[0].startsWith('1 of them came with no details at all, so it shows'));
+  const two = orderGapSentences({
+    items: [{ issueId: 1, seriesId: null, digitalId: null }, { issueId: 2, seriesId: null, digitalId: null }],
+  });
+  assert.ok(two[0].startsWith('2 of them came with no details at all, so they show'));
+});
+
+// The unit tests above would all pass against an order shape nobody ships. This one is the claim
+// that matters: the gap the reader is now told about is a gap the bundled data actually has, and
+// it is the one the old count could never report. Derived from the files rather than from a list
+// of which orders are affected, which is the enumeration this repository keeps being bitten by.
+test('the bundled orders carry a gap the payload field never reported', () => {
+  const dataDir = join(ROOT, 'src', 'data');
+  const catalog = JSON.parse(readFileSync(join(dataDir, 'catalog.json'), 'utf8'));
+  const lists = catalog.lists ?? catalog;
+  assert.ok(lists.length > 0);
+
+  let empty = 0;
+  let placeholders = 0;
+  let claimed = 0;
+  let affected = 0;
+  for (const list of lists) {
+    const order = JSON.parse(readFileSync(join(dataDir, list.file), 'utf8'));
+    const gaps = countOrderGaps(order);
+    empty += gaps.empty;
+    placeholders += gaps.placeholders;
+    claimed += Number(order.placeholders) || 0;
+    if (gaps.empty > 0) affected += 1;
+    // Whatever the payload does claim has to be the truth about its own items, or the field is
+    // reporting one order's gap while describing another's.
+    if (order.placeholders != null) {
+      assert.equal(gaps.placeholders, Number(order.placeholders), `${list.file}: placeholder count disagrees with its items`);
+    }
+  }
+
+  assert.ok(empty > 0, 'no bundled order has an item that came back empty, so this check proves nothing');
+  assert.equal(claimed, 0, 'the payload field now reports something; re-derive the figures in the record');
+  assert.equal(placeholders, 0, 'a bundled order now has a placeholder; re-derive the figures in the record');
+  // Read on 2026-08-14 across the twelve bundled orders. Written down as an observation rather
+  // than a floor: it moves whenever an order is re-vendored, and moving it should mean editing
+  // this line deliberately rather than watching a range quietly widen.
+  assert.equal(empty, 63);
+  assert.equal(affected, 2);
+});
+
+// Every check above passes with the import path reverted, because they all call the counter
+// directly and the defect was never in a counter. It was in which number import read. So the one
+// assertion that would have caught the original bug is this one: that the announcement is built
+// from the items and no longer from the field.
+//
+// Asserted against the source text because `importCurated` needs a document, a store and a fetch
+// to run, which is the same reason `test/library.test.js` reads this file rather than calling it.
+test('import builds its gap disclosure from the items, not from the order payload', () => {
+  const main = readFileSync(join(ROOT, 'src', 'js', 'main.js'), 'utf8');
+  const body = main.slice(main.indexOf('async function importCurated('), main.indexOf('// ------------------------------------------------------------------ progress'));
+  assert.ok(body.length > 0, 'importCurated is no longer where this check looks for it');
+  assert.match(body, /parts\.push\(\.\.\.orderGapSentences\(order\)\);/, 'the import summary no longer says what the order is missing');
+  assert.ok(
+    !/order\.placeholders/.test(body),
+    'import reads the placeholder count off the order payload again, which is 0 for every order this app ships',
+  );
 });
