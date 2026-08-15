@@ -5,7 +5,7 @@
   "source": null,
   "sourceOrigin": "Compiled for this project",
   "sourceLicense": null,
-  "generatedAt": "2026-08-08T05:00:40.018Z",
+  "generatedAt": "2026-08-15T14:34:56.807Z",
   "apiBase": "https://marvel.emreparker.com/v1",
   "count": 132,
   "collections": 23,
@@ -2658,6 +2658,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimates Vol. 3: Rescue Mission"
     },
     {
@@ -2826,6 +2827,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Wolverine Vol. 2: Logan"
     },
     {
@@ -2842,6 +2844,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Wolverine Vol. 2: Logan"
     },
     {
@@ -2978,6 +2981,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Spider-Man Vol. 4: One Last Day"
     },
     {
@@ -2994,6 +2998,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Spider-Man Vol. 4: One Last Day"
     },
     {
@@ -3106,6 +3111,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
     },
     {
@@ -3122,6 +3128,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
     },
     {
@@ -3138,6 +3145,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Black Panther Vol. 4: Destiny and Destruction"
     },
     {
@@ -3197,6 +3205,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
     },
     {
@@ -3213,6 +3222,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
     },
     {
@@ -3229,6 +3239,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
     },
     {
@@ -3245,6 +3256,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate X-Men Vol. 4: Children's Whereabouts"
     },
     {
@@ -3261,6 +3273,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimates Vol. 4: Uprising"
     },
     {
@@ -3277,6 +3290,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimates Vol. 4: Uprising"
     },
     {
@@ -3293,6 +3307,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimates Vol. 4: Uprising"
     },
     {
@@ -3309,6 +3324,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimates Vol. 4: Uprising"
     },
     {
@@ -3325,6 +3341,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimates Vol. 4: Uprising"
     },
     {
@@ -3341,6 +3358,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimates Vol. 4: Uprising"
     },
     {
@@ -3357,6 +3375,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimates Vol. 4: Uprising"
     },
     {
@@ -3373,6 +3392,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Wolverine Vol. 3: The Maker's Mark"
     },
     {
@@ -3389,6 +3409,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Wolverine Vol. 3: The Maker's Mark"
     },
     {
@@ -3405,6 +3426,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Wolverine Vol. 3: The Maker's Mark"
     },
     {
@@ -3421,6 +3443,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Wolverine Vol. 3: The Maker's Mark"
     },
     {
@@ -3437,6 +3460,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Universe: Finale"
     },
     {
@@ -3453,6 +3477,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Endgame"
     },
     {
@@ -3469,6 +3494,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Endgame"
     },
     {
@@ -3485,6 +3511,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Endgame"
     },
     {
@@ -3501,6 +3528,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Endgame"
     },
     {
@@ -3517,6 +3545,7 @@
       "description": null,
       "pageCount": null,
       "creators": [],
+      "detailsRefused": true,
       "collectedIn": "Ultimate Endgame"
     }
   ]

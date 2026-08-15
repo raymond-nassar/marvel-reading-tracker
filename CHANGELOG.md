@@ -37,6 +37,33 @@ rather than reprints and leaving them out would have moved the issues around the
 The outline ran out partway through X-Factor's second year, so the order stops there. Fall of the
 Mutants, Inferno and everything after are not in it yet. Nothing you have already saved is affected.
 
+### The catalog now records what it was told about a missing issue, rather than guessing from silence (BL-126)
+
+Nothing you have saved is affected, and nothing on screen looks different today. This is about how
+the ready-made reading orders are built, and about the app being right for the right reason.
+
+Some issues in those orders have no cover and no description, because Marvel's own catalogue holds
+no record of them. A recent change let the app say so plainly instead of leaving them queued up
+forever waiting for details that were never coming. But the way it knew was to look at an issue with
+nothing on it and conclude nobody had it. That reasoning is fine right up until the moment the tool
+that builds these orders loses its internet connection halfway through, at which point it produces
+exactly the same empty entry and the app confidently tells you an issue does not exist when it does.
+
+The tool now tells the four things apart: a flat "no such issue", a service too busy to answer, a
+dropped connection, and a reply it could not read. Only the first is recorded on the issue as a
+settled answer. If any of the other three happens, the run stops and names every issue it could not
+get an answer about, rather than writing a file that looks complete. A reply that arrives carrying
+nothing usable is treated the same way, using the app's own test for whether an issue has details,
+so the two halves of the app cannot drift apart on what "no such issue" means. The two affected
+orders were rebuilt against the live catalogue, where all thirty-four issues in question came back
+as genuinely absent, so what ships is now a recorded fact rather than an inference.
+
+For maintainers: the agent instructions gained a note about the evidence-anchor gate. A citation whose
+line range is written out malformed is not reported as broken, because the gate's pattern does not
+recognise it as a citation at all; it simply vanishes from the corpus. One did, during the rebase this
+change went through, and only an unrelated test caught it. The instructions now say to check that a
+scripted re-aim produced well-formed citations before blessing them.
+
 ### A test that guards restore speed no longer fails just because the machine is busy (BL-117)
 
 Nothing in the app changes and nothing you have saved is affected. This is entirely about the

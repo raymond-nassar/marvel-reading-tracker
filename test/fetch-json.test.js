@@ -85,7 +85,13 @@ test('a 500 is retried, a 404 is not', async () => {
   assert.equal(server.calls.length, 2);
 
   const missing = makeFetcher([404]);
-  await assert.rejects(() => missing.getJson('/b'), /^Error: 404 \/b$/);
+  await assert.rejects(() => missing.getJson('/b'), (err) => {
+    assert.equal(err.message, '404 /b');
+    // The status is the whole point of the type: a caller deciding whether an issue is genuinely
+    // absent must not have to read it back out of a message string.
+    assert.equal(err.status, 404);
+    return true;
+  });
   assert.equal(missing.calls.length, 1, 'a 404 is the answer, not a failure to get one');
 });
 
@@ -95,7 +101,13 @@ test('a 500 is retried, a 404 is not', async () => {
 test('retries stop at six attempts and the error names the status', async () => {
   const { getJson, calls } = makeFetcher([503]);
   await withDeadline(
-    assert.rejects(() => getJson('/c'), /^Error: 503 after retries: \/c$/),
+    assert.rejects(() => getJson('/c'), (err) => {
+      assert.equal(err.message, '503 after retries: /c');
+      // Carried here too, and deliberately not 404: a caller keying a settled absence on the
+      // status must read an exhausted retry budget as no answer rather than as an answer.
+      assert.equal(err.status, 503);
+      return true;
+    }),
     'the exhausted retry',
   );
   assert.equal(calls.length, MAX_ATTEMPTS);

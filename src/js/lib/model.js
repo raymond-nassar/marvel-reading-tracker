@@ -93,18 +93,27 @@ export function hasMetadata(input) {
 // not hold this" is not, and the app had no way to say which it was looking at, so 34 issues sat in
 // a queue that could only ever spend rate limit to learn the same 404 again.
 //
-// A curated order is the output of a completed vendoring run, so every item in it has already been
-// looked up. An item that arrives from one holding nothing has therefore been asked about and come
-// back empty, and that is knowable at import without asking anything. A refusal met at runtime is
-// recorded by markDetailsRefused instead. Both land in this one field so the rest of the app asks
-// the question once.
+// A refusal now reaches the app three ways, and this is the weakest of them. A vendored item that
+// was refused says so on itself, in the `detailsRefused` field the normalizer reads below, because
+// the run that built the file is the only thing that knows which of four unlike failures it met. A
+// refusal met at runtime is recorded by markDetailsRefused. Both land in that one field so the rest
+// of the app asks the question once.
 //
-// The inference is one step weaker than it reads. vendor-orders.mjs catches every lookup failure
-// alike and writes the same empty item for a 404, an exhausted retry budget and a lost connection,
-// so an outage during a vendoring run would produce items this treats as refusals. It holds for the
-// data shipped today: all 63 empty items are in the two Ultimate orders, and four of them were
-// checked against the live API on 2026-08-15 and answered 404. Making the vendoring run record what
-// it was actually told is filed as BL-126.
+// This inference is what carries a tracker imported before the field existed. A curated order is
+// the output of a completed vendoring run, so every item in it has already been looked up, and an
+// item from one holding nothing has therefore been asked about and come back empty. That was the
+// only signal available when the orders that predate the field were vendored, and coerce() runs every
+// stored issue back through the normalizer on load, so a tracker that predates the field is
+// corrected rather than left to spend a lookup relearning the same 404.
+//
+// It is an inference and not a reading, and the gap it used to leave was real: the run wrote the
+// same empty item for a 404, an exhausted retry budget, a lost connection and an unparseable body,
+// so an outage during a run produced items this would read as refusals. That gap is closed at the
+// producer rather than here. A run now aborts before writing anything if any lookup ended without
+// an answer, whether it failed or came back carrying nothing hasMetadata accepts, so an empty item
+// in a file built from now on can only be a refusal, and the 63 empty items in the two orders that
+// predate the field were re-vendored on 2026-08-15, when all 34 unique ids behind them answered 404
+// and every one gained the field.
 function refusedOnArrival(input) {
   return input?.source === 'curated' && !hasMetadata(input);
 }

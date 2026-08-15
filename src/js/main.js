@@ -3033,9 +3033,10 @@ async function importCurated(list, btn, { navigate = true, report = '#catalog-re
     store.update((s) => {
       // No `hydrated: true` here. It was asserted over the whole file, which is right for the 688
       // items that carry metadata and a false statement about the 63 that carry none. normalizeIssue
-      // infers it from the item instead, and marks the empty ones as refused rather than pending,
-      // because a curated order is the output of a completed vendoring run and those were already
-      // looked up.
+      // infers it from the item instead, and marks the empty ones as refused rather than pending.
+      // Those 63 now say so on themselves: the vendoring run records which lookups upstream refused
+      // and aborts rather than writing an item for one it never got an answer about, so this is
+      // reading what the run was told rather than reading emptiness and calling it an answer.
       const r = addIssuesToList(s, listId, order.items.map((i) => ({ ...i, source: 'curated' })), {});
       added = r.added;
       return r.state;

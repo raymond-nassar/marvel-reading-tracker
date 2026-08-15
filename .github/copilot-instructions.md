@@ -253,6 +253,18 @@ perfectly well either way, so the print will not save you. Compute the mapping o
 and if you have to run again, recompute it against the tree you actually have rather than replaying
 the one you had.
 
+Whatever a re-aiming script emits, check that it is a well-formed citation before you bless. A range
+whose end lands inside a changed hunk has no arithmetic answer, and a script that writes the answer
+out anyway emits a range whose end reads `null` where a number belongs. The gate's citation pattern
+does not match that, so it is not a drift and not a loss: the citation is **silently dropped from the
+corpus**, and the three-line range it named becomes nothing at all. A malformed anchor is worse than
+a wrong one, because a wrong one drifts and a malformed one disappears. The one that happened here
+was caught by an unrelated test that asserts the lock still holds a sentence stating a file's size,
+which stopped being true when the entry vanished; nothing in the anchors round itself said a word. So
+grep the diff for any citation that is not a path, a colon, digits, and optionally a hyphen and more
+digits, and treat the total citation count as a figure to re-derive rather than one to assume is
+preserved.
+
 ## Claims the gates do not check
 
 The anchors gate protects `path:line` citations. It does not protect anything else you assert, and

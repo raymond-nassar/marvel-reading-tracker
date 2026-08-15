@@ -22,6 +22,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createJsonFetcher } from './lib/fetch-json.mjs';
+import { lookupIssues } from './lib/lookup-issues.mjs';
 import { parseChecklist } from '../src/js/lib/markdown.js';
 import { parseCatalog } from '../src/js/lib/catalog.js';
 import { parseManifest } from '../src/js/lib/curated.js';
@@ -195,18 +196,14 @@ async function main() {
   const ids = [...new Set(parsed.flatMap((p) => p.entries.map((e) => e.issueId)))];
   if (ids.length) console.log(`Hydrating ${ids.length} unique issues (rate limited, expect a few minutes)...`);
 
-  const meta = new Map();
-  let done = 0;
-  for (const id of ids) {
-    try {
-      const d = await getJson(`${API}/issues/${id}`);
-      meta.set(id, d);
-    } catch (err) {
-      console.warn(`  ! issue ${id}: ${err.message}`);
-    }
-    done += 1;
-    if (done % 25 === 0) console.log(`  ${done}/${ids.length}`);
-  }
+  const { meta, refused } = await lookupIssues(ids, {
+    getJson,
+    url: (id) => `${API}/issues/${id}`,
+    onProgress: ({ done, total, id, refused: wasRefused }) => {
+      if (wasRefused) console.warn(`  ! issue ${id}: upstream holds no record of it (404)`);
+      if (done % 25 === 0) console.log(`  ${done}/${total}`);
+    },
+  });
 
   await mkdir(DATA_DIR, { recursive: true });
 
@@ -239,6 +236,13 @@ async function main() {
           creators: Array.isArray(d.creators)
             ? d.creators.filter((c) => /writer|penciler|artist/i.test(c.role ?? '')).map((c) => ({ name: c.name, role: c.role }))
             : [],
+          // The one thing this run learned that the item cannot otherwise show. An issue the
+          // service answered 404 for is recorded here as refused, so the app is reading what the
+          // lookup was told instead of inferring it from every field being empty. Written only
+          // when it is true, so an order with nothing refused re-vendors with no per-item change
+          // at all. The file still differs, because generatedAt is a fresh wall clock on every
+          // run, so an empty diff is not the thing to check a run against.
+          ...(refused.has(e.issueId) ? { detailsRefused: true } : {}),
           // The collected edition this issue belongs to, taken from the checklist's own
           // sub-headings. It is the curator's grouping, not Marvel's: the metadata API carries
           // no collection record for anything published after 2023, so there is nothing
