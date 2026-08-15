@@ -12,17 +12,28 @@ import { readFileSync } from 'node:fs';
 
 import { eraseDialogBody, eraseOutcome } from '../src/js/main.js';
 
-// Only the fields the wording reads. A real copy carries chars, at and live as well, and none of
-// them changes a sentence: what is said depends on how many there are, not on what is in them.
-const copy = (key) => ({ key });
+// Only the fields the wording reads: how many there are, and whether any of them is live. chars
+// and at belong to the row on screen rather than to this sentence, and a fixture that carried
+// them would suggest they were read here.
+const copy = (key, live = false) => ({ key, live });
 const one = [copy('mrt.state.salvage')];
 const two = [copy('mrt.state.salvage'), copy('mrt.state.salvage.1700000000000')];
+const oneLive = [copy('mrt.state.salvage', true)];
+const twoOneLive = [copy('mrt.state.salvage', true), copy('mrt.state.salvage.1700000000000')];
 
 const HEADING = 'Copies kept after a failed read';
 
-test('with nothing kept aside the dialog still claims everything, because then it is true', () => {
+// The branch with nothing to disclose, which is not the branch with nothing to correct. It used
+// to say the route clears everything this browser has stored for the tracker, and two names
+// survive every erase: mrt.settings and sidebar.collapsed are written by the app and removed by
+// nothing, so that sentence was false for any reader who had ever changed the theme. It is the
+// same defect as the one BL-113 was raised for, in the one branch nobody thought to check
+// because it looked like the easy case.
+test('with nothing kept aside the dialog claims the lists and the progress, and not the settings', () => {
   const body = eraseDialogBody([]);
-  assert.match(body, /clears everything this browser has stored for the tracker/);
+  assert.doesNotMatch(body, /everything this browser has stored/);
+  assert.match(body, /clears every list and all reading progress/);
+  assert.match(body, /settings are kept/);
   assert.match(body, /It cannot be undone\.$/);
   assert.doesNotMatch(body, /kept aside/, 'and it does not raise a subject the reader has no copies in');
 });
@@ -42,6 +53,29 @@ test('the dialog stops claiming everything once a copy is being kept aside', () 
 test('the dialog says where what survives can be found', () => {
   assert.match(eraseDialogBody(one), new RegExp(`"${HEADING}" above`));
   assert.match(eraseDialogBody(one), /own Remove button/);
+});
+
+// The promise the screen behind the dialog does not always keep. renderSalvage() puts a note
+// where Remove would be while a copy is live, so a dialog naming that button unconditionally
+// sends the reader to a control that is not there, and it does it in the state a copy is
+// likeliest to be in: live is what a copy is for as long as the data it copies is still saved,
+// which on the erase screen is right up until the moment the reader presses the button.
+test('the dialog only names the Remove button when the copy actually has one', () => {
+  assert.match(eraseDialogBody(one), /own Remove button/);
+
+  const live = eraseDialogBody(oneLive);
+  assert.doesNotMatch(live, /Remove button/, 'the screen is withholding it, so the dialog must not name it');
+  assert.match(live, new RegExp(`"${HEADING}" above`), 'but where it is stays said either way');
+  assert.match(live, /only you can remove it/);
+});
+
+// One live copy out of two is enough to withhold the claim, because the sentence is one sentence
+// about all of them and there is no true reading of "their own Remove button" when one has none.
+test('one live copy among several withholds the button claim for all of them', () => {
+  const said = eraseDialogBody(twoOneLive);
+  assert.doesNotMatch(said, /Remove button/);
+  assert.match(said, /2 copies of data this app could not read are kept aside/);
+  assert.match(said, /only you can remove them/);
 });
 
 test('one copy and several copies are counted and agreed with', () => {
@@ -129,14 +163,20 @@ test('the heading the wording names is the heading the page has, and it is above
 // whether the sentence exists somewhere would pass on the mutant it was written to catch.
 test('the erase dialog is built by the policy, not by a literal at the button', () => {
   const src = readFileSync(new URL('../src/js/main.js', import.meta.url), 'utf8');
-  const claim = 'This clears everything this browser has stored for the tracker.';
+  const lead = 'This clears every list and all reading progress. Your settings are kept.';
+  const gone = 'clears everything this browser has stored for the tracker';
 
-  assert.equal(src.split(claim).length - 1, 1, 'a second copy means a call site is claiming it inline again');
+  assert.equal(src.split(lead).length - 1, 1, 'a second copy means a call site is building the body inline again');
+  assert.equal(
+    src.split(gone).length - 1,
+    0,
+    'and the sentence two survivors made false must not come back, at the policy or at the button',
+  );
   const policy = src.indexOf('export function eraseDialogBody');
   const next = src.indexOf('export function eraseOutcome');
-  const at = src.indexOf(claim);
+  const at = src.indexOf(lead);
   assert.ok(policy !== -1 && next > policy, 'the two policies must both still be there, in order');
-  assert.ok(at > policy && at < next, 'and the claim has to sit inside the branch that earns it');
+  assert.ok(at > policy && at < next, 'and the lead has to sit inside the policy that composes it');
   assert.match(src, /body: eraseDialogBody\(store\.salvageCopies\(\)\)/);
 });
 
@@ -153,9 +193,10 @@ test('the erase message is composed at the button from what storage says then', 
 });
 
 // The list the two sentences above send the reader to is painted on arrival at that screen, and
-// the erase happens without an arrival because the button is on it. A refused erase can create
-// the first copy this browser has held, so the surface naming copies has to be rebuilt before
-// the message that names them is said. test/storage.test.js holds the store half of that.
+// the erase happens without an arrival because the button is on it. Both outcomes move a row: an
+// erase that lands makes a live copy removable, and an erase that is refused can create the first
+// copy this browser has held. So the surface naming copies has to be rebuilt before the message
+// that names them is said. test/storage.test.js holds the store half of both.
 test('the erase route repaints the salvage list, and does it before it speaks', () => {
   const src = readFileSync(new URL('../src/js/main.js', import.meta.url), 'utf8');
   const handler = src.indexOf("$('#btn-wipe')");

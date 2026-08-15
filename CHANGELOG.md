@@ -17,19 +17,26 @@ quote in a bug report.
 ### Erasing everything now says what it does not reach (BL-113)
 
 In plain English: when this app cannot read your saved data, it puts a copy of it aside rather than
-losing it, and that copy is listed on the backup screen with its own Remove button. Erasing
+losing it, and that copy is listed on the backup screen, where only you can remove it. Erasing
 everything has never touched those copies, on purpose, because nothing here can know whether you
 still want data it could not open itself. The dialog said it clears everything this browser has
-stored, which was true unless you had one of those copies, and misleading exactly when it mattered.
+stored, which was not true whenever one of those copies existed, and misleading exactly when it
+mattered.
 
-The erase still works the same way and still leaves the copies alone. What changed is that it now
-tells you so before you confirm, says how many there are and where to find them, and repeats it
-afterwards. If you have no copies kept aside, which is almost everyone, nothing about the dialog or
-the message has changed at all.
+That sentence turned out to be wrong for everyone else too. Your settings, the theme and whether
+cover art is shown and the rest, are stored apart from your lists and are not touched by erasing
+either. So the dialog now says it clears every list and all reading progress, says your settings
+are kept, and, when you do have copies kept aside, says how many there are and where to find them.
+The erase itself still works exactly as it did.
 
-One more thing was fixed alongside it. If another tab or program changes your saved data while the
-backup screen is open, pressing Erase is refused and a copy is set aside instead, and the list of
-copies on screen did not update to show it. It does now.
+The dialog also used to promise a Remove button beside each copy. That button is held back while
+the copy is still standing in for data the app is using, which on the erase screen is the usual
+case, so the dialog now only mentions it when it is really there.
+
+One more thing was fixed alongside all of that. If another tab or program changes your saved data
+while the backup screen is open, the list of copies could go stale in either direction: an erase
+that is refused can set a copy aside the list does not show, and an erase that goes through can
+make a copy removable while the list still says it is not. The list is now rebuilt either way.
 
 ### A screen reader is now told when detail fetching starts and finishes (BL-090)
 

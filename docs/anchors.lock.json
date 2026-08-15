@@ -54,8 +54,8 @@
     "fp": "b70cf478e0e33507",
     "head": "function announceIfSaved(msg) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3573-3593|0": {
-    "anchor": "src/js/main.js:3573-3593",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3591-3611|0": {
+    "anchor": "src/js/main.js:3591-3611",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -104,8 +104,8 @@
     "fp": "ba2f2ef80f02d08a",
     "head": "export class RateLimiter {"
   },
-  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:3298-3300|0": {
-    "anchor": "src/js/main.js:3298-3300",
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:3312-3314|0": {
+    "anchor": "src/js/main.js:3312-3314",
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
   },
@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8344|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8344",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8366|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8366",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -504,8 +504,8 @@
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:3573-3593|0": {
-    "anchor": "src/js/main.js:3573-3593",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:3591-3611|0": {
+    "anchor": "src/js/main.js:3591-3611",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -544,8 +544,8 @@
     "fp": "6cbc2f6bdb1dc112",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:3275-3281|0": {
-    "anchor": "src/js/main.js:3275-3281",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:3289-3295|0": {
+    "anchor": "src/js/main.js:3289-3295",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -644,8 +644,8 @@
     "fp": "9506c658d50524d8",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:3573-3593|0": {
-    "anchor": "src/js/main.js:3573-3593",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:3591-3611|0": {
+    "anchor": "src/js/main.js:3591-3611",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -684,8 +684,8 @@
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:3275-3281|0": {
-    "anchor": "src/js/main.js:3275-3281",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:3289-3295|0": {
+    "anchor": "src/js/main.js:3289-3295",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -749,8 +749,8 @@
     "fp": "7aa18c32ba31e0a8",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:3573-3593|0": {
-    "anchor": "src/js/main.js:3573-3593",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:3591-3611|0": {
+    "anchor": "src/js/main.js:3591-3611",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -794,8 +794,8 @@
     "fp": "31193066f7e84653",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:3283-3303|0": {
-    "anchor": "src/js/main.js:3283-3303",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:3297-3317|0": {
+    "anchor": "src/js/main.js:3297-3317",
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -899,8 +899,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1807-1816|0": {
-    "anchor": "CHANGELOG.md:1807-1816",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1814-1823|0": {
+    "anchor": "CHANGELOG.md:1814-1823",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -908,6 +908,11 @@
     "anchor": "docs/ARCHITECTURE.md:107",
     "fp": "0135adff7c519597",
     "head": "**One of the sixteen library modules is not in this graph at all.** `src/js/lib/curated.js` parses"
+  },
+  "PRODUCT_BACKLOG.md|item-details|docs/ARCHITECTURE.md:238-239|0": {
+    "anchor": "docs/ARCHITECTURE.md:238-239",
+    "fp": "e9990b087f91065c",
+    "head": "| `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter"
   },
   "PRODUCT_BACKLOG.md|item-details|docs/DATA_PROVENANCE.md:92|0": {
     "anchor": "docs/DATA_PROVENANCE.md:92",
@@ -961,22 +966,22 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1375-1376|0": {
     "anchor": "PRODUCT_BACKLOG.md:1375-1376",
-    "fp": "a3263e858f97114e",
+    "fp": "98dcdfa3b997fe69",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:195-199|0": {
     "anchor": "PRODUCT_BACKLOG.md:195-199",
-    "fp": "d3c569679d549bc4",
+    "fp": "119daf0aad74a681",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:205-207|0": {
     "anchor": "PRODUCT_BACKLOG.md:205-207",
-    "fp": "59320a6c56841467",
+    "fp": "796fac90d647a594",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:205-207|1": {
     "anchor": "PRODUCT_BACKLOG.md:205-207",
-    "fp": "59320a6c56841467",
+    "fp": "796fac90d647a594",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:231|0": {
@@ -1009,18 +1014,18 @@
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8318-8320|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8318-8320",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8340-8342|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8340-8342",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8484-8486|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8484-8486",
-    "fp": "83693777b24e6cf3",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8506-8508|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8506-8508",
+    "fp": "23a84c181821a33e",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8503-8507|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8503-8507",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8525-8529|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8525-8529",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -2174,88 +2179,88 @@
     "fp": "da65ab7e7c48f6f6",
     "head": "export function passiveAnnouncer(speak) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3236-3264|0": {
-    "anchor": "src/js/main.js:3236-3264",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3250-3278|0": {
+    "anchor": "src/js/main.js:3250-3278",
     "fp": "d26b5eec264b921c",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3236-3264|1": {
-    "anchor": "src/js/main.js:3236-3264",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3250-3278|1": {
+    "anchor": "src/js/main.js:3250-3278",
     "fp": "d26b5eec264b921c",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3259|0": {
-    "anchor": "src/js/main.js:3259",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3273|0": {
+    "anchor": "src/js/main.js:3273",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3259|1": {
-    "anchor": "src/js/main.js:3259",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3273|1": {
+    "anchor": "src/js/main.js:3273",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3259|2": {
-    "anchor": "src/js/main.js:3259",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3273|2": {
+    "anchor": "src/js/main.js:3273",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3275-3281|0": {
-    "anchor": "src/js/main.js:3275-3281",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3289-3295|0": {
+    "anchor": "src/js/main.js:3289-3295",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3275-3281|1": {
-    "anchor": "src/js/main.js:3275-3281",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3289-3295|1": {
+    "anchor": "src/js/main.js:3289-3295",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3280|0": {
-    "anchor": "src/js/main.js:3280",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3294|0": {
+    "anchor": "src/js/main.js:3294",
     "fp": "8a9fef9441555e07",
     "head": "if (res.ok) forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3280|1": {
-    "anchor": "src/js/main.js:3280",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3294|1": {
+    "anchor": "src/js/main.js:3294",
     "fp": "8a9fef9441555e07",
     "head": "if (res.ok) forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3285-3286|0": {
-    "anchor": "src/js/main.js:3285-3286",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3299-3300|0": {
+    "anchor": "src/js/main.js:3299-3300",
     "fp": "8af48711bb3aab2d",
     "head": "const value = $('#api-base').value.trim().replace(/\\/+$/, '');"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3298-3300|0": {
-    "anchor": "src/js/main.js:3298-3300",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3312-3314|0": {
+    "anchor": "src/js/main.js:3312-3314",
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3311-3344|0": {
-    "anchor": "src/js/main.js:3311-3344",
-    "fp": "a1fb7293e5ae88dc",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3325-3362|0": {
+    "anchor": "src/js/main.js:3325-3362",
+    "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3311-3344|1": {
-    "anchor": "src/js/main.js:3311-3344",
-    "fp": "a1fb7293e5ae88dc",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3325-3362|1": {
+    "anchor": "src/js/main.js:3325-3362",
+    "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3318-3343|0": {
-    "anchor": "src/js/main.js:3318-3343",
-    "fp": "879f7b47d6eb3e45",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3332-3361|0": {
+    "anchor": "src/js/main.js:3332-3361",
+    "fp": "f829dad29f4941f1",
     "head": "const { snapshotKept } = store.eraseAll();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3322|0": {
-    "anchor": "src/js/main.js:3322",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3336|0": {
+    "anchor": "src/js/main.js:3336",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3322|1": {
-    "anchor": "src/js/main.js:3322",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3336|1": {
+    "anchor": "src/js/main.js:3336",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3322|2": {
-    "anchor": "src/js/main.js:3322",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3336|2": {
+    "anchor": "src/js/main.js:3336",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
@@ -2264,40 +2269,45 @@
     "fp": "c8ff28f8e2ea386d",
     "head": "function isLive(node) {"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3449-3455|0": {
+    "anchor": "src/js/main.js:3449-3455",
+    "fp": "4e96d4938aa42b04",
+    "head": "c.live"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:347|0": {
     "anchor": "src/js/main.js:347",
     "fp": "3bbc6dc7c75496e2",
     "head": "const CATALOG_LOAD = 'catalog-load';"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3528-3556|0": {
-    "anchor": "src/js/main.js:3528-3556",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3546-3574|0": {
+    "anchor": "src/js/main.js:3546-3574",
     "fp": "c96e5c8c96cfa09d",
     "head": "async function checkHealth() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3545-3547|0": {
-    "anchor": "src/js/main.js:3545-3547",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3563-3565|0": {
+    "anchor": "src/js/main.js:3563-3565",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3573|0": {
-    "anchor": "src/js/main.js:3573",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3591|0": {
+    "anchor": "src/js/main.js:3591",
     "fp": "badb42e555d676d1",
     "head": "function renderAll() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3606|0": {
-    "anchor": "src/js/main.js:3606",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3624|0": {
+    "anchor": "src/js/main.js:3624",
     "fp": "ae8c800634b48bfe",
     "head": "export function boot() {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3651-3655|0": {
-    "anchor": "src/js/main.js:3651-3655",
-    "fp": "5bf111284df2b094",
-    "head": "// Nothing reports store.lastError here. Every writer of it calls onChange in the same step, and"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:366|0": {
     "anchor": "src/js/main.js:366",
     "fp": "77007c4861c2ec00",
     "head": "const notices = new Map();"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3669-3673|0": {
+    "anchor": "src/js/main.js:3669-3673",
+    "fp": "5bf111284df2b094",
+    "head": "// Nothing reports store.lastError here. Every writer of it calls onChange in the same step, and"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:375-413|0": {
     "anchor": "src/js/main.js:375-413",
@@ -2459,10 +2469,20 @@
     "fp": "8455b6473b281f3f",
     "head": "// Removes one copy, at the reader's explicit request. Nothing else in this module removes one:"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:41-45|0": {
+    "anchor": "src/js/storage.js:41-45",
+    "fp": "7715bd486f47d7b0",
+    "head": "function tokenOf(raw) {"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:426-450|0": {
     "anchor": "src/js/storage.js:426-450",
     "fp": "057492ee45bbd06d",
     "head": "// Compare before writing, because this key is shared with every other tab on this origin and a"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:439|0": {
+    "anchor": "src/js/storage.js:439",
+    "fp": "141b6c4cc913442b",
+    "head": "if (tokenOf(held) !== this.seenToken) {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/storage.js:495-571|0": {
     "anchor": "src/js/storage.js:495-571",
@@ -2699,8 +2719,8 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:3573-3593|0": {
-    "anchor": "src/js/main.js:3573-3593",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:3591-3611|0": {
+    "anchor": "src/js/main.js:3591-3611",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -2884,8 +2904,8 @@
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:3275-3281|0": {
-    "anchor": "src/js/main.js:3275-3281",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:3289-3295|0": {
+    "anchor": "src/js/main.js:3289-3295",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -2949,8 +2969,8 @@
     "fp": "f11249cc46b4b154",
     "head": "constructor({ baseUrl = DEFAULT_BASE, limiter, cache, onStatus = () => {}, loadIndex } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:3286-3287|0": {
-    "anchor": "src/js/main.js:3286-3287",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:3300-3301|0": {
+    "anchor": "src/js/main.js:3300-3301",
     "fp": "64a12686aef1eb48",
     "head": "if (!isAllowedApiBase(value)) {"
   },
@@ -3009,8 +3029,8 @@
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:3275-3281|0": {
-    "anchor": "src/js/main.js:3275-3281",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:3289-3295|0": {
+    "anchor": "src/js/main.js:3289-3295",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -3029,8 +3049,8 @@
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:3545-3547|0": {
-    "anchor": "src/js/main.js:3545-3547",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:3563-3565|0": {
+    "anchor": "src/js/main.js:3563-3565",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },
@@ -3094,8 +3114,8 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:3573-3587|0": {
-    "anchor": "src/js/main.js:3573-3587",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:3591-3605|0": {
+    "anchor": "src/js/main.js:3591-3605",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -3124,8 +3144,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:3573-3587|0": {
-    "anchor": "src/js/main.js:3573-3587",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:3591-3605|0": {
+    "anchor": "src/js/main.js:3591-3605",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -3176,7 +3196,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:195-207|0": {
     "anchor": "PRODUCT_BACKLOG.md:195-207",
-    "fp": "4aff7bebdb61c9a6",
+    "fp": "bfeb1249ef5a8e79",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
@@ -3289,8 +3309,8 @@
     "fp": "057492ee45bbd06d",
     "head": "// Compare before writing, because this key is shared with every other tab on this origin and a"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-085|src/js/main.js:3236-3264|0": {
-    "anchor": "src/js/main.js:3236-3264",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-085|src/js/main.js:3250-3278|0": {
+    "anchor": "src/js/main.js:3250-3278",
     "fp": "d26b5eec264b921c",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
@@ -3314,8 +3334,8 @@
     "fp": "7a07ad85b4a02516",
     "head": "updates:"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3528-3556|0": {
-    "anchor": "src/js/main.js:3528-3556",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3546-3574|0": {
+    "anchor": "src/js/main.js:3546-3574",
     "fp": "c96e5c8c96cfa09d",
     "head": "async function checkHealth() {"
   },
@@ -3364,9 +3384,9 @@
     "fp": "b40fb8cc4678105d",
     "head": "// Roots whose contents are working evidence for one session rather than product documentation."
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:3311-3344|0": {
-    "anchor": "src/js/main.js:3311-3344",
-    "fp": "a1fb7293e5ae88dc",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:3325-3362|0": {
+    "anchor": "src/js/main.js:3325-3362",
+    "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-102|server.mjs:86-96|0": {
@@ -3451,7 +3471,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1375-1376|0": {
     "anchor": "PRODUCT_BACKLOG.md:1375-1376",
-    "fp": "a3263e858f97114e",
+    "fp": "98dcdfa3b997fe69",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:511-544|0": {
@@ -3459,8 +3479,8 @@
     "fp": "1f49cb516abe3fde",
     "head": "export function repeatedCitations(text, syntax = PROSE, known = null) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-124|src/js/main.js:3545-3547|0": {
-    "anchor": "src/js/main.js:3545-3547",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-124|src/js/main.js:3563-3565|0": {
+    "anchor": "src/js/main.js:3563-3565",
     "fp": "0ae6591eb2d6f0e5",
     "head": "if (s?.kind === 'backoff') {"
   },

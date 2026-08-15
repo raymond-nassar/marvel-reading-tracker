@@ -1227,13 +1227,15 @@ test('erasing everything leaves the salvage copies, because only the reader remo
 
 // Why the erase route repaints the salvage list, which no other whole-state route has to do.
 //
-// The first attempt at this test asserted that an erase makes a live copy removable, and the
-// suite refused it: an erase cannot land while a copy is live. Live means the main key holds the
-// bytes the copy was taken of, so either this tab is the blocked one and persist() refuses at the
-// latch, or it is not and persist()'s compare-before-write refuses because the key holds bytes
-// this tab did not put there. Both refusals are correct and neither leaves anything to repaint.
+// One of two reasons, and the one the first version of this comment denied. It said an erase
+// cannot land while a copy is live, on the grounds that live means the main key holds the bytes
+// the copy was taken of, so the write is refused either at the latch or at the compare. The
+// compare half is wrong: persist() compares write tokens, not bytes, and tokenOf() reads only the
+// head of the value, so a tab that wrote it still matches after something shortens the tail past
+// that head. The test below this one holds that shape. The first attempt failed for a narrower
+// reason than the one written down, which was that its fixture used a single blocked store.
 //
-// The reachable case is the second refusal itself. A conflict rolls back by re-reading, that read
+// The other reason is a refusal. A conflict rolls back by re-reading, that read
 // fails on the bytes that caused the conflict, and the failure salvages. So pressing Erase can
 // create the very first salvage copy this browser has ever held, on a screen that is at that
 // moment displaying "Nothing is being kept aside", and the erase it was pressed for did not
@@ -1259,4 +1261,44 @@ test('an erase refused by another tab can leave behind the first salvage copy th
   assert.equal(store.blocked, true, 'and the re-read that rolls it back cannot read them either');
   assert.equal(store.salvageCopies().length, 1, 'so a copy now exists that did not when the screen was painted');
   assert.equal(storage.getItem('mrt.state.salvage'), 'corrupt-from-somewhere-else');
+});
+
+// The other direction, and the one a comment here used to call impossible. An erase that lands
+// replaces the bytes a live copy was taken of, so the copy stops being live and the row it sits
+// on trades the note renderSalvage() shows for a Remove button that was not there when the
+// screen was painted. That is a repaint the erase route has to do itself, for the same reason as
+// the refusal above: this button is on the screen the list is already showing.
+//
+// Two stores over one storage, because it takes two tabs to reach. The value is shortened from
+// the end, which leaves the write token at its head intact, so tab A still matches on the token
+// persist() actually compares while tab B cannot parse what it reads. A schema downgrade is the
+// everyday shape of this: an older build writes a value a newer one cannot read, and the tab
+// that wrote it is not the tab that fails on it.
+test('an erase that lands turns a live copy into one the reader can remove', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const tabA = new Store({ storage });
+  tabA.load();
+  tabA.update((s) => markRead(s, 2, true));
+  assert.equal(tabA.lastUpdateOk, true, 'tab A has to have written once, or it has no token to match on');
+
+  const whole = storage.getItem(KEY);
+  storage.map.set(KEY, whole.slice(0, whole.length - 12));
+
+  const tabB = new Store({ storage });
+  tabB.load();
+  assert.equal(tabB.blocked, true, 'the shortened value has to be unreadable, or nothing is salvaged');
+  assert.deepEqual(
+    tabA.salvageCopies().map((c) => c.live),
+    [true],
+    'and the copy has to read as live in tab A, which is the state the old comment called a dead end',
+  );
+
+  const res = tabA.eraseAll();
+
+  assert.equal(res.ok, true, 'tab A is not blocked and its token survived the truncation, so this lands');
+  assert.deepEqual(
+    tabA.salvageCopies().map((c) => c.live),
+    [false],
+    'so the copy is removable now and was not a moment ago, which is a row that has to be repainted',
+  );
 });

@@ -183,7 +183,7 @@ remaining and is not scored.
 | 5.3 | BL-020 | P1 | manual entries carry `source: 'manual'` at `src/js/main.js:2683` and render, reorder, export and back up like any other issue | Done |
 | 5.4 | BL-021 | P2 | `scripts/check-contract.mjs:320-353` runs a set of upstream assumptions and exits non-zero when any has drifted, wired as `npm run contract` at `package.json:13` | Done |
 | 6.1 | BL-022 | P0 | validated backup shape at `src/js/lib/model.js:911-942` | Done |
-| 6.2 | BL-023 | P1 | same backup file restores on another browser, validated and atomic, with undo at `src/js/main.js:3275-3281` | Done |
+| 6.2 | BL-023 | P1 | same backup file restores on another browser, validated and atomic, with undo at `src/js/main.js:3289-3295` | Done |
 | 6.3 | BL-024 | P1 | Export as Markdown ships as a list tool, confirmed in the live DOM at `docs/ux-artifacts/viewport-sweep-reading.json` | Done |
 | 6.4 | BL-025 | P2 | not applicable. Ruled out by Repository Constraint 3, which forbids accounts and cloud services, and already listed as out of scope at the end of this document | Forbidden, Constraint 3 |
 | 7.1 | BL-026 | P0 | focus order and visible focus pass across 45 measured tab stops in `docs/ux-artifacts/live-inspection.json`, and the shortcut handler now stands down for text entry and for an open dialog at `src/js/main.js:2218-2241` | Done, shipped as BL-026 |
@@ -196,15 +196,15 @@ Three quantities used to brief this pass disagreed with what the repository actu
 are recorded rather than inherited.
 
 * `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last
-  line number when reading the file. Evidence: `src/js/main.js:3573-3593`. The work shipped since has
-  taken it to 3,679; 1,566 is the figure as audited.
+  line number when reading the file. Evidence: `src/js/main.js:3591-3611`. The work shipped since has
+  taken it to 3,697; 1,566 is the figure as audited.
 * `src/js/ui/` does not exist in this worktree. Evidence: `absent: src/js/ui, Test-Path returning
   False and a recursive directory listing of src/`. Git cannot track an empty directory, so an
   empty `src/js/ui/` in another checkout is a local artifact rather than repository content. Either
   way the conclusion is the same: there is no view layer to put components in.
 * The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:
   `package.json:10`, and a full run of `npm test`. The items shipped in this pass have since taken
-  it to 843; 224 is the figure as audited.
+  it to 846; 224 is the figure as audited.
 
 Each of those drift clauses is a live number in a record that is otherwise fixed, so it has to be
 re-derived whenever this section is touched rather than carried forward. That is not a general
@@ -252,8 +252,8 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-099 | Clarify the license and provenance boundary for committed data | Debt | EP-12 | Leaves alone | 8 | 8 | 13 | 5 | 5.8 | none | Measured | Shipped | src/data/curated-lists.json:80-120 |
 | BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/index.html:503 |
 | BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Dropped | src/styles.css:817-820 |
-| BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/js/main.js:3311-3344 |
-| BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Shipped | src/js/main.js:3236-3264 |
+| BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/js/main.js:3325-3362 |
+| BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Shipped | src/js/main.js:3250-3278 |
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Shipped | src/js/storage.js:426-450 |
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:351-426 |
@@ -268,7 +268,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:195-207 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
-| BL-124 | Stop the rate-limit backoff saying the same wait twice, and say it grammatically | Defect | EP-07 | Extends BL-090 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | src/js/main.js:3545-3547 |
+| BL-124 | Stop the rate-limit backoff saying the same wait twice, and say it grammatically | Defect | EP-07 | Extends BL-090 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | src/js/main.js:3563-3565 |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
 | BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/CODEOWNERS:1-51 |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
@@ -277,7 +277,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:464 |
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:861 |
-| BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:3528-3556 |
+| BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:3546-3574 |
 | BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | 9 of the 22 heads git ls-remote advertised when this was filed were the head branches of already-merged pull requests |
 | BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/storage.js:329-332 |
 | BL-110 | Count the issues an order imported empty, and say so | Defect | EP-05 | Extends BL-009 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:3019 |
@@ -327,14 +327,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-069 | Close the three accent boundaries the BL-067 review found and could not gate | Debt | EP-08 | Leaves alone | 2 | 1 | 2 | 3 | 1.67 | none | Measured | Shipped | src/styles.css:290 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Shipped | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
 | BL-052 | Make the contributor sections of the README readable at the same standard | Chore | EP-12 | Leaves alone | 1 | 1 | 1 | 2 | 1.5 | none | Observed | Shipped | absent: any sentence-length or vocabulary standard applied to README.md below the contributor heading, read of README.md |
-| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Shipped | src/js/main.js:3573-3587 |
+| BL-033 | Re-render only what changed when an issue is marked read | Debt | EP-09 | Leaves alone | 5 | 2 | 5 | 8 | 1.5 | none | Measured | Shipped | src/js/main.js:3591-3605 |
 | BL-007 | Give the event orders the variants the catalog can already carry | Story | EP-02 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | P1 | Observed | Shipped | src/data/catalog.json |
 | BL-032 | Offer a light theme and follow the system preference | Story | EP-08 | Leaves alone | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Shipped | src/styles.css |
 | BL-065 | Raise the six non-text boundaries that sit below 3:1 | Debt | EP-08 | Depends on | 3 | 2 | 2 | 5 | 1.4 | none | Measured | Shipped | scripts/check-palette.mjs |
 | BL-036 | Make the current view and list addressable in the URL | Story | EP-10 | Leaves alone | 5 | 2 | 3 | 8 | 1.25 | none | Observed | Shipped | src/js/lib/route.js:35-43 |
 | BL-064 | Make the view file importable so its render paths can be tested | Enabler | EP-12 | Depends on | 3 | 2 | 8 | 13 | 1.0 | none | Measured | Shipped | src/js/app.js:12 |
 | BL-017 | Let a reader keep notes on a list or an issue | Story | EP-04 | Leaves alone | 2 | 1 | 1 | 5 | 0.8 | P2 | Observed | Shipped | src/js/lib/model.js:603-611 |
-| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:3573-3587 |
+| BL-042 | Break the single view file into per-view modules | Debt | EP-12 | Leaves alone | 2 | 1 | 8 | 20 | 0.55 | none | Measured | Proposed | src/js/main.js:3591-3605 |
 
 ### Parked
 
@@ -1373,7 +1373,7 @@ would turn a recoverable failure into a permanent one. The retry is labelled "Tr
 than repeating "Undo delete", since the first attempt visibly did not work.
 
 Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at
-`src/js/main.js:3322`, `src/js/main.js:3259` and `src/js/main.js:3275-3281`. Each replaces the whole
+`src/js/main.js:3336`, `src/js/main.js:3273` and `src/js/main.js:3289-3295`. Each replaces the whole
 state, so the buffered list belongs to data that is no longer there: putting it back would splice a
 list out of one tracker into another, or resurrect one list out of a tracker the reader asked to be
 emptied. Undoing a restore is the easiest of the three to miss, because the reader reaches it by
@@ -1994,7 +1994,7 @@ preference to the fallback, and the settings form clears the rejection before it
 after, or that same preference would have discarded the reader's new base. Both directions are
 covered by the browser check.
 
-The settings form keeps its own check and its own message at `src/js/main.js:3285-3286`, unchanged.
+The settings form keeps its own check and its own message at `src/js/main.js:3299-3300`, unchanged.
 It is the one a reader actually sees, and it fires before the constructor can throw.
 
 **A divergence recorded rather than closed.** `src/open.js` refuses the same stored value but does
@@ -2798,7 +2798,7 @@ over, so the helper should drop straight in. The review that filed this item rea
 and `renderYours` as safe because navigation follows them, which is only half true: `showView` calls
 `renderRail` at `src/js/main.js:914` and reaches `renderYours` through `renderHome` at
 `src/js/main.js:916`, where the reader is being moved anyway, but `renderAll` at
-`src/js/main.js:3573` calls both on every `store.update` with no navigation at all. Measured on that
+`src/js/main.js:3591` calls both on every `store.update` with no navigation at all. Measured on that
 route in Edge at 1280x900: with a reading order's button in the rail focused, pressing `d` took the
 order from 0 of 89 read to 1 of 89, left the reader on the read view, and put
 `document.activeElement` at `BODY`. Only `#list-nav` is rebuilt, at `src/js/main.js:950`, so the
@@ -2896,7 +2896,7 @@ no dependency could have added one. Both named routes address importability; onl
 addressed callability, and the split is sized 20 and held at `Proposed` for being unsplit.
 
 So the third route: separate what the module defines from what it does when it loads. The load-time
-sequence moved into an exported `boot()` at `src/js/main.js:3606`, and `src/js/app.js` is the entry
+sequence moved into an exported `boot()` at `src/js/main.js:3624`, and `src/js/app.js` is the entry
 the page loads now, whose whole body is a call to it. The one document read that ran during
 evaluation, a lookup of the live region, became a lookup on use. The module now imports in bare Node
 with no double of any kind installed, and the process exits, which is the check that the interval
@@ -4021,7 +4021,7 @@ schema-version failure rather than read off the source: every one of the three i
 the screen three times. Boot handed whatever error it found to the save report, an assertive live
 region above the banner, and the load failure was such an error at the time, so the string was
 painted there and in `#blocked-why` and paraphrased again by the standing paragraph. BL-075 removed
-that boot report, and the comment now standing in its place at `src/js/main.js:3651-3655` records
+that boot report, and the comment now standing in its place at `src/js/main.js:3669-3673` records
 why. The row was filed off a screenshot of the banner alone, which is where the miscount came from.
 After the change each instruction is on screen once. BL-075 has since taken the load failure out of
 that slot, so this path no longer reaches it.
@@ -4087,7 +4087,7 @@ never draws.
 
 Three diagrams rather than one, because the app has three separable stories and one picture that told
 all three would tell none of them well. The module graph answers what depends on what: a single view
-file of 3,679 lines wires a store, a metadata client, a rate limiter, a response cache and a hydrator
+file of 3,697 lines wires a store, a metadata client, a rate limiter, a response cache and a hydrator
 together at `src/js/main.js:67-80`, and behind it sit sixteen library modules, none of which holds
 state of its own at module level. Where state exists it lives in an instance the view file constructs,
 as the rate limiter's queue and its window of recent hits do, which is why the graph is worth drawing
@@ -4124,7 +4124,7 @@ Drawing as ownership rather than as imports paid for itself three times, and eac
 the document because an import graph would have said the opposite. The metadata client builds its own
 limiter and cache when handed neither, at `src/js/api.js:34-35`, and the app always hands it both,
 which is what keeps one request budget across the page. Saving a new API base replaces the cache and
-the client and leaves the limiter alone, at `src/js/main.js:3298-3300`, because the budget belongs to
+the client and leaves the limiter alone, at `src/js/main.js:3312-3314`, because the budget belongs to
 the connection rather than to the base URL. And one of the sixteen library modules is not in the
 browser graph at all: `src/js/lib/curated.js` is imported outside the tests only by the vendoring
 script, at `scripts/vendor-orders.mjs:27`, so fifteen are reachable from the page and a graph drawn
@@ -4572,7 +4572,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8484-8486` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8506-8508` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4582,11 +4582,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:205-207`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8503-8507`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8525-8529`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8318-8320` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8340-8342` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4794,7 +4794,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1807-1816` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1814-1823` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:195-199` and
 `PRODUCT_BACKLOG.md:205-207` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -4893,7 +4893,7 @@ The restore writes the replacement to the main key before removing its staging k
 throws, the catch reports that nothing changed while storage already holds the replacement and the
 screen still holds the old state. A focused storage probe reproduced that split. This follows up the
 atomicity claim under BL-023 rather than adding another backup feature. Evidence:
-`src/js/storage.js:495-571`, `src/js/main.js:3236-3264`.
+`src/js/storage.js:495-571`, `src/js/main.js:3250-3278`.
 
 Shipped. Five stages can fail and the shipped code told all five the same story. The restore now
 carries `changed` on every return, and the two stages that can leave the saved data altered ask
@@ -5167,7 +5167,7 @@ Constraint gate: checked 1 to 11, none breached.
 The file picker read any selected file fully before validation. Structural validation checked object
 shapes but capped neither collections nor strings, and restore coercion skipped the list-name and
 description limits ordinary creation applies. This is a user-selected availability risk, not a remote
-attack. Evidence: `src/js/main.js:3236-3264`, `src/js/lib/model.js:833-942`.
+attack. Evidence: `src/js/main.js:3250-3278`, `src/js/lib/model.js:833-942`.
 
 Four measurements sized every ceiling, all taken against the twelve shipped orders, which come to
 507 unique issues. A backup of every order as imported is 374,432 characters; with every issue read
@@ -6177,7 +6177,7 @@ Constraint gate: checked 1 to 11, none breached.
 API health, queue depth, cache usage and hydration progress are updated visually outside the shared
 announcement route. Their elements have neither a status role nor a live-region attribute. BL-027
 fixed messages travelling through two channels; these travel through none. Evidence:
-`src/index.html:121-122`, `src/js/main.js:3528-3556`.
+`src/index.html:121-122`, `src/js/main.js:3546-3574`.
 
 **Delivered** for two of the four surfaces, with the other two left silent deliberately and the
 reasons written into the code beside them. The inventory is the part of this item that changed the
@@ -6777,7 +6777,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 Raised by the review of `BL-083` and routed here rather than fixed there, because it is a different
 code path from the restore this one repaired. Two routes replace the whole state at once, the erase
-button at `src/js/main.js:3311-3344` and the escape hatch out of the blocked state at
+button at `src/js/main.js:3325-3362` and the escape hatch out of the blocked state at
 `src/js/storage.js:250-252`, and neither touches the undo snapshot. Only `restore()` and its own
 rewind ever write that key, so **Undo restore** stays live indefinitely after a confirmation that
 says in as many words that erasing cannot be undone. The offer works, which is the problem: the
@@ -6797,7 +6797,7 @@ The withdrawal lives in `src/js/storage.js:725-752` rather than at the button, s
 depends on is testable: the snapshot goes only once `update()` reports the erase actually landed,
 because a refused write leaves the tracker where it was and an undo against data that is still there
 is truthful. The removal is read back, for the same reason every other write in this module is, and
-the answer is handed to the caller. The screen at `src/js/main.js:3318-3343` repaints the banner
+the answer is handed to the caller. The screen at `src/js/main.js:3332-3361` repaints the banner
 after the withdrawal, because the repaint the erase itself triggers happens before it, and says which
 button still holds a copy when a storage refuses the removal. Naming the button is the point: an
 announcement that a copy survives is only actionable if the reader is told where it is.
@@ -7650,25 +7650,47 @@ enumerate its own storage has not said there is nothing, it has declined to say,
 everything is gone on the strength of a refusal is the one answer that can be wrong in the direction
 that costs the reader data.
 
-The erase route now repaints the salvage list, and the reason is not the one first written for it.
-That comment said an erase makes a live copy removable, and the suite refused the claim: an erase
-cannot land while a copy is live, because live means the main key holds the bytes the copy was taken
-of, so either this tab is the blocked one and the write is refused at the latch or it is not and the
-compare-before-write refuses bytes this tab did not put there. The reachable case is that second
-refusal itself. It rolls back by re-reading, the read fails on the bytes that caused it, and the
-failure salvages, so pressing Erase can create the first copy this browser has ever held on a screen
-that is at that moment saying nothing is being kept aside, with nothing announced because nothing
-was saved. That is the fourth trigger the list's own comment did not have, and the only one arrival
-cannot cover, because the button is on the screen the list is already showing.
+The erase route now repaints the salvage list, and the reason first written for it was the wrong way
+round. That comment said an erase cannot land while a copy is live, because live means the main key
+holds the bytes the copy was taken of, so the write is refused either at the latch or at the
+compare-before-write. The compare half is false. `persist()` compares write tokens rather than bytes
+at `src/js/storage.js:439`, and `tokenOf()` reads only the head of the value at
+`src/js/storage.js:41-45`, so a tab that wrote a value still matches after something shortens its
+tail past that head. A schema downgrade is the everyday shape of it, and the tab that wrote the
+value is not the tab that fails to read it afterwards. The first attempt at the test failed for a
+narrower reason than the one recorded: its fixture used a single blocked store, which is the latch
+case rather than the compare case, so the comment generalised from the half that held.
 
-Sixteen tests, fourteen of them new in `test/erase-scope.test.js` and two added beside the other
-erase tests in the store suite. Six mutations were applied one at a time, each restored byte for
-byte, and the first pass of that probe is the reason three of the sixteen exist: the wording tests
-drove the exported policies, so the mutation that put the old sentence back at the call site left
-every one of them green. The three that close it read the shipped module, as the copy suite already
-does for the surfaces ESLint cannot see, and they count the over-claiming sentence rather than
-looking for it, because reverting the call site does not remove the policy but adds a second copy
-beside it.
+So there are two triggers rather than one, and they move a row in opposite directions. An erase that
+lands replaces the bytes a live copy was taken of, so that copy stops being live and trades the note
+`renderSalvage()` shows for a Remove button that was not there when the screen was painted. An erase
+that is refused rolls back by re-reading, the read fails on the bytes that caused the conflict, and
+the failure salvages, so pressing Erase can create the first copy this browser has ever held on a
+screen that is at that moment saying nothing is being kept aside, with nothing announced because
+nothing was saved. Both are the fourth trigger the list's own comment did not have, and neither is
+one arrival can cover, because the button is on the screen the list is already showing.
+
+The review of the change found two more sentences making the kind of promise the item was raised to
+stop. The dialog named the copies' Remove button unconditionally, and `renderSalvage()` puts a note
+in place of that button while a copy is live at `src/js/main.js:3449-3455`, which is the state a
+copy is in for as long as the data it copies is still saved: on this screen, right up until the
+button is pressed. The policy now reads `live`, claims the location either way, and claims the
+button only where there is one. And the branch with no copies at all still said the route clears
+everything this browser has stored, which two names outlive: `mrt.settings` and `sidebar.collapsed`
+are written by the app and removed by nothing, as `docs/ARCHITECTURE.md:238-239` records. That
+branch now says the lists and the progress go and the settings are kept. The message said afterwards
+is left alone, because it reports all local data erased and the same rows call those two preferences
+rather than data.
+
+Nineteen tests, sixteen of them new in `test/erase-scope.test.js` and three added beside the other
+erase tests in the store suite. Eleven mutations across two passes were applied one at a time, each
+restored byte for byte, and the first pass of that probe is the reason three of the nineteen exist:
+the wording tests drove the exported policies, so the mutation that put the old sentence back at the
+call site left every one of them green. The three that close it read the shipped module, as the copy
+suite already does for the surfaces ESLint cannot see. Two of the three count a sentence rather than
+looking for one, because reverting the call site does not remove the policy but adds a second copy
+beside it; the third pins the repaint ahead of the announcement, which is an order rather than a
+presence and so is the one of the three a count cannot make.
 
 **BL-114: Bound what a single render paints, not just what a restore builds**
 
@@ -7843,7 +7865,7 @@ Constraint gate: checked 1 to 11, none breached.
 Found while re-aiming anchors for `BL-108`, in the block that records how the undo buffer is
 withdrawn. One sentence names three actions and offers three citations for them, and two of the
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
-`forgetDeleted()`, at `src/js/main.js:3322`, `src/js/main.js:3259` and `src/js/main.js:3280`
+`forgetDeleted()`, at `src/js/main.js:3336`, `src/js/main.js:3273` and `src/js/main.js:3294`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
 `PRODUCT_BACKLOG.md:1375-1376`.
 
@@ -7860,11 +7882,11 @@ side of it really are about different code. What no gate reads is that a list of
 answered with two distinct lines. That is a counting claim in prose, which is the class the
 instructions already warn is unprotected.
 
-**Delivered.** The first citation now names `src/js/main.js:3322`, which is the `forgetDeleted()`
-call inside the erase handler at `src/js/main.js:3311-3344`. The other two were already right and
-are unchanged: `src/js/main.js:3259` is the call in the successful branch of the restore handler,
-and `src/js/main.js:3275-3281` is the whole undo-restore handler, whose call is at
-`src/js/main.js:3280`. The range was left as the handler rather than narrowed to the call, because
+**Delivered.** The first citation now names `src/js/main.js:3336`, which is the `forgetDeleted()`
+call inside the erase handler at `src/js/main.js:3325-3362`. The other two were already right and
+are unchanged: `src/js/main.js:3273` is the call in the successful branch of the restore handler,
+and `src/js/main.js:3289-3295` is the whole undo-restore handler, whose call is at
+`src/js/main.js:3294`. The range was left as the handler rather than narrowed to the call, because
 the sentence's point about that path is that a button labelled undo swaps the state, which the
 handler shows and the bare call does not.
 
@@ -8112,7 +8134,7 @@ Constraint gate: checked 1 to 11, none breached.
 Found while verifying BL-090 in Edge on 2026-08-15. Pointed at a service stubbed to answer 503, the
 announcer received four backoff messages before the request gave up, and the first two were
 identical: "Waiting 1 seconds", "Waiting 1 seconds", "Waiting 3 seconds", "Waiting 6 seconds". Both
-faults are on one line at `src/js/main.js:3545-3547`.
+faults are on one line at `src/js/main.js:3563-3565`.
 
 This is deliberately not folded into BL-090, whose third task is about queue ticks rather than about
 how a failure is worded, and which leaves the backoff announced because a stall is worth hearing.
@@ -8395,7 +8417,7 @@ block: 4,485 DOM nodes and 1,533 row controls, at a median of 21.9 ms synchronou
 paint, with the first toggle costing 38.9 ms and 144.1 ms. Measured headless on a desktop machine,
 so a phone will be slower, though phone use is out of scope; see BL-028.
 
-Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:3573-3593` (renderAll rebuilds
+Evidence: `docs/ux-artifacts/render-cost.json`, `src/js/main.js:3591-3611` (renderAll rebuilds
 every region), `src/js/main.js:74-79` (store.onChange is wired straight to renderAll),
 `src/js/main.js:2002-2185` (renderRows, which then built every row with no virtualisation and no
 early exit when the containing details element is closed).
@@ -8439,7 +8461,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
 - User error protection: no gap, closed by BL-034 and BL-035. Deleting a list is confirmed in the
   page rather than by a native `confirm()`, and it can now be undone for the rest of the session,
   which is the same affordance restoring a backup already had. Evidence:
-  `src/js/main.js:1709-1736` (undo), `src/js/main.js:3275-3281` (undoRestore exists).
+  `src/js/main.js:1709-1736` (undo), `src/js/main.js:3289-3295` (undoRestore exists).
 - User engagement and inclusivity: gap. The interface is hard-locked to a dark scheme, and a light
   preference changes nothing. Measured: under emulated `prefers-color-scheme: light` the body
   background stays `rgb(15, 17, 21)` and the two screenshots are byte-identical.
@@ -8483,9 +8505,9 @@ The clearest debt in the repository, and it is concentrated in one file.
 
 - Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and
   every render function. There is no view layer to change independently.
-  Evidence: `src/js/main.js:3573-3593`, `src/js/main.js:899-916` (showView switches views by
+  Evidence: `src/js/main.js:3591-3611`, `src/js/main.js:899-916` (showView switches views by
   mutating a module-level variable).
-  Still open, and wider than audited: the file is 3,679 lines now, so nearly every item shipped
+  Still open, and wider than audited: the file is 3,697 lines now, so nearly every item shipped
   since has been added to the one file this gap is about. `BL-053` is the exception in kind rather
   than in size: it moved the reading filter predicates out to `src/js/lib/readingFilters.js` and
   still left `main.js` 8 lines longer, which is the shape of the problem. `BL-038` is the closest
@@ -8527,7 +8549,7 @@ Swept in full rather than dispositioned.
 - Replaceability: good. The metadata API base URL is user-configurable and validated, the cache is
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
-  Evidence: `src/js/main.js:3283-3303`, `src/js/lib/cachePolicy.js:16-20`,
+  Evidence: `src/js/main.js:3297-3317`, `src/js/lib/cachePolicy.js:16-20`,
   `src/js/lib/model.js:11` and `src/js/lib/model.js:753-829`.
 - Scalability: not applicable, because the app serves one reader in one browser profile on one
   machine, so there is no dimension along which load grows. The volume question that does matter,
@@ -8547,11 +8569,11 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Empty states | No gap. The unseeded landing state explains what the app is for and routes to the catalog rather than showing a bare shell. Evidence: `docs/ux-artifacts/01-landing-firstrun-1280.png`, `src/index.html:38-41`. |
 | Error handling and recovery | Gap, closed by BL-034. Curated import used to report failure through native `alert()` while every other path used the in-page notice system. It now writes to a pane chosen when the message is written, so on the landing page the reason appears beside the catalog it is about rather than stopping the page, and it is not left in a view the reader has already scrolled or navigated away from. Evidence: `src/js/main.js:2981`, `src/js/main.js:2999-3001`, `src/js/main.js:3031` against `src/js/main.js:347-463`. |
 | Offline behavior | No gap, and no proposal. Probed as required rather than treated as a caching problem. With the local server running and no internet, the app starts, reads saved state, imports any bundled curated list and marks issues read, because those paths touch only same-origin files. Only cover images, metadata hydration and search degrade, and hydration failure is already surfaced as a pending state rather than as silence. Evidence: `src/data/house_of_m.json`, `src/js/main.js:2126-2132` (pending and by-hand badges), `absent: serviceWorker|navigator.onLine|manifest.json, case-insensitive grep across src/`. Repository Constraint 1 forbids caching cover bytes, so no cover-caching improvement is proposed. |
-| Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:911-942`, `src/js/main.js:3275-3281`. |
+| Data durability and export | No gap. Full JSON backup and restore, per-list Markdown export, validated and atomic restore with an undo. Evidence: `src/js/lib/model.js:911-942`, `src/js/main.js:3289-3295`. |
 | Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:11`, `src/js/lib/model.js:753-829`, `test/model.test.js:559-561`. |
-| Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3545-3547`. |
+| Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3563-3565`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
-| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:20-33` and onto the read out of storage at `src/js/main.js:465-489`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3286-3287`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
+| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:112-122`. Resolved: `BL-030` shipped both, assembled at `server.mjs:43-54` and sent at `server.mjs:117` and `server.mjs:120`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:20-33` and onto the read out of storage at `src/js/main.js:465-489`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3300-3301`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
 | Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-32` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:213-216`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is not fixed and will not be: BL-028 is parked, because phone and tablet reading is served by Marvel's own apps. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |

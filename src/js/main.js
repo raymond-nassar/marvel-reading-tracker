@@ -3178,22 +3178,36 @@ function exportMarkdown() {
 // browser that will not enumerate its own storage has not said there is nothing, it has declined
 // to say, and promising that everything is gone on the strength of a refusal is the one answer
 // that can be wrong in the direction that matters.
+//
+// A fourth thing to read, and the one the first version of this got wrong: whether a copy is
+// live. renderSalvage() puts a note where the Remove button would be on a live copy, so naming
+// that button while one is live sends the reader to a control the screen is withholding, and it
+// does it in the state where a copy is likeliest to exist at all. Location is claimed either
+// way, because that half is true either way; only the button is conditional.
+//
+// Settings are named because they outlive every one of these answers. Nothing in the app removes
+// mrt.settings or sidebar.collapsed, so this branch's old sentence, that the route clears
+// everything this browser has stored for the tracker, was false for any reader who had ever
+// changed the theme. docs/ARCHITECTURE.md holds the whole list and calls those two preferences
+// rather than data, which is why the message said afterwards still reports all local data erased
+// and only the promise made beforehand had to be narrowed.
 export function eraseDialogBody(copies) {
   const tail = ' Export a backup first if you are not sure. It cannot be undone.';
+  const lead = 'This clears every list and all reading progress. Your settings are kept.';
   if (copies === null) {
-    return 'This clears every list and all reading progress. This browser will not let the app list '
-      + 'what else it has stored, so anything kept aside after a failed read is not reached and stays '
-      + `where it is.${tail}`;
+    return `${lead} This browser will not let the app list what else it has stored, so anything `
+      + `kept aside after a failed read is not reached and stays where it is.${tail}`;
   }
-  if (copies.length === 0) {
-    return `This clears everything this browser has stored for the tracker.${tail}`;
-  }
+  if (copies.length === 0) return `${lead}${tail}`;
   const one = copies.length === 1;
-  return 'This clears every list and all reading progress. '
+  const where = `${lead} `
     + `${one ? 'One copy' : `${copies.length} copies`} of data this app could not read `
     + `${one ? 'is' : 'are'} kept aside, and this does not reach ${one ? 'it' : 'them'}. `
-    + `${one ? 'It stays' : 'They stay'} under "Copies kept after a failed read" above, `
-    + `with ${one ? 'its' : 'their'} own Remove button.${tail}`;
+    + `${one ? 'It stays' : 'They stay'} under "Copies kept after a failed read" above`;
+  if (copies.some((c) => c.live)) {
+    return `${where}, and only you can remove ${one ? 'it' : 'them'}.${tail}`;
+  }
+  return `${where}, with ${one ? 'its' : 'their'} own Remove button.${tail}`;
 }
 
 // What is said once the erase has landed, composed rather than chosen, because the snapshot and
@@ -3325,14 +3339,18 @@ function wireData() {
     // whatever unrelated render comes next.
     renderBlocked();
     // The fourth trigger, and the one arrival cannot cover, because this button sits on the screen
-    // that list is already showing. Not for the erase that works: the first reason written here was
-    // that erasing makes a live copy removable, and the suite refused it, because an erase cannot
-    // land while a copy is live. Live means the main key holds the bytes the copy was taken of, so
-    // either this tab is the blocked one and the write is refused at the latch, or it is not and the
-    // compare-before-write refuses bytes this tab did not put there.
+    // that list is already showing. Both outcomes move a row, in opposite directions.
     //
-    // It is for the erase that is refused. That second refusal rolls back by re-reading, the read
-    // fails on the bytes that caused it, and the failure salvages, so this press can create the
+    // An erase that lands replaces the bytes a live copy was taken of, so that copy stops being
+    // live and trades its note for a Remove button. This was written here first as unreachable, on
+    // the grounds that an erase cannot land while a copy is live, and that was wrong: persist()
+    // compares write tokens rather than bytes and a token is read from the head of the value, so a
+    // tab that wrote it still matches after something truncates the tail. A schema downgrade is the
+    // everyday shape of that, and the tab that shortened the value is not the tab that cannot read
+    // it afterwards.
+    //
+    // An erase that is refused moves a row the other way. The refusal rolls back by re-reading, the
+    // read fails on the bytes that caused it, and the failure salvages, so this press can create the
     // first copy this browser has ever held on a screen that is at that moment saying nothing is
     // being kept aside. Nothing announces then, because nothing was saved, which leaves this and
     // the banner as the only surfaces carrying it.
