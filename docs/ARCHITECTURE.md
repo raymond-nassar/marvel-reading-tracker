@@ -276,7 +276,7 @@ database named at `src/js/cache.js:9-11`, so it cannot compete for quota with th
 progress. That separation is the reason the app is pinned to one origin: the comment at
 `src/js/cache.js:3-5` records that IndexedDB is restricted on `file://` origins and that
 `file://`, `localhost` and `127.0.0.1` are three separate storage buckets, and the server binds one
-of them at `server.mjs:14-15`.
+of them at `server.mjs:14-16`.
 
 **The launch page writes nothing.** It reads the configured API base out of `mrt.settings` at
 `src/open.js:63` and refuses anything it is not allowed to call. Nothing about the reader's
