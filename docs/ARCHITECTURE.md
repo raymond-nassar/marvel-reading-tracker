@@ -94,7 +94,7 @@ view layer itself created and can throw away.
 
 **Two of the five are replaceable at runtime, and they are replaced together.** Saving a new API
 base builds a fresh cache and a fresh client and hands the new client to the hydrator, at
-`src/js/main.js:3141-3143`. The hydrator itself is not rebuilt; only its reference to the client is
+`src/js/main.js:3140-3142`. The hydrator itself is not rebuilt; only its reference to the client is
 swapped. The rate limiter is deliberately not rebuilt either, because the budget it tracks belongs
 to the reader's connection rather than to whichever base URL is configured. The store is never
 replaced at all.
@@ -150,7 +150,7 @@ The parts of that worth saying in words.
 
 **The transform is pure and the store is the only writer.** The button's handler at
 `src/js/main.js:2026-2029` hands the store a function; the function itself, at
-`src/js/lib/model.js:521-523`, returns a new state and touches nothing. Everything that decides
+`src/js/lib/model.js:572-574`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
 `src/js/storage.js:365-392`.
 
@@ -164,7 +164,7 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3394-3414`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3393-3413`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
