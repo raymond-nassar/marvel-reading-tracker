@@ -89,9 +89,10 @@ Six records copy nothing, and they are the only place the sentence above does no
 checklist lines the upstream holds no issue for. Each carries `placeholder: true`, no `url`, and an
 `issueId` computed here by [`scripts/vendor-orders.mjs`](../scripts/vendor-orders.mjs) from the
 order and the title and then negated, so it can never be read as one of Marvel's. The title is the
-one written into an order compiled in this repository. Nothing in those six originates upstream,
-which makes them the only issue records in this tree that the MIT grant reaches without
-qualification.
+one written into an order compiled in this repository, so nothing in those six was fetched at all.
+That is a statement about where the bytes came from and not about who may license them: the title
+still names a Marvel series and issue, so these six sit inside the fourth open question at the end
+of this document along with everything else under `src/data/`.
 
 Cover art is referenced and never copied. `cover.path` is a URL on Marvel's image host and the
 app renders it from there, so no image bytes are hosted, proxied, cached or stored. That is a

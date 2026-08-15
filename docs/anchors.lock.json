@@ -264,10 +264,45 @@
     "fp": "a4d03ce2c75f64fd",
     "head": "// The publication gate answers a question that only gets asked once, on the day someone decides to"
   },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1262-1265|0": {
+    "anchor": "CHANGELOG.md:1262-1265",
+    "fp": "a1bbc9d008c99c4d",
+    "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1274-1277|0": {
+    "anchor": "CHANGELOG.md:1274-1277",
+    "fp": "f6d971f298b3d32e",
+    "head": "and the deliberately destructive testing page that warns you before every button. The private"
+  },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:36-40|0": {
     "anchor": "PRODUCT_BACKLOG.md:36-40",
     "fp": "d51c1af5a8c0c183",
     "head": "BL-096's reporting route cannot be turned on while this repository is private, which was checked"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6682-6685|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6682-6685",
+    "fp": "a0372835c1f1a259",
+    "head": "Shipped, with the third task deliberately left open. It cannot be done yet, and that was measured"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6744-6746|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6744-6746",
+    "fp": "4e89601fade35e5b",
+    "head": "above records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6767-6771|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6767-6771",
+    "fp": "49e2abcfaf9f8113",
+    "head": "The framing is the part worth defending. Nobody outside this repository can see it, open an issue or"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6774-6780|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6774-6780",
+    "fp": "85a655f4b40673f2",
+    "head": "The code of conduct is written for this project rather than adopted from a template, and it names"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6909-6913|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6909-6913",
+    "fp": "a6ceb97902e6f2c0",
+    "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
   },
   "docs/UX_STUDY.md|as-is-journey-map#checking-progress|src/index.html:368-370|0": {
     "anchor": "src/index.html:368-370",
@@ -339,8 +374,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:9226|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9226",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:9233|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9233",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -959,8 +994,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2131-2140|0": {
-    "anchor": "CHANGELOG.md:2131-2140",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2138-2147|0": {
+    "anchor": "CHANGELOG.md:2138-2147",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -974,8 +1009,8 @@
     "fp": "e9990b087f91065c",
     "head": "| `mrt.settings` | the settings form, the cover art switch, the theme control and the reading filter"
   },
-  "PRODUCT_BACKLOG.md|item-details|docs/DATA_PROVENANCE.md:103|0": {
-    "anchor": "docs/DATA_PROVENANCE.md:103",
+  "PRODUCT_BACKLOG.md|item-details|docs/DATA_PROVENANCE.md:104|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:104",
     "fp": "19b735b1ee3d7914",
     "head": "| Compiled for this project | 4 | The whole sequence, by hand. See the trail at the top of each file"
   },
@@ -1074,18 +1109,18 @@
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9200-9202|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9200-9202",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9207-9209|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9207-9209",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9366-9368|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9366-9368",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9373-9375|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9373-9375",
     "fp": "87bb7f46165bd632",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9385-9389|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9385-9389",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9392-9396|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9392-9396",
     "fp": "74995e9f6a8b1fa8",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -3764,13 +3799,13 @@
     "fp": "b00b1254dcc2dcbf",
     "head": "if (err?.status === 404) refused.add(id);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-128|docs/DATA_PROVENANCE.md:86-94|0": {
-    "anchor": "docs/DATA_PROVENANCE.md:86-94",
-    "fp": "c5bbfed7769183de",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-128|docs/DATA_PROVENANCE.md:86-95|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:86-95",
+    "fp": "db1d1bd19c9865ab",
     "head": "Six records copy nothing, and they are the only place the sentence above does not hold. Two sit in"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-129|docs/PUBLICATION_RUNBOOK.md:33-41|0": {
-    "anchor": "docs/PUBLICATION_RUNBOOK.md:33-41",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-129|docs/PUBLICATION_RUNBOOK.md:35-43|0": {
+    "anchor": "docs/PUBLICATION_RUNBOOK.md:35-43",
     "fp": "b326ebb40539f3d4",
     "head": "1. **Secret scanning, and then push protection**, closing BL-089. Push protection depends on secret"
   },

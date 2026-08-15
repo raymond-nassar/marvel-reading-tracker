@@ -27,12 +27,19 @@ is opened up, and none of the automatic checks would notice a sentence that had 
 date, because they check facts about the code rather than sentences about the situation.
 
 So every statement of that kind was hunted down and written on one page: sixteen of them, across
-eight files. With them are the three protections that cost nothing once a project is public and
-cannot be switched on at all before then, which are spotting a password committed by accident, a
-private channel for reporting a security flaw, and rules that stop the main copy of the code being
-changed carelessly. The first of those has to be switched on before one of the others will do
-anything, and asking for them in the wrong order looks like it worked. That is the sort of thing
-that is easy to get wrong from memory and easy to get right from a list.
+nine files, each one named on the page rather than merely counted. With them are the three
+protections that cost nothing once a project is public and cannot be switched on at all before then,
+which are spotting a password committed by accident, a private channel for reporting a security
+flaw, and rules that stop the main copy of the code being changed carelessly. The first of those has
+to be switched on before one of the others will do anything, and asking for them in the wrong order
+looks like it worked. That is the sort of thing that is easy to get wrong from memory and easy to
+get right from a list.
+
+The first attempt at that hunt missed two of the sixteen, both of them in the project's own record
+of past releases, and a review caught it. The search had been looking one line at a time for a
+particular word, so a sentence that ran over two lines or used a different word slipped past. The
+page now lists every one of the sixteen by name, so the next reader can check the list rather than
+take the number on trust.
 
 The page does not argue that the project should be opened up. That still waits on the unanswered
 legal question about the Marvel comic information stored here, which the page names at the top as

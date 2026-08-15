@@ -1,12 +1,14 @@
 # Publication runbook
 
-Sixteen statements in this repository are true only while it is private. They say so plainly, which
-was the right way to write them: a security policy that describes a reporting route nobody can use
-is more use than one that pretends the route is there. The cost is that publishing makes all sixteen
-false in the same moment, and none of them is a `path:line` claim, so no gate will notice.
+Sixteen passages in this repository are true only while it is private, spread over nine files. They
+say so plainly, which was the right way to write them: a security policy that describes a reporting
+route nobody can use is more use than one that pretends the route is there. The cost is that
+publishing makes all sixteen false in the same moment, and none of them is a `path:line` claim, so
+no gate will notice.
 
-This document is the list. It exists so the flip is something to work through rather than something
-to remember, and so the person doing it is not also the person who has to find out what it touches.
+This document is the list, and every one of the sixteen is named below rather than counted. It
+exists so the flip is something to work through rather than something to remember, and so the
+person doing it is not also the person who has to find out what it touches.
 
 Nothing here is a legal opinion, and nothing here says the repository should be published. The first
 section says why it has not been.
@@ -62,12 +64,22 @@ false rather than what to write instead.
 | `scripts/check-publication.mjs:2-5` | The gate's own opening comment states the repository is private | The gate keeps working and keeps being worth running. The comment describes a condition that has changed |
 | `test/publication-gate.test.js:11-15` | The gate answers a question asked once, on the day someone publishes | Written for the day before. Worth a sentence saying the day happened, because the tests still defend the boundary afterwards |
 
-The backlog is the exception, and it is deliberate. Seven of the sixteen are in
-`PRODUCT_BACKLOG.md`, and six sit inside detail blocks that record what was true when that work was
-delivered. Those are history and must not be rewritten, for the same reason the dated tracking
-artifacts are not re-aimed. The seventh is live: the introduction at `PRODUCT_BACKLOG.md:36-40`
-lists BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they
-are met that sentence is describing a state that no longer holds.
+The eight rows above are the live passages outside the two records, and the records are the
+exception. Six of the sixteen are in `PRODUCT_BACKLOG.md` and two more are in `CHANGELOG.md`. Seven
+of those eight say what was true when a piece of work was delivered, and they are history that must
+not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
+
+- `PRODUCT_BACKLOG.md:6682-6685`, why the private reporting task was left open.
+- `PRODUCT_BACKLOG.md:6744-6746`, what the changelog entry beside it was corrected to say.
+- `PRODUCT_BACKLOG.md:6767-6771`, why the contribution guide is written in the future tense.
+- `PRODUCT_BACKLOG.md:6774-6780`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6909-6913`, why `required: true` collects nothing today.
+- `CHANGELOG.md:1262-1265`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1274-1277`, the released note that the private channel is not switched on.
+
+The eighth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
+BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
+that sentence is describing a state that no longer holds.
 
 ## Verifying afterwards
 
@@ -82,7 +94,8 @@ npm run publication:surface
 
 Run the surface gate after fetching, since it reads what the remote advertises and a stale copy
 will report on branches that no longer exist. Then run the full set of checks the way any change
-runs them, because six of the eight files above are documents the counts and anchors gates read.
+runs them, because six of the nine files above are documents the counts gate reads and the anchors
+gate reads all nine.
 
 The honest summary of this section: nothing in this runbook is enforced. The checklist is the
 enforcement, which is the argument for writing it down before the day rather than during it.
