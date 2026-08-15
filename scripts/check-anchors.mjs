@@ -395,6 +395,163 @@ export function citations(text, syntax = PROSE, known = null) {
   return [...out.values()].sort((a, b) => a.at - b.at);
 }
 
+// The unit a sentence is read inside. A run of consecutive lines that are all prose, so a
+// sentence may wrap across lines and still be read whole, and so a sentence may not run
+// across anything that is not prose.
+//
+// Four things end a run, and each has to. A blank line separates paragraphs. A heading is
+// not part of the paragraph under it. A fenced block is code, and the text inside one is
+// skipped entirely rather than merely bounded. A table row is its own claim whatever
+// punctuation it holds: flattening line breaks to read a sentence runs a table's header and
+// separator into its rows, and a splitter that does not stop at the boundary reports an
+// entire ledger as one sentence carrying every Evidence citation in it. That was the single
+// false positive in the measurement BL-122 was filed from.
+//
+// A list item starts a run for the same reason a table row does. Two bullets are two claims,
+// and the blank line between them is optional in Markdown and usually absent here.
+export function proseRuns(text) {
+  const lines = text.split('\n');
+  const runs = [];
+  let run = null;
+  let offset = 0;
+  let fenced = false;
+  const close = () => {
+    if (run) runs.push(run);
+    run = null;
+  };
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
+    const len = line.length + 1;
+    const fence = /^\s*(?:```|~~~)/.test(line);
+    const skip = fenced || fence
+      || line.trim() === ''
+      || /^\s*\|/.test(line)
+      || /^\s*#{1,6}\s/.test(line)
+      // A thematic break, and the same three characters underline a setext heading, which makes
+      // the line above one a heading rather than a paragraph. Either way the text above and the
+      // text below are not one sentence, and without this they were read as one.
+      || /^\s*(?:-{3,}|={3,}|\*{3,}|_{3,})\s*$/.test(line)
+      // An HTML comment on its own line. This repository's plan artifacts carry rpi phase and
+      // task markers in exactly that form, so the shape is real here rather than hypothetical.
+      //
+      // Both of these are latent rather than live: every thematic break and every comment line in
+      // the tracked corpus sits in the tracking artifacts, and none has a run crossing it today.
+      // They are handled anyway because that is the worst place for this rule to fire. Those
+      // artifacts are a historical record that must not be re-aimed to satisfy a gate, so a false
+      // positive there would be a refusal in a file nobody is allowed to edit to clear it.
+      || /^\s*<!--/.test(line);
+    if (fence) fenced = !fenced;
+    if (skip) close();
+    else {
+      if (run && /^\s*(?:[-*+]|\d+[.)])\s/.test(line)) close();
+      if (run) run.end = offset + len;
+      else run = { start: offset, end: offset + len, line: i + 1 };
+    }
+    offset += len;
+  }
+  close();
+  return runs;
+}
+
+// Where one sentence ends and the next begins, inside a run. A citation carries a dot of its
+// own, in the extension, so the break requires whitespace after the stop, which no citation has:
+// the dot in a module's name is followed by a letter. Written here in prose rather than as an
+// example, because a citation in backticks is a live claim wherever it appears, this file
+// included, and one written to illustrate a form is a claim about a file that may not exist.
+//
+// A sentence may open on a backtick as well as on a capital, and in these documents it very often
+// does, because a sentence about a function starts by naming it and function names are lowercase.
+// Measured across the tracked corpus, 129 prose runs carry two or more citations, and inside them a
+// splitter demanding a capital refuses 30 real sentence boundaries: 25 open on a backticked
+// lowercase name, 4 on another backticked token and 1 on a bare lowercase word, the tool name
+// "axe". Each refusal joins two correct sentences, which is how this rule invents a repeat that is
+// not there, and that is the failure it can least afford. Three of the 30 are in the record of this
+// very change.
+//
+// So the break accepts any letter, and the abbreviations that would then split a sentence in half
+// are excluded by name. The list is not complete and does not need to be: an abbreviation missing
+// from it splits one sentence into two and loses a hit, which leaves a defect where it already
+// was, whereas an abbreviation wrongly on it would join nothing that was ever apart.
+//
+// Splitting too eagerly loses a hit and splitting too reluctantly invents one, so where the
+// two cannot both be had this errs towards the first. A missed repeat is a defect that
+// survives, which is the state this gate is an improvement on; an invented one fails a build
+// over correct prose, and a gate that does that is one people learn to bless past.
+const ABBREVIATION = String.raw`e\.g|i\.e|cf|etc|vs|approx|fig|vol|pp|al|no|Dr|Mr|Mrs|Ms|Jr|Sr|St|Inc|Ltd`;
+// The opening backtick is written as its code point because a raw template cannot carry one
+// unescaped, and escaping it would leave the backslash in the pattern, which unicode mode rejects.
+const SENTENCE_BREAK = new RegExp(
+  String.raw`(?<!\b(?:${ABBREVIATION})\.)(?<=[.!?])[ \n]+(?=[\u0060"'([]|\p{L})`,
+  'gu',
+);
+
+// A sentence that names several things and answers two of them with one citation.
+//
+// The anchors gate is structurally blind to this and cannot be taught to see it: both copies
+// name a real line whose content matches the claim, so both fingerprint correctly and both
+// stay green forever. BL-121 fixed one that named three routes, cited the restore path twice
+// and never named the erase path at all. Every gate passed, before and after.
+//
+// Inside one sentence a repeat is not ordinary, which is what makes this checkable at all.
+// Across a document it is: `collisions` measures that and deliberately declines to fail.
+// A sentence that cites the same line twice is enumerating things it believes are different,
+// so the repeat is either a citation copied and never re-derived or a claim that two distinct
+// things share a line, and the second is worth writing another way regardless.
+//
+// Prose only, which is the same split `citations` draws and for the same reason. In code a
+// bare path:line is a value the program computes with, and this gate's own fixtures repeat
+// one many times over because repetition is the thing they exercise. Counting those would
+// fail the suite written to prove the rule.
+//
+// The "absent:" marker needs no handling here, which is worth saying because its absence looks
+// like an oversight. A citation inside a backticked token that opens with the marker is not
+// collected by `citations` at all, and one in an unbackticked table cell sits on a table row,
+// which is not prose. Both routes are closed before this rule sees them, so a filter here would
+// be a guard that cannot fire, and the test written to prove it would pass on any tree.
+export function repeatedCitations(text, syntax = PROSE, known = null) {
+  if (!syntax.prose) return [];
+
+  const out = [];
+  for (const run of proseRuns(text)) {
+    const slice = text.slice(run.start, run.end);
+    const cites = citations(slice, syntax, known);
+    if (cites.length < 2) continue;
+
+    const bounds = [0];
+    for (const m of slice.matchAll(SENTENCE_BREAK)) bounds.push(m.index + m[0].length);
+    bounds.push(slice.length);
+
+    for (let s = 0; s + 1 < bounds.length; s += 1) {
+      const [from, to] = [bounds[s], bounds[s + 1]];
+      const tally = new Map();
+      for (const c of cites) {
+        if (c.at < from || c.at >= to) continue;
+        const anchor = `${c.file}:${c.start}${c.end === c.start ? '' : `-${c.end}`}`;
+        tally.set(anchor, (tally.get(anchor) ?? 0) + 1);
+      }
+      for (const [anchor, count] of tally) {
+        if (count < 2) continue;
+        out.push({
+          line: run.line + (slice.slice(0, from).match(/\n/g) ?? []).length,
+          anchor,
+          count,
+          text: slice.slice(from, to).replace(/\s+/g, ' ').trim(),
+        });
+      }
+    }
+  }
+  return out;
+}
+
+// What to do about a hit, which is `relativeVerdict`'s question answered the same way and for
+// the reason given there. Against the working tree the sentence can still be rewritten, so it
+// is refused. Under --ref it shipped and cannot be, and refusing would make every revision
+// holding one unqueryable for drift, which is the one use --ref has.
+export function repeatVerdict(count, ref = null) {
+  if (count === 0) return 'none';
+  return ref === null ? 'fatal' : 'notice';
+}
+
 // Naming only, never membership. A heuristic here is safe by construction: the worst
 // it can do is give an anchor an uglier or less stable key, and the anchor is still
 // collected and still checked. That is the whole point of the inversion, and it is
@@ -955,6 +1112,43 @@ function main() {
     console.error('no drift however stale it gets. One written here went thirteen lines stale that');
     console.error('way. Write the path in full. To describe a wrong line rather than cite one, say');
     console.error('so in prose: "line 12 of the workflow file", never in the citation form.');
+    process.exit(2);
+  }
+
+  // Also before the bless path, and for the sharper version of the same reason. A repeated
+  // citation is not a claim the gate cannot check; it is one the gate checks and passes,
+  // twice, because both copies are correct about the line they name and wrong only about
+  // being two. Blessing records both, and from then on the lock itself asserts the pairing.
+  const repeats = [];
+  const tracked = new Set(docs());
+  for (const doc of tracked) {
+    const text = read(doc);
+    if (text === null) continue;
+    const syntax = commentSyntax(doc);
+    if (!syntax.prose) continue;
+    for (const r of repeatedCitations(text.replace(/\r\n/g, '\n'), syntax, tracked)) {
+      repeats.push(`  ${doc}:${r.line}  \`${r.anchor}\` cited ${r.count} times in one sentence:\n      ${r.text.slice(0, 150)}`);
+    }
+  }
+  const repeatSay = repeatVerdict(repeats.length, ref);
+  if (repeatSay === 'notice') {
+    const each = repeats.length === 1 ? 'sentence citing' : 'sentences citing';
+    console.error(`NOTICE: ${ref} contains ${repeats.length} ${each} one line more than once:`);
+    for (const r of repeats) console.error(r);
+    console.error('');
+    console.error('Reported rather than refused, because a revision cannot be rewritten to satisfy a');
+    console.error('rule adopted after it.');
+    console.error('');
+  } else if (repeatSay === 'fatal') {
+    const each = repeats.length === 1 ? 'sentence cites' : 'sentences cite';
+    console.error(`FATAL: ${repeats.length} ${each} one line more than once:`);
+    for (const r of repeats) console.error(r);
+    console.error('');
+    console.error('A sentence naming several things and answering two of them with one citation is');
+    console.error('either a citation copied and never re-derived, or a claim that two distinct things');
+    console.error('share a line. Fingerprinting cannot see either, because both copies are correct');
+    console.error('about the line they name. Re-derive the one that is wrong, or say in prose that');
+    console.error('the two things share a line, rather than citing it twice.');
     process.exit(2);
   }
 

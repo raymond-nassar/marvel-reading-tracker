@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8058|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8058",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8160|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8160",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -884,8 +884,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1698-1707|0": {
-    "anchor": "CHANGELOG.md:1698-1707",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1718-1727|0": {
+    "anchor": "CHANGELOG.md:1718-1727",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -984,18 +984,18 @@
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8032-8034|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8032-8034",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8134-8136|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8134-8136",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8198-8200|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8198-8200",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8300-8302|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8300-8302",
     "fp": "61ba99b5375e59ac",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8217-8221|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8217-8221",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8319-8323|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8319-8323",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -1039,40 +1039,65 @@
     "fp": "0229604f80988ee1",
     "head": "`# ${event.name}: ${essential ? 'Main Series Reading Checklist' : 'Issue-by-Issue Reading Checklist'"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1021|0": {
-    "anchor": "scripts/check-anchors.mjs:1021",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1025-1040|0": {
+    "anchor": "scripts/check-anchors.mjs:1025-1040",
+    "fp": "a803afb540b17fb1",
+    "head": "// Widening the population past Markdown created a third near miss, and leaving it"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1035|0": {
+    "anchor": "scripts/check-anchors.mjs:1035",
+    "fp": "2ed4c83265d83333",
+    "head": "if (!syntax.open.test(lines[i])) continue;"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1044|0": {
+    "anchor": "scripts/check-anchors.mjs:1044",
+    "fp": "82d76e7ed94dfdf4",
+    "head": "function reportNearMisses(exempted) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1082-1116|0": {
+    "anchor": "scripts/check-anchors.mjs:1082-1116",
+    "fp": "c0ce026f923c4d6d",
+    "head": "// Before anything else, and before the bless path in particular. A relative citation is a"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1122-1130|0": {
+    "anchor": "scripts/check-anchors.mjs:1122-1130",
+    "fp": "7477b3de9c4ec002",
+    "head": "const repeats = [];"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1215|0": {
+    "anchor": "scripts/check-anchors.mjs:1215",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1021|1": {
-    "anchor": "scripts/check-anchors.mjs:1021",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1215|1": {
+    "anchor": "scripts/check-anchors.mjs:1215",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1122|0": {
-    "anchor": "scripts/check-anchors.mjs:1122",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1316|0": {
+    "anchor": "scripts/check-anchors.mjs:1316",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1122|1": {
-    "anchor": "scripts/check-anchors.mjs:1122",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1316|1": {
+    "anchor": "scripts/check-anchors.mjs:1316",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1133|0": {
-    "anchor": "scripts/check-anchors.mjs:1133",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1327|0": {
+    "anchor": "scripts/check-anchors.mjs:1327",
     "fp": "20b9af2aa5430e31",
     "head": "const renamed = scopeRenames(unkeyed, gone, lock, liveScopes);"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1154-1160|0": {
-    "anchor": "scripts/check-anchors.mjs:1154-1160",
-    "fp": "0f3e96ed0e6e42d8",
-    "head": "for (const [b, ns] of newBy) {"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:133|0": {
     "anchor": "scripts/check-anchors.mjs:133",
     "fp": "dc0f54892037a5a6",
     "head": "const isBinary = (text) => text.includes('\\0');"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1348-1354|0": {
+    "anchor": "scripts/check-anchors.mjs:1348-1354",
+    "fp": "0f3e96ed0e6e42d8",
+    "head": "for (const [b, ns] of newBy) {"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:206-209|0": {
     "anchor": "scripts/check-anchors.mjs:206-209",
@@ -1134,50 +1159,70 @@
     "fp": "867a8c3bf79a2cb4",
     "head": "// Outside prose only the backticked form is collected. That is the opposite call from"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:416-442|0": {
-    "anchor": "scripts/check-anchors.mjs:416-442",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:412-454|0": {
+    "anchor": "scripts/check-anchors.mjs:412-454",
+    "fp": "7e90b84bdc57fe79",
+    "head": "export function proseRuns(text) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:428|0": {
+    "anchor": "scripts/check-anchors.mjs:428",
+    "fp": "b1c529be7dc8d21f",
+    "head": "|| /^\\s*\\|/.test(line)"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:433|0": {
+    "anchor": "scripts/check-anchors.mjs:433",
+    "fp": "0a610d90e432b666",
+    "head": "|| /^\\s*(?:-{3,}|={3,}|\\*{3,}|_{3,})\\s*$/.test(line)"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:442|0": {
+    "anchor": "scripts/check-anchors.mjs:442",
+    "fp": "48da53177e6e1bb6",
+    "head": "|| /^\\s*<!--/.test(line);"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:480|0": {
+    "anchor": "scripts/check-anchors.mjs:480",
+    "fp": "d3986debade1da53",
+    "head": "const ABBREVIATION = String.raw`e\\.g|i\\.e|cf|etc|vs|approx|fig|vol|pp|al|no|Dr|Mr|Mrs|Ms|Jr|Sr|St|In"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:483-486|0": {
+    "anchor": "scripts/check-anchors.mjs:483-486",
+    "fp": "7e025668c75f6ee7",
+    "head": "const SENTENCE_BREAK = new RegExp("
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:511-544|0": {
+    "anchor": "scripts/check-anchors.mjs:511-544",
+    "fp": "1f49cb516abe3fde",
+    "head": "export function repeatedCitations(text, syntax = PROSE, known = null) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:550-553|0": {
+    "anchor": "scripts/check-anchors.mjs:550-553",
+    "fp": "c8a7d8d65c835a06",
+    "head": "export function repeatVerdict(count, ref = null) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:573-599|0": {
+    "anchor": "scripts/check-anchors.mjs:573-599",
     "fp": "8bd270ad19cf1ae6",
     "head": "// The prose immediately before a citation, which is what the reader has to weigh the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:447|0": {
-    "anchor": "scripts/check-anchors.mjs:447",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:604|0": {
+    "anchor": "scripts/check-anchors.mjs:604",
     "fp": "4b80dfe5a50e2da3",
     "head": "const marked = (s) => syntax.open?.test(s) ?? false;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:553|0": {
-    "anchor": "scripts/check-anchors.mjs:553",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:710|0": {
+    "anchor": "scripts/check-anchors.mjs:710",
     "fp": "48c96e3374e4aff6",
     "head": "claim: claimBefore(lines, i, c.at, syntax),"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:651-653|0": {
-    "anchor": "scripts/check-anchors.mjs:651-653",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:808-810|0": {
+    "anchor": "scripts/check-anchors.mjs:808-810",
     "fp": "cfb1a6c69abcd7ab",
     "head": "// Narrowed to one scope and one anchor, because sharing an anchor across the document"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:718-764|0": {
-    "anchor": "scripts/check-anchors.mjs:718-764",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:875-921|0": {
+    "anchor": "scripts/check-anchors.mjs:875-921",
     "fp": "1e8c08864276e37f",
     "head": "export function scopeRenames(unkeyed, gone, lock, liveScopes = null) {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:868-883|0": {
-    "anchor": "scripts/check-anchors.mjs:868-883",
-    "fp": "a803afb540b17fb1",
-    "head": "// Widening the population past Markdown created a third near miss, and leaving it"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:878|0": {
-    "anchor": "scripts/check-anchors.mjs:878",
-    "fp": "2ed4c83265d83333",
-    "head": "if (!syntax.open.test(lines[i])) continue;"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:887|0": {
-    "anchor": "scripts/check-anchors.mjs:887",
-    "fp": "82d76e7ed94dfdf4",
-    "head": "function reportNearMisses(exempted) {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:925-959|0": {
-    "anchor": "scripts/check-anchors.mjs:925-959",
-    "fp": "c0ce026f923c4d6d",
-    "head": "// Before anything else, and before the bless path in particular. A relative citation is a"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-contract.mjs:88-139|0": {
     "anchor": "scripts/check-contract.mjs:88-139",
@@ -2504,6 +2549,11 @@
     "fp": "ccb439ff635c8b38",
     "head": "assert.ok(Date.now() - started < 20000, 'the quadratic form took 16.8 seconds on a fiftieth of this'"
   },
+  "PRODUCT_BACKLOG.md|item-details|test/check-anchors.test.js:854-858|0": {
+    "anchor": "test/check-anchors.test.js:854-858",
+    "fp": "fee84b2827663c27",
+    "head": "test('a sentence citing one line twice is found', () => {"
+  },
   "PRODUCT_BACKLOG.md|item-details|test/ci-deadlines.test.js:149-158|0": {
     "anchor": "test/ci-deadlines.test.js:149-158",
     "fp": "421df666e8117d81",
@@ -3079,8 +3129,8 @@
     "fp": "041e549f4f8de028",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:553|0": {
-    "anchor": "scripts/check-anchors.mjs:553",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:710|0": {
+    "anchor": "scripts/check-anchors.mjs:710",
     "fp": "48c96e3374e4aff6",
     "head": "claim: claimBefore(lines, i, c.at, syntax),"
   },
@@ -3114,8 +3164,8 @@
     "fp": "0bfa4a558f67527c",
     "head": "// Where the relative form counts, which is the same split BL-071 drew and for the same reason."
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-078|scripts/check-anchors.mjs:1021|0": {
-    "anchor": "scripts/check-anchors.mjs:1021",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-078|scripts/check-anchors.mjs:1215|0": {
+    "anchor": "scripts/check-anchors.mjs:1215",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
@@ -3124,8 +3174,8 @@
     "fp": "18f94cbda3c2e5ec",
     "head": "export function commentSyntax(path) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-080|scripts/check-anchors.mjs:1122|0": {
-    "anchor": "scripts/check-anchors.mjs:1122",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-080|scripts/check-anchors.mjs:1316|0": {
+    "anchor": "scripts/check-anchors.mjs:1316",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
@@ -3314,13 +3364,13 @@
     "fp": "7231dcb5f75d55f6",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:651-653|0": {
-    "anchor": "scripts/check-anchors.mjs:651-653",
-    "fp": "cfb1a6c69abcd7ab",
-    "head": "// Narrowed to one scope and one anchor, because sharing an anchor across the document"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:511-544|0": {
+    "anchor": "scripts/check-anchors.mjs:511-544",
+    "fp": "1f49cb516abe3fde",
+    "head": "export function repeatedCitations(text, syntax = PROSE, known = null) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-123|PRODUCT_BACKLOG.md:8320-8321|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8320-8321",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-123|PRODUCT_BACKLOG.md:8422-8423|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8422-8423",
     "fp": "6df6a9fd9aa25849",
     "head": "Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077"
   },
