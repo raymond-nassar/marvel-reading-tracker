@@ -303,11 +303,12 @@ test('a path with no root to clamp against is refused', () => {
 });
 
 // A backslash is a separator on Windows and an ordinary character in a filename on everything else,
-// so this one input has two correct answers: on Windows it is a traversal and is refused, and on
-// Linux it names a file inside src/ that does not exist and is a 404. Asserting either literally
-// would make this suite pass on one operating system and fail on the other, and asserting only the
-// local answer would hide that. What both answers have in common is the property that matters, so
-// that is what is asserted. This is the one platform divergence the whole file turned up.
+// so the two relative inputs below have two correct answers each: on Windows they are traversals and
+// are refused, and on Linux they name files inside src/ that do not exist and are 404s. The third,
+// with a leading slash, does not diverge, because normalize clamps an absolute path at its own root
+// on both. Asserting a status literally would make this suite pass on one operating system and fail
+// on the other, and asserting only the local answer would hide that. What every answer has in common
+// is the property that matters, so that is what is asserted.
 test('a separator that only some systems recognise still cannot reach outside', () => {
   const root = safePath('/');
   const srcDir = root.slice(0, root.lastIndexOf(sep));
@@ -320,7 +321,10 @@ test('a separator that only some systems recognise still cannot reach outside', 
 
 // The claim that matters is not which of the two refuses a given shape, it is that no shape gets a
 // file from outside src/. package.json is one directory above the root and is the file a traversal
-// would be aiming at.
+// would be aiming at. The status assertion is a range rather than a value on purpose, and
+// //../package.json is why: path.win32.normalize reads a leading // as a UNC root and refuses it, so
+// Windows answers 403 where Linux answers 404. Both are refusals, which is the claim; only the
+// choice of refusal moves.
 test('no traversal shape serves a file from outside the served directory', async () => {
   await withServer(async (port) => {
     const targets = [
@@ -384,21 +388,32 @@ test('closing the server gives the port back', async () => {
   const server = createStaticServer();
   await new Promise((resolve) => server.listen(0, HOST, resolve));
   const { port } = server.address();
-  assert.equal((await fetchPath(port, '/')).status, 200);
+  let again = null;
+  // Every other test here borrows withServer's finally. This one owns two listeners and cannot,
+  // so it carries its own: without it an assertion failure below leaks a listening handle into a
+  // run that is already red, and a leaked listener is a second, misleading failure on top of the
+  // real one.
+  try {
+    assert.equal((await fetchPath(port, '/')).status, 200);
 
-  server.closeAllConnections();
-  await new Promise((resolve) => server.close(resolve));
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
 
-  // Refused rather than hanging: nothing is listening, so the connection is reset at once.
-  await assert.rejects(() => fetchPath(port, '/'), (err) => ['ECONNREFUSED', 'ECONNRESET'].includes(err.code));
+    // Refused rather than hanging: nothing is listening, so the connection is reset at once.
+    await assert.rejects(() => fetchPath(port, '/'), (err) => ['ECONNREFUSED', 'ECONNRESET'].includes(err.code));
 
-  // And the port really is free, which is what a developer restarting `npm start` depends on.
-  const again = createStaticServer();
-  await new Promise((resolve, reject) => {
-    again.once('error', reject);
-    again.listen(port, HOST, resolve);
-  });
-  assert.equal((await fetchPath(port, '/')).status, 200);
-  again.closeAllConnections();
-  await new Promise((resolve) => again.close(resolve));
+    // And the port really is free, which is what a developer restarting `npm start` depends on.
+    again = createStaticServer();
+    await new Promise((resolve, reject) => {
+      again.once('error', reject);
+      again.listen(port, HOST, resolve);
+    });
+    assert.equal((await fetchPath(port, '/')).status, 200);
+  } finally {
+    for (const s of [server, again]) {
+      if (!s?.listening) continue;
+      s.closeAllConnections();
+      await new Promise((resolve) => s.close(resolve));
+    }
+  }
 });

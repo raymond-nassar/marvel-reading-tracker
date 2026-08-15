@@ -4577,7 +4577,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8680-8682` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8684-8686` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4587,11 +4587,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:205-207`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8699-8703`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8703-8707`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8514-8516` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8518-8520` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -6382,8 +6382,9 @@ not cover the HTTP contract or the macOS and Linux launcher branches. Evidence:
 The reason there were no tests was structural rather than anybody's oversight: the module bound the
 port and opened a browser at import, so a test that so much as imported it took 8787 and launched a
 tab. Construction is now separate from binding, the program half sits behind an entry guard, and 26
-tests drive an ephemeral loopback port. A mutation set of 26 single-line edits leaves 25 caught, each
-one named by the test that catches it.
+tests cover it, 17 of them driving an ephemeral loopback port and the rest checking the pure
+functions and the shape of the file itself. A mutation set of 26 single-line edits leaves 25 caught,
+each one named by the test that catches it.
 
 Three findings came out of writing them, none of which the four tasks anticipated. An unusable
 `MRT_PORT` used to reach node:net and exit with a raw `ERR_SOCKET_BAD_PORT` stack, which is how a
@@ -6401,12 +6402,15 @@ it does not defend it.
 
 The operating-system question is answered no, from measurement rather than instinct. The launcher was
 the OS-specific code that mattered and it is now a pure table checked on every platform the suite runs
-on. The only OS-dependent behaviour left is that `normalize` and `sep` read a backslash as a separator
-on Windows and as an ordinary filename character everywhere else, which makes three traversal inputs
-answer 403 on Windows and 404 on Linux. Neither answer serves a file from outside `src/`, so the
-observable contract is the same on both and only the choice of refusal differs. That is not worth
-doubling every CI run for. The trigger to revisit is a change that makes an OS difference observable,
-or a launcher that stops being data.
+on. Three traversal inputs answer 403 on Windows and 404 on Linux, for two different reasons.
+`..\package.json` and `..\..\package.json` diverge because `normalize` and `sep` read a backslash as a
+separator on Windows and as an ordinary filename character everywhere else. `//../package.json`
+diverges for an unrelated reason: `path.win32.normalize` reads a leading `//` as a UNC root and
+refuses it. Only the third is reachable over HTTP, and it was driven against a live server to confirm
+it: the other two are relative request targets, so the parser answers 400 and `safePath` never sees
+them. Neither answer serves a file from outside `src/`, so the observable contract is the same on both
+and only the choice of refusal differs. That is not worth doubling every CI run for. The trigger to
+revisit is a change that makes an OS difference serve something, or a launcher that stops being data.
 
 **BL-095: Put explicit deadlines on CI jobs**
 
