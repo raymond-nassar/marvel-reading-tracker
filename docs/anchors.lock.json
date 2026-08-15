@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8748|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8748",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8783|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8783",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -654,9 +654,9 @@
     "fp": "179d485d49b3bd60",
     "head": "const store = new Store({"
   },
-  "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-34|0": {
-    "anchor": "package.json:1-34",
-    "fp": "613c91716c92eb9f",
+  "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-35|0": {
+    "anchor": "package.json:1-35",
+    "fp": "954b0cbc26205fb8",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:979-1010|0": {
@@ -769,14 +769,14 @@
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|package.json:26-28|0": {
-    "anchor": "package.json:26-28",
+  "PRODUCT_BACKLOG.md|8-flexibility|package.json:27-29|0": {
+    "anchor": "package.json:27-29",
     "fp": "049db722764e6552",
     "head": "\"engines\": {"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|package.json:8-24|0": {
-    "anchor": "package.json:8-24",
-    "fp": "825aeb705cd8534c",
+  "PRODUCT_BACKLOG.md|8-flexibility|package.json:8-25|0": {
+    "anchor": "package.json:8-25",
+    "fp": "0c8a93156043f951",
     "head": "\"scripts\": {"
   },
   "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/cachePolicy.js:16-20|0": {
@@ -804,13 +804,13 @@
     "fp": "ae02072879fb9465",
     "head": "`Status` is `Ready` for an item still to be picked up and `Shipped` for one delivered since this"
   },
-  "PRODUCT_BACKLOG.md|appendix-b-priority-disagreements|scripts/check-counts.mjs:177-209|0": {
-    "anchor": "scripts/check-counts.mjs:177-209",
+  "PRODUCT_BACKLOG.md|appendix-b-priority-disagreements|scripts/check-counts.mjs:179-211|0": {
+    "anchor": "scripts/check-counts.mjs:179-211",
     "fp": "ca06f80427908fb8",
     "head": "export function checkRanks(d) {"
   },
-  "PRODUCT_BACKLOG.md|appendix-b-priority-disagreements|scripts/check-counts.mjs:222-246|0": {
-    "anchor": "scripts/check-counts.mjs:222-246",
+  "PRODUCT_BACKLOG.md|appendix-b-priority-disagreements|scripts/check-counts.mjs:224-248|0": {
+    "anchor": "scripts/check-counts.mjs:224-248",
     "fp": "c546f6073d5d1cb1",
     "head": "export function checkOrdinalHeadings(d) {"
   },
@@ -846,7 +846,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:107-125|0": {
     "anchor": ".github/workflows/ci.yml:107-125",
-    "fp": "a89cc7b7da106242",
+    "fp": "50d2ade71a20b2ee",
     "head": "lint:"
   },
   "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:120-125|0": {
@@ -864,8 +864,8 @@
     "fp": "f74e9b7abbf725e0",
     "head": "- name: Check evidence anchors"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:204-206|0": {
-    "anchor": ".github/workflows/ci.yml:204-206",
+  "PRODUCT_BACKLOG.md|item-details|.github/workflows/ci.yml:214-216|0": {
+    "anchor": ".github/workflows/ci.yml:214-216",
     "fp": "bd0da58f7569ec11",
     "head": "- name: Check publication boundary"
   },
@@ -899,8 +899,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1938-1947|0": {
-    "anchor": "CHANGELOG.md:1938-1947",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1959-1968|0": {
+    "anchor": "CHANGELOG.md:1959-1968",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -954,13 +954,13 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
-  "PRODUCT_BACKLOG.md|item-details|package.json:24-34|0": {
-    "anchor": "package.json:24-34",
+  "PRODUCT_BACKLOG.md|item-details|package.json:25-35|0": {
+    "anchor": "package.json:25-35",
     "fp": "929d1a333f413d4d",
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
-  "PRODUCT_BACKLOG.md|item-details|package.json:30-33|0": {
-    "anchor": "package.json:30-33",
+  "PRODUCT_BACKLOG.md|item-details|package.json:31-34|0": {
+    "anchor": "package.json:31-34",
     "fp": "a64dc944f3b68444",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },
@@ -971,17 +971,17 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:196-200|0": {
     "anchor": "PRODUCT_BACKLOG.md:196-200",
-    "fp": "b580db8cd946ae82",
+    "fp": "4f89c38ee01fbb71",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:206-208|0": {
     "anchor": "PRODUCT_BACKLOG.md:206-208",
-    "fp": "c56dc4d77771d4d5",
+    "fp": "244617ae30e79f0f",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:206-208|1": {
     "anchor": "PRODUCT_BACKLOG.md:206-208",
-    "fp": "c56dc4d77771d4d5",
+    "fp": "244617ae30e79f0f",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:232|0": {
@@ -1014,24 +1014,24 @@
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8722-8724|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8722-8724",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8757-8759|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8757-8759",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8888-8890|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8888-8890",
-    "fp": "8223a2090c025a24",
-    "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8923-8925|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8923-8925",
+    "fp": "2645f159a35c2ecb",
+    "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8907-8911|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8907-8911",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8942-8946|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8942-8946",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:272-573|0": {
-    "anchor": "README.md:272-573",
-    "fp": "5b4450fa17449c5e",
+  "PRODUCT_BACKLOG.md|item-details|README.md:272-575|0": {
+    "anchor": "README.md:272-575",
+    "fp": "575b95bb3e59f856",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:29-48|0": {
@@ -1039,18 +1039,18 @@
     "fp": "ed521d6d8fec6b44",
     "head": "### Your data stays with you"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:381-416|0": {
-    "anchor": "README.md:381-416",
+  "PRODUCT_BACKLOG.md|item-details|README.md:383-418|0": {
+    "anchor": "README.md:383-418",
     "fp": "3eae5484d412a37e",
     "head": "### Reviewing an update to a pinned action"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:423-427|0": {
-    "anchor": "README.md:423-427",
+  "PRODUCT_BACKLOG.md|item-details|README.md:425-429|0": {
+    "anchor": "README.md:425-429",
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:515-526|0": {
-    "anchor": "README.md:515-526",
+  "PRODUCT_BACKLOG.md|item-details|README.md:517-528|0": {
+    "anchor": "README.md:517-528",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -1264,68 +1264,68 @@
     "fp": "52fbf7e2956f5c32",
     "head": "async function checkCoverage(health) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:218|0": {
-    "anchor": "scripts/check-counts.mjs:218",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:220|0": {
+    "anchor": "scripts/check-counts.mjs:220",
     "fp": "9d42b2b4ebee5957",
     "head": "export const WORD = '[A-Za-z]+(?:-[a-z]+)?(?: hundred(?: and [a-z]+(?:-[a-z]+)?)?)?';"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:309|0": {
-    "anchor": "scripts/check-counts.mjs:309",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:311|0": {
+    "anchor": "scripts/check-counts.mjs:311",
     "fp": "420a735815645cd3",
     "head": "for (let n = 0; numberWord(n) !== null; n += 1) if (numberWord(n) === w) return n;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:349-355|0": {
-    "anchor": "scripts/check-counts.mjs:349-355",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:351-357|0": {
+    "anchor": "scripts/check-counts.mjs:351-357",
     "fp": "3a9f6b5d6e6865d1",
     "head": "// The verb is part of the pattern and both forms are accepted, because the count this sentence"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:357-432|0": {
-    "anchor": "scripts/check-counts.mjs:357-432",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:359-434|0": {
+    "anchor": "scripts/check-counts.mjs:359-434",
     "fp": "eba7d4f1731c86ac",
     "head": "export function checkLedger(d) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:467-477|0": {
-    "anchor": "scripts/check-counts.mjs:467-477",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:469-479|0": {
+    "anchor": "scripts/check-counts.mjs:469-479",
     "fp": "4f9ce96ed4803f69",
     "head": "const counts = new Map();"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:49-52|0": {
-    "anchor": "scripts/check-counts.mjs:49-52",
-    "fp": "8ce64ac3f4804c63",
-    "head": "const TENS = {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:498-532|0": {
-    "anchor": "scripts/check-counts.mjs:498-532",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:500-534|0": {
+    "anchor": "scripts/check-counts.mjs:500-534",
     "fp": "f4afe1e1bd4826b8",
     "head": "export function checkRepeats(text) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:500-508|0": {
-    "anchor": "scripts/check-counts.mjs:500-508",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:502-510|0": {
+    "anchor": "scripts/check-counts.mjs:502-510",
     "fp": "643593c6cfea105b",
     "head": "// The ceiling is derived rather than picked. A repeat cannot span a blank line, by the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:518-524|0": {
-    "anchor": "scripts/check-counts.mjs:518-524",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:51-54|0": {
+    "anchor": "scripts/check-counts.mjs:51-54",
+    "fp": "8ce64ac3f4804c63",
+    "head": "const TENS = {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:520-526|0": {
+    "anchor": "scripts/check-counts.mjs:520-526",
     "fp": "94d23f13cd148b10",
     "head": "for (let i = 0; i + 2 * n <= lines.length; i++) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:546-568|0": {
-    "anchor": "scripts/check-counts.mjs:546-568",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:548-570|0": {
+    "anchor": "scripts/check-counts.mjs:548-570",
     "fp": "0a0079af7805b057",
     "head": "// The floor of three is measured, not guessed, and it is the whole of the second task"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:569-607|0": {
-    "anchor": "scripts/check-counts.mjs:569-607",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:571-609|0": {
+    "anchor": "scripts/check-counts.mjs:571-609",
     "fp": "f9f93904c5f4d86d",
     "head": "const MIN_DISTANT = 3;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:58-64|0": {
-    "anchor": "scripts/check-counts.mjs:58-64",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:60-66|0": {
+    "anchor": "scripts/check-counts.mjs:60-66",
     "fp": "5d2542878e24aa97",
     "head": "// Spelled out because the document spells them out. Returning null above the top of the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:626|0": {
-    "anchor": "scripts/check-counts.mjs:626",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-counts.mjs:628|0": {
+    "anchor": "scripts/check-counts.mjs:628",
     "fp": "fff777799f638b50",
     "head": "const { derived, findings } = checkAll(readFileSync(join(root, DOC), 'utf8'));"
   },
@@ -1358,6 +1358,11 @@
     "anchor": "scripts/check-publication.mjs:156-190",
     "fp": "15de2524b64014c7",
     "head": "// The population a clone would receive, rather than every object this machine happens to hold."
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-sizes.mjs:31|0": {
+    "anchor": "scripts/check-sizes.mjs:31",
+    "fp": "95df7f5f266428b5",
+    "head": "const STATED = /\\b(?:is|of)\\s+([\\d][\\d,]*)\\s+lines\\b/g;"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:38-41|0": {
     "anchor": "scripts/lib/fetch-json.mjs:38-41",
@@ -1441,7 +1446,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|SECURITY.md:6-9|0": {
     "anchor": "SECURITY.md:6-9",
-    "fp": "e1322d16f9577a50",
+    "fp": "9602c1fdfb116c8e",
     "head": "attack, no account to take over and no database holding anyone else's data. The app has no runtime"
   },
   "PRODUCT_BACKLOG.md|item-details|server.mjs:103-113|0": {
@@ -3149,18 +3154,18 @@
     "fp": "290426a7b5f1f608",
     "head": "const CATALOG_LOAD = 'catalog-load';"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-34|0": {
-    "anchor": "package.json:1-34",
-    "fp": "613c91716c92eb9f",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-35|0": {
+    "anchor": "package.json:1-35",
+    "fp": "954b0cbc26205fb8",
     "head": "{"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:29-34|0": {
-    "anchor": "package.json:29-34",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:30-35|0": {
+    "anchor": "package.json:30-35",
     "fp": "71ce9f59d9cbefcb",
     "head": "\"devDependencies\": {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:24|0": {
-    "anchor": "package.json:24",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:25|0": {
+    "anchor": "package.json:25",
     "fp": "10904b7f9645e3f0",
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
@@ -3209,9 +3214,9 @@
     "fp": "c4badc70c9aad76e",
     "head": "detailsBadge(item),"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-34|0": {
-    "anchor": "package.json:1-34",
-    "fp": "613c91716c92eb9f",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-35|0": {
+    "anchor": "package.json:1-35",
+    "fp": "954b0cbc26205fb8",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:12|0": {
@@ -3346,7 +3351,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:196-208|0": {
     "anchor": "PRODUCT_BACKLOG.md:196-208",
-    "fp": "db9dde620dd7303b",
+    "fp": "24cef4ba194bd5e1",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
@@ -3354,8 +3359,8 @@
     "fp": "8523742f20d6685b",
     "head": "const noEmDashInShippedCopy = {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-062|scripts/check-counts.mjs:498-532|0": {
-    "anchor": "scripts/check-counts.mjs:498-532",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-062|scripts/check-counts.mjs:500-534|0": {
+    "anchor": "scripts/check-counts.mjs:500-534",
     "fp": "f4afe1e1bd4826b8",
     "head": "export function checkRepeats(text) {"
   },
@@ -3439,8 +3444,8 @@
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-081|scripts/check-counts.mjs:569-607|0": {
-    "anchor": "scripts/check-counts.mjs:569-607",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-081|scripts/check-counts.mjs:571-609|0": {
+    "anchor": "scripts/check-counts.mjs:571-609",
     "fp": "f9f93904c5f4d86d",
     "head": "const MIN_DISTANT = 3;"
   },
@@ -3499,8 +3504,8 @@
     "fp": "a27d0cff24c03c8d",
     "head": "// Every button must visibly report itself. A readout that changes quietly reads as \"nothing"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-093|package.json:22-23|0": {
-    "anchor": "package.json:22-23",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-093|package.json:23-24|0": {
+    "anchor": "package.json:23-24",
     "fp": "fd0fdcf6b0084af0",
     "head": "\"browser\": \"node scripts/browser-check.mjs\","
   },
@@ -3524,9 +3529,9 @@
     "fp": "a76c62ab06ae335e",
     "head": "**Do not open a public issue, discussion or pull request for a suspected vulnerability.** A public"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:272-333|0": {
-    "anchor": "README.md:272-333",
-    "fp": "6cbbb89a32d95e85",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:272-335|0": {
+    "anchor": "README.md:272-335",
+    "fp": "4e634e804af4f0cc",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-098|.github/CODEOWNERS:1-51|0": {
@@ -3559,8 +3564,8 @@
     "fp": "dda7109a4205f5b2",
     "head": "const ANCHOR = /`([A-Za-z0-9_./-]+\\.(?:js|mjs|css|html|json|yml|md)):(\\d+)(?:-(\\d+))?`/g;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-105|scripts/check-counts.mjs:357-432|0": {
-    "anchor": "scripts/check-counts.mjs:357-432",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-105|scripts/check-counts.mjs:359-434|0": {
+    "anchor": "scripts/check-counts.mjs:359-434",
     "fp": "eba7d4f1731c86ac",
     "head": "export function checkLedger(d) {"
   },
@@ -3604,8 +3609,8 @@
     "fp": "25ea3f84ed243fe7",
     "head": "import js from '@eslint/js';"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-116|scripts/check-counts.mjs:49-52|0": {
-    "anchor": "scripts/check-counts.mjs:49-52",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-116|scripts/check-counts.mjs:51-54|0": {
+    "anchor": "scripts/check-counts.mjs:51-54",
     "fp": "8ce64ac3f4804c63",
     "head": "const TENS = {"
   },
@@ -3614,8 +3619,8 @@
     "fp": "ccb439ff635c8b38",
     "head": "assert.ok(Date.now() - started < 20000, 'the quadratic form took 16.8 seconds on a fiftieth of this'"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-118|scripts/check-counts.mjs:626|0": {
-    "anchor": "scripts/check-counts.mjs:626",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-118|scripts/check-counts.mjs:628|0": {
+    "anchor": "scripts/check-counts.mjs:628",
     "fp": "fff777799f638b50",
     "head": "const { derived, findings } = checkAll(readFileSync(join(root, DOC), 'utf8'));"
   },
@@ -3624,8 +3629,8 @@
     "fp": "405ec0ea2ab1c5d4",
     "head": "const meta = ["
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-120|.github/workflows/ci.yml:204-206|0": {
-    "anchor": ".github/workflows/ci.yml:204-206",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-120|.github/workflows/ci.yml:214-216|0": {
+    "anchor": ".github/workflows/ci.yml:214-216",
     "fp": "bd0da58f7569ec11",
     "head": "- name: Check publication boundary"
   },
@@ -3643,6 +3648,11 @@
     "anchor": "src/js/main.js:3651-3654",
     "fp": "3ce058140aeaef21",
     "head": "function onApiStatus(s) {"
+  },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-125|scripts/check-sizes.mjs:31|0": {
+    "anchor": "scripts/check-sizes.mjs:31",
+    "fp": "95df7f5f266428b5",
+    "head": "const STATED = /\\b(?:is|of)\\s+([\\d][\\d,]*)\\s+lines\\b/g;"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-126|scripts/vendor-orders.mjs:200-209|0": {
     "anchor": "scripts/vendor-orders.mjs:200-209",
@@ -3774,8 +3784,8 @@
     "fp": "3e2c4d78c29c3429",
     "head": "//   MAJOR  changes the stored data in a way an older build cannot read. Anyone who has"
   },
-  "SECURITY.md|what-this-project-is-because-it-decides-what-a-v|package.json:30-33|0": {
-    "anchor": "package.json:30-33",
+  "SECURITY.md|what-this-project-is-because-it-decides-what-a-v|package.json:31-34|0": {
+    "anchor": "package.json:31-34",
     "fp": "a64dc944f3b68444",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },

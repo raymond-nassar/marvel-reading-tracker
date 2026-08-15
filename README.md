@@ -312,6 +312,7 @@ npm test
 npm run lint
 npm run anchors
 npm run counts
+npm run sizes
 npm run palette
 npm run publication
 ```
@@ -320,10 +321,11 @@ npm run publication
 every `path:line` citation in the tracked files still points at lines saying what the
 citation claims. `npm run counts` recomputes the figures the backlog states about its own
 ranked table, such as how many rows it has and where an item ranks, and fails with the
-derived value when the prose disagrees. `npm run palette` checks colour contrast against the
-thresholds the interface promises. `npm run publication` checks that nothing in the tracked files
-or in the history would be a problem if this repository were made public. All six run in CI on
-every pull request, and on pushes to `main`.
+derived value when the prose disagrees. `npm run sizes` does the same for a sentence stating
+how many lines a file has, recounting the file it names. `npm run palette` checks colour contrast
+against the thresholds the interface promises. `npm run publication` checks that nothing in the
+tracked files or in the history would be a problem if this repository were made public.
+All seven run in CI on every pull request, and on pushes to `main`.
 
 `npm start` serves `src/` on a local static server, as described in
 [Run it on your computer](#run-it-on-your-computer). Set `MRT_PORT` to serve on a different

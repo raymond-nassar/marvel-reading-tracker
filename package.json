@@ -14,6 +14,7 @@
     "anchors": "node scripts/check-anchors.mjs",
     "anchors:bless": "node scripts/check-anchors.mjs --bless",
     "counts": "node scripts/check-counts.mjs",
+    "sizes": "node scripts/check-sizes.mjs",
     "palette": "node scripts/check-palette.mjs",
     "publication": "node scripts/check-publication.mjs",
     "publication:surface": "node scripts/check-publication.mjs --surface",

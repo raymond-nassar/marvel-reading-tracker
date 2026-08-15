@@ -107,7 +107,7 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    # 21 minutes of step deadlines below, so the same ordering holds here.
+    # 23 minutes of step deadlines below, so the same ordering holds here.
     timeout-minutes: 25
     steps:
       # The full history, unlike every other checkout here. The publication gate below
@@ -164,6 +164,16 @@ jobs:
       - name: Check derived counts
         timeout-minutes: 2
         run: npm run counts
+
+      # The gate above recomputes figures from the ranked table in the same document, so
+      # it counts rows and never lines, and the anchors gate holds only what a citation
+      # names. A sentence that states a file's size cites nothing and derives from no
+      # table, which left it the one shape both were blind to, and it went stale twice:
+      # once at 1,566 lines against a file that had reached 2,563, and again at 3,732
+      # against 3,784. This recomputes each stated size from the tree.
+      - name: Check stated file sizes
+        timeout-minutes: 2
+        run: npm run sizes
 
       # The contrast ratios this stylesheet claims used to be prose in CSS comments,
       # and one of those comments warned in as many words that a second theme "would

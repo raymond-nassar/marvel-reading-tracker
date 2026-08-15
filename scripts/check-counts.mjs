@@ -12,9 +12,11 @@
 // recomputed and compared. A general checker would have to decide which number in
 // any English sentence is derived and from what, which is not tractable, so claims
 // are recognised by rigid syntactic form rather than by reading the prose around
-// them. Figures that need the tree rather than the table, the line count of
-// `src/js/main.js` and the test total among them, are deliberately out of reach:
-// folding them in would turn a tractable gate into the intractable one.
+// them. Figures that need the tree rather than the table are out of scope here, and
+// one class of them is now covered by a sibling gate: a stated file size names its
+// file, so `scripts/check-sizes.mjs` recomputes it from the tree by the same
+// rigid-form rule. The test total is not covered by either, because a sentence
+// stating one names nothing that can be counted without running the suite.
 //
 // What it cannot do is decide whether a figure was right when it was written. It
 // compares the prose against the table, so a table that is itself wrong will be
