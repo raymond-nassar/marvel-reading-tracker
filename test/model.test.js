@@ -87,8 +87,8 @@ test('normalizeIssue carries the rich fields from /issues/{id}', () => {
 });
 
 test('cover URLs are built from a variant and never invented', () => {
-  const withCover = normalizeIssue({ id: 1, cover: { path: 'https://cdn/x', extension: 'jpg' } });
-  assert.equal(coverUrl(withCover, 'portrait_uncanny'), 'https://cdn/x/portrait_uncanny.jpg');
+  const withCover = normalizeIssue({ id: 1, cover: { path: 'https://i.annihil.us/u/x', extension: 'jpg' } });
+  assert.equal(coverUrl(withCover, 'portrait_uncanny'), 'https://i.annihil.us/u/x/portrait_uncanny.jpg');
   assert.equal(coverUrl(normalizeIssue({ id: 2 })), null, 'no cover means no URL, not a broken one');
 });
 
@@ -96,7 +96,7 @@ test('normalizeCover refuses anything that is not an https URL', () => {
   assert.equal(normalizeCover(null), null);
   assert.equal(normalizeCover({ path: 'javascript:alert(1)', extension: 'jpg' }), null);
   assert.equal(normalizeCover({ extension: 'jpg' }), null);
-  assert.equal(normalizeCover({ path: 'https://cdn/x' }).ext, 'jpg', 'extension defaults');
+  assert.equal(normalizeCover({ path: 'https://i.annihil.us/u/x' }).ext, 'jpg', 'extension defaults');
 });
 
 test('pageCount only survives when it is a positive number', () => {
@@ -636,7 +636,7 @@ test('an issue added from a list endpoint stays pending until hydrated', async (
   assert.ok(hydrationOrder(s, listId).includes(52447));
 
   // And once hydrated it drops out of the queue.
-  s = upsertIssue(s, { ...fromList, digitalId: 38164, cover: { path: 'http://x/y', extension: 'jpg' }, hydrated: true });
+  s = upsertIssue(s, { ...fromList, digitalId: 38164, cover: { path: 'http://i.annihil.us/u/y', extension: 'jpg' }, hydrated: true });
   assert.deepEqual(pendingIssueIds(s), []);
 });
 

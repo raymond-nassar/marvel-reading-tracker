@@ -115,9 +115,15 @@ Recorded so a report can start from what is true rather than from what a scanner
   and for covers name the issue being asked about, so both hosts see which issues you are looking
   at; the reachability check names nothing. Your reading progress and your notes are never sent to
   any of them.
+- Covers are requested from Marvel's image server and from no other host. The address is reported
+  by the metadata service, which is a party the reader chooses and one that could be compromised
+  or hostile, so an address naming anything else is refused before a request is made rather than
+  fetched and hidden. The host is written once, in `src/js/lib/coverHost.js`, and imported both by
+  the normalizer that decides which cover addresses may be built and by the `img-src` directive
+  the development server sends, so the rule and the policy that enforces it cannot drift apart.
 - The development server sends a content security policy on every response that serves a file,
-  built at `server.mjs:43-54`, alongside `nosniff`, `no-referrer` and `X-Frame-Options: DENY`, set
-  at `server.mjs:112-122`. Its error responses carry none of the four, which is recorded here
+  built at `server.mjs:52-63`, alongside `nosniff`, `no-referrer` and `X-Frame-Options: DENY`, set
+  at `server.mjs:121-131`. Its error responses carry none of the four, which is recorded here
   because this list is meant to be what is true rather than what was intended.
 - The repository holds no secrets. Nothing in the scripts or the workflow reads a credential, and
   the metadata API needs no key.

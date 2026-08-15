@@ -38,11 +38,14 @@ typed, and so does asking an imported line to find its own match; searching the 
 creators is answered from files already on this machine, but adding a whole series or a creator's
 issues then asks that database for every issue it lists, which is the longest run of requests the
 app makes. To show you comic titles, dates and cover pictures, it downloads those details from that
-same public comics database and downloads the cover images from Marvel's own image servers. That is
-the same kind of request your browser makes when it loads any web page. Those requests do reveal
-which issues you are looking at, because asking for an issue's details or its cover picture is
-exactly what they are. Turning cover art off stops the covers being requested at all. What is
-never sent is your reading progress, your notes, or anything identifying you.
+same public comics database and downloads the cover images from Marvel's own image servers. Those
+images come from that one server and no other: the database reports each cover address, and one
+naming a different host is refused rather than fetched, so a database that had been tampered with
+cannot point your browser at a server of its own. That is the same kind of request your browser
+makes when it loads any web page. Those requests do reveal which issues you are looking at, because
+asking for an issue's details or its cover picture is exactly what they are. Turning cover art off
+stops the covers being requested at all. What is never sent is your reading progress, your notes,
+or anything identifying you.
 
 ## Run it on your computer
 

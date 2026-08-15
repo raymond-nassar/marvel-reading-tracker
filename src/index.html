@@ -523,10 +523,12 @@
             <div class="card card-static">
               <h2>Cover art</h2>
               <p class="rail-hint">
-                Covers are loaded straight from Marvel's own servers using the address the metadata API
-                reports. This app stores only that address, never the image itself, and never proxies
-                or re-hosts artwork. Switch covers off and every cover becomes a plain typographic
-                tile, and no cover is requested at all.
+                Covers are loaded straight from Marvel's own image servers, and from nowhere else.
+                The metadata service reports each address, but one naming any other host is refused
+                before a request is made, so a service that had been tampered with cannot have this
+                browser contact a server of its choosing. This app stores only the address, never the
+                image itself, and never proxies or re-hosts artwork. Switch covers off and every cover
+                becomes a plain typographic tile, and no cover is requested at all.
               </p>
               <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
             </div>
@@ -600,7 +602,8 @@
               <p class="rail-hint">
                 No comic content is stored, copied, proxied, or served. The app tracks which issues you
                 have read and links out to Marvel's own site and reader. Reading an issue requires your
-                own Marvel Unlimited subscription. Cover images load directly from Marvel's own servers.
+                own Marvel Unlimited subscription. Cover images load directly from Marvel's own servers,
+                and an address on any other host is refused rather than requested.
                 Switching cover art off stops them being requested.
               </p>
 
@@ -651,6 +654,8 @@
                 the one you are about to read. Cover art is
                 requested from Marvel's image servers as it appears, so those servers see which
                 issues are on screen; switching cover art off stops them being requested at all.
+                Those are the only servers a cover is ever asked of: an address the metadata API
+                reports on any other host is refused before anything is fetched.
                 Opening an issue asks the metadata API for the reader link
                 when this copy does not already have it, then hands that one issue to Marvel's
                 reader, or to marvel.com whenever no reader link can be resolved.
