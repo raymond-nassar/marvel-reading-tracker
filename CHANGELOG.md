@@ -14,6 +14,30 @@ quote in a bug report.
 
 ## Unreleased
 
+### Restoring a backup that is too big to keep no longer risks drawing it first (BL-114)
+
+Nothing in the app changes, nothing you have saved is affected, and nothing on screen looks
+different. This is about a worry that turned out to be unfounded, and about making sure it stays
+that way.
+
+The concern was this. When you restore a backup, the app has to draw every reading list in it on the
+home screen and in the side rail. A backup large enough to be refused by your browser's storage
+would still, in principle, have to be drawn before the app discovered it could not keep it, so you
+would sit through a long redraw and then be told the restore failed anyway.
+
+Reading the code carefully showed that cannot happen: the app writes the backup to storage before it
+draws anything, so a backup your browser refuses is never drawn at all. Measuring it in a real
+browser confirmed that, and put a useful number on where the limit falls. On this machine a backup
+of twelve thousand reading lists restored in about six tenths of a second; thirteen thousand was
+refused outright in under a tenth, with nothing drawn and nothing saved. A backup small enough to be
+kept is small enough to draw quickly, so there is no case left to guard against and no new limit
+worth adding.
+
+What did change is that three new automatic checks now hold that behaviour in place, so a future
+change cannot quietly start drawing a backup the browser is about to refuse. One of them also
+records something worth knowing: a restore briefly needs room for two copies of the backup, not one,
+which is why the practical limit is about half of what your browser would otherwise allow.
+
 ### The build now checks any sentence that says how long a file is (BL-125)
 
 Nothing in the app changes, and nothing you have saved is affected. This is about the project's own

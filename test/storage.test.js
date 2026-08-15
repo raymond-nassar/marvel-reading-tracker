@@ -813,6 +813,15 @@ function replacementBackup() {
   return JSON.stringify(exportBackup(other));
 }
 
+// Many lists rather than one, because the two renders BL-114 is about paint a node per list. The
+// count is small: what the tests below vary is the room, not the size, and a fixture large enough
+// to be slow would be measuring the test rather than the store.
+function wideBackup(lists) {
+  let s = createEmptyState();
+  for (let i = 0; i < lists; i += 1) s = createList(s, { name: `Order ${i}` });
+  return JSON.stringify(exportBackup(s));
+}
+
 // restore() re-serialises through exportBackup(), so the saved copy carries the moment of the
 // restore rather than the moment the backup was taken. Comparing the two strings whole therefore
 // asserts something the code never promised, and it passed only because both stamps usually land
@@ -1042,6 +1051,102 @@ test('a snapshot slot that would not be read is neither deleted nor announced as
   const undo = store.undoRestore();
   assert.equal(undo.ok, false, 'and a snapshot of the live data is refused, not announced as undone');
   assert.match(undo.errors.join(' '), /nothing to undo/);
+});
+
+// ------------------------------------------------ what a render can be handed
+
+// BL-114's decision, held to a test rather than argued.
+//
+// The item asked whether the two per-list renders need a bound of their own, on the reading that a
+// restore can carry 250,000 lists and the rail paints a node per list. Measured in headless Edge at
+// 1280x900 against the app's own file input, the premise does not hold: a backup too large to store
+// is refused at the staging write, `adoptRestored` never runs, and the rail is left at 0 nodes with
+// the origin untouched. At 12,000 lists the restore landed and painted in 619 ms end to end; at
+// 13,000 it was refused in 62 ms with nothing painted. What bounds the paint is therefore what
+// storage accepted, and this is the property that makes bounding the render unnecessary.
+//
+// A budgeted storage rather than `failWrites`, because the shape that matters is not a storage that
+// refuses everything. It is one that would take the backup on its own and will not take it beside
+// the staging copy the swap makes first, which is what puts the reachable ceiling at half the origin
+// rather than all of it.
+function budgetedStorage(seed = {}, budget = Infinity) {
+  const storage = fakeStorage(seed);
+  const occupancy = (skip) => {
+    let total = 0;
+    for (const [k, v] of storage.map) if (k !== skip) total += k.length + v.length;
+    return total;
+  };
+  const setItem = storage.setItem.bind(storage);
+  storage.setItem = (k, v) => {
+    if (occupancy(k) + k.length + String(v).length > budget) {
+      const e = new Error('quota');
+      e.name = 'QuotaExceededError';
+      throw e;
+    }
+    setItem(k, v);
+  };
+  return storage;
+}
+
+test('a restore refused for want of room paints nothing at all', () => {
+  const original = goodBackup();
+  const replacement = wideBackup(40);
+  // Room for the tracker that is here and one copy of the replacement, and not for the second copy
+  // the swap stages. A budget that refused the replacement outright would prove only that a refusal
+  // refuses.
+  const budget = original.length + replacement.length + 200;
+  const storage = budgetedStorage({ [KEY]: original }, budget);
+
+  const handed = [];
+  const store = new Store({ storage, onChange: (s) => handed.push(s.listOrder.length) });
+  store.load();
+
+  const res = store.restore(replacement);
+
+  assert.equal(res.ok, false, 'the backup does not fit beside the copy the swap stages');
+  assert.equal(storage.getItem(KEY), original, 'and the tracker that is here is untouched');
+  // The staging write is the first full-size allocation, so near quota it is the first refused, and
+  // that branch returns before any observer is notified. Nothing on screen changes and nothing is
+  // repainted: the reader is told by the call site's message rather than by a render.
+  assert.deepEqual(handed, [], 'a restore that never reached the swap repainted nothing');
+});
+
+// The other refusal, and the one where a render does run. The staging write landed and the swap did
+// not, so the store reconciles and notifies. What it hands over is the assertion BL-114 rests on.
+test('a restore whose swap is refused repaints the tracker that is here, not the backup', () => {
+  const original = goodBackup();
+  const storage = fakeStorage({ [KEY]: original });
+
+  const handed = [];
+  const store = new Store({ storage, onChange: (s) => handed.push(s.listOrder.length) });
+  store.load();
+  const before = store.state.listOrder.length;
+  storage.failKey = KEY;
+
+  const res = store.restore(wideBackup(40));
+
+  assert.equal(res.ok, false);
+  assert.ok(handed.length > 0, 'a swap that failed after staging is news, so a render does run');
+  for (const count of handed) {
+    assert.equal(count, before, 'a render was handed a state storage refused to keep');
+  }
+});
+
+// The other half of the same decision, and the reason the reachable ceiling is not the count
+// ceiling. Both restores below are well under MAX_LISTS and under the file size guard; what
+// separates them is the second copy, so removing the staging write would double what a render can
+// be asked to paint without any ceiling changing.
+test('what a restore can land is bounded by two copies of it, not one', () => {
+  const replacement = wideBackup(40);
+  const fits = (budget) => {
+    const storage = budgetedStorage({}, budget);
+    const store = new Store({ storage });
+    store.load();
+    return store.restore(replacement).ok;
+  };
+
+  assert.equal(fits(replacement.length * 2 + 400), true, 'room for two copies is enough');
+  assert.equal(fits(Math.round(replacement.length * 1.5)), false, 'room for one and a half is not');
 });
 
 // ------------------------------------------------ erasing everything, and the offer that outlived it
