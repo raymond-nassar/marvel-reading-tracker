@@ -13,7 +13,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { PROSE, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, failing, firstTime, nearMisses, pairingLines, pairings, relativeCitations, relativeVerdict, scopeRenames } from '../scripts/check-anchors.mjs';
+import { PROSE, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, failing, firstTime, nearMisses, pairingLines, pairings, proseRuns, relativeCitations, relativeVerdict, repeatVerdict, repeatedCitations, scopeRenames } from '../scripts/check-anchors.mjs';
 
 const JS = commentSyntax('a.mjs');
 
@@ -841,4 +841,197 @@ test('a loss in one document is not explained by an addition in another', () => 
   const elsewhere = { ...RENAMED_TO, key: 'docs/ARCHITECTURE.md|the-write-path|src/js/main.js:116|0' };
 
   assert.deepEqual(scopeRenames([elsewhere], [RENAMED_FROM], RENAME_LOCK), []);
+});
+
+// BL-122. The defect BL-121 fixed, reduced to its shape: a sentence naming three routes and
+// answering two of them with one citation. Every gate passed on it, before and after, because
+// both copies name a real line whose content matches the claim and both fingerprint correctly.
+// Fingerprinting is structurally blind to this, which is why it is checked as text instead.
+//
+// Assembled by `cite` for the reason the fixtures above are, and for a second reason of its
+// own: written literally in a document this line would be the very thing the check refuses,
+// and this file would fail the gate it exists to prove.
+test('a sentence citing one line twice is found', () => {
+  const text = `Erase sits at ${cite('src/js/main.js:3121')}, restore at ${cite('src/js/main.js:3137-3143')}, and undo at ${cite('src/js/main.js:3121')}.`;
+
+  assert.deepEqual(repeatedCitations(text).map((r) => [r.anchor, r.count]), [['src/js/main.js:3121', 2]]);
+});
+
+// The other half of that assertion, and the half that decides whether the check is usable. A
+// sentence citing several different lines is the ordinary shape of every delivery record here,
+// so a rule that fired on it would fire hundreds of times and be blessed past on the first day.
+test('a sentence citing several different lines is left alone', () => {
+  const text = `Erase sits at ${cite('src/js/main.js:3121')} and restore at ${cite('src/js/main.js:3137-3143')}.`;
+
+  assert.deepEqual(repeatedCitations(text), []);
+});
+
+// A range and a bare line sharing a first number are different claims about different spans, so
+// they are different anchors. Keying on the file and the start alone would collapse them and
+// report a document that cites a function and then one line inside it, which is ordinary.
+test('a range and a single line starting on it are not a repeat', () => {
+  const text = `The loop at ${cite('src/js/main.js:3121-3130')} begins at ${cite('src/js/main.js:3121')}.`;
+
+  assert.deepEqual(repeatedCitations(text), []);
+});
+
+// The repeat has to be inside one sentence, because that is the only scope in which it is not
+// ordinary. A document citing one line in two places is the norm and `collisions` already
+// measures it: 159 of 466 distinct anchors here are cited more than once.
+test('two sentences citing the same line are not a repeat', () => {
+  const text = `Erase sits at ${cite('src/js/main.js:3121')}. Undo reverses it, also at ${cite('src/js/main.js:3121')}.`;
+
+  assert.deepEqual(repeatedCitations(text), []);
+});
+
+// A sentence may wrap, and most in these documents do, so the unit read cannot be the line.
+// Reading line by line would have missed the defect this was filed from, which wrapped.
+test('a sentence wrapping across lines is still read whole', () => {
+  const text = `Erase sits at ${cite('src/js/main.js:3121')},\nand undo at ${cite('src/js/main.js:3121')}.`;
+
+  assert.deepEqual(repeatedCitations(text).map((r) => r.count), [2]);
+});
+
+// A table row is its own claim whatever punctuation it holds. This was the single false positive
+// in the measurement BL-122 was filed from: flattening line breaks to read a sentence runs a
+// ledger's header and separator into its rows and reports the whole table as one sentence.
+test('two table rows citing the same line are two claims, not one sentence', () => {
+  const text = ['| Item | Evidence |', '| --- | --- |', `| BL-001 | ${cite('src/js/main.js:3121')} |`, `| BL-002 | ${cite('src/js/main.js:3121')} |`].join('\n');
+
+  assert.deepEqual(repeatedCitations(text), []);
+});
+
+// The same reasoning one level down. Two bullets are two claims, and the blank line between them
+// is optional in Markdown and usually absent in these documents.
+test('two list items citing the same line are two claims', () => {
+  const text = [`- Erase sits at ${cite('src/js/main.js:3121')}`, `- Undo sits at ${cite('src/js/main.js:3121')}`].join('\n');
+
+  assert.deepEqual(repeatedCitations(text), []);
+});
+
+// Paragraphs and headings end a run, and the heading case is the one worth pinning separately: a
+// heading carries no full stop, so a splitter reading punctuation alone runs the paragraph above
+// it into the paragraph below. The fixture deliberately omits the blank lines a heading usually
+// has around it, because with them the blank-line rule does the work and the assertion is
+// vacuous. That is how this test was first written, and a probe that removed the heading rule
+// left it green.
+// Neither of these fixtures ends a sentence with punctuation, and that is the whole point of them.
+// The first draft wrote a full stop before the blank line, which let the sentence splitter separate
+// the two claims and left the blank-line rule doing nothing the test could see. It is the fourth
+// fixture in this file to have been green for a reason other than the one in its name.
+test('a blank line and a heading each end the sentence', () => {
+  const split = `Erase sits at ${cite('src/js/main.js:3121')}\n\nUndo sits at ${cite('src/js/main.js:3121')}`;
+  const headed = `Erase sits at ${cite('src/js/main.js:3121')}\n### Undo\nUndo sits at ${cite('src/js/main.js:3121')}`;
+
+  assert.deepEqual(repeatedCitations(split), []);
+  assert.deepEqual(repeatedCitations(headed), []);
+});
+
+// Code is left alone, which is the same split `citations` draws and for the same reason. The
+// fixtures in this very file repeat one citation many times over because repetition is the thing
+// they exercise, so a rule that read them would fail the suite written to prove it. Both sides
+// are asserted, because a rule that fired nowhere would pass this file for the wrong reason.
+test('a repeat counts in prose and not in code', () => {
+  const text = `Erase sits at ${cite('src/js/main.js:3121')} and undo at ${cite('src/js/main.js:3121')}.`;
+
+  assert.equal(repeatedCitations(text, PROSE).length, 1);
+  assert.equal(repeatedCitations(text, JS).length, 0);
+});
+
+// A claim about a line that is gone is entitled to name it twice for the same reason it is
+// entitled to name it once. Nothing in the tree currently repeats an exempted citation inside a
+// sentence, so this is precaution rather than a fix, and it is asserted so it stays one.
+// The marker for a claim about a line that is gone needs no handling in the rule, and this pins
+// why rather than leaving its absence looking like an oversight. Both routes into the rule are
+// already closed: inside a backticked token opening with the marker a citation is not collected
+// at all, and the unbackticked form lives in a table cell, which is not prose. A filter in the
+// rule would be a guard that could not fire, and the test proving it would pass on any tree.
+test('a citation marked absent never reaches the rule in the first place', () => {
+  const token = `Removed from ${cite('absent: src/js/main.js:3121')}.`;
+
+  assert.deepEqual(citations(token), []);
+  assert.deepEqual(proseRuns(`| Evidence |\n| absent: src/js/main.js:3121 |`), []);
+});
+
+// The line is reported, because a message naming a document and not the line sends a reader
+// hunting through eight thousand of them. Both terms of that sum are pinned here: the run starts
+// on line 3 and the sentence on line 5, so a report that dropped the offset within the run would
+// say 3, and one that dropped the run's own start would say 3 as well.
+//
+// The first fixture written for this put the repeat in the run's opening sentence, where the
+// offset is zero by construction, so the test passed with the offset term deleted outright. It is
+// the third test in this file to have been green for a reason other than the one in its name.
+test('each hit reports the line the sentence starts on', () => {
+  const text = ['Alpha.', '', 'Beta.', 'Gamma.', `Delta at ${cite('src/js/main.js:3121')} and ${cite('src/js/main.js:3121')}.`].join('\n');
+
+  assert.deepEqual(repeatedCitations(text).map((r) => r.line), [5]);
+});
+
+// Text inside a fence is code however the file is named, so a fenced sample repeating a citation
+// is not prose and the run must not resume until the fence closes.
+test('a fenced block is skipped rather than merely bounded', () => {
+  const text = ['```', `Erase at ${cite('src/js/main.js:3121')} and undo at ${cite('src/js/main.js:3121')}.`, '```'].join('\n');
+
+  assert.deepEqual(repeatedCitations(text), []);
+  assert.deepEqual(proseRuns(text), []);
+});
+
+// The rule is about what may be written, so it binds the tree being written and not one that
+// already shipped. This is `relativeVerdict`'s split, kept deliberately identical: refusing under
+// --ref would make every revision holding the shape unqueryable for drift.
+test('a repeat is refused against the working tree', () => {
+  assert.equal(repeatVerdict(1, null), 'fatal');
+});
+
+test('the same repeat is only named against a revision, which cannot be edited to satisfy it', () => {
+  assert.equal(repeatVerdict(1, 'origin/main'), 'notice');
+});
+
+test('a tree with no repeats says nothing either way', () => {
+  assert.equal(repeatVerdict(0, null), 'none');
+  assert.equal(repeatVerdict(0, 'origin/main'), 'none');
+});
+
+// The four below all come from one exercise: feeding the rule twenty shapes the documents
+// actually contain and reading which fired. Each of these fired on prose that was correct, which
+// is the failure mode the rule can least afford, so each is pinned to the shape that caught it.
+
+// Three hyphens underline a setext heading, which makes the line above it a heading rather than
+// the opening of a paragraph. Without the boundary the heading, the rule and the paragraph after
+// it were one run, and a heading that names a line plus a paragraph that names it read as a repeat.
+test('a thematic break or setext underline ends the run', () => {
+  const text = [`Erase sits at ${cite('src/js/main.js:3121')}`, '---', `Undo sits at ${cite('src/js/main.js:3121')}`].join('\n');
+
+  assert.equal(proseRuns(text).length, 2);
+  assert.deepEqual(repeatedCitations(text), []);
+});
+
+// This repository's plan artifacts carry rpi phase and task markers as HTML comments immediately
+// before the heading they belong to, so a comment between two paragraphs is a shape it really has.
+test('an html comment on its own line ends the run', () => {
+  const text = [`Erase sits at ${cite('src/js/main.js:3121')}`, '<!-- rpi:task id=P00-T01 -->', `Undo sits at ${cite('src/js/main.js:3121')}`].join('\n');
+
+  assert.equal(proseRuns(text).length, 2);
+  assert.deepEqual(repeatedCitations(text), []);
+});
+
+// A sentence here often opens on the name of the function it is about, and those are lowercase,
+// so a splitter that demands a capital runs it into the sentence before. Measured across the
+// tracked Markdown, two full stops are followed by a lowercase word that is no abbreviation, one
+// of them the tool name "axe". Both were being joined to the sentence above them.
+test('a sentence opening on a lowercase word is still a new sentence', () => {
+  const text = `Erase sits at ${cite('src/js/main.js:3121')}. undo sits at ${cite('src/js/main.js:3121')}.`;
+
+  assert.deepEqual(repeatedCitations(text), []);
+});
+
+// The cost of accepting a lowercase opener is that an abbreviation's full stop looks like the end
+// of a sentence, so the named ones are excluded. The citations here sit either side of the
+// abbreviation, so dropping the exclusion splits them apart and the repeat goes unseen. Getting
+// this wrong loses a hit rather than inventing one, which is the safe direction, and this pins
+// that the safe direction is not taken more often than it has to be.
+test('an abbreviation is not the end of a sentence', () => {
+  const text = `Erase sits at ${cite('src/js/main.js:3121')}, i.e. undo also sits at ${cite('src/js/main.js:3121')}.`;
+
+  assert.equal(repeatedCitations(text).length, 1);
 });

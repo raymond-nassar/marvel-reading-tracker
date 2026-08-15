@@ -14,6 +14,26 @@ quote in a bug report.
 
 ## Unreleased
 
+### The project's own checks now catch a citation used twice in one sentence (BL-122)
+
+The last entry describes a sentence that named three things and gave the same address for two of them.
+Nothing caught it, because every address in it pointed at real code that said what the sentence
+claimed. Being two rather than three is a fact about the sentence, and nothing was reading sentences.
+
+Something is now. The check that verifies every address in the project's documents also reads its
+prose, and refuses a sentence that lists several things and answers two of them with one address. Run
+against the project as it stood before that mistake was fixed, it finds exactly that mistake and
+nothing else.
+
+A rule that reads prose can also misread it, so it was pointed at twenty shapes the documents
+actually contain and asked which ones it got wrong. It got three wrong, all of them by running two
+correct sentences together and reporting the join as a mistake, and all three were fixed before this
+shipped. Wrongly failing a build over correct writing is the one thing a check like this cannot
+afford, because it teaches people to wave it through.
+
+Nothing you can see changes, and nothing you have saved is affected. This is a check on the project's
+own writing, not on the app.
+
 ### One project record pointed at the wrong line of code (BL-121)
 
 The project keeps a written record of how each part of the app works, and every claim in it names the
