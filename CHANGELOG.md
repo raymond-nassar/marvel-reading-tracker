@@ -14,6 +14,22 @@ quote in a bug report.
 
 ## Unreleased
 
+### The repository no longer publishes thirty-one branches it had finished with (BL-103)
+
+Nothing about the app changes and nothing you have saved is affected. This is housekeeping on the
+code repository itself, and it matters for the day this project becomes public.
+
+Every branch pushed to the repository is visible to anyone who clones it, not just the main one. The
+way changes are merged here leaves the branch behind afterwards, and nothing removed them, so what
+had built up was a list of thirty-two branches, of which thirty were finished work that had already
+been merged, one was an abandoned draft whose conclusion shipped by another route, and only the
+thirty-second was the live one. A newcomer would have had to work out which.
+
+They are gone, and the repository now offers exactly one branch. Nothing was lost with them: every
+change that ever became a pull request is kept by GitHub under that pull request permanently, which
+was checked rather than assumed. The repository is also now set to remove a branch automatically
+when its change is merged, so the list does not fill up again.
+
 ### An import that arrives short of details now tells you how many (BL-110)
 
 Two of the twelve bundled reading orders contain issues that Marvel's own data no longer holds

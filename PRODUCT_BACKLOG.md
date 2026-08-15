@@ -9,17 +9,18 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Seventy-nine items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Eighty items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
-BL-088, BL-089, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101, BL-104, BL-105, BL-106,
-BL-107, BL-110, BL-111, BL-112, BL-115 and BL-116.
+BL-088, BL-089, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101, BL-103, BL-104, BL-105,
+BL-106, BL-107, BL-110, BL-111, BL-112, BL-115 and BL-116.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
-open. BL-049 is the one whose delivery was a decision rather than a code change: it was measured in
-full and closed without touching the colours, for the reasons recorded in its block. Eleven remain
+open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
+measured in full and closed without touching the colours, and the second was three operations on the
+remote rather than on the tree, for the reasons recorded in their blocks. Eleven remain
 open on purpose: making the CI run required before merge is a repository setting rather than a
 change to the tree, tagging a release needs a commit to point at, confirming BL-027 with a screen
 reader is a human check no automated run substitutes for, BL-031's axe re-run cannot be satisfied as
@@ -253,11 +254,11 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:323-398 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3863-3866 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3865-3868 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:190-202 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:191-203 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
@@ -269,7 +270,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:861 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/main.js:3332-3380 |
-| BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Ready | 9 of the 22 heads git ls-remote advertises are the head branches of already-merged pull requests |
+| BL-103 | Retire the branches publication would put on display | Chore | EP-12 | Follows BL-100 | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | 9 of the 22 heads git ls-remote advertised when this was filed were the head branches of already-merged pull requests |
 | BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Ready | src/js/storage.js:329-332 |
 | BL-110 | Count the issues an order imported empty, and say so | Defect | EP-05 | Extends BL-009 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:2921 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
@@ -309,6 +310,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-117 | Give the ceiling timings a budget that survives a loaded machine | Debt | EP-12 | Leaves BL-085 alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | test/backup-bounds.test.js:353 |
 | BL-118 | Notice a distant repeat in the prose documents the gate never reads | Enabler | EP-12 | Extends BL-058 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Ready | scripts/check-counts.mjs:590 |
 | BL-119 | Show an order's gap on the catalog row, before it is imported | Story | EP-05 | Follows BL-110 | 3 | 1 | 2 | 3 | 2.0 | none | Measured | Ready | src/js/main.js:2729-2733 |
+| BL-120 | Notice when the published branch list refills | Enabler | EP-12 | Follows BL-103 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Ready | .github/workflows/ci.yml:204-206 |
 | BL-092 | Bring the fault harness under the alternate-page accessibility baseline | Debt | EP-07 | Leaves BL-034 alone | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | src/dev-faults.js:12-22 |
 | BL-102 | Send the security headers on the dev server's error responses too | Debt | EP-12 | Follows BL-096 | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | server.mjs:86-96 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
@@ -3025,7 +3027,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2728-2731`.
+`PRODUCT_BACKLOG.md:2730-2733`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4562,21 +4564,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:7923-7925` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8002-8004` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:200-202`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:201-203`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:7942-7946`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8021-8025`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7757-7759` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7836-7838` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4784,9 +4786,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1650-1659` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:190-194` and
-`PRODUCT_BACKLOG.md:200-202` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:1666-1675` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:191-195` and
+`PRODUCT_BACKLOG.md:201-203` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -5116,6 +5118,33 @@ fetched until the reader presses Import, so the counts cannot be derived at rend
 fetching every order. Vendoring them beside `count` is the same shape of decision `count` itself
 already represents, which is why the size is 3 rather than 2. Evidence: `src/js/main.js:2729-2733`,
 `src/data/catalog.json`, `src/js/lib/model.js:104-115`.
+
+**BL-120: Notice when the published branch list refills**
+
+- [ ] Decide where a claim about the advertised branch population belongs, given CI never asks
+- [ ] Cover the branch that never becomes a pull request, which automatic deletion does not reach
+- [ ] Keep the check cheap enough that it does not add a network call to every run
+
+Constraint gate: checked 1 to 11, none breached.
+
+Raised by the delivery of `BL-103` and routed here rather than folded into it, because that item was
+three operations on the remote and this one would be a change to the tree. `BL-103` emptied the
+advertised branch list down to the default branch and turned on automatic head-branch deletion, and
+the setting holds only for the case it names. It deletes the head of a pull request when the pull
+request merges. A branch pushed to the remote that never becomes a pull request is untouched by it,
+and one of the 32 heads `BL-103` retired was exactly that, so the class is not hypothetical.
+
+Nothing in the repository would notice either way. The publication gate has two modes and CI runs the
+one that reads history reachable from the ref under test; the mode that asks the remote what it
+advertises is local only, which is the right default because it needs the network and answers about
+a population no commit determines. That leaves the shrunk list resting on a repository setting and a
+paragraph, and this repository's own rule is that a decision nothing checks stops being one.
+
+The third task is the constraint that makes this worth scoring rather than obvious. A check that
+asks the remote on every run buys a small tidiness with a network dependency in the gate that is
+least tolerant of one, so the likely answer is a periodic or manual check rather than a step in CI,
+and choosing between those is the work. Evidence: `.github/workflows/ci.yml:204-206`,
+`scripts/check-publication.mjs:156-190`.
 
 **BL-085: Bound backup restore before parsing and persistence**
 
@@ -6641,12 +6670,13 @@ and one moves it to the other job, and the second is the one that matters, becau
 of that test never split the file into jobs and so was true of any workflow mentioning both things
 anywhere. A fresh clone installs, and every gate passes from it.
 
-One thing the clone measured that this item does not fix. A clone of the remote receives 22
-branches and no tags, and 9 of those 22 are the head branches of pull requests that have already
-merged. Nothing here deletes them, because deleting a branch is a repository operation rather than a
-change to the tree, and it is filed as BL-103. Cloning this machine's own copy receives 36 instead,
-which is a local accumulation and not something publication would expose. Evidence:
-`scripts/check-publication.mjs:156-190`, `.github/workflows/ci.yml:107-125`.
+One thing the clone measured that this item does not fix. A clone of the remote received 22
+branches and no tags when this was written, and 9 of those 22 were the head branches of pull
+requests that had already merged. Nothing here deletes them, because deleting a branch is a
+repository operation rather than a change to the tree, and it was filed as BL-103. BL-103 has since
+retired every one of them, so a clone now receives `main` alone. Cloning this machine's own copy
+receives 36 instead, which is a local accumulation and not something publication would expose.
+Evidence: `scripts/check-publication.mjs:156-190`, `.github/workflows/ci.yml:107-125`.
 
 **BL-101: Withdraw the undo-restore offer when erasing everything**
 
@@ -6786,24 +6816,73 @@ the shape of a claim waiting to be simplified.
 
 **BL-103: Retire the branches publication would put on display**
 
-- [ ] Delete the head branches of pull requests that have already merged
-- [ ] Decide what happens to the branches that never became a pull request
-- [ ] Turn on automatic head-branch deletion so the list does not refill
+- [x] Delete the head branches of pull requests that have already merged
+- [x] Decide what happens to the branches that never became a pull request
+- [x] Turn on automatic head-branch deletion so the list does not refill
 
 Constraint gate: checked 1 to 11, none breached.
 
 Raised by `BL-100` and routed here rather than folded into it, because deleting a branch is a
 repository operation and that item changed the tree. Publication publishes every branch the remote
-advertises, not just the default one. Measured against the live remote: 22 heads, no tags, and 9 of
-those 22 are the head branches of pull requests that are already merged, so what a new reader would
-find is a branch list where most entries are finished work that nobody removed. Squash merges are
-why: the merge leaves the branch behind, and nothing here deletes it.
+advertises, not just the default one. Measured against the live remote when this was filed: 22
+heads, no tags, and 9 of those 22 were the head branches of pull requests that were already merged,
+so what a new reader would have found is a branch list where most entries are finished work that
+nobody removed. Squash merges are why: the merge leaves the branch behind, and nothing here deletes
+it.
 
 This is untidiness rather than exposure, which is why it is scored the way it is. `BL-100` scanned
 every one of those branches and found nothing to remediate, so the content is the same content, and
-the cost of leaving it is that a reader has to work out which of 22 branches is live. The third task
-is the one that keeps this closed, because the first two are a cleanup that will be back within a
-month otherwise. Evidence: `scripts/check-publication.mjs:156-190`.
+the cost of leaving it was that a reader had to work out which of 22 branches was live. The third
+task is the one that keeps this closed, because the first two are a cleanup that will be back within
+a month otherwise. Evidence: `scripts/check-publication.mjs:156-190`.
+
+Shipped as three repository operations rather than as a change to the tree, which is why this block
+is the whole record of it and no source file moved.
+
+Re-measured before anything was deleted, because the figures this item was filed with had aged. The
+remote advertised 32 heads and no tags, and 30 of the 32 were the head branches of pull requests
+already merged into `main`. Ninety-two pull requests have merged in total, every one of them into
+`main`, and several branches served more than one: a single head was the tip of twenty-two pull
+requests, twenty-one of which merged. The ratio the item was filed on had therefore moved from 9 in
+22 to 30 in 32, so the cleanup was larger than the item expected rather than smaller.
+
+The first instrument used to confirm those 30 was wrong, and the way it was wrong is the part worth
+keeping. Asking a three-dot diff against `main` whether a branch still holds unshipped content
+reported 27 of the 31 as unmerged, which would have been an alarming and false finding. A three-dot
+diff shows what a branch changed since its fork point, which is non-empty for any branch that ever
+carried a commit, merged or not, and a squash merge collapses many commits into one so patch
+identity does not survive it either. Twenty-six of the 30 have a tip `main` cannot reach, which is
+the signature of a squash merge rather than of unmerged work. No content-level question git can
+answer separates those two cases, so the pull request state is the only authority that does, and it
+is what the deletion was driven from.
+
+Deleting a merged head loses nothing, and that was verified rather than assumed. Every pull
+request's head is kept permanently under a pull ref: the remote advertised 96 of them for 96 pull
+requests, the head of the pull request merged minutes earlier still resolved to that branch's exact
+commit after the branch was gone, and three more retired tips were checked against their own pull
+requests and matched. A clone does not fetch those refs, so they do not put the population back.
+
+One branch of the 32 never became a pull request, which is the second task and the only one needing
+a judgement. Its single commit was an earlier draft of BL-049's decision, and the same reasoning
+shipped on `main` by a later route: the rationale it adds to the stylesheet is present there in a
+revised wording, and BL-049's block here is substantially fuller than the version that branch
+carried. It was deleted with the rest. The rule that generalises from it is that a branch with no
+pull request is checked against `main` for work that has not shipped, and if it holds any it is
+given a pull request rather than left as a branch, so that the remote keeps a copy of it the way it
+already keeps every other.
+
+Automatic head-branch deletion is now on, which is the third task and the one that keeps the first
+two done. The remote advertises one head, `main`, and no tags. The local surface gate measures the
+difference: it reached 320 commit messages across the old population and reaches 223 across the new
+one, and 223 is exactly what `main` alone reaches, which is how the new figure was confirmed to be
+the whole of it rather than a partial scan.
+
+What that setting does not cover is filed as `BL-120`. It deletes the head of a pull request when
+the pull request merges, so the class the second task dealt with, a branch that never became one,
+still accumulates, and nothing in the tree notices when it does. The gate that would notice is local
+only: CI runs the publication check over the history reachable from the ref under test, not the
+surface variant that asks the remote what it advertises, so the population this item shrank is one
+no automated run reads.
 
 **BL-104: Let the anchors gate see a citation of a file with no extension**
 
@@ -7562,7 +7641,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4686-4694`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4688-4696`.
 
 ## Existing epics and stories
 
@@ -8038,9 +8117,9 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and sixty-nine
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and seventy
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 95 rows now. The ranks below are positions in it as it stands.
+how it reaches 96 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
 each sit one row below an item they outscore. Every one of those eight rows has shipped, so the
@@ -8050,7 +8129,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 1: BL-026 is labelled P0 but ranks forty-third
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 43 of 95.
+- Calculated: WSJF 3.67, rank 43 of 96.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
   It is outranked by forty-two items, twenty-five of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -8072,7 +8151,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 89 of 95, below eighty-five unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 90 of 96, below eighty-six unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -8129,9 +8208,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 56 of 95. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 45 of 95. Mid-table.
-- BL-017, P2, rank 94 of 95. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 56 of 96. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 45 of 96. Mid-table.
+- BL-017, P2, rank 95 of 96. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
