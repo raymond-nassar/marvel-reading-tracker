@@ -15,6 +15,26 @@ import { RateLimiter } from '../../src/js/lib/limiter.js';
 // at the slowest.
 export const MAX_ATTEMPTS = 6;
 
+// A failed lookup was one fact and is four: the service answered that it holds no such record,
+// the service stayed busy past the retry budget, the connection went, or the body would not parse.
+// A bare Error made a caller read them out of a message string, so vendor-orders.mjs caught all
+// four alike and wrote the same empty item for each. Only the first is a settled answer, and the
+// app treats a settled answer as permanent, so telling them apart is what stops an outage being
+// recorded as "upstream has no record of this issue".
+//
+// `status` is the field name src/js/hydrate.js already reads off the browser client's ApiError,
+// so the same test reads the same way on both sides of the app. That class is not reused here
+// because it lives in src/js/api.js, which pulls in the IndexedDB cache and is served to the
+// browser; nothing in this file is. The last two failures carry no status at all, which is
+// exactly right: `err.status === 404` is false for them, so they cannot pass for an answer.
+export class FetchError extends Error {
+  constructor(message, status) {
+    super(message);
+    this.name = 'FetchError';
+    this.status = status;
+  }
+}
+
 function defaultSleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -45,7 +65,7 @@ export function createJsonFetcher({
     const res = await fetchImpl(url, { headers: { accept: 'application/json' } });
     limiter.observe(res.headers);
     if (res.status === 429 || res.status >= 500) return { retry: true, status: res.status };
-    if (!res.ok) throw new Error(`${res.status} ${url}`);
+    if (!res.ok) throw new FetchError(`${res.status} ${url}`, res.status);
     return { retry: false, body: await res.json() };
   }
 
@@ -53,7 +73,7 @@ export function createJsonFetcher({
     for (let attempt = 0; ; attempt += 1) {
       const outcome = await limiter.schedule(() => attemptOnce(url));
       if (!outcome.retry) return outcome.body;
-      if (attempt >= maxAttempts - 1) throw new Error(`${outcome.status} after retries: ${url}`);
+      if (attempt >= maxAttempts - 1) throw new FetchError(`${outcome.status} after retries: ${url}`, outcome.status);
       const wait = limiter.backoff(attempt);
       limiter.penalize(wait);
       await sleep(wait);

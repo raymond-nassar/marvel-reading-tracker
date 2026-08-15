@@ -29,8 +29,8 @@
     "fp": "2e19500d63dda59d",
     "head": "this.store.update((s) => upsertIssue(s, { ...full, hydrated: true }));"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/lib/model.js:635-637|0": {
-    "anchor": "src/js/lib/model.js:635-637",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/lib/model.js:644-646|0": {
+    "anchor": "src/js/lib/model.js:644-646",
     "fp": "d3c89ab1f16d81ee",
     "head": "export function toggleRead(state, issueId) {"
   },
@@ -54,8 +54,8 @@
     "fp": "b70cf478e0e33507",
     "head": "function announceIfSaved(msg) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3678-3698|0": {
-    "anchor": "src/js/main.js:3678-3698",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:3679-3699|0": {
+    "anchor": "src/js/main.js:3679-3699",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -89,8 +89,8 @@
     "fp": "220bf1eb3736428e",
     "head": "test('a second, unrelated incident is salvaged and offered accurately', () => {"
   },
-  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|scripts/vendor-orders.mjs:27|0": {
-    "anchor": "scripts/vendor-orders.mjs:27",
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|scripts/vendor-orders.mjs:28|0": {
+    "anchor": "scripts/vendor-orders.mjs:28",
     "fp": "2691c5a6c7db0bcf",
     "head": "import { parseManifest } from '../src/js/lib/curated.js';"
   },
@@ -104,8 +104,8 @@
     "fp": "ba2f2ef80f02d08a",
     "head": "export class RateLimiter {"
   },
-  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:3364-3366|0": {
-    "anchor": "src/js/main.js:3364-3366",
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:3365-3367|0": {
+    "anchor": "src/js/main.js:3365-3367",
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
   },
@@ -244,8 +244,8 @@
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:979-1010|0": {
-    "anchor": "src/js/lib/model.js:979-1010",
+  "docs/UX_STUDY.md|job-stories|src/js/lib/model.js:988-1019|0": {
+    "anchor": "src/js/lib/model.js:988-1019",
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
@@ -259,8 +259,8 @@
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:3114-3148|0": {
-    "anchor": "src/js/main.js:3114-3148",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:3115-3149|0": {
+    "anchor": "src/js/main.js:3115-3149",
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8965|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8965",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:9086|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9086",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -314,8 +314,8 @@
     "fp": "8b3c07e445e71673",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:821-897|0": {
-    "anchor": "src/js/lib/model.js:821-897",
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#5|src/js/lib/model.js:830-906|0": {
+    "anchor": "src/js/lib/model.js:830-906",
     "fp": "31193066f7e84653",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -504,8 +504,8 @@
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:3678-3698|0": {
-    "anchor": "src/js/main.js:3678-3698",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:3679-3699|0": {
+    "anchor": "src/js/main.js:3679-3699",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -544,8 +544,8 @@
     "fp": "6cbc2f6bdb1dc112",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:3341-3347|0": {
-    "anchor": "src/js/main.js:3341-3347",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:3342-3348|0": {
+    "anchor": "src/js/main.js:3342-3348",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -629,8 +629,8 @@
     "fp": "001dea97ca0659d3",
     "head": "...group.lists.map((list) => catalogRow(list, { variant: true })),"
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:3114-3148|0": {
-    "anchor": "src/js/main.js:3114-3148",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:3115-3149|0": {
+    "anchor": "src/js/main.js:3115-3149",
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
@@ -644,8 +644,8 @@
     "fp": "a4376fecb4705d58",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:3678-3698|0": {
-    "anchor": "src/js/main.js:3678-3698",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:3679-3699|0": {
+    "anchor": "src/js/main.js:3679-3699",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -659,8 +659,8 @@
     "fp": "954b0cbc26205fb8",
     "head": "{"
   },
-  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:979-1010|0": {
-    "anchor": "src/js/lib/model.js:979-1010",
+  "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:988-1019|0": {
+    "anchor": "src/js/lib/model.js:988-1019",
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
@@ -684,8 +684,8 @@
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:3341-3347|0": {
-    "anchor": "src/js/main.js:3341-3347",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:3342-3348|0": {
+    "anchor": "src/js/main.js:3342-3348",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -704,8 +704,8 @@
     "fp": "8b3c07e445e71673",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:821-897|0": {
-    "anchor": "src/js/lib/model.js:821-897",
+  "PRODUCT_BACKLOG.md|5-reliability|src/js/lib/model.js:830-906|0": {
+    "anchor": "src/js/lib/model.js:830-906",
     "fp": "31193066f7e84653",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -739,18 +739,18 @@
     "fp": "f8f0304159cc6500",
     "head": "\"lint\": \"eslint .\","
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|scripts/lib/fetch-json.mjs:22-37|0": {
-    "anchor": "scripts/lib/fetch-json.mjs:22-37",
+  "PRODUCT_BACKLOG.md|7-maintainability|scripts/lib/fetch-json.mjs:42-57|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:42-57",
     "fp": "34ffbe91dc50ebbf",
     "head": "// The retry is deliberately outside limiter.schedule() rather than inside it."
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|scripts/lib/fetch-json.mjs:52-61|0": {
-    "anchor": "scripts/lib/fetch-json.mjs:52-61",
-    "fp": "7aa18c32ba31e0a8",
+  "PRODUCT_BACKLOG.md|7-maintainability|scripts/lib/fetch-json.mjs:72-81|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:72-81",
+    "fp": "e4a4f256115bd4c7",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:3678-3698|0": {
-    "anchor": "src/js/main.js:3678-3698",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:3679-3699|0": {
+    "anchor": "src/js/main.js:3679-3699",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -789,13 +789,13 @@
     "fp": "d66d703756839bee",
     "head": "export const SCHEMA_VERSION = 2;"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:821-897|0": {
-    "anchor": "src/js/lib/model.js:821-897",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/model.js:830-906|0": {
+    "anchor": "src/js/lib/model.js:830-906",
     "fp": "31193066f7e84653",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:3349-3369|0": {
-    "anchor": "src/js/main.js:3349-3369",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:3350-3370|0": {
+    "anchor": "src/js/main.js:3350-3370",
     "fp": "397eb5101069bf02",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -829,8 +829,8 @@
     "fp": "ed4f9606558b8b5e",
     "head": "- **Outside Markdown, only a backticked citation is collected.** In a document both forms are, but"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:380-412|0": {
-    "anchor": ".github/copilot-instructions.md:380-412",
+  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:392-424|0": {
+    "anchor": ".github/copilot-instructions.md:392-424",
     "fp": "eaed0b26a1cb1201",
     "head": "- Commit messages explain why the change is right, in the same register as the comments."
   },
@@ -899,8 +899,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2033-2042|0": {
-    "anchor": "CHANGELOG.md:2033-2042",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2060-2069|0": {
+    "anchor": "CHANGELOG.md:2060-2069",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -966,22 +966,22 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1379-1380|0": {
     "anchor": "PRODUCT_BACKLOG.md:1379-1380",
-    "fp": "54cf975513b24977",
+    "fp": "aeee253c5561327d",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:196-200|0": {
     "anchor": "PRODUCT_BACKLOG.md:196-200",
-    "fp": "4f89c38ee01fbb71",
+    "fp": "44e4415a080e122d",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:206-208|0": {
     "anchor": "PRODUCT_BACKLOG.md:206-208",
-    "fp": "dd2365595b4c4881",
+    "fp": "a71aefb7db2a95fe",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:206-208|1": {
     "anchor": "PRODUCT_BACKLOG.md:206-208",
-    "fp": "dd2365595b4c4881",
+    "fp": "a71aefb7db2a95fe",
     "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:232|0": {
@@ -1014,19 +1014,19 @@
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8939-8941|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8939-8941",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9060-9062|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9060-9062",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9105-9107|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9105-9107",
-    "fp": "2645f159a35c2ecb",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9226-9228|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9226-9228",
+    "fp": "87bb7f46165bd632",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9124-9128|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9124-9128",
-    "fp": "0e6dce60b73ac931",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9245-9249|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9245-9249",
+    "fp": "74995e9f6a8b1fa8",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:272-575|0": {
@@ -1364,88 +1364,83 @@
     "fp": "95df7f5f266428b5",
     "head": "const STATED = /\\b(?:is|of)\\s+([\\d][\\d,]*)\\s+lines\\b/g;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:38-41|0": {
-    "anchor": "scripts/lib/fetch-json.mjs:38-41",
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:30-36|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:30-36",
+    "fp": "c5e59f0558d9cc92",
+    "head": "export class FetchError extends Error {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:58-61|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:58-61",
     "fp": "3a1aa32745d190de",
     "head": "export function createJsonFetcher({"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:38-43|0": {
-    "anchor": "scripts/lib/fetch-json.mjs:38-43",
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:58-63|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:58-63",
     "fp": "692178afd2979f69",
     "head": "export function createJsonFetcher({"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:48|0": {
-    "anchor": "scripts/lib/fetch-json.mjs:48",
-    "fp": "832d0007349ea776",
-    "head": "if (!res.ok) throw new Error(`${res.status} ${url}`);"
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:68|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:68",
+    "fp": "8f4c83a5592409b9",
+    "head": "if (!res.ok) throw new FetchError(`${res.status} ${url}`, res.status);"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:48|1": {
-    "anchor": "scripts/lib/fetch-json.mjs:48",
-    "fp": "832d0007349ea776",
-    "head": "if (!res.ok) throw new Error(`${res.status} ${url}`);"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:52-61|0": {
-    "anchor": "scripts/lib/fetch-json.mjs:52-61",
-    "fp": "7aa18c32ba31e0a8",
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:72-81|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:72-81",
+    "fp": "e4a4f256115bd4c7",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:56|0": {
-    "anchor": "scripts/lib/fetch-json.mjs:56",
-    "fp": "4952b1419363b273",
-    "head": "if (attempt >= maxAttempts - 1) throw new Error(`${outcome.status} after retries: ${url}`);"
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:76|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:76",
+    "fp": "0ff875e7ca8b1e86",
+    "head": "if (attempt >= maxAttempts - 1) throw new FetchError(`${outcome.status} after retries: ${url}`, outc"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/lib/fetch-json.mjs:56|1": {
-    "anchor": "scripts/lib/fetch-json.mjs:56",
-    "fp": "4952b1419363b273",
-    "head": "if (attempt >= maxAttempts - 1) throw new Error(`${outcome.status} after retries: ${url}`);"
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/lookup-issues.mjs:43-44|0": {
+    "anchor": "scripts/lib/lookup-issues.mjs:43-44",
+    "fp": "04a1edebf8a90312",
+    "head": "if (hasMetadata(body)) meta.set(id, body);"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/lib/lookup-issues.mjs:49|0": {
+    "anchor": "scripts/lib/lookup-issues.mjs:49",
+    "fp": "b00b1254dcc2dcbf",
+    "head": "if (err?.status === 404) refused.add(id);"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/vendor-index.mjs:38|0": {
     "anchor": "scripts/vendor-index.mjs:38",
     "fp": "2c3648b8f1356780",
     "head": "const { getJson } = createJsonFetcher();"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:140|0": {
-    "anchor": "scripts/vendor-orders.mjs:140",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:141|0": {
+    "anchor": "scripts/vendor-orders.mjs:141",
     "fp": "bfa656a9707f58db",
     "head": "name: order.name,"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:200-209|0": {
-    "anchor": "scripts/vendor-orders.mjs:200-209",
-    "fp": "7deacba5bc122759",
-    "head": "for (const id of ids) {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:200-209|1": {
-    "anchor": "scripts/vendor-orders.mjs:200-209",
-    "fp": "7deacba5bc122759",
-    "head": "for (const id of ids) {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:200-209|2": {
-    "anchor": "scripts/vendor-orders.mjs:200-209",
-    "fp": "7deacba5bc122759",
-    "head": "for (const id of ids) {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:219-250|0": {
-    "anchor": "scripts/vendor-orders.mjs:219-250",
-    "fp": "7e6fb17f9325fa4a",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:216-254|0": {
+    "anchor": "scripts/vendor-orders.mjs:216-254",
+    "fp": "364aaae7286bdfc6",
     "head": "const issueItems = entries.map((e) => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:27|0": {
-    "anchor": "scripts/vendor-orders.mjs:27",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:239-245|0": {
+    "anchor": "scripts/vendor-orders.mjs:239-245",
+    "fp": "61b44012d91bfeb2",
+    "head": "// The one thing this run learned that the item cannot otherwise show. An issue the"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:28|0": {
+    "anchor": "scripts/vendor-orders.mjs:28",
     "fp": "2691c5a6c7db0bcf",
     "head": "import { parseManifest } from '../src/js/lib/curated.js';"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:288-290|0": {
-    "anchor": "scripts/vendor-orders.mjs:288-290",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:292-294|0": {
+    "anchor": "scripts/vendor-orders.mjs:292-294",
     "fp": "25233c80e7ca767f",
     "head": "if (dupes.size) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:303|0": {
-    "anchor": "scripts/vendor-orders.mjs:303",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:307|0": {
+    "anchor": "scripts/vendor-orders.mjs:307",
     "fp": "ff88de3ad58e78b4",
     "head": "placeholders: placeholderItems.length,"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:46|0": {
-    "anchor": "scripts/vendor-orders.mjs:46",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:47|0": {
+    "anchor": "scripts/vendor-orders.mjs:47",
     "fp": "2c3648b8f1356780",
     "head": "const { getJson } = createJsonFetcher();"
   },
@@ -1511,7 +1506,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|src/data/new_ultimate_universe_trades.json:1-10|0": {
     "anchor": "src/data/new_ultimate_universe_trades.json:1-10",
-    "fp": "75abbb73584d6a4b",
+    "fp": "eb7caa517b590ef4",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|item-details|src/data/orders/new-ultimate-universe-trades.md:3-5|0": {
@@ -1749,6 +1744,11 @@
     "fp": "dda3b7b0c5678639",
     "head": "if (err?.status === 404) this.store.update((s) => markDetailsRefused(s, issueId));"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/js/hydrate.js:72|1": {
+    "anchor": "src/js/hydrate.js:72",
+    "fp": "dda3b7b0c5678639",
+    "head": "if (err?.status === 404) this.store.update((s) => markDetailsRefused(s, issueId));"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/js/hydrate.js:77|0": {
     "anchor": "src/js/hydrate.js:77",
     "fp": "24fc4e0169a550e3",
@@ -1844,98 +1844,98 @@
     "fp": "fe98ae5e903d17b9",
     "head": "function quoteNote(note) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:125-136|0": {
-    "anchor": "src/js/lib/model.js:125-136",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:134-145|0": {
+    "anchor": "src/js/lib/model.js:134-145",
     "fp": "17ba8c48e6ba6078",
     "head": "export function countOrderGaps(order) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:125-136|1": {
-    "anchor": "src/js/lib/model.js:125-136",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:134-145|1": {
+    "anchor": "src/js/lib/model.js:134-145",
     "fp": "17ba8c48e6ba6078",
     "head": "export function countOrderGaps(order) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:132-133|0": {
-    "anchor": "src/js/lib/model.js:132-133",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:141-142|0": {
+    "anchor": "src/js/lib/model.js:141-142",
     "fp": "923ab8eeb82bf94b",
     "head": "if (item?.placeholder === true) placeholders += 1;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:142-152|0": {
-    "anchor": "src/js/lib/model.js:142-152",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:151-161|0": {
+    "anchor": "src/js/lib/model.js:151-161",
     "fp": "891cb3205948a3c9",
     "head": "export function orderGapSentences(order) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:194|0": {
-    "anchor": "src/js/lib/model.js:194",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:203|0": {
+    "anchor": "src/js/lib/model.js:203",
     "fp": "f5358866e421a7df",
     "head": "hydrated: refused ? false : clampScalar(input.hydrated ?? hasMetadata(input)),"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:208-223|0": {
-    "anchor": "src/js/lib/model.js:208-223",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:217-232|0": {
+    "anchor": "src/js/lib/model.js:217-232",
     "fp": "dbae5dbb94ca6e23",
     "head": "if (!raw) return null;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:305-306|0": {
-    "anchor": "src/js/lib/model.js:305-306",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:314-315|0": {
+    "anchor": "src/js/lib/model.js:314-315",
     "fp": "abd541cd3b104b1f",
     "head": "// the cheapest list costs 127. The most generous origin any browser grants is 10,485,760"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:433-436|0": {
-    "anchor": "src/js/lib/model.js:433-436",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:442-445|0": {
+    "anchor": "src/js/lib/model.js:442-445",
     "fp": "082f8d3733d42e8c",
     "head": "// A duplicate is the reader's own working copy, so it does not inherit the claim to be"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:433-436|1": {
-    "anchor": "src/js/lib/model.js:433-436",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:442-445|1": {
+    "anchor": "src/js/lib/model.js:442-445",
     "fp": "082f8d3733d42e8c",
     "head": "// A duplicate is the reader's own working copy, so it does not inherit the claim to be"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:471|0": {
-    "anchor": "src/js/lib/model.js:471",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:480|0": {
+    "anchor": "src/js/lib/model.js:480",
     "fp": "7e677e3b33cea4ce",
     "head": "const active = state.active === listId ? (listOrder[0] ?? null) : state.active;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:472-473|0": {
-    "anchor": "src/js/lib/model.js:472-473",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:481-482|0": {
+    "anchor": "src/js/lib/model.js:481-482",
     "fp": "1519b242fd9ec11a",
     "head": "// Issue metadata and read state intentionally survive: the same issues may be in other"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:490-502|0": {
-    "anchor": "src/js/lib/model.js:490-502",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:499-511|0": {
+    "anchor": "src/js/lib/model.js:499-511",
     "fp": "8eea39a20bf5889b",
     "head": "export function restoreList(state, list, { index = null, active = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:490-502|1": {
-    "anchor": "src/js/lib/model.js:490-502",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:499-511|1": {
+    "anchor": "src/js/lib/model.js:499-511",
     "fp": "8eea39a20bf5889b",
     "head": "export function restoreList(state, list, { index = null, active = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:504-506|0": {
-    "anchor": "src/js/lib/model.js:504-506",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:513-515|0": {
+    "anchor": "src/js/lib/model.js:513-515",
     "fp": "0986f3ed8eb823a0",
     "head": "export function setActive(state, listId) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:626-633|0": {
-    "anchor": "src/js/lib/model.js:626-633",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:635-642|0": {
+    "anchor": "src/js/lib/model.js:635-642",
     "fp": "9d3833100d6ca7df",
     "head": "export function markRead(state, issueId, read = true, at = Date.now()) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:666-674|0": {
-    "anchor": "src/js/lib/model.js:666-674",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:675-683|0": {
+    "anchor": "src/js/lib/model.js:675-683",
     "fp": "1c7042c5f8e4e566",
     "head": "export function setIssueNote(state, issueId, text) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:705-716|0": {
-    "anchor": "src/js/lib/model.js:705-716",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:714-725|0": {
+    "anchor": "src/js/lib/model.js:714-725",
     "fp": "8777bc126b77f838",
     "head": "// Aggregated over UNIQUE issue ids, so an issue in two lists counts once. Given a listId it counts"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:736-786|0": {
-    "anchor": "src/js/lib/model.js:736-786",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:745-795|0": {
+    "anchor": "src/js/lib/model.js:745-795",
     "fp": "44ae59dee9aaa6c8",
     "head": "// Which of the reader's lists an issue is in, named, in rail order. Read state and issue"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:788|0": {
-    "anchor": "src/js/lib/model.js:788",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:797|0": {
+    "anchor": "src/js/lib/model.js:797",
     "fp": "3c34491180227901",
     "head": "export function pendingIssueIds(state) {"
   },
@@ -1944,38 +1944,43 @@
     "fp": "804cdfb727dae256",
     "head": "export function hasMetadata(input) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:896-897|0": {
-    "anchor": "src/js/lib/model.js:896-897",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:88-90|1": {
+    "anchor": "src/js/lib/model.js:88-90",
+    "fp": "804cdfb727dae256",
+    "head": "export function hasMetadata(input) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:905-906|0": {
+    "anchor": "src/js/lib/model.js:905-906",
     "fp": "90f527f0d8550a9f",
     "head": "// Newer than we understand: refuse rather than silently mangling it."
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:901-1010|0": {
-    "anchor": "src/js/lib/model.js:901-1010",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:910-1019|0": {
+    "anchor": "src/js/lib/model.js:910-1019",
     "fp": "4f3ddf1c767dec53",
     "head": "const base = createEmptyState();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:910|0": {
-    "anchor": "src/js/lib/model.js:910",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:919|0": {
+    "anchor": "src/js/lib/model.js:919",
     "fp": "3317afe7370b3517",
     "head": "if (Number.isInteger(id)) read[id] = Number(v) || Date.now();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:929|0": {
-    "anchor": "src/js/lib/model.js:929",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:938|0": {
+    "anchor": "src/js/lib/model.js:938",
     "fp": "0c1b3de0385c2af9",
     "head": "lists[k] = {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:957|0": {
-    "anchor": "src/js/lib/model.js:957",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:966|0": {
+    "anchor": "src/js/lib/model.js:966",
     "fp": "2e4731598d3ef8d8",
     "head": "const listOrder = dedupe(named.filter((id) => lists[id]));"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:974|0": {
-    "anchor": "src/js/lib/model.js:974",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:983|0": {
+    "anchor": "src/js/lib/model.js:983",
     "fp": "003c21f2deb00338",
     "head": "active: lists[raw.active] ? raw.active : (listOrder[0] ?? null),"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:974|1": {
-    "anchor": "src/js/lib/model.js:974",
+  "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:983|1": {
+    "anchor": "src/js/lib/model.js:983",
     "fp": "003c21f2deb00338",
     "head": "active: lists[raw.active] ? raw.active : (listOrder[0] ?? null),"
   },
@@ -2274,48 +2279,48 @@
     "fp": "7a6b3e0fd15becfe",
     "head": "btn.disabled = true;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3034-3039|0": {
-    "anchor": "src/js/main.js:3034-3039",
-    "fp": "1dfedde3e559857b",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3034-3040|0": {
+    "anchor": "src/js/main.js:3034-3040",
+    "fp": "2f1c0c819d1de153",
     "head": "// No `hydrated: true` here. It was asserted over the whole file, which is right for the 688"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3043-3054|0": {
-    "anchor": "src/js/main.js:3043-3054",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3044-3055|0": {
+    "anchor": "src/js/main.js:3044-3055",
     "fp": "040ed2d540e2a8c3",
     "head": "if (!store.lastUpdateOk) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3043-3054|1": {
-    "anchor": "src/js/main.js:3043-3054",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3044-3055|1": {
+    "anchor": "src/js/main.js:3044-3055",
     "fp": "040ed2d540e2a8c3",
     "head": "if (!store.lastUpdateOk) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3065-3071|0": {
-    "anchor": "src/js/main.js:3065-3071",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3066-3072|0": {
+    "anchor": "src/js/main.js:3066-3072",
     "fp": "e24ba789073145b4",
     "head": "// Some curated orders are short of metadata, in two ways that look nothing alike to a reader"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3074|0": {
-    "anchor": "src/js/main.js:3074",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3075|0": {
+    "anchor": "src/js/main.js:3075",
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3074|1": {
-    "anchor": "src/js/main.js:3074",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3075|1": {
+    "anchor": "src/js/main.js:3075",
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3074|2": {
-    "anchor": "src/js/main.js:3074",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3075|2": {
+    "anchor": "src/js/main.js:3075",
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3080|0": {
-    "anchor": "src/js/main.js:3080",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3081|0": {
+    "anchor": "src/js/main.js:3081",
     "fp": "7b7896b1f0fabe72",
     "head": "announce(parts.join(' '));"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3091|0": {
-    "anchor": "src/js/main.js:3091",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3092|0": {
+    "anchor": "src/js/main.js:3092",
     "fp": "640ca8555353598d",
     "head": "btn.disabled = false;"
   },
@@ -2324,13 +2329,13 @@
     "fp": "5653c58ac2ec1711",
     "head": "export function stateAnnouncer(speak, seed = []) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3128-3130|0": {
-    "anchor": "src/js/main.js:3128-3130",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3129-3131|0": {
+    "anchor": "src/js/main.js:3129-3131",
     "fp": "f65558c74b0b4973",
     "head": "$('#progress-sub').textContent = scoped"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3155-3173|0": {
-    "anchor": "src/js/main.js:3155-3173",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3156-3174|0": {
+    "anchor": "src/js/main.js:3156-3174",
     "fp": "dfc7d34662a56953",
     "head": "function renderLibrary() {"
   },
@@ -2339,48 +2344,48 @@
     "fp": "da65ab7e7c48f6f6",
     "head": "export function passiveAnnouncer(speak) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3302-3330|0": {
-    "anchor": "src/js/main.js:3302-3330",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3303-3331|0": {
+    "anchor": "src/js/main.js:3303-3331",
     "fp": "d26b5eec264b921c",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3302-3330|1": {
-    "anchor": "src/js/main.js:3302-3330",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3303-3331|1": {
+    "anchor": "src/js/main.js:3303-3331",
     "fp": "d26b5eec264b921c",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3325|0": {
-    "anchor": "src/js/main.js:3325",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3326|0": {
+    "anchor": "src/js/main.js:3326",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3325|1": {
-    "anchor": "src/js/main.js:3325",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3326|1": {
+    "anchor": "src/js/main.js:3326",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3325|2": {
-    "anchor": "src/js/main.js:3325",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3326|2": {
+    "anchor": "src/js/main.js:3326",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3341-3347|0": {
-    "anchor": "src/js/main.js:3341-3347",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3342-3348|0": {
+    "anchor": "src/js/main.js:3342-3348",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3341-3347|1": {
-    "anchor": "src/js/main.js:3341-3347",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3342-3348|1": {
+    "anchor": "src/js/main.js:3342-3348",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3346|0": {
-    "anchor": "src/js/main.js:3346",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3347|0": {
+    "anchor": "src/js/main.js:3347",
     "fp": "8a9fef9441555e07",
     "head": "if (res.ok) forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3346|1": {
-    "anchor": "src/js/main.js:3346",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3347|1": {
+    "anchor": "src/js/main.js:3347",
     "fp": "8a9fef9441555e07",
     "head": "if (res.ok) forgetDeleted();"
   },
@@ -2389,43 +2394,43 @@
     "fp": "c8ff28f8e2ea386d",
     "head": "function isLive(node) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3351-3352|0": {
-    "anchor": "src/js/main.js:3351-3352",
-    "fp": "8af48711bb3aab2d",
-    "head": "const value = $('#api-base').value.trim().replace(/\\/+$/, '');"
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3353-3354|0": {
+    "anchor": "src/js/main.js:3353-3354",
+    "fp": "64a12686aef1eb48",
+    "head": "if (!isAllowedApiBase(value)) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3364-3366|0": {
-    "anchor": "src/js/main.js:3364-3366",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3365-3367|0": {
+    "anchor": "src/js/main.js:3365-3367",
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3377-3414|0": {
-    "anchor": "src/js/main.js:3377-3414",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3378-3415|0": {
+    "anchor": "src/js/main.js:3378-3415",
     "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3377-3414|1": {
-    "anchor": "src/js/main.js:3377-3414",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3378-3415|1": {
+    "anchor": "src/js/main.js:3378-3415",
     "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3384-3413|0": {
-    "anchor": "src/js/main.js:3384-3413",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3385-3414|0": {
+    "anchor": "src/js/main.js:3385-3414",
     "fp": "f829dad29f4941f1",
     "head": "const { snapshotKept } = store.eraseAll();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3388|0": {
-    "anchor": "src/js/main.js:3388",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3389|0": {
+    "anchor": "src/js/main.js:3389",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3388|1": {
-    "anchor": "src/js/main.js:3388",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3389|1": {
+    "anchor": "src/js/main.js:3389",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3388|2": {
-    "anchor": "src/js/main.js:3388",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3389|2": {
+    "anchor": "src/js/main.js:3389",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
@@ -2434,23 +2439,23 @@
     "fp": "3bbc6dc7c75496e2",
     "head": "const CATALOG_LOAD = 'catalog-load';"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3501-3507|0": {
-    "anchor": "src/js/main.js:3501-3507",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3502-3508|0": {
+    "anchor": "src/js/main.js:3502-3508",
     "fp": "4e96d4938aa42b04",
     "head": "c.live"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3598-3661|0": {
-    "anchor": "src/js/main.js:3598-3661",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3599-3662|0": {
+    "anchor": "src/js/main.js:3599-3662",
     "fp": "ee245f132cd8352f",
     "head": "async function checkHealth() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3633-3647|0": {
-    "anchor": "src/js/main.js:3633-3647",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3634-3648|0": {
+    "anchor": "src/js/main.js:3634-3648",
     "fp": "4809a55ef0ed038d",
     "head": "export function backoffAnnouncer(speak) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3651-3654|0": {
-    "anchor": "src/js/main.js:3651-3654",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3652-3655|0": {
+    "anchor": "src/js/main.js:3652-3655",
     "fp": "3ce058140aeaef21",
     "head": "function onApiStatus(s) {"
   },
@@ -2459,13 +2464,13 @@
     "fp": "77007c4861c2ec00",
     "head": "const notices = new Map();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3678|0": {
-    "anchor": "src/js/main.js:3678",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3679|0": {
+    "anchor": "src/js/main.js:3679",
     "fp": "badb42e555d676d1",
     "head": "function renderAll() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3711|0": {
-    "anchor": "src/js/main.js:3711",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3712|0": {
+    "anchor": "src/js/main.js:3712",
     "fp": "ae8c800634b48bfe",
     "head": "export function boot() {"
   },
@@ -2474,8 +2479,8 @@
     "fp": "9d801a18615a4de9",
     "head": "function placeNotices() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3756-3760|0": {
-    "anchor": "src/js/main.js:3756-3760",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3757-3761|0": {
+    "anchor": "src/js/main.js:3757-3761",
     "fp": "5bf111284df2b094",
     "head": "// Nothing reports store.lastError here. Every writer of it calls onChange in the same step, and"
   },
@@ -2834,6 +2839,11 @@
     "fp": "fee84b2827663c27",
     "head": "test('a sentence citing one line twice is found', () => {"
   },
+  "PRODUCT_BACKLOG.md|item-details|test/check-sizes.test.js:165-180|0": {
+    "anchor": "test/check-sizes.test.js:165-180",
+    "fp": "1531e456f7101dda",
+    "head": "test('generated data is not read as prose', () => {"
+  },
   "PRODUCT_BACKLOG.md|item-details|test/ci-deadlines.test.js:149-158|0": {
     "anchor": "test/ci-deadlines.test.js:149-158",
     "fp": "421df666e8117d81",
@@ -2904,8 +2914,8 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:3678-3698|0": {
-    "anchor": "src/js/main.js:3678-3698",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:3679-3699|0": {
+    "anchor": "src/js/main.js:3679-3699",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -2964,9 +2974,9 @@
     "fp": "6cf2e7a03e765847",
     "head": "// The catch, and the reason this is a function with a refusal in it rather than a flag on each"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:190-304|0": {
-    "anchor": "scripts/vendor-orders.mjs:190-304",
-    "fp": "e640e29ed947fd23",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:191-308|0": {
+    "anchor": "scripts/vendor-orders.mjs:191-308",
+    "fp": "9c1ef74c7899e060",
     "head": "const { entries, unresolved } = parseChecklist(md);"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/lib/markdown.js:36-115|0": {
@@ -2994,8 +3004,8 @@
     "fp": "5a57b37f0d0a4cae",
     "head": "function doManual() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/lib/model.js:415|0": {
-    "anchor": "src/js/lib/model.js:415",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-012|src/js/lib/model.js:424|0": {
+    "anchor": "src/js/lib/model.js:424",
     "fp": "e409e1d7f9185731",
     "head": "// Read progress is deliberately NOT copied. It is global, keyed by issue id (see the note at"
   },
@@ -3014,13 +3024,13 @@
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:3114-3148|0": {
-    "anchor": "src/js/main.js:3114-3148",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:3115-3149|0": {
+    "anchor": "src/js/main.js:3115-3149",
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:3128-3130|0": {
-    "anchor": "src/js/main.js:3128-3130",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:3129-3131|0": {
+    "anchor": "src/js/main.js:3129-3131",
     "fp": "f65558c74b0b4973",
     "head": "$('#progress-sub').textContent = scoped"
   },
@@ -3044,8 +3054,8 @@
     "fp": "fe98ae5e903d17b9",
     "head": "function quoteNote(note) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-017|src/js/lib/model.js:657-686|0": {
-    "anchor": "src/js/lib/model.js:657-686",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-017|src/js/lib/model.js:666-695|0": {
+    "anchor": "src/js/lib/model.js:666-695",
     "fp": "12f9a060b264d675",
     "head": "// ---------------------------------------------------------------- notes"
   },
@@ -3084,13 +3094,13 @@
     "fp": "3e5f719a1c4ee23f",
     "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:979-1010|0": {
-    "anchor": "src/js/lib/model.js:979-1010",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-022|src/js/lib/model.js:988-1019|0": {
+    "anchor": "src/js/lib/model.js:988-1019",
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:3341-3347|0": {
-    "anchor": "src/js/main.js:3341-3347",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:3342-3348|0": {
+    "anchor": "src/js/main.js:3342-3348",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -3154,8 +3164,8 @@
     "fp": "f792167ff30db7a7",
     "head": "constructor({"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:3352-3353|0": {
-    "anchor": "src/js/main.js:3352-3353",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:3353-3354|0": {
+    "anchor": "src/js/main.js:3353-3354",
     "fp": "64a12686aef1eb48",
     "head": "if (!isAllowedApiBase(value)) {"
   },
@@ -3169,13 +3179,13 @@
     "fp": "8ab27e651ace604e",
     "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:3051-3053|0": {
-    "anchor": "src/js/main.js:3051-3053",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:3052-3054|0": {
+    "anchor": "src/js/main.js:3052-3054",
     "fp": "f7ec63c05cd8928c",
     "head": "notify(report, store.lastUpdateOk"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:3083|0": {
-    "anchor": "src/js/main.js:3083",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:3084|0": {
+    "anchor": "src/js/main.js:3084",
     "fp": "fc2e7b4023138c1b",
     "head": "notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error', im"
   },
@@ -3209,13 +3219,13 @@
     "fp": "6d50373e8d6e684f",
     "head": "\"version\": \"1.0.0\","
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:979-1010|0": {
-    "anchor": "src/js/lib/model.js:979-1010",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:988-1019|0": {
+    "anchor": "src/js/lib/model.js:988-1019",
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:3341-3347|0": {
-    "anchor": "src/js/main.js:3341-3347",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:3342-3348|0": {
+    "anchor": "src/js/main.js:3342-3348",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -3234,8 +3244,8 @@
     "fp": "b8e6049eda71ed0e",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:3651-3654|0": {
-    "anchor": "src/js/main.js:3651-3654",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:3652-3655|0": {
+    "anchor": "src/js/main.js:3652-3655",
     "fp": "3ce058140aeaef21",
     "head": "function onApiStatus(s) {"
   },
@@ -3254,8 +3264,8 @@
     "fp": "d66d703756839bee",
     "head": "export const SCHEMA_VERSION = 2;"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:821-897|0": {
-    "anchor": "src/js/lib/model.js:821-897",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:830-906|0": {
+    "anchor": "src/js/lib/model.js:830-906",
     "fp": "31193066f7e84653",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
@@ -3264,13 +3274,13 @@
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:3114-3148|0": {
-    "anchor": "src/js/main.js:3114-3148",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:3115-3149|0": {
+    "anchor": "src/js/main.js:3115-3149",
     "fp": "a97541727099a2a3",
     "head": "function renderProgress() {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-017|src/js/lib/model.js:666-674|0": {
-    "anchor": "src/js/lib/model.js:666-674",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-017|src/js/lib/model.js:675-683|0": {
+    "anchor": "src/js/lib/model.js:675-683",
     "fp": "1c7042c5f8e4e566",
     "head": "export function setIssueNote(state, issueId, text) {"
   },
@@ -3299,8 +3309,8 @@
     "fp": "5bf3ce19ffa112d9",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:3678-3692|0": {
-    "anchor": "src/js/main.js:3678-3692",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:3679-3693|0": {
+    "anchor": "src/js/main.js:3679-3693",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -3329,8 +3339,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:3678-3692|0": {
-    "anchor": "src/js/main.js:3678-3692",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:3679-3693|0": {
+    "anchor": "src/js/main.js:3679-3693",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -3349,9 +3359,9 @@
     "fp": "f792167ff30db7a7",
     "head": "constructor({"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-046|scripts/lib/fetch-json.mjs:52-61|0": {
-    "anchor": "scripts/lib/fetch-json.mjs:52-61",
-    "fp": "7aa18c32ba31e0a8",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-046|scripts/lib/fetch-json.mjs:72-81|0": {
+    "anchor": "scripts/lib/fetch-json.mjs:72-81",
+    "fp": "e4a4f256115bd4c7",
     "head": "async function getJson(url) {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:662-678|0": {
@@ -3381,7 +3391,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:196-208|0": {
     "anchor": "PRODUCT_BACKLOG.md:196-208",
-    "fp": "5cff6722f2b17275",
+    "fp": "6df9ae0e5d5bc0d6",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
@@ -3414,8 +3424,8 @@
     "fp": "fd168a7fecabce4c",
     "head": "body.nocovers .tgl .sw { background: var(--track-2); }"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-068|src/js/lib/model.js:929|0": {
-    "anchor": "src/js/lib/model.js:929",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-068|src/js/lib/model.js:938|0": {
+    "anchor": "src/js/lib/model.js:938",
     "fp": "0c1b3de0385c2af9",
     "head": "lists[k] = {"
   },
@@ -3494,13 +3504,13 @@
     "fp": "057492ee45bbd06d",
     "head": "// Compare before writing, because this key is shared with every other tab on this origin and a"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-085|src/js/main.js:3302-3330|0": {
-    "anchor": "src/js/main.js:3302-3330",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-085|src/js/main.js:3303-3331|0": {
+    "anchor": "src/js/main.js:3303-3331",
     "fp": "d26b5eec264b921c",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-086|src/js/lib/model.js:208-223|0": {
-    "anchor": "src/js/lib/model.js:208-223",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-086|src/js/lib/model.js:217-232|0": {
+    "anchor": "src/js/lib/model.js:217-232",
     "fp": "dbae5dbb94ca6e23",
     "head": "if (!raw) return null;"
   },
@@ -3519,8 +3529,8 @@
     "fp": "7a07ad85b4a02516",
     "head": "updates:"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3598-3661|0": {
-    "anchor": "src/js/main.js:3598-3661",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:3599-3662|0": {
+    "anchor": "src/js/main.js:3599-3662",
     "fp": "ee245f132cd8352f",
     "head": "async function checkHealth() {"
   },
@@ -3579,8 +3589,8 @@
     "fp": "b40fb8cc4678105d",
     "head": "// Roots whose contents are working evidence for one session rather than product documentation."
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:3377-3414|0": {
-    "anchor": "src/js/main.js:3377-3414",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:3378-3415|0": {
+    "anchor": "src/js/main.js:3378-3415",
     "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
@@ -3609,13 +3619,13 @@
     "fp": "95f22bee7633dc29",
     "head": "if (!url || !settings.covers) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-109|src/js/lib/model.js:197|0": {
-    "anchor": "src/js/lib/model.js:197",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-109|src/js/lib/model.js:206|0": {
+    "anchor": "src/js/lib/model.js:206",
     "fp": "06e54a56a333a199",
     "head": "detailsRefused: refused || input.detailsRefused === true,"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-110|src/js/main.js:3071|0": {
-    "anchor": "src/js/main.js:3071",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-110|src/js/main.js:3072|0": {
+    "anchor": "src/js/main.js:3072",
     "fp": "8f186a926ed5a738",
     "head": "parts.push(...orderGapSentences(order));"
   },
@@ -3666,7 +3676,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1379-1380|0": {
     "anchor": "PRODUCT_BACKLOG.md:1379-1380",
-    "fp": "54cf975513b24977",
+    "fp": "aeee253c5561327d",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:511-544|0": {
@@ -3674,8 +3684,8 @@
     "fp": "1f49cb516abe3fde",
     "head": "export function repeatedCitations(text, syntax = PROSE, known = null) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-124|src/js/main.js:3651-3654|0": {
-    "anchor": "src/js/main.js:3651-3654",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-124|src/js/main.js:3652-3655|0": {
+    "anchor": "src/js/main.js:3652-3655",
     "fp": "3ce058140aeaef21",
     "head": "function onApiStatus(s) {"
   },
@@ -3684,10 +3694,10 @@
     "fp": "95df7f5f266428b5",
     "head": "const STATED = /\\b(?:is|of)\\s+([\\d][\\d,]*)\\s+lines\\b/g;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-126|scripts/vendor-orders.mjs:200-209|0": {
-    "anchor": "scripts/vendor-orders.mjs:200-209",
-    "fp": "7deacba5bc122759",
-    "head": "for (const id of ids) {"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-126|scripts/lib/lookup-issues.mjs:49|0": {
+    "anchor": "scripts/lib/lookup-issues.mjs:49",
+    "fp": "b00b1254dcc2dcbf",
+    "head": "if (err?.status === 404) refused.add(id);"
   },
   "scripts/browser-check.mjs|preamble|src/styles.css:635|0": {
     "anchor": "src/styles.css:635",
