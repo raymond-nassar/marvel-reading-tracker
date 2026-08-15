@@ -12,14 +12,17 @@ import assert from 'node:assert/strict';
 
 import {
   FROZEN,
+  WORD,
   checkAll,
   checkBlocks,
   checkLedger,
+  checkOrdinalHeadings,
   checkRanks,
   checkRepeats,
   derive,
   numberWord,
   ordinalWord,
+  wordNumber,
 } from '../scripts/check-counts.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -563,6 +566,78 @@ test('the hundreds are spelled the way the backlog already spells them', () => {
   );
 });
 
+// A constructed document, against this file's standing preference for mutating the real one,
+// and deliberately: what is under test is a size the real backlog has not reached. It holds a
+// hundred ranked rows today, so the widest figure it can state is "hundredth", which is a single
+// token and reads correctly even under the pattern this replaced. The defect only appears one
+// row further on, where the word becomes a phrase.
+//
+// Every reader of a number word is exercised here rather than only the one that raised it,
+// because they failed in three different ways and two of them were silent: the rank heading
+// reported drift no wording could satisfy, the delivered count skipped the claim and took the
+// whole id list with it, and the Ready count read "two" out of "a hundred and two" and compared
+// 2 against 102, which reports the figure the document already states as the figure it should
+// have said.
+function documentStating(shipped, ready) {
+  const ids = [];
+  for (let i = 1; i <= shipped + ready; i += 1) ids.push(`BL-${String(i).padStart(3, '0')}`);
+  const row = (id, status) => `| ${id} | t | Defect | EP-01 | none | 1 | 1 | 1 | 1 | 1.0 | none | Measured | ${status} | src/js/main.js:1 |`;
+  const header = [
+    '| ID | Title | Type | Epic | Depends | U | T | R | E | WSJF | P | Conf | Status | Evidence |',
+    '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |',
+  ];
+  return {
+    ids,
+    text: [
+      '# Product backlog',
+      '',
+      `${cap(numberWord(shipped))} items have since been delivered and are marked \`Shipped\` in the table below: ${ids.slice(0, shipped).join(', ')}.`,
+      `${cap(numberWord(ready))} of them are still \`Ready\`.`,
+      '',
+      '## The backlog',
+      '',
+      ...header,
+      ...ids.map((id, i) => row(id, i < shipped ? 'Shipped' : 'Ready')),
+      '',
+      '### Parked',
+      '',
+      ...header,
+      '',
+      '## Item details',
+      '',
+    ].join('\n'),
+  };
+}
+
+test('a figure above ninety-nine that the document states correctly is not reported as drift', () => {
+  const { ids, text } = documentStating(100, 2);
+  const d = derive(text);
+  assert.equal(d.ranked.length, 102);
+  assert.equal(d.shipped.length, 100);
+
+  const doc = `${text}\n### Case 1: ${ids[100]} is labelled P0 but ranks ${ordinalWord(101)}\n`;
+  assert.match(doc, / ranks a hundred and first/, 'the heading under test is not the phrase form');
+  assert.deepEqual(checkOrdinalHeadings(derive(doc)), []);
+  assert.deepEqual(checkLedger(derive(doc)), []);
+});
+
+test('a figure above ninety-nine that the document states wrongly is still caught', () => {
+  // The widened patterns have to reach further without becoming permissive, and each of the
+  // three is wrong here by one, which is the smallest error any of them can carry.
+  const { ids, text } = documentStating(100, 2);
+  const wrongLedger = text
+    .replace(`${cap(numberWord(100))} items`, `${cap(numberWord(101))} items`)
+    .replace(`${cap(numberWord(2))} of them`, `${cap(numberWord(102))} of them`);
+  const found = checkLedger(derive(wrongLedger));
+  assert.match(messages(found), /should read A hundred/);
+  assert.match(messages(found), /should read Two/);
+
+  const doc = `${text}\n### Case 1: ${ids[100]} is labelled P0 but ranks ${ordinalWord(102)}\n`;
+  const headings = checkOrdinalHeadings(derive(doc));
+  assert.equal(headings.length, 1);
+  assert.match(messages(headings), new RegExp(`spells ${ids[100]}'s rank as a hundred and second`));
+});
+
 // The ceiling is the reason the table has to stay ahead of the document rather than level
 // with it. These two assertions fail the moment the backlog grows past what the words
 // reach, which is a build failure rather than a checker that stops checking, and that is
@@ -571,6 +646,25 @@ test('the words reach past every figure the document actually states', () => {
   const d = derive(REAL);
   assert.notEqual(numberWord(d.shipped.length), null);
   assert.notEqual(ordinalWord(d.ranked.length), null);
+});
+
+// The two assertions above pin how far the words are written, and on their own that is half a
+// guarantee. Extending the writers past ninety-nine left all three readers still stopping there,
+// and both assertions stayed green throughout, because neither of them looks at a reader. The
+// readers are held to the writers here instead of to a number, so extending one without the other
+// is what goes red rather than the next document that states the figure.
+test('every word the checker writes can be read back by the checker', () => {
+  const shape = new RegExp(`^${WORD}$`);
+  let n = 0;
+  for (; numberWord(n) !== null; n += 1) {
+    assert.match(numberWord(n), shape, `the patterns cannot match numberWord(${n})`);
+    assert.equal(wordNumber(numberWord(n)), n, `wordNumber cannot read numberWord(${n})`);
+    assert.match(ordinalWord(n), shape, `the patterns cannot match ordinalWord(${n})`);
+  }
+  // A reader that stopped early would satisfy the loop above by never being asked, so the
+  // distance covered is asserted rather than assumed.
+  assert.ok(n > 100, `the words stop at ${n - 1}, which is below the size the table has reached`);
+  assert.equal(ordinalWord(n), null, 'the two words must run out together');
 });
 
 test('a document missing one of its three regions fails loudly rather than silently', () => {

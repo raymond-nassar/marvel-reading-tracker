@@ -208,11 +208,22 @@ export function checkRanks(d) {
   return found;
 }
 
+// A number word is a single token below a hundred and a phrase above it: "a hundred and two",
+// or "hundredth" for the ordinal of a round hundred. A pattern reading only the first token
+// captures "a", compares that against the whole phrase, and reports drift that no wording of
+// the sentence could ever satisfy. Every reader of a number word below is built from this one
+// fragment rather than repeating it, because a reader that stops short of what numberWord()
+// writes is the defect, and it is the silent kind: two of the three skip the claim rather than
+// failing it, so the gate goes quiet exactly where it should be loudest.
+export const WORD = '[A-Za-z]+(?:-[a-z]+)?(?: hundred(?: and [a-z]+(?:-[a-z]+)?)?)?';
+
+const RANKS = new RegExp(`^#{2,4} .*?(BL-\\d+).*?\\branks (${WORD})\\b`);
+
 export function checkOrdinalHeadings(d) {
   const found = [];
   d.lines.forEach((line, i) => {
     if (line.includes(FROZEN)) return;
-    const m = /^#{2,4} .*?(BL-\d+).*?\branks ([a-z]+(?:-[a-z]+)?)\b/.exec(line);
+    const m = RANKS.exec(line);
     if (!m) return;
     const [, id, word] = m;
     if (!d.rank.has(id)) {
@@ -293,9 +304,9 @@ function flatten(lines) {
 // paragraph's id list as well, silently, where the sentence-anchored version it replaced
 // still caught a dropped id. So the backstop in `checkLedger` counts only the claims this
 // function could read, which turns each of those cases into a finding instead.
-function wordNumber(word) {
+export function wordNumber(word) {
   const w = (word ?? '').toLowerCase();
-  for (let n = 0; n <= 99; n += 1) if (numberWord(n) === w) return n;
+  for (let n = 0; numberWord(n) !== null; n += 1) if (numberWord(n) === w) return n;
   return null;
 }
 
@@ -334,8 +345,8 @@ function sentenceAround(text, at) {
 
 // A claim is anchored on a count word or on an id, never on the bare phrase, because the
 // bare phrase is what a document quoting itself writes.
-const DELIVERED = /(?:([A-Za-z-]+) items|BL-\d+) have since been delivered/g;
-const REMAINING = /([A-Za-z-]+) of them are still `([A-Za-z]+)`/g;
+const DELIVERED = new RegExp(`(?:(${WORD}) items|BL-\\d+) have since been delivered`, 'g');
+const REMAINING = new RegExp(`(${WORD}) of them are still \`([A-Za-z]+)\``, 'g');
 
 export function checkLedger(d) {
   const found = [];

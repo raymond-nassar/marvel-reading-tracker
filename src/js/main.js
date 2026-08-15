@@ -250,14 +250,46 @@ function preservingFocus(container, rebuild, opts) {
   restoreFocus(held, opts);
 }
 
-function announce(msg) {
-  // Resolved once and reused, so both writes land on the same element even if the document
-  // changes under us between them.
-  const node = announcer();
-  node.textContent = '';
-  // Re-setting after a tick makes screen readers re-announce identical messages.
-  setTimeout(() => { node.textContent = msg; }, 30);
+// Two announcements produced by one action used to leave only the second. Both writes are
+// scheduled at the same delay, so they land back to back in one timer phase with no rendering
+// opportunity between them, and the accessibility tree observes only the last value written.
+// Giving hydration a start announcement made that reachable on every add and every import,
+// where it destroyed the confirmation that the issues had been added at all, and that message
+// has no visible live surface to fall back on. They are joined instead of replaced, because two
+// messages raised by a single action are one thing to say, and saying only the later half of it
+// is the failure this channel exists to prevent.
+//
+// Split from the element it writes to so a whole tick can be replayed against it in a test. The
+// node is resolved by open() once per utterance rather than per message, which is what keeps
+// both halves of a joined message on the same element.
+export function announceChannel(open, after) {
+  let pending = null;
+  return (msg) => {
+    if (pending) {
+      pending.msg += ` ${msg}`;
+      return;
+    }
+    const write = open();
+    const slot = { msg };
+    pending = slot;
+    after(() => {
+      pending = null;
+      write(slot.msg);
+    });
+  };
 }
+
+const announce = announceChannel(
+  () => {
+    // Resolved once and reused, so both writes land on the same element even if the document
+    // changes under us between them.
+    const node = announcer();
+    node.textContent = '';
+    return (msg) => { node.textContent = msg; };
+  },
+  // Re-setting after a tick makes screen readers re-announce identical messages.
+  (fn) => setTimeout(fn, 30),
+);
 
 // A success message must never outlive the write it describes. store.update rolls the change
 // back when persistence fails, so every announcement has to consult the result first,
