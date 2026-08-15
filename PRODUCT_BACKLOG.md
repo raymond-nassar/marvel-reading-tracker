@@ -4579,7 +4579,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8982-8984` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8987-8989` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4589,11 +4589,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:206-208`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9001-9005`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9006-9010`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8816-8818` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8821-8823` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -7000,7 +7000,7 @@ browser holds. So the rule the two routes now share is not "withdraw on both". I
 the route the reader took promised that the data the offer would return is gone. A test pins the
 start fresh half, so reversing that decision silently turns the suite red.
 
-Eight tests, in `test/storage.test.js:1152-1305`. Each of the three lines that carries the rule was
+Eight tests, in `test/storage.test.js:1158-1311`. Each of the three lines that carries the rule was
 reverted on its own and named its own defenders. Dropping the withdrawal reddens both tests that
 assert what a written erase leaves in storage, because the staging one closes by naming the whole key
 set. Dropping the `discardStaging()` call reddens that staging test alone. Dropping only the
@@ -7957,12 +7957,15 @@ is that a state which arrives with 250,000 lists is painted one tile per list at
 and one node per list on the rail, neither of them bounded.
 
 The answer is neither, and the measurement is why. **The premise does not hold: a restore too large
-to store paints nothing at all.** Driven through the app's own file input in headless Edge at
+to store is never painted as the backup.** Driven through the app's own file input in headless Edge at
 1280x900, a backup of 13,000 lists was refused in 62 milliseconds with the rail left at 0 nodes and
-the origin untouched. The refusal happens at the staging write, which is the first full-size
-allocation a restore makes, and that branch returns before `adoptRestored` runs, so no render is
-ever handed the state. The shape the item was filed against, a paint that happens and is then
-refused, is not a shape this code produces.
+the origin untouched. Which of the three writes a restore makes is refused first depends on the
+sizes, and only the writes before `swapReached` skip the notification entirely. At 13,000 the
+staging copy fitted and the swap did not, so `settleAfterSwap` reconciled and repainted; what it
+repainted is the tracker that was there, which was empty, and that is why the rail read 0. What
+never runs on either branch is `adoptRestored`, so the backup itself is never handed to a render.
+The shape the item was filed against, the backup painted and then refused, is not a shape this code
+produces.
 
 What a restore can land is also far below the count ceiling, and for a reason that has nothing to do
 with counts. `restore()` stages the serialized backup under a temporary key before it writes the
@@ -7988,23 +7991,25 @@ establishing this app must not have.
 
 What holds the decision is the property it rests on, not the timings, which are one run on one
 machine. Three tests in `test/storage.test.js` now assert that a render is only ever handed a state
-storage accepted. The first takes the near-quota shape, a storage with room for the backup but not
-for the staging copy, and asserts that nothing is repainted at all. The second takes the other
-refusal, where the staging write landed and the swap did not, and asserts that what the observer is
-handed is the tracker that is here rather than the backup. The third asserts the clause behind the
-reachable ceiling, that room for two copies restores where room for one and a half does not, without
-pinning either to a number. Evidence: `test/storage.test.js:1091-1112`, `test/storage.test.js:1131`.
+storage accepted. The first takes the shape that refuses before the swap is reached, a storage with
+room to stage the backup but not to snapshot the tracker beside it, and asserts that nothing is
+repainted at all. The second takes the other refusal, where the swap itself is refused, and asserts
+that what the observer is handed is the tracker that is here rather than the backup. The third
+asserts the clause behind the reachable ceiling, that room for two copies restores where room for
+one and a half does not, without pinning either to a number. Evidence:
+`test/storage.test.js:1094-1116`, `test/storage.test.js:1137`.
 
 Each was proved able to fail before it was accepted, by the smallest change that should break it.
-Notifying the observer on the staging refusal reddens the first alone. Handing `settleAfterSwap`'s
-notification the refused state rather than the reconciled one reddens the second alone. Removing the
-staging write reddens the first and third, and one older test that was already watching that key,
-which is the cross-check that the third is about the staging copy and not about room in general.
+Notifying the observer on the refusal that precedes the swap reddens the first alone. Handing
+`settleAfterSwap`'s notification the refused state rather than the reconciled one reddens the second
+alone. Removing the staging write reddens the first and third, and one older test that was already
+watching that key, which is the cross-check that the third is about the staging copy and not about
+room in general.
 
 One thing this did not change and deliberately leaves open. Growth by ordinary use is not staged:
 `persist()` writes the main key alone, so a tracker that grew rather than arrived can reach the
 whole origin rather than half of it, roughly 25,000 named lists. Nobody reaches that by importing
-curated orders, of which the catalog carries a few dozen, and every edit that gets there is one list
+curated orders, of which the catalog carries twelve, and every edit that gets there is one list
 larger than the last, so there is no moment at which a render is asked for something it was not
 asked for a moment earlier. It is recorded here because it is the one door the tests above do not
 watch, not because it is a hazard.
@@ -9098,8 +9103,8 @@ those seven keep a score too, BL-025 having been dropped before it was ever scor
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
 open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and
-seventy-five further items filed, none of them labelled, one of which, BL-060, was parked in its
-turn, which is how it reaches 101 rows now. The ranks below are positions in it as it stands.
+seventy-six further items filed, none of them labelled, one of which, BL-060, was parked in its
+turn, which is how it reaches 102 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 101
 ranked rows, six adjacent pairs sit with the lower score above the higher: BL-062 below BL-063,

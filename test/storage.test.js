@@ -963,8 +963,10 @@ test('a browser that stops answering reads still gets its answer back to the rea
 
 // The branch a genuine quota failure takes first, which none of the five reached: `failKey` fails
 // writes to the main key only, so both the staging write and the snapshot write succeeded and every
-// one of them landed on the swap. Near quota the staging write is the first full-size allocation
-// and therefore the first to be refused.
+// one of them landed on the swap. `failWrites` refuses all three, so the staging write is the one
+// that trips here. Which write a real quota refuses first is not fixed: the staging copy is the
+// first full-size allocation, but on an empty tracker it is one copy where the swap is the second,
+// so near quota the swap is the likelier casualty. BL-114 measured that shape.
 test('a quota failure at the first staging write changes nothing and mints no undo', () => {
   const original = goodBackup();
   const storage = fakeStorage({ [KEY]: original });
@@ -1060,15 +1062,16 @@ test('a snapshot slot that would not be read is neither deleted nor announced as
 // The item asked whether the two per-list renders need a bound of their own, on the reading that a
 // restore can carry 250,000 lists and the rail paints a node per list. Measured in headless Edge at
 // 1280x900 against the app's own file input, the premise does not hold: a backup too large to store
-// is refused at the staging write, `adoptRestored` never runs, and the rail is left at 0 nodes with
-// the origin untouched. At 12,000 lists the restore landed and painted in 619 ms end to end; at
-// 13,000 it was refused in 62 ms with nothing painted. What bounds the paint is therefore what
-// storage accepted, and this is the property that makes bounding the render unnecessary.
+// never reaches `adoptRestored`, so it is never the state a render is handed. At 12,000 lists the
+// restore landed and painted in 619 ms end to end; at 13,000 the swap was refused in 62 ms and what
+// repainted was the empty tracker that was already there, leaving the rail at 0 nodes and the origin
+// untouched. What bounds the paint is therefore what storage accepted, and this is the property that
+// makes bounding the render unnecessary.
 //
 // A budgeted storage rather than `failWrites`, because the shape that matters is not a storage that
 // refuses everything. It is one that would take the backup on its own and will not take it beside
-// the staging copy the swap makes first, which is what puts the reachable ceiling at half the origin
-// rather than all of it.
+// the second full-size copy the swap needs, which is what puts the reachable ceiling at half the
+// origin rather than all of it.
 function budgetedStorage(seed = {}, budget = Infinity) {
   const storage = fakeStorage(seed);
   const occupancy = (skip) => {
@@ -1091,9 +1094,9 @@ function budgetedStorage(seed = {}, budget = Infinity) {
 test('a restore refused for want of room paints nothing at all', () => {
   const original = goodBackup();
   const replacement = wideBackup(40);
-  // Room for the tracker that is here and one copy of the replacement, and not for the second copy
-  // the swap stages. A budget that refused the replacement outright would prove only that a refusal
-  // refuses.
+  // Room for the tracker that is here and one copy of the replacement, and not for the snapshot of
+  // the tracker that restore() writes beside them. A budget that refused the replacement outright
+  // would prove only that a refusal refuses.
   const budget = original.length + replacement.length + 200;
   const storage = budgetedStorage({ [KEY]: original }, budget);
 
@@ -1103,16 +1106,19 @@ test('a restore refused for want of room paints nothing at all', () => {
 
   const res = store.restore(replacement);
 
-  assert.equal(res.ok, false, 'the backup does not fit beside the copy the swap stages');
+  assert.equal(res.ok, false, 'the backup does not fit beside a snapshot of what it replaces');
   assert.equal(storage.getItem(KEY), original, 'and the tracker that is here is untouched');
-  // The staging write is the first full-size allocation, so near quota it is the first refused, and
-  // that branch returns before any observer is notified. Nothing on screen changes and nothing is
+  // Which of the three writes a refusal lands on is a property of the sizes, not of the code: here
+  // the staging copy fits and the snapshot does not. What matters is that both precede `swapReached`,
+  // and that branch returns before any observer is notified. Nothing on screen changes and nothing is
   // repainted: the reader is told by the call site's message rather than by a render.
   assert.deepEqual(handed, [], 'a restore that never reached the swap repainted nothing');
 });
 
-// The other refusal, and the one where a render does run. The staging write landed and the swap did
-// not, so the store reconciles and notifies. What it hands over is the assertion BL-114 rests on.
+// The other refusal, and the one where a render does run. Both writes before the swap landed and the
+// swap did not, so the store reconciles and notifies. What it hands over is the assertion BL-114
+// rests on. This is the shape a real quota takes on a tracker small enough that one copy of the
+// backup fits and two do not, which is what BL-114 measured at 13,000 lists.
 test('a restore whose swap is refused repaints the tracker that is here, not the backup', () => {
   const original = goodBackup();
   const storage = fakeStorage({ [KEY]: original });
