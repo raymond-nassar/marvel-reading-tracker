@@ -33,6 +33,11 @@ The message also had a grammar fault, reading "Waiting 1 seconds", which is fixe
 have saved is affected, and the app waits and retries exactly as it did before. The only change is
 how much it says while it does.
 
+For maintainers: review of this change found three statements in the project documents of how
+large the main view file is, all left at the size it was before. They now agree with the file,
+and the list of planned improvements carries a new entry for the check that would have caught
+them, since none of the existing ones can.
+
 ### Erasing everything now says what it does not reach (BL-113)
 
 In plain English: when this app cannot read your saved data, it puts a copy of it aside rather than

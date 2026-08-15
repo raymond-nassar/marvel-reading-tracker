@@ -200,8 +200,10 @@ test('a stall that ends and starts again is heard again, in the client', async (
   assert.equal(oneSecond.length, 2, 'once per stall: silent inside one, audible across two');
 });
 
-// Announcements are silence-by-default here, so a policy that never speaks would pass every
-// count assertion above. This is the one that fails if it stops speaking at all.
+// The two above assert what came back. This asserts that something did, and that the whole
+// sentence is well formed rather than merely not misspelled: it is the only anchored match
+// against a wait the limiter chose rather than one this file chose, which is what would catch a
+// draw rounding outside the band the plural rule was written for.
 test('a stalled service is still audible, because the guard is a limit and not a mute', async () => {
   const { api, said } = clientAnnouncing([503]);
   await assert.rejects(() => api.health());

@@ -320,7 +320,7 @@ it.
 
 ## What a per-view split does to these diagrams
 
-BL-042 proposes breaking the 3,697 line view file into per-view modules. A diagram drawn at the
+BL-042 proposes breaking the 3,732 line view file into per-view modules. A diagram drawn at the
 level of function names inside that file would be falsified the day it lands, so each of the three
 above was pitched to survive it. Two do. One survives in shape but has a detail that will need
 rewriting, and it is more useful to say which than to claim all three are safe.
