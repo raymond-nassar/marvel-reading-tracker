@@ -217,6 +217,24 @@ const MUTATIONS = [
     },
   },
   {
+    id: 'forget-marks',
+    breaks: 'persistence',
+    why: 'read marks are stripped from every write, so a mark that appears to reach storage never did',
+    script: () => {
+      const real = Storage.prototype.setItem;
+      Storage.prototype.setItem = function setItem(key, value) {
+        if (key !== 'mrt.state.v2') return real.call(this, key, value);
+        try {
+          const parsed = JSON.parse(value);
+          parsed.read = {};
+          return real.call(this, key, JSON.stringify(parsed));
+        } catch {
+          return real.call(this, key, value);
+        }
+      };
+    },
+  },
+  {
     id: 'route-freeze',
     breaks: 'navigation',
     why: 'history stops recording, so an address bar that tracks the view cannot be doing so',
@@ -238,6 +256,32 @@ const MUTATIONS = [
         }).observe(banner, { attributes: true });
         banner.hidden = true;
       });
+    },
+  },
+  {
+    id: 'disable-recovery',
+    breaks: 'recovery',
+    why: 'the banner still appears but its two buttons are unusable, so the reader is told their data is unreadable and offered no way out of it',
+    script: () => {
+      document.addEventListener('DOMContentLoaded', () => {
+        for (const id of ['#btn-download-salvage', '#btn-start-fresh']) {
+          const el = document.querySelector(id);
+          if (el) el.disabled = true;
+        }
+      });
+    },
+  },
+  {
+    id: 'wipe-original',
+    breaks: 'recovery',
+    why: 'the unreadable original is deleted once it has been copied aside, which is the wipe the banner promises has not happened',
+    script: () => {
+      const real = Storage.prototype.setItem;
+      Storage.prototype.setItem = function setItem(key, value) {
+        const out = real.call(this, key, value);
+        if (String(key).startsWith('mrt.state.salvage')) this.removeItem('mrt.state.v2');
+        return out;
+      };
     },
   },
   {
@@ -320,7 +364,11 @@ const SCENARIOS = [
       t.check('an issue can be marked read', true);
 
       const before = await readState(page);
-      t.check('the mark reached storage', JSON.stringify(before).includes('900001'), 'issue id absent from the saved state');
+      // Not a substring search over the serialised state: createList already writes the issue id
+      // into the list's itemIds, so `includes('900001')` is true the moment the order imports and
+      // says nothing about the mark. Read marks live in their own map, keyed by issue id.
+      const marked = Object.prototype.hasOwnProperty.call(before?.read ?? {}, '900001');
+      t.check('the mark reached storage', marked, `read keys: ${JSON.stringify(Object.keys(before?.read ?? {}))}`);
 
       await page.reload({ waitUntil: 'load' });
       await openFullOrder(page);
@@ -342,9 +390,10 @@ const SCENARIOS = [
 
       // A schema from the future is the shape the store was built for: valid JSON that migrate()
       // refuses, which is what a downgrade after using a newer build actually looks like.
-      await page.evaluate(() => {
-        localStorage.setItem('mrt.state.v2', JSON.stringify({ schemaVersion: 99, lists: {}, note: 'from a newer build' }));
-      });
+      const corrupt = JSON.stringify({ schemaVersion: 99, lists: {}, note: 'from a newer build' });
+      await page.evaluate((bytes) => {
+        localStorage.setItem('mrt.state.v2', bytes);
+      }, corrupt);
       await page.reload({ waitUntil: 'load' });
       await page.waitForSelector('#blocked-banner:not([hidden])', { timeout: 15000 });
       t.check('the reader is told, rather than finding an empty tracker', true);
@@ -352,15 +401,42 @@ const SCENARIOS = [
       const why = await page.$eval('#blocked-why', (el) => el.textContent.trim());
       t.check('the banner says why', why.length > 0, JSON.stringify(why));
 
-      const offers = await page.evaluate(() => ({
-        download: !!document.querySelector('#btn-download-salvage'),
-        fresh: !!document.querySelector('#btn-start-fresh'),
-      }));
-      t.check('a copy of the unreadable data can be downloaded', offers.download);
-      t.check('and starting fresh is offered as a separate, second choice', offers.fresh);
+      // Presence is not the claim. Both buttons are static markup inside the banner, so
+      // querySelector finds them on a perfectly healthy app with the banner hidden. What the
+      // shipped copy promises is that the reader can act on them, so the query is scoped to the
+      // banner only while it is showing, and asks whether each button is reachable and enabled.
+      const offers = await page.evaluate(() => {
+        const banner = document.querySelector('#blocked-banner:not([hidden])');
+        const usable = (sel) => {
+          const el = banner?.querySelector(sel);
+          if (!el) return { found: false, visible: false, enabled: false };
+          return { found: true, visible: el.checkVisibility(), enabled: !el.disabled };
+        };
+        return { download: usable('#btn-download-salvage'), fresh: usable('#btn-start-fresh') };
+      });
+      t.check(
+        'a copy of the unreadable data can be downloaded',
+        offers.download.found && offers.download.visible && offers.download.enabled,
+        JSON.stringify(offers.download),
+      );
+      t.check(
+        'and starting fresh is offered as a separate, second choice',
+        offers.fresh.found && offers.fresh.visible && offers.fresh.enabled,
+        JSON.stringify(offers.fresh),
+      );
 
       const salvaged = await page.evaluate(() => Object.keys(localStorage).some((k) => k.startsWith('mrt.state.salvage')));
       t.check('the unreadable bytes were copied aside before anything else', salvaged);
+
+      // The other half of "rather than a wipe", and the half a salvage copy alone cannot show.
+      // The banner promises the original has not been changed or deleted, so compare it byte for
+      // byte with what was written, not merely for presence.
+      const kept = await page.evaluate(() => localStorage.getItem('mrt.state.v2'));
+      t.check(
+        'and the unreadable original is still there, byte for byte',
+        kept === corrupt,
+        kept === null ? 'the key is gone' : `${kept.length} bytes vs ${corrupt.length}`,
+      );
     },
   },
   {
@@ -402,7 +478,12 @@ const SCENARIOS = [
       });
       const second = await page.evaluate(() => window.__opened);
       t.check('an issue with no reference still opens a tab at once', second.length === 1 && second[0].dispatching === true, JSON.stringify(second));
-      t.check('and asks the launcher to resolve it', !(second[0]?.url ?? '').includes('d='), second[0]?.url);
+      // Require the record before reading it. A bare negated substring reports this as satisfied
+      // when nothing was opened at all, which is the one case it is meant to catch, and it reads
+      // the parameter rather than the string so a title containing "d=" cannot decide it.
+      const asks = second.length === 1
+        && !new URL(second[0].url, page.__origin).searchParams.has('d');
+      t.check('and asks the launcher to resolve it', asks, JSON.stringify(second.map((o) => o.url)));
     },
   },
 ];
@@ -569,18 +650,42 @@ async function withStack(fn) {
     ]);
   }
 
-  const { default: puppeteer } = await import(pathToFileURL(driver).href);
-  const server = createStaticServer();
-  await new Promise((resolve) => server.listen(0, HOST, resolve));
-  const origin = `http://${HOST}:${server.address().port}`;
-
-  const browser = await puppeteer.launch({
-    executablePath: edge,
-    headless: !process.env.MRT_HEADED,
-    args: ['--no-first-run', '--no-default-browser-check'],
-  });
-
+  // existsSync is not enough for either. A scratch install that is partial or built for another
+  // Node, and an Edge path that exists but will not execute, are both "the driver is not here"
+  // answers wearing the costume of "the app is broken". Routing them to the same exit code as an
+  // absent one is the whole point of keeping EXIT_PREREQ distinct from a failing assertion.
+  let puppeteer;
   try {
+    ({ default: puppeteer } = await import(pathToFileURL(driver).href));
+  } catch (err) {
+    prerequisiteFailure(`puppeteer-core was found at ${driver} but could not be loaded.`, [
+      String(err?.message ?? err),
+      '',
+      'Reinstall it outside the tree, or point MRT_PUPPETEER at a working install.',
+    ]);
+  }
+
+  let browser;
+  try {
+    browser = await puppeteer.launch({
+      executablePath: edge,
+      headless: !process.env.MRT_HEADED,
+      args: ['--no-first-run', '--no-default-browser-check'],
+    });
+  } catch (err) {
+    prerequisiteFailure(`Microsoft Edge was found at ${edge} but could not be launched.`, [
+      String(err?.message ?? err),
+      '',
+      'Check that MRT_EDGE names the executable itself, not the directory holding it.',
+    ]);
+  }
+
+  // Created only once the browser is up, so no exit path above can leave a listening socket
+  // behind. Everything from here is covered by the finally.
+  const server = createStaticServer();
+  try {
+    await new Promise((resolve) => server.listen(0, HOST, resolve));
+    const origin = `http://${HOST}:${server.address().port}`;
     return await fn({ browser, origin, driver, edge });
   } finally {
     await browser.close().catch(() => {});
@@ -616,7 +721,7 @@ async function main() {
     // the scenario it is aimed at, on the assertion that carries the claim. A mutation that turns
     // nothing red means the scenario it was written for is not asserting what it claims to.
     //
-    // Two of the five redden every scenario, and that is not loose aim. Every scenario imports the
+    // Two of the seven redden every scenario, and that is not loose aim. Every scenario imports the
     // fixture order first, so a mutation of the import or of the write that import performs is
     // upstream of all of them by construction. What distinguishes aim is the named assertion that
     // fails in the aimed-at scenario, which is why it is printed rather than a bare scenario id.
@@ -647,4 +752,10 @@ async function main() {
   process.exit(code);
 }
 
-main();
+// Without this an unexpected throw leaves an unhandled rejection, which Node reports as a bare
+// stack and exits 1 on. Exit 1 is this check's word for "an assertion failed", so an internal
+// fault would be read as a finding about the app.
+main().catch((err) => {
+  console.error(`\nThe check itself failed before it could report on the app:\n${err?.stack ?? err}`);
+  process.exit(1);
+});

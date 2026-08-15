@@ -24,7 +24,7 @@ it did not.
 `npm run browser` now does it. It opens Edge, imports a reading list, moves between screens with the
 address bar and the Back button, marks an issue read and reloads to see it survive, damages the
 saved data on purpose to check the app offers help rather than wiping it, and clicks through to a
-comic to check the reading tab opens straight away. Twenty-seven checks, about two and a half
+comic to check the reading tab opens straight away. Twenty-eight checks, about two and a half
 seconds.
 
 **It cannot touch anything you have saved.** It runs the app on a spare address rather than the
@@ -36,9 +36,12 @@ It is not part of the automatic checks, because those run on a machine with no b
 and it needs one component that is deliberately not shipped with this project. If that component is
 missing it says so and tells you how to install it, rather than pretending the app is broken.
 
-A second command, `npm run browser:prove`, breaks the app five different ways on purpose and checks
-that each break is noticed. A check that has never been seen to fail proves nothing, and one of the
-five was not being noticed until this found it.
+A second command, `npm run browser:prove`, breaks the app eight different ways on purpose and checks
+that each break is noticed. A check that has never been seen to fail proves nothing, and this found
+four checks that were not noticing anything: one caught while writing them, and three more caught
+when the finished work was reviewed. The worst of those was in the part that handles damaged saved
+data. It was reporting that the app offered you a way to rescue your data, when the offer could have
+been entirely unusable and it would have said the same thing.
 
 ### The little server that runs the app is now tested (BL-094)
 

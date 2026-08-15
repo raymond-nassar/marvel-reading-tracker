@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8600|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8600",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8628|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8628",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -899,8 +899,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1916-1925|0": {
-    "anchor": "CHANGELOG.md:1916-1925",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1919-1928|0": {
+    "anchor": "CHANGELOG.md:1919-1928",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1014,24 +1014,24 @@
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8574-8576|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8574-8576",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8602-8604|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8602-8604",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8740-8742|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8740-8742",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8768-8770|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8768-8770",
     "fp": "02c3a381a9efaa30",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8759-8763|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8759-8763",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8787-8791|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8787-8791",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:272-573|0": {
     "anchor": "README.md:272-573",
-    "fp": "0652b4f36adaa014",
+    "fp": "e719d0b4cca64bc8",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:29-48|0": {
@@ -1518,6 +1518,16 @@
     "anchor": "src/index.html:147-148",
     "fp": "d7a3227a190c6c48",
     "head": "<p>It has <strong>not</strong> been changed or deleted, and saving is paused so it"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:147|0": {
+    "anchor": "src/index.html:147",
+    "fp": "705b685b88d3c8cb",
+    "head": "<p>It has <strong>not</strong> been changed or deleted, and saving is paused so it"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:150|0": {
+    "anchor": "src/index.html:150",
+    "fp": "20a59b2e718f36e8",
+    "head": "<button type=\"button\" class=\"btn\" id=\"btn-download-salvage\">Download a copy of the unreadable data</"
   },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:16|0": {
     "anchor": "src/index.html:16",

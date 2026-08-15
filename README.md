@@ -342,7 +342,7 @@ npm run browser
 Drives installed Microsoft Edge through the five journeys the app exists for: importing a
 curated order, moving between views with the address bar and the Back button, keeping progress
 across a reload, meeting unreadable saved data with an offer rather than a wipe, and opening the
-reader tab inside the click that asked for it. It makes 27 assertions across those five and takes
+reader tab inside the click that asked for it. It makes 28 assertions across those five and takes
 about 2.5 seconds.
 
 It needs two things that are not installed for you. The first is a browser driver, which is
@@ -372,7 +372,7 @@ stubbed with a three-issue fixture, so no vendored file is read and no network r
 npm run browser:prove
 ```
 
-Runs each of the five scenarios again under five injected faults, and checks that each fault turns
+Runs each of the five scenarios again under eight injected faults, and checks that each fault turns
 the scenario aimed at it red. A check that has never been seen to fail is not evidence, and this is
 where that is demonstrated rather than asserted: it reports the named assertion each fault breaks.
 It takes about three minutes, nearly all of it waiting out the timeouts a broken app produces, so

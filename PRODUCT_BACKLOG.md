@@ -4578,7 +4578,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8740-8742` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8768-8770` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4588,11 +4588,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:206-208`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8759-8763`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8787-8791`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8574-8576` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8602-8604` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4800,7 +4800,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1916-1925` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1919-1928` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:196-200` and
 `PRODUCT_BACKLOG.md:206-208` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6365,7 +6365,7 @@ live outside the tree. A clean clone cannot rerun import, navigation, persistenc
 reader-handoff evidence. This extends BL-041's unit coverage rather than claiming the interface is
 untested. Evidence: `scripts/browser-check.mjs:1-7`, `docs/UX_STUDY.md:896-939`.
 
-`npm run browser` drives installed Edge through those five journeys and makes 27 assertions in 2.5
+`npm run browser` drives installed Edge through those five journeys and makes 28 assertions in 2.5
 seconds. It is not in CI, which has neither Edge nor a driver, and `npm run browser:prove` is the
 separate pass that shows the scenarios can fail.
 
@@ -6392,14 +6392,42 @@ recorded `window.open` calls by replacing `window.open` after load. The mutation
 replaces `window.open`, before load, so the recorder overwrote the very fault it was meant to
 catch: 4 of 5 mutations were caught and the fifth reported that nothing broke. Both are wrappers,
 so whichever is installed last is the one the app reaches first, and the instrument has to be
-installed first to sit underneath. Recording from `evaluateOnNewDocument` fixed it, and 5 of 5 are
-caught now.
+installed first to sit underneath. Recording from `evaluateOnNewDocument` fixed it, and the five
+written by then were all caught.
 
-Two of the five mutations redden all five scenarios rather than one. That is construction, not
+Two of the eight mutations redden all five scenarios rather than one. That is construction, not
 loose aim: every scenario imports the fixture first, so breaking the import or the write it
 performs is upstream of everything. The proof pass therefore reports the named assertion each
 mutation breaks in the scenario it was aimed at, which is the claim being defended, rather than a
 list of scenario ids that would read the same either way.
+
+Review found three more of the same kind, and they are the reason the mutation count is eight
+rather than five. Presence is not operability: both recovery buttons are static markup inside the
+banner at `src/index.html:150`, so a document-scoped `querySelector` finds them on a healthy app
+with the banner hidden, and the pair carrying the scenario's whole headline passed with both
+buttons disabled and invisible. They are scoped to the showing banner now and ask whether each
+button is reachable and enabled. Nothing checked the other half of the title either: a salvage copy
+existing does not show the original survived, which is what the banner promises at
+`src/index.html:147`, so the corrupt bytes are now compared byte for byte after the reload. And the
+persistence scenario tested that the serialised state contained the issue id, which `createList`
+writes into `itemIds` at import time, so it was true before anything was marked read; it reads the
+map marks actually go to now.
+
+Each of those three came with a mutation, because a fixed assertion nobody has seen fail is the
+same defect wearing a repair. `disable-recovery` and `wipe-original` redden the two recovery
+claims by name rather than by starving a wait, and `forget-marks` reddens the persistence one with
+`read keys: []`. Adding three mutations cost the proof pass nothing measurable, 194.6 seconds
+against 190.3, because a mutation caught by a named assertion returns immediately where one caught
+by an unanswered wait spends fifteen seconds.
+
+Two smaller ones, both about a check lying in the direction of success. The handoff scenario
+asserted that the launcher was asked to resolve a reference by negating a substring test, which
+reports satisfied when no tab was opened at all, the one case it exists to catch. And the
+prerequisite contract held for an absent driver but not an unusable one: `existsSync` passed, then
+the import or the launch threw outside any handler and Node exited 1 with a stack, which is this
+check's word for a failing assertion. Both prerequisites route through the same exit 2 now,
+measured: an `MRT_EDGE` naming a text file reports that Edge could not be launched, and a
+syntactically broken driver reports that it could not be loaded.
 
 The check serves the app on an ephemeral port, and that is constraint 5 turned around. A different
 origin being a different storage bucket is a hazard for the app and exactly the isolation a check
