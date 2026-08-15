@@ -89,6 +89,19 @@ export function hasMetadata(input) {
   return input?.digitalId != null || input?.seriesId != null;
 }
 
+// Two different absences that had been one. "Not fetched yet" is worth retrying and "upstream does
+// not hold this" is not, and the app had no way to say which it was looking at, so 34 issues sat in
+// a queue that could only ever spend rate limit to learn the same 404 again.
+//
+// A curated order is the output of a completed vendoring run, so every item in it has already been
+// looked up. An item that arrives from one holding nothing is therefore one upstream refused, not
+// one nobody has asked about, and that is knowable at import without asking anything. A refusal met
+// at runtime is recorded by markDetailsRefused instead. Both land in this one field so the rest of
+// the app asks the question once.
+function refusedOnArrival(input) {
+  return input?.source === 'curated' && !hasMetadata(input);
+}
+
 // A curated order can fall short of complete metadata in two unrelated ways, and a reader told
 // about only one of them is left to wonder about the other.
 //
@@ -138,6 +151,7 @@ export function normalizeIssue(input) {
   const issueId = Number(input?.issueId ?? input?.id);
   if (!Number.isInteger(issueId) || issueId === 0) return null;
   const synthetic = issueId < 0;
+  const refused = refusedOnArrival(input);
   return {
     issueId,
     title: String(input.title ?? `Issue ${issueId}`).slice(0, MAX_NAME),
@@ -165,7 +179,15 @@ export function normalizeIssue(input) {
     source: clampScalar(input.source ?? 'api'),
     // "pending" means imported from Markdown and not yet enriched. The UI shows this
     // honestly rather than guessing at missing fields.
-    hydrated: clampScalar(input.hydrated ?? hasMetadata(input)),
+    //
+    // A curated item that arrived empty is refused rather than pending, so the assertion import
+    // used to make over the whole file is refused here rather than only at that call site. coerce()
+    // runs every stored issue back through this function on load, so a tracker imported before this
+    // existed is corrected the next time it opens rather than staying wrong until a re-import.
+    hydrated: refused ? false : clampScalar(input.hydrated ?? hasMetadata(input)),
+    // A strict boolean, not clampScalar: this field never carries text, and a hand-edited backup
+    // saying "yes" must not become a refusal the reader cannot clear.
+    detailsRefused: refused || input.detailsRefused === true,
   };
 }
 
@@ -241,6 +263,20 @@ export function getIssue(state, issueId) {
   return state.issues[Number(issueId)] ?? null;
 }
 
+// Written through its own updater rather than through upsertIssue, because upsertIssue normalizes
+// whatever it is handed into a whole issue and a bare { issueId } normalizes to a record whose
+// title is "Issue 12345". That is not null, so stripNulls keeps it and the merge would overwrite
+// the real title with a placeholder. This touches the one field it is about and nothing else.
+//
+// Returns the state unchanged when there is nothing to record, so a queue that meets the same
+// refusal twice does not write twice.
+export function markDetailsRefused(state, issueId) {
+  const id = Number(issueId);
+  const issue = state.issues[id];
+  if (!issue || issue.detailsRefused === true) return state;
+  return { ...state, issues: { ...state.issues, [id]: { ...issue, detailsRefused: true } } };
+}
+
 // ---------------------------------------------------------------- lists
 
 export const MAX_NAME = 200;
@@ -257,23 +293,27 @@ export const MAX_URL = 500;
 // Ceilings rather than budgets, and derived from the cheapest record this app can write rather than
 // the richest, because the check must never refuse a backup the app itself produced. A first draft
 // took the hydrated issue at 923 characters as the floor and set the ceiling at ten thousand. The
-// floor is far below that: a coerced issue is a fixed thirteen fields whether or not any of them
-// carries text, so the cheapest costs 267 characters at the margin in the form storage writes, and
+// floor is far below that: a coerced issue is a fixed sixteen fields whether or not any of them
+// carries text, so the cheapest costs 290 characters at the margin in the form storage writes, and
 // the cheapest list costs 127. The most generous origin any browser grants is 10,485,760
-// characters, so no tracker this app can save holds more than about 39,300 issues or 82,600 lists,
+// characters, so no tracker this app can save holds more than about 36,200 issues or 82,600 lists,
 // and that first ceiling would have refused a tracker a user could reach by importing. Restoring is
 // not the only caller: undoing a restore feeds the pre-restore snapshot back through this same
 // check, so a ceiling below what the app can hold would have refused a recovery of the app's own
-// data. The ceiling here is six times the issues holdable and three times the lists, and below the
-// 374,382 issues an eight mebibyte file can declare in the cheapest packing that still coerces, so it
-// still refuses counts absurd on their face.
+// data. The ceiling here is nearly seven times the issues holdable and three times the lists, and
+// below the 374,382 issues an eight mebibyte file can declare in the cheapest packing that still
+// coerces, so it still refuses counts absurd on their face. The field count and the marginal cost
+// both move whenever a field is added to normalizeIssue, and the test that guards this asserts the
+// clause rather than the numbers, so it stays green while these sentences go stale. Re-measure with
+// the differencing method the test itself uses; a JSON.stringify of one record does not reproduce
+// them.
 export const MAX_ISSUES = 250000;
 export const MAX_LISTS = 250000;
 
 // The same ceiling was applied to read markers, availability overrides and notes as well, and the
 // derivation above was never run for any of them. It does not hold. Those three carry a value of a
 // few characters against a key that is the issue id, so at the margin they cost 9, 19 and 11
-// characters where an issue costs 267, and the same origin holds about 1,165,000 read markers,
+// characters where an issue costs 290, and the same origin holds about 1,165,000 read markers,
 // 551,000 overrides and 953,000 notes. A ceiling of 250,000 therefore sat below what the app can
 // hold in three of the five maps it governed, and the clause that mattered was the undo one: a
 // reader who restored at the ceiling, annotated one more issue and then restored something else
@@ -745,7 +785,12 @@ export function pendingIssueIds(state) {
   }
   return [...tracked].filter((id) => {
     const issue = state.issues[id];
-    return issue && !issue.hydrated && issue.source !== 'manual';
+    // A refusal is excluded rather than merely deprioritised. This set is both the retry queue and
+    // the number on the button that offers to work through it, so leaving 34 refusals in it would
+    // spend the reader's own request budget, held at 45 a minute, to learn the same 404 again and
+    // change nothing. Offering to fetch what cannot be fetched turns a silent omission into a
+    // loud promise, which is worse than the silence.
+    return issue && !issue.hydrated && !issue.detailsRefused && issue.source !== 'manual';
   });
 }
 

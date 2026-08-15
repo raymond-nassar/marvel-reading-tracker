@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { Hydrator } from '../src/js/hydrate.js';
-import { addIssuesToList, createEmptyState, createList, markRead } from '../src/js/lib/model.js';
+import { addIssuesToList, createEmptyState, createList, markRead, pendingIssueIds } from '../src/js/lib/model.js';
 
 // `src/js/hydrate.js` had no test of any kind. It is the module that spends the rate limit, and
 // three of its behaviours are the sort that only show up as a bug report weeks later: a run that
@@ -19,7 +19,11 @@ function stateWith(ids, { read = [], manual = [] } = {}) {
   const items = ids.map((id) => ({
     issueId: id,
     title: `Issue ${id}`,
-    source: manual.includes(id) ? 'manual' : 'curated',
+    // 'import' rather than 'curated', because these stand for issues that are genuinely pending and
+    // a curated item arriving with no metadata is not one: the vendoring run already asked about it
+    // and came back empty, so it is now marked refused and leaves the queue. This fixture had been
+    // using 'curated' to mean nothing more than "not manual", which stopped being true.
+    source: manual.includes(id) ? 'manual' : 'import',
   }));
   state = addIssuesToList(state, listId, items).state;
   for (const id of read) state = markRead(state, id, true);
@@ -113,7 +117,7 @@ test('nothing to hydrate reports idle rather than starting a run', async () => {
   const store = fakeStore(state);
   const seen = [];
   // Everything is already hydrated once upsert marks it so; here nothing is pending because the
-  // list is empty of unhydrated curated issues after we mark them all hydrated.
+  // list is empty of unhydrated imported issues after we mark them all hydrated.
   for (const id of [1, 2]) {
     store.update((s) => ({ ...s, issues: { ...s.issues, [id]: { ...s.issues[id], hydrated: true } } }));
   }
@@ -369,4 +373,58 @@ test('status carries the counters the progress display reads', async () => {
   assert.deepEqual(h.status('idle'), { phase: 'idle', done: 0, total: 0, running: false });
   await within(h.start(listId), 'the run to finish');
   assert.deepEqual(h.status('complete'), { phase: 'complete', done: 2, total: 2, running: false });
+});
+
+// ---------------------------------------------- a refusal and a hiccup are not the same failure
+
+// The catch used to discard every error, which made a 404 and a timeout indistinguishable and left
+// both in the queue. One of them belongs there and the other does not: a service that answers "no
+// such issue" will answer that again, so retrying it spends the reader's request budget, held at 45
+// a minute, to learn nothing. The 34 items the shipped catalog has no metadata for are all of this
+// kind, so the button offering to fetch them was counting work that could not be done.
+const notFound = () => {
+  const err = new Error('Not found.');
+  err.status = 404;
+  throw err;
+};
+
+test('an issue upstream has no record of leaves the queue instead of being asked about forever', async () => {
+  const { state, listId } = stateWith([1, 2]);
+  const store = fakeStore(state);
+  const api = instantApi((id) => (id === 1 ? notFound() : full(id)));
+  const h = new Hydrator({ api, store, onProgress: () => {} });
+  await within(h.start(listId), 'the run to finish');
+
+  assert.equal(store.state.issues[1].detailsRefused, true);
+  assert.notEqual(store.state.issues[1].hydrated, true, 'a refusal must not read as fetched');
+  assert.deepEqual(pendingIssueIds(store.state), [], 'the refused issue is still queued for a second identical refusal');
+});
+
+// The other half of the same claim, and the one that keeps this from being a licence to drop
+// anything that fails. A timeout, a busy service or a lost connection says nothing about the issue,
+// so it stays pending and the next run picks it up.
+test('a transient failure stays pending, because it says nothing about the issue', async () => {
+  const { state, listId } = stateWith([1, 2]);
+  const store = fakeStore(state);
+  const api = instantApi((id) => {
+    if (id === 1) throw new Error('502 from upstream');
+    return full(id);
+  });
+  const h = new Hydrator({ api, store, onProgress: () => {} });
+  await within(h.start(listId), 'the run to finish');
+
+  assert.notEqual(store.state.issues[1].detailsRefused, true, 'a busy service was recorded as having no such issue');
+  assert.deepEqual(pendingIssueIds(store.state), [1]);
+});
+
+// Recording a refusal is a write, and the module is careful elsewhere not to persist for nothing.
+// One refusal costs one write; a run that meets the same refusal twice must not cost two.
+test('a refusal costs one write and a second run over it costs none', async () => {
+  const { state, listId } = stateWith([1]);
+  const store = fakeStore(state);
+  const h = new Hydrator({ api: instantApi(notFound), store, onProgress: () => {} });
+  await within(h.start(listId), 'the first run to finish');
+  assert.equal(store.writes, 1);
+  await within(h.start(listId), 'the second run to finish');
+  assert.equal(store.writes, 1, 'the second run asked again and wrote again');
 });

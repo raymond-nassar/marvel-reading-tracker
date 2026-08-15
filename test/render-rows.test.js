@@ -7,7 +7,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { commitRows, rowCacheKey } from '../src/js/main.js';
+import { commitRows, rowCacheKey, detailsState, synopsisFallback, DETAILS_BADGE } from '../src/js/main.js';
 
 // The smallest node that commitRows actually uses: childNodes, remove() and insertBefore().
 // A DOM implementation would do, but nothing here needs one, which is the point.
@@ -154,4 +154,48 @@ test('the row cache key changes when cover art is switched', () => {
 test('the row cache key is stable when nothing has changed', () => {
   const item = { issueId: 1, read: false, title: 'One' };
   assert.equal(rowCacheKey(item, 9, '2025-06-01', true), rowCacheKey({ ...item }, 9, '2025-06-01', true));
+});
+
+// -------------------------------------------------- what a row says about details it does not have
+
+// A row had two states where there are three, and the missing one was being shown as the wrong one
+// of the two. "Details pending" over an issue upstream has already refused is a promise the app
+// cannot keep, and it is the shipped catalog's ordinary case rather than an edge: 34 issues.
+test('an issue upstream has no record of is not described as waiting for one', () => {
+  assert.equal(detailsState({ hydrated: false, detailsRefused: true, source: 'curated' }), 'norecord');
+  assert.equal(detailsState({ hydrated: false, source: 'import' }), 'pending');
+  assert.equal(detailsState({ hydrated: true, source: 'api' }), null);
+  assert.equal(detailsState({ hydrated: false, source: 'manual' }), null, 'a hand-added issue has no upstream record to wait for');
+});
+
+// The refusal wins over pending rather than the other way round, because both are true of the same
+// issue: it is not hydrated and it never will be. Ordering them the other way puts every refused
+// issue back under the wording this item exists to remove.
+test('a refusal is reported as a refusal even though the issue is also unhydrated', () => {
+  assert.equal(detailsState({ hydrated: false, detailsRefused: true, source: 'import' }), 'norecord');
+});
+
+// The visible half of a badge is two or three words, so the reason has to live in the hidden half
+// or it is not written down anywhere, which is the finding BL-030 recorded about the availability
+// badge beside it. Both halves are checked here because the wording is the whole of the feature.
+test('each details badge carries its reason in the half a screen reader gets', () => {
+  assert.equal(DETAILS_BADGE.norecord.text, 'no details held');
+  assert.match(DETAILS_BADGE.norecord.hint, /no record of this issue/);
+  assert.match(DETAILS_BADGE.norecord.hint, /nothing to fetch|no details to fetch/);
+  assert.equal(DETAILS_BADGE.pending.text, 'details pending');
+  assert.match(DETAILS_BADGE.pending.hint, /have not been fetched yet/);
+  for (const { text, hint } of Object.values(DETAILS_BADGE)) {
+    assert.ok(text.length > 0 && hint.length > 0);
+    assert.ok(!/[\u2013\u2014]/.test(`${text} ${hint}`), 'constraint 11: no dashes in shipped copy');
+  }
+});
+
+// The issue page says the same three things in a sentence that stands alone, and it had the same
+// two-way fallback. A synopsis that exists always wins, including for a refused issue, because a
+// reader who typed one in by hand has said more about it than the snapshot ever did.
+test('the issue page tells the same three states apart', () => {
+  assert.equal(synopsisFallback({ description: 'A real synopsis.', detailsRefused: true }), 'A real synopsis.');
+  assert.equal(synopsisFallback({ detailsRefused: true }), DETAILS_BADGE.norecord.hint);
+  assert.equal(synopsisFallback({ hydrated: true }), 'No synopsis is recorded for this issue.');
+  assert.equal(synopsisFallback({ hydrated: false }), 'Details have not been fetched yet.');
 });

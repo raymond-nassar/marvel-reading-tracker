@@ -42,8 +42,10 @@ export const READING_FILTERS = [
     value: 'pending',
     label: 'Details pending',
     // A manually added issue has no upstream record to wait for, so it is not pending anything
-    // and would otherwise sit in this list forever.
-    match: (item) => !item.hydrated && item.source !== 'manual',
+    // and would otherwise sit in this list forever. The same is true of an issue the snapshot has
+    // no record of, for a different reason: that one was asked about and refused, so this list
+    // would offer the reader 34 issues whose details are never going to arrive.
+    match: (item) => !item.hydrated && !item.detailsRefused && item.source !== 'manual',
   },
 ];
 
