@@ -9,14 +9,14 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Eighty-one items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Eighty-two items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-087,
 BL-088, BL-089, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101, BL-103, BL-104, BL-105,
-BL-106, BL-107, BL-108, BL-110, BL-111, BL-112, BL-115 and BL-116.
+BL-106, BL-107, BL-108, BL-110, BL-111, BL-112, BL-115, BL-116 and BL-121.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -254,10 +254,12 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:323-398 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3866-3869 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3868-3871 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:1368-1369 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1370-1371 |
+| BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | scripts/check-anchors.mjs:651-653 |
+| BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Ready | PRODUCT_BACKLOG.md:8320-8321 |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:191-203 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
@@ -1366,7 +1368,7 @@ would turn a recoverable failure into a permanent one. The retry is labelled "Tr
 than repeating "Undo delete", since the first attempt visibly did not work.
 
 Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at
-`src/js/main.js:3121`, `src/js/main.js:3121` and `src/js/main.js:3137-3143`. Each replaces the whole
+`src/js/main.js:3184`, `src/js/main.js:3121` and `src/js/main.js:3137-3143`. Each replaces the whole
 state, so the buffered list belongs to data that is no longer there: putting it back would splice a
 list out of one tracker into another, or resurrect one list out of a tracker the reader asked to be
 emptied. Undoing a restore is the easiest of the three to miss, because the reader reaches it by
@@ -3028,7 +3030,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2731-2734`.
+`PRODUCT_BACKLOG.md:2733-2736`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4565,7 +4567,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8094-8096` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8198-8200` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4575,11 +4577,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:201-203`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8113-8117`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8217-8221`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:7928-7930` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8032-8034` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4787,7 +4789,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1682-1691` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1698-1707` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:191-195` and
 `PRODUCT_BACKLOG.md:201-203` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -7705,35 +7707,137 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4689-4697`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4691-4699`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
-- [ ] Cite the erase path at the line that erases, rather than at the restore path
-- [ ] Check the other citations in that block against the call sites they name
-- [ ] Say in the block why no gate could have caught it
+- [x] Cite the erase path at the line that erases, rather than at the restore path
+- [x] Check the other citations in that block against the call sites they name
+- [x] Say in the block why no gate could have caught it
 
 Constraint gate: checked 1 to 11, none breached.
 
 Found while re-aiming anchors for `BL-108`, in the block that records how the undo buffer is
 withdrawn. One sentence names three actions and offers three citations for them, and two of the
-three are the same line. Erasing everything, restoring a backup and undoing a restore do each call
+three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:3184`, `src/js/main.js:3121` and `src/js/main.js:3142`
-respectively, but the sentence cites the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1368-1369`.
+respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
+`PRODUCT_BACKLOG.md:1370-1371`.
 
-It is filed rather than fixed here because it belongs to another item's record and this change is a
-behaviour change to the covers switch. It has also been wrong since it was written, so nothing about
-it is urgent.
+It was filed rather than fixed there because it belongs to another item's record and that change was
+a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
+about it was urgent.
 
 Worth recording is why every gate passed. The anchors gate fingerprints the content of the lines a
-citation names, and both citations name a real line whose content is exactly what the claim says a
-`forgetDeleted()` call site should look like, so both are green and will stay green. The gate's
-own duplicate-citation NOTICE did fire on the pair, and correctly: it says in as many words that
-sharing lines is ordinary and not an error, which here it is not, because the two claims either side
-of it really are about different code. What no gate can read is that a list of three actions was
+citation names, and both citations named a real line whose content is exactly what the claim says a
+`forgetDeleted()` call site should look like, so both were green and would have stayed green. The
+gate's own duplicate-citation NOTICE did fire on the pair, and correctly: it says in as many words
+that sharing lines is ordinary and not an error, which here it is not, because the two claims either
+side of it really are about different code. What no gate reads is that a list of three actions was
 answered with two distinct lines. That is a counting claim in prose, which is the class the
 instructions already warn is unprotected.
+
+**Delivered.** The first citation now names `src/js/main.js:3184`, which is the `forgetDeleted()`
+call inside the erase handler at `src/js/main.js:3173-3195`. The other two were already right and
+are unchanged: `src/js/main.js:3121` is the call in the successful branch of the restore handler,
+and `src/js/main.js:3137-3143` is the whole undo-restore handler, whose call is at
+`src/js/main.js:3142`. The range was left as the handler rather than narrowed to the call, because
+the sentence's point about that path is that a button labelled undo swaps the state, which the
+handler shows and the bare call does not.
+
+The second task found nothing else to fix. All thirteen citations in that block were read against
+the code they name, and the twelve besides this one are sound: `src/js/lib/model.js:427-439` is
+`restoreList`, `src/js/lib/model.js:370-373` is the comment on a duplicate not inheriting the
+catalog claim, `src/js/main.js:1614-1617` is `forgetDeleted` itself, `src/js/main.js:1637-1645` is
+`forgetDeletedFor`, `src/js/main.js:2944` is its one call, `src/js/main.js:2913-2924` is the
+half-import rollback, `src/js/main.js:371` is `notify` with its `action` parameter,
+`src/js/main.js:394-398` is `spoken`, `src/js/main.js:1660-1668` is the failed undo keeping its
+buffer, `src/js/main.js:323-334` is the placement loop that leaves a notice carrying a control in
+its own pane, and no range begins or ends on a blank line.
+
+One thing the audit turned up that the filing did not predict. `forgetDeleted()` has six call
+sites, not three: three more are in the undo path itself and in the catalog-refill withdrawal, at
+`src/js/main.js:1640`, `src/js/main.js:1656` and `src/js/main.js:1671`. The sentence is right to
+name only three, because its subject is the paths that replace the whole state, and those three are
+not among them. Recorded so the next reader who counts call sites does not read the sentence as a
+miscount of a different set.
+
+The third task's answer needed narrowing rather than repeating. No gate as built catches this, for
+the reason above, but "no gate can" is too strong. Measured across every tracked file before this
+fix, exactly one sentence of Markdown prose repeated a citation, and it was this one. A crude
+splitter also flags one ledger table row, because flattening line breaks runs the header and
+separator into the rows, so a usable check has to stop at a table boundary. Test fixtures repeat a
+citation nineteen times, which is the same reason the anchors gate already ignores bare citations in
+code: there they are data the program computes with, not claims. So the check is narrow and would be
+quiet, and it is filed as `BL-122` rather than built here, on the same reasoning that filed this one.
+
+**BL-122: Catch a sentence that answers a list of things with one citation twice**
+
+- [ ] Read Markdown prose a sentence at a time, stopping at table boundaries
+- [ ] Report a citation that appears more than once inside one sentence
+- [ ] Leave code alone, for the reason the anchors gate already leaves it alone
+- [ ] Prove it fails against the defect `BL-121` fixed
+
+Constraint gate: checked 1 to 11, none breached.
+
+`BL-121` fixed one sentence that named three actions and answered them with two distinct citations,
+and its block records why every gate stayed green: both citations named a real line whose content
+matched the claim, so the anchors gate had nothing to fingerprint differently. The gate's collision
+notice did fire, and correctly declined to fail, because sharing an anchor is ordinary and it says
+so at `scripts/check-anchors.mjs:651-653`. Read on 2026-08-14, 158 of the lock's 454 distinct
+anchors are cited more than once, and 42 of those repeats fall inside a single scope. The figures in
+that comment, 92 and 17, were read when it was written and are quoted here as its reasoning rather
+than as the population today.
+
+Inside a single sentence it is not ordinary. A sentence that cites the same line twice is
+enumerating things it believes are different, so the repeat is either a copied citation nobody
+re-derived or a claim that two distinct things live on one line, and the second is worth writing
+differently anyway. Measured before `BL-121` landed, exactly one sentence of Markdown prose in the
+whole tracked tree repeated a citation, and it was the defect. That is the whole population, so the
+check would have caught it and said nothing else.
+
+Two exclusions are load-bearing and both have precedent in the anchors gate. Code is excluded: the
+test fixtures for that gate repeat a citation nineteen times because a `path:line` there is data the
+program computes with rather than a claim, which is the same distinction
+`.github/copilot-instructions.md:169-171` already draws for bare citations outside Markdown. Table
+rows are excluded: flattening line breaks to read sentences runs a table's header and separator into
+its rows, and a crude splitter reports the whole ledger as one sentence, which is how the one false
+positive in the measurement arose.
+
+Not closed by this item: the wider class. A sentence naming three things and offering two citations
+is caught only when the two are identical. Offering two citations for three things, or three
+citations of which two merely overlap, stays unprotected, and reading a count out of English prose
+to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
+at `PRODUCT_BACKLOG.md:4696-4697`.
+
+**BL-123: Re-derive the appendix claim that rank and score disagree in four places**
+
+- [ ] Re-derive the inversions from the ranked table as it now stands
+- [ ] Restate the claim about their status, or drop it if it no longer holds
+- [ ] Say what the appendix does with an inversion in a row that has not shipped
+
+Constraint gate: checked 1 to 11, none breached.
+
+Appendix B opens by saying rank and score have come apart in four places, naming four items, and
+then rests the decision not to re-sort on all of them having shipped: re-sorting a record of past
+decisions changes nothing, where re-sorting a queue would. Both halves have been overtaken. Measured
+on 2026-08-14 across the 98 ranked rows, six adjacent pairs sit with the lower score above the
+higher, and three of the rows involved are `Ready` rather than `Shipped`.
+
+The four named are still four of the six and are still shipped, so the sentence is not wrong about
+what it names. It is wrong about what it counts, and the sentence after it is wrong outright: not
+every row involved has shipped, so the reason given for leaving the order alone no longer covers the
+whole set it is offered for.
+
+Filed rather than fixed in `BL-121`, which found it, because the correction is not a matter of
+writing two different numbers. An inversion in a `Ready` row is a live ordering question rather than
+a record, and answering it is a decision about how this appendix treats an unshipped row, not an
+edit. No gate derives either figure, which is `BL-056`'s deliberate decision recorded at
+`PRODUCT_BACKLOG.md:4696-4697` and not something to revisit here.
+
+Not closed by this item: gating it. The two figures are prose derived from the ranked table, which
+is the class `BL-056` measured and declined to match per sentence, and nothing here changes that
+arithmetic.
 
 ## Existing epics and stories
 
@@ -8209,21 +8313,21 @@ BL-007, BL-014, BL-017, BL-026 and BL-027 have shipped, and BL-025 and BL-028 we
 those seven keep a score too, BL-025 having been dropped before it was ever scored. The
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
-open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and seventy-one
+open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and seventy-three
 further items filed, none of them labelled, one of which, BL-060, was parked in its turn, which is
-how it reaches 97 rows now. The ranks below are positions in it as it stands.
+how it reaches 99 rows now. The ranks below are positions in it as it stands.
 
 Positions, not scores, and the two have come apart in four places: BL-062, BL-072, BL-075 and BL-077
 each sit one row below an item they outscore. Every one of those eight rows has shipped, so the
 order is a record rather than a queue and re-sorting it would change no decision while moving ranks
 this appendix cites. It is written down instead of fixed for that reason.
 
-### Case 1: BL-026 is labelled P0 but ranks forty-fourth
+### Case 1: BL-026 is labelled P0 but ranks forty-sixth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 44 of 97.
+- Calculated: WSJF 3.67, rank 46 of 99.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
-  It is outranked by forty-two items, twenty-five of them sized 1, 2 or 3 whose Cost of Delay
+  It is outranked by forty-five items, twenty-eight of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
   costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
@@ -8243,7 +8347,7 @@ this appendix cites. It is written down instead of fixed for that reason.
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 91 of 97, below eighty-six unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 93 of 99, below eighty-nine unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -8300,9 +8404,9 @@ this appendix cites. It is written down instead of fixed for that reason.
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 57 of 97. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 46 of 97. Mid-table.
-- BL-017, P2, rank 96 of 97. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 59 of 99. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 48 of 99. Mid-table.
+- BL-017, P2, rank 98 of 99. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
