@@ -14,6 +14,28 @@ quote in a bug report.
 
 ## Unreleased
 
+### The little server that runs the app is now tested (BL-094)
+
+Opening the app starts a small program on your own machine that hands the pages to your browser. It
+is the one piece of this project every single use goes through, and nothing checked that it worked.
+It could not be checked, either: the program started listening and opened a browser window the
+instant anything looked at it, so a test could not examine it without taking over the address the app
+lives at and popping open a tab.
+
+That is now separated, so the checks can start a copy on a spare address, ask it things, and shut it
+down again. Twenty-six checks cover what it serves, what it refuses, what it tells your browser about
+keeping the app safe, and that it lets go of the address cleanly when you stop it.
+
+Two things that were actually wrong turned up while writing them, both about the setting that lets
+you move the app to a different address if something else is using the usual one. Typing something
+that is not a number produced a page of programmer's error text rather than a sentence telling you
+what to correct, and a value written in a form used by programmers would quietly start the app
+somewhere other than where you asked. Since the app's saved reading progress is tied to the exact
+address it runs at, being sent somewhere unexpected means finding your progress apparently gone. Both
+now give a plain correction and stop.
+
+Nothing about the app itself changes, and nothing you have saved is affected.
+
 ### Cover pictures are only ever fetched from Marvel (BL-086)
 
 The app has always told you that cover pictures come straight from Marvel and that nothing else

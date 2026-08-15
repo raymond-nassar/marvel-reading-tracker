@@ -169,9 +169,9 @@
     "fp": "d1cd028d4d972b4e",
     "head": "try { localStorage.setItem(SIDEBAR_KEY, String(railed)); } catch { /* non-fatal */ }"
   },
-  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|server.mjs:14-15|0": {
-    "anchor": "server.mjs:14-15",
-    "fp": "a82da73f9e1d4ef4",
+  "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|server.mjs:14-16|0": {
+    "anchor": "server.mjs:14-16",
+    "fp": "f60a0fe0ecaeb2b7",
     "head": "const HOST = '127.0.0.1';"
   },
   "docs/ARCHITECTURE.md|where-a-reader-s-data-lives|src/dev-faults.js:5-6|0": {
@@ -279,8 +279,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8511|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8511",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:8544|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8544",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -709,28 +709,28 @@
     "fp": "31193066f7e84653",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs:121-131|0": {
-    "anchor": "server.mjs:121-131",
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:129-139|0": {
+    "anchor": "server.mjs:129-139",
     "fp": "6cd80fc67836d175",
     "head": "const headers = {"
   },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs:126|0": {
-    "anchor": "server.mjs:126",
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:134|0": {
+    "anchor": "server.mjs:134",
     "fp": "df82fbfe81bdea26",
     "head": "'content-security-policy': CSP,"
   },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs:129|0": {
-    "anchor": "server.mjs:129",
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:137|0": {
+    "anchor": "server.mjs:137",
     "fp": "bd315ce426eb6407",
     "head": "'x-frame-options': 'DENY',"
   },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs:52-63|0": {
-    "anchor": "server.mjs:52-63",
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:53-64|0": {
+    "anchor": "server.mjs:53-64",
     "fp": "785f5b41582f02a1",
     "head": "const CSP = ["
   },
-  "PRODUCT_BACKLOG.md|6-security|server.mjs:62|0": {
-    "anchor": "server.mjs:62",
+  "PRODUCT_BACKLOG.md|6-security|server.mjs:63|0": {
+    "anchor": "server.mjs:63",
     "fp": "3ef5eb39e51b727e",
     "head": "\"frame-ancestors 'none'\","
   },
@@ -899,8 +899,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1868-1877|0": {
-    "anchor": "CHANGELOG.md:1868-1877",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:1890-1899|0": {
+    "anchor": "CHANGELOG.md:1890-1899",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1014,18 +1014,18 @@
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8485-8487|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8485-8487",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8518-8520|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8518-8520",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8651-8653|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8651-8653",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8684-8686|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8684-8686",
     "fp": "02c3a381a9efaa30",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8670-8674|0": {
-    "anchor": "PRODUCT_BACKLOG.md:8670-8674",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:8703-8707|0": {
+    "anchor": "PRODUCT_BACKLOG.md:8703-8707",
     "fp": "0e6dce60b73ac931",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -1399,13 +1399,18 @@
     "fp": "f82656c4491383b9",
     "head": "attack, no account to take over and no database holding anyone else's data. The app has no runtime"
   },
-  "PRODUCT_BACKLOG.md|item-details|server.mjs:121-131|0": {
-    "anchor": "server.mjs:121-131",
+  "PRODUCT_BACKLOG.md|item-details|server.mjs:103-113|0": {
+    "anchor": "server.mjs:103-113",
+    "fp": "8cd502b772b9df05",
+    "head": "async function handle(req, res) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|server.mjs:129-139|0": {
+    "anchor": "server.mjs:129-139",
     "fp": "6cd80fc67836d175",
     "head": "const headers = {"
   },
-  "PRODUCT_BACKLOG.md|item-details|server.mjs:121-131|1": {
-    "anchor": "server.mjs:121-131",
+  "PRODUCT_BACKLOG.md|item-details|server.mjs:129-139|1": {
+    "anchor": "server.mjs:129-139",
     "fp": "6cd80fc67836d175",
     "head": "const headers = {"
   },
@@ -1414,25 +1419,30 @@
     "fp": "c03f3efe7acb81be",
     "head": "const ROOT = resolve(fileURLToPath(new URL('./src', import.meta.url)));"
   },
-  "PRODUCT_BACKLOG.md|item-details|server.mjs:145|0": {
-    "anchor": "server.mjs:145",
+  "PRODUCT_BACKLOG.md|item-details|server.mjs:158|0": {
+    "anchor": "server.mjs:158",
     "fp": "36a0744fa6c0fc75",
     "head": "res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }).end('Not found');"
   },
-  "PRODUCT_BACKLOG.md|item-details|server.mjs:52-58|0": {
-    "anchor": "server.mjs:52-58",
+  "PRODUCT_BACKLOG.md|item-details|server.mjs:167-175|0": {
+    "anchor": "server.mjs:167-175",
+    "fp": "bbaba7a376f585e4",
+    "head": "export function parsePort(raw) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|server.mjs:185-189|0": {
+    "anchor": "server.mjs:185-189",
+    "fp": "cc27211bce07928a",
+    "head": "export function browserCommand(platform, url) {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|server.mjs:53-59|0": {
+    "anchor": "server.mjs:53-59",
     "fp": "9b9e0126a02641b2",
     "head": "const CSP = ["
   },
-  "PRODUCT_BACKLOG.md|item-details|server.mjs:85-177|0": {
-    "anchor": "server.mjs:85-177",
-    "fp": "a6bd614952b576d4",
-    "head": "await handle(req, res);"
-  },
-  "PRODUCT_BACKLOG.md|item-details|server.mjs:95-105|0": {
-    "anchor": "server.mjs:95-105",
-    "fp": "8cd502b772b9df05",
-    "head": "async function handle(req, res) {"
+  "PRODUCT_BACKLOG.md|item-details|server.mjs:89-101|0": {
+    "anchor": "server.mjs:89-101",
+    "fp": "d82fbb600422490f",
+    "head": "export function createStaticServer() {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/data/curated-lists.json:80-120|0": {
     "anchor": "src/data/curated-lists.json:80-120",
@@ -3009,23 +3019,23 @@
     "fp": "6c6878ef6f032cfe",
     "head": "@media (max-width: 880px) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:121-131|0": {
-    "anchor": "server.mjs:121-131",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:129-139|0": {
+    "anchor": "server.mjs:129-139",
     "fp": "6cd80fc67836d175",
     "head": "const headers = {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:126|0": {
-    "anchor": "server.mjs:126",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:134|0": {
+    "anchor": "server.mjs:134",
     "fp": "df82fbfe81bdea26",
     "head": "'content-security-policy': CSP,"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:129|0": {
-    "anchor": "server.mjs:129",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:137|0": {
+    "anchor": "server.mjs:137",
     "fp": "bd315ce426eb6407",
     "head": "'x-frame-options': 'DENY',"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:52-63|0": {
-    "anchor": "server.mjs:52-63",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|server.mjs:53-64|0": {
+    "anchor": "server.mjs:53-64",
     "fp": "785f5b41582f02a1",
     "head": "const CSP = ["
   },
@@ -3219,8 +3229,8 @@
     "fp": "6d50373e8d6e684f",
     "head": "\"version\": \"1.0.0\","
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-044|server.mjs:121-131|0": {
-    "anchor": "server.mjs:121-131",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-044|server.mjs:129-139|0": {
+    "anchor": "server.mjs:129-139",
     "fp": "6cd80fc67836d175",
     "head": "const headers = {"
   },
@@ -3414,10 +3424,10 @@
     "fp": "a27d0cff24c03c8d",
     "head": "// Every button must visibly report itself. A readout that changes quietly reads as \"nothing"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-094|server.mjs:85-177|0": {
-    "anchor": "server.mjs:85-177",
-    "fp": "a6bd614952b576d4",
-    "head": "await handle(req, res);"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-094|server.mjs:89-101|0": {
+    "anchor": "server.mjs:89-101",
+    "fp": "d82fbb600422490f",
+    "head": "export function createStaticServer() {"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-095|.github/workflows/ci.yml:103-105|0": {
     "anchor": ".github/workflows/ci.yml:103-105",
@@ -3454,8 +3464,8 @@
     "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-102|server.mjs:95-105|0": {
-    "anchor": "server.mjs:95-105",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-102|server.mjs:103-113|0": {
+    "anchor": "server.mjs:103-113",
     "fp": "8cd502b772b9df05",
     "head": "async function handle(req, res) {"
   },
@@ -3654,13 +3664,13 @@
     "fp": "32e71035ced922be",
     "head": "export function isAllowedApiBase(value) {"
   },
-  "SECURITY.md|what-already-reduces-risk-here|server.mjs:121-131|0": {
-    "anchor": "server.mjs:121-131",
+  "SECURITY.md|what-already-reduces-risk-here|server.mjs:129-139|0": {
+    "anchor": "server.mjs:129-139",
     "fp": "6cd80fc67836d175",
     "head": "const headers = {"
   },
-  "SECURITY.md|what-already-reduces-risk-here|server.mjs:52-63|0": {
-    "anchor": "server.mjs:52-63",
+  "SECURITY.md|what-already-reduces-risk-here|server.mjs:53-64|0": {
+    "anchor": "server.mjs:53-64",
     "fp": "785f5b41582f02a1",
     "head": "const CSP = ["
   },

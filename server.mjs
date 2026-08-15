@@ -12,7 +12,8 @@ import { COVER_IMAGE_HOST } from './src/js/lib/coverHost.js';
 
 const ROOT = resolve(fileURLToPath(new URL('./src', import.meta.url)));
 const HOST = '127.0.0.1';
-const PORT = Number(process.env.MRT_PORT || 8787);
+const DEFAULT_PORT = 8787;
+const PORT = parsePort(process.env.MRT_PORT);
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -65,8 +66,10 @@ const CSP = [
 function safePath(urlPath) {
   // decodeURIComponent throws URIError on a malformed escape such as "/%" or "/a%2". This runs
   // before the request handler's try block, so an unhandled rejection would terminate the whole
-  // process, and any web page the user has open could trigger it with a single fetch. Treat a
-  // malformed path as simply not found.
+  // process, and any web page the user has open could trigger it with a single fetch. Returning
+  // null is what the handler answers 403 to, the same as a path that escapes the root: this
+  // function's job is to say whether a URL names a file it is willing to serve, and a path it
+  // cannot even decode is not one.
   let decoded;
   try {
     decoded = decodeURIComponent(urlPath.split('?')[0].split('#')[0]);
@@ -80,17 +83,22 @@ function safePath(urlPath) {
   return full;
 }
 
-const server = createServer(async (req, res) => {
-  try {
-    await handle(req, res);
-  } catch (err) {
-    // A request must never be able to kill the process. Without this, any throw in the handler
-    // becomes an unhandled rejection and Node exits, taking the user's session with it.
-    console.error(`Request failed: ${req.method} ${req.url}: ${err?.message ?? err}`);
-    if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' });
-    if (!res.writableEnded) res.end('Internal error');
-  }
-});
+// A server that is not listening yet. Separating construction from binding is what lets a test
+// drive the contract below on an ephemeral port without taking 8787, and without this module
+// opening a browser the moment it is imported.
+export function createStaticServer() {
+  return createServer(async (req, res) => {
+    try {
+      await handle(req, res);
+    } catch (err) {
+      // A request must never be able to kill the process. Without this, any throw in the handler
+      // becomes an unhandled rejection and Node exits, taking the user's session with it.
+      console.error(`Request failed: ${req.method} ${req.url}: ${err?.message ?? err}`);
+      if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' });
+      if (!res.writableEnded) res.end('Internal error');
+    }
+  });
+}
 
 async function handle(req, res) {
   if (req.method !== 'GET' && req.method !== 'HEAD') {
@@ -140,41 +148,90 @@ async function handle(req, res) {
     // that vanished between the stat and here still falls through to the 404 below.
     const body = await readFile(file);
     res.writeHead(200, headers);
+    // Measured rather than assumed: node:http suppresses the body of a HEAD reply on its own, and
+    // the headers it sends are identical either way, so this ternary is intent made visible rather
+    // than the mechanism. A mutation that deletes it survives the suite for that reason. It is kept
+    // because it says what the reply is meant to be, and because the day this stops writing through
+    // res.end it stops being free.
     res.end(req.method === 'HEAD' ? undefined : body);
   } catch {
     res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }).end('Not found');
   }
 }
 
-server.on('error', (err) => {
-  if (err.code === 'EADDRINUSE') {
-    console.error(`\nPort ${PORT} is already in use.`);
-    console.error(`If the tracker is already running, open http://${HOST}:${PORT}/ instead.`);
-    console.error(`Otherwise start it on another port:  set MRT_PORT=8788 && npm start\n`);
-    process.exit(1);
-  }
-  throw err;
-});
+// The port is read once, here, so an unusable value is reported in the same register as a taken
+// one rather than as a stack trace. `set MRT_PORT=8788` is advice this file prints on the busy
+// port, and a typo in it used to reach node:net and exit with ERR_SOCKET_BAD_PORT, which reads as
+// a crash rather than as a correction. Zero is refused with the rest: it means "any free port" to
+// the operating system, and the whole point of this server is that the origin does not move.
+export function parsePort(raw) {
+  const text = raw === undefined || raw === null ? '' : String(raw).trim();
+  if (text === '') return DEFAULT_PORT;
+  // Decimal digits only. Number() would take '0x2263' and bind 8803, and '1e3' and bind 1000, so a
+  // value that does not read as a port would quietly become one and move the origin.
+  if (!/^\d+$/.test(text)) return null;
+  const n = Number(text);
+  return n >= 1 && n <= 65535 ? n : null;
+}
 
-// Loopback only. This server is never exposed to the network.
-server.listen(PORT, HOST, () => {
-  const url = `http://${HOST}:${PORT}/`;
-  console.log(`Marvel Reading Tracker running at ${url}`);
-  console.log('Always use this exact address. Other addresses are separate browser storage.');
-  console.log('Press Ctrl+C to stop.');
-  if (process.env.MRT_NO_OPEN !== '1') openBrowser(url);
-});
+// Which command opens a browser, as data rather than as a branch inside the spawn call. Two of the
+// three branches cannot run on the machine this is developed on, so as a branch they were unread
+// and untested; as a table they are all three checked on every platform.
+//
+// The empty string after `start` is not padding. `start` treats its first quoted argument as the
+// title of the console window it opens, so a URL arriving as the only quoted argument is consumed
+// as a title and nothing opens. Anything other than Windows and macOS gets the freedesktop
+// launcher, which is the right default for the BSDs as well as Linux.
+export function browserCommand(platform, url) {
+  if (platform === 'win32') return { command: 'cmd', args: ['/c', 'start', '', url] };
+  if (platform === 'darwin') return { command: 'open', args: [url] };
+  return { command: 'xdg-open', args: [url] };
+}
 
 function openBrowser(url) {
   import('node:child_process')
     .then(({ spawn }) => {
-      const cmd =
-        process.platform === 'win32'
-          ? ['cmd', ['/c', 'start', '', url]]
-          : process.platform === 'darwin'
-            ? ['open', [url]]
-            : ['xdg-open', [url]];
-      spawn(cmd[0], cmd[1], { stdio: 'ignore', detached: true }).unref();
+      const { command, args } = browserCommand(process.platform, url);
+      spawn(command, args, { stdio: 'ignore', detached: true }).unref();
     })
     .catch(() => {});
 }
+
+function start() {
+  if (PORT === null) {
+    console.error(`\nMRT_PORT is set to ${JSON.stringify(process.env.MRT_PORT)}, which is not a port.`);
+    console.error('Use a whole number from 1 to 65535, or unset it to use the default:');
+    console.error(`  set MRT_PORT=${DEFAULT_PORT} && npm start\n`);
+    process.exit(1);
+  }
+
+  const server = createStaticServer();
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`\nPort ${PORT} is already in use.`);
+      console.error(`If the tracker is already running, open http://${HOST}:${PORT}/ instead.`);
+      console.error(`Otherwise start it on another port:  set MRT_PORT=8788 && npm start\n`);
+      process.exit(1);
+    }
+    throw err;
+  });
+
+  // Loopback only. This server is never exposed to the network.
+  server.listen(PORT, HOST, () => {
+    const url = `http://${HOST}:${PORT}/`;
+    console.log(`Marvel Reading Tracker running at ${url}`);
+    console.log('Always use this exact address. Other addresses are separate browser storage.');
+    console.log('Press Ctrl+C to stop.');
+    if (process.env.MRT_NO_OPEN !== '1') openBrowser(url);
+  });
+
+  return server;
+}
+
+// Only when this file is the program. Everything above is importable, and a test that imported a
+// module which binds a port and launches a browser would be a test with side effects on the
+// machine running it.
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) start();
+
+export { CSP, DEFAULT_PORT, HOST, safePath };

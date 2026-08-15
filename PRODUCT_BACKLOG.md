@@ -9,15 +9,15 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Eighty-eight items have since been delivered and are marked `Shipped` in the table below: BL-007,
+Eighty-nine items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
 BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, BL-073, BL-074,
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-086, BL-087,
-BL-088, BL-089, BL-090, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101, BL-103, BL-104,
-BL-105, BL-106, BL-107, BL-108, BL-110, BL-111, BL-112, BL-113, BL-115, BL-116, BL-121, BL-122,
-BL-123 and BL-124.
+BL-088, BL-089, BL-090, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101, BL-103,
+BL-104, BL-105, BL-106, BL-107, BL-108, BL-110, BL-111, BL-112, BL-113, BL-115, BL-116, BL-121,
+BL-122, BL-123 and BL-124.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -41,12 +41,12 @@ a judgement no document can supply, least of all the document written to ask for
 user-facing view of the same work.
 
 Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 repository assurance and
-open-source readiness study. Three of them are still `Ready`: the study records gaps for later
-implementation and does not mix those fixes into the roadmap change that identified them. BL-083,
-BL-084, BL-085, BL-086, BL-087, BL-088, BL-089, BL-090, BL-095, BL-096, BL-097, BL-098, BL-099 and BL-100
-have since been delivered, and their detail blocks record what changed. BL-091 is the one the study
-got wrong: re-measuring it refuted its premise, so it is `Dropped` and its block records the
-measurement rather than the fix.
+open-source readiness study. Two of them are still `Ready`: the study records gaps for later
+implementation and does not mix those fixes into the roadmap change that identified them.
+BL-083, BL-084, BL-085, BL-086, BL-087, BL-088, BL-089, BL-090, BL-094, BL-095, BL-096, BL-097,
+BL-098, BL-099 and BL-100 have since been delivered, and their detail blocks record what changed.
+BL-091 is the one the study got wrong: re-measuring it refuted its premise, so it is `Dropped` and
+its block records the measurement rather than the fix.
 BL-101 through BL-108 are the eight items here that came from
 neither pass. BL-101 through BL-105 and BL-108 were each raised by the review of one of the items
 above them and routed to the backlog rather than folded into it, because each belongs to a
@@ -246,7 +246,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:103-105 |
 | BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Shipped | .github/workflows/ci.yml:68-91 |
 | BL-112 | Let a speech user say what a button says | Defect | EP-07 | Replaces BL-091 | 5 | 3 | 5 | 2 | 6.5 | none | Measured | Shipped | absent: any accessible name built out of its control's visible label, read of all 21 aria-label sites in src/js/main.js and an audit of 303 rendered controls in Edge |
-| BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:121-131 |
+| BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:129-139 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-099 | Clarify the license and provenance boundary for committed data | Debt | EP-12 | Leaves alone | 8 | 8 | 13 | 5 | 5.8 | none | Measured | Shipped | src/data/curated-lists.json:80-120 |
@@ -287,7 +287,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:295-330 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
 | BL-086 | Keep cover requests inside the stated trust boundary | Defect | EP-05 | Extends BL-044 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/lib/model.js:179-194 |
-| BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Ready | server.mjs:85-177 |
+| BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Shipped | server.mjs:89-101 |
 | BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/main.js:563-567 |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | absent: committed browser-runner script, tracked-file inventory and package scripts |
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Ready | src/js/main.js:2987 |
@@ -321,7 +321,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-119 | Show an order's gap on the catalog row, before it is imported | Story | EP-05 | Follows BL-110 | 3 | 1 | 2 | 3 | 2.0 | none | Measured | Ready | src/js/main.js:2827-2831 |
 | BL-120 | Notice when the published branch list refills | Enabler | EP-12 | Follows BL-103 | 2 | 1 | 2 | 2 | 2.5 | none | Measured | Ready | .github/workflows/ci.yml:204-206 |
 | BL-092 | Bring the fault harness under the alternate-page accessibility baseline | Debt | EP-07 | Leaves BL-034 alone | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | src/dev-faults.js:12-22 |
-| BL-102 | Send the security headers on the dev server's error responses too | Debt | EP-12 | Follows BL-096 | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | server.mjs:95-105 |
+| BL-102 | Send the security headers on the dev server's error responses too | Debt | EP-12 | Follows BL-096 | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | server.mjs:103-113 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:52-61 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | src/js/lib/readingFilters.js:25-48 |
 | BL-067 | Gate the switch and the primary button, which no pair measures | Debt | EP-08 | Leaves alone | 2 | 2 | 2 | 3 | 2.0 | none | Measured | Shipped | src/styles.css:393 |
@@ -1413,7 +1413,7 @@ backs both what `showView` can display and what an address can reach. Split acro
 view could have been routable but not showable, or showable but unreachable by URL.
 
 **Constraint 5 turned out to be the binding reason rather than a preference.** `server.mjs` serves
-files and returns 404 for anything it cannot find at `server.mjs:145`, with no single-page
+files and returns 404 for anything it cannot find at `server.mjs:158`, with no single-page
 fallback, so a History-API path such as `/read/list-abc` would have failed on precisely the reload
 and the bookmark this item exists to deliver. The hash was the only mechanism that works here, and
 the constraint and the server agree for different reasons.
@@ -4577,7 +4577,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8651-8653` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8684-8686` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4587,11 +4587,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:205-207`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8670-8674`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8703-8707`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8485-8487` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8518-8520` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4799,7 +4799,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1868-1877` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1890-1899` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:195-199` and
 `PRODUCT_BACKLOG.md:205-207` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5499,7 +5499,7 @@ the parsed address, and the run was extended to match: ten of ten caught, the te
 test written for it.
 
 Evidence: `src/js/lib/coverHost.js:25`, `src/js/lib/coverHost.js:46`, `src/js/lib/coverHost.js:55`,
-`src/js/lib/model.js:179-194`, `server.mjs:52-58`, `src/index.html:526-531`.
+`src/js/lib/model.js:179-194`, `server.mjs:53-59`, `src/index.html:526-531`.
 
 **BL-087: State the network privacy boundary where the promise appears**
 
@@ -6367,17 +6367,50 @@ untested. Evidence: `absent: committed browser-runner script, tracked-file inven
 
 **BL-094: Test the local host and launcher contract**
 
-- [ ] Start the server on an ephemeral loopback port in tests
-- [ ] Verify methods, malformed and escaping paths, ETags, headers and shutdown
-- [ ] Extract launcher command selection as pure data for Windows, macOS and Linux
-- [ ] Decide from measured failures whether an operating-system CI smoke is warranted
+- [x] Start the server on an ephemeral loopback port in tests
+- [x] Verify methods, malformed and escaping paths, ETags, headers and shutdown
+- [x] Extract launcher command selection as pure data for Windows, macOS and Linux
+- [x] Decide from measured failures whether an operating-system CI smoke is warranted
 
 Constraint gate: checked 1 to 11, none breached.
 
 The server is the install and runtime boundary, but no test starts it or verifies its observable
 contract. A Windows smoke succeeded during the study; that rejects a current startup defect but does
 not cover the HTTP contract or the macOS and Linux launcher branches. Evidence:
-`server.mjs:85-177`, `absent: server behavior test, search of test directory`.
+`server.mjs:89-101`, `server.mjs:167-175`, `server.mjs:185-189`.
+
+The reason there were no tests was structural rather than anybody's oversight: the module bound the
+port and opened a browser at import, so a test that so much as imported it took 8787 and launched a
+tab. Construction is now separate from binding, the program half sits behind an entry guard, and 26
+tests cover it, 17 of them driving an ephemeral loopback port and the rest checking the pure
+functions and the shape of the file itself. A mutation set of 26 single-line edits leaves 25 caught,
+each one named by the test that catches it.
+
+Three findings came out of writing them, none of which the four tasks anticipated. An unusable
+`MRT_PORT` used to reach node:net and exit with a raw `ERR_SOCKET_BAD_PORT` stack, which is how a
+typo in the very advice the busy-port message prints was reported; it now prints a correction and
+exits 1. `Number()` accepted `0x2263` and bound 8803, so a value nobody would call a port could move
+the origin, which constraint 5 is precisely about; the port is now decimal digits or nothing. And the
+comment on the malformed-path branch said such a path was treated as not found while the handler had
+always answered 403, so the comment was corrected to the shipped behaviour rather than the behaviour
+changed to the comment.
+
+The one mutant that survives is recorded rather than papered over: deleting the `HEAD` arm of the
+final `res.end` changes nothing, because node:http suppresses a HEAD body by itself and sends
+identical headers either way, measured. The line is kept as intent and the test says in the file that
+it does not defend it.
+
+The operating-system question is answered no, from measurement rather than instinct. The launcher was
+the OS-specific code that mattered and it is now a pure table checked on every platform the suite runs
+on. Three traversal inputs answer 403 on Windows and 404 on Linux, for two different reasons.
+`..\package.json` and `..\..\package.json` diverge because `normalize` and `sep` read a backslash as a
+separator on Windows and as an ordinary filename character everywhere else. `//../package.json`
+diverges for an unrelated reason: `path.win32.normalize` reads a leading `//` as a UNC root and
+refuses it. Only the third is reachable over HTTP, and it was driven against a live server to confirm
+it: the other two are relative request targets, so the parser answers 400 and `safePath` never sees
+them. Neither answer serves a file from outside `src/`, so the observable contract is the same on both
+and only the choice of refusal differs. That is not worth doubling every CI run for. The trigger to
+revisit is a change that makes an OS difference serve something, or a launcher that stops being data.
 
 **BL-095: Put explicit deadlines on CI jobs**
 
@@ -6466,7 +6499,7 @@ it matches nothing, so an unreachable check cannot report itself as unfailable a
 
 Review round: seven findings, all in text this item introduced, all fixed rather than routed. Four
 were claims the policy made that the code does not support. It said the dev server sends a content
-security policy on every response; the header block at `server.mjs:121-131` is reached only on the
+security policy on every response; the header block at `server.mjs:129-139` is reached only on the
 200 and 304 paths, and the 403, 404, 405 and 500 exits carry none of it, so the sentence now says
 "every response that serves a file" and records the gap in the same bullet. It said the app "sends
 no data anywhere", which contradicts the README's own carve-out: the app does fetch metadata and
@@ -6939,9 +6972,9 @@ every site rather than to carry from one to the next.
 Constraint gate: checked 1 to 11, none breached.
 
 Raised by the review of `BL-096` and routed here rather than fixed there, because that item published a
-policy and this one changes the server. The header set at `server.mjs:121-131` carries the content
+policy and this one changes the server. The header set at `server.mjs:129-139` carries the content
 security policy, `nosniff`, `no-referrer` and `X-Frame-Options: DENY`, and it is assembled inside the
-success path, so only the 200 and 304 replies ever send it. The 405 and 403 exits at `server.mjs:95-105`
+success path, so only the 200 and 304 replies ever send it. The 405 and 403 exits at `server.mjs:103-113`
 send neither those nor a content type, and the 404 and 500 exits send a content type alone. Measured by
 starting the server and reading the replies: a served file carried all four, a missing file carried
 `content-type` only, a rejected path carried nothing, and a POST carried `allow` only.
@@ -8638,11 +8671,11 @@ Mapped to the OWASP Top 10 in the table-stakes section below. At characteristic 
 gap worth naming here: the static development server sets `x-content-type-options` and
 `referrer-policy` but no `content-security-policy` and no `x-frame-options`.
 
-Evidence: `server.mjs:121-131`.
+Evidence: `server.mjs:129-139`.
 
-Resolved: `BL-030` shipped both. The policy is assembled at `server.mjs:52-63` and sent at
-`server.mjs:126`, with `frame-ancestors 'none'` at `server.mjs:62` and the companion
-`x-frame-options: DENY` at `server.mjs:129`.
+Resolved: `BL-030` shipped both. The policy is assembled at `server.mjs:53-64` and sent at
+`server.mjs:134`, with `frame-ancestors 'none'` at `server.mjs:63` and the companion
+`x-frame-options: DENY` at `server.mjs:137`.
 
 #### 7. Maintainability
 
@@ -8718,7 +8751,7 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Schema migration | No gap. Stored state carries `SCHEMA_VERSION`, migrations run forward, and a future schema is refused rather than silently coerced, with a test pinning that behaviour. Evidence: `src/js/lib/model.js:12`, `src/js/lib/model.js:769-845`, `test/model.test.js:559-561`. |
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:3599-3602`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
-| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:121-131`. Resolved: `BL-030` shipped both, assembled at `server.mjs:52-63` and sent at `server.mjs:126` and `server.mjs:129`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:25-40` and onto the read out of storage at `src/js/main.js:465-489`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3300-3301`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
+| Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:129-139`. Resolved: `BL-030` shipped both, assembled at `server.mjs:53-64` and sent at `server.mjs:134` and `server.mjs:137`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:25-40` and onto the read out of storage at `src/js/main.js:465-489`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:3300-3301`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
 | Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-32` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:213-216`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is not fixed and will not be: BL-028 is parked, because phone and tablet reading is served by Marvel's own apps. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
