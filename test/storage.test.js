@@ -1198,3 +1198,107 @@ test('an erase that could not be written keeps the staging copy too', () => {
 
   assert.equal(storage.getItem('mrt.state.restore.tmp'), staged, 'untouched, byte for byte');
 });
+
+// BL-113's decision, held the same way and for the opposite outcome. Erasing everything reaches
+// the two restore-family keys and stops there: a salvage copy is a copy of data this app could
+// not read, and the module states at its own removal that nothing but the reader takes one away,
+// because no rule here can know whether they still want it. So the dialog was narrowed to say
+// what it does not reach rather than the route widened to reach it.
+//
+// The block has to be cleared first, which is the whole reason this needs a fixture rather than a
+// glance: a blocked store refuses the write, and nothing behind that guard runs at all, so an
+// erase attempted straight after the failed read never touches anything and would pass this test
+// while proving nothing.
+test('erasing everything leaves the salvage copies, because only the reader removes one', () => {
+  const storage = fakeStorage({ [KEY]: 'corrupt-and-precious' });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.blocked, true, 'the fixture must actually block, or the erase below is not the one shipped');
+  assert.equal(storage.getItem('mrt.state.salvage'), 'corrupt-and-precious', 'and must actually salvage');
+  assert.equal(store.startFresh(), true, 'the block has to go before an erase can land');
+
+  const res = store.eraseAll();
+
+  assert.equal(res.ok, true);
+  assert.equal(storage.getItem('mrt.state.salvage'), 'corrupt-and-precious', 'untouched, byte for byte');
+  assert.equal(store.salvageCopies().length, 1, 'and still offered to the reader who alone can remove it');
+  assert.equal(JSON.parse(storage.getItem(KEY)).listOrder.length, 0, 'while the erase itself did land');
+});
+
+// Why the erase route repaints the salvage list, which no other whole-state route has to do.
+//
+// One of two reasons, and the one the first version of this comment denied. It said an erase
+// cannot land while a copy is live, on the grounds that live means the main key holds the bytes
+// the copy was taken of, so the write is refused either at the latch or at the compare. The
+// compare half is wrong: persist() compares write tokens, not bytes, and tokenOf() reads only the
+// head of the value, so a tab that wrote it still matches after something shortens the tail past
+// that head. The test below this one holds that shape. The first attempt failed for a narrower
+// reason than the one written down, which was that its fixture used a single blocked store.
+//
+// The other reason is a refusal. A conflict rolls back by re-reading, that read
+// fails on the bytes that caused the conflict, and the failure salvages. So pressing Erase can
+// create the very first salvage copy this browser has ever held, on a screen that is at that
+// moment displaying "Nothing is being kept aside", and the erase it was pressed for did not
+// happen. Nothing announces, because nothing was saved, so the list is the only surface that can
+// carry the news besides the banner.
+test('an erase refused by another tab can leave behind the first salvage copy there has been', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.blocked, false, 'this tab read its data fine');
+  assert.equal(store.salvageCopies().length, 0, 'and nothing is being kept aside yet');
+  // One ordinary edit, because a conflict is a disagreement about write tokens and an exported
+  // backup carries none. Until this tab has written once, its token and an untokened value both
+  // read as null and compare equal, which is deliberate and is what lets a fresh install save at
+  // all. So without this line the erase below is accepted and the test proves nothing.
+  store.update((s) => markRead(s, 2, true));
+  assert.equal(store.lastUpdateOk, true, 'and that edit has to land, or no token was stamped');
+
+  storage.map.set(KEY, 'corrupt-from-somewhere-else');
+  const res = store.eraseAll();
+
+  assert.equal(res.ok, false, 'the erase is refused, because the key holds bytes this tab did not write');
+  assert.equal(store.blocked, true, 'and the re-read that rolls it back cannot read them either');
+  assert.equal(store.salvageCopies().length, 1, 'so a copy now exists that did not when the screen was painted');
+  assert.equal(storage.getItem('mrt.state.salvage'), 'corrupt-from-somewhere-else');
+});
+
+// The other direction, and the one a comment here used to call impossible. An erase that lands
+// replaces the bytes a live copy was taken of, so the copy stops being live and the row it sits
+// on trades the note renderSalvage() shows for a Remove button that was not there when the
+// screen was painted. That is a repaint the erase route has to do itself, for the same reason as
+// the refusal above: this button is on the screen the list is already showing.
+//
+// Two stores over one storage, because it takes two tabs to reach. The value is shortened from
+// the end, which leaves the write token at its head intact, so tab A still matches on the token
+// persist() actually compares while tab B cannot parse what it reads. A schema downgrade is the
+// everyday shape of this: an older build writes a value a newer one cannot read, and the tab
+// that wrote it is not the tab that fails on it.
+test('an erase that lands turns a live copy into one the reader can remove', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const tabA = new Store({ storage });
+  tabA.load();
+  tabA.update((s) => markRead(s, 2, true));
+  assert.equal(tabA.lastUpdateOk, true, 'tab A has to have written once, or it has no token to match on');
+
+  const whole = storage.getItem(KEY);
+  storage.map.set(KEY, whole.slice(0, whole.length - 12));
+
+  const tabB = new Store({ storage });
+  tabB.load();
+  assert.equal(tabB.blocked, true, 'the shortened value has to be unreadable, or nothing is salvaged');
+  assert.deepEqual(
+    tabA.salvageCopies().map((c) => c.live),
+    [true],
+    'and the copy has to read as live in tab A, which is the state the old comment called a dead end',
+  );
+
+  const res = tabA.eraseAll();
+
+  assert.equal(res.ok, true, 'tab A is not blocked and its token survived the truncation, so this lands');
+  assert.deepEqual(
+    tabA.salvageCopies().map((c) => c.live),
+    [false],
+    'so the copy is removable now and was not a moment ago, which is a row that has to be repainted',
+  );
+});

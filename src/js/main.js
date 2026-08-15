@@ -917,6 +917,8 @@ function showView(next, { focus = true, push = false } = {}) {
   // Here rather than in renderAll, because what this list reports is not part of the state every
   // render repaints: it changes when a read fails at boot, when the reader removes a copy, and in
   // another tab. Rebuilding it on arrival covers all three and leaves renderAll's fan-out alone.
+  // Erasing everything is a fourth, and the one arrival cannot cover, because it happens on this
+  // screen rather than before reaching it, so that route repaints at its own call site.
   if (next === 'data') renderSalvage();
   window.scrollTo({ top: 0 });
   // After the scroll to the top, so that bringing a message into view is not undone. Which pane
@@ -3159,6 +3161,80 @@ function exportMarkdown() {
   announce('Markdown checklist downloaded.');
 }
 
+// BL-113's decision, and the reason it is a pair of sentences rather than a wider erase.
+//
+// The rule at `src/js/storage.js:329-332` stands: nothing but the reader removes a salvage copy,
+// because no rule this app could apply would know whether they still want data it could not read
+// itself. So the erase is not widened to reach those copies, and the wording is narrowed to stop
+// claiming that it does. They are not undisclosed either way, which is what separates them from
+// the undo snapshot BL-101 did withdraw: they are listed on this same screen, directly above this
+// button, each with its own Remove.
+//
+// Narrowing is also the half of the choice that can be taken back. A dialog that overstates can be
+// corrected later against copies that still exist; an erase that has already destroyed the last
+// record of data nobody could open cannot be.
+//
+// Three answers rather than two, the same three renderSalvage() gives and for the same reason. A
+// browser that will not enumerate its own storage has not said there is nothing, it has declined
+// to say, and promising that everything is gone on the strength of a refusal is the one answer
+// that can be wrong in the direction that matters.
+//
+// A fourth thing to read, and the one the first version of this got wrong: whether a copy is
+// live. renderSalvage() puts a note where the Remove button would be on a live copy, so naming
+// that button while one is live sends the reader to a control the screen is withholding, and it
+// does it in the state where a copy is likeliest to exist at all. Location is claimed either
+// way, because that half is true either way; only the button is conditional.
+//
+// Settings are named because they outlive every one of these answers. Nothing in the app removes
+// mrt.settings or sidebar.collapsed, so this branch's old sentence, that the route clears
+// everything this browser has stored for the tracker, was false for any reader who had ever
+// changed the theme. docs/ARCHITECTURE.md holds the whole list and calls those two preferences
+// rather than data, which is why the message said afterwards still reports all local data erased
+// and only the promise made beforehand had to be narrowed.
+export function eraseDialogBody(copies) {
+  const tail = ' Export a backup first if you are not sure. It cannot be undone.';
+  const lead = 'This clears every list and all reading progress. Your settings are kept.';
+  if (copies === null) {
+    return `${lead} This browser will not let the app list what else it has stored, so anything `
+      + `kept aside after a failed read is not reached and stays where it is.${tail}`;
+  }
+  if (copies.length === 0) return `${lead}${tail}`;
+  const one = copies.length === 1;
+  const where = `${lead} `
+    + `${one ? 'One copy' : `${copies.length} copies`} of data this app could not read `
+    + `${one ? 'is' : 'are'} kept aside, and this does not reach ${one ? 'it' : 'them'}. `
+    + `${one ? 'It stays' : 'They stay'} under "Copies kept after a failed read" above`;
+  if (copies.some((c) => c.live)) {
+    return `${where}, and only you can remove ${one ? 'it' : 'them'}.${tail}`;
+  }
+  return `${where}, with ${one ? 'its' : 'their'} own Remove button.${tail}`;
+}
+
+// What is said once the erase has landed, composed rather than chosen, because the snapshot and
+// the salvage copies survive independently and either, both or neither can be left. The plain
+// sentence is kept for the case where nothing was, so an ordinary erase still reports plainly.
+//
+// Every clause is said only when it is true. A storage that refuses the removal leaves a whole
+// copy of the tracker behind a live button, after a dialog that promised nothing would survive,
+// and the reader can act on that only if they are told which button it is. The same holds for the
+// copies this route deliberately does not reach: naming where they are is the difference between
+// disclosing them and merely not having lied.
+export function eraseOutcome(snapshotKept, copies) {
+  const notes = [];
+  if (snapshotKept) {
+    notes.push('One copy could not be removed and is still in this browser, behind "Undo last restore".');
+  }
+  if (copies === null) {
+    notes.push('This browser will not list what else it has stored, so anything kept aside after a failed read is still here.');
+  } else if (copies.length === 1) {
+    notes.push('One copy kept after a failed read is still here, under "Copies kept after a failed read".');
+  } else if (copies.length > 1) {
+    notes.push(`${copies.length} copies kept after a failed read are still here, under "Copies kept after a failed read".`);
+  }
+  if (notes.length === 0) return 'All local data erased.';
+  return ['Lists and reading progress erased.', ...notes].join(' ');
+}
+
 function wireData() {
   $('#api-base').value = settings.apiBase;
   $('#opt-covers').addEventListener('change', (e) => setCovers(e.target.checked));
@@ -3249,7 +3325,7 @@ function wireData() {
   $('#btn-wipe').addEventListener('click', async () => {
     const yes = await askConfirm({
       title: 'Erase every list and all reading progress?',
-      body: 'This clears everything this browser has stored for the tracker. Export a backup first if you are not sure. It cannot be undone.',
+      body: eraseDialogBody(store.salvageCopies()),
       confirmLabel: 'Erase everything',
     });
     if (!yes) return;
@@ -3262,12 +3338,27 @@ function wireData() {
     // repaint the erase itself triggered, so the question is put again here rather than left to
     // whatever unrelated render comes next.
     renderBlocked();
-    // Said only when it is true. A storage that refuses the removal leaves a whole copy of the
-    // tracker behind a live button, after a dialog that promised nothing would survive, and the
-    // reader can act on that only if they are told which button it is.
-    announceIfSaved(snapshotKept
-      ? 'Lists and reading progress erased. One copy could not be removed and is still in this browser, behind "Undo last restore".'
-      : 'All local data erased.');
+    // The fourth trigger, and the one arrival cannot cover, because this button sits on the screen
+    // that list is already showing. Both outcomes move a row, in opposite directions.
+    //
+    // An erase that lands replaces the bytes a live copy was taken of, so that copy stops being
+    // live and trades its note for a Remove button. This was written here first as unreachable, on
+    // the grounds that an erase cannot land while a copy is live, and that was wrong: persist()
+    // compares write tokens rather than bytes and a token is read from the head of the value, so a
+    // tab that wrote it still matches after something truncates the tail. A schema downgrade is the
+    // everyday shape of that, and the tab that shortened the value is not the tab that cannot read
+    // it afterwards.
+    //
+    // An erase that is refused moves a row the other way. The refusal rolls back by re-reading, the
+    // read fails on the bytes that caused it, and the failure salvages, so this press can create the
+    // first copy this browser has ever held on a screen that is at that moment saying nothing is
+    // being kept aside. Nothing announces then, because nothing was saved, which leaves this and
+    // the banner as the only surfaces carrying it.
+    renderSalvage();
+    // Asked of storage again rather than reused from what the dialog was built with: the dialog
+    // sits open for as long as the reader leaves it, and another tab can take a copy or remove one
+    // in that time. Same reason snapshotKept is read back rather than inferred from the removal.
+    announceIfSaved(eraseOutcome(snapshotKept, store.salvageCopies()));
   });
 }
 
