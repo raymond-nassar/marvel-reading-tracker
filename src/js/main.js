@@ -266,6 +266,34 @@ function announceIfSaved(msg) {
   if (store.lastUpdateOk) announce(msg);
 }
 
+// A passive surface changes without moving focus, so nothing tells a screen reader it changed at
+// all. Sending those changes to the announcer needs a guard, because every write that produces one
+// repeats: checkHealth runs at boot and again on every API URL save, and renderHydration is called
+// once per issue fetched, so a 20-issue run calls it 22 times.
+//
+// The guard is keyed on the state that matters rather than on the rendered text, so a repeated
+// verdict is silent and only a genuine change speaks. Returning whether it spoke is what lets a
+// test count what a reader hears across a whole run rather than only observing the first call.
+
+export function stateAnnouncer(speak, seed = []) {
+  const seen = new Map(seed);
+  return (key, state, msg) => {
+    if (seen.get(key) === state) return false;
+    seen.set(key, state);
+    if (msg) speak(msg);
+    return true;
+  };
+}
+
+// Seeding a key declares the condition assumed to hold already. The metadata service being
+// reachable is the ordinary case, so a healthy boot says nothing and only a boot that cannot reach
+// it speaks, which also makes "reachable again" the only way the healthy message can be heard.
+export function passiveAnnouncer(speak) {
+  return stateAnnouncer(speak, [['api', 'ok']]);
+}
+
+const announceState = passiveAnnouncer(announce);
+
 // A message goes down exactly one channel. Writing into a container that is itself a live
 // region and also copying the text into the announcer made a screen reader say everything
 // twice, so the announcer is used only where the message has no live surface of its own.
@@ -2206,18 +2234,34 @@ function renderHydrateButton() {
   $('#btn-cancel-hydrate').hidden = !hydrator.active;
 }
 
+// The phase a run is in, and what a reader should hear on reaching it, kept apart from the DOM
+// writes so the whole sequence a run produces can be exercised. A 219-issue order calls
+// renderHydration 221 times; what matters is that a reader hears two of them.
+export function hydrationAnnouncement(status) {
+  const phase = !status || status.phase === 'idle' ? 'idle' : status.phase;
+  if (phase === 'idle') return { state: 'idle', msg: null };
+  if (phase === 'running') {
+    const n = Number(status.total ?? 0);
+    return { state: 'running', msg: `Fetching details for ${n} issue${n === 1 ? '' : 's'}.` };
+  }
+  if (phase === 'cancelled') return { state: 'cancelled', msg: 'Detail fetching stopped. Progress was kept.' };
+  return { state: 'complete', msg: 'All issue details fetched.' };
+}
+
 function renderHydration(status) {
   const box = $('#hydration-status');
+  const said = hydrationAnnouncement(status);
+  // Above the early return, so the key follows the hydrator's phase even through the reports that
+  // write nothing. It is not what unblocks the next run: 'complete' and 'running' already differ.
+  announceState('hydration', said.state, said.msg);
   if (!status || status.phase === 'idle') { box.hidden = true; renderHydrateButton(); return; }
   box.hidden = false;
   if (status.phase === 'running') {
     box.textContent = `Fetching details ${status.done} of ${status.total}…`;
   } else if (status.phase === 'cancelled') {
     box.textContent = `Stopped after ${status.done} of ${status.total}. Progress was kept.`;
-    announce('Detail fetching stopped. Progress was kept.');
   } else {
     box.textContent = 'All details fetched.';
-    announce('All issue details fetched.');
   }
   renderHydrateButton();
 }
@@ -3346,6 +3390,10 @@ function wireSalvage() {
   });
 }
 
+// Deliberately not announced and not a live region. The only change here worth hearing is the one
+// after Clear cached metadata, and that handler already speaks through notify(), so a live region
+// on this element would say it twice. At boot it only resolves a placeholder nobody has asked
+// about yet.
 async function refreshCacheUsage() {
   try {
     const u = await cache.usage();
@@ -3380,9 +3428,11 @@ async function checkHealth() {
     const h = await api.health();
     pill.className = 'pill pill-ok';
     pill.textContent = `API OK · ${Number(h.issue_count ?? 0).toLocaleString()} issues`;
+    announceState('api', 'ok', 'The metadata service is reachable again.');
   } catch {
     pill.className = 'pill pill-warn';
     pill.textContent = 'API unreachable. Lists and progress still work';
+    announceState('api', 'down', 'The metadata service is unreachable. Your lists and reading progress still work.');
   }
 }
 
@@ -3393,6 +3443,11 @@ function onApiStatus(s) {
   renderQueue();
 }
 
+// Deliberately not announced and not a live region. The hydrator awaits one issue at a time, so
+// the queue empties between every pair of requests: a 219-issue order crosses the empty boundary
+// 219 times, and anything edge-triggered here would speak on each crossing. What a reader needs
+// from a run is its start and its end, and #hydration-status carries both. The one queue
+// condition worth hearing is a backoff, which onApiStatus announces directly.
 function renderQueue() {
   const pill = $('#queue-status');
   const depth = limiter.depth;

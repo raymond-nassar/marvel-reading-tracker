@@ -55,14 +55,30 @@ const ORDINAL_TENS = {
   70: 'seventieth', 80: 'eightieth', 90: 'ninetieth',
 };
 
-// Spelled out because the document spells them out. Returning null above ninety-nine
-// rather than falling back to digits keeps the failure visible: a backlog that outgrows
+// Spelled out because the document spells them out. Returning null above the top of the
+// range rather than falling back to digits keeps the failure visible: a backlog that outgrows
 // this wants the range extended, not a checker that quietly stops checking. It has
-// outgrown it once already, when the seventieth item shipped and five tests went red at
-// the same moment as the gate, so the extension is what the ceiling is for rather than a
+// outgrown it twice, when the seventieth item shipped and five tests went red at
+// the same moment as the gate, and again when filing BL-124 made the ranked table a
+// hundred rows long, so the extension is what the ceiling is for rather than a
 // sign it was set wrong.
+//
+// The band above ninety-nine reads "a hundred and ninety-three" rather than "one hundred and
+// ninety-three" because that is how the backlog already writes a figure of that size, at
+// `PRODUCT_BACKLOG.md:2459`. Both are correct English and only one of them matches the
+// document, which is the only thing these words are for. The ceiling stops below two hundred
+// because no document here writes a figure that large, so its wording would be guessed
+// rather than matched, and a guess is what the null is here to prevent.
+const inHundreds = (n, exact, word) => {
+  if (n >= 200) return null;
+  if (n % 100 === 0) return exact;
+  const rest = word(n % 100);
+  return rest === null ? null : `a hundred and ${rest}`;
+};
+
 export function numberWord(n) {
   if (n >= 0 && n <= 20) return NUMBER_WORDS[n];
+  if (n >= 100) return inHundreds(n, 'a hundred', numberWord);
   const tens = Math.floor(n / 10) * 10;
   const unit = n % 10;
   if (!TENS[tens]) return null;
@@ -71,6 +87,7 @@ export function numberWord(n) {
 
 export function ordinalWord(n) {
   if (n >= 0 && n <= 20) return ORDINAL_WORDS[n];
+  if (n >= 100) return inHundreds(n, 'hundredth', ordinalWord);
   const tens = Math.floor(n / 10) * 10;
   const unit = n % 10;
   if (!TENS[tens]) return null;

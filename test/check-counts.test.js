@@ -534,7 +534,11 @@ test('number and ordinal words cover the range the document uses and refuse beyo
   assert.equal(numberWord(61), 'sixty-one');
   assert.equal(numberWord(70), 'seventy');
   assert.equal(numberWord(99), 'ninety-nine');
-  assert.equal(numberWord(100), null);
+  assert.equal(numberWord(100), 'a hundred');
+  assert.equal(numberWord(101), 'a hundred and one');
+  assert.equal(numberWord(110), 'a hundred and ten');
+  assert.equal(numberWord(193), 'a hundred and ninety-three');
+  assert.equal(numberWord(200), null);
   assert.equal(ordinalWord(1), 'first');
   assert.equal(ordinalWord(16), 'sixteenth');
   assert.equal(ordinalWord(20), 'twentieth');
@@ -542,7 +546,21 @@ test('number and ordinal words cover the range the document uses and refuse beyo
   assert.equal(ordinalWord(32), 'thirty-second');
   assert.equal(ordinalWord(70), 'seventieth');
   assert.equal(ordinalWord(92), 'ninety-second');
-  assert.equal(ordinalWord(100), null);
+  assert.equal(ordinalWord(100), 'hundredth');
+  assert.equal(ordinalWord(101), 'a hundred and first');
+  assert.equal(ordinalWord(134), 'a hundred and thirty-fourth');
+  assert.equal(ordinalWord(200), null);
+});
+
+// The wording above ninety-nine is a choice, and the wrong choice fails silently: "one
+// hundred and ninety-three" is correct English that would never equal what the document
+// says, so every comparison against it would read as drift in the document rather than in
+// the checker. This pins the spelling to the one place the backlog already uses it.
+test('the hundreds are spelled the way the backlog already spells them', () => {
+  assert.ok(
+    REAL.includes(numberWord(193)),
+    `the backlog does not spell 193 as "${numberWord(193)}"`,
+  );
 });
 
 // The ceiling is the reason the table has to stay ahead of the document rather than level

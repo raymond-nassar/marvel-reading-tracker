@@ -14,6 +14,42 @@ quote in a bug report.
 
 ## Unreleased
 
+### A screen reader is now told when detail fetching starts and finishes (BL-090)
+
+Four parts of the app change on screen without anything moving: the note saying whether the metadata
+service is reachable, the count of requests waiting, how much is cached, and the progress of a
+background detail fetch. None of them were announced, so if you use a screen reader they changed
+silently.
+
+Two of the four are now announced, once each. A detail fetch says how many issues it is about to
+fetch and says when it has finished, or that it stopped and your progress was kept. That first
+message is new: a run that could take five minutes previously began with no sign that anything was
+happening. The reachability note speaks only when it changes, so an ordinary start-up stays quiet
+and only a service that has gone away, or come back, is worth interrupting you for.
+
+The other two are deliberately left silent, and the reasons are now written down beside the code.
+The queue count empties and refills between every single request, so announcing it would talk over
+everything else. Cache usage only changes when you clear the cache, and that button already tells
+you what it did, so announcing it again would say it twice.
+
+Nothing you have saved is affected, and nothing looks different on screen.
+
+### The checker that guards the project's own numbers can now count past ninety-nine (BL-090)
+
+The list of planned improvements has a checker that reads the list and compares what it finds against
+the sentences written about it, so a figure cannot quietly go stale. It writes numbers as words,
+because the document does, and it deliberately refused to spell anything above ninety-nine rather
+than falling back to digits: a list that outgrows the range is meant to fail loudly and have the
+range extended.
+
+Filing a new item during this change took the list to a hundred entries and did exactly that. The
+range now reaches into the hundreds, spelled the way the document already spells numbers that size,
+with a test pinning it there so an equally correct alternative spelling cannot be substituted and
+silently break every comparison. The ceiling has moved rather than been removed, so the same loud
+failure is still waiting a hundred entries from now.
+
+Nothing about the app itself changed.
+
 ### A note about the backlog's own ordering was counting wrong (BL-123)
 
 The project's list of planned improvements is kept roughly in the order the scoring says to work in,
