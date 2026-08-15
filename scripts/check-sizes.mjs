@@ -43,15 +43,23 @@ const PATH_IN_TICKS = /`([^`\s]+?)(?::\d+(?:-\d+)?)?`/g;
 const num = (s) => Number(s.replace(/,/g, ''));
 
 // The tracking artifacts are a historical record of dated passes and are not ours to
-// re-aim, which is the same reason the lint configuration ignores them by glob. A size
-// written into one of them is a claim about the day it was written.
+// re-aim, which is the same reason the lint configuration ignores them by glob. Nothing
+// in them states a size in a spelling this reads today, so the rule is defensive: it is
+// here so a figure written into a dated artifact is never gated against the tree as it
+// is now.
 const IGNORED = /^\.copilot-tracking\//;
 
-// JSON is data rather than prose, and one file makes the point sharply: the anchors
-// lock stores the text of every line it fingerprints, so it echoes back every claim in
-// the tree, frozen marker and all. Scanning it would report a generated copy of a
-// sentence as a second site stating the same size.
+// JSON is data rather than prose, and one file makes the point sharply. The anchors
+// lock stores the head text of every line it fingerprints, truncated to about a hundred
+// characters, so it holds a generated copy of the one sentence stating a size that a
+// blessed range begins on. The truncation cuts the frozen marker off the end of that
+// copy, so the copy reads as a live claim of 1,566 against a file of 3,784, and no edit
+// to the prose could ever settle it because the copy is only rewritten by a bless.
 const DATA = /\.(?:json|lock)$/;
+
+// Whether a tracked file is read for claims at all. Exported so the two rules above can
+// be tested for what they do rather than for what the tree happens not to contain.
+export const scanned = (path) => !IGNORED.test(path) && !DATA.test(path);
 
 export function trackedFiles(root) {
   return execSync('git ls-files', { cwd: root, encoding: 'utf8' })
@@ -156,7 +164,7 @@ export function check(root) {
   const findings = [];
   let claims = 0;
   for (const f of files) {
-    if (IGNORED.test(f) || DATA.test(f)) continue;
+    if (!scanned(f)) continue;
     let text;
     try { text = readFileSync(join(root, f), 'utf8'); } catch { continue; }
     if (text.includes('\0')) continue;

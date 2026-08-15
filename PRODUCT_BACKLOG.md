@@ -1851,10 +1851,10 @@ one, and `test/fetch-json.test.js` says why it scripts responses "without a stub
 dependency was added, runtime or dev.
 
 `src/js/ask.js` was covered as the third module in place of `main.js`. It is browser-coupled in the
-same way, it is 93 lines against main.js's 2,795, and it holds the module-scope `pending` that every <!-- sizes:frozen -->
-question in the app funnels through, so it carries the same class of risk at a fraction of the cost.
-Tests import a fresh copy per case through a cache-busting query, because that module-scope state
-would otherwise leak between them.
+same way, it was 93 lines against main.js's 2,795 when it was picked, and it holds the module-scope
+`pending` that every question in the app funnels through, so it carries the same class of risk at a
+fraction of the cost. Tests import a fresh copy per case through a cache-busting query, because that
+module-scope state would otherwise leak between them.
 
 Forty tests were added, taking the suite from 334 to 374, and **all forty were mutation tested
 before being believed**. Twenty-two deliberate bugs were introduced one at a time and the suite was
@@ -4579,7 +4579,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8923-8925` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8941-8943` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4589,11 +4589,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:206-208`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8942-8946`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8960-8964`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8757-8759` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8775-8777` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4801,7 +4801,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1959-1968` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1962-1971` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:196-200` and
 `PRODUCT_BACKLOG.md:206-208` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -8499,26 +8499,44 @@ measurement or a quantity of work, so "grew by", "grown by", "from N lines to", 
 "stated as" and "for N lines" all fall outside without any of them being listed. The first run
 found six statements and no false positives at all.
 
-Three of the six were stale, which is the item's premise holding up on contact: `src/js/main.js`
-was written as 3,732 in two places against a file of 3,784, and `CONTRIBUTING.md` as 210 against
-211. The other three are dated and now carry `<!-- sizes:frozen -->`, the same shape as the counts
-gate's marker and deliberately a different word, so that a figure can be frozen as a size while
-staying live as a count.
+Four of the six were wrong, which is the item's premise holding up on contact. `src/js/main.js` was
+written as 3,732 in two places against a file of 3,784, and `CONTRIBUTING.md` as 210 against 211;
+those three were corrected. The fourth was a sentence in `BL-041` explaining why `src/js/ask.js` was
+covered in place of `main.js`, which stated both files' sizes in the present tense and had been true
+when it was written. It was rewritten as the past measurement it always was, rather than frozen. The
+remaining two are dated in their own prose and now carry `<!-- sizes:frozen -->`, the same shape as
+the counts gate's marker and deliberately a different word, so that a figure can be frozen as a size
+while staying live as a count.
+
+Freezing that fourth one was the first instinct and was wrong, and the review that caught it is the
+reason this paragraph exists. The marker is an HTML comment, so a reader of the rendered document
+would have seen a plain present-tense assertion with two false figures in it and no sign that
+anything had been decided about them. A marker is for a figure whose sentence already says it is
+about the past. Reaching for it to quiet a sentence that does not is how the marker stops meaning
+anything, which this item's own tests say in as many words.
 
 The marker is read per line rather than per paragraph, and that is not a detail. The audited 1,566
 and the live 3,784 sit in the same paragraph of the drift clause above, so freezing the paragraph
-would have hidden the one figure that had actually gone stale. Two exclusions were needed and both
-are stated as a rule rather than a list: the tracking artifacts, which are a dated record and not
-ours to re-aim, and generated data, because the anchors lock stores the head text of every line it
-fingerprints and so holds a copy of any sentence stating a size, frozen marker included.
+would have hidden the one figure that had actually gone stale. Two exclusions are stated as a rule
+rather than a list, and they are not equally load-bearing. Generated data is: the anchors lock
+stores the head text of every line it fingerprints, truncated to about a hundred characters, and the
+truncation cuts the frozen marker off the end, so the lock's copy of the audited sentence reads as a
+live claim that no edit to the prose could settle. The tracking artifacts exclusion suppresses
+nothing today, because nothing in them states a size in a spelling this reads, and it is kept as a
+rule about what those artifacts are rather than as a response to anything in them.
 
-One figure in this document is beyond the gate and worth saying so plainly. The `src/js/ask.js`
-comparison at the head of `BL-034` states a second size elliptically, with no backticks around the
-file it compares against, so the gate cannot resolve it. The whole line is frozen, so nothing is
-asserted falsely, but that figure has no check behind it. Measured: reverting this document alone
-reports six stale statements and exits 1, and putting a single figure back reports exactly that
-one, which names the line each half of the change defends. Nineteen tests, most of them about the
-sentences the gate must refuse to read.
+Measured: reverting this document alone reports six stale statements and exits 1, and putting a
+single figure back reports exactly that one, which names the line each half of the change defends.
+Removing the generated-data rule reddens two tests and removing the tracking-artifact rule reddens
+one, which is what a rule tested for what it does looks like against one tested for what the tree
+happens not to contain. Nineteen tests, most of them about the sentences the gate must refuse to
+read.
+
+One limit is worth saying plainly. A size whose file is named without backticks cannot be resolved,
+because the backticks are the only thing separating a claim from a filename mentioned in passing.
+The `BL-041` sentence above stated its second figure that way, and is the reason that limit was
+found rather than assumed; rewriting it as a past measurement is what settles it, since the gate
+never reads a past measurement in either spelling.
 
 The gate then caught a drift this same change had created, which is better evidence than either
 deliberate measurement. Adding the new command to the contributor guide made that file two lines

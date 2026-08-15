@@ -14,7 +14,7 @@ import { execSync } from 'node:child_process';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { claimsIn, check, FROZEN, paragraphs } from '../scripts/check-sizes.mjs';
+import { claimsIn, check, FROZEN, paragraphs, scanned } from '../scripts/check-sizes.mjs';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 
@@ -146,27 +146,35 @@ test('the file list comes from git rather than from a directory walk', () => {
 });
 
 // The tracking artifacts are a dated record and are not ours to re-aim, which is the
-// same exemption the lint configuration makes by glob. A size written into one of them
-// is a claim about the day it was written, and there is one.
+// same exemption the lint configuration makes by glob. Nothing in them states a size in
+// a spelling this reads today, so the rule is tested for what it does: a test that only
+// asserted no finding came from there would pass with the rule deleted.
 test('the tracking artifacts are out of scope', () => {
-  const plan = '.copilot-tracking/plans/2026-08-03/marvel-reading-tracker-plan.md';
-  const text = readFileSync(join(ROOT, plan), 'utf8');
-  assert.match(text, /is ~30 lines/, 'the artifact this exemption is for no longer says what it said');
+  assert.equal(scanned('.copilot-tracking/plans/2026-08-03/marvel-reading-tracker-plan.md'), false);
+  assert.equal(scanned('.copilot-tracking/research/x.md'), false);
+  assert.equal(scanned('docs/copilot-tracking-notes.md'), true, 'the rule anchors at the start of the path');
   const { findings } = check(ROOT);
   assert.ok(!findings.some((f) => f.file.startsWith('.copilot-tracking/')), 'a dated artifact was read as a live claim');
 });
 
-// The anchors lock stores the head text of every line it fingerprints, so it holds a
-// generated copy of any sentence stating a size, frozen marker and all. Reading it
-// would report the copy as a second site making the claim, and no edit to the prose
-// could ever settle it, because the copy is only rewritten by a bless.
+// The anchors lock stores the head text of every line it fingerprints, truncated, so it
+// holds a generated copy of a sentence stating a size with the frozen marker cut off the
+// end. The copy therefore reads as a live claim that no edit to the prose could settle,
+// because the copy is only rewritten by a bless. Unlike the exclusion above, this one is
+// load-bearing today, so it is tested both ways.
 test('generated data is not read as prose', () => {
-  const lock = JSON.parse(readFileSync(join(ROOT, 'docs/anchors.lock.json'), 'utf8'));
-  const heads = Object.values(lock.anchors ?? lock).map((a) => a?.head ?? '').filter(Boolean);
+  assert.equal(scanned('docs/anchors.lock.json'), false);
+  assert.equal(scanned('package.json'), false);
+  assert.equal(scanned('PRODUCT_BACKLOG.md'), true);
+
+  const raw = readFileSync(join(ROOT, 'docs/anchors.lock.json'), 'utf8');
+  const echoed = [...raw.matchAll(/\b(?:is|of)\s+([\d][\d,]*)\s+lines\b/g)];
+  assert.ok(echoed.length > 0, 'the lock no longer echoes a size statement, so this exclusion has nothing to defend');
   assert.ok(
-    heads.some((h) => /\b(?:is|of)\s+[\d][\d,]*\s+lines\b/.test(h)),
-    'the lock no longer echoes a size statement, so this exclusion has nothing to defend',
+    !/1,566 lines[^"]*sizes:frozen/.test(raw),
+    'the marker now survives into the lock, so the copy would no longer read as live',
   );
+
   const { findings } = check(ROOT);
   assert.ok(!findings.some((f) => f.file.endsWith('.json')), 'a data file was read as prose');
 });

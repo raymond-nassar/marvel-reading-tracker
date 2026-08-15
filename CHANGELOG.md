@@ -19,21 +19,24 @@ quote in a bug report.
 Nothing in the app changes, and nothing you have saved is affected. This is about the project's own
 written record.
 
-Some of the documents in this repository describe the code by size, in sentences like "this file is
-3,732 lines". Those numbers are written by hand, and files grow, so they quietly go wrong. It had
-already happened twice: one figure was stated in three places and was out by a thousand lines before
-anyone noticed, and its replacement had gone stale again by the time it was corrected. Nothing in
-the project's automatic checks could see it, because a number in an ordinary sentence looks exactly
-like any other number.
+Some of the documents in this repository describe the code by size, in sentences that name a file
+and say it is so many thousand lines long. Those numbers are written by hand, and files grow, so
+they quietly go wrong. It had already happened twice: one figure was stated in three places and was
+out by a thousand lines before anyone noticed, and its replacement had gone stale again by the time
+it was corrected. Nothing in the project's automatic checks could see it, because a number in an
+ordinary sentence looks exactly like any other number.
 
 There is now a check that reads those sentences, counts the file each one names, and fails the build
 when the two disagree, saying which line to fix and what the number should be. A figure that is
 deliberately about the past, such as a note about how large something was when it was audited, can
 be marked as historical and is then left alone.
 
-It found three wrong figures on its first run, and then caught a fourth that this very change had
-created: adding a line to the contributor guide made a sentence elsewhere describing that guide's
-length wrong, and the check said so before the change was committed.
+It found four wrong figures on its first run. Three were simply corrected. The fourth was a sentence
+explaining a decision, written in the present tense and true on the day it was written, so it was
+reworded to say what was measured at the time rather than marked historical and left standing as a
+plain false statement. The check then caught a fifth that this very change had created: adding a
+line to the contributor guide made a sentence elsewhere describing that guide's length wrong, and
+the check said so before the change was committed.
 
 ### "Details pending" no longer means two different things (BL-109)
 
