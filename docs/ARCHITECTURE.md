@@ -94,7 +94,7 @@ view layer itself created and can throw away.
 
 **Two of the five are replaceable at runtime, and they are replaced together.** Saving a new API
 base builds a fresh cache and a fresh client and hands the new client to the hydrator, at
-`src/js/main.js:3236-3238`. The hydrator itself is not rebuilt; only its reference to the client is
+`src/js/main.js:3298-3300`. The hydrator itself is not rebuilt; only its reference to the client is
 swapped. The rate limiter is deliberately not rebuilt either, because the budget it tracks belongs
 to the reader's connection rather than to whichever base URL is configured. The store is never
 replaced at all.
@@ -149,7 +149,7 @@ sequenceDiagram
 The parts of that worth saying in words.
 
 **The transform is pure and the store is the only writer.** The button's handler at
-`src/js/main.js:2106-2109` hands the store a function; the function itself, at
+`src/js/main.js:2108-2111` hands the store a function; the function itself, at
 `src/js/lib/model.js:572-574`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
 `src/js/storage.js:365-392`.
@@ -164,13 +164,13 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3500-3520`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3573-3593`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
-by identity afterwards, at `src/js/main.js:2005`, which is what keeps the keyboard where the reader
+by identity afterwards, at `src/js/main.js:2007`, which is what keeps the keyboard where the reader
 left it. The row list is committed by moving nodes rather than replacing the container, at
-`src/js/main.js:1953-1961`.
+`src/js/main.js:1955-1963`.
 
 **Background work uses the same door.** Hydration writes each fetched issue through the same
 `update` call, at `src/js/hydrate.js:59`, so a metadata fill arriving while the reader is reading
@@ -320,7 +320,7 @@ it.
 
 ## What a per-view split does to these diagrams
 
-BL-042 proposes breaking the 3,606 line view file into per-view modules. A diagram drawn at the
+BL-042 proposes breaking the 3,679 line view file into per-view modules. A diagram drawn at the
 level of function names inside that file would be falsified the day it lands, so each of the three
 above was pitched to survive it. Two do. One survives in shape but has a detail that will need
 rewriting, and it is more useful to say which than to claim all three are safe.

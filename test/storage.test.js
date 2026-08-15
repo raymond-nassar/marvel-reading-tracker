@@ -1198,3 +1198,65 @@ test('an erase that could not be written keeps the staging copy too', () => {
 
   assert.equal(storage.getItem('mrt.state.restore.tmp'), staged, 'untouched, byte for byte');
 });
+
+// BL-113's decision, held the same way and for the opposite outcome. Erasing everything reaches
+// the two restore-family keys and stops there: a salvage copy is a copy of data this app could
+// not read, and the module states at its own removal that nothing but the reader takes one away,
+// because no rule here can know whether they still want it. So the dialog was narrowed to say
+// what it does not reach rather than the route widened to reach it.
+//
+// The block has to be cleared first, which is the whole reason this needs a fixture rather than a
+// glance: a blocked store refuses the write, and nothing behind that guard runs at all, so an
+// erase attempted straight after the failed read never touches anything and would pass this test
+// while proving nothing.
+test('erasing everything leaves the salvage copies, because only the reader removes one', () => {
+  const storage = fakeStorage({ [KEY]: 'corrupt-and-precious' });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.blocked, true, 'the fixture must actually block, or the erase below is not the one shipped');
+  assert.equal(storage.getItem('mrt.state.salvage'), 'corrupt-and-precious', 'and must actually salvage');
+  assert.equal(store.startFresh(), true, 'the block has to go before an erase can land');
+
+  const res = store.eraseAll();
+
+  assert.equal(res.ok, true);
+  assert.equal(storage.getItem('mrt.state.salvage'), 'corrupt-and-precious', 'untouched, byte for byte');
+  assert.equal(store.salvageCopies().length, 1, 'and still offered to the reader who alone can remove it');
+  assert.equal(JSON.parse(storage.getItem(KEY)).listOrder.length, 0, 'while the erase itself did land');
+});
+
+// Why the erase route repaints the salvage list, which no other whole-state route has to do.
+//
+// The first attempt at this test asserted that an erase makes a live copy removable, and the
+// suite refused it: an erase cannot land while a copy is live. Live means the main key holds the
+// bytes the copy was taken of, so either this tab is the blocked one and persist() refuses at the
+// latch, or it is not and persist()'s compare-before-write refuses because the key holds bytes
+// this tab did not put there. Both refusals are correct and neither leaves anything to repaint.
+//
+// The reachable case is the second refusal itself. A conflict rolls back by re-reading, that read
+// fails on the bytes that caused the conflict, and the failure salvages. So pressing Erase can
+// create the very first salvage copy this browser has ever held, on a screen that is at that
+// moment displaying "Nothing is being kept aside", and the erase it was pressed for did not
+// happen. Nothing announces, because nothing was saved, so the list is the only surface that can
+// carry the news besides the banner.
+test('an erase refused by another tab can leave behind the first salvage copy there has been', () => {
+  const storage = fakeStorage({ [KEY]: goodBackup() });
+  const store = new Store({ storage });
+  store.load();
+  assert.equal(store.blocked, false, 'this tab read its data fine');
+  assert.equal(store.salvageCopies().length, 0, 'and nothing is being kept aside yet');
+  // One ordinary edit, because a conflict is a disagreement about write tokens and an exported
+  // backup carries none. Until this tab has written once, its token and an untokened value both
+  // read as null and compare equal, which is deliberate and is what lets a fresh install save at
+  // all. So without this line the erase below is accepted and the test proves nothing.
+  store.update((s) => markRead(s, 2, true));
+  assert.equal(store.lastUpdateOk, true, 'and that edit has to land, or no token was stamped');
+
+  storage.map.set(KEY, 'corrupt-from-somewhere-else');
+  const res = store.eraseAll();
+
+  assert.equal(res.ok, false, 'the erase is refused, because the key holds bytes this tab did not write');
+  assert.equal(store.blocked, true, 'and the re-read that rolls it back cannot read them either');
+  assert.equal(store.salvageCopies().length, 1, 'so a copy now exists that did not when the screen was painted');
+  assert.equal(storage.getItem('mrt.state.salvage'), 'corrupt-from-somewhere-else');
+});

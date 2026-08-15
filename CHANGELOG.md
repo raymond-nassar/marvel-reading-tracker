@@ -14,6 +14,23 @@ quote in a bug report.
 
 ## Unreleased
 
+### Erasing everything now says what it does not reach (BL-113)
+
+In plain English: when this app cannot read your saved data, it puts a copy of it aside rather than
+losing it, and that copy is listed on the backup screen with its own Remove button. Erasing
+everything has never touched those copies, on purpose, because nothing here can know whether you
+still want data it could not open itself. The dialog said it clears everything this browser has
+stored, which was true unless you had one of those copies, and misleading exactly when it mattered.
+
+The erase still works the same way and still leaves the copies alone. What changed is that it now
+tells you so before you confirm, says how many there are and where to find them, and repeats it
+afterwards. If you have no copies kept aside, which is almost everyone, nothing about the dialog or
+the message has changed at all.
+
+One more thing was fixed alongside it. If another tab or program changes your saved data while the
+backup screen is open, pressing Erase is refused and a copy is set aside instead, and the list of
+copies on screen did not update to show it. It does now.
+
 ### A screen reader is now told when detail fetching starts and finishes (BL-090)
 
 Four parts of the app change on screen without anything moving: the note saying whether the metadata
