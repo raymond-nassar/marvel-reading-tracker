@@ -41,8 +41,8 @@ app makes. To show you comic titles, dates and cover pictures, it downloads thos
 same public comics database and downloads the cover images from Marvel's own image servers. That is
 the same kind of request your browser makes when it loads any web page. Those requests do reveal
 which issues you are looking at, because asking for an issue's details or its cover picture is
-exactly what they are. Turning cover art off hides the covers without stopping them being
-requested. What is never sent is your reading progress, your notes, or anything identifying you.
+exactly what they are. Turning cover art off stops the covers being requested at all. What is
+never sent is your reading progress, your notes, or anything identifying you.
 
 ## Run it on your computer
 

@@ -138,7 +138,20 @@ test('the row cache key changes when the day changes under an open tab', () => {
   assert.notEqual(rowCacheKey(item, 9, '2025-06-01'), rowCacheKey(item, 9, '2025-06-02'));
 });
 
+// BL-108's half of the same bug, and it bites in the direction that looks harmless. With covers
+// off the row's <img> is never given a src, so the node is correct on screen; turning the setting
+// back on then reuses that node and the cover never arrives, which makes the switch one way until
+// a reload. The key carries the setting so the reuse cannot happen.
+test('the row cache key changes when cover art is switched', () => {
+  const item = { issueId: 1, read: false, title: 'One' };
+  assert.notEqual(
+    rowCacheKey(item, 9, '2025-06-01', false),
+    rowCacheKey(item, 9, '2025-06-01', true),
+    'a row built without its cover must not be reused once cover art is switched back on',
+  );
+});
+
 test('the row cache key is stable when nothing has changed', () => {
   const item = { issueId: 1, read: false, title: 'One' };
-  assert.equal(rowCacheKey(item, 9, '2025-06-01'), rowCacheKey({ ...item }, 9, '2025-06-01'));
+  assert.equal(rowCacheKey(item, 9, '2025-06-01', true), rowCacheKey({ ...item }, 9, '2025-06-01', true));
 });

@@ -265,24 +265,26 @@ test('the unread count is written before the closed-order return, not after it',
 
 // The cache key is the whole item on purpose. An enumerated list of the fields a row happens to
 // read is one somebody has to keep complete, and a field left out of it is a row that silently
-// stops updating, which is the whole defect the cache would otherwise buy. Two inputs are not part
-// of the item and so must stay named: `currentId`, and today's date, which is what decides whether
-// a badge reads "soon" or "MU" and would otherwise freeze a row built before local midnight.
+// stops updating, which is the whole defect the cache would otherwise buy. Three inputs are not part
+// of the item and so must stay named: `currentId`, today's date, which is what decides whether
+// a badge reads "soon" or "MU" and would otherwise freeze a row built before local midnight, and
+// the cover setting, which since BL-108 decides whether the row's image was requested at all.
 //
 // What the key does is now proved by calling it, in `test/render-rows.test.js`, which BL-064 made
 // possible by giving the key a name and the module an export. What is left here is the half that
 // no unit test can reach: that `renderRows` reads the day once and hands that same day to both
-// judgements, so every row in one pass is scored against one date.
+// judgements, so every row in one pass is scored against one date, and that the setting it hands
+// the key is the one the paint reads.
 test('a cached row is keyed by the whole item, not by a list of fields', () => {
   const main = read('src/js/main.js');
   assert.match(
     main,
-    /return `\$\{JSON\.stringify\(item\)\}\|\$\{item\.issueId === currentId\}\|\$\{today\}`;/,
-    'the row cache key no longer covers every field of the item plus the up-next marker and the day',
+    /return `\$\{JSON\.stringify\(item\)\}\|\$\{item\.issueId === currentId\}\|\$\{today\}\|\$\{covers !== false\}`;/,
+    'the row cache key no longer covers every field of the item plus the up-next marker, the day and the cover setting',
   );
   assert.match(
     main,
-    /const rowKey = rowCacheKey\(item, currentId, today\);/,
+    /const rowKey = rowCacheKey\(item, currentId, today, settings\.covers\);/,
     'renderRows no longer keys its rows through rowCacheKey, so the tested key may not be the used one',
   );
   assert.match(

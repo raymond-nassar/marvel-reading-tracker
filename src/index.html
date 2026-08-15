@@ -526,7 +526,7 @@
                 Covers are loaded straight from Marvel's own servers using the address the metadata API
                 reports. This app stores only that address, never the image itself, and never proxies
                 or re-hosts artwork. Switch covers off and every cover becomes a plain typographic
-                tile, but the image behind it is still requested.
+                tile, and no cover is requested at all.
               </p>
               <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
             </div>
@@ -601,7 +601,7 @@
                 No comic content is stored, copied, proxied, or served. The app tracks which issues you
                 have read and links out to Marvel's own site and reader. Reading an issue requires your
                 own Marvel Unlimited subscription. Cover images load directly from Marvel's own servers.
-                They can be hidden, but they are still requested.
+                Switching cover art off stops them being requested.
               </p>
 
               <h3>Where the metadata comes from</h3>
@@ -650,8 +650,8 @@
                 every issue number still missing them, across every list you keep, starting with
                 the one you are about to read. Cover art is
                 requested from Marvel's image servers as it appears, so those servers see which
-                issues are on screen; switching cover art off hides the covers but does not stop
-                them being requested. Opening an issue asks the metadata API for the reader link
+                issues are on screen; switching cover art off stops them being requested at all.
+                Opening an issue asks the metadata API for the reader link
                 when this copy does not already have it, then hands that one issue to Marvel's
                 reader, or to marvel.com whenever no reader link can be resolved.
               </p>
