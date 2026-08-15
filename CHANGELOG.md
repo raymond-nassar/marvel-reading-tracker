@@ -21,9 +21,9 @@ check that runs when the project's own documents are edited.
 
 One of those checks looks for a passage that has been pasted twice into the same document, which is
 an easy mistake to make when moving a paragraph around and a hard one to spot afterwards. It only
-ever read one of the project's documents. The rule it enforced had been decided by reading eighteen
-of them, so seventeen were being held to a promise nobody was keeping. A duplicated paragraph in the
-contributor guide, the readme or the architecture notes would simply not have been noticed.
+ever read one of the project's documents. The rule it enforced had been decided by reading seven of
+them, so the other seventeen were being held to a promise nobody was keeping. A duplicated paragraph
+in the contributor guide, the readme or the architecture notes would simply not have been noticed.
 
 It now reads all eighteen, and it works out which eighteen by looking at the project rather than
 from a list somebody has to remember to update, so a document added next week is covered the day it

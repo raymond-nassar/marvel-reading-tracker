@@ -576,6 +576,13 @@ export function checkRepeats(text) {
   // the gate itself walks, so the next reading can be taken by running it. The floor has
   // now held across three populations of seven, nine and eighteen documents.
   //
+  // The one-line figure needs its method named, because a review re-derived it as 39 and
+  // both answers are right. 37 is this pass run with its floor lowered to one, which claims
+  // the lines of every repeat it reports, so a line inside a longer repeat is not counted
+  // again on its own. 39 is the count of distinct single lines that occur more than once,
+  // with no claiming at all. The larger figures at three lines and above do not move between
+  // the two methods, and it is the claiming rather than the population that separates them.
+  //
   // The 1 in `n >= 1` above and the 3 here are not the same kind of number, and the reason
   // is the corpus rather than the distance. Each document is read as its own corpus, and
   // that is what keeps the floor at three honest: pooling the 18 into one corpus reports 2
@@ -680,12 +687,24 @@ export function trackedFiles(root) {
 // carries the file it is in, which the pass could not do before: it printed one document's
 // name against every finding because it only ever read that document, and a message naming
 // the wrong file is worse than no message at all.
+//
+// A tracked file that will not open is a fault rather than a skip. `git ls-files` lists a
+// file that has been deleted from the working tree, and it quotes any path outside plain
+// ASCII under the default `core.quotePath`, which is not a name `readFileSync` accepts. Both
+// would otherwise be dropped silently while the closing line still counted them, so the gate
+// would report a population larger than the one it read. "Could not look" and "looked and
+// found nothing" must not print the same, which is the reason `scripts/check-publication.mjs`
+// gives at `scripts/check-publication.mjs:140-144` for the same decision.
 export function checkProse(root, files = trackedFiles(root)) {
   const docs = files.filter(proseDoc);
   const findings = [];
   for (const file of docs) {
     let text;
-    try { text = readFileSync(join(root, file), 'utf8'); } catch { continue; }
+    try {
+      text = readFileSync(join(root, file), 'utf8');
+    } catch (e) {
+      throw new Error(`${file} is tracked but could not be read, so it was not scanned: ${e.message}`, { cause: e });
+    }
     for (const f of checkRepeats(text)) findings.push({ file, ...f });
   }
   return { docs, findings };

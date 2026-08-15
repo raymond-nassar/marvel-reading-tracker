@@ -511,6 +511,23 @@ test('a repeat is reported against the document it is in', () => {
   }
 });
 
+// A tracked file that will not open used to be skipped, while the closing line still counted
+// it, so the gate reported a population larger than the one it read. Raised by the review of
+// this change. The path is reachable without anyone deleting anything: `git ls-files` quotes
+// a path outside plain ASCII, and the quoted form is not a name `readFileSync` accepts.
+test('a document that cannot be read is a fault, not a quiet skip', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'counts-unreadable-'));
+  try {
+    writeFileSync(join(dir, 'THERE.md'), 'a line\n');
+    assert.throws(
+      () => checkProse(dir, ['THERE.md', 'GONE.md']),
+      /GONE\.md is tracked but could not be read/,
+    );
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
 // Each document is its own corpus, and that is what holds the floor at three. Pooled, the
 // eighteen report two repeats at three lines and above, both of them fenced command blocks
 // that CONTRIBUTING and README each state in full. Neither is a defect, so a pooled reading
