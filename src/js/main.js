@@ -2,7 +2,8 @@
 //
 // Rendering follows the "Longbox Focus" design: a rail of reading orders, one hero card for
 // the next unread issue, a short cover shelf, and the full order collapsed behind a summary.
-// Cover art is optional everywhere: `body.nocovers` swaps every image for a typographic tile.
+// Cover art is optional everywhere: with it off no cover is requested and every image is
+// replaced by a typographic tile.
 
 import {
   createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
@@ -476,8 +477,8 @@ function fallbackHue(issue) {
   return hueOf(issue?.seriesName || issue?.title || '');
 }
 
-// Wires an <img>/fallback pair. The fallback is shown when there is no cover URL at all,
-// or when the image fails to load; `body.nocovers` handles the user's preference in CSS.
+// Wires an <img>/fallback pair. The fallback is shown when there is no cover URL at all, when the
+// image fails to load, or when the reader has cover art switched off.
 function paintCover(img, fb, issue, variant) {
   paintCoverUrl(img, fb, coverUrl(issue, variant), fallbackHue(issue));
 }
@@ -490,7 +491,16 @@ function paintCoverUrl(img, fb, url, hue) {
   // Policy, and it fired on every cover paint; setting a property through the CSSOM is
   // not a policy violation, so the gradient in styles.css does the drawing.
   fb.style.setProperty('--h', String(hue));
-  if (!url) {
+  // The setting is read here rather than at the five call sites because this line, `img.src = url`,
+  // is what makes the request, and hiding what it fetched is not the same as not fetching it. The
+  // rules that hide a cover under `body.nocovers` are `display: none`, which suppresses nothing.
+  // Measured in Edge at 1280x900 with House of M imported, counting requests to `i.annihil.us`
+  // from the first paint of a reload: 10 with the setting on, 9 with it off before this gate, 0
+  // with it off after. The one the old code already saved is the hero backdrop, which is a CSS
+  // background whose computed `none` is never fetched, and that is what makes the omission on the
+  // `<img>` beside it read as an oversight rather than a decision. Reading `settings` rather than
+  // the body class also makes the gate independent of whether the class has been applied yet.
+  if (!url || !settings.covers) {
     img.removeAttribute('src');
     img.hidden = true;
     fb.classList.add('show');
@@ -519,6 +529,10 @@ function setCovers(on) {
   settings.covers = Boolean(on);
   saveSettings();
   applyCoversSetting();
+  // renderHome early-returns when its view is hidden, so calling it from the reading view is
+  // cheap. renderReading has no such check and repaints regardless, which is what this needs:
+  // showView never re-renders the reading view, so a check there would leave it blank until the
+  // next store write. Covers skipped while the setting was off were never fetched, so it repaints.
   renderReading();
   renderHome();
   announce(settings.covers ? 'Cover art on.' : 'Cover art off. Covers are shown as text tiles.');
@@ -1893,8 +1907,14 @@ export function commitRows(container, desired) {
 // Two inputs are not in the item and so have to be named: whether this is the up next row,
 // and today's date, which is what decides whether a badge reads "soon" or "MU". Without the
 // date a tab left open across midnight reuses the row it built yesterday for good.
-export function rowCacheKey(item, currentId, today) {
-  return `${JSON.stringify(item)}|${item.issueId === currentId}|${today}`;
+//
+// The cover setting is the third, and it is here because BL-108 made the setting decide whether
+// the row's <img> is given a src at all. Before that it decided only whether the image was
+// painted over, so a reused row was correct either way; now a row built with covers off carries
+// an image that was never requested, and reusing it after the setting comes back on is what
+// would make the switch one way until a reload.
+export function rowCacheKey(item, currentId, today, covers) {
+  return `${JSON.stringify(item)}|${item.issueId === currentId}|${today}|${covers !== false}`;
 }
 
 // Sizes appear in a refusal, which is the one place a reader has to be able to compare two numbers
@@ -1996,7 +2016,7 @@ function renderRows() {
         }
       }
 
-      const rowKey = rowCacheKey(item, currentId, today);
+      const rowKey = rowCacheKey(item, currentId, today, settings.covers);
       const cached = rowCache.get(item.issueId);
       if (cached && cached.key === rowKey) { desired.push(cached.node); continue; }
 

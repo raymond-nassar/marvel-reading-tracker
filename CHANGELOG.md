@@ -14,6 +14,22 @@ quote in a bug report.
 
 ## Unreleased
 
+### Switching cover art off now stops the covers being requested (BL-108)
+
+The cover art switch had a gap between what it said and what it did. Turning it off replaced every
+cover with a plain typographic tile, which is what you can see, but the pictures behind those tiles
+were still being asked for from Marvel's image servers every time. Hiding a picture is not the same
+as not fetching it, and those servers could still see which issues were on your screen.
+
+That is fixed. With cover art off, no cover is requested at all. Measured on a reading list of
+twenty issues: ten requests went out with the switch on, nine with it off before this change, and
+none with it off afterwards. Turning the switch back on fetches the covers that were skipped, in the
+same tab, without needing a reload.
+
+Four places in the app and the readme said, correctly at the time, that switching cover art off did
+not stop the requests. They now say it does. Nothing you have saved is affected, and the switch is
+in the same place it always was.
+
 ### The repository no longer publishes thirty-one branches it had finished with (BL-103)
 
 Nothing about the app changes and nothing you have saved is affected. This is housekeeping on the

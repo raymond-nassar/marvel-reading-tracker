@@ -154,12 +154,13 @@ test('every surface that makes the privacy claim keeps the promises and names th
 // one-directional pattern let "your lists are never sent anywhere" through.
 //
 // The last is a different shape of the same error and the one this item shipped by accident: a
-// setting was said to stop the cover requests. It does not. setCovers writes a class and
-// re-renders, paintCoverUrl assigns img.src with no reference to the setting, and display: none
-// does not cancel a fetch. Measured in Edge with the setting off from the first paint: 8
-// requests to i.annihil.us, the same 8 as with it on. It is written both ways round and with
-// either name for the setting, because the card that owns the switch calls it "covers" and the
-// About view calls it "cover art".
+// setting was said to stop the cover requests, and at the time it did not. setCovers wrote a
+// class and re-rendered, paintCoverUrl assigned img.src with no reference to the setting, and
+// display: none does not cancel a fetch. Measured in Edge with the setting off from the first
+// paint: 8 requests to i.annihil.us, the same 8 as with it on. BL-108 closed that by gating the
+// assignment, so the sentence is now true and the instrument below runs in the other direction.
+// It is written both ways round and with either name for the setting, because the card that owns
+// the switch calls it "covers" and the About view calls it "cover art".
 //
 // The pronoun pair is there because a sentence-scoped pattern is evaded by a full stop. "Your
 // lists are yours alone. They are never sent anywhere." is the same promise as the one that was
@@ -172,6 +173,21 @@ const ABSOLUTES = [
   /\blists?\b[^.]*(?:never sent|not sent|ever sent|never leaves?)/i,
   /\blists?\b[^.]*\.\s*(?:and )?(?:they|these|those)\b[^.]*(?:never sent|not sent|ever sent|never leaves?)/i,
 ];
+
+// BL-108 inverted which of the two classes below the product belongs to, and left the instrument
+// that separates them untouched. It was built when switching cover art off did not stop the cover
+// requests, so a surface writing about the switch had to say they continued; the gate in
+// paintCoverUrl now stops them, so a surface saying they continue is the false one. The detector
+// is unchanged and is asked the same question. What changed is one assertion, the one applied to
+// the shipped surfaces, which is why the corpora are named for what the instrument does with a
+// sentence rather than for what was true of the product when it was written.
+//
+// Everything below this note is the design commentary as it was built, over thirteen rounds, and
+// its "true", "false" and "lie" name the two classes as they stood then: "true" is
+// ACCEPTED_SENTENCES, "false" is CAUGHT_SENTENCES. It is kept in that vocabulary deliberately.
+// Every measurement it quotes, down to counts like "refuses 9" and "pardons 57 of the 121", was
+// taken against those classes, and rewriting the words around the numbers would leave the numbers
+// asserting a measurement nobody made.
 
 // The covers claim needs a different instrument, and the two attempts before this one are the
 // argument for its shape. Both looked for the lie, and both lost on the same two sides at once.
@@ -601,15 +617,39 @@ function unacknowledged(text) {
   return null;
 }
 
+// The same instrument, asked the same question, with the other answer now being the defect.
+// BL-108 made the switch stop the requests, so a surface saying they continue is the false claim
+// and the rule that used to demand that sentence would now demand a lie.
+//
+// This reads the two-sentence window rather than the widened context that `unacknowledged` reads.
+// The reason is a bound on damage, not a rescue: measured against the six shipped surfaces, a
+// widened variant of this check reports clean on all six, exactly as this one does, so widening
+// would not fail anything today. What it would do is let a conviction reach further. A neighbour
+// can convict, and does: 15 of the 18 recorded escapes below are caught here, because a second
+// sentence carrying "still" supplies the acknowledgement for a first sentence that is about the
+// switch. The ordinary truth that covers are requested as they appear is not that neighbour and
+// cannot be, since it trips neither half. Two sentences is as far as a conviction may reach.
+function claimsRequestsContinue(text) {
+  const sentences = text.split(/(?<=[.!?])\s+/);
+  for (let i = 0; i < sentences.length; i += 1) {
+    for (const j of [i, i + 1]) {
+      if (j >= sentences.length) continue;
+      const window = sentences.slice(i, j + 1).join(' ');
+      if (aboutTheSwitch(window) && acknowledges(window)) return window;
+    }
+  }
+  return null;
+}
+
 test('no surface reinstates an unqualified claim that nothing is sent', () => {
   for (const [where, text] of claimSites()) {
     for (const absolute of ABSOLUTES) {
       assert.doesNotMatch(text, absolute, `${where} must not claim ${absolute}`);
     }
     assert.equal(
-      unacknowledged(text),
+      claimsRequestsContinue(text),
       null,
-      `${where} writes about the covers switch without saying the covers are still requested`,
+      `${where} says the covers are requested with cover art switched off, which BL-108 made false`,
     );
   }
 });
@@ -636,10 +676,13 @@ test('a promise about one thing may still be absolute, and one still is', () => 
 // check that reports only what it catches is the one that grew the overclaims this item exists to
 // undo.
 
-// Written to be true, and every one must pass. Twenty-four are the repaired forms of refusals
-// below. Eight must never be treated as being about the covers switch at all, four of them because
-// they use "covers" as an ordinary verb.
-const HONEST_SENTENCES = [
+// Every one of these must pass the instrument: each either acknowledges that the covers are
+// requested or is not about the covers switch at all. Twenty-four are the repaired forms of
+// refusals below. Eight must never be treated as being about the covers switch at all, four of
+// them because they use "covers" as an ordinary verb. Since BL-108 the acknowledging entries are
+// sentences a shipped surface may no longer write, which changes nothing about what it owes them;
+// the eight make no claim about requests and a surface may still write those freely.
+const ACCEPTED_SENTENCES = [
   'Turning covers off does not mean nothing is requested.',
   'Switch covers off and nothing changes: every cover is requested exactly as before.',
   'Even with cover art off there is no reduction in requests for the covers.',
@@ -708,10 +751,12 @@ const HONEST_SENTENCES = [
   'A backup covers what you keep, and nothing in it is hidden from you.',
   'The export covers anything you have hidden.',
 ];
-// Written to be false, and every one must be caught. Each claims or implies that switching the
-// covers off stops the requests. Grouped by the review round that produced them, because the
-// grouping is the evidence that each repair was needed rather than imagined.
-const DISHONEST_SENTENCES = [
+// Every one of these must be caught. Each claims or implies that switching the covers off stops
+// the requests, and says nothing about the requests continuing. Grouped by the review round that
+// produced them, because the grouping is the evidence that each repair was needed rather than
+// imagined. Since BL-108 the claim they make is the true one, and they are still the class the
+// instrument must separate, which is the whole reason it survived the change.
+const CAUGHT_SENTENCES = [
   'Switching cover art off stops the downloads.',
   'Turning cover art off stops the fetches.',
   'Cover art off means no cover requests.',
@@ -1048,7 +1093,7 @@ const RECORDED_ESCAPES = [
 // statement of what this class costs: the rule is indifferent to which conjunction joins two
 // predicates, and the copy is not.
 //
-// Each repaired form is in HONEST_SENTENCES, so this list cannot be satisfied by wording nobody
+// Each repaired form is in ACCEPTED_SENTENCES, so this list cannot be satisfied by wording nobody
 // would write. Two refusals share a repair, and one of the five added with the wider coordinator
 // list repairs to a sentence already recorded as the shipped copy, so the twenty-five have
 // twenty-four distinct repaired forms.
@@ -1105,14 +1150,14 @@ const RECORDED_REFUSALS = [
     'Switch covers off and every cover is hidden, though each cover is still requested.'],
 ];
 
-test('every sentence written to be true is accepted', () => {
-  for (const sentence of HONEST_SENTENCES) {
+test('every sentence the instrument must accept is accepted', () => {
+  for (const sentence of ACCEPTED_SENTENCES) {
     assert.equal(unacknowledged(sentence), null, `refused a true sentence: ${sentence}`);
   }
 });
 
-test('every sentence written to be false is caught', () => {
-  for (const sentence of DISHONEST_SENTENCES) {
+test('every sentence the instrument must catch is caught', () => {
+  for (const sentence of CAUGHT_SENTENCES) {
     assert.notEqual(unacknowledged(sentence), null, `pardoned a false sentence: ${sentence}`);
   }
 });
@@ -1122,7 +1167,7 @@ test('each of the eighteen recorded escapes is still open', () => {
     assert.equal(
       unacknowledged(sentence),
       null,
-      `this escape is now caught, which is good: move it into DISHONEST_SENTENCES and say so in the item, rather than deleting it from here: ${sentence}`,
+      `this escape is now caught, which is good: move it into CAUGHT_SENTENCES and say so in the item, rather than deleting it from here: ${sentence}`,
     );
   }
 });
@@ -1132,11 +1177,11 @@ test('the true sentences this instrument refuses are still refused, and each rep
     assert.notEqual(
       unacknowledged(refused),
       null,
-      `this refusal is now accepted, which is good: move it into HONEST_SENTENCES and say so in the item: ${refused}`,
+      `this refusal is now accepted, which is good: move it into ACCEPTED_SENTENCES and say so in the item: ${refused}`,
     );
     assert.equal(unacknowledged(repaired), null, `the recorded repair does not work: ${repaired}`);
     assert.ok(
-      HONEST_SENTENCES.includes(repaired),
+      ACCEPTED_SENTENCES.includes(repaired),
       `the repair must also be held as a true sentence: ${repaired}`,
     );
   }
@@ -1149,7 +1194,7 @@ test('the true sentences this instrument refuses are still refused, and each rep
 // twenty-four. Both failures are instructions rather than verdicts: a sentence that stops being
 // read as a covers window may well belong in the list, but the comment then has to say so.
 test('the structural counts claimed above the corpus are the counts it has', () => {
-  const notAboutSwitch = HONEST_SENTENCES.filter((sentence) => {
+  const notAboutSwitch = ACCEPTED_SENTENCES.filter((sentence) => {
     const parts = sentence.split(/(?<=[.!?])\s+/);
     for (let i = 0; i < parts.length; i += 1) {
       for (const j of [i, i + 1]) {
@@ -1161,7 +1206,7 @@ test('the structural counts claimed above the corpus are the counts it has', () 
   assert.equal(
     notAboutSwitch.length,
     8,
-    `the comment above HONEST_SENTENCES says eight of them are not about the covers switch, and ${notAboutSwitch.length} are: ${notAboutSwitch.join(' | ')}`,
+    `the comment above ACCEPTED_SENTENCES says eight of them are not about the covers switch, and ${notAboutSwitch.length} are: ${notAboutSwitch.join(' | ')}`,
   );
 
   const repairs = new Set(RECORDED_REFUSALS.map(([, repaired]) => repaired));
@@ -1174,11 +1219,11 @@ test('the structural counts claimed above the corpus are the counts it has', () 
   // Counted over the entries rather than the set, which is what makes this fail on its own rather
   // than restating the assertion above it: every repair being held as a true sentence is already
   // asserted per refusal, so the only way these two counts can disagree is a repaired form written
-  // into HONEST_SENTENCES twice, and nothing else in the file forbids that.
-  const heldAsTrue = HONEST_SENTENCES.filter((sentence) => repairs.has(sentence));
+  // into ACCEPTED_SENTENCES twice, and nothing else in the file forbids that.
+  const heldAsTrue = ACCEPTED_SENTENCES.filter((sentence) => repairs.has(sentence));
   assert.equal(
     heldAsTrue.length,
     24,
-    `the comment above HONEST_SENTENCES says twenty-four of them are repaired forms of refusals, and ${heldAsTrue.length} are`,
+    `the comment above ACCEPTED_SENTENCES says twenty-four of them are repaired forms of refusals, and ${heldAsTrue.length} are`,
   );
 });
