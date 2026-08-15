@@ -94,7 +94,7 @@ view layer itself created and can throw away.
 
 **Two of the five are replaceable at runtime, and they are replaced together.** Saving a new API
 base builds a fresh cache and a fresh client and hands the new client to the hydrator, at
-`src/js/main.js:3355-3357`. The hydrator itself is not rebuilt; only its reference to the client is
+`src/js/main.js:3364-3366`. The hydrator itself is not rebuilt; only its reference to the client is
 swapped. The rate limiter is deliberately not rebuilt either, because the budget it tracks belongs
 to the reader's connection rather than to whichever base URL is configured. The store is never
 replaced at all.
@@ -149,8 +149,8 @@ sequenceDiagram
 The parts of that worth saying in words.
 
 **The transform is pure and the store is the only writer.** The button's handler at
-`src/js/main.js:2151-2154` hands the store a function; the function itself, at
-`src/js/lib/model.js:628-630`, returns a new state and touches nothing. Everything that decides
+`src/js/main.js:2160-2163` hands the store a function; the function itself, at
+`src/js/lib/model.js:635-637`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
 `src/js/storage.js:365-392`.
 
@@ -164,11 +164,11 @@ so the row goes back to how it was and the reason appears in a notice. A change 
 must never be left on screen looking saved.
 
 **Repainting everything does not mean rebuilding everything.** The callback repaints all seven
-surfaces, the six screens plus the blocked banner, at `src/js/main.js:3669-3689`, but the reading
+surfaces, the six screens plus the blocked banner, at `src/js/main.js:3678-3698`, but the reading
 order compares each row against a cache key built from the whole item and reuses the node when
 nothing about it changed, and the full order
 is skipped entirely while its container is closed. Focus is captured before a rebuild and restored
-by identity afterwards, at `src/js/main.js:2050`, which is what keeps the keyboard where the reader
+by identity afterwards, at `src/js/main.js:2059`, which is what keeps the keyboard where the reader
 left it. The row list is committed by moving nodes rather than replacing the container, at
 `src/js/main.js:1956-1964`.
 

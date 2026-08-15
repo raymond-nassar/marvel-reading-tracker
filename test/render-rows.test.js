@@ -199,3 +199,20 @@ test('the issue page tells the same three states apart', () => {
   assert.equal(synopsisFallback({ hydrated: true }), 'No synopsis is recorded for this issue.');
   assert.equal(synopsisFallback({ hydrated: false }), 'Details have not been fetched yet.');
 });
+
+// normalizeIssue keeps hydrated and detailsRefused mutually exclusive, but the merge does not:
+// hydrated is OR-preserved across an upsert and detailsRefused is last write wins, so an issue
+// added from a search and then imported inside a curated order that has no entry for it carries
+// both. Asking the refusal first reported no record over a record the tracker was holding.
+test('a record the tracker holds outranks a refusal, however the two came to be set together', () => {
+  const both = { hydrated: true, detailsRefused: true, source: 'curated', digitalId: 42 };
+  assert.equal(detailsState(both), null, 'a hydrated issue has nothing pending and nothing missing');
+  assert.equal(synopsisFallback(both), 'No synopsis is recorded for this issue.');
+  assert.equal(synopsisFallback({ ...both, description: 'Held.' }), 'Held.');
+});
+
+test('and a genuine refusal, which is never hydrated, still says so on both surfaces', () => {
+  const refused = { hydrated: false, detailsRefused: true, source: 'curated' };
+  assert.equal(detailsState(refused), 'norecord');
+  assert.equal(synopsisFallback(refused), DETAILS_BADGE.norecord.hint);
+});

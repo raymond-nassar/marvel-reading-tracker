@@ -25,8 +25,8 @@ such issue exists, so the button spent your request allowance and changed nothin
 The app now tells the two apart. An issue nothing has looked up yet still says "details pending" and
 is still worth fetching. An issue the snapshot has no record of says "no details held", says why on
 its own page, and is left out of both the fetch button and the **Details pending** filter, so
-neither offers you work that cannot be done. If a lookup ever does succeed for one of them, the
-label clears itself.
+neither offers you work that cannot be done. The app does not quietly retry one of these on its own;
+the label lifts if you later add the same issue from a search or a series that does carry details.
 
 Nothing you have saved is affected and no re-import is needed. A tracker imported before this change
 corrects itself the next time you open the app.

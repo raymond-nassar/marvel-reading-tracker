@@ -1989,9 +1989,16 @@ export function rowCacheKey(item, currentId, today, covers) {
 // division the availability badge beside it uses. Both are short enough not to wrap a row at 320
 // pixels, and "no details held" is deliberately about the snapshot rather than about the issue: the
 // comic exists, the record of it does not.
+//
+// A held record answers before a refusal does. normalizeIssue keeps the two apart, but the merge
+// does not: hydrated is OR-preserved across an upsert while detailsRefused is last write wins, so
+// an issue can carry both after it is added twice from unlike sources. Asking the refusal first
+// then reported "no record" over a record the tracker was holding. Reproduced by adding issue 7
+// from a search and then importing an Ultimate order whose entry for it is empty.
 export function detailsState(item) {
+  if (item?.hydrated) return null;
   if (item?.detailsRefused) return 'norecord';
-  if (!item?.hydrated && item?.source !== 'manual') return 'pending';
+  if (item?.source !== 'manual') return 'pending';
   return null;
 }
 
@@ -2015,11 +2022,13 @@ function detailsBadge(item) {
 
 // The same three states on the issue page, where the sentence stands alone rather than beside a
 // label. "Details have not been fetched yet" told a reader to wait for something that was never
-// coming, which is the whole of what this item was about.
+// coming, which is the whole of what this item was about. The order matches detailsState for the
+// same reason: a record the tracker holds is not one the snapshot has no record of.
 export function synopsisFallback(issue) {
   if (issue?.description) return issue.description;
+  if (issue?.hydrated) return 'No synopsis is recorded for this issue.';
   if (issue?.detailsRefused) return DETAILS_BADGE.norecord.hint;
-  return issue?.hydrated ? 'No synopsis is recorded for this issue.' : 'Details have not been fetched yet.';
+  return 'Details have not been fetched yet.';
 }
 
 // Sizes appear in a refusal, which is the one place a reader has to be able to compare two numbers

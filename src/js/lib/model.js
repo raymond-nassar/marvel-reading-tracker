@@ -94,10 +94,17 @@ export function hasMetadata(input) {
 // a queue that could only ever spend rate limit to learn the same 404 again.
 //
 // A curated order is the output of a completed vendoring run, so every item in it has already been
-// looked up. An item that arrives from one holding nothing is therefore one upstream refused, not
-// one nobody has asked about, and that is knowable at import without asking anything. A refusal met
-// at runtime is recorded by markDetailsRefused instead. Both land in this one field so the rest of
-// the app asks the question once.
+// looked up. An item that arrives from one holding nothing has therefore been asked about and come
+// back empty, and that is knowable at import without asking anything. A refusal met at runtime is
+// recorded by markDetailsRefused instead. Both land in this one field so the rest of the app asks
+// the question once.
+//
+// The inference is one step weaker than it reads. vendor-orders.mjs catches every lookup failure
+// alike and writes the same empty item for a 404, an exhausted retry budget and a lost connection,
+// so an outage during a vendoring run would produce items this treats as refusals. It holds for the
+// data shipped today: all 63 empty items are in the two Ultimate orders, and four of them were
+// checked against the live API on 2026-08-15 and answered 404. Making the vendoring run record what
+// it was actually told is filed as BL-126.
 function refusedOnArrival(input) {
   return input?.source === 'curated' && !hasMetadata(input);
 }
