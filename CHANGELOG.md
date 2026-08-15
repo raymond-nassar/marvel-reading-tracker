@@ -14,6 +14,29 @@ quote in a bug report.
 
 ## Unreleased
 
+### Cover pictures are only ever fetched from Marvel (BL-086)
+
+The app has always told you that cover pictures come straight from Marvel and that nothing else
+about your reading leaves your browser. The first half of that was a hope rather than a rule. The
+address of each cover comes from the public comics database the app asks for issue details, and
+the app would have fetched a picture from wherever that address pointed. A database that had been
+tampered with, or a different one you had pointed the app at, could have named a server of its own
+and had your browser contact it every time a cover appeared on screen, which would have told that
+server who you are and what you are reading.
+
+Covers are now fetched from Marvel's image server and nowhere else. An address naming anything
+else is refused before your browser is asked for it, and the issue shows the same plain lettered
+tile it already shows for an issue that never had a cover. Nothing you have saved is affected and
+no cover you can currently see will disappear: every one of the 700 covers in the reading orders
+that ship with the app is already on that server, as were all 36 checked against the live
+database, going back to issues published in 1963.
+
+The reason this was left open turned out to be a mistake in the reasoning rather than an oversight.
+When the browser security rules were first written, pinning them to one server was rejected because
+the app lets you point it at your own copy of the comics database, and pinning would have broken
+that. True of the database, but the app never asks the database for a picture, only for an address
+inside its answer, so your own copy keeps working exactly as before.
+
 ### A slow metadata service no longer repeats itself at you (BL-124)
 
 When the service this app fetches issue details from asks it to slow down, it waits and tries

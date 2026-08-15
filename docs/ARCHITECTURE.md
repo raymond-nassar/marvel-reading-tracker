@@ -16,7 +16,7 @@ the prose rather than in a binary nobody can diff.
 ## The three entry points
 
 The app is served from one origin and has three pages, each loading exactly one module. The tracker
-itself is loaded at `src/index.html:743`. The launch page, which is the tab a reader's issue opens
+itself is loaded at `src/index.html:748`. The launch page, which is the tab a reader's issue opens
 into, is loaded at `src/open.html:19`. A fault-injection harness that exists for development and is
 no part of the running app is loaded at `src/dev-faults.html:129`.
 
@@ -150,7 +150,7 @@ The parts of that worth saying in words.
 
 **The transform is pure and the store is the only writer.** The button's handler at
 `src/js/main.js:2108-2111` hands the store a function; the function itself, at
-`src/js/lib/model.js:572-574`, returns a new state and touches nothing. Everything that decides
+`src/js/lib/model.js:582-584`, returns a new state and touches nothing. Everything that decides
 whether a write happened, whether it stuck, and what the screen shows next lives in one method,
 `src/js/storage.js:365-392`.
 
@@ -276,7 +276,7 @@ database named at `src/js/cache.js:9-11`, so it cannot compete for quota with th
 progress. That separation is the reason the app is pinned to one origin: the comment at
 `src/js/cache.js:3-5` records that IndexedDB is restricted on `file://` origins and that
 `file://`, `localhost` and `127.0.0.1` are three separate storage buckets, and the server binds one
-of them at `server.mjs:13-14`.
+of them at `server.mjs:14-15`.
 
 **The launch page writes nothing.** It reads the configured API base out of `mrt.settings` at
 `src/open.js:63` and refuses anything it is not allowed to call. Nothing about the reader's

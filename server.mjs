@@ -8,6 +8,7 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { COVER_IMAGE_HOST } from './src/js/lib/coverHost.js';
 
 const ROOT = resolve(fileURLToPath(new URL('./src', import.meta.url)));
 const HOST = '127.0.0.1';
@@ -31,20 +32,28 @@ const TYPES = {
 // markup smuggled through a field like an issue title cannot execute. Everything under
 // src/ loads from a file for exactly that reason, so no inline allowance is needed.
 //
-// `connect-src` and `img-src` are deliberately wider than the default endpoint. The API
-// base is user-configurable at runtime, and the rule for what is accepted lives in
+// `connect-src` is deliberately wider than the default endpoint. The API base is
+// user-configurable at runtime, and the rule for what is accepted lives in
 // src/js/lib/apiBase.js: any https origin, or plain http to loopback. Pinning this to
 // marvel.emreparker.com would silently break anyone pointing the app at their own mirror.
 // Restricting the scheme still rules out plaintext http to arbitrary hosts. The loopback
 // entries here have to stay in step with that module, or a base the settings form accepts
-// would be blocked at fetch time with no obvious explanation. Covers can come from
-// whatever host the configured
-// API names, and the favicon in index.html is a data: SVG.
+// would be blocked at fetch time with no obvious explanation.
+//
+// `img-src` used to be wide for the same stated reason, and the reason was borrowed rather
+// than checked. The app never requests an image from the API base: a cover address is a field
+// inside the response body, and every service serving that shape reports Marvel's own CDN. So
+// the mirror argument that keeps connect-src wide does not reach img-src, and leaving it wide
+// only meant a compromised or hostile service could name any host it liked and have the browser
+// fetch it on every render. The host is imported from the same module that decides which cover
+// URLs may be built, so the directive and the URL policy cannot disagree. The favicon in
+// index.html is a data: SVG, which is what the data: source is for, and nothing else in the
+// app loads an image over the network.
 const CSP = [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self'",
-  "img-src 'self' https: data:",
+  `img-src 'self' https://${COVER_IMAGE_HOST} data:`,
   "font-src 'self'",
   "connect-src 'self' https: http://127.0.0.1:* http://localhost:*",
   "object-src 'none'",

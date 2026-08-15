@@ -7,6 +7,7 @@
 // Lists therefore hold ordered ID references only, and every issue's metadata is stored once.
 
 import { compareIssues } from './sort.js';
+import { isAllowedCoverUrl } from './coverHost.js';
 
 export const SCHEMA_VERSION = 2;
 
@@ -175,7 +176,16 @@ export function normalizeCover(cover) {
   if (!cover || typeof cover !== 'object') return null;
   const path = typeof cover.path === 'string' ? cover.path.replace(/^http:\/\//i, 'https://') : null;
   const ext = cover.ext ?? cover.extension ?? 'jpg';
-  if (!path || !/^https:\/\//i.test(path)) return null;
+  if (!path) return null;
+  // This is the only place a cover URL is admitted, and every request for one is built from what
+  // it returns, so refusing here is what makes the host pin a pin rather than a preference. The
+  // scheme is checked inside isAllowedCoverUrl, which is why there is no separate https test.
+  //
+  // A refused cover becomes no cover, the same answer an over-long one gets, so the view falls
+  // back to the typographic tile it already draws for an issue that never had one. Keeping the
+  // address instead would store a URL the app has just decided it will never request, and a
+  // restored backup carrying one would put it back on every load.
+  if (!isAllowedCoverUrl(path)) return null;
   // Truncating a URL would produce a link to nothing, so an over-long one is refused outright the
   // same way a non-https one is. The longest real cover path across every shipped order is 58.
   if (path.length > MAX_URL) return null;

@@ -58,7 +58,9 @@ test('an over-long issue url is dropped rather than truncated', () => {
 });
 
 test('an over-long cover path is refused rather than truncated', () => {
-  assert.equal(normalizeCover({ path: `https://x.example/${long(MAX_URL)}`, extension: 'jpg' }), null);
+  // The host is the allowed one, so length is what refuses this. Written against a rejected host
+  // the assertion would still pass and would no longer measure the bound it names.
+  assert.equal(normalizeCover({ path: `https://i.annihil.us/${long(MAX_URL)}`, extension: 'jpg' }), null);
 });
 
 test('a real url and cover of ordinary length still survive', () => {
@@ -74,7 +76,7 @@ test('a real url and cover of ordinary length still survive', () => {
 });
 
 test('a cover extension is bounded, so a padded one cannot ride in on the filename', () => {
-  assert.equal(normalizeCover({ path: 'https://x.example/a', extension: long(50000) }).ext.length <= 8, true);
+  assert.equal(normalizeCover({ path: 'https://i.annihil.us/a', extension: long(50000) }).ext.length <= 8, true);
 });
 
 // The list order is filtered for membership, not uniqueness, so a repeated valid id was carried
