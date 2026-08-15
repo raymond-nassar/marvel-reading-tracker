@@ -372,7 +372,7 @@ stubbed with a three-issue fixture, so no vendored file is read and no network r
 npm run browser:prove
 ```
 
-Runs each of the five scenarios again under eight injected faults, and checks that each fault turns
+Runs each of the five scenarios again under nine injected faults, and checks that each fault turns
 the scenario aimed at it red. A check that has never been seen to fail is not evidence, and this is
 where that is demonstrated rather than asserted: it reports the named assertion each fault breaks.
 It takes about three minutes, nearly all of it waiting out the timeouts a broken app produces, so

@@ -4578,7 +4578,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:8768-8770` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:8787-8789` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4588,11 +4588,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:206-208`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8787-8791`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:8806-8810`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8602-8604` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:8621-8623` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4800,7 +4800,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:1919-1928` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:1921-1930` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:196-200` and
 `PRODUCT_BACKLOG.md:206-208` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6395,14 +6395,14 @@ so whichever is installed last is the one the app reaches first, and the instrum
 installed first to sit underneath. Recording from `evaluateOnNewDocument` fixed it, and the five
 written by then were all caught.
 
-Two of the eight mutations redden all five scenarios rather than one. That is construction, not
+Two of the nine mutations redden all five scenarios rather than one. That is construction, not
 loose aim: every scenario imports the fixture first, so breaking the import or the write it
 performs is upstream of everything. The proof pass therefore reports the named assertion each
 mutation breaks in the scenario it was aimed at, which is the claim being defended, rather than a
 list of scenario ids that would read the same either way.
 
-Review found three more of the same kind, and they are the reason the mutation count is eight
-rather than five. Presence is not operability: both recovery buttons are static markup inside the
+Review found three more of the same kind, and they took the mutation count from five to eight.
+Presence is not operability: both recovery buttons are static markup inside the
 banner at `src/index.html:150`, so a document-scoped `querySelector` finds them on a healthy app
 with the banner hidden, and the pair carrying the scenario's whole headline passed with both
 buttons disabled and invisible. They are scoped to the showing banner now and ask whether each
@@ -6428,6 +6428,25 @@ the import or the launch threw outside any handler and Node exited 1 with a stac
 check's word for a failing assertion. Both prerequisites route through the same exit 2 now,
 measured: an `MRT_EDGE` naming a text file reports that Edge could not be launched, and a
 syntactically broken driver reports that it could not be loaded.
+
+Verifying those repairs found the first of them still half blind, which is the ninth mutation and
+the reason this paragraph exists. `checkVisibility()` called with no argument answers a narrower
+question than the name suggests: every option defaults to off, so it reports only `display: none`,
+`content-visibility: hidden` and the `hidden` attribute. It returns true for `visibility: hidden`
+and true for `opacity: 0`, and the second is not a hypothetical hiding style, it is this
+stylesheet's own. `src/styles.css:635` puts the per-row actions out of reach with exactly
+`opacity: 0`. Measured in the same Edge: both offer rows passed with the two buttons faded to
+nothing and `pointer-events: none`, with nothing under the pointer at either button's centre. The
+three options are passed explicitly now, and `fade-recovery` hides the buttons that way and is
+caught by both rows reporting `visible: false`. It hides them by inserting a rule into the sheet
+the page already loaded rather than by appending a `<style>` element, because `style-src 'self'`
+would refuse the second, which is the same trap the mutations hit in the first place.
+
+`forget-marks` gained a guard in the same round. It rewrites every write to the state key, and the
+recovery scenario writes its own corrupt payload through that same path, so the mutation was
+reddening recovery's byte-for-byte row as well. That was harness interference dressed as a caught
+fault. It now passes through any value that carries no read map, and reports that nothing but the
+scenario it was aimed at turns red.
 
 The check serves the app on an ephemeral port, and that is constraint 5 turned around. A different
 origin being a different storage bucket is a hazard for the app and exactly the isolation a check

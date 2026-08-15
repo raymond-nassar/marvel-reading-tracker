@@ -226,6 +226,10 @@ const MUTATIONS = [
         if (key !== 'mrt.state.v2') return real.call(this, key, value);
         try {
           const parsed = JSON.parse(value);
+          // Only touch a write the app made. The recovery scenario writes a corrupt payload of its
+          // own through this same setItem, and rewriting that one would redden recovery's
+          // byte-for-byte row as harness interference rather than as an app fault.
+          if (!Object.prototype.hasOwnProperty.call(parsed, 'read')) return real.call(this, key, value);
           parsed.read = {};
           return real.call(this, key, JSON.stringify(parsed));
         } catch {
@@ -268,6 +272,20 @@ const MUTATIONS = [
           const el = document.querySelector(id);
           if (el) el.disabled = true;
         }
+      });
+    },
+  },
+  {
+    id: 'fade-recovery',
+    breaks: 'recovery',
+    why: 'the two buttons are faded out the way this stylesheet already hides row actions, so they are on screen and out of reach',
+    script: () => {
+      document.addEventListener('DOMContentLoaded', () => {
+        // Inserted through the CSSOM rather than as a <style> element, because the app sends
+        // style-src 'self' and an injected stylesheet would be refused rather than applied.
+        const sheet = document.styleSheets[0];
+        if (!sheet) return;
+        sheet.insertRule('#btn-download-salvage, #btn-start-fresh { opacity: 0; pointer-events: none; }', sheet.cssRules.length);
       });
     },
   },
@@ -405,12 +423,25 @@ const SCENARIOS = [
       // querySelector finds them on a perfectly healthy app with the banner hidden. What the
       // shipped copy promises is that the reader can act on them, so the query is scoped to the
       // banner only while it is showing, and asks whether each button is reachable and enabled.
+      //
+      // checkVisibility() with no argument answers a narrower question than it looks like it does:
+      // it defaults every option off and so returns true for both `visibility: hidden` and
+      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:635` hides the row
+      // actions with exactly `opacity: 0`, so it is this stylesheet's established way of putting a
+      // control out of reach, and the defaults are blind to it. Measured in the same Edge this
+      // drives: with the two buttons faded that way both rows passed while nothing sat under the
+      // pointer at either button's centre.
       const offers = await page.evaluate(() => {
         const banner = document.querySelector('#blocked-banner:not([hidden])');
         const usable = (sel) => {
           const el = banner?.querySelector(sel);
           if (!el) return { found: false, visible: false, enabled: false };
-          return { found: true, visible: el.checkVisibility(), enabled: !el.disabled };
+          const visible = el.checkVisibility({
+            visibilityProperty: true,
+            opacityProperty: true,
+            contentVisibilityAuto: true,
+          });
+          return { found: true, visible, enabled: !el.disabled };
         };
         return { download: usable('#btn-download-salvage'), fresh: usable('#btn-start-fresh') };
       });
@@ -721,7 +752,7 @@ async function main() {
     // the scenario it is aimed at, on the assertion that carries the claim. A mutation that turns
     // nothing red means the scenario it was written for is not asserting what it claims to.
     //
-    // Two of the seven redden every scenario, and that is not loose aim. Every scenario imports the
+    // Two of the nine redden every scenario, and that is not loose aim. Every scenario imports the
     // fixture order first, so a mutation of the import or of the write that import performs is
     // upstream of all of them by construction. What distinguishes aim is the named assertion that
     // fails in the aimed-at scenario, which is why it is printed rather than a bare scenario id.
