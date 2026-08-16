@@ -82,6 +82,8 @@ carry a cover URL and 1,394 carry creator credits.
 publication: which issue, in which series, on what date. A description was Marvel's own prose
 reproduced verbatim, 798 of them and 151,840 characters, all removed on 2026-08-15 under BL-130.
 The key is `null` on every record, the vendoring script no longer writes it, and a test refuses it.
+A further 41, 7,193 characters, were removed from the design mockups described below, which a
+first pass missed because it looked only at the files the catalog names.
 
 Six records copy nothing, and they are the only place the sentence above does not hold. Two sit in
 [`src/data/xmen_claremont.json`](../src/data/xmen_claremont.json) and four in
@@ -122,10 +124,26 @@ recording how it was derived, including the cases where an outside guide was use
 reference: the collected-edition line-up and the X-Men sequence both follow Comic Book Herald's
 guides, which those orders' catalog cards say in as many words.
 
+### Design mockups
+
+[`design/mockups/`](../design/mockups) holds five static HTML mockups and one data file,
+[`design/mockups/mock-data.js`](../design/mockups/mock-data.js), which its own first line describes
+as generated from one of the reading orders. It is the only vendored Marvel data in the repository
+outside `src/data/`, and until 2026-08-15 it was the only one this document did not name. It holds
+41 issue records with the same copied fields as an order, and it carried 41 descriptions, 7,193
+characters, every one of them byte-identical to a description that was shipped under `src/data/`.
+Those are now `null`. Every mockup already rendered a fallback when the field was absent, so they
+paint the way the app itself now does.
+
+This subsection exists because a boundary defined by a list is a boundary somebody has to keep
+complete. The first pass at BL-130 read the catalog, so it saw fourteen files and stopped, and the
+test written to guard the removal inherited exactly the same blind spot. Both now walk the tree.
+
 ### Everything else
 
 Source, scripts, tests, styles and documents are authored here and are what the MIT grant is
-about.
+about. The design mockups above are the one exception inside a directory that otherwise holds only
+authored work, which is why they are named separately rather than left to this sentence.
 
 ## What each field means now
 
@@ -269,7 +287,7 @@ fetched value, and a test fails if any comes back.
 It does not reach git history. The prose was committed, and a clone of a public repository carries
 the whole history rather than only its latest state. Measured on 2026-08-15 across the 246 commits
 then on `main`: 243 carry item description prose in the vendored orders, from which 455 distinct
-descriptions and 89,558 characters are recoverable. The distinct figures are lower than the 798 and
+descriptions and 89,460 characters are recoverable. The distinct figures are lower than the 798 and
 151,840 above because the same issue appears in more than one reading order.
 
 What the app serves is clean and what a checkout gets is clean. The object store behind it is not.

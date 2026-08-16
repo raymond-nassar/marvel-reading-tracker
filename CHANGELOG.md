@@ -35,12 +35,24 @@ source they came from is still reachable, so they can be fetched again if the an
 be yes. The record of where the data came from now also says which of its open questions could be
 settled by asking the people upstream, and which could not be settled by asking anyone.
 
+The first attempt at this missed 41 more blurbs, in a file behind the design sketches of the app
+that was built from one of the reading lists. The reason it was missed is worth more than the miss:
+both the removal and the test guarding it worked from the project's own list of reading lists, so
+neither could see a file that list does not mention. Both now look at every file in the project
+instead. The record of where the data came from had never mentioned that file either, and now does.
+
 One limit is worth stating plainly rather than leaving to be found later. Taking something out of a
 project's current files does not take it out of the project's history, and anyone who copies a
 public project gets its history as well. The blurbs sit in almost every past version, so they would
 stay recoverable by someone who went looking. Clearing that too means rewriting the history, which
 is still cheap because nobody outside holds a copy, and which stops being cheap the moment the
 project is made public. That one has been written down rather than decided.
+
+The automatic check that reads the whole history before publication used to finish by saying the
+history was clean. That was true of what it looks for, which is passwords and keys and paths that
+belong to one person's computer, and misleading about everything else, because the blurbs in the
+history are exactly what someone running that check the night before opening the project would
+think it had cleared. It now says what it looked at instead.
 
 ### A checklist for the day this project is opened to the public (BL-129)
 

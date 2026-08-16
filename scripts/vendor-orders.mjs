@@ -99,8 +99,11 @@ function parseIssueNumber(title) {
 //
 // Scope it to titles and series names. Marvel's `description` is their prose, and it double-spaces
 // after sentences on purpose; collapsing that would rewrite their copy to no reader's benefit, and
-// unlike a title it is not a field anything matches, sorts or searches on. A sweep for doubled
-// spaces in src/data therefore still finds them in descriptions, and that is correct, not a miss.
+// unlike a title it is not a field anything matches, sorts or searches on. Since BL-130 the field
+// is no longer vendored at all, so a sweep for doubled spaces in src/data no longer finds any in a
+// description. The 47 it does find are series names out of the index, which a different generator
+// writes. Neither fact is a reason to widen this function: the placeholder-title hazard above is
+// unchanged and is the one that would cost a reader their progress.
 function cleanText(s) {
   return String(s ?? '').replace(/\s+/g, ' ').trim();
 }

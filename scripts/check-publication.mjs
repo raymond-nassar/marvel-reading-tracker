@@ -343,7 +343,16 @@ function main() {
     console.log('\nThis run did not establish that the population is clean. Treat it as unanswered rather than as a pass.');
     return 2;
   }
-  console.log('\nNothing to remediate. Record this revision and this population beside any claim that the history is clean.');
+  // This used to sign off as "the history is clean", which was true of what it looks for and false
+  // of what a reader would take it to mean. Removing Marvel's description text from the tree on
+  // 2026-08-15 left that prose recoverable from 243 of the 246 commits then on main, and this gate
+  // never looked for it, so a green run said nothing about the one history problem that expires at
+  // publication. Whoever runs this before flipping the repository public is precisely the reader who
+  // would have read the pass as covering both. So the sentence now names its own population.
+  console.log('\nNothing to remediate: nothing credential-shaped, no path private to one machine, and');
+  console.log('nothing new under a protected root. That is the whole of what this gate looked for, and');
+  console.log('third-party text in history is not part of it. Record this revision and this population');
+  console.log('beside any claim that rests on them.');
   return 0;
 }
 

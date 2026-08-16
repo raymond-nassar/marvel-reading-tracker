@@ -197,9 +197,11 @@ const ISSUE_URL = /^https:\/\/(?:www\.)?marvel\.com\/comics\/issue\/\d+(?:\/|$)/
 // theirs. Collapsing internal whitespace only ever removes redundant spacing and changes no other
 // character, so the title still says exactly what Marvel says it says.
 //
-// Scope it to titles and series names. Marvel's `description` is their prose, and it double-spaces
-// after sentences on purpose; collapsing that would rewrite their copy to no reader's benefit, and
-// unlike a title it is not a field anything matches, sorts or searches on.
+// Scope it to titles and series names. Marvel's `description` was their prose, and it double-spaced
+// after sentences on purpose; collapsing that would have rewritten their copy to no reader's
+// benefit, and unlike a title it was not a field anything matched, sorted or searched on. Since
+// BL-130 the field is no longer vendored, so that reasoning is now history rather than a live
+// exclusion. The live reason to keep this narrow is the placeholder-title hazard.
 function cleanText(s) {
   return String(s ?? '').replace(/\s+/g, ' ').trim();
 }
