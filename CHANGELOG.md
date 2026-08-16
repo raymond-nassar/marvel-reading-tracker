@@ -14,6 +14,36 @@ quote in a bug report.
 
 ## Unreleased
 
+### You can start the tracker by double-clicking a file (BL-135)
+
+In plain English: there is now a file in the project folder you can double-click to start the
+tracker, called **Start on Windows.cmd** on Windows and **Start on macOS.command** on a Mac. Before
+this you had to open a terminal, move to the right folder and type a command, which is three
+instructions that can each go wrong. Now it is one double-click, and the window it opens tells you
+what to do if Node.js is not installed instead of closing before you can read it.
+
+Nothing you have saved is affected. The file starts the same app at the same address, deliberately
+so: the address is what your browser files your reading progress under, and a start file that
+quietly used a different one would have looked exactly like losing everything. Typing the command
+still works and is unchanged, so nothing you already do stops working.
+
+### The installed tracker opens even when the app is not running (BL-136)
+
+In plain English: if you have installed the tracker as an app, its icon now opens whether or not
+the app itself is running. Before, an icon opened with nothing running gave you your browser's
+"this site cannot be reached" page, which reads as a broken app rather than as a program that has
+not been started.
+
+What you get with nothing running is the tracker exactly as you left it: everything marked read,
+every list you have made. What you do not get is anything that has to be fetched while you are
+there, so a cover you have never seen stays blank and looking up a comic's details will not work
+until the app is running again. Nothing you have saved is affected either way, and nothing is sent
+anywhere: the copy your browser keeps is on your own computer, and it deliberately holds only the
+app's own files, never a comic cover or anything else from elsewhere.
+
+While the app is running, nothing changes at all. The tracker still asks for every file fresh
+before it will use the copy, so you cannot be shown a stale page by this.
+
 ### The tracker can now be installed as an app (BL-134)
 
 In plain English: you can now give the tracker its own window and its own icon in the Start menu,
@@ -22,9 +52,9 @@ always have, then use your browser's install option. Nothing you have saved is a
 same app at the same address, so your reading progress is exactly where it was, and installing or
 uninstalling never touches it.
 
-What it does not do is start the app for you. The tracker still needs its small local server
-running, and an installed window opened with nothing running will simply say the site cannot be
-reached. The install is a nicer way in, not a way to skip step 2 of the instructions.
+On its own this did not start anything, and an installed window opened with nothing running simply
+said the site could not be reached. Both halves of that are answered by the two changes above: a
+file you double-click to start the app, and a copy your browser keeps so the icon opens either way.
 
 The app icon is a red tile with the same M as the tab icon. Because browsers require a picture file
 here rather than the drawn icon used for the tab, the picture is generated from a written

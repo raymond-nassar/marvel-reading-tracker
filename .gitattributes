@@ -1,0 +1,13 @@
+# Line endings for the two launcher scripts, which are the only files here whose behaviour
+# depends on them.
+#
+# A shell script with CRLF endings fails on macOS before it runs a line of its own: the kernel
+# reads the shebang as `/bin/bash\r`, which does not exist, and reports "bad interpreter" naming
+# a path the reader never typed. A .cmd is the mirror image, because cmd.exe has never parsed a
+# multi-line parenthesised block reliably without CRLF.
+#
+# Both are pinned rather than left to core.autocrlf, which is a setting on whoever happens to be
+# cloning. Nothing else is listed: a blanket `text=auto` would renormalise every file in the tree
+# and bury this in a formatting commit.
+*.cmd text eol=crlf
+*.command text eol=lf
