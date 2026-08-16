@@ -10,7 +10,8 @@ data file, where it came from, which fields were copied, and what the upstream a
 
 **It draws no legal conclusion, and it is not legal advice.** Whether the tree as a whole may be
 redistributed is an open question recorded at the end, and it is the reason this repository has
-not been published.
+not been published. What else would have to change on the day that question is answered is
+collected in [the publication runbook](PUBLICATION_RUNBOOK.md).
 
 ## What the MIT licence covers
 
@@ -82,6 +83,17 @@ description.
 issue, in which series, on what date, at which id. A description is Marvel's own marketing prose,
 reproduced verbatim, and 798 of them are committed here.
 
+Six records copy nothing, and they are the only place the sentence above does not hold. Two sit in
+[`src/data/xmen_claremont.json`](../src/data/xmen_claremont.json) and four in
+[`src/data/xmen_claremont_complete.json`](../src/data/xmen_claremont_complete.json), standing for
+checklist lines the upstream holds no issue for. Each carries `placeholder: true`, no `url`, and an
+`issueId` computed here by [`scripts/vendor-orders.mjs`](../scripts/vendor-orders.mjs) from the
+order and the title and then negated, so it can never be read as one of Marvel's. The title is the
+one written into an order compiled in this repository, so nothing in those six was fetched at all.
+That is a statement about where the bytes came from and not about who may license them: the title
+still names a Marvel series and issue, so these six sit inside the fourth open question at the end
+of this document along with everything else under `src/data/`.
+
 Cover art is referenced and never copied. `cover.path` is a URL on Marvel's image host and the
 app renders it from there, so no image bytes are hosted, proxied, cached or stored. That is a
 standing constraint of this project rather than an incidental property of the schema.
@@ -144,6 +156,12 @@ a record carrying nothing beyond the issue's id, title, number and marvel.com li
 field of the thirteen listed above null or empty. All 63 are in the two Ultimate universe orders,
 and because those two overlap they are 34 distinct issues rather than 63.
 
+The six placeholders are not among those 63, and the two are worth keeping apart because they fail
+for opposite reasons. A placeholder marks a line the upstream never had an issue for, so no lookup
+was attempted and there is no Marvel link to hold. These 63 were looked up and came back empty, so
+the link is there and everything behind it is missing. Counted together they are the 69 items the
+app treats as carrying no metadata.
+
 Nothing already saved is affected. The tree holds 873 distinct cover URLs across 1,404 records; 60
 of the 473 distinct URLs the tree held on 2026-08-12, sampled evenly across that whole set, all
 returned an image. That is a sample and not the population, so the claim it supports is that nothing
@@ -188,7 +206,7 @@ position at the root.
 
 The specific questions a review would need to answer, recorded so the work is not re-derived:
 
-- Whether reproducing 508 Marvel issue descriptions verbatim is within any exception, and whether
+- Whether reproducing 798 Marvel issue descriptions verbatim is within any exception, and whether
   the answer changes if the field is dropped and the app shows nothing in its place.
 - Whether the series and creator listings, being facts, carry protection as a compilation at
   6,990 and 4,341 entries respectively.
