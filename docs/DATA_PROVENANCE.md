@@ -357,7 +357,11 @@ descriptions and 89,460 characters are recoverable. The distinct figures are low
 151,840 above because the same issue appears in more than one reading order.
 
 What the app serves is clean and what a checkout gets is clean. The object store behind it is not.
-That is a publication decision rather than a code one, and it is recorded here unresolved.
+That is a publication decision rather than a code one, and it was taken on 2026-08-16: the owner
+chose to accept, leaving the recoverable prose in place and publishing the repository as it stands.
+The reasoning and what it was weighed against are in `docs/PUBLICATION_RUNBOOK.md`. What follows is
+the measurement that decision was taken on, kept because a decision without its evidence is only an
+assertion.
 
 One correction to an earlier version of that paragraph, which said rewriting history was available
 now at its lowest ever cost and that flipping the repository public was the moment that stopped being
@@ -371,5 +375,5 @@ are another. Rewriting is therefore necessary for the routes that work and suffi
 them. What the flip actually closes is the choice between those routes, which is why it is settled in
 the publication runbook rather than here, and why rewriting was not done on anyone's behalf.
 
-Until then the safe reading is the narrow one: the MIT grant covers what this repository wrote,
-and the committed metadata is Marvel's, held here under no stated permission.
+Absent the legal review, the safe reading stays the narrow one: the MIT grant covers what this
+repository wrote, and the committed metadata is Marvel's, held here under no stated permission.

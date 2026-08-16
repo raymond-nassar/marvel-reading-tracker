@@ -91,8 +91,17 @@ project, asking the hosting service to delete the leftovers, and accepting them.
 known to work. The service's published policy is that it will not remove material that is merely
 somebody else's property rather than a security risk, and doing it anyway would also destroy the
 record of what changed in every past proposed change, which is most of what that route was supposed
-to save. The choice is deliberately left to the owner, because opening the project up closes all
-three.
+to save.
+
+The owner chose to accept, on 2026-08-16. The blurbs stay in the project's saved past, and it is
+opened up as it stands rather than rebuilt somewhere clean. Nothing you have saved is affected and
+nothing on screen changes either way: the app itself stopped showing the blurbs when they were
+removed, and this decision is only about the copies left behind in the project's own history. What
+tipped it was that the material is a company's marketing copy rather than anything private, and that
+the one route known to remove it would have thrown away the recorded discussion of every change ever
+made to this project. The rewrite is kept rather than thrown away, so that if the publisher ever
+objects the project can be closed again and rebuilt clean from a tool already proven to reproduce it
+exactly.
 
 ### A checklist for the day this project is opened to the public (BL-129)
 

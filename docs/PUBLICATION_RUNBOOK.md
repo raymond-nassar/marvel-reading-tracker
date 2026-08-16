@@ -61,8 +61,23 @@ request. Or **accept** the 455 permanently. The rewrite itself is built and veri
 hard part: it reproduces the current tip byte for byte, preserves every commit subject, author and
 date, and leaves all 809 evidence anchors untouched. The rewritten `main` was then put through all
 seven gates exactly as a fresh repository would run them, and passes every one: anchors 0 drifted,
-963 tests, lint, counts, sizes, contrast and the publication gate all clean. Settle the route before
-publishing. There is no third option afterwards.
+963 tests, lint, counts, sizes, contrast and the publication gate all clean. That work is kept rather
+than discarded, because it is the evidence for what the decision below was choosing between.
+
+**The owner chose to accept, on 2026-08-16.** The 455 descriptions stay in this repository's history
+and behind its pull request refs, and it is published as it stands rather than rebuilt somewhere
+clean. The reasoning is recorded rather than left to be reconstructed: what is exposed is a third
+party's marketing copy rather than anything private to anyone, the working tree and everything the
+app serves are already clean of it, the only route that would remove it costs all 116 pull request
+discussions and the review history in them, and the route that would have kept those is one the
+forge's own published policy says it does not perform for material of this kind. The rewrite stays
+built and unused, and the two paragraphs above stay as the evidence it was weighed against.
+
+This decision is not retractable after publication, which is why it was taken before it rather than
+carried into it. What would change it is a demand from the rights holder, and that is a takedown
+route rather than a planning one: the working tree is already clean, so the remaining response would
+be to make the repository private again and then run the new-repository route, which stays available
+for exactly as long as somebody keeps a copy of the transform.
 
 Everything below assumes both have been settled.
 
@@ -122,8 +137,8 @@ that must not be rewritten, for the same reason the dated tracking artifacts are
 - `PRODUCT_BACKLOG.md:6868-6873`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:6911-6915`, why `required: true` collects nothing today.
 - `PRODUCT_BACKLOG.md:9015-9020`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1347-1350`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1359-1362`, the released note that the private channel is not switched on.
+- `CHANGELOG.md:1356-1359`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1368-1371`, the released note that the private channel is not switched on.
 
 The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met

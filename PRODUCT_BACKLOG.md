@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-Ninety-nine items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -17,8 +17,8 @@ BL-063, BL-064, BL-065, BL-066, BL-067, BL-068, BL-069, BL-070, BL-071, BL-072, 
 BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, BL-085, BL-086, BL-087,
 BL-088, BL-089, BL-090, BL-093, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101,
 BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-114,
-BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128 and
-BL-129.
+BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
+BL-129 and BL-131.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -243,13 +243,13 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Ready | src/js/main.js:2027-2032 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
 | BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:52-55 |
-| BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:77-85 |
+| BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:92-100 |
 | BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:36-44 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
 | BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:103-105 |
-| BL-131 | Decide the publication route, because a force-push cannot clean the history | Enabler | EP-12 | Extends BL-130 | 8 | 13 | 13 | 5 | 6.8 | none | Measured | Ready | docs/PUBLICATION_RUNBOOK.md:30-65 |
+| BL-131 | Decide the publication route, because a force-push cannot clean the history | Enabler | EP-12 | Extends BL-130 | 8 | 13 | 13 | 5 | 6.8 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:30-80 |
 | BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Shipped | .github/workflows/ci.yml:68-91 |
 | BL-112 | Let a speech user say what a button says | Defect | EP-07 | Replaces BL-091 | 5 | 3 | 5 | 2 | 6.5 | none | Measured | Shipped | absent: any accessible name built out of its control's visible label, read of all 21 aria-label sites in src/js/main.js and an audit of 303 rendered controls in Edge |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:129-139 |
@@ -4585,7 +4585,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9608-9610` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9621-9623` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4595,11 +4595,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:207-209`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9627-9631`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9640-9644`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9442-9444` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9455-9457` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4807,7 +4807,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2223-2232` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2232-2241` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:197-201` and
 `PRODUCT_BACKLOG.md:207-209` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -9118,8 +9118,8 @@ BL-099 is still the item that closes.
 - [x] Decide, on the record, whether the description prose is to be removed from git history
 - [x] Measure what a rewrite of the published branches would and would not reach
 - [x] Verify the rewrite by re-running the evidence anchors gate and the full suite on the result
-- [ ] Choose a route that reaches what a force-push cannot, because pushing here does not
-- [ ] Record the chosen route and its reason in the publication runbook either way
+- [x] Choose a route that reaches what a force-push cannot, because pushing here does not
+- [x] Record the chosen route and its reason in the publication runbook either way
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -9248,6 +9248,19 @@ enumerates today, but whether support would exercise discretion against its own 
 The scores stay as they are. The time criticality that put this at 6.8 was always about the moment
 of publication, and that has not changed: it has moved from the last moment a rewrite is free to the
 last moment the choice above is available at all.
+
+**Resolved on 2026-08-16: accept.** The owner chose to leave the 455 descriptions in history and
+behind the pull request refs, and to publish this repository as it stands rather than rebuild it
+somewhere clean. Three things made that the cheaper answer. What is exposed is a third party's
+marketing copy rather than anything private, so the harm it can do is a licensing question rather
+than a security one. The working tree, the app and every checkout are already clean of it under
+BL-130, so what remains is reachable only by someone who goes looking through the object store. And
+the only route that would have removed it costs all 116 pull request discussions, which are most of
+the record of how this repository was built. The rewrite is kept rather than discarded, because it
+is what makes the decision reversible in the one direction that matters: if the rights holder ever
+asks, the repository can be made private again and the new-repository route run then, on a transform
+already proven to reproduce the tip byte for byte. What is not reversible is the exposure between
+publication and that moment, and that is the risk being accepted rather than a gap in the plan.
 
 ## Existing epics and stories
 
