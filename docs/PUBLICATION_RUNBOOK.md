@@ -101,7 +101,7 @@ Do them in this order. The first pair has a real dependency and the third does n
 
 One thing changes with nobody touching it. Every `required: true` in the issue forms is inert while
 the repository is private and starts being enforced on publication, which is recorded with its
-reasoning at `PRODUCT_BACKLOG.md:6911-6915`. The forms do not need editing. It is listed here
+reasoning at `PRODUCT_BACKLOG.md:6912-6916`. The forms do not need editing. It is listed here
 because a form that suddenly rejects a submission looks like a regression to whoever hits it first.
 
 ## The prose that stops being true
@@ -127,18 +127,18 @@ exception. Ten of the twenty-one are in `PRODUCT_BACKLOG.md` and two more are in
 Eleven of those twelve say what was true when a piece of work was delivered, and they are history
 that must not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
 
-- `PRODUCT_BACKLOG.md:6279-6292`, why secret scanning was left unticked, and what push protection
+- `PRODUCT_BACKLOG.md:6280-6293`, why secret scanning was left unticked, and what push protection
   does when asked for without it.
-- `PRODUCT_BACKLOG.md:6684-6687`, why the private reporting task was left open.
-- `PRODUCT_BACKLOG.md:6746-6748`, what the changelog entry beside it was corrected to say.
-- `PRODUCT_BACKLOG.md:6769-6773`, why the contribution guide is written in the future tense.
-- `PRODUCT_BACKLOG.md:6776-6782`, why the code of conduct offers no private channel.
-- `PRODUCT_BACKLOG.md:6843-6849`, why the branch rules task was left open and could not be read.
-- `PRODUCT_BACKLOG.md:6868-6873`, why blank issues stay enabled.
-- `PRODUCT_BACKLOG.md:6911-6915`, why `required: true` collects nothing today.
-- `PRODUCT_BACKLOG.md:9015-9020`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1365-1368`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1377-1380`, the released note that the private channel is not switched on.
+- `PRODUCT_BACKLOG.md:6685-6688`, why the private reporting task was left open.
+- `PRODUCT_BACKLOG.md:6747-6749`, what the changelog entry beside it was corrected to say.
+- `PRODUCT_BACKLOG.md:6770-6774`, why the contribution guide is written in the future tense.
+- `PRODUCT_BACKLOG.md:6777-6783`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6844-6850`, why the branch rules task was left open and could not be read.
+- `PRODUCT_BACKLOG.md:6869-6874`, why blank issues stay enabled.
+- `PRODUCT_BACKLOG.md:6912-6916`, why `required: true` collects nothing today.
+- `PRODUCT_BACKLOG.md:9016-9021`, the three settings named as refused on this repository today.
+- `CHANGELOG.md:1386-1389`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1398-1401`, the released note that the private channel is not switched on.
 
 The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
@@ -147,6 +147,41 @@ that sentence is describing a state that no longer holds.
 This document is not on its own list. It says in its own second section that three settings cannot
 be turned on today, which publication falsifies as surely as anything above, but a runbook is spent
 by the event it describes and rewriting it would be pointless. Read it as dated the day it is used.
+
+## What the rewrites cost the evidence anchors gate
+
+Read this before starting the edits above rather than after, because the cheaper version of that
+work is only available while the edits are being made.
+
+Nine files carry the ten live passages, and 54 citations in the evidence anchors lock point into
+those nine. They do not all break, and which of them do is under the control of whoever writes the
+replacements:
+
+- 14 name a range overlapping a passage being rewritten. These break however careful anyone is,
+  because the gate fingerprints the content of the lines a citation names and that content is the
+  thing changing. One of them spans a whole file, the ownership file, so it breaks on any edit to
+  that file at all.
+- 39 sit after an edit in the same file and are otherwise untouched by it. These break only if the
+  replacement is a different number of lines from the passage it replaced.
+- 1 sits before every edit in its file and cannot be affected.
+
+So the whole of the difference between a 14 anchor round and a 53 anchor one is whether each
+replacement has the same line count as what it replaces. That is a free constraint on prose being
+rewritten anyway, and it is worth taking.
+
+Measured rather than reasoned, on the security policy, whose publication-conditional paragraph is
+six lines and which carries a citation ninety lines below it. Replacing those six lines with six
+different ones drifted two anchors, the passage's own and a wider range containing it. Replacing
+them with eight drifted three, the third being that distant citation, which no edit had gone near.
+
+The test suite does not defend this prose, which is worth knowing before a red run suggests
+otherwise. Two assertions come close and neither breaks. The one reading the security policy names a
+sentence above the paragraph that changes, and it stays true after publication. The one reading the
+issue forms holds a setting rather than a sentence, and the second section of this document is the
+argument for that setting continuing to hold.
+
+Then bless the round the way any round is blessed, reading each printed pairing against the claim
+printed beside it. A round this size is exactly where that reading gets skipped.
 
 ## How the list was found, and how to check it
 

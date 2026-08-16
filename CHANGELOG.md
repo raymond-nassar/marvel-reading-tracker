@@ -14,6 +14,27 @@ quote in a bug report.
 
 ## Unreleased
 
+### The publication checklist now says what its own instructions cost (BL-132)
+
+In plain English: nothing you have saved is affected, and nothing about the app changes. This adds a
+note to the checklist that gets followed on the day this project is opened to everyone.
+
+That checklist lists twenty-one sentences which stop being true the moment the project is opened,
+and it says what each one claims so they can be rewritten. What it did not say is how much work
+rewriting them sets off elsewhere. This project keeps a list of references pointing at particular
+lines of particular files, and a build check that fails when a reference stops naming what it
+claims. Editing those sentences moves lines, and 54 references point into the files being edited.
+
+Most of that turns out to be avoidable, which is the part worth writing down. A reference sitting
+below an edit only breaks when the replacement is a different number of lines from what it replaced,
+so writing each replacement to the same length as the original cuts the work from 53 references to
+14. That was tested rather than assumed. Replacing a six line paragraph with six lines broke two
+references, and replacing the same paragraph with eight lines broke three, the extra one being a
+reference ninety lines further down that no edit had gone near.
+
+The note also records that no test defends the old wording. A long list of broken references on the
+day is the expected result of doing the work, rather than a sign that something went wrong.
+
 ### The publisher's own blurbs are no longer stored here (BL-130, BL-131)
 
 In plain English: nothing you have saved is affected. The one visible change is on the panel that
