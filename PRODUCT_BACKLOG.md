@@ -242,7 +242,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
 | BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:52-55 |
-| BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:35-43 |
+| BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:36-44 |
 | BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:36-44 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
@@ -4583,7 +4583,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9373-9375` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9379-9381` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4593,11 +4593,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:207-209`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9392-9396`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9398-9402`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9207-9209` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9213-9215` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4805,7 +4805,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2138-2147` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2143-2152` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:197-201` and
 `PRODUCT_BACKLOG.md:207-209` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -8976,33 +8976,39 @@ checked and one that is only written down.
 
 **BL-129: Collect the publication-conditional statements into a runbook**
 
-- [x] Enumerate every statement in the tracked tree that is true only while this repository is private
+- [x] List the statements that are true only while this repository is private, and record the search that finds them
 - [x] Separate the live statements from the historical ones that must not be rewritten
 - [x] Record the settings that become available on the day, and the one review that gates them
 - [x] Link it from the entry points a maintainer would actually reach it by
 
 Constraint gate: checked 1 to 11, none breached.
 
-Sixteen passages across nine files are true only while this repository is private, and they were
+Twenty-one passages across ten files are true only while this repository is private, and they were
 written that way on purpose: a security policy that describes a reporting route nobody can use is
 worth more than one that pretends the route is there. The cost is deferred rather than avoided.
-Publication falsifies all sixteen in the same moment, none of them is a `path:line` claim, and so no
-gate will notice. The publication gate and the surface gate both pass on a tree full of them,
+Publication falsifies all twenty-one in the same moment, none of them is a `path:line` claim, and so
+no gate will notice. The publication gate and the surface gate both pass on a tree full of them,
 because what they check is history and what the remote advertises rather than prose.
 
-The enumeration was run over `git ls-files` rather than assembled from memory, and the first run of
-it was still wrong. It matched single lines against a pattern requiring the word "repository", so a
-passage spread over two lines or phrased around "this project" was invisible to it, and it missed
-both of `CHANGELOG.md`'s released notes about protections that cannot be switched on yet. Review
-caught it. The figure above comes from three independent sweeps on differing vocabularies, whose
-results were then read passage by passage, and the runbook now names all sixteen rather than
-counting them, so a future reader can check the list instead of trusting the number.
+The list was wrong twice before it was right, and the second miss is the more instructive. The first
+enumeration matched single lines against a pattern requiring the word "repository", so a passage
+carried over two lines was invisible to it, and it missed both of `CHANGELOG.md`'s released notes
+about protections that cannot be switched on yet. The second read passages rather than lines, and
+still keyed every sweep on the private side of the phrasing, so it missed every passage written from
+the public side. That is how a file quoting GitHub's own "make this repository public to enable this
+feature" stayed off a list that already cited a block pointing straight at it.
 
-Six of the sixteen are in this file and two are in `CHANGELOG.md`. Seven of those eight sit inside
-blocks recording what was true when a piece of work was delivered. Rewriting those would corrupt a
-record to tidy a document, so the runbook marks them as history and leaves them alone. The eighth,
-in this file's introduction, is a live claim about which acceptance items cannot currently be met,
-and that one does have to change.
+So this no longer offers a count as its evidence. The runbook names every passage it holds, states
+the rule for membership, and carries the search that finds them, whose recall was measured at
+twenty-one of twenty-one with two false positives, both of which are sentences about the list rather
+than members of it. A count is a claim a reader cannot check. A list with the search beside it is one
+they can, and this item is the second time that difference was paid for rather than argued.
+
+Ten of the twenty-one are in this file and two are in `CHANGELOG.md`. Eleven of those twelve sit
+inside blocks recording what was true when a piece of work was delivered. Rewriting those would
+corrupt a record to tidy a document, so the runbook marks them as history and leaves them alone. The
+twelfth, in this file's introduction, is a live claim about which acceptance items cannot currently
+be met, and that one does have to change.
 
 Three settings are the actionable half: secret scanning with push protection behind it, private
 vulnerability reporting, and branch protection on `main`. Each is free on a public repository and

@@ -1,14 +1,15 @@
 # Publication runbook
 
-Sixteen passages in this repository are true only while it is private, spread over nine files. They
+Twenty-one passages in this repository are true only while it is private, spread over ten files. They
 say so plainly, which was the right way to write them: a security policy that describes a reporting
 route nobody can use is more use than one that pretends the route is there. The cost is that
-publishing makes all sixteen false in the same moment, and none of them is a `path:line` claim, so
+publishing makes all of them false in the same moment, and none of them is a `path:line` claim, so
 no gate will notice.
 
-This document is the list, and every one of the sixteen is named below rather than counted. It
-exists so the flip is something to work through rather than something to remember, and so the
-person doing it is not also the person who has to find out what it touches.
+This document names every one of them rather than counting them, and it carries the search that
+finds them, because that list has been incomplete twice. Treat the count as a floor and the search
+as the instrument. It exists so the flip is something to work through rather than something to
+remember, and so the person doing it is not also the person who has to find out what it touches.
 
 Nothing here is a legal opinion, and nothing here says the repository should be published. The first
 section says why it has not been.
@@ -63,23 +64,57 @@ false rather than what to write instead.
 | `docs/DATA_PROVENANCE.md:11-13` | The open legal question is the reason this repository has not been published | Only edit this once the first section of this document is genuinely closed, and record what the answer was |
 | `scripts/check-publication.mjs:2-5` | The gate's own opening comment states the repository is private | The gate keeps working and keeps being worth running. The comment describes a condition that has changed |
 | `test/publication-gate.test.js:11-15` | The gate answers a question asked once, on the day someone publishes | Written for the day before. Worth a sentence saying the day happened, because the tests still defend the boundary afterwards |
+| `.github/CODEOWNERS:5-8` | Code owner approval cannot be required, quoting GitHub's 403 and its "make this repository public" remedy | The obstacle is gone once step 3 below is done. The sentence before it, that the file routes nothing because there is one collaborator, is about headcount and stays true |
 
-The eight rows above are the live passages outside the two records, and the records are the
-exception. Six of the sixteen are in `PRODUCT_BACKLOG.md` and two more are in `CHANGELOG.md`. Seven
-of those eight say what was true when a piece of work was delivered, and they are history that must
-not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
+The nine rows above are the live passages outside the two records, and the records are the
+exception. Ten of the twenty-one are in `PRODUCT_BACKLOG.md` and two more are in `CHANGELOG.md`.
+Eleven of those twelve say what was true when a piece of work was delivered, and they are history
+that must not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
 
+- `PRODUCT_BACKLOG.md:6277-6290`, why secret scanning was left unticked, and what push protection
+  does when asked for without it.
 - `PRODUCT_BACKLOG.md:6682-6685`, why the private reporting task was left open.
 - `PRODUCT_BACKLOG.md:6744-6746`, what the changelog entry beside it was corrected to say.
 - `PRODUCT_BACKLOG.md:6767-6771`, why the contribution guide is written in the future tense.
 - `PRODUCT_BACKLOG.md:6774-6780`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6841-6847`, why the branch rules task was left open and could not be read.
+- `PRODUCT_BACKLOG.md:6866-6871`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:6909-6913`, why `required: true` collects nothing today.
-- `CHANGELOG.md:1262-1265`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1274-1277`, the released note that the private channel is not switched on.
+- `PRODUCT_BACKLOG.md:9013-9018`, the three settings named as refused on this repository today.
+- `CHANGELOG.md:1267-1270`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1279-1282`, the released note that the private channel is not switched on.
 
-The eighth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
+The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
 that sentence is describing a state that no longer holds.
+
+This document is not on its own list. It says in its own second section that three settings cannot
+be turned on today, which publication falsifies as surely as anything above, but a runbook is spent
+by the event it describes and rewriting it would be pointless. Read it as dated the day it is used.
+
+## How the list was found, and how to check it
+
+A passage belongs here when publication makes it false or takes away its reason. That rule is easy
+to state and hard to search for, because the passages are written from both sides. Some say this
+repository is private. Others quote GitHub refusing something and telling you to make the repository
+public. A sweep keyed on one side misses the other, and that is not a hypothetical: the first
+enumeration matched single lines against a pattern requiring the word "repository" and missed both
+changelog entries, and the second read whole passages but still keyed on the private side and missed
+five more, including the ownership file quoting the public-side phrasing verbatim.
+
+So re-derive the list rather than trusting it:
+
+```
+git --no-pager grep -n -I -i -E "is (still )?private|private repositor|private reporting|is not public|not been published|make this (repository|one) public|repository public to enable|not available for this repository|Upgrade to GitHub Pro|while it is private|on (a|any) public repositor|visible to the public|cannot be (enabled|switched on|turned on)" -- . ":(exclude).copilot-tracking" ":(exclude)docs/anchors.lock.json" ":(exclude)docs/PUBLICATION_RUNBOOK.md"
+```
+
+Measured against the twenty-one above, that finds every one of them, on 42 matching lines across 12
+files. The two files that are not on the list are false positives of a kind worth recognising: they
+are sentences about the list rather than members of it, one in `README.md` and one in the comment on
+the test that holds the security policy and the issue forms together. A block recording a defect
+already fixed is the other shape to expect, and it stays true after publication.
+
+Read every hit as a passage rather than as a line. Counting lines is what went wrong the first time.
 
 ## Verifying afterwards
 
@@ -94,8 +129,8 @@ npm run publication:surface
 
 Run the surface gate after fetching, since it reads what the remote advertises and a stale copy
 will report on branches that no longer exist. Then run the full set of checks the way any change
-runs them, because six of the nine files above are documents the counts gate reads and the anchors
-gate reads all nine.
+runs them, because six of the ten files above are documents the counts gate reads and the anchors
+gate reads all ten.
 
 The honest summary of this section: nothing in this runbook is enforced. The checklist is the
 enforcement, which is the argument for writing it down before the day rather than during it.

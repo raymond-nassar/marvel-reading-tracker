@@ -297,7 +297,7 @@ Conduct and decisions: [the code of conduct](CODE_OF_CONDUCT.md) applies to ever
 repository, and [the governance record](GOVERNANCE.md) says how roadmap, release, moderation and
 maintainer decisions get made.
 
-Publishing: [the publication runbook](docs/PUBLICATION_RUNBOOK.md) collects the sixteen statements
+Publishing: [the publication runbook](docs/PUBLICATION_RUNBOOK.md) names the passages
 in this repository that are true only while it is private, the three GitHub settings that cannot be
 switched on until it is not, and the one review that gates all of it.
 

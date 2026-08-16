@@ -239,6 +239,11 @@
     "fp": "70a500b42fa5cf24",
     "head": "**It draws no legal conclusion, and it is not legal advice.** Whether the tree as a whole may be"
   },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true#github-codeowners-5-8|.github/CODEOWNERS:5-8|0": {
+    "anchor": ".github/CODEOWNERS:5-8",
+    "fp": "853a10620054248f",
+    "head": "# does not request review from a pull request's own author. Requiring code owner approval is a"
+  },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true#github-issue-template-config-yml-1-7|.github/ISSUE_TEMPLATE/config.yml:1-7|0": {
     "anchor": ".github/ISSUE_TEMPLATE/config.yml:1-7",
     "fp": "06276e7a178f03bb",
@@ -264,13 +269,13 @@
     "fp": "a4d03ce2c75f64fd",
     "head": "// The publication gate answers a question that only gets asked once, on the day someone decides to"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1262-1265|0": {
-    "anchor": "CHANGELOG.md:1262-1265",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1267-1270|0": {
+    "anchor": "CHANGELOG.md:1267-1270",
     "fp": "a1bbc9d008c99c4d",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1274-1277|0": {
-    "anchor": "CHANGELOG.md:1274-1277",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1279-1282|0": {
+    "anchor": "CHANGELOG.md:1279-1282",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -278,6 +283,11 @@
     "anchor": "PRODUCT_BACKLOG.md:36-40",
     "fp": "d51c1af5a8c0c183",
     "head": "BL-096's reporting route cannot be turned on while this repository is private, which was checked"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6277-6290|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6277-6290",
+    "fp": "5a16aa8c31c583fe",
+    "head": "Secret scanning is the task left unticked, and the clause \"where the repository plan supports them\""
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6682-6685|0": {
     "anchor": "PRODUCT_BACKLOG.md:6682-6685",
@@ -299,10 +309,25 @@
     "fp": "85a655f4b40673f2",
     "head": "The code of conduct is written for this project rather than adopted from a template, and it names"
   },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6841-6847|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6841-6847",
+    "fp": "b72eadfcd70292d3",
+    "head": "Shipped, with the fifth task open and recorded as a blocker rather than ticked, in the shape BL-099"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6866-6871|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6866-6871",
+    "fp": "6863c064dec49090",
+    "head": "Blank issues stay enabled, and that is a promise the security policy already made rather than a"
+  },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6909-6913|0": {
     "anchor": "PRODUCT_BACKLOG.md:6909-6913",
     "fp": "a6ceb97902e6f2c0",
     "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
+  },
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:9013-9018|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9013-9018",
+    "fp": "38d80111ac4d6ef8",
+    "head": "Three settings are the actionable half: secret scanning with push protection behind it, private"
   },
   "docs/UX_STUDY.md|as-is-journey-map#checking-progress|src/index.html:368-370|0": {
     "anchor": "src/index.html:368-370",
@@ -374,8 +399,8 @@
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:9233|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9233",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:9239|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9239",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -994,8 +1019,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2138-2147|0": {
-    "anchor": "CHANGELOG.md:2138-2147",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2143-2152|0": {
+    "anchor": "CHANGELOG.md:2143-2152",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1109,24 +1134,24 @@
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9207-9209|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9207-9209",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9213-9215|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9213-9215",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9373-9375|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9373-9375",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9379-9381|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9379-9381",
     "fp": "87bb7f46165bd632",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9392-9396|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9392-9396",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:9398-9402|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9398-9402",
     "fp": "74995e9f6a8b1fa8",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:272-579|0": {
     "anchor": "README.md:272-579",
-    "fp": "70d5a1cd3e619007",
+    "fp": "e052b9110583d952",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:29-48|0": {
@@ -3671,7 +3696,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:272-339|0": {
     "anchor": "README.md:272-339",
-    "fp": "92f7b704b07dbcbe",
+    "fp": "91b6655b0b8942ac",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-098|.github/CODEOWNERS:1-51|0": {
@@ -3804,8 +3829,8 @@
     "fp": "db1d1bd19c9865ab",
     "head": "Six records copy nothing, and they are the only place the sentence above does not hold. Two sit in"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-129|docs/PUBLICATION_RUNBOOK.md:35-43|0": {
-    "anchor": "docs/PUBLICATION_RUNBOOK.md:35-43",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-129|docs/PUBLICATION_RUNBOOK.md:36-44|0": {
+    "anchor": "docs/PUBLICATION_RUNBOOK.md:36-44",
     "fp": "b326ebb40539f3d4",
     "head": "1. **Secret scanning, and then push protection**, closing BL-089. Push protection depends on secret"
   },
