@@ -135,6 +135,22 @@ you are online.
 
 To start using it, click **Browse the catalog** and pick a reading order.
 
+### Optional: install it as an app
+
+Once the page is open, most browsers will offer to install it. In Edge or Chrome, look for an
+install icon at the right-hand end of the address bar, or open the browser menu and choose
+**Install** or **Apps**, then **Install this site as an app**. Safari calls it **Add to Dock**.
+
+Installing gives the tracker its own window, without the address bar and tabs, and an entry in
+the Start menu, the Dock or the applications list. It is the same app with the same reading
+progress, opened at the same address, so nothing you have saved is affected either way. You can
+uninstall it from the same menu.
+
+**It does not replace step 2.** The app still needs the small web server running, because that is
+what serves the page. So start the app as usual first, then open the installed window. If you
+open the installed window with nothing running, it will say the site cannot be reached, which
+means the server is not started rather than that anything is broken.
+
 ### Stopping it, and starting it again another day
 
 To stop the app, click the terminal window where it is running and press **Ctrl+C**. On a

@@ -14,6 +14,23 @@ quote in a bug report.
 
 ## Unreleased
 
+### The tracker can now be installed as an app (BL-134)
+
+In plain English: you can now give the tracker its own window and its own icon in the Start menu,
+the Dock or your applications list, instead of a browser tab you have to find again. Open it as you
+always have, then use your browser's install option. Nothing you have saved is affected: it is the
+same app at the same address, so your reading progress is exactly where it was, and installing or
+uninstalling never touches it.
+
+What it does not do is start the app for you. The tracker still needs its small local server
+running, and an installed window opened with nothing running will simply say the site cannot be
+reached. The install is a nicer way in, not a way to skip step 2 of the instructions.
+
+The app icon is a red tile with the same M as the tab icon. Because browsers require a picture file
+here rather than the drawn icon used for the tab, the picture is generated from a written
+description of that shape and a test redraws it and compares, so nobody has to take an unreadable
+image file on trust.
+
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 
 In plain English: nothing you have saved is affected, and the app itself does not change. This
