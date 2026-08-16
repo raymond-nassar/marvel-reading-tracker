@@ -260,6 +260,71 @@ That is not advice about whether to write to anyone, which is a decision this do
 make. It is recorded so the next reader does not have to work out for themselves which of the four
 questions an email could reach.
 
+### What the first hand's own terms said
+
+Those terms can no longer be read from Marvel. The terms page and the attribution page both answer
+403, which is consistent with the portal's retirement recorded above. They were read instead from
+the Internet Archive, at a snapshot taken 2025-10-08, three weeks before that retirement and so the
+last state this document can evidence: the [API terms of
+use](https://web.archive.org/web/20251008073256/https://developer.marvel.com/terms) and the
+[attribution and rate limit
+rules](https://web.archive.org/web/20251008073256/https://developer.marvel.com/documentation/attribution),
+both retrieved 2026-08-15.
+
+Five passages bear on this document, quoted rather than summarised because the wording is the whole
+of the point.
+
+- Section 4 grants "a limited, revocable, non-exclusive, non-assignable and non-transferable
+  license to use the Marvel API (and related Content) and Tools in connection with your Apps", and
+  continues "You may not (i) sublicense or transfer the foregoing right to any person or entity".
+- Section 5 says a developer "may not (except with Marvel's prior written approval): (i) use any
+  Content, or the Marvel API or Tools for any commercial purpose; or (ii) redistribute the Content
+  or Tools except within your Apps".
+- Section 5 also says "You may not change or edit the Content (e.g., modify, augment)."
+- Its storage paragraph says "You may not indefinitely cache Content". The attribution page puts a
+  figure beside that: "caching API call results for limited amounts of time is OK. Caching calls
+  for 24 hours is usually a good amount."
+- Section 7 says "Marvel owns all right title and interest in the Marvel API (and related
+  Content)", and that the terms "grant you no right, title, or interest".
+
+Two things follow from reading them, and neither is a legal conclusion.
+
+The first is that displaying a description and shipping a copy of one are different acts under
+those terms rather than two degrees of one act. Using Content inside an App is what the licence is
+for, on a condition the attribution page states plainly: "You must attribute Marvel as the source
+of data whenever you display any results from the Marvel Comics API", which this app does at
+`src/index.html:240`. Redistributing Content outside an App, and sublicensing it onward, are the
+two things sections 4 and 5 name. An MIT grant is a sublicence to everyone who receives a copy, and
+offers them "sublicense, and/or sell".
+
+The second is that this repository never agreed to any of it, because it never called Marvel's API.
+It fetched from the third hand in the chain above. That is not a wider permission, it is the
+absence of one: a non-transferable licence is one the second and third hands had nothing to pass
+down, which is this document's opening rule arriving at the same place from the other direction.
+
+### How the sites that do show this prose are placed
+
+The question this section exists to answer is why other sites display these descriptions. Two were
+read again on 2026-08-15, and both point the same way.
+
+Comic Vine's term 5 is already in the table above and reads in full "Don't redistribute in another
+form. Do not edit, manipulate or reproduce on any other medium." Its own API page describes where
+its records come from: "The data itself comes from a KISS-like-army of comic fans that contribute
+millions of edits to the resource every year." League of Comic Geeks states "You may not duplicate
+or copy any portion of the Service, unless otherwise set forth herein", retrieved from [its
+terms](https://leagueofcomicgeeks.com/terms-of-use).
+
+So the two sites nearest this app's purpose display publisher prose and refuse everyone else a
+copy of it. The Grand Comics Database is the one of the three assessed above that does publish a
+redistributable dump, under the CC BY-SA 4.0 recorded in that table. Whether the synopses in it are
+written by its volunteers rather than reproduced from publishers was not established: `comics.org`
+answered 403 on 2026-08-15 to both its download page and its documentation wiki, so it is recorded
+here unverified in the same terms as Metron above.
+
+None of that makes this tree's position better or worse than theirs, and it is not recorded to
+argue that it does. It is recorded because the comparison is the first thing anyone asks, and
+because the answer runs the opposite way to the intuition behind the question.
+
 ### The size of the question, measured, and what was done about it
 
 A review is cheaper when there is less to review, and one field carried most of what was at issue.

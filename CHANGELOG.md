@@ -54,6 +54,18 @@ belong to one person's computer, and misleading about everything else, because t
 history are exactly what someone running that check the night before opening the project would
 think it had cleared. It now says what it looked at instead.
 
+One obvious question was asked late and is now answered in the record rather than in passing: if
+other comic sites show these same blurbs, why can this project not keep them? The publisher's own
+rules for programs like this one were read back from an archived copy, the developer site itself
+having closed since. They let a program show the blurbs to the person using it, and separately
+forbid passing copies on to anybody else, forbid keeping them indefinitely, and say the publisher
+keeps ownership throughout. The two comic sites closest to this one do show the blurbs, and both of
+their own rule pages forbid anyone copying that text back out. So showing and handing on are two
+different things rather than two degrees of one thing, those sites are doing the first, and this
+project was until recently doing the second more freely than any of them. The record of where the
+data came from now carries the wording those rules use, links to the archived pages, and the date
+they were read.
+
 ### A checklist for the day this project is opened to the public (BL-129)
 
 In plain English: nothing you have saved is affected, and nothing on screen has changed. This is a

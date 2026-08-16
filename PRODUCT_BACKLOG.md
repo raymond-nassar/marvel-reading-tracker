@@ -4585,7 +4585,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9496-9498` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9508-9510` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4595,11 +4595,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:207-209`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9515-9519`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9527-9531`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9330-9332` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9342-9344` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4807,7 +4807,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2183-2192` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2195-2204` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:197-201` and
 `PRODUCT_BACKLOG.md:207-209` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -9094,6 +9094,18 @@ this paragraph reported 89,558, the length after JSON escaping, and compared it 
 Rewriting history would reach it, this repository has never been public and has no forks so the cost
 of doing so will never be lower, and publication is the moment that window shuts. That is a decision
 for the owner and it is deliberately not taken here.
+
+The obvious objection to this whole item is that other comic sites display this same prose, and it
+was put on 2026-08-15 rather than left unasked. Answering it needed the terms the first hand
+published, which can no longer be read from Marvel because the portal closed, so they were read from
+an archived snapshot taken three weeks before it did. They separate the two acts this item turns on:
+a licence to use the content inside an app, against an express refusal of the right to sublicense
+it, to redistribute it outside an app, or to cache it indefinitely, with ownership stated to stay
+with Marvel throughout. The two sites nearest this app's purpose display the prose and each forbids
+anyone copying it back out, which is the same separation seen from the other side. That is evidence
+bearing on the first of the four open questions rather than an answer to it, so it went into the
+provenance document beside those questions, with the archive links and the date they were read, and
+BL-099 is still the item that closes.
 
 **BL-131: Decide whether to rewrite history before the repository is published**
 
