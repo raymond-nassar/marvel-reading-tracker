@@ -868,7 +868,13 @@ export function synopsisOrder(state, listId, wanted, lookahead = 8) {
   const ids = list.itemIds.filter((id) => state.issues[id] && state.issues[id].source !== 'manual');
   const unread = ids.filter((id) => !isRead(state, id));
   const priority = lookaheadPriority(unread, wanted, lookahead);
-  const rest = ids.filter((id) => wanted(id) && !priority.includes(id));
+  // The tail is rebuilt unread-first rather than filtered out of list order, which is the same
+  // mistake lookaheadPriority was written to fix, one step further down the queue. Filtering `ids`
+  // keeps list order, so a reader a hundred issues into an order would have spent the first two
+  // minutes of the run on prose for issues they had already finished before it reached the tenth
+  // issue ahead of them, and nothing survives the tab to make that back.
+  const tail = [...unread, ...ids.filter((id) => isRead(state, id))];
+  const rest = tail.filter((id) => wanted(id) && !priority.includes(id));
   return [...priority, ...rest];
 }
 

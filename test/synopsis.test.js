@@ -20,10 +20,10 @@ import assert from 'node:assert/strict';
 
 import { SessionSynopsis, SynopsisRunner, NO_SYNOPSIS } from '../src/js/synopsis.js';
 import { withoutSynopsis, MarvelApi } from '../src/js/api.js';
-import { purgeStaleCache } from '../src/js/main.js';
+import { purgeStaleCache, synopsisAnnouncement, synopsisDisclaimer, synopsisServiceName } from '../src/js/main.js';
 import {
   addIssuesToList, createEmptyState, createList, markRead, markDetailsRefused,
-  hydrationOrder, synopsisOrder, lookaheadPriority,
+  hydrationOrder, synopsisOrder, lookaheadPriority, MAX_DESCRIPTION,
 } from '../src/js/lib/model.js';
 
 function stateWith(ids, { read = [], manual = [], refused = [] } = {}) {
@@ -540,4 +540,155 @@ test('a marker from a newer build is left alone rather than treated as behind', 
   const cache = okCache();
   assert.deepEqual(await purgeStaleCache(cache, 5, 1), { ran: false, cleared: false });
   assert.equal(cache.cleared, 0);
+});
+
+
+// ------------------------------------------------- what a run says about itself when it goes wrong
+
+// Both reviews of this change found the same thing independently: a run in which every single lookup
+// failed still ended by saying "All synopses fetched". Nothing else on screen contradicted it,
+// because there is deliberately no pending count for this feature, so the false sentence stood on
+// its own. A 404 is not a failure and must not count as one: the service answered, and the answer
+// was that it holds no record.
+test('a run that reached nothing does not claim every synopsis was fetched', async () => {
+  const { state, listId } = stateWith([1, 2, 3]);
+  const phases = [];
+  const api = instantApi(() => { throw new TypeError('Failed to fetch'); });
+  const runner = new SynopsisRunner({
+    api, store: fakeStore(state), session: new SessionSynopsis(), onProgress: (s) => phases.push(s.phase),
+  });
+
+  await within(runner.start(listId), 'the run to finish');
+
+  assert.equal(phases.at(-1), 'partial', 'a run that fetched nothing reported success');
+  assert.equal(runner.failed, 3);
+});
+
+test('a run that reached some of them reports how many it could not', async () => {
+  const { state, listId } = stateWith([1, 2, 3, 4]);
+  const session = new SessionSynopsis();
+  let last = null;
+  const api = instantApi((id) => {
+    if (id === 2) throw new TypeError('Failed to fetch');
+    return withProse(id);
+  });
+  const runner = new SynopsisRunner({ api, store: fakeStore(state), session, onProgress: (s) => { last = s; } });
+
+  await within(runner.start(listId), 'the run to finish');
+
+  assert.equal(last.phase, 'partial');
+  assert.equal(last.failed, 1);
+  assert.equal(last.total, 4);
+  assert.equal(session.text(3), 'Synopsis for 3.', 'the run stopped early instead of carrying on');
+});
+
+test('an issue the service has no record of is an answer, not a failure', async () => {
+  const { state, listId } = stateWith([1, 2]);
+  let last = null;
+  const runner = new SynopsisRunner({
+    api: instantApi((id) => (id === 1 ? notFound() : withProse(id))),
+    store: fakeStore(state),
+    session: new SessionSynopsis(),
+    onProgress: (s) => { last = s; },
+  });
+
+  await within(runner.start(listId), 'the run to finish');
+
+  assert.equal(last.phase, 'complete', 'a 404 was counted as a failure to reach the service');
+  assert.equal(last.failed, 0);
+});
+
+// A request already in flight when the reader presses stop can still resolve normally. Recording it
+// would put a synopsis on screen that the "Stopped after n of m" count beside it does not include,
+// which is the app disagreeing with itself about what it just did.
+test('a synopsis that lands after the stop is not recorded', async () => {
+  const { state, listId } = stateWith([1, 2, 3]);
+  const session = new SessionSynopsis();
+  const api = controllableApi();
+  const runner = new SynopsisRunner({ api, store: fakeStore(state), session });
+
+  const run = runner.start(listId);
+  await settled();
+  runner.cancel();
+  api.calls[0].resolve(withProse(1));
+  await settled();
+  await within(run, 'the cancelled run to unwind');
+
+  assert.equal(session.known(1), false, 'a response that arrived after the stop was kept anyway');
+  assert.equal(session.size, 0);
+});
+
+// ------------------------------------------------------------------ bounds on what is held
+
+// normalizeIssue was the only place issue prose ever met MAX_DESCRIPTION, and this feature removed
+// that line, so the cap had to move with the prose. It is textContent on the way to the screen, so
+// nothing is injected; what an unbounded value costs is memory and layout.
+test('prose is capped at the same length every other admitted field is', () => {
+  const session = new SessionSynopsis();
+  session.record(7, 'x'.repeat(MAX_DESCRIPTION * 3));
+  assert.equal(session.text(7).length, MAX_DESCRIPTION);
+});
+
+test('a synopsis inside the cap is kept whole', () => {
+  const session = new SessionSynopsis();
+  const prose = 'y'.repeat(MAX_DESCRIPTION);
+  session.record(7, prose);
+  assert.equal(session.text(7), prose);
+});
+
+// ------------------------------------------------------------------ the tail of the queue
+
+// The same defect lookaheadPriority was written to fix, one step further down the queue. Building
+// the tail by filtering the list keeps list order, so issues already read sit ahead of unread ones
+// further along. A reader a hundred issues into an order would spend the first minutes of the run on
+// prose for issues they had already finished, and none of it survives the tab to make that back.
+test('the tail puts unread issues ahead of ones already read', () => {
+  const ids = Array.from({ length: 30 }, (_, i) => i + 1);
+  const { state, listId } = stateWith(ids, { read: [1, 2, 3, 4, 5] });
+  const order = synopsisOrder(state, listId, () => true, 8);
+
+  assert.deepEqual(order.slice(0, 9), [6, 7, 8, 9, 10, 11, 12, 13, 14]);
+  const firstRead = order.findIndex((id) => id <= 5);
+  const lastUnread = order.reduce((at, id, i) => (id > 5 ? i : at), -1);
+  assert.ok(firstRead > lastUnread, `an issue already read was queued at ${firstRead}, before an unread one at ${lastUnread}`);
+});
+
+test('every issue is still asked about exactly once', () => {
+  const ids = Array.from({ length: 30 }, (_, i) => i + 1);
+  const { state, listId } = stateWith(ids, { read: [1, 2, 3, 4, 5] });
+  const order = synopsisOrder(state, listId, () => true, 8);
+  assert.equal(order.length, 30);
+  assert.equal(new Set(order).size, 30);
+});
+
+// ------------------------------------------------------------------ what the disclaimer names
+
+// The dialog exists to say where the prose comes from before the reader agrees to fetch it. The API
+// base is theirs to change, so a hard-coded host means a reader who has pointed the app somewhere
+// else is shown the name of a third party the request will not go to, which defeats the control the
+// dialog is.
+test('the disclaimer names the service that will actually be asked', () => {
+  assert.equal(synopsisServiceName('https://marvel.emreparker.com/v1'), 'marvel.emreparker.com');
+  assert.match(synopsisDisclaimer('https://mirror.example.org/v1').body, /mirror\.example\.org/);
+  assert.doesNotMatch(synopsisDisclaimer('https://mirror.example.org/v1').body, /emreparker/);
+});
+
+test('a base that is not a usable URL is described in words rather than guessed at', () => {
+  assert.equal(synopsisServiceName('not a url'), 'the community Marvel metadata service');
+  assert.equal(synopsisServiceName(undefined), 'the community Marvel metadata service');
+});
+
+test('the disclaimer still makes all four promises about what is not kept', () => {
+  const { body } = synopsisDisclaimer('https://marvel.emreparker.com/v1');
+  assert.match(body, /held for this browser tab only/);
+  assert.match(body, /not written into your lists/);
+  assert.match(body, /not included in a backup/);
+  assert.match(body, /gone when you reload/);
+});
+
+test('a run that could not reach some issues is announced as such, not as finished', () => {
+  const said = synopsisAnnouncement({ phase: 'partial', done: 4, total: 4, failed: 1 });
+  assert.equal(said.state, 'partial');
+  assert.match(said.msg, /1 issue could not be reached/);
+  assert.doesNotMatch(said.msg, /All synopses fetched/);
 });

@@ -136,6 +136,11 @@ export class ResponseCache {
   }
 }
 
+// Resolves when the transaction commits, not when the request succeeds. Those are different moments
+// and the gap between them is where a false success lives: a clear() whose request succeeded and
+// whose transaction then aborted has removed nothing, and reporting true for it advances the
+// one-time purge marker over prose still sitting in the store, permanently. IndexedDB rolls the
+// whole transaction back on an abort, so the request's own success says only that it was accepted.
 function idbReq(db, storeName, mode, fn) {
   return new Promise((resolve, reject) => {
     let tx;
@@ -145,8 +150,10 @@ function idbReq(db, storeName, mode, fn) {
       return reject(err);
     }
     const req = fn(tx.objectStore(storeName));
-    req.onsuccess = () => resolve(req.result);
+    let result;
+    req.onsuccess = () => { result = req.result; };
     req.onerror = () => reject(req.error);
+    tx.oncomplete = () => resolve(result);
     tx.onabort = () => reject(tx.error);
   });
 }

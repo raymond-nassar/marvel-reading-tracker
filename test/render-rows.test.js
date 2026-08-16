@@ -8,6 +8,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { commitRows, rowCacheKey, detailsState, synopsisFallback, DETAILS_BADGE } from '../src/js/main.js';
+import { NO_SYNOPSIS } from '../src/js/synopsis.js';
 
 // The smallest node that commitRows actually uses: childNodes, remove() and insertBefore().
 // A DOM implementation would do, but nothing here needs one, which is the point.
@@ -233,4 +234,14 @@ test('and a genuine refusal, which is never hydrated, still says so on both surf
   const refused = { hydrated: false, detailsRefused: true, source: 'curated' };
   assert.equal(detailsState(refused), 'norecord');
   assert.equal(synopsisFallback(refused), DETAILS_BADGE.norecord.hint);
+});
+
+// An issue nobody has hydrated says "Details have not been fetched yet", which is true right up
+// until a synopsis run asks about it and is told there is nothing. After that the sentence sends the
+// reader to wait for a fetch that has already happened, which is the whole of what this sentence was
+// rewritten to stop doing. The session holds a known negative distinct from "not asked", and it has
+// to reach here for that distinction to be worth keeping.
+test('an issue the run asked about and found nothing for stops promising a fetch', () => {
+  assert.equal(synopsisFallback({ hydrated: false }, NO_SYNOPSIS), 'No synopsis is recorded for this issue.');
+  assert.equal(synopsisFallback({ hydrated: false }), 'Details have not been fetched yet.');
 });

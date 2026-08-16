@@ -14,7 +14,7 @@
 //   - the response cache is stripped before every write (withoutSynopsis in src/js/api.js).
 //   - requests carry no-store, so the browser's own cache does not keep a copy either.
 
-import { synopsisOrder } from './lib/model.js';
+import { synopsisOrder, MAX_DESCRIPTION } from './lib/model.js';
 
 // A known negative: the service answered and had no prose, or had no record of the issue at all.
 // Distinct from "not asked yet" so a second run does not spend a request re-learning it, and
@@ -44,8 +44,12 @@ export class SessionSynopsis {
     return typeof held === 'string' ? held : null;
   }
 
+  // Capped at the same 2000 characters every other admitted field is. normalizeIssue used to be the
+  // only place issue prose met that bound, and this feature removed that line, so without the cap
+  // here a broken or hostile upstream description would be held whole in memory and written whole
+  // into the hero. It is textContent, so nothing is injected; the cost is memory and layout.
   record(issueId, prose) {
-    const text = typeof prose === 'string' ? prose.trim() : '';
+    const text = typeof prose === 'string' ? prose.trim().slice(0, MAX_DESCRIPTION) : '';
     this.byId.set(Number(issueId), text ? text : NO_SYNOPSIS);
   }
 
@@ -92,6 +96,7 @@ export class SynopsisRunner {
     this.running = false;
     this.done = 0;
     this.total = 0;
+    this.failed = 0;
   }
 
   get active() {
@@ -99,7 +104,7 @@ export class SynopsisRunner {
   }
 
   status(phase) {
-    return { phase, done: this.done, total: this.total, running: this.running };
+    return { phase, done: this.done, total: this.total, failed: this.failed, running: this.running };
   }
 
   cancel() {
@@ -128,27 +133,38 @@ export class SynopsisRunner {
     this.running = true;
     this.done = 0;
     this.total = queue.length;
+    this.failed = 0;
     this.onProgress(this.status('running'));
 
     for (const issueId of queue) {
       if (signal.aborted) break;
+      let got = null;
+      let missing = false;
+      let failed = false;
       try {
         // cache: false on both halves of the option, deliberately. A cached entry has been stripped
         // of its description by now, so reading one would answer "no synopsis" for an issue that has
         // one, and writing one would put back what the strip just removed.
-        const full = await this.api.issue(issueId, { signal, cache: false });
-        if (full) this.session.record(issueId, full.description);
+        got = await this.api.issue(issueId, { signal, cache: false });
       } catch (err) {
         if (err?.name === 'AbortError') break;
         // A 404 is the service saying it has no record. Recorded in the session so the rest of this
         // run and the next one skip it, and nowhere else. A timeout or a busy service says nothing
         // about the issue, so it is left unknown and a later run will ask again.
-        if (err?.status === 404) this.session.recordMissing(issueId);
+        if (err?.status === 404) missing = true;
+        else failed = true;
       }
       // Same guard as Hydrator, for the same reason: a cancelled run can still be unwinding a rate
       // limit wait when a new one starts, and its teardown would otherwise clear the new run's
       // fields, leaving that run invisible to the UI and impossible to stop.
-      if (this.controller !== controller) return;
+      //
+      // It is also checked before the session is written, not after. A request already in flight
+      // when the reader pressed stop can still resolve normally, and recording it would put a
+      // synopsis on screen that the "Stopped after n of m" count beside it does not include.
+      if (signal.aborted || this.controller !== controller) return;
+      if (got) this.session.record(issueId, got.description);
+      else if (missing) this.session.recordMissing(issueId);
+      else if (failed) this.failed += 1;
       this.done += 1;
       this.onProgress(this.status('running'));
     }
@@ -156,6 +172,11 @@ export class SynopsisRunner {
     if (this.controller !== controller) return;
     this.running = false;
     this.controller = null;
-    this.onProgress(this.status(signal.aborted ? 'cancelled' : 'complete'));
+    // A run that asked for twenty and was refused twenty times has finished, but it has not fetched
+    // anything, and "All synopses fetched" would be the app telling the reader something it knows is
+    // untrue. A 404 is not a failure here: the service answered, and the answer was that it holds no
+    // record. Only a request that got no answer at all counts.
+    const ending = signal.aborted ? 'cancelled' : (this.failed ? 'partial' : 'complete');
+    this.onProgress(this.status(ending));
   }
 }

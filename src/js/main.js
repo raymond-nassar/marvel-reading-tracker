@@ -25,7 +25,7 @@ import { MarvelApi, DEFAULT_BASE } from './api.js';
 import { ResponseCache } from './cache.js';
 import { RateLimiter } from './lib/limiter.js';
 import { Hydrator } from './hydrate.js';
-import { SessionSynopsis, SynopsisRunner } from './synopsis.js';
+import { NO_SYNOPSIS, SessionSynopsis, SynopsisRunner } from './synopsis.js';
 import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
@@ -559,7 +559,15 @@ export async function purgeStaleCache(cacheRef, marker, current = CACHE_PURGE_VE
 
 async function runCachePurge() {
   const { ran, cleared } = await purgeStaleCache(cache, settings.cachePurge ?? 0);
-  if (!ran || !cleared) return;
+  if (!ran) return;
+  // The same argument as the cache, one storage layer over. normalizeIssue drops a saved synopsis
+  // when the state is read, but load() does not write back, so the prose stays in mrt.state.v2 until
+  // some unrelated edit happens to rewrite it. For a reader who marks something read that is the
+  // next click; for one who opens the app, looks at it and closes it, it is never. One forced write
+  // closes the gap, and a blocked store refuses it, which is what should happen while it is holding
+  // a salvage copy of data it could not read.
+  store.persist();
+  if (!cleared) return;
   settings.cachePurge = CACHE_PURGE_VERSION;
   saveSettings();
   refreshCacheUsage();
@@ -1906,7 +1914,7 @@ function renderHero() {
 
   // Three states, not two. "Details have not been fetched yet" is a promise that something is
   // coming, and for an issue the snapshot has no record of, nothing is.
-  $('#hero-desc').textContent = synopsisFallback(issue, sessionSynopsis.text(issue.issueId));
+  $('#hero-desc').textContent = synopsisFallback(issue, sessionSynopsis.get(issue.issueId));
 
   const avClass = av.state === STATE.EXPECTED || av.state === STATE.OVERRIDE_AVAILABLE ? 'ok'
     : av.state === STATE.SCHEDULED ? 'warn' : '';
@@ -2090,8 +2098,12 @@ function detailsBadge(item) {
 // issue because it is not on the issue and must never be: nothing stored carries prose any more, so
 // there is no `issue.description` branch here either. A run that asked and got nothing back is the
 // same answer as a snapshot that holds nothing, so it falls through to the existing sentences.
-export function synopsisFallback(issue, sessionText = null) {
-  if (typeof sessionText === 'string' && sessionText.trim()) return sessionText;
+export function synopsisFallback(issue, sessionEntry = null) {
+  if (typeof sessionEntry === 'string' && sessionEntry.trim()) return sessionEntry;
+  // A run that asked and was told there is nothing has answered the question. Falling through to
+  // "Details have not been fetched yet" would send the reader to wait for a fetch that has already
+  // happened, which is the exact sentence this function was written to stop saying.
+  if (sessionEntry === NO_SYNOPSIS) return 'No synopsis is recorded for this issue.';
   if (issue?.hydrated) return 'No synopsis is recorded for this issue.';
   if (issue?.detailsRefused) return DETAILS_BADGE.norecord.hint;
   return 'Details have not been fetched yet.';
@@ -2415,19 +2427,36 @@ function renderHydration(status) {
 
 // ------------------------------------------------------------------ synopsis fetching
 
+export const SYNOPSIS_SERVICE_FALLBACK = 'the community Marvel metadata service';
+
+// Names the service the run will actually contact, rather than the one this file was written
+// against. The API base is the reader's to change, and a dialog whose whole job is to say where the
+// prose comes from is worse than no dialog at all when it names a third party the request will not
+// go to.
+export function synopsisServiceName(baseUrl) {
+  try {
+    return new URL(String(baseUrl)).host || SYNOPSIS_SERVICE_FALLBACK;
+  } catch {
+    return SYNOPSIS_SERVICE_FALLBACK;
+  }
+}
+
 // Said in full every time a run is started, not once and then remembered. The reader is being asked
 // to agree to text arriving from somewhere else, and an agreement recorded months ago in a settings
 // file is not the reader agreeing now. It costs one press of a button they only reach by choosing
 // to press another one.
-export const SYNOPSIS_DISCLAIMER = {
-  title: 'Fetch synopses from the community metadata service?',
-  body: 'Issue synopses are not part of this tracker. They come from the community Marvel metadata '
-    + 'service at marvel.emreparker.com, which is not affiliated with Marvel, and the text itself is '
-    + 'Marvel\u2019s. Nothing fetched is saved: the synopses are held for this browser tab only, they '
-    + 'are not written into your lists, they are not included in a backup, and they are gone when you '
-    + 'reload. Fetching a whole reading order takes a few minutes and uses your request allowance.',
-  confirmLabel: 'Fetch synopses',
-};
+export function synopsisDisclaimer(baseUrl) {
+  return {
+    title: 'Fetch synopses from the community metadata service?',
+    body: 'Issue synopses are not part of this tracker. They come from the community Marvel metadata '
+      + `service at ${synopsisServiceName(baseUrl)}, which is not affiliated with Marvel, and the text `
+      + 'itself is Marvel\u2019s. Nothing fetched is saved: the synopses are held for this browser tab '
+      + 'only, they are not written into your lists, they are not included in a backup, and they are '
+      + 'gone when you reload. Fetching a whole reading order takes a few minutes and uses your '
+      + 'request allowance.',
+    confirmLabel: 'Fetch synopses',
+  };
+}
 
 export function synopsisAnnouncement(status) {
   const phase = !status || status.phase === 'idle' ? 'idle' : status.phase;
@@ -2437,6 +2466,13 @@ export function synopsisAnnouncement(status) {
     return { state: 'running', msg: `Fetching synopses for ${n} issue${n === 1 ? '' : 's'}.` };
   }
   if (phase === 'cancelled') return { state: 'cancelled', msg: 'Synopsis fetching stopped. What arrived is on screen until you reload.' };
+  if (phase === 'partial') {
+    const failed = Number(status.failed ?? 0);
+    return {
+      state: 'partial',
+      msg: `Synopsis fetching finished. ${failed} issue${failed === 1 ? '' : 's'} could not be reached. What arrived is held for this tab only.`,
+    };
+  }
   return { state: 'complete', msg: 'All synopses fetched. They are held for this tab only.' };
 }
 
@@ -2460,6 +2496,8 @@ function renderSynopsis(status) {
     box.textContent = `Fetching synopses ${status.done} of ${status.total}\u2026`;
   } else if (status.phase === 'cancelled') {
     box.textContent = `Stopped after ${status.done} of ${status.total}.`;
+  } else if (status.phase === 'partial') {
+    box.textContent = `Fetched ${status.total - status.failed} of ${status.total}, for this tab only. ${status.failed} could not be reached.`;
   } else {
     box.textContent = 'All synopses fetched, for this tab only.';
   }
@@ -2475,7 +2513,7 @@ async function startSynopsisRun() {
   // the wrong shape regardless: they agreed to fetch this order.
   const list = store.state.lists[activeListId()];
   if (!list) return;
-  const yes = await askConfirm(SYNOPSIS_DISCLAIMER);
+  const yes = await askConfirm(synopsisDisclaimer(settings.apiBase));
   if (!yes) return;
   synopsisRunner.start(list.id);
 }
@@ -3498,6 +3536,19 @@ function wireData() {
     cache = new ResponseCache({ baseUrl: value });
     api = new MarvelApi({ baseUrl: value, limiter, cache, onStatus: onApiStatus });
     hydrator.api = api;
+    // The synopsis runner holds its own reference for the same reason the hydrator does, so it needs
+    // the same rebinding. Without it a run started after this point would go on asking the service
+    // the reader has just stopped using, telling it which issues they are reading, which is the one
+    // failure the base URL check exists to prevent.
+    //
+    // A run already in flight is stopped rather than switched, and what it fetched is dropped: the
+    // reader agreed to a dialog naming the old service, and that agreement does not carry over to a
+    // different one. Prose on screen has to have come from the service the reader was told about.
+    if (synopsisRunner.active) synopsisRunner.cancel();
+    synopsisRunner.api = api;
+    sessionSynopsis.clear();
+    renderSynopsis(null);
+    renderHero();
     notify('#restore-report', 'API URL saved. Cached data from the previous URL is kept separate.', 'ok');
     checkHealth();
   });

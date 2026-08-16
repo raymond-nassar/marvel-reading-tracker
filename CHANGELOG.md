@@ -38,6 +38,16 @@ for a few minutes. The store of previously fetched information is emptied once, 
 saved before this change and may contain the old text. It refills as you use the app and the delay
 does not come back.
 
+If you have used an earlier version, your device may still be holding summaries it saved back then.
+The next time you open the app they are removed from it, once, without you doing anything and without
+touching anything else you have saved.
+
+Three smaller things behave better than they did in the first draft of this feature. A run in which
+nothing could be reached now says so, instead of reporting that everything was fetched. An issue the
+service answers with no summary now says that plainly, rather than looking as though it has not been
+tried. And if you change the service address while a run is going, the run stops, what it collected
+is cleared, and the next run asks the address you just typed in.
+
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 
 In plain English: nothing you have saved is affected, and the app itself does not change. This
