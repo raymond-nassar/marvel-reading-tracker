@@ -35,24 +35,34 @@ history rather than only its tip, so the removal does not reach anybody who goes
 decided on 2026-08-15 that the prose is to go, pending permission from a third party.
 
 What that decision cannot be delivered by is a force-push, and this is the part to read before
-planning one. This repository has 116 pull requests, and the forge serves each a permanent
-`refs/pull/<n>/head` that cannot be rewritten, deleted or forced past from here. Those refs are not
-branches, so a clone never receives them and `npm run publication --surface` does not scan them, and
-they are readable by anyone once the repository is public. Fetching all 116 on 2026-08-15 found 85
-heads already unreachable from `main` and, under them, the same 455 distinct descriptions and the
-same 89,460 characters. Rewriting the branches removes none of it. Four pull requests closed without
-merging show that state in the present tense: their branches are gone, their heads still fetch, and
-each carries between 396 and 508 descriptions.
+planning one. The forge does not collect what a force-push orphans. Its own guidance says that after
+rewriting and force-pushing, the commits may still be reachable in clones and forks, directly by
+their SHA-1 in cached views, and through any pull request that references them, retrieved 2026-08-16
+from `docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository`.
+So the 116 pull requests here are the easiest door onto the residue rather than the cause of it, and
+a repository with none would not be cleaned by a force-push either. The forge serves each a
+permanent `refs/pull/<n>/head` that cannot be rewritten, deleted or forced past from here. Those
+refs are not branches, so a clone never receives them and `npm run publication:surface` does not
+scan them, and they are readable by anyone once the repository is public. Fetching all 116 on
+2026-08-15 found 85 heads already unreachable from `main` and, under them, the same 455 distinct
+descriptions and the same 89,460 characters. Rewriting the branches removes none of it. Four pull
+requests closed without merging show that state in the present tense: their branches are gone, their
+heads still fetch, and each carries between 396 and 508 descriptions.
 
-So there are three routes and the flip closes all of them. Push the rewritten history to a new
-repository and never publish this one, which reaches every copy and costs the pull request
-discussions, though not the code history. Ask the forge's support to purge the refs, which keeps
-both and is the only route whose outcome cannot be verified in advance. Or accept the 455
-permanently. The rewrite itself is built and verified and is not the hard part: it reproduces the
-current tip byte for byte, preserves every commit subject, author and date, and leaves all 809
-evidence anchors untouched. The rewritten `main` was then put through the gates exactly as a fresh
-repository would run them, and passes every one: 0 drifted anchors, 963 tests, and counts, sizes and
-contrast all green. Settle the route before publishing. There is no third option afterwards.
+So there are three routes, the flip closes all of them, and only one is known to work. Push the
+rewritten history to a **new repository** and never publish this one, which reaches every copy and
+costs the 116 pull request discussions, though not the code history. Ask the forge's **support** to
+purge what is left, which is weaker than it sounds in both directions: its published policy says it
+will not remove non-sensitive data and will assist on sensitive data only where the risk cannot be
+mitigated by rotating a credential, and third-party marketing prose is neither, so this route
+probably does not exist; and the same page says the removal takes the internal references that
+render pull request diffs with it, so granted it would still cost the diffs on every closed pull
+request. Or **accept** the 455 permanently. The rewrite itself is built and verified and is not the
+hard part: it reproduces the current tip byte for byte, preserves every commit subject, author and
+date, and leaves all 809 evidence anchors untouched. The rewritten `main` was then put through all
+seven gates exactly as a fresh repository would run them, and passes every one: anchors 0 drifted,
+963 tests, lint, counts, sizes, contrast and the publication gate all clean. Settle the route before
+publishing. There is no third option afterwards.
 
 Everything below assumes both have been settled.
 
@@ -112,8 +122,8 @@ that must not be rewritten, for the same reason the dated tracking artifacts are
 - `PRODUCT_BACKLOG.md:6868-6873`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:6911-6915`, why `required: true` collects nothing today.
 - `PRODUCT_BACKLOG.md:9015-9020`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1342-1345`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1354-1357`, the released note that the private channel is not switched on.
+- `CHANGELOG.md:1347-1350`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1359-1362`, the released note that the private channel is not switched on.
 
 The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met

@@ -243,13 +243,13 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Ready | src/js/main.js:2027-2032 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
 | BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:52-55 |
-| BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:67-75 |
+| BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:77-85 |
 | BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:36-44 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
 | BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:103-105 |
-| BL-131 | Decide whether to rewrite history before the repository is published | Enabler | EP-12 | Extends BL-130 | 8 | 13 | 13 | 5 | 6.8 | none | Measured | Ready | docs/PUBLICATION_RUNBOOK.md:30-55 |
+| BL-131 | Decide the publication route, because a force-push cannot clean the history | Enabler | EP-12 | Extends BL-130 | 8 | 13 | 13 | 5 | 6.8 | none | Measured | Ready | docs/PUBLICATION_RUNBOOK.md:30-65 |
 | BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Shipped | .github/workflows/ci.yml:68-91 |
 | BL-112 | Let a speech user say what a button says | Defect | EP-07 | Replaces BL-091 | 5 | 3 | 5 | 2 | 6.5 | none | Measured | Shipped | absent: any accessible name built out of its control's visible label, read of all 21 aria-label sites in src/js/main.js and an audit of 303 rendered controls in Edge |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:129-139 |
@@ -4585,7 +4585,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9564-9566` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9608-9610` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4595,11 +4595,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:207-209`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9583-9587`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9627-9631`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9398-9400` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9442-9444` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4807,7 +4807,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2218-2227` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2223-2232` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:197-201` and
 `PRODUCT_BACKLOG.md:207-209` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -9095,6 +9095,12 @@ Rewriting history would reach it, this repository has never been public and has 
 of doing so will never be lower, and publication is the moment that window shuts. That is a decision
 for the owner and it is deliberately not taken here.
 
+Drift: the first clause of that sentence is false, and the measurement that falsifies it is recorded
+under BL-131. Rewriting history does not reach this prose, because the forge does not collect what a
+force-push orphans and serves the orphans through the pull request refs among other doors. The
+sentence stands as what this item shipped believing, which is the treatment this document gives a
+superseded measured statement; what it asserts does not stand.
+
 The obvious objection to this whole item is that other comic sites display this same prose, and it
 was put on 2026-08-15 rather than left unasked. Answering it needed the terms the first hand
 published, which can no longer be read from Marvel because the portal closed, so they were read from
@@ -9107,12 +9113,13 @@ bearing on the first of the four open questions rather than an answer to it, so 
 provenance document beside those questions, with the archive links and the date they were read, and
 BL-099 is still the item that closes.
 
-**BL-131: Decide whether to rewrite history before the repository is published**
+**BL-131: Decide the publication route, because a force-push cannot clean the history**
 
 - [x] Decide, on the record, whether the description prose is to be removed from git history
 - [x] Measure what a rewrite of the published branches would and would not reach
-- [ ] Choose a route that reaches the pull request refs, because a force-push does not
-- [ ] Record the decision and its reason in the publication runbook either way
+- [x] Verify the rewrite by re-running the evidence anchors gate and the full suite on the result
+- [ ] Choose a route that reaches what a force-push cannot, because pushing here does not
+- [ ] Record the chosen route and its reason in the publication runbook either way
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -9153,8 +9160,14 @@ The owner decided on 2026-08-15 that the prose is to go, pending permission from
 Acting on that decision turned up the thing this item had wrong, and it is the second task above
 rather than the third because it had to be measured before anything could be chosen.
 
-**A force-push does not reach it.** The repository has 116 pull requests, and a forge serves every
-one of them a permanent `refs/pull/<n>/head` that the owner cannot rewrite, delete or force past.
+**A force-push does not reach it.** The forge does not collect what a force-push orphans, and its own
+guidance names three places the commits survive one: clones and forks, cached views addressed
+directly by their SHA-1, and any pull request that references them, retrieved 2026-08-16 from
+`docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository`.
+So the pull request refs below are the easiest door onto the residue rather than the cause of it, and
+a repository with no pull requests at all would not be cleaned by a force-push either. This one has
+116, and a forge serves every one of them a permanent `refs/pull/<n>/head` that the owner cannot
+rewrite, delete or force past.
 Those refs are not branches, so a clone does not receive them and the publication gate does not scan
 them, but they are readable by anyone the moment the repository is public. Measured on 2026-08-15 by
 fetching all 116 into a scratch clone: 85 of the heads are already unreachable from `main`, 32 blob
@@ -9168,11 +9181,26 @@ merging, their branches are long gone, and their heads are still fetchable today
 396 and 508 descriptions each. That is the post-rewrite state already visible in the present tense,
 which is why it is quoted rather than predicted.
 
+What the refs hold is not what the discussions hold, and the difference bears on the route choice.
+Scanning every pull request title and body here, 116 of them, together with the 44 issue and review
+comments the forge returns for this repository, finds none of the 455 descriptions reproduced in
+full. The one hit is a deliberately truncated 60-character excerpt in this branch's own pull request
+body, quoted there to show what was being removed. So the exposure sits entirely in the code the
+refs point at rather than in anything a person wrote, which makes losing the discussions a cost of
+the new-repository route rather than a second leak that route would have to clean up. That scan also
+re-derived the set it was searching for, taking it from the pre-strip `main` rather than from the
+refs, and got 455 distinct descriptions totalling 89,460 characters: the same two numbers again, from
+an independent direction.
+
 The rewrite itself was built and verified anyway, because every route that does work needs it. It
 replays history through git plumbing rather than `filter-repo`, which needs a Python this machine
-does not have. Across 251 commits it rewrote 248 and left 3 untouched, matching the 243 of 246 above
-once the five commits of this branch are counted. Commit count, subjects, authors and dates are
-identical either side. Two properties make it checkable rather than merely finished: applied to the
+does not have. Across 251 commits it rewrote 248 and left 3 untouched. That 248 is not the 243 of
+246 above with this branch's commits added, and an earlier draft of this paragraph reconciled them
+that way: a rewrite changes the object id of every commit from the first one it touches onward,
+whether or not that commit carries prose, so 248 counts descendants where 243 counted carriers. The
+comparable figure at the branch tip is 244 of 251 carrying prose, and the 3 untouched are the only
+common ground between the two counts. Commit subjects, authors and dates are identical either side.
+Two properties make it checkable rather than merely finished: applied to the
 branch tip, which BL-130 already stripped, it reproduces that tree byte for byte, and applied to
 `main`, which it had not, it produces exactly the 839 changes BL-130 made. No reachable blob in the
 result carries prose.
@@ -9185,21 +9213,37 @@ The rewrite is cheaper than this item thought and reaches less than it thought, 
 of those changes the decision.
 
 One risk in the new-repository route was hypothesised and then tested rather than left standing. The
-lock holds 5 anchors targeting `src/data/` and 4 targeting `design/mockups/`, which are exactly the
-files the rewrite edits, so a rewritten `main` could plausibly have landed with a red gate on its
-first day. It does not, and the reason is a property of the transform rather than luck: it replaces
-each description value with `null` in place instead of deleting the entry, so no pretty-printed file
-changes its line count and no anchor moves. Run against the rewritten `main` the gates report 0
-drifted anchors, 963 tests passing, and counts, sizes and contrast green. Note the 963 rather than
-966, which is main's own suite before this branch adds three, and note that it passes on a stripped
-tree, so nothing on `main` asserted the prose was there.
+lock holds 9 anchors targeting `src/data/` or `design/mockups/`, so a rewritten `main` could
+plausibly have landed with a red gate on its first day. Two qualifications, both measured, and the
+first corrects an earlier draft of this paragraph which called those nine exactly the files the
+rewrite edits. They are not. The rewrite edits 14 files and only 2 of the 9 sit on one of them: the
+mockups' generated data file at its first line, and the New Ultimate Universe trades order at its
+first ten. The other seven cite a catalog file, two order notes and two mockup pages, none of which
+carries an `items[]` description or is ever opened by the transform. Second, nothing moves in any
+case, and that is a property of the transform rather than luck: it replaces each description value
+with `null` in place instead of deleting the entry, so every file keeps its line count. Measured on
+the file likeliest to break that, the mockups' generated data file is 1,215 lines before the rewrite
+and 1,215 after. Do not read that across to the shipped strip on this branch, which is 1,219,
+because BL-130 also replaced a one-line provenance header with five; the transform accounts for none
+of those four lines. Run
+against the rewritten `main` all seven gates are green: 0 drifted anchors, 963 tests passing, and
+lint, counts, sizes, contrast and the publication gate clean. Note the 963 rather than 966, which is
+main's own suite before this branch adds three, and note that it passes on a stripped tree, so
+nothing on `main` asserted the prose was there.
 
 So the remaining choice is not whether to rewrite but where to push the result, and it is the
 owner's. Pushing it to this repository leaves all 455 behind the pull request refs. Pushing it to a
 new repository leaves them behind in a repository that is never made public, and costs the pull
 request discussions, which do not travel; the code history does, intact, including the six tracked
-working artifacts. Asking the forge's support to purge the refs is the only route that keeps both,
-and it is the one route whose outcome cannot be verified before committing to it.
+working artifacts. Asking the forge's support to purge what is left was described here as the only
+route that keeps both, and that was wrong on both halves. Its published policy on the page cited
+above says it will not remove non-sensitive data, and will assist on sensitive data only where the
+risk cannot be mitigated by rotating a credential; third-party marketing prose is neither, so on the
+published terms the route probably does not exist. The same page says the removal takes the internal
+references that render pull request diffs with it, so even granted it would cost the diff view on
+every closed pull request, which is most of what the route was supposed to preserve. What is genuinely
+unknowable in advance is not the shape of the residue, which `git ls-remote origin 'refs/pull/*/head'`
+enumerates today, but whether support would exercise discretion against its own published policy.
 
 The scores stay as they are. The time criticality that put this at 6.8 was always about the moment
 of publication, and that has not changed: it has moved from the last moment a rewrite is free to the

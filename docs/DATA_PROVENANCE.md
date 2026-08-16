@@ -357,10 +357,19 @@ descriptions and 89,460 characters are recoverable. The distinct figures are low
 151,840 above because the same issue appears in more than one reading order.
 
 What the app serves is clean and what a checkout gets is clean. The object store behind it is not.
-That is a publication decision rather than a code one, and it is recorded here unresolved: this
-repository has never been public and has no forks, so rewriting history is available now at its
-lowest ever cost, and flipping the repository public is the moment that stops being true. Rewriting
-it is destructive, so it was not done here on anyone's behalf.
+That is a publication decision rather than a code one, and it is recorded here unresolved.
+
+One correction to an earlier version of that paragraph, which said rewriting history was available
+now at its lowest ever cost and that flipping the repository public was the moment that stopped being
+true. The first half is misleading and the second is beside the point, because a force-push on this
+repository does not reach the prose at all. A forge does not collect what a force-push orphans, and
+it serves each of this repository's 116 pull requests a permanent `refs/pull/<n>/head` that the owner
+cannot rewrite or delete. Fetching all 116 on 2026-08-15 found the same 455 distinct descriptions and
+the same 89,460 characters sitting behind them, with 85 of the heads already unreachable from `main`.
+Pull request refs are the easiest of several doors, not the only one: cached views addressed by SHA-1
+are another. Rewriting is therefore necessary for the routes that work and sufficient for none of
+them. What the flip actually closes is the choice between those routes, which is why it is settled in
+the publication runbook rather than here, and why rewriting was not done on anyone's behalf.
 
 Until then the safe reading is the narrow one: the MIT grant covers what this repository wrote,
 and the committed metadata is Marvel's, held here under no stated permission.
