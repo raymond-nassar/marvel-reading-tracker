@@ -309,7 +309,7 @@ function main() {
     }
     const report = scanBlobs(refs, sink);
     const commits = scanCommits(refs, sink);
-    population = `${refs.length} branch(es) the remote advertises, ${report.scanned} blob(s)${excluded(report)} and ${commits} commit message(s)`;
+    population = `${refs.length} branch(es) the remote advertises, ${report.scanned} blob(s)${excluded(report)} and ${commits} commit message(s), which is what a clone receives and not everything publication exposes: pull request refs are served by the forge, are not writable here, and are outside this population`;
   } else {
     const report = scanBlobs(['HEAD'], sink);
     const commits = scanCommits(['HEAD'], sink);

@@ -66,6 +66,28 @@ project was until recently doing the second more freely than any of them. The re
 data came from now carries the wording those rules use, links to the archived pages, and the date
 they were read.
 
+The plan for getting the blurbs out of the project's saved past turned out not to work, and finding
+that out was the point of trying. The intention was to rewrite the past and push it over the top,
+which is the usual remedy and is genuinely available here because nobody outside has a copy. The
+problem is that this project has 116 proposed changes recorded against it, and the hosting service
+keeps its own permanent copy of the code behind every one of them. Those copies cannot be edited or
+deleted by the owner, they are not part of what you get when you download the project, and they
+become readable by anyone the moment it is opened up. Counted rather than assumed: they hold exactly
+the same 455 blurbs and the same 89,460 characters that the past was supposed to be hiding, so
+rewriting the past would have removed none of it while looking like it had.
+
+The clearest proof needed no rewrite at all. Four proposed changes here were abandoned rather than
+accepted, their working copies deleted long ago, and the code behind them still downloads today with
+between 396 and 508 blurbs in it. That is what the rewritten project would have looked like, visible
+already.
+
+The rewrite was built and checked anyway, because the two routes that do work both need it. It
+reproduces the project exactly as it stands today, character for character, keeps every saved
+version's description, author and date, and leaves no blurb anywhere in the result. What is left is
+a choice between publishing that clean copy as a new project, asking the hosting service to delete
+the leftovers, and accepting them, and it is deliberately left to the owner because opening the
+project up closes all three.
+
 ### A checklist for the day this project is opened to the public (BL-129)
 
 In plain English: nothing you have saved is affected, and nothing on screen has changed. This is a

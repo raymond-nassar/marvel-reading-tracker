@@ -31,10 +31,26 @@ The second was found on 2026-08-15 while removing Marvel's description text unde
 the sharper of the two because it expires. The working tree no longer carries that prose, but git
 history does: 243 of the 246 commits then on `main` hold it, and 455 distinct descriptions and
 89,460 characters are recoverable from them. A clone of a public repository carries the whole
-history rather than only its tip, so the removal does not reach anybody who goes looking. Rewriting
-history would reach it, this repository has never been public and has no forks so the rewrite will
-never be cheaper than it is now, and the flip is the moment that stops being true. Settle it before
-publishing or accept it permanently. There is no third option afterwards.
+history rather than only its tip, so the removal does not reach anybody who goes looking. The owner
+decided on 2026-08-15 that the prose is to go, pending permission from a third party.
+
+What that decision cannot be delivered by is a force-push, and this is the part to read before
+planning one. This repository has 116 pull requests, and the forge serves each a permanent
+`refs/pull/<n>/head` that cannot be rewritten, deleted or forced past from here. Those refs are not
+branches, so a clone never receives them and `npm run publication --surface` does not scan them, and
+they are readable by anyone once the repository is public. Fetching all 116 on 2026-08-15 found 85
+heads already unreachable from `main` and, under them, the same 455 distinct descriptions and the
+same 89,460 characters. Rewriting the branches removes none of it. Four pull requests closed without
+merging show that state in the present tense: their branches are gone, their heads still fetch, and
+each carries between 396 and 508 descriptions.
+
+So there are three routes and the flip closes all of them. Push the rewritten history to a new
+repository and never publish this one, which reaches every copy and costs the pull request
+discussions, though not the code history. Ask the forge's support to purge the refs, which keeps
+both and is the only route whose outcome cannot be verified in advance. Or accept the 455
+permanently. The rewrite itself is built and verified and is not the hard part: it reproduces the
+current tip byte for byte, preserves every commit subject, author and date, and leaves all 809
+evidence anchors untouched. Settle the route before publishing. There is no third option afterwards.
 
 Everything below assumes both have been settled.
 
@@ -94,8 +110,8 @@ that must not be rewritten, for the same reason the dated tracking artifacts are
 - `PRODUCT_BACKLOG.md:6868-6873`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:6911-6915`, why `required: true` collects nothing today.
 - `PRODUCT_BACKLOG.md:9015-9020`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1319-1322`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1331-1334`, the released note that the private channel is not switched on.
+- `CHANGELOG.md:1341-1344`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1353-1356`, the released note that the private channel is not switched on.
 
 The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
