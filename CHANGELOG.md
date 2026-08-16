@@ -14,6 +14,29 @@ quote in a bug report.
 
 ## Unreleased
 
+### What it would take to shrink the open licence question (BL-130)
+
+In plain English: nothing you have saved is affected, and nothing on screen has changed. This
+records a measurement and a decision that has not been taken yet.
+
+The one thing standing between this project and being opened to everyone is a question nobody here
+can answer alone: whether the comic information stored in it can be published at all. That is a
+legal judgement, and it is still recorded as unanswered. What can be worked on in the meantime is
+how big a question it is.
+
+Nearly all of what was copied is plain fact: which issue, which series, what number, what date, a
+link. One field is different. It holds the publisher's own written blurbs, reproduced word for word,
+and there are 798 of them totalling about 150,000 characters. Counting them showed the field is also
+the easiest thing here to remove: nearly half the stored issues already have no blurb, so the app
+shows a short "no synopsis recorded" line for them today, and that line was already written and
+already tested. The source those blurbs came from is still reachable, so they could be fetched back
+if the answer turns out to be yes.
+
+None of that has been done. It is written down so the choice can be made on numbers rather than on
+a guess, and so the same counting is not done twice. The record of where the data came from now
+also says which of its open questions could be settled by asking the people upstream, and which
+could not be settled by asking anyone.
+
 ### A checklist for the day this project is opened to the public (BL-129)
 
 In plain English: nothing you have saved is affected, and nothing on screen has changed. This is a

@@ -240,6 +240,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-128 | Correct the provenance record's description count and record its placeholder shape | Debt | EP-12 | Extends BL-099 | 5 | 5 | 3 | 1 | 13.0 | none | Measured | Shipped | docs/DATA_PROVENANCE.md:86-95 |
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
+| BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Ready | src/js/main.js:2027-2032 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
 | BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:52-55 |
 | BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:36-44 |
@@ -262,10 +263,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3884-3887 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3885-3888 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1382-1383 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1383-1384 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
@@ -3046,7 +3047,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2749-2752`.
+`PRODUCT_BACKLOG.md:2750-2753`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4583,7 +4584,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9379-9381` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9422-9424` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4593,11 +4594,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:207-209`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9398-9402`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9441-9445`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9213-9215` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9256-9258` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4805,7 +4806,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2143-2152` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2166-2175` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:197-201` and
 `PRODUCT_BACKLOG.md:207-209` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6409,7 +6410,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2473`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2474`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -8270,7 +8271,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4707-4715`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4708-4716`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8285,7 +8286,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:3389`, `src/js/main.js:3326` and `src/js/main.js:3347`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1382-1383`.
+`PRODUCT_BACKLOG.md:1383-1384`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8371,7 +8372,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4712-4713`.
+at `PRODUCT_BACKLOG.md:4713-4714`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8537,7 +8538,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4707-4710` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4708-4711` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -9020,6 +9021,48 @@ success on the day.
 None of it is enforced, and the runbook says so in its own last line rather than implying otherwise.
 A gate for prose that is deliberately conditional would have to know when the condition changed, and
 the only thing that knows that is the person changing it.
+
+**BL-130: Shrink the open licence question before publication**
+
+- [ ] Produce the data tree without Marvel's description text, and measure what the app loses
+- [ ] Ask the upstream project what its stated licence is meant to cover
+- [ ] Record both answers in the provenance document beside the questions they answer
+- [ ] Leave the review itself to BL-099, which this item does not close
+
+Constraint gate: checked 1 to 11, none breached.
+
+BL-099 asks for a legal review and cannot be closed without one. This item is about the other
+variable, which is the size of the question that review has to answer. Nothing here is a legal
+opinion and nothing here decides anything. It makes the ask smaller and the answer cheaper, and
+those are the only two things this side of the boundary controls.
+
+The sharpest item is severable, and it was measured on 2026-08-15 rather than estimated. 798 of the
+1,473 curated records carry a Marvel description, 151,840 characters in all, and the provenance
+record already names that field as the one to look at hardest because it is Marvel's own prose
+reproduced verbatim rather than a fact about a publication. Everything else in a record is an id, a
+title, a number, a date, a series or a link.
+
+Removing it costs one sentence on one screen. The field reaches the interface through exactly one
+consumer at `src/js/main.js:1848`, and the function behind that line already answers for its
+absence: `synopsisFallback` at `src/js/main.js:2027-2032` returns a sentence saying no synopsis is
+recorded, for a record that was hydrated and came back without one, and a test already asserts it.
+Catalog search does not read the field either, because the description it searches at
+`src/js/lib/catalog.js:143` is the order's own one-line summary, written in this repository. So this
+is a data change with a shipped fallback already waiting for it rather than a feature to build.
+
+It is also reversible, which is worth establishing before anyone deletes anything. The upstream API
+is still answering: the contract check ran on 2026-08-15 and 33 of 33 assumptions held across 17
+requests. The descriptions can be fetched again by the vendoring script if the review comes back
+permissive, so this is a decision that can be taken back rather than a one-way loss.
+
+The second task is smaller and settles something this repository cannot answer from inside itself.
+The third of the four open questions asks whether a licence stated in a README, with no licence text
+and a package declaration scoped to a source directory, conveys anything for the two index files
+that came from the API rather than from that directory. Only the upstream maintainer knows what was
+meant. The answer does not unblock publication either way, because that project does not hold
+Marvel's rights and so cannot pass them on, but it replaces an inference with a statement in a
+document whose whole purpose is to avoid inferring.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -9495,10 +9538,10 @@ those seven keep a score too, BL-025 having been dropped before it was ever scor
 remaining 21 are `Done` and were never scored. The 22 items this pass created carry no label,
 because inventing one would fabricate an intent that no one stated. Six original stories were still
 open when the pass ran, so the table was 28 rows then. BL-028 has since been parked and
-seventy-nine further items filed, none of them labelled, one of which, BL-060, was parked in its
-turn, which is how it reaches 105 rows now. The ranks below are positions in it as it stands.
+eighty further items filed, none of them labelled, one of which, BL-060, was parked in its
+turn, which is how it reaches 106 rows now. The ranks below are positions in it as it stands.
 
-Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 105
+Positions, not scores, and the two have come apart in six places. Read on 2026-08-15 across the 106
 ranked rows, six adjacent pairs sit with the lower score above the higher: BL-062 below BL-063,
 BL-072 below BL-070, BL-075 below BL-073, BL-077 below BL-071, BL-117 below BL-038, and BL-120 below
 BL-119. Twelve rows are involved and ten of them have shipped. The four this paragraph used to name
@@ -9507,11 +9550,11 @@ counted, and wrong outright in resting the decision on all of them having shippe
 
 Adjacency is also the wrong unit for the rows that have not shipped. A reader choosing what to
 do next reads the rows still to be picked up and skips the rest, so a shipped row sitting between two
-open rows hides an inversion from a scan of neighbours. Four rows carry `Ready`, which is what
+open rows hides an inversion from a scan of neighbours. Five rows carry `Ready`, which is what
 the status key at `PRODUCT_BACKLOG.md:233` means by an item still to be picked up. Measured over
-those four alone there is one inversion: BL-120 at 2.5 sits below BL-119 at 2.0, one place down with
+those five alone there is one inversion: BL-120 at 2.5 sits below BL-119 at 2.0, one place down with
 nothing between them. Counting the one `Proposed` row alongside them, the only other row neither
-shipped nor dropped, moves the population to five and leaves that pair exactly as it is.
+shipped nor dropped, moves the population to six and leaves that pair exactly as it is.
 
 **That one pair is adjacent in the full table too, so as this is written the argument above has no
 live example.** It had two until BL-117 shipped: BL-117 at 3.0 sat below BL-126 at 2.67, four places
@@ -9549,12 +9592,12 @@ again, because a swap can lift a row above a third one it also outscores. Nothin
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
 resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
-### Case 1: BL-026 is labelled P0 but ranks forty-ninth
+### Case 1: BL-026 is labelled P0 but ranks fiftieth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 49 of 105.
+- Calculated: WSJF 3.67, rank 50 of 106.
 - Driver: job size, not value. Its Cost of Delay of 11 is the eighth highest figure in the backlog.
-  It is outranked by forty-eight items, twenty-nine of them sized 1, 2 or 3 whose Cost of Delay
+  It is outranked by forty-nine items, twenty-nine of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
   costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
@@ -9574,7 +9617,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 99 of 105, below ninety-five unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 100 of 106, below ninety-six unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -9631,9 +9674,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 62 of 105. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 51 of 105. Mid-table.
-- BL-017, P2, rank 104 of 105. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 63 of 106. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 52 of 106. Mid-table.
+- BL-017, P2, rank 105 of 106. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

@@ -215,5 +215,40 @@ The specific questions a review would need to answer, recorded so the work is no
 - Whether a reading order, being a selection and arrangement, is this project's to license when
   the selection was made here, and whose it is when it was not.
 
+### What could be asked, and of whom
+
+Two of those four are questions for a reviewer and get no shorter by asking anybody. The third can
+be put to the upstream maintainer, because it asks what that project intended by its own README
+rather than what the law makes of it, and nobody outside that project can answer it.
+
+What no correspondence reaches is the first hand. Neither the cache site nor the project this
+repository fetched from holds rights in Marvel's material, so neither can pass any on, whatever
+either says about its own work. That is this document's opening rule applied in the other
+direction: a grant reaches only what the grantor holds. A permission covering the metadata would
+have to come from the rights holder, and Marvel's developer portal closed on 2025-10-29.
+
+That is not advice about whether to write to anyone, which is a decision this document does not
+make. It is recorded so the next reader does not have to work out for themselves which of the four
+questions an email could reach.
+
+### The size of the question, measured
+
+A review is cheaper when there is less to review, and one field carries most of what is at issue.
+Measured on 2026-08-15: 798 of the 1,473 curated records carry a Marvel description, 151,840
+characters of it in all. Every other copied field is an id, a title, a number, a date, a series or
+a link.
+
+Dropping that one field is smaller than it sounds, and the numbers are here so the option can be
+weighed rather than guessed at. 675 of those 1,473 records already carry no description, so the
+app renders that state today rather than hypothetically. The field reaches the interface in exactly
+one place, at `src/js/main.js:1848`, and the function behind it already answers for the absence at
+`src/js/main.js:2027-2032`, with a test asserting the sentence it returns. It would also be
+reversible: the project this repository fetched from still serves the field, the contract check
+having run on 2026-08-15 with 33 of 33 assumptions holding, so the vendoring script can fetch it
+again if the review comes back permissive.
+
+Whether to do any of that is a product decision, recorded as BL-130 rather than settled here. This
+section reports what was counted. It draws no more of a conclusion than the rest of the document.
+
 Until then the safe reading is the narrow one: the MIT grant covers what this repository wrote,
 and the committed metadata is Marvel's, held here under no stated permission.
