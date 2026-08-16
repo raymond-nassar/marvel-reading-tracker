@@ -83,8 +83,9 @@ already.
 
 The rewrite was built and checked anyway, because the two routes that do work both need it. It
 reproduces the project exactly as it stands today, character for character, keeps every saved
-version's description, author and date, and leaves no blurb anywhere in the result. What is left is
-a choice between publishing that clean copy as a new project, asking the hosting service to delete
+version's description, author and date, and leaves no blurb anywhere in the result. It was also put
+through every one of the project's own automatic checks, exactly as a fresh copy of it would be, and
+passes all of them. What is left isa choice between publishing that clean copy as a new project, asking the hosting service to delete
 the leftovers, and accepting them, and it is deliberately left to the owner because opening the
 project up closes all three.
 

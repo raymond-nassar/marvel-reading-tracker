@@ -50,7 +50,9 @@ discussions, though not the code history. Ask the forge's support to purge the r
 both and is the only route whose outcome cannot be verified in advance. Or accept the 455
 permanently. The rewrite itself is built and verified and is not the hard part: it reproduces the
 current tip byte for byte, preserves every commit subject, author and date, and leaves all 809
-evidence anchors untouched. Settle the route before publishing. There is no third option afterwards.
+evidence anchors untouched. The rewritten `main` was then put through the gates exactly as a fresh
+repository would run them, and passes every one: 0 drifted anchors, 963 tests, and counts, sizes and
+contrast all green. Settle the route before publishing. There is no third option afterwards.
 
 Everything below assumes both have been settled.
 
@@ -110,8 +112,8 @@ that must not be rewritten, for the same reason the dated tracking artifacts are
 - `PRODUCT_BACKLOG.md:6868-6873`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:6911-6915`, why `required: true` collects nothing today.
 - `PRODUCT_BACKLOG.md:9015-9020`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1341-1344`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1353-1356`, the released note that the private channel is not switched on.
+- `CHANGELOG.md:1342-1345`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1354-1357`, the released note that the private channel is not switched on.
 
 The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
