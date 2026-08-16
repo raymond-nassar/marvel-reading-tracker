@@ -4,11 +4,11 @@ This is a reading tracker for one person at a time, built to a particular standa
 of this document is to make that standard something you can read rather than something you have to
 infer from a review.
 
-One thing to know before anything else: while this repository is private, nobody outside it can
-see the code, open an issue or send a change. So what follows describes how contributing works
-rather than how it currently happens, in the same way the security policy describes a private
-reporting route that cannot be switched on yet. Nothing here is aspirational about the standard
-itself, which is applied to every change already.
+One thing to know before anything else: this repository was published on 2026-08-16, so the code is
+visible, issues are open and changes can be sent. What follows describes how contributing works and
+is now also how it happens, in the same way the security policy's private reporting route stopped
+being a description and was switched on the same day. Nothing here is aspirational about the
+standard itself, which is applied to every change already.
 
 If you only want to read comics with the app, you do not need any of this. Start at
 [Run it on your computer](README.md#run-it-on-your-computer) instead.

@@ -14,6 +14,30 @@ quote in a bug report.
 
 ## Unreleased
 
+### The project is public, and the protections it was waiting on are now switched on (BL-133)
+
+In plain English: nothing you have saved is affected, and the app itself does not change. This
+project was opened to everyone on 16 August 2026, and three protections that only become available
+once a project is open were switched on. A scanner now watches for passwords or keys committed by
+accident, a block refuses to let one be pushed in the first place, and there is a private way to
+report a security problem instead of posting it where anyone can read it. The rules on the main line
+of work now also require the automated checks to pass before anything is merged, and refuse to let
+the project's history be overwritten or that line deleted.
+
+Several documents said, in the present tense, that those things could not be turned on, and that
+nobody outside could see the code or send a change. All of that was true while the project was
+closed and became false the moment it opened, so nine passages across nine files were rewritten to
+say what is now the case. Where a document explained a trap rather than a state, the trap was kept:
+asking for the push block without the scanner is still accepted and still does nothing, which is
+worth knowing to anyone who copies this project.
+
+The older records describing those settings as refused were deliberately left alone. They say what
+was true on the day that work was delivered, which is what a delivery record is for, and rewriting
+them would erase the reason the boxes were left unticked at the time. Four of those boxes are now
+ticked, and one of them had been open since long before publication: making the automated run
+required before a merge was always a setting on the project rather than a change to the files, and
+it arrived with the rest.
+
 ### The publication checklist now says what its own instructions cost (BL-132)
 
 In plain English: nothing you have saved is affected, and nothing about the app changes. This adds a

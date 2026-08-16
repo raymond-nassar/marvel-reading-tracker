@@ -14,6 +14,12 @@ remember, and so the person doing it is not also the person who has to find out 
 Nothing here is a legal opinion, and nothing here says the repository should be published. The first
 section is what has to be settled before it is.
 
+**This runbook was executed on 2026-08-16, and the repository is now public.** It is kept as the
+record of that day rather than rewritten, so read the present tense below as describing the state
+before the flip. The passages it lists have since been rewritten and the settings it asks for are
+on, both under BL-133. The one thing that did not happen is the legal review named immediately
+below, which remains an accepted risk rather than an answered question.
+
 ## Before anything is flipped
 
 Two things have to be settled here. Neither is a setting, and both are one-way.
@@ -101,16 +107,17 @@ Do them in this order. The first pair has a real dependency and the third does n
 
 One thing changes with nobody touching it. Every `required: true` in the issue forms is inert while
 the repository is private and starts being enforced on publication, which is recorded with its
-reasoning at `PRODUCT_BACKLOG.md:6912-6916`. The forms do not need editing. It is listed here
+reasoning at `PRODUCT_BACKLOG.md:6908-6912`. The forms do not need editing. It is listed here
 because a form that suddenly rejects a submission looks like a regression to whoever hits it first.
 
 ## The prose that stops being true
 
-Each of these is a live statement about the present, not a record of the past. The right rewrite is
-a judgement about tone and is left to whoever makes the change, so this table says what becomes
-false rather than what to write instead.
+Each of these was a live statement about the present rather than a record of the past. The right
+rewrite was a judgement about tone and was left to whoever made the change, so this table says what
+became false rather than what was written instead. All nine were rewritten on 2026-08-16 under
+BL-133, so the passages named below no longer say what this table says they said.
 
-| Where | What it asserts today | Why publication breaks it |
+| Where | What it asserted before publication | Why publication broke it |
 |---|---|---|
 | `SECURITY.md:37-42` | Private reporting cannot be turned on here, so a reporter should open a public issue asking for a channel and put no detail in it | The fallback stops being the live route once BL-096 is on. The paragraph still needs its other half, for a reporter who does not find the option because it was never enabled |
 | `SECURITY.md:132-138` | Secret scanning is not on and cannot be, with the exact refusal GitHub gives | Both halves of that become wrong once BL-089 is done, including the note that push protection accepts a request and changes nothing |
@@ -127,26 +134,30 @@ exception. Ten of the twenty-one are in `PRODUCT_BACKLOG.md` and two more are in
 Eleven of those twelve say what was true when a piece of work was delivered, and they are history
 that must not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
 
-- `PRODUCT_BACKLOG.md:6280-6293`, why secret scanning was left unticked, and what push protection
+- `PRODUCT_BACKLOG.md:6276-6289`, why secret scanning was left unticked, and what push protection
   does when asked for without it.
-- `PRODUCT_BACKLOG.md:6685-6688`, why the private reporting task was left open.
-- `PRODUCT_BACKLOG.md:6747-6749`, what the changelog entry beside it was corrected to say.
-- `PRODUCT_BACKLOG.md:6770-6774`, why the contribution guide is written in the future tense.
-- `PRODUCT_BACKLOG.md:6777-6783`, why the code of conduct offers no private channel.
-- `PRODUCT_BACKLOG.md:6844-6850`, why the branch rules task was left open and could not be read.
-- `PRODUCT_BACKLOG.md:6869-6874`, why blank issues stay enabled.
-- `PRODUCT_BACKLOG.md:6912-6916`, why `required: true` collects nothing today.
-- `PRODUCT_BACKLOG.md:9016-9021`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1388-1391`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1400-1403`, the released note that the private channel is not switched on.
+- `PRODUCT_BACKLOG.md:6681-6684`, why the private reporting task was left open.
+- `PRODUCT_BACKLOG.md:6743-6745`, what the changelog entry beside it was corrected to say.
+- `PRODUCT_BACKLOG.md:6766-6770`, why the contribution guide is written in the future tense.
+- `PRODUCT_BACKLOG.md:6773-6779`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6840-6846`, why the branch rules task was left open and could not be read.
+- `PRODUCT_BACKLOG.md:6865-6870`, why blank issues stay enabled.
+- `PRODUCT_BACKLOG.md:6908-6912`, why `required: true` collects nothing today.
+- `PRODUCT_BACKLOG.md:9012-9017`, the three settings named as refused on this repository today.
+- `CHANGELOG.md:1412-1415`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1424-1427`, the released note that the private channel is not switched on.
 
-The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
-BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
-that sentence is describing a state that no longer holds.
+The twelfth was live and did have to change: the introduction at `PRODUCT_BACKLOG.md:25-37` listed
+BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they were met
+that sentence described a state that no longer held. It was rewritten with those three clauses
+removed, which is why the passage now cited there counts nine open tasks rather than twelve.
 
 This document is not on its own list. It says in its own second section that three settings cannot
-be turned on today, which publication falsifies as surely as anything above, but a runbook is spent
-by the event it describes and rewriting it would be pointless. Read it as dated the day it is used.
+be turned on today, which publication falsified as surely as anything above, but a runbook is spent
+by the event it describes and rewriting it would be pointless. It carries a dated stamp at the top
+instead. The one thing that could not be left alone is its own `path:line` claims, which the
+anchors gate holds live whether the document is spent or not, so those were re-aimed on the day and
+the table header was put into the past tense to keep each claim true. Read the rest as dated.
 
 ## What the rewrites cost the evidence anchors gate
 

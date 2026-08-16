@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// The publication gate. This repository is private, and several of the things that would make it
-// safe to publish are decisions rather than code: which working artifacts are public evidence and
-// which stay on one machine, and whether anything personal is already committed. A decision that
-// lives in someone's head is not one, so this is where both are written down and checked.
+// The publication gate. This repository was published on 2026-08-16, and several of the things that
+// made it safe to publish were decisions rather than code: which working artifacts are public
+// evidence and which stay on one machine, and whether anything personal is committed. A decision
+// that lives in someone's head is not one, so this is where both are written down and checked.
 //
 // Two halves, with two different populations, because conflating them is the mistake this script
 // was written after making.

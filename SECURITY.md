@@ -35,8 +35,8 @@ vulnerability**. That route creates a private draft advisory that only you and t
 see, and it is the only channel this project accepts.
 
 If that option is not on the Security tab, it has not been turned on. It is off by default, and on
-this repository it cannot be turned on yet at all, because GitHub offers private vulnerability
-reporting on public repositories and this one is still private. In either case, open an issue saying
+this repository it was enabled on 2026-08-16, so it should be there. If it is not, you may be
+reading this in a fork where it was never enabled. In either case, open an issue saying
 only that you have a security report and asking how to send it. **Put no details in it**: not the
 symptom, not the file, not the steps. That issue is a request for a channel, not a report, and one
 will be arranged in reply.
@@ -129,13 +129,13 @@ Recorded so a report can start from what is true rather than from what a scanner
   the metadata API needs no key.
 - Dependabot alerts and Dependabot security updates are both switched on, so an advisory against
   the lint tooling or the workflow's actions arrives as a pull request rather than as silence.
-  Secret scanning is not on, and cannot be while this repository is private: GitHub answers a
-  request to enable it here with "Secret scanning is not available for this repository", and it is
-  free on any public repository, so publishing is what would make it available rather than a
-  purchase. Anyone can see the state without a write: asking for its alerts answers 404 "Secret
-  scanning is disabled on this repository". Push protection depends on it, and a request to enable
-  that one is accepted and then changes nothing, which is worth knowing before anyone reads that
-  success as coverage.
+  Secret scanning is on, and so is push protection, both enabled on 2026-08-16 once publication
+  made them available: they are free on any public repository, and while this one was private
+  GitHub answered a request to enable scanning with "Secret scanning is not available for this
+  repository". Anyone can see the state without a write: asking for its alerts answers with a list
+  rather than 404 "Secret scanning is disabled on this repository". Push protection depends on
+  scanning and was enabled second for that reason. Asked for on its own it is accepted and then
+  changes nothing, which is worth knowing before anyone reads that success as coverage.
 - CI runs on every pull request with `contents: read` and nothing else.
 - Every claim of the form `path:line` in every tracked file is fingerprinted against the lines it
   names, so documentation that has drifted from the code fails the build rather than misleading a
