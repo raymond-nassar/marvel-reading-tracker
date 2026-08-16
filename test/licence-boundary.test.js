@@ -55,6 +55,12 @@ test('no shipped reading order carries Marvel description prose', async () => {
 // straight at the one file this test exists for: reformat the mockup bundle, or move it, and it
 // leaves the population with nothing said. A floor of fourteen still passes at that point, because
 // the catalog's own files alone clear it. An exact seventeen does not.
+//
+// A review suggested pre-filtering on the literal "items" key so that package-lock.json is not
+// parsed. Measured, that file is 36 KB and parses in 0.18 ms of an 18.68 ms scan across 124 files,
+// so the saving is not the point. The cost is: the filter is a second boundary to keep correct, and
+// it is aimed at the same file as the first. The mockup bundle is generated, it quotes its keys
+// today, and nothing makes it keep doing so.
 async function everyDataBearingFile(dir, out = []) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
@@ -68,7 +74,7 @@ async function everyDataBearingFile(dir, out = []) {
   return out;
 }
 
-test('no file anywhere in the tree carries an items[].description string', async () => {
+test('no file outside node_modules, .git and .copilot-tracking carries an items[].description string', async () => {
   const files = await everyDataBearingFile(repoRoot);
   assert.ok(files.length > 50, `only ${files.length} files were walked, so this test proves nothing`);
 
@@ -96,7 +102,7 @@ test('no file anywhere in the tree carries an items[].description string', async
   }
 
   assert.equal(scanned, 17, `${scanned} item-bearing files were found, not 17, so this test's coverage has changed`);
-  assert.deepEqual(offenders, [], `Marvel description prose is committed in ${offenders.length} record(s) outside the catalog's own files`);
+  assert.deepEqual(offenders, [], `Marvel description prose is committed in ${offenders.length} record(s) somewhere in the scanned tree`);
 });
 
 // The strip above is one edit away from a silent product regression, because the order carries a
