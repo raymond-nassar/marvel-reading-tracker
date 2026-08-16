@@ -14,6 +14,104 @@ quote in a bug report.
 
 ## Unreleased
 
+### The publisher's own blurbs are no longer stored here (BL-130, BL-131)
+
+In plain English: nothing you have saved is affected. The one visible change is on the panel that
+shows an issue's details, where the publisher's summary used to appear and now does not.
+
+The one thing standing between this project and being opened to everyone is a question nobody here
+can answer alone: whether the comic information stored in it can be published at all. That is a
+legal judgement and it is still recorded as unanswered. What could be worked on in the meantime is
+how big a question it is.
+
+Nearly all of what was copied is plain fact: which issue, which series, what number, what date, a
+link, who worked on it. One field was different. It held the publisher's own written blurbs,
+reproduced word for word, 798 of them and about 150,000 characters. So they were removed. Nothing
+had to be built to cope, because nearly half the stored issues already had no blurb and the app
+already had lines for that: about six hundred of those say no synopsis is recorded, and the seventy
+or so that the project holds nothing else about say the stored snapshot has no record of the issue.
+The 798 now show the first of those two. A test refuses the blurbs if they ever come back, and the
+source they came from is still reachable, so they can be fetched again if the answer turns out to
+be yes. The record of where the data came from now also says which of its open questions could be
+settled by asking the people upstream, and which could not be settled by asking anyone.
+
+One of those questions has now been asked. The two reading lists this project copied came from a
+smaller project run by one person, whose own notes say the work is freely reusable but never spell
+out whether that covers the lists as well as the program that builds them. That was asked of them
+directly on 2026-08-16, in the open where anyone else who copied the same lists can read the answer.
+It is unanswered so far, and the record says so rather than assuming a friendly reply. It is also
+worth being clear about how much an answer can settle: that person has no say over the publisher's
+material, so even the most generous reply tells us nothing about the blurbs, which were the biggest
+question and the reason they were removed.
+
+The first attempt at this missed 41 more blurbs, in a file behind the design sketches of the app
+that was built from one of the reading lists. The reason it was missed is worth more than the miss:
+both the removal and the test guarding it worked from the project's own list of reading lists, so
+neither could see a file that list does not mention. Both now look at every file in the project
+instead. The record of where the data came from had never mentioned that file either, and now does.
+
+One limit is worth stating plainly rather than leaving to be found later. Taking something out of a
+project's current files does not take it out of the project's history, and anyone who copies a
+public project gets its history as well. The blurbs sit in almost every past version, so they would
+stay recoverable by someone who went looking. Clearing that too means rewriting the history, which
+is still cheap because nobody outside holds a copy, and which stops being cheap the moment the
+project is made public. What happened to that plan, and what was decided instead, is further down.
+
+The automatic check that reads the whole history before publication used to finish by saying the
+history was clean. That was true of what it looks for, which is passwords and keys and paths that
+belong to one person's computer, and misleading about everything else, because the blurbs in the
+history are exactly what someone running that check the night before opening the project would
+think it had cleared. It now says what it looked at instead.
+
+One obvious question was asked late and is now answered in the record rather than in passing: if
+other comic sites show these same blurbs, why can this project not keep them? The publisher's own
+rules for programs like this one were read back from an archived copy, the developer site itself
+having closed since. They let a program show the blurbs to the person using it, and separately
+forbid passing copies on to anybody else, forbid keeping them indefinitely, and say the publisher
+keeps ownership throughout. The two comic sites closest to this one do show the blurbs, and both of
+their own rule pages forbid anyone copying that text back out. So showing and handing on are two
+different things rather than two degrees of one thing, those sites are doing the first, and this
+project was until recently doing the second more freely than any of them. The record of where the
+data came from now carries the wording those rules use, links to the archived pages, and the date
+they were read.
+
+The plan for getting the blurbs out of the project's saved past turned out not to work, and finding
+that out was the point of trying. The intention was to rewrite the past and push it over the top,
+which is the usual remedy. The problem is that the hosting service does not throw away what such a
+rewrite abandons, and its own guidance lists three places the old copies survive one. The one that
+bites here is that this project has 116 proposed changes recorded against it, and the service keeps
+its own permanent copy of the code behind every one of them. Those copies cannot be edited or
+deleted by the owner, they are not part of what you get when you download the project, and they
+become readable by anyone the moment it is opened up. Counted rather than assumed: they hold exactly
+the same 455 blurbs and the same 89,460 characters that the past was supposed to be hiding, so
+rewriting the past would have removed none of it while looking like it had.
+
+The clearest proof needed no rewrite at all. Four proposed changes here were abandoned rather than
+accepted, their working copies deleted long ago, and the code behind them still downloads today with
+between 396 and 508 blurbs in it. That is what the rewritten project would have looked like, visible
+already.
+
+The rewrite was built and checked anyway, because the routes that do work both need it. It
+reproduces the project exactly as it stands today, character for character, keeps every saved
+version's description, author and date, and leaves no blurb anywhere in the result. It was also put
+through all seven of the project's own automatic checks, exactly as a fresh copy of it would be, and
+passes every one. What is left is a choice between publishing that clean copy as a brand new
+project, asking the hosting service to delete the leftovers, and accepting them. Only the first is
+known to work. The service's published policy is that it will not remove material that is merely
+somebody else's property rather than a security risk, and doing it anyway would also destroy the
+record of what changed in every past proposed change, which is most of what that route was supposed
+to save.
+
+The owner chose to accept, on 2026-08-16. The blurbs stay in the project's saved past, and it is
+opened up as it stands rather than rebuilt somewhere clean. Nothing you have saved is affected and
+nothing on screen changes either way: the app itself stopped showing the blurbs when they were
+removed, and this decision is only about the copies left behind in the project's own history. What
+tipped it was that the material is a company's marketing copy rather than anything private, and that
+the one route known to remove it would have thrown away the recorded discussion of every change ever
+made to this project. The rewrite is kept rather than thrown away, so that if the publisher ever
+objects the project can be closed again and rebuilt clean from a tool already proven to reproduce it
+exactly.
+
 ### A checklist for the day this project is opened to the public (BL-129)
 
 In plain English: nothing you have saved is affected, and nothing on screen has changed. This is a

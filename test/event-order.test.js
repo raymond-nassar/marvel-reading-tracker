@@ -110,9 +110,10 @@ test('an unknown event id is refused', () => {
 // raw upstream string. That is the fix, not corruption -- so this pins it, because the obvious way
 // to "repair" an apparent mismatch against the API is to put the doubled space back.
 //
-// Deliberately limited to titles and series names. Marvel's `description` is their prose and
-// double-spaces after sentences; a sweep of src/data will find doubled spaces there and that is
-// upstream copy left intact, not a gap in this check.
+// Deliberately limited to titles and series names. Marvel's `description` was their prose and
+// double-spaced after sentences, which is why it was never normalised. Since BL-130 it is no longer
+// vendored, so a sweep of src/data finds no doubled space in a description. What it does find is 47
+// series names out of the index, written by a different generator. Neither is a gap in this check.
 const ORDERS = new URL('../src/data/orders/', import.meta.url);
 const PINNED = [
   'house_of_m',

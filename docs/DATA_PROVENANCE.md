@@ -75,13 +75,15 @@ orders: **null means nobody granted anything for this file, not that the file is
 Fourteen files under [`src/data/`](../src/data), one per curated list, holding 1,473 issue records
 covering 913 distinct issues. Each record copies from the upstream API: `issueId`, `title`,
 `number`, `url`, `seriesId`, `seriesName`, `onSale`, `mu`, `digitalId`, `pageCount`, a `cover`
-object of `path` and `ext`, a `description`, and `creators` of `name` and `role`. Across the
-fourteen, 1,404 records carry a cover URL, 1,394 carry creator credits and 798 carry a Marvel
-description.
+object of `path` and `ext`, and `creators` of `name` and `role`. Across the fourteen, 1,404 records
+carry a cover URL and 1,394 carry creator credits.
 
-`description` is the field to look at hardest. The others are facts about a publication: which
-issue, in which series, on what date, at which id. A description is Marvel's own marketing prose,
-reproduced verbatim, and 798 of them are committed here.
+`description` was the field to look at hardest and is now empty. The others are facts about a
+publication: which issue, in which series, on what date. A description was Marvel's own prose
+reproduced verbatim, 798 of them and 151,840 characters, all removed on 2026-08-15 under BL-130.
+The key is `null` on every record, the vendoring script no longer writes it, and a test refuses it.
+A further 41, 7,193 characters, were removed from the design mockups described below, which a
+first pass missed because it looked only at the files the catalog names.
 
 Six records copy nothing, and they are the only place the sentence above does not hold. Two sit in
 [`src/data/xmen_claremont.json`](../src/data/xmen_claremont.json) and four in
@@ -122,10 +124,27 @@ recording how it was derived, including the cases where an outside guide was use
 reference: the collected-edition line-up and the X-Men sequence both follow Comic Book Herald's
 guides, which those orders' catalog cards say in as many words.
 
+### Design mockups
+
+[`design/mockups/`](../design/mockups) holds five static HTML mockups and one data file,
+[`design/mockups/mock-data.js`](../design/mockups/mock-data.js), which its own first line describes
+as generated from one of the reading orders. It is the only vendored Marvel data in the repository
+outside `src/data/`, and until 2026-08-15 it was the only one this document did not name. It holds
+41 issue records with the same copied fields as an order, and it carried 41 descriptions, 7,193
+characters, every one of them byte-identical to a description that was shipped under `src/data/`.
+Those are now `null`. Four of the five mockups already rendered a fallback when the field was
+absent and the fifth never showed a synopsis at all, so nulling changes nothing any of them draws
+and they paint the way the app itself now does.
+
+This subsection exists because a boundary defined by a list is a boundary somebody has to keep
+complete. The first pass at BL-130 read the catalog, so it saw fourteen files and stopped, and the
+test written to guard the removal inherited exactly the same blind spot. Both now walk the tree.
+
 ### Everything else
 
 Source, scripts, tests, styles and documents are authored here and are what the MIT grant is
-about.
+about. The design mockups above are the one exception inside a directory that otherwise holds only
+authored work, which is why they are named separately rather than left to this sentence.
 
 ## What each field means now
 
@@ -204,10 +223,17 @@ That review has not happened. Until it does, this repository does not claim the 
 MIT-licensed, and this document exists so that nobody infers the claim from the licence file's
 position at the root.
 
+On 2026-08-15 the owner recorded being satisfied with BL-099 and chose to move toward publication
+without commissioning that review. That is a decision to accept the risk, not a finding that the
+risk is absent, and it changes nothing above this line: the review still has not happened, the
+questions below are still open, and this repository still makes no claim about the data tree. It is
+written down because a decision taken in conversation and left there is one nobody can audit later.
+
 The specific questions a review would need to answer, recorded so the work is not re-derived:
 
-- Whether reproducing 798 Marvel issue descriptions verbatim is within any exception, and whether
-  the answer changes if the field is dropped and the app shows nothing in its place.
+- Whether reproducing Marvel issue descriptions verbatim was within any exception. This was the
+  largest of the four and is now the narrowest: the field was emptied on 2026-08-15, so it asks
+  about git history rather than about anything this repository serves.
 - Whether the series and creator listings, being facts, carry protection as a compilation at
   6,990 and 4,341 entries respectively.
 - Whether a licence stated in a README, with no licence text and a package declaration scoped to
@@ -215,5 +241,154 @@ The specific questions a review would need to answer, recorded so the work is no
 - Whether a reading order, being a selection and arrangement, is this project's to license when
   the selection was made here, and whose it is when it was not.
 
-Until then the safe reading is the narrow one: the MIT grant covers what this repository wrote,
-and the committed metadata is Marvel's, held here under no stated permission.
+### What could be asked, and of whom
+
+All four are questions for a reviewer, and two of them have a half that only the upstream project
+can answer. The third asks what that project's README licence was meant to cover, which is a
+question about what it intended rather than about what the law makes of it. The fourth asks whose a
+reading order is when the selection was not made here, and this document has already answered part
+of it the same way: the order is the upstream curator's for the two vendored checklists. The first
+and second reach nobody outside a review and get no shorter by asking.
+
+What no correspondence reaches is the first hand. Neither the cache site nor the project this
+repository fetched from holds rights in Marvel's material, so neither can pass any on, whatever
+either says about its own work. That is this document's opening rule applied in the other
+direction: a grant reaches only what the grantor holds. A permission covering the metadata would
+have to come from the rights holder, and Marvel's developer portal closed on 2025-10-29.
+
+That is not advice about whether to write to anyone, which is a decision this document does not
+make. It is recorded so the next reader does not have to work out for themselves which of the four
+questions an email could reach.
+
+**The third question was asked on 2026-08-16**, as a public issue on the upstream repository:
+[emreparker/marvel-comics#2](https://github.com/emreparker/marvel-comics/issues/2). It asks three
+things: whether the MIT statement in that project's README and `pyproject.toml` is meant to cover
+its `data/` directory as well as its Python source, whether the maintainer would add the MIT text as
+a `LICENSE` file so the licence and copyright notice can travel with copies as MIT itself requires,
+and what attribution wording they would prefer. It was asked in the open rather than by private mail
+so that the answer is citable here and useful to anyone else who vendored from the same source.
+
+It is unanswered at the time of writing, and this document does not assume an answer. The licence
+for the two vendored checklists stays recorded as unknown in the table above, and unknown here means
+nobody has granted anything rather than that the files are unencumbered. A friendly reply would
+settle the third question and no other: the maintainer holds nothing over Marvel's material, so
+nothing they say reaches the first or second question, and the first is the one this repository's
+own removal work was aimed at.
+
+### What the first hand's own terms said
+
+Those terms can no longer be read from Marvel. The terms page and the attribution page both answer
+403, which is consistent with the portal's retirement recorded above. They were read instead from
+the Internet Archive, at a snapshot taken 2025-10-08, three weeks before that retirement and so the
+last state this document can evidence: the [API terms of
+use](https://web.archive.org/web/20251008073256/https://developer.marvel.com/terms) and the
+[attribution and rate limit
+rules](https://web.archive.org/web/20251008073256/https://developer.marvel.com/documentation/attribution),
+both retrieved 2026-08-15.
+
+Five passages bear on this document, quoted rather than summarised because the wording is the whole
+of the point.
+
+- Section 4 grants "a limited, revocable, non-exclusive, non-assignable and non-transferable
+  license to use the Marvel API (and related Content) and Tools in connection with your Apps", and
+  continues "You may not (i) sublicense or transfer the foregoing right to any person or entity".
+- Section 5 says a developer "may not (except with Marvel's prior written approval): (i) use any
+  Content, or the Marvel API or Tools for any commercial purpose; or (ii) redistribute the Content
+  or Tools except within your Apps".
+- Section 5 also says "You may not change or edit the Content (e.g., modify, augment)."
+- Its storage paragraph says "You may not indefinitely cache Content". The attribution page puts a
+  figure beside that: "caching API call results for limited amounts of time is OK. Caching calls
+  for 24 hours is usually a good amount."
+- Section 7 says "Marvel owns all right title and interest in the Marvel API (and related
+  Content)", and that the terms "grant you no right, title, or interest".
+
+Two things follow from reading them, and neither is a legal conclusion.
+
+The first is that displaying a description and shipping a copy of one are different acts under
+those terms rather than two degrees of one act. Using Content inside an App is what the licence is
+for, on a condition the attribution page states plainly: "You must attribute Marvel as the source
+of data whenever you display any results from the Marvel Comics API", which this app does at
+`src/index.html:240`. Redistributing Content outside an App, and sublicensing it onward, are the
+two things sections 4 and 5 name. An MIT grant is a sublicence to everyone who receives a copy, and
+offers them "sublicense, and/or sell".
+
+The second is that this repository never agreed to any of it, because it never called Marvel's API.
+It fetched from the third hand in the chain above. That is not a wider permission, it is the
+absence of one: a non-transferable licence is one the second and third hands had nothing to pass
+down, which is this document's opening rule arriving at the same place from the other direction.
+
+### How the sites that do show this prose are placed
+
+The question this section exists to answer is why other sites display these descriptions. Two were
+read again on 2026-08-15, and both point the same way.
+
+Comic Vine's term 5 is already in the table above and reads in full "Don't redistribute in another
+form. Do not edit, manipulate or reproduce on any other medium." Its own API page describes where
+its records come from: "The data itself comes from a KISS-like-army of comic fans that contribute
+millions of edits to the resource every year." League of Comic Geeks states "You may not duplicate
+or copy any portion of the Service, unless otherwise set forth herein", retrieved from [its
+terms](https://leagueofcomicgeeks.com/terms-of-use).
+
+So the two sites nearest this app's purpose display publisher prose and refuse everyone else a
+copy of it. The Grand Comics Database is the one of the three assessed above that does publish a
+redistributable dump, under the CC BY-SA 4.0 recorded in that table. Whether the synopses in it are
+written by its volunteers rather than reproduced from publishers was not established: `comics.org`
+answered 403 on 2026-08-15 to both its download page and its documentation wiki, so it is recorded
+here unverified in the same terms as Metron above.
+
+None of that makes this tree's position better or worse than theirs, and it is not recorded to
+argue that it does. It is recorded because the comparison is the first thing anyone asks, and
+because the answer runs the opposite way to the intuition behind the question.
+
+### The size of the question, measured, and what was done about it
+
+A review is cheaper when there is less to review, and one field carried most of what was at issue.
+Measured on 2026-08-15: 798 of the 1,473 curated records carried a Marvel description, 151,840
+characters of it in all. Every other copied field is an id, a title, a number, a date, a series, a
+link or a creator credit.
+
+Dropping that one field was smaller than it sounds, and the numbers are here so the decision can be
+read back rather than guessed at. 675 of those 1,473 records already carried no description, so the
+app renders that state today rather than hypothetically. Those 675 do not render it the same way:
+606 carry a series or digital id and get the sentence saying no synopsis is recorded, while 69 hold
+neither and get the sentence saying the snapshot has no record of the issue at all, which is the
+distinction drawn further up this document and worth keeping in view. The field reaches the
+interface in exactly one place, at `src/js/main.js:1848`, and the function behind it already
+answers for the absence at `src/js/main.js:2027-2032`, with a test asserting the sentence it
+returns. It is also reversible: the project this repository fetched from still serves the field,
+the contract check having run on 2026-08-15 with 33 of 33 assumptions holding, so the vendoring
+script can fetch it again if a review comes back permissive.
+
+So it was dropped, under BL-130 on 2026-08-15. All 798 are `null`, the key stays present on every
+record so nothing downstream changes shape, the vendoring script writes `null` instead of the
+fetched value, and a test fails if any comes back.
+
+### What the removal does not reach
+
+It does not reach git history. The prose was committed, and a clone of a public repository carries
+the whole history rather than only its latest state. Measured on 2026-08-15 across the 246 commits
+then on `main`: 243 carry item description prose in the vendored orders, from which 455 distinct
+descriptions and 89,460 characters are recoverable. The distinct figures are lower than the 798 and
+151,840 above because the same issue appears in more than one reading order.
+
+What the app serves is clean and what a checkout gets is clean. The object store behind it is not.
+That is a publication decision rather than a code one, and it was taken on 2026-08-16: the owner
+chose to accept, leaving the recoverable prose in place and publishing the repository as it stands.
+The reasoning and what it was weighed against are in `docs/PUBLICATION_RUNBOOK.md`. What follows is
+the measurement that decision was taken on, kept because a decision without its evidence is only an
+assertion.
+
+One correction to an earlier version of that paragraph, which said rewriting history was available
+now at its lowest ever cost and that flipping the repository public was the moment that stopped being
+true. The first half is misleading and the second is beside the point, because a force-push on this
+repository does not reach the prose at all. A forge does not collect what a force-push orphans, and
+it serves each of this repository's 116 pull requests a permanent `refs/pull/<n>/head` that the owner
+cannot rewrite or delete. Fetching all 116 on 2026-08-15 found the same 455 distinct descriptions and
+the same 89,460 characters sitting behind them, with 85 of the heads already unreachable from `main`.
+Pull request refs are the easiest of several doors, not the only one: cached views addressed by SHA-1
+are another. Rewriting is therefore necessary for the routes that work and sufficient for none of
+them. What the flip actually closes is the choice between those routes, which is why it is settled in
+the publication runbook rather than here, and why rewriting was not done on anyone's behalf.
+
+Absent the legal review, the safe reading stays the narrow one: the MIT grant covers what this
+repository wrote, and the committed metadata is Marvel's, held here under no stated permission.

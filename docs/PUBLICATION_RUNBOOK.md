@@ -12,18 +12,74 @@ as the instrument. It exists so the flip is something to work through rather tha
 remember, and so the person doing it is not also the person who has to find out what it touches.
 
 Nothing here is a legal opinion, and nothing here says the repository should be published. The first
-section says why it has not been.
+section is what has to be settled before it is.
 
 ## Before anything is flipped
 
-One item gates the whole thing, and it is not a setting. The fifth acceptance item of BL-099 asks
-for legal review before the committed data tree can be described as MIT-licensed, and it is
-deliberately unticked. The provenance record names that review as the reason for the current state
-at `docs/DATA_PROVENANCE.md:11-13`, and sets out the four questions such a review would have to
-answer.
+Two things have to be settled here. Neither is a setting, and both are one-way.
 
-That item is the only entry in this document that cannot be closed by anyone reading it. Everything
-below assumes it has been answered.
+The first is BL-099. Its fifth acceptance item asks for legal review before the committed data tree
+can be described as MIT-licensed, and it is deliberately unticked. The provenance record names that
+review as the reason for the current state at `docs/DATA_PROVENANCE.md:11-13`, and sets out the four
+questions such a review would have to answer. On 2026-08-15 the owner recorded being satisfied with
+BL-099 and chose to move ahead without commissioning it. That is an accepted risk rather than an
+answered question, it is written into the provenance document in those terms, and the acceptance
+item stays unticked because no review took place. Nothing here is a legal opinion and that has not
+changed.
+
+The second was found on 2026-08-15 while removing Marvel's description text under BL-130, and it is
+the sharper of the two because it expires. The working tree no longer carries that prose, but git
+history does: 243 of the 246 commits then on `main` hold it, and 455 distinct descriptions and
+89,460 characters are recoverable from them. A clone of a public repository carries the whole
+history rather than only its tip, so the removal does not reach anybody who goes looking. The owner
+decided on 2026-08-15 that the prose is to go, pending permission from a third party.
+
+What that decision cannot be delivered by is a force-push, and this is the part to read before
+planning one. The forge does not collect what a force-push orphans. Its own guidance says that after
+rewriting and force-pushing, the commits may still be reachable in clones and forks, directly by
+their SHA-1 in cached views, and through any pull request that references them, retrieved 2026-08-16
+from `docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository`.
+So the 116 pull requests here are the easiest door onto the residue rather than the cause of it, and
+a repository with none would not be cleaned by a force-push either. The forge serves each a
+permanent `refs/pull/<n>/head` that cannot be rewritten, deleted or forced past from here. Those
+refs are not branches, so a clone never receives them and `npm run publication:surface` does not
+scan them, and they are readable by anyone once the repository is public. Fetching all 116 on
+2026-08-15 found 85 heads already unreachable from `main` and, under them, the same 455 distinct
+descriptions and the same 89,460 characters. Rewriting the branches removes none of it. Four pull
+requests closed without merging show that state in the present tense: their branches are gone, their
+heads still fetch, and each carries between 396 and 508 descriptions.
+
+So there are three routes, the flip closes all of them, and only one is known to work. Push the
+rewritten history to a **new repository** and never publish this one, which reaches every copy and
+costs the 116 pull request discussions, though not the code history. Ask the forge's **support** to
+purge what is left, which is weaker than it sounds in both directions: its published policy says it
+will not remove non-sensitive data and will assist on sensitive data only where the risk cannot be
+mitigated by rotating a credential, and third-party marketing prose is neither, so this route
+probably does not exist; and the same page says the removal takes the internal references that
+render pull request diffs with it, so granted it would still cost the diffs on every closed pull
+request. Or **accept** the 455 permanently. The rewrite itself is built and verified and is not the
+hard part: it reproduces the current tip byte for byte, preserves every commit subject, author and
+date, and leaves all 809 evidence anchors untouched. The rewritten `main` was then put through all
+seven gates exactly as a fresh repository would run them, and passes every one: anchors 0 drifted,
+963 tests, lint, counts, sizes, contrast and the publication gate all clean. That work is kept rather
+than discarded, because it is the evidence for what the decision below was choosing between.
+
+**The owner chose to accept, on 2026-08-16.** The 455 descriptions stay in this repository's history
+and behind its pull request refs, and it is published as it stands rather than rebuilt somewhere
+clean. The reasoning is recorded rather than left to be reconstructed: what is exposed is a third
+party's marketing copy rather than anything private to anyone, the working tree and everything the
+app serves are already clean of it, the only route that would remove it costs all 116 pull request
+discussions and the review history in them, and the route that would have kept those is one the
+forge's own published policy says it does not perform for material of this kind. The rewrite stays
+built and unused, and the two paragraphs above stay as the evidence it was weighed against.
+
+This decision is not retractable after publication, which is why it was taken before it rather than
+carried into it. What would change it is a demand from the rights holder, and that is a takedown
+route rather than a planning one: the working tree is already clean, so the remaining response would
+be to make the repository private again and then run the new-repository route, which stays available
+for exactly as long as somebody keeps a copy of the transform.
+
+Everything below assumes both have been settled.
 
 ## Settings that only become available on the day
 
@@ -45,7 +101,7 @@ Do them in this order. The first pair has a real dependency and the third does n
 
 One thing changes with nobody touching it. Every `required: true` in the issue forms is inert while
 the repository is private and starts being enforced on publication, which is recorded with its
-reasoning at `PRODUCT_BACKLOG.md:6909-6913`. The forms do not need editing. It is listed here
+reasoning at `PRODUCT_BACKLOG.md:6911-6915`. The forms do not need editing. It is listed here
 because a form that suddenly rejects a submission looks like a regression to whoever hits it first.
 
 ## The prose that stops being true
@@ -71,18 +127,18 @@ exception. Ten of the twenty-one are in `PRODUCT_BACKLOG.md` and two more are in
 Eleven of those twelve say what was true when a piece of work was delivered, and they are history
 that must not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
 
-- `PRODUCT_BACKLOG.md:6277-6290`, why secret scanning was left unticked, and what push protection
+- `PRODUCT_BACKLOG.md:6279-6292`, why secret scanning was left unticked, and what push protection
   does when asked for without it.
-- `PRODUCT_BACKLOG.md:6682-6685`, why the private reporting task was left open.
-- `PRODUCT_BACKLOG.md:6744-6746`, what the changelog entry beside it was corrected to say.
-- `PRODUCT_BACKLOG.md:6767-6771`, why the contribution guide is written in the future tense.
-- `PRODUCT_BACKLOG.md:6774-6780`, why the code of conduct offers no private channel.
-- `PRODUCT_BACKLOG.md:6841-6847`, why the branch rules task was left open and could not be read.
-- `PRODUCT_BACKLOG.md:6866-6871`, why blank issues stay enabled.
-- `PRODUCT_BACKLOG.md:6909-6913`, why `required: true` collects nothing today.
-- `PRODUCT_BACKLOG.md:9013-9018`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1267-1270`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1279-1282`, the released note that the private channel is not switched on.
+- `PRODUCT_BACKLOG.md:6684-6687`, why the private reporting task was left open.
+- `PRODUCT_BACKLOG.md:6746-6748`, what the changelog entry beside it was corrected to say.
+- `PRODUCT_BACKLOG.md:6769-6773`, why the contribution guide is written in the future tense.
+- `PRODUCT_BACKLOG.md:6776-6782`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6843-6849`, why the branch rules task was left open and could not be read.
+- `PRODUCT_BACKLOG.md:6868-6873`, why blank issues stay enabled.
+- `PRODUCT_BACKLOG.md:6911-6915`, why `required: true` collects nothing today.
+- `PRODUCT_BACKLOG.md:9015-9020`, the three settings named as refused on this repository today.
+- `CHANGELOG.md:1365-1368`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1377-1380`, the released note that the private channel is not switched on.
 
 The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
