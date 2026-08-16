@@ -8,11 +8,11 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { PROTECTED, PATTERNS, ALLOWED, boundaryFaults, findings, decode, excluded } from '../scripts/check-publication.mjs';
 
-// The publication gate answers a question that only gets asked once, on the day someone decides to
-// make this repository public, and by then every answer is already fixed. So the checks below are
-// about keeping today's answer true rather than about producing it: that the ignore rules holding
-// local-only content local are still in force, that the shapes the gate looks for are shapes it can
-// actually find, and that the tracked tree is clean of them right now.
+// The publication gate answered a question that only gets asked once, and it was asked on
+// 2026-08-16, the day this repository was made public. The day has happened, and by then every
+// answer was already fixed. So the checks below are about keeping that answer true rather than
+// about producing it: that the ignore rules holding local-only content local are still in force,
+// that the shapes the gate looks for are shapes it can find, and that the tracked tree is clean.
 //
 // Every credential-shaped fixture here is assembled from pieces rather than written out. A literal
 // one would be a real string of that shape in a real file, which is precisely what push protection

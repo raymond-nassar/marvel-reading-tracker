@@ -37,10 +37,10 @@ read by anyone who can see the repository.
 [GitHub's own abuse reporting form](https://github.com/contact/report-abuse) instead. It goes to
 GitHub rather than to anyone here.
 
-That second route exists because this repository has no private channel to the maintainer today,
-and saying so is more useful than pretending otherwise. There is no published contact address, and
-GitHub's private reporting features are unavailable while the repository is private. If that
-changes, this section changes with it.
+That second route exists because this repository has no private channel to the maintainer for a
+conduct concern, and saying so is more useful than pretending otherwise. There is no published
+contact address. Private vulnerability reporting was turned on when the repository was published on
+2026-08-16, but that channel is for security reports, not conduct, so this section stands.
 
 ## What happens then
 

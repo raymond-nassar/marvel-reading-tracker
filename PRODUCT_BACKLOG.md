@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-A hundred and two items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred and three items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -18,27 +18,22 @@ BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, 
 BL-088, BL-089, BL-090, BL-093, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101,
 BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-114,
 BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
-BL-129, BL-130, BL-131 and BL-132.
+BL-129, BL-130, BL-131, BL-132 and BL-133.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
-remote rather than on the tree, for the reasons recorded in their blocks. Twelve remain
-open on purpose: making the CI run required before merge is a repository setting rather than a
-change to the tree, tagging a release needs a commit to point at, confirming BL-027 with a screen
-reader is a human check no automated run substitutes for, BL-090's fourth task waits on that same
-run rather than on a second one, BL-031's axe re-run cannot be satisfied as
-written, because axe declines to judge text over a gradient and the finding was answered by
-computing the contrast bound instead, BL-065's third task was answered by measurement rather than
-ticked, because no colour raises that pair without reversing which end of a progress bar looks
-fuller, BL-033's rail task was answered by measuring the rail at 9 nodes and 2 of them churning on a
-read toggle, which is not what that item was raised about, BL-051's README walkthrough has to be
-done by someone who does not write software, which is the one thing its author cannot self-certify,
-BL-096's reporting route cannot be turned on while this repository is private, which was checked
-against the endpoint rather than assumed, BL-089's secret scanning cannot be turned on for the
-same reason, which GitHub says in as many words when asked, BL-098's branch rules cannot be verified
-because both endpoints that would report them answer 403 on this plan, and BL-099's legal review is
-a judgement no document can supply, least of all the document written to ask for it.
-`CHANGELOG.md` carries the
+remote rather than on the tree, for the reasons recorded in their blocks. Nine remain open on
+purpose: tagging a release needs a commit to point at, confirming BL-027 with a screen reader is a
+human check no automated run substitutes for, BL-090's fourth task waits on that same run rather
+than on a second one, BL-031's axe re-run cannot be satisfied as written, because axe declines to
+judge text over a gradient and the finding was answered by computing the contrast bound instead,
+BL-065's third task was answered by measurement rather than ticked, because no colour raises that
+pair without reversing which end of a progress bar looks fuller, BL-033's rail task was answered by
+measuring the rail at 9 nodes and 2 of them churning on a read toggle, which is not what that item
+was raised about, BL-051's README walkthrough has to be done by someone who does not write software,
+which is the one thing its author cannot self-certify, BL-130's provenance record waits on an
+upstream answer that has been asked for and not yet given, and BL-099's legal review is a judgement
+no document can supply, least of all the document written to ask for it. `CHANGELOG.md` carries the
 user-facing view of the same work.
 
 Eighteen further items, BL-083 through BL-100, come from the 2026-08-10 repository assurance and
@@ -241,16 +236,17 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
 | BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/main.js:2027-2032 |
+| BL-133 | Turn on the three settings publication unlocks, and make the conditional prose true | Enabler | EP-12 | Follows BL-132 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | SECURITY.md:132-138 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
 | BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:52-55 |
-| BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:92-100 |
+| BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:99-107 |
 | BL-100 | Establish a pre-publication content and history gate | Chore | EP-12 | Follows BL-089 | 5 | 8 | 13 | 3 | 8.67 | none | Measured | Shipped | scripts/check-publication.mjs:36-44 |
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
-| BL-132 | Measure what the day-of rewrites cost the anchors gate, before they are made | Enabler | EP-12 | Extends BL-129 | 3 | 8 | 5 | 2 | 8.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:160-166 |
+| BL-132 | Measure what the day-of rewrites cost the anchors gate, before they are made | Enabler | EP-12 | Extends BL-129 | 3 | 8 | 5 | 2 | 8.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:175-181 |
 | BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:103-105 |
-| BL-131 | Decide the publication route, because a force-push cannot clean the history | Enabler | EP-12 | Extends BL-130 | 8 | 13 | 13 | 5 | 6.8 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:30-80 |
+| BL-131 | Decide the publication route, because a force-push cannot clean the history | Enabler | EP-12 | Extends BL-130 | 8 | 13 | 13 | 5 | 6.8 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:37-87 |
 | BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Shipped | .github/workflows/ci.yml:68-91 |
 | BL-112 | Let a speech user say what a button says | Defect | EP-07 | Replaces BL-091 | 5 | 3 | 5 | 2 | 6.5 | none | Measured | Shipped | absent: any accessible name built out of its control's visible label, read of all 21 aria-label sites in src/js/main.js and an audit of 303 rendered controls in Edge |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:129-139 |
@@ -265,14 +261,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3887-3890 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3885-3888 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1385-1386 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1381-1382 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:197-209 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:192-204 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-124 | Stop the rate-limit backoff saying the same wait twice, and say it grammatically | Defect | EP-07 | Extends BL-090 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | src/js/main.js:3652-3655 |
@@ -1773,14 +1769,16 @@ exists to change for all of them at once.
 - [x] Pin the Node version to the `engines` floor
 - [x] Keep the live contract check out of the default run, since it depends on a third-party API
 - [x] Let the run be started by hand, so a commit that never got a run can still get one
-- [ ] Make the run required before merge
+- [x] Make the run required before merge
 
 Constraint gate: checked 1 to 11, none breached. Constraint 4 holds, because the workflow uses the
 Node test runner already in use and adds no dependency. Constraint 3 was checked: continuous
 integration runs on the repository, not in the shipped app, so it introduces no telemetry.
 
 Shipped, except the last task, which is a branch protection setting on the repository rather than
-anything in the tree, so it has to be applied by the repository owner.
+anything in the tree, so it had to be applied by the repository owner. It was applied on 2026-08-16
+under BL-133, once publication made the setting readable, so the run is now required before merge
+and every box above is ticked.
 
 Pinning to the `engines` floor immediately earned its keep: it exposed that `npm test` found no
 tests at all on Node 20. The script passed a glob, `node --test "test/**/*.test.js"`, and Node
@@ -3049,7 +3047,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2752-2755`.
+`PRODUCT_BACKLOG.md:2750-2753`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4586,21 +4584,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9674-9676` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9754-9756` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:207-209`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:202-204`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9693-9697`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9773-9777`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9508-9510` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9588-9590` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4808,9 +4806,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2264-2273` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:197-201` and
-`PRODUCT_BACKLOG.md:207-209` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:2288-2297` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:192-196` and
+`PRODUCT_BACKLOG.md:202-204` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -6259,7 +6257,7 @@ Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
 **BL-089: Turn on repository security and dependency monitoring**
 
 - [x] Enable Dependabot alerts, security updates and low-noise update proposals
-- [ ] Enable secret scanning and push protection where the repository plan supports them
+- [x] Enable secret scanning and push protection where the repository plan supports them
 - [x] Decide and document an advisory threshold for the development graph
 - [x] Keep runtime dependencies at zero and report development tooling separately
 
@@ -6291,6 +6289,11 @@ has learned not to trust, so it is written down in `SECURITY.md` next to what is
 along with the read-only way to see the state, which is that asking for the alerts answers 404 and
 says the scanning is disabled. The box stays unticked because a reader scanning the ticks would
 otherwise read it as protection that is running.
+
+Closed 2026-08-16 under BL-133. The paragraph above is the record of why the box was unticked, and
+it is left standing rather than corrected, because what it describes was true on the day it was
+written. Publication removed the refusal it names: secret scanning was enabled, then push protection
+behind it, and the alerts endpoint that answered 404 above now answers with an empty list.
 
 The threshold is in `.github/dependabot.yml:8-24`, in the file that acts on it, because a threshold
 kept somewhere else is one nobody consults at the moment it applies. It turns on where the package
@@ -6412,7 +6415,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2476`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2474`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -6672,7 +6675,7 @@ Evidence: `.github/workflows/ci.yml:43-53`, `.github/workflows/ci.yml:30-34`,
 
 - [x] Add supported versions, private reporting, acknowledgement and disclosure guidance
 - [x] Tell reporters not to publish suspected vulnerabilities as ordinary issues
-- [ ] Enable private vulnerability reporting and verify the Security tab presents the route
+- [x] Enable private vulnerability reporting and verify the Security tab presents the route
 - [x] Define security scope for data loss, generated data, dependencies and workflows
 
 Constraint gate: checked 1 to 11, none breached.
@@ -6690,6 +6693,10 @@ this task still belongs to the moment that decision is taken. The policy
 is written so it is true on both sides of it: it names private reporting as the only channel and
 says what it means if the option is not on the Security tab yet, rather than promising a route that
 does not answer.
+
+Closed 2026-08-16 under BL-133. The paragraph above is the record of why the third task was left
+open, and it is left standing rather than corrected. The endpoint it says answered 404 now returns
+enabled, and the Security tab presents the route, so the box above is ticked.
 
 Supported versions were the other question a template would have got wrong. There are no releases
 and no tags, so a version table would have listed builds that do not exist. What is supported is the
@@ -6831,7 +6838,7 @@ shipped item in this backlog has ever preceded a dependency that was still `Read
 - [x] Add a pull request template for impact, scope, evidence and provenance
 - [x] Add focused bug, feature and data-order issue forms
 - [x] Route security reports privately rather than through a public form
-- [ ] Verify branch rules require the intended reviews and checks
+- [x] Verify branch rules require the intended reviews and checks
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -6848,6 +6855,12 @@ public to enable this feature", measured on 2026-08-14. That is the same wall BL
 reporting route and BL-089's secret scanning hit, and the same answer applies: the task stays open
 and says why, because ticking it on the strength of having written a file that describes ownership
 would claim a check nobody ran.
+
+Closed 2026-08-16 under BL-133. The paragraph above is the record of why the fifth task was a
+blocker, and it is left standing rather than corrected. The 403 it quotes has become a 404 saying
+the branch is not protected, which is readable, so the rules were set and read back: the three CI
+contexts required, force pushes and branch deletion refused, conversations required to be resolved,
+and no required review, because with one collaborator GitHub would never have a second person to ask.
 
 The ownership file opens by saying that it routes nothing today, which is the substance of the item
 rather than a caveat on it. There is one collaborator, every pull request is opened by that person,
@@ -8273,7 +8286,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4710-4718`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4708-4716`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8288,7 +8301,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:3389`, `src/js/main.js:3326` and `src/js/main.js:3347`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1385-1386`.
+`PRODUCT_BACKLOG.md:1381-1382`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8374,7 +8387,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4715-4716`.
+at `PRODUCT_BACKLOG.md:4713-4714`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8507,7 +8520,7 @@ The count of open rows moved twice while this was being written, and no gate cau
 first read fifteen, which was true of the tree the measurement was taken against and false of the
 tree it was written into, because shipping this item took its own row out of the population the
 figure counts. It then read fourteen, which counts the one `Proposed` row beside the `Ready` ones,
-where the status key at `PRODUCT_BACKLOG.md:233` defines an item still to be picked up as `Ready`.
+where the status key at `PRODUCT_BACKLOG.md:228` defines an item still to be picked up as `Ready`.
 Thirteen was the figure under the document's own definition when this shipped, against eighty-six
 that were not. Nothing derives either number: the counts gate prints the status tallies on every run,
 and reading that print back against the sentence is a habit rather than a check. Both pairs survive
@@ -8540,7 +8553,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4710-4713` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4708-4711` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -9315,6 +9328,73 @@ policy's fallback sentence as well as the blank-issues setting, and that sentenc
 first rewritten passage. Matching every assertion in the suite against all ten passages returns that
 one and nothing else, which is the check that should have been run in place of the reading.
 
+**BL-133: Turn on the three settings publication unlocks, and make the conditional prose true**
+
+- [x] Enable secret scanning, confirm its alerts endpoint answers, then enable push protection
+- [x] Enable private vulnerability reporting and verify it by reading the setting back
+- [x] Set branch protection on `main` and verify the rules by reading them back
+- [x] Rewrite the ten live passages publication makes false, each to its own line count
+- [x] Close the acceptance tasks those settings were blocking, without rewriting their records
+
+Constraint gate: checked 1 to 11, none breached.
+
+The repository was published on 2026-08-16, which is the event BL-129 wrote the runbook for and
+BL-132 costed. Three settings that had been refused outright became available. All three were turned
+on and then read back rather than assumed to have taken: secret scanning and push protection both
+report `enabled`, private vulnerability reporting answers `{"enabled":true}`, and the branch rules
+read back with three required checks. Secret scanning found nothing, which is the answer a
+repository whose history was examined at length in BL-131 wanted to hear.
+
+The order the runbook insisted on was real rather than cautious. Push protection was left alone
+until the alerts endpoint stopped answering 404, and it answered with an empty list once scanning
+was on. Asking for push protection first is accepted and changes nothing, and that trap is still
+written down in the security policy, because it stays true for anyone forking this repository even
+though it is no longer true here.
+
+Branch protection needed a decision the task had left open, because "the intended reviews and
+checks" cannot both be had. The checks are documented: `GOVERNANCE.md:44-46` says the maintainer
+does not merge past a red gate, so the three continuous integration contexts are required, taken
+from a real run rather than derived from the workflow file, which is where a matrix job's name is
+easy to guess wrong. A required review is not documented anywhere and cannot be satisfied here:
+there is one collaborator, GitHub never asks a pull request's author to approve it, and the rule
+would either block every merge or be bypassed by the same person it was meant to constrain. It is
+refused for that reason rather than omitted. Force pushes and branch deletion are refused outright,
+which is the part that matters most to a repository that decided in BL-131 to keep its history. The
+endpoint that answered 403 on two measured days now answers 404 "Branch not protected", which is
+what a readable and unset endpoint says, so the wall BL-098 recorded is down rather than moved.
+
+BL-132's advice held. Every one of the ten replacements was written to the same line count as the
+passage it replaced, so no citation downstream of an edit moved and the round stayed inside the
+overlapping few. The tenth was not on the runbook's list: its search had found the sentence in
+`README.md` that points at the runbook and had filed it as a false positive, "a sentence about the
+list rather than a member of it", when it also asserts in the present tense that the repository is
+private and that three settings cannot be switched on. A review found it; the search had already
+found it and let it go. The eleven passages the runbook marks as history were left exactly as they
+are, including the three that still read in the present tense about settings that are now on, because a
+delivery record says what was true when the work was delivered. What changed instead is four
+acceptance boxes, which are live status rather than narrative: BL-089's scanning, BL-096's private
+route, BL-098's branch rules, and BL-039's long-open task to make the run required before merge,
+which is the same setting arriving from a different direction.
+
+A review found that distinction drawn too narrowly. Three of those four blocks also say in prose
+that the box is unticked or the task is open, and that is not a claim about what was measured on a
+past date but a claim about the document a reader is holding, so it went false the moment the box
+was ticked. Each of the three now carries a dated closing line recording what publication changed,
+appended rather than written over the paragraph, because all three of those paragraphs are cited
+from the runbook's history list and rewriting one would falsify the citation. BL-039's equivalent
+sentence is cited by nothing, checked against the lock rather than assumed, so it was corrected in
+place instead. The rule the four cases share is that a delivery record may say what was true then,
+but not what is true now about its own ticks.
+
+One thing the runbook did not anticipate about itself. It exempts itself from its own list, on the
+grounds that a runbook is spent by the event it describes, and that is right about its prose and
+wrong about its citations: the nine rows name passages by `path:line`, the gate holds those claims
+live whether the document is spent or not, and rewriting the passages changed what those lines say.
+Leaving it alone would have meant blessing "private reporting cannot be turned on here" onto a line
+that says it was turned on, which is the corruption the gate exists to prevent rather than a pass.
+The document is stamped as executed and its table header put into the past tense instead, which is
+cheaper than rewriting it and keeps every row true as a record of what the passage used to say.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -9803,7 +9883,7 @@ counted, and wrong outright in resting the decision on all of them having shippe
 Adjacency is also the wrong unit for the rows that have not shipped. A reader choosing what to
 do next reads the rows still to be picked up and skips the rest, so a shipped row sitting between two
 open rows hides an inversion from a scan of neighbours. Six rows carry `Ready`, which is what
-the status key at `PRODUCT_BACKLOG.md:233` means by an item still to be picked up. Measured over
+the status key at `PRODUCT_BACKLOG.md:228` means by an item still to be picked up. Measured over
 those six alone there is one inversion: BL-120 at 2.5 sits below BL-119 at 2.0, one place down with
 nothing between them. Counting the one `Proposed` row alongside them, the only other row neither
 shipped nor dropped, moves the population to seven and leaves that pair exactly as it is.
@@ -9844,12 +9924,12 @@ again, because a swap can lift a row above a third one it also outscores. Nothin
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
 resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
-### Case 1: BL-026 is labelled P0 but ranks fifty-second
+### Case 1: BL-026 is labelled P0 but ranks fifty-third
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 52 of 108.
+- Calculated: WSJF 3.67, rank 53 of 109.
 - Driver: job size, not value. Its Cost of Delay of 11 is the ninth highest figure in the backlog.
-  It is outranked by fifty-one items, twenty-nine of them sized 1, 2 or 3 whose Cost of Delay
+  It is outranked by fifty-two items, twenty-nine of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
   costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
@@ -9869,7 +9949,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 102 of 108, below ninety-eight unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 103 of 109, below ninety-nine unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -9926,9 +10006,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 65 of 108. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 54 of 108. Mid-table.
-- BL-017, P2, rank 107 of 108. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 66 of 109. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 55 of 109. Mid-table.
+- BL-017, P2, rank 108 of 109. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

@@ -9,8 +9,8 @@ This document is the inventory that field was standing in for. It records, for e
 data file, where it came from, which fields were copied, and what the upstream actually states.
 
 **It draws no legal conclusion, and it is not legal advice.** Whether the tree as a whole may be
-redistributed is an open question recorded at the end, and it is the reason this repository has
-not been published. What else would have to change on the day that question is answered is
+redistributed is an open question recorded at the end, and it is what held this repository
+unpublished until 2026-08-16. What else would have to change on the day that question is answered is
 collected in [the publication runbook](PUBLICATION_RUNBOOK.md).
 
 ## What the MIT licence covers

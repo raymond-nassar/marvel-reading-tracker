@@ -1,10 +1,10 @@
 # blank_issues_enabled must stay true. The security policy tells a reporter who cannot use private
 # vulnerability reporting to open an issue saying only that they have a security report and asking
-# how to send it. Private reporting is unavailable while this repository is private, so that
-# fallback is the live route rather than a spare one. Turning blank issues off would leave a
-# reporter with three public forms, each of which asks for detail and tells them not to paste
-# anything private, and no way to ask for a channel. The forms below are a convenience; this line
-# is a promise the security policy already made.
+# how to send it. Private reporting was enabled on 2026-08-16, so that fallback is now a spare
+# rather than the live route, but it is still the route for anyone whose Security tab does not
+# offer it. Turning blank issues off would leave that reporter with three public forms, each of
+# which asks for detail and tells them not to paste anything private, and no way to ask for a
+# channel. The forms below are a convenience; this line is a promise the security policy made.
 blank_issues_enabled: true
 
 contact_links:
