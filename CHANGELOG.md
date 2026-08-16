@@ -35,6 +35,15 @@ source they came from is still reachable, so they can be fetched again if the an
 be yes. The record of where the data came from now also says which of its open questions could be
 settled by asking the people upstream, and which could not be settled by asking anyone.
 
+One of those questions has now been asked. The two reading lists this project copied came from a
+smaller project run by one person, whose own notes say the work is freely reusable but never spell
+out whether that covers the lists as well as the program that builds them. That was asked of them
+directly on 2026-08-16, in the open where anyone else who copied the same lists can read the answer.
+It is unanswered so far, and the record says so rather than assuming a friendly reply. It is also
+worth being clear about how much an answer can settle: that person has no say over the publisher's
+material, so even the most generous reply tells us nothing about the blurbs, which were the biggest
+question and the reason they were removed.
+
 The first attempt at this missed 41 more blurbs, in a file behind the design sketches of the app
 that was built from one of the reading lists. The reason it was missed is worth more than the miss:
 both the removal and the test guarding it worked from the project's own list of reading lists, so
@@ -46,7 +55,7 @@ project's current files does not take it out of the project's history, and anyon
 public project gets its history as well. The blurbs sit in almost every past version, so they would
 stay recoverable by someone who went looking. Clearing that too means rewriting the history, which
 is still cheap because nobody outside holds a copy, and which stops being cheap the moment the
-project is made public. That one has been written down rather than decided.
+project is made public. What happened to that plan, and what was decided instead, is further down.
 
 The automatic check that reads the whole history before publication used to finish by saying the
 history was clean. That was true of what it looks for, which is passwords and keys and paths that

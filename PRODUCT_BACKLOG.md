@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-A hundred items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred and one items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -18,7 +18,7 @@ BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, 
 BL-088, BL-089, BL-090, BL-093, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101,
 BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-114,
 BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
-BL-129 and BL-131.
+BL-129, BL-130 and BL-131.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -240,7 +240,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-128 | Correct the provenance record's description count and record its placeholder shape | Debt | EP-12 | Extends BL-099 | 5 | 5 | 3 | 1 | 13.0 | none | Measured | Shipped | docs/DATA_PROVENANCE.md:88-97 |
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
-| BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Ready | src/js/main.js:2027-2032 |
+| BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/main.js:2027-2032 |
 | BL-096 | Publish a security policy and private reporting route | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 2 | 9.0 | none | Observed | Shipped | SECURITY.md:29-42 |
 | BL-116 | Extend the spelled-number ceiling the backlog has now outgrown | Debt | EP-12 | Extends BL-056 | 2 | 5 | 2 | 1 | 9.0 | none | Measured | Shipped | scripts/check-counts.mjs:52-55 |
 | BL-129 | Collect the publication-conditional statements into a runbook | Enabler | EP-12 | Follows BL-100 | 5 | 5 | 8 | 2 | 9.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:92-100 |
@@ -4585,7 +4585,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9621-9623` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9635-9637` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4595,11 +4595,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:207-209`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9640-9644`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9654-9658`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9455-9457` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9469-9471` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4807,7 +4807,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2232-2241` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2241-2250` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:197-201` and
 `PRODUCT_BACKLOG.md:207-209` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -9026,7 +9026,7 @@ the only thing that knows that is the person changing it.
 **BL-130: Shrink the open licence question before publication**
 
 - [x] Produce the data tree without Marvel's description text, and measure what the app loses
-- [ ] Ask the upstream project what its stated licence is meant to cover
+- [x] Ask the upstream project what its stated licence is meant to cover
 - [ ] Record both answers in the provenance document beside the questions they answer
 - [x] Leave the review itself to BL-099, which this item does not close
 
@@ -9112,6 +9112,20 @@ anyone copying it back out, which is the same separation seen from the other sid
 bearing on the first of the four open questions rather than an answer to it, so it went into the
 provenance document beside those questions, with the archive links and the date they were read, and
 BL-099 is still the item that closes.
+
+Shipped, with the third task deliberately left open, because it cannot be done yet and that is not a
+gap in the work. The second task was completed on 2026-08-16 by asking the upstream project in the
+open, at [emreparker/marvel-comics#2](https://github.com/emreparker/marvel-comics/issues/2), rather
+than by private mail: the answer is citable that way, and it is useful to everyone else who vendored
+from the same two checklists. The third task records the answers, and there are none yet. It stays
+open until the maintainer replies, and this item is not reopened when they do; recording the reply is
+a paragraph in the provenance document, not a change to anything the app does.
+
+What the ask can achieve is bounded, and the bound is worth stating beside the item rather than
+discovering later. It reaches the third of the four open questions and no other. The maintainer holds
+nothing over Marvel's own material, so the friendliest possible answer conveys nothing about the
+issue metadata, which is the first question and the one this item's own removal work was aimed at. A
+reply is not permission, and this item does not become BL-099 by receiving one.
 
 **BL-131: Decide the publication route, because a force-push cannot clean the history**
 

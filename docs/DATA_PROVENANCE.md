@@ -260,6 +260,21 @@ That is not advice about whether to write to anyone, which is a decision this do
 make. It is recorded so the next reader does not have to work out for themselves which of the four
 questions an email could reach.
 
+**The third question was asked on 2026-08-16**, as a public issue on the upstream repository:
+[emreparker/marvel-comics#2](https://github.com/emreparker/marvel-comics/issues/2). It asks three
+things: whether the MIT statement in that project's README and `pyproject.toml` is meant to cover
+its `data/` directory as well as its Python source, whether the maintainer would add the MIT text as
+a `LICENSE` file so the licence and copyright notice can travel with copies as MIT itself requires,
+and what attribution wording they would prefer. It was asked in the open rather than by private mail
+so that the answer is citable here and useful to anyone else who vendored from the same source.
+
+It is unanswered at the time of writing, and this document does not assume an answer. The licence
+for the two vendored checklists stays recorded as unknown in the table above, and unknown here means
+nobody has granted anything rather than that the files are unencumbered. A friendly reply would
+settle the third question and no other: the maintainer holds nothing over Marvel's material, so
+nothing they say reaches the first or second question, and the first is the one this repository's
+own removal work was aimed at.
+
 ### What the first hand's own terms said
 
 Those terms can no longer be read from Marvel. The terms page and the attribution page both answer
