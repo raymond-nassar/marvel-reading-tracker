@@ -231,7 +231,15 @@ async function main() {
           mu: d.unlimitedDate ?? null,
           digitalId: d.digitalId ?? null,
           cover,
-          description: d.description ?? null,
+          // Not vendored, deliberately. This is the one copied field that is Marvel's own prose
+          // reproduced verbatim rather than a fact about a publication, which is why the provenance
+          // record names it as the field to look at hardest. Dropping it removed 151,840 characters
+          // across 798 of 1,473 records and cost one sentence on one screen: the field reached the
+          // interface through a single consumer, and `synopsisFallback` already answered for its
+          // absence for the 675 records that never had one. The lookup above still requests it, and
+          // `npm run contract` still asserts the service returns it, so this stays reversible by
+          // changing this one line back rather than by rebuilding anything.
+          description: null,
           pageCount: d.pageCount ?? null,
           creators: Array.isArray(d.creators)
             ? d.creators.filter((c) => /writer|penciler|artist/i.test(c.role ?? '')).map((c) => ({ name: c.name, role: c.role }))

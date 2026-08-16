@@ -12,18 +12,31 @@ as the instrument. It exists so the flip is something to work through rather tha
 remember, and so the person doing it is not also the person who has to find out what it touches.
 
 Nothing here is a legal opinion, and nothing here says the repository should be published. The first
-section says why it has not been.
+section is what has to be settled before it is.
 
 ## Before anything is flipped
 
-One item gates the whole thing, and it is not a setting. The fifth acceptance item of BL-099 asks
-for legal review before the committed data tree can be described as MIT-licensed, and it is
-deliberately unticked. The provenance record names that review as the reason for the current state
-at `docs/DATA_PROVENANCE.md:11-13`, and sets out the four questions such a review would have to
-answer.
+Two things have to be settled here. Neither is a setting, and both are one-way.
 
-That item is the only entry in this document that cannot be closed by anyone reading it. Everything
-below assumes it has been answered.
+The first is BL-099. Its fifth acceptance item asks for legal review before the committed data tree
+can be described as MIT-licensed, and it is deliberately unticked. The provenance record names that
+review as the reason for the current state at `docs/DATA_PROVENANCE.md:11-13`, and sets out the four
+questions such a review would have to answer. On 2026-08-15 the owner recorded being satisfied with
+BL-099 and chose to move ahead without commissioning it. That is an accepted risk rather than an
+answered question, it is written into the provenance document in those terms, and the acceptance
+item stays unticked because no review took place. Nothing here is a legal opinion and that has not
+changed.
+
+The second was found on 2026-08-15 while removing Marvel's description text under BL-130, and it is
+the sharper of the two because it expires. The working tree no longer carries that prose, but git
+history does: 243 of the 246 commits then on `main` hold it, and 455 distinct descriptions and
+89,558 characters are recoverable from them. A clone of a public repository carries the whole
+history rather than only its tip, so the removal does not reach anybody who goes looking. Rewriting
+history would reach it, this repository has never been public and has no forks so the rewrite will
+never be cheaper than it is now, and the flip is the moment that stops being true. Settle it before
+publishing or accept it permanently. There is no third option afterwards.
+
+Everything below assumes both have been settled.
 
 ## Settings that only become available on the day
 
@@ -45,7 +58,7 @@ Do them in this order. The first pair has a real dependency and the third does n
 
 One thing changes with nobody touching it. Every `required: true` in the issue forms is inert while
 the repository is private and starts being enforced on publication, which is recorded with its
-reasoning at `PRODUCT_BACKLOG.md:6910-6914`. The forms do not need editing. It is listed here
+reasoning at `PRODUCT_BACKLOG.md:6911-6915`. The forms do not need editing. It is listed here
 because a form that suddenly rejects a submission looks like a regression to whoever hits it first.
 
 ## The prose that stops being true
@@ -71,18 +84,18 @@ exception. Ten of the twenty-one are in `PRODUCT_BACKLOG.md` and two more are in
 Eleven of those twelve say what was true when a piece of work was delivered, and they are history
 that must not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
 
-- `PRODUCT_BACKLOG.md:6278-6291`, why secret scanning was left unticked, and what push protection
+- `PRODUCT_BACKLOG.md:6279-6292`, why secret scanning was left unticked, and what push protection
   does when asked for without it.
-- `PRODUCT_BACKLOG.md:6683-6686`, why the private reporting task was left open.
-- `PRODUCT_BACKLOG.md:6745-6747`, what the changelog entry beside it was corrected to say.
-- `PRODUCT_BACKLOG.md:6768-6772`, why the contribution guide is written in the future tense.
-- `PRODUCT_BACKLOG.md:6775-6781`, why the code of conduct offers no private channel.
-- `PRODUCT_BACKLOG.md:6842-6848`, why the branch rules task was left open and could not be read.
-- `PRODUCT_BACKLOG.md:6867-6872`, why blank issues stay enabled.
-- `PRODUCT_BACKLOG.md:6910-6914`, why `required: true` collects nothing today.
-- `PRODUCT_BACKLOG.md:9014-9019`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1290-1293`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1302-1305`, the released note that the private channel is not switched on.
+- `PRODUCT_BACKLOG.md:6684-6687`, why the private reporting task was left open.
+- `PRODUCT_BACKLOG.md:6746-6748`, what the changelog entry beside it was corrected to say.
+- `PRODUCT_BACKLOG.md:6769-6773`, why the contribution guide is written in the future tense.
+- `PRODUCT_BACKLOG.md:6776-6782`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6843-6849`, why the branch rules task was left open and could not be read.
+- `PRODUCT_BACKLOG.md:6868-6873`, why blank issues stay enabled.
+- `PRODUCT_BACKLOG.md:6911-6915`, why `required: true` collects nothing today.
+- `PRODUCT_BACKLOG.md:9015-9020`, the three settings named as refused on this repository today.
+- `CHANGELOG.md:1295-1298`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1307-1310`, the released note that the private channel is not switched on.
 
 The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
