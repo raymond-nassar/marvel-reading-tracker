@@ -137,8 +137,8 @@ that must not be rewritten, for the same reason the dated tracking artifacts are
 - `PRODUCT_BACKLOG.md:6869-6874`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:6912-6916`, why `required: true` collects nothing today.
 - `PRODUCT_BACKLOG.md:9016-9021`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1386-1389`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1398-1401`, the released note that the private channel is not switched on.
+- `CHANGELOG.md:1388-1391`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1400-1403`, the released note that the private channel is not switched on.
 
 The twelfth is live and does have to change: the introduction at `PRODUCT_BACKLOG.md:36-40` lists
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they are met
@@ -174,11 +174,20 @@ six lines and which carries a citation ninety lines below it. Replacing those si
 different ones drifted two anchors, the passage's own and a wider range containing it. Replacing
 them with eight drifted three, the third being that distant citation, which no edit had gone near.
 
-The test suite does not defend this prose, which is worth knowing before a red run suggests
-otherwise. Two assertions come close and neither breaks. The one reading the security policy names a
-sentence above the paragraph that changes, and it stays true after publication. The one reading the
-issue forms holds a setting rather than a sentence, and the second section of this document is the
-argument for that setting continuing to hold.
+One assertion in the suite defends this prose, and knowing which one is worth more than a surprise
+red run. `test/intake-config.test.js:109-115` requires the security policy to contain the sentence
+telling a reporter to open an issue saying only that they have a security report, and requires blank
+issues to stay enabled, because the first is the stated reason for the second. That sentence sits
+inside the first passage in the table above. So rewriting that paragraph either keeps the sentence
+or changes the assertion in the same commit, and the row above argues for keeping it: the fallback
+stops being the live route once BL-096 is on, but a reporter who does not find the option still
+needs somewhere to land.
+
+Nothing else in the suite holds these passages. Every assertion in it was matched against all ten,
+and what comes back besides that one is comment-stripping helpers that match a `#` and assert
+nothing about the prose. The near miss worth naming is the governance record's test, which reads the
+security policy but names a sentence above the paragraph that changes, and that sentence stays true
+after publication.
 
 Then bless the round the way any round is blessed, reading each printed pairing against the claim
 printed beside it. A round this size is exactly where that reading gets skipped.

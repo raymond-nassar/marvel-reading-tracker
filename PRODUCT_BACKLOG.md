@@ -4586,7 +4586,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9672-9674` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9674-9676` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4596,11 +4596,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:207-209`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9691-9695`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9693-9697`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9506-9508` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9508-9510` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4808,7 +4808,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2262-2271` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2264-2273` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:197-201` and
 `PRODUCT_BACKLOG.md:207-209` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -9309,9 +9309,11 @@ when it contains the paragraph and in fact breaks in both arms. Overlap is the t
 line, and the figures above are the corrected ones.
 
 The last acceptance item is there because a large red round invites the assumption that something
-real broke. Nothing in the suite pins this prose. The one assertion that reads the security policy
-names a sentence above the paragraph that changes, and it stays true after publication. The one that
-reads the issue forms holds a setting rather than a sentence, and that setting is meant to survive.
+real broke. One assertion does pin this prose, and the first pass missed it by reading the test that
+holds it and stopping at the wrong line. `test/intake-config.test.js:109-115` requires the security
+policy's fallback sentence as well as the blank-issues setting, and that sentence is inside the
+first rewritten passage. Matching every assertion in the suite against all ten passages returns that
+one and nothing else, which is the check that should have been run in place of the reading.
 
 ## Existing epics and stories
 

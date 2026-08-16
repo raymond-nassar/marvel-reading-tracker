@@ -32,8 +32,10 @@ so writing each replacement to the same length as the original cuts the work fro
 references, and replacing the same paragraph with eight lines broke three, the extra one being a
 reference ninety lines further down that no edit had gone near.
 
-The note also records that no test defends the old wording. A long list of broken references on the
-day is the expected result of doing the work, rather than a sign that something went wrong.
+The note also names the one test that does defend the old wording, so whoever does the work can keep
+that sentence or change the test on purpose rather than discover it. Beyond that one, a long list of
+broken references on the day is the expected result of doing the work, rather than a sign that
+something went wrong.
 
 ### The publisher's own blurbs are no longer stored here (BL-130, BL-131)
 
