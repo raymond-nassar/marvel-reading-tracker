@@ -1,7 +1,8 @@
 // Generated from src/data/hickman_full.json - real issues and real covers. The synopses this
 // file once carried were Marvel's own prose and were removed under BL-130, for the same reason
-// they were removed from src/data: a licence reaches only what its grantor holds. Every mockup
-// here already falls back when the field is absent, so they render the way the app now does.
+// they were removed from src/data: a licence reaches only what its grantor holds. Four of the
+// five mockups here already fall back when the field is absent and the fifth never showed it,
+// so nulling changes nothing any of them draws and they render the way the app now does.
 window.MOCK = {
   "listName": "Hickman to Secret Wars: full",
   "total": 219,

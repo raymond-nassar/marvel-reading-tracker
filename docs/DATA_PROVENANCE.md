@@ -132,8 +132,9 @@ as generated from one of the reading orders. It is the only vendored Marvel data
 outside `src/data/`, and until 2026-08-15 it was the only one this document did not name. It holds
 41 issue records with the same copied fields as an order, and it carried 41 descriptions, 7,193
 characters, every one of them byte-identical to a description that was shipped under `src/data/`.
-Those are now `null`. Every mockup already rendered a fallback when the field was absent, so they
-paint the way the app itself now does.
+Those are now `null`. Four of the five mockups already rendered a fallback when the field was
+absent and the fifth never showed a synopsis at all, so nulling changes nothing any of them draws
+and they paint the way the app itself now does.
 
 This subsection exists because a boundary defined by a list is a boundary somebody has to keep
 complete. The first pass at BL-130 read the catalog, so it saw fourteen files and stopped, and the

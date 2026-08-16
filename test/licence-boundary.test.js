@@ -48,6 +48,13 @@ test('no shipped reading order carries Marvel description prose', async () => {
 // descriptions in design/mockups/mock-data.js, a generated projection of a reading order that no
 // catalog lists and no gate walked. A boundary defined by an enumeration is a boundary someone has
 // to keep complete, so this one is defined by the tree instead.
+//
+// The count below is exact rather than a floor, and the reason is the parse that feeds it. Most of
+// the 124 files walked are code and cannot parse, so a file that stops parsing has to be skipped
+// silently or the test would fail on every script in the repository. That skip is a hole aimed
+// straight at the one file this test exists for: reformat the mockup bundle, or move it, and it
+// leaves the population with nothing said. A floor of fourteen still passes at that point, because
+// the catalog's own files alone clear it. An exact seventeen does not.
 async function everyDataBearingFile(dir, out = []) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
@@ -88,7 +95,7 @@ test('no file anywhere in the tree carries an items[].description string', async
     }
   }
 
-  assert.ok(scanned >= 14, `only ${scanned} item-bearing files were found, so the walk is not reaching the data tree`);
+  assert.equal(scanned, 17, `${scanned} item-bearing files were found, not 17, so this test's coverage has changed`);
   assert.deepEqual(offenders, [], `Marvel description prose is committed in ${offenders.length} record(s) outside the catalog's own files`);
 });
 
