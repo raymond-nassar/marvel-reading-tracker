@@ -353,8 +353,8 @@ app renders that state today rather than hypothetically. Those 675 do not render
 606 carry a series or digital id and get the sentence saying no synopsis is recorded, while 69 hold
 neither and get the sentence saying the snapshot has no record of the issue at all, which is the
 distinction drawn further up this document and worth keeping in view. The field reaches the
-interface in exactly one place, at `src/js/main.js:1848`, and the function behind it already
-answers for the absence at `src/js/main.js:2027-2032`, with a test asserting the sentence it
+interface in exactly one place, at `src/js/main.js:1909`, and the function behind it already
+answers for the absence at `src/js/main.js:2093-2098`, with a test asserting the sentence it
 returns. It is also reversible: the project this repository fetched from still serves the field,
 the contract check having run on 2026-08-15 with 33 of 33 assumptions holding, so the vendoring
 script can fetch it again if a review comes back permissive.
@@ -392,3 +392,34 @@ the publication runbook rather than here, and why rewriting was not done on anyo
 
 Absent the legal review, the safe reading stays the narrow one: the MIT grant covers what this
 repository wrote, and the committed metadata is Marvel's, held here under no stated permission.
+
+### What is fetched at read time instead
+
+The removal left every curated issue rendering an absence, which was the honest cost and not a happy
+one. Since BL-134 the app can fetch a synopsis on request and display it without keeping it, which is
+a different act from the one this section is about and is separated here so the two are not confused.
+
+The distinction that matters is between distribution and display. A description committed to this
+repository is redistributed by every clone, is served by the app to anyone the app is served to, and
+sits in the object store afterwards. A description fetched because a reader pressed a button is
+requested by that reader's browser from the service that holds it, shown once, and gone when the tab
+closes. The second is what a browser does on any comics site, and the archived terms read under "What
+the first hand's own terms said" separate those same two acts: a licence to use the content inside an
+app, against an express refusal of the right to redistribute it or to cache it indefinitely.
+
+Four mechanisms carry that promise, and they are listed because a promise nobody can check is worth
+nothing. The saved-state normalizer does not carry a description field at all, so no path writes one,
+including a restored backup or an imported checklist that had one smuggled into it. The app's own
+response cache is stripped of the field before anything is written to it. Every request carries a
+directive telling the browser not to store the response either, because the browser's cache is on disk
+and outside this app's reach. And the response cache is emptied once on upgrade, since it may already
+hold responses fetched before any of this was true.
+
+The prose is shown, never stored, and never re-served: this repository ships none of it, and an
+offline copy of the app shows the same absence sentence it showed before BL-134. The provenance notice
+appears every time a fetch run is started rather than once, so the reader is told where the text comes
+from at the moment they ask for it.
+
+This changes nothing about the open question above. Marvel's rights in that prose are unaffected by
+where it is displayed, and the service the app fetches from does not hold them either. What it changes
+is what this repository distributes, which is the only variable on this side of the boundary.

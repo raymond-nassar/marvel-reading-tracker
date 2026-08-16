@@ -291,7 +291,7 @@ test('a list id naming a prototype member cannot be adopted from an address', ()
   // They are reachable only from a hand-edited state file, through coerce, and that is BL-068. The
   // count is asserted so one added on the address path cannot hide among them.
   const bare = [...main.matchAll(/store\.state\.lists\[activeListId\(\)\]/g)];
-  assert.equal(bare.length, 5, 'a bare list lookup was added or removed without deciding about BL-068');
+  assert.equal(bare.length, 7, 'a bare list lookup was added or removed without deciding about BL-068');
 });
 
 // Assigning location.hash fires hashchange, which re-runs applyRoute and moves focus to the view

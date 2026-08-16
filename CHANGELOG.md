@@ -14,6 +14,30 @@ quote in a bug report.
 
 ## Unreleased
 
+### Issue synopses are back, fetched when you ask for them and never saved (BL-134)
+
+In plain English: there is a new button on a reading order that fills in the short summary for each
+issue. The summaries come from the same public service this app already uses for covers and issue
+links, they appear on screen, and none of them are written to your device. Close the tab and they are
+gone, which is on purpose. A notice explaining where the text comes from appears every time you press
+the button, and the fetch does not start until you accept it.
+
+Until now every issue said no summary was recorded. That was the result of an earlier change that
+removed a large amount of publisher-written text from this project, for good reasons that have not
+changed: this project does not have the right to redistribute that text, and a copy shipped inside
+the app is a copy redistributed. Showing text that was fetched at the moment you asked for it is a
+different act, and it is the same one your browser performs when you visit a comics website.
+
+The summaries fill in one issue at a time, starting with the one you are reading and the next eight
+after it, so the part of the list you are actually looking at is answered first and the rest follows
+behind. You can stop a run at any point. Nothing you have saved is affected, and progress, lists and
+backups are untouched.
+
+One thing to expect: the first time you open the app after this update, it will be slower than usual
+for a few minutes. The store of previously fetched information is emptied once, because some of it was
+saved before this change and may contain the old text. It refills as you use the app and the delay
+does not come back.
+
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 
 In plain English: nothing you have saved is affected, and the app itself does not change. This

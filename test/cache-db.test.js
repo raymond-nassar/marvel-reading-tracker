@@ -139,7 +139,10 @@ test('a database that refuses to open degrades to no cache rather than an error'
       assert.equal(await cache.set('/issues/1', { id: 1 }), undefined);
       assert.deepEqual(await cache.entries(), []);
       assert.deepEqual(await cache.usage(), { count: 0, bytes: 0, budget: cache.budget });
-      assert.equal(await cache.clear(), undefined);
+      // true rather than undefined: a store that would not open holds nothing, so a caller asking
+      // "is it empty now" has its answer. Reporting failure here would make the one-time synopsis
+      // purge retry on every boot in a browser where it can never succeed.
+      assert.equal(await cache.clear(), true);
     });
   }
 });
@@ -287,7 +290,7 @@ test('clearing empties the cache and leaves it usable', async () => {
   await withIdb({}, async () => {
     const cache = newCache();
     await cache.set('/issues/7', { id: 7 });
-    await cache.clear();
+    assert.equal(await cache.clear(), true, 'a clear that worked has to say so');
     assert.deepEqual(await cache.entries(), []);
     assert.equal(await cache.get('/issues/7'), null);
     await cache.set('/issues/8', { id: 8 });
@@ -295,10 +298,17 @@ test('clearing empties the cache and leaves it usable', async () => {
   });
 });
 
-test('a clear that fails is swallowed rather than thrown at the caller', async () => {
+// Still swallowed, because a failed clear must not propagate out of a settings button or out of
+// boot. What changed is that it is now reported instead of discarded: the one-time synopsis purge
+// writes a marker saying the store has been emptied, and a clear that failed silently would let
+// that marker be written over prose still sitting there, with no second attempt ever made.
+test('a clear that fails is reported to the caller rather than thrown or discarded', async () => {
   await withIdb({ failOps: ['clear'] }, async () => {
     const cache = newCache();
     await cache.set('/issues/7', { id: 7 });
-    await assert.doesNotReject(() => cache.clear());
+    let outcome;
+    await assert.doesNotReject(async () => { outcome = await cache.clear(); });
+    assert.equal(outcome, false);
+    assert.equal((await cache.entries()).length, 1, 'and the entry it could not remove is still there');
   });
 });
