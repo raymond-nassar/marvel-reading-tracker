@@ -1,5 +1,12 @@
 # Publication runbook
 
+**This runbook was executed on 2026-08-16, and the repository is now public.** It is kept as the
+record of that day rather than rewritten, so read the present tense throughout it, this paragraph
+excepted, as describing the state before the flip. The passages it lists have since been rewritten
+and the settings it asks for are on, both under BL-133. The one thing that did not happen is the
+legal review named in the first section, which remains an accepted risk rather than an answered
+question.
+
 Twenty-one passages in this repository are true only while it is private, spread over ten files. They
 say so plainly, which was the right way to write them: a security policy that describes a reporting
 route nobody can use is more use than one that pretends the route is there. The cost is that
@@ -13,12 +20,6 @@ remember, and so the person doing it is not also the person who has to find out 
 
 Nothing here is a legal opinion, and nothing here says the repository should be published. The first
 section is what has to be settled before it is.
-
-**This runbook was executed on 2026-08-16, and the repository is now public.** It is kept as the
-record of that day rather than rewritten, so read the present tense below as describing the state
-before the flip. The passages it lists have since been rewritten and the settings it asks for are
-on, both under BL-133. The one thing that did not happen is the legal review named immediately
-below, which remains an accepted risk rather than an answered question.
 
 ## Before anything is flipped
 
@@ -107,7 +108,7 @@ Do them in this order. The first pair has a real dependency and the third does n
 
 One thing changes with nobody touching it. Every `required: true` in the issue forms is inert while
 the repository is private and starts being enforced on publication, which is recorded with its
-reasoning at `PRODUCT_BACKLOG.md:6908-6912`. The forms do not need editing. It is listed here
+reasoning at `PRODUCT_BACKLOG.md:6925-6929`. The forms do not need editing. It is listed here
 because a form that suddenly rejects a submission looks like a regression to whoever hits it first.
 
 ## The prose that stops being true
@@ -134,23 +135,26 @@ exception. Ten of the twenty-one are in `PRODUCT_BACKLOG.md` and two more are in
 Eleven of those twelve say what was true when a piece of work was delivered, and they are history
 that must not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
 
-- `PRODUCT_BACKLOG.md:6276-6289`, why secret scanning was left unticked, and what push protection
+- `PRODUCT_BACKLOG.md:6278-6291`, why secret scanning was left unticked, and what push protection
   does when asked for without it.
-- `PRODUCT_BACKLOG.md:6681-6684`, why the private reporting task was left open.
-- `PRODUCT_BACKLOG.md:6743-6745`, what the changelog entry beside it was corrected to say.
-- `PRODUCT_BACKLOG.md:6766-6770`, why the contribution guide is written in the future tense.
-- `PRODUCT_BACKLOG.md:6773-6779`, why the code of conduct offers no private channel.
-- `PRODUCT_BACKLOG.md:6840-6846`, why the branch rules task was left open and could not be read.
-- `PRODUCT_BACKLOG.md:6865-6870`, why blank issues stay enabled.
-- `PRODUCT_BACKLOG.md:6908-6912`, why `required: true` collects nothing today.
-- `PRODUCT_BACKLOG.md:9012-9017`, the three settings named as refused on this repository today.
+- `PRODUCT_BACKLOG.md:6688-6691`, why the private reporting task was left open.
+- `PRODUCT_BACKLOG.md:6754-6756`, what the changelog entry beside it was corrected to say.
+- `PRODUCT_BACKLOG.md:6777-6781`, why the contribution guide is written in the future tense.
+- `PRODUCT_BACKLOG.md:6784-6790`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6851-6857`, why the branch rules task was left open and could not be read.
+- `PRODUCT_BACKLOG.md:6882-6887`, why blank issues stay enabled.
+- `PRODUCT_BACKLOG.md:6925-6929`, why `required: true` collects nothing today.
+- `PRODUCT_BACKLOG.md:9029-9034`, the three settings named as refused on this repository today.
 - `CHANGELOG.md:1412-1415`, the released note that secret scanning cannot be turned on.
 - `CHANGELOG.md:1424-1427`, the released note that the private channel is not switched on.
 
 The twelfth was live and did have to change: the introduction at `PRODUCT_BACKLOG.md:25-37` listed
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they were met
 that sentence described a state that no longer held. It was rewritten with those three clauses
-removed, which is why the passage now cited there counts nine open tasks rather than twelve.
+removed, together with BL-039's long-open task, which the same day closed, and with a clause added
+for BL-130's provenance record, which is genuinely still open. Four removed and one added is why the
+passage now cited there counts nine open tasks rather than twelve, and the arithmetic is worth
+stating because 12 minus 3 also reaches 9 and would have been the wrong reason.
 
 This document is not on its own list. It says in its own second section that three settings cannot
 be turned on today, which publication falsified as surely as anything above, but a runbook is spent
@@ -224,6 +228,14 @@ files. The two files that are not on the list are false positives of a kind wort
 are sentences about the list rather than members of it, one in `README.md` and one in the comment on
 the test that holds the security policy and the issue forms together. A block recording a defect
 already fixed is the other shape to expect, and it stays true after publication.
+
+That classification was half wrong, and a review caught it on the day rather than the search doing
+so. The `README.md` hit is a sentence about this document, but it also asserts in the present tense
+that passages here are true only while the repository is private and that three settings cannot be
+switched on, which are claims about repository state and not about the list. It was rewritten with
+the nine, making ten. The comment on the test is a genuine false positive and stands. The lesson is
+the one this section already teaches, applied one level up: "a sentence about the list" is not a
+safe category, because a sentence can be about the list and still assert the state.
 
 Read every hit as a passage rather than as a line. Counting lines is what went wrong the first time.
 

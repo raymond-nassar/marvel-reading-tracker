@@ -26,7 +26,7 @@ the project's history be overwritten or that line deleted.
 
 Several documents said, in the present tense, that those things could not be turned on, and that
 nobody outside could see the code or send a change. All of that was true while the project was
-closed and became false the moment it opened, so nine passages across nine files were rewritten to
+closed and became false the moment it opened, so ten passages across nine files were rewritten to
 say what is now the case. Where a document explained a trap rather than a state, the trap was kept:
 asking for the push block without the scanner is still accepted and still does nothing, which is
 worth knowing to anyone who copies this project.
