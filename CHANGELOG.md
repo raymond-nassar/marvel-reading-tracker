@@ -14,6 +14,21 @@ quote in a bug report.
 
 ## Unreleased
 
+### Work goes to features rather than to the record of it
+
+In plain English: nothing you have saved is affected and the app itself does not change. This is a
+change to how the project is worked on, not to what it does.
+
+Several changes in a row had gone by without touching the app at all. Each existed only to correct
+something the one before it had written down about its own workings: how far apart two sentences
+sat, which change had left a line untidily wrapped. The instructions this project gives the people
+and tools that work on it now say plainly that this class of thing is not worth a change of its own.
+Fix it quietly inside work already under way for another reason, or leave it, and put the effort
+into what the app can do and the information it holds.
+
+The rule is deliberately narrow. It does not permit writing anything untrue. It asks for fewer
+claims of that kind to be made in the first place.
+
 ### Twelve new reading orders (BL-142)
 
 In plain English: there are twelve more reading lists to choose from. Five follow a single character,
@@ -164,25 +179,14 @@ by the disputed figure: reproducing that pair by hand means editing the app and 
 and it is printed by a committed check now. The four measured reverts are written out in full in the
 project's list of planned improvements, with what each one reddens and whether it prints the pair.
 
-A second correction, this one to the record rather than to the text above. The correction above was
-itself followed by a further one, which revised the same account where it is told at greater length
-in the project's list of planned improvements, and changed nothing in this file. Every change here
-carries a written description of itself in the project's history, and that further correction's
-description of itself is wrong twice over. Since it left no entry of its own on this page, this is
-the nearest place its correction can go.
-
-It blames the change before it for a badly wrapped line, when the line in question was full width in
-that earlier change and was broken by the very change now complaining of it. And it puts the
-sentence that contradicted a mistaken claim eleven lines above the claim and in the same paragraph,
-when the two sit eighteen lines apart, measured from the words that description itself quotes to the
-phrase it was correcting, and in different paragraphs with a blank line between them. Neither
-statement is about the app, and neither alters which conclusion is right. A description of a change
-cannot be edited once the change has been accepted, so a correction has to sit beside it instead.
-
-That makes four reviews in a row, each of which found the one before it asserting something the
-project's own record already contradicted. Not one of the four needed a measurement repeated. Each
-needed the finished work read back against what had already been written down, whether on the page
-above it or in the project's history, and that is the check which kept being skipped.
+A second correction, briefly. The further correction that followed the one above, which revised the
+same account in the project's list of planned improvements and changed nothing in this file,
+described itself wrongly twice over: it blamed the change before it for an untidy line it had made
+itself, and it put the sentence disproving a mistaken claim nearer to that claim, and in the same
+paragraph, than it really sits. Neither is about the app and neither changes which conclusion is
+right. A description of a change cannot be edited once the change has been accepted, so the
+correction sits here instead. It is the last of its kind, for the reason given at the top of this
+list.
 
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 
