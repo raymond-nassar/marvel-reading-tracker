@@ -716,7 +716,7 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
   border: 1px solid var(--line); border-radius: 10px; background: var(--card-2);
 }
 .result-main { flex: 1 1 auto; min-width: 0; }
-.result-title { font-size: .87rem; font-weight: 520; }
+.result-title { font-size: .87rem; font-weight: 520; margin: 0; }
 .result-meta { color: var(--muted); font-size: .76rem; }
 .result progress { width: 120px; }
 .result-source { margin: .2rem 0 0; }
@@ -826,19 +826,27 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
   color: var(--dim); font-size: .8rem; margin: 0 0 .35rem; line-height: 1.45;
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
 }
+/* The clamp above is an author declaration, so it beats the user agent's [hidden] rule and the
+   description stays laid out and in the accessibility tree after hidden is set. Every bundled
+   order has a description today, but the normaliser accepts one without. */
+.ocard-desc[hidden] { display: none; }
 .ocard-meta { color: var(--muted); font-size: .74rem; margin: 0 0 .35rem; }
 /* The card's whole account of a story that can be read more than one way: that there is a choice,
    and how many ways there are. Quiet, one line, and no wider than the meta line above it, because
    the choice itself is not made here. It is underlined rather than only coloured so it reads as
-   something to press without depending on colour, and raised above the card-wide preview overlay
-   so pressing it is unambiguous even though it opens the same dialog. */
-.ocard-ways { margin: 0 0 .35rem; position: relative; z-index: 1; }
+   something to press without depending on colour. */
+.ocard-ways { margin: 0 0 .35rem; }
 .ocard-ways .ways {
   background: none; border: 0; font: inherit; font-size: .74rem;
   color: var(--muted); text-decoration: underline; text-underline-offset: 2px;
   /* Padding rather than a bare inline run, so the target clears the 24px floor that WCAG 2.2
      asks for at AA. Measured at .74rem it lands at 26px. */
   display: inline-block; padding: .3rem 0; min-height: 24px;
+  /* Raised above the card-wide preview overlay so pressing it is unambiguous even though it opens
+     the same dialog. On the paragraph instead of the button this lifted the whole line, and the
+     empty run beside the button, which has no handler, put an 85px dead strip through the card's
+     own preview target. Raising the button is what .ocard-foot .btn already does below. */
+  position: relative; z-index: 1;
 }
 .ocard-ways .ways:hover { color: var(--text); }
 .ocard-foot {

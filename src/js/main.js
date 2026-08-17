@@ -1346,7 +1346,15 @@ function pathLabel(list) {
 function pathChooser(story, scope, paint) {
   if (story.lists.length < 2) return null;
   const selected = chosenPath(story);
-  return el('fieldset', { class: 'paths' }, [
+  return el('fieldset', {
+    class: 'paths',
+    // The legend says what the choice is but not what it is about, and the catalog pane shows six
+    // of these at once. Three bundled stories offer paths labelled identically, so without the
+    // story in the group's name a reader hears "The main series only, 1 of 2, Pick how much you
+    // want to read" three times with nothing to tell the three apart. Every other control in the
+    // row already carries the story this way.
+    'aria-label': labelledName('Pick how much you want to read', story.name),
+  }, [
     el('legend', { text: 'Pick how much you want to read' }),
     ...story.lists.map((list) => el('label', { class: 'fp path' }, [
       el('input', {
@@ -1472,7 +1480,12 @@ function previewButton(list, story = null) {
     type: 'button',
     class: 'ocard-preview',
     'aria-label': labelledName(text, list.name),
-    dataset: { key: list.id, act: 'preview' },
+    // Keyed by the story rather than by the path it currently shows. Choosing a different path in
+    // the dialog rebuilds this card around a different list, so a key of list.id no longer matches
+    // what focus restoration captured, and the miss falls through to the card's primary action,
+    // which is Add. That returns the reader to a state-changing control they never aimed at, one
+    // Enter away from importing an order. The story key does not move when the path does.
+    dataset: { key: story?.key ?? list.id, act: 'preview' },
     onclick: () => openPreview(list, story),
   }, text);
 }
@@ -3242,7 +3255,11 @@ function catalogRow(story) {
 
   return el('div', { class: 'result' }, [
     el('div', { class: 'result-main' }, [
-      el('div', { class: 'result-title', text: title }),
+      // A heading rather than a div. Grouping replaced a heading per grouped story with a plain
+      // title, which took the pane from six headings to none and left heading navigation with no
+      // way through the results at all. Every row carries one now, which is one more than the
+      // ungrouped rows ever had.
+      el('h3', { class: 'result-title', text: title }),
       pathChooser(story, 'catalog', paint),
       meta,
       desc,

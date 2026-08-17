@@ -34,6 +34,13 @@ The first attempt put the choice on the cards themselves and it made them clutte
 measured and moved. The cards are now within a few percent of the height and the number of things to
 read that they had before any of this.
 
+A review before this landed found four faults, and all four are fixed. The one worth naming: after
+changing which version you wanted and closing the window, the keyboard could land on the button that
+adds a list to your library, so a stray Enter would have added it. It now goes back to the small line
+you pressed to open the window. The rest were a strip of empty space above a card that quietly
+swallowed clicks meant for the card, a screen reader hearing the same name for six different choices
+in the browse pane, and a card with no description showing an empty gap where the words would go.
+
 ### Work goes to features rather than to the record of it
 
 In plain English: nothing you have saved is affected and the app itself does not change. This is a
