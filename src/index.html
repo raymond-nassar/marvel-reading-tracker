@@ -11,6 +11,10 @@
     <title>Marvel Reading Tracker</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e23636'/%3E%3Ctext x='16' y='23' font-family='system-ui' font-size='20' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+    <!-- Lets the browser install this as an app, so it gets a Start menu or Dock entry and its
+         own window. Every path inside the manifest is origin-relative, which is what keeps an
+         installed window on the one origin the reading progress is stored under. -->
+    <link rel="manifest" href="./manifest.webmanifest" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>

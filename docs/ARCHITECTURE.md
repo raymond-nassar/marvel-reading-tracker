@@ -16,12 +16,13 @@ the prose rather than in a binary nobody can diff.
 ## The three entry points
 
 The app is served from one origin and has three pages, each loading exactly one module. The tracker
-itself is loaded at `src/index.html:754`. The launch page, which is the tab a reader's issue opens
+itself is loaded at `src/index.html:758`. The launch page, which is the tab a reader's issue opens
 into, is loaded at `src/open.html:19`. A fault-injection harness that exists for development and is
 no part of the running app is loaded at `src/dev-faults.html:129`.
 
-The module the tracker page loads is not the view layer itself but a fourteen-line entry whose whole
-body is a call to `boot()`, at `src/js/app.js:12-14`. The indirection is the seam that makes the view
+The module the tracker page loads is not the view layer itself but a small entry whose whole body is
+a call to `boot()` and then a registration of the offline worker, at `src/js/app.js:12-24`. The
+indirection is the seam that makes the view
 layer testable: loading it used to be the same act as starting the application, so a test could not
 reach a render function without booting an app that then never exited. The entry has to be a module
 rather than an inline script because the server sends `script-src 'self'`, which an inline script
@@ -83,7 +84,7 @@ another part constructed. A dotted arrow means calls, and owns nothing.
 
 Four things the picture is making a point of.
 
-**The view layer owns the state, and the library owns none of it.** Sixteen modules sit under
+**The view layer owns the state, and the library owns none of it.** Nineteen modules sit under
 `src/js/lib/`, and none of them keeps anything at module scope that changes: what is there is
 constants and lookup tables, read and never written. Where state exists it belongs to an instance
 the view layer made, as the rate limiter's queue and its two rolling windows of recent hits do, set
@@ -104,10 +105,10 @@ back to constructing both when it is handed neither, at `src/js/api.js:68-69`. T
 tests and for any future caller; the running app always passes its own, which is what keeps one
 budget across every request the page makes.
 
-**One of the sixteen library modules is not in this graph at all.** `src/js/lib/curated.js` parses
+**One of the nineteen library modules is not in this graph at all.** `src/js/lib/curated.js` parses
 the curated-list manifest, and its only importer outside the tests is the vendoring script, at
 `scripts/vendor-orders.mjs:28`. It runs in Node when someone adds a reading list, never in the
-browser. So fifteen of the sixteen are reachable from the page, and a graph drawn from the
+browser. So eighteen of the nineteen are reachable from the page, and a graph drawn from the
 directory listing rather than from the imports would have been wrong by one.
 
 ## Marking one issue read

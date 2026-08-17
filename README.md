@@ -13,7 +13,29 @@ Marvel Unlimited to read the next one.
 It does not contain any comics, and it is not made by Marvel. You still need your own Marvel
 Unlimited subscription to read.
 
-**In a hurry?** Jump to [Run it on your computer](#run-it-on-your-computer).
+## Start here
+
+Three things, once. After that, starting the app is one double-click.
+
+1. **Install Node.js.** It is free, and it is the only thing you need that does not come with
+   this project. Get it from [nodejs.org](https://nodejs.org), and take the "LTS" version if
+   you are offered a choice.
+2. **Download this project.** Use the green **Code** button near the top of this page, choose
+   **Download ZIP**, and unzip it wherever you keep your files.
+3. **Double-click the start file** inside the folder you just unzipped: **Start on
+   Windows.cmd** on Windows, or **Start on macOS.command** on a Mac.
+
+A small window opens and stays open, and your browser opens the app by itself. That window is
+the app running, so leave it alone until you are finished. To stop, click that window and
+press **Ctrl+C**. Your reading progress is kept by your browser, so stopping the app never
+loses it.
+
+Once the app is open, your browser will offer to
+[install it](#optional-install-it-as-an-app), which gives the tracker its own icon and its own
+window. After that the icon opens the tracker whether or not the app is running.
+
+The longer version of all this, with what to do when a step goes wrong, is in
+[Run it on your computer](#run-it-on-your-computer) below.
 
 ## What it does
 
@@ -87,11 +109,28 @@ new folder. If you downloaded the ZIP instead, just unzip it and `cd` into the f
 
 ### Step 2: Start the app
 
+There are two ways to do this, and they do exactly the same thing. Pick either one.
+
+**Double-click a file.** In the folder from step 1, double-click:
+
+- **Start on Windows.cmd** on Windows
+- **Start on macOS.command** on a Mac
+
+A terminal window opens and stays open. That window *is* the app running, so leave it alone
+until you are finished for the day.
+
+The first time, your computer may ask you to confirm, because the file arrived from the
+internet. On a Mac, if double-clicking does nothing or the file opens in a text editor
+instead, right-click it, choose **Open**, and confirm.
+
+**Or type a command,** if you are comfortable in a terminal. Open one, go to the folder from
+step 1, and run:
+
 ```
 npm start
 ```
 
-You should see exactly this:
+Either way, you should see exactly this:
 
 ```
 Marvel Reading Tracker running at http://127.0.0.1:8787/
@@ -135,6 +174,27 @@ you are online.
 
 To start using it, click **Browse the catalog** and pick a reading order.
 
+### Optional: install it as an app
+
+Once the page is open, most browsers will offer to install it. In Edge or Chrome, look for an
+install icon at the right-hand end of the address bar, or open the browser menu and choose
+**Install** or **Apps**, then **Install this site as an app**. Safari calls it **Add to Dock**.
+
+Installing gives the tracker its own window, without the address bar and tabs, and an entry in
+the Start menu, the Dock or the applications list. It is the same app with the same reading
+progress, opened at the same address, so nothing you have saved is affected either way. You can
+uninstall it from the same menu.
+
+**The installed icon opens whether or not the app is running,** because the browser keeps its own
+copy of the page after your first visit. What you get with nothing running is the tracker exactly
+as you left it: everything you have marked as read, every list you have made, all of it. What you
+do not get is anything that has to be fetched while you are there, so covers that have never been
+shown before stay blank and looking up a comic's details will not work until you start the app
+again.
+
+So the honest version is that step 2 is still worth doing, and the app is better with it running.
+It is just no longer the difference between a working app and an error page.
+
 ### Stopping it, and starting it again another day
 
 To stop the app, click the terminal window where it is running and press **Ctrl+C**. On a
@@ -142,7 +202,8 @@ Mac this is still Ctrl+C, not Command+C. You can then close the window.
 
 Your reading progress is not lost when you stop the app. It stays in your browser.
 
-To start it again another day, open a terminal, go back to the folder, and start it again:
+To start it again another day, double-click the same file you used in step 2, or open a
+terminal, go back to the folder, and start it again:
 
 ```
 cd marvel-reading-tracker
@@ -210,11 +271,26 @@ your existing reading progress will not appear at the new address.
 Node.js is not installed, or the terminal was open before you installed it. Install Node.js
 from [nodejs.org](https://nodejs.org), then close the terminal window and open a new one.
 
+**Double-clicking the start file does nothing useful**
+
+Both start files are written to stay open and say what went wrong, including when Node.js is
+missing, so read whatever is in the window before closing it. If the window vanishes with
+nothing in it at all, start the app the other way instead, by opening a terminal and running
+`npm start` in the folder, because the terminal will keep the error where you can read it.
+
+On a Mac, if the file opens in a text editor instead of running, right-click it and choose
+**Open**. If it says permission denied, open Terminal, go to the folder, and run
+`chmod +x "Start on macOS.command"` once.
+
 **The page is blank, or nothing loads**
 
-Check the terminal window where you ran `npm start` is still open and still shows the
+Check the terminal window where you started the app is still open and still shows the
 "running at" message. If it has closed or shows an error, the app is not running. Also check
 you typed the address exactly, including the `http://` at the start.
+
+Once you have opened the app at least once, your browser keeps its own copy of it, so the page
+may well load even with nothing running. What will not work then is anything that has to be
+fetched at the time, such as a cover you have never seen before.
 
 **The "Read" button does nothing**
 
