@@ -14,6 +14,24 @@ quote in a bug report.
 
 ## Unreleased
 
+### Record two ways a routine command can quietly destroy uncommitted work
+
+In plain English: nothing about the app changes, and nothing you have saved is affected. This adds
+two warnings to the notes that contributors work from.
+
+Work on this project happens in a private copy of the project folder, one per task. Asking to switch
+that copy back to the main line of work always fails, because the main line is already open
+elsewhere and it cannot be in two places at once. If the refusal is hidden, which is easy to do
+without meaning to, the next command carries on as though the switch had worked and rewinds the task
+copy instead of the one that was intended. Anything edited and not yet saved into the project's
+history is gone, and because the main line itself is untouched, nothing afterwards looks wrong.
+
+The second warning is the reason the first is so easy to miss. The way this project's notes tell
+contributors to capture the output of a command also makes a successful command report itself as
+failed. Advice printed alongside a success is enough to trigger it, so a step written to run only
+when the previous one worked can be skipped for no reason at all. Both were measured rather than
+recalled, and the second contradicted advice already in the notes, which has been corrected.
+
 ### Record a way the evidence gate can lose a claim without reporting anything
 
 In plain English: nothing about the app changes, and nothing you have saved is affected. This adds a
