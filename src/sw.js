@@ -32,8 +32,12 @@ const CACHE = `${CACHE_PREFIX}v1`;
 self.addEventListener('install', () => {
   // Nothing is fetched here on purpose. A precache is a list of files somebody has to keep
   // complete, and the same defect class is what scripts/check-anchors.mjs refuses to enumerate
-  // for. The page fetches its own shell on the first visit and every one of those responses is
-  // stored below, so the list maintains itself and cannot fall behind the file it describes.
+  // for: a module added later and left off the list breaks the offline launch silently.
+  //
+  // The shell is warmed instead by the page, in src/js/lib/offline.js, which asks the browser
+  // what it actually loaded and re-fetches that through this worker. The list is derived rather
+  // than maintained, so it cannot fall behind the app it describes. Doing it here would not work
+  // in any case: an install handler cannot know which files the page needs.
   self.skipWaiting();
 });
 
@@ -63,16 +67,27 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   if (url.origin !== self.location.origin) return;
-  event.respondWith(networkThenCache(request));
+  event.respondWith(networkThenCache(event));
 });
 
-async function networkThenCache(request) {
+async function networkThenCache(event) {
+  const request = event.request;
   try {
     const response = await self.fetch(request);
-    await remember(request, response);
+    // Cloned now and stored on the side, rather than awaited. Awaiting put the disk write in
+    // front of every navigation, stylesheet and module response while the server was healthy,
+    // which is latency paid on the common path to help the rare one. waitUntil keeps the worker
+    // alive until the write finishes without holding the reader's response behind it, and the
+    // clone has to be taken before returning because the browser consumes the body it is given.
+    event.waitUntil(remember(request, response.clone()));
     return response;
   } catch (networkError) {
-    const cached = await self.caches.match(request).catch(() => null);
+    // Scoped to this worker's own cache. caches.match() searches every cache on the origin, and
+    // activation deliberately leaves caches it did not create alone, so the unscoped form could
+    // answer a reader with an entry written by something else served from 127.0.0.1:8787.
+    const cached = await self.caches.open(CACHE)
+      .then((cache) => cache.match(request))
+      .catch(() => null);
     if (cached) return cached;
     // Nothing to answer with. Rethrowing gives the browser its own offline page, which is what
     // it would have shown had this worker not been here at all. Answering with a page of our own
@@ -92,7 +107,7 @@ async function remember(request, response) {
   if (response.status !== 200) return;
   try {
     const cache = await self.caches.open(CACHE);
-    await cache.put(request, response.clone());
+    await cache.put(request, response);
   } catch {
     // Deliberately silent. There is no reader-visible consequence at the moment it happens, and
     // the next successful load tries again.

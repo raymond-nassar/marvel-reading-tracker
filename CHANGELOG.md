@@ -44,6 +44,12 @@ app's own files, never a comic cover or anything else from elsewhere.
 While the app is running, nothing changes at all. The tracker still asks for every file fresh
 before it will use the copy, so you cannot be shown a stale page by this.
 
+One correction to the above, made after a code review of it. As first written, the copy was only
+made on your *second* visit, so somebody who installed the tracker the moment their browser offered
+to, and then closed it down, still got the "cannot be reached" page. That is the person this was
+written for, so it now takes the copy on the first visit. It costs one extra load of the app's own
+files, once, and never again after that.
+
 ### The tracker can now be installed as an app (BL-134)
 
 In plain English: you can now give the tracker its own window and its own icon in the Start menu,

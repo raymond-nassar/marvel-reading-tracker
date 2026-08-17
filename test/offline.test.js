@@ -5,7 +5,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { COVER_IMAGE_HOST } from '../src/js/lib/coverHost.js';
-import { registerOffline, SKIPPED, WORKER_URL } from '../src/js/lib/offline.js';
+import { registerOffline, shellUrls, SKIPPED, warmShell, WORKER_URL } from '../src/js/lib/offline.js';
 
 // The offline worker decides, for every request the page makes, whether to answer it and what
 // from. None of that is reachable from a unit test in the ordinary way: a service worker has no
@@ -33,13 +33,18 @@ function makeResponse(status = 200, body = 'ok') {
 
 // Enough of the Cache API to answer what the worker asks of it. Names map to a store of
 // url -> response, which is what makes both the eviction test and the match test readable.
+//
+// `open(name).match` and the top-level `match` are kept apart on purpose. The top-level one
+// searches every cache on the origin, which is the behaviour the worker must not use, so it
+// records every call and a test asserts the record stays empty.
 function makeCaches(initial = {}) {
   const named = new Map(Object.entries(initial).map(([k, v]) => [k, new Map(Object.entries(v))]));
-  const calls = { put: [], deleted: [], opened: [] };
+  const calls = { put: [], deleted: [], opened: [], unscopedMatch: [] };
   return {
     calls,
     named,
     putFails: false,
+    holdPut: null,
     async keys() { return [...named.keys()]; },
     async delete(name) { calls.deleted.push(name); return named.delete(name); },
     async open(name) {
@@ -49,13 +54,16 @@ function makeCaches(initial = {}) {
       const outer = this;
       return {
         put: async (request, response) => {
+          if (outer.holdPut) await outer.holdPut;
           if (outer.putFails) throw new Error('quota exceeded');
           calls.put.push(request.url);
           store.set(request.url, response);
         },
+        match: async (request) => store.get(request.url),
       };
     },
     async match(request) {
+      calls.unscopedMatch.push(request.url);
       for (const store of named.values()) {
         if (store.has(request.url)) return store.get(request.url);
       }
@@ -76,6 +84,9 @@ function makeWorld({ fetch: fetchImpl, caches } = {}) {
     skipWaited: false,
     claimed: false,
     listeners,
+    // Whatever the worker handed to event.waitUntil. The store now happens beside the response
+    // rather than in front of it, so a test that asserts on what was written has to settle these.
+    waits: [],
   };
   return world;
 }
@@ -99,8 +110,20 @@ function fireFetch(world, url, init = {}) {
   globalThis.self = world;
   const request = { url, method: init.method ?? 'GET' };
   let answered = null;
-  world.listeners.get('fetch')({ request, respondWith: (p) => { answered = p; } });
+  world.listeners.get('fetch')({
+    request,
+    respondWith: (p) => { answered = p; },
+    waitUntil: (p) => world.waits.push(p),
+  });
   return answered;
+}
+
+// The cache write is handed to waitUntil and outlives the response, so anything asserting on
+// what was stored has to wait for it here rather than assume it happened.
+async function settle(world) {
+  const pending = world.waits;
+  world.waits = [];
+  await Promise.all(pending);
 }
 
 async function fireActivate(world) {
@@ -139,6 +162,7 @@ test('a same-origin request is answered from the network and the answer is kept'
 
   const got = await fireFetch(world, `${ORIGIN}/data/catalog.json`);
   assert.equal(got, fresh, 'the reply did not come from the network');
+  await settle(world);
   assert.deepEqual(world.caches.calls.put, [`${ORIGIN}/data/catalog.json`]);
 });
 
@@ -160,6 +184,7 @@ test('a page that is in the cache is still fetched afresh while the server is an
   const got = await fireFetch(world, `${ORIGIN}/`);
   assert.equal(fetched, 1, 'the network was never asked');
   assert.equal(got.body, 'today', 'the cached copy was served while the server was running');
+  await settle(world);
   assert.equal(caches.named.get('mrt-offline-v1').get(`${ORIGIN}/`).body, 'today', 'the stored copy was left stale');
 });
 
@@ -168,6 +193,7 @@ test('a reply that is not a 200 is returned but not kept', async () => {
     const world = await loadWorker(makeWorld({ fetch: async () => makeResponse(status, 'partial') }));
     const got = await fireFetch(world, `${ORIGIN}/data/catalog.json`);
     assert.equal(got.status, status);
+    await settle(world);
     assert.deepEqual(world.caches.calls.put, [], `a ${status} was stored`);
   }
 });
@@ -202,6 +228,43 @@ test('a cache that refuses the write still hands back the page that was fetched'
 
   const got = await fireFetch(world, `${ORIGIN}/`);
   assert.equal(got, fresh, 'a full disk took the page away');
+  await settle(world);
+});
+
+// Finding from review: caches.match() searches every cache on the origin, and activation
+// deliberately leaves caches this worker did not create alone. 127.0.0.1:8787 is a shared
+// address, so another program's cache could otherwise answer for the app while the server is
+// down, which would be this worker serving a page it has never seen.
+test('with the server stopped, a copy in somebody else\'s cache is not served as ours', async () => {
+  const caches = makeCaches({ 'someone-else': { [`${ORIGIN}/`]: makeResponse(200, 'not ours') } });
+  const world = await loadWorker(makeWorld({
+    caches,
+    fetch: async () => { throw new TypeError('Failed to fetch'); },
+  }));
+
+  await assert.rejects(fireFetch(world, `${ORIGIN}/`), /Failed to fetch/, 'another cache answered for this app');
+  assert.deepEqual(caches.calls.unscopedMatch, [], 'the worker searched every cache on the origin');
+});
+
+// Finding from review: awaiting the write put disk latency in front of every response while the
+// server was healthy. The store is for the rare case; the response is the common one.
+test('the page is handed back without waiting for it to be written to the cache', async () => {
+  const caches = makeCaches();
+  let release;
+  caches.holdPut = new Promise((resolve) => { release = resolve; });
+  const fresh = makeResponse(200, 'fresh');
+  const world = await loadWorker(makeWorld({ caches, fetch: async () => fresh }));
+
+  const answered = fireFetch(world, `${ORIGIN}/`);
+  const got = await Promise.race([
+    answered,
+    new Promise((resolve) => { setTimeout(() => resolve('STILL WAITING'), 200); }),
+  ]);
+  assert.equal(got, fresh, 'the reader waited for the cache write before seeing the page');
+
+  release();
+  await settle(world);
+  assert.deepEqual(caches.calls.put, [`${ORIGIN}/`], 'the write was dropped rather than moved off the path');
 });
 
 test('activation clears this worker\'s old caches and nothing else on the origin', async () => {
@@ -234,7 +297,7 @@ test('the worker is asked for relative to the page, so it takes the whole app as
 
 test('a browser with no service worker support boots the app anyway', async () => {
   const result = await registerOffline({ navigator: {} });
-  assert.deepEqual(result, { ok: false, reason: SKIPPED.unsupported });
+  assert.deepEqual(result, { ok: false, reason: SKIPPED.unsupported, warmed: 0 });
 });
 
 test('an origin the browser does not trust is named rather than attempted', async () => {
@@ -244,7 +307,7 @@ test('an origin the browser does not trust is named rather than attempted', asyn
     navigator: { serviceWorker: { register: async () => { asked = true; } } },
   };
   const result = await registerOffline(scope);
-  assert.deepEqual(result, { ok: false, reason: SKIPPED.insecure });
+  assert.deepEqual(result, { ok: false, reason: SKIPPED.insecure, warmed: 0 });
   assert.equal(asked, false, 'registration was attempted on an origin that would refuse it');
 });
 
@@ -265,8 +328,141 @@ test('a registration that succeeds asks for the worker at the address the page c
     navigator: { serviceWorker: { register: async (url) => { asked.push(url); return {}; } } },
   };
   const result = await registerOffline(scope);
-  assert.deepEqual(result, { ok: true, reason: null });
+  assert.equal(result.ok, true);
+  assert.equal(result.reason, null);
   assert.deepEqual(asked, ['./sw.js']);
+});
+
+// ------------------------------------------------------------------ warming the shell
+//
+// Finding from review, and the one that mattered most: the worker is registered after boot(), so
+// the document, the stylesheet and every module of the first visit are fetched before it can
+// control anything. Measured in Edge on a cleared profile before this was written: one visit left
+// 0 entries stored, and stopping the server then gave "can't reach this page" from the installed
+// icon, which is the failure the worker exists to prevent.
+
+function pageScope({ href = `${ORIGIN}/#/home`, resources = [], controller = null, failOn = null } = {}) {
+  const fetched = [];
+  const listeners = new Map();
+  // Kept separately from the live listener map, which is pruned on removal. Whether the page ever
+  // had to wait is the thing worth asserting, and by the time a wait finishes the map is empty
+  // again either way.
+  const waited = [];
+  return {
+    fetched,
+    listeners,
+    waited,
+    isSecureContext: true,
+    location: { origin: ORIGIN, href },
+    performance: { getEntriesByType: (type) => (type === 'resource' ? resources.map((name) => ({ name })) : []) },
+    fetch: async (url) => {
+      fetched.push(url);
+      if (failOn && url === failOn) throw new TypeError('Failed to fetch');
+      return makeResponse();
+    },
+    setTimeout: (fn, ms) => setTimeout(fn, ms),
+    navigator: {
+      serviceWorker: {
+        controller,
+        register: async () => ({}),
+        addEventListener: (type, fn) => { waited.push(type); listeners.set(type, fn); },
+        removeEventListener: (type) => listeners.delete(type),
+      },
+    },
+  };
+}
+
+test('the shell is the list the browser already has, not one written down here', () => {
+  const scope = pageScope({
+    href: `${ORIGIN}/#/home`,
+    resources: [
+      `${ORIGIN}/styles.css`,
+      `${ORIGIN}/js/app.js`,
+      `${ORIGIN}/js/app.js`,
+      `https://${COVER_IMAGE_HOST}/u/prod/marvel/i/mg/6/60/abc.jpg`,
+      'not a url at all',
+    ],
+  });
+
+  const urls = shellUrls(scope);
+  assert.deepEqual(urls, [`${ORIGIN}/`, `${ORIGIN}/styles.css`, `${ORIGIN}/js/app.js`]);
+});
+
+test('warming fetches every same-origin file the page loaded, so the next launch has them', async () => {
+  const scope = pageScope({
+    controller: { state: 'activated' },
+    resources: [`${ORIGIN}/styles.css`, `${ORIGIN}/js/app.js`],
+  });
+
+  const result = await warmShell(scope);
+  assert.equal(result.warmed, 3);
+  assert.deepEqual(scope.fetched, [`${ORIGIN}/`, `${ORIGIN}/styles.css`, `${ORIGIN}/js/app.js`]);
+  // A page that is already controlled has nothing to wait for, and waiting anyway would mean
+  // sitting on a control event that has already happened until the timeout runs out.
+  assert.equal(scope.waited.length, 0, 'an already-controlled page waited for control it already had');
+});
+
+test('one file that will not come back does not abandon the rest of the shell', async () => {
+  const scope = pageScope({
+    controller: { state: 'activated' },
+    resources: [`${ORIGIN}/styles.css`, `${ORIGIN}/js/app.js`],
+    failOn: `${ORIGIN}/styles.css`,
+  });
+
+  const result = await warmShell(scope);
+  assert.equal(result.warmed, 2, 'a single failure took the whole warm-up with it');
+  assert.equal(scope.fetched.length, 3);
+});
+
+test('warming waits for the worker to take control, because before that it answers for nothing', async () => {
+  const scope = pageScope({ controller: null, resources: [`${ORIGIN}/styles.css`] });
+
+  const pending = warmShell(scope);
+  await Promise.resolve();
+  assert.deepEqual(scope.fetched, [], 'the shell was warmed while no worker was listening');
+
+  scope.navigator.serviceWorker.controller = { state: 'activated' };
+  scope.listeners.get('controllerchange')();
+
+  const result = await pending;
+  assert.equal(result.warmed, 2);
+});
+
+test('a worker that never takes control is named rather than warmed into the void', async () => {
+  const scope = pageScope({ controller: null, resources: [`${ORIGIN}/styles.css`] });
+
+  const pending = warmShell(scope);
+  scope.listeners.get('controllerchange')();
+
+  const result = await pending;
+  assert.deepEqual(result, { warmed: 0, reason: SKIPPED.uncontrolled });
+  assert.deepEqual(scope.fetched, [], 'files were fetched with nothing to store them');
+});
+
+test('the first visit warms the shell, which is the visit the installed icon is created on', async () => {
+  const scope = pageScope({ controller: null, resources: [`${ORIGIN}/styles.css`] });
+  scope.navigator.serviceWorker.register = async () => {
+    // Registering is what causes the claim, so control arrives from here in a real browser.
+    scope.navigator.serviceWorker.controller = { state: 'activated' };
+    return {};
+  };
+
+  const result = await registerOffline(scope);
+  assert.equal(result.ok, true);
+  assert.equal(result.warmed, 2, 'the first visit stored nothing, so the icon opens an error page');
+  assert.deepEqual(scope.fetched, [`${ORIGIN}/`, `${ORIGIN}/styles.css`]);
+});
+
+test('a later visit is already controlled, so nothing is downloaded a second time', async () => {
+  const scope = pageScope({
+    controller: { state: 'activated' },
+    resources: [`${ORIGIN}/styles.css`, `${ORIGIN}/js/app.js`],
+  });
+
+  const result = await registerOffline(scope);
+  assert.equal(result.ok, true);
+  assert.equal(result.warmed, 0);
+  assert.deepEqual(scope.fetched, [], 'every visit re-downloads the whole app');
 });
 
 test('the server hands the worker back as JavaScript, which is what registration requires', async () => {

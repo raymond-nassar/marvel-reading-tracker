@@ -4588,7 +4588,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:9922-9924` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:9952-9954` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4598,11 +4598,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:202-204`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9941-9945`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:9971-9975`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9756-9758` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:9786-9788` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4810,7 +4810,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2335-2344` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2341-2350` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:192-196` and
 `PRODUCT_BACKLOG.md:202-204` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -9408,10 +9408,11 @@ cheaper than rewriting it and keeps every row true as a record of what the passa
 
 Constraint gate: checked 1 to 11, none breached. Constraint 4 is the one worth stating: the icon
 generator is a build script that runs on a maintainer's machine, uses only `node:zlib`, and adds
-nothing to `package.json`. Nothing new reaches the browser except two static files.
+nothing to `package.json`. Nothing new reaches the browser except three static files: the manifest
+and the two icons it names.
 
 The app was a tab you had to find again, which is a poor home for something opened most days. A
-manifest is what lets a browser offer to install a page, and it costs one link element and two
+manifest is what lets a browser offer to install a page, and it costs one link element and three
 static files. Nothing about how the app runs changes: the installed window is the same origin, so
 `mrt.state.v2` is the same key and the reading progress is the one already there, which is what
 Constraint 5 makes the deciding question for any change to how the app is opened. The two paths
@@ -9442,6 +9443,8 @@ icon quietly ceasing to be the icon the source describes.
 The two insertions moved 68 citations of `src/index.html` and `package.json`. Both shifts were
 derived twice, once from the diff hunks and once by searching each file for the head the lock
 already held, and the two agreed on all 68. No range spanned an insertion point in
+`src/index.html`; four spanned it in `package.json`, all of them whole-file or whole-block ranges
+whose end moved and whose start did not.
 
 **BL-135: Give the tracker a file a non-engineer can double-click to start it**
 
@@ -9497,6 +9500,7 @@ stated rather than implied.
 **BL-136: Let the installed window open when the server is not running**
 
 - [x] Keep a copy of the app in the browser, so an installed window has something to open
+- [x] Take that copy on the first visit, which is the visit somebody installs the app on
 - [x] Ask the network first every time, so nobody running the server is served a stale page
 - [x] Store nothing from another origin, so no comic image byte can enter the copy
 - [x] Make a failed store impossible to turn into a failed page
@@ -9525,9 +9529,22 @@ of this worker passed every other test in the suite, which is why the test that 
 
 Nothing is precached. A precache is a list somebody has to keep complete, which is the same defect
 class `scripts/check-anchors.mjs` refuses to enumerate for, and it is the one that goes wrong
-silently. The page fetches its own shell on the first visit and every one of those answers is stored,
-so the list maintains itself and cannot fall behind the files it describes. The browser probe
-recorded 31 stored entries after one visit, which is the whole app.
+silently. The shell is instead asked of the browser: `performance.getEntriesByType('resource')`
+already knows every URL the page fetched, so the list describes itself and cannot fall behind the
+files it names. The page re-fetches that list once, on the first visit only, and every answer goes
+through the worker on the way back. The browser probe recorded 31 stored entries after one visit,
+which is the whole app.
+
+The first visit is the whole difficulty, and the first version of this item got it wrong. The worker
+is registered after `boot()`, so the document, the stylesheet and all 26 modules of the first visit
+had already been fetched before any worker existed to see them, and the app makes no further
+same-origin requests afterwards. `clients.claim()` did take control, which made the mistake easy to
+miss, but taking control of a page that has stopped asking for anything stores nothing. Measured in
+Edge on a cleared profile: one visit left **0 entries**, and stopping the server then gave "can't
+reach this page" from the installed icon. That is the exact failure this item exists to prevent, and
+it would have hit the reader most likely to hit it, the one who installs the app the moment the
+browser offers to. The warm-up closes it, and it is gated on the page having arrived uncontrolled so
+it is paid once rather than on every visit forever.
 
 The most dangerous code here is the code that stores things, and it is dangerous in the direction
 this repository has been caught in twice: the protection taking away the thing it protects. A cache
@@ -9536,22 +9553,37 @@ that had just been fetched successfully into a failed load. So the store is best
 catch is the point of the function rather than decoration, and only a status of exactly 200 is
 offered to it. Removing that catch turns a test red, which is how it is known to be load-bearing.
 
-Verified in Edge, twice, with the tree changed between the two runs. With the worker present: the
-registration activates, the page is controlled on the second load, 31 same-origin entries are stored
-and none from any other origin, and then with the server killed a fresh tab opened at the manifest's
-`start_url` returns 200 and renders the whole app, 12 catalog cards and all. With `src/sw.js` stashed
-and nothing else changed: nothing registers, nothing is stored, and the same fresh tab shows
-`ERR_CONNECTION_REFUSED` and Edge's own "can't reach this page", which is the exact sentence the
-README used to promise. That pair is the item.
+The store is also kept off the reader's path and out of everybody else's cupboard. It is handed to
+`event.waitUntil` rather than awaited, so a healthy server's response is not held behind a disk
+write on every navigation, stylesheet and module, and the clone is taken before returning because
+the browser consumes the body it is given. The read is scoped to this worker's own cache by name:
+`caches.match()` searches every cache on the origin, activation deliberately leaves caches this
+worker did not create alone, and `127.0.0.1:8787` is an address anything on the machine may have
+used, so the unscoped form could have answered a reader with a page this app has never seen.
 
-Every one of the 16 checks was proved able to fail. Fifteen single-change mutations of the worker,
-its registration and the server were applied one at a time, each reverted before the next: dropping
-the origin guard, dropping the GET guard, caching a non-200, removing the quota catch, deleting
-caches this worker did not create, precaching on install, answering from the cache first, fetching
-without storing, never consulting the store when the network fails, answering a total failure with a
-reply of our own, registering with a root-absolute path, letting a failed registration reject,
-assuming service worker support exists, attempting an origin the browser does not trust, and serving
-JavaScript as plain text so registration is refused. All fifteen turned a named test red.
+Verified in Edge, twice, with the tree changed between the two runs. With the worker present: the
+registration activates, the page is controlled and its shell stored on the **first** load, 31
+same-origin entries and none from any other origin, and then with the server killed a fresh tab
+opened at the manifest's `start_url` returns 200 and renders the whole app, 12 catalog cards and
+all. With `src/sw.js` stashed and nothing else changed: nothing registers, nothing is stored, and
+the same fresh tab shows `ERR_CONNECTION_REFUSED` and Edge's own "can't reach this page", which is
+the exact sentence the README used to promise. That pair is the item.
+
+Every one of the 25 checks was proved able to fail. Twenty-six single-change mutations of the
+worker, its registration and the server were applied one at a time, each reverted before the next:
+dropping the origin guard, dropping the GET guard, caching a non-200, removing the quota catch,
+deleting caches this worker did not create, precaching on install, answering from the cache first,
+fetching without storing, never consulting the store when the network fails, answering a total
+failure with a reply of our own, registering with a root-absolute path, letting a failed
+registration reject, assuming service worker support exists, attempting an origin the browser does
+not trust, serving JavaScript as plain text so registration is refused, searching every cache on the
+origin, awaiting the write in front of the response, dropping the same-origin filter from the shell
+list, leaving the document out of it, keeping fragments in it, letting one failed fetch abandon the
+rest, warming with no worker in control, never waiting for control, waiting for control the page
+already had, never warming, and warming on every visit. All twenty-six turned a named test red. The
+last two are the same line read both ways, never warming and always warming, and each turned exactly
+one test red: that line is the whole of whether the first visit is stored, so it is worth knowing
+which check would notice if it were ever changed back.
 
 What this does not do is make the app work offline in any wider sense. Issue details and covers come
 from other origins and are deliberately untouched, so an offline launch shows what you have already
@@ -9559,9 +9591,7 @@ seen and what you have already saved, and says nothing new. The metadata service
 is a state the app already handles and already reports. Two things are left for later and neither
 blocks this: the stored copy is not counted in the "cache usage" figure under About, which measures
 a different store entirely, and a worker registered by this version would outlive the deletion of
-`src/sw.js` if that ever happened, because nothing here unregisters one. No range spanned an insertion point in
-`src/index.html`; four spanned it in `package.json`, all of them whole-file or whole-block ranges
-whose end moved and whose start did not.
+`src/sw.js` if that ever happened, because nothing here unregisters one.
 
 ## Existing epics and stories
 
