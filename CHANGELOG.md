@@ -14,6 +14,25 @@ quote in a bug report.
 
 ## Unreleased
 
+### A one-download version of the app for Windows, researched and filed (BL-145)
+
+In plain English: nothing about the app changes yet, and nothing you have saved is affected. This
+writes down a plan, with measurements behind it, for turning the tracker into something a person can
+download once and open, rather than something they need a programmer's toolkit to start.
+
+Getting the app running today means installing a separate piece of software from one website, then
+fetching the project from another, then working out where it landed and opening a file inside it.
+That is more than the person this app was built for will do. The plan is to put the app and
+everything it needs into a single compressed folder, offered as one link.
+
+The obvious alternative, one program you double-click, was built and measured before being set
+aside. Both routes make Windows ask the reader to confirm, so neither escapes that, and the first
+draft of this plan was wrong to say otherwise. What separates them is that packaging everything into
+one program destroys the signature on the part that came from somebody else, which turns a mild
+question into the harder warning that suggests not running the thing at all. The plan covers Windows
+only, because the same file arriving on a Mac is refused rather than questioned, and that deserves
+its own measurements rather than a guess.
+
 ### One card per story, with the choice of reading path inside it (BL-144)
 
 In plain English: the browse page used to show the same story several times over, once for each way
