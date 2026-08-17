@@ -105,9 +105,15 @@ actually arrived, rather than counting the ones it failed to reach as though the
 
 For maintainers: the committed browser check gains a sixth journey, covering that last point, and a
 tenth mutation aimed at it. It runs a real browser against a service that refuses everything and
-reads the number off the screen before and after a stop. Its assertions go from 28 to 34. The rest of
-this feature's browser evidence still lives outside the tree, where a clean clone cannot rerun it,
-and bringing it in is now a recorded item rather than an omission.
+reads the number off the screen before and after a stop. Its assertions go from 28 to 35. One of
+those seven was added by a later review of the journey itself: the stopped line's failure clause
+turned out to be unguarded, so deleting the clause this work began by adding left every other
+assertion green. That review also found the journey's mutation was caught by a starved wait rather
+than by a failed claim, which records that the scenario can break without recording that anything it
+claims can fail; the mutation now rewrites the running line to report attempts rather than answers,
+and reddens two named assertions. The rest of this feature's browser evidence still lives outside the
+tree, where a clean clone cannot rerun it, and bringing it in is now a recorded item rather than an
+omission.
 
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 

@@ -315,19 +315,28 @@ const MUTATIONS = [
     },
   },
   {
-    id: 'synopsis-answered',
+    id: 'synopsis-attempts',
     breaks: 'synopsis',
-    why: 'the service answers every request, so a run that reports refusals is reporting something that did not happen',
+    why: 'the running line is rewritten to report attempts rather than answers, which is the miscount this scenario exists to catch',
     script: () => {
-      // Overwritten rather than deleted. The scenario sets this flag itself, and it sets it from
-      // its own evaluateOnNewDocument, which is registered after this one and therefore runs
-      // after it. Deleting the flag here would simply be undone a moment later; assigning to it
-      // from the scenario's side is what the scenario does, so the mutation has to win by being
-      // the value the stub reads rather than by being the last to write.
-      Object.defineProperty(window, '__mrtSynopsis', {
-        configurable: true,
-        get: () => 'answer',
-        set: () => {},
+      // The counter itself lives in a module the page cannot reach, so the rendered line is
+      // rewritten instead. Against a service refusing everything, requests settled is exactly the
+      // number refused, so this restores the line the app printed before it learned to subtract.
+      // The first mutation aimed here made the service answer instead, which starved the wait and
+      // reddened only the catch-all row: it proved the scenario could break, not that any named
+      // claim in it could fail.
+      document.addEventListener('DOMContentLoaded', () => {
+        const status = document.querySelector('#synopsis-status');
+        if (!status) return;
+        const restate = () => {
+          const text = status.textContent ?? '';
+          const next = text.replace(/^Fetching synopses 0 of /, `Fetching synopses ${window.__mrtRefused ?? 0} of `);
+          // Converges rather than loops: once rewritten the line no longer starts with a zero, so
+          // the write this observer makes cannot match its own pattern a second time.
+          if (next !== text) status.textContent = next;
+        };
+        new MutationObserver(restate).observe(status, { childList: true, characterData: true, subtree: true });
+        restate();
       });
     },
   },
@@ -538,9 +547,9 @@ const SCENARIOS = [
     id: 'synopsis',
     title: 'a synopsis run counts what it was told, not what it asked',
     async run(page, t) {
-      // Registered before the first navigation, and read by the stub in preparePage at fetch time
-      // rather than at install time, so the mutation aimed at this scenario can win by owning the
-      // property instead of by racing to assign it.
+      // Registered before the first navigation, because the stub in preparePage is installed the
+      // same way and a flag set after load is one the app has already gone past. Read at fetch
+      // time rather than at install time so the two orderings cannot matter.
       await page.evaluateOnNewDocument(() => { window.__mrtSynopsis = 'refuse'; });
       await importOrder(page);
 
@@ -585,10 +594,16 @@ const SCENARIOS = [
       const stopped = /^Stopped after (\d+) of (\d+)\./.exec(after.line);
       t.check('a stopped run counts none of the refused requests as fetched',
         !!stopped && Number(stopped[1]) === 0 && Number(stopped[2]) === ORDER_COUNT, JSON.stringify(after.line));
-      // The one that matters most of the six. Both lines read the same counter, and while only
-      // some of the readers subtracted the failures the number moved backwards in front of the
-      // reader at the moment they pressed stop: a run showing three fetched became a run that
-      // had stopped after none.
+      // Asserted apart from the count, because the two are separate promises made by separate
+      // fixes. Deleting the failure clause from the stopped line leaves every other assertion here
+      // green, so without this the first fix of this series would be the one part of it that
+      // nothing watched.
+      t.check('a stopped run names what it could not reach',
+        /^Stopped after \d+ of \d+\. \d+ could not be reached\.$/.test(after.line), JSON.stringify(after.line));
+      // The one that matters most. Both lines read the same counter, and while only some of the
+      // readers subtracted the failures the number moved backwards in front of the reader at the
+      // moment they pressed stop: a run showing three fetched became a run that had stopped after
+      // none.
       t.check('and the count a stop leaves behind is the one that was already on screen',
         !!running && !!stopped && running[1] === stopped[1], `${JSON.stringify(at.line)} then ${JSON.stringify(after.line)}`);
       t.check('the fetch button comes back once the run is stopped', after.fetchHidden === false, JSON.stringify(after));
@@ -856,7 +871,7 @@ async function main() {
     // the scenario it is aimed at, on the assertion that carries the claim. A mutation that turns
     // nothing red means the scenario it was written for is not asserting what it claims to.
     //
-    // Two of the nine redden every scenario, and that is not loose aim. Every scenario imports the
+    // Two of the ten redden every scenario, and that is not loose aim. Every scenario imports the
     // fixture order first, so a mutation of the import or of the write that import performs is
     // upstream of all of them by construction. What distinguishes aim is the named assertion that
     // fails in the aimed-at scenario, which is why it is printed rather than a bare scenario id.

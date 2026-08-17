@@ -421,11 +421,11 @@ trusting a release.
 npm run browser
 ```
 
-Drives installed Microsoft Edge through the five journeys the app exists for: importing a
+Drives installed Microsoft Edge through the six journeys the app exists for: importing a
 curated order, moving between views with the address bar and the Back button, keeping progress
-across a reload, meeting unreadable saved data with an offer rather than a wipe, and opening the
-reader tab inside the click that asked for it. It makes 28 assertions across those five and takes
-about 2.5 seconds.
+across a reload, meeting unreadable saved data with an offer rather than a wipe, opening the
+reader tab inside the click that asked for it, and counting a synopsis run by what arrived rather
+than by what it asked for. It makes 35 assertions across those six and takes about 3 seconds.
 
 It needs two things that are not installed for you. The first is a browser driver, which is
 **deliberately not a dependency of this repository** and must not become one: nothing the app
@@ -454,7 +454,7 @@ stubbed with a three-issue fixture, so no vendored file is read and no network r
 npm run browser:prove
 ```
 
-Runs each of the five scenarios again under nine injected faults, and checks that each fault turns
+Runs each of the six scenarios again under ten injected faults, and checks that each fault turns
 the scenario aimed at it red. A check that has never been seen to fail is not evidence, and this is
 where that is demonstrated rather than asserted: it reports the named assertion each fault breaks.
 It takes about three minutes, nearly all of it waiting out the timeouts a broken app produces, so
