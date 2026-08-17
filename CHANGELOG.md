@@ -50,6 +50,12 @@ is cleared, and the next run asks the address you just typed in. And the number 
 run is going, and the one it leaves behind if you stop it, now both count only the summaries that
 actually arrived, rather than counting the ones it failed to reach as though they had arrived.
 
+For maintainers: the committed browser check gains a sixth journey, covering that last point, and a
+tenth mutation aimed at it. It runs a real browser against a service that refuses everything and
+reads the number off the screen before and after a stop. Its assertions go from 28 to 34. The rest of
+this feature's browser evidence still lives outside the tree, where a clean clone cannot rerun it,
+and bringing it in is now a recorded item rather than an omission.
+
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 
 In plain English: nothing you have saved is affected, and the app itself does not change. This
