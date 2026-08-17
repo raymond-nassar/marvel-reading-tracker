@@ -287,6 +287,12 @@
                 <span id="hydration-status" class="rail-hint" hidden></span>
                 <button type="button" class="quiet" id="btn-hydrate" hidden>Fetch missing details</button>
                 <button type="button" class="quiet" id="btn-cancel-hydrate" hidden>Stop</button>
+                <!-- Its own status line rather than sharing #hydration-status. The two runs can be
+                     going at once, they report different numbers, and one overwriting the other
+                     would show a reader a count that belongs to something they did not start. -->
+                <span id="synopsis-status" class="rail-hint" hidden></span>
+                <button type="button" class="quiet" id="btn-synopsis">Fetch synopses</button>
+                <button type="button" class="quiet" id="btn-cancel-synopsis" hidden>Stop synopses</button>
               </div>
 
               <!-- The reader's own note about this order. Sits above the hero because it is

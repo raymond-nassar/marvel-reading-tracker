@@ -184,7 +184,15 @@ export function normalizeIssue(input) {
     // We store the URL only and never the image bytes: the browser fetches covers directly
     // from Marvel's own CDN, so this app neither copies nor redistributes artwork.
     cover: normalizeCover(input.cover),
-    description: input.description == null ? null : String(input.description).slice(0, MAX_DESCRIPTION),
+    // No `description`. Synopsis prose is the metadata service's, not this project's, and BL-130
+    // removed the 798 copies that had been vendored into src/data/. Storing a fetched one would put
+    // the same prose back, one issue at a time, into a file the reader can export and share.
+    //
+    // This is the single issue-level write gate: upsertIssue() reaches it on every write and
+    // coerce() reaches it on every load, so dropping the field here stops new writes, drops what a
+    // tracker saved before this existed, and drops what a restored backup carries, all at once.
+    // A synopsis fetched at runtime lives in memory for the session and is passed to the view
+    // separately (see src/js/synopsis.js).
     pageCount: Number(input.pageCount) > 0 ? Number(input.pageCount) : null,
     creators: Array.isArray(input.creators)
       ? input.creators
@@ -810,16 +818,63 @@ export function pendingIssueIds(state) {
   });
 }
 
+// The first `lookahead + 1` ids that pass the predicate, in the order given.
+//
+// The predicate is applied before the count, not after, and the difference only shows on a second
+// run. Taking the first nine ids and then filtering them yields fewer than nine when some are
+// already done, and the shortfall is made up from the remainder, which is ordered by when an id was
+// tracked rather than by where it sits in the list. So a reader who stopped a run and restarted it
+// got a worse order than the first time: issues they had already read fetched ahead of the ones
+// they were about to.
+export function lookaheadPriority(ids, wanted, lookahead) {
+  const want = Math.max(0, Number(lookahead) || 0) + 1;
+  const out = [];
+  for (const id of ids) {
+    if (!wanted(id)) continue;
+    out.push(id);
+    if (out.length >= want) break;
+  }
+  return out;
+}
+
 // Hydration priority: whatever you are about to read, plus a short lookahead.
 export function hydrationOrder(state, listId, lookahead = 5) {
   const pending = new Set(pendingIssueIds(state));
-  const priority = [];
   const list = state.lists[listId];
-  if (list) {
-    const unread = list.itemIds.filter((id) => !isRead(state, id));
-    for (const id of unread.slice(0, lookahead + 1)) if (pending.has(id)) priority.push(id);
-  }
+  const unread = list ? list.itemIds.filter((id) => !isRead(state, id)) : [];
+  const priority = lookaheadPriority(unread, (id) => pending.has(id), lookahead);
   const rest = [...pending].filter((id) => !priority.includes(id));
+  return [...priority, ...rest];
+}
+
+// The order a synopsis run works through, which is not the hydration order and cannot reuse it.
+//
+// Hydration's queue is every pending issue in the library, because a missing digitalId is missing
+// wherever it sits. A synopsis run is bounded by one list: it is started from that list's tool bar,
+// its progress is reported there, and its results are thrown away at the end of the session, so
+// fetching prose for an order the reader is not reading spends their request budget on text nothing
+// will show.
+//
+// Read items are included, after the unread ones. A reader does look back at an issue they have
+// already finished, and by then the run that would have fetched it has ended.
+//
+// `wanted` decides what is still worth asking for. It is supplied rather than computed here because
+// what the session already knows is not part of saved state and must not become part of it.
+export function synopsisOrder(state, listId, wanted, lookahead = 8) {
+  const list = state.lists[listId];
+  if (!list) return [];
+  // A hand-added issue has a synthetic negative id that the service has no record of, so asking
+  // about one spends a request to be told what its id already says.
+  const ids = list.itemIds.filter((id) => state.issues[id] && state.issues[id].source !== 'manual');
+  const unread = ids.filter((id) => !isRead(state, id));
+  const priority = lookaheadPriority(unread, wanted, lookahead);
+  // The tail is rebuilt unread-first rather than filtered out of list order, which is the same
+  // mistake lookaheadPriority was written to fix, one step further down the queue. Filtering `ids`
+  // keeps list order, so a reader a hundred issues into an order would have spent the first two
+  // minutes of the run on prose for issues they had already finished before it reached the tenth
+  // issue ahead of them, and nothing survives the tab to make that back.
+  const tail = [...unread, ...ids.filter((id) => isRead(state, id))];
+  const rest = tail.filter((id) => wanted(id) && !priority.includes(id));
   return [...priority, ...rest];
 }
 

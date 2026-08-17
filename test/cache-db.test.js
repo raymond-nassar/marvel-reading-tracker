@@ -38,18 +38,36 @@ class FakeRequest {
   }
 }
 
-function fakeIndexedDB({ openFails = false, openThrows = false, openBlocked = false, failOps = [] } = {}) {
+// A transaction settles after the request inside it does, so this is one turn behind FakeRequest's
+// own callback. Nesting the two is what lets a test tell "the request succeeded" apart from "the
+// transaction committed", which is the distinction idbReq now depends on.
+function settle(fn) {
+  queueMicrotask(() => queueMicrotask(fn));
+}
+
+function fakeIndexedDB({ openFails = false, openThrows = false, openBlocked = false, failOps = [], abortOps = [] } = {}) {
   const stores = new Map();
   const log = [];
   const failing = new Set(failOps);
+  // Ops whose request succeeds and whose transaction then aborts, which is the shape a commit-time
+  // failure takes. Nothing in the request's own callbacks says anything went wrong.
+  const aborting = new Set(abortOps);
 
-  function storeApi(name) {
+  function storeApi(name, tx) {
     const data = stores.get(name);
     const run = (op, fn) => {
       log.push(op);
       const req = new FakeRequest();
-      if (failing.has(op)) req.fail(new Error(`${op} failed`));
-      else req.succeed(fn());
+      if (failing.has(op)) {
+        req.fail(new Error(`${op} failed`));
+        settle(() => tx.onabort?.());
+      } else if (aborting.has(op)) {
+        req.succeed(fn());
+        settle(() => tx.onabort?.());
+      } else {
+        req.succeed(fn());
+        settle(() => tx.oncomplete?.());
+      }
       return req;
     };
     // Real IndexedDB structured-clones on the way in and on the way out, so a caller never holds a
@@ -77,8 +95,8 @@ function fakeIndexedDB({ openFails = false, openThrows = false, openBlocked = fa
     },
     transaction(name) {
       if (!stores.has(name)) throw new Error(`no store ${name}`);
-      const tx = { error: new Error('aborted'), onabort: null };
-      tx.objectStore = () => storeApi(name);
+      const tx = { error: new Error('aborted'), onabort: null, oncomplete: null };
+      tx.objectStore = () => storeApi(name, tx);
       return tx;
     },
   };
@@ -139,7 +157,10 @@ test('a database that refuses to open degrades to no cache rather than an error'
       assert.equal(await cache.set('/issues/1', { id: 1 }), undefined);
       assert.deepEqual(await cache.entries(), []);
       assert.deepEqual(await cache.usage(), { count: 0, bytes: 0, budget: cache.budget });
-      assert.equal(await cache.clear(), undefined);
+      // true rather than undefined: a store that would not open holds nothing, so a caller asking
+      // "is it empty now" has its answer. Reporting failure here would make the one-time synopsis
+      // purge retry on every boot in a browser where it can never succeed.
+      assert.equal(await cache.clear(), true);
     });
   }
 });
@@ -287,7 +308,7 @@ test('clearing empties the cache and leaves it usable', async () => {
   await withIdb({}, async () => {
     const cache = newCache();
     await cache.set('/issues/7', { id: 7 });
-    await cache.clear();
+    assert.equal(await cache.clear(), true, 'a clear that worked has to say so');
     assert.deepEqual(await cache.entries(), []);
     assert.equal(await cache.get('/issues/7'), null);
     await cache.set('/issues/8', { id: 8 });
@@ -295,10 +316,42 @@ test('clearing empties the cache and leaves it usable', async () => {
   });
 });
 
-test('a clear that fails is swallowed rather than thrown at the caller', async () => {
+// Still swallowed, because a failed clear must not propagate out of a settings button or out of
+// boot. What changed is that it is now reported instead of discarded: the one-time synopsis purge
+// writes a marker saying the store has been emptied, and a clear that failed silently would let
+// that marker be written over prose still sitting there, with no second attempt ever made.
+test('a clear that fails is reported to the caller rather than thrown or discarded', async () => {
   await withIdb({ failOps: ['clear'] }, async () => {
     const cache = newCache();
     await cache.set('/issues/7', { id: 7 });
-    await assert.doesNotReject(() => cache.clear());
+    let outcome;
+    await assert.doesNotReject(async () => { outcome = await cache.clear(); });
+    assert.equal(outcome, false);
+    assert.equal((await cache.entries()).length, 1, 'and the entry it could not remove is still there');
+  });
+});
+
+// The narrower of the two ways a clear can fail, and the one that used to be invisible. IndexedDB
+// hands back a request that succeeds when the operation is accepted, and commits the transaction
+// afterwards; a commit that aborts rolls the whole thing back. Resolving on the request meant a
+// clear whose transaction aborted reported success having removed nothing, and the one-time purge
+// would then write its marker over prose still sitting in the store, permanently, because the
+// marker is what stops the retry.
+test('a clear whose transaction aborts after the request succeeded reports failure', async () => {
+  await withIdb({ abortOps: ['clear'] }, async () => {
+    const cache = newCache();
+    await cache.set('/issues/7', { id: 7 });
+    let outcome;
+    await assert.doesNotReject(async () => { outcome = await cache.clear(); });
+    assert.equal(outcome, false, 'a rolled back clear reported that the store had been emptied');
+  });
+});
+
+// The same distinction on the read path, so the guarantee is a property of idbReq rather than of
+// one call site that happens to be checked.
+test('a read whose transaction aborts does not resolve as if it had data', async () => {
+  await withIdb({ abortOps: ['getAll'] }, async () => {
+    const cache = newCache();
+    await assert.rejects(() => cache.entries().then((v) => { if (v) throw new Error('resolved'); }));
   });
 });

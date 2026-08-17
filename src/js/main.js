@@ -25,6 +25,7 @@ import { MarvelApi, DEFAULT_BASE } from './api.js';
 import { ResponseCache } from './cache.js';
 import { RateLimiter } from './lib/limiter.js';
 import { Hydrator } from './hydrate.js';
+import { NO_SYNOPSIS, SessionSynopsis, SynopsisRunner } from './synopsis.js';
 import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
@@ -78,6 +79,11 @@ const store = new Store({
   },
 });
 const hydrator = new Hydrator({ api, store, onProgress: renderHydration });
+// One store for the tab, deliberately module-level and deliberately not persisted. It is passed to
+// the runner rather than owned by it so the view can read a fetched synopsis without importing the
+// thing that fetches it.
+const sessionSynopsis = new SessionSynopsis();
+const synopsisRunner = new SynopsisRunner({ api, store, session: sessionSynopsis, onProgress: renderSynopsis });
 
 // One key, every tab. A save in another tab is news here, and taking it is what keeps two tabs
 // ordinary: this tab re-renders on their save, so its next edit is built on what is actually stored
@@ -485,10 +491,34 @@ function loadSettings() {
       // which is why a value of the wrong type is passed through rather than coerced: coercing it
       // would produce something a radio matches, and the repair would never fire.
       filter: raw.filter === undefined ? 'all' : raw.filter,
+      // How far the one-time cache purges have got. An integer rather than a boolean so a later
+      // purge for a different reason can be added without a second field, and so a settings file
+      // written by a newer build downgrades safely: an unreadable or absent value reads as 0, which
+      // means "purge again", and purging twice costs a slower first session rather than data.
+      cachePurge: purgeMarkOf(raw),
       rejectedApiBase: ok ? null : stored,
     };
   } catch {
-    return { apiBase: DEFAULT_BASE, covers: true, theme: DEFAULT_THEME, filter: 'all', rejectedApiBase: null };
+    return { apiBase: DEFAULT_BASE, covers: true, theme: DEFAULT_THEME, filter: 'all', cachePurge: 0, rejectedApiBase: null };
+  }
+}
+
+// The purge marker as stored, or 0. Kept apart from loadSettings because saveSettings reads it too,
+// from storage rather than from memory, and for a reason that is not obvious: `settings` is loaded
+// once at boot and never re-read, so a tab left open since before the purge holds a snapshot with
+// the marker at 0. Its next unrelated write, a theme toggle or a cover toggle, would send that 0
+// back over the marker the other tab had just written, and the purge would run again on every boot
+// for as long as that tab stayed open.
+function purgeMarkOf(raw) {
+  const n = Number(raw?.cachePurge);
+  return Number.isInteger(n) && n > 0 ? n : 0;
+}
+
+function storedPurgeMark() {
+  try {
+    return purgeMarkOf(JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}'));
+  } catch {
+    return 0;
   }
 }
 
@@ -502,9 +532,45 @@ function saveSettings() {
   // instead, unrecoverably and without saying so: the settings field already shows the fallback,
   // so there would be nothing left on screen holding the old value.
   const apiBase = settings.rejectedApiBase ?? settings.apiBase;
+  // Merged rather than written from this tab's snapshot. See purgeMarkOf.
+  const cachePurge = Math.max(settings.cachePurge ?? 0, storedPurgeMark());
+  settings.cachePurge = cachePurge;
   try {
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, theme: settings.theme, filter: settings.filter }));
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, theme: settings.theme, filter: settings.filter, cachePurge }));
   } catch { /* non-fatal */ }
+}
+
+// Bumped when something already in the cache has to go. 1 is BL-134: entries written by builds
+// before the synopsis strip carry the prose this tracker has stopped keeping, and a 30 day TTL means
+// the oldest of them would have sat there until well into September.
+const CACHE_PURGE_VERSION = 1;
+
+// Runs at most once per browser, and only records that it ran if it actually did.
+//
+// clear() reports its outcome precisely so this can be true. It used to swallow the failure and
+// return nothing, so a marker written straight afterwards would say the prose was gone while it was
+// still there, permanently and with no second attempt: the marker is what stops the retry. A failed
+// clear now leaves the marker alone and the next boot tries again.
+export async function purgeStaleCache(cacheRef, marker, current = CACHE_PURGE_VERSION) {
+  if (marker >= current) return { ran: false, cleared: false };
+  const cleared = await cacheRef.clear();
+  return { ran: true, cleared };
+}
+
+async function runCachePurge() {
+  const { ran, cleared } = await purgeStaleCache(cache, settings.cachePurge ?? 0);
+  if (!ran) return;
+  // The same argument as the cache, one storage layer over. normalizeIssue drops a saved synopsis
+  // when the state is read, but load() does not write back, so the prose stays in mrt.state.v2 until
+  // some unrelated edit happens to rewrite it. For a reader who marks something read that is the
+  // next click; for one who opens the app, looks at it and closes it, it is never. One forced write
+  // closes the gap, and a blocked store refuses it, which is what should happen while it is holding
+  // a salvage copy of data it could not read.
+  store.persist();
+  if (!cleared) return;
+  settings.cachePurge = CACHE_PURGE_VERSION;
+  saveSettings();
+  refreshCacheUsage();
 }
 
 function activeListId() {
@@ -1645,6 +1711,8 @@ function wireReading() {
   $('#btn-export-md').addEventListener('click', exportMarkdown);
   $('#btn-hydrate').addEventListener('click', () => hydrator.start(activeListId()));
   $('#btn-cancel-hydrate').addEventListener('click', () => hydrator.cancel());
+  $('#btn-synopsis').addEventListener('click', startSynopsisRun);
+  $('#btn-cancel-synopsis').addEventListener('click', () => synopsisRunner.cancel());
 
   $('#btn-hero-read').addEventListener('click', (e) => {
     const issue = upNext(store.state, activeListId());
@@ -1798,6 +1866,7 @@ function renderReading() {
   renderShelf();
   renderRows();
   renderHydrateButton();
+  renderSynopsisButtons();
 }
 
 function renderHero() {
@@ -1845,7 +1914,7 @@ function renderHero() {
 
   // Three states, not two. "Details have not been fetched yet" is a promise that something is
   // coming, and for an issue the snapshot has no record of, nothing is.
-  $('#hero-desc').textContent = synopsisFallback(issue);
+  $('#hero-desc').textContent = synopsisFallback(issue, sessionSynopsis.get(issue.issueId));
 
   const avClass = av.state === STATE.EXPECTED || av.state === STATE.OVERRIDE_AVAILABLE ? 'ok'
     : av.state === STATE.SCHEDULED ? 'warn' : '';
@@ -2024,8 +2093,17 @@ function detailsBadge(item) {
 // label. "Details have not been fetched yet" told a reader to wait for something that was never
 // coming, which is the whole of what this item was about. The order matches detailsState for the
 // same reason: a record the tracker holds is not one the snapshot has no record of.
-export function synopsisFallback(issue) {
-  if (issue?.description) return issue.description;
+//
+// `sessionText` is a synopsis fetched during this session. It is passed in rather than read off the
+// issue because it is not on the issue and must never be: nothing stored carries prose any more, so
+// there is no `issue.description` branch here either. A run that asked and got nothing back is the
+// same answer as a snapshot that holds nothing, so it falls through to the existing sentences.
+export function synopsisFallback(issue, sessionEntry = null) {
+  if (typeof sessionEntry === 'string' && sessionEntry.trim()) return sessionEntry;
+  // A run that asked and was told there is nothing has answered the question. Falling through to
+  // "Details have not been fetched yet" would send the reader to wait for a fetch that has already
+  // happened, which is the exact sentence this function was written to stop saying.
+  if (sessionEntry === NO_SYNOPSIS) return 'No synopsis is recorded for this issue.';
   if (issue?.hydrated) return 'No synopsis is recorded for this issue.';
   if (issue?.detailsRefused) return DETAILS_BADGE.norecord.hint;
   return 'Details have not been fetched yet.';
@@ -2345,6 +2423,99 @@ function renderHydration(status) {
     box.textContent = 'All details fetched.';
   }
   renderHydrateButton();
+}
+
+// ------------------------------------------------------------------ synopsis fetching
+
+export const SYNOPSIS_SERVICE_FALLBACK = 'the community Marvel metadata service';
+
+// Names the service the run will actually contact, rather than the one this file was written
+// against. The API base is the reader's to change, and a dialog whose whole job is to say where the
+// prose comes from is worse than no dialog at all when it names a third party the request will not
+// go to.
+export function synopsisServiceName(baseUrl) {
+  try {
+    return new URL(String(baseUrl)).host || SYNOPSIS_SERVICE_FALLBACK;
+  } catch {
+    return SYNOPSIS_SERVICE_FALLBACK;
+  }
+}
+
+// Said in full every time a run is started, not once and then remembered. The reader is being asked
+// to agree to text arriving from somewhere else, and an agreement recorded months ago in a settings
+// file is not the reader agreeing now. It costs one press of a button they only reach by choosing
+// to press another one.
+export function synopsisDisclaimer(baseUrl) {
+  return {
+    title: 'Fetch synopses from the community metadata service?',
+    body: 'Issue synopses are not part of this tracker. They come from the community Marvel metadata '
+      + `service at ${synopsisServiceName(baseUrl)}, which is not affiliated with Marvel, and the text `
+      + 'itself is Marvel\u2019s. Nothing fetched is saved: the synopses are held for this browser tab '
+      + 'only, they are not written into your lists, they are not included in a backup, and they are '
+      + 'gone when you reload. Fetching a whole reading order takes a few minutes and uses your '
+      + 'request allowance.',
+    confirmLabel: 'Fetch synopses',
+  };
+}
+
+export function synopsisAnnouncement(status) {
+  const phase = !status || status.phase === 'idle' ? 'idle' : status.phase;
+  if (phase === 'idle') return { state: 'idle', msg: null };
+  if (phase === 'running') {
+    const n = Number(status.total ?? 0);
+    return { state: 'running', msg: `Fetching synopses for ${n} issue${n === 1 ? '' : 's'}.` };
+  }
+  if (phase === 'cancelled') return { state: 'cancelled', msg: 'Synopsis fetching stopped. What arrived is on screen until you reload.' };
+  if (phase === 'partial') {
+    const failed = Number(status.failed ?? 0);
+    return {
+      state: 'partial',
+      msg: `Synopsis fetching finished. ${failed} issue${failed === 1 ? '' : 's'} could not be reached. What arrived is held for this tab only.`,
+    };
+  }
+  return { state: 'complete', msg: 'All synopses fetched. They are held for this tab only.' };
+}
+
+function renderSynopsisButtons() {
+  // Offered on any list with issues in it, unlike the hydrate button, which is offered only while
+  // something is pending. There is no pending count to show here: what has been fetched is not
+  // recorded anywhere the button could count, which is the point of the feature.
+  const list = store.state.lists[activeListId()];
+  const has = (list?.itemIds ?? []).length > 0;
+  $('#btn-synopsis').hidden = !has || synopsisRunner.active;
+  $('#btn-cancel-synopsis').hidden = !synopsisRunner.active;
+}
+
+function renderSynopsis(status) {
+  const box = $('#synopsis-status');
+  const said = synopsisAnnouncement(status);
+  announceState('synopsis', said.state, said.msg);
+  if (!status || status.phase === 'idle') { box.hidden = true; renderSynopsisButtons(); return; }
+  box.hidden = false;
+  if (status.phase === 'running') {
+    box.textContent = `Fetching synopses ${status.done} of ${status.total}\u2026`;
+  } else if (status.phase === 'cancelled') {
+    box.textContent = `Stopped after ${status.done} of ${status.total}.`;
+  } else if (status.phase === 'partial') {
+    box.textContent = `Fetched ${status.total - status.failed} of ${status.total}, for this tab only. ${status.failed} could not be reached.`;
+  } else {
+    box.textContent = 'All synopses fetched, for this tab only.';
+  }
+  renderSynopsisButtons();
+  // The hero is showing a sentence that may have just been answered, and nothing else repaints on a
+  // synopsis arriving: none of this is in the store, so no update() fires.
+  renderHero();
+}
+
+async function startSynopsisRun() {
+  // The list is captured before the question, not after. Nothing can move the reader while a modal
+  // dialog is open, but starting a run against whatever is active when the answer arrives would be
+  // the wrong shape regardless: they agreed to fetch this order.
+  const list = store.state.lists[activeListId()];
+  if (!list) return;
+  const yes = await askConfirm(synopsisDisclaimer(settings.apiBase));
+  if (!yes) return;
+  synopsisRunner.start(list.id);
 }
 
 // ------------------------------------------------------------------ add view
@@ -3365,6 +3536,19 @@ function wireData() {
     cache = new ResponseCache({ baseUrl: value });
     api = new MarvelApi({ baseUrl: value, limiter, cache, onStatus: onApiStatus });
     hydrator.api = api;
+    // The synopsis runner holds its own reference for the same reason the hydrator does, so it needs
+    // the same rebinding. Without it a run started after this point would go on asking the service
+    // the reader has just stopped using, telling it which issues they are reading, which is the one
+    // failure the base URL check exists to prevent.
+    //
+    // A run already in flight is stopped rather than switched, and what it fetched is dropped: the
+    // reader agreed to a dialog naming the old service, and that agreement does not carry over to a
+    // different one. Prose on screen has to have come from the service the reader was told about.
+    if (synopsisRunner.active) synopsisRunner.cancel();
+    synopsisRunner.api = api;
+    sessionSynopsis.clear();
+    renderSynopsis(null);
+    renderHero();
     notify('#restore-report', 'API URL saved. Cached data from the previous URL is kept separate.', 'ok');
     checkHealth();
   });
@@ -3753,6 +3937,8 @@ export function boot() {
   });
   checkHealth();
   refreshCacheUsage();
+  // After the first render, because it is slow, it is not urgent, and nothing on screen waits on it.
+  runCachePurge();
 
   // Nothing reports store.lastError here. Every writer of it calls onChange in the same step, and
   // that callback already notifies #save-report, so a line here can only repeat what is on screen.

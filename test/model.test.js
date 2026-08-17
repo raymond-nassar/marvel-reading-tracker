@@ -79,7 +79,11 @@ test('normalizeIssue carries the rich fields from /issues/{id}', () => {
     pageCount: 32,
     creators: [{ name: 'Jonathan Hickman', role: 'writer' }],
   });
-  assert.equal(n.description, 'A synopsis.');
+  // Every rich field except the synopsis. This is the single issue-level write gate, reached by
+  // upsertIssue on the way in and by coerce on every load, so dropping the field here is what makes
+  // "a fetched synopsis is never stored" true of new writes, of trackers saved before BL-134, and of
+  // restored backups, rather than true of the new button alone.
+  assert.equal('description' in n, false, 'synopsis prose must not reach stored state by any path');
   assert.equal(n.pageCount, 32);
   assert.equal(n.creators[0].name, 'Jonathan Hickman');
   assert.equal(n.cover.path, 'https://i.annihil.us/u/x', 'http must be upgraded to https');
@@ -107,9 +111,10 @@ test('pageCount only survives when it is a positive number', () => {
 
 test('upsert merges new detail without erasing what we already had', () => {
   let s = upsertIssue(createEmptyState(), { issueId: 1, title: 'Old', digitalId: 5 });
-  s = upsertIssue(s, { issueId: 1, title: 'New', description: 'Added' });
+  s = upsertIssue(s, { issueId: 1, title: 'New', pageCount: 32, description: 'Added' });
   assert.equal(s.issues[1].title, 'New');
-  assert.equal(s.issues[1].description, 'Added');
+  assert.equal(s.issues[1].pageCount, 32);
+  assert.equal('description' in s.issues[1], false, 'and a synopsis is not one of the things it merges');
   assert.equal(s.issues[1].digitalId, 5, 'a later partial record must not blank a known field');
 });
 

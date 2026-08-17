@@ -81,6 +81,10 @@ async function resolveAndGo(id) {
   try {
     const res = await fetch(`${base}/issues/${id}`, {
       headers: { accept: 'application/json' },
+      // This response carries the issue synopsis, and this tab is not the app: it has no cache to
+      // strip and nothing here reads the prose. Without the directive the browser would keep a copy
+      // on disk anyway, which is the one thing the tracker promises does not happen.
+      cache: 'no-store',
       signal: ctl.signal,
     });
     if (!res.ok) throw new Error(String(res.status));

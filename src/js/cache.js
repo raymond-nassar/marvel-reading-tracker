@@ -104,13 +104,25 @@ export class ResponseCache {
     }
   }
 
+  // Reports whether the store is actually empty afterwards, which the previous version did not.
+  //
+  // A caller that records "this has been done" has to know it was. The one-time purge that drops
+  // synopsis prose written by builds before BL-134 writes a marker so it never runs again, and a
+  // clear that failed while reporting nothing would advance that marker over prose still sitting in
+  // the store, permanently. The button in the settings pane has the same need for a different
+  // reason: it tells the reader their cached metadata is gone.
+  //
+  // A store that would not open counts as cleared. There is nothing in it to remove, and treating
+  // it as a failure would make the purge retry on every boot in a browser that has IndexedDB turned
+  // off, which is exactly where it can never succeed.
   async clear() {
     const db = await this.open();
-    if (!db) return;
+    if (!db) return true;
     try {
       await idbReq(db, STORE, 'readwrite', (s) => s.clear());
+      return true;
     } catch {
-      /* ignore */
+      return false;
     }
   }
 
@@ -124,6 +136,11 @@ export class ResponseCache {
   }
 }
 
+// Resolves when the transaction commits, not when the request succeeds. Those are different moments
+// and the gap between them is where a false success lives: a clear() whose request succeeded and
+// whose transaction then aborted has removed nothing, and reporting true for it advances the
+// one-time purge marker over prose still sitting in the store, permanently. IndexedDB rolls the
+// whole transaction back on an abort, so the request's own success says only that it was accepted.
 function idbReq(db, storeName, mode, fn) {
   return new Promise((resolve, reject) => {
     let tx;
@@ -133,8 +150,10 @@ function idbReq(db, storeName, mode, fn) {
       return reject(err);
     }
     const req = fn(tx.objectStore(storeName));
-    req.onsuccess = () => resolve(req.result);
+    let result;
+    req.onsuccess = () => { result = req.result; };
     req.onerror = () => reject(req.error);
+    tx.oncomplete = () => resolve(result);
     tx.onabort = () => reject(tx.error);
   });
 }
