@@ -462,16 +462,24 @@ of them, because the two serve different readers and the record needs both.
 
 This is the shell in use. It is not bash and not PowerShell 7.
 
-- No `&&`, `||`, `??`, `?.`. Chain with `;` and gate with `if ($?) { ... }`, subject to the caveat
-  in the next bullet.
-- **`$?` is False after a native command that succeeded, whenever you captured it with `2>&1 |`.**
-  The redirect turns stderr into error records inside the pipeline, and the pipeline is then marked
-  failed whatever the command actually did. Measured on one successful `git checkout`: `$?` is False
-  through `2>&1 | Select-Object`, True through a plain pipe, and `$LASTEXITCODE` is 0 in both. Git
-  writes ordinary advice to stderr, so this fires on routine success rather than on anything
-  unusual, and it silently skipped two commands in an `if ($?) { ... }` block here. **Gate a native
-  command on `$LASTEXITCODE`**, and remember that the capture idiom used throughout this file is
-  exactly the one that breaks the other test.
+- No `&&`, `||`, `??`, `?.`. Chain with `;`. Gate a cmdlet with `if ($?) { ... }` and a native
+  command as the next bullet says.
+- **`$?` is False after a native command that succeeded, if it wrote to stderr and you captured it
+  with `2>&1 |`.** The redirect turns stderr into error records inside the pipeline and the pipeline
+  is then scored on those rather than on the exit code. Both halves are load-bearing and neither
+  alone does it. Measured across eight probes with `$LASTEXITCODE` read alongside: a silent success
+  through `2>&1 |` leaves `$?` True, the same shape writing one line to stderr leaves it False, and
+  both exit 0; through a plain pipe the talkative one is True again. It happens in git rather than
+  only in toys, and it is selective there: `git status --short` on a clean tree is quiet and scores
+  True through the identical idiom that scores `git checkout` False.
+  **The conditional form is the dangerous one.** Something unconditional would be caught the first
+  time anyone used it. This passes every quiet run and withholds the guarded command only when the
+  tool had something to say, which is exactly the run you wanted the guard on. It silently skipped a
+  `reset --hard` and a `branch -D` in an `if ($?) { ... }` block here.
+  **So gate a native command on `$LASTEXITCODE` and a cmdlet on `$?`.** Each is unsafe where the
+  other holds, and the second half fails in the direction that costs you a tree: cmdlets do not
+  touch `$LASTEXITCODE`, so after a native success it still reads 0 while a failed cmdlet sets `$?`
+  False, and a cmdlet gated on the exit code passes its own failure through as success.
 - **Never `git commit -m "..."`.** Double quotes in native command arguments get mangled. Write the
   message to a file and use `git commit -F <file>`. Write the file with
   `[IO.File]::WriteAllText($p, $msg, (New-Object Text.UTF8Encoding $false))`.
