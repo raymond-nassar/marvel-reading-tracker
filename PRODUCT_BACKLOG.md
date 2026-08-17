@@ -265,12 +265,12 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3897-3900 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3898-3901 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-143 | Shelve the catalog in reading order rather than in the order the manifest happens to list | Story | EP-01 | Extends BL-142 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any field on a manifest entry saying when its reading starts, and any sort between parsing the catalog and rendering it |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1392-1393 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1393-1394 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
@@ -299,6 +299,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Shipped | server.mjs:89-101 |
 | BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/main.js:629-633 |
 | BL-136 | Decide what happens to the prose in copies kept for recovery | Debt | EP-06 | Follows BL-134 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/storage.js:547 |
+| BL-145 | Ship the tracker to Windows as one archive that needs nothing installed | Story | EP-10 | Extends BL-140 | 5 | 2 | 3 | 3 | 3.33 | none | Measured | Ready | absent: any packaged archive or published release asset, an empty return from the release listing and a listing of the repository root; package.json:28-30 |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | `scripts/browser-check.mjs:1-7`, `package.json:24-25` |
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | src/js/lib/model.js:214 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:52-67 |
@@ -3059,7 +3060,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2761-2764`.
+`PRODUCT_BACKLOG.md:2762-2765`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4596,7 +4597,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:10448-10450` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:10529-10531` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4606,11 +4607,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:202-204`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10467-10471`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10548-10552`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10282-10284` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10363-10365` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4818,7 +4819,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2489-2498` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2508-2517` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:192-196` and
 `PRODUCT_BACKLOG.md:202-204` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6427,7 +6428,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2485`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2486`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -8299,7 +8300,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4720-4728`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4721-4729`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8314,7 +8315,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:3768`, `src/js/main.js:3692` and `src/js/main.js:3713`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1392-1393`.
+`PRODUCT_BACKLOG.md:1393-1394`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8400,7 +8401,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4725-4726`.
+at `PRODUCT_BACKLOG.md:4726-4727`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8566,7 +8567,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4720-4723` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4721-4724` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -10089,6 +10090,86 @@ tree without the fixes, each reproducing what the review observed rather than me
 focus landing on the Add button, the raised strip resolving to the paragraph instead of the button,
 six choosers with no name, no headings in the pane, and a hidden description still laid out.
 
+**BL-145: Ship the tracker to Windows as one archive that needs nothing installed**
+
+- [ ] Put the app and a Windows Node runtime in one archive, so the reader installs nothing
+- [ ] Make the launcher prefer the bundled runtime and still work for anyone who has their own
+- [ ] Carry the runtime distribution's whole licence file, rather than a summary of it
+- [ ] Publish the archive as a release asset, so one link replaces the download instructions
+- [ ] Leave the address alone, so an unzipped app is the same app with the same progress
+- [ ] Test the packaging contract, because the person this is for cannot diagnose it
+
+Constraint gate: checked 1 to 11, none breached. Constraint 4 is the one to argue with, because it
+says runtime dependencies stay at zero and this ships a runtime. The reading taken is that the
+constraint governs what the browser loads and what npm resolves, and the archive changes neither:
+the dependency count stays at zero and the binary sits beside the app as a delivery vehicle rather
+than as something the code imports. Constraint 5 is the one most able to break this quietly, exactly
+as it was for BL-140. An archive whose launcher sets a port, or opens localhost, hands the reader an
+empty app rather than an error.
+
+BL-140 removed the terminal. What it did not remove is everything that comes before the terminal,
+and that is now the whole of the difficulty: install Node.js from one website, find the project on
+another, choose the right item from a menu written for programmers, wait, find where the archive
+landed, extract it, open the folder, and only then double-click. The audience for this app is one
+person who does not program, and every one of those steps is a place they stop.
+
+Everything below was measured rather than assumed, on 2026-08-16 and 2026-08-17.
+
+The machine this is developed on is ARM64 and its Node reports `arm64`. Copying that binary into an
+archive would produce something that runs for the author and fails for nearly everyone else, which
+is the worst shape a distribution fault can take, because the only person able to diagnose it is the
+one person who cannot reproduce it. The x64 build is the one to ship: it runs natively on an x64
+machine and under emulation here, so a single archive serves both and the author still tests what
+the reader receives.
+
+The size is unremarkable. The runtime binary alone compresses to 29 MiB, the published
+`node-v22.23.2-win-x64.zip` is 35,683,585 bytes, and the app adds 3.6 MiB across 94 files before
+compression, of which 3.0 MiB is vendored order data. Retrieved from
+<https://nodejs.org/dist/latest-v22.x/> on 2026-08-16. A download near 30 MiB is ordinary and needs
+no explaining.
+
+The version floor is already settled. `package.json:28-30` asks for Node 20 or newer, so bundling
+the current 22 LTS satisfies the floor the tests are written against instead of introducing a second
+one.
+
+The licence is larger than one word. The runtime's own grant is MIT, but the file that travels with
+the distribution is 145,485 bytes and names 43 bundled components, OpenSSL and V8 and ICU among
+them, each carrying its own attribution terms. Retrieved from the v22.x branch on 2026-08-17.
+Writing MIT beside the binary would under-attribute what is inside it, so the archive carries that
+whole file. This repository already treats a licence question as first-class, and BL-130 exists to
+close one before publication, so the record should not be the thing that sets the bar too low.
+
+The obvious alternative was built rather than argued about. Node can produce a single executable and
+one was made: 77 MiB, with an embedded asset read back correctly at runtime and the experimental
+warning suppressed, so its output was clean. It was still rejected, and the reason is narrower than
+the first draft of this item claimed.
+
+That draft said the executable meets a warning and the archive meets none. Half of it was wrong, and
+this repository's own README says so at `README.md:122-124`, where the reader is already told their
+computer may ask them to confirm because the file arrived from the internet. So it was checked. A
+zip was marked the way a browser marks a download, `ZoneId=3`, then extracted through the same shell
+interface File Explorer drives, and the extracted launcher carried the mark through, referrer and
+all. The archive warns too. Extracting with the PowerShell cmdlet instead drops the mark, but a
+reader who reaches for that cmdlet is not the reader this item is for.
+
+What separates the two is the signature, not the number of files. The upstream `node.exe` is
+Authenticode signed and verifies as valid, by the OpenJS Foundation. Injecting a single-executable
+payload into it breaks that signature, which is why the built file reports `NotSigned` and why
+Node's own recipe for this ends in a signing step. So the choice is between shipping a binary whose
+signature is intact and shipping one whose signature we destroyed. The first meets the confirm
+prompt the README already documents; the second meets the reputation check, which is the harsher
+dialog and the one whose default button declines to run it. The certificate that would settle it
+costs money every year and still needs reputation before it takes effect.
+
+Two things this deliberately does not do. It does not help the reader who never downloads anything
+at all: that reader wants a link, a link means hosting, and hosting moves the origin and takes the
+reading progress with it. And it does not cover the Mac, although BL-140 shipped a launcher for
+both. Every measurement above is a Windows one, and the Mac is the harder case rather than a copy of
+this one, because a binary that arrives quarantined there without notarization is refused rather
+than merely questioned. `README.md:123-124` already carries a workaround for the milder version of
+that. Sizing this at 3 is sizing the Windows archive alone, so the Mac needs its own item with its
+own measurements rather than a line in this one.
+
 ## Existing epics and stories
 
 The original story text is preserved. Each story now carries its ID and disposition.
@@ -10621,7 +10702,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 1: BL-026 is labelled P0 but ranks fifty-ninth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 59 of 120.
+- Calculated: WSJF 3.67, rank 59 of 121.
 - Driver: job size, not value. Its Cost of Delay of 11 is the tenth highest figure in the backlog.
   It is outranked by fifty-eight items, fifty-five of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -10643,7 +10724,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 114 of 120, below a hundred and ten unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 115 of 121, below a hundred and eleven unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -10701,9 +10782,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 73 of 120. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 61 of 120. Mid-table.
-- BL-017, P2, rank 119 of 120. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 74 of 121. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 61 of 121. Mid-table.
+- BL-017, P2, rank 120 of 121. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
