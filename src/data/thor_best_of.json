@@ -1,0 +1,3919 @@
+{
+  "id": "thor-best-of",
+  "name": "The Best of Thor",
+  "description": "A best-of path through Thor, compiled by hand from a reader's outline of Comic Book Herald's guide to the same. It starts in Journey into Mystery with the Absorbing Man and the issue where the title becomes Thor, then Kirby's cosmic run with Ego, the High Evolutionary and Mangog, Firelord, the Celestial Saga, and Walt Simonson's Surtur Saga with Beta Ray Bill and Skurge's last stand. It then covers the final Ragnarok, Asgard over Nebraska, Jason Aaron's God Butcher and Malekith stories, Jane Foster's run as Thor, and the War of the Realms. The sections are the guide's and are kept in its order.",
+  "source": "https://www.comicbookherald.com/best-10-thor-comics-of-all-time/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.790Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 131,
+  "collections": 11,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 9689,
+      "title": "Journey Into Mystery (1952) #114",
+      "number": "114",
+      "url": "https://www.marvel.com/comics/issue/9689/journey_into_mystery_1952_114",
+      "seriesId": 2032,
+      "seriesName": "Journey Into Mystery (1952 - 1966)",
+      "onSale": "1965-03-01T00:00:00+0000",
+      "mu": "1965-03-01T00:00:00+0000",
+      "digitalId": 4304,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/5a7c6dc559fc6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Chic Stone",
+          "role": "cover artist"
+        },
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Early Kirby Peak: When Titans Clash"
+    },
+    {
+      "issueId": 9696,
+      "title": "Journey Into Mystery (1952) #120",
+      "number": "120",
+      "url": "https://www.marvel.com/comics/issue/9696/journey_into_mystery_1952_120",
+      "seriesId": 2032,
+      "seriesName": "Journey Into Mystery (1952 - 1966)",
+      "onSale": "1965-09-01T00:00:00+0000",
+      "mu": "1965-09-01T00:00:00+0000",
+      "digitalId": 14219,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/5a7cb1638e30d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Early Kirby Peak: When Titans Clash"
+    },
+    {
+      "issueId": 9697,
+      "title": "Journey Into Mystery (1952) #121",
+      "number": "121",
+      "url": "https://www.marvel.com/comics/issue/9697/journey_into_mystery_1952_121",
+      "seriesId": 2032,
+      "seriesName": "Journey Into Mystery (1952 - 1966)",
+      "onSale": "1965-10-01T00:00:00+0000",
+      "mu": "1965-10-01T00:00:00+0000",
+      "digitalId": 2049,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/a0/5a7cbd3fa3daa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Early Kirby Peak: When Titans Clash"
+    },
+    {
+      "issueId": 9698,
+      "title": "Journey Into Mystery (1952) #122",
+      "number": "122",
+      "url": "https://www.marvel.com/comics/issue/9698/journey_into_mystery_1952_122",
+      "seriesId": 2032,
+      "seriesName": "Journey Into Mystery (1952 - 1966)",
+      "onSale": "1965-11-01T00:00:00+0000",
+      "mu": "1965-11-01T00:00:00+0000",
+      "digitalId": 4311,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/5a7db0eaa7604",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Early Kirby Peak: When Titans Clash"
+    },
+    {
+      "issueId": 9699,
+      "title": "Journey Into Mystery (1952) #123",
+      "number": "123",
+      "url": "https://www.marvel.com/comics/issue/9699/journey_into_mystery_1952_123",
+      "seriesId": 2032,
+      "seriesName": "Journey Into Mystery (1952 - 1966)",
+      "onSale": "1965-12-01T00:00:00+0000",
+      "mu": "1965-12-01T00:00:00+0000",
+      "digitalId": 4312,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/5a7db8c0a27a2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Early Kirby Peak: When Titans Clash"
+    },
+    {
+      "issueId": 11454,
+      "title": "Thor (1966) #126",
+      "number": "126",
+      "url": "https://www.marvel.com/comics/issue/11454/thor_1966_126",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1966-03-01T00:00:00+0000",
+      "mu": "1966-03-01T00:00:00+0000",
+      "digitalId": 4439,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/30/4f63909280397",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Early Kirby Peak: When Titans Clash"
+    },
+    {
+      "issueId": 11459,
+      "title": "Thor (1966) #131",
+      "number": "131",
+      "url": "https://www.marvel.com/comics/issue/11459/thor_1966_131",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1966-08-01T00:00:00+0000",
+      "mu": "1966-08-01T00:00:00+0000",
+      "digitalId": 1165,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/4f675c90b23af",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11460,
+      "title": "Thor (1966) #132",
+      "number": "132",
+      "url": "https://www.marvel.com/comics/issue/11460/thor_1966_132",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1966-09-01T00:00:00+0000",
+      "mu": "1966-09-01T00:00:00+0000",
+      "digitalId": 4444,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/00/4f675d4475056",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11461,
+      "title": "Thor (1966) #133",
+      "number": "133",
+      "url": "https://www.marvel.com/comics/issue/11461/thor_1966_133",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1966-10-01T00:00:00+0000",
+      "mu": "1966-10-01T00:00:00+0000",
+      "digitalId": 4445,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/4f6761db4bdb2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11462,
+      "title": "Thor (1966) #134",
+      "number": "134",
+      "url": "https://www.marvel.com/comics/issue/11462/thor_1966_134",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1966-11-01T00:00:00+0000",
+      "mu": "1966-11-01T00:00:00+0000",
+      "digitalId": 4446,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/0/04/4f6762df6ccfd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11463,
+      "title": "Thor (1966) #135",
+      "number": "135",
+      "url": "https://www.marvel.com/comics/issue/11463/thor_1966_135",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1966-12-01T00:00:00+0000",
+      "mu": "1966-12-01T00:00:00+0000",
+      "digitalId": 4447,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/00/4f67633277219",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11482,
+      "title": "Thor (1966) #154",
+      "number": "154",
+      "url": "https://www.marvel.com/comics/issue/11482/thor_1966_154",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1968-07-01T00:00:00+0000",
+      "mu": "1968-07-01T00:00:00+0000",
+      "digitalId": 7166,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/4c35fb26929c3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11483,
+      "title": "Thor (1966) #155",
+      "number": "155",
+      "url": "https://www.marvel.com/comics/issue/11483/thor_1966_155",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1968-08-01T00:00:00+0000",
+      "mu": "1968-08-01T00:00:00+0000",
+      "digitalId": 7167,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/b0/4c35fcaeaa0a9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11484,
+      "title": "Thor (1966) #156",
+      "number": "156",
+      "url": "https://www.marvel.com/comics/issue/11484/thor_1966_156",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1968-09-01T00:00:00+0000",
+      "mu": "1968-09-01T00:00:00+0000",
+      "digitalId": 7168,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/4c35fca3db066",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11485,
+      "title": "Thor (1966) #157",
+      "number": "157",
+      "url": "https://www.marvel.com/comics/issue/11485/thor_1966_157",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1968-10-01T00:00:00+0000",
+      "mu": "1968-10-01T00:00:00+0000",
+      "digitalId": 7169,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/4c35fc6e7f482",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11486,
+      "title": "Thor (1966) #158",
+      "number": "158",
+      "url": "https://www.marvel.com/comics/issue/11486/thor_1966_158",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1968-11-01T00:00:00+0000",
+      "mu": "1968-11-01T00:00:00+0000",
+      "digitalId": 11590,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/4bb59e365ed11",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Larry Lieber",
+          "role": "writer"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11487,
+      "title": "Thor (1966) #159",
+      "number": "159",
+      "url": "https://www.marvel.com/comics/issue/11487/thor_1966_159",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1968-12-01T00:00:00+0000",
+      "mu": "1968-12-01T00:00:00+0000",
+      "digitalId": 11591,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/4bb59ca83336b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11488,
+      "title": "Thor (1966) #160",
+      "number": "160",
+      "url": "https://www.marvel.com/comics/issue/11488/thor_1966_160",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1969-01-01T00:00:00+0000",
+      "mu": "1969-01-01T00:00:00+0000",
+      "digitalId": 11592,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/4bb59ca2e758b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11489,
+      "title": "Thor (1966) #161",
+      "number": "161",
+      "url": "https://www.marvel.com/comics/issue/11489/thor_1966_161",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1969-02-01T00:00:00+0000",
+      "mu": "1969-02-01T00:00:00+0000",
+      "digitalId": 11593,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/4bb59c9d6ab40",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11490,
+      "title": "Thor (1966) #162",
+      "number": "162",
+      "url": "https://www.marvel.com/comics/issue/11490/thor_1966_162",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1969-03-01T00:00:00+0000",
+      "mu": "1969-03-01T00:00:00+0000",
+      "digitalId": 11594,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/4bb59c97d3b9d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11491,
+      "title": "Thor (1966) #163",
+      "number": "163",
+      "url": "https://www.marvel.com/comics/issue/11491/thor_1966_163",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1969-04-01T00:00:00+0000",
+      "mu": "1969-04-01T00:00:00+0000",
+      "digitalId": 13120,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/4f634f877f3a4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11492,
+      "title": "Thor (1966) #164",
+      "number": "164",
+      "url": "https://www.marvel.com/comics/issue/11492/thor_1966_164",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1969-05-01T00:00:00+0000",
+      "mu": "1969-05-01T00:00:00+0000",
+      "digitalId": 19564,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/4f63500d2d9da",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11493,
+      "title": "Thor (1966) #165",
+      "number": "165",
+      "url": "https://www.marvel.com/comics/issue/11493/thor_1966_165",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1969-06-01T00:00:00+0000",
+      "mu": "1969-06-01T00:00:00+0000",
+      "digitalId": 19567,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/a0/4f63506799d59",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11494,
+      "title": "Thor (1966) #166",
+      "number": "166",
+      "url": "https://www.marvel.com/comics/issue/11494/thor_1966_166",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1969-07-01T00:00:00+0000",
+      "mu": "1969-07-01T00:00:00+0000",
+      "digitalId": 19569,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/4f6350ba802cd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11495,
+      "title": "Thor (1966) #167",
+      "number": "167",
+      "url": "https://www.marvel.com/comics/issue/11495/thor_1966_167",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1969-08-01T00:00:00+0000",
+      "mu": "1969-08-01T00:00:00+0000",
+      "digitalId": 19573,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/4f63514eac870",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Kirby Cosmic Thunder"
+    },
+    {
+      "issueId": 11553,
+      "title": "Thor (1966) #225",
+      "number": "225",
+      "url": "https://www.marvel.com/comics/issue/11553/thor_1966_225",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1974-07-01T00:00:00+0000",
+      "mu": "1974-07-01T00:00:00+0000",
+      "digitalId": 29218,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/513f7fba8fcba",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Conway",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Gerry Conway: Firelord"
+    },
+    {
+      "issueId": 11554,
+      "title": "Thor (1966) #226",
+      "number": "226",
+      "url": "https://www.marvel.com/comics/issue/11554/thor_1966_226",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1974-08-01T00:00:00+0000",
+      "mu": "1974-08-01T00:00:00+0000",
+      "digitalId": 29227,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/90/59d667eb3e5f9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mike Esposito",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Conway",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Gerry Conway: Firelord"
+    },
+    {
+      "issueId": 11555,
+      "title": "Thor (1966) #227",
+      "number": "227",
+      "url": "https://www.marvel.com/comics/issue/11555/thor_1966_227",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1974-09-01T00:00:00+0000",
+      "mu": "1974-09-01T00:00:00+0000",
+      "digitalId": 29220,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/59d66cb1e6e39",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rich Buckler",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Conway",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Gerry Conway: Firelord"
+    },
+    {
+      "issueId": 11556,
+      "title": "Thor (1966) #228",
+      "number": "228",
+      "url": "https://www.marvel.com/comics/issue/11556/thor_1966_228",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1974-10-01T00:00:00+0000",
+      "mu": "1974-10-01T00:00:00+0000",
+      "digitalId": 29234,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/59d68318c241c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arvell Jones",
+          "role": "penciler"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Rich Buckler",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Conway",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Gerry Conway: Firelord"
+    },
+    {
+      "issueId": 11568,
+      "title": "Thor (1966) #240",
+      "number": "240",
+      "url": "https://www.marvel.com/comics/issue/11568/thor_1966_240",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1975-10-01T00:00:00+0000",
+      "mu": "1975-10-01T00:00:00+0000",
+      "digitalId": 29268,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/59d7b13ad4e96",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Bill Mantlo",
+          "role": "writer"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Roy Thomas and Mark Gruenwald: The Celestial Saga"
+    },
+    {
+      "issueId": 11569,
+      "title": "Thor (1966) #241",
+      "number": "241",
+      "url": "https://www.marvel.com/comics/issue/11569/thor_1966_241",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1975-11-01T00:00:00+0000",
+      "mu": "1975-11-01T00:00:00+0000",
+      "digitalId": 29158,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/e0/513ddedead4c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Bill Mantlo",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Roy Thomas and Mark Gruenwald: The Celestial Saga"
+    },
+    {
+      "issueId": 11570,
+      "title": "Thor (1966) #242",
+      "number": "242",
+      "url": "https://www.marvel.com/comics/issue/11570/thor_1966_242",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1975-12-01T00:00:00+0000",
+      "mu": "1975-12-01T00:00:00+0000",
+      "digitalId": 23024,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/4e4532e170c45",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Len Wein",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Roy Thomas and Mark Gruenwald: The Celestial Saga"
+    },
+    {
+      "issueId": 11571,
+      "title": "Thor (1966) #243",
+      "number": "243",
+      "url": "https://www.marvel.com/comics/issue/11571/thor_1966_243",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1976-01-01T00:00:00+0000",
+      "mu": "1976-01-01T00:00:00+0000",
+      "digitalId": 23030,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/4e4d5ef7c4614",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Len Wein",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Roy Thomas and Mark Gruenwald: The Celestial Saga"
+    },
+    {
+      "issueId": 11572,
+      "title": "Thor (1966) #244",
+      "number": "244",
+      "url": "https://www.marvel.com/comics/issue/11572/thor_1966_244",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1976-02-01T00:00:00+0000",
+      "mu": "1976-02-01T00:00:00+0000",
+      "digitalId": 23044,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/30/4e442f02a0cab",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Len Wein",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Roy Thomas and Mark Gruenwald: The Celestial Saga"
+    },
+    {
+      "issueId": 11573,
+      "title": "Thor (1966) #245",
+      "number": "245",
+      "url": "https://www.marvel.com/comics/issue/11573/thor_1966_245",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1976-03-01T00:00:00+0000",
+      "mu": "1976-03-01T00:00:00+0000",
+      "digitalId": 23047,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/4e44350c56727",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Len Wein",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Roy Thomas and Mark Gruenwald: The Celestial Saga"
+    },
+    {
+      "issueId": 16671,
+      "title": "Thor Annual (1966) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/16671/thor_annual_1966_10",
+      "seriesId": 2978,
+      "seriesName": "Thor Annual (1966 - 2001)",
+      "onSale": "1982-01-01T00:00:00+0000",
+      "mu": "2019-09-16T00:00:00+0000",
+      "digitalId": 51660,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/5d7ba82b79fe6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Gordon",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andy Mushynsky",
+          "role": "cover artist"
+        },
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Bryant",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bob Hall",
+          "role": "penciler"
+        },
+        {
+          "name": "Alan Zelenetz",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Roy Thomas and Mark Gruenwald: The Celestial Saga"
+    },
+    {
+      "issueId": 11665,
+      "title": "Thor (1966) #337",
+      "number": "337",
+      "url": "https://www.marvel.com/comics/issue/11665/thor_1966_337",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1983-11-10T00:00:00+0000",
+      "mu": "2009-05-15T00:00:00+0000",
+      "digitalId": 11595,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/4bb5cd6927cf0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "Walter M. Simonson",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 11676,
+      "title": "Thor (1966) #348",
+      "number": "348",
+      "url": "https://www.marvel.com/comics/issue/11676/thor_1966_348",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1984-10-01T00:00:00+0000",
+      "mu": "1984-10-01T00:00:00+0000",
+      "digitalId": 11606,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/90/4bb4fd503e3aa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bob Wiacek",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walt Simonson",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 11677,
+      "title": "Thor (1966) #349",
+      "number": "349",
+      "url": "https://www.marvel.com/comics/issue/11677/thor_1966_349",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1984-11-01T00:00:00+0000",
+      "mu": "1984-11-01T00:00:00+0000",
+      "digitalId": 2611,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/a0/65d4d5db9ce42",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Walt Simonson",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 11678,
+      "title": "Thor (1966) #350",
+      "number": "350",
+      "url": "https://www.marvel.com/comics/issue/11678/thor_1966_350",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1984-12-01T00:00:00+0000",
+      "mu": "1984-12-01T00:00:00+0000",
+      "digitalId": 2612,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/59e0cb8950cf5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Walt Simonson",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 11679,
+      "title": "Thor (1966) #351",
+      "number": "351",
+      "url": "https://www.marvel.com/comics/issue/11679/thor_1966_351",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1985-01-01T00:00:00+0000",
+      "mu": "1985-01-01T00:00:00+0000",
+      "digitalId": 2613,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/00/4bc46fdc123c6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Walt Simonson",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 11680,
+      "title": "Thor (1966) #352",
+      "number": "352",
+      "url": "https://www.marvel.com/comics/issue/11680/thor_1966_352",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1985-02-01T00:00:00+0000",
+      "mu": "1985-02-01T00:00:00+0000",
+      "digitalId": 2614,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/4bc46fd6c53c6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Walt Simonson",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 11681,
+      "title": "Thor (1966) #353",
+      "number": "353",
+      "url": "https://www.marvel.com/comics/issue/11681/thor_1966_353",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1985-03-01T00:00:00+0000",
+      "mu": "1985-03-01T00:00:00+0000",
+      "digitalId": 2615,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/4bc46fd181f79",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Walt Simonson",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 11683,
+      "title": "Thor (1966) #355",
+      "number": "355",
+      "url": "https://www.marvel.com/comics/issue/11683/thor_1966_355",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1985-05-01T00:00:00+0000",
+      "mu": "1985-05-01T00:00:00+0000",
+      "digitalId": 2617,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/40/4bc46fc6e9658",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sal Buscema",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walt Simonson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 11690,
+      "title": "Thor (1966) #362",
+      "number": "362",
+      "url": "https://www.marvel.com/comics/issue/11690/thor_1966_362",
+      "seriesId": 2083,
+      "seriesName": "Thor (1966 - 1996)",
+      "onSale": "1985-12-01T00:00:00+0000",
+      "mu": "1985-12-01T00:00:00+0000",
+      "digitalId": 2623,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/c0/4bc46ee1aafe0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Walt Simonson",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Walt Simonson: The Surtur Saga and Beta Ray Bill"
+    },
+    {
+      "issueId": 875,
+      "title": "Thor (1998) #85",
+      "number": "85",
+      "url": "https://www.marvel.com/comics/issue/875/thor_1998_85",
+      "seriesId": 581,
+      "seriesName": "Thor (1998 - 2004)",
+      "onSale": "2004-12-01T00:00:00+0000",
+      "mu": "2004-12-01T00:00:00+0000",
+      "digitalId": 7246,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/30/59cbd22f71dcb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 2527,
+      "title": "Thor: Blood Oath (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/2527/thor_blood_oath_2005_1",
+      "seriesId": 938,
+      "seriesName": "Thor: Blood Oath (2005)",
+      "onSale": "2005-09-14T00:00:00+0000",
+      "mu": "2005-09-14T00:00:00+0000",
+      "digitalId": 2638,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/59f38c91ba4fa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 2528,
+      "title": "Thor: Blood Oath (2005) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/2528/thor_blood_oath_2005_2",
+      "seriesId": 938,
+      "seriesName": "Thor: Blood Oath (2005)",
+      "onSale": "2005-10-05T00:00:00+0000",
+      "mu": "2005-10-05T00:00:00+0000",
+      "digitalId": 2639,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/59f3971dd5b65",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 2529,
+      "title": "Thor: Blood Oath (2005) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/2529/thor_blood_oath_2005_3",
+      "seriesId": 938,
+      "seriesName": "Thor: Blood Oath (2005)",
+      "onSale": "2005-10-19T00:00:00+0000",
+      "mu": "2005-10-19T00:00:00+0000",
+      "digitalId": 2640,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/4bb3d21862d1f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 3065,
+      "title": "Thor: Blood Oath (2005) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/3065/thor_blood_oath_2005_4",
+      "seriesId": 938,
+      "seriesName": "Thor: Blood Oath (2005)",
+      "onSale": "2005-11-02T00:00:00+0000",
+      "mu": "2005-11-02T00:00:00+0000",
+      "digitalId": 2641,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/59f39845c2c5e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 3163,
+      "title": "Thor: Blood Oath (2005) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/3163/thor_blood_oath_2005_5",
+      "seriesId": 938,
+      "seriesName": "Thor: Blood Oath (2005)",
+      "onSale": "2005-12-07T00:00:00+0000",
+      "mu": "2005-12-07T00:00:00+0000",
+      "digitalId": 2642,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/50/59f398fc05455",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 3164,
+      "title": "Thor: Blood Oath (2005) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/3164/thor_blood_oath_2005_6",
+      "seriesId": 938,
+      "seriesName": "Thor: Blood Oath (2005)",
+      "onSale": "2005-12-28T00:00:00+0000",
+      "mu": "2005-12-28T00:00:00+0000",
+      "digitalId": 2643,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/4bc46e920ec36",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Kolins",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 1591,
+      "title": "Stormbreaker: The Saga of Beta Ray Bill (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/1591/stormbreaker_the_saga_of_beta_ray_bill_2005_1",
+      "seriesId": 854,
+      "seriesName": "Stormbreaker: The Saga of Beta Ray Bill (2005)",
+      "onSale": "2005-01-12T00:00:00+0000",
+      "mu": "2005-01-12T00:00:00+0000",
+      "digitalId": 897,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/5ae9b8aa2f030",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Berman",
+          "role": "writer"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 1680,
+      "title": "Stormbreaker: The Saga of Beta Ray Bill (2005) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/1680/stormbreaker_the_saga_of_beta_ray_bill_2005_2",
+      "seriesId": 854,
+      "seriesName": "Stormbreaker: The Saga of Beta Ray Bill (2005)",
+      "onSale": "2005-02-16T00:00:00+0000",
+      "mu": "2005-02-16T00:00:00+0000",
+      "digitalId": 2568,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/5ae9b92eb491e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Berman",
+          "role": "writer"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 1779,
+      "title": "Stormbreaker: The Saga of Beta Ray Bill (2005) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/1779/stormbreaker_the_saga_of_beta_ray_bill_2005_3",
+      "seriesId": 854,
+      "seriesName": "Stormbreaker: The Saga of Beta Ray Bill (2005)",
+      "onSale": "2005-03-16T00:00:00+0000",
+      "mu": "2005-03-16T00:00:00+0000",
+      "digitalId": 2569,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/40/5ae9b9a0caffc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Berman",
+          "role": "writer"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 1882,
+      "title": "Stormbreaker: The Saga of Beta Ray Bill (2005) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/1882/stormbreaker_the_saga_of_beta_ray_bill_2005_4",
+      "seriesId": 854,
+      "seriesName": "Stormbreaker: The Saga of Beta Ray Bill (2005)",
+      "onSale": "2005-04-20T00:00:00+0000",
+      "mu": "2005-04-20T00:00:00+0000",
+      "digitalId": 2570,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/5ae9ba385f685",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Berman",
+          "role": "writer"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 1984,
+      "title": "Stormbreaker: The Saga of Beta Ray Bill (2005) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/1984/stormbreaker_the_saga_of_beta_ray_bill_2005_5",
+      "seriesId": 854,
+      "seriesName": "Stormbreaker: The Saga of Beta Ray Bill (2005)",
+      "onSale": "2005-05-25T00:00:00+0000",
+      "mu": "2005-05-25T00:00:00+0000",
+      "digitalId": 2571,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/d0/5ae9bae604ada",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Berman",
+          "role": "writer"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 2087,
+      "title": "Stormbreaker: The Saga of Beta Ray Bill (2005) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/2087/stormbreaker_the_saga_of_beta_ray_bill_2005_6",
+      "seriesId": 854,
+      "seriesName": "Stormbreaker: The Saga of Beta Ray Bill (2005)",
+      "onSale": "2005-06-15T00:00:00+0000",
+      "mu": "2005-06-15T00:00:00+0000",
+      "digitalId": 2572,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/5ae9bb4996a61",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Berman",
+          "role": "writer"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Michael Oeming: The Final Ragnarok"
+    },
+    {
+      "issueId": 23093,
+      "title": "Thor (2007) #600",
+      "number": "600",
+      "url": "https://www.marvel.com/comics/issue/23093/thor_2007_600",
+      "seriesId": 2473,
+      "seriesName": "Thor (2007 - 2011)",
+      "onSale": "2009-02-11T00:00:00+0000",
+      "mu": "2009-02-11T00:00:00+0000",
+      "digitalId": 13227,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/b0/5758369777d60",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 104,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "cover artist"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "J. Michael Straczynski",
+          "role": "writer"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "J. Michael Straczynski: Asgard Reborn"
+    },
+    {
+      "issueId": 44198,
+      "title": "Thor: God of Thunder (2012) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/44198/thor_god_of_thunder_2012_1",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2012-11-14T00:00:00+0000",
+      "mu": "2013-05-13T00:00:00+0000",
+      "digitalId": 27993,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/30/51646f6c2a712",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 44206,
+      "title": "Thor: God of Thunder (2012) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/44206/thor_god_of_thunder_2012_2",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2012-11-28T00:00:00+0000",
+      "mu": "2013-05-27T00:00:00+0000",
+      "digitalId": 28079,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/59f8af4d33d8c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 45371,
+      "title": "Thor: God of Thunder (2012) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/45371/thor_god_of_thunder_2012_3",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2012-12-19T00:00:00+0000",
+      "mu": "2013-06-24T13:46:16+0000",
+      "digitalId": 28080,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/04/59f8bfc6c79ea",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46502,
+      "title": "Thor: God of Thunder (2012) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/46502/thor_god_of_thunder_2012_4",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-01-09T00:00:00+0000",
+      "mu": "2013-07-08T00:00:00+0000",
+      "digitalId": 28081,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/f0/59f8c5e6bbcf2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46504,
+      "title": "Thor: God of Thunder (2012) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/46504/thor_god_of_thunder_2012_5",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-02-20T00:00:00+0000",
+      "mu": "2013-08-19T00:00:00+0000",
+      "digitalId": 28417,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/e0/57855964e3488",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46506,
+      "title": "Thor: God of Thunder (2012) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/46506/thor_god_of_thunder_2012_6",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-03-13T00:00:00+0000",
+      "mu": "2013-09-09T00:00:00+0000",
+      "digitalId": 28771,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/51412ad89f0bb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46507,
+      "title": "Thor: God of Thunder (2012) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/46507/thor_god_of_thunder_2012_7",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-04-10T00:00:00+0000",
+      "mu": "2013-10-14T00:00:00+0000",
+      "digitalId": 29235,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/90/59f8d5e91ce93",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46508,
+      "title": "Thor: God of Thunder (2012) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/46508/thor_god_of_thunder_2012_8",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-05-08T00:00:00+0000",
+      "mu": "2013-11-11T00:00:41+0000",
+      "digitalId": 29437,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/50/59f8dcfba2daa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46509,
+      "title": "Thor: God of Thunder (2012) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/46509/thor_god_of_thunder_2012_9",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-06-12T00:00:00+0000",
+      "mu": "2013-12-09T00:00:00+0000",
+      "digitalId": 29438,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/a0/51acc5657cd9e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46510,
+      "title": "Thor: God of Thunder (2012) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/46510/thor_god_of_thunder_2012_10",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-07-17T00:00:00+0000",
+      "mu": "2014-01-20T00:00:00+0000",
+      "digitalId": 30494,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/51d72a892b71d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46511,
+      "title": "Thor: God of Thunder (2012) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/46511/thor_god_of_thunder_2012_11",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-08-14T00:00:00+0000",
+      "mu": "2014-02-10T00:00:00+0000",
+      "digitalId": 31050,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/51fa84bf351fc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 78577,
+      "title": "King Thor (2019) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/78577/king_thor_2019_1",
+      "seriesId": 27997,
+      "seriesName": "King Thor (2019)",
+      "onSale": "2019-09-11T00:00:00+0000",
+      "mu": "2020-03-16T00:00:00+0000",
+      "digitalId": 52531,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/5d72a28867a68",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Kim Jacinto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 79407,
+      "title": "King Thor (2019) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/79407/king_thor_2019_2",
+      "seriesId": 27997,
+      "seriesName": "King Thor (2019)",
+      "onSale": "2019-10-23T00:00:00+0000",
+      "mu": "2020-04-27T00:00:00+0000",
+      "digitalId": 52694,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/5da4ca693ffa6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 79408,
+      "title": "King Thor (2019) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/79408/king_thor_2019_3",
+      "seriesId": 27997,
+      "seriesName": "King Thor (2019)",
+      "onSale": "2019-11-20T00:00:00+0000",
+      "mu": "2020-05-25T00:00:00+0000",
+      "digitalId": 53003,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/a0/5dc98abb1011d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Das Pastoras",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 79409,
+      "title": "King Thor (2019) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/79409/king_thor_2019_4",
+      "seriesId": 27997,
+      "seriesName": "King Thor (2019)",
+      "onSale": "2019-12-18T00:00:00+0000",
+      "mu": "2019-12-18T00:00:00+0000",
+      "digitalId": 53265,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/5defb237c964e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Andrea Sorrentino",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Aaron Kuder",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Burnham",
+          "role": "penciler"
+        },
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Nicholas Pitarra",
+          "role": "penciler"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: The God Butcher"
+    },
+    {
+      "issueId": 46515,
+      "title": "Thor: God of Thunder (2012) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/46515/thor_god_of_thunder_2012_15",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-11-13T00:00:00+0000",
+      "mu": "2014-05-12T00:00:00+0000",
+      "digitalId": 31988,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/527954ee1a927",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: Malekith and the League of Realms"
+    },
+    {
+      "issueId": 47766,
+      "title": "Thor: God of Thunder (2012) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/47766/thor_god_of_thunder_2012_16",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2013-12-18T00:00:00+0000",
+      "mu": "2014-06-23T00:00:00+0000",
+      "digitalId": 32473,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/52a780e83895c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: Malekith and the League of Realms"
+    },
+    {
+      "issueId": 47767,
+      "title": "Thor: God of Thunder (2012) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/47767/thor_god_of_thunder_2012_17",
+      "seriesId": 16729,
+      "seriesName": "Thor: God of Thunder (2012 - 2014)",
+      "onSale": "2014-01-15T00:00:00+0000",
+      "mu": "2014-07-14T00:00:00+0000",
+      "digitalId": 32833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/60/52cee718957c9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jason Aaron: Malekith and the League of Realms"
+    },
+    {
+      "issueId": 50970,
+      "title": "Thor (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50970/thor_2014_1",
+      "seriesId": 19759,
+      "seriesName": "Thor (2014 - 2015)",
+      "onSale": "2014-10-01T00:00:00+0000",
+      "mu": "2015-04-06T00:00:00+0000",
+      "digitalId": 34966,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/5ec67face2640",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 51061,
+      "title": "Thor (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/51061/thor_2014_2",
+      "seriesId": 19759,
+      "seriesName": "Thor (2014 - 2015)",
+      "onSale": "2014-11-12T00:00:00+0000",
+      "mu": "2015-05-11T00:00:00+0000",
+      "digitalId": 35414,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/5ec680342a906",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 52812,
+      "title": "Thor (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/52812/thor_2014_3",
+      "seriesId": 19759,
+      "seriesName": "Thor (2014 - 2015)",
+      "onSale": "2014-12-10T00:00:00+0000",
+      "mu": "2015-06-08T00:00:00+0000",
+      "digitalId": 35841,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/5ec680462e0c8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 52814,
+      "title": "Thor (2014) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/52814/thor_2014_4",
+      "seriesId": 19759,
+      "seriesName": "Thor (2014 - 2015)",
+      "onSale": "2015-01-28T00:00:00+0000",
+      "mu": "2015-07-27T00:00:00+0000",
+      "digitalId": 36382,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/5ec67ef6b07c0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 52816,
+      "title": "Thor (2014) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/52816/thor_2014_5",
+      "seriesId": 19759,
+      "seriesName": "Thor (2014 - 2015)",
+      "onSale": "2015-02-11T00:00:00+0000",
+      "mu": "2015-08-17T00:00:00+0000",
+      "digitalId": 36691,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/5ec6803d07122",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 52818,
+      "title": "Thor (2014) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/52818/thor_2014_6",
+      "seriesId": 19759,
+      "seriesName": "Thor (2014 - 2015)",
+      "onSale": "2015-03-11T00:00:00+0000",
+      "mu": "2015-09-14T00:00:00+0000",
+      "digitalId": 36937,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/5ec6e8691159d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 52819,
+      "title": "Thor (2014) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/52819/thor_2014_7",
+      "seriesId": 19759,
+      "seriesName": "Thor (2014 - 2015)",
+      "onSale": "2015-04-15T00:00:00+0000",
+      "mu": "2015-10-19T00:00:00+0000",
+      "digitalId": 37672,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/5ec6e87b05d60",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 52820,
+      "title": "Thor (2014) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/52820/thor_2014_8",
+      "seriesId": 19759,
+      "seriesName": "Thor (2014 - 2015)",
+      "onSale": "2015-05-13T00:00:00+0000",
+      "mu": "2015-11-16T00:00:00+0000",
+      "digitalId": 38267,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/a0/5ec6e8729a796",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55786,
+      "title": "Mighty Thor (2015) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/55786/mighty_thor_2015_1",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2015-11-18T00:00:00+0000",
+      "mu": "2016-05-16T00:00:00+0000",
+      "digitalId": 40354,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/03/564ca85300754",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55788,
+      "title": "Mighty Thor (2015) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/55788/mighty_thor_2015_2",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2015-12-16T00:00:00+0000",
+      "mu": "2016-06-20T00:00:00+0000",
+      "digitalId": 40687,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/5654d60b315b6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55790,
+      "title": "Mighty Thor (2015) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/55790/mighty_thor_2015_3",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-01-13T00:00:00+0000",
+      "mu": "2016-07-11T00:00:00+0000",
+      "digitalId": 40857,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/567ac35c27b8b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55791,
+      "title": "Mighty Thor (2015) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/55791/mighty_thor_2015_4",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-02-17T00:00:00+0000",
+      "mu": "2016-08-22T00:00:00+0000",
+      "digitalId": 41189,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/56bb68396147c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55792,
+      "title": "Mighty Thor (2015) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/55792/mighty_thor_2015_5",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-03-09T00:00:00+0000",
+      "mu": "2016-09-12T00:00:00+0000",
+      "digitalId": 41364,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/04/56d9b78fafaf6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55793,
+      "title": "Mighty Thor (2015) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/55793/mighty_thor_2015_6",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-04-20T00:00:00+0000",
+      "mu": "2016-10-24T00:00:00+0000",
+      "digitalId": 41896,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/00/570ea5cdcb9ab",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rafa Garres",
+          "role": "penciler"
+        },
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55794,
+      "title": "Mighty Thor (2015) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/55794/mighty_thor_2015_7",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-05-25T00:00:00+0000",
+      "mu": "2016-11-28T00:00:00+0000",
+      "digitalId": 39618,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/57362f49bcfe1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55795,
+      "title": "Mighty Thor (2015) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/55795/mighty_thor_2015_8",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-06-22T00:00:00+0000",
+      "mu": "2016-12-26T00:00:00+0000",
+      "digitalId": 41800,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/5757320d607fc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55796,
+      "title": "Mighty Thor (2015) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/55796/mighty_thor_2015_9",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-07-27T00:00:00+0000",
+      "mu": "2017-01-30T00:00:00+0000",
+      "digitalId": 42121,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/579242154fcf2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55797,
+      "title": "Mighty Thor (2015) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/55797/mighty_thor_2015_10",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-08-17T00:00:00+0000",
+      "mu": "2017-02-20T00:00:00+0000",
+      "digitalId": 42305,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/57a8baae856b5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55798,
+      "title": "Mighty Thor (2015) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/55798/mighty_thor_2015_11",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-09-21T00:00:00+0000",
+      "mu": "2017-03-27T00:00:00+0000",
+      "digitalId": 42670,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/57d2c5575ee38",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55799,
+      "title": "Mighty Thor (2015) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/55799/mighty_thor_2015_12",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-10-19T00:00:00+0000",
+      "mu": "2017-04-24T00:00:00+0000",
+      "digitalId": 42822,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/57fe4f0111747",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55800,
+      "title": "Mighty Thor (2015) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/55800/mighty_thor_2015_13",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-11-23T00:00:00+0000",
+      "mu": "2017-05-29T00:00:00+0000",
+      "digitalId": 43245,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/a0/5820d430b03b8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55801,
+      "title": "Mighty Thor (2015) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/55801/mighty_thor_2015_14",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2016-12-28T00:00:00+0000",
+      "mu": "2017-07-03T00:00:00+0000",
+      "digitalId": 43433,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/584b10abed69b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55802,
+      "title": "Mighty Thor (2015) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/55802/mighty_thor_2015_15",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-01-11T00:00:00+0000",
+      "mu": "2017-07-17T00:00:00+0000",
+      "digitalId": 43822,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/586ebba55a2e5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 55803,
+      "title": "Mighty Thor (2015) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/55803/mighty_thor_2015_16",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-02-15T00:00:00+0000",
+      "mu": "2017-08-21T00:00:00+0000",
+      "digitalId": 44086,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/589deab91001f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 61012,
+      "title": "Mighty Thor (2015) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/61012/mighty_thor_2015_17",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-03-15T00:00:00+0000",
+      "mu": "2017-09-18T00:00:00+0000",
+      "digitalId": 44297,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/58bf2b81235fd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 61013,
+      "title": "Mighty Thor (2015) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/61013/mighty_thor_2015_18",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-04-26T00:00:00+0000",
+      "mu": "2017-04-26T00:00:00+0000",
+      "digitalId": 44558,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/58f7a3423ac55",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 61014,
+      "title": "Mighty Thor (2015) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/61014/mighty_thor_2015_19",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-05-17T00:00:00+0000",
+      "mu": "2017-05-17T00:00:00+0000",
+      "digitalId": 44761,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/59121fd0439dd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Valerio Schiti",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 61015,
+      "title": "Mighty Thor (2015) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/61015/mighty_thor_2015_20",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-06-21T00:00:00+0000",
+      "mu": "2017-12-25T00:00:00+0000",
+      "digitalId": 44983,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/5941aa9719d4a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Valerio Schiti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 61016,
+      "title": "Mighty Thor (2015) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/61016/mighty_thor_2015_21",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-07-19T00:00:00+0000",
+      "mu": "2018-01-22T00:00:00+0000",
+      "digitalId": 45280,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/5967f3becb5b6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Valerio Schiti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 61017,
+      "title": "Mighty Thor (2015) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/61017/mighty_thor_2015_22",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-08-16T00:00:00+0000",
+      "mu": "2018-02-19T00:00:00+0000",
+      "digitalId": 45475,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/597bbc160d2d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Valerio Schiti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 61018,
+      "title": "Mighty Thor (2015) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/61018/mighty_thor_2015_23",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2017-09-27T00:00:00+0000",
+      "mu": "2018-04-02T00:00:00+0000",
+      "digitalId": 45757,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/90/59c2899d93f14",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Valerio Schiti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 66546,
+      "title": "Mighty Thor (2015) #705",
+      "number": "705",
+      "url": "https://www.marvel.com/comics/issue/66546/mighty_thor_2015_705",
+      "seriesId": 20527,
+      "seriesName": "Mighty Thor (2015 - 2018)",
+      "onSale": "2018-03-21T00:00:00+0000",
+      "mu": "2018-09-24T00:43:00+0000",
+      "digitalId": 47586,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/5aa960c4c5e01",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Jane Foster: The Mighty Thor Era"
+    },
+    {
+      "issueId": 69920,
+      "title": "Thor (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/69920/thor_2018_1",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2018-06-13T00:00:00+0000",
+      "mu": "2018-12-17T00:00:00+0000",
+      "digitalId": 48288,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/5b17070d826eb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69922,
+      "title": "Thor (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/69922/thor_2018_2",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2018-06-27T00:00:00+0000",
+      "mu": "2018-12-31T00:00:00+0000",
+      "digitalId": 48289,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/70/5b2c17100e1ef",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69925,
+      "title": "Thor (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/69925/thor_2018_3",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2018-07-18T00:00:00+0000",
+      "mu": "2019-01-21T00:00:00+0000",
+      "digitalId": 48602,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/5b4672dd3f19e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "James Harren",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69926,
+      "title": "Thor (2018) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/69926/thor_2018_4",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2018-08-15T00:00:00+0000",
+      "mu": "2019-02-18T00:00:00+0000",
+      "digitalId": 48878,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/5b6c82d424cb9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69927,
+      "title": "Thor (2018) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/69927/thor_2018_5",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2018-09-19T00:00:00+0000",
+      "mu": "2019-03-25T00:00:00+0000",
+      "digitalId": 49190,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/a0/5b999ac4ccc5a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christian Ward",
+          "role": "cover artist"
+        },
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69928,
+      "title": "Thor (2018) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/69928/thor_2018_6",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2018-10-17T00:00:00+0000",
+      "mu": "2019-04-22T00:00:00+0000",
+      "digitalId": 49530,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/5bbe666ad5a96",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christian Ward",
+          "role": "cover artist"
+        },
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69929,
+      "title": "Thor (2018) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/69929/thor_2018_7",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2018-11-14T00:00:00+0000",
+      "mu": "2019-05-20T00:00:00+0000",
+      "digitalId": 49768,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/30/5be370a010e32",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Tony Moore",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69930,
+      "title": "Thor (2018) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/69930/thor_2018_8",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2018-12-19T00:00:00+0000",
+      "mu": "2019-06-24T00:00:00+0000",
+      "digitalId": 50093,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/5c12b4e9393c3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69931,
+      "title": "Thor (2018) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/69931/thor_2018_9",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2019-01-09T00:00:00+0000",
+      "mu": "2019-07-15T00:00:00+0000",
+      "digitalId": 50387,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5c2f6b164ea37",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69932,
+      "title": "Thor (2018) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/69932/thor_2018_10",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2019-02-13T00:00:00+0000",
+      "mu": "2019-08-19T00:00:00+0000",
+      "digitalId": 50623,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/5c5c58822376d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69933,
+      "title": "Thor (2018) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/69933/thor_2018_11",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2019-03-20T00:00:00+0000",
+      "mu": "2019-09-23T00:00:00+0000",
+      "digitalId": 50959,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5c881a44ac87b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lee Garbett",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 69934,
+      "title": "Thor (2018) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/69934/thor_2018_12",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2019-04-17T00:00:00+0000",
+      "mu": "2019-10-21T00:00:00+0000",
+      "digitalId": 51156,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/10/5cacf425bade7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 70791,
+      "title": "Thor (2018) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/70791/thor_2018_13",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2019-05-29T00:00:00+0000",
+      "mu": "2019-12-02T00:00:00+0000",
+      "digitalId": 51434,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/5ce403265e78e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 70792,
+      "title": "Thor (2018) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/70792/thor_2018_14",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2019-06-26T00:00:00+0000",
+      "mu": "2019-12-30T00:00:00+0000",
+      "digitalId": 51756,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/5d08f373e179b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Scott Hepburn",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 70793,
+      "title": "Thor (2018) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/70793/thor_2018_15",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2019-07-10T00:00:00+0000",
+      "mu": "2020-01-13T00:00:00+0000",
+      "digitalId": 51962,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/5d1bc2e968168",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 70794,
+      "title": "Thor (2018) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/70794/thor_2018_16",
+      "seriesId": 24308,
+      "seriesName": "Thor (2018 - 2019)",
+      "onSale": "2019-08-28T00:00:00+0000",
+      "mu": "2020-03-02T00:00:00+0000",
+      "digitalId": 52412,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/5d5d4c3e97cd0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 71271,
+      "title": "War of the Realms (2019) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71271/war_of_the_realms_2019_1",
+      "seriesId": 25991,
+      "seriesName": "War of the Realms (2019)",
+      "onSale": "2019-04-03T00:00:00+0000",
+      "mu": "2019-10-07T00:00:00+0000",
+      "digitalId": 51104,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/10/5c9bfb02a9cb4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 71273,
+      "title": "War of the Realms (2019) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71273/war_of_the_realms_2019_2",
+      "seriesId": 25991,
+      "seriesName": "War of the Realms (2019)",
+      "onSale": "2019-04-17T00:00:00+0000",
+      "mu": "2019-10-21T00:00:00+0000",
+      "digitalId": 51105,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5cacf763291b2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 71274,
+      "title": "War of the Realms (2019) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/71274/war_of_the_realms_2019_3",
+      "seriesId": 25991,
+      "seriesName": "War of the Realms (2019)",
+      "onSale": "2019-05-01T00:00:00+0000",
+      "mu": "2019-11-04T00:00:00+0000",
+      "digitalId": 51379,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5cc2096883e3d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 71275,
+      "title": "War of the Realms (2019) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/71275/war_of_the_realms_2019_4",
+      "seriesId": 25991,
+      "seriesName": "War of the Realms (2019)",
+      "onSale": "2019-05-15T00:00:00+0000",
+      "mu": "2019-11-18T00:00:00+0000",
+      "digitalId": 51380,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/5cd470cabf760",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 71276,
+      "title": "War of the Realms (2019) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/71276/war_of_the_realms_2019_5",
+      "seriesId": 25991,
+      "seriesName": "War of the Realms (2019)",
+      "onSale": "2019-06-05T00:00:00+0000",
+      "mu": "2019-12-09T00:00:00+0000",
+      "digitalId": 51695,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/5cf18c1a3992f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    },
+    {
+      "issueId": 71277,
+      "title": "War of the Realms (2019) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/71277/war_of_the_realms_2019_6",
+      "seriesId": 25991,
+      "seriesName": "War of the Realms (2019)",
+      "onSale": "2019-06-26T00:00:00+0000",
+      "mu": "2019-12-30T00:00:00+0000",
+      "digitalId": 51696,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/5d08f3fc31186",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Russell Dauterman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Aaron Finale: War of the Realms"
+    }
+  ]
+}

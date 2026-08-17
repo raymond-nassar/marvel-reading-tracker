@@ -38,26 +38,26 @@ test('no shipped reading order carries Marvel description prose', async () => {
     }
   }
 
-  assert.equal(orders.length, 14, `the catalog lists ${orders.length} orders, not 14, so this test's coverage has changed`);
+  assert.equal(orders.length, 26, `the catalog lists ${orders.length} orders, not 26, so this test's coverage has changed`);
   assert.ok(items > 1000, `only ${items} items were checked, so the data tree is not what this test thinks it is`);
   assert.deepEqual(offenders, [], `Marvel description prose is committed again in ${offenders.length} record(s)`);
 });
 
-// The test above reads the catalog, so it sees exactly the fourteen files the catalog names and
+// The test above reads the catalog, so it sees exactly the twenty-six files the catalog names and
 // nothing else. That is the shape of the miss it was written to prevent: the first strip left 41
 // descriptions in design/mockups/mock-data.js, a generated projection of a reading order that no
 // catalog lists and no gate walked. A boundary defined by an enumeration is a boundary someone has
 // to keep complete, so this one is defined by the tree instead.
 //
 // The count below is exact rather than a floor, and the reason is the parse that feeds it. Most of
-// the 124 files walked are code and cannot parse, so a file that stops parsing has to be skipped
+// the 144 files walked are code and cannot parse, so a file that stops parsing has to be skipped
 // silently or the test would fail on every script in the repository. That skip is a hole aimed
 // straight at the one file this test exists for: reformat the mockup bundle, or move it, and it
-// leaves the population with nothing said. A floor of fourteen still passes at that point, because
-// the catalog's own files alone clear it. An exact seventeen does not.
+// leaves the population with nothing said. A floor of twenty-six still passes at that point, because
+// the catalog's own files alone clear it. An exact twenty-nine does not.
 //
 // A review suggested pre-filtering on the literal "items" key so that package-lock.json is not
-// parsed. Measured, that file is 36 KB and parses in 0.18 ms of an 18.68 ms scan across 124 files,
+// parsed. Measured, that file is 35 KB and parses in 0.10 ms of a 9.65 ms scan across 144 files,
 // so the saving is not the point. The cost is: the filter is a second boundary to keep correct, and
 // it is aimed at the same file as the first. The mockup bundle is generated, it quotes its keys
 // today, and nothing makes it keep doing so.
@@ -101,7 +101,7 @@ test('no file outside node_modules, .git and .copilot-tracking carries an items[
     }
   }
 
-  assert.equal(scanned, 17, `${scanned} item-bearing files were found, not 17, so this test's coverage has changed`);
+  assert.equal(scanned, 29, `${scanned} item-bearing files were found, not 29, so this test's coverage has changed`);
   assert.deepEqual(offenders, [], `Marvel description prose is committed in ${offenders.length} record(s) somewhere in the scanned tree`);
 });
 

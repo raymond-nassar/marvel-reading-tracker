@@ -1,0 +1,3035 @@
+{
+  "id": "doctor-doom-primer",
+  "name": "There is Only Doom",
+  "description": "A primer on Doctor Doom, compiled by hand from a reader's outline of Comic Book Herald's guide to the best Doom comics. It opens with the origin, in Fantastic Four #5, the second Fantastic Four annual and the Ultimate retelling, then Books of Doom and the story of Werner von Doom. From there it follows Doom as monarch, rival and thief of power: the long Fantastic Four sieges, Doomquest in Iron Man, the Silver Surfer and the Power Cosmic, Secret Wars in 1984 and again in 2015, the Infinity Gauntlet, and his turn as a hero in Infamous Iron Man. The sections are the guide's and are kept in its order.",
+  "source": "https://www.comicbookherald.com/the-best-of-doctor-doom-comics/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.785Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 104,
+  "collections": 16,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 13255,
+      "title": "Fantastic Four (1961) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/13255/fantastic_four_1961_5",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1962-07-01T00:00:00+0000",
+      "mu": "1962-07-01T00:00:00+0000",
+      "digitalId": 3332,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5aa8298921154",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Doctor Doom Origin Stories"
+    },
+    {
+      "issueId": 8698,
+      "title": "Fantastic Four Annual (1963) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/8698/fantastic_four_annual_1963_2",
+      "seriesId": 2012,
+      "seriesName": "Fantastic Four Annual (1963 - 1994)",
+      "onSale": "1964-09-01T00:00:00+0000",
+      "mu": "1964-09-01T00:00:00+0000",
+      "digitalId": 1887,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/5ad790a5a5116",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Chic Stone",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Doctor Doom Origin Stories"
+    },
+    {
+      "issueId": 13092,
+      "title": "Fantastic Four (1961) #278",
+      "number": "278",
+      "url": "https://www.marvel.com/comics/issue/13092/fantastic_four_1961_278",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1985-05-01T00:00:00+0000",
+      "mu": "1985-05-01T00:00:00+0000",
+      "digitalId": 5920,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/4c366d7377d71",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Doctor Doom Origin Stories"
+    },
+    {
+      "issueId": 716,
+      "title": "Ultimate Fantastic Four (2003) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/716/ultimate_fantastic_four_2003_7",
+      "seriesId": 702,
+      "seriesName": "Ultimate Fantastic Four (2003 - 2009)",
+      "onSale": "2004-06-16T00:00:00+0000",
+      "mu": "2004-06-16T00:00:00+0000",
+      "digitalId": 3515,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/5a943f24c2858",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Warren Ellis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Doctor Doom Origin Stories"
+    },
+    {
+      "issueId": 3006,
+      "title": "Books of Doom (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/3006/books_of_doom_2005_1",
+      "seriesId": 850,
+      "seriesName": "Books of Doom (2005 - 2006)",
+      "onSale": "2005-11-16T00:00:00+0000",
+      "mu": "2005-11-16T00:00:00+0000",
+      "digitalId": 1198,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/d0/56e18ca86ea5f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pablo Raimondi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Books of Doom"
+    },
+    {
+      "issueId": 3125,
+      "title": "Books of Doom (2005) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/3125/books_of_doom_2005_2",
+      "seriesId": 850,
+      "seriesName": "Books of Doom (2005 - 2006)",
+      "onSale": "2005-12-14T00:00:00+0000",
+      "mu": "2005-12-14T00:00:00+0000",
+      "digitalId": 1560,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/4bc47b509d187",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pablo Raimondi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Books of Doom"
+    },
+    {
+      "issueId": 3350,
+      "title": "Books of Doom (2005) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/3350/books_of_doom_2005_3",
+      "seriesId": 850,
+      "seriesName": "Books of Doom (2005 - 2006)",
+      "onSale": "2006-01-25T00:00:00+0000",
+      "mu": "2006-01-25T00:00:00+0000",
+      "digitalId": 5335,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/5602c5e4e03d3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pablo Raimondi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Books of Doom"
+    },
+    {
+      "issueId": 3466,
+      "title": "Books of Doom (2005) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/3466/books_of_doom_2005_4",
+      "seriesId": 850,
+      "seriesName": "Books of Doom (2005 - 2006)",
+      "onSale": "2006-03-01T00:00:00+0000",
+      "mu": "2006-03-01T00:00:00+0000",
+      "digitalId": 5336,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/10/4bb8466525785",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pablo Raimondi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Books of Doom"
+    },
+    {
+      "issueId": 3883,
+      "title": "Books of Doom (2005) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/3883/books_of_doom_2005_5",
+      "seriesId": 850,
+      "seriesName": "Books of Doom (2005 - 2006)",
+      "onSale": "2006-03-29T00:00:00+0000",
+      "mu": "2006-03-29T00:00:00+0000",
+      "digitalId": 5337,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/5b3b8e660a6fe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Robin Riggs",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pablo Raimondi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Books of Doom"
+    },
+    {
+      "issueId": 4033,
+      "title": "Books of Doom (2005) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/4033/books_of_doom_2005_6",
+      "seriesId": 850,
+      "seriesName": "Books of Doom (2005 - 2006)",
+      "onSale": "2006-05-31T00:00:00+0000",
+      "mu": "2006-05-31T00:00:00+0000",
+      "digitalId": 5338,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/f0/5b3b8e4edd98c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pablo Raimondi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Books of Doom"
+    },
+    {
+      "issueId": 13070,
+      "title": "Fantastic Four (1961) #258",
+      "number": "258",
+      "url": "https://www.marvel.com/comics/issue/13070/fantastic_four_1961_258",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1983-09-01T00:00:00+0000",
+      "mu": "1983-09-01T00:00:00+0000",
+      "digitalId": 1834,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/a0/5ac27a1e4fa0e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Werner von Doom"
+    },
+    {
+      "issueId": 13071,
+      "title": "Fantastic Four (1961) #259",
+      "number": "259",
+      "url": "https://www.marvel.com/comics/issue/13071/fantastic_four_1961_259",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1983-10-01T00:00:00+0000",
+      "mu": "1983-10-01T00:00:00+0000",
+      "digitalId": 5901,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5ac282674ac96",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Werner von Doom"
+    },
+    {
+      "issueId": 13073,
+      "title": "Fantastic Four (1961) #260",
+      "number": "260",
+      "url": "https://www.marvel.com/comics/issue/13073/fantastic_four_1961_260",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1983-11-01T00:00:00+0000",
+      "mu": "1983-11-01T00:00:00+0000",
+      "digitalId": 5902,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/5ac28b2aabdb0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Werner von Doom"
+    },
+    {
+      "issueId": 13000,
+      "title": "Fantastic Four (1961) #195",
+      "number": "195",
+      "url": "https://www.marvel.com/comics/issue/13000/fantastic_four_1961_195",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1978-06-01T00:00:00+0000",
+      "mu": "1978-06-01T00:00:00+0000",
+      "digitalId": 29989,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/a0/5abbadf7cd303",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Marv Wolfman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13001,
+      "title": "Fantastic Four (1961) #196",
+      "number": "196",
+      "url": "https://www.marvel.com/comics/issue/13001/fantastic_four_1961_196",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1978-07-01T00:00:00+0000",
+      "mu": "1978-07-01T00:00:00+0000",
+      "digitalId": 29988,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/80/5abbb2feef102",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Marv Wolfman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13002,
+      "title": "Fantastic Four (1961) #197",
+      "number": "197",
+      "url": "https://www.marvel.com/comics/issue/13002/fantastic_four_1961_197",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1978-08-01T00:00:00+0000",
+      "mu": "1978-08-01T00:00:00+0000",
+      "digitalId": 29990,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/5abbb99bed706",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Marv Wolfman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13003,
+      "title": "Fantastic Four (1961) #198",
+      "number": "198",
+      "url": "https://www.marvel.com/comics/issue/13003/fantastic_four_1961_198",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1978-09-01T00:00:00+0000",
+      "mu": "1978-09-01T00:00:00+0000",
+      "digitalId": 29991,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/40/5abbbec77f506",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Marv Wolfman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13004,
+      "title": "Fantastic Four (1961) #199",
+      "number": "199",
+      "url": "https://www.marvel.com/comics/issue/13004/fantastic_four_1961_199",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1978-10-01T00:00:00+0000",
+      "mu": "1978-10-01T00:00:00+0000",
+      "digitalId": 30047,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/5abbc40e7a355",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Marv Wolfman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13007,
+      "title": "Fantastic Four (1961) #200",
+      "number": "200",
+      "url": "https://www.marvel.com/comics/issue/13007/fantastic_four_1961_200",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1978-11-01T00:00:00+0000",
+      "mu": "1978-11-01T00:00:00+0000",
+      "digitalId": 30073,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/5abbce623f144",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Marv Wolfman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13052,
+      "title": "Fantastic Four (1961) #241",
+      "number": "241",
+      "url": "https://www.marvel.com/comics/issue/13052/fantastic_four_1961_241",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-04-01T00:00:00+0000",
+      "mu": "1982-04-01T00:00:00+0000",
+      "digitalId": 5883,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/5abd0a70e5e86",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13053,
+      "title": "Fantastic Four (1961) #242",
+      "number": "242",
+      "url": "https://www.marvel.com/comics/issue/13053/fantastic_four_1961_242",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-05-01T00:00:00+0000",
+      "mu": "1982-05-01T00:00:00+0000",
+      "digitalId": 5884,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/5abd179519431",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13054,
+      "title": "Fantastic Four (1961) #243",
+      "number": "243",
+      "url": "https://www.marvel.com/comics/issue/13054/fantastic_four_1961_243",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-06-01T00:00:00+0000",
+      "mu": "1982-06-01T00:00:00+0000",
+      "digitalId": 5885,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/20/5abd2fcad8ac9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13055,
+      "title": "Fantastic Four (1961) #244",
+      "number": "244",
+      "url": "https://www.marvel.com/comics/issue/13055/fantastic_four_1961_244",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-07-01T00:00:00+0000",
+      "mu": "1982-07-01T00:00:00+0000",
+      "digitalId": 5886,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/5abd473c721d3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13056,
+      "title": "Fantastic Four (1961) #245",
+      "number": "245",
+      "url": "https://www.marvel.com/comics/issue/13056/fantastic_four_1961_245",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-08-01T00:00:00+0000",
+      "mu": "1982-08-01T00:00:00+0000",
+      "digitalId": 5887,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/5abe41555be14",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13057,
+      "title": "Fantastic Four (1961) #246",
+      "number": "246",
+      "url": "https://www.marvel.com/comics/issue/13057/fantastic_four_1961_246",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-09-01T00:00:00+0000",
+      "mu": "1982-09-01T00:00:00+0000",
+      "digitalId": 5888,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/5abe49c9cbf83",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13058,
+      "title": "Fantastic Four (1961) #247",
+      "number": "247",
+      "url": "https://www.marvel.com/comics/issue/13058/fantastic_four_1961_247",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-10-01T00:00:00+0000",
+      "mu": "1982-10-01T00:00:00+0000",
+      "digitalId": 5889,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/a0/5abe53b4ab047",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13059,
+      "title": "Fantastic Four (1961) #248",
+      "number": "248",
+      "url": "https://www.marvel.com/comics/issue/13059/fantastic_four_1961_248",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-11-01T00:00:00+0000",
+      "mu": "1982-11-01T00:00:00+0000",
+      "digitalId": 5890,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/20/5abe6b889f43f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13060,
+      "title": "Fantastic Four (1961) #249",
+      "number": "249",
+      "url": "https://www.marvel.com/comics/issue/13060/fantastic_four_1961_249",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1982-12-01T00:00:00+0000",
+      "mu": "1982-12-01T00:00:00+0000",
+      "digitalId": 5891,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/5abe6bedd79f9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 13062,
+      "title": "Fantastic Four (1961) #250",
+      "number": "250",
+      "url": "https://www.marvel.com/comics/issue/13062/fantastic_four_1961_250",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1983-01-01T00:00:00+0000",
+      "mu": "1983-01-01T00:00:00+0000",
+      "digitalId": 5892,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/5abe87bd36259",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Byrne",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Monarch of Latveria / Doom vs. the Fantastic Four"
+    },
+    {
+      "issueId": 9382,
+      "title": "Iron Man (1968) #149",
+      "number": "149",
+      "url": "https://www.marvel.com/comics/issue/9382/iron_man_1968_149",
+      "seriesId": 2029,
+      "seriesName": "Iron Man (1968 - 1996)",
+      "onSale": "1981-08-01T00:00:00+0000",
+      "mu": "2008-03-18T00:00:00+0000",
+      "digitalId": 9946,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/70/4bb7d41e01b15",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Bob Layton",
+          "role": "writer"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Doomquest (Iron Man)"
+    },
+    {
+      "issueId": 9384,
+      "title": "Iron Man (1968) #150",
+      "number": "150",
+      "url": "https://www.marvel.com/comics/issue/9384/iron_man_1968_150",
+      "seriesId": 2029,
+      "seriesName": "Iron Man (1968 - 1996)",
+      "onSale": "1981-09-01T00:00:00+0000",
+      "mu": "1981-09-01T00:00:00+0000",
+      "digitalId": 11108,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/4bb5db94698b5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Bob Layton",
+          "role": "writer"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Doomquest (Iron Man)"
+    },
+    {
+      "issueId": 9493,
+      "title": "Iron Man (1968) #249",
+      "number": "249",
+      "url": "https://www.marvel.com/comics/issue/9493/iron_man_1968_249",
+      "seriesId": 2029,
+      "seriesName": "Iron Man (1968 - 1996)",
+      "onSale": "1989-11-15T00:00:00+0000",
+      "mu": "1989-11-15T00:00:00+0000",
+      "digitalId": 11113,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/4bb5db77e2e54",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bob Layton",
+          "role": "writer"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Doomquest (Iron Man)"
+    },
+    {
+      "issueId": 9495,
+      "title": "Iron Man (1968) #250",
+      "number": "250",
+      "url": "https://www.marvel.com/comics/issue/9495/iron_man_1968_250",
+      "seriesId": 2029,
+      "seriesName": "Iron Man (1968 - 1996)",
+      "onSale": "1989-12-01T00:00:00+0000",
+      "mu": "1989-12-01T00:00:00+0000",
+      "digitalId": 11114,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/4bb5db72218a4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bob Layton",
+          "role": "writer"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Doomquest (Iron Man)"
+    },
+    {
+      "issueId": 13263,
+      "title": "Fantastic Four (1961) #57",
+      "number": "57",
+      "url": "https://www.marvel.com/comics/issue/13263/fantastic_four_1961_57",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1966-12-01T00:00:00+0000",
+      "mu": "1966-12-01T00:00:00+0000",
+      "digitalId": 4661,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/b0/5372d5a4e400b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Power Cosmic / Silver Surfer Arc"
+    },
+    {
+      "issueId": 13264,
+      "title": "Fantastic Four (1961) #58",
+      "number": "58",
+      "url": "https://www.marvel.com/comics/issue/13264/fantastic_four_1961_58",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1967-01-01T00:00:00+0000",
+      "mu": "1967-01-01T00:00:00+0000",
+      "digitalId": 4662,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/30/5372d53e364b1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Power Cosmic / Silver Surfer Arc"
+    },
+    {
+      "issueId": 13265,
+      "title": "Fantastic Four (1961) #59",
+      "number": "59",
+      "url": "https://www.marvel.com/comics/issue/13265/fantastic_four_1961_59",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1967-02-01T00:00:00+0000",
+      "mu": "1967-02-01T00:00:00+0000",
+      "digitalId": 4663,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/5372d4d47f791",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Power Cosmic / Silver Surfer Arc"
+    },
+    {
+      "issueId": 13267,
+      "title": "Fantastic Four (1961) #60",
+      "number": "60",
+      "url": "https://www.marvel.com/comics/issue/13267/fantastic_four_1961_60",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1967-03-01T00:00:00+0000",
+      "mu": "1967-03-01T00:00:00+0000",
+      "digitalId": 4706,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/80/5ab122cda6c8a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Power Cosmic / Silver Surfer Arc"
+    },
+    {
+      "issueId": 10580,
+      "title": "Secret Wars (1984) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/10580/secret_wars_1984_1",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1984-05-10T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 636,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/51dee6dd91671",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "John Beatty",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Zeck",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10584,
+      "title": "Secret Wars (1984) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/10584/secret_wars_1984_2",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1984-06-10T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 2426,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/5756da47dab15",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10585,
+      "title": "Secret Wars (1984) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/10585/secret_wars_1984_3",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1984-07-10T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 3442,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/5756e01f25797",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "Michael Zeck",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10586,
+      "title": "Secret Wars (1984) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/10586/secret_wars_1984_4",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1984-08-10T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 3443,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/b0/5756ec889543f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "Bob Layton",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10587,
+      "title": "Secret Wars (1984) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/10587/secret_wars_1984_5",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1984-09-10T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 3444,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5756f101dda9f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "Bob Layton",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10588,
+      "title": "Secret Wars (1984) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/10588/secret_wars_1984_6",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1984-10-10T00:00:00+0000",
+      "mu": "2007-11-28T00:00:00+0000",
+      "digitalId": 3445,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/5756fce0db4fa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10589,
+      "title": "Secret Wars (1984) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/10589/secret_wars_1984_7",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1984-11-10T00:00:00+0000",
+      "mu": "2008-09-17T00:00:00+0000",
+      "digitalId": 3446,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/575712d2628de",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "Bob Layton",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10590,
+      "title": "Secret Wars (1984) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/10590/secret_wars_1984_8",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1984-12-10T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 2427,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/03/5757174e3255d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "John Beatty",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Zeck",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10591,
+      "title": "Secret Wars (1984) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/10591/secret_wars_1984_9",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1985-01-10T00:00:00+0000",
+      "mu": "2009-08-04T00:00:00+0000",
+      "digitalId": 3447,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/57581b0e17cb5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "Michael Zeck",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10581,
+      "title": "Secret Wars (1984) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/10581/secret_wars_1984_10",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1985-02-10T00:00:00+0000",
+      "mu": "2009-08-11T00:00:00+0000",
+      "digitalId": 3448,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/51dee63a1cf60",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [
+        {
+          "name": "Terry Kevin Austin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Zeck",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10582,
+      "title": "Secret Wars (1984) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/10582/secret_wars_1984_11",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1985-03-10T00:00:00+0000",
+      "mu": "2009-11-06T00:00:00+0000",
+      "digitalId": 3449,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/30/57581c9ff0718",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 36,
+      "creators": [],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 10583,
+      "title": "Secret Wars (1984) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/10583/secret_wars_1984_12",
+      "seriesId": 2063,
+      "seriesName": "Secret Wars (1984 - 1985)",
+      "onSale": "1985-04-10T00:00:00+0000",
+      "mu": "2009-11-20T00:00:00+0000",
+      "digitalId": 3450,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/57581d5d4260f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 52,
+      "creators": [],
+      "collectedIn": "Secret Wars (1984)"
+    },
+    {
+      "issueId": 13102,
+      "title": "Fantastic Four (1961) #287",
+      "number": "287",
+      "url": "https://www.marvel.com/comics/issue/13102/fantastic_four_1961_287",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1986-02-01T00:00:00+0000",
+      "mu": "1986-02-01T00:00:00+0000",
+      "digitalId": 8168,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/70/4bb8a3c8adde9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars II Tie-Ins"
+    },
+    {
+      "issueId": 13103,
+      "title": "Fantastic Four (1961) #288",
+      "number": "288",
+      "url": "https://www.marvel.com/comics/issue/13103/fantastic_four_1961_288",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1986-03-01T00:00:00+0000",
+      "mu": "1986-03-01T00:00:00+0000",
+      "digitalId": 8169,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/d0/4bb850ebb8ad1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Wars II Tie-Ins"
+    },
+    {
+      "issueId": 13137,
+      "title": "Fantastic Four (1961) #318",
+      "number": "318",
+      "url": "https://www.marvel.com/comics/issue/13137/fantastic_four_1961_318",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1988-09-01T00:00:00+0000",
+      "mu": "1988-09-01T00:00:00+0000",
+      "digitalId": 12923,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/f0/5ac3ec000d312",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars III Tie-Ins"
+    },
+    {
+      "issueId": 13138,
+      "title": "Fantastic Four (1961) #319",
+      "number": "319",
+      "url": "https://www.marvel.com/comics/issue/13138/fantastic_four_1961_319",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1988-10-01T00:00:00+0000",
+      "mu": "1988-10-01T00:00:00+0000",
+      "digitalId": 12926,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/04/5ac4d96ecfb97",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "Keith Pollard",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars III Tie-Ins"
+    },
+    {
+      "issueId": 9286,
+      "title": "Infinity Gauntlet (1991) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/9286/infinity_gauntlet_1991_1",
+      "seriesId": 2023,
+      "seriesName": "Infinity Gauntlet (1991)",
+      "onSale": "1991-07-01T00:00:00+0000",
+      "mu": "1991-07-01T00:00:00+0000",
+      "digitalId": 2017,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/51f6911ce3cc3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Christopher",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9287,
+      "title": "Infinity Gauntlet (1991) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/9287/infinity_gauntlet_1991_2",
+      "seriesId": 2023,
+      "seriesName": "Infinity Gauntlet (1991)",
+      "onSale": "1991-08-01T00:00:00+0000",
+      "mu": "1991-08-01T00:00:00+0000",
+      "digitalId": 3361,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/51f691126c221",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9288,
+      "title": "Infinity Gauntlet (1991) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/9288/infinity_gauntlet_1991_3",
+      "seriesId": 2023,
+      "seriesName": "Infinity Gauntlet (1991)",
+      "onSale": "1991-09-01T00:00:00+0000",
+      "mu": "1991-09-01T00:00:00+0000",
+      "digitalId": 3362,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/51f691085d7fe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9289,
+      "title": "Infinity Gauntlet (1991) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/9289/infinity_gauntlet_1991_4",
+      "seriesId": 2023,
+      "seriesName": "Infinity Gauntlet (1991)",
+      "onSale": "1991-10-01T00:00:00+0000",
+      "mu": "1991-10-01T00:00:00+0000",
+      "digitalId": 3363,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/51f690fbd05fd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bruce Solotoff",
+          "role": "cover artist"
+        },
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9290,
+      "title": "Infinity Gauntlet (1991) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/9290/infinity_gauntlet_1991_5",
+      "seriesId": 2023,
+      "seriesName": "Infinity Gauntlet (1991)",
+      "onSale": "1991-11-01T00:00:00+0000",
+      "mu": "1991-11-01T00:00:00+0000",
+      "digitalId": 3364,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/51f690f0e7b77",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9291,
+      "title": "Infinity Gauntlet (1991) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/9291/infinity_gauntlet_1991_6",
+      "seriesId": 2023,
+      "seriesName": "Infinity Gauntlet (1991)",
+      "onSale": "1991-12-01T00:00:00+0000",
+      "mu": "1991-12-01T00:00:00+0000",
+      "digitalId": 3365,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/51f690e28c864",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9292,
+      "title": "Infinity War (1992) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/9292/infinity_war_1992_1",
+      "seriesId": 2024,
+      "seriesName": "Infinity War (1992)",
+      "onSale": "1992-06-01T00:00:00+0000",
+      "mu": "1992-06-01T00:00:00+0000",
+      "digitalId": 2018,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/51f696c2a1263",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9293,
+      "title": "Infinity War (1992) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/9293/infinity_war_1992_2",
+      "seriesId": 2024,
+      "seriesName": "Infinity War (1992)",
+      "onSale": "1992-07-01T00:00:00+0000",
+      "mu": "1992-07-01T00:00:00+0000",
+      "digitalId": 3366,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/51f696b5ab49e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9294,
+      "title": "Infinity War (1992) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/9294/infinity_war_1992_3",
+      "seriesId": 2024,
+      "seriesName": "Infinity War (1992)",
+      "onSale": "1992-08-01T00:00:00+0000",
+      "mu": "1992-08-01T00:00:00+0000",
+      "digitalId": 3367,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/51f696aa57eb3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9295,
+      "title": "Infinity War (1992) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/9295/infinity_war_1992_4",
+      "seriesId": 2024,
+      "seriesName": "Infinity War (1992)",
+      "onSale": "1992-09-01T00:00:00+0000",
+      "mu": "1992-09-01T00:00:00+0000",
+      "digitalId": 3368,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/51f6969dce931",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9296,
+      "title": "Infinity War (1992) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/9296/infinity_war_1992_5",
+      "seriesId": 2024,
+      "seriesName": "Infinity War (1992)",
+      "onSale": "1992-10-01T00:00:00+0000",
+      "mu": "1992-10-01T00:00:00+0000",
+      "digitalId": 3369,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/90/51f696959ffbb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 9297,
+      "title": "Infinity War (1992) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/9297/infinity_war_1992_6",
+      "seriesId": 2024,
+      "seriesName": "Infinity War (1992)",
+      "onSale": "1992-11-01T00:00:00+0000",
+      "mu": "1992-11-01T00:00:00+0000",
+      "digitalId": 3370,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/30/51f69686e27c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Starlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infinity Gauntlet / Infinity War"
+    },
+    {
+      "issueId": 52447,
+      "title": "Secret Wars (2015) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/52447/secret_wars_2015_1",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-05-06T00:00:00+0000",
+      "mu": "2015-11-02T00:00:00+0000",
+      "digitalId": 38164,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5cb736a3cdd49",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 52450,
+      "title": "Secret Wars (2015) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/52450/secret_wars_2015_2",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-05-13T00:00:00+0000",
+      "mu": "2015-11-16T00:00:00+0000",
+      "digitalId": 38263,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5cb737237a2de",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 52451,
+      "title": "Secret Wars (2015) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/52451/secret_wars_2015_3",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-06-03T00:00:00+0000",
+      "mu": "2015-12-07T00:00:00+0000",
+      "digitalId": 38820,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/03/5cb7377845092",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 52452,
+      "title": "Secret Wars (2015) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/52452/secret_wars_2015_4",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-07-01T00:00:00+0000",
+      "mu": "2015-12-28T00:00:00+0000",
+      "digitalId": 39004,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/5cb73456184e4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 52453,
+      "title": "Secret Wars (2015) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/52453/secret_wars_2015_5",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-08-12T00:00:00+0000",
+      "mu": "2016-02-08T00:00:00+0000",
+      "digitalId": 39684,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5cb736208d76d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 52454,
+      "title": "Secret Wars (2015) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/52454/secret_wars_2015_6",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-10-07T00:00:00+0000",
+      "mu": "2016-04-04T00:00:00+0000",
+      "digitalId": 39847,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/5cb73a17a642c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 52455,
+      "title": "Secret Wars (2015) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/52455/secret_wars_2015_7",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-11-11T00:00:00+0000",
+      "mu": "2016-05-09T00:00:00+0000",
+      "digitalId": 40469,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/5cb73c66beb33",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 52456,
+      "title": "Secret Wars (2015) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/52456/secret_wars_2015_8",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2015-12-09T00:00:00+0000",
+      "mu": "2016-06-13T00:00:00+0000",
+      "digitalId": 40542,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/564ce8a2d5cde",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 57620,
+      "title": "Secret Wars (2015) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/57620/secret_wars_2015_9",
+      "seriesId": 19648,
+      "seriesName": "Secret Wars (2015 - 2016)",
+      "onSale": "2016-01-13T00:00:00+0000",
+      "mu": "2016-07-11T00:00:00+0000",
+      "digitalId": 40728,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/569040820cfb9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Esad Ribic",
+          "role": "penciler"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jonathan Hickman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Wars (2015)"
+    },
+    {
+      "issueId": 22963,
+      "title": "WHAT IF? SECRET WARS 1 (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/22963/what_if_secret_wars_1_2008_1",
+      "seriesId": 43536,
+      "seriesName": "WHAT IF? SECRET WARS 1 (2008 - Present)",
+      "onSale": "2008-12-31T00:00:00+0000",
+      "mu": "2008-12-31T00:00:00+0000",
+      "digitalId": 11764,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/a0/56bbbdecafd01",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "C.B. Cebulski",
+          "role": "writer"
+        },
+        {
+          "name": "Karl Bollers",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "What If Doom Kept the Beyonder's Power"
+    },
+    {
+      "issueId": 12913,
+      "title": "Fantastic Four (1961) #116",
+      "number": "116",
+      "url": "https://www.marvel.com/comics/issue/12913/fantastic_four_1961_116",
+      "seriesId": 2121,
+      "seriesName": "Fantastic Four (1961 - 1998)",
+      "onSale": "1971-11-01T00:00:00+0000",
+      "mu": "1971-11-01T00:00:00+0000",
+      "digitalId": 5860,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/4bb7a8ce86475",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Sinnott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Archie Goodwin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38821,
+      "title": "Winter Soldier (2012) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/38821/winter_soldier_2012_1",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-02-01T00:00:00+0000",
+      "mu": "2013-07-03T00:00:00+0000",
+      "digitalId": 29750,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/20/4f26f05e79cff",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lee Bermejo",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38822,
+      "title": "Winter Soldier (2012) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/38822/winter_soldier_2012_2",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-02-15T00:00:00+0000",
+      "mu": "2013-07-03T00:00:00+0000",
+      "digitalId": 29751,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/30/56bb9b8c01dce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lee Bermejo",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38814,
+      "title": "Winter Soldier (2012) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/38814/winter_soldier_2012_3",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-03-07T00:00:00+0000",
+      "mu": "2012-03-07T00:00:00+0000",
+      "digitalId": 29752,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/56bca746c55a8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Lee Bermejo",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38816,
+      "title": "Winter Soldier (2012) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/38816/winter_soldier_2012_4",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-04-11T00:00:00+0000",
+      "mu": "2013-07-03T00:00:00+0000",
+      "digitalId": 29753,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/a0/4f85a98eabfa1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Lee Bermejo",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38815,
+      "title": "Winter Soldier (2012) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/38815/winter_soldier_2012_5",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-05-16T00:00:00+0000",
+      "mu": "2012-05-16T00:00:00+0000",
+      "digitalId": 29754,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/5720ec1da457b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Lee Bermejo",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38812,
+      "title": "Winter Soldier (2012) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/38812/winter_soldier_2012_6",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-06-06T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 29057,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/5a0dfdf788fa3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38813,
+      "title": "Winter Soldier (2012) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/38813/winter_soldier_2012_7",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-06-20T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 29084,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/5a0dfe26c8150",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38819,
+      "title": "Winter Soldier (2012) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/38819/winter_soldier_2012_8",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-07-25T00:00:00+0000",
+      "mu": "2013-07-03T00:00:00+0000",
+      "digitalId": 29747,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/50/5a0dfe2132c3a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38820,
+      "title": "Winter Soldier (2012) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/38820/winter_soldier_2012_9",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-08-29T00:00:00+0000",
+      "mu": "2013-03-08T14:25:22+0000",
+      "digitalId": 29193,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/5a0dfe9333251",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38818,
+      "title": "Winter Soldier (2012) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/38818/winter_soldier_2012_10",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-09-12T00:00:00+0000",
+      "mu": "2013-07-31T08:29:36+0000",
+      "digitalId": 29194,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/c0/5a0dfeb1bf0fe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38817,
+      "title": "Winter Soldier (2012) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/38817/winter_soldier_2012_11",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-09-26T00:00:00+0000",
+      "mu": "2013-07-31T08:30:00+0000",
+      "digitalId": 29197,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/b0/5a0dfee6aa3c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 38811,
+      "title": "Winter Soldier (2012) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/38811/winter_soldier_2012_12",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-10-31T00:00:00+0000",
+      "mu": "2013-12-13T11:38:44+0000",
+      "digitalId": 29740,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/d0/52ab9520a8072",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 44392,
+      "title": "Winter Soldier (2012) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/44392/winter_soldier_2012_13",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2012-12-12T00:00:00+0000",
+      "mu": "2013-06-17T00:00:00+0000",
+      "digitalId": 28141,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/5720fab2375c9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brian Albert Thies",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 46701,
+      "title": "Winter Soldier (2012) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/46701/winter_soldier_2012_14",
+      "seriesId": 7643,
+      "seriesName": "Winter Soldier (2012 - 2013)",
+      "onSale": "2013-01-23T00:00:00+0000",
+      "mu": "2013-07-29T00:00:00+0000",
+      "digitalId": 28450,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/c0/572100be2e82d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brian Albert Thies",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Acuna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Antihero Era / Doom vs. Mephisto"
+    },
+    {
+      "issueId": 61547,
+      "title": "Infamous Iron Man (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/61547/infamous_iron_man_2016_1",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2016-10-19T00:00:00+0000",
+      "mu": "2017-04-24T00:00:00+0000",
+      "digitalId": 42921,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/60/57fe4e5edaea0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61548,
+      "title": "Infamous Iron Man (2016) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/61548/infamous_iron_man_2016_2",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2016-11-16T00:00:00+0000",
+      "mu": "2017-05-22T00:00:00+0000",
+      "digitalId": 43196,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/5820be76ab79f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61549,
+      "title": "Infamous Iron Man (2016) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/61549/infamous_iron_man_2016_3",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2016-12-28T00:00:00+0000",
+      "mu": "2017-07-03T00:00:00+0000",
+      "digitalId": 43426,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/20/585d4bf942dff",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61550,
+      "title": "Infamous Iron Man (2016) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/61550/infamous_iron_man_2016_4",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-01-25T00:00:00+0000",
+      "mu": "2017-07-31T00:00:00+0000",
+      "digitalId": 43813,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5878ff3e13d30",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61551,
+      "title": "Infamous Iron Man (2016) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/61551/infamous_iron_man_2016_5",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44117,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/58a22cf23a5b6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61552,
+      "title": "Infamous Iron Man (2016) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/61552/infamous_iron_man_2016_6",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-03-29T00:00:00+0000",
+      "mu": "2017-10-02T00:00:00+0000",
+      "digitalId": 44290,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/b0/58d156f65d987",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61553,
+      "title": "Infamous Iron Man (2016) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/61553/infamous_iron_man_2016_7",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-04-26T00:00:00+0000",
+      "mu": "2017-04-26T00:00:00+0000",
+      "digitalId": 44554,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/30/58f79fceb2913",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61554,
+      "title": "Infamous Iron Man (2016) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/61554/infamous_iron_man_2016_8",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-05-24T00:00:00+0000",
+      "mu": "2017-11-27T00:00:00+0000",
+      "digitalId": 44754,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/591c9b8a23f9e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61555,
+      "title": "Infamous Iron Man (2016) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/61555/infamous_iron_man_2016_9",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-06-28T00:00:00+0000",
+      "mu": "2018-01-01T00:00:00+0000",
+      "digitalId": 44978,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/594c2a569d2ef",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61556,
+      "title": "Infamous Iron Man (2016) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/61556/infamous_iron_man_2016_10",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-07-26T00:00:00+0000",
+      "mu": "2018-01-29T00:00:00+0000",
+      "digitalId": 45279,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/03/596d13447b471",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61557,
+      "title": "Infamous Iron Man (2016) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/61557/infamous_iron_man_2016_11",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-08-30T00:00:00+0000",
+      "mu": "2018-03-05T00:00:00+0000",
+      "digitalId": 45472,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/03/59935018ac823",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 61558,
+      "title": "Infamous Iron Man (2016) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/61558/infamous_iron_man_2016_12",
+      "seriesId": 22596,
+      "seriesName": "Infamous Iron Man (2016 - 2017)",
+      "onSale": "2017-09-27T00:00:00+0000",
+      "mu": "2018-04-02T00:00:00+0000",
+      "digitalId": 45756,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/30/59c288b5a8e5e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Infamous Iron Man"
+    },
+    {
+      "issueId": 15431,
+      "title": "Marvel Super-Heroes (1967) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/15431/marvel_super-heroes_1967_20",
+      "seriesId": 2300,
+      "seriesName": "Marvel Super-Heroes (1967 - 1982)",
+      "onSale": "1969-05-01T00:00:00+0000",
+      "mu": "1969-05-01T00:00:00+0000",
+      "digitalId": 46705,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/642dde8fe0118",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Frank Giacoia",
+          "role": "penciler"
+        },
+        {
+          "name": "Larry Lieber",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Valeria (Roy Thomas introduction)"
+    },
+    {
+      "issueId": 15590,
+      "title": "Fantastic Four (1998) #67",
+      "number": "67",
+      "url": "https://www.marvel.com/comics/issue/15590/fantastic_four_1998_67",
+      "seriesId": 421,
+      "seriesName": "Fantastic Four (1998 - 2012)",
+      "onSale": "2003-05-01T00:00:00+0000",
+      "mu": "2003-05-01T00:00:00+0000",
+      "digitalId": 5950,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/5acf94e06295a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Unthinkable (Waid/Wieringo)"
+    }
+  ]
+}

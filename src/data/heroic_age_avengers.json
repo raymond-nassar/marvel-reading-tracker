@@ -1,0 +1,2871 @@
+{
+  "id": "heroic-age-avengers",
+  "name": "The Heroic Age: An Avengers Reading List",
+  "description": "The Avengers titles of 2010 to 2012 read together, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. Avengers, New Avengers and Secret Avengers alternate volume by volume from the Heroic Age launch through Fear Itself and on to the edge of Avengers vs X-Men, with Avengers Prime as the prologue. Where two of the outline's volumes share an issue at the boundary, it is read once, in the earlier one.",
+  "source": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.799Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 92,
+  "collections": 15,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 30094,
+      "title": "Avengers Prime (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/30094/avengers_prime_2010_1",
+      "seriesId": 9903,
+      "seriesName": "Avengers Prime (2010 - 2011)",
+      "onSale": "2010-06-03T00:00:00+0000",
+      "mu": "2011-05-10T00:00:00+0000",
+      "digitalId": 14862,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/5a20423f75cea",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Prime"
+    },
+    {
+      "issueId": 30095,
+      "title": "Avengers Prime (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/30095/avengers_prime_2010_2",
+      "seriesId": 9903,
+      "seriesName": "Avengers Prime (2010 - 2011)",
+      "onSale": "2010-08-04T00:00:00+0000",
+      "mu": "2010-08-04T00:00:00+0000",
+      "digitalId": 15494,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5a2044fbc855e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Prime"
+    },
+    {
+      "issueId": 30096,
+      "title": "Avengers Prime (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/30096/avengers_prime_2010_3",
+      "seriesId": 9903,
+      "seriesName": "Avengers Prime (2010 - 2011)",
+      "onSale": "2010-09-29T00:00:00+0000",
+      "mu": "2011-09-20T00:00:00+0000",
+      "digitalId": 16326,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/a0/5a2045e143b45",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Prime"
+    },
+    {
+      "issueId": 30097,
+      "title": "Avengers Prime (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/30097/avengers_prime_2010_4",
+      "seriesId": 9903,
+      "seriesName": "Avengers Prime (2010 - 2011)",
+      "onSale": "2010-11-10T00:00:00+0000",
+      "mu": "2012-10-08T00:00:00+0000",
+      "digitalId": 17500,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/d0/5a204732b5cb8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Prime"
+    },
+    {
+      "issueId": 30098,
+      "title": "Avengers Prime (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/30098/avengers_prime_2010_5",
+      "seriesId": 9903,
+      "seriesName": "Avengers Prime (2010 - 2011)",
+      "onSale": "2011-01-05T00:00:00+0000",
+      "mu": "2011-04-08T00:00:00+0000",
+      "digitalId": 18830,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/50/5a20489b78697",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Prime"
+    },
+    {
+      "issueId": 29195,
+      "title": "Avengers (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/29195/avengers_2010_1",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2010-05-19T00:00:00+0000",
+      "mu": "2011-01-25T00:00:00+0000",
+      "digitalId": 14632,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/d0/5a26b363b12d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 1"
+    },
+    {
+      "issueId": 29205,
+      "title": "Avengers (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/29205/avengers_2010_2",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2010-06-23T00:00:00+0000",
+      "mu": "2011-04-20T00:00:00+0000",
+      "digitalId": 15002,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/b0/5a26b70b47aad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 1"
+    },
+    {
+      "issueId": 29206,
+      "title": "Avengers (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/29206/avengers_2010_3",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2010-07-21T00:00:00+0000",
+      "mu": "2011-06-28T00:00:00+0000",
+      "digitalId": 15259,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5a26b9a64288c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 1"
+    },
+    {
+      "issueId": 29207,
+      "title": "Avengers (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/29207/avengers_2010_4",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2010-08-25T00:00:00+0000",
+      "mu": "2011-08-02T00:00:00+0000",
+      "digitalId": 15258,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/50/5a26bc00c0680",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 1"
+    },
+    {
+      "issueId": 34139,
+      "title": "Avengers (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/34139/avengers_2010_5",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2010-09-22T00:00:00+0000",
+      "mu": "2011-09-21T00:00:00+0000",
+      "digitalId": 16158,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/5a26bd9ae24d4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 1"
+    },
+    {
+      "issueId": 29209,
+      "title": "Avengers (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/29209/avengers_2010_6",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2010-10-27T00:00:00+0000",
+      "mu": "2011-10-20T00:00:00+0000",
+      "digitalId": 17037,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/5a26c0a481c8f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 1"
+    },
+    {
+      "issueId": 32702,
+      "title": "New Avengers (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/32702/new_avengers_2010_1",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2010-06-16T00:00:00+0000",
+      "mu": "2011-05-11T00:00:00+0000",
+      "digitalId": 14948,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/5773edbd9f4da",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 1"
+    },
+    {
+      "issueId": 32711,
+      "title": "New Avengers (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/32711/new_avengers_2010_2",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2010-07-21T00:00:00+0000",
+      "mu": "2011-06-29T00:00:00+0000",
+      "digitalId": 15260,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/5773f3fee4c4d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 1"
+    },
+    {
+      "issueId": 32712,
+      "title": "New Avengers (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/32712/new_avengers_2010_3",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2010-08-18T00:00:00+0000",
+      "mu": "2011-08-16T00:00:00+0000",
+      "digitalId": 15756,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/5773fa414cc5c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 1"
+    },
+    {
+      "issueId": 32714,
+      "title": "New Avengers (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/32714/new_avengers_2010_4",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2010-09-09T00:00:00+0000",
+      "mu": "2011-10-03T00:00:00+0000",
+      "digitalId": 16010,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/57740e62f020b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 1"
+    },
+    {
+      "issueId": 32717,
+      "title": "New Avengers (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/32717/new_avengers_2010_5",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2010-10-13T00:00:00+0000",
+      "mu": "2011-10-27T00:00:00+0000",
+      "digitalId": 16746,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/03/57741606b2f70",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 1"
+    },
+    {
+      "issueId": 32719,
+      "title": "New Avengers (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/32719/new_avengers_2010_6",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2010-11-10T00:00:00+0000",
+      "mu": "2011-11-29T00:00:00+0000",
+      "digitalId": 17590,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/5774223cdad14",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 1"
+    },
+    {
+      "issueId": 29089,
+      "title": "Secret Avengers (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/29089/secret_avengers_2010_1",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2010-05-26T00:00:00+0000",
+      "mu": "2011-01-18T00:00:00+0000",
+      "digitalId": 14736,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/5189711d4aa5f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 1"
+    },
+    {
+      "issueId": 29093,
+      "title": "Secret Avengers (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/29093/secret_avengers_2010_2",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2010-06-30T00:00:00+0000",
+      "mu": "2011-05-03T00:00:00+0000",
+      "digitalId": 15071,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/5189710fab2c5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Secret Avengers, Volume 1"
+    },
+    {
+      "issueId": 33620,
+      "title": "Secret Avengers (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/33620/secret_avengers_2010_3",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2010-07-28T00:00:00+0000",
+      "mu": "2011-07-19T00:00:00+0000",
+      "digitalId": 15358,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/10/5189710972582",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 1"
+    },
+    {
+      "issueId": 29095,
+      "title": "Secret Avengers (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/29095/secret_avengers_2010_4",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2010-08-18T00:00:00+0000",
+      "mu": "2011-08-09T00:00:00+0000",
+      "digitalId": 15725,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/519fa0b53b2d6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Schomburg",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 1"
+    },
+    {
+      "issueId": 33621,
+      "title": "Secret Avengers (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/33621/secret_avengers_2010_5",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2010-09-22T00:00:00+0000",
+      "mu": "2011-09-29T00:00:00+0000",
+      "digitalId": 16156,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/80/5189723413840",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Lark",
+          "role": "penciler"
+        },
+        {
+          "name": "Stefano Gaudiano",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 1"
+    },
+    {
+      "issueId": 29097,
+      "title": "Secret Avengers (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/29097/secret_avengers_2010_6",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2010-10-27T00:00:00+0000",
+      "mu": "2011-10-26T00:00:00+0000",
+      "digitalId": 17008,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/e0/5189723a1a33a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 1"
+    },
+    {
+      "issueId": 29210,
+      "title": "Avengers (2010) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/29210/avengers_2010_7",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2010-11-17T00:00:00+0000",
+      "mu": "2011-11-08T00:00:00+0000",
+      "digitalId": 17830,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/80/5a26c4110b8d2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 2"
+    },
+    {
+      "issueId": 29211,
+      "title": "Avengers (2010) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/29211/avengers_2010_8",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2010-12-29T00:00:00+0000",
+      "mu": "2012-01-23T00:00:00+0000",
+      "digitalId": 18658,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/5a26c659b6af9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 2"
+    },
+    {
+      "issueId": 29212,
+      "title": "Avengers (2010) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/29212/avengers_2010_9",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-01-26T00:00:00+0000",
+      "mu": "2011-12-06T00:00:00+0000",
+      "digitalId": 18986,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/5a26c8cf62180",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 2"
+    },
+    {
+      "issueId": 29196,
+      "title": "Avengers (2010) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/29196/avengers_2010_10",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-02-23T00:00:00+0000",
+      "mu": "2012-01-03T00:00:00+0000",
+      "digitalId": 19684,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/5a26ce5b1e07a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 2"
+    },
+    {
+      "issueId": 29197,
+      "title": "Avengers (2010) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/29197/avengers_2010_11",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-03-30T00:00:00+0000",
+      "mu": "2012-02-14T00:00:00+0000",
+      "digitalId": 20252,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/5a26d734aa4f2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 2"
+    },
+    {
+      "issueId": 29198,
+      "title": "Avengers (2010) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/29198/avengers_2010_12",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-04-20T00:00:00+0000",
+      "mu": "2011-02-28T00:00:00+0000",
+      "digitalId": 20566,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/5a26da0632005",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 2"
+    },
+    {
+      "issueId": 39852,
+      "title": "Avengers (2010) #12.1",
+      "number": "12.1",
+      "url": "https://www.marvel.com/comics/issue/39852/avengers_2010_12.1",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-04-27T00:00:00+0000",
+      "mu": "2011-07-12T09:15:40+0000",
+      "digitalId": 20671,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/80/5a2013c308ae7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Paul Neary",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 2"
+    },
+    {
+      "issueId": 29199,
+      "title": "Avengers (2010) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/29199/avengers_2010_13",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-05-18T00:00:00+0000",
+      "mu": "2012-02-28T00:00:00+0000",
+      "digitalId": 21094,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/5a26dc6135fb2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Al Vey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jaime Mendoza",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wayne Faucher",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 2"
+    },
+    {
+      "issueId": 29098,
+      "title": "Secret Avengers (2010) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/29098/secret_avengers_2010_7",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2010-11-24T00:00:00+0000",
+      "mu": "2012-10-10T00:00:00+0000",
+      "digitalId": 17920,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/51897226a6aa4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 2"
+    },
+    {
+      "issueId": 29099,
+      "title": "Secret Avengers (2010) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/29099/secret_avengers_2010_8",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2010-12-22T00:00:00+0000",
+      "mu": "2012-10-10T00:00:00+0000",
+      "digitalId": 18544,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/03/5189722042a5f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 2"
+    },
+    {
+      "issueId": 29100,
+      "title": "Secret Avengers (2010) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/29100/secret_avengers_2010_9",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-01-26T00:00:00+0000",
+      "mu": "2011-12-20T00:00:00+0000",
+      "digitalId": 19001,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/51897311e86a1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 2"
+    },
+    {
+      "issueId": 29090,
+      "title": "Secret Avengers (2010) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/29090/secret_avengers_2010_10",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-02-23T00:00:00+0000",
+      "mu": "2012-01-26T00:00:00+0000",
+      "digitalId": 19720,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/03/5189731b2783d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 2"
+    },
+    {
+      "issueId": 29091,
+      "title": "Secret Avengers (2010) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/29091/secret_avengers_2010_11",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-03-30T00:00:00+0000",
+      "mu": "2012-10-10T00:00:00+0000",
+      "digitalId": 20243,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/03/51897326f40b0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Roberto Delatorre",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 2"
+    },
+    {
+      "issueId": 29092,
+      "title": "Secret Avengers (2010) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/29092/secret_avengers_2010_12",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-04-27T00:00:00+0000",
+      "mu": "2012-10-10T00:00:00+0000",
+      "digitalId": 20675,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/5189732aa4e79",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Roberto Delatorre",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers, Volume 2"
+    },
+    {
+      "issueId": 29200,
+      "title": "Avengers (2010) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/29200/avengers_2010_14",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-06-15T00:00:00+0000",
+      "mu": "2012-02-28T00:00:00+0000",
+      "digitalId": 21665,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/c0/5a26dee2baa54",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Fear Itself"
+    },
+    {
+      "issueId": 29201,
+      "title": "Avengers (2010) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/29201/avengers_2010_15",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-07-20T00:00:00+0000",
+      "mu": "2012-02-28T00:00:00+0000",
+      "digitalId": 22669,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/5a26e104298c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jaime Mendoza",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Irwin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wayne Faucher",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Morry Hollowell",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Fear Itself"
+    },
+    {
+      "issueId": 29202,
+      "title": "Avengers (2010) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/29202/avengers_2010_16",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-08-17T00:00:00+0000",
+      "mu": "2012-02-28T00:00:00+0000",
+      "digitalId": 23463,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/5a26e326af2af",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Fear Itself"
+    },
+    {
+      "issueId": 29203,
+      "title": "Avengers (2010) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/29203/avengers_2010_17",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-09-21T00:00:00+0000",
+      "mu": "2012-03-06T00:00:00+0000",
+      "digitalId": 23888,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/4e78a736b697b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Javier Rodriguez",
+          "role": "penciler"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Fear Itself"
+    },
+    {
+      "issueId": 35256,
+      "title": "New Avengers (2010) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/35256/new_avengers_2010_14",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2011-07-13T00:00:00+0000",
+      "mu": "2012-03-20T00:00:00+0000",
+      "digitalId": 22530,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/577521efdddee",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Fear Itself"
+    },
+    {
+      "issueId": 35254,
+      "title": "New Avengers (2010) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/35254/new_avengers_2010_15",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2011-08-10T00:00:00+0000",
+      "mu": "2012-03-27T00:00:00+0000",
+      "digitalId": 23344,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/4f623a0e28189",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Fear Itself"
+    },
+    {
+      "issueId": 35257,
+      "title": "New Avengers (2010) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/35257/new_avengers_2010_16",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2011-09-14T00:00:00+0000",
+      "mu": "2012-03-27T00:00:00+0000",
+      "digitalId": 23856,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/57752c81bb2aa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Fear Itself"
+    },
+    {
+      "issueId": 35154,
+      "title": "Secret Avengers (2010) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/35154/secret_avengers_2010_13",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-05-25T00:00:00+0000",
+      "mu": "2012-05-30T00:00:00+0000",
+      "digitalId": 21222,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/578f7ee531c67",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Scot George Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers: Fear Itself"
+    },
+    {
+      "issueId": 37343,
+      "title": "Secret Avengers (2010) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/37343/secret_avengers_2010_14",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-06-22T00:00:00+0000",
+      "mu": "2012-05-30T00:00:00+0000",
+      "digitalId": 21770,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/60/578f7fdb71385",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Scot George Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers: Fear Itself"
+    },
+    {
+      "issueId": 37344,
+      "title": "Secret Avengers (2010) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/37344/secret_avengers_2010_15",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-07-27T00:00:00+0000",
+      "mu": "2012-05-30T00:00:00+0000",
+      "digitalId": 22882,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/578f813decb06",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Scot George Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers: Fear Itself"
+    },
+    {
+      "issueId": 35247,
+      "title": "New Avengers (2010) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/35247/new_avengers_2010_17",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2011-10-12T00:00:00+0000",
+      "mu": "2012-05-30T00:00:00+0000",
+      "digitalId": 24262,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/40/5775341626597",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Rain Beredo",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 3"
+    },
+    {
+      "issueId": 35246,
+      "title": "New Avengers (2010) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/35246/new_avengers_2010_18",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2011-11-09T00:00:00+0000",
+      "mu": "2012-08-15T00:00:00+0000",
+      "digitalId": 24648,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/4eab0abcc1d2d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 3"
+    },
+    {
+      "issueId": 35250,
+      "title": "New Avengers (2010) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/35250/new_avengers_2010_19",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2011-12-14T00:00:00+0000",
+      "mu": "2012-08-16T00:00:00+0000",
+      "digitalId": 25037,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/517ae72505b86",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 3"
+    },
+    {
+      "issueId": 35239,
+      "title": "New Avengers (2010) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/35239/new_avengers_2010_20",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-01-11T00:00:00+0000",
+      "mu": "2012-08-16T00:00:00+0000",
+      "digitalId": 25291,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/517ae711de20b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 3"
+    },
+    {
+      "issueId": 35251,
+      "title": "New Avengers (2010) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/35251/new_avengers_2010_21",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-02-15T00:00:00+0000",
+      "mu": "2012-08-16T00:00:00+0000",
+      "digitalId": 25574,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/56bb9df797da5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 3"
+    },
+    {
+      "issueId": 35242,
+      "title": "New Avengers (2010) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/35242/new_avengers_2010_22",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-02-29T00:00:00+0000",
+      "mu": "2012-10-09T00:00:00+0000",
+      "digitalId": 25662,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/56bbac674308c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 3"
+    },
+    {
+      "issueId": 35243,
+      "title": "New Avengers (2010) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/35243/new_avengers_2010_23",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-03-28T00:00:00+0000",
+      "mu": "2012-03-28T00:00:00+0000",
+      "digitalId": 25878,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/4f749086cbcff",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Will Conrad",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 3"
+    },
+    {
+      "issueId": 29204,
+      "title": "Avengers (2010) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/29204/avengers_2010_18",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-10-19T00:00:00+0000",
+      "mu": "2012-05-18T00:00:00+0000",
+      "digitalId": 24350,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/51685b56ac2e5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 3"
+    },
+    {
+      "issueId": 35225,
+      "title": "Avengers (2010) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/35225/avengers_2010_19",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-11-16T00:00:00+0000",
+      "mu": "2012-05-17T00:00:00+0000",
+      "digitalId": 24743,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/51685b4f4f6a6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 3"
+    },
+    {
+      "issueId": 35227,
+      "title": "Avengers (2010) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/35227/avengers_2010_20",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2011-12-21T00:00:00+0000",
+      "mu": "2012-06-28T00:00:00+0000",
+      "digitalId": 25098,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/d0/51685b3f230ab",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 3"
+    },
+    {
+      "issueId": 35229,
+      "title": "Avengers (2010) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/35229/avengers_2010_21",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-01-18T00:00:00+0000",
+      "mu": "2012-06-28T00:00:00+0000",
+      "digitalId": 25321,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/51685b30577d1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 3"
+    },
+    {
+      "issueId": 35233,
+      "title": "Avengers (2010) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/35233/avengers_2010_22",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-02-15T00:00:00+0000",
+      "mu": "2012-10-16T00:00:00+0000",
+      "digitalId": 25572,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/51685dc815e20",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 3"
+    },
+    {
+      "issueId": 35234,
+      "title": "Avengers (2010) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/35234/avengers_2010_23",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-02-29T00:00:00+0000",
+      "mu": "2012-02-29T00:00:00+0000",
+      "digitalId": 25682,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/51685d992cbca",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Renato Guedes",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 3"
+    },
+    {
+      "issueId": 35232,
+      "title": "Avengers (2010) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/35232/avengers_2010_24",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-03-14T00:00:00+0000",
+      "mu": "2012-10-16T00:00:00+0000",
+      "digitalId": 25811,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/56bca96b8ea71",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 3"
+    },
+    {
+      "issueId": 35160,
+      "title": "Secret Avengers (2010) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/35160/secret_avengers_2010_16",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-08-31T00:00:00+0000",
+      "mu": "2012-05-31T00:00:00+0000",
+      "digitalId": 23672,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/90/518975548012a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jamie Mckelvie",
+          "role": "penciler"
+        },
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Mounts",
+          "role": "penciler"
+        },
+        {
+          "name": "Warren Ellis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #16-21"
+    },
+    {
+      "issueId": 37346,
+      "title": "Secret Avengers (2010) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/37346/secret_avengers_2010_17",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-09-28T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 27805,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/518975632fdce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Warren Ellis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #16-21"
+    },
+    {
+      "issueId": 35140,
+      "title": "Secret Avengers (2010) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/35140/secret_avengers_2010_18",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-10-26T00:00:00+0000",
+      "mu": "2012-05-31T00:00:00+0000",
+      "digitalId": 24476,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/5189758c86a0b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Warren Ellis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #16-21"
+    },
+    {
+      "issueId": 35130,
+      "title": "Secret Avengers (2010) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/35130/secret_avengers_2010_19",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-11-23T00:00:00+0000",
+      "mu": "2012-05-31T00:00:00+0000",
+      "digitalId": 24842,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/03/518975a312f94",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Secret Avengers #16-21"
+    },
+    {
+      "issueId": 35128,
+      "title": "Secret Avengers (2010) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/35128/secret_avengers_2010_20",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2011-12-28T00:00:00+0000",
+      "mu": "2012-10-18T00:00:00+0000",
+      "digitalId": 25221,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/518975c34cdc3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Warren Ellis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #16-21"
+    },
+    {
+      "issueId": 35144,
+      "title": "Secret Avengers (2010) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/35144/secret_avengers_2010_21",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-01-18T00:00:00+0000",
+      "mu": "2012-10-19T00:00:00+0000",
+      "digitalId": 25294,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/03/518975f934b00",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #16-21"
+    },
+    {
+      "issueId": 40405,
+      "title": "Avengers (2010) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/40405/avengers_2010_25",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-04-18T00:00:00+0000",
+      "mu": "2012-10-16T00:00:00+0000",
+      "digitalId": 26156,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/70/4f6b59c68fdf5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Walter M. Simonson",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 4"
+    },
+    {
+      "issueId": 40410,
+      "title": "Avengers (2010) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/40410/avengers_2010_26",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-05-16T00:00:00+0000",
+      "mu": "2012-05-16T00:00:00+0000",
+      "digitalId": 26487,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/4f37fc922af67",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walt Simonson",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 4"
+    },
+    {
+      "issueId": 40406,
+      "title": "Avengers (2010) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/40406/avengers_2010_27",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-06-13T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 26621,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/51685ee793f01",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walter M. Simonson",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 4"
+    },
+    {
+      "issueId": 40404,
+      "title": "Avengers (2010) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/40404/avengers_2010_28",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-07-25T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 27294,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/51685ed92f8ab",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Walter M. Simonson",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 4"
+    },
+    {
+      "issueId": 40409,
+      "title": "Avengers (2010) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/40409/avengers_2010_29",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-08-15T00:00:00+0000",
+      "mu": "2013-03-08T12:33:33+0000",
+      "digitalId": 27474,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/60/51685e8a54579",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 4"
+    },
+    {
+      "issueId": 40400,
+      "title": "Avengers (2010) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/40400/avengers_2010_30",
+      "seriesId": 9085,
+      "seriesName": "Avengers (2010 - 2012)",
+      "onSale": "2012-09-19T00:00:00+0000",
+      "mu": "2013-03-11T00:00:00+0000",
+      "digitalId": 27690,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/60/51685f6919ae7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Sunny Gho",
+          "role": "penciler"
+        },
+        {
+          "name": "Walter M. Simonson",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers, Volume 4"
+    },
+    {
+      "issueId": 35241,
+      "title": "New Avengers (2010) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/35241/new_avengers_2010_24",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-04-11T00:00:00+0000",
+      "mu": "2012-04-11T00:00:00+0000",
+      "digitalId": 26080,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/4f183f642d472",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Will Conrad",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 4"
+    },
+    {
+      "issueId": 40738,
+      "title": "New Avengers (2010) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/40738/new_avengers_2010_25",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-04-25T00:00:00+0000",
+      "mu": "2012-04-25T00:00:00+0000",
+      "digitalId": 26211,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/e0/4f9ad89f99327",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Will Conrad",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 4"
+    },
+    {
+      "issueId": 40737,
+      "title": "New Avengers (2010) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/40737/new_avengers_2010_26",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-05-09T00:00:00+0000",
+      "mu": "2012-05-09T00:00:00+0000",
+      "digitalId": 26373,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/70/4fabf1a1adc2f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 4"
+    },
+    {
+      "issueId": 40740,
+      "title": "New Avengers (2010) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/40740/new_avengers_2010_27",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-06-20T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 26732,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/517ae83ba9996",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 4"
+    },
+    {
+      "issueId": 40739,
+      "title": "New Avengers (2010) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/40739/new_avengers_2010_28",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-07-11T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 27170,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/517ae82cb075f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 4"
+    },
+    {
+      "issueId": 40741,
+      "title": "New Avengers (2010) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/40741/new_avengers_2010_29",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-08-08T00:00:00+0000",
+      "mu": "2013-07-31T10:13:49+0000",
+      "digitalId": 26623,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/517ae8fe5e518",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 4"
+    },
+    {
+      "issueId": 40736,
+      "title": "New Avengers (2010) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/40736/new_avengers_2010_30",
+      "seriesId": 9922,
+      "seriesName": "New Avengers (2010 - 2012)",
+      "onSale": "2012-09-12T00:00:00+0000",
+      "mu": "2013-04-15T00:00:00+0000",
+      "digitalId": 27657,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/517ae8f604121",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 4"
+    },
+    {
+      "issueId": 42518,
+      "title": "Secret Avengers (2010) #21.1",
+      "number": "21.1",
+      "url": "https://www.marvel.com/comics/issue/42518/secret_avengers_2010_21.1",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-01-25T00:00:00+0000",
+      "mu": "2013-01-17T00:00:00+0000",
+      "digitalId": 25336,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/60/518974d86e642",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Patch Zircher",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #21.1-25"
+    },
+    {
+      "issueId": 35133,
+      "title": "Secret Avengers (2010) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/35133/secret_avengers_2010_22",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-02-08T00:00:00+0000",
+      "mu": "2012-10-20T00:00:00+0000",
+      "digitalId": 25437,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/60/518d168968c7c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #21.1-25"
+    },
+    {
+      "issueId": 37342,
+      "title": "Secret Avengers (2010) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/37342/secret_avengers_2010_23",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-03-01T00:00:00+0000",
+      "mu": "2012-10-22T00:00:00+0000",
+      "digitalId": 25583,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/4f74968a2db73",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #21.1-25"
+    },
+    {
+      "issueId": 35167,
+      "title": "Secret Avengers (2010) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/35167/secret_avengers_2010_24",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-03-28T00:00:00+0000",
+      "mu": "2012-10-03T16:31:48+0000",
+      "digitalId": 25883,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/90/56bccba1a5047",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Gabriel Hardman",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #21.1-25"
+    },
+    {
+      "issueId": 40708,
+      "title": "Secret Avengers (2010) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/40708/secret_avengers_2010_25",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-04-11T00:00:00+0000",
+      "mu": "2012-10-24T16:40:09+0000",
+      "digitalId": 26082,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/4f85ca62e1e4e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Gabriel Hardman",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #21.1-25"
+    },
+    {
+      "issueId": 40706,
+      "title": "Secret Avengers (2010) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/40706/secret_avengers_2010_26",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-04-25T00:00:00+0000",
+      "mu": "2012-04-25T00:00:00+0000",
+      "digitalId": 26210,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/518d167a487c7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Renato Guedes",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #26-32"
+    },
+    {
+      "issueId": 40705,
+      "title": "Secret Avengers (2010) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/40705/secret_avengers_2010_27",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-05-23T00:00:00+0000",
+      "mu": "2012-05-23T00:00:00+0000",
+      "digitalId": 26509,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/518d166b70611",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Renato Guedes",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #26-32"
+    },
+    {
+      "issueId": 40709,
+      "title": "Secret Avengers (2010) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/40709/secret_avengers_2010_28",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-06-20T00:00:00+0000",
+      "mu": "2013-04-15T00:00:00+0000",
+      "digitalId": 26826,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/518d17adc9f6c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #26-32"
+    },
+    {
+      "issueId": 40704,
+      "title": "Secret Avengers (2010) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/40704/secret_avengers_2010_29",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-07-25T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 27287,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/518d17a57b47e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #26-32"
+    },
+    {
+      "issueId": 40710,
+      "title": "Secret Avengers (2010) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/40710/secret_avengers_2010_30",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-08-22T00:00:00+0000",
+      "mu": "2013-03-08T13:56:07+0000",
+      "digitalId": 27522,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/10/518d17998235b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #26-32"
+    },
+    {
+      "issueId": 40703,
+      "title": "Secret Avengers (2010) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/40703/secret_avengers_2010_31",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-09-26T00:00:00+0000",
+      "mu": "2013-03-25T00:00:00+0000",
+      "digitalId": 27727,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/518d17914edc8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #26-32"
+    },
+    {
+      "issueId": 40712,
+      "title": "Secret Avengers (2010) #32",
+      "number": "32",
+      "url": "https://www.marvel.com/comics/issue/40712/secret_avengers_2010_32",
+      "seriesId": 9799,
+      "seriesName": "Secret Avengers (2010 - 2012)",
+      "onSale": "2012-10-10T00:00:00+0000",
+      "mu": "2012-10-10T00:00:00+0000",
+      "digitalId": 27795,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/518d18b6b0e9e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Matteo Scalera",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Secret Avengers #26-32"
+    }
+  ]
+}

@@ -1,0 +1,2068 @@
+{
+  "id": "marvel-fresh-start-avengers",
+  "name": "Marvel Fresh Start Avengers",
+  "description": "Jason Aaron's Avengers and the books around it, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. The Final Host assembles the team, Wakanda Forever runs across three one-shots and an annual, and the West Coast Avengers and Savage Avengers run alongside the main title through the World Tour, the War of the Vampires and No Road Home. The gaps in the main series are the outline's own.",
+  "source": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.801Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 59,
+  "collections": 10,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 67002,
+      "title": "Avengers (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67002/avengers_2018_1",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-05-02T00:00:00+0000",
+      "mu": "2018-11-05T00:00:00+0000",
+      "digitalId": 47926,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/5af0aacb41ae3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 1: The Final Host"
+    },
+    {
+      "issueId": 67311,
+      "title": "Avengers (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/67311/avengers_2018_2",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-05-16T00:00:00+0000",
+      "mu": "2018-11-19T00:00:00+0000",
+      "digitalId": 47972,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/5af369f557bc4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 1: The Final Host"
+    },
+    {
+      "issueId": 67756,
+      "title": "Avengers (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/67756/avengers_2018_3",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-06-20T00:00:00+0000",
+      "mu": "2018-12-24T00:00:00+0000",
+      "digitalId": 48299,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/5b21858921f2b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 1: The Final Host"
+    },
+    {
+      "issueId": 67760,
+      "title": "Avengers (2018) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/67760/avengers_2018_4",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-07-04T00:00:00+0000",
+      "mu": "2019-01-07T00:00:00+0000",
+      "digitalId": 48535,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/5b3408c32920e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 1: The Final Host"
+    },
+    {
+      "issueId": 67762,
+      "title": "Avengers (2018) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/67762/avengers_2018_5",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-07-18T00:00:00+0000",
+      "mu": "2019-01-21T00:00:00+0000",
+      "digitalId": 48536,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/30/5b4674595743e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Karl Story",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 1: The Final Host"
+    },
+    {
+      "issueId": 67763,
+      "title": "Avengers (2018) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/67763/avengers_2018_6",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-08-22T00:00:00+0000",
+      "mu": "2019-02-25T00:00:00+0000",
+      "digitalId": 48863,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/90/5b748e48ef477",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 1: The Final Host"
+    },
+    {
+      "issueId": 67307,
+      "title": "Amazing Spider-Man: Wakanda Forever (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67307/amazing_spider-man_wakanda_forever_2018_1",
+      "seriesId": 24321,
+      "seriesName": "Amazing Spider-Man: Wakanda Forever (2018)",
+      "onSale": "2018-06-27T00:00:00+0000",
+      "mu": "2018-12-31T00:00:00+0000",
+      "digitalId": 48316,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/70/5b2c1b1e6acbe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alberto Alburquerque",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Nnedi Okorafor",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Wakanda Forever"
+    },
+    {
+      "issueId": 67593,
+      "title": "X-Men: Wakanda Forever (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67593/x-men_wakanda_forever_2018_1",
+      "seriesId": 24375,
+      "seriesName": "X-Men: Wakanda Forever (2018)",
+      "onSale": "2018-07-25T00:00:00+0000",
+      "mu": "2019-01-28T00:00:00+0000",
+      "digitalId": 48626,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/5b5226a840ad5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ray-Anthony Height",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Nnedi Okorafor",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Wakanda Forever"
+    },
+    {
+      "issueId": 67312,
+      "title": "Avengers: Wakanda Forever (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67312/avengers_wakanda_forever_2018_1",
+      "seriesId": 24325,
+      "seriesName": "Avengers: Wakanda Forever (2018)",
+      "onSale": "2018-08-22T00:00:00+0000",
+      "mu": "2019-02-25T00:00:00+0000",
+      "digitalId": 48891,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5b748e2b29b36",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Oleg Okunev",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Nnedi Okorafor",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Wakanda Forever"
+    },
+    {
+      "issueId": 66270,
+      "title": "Black Panther Annual (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/66270/black_panther_annual_2018_1",
+      "seriesId": 24292,
+      "seriesName": "Black Panther Annual (2018)",
+      "onSale": "2018-02-21T00:00:00+0000",
+      "mu": "2018-08-27T00:00:00+0000",
+      "digitalId": 47322,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/5a848371eb42a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Ken Lashley",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Christopher Priest",
+          "role": "writer"
+        },
+        {
+          "name": "Don Mcgregor",
+          "role": "writer"
+        },
+        {
+          "name": "Reginald Hudlin",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Wakanda Forever"
+    },
+    {
+      "issueId": 70101,
+      "title": "West Coast Avengers (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/70101/west_coast_avengers_2018_1",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2018-08-22T00:00:00+0000",
+      "mu": "2019-02-25T00:00:00+0000",
+      "digitalId": 48904,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/5b748f29ab60a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 1: Best Coast"
+    },
+    {
+      "issueId": 70102,
+      "title": "West Coast Avengers (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/70102/west_coast_avengers_2018_2",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2018-09-19T00:00:00+0000",
+      "mu": "2019-03-25T00:00:00+0000",
+      "digitalId": 49193,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/60/5b999bb719f17",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 1: Best Coast"
+    },
+    {
+      "issueId": 70103,
+      "title": "West Coast Avengers (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/70103/west_coast_avengers_2018_3",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2018-10-31T00:00:00+0000",
+      "mu": "2018-10-31T00:00:00+0000",
+      "digitalId": 49570,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/5bd2073d4b7f6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 1: Best Coast"
+    },
+    {
+      "issueId": 70104,
+      "title": "West Coast Avengers (2018) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/70104/west_coast_avengers_2018_4",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2018-11-21T00:00:00+0000",
+      "mu": "2018-11-21T00:00:00+0000",
+      "digitalId": 49789,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/5beca8f4737d9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 1: Best Coast"
+    },
+    {
+      "issueId": 21401,
+      "title": "Young Avengers Presents (2008) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/21401/young_avengers_presents_2008_6",
+      "seriesId": 3424,
+      "seriesName": "Young Avengers Presents (2008)",
+      "onSale": "2008-06-25T00:00:00+0000",
+      "mu": "2008-06-25T00:00:00+0000",
+      "digitalId": 11898,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/588b891da37c4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Dell",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 1: Best Coast"
+    },
+    {
+      "issueId": 58995,
+      "title": "The Unbelievable Gwenpool (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/58995/the_unbelievable_gwenpool_2016_1",
+      "seriesId": 21490,
+      "seriesName": "The Unbelievable Gwenpool (2016 - 2018)",
+      "onSale": "2016-04-13T00:00:00+0000",
+      "mu": "2016-10-10T00:00:00+0000",
+      "digitalId": 41679,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/57054b1d2673e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Danilo S. Beyruth",
+          "role": "penciler"
+        },
+        {
+          "name": "G Gurihiru",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Hastings",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 1: Best Coast"
+    },
+    {
+      "issueId": 67764,
+      "title": "Avengers (2018) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/67764/avengers_2018_7",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-09-05T00:00:00+0000",
+      "mu": "2019-03-11T00:00:00+0000",
+      "digitalId": 49106,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/5b882a4445d6b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sara Pichelli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Geoff Shaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 2: World Tour"
+    },
+    {
+      "issueId": 67765,
+      "title": "Avengers (2018) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/67765/avengers_2018_8",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-09-19T00:00:00+0000",
+      "mu": "2019-03-25T00:00:00+0000",
+      "digitalId": 49107,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/5b999aaae9dff",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Marquez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 2: World Tour"
+    },
+    {
+      "issueId": 67766,
+      "title": "Avengers (2018) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/67766/avengers_2018_9",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-10-10T00:00:00+0000",
+      "mu": "2019-04-15T00:00:00+0000",
+      "digitalId": 49479,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/5bb531693c9df",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Marquez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 2: World Tour"
+    },
+    {
+      "issueId": 67767,
+      "title": "Avengers (2018) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/67767/avengers_2018_10",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-11-14T00:00:00+0000",
+      "mu": "2019-05-20T00:00:00+0000",
+      "digitalId": 49747,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/5be372403dabe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 64,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andrea Sorrentino",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Marquez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Frazer Irving",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 2: World Tour"
+    },
+    {
+      "issueId": 67768,
+      "title": "Avengers (2018) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/67768/avengers_2018_11",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2018-12-12T00:00:00+0000",
+      "mu": "2019-06-17T00:00:00+0000",
+      "digitalId": 50030,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/5c083b7261c9c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Cory Smith",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Karl Kesel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 2: World Tour"
+    },
+    {
+      "issueId": 67769,
+      "title": "Avengers (2018) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/67769/avengers_2018_12",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-01-09T00:00:00+0000",
+      "mu": "2019-07-15T00:00:00+0000",
+      "digitalId": 50366,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5c2f69e663a1b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Karl Kesel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Davis",
+          "role": "penciler"
+        },
+        {
+          "name": "Cory Smith",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 2: World Tour"
+    },
+    {
+      "issueId": 70105,
+      "title": "West Coast Avengers (2018) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/70105/west_coast_avengers_2018_5",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2018-12-05T00:00:00+0000",
+      "mu": "2019-06-10T00:00:00+0000",
+      "digitalId": 50018,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/5bff092a216f0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Daniele DI Nicuolo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 2: City of Evils"
+    },
+    {
+      "issueId": 70106,
+      "title": "West Coast Avengers (2018) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/70106/west_coast_avengers_2018_6",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2018-12-19T00:00:00+0000",
+      "mu": "2019-06-24T00:00:00+0000",
+      "digitalId": 50019,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/5c12b56f14738",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Daniele DI Nicuolo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 2: City of Evils"
+    },
+    {
+      "issueId": 70107,
+      "title": "West Coast Avengers (2018) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/70107/west_coast_avengers_2018_7",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2019-01-30T00:00:00+0000",
+      "mu": "2019-08-05T00:00:00+0000",
+      "digitalId": 50357,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/5c48f735cec7c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Daniele DI Nicuolo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Eduard Petrovich",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 2: City of Evils"
+    },
+    {
+      "issueId": 70108,
+      "title": "West Coast Avengers (2018) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/70108/west_coast_avengers_2018_8",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2019-02-27T00:00:00+0000",
+      "mu": "2019-02-27T00:00:00+0000",
+      "digitalId": 50589,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/5c6dd9b2344af",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eduard Petrovich",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 2: City of Evils"
+    },
+    {
+      "issueId": 70109,
+      "title": "West Coast Avengers (2018) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/70109/west_coast_avengers_2018_9",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2019-03-20T00:00:00+0000",
+      "mu": "2019-09-23T00:00:00+0000",
+      "digitalId": 50898,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/b0/5c881b1a316b1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gang Hyuk Lim",
+          "role": "cover artist"
+        },
+        {
+          "name": "Eduard Petrovich",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 2: City of Evils"
+    },
+    {
+      "issueId": 70110,
+      "title": "West Coast Avengers (2018) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/70110/west_coast_avengers_2018_10",
+      "seriesId": 25575,
+      "seriesName": "West Coast Avengers (2018 - 2019)",
+      "onSale": "2019-04-17T00:00:00+0000",
+      "mu": "2019-10-21T00:00:00+0000",
+      "digitalId": 51108,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/20/5cacf715cdee1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Moy Rodriguez",
+          "role": "penciler"
+        },
+        {
+          "name": "Gang Hyuk Lim",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "West Coast Avengers Vol. 2: City of Evils"
+    },
+    {
+      "issueId": 71046,
+      "title": "Avengers (2018) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/71046/avengers_2018_13",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-01-23T00:00:00+0000",
+      "mu": "2019-07-29T00:00:00+0000",
+      "digitalId": 50367,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5c3f94de0b801",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea Sorrentino",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 3: War of the Vampires"
+    },
+    {
+      "issueId": 71047,
+      "title": "Avengers (2018) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/71047/avengers_2018_14",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-02-06T00:00:00+0000",
+      "mu": "2019-08-12T00:00:00+0000",
+      "digitalId": 50568,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/5c523c34cebc8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Marquez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 3: War of the Vampires"
+    },
+    {
+      "issueId": 71048,
+      "title": "Avengers (2018) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/71048/avengers_2018_15",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-02-20T00:00:00+0000",
+      "mu": "2019-08-26T00:00:00+0000",
+      "digitalId": 50569,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/5c6493635d73f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Marquez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 3: War of the Vampires"
+    },
+    {
+      "issueId": 71049,
+      "title": "Avengers (2018) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/71049/avengers_2018_16",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-03-06T00:00:00+0000",
+      "mu": "2019-03-06T00:00:00+0000",
+      "digitalId": 50867,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/5c76f88a3640f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Marquez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 3: War of the Vampires"
+    },
+    {
+      "issueId": 71050,
+      "title": "Avengers (2018) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/71050/avengers_2018_17",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-03-20T00:00:00+0000",
+      "mu": "2019-09-23T00:00:00+0000",
+      "digitalId": 50950,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/80/5c88146024059",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Marquez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 3: War of the Vampires"
+    },
+    {
+      "issueId": 71433,
+      "title": "Avengers No Road Home (2019) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71433/avengers_no_road_home_2019_1",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-02-13T00:00:00+0000",
+      "mu": "2019-08-19T00:00:00+0000",
+      "digitalId": 50603,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/5c5c57f2aedad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71435,
+      "title": "Avengers No Road Home (2019) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71435/avengers_no_road_home_2019_2",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-02-20T00:00:00+0000",
+      "mu": "2019-08-26T00:00:00+0000",
+      "digitalId": 50604,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/5c64942fd5bfb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71436,
+      "title": "Avengers No Road Home (2019) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/71436/avengers_no_road_home_2019_3",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-02-27T00:00:00+0000",
+      "mu": "2019-09-02T00:00:00+0000",
+      "digitalId": 50605,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/90/5c6dda9879934",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71437,
+      "title": "Avengers No Road Home (2019) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/71437/avengers_no_road_home_2019_4",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-03-06T00:00:00+0000",
+      "mu": "2019-09-09T00:00:00+0000",
+      "digitalId": 50868,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/5c76f8b34dd91",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71438,
+      "title": "Avengers No Road Home (2019) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/71438/avengers_no_road_home_2019_5",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-03-13T00:00:00+0000",
+      "mu": "2019-09-16T00:00:00+0000",
+      "digitalId": 50917,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5c802d7e2a89a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71439,
+      "title": "Avengers No Road Home (2019) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/71439/avengers_no_road_home_2019_6",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-03-20T00:00:00+0000",
+      "mu": "2019-09-23T00:00:00+0000",
+      "digitalId": 50918,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/5c88158e87a0d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71440,
+      "title": "Avengers No Road Home (2019) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/71440/avengers_no_road_home_2019_7",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-03-27T00:00:00+0000",
+      "mu": "2019-09-30T00:00:00+0000",
+      "digitalId": 50919,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/5c93f6119b852",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71441,
+      "title": "Avengers No Road Home (2019) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/71441/avengers_no_road_home_2019_8",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-04-03T00:00:00+0000",
+      "mu": "2019-10-07T00:00:00+0000",
+      "digitalId": 51072,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/5c9bfa8f54615",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlo Barberi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71442,
+      "title": "Avengers No Road Home (2019) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/71442/avengers_no_road_home_2019_9",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-04-10T00:00:00+0000",
+      "mu": "2019-10-14T00:00:00+0000",
+      "digitalId": 51073,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/5ca3bee16660c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Medina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71987,
+      "title": "Avengers No Road Home (2019) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/71987/avengers_no_road_home_2019_10",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-04-17T00:00:00+0000",
+      "mu": "2019-10-21T00:00:00+0000",
+      "digitalId": 51074,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/5cacf67f2a27e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 73841,
+      "title": "Savage Avengers (2019) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/73841/savage_avengers_2019_1",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2019-05-01T00:00:00+0000",
+      "mu": "2019-04-25T12:39:00+0000",
+      "digitalId": 51364,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/5cc1fd2459745",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 1"
+    },
+    {
+      "issueId": 73842,
+      "title": "Savage Avengers (2019) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/73842/savage_avengers_2019_2",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2019-06-05T00:00:00+0000",
+      "mu": "2019-06-05T00:00:00+0000",
+      "digitalId": 51680,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/04/5ced979d5b8dc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 1"
+    },
+    {
+      "issueId": 73843,
+      "title": "Savage Avengers (2019) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/73843/savage_avengers_2019_3",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2019-07-03T00:00:00+0000",
+      "mu": "2019-07-03T00:00:00+0000",
+      "digitalId": 51893,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/5d1274fa2ae7d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 1"
+    },
+    {
+      "issueId": 73844,
+      "title": "Savage Avengers (2019) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/73844/savage_avengers_2019_4",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2019-08-07T00:00:00+0000",
+      "mu": "2019-08-07T00:00:00+0000",
+      "digitalId": 52323,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5d4330975ddb9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 1"
+    },
+    {
+      "issueId": 73845,
+      "title": "Savage Avengers (2019) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/73845/savage_avengers_2019_5",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2019-09-04T00:00:00+0000",
+      "mu": "2019-09-04T00:00:00+0000",
+      "digitalId": 52500,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/70/5d695ebbbedc2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 1"
+    },
+    {
+      "issueId": 71054,
+      "title": "Avengers (2018) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/71054/avengers_2018_21",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-07-10T00:00:00+0000",
+      "mu": "2020-01-13T00:00:00+0000",
+      "digitalId": 51922,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/d0/5d1bc3444426b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jason Masters",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 4"
+    },
+    {
+      "issueId": 71055,
+      "title": "Avengers (2018) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/71055/avengers_2018_22",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-07-31T00:00:00+0000",
+      "mu": "2020-02-03T00:00:00+0000",
+      "digitalId": 51923,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/5d3880d58bddc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alberto Alburquerque",
+          "role": "penciler"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Clay Chapman",
+          "role": "writer"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 4"
+    },
+    {
+      "issueId": 71056,
+      "title": "Avengers (2018) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/71056/avengers_2018_23",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-08-28T00:00:00+0000",
+      "mu": "2020-03-02T00:00:00+0000",
+      "digitalId": 52400,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/5d5d4ce2c8f6e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 4"
+    },
+    {
+      "issueId": 71057,
+      "title": "Avengers (2018) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/71057/avengers_2018_24",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-09-25T00:00:00+0000",
+      "mu": "2020-03-30T00:00:00+0000",
+      "digitalId": 52581,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/5d7f939bd005d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Luciano Vecchio",
+          "role": "penciler"
+        },
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 4"
+    },
+    {
+      "issueId": 71058,
+      "title": "Avengers (2018) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/71058/avengers_2018_25",
+      "seriesId": 24229,
+      "seriesName": "Avengers (2018 - 2023)",
+      "onSale": "2019-10-23T00:00:00+0000",
+      "mu": "2020-04-27T00:00:00+0000",
+      "digitalId": 52720,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/50/5da4ca90ca1b2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stefano Caselli",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers by Jason Aaron Vol. 4"
+    },
+    {
+      "issueId": 73846,
+      "title": "Savage Avengers (2019) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/73846/savage_avengers_2019_6",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2019-10-02T00:00:00+0000",
+      "mu": "2019-10-02T00:00:00+0000",
+      "digitalId": 52704,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/e0/5d4c261e0ecaf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kim Jacinto",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 2: To Dine With Doom"
+    },
+    {
+      "issueId": 73847,
+      "title": "Savage Avengers (2019) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/73847/savage_avengers_2019_7",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2019-11-06T00:00:00+0000",
+      "mu": "2019-11-06T00:00:00+0000",
+      "digitalId": 53017,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/50/5db846fadaa46",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Patch Zircher",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 2: To Dine With Doom"
+    },
+    {
+      "issueId": 73848,
+      "title": "Savage Avengers (2019) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/73848/savage_avengers_2019_8",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2019-12-04T00:00:00+0000",
+      "mu": "2019-12-04T00:00:00+0000",
+      "digitalId": 53283,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/60/5ddd9ac8ecbc2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Patch Zircher",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 2: To Dine With Doom"
+    },
+    {
+      "issueId": 73849,
+      "title": "Savage Avengers (2019) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/73849/savage_avengers_2019_9",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2020-01-08T00:00:00+0000",
+      "mu": "2020-01-08T00:00:00+0000",
+      "digitalId": 53585,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/5e1348ba02d9c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Patch Zircher",
+          "role": "cover artist"
+        },
+        {
+          "name": "Valerio Giangiordano",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 2: To Dine With Doom"
+    },
+    {
+      "issueId": 73850,
+      "title": "Savage Avengers (2019) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/73850/savage_avengers_2019_10",
+      "seriesId": 26594,
+      "seriesName": "Savage Avengers (2019 - 2022)",
+      "onSale": "2020-02-12T00:00:00+0000",
+      "mu": "2020-02-12T00:00:00+0000",
+      "digitalId": 54004,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5e28a3e6a15b6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Patch Zircher",
+          "role": "cover artist"
+        },
+        {
+          "name": "Valerio Giangiordano",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 2: To Dine With Doom"
+    },
+    {
+      "issueId": 80108,
+      "title": "Savage Avengers Annual (2019) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/80108/savage_avengers_annual_2019_1",
+      "seriesId": 28314,
+      "seriesName": "Savage Avengers Annual (2019)",
+      "onSale": "2019-10-30T00:00:00+0000",
+      "mu": "2019-10-30T00:00:00+0000",
+      "digitalId": 52705,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/5d4b32b7d24f0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Savage Avengers Vol. 2: To Dine With Doom"
+    }
+  ]
+}

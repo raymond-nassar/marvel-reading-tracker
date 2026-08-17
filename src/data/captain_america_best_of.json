@@ -1,0 +1,3740 @@
+{
+  "id": "captain-america-best-of",
+  "name": "The Best of Captain America",
+  "description": "A best-of path through Captain America on Marvel Unlimited, compiled by hand from a reader's outline of Comic Book Herald's guide to the same. Ed Brubaker's run comes first and whole, from the Winter Soldier's return through the death of Steve Rogers, Reborn, Rebirth and the restored numbering, followed by Man Out of Time and the Life of Bucky Barnes. It then goes back for the Silver and Bronze Age chapters the guide picks out: the Red Skull and the Cosmic Cube in Tales of Suspense, the Life and Times of the Red Skull, Mark Gruenwald's The Captain, and issue #250 as a bonus. The sections are the guide's and are kept in its order rather than sorted by publication date.",
+  "source": "https://www.comicbookherald.com/the-best-of-captain-america-comics-in-marvel-unlimited/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T03:25:17.084Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 114,
+  "collections": 10,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 91,
+      "title": "Captain America (2004) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/91/captain_america_2004_1",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2004-11-17T00:00:00+0000",
+      "mu": "2004-11-17T00:00:00+0000",
+      "digitalId": 74,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/5728d2ec8b6dc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 1492,
+      "title": "Captain America (2004) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/1492/captain_america_2004_2",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-01-05T00:00:00+0000",
+      "mu": "2005-01-05T00:00:00+0000",
+      "digitalId": 4136,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/50/5140ad1091316",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Michael Lark",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 1579,
+      "title": "Captain America (2004) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/1579/captain_america_2004_3",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-02-09T00:00:00+0000",
+      "mu": "2005-02-09T00:00:00+0000",
+      "digitalId": 5425,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/5140b0df384eb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Michael Lark",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 1668,
+      "title": "Captain America (2004) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/1668/captain_america_2004_4",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-03-16T00:00:00+0000",
+      "mu": "2005-03-16T00:00:00+0000",
+      "digitalId": 5430,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/00/5140b2a6ee8bf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Michael Lark",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 1764,
+      "title": "Captain America (2004) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/1764/captain_america_2004_5",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-04-27T00:00:00+0000",
+      "mu": "2005-04-27T00:00:00+0000",
+      "digitalId": 5433,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/50/5728fbf9df067",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Michael Lark",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 1870,
+      "title": "Captain America (2004) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/1870/captain_america_2004_6",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-05-25T00:00:00+0000",
+      "mu": "2005-05-25T00:00:00+0000",
+      "digitalId": 1637,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/572903ce72454",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 1978,
+      "title": "Captain America (2004) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/1978/captain_america_2004_7",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-06-22T00:00:00+0000",
+      "mu": "2005-06-22T00:00:00+0000",
+      "digitalId": 1037,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/5140b840a1d88",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Paul Leon",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 2190,
+      "title": "Captain America (2004) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/2190/captain_america_2004_8",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-08-10T00:00:00+0000",
+      "mu": "2005-08-10T00:00:00+0000",
+      "digitalId": 536,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/e0/5140b932ac375",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 2308,
+      "title": "Captain America (2004) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/2308/captain_america_2004_9",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-08-31T00:00:00+0000",
+      "mu": "2005-08-31T00:00:00+0000",
+      "digitalId": 1641,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/c0/5140ba3f5e524",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Michael Lark",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 2420,
+      "title": "Captain America (2004) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/2420/captain_america_2004_10",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-09-21T00:00:00+0000",
+      "mu": "2005-09-21T00:00:00+0000",
+      "digitalId": 1598,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/4d24fef511cb5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Jesse Delperdang",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Lee Weeks",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 2421,
+      "title": "Captain America (2004) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/2421/captain_america_2004_11",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-10-26T00:00:00+0000",
+      "mu": "2005-10-26T00:00:00+0000",
+      "digitalId": 1601,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/4d24f03587b72",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 2422,
+      "title": "Captain America (2004) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/2422/captain_america_2004_12",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-11-23T00:00:00+0000",
+      "mu": "2005-11-23T00:00:00+0000",
+      "digitalId": 1606,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/4d24f4f9b16b1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Lark",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 3084,
+      "title": "Captain America (2004) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/3084/captain_america_2004_13",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2005-12-21T00:00:00+0000",
+      "mu": "2005-12-21T00:00:00+0000",
+      "digitalId": 1608,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/4f75adcd27329",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 3188,
+      "title": "Captain America (2004) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/3188/captain_america_2004_14",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-02-01T00:00:00+0000",
+      "mu": "2006-02-01T00:00:00+0000",
+      "digitalId": 5360,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/60/4bc60f02bc3bd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 3503,
+      "title": "Captain America (2004) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/3503/captain_america_2004_15",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-02-22T00:00:00+0000",
+      "mu": "2006-02-22T00:00:00+0000",
+      "digitalId": 5361,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/570bc887abd51",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 3910,
+      "title": "Captain America (2004) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/3910/captain_america_2004_16",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-03-22T00:00:00+0000",
+      "mu": "2006-03-22T00:00:00+0000",
+      "digitalId": 5362,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/570bc8fd6586d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 4040,
+      "title": "Captain America (2004) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/4040/captain_america_2004_17",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-04-19T00:00:00+0000",
+      "mu": "2006-04-19T00:00:00+0000",
+      "digitalId": 5364,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/d0/570bc99cd1d9d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 4152,
+      "title": "Captain America (2004) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/4152/captain_america_2004_18",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-05-17T00:00:00+0000",
+      "mu": "2006-05-17T00:00:00+0000",
+      "digitalId": 1151,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/00/570bca4eee4db",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 4326,
+      "title": "Captain America (2004) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/4326/captain_america_2004_19",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-06-21T00:00:00+0000",
+      "mu": "2006-06-21T00:00:00+0000",
+      "digitalId": 5384,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/a0/570bcae74ab0d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 4482,
+      "title": "Captain America (2004) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/4482/captain_america_2004_20",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-07-26T00:00:00+0000",
+      "mu": "2006-07-26T00:00:00+0000",
+      "digitalId": 5393,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/570bcbf76d9b1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 4798,
+      "title": "Captain America (2004) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/4798/captain_america_2004_21",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-09-13T00:00:00+0000",
+      "mu": "2006-09-13T00:00:00+0000",
+      "digitalId": 5402,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/70/570bcc868f796",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 5086,
+      "title": "Captain America (2004) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/5086/captain_america_2004_22",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-09-27T00:00:00+0000",
+      "mu": "2006-09-27T00:00:00+0000",
+      "digitalId": 5409,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/80/56f98fae9d219",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 5239,
+      "title": "Captain America (2004) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/5239/captain_america_2004_23",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-10-25T00:00:00+0000",
+      "mu": "2006-10-25T00:00:00+0000",
+      "digitalId": 5411,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/56f99059cc0aa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 5402,
+      "title": "Captain America (2004) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/5402/captain_america_2004_24",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2006-11-29T00:00:00+0000",
+      "mu": "2006-11-29T00:00:00+0000",
+      "digitalId": 5413,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/e0/56f990d564e99",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 6010,
+      "title": "Captain America (2004) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/6010/captain_america_2004_25",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-03-21T00:00:00+0000",
+      "mu": "2007-03-21T00:00:00+0000",
+      "digitalId": 8054,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/70/55b9488ef2727",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 6152,
+      "title": "Captain America (2004) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/6152/captain_america_2004_26",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-05-23T00:00:00+0000",
+      "mu": "2007-05-23T00:00:00+0000",
+      "digitalId": 8057,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/4f75ae9b534a4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 15824,
+      "title": "Captain America (2004) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/15824/captain_america_2004_27",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-06-20T00:00:00+0000",
+      "mu": "2007-06-20T00:00:00+0000",
+      "digitalId": 8058,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/4f75af16a39fa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 15941,
+      "title": "Captain America (2004) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/15941/captain_america_2004_28",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-07-18T00:00:00+0000",
+      "mu": "2007-07-18T00:00:00+0000",
+      "digitalId": 8059,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/570bcd3b5599f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 16125,
+      "title": "Captain America (2004) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/16125/captain_america_2004_29",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-08-15T00:00:00+0000",
+      "mu": "2007-08-15T00:00:00+0000",
+      "digitalId": 8060,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/4f75afb4eb768",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 16475,
+      "title": "Captain America (2004) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/16475/captain_america_2004_30",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-09-19T00:00:00+0000",
+      "mu": "2007-09-19T00:00:00+0000",
+      "digitalId": 8061,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/570bcdd78571c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 16476,
+      "title": "Captain America (2004) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/16476/captain_america_2004_31",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-10-17T00:00:00+0000",
+      "mu": "2007-10-17T00:00:00+0000",
+      "digitalId": 8062,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/62fe981c67b16",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 17227,
+      "title": "Captain America (2004) #32",
+      "number": "32",
+      "url": "https://www.marvel.com/comics/issue/17227/captain_america_2004_32",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-11-21T00:00:00+0000",
+      "mu": "2007-11-21T00:00:00+0000",
+      "digitalId": 8063,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/4f75b06eb2224",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 17359,
+      "title": "Captain America (2004) #33",
+      "number": "33",
+      "url": "https://www.marvel.com/comics/issue/17359/captain_america_2004_33",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2007-12-26T00:00:00+0000",
+      "mu": "2007-12-26T00:00:00+0000",
+      "digitalId": 8064,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/4f75b12e313c8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 17600,
+      "title": "Captain America (2004) #34",
+      "number": "34",
+      "url": "https://www.marvel.com/comics/issue/17600/captain_america_2004_34",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-01-30T00:00:00+0000",
+      "mu": "2008-01-30T00:00:00+0000",
+      "digitalId": 10830,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/570bcf1ab118f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 20647,
+      "title": "Captain America (2004) #35",
+      "number": "35",
+      "url": "https://www.marvel.com/comics/issue/20647/captain_america_2004_35",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-02-27T00:00:00+0000",
+      "mu": "2008-02-27T00:00:00+0000",
+      "digitalId": 10476,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/570bd0a62ef82",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 20842,
+      "title": "Captain America (2004) #36",
+      "number": "36",
+      "url": "https://www.marvel.com/comics/issue/20842/captain_america_2004_36",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-03-19T00:00:00+0000",
+      "mu": "2008-03-19T00:00:00+0000",
+      "digitalId": 10785,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/570bd30b4b8dc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 20977,
+      "title": "Captain America (2004) #37",
+      "number": "37",
+      "url": "https://www.marvel.com/comics/issue/20977/captain_america_2004_37",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-04-16T00:00:00+0000",
+      "mu": "2008-04-16T00:00:00+0000",
+      "digitalId": 10622,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/570bd4f634981",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 21185,
+      "title": "Captain America (2004) #38",
+      "number": "38",
+      "url": "https://www.marvel.com/comics/issue/21185/captain_america_2004_38",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-05-21T00:00:00+0000",
+      "mu": "2008-05-21T00:00:00+0000",
+      "digitalId": 10834,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/570bd5f039e8e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 21337,
+      "title": "Captain America (2004) #39",
+      "number": "39",
+      "url": "https://www.marvel.com/comics/issue/21337/captain_america_2004_39",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-06-25T00:00:00+0000",
+      "mu": "2008-06-25T00:00:00+0000",
+      "digitalId": 10847,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/570bd6bf45027",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Roberto De La Torre",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 21516,
+      "title": "Captain America (2004) #40",
+      "number": "40",
+      "url": "https://www.marvel.com/comics/issue/21516/captain_america_2004_40",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-07-16T00:00:00+0000",
+      "mu": "2008-07-16T00:00:00+0000",
+      "digitalId": 10873,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/570bd78caf39c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 21718,
+      "title": "Captain America (2004) #41",
+      "number": "41",
+      "url": "https://www.marvel.com/comics/issue/21718/captain_america_2004_41",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-08-20T00:00:00+0000",
+      "mu": "2008-08-20T00:00:00+0000",
+      "digitalId": 10875,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/570be5ac2084e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 21945,
+      "title": "Captain America (2004) #42",
+      "number": "42",
+      "url": "https://www.marvel.com/comics/issue/21945/captain_america_2004_42",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-09-24T00:00:00+0000",
+      "mu": "2008-09-24T00:00:00+0000",
+      "digitalId": 10986,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/20/570be66fe68ed",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Fabio Laguna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 22273,
+      "title": "Captain America (2004) #43",
+      "number": "43",
+      "url": "https://www.marvel.com/comics/issue/22273/captain_america_2004_43",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-10-22T00:00:00+0000",
+      "mu": "2008-10-22T00:00:00+0000",
+      "digitalId": 10987,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/570be752c35a9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Fabio Laguna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 22482,
+      "title": "Captain America (2004) #44",
+      "number": "44",
+      "url": "https://www.marvel.com/comics/issue/22482/captain_america_2004_44",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-11-26T00:00:00+0000",
+      "mu": "2008-11-26T00:00:00+0000",
+      "digitalId": 10988,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/570be8024ec24",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Fabio Laguna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 22883,
+      "title": "Captain America (2004) #45",
+      "number": "45",
+      "url": "https://www.marvel.com/comics/issue/22883/captain_america_2004_45",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2008-12-31T00:00:00+0000",
+      "mu": "2008-12-31T00:00:00+0000",
+      "digitalId": 10989,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/570be8993d82b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Pennington",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 23090,
+      "title": "Captain America (2004) #46",
+      "number": "46",
+      "url": "https://www.marvel.com/comics/issue/23090/captain_america_2004_46",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2009-01-28T00:00:00+0000",
+      "mu": "2009-01-28T00:00:00+0000",
+      "digitalId": 12856,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/570be9282dac0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 23586,
+      "title": "Captain America (2004) #47",
+      "number": "47",
+      "url": "https://www.marvel.com/comics/issue/23586/captain_america_2004_47",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2009-02-25T00:00:00+0000",
+      "mu": "2009-02-25T00:00:00+0000",
+      "digitalId": 12858,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/570be9b813a94",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 23750,
+      "title": "Captain America (2004) #48",
+      "number": "48",
+      "url": "https://www.marvel.com/comics/issue/23750/captain_america_2004_48",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2009-03-25T00:00:00+0000",
+      "mu": "2009-03-25T00:00:00+0000",
+      "digitalId": 12859,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/570bea528e2c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 23941,
+      "title": "Captain America (2004) #49",
+      "number": "49",
+      "url": "https://www.marvel.com/comics/issue/23941/captain_america_2004_49",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2009-04-15T00:00:00+0000",
+      "mu": "2009-04-15T00:00:00+0000",
+      "digitalId": 13516,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/60/5696b45796ba7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 24148,
+      "title": "Captain America (2004) #50",
+      "number": "50",
+      "url": "https://www.marvel.com/comics/issue/24148/captain_america_2004_50",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2009-05-20T00:00:00+0000",
+      "mu": "2009-05-20T00:00:00+0000",
+      "digitalId": 12661,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/90/570beb8102260",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Fred Hembeck",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 1-3"
+    },
+    {
+      "issueId": 24660,
+      "title": "Captain America (2004) #600",
+      "number": "600",
+      "url": "https://www.marvel.com/comics/issue/24660/captain_america_2004_600",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2009-06-17T00:00:00+0000",
+      "mu": "2010-03-30T00:00:00+0000",
+      "digitalId": 13443,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/513f6daa62546",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 104,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Aja",
+          "role": "cover artist"
+        },
+        {
+          "name": "Howard Chaykin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kalman Andrasofszky",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mitch Breitweiser",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rafael Albuquerque",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dale Eaglesham",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 24661,
+      "title": "Captain America (2004) #601",
+      "number": "601",
+      "url": "https://www.marvel.com/comics/issue/24661/captain_america_2004_601",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2009-07-15T00:00:00+0000",
+      "mu": "2009-07-15T00:00:00+0000",
+      "digitalId": 12815,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/513f6e02af03c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Dave Gutierrez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gene Colan",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 24662,
+      "title": "Captain America (2004) #602",
+      "number": "602",
+      "url": "https://www.marvel.com/comics/issue/24662/captain_america_2004_602",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-01-20T00:00:00+0000",
+      "mu": "2010-09-07T00:00:00+0000",
+      "digitalId": 14206,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/59bfd837089c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 24663,
+      "title": "Captain America (2004) #603",
+      "number": "603",
+      "url": "https://www.marvel.com/comics/issue/24663/captain_america_2004_603",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-02-17T00:00:00+0000",
+      "mu": "2010-09-14T00:00:00+0000",
+      "digitalId": 13888,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/59bfe1064a71f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 30348,
+      "title": "Captain America (2004) #604",
+      "number": "604",
+      "url": "https://www.marvel.com/comics/issue/30348/captain_america_2004_604",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-03-24T00:00:00+0000",
+      "mu": "2010-12-14T00:00:00+0000",
+      "digitalId": 14175,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/59bff12ff3962",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Baldeon",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 30349,
+      "title": "Captain America (2004) #605",
+      "number": "605",
+      "url": "https://www.marvel.com/comics/issue/30349/captain_america_2004_605",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-04-28T00:00:00+0000",
+      "mu": "2010-09-28T00:00:00+0000",
+      "digitalId": 14416,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/513f6f0cc6d96",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Baldeon",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 30350,
+      "title": "Captain America (2004) #606",
+      "number": "606",
+      "url": "https://www.marvel.com/comics/issue/30350/captain_america_2004_606",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-06-09T00:00:00+0000",
+      "mu": "2011-01-27T00:00:00+0000",
+      "digitalId": 14890,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/513f6f536a99d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "David Baldeon",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 30351,
+      "title": "Captain America (2004) #607",
+      "number": "607",
+      "url": "https://www.marvel.com/comics/issue/30351/captain_america_2004_607",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-06-30T00:00:00+0000",
+      "mu": "2011-05-12T00:00:00+0000",
+      "digitalId": 15073,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/513f6efdb527d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Baldeon",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Mitch Breitweiser",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 29225,
+      "title": "Captain America (2004) #608",
+      "number": "608",
+      "url": "https://www.marvel.com/comics/issue/29225/captain_america_2004_608",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-08-04T00:00:00+0000",
+      "mu": "2011-07-19T00:00:00+0000",
+      "digitalId": 15484,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/513f708030e6e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Filipe Daniel Moreno De Andrade",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 29226,
+      "title": "Captain America (2004) #609",
+      "number": "609",
+      "url": "https://www.marvel.com/comics/issue/29226/captain_america_2004_609",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-08-25T00:00:00+0000",
+      "mu": "2011-08-16T00:00:00+0000",
+      "digitalId": 15792,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/513f70641b63c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Filipe Daniel Moreno De Andrade",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 29227,
+      "title": "Captain America (2004) #610",
+      "number": "610",
+      "url": "https://www.marvel.com/comics/issue/29227/captain_america_2004_610",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-09-29T00:00:00+0000",
+      "mu": "2011-10-04T00:00:00+0000",
+      "digitalId": 16332,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/59c03290c0902",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 29228,
+      "title": "Captain America (2004) #611",
+      "number": "611",
+      "url": "https://www.marvel.com/comics/issue/29228/captain_america_2004_611",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-10-27T00:00:00+0000",
+      "mu": "2011-10-24T00:00:00+0000",
+      "digitalId": 17030,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/59c2b0d495c1b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Filipe Daniel Moreno De Andrade",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 29229,
+      "title": "Captain America (2004) #612",
+      "number": "612",
+      "url": "https://www.marvel.com/comics/issue/29229/captain_america_2004_612",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-11-24T00:00:00+0000",
+      "mu": "2011-11-07T00:00:00+0000",
+      "digitalId": 17908,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/59c2b2c2d2796",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 29230,
+      "title": "Captain America (2004) #613",
+      "number": "613",
+      "url": "https://www.marvel.com/comics/issue/29230/captain_america_2004_613",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2010-12-29T00:00:00+0000",
+      "mu": "2011-11-01T11:26:46+0000",
+      "digitalId": 18665,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/60/59c3b4df79665",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Filipe Daniel Moreno De Andrade",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 35795,
+      "title": "Captain America (2004) #614",
+      "number": "614",
+      "url": "https://www.marvel.com/comics/issue/35795/captain_america_2004_614",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2011-01-26T00:00:00+0000",
+      "mu": "2011-11-01T11:27:26+0000",
+      "digitalId": 18987,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/59c3ba3e4910f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 35779,
+      "title": "Captain America (2004) #615",
+      "number": "615",
+      "url": "https://www.marvel.com/comics/issue/35779/captain_america_2004_615",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2011-02-23T00:00:00+0000",
+      "mu": "2011-11-01T11:27:59+0000",
+      "digitalId": 19685,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/e0/59c3bcb3e112f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 39706,
+      "title": "Captain America (2004) #615.1",
+      "number": "615.1",
+      "url": "https://www.marvel.com/comics/issue/39706/captain_america_2004_615.1",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2011-03-23T00:00:00+0000",
+      "mu": "2011-07-12T09:14:55+0000",
+      "digitalId": 20187,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/51439c6fb9eed",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Mitch Breitweiser",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 35762,
+      "title": "Captain America (2004) #616",
+      "number": "616",
+      "url": "https://www.marvel.com/comics/issue/35762/captain_america_2004_616",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2011-03-30T00:00:00+0000",
+      "mu": "2012-01-17T00:00:00+0000",
+      "digitalId": 20253,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/59c3bfcd1759b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 104,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Grist",
+          "role": "penciler"
+        },
+        {
+          "name": "Travis Charest",
+          "role": "penciler"
+        },
+        {
+          "name": "Alec Siegel",
+          "role": "writer"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Frank Tieri",
+          "role": "writer"
+        },
+        {
+          "name": "Howard Chaykin",
+          "role": "writer"
+        },
+        {
+          "name": "Kyle Higgins",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Benson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 39017,
+      "title": "Captain America (2004) #617",
+      "number": "617",
+      "url": "https://www.marvel.com/comics/issue/39017/captain_america_2004_617",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2011-04-27T00:00:00+0000",
+      "mu": "2013-08-19T13:37:16+0000",
+      "digitalId": 20692,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/59c3c1c58a7a1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 35774,
+      "title": "Captain America (2004) #618",
+      "number": "618",
+      "url": "https://www.marvel.com/comics/issue/35774/captain_america_2004_618",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2011-05-25T00:00:00+0000",
+      "mu": "2013-08-19T13:54:28+0000",
+      "digitalId": 21319,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/59c3c3915bafa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 35769,
+      "title": "Captain America (2004) #619",
+      "number": "619",
+      "url": "https://www.marvel.com/comics/issue/35769/captain_america_2004_619",
+      "seriesId": 832,
+      "seriesName": "Captain America (2004 - 2011)",
+      "onSale": "2011-06-22T00:00:00+0000",
+      "mu": "2013-08-19T14:17:52+0000",
+      "digitalId": 21778,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/59c3c55197cc9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Stefano Gaudiano",
+          "role": "cover artist"
+        },
+        {
+          "name": "Butch Guice",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Samnee",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America by Ed Brubaker Vol. 4-5"
+    },
+    {
+      "issueId": 26195,
+      "title": "Captain America: Reborn (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/26195/captain_america_reborn_2009_1",
+      "seriesId": 8213,
+      "seriesName": "Captain America: Reborn (2009 - 2010)",
+      "onSale": "2009-07-01T00:00:00+0000",
+      "mu": "2009-07-01T00:00:00+0000",
+      "digitalId": 13990,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/a0/5a2a9fd7b72d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Reborn"
+    },
+    {
+      "issueId": 26196,
+      "title": "Captain America: Reborn (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/26196/captain_america_reborn_2009_2",
+      "seriesId": 8213,
+      "seriesName": "Captain America: Reborn (2009 - 2010)",
+      "onSale": "2009-08-05T00:00:00+0000",
+      "mu": "2009-08-05T00:00:00+0000",
+      "digitalId": 13623,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/60/5a2aa6f9da76d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Reborn"
+    },
+    {
+      "issueId": 26197,
+      "title": "Captain America: Reborn (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/26197/captain_america_reborn_2009_3",
+      "seriesId": 8213,
+      "seriesName": "Captain America: Reborn (2009 - 2010)",
+      "onSale": "2009-09-16T00:00:00+0000",
+      "mu": "2011-02-23T16:56:48+0000",
+      "digitalId": 13624,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/5a2aaa667723e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Reborn"
+    },
+    {
+      "issueId": 26198,
+      "title": "Captain America: Reborn (2009) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/26198/captain_america_reborn_2009_4",
+      "seriesId": 8213,
+      "seriesName": "Captain America: Reborn (2009 - 2010)",
+      "onSale": "2009-11-04T00:00:00+0000",
+      "mu": "2011-02-23T16:56:48+0000",
+      "digitalId": 13625,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/20/5a2aacee09ce9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Reborn"
+    },
+    {
+      "issueId": 26199,
+      "title": "Captain America: Reborn (2009) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/26199/captain_america_reborn_2009_5",
+      "seriesId": 8213,
+      "seriesName": "Captain America: Reborn (2009 - 2010)",
+      "onSale": "2009-12-16T00:00:00+0000",
+      "mu": "2011-02-23T16:56:48+0000",
+      "digitalId": 17643,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/5a2aae9962032",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Reborn"
+    },
+    {
+      "issueId": 30718,
+      "title": "Captain America: Reborn (2009) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/30718/captain_america_reborn_2009_6",
+      "seriesId": 8213,
+      "seriesName": "Captain America: Reborn (2009 - 2010)",
+      "onSale": "2010-01-27T00:00:00+0000",
+      "mu": "2011-02-23T16:56:48+0000",
+      "digitalId": 13722,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/5a2ab0666c81f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Butch Guice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Reborn"
+    },
+    {
+      "issueId": 34980,
+      "title": "Captain America: Rebirth (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/34980/captain_america_rebirth_2010_1",
+      "seriesId": 12279,
+      "seriesName": "Captain America: Rebirth (2010 - 2011)",
+      "onSale": "2011-06-29T00:00:00+0000",
+      "mu": "2012-07-03T00:00:00+0000",
+      "digitalId": 21986,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/5717e0760aa59",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 64,
+      "creators": [
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Lee Garbett",
+          "role": "penciler"
+        },
+        {
+          "name": "Karl Kesel",
+          "role": "writer"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Rebirth"
+    },
+    {
+      "issueId": 34994,
+      "title": "Captain America: Man Out of Time (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/34994/captain_america_man_out_of_time_2010_1",
+      "seriesId": 12288,
+      "seriesName": "Captain America: Man Out of Time (2010 - 2011)",
+      "onSale": "2010-11-03T00:00:00+0000",
+      "mu": "2014-05-01T14:26:16+0000",
+      "digitalId": 17289,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/5715479323acb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Man Out of Time"
+    },
+    {
+      "issueId": 36179,
+      "title": "Captain America: Man Out of Time (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/36179/captain_america_man_out_of_time_2010_2",
+      "seriesId": 12288,
+      "seriesName": "Captain America: Man Out of Time (2010 - 2011)",
+      "onSale": "2010-12-15T00:00:00+0000",
+      "mu": "2012-01-27T00:00:00+0000",
+      "digitalId": 18462,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/57154850c16fe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Man Out of Time"
+    },
+    {
+      "issueId": 36175,
+      "title": "Captain America: Man Out of Time (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/36175/captain_america_man_out_of_time_2010_3",
+      "seriesId": 12288,
+      "seriesName": "Captain America: Man Out of Time (2010 - 2011)",
+      "onSale": "2011-01-12T00:00:00+0000",
+      "mu": "2012-01-31T00:00:00+0000",
+      "digitalId": 18875,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/d0/57154938859c9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Man Out of Time"
+    },
+    {
+      "issueId": 36371,
+      "title": "Captain America: Man Out of Time (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/36371/captain_america_man_out_of_time_2010_4",
+      "seriesId": 12288,
+      "seriesName": "Captain America: Man Out of Time (2010 - 2011)",
+      "onSale": "2011-02-16T00:00:00+0000",
+      "mu": "2012-01-31T00:00:00+0000",
+      "digitalId": 19299,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/571549e9a294d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Carlos Molina Manzanero",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Man Out of Time"
+    },
+    {
+      "issueId": 36177,
+      "title": "Captain America: Man Out of Time (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/36177/captain_america_man_out_of_time_2010_5",
+      "seriesId": 12288,
+      "seriesName": "Captain America: Man Out of Time (2010 - 2011)",
+      "onSale": "2011-03-23T00:00:00+0000",
+      "mu": "2012-01-31T00:00:00+0000",
+      "digitalId": 20147,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/5cc8a91146086",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: Man Out of Time"
+    },
+    {
+      "issueId": 35789,
+      "title": "Captain America and Bucky (2011) #620",
+      "number": "620",
+      "url": "https://www.marvel.com/comics/issue/35789/captain_america_and_bucky_2011_620",
+      "seriesId": 16325,
+      "seriesName": "Captain America and Bucky (2011 - 2012)",
+      "onSale": "2011-07-27T00:00:00+0000",
+      "mu": "2012-07-02T00:00:00+0000",
+      "digitalId": 23008,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/80/5c5defc8aeac6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Chris Samnee",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Marc Andreyko",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America & Bucky: The Life of Bucky Barnes"
+    },
+    {
+      "issueId": 35788,
+      "title": "Captain America and Bucky (2011) #621",
+      "number": "621",
+      "url": "https://www.marvel.com/comics/issue/35788/captain_america_and_bucky_2011_621",
+      "seriesId": 16325,
+      "seriesName": "Captain America and Bucky (2011 - 2012)",
+      "onSale": "2011-08-24T00:00:00+0000",
+      "mu": "2012-07-02T00:00:00+0000",
+      "digitalId": 23542,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/5c5df6833c703",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [],
+      "collectedIn": "Captain America & Bucky: The Life of Bucky Barnes"
+    },
+    {
+      "issueId": 36117,
+      "title": "Captain America and Bucky (2011) #622",
+      "number": "622",
+      "url": "https://www.marvel.com/comics/issue/36117/captain_america_and_bucky_2011_622",
+      "seriesId": 16325,
+      "seriesName": "Captain America and Bucky (2011 - 2012)",
+      "onSale": "2011-09-28T00:00:00+0000",
+      "mu": "2012-07-02T00:00:00+0000",
+      "digitalId": 24029,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/4e81e3e4c434c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Chris Samnee",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Sotomayor",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Marc Andreyko",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America & Bucky: The Life of Bucky Barnes"
+    },
+    {
+      "issueId": 35793,
+      "title": "Captain America and Bucky (2011) #623",
+      "number": "623",
+      "url": "https://www.marvel.com/comics/issue/35793/captain_america_and_bucky_2011_623",
+      "seriesId": 16325,
+      "seriesName": "Captain America and Bucky (2011 - 2012)",
+      "onSale": "2011-10-26T00:00:00+0000",
+      "mu": "2012-07-02T00:00:00+0000",
+      "digitalId": 24514,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/56b37801c3682",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Chris Samnee",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Marc Andreyko",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America & Bucky: The Life of Bucky Barnes"
+    },
+    {
+      "issueId": 35791,
+      "title": "Captain America and Bucky (2011) #624",
+      "number": "624",
+      "url": "https://www.marvel.com/comics/issue/35791/captain_america_and_bucky_2011_624",
+      "seriesId": 16325,
+      "seriesName": "Captain America and Bucky (2011 - 2012)",
+      "onSale": "2011-11-23T00:00:00+0000",
+      "mu": "2012-07-02T00:00:00+0000",
+      "digitalId": 24831,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/56b8c0df47452",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America & Bucky: The Life of Bucky Barnes"
+    },
+    {
+      "issueId": 11324,
+      "title": "Tales of Suspense (1959) #79",
+      "number": "79",
+      "url": "https://www.marvel.com/comics/issue/11324/tales_of_suspense_1959_79",
+      "seriesId": 2079,
+      "seriesName": "Tales of Suspense (1959 - 1968)",
+      "onSale": "1966-07-01T00:00:00+0000",
+      "mu": "1966-07-01T00:00:00+0000",
+      "digitalId": 3733,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/536d4a839462d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Frank Giacoia",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Abel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gene Colan",
+          "role": "penciler"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Tales of Suspense: The Red Skull and the Cosmic Cube"
+    },
+    {
+      "issueId": 11326,
+      "title": "Tales of Suspense (1959) #80",
+      "number": "80",
+      "url": "https://www.marvel.com/comics/issue/11326/tales_of_suspense_1959_80",
+      "seriesId": 2079,
+      "seriesName": "Tales of Suspense (1959 - 1968)",
+      "onSale": "1966-08-01T00:00:00+0000",
+      "mu": "1966-08-01T00:00:00+0000",
+      "digitalId": 3734,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/5e41d0ca63ad9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Don Heck",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Abel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gene Colan",
+          "role": "penciler"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Tales of Suspense: The Red Skull and the Cosmic Cube"
+    },
+    {
+      "issueId": 11327,
+      "title": "Tales of Suspense (1959) #81",
+      "number": "81",
+      "url": "https://www.marvel.com/comics/issue/11327/tales_of_suspense_1959_81",
+      "seriesId": 2079,
+      "seriesName": "Tales of Suspense (1959 - 1968)",
+      "onSale": "1966-09-01T00:00:00+0000",
+      "mu": "1966-09-01T00:00:00+0000",
+      "digitalId": 3735,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/536d48b754fb2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Frank Giacoia",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Abel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gene Colan",
+          "role": "penciler"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Tales of Suspense: The Red Skull and the Cosmic Cube"
+    },
+    {
+      "issueId": 7679,
+      "title": "Captain America (1968) #298",
+      "number": "298",
+      "url": "https://www.marvel.com/comics/issue/7679/captain_america_1968_298",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1984-10-01T00:00:00+0000",
+      "mu": "1984-10-01T00:00:00+0000",
+      "digitalId": 29610,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/5155be4645a69",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Roy Richardson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Neary",
+          "role": "penciler"
+        },
+        {
+          "name": "J.M. DeMatteis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Life and Times of the Red Skull"
+    },
+    {
+      "issueId": 7680,
+      "title": "Captain America (1968) #299",
+      "number": "299",
+      "url": "https://www.marvel.com/comics/issue/7680/captain_america_1968_299",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1984-11-01T00:00:00+0000",
+      "mu": "1984-11-01T00:00:00+0000",
+      "digitalId": 29612,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/20/5155c42422277",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Roy Richardson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Neary",
+          "role": "penciler"
+        },
+        {
+          "name": "J.M. DeMatteis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Life and Times of the Red Skull"
+    },
+    {
+      "issueId": 7681,
+      "title": "Captain America (1968) #300",
+      "number": "300",
+      "url": "https://www.marvel.com/comics/issue/7681/captain_america_1968_300",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1984-12-01T00:00:00+0000",
+      "mu": "1984-12-01T00:00:00+0000",
+      "digitalId": 29613,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/56e6cf023450c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dennis Janke",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Neary",
+          "role": "penciler"
+        },
+        {
+          "name": "J.M. DeMatteis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Life and Times of the Red Skull"
+    },
+    {
+      "issueId": 7713,
+      "title": "Captain America (1968) #332",
+      "number": "332",
+      "url": "https://www.marvel.com/comics/issue/7713/captain_america_1968_332",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1987-08-01T00:00:00+0000",
+      "mu": "1987-08-01T00:00:00+0000",
+      "digitalId": 23518,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/59a5b0e5c9b0c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bob Mcleod",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Morgan",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7714,
+      "title": "Captain America (1968) #333",
+      "number": "333",
+      "url": "https://www.marvel.com/comics/issue/7714/captain_america_1968_333",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1987-09-01T00:00:00+0000",
+      "mu": "1987-09-01T00:00:00+0000",
+      "digitalId": 23519,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/40/50b40d6bc124b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dave Hunt",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Morgan",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7715,
+      "title": "Captain America (1968) #334",
+      "number": "334",
+      "url": "https://www.marvel.com/comics/issue/7715/captain_america_1968_334",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1987-10-01T00:00:00+0000",
+      "mu": "1987-10-01T00:00:00+0000",
+      "digitalId": 23521,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/90/50b52dc1f3c5a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dave Hunt",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Morgan",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7716,
+      "title": "Captain America (1968) #335",
+      "number": "335",
+      "url": "https://www.marvel.com/comics/issue/7716/captain_america_1968_335",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1987-11-01T00:00:00+0000",
+      "mu": "1987-11-01T00:00:00+0000",
+      "digitalId": 23522,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/50ad4790f2388",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dave Hunt",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Morgan",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7717,
+      "title": "Captain America (1968) #336",
+      "number": "336",
+      "url": "https://www.marvel.com/comics/issue/7717/captain_america_1968_336",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1987-12-01T00:00:00+0000",
+      "mu": "1987-12-01T00:00:00+0000",
+      "digitalId": 23523,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/56e6d5fc1820d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dave Hunt",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Morgan",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7718,
+      "title": "Captain America (1968) #337",
+      "number": "337",
+      "url": "https://www.marvel.com/comics/issue/7718/captain_america_1968_337",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-01-01T00:00:00+0000",
+      "mu": "1988-01-01T00:00:00+0000",
+      "digitalId": 23525,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/60/56e6d69743a76",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dave Hunt",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Morgan",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7719,
+      "title": "Captain America (1968) #338",
+      "number": "338",
+      "url": "https://www.marvel.com/comics/issue/7719/captain_america_1968_338",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-02-01T00:00:00+0000",
+      "mu": "1988-02-01T00:00:00+0000",
+      "digitalId": 23532,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/56e6d70018635",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Morgan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7720,
+      "title": "Captain America (1968) #339",
+      "number": "339",
+      "url": "https://www.marvel.com/comics/issue/7720/captain_america_1968_339",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-03-01T00:00:00+0000",
+      "mu": "1988-03-01T00:00:00+0000",
+      "digitalId": 23534,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/70/526176f761007",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tony Dezuniga",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7721,
+      "title": "Captain America (1968) #340",
+      "number": "340",
+      "url": "https://www.marvel.com/comics/issue/7721/captain_america_1968_340",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-04-01T00:00:00+0000",
+      "mu": "1988-04-01T00:00:00+0000",
+      "digitalId": 23535,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/59a6d642d91b1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7722,
+      "title": "Captain America (1968) #341",
+      "number": "341",
+      "url": "https://www.marvel.com/comics/issue/7722/captain_america_1968_341",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-05-01T00:00:00+0000",
+      "mu": "1988-05-01T00:00:00+0000",
+      "digitalId": 23063,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/52c5a49c96cd5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7723,
+      "title": "Captain America (1968) #342",
+      "number": "342",
+      "url": "https://www.marvel.com/comics/issue/7723/captain_america_1968_342",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-06-01T00:00:00+0000",
+      "mu": "1988-06-01T00:00:00+0000",
+      "digitalId": 23540,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/56e6d7d02dcb2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7724,
+      "title": "Captain America (1968) #343",
+      "number": "343",
+      "url": "https://www.marvel.com/comics/issue/7724/captain_america_1968_343",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-07-01T00:00:00+0000",
+      "mu": "1988-07-01T00:00:00+0000",
+      "digitalId": 23544,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/56e6d85176dce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7725,
+      "title": "Captain America (1968) #344",
+      "number": "344",
+      "url": "https://www.marvel.com/comics/issue/7725/captain_america_1968_344",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-08-01T00:00:00+0000",
+      "mu": "1988-08-01T00:00:00+0000",
+      "digitalId": 23549,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/56e6d8c040c58",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7726,
+      "title": "Captain America (1968) #345",
+      "number": "345",
+      "url": "https://www.marvel.com/comics/issue/7726/captain_america_1968_345",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-09-01T00:00:00+0000",
+      "mu": "1988-09-01T00:00:00+0000",
+      "digitalId": 23553,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/56e6da3db5183",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7727,
+      "title": "Captain America (1968) #346",
+      "number": "346",
+      "url": "https://www.marvel.com/comics/issue/7727/captain_america_1968_346",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-10-01T00:00:00+0000",
+      "mu": "1988-10-01T00:00:00+0000",
+      "digitalId": 23555,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/56e6dabfc1883",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7728,
+      "title": "Captain America (1968) #347",
+      "number": "347",
+      "url": "https://www.marvel.com/comics/issue/7728/captain_america_1968_347",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-11-01T00:00:00+0000",
+      "mu": "1988-11-01T00:00:00+0000",
+      "digitalId": 23548,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/90/56e6dbe5868c9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7729,
+      "title": "Captain America (1968) #348",
+      "number": "348",
+      "url": "https://www.marvel.com/comics/issue/7729/captain_america_1968_348",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1988-12-01T00:00:00+0000",
+      "mu": "1988-12-01T00:00:00+0000",
+      "digitalId": 23547,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/56e6dc7181611",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7730,
+      "title": "Captain America (1968) #349",
+      "number": "349",
+      "url": "https://www.marvel.com/comics/issue/7730/captain_america_1968_349",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1989-01-01T00:00:00+0000",
+      "mu": "1989-01-01T00:00:00+0000",
+      "digitalId": 23546,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/56e6dd39bca42",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7731,
+      "title": "Captain America (1968) #350",
+      "number": "350",
+      "url": "https://www.marvel.com/comics/issue/7731/captain_america_1968_350",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1989-02-01T00:00:00+0000",
+      "mu": "1989-02-01T00:00:00+0000",
+      "digitalId": 23541,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/56e6dd96415de",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jose Marzan Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "Kieron Dwyer",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Captain America: The Captain"
+    },
+    {
+      "issueId": 7631,
+      "title": "Captain America (1968) #250",
+      "number": "250",
+      "url": "https://www.marvel.com/comics/issue/7631/captain_america_1968_250",
+      "seriesId": 1996,
+      "seriesName": "Captain America (1968 - 1996)",
+      "onSale": "1980-10-01T00:00:00+0000",
+      "mu": "1980-10-01T00:00:00+0000",
+      "digitalId": 5417,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/4bb6ee71265ca",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Bonus: Captain America #250"
+    }
+  ]
+}

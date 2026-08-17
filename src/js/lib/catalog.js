@@ -168,7 +168,31 @@ function normalizeEntry(raw) {
     // true means the order opens the story it tells, so no prior reading is assumed beyond
     // general familiarity with the characters.
     beginner: raw.beginner === true,
+    // The year this order's reading starts, or null when it ranges across the timeline rather
+    // than sitting at a point on it. What the catalog is ordered by; see sortCatalog.
+    timeline: Number.isInteger(raw.timeline) && raw.timeline >= 1939 ? raw.timeline : null,
   };
+}
+
+// The catalog is a shelf, and a shelf has an order. Left to the manifest's own, it is the order
+// the lists happened to be added in, which put the 2004 story that begins the modern Avengers era
+// after the 2020 one that ends it. Sorting by the year each order's reading starts puts the shared
+// story back in the sequence it was told, which is the order a reader works through it in.
+//
+// An order with no year is not undated, it is unplaceable: a best-of that opens in 2004 and then
+// works back to 1966 sits at no point on the timeline, and giving it one would claim something
+// false. Those follow the dated run rather than being scattered through it, so the shelf reads as
+// the story first and the retrospectives after.
+//
+// The sort is stable, so orders that begin in the same year keep the manifest's order, and two
+// reading paths through one story stay together where their group expects them.
+export function sortCatalog(lists) {
+  return [...lists].sort((a, b) => {
+    if (a.timeline === b.timeline) return 0;
+    if (a.timeline == null) return 1;
+    if (b.timeline == null) return -1;
+    return a.timeline - b.timeline;
+  });
 }
 
 // Returns the usable entries plus a count of entries that had to be dropped, so the view can
@@ -189,7 +213,10 @@ export function parseCatalog(raw) {
     lists.push(list);
   }
 
-  return { lists, dropped };
+  // Sorted here rather than in each view, because the home grid shows only the first handful and
+  // the catalog shows them all: two call sites ordering differently would mean the shelf a reader
+  // skims and the shelf they search were not the same shelf.
+  return { lists: sortCatalog(lists), dropped };
 }
 
 // Categories are derived from the lists themselves, so a category never appears with nothing

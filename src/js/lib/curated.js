@@ -97,6 +97,13 @@ function checkEntry(raw, index, seen) {
   if (raw.coverIssueId != null && !(Number.isInteger(raw.coverIssueId) && raw.coverIssueId > 0)) {
     at('coverIssueId must be a positive whole Marvel issue id when present');
   }
+  // Where the order sits in the Marvel story, as the year its reading starts. Editorial for the
+  // same reason `beginner` is: it cannot be read off the issues. An order that opens in 2004 and
+  // then works back to 1966 begins in neither year, and the earliest issue in a file is not
+  // where a reader starts. 1939 is Marvel Comics #1, so nothing can begin before it.
+  if (raw.timeline != null && !(Number.isInteger(raw.timeline) && raw.timeline >= 1939)) {
+    at('timeline must be a whole year of 1939 or later when present');
+  }
   if (errors.length) return { entry: null, errors };
 
   return {
@@ -127,6 +134,9 @@ function checkEntry(raw, index, seen) {
       // Optional: the issue whose cover stands for the order on a card. Left null, the
       // vendor script uses the first issue in the order that has cover art.
       coverIssueId: Number.isInteger(raw.coverIssueId) && raw.coverIssueId > 0 ? raw.coverIssueId : null,
+      // Optional: the year this order's reading starts. Null means it ranges across the
+      // timeline rather than taking a place on it, which is what a best-of does.
+      timeline: Number.isInteger(raw.timeline) && raw.timeline >= 1939 ? raw.timeline : null,
       expect: Number.isInteger(raw.expect) ? raw.expect : null,
     },
     errors: [],

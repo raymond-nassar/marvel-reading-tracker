@@ -6,7 +6,7 @@ import {
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, sourceLicense, updatedLabel,
   safeOrderFile, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
   catalogFacets, filterByFacet, facetLabel, isShortOrder, catalogCoverUrl,
-  readingTimeLabel, MINUTES_PER_ISSUE, SHORT_ORDER_MAX, collectionsLabel, isTradeOrder,
+  readingTimeLabel, MINUTES_PER_ISSUE, SHORT_ORDER_MAX, collectionsLabel, isTradeOrder, sortCatalog,
 } from '../src/js/lib/catalog.js';
 
 test('safeOrderFile accepts a plain markdown name and nothing that escapes the orders folder', () => {
@@ -544,4 +544,76 @@ test('the collection count survives parsing the catalog', () => {
     lists: [{ id: 'b', name: 'B', file: 'b.json', count: 132, collections: 23 }],
   });
   assert.equal(lists[0].collections, 23);
+});
+
+// ------------------------------------------------------------------- timeline
+
+const dated = (id, timeline) => ({ id, name: id, file: `${id}.json`, count: 1, timeline });
+
+test('the shelf is ordered by the year each order starts, and undated orders follow the dated run', () => {
+  const shelf = sortCatalog([
+    dated('king-in-black', 2020),
+    dated('best-of', null),
+    dated('disassembled', 2004),
+    dated('claremont', null),
+    dated('essential-avengers', 1963),
+  ]);
+  assert.deepEqual(shelf.map((l) => l.id), [
+    'essential-avengers', 'disassembled', 'king-in-black', 'best-of', 'claremont',
+  ]);
+});
+
+// Two reading paths through one story are grouped under a single heading, and the group takes its
+// position from whichever member the shelf reaches first. Reordering has to leave that member the
+// same one, so a tie has to keep the catalog's own order rather than resolving it arbitrarily.
+test('orders that begin in the same year keep the order the catalog gives them', () => {
+  const same = ['civil-war', 'civil-war-essential', 'annihilation', 'civil-war-avengers'];
+  const shelf = sortCatalog(same.map((id) => dated(id, 2006)));
+  assert.deepEqual(shelf.map((l) => l.id), same);
+});
+
+test('sortCatalog leaves its argument alone', () => {
+  const input = [dated('b', 2020), dated('a', 1963)];
+  sortCatalog(input);
+  assert.deepEqual(input.map((l) => l.id), ['b', 'a']);
+});
+
+// parseCatalog builds an explicit object, so a field it does not name is dropped on load and
+// every order would sort as though it had no place on the timeline.
+test('the timeline year survives parsing the catalog', () => {
+  const { lists } = parseCatalog({ lists: [dated('x', 2006)] });
+  assert.equal(lists[0].timeline, 2006);
+});
+
+// A year is a whole number no earlier than Marvel Comics #1. Anything else is a maintainer's
+// typo, and a string would sort as though it were undated while looking correct in the file.
+test('a timeline that is not a usable year becomes null rather than being trusted', () => {
+  for (const bad of ['2006', 2006.5, 1900, -2006, null, undefined, {}]) {
+    const { lists } = parseCatalog({ lists: [dated('x', bad)] });
+    assert.equal(lists[0].timeline, null, `accepted ${JSON.stringify(bad)}`);
+  }
+});
+
+test('the shipped catalog carries the timeline recorded in the manifest', async () => {
+  const catalog = parseCatalog(JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8')));
+  const manifest = JSON.parse(await readFile(new URL('../src/data/curated-lists.json', import.meta.url), 'utf8'));
+  const wanted = new Map(manifest.lists.map((l) => [l.id, l.timeline ?? null]));
+  assert.equal(catalog.lists.length, wanted.size);
+  for (const list of catalog.lists) {
+    assert.equal(list.timeline, wanted.get(list.id), `${list.id} is not where the manifest puts it`);
+  }
+});
+
+// A group is one decision presented once. Giving its members different years would scatter them
+// across the shelf, and the heading would then sit at the earliest of them with the rest adrift.
+test('every reading path through one story starts in the same year', async () => {
+  const manifest = JSON.parse(await readFile(new URL('../src/data/curated-lists.json', import.meta.url), 'utf8'));
+  const byGroup = new Map();
+  for (const list of manifest.lists) {
+    if (!list.group) continue;
+    const seen = byGroup.get(list.group);
+    if (seen === undefined) byGroup.set(list.group, list.timeline ?? null);
+    else assert.equal(list.timeline ?? null, seen, `${list.id} starts in a different year from the rest of ${list.group}`);
+  }
+  assert.ok(byGroup.size >= 1, 'the manifest has at least one grouped story');
 });

@@ -158,6 +158,9 @@ function catalogEntry(order, payload) {
     // An editorial judgement recorded in curated-lists.json, not inferred: true means the
     // order opens the story it tells, so it assumes no prior reading.
     beginner: order.beginner === true,
+    // Also editorial: the year this order's reading starts, which is what the catalog is
+    // ordered by. Null for an order that ranges across the timeline instead of sitting on it.
+    timeline: Number.isInteger(order.timeline) ? order.timeline : null,
     coverIssueId,
     cover,
     source: payload.source,
