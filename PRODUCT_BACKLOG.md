@@ -4824,7 +4824,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2642-2651` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2668-2677` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:193-197` and
 `PRODUCT_BACKLOG.md:203-205` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6786,7 +6786,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:381-688`,
+are valuable history and are not a concise public policy. Evidence: `README.md:381-696`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 Shipped as four documents, a test that keeps them honest, and one correction to the README that the
