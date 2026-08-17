@@ -294,13 +294,13 @@
     "fp": "e9a1e74dee2c791e",
     "head": "// The publication gate answered a question that only gets asked once, and it was asked on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1669-1672|0": {
-    "anchor": "CHANGELOG.md:1669-1672",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1670-1673|0": {
+    "anchor": "CHANGELOG.md:1670-1673",
     "fp": "a1bbc9d008c99c4d",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1681-1684|0": {
-    "anchor": "CHANGELOG.md:1681-1684",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1682-1685|0": {
+    "anchor": "CHANGELOG.md:1682-1685",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -1054,8 +1054,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2545-2554|0": {
-    "anchor": "CHANGELOG.md:2545-2554",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2546-2555|0": {
+    "anchor": "CHANGELOG.md:2546-2555",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
