@@ -171,7 +171,8 @@ of the workflow file, which is a comment; the real line is `.github/workflows/ci
 the line caught it before it was blessed. Trusting the green would have preserved the error
 forever.
 
-Two traps in the gate itself, both hit while writing this file:
+Four traps in the gate itself. The first two were hit while writing this file; the fourth was found
+by a review on 2026-08-17, after it had already survived a full anchors cycle:
 
 - **The gate only sees tracked files.** It enumerates with `git ls-files`, so a new file you have
   not yet `git add`ed is invisible to it and will pass locally while failing in CI. Run `git add`
@@ -185,6 +186,22 @@ Two traps in the gate itself, both hit while writing this file:
   example of a mistake. Writing the wrong citation inside backticks, even to say it was wrong,
   creates that citation and the gate will chase it. Describe a wrong line in plain prose, as "line
   12 of the workflow file", never in the citation form.
+- **The `absent:` exemption reaches past its own clause, and what it swallows is dropped in
+  silence.** A backticked `absent:` token exempts only itself, but an unbackticked table cell
+  beginning with the marker exempts the **whole cell**, at `scripts/check-anchors.mjs:267`. So a
+  live citation written after an absence clause in the same cell is not drifted and not lost. It is
+  never enrolled at all, and the run reports 0 drifted, 0 new and 0 removed while the claim is
+  watched by nothing. BL-145's evidence row was written that way and passed a complete cycle before
+  a review found it. The test is not whether a cell mixes the marker with a citation, because the
+  one on main that does is correct: ask whether the citation is evidence **for** the absence or a
+  claim standing **beside** it. Inside the clause it must stay exempt, since BL-040 cites the
+  scripts block as evidence that no lint script existed and that block now defines one, so enrolling
+  it would demand a true historical record be falsified. Beside the clause it must be backticked as
+  its own token, the form used at `PRODUCT_BACKLOG.md:6282`. The tell is the exempt count the gate
+  prints on every run: a swallowed citation is counted rather than dropped from the tally, so that
+  number moves while everything else stays green. It moves for a correct exemption too, so treat it
+  as a prompt to look rather than a verdict, and know it is the only figure in the report that
+  changes at all when this happens.
 
 Step 3 used to be a print you rolled by hand, and the reason it is not any more is worth keeping.
 Re-aiming is per citation but printing is naturally per range, so when a script re-aims two

@@ -14,6 +14,23 @@ quote in a bug report.
 
 ## Unreleased
 
+### Record a way the evidence gate can lose a claim without reporting anything
+
+In plain English: nothing about the app changes, and nothing you have saved is affected. This adds a
+warning to the notes that contributors work from.
+
+The project checks that every reference to a line of code still points at what it claims. Those
+references can also be marked as describing something that is deliberately missing, and that mark
+was turning out to cover more of the surrounding text than intended. A reference sitting next to
+such a mark was therefore being skipped entirely: not reported as wrong, not reported as missing,
+just never looked at, while every check reported success.
+
+That happened to the packaging plan filed above and survived a full round of checking before a
+review caught it. The notes now describe the trap, the question that tells a correctly marked
+reference from a silently skipped one, and the single number in the report that moves when it
+happens. The heading above the list said two items while listing three, so it now says four and
+lists four.
+
 ### A one-download version of the app for Windows, researched and filed (BL-145)
 
 In plain English: nothing about the app changes yet, and nothing you have saved is affected. This
