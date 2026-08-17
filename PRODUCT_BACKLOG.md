@@ -18,7 +18,7 @@ BL-075, BL-076, BL-077, BL-078, BL-079, BL-080, BL-081, BL-082, BL-083, BL-084, 
 BL-088, BL-089, BL-090, BL-093, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, BL-100, BL-101,
 BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-114,
 BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
-BL-129, BL-130, BL-131, BL-132, BL-133, BL-134, BL-138, BL-139 and BL-140.
+BL-129, BL-130, BL-131, BL-132, BL-133, BL-134, BL-139, BL-140 and BL-141.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -233,7 +233,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | ID | Title | Type | Epic | Relationship | V | TC | RE | Size | WSJF | P | Basis | Status | Evidence |
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-128 | Correct the provenance record's description count and record its placeholder shape | Debt | EP-12 | Extends BL-099 | 5 | 5 | 3 | 1 | 13.0 | none | Measured | Shipped | docs/DATA_PROVENANCE.md:88-97 |
-| BL-139 | Give the tracker a file a non-engineer can double-click to start it | Story | EP-10 | Extends BL-138 | 5 | 2 | 3 | 1 | 10.0 | none | Observed | Shipped | absent: any way to start the app that is not a terminal command, read of the README's step 2 and a listing of the repository root |
+| BL-140 | Give the tracker a file a non-engineer can double-click to start it | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 1 | 10.0 | none | Observed | Shipped | absent: any way to start the app that is not a terminal command, read of the README's step 2 and a listing of the repository root |
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:557-566 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
 | BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/main.js:2101-2110 |
@@ -266,7 +266,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
 | BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3893-3896 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
-| BL-140 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-138 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
+| BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
 | BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1388-1389 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
@@ -316,7 +316,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:593-631 |
 | BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:291-314 |
 | BL-125 | Fail the build when a stated line count disagrees with the file it counts | Enabler | EP-12 | Extends BL-056 | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-sizes.mjs:31 |
-| BL-138 | Let the browser install the tracker, so it has a window and an icon of its own | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 2 | 3.0 | none | Observed | Shipped | absent: any web app manifest or app icon, read of the head of src/index.html and a listing of src/ |
+| BL-139 | Let the browser install the tracker, so it has a window and an icon of its own | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 2 | 3.0 | none | Observed | Shipped | absent: any web app manifest or app icon, read of the head of src/index.html and a listing of src/ |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
 | BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:253 |
@@ -9558,7 +9558,7 @@ The likely shape is a version stamp the cache carries, so a write from code that
 is refused by the store rather than by the writer. That is the same reasoning as BL-135: a guard at
 the boundary holds without every writer having to remember, and here the writer is a tab that cannot
 be updated because it is already running.
-**BL-138: Let the browser install the tracker, so it has a window and an icon of its own**
+**BL-139: Let the browser install the tracker, so it has a window and an icon of its own**
 
 - [x] Serve a web app manifest, with every path in it origin-relative
 - [x] Draw the app icons from a source anyone can read, rather than committing an opaque image
@@ -9605,7 +9605,7 @@ already held, and the two agreed on all 68. No range spanned an insertion point 
 `src/index.html`; four spanned it in `package.json`, all of them whole-file or whole-block ranges
 whose end moved and whose start did not.
 
-**BL-139: Give the tracker a file a non-engineer can double-click to start it**
+**BL-140: Give the tracker a file a non-engineer can double-click to start it**
 
 - [x] Add a launcher for each of the two desktop platforms this app is used on
 - [x] Make each one work from wherever the project was unzipped, not from wherever the shell was
@@ -9618,7 +9618,7 @@ breach and the one its tests are built around: a launcher that set `MRT_PORT`, o
 `localhost`, would put a reader on an origin their reading progress is not filed under, and the
 symptom is an empty app rather than an error.
 
-BL-138 gave the tracker an icon, and an icon is a promise that clicking it opens something. What it
+BL-139 gave the tracker an icon, and an icon is a promise that clicking it opens something. What it
 did not do was remove the terminal, and the terminal is where the audience for all of this stops
 reading: "open a terminal, change directory, type a command" is three instructions, each of which
 can fail in a way that produces a message written for somebody else. The file a person opens by
@@ -9656,7 +9656,7 @@ returned 200 for the page, the manifest and the 192 pixel icon. The macOS file i
 in bash and is checked by the same tests, but it has not been run on a Mac by anyone here, which is
 stated rather than implied.
 
-**BL-140: Let the installed window open when the server is not running**
+**BL-141: Let the installed window open when the server is not running**
 
 - [x] Keep a copy of the app in the browser, so an installed window has something to open
 - [x] Take that copy on the first visit, which is the visit somebody installs the app on
@@ -9672,7 +9672,7 @@ care: the worker declines to answer any request for another origin at all, cover
 CDN and issue metadata from the third-party service, so neither can enter the store even by
 accident. The browser probe below read the store back and found nothing in it from another origin.
 
-BL-138's own record said the install "does not start the app for you", and that an installed window
+BL-139's own record said the install "does not start the app for you", and that an installed window
 opened with nothing running "will simply say the site cannot be reached". That was true and it was
 the defect. An icon that works only when a terminal is already running is an icon that is wrong most
 of the time, and the reader has no way to tell a stopped server from a broken app: both are the same
