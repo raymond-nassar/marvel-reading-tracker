@@ -1247,6 +1247,10 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
     $('#form-home-q').hidden = true;
     $('#home-see-all').hidden = true;
     $('#home-overflow').hidden = true;
+    // Named here rather than left to the markup's initial attribute. This branch returns before
+    // the block that owns these three, so every control that block reveals has to be put away
+    // again by hand, and relying on the attribute only works while nothing has rendered yet.
+    $('#home-more').hidden = true;
     grid.replaceChildren(el('li', { class: 'rail-hint', text: 'No curated reading orders are bundled with this build.' }));
     return;
   }

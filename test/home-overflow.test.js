@@ -97,3 +97,26 @@ test('the control below the grid is operable, not a sentence about the shortfall
   assert.equal(tag[1], 'button', 'the way out of the grid is not something a reader can press');
   assert.match(markup, /<button[^>]*id="home-more"[^>]*hidden/, 'it is not hidden until it is needed');
 });
+
+// The empty catalog returns before the block that reveals the overflow controls, so it has to put
+// every one of them away itself. Adding a third control and leaving this branch naming two is the
+// same defect the count line had: a rule applied in one place and not the other, agreeing only
+// while something incidental stays true. Here the incidental truth is that the catalog is memoized
+// and never emptied after a successful load, so the branch is reachable only before anything has
+// rendered and the markup's own hidden attribute happens to cover the gap. This asserts the
+// relationship rather than that coincidence.
+test('a catalog with nothing in it puts away every control the full render reveals', () => {
+  const source = readFileSync(join(ROOT, 'src', 'js', 'main.js'), 'utf8');
+
+  const start = source.indexOf('if (!all.length) {');
+  assert.ok(start > -1, 'the empty-catalog branch has moved or gone');
+  const branch = source.slice(start, source.indexOf('\n  }', start));
+
+  const ids = (text, pattern) => new Set([...text.matchAll(pattern)].map((m) => m[1]));
+  const revealed = ids(source, /\$\('#([\w-]+)'\)\.hidden = overflow\.hidden;/g);
+  const putAway = ids(branch, /\$\('#([\w-]+)'\)\.hidden = true;/g);
+
+  assert.ok(revealed.size >= 3, `expected the render to own at least three controls, saw ${revealed.size}`);
+  const leftBehind = [...revealed].filter((id) => !putAway.has(id));
+  assert.deepEqual(leftBehind, [], `left showing on an empty catalog: ${leftBehind.join(', ')}`);
+});
