@@ -299,7 +299,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Shipped | server.mjs:89-101 |
 | BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/main.js:629-633 |
 | BL-136 | Decide what happens to the prose in copies kept for recovery | Debt | EP-06 | Follows BL-134 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/storage.js:547 |
-| BL-145 | Ship the tracker to Windows as one archive that needs nothing installed | Story | EP-10 | Extends BL-140 | 5 | 2 | 3 | 3 | 3.33 | none | Measured | Ready | absent: any packaged archive or published release asset, an empty return from the release listing and a listing of the repository root; package.json:28-30 |
+| BL-145 | Ship the tracker to Windows as one archive that needs nothing installed | Story | EP-10 | Extends BL-140 | 5 | 2 | 3 | 3 | 3.33 | none | Measured | Ready | `absent: any packaged archive or published release asset, an empty return from the release listing and a listing of the repository root`, `package.json:28-30` |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | `scripts/browser-check.mjs:1-7`, `package.json:24-25` |
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | src/js/lib/model.js:214 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:52-67 |
@@ -4597,7 +4597,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:10529-10531` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:10538-10540` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4607,11 +4607,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:202-204`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10548-10552`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10557-10561`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10363-10365` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10372-10374` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -10122,27 +10122,36 @@ one person who cannot reproduce it. The x64 build is the one to ship: it runs na
 machine and under emulation here, so a single archive serves both and the author still tests what
 the reader receives.
 
-The size is unremarkable. The runtime binary alone compresses to 29 MiB, the published
-`node-v22.23.2-win-x64.zip` is 35,683,585 bytes, and the app adds 3.6 MiB across 94 files before
-compression, of which 3.0 MiB is vendored order data. Retrieved from
-<https://nodejs.org/dist/latest-v22.x/> on 2026-08-16. A download near 30 MiB is ordinary and needs
-no explaining.
+The size is unremarkable, and it was measured by building the archive rather than by adding up
+parts. Staging the x64 `node.exe` beside `src/` and compressing produced 35,270,705 bytes, near 34
+MiB. The runtime is nearly all of it: that binary compresses to 31 MiB inside the published
+`node-v24.19.0-win-x64.zip`, itself 37,304,352 bytes, while the app adds 3.6 MiB across 94 files
+before compression, of which 3.0 MiB is vendored order data. Retrieved from
+<https://nodejs.org/dist/v24.19.0/> on 2026-08-17. A download near 34 MiB is ordinary and needs no
+explaining.
 
-The version floor is already settled. `package.json:28-30` asks for Node 20 or newer, so bundling
-the current 22 LTS satisfies the floor the tests are written against instead of introducing a second
-one.
+The version to bundle is chosen by the test matrix, not by the engines floor alone.
+`package.json:28-30` asks for Node 20 or newer, which every current line satisfies, so the floor
+narrows nothing. `.github/workflows/ci.yml:40` does: the suite runs on 20 and 24 and on nothing
+else, so bundling any other line would hand the reader a runtime this project never runs its own
+tests against. That picks 24, which is also the newest LTS line and the one the app is developed on.
+An earlier draft of this item said the floor had already settled the question and named 22. The
+floor does permit 22, and the matrix is the reason not to ship it.
 
 The licence is larger than one word. The runtime's own grant is MIT, but the file that travels with
-the distribution is 145,485 bytes and names 43 bundled components, OpenSSL and V8 and ICU among
-them, each carrying its own attribution terms. Retrieved from the v22.x branch on 2026-08-17.
+the distribution is 157,606 bytes and names 44 bundled components, OpenSSL and V8 and ICU among
+them, each carrying its own attribution terms. Retrieved from the v24.x branch on 2026-08-17.
 Writing MIT beside the binary would under-attribute what is inside it, so the archive carries that
 whole file. This repository already treats a licence question as first-class, and BL-130 exists to
 close one before publication, so the record should not be the thing that sets the bar too low.
 
 The obvious alternative was built rather than argued about. Node can produce a single executable and
-one was made: 77 MiB, with an embedded asset read back correctly at runtime and the experimental
-warning suppressed, so its output was clean. It was still rejected, and the reason is narrower than
-the first draft of this item claimed.
+one was made, with an embedded asset read back correctly at runtime and the experimental warning
+suppressed, so its output was clean. It measured 77 MiB, and that number needs the same care as the
+paragraph above demands: it is an ARM64 build, because it was injected into the ARM64 binary this
+machine runs. A single executable is its base binary plus the injected payload, and the x64
+`node.exe` is 92,825,416 bytes by itself, so the artifact a reader would receive is nearer 89 MiB.
+It was rejected either way, and the reason is narrower than the first draft of this item claimed.
 
 That draft said the executable meets a warning and the archive meets none. Half of it was wrong, and
 this repository's own README says so at `README.md:122-124`, where the reader is already told their
