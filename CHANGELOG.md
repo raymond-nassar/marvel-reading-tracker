@@ -46,9 +46,9 @@ Four smaller things behave better than they did in the first draft of this featu
 nothing could be reached now says so, instead of reporting that everything was fetched. An issue the
 service answers with no summary now says that plainly, rather than looking as though it has not been
 tried. If you change the service address while a run is going, the run stops, what it collected
-is cleared, and the next run asks the address you just typed in. And stopping a run part way now
-reports how many summaries it actually had, rather than counting the ones it failed to reach as
-though they had arrived.
+is cleared, and the next run asks the address you just typed in. And the number on screen while a
+run is going, and the one it leaves behind if you stop it, now both count only the summaries that
+actually arrived, rather than counting the ones it failed to reach as though they had arrived.
 
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 

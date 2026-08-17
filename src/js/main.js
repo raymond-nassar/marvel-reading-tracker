@@ -2491,12 +2491,25 @@ function renderSynopsisButtons() {
 }
 
 export function synopsisStatusLine(status) {
+  // done counts attempts, not answers, so every branch below that reports a count subtracts the
+  // failures and names them. Doing it in only some of them is worse than doing it in none: while
+  // the running line reported attempts and the endings reported answers, pressing stop on a run
+  // that had lost two of three rewrote 3 to 1 in front of the reader, and the number appeared to
+  // go backwards at the one moment they were looking at it.
   const phase = status?.phase;
-  if (phase === 'running') return `Fetching synopses ${status.done} of ${status.total}\u2026`;
+  // renderSynopsis hides the box without setting any text for these, so the empty string is what
+  // this function has always effectively returned for them. It is exported now, and a caller that
+  // did not replicate that guard would otherwise be told a run that never started had finished.
+  if (!status || phase === 'idle') return '';
+  if (phase === 'running') {
+    const failed = Number(status.failed ?? 0);
+    const line = `Fetching synopses ${status.done - failed} of ${status.total}\u2026`;
+    return failed ? `${line} ${failed} could not be reached.` : line;
+  }
   if (phase === 'cancelled') {
-    // done counts attempts, not answers. A stop after three requests of which two were refused would
-    // otherwise read "Stopped after 3 of 5" beside a hero still saying no synopsis is recorded, which
-    // is the same untruth the partial ending was added to stop telling. Same subtraction it makes.
+    // A stop after three requests of which two were refused would otherwise read "Stopped after 3
+    // of 5" beside a hero still saying no synopsis is recorded, which is the same untruth the
+    // partial ending was added to stop telling. Same subtraction it makes.
     const failed = Number(status.failed ?? 0);
     if (!failed) return `Stopped after ${status.done} of ${status.total}.`;
     return `Stopped after ${status.done - failed} of ${status.total}. ${failed} could not be reached.`;

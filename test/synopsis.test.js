@@ -746,3 +746,57 @@ test('what a real stopped run says matches the answers it actually holds', async
   assert.equal(session.size, 1, 'the run held a different number of answers than the test assumed');
   assert.match(synopsisStatusLine(last), new RegExp(`Stopped after ${session.size} of 5`));
 });
+
+// Fixing the stopped ending without the running one left the two disagreeing, which is worse than
+// leaving both wrong: the reader watched the number climb to 3 and pressing stop rewrote it to 1.
+// A count that moves backwards at the moment it is being read is the failure the subtraction is
+// meant to prevent, not a smaller version of it.
+test('the running line does not count the requests that were refused', () => {
+  const line = synopsisStatusLine({ phase: 'running', done: 3, total: 5, failed: 2 });
+  assert.match(line, /Fetching synopses 1 of 5/);
+  assert.match(line, /2 could not be reached/);
+});
+
+test('the running line stays plain until something is actually lost', () => {
+  const line = synopsisStatusLine({ phase: 'running', done: 3, total: 5, failed: 0 });
+  assert.equal(line, 'Fetching synopses 3 of 5\u2026');
+});
+
+// The whole point of the subtraction is that these two agree, so this asserts them against each
+// other rather than against a number written into the test.
+test('the count does not jump when a failing run is stopped', async () => {
+  const { state, listId } = stateWith([1, 2, 3, 4, 5]);
+  const session = new SessionSynopsis();
+  let lastRunning = null;
+  let cancelled = null;
+  const api = instantApi((id) => {
+    if (id === 1) return withProse(1);
+    if (id === 2 || id === 3) throw new TypeError('Failed to fetch');
+    return withProse(id);
+  });
+  const runner = new SynopsisRunner({
+    api,
+    store: fakeStore(state),
+    session,
+    onProgress: (s) => {
+      if (s.phase === 'running') {
+        lastRunning = synopsisStatusLine(s);
+        if (s.done === 3) runner.cancel();
+      } else if (s.phase === 'cancelled') cancelled = synopsisStatusLine(s);
+    },
+  });
+
+  await within(runner.start(listId), 'the stopped run to unwind');
+
+  const shown = (line) => Number(/(\d+) of 5/.exec(line)[1]);
+  assert.equal(session.size, 1, 'the run held a different number of answers than the test assumed');
+  assert.equal(shown(lastRunning), shown(cancelled), `"${lastRunning}" then "${cancelled}"`);
+  assert.equal(shown(cancelled), session.size);
+});
+
+// Exported now, so it can be called by something that does not repeat renderSynopsis's own guard.
+test('the status line says nothing at all before a run starts', () => {
+  assert.equal(synopsisStatusLine(null), '');
+  assert.equal(synopsisStatusLine(undefined), '');
+  assert.equal(synopsisStatusLine({ phase: 'idle' }), '');
+});
