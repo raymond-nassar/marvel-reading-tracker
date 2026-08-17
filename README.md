@@ -674,18 +674,30 @@ progress lives only in the reader's own browser, and nothing can migrate it for 
 
 To cut a release:
 
-1. Write the entry in [CHANGELOG.md](CHANGELOG.md) under the new version number, and commit it.
-2. Run `npm version <major|minor|patch>`. This bumps `package.json` and the lock file, rewrites
-   `APP_VERSION` to match, commits the lot, and creates the `v<version>` tag.
-3. Push with `git push --follow-tags`.
+1. Write the entry in [CHANGELOG.md](CHANGELOG.md) under the new version number.
+2. Run `npm version <major|minor|patch> --no-git-tag-version`. This bumps `package.json` and the
+   lock file and rewrites `APP_VERSION` to match, without creating a tag.
+3. Commit, open a pull request, and merge it.
+4. Build the archive with `npm run pack`, then create the release from the merged commit with that
+   archive attached. Creating the release is what creates the `v<version>` tag.
+
+The tag is deliberately not created locally, which is why step 2 passes `--no-git-tag-version`.
+Branches here are squash-merged, so a tag made before the merge points at a branch commit that
+never reaches the default branch, and the release would name a commit nobody can check out from
+it. Creating the tag from the merged commit instead is what `v1.1.0` did, and its tag resolves to
+the squash commit on the default branch rather than to the branch it was written on.
 
 Step 2 rewrites the constant through [`scripts/sync-version.mjs`](scripts/sync-version.mjs),
-wired to npm's `version` lifecycle so it runs after the bump but before the commit. That
+wired to npm's `version` lifecycle so it runs as part of the bump rather than after it. That
 ordering matters: it means the number the browser reads and the number npm recorded agree in
 every commit, rather than disagreeing in the gap between two of them. The constant is
 hand-written rather than generated because the app has no build step, and
 [`test/version.test.js`](test/version.test.js) fails if the two ever drift, so a mismatch
 cannot reach the default branch.
+
+The download link in [Start here](#start-here) points at the latest release rather than at a
+version, so publishing a release is also what replaces the file a reader downloads. A fix that is
+merged but not released is not a fix any reader has.
 
 ## Disclaimer
 

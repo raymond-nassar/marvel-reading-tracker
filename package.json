@@ -1,6 +1,6 @@
 {
   "name": "marvel-reading-tracker",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "description": "Local, private reading-order tracker that deep-links into the Marvel Unlimited web reader.",

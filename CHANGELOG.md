@@ -12,7 +12,16 @@ upgrading across a MAJOR.
 Releases are tagged `v<version>`. The version shown under **About this app** is the one to
 quote in a bug report.
 
-## Unreleased
+## 1.1.1
+
+A correction to the download, and the reason it needed one is worth stating: the fault below was
+found by starting the packaged archive rather than by reading the code, so it could not have been
+caught before 1.1.0 existed to be started. This is a PATCH because it changes what the tracker says
+when it cannot start, and nothing about what it stores or how it looks. Upgrading needs no backup,
+and there is nothing to migrate.
+
+The 1.1.0 download carries the old wording. Replacing the download is the whole point of this
+release.
 
 ### Stop the startup failure messages naming a tool the download does not carry
 
@@ -46,6 +55,23 @@ a socket is taken is a branch nobody reads. `test/startup-messages.test.js` chec
 binding a port. Five of its seven assertions were run against the shipped strings and fail on them.
 The other two are regression guards, and one of those caught the replacement copy at 88 characters,
 which is wider than the console window the launcher opens.
+
+### Correct the release procedure, which described a tag this project does not create that way
+
+In plain English: nothing here affects the app. This is a note for whoever cuts the next release.
+
+The written procedure said to let npm create the version tag and then push it. That is not how the
+only release so far was actually made, and following it would leave the tag naming a commit that no
+longer exists on the default branch, because branches here are squashed when they merge. Anyone
+clicking through from the release would land on a commit they cannot check out.
+
+The procedure now says to bump the version without a tag, merge, and then create the release from
+the merged commit, which is what makes the tag. Checked against the tag that exists: `v1.1.0`
+resolves to the squash commit on the default branch, not to the branch commit it was written on.
+
+A step was also added for building and attaching the archive, and a sentence recording why it is not
+optional. The download link points at the latest release rather than at a version, so the merge is
+not what reaches a reader. The release is.
 
 ## 1.1.0
 

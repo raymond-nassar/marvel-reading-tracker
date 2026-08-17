@@ -304,13 +304,13 @@
     "fp": "e9a1e74dee2c791e",
     "head": "// The publication gate answered a question that only gets asked once, and it was asked on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1766-1769|0": {
-    "anchor": "CHANGELOG.md:1766-1769",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1792-1795|0": {
+    "anchor": "CHANGELOG.md:1792-1795",
     "fp": "a1bbc9d008c99c4d",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1778-1781|0": {
-    "anchor": "CHANGELOG.md:1778-1781",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1804-1807|0": {
+    "anchor": "CHANGELOG.md:1804-1807",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -816,7 +816,7 @@
   },
   "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-37|0": {
     "anchor": "package.json:1-37",
-    "fp": "8eb3d9f2ed955aa0",
+    "fp": "5a950505a8ccded9",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:1043-1074|0": {
@@ -1064,8 +1064,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2642-2651|0": {
-    "anchor": "CHANGELOG.md:2642-2651",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2668-2677|0": {
+    "anchor": "CHANGELOG.md:2668-2677",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1116,7 +1116,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|package-lock.json:1-22|0": {
     "anchor": "package-lock.json:1-22",
-    "fp": "e489d1e8b10e5390",
+    "fp": "2692aa4268cfa8f9",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:14-15|0": {
@@ -1214,9 +1214,9 @@
     "fp": "d3da7d60a7417412",
     "head": "internet. On a Mac, if double-clicking does nothing or the file opens in a text editor"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:381-688|0": {
-    "anchor": "README.md:381-688",
-    "fp": "6bde91c5ecbd81e7",
+  "PRODUCT_BACKLOG.md|item-details|README.md:381-696|0": {
+    "anchor": "README.md:381-696",
+    "fp": "b132d98f7169c025",
     "head": "## For contributors"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:496-531|0": {
@@ -3486,7 +3486,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-37|0": {
     "anchor": "package.json:1-37",
-    "fp": "8eb3d9f2ed955aa0",
+    "fp": "5a950505a8ccded9",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:32-37|0": {
@@ -3501,13 +3501,13 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:3|0": {
     "anchor": "package.json:3",
-    "fp": "b7e605c001fd37e6",
-    "head": "\"version\": \"1.1.0\","
+    "fp": "3d0d28dddedfa25c",
+    "head": "\"version\": \"1.1.1\","
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:3|1": {
     "anchor": "package.json:3",
-    "fp": "b7e605c001fd37e6",
-    "head": "\"version\": \"1.1.0\","
+    "fp": "3d0d28dddedfa25c",
+    "head": "\"version\": \"1.1.1\","
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:1043-1074|0": {
     "anchor": "src/js/lib/model.js:1043-1074",
@@ -3546,7 +3546,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-37|0": {
     "anchor": "package.json:1-37",
-    "fp": "8eb3d9f2ed955aa0",
+    "fp": "5a950505a8ccded9",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:12|0": {
@@ -3636,8 +3636,8 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-043|package.json:3|0": {
     "anchor": "package.json:3",
-    "fp": "b7e605c001fd37e6",
-    "head": "\"version\": \"1.1.0\","
+    "fp": "3d0d28dddedfa25c",
+    "head": "\"version\": \"1.1.1\","
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-044|server.mjs:129-139|0": {
     "anchor": "server.mjs:129-139",
