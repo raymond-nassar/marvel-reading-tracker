@@ -534,6 +534,20 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 .fp input:checked + span { background: rgb(var(--tint-base) / 6.275%); color: var(--text); }
 .fp input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: 2px; }
 
+/* The choice between reading paths through one story, in the catalog list and in the preview
+   dialog. The pills are the filter pills above, because they are the same act, picking one of a
+   few named options, and a second pill treatment would only be a second thing to learn.
+   Deliberately not on a shelf card: measured at 1280x900, a chooser cost 123px on a 277px card and
+   the labels, which are authored prose of 17 to 46 characters, wrapped to two lines each in a card
+   column. The card offers `.ocard-ways` instead and the choice is made here, where the row and the
+   dialog are both full width and the labels fit on one line. */
+.paths { border: 0; padding: 0; margin: 0 0 .45rem; }
+.paths legend { padding: 0; color: var(--muted); font-size: .72rem; margin-bottom: .3rem; }
+.paths .path { margin: 0 .3rem .3rem 0; }
+.paths .path span { font-size: .74rem; }
+.result .paths { margin: .35rem 0 .4rem; }
+#preview-paths .paths { margin: .55rem 0 .2rem; }
+
 .rows { display: grid; gap: .18rem; list-style: none; margin: 0; padding: 0; }
 /* A collected edition heading. The read count is text beside the bar rather than only the bar,
    for the reason the sidebar progress is: a bar alone is not readable to a screen reader and
@@ -705,12 +719,6 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
 .result-title { font-size: .87rem; font-weight: 520; }
 .result-meta { color: var(--muted); font-size: .76rem; }
 .result progress { width: 120px; }
-.result-group {
-  display: grid; gap: .4rem; padding: .6rem .7rem;
-  border: 1px solid var(--line); border-radius: 12px; background: var(--card);
-}
-.result-group-h { margin: 0; font-size: .95rem; font-weight: 600; }
-.result-group > .result-meta { margin: 0; }
 .result-source { margin: .2rem 0 0; }
 .result-source a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .result-source a:hover { color: var(--text); }
@@ -819,6 +827,20 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
 }
 .ocard-meta { color: var(--muted); font-size: .74rem; margin: 0 0 .35rem; }
+/* The card's whole account of a story that can be read more than one way: that there is a choice,
+   and how many ways there are. Quiet, one line, and no wider than the meta line above it, because
+   the choice itself is not made here. It is underlined rather than only coloured so it reads as
+   something to press without depending on colour, and raised above the card-wide preview overlay
+   so pressing it is unambiguous even though it opens the same dialog. */
+.ocard-ways { margin: 0 0 .35rem; position: relative; z-index: 1; }
+.ocard-ways .ways {
+  background: none; border: 0; font: inherit; font-size: .74rem;
+  color: var(--muted); text-decoration: underline; text-underline-offset: 2px;
+  /* Padding rather than a bare inline run, so the target clears the 24px floor that WCAG 2.2
+     asks for at AA. Measured at .74rem it lands at 26px. */
+  display: inline-block; padding: .3rem 0; min-height: 24px;
+}
+.ocard-ways .ways:hover { color: var(--text); }
 .ocard-foot {
   display: flex; flex-direction: column; gap: .4rem;
   padding: 0 .85rem .85rem; margin-top: auto;

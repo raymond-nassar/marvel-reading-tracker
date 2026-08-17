@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T04:15:24.580Z",
+  "generatedAt": "2026-08-17T06:25:41.864Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -982,9 +982,9 @@
         "Thunderbolts",
         "Warren Ellis"
       ],
-      "group": null,
-      "groupName": null,
-      "variant": null,
+      "group": "civil-war",
+      "groupName": "Civil War",
+      "variant": "The Avengers path, through the war and past it",
       "beginner": false,
       "timeline": 2006,
       "coverIssueId": 4216,

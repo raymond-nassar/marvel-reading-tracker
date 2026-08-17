@@ -709,6 +709,12 @@
       </div>
       <p class="result-meta" id="preview-meta"></p>
       <p class="rail-hint" id="preview-desc"></p>
+      <!-- Where a story can be read more than one way, the choice between its paths lives here
+           rather than on the shelf card. Measured at 1280x900: the chooser cost 123px on a 277px
+           card and took the grid from 1149px to 1458px, and the labels are authored prose that
+           wraps to two lines in a card column. This dialog is full width, and it is the surface a
+           reader opens once they have already decided they are interested in the story. -->
+      <div id="preview-paths"></div>
       <div id="preview-body"></div>
       <!-- Adding an order can fail while this dialog is still open. A modal puts the rest
            of the page in another layer, inert and behind the backdrop, so the pane the
