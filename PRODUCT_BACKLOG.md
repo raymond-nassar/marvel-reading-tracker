@@ -4817,7 +4817,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2438-2447` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2462-2471` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:192-196` and
 `PRODUCT_BACKLOG.md:202-204` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6857,7 +6857,7 @@ Constraint gate: checked 1 to 11, none breached.
 No ownership file or issue and pull-request templates exist. The internal instructions require a
 plain-English opening and verification counts, but an external contributor never sees that shape in
 the contribution flow. Branch rules are a settings-only check and must be verified separately.
-Evidence: `.github/copilot-instructions.md:392-424`,
+Evidence: `.github/copilot-instructions.md:407-439`,
 `absent: CODEOWNERS and issue or pull request templates, tracked-file inventory`.
 
 Shipped, with the fifth task open and recorded as a blocker rather than ticked, in the shape BL-099
@@ -8390,7 +8390,7 @@ check would have caught it and said nothing else.
 Two exclusions are load-bearing and both have precedent in the anchors gate. Code is excluded: the
 test fixtures for that gate repeat a citation nineteen times because a `path:line` there is data the
 program computes with rather than a claim, which is the same distinction
-`.github/copilot-instructions.md:169-171` already draws for bare citations outside Markdown. Table
+`.github/copilot-instructions.md:179-181` already draws for bare citations outside Markdown. Table
 rows are excluded: flattening line breaks to read sentences runs a table's header and separator into
 its rows, and a crude splitter reports the whole ledger as one sentence, which is how the one false
 positive in the measurement arose.

@@ -284,13 +284,13 @@
     "fp": "e9a1e74dee2c791e",
     "head": "// The publication gate answered a question that only gets asked once, and it was asked on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1562-1565|0": {
-    "anchor": "CHANGELOG.md:1562-1565",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1586-1589|0": {
+    "anchor": "CHANGELOG.md:1586-1589",
     "fp": "a1bbc9d008c99c4d",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1574-1577|0": {
-    "anchor": "CHANGELOG.md:1574-1577",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1598-1601|0": {
+    "anchor": "CHANGELOG.md:1598-1601",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -964,13 +964,13 @@
     "fp": "e53c56c7408f1625",
     "head": "depth"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:169-171|0": {
-    "anchor": ".github/copilot-instructions.md:169-171",
+  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:179-181|0": {
+    "anchor": ".github/copilot-instructions.md:179-181",
     "fp": "ed4f9606558b8b5e",
     "head": "- **Outside Markdown, only a backticked citation is collected.** In a document both forms are, but"
   },
-  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:392-424|0": {
-    "anchor": ".github/copilot-instructions.md:392-424",
+  "PRODUCT_BACKLOG.md|item-details|.github/copilot-instructions.md:407-439|0": {
+    "anchor": ".github/copilot-instructions.md:407-439",
     "fp": "eaed0b26a1cb1201",
     "head": "- Commit messages explain why the change is right, in the same register as the comments."
   },
@@ -1039,8 +1039,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2438-2447|0": {
-    "anchor": "CHANGELOG.md:2438-2447",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2462-2471|0": {
+    "anchor": "CHANGELOG.md:2462-2471",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },

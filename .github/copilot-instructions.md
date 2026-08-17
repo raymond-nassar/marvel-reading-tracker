@@ -96,8 +96,18 @@ are a historical record and must not be re-aimed to satisfy a gate. Navigate the
 markers and headings, and keep citations in the product documents, where re-aiming is the correct
 response to drift.
 
-Two scope rules, both of which match how the owner asks for work:
+Three scope rules, all of which match how the owner asks for work. The first was added on
+2026-08-16, in the owner's own words, after a run of pull requests in which each one existed
+only to correct the record left by the one before it:
 
+- **Spend the effort on the product, not on the record of it.** Features, data, constraints and
+  capabilities are what a change is for. How many lines apart two sentences sit, which commit left
+  a line badly wrapped, and whether a claim is anchored to the sentence or the clause are not, and
+  correcting a claim of that kind is worth less than the pull request it costs. When you find a
+  defect in that class, and you will, either fix it silently inside a change you are already making
+  for another reason, or leave it. **Do not open a change for it, do not route it as a follow-up,
+  and do not raise it as a review finding.** This does not license inventing figures: an assertion
+  you choose to make must still be true. It says to make fewer of them.
 - **Do not widen active scope.** Unrelated work becomes an explicit follow-up entry in
   `PRODUCT_BACKLOG.md`, not an extra commit in the current change. One major feature per pull
   request.
@@ -277,6 +287,11 @@ Both survived every automated gate.
 So: **when you touch a document, re-derive every count in the part you touched.** Do not carry a
 number forward because it was there before. If you change how many of something exists, search the
 document for the old number.
+
+This rule is about counts of things the project has: items, tests, assertions, files. It is not a
+licence to go measuring distances between sentences, and the first scope rule above outranks it. A
+count that is wrong in a document you are already editing is worth the thirty seconds; it is not
+worth a pull request of its own.
 
 ## Writing a check that can actually fail
 
