@@ -164,6 +164,26 @@ by the disputed figure: reproducing that pair by hand means editing the app and 
 and it is printed by a committed check now. The four measured reverts are written out in full in the
 project's list of planned improvements, with what each one reddens and whether it prints the pair.
 
+A second correction, this one to the record rather than to the text above. The correction above was
+itself followed by a further one, which revised the same account where it is told at greater length
+in the project's list of planned improvements, and changed nothing in this file. Every change here
+carries a written description of itself in the project's history, and that further correction's
+description of itself is wrong twice over. Since it left no entry of its own on this page, this is
+the nearest place its correction can go.
+
+It blames the change before it for a badly wrapped line, when the line in question was full width in
+that earlier change and was broken by the very change now complaining of it. And it puts the
+sentence that contradicted a mistaken claim eleven lines above the claim and in the same paragraph,
+when the two sit eighteen lines apart, measured from the words that description itself quotes to the
+phrase it was correcting, and in different paragraphs with a blank line between them. Neither
+statement is about the app, and neither alters which conclusion is right. A description of a change
+cannot be edited once the change has been accepted, so a correction has to sit beside it instead.
+
+That makes four reviews in a row, each of which found the one before it asserting something the
+project's own record already contradicted. Not one of the four needed a measurement repeated. Each
+needed the finished work read back against what had already been written down, whether on the page
+above it or in the project's history, and that is the check which kept being skipped.
+
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 
 In plain English: nothing you have saved is affected, and the app itself does not change. This
