@@ -14,6 +14,14 @@ quote in a bug report.
 
 ## Unreleased
 
+## 1.1.0
+
+The first release with a download. Everything below had accumulated in the tree since 1.0.0 without
+a number against it, which made the version the app reports useless in a bug report: it said 1.0.0
+while running something considerably later. This entry gives that work a number, and it is a MINOR
+because it adds features and leaves stored data readable by the previous build. Nothing here changes
+how reading progress is saved, so upgrading needs no backup and loses nothing.
+
 ### Offer the tracker as one download that needs nothing installed
 
 In plain English: on Windows there is now a single download that contains everything, so there is
