@@ -219,3 +219,31 @@ test('every order authored here records how it was derived', async () => {
     );
   }
 });
+
+// A timeline year decides where an order sits on the shelf. A string or a fractional year would
+// pass through as though the order had no place at all, so it is rejected with the reason rather
+// than quietly reordering the catalog.
+test('a timeline that is not a whole year of 1939 or later is refused', () => {
+  for (const bad of ['2006', 2006.5, 1938, -2006, true]) {
+    const { entries, errors } = parseManifest({ lists: [{ ...valid, timeline: bad }] });
+    assert.equal(entries.length, 0, `accepted ${JSON.stringify(bad)}`);
+    assert.ok(errors.some((e) => e.includes('timeline')), `no timeline error for ${JSON.stringify(bad)}`);
+  }
+});
+
+test('an order with no timeline is valid, and records that it has no place on the shelf', () => {
+  const { entries, errors } = parseManifest({ lists: [{ ...valid, timeline: 1963 }] });
+  assert.deepEqual(errors, []);
+  assert.equal(entries[0].timeline, 1963);
+  assert.equal(parseManifest({ lists: [valid] }).entries[0].timeline, null);
+});
+
+test('every order in the shipped manifest states where it sits on the timeline', async () => {
+  const raw = JSON.parse(await readFile(new URL('../src/data/curated-lists.json', import.meta.url), 'utf8'));
+  for (const list of raw.lists) {
+    assert.ok(
+      Object.hasOwn(list, 'timeline'),
+      `${list.id} does not say where it sits, so it would fall to the end of the shelf by accident`,
+    );
+  }
+});

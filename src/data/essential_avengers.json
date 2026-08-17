@@ -1,0 +1,3909 @@
+{
+  "id": "essential-avengers",
+  "name": "Essential Avengers",
+  "description": "Ten runs out of the first 285 issues of Avengers, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. It takes the team from its assembly and the return of Captain America through the arrival of the Vision, the Kree and Skrull War, the Bride of Ultron, the Korvac Saga, the nights of Wundagore, Heart of Stone, the legacy of Thanos, Under Siege and the assault on Olympus. The gaps between sections are the outline's own: this is a selection rather than a continuous read.",
+  "source": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.795Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 120,
+  "collections": 10,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 6951,
+      "title": "Avengers (1963) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/6951/avengers_1963_1",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1963-09-01T00:00:00+0000",
+      "mu": "2007-11-13T00:00:00+0000",
+      "digitalId": 482,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/519b819d54e34",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 48079,
+      "title": "Avengers (1963) #1.5",
+      "number": "1.5",
+      "url": "https://www.marvel.com/comics/issue/48079/avengers_1963_1.5",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1999-12-01T00:00:00+0000",
+      "mu": "1999-12-01T00:00:00+0000",
+      "digitalId": 29719,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/5d5af28d34bc6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bruce Timm",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7063,
+      "title": "Avengers (1963) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/7063/avengers_1963_2",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1963-11-01T00:00:00+0000",
+      "mu": "1963-11-01T00:00:00+0000",
+      "digitalId": 1476,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/4e8f177a271eb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Paul Reinman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7174,
+      "title": "Avengers (1963) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/7174/avengers_1963_3",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-01-01T00:00:00+0000",
+      "mu": "1964-01-01T00:00:00+0000",
+      "digitalId": 4196,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/03/4e8f156675036",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Paul Reinman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7285,
+      "title": "Avengers (1963) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/7285/avengers_1963_4",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-03-01T00:00:00+0000",
+      "mu": "1964-03-01T00:00:00+0000",
+      "digitalId": 4206,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/03/5851685f5b114",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "George Roussos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7299,
+      "title": "Avengers (1963) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/7299/avengers_1963_5",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-05-01T00:00:00+0000",
+      "mu": "1964-05-01T00:00:00+0000",
+      "digitalId": 4217,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/90/4e8f18e485558",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Paul Reinman",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7310,
+      "title": "Avengers (1963) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/7310/avengers_1963_6",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-07-01T00:00:00+0000",
+      "mu": "1964-07-01T00:00:00+0000",
+      "digitalId": 4225,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/4e8f1c358b559",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Chic Stone",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7321,
+      "title": "Avengers (1963) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/7321/avengers_1963_7",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-08-01T00:00:00+0000",
+      "mu": "1964-08-01T00:00:00+0000",
+      "digitalId": 4226,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/4e8f1ca5416d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Chic Stone",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7332,
+      "title": "Avengers (1963) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/7332/avengers_1963_8",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-09-01T00:00:00+0000",
+      "mu": "1964-09-01T00:00:00+0000",
+      "digitalId": 4227,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/58519a114854d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7343,
+      "title": "Avengers (1963) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/7343/avengers_1963_9",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-10-01T00:00:00+0000",
+      "mu": "1964-10-01T00:00:00+0000",
+      "digitalId": 4228,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/4e8f1fb34ae88",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 6953,
+      "title": "Avengers (1963) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/6953/avengers_1963_10",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-11-01T00:00:00+0000",
+      "mu": "1964-11-01T00:00:00+0000",
+      "digitalId": 489,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/4e8f2041d81da",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 6964,
+      "title": "Avengers (1963) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/6964/avengers_1963_11",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1964-12-01T00:00:00+0000",
+      "mu": "1964-12-01T00:00:00+0000",
+      "digitalId": 5119,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/5852aad7846da",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Chic Stone",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 6975,
+      "title": "Avengers (1963) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/6975/avengers_1963_12",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-01-01T00:00:00+0000",
+      "mu": "1965-01-01T00:00:00+0000",
+      "digitalId": 4178,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/5852b38bb0761",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 6986,
+      "title": "Avengers (1963) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/6986/avengers_1963_13",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-02-01T00:00:00+0000",
+      "mu": "1965-02-01T00:00:00+0000",
+      "digitalId": 4179,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/5852baeb67090",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 6997,
+      "title": "Avengers (1963) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/6997/avengers_1963_14",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-03-01T00:00:00+0000",
+      "mu": "1965-03-01T00:00:00+0000",
+      "digitalId": 4180,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/5852c3c455d5d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Chic Stone",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Laikin",
+          "role": "writer"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7008,
+      "title": "Avengers (1963) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/7008/avengers_1963_15",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-04-01T00:00:00+0000",
+      "mu": "1965-04-01T00:00:00+0000",
+      "digitalId": 4181,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/5852cccf2fb04",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mike Esposito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7019,
+      "title": "Avengers (1963) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/7019/avengers_1963_16",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-05-01T00:00:00+0000",
+      "mu": "1965-05-01T00:00:00+0000",
+      "digitalId": 4182,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/4e8f2746403b6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Kirby",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7030,
+      "title": "Avengers (1963) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/7030/avengers_1963_17",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-06-01T00:00:00+0000",
+      "mu": "1965-06-01T00:00:00+0000",
+      "digitalId": 4183,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/5852e7182b5e1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7041,
+      "title": "Avengers (1963) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/7041/avengers_1963_18",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-07-01T00:00:00+0000",
+      "mu": "1965-07-01T00:00:00+0000",
+      "digitalId": 4184,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/4e8f290436edc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7052,
+      "title": "Avengers (1963) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/7052/avengers_1963_19",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-08-01T00:00:00+0000",
+      "mu": "1965-08-01T00:00:00+0000",
+      "digitalId": 4185,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5852fb4e5c815",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dick Ayers",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7064,
+      "title": "Avengers (1963) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/7064/avengers_1963_20",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1965-09-01T00:00:00+0000",
+      "mu": "1965-09-01T00:00:00+0000",
+      "digitalId": 4186,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/585305ccc5585",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Wally Wood",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Earth's Mightiest Heroes"
+    },
+    {
+      "issueId": 7307,
+      "title": "Avengers (1963) #57",
+      "number": "57",
+      "url": "https://www.marvel.com/comics/issue/7307/avengers_1963_57",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1968-10-01T00:00:00+0000",
+      "mu": "1968-10-01T00:00:00+0000",
+      "digitalId": 4223,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/4e96fe30c0e1c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "George Klein",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7308,
+      "title": "Avengers (1963) #58",
+      "number": "58",
+      "url": "https://www.marvel.com/comics/issue/7308/avengers_1963_58",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1968-11-01T00:00:00+0000",
+      "mu": "1968-11-01T00:00:00+0000",
+      "digitalId": 4224,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/0/04/4e96feecb36f3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "George Klein",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7309,
+      "title": "Avengers (1963) #59",
+      "number": "59",
+      "url": "https://www.marvel.com/comics/issue/7309/avengers_1963_59",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1968-12-01T00:00:00+0000",
+      "mu": "1968-12-01T00:00:00+0000",
+      "digitalId": 5206,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/4bc3277204f7f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "George Klein",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7311,
+      "title": "Avengers (1963) #60",
+      "number": "60",
+      "url": "https://www.marvel.com/comics/issue/7311/avengers_1963_60",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-01-01T00:00:00+0000",
+      "mu": "1969-01-01T00:00:00+0000",
+      "digitalId": 5210,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/4d49e263ae23a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mike Esposito",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7312,
+      "title": "Avengers (1963) #61",
+      "number": "61",
+      "url": "https://www.marvel.com/comics/issue/7312/avengers_1963_61",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-02-01T00:00:00+0000",
+      "mu": "1969-02-01T00:00:00+0000",
+      "digitalId": 7997,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/4bb86eb03b226",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "George Klein",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7313,
+      "title": "Avengers (1963) #62",
+      "number": "62",
+      "url": "https://www.marvel.com/comics/issue/7313/avengers_1963_62",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-03-01T00:00:00+0000",
+      "mu": "1969-03-01T00:00:00+0000",
+      "digitalId": 7998,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/4d49e24cae34d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "George Klein",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7314,
+      "title": "Avengers (1963) #63",
+      "number": "63",
+      "url": "https://www.marvel.com/comics/issue/7314/avengers_1963_63",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-04-01T00:00:00+0000",
+      "mu": "1969-04-01T00:00:00+0000",
+      "digitalId": 7999,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/4d49e2d5893a6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "George Klein",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gene Colan",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7315,
+      "title": "Avengers (1963) #64",
+      "number": "64",
+      "url": "https://www.marvel.com/comics/issue/7315/avengers_1963_64",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-05-01T00:00:00+0000",
+      "mu": "1969-05-01T00:00:00+0000",
+      "digitalId": 8000,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/4d49e23e00669",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "George Klein",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gene Colan",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7316,
+      "title": "Avengers (1963) #65",
+      "number": "65",
+      "url": "https://www.marvel.com/comics/issue/7316/avengers_1963_65",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-06-01T00:00:00+0000",
+      "mu": "1969-06-01T00:00:00+0000",
+      "digitalId": 8001,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/4d49e20d901a2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sam Grainger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gene Colan",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7317,
+      "title": "Avengers (1963) #66",
+      "number": "66",
+      "url": "https://www.marvel.com/comics/issue/7317/avengers_1963_66",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-07-01T00:00:00+0000",
+      "mu": "1969-07-01T00:00:00+0000",
+      "digitalId": 8002,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/4d49e1a8e5b50",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Syd Shores",
+          "role": "cover artist"
+        },
+        {
+          "name": "Barry Windsor-Smith",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7318,
+      "title": "Avengers (1963) #67",
+      "number": "67",
+      "url": "https://www.marvel.com/comics/issue/7318/avengers_1963_67",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-08-01T00:00:00+0000",
+      "mu": "1969-08-01T00:00:00+0000",
+      "digitalId": 8003,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/4d49e284c4a21",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7319,
+      "title": "Avengers (1963) #68",
+      "number": "68",
+      "url": "https://www.marvel.com/comics/issue/7319/avengers_1963_68",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-09-01T00:00:00+0000",
+      "mu": "1969-09-01T00:00:00+0000",
+      "digitalId": 8004,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/4bb8552a427d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7320,
+      "title": "Avengers (1963) #69",
+      "number": "69",
+      "url": "https://www.marvel.com/comics/issue/7320/avengers_1963_69",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-10-01T00:00:00+0000",
+      "mu": "1969-10-01T00:00:00+0000",
+      "digitalId": 5220,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/586d5652ac80c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sam Grainger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7322,
+      "title": "Avengers (1963) #70",
+      "number": "70",
+      "url": "https://www.marvel.com/comics/issue/7322/avengers_1963_70",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-11-01T00:00:00+0000",
+      "mu": "1969-11-01T00:00:00+0000",
+      "digitalId": 5224,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/4bb6dec38250f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sam Grainger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7323,
+      "title": "Avengers (1963) #71",
+      "number": "71",
+      "url": "https://www.marvel.com/comics/issue/7323/avengers_1963_71",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1969-12-01T00:00:00+0000",
+      "mu": "1969-12-01T00:00:00+0000",
+      "digitalId": 1479,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/50/586d6db2497fe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sam Grainger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7324,
+      "title": "Avengers (1963) #72",
+      "number": "72",
+      "url": "https://www.marvel.com/comics/issue/7324/avengers_1963_72",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1970-01-01T00:00:00+0000",
+      "mu": "1970-01-01T00:00:00+0000",
+      "digitalId": 10918,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/586e594ce0813",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7325,
+      "title": "Avengers (1963) #73",
+      "number": "73",
+      "url": "https://www.marvel.com/comics/issue/7325/avengers_1963_73",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1970-02-01T00:00:00+0000",
+      "mu": "1970-02-01T00:00:00+0000",
+      "digitalId": 10919,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/586e65cd2f4a6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7326,
+      "title": "Avengers (1963) #74",
+      "number": "74",
+      "url": "https://www.marvel.com/comics/issue/7326/avengers_1963_74",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1970-03-01T00:00:00+0000",
+      "mu": "1970-03-01T00:00:00+0000",
+      "digitalId": 10920,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/c0/4bb5476240c04",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7327,
+      "title": "Avengers (1963) #75",
+      "number": "75",
+      "url": "https://www.marvel.com/comics/issue/7327/avengers_1963_75",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1970-04-01T00:00:00+0000",
+      "mu": "1970-04-01T00:00:00+0000",
+      "digitalId": 10921,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/90/586e770559816",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7328,
+      "title": "Avengers (1963) #76",
+      "number": "76",
+      "url": "https://www.marvel.com/comics/issue/7328/avengers_1963_76",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1970-05-01T00:00:00+0000",
+      "mu": "1970-05-01T00:00:00+0000",
+      "digitalId": 10922,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/a0/586e8a7f9f2df",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Avengers Epic Collection: Behold the Vision"
+    },
+    {
+      "issueId": 7341,
+      "title": "Avengers (1963) #88",
+      "number": "88",
+      "url": "https://www.marvel.com/comics/issue/7341/avengers_1963_88",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1971-05-01T00:00:00+0000",
+      "mu": "1971-05-01T00:00:00+0000",
+      "digitalId": 19363,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/4e946415da75d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sal Buscema",
+          "role": "cover artist"
+        },
+        {
+          "name": "Harlan Ellison",
+          "role": "writer"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7342,
+      "title": "Avengers (1963) #89",
+      "number": "89",
+      "url": "https://www.marvel.com/comics/issue/7342/avengers_1963_89",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1971-06-01T00:00:00+0000",
+      "mu": "1971-06-01T00:00:00+0000",
+      "digitalId": 9967,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/f0/58700351e340e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sam Grainger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7344,
+      "title": "Avengers (1963) #90",
+      "number": "90",
+      "url": "https://www.marvel.com/comics/issue/7344/avengers_1963_90",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1971-07-01T00:00:00+0000",
+      "mu": "1971-07-01T00:00:00+0000",
+      "digitalId": 9968,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/58700b30c48ee",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sal Buscema",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7345,
+      "title": "Avengers (1963) #91",
+      "number": "91",
+      "url": "https://www.marvel.com/comics/issue/7345/avengers_1963_91",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1971-08-01T00:00:00+0000",
+      "mu": "1971-08-01T00:00:00+0000",
+      "digitalId": 9969,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/4bb65b78aa4d6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sal Buscema",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7346,
+      "title": "Avengers (1963) #92",
+      "number": "92",
+      "url": "https://www.marvel.com/comics/issue/7346/avengers_1963_92",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1971-09-01T00:00:00+0000",
+      "mu": "1971-09-01T00:00:00+0000",
+      "digitalId": 9970,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/4bb65b7358f8b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Sal Buscema",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7347,
+      "title": "Avengers (1963) #93",
+      "number": "93",
+      "url": "https://www.marvel.com/comics/issue/7347/avengers_1963_93",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1971-11-01T00:00:00+0000",
+      "mu": "1971-11-01T00:00:00+0000",
+      "digitalId": 9971,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/5873be741053c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Neal Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7348,
+      "title": "Avengers (1963) #94",
+      "number": "94",
+      "url": "https://www.marvel.com/comics/issue/7348/avengers_1963_94",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1971-12-01T00:00:00+0000",
+      "mu": "1971-12-01T00:00:00+0000",
+      "digitalId": 9973,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/5873c760732ce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Neal Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7349,
+      "title": "Avengers (1963) #95",
+      "number": "95",
+      "url": "https://www.marvel.com/comics/issue/7349/avengers_1963_95",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1972-01-01T00:00:00+0000",
+      "mu": "1972-01-01T00:00:00+0000",
+      "digitalId": 9972,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/03/5873d3374d463",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Neal Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7350,
+      "title": "Avengers (1963) #96",
+      "number": "96",
+      "url": "https://www.marvel.com/comics/issue/7350/avengers_1963_96",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1972-02-01T00:00:00+0000",
+      "mu": "1972-02-01T00:00:00+0000",
+      "digitalId": 9974,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5873dc2eeb3a6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Alan Weiss",
+          "role": "cover artist"
+        },
+        {
+          "name": "Neal Adams",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7351,
+      "title": "Avengers (1963) #97",
+      "number": "97",
+      "url": "https://www.marvel.com/comics/issue/7351/avengers_1963_97",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1972-03-01T00:00:00+0000",
+      "mu": "1972-03-01T00:00:00+0000",
+      "digitalId": 9975,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/5873f0d16b860",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roy Thomas",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Kree/Skrull War"
+    },
+    {
+      "issueId": 7016,
+      "title": "Avengers (1963) #157",
+      "number": "157",
+      "url": "https://www.marvel.com/comics/issue/7016/avengers_1963_157",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-03-01T00:00:00+0000",
+      "mu": "1977-03-01T00:00:00+0000",
+      "digitalId": 29203,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/58810d7ad5a8a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Heck",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Conway",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7017,
+      "title": "Avengers (1963) #158",
+      "number": "158",
+      "url": "https://www.marvel.com/comics/issue/7017/avengers_1963_158",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-04-01T00:00:00+0000",
+      "mu": "1977-04-01T00:00:00+0000",
+      "digitalId": 29204,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/03/5881143318ed7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7018,
+      "title": "Avengers (1963) #159",
+      "number": "159",
+      "url": "https://www.marvel.com/comics/issue/7018/avengers_1963_159",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-05-01T00:00:00+0000",
+      "mu": "1977-05-01T00:00:00+0000",
+      "digitalId": 29205,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/03/58811ae078378",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7020,
+      "title": "Avengers (1963) #160",
+      "number": "160",
+      "url": "https://www.marvel.com/comics/issue/7020/avengers_1963_160",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-06-01T00:00:00+0000",
+      "mu": "1977-06-01T00:00:00+0000",
+      "digitalId": 29206,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/5881252a130c9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7021,
+      "title": "Avengers (1963) #161",
+      "number": "161",
+      "url": "https://www.marvel.com/comics/issue/7021/avengers_1963_161",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-07-01T00:00:00+0000",
+      "mu": "1977-07-01T00:00:00+0000",
+      "digitalId": 1460,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/53ee63451e15a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7022,
+      "title": "Avengers (1963) #162",
+      "number": "162",
+      "url": "https://www.marvel.com/comics/issue/7022/avengers_1963_162",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-08-01T00:00:00+0000",
+      "mu": "1977-08-01T00:00:00+0000",
+      "digitalId": 1461,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/4bc38130b76f0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7023,
+      "title": "Avengers (1963) #163",
+      "number": "163",
+      "url": "https://www.marvel.com/comics/issue/7023/avengers_1963_163",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-09-01T00:00:00+0000",
+      "mu": "1977-09-01T00:00:00+0000",
+      "digitalId": 5138,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/4bb6de930d782",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Tuska",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7024,
+      "title": "Avengers (1963) #164",
+      "number": "164",
+      "url": "https://www.marvel.com/comics/issue/7024/avengers_1963_164",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-10-01T00:00:00+0000",
+      "mu": "1977-10-01T00:00:00+0000",
+      "digitalId": 29207,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/5882354e0c05e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7025,
+      "title": "Avengers (1963) #165",
+      "number": "165",
+      "url": "https://www.marvel.com/comics/issue/7025/avengers_1963_165",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-11-01T00:00:00+0000",
+      "mu": "1977-11-01T00:00:00+0000",
+      "digitalId": 29215,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/588240641db1d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7026,
+      "title": "Avengers (1963) #166",
+      "number": "166",
+      "url": "https://www.marvel.com/comics/issue/7026/avengers_1963_166",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1977-12-01T00:00:00+0000",
+      "mu": "1977-12-01T00:00:00+0000",
+      "digitalId": 29217,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/50/588249b45a947",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Bride of Ultron"
+    },
+    {
+      "issueId": 7027,
+      "title": "Avengers (1963) #167",
+      "number": "167",
+      "url": "https://www.marvel.com/comics/issue/7027/avengers_1963_167",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-01-01T00:00:00+0000",
+      "mu": "1978-01-01T00:00:00+0000",
+      "digitalId": 1462,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/4bc47cf65429e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7028,
+      "title": "Avengers (1963) #168",
+      "number": "168",
+      "url": "https://www.marvel.com/comics/issue/7028/avengers_1963_168",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-02-01T00:00:00+0000",
+      "mu": "1978-02-01T00:00:00+0000",
+      "digitalId": 1463,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/4bc47cf124aa5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7029,
+      "title": "Avengers (1963) #169",
+      "number": "169",
+      "url": "https://www.marvel.com/comics/issue/7029/avengers_1963_169",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-03-01T00:00:00+0000",
+      "mu": "1978-03-01T00:00:00+0000",
+      "digitalId": 3202,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/588271f2afec3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dave Hunt",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Marv Wolfman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7031,
+      "title": "Avengers (1963) #170",
+      "number": "170",
+      "url": "https://www.marvel.com/comics/issue/7031/avengers_1963_170",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-04-01T00:00:00+0000",
+      "mu": "1978-04-01T00:00:00+0000",
+      "digitalId": 1465,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/60/4bc47cebd27a9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7032,
+      "title": "Avengers (1963) #171",
+      "number": "171",
+      "url": "https://www.marvel.com/comics/issue/7032/avengers_1963_171",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-05-01T00:00:00+0000",
+      "mu": "1978-05-01T00:00:00+0000",
+      "digitalId": 1466,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/4bc381363e622",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7033,
+      "title": "Avengers (1963) #172",
+      "number": "172",
+      "url": "https://www.marvel.com/comics/issue/7033/avengers_1963_172",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-06-01T00:00:00+0000",
+      "mu": "1978-06-01T00:00:00+0000",
+      "digitalId": 1467,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/4bc47ce6bfa39",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7034,
+      "title": "Avengers (1963) #173",
+      "number": "173",
+      "url": "https://www.marvel.com/comics/issue/7034/avengers_1963_173",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-07-01T00:00:00+0000",
+      "mu": "1978-07-01T00:00:00+0000",
+      "digitalId": 1468,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/4bc47ce174a57",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bob Mcleod",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Bryant",
+          "role": "cover artist"
+        },
+        {
+          "name": "Win Mortimer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7035,
+      "title": "Avengers (1963) #174",
+      "number": "174",
+      "url": "https://www.marvel.com/comics/issue/7035/avengers_1963_174",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-08-01T00:00:00+0000",
+      "mu": "1978-08-01T00:00:00+0000",
+      "digitalId": 1469,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/4bc3813b968fc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Wenzel",
+          "role": "penciler"
+        },
+        {
+          "name": "Bill Mantlo",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7036,
+      "title": "Avengers (1963) #175",
+      "number": "175",
+      "url": "https://www.marvel.com/comics/issue/7036/avengers_1963_175",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-09-01T00:00:00+0000",
+      "mu": "1978-09-01T00:00:00+0000",
+      "digitalId": 1470,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/40/4bc47cdc2c94c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Wenzel",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7037,
+      "title": "Avengers (1963) #176",
+      "number": "176",
+      "url": "https://www.marvel.com/comics/issue/7037/avengers_1963_176",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-10-01T00:00:00+0000",
+      "mu": "1978-10-01T00:00:00+0000",
+      "digitalId": 1471,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/d0/4bc3362524e2c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Wenzel",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7038,
+      "title": "Avengers (1963) #177",
+      "number": "177",
+      "url": "https://www.marvel.com/comics/issue/7038/avengers_1963_177",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1978-11-01T00:00:00+0000",
+      "mu": "1978-11-01T00:00:00+0000",
+      "digitalId": 1472,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/60/4bc47cd6dccee",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pablo Marcos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ricardo Villamonte",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Wenzel",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Korvac Saga"
+    },
+    {
+      "issueId": 7043,
+      "title": "Avengers (1963) #181",
+      "number": "181",
+      "url": "https://www.marvel.com/comics/issue/7043/avengers_1963_181",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-03-01T00:00:00+0000",
+      "mu": "1979-03-01T00:00:00+0000",
+      "digitalId": 12113,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/58827ca0d1387",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Gene Day",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Nights of Wundagore"
+    },
+    {
+      "issueId": 7044,
+      "title": "Avengers (1963) #182",
+      "number": "182",
+      "url": "https://www.marvel.com/comics/issue/7044/avengers_1963_182",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-04-01T00:00:00+0000",
+      "mu": "1979-04-01T00:00:00+0000",
+      "digitalId": 12421,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/58827f5cc842b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Nights of Wundagore"
+    },
+    {
+      "issueId": 7045,
+      "title": "Avengers (1963) #183",
+      "number": "183",
+      "url": "https://www.marvel.com/comics/issue/7045/avengers_1963_183",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-05-01T00:00:00+0000",
+      "mu": "1979-05-01T00:00:00+0000",
+      "digitalId": 12427,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/60/588607e9a7a9c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Nights of Wundagore"
+    },
+    {
+      "issueId": 7046,
+      "title": "Avengers (1963) #184",
+      "number": "184",
+      "url": "https://www.marvel.com/comics/issue/7046/avengers_1963_184",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-06-01T00:00:00+0000",
+      "mu": "1979-06-01T00:00:00+0000",
+      "digitalId": 12429,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/58860a10b75a8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brett Breeding",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Nights of Wundagore"
+    },
+    {
+      "issueId": 7047,
+      "title": "Avengers (1963) #185",
+      "number": "185",
+      "url": "https://www.marvel.com/comics/issue/7047/avengers_1963_185",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-07-01T00:00:00+0000",
+      "mu": "1979-07-01T00:00:00+0000",
+      "digitalId": 12430,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/b0/58860afcdbce7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        },
+        {
+          "name": "Steven Grant",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Nights of Wundagore"
+    },
+    {
+      "issueId": 7048,
+      "title": "Avengers (1963) #186",
+      "number": "186",
+      "url": "https://www.marvel.com/comics/issue/7048/avengers_1963_186",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-08-01T00:00:00+0000",
+      "mu": "1979-08-01T00:00:00+0000",
+      "digitalId": 12884,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/d0/4e95aef4e25e4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        },
+        {
+          "name": "Steven Grant",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Nights of Wundagore"
+    },
+    {
+      "issueId": 7049,
+      "title": "Avengers (1963) #187",
+      "number": "187",
+      "url": "https://www.marvel.com/comics/issue/7049/avengers_1963_187",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-09-01T00:00:00+0000",
+      "mu": "1979-09-01T00:00:00+0000",
+      "digitalId": 12431,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/58860d46c048b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        },
+        {
+          "name": "Steven Grant",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Nights of Wundagore"
+    },
+    {
+      "issueId": 7050,
+      "title": "Avengers (1963) #188",
+      "number": "188",
+      "url": "https://www.marvel.com/comics/issue/7050/avengers_1963_188",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-10-01T00:00:00+0000",
+      "mu": "1979-10-01T00:00:00+0000",
+      "digitalId": 29654,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/58860e5bb2130",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Frank Springer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "Bill Mantlo",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7051,
+      "title": "Avengers (1963) #189",
+      "number": "189",
+      "url": "https://www.marvel.com/comics/issue/7051/avengers_1963_189",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-11-01T00:00:00+0000",
+      "mu": "1979-11-01T00:00:00+0000",
+      "digitalId": 12308,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/00/58860f779e891",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        },
+        {
+          "name": "Steven Grant",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7053,
+      "title": "Avengers (1963) #190",
+      "number": "190",
+      "url": "https://www.marvel.com/comics/issue/7053/avengers_1963_190",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-12-01T00:00:00+0000",
+      "mu": "1979-12-01T00:00:00+0000",
+      "digitalId": 29655,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/40/5886108e8ac95",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        },
+        {
+          "name": "Steven Grant",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7054,
+      "title": "Avengers (1963) #191",
+      "number": "191",
+      "url": "https://www.marvel.com/comics/issue/7054/avengers_1963_191",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-01-01T00:00:00+0000",
+      "mu": "1980-01-01T00:00:00+0000",
+      "digitalId": 29657,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/03/5886115468e1a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7055,
+      "title": "Avengers (1963) #192",
+      "number": "192",
+      "url": "https://www.marvel.com/comics/issue/7055/avengers_1963_192",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-02-01T00:00:00+0000",
+      "mu": "1980-02-01T00:00:00+0000",
+      "digitalId": 29659,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5886121e5fc1f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Ricardo Villamonte",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arvell Jones",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7056,
+      "title": "Avengers (1963) #193",
+      "number": "193",
+      "url": "https://www.marvel.com/comics/issue/7056/avengers_1963_193",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-03-01T00:00:00+0000",
+      "mu": "1980-03-01T00:00:00+0000",
+      "digitalId": 29666,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/40/588613f509943",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7057,
+      "title": "Avengers (1963) #194",
+      "number": "194",
+      "url": "https://www.marvel.com/comics/issue/7057/avengers_1963_194",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-04-01T00:00:00+0000",
+      "mu": "1980-04-01T00:00:00+0000",
+      "digitalId": 1473,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/588614bbe6a93",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Rubinstein",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7058,
+      "title": "Avengers (1963) #195",
+      "number": "195",
+      "url": "https://www.marvel.com/comics/issue/7058/avengers_1963_195",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-05-01T00:00:00+0000",
+      "mu": "1980-05-01T00:00:00+0000",
+      "digitalId": 1474,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/5886158dc71f2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jack Abel",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7059,
+      "title": "Avengers (1963) #196",
+      "number": "196",
+      "url": "https://www.marvel.com/comics/issue/7059/avengers_1963_196",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-06-01T00:00:00+0000",
+      "mu": "1980-06-01T00:00:00+0000",
+      "digitalId": 1475,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/80/5886173759cde",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Jack Abel",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7060,
+      "title": "Avengers (1963) #197",
+      "number": "197",
+      "url": "https://www.marvel.com/comics/issue/7060/avengers_1963_197",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-07-01T00:00:00+0000",
+      "mu": "1980-07-01T00:00:00+0000",
+      "digitalId": 29269,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/90/58861814775ff",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Milgrom",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brett Breeding",
+          "role": "cover artist"
+        },
+        {
+          "name": "Vince Colletta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carmine Infantino",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7061,
+      "title": "Avengers (1963) #198",
+      "number": "198",
+      "url": "https://www.marvel.com/comics/issue/7061/avengers_1963_198",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-08-01T00:00:00+0000",
+      "mu": "1980-08-01T00:00:00+0000",
+      "digitalId": 29270,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/5886190d1e0a9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7062,
+      "title": "Avengers (1963) #199",
+      "number": "199",
+      "url": "https://www.marvel.com/comics/issue/7062/avengers_1963_199",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-09-01T00:00:00+0000",
+      "mu": "1980-09-01T00:00:00+0000",
+      "digitalId": 29963,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/588619da2905a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7065,
+      "title": "Avengers (1963) #200",
+      "number": "200",
+      "url": "https://www.marvel.com/comics/issue/7065/avengers_1963_200",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-10-01T00:00:00+0000",
+      "mu": "1980-10-01T00:00:00+0000",
+      "digitalId": 29965,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/a0/587fa16adc18f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bob Layton",
+          "role": "writer"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "George Perez",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7066,
+      "title": "Avengers (1963) #201",
+      "number": "201",
+      "url": "https://www.marvel.com/comics/issue/7066/avengers_1963_201",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-11-01T00:00:00+0000",
+      "mu": "1980-11-01T00:00:00+0000",
+      "digitalId": 5154,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/587fa4df16d03",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gene Day",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7067,
+      "title": "Avengers (1963) #202",
+      "number": "202",
+      "url": "https://www.marvel.com/comics/issue/7067/avengers_1963_202",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1980-12-01T00:00:00+0000",
+      "mu": "1980-12-01T00:00:00+0000",
+      "digitalId": 29967,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/587fa688d341d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mike Esposito",
+          "role": "cover artist"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7068,
+      "title": "Avengers (1963) #203",
+      "number": "203",
+      "url": "https://www.marvel.com/comics/issue/7068/avengers_1963_203",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1981-01-01T00:00:00+0000",
+      "mu": "1981-01-01T00:00:00+0000",
+      "digitalId": 29968,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/587fa755268af",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carmine Infantino",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7069,
+      "title": "Avengers (1963) #204",
+      "number": "204",
+      "url": "https://www.marvel.com/comics/issue/7069/avengers_1963_204",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1981-02-01T00:00:00+0000",
+      "mu": "1981-02-01T00:00:00+0000",
+      "digitalId": 30182,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/70/587fa81477b77",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Newton",
+          "role": "penciler"
+        },
+        {
+          "name": "Bob Budiansky",
+          "role": "writer"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Shooter",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7070,
+      "title": "Avengers (1963) #205",
+      "number": "205",
+      "url": "https://www.marvel.com/comics/issue/7070/avengers_1963_205",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1981-03-01T00:00:00+0000",
+      "mu": "1981-03-01T00:00:00+0000",
+      "digitalId": 30183,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/587fa8dc5a619",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alan Kupperberg",
+          "role": "penciler"
+        },
+        {
+          "name": "Bob Budiansky",
+          "role": "writer"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Heart of Stone"
+    },
+    {
+      "issueId": 7125,
+      "title": "Avengers (1963) #255",
+      "number": "255",
+      "url": "https://www.marvel.com/comics/issue/7125/avengers_1963_255",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1985-05-01T00:00:00+0000",
+      "mu": "1985-05-01T00:00:00+0000",
+      "digitalId": 35062,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/55d4af61d8ecb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Legacy of Thanos"
+    },
+    {
+      "issueId": 7126,
+      "title": "Avengers (1963) #256",
+      "number": "256",
+      "url": "https://www.marvel.com/comics/issue/7126/avengers_1963_256",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1985-06-01T00:00:00+0000",
+      "mu": "1985-06-01T00:00:00+0000",
+      "digitalId": 35063,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/55d4af4f0105d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Legacy of Thanos"
+    },
+    {
+      "issueId": 7127,
+      "title": "Avengers (1963) #257",
+      "number": "257",
+      "url": "https://www.marvel.com/comics/issue/7127/avengers_1963_257",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1985-07-01T00:00:00+0000",
+      "mu": "1985-07-01T00:00:00+0000",
+      "digitalId": 35064,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/55d4af7768b16",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Legacy of Thanos"
+    },
+    {
+      "issueId": 7128,
+      "title": "Avengers (1963) #258",
+      "number": "258",
+      "url": "https://www.marvel.com/comics/issue/7128/avengers_1963_258",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1985-08-01T00:00:00+0000",
+      "mu": "1985-08-01T00:00:00+0000",
+      "digitalId": 35058,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/55d4b296a7ce7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Legacy of Thanos"
+    },
+    {
+      "issueId": 7129,
+      "title": "Avengers (1963) #259",
+      "number": "259",
+      "url": "https://www.marvel.com/comics/issue/7129/avengers_1963_259",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1985-09-01T00:00:00+0000",
+      "mu": "1985-09-01T00:00:00+0000",
+      "digitalId": 35059,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/70/55d4b3042db2a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Legacy of Thanos"
+    },
+    {
+      "issueId": 7131,
+      "title": "Avengers (1963) #260",
+      "number": "260",
+      "url": "https://www.marvel.com/comics/issue/7131/avengers_1963_260",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1985-10-01T00:00:00+0000",
+      "mu": "1985-10-01T00:00:00+0000",
+      "digitalId": 12887,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/5888d43df2290",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Legacy of Thanos"
+    },
+    {
+      "issueId": 7132,
+      "title": "Avengers (1963) #261",
+      "number": "261",
+      "url": "https://www.marvel.com/comics/issue/7132/avengers_1963_261",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1985-11-01T00:00:00+0000",
+      "mu": "1985-11-01T00:00:00+0000",
+      "digitalId": 12888,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/5888d54d31c91",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Legacy of Thanos"
+    },
+    {
+      "issueId": 7142,
+      "title": "Avengers (1963) #270",
+      "number": "270",
+      "url": "https://www.marvel.com/comics/issue/7142/avengers_1963_270",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1986-08-01T00:00:00+0000",
+      "mu": "1986-08-01T00:00:00+0000",
+      "digitalId": 21935,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/30/5888e58f403c3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Under Siege"
+    },
+    {
+      "issueId": 7143,
+      "title": "Avengers (1963) #271",
+      "number": "271",
+      "url": "https://www.marvel.com/comics/issue/7143/avengers_1963_271",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1986-09-01T00:00:00+0000",
+      "mu": "1986-09-01T00:00:00+0000",
+      "digitalId": 21936,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/f0/5888e6d28569d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Under Siege"
+    },
+    {
+      "issueId": 7144,
+      "title": "Avengers (1963) #272",
+      "number": "272",
+      "url": "https://www.marvel.com/comics/issue/7144/avengers_1963_272",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1986-10-01T00:00:00+0000",
+      "mu": "1986-10-01T00:00:00+0000",
+      "digitalId": 21937,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/e0/5888f98861eb3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Under Siege"
+    },
+    {
+      "issueId": 7145,
+      "title": "Avengers (1963) #273",
+      "number": "273",
+      "url": "https://www.marvel.com/comics/issue/7145/avengers_1963_273",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1986-11-01T00:00:00+0000",
+      "mu": "1986-11-01T00:00:00+0000",
+      "digitalId": 21938,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/5888fa8b16c28",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Under Siege"
+    },
+    {
+      "issueId": 7146,
+      "title": "Avengers (1963) #274",
+      "number": "274",
+      "url": "https://www.marvel.com/comics/issue/7146/avengers_1963_274",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1986-12-01T00:00:00+0000",
+      "mu": "1986-12-01T00:00:00+0000",
+      "digitalId": 21939,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/80/5888fb6d05559",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Under Siege"
+    },
+    {
+      "issueId": 7147,
+      "title": "Avengers (1963) #275",
+      "number": "275",
+      "url": "https://www.marvel.com/comics/issue/7147/avengers_1963_275",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-01-01T00:00:00+0000",
+      "mu": "1987-01-01T00:00:00+0000",
+      "digitalId": 21940,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/5888fc454fdea",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Under Siege"
+    },
+    {
+      "issueId": 7148,
+      "title": "Avengers (1963) #276",
+      "number": "276",
+      "url": "https://www.marvel.com/comics/issue/7148/avengers_1963_276",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-02-01T00:00:00+0000",
+      "mu": "1987-02-01T00:00:00+0000",
+      "digitalId": 21941,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/5888fd6c00d1d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Under Siege"
+    },
+    {
+      "issueId": 7149,
+      "title": "Avengers (1963) #277",
+      "number": "277",
+      "url": "https://www.marvel.com/comics/issue/7149/avengers_1963_277",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-03-01T00:00:00+0000",
+      "mu": "1987-03-01T00:00:00+0000",
+      "digitalId": 5167,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/5888fe217f03e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Under Siege"
+    },
+    {
+      "issueId": 7150,
+      "title": "Avengers (1963) #278",
+      "number": "278",
+      "url": "https://www.marvel.com/comics/issue/7150/avengers_1963_278",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-04-01T00:00:00+0000",
+      "mu": "1987-04-01T00:00:00+0000",
+      "digitalId": 29401,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/5888ff95210ba",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Assault on Olympus"
+    },
+    {
+      "issueId": 7151,
+      "title": "Avengers (1963) #279",
+      "number": "279",
+      "url": "https://www.marvel.com/comics/issue/7151/avengers_1963_279",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-05-01T00:00:00+0000",
+      "mu": "1987-05-01T00:00:00+0000",
+      "digitalId": 29403,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/588900ed3518a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Assault on Olympus"
+    },
+    {
+      "issueId": 7153,
+      "title": "Avengers (1963) #280",
+      "number": "280",
+      "url": "https://www.marvel.com/comics/issue/7153/avengers_1963_280",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-06-01T00:00:00+0000",
+      "mu": "1987-06-01T00:00:00+0000",
+      "digitalId": 29404,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/03/588901d53f332",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Kyle Baker",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bob Hall",
+          "role": "penciler"
+        },
+        {
+          "name": "Bob Harras",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Assault on Olympus"
+    },
+    {
+      "issueId": 7154,
+      "title": "Avengers (1963) #281",
+      "number": "281",
+      "url": "https://www.marvel.com/comics/issue/7154/avengers_1963_281",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-07-01T00:00:00+0000",
+      "mu": "1987-07-01T00:00:00+0000",
+      "digitalId": 29581,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/4e95cd5521e67",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Assault on Olympus"
+    },
+    {
+      "issueId": 7155,
+      "title": "Avengers (1963) #282",
+      "number": "282",
+      "url": "https://www.marvel.com/comics/issue/7155/avengers_1963_282",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-08-01T00:00:00+0000",
+      "mu": "1987-08-01T00:00:00+0000",
+      "digitalId": 29582,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/4e95d1d75e961",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Assault on Olympus"
+    },
+    {
+      "issueId": 7156,
+      "title": "Avengers (1963) #283",
+      "number": "283",
+      "url": "https://www.marvel.com/comics/issue/7156/avengers_1963_283",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-09-01T00:00:00+0000",
+      "mu": "1987-09-01T00:00:00+0000",
+      "digitalId": 29586,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/90/4e95befec80ca",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Assault on Olympus"
+    },
+    {
+      "issueId": 7157,
+      "title": "Avengers (1963) #284",
+      "number": "284",
+      "url": "https://www.marvel.com/comics/issue/7157/avengers_1963_284",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-10-01T00:00:00+0000",
+      "mu": "1987-10-01T00:00:00+0000",
+      "digitalId": 29589,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/4e95df8261f16",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Assault on Olympus"
+    },
+    {
+      "issueId": 7158,
+      "title": "Avengers (1963) #285",
+      "number": "285",
+      "url": "https://www.marvel.com/comics/issue/7158/avengers_1963_285",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1987-11-01T00:00:00+0000",
+      "mu": "1987-11-01T00:00:00+0000",
+      "digitalId": 29592,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/4e95e44121c65",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Buscema",
+          "role": "penciler"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Assault on Olympus"
+    }
+  ]
+}

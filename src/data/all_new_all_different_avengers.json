@@ -1,0 +1,2912 @@
+{
+  "id": "all-new-all-different-avengers",
+  "name": "All-New, All-Different Avengers",
+  "description": "The Avengers line after Secret Wars, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. Rage of Ultron opens it, then the All-New, All-Different team, Uncanny Avengers, the A.I.M. New Avengers and A-Force, through the Standoff and Civil War II eras and into Secret Empire. It also carries the smaller books of the period, Great Lakes Avengers, Occupy Avengers and U.S.Avengers, in the order the outline gives them.",
+  "source": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.800Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 92,
+  "collections": 17,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 50076,
+      "title": "Avengers: Rage of Ultron (2015)",
+      "number": null,
+      "url": "https://www.marvel.com/comics/issue/50076/avengers_rage_of_ultron_2015",
+      "seriesId": 18790,
+      "seriesName": "Avengers: Rage of Ultron (2015)",
+      "onSale": "2015-04-01T00:00:00+0000",
+      "mu": "2016-09-05T00:00:00+0000",
+      "digitalId": 37115,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/551ac0dd8a896",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 112,
+      "creators": [
+        {
+          "name": "Jerome Opena",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "penciler"
+        },
+        {
+          "name": "Pepe Larraz",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Rage of Ultron"
+    },
+    {
+      "issueId": 55351,
+      "title": "All-New, All-Different Avengers (2015) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/55351/all-new_all-different_avengers_2015_1",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2015-11-11T00:00:00+0000",
+      "mu": "2016-05-09T00:00:00+0000",
+      "digitalId": 40460,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/563baf0495d56",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 1: The Magnificent Seven"
+    },
+    {
+      "issueId": 55354,
+      "title": "All-New, All-Different Avengers (2015) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/55354/all-new_all-different_avengers_2015_2",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2015-12-02T00:00:00+0000",
+      "mu": "2016-06-06T00:00:00+0000",
+      "digitalId": 40627,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/5654ace9d9f5b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 1: The Magnificent Seven"
+    },
+    {
+      "issueId": 55356,
+      "title": "All-New, All-Different Avengers (2015) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/55356/all-new_all-different_avengers_2015_3",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2016-01-13T00:00:00+0000",
+      "mu": "2016-07-11T00:00:00+0000",
+      "digitalId": 40789,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/03/569026c36549a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 1: The Magnificent Seven"
+    },
+    {
+      "issueId": 55357,
+      "title": "All-New, All-Different Avengers (2015) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/55357/all-new_all-different_avengers_2015_4",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2016-01-27T00:00:00+0000",
+      "mu": "2016-07-25T00:00:00+0000",
+      "digitalId": 40992,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/569994995aa88",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mahmud Asrar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 1: The Magnificent Seven"
+    },
+    {
+      "issueId": 55358,
+      "title": "All-New, All-Different Avengers (2015) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/55358/all-new_all-different_avengers_2015_5",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2016-02-10T00:00:00+0000",
+      "mu": "2016-08-15T00:00:00+0000",
+      "digitalId": 41115,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/a0/56b50dd787889",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 1: The Magnificent Seven"
+    },
+    {
+      "issueId": 55359,
+      "title": "All-New, All-Different Avengers (2015) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/55359/all-new_all-different_avengers_2015_6",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2016-02-24T00:00:00+0000",
+      "mu": "2016-08-29T00:00:00+0000",
+      "digitalId": 41213,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/56c74804180ce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mahmud Asrar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 1: The Magnificent Seven"
+    },
+    {
+      "issueId": 56213,
+      "title": "Uncanny Avengers (2015) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/56213/uncanny_avengers_2015_1",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2015-10-14T00:00:00+0000",
+      "mu": "2016-04-18T00:00:00+0000",
+      "digitalId": 40249,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/561bd5e61b465",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 1: Lost Future"
+    },
+    {
+      "issueId": 56214,
+      "title": "Uncanny Avengers (2015) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/56214/uncanny_avengers_2015_2",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2015-11-11T00:00:00+0000",
+      "mu": "2016-05-16T00:00:00+0000",
+      "digitalId": 40474,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/5640d534d5b5c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 1: Lost Future"
+    },
+    {
+      "issueId": 56215,
+      "title": "Uncanny Avengers (2015) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/56215/uncanny_avengers_2015_3",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2015-12-09T00:00:00+0000",
+      "mu": "2016-06-13T00:00:00+0000",
+      "digitalId": 40666,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/564ceba27ca77",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 1: Lost Future"
+    },
+    {
+      "issueId": 56216,
+      "title": "Uncanny Avengers (2015) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/56216/uncanny_avengers_2015_4",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-01-13T00:00:00+0000",
+      "mu": "2016-01-13T00:00:00+0000",
+      "digitalId": 40866,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/567ac50d9ab3d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 1: Lost Future"
+    },
+    {
+      "issueId": 56217,
+      "title": "Uncanny Avengers (2015) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/56217/uncanny_avengers_2015_5",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-02-03T00:00:00+0000",
+      "mu": "2016-08-01T00:00:00+0000",
+      "digitalId": 41077,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/20/56a7c0d8cbfac",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 1: Lost Future"
+    },
+    {
+      "issueId": 56218,
+      "title": "Uncanny Avengers (2015) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/56218/uncanny_avengers_2015_6",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-03-02T00:00:00+0000",
+      "mu": "2016-09-05T00:00:00+0000",
+      "digitalId": 41231,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/56d09a0ed8ab7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dave Meikis",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rodolfo Taibo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 1: Lost Future"
+    },
+    {
+      "issueId": 57030,
+      "title": "New Avengers (2015) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/57030/new_avengers_2015_1",
+      "seriesId": 20841,
+      "seriesName": "New Avengers (2015 - 2016)",
+      "onSale": "2015-10-14T00:00:00+0000",
+      "mu": "2016-04-18T00:00:00+0000",
+      "digitalId": 40246,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/561bd355cf546",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerardo Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers: A.I.M. Vol. 1: Everything Is New"
+    },
+    {
+      "issueId": 57034,
+      "title": "New Avengers (2015) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/57034/new_avengers_2015_2",
+      "seriesId": 20841,
+      "seriesName": "New Avengers (2015 - 2016)",
+      "onSale": "2015-10-28T00:00:00+0000",
+      "mu": "2016-04-25T00:00:00+0000",
+      "digitalId": 40345,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/56268059e4adf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerardo Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers: A.I.M. Vol. 1: Everything Is New"
+    },
+    {
+      "issueId": 58371,
+      "title": "New Avengers (2015) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/58371/new_avengers_2015_3",
+      "seriesId": 20841,
+      "seriesName": "New Avengers (2015 - 2016)",
+      "onSale": "2015-11-18T00:00:00+0000",
+      "mu": "2016-05-23T00:00:00+0000",
+      "digitalId": 40515,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/5649dd48115b2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerardo Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers: A.I.M. Vol. 1: Everything Is New"
+    },
+    {
+      "issueId": 57529,
+      "title": "New Avengers (2015) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/57529/new_avengers_2015_4",
+      "seriesId": 20841,
+      "seriesName": "New Avengers (2015 - 2016)",
+      "onSale": "2015-12-23T00:00:00+0000",
+      "mu": "2016-06-27T00:00:00+0000",
+      "digitalId": 40726,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/70/56780942e396f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerardo Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers: A.I.M. Vol. 1: Everything Is New"
+    },
+    {
+      "issueId": 57530,
+      "title": "New Avengers (2015) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/57530/new_avengers_2015_5",
+      "seriesId": 20841,
+      "seriesName": "New Avengers (2015 - 2016)",
+      "onSale": "2016-01-20T00:00:00+0000",
+      "mu": "2016-07-18T00:00:00+0000",
+      "digitalId": 40923,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/5682dfa16a5d4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerardo Sandoval",
+          "role": "cover artist"
+        },
+        {
+          "name": "Oscar Garrido",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers: A.I.M. Vol. 1: Everything Is New"
+    },
+    {
+      "issueId": 57611,
+      "title": "New Avengers (2015) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/57611/new_avengers_2015_6",
+      "seriesId": 20841,
+      "seriesName": "New Avengers (2015 - 2016)",
+      "onSale": "2016-02-10T00:00:00+0000",
+      "mu": "2016-08-08T00:00:00+0000",
+      "digitalId": 41124,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/56b50eac1c169",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerardo Sandoval",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Rhodes",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers: A.I.M. Vol. 1: Everything Is New"
+    },
+    {
+      "issueId": 56012,
+      "title": "A-Force (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/56012/a-force_2016_1",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-01-06T00:00:00+0000",
+      "mu": "2016-07-04T00:00:00+0000",
+      "digitalId": 40788,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/40/6047ef685d826",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "G. Willow Wilson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 1: Hypertime"
+    },
+    {
+      "issueId": 56013,
+      "title": "A-Force (2016) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/56013/a-force_2016_2",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-02-03T00:00:00+0000",
+      "mu": "2016-08-08T00:00:00+0000",
+      "digitalId": 41059,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/56a7bcc117498",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "G. Willow Wilson",
+          "role": "writer"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 1: Hypertime"
+    },
+    {
+      "issueId": 56014,
+      "title": "A-Force (2016) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/56014/a-force_2016_3",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-03-02T00:00:00+0000",
+      "mu": "2016-09-05T00:00:00+0000",
+      "digitalId": 41275,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/56cf148f46d78",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 1: Hypertime"
+    },
+    {
+      "issueId": 56015,
+      "title": "A-Force (2016) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/56015/a-force_2016_4",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-04-13T00:00:00+0000",
+      "mu": "2016-10-10T00:00:00+0000",
+      "digitalId": 41670,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/56faef1d55702",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "G. Willow Wilson",
+          "role": "writer"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 1: Hypertime"
+    },
+    {
+      "issueId": 56016,
+      "title": "A-Force (2016) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/56016/a-force_2016_5",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-05-04T00:00:00+0000",
+      "mu": "2016-11-07T00:00:00+0000",
+      "digitalId": 41506,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/571a93cf317b6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ben Caldwell",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 1: Hypertime"
+    },
+    {
+      "issueId": 55362,
+      "title": "All-New, All-Different Avengers (2015) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/55362/all-new_all-different_avengers_2015_9",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2016-05-11T00:00:00+0000",
+      "mu": "2016-11-14T00:00:00+0000",
+      "digitalId": 41509,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/00/57278659b7212",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 2: Family Business"
+    },
+    {
+      "issueId": 55363,
+      "title": "All-New, All-Different Avengers (2015) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/55363/all-new_all-different_avengers_2015_10",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2016-06-01T00:00:00+0000",
+      "mu": "2016-12-05T00:00:00+0000",
+      "digitalId": 41735,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/10/5743705117996",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 2: Family Business"
+    },
+    {
+      "issueId": 55364,
+      "title": "All-New, All-Different Avengers (2015) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/55364/all-new_all-different_avengers_2015_11",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2016-06-29T00:00:00+0000",
+      "mu": "2017-01-02T00:00:00+0000",
+      "digitalId": 41736,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/576d4bccd73b6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 2: Family Business"
+    },
+    {
+      "issueId": 55365,
+      "title": "All-New, All-Different Avengers (2015) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/55365/all-new_all-different_avengers_2015_12",
+      "seriesId": 20443,
+      "seriesName": "All-New, All-Different Avengers (2015 - 2016)",
+      "onSale": "2016-07-27T00:00:00+0000",
+      "mu": "2017-01-30T00:00:00+0000",
+      "digitalId": 42091,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/03/57911f1745d10",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "All-New, All-Different Avengers Vol. 2: Family Business"
+    },
+    {
+      "issueId": 56219,
+      "title": "Uncanny Avengers (2015) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/56219/uncanny_avengers_2015_7",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-03-09T00:00:00+0000",
+      "mu": "2016-03-09T00:00:00+0000",
+      "digitalId": 41373,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/56d9b7c53952a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Guillermo Ortego",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 2: The Man Who Fell to Earth"
+    },
+    {
+      "issueId": 56220,
+      "title": "Uncanny Avengers (2015) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/56220/uncanny_avengers_2015_8",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-04-06T00:00:00+0000",
+      "mu": "2016-10-03T00:00:00+0000",
+      "digitalId": 41665,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/56fed4e92c325",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 2: The Man Who Fell to Earth"
+    },
+    {
+      "issueId": 56221,
+      "title": "Uncanny Avengers (2015) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/56221/uncanny_avengers_2015_9",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-05-18T00:00:00+0000",
+      "mu": "2016-11-21T00:00:00+0000",
+      "digitalId": 41588,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/572bad65b0a6b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Pepe Larraz",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 2: The Man Who Fell to Earth"
+    },
+    {
+      "issueId": 56222,
+      "title": "Uncanny Avengers (2015) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/56222/uncanny_avengers_2015_10",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-06-22T00:00:00+0000",
+      "mu": "2016-12-26T00:00:00+0000",
+      "digitalId": 41838,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/575b33ef8b444",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pepe Larraz",
+          "role": "penciler"
+        },
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 2: The Man Who Fell to Earth"
+    },
+    {
+      "issueId": 56223,
+      "title": "Uncanny Avengers (2015) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/56223/uncanny_avengers_2015_11",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-07-27T00:00:00+0000",
+      "mu": "2017-01-30T00:00:00+0000",
+      "digitalId": 42129,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/30/57928566af425",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pepe Larraz",
+          "role": "penciler"
+        },
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 2: The Man Who Fell to Earth"
+    },
+    {
+      "issueId": 56224,
+      "title": "Uncanny Avengers (2015) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/56224/uncanny_avengers_2015_12",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-08-17T00:00:00+0000",
+      "mu": "2017-02-20T00:00:00+0000",
+      "digitalId": 42310,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/d0/57a8cffc7c3dd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pepe Larraz",
+          "role": "penciler"
+        },
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 2: The Man Who Fell to Earth"
+    },
+    {
+      "issueId": 56017,
+      "title": "A-Force (2016) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/56017/a-force_2016_6",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-06-01T00:00:00+0000",
+      "mu": "2016-12-05T00:00:00+0000",
+      "digitalId": 41732,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/573a21c38e9a0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ben Caldwell",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 2: Rage Against the Dying of the Light"
+    },
+    {
+      "issueId": 56018,
+      "title": "A-Force (2016) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/56018/a-force_2016_7",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-07-20T00:00:00+0000",
+      "mu": "2017-01-23T00:00:00+0000",
+      "digitalId": 42088,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/57855538e2f42",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ben Caldwell",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 2: Rage Against the Dying of the Light"
+    },
+    {
+      "issueId": 56019,
+      "title": "A-Force (2016) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/56019/a-force_2016_8",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-08-10T00:00:00+0000",
+      "mu": "2017-02-13T00:00:00+0000",
+      "digitalId": 42277,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/57a359f4aafd0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paulo Siqueira",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 2: Rage Against the Dying of the Light"
+    },
+    {
+      "issueId": 56020,
+      "title": "A-Force (2016) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/56020/a-force_2016_9",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-09-14T00:00:00+0000",
+      "mu": "2017-03-20T00:00:00+0000",
+      "digitalId": 42590,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/a0/57c0acaf956ef",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paulo Siqueira",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 2: Rage Against the Dying of the Light"
+    },
+    {
+      "issueId": 56021,
+      "title": "A-Force (2016) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/56021/a-force_2016_10",
+      "seriesId": 20606,
+      "seriesName": "A-Force (2016)",
+      "onSale": "2016-10-19T00:00:00+0000",
+      "mu": "2017-04-24T00:00:00+0000",
+      "digitalId": 42907,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/e0/57fe46e6e87e8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paulo Siqueira",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephanie Hans",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Thompson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "A-Force Vol. 2: Rage Against the Dying of the Light"
+    },
+    {
+      "issueId": 61373,
+      "title": "Avengers (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/61373/avengers_2016_1",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2016-11-02T00:00:00+0000",
+      "mu": "2017-05-08T00:00:00+0000",
+      "digitalId": 43163,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/580e547031c2f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 59596,
+      "title": "Avengers (2016) #1.1",
+      "number": "1.1",
+      "url": "https://www.marvel.com/comics/issue/59596/avengers_2016_1.1",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2016-11-09T00:00:00+0000",
+      "mu": "2017-05-15T00:00:00+0000",
+      "digitalId": 43188,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/20/5817649616c6c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 61374,
+      "title": "Avengers (2016) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/61374/avengers_2016_2",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2016-12-07T00:00:00+0000",
+      "mu": "2017-06-12T00:00:00+0000",
+      "digitalId": 43403,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/50/583d93cd3f8f6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 59597,
+      "title": "Avengers (2016) #2.1",
+      "number": "2.1",
+      "url": "https://www.marvel.com/comics/issue/59597/avengers_2016_2.1",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2016-12-21T00:00:00+0000",
+      "mu": "2017-06-26T00:00:00+0000",
+      "digitalId": 43487,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/585416021cd51",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Barry Kitson",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 61375,
+      "title": "Avengers (2016) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/61375/avengers_2016_3",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-01-04T00:00:00+0000",
+      "mu": "2017-07-10T00:00:00+0000",
+      "digitalId": 43741,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/90/585c054b1003d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 62682,
+      "title": "Avengers (2016) #3.1",
+      "number": "3.1",
+      "url": "https://www.marvel.com/comics/issue/62682/avengers_2016_3.1",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-01-18T00:00:00+0000",
+      "mu": "2017-07-24T10:41:00+0000",
+      "digitalId": 44434,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/58754f3a8e511",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Barry Kitson",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 61376,
+      "title": "Avengers (2016) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/61376/avengers_2016_4",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-02-01T00:00:00+0000",
+      "mu": "2017-08-07T00:00:00+0000",
+      "digitalId": 44035,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/80/588b6ef98525b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 62766,
+      "title": "Avengers (2016) #4.1",
+      "number": "4.1",
+      "url": "https://www.marvel.com/comics/issue/62766/avengers_2016_4.1",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44648,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/58a20e2853df0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Barry Kitson",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 59600,
+      "title": "Avengers (2016) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/59600/avengers_2016_5",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-03-29T00:00:00+0000",
+      "mu": "2017-10-02T00:00:00+0000",
+      "digitalId": 44346,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/30/58d151603ce09",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Karl Kesel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ro Stein",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ted Brandt",
+          "role": "cover artist"
+        },
+        {
+          "name": "Barry Kitson",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 61378,
+      "title": "Avengers (2016) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/61378/avengers_2016_6",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-04-05T00:00:00+0000",
+      "mu": "2017-04-05T00:00:00+0000",
+      "digitalId": 44468,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/58d5852b296bd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 1: Kang War One"
+    },
+    {
+      "issueId": 61095,
+      "title": "Uncanny Avengers (2015) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/61095/uncanny_avengers_2015_18",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2016-12-28T00:00:00+0000",
+      "mu": "2017-07-03T00:00:00+0000",
+      "digitalId": 43459,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/585d5827c5110",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pepe Larraz",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 4: Red Skull"
+    },
+    {
+      "issueId": 61096,
+      "title": "Uncanny Avengers (2015) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/61096/uncanny_avengers_2015_19",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-01-11T00:00:00+0000",
+      "mu": "2017-07-17T00:00:00+0000",
+      "digitalId": 43857,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/586ebf4d0484a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pepe Larraz",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 4: Red Skull"
+    },
+    {
+      "issueId": 61097,
+      "title": "Uncanny Avengers (2015) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/61097/uncanny_avengers_2015_20",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44676,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/58a4899bd0aad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Pepe Larraz",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 4: Red Skull"
+    },
+    {
+      "issueId": 61098,
+      "title": "Uncanny Avengers (2015) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/61098/uncanny_avengers_2015_21",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-03-15T00:00:00+0000",
+      "mu": "2017-09-18T00:00:00+0000",
+      "digitalId": 44329,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/58b87b40e88a7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kevin Libranda",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 4: Red Skull"
+    },
+    {
+      "issueId": 61099,
+      "title": "Uncanny Avengers (2015) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/61099/uncanny_avengers_2015_22",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-04-05T00:00:00+0000",
+      "mu": "2017-10-09T00:00:00+0000",
+      "digitalId": 44510,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/58da7fc784465",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pepe Larraz",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Marquez",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 4: Red Skull"
+    },
+    {
+      "issueId": 61497,
+      "title": "Great Lakes Avengers (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/61497/great_lakes_avengers_2016_1",
+      "seriesId": 22562,
+      "seriesName": "Great Lakes Avengers (2016 - 2017)",
+      "onSale": "2016-10-12T00:00:00+0000",
+      "mu": "2017-04-17T00:00:00+0000",
+      "digitalId": 42905,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/b0/57f54c9badb5e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Will Robson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zac Gorman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Great Lakes Avengers Vol. 1: Same Old, Same Old"
+    },
+    {
+      "issueId": 61498,
+      "title": "Great Lakes Avengers (2016) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/61498/great_lakes_avengers_2016_2",
+      "seriesId": 22562,
+      "seriesName": "Great Lakes Avengers (2016 - 2017)",
+      "onSale": "2016-11-30T00:00:00+0000",
+      "mu": "2017-06-05T00:00:00+0000",
+      "digitalId": 43268,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/582cb9cc5b80d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Chip Zdarsky",
+          "role": "penciler"
+        },
+        {
+          "name": "Will Robson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zac Gorman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Great Lakes Avengers Vol. 1: Same Old, Same Old"
+    },
+    {
+      "issueId": 61499,
+      "title": "Great Lakes Avengers (2016) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/61499/great_lakes_avengers_2016_3",
+      "seriesId": 22562,
+      "seriesName": "Great Lakes Avengers (2016 - 2017)",
+      "onSale": "2016-12-28T00:00:00+0000",
+      "mu": "2017-07-03T00:00:00+0000",
+      "digitalId": 43421,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/40/585aa5f397e9c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Will Robson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zac Gorman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Great Lakes Avengers Vol. 1: Same Old, Same Old"
+    },
+    {
+      "issueId": 61500,
+      "title": "Great Lakes Avengers (2016) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/61500/great_lakes_avengers_2016_4",
+      "seriesId": 22562,
+      "seriesName": "Great Lakes Avengers (2016 - 2017)",
+      "onSale": "2017-01-11T00:00:00+0000",
+      "mu": "2017-07-17T00:00:00+0000",
+      "digitalId": 43808,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/03/586eb90780210",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jacob Chabot",
+          "role": "penciler"
+        },
+        {
+          "name": "Will Robson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zac Gorman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Great Lakes Avengers Vol. 1: Same Old, Same Old"
+    },
+    {
+      "issueId": 61501,
+      "title": "Great Lakes Avengers (2016) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/61501/great_lakes_avengers_2016_5",
+      "seriesId": 22562,
+      "seriesName": "Great Lakes Avengers (2016 - 2017)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44115,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/58a22257d0b54",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Will Robson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zac Gorman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Great Lakes Avengers Vol. 1: Same Old, Same Old"
+    },
+    {
+      "issueId": 61502,
+      "title": "Great Lakes Avengers (2016) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/61502/great_lakes_avengers_2016_6",
+      "seriesId": 22562,
+      "seriesName": "Great Lakes Avengers (2016 - 2017)",
+      "onSale": "2017-03-15T00:00:00+0000",
+      "mu": "2017-09-18T00:00:00+0000",
+      "digitalId": 44285,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/10/58bf2d3eb1e1d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Will Robson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zac Gorman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Great Lakes Avengers Vol. 1: Same Old, Same Old"
+    },
+    {
+      "issueId": 61503,
+      "title": "Great Lakes Avengers (2016) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/61503/great_lakes_avengers_2016_7",
+      "seriesId": 22562,
+      "seriesName": "Great Lakes Avengers (2016 - 2017)",
+      "onSale": "2017-04-26T00:00:00+0000",
+      "mu": "2017-10-30T00:00:00+0000",
+      "digitalId": 44552,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/58f7a25933f4e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Will Robson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zac Gorman",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Great Lakes Avengers Vol. 1: Same Old, Same Old"
+    },
+    {
+      "issueId": 61648,
+      "title": "Occupy Avengers (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/61648/occupy_avengers_2016_1",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2016-11-02T00:00:00+0000",
+      "mu": "2017-05-08T00:00:00+0000",
+      "digitalId": 43171,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/70/5894fabe8e5c9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Agustin Alessio",
+          "role": "penciler"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 1: Taking Back Justice"
+    },
+    {
+      "issueId": 61649,
+      "title": "Occupy Avengers (2016) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/61649/occupy_avengers_2016_2",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2016-12-21T00:00:00+0000",
+      "mu": "2017-06-26T00:00:00+0000",
+      "digitalId": 43437,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/584b10e67d055",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 1: Taking Back Justice"
+    },
+    {
+      "issueId": 61650,
+      "title": "Occupy Avengers (2016) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/61650/occupy_avengers_2016_3",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2017-01-11T00:00:00+0000",
+      "mu": "2017-07-17T00:00:00+0000",
+      "digitalId": 43828,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/586ebc1429fce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Agustin Alessio",
+          "role": "penciler"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 1: Taking Back Justice"
+    },
+    {
+      "issueId": 61651,
+      "title": "Occupy Avengers (2016) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/61651/occupy_avengers_2016_4",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44088,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/04/589defc66acc6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 1: Taking Back Justice"
+    },
+    {
+      "issueId": 61723,
+      "title": "U.S.Avengers (2017) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/61723/usavengers_2017_1",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-01-04T00:00:00+0000",
+      "mu": "2017-07-10T00:00:00+0000",
+      "digitalId": 43855,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/58669c8ecc51a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 1: American Intelligence Mechanics"
+    },
+    {
+      "issueId": 61724,
+      "title": "U.S.Avengers (2017) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/61724/usavengers_2017_2",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-01-18T00:00:00+0000",
+      "mu": "2017-07-24T00:00:00+0000",
+      "digitalId": 43856,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/58750cae53a1b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 1: American Intelligence Mechanics"
+    },
+    {
+      "issueId": 61725,
+      "title": "U.S.Avengers (2017) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/61725/usavengers_2017_3",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-02-15T00:00:00+0000",
+      "mu": "2017-08-21T00:00:00+0000",
+      "digitalId": 44098,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/30/589deca150dad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 1: American Intelligence Mechanics"
+    },
+    {
+      "issueId": 61726,
+      "title": "U.S.Avengers (2017) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/61726/usavengers_2017_4",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-03-15T00:00:00+0000",
+      "mu": "2017-09-18T00:00:00+0000",
+      "digitalId": 44328,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/30/58c1c6d59fa69",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 1: American Intelligence Mechanics"
+    },
+    {
+      "issueId": 61727,
+      "title": "U.S.Avengers (2017) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/61727/usavengers_2017_5",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-04-19T00:00:00+0000",
+      "mu": "2017-10-23T00:00:00+0000",
+      "digitalId": 44537,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/58ee7ddf0672b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 1: American Intelligence Mechanics"
+    },
+    {
+      "issueId": 61728,
+      "title": "U.S.Avengers (2017) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/61728/usavengers_2017_6",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-05-17T00:00:00+0000",
+      "mu": "2017-11-20T00:00:00+0000",
+      "digitalId": 44783,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/70/591220bad23be",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 1: American Intelligence Mechanics"
+    },
+    {
+      "issueId": 61379,
+      "title": "Avengers (2016) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/61379/avengers_2016_7",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-05-10T00:00:00+0000",
+      "mu": "2017-11-13T00:00:00+0000",
+      "digitalId": 44735,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/5908beeea9ba2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Phil Noto",
+          "role": "penciler"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jeremy Whitley",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 2: Secret Empire"
+    },
+    {
+      "issueId": 61380,
+      "title": "Avengers (2016) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/61380/avengers_2016_8",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-06-07T00:00:00+0000",
+      "mu": "2017-12-11T00:00:00+0000",
+      "digitalId": 44959,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/593061a9a0521",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jeremy Whitley",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 2: Secret Empire"
+    },
+    {
+      "issueId": 61381,
+      "title": "Avengers (2016) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/61381/avengers_2016_9",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-07-05T00:00:00+0000",
+      "mu": "2018-01-08T00:00:00+0000",
+      "digitalId": 45209,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/595538ece62d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 2: Secret Empire"
+    },
+    {
+      "issueId": 61382,
+      "title": "Avengers (2016) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/61382/avengers_2016_10",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-08-02T00:00:00+0000",
+      "mu": "2018-02-05T00:00:00+0000",
+      "digitalId": 45421,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/60/596d0842797a7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 2: Secret Empire"
+    },
+    {
+      "issueId": 61383,
+      "title": "Avengers (2016) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/61383/avengers_2016_11",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-09-20T00:00:00+0000",
+      "mu": "2018-03-26T00:00:00+0000",
+      "digitalId": 45693,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/59b93d40222bc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mike Del Mundo",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: Unleashed Vol. 2: Secret Empire"
+    },
+    {
+      "issueId": 61729,
+      "title": "U.S.Avengers (2017) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/61729/usavengers_2017_7",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-06-21T00:00:00+0000",
+      "mu": "2017-12-25T00:00:00+0000",
+      "digitalId": 45008,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/10/5941a991c3595",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 2: Cannonball Run"
+    },
+    {
+      "issueId": 61730,
+      "title": "U.S.Avengers (2017) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/61730/usavengers_2017_8",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-07-19T00:00:00+0000",
+      "mu": "2018-01-22T00:00:00+0000",
+      "digitalId": 45234,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5967f5c04fa2a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 2: Cannonball Run"
+    },
+    {
+      "issueId": 61731,
+      "title": "U.S.Avengers (2017) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/61731/usavengers_2017_9",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-08-16T00:00:00+0000",
+      "mu": "2018-02-19T00:00:00+0000",
+      "digitalId": 45439,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/597bbbf3ddf27",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Arizmendi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 2: Cannonball Run"
+    },
+    {
+      "issueId": 61732,
+      "title": "U.S.Avengers (2017) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/61732/usavengers_2017_10",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-09-20T00:00:00+0000",
+      "mu": "2017-09-20T00:00:00+0000",
+      "digitalId": 45716,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/59b93f6660f1d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 2: Cannonball Run"
+    },
+    {
+      "issueId": 61733,
+      "title": "U.S.Avengers (2017) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/61733/usavengers_2017_11",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-10-25T00:00:00+0000",
+      "mu": "2018-04-30T00:00:00+0000",
+      "digitalId": 45970,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/90/59e7b0f89b7f6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Nakayama",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 2: Cannonball Run"
+    },
+    {
+      "issueId": 61734,
+      "title": "U.S.Avengers (2017) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/61734/usavengers_2017_12",
+      "seriesId": 22656,
+      "seriesName": "U.S.Avengers (2017)",
+      "onSale": "2017-11-29T00:00:00+0000",
+      "mu": "2018-06-04T00:00:00+0000",
+      "digitalId": 46317,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/b0/5a14ac9301572",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "U.S.Avengers Vol. 2: Cannonball Run"
+    },
+    {
+      "issueId": 61652,
+      "title": "Occupy Avengers (2016) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/61652/occupy_avengers_2016_5",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2017-03-29T00:00:00+0000",
+      "mu": "2017-10-02T00:00:00+0000",
+      "digitalId": 44304,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/58d3d68b37824",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paulo Siqueira",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 2: In Plain Sight"
+    },
+    {
+      "issueId": 61653,
+      "title": "Occupy Avengers (2016) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/61653/occupy_avengers_2016_6",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2017-04-26T00:00:00+0000",
+      "mu": "2017-10-30T00:00:00+0000",
+      "digitalId": 44560,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/58f79d7decddf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paulo Siqueira",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 2: In Plain Sight"
+    },
+    {
+      "issueId": 61654,
+      "title": "Occupy Avengers (2016) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/61654/occupy_avengers_2016_7",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2017-05-31T00:00:00+0000",
+      "mu": "2017-12-04T00:00:00+0000",
+      "digitalId": 44767,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/5925b4bc8927d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nic Klein",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 2: In Plain Sight"
+    },
+    {
+      "issueId": 61655,
+      "title": "Occupy Avengers (2016) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/61655/occupy_avengers_2016_8",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2017-06-28T00:00:00+0000",
+      "mu": "2018-01-01T00:00:00+0000",
+      "digitalId": 44988,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/a0/594c2a91bffc6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Martin Morazzo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Coelho",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 2: In Plain Sight"
+    },
+    {
+      "issueId": 61656,
+      "title": "Occupy Avengers (2016) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/61656/occupy_avengers_2016_9",
+      "seriesId": 22649,
+      "seriesName": "Occupy Avengers (2016 - 2017)",
+      "onSale": "2017-07-26T00:00:00+0000",
+      "mu": "2018-01-29T00:00:00+0000",
+      "digitalId": 45225,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/30/596d138f69cea",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "penciler"
+        },
+        {
+          "name": "David Walker",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Occupy Avengers Vol. 2: In Plain Sight"
+    },
+    {
+      "issueId": 61103,
+      "title": "Uncanny Avengers (2015) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/61103/uncanny_avengers_2015_26",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-08-30T00:00:00+0000",
+      "mu": "2018-03-05T00:00:00+0000",
+      "digitalId": 45497,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/30/59935052e7ef5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 5: Stars and Garters"
+    },
+    {
+      "issueId": 61104,
+      "title": "Uncanny Avengers (2015) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/61104/uncanny_avengers_2015_27",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-09-13T00:00:00+0000",
+      "mu": "2018-03-19T00:00:00+0000",
+      "digitalId": 45742,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/59b04daf0cc86",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 5: Stars and Garters"
+    },
+    {
+      "issueId": 61105,
+      "title": "Uncanny Avengers (2015) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/61105/uncanny_avengers_2015_28",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-10-11T00:00:00+0000",
+      "mu": "2017-10-11T00:00:00+0000",
+      "digitalId": 45998,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/59d5400a5877c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 5: Stars and Garters"
+    },
+    {
+      "issueId": 61106,
+      "title": "Uncanny Avengers (2015) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/61106/uncanny_avengers_2015_29",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-11-08T00:00:00+0000",
+      "mu": "2018-05-14T00:00:00+0000",
+      "digitalId": 46332,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/59fa136f47a26",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juanan Ramirez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 5: Stars and Garters"
+    },
+    {
+      "issueId": 65312,
+      "title": "Uncanny Avengers (2015) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/65312/uncanny_avengers_2015_30",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-12-20T00:00:00+0000",
+      "mu": "2018-06-25T00:00:00+0000",
+      "digitalId": 46796,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5a31739f478ad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Unity Vol. 5: Stars and Garters"
+    }
+  ]
+}

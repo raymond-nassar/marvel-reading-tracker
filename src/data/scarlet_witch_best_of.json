@@ -1,0 +1,2401 @@
+{
+  "id": "scarlet-witch-best-of",
+  "name": "The Best of the Scarlet Witch",
+  "description": "A best-of path through Wanda Maximoff, compiled by hand from a reader's outline of Comic Book Herald's guide to the same. It opens with her origin one-shot and the issue where she meets Agatha Harkness, then the Chthon possession on Wundagore Mountain, both Vision and the Scarlet Witch limited series, and her inner world in Avengers. It carries on through the Children's Crusade, Wanda under the Apocalypse Twins in Ragnarok Now, her 2015 solo series, her break with Wonder Man, Quicksilver's side of their bond, and No Road Home. The sections are the guide's and are kept in its order.",
+  "source": "https://www.comicbookherald.com/the-best-of-the-scarlet-witch/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.793Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 73,
+  "collections": 12,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 32684,
+      "title": "Avengers Origins: Scarlet Witch & Quicksilver (2011) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/32684/avengers_origins_scarlet_witch_quicksilver_2011_1",
+      "seriesId": 9862,
+      "seriesName": "Avengers Origins: Scarlet Witch & Quicksilver (2011)",
+      "onSale": "2011-11-23T00:00:00+0000",
+      "mu": "2012-01-05T00:00:00+0000",
+      "digitalId": 24823,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/5a1ef5b49a4f6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Mckeever",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers Origins: Scarlet Witch & Quicksilver"
+    },
+    {
+      "issueId": 6984,
+      "title": "Avengers (1963) #128",
+      "number": "128",
+      "url": "https://www.marvel.com/comics/issue/6984/avengers_1963_128",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1974-10-01T00:00:00+0000",
+      "mu": "1974-10-01T00:00:00+0000",
+      "digitalId": 29960,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/c0/5878f439d6843",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Staton",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Buscema",
+          "role": "penciler"
+        }
+      ],
+      "collectedIn": "Avengers #128: Wanda Meets Agatha Harkness"
+    },
+    {
+      "issueId": 7047,
+      "title": "Avengers (1963) #185",
+      "number": "185",
+      "url": "https://www.marvel.com/comics/issue/7047/avengers_1963_185",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-07-01T00:00:00+0000",
+      "mu": "1979-07-01T00:00:00+0000",
+      "digitalId": 12430,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/b0/58860afcdbce7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        },
+        {
+          "name": "Steven Grant",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Witch on Wundagore Mountain"
+    },
+    {
+      "issueId": 7048,
+      "title": "Avengers (1963) #186",
+      "number": "186",
+      "url": "https://www.marvel.com/comics/issue/7048/avengers_1963_186",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-08-01T00:00:00+0000",
+      "mu": "1979-08-01T00:00:00+0000",
+      "digitalId": 12884,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/d0/4e95aef4e25e4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        },
+        {
+          "name": "Steven Grant",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Witch on Wundagore Mountain"
+    },
+    {
+      "issueId": 7049,
+      "title": "Avengers (1963) #187",
+      "number": "187",
+      "url": "https://www.marvel.com/comics/issue/7049/avengers_1963_187",
+      "seriesId": 1991,
+      "seriesName": "Avengers (1963 - 1996)",
+      "onSale": "1979-09-01T00:00:00+0000",
+      "mu": "1979-09-01T00:00:00+0000",
+      "digitalId": 12431,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/58860d46c048b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Byrne",
+          "role": "penciler"
+        },
+        {
+          "name": "David Michelinie",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Gruenwald",
+          "role": "writer"
+        },
+        {
+          "name": "Steven Grant",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Witch on Wundagore Mountain"
+    },
+    {
+      "issueId": 11954,
+      "title": "Vision and the Scarlet Witch (1982) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/11954/vision_and_the_scarlet_witch_1982_1",
+      "seriesId": 2090,
+      "seriesName": "Vision and the Scarlet Witch (1982 - 1983)",
+      "onSale": "1982-11-01T00:00:00+0000",
+      "mu": "1982-11-01T00:00:00+0000",
+      "digitalId": 3100,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/5c9b8c175007d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Brian Garvey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ian Akin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Leonardi",
+          "role": "penciler"
+        },
+        {
+          "name": "Bill Mantlo",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 1"
+    },
+    {
+      "issueId": 11955,
+      "title": "Vision and the Scarlet Witch (1982) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/11955/vision_and_the_scarlet_witch_1982_2",
+      "seriesId": 2090,
+      "seriesName": "Vision and the Scarlet Witch (1982 - 1983)",
+      "onSale": "1982-12-01T00:00:00+0000",
+      "mu": "1982-12-01T00:00:00+0000",
+      "digitalId": 3101,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5c9b94dcee203",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Brian Garvey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ian Akin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Leonardi",
+          "role": "penciler"
+        },
+        {
+          "name": "Bill Mantlo",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 1"
+    },
+    {
+      "issueId": 11956,
+      "title": "Vision and the Scarlet Witch (1982) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/11956/vision_and_the_scarlet_witch_1982_3",
+      "seriesId": 2090,
+      "seriesName": "Vision and the Scarlet Witch (1982 - 1983)",
+      "onSale": "1983-01-01T00:00:00+0000",
+      "mu": "1983-01-01T00:00:00+0000",
+      "digitalId": 3102,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5c9b9ad0d50e7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Brian Garvey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ian Akin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Leonardi",
+          "role": "penciler"
+        },
+        {
+          "name": "Bill Mantlo",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 1"
+    },
+    {
+      "issueId": 11957,
+      "title": "Vision and the Scarlet Witch (1982) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/11957/vision_and_the_scarlet_witch_1982_4",
+      "seriesId": 2090,
+      "seriesName": "Vision and the Scarlet Witch (1982 - 1983)",
+      "onSale": "1983-02-01T00:00:00+0000",
+      "mu": "1983-02-01T00:00:00+0000",
+      "digitalId": 3103,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/5c9ba313906b1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Brian Garvey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ian Akin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Leonardi",
+          "role": "penciler"
+        },
+        {
+          "name": "Bill Mantlo",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 1"
+    },
+    {
+      "issueId": 18455,
+      "title": "Vision and the Scarlet Witch (1985) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/18455/vision_and_the_scarlet_witch_1985_1",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1985-10-01T00:00:00+0000",
+      "mu": "1985-10-01T00:00:00+0000",
+      "digitalId": 21799,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/5c98f52a1e181",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andy Mushynsky",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18459,
+      "title": "Vision and the Scarlet Witch (1985) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/18459/vision_and_the_scarlet_witch_1985_2",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1985-11-01T00:00:00+0000",
+      "mu": "1985-11-01T00:00:00+0000",
+      "digitalId": 21805,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/70/5c98fbfb68942",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andy Mushynsky",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18460,
+      "title": "Vision and the Scarlet Witch (1985) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/18460/vision_and_the_scarlet_witch_1985_3",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1985-12-01T00:00:00+0000",
+      "mu": "1985-12-01T00:00:00+0000",
+      "digitalId": 21807,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/5c9902d7c1d51",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Jim Mooney",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18461,
+      "title": "Vision and the Scarlet Witch (1985) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/18461/vision_and_the_scarlet_witch_1985_4",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-01-01T00:00:00+0000",
+      "mu": "1986-01-01T00:00:00+0000",
+      "digitalId": 21812,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5c990a40cee61",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Jim Mooney",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18462,
+      "title": "Vision and the Scarlet Witch (1985) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/18462/vision_and_the_scarlet_witch_1985_5",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-02-01T00:00:00+0000",
+      "mu": "1986-02-01T00:00:00+0000",
+      "digitalId": 21813,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/03/5c99107971e24",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Jack Abel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Esposito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18463,
+      "title": "Vision and the Scarlet Witch (1985) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/18463/vision_and_the_scarlet_witch_1985_6",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-03-01T00:00:00+0000",
+      "mu": "1986-03-01T00:00:00+0000",
+      "digitalId": 21817,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/5c99164cccfbf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Frank Springer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18464,
+      "title": "Vision and the Scarlet Witch (1985) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/18464/vision_and_the_scarlet_witch_1985_7",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-04-01T00:00:00+0000",
+      "mu": "1986-04-01T00:00:00+0000",
+      "digitalId": 21820,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/5c9925bbb4ad5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Frank Springer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18465,
+      "title": "Vision and the Scarlet Witch (1985) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/18465/vision_and_the_scarlet_witch_1985_8",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-05-01T00:00:00+0000",
+      "mu": "1986-05-01T00:00:00+0000",
+      "digitalId": 21825,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5c992b2439ea5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Frank Springer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18466,
+      "title": "Vision and the Scarlet Witch (1985) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/18466/vision_and_the_scarlet_witch_1985_9",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-06-01T00:00:00+0000",
+      "mu": "1986-06-01T00:00:00+0000",
+      "digitalId": 21833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/03/5c9930900477e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Frank Springer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18456,
+      "title": "Vision and the Scarlet Witch (1985) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/18456/vision_and_the_scarlet_witch_1985_10",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-07-01T00:00:00+0000",
+      "mu": "1986-07-01T00:00:00+0000",
+      "digitalId": 21883,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/30/5c9935fac6ec8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Frank Springer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18457,
+      "title": "Vision and the Scarlet Witch (1985) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/18457/vision_and_the_scarlet_witch_1985_11",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-08-01T00:00:00+0000",
+      "mu": "1986-08-01T00:00:00+0000",
+      "digitalId": 21886,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/5c993b86bc82d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Frank Springer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Richard Howell",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Englehart",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 18458,
+      "title": "Vision and the Scarlet Witch (1985) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/18458/vision_and_the_scarlet_witch_1985_12",
+      "seriesId": 3655,
+      "seriesName": "Vision and the Scarlet Witch (1985 - 1986)",
+      "onSale": "1986-09-01T00:00:00+0000",
+      "mu": "1986-09-01T00:00:00+0000",
+      "digitalId": 7499,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/04/5c9b7d3e9eff2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "The Vision and the Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 17491,
+      "title": "Avengers (1998) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/17491/avengers_1998_10",
+      "seriesId": 354,
+      "seriesName": "Avengers (1998 - 2004)",
+      "onSale": "1998-11-10T00:00:00+0000",
+      "mu": "2008-09-17T00:00:00+0000",
+      "digitalId": 5117,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/03/58516c235127a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 44,
+      "creators": [],
+      "collectedIn": "Avengers (1998) #10-11"
+    },
+    {
+      "issueId": 17492,
+      "title": "Avengers (1998) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/17492/avengers_1998_11",
+      "seriesId": 354,
+      "seriesName": "Avengers (1998 - 2004)",
+      "onSale": "1998-12-10T00:00:00+0000",
+      "mu": "2008-09-17T00:00:00+0000",
+      "digitalId": 5121,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/50/5854065669f35",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 44,
+      "creators": [],
+      "collectedIn": "Avengers (1998) #10-11"
+    },
+    {
+      "issueId": 31134,
+      "title": "Avengers: The Children's Crusade (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/31134/avengers_the_childrens_crusade_2010_1",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2010-07-08T00:00:00+0000",
+      "mu": "2011-05-17T00:00:00+0000",
+      "digitalId": 15156,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/4f6210eddab18",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31136,
+      "title": "Avengers: The Children's Crusade (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/31136/avengers_the_childrens_crusade_2010_2",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2010-09-01T00:00:00+0000",
+      "mu": "2011-09-27T00:00:00+0000",
+      "digitalId": 15888,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/4f62106ddde29",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31138,
+      "title": "Avengers: The Children's Crusade (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/31138/avengers_the_childrens_crusade_2010_3",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2010-11-10T00:00:00+0000",
+      "mu": "2011-11-15T00:00:00+0000",
+      "digitalId": 17520,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/4f620fc064599",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31140,
+      "title": "Avengers: The Children's Crusade (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/31140/avengers_the_childrens_crusade_2010_4",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-01-05T00:00:00+0000",
+      "mu": "2013-03-20T14:44:00+0000",
+      "digitalId": 18833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/5c335c7f44735",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31142,
+      "title": "Avengers: The Children's Crusade (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/31142/avengers_the_childrens_crusade_2010_5",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-04-06T00:00:00+0000",
+      "mu": "2012-03-06T00:00:00+0000",
+      "digitalId": 20383,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/51685316004de",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31144,
+      "title": "Avengers: The Children's Crusade (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/31144/avengers_the_childrens_crusade_2010_6",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-06-29T00:00:00+0000",
+      "mu": "2012-03-06T00:00:00+0000",
+      "digitalId": 22119,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/b0/5168530750909",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31146,
+      "title": "Avengers: The Children's Crusade (2010) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/31146/avengers_the_childrens_crusade_2010_7",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-08-31T00:00:00+0000",
+      "mu": "2012-05-02T00:00:00+0000",
+      "digitalId": 23890,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/4e78b6fb32ad6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Livesay",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Justin Ponsor",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31148,
+      "title": "Avengers: The Children's Crusade (2010) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/31148/avengers_the_childrens_crusade_2010_8",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-12-28T00:00:00+0000",
+      "mu": "2011-12-28T00:00:00+0000",
+      "digitalId": 25189,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/10/514a0aea7b20c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Livesay",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 34271,
+      "title": "Avengers: The Children's Crusade (2010) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/34271/avengers_the_childrens_crusade_2010_9",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2012-03-07T00:00:00+0000",
+      "mu": "2013-02-26T00:00:00+0000",
+      "digitalId": 25765,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/51684c6275d03",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 43328,
+      "title": "Uncanny Avengers (2012) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/43328/uncanny_avengers_2012_12",
+      "seriesId": 16414,
+      "seriesName": "Uncanny Avengers (2012 - 2014)",
+      "onSale": "2013-09-25T00:00:00+0000",
+      "mu": "2014-03-31T00:00:00+0000",
+      "digitalId": 31595,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/523763dd4842b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Ragnarok Now"
+    },
+    {
+      "issueId": 49216,
+      "title": "Uncanny Avengers (2012) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/49216/uncanny_avengers_2012_13",
+      "seriesId": 16414,
+      "seriesName": "Uncanny Avengers (2012 - 2014)",
+      "onSale": "2013-10-23T00:00:00+0000",
+      "mu": "2014-04-28T00:00:00+0000",
+      "digitalId": 31750,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/10/525eeffb403da",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Ragnarok Now"
+    },
+    {
+      "issueId": 49217,
+      "title": "Uncanny Avengers (2012) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/49217/uncanny_avengers_2012_14",
+      "seriesId": 16414,
+      "seriesName": "Uncanny Avengers (2012 - 2014)",
+      "onSale": "2013-11-27T00:00:00+0000",
+      "mu": "2014-05-26T00:00:00+0000",
+      "digitalId": 32333,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/528f8c17b31eb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Ragnarok Now"
+    },
+    {
+      "issueId": 49218,
+      "title": "Uncanny Avengers (2012) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/49218/uncanny_avengers_2012_15",
+      "seriesId": 16414,
+      "seriesName": "Uncanny Avengers (2012 - 2014)",
+      "onSale": "2013-12-18T00:00:00+0000",
+      "mu": "2014-06-23T00:00:00+0000",
+      "digitalId": 32334,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/52a784474d61e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Ragnarok Now"
+    },
+    {
+      "issueId": 49219,
+      "title": "Uncanny Avengers (2012) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/49219/uncanny_avengers_2012_16",
+      "seriesId": 16414,
+      "seriesName": "Uncanny Avengers (2012 - 2014)",
+      "onSale": "2014-01-29T00:00:00+0000",
+      "mu": "2014-07-28T00:00:00+0000",
+      "digitalId": 32474,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/52dee0e9a9cba",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Ragnarok Now"
+    },
+    {
+      "issueId": 49220,
+      "title": "Uncanny Avengers (2012) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/49220/uncanny_avengers_2012_17",
+      "seriesId": 16414,
+      "seriesName": "Uncanny Avengers (2012 - 2014)",
+      "onSale": "2014-02-26T00:00:00+0000",
+      "mu": "2014-08-25T00:00:00+0000",
+      "digitalId": 33037,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/5ae72e98be12f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers: Ragnarok Now"
+    },
+    {
+      "issueId": 57094,
+      "title": "Scarlet Witch (2015) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/57094/scarlet_witch_2015_1",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2015-12-09T00:00:00+0000",
+      "mu": "2016-06-13T00:00:00+0000",
+      "digitalId": 40660,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/565f5a69631d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57097,
+      "title": "Scarlet Witch (2015) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/57097/scarlet_witch_2015_2",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-01-13T00:00:00+0000",
+      "mu": "2016-07-11T00:00:00+0000",
+      "digitalId": 40859,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/567abbe0e4270",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57099,
+      "title": "Scarlet Witch (2015) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/57099/scarlet_witch_2015_3",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-02-03T00:00:00+0000",
+      "mu": "2016-08-01T00:00:00+0000",
+      "digitalId": 41074,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/56a7c0a23d85a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57100,
+      "title": "Scarlet Witch (2015) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/57100/scarlet_witch_2015_4",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-03-16T00:00:00+0000",
+      "mu": "2016-09-19T00:00:00+0000",
+      "digitalId": 41418,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/56e3350ca4454",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Dillon",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57101,
+      "title": "Scarlet Witch (2015) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/57101/scarlet_witch_2015_5",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-04-06T00:00:00+0000",
+      "mu": "2016-10-03T00:00:00+0000",
+      "digitalId": 41660,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/56fec6a61fa8e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Javier Pulido",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57102,
+      "title": "Scarlet Witch (2015) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/57102/scarlet_witch_2015_6",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-05-04T00:00:00+0000",
+      "mu": "2016-11-07T00:00:00+0000",
+      "digitalId": 41529,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/f0/571e7fa1c710b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57103,
+      "title": "Scarlet Witch (2015) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/57103/scarlet_witch_2015_7",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-06-22T00:00:00+0000",
+      "mu": "2016-12-26T00:00:00+0000",
+      "digitalId": 41810,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/575b2f2056a76",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Annie Wu",
+          "role": "penciler"
+        },
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57104,
+      "title": "Scarlet Witch (2015) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/57104/scarlet_witch_2015_8",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-07-06T00:00:00+0000",
+      "mu": "2017-01-09T00:00:00+0000",
+      "digitalId": 42053,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/577537bec36c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Tula Lotay",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57105,
+      "title": "Scarlet Witch (2015) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/57105/scarlet_witch_2015_9",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-08-10T00:00:00+0000",
+      "mu": "2017-02-13T00:00:00+0000",
+      "digitalId": 42270,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/70/57a2326bc104b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Joelle Jones",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57106,
+      "title": "Scarlet Witch (2015) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/57106/scarlet_witch_2015_10",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-09-14T00:00:00+0000",
+      "mu": "2017-03-20T00:00:00+0000",
+      "digitalId": 42599,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/50/57c59747af761",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Kei Kitazawa",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57107,
+      "title": "Scarlet Witch (2015) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/57107/scarlet_witch_2015_11",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-10-05T00:00:00+0000",
+      "mu": "2017-04-10T00:00:00+0000",
+      "digitalId": 42797,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/57e59342cf706",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Leila Del Duca",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 57108,
+      "title": "Scarlet Witch (2015) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/57108/scarlet_witch_2015_12",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-11-02T00:00:00+0000",
+      "mu": "2017-05-08T00:00:00+0000",
+      "digitalId": 43173,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/58052854c0f37",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Annapaola Martello",
+          "role": "penciler"
+        },
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 60028,
+      "title": "Scarlet Witch (2015) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/60028/scarlet_witch_2015_13",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2016-12-07T00:00:00+0000",
+      "mu": "2017-06-12T00:00:00+0000",
+      "digitalId": 43446,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/583da3fc94707",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Jonathan Marks",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 60029,
+      "title": "Scarlet Witch (2015) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/60029/scarlet_witch_2015_14",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2017-01-04T00:00:00+0000",
+      "mu": "2017-07-10T00:00:00+0000",
+      "digitalId": 43835,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/585c12d377abf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Shawn Crystal",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 60138,
+      "title": "Scarlet Witch (2015) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/60138/scarlet_witch_2015_15",
+      "seriesId": 20854,
+      "seriesName": "Scarlet Witch (2015 - 2017)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44123,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/e0/58a47b9798962",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Aja",
+          "role": "penciler"
+        },
+        {
+          "name": "Vanesa Del Rey",
+          "role": "penciler"
+        },
+        {
+          "name": "James Robinson",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Scarlet Witch, Volume 2"
+    },
+    {
+      "issueId": 61103,
+      "title": "Uncanny Avengers (2015) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/61103/uncanny_avengers_2015_26",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-08-30T00:00:00+0000",
+      "mu": "2018-03-05T00:00:00+0000",
+      "digitalId": 45497,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/30/59935052e7ef5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers (2015) #26-30"
+    },
+    {
+      "issueId": 61104,
+      "title": "Uncanny Avengers (2015) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/61104/uncanny_avengers_2015_27",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-09-13T00:00:00+0000",
+      "mu": "2018-03-19T00:00:00+0000",
+      "digitalId": 45742,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/59b04daf0cc86",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers (2015) #26-30"
+    },
+    {
+      "issueId": 61105,
+      "title": "Uncanny Avengers (2015) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/61105/uncanny_avengers_2015_28",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-10-11T00:00:00+0000",
+      "mu": "2017-10-11T00:00:00+0000",
+      "digitalId": 45998,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/59d5400a5877c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers (2015) #26-30"
+    },
+    {
+      "issueId": 61106,
+      "title": "Uncanny Avengers (2015) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/61106/uncanny_avengers_2015_29",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-11-08T00:00:00+0000",
+      "mu": "2018-05-14T00:00:00+0000",
+      "digitalId": 46332,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/59fa136f47a26",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juanan Ramirez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers (2015) #26-30"
+    },
+    {
+      "issueId": 65312,
+      "title": "Uncanny Avengers (2015) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/65312/uncanny_avengers_2015_30",
+      "seriesId": 20621,
+      "seriesName": "Uncanny Avengers (2015 - 2017)",
+      "onSale": "2017-12-20T00:00:00+0000",
+      "mu": "2018-06-25T00:00:00+0000",
+      "digitalId": 46796,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5a31739f478ad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Uncanny Avengers (2015) #26-30"
+    },
+    {
+      "issueId": 67028,
+      "title": "Quicksilver: No Surrender (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67028/quicksilver_no_surrender_2018_1",
+      "seriesId": 24237,
+      "seriesName": "Quicksilver: No Surrender (2018)",
+      "onSale": "2018-05-16T00:00:00+0000",
+      "mu": "2018-11-19T00:00:00+0000",
+      "digitalId": 47931,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/5af36a77368f7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eric Nguyen",
+          "role": "cover artist"
+        },
+        {
+          "name": "Martin Simmonds",
+          "role": "penciler"
+        },
+        {
+          "name": "Saladin Ahmed",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Quicksilver: No Surrender"
+    },
+    {
+      "issueId": 69373,
+      "title": "Quicksilver: No Surrender (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/69373/quicksilver_no_surrender_2018_2",
+      "seriesId": 24237,
+      "seriesName": "Quicksilver: No Surrender (2018)",
+      "onSale": "2018-06-13T00:00:00+0000",
+      "mu": "2018-06-13T00:00:00+0000",
+      "digitalId": 48283,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/5b1705d5d6a2b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eric Nguyen",
+          "role": "cover artist"
+        },
+        {
+          "name": "Martin Simmonds",
+          "role": "penciler"
+        },
+        {
+          "name": "Saladin Ahmed",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Quicksilver: No Surrender"
+    },
+    {
+      "issueId": 69374,
+      "title": "Quicksilver: No Surrender (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/69374/quicksilver_no_surrender_2018_3",
+      "seriesId": 24237,
+      "seriesName": "Quicksilver: No Surrender (2018)",
+      "onSale": "2018-07-11T00:00:00+0000",
+      "mu": "2019-01-14T00:00:00+0000",
+      "digitalId": 48572,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/5b3fea7f70b42",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eric Nguyen",
+          "role": "cover artist"
+        },
+        {
+          "name": "Martin Simmonds",
+          "role": "penciler"
+        },
+        {
+          "name": "Saladin Ahmed",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Quicksilver: No Surrender"
+    },
+    {
+      "issueId": 69375,
+      "title": "Quicksilver: No Surrender (2018) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/69375/quicksilver_no_surrender_2018_4",
+      "seriesId": 24237,
+      "seriesName": "Quicksilver: No Surrender (2018)",
+      "onSale": "2018-08-08T00:00:00+0000",
+      "mu": "2019-02-11T00:00:00+0000",
+      "digitalId": 48847,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/5b620d7180f60",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eric Nguyen",
+          "role": "cover artist"
+        },
+        {
+          "name": "Martin Simmonds",
+          "role": "penciler"
+        },
+        {
+          "name": "Saladin Ahmed",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Quicksilver: No Surrender"
+    },
+    {
+      "issueId": 69376,
+      "title": "Quicksilver: No Surrender (2018) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/69376/quicksilver_no_surrender_2018_5",
+      "seriesId": 24237,
+      "seriesName": "Quicksilver: No Surrender (2018)",
+      "onSale": "2018-09-05T00:00:00+0000",
+      "mu": "2019-03-11T00:00:00+0000",
+      "digitalId": 49117,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/5b882d075ca8e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eric Nguyen",
+          "role": "cover artist"
+        },
+        {
+          "name": "Martin Simmonds",
+          "role": "penciler"
+        },
+        {
+          "name": "Saladin Ahmed",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Quicksilver: No Surrender"
+    },
+    {
+      "issueId": 71433,
+      "title": "Avengers No Road Home (2019) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71433/avengers_no_road_home_2019_1",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-02-13T00:00:00+0000",
+      "mu": "2019-08-19T00:00:00+0000",
+      "digitalId": 50603,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/5c5c57f2aedad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71435,
+      "title": "Avengers No Road Home (2019) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71435/avengers_no_road_home_2019_2",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-02-20T00:00:00+0000",
+      "mu": "2019-08-26T00:00:00+0000",
+      "digitalId": 50604,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/5c64942fd5bfb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71436,
+      "title": "Avengers No Road Home (2019) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/71436/avengers_no_road_home_2019_3",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-02-27T00:00:00+0000",
+      "mu": "2019-09-02T00:00:00+0000",
+      "digitalId": 50605,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/90/5c6dda9879934",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71437,
+      "title": "Avengers No Road Home (2019) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/71437/avengers_no_road_home_2019_4",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-03-06T00:00:00+0000",
+      "mu": "2019-09-09T00:00:00+0000",
+      "digitalId": 50868,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/5c76f8b34dd91",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71438,
+      "title": "Avengers No Road Home (2019) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/71438/avengers_no_road_home_2019_5",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-03-13T00:00:00+0000",
+      "mu": "2019-09-16T00:00:00+0000",
+      "digitalId": 50917,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5c802d7e2a89a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71439,
+      "title": "Avengers No Road Home (2019) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/71439/avengers_no_road_home_2019_6",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-03-20T00:00:00+0000",
+      "mu": "2019-09-23T00:00:00+0000",
+      "digitalId": 50918,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/5c88158e87a0d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71440,
+      "title": "Avengers No Road Home (2019) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/71440/avengers_no_road_home_2019_7",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-03-27T00:00:00+0000",
+      "mu": "2019-09-30T00:00:00+0000",
+      "digitalId": 50919,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/5c93f6119b852",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71441,
+      "title": "Avengers No Road Home (2019) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/71441/avengers_no_road_home_2019_8",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-04-03T00:00:00+0000",
+      "mu": "2019-10-07T00:00:00+0000",
+      "digitalId": 51072,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/5c9bfa8f54615",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlo Barberi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71442,
+      "title": "Avengers No Road Home (2019) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/71442/avengers_no_road_home_2019_9",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-04-10T00:00:00+0000",
+      "mu": "2019-10-14T00:00:00+0000",
+      "digitalId": 51073,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/5ca3bee16660c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Medina",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    },
+    {
+      "issueId": 71987,
+      "title": "Avengers No Road Home (2019) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/71987/avengers_no_road_home_2019_10",
+      "seriesId": 26034,
+      "seriesName": "Avengers No Road Home (2019)",
+      "onSale": "2019-04-17T00:00:00+0000",
+      "mu": "2019-10-21T00:00:00+0000",
+      "digitalId": 51074,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/5cacf67f2a27e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Sean Izaakse",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: No Road Home"
+    }
+  ]
+}

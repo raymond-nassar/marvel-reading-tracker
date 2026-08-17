@@ -33,7 +33,8 @@
         "Time Runs Out",
         "incursions"
       ],
-      "expect": 89
+      "expect": 89,
+      "timeline": 2012
     },
     {
       "id": "hickman-full",
@@ -70,7 +71,8 @@
         "incursions",
         "tie-ins"
       ],
-      "expect": 219
+      "expect": 219,
+      "timeline": 2012
     },
     {
       "id": "new-ultimate-universe",
@@ -104,7 +106,8 @@
       "group": "new-ultimate-universe",
       "groupName": "The New Ultimate Universe",
       "variant": "Every issue, in publication order",
-      "expect": 138
+      "expect": 138,
+      "timeline": 2023
     },
     {
       "id": "new-ultimate-universe-trades",
@@ -139,7 +142,8 @@
       "group": "new-ultimate-universe",
       "groupName": "The New Ultimate Universe",
       "variant": "By collected edition",
-      "expect": 132
+      "expect": 132,
+      "timeline": 2023
     },
     {
       "id": "house-of-m",
@@ -177,7 +181,8 @@
         "mutants",
         "2005 event"
       ],
-      "expect": 20
+      "expect": 20,
+      "timeline": 2005
     },
     {
       "id": "house-of-m-essential",
@@ -215,7 +220,8 @@
         "2005 event",
         "main series only"
       ],
-      "expect": 8
+      "expect": 8,
+      "timeline": 2005
     },
     {
       "id": "civil-war",
@@ -254,7 +260,8 @@
         "unmasking",
         "2006 event"
       ],
-      "expect": 31
+      "expect": 31,
+      "timeline": 2006
     },
     {
       "id": "civil-war-essential",
@@ -292,7 +299,8 @@
         "2006 event",
         "main series only"
       ],
-      "expect": 7
+      "expect": 7,
+      "timeline": 2006
     },
     {
       "id": "annihilation",
@@ -327,7 +335,8 @@
         "Nova Corps",
         "2006 event"
       ],
-      "expect": 25
+      "expect": 25,
+      "timeline": 2006
     },
     {
       "id": "secret-invasion",
@@ -368,7 +377,8 @@
         "Savage Land",
         "2008 event"
       ],
-      "expect": 36
+      "expect": 36,
+      "timeline": 2008
     },
     {
       "id": "secret-invasion-essential",
@@ -408,7 +418,8 @@
         "2008 event",
         "main series only"
       ],
-      "expect": 8
+      "expect": 8,
+      "timeline": 2008
     },
     {
       "id": "king-in-black",
@@ -446,7 +457,8 @@
         "Codex",
         "2020 event"
       ],
-      "expect": 38
+      "expect": 38,
+      "timeline": 2020
     },
     {
       "id": "xmen-claremont",
@@ -489,7 +501,8 @@
         "Silver Age",
         "Comic Book Herald"
       ],
-      "expect": 318
+      "expect": 318,
+      "timeline": null
     },
     {
       "id": "xmen-claremont-complete",
@@ -532,7 +545,435 @@
         "Silver Age",
         "Comic Book Herald"
       ],
-      "expect": 404
+      "expect": 404,
+      "timeline": null
+    },
+    {
+      "id": "captain-america-best-of",
+      "name": "The Best of Captain America",
+      "description": "A best-of path through Captain America on Marvel Unlimited, compiled by hand from a reader's outline of Comic Book Herald's guide to the same. Ed Brubaker's run comes first and whole, from the Winter Soldier's return through the death of Steve Rogers, Reborn, Rebirth and the restored numbering, followed by Man Out of Time and the Life of Bucky Barnes. It then goes back for the Silver and Bronze Age chapters the guide picks out: the Red Skull and the Cosmic Cube in Tales of Suspense, the Life and Times of the Red Skull, Mark Gruenwald's The Captain, and issue #250 as a bonus. The sections are the guide's and are kept in its order rather than sorted by publication date.",
+      "type": "character-run",
+      "depth": "essential",
+      "beginner": true,
+      "sourceFile": "captain-america-best-of.md",
+      "sourcePage": "https://www.comicbookherald.com/the-best-of-captain-america-comics-in-marvel-unlimited/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "captain_america_best_of.json",
+      "characters": [
+        "Captain America",
+        "Steve Rogers",
+        "Bucky Barnes",
+        "Winter Soldier",
+        "Red Skull",
+        "Sharon Carter",
+        "Falcon",
+        "Sin",
+        "Crossbones"
+      ],
+      "keywords": [
+        "Ed Brubaker",
+        "Winter Soldier",
+        "The Death of Captain America",
+        "Reborn",
+        "Man Out of Time",
+        "Mark Gruenwald",
+        "The Captain",
+        "Cosmic Cube",
+        "Marvel Unlimited",
+        "Comic Book Herald"
+      ],
+      "expect": 114,
+      "timeline": null
+    },
+    {
+      "id": "doctor-doom-primer",
+      "name": "There is Only Doom",
+      "description": "A primer on Doctor Doom, compiled by hand from a reader's outline of Comic Book Herald's guide to the best Doom comics. It opens with the origin, in Fantastic Four #5, the second Fantastic Four annual and the Ultimate retelling, then Books of Doom and the story of Werner von Doom. From there it follows Doom as monarch, rival and thief of power: the long Fantastic Four sieges, Doomquest in Iron Man, the Silver Surfer and the Power Cosmic, Secret Wars in 1984 and again in 2015, the Infinity Gauntlet, and his turn as a hero in Infamous Iron Man. The sections are the guide's and are kept in its order.",
+      "type": "character-run",
+      "depth": "essential",
+      "beginner": true,
+      "sourceFile": "doctor-doom-primer.md",
+      "sourcePage": "https://www.comicbookherald.com/the-best-of-doctor-doom-comics/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "doctor_doom_primer.json",
+      "characters": [
+        "Doctor Doom",
+        "Victor von Doom",
+        "Fantastic Four",
+        "Reed Richards",
+        "Silver Surfer",
+        "Iron Man",
+        "Valeria",
+        "The Beyonder"
+      ],
+      "keywords": [
+        "Books of Doom",
+        "Doomquest",
+        "Secret Wars",
+        "Infinity Gauntlet",
+        "Infamous Iron Man",
+        "Unthinkable",
+        "Latveria",
+        "Comic Book Herald"
+      ],
+      "expect": 104,
+      "timeline": null
+    },
+    {
+      "id": "spider-man-best-of",
+      "name": "The Best of Spider-Man",
+      "description": "A best-of path through Peter Parker's Spider-Man, compiled by hand from a reader's outline of Comic Book Herald's guide to the same. It runs from Amazing Fantasy #15 and the Lee and Ditko years through the Lee and Romita chapters, Roger Stern's Hobgoblin mystery, the death of Jean DeWolff, Kraven's Last Hunt read across all three titles in publication order, the decline of Harry Osborn, Straczynski's Coming Home, the Gauntlet and Grim Hunt, Dying Wish into Superior Spider-Man, and Life Story. The sections are the guide's and are kept in its order rather than sorted by publication date.",
+      "type": "character-run",
+      "depth": "essential",
+      "beginner": true,
+      "sourceFile": "spider-man-best-of.md",
+      "sourcePage": "https://www.comicbookherald.com/the-best-spider-man-peter-parker-comics-of-all-time/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "spider_man_best_of.json",
+      "characters": [
+        "Spider-Man",
+        "Peter Parker",
+        "Green Goblin",
+        "Norman Osborn",
+        "Harry Osborn",
+        "Kraven the Hunter",
+        "Doctor Octopus",
+        "Mary Jane Watson",
+        "Hobgoblin",
+        "Morlun"
+      ],
+      "keywords": [
+        "Kraven's Last Hunt",
+        "The Death of Jean DeWolff",
+        "Coming Home",
+        "The Gauntlet",
+        "Grim Hunt",
+        "Dying Wish",
+        "Superior Spider-Man",
+        "Life Story",
+        "Comic Book Herald"
+      ],
+      "expect": 230,
+      "timeline": null
+    },
+    {
+      "id": "thor-best-of",
+      "name": "The Best of Thor",
+      "description": "A best-of path through Thor, compiled by hand from a reader's outline of Comic Book Herald's guide to the same. It starts in Journey into Mystery with the Absorbing Man and the issue where the title becomes Thor, then Kirby's cosmic run with Ego, the High Evolutionary and Mangog, Firelord, the Celestial Saga, and Walt Simonson's Surtur Saga with Beta Ray Bill and Skurge's last stand. It then covers the final Ragnarok, Asgard over Nebraska, Jason Aaron's God Butcher and Malekith stories, Jane Foster's run as Thor, and the War of the Realms. The sections are the guide's and are kept in its order.",
+      "type": "character-run",
+      "depth": "essential",
+      "beginner": true,
+      "sourceFile": "thor-best-of.md",
+      "sourcePage": "https://www.comicbookherald.com/best-10-thor-comics-of-all-time/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "thor_best_of.json",
+      "characters": [
+        "Thor",
+        "Odin",
+        "Loki",
+        "Beta Ray Bill",
+        "Jane Foster",
+        "Gorr the God Butcher",
+        "Malekith",
+        "Surtur",
+        "Mangog",
+        "Skurge"
+      ],
+      "keywords": [
+        "Journey into Mystery",
+        "Surtur Saga",
+        "The God Butcher",
+        "Ragnarok",
+        "War of the Realms",
+        "King Thor",
+        "Mighty Thor",
+        "Walt Simonson",
+        "Jason Aaron",
+        "Comic Book Herald"
+      ],
+      "expect": 131,
+      "timeline": null
+    },
+    {
+      "id": "scarlet-witch-best-of",
+      "name": "The Best of the Scarlet Witch",
+      "description": "A best-of path through Wanda Maximoff, compiled by hand from a reader's outline of Comic Book Herald's guide to the same. It opens with her origin one-shot and the issue where she meets Agatha Harkness, then the Chthon possession on Wundagore Mountain, both Vision and the Scarlet Witch limited series, and her inner world in Avengers. It carries on through the Children's Crusade, Wanda under the Apocalypse Twins in Ragnarok Now, her 2015 solo series, her break with Wonder Man, Quicksilver's side of their bond, and No Road Home. The sections are the guide's and are kept in its order.",
+      "type": "character-run",
+      "depth": "essential",
+      "beginner": true,
+      "sourceFile": "scarlet-witch-best-of.md",
+      "sourcePage": "https://www.comicbookherald.com/the-best-of-the-scarlet-witch/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "scarlet_witch_best_of.json",
+      "characters": [
+        "Scarlet Witch",
+        "Wanda Maximoff",
+        "Quicksilver",
+        "Vision",
+        "Agatha Harkness",
+        "Wonder Man",
+        "Doctor Voodoo",
+        "Wiccan",
+        "Speed",
+        "Chthon"
+      ],
+      "keywords": [
+        "Wundagore",
+        "The Children's Crusade",
+        "Ragnarok Now",
+        "No Surrender",
+        "No Road Home",
+        "Uncanny Avengers",
+        "Comic Book Herald"
+      ],
+      "expect": 73,
+      "timeline": null
+    },
+    {
+      "id": "essential-avengers",
+      "name": "Essential Avengers",
+      "description": "Ten runs out of the first 285 issues of Avengers, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. It takes the team from its assembly and the return of Captain America through the arrival of the Vision, the Kree and Skrull War, the Bride of Ultron, the Korvac Saga, the nights of Wundagore, Heart of Stone, the legacy of Thanos, Under Siege and the assault on Olympus. The gaps between sections are the outline's own: this is a selection rather than a continuous read.",
+      "type": "era",
+      "depth": "essential",
+      "beginner": true,
+      "sourceFile": "essential-avengers.md",
+      "sourcePage": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "essential_avengers.json",
+      "characters": [
+        "Avengers",
+        "Captain America",
+        "Iron Man",
+        "Thor",
+        "Vision",
+        "Scarlet Witch",
+        "Hank Pym",
+        "Ultron",
+        "Korvac",
+        "Baron Zemo"
+      ],
+      "keywords": [
+        "Epic Collection",
+        "Kree/Skrull War",
+        "The Korvac Saga",
+        "The Bride of Ultron",
+        "Under Siege",
+        "Nights of Wundagore",
+        "Assault on Olympus"
+      ],
+      "expect": 120,
+      "timeline": 1963
+    },
+    {
+      "id": "avengers-disassembled",
+      "name": "Avengers Disassembled",
+      "description": "The 2004 story that pulls the Avengers apart, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. It is four issues of Brian Michael Bendis at the end of the 1998 series plus the one-shot that closes it out, and it is the shortest order in this catalog on purpose. It ends the Busiek, Perez and Johns era and sets up everything the modern Avengers books do next.",
+      "type": "event",
+      "depth": "essential",
+      "beginner": true,
+      "sourceFile": "avengers-disassembled.md",
+      "sourcePage": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "avengers_disassembled.json",
+      "characters": [
+        "Avengers",
+        "Scarlet Witch",
+        "Wanda Maximoff",
+        "Vision",
+        "Hawkeye",
+        "Captain America",
+        "Iron Man",
+        "Doctor Strange"
+      ],
+      "keywords": [
+        "Disassembled",
+        "Brian Michael Bendis",
+        "Avengers Finale",
+        "Chaos"
+      ],
+      "expect": 5,
+      "timeline": 2004
+    },
+    {
+      "id": "civil-war-avengers",
+      "name": "Civil War: An Avengers Reading List",
+      "description": "The Avengers path through Civil War and out the other side, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. It pairs the seven-issue event with the New Avengers issues that run alongside it, the Young Avengers and Runaways tie-in, and Warren Ellis and Mike Deodato's Thunderbolts, which is not an Avengers title but is what makes Dark Avengers make sense later. It then follows the split into Mighty Avengers, the Initiative, Avengers/Invaders and the Illuminati.",
+      "type": "event",
+      "depth": "complete",
+      "beginner": false,
+      "sourceFile": "civil-war-avengers.md",
+      "sourcePage": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "civil_war_avengers.json",
+      "characters": [
+        "Avengers",
+        "Captain America",
+        "Iron Man",
+        "Spider-Man",
+        "Luke Cage",
+        "Norman Osborn",
+        "Thunderbolts",
+        "Young Avengers",
+        "Runaways"
+      ],
+      "keywords": [
+        "Civil War",
+        "The Initiative",
+        "Mighty Avengers",
+        "New Avengers",
+        "Illuminati",
+        "Thunderbolts",
+        "Warren Ellis"
+      ],
+      "expect": 83,
+      "timeline": 2006
+    },
+    {
+      "id": "dark-reign-avengers",
+      "name": "Dark Reign: An Avengers Reading List",
+      "description": "The Avengers path through Dark Reign, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. Norman Osborn runs his own Avengers, the Initiative and the real team go underground, and the Utopia crossover interrupts Dark Avengers partway through, which is why the run is read with a gap and picked up again later. It closes with Dark Reign: Young Avengers and the Children's Crusade.",
+      "type": "era",
+      "depth": "complete",
+      "beginner": false,
+      "sourceFile": "dark-reign-avengers.md",
+      "sourcePage": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "dark_reign_avengers.json",
+      "characters": [
+        "Norman Osborn",
+        "Dark Avengers",
+        "Avengers",
+        "Luke Cage",
+        "Ares",
+        "Sentry",
+        "Bullseye",
+        "Scarlet Witch",
+        "Young Avengers"
+      ],
+      "keywords": [
+        "Dark Reign",
+        "Dark Avengers",
+        "Utopia",
+        "The Initiative",
+        "Siege",
+        "The Children's Crusade"
+      ],
+      "expect": 75,
+      "timeline": 2009
+    },
+    {
+      "id": "heroic-age-avengers",
+      "name": "The Heroic Age: An Avengers Reading List",
+      "description": "The Avengers titles of 2010 to 2012 read together, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. Avengers, New Avengers and Secret Avengers alternate volume by volume from the Heroic Age launch through Fear Itself and on to the edge of Avengers vs X-Men, with Avengers Prime as the prologue. Where two of the outline's volumes share an issue at the boundary, it is read once, in the earlier one.",
+      "type": "era",
+      "depth": "complete",
+      "beginner": false,
+      "sourceFile": "heroic-age-avengers.md",
+      "sourcePage": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "heroic_age_avengers.json",
+      "characters": [
+        "Avengers",
+        "Steve Rogers",
+        "Iron Man",
+        "Thor",
+        "Luke Cage",
+        "Spider-Man",
+        "Wolverine",
+        "Hawkeye"
+      ],
+      "keywords": [
+        "Heroic Age",
+        "Avengers Prime",
+        "Secret Avengers",
+        "New Avengers",
+        "Fear Itself",
+        "Brian Michael Bendis"
+      ],
+      "expect": 92,
+      "timeline": 2010
+    },
+    {
+      "id": "all-new-all-different-avengers",
+      "name": "All-New, All-Different Avengers",
+      "description": "The Avengers line after Secret Wars, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. Rage of Ultron opens it, then the All-New, All-Different team, Uncanny Avengers, the A.I.M. New Avengers and A-Force, through the Standoff and Civil War II eras and into Secret Empire. It also carries the smaller books of the period, Great Lakes Avengers, Occupy Avengers and U.S.Avengers, in the order the outline gives them.",
+      "type": "era",
+      "depth": "complete",
+      "beginner": false,
+      "sourceFile": "all-new-all-different-avengers.md",
+      "sourcePage": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "all_new_all_different_avengers.json",
+      "characters": [
+        "Avengers",
+        "Ms. Marvel",
+        "Nova",
+        "Vision",
+        "Kang",
+        "Red Skull",
+        "Squirrel Girl",
+        "Hawkeye",
+        "Deadpool"
+      ],
+      "keywords": [
+        "All-New All-Different",
+        "Uncanny Avengers",
+        "A-Force",
+        "U.S.Avengers",
+        "Occupy Avengers",
+        "Great Lakes Avengers",
+        "Kang War",
+        "Secret Empire"
+      ],
+      "expect": 92,
+      "timeline": 2015
+    },
+    {
+      "id": "marvel-fresh-start-avengers",
+      "name": "Marvel Fresh Start Avengers",
+      "description": "Jason Aaron's Avengers and the books around it, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. The Final Host assembles the team, Wakanda Forever runs across three one-shots and an annual, and the West Coast Avengers and Savage Avengers run alongside the main title through the World Tour, the War of the Vampires and No Road Home. The gaps in the main series are the outline's own.",
+      "type": "era",
+      "depth": "complete",
+      "beginner": false,
+      "sourceFile": "marvel-fresh-start-avengers.md",
+      "sourcePage": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "out": "marvel_fresh_start_avengers.json",
+      "characters": [
+        "Avengers",
+        "Thor",
+        "Captain America",
+        "Iron Man",
+        "Black Panther",
+        "She-Hulk",
+        "Ghost Rider",
+        "Conan",
+        "Hawkeye",
+        "Gwenpool"
+      ],
+      "keywords": [
+        "Fresh Start",
+        "Jason Aaron",
+        "The Final Host",
+        "Wakanda Forever",
+        "West Coast Avengers",
+        "Savage Avengers",
+        "No Road Home"
+      ],
+      "expect": 59,
+      "timeline": 2018
     }
   ]
 }

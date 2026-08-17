@@ -1,0 +1,2548 @@
+{
+  "id": "dark-reign-avengers",
+  "name": "Dark Reign: An Avengers Reading List",
+  "description": "The Avengers path through Dark Reign, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. Norman Osborn runs his own Avengers, the Initiative and the real team go underground, and the Utopia crossover interrupts Dark Avengers partway through, which is why the run is read with a gap and picked up again later. It closes with Dark Reign: Young Avengers and the Children's Crusade.",
+  "source": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.798Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 75,
+  "collections": 15,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 23175,
+      "title": "Dark Avengers (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23175/dark_avengers_2009_1",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-01-21T00:00:00+0000",
+      "mu": "2009-01-21T00:00:00+0000",
+      "digitalId": 12982,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/514c9ca17bba9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Daniel Acuna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Renaud",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 1"
+    },
+    {
+      "issueId": 23655,
+      "title": "Dark Avengers (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/23655/dark_avengers_2009_2",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-02-18T00:00:00+0000",
+      "mu": "2009-02-18T00:00:00+0000",
+      "digitalId": 13539,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/00/514c9cc2cd25c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 1"
+    },
+    {
+      "issueId": 23821,
+      "title": "Dark Avengers (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/23821/dark_avengers_2009_3",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-03-18T00:00:00+0000",
+      "mu": "2009-03-18T00:00:00+0000",
+      "digitalId": 12983,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/514c9ce657dee",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 1"
+    },
+    {
+      "issueId": 24013,
+      "title": "Dark Avengers (2009) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/24013/dark_avengers_2009_4",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-04-29T00:00:00+0000",
+      "mu": "2009-04-29T00:00:00+0000",
+      "digitalId": 12529,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/514c9e4c8497a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 1"
+    },
+    {
+      "issueId": 24216,
+      "title": "Dark Avengers (2009) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/24216/dark_avengers_2009_5",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-06-03T00:00:00+0000",
+      "mu": "2009-06-03T00:00:00+0000",
+      "digitalId": 12580,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/514c9eef8c7d3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 1"
+    },
+    {
+      "issueId": 24810,
+      "title": "Dark Avengers (2009) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/24810/dark_avengers_2009_6",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2009-06-24T00:00:00+0000",
+      "digitalId": 12677,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/514c9f24153c0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Will Conrad",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 1"
+    },
+    {
+      "issueId": 24814,
+      "title": "Dark Avengers (2009) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/24814/dark_avengers_2009_9",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-09-16T00:00:00+0000",
+      "mu": "2009-12-23T00:00:00+0000",
+      "digitalId": 13562,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/10/514ca04f8dedc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 2"
+    },
+    {
+      "issueId": 24806,
+      "title": "Dark Avengers (2009) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/24806/dark_avengers_2009_10",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-10-21T00:00:00+0000",
+      "mu": "2010-02-09T00:00:00+0000",
+      "digitalId": 13811,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/c0/514ca040da121",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 2"
+    },
+    {
+      "issueId": 24807,
+      "title": "Dark Avengers (2009) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/24807/dark_avengers_2009_11",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-11-18T00:00:00+0000",
+      "mu": "2011-04-12T00:00:00+0000",
+      "digitalId": 13571,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/514ca194535bc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 2"
+    },
+    {
+      "issueId": 24808,
+      "title": "Dark Avengers (2009) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/24808/dark_avengers_2009_12",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-12-16T00:00:00+0000",
+      "mu": "2011-02-15T11:29:42+0000",
+      "digitalId": 17382,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/80/514ca1caf3b63",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 2"
+    },
+    {
+      "issueId": 29594,
+      "title": "Dark Avengers (2009) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/29594/dark_avengers_2009_13",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2010-01-20T00:00:00+0000",
+      "mu": "2010-09-14T00:00:00+0000",
+      "digitalId": 14682,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/52c5c387a0455",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 3"
+    },
+    {
+      "issueId": 29595,
+      "title": "Dark Avengers (2009) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/29595/dark_avengers_2009_14",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2010-02-17T00:00:00+0000",
+      "mu": "2010-09-28T00:00:00+0000",
+      "digitalId": 13890,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/52c5c3460cac6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 3"
+    },
+    {
+      "issueId": 29596,
+      "title": "Dark Avengers (2009) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/29596/dark_avengers_2009_15",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2010-03-17T00:00:00+0000",
+      "mu": "2010-12-14T00:00:00+0000",
+      "digitalId": 14081,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/52c5c33ae567f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 3"
+    },
+    {
+      "issueId": 29933,
+      "title": "Dark Avengers (2009) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/29933/dark_avengers_2009_16",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2010-05-12T00:00:00+0000",
+      "mu": "2011-01-28T00:00:00+0000",
+      "digitalId": 14609,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/52c5c336a94ca",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers, Volume 3"
+    },
+    {
+      "issueId": 23106,
+      "title": "The Mighty Avengers (2007) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/23106/the_mighty_avengers_2007_21",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-02-04T00:00:00+0000",
+      "mu": "2009-02-04T00:00:00+0000",
+      "digitalId": 13054,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/04/4f7c8e76e8feb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 5"
+    },
+    {
+      "issueId": 23603,
+      "title": "The Mighty Avengers (2007) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/23603/the_mighty_avengers_2007_22",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-02-25T00:00:00+0000",
+      "mu": "2009-02-25T00:00:00+0000",
+      "digitalId": 13879,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/4f7c8ef244ac0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 5"
+    },
+    {
+      "issueId": 23762,
+      "title": "The Mighty Avengers (2007) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/23762/the_mighty_avengers_2007_23",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-03-25T00:00:00+0000",
+      "mu": "2009-03-25T00:00:00+0000",
+      "digitalId": 13107,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/4f7c8ff521376",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 5"
+    },
+    {
+      "issueId": 23964,
+      "title": "The Mighty Avengers (2007) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/23964/the_mighty_avengers_2007_24",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-04-22T00:00:00+0000",
+      "mu": "2009-04-22T00:00:00+0000",
+      "digitalId": 13584,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/4f7c90635bfbb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roger Bonet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 5"
+    },
+    {
+      "issueId": 24163,
+      "title": "The Mighty Avengers (2007) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/24163/the_mighty_avengers_2007_25",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-06-03T00:00:00+0000",
+      "mu": "2009-06-03T00:00:00+0000",
+      "digitalId": 12534,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/50/4f7c916638465",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Noah Salonga",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Segovia",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 5"
+    },
+    {
+      "issueId": 25970,
+      "title": "The Mighty Avengers (2007) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/25970/the_mighty_avengers_2007_26",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-06-17T00:00:00+0000",
+      "mu": "2009-06-17T00:00:00+0000",
+      "digitalId": 12654,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/4f7c9235e45ea",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Harvey Tolibao",
+          "role": "cover artist"
+        },
+        {
+          "name": "Noah Salonga",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Diaz",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Segovia",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 5"
+    },
+    {
+      "issueId": 25971,
+      "title": "The Mighty Avengers (2007) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/25971/the_mighty_avengers_2007_27",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-07-15T00:00:00+0000",
+      "mu": "2009-07-15T00:00:00+0000",
+      "digitalId": 12958,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/70/4f7c92a66c689",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 6"
+    },
+    {
+      "issueId": 25972,
+      "title": "The Mighty Avengers (2007) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/25972/the_mighty_avengers_2007_28",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-08-19T00:00:00+0000",
+      "mu": "2009-08-19T00:00:00+0000",
+      "digitalId": 13585,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/4f7c9338178f0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 6"
+    },
+    {
+      "issueId": 25973,
+      "title": "The Mighty Avengers (2007) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/25973/the_mighty_avengers_2007_29",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-09-16T00:00:00+0000",
+      "mu": "2011-03-08T00:00:00+0000",
+      "digitalId": 16909,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/5b0467ce85b29",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 6"
+    },
+    {
+      "issueId": 25974,
+      "title": "The Mighty Avengers (2007) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/25974/the_mighty_avengers_2007_30",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-10-21T00:00:00+0000",
+      "mu": "2011-03-15T00:00:00+0000",
+      "digitalId": 13583,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/4f7c943b0e7a8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 6"
+    },
+    {
+      "issueId": 25975,
+      "title": "The Mighty Avengers (2007) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/25975/the_mighty_avengers_2007_31",
+      "seriesId": 1866,
+      "seriesName": "The Mighty Avengers (2007 - 2010)",
+      "onSale": "2009-11-18T00:00:00+0000",
+      "mu": "2011-03-22T00:00:00+0000",
+      "digitalId": 17631,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/4f7c94a00e459",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Mighty Avengers, Volume 6"
+    },
+    {
+      "issueId": 22912,
+      "title": "Avengers: The Initiative (2007) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/22912/avengers_the_initiative_2007_20",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2008-12-31T00:00:00+0000",
+      "mu": "2009-08-25T00:00:00+0000",
+      "digitalId": 10950,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/20/58dd09cca3bcd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Harvey Tolibao",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bong Dazo",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Kurth",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 4"
+    },
+    {
+      "issueId": 23112,
+      "title": "Avengers: The Initiative (2007) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/23112/avengers_the_initiative_2007_21",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-01-28T00:00:00+0000",
+      "mu": "2009-07-06T00:00:00+0000",
+      "digitalId": 12898,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/80/4e958dcf75807",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 4"
+    },
+    {
+      "issueId": 23608,
+      "title": "Avengers: The Initiative (2007) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/23608/avengers_the_initiative_2007_22",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-02-25T00:00:00+0000",
+      "mu": "2009-07-06T00:00:00+0000",
+      "digitalId": 12902,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/4e9594e0b78ae",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 4"
+    },
+    {
+      "issueId": 23968,
+      "title": "Avengers: The Initiative (2007) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/23968/avengers_the_initiative_2007_23",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-04-22T00:00:00+0000",
+      "mu": "2010-11-04T00:00:00+0000",
+      "digitalId": 15594,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/10/4e95979f77c63",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 4"
+    },
+    {
+      "issueId": 24167,
+      "title": "Avengers: The Initiative (2007) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/24167/avengers_the_initiative_2007_24",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-05-28T00:00:00+0000",
+      "mu": "2010-08-03T00:00:00+0000",
+      "digitalId": 12485,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/90/4e95993593b6c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 4"
+    },
+    {
+      "issueId": 24573,
+      "title": "Avengers: The Initiative (2007) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/24573/avengers_the_initiative_2007_25",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2009-06-24T00:00:00+0000",
+      "digitalId": 12673,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/50/4e959a67b3953",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 4"
+    },
+    {
+      "issueId": 27543,
+      "title": "Avengers: The Initiative (2007) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/27543/avengers_the_initiative_2007_26",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-07-22T00:00:00+0000",
+      "mu": "2010-08-17T00:00:00+0000",
+      "digitalId": 13989,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/90/4e8214ea4c0ab",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Roger Bonet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matteo De Longis",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 5"
+    },
+    {
+      "issueId": 27544,
+      "title": "Avengers: The Initiative (2007) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/27544/avengers_the_initiative_2007_27",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-08-26T00:00:00+0000",
+      "mu": "2010-10-05T00:00:00+0000",
+      "digitalId": 16413,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/4e8217d23c163",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Roger Bonet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matteo De Longis",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 5"
+    },
+    {
+      "issueId": 27545,
+      "title": "Avengers: The Initiative (2007) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/27545/avengers_the_initiative_2007_28",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-09-23T00:00:00+0000",
+      "mu": "2011-03-08T00:00:00+0000",
+      "digitalId": 17454,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/4e8f27f0adbe5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Roger Bonet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matteo De Longis",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 5"
+    },
+    {
+      "issueId": 27546,
+      "title": "Avengers: The Initiative (2007) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/27546/avengers_the_initiative_2007_29",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2011-03-15T00:00:00+0000",
+      "digitalId": 13608,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/4e8f2caa77cf6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matteo De Longis",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 5"
+    },
+    {
+      "issueId": 27547,
+      "title": "Avengers: The Initiative (2007) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/27547/avengers_the_initiative_2007_30",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-11-25T00:00:00+0000",
+      "mu": "2011-03-22T00:00:00+0000",
+      "digitalId": 13609,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/4e8f31c2e02ef",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 5"
+    },
+    {
+      "issueId": 27548,
+      "title": "Avengers: The Initiative (2007) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/27548/avengers_the_initiative_2007_31",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2009-12-23T00:00:00+0000",
+      "mu": "2010-11-16T00:00:00+0000",
+      "digitalId": 17393,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/4e95d72bcf5c8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Roger Bonet",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 6"
+    },
+    {
+      "issueId": 27549,
+      "title": "Avengers: The Initiative (2007) #32",
+      "number": "32",
+      "url": "https://www.marvel.com/comics/issue/27549/avengers_the_initiative_2007_32",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2010-01-27T00:00:00+0000",
+      "mu": "2010-11-19T00:00:00+0000",
+      "digitalId": 17426,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/4e95daaf4146b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rebecca Buchman",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 6"
+    },
+    {
+      "issueId": 29816,
+      "title": "Avengers: The Initiative (2007) #33",
+      "number": "33",
+      "url": "https://www.marvel.com/comics/issue/29816/avengers_the_initiative_2007_33",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2010-02-24T00:00:00+0000",
+      "mu": "2010-11-23T00:00:00+0000",
+      "digitalId": 13912,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/4e95e011889e5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 6"
+    },
+    {
+      "issueId": 29817,
+      "title": "Avengers: The Initiative (2007) #34",
+      "number": "34",
+      "url": "https://www.marvel.com/comics/issue/29817/avengers_the_initiative_2007_34",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2010-03-24T00:00:00+0000",
+      "mu": "2010-12-21T00:00:00+0000",
+      "digitalId": 14151,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/c0/4e95e67859f1e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 6"
+    },
+    {
+      "issueId": 29931,
+      "title": "Avengers: The Initiative (2007) #35",
+      "number": "35",
+      "url": "https://www.marvel.com/comics/issue/29931/avengers_the_initiative_2007_35",
+      "seriesId": 1945,
+      "seriesName": "Avengers: The Initiative (2007 - 2010)",
+      "onSale": "2010-05-12T00:00:00+0000",
+      "mu": "2011-01-24T00:00:00+0000",
+      "digitalId": 14576,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/03/4e95e85964001",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Initiative, Volume 6"
+    },
+    {
+      "issueId": 22880,
+      "title": "New Avengers (2004) #48",
+      "number": "48",
+      "url": "https://www.marvel.com/comics/issue/22880/new_avengers_2004_48",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2008-12-24T00:00:00+0000",
+      "mu": "2009-07-24T00:00:00+0000",
+      "digitalId": 11339,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/5773ea4e0b0dc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Matt Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 10"
+    },
+    {
+      "issueId": 23088,
+      "title": "New Avengers (2004) #49",
+      "number": "49",
+      "url": "https://www.marvel.com/comics/issue/23088/new_avengers_2004_49",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-01-28T00:00:00+0000",
+      "mu": "2010-01-01T00:00:00+0000",
+      "digitalId": 13088,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/5773ea806cfd3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Matt Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matthew Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 10"
+    },
+    {
+      "issueId": 23583,
+      "title": "New Avengers (2004) #50",
+      "number": "50",
+      "url": "https://www.marvel.com/comics/issue/23583/new_avengers_2004_50",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-02-25T00:00:00+0000",
+      "mu": "2010-01-01T00:00:00+0000",
+      "digitalId": 13980,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/90/5ca50b348d203",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Alvaro Lopez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Aja",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matt Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Gaydos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "David Lopez",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 10"
+    },
+    {
+      "issueId": 23747,
+      "title": "New Avengers (2004) #51",
+      "number": "51",
+      "url": "https://www.marvel.com/comics/issue/23747/new_avengers_2004_51",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-03-25T00:00:00+0000",
+      "mu": "2009-08-18T00:00:00+0000",
+      "digitalId": 13058,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/90/5773ea00cea12",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Matt Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matthew Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 11"
+    },
+    {
+      "issueId": 23938,
+      "title": "New Avengers (2004) #52",
+      "number": "52",
+      "url": "https://www.marvel.com/comics/issue/23938/new_avengers_2004_52",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-04-22T00:00:00+0000",
+      "mu": "2010-01-01T00:00:00+0000",
+      "digitalId": 13528,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5773e90f6cd22",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Matt Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 11"
+    },
+    {
+      "issueId": 24145,
+      "title": "New Avengers (2004) #53",
+      "number": "53",
+      "url": "https://www.marvel.com/comics/issue/24145/new_avengers_2004_53",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-05-28T00:00:00+0000",
+      "mu": "2010-01-01T00:00:00+0000",
+      "digitalId": 12498,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/5773e905001e1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Matt Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 11"
+    },
+    {
+      "issueId": 26031,
+      "title": "New Avengers (2004) #54",
+      "number": "54",
+      "url": "https://www.marvel.com/comics/issue/26031/new_avengers_2004_54",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2010-01-01T00:00:00+0000",
+      "digitalId": 12688,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/5773e8eff2441",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Matt Banning",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 11"
+    },
+    {
+      "issueId": 26033,
+      "title": "New Avengers (2004) #55",
+      "number": "55",
+      "url": "https://www.marvel.com/comics/issue/26033/new_avengers_2004_55",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-07-29T00:00:00+0000",
+      "mu": "2010-02-26T00:00:00+0000",
+      "digitalId": 13466,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/5773e8e143a75",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 12"
+    },
+    {
+      "issueId": 26035,
+      "title": "New Avengers (2004) #56",
+      "number": "56",
+      "url": "https://www.marvel.com/comics/issue/26035/new_avengers_2004_56",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-08-26T00:00:00+0000",
+      "mu": "2011-09-09T16:27:42+0000",
+      "digitalId": 16390,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/5773e7d8f3312",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 12"
+    },
+    {
+      "issueId": 26036,
+      "title": "New Avengers (2004) #57",
+      "number": "57",
+      "url": "https://www.marvel.com/comics/issue/26036/new_avengers_2004_57",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-09-23T00:00:00+0000",
+      "mu": "2010-11-09T00:00:00+0000",
+      "digitalId": 13467,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5773e801c7334",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 12"
+    },
+    {
+      "issueId": 26037,
+      "title": "New Avengers (2004) #58",
+      "number": "58",
+      "url": "https://www.marvel.com/comics/issue/26037/new_avengers_2004_58",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2010-11-16T00:00:00+0000",
+      "digitalId": 13717,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/5773e6451f4e1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 12"
+    },
+    {
+      "issueId": 26038,
+      "title": "New Avengers (2004) #59",
+      "number": "59",
+      "url": "https://www.marvel.com/comics/issue/26038/new_avengers_2004_59",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-11-25T00:00:00+0000",
+      "mu": "2011-02-22T00:00:00+0000",
+      "digitalId": 17632,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/30/5773e60d6594e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 12"
+    },
+    {
+      "issueId": 26039,
+      "title": "New Avengers (2004) #60",
+      "number": "60",
+      "url": "https://www.marvel.com/comics/issue/26039/new_avengers_2004_60",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2009-12-23T00:00:00+0000",
+      "mu": "2015-10-19T00:00:00+0000",
+      "digitalId": 17634,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/5773e57c2cdaf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 12"
+    },
+    {
+      "issueId": 29016,
+      "title": "New Avengers (2004) #61",
+      "number": "61",
+      "url": "https://www.marvel.com/comics/issue/29016/new_avengers_2004_61",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2010-01-27T00:00:00+0000",
+      "mu": "2011-06-06T00:00:00+0000",
+      "digitalId": 13721,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/5773e4eca07ca",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Serge Lapointe",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 13"
+    },
+    {
+      "issueId": 29017,
+      "title": "New Avengers (2004) #62",
+      "number": "62",
+      "url": "https://www.marvel.com/comics/issue/29017/new_avengers_2004_62",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2010-02-24T00:00:00+0000",
+      "mu": "2010-11-23T00:00:00+0000",
+      "digitalId": 13931,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/40/5773e352f0f99",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 13"
+    },
+    {
+      "issueId": 29018,
+      "title": "New Avengers (2004) #63",
+      "number": "63",
+      "url": "https://www.marvel.com/comics/issue/29018/new_avengers_2004_63",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2010-03-24T00:00:00+0000",
+      "mu": "2010-12-21T00:00:00+0000",
+      "digitalId": 14138,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/03/5773e4164c917",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 13"
+    },
+    {
+      "issueId": 29944,
+      "title": "New Avengers (2004) #64",
+      "number": "64",
+      "url": "https://www.marvel.com/comics/issue/29944/new_avengers_2004_64",
+      "seriesId": 753,
+      "seriesName": "New Avengers (2004 - 2010)",
+      "onSale": "2010-04-28T00:00:00+0000",
+      "mu": "2011-01-04T00:00:00+0000",
+      "digitalId": 14417,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/70/5773e19684c7e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Michael Mckone",
+          "role": "penciler"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "New Avengers, Volume 13"
+    },
+    {
+      "issueId": 27513,
+      "title": "DARK AVENGERS/UNCANNY X-MEN: UTOPIA 1 (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/27513/dark_avengersuncanny_x-men_utopia_1_2009_1",
+      "seriesId": 8799,
+      "seriesName": "DARK AVENGERS/UNCANNY X-MEN: UTOPIA 1 (2009)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2009-06-24T00:00:00+0000",
+      "digitalId": 12730,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/b0/4bb45b68ef7cd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Top Cow Joe Weems",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers / Uncanny X-Men: Utopia"
+    },
+    {
+      "issueId": 24812,
+      "title": "Dark Avengers (2009) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/24812/dark_avengers_2009_7",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-07-15T00:00:00+0000",
+      "mu": "2009-07-15T00:00:00+0000",
+      "digitalId": 12945,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/514c9f5f097d9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Luke Ross",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Pennington",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers / Uncanny X-Men: Utopia"
+    },
+    {
+      "issueId": 24813,
+      "title": "Dark Avengers (2009) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/24813/dark_avengers_2009_8",
+      "seriesId": 6599,
+      "seriesName": "Dark Avengers (2009 - 2010)",
+      "onSale": "2009-08-26T00:00:00+0000",
+      "mu": "2011-01-24T00:00:00+0000",
+      "digitalId": 16557,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/00/514ca06314a11",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Luke Ross",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Avengers / Uncanny X-Men: Utopia"
+    },
+    {
+      "issueId": 24244,
+      "title": "Dark Reign: Young Avengers (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/24244/dark_reign_young_avengers_2009_1",
+      "seriesId": 7436,
+      "seriesName": "Dark Reign: Young Avengers (2009)",
+      "onSale": "2009-05-13T00:00:00+0000",
+      "mu": "2009-05-13T00:00:00+0000",
+      "digitalId": 13564,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/5bb37ccf0f345",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Brooks",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Cornell",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Reign: Young Avengers"
+    },
+    {
+      "issueId": 24852,
+      "title": "Dark Reign: Young Avengers (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/24852/dark_reign_young_avengers_2009_2",
+      "seriesId": 7436,
+      "seriesName": "Dark Reign: Young Avengers (2009)",
+      "onSale": "2009-06-17T00:00:00+0000",
+      "mu": "2009-06-17T00:00:00+0000",
+      "digitalId": 12640,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/5bb381c417f65",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Brooks",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walden Wong",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Cornell",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Reign: Young Avengers"
+    },
+    {
+      "issueId": 24853,
+      "title": "Dark Reign: Young Avengers (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/24853/dark_reign_young_avengers_2009_3",
+      "seriesId": 7436,
+      "seriesName": "Dark Reign: Young Avengers (2009)",
+      "onSale": "2009-07-29T00:00:00+0000",
+      "mu": "2011-04-19T00:00:00+0000",
+      "digitalId": 15874,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/5bb388e2ac63d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walden Wong",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Brooks",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Cornell",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Reign: Young Avengers"
+    },
+    {
+      "issueId": 24854,
+      "title": "Dark Reign: Young Avengers (2009) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/24854/dark_reign_young_avengers_2009_4",
+      "seriesId": 7436,
+      "seriesName": "Dark Reign: Young Avengers (2009)",
+      "onSale": "2009-09-10T00:00:00+0000",
+      "mu": "2011-04-21T00:00:00+0000",
+      "digitalId": 16624,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/5bb38e45c3fd0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Walden Wong",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Brooks",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Cornell",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Reign: Young Avengers"
+    },
+    {
+      "issueId": 24855,
+      "title": "Dark Reign: Young Avengers (2009) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/24855/dark_reign_young_avengers_2009_5",
+      "seriesId": 7436,
+      "seriesName": "Dark Reign: Young Avengers (2009)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2011-04-26T00:00:00+0000",
+      "digitalId": 16950,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/d0/5bb3a940a7afc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Karl Story",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walden Wong",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Brooks",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Cornell",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Dark Reign: Young Avengers"
+    },
+    {
+      "issueId": 31134,
+      "title": "Avengers: The Children's Crusade (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/31134/avengers_the_childrens_crusade_2010_1",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2010-07-08T00:00:00+0000",
+      "mu": "2011-05-17T00:00:00+0000",
+      "digitalId": 15156,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/4f6210eddab18",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31136,
+      "title": "Avengers: The Children's Crusade (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/31136/avengers_the_childrens_crusade_2010_2",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2010-09-01T00:00:00+0000",
+      "mu": "2011-09-27T00:00:00+0000",
+      "digitalId": 15888,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/4f62106ddde29",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31138,
+      "title": "Avengers: The Children's Crusade (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/31138/avengers_the_childrens_crusade_2010_3",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2010-11-10T00:00:00+0000",
+      "mu": "2011-11-15T00:00:00+0000",
+      "digitalId": 17520,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/4f620fc064599",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31140,
+      "title": "Avengers: The Children's Crusade (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/31140/avengers_the_childrens_crusade_2010_4",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-01-05T00:00:00+0000",
+      "mu": "2013-03-20T14:44:00+0000",
+      "digitalId": 18833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/5c335c7f44735",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31142,
+      "title": "Avengers: The Children's Crusade (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/31142/avengers_the_childrens_crusade_2010_5",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-04-06T00:00:00+0000",
+      "mu": "2012-03-06T00:00:00+0000",
+      "digitalId": 20383,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/51685316004de",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31144,
+      "title": "Avengers: The Children's Crusade (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/31144/avengers_the_childrens_crusade_2010_6",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-06-29T00:00:00+0000",
+      "mu": "2012-03-06T00:00:00+0000",
+      "digitalId": 22119,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/b0/5168530750909",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31146,
+      "title": "Avengers: The Children's Crusade (2010) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/31146/avengers_the_childrens_crusade_2010_7",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-08-31T00:00:00+0000",
+      "mu": "2012-05-02T00:00:00+0000",
+      "digitalId": 23890,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/4e78b6fb32ad6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Livesay",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Justin Ponsor",
+          "role": "penciler"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 31148,
+      "title": "Avengers: The Children's Crusade (2010) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/31148/avengers_the_childrens_crusade_2010_8",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2011-12-28T00:00:00+0000",
+      "mu": "2011-12-28T00:00:00+0000",
+      "digitalId": 25189,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/10/514a0aea7b20c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Livesay",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Allan Heinberg",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    },
+    {
+      "issueId": 34271,
+      "title": "Avengers: The Children's Crusade (2010) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/34271/avengers_the_childrens_crusade_2010_9",
+      "seriesId": 9864,
+      "seriesName": "Avengers: The Children's Crusade (2010 - 2012)",
+      "onSale": "2012-03-07T00:00:00+0000",
+      "mu": "2013-02-26T00:00:00+0000",
+      "digitalId": 25765,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/51684c6275d03",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        }
+      ],
+      "collectedIn": "Avengers: The Children's Crusade"
+    }
+  ]
+}

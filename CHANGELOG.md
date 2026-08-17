@@ -14,6 +14,42 @@ quote in a bug report.
 
 ## Unreleased
 
+### Twelve new reading orders (BL-142)
+
+In plain English: there are twelve more reading lists to choose from. Five follow a single character,
+covering Captain America, Doctor Doom, Spider-Man, Thor and the Scarlet Witch. The other seven run
+along the Avengers story from the very first issues in 1963, through the point the team falls apart,
+Civil War, the villains taking over, the recovery, and up to the most recent relaunch. That takes the
+tracker from fourteen lists to twenty-six, and adds a little under twelve hundred comics.
+
+Nothing you have saved is affected. The lists you were already reading are untouched, and everything
+you have marked as read stays exactly where it was.
+
+These follow guides published by Comic Book Herald, and each of the twelve says so on its card and
+links to the guide it followed. What was taken from those guides is the choice of which stories are
+worth reading and how they group together. Which exact comics that comes to, and every cover and
+credit shown beside them, was worked out here against Marvel's own records, because the guides mostly
+name a storyline rather than a list of issues.
+
+A few rows in those guides could not be turned into a comic you can click. Two of them are not comics
+at all but collected books, one is a series Marvel's records simply do not list, and one is a single
+issue missing from an otherwise complete run. Rather than quietly leave them out, each is written
+into the list's own notes saying what was wanted and why it is not there.
+
+### Reading lists are now shelved in story order (BL-143)
+
+In plain English: the lists on the front page used to appear in the order they happened to be added,
+which meant a list starting in 1963 could sit below one starting in 2023. They are now shelved in the
+order the stories happen, so reading down the page reads forward through Marvel history.
+
+Lists that roam across the decades rather than sitting at one point in the story, such as a
+best-of-all-time collection or a single character's greatest hits, are gathered at the end instead of
+being forced into a slot they do not really fit. Where a list comes in two lengths, a full version
+and a shorter one, the two still sit together as they always did.
+
+Nothing you have saved is affected, and no list has been added, removed or renamed by this. Only the
+order they are shown in has changed.
+
 ### You can start the tracker by double-clicking a file (BL-140)
 
 In plain English: there is now a file in the project folder you can double-click to start the

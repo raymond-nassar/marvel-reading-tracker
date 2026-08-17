@@ -1,0 +1,215 @@
+{
+  "id": "avengers-disassembled",
+  "name": "Avengers Disassembled",
+  "description": "The 2004 story that pulls the Avengers apart, compiled by hand from a reader's outline of Comic Book Herald's guide to Avengers trade collections. It is four issues of Brian Michael Bendis at the end of the 1998 series plus the one-shot that closes it out, and it is the shortest order in this catalog on purpose. It ends the Busiek, Perez and Johns era and sets up everything the modern Avengers books do next.",
+  "source": "https://www.comicbookherald.com/where-do-i-start-with-avengers-trade-collections/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-17T04:10:56.796Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 5,
+  "collections": 1,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 532,
+      "title": "Avengers (1998) #500",
+      "number": "500",
+      "url": "https://www.marvel.com/comics/issue/532/avengers_1998_500",
+      "seriesId": 354,
+      "seriesName": "Avengers (1998 - 2004)",
+      "onSale": "2004-09-02T00:00:00+0000",
+      "mu": "2006-11-21T00:00:00+0000",
+      "digitalId": 88,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/4f5a50d019d82",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [],
+      "collectedIn": "Core Issues"
+    },
+    {
+      "issueId": 767,
+      "title": "Avengers (1998) #501",
+      "number": "501",
+      "url": "https://www.marvel.com/comics/issue/767/avengers_1998_501",
+      "seriesId": 354,
+      "seriesName": "Avengers (1998 - 2004)",
+      "onSale": "2004-09-09T00:00:00+0000",
+      "mu": "2004-09-01T00:00:00+0000",
+      "digitalId": 3901,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/4f5a50236ebb2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Core Issues"
+    },
+    {
+      "issueId": 845,
+      "title": "Avengers (1998) #502",
+      "number": "502",
+      "url": "https://www.marvel.com/comics/issue/845/avengers_1998_502",
+      "seriesId": 354,
+      "seriesName": "Avengers (1998 - 2004)",
+      "onSale": "2004-09-22T00:00:00+0000",
+      "mu": "2004-09-22T00:00:00+0000",
+      "digitalId": 3902,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/4f58d176985bc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Core Issues"
+    },
+    {
+      "issueId": 923,
+      "title": "Avengers (1998) #503",
+      "number": "503",
+      "url": "https://www.marvel.com/comics/issue/923/avengers_1998_503",
+      "seriesId": 354,
+      "seriesName": "Avengers (1998 - 2004)",
+      "onSale": "2004-11-03T00:00:00+0000",
+      "mu": "2004-11-03T00:00:00+0000",
+      "digitalId": 3903,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/d0/4f5a4f71e8dd5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Core Issues"
+    },
+    {
+      "issueId": 90,
+      "title": "AVENGERS FINALE 1 (2004) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/90/avengers_finale_1_2004_1",
+      "seriesId": 829,
+      "seriesName": "AVENGERS FINALE 1 (2004)",
+      "onSale": "2005-01-01T00:00:00+0000",
+      "mu": "2005-01-01T00:00:00+0000",
+      "digitalId": 5251,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/b0/51e045c27a7b0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Alex Maleev",
+          "role": "cover artist"
+        },
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gary Frank",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Gaydos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Steve Epting",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "George Perez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Mayhew",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "David Mack",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ],
+      "collectedIn": "Core Issues"
+    }
+  ]
+}
