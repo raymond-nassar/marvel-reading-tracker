@@ -2,7 +2,7 @@
 //
 // The backlog and the UX study rest on browser verification that was real but unrepeatable: the
 // scripts lived outside the tree, so a clean clone could rerun none of it. This file is that
-// evidence, committed. It drives installed Edge through the five journeys the app is for, and it
+// evidence, committed. It drives installed Edge through the six journeys the app is for, and it
 // is the only place where a claim about what the interface does in a browser can be checked
 // rather than argued.
 //
@@ -314,6 +314,23 @@ const MUTATIONS = [
       };
     },
   },
+  {
+    id: 'synopsis-answered',
+    breaks: 'synopsis',
+    why: 'the service answers every request, so a run that reports refusals is reporting something that did not happen',
+    script: () => {
+      // Overwritten rather than deleted. The scenario sets this flag itself, and it sets it from
+      // its own evaluateOnNewDocument, which is registered after this one and therefore runs
+      // after it. Deleting the flag here would simply be undone a moment later; assigning to it
+      // from the scenario's side is what the scenario does, so the mutation has to win by being
+      // the value the stub reads rather than by being the last to write.
+      Object.defineProperty(window, '__mrtSynopsis', {
+        configurable: true,
+        get: () => 'answer',
+        set: () => {},
+      });
+    },
+  },
 ];
 
 // ------------------------------------------------------------------ scenarios
@@ -517,6 +534,66 @@ const SCENARIOS = [
       t.check('and asks the launcher to resolve it', asks, JSON.stringify(second.map((o) => o.url)));
     },
   },
+  {
+    id: 'synopsis',
+    title: 'a synopsis run counts what it was told, not what it asked',
+    async run(page, t) {
+      // Registered before the first navigation, and read by the stub in preparePage at fetch time
+      // rather than at install time, so the mutation aimed at this scenario can win by owning the
+      // property instead of by racing to assign it.
+      await page.evaluateOnNewDocument(() => { window.__mrtSynopsis = 'refuse'; });
+      await importOrder(page);
+
+      await click(page, '#btn-synopsis');
+      await page.waitForFunction(() => document.querySelector('#ask')?.open === true, { timeout: 15000 });
+      await click(page, '#ask-ok');
+
+      // Waiting on the harness's own count of refusals rather than on the status line, and rather
+      // than on a clock. The line is what is under test, so waiting for it to name a refusal makes
+      // a broken build starve the wait and report a timeout instead of the claim that failed; and
+      // the run is three issues at 400ms each, so a fixed sleep is either too early to have lost
+      // anything or late enough that the queue has emptied.
+      await page.waitForFunction(() => (window.__mrtRefused ?? 0) >= 1, { timeout: 20000 });
+
+      // Read and stopped inside one evaluation on purpose. Reading the line, returning it, and
+      // then sending a second call to click stop leaves a gap in which the run can finish, and a
+      // finished run makes the claim untestable rather than false.
+      const at = await page.evaluate(() => {
+        const line = document.querySelector('#synopsis-status')?.textContent ?? '';
+        const stop = document.querySelector('#btn-cancel-synopsis');
+        const going = stop?.hidden === false;
+        stop?.click();
+        return { line, going };
+      });
+      t.check('the run against a refusing service was still going when it was stopped', at.going, JSON.stringify(at));
+
+      const running = /^Fetching synopses (\d+) of (\d+)/.exec(at.line);
+      t.check('a running line counts none of the refusals as fetched',
+        !!running && Number(running[1]) === 0 && Number(running[2]) === ORDER_COUNT, JSON.stringify(at.line));
+      t.check('a running line names what it could not reach',
+        / \d+ could not be reached\.$/.test(at.line), JSON.stringify(at.line));
+
+      await page.waitForFunction(
+        () => /^Stopped after /.test(document.querySelector('#synopsis-status')?.textContent ?? ''),
+        { timeout: 15000 },
+      );
+      const after = await page.evaluate(() => ({
+        line: document.querySelector('#synopsis-status')?.textContent ?? '',
+        fetchHidden: document.querySelector('#btn-synopsis')?.hidden ?? null,
+      }));
+
+      const stopped = /^Stopped after (\d+) of (\d+)\./.exec(after.line);
+      t.check('a stopped run counts none of the refused requests as fetched',
+        !!stopped && Number(stopped[1]) === 0 && Number(stopped[2]) === ORDER_COUNT, JSON.stringify(after.line));
+      // The one that matters most of the six. Both lines read the same counter, and while only
+      // some of the readers subtracted the failures the number moved backwards in front of the
+      // reader at the moment they pressed stop: a run showing three fetched became a run that
+      // had stopped after none.
+      t.check('and the count a stop leaves behind is the one that was already on screen',
+        !!running && !!stopped && running[1] === stopped[1], `${JSON.stringify(at.line)} then ${JSON.stringify(after.line)}`);
+      t.check('the fetch button comes back once the run is stopped', after.fetchHidden === false, JSON.stringify(after));
+    },
+  },
 ];
 
 // ------------------------------------------------------------------ page helpers
@@ -583,6 +660,33 @@ async function preparePage(page, origin, mutation) {
         if (url.endsWith(`data/${orderFile}`)) {
           if (window.__mrtMutation === 'import-fail') return Promise.resolve(json({ error: 'mutation' }, 500));
           return Promise.resolve(json(order));
+        }
+        // Only the synopsis scenario sets the flag, and it sets it before the first navigation.
+        // Left unset this line is reached by no request any other scenario makes, so what they
+        // see is the stub they saw before it was added.
+        const issue = window.__mrtSynopsis ? /\/issues\/(\d+)(?:\?|$)/.exec(url) : null;
+        if (issue) {
+          const answers = window.__mrtSynopsis === 'answer';
+          // Delayed on purpose, and this is the whole reason the scenario can make its claim. An
+          // immediate refusal empties a three issue queue before a click on stop can land, and
+          // what is under test is the line a run shows while it is still running.
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              if (answers) resolve(json({ id: Number(issue[1]), description: `Fixture synopsis for ${issue[1]}.` }));
+              // A network refusal rather than a 404: a 404 is the service answering, and the app
+              // counts that as an answer on purpose. Only a request that got nothing at all is
+              // what the running line is meant to hold back from its count.
+              else {
+                // Counted here rather than read off the status line, because the status line is
+                // the thing under test. A scenario that waited for the line to mention a refusal
+                // could only ever be satisfied by the behaviour it is meant to be able to find
+                // missing, so on a broken build it would starve and report a timeout instead of
+                // reporting the claim that failed.
+                window.__mrtRefused = (window.__mrtRefused ?? 0) + 1;
+                reject(new TypeError('Failed to fetch'));
+              }
+            }, 400);
+          });
         }
         return real(input, init);
       };

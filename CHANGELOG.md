@@ -42,11 +42,19 @@ If you have used an earlier version, your device may still be holding summaries 
 The next time you open the app they are removed from it, once, without you doing anything and without
 touching anything else you have saved.
 
-Three smaller things behave better than they did in the first draft of this feature. A run in which
+Four smaller things behave better than they did in the first draft of this feature. A run in which
 nothing could be reached now says so, instead of reporting that everything was fetched. An issue the
 service answers with no summary now says that plainly, rather than looking as though it has not been
-tried. And if you change the service address while a run is going, the run stops, what it collected
-is cleared, and the next run asks the address you just typed in.
+tried. If you change the service address while a run is going, the run stops, what it collected
+is cleared, and the next run asks the address you just typed in. And the number on screen while a
+run is going, and the one it leaves behind if you stop it, now both count only the summaries that
+actually arrived, rather than counting the ones it failed to reach as though they had arrived.
+
+For maintainers: the committed browser check gains a sixth journey, covering that last point, and a
+tenth mutation aimed at it. It runs a real browser against a service that refuses everything and
+reads the number off the screen before and after a stop. Its assertions go from 28 to 34. The rest of
+this feature's browser evidence still lives outside the tree, where a clean clone cannot rerun it,
+and bringing it in is now a recorded item rather than an omission.
 
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 

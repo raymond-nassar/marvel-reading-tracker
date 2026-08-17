@@ -20,7 +20,7 @@ import assert from 'node:assert/strict';
 
 import { SessionSynopsis, SynopsisRunner, NO_SYNOPSIS } from '../src/js/synopsis.js';
 import { withoutSynopsis, MarvelApi } from '../src/js/api.js';
-import { purgeStaleCache, synopsisAnnouncement, synopsisDisclaimer, synopsisServiceName } from '../src/js/main.js';
+import { purgeStaleCache, synopsisAnnouncement, synopsisDisclaimer, synopsisServiceName, synopsisStatusLine } from '../src/js/main.js';
 import {
   addIssuesToList, createEmptyState, createList, markRead, markDetailsRefused,
   hydrationOrder, synopsisOrder, lookaheadPriority, MAX_DESCRIPTION,
@@ -691,4 +691,112 @@ test('a run that could not reach some issues is announced as such, not as finish
   assert.equal(said.state, 'partial');
   assert.match(said.msg, /1 issue could not be reached/);
   assert.doesNotMatch(said.msg, /All synopses fetched/);
+});
+
+// ------------------------------------------------------- what a stopped run says it got through
+
+// The partial ending stopped a finished run claiming answers it never got, but the same count runs
+// through the stopped ending, and done is incremented for a refused request exactly as it is for an
+// answered one. So a reader who stopped a run that had been failing saw the failures counted as
+// fetches, next to a hero still saying no synopsis is recorded for the issue in front of them.
+test('a stopped run does not count the requests that were refused', () => {
+  const line = synopsisStatusLine({ phase: 'cancelled', done: 3, total: 5, failed: 2 });
+  assert.match(line, /Stopped after 1 of 5/);
+  assert.match(line, /2 could not be reached/);
+});
+
+test('a stopped run that lost nothing is still counted plainly', () => {
+  const line = synopsisStatusLine({ phase: 'cancelled', done: 3, total: 5, failed: 0 });
+  assert.equal(line, 'Stopped after 3 of 5.');
+});
+
+test('the spoken form of a stopped run says how many it could not reach', () => {
+  const said = synopsisAnnouncement({ phase: 'cancelled', done: 3, total: 5, failed: 2 });
+  assert.equal(said.state, 'cancelled');
+  assert.match(said.msg, /2 issues could not be reached/);
+  assert.match(said.msg, /What arrived is on screen until you reload/);
+});
+
+test('the spoken form of a clean stop does not mention failures at all', () => {
+  const said = synopsisAnnouncement({ phase: 'cancelled', done: 3, total: 5, failed: 0 });
+  assert.doesNotMatch(said.msg, /could not be reached/);
+});
+
+// The counts above are hand-built. This one drives the real runner, so the arithmetic is pinned
+// against what a run actually reports rather than against an assumption about it.
+test('what a real stopped run says matches the answers it actually holds', async () => {
+  const { state, listId } = stateWith([1, 2, 3, 4, 5]);
+  const session = new SessionSynopsis();
+  let last = null;
+  const api = instantApi((id) => {
+    if (id === 1) return withProse(1);
+    if (id === 2 || id === 3) throw new TypeError('Failed to fetch');
+    return withProse(id);
+  });
+  const runner = new SynopsisRunner({
+    api,
+    store: fakeStore(state),
+    session,
+    onProgress: (s) => { if (s.phase === 'running' && s.done === 3) runner.cancel(); else if (s.phase === 'cancelled') last = s; },
+  });
+
+  await within(runner.start(listId), 'the stopped run to unwind');
+
+  assert.equal(last.phase, 'cancelled');
+  assert.equal(session.size, 1, 'the run held a different number of answers than the test assumed');
+  assert.match(synopsisStatusLine(last), new RegExp(`Stopped after ${session.size} of 5`));
+});
+
+// Fixing the stopped ending without the running one left the two disagreeing, which is worse than
+// leaving both wrong: the reader watched the number climb to 3 and pressing stop rewrote it to 1.
+// A count that moves backwards at the moment it is being read is the failure the subtraction is
+// meant to prevent, not a smaller version of it.
+test('the running line does not count the requests that were refused', () => {
+  const line = synopsisStatusLine({ phase: 'running', done: 3, total: 5, failed: 2 });
+  assert.match(line, /Fetching synopses 1 of 5/);
+  assert.match(line, /2 could not be reached/);
+});
+
+test('the running line stays plain until something is actually lost', () => {
+  const line = synopsisStatusLine({ phase: 'running', done: 3, total: 5, failed: 0 });
+  assert.equal(line, 'Fetching synopses 3 of 5\u2026');
+});
+
+// The whole point of the subtraction is that these two agree, so this asserts them against each
+// other rather than against a number written into the test.
+test('the count does not jump when a failing run is stopped', async () => {
+  const { state, listId } = stateWith([1, 2, 3, 4, 5]);
+  const session = new SessionSynopsis();
+  let lastRunning = null;
+  let cancelled = null;
+  const api = instantApi((id) => {
+    if (id === 1) return withProse(1);
+    if (id === 2 || id === 3) throw new TypeError('Failed to fetch');
+    return withProse(id);
+  });
+  const runner = new SynopsisRunner({
+    api,
+    store: fakeStore(state),
+    session,
+    onProgress: (s) => {
+      if (s.phase === 'running') {
+        lastRunning = synopsisStatusLine(s);
+        if (s.done === 3) runner.cancel();
+      } else if (s.phase === 'cancelled') cancelled = synopsisStatusLine(s);
+    },
+  });
+
+  await within(runner.start(listId), 'the stopped run to unwind');
+
+  const shown = (line) => Number(/(\d+) of 5/.exec(line)[1]);
+  assert.equal(session.size, 1, 'the run held a different number of answers than the test assumed');
+  assert.equal(shown(lastRunning), shown(cancelled), `"${lastRunning}" then "${cancelled}"`);
+  assert.equal(shown(cancelled), session.size);
+});
+
+// Exported now, so it can be called by something that does not repeat renderSynopsis's own guard.
+test('the status line says nothing at all before a run starts', () => {
+  assert.equal(synopsisStatusLine(null), '');
+  assert.equal(synopsisStatusLine(undefined), '');
+  assert.equal(synopsisStatusLine({ phase: 'idle' }), '');
 });

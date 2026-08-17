@@ -2465,7 +2465,11 @@ export function synopsisAnnouncement(status) {
     const n = Number(status.total ?? 0);
     return { state: 'running', msg: `Fetching synopses for ${n} issue${n === 1 ? '' : 's'}.` };
   }
-  if (phase === 'cancelled') return { state: 'cancelled', msg: 'Synopsis fetching stopped. What arrived is on screen until you reload.' };
+  if (phase === 'cancelled') {
+    const failed = Number(status.failed ?? 0);
+    const unreached = failed ? ` ${failed} issue${failed === 1 ? '' : 's'} could not be reached.` : '';
+    return { state: 'cancelled', msg: `Synopsis fetching stopped.${unreached} What arrived is on screen until you reload.` };
+  }
   if (phase === 'partial') {
     const failed = Number(status.failed ?? 0);
     return {
@@ -2486,21 +2490,43 @@ function renderSynopsisButtons() {
   $('#btn-cancel-synopsis').hidden = !synopsisRunner.active;
 }
 
+export function synopsisStatusLine(status) {
+  // done counts attempts, not answers, so every branch below that reports a count subtracts the
+  // failures and names them. Doing it in only some of them is worse than doing it in none: while
+  // the running line reported attempts and the endings reported answers, pressing stop on a run
+  // that had lost two of three rewrote 3 to 1 in front of the reader, and the number appeared to
+  // go backwards at the one moment they were looking at it.
+  const phase = status?.phase;
+  // renderSynopsis hides the box without setting any text for these, so the empty string is what
+  // this function has always effectively returned for them. It is exported now, and a caller that
+  // did not replicate that guard would otherwise be told a run that never started had finished.
+  if (!status || phase === 'idle') return '';
+  if (phase === 'running') {
+    const failed = Number(status.failed ?? 0);
+    const line = `Fetching synopses ${status.done - failed} of ${status.total}\u2026`;
+    return failed ? `${line} ${failed} could not be reached.` : line;
+  }
+  if (phase === 'cancelled') {
+    // A stop after three requests of which two were refused would otherwise read "Stopped after 3
+    // of 5" beside a hero still saying no synopsis is recorded, which is the same untruth the
+    // partial ending was added to stop telling. Same subtraction it makes.
+    const failed = Number(status.failed ?? 0);
+    if (!failed) return `Stopped after ${status.done} of ${status.total}.`;
+    return `Stopped after ${status.done - failed} of ${status.total}. ${failed} could not be reached.`;
+  }
+  if (phase === 'partial') {
+    return `Fetched ${status.total - status.failed} of ${status.total}, for this tab only. ${status.failed} could not be reached.`;
+  }
+  return 'All synopses fetched, for this tab only.';
+}
+
 function renderSynopsis(status) {
   const box = $('#synopsis-status');
   const said = synopsisAnnouncement(status);
   announceState('synopsis', said.state, said.msg);
   if (!status || status.phase === 'idle') { box.hidden = true; renderSynopsisButtons(); return; }
   box.hidden = false;
-  if (status.phase === 'running') {
-    box.textContent = `Fetching synopses ${status.done} of ${status.total}\u2026`;
-  } else if (status.phase === 'cancelled') {
-    box.textContent = `Stopped after ${status.done} of ${status.total}.`;
-  } else if (status.phase === 'partial') {
-    box.textContent = `Fetched ${status.total - status.failed} of ${status.total}, for this tab only. ${status.failed} could not be reached.`;
-  } else {
-    box.textContent = 'All synopses fetched, for this tab only.';
-  }
+  box.textContent = synopsisStatusLine(status);
   renderSynopsisButtons();
   // The hero is showing a sentence that may have just been answered, and nothing else repaints on a
   // synopsis arriving: none of this is in the store, so no update() fires.
