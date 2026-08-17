@@ -62,8 +62,17 @@ function fakeIndexedDB({ openFails = false, openThrows = false, openBlocked = fa
         req.fail(new Error(`${op} failed`));
         settle(() => tx.onabort?.());
       } else if (aborting.has(op)) {
+        // Real IndexedDB discards every write in a transaction that aborts. Keeping the mutation
+        // would make the fake agree with the bug: a clear that reported failure but had emptied the
+        // store anyway looks identical, from the test, to one that rolled back. Survival of the data
+        // is the property the purge marker depends on, so the fake has to be able to express it.
+        const undo = new Map(data);
         req.succeed(fn());
-        settle(() => tx.onabort?.());
+        settle(() => {
+          data.clear();
+          for (const [k, v] of undo) data.set(k, v);
+          tx.onabort?.();
+        });
       } else {
         req.succeed(fn());
         settle(() => tx.oncomplete?.());
@@ -344,6 +353,9 @@ test('a clear whose transaction aborts after the request succeeded reports failu
     let outcome;
     await assert.doesNotReject(async () => { outcome = await cache.clear(); });
     assert.equal(outcome, false, 'a rolled back clear reported that the store had been emptied');
+    // The return value is only half of it. What the purge marker is protecting is the data, so the
+    // test has to say the data is still there rather than trusting the boolean that describes it.
+    assert.equal((await cache.entries()).length, 1, 'the rolled back clear took the entry with it');
   });
 });
 

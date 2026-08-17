@@ -42,11 +42,13 @@ If you have used an earlier version, your device may still be holding summaries 
 The next time you open the app they are removed from it, once, without you doing anything and without
 touching anything else you have saved.
 
-Three smaller things behave better than they did in the first draft of this feature. A run in which
+Four smaller things behave better than they did in the first draft of this feature. A run in which
 nothing could be reached now says so, instead of reporting that everything was fetched. An issue the
 service answers with no summary now says that plainly, rather than looking as though it has not been
-tried. And if you change the service address while a run is going, the run stops, what it collected
-is cleared, and the next run asks the address you just typed in.
+tried. If you change the service address while a run is going, the run stops, what it collected
+is cleared, and the next run asks the address you just typed in. And stopping a run part way now
+reports how many summaries it actually had, rather than counting the ones it failed to reach as
+though they had arrived.
 
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 
