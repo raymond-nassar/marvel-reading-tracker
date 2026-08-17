@@ -4593,7 +4593,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:10190-10192` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:10221-10223` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4603,11 +4603,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:202-204`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10209-10213`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10240-10244`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10024-10026` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10055-10057` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4815,7 +4815,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2383-2392` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2389-2398` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:192-196` and
 `PRODUCT_BACKLOG.md:202-204` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6524,7 +6524,7 @@ so whichever is installed last is the one the app reaches first, and the instrum
 installed first to sit underneath. Recording from `evaluateOnNewDocument` fixed it, and the five
 written by then were all caught.
 
-Two of the nine mutations redden all five scenarios rather than one. That is construction, not
+Two of the nine mutations reddened all five scenarios rather than one. That was construction, not
 loose aim: every scenario imports the fixture first, so breaking the import or the write it
 performs is upstream of everything. The proof pass therefore reports the named assertion each
 mutation breaks in the scenario it was aimed at, which is the claim being defended, rather than a
@@ -9523,15 +9523,37 @@ including ones that were genuinely broken. It reads the fail total back as a cro
 A fifth review found the change's own record overstating it. The commit and the pull request both
 said the browser check had gained three assertions, and the committed browser check had gained none:
 the assertions were real and had been watched failing, but they lived in a script outside the tree,
-which is the arrangement `scripts/browser-check.mjs:3-7` was written to end. Six of them are the
+which is the arrangement `scripts/browser-check.mjs:3-7` was written to end. Seven of them are the
 committed check's sixth journey now, driven against a service that refuses every request on a delay,
-and what they carry is the claim this round was about. Reverting the subtraction turns three of the
-six red and prints both lines beside each other, a run showing one fetched followed by a stop
-reporting none. The wait that gets the scenario to that point counts refusals in the harness rather
-than reading them off the status line, because a scenario that waited for the line to name a refusal
-could only ever be satisfied by the behaviour it exists to be able to find missing, and on a broken
-build it would time out instead of naming the claim that failed. The rest of this feature's browser
-evidence is still out of tree, and is BL-138.
+and what they carry is the claim this round was about. Taking the whole series back to the shapes it
+started from turns four of the seven red. Reverting the running line's subtraction alone turns two
+red, and the second of those is the one that prints both lines beside each other, a run showing one
+fetched followed by a stop reporting none. Taking that line all the way back to its pre-series shape,
+which drops the clause naming what could not be reached as well as the subtraction, turns three red.
+The wait that gets the scenario to that point counts refusals in
+the harness rather than reading them off the status line, because a scenario that waited for the line
+to name a refusal could only ever be satisfied by the behaviour it exists to be able to find missing,
+and on a broken build it would time out instead of naming the claim that failed. The rest of this
+feature's browser evidence is still out of tree, and is BL-138.
+
+A sixth review then measured that sentence and found it stating a figure no revert produced. It had
+been written as three red plus a description of the pair printed side by side, and those are two
+different builds: the side-by-side pair is what reverting the running line's subtraction prints, which
+reddens two, and
+the larger count belongs to the full revert, which never prints the pair at all. The numbers above
+were each run rather than reasoned. The same review found the stopped line's failure clause
+unguarded, which is why the journey now carries seven assertions rather than six: deleting the clause
+this series began by adding left every other assertion green, so the first fix of the series was the
+one part of it nothing watched. The full revert reddens four rather than three because of that
+seventh.
+
+The mutation aimed at this scenario was replaced in the same round. It had made the metadata service
+answer instead of refuse, which starved the wait and reddened only the harness's catch-all row, so
+`npm run browser:prove` recorded that the scenario could break without recording that any claim in it
+could fail. It now rewrites the running line to report attempts rather than answers, which is the
+miscount the scenario exists to catch, and it reddens two named claims and prints the side-by-side
+pair as its own evidence. That matters more than the wording it corrects: the pair had been readable
+only by running a revert nobody else could reproduce, and it is now printed by a committed check.
 
 **BL-135: Refuse an issue synopsis at the boundary that writes, not only at the one that reads**
 
@@ -9610,20 +9632,27 @@ be updated because it is already running.
 
 **BL-138: Bring the rest of the synopsis browser evidence into the committed check**
 
-- [ ] Port the consent assertions: the disclaimer opens before any request, names the service and the promise, and declining starts no run
-- [ ] Port the durability assertions: no saved issue, no `localStorage` key and no IndexedDB store holds fetched prose after a run
-- [ ] Port the service-change assertions: prose is dropped when the address changes and the next run asks the address just typed
-- [ ] Port the legacy assertion: prose saved by an older build is rewritten out of storage rather than only out of memory
+- [ ] Port the four consent assertions: the disclaimer opens before any request, names the service and the promise, nothing is fetched before consent, and declining starts no run
+- [ ] Port the five durability assertions: every issue request carries `no-store`, no saved issue, no `localStorage` key and no IndexedDB store holds fetched prose after a run, and a reload loses every synopsis
+- [ ] Port the four service-change assertions: the new address is saved, prose from the previous service is dropped, the disclaimer names the address just typed, and the next run asks it rather than the one before
+- [ ] Port the two legacy assertions: prose saved by an older build was really there to begin with, and is rewritten out of storage rather than only out of memory
+- [ ] Port the ten that are none of those: the import, the two button affordances, progress being reported at all, the stop button replacing the fetch button while running, the current issue landing inside the first nine asked for, a stop halting further requests, what a cancel says is kept for the tab, a synopsis being displayed, and an issue the run asked about no longer saying it is unfetched
 - [ ] Aim a mutation at each ported group, so `npm run browser:prove` records which scenario each one reddens
 
 Constraint gate: checked 1 to 11, none breached.
 
 BL-134 shipped with its browser evidence in a script outside the tree, which is the exact shape
 `scripts/browser-check.mjs:3-7` exists to end: verification that was real and that a clean clone
-could rerun none of. Six of those assertions came in with the fix to the running count, because they
-were that change's own evidence. Twenty-six did not, and they cover the parts of the feature that
-carry its promise: that nothing is fetched before the reader consents, and that nothing fetched is
-ever written down.
+could rerun none of. Seven of those assertions came in with the fix to the running count, because
+they were that change's own evidence. Twenty-five did not.
+
+Most of the twenty-five carry the part of the promise the ported seven do not touch: that nothing is
+fetched before the reader consents, and that nothing fetched is ever written down. Ten are neither,
+and the fifth bullet above exists because an earlier draft of this block described all of them as
+consent and durability, which a review measured and found false. Its own figure of nine did not
+survive being re-derived either: the four groups and the remainder are counted out in the bullets now
+so the split adds up in the open rather than resting on a number nobody can check. They are the
+ordinary furniture of the journey, and they are worth porting for the same reason as the rest.
 
 That is the argument for the item rather than against the split. Prose that never reaches storage is
 the whole claim of BL-134, and the only committed check of it is a unit test against a double. A
@@ -9632,10 +9661,12 @@ the claim can be checked rather than argued.
 
 The port is not a copy. The out-of-tree script runs a single long journey against a stub of its own,
 while the committed harness gives each scenario its own browser context and installs its stub before
-the app loads, so each ported group has to stand up as a scenario on its own. Two mechanics are
-already known from porting the first six: the stub has to answer from `preparePage`, because one
-installed after load is a stub the app has already gone past, and a refusal has to be delayed,
-because an immediate one empties the queue before a click on stop can land.
+the app loads, so each ported group has to stand up as a scenario on its own. Three mechanics are
+already known from porting the first seven: the stub has to answer from `preparePage`, because one
+installed after load is a stub the app has already gone past; a refusal has to be delayed, because an
+immediate one empties the queue before a click on stop can land; and a mutation aimed at a ported
+group has to break a named assertion rather than starve a wait, or the prove pass records that the
+scenario can fail without recording that any claim in it can.
 
 **BL-139: Let the browser install the tracker, so it has a window and an icon of its own**
 
@@ -10458,4 +10489,3 @@ denominator. The rank is
 arithmetically correct and practically misleading: the item is not low value, it is unsplit. It is
 held at `Proposed` rather than `Ready` for that reason, and the honest reading of its rank is
 "cannot be scheduled yet", not "not worth doing".
-

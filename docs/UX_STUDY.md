@@ -799,7 +799,7 @@ evidence value and the cheapest question that would confirm or kill it.
 | Primary device while reading | Desktop or laptop, with the tracker beside the reader | Moderate. The reflow and rail defects would be intolerable if a phone were the main device, and they shipped. `docs/ux-artifacts/viewport-sweep-reading.json` | On the last five reading sessions, what was the tracker open on? |
 | Reading style | Follows a long curated order end to end rather than dipping in | Strong. The product is built around order, resume and next-unread rather than around browsing. `src/index.html:305-340` | When a list is abandoned partway, what caused it? |
 | Tolerance for missing metadata | High, provided the app admits what it does not know | Strong. Pending and by-hand states are surfaced rather than hidden, and this was a deliberate decision. `src/js/main.js:2256-2257` | Would you rather see a guess or a clearly marked gap? |
-| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:365-366`, `PRODUCT_BACKLOG.md:10050` | If sync existed and was opt-in, would you turn it on? |
+| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:365-366`, `PRODUCT_BACKLOG.md:10081` | If sync existed and was opt-in, would you turn it on? |
 | Accessibility needs | None known, and unasked | Weak. This is an assumption by absence. No accessibility requirement appears anywhere in the repository, and the shipped contrast and target sizes are consistent with nobody having needed otherwise. | Do you use any system accessibility setting, including text size, contrast or reduced motion? |
 
 Any other user type is speculative: a second reader would most plausibly be someone handed a
@@ -913,7 +913,7 @@ style queries.
 Neither did BL-093, which committed a repeatable subset of this work as `scripts/browser-check.mjs`
 while keeping that decision intact: the driver is resolved from outside the tree at run time and
 its absence exits 2 with install instructions rather than failing an assertion. What is repeatable
-is the five product journeys, not this study. The scans, sweeps and emulation described above
+is the six product journeys, not this study. The scans, sweeps and emulation described above
 remain a record of one run on one machine, and re-deriving them means installing the tooling again.
 
 **Six WCAG criteria could not be assessed** and are named in the sweep result above: 1.4.4 Resize
