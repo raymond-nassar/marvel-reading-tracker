@@ -14,7 +14,7 @@ quote in a bug report.
 
 ## Unreleased
 
-### You can start the tracker by double-clicking a file (BL-135)
+### You can start the tracker by double-clicking a file (BL-139)
 
 In plain English: there is now a file in the project folder you can double-click to start the
 tracker, called **Start on Windows.cmd** on Windows and **Start on macOS.command** on a Mac. Before
@@ -27,7 +27,7 @@ so: the address is what your browser files your reading progress under, and a st
 quietly used a different one would have looked exactly like losing everything. Typing the command
 still works and is unchanged, so nothing you already do stops working.
 
-### The installed tracker opens even when the app is not running (BL-136)
+### The installed tracker opens even when the app is not running (BL-140)
 
 In plain English: if you have installed the tracker as an app, its icon now opens whether or not
 the app itself is running. Before, an icon opened with nothing running gave you your browser's
@@ -50,7 +50,7 @@ to, and then closed it down, still got the "cannot be reached" page. That is the
 written for, so it now takes the copy on the first visit. It costs one extra load of the app's own
 files, once, and never again after that.
 
-### The tracker can now be installed as an app (BL-134)
+### The tracker can now be installed as an app (BL-138)
 
 In plain English: you can now give the tracker its own window and its own icon in the Start menu,
 the Dock or your applications list, instead of a browser tab you have to find again. Open it as you
