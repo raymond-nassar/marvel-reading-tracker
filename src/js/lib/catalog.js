@@ -260,29 +260,38 @@ export function isBeginnerOrder(list) {
 
 export function catalogFacets(lists) {
   const all = Array.isArray(lists) ? lists : [];
-  const facets = [{ key: 'all', label: 'All', count: all.length }];
+  const facets = [{ key: 'all', label: 'All', count: countStories(all) }];
 
-  const beginner = all.filter(isBeginnerOrder).length;
+  const beginner = countStories(all.filter(isBeginnerOrder));
   if (beginner) facets.push({ key: 'beginner', label: 'Beginner-friendly', count: beginner });
 
   for (const c of catalogCategories(all)) {
     facets.push({
       key: `type:${c.key}`,
       label: c.key === UNCATEGORIZED ? 'Other' : (TYPE_FACET_LABELS[c.key] ?? typeLabel(c.key)),
-      count: c.count,
+      count: countStories(filterByCategory(all, c.key)),
     });
   }
 
   // Reading in collected editions is a way of collecting, not a kind of story, so it cuts
   // across the type chips rather than sitting inside one. It is listed only when such an order
   // exists, like every other facet here.
-  const trade = all.filter(isTradeOrder).length;
+  const trade = countStories(all.filter(isTradeOrder));
   if (trade) facets.push({ key: 'trade', label: 'By collected edition', count: trade });
 
-  const short = all.filter(isShortOrder).length;
+  const short = countStories(all.filter(isShortOrder));
   if (short) facets.push({ key: 'short', label: `Short (under ${SHORT_ORDER_MAX} issues)`, count: short });
 
   return facets;
+}
+
+// How many stories a set of orders amounts to. The shelf shows one card per story, so a chip
+// counting orders would promise more cards than the grid then holds: eight events, six cards.
+// A story with no group is its own story, which is why the key falls back to the list's id.
+export function countStories(lists) {
+  const keys = new Set();
+  for (const list of Array.isArray(lists) ? lists : []) keys.add(list.group ?? `list:${list.id}`);
+  return keys.size;
 }
 
 export function filterByFacet(lists, key) {
@@ -407,7 +416,45 @@ export function groupCatalog(lists) {
     groups.push(group);
   }
 
-  return groups.map((g) => (g.lists.length > 1 ? g : { ...g, name: null }));
+  return groups.map((g) => (g.lists.length > 1
+    ? { ...g, lists: orderPaths(g.lists) }
+    : { ...g, name: null }));
+}
+
+// The paths through one story, shortest commitment first. Ordered by the declared reading depths
+// rather than by issue count, which is the same ladder for five of the six bundled groups and the
+// right answer for the sixth: the two Ultimate orders differ in format rather than in length, and
+// six issues between them would otherwise decide which one a reader is offered first. Sorting is
+// stable, so paths sharing a depth keep the order the catalog gave them, and a depth the manifest
+// does not declare sorts last rather than ahead of the ones that do.
+function orderPaths(lists) {
+  return [...lists].sort((a, b) => depthRank(a) - depthRank(b));
+}
+
+function depthRank(list) {
+  const i = READING_DEPTHS.indexOf(list.depth);
+  return i < 0 ? READING_DEPTHS.length : i;
+}
+
+// Which path a story shows before the reader picks one. A story already in the library is shown at
+// the path it was added as: a card offering to add a second path while the reader already owns
+// another is a card disagreeing with its own button, and it is how the same story gets added twice.
+// Otherwise the shallowest, which is the least reading to commit to and is one click from the rest.
+//
+// `owns` is passed in rather than read here, because this module knows about the catalog and
+// nothing about the reader's library.
+export function defaultPath(group, owns = () => false) {
+  const lists = group?.lists ?? [];
+  return lists.find((list) => owns(list)) ?? lists[0] ?? null;
+}
+
+// The reader's own choice, if it still names a path this story has. A stored choice outlives the
+// catalog it was made against: a search can narrow a story to one path, and a data change can
+// remove the path entirely, so a choice that no longer matches is dropped in favour of the default
+// rather than leaving the card showing nothing.
+export function pickPath(group, chosenId, owns) {
+  const lists = group?.lists ?? [];
+  return lists.find((list) => list.id === chosenId) ?? defaultPath(group, owns);
 }
 
 // What distinguishes this order from its siblings. Falls back to the reading depth, then the

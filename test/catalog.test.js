@@ -3,10 +3,12 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogCategories, filterByCategory,
-  searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, sourceLicense, updatedLabel,
+  searchCatalog, groupCatalog, variantLabel, defaultPath, pickPath,
+  sourceLink, sourceLabel, sourceLicense, updatedLabel,
   safeOrderFile, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
   catalogFacets, filterByFacet, facetLabel, isShortOrder, catalogCoverUrl,
   readingTimeLabel, MINUTES_PER_ISSUE, SHORT_ORDER_MAX, collectionsLabel, isTradeOrder, sortCatalog,
+  countStories,
 } from '../src/js/lib/catalog.js';
 
 test('safeOrderFile accepts a plain markdown name and nothing that escapes the orders folder', () => {
@@ -431,6 +433,150 @@ test('the bundled catalog names every variant it groups', async () => {
     const labels = group.lists.map(variantLabel);
     assert.equal(new Set(labels).size, labels.length, `${group.name} has ambiguous variants`);
   }
+});
+
+// ------------------------------------------------------------------ which path, and in what order
+
+// Depth order, not catalog order: the fixture lists the longest path first on purpose.
+const paths = parseCatalog({
+  lists: [
+    {
+      id: 'cw-full', file: 'f.json', name: 'Civil War: complete', count: 31,
+      depth: 'complete', group: 'civil-war', groupName: 'Civil War', variant: 'Every branded issue',
+    },
+    {
+      id: 'cw-tie', file: 't.json', name: 'Civil War: tie-ins', count: 24,
+      depth: 'tie-ins', group: 'civil-war', groupName: 'Civil War', variant: 'The tie-ins',
+    },
+    {
+      id: 'cw-main', file: 'm.json', name: 'Civil War: main series', count: 7,
+      depth: 'essential', group: 'civil-war', groupName: 'Civil War', variant: 'The main series only',
+    },
+  ],
+}).lists;
+
+test('a story offers its paths shortest commitment first, by declared depth rather than by catalog order', () => {
+  const [story] = groupCatalog(paths);
+  assert.deepEqual(story.lists.map((l) => l.id), ['cw-main', 'cw-full', 'cw-tie']);
+});
+
+test('paths sharing a depth keep the order the catalog gave them', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'b', file: 'b.json', name: 'B', count: 2, depth: 'complete', group: 'g' },
+      { id: 'a', file: 'a.json', name: 'A', count: 1, depth: 'complete', group: 'g' },
+    ],
+  });
+  assert.deepEqual(groupCatalog(lists)[0].lists.map((l) => l.id), ['b', 'a']);
+});
+
+test('a path whose depth the manifest does not declare sorts last, not ahead of the ones that do', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'none', file: 'n.json', name: 'N', count: 1, group: 'g' },
+      { id: 'deep', file: 'd.json', name: 'D', count: 2, depth: 'complete', group: 'g' },
+    ],
+  });
+  assert.deepEqual(groupCatalog(lists)[0].lists.map((l) => l.id), ['deep', 'none']);
+});
+
+test('a story the reader has not started shows its shortest path', () => {
+  const [story] = groupCatalog(paths);
+  assert.equal(defaultPath(story).id, 'cw-main');
+  assert.equal(defaultPath(story, () => false).id, 'cw-main');
+});
+
+test('a story the reader has already started shows the path they started', () => {
+  const [story] = groupCatalog(paths);
+  assert.equal(defaultPath(story, (l) => l.id === 'cw-full').id, 'cw-full');
+});
+
+test('a reader holding two paths of one story is shown the shallower of the two', () => {
+  const [story] = groupCatalog(paths);
+  assert.equal(defaultPath(story, (l) => l.id !== 'cw-main').id, 'cw-full');
+});
+
+test('defaultPath has an answer for a story with no paths left', () => {
+  assert.equal(defaultPath({ lists: [] }), null);
+  assert.equal(defaultPath(null), null);
+});
+
+test('the reader\u2019s own choice of path is honoured over the default', () => {
+  const [story] = groupCatalog(paths);
+  assert.equal(pickPath(story, 'cw-tie').id, 'cw-tie');
+});
+
+test('a stored choice naming a path the story no longer offers falls back rather than showing nothing', () => {
+  const [story] = groupCatalog(paths);
+  // A search that narrows the story to one path, and a data change that drops one, arrive here the
+  // same way: the id is still stored and no longer matches anything.
+  assert.equal(pickPath(story, 'cw-deleted').id, 'cw-main');
+  const narrowed = groupCatalog([paths[0]])[0];
+  assert.equal(pickPath(narrowed, 'cw-main').id, 'cw-full');
+});
+
+test('a stored choice does not override the path the reader already holds when it is stale', () => {
+  const [story] = groupCatalog(paths);
+  assert.equal(pickPath(story, 'cw-gone', (l) => l.id === 'cw-full').id, 'cw-full');
+});
+
+test('the bundled Civil War story offers all three of its reading paths', async () => {
+  const url = new URL('../src/data/catalog.json', import.meta.url);
+  const { lists } = parseCatalog(JSON.parse(await readFile(url, 'utf8')));
+  const story = groupCatalog(lists).find((g) => g.key === 'civil-war');
+  assert.deepEqual(
+    story.lists.map((l) => l.id),
+    ['civil-war-essential', 'civil-war', 'civil-war-avengers'],
+  );
+});
+
+// The shelf shows one card per story, so a chip promising "Events (8)" that opens onto six cards
+// is the chip lying about what it will do. Counting is the only thing that changes: the filter
+// itself still works on paths, because a path is what actually gets imported.
+test('a facet counts the stories it will show, not the reading paths inside them', () => {
+  const facets = catalogFacets(paths);
+  assert.equal(facets.find((f) => f.key === 'all').count, 1, 'three paths through one story are one card');
+});
+
+test('a facet still counts two separate stories separately', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'a1', file: 'a1.json', name: 'A one', count: 1, group: 'a' },
+      { id: 'a2', file: 'a2.json', name: 'A two', count: 2, group: 'a' },
+      { id: 'b1', file: 'b1.json', name: 'B one', count: 3 },
+    ],
+  });
+  assert.equal(catalogFacets(lists).find((f) => f.key === 'all').count, 2);
+});
+
+test('an order in no group counts as its own story', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'x', file: 'x.json', name: 'X', count: 1 },
+      { id: 'y', file: 'y.json', name: 'Y', count: 2 },
+    ],
+  });
+  assert.equal(countStories(lists), 2, 'two ungrouped orders are two stories, not one bucket of blanks');
+});
+
+test('counting stories tolerates nothing to count', () => {
+  assert.equal(countStories([]), 0);
+  assert.equal(countStories(undefined), 0);
+});
+
+// A type chip counts the stories left after its own filter runs, so the number it shows is the
+// number of cards pressing it produces.
+test('a type facet counts the stories that survive that filter alone', () => {
+  const { lists } = parseCatalog({
+    lists: [
+      { id: 'e1', file: 'e1.json', name: 'E one', count: 1, type: 'event', group: 'e' },
+      { id: 'e2', file: 'e2.json', name: 'E two', count: 2, type: 'event', group: 'e' },
+      { id: 'r1', file: 'r1.json', name: 'R one', count: 3, type: 'era' },
+    ],
+  });
+  const facets = catalogFacets(lists);
+  assert.equal(facets.find((f) => f.key === 'type:event').count, 1);
+  assert.equal(facets.find((f) => f.key === 'type:era').count, 1);
 });
 
 // ------------------------------------------------------------------ attribution

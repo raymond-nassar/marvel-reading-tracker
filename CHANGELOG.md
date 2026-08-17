@@ -14,6 +14,33 @@ quote in a bug report.
 
 ## Unreleased
 
+### One card per story, with the choice of reading path inside it (BL-144)
+
+In plain English: the browse page used to show the same story several times over, once for each way
+of reading it. Civil War appeared three times, House of M and Secret Invasion twice each, so seven
+of the twelve slots on the page were spent on three stories. Now each story gets one card, and a
+story you can read more than one way says so in a small line underneath, like "3 ways to read this".
+Pressing it opens the same window the "See the full list" button does, and the choice is made there,
+next to the list of comics it changes.
+
+Twelve slots now hold twelve different stories instead of eight, and the counts around the page say
+nineteen stories rather than twenty-six lists, which is the number you can actually count on screen.
+
+Nothing you have saved is affected, and nothing is taken away. Every reading path that existed still
+exists and can still be added, including both a short version and a long version of the same story
+at once. Lists already in your library are untouched.
+
+The first attempt put the choice on the cards themselves and it made them cluttered, so it was
+measured and moved. The cards are now within a few percent of the height and the number of things to
+read that they had before any of this.
+
+A review before this landed found four faults, and all four are fixed. The one worth naming: after
+changing which version you wanted and closing the window, the keyboard could land on the button that
+adds a list to your library, so a stray Enter would have added it. It now goes back to the small line
+you pressed to open the window. The rest were a strip of empty space above a card that quietly
+swallowed clicks meant for the card, a screen reader hearing the same name for six different choices
+in the browse pane, and a card with no description showing an empty gap where the words would go.
+
 ### Work goes to features rather than to the record of it
 
 In plain English: nothing you have saved is affected and the app itself does not change. This is a

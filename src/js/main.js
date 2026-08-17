@@ -18,7 +18,7 @@ import { compareIssues } from './lib/sort.js';
 import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
-  catalogCoverUrl, readingTimeLabel, collectionsLabel,
+  catalogCoverUrl, readingTimeLabel, collectionsLabel, pickPath, countStories,
 } from './lib/catalog.js';
 import { Store, KEY as STATE_KEY } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -1226,15 +1226,19 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
 
   renderHomeChips(all);
   // Scanning works up to about a dozen orders; past that the reader needs to be able to
-  // type. Showing the box before then would be a control with nothing to do.
-  $('#form-home-q').hidden = all.length <= HOME_FILTER_THRESHOLD;
+  // type. Showing the box before then would be a control with nothing to do. Counted in
+  // stories, because that is what the grid puts on screen.
+  $('#form-home-q').hidden = countStories(all) <= HOME_FILTER_THRESHOLD;
   if ($('#form-home-q').hidden && homeQuery) {
     homeQuery = '';
     $('#home-q').value = '';
   }
   $('#home-q-clear').hidden = !homeQuery;
 
-  const matched = searchCatalog(filterByFacet(all, homeFacet), homeQuery);
+  // Grouped before the cap, not after. Three reading paths through Civil War are one story the
+  // reader recognises, and taking twelve paths first spent seven of the twelve slots on three
+  // stories while both X-Men orders fell off the end.
+  const matched = groupCatalog(searchCatalog(filterByFacet(all, homeFacet), homeQuery));
   const shown = matched.slice(0, HOME_GRID_CAP);
   const rest = matched.length - shown.length;
 
@@ -1311,57 +1315,178 @@ function renderHomeChips(all) {
   );
 }
 
-// One card. The title is an <h3> and the description is a <p>, so neither can sit inside a
-// button: that is not valid content for one, and it would collapse the whole card into a
-// single unreadable accessible name. The preview button is a sibling stretched over the card
-// by CSS instead, which keeps the large click target without the nesting.
-function orderCard(list) {
-  const inLibrary = listForCatalogId(store.state, list.id);
-  const meta = [
-    `${list.count} issue${list.count === 1 ? '' : 's'}`,
-    collectionsLabel(list),
-    readingTimeLabel(list.count),
-    typeLabel(list.type),
-  ].filter(Boolean).join(' · ');
+// Which reading path the reader has chosen through a story, keyed by the story rather than by the
+// card, so a choice made on the landing page is the one the catalog then shows. Deliberately not
+// persisted: it is a decision about what to add next, not a setting, and it stops meaning anything
+// the moment the order is in the library.
+const pathChoice = new Map();
 
+function chosenPath(story) {
+  return pickPath(story, pathChoice.get(story.key), (l) => !!listForCatalogId(store.state, l.id));
+}
+
+// What one reading path is called in a chooser, plus whether it is already in the library.
+// Ownership is said inside the label rather than beside it, so it is part of the radio's
+// accessible name. It is information, not prevention: keeping both the main series and the
+// complete order is a reasonable thing to want, and this only stops a reader adding the same
+// path twice without noticing.
+function pathLabel(list) {
+  return listForCatalogId(store.state, list.id)
+    ? `${variantLabel(list)} · in your library`
+    : variantLabel(list);
+}
+
+// The choice between reading paths through one story. Native radios in a fieldset, so the group,
+// its name and its checked state are what a screen reader already knows how to read, and the arrow
+// keys move between paths without a line of ARIA re-implementing any of it.
+//
+// `scope` is what keeps the radio name unique per surface. The catalog pane and the preview dialog
+// are both in the document at once, so a name shared between them would join two separate choosers
+// into one radio group, and choosing a path in one would silently uncheck the other.
+function pathChooser(story, scope, paint) {
+  if (story.lists.length < 2) return null;
+  const selected = chosenPath(story);
+  return el('fieldset', {
+    class: 'paths',
+    // The legend says what the choice is but not what it is about, and the catalog pane shows six
+    // of these at once. Three bundled stories offer paths labelled identically, so without the
+    // story in the group's name a reader hears "The main series only, 1 of 2, Pick how much you
+    // want to read" three times with nothing to tell the three apart. Every other control in the
+    // row already carries the story this way.
+    'aria-label': labelledName('Pick how much you want to read', story.name),
+  }, [
+    el('legend', { text: 'Pick how much you want to read' }),
+    ...story.lists.map((list) => el('label', { class: 'fp path' }, [
+      el('input', {
+        type: 'radio',
+        name: `${scope}-path-${story.key}`,
+        checked: list === selected,
+        // Keyed by the path, not the story: the key is what focus restoration matches on, and
+        // keying every radio in the group alike would put focus back on the first of them.
+        dataset: { key: list.id, act: `path-${scope}` },
+        onchange: () => {
+          pathChoice.set(story.key, list.id);
+          paint(list);
+        },
+      }),
+      el('span', { text: pathLabel(list) }),
+    ])),
+  ]);
+}
+
+// Ownership is written into the labels a chooser already has, rather than the chooser being
+// rebuilt. Rebuilding a radio group destroys the radio holding focus, and a group that loses its
+// focused radio hands focus to the first one, which silently looks like the choice moving.
+function markOwnedPaths(root, story) {
+  if (!story) return;
+  for (const input of root.querySelectorAll('input[type="radio"]')) {
+    const list = story.lists.find((l) => l.id === input.dataset.key);
+    if (list) input.nextElementSibling.textContent = pathLabel(list);
+  }
+}
+
+// One card, now one story rather than one reading path. Where a story has a single path this is the
+// card it always was; where it has several, the card says so and the choice itself is made in the
+// preview dialog, which is full width and is where a reader goes once they are interested.
+//
+// The chooser used to sit here. Measured in Edge at 1280x900 with storage cleared: it cost 123px on
+// a 277px card, took the grid from 1149px to 1458px, the tallest card from 293px to 445px and the
+// grid's focusable controls from 24 to 33, and it asked four times on one screen a question the
+// reader will answer at most once. Moving it left the grid at 1169px and 24 controls, which is the
+// density the shelf had before any of this.
+//
+// The title is an <h3> and the description is a <p>, so neither can sit inside a button: that is not
+// valid content for one, and it would collapse the whole card into a single unreadable accessible
+// name. The preview button is a sibling stretched over the card by CSS instead, which keeps the
+// large click target without the nesting.
+function orderCard(story) {
+  const title = story.name ?? story.lists[0].name;
   const img = el('img', { alt: '' });
   const fb = el('div', { class: 'of', 'aria-hidden': true }, [
-    el('span', { class: 'ofs', text: shortTitle(list.name) }),
+    el('span', { class: 'ofs', text: shortTitle(title) }),
   ]);
-  // The cover is decorative: the title is right next to it, so alt text would only repeat it.
-  paintCoverUrl(img, fb, catalogCoverUrl(list), hueOf(list.name));
+  const desc = el('p', { class: 'ocard-desc' });
+  const meta = el('p', { class: 'ocard-meta' });
+  const ways = el('p', { class: 'ocard-ways' });
+  const marks = el('p', {});
+  const foot = el('div', { class: 'ocard-foot' });
+
+  // One updater for everything that names a single path, so the words and the two buttons cannot
+  // come apart. A card describing one path while its Add button imports another is the failure
+  // this exists to make impossible, and the preview dialog can change the selection under it.
+  const paint = (list) => {
+    // The cover is repainted into the same <img> rather than a fresh one, so two paths pinning
+    // the same cover issue, which most of them do, assign an identical src and the browser
+    // neither refetches it nor blanks the element between paints.
+    // The cover is decorative: the title is right next to it, so alt text would only repeat it.
+    paintCoverUrl(img, fb, catalogCoverUrl(list), hueOf(title));
+    desc.textContent = list.description ?? '';
+    desc.hidden = !list.description;
+    meta.textContent = [
+      `${list.count} issue${list.count === 1 ? '' : 's'}`,
+      collectionsLabel(list),
+      readingTimeLabel(list.count),
+      typeLabel(list.type),
+    ].filter(Boolean).join(' · ');
+    ways.replaceChildren(...(story.lists.length > 1 ? [waysButton(story, list)] : []));
+    ways.hidden = story.lists.length < 2;
+    // Beginner-friendliness is why many readers pick an order, so it is a visible mark rather
+    // than only a filter you have to know to apply.
+    marks.replaceChildren(...(list.beginner ? [el('span', { class: 'pill', text: 'Beginner-friendly' })] : []));
+    marks.hidden = !list.beginner;
+    foot.replaceChildren(
+      addButton(list, listForCatalogId(store.state, list.id)),
+      // The count is already on the card, in the meta line above, so repeating it on the button
+      // only needed the dash it was joined with. "See the full list" says what the button does.
+      previewButton(list, story),
+    );
+  };
+  paint(chosenPath(story));
 
   return el('li', { class: 'ocard' }, [
     el('div', { class: 'ocard-body' }, [
       el('div', { class: 'ocard-art' }, [img, fb]),
       el('div', { class: 'ocard-text' }, [
-        el('h3', { class: 'ocard-title', text: list.name }),
-        list.description ? el('p', { class: 'ocard-desc', text: list.description }) : null,
-        el('p', { class: 'ocard-meta', text: meta }),
-        // Beginner-friendliness is why many readers pick an order, so it is a visible mark
-        // rather than only a filter you have to know to apply.
-        list.beginner ? el('p', {}, el('span', { class: 'pill', text: 'Beginner-friendly' })) : null,
+        el('h3', { class: 'ocard-title', text: title }),
+        desc,
+        meta,
+        ways,
+        marks,
       ]),
     ]),
-    el('div', { class: 'ocard-foot' }, [
-      addButton(list, inLibrary),
-      // The count is already on the card, in the meta line above, so repeating it on the button
-      // only needed the dash it was joined with. "See the full list" says what the button does.
-      previewButton(list),
-    ]),
+    foot,
   ]);
+}
+
+// The card's whole account of the choice: that it exists, and how many ways there are. It opens the
+// same dialog the card's own preview button does, so a reader who presses either arrives where the
+// paths are listed with the issues beside them.
+function waysButton(story, list) {
+  const text = `${story.lists.length} ways to read this`;
+  return el('button', {
+    type: 'button',
+    class: 'ways',
+    'aria-label': labelledName(text, story.name),
+    dataset: { key: story.key, act: 'ways' },
+    onclick: () => openPreview(list, story),
+  }, text);
 }
 
 // One binding for the words, used as the visible text and as the base of the accessible name,
 // so the two cannot be edited apart.
-function previewButton(list) {
+function previewButton(list, story = null) {
   const text = 'See the full list';
   return el('button', {
     type: 'button',
     class: 'ocard-preview',
     'aria-label': labelledName(text, list.name),
-    dataset: { key: list.id, act: 'preview' },
-    onclick: () => openPreview(list),
+    // Keyed by the story rather than by the path it currently shows. Choosing a different path in
+    // the dialog rebuilds this card around a different list, so a key of list.id no longer matches
+    // what focus restoration captured, and the miss falls through to the card's primary action,
+    // which is Add. That returns the reader to a state-changing control they never aimed at, one
+    // Enter away from importing an order. The story key does not move when the path does.
+    dataset: { key: story?.key ?? list.id, act: 'preview' },
+    onclick: () => openPreview(list, story),
   }, text);
 }
 
@@ -1431,10 +1556,12 @@ async function addFromCatalog(list, btn) {
 
 let previewLoad = null;
 let previewList = null;
+let previewStory = null;
 
 function syncPreviewAdd() {
   if (!previewList || !$('#preview').open) return;
   $('#preview-add').replaceChildren(addButton(previewList, listForCatalogId(store.state, previewList.id)));
+  markOwnedPaths($('#preview-paths'), previewStory);
 }
 
 function wirePreview() {
@@ -1443,27 +1570,60 @@ function wirePreview() {
   $('#preview').addEventListener('click', (e) => {
     if (e.target === $('#preview')) $('#preview').close();
   });
-  $('#preview').addEventListener('close', () => { previewList = null; placeNotices(); });
+  $('#preview').addEventListener('close', async () => {
+    const chose = previewStory;
+    previewList = null;
+    previewStory = null;
+    placeNotices();
+    // The card behind the dialog names one path, and the dialog is where that choice is now made,
+    // so a choice made here has to reach the card that sent the reader in. Only when a choice was
+    // on offer, and only for the view actually on screen.
+    if (chose && view === 'home') await renderHomeCatalog();
+  });
 }
 
-async function openPreview(list) {
+async function openPreview(list, story = null) {
   const dlg = $('#preview');
+  previewStory = story && story.lists.length > 1 ? story : null;
+  // Built once, outside the repaint below, because rebuilding a radio group destroys the radio the
+  // reader just activated, and a group with no focused radio hands focus to its first one.
+  $('#preview-paths').replaceChildren(...(previewStory
+    ? [pathChooser(previewStory, 'preview', (next) => {
+      paintPreview(next);
+      loadPreviewIssues(next);
+    })]
+    : []));
+  paintPreview(list);
+  dlg.showModal();
+  await loadPreviewIssues(list);
+}
+
+// Everything in the dialog that describes one reading path. Split from openPreview so that choosing
+// a different path repaints the dialog rather than reopening it, which would close and reshow a
+// modal the reader is already inside.
+function paintPreview(list) {
   previewList = list;
-  $('#preview-h').textContent = list.name;
+  $('#preview-h').textContent = previewStory ? previewStory.name : list.name;
   const readingTime = readingTimeLabel(list.count);
   $('#preview-meta').textContent = [
+    // With a chooser present the heading is the story, so the path has to be named somewhere or
+    // the dialog would describe a reading path it never identifies.
+    previewStory ? variantLabel(list) : null,
     `${list.count} issue${list.count === 1 ? '' : 's'}`,
     collectionsLabel(list),
     readingTime,
     depthLabel(list.depth),
   ].filter(Boolean).join(' · ');
   $('#preview-desc').textContent = list.description || '';
-  $('#preview-body').replaceChildren(el('p', { class: 'rail-hint', text: 'Loading the issue list…' }));
   $('#preview-add').replaceChildren(addButton(list, listForCatalogId(store.state, list.id)));
-  dlg.showModal();
+}
 
+async function loadPreviewIssues(list) {
+  $('#preview-body').replaceChildren(el('p', { class: 'rail-hint', text: 'Loading the issue list…' }));
   // A second preview opened while the first is still loading would otherwise race it and
-  // could paint the wrong order's issues into the dialog.
+  // could paint the wrong order's issues into the dialog. A path chosen in the dialog starts
+  // another load against the same guard, so arrowing quickly through the paths cannot leave the
+  // issues of one path under the heading of another.
   const token = {};
   previewLoad = token;
   try {
@@ -3038,66 +3198,75 @@ async function renderCatalog() {
     return;
   }
 
-  for (const group of groupCatalog(shown)) {
-    // A grouped story is announced once, so the reader sees one decision (which path through
-    // this story) instead of two lists that look unrelated.
-    if (group.name) {
-      box.append(el('div', { class: 'result-group' }, [
-        el('h2', { class: 'result-group-h', text: group.name }),
-        el('p', {
-          class: 'result-meta',
-          text: `${group.lists.length} versions of this reading order. Pick how much you want to read.`,
-        }),
-        ...group.lists.map((list) => catalogRow(list, { variant: true })),
-      ]));
-      continue;
-    }
-    box.append(catalogRow(group.lists[0]));
-  }
+  const stories = groupCatalog(shown);
+  for (const story of stories) box.append(catalogRow(story));
 
   // The dropped-entry warning already announced itself; a second announcement would replace it.
   if (!catalog.dropped) {
     const where = catalogFacet === 'all' ? '' : ` in ${facetLabel(catalog.lists, catalogFacet)}`;
     const match = catalogQuery ? ` matching “${catalogQuery}”` : '';
-    announceCatalog(`Catalog shows ${shown.length} reading ${shown.length === 1 ? 'list' : 'lists'}${match}${where}.`);
+    announceCatalog(`Catalog shows ${stories.length} reading ${stories.length === 1 ? 'list' : 'lists'}${match}${where}.`);
   }
 }
 
-// Inside a group the story's name is already the heading, so the row leads with what actually
-// differs between the versions, the reading path, rather than repeating the title.
-function catalogRow(list, { variant = false } = {}) {
-  // The count is derived from the file the reader will actually import, so it is exact and
-  // does not need hedging.
-  const meta = [
-    typeLabel(list.type),
-    `${list.count} issue${list.count === 1 ? '' : 's'}`,
-    collectionsLabel(list),
-  ].filter(Boolean).join(' · ');
-  const depth = depthLabel(list.depth);
-  const title = variant ? variantLabel(list) : list.name;
-  return el('div', { class: 'result' }, [
-    el('div', { class: 'result-main' }, [
-      el('div', { class: 'result-title', text: title }),
-      el('div', { class: 'result-meta', text: meta }),
-      list.description ? el('div', { class: 'result-meta', text: list.description }) : null,
-      // How much reading a list represents is the reason a reader picks between two versions
-      // of the same story, so it is called out rather than buried in the meta line.
-      depth
-        ? el('p', { class: 'result-meta' }, [
-          el('span', { class: 'pill', text: depth }),
-          depthHint(list.depth) ? ` ${depthHint(list.depth)}` : null,
-        ])
-        : null,
-      attributionLine(list),
-    ]),
-    el('button', {
+// One row per story. A story read several ways used to be a heading with a row under it for each
+// path, which read as several things to decide between; it is one thing to decide, with a choice
+// inside it, so the row carries the chooser and describes whichever path is selected.
+function catalogRow(story) {
+  const title = story.name ?? story.lists[0].name;
+  const meta = el('div', { class: 'result-meta' });
+  const desc = el('div', { class: 'result-meta' });
+  const depth = el('p', { class: 'result-meta' });
+  const source = el('div', { class: 'result-source' });
+  const act = el('div', { class: 'result-act' });
+
+  // The same single updater the shelf card uses, and for the same reason: the Import button closes
+  // over one path, so the words and the button have to move together or the row will import
+  // something other than what it describes.
+  const paint = (list) => {
+    // The count is derived from the file the reader will actually import, so it is exact and
+    // does not need hedging.
+    meta.textContent = [
+      typeLabel(list.type),
+      `${list.count} issue${list.count === 1 ? '' : 's'}`,
+      collectionsLabel(list),
+    ].filter(Boolean).join(' · ');
+    desc.textContent = list.description ?? '';
+    desc.hidden = !list.description;
+    // How much reading a list represents is the reason a reader picks between two versions
+    // of the same story, so it is called out rather than buried in the meta line.
+    const label = depthLabel(list.depth);
+    depth.replaceChildren(...(label
+      ? [el('span', { class: 'pill', text: label }), depthHint(list.depth) ? ` ${depthHint(list.depth)}` : '']
+      : []));
+    depth.hidden = !label;
+    source.replaceChildren(...[attributionLine(list)].filter(Boolean));
+    act.replaceChildren(el('button', {
       class: 'btn',
       type: 'button',
       // The accessible name always carries the full list name, so a button read out of
       // context never says only "Import Essential reading".
       'aria-label': `Import ${list.name}`,
+      dataset: { key: list.id, act: 'import' },
       onclick: (e) => importCurated(list, e.currentTarget),
-    }, 'Import'),
+    }, 'Import'));
+  };
+  paint(chosenPath(story));
+
+  return el('div', { class: 'result' }, [
+    el('div', { class: 'result-main' }, [
+      // A heading rather than a div. Grouping replaced a heading per grouped story with a plain
+      // title, which took the pane from six headings to none and left heading navigation with no
+      // way through the results at all. Every row carries one now, which is one more than the
+      // ungrouped rows ever had.
+      el('h3', { class: 'result-title', text: title }),
+      pathChooser(story, 'catalog', paint),
+      meta,
+      desc,
+      depth,
+      source,
+    ]),
+    act,
   ]);
 }
 
