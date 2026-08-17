@@ -870,7 +870,11 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .btn-added { background: rgb(var(--tint-base) / 5.882%); color: var(--green); border-color: rgb(var(--green-line) / 33.333%); font-weight: 600; }
 
 .home-q { max-width: 32rem; margin-top: .8rem; }
-#home-overflow { margin: .9rem .1rem 0; }
+#home-overflow { margin: .9rem .1rem .55rem; }
+/* Full width rather than sized to its text. The control is the answer to "is that everything?",
+   which the reader asks at the bottom of the grid with their eye already sweeping horizontally,
+   so a small button tucked at one edge is easy to sweep straight past. */
+.home-more { display: block; width: 100%; margin: 0 .1rem; }
 .attribution { margin: 1.1rem .1rem 0; }
 
 .escape {

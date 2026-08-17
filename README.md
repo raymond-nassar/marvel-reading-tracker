@@ -15,6 +15,20 @@ Unlimited subscription to read.
 
 ## Start here
 
+### On Windows
+
+**[Download the tracker](https://github.com/raymond-nassar/marvel-reading-tracker/releases/latest/download/marvel-reading-tracker-windows.zip)**, unzip it, and double-click **Start on
+Windows.cmd** inside.
+
+That is the whole thing. There is nothing to install, and no account to make. The download is
+about 34 MB because everything the tracker needs to run is inside it.
+
+Windows may warn you once, because the file came from the internet. On the unzipped folder, or on
+the first run, choose **More info** and then **Run anyway**. That prompt is expected, and
+[what it is](#the-first-run-warning) is explained below.
+
+### On a Mac, or if you would rather build it yourself
+
 Three things, once. After that, starting the app is one double-click.
 
 1. **Install Node.js.** It is free, and it is the only thing you need that does not come with
@@ -25,10 +39,15 @@ Three things, once. After that, starting the app is one double-click.
 3. **Double-click the start file** inside the folder you just unzipped: **Start on
    Windows.cmd** on Windows, or **Start on macOS.command** on a Mac.
 
+### Either way
+
 A small window opens and stays open, and your browser opens the app by itself. That window is
 the app running, so leave it alone until you are finished. To stop, click that window and
 press **Ctrl+C**. Your reading progress is kept by your browser, so stopping the app never
 loses it.
+
+Both routes open the app at the same address, so they are the same app with the same reading
+progress. You can start with the download and switch to the source later without losing anything.
 
 Once the app is open, your browser will offer to
 [install it](#optional-install-it-as-an-app), which gives the tracker its own icon and its own
@@ -36,6 +55,20 @@ window. After that the icon opens the tracker whether or not the app is running.
 
 The longer version of all this, with what to do when a step goes wrong, is in
 [Run it on your computer](#run-it-on-your-computer) below.
+
+### The first run warning
+
+Whichever route you took, Windows or macOS may ask you to confirm the first time, because the
+files arrived from the internet. This is expected, and it is not a sign anything is wrong.
+
+On Windows, choose **More info** and then **Run anyway**. On a Mac, if double-clicking does
+nothing or the file opens in a text editor instead, right-click it, choose **Open**, and confirm.
+
+The warning is the operating system saying it cannot vouch for who wrote a file, which is true of
+anything not signed by a paying software company. Nothing here is hidden from you: every line of
+this app is on this page, and the runtime inside the Windows download is the official one from
+[nodejs.org](https://nodejs.org), fetched and checked against its published checksum when the
+download is built.
 
 ## What it does
 

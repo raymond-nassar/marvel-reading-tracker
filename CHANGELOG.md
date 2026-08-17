@@ -14,6 +14,61 @@ quote in a bug report.
 
 ## Unreleased
 
+### Offer the tracker as one download that needs nothing installed
+
+In plain English: on Windows there is now a single download that contains everything, so there is
+nothing to install first. Unzip it, double-click the start file inside, and the tracker opens. The
+old way still works if you prefer it, and both open the tracker at the same address, so your saved
+reading progress is the same either way and nothing you have already saved is affected.
+
+Getting the tracker running used to take three separate steps before you saw anything: install a
+runtime from one website, find the project on another, then work out which item in a menu written
+for programmers gives you the code. Each one of those is a place someone stops. The download removes
+all three.
+
+- **Added** `npm run pack`, which builds the Windows archive. It fetches the official Windows x64
+  runtime from nodejs.org and checks it against the published checksum rather than copying the one
+  on the machine doing the build. That distinction matters here: this project is developed on an
+  ARM64 machine, so an archive built from the local binary would run for the author and fail for
+  nearly everyone else, which is the one fault the author cannot reproduce.
+- **Added** a release asset, so a single link replaces the download instructions.
+- **Changed** the Windows start file to prefer a runtime sitting beside it and to fall back to the
+  one on your machine, so the same file works whether you took the download or the source.
+- **Changed** the message shown when no runtime is found, which now points at the download first,
+  because someone who has just proved they have no runtime is the last person to send to install
+  one.
+- **Added** the runtime's own licence to the archive, whole. Its grant is MIT, but the file that
+  travels with the distribution names 47 bundled components, so a one-word summary would
+  under-attribute what is inside it.
+- **Added** `test/packaging.test.js`, which holds the packaging contract: the runtime is fetched
+  rather than copied, the bundled version is one the test suite actually runs on, the archive
+  carries the app and the licences and none of the project's working papers, the start file prefers
+  what shipped with it, the build output cannot be committed by accident, and nothing about any of
+  it moves the address the tracker opens on.
+- **Changed** the README to lead with the download, and to explain the first-run warning Windows
+  shows for anything that arrived from the internet.
+
+### Put a way out of the reading order grid where you actually run out of it
+
+In plain English: the front page shows twelve reading orders and there are nineteen. It said so, and
+it had a "See all" link, but that link was up beside the heading, so by the time you had scrolled
+past twelve cards it was a long way above you and off the screen. All you could see at the bottom
+was a sentence telling you there were more, with nothing to click. There is now a button right under
+the last card. Nothing you have saved is affected.
+
+Measured in Edge at 1280x900: the grid ends 1,392 pixels below the only control, which is more than
+one and a half screens. Scrolled to the end of the grid, the button was off screen and the sentence
+was not something you could press. The limit of twelve is deliberate and stays, because it keeps the
+page one you can take in at a glance however many orders get added, and the catalog page already
+shows all of them with filters and a search box. What was missing was the door, not the room.
+
+- **Added** a control below the grid carrying the same action as the one in the header.
+- **Changed** the wording in both places to come from one function rather than being written twice,
+  because they previously decided "is there more" from two different expressions that agreed only by
+  coincidence.
+- **Added** `test/home-overflow.test.js`, including a check that there is something operable below
+  the grid and not only above it.
+
 ### Record two ways a routine command can quietly destroy uncommitted work
 
 In plain English: nothing about the app changes, and nothing you have saved is affected. This adds

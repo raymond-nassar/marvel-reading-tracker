@@ -1075,12 +1075,21 @@ function wireHome() {
 
   // The whole point of "See all" is that it is the same view of the same catalog, so the
   // filter and the search box travel with the reader rather than resetting under them.
-  $('#home-see-all').addEventListener('click', () => {
+  //
+  // Two controls, one behaviour. The header button is the conventional place to look before
+  // reading; the one under the grid is the only one that is on screen at the moment the reader
+  // runs out of cards. Measured in Edge at 1280x900 with 19 orders: the grid ends at y=1526 and
+  // the header button sits at y=134, so the affordance was 1,392px behind the reader, more than
+  // one and a half viewports, and what remained in view was a sentence stating the shortfall
+  // with nothing to click. That is why "there is no way to see more" was the honest reading.
+  const seeAll = () => {
     catalogFacet = homeFacet;
     catalogQuery = homeQuery;
     $('#catalog-q').value = homeQuery;
     showView('catalog', { push: true });
-  });
+  };
+  $('#home-see-all').addEventListener('click', seeAll);
+  $('#home-more').addEventListener('click', seeAll);
 
   $('#btn-chero-read').addEventListener('click', (e) => {
     const issue = upNext(store.state, activeListId());
@@ -1184,6 +1193,24 @@ function renderYours(populated) {
   }));
 }
 
+// Whether the landing grid is hiding anything, and the two ways of saying so. One rule rather
+// than two: the count line and both controls used to derive "is there more" from different
+// expressions, `rest <= 0` in one place and `matched.length <= HOME_GRID_CAP` in another. Those
+// agree today only because `shown` is exactly the cap, so a later change to the slice would have
+// left a control offering to reveal nothing, or a count claiming a shortfall with no way out.
+//
+// The action names the whole number rather than the remainder, because it navigates to the
+// catalog rather than appending to this grid. "Show the other 7" would describe a thing the
+// button does not do.
+export function overflowState(matched, shown) {
+  const hidden = matched <= shown;
+  return {
+    hidden,
+    count: hidden ? '' : `Showing ${shown} of ${matched} reading orders.`,
+    action: hidden ? '' : `See all ${matched} reading orders →`,
+  };
+}
+
 async function renderHomeCatalog({ announceCount = false } = {}) {
   const grid = $('#home-grid');
   // Every other route into this function rebuilds the grid while focus is outside it, on the
@@ -1220,6 +1247,10 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
     $('#form-home-q').hidden = true;
     $('#home-see-all').hidden = true;
     $('#home-overflow').hidden = true;
+    // Named here rather than left to the markup's initial attribute. This branch returns before
+    // the block that owns these three, so every control that block reveals has to be put away
+    // again by hand, and relying on the attribute only works while nothing has rendered yet.
+    $('#home-more').hidden = true;
     grid.replaceChildren(el('li', { class: 'rail-hint', text: 'No curated reading orders are bundled with this build.' }));
     return;
   }
@@ -1240,7 +1271,6 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
   // stories while both X-Men orders fell off the end.
   const matched = groupCatalog(searchCatalog(filterByFacet(all, homeFacet), homeQuery));
   const shown = matched.slice(0, HOME_GRID_CAP);
-  const rest = matched.length - shown.length;
 
   grid.replaceChildren(...shown.map(orderCard));
 
@@ -1256,12 +1286,13 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
 
   // The overflow is stated as a number rather than an ellipsis, so the reader knows how much
   // catalog they have not seen before deciding whether to go looking.
-  $('#home-overflow').hidden = rest <= 0;
-  $('#home-overflow').textContent = rest > 0
-    ? `Showing ${shown.length} of ${matched.length} reading orders.`
-    : '';
-  $('#home-see-all').hidden = matched.length <= HOME_GRID_CAP;
-  $('#home-see-all').textContent = `See all ${matched.length} orders →`;
+  const overflow = overflowState(matched.length, shown.length);
+  $('#home-overflow').hidden = overflow.hidden;
+  $('#home-overflow').textContent = overflow.count;
+  $('#home-see-all').hidden = overflow.hidden;
+  $('#home-see-all').textContent = overflow.action;
+  $('#home-more').hidden = overflow.hidden;
+  $('#home-more').textContent = overflow.action;
   restoreFocus(held, { primary: 'main' });
   // Only when the reader narrowed something. Announcing on every render would let a routine
   // count overwrite the confirmation that an order had just been added, which is the message
