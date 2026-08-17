@@ -160,10 +160,10 @@ async function handle(req, res) {
 }
 
 // The port is read once, here, so an unusable value is reported in the same register as a taken
-// one rather than as a stack trace. `set MRT_PORT=8788` is advice this file prints on the busy
-// port, and a typo in it used to reach node:net and exit with ERR_SOCKET_BAD_PORT, which reads as
-// a crash rather than as a correction. Zero is refused with the rest: it means "any free port" to
-// the operating system, and the whole point of this server is that the origin does not move.
+// one rather than as a stack trace. A typo in a hand-set `MRT_PORT` used to reach node:net and exit
+// with ERR_SOCKET_BAD_PORT, which reads as a crash rather than as a correction. Zero is refused with
+// the rest: it means "any free port" to the operating system, and the whole point of this server is
+// that the origin does not move.
 export function parsePort(raw) {
   const text = raw === undefined || raw === null ? '' : String(raw).trim();
   if (text === '') return DEFAULT_PORT;
@@ -197,11 +197,46 @@ function openBrowser(url) {
     .catch(() => {});
 }
 
+// The two startup failures a reader can actually hit, as data rather than as console.error calls
+// buried in a branch that only runs when the port is taken. Returned as lines so a test can read
+// the words without binding a socket, which is the same reason browserCommand above is a table.
+//
+// Neither names npm. The packaged Windows archive carries a runtime and the app and nothing else:
+// no package.json, so no `npm start`, and the reader it was built for has installed nothing. That
+// advice was written when a clone was the only way to run this, and it survived the archive.
+//
+// The busy-port text refuses to offer a different port, which is the opposite of what it used to
+// do. Reading progress is stored by the browser against the exact origin it was saved at, so
+// moving to 8788 opens an app with nothing in it while the reading sits at 8787, and a reader who
+// has just been told their port is busy is the least equipped to know that. test/launcher.test.js
+// already forbids the launcher from setting MRT_PORT for this reason; this is the same rule
+// applied to the advice the server prints.
+export function badPortMessage(raw) {
+  return [
+    '',
+    `MRT_PORT is set to ${JSON.stringify(raw)}, which is not a port.`,
+    'Use a whole number from 1 to 65535, or clear it and start the tracker again.',
+    '',
+  ];
+}
+
+export function busyPortMessage(host, port) {
+  return [
+    '',
+    `Port ${port} is already in use.`,
+    `If the tracker is already running, open http://${host}:${port}/ instead.`,
+    'If that address does not show the tracker, then another program has the port.',
+    'Close that program, then start the tracker again.',
+    'Do not start the tracker on a different port to get past this. Your reading is',
+    'saved against the address above and stays there, so another port opens an app',
+    'with nothing in it.',
+    '',
+  ];
+}
+
 function start() {
   if (PORT === null) {
-    console.error(`\nMRT_PORT is set to ${JSON.stringify(process.env.MRT_PORT)}, which is not a port.`);
-    console.error('Use a whole number from 1 to 65535, or unset it to use the default:');
-    console.error(`  set MRT_PORT=${DEFAULT_PORT} && npm start\n`);
+    for (const line of badPortMessage(process.env.MRT_PORT)) console.error(line);
     process.exit(1);
   }
 
@@ -209,9 +244,7 @@ function start() {
 
   server.on('error', (err) => {
     if (err.code === 'EADDRINUSE') {
-      console.error(`\nPort ${PORT} is already in use.`);
-      console.error(`If the tracker is already running, open http://${HOST}:${PORT}/ instead.`);
-      console.error(`Otherwise start it on another port:  set MRT_PORT=8788 && npm start\n`);
+      for (const line of busyPortMessage(HOST, PORT)) console.error(line);
       process.exit(1);
     }
     throw err;

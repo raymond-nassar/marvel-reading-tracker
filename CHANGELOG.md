@@ -14,6 +14,39 @@ quote in a bug report.
 
 ## Unreleased
 
+### Stop the startup failure messages naming a tool the download does not carry
+
+In plain English: if you start the tracker while it is already running, it tells you so. It used to
+finish by suggesting you start it on a different address instead, which was bad advice for two
+reasons. That suggestion involved a developer tool that is not inside the download at all, so most
+people could not have followed it. And anyone who did would have opened an app with nothing in it,
+because your reading is saved against the address you read it at, and a different address is a
+different shelf. It now says to open the tracker you already have running, tells you what to do if
+something else is using the address, and says plainly why moving is not the way out.
+
+Nothing you have saved is affected, and this text only ever appears when the tracker cannot start.
+
+Found by starting the packaged download against an occupied address rather than by reading the
+code. The launcher handled it correctly; the message underneath it did not.
+
+The advice was written when cloning the repository was the only way to run this, and it was sound
+then. The packaged archive changed who reads it: it carries a runtime, the app and the launcher and
+no `package.json`, verified by extracting the built archive, 100 files with no `package.json` among
+them. Advice naming a tool absent from the download cannot be followed by the reader it is shown to.
+
+The second half matters more. Reading progress is stored by the browser against the exact origin it
+was saved at, so a reader following the old advice to 8788 would have found an empty app while
+their reading sat at 8787. `test/launcher.test.js:77` already forbids the launcher from setting
+`MRT_PORT` for precisely this reason. The rule was enforced on the launcher and not on the message
+printed beside it.
+
+Both messages moved out of the error branch into `server.mjs:214-235` and are returned as lines
+rather than printed, for the same reason `browserCommand` is a table: a branch that runs only when
+a socket is taken is a branch nobody reads. `test/startup-messages.test.js` checks the words without
+binding a port. Five of its seven assertions were run against the shipped strings and fail on them.
+The other two are regression guards, and one of those caught the replacement copy at 88 characters,
+which is wider than the console window the launcher opens.
+
 ## 1.1.0
 
 The first release with a download. Everything below had accumulated in the tree since 1.0.0 without
