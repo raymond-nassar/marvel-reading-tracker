@@ -22,6 +22,13 @@ node_modules/
 backups/
 *.backup.json
 
+# The packaged Windows archive, built by `npm run pack`. Near 34 MiB, nearly all of it a Node
+# runtime fetched from nodejs.org at build time. It is published as a release asset, which is a
+# place a large binary belongs, rather than committed, which is a place it stays forever. A build
+# output that only the person who ran it can see is the easiest possible way to commit one by
+# accident, so the ignore is here and `test/packaging.test.js` checks it is still in force.
+dist/
+
 # Working artifacts, held local by rule rather than by anyone remembering. `.copilot-tracking/`
 # holds one directory per phase per session; six of those files, all from the first task, are
 # committed and are the closest thing this repository has to a design rationale. Everything a later

@@ -309,7 +309,7 @@ The first is that displaying a description and shipping a copy of one are differ
 those terms rather than two degrees of one act. Using Content inside an App is what the licence is
 for, on a condition the attribution page states plainly: "You must attribute Marvel as the source
 of data whenever you display any results from the Marvel Comics API", which this app does at
-`src/index.html:244`. Redistributing Content outside an App, and sublicensing it onward, are the
+`src/index.html:248`. Redistributing Content outside an App, and sublicensing it onward, are the
 two things sections 4 and 5 name. An MIT grant is a sublicence to everyone who receives a copy, and
 offers them "sublicense, and/or sell".
 
@@ -354,8 +354,8 @@ app renders that state today rather than hypothetically. Those 675 do not render
 606 carry a series or digital id and get the sentence saying no synopsis is recorded, while 69 hold
 neither and get the sentence saying the snapshot has no record of the issue at all, which is the
 distinction drawn further up this document and worth keeping in view. The field reaches the
-interface in exactly one place, at `src/js/main.js:2077`, and the function behind it already
-answers for the absence at `src/js/main.js:2261-2270`, with a test asserting the sentence it
+interface in exactly one place, at `src/js/main.js:2104`, and the function behind it already
+answers for the absence at `src/js/main.js:2288-2297`, with a test asserting the sentence it
 returns. It is also reversible: the project this repository fetched from still serves the field,
 the contract check having run on 2026-08-15 with 33 of 33 assumptions holding, so the vendoring
 script can fetch it again if a review comes back permissive.

@@ -241,6 +241,10 @@
 
               <ul class="ogrid" id="home-grid"></ul>
               <p class="rail-hint" id="home-overflow" hidden></p>
+              <!-- The same action as the header button, at the place the reader reaches it.
+                   A reader who has scrolled past twelve cards is more than a viewport below the
+                   header, so the header copy is not an escape hatch for them; it is off screen. -->
+              <button type="button" class="btn btn-g home-more" id="home-more" hidden></button>
               <p class="rail-hint attribution">Data provided by Marvel. <span id="marvel-copyright">© MARVEL</span></p>
             </section>
 
