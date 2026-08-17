@@ -4593,7 +4593,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:10230-10232` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:10232-10234` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4603,11 +4603,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:202-204`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10249-10253`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10251-10255`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10064-10066` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10066-10068` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -9539,21 +9539,23 @@ exists to be able to find missing, and on a broken build it would time out inste
 that failed. The rest of this feature's browser evidence is still out of tree, and is BL-138.
 
 A sixth review then measured that sentence and found the revert it named producing a different number,
-and two later passes found first that conclusion wrong and then the first account of why it was wrong
-wrong as well. The sentence said reverting the subtraction turns three of the six red and prints the
-pair. Reverting the subtraction alone turns two, and the sixth review concluded that three was a figure
-no revert produced. That conclusion contradicted the paragraph above it, which already recorded the
-running line's pre-series shape at three red, and it mis-assigned the figure besides, saying the larger
-count belonged to the full revert, which reddens four. So the gap was never an unrun revert. It was a
-red count nobody read back against the conclusion drawn a few lines below it, and a pair nobody looked
-for on the one build that prints it. That build reddens three and prints the pair in the same run, so
-the sentence was reproducible and its fault was naming the subtraction for a revert of the whole line.
-Recording it that way rather than keeping the tidier version, in which the earlier round had simply not
-looked, is the same rule this series exists to enforce, applied to the series. The sixth review also
-found the stopped line's failure clause unguarded, which is why the journey now carries seven assertions
-rather than six: deleting the clause this series began by adding left every other assertion green, so
-the first fix of the series was the one part of it nothing watched. The full revert reddens four rather
-than three because of that seventh.
+and three later passes found, in turn, that conclusion wrong, the first account of why it was wrong
+wrong as well, and one clause of the second account wrong after that. The sentence said reverting the
+subtraction turns three of the six red and prints the pair. Reverting the subtraction alone turns two,
+and the sixth review concluded that three was a figure no revert produced. That conclusion contradicted
+the paragraph above it, which already recorded the running line's pre-series shape at three red, and it
+mis-assigned the figure besides, saying the larger count belonged to the full revert, which reddens
+four. So the gap was never an unrun revert. It was a red count nobody read back against the conclusion
+drawn a few lines below it, and a pair nobody looked for on the build that carries that count. The
+sixth review had found the pair on the subtraction-alone build and recorded it; what nobody checked was
+whether the three-red build prints it too, and it does, in the same run, so the sentence was
+reproducible and its fault was naming the subtraction for a revert of the whole line. Recording it that
+way rather than keeping the tidier version, in which the earlier round had simply not looked, is the
+same rule this series exists to enforce, applied to the series. The sixth review also found the stopped
+line's failure clause unguarded, which is why the journey now carries seven assertions rather than six:
+deleting the clause this series began by adding left every other assertion green, so the first fix of
+the series was the one part of it nothing watched. The full revert reddens four rather than three
+because of that seventh.
 
 The mutation aimed at this scenario was replaced in the same round, and that stands on its own
 evidence rather than on the disputed sentence. It had made the metadata service answer instead of
