@@ -462,7 +462,16 @@ of them, because the two serve different readers and the record needs both.
 
 This is the shell in use. It is not bash and not PowerShell 7.
 
-- No `&&`, `||`, `??`, `?.`. Chain with `;` and gate with `if ($?) { ... }`.
+- No `&&`, `||`, `??`, `?.`. Chain with `;` and gate with `if ($?) { ... }`, subject to the caveat
+  in the next bullet.
+- **`$?` is False after a native command that succeeded, whenever you captured it with `2>&1 |`.**
+  The redirect turns stderr into error records inside the pipeline, and the pipeline is then marked
+  failed whatever the command actually did. Measured on one successful `git checkout`: `$?` is False
+  through `2>&1 | Select-Object`, True through a plain pipe, and `$LASTEXITCODE` is 0 in both. Git
+  writes ordinary advice to stderr, so this fires on routine success rather than on anything
+  unusual, and it silently skipped two commands in an `if ($?) { ... }` block here. **Gate a native
+  command on `$LASTEXITCODE`**, and remember that the capture idiom used throughout this file is
+  exactly the one that breaks the other test.
 - **Never `git commit -m "..."`.** Double quotes in native command arguments get mangled. Write the
   message to a file and use `git commit -F <file>`. Write the file with
   `[IO.File]::WriteAllText($p, $msg, (New-Object Text.UTF8Encoding $false))`.
@@ -471,6 +480,16 @@ This is the shell in use. It is not bash and not PowerShell 7.
 - `gh ... --jq` fails here. Pipe raw `--json` output into `node -e`.
 - `grep` is not a command. Use the editor's search tool, or `Select-String`.
 - Kill processes with `Stop-Process -Id <pid>`, never by name.
+- **Never suppress the output of a command you are about to depend on.** Sessions run in worktrees
+  while the main checkout holds `main`, and git refuses to have one branch checked out in two
+  places, so `git checkout main` from a session exits 128 every time. Hide that with `| Out-Null`
+  and follow it with `git reset --hard origin/main`, and the reset lands on the branch you never
+  left. Measured here: the feature branch was moved off its own tip onto main's, an uncommitted edit
+  to a tracked file was destroyed, and `main` itself did not move, so nothing looked wrong
+  afterwards. The displaced commit is recoverable from the reflog and the uncommitted edit is not,
+  and the reflog entry is filed under the branch you did not believe you were on, which is not a
+  name you would think to search. Suppressing output and then running a destructive command is one
+  mistake rather than two.
 
 ## Browser verification
 
