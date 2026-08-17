@@ -115,6 +115,18 @@ and reddens two named assertions. The rest of this feature's browser evidence st
 tree, where a clean clone cannot rerun it, and bringing it in is now a recorded item rather than an
 omission.
 
+One correction to the paragraph above, made after a further review of it. The account of why that
+mutation was replaced said the disputed figure was one no revert of the tree produced. That was
+measured from two reverts and stated about all of them. A third produces it: taking the running
+status line all the way back to its pre-series shape, which drops the clause naming what could not be
+reached as well as the subtraction, reddens exactly three assertions and prints the two bad lines
+beside each other in the same run. So the sentence under review had been reproducible and its fault
+was one word, naming the subtraction for a revert of the whole line. The replacement mutation is kept,
+because it was justified by the evidence it adds rather than by the disputed figure: reproducing that
+pair by hand means editing the app and editing it correctly, and it is printed by a committed check
+now. The four measured reverts are written out in full in the project's list of planned improvements,
+with what each one reddens and whether it prints the pair.
+
 ### The project is public, and the protections it was waiting on are now switched on (BL-133)
 
 In plain English: nothing you have saved is affected, and the app itself does not change. This
