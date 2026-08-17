@@ -4819,7 +4819,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2545-2554` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2546-2555` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:192-196` and
 `PRODUCT_BACKLOG.md:202-204` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.

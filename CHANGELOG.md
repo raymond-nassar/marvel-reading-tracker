@@ -28,11 +28,12 @@ history is gone, and because the main line itself is untouched, nothing afterwar
 
 The second warning is the reason the first is so easy to miss. The way this project's notes tell
 contributors to capture the output of a command can make a successful command report itself as
-failed, but only when that command printed some remark of its own alongside the success. A quiet run
-is scored correctly, which is why the fault survives casual testing: the check behaves every time
-there was nothing to say, and gives way precisely on the runs where the tool had a remark to make.
-Both were measured rather than recalled, and the second contradicted advice already in the notes,
-which has been corrected.
+failed, but only when that command put something into a second channel that runs alongside its
+ordinary output. What was put there does not matter, and it does not have to be a complaint: a
+routine remark is enough. Ordinary output does not do it, however much of it there is. That is why
+the fault survives casual testing: the check behaves on every run that left that second channel
+empty, and gives way on the runs that put anything at all into it. Both were measured rather than
+recalled, and the second contradicted advice already in the notes, which has been corrected.
 
 ### Record a way the evidence gate can lose a claim without reporting anything
 

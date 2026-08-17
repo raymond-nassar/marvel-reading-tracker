@@ -467,15 +467,31 @@ This is the shell in use. It is not bash and not PowerShell 7.
 - **`$?` is False after a native command that succeeded, if it wrote to stderr and you captured it
   with `2>&1 |`.** The redirect turns stderr into error records inside the pipeline and the pipeline
   is then scored on those rather than on the exit code. Both halves are load-bearing and neither
-  alone does it. Measured across eight probes with `$LASTEXITCODE` read alongside: a silent success
-  through `2>&1 |` leaves `$?` True, the same shape writing one line to stderr leaves it False, and
-  both exit 0; through a plain pipe the talkative one is True again. It happens in git rather than
-  only in toys, and it is selective there: `git status --short` on a clean tree is quiet and scores
-  True through the identical idiom that scores `git checkout` False.
+  alone does it. **The axis is the stream, not the volume**, and that is the part that misleads:
+  inside that shape, and for a command that exited 0, `$?` goes False if and only if something
+  reached stderr, whatever the command did on stdout. Both scoping conditions are load-bearing in
+  that sentence too: through a plain pipe a stderr-writing success is True, and through `2>&1 |` a
+  silent failure is False.
+  Measured with `$LASTEXITCODE` read alongside, all of these exiting 0: a success that writes
+  nothing is True, one that floods stdout is True, one that writes a single line to stderr is False,
+  and one that writes both is False; through a plain pipe every one of them is True. In git rather
+  than only in toys, `git diff` and `git log` pour out stdout and score True, `git status --short`
+  scores True on a dirty tree as well as a clean one, and `git checkout` scores False on one line of
+  routine advice.
   **The conditional form is the dangerous one.** Something unconditional would be caught the first
-  time anyone used it. This passes every quiet run and withholds the guarded command only when the
-  tool had something to say, which is exactly the run you wanted the guard on. It silently skipped a
-  `reset --hard` and a `branch -D` in an `if ($?) { ... }` block here.
+  time anyone used it. This passes every run that leaves stderr empty and withholds the guarded
+  command only when something reached stderr, and what the command does will not tell you which run
+  is which. Take the closest pair measured here, both exiting 0: `git checkout` of the branch you
+  are already on and `git reset --hard HEAD` on a clean tree are both local no-ops, and the first
+  reaches stderr while the second does not. `git branch -D`, `git merge`, `git diff`, `git log` and
+  `git status --short` reach it zero times as well, while `git push` with nothing to send reaches it
+  and writes no stdout at all. One command goes both ways on its own, measured seconds apart with
+  the remote unchanged and nothing to fetch in either run: `git fetch --dry-run origin` reached
+  stderr zero times and `git fetch --dry-run origin main` reached it twice, both exiting 0. So there
+  is no rule of thumb here to substitute for reading the exit code. Note also that the gate turns on
+  the command before it rather than the one it guards, so the guarded command's own habits are
+  beside the point: an `if ($?) { ... }` block here skipped a `reset --hard` and a `branch -D`, and
+  what set `$?` False was neither of them.
   **So gate a native command on `$LASTEXITCODE` and a cmdlet on `$?`.** Each is unsafe where the
   other holds, and the second half fails in the direction that costs you a tree: cmdlets do not
   touch `$LASTEXITCODE`, so after a native success it still reads 0 while a failed cmdlet sets `$?`
