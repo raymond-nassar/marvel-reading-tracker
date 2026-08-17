@@ -4593,7 +4593,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:10231-10233` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:10230-10232` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4603,11 +4603,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:202-204`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10250-10254`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10249-10253`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10065-10067` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10064-10066` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4815,7 +4815,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2401-2410` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2402-2411` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:192-196` and
 `PRODUCT_BACKLOG.md:202-204` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -9525,36 +9525,35 @@ said the browser check had gained three assertions, and the committed browser ch
 the assertions were real and had been watched failing, but they lived in a script outside the tree,
 which is the arrangement `scripts/browser-check.mjs:3-7` was written to end. Seven of them are the
 committed check's sixth journey now, driven against a service that refuses every request on a delay,
-and what they carry is the claim this round was about. Each of the four ways the fix can be undone was
-run rather than reasoned about, and they do not agree. Taking the whole series back to the shapes it
+and what they carry is the claim this round was about. All four ways the fix can be undone were run
+rather than reasoned about, and they do not agree. Taking the whole series back to the shapes it
 started from turns four of the seven red and prints no pair. Reverting the running line's subtraction
-alone turns two
-red, and the second of those is the one that prints both lines beside each other, a run showing one
-fetched followed by a stop reporting none. Reverting both subtractions turns two red and prints no
-pair, because the stopped line then agrees with the running one. Taking the running line all the way
-back to its pre-series shape,
-which drops the clause naming what could not be reached as well as the subtraction, turns three red
-and prints the same pair.
-The wait that gets the scenario to that point counts refusals in
-the harness rather than reading them off the status line, because a scenario that waited for the line
-to name a refusal could only ever be satisfied by the behaviour it exists to be able to find missing,
-and on a broken build it would time out instead of naming the claim that failed. The rest of this
-feature's browser evidence is still out of tree, and is BL-138.
+alone turns two red, and the second of those is the one that prints both lines beside each other, a
+run showing one fetched followed by a stop reporting none. Reverting both subtractions turns two red
+and prints no pair, because the stopped line then agrees with the running one. Taking the running line
+all the way back to its pre-series shape, which drops the clause naming what could not be reached as
+well as the subtraction, turns three red and prints the same pair. The wait that gets the scenario to
+that point counts refusals in the harness rather than reading them off the status line, because a
+scenario that waited for the line to name a refusal could only ever be satisfied by the behaviour it
+exists to be able to find missing, and on a broken build it would time out instead of naming the claim
+that failed. The rest of this feature's browser evidence is still out of tree, and is BL-138.
 
 A sixth review then measured that sentence and found the revert it named producing a different number,
-and a seventh found the sixth's own conclusion overstated. The sentence said reverting the subtraction
-turns three of the six red and prints the pair. Reverting the subtraction alone turns two, so the
-sixth review reported a figure no revert produced. It had measured two reverts. A third, the running
-line all the way back to its pre-series shape, turns exactly three of the six red and prints the pair
-in the same run, so the sentence was reproducible and its fault was naming the subtraction for a
-revert of the whole line. That is a smaller error than the one this round was written up as finding,
-and the difference between them is one unmeasured revert. Recording it that way rather than quietly
-keeping the stronger version is the same rule the round exists to enforce, applied to the round. The
-same review found the stopped line's failure clause
-unguarded, which is why the journey now carries seven assertions rather than six: deleting the clause
-this series began by adding left every other assertion green, so the first fix of the series was the
-one part of it nothing watched. The full revert reddens four rather than three because of that
-seventh.
+and two later passes found first that conclusion wrong and then the first account of why it was wrong
+wrong as well. The sentence said reverting the subtraction turns three of the six red and prints the
+pair. Reverting the subtraction alone turns two, and the sixth review concluded that three was a figure
+no revert produced. That conclusion contradicted the paragraph above it, which already recorded the
+running line's pre-series shape at three red, and it mis-assigned the figure besides, saying the larger
+count belonged to the full revert, which reddens four. So the gap was never an unrun revert. It was a
+red count nobody read back against the conclusion drawn a few lines below it, and a pair nobody looked
+for on the one build that prints it. That build reddens three and prints the pair in the same run, so
+the sentence was reproducible and its fault was naming the subtraction for a revert of the whole line.
+Recording it that way rather than keeping the tidier version, in which the earlier round had simply not
+looked, is the same rule this series exists to enforce, applied to the series. The sixth review also
+found the stopped line's failure clause unguarded, which is why the journey now carries seven assertions
+rather than six: deleting the clause this series began by adding left every other assertion green, so
+the first fix of the series was the one part of it nothing watched. The full revert reddens four rather
+than three because of that seventh.
 
 The mutation aimed at this scenario was replaced in the same round, and that stands on its own
 evidence rather than on the disputed sentence. It had made the metadata service answer instead of
