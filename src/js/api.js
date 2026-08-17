@@ -16,6 +16,33 @@ const INDEXES = {
   creators: { file: 'creators-index.json', label: 'creator' },
 };
 
+// Removes issue synopsis prose from a response before it is cached, leaving everything else alone.
+//
+// The alternative, deleting `description` wherever the key appears, was the first design and is
+// wrong. This cache is general: /health, /search/issues, /series and /creators all pass through it,
+// and a `description` on any of those means something else. Stripping by key alone would quietly
+// corrupt a response whose shape nobody had thought about yet, which is a worse failure than the
+// one it prevents, because it would show up as missing text somewhere unrelated with nothing to
+// connect it back to here.
+//
+// So the shape is checked instead: a record carrying an issue id, or a list of them under `items`,
+// which is what /issues/{id} and /search/issues return. The defence against a new prose-bearing
+// shape arriving later is a test asserting the strip, not a wider strip.
+//
+// The copy is shallow and made only when there is something to remove, so an unaffected response is
+// cached as the same object it already was.
+export function withoutSynopsis(data) {
+  if (!data || typeof data !== 'object') return data;
+  if (Array.isArray(data.items)) {
+    return { ...data, items: data.items.map(withoutSynopsis) };
+  }
+  const looksLikeIssue = data.id != null || data.issueId != null;
+  if (!looksLikeIssue || data.description == null) return data;
+  const copy = { ...data };
+  delete copy.description;
+  return copy;
+}
+
 // fetch and sleep are injectable for the same reason RateLimiter takes now and sleep: the retry
 // chain is four attempts deep and waits between them, so a test that drives it against a service
 // answering 503 sits for about fifteen seconds of real time and cannot see the responses it is
@@ -60,6 +87,12 @@ export class MarvelApi {
     const run = async () => {
       const res = await this.fetch(this.baseUrl + path, {
         headers: { accept: 'application/json' },
+        // The app's own cache is the one above, and it is stripped of synopsis prose before
+        // anything is written to it. The browser's cache is not: it stores the response as sent,
+        // on disk, under rules this app cannot read and a "clear cached metadata" button cannot
+        // reach. Without this directive the promise that a fetched synopsis lives only in memory
+        // would hold everywhere except the one store the reader has no way to inspect.
+        cache: 'no-store',
         signal,
       });
       this.limiter.observe(res.headers);
@@ -83,7 +116,7 @@ export class MarvelApi {
 
     try {
       const data = await this.limiter.schedule(run, { signal });
-      if (cache) await this.cache.set(path, data);
+      if (cache) await this.cache.set(path, withoutSynopsis(data));
       return data;
     } catch (err) {
       if (err instanceof RetrySignal) {

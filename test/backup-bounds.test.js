@@ -36,7 +36,11 @@ test('a restored issue is capped the same way a created one is', () => {
   const issue = v.state.issues[1];
   assert.equal(issue.title.length, MAX_NAME);
   assert.equal(issue.seriesName.length, MAX_NAME);
-  assert.equal(issue.description.length, MAX_DESCRIPTION);
+  // Not capped, dropped. BL-134 stopped storing issue synopses altogether, so a restored backup
+  // written by an older build has its prose removed on the way in rather than truncated. There is
+  // nothing left for MAX_DESCRIPTION to bound at the issue level; it still bounds list descriptions,
+  // which this repository writes and owns, and the test below covers that.
+  assert.equal('description' in issue, false, 'a restored issue must not carry a synopsis');
   assert.equal(issue.creators[0].name.length, MAX_NAME);
   assert.equal(issue.creators[0].role.length, MAX_NAME);
 });

@@ -8,6 +8,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { commitRows, rowCacheKey, detailsState, synopsisFallback, DETAILS_BADGE } from '../src/js/main.js';
+import { NO_SYNOPSIS } from '../src/js/synopsis.js';
 
 // The smallest node that commitRows actually uses: childNodes, remove() and insertBefore().
 // A DOM implementation would do, but nothing here needs one, which is the point.
@@ -191,13 +192,31 @@ test('each details badge carries its reason in the half a screen reader gets', (
 });
 
 // The issue page says the same three things in a sentence that stands alone, and it had the same
-// two-way fallback. A synopsis that exists always wins, including for a refused issue, because a
-// reader who typed one in by hand has said more about it than the snapshot ever did.
+// two-way fallback. What has changed since BL-134 is where a synopsis can come from: nothing stored
+// carries prose any more, so there is no issue.description branch left. A synopsis fetched during
+// this session is passed in beside the issue, and it wins, because it is the only one there is.
 test('the issue page tells the same three states apart', () => {
-  assert.equal(synopsisFallback({ description: 'A real synopsis.', detailsRefused: true }), 'A real synopsis.');
+  assert.equal(synopsisFallback({ detailsRefused: true }, 'A real synopsis.'), 'A real synopsis.');
   assert.equal(synopsisFallback({ detailsRefused: true }), DETAILS_BADGE.norecord.hint);
   assert.equal(synopsisFallback({ hydrated: true }), 'No synopsis is recorded for this issue.');
   assert.equal(synopsisFallback({ hydrated: false }), 'Details have not been fetched yet.');
+});
+
+// A run that asked and was answered with nothing is the same answer as a snapshot holding nothing,
+// so an empty or blank session value falls through rather than blanking the sentence.
+test('a session synopsis that came back empty says what the snapshot would have said', () => {
+  assert.equal(synopsisFallback({ hydrated: true }, ''), 'No synopsis is recorded for this issue.');
+  assert.equal(synopsisFallback({ hydrated: true }, '   '), 'No synopsis is recorded for this issue.');
+  assert.equal(synopsisFallback({ hydrated: true }, null), 'No synopsis is recorded for this issue.');
+});
+
+// A stored description cannot exist after BL-134, and if a hand-edited state file put one back this
+// must not render it: the promise is that prose is fetched and shown, never stored and shown.
+test('a description smuggled onto a stored issue is not rendered', () => {
+  assert.equal(
+    synopsisFallback({ hydrated: true, description: 'Smuggled.' }),
+    'No synopsis is recorded for this issue.',
+  );
 });
 
 // normalizeIssue keeps hydrated and detailsRefused mutually exclusive, but the merge does not:
@@ -208,11 +227,21 @@ test('a record the tracker holds outranks a refusal, however the two came to be 
   const both = { hydrated: true, detailsRefused: true, source: 'curated', digitalId: 42 };
   assert.equal(detailsState(both), null, 'a hydrated issue has nothing pending and nothing missing');
   assert.equal(synopsisFallback(both), 'No synopsis is recorded for this issue.');
-  assert.equal(synopsisFallback({ ...both, description: 'Held.' }), 'Held.');
+  assert.equal(synopsisFallback(both, 'Held.'), 'Held.');
 });
 
 test('and a genuine refusal, which is never hydrated, still says so on both surfaces', () => {
   const refused = { hydrated: false, detailsRefused: true, source: 'curated' };
   assert.equal(detailsState(refused), 'norecord');
   assert.equal(synopsisFallback(refused), DETAILS_BADGE.norecord.hint);
+});
+
+// An issue nobody has hydrated says "Details have not been fetched yet", which is true right up
+// until a synopsis run asks about it and is told there is nothing. After that the sentence sends the
+// reader to wait for a fetch that has already happened, which is the whole of what this sentence was
+// rewritten to stop doing. The session holds a known negative distinct from "not asked", and it has
+// to reach here for that distinction to be worth keeping.
+test('an issue the run asked about and found nothing for stops promising a fetch', () => {
+  assert.equal(synopsisFallback({ hydrated: false }, NO_SYNOPSIS), 'No synopsis is recorded for this issue.');
+  assert.equal(synopsisFallback({ hydrated: false }), 'Details have not been fetched yet.');
 });
