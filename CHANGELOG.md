@@ -27,10 +27,12 @@ copy instead of the one that was intended. Anything edited and not yet saved int
 history is gone, and because the main line itself is untouched, nothing afterwards looks wrong.
 
 The second warning is the reason the first is so easy to miss. The way this project's notes tell
-contributors to capture the output of a command also makes a successful command report itself as
-failed. Advice printed alongside a success is enough to trigger it, so a step written to run only
-when the previous one worked can be skipped for no reason at all. Both were measured rather than
-recalled, and the second contradicted advice already in the notes, which has been corrected.
+contributors to capture the output of a command can make a successful command report itself as
+failed, but only when that command printed some remark of its own alongside the success. A quiet run
+is scored correctly, which is why the fault survives casual testing: the check behaves every time
+there was nothing to say, and gives way precisely on the runs where the tool had a remark to make.
+Both were measured rather than recalled, and the second contradicted advice already in the notes,
+which has been corrected.
 
 ### Record a way the evidence gate can lose a claim without reporting anything
 
