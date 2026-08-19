@@ -2,7 +2,7 @@
 //
 // The backlog and the UX study rest on browser verification that was real but unrepeatable: the
 // scripts lived outside the tree, so a clean clone could rerun none of it. This file is that
-// evidence, committed. It drives installed Edge through the six journeys the app is for, and it
+// evidence, committed. It drives installed Edge through the eight journeys the app is for, and it
 // is the only place where a claim about what the interface does in a browser can be checked
 // rather than argued.
 //
@@ -416,6 +416,38 @@ const MUTATIONS = [
     },
   },
   {
+    id: 'wiki-collide',
+    breaks: 'wiki-lookup',
+    why: 'a second hand entry for an issue already held rewrites it, which is the merge the collision guard exists to refuse',
+    script: () => {
+      // The guard lives in a module the page cannot reach, and hooking the write cannot reproduce
+      // its absence either: a refused add performs no write, so there is nothing to intercept. The
+      // first attempt did exactly that and turned nothing red. What is reproduced instead is the
+      // hazard's signature, the state carrying the second lookup's facts at the moment the reader
+      // is told nothing was added. Keyed on the flag only the wiki scenario sets.
+      document.addEventListener('DOMContentLoaded', () => {
+        const report = document.querySelector('#manual-report');
+        if (!report) return;
+        const collide = () => {
+          if (window.__mrtWikiAlt !== true) return;
+          if (!/nothing was added/.test(report.textContent ?? '')) return;
+          try {
+            const parsed = JSON.parse(localStorage.getItem('mrt.state.v2') ?? 'null');
+            const held = parsed?.issues?.['129648'];
+            if (!held) return;
+            held.onSale = '2026-07-01';
+            held.pageCount = 99;
+            held.creators = [{ name: 'Replacement Writer', role: 'writer' }];
+            localStorage.setItem('mrt.state.v2', JSON.stringify(parsed));
+          } catch {
+            // A malformed payload is not this mutation's business to repair.
+          }
+        };
+        new MutationObserver(collide).observe(report, { childList: true, characterData: true, subtree: true });
+      });
+    },
+  },
+  {
     id: 'synopsis-attempts',
     breaks: 'synopsis',
     why: 'the running line is rewritten to report attempts rather than answers, which is the miscount this scenario exists to catch',
@@ -793,6 +825,150 @@ const SCENARIOS = [
     },
   },
   {
+    id: 'wiki-lookup',
+    title: 'a hand entry can take facts and an issue id from the wiki, and refuses one it already holds',
+    async run(page, t) {
+      // Set before the first navigation, so the stub is in place before any code reads it.
+      await page.evaluateOnNewDocument(() => { window.__mrtWiki = 'ok'; });
+      await open(page, '/');
+      await click(page, '[data-view="add"][data-open="sec-manual"]');
+      await page.waitForSelector('#btn-manual-lookup', { visible: true, timeout: 15000 });
+
+      await page.evaluate(() => { document.querySelector('#manual-title').value = 'Fixture Vol 7 26'; });
+      await click(page, '#btn-manual-lookup');
+      await page.waitForFunction(
+        () => document.querySelectorAll('#manual-candidates .result').length > 0,
+        { timeout: 15000 },
+      );
+
+      const offered = await page.evaluate(() => Array.from(
+        document.querySelectorAll('#manual-candidates .result'),
+        (row) => ({
+          title: row.querySelector('.result-title')?.textContent ?? '',
+          meta: row.querySelector('.result-meta')?.textContent ?? '',
+        }),
+      ));
+      // The series page is in the search results and must not be in the chooser. The search is
+      // fuzzy enough to return one for almost any issue query, and a series page carries no
+      // release date, so a chooser that offered it would offer a row that fills nothing.
+      t.check('the chooser drops the series page and keeps the issue',
+        offered.length === 1 && offered[0].title === 'Fixture Vol 7 26', JSON.stringify(offered));
+      t.check('and shows the facts it would fill in',
+        /2026-03-04/.test(offered[0]?.meta ?? '') && /32 pages/.test(offered[0]?.meta ?? ''), JSON.stringify(offered));
+      // The allowlist is the whole of the licence position, so it is checked where a reader would
+      // see it break rather than only in a unit test.
+      t.check('and no prose from the page reaches the form',
+        !/must never reach/i.test(JSON.stringify(offered)), JSON.stringify(offered));
+
+      await click(page, '#manual-candidates .result .btn');
+      await page.waitForFunction(
+        () => document.querySelector('#manual-title')?.value === 'Fixture Vol 7 26',
+        { timeout: 15000 },
+      );
+
+      await click(page, '#form-manual button[type="submit"]');
+      await page.waitForFunction(
+        () => (document.querySelector('#manual-report')?.textContent ?? '').includes('Added'),
+        { timeout: 15000 },
+      );
+
+      const stored = await readState(page);
+      const kept = stored?.issues?.['129648'] ?? null;
+      t.check("the entry is stored under Marvel's own issue id", !!kept, JSON.stringify(Object.keys(stored?.issues ?? {})));
+      t.check('carrying the release date, the page count and the credits',
+        kept?.onSale === '2026-03-04' && kept?.pageCount === 32 && (kept?.creators ?? []).length === 2,
+        JSON.stringify(kept));
+
+      // The point of taking the id at all. A hand entry on a synthetic negative id has no link to
+      // the comic's own page, because the launcher refuses to build one for an id Marvel does not
+      // use. This is that absence being filled, and it is checked through the same helper the
+      // Read button uses rather than by matching a string this scenario made up.
+      const link = await page.evaluate(async () => {
+        const mod = await import('/js/reader.js');
+        const state = JSON.parse(localStorage.getItem('mrt.state.v2'));
+        return mod.detailUrl(state.issues['129648']);
+      });
+      t.check('so the launcher can build the official page for it',
+        link === 'https://www.marvel.com/comics/issue/129648/', JSON.stringify(link));
+
+      // Same id, second time. addIssuesToList merges into state.issues before it decides whether
+      // the list already held the id, so an unguarded collision would rewrite the entry above
+      // while reporting that nothing was added.
+      await page.evaluate(() => {
+        window.__mrtWikiAlt = true;
+        document.querySelector('#manual-title').value = 'Fixture Vol 7 26 again';
+        document.querySelector('#manual-report').replaceChildren();
+      });
+      await click(page, '#btn-manual-lookup');
+      await page.waitForFunction(
+        () => document.querySelectorAll('#manual-candidates .result').length > 0,
+        { timeout: 15000 },
+      );
+      await click(page, '#manual-candidates .result .btn');
+      await click(page, '#form-manual button[type="submit"]');
+      await page.waitForFunction(
+        () => (document.querySelector('#manual-report')?.textContent ?? '').length > 0,
+        { timeout: 15000 },
+      );
+
+      const after2 = await page.evaluate(() => document.querySelector('#manual-report')?.textContent ?? '');
+      t.check('a second entry for an issue already held is refused, and says so',
+        /nothing was added and nothing was changed/.test(after2), JSON.stringify(after2));
+
+      const end = await readState(page);
+      // The second answer carries a different date, a different page count and a different writer
+      // for the same id. Without the guard the merge lands before the list membership check, so
+      // these three would already have been replaced by the time the reader was told that nothing
+      // was added.
+      t.check('and the entry it would have overwritten is untouched',
+        end?.issues?.['129648']?.onSale === '2026-03-04'
+        && end?.issues?.['129648']?.pageCount === 32
+        && (end?.issues?.['129648']?.creators ?? []).some((c) => c.name === 'Fixture Writer')
+        && Object.keys(end?.issues ?? {}).length === Object.keys(stored?.issues ?? {}).length,
+        JSON.stringify(end?.issues?.['129648']));
+
+      // The same collision reached by the other door. A guard keyed on the wiki's id does not close
+      // this one, because a pasted address outranks that id while the accepted match's facts are
+      // written regardless, so the facts land on an issue the guard never examined. Measured on the
+      // unguarded build: seven fields of a held issue replaced while the call reported added=0 and
+      // skipped=1, so the reader was told nothing was added at the moment it stopped being true.
+      const beforeCross = JSON.stringify(end?.issues?.['129648'] ?? null);
+      await page.evaluate(() => {
+        window.__mrtWikiId = 777001;
+        document.querySelector('#manual-title').value = 'Fixture Vol 7 26 elsewhere';
+        document.querySelector('#manual-url').value = '';
+        document.querySelector('#manual-report').replaceChildren();
+      });
+      await click(page, '#btn-manual-lookup');
+      await page.waitForFunction(
+        () => document.querySelectorAll('#manual-candidates .result').length > 0,
+        { timeout: 15000 },
+      );
+      await click(page, '#manual-candidates .result .btn');
+      // Filled after the match is accepted, which is the whole of why this is reachable: what
+      // withdraws an accepted match is the title box changing, so the address box can be pointed at
+      // a different comic with the first comic's facts still held and ready to be written.
+      await page.evaluate(() => {
+        document.querySelector('#manual-url').value = 'https://www.marvel.com/comics/issue/129648/';
+      });
+      await click(page, '#form-manual button[type="submit"]');
+      await page.waitForFunction(
+        () => (document.querySelector('#manual-report')?.textContent ?? '').length > 0,
+        { timeout: 15000 },
+      );
+
+      const cross = await page.evaluate(() => document.querySelector('#manual-report')?.textContent ?? '');
+      t.check('facts steered onto a held issue by a pasted address are refused as well',
+        /nothing was added and nothing was changed/.test(cross), JSON.stringify(cross));
+
+      const endCross = await readState(page);
+      t.check('and that issue is byte for byte what it was, with nothing new stored',
+        JSON.stringify(endCross?.issues?.['129648'] ?? null) === beforeCross
+        && Object.keys(endCross?.issues ?? {}).length === Object.keys(end?.issues ?? {}).length,
+        JSON.stringify(endCross?.issues?.['129648']));
+    },
+  },
+  {
     id: 'manual-book-id',
     title: 'a pasted reader address becomes a working Read button, and a marvel.com address says so',
     async run(page, t) {
@@ -944,6 +1120,43 @@ async function preparePage(page, origin, mutation) {
           if (window.__mrtMutation === 'import-fail') return Promise.resolve(json({ error: 'mutation' }, 500));
           return Promise.resolve(json(order));
         }
+        // Guarded by a flag for the same reason as the synopsis stub below: only the wiki
+        // scenario sets it, so every other scenario sees the stub it saw before this existed. The
+        // wikitext is written here rather than copied from a page, because Fandom prose is
+        // share-alike licensed and a fixture is the one place a copy would become permanent.
+        if (window.__mrtWiki && url.includes('marvel.fandom.com/api.php')) {
+          if (window.__mrtWiki === 'refuse') return Promise.reject(new TypeError('Failed to fetch'));
+          const q = new URL(url).searchParams;
+          if (q.get('list') === 'search') {
+            return Promise.resolve(json({
+              query: { search: [{ title: 'Fixture Vol 7' }, { title: 'Fixture Vol 7 26' }] },
+            }));
+          }
+          const id = window.__mrtWikiId ?? 129648;
+          // The second lookup in the scenario asks for the same page and gets different facts,
+          // which is what makes an overwrite visible. Answering identically both times would let
+          // a missing collision guard rewrite the entry with the same values and pass.
+          const alt = window.__mrtWikiAlt === true;
+          const comic = [
+            '{{Marvel Database:Comic Template',
+            `| ReleaseDate = ${alt ? '[[July 1]], [[2026]]' : '[[March 4]], [[2026]]'}`,
+            `| Pages = ${alt ? 99 : 32}`,
+            `| MarvelUnlimitedID = ${id}`,
+            `| Writer1_1 = [[${alt ? 'Replacement Writer' : 'Fixture Writer'}]]`,
+            '| Penciler1_1 = [[Fixture Penciler]]',
+            '| Quotation = A line of prose that must never reach the form.',
+            '}}',
+          ].join('\n');
+          return Promise.resolve(json({
+            query: {
+              pages: {
+                11: { title: 'Fixture Vol 7', revisions: [{ slots: { main: { '*': '{{Marvel Database:Volume Template\n| Publisher = Marvel\n}}' } } }] },
+                12: { title: 'Fixture Vol 7 26', revisions: [{ slots: { main: { '*': comic } } }] },
+              },
+            },
+          }));
+        }
+
         // Only the synopsis scenario sets the flag, and it sets it before the first navigation.
         // Left unset this line is reached by no request any other scenario makes, so what they
         // see is the stub they saw before it was added.
@@ -1139,10 +1352,12 @@ async function main() {
     // the scenario it is aimed at, on the assertion that carries the claim. A mutation that turns
     // nothing red means the scenario it was written for is not asserting what it claims to.
     //
-    // Two of the ten redden every scenario, and that is not loose aim. Every scenario imports the
-    // fixture order first, so a mutation of the import or of the write that import performs is
-    // upstream of all of them by construction. What distinguishes aim is the named assertion that
-    // fails in the aimed-at scenario, which is why it is printed rather than a bare scenario id.
+    // One of the eleven reddens every scenario and a second reddens six of the seven, and that is
+    // not loose aim. Every scenario but the wiki lookup imports the fixture order first, so a
+    // mutation of that import is upstream of all of those by construction, and a mutation of the
+    // write the app performs is upstream of the wiki lookup as well. What distinguishes aim is the
+    // named assertion that fails in the aimed-at scenario, which is why it is printed rather than
+    // a bare scenario id.
     console.log('\nproving each scenario can fail:');
     let unproved = 0;
     for (const mutation of MUTATIONS) {

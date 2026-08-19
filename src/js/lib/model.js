@@ -160,9 +160,10 @@ export function orderGapSentences(order) {
   return out;
 }
 
-// A hand-added issue with no marvel.com URL gets a negative synthetic id (see doManual), which
-// is namespaced away from real Marvel ids. Rejecting those here silently discarded the entry
-// while the UI reported success, so negatives are accepted; only 0 and non-integers are refused.
+// A hand-added issue with no marvel.com URL and no match on the wiki gets a negative synthetic id
+// (see doManual), which is namespaced away from real Marvel ids. Rejecting those here silently
+// discarded the entry while the UI reported success, so negatives are accepted; only 0 and
+// non-integers are refused.
 export function normalizeIssue(input) {
   const issueId = Number(input?.issueId ?? input?.id);
   if (!Number.isInteger(issueId) || issueId === 0) return null;
@@ -791,10 +792,11 @@ export function readIssues(state) {
     .sort((a, b) => (b.readAt ?? 0) - (a.readAt ?? 0) || a.issueId - b.issueId);
 }
 
-// By title rather than by id. A hand-added entry with a marvel.com URL keeps that issue's real id
-// and one without gets a negative synthetic id from the clock, so the two kinds cannot be ordered
-// against each other by id at all: every entry of the second kind would sort below every entry of
-// the first for no reason a reader could see.
+// By title rather than by id. A hand-added entry with a marvel.com URL keeps that issue's real id,
+// one whose details came from the wiki keeps the real id the wiki carries, and one with neither
+// gets a negative synthetic id from the clock, so the two kinds cannot be ordered against each
+// other by id at all: every entry of the second kind would sort below every entry of the first for
+// no reason a reader could see.
 export function manualIssues(state) {
   return Object.values(state.issues)
     .filter((issue) => issue.source === 'manual')
@@ -863,8 +865,9 @@ export function hydrationOrder(state, listId, lookahead = 5) {
 export function synopsisOrder(state, listId, wanted, lookahead = 8) {
   const list = state.lists[listId];
   if (!list) return [];
-  // A hand-added issue has a synthetic negative id that the service has no record of, so asking
-  // about one spends a request to be told what its id already says.
+  // A hand-added issue is by definition newer than the metadata snapshot, so the service has no
+  // record of it: either it carries a synthetic negative id the service has never seen, or it
+  // carries a real id the service answers 404 for. Asking about one spends a request either way.
   const ids = list.itemIds.filter((id) => state.issues[id] && state.issues[id].source !== 'manual');
   const unread = ids.filter((id) => !isRead(state, id));
   const priority = lookaheadPriority(unread, wanted, lookahead);
