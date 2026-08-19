@@ -113,7 +113,10 @@ Recorded so a report can start from what is true rather than from what a scanner
   titles and dates, adding a whole series or a creator's issues asks it for every issue that series
   or creator lists, and it loads covers from Marvel's own image servers. The requests for details
   and for covers name the issue being asked about, so both hosts see which issues you are looking
-  at; the reachability check names nothing. Your reading progress and your notes are never sent to
+  at; the reachability check names nothing. Adding an issue by hand sends the words in the title
+  box to the Marvel Fandom wiki, a community site Marvel does not run, and only when you press the
+  lookup button; that wiki sees the title you searched for and is sent no cookie, no referrer and
+  nothing about your library. Your reading progress and your notes are never sent to
   any of them.
 - Covers are requested from Marvel's image server and from no other host. The address is reported
   by the metadata service, which is a party the reader chooses and one that could be compromised

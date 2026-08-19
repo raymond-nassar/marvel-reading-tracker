@@ -98,7 +98,7 @@ Do them in this order. The first pair has a real dependency and the third does n
 
 1. **Secret scanning, and then push protection**, closing BL-089. Push protection depends on secret
    scanning, and asking for push protection on its own is accepted and quietly does nothing, which
-   is the trap recorded at `SECURITY.md:132-138`. Turn on scanning first, confirm its alerts
+   is the trap recorded at `SECURITY.md:135-141`. Turn on scanning first, confirm its alerts
    endpoint stops answering 404, and only then turn on protection.
 2. **Private vulnerability reporting**, closing BL-096. This is the one with a user-visible
    consequence: until it is on, the security policy sends a reporter to a public issue.
@@ -108,7 +108,7 @@ Do them in this order. The first pair has a real dependency and the third does n
 
 One thing changes with nobody touching it. Every `required: true` in the issue forms is inert while
 the repository is private and starts being enforced on publication, which is recorded with its
-reasoning at `PRODUCT_BACKLOG.md:6981-6985`. The forms do not need editing. It is listed here
+reasoning at `PRODUCT_BACKLOG.md:6982-6986`. The forms do not need editing. It is listed here
 because a form that suddenly rejects a submission looks like a regression to whoever hits it first.
 
 ## The prose that stops being true
@@ -121,7 +121,7 @@ BL-133, so the passages named below no longer say what this table says they said
 | Where | What it asserted before publication | Why publication broke it |
 |---|---|---|
 | `SECURITY.md:37-42` | Private reporting cannot be turned on here, so a reporter should open a public issue asking for a channel and put no detail in it | The fallback stops being the live route once BL-096 is on. The paragraph still needs its other half, for a reporter who does not find the option because it was never enabled |
-| `SECURITY.md:132-138` | Secret scanning is not on and cannot be, with the exact refusal GitHub gives | Both halves of that become wrong once BL-089 is done, including the note that push protection accepts a request and changes nothing |
+| `SECURITY.md:135-141` | Secret scanning is not on and cannot be, with the exact refusal GitHub gives | Both halves of that become wrong once BL-089 is done, including the note that push protection accepts a request and changes nothing |
 | `CONTRIBUTING.md:7-11` | Nobody outside can see the code, open an issue or send a change, so the guide describes contributing rather than reporting it | The whole paragraph is about a condition that has ended. It also points at the security policy's private route as a parallel case, so the two want editing together |
 | `CODE_OF_CONDUCT.md:40-43` | There is no private channel to the maintainer, and GitHub's private reporting features are unavailable | This one asks for its own revision in its last sentence. Whether a private channel now exists is a decision, not an automatic consequence |
 | `.github/ISSUE_TEMPLATE/config.yml:1-7` | Blank issues must stay on because the security policy's fallback is the live route rather than a spare one | The reason weakens, but read the rest of that comment before acting on it. Turning blank issues off would still leave a reporter with three forms that all ask for detail and no way to ask for a channel |
@@ -135,18 +135,18 @@ exception. Ten of the twenty-one are in `PRODUCT_BACKLOG.md` and two more are in
 Eleven of those twelve say what was true when a piece of work was delivered, and they are history
 that must not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
 
-- `PRODUCT_BACKLOG.md:6333-6346`, why secret scanning was left unticked, and what push protection
+- `PRODUCT_BACKLOG.md:6334-6347`, why secret scanning was left unticked, and what push protection
   does when asked for without it.
-- `PRODUCT_BACKLOG.md:6744-6747`, why the private reporting task was left open.
-- `PRODUCT_BACKLOG.md:6810-6812`, what the changelog entry beside it was corrected to say.
-- `PRODUCT_BACKLOG.md:6833-6837`, why the contribution guide is written in the future tense.
-- `PRODUCT_BACKLOG.md:6840-6846`, why the code of conduct offers no private channel.
-- `PRODUCT_BACKLOG.md:6907-6913`, why the branch rules task was left open and could not be read.
-- `PRODUCT_BACKLOG.md:6938-6943`, why blank issues stay enabled.
-- `PRODUCT_BACKLOG.md:6981-6985`, why `required: true` collects nothing today.
-- `PRODUCT_BACKLOG.md:9085-9090`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1823-1826`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1835-1838`, the released note that the private channel is not switched on.
+- `PRODUCT_BACKLOG.md:6745-6748`, why the private reporting task was left open.
+- `PRODUCT_BACKLOG.md:6811-6813`, what the changelog entry beside it was corrected to say.
+- `PRODUCT_BACKLOG.md:6834-6838`, why the contribution guide is written in the future tense.
+- `PRODUCT_BACKLOG.md:6841-6847`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6908-6914`, why the branch rules task was left open and could not be read.
+- `PRODUCT_BACKLOG.md:6939-6944`, why blank issues stay enabled.
+- `PRODUCT_BACKLOG.md:6982-6986`, why `required: true` collects nothing today.
+- `PRODUCT_BACKLOG.md:9086-9091`, the three settings named as refused on this repository today.
+- `CHANGELOG.md:1847-1850`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1859-1862`, the released note that the private channel is not switched on.
 
 The twelfth was live and did have to change: the introduction at `PRODUCT_BACKLOG.md:26-38` listed
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they were met

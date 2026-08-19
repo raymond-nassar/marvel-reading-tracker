@@ -102,6 +102,13 @@ asking for an issue's details or its cover picture is exactly what they are. Tur
 stops the covers being requested at all. What is never sent is your reading progress, your notes,
 or anything identifying you.
 
+One other site is contacted, and only if you ask it to be. Adding an issue by hand sends the words
+in the title box to the Marvel Fandom wiki, a community site Marvel does not run, and it does that
+only when you press the lookup button. It is there because the comics database this app reads stops
+at October 2025, so for a newer comic the wiki is the only place a release date, a page count or a
+list of credits can be found. That wiki sees the title you searched for; your lists, your progress
+and your notes are no part of the request, and no picture is fetched from it.
+
 ## Run it on your computer
 
 The app runs entirely on your own machine. Follow these three steps in order.
@@ -454,11 +461,13 @@ trusting a release.
 npm run browser
 ```
 
-Drives installed Microsoft Edge through the six journeys the app exists for: importing a
+Drives installed Microsoft Edge through the eight journeys the app exists for: importing a
 curated order, moving between views with the address bar and the Back button, keeping progress
 across a reload, meeting unreadable saved data with an offer rather than a wipe, opening the
-reader tab inside the click that asked for it, and counting a synopsis run by what arrived rather
-than by what it asked for. It makes 35 assertions across those six and takes about 3 seconds.
+reader tab inside the click that asked for it, counting a synopsis run by what arrived rather
+than by what it asked for, filling a hand entry from the wiki while refusing an issue already
+held, and turning a pasted reader address into a working Read button. It makes 53 assertions
+across those eight and takes about 6 seconds.
 
 It needs two things that are not installed for you. The first is a browser driver, which is
 **deliberately not a dependency of this repository** and must not become one: nothing the app
@@ -487,11 +496,11 @@ stubbed with a three-issue fixture, so no vendored file is read and no network r
 npm run browser:prove
 ```
 
-Runs each of the six scenarios again under ten injected faults, and checks that each fault turns
-the scenario aimed at it red. A check that has never been seen to fail is not evidence, and this is
-where that is demonstrated rather than asserted: it reports the named assertion each fault breaks.
-It takes about three minutes, nearly all of it waiting out the timeouts a broken app produces, so
-it is a thing to run when the scenarios change rather than on every commit.
+Runs each of the seven scenarios again under eleven injected faults, and checks that each fault
+turns the scenario aimed at it red. A check that has never been seen to fail is not evidence, and
+this is where that is demonstrated rather than asserted: it reports the named assertion each fault
+breaks. It takes about three minutes, nearly all of it waiting out the timeouts a broken app
+produces, so it is a thing to run when the scenarios change rather than on every commit.
 
 ### Reviewing an update to a pinned action
 
