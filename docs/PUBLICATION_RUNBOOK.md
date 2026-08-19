@@ -145,8 +145,8 @@ that must not be rewritten, for the same reason the dated tracking artifacts are
 - `PRODUCT_BACKLOG.md:6939-6944`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:6982-6986`, why `required: true` collects nothing today.
 - `PRODUCT_BACKLOG.md:9086-9091`, the three settings named as refused on this repository today.
-- `CHANGELOG.md:1839-1842`, the released note that secret scanning cannot be turned on.
-- `CHANGELOG.md:1851-1854`, the released note that the private channel is not switched on.
+- `CHANGELOG.md:1840-1843`, the released note that secret scanning cannot be turned on.
+- `CHANGELOG.md:1852-1855`, the released note that the private channel is not switched on.
 
 The twelfth was live and did have to change: the introduction at `PRODUCT_BACKLOG.md:26-38` listed
 BL-089, BL-096 and BL-098 among the items whose acceptance could not be met, and once they were met

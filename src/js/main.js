@@ -3215,26 +3215,43 @@ function doManual() {
     return notify('#manual-report', 'That URL is not a marvel.com address. Leave it blank if you do not have one.', 'error');
   }
 
-  // The wiki's issue id is refused when the tracker already holds that issue, and the entry is
-  // refused with it. addIssuesToList merges into state.issues BEFORE it decides whether the list
-  // already had the id, so a collision overwrites the held issue's title, series, release date,
-  // page count and credits whether or not anything is added to a list. The reader would see
-  // "already in that list" and would not see that a curated issue's metadata had just been
-  // replaced by this form's.
+  const wikiId = manualMatch?.marvelIssueId ?? null;
+  // A negative synthetic id for entries with no marvel.com URL; namespaced away from real
+  // Marvel ids so the two can never collide.
+  const issueId = issueIdFromUrl(url) ?? wikiId ?? -Date.now();
+
+  // Facts from a wiki lookup are refused when the tracker already holds the issue they would be
+  // written against, and the entry is refused with them. addIssuesToList merges into state.issues
+  // BEFORE it decides whether the list already had the id, so a collision overwrites the held
+  // issue's title, series, release date, page count and credits whether or not anything is added
+  // to a list. Measured against a curated issue: seven fields replaced while the call reported
+  // added=0 skipped=1, so the reader is told "already in that list, so nothing was added" at the
+  // exact moment that sentence stops being true.
+  //
+  // The test is the id that will actually be WRITTEN, not the id the wiki supplied. Those differ:
+  // a pasted address outranks the wiki id on the line above, and the accepted match's facts are
+  // spread into the payload either way. Guarding the wiki id alone therefore left this route open:
+  // look up one comic, press Use this, then paste an address naming another, and that other issue
+  // is what gets rewritten.
+  //
+  // There is no escape from that sequence once it starts, which is what makes it worth guarding
+  // rather than merely worth noting. What withdraws an accepted match is the title box changing,
+  // and acceptManualMatch sets that box programmatically, which fires no input event. So the
+  // listener is unreachable on this path and no keystroke anywhere in the sequence can withdraw
+  // the match.
+  //
+  // Gated on there being an accepted match rather than on where the id came from, which keeps the
+  // deliberate exemption intact: a pasted address with no lookup behind it names one specific
+  // issue the reader chose to point at, so merging into it is what they asked for. What can never
+  // happen is facts produced by a fuzzy search this code ran landing on something already held.
   //
   // Refusing rather than adding under a synthetic id follows what this form already does when the
   // list holds the issue, and it is the recoverable choice: nothing is lost and the reader is told
   // something true, where a second row for a comic they already track would sit in the reading
   // list for good.
-  //
-  // Only the wiki's id is guarded, not an id read from a pasted address. A pasted address names
-  // one specific issue the reader chose to point at, so merging into it is what they asked for. A
-  // wiki id comes from a fuzzy search this code ran, and a search that returns the wrong page must
-  // never be able to rewrite something the tracker already holds.
-  const wikiId = manualMatch?.marvelIssueId ?? null;
-  if (wikiId != null && store.state.issues?.[wikiId]) {
+  if (manualMatch && store.state.issues?.[issueId]) {
     const holders = Object.values(store.state.lists ?? {})
-      .filter((l) => l.itemIds?.includes(wikiId))
+      .filter((l) => l.itemIds?.includes(issueId))
       .map((l) => l.name)
       .filter(Boolean);
     return notify(
@@ -3246,9 +3263,6 @@ function doManual() {
     );
   }
 
-  // A negative synthetic id for entries with no marvel.com URL; namespaced away from real
-  // Marvel ids so the two can never collide.
-  const issueId = issueIdFromUrl(url) ?? wikiId ?? -Date.now();
   // The reader address carries the digital book id, and that id is the only thing that makes the
   // Read button work. A hand-added issue is by definition newer than the metadata snapshot, so the
   // lookup /open.html would otherwise perform has nothing to find and the launch degrades to the

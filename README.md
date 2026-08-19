@@ -466,7 +466,7 @@ curated order, moving between views with the address bar and the Back button, ke
 across a reload, meeting unreadable saved data with an offer rather than a wipe, opening the
 reader tab inside the click that asked for it, counting a synopsis run by what arrived rather
 than by what it asked for, and filling a hand entry from the wiki while refusing an issue already
-held. It makes 43 assertions across those seven and takes about 4 seconds.
+held. It makes 45 assertions across those seven and takes about 4 seconds.
 
 It needs two things that are not installed for you. The first is a browser driver, which is
 **deliberately not a dependency of this repository** and must not become one: nothing the app

@@ -34,8 +34,9 @@ because the tracker had no number to build one from. Now it does, and Read opens
 clear about what this is not: it does not open the comic in Marvel Unlimited. That still needs the
 reader address you paste, which is a separate thing and unchanged.
 
-If the wiki says the comic is one you already track, the tracker declines to add a second copy of it
-and tells you which of your lists has it. Nothing you have already saved is affected.
+If the details you looked up would land on a comic you already track, the tracker declines to add a
+second copy of it and tells you which of your lists has it. Nothing you have already saved is
+overwritten.
 
 ### Read the Marvel Unlimited book id off an address you paste
 

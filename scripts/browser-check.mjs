@@ -743,6 +743,46 @@ const SCENARIOS = [
         && (end?.issues?.['129648']?.creators ?? []).some((c) => c.name === 'Fixture Writer')
         && Object.keys(end?.issues ?? {}).length === Object.keys(stored?.issues ?? {}).length,
         JSON.stringify(end?.issues?.['129648']));
+
+      // The same collision reached by the other door. A guard keyed on the wiki's id does not close
+      // this one, because a pasted address outranks that id while the accepted match's facts are
+      // written regardless, so the facts land on an issue the guard never examined. Measured on the
+      // unguarded build: seven fields of a held issue replaced while the call reported added=0 and
+      // skipped=1, so the reader was told nothing was added at the moment it stopped being true.
+      const beforeCross = JSON.stringify(end?.issues?.['129648'] ?? null);
+      await page.evaluate(() => {
+        window.__mrtWikiId = 777001;
+        document.querySelector('#manual-title').value = 'Fixture Vol 7 26 elsewhere';
+        document.querySelector('#manual-url').value = '';
+        document.querySelector('#manual-report').replaceChildren();
+      });
+      await click(page, '#btn-manual-lookup');
+      await page.waitForFunction(
+        () => document.querySelectorAll('#manual-candidates .result').length > 0,
+        { timeout: 15000 },
+      );
+      await click(page, '#manual-candidates .result .btn');
+      // Filled after the match is accepted, which is the whole of why this is reachable: what
+      // withdraws an accepted match is the title box changing, so the address box can be pointed at
+      // a different comic with the first comic's facts still held and ready to be written.
+      await page.evaluate(() => {
+        document.querySelector('#manual-url').value = 'https://www.marvel.com/comics/issue/129648/';
+      });
+      await click(page, '#form-manual button[type="submit"]');
+      await page.waitForFunction(
+        () => (document.querySelector('#manual-report')?.textContent ?? '').length > 0,
+        { timeout: 15000 },
+      );
+
+      const cross = await page.evaluate(() => document.querySelector('#manual-report')?.textContent ?? '');
+      t.check('facts steered onto a held issue by a pasted address are refused as well',
+        /nothing was added and nothing was changed/.test(cross), JSON.stringify(cross));
+
+      const endCross = await readState(page);
+      t.check('and that issue is byte for byte what it was, with nothing new stored',
+        JSON.stringify(endCross?.issues?.['129648'] ?? null) === beforeCross
+        && Object.keys(endCross?.issues ?? {}).length === Object.keys(end?.issues ?? {}).length,
+        JSON.stringify(endCross?.issues?.['129648']));
     },
   },
 ];
