@@ -235,7 +235,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-128 | Correct the provenance record's description count and record its placeholder shape | Debt | EP-12 | Extends BL-099 | 5 | 5 | 3 | 1 | 13.0 | none | Measured | Shipped | docs/DATA_PROVENANCE.md:88-97 |
 | BL-140 | Give the tracker a file a non-engineer can double-click to start it | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 1 | 10.0 | none | Observed | Shipped | absent: any way to start the app that is not a terminal command, read of the README's step 2 and a listing of the repository root |
-| BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:586-595 |
+| BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:588-597 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
 | BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/main.js:2293-2302 |
 | BL-133 | Turn on the three settings publication unlocks, and make the conditional prose true | Enabler | EP-12 | Follows BL-132 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | SECURITY.md:132-138 |
@@ -258,7 +258,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-099 | Clarify the license and provenance boundary for committed data | Debt | EP-12 | Leaves alone | 8 | 8 | 13 | 5 | 5.8 | none | Measured | Shipped | src/data/curated-lists.json:82-123 |
 | BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/index.html:517 |
-| BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Dropped | src/styles.css:840-843 |
+| BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Dropped | src/styles.css:842-845 |
 | BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/js/main.js:3830-3867 |
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Shipped | src/js/main.js:3742-3770 |
 | BL-135 | Refuse an issue synopsis at the boundary that writes, not only at the one that reads | Enabler | EP-05 | Extends BL-134 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Ready | src/js/lib/model.js:1117 |
@@ -286,8 +286,8 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/CODEOWNERS:1-51 |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:1969-1996 |
-| BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:691-707 |
-| BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:479 |
+| BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:693-709 |
+| BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:481 |
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:993 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:4051-4114 |
@@ -313,7 +313,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:501-535 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:3554-3588 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:710 |
-| BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:993 |
+| BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:995 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Shipped | src/index.html:151-152 |
 | BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Shipped | src/js/storage.js:107 |
 | BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:137-147 |
@@ -347,7 +347,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-102 | Send the security headers on the dev server's error responses too | Debt | EP-12 | Follows BL-096 | 1 | 1 | 2 | 2 | 2.0 | none | Measured | Ready | server.mjs:103-113 |
 | BL-046 | Share the retry and backoff between the two vendor scripts | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | scripts/lib/fetch-json.mjs:72-81 |
 | BL-053 | Make the reading filters one list rather than two that must agree | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 2 | 2.0 | none | Observed | Shipped | src/js/lib/readingFilters.js:25-50 |
-| BL-067 | Gate the switch and the primary button, which no pair measures | Debt | EP-08 | Leaves alone | 2 | 2 | 2 | 3 | 2.0 | none | Measured | Shipped | src/styles.css:408 |
+| BL-067 | Gate the switch and the primary button, which no pair measures | Debt | EP-08 | Leaves alone | 2 | 2 | 2 | 3 | 2.0 | none | Measured | Shipped | src/styles.css:410 |
 | BL-151 | Draw the reading path as a path, instead of a badge on each row of a list | Story | EP-01 | Follows BL-148 | 5 | 1 | 3 | 5 | 1.8 | none | Measured | Ready | `src/js/main.js:3329-3344` |
 | BL-069 | Close the three accent boundaries the BL-067 review found and could not gate | Debt | EP-08 | Leaves alone | 2 | 1 | 2 | 3 | 1.67 | none | Measured | Shipped | src/styles.css:290 |
 | BL-041 | Cover the three browser-coupled modules with tests | Enabler | EP-12 | Leaves alone | 3 | 2 | 8 | 8 | 1.63 | none | Observed | Shipped | absent: test/cache.test.js and test/hydrate.test.js and test/main.test.js, glob of test/ cross-checked against src/js |
@@ -749,7 +749,7 @@ doing this, and no copy change is expected.
 Shipped. One token could not do both jobs, because white-on-red and red-on-background pull in
 opposite directions: the old `#e23636` measured 4.36:1 and 4.33:1 and failed both. It was split
 into `--red` `#d43333` for surfaces behind white text and `--red-text` `#eb5f5f` for red used as
-text, at `src/styles.css:21-29`. The `kbd` tint was removed at `src/styles.css:493` and the
+text, at `src/styles.css:21-29`. The `kbd` tint was removed at `src/styles.css:495` and the
 `.mark` rule in `src/open.html` was corrected. Landing pa11y errors went from 4 to 2, the seeded
 reading view's HTML_CodeSniffer contrast failures went to 0, and axe-core 4.13.0 reported 0
 violations. The two residual pa11y errors are its bundled axe 4.8 reporting undeterminable
@@ -766,15 +766,15 @@ Constraint gate: checked 1 to 11, none breached. Constraint 6 was the live consi
 state must not be styled in a way that collapses the availability badge distinctions.
 
 Shipped. `opacity: .48` on the row was replaced with a `--read-fg` foreground plus a
-strikethrough, at `src/styles.css:592-593`; the strikethrough is the non-colour indicator. The
-only opacity left on a read row is the cover image at `src/styles.css:595`, which carries no
+strikethrough, at `src/styles.css:594-595`; the strikethrough is the non-colour indicator. The
+only opacity left on a read row is the cover image at `src/styles.css:597`, which carries no
 text. Verified with six rows actually in the read state rather than by reading the stylesheet:
 every descendant now computes `opacity: 1`, and axe-core 4.13.0 reported 0 contrast violations.
 
 On the badge check, the 2.75:1 figure this task was written against was the opacity multiplying
 the badge, and that cause is gone: a badge now renders identically whether or not its row is
 read, which is what the task was asking for. Measuring the composited border anyway put
-`.badge-expected` at 1.58:1, but that is unconditional design at `src/styles.css:479` rather than
+`.badge-expected` at 1.58:1, but that is unconditional design at `src/styles.css:481` rather than
 anything the read state does, and the badge's meaning is carried by its text label, which passes.
 Raised separately as BL-049 rather than folded into this item.
 
@@ -793,7 +793,7 @@ eyebrow kept failing no matter which colour was chosen, because it sits on `.her
 than on `--bg`, and blurred cover art was bleeding through. Pixel-sampling the rendered
 background across all eight catalog series gave a spread of `#222325` to `#2e2d30`, so contrast
 depended on whichever cover the reader imported and no fixed colour could ever pass. The scrim's
-top stop was raised from 60 to 88 percent alpha at `src/styles.css:435-442`. The spread collapsed
+top stop was raised from 60 to 88 percent alpha at `src/styles.css:437-444`. The spread collapsed
 to `#1b1d22` to `#1e2126`, and the computed bound for a pure white cover is `#1f2228`, so the
 backdrop is now bounded for any import rather than merely for the covers that were sampled. All
 19 hero text nodes were checked against that bound.
@@ -1044,7 +1044,7 @@ how. All three surfaces are gated.
 **The plan asked for a pair with a garbled description, and the first attempt threw out the pair
 along with the description.** It listed five pairs, one being `--red` on `--bg`, described as the
 switch knob on its on-state track. The description is wrong twice over: the on-state track is `--red`
-and not `--track` (`src/styles.css:403`), where `--track` is the unfilled part of a progress bar and
+and not `--track` (`src/styles.css:405`), where `--track` is the unfilled part of a progress bar and
 carries no knob at all, and the knob-on-on-state pair was already in the list as `--on-accent` on
 `--red`. Reading that, this item dropped to four pairs and recorded the fifth as a boundary nothing
 paints. Review found the pair itself was right and only its label was wrong. `--red` on `--bg` is
@@ -2136,8 +2136,8 @@ end to end with `fetch` stubbed to serve one 503 and then a two-record page: it 
 
 Constraint gate: checked 1 to 11, none breached. No constraint is engaged.
 
-Shipped. The form row is now `.field-row` at `src/styles.css:691-707` and the reading row keeps
-`.row`, so the thirteen rules that describe a reading row, from `src/styles.css:580-583` down to the
+Shipped. The form row is now `.field-row` at `src/styles.css:693-709` and the reading row keeps
+`.row`, so the thirteen rules that describe a reading row, from `src/styles.css:582-585` down to the
 hover rule on its action buttons, can no longer reach a form. The form row was the side that moved
 because it had one rule against those thirteen, and the empty `.row { }` that sat between them is
 gone.
@@ -2154,7 +2154,7 @@ Six sit inside a `.stack`, where nothing sets either, so for those the original 
 two at `src/index.html:523` and `src/index.html:530` are direct children of a `.card card-static`,
 where `.card > *:not(summary)` at 0,1,1 and `.card > *:last-child` at 0,2,0 can both reach them and
 both now out-rank `.field-row` at 0,1,0. What holds their padding at zero is the `!important` on
-`.card-static > *` at `src/styles.css:684`, which the old rule's 0,2,0 had been masking. Measured
+`.card-static > *` at `src/styles.css:686`, which the old rule's 0,2,0 had been masking. Measured
 rather than reasoned about: neutralise that one declaration in the live page and both rows go from
 0 to 17.6px of side padding.
 
@@ -2221,7 +2221,7 @@ clear 3:1 in the read state, and the answer turned out to be that the read state
 governs them. The 2.75:1 figure that task was written against came from the blanket row opacity,
 which is gone; a badge now renders identically whether or not its row is read. Measuring the
 composited border anyway put `.badge-expected` at 1.58:1 against the 3:1 floor, but that is
-unconditional design at `src/styles.css:479`, where the border is 25 percent alpha green.
+unconditional design at `src/styles.css:481`, where the border is 25 percent alpha green.
 
 Shipped as a decision rather than a change: the borders are decoration, the 3:1 floor does not
 govern them, and the colours were deliberately left alone. The third task is therefore closed
@@ -2257,7 +2257,7 @@ And because the five states are named in words rather than only tinted, 1.4.1 Us
 without the border too, so Constraint 6 is not resting on the outline either. Both the text
 colours and the state distinctions are untouched, which is what the fourth task asked for.
 
-The reasoning is recorded at `src/styles.css:633-657`, directly above the rules it governs, along
+The reasoning is recorded at `src/styles.css:635-659`, directly above the rules it governs, along
 with the two conditions that would overturn it. One is these labels being cut back to the bare
 glyphs in `SHORT`, which would make the outline the state indicator and put it under the 3:1
 floor. The other is a second palette: every figure here is composited against the dark theme, so
@@ -2291,8 +2291,8 @@ repaired in `1e3fb64`, and three had drifted far enough to name the wrong rule o
 that every tab stop carries a 3 pixel focus outline had come to cite `body`, the note about the
 leftover empty `.row` rule had come to cite the checkbox, and the description of the reading row
 itself had come to cite the cover-tile rules. The three that started this now point at the
-progress-ring transition at `src/styles.css:395` and the preference queries at
-`src/styles.css:950-957`.
+progress-ring transition at `src/styles.css:397` and the preference queries at
+`src/styles.css:952-959`.
 
 Those stale numbers are written above without the usual anchor backticks on purpose. They are a
 historical citation rather than live evidence, and in the anchor form a checker would resolve them
@@ -3022,7 +3022,7 @@ a dash, and over-reporting is the safe direction here: a false positive gets loo
 negative ships.
 
 **CSS `content` does count as shipped copy, and the proof is already in the tree.**
-`src/styles.css:678` sets `content` to a right-pointing angle glyph on the card summary marker. It
+`src/styles.css:680` sets `content` to a right-pointing angle glyph on the card summary marker. It
 reaches the screen with no text node behind it, so the reader sees it and Constraint 11 governs it.
 The comment-stripped sweep covers it with no special handling, because the value is a string literal
 in the text that survives. Recorded rather than built, which is what the task asked for.
@@ -3039,7 +3039,7 @@ unterminated comment marker matches nothing and so strips nothing, a stray closi
 nothing, and the pattern being chosen by file extension can only leave a comment standing. The
 exception is a CSS comment opener inside one string literal closing against a marker inside a later
 one, which would blank the copy between them. It cannot fire today, since the only glyph-bearing
-`content` in the stylesheets is the one at `src/styles.css:678`. Closing it would need a tokenizer
+`content` in the stylesheets is the one at `src/styles.css:680`. Closing it would need a tokenizer
 that skips string literals, which is scope this item did not earn.
 
 Scope is walked rather than listed. `server.mjs:13` resolves the served root to `src/`, so `src/` is
@@ -3498,7 +3498,7 @@ it is right to, because it never saw the claim.
 Both existing cases sat in `scripts/check-palette.mjs`, and each paired a full citation with a
 relative one on the following line, so the reader plainly intended the same file. One had already
 gone stale by thirteen lines and was corrected in BL-064 by writing it in full. The other, at
-`scripts/check-palette.mjs:99`, was still correct, which is what made this an item rather than a
+`scripts/check-palette.mjs:100`, was still correct, which is what made this an item rather than a
 defect: nothing was wrong that day and nothing would have reported it when it went wrong.
 
 **Forbidden rather than resolved**, and the three reasons all point the same way. Detection is
@@ -3976,8 +3976,8 @@ which way to resolve it, because there is no earlier design to restore.
 
 **The framing on this row was wrong, and inverting it is the work.** It was filed as dead markup to
 delete, on the reading that `.btn-p` was a missing primary style. It is not. `.btn` at
-`src/styles.css:480-484` is already the primary treatment, a red fill with `--on-accent` text, and
-`.btn-g` at `src/styles.css:489` is the secondary ghost. `.btn-p` is a modifier that says "primary"
+`src/styles.css:482-486` is already the primary treatment, a red fill with `--on-accent` text, and
+`.btn-g` at `src/styles.css:491` is the secondary ghost. `.btn-p` is a modifier that says "primary"
 on a base class that is primary anyway, so deleting it changes nothing on screen and was correctly
 scored a 1. What that reading missed is what the redundancy was hiding.
 
@@ -4549,12 +4549,12 @@ have overstated it by 0.65. It is therefore two pairs, the rail and the tinted i
 the brand mark and the skip link are what share the 4.00 and 4.41.
 
 **The blocked banner: the gate learned to resolve it.** Two buttons render inside a banner whose
-background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles.css:969`. The choice
+background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles.css:971`. The choice
 this block left open was between teaching the gate that form and recording the pair as deliberately
 unmeasured. Teaching it won, because the same mechanism was needed anyway for the accent bar above,
 and a gate with two unmeasured holes in it is a gate that will grow a third. `SURFACES` at
-`scripts/check-palette.mjs:151-174` names a derived background as a fraction of one token over
-another, and `resolveSurface` at `scripts/check-palette.mjs:202-222` computes it. One mechanism
+`scripts/check-palette.mjs:152-175` names a derived background as a fraction of one token over
+another, and `resolveSurface` at `scripts/check-palette.mjs:203-223` computes it. One mechanism
 covers both CSS forms because they are the same arithmetic: laying a translucent layer over an
 opaque backdrop and mixing two opaque colours in sRGB are both a straight interpolation of the gamma
 encoded channels. The tokens are still read out of the stylesheet, so changing `--rail`, `--panel` or
@@ -4606,7 +4606,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:10795-10797` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:10808-10810` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4616,11 +4616,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10814-10818`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10827-10831`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10629-10631` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10642-10644` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4828,7 +4828,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2698-2707` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2699-2708` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:193-197` and
 `PRODUCT_BACKLOG.md:203-205` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6576,7 +6576,7 @@ the reason this paragraph exists. `checkVisibility()` called with no argument an
 question than the name suggests: every option defaults to off, so it reports only `display: none`,
 `content-visibility: hidden` and the `hidden` attribute. It returns true for `visibility: hidden`
 and true for `opacity: 0`, and the second is not a hypothetical hiding style, it is this
-stylesheet's own. `src/styles.css:664` puts the per-row actions out of reach with exactly
+stylesheet's own. `src/styles.css:666` puts the per-row actions out of reach with exactly
 `opacity: 0`. Measured in the same Edge: both offer rows passed with the two buttons faded to
 nothing and `pointer-events: none`, with nothing under the pointer at either button's centre. The
 three options are passed explicitly now, and `fade-recovery` hides the buttons that way and is
@@ -7629,13 +7629,13 @@ stops the requests. It did not. `applyCoversSetting` toggles a body class, the f
 a cover `<img>` under that class are `display: none`, and `paintCoverUrl` assigned `img.src` with no
 reference to the setting, so the request had been made before anything was hidden. Measured in Edge
 with the setting off from the first paint: eight requests to `i.annihil.us`, the same eight as with
-it on. Evidence: `src/js/main.js:642-643`, `src/js/main.js:639`, `src/styles.css:451`.
+it on. Evidence: `src/js/main.js:642-643`, `src/js/main.js:639`, `src/styles.css:453`.
 
 Two details made this larger than moving one condition. `setCovers` calls `renderReading` and
 `renderHome`, so switching covers off is itself a re-render and was issuing a fresh round of
 the requests it is meant to end. And the pattern this item wanted already existed in the file, twice
 over, for the hero backdrop alone: `src/js/main.js:2090` reads the setting before building the URL,
-and `src/styles.css:434` sets `background-image: none` under the same class, which does suppress a
+and `src/styles.css:436` sets `background-image: none` under the same class, which does suppress a
 request because a computed `none` is never fetched. That was the one place covers were genuinely not
 requested when the setting was off, and it is why the omission on the `<img>` beside it read as an
 oversight rather than a decision. Turning the setting back on has to fetch what was skipped, or the
@@ -10297,21 +10297,22 @@ the replacement copy at 88 characters before it was committed.
 - [x] Say "Start here" on the first stop, because that is the question actually being asked
 - [x] Prove no two stops overlap, at either reading depth a story offers
 - [x] Print the start year the shelf was already sorted by but never showed
+- [x] Measure the badge's contrast on the surface it actually renders on, not the one it borrows its colour from
 
 Constraint gate: checked 1 to 11, none breached. Constraint 8 shaped the path's end: it stops at the
 last story the snapshot covers rather than gesturing past the boundary.
 
 The catalog was shown to someone who wanted to start reading Marvel comics, and they could not. That
-is not a discovery problem. All 19 orders were on screen, each with a name, a length and a
+is not a discovery problem. All 19 stories were on screen, each with a name, a length and a
 description, and the shelf had already been sorted into reading order by BL-143. What was missing is
 that a shelf is a set and reading is a sequence, and nothing on it said any order followed any other.
 Sorting them put them in the right order without ever claiming they were in one.
 
 The evidence that they do connect was already in the data and had never been used. Ten of the
-nineteen orders are the Avengers spine from Disassembled to Secret Wars. Every pair of them was
-measured: 45 pairs across 671 issues, zero shared. So the shelf held a sequence that no reader could
-see, and every stop on it is disjoint, which is the property that makes calling it a sequence honest
-rather than a suggestion.
+nineteen stories are the Avengers spine, from Essential Avengers to Fresh Start, 1963 to 2018. Every
+pair of them was measured: 45 pairs across 671 issues, zero shared. So the shelf held a sequence that
+no reader could see, and every stop on it is disjoint, which is the property that makes calling it a
+sequence honest rather than a suggestion.
 
 The first design was a `follows` field on each entry, and the plan critique killed it. Pairwise links
 admit a cycle, admit two orders both claiming to follow a third, and have no answer to "where does it
@@ -10362,6 +10363,18 @@ app sends `style-src 'self'` and the injected `<style>` element was silently dro
 through `insertRule`, both caught their target. A mutation that cannot reach the code reads exactly
 like a scenario that does not test it.
 
+A review of the pull request found a third check of that shape, and this one was green rather than
+falsely red. The "Start here" badge reuses `.pill-ok`'s two values exactly, so reusing a measured
+colour looked like reusing its measurement. It is not: the contrast gate carried `--green` against
+`--bg` and `--card`, and a catalog row is neither, it is `--card-2`. The badge shipped on a surface
+nothing had measured, and the CSS comment beside it said the opposite. The pair is now gated at
+`scripts/check-palette.mjs:59` and measures 7.10:1 in the dark theme and 6.10:1 in the light one
+against a 4.5:1 floor, so the badge was in fact legible and the claim was still unearned. The
+assertion that should have forced the question lists which surfaces each foreground is measured on,
+and it did not name `--green`; it does now, and removing the pair fails it. The gate's other
+coverage assertion, that every declared surface has something rendered on it, passes on the broken
+tree, because `--card-2` already carried two other foregrounds.
+
 **BL-149: Stop collapsing the sidebar from blanking every pill in the catalog**
 
 - [x] Scope the collapsed-rail pill rule to the rail
@@ -10396,7 +10409,7 @@ they were aimed at.
 Constraint gate: checked 1 to 11, none breached.
 
 Asked for directly by the owner: the event orders should be separated from the ones that follow a
-single character. The data already supports it. `type` has four values and all 19 orders carry one,
+single character. The data already supports it. `type` has four values and all 26 orders carry one,
 and the facet chips above the shelf already filter on it.
 
 Two sections rather than four. `type` splits four ways, but the reading path runs through orders typed
@@ -10746,7 +10759,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
   touch device they are invisible until tapped. This was BL-028's third task and is dropped with
   it, on the ground that phones and tablets are out of scope. It is recorded as an accepted gap
   rather than a closed one, because a desktop touchscreen still meets it. Evidence:
-  `src/styles.css:664-665`.
+  `src/styles.css:666-667`.
 - User error protection: no gap, closed by BL-034 and BL-035. Deleting a list is confirmed in the
   page rather than by a native `confirm()`, and it can now be undone for the rest of the session,
   which is the same affordance restoring a backup already had. Evidence:
@@ -10817,8 +10830,8 @@ The clearest debt in the repository, and it is concentrated in one file.
   call. There were three copies rather than the two counted here, and the evidence above points at
   the replacement, whose header records what was duplicated and what it was hiding.
 - Minor analysability gap: the `.row` class carries two unrelated meanings, a reading row and a form
-  row, and a leftover empty rule sits between them. Evidence: `src/styles.css:580-583`,
-  `src/styles.css:691-707`.
+  row, and a leftover empty rule sits between them. Evidence: `src/styles.css:582-585`,
+  `src/styles.css:693-709`.
   Resolved: `BL-047` renamed the form row to `.field-row` and deleted the empty rule, so the two
   meanings no longer share a class. The evidence above now points at the replacement, which records
   what the collision was.

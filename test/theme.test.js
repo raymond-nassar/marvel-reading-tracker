@@ -383,10 +383,16 @@ test('a control boundary is measured against every surface it is drawn on, not j
   // rail item carries the accent bar that marks the current destination, and the unreadable-data
   // banner carries both of its buttons. None of the three was measured anywhere before, so `--red`
   // could have gone invisible on any of them without this file moving.
+  // `--green` gained `--card-2` when the reading path put a "Start here" badge on a catalog row.
+  // The gap is the whole reason this line is here: the badge reused `.pill-ok`'s exact two values,
+  // so it looked covered by the two green pairs already recorded, and neither of them is the
+  // surface a catalog row actually draws. Reusing a colour is not the same as reusing a
+  // measurement, and a review found this one rather than the gate.
   const surfaces = (fg) => PAIRS.filter((p) => p[0] === fg).map((p) => p[1]).sort();
   assert.deepEqual(surfaces('--line-2'), ['--bg', '--card', '--card-2']);
   assert.deepEqual(surfaces('--cb-line'), ['--bg', '--card']);
   assert.deepEqual(surfaces('--track'), ['--card', '--rail']);
+  assert.deepEqual(surfaces('--green'), ['--bg', '--card', '--card-2']);
   assert.deepEqual(surfaces('--red'), ['--bg', '--card', '--card-2', '--rail', '--track', 'the selected rail item', 'the unreadable-data banner']);
   assert.deepEqual(surfaces('--track-2'), ['--bg']);
   assert.deepEqual(surfaces('--on-accent'), ['--green', '--red', '--track-2']);

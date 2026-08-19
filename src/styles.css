@@ -361,8 +361,10 @@ h2[tabindex="-1"]:focus {
 .pill-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); }
 
 /* The badge on the first stop of a reading path. Deliberately the same two values as `.pill-ok`
-   rather than a new colour: the pair is already measured against both backgrounds in
-   scripts/check-palette.mjs, and a fourth green would be a contrast claim nothing had checked.
+   rather than a new colour, so that adding it introduced no new hue to defend. It does sit on a
+   surface the palette gate had never measured: a catalog row is `--card-2`, not `--card`, and the
+   gate carried --green only against --bg and --card. That pair is now measured too, at 7.10:1 in
+   the dark theme and 6.10:1 in the light one against a 4.5:1 floor.
    It is named separately so that changing what "ok" means cannot silently restyle "start here". */
 .pill-start { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
 

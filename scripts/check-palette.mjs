@@ -56,6 +56,7 @@ export const PAIRS = [
   ['--red-fg-2', '--card', BODY, 'an error notice'],
   ['--green', '--bg', BODY, 'the available badge on the page'],
   ['--green', '--card', BODY, 'the available badge on a card'],
+  ['--green', '--card-2', BODY, 'the Start here badge on a catalog row'],
   ['--amber', '--bg', BODY, 'the scheduled badge on the page'],
   ['--amber', '--card', BODY, 'the scheduled badge on a card'],
   ['--on-accent', '--red', BODY, 'the label of a primary button, and the knob of the cover-art switch in its on state'],
@@ -96,7 +97,7 @@ export const PAIRS = [
   ['--red', '--card-2', LARGE, 'the fill of a primary button on a raised card'],
   // Found by the same review, one token over, and it is the reason the guard in test/theme.test.js
   // now pins `--on-accent` too. The tick inside a checked checkbox is `--on-accent` on `--green`
-  // (`src/styles.css:609` and `src/styles.css:611`), which is 2.30:1 in the dark theme. It is
+  // (`src/styles.css:611` and `src/styles.css:613`), which is 2.30:1 in the dark theme. It is
   // listed here and recorded below rather than fixed, because the colour decision belongs to
   // BL-069 and this item is about measuring what nothing measured. The railed status dot is the
   // other thing painted on `--green` and it carries no foreground at all, since
@@ -129,7 +130,7 @@ export const PAIRS = [
   // ghost button has any: its label and its border. Both are listed rather than assumed, because
   // the button that was made quieter is the one it would be worst to make unreadable.
   ['--text', 'the ghost button on the unreadable-data banner', BODY, 'the label of the start-fresh button'],
-  ['--muted', 'the ghost button on the unreadable-data banner', LARGE, 'the border that sets the start-fresh button apart, at `src/styles.css:993`'],
+  ['--muted', 'the ghost button on the unreadable-data banner', LARGE, 'the border that sets the start-fresh button apart, at `src/styles.css:995`'],
 ];
 
 // Two of the surfaces this stylesheet paints on are not tokens and have no hex value to read, so a
@@ -159,7 +160,7 @@ export const SURFACES = {
     layer: '--warn',
     fraction: 0.12,
     on: '--panel',
-    css: 'color-mix(in srgb, var(--warn) 12%, var(--panel)), at `src/styles.css:969`',
+    css: 'color-mix(in srgb, var(--warn) 12%, var(--panel)), at `src/styles.css:971`',
   },
   // Built on a surface rather than a token, which is the case the first version of this could not
   // express. A ghost button is a tint over whatever it is dropped onto, so on the banner it is a
@@ -169,7 +170,7 @@ export const SURFACES = {
     layer: '--tint-base',
     fraction: 0.05882,
     on: 'the unreadable-data banner',
-    css: 'rgb(var(--tint-base) / 5.882%) over the banner, at `src/styles.css:489`',
+    css: 'rgb(var(--tint-base) / 5.882%) over the banner, at `src/styles.css:491`',
   },
 };
 

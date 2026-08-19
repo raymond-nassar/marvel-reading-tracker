@@ -16,10 +16,10 @@ quote in a bug report.
 
 ### Say which order to read after this one
 
-In plain English: the catalog shows nineteen curated reading orders, and until now nothing on it
+In plain English: the catalog shows nineteen curated stories, and until now nothing on it
 said that any one of them was read after any other. Someone who was shown the app and wanted to
 start reading Marvel comics could see every option and still not know which to open first. Ten of
-those orders are one continuous Avengers story running from 2004 to 2015, and the shelf was already
+those stories are one continuous Avengers run stretching from 1963 to 2018, and the shelf was already
 putting them in the right order without ever saying it was.
 
 Each of those ten rows now carries a line saying which reading path it belongs to, where it sits on
@@ -43,6 +43,7 @@ order vanish while still taking up its space. Only the sidebar's own labels shri
 This has been wrong since the collapsed sidebar shipped. It was found while checking that the new
 **Start here** badge survived being collapsed, which it did not.
 
+## 1.1.1
 
 A correction to the download, and the reason it needed one is worth stating: the fault below was
 found by starting the packaged archive rather than by reading the code, so it could not have been
