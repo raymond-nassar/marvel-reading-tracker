@@ -14,6 +14,24 @@ quote in a bug report.
 
 ## Unreleased
 
+### The catalog shelf now says which half of it you are looking at
+
+In plain English: the list of reading orders is now split under two headings, "The shared story" and
+"Character spotlights", each with a sentence saying what it is for. Nothing moved. The list was
+already in that order, because the orders that follow one character carry no start year and so
+always sorted to the bottom, but nothing on the page ever said so and it read as an accident. Now it
+reads as a choice: read the shared story in order, or pick a character you already like and start
+there. Nothing you have saved is affected.
+
+A heading with nothing under it is dropped, so filtering or searching the shelf down to one kind of
+reading still names the kind you are seeing rather than leaving a bare heading behind.
+
+The division deliberately keeps every stop of the numbered reading path on one side. The item that
+asked for this change said the path ran through character runs; measuring the shipped catalog showed
+it does not, and that the one creator run on the shelf is stop 8 of the path. Splitting it off as the
+original wording implied would have cut the route in half. A test now holds the path inside one
+section against the real catalog, so the mistake cannot be reintroduced quietly.
+
 ### Read the Marvel Unlimited book id off an address you paste
 
 In plain English: you can now open a brand new issue in Marvel Unlimited from this tracker. Before,

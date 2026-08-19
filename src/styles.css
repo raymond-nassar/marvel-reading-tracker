@@ -728,6 +728,16 @@ input[type="file"] { color: var(--muted); font-size: .82rem; }
 code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: .05rem .3rem; font-size: .85em; }
 
 .results { display: grid; gap: .4rem; margin-top: .7rem; }
+
+/* The heading over one half of the shelf. Space above it and almost none below, so the heading
+   binds to the rows it introduces instead of floating equidistant between two sections; the grid's
+   own .4rem gap supplies the rest. The first heading gets no extra, because the list already has
+   margin above it and stacking the two pushed the shelf below the fold on a laptop. */
+.shelf-section { margin: 1rem 0 0; }
+.shelf-section:first-child { margin-top: 0; }
+.shelf-section-title { font-size: .93rem; font-weight: 600; margin: 0; letter-spacing: .01em; }
+.shelf-section-blurb { color: var(--muted); font-size: .78rem; margin: .2rem 0 0; max-width: 64ch; }
+
 .result {
   display: flex; align-items: center; gap: .8rem; padding: .55rem .7rem;
   border: 1px solid var(--line); border-radius: 10px; background: var(--card-2);
