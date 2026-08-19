@@ -3669,10 +3669,10 @@
     "fp": "baff944060f60826",
     "head": "// So we never claim an issue *is* available. We report one of five explicit"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-049|src/styles.css:481|0": {
-    "anchor": "src/styles.css:481",
-    "fp": "9b2fbfdfa254332b",
-    "head": ".cta { display: flex; gap: .55rem; flex-wrap: wrap; }"
+  "PRODUCT_BACKLOG.md|the-backlog#BL-049|src/styles.css:661|0": {
+    "anchor": "src/styles.css:661",
+    "fp": "fa05c795bda95e31",
+    "head": ".badge-expected, .badge-override-available { color: var(--green); border-color: rgb(var(--green-line"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-053|src/js/lib/readingFilters.js:25-50|0": {
     "anchor": "src/js/lib/readingFilters.js:25-50",
