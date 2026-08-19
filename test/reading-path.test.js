@@ -1,0 +1,249 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { parseManifest } from '../src/js/lib/curated.js';
+import { parseCatalog, pathPlacements, timelineLabel, storyKey } from '../src/js/lib/catalog.js';
+
+// A minimal valid entry, kept deliberately small: these tests are about the path section, and an
+// entry that carries every optional field would make a failure here read as an entry problem.
+const entry = (id, extra = {}) => ({
+  id,
+  name: id,
+  description: `${id} description`,
+  type: 'event',
+  depth: 'essential',
+  sourceUrl: `https://example.test/${id}.md`,
+  sourceOrigin: 'Vendored from example.test',
+  out: `${id}.json`,
+  ...extra,
+});
+
+const path = (extra = {}) => ({
+  id: 'spine',
+  name: 'The Spine',
+  description: 'One thing after another.',
+  sourceOrigin: 'Compiled for this project.',
+  steps: ['one', 'two', 'three'],
+  ...extra,
+});
+
+const lists = [entry('one'), entry('two'), entry('three')];
+
+// A catalog entry as `parseCatalog` would hand it on. Only the fields the resolver reads.
+const shelf = (id, extra = {}) => ({
+  id,
+  file: `${id}.json`,
+  name: id,
+  description: `${id} description`,
+  type: 'event',
+  depth: 'essential',
+  count: 5,
+  ...extra,
+});
+
+// ------------------------------------------------------------------ manifest validation
+
+test('a manifest with no paths section parses exactly as it did before', async () => {
+  const { entries, paths, errors } = parseManifest({ lists });
+  assert.deepEqual(errors, []);
+  assert.equal(entries.length, 3);
+  assert.deepEqual(paths, []);
+});
+
+test('a complete path is accepted and its steps are kept in order', () => {
+  const { paths, errors } = parseManifest({ lists, paths: [path()] });
+  assert.deepEqual(errors, []);
+  assert.equal(paths.length, 1);
+  assert.deepEqual(paths[0].steps, ['one', 'two', 'three']);
+  assert.equal(paths[0].name, 'The Spine');
+});
+
+test('a step naming an order the manifest does not provide is a fatal error', () => {
+  const { paths, errors } = parseManifest({ lists, paths: [path({ steps: ['one', 'nope'] })] });
+  assert.equal(paths.length, 0);
+  assert.match(errors.join('\n'), /step 1 names "nope", which is not a list in this manifest/);
+});
+
+// Two readings of one story are one stop, not two. `civil-war` and `civil-war-avengers` are
+// separate ids in the same group in the shipped manifest, so this is a mistake in reach.
+test('two steps in the same story are refused', () => {
+  const grouped = [
+    entry('civil-war', { group: 'civil-war', groupName: 'Civil War', variant: 'Main' }),
+    entry('civil-war-avengers', { group: 'civil-war', groupName: 'Civil War', variant: 'Avengers' }),
+    entry('after'),
+  ];
+  const { paths, errors } = parseManifest({
+    lists: grouped,
+    paths: [path({ steps: ['civil-war', 'civil-war-avengers', 'after'] })],
+  });
+  assert.equal(paths.length, 0);
+  assert.match(errors.join('\n'), /step 1 names "civil-war-avengers", which is the same story as step 0/);
+});
+
+test('a path with fewer than two steps is refused, because one stop is not a sequence', () => {
+  const { errors } = parseManifest({ lists, paths: [path({ steps: ['one'] })] });
+  assert.match(errors.join('\n'), /at least two steps/);
+});
+
+test('a path with no sourceOrigin is refused, because the chain is this project\u2019s own claim', () => {
+  const { paths, errors } = parseManifest({ lists, paths: [path({ sourceOrigin: undefined })] });
+  assert.equal(paths.length, 0);
+  assert.match(errors.join('\n'), /has no sourceOrigin/);
+});
+
+test('a path missing a name or a description is refused', () => {
+  assert.match(parseManifest({ lists, paths: [path({ name: '  ' })] }).errors.join('\n'), /has no name/);
+  assert.match(parseManifest({ lists, paths: [path({ description: null })] }).errors.join('\n'), /has no description/);
+});
+
+test('a malformed path is refused rather than half-read', () => {
+  assert.match(parseManifest({ lists, paths: ['nope'] }).errors.join('\n'), /path 0: is not an object/);
+  assert.match(parseManifest({ lists, paths: [path({ steps: 'one,two' })] }).errors.join('\n'), /has no steps array/);
+  assert.match(parseManifest({ lists, paths: [path({ steps: ['one', ''] })] }).errors.join('\n'), /not a non-empty string/);
+  assert.match(parseManifest({ lists, paths: 'nope' }).errors.join('\n'), /"paths" is not an array/);
+});
+
+test('two paths cannot share an id', () => {
+  const { paths, errors } = parseManifest({ lists, paths: [path(), path({ name: 'Another' })] });
+  assert.equal(paths.length, 1);
+  assert.match(errors.join('\n'), /duplicate id "spine"/);
+});
+
+// ------------------------------------------------------------------ placement
+
+const threeStops = [path()];
+
+test('placement gives each stop its position, its total and its neighbours', () => {
+  const placed = pathPlacements(threeStops, [shelf('one'), shelf('two'), shelf('three')]);
+  assert.equal(placed.size, 3);
+  const second = placed.get('list:two');
+  assert.equal(second.position, 2);
+  assert.equal(second.total, 3);
+  assert.equal(second.previous.name, 'one');
+  assert.equal(second.next.name, 'three');
+  assert.equal(second.pathName, 'The Spine');
+});
+
+test('the first stop has nothing before it and the last has nothing after it', () => {
+  const placed = pathPlacements(threeStops, [shelf('one'), shelf('two'), shelf('three')]);
+  assert.equal(placed.get('list:one').previous, null);
+  assert.equal(placed.get('list:one').next.name, 'two');
+  assert.equal(placed.get('list:three').next, null);
+  assert.equal(placed.get('list:three').previous.name, 'two');
+});
+
+test('a story on no path has no placement', () => {
+  const placed = pathPlacements(threeStops, [shelf('one'), shelf('two'), shelf('three'), shelf('elsewhere')]);
+  assert.equal(placed.get('list:elsewhere'), undefined);
+});
+
+// `parseCatalog` drops entries it cannot use, so a path that was valid when the manifest was
+// written can arrive here with a hole in it. Numbering over what survived is the difference
+// between a shelf a reader can count and a total the app cannot account for.
+test('a stop whose order was dropped is skipped and the rest are renumbered', () => {
+  const placed = pathPlacements(threeStops, [shelf('one'), shelf('three')]);
+  assert.equal(placed.size, 2);
+  assert.equal(placed.get('list:one').total, 2);
+  assert.equal(placed.get('list:one').next.name, 'three');
+  assert.equal(placed.get('list:three').position, 2);
+  assert.equal(placed.get('list:two'), undefined);
+});
+
+test('a path left with fewer than two resolvable stops places nothing', () => {
+  assert.equal(pathPlacements(threeStops, [shelf('two')]).size, 0);
+});
+
+// The step names one reading, but the shelf shows one row per story, so the stop has to be named
+// the way the row is named or the path would point at a row that is not on screen.
+test('a grouped stop is named by its story, not by the reading the step named', () => {
+  const placed = pathPlacements(
+    [path({ steps: ['one', 'cw-avengers'] })],
+    [
+      shelf('one'),
+      shelf('cw-main', { group: 'civil-war', groupName: 'Civil War' }),
+      shelf('cw-avengers', { group: 'civil-war', groupName: 'Civil War' }),
+    ],
+  );
+  assert.equal(placed.get('civil-war').position, 2);
+  assert.equal(placed.get('list:one').next.name, 'Civil War');
+  // Keyed on the story, so both readings of it resolve to the same placement. This is what makes
+  // the row safe to compute once, outside its repaint.
+  assert.equal(storyKey(shelf('cw-main', { group: 'civil-war' })), 'civil-war');
+  assert.equal(storyKey(shelf('cw-avengers', { group: 'civil-war' })), 'civil-war');
+});
+
+test('placement tolerates a missing or malformed paths section', () => {
+  assert.equal(pathPlacements(undefined, [shelf('one')]).size, 0);
+  assert.equal(pathPlacements([], [shelf('one')]).size, 0);
+  assert.equal(pathPlacements([{ id: 'x' }], [shelf('one')]).size, 0);
+  assert.equal(pathPlacements(threeStops, []).size, 0);
+});
+
+// ------------------------------------------------------------------ the start year
+
+test('the start year is a phrase, and an order that ranges across the timeline has none', () => {
+  assert.equal(timelineLabel({ timeline: 2005 }), 'Starts 2005');
+  assert.equal(timelineLabel({ timeline: null }), null);
+  assert.equal(timelineLabel({}), null);
+});
+
+// ------------------------------------------------------------------ the shipped data
+
+test('the shipped manifest declares a path that resolves end to end', async () => {
+  const manifest = JSON.parse(await readFile(new URL('../src/data/curated-lists.json', import.meta.url), 'utf8'));
+  const { paths, errors } = parseManifest(manifest);
+  assert.deepEqual(errors, []);
+  assert.equal(paths.length, 1);
+
+  const catalog = parseCatalog(JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8')));
+  assert.equal(catalog.dropped, 0);
+  const placed = pathPlacements(catalog.paths, catalog.lists);
+
+  // Every step resolves, so the rendered total is the declared one. A step that stopped resolving
+  // would renumber the path silently, which is exactly the drift this asserts against.
+  assert.equal(placed.size, paths[0].steps.length);
+  for (const placement of placed.values()) assert.equal(placement.total, paths[0].steps.length);
+
+  const start = [...placed.values()].find((p) => p.previous === null);
+  assert.equal(start.position, 1);
+  assert.equal([...placed.values()].filter((p) => p.previous === null).length, 1);
+  assert.equal([...placed.values()].filter((p) => p.next === null).length, 1);
+});
+
+// The chain is only honest if a reader who works through it is never sent the same issue twice,
+// and that has to hold for every depth they might pick at each stop, not just the readings the
+// steps happen to name. Measured rather than assumed: 15 orders across 10 stories, 99 pairs.
+test('no two stops on the shipped path share an issue, at any reading depth', async () => {
+  const catalog = parseCatalog(JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8')));
+  const placed = pathPlacements(catalog.paths, catalog.lists);
+  const byStory = new Map();
+  for (const list of catalog.lists) {
+    const key = storyKey(list);
+    if (!placed.has(key)) continue;
+    if (!byStory.has(key)) byStory.set(key, []);
+    byStory.get(key).push(list);
+  }
+
+  const issues = new Map();
+  for (const group of byStory.values()) {
+    for (const list of group) {
+      const file = JSON.parse(await readFile(new URL(`../src/data/${list.file}`, import.meta.url), 'utf8'));
+      issues.set(list.id, new Set((file.items ?? []).map((i) => i.issueId)));
+    }
+  }
+
+  const stories = [...byStory.values()];
+  let pairs = 0;
+  for (let a = 0; a < stories.length; a += 1) {
+    for (let b = a + 1; b < stories.length; b += 1) {
+      for (const x of stories[a]) {
+        for (const y of stories[b]) {
+          pairs += 1;
+          const shared = [...issues.get(x.id)].filter((id) => issues.get(y.id).has(id));
+          assert.deepEqual(shared, [], `${x.id} and ${y.id} share ${shared.length} issues`);
+        }
+      }
+    }
+  }
+  assert.equal(pairs, 99);
+});

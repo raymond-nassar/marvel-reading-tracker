@@ -82,7 +82,7 @@
   --amber: #eab654;
   --blue: #7fb3ff;
   /* The placeholder shown where a cover has not loaded. The hue comes from the series name at
-     `src/js/main.js:603-604`, so only saturation and lightness are the theme's to set. */
+     `src/js/main.js:604-605`, so only saturation and lightness are the theme's to set. */
   --fallback-a: hsl(var(--h) 42% 26%);
   --fallback-b: hsl(calc(var(--h) + 40) 38% 14%);
   --fallback-fg: hsl(var(--h) 60% 88%);
@@ -338,12 +338,17 @@ h2[tabindex="-1"]:focus {
 .railed .ri[aria-current]::before, .railed .ri.on::before { height: 70%; }
 .railed .rail-foot { padding-left: 0; padding-right: 0; justify-items: center; }
 
-/* The status pill becomes a dot. Its text stays as the accessible name. */
-.railed .pill { width: 10px; height: 10px; padding: 0; border-radius: 50%; overflow: hidden;
+/* The status pill becomes a dot. Its text stays as the accessible name.
+   Scoped to the rail's own foot, which is where the two status pills live and the only place this
+   was ever meant to reach. Written as a bare descendant of `.railed` it also caught every pill in
+   the catalog, because `.railed` is set on `#shell` and `#shell` contains `main`: collapsing the
+   sidebar turned the depth label into 89px of transparent text and would have turned the reading
+   path's "Start here" badge into a 10px dot. Measured in Edge at 1280x900. */
+.railed .rail-foot .pill { width: 10px; height: 10px; padding: 0; border-radius: 50%; overflow: hidden;
   color: transparent; border-width: 2px; justify-self: center; }
-.railed .pill-ok { background: var(--green); border-color: var(--green); }
-.railed .pill-warn { background: var(--amber); border-color: var(--amber); }
-.railed .pill-muted { background: var(--muted); border-color: var(--muted); }
+.railed .rail-foot .pill-ok { background: var(--green); border-color: var(--green); }
+.railed .rail-foot .pill-warn { background: var(--amber); border-color: var(--amber); }
+.railed .rail-foot .pill-muted { background: var(--muted); border-color: var(--muted); }
 
 .rail-hint { color: var(--muted); font-size: .8rem; margin: .4rem .6rem; }
 .rail-foot { margin-top: auto; padding: 1rem .5rem 0; display: grid; gap: .4rem; }
@@ -354,6 +359,18 @@ h2[tabindex="-1"]:focus {
 }
 .pill-ok { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
 .pill-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); }
+
+/* The badge on the first stop of a reading path. Deliberately the same two values as `.pill-ok`
+   rather than a new colour, so that adding it introduced no new hue to defend. It does sit on a
+   surface the palette gate had never measured: a catalog row is `--card-2`, not `--card`, and the
+   gate carried --green only against --bg and --card. That pair is now measured too, at 7.10:1 in
+   the dark theme and 6.10:1 in the light one against a 4.5:1 floor.
+   It is named separately so that changing what "ok" means cannot silently restyle "start here". */
+.pill-start { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
+
+/* The badge and its sentence share a baseline and wrap together, so a narrow window breaks the
+   line after the badge instead of stranding it on a row of its own. */
+.path-step { display: flex; align-items: baseline; gap: .45rem; flex-wrap: wrap; }
 
 /* ============================================================ main */
 

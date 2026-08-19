@@ -19,6 +19,7 @@ import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
   catalogCoverUrl, readingTimeLabel, collectionsLabel, pickPath, countStories,
+  pathPlacements, timelineLabel,
 } from './lib/catalog.js';
 import { Store, KEY as STATE_KEY } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -3431,7 +3432,10 @@ async function renderCatalog() {
   }
 
   const stories = groupCatalog(shown);
-  for (const story of stories) box.append(catalogRow(story));
+  // Resolved once for the whole shelf rather than per row: nineteen rows each searching every
+  // path is the same work nineteen times, and the answer cannot differ between them.
+  const placements = pathPlacements(catalog.paths, catalog.lists);
+  for (const story of stories) box.append(catalogRow(story, placements.get(story.key)));
 
   // The dropped-entry warning already announced itself; a second announcement would replace it.
   if (!catalog.dropped) {
@@ -3444,7 +3448,7 @@ async function renderCatalog() {
 // One row per story. A story read several ways used to be a heading with a row under it for each
 // path, which read as several things to decide between; it is one thing to decide, with a choice
 // inside it, so the row carries the chooser and describes whichever path is selected.
-function catalogRow(story) {
+function catalogRow(story, placement) {
   const title = story.name ?? story.lists[0].name;
   const meta = el('div', { class: 'result-meta' });
   const desc = el('div', { class: 'result-meta' });
@@ -3460,6 +3464,7 @@ function catalogRow(story) {
     // does not need hedging.
     meta.textContent = [
       typeLabel(list.type),
+      timelineLabel(list),
       `${list.count} issue${list.count === 1 ? '' : 's'}`,
       collectionsLabel(list),
     ].filter(Boolean).join(' · ');
@@ -3494,11 +3499,48 @@ function catalogRow(story) {
       el('h3', { class: 'result-title', text: title }),
       pathChooser(story, 'catalog', paint),
       meta,
+      // Above the description on purpose. It is the line that answers "can I start here", which
+      // is the question a reader who does not know where to begin is actually asking, and a
+      // reader who has already decided to read the blurb has stopped asking it.
+      pathLine(placement),
       desc,
       depth,
       source,
     ]),
     act,
+  ]);
+}
+
+// Where this story sits on a named reading path, when it sits on one. Built outside `paint`
+// because it is keyed on the story rather than on the reading the chooser has selected: House of
+// M is the third stop whichever of its two readings a reader picks, so repainting the row must
+// not be able to recompute it into a different answer.
+//
+// The badge on the first stop reads "Start here" rather than "Step 1 of 10". A reader who does
+// not know where to begin is the entire reason this exists, and a position only answers them if
+// something on the shelf is the answer at a glance rather than after reading a sentence.
+//
+// It does not say what comes before. The shelf is sorted by year, so a stop's predecessor is
+// almost always the row directly above it, and printing it made the longest element on the line
+// a restatement of the previous one. What a reader cannot get by looking up is what comes next.
+//
+// No aria-label: every word of it is already on screen, and `aria-label` on a <p> has no role to
+// attach to, so it is the kind of markup that reads correctly in a review and is dropped by the
+// accessibility tree.
+function pathLine(placement) {
+  if (!placement) return null;
+  const first = placement.previous === null;
+  const rest = [
+    placement.pathName,
+    first ? `Step 1 of ${placement.total}` : null,
+    placement.next ? `Next: ${placement.next.name}` : 'Last stop',
+  ].filter(Boolean).join(' · ');
+  return el('p', { class: 'result-meta path-step' }, [
+    el('span', {
+      class: first ? 'pill pill-start' : 'pill',
+      text: first ? 'Start here' : `Step ${placement.position} of ${placement.total}`,
+    }),
+    rest,
   ]);
 }
 
