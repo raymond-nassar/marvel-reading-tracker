@@ -82,7 +82,7 @@
   --amber: #eab654;
   --blue: #7fb3ff;
   /* The placeholder shown where a cover has not loaded. The hue comes from the series name at
-     `src/js/main.js:604-605`, so only saturation and lightness are the theme's to set. */
+     `src/js/main.js:636-637`, so only saturation and lightness are the theme's to set. */
   --fallback-a: hsl(var(--h) 42% 26%);
   --fallback-b: hsl(calc(var(--h) + 40) 38% 14%);
   --fallback-fg: hsl(var(--h) 60% 88%);
@@ -761,6 +761,14 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
 .notice-act { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
 .notice-act .grow { flex: 1; }
 .notice-act button { min-height: 44px; padding-inline: .9rem; }
+
+/* Dismiss is the lesser of the two when a notice carries both, so it reads as secondary by losing
+   its outline until it is pointed at or focused. The colour is left alone deliberately: dimming
+   text is the usual way to say "secondary" and it is the one way that costs contrast, and this
+   button is the only way out of a message that has followed the reader across every screen. It
+   keeps the 44px target it inherits, because being secondary is not a reason to be harder to hit. */
+.notice-dismiss { border-color: transparent; }
+.notice-dismiss:hover, .notice-dismiss:focus-visible { border-color: var(--line-2); }
 
 progress { accent-color: var(--red); height: 6px; }
 

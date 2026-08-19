@@ -485,6 +485,42 @@ const MUTATIONS = [
       });
     },
   },
+  {
+    id: 'undo-no-dismiss',
+    breaks: 'undo-delete-dismiss',
+    why: 'the notice carries the undo alone, exactly as it shipped, so the message the reader is left with has no way out of it',
+    script: () => {
+      // The second control is stripped as it is painted rather than by editing the builder, which
+      // the page cannot reach. What is left is byte for byte the notice this item was filed about.
+      document.addEventListener('DOMContentLoaded', () => {
+        const strip = () => {
+          for (const notice of document.querySelectorAll('#app-report .notice')) {
+            const buttons = notice.querySelectorAll('button');
+            if (buttons.length > 1) buttons[buttons.length - 1].remove();
+          }
+        };
+        new MutationObserver(strip).observe(document.body, { childList: true, subtree: true });
+        strip();
+      });
+    },
+  },
+  {
+    id: 'dismiss-hides-only',
+    breaks: 'undo-delete-dismiss',
+    why: 'dismissing takes the paragraph off the screen without spending the undo, so the offer is still outstanding and the next screen paints it again',
+    script: () => {
+      // Capture phase, so the app's own handler never runs whether it was attached as a property
+      // or as a listener. This is the tempting shape of the fix: hide the message, keep the buffer.
+      // It reads as working until the reader changes screen and the message they closed is back.
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest?.('#app-report .notice button');
+        if (!btn || btn.textContent.trim() !== 'Dismiss') return;
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        btn.closest('.notice').remove();
+      }, true);
+    },
+  },
 ];
 
 // ------------------------------------------------------------------ scenarios
@@ -1098,6 +1134,73 @@ const SCENARIOS = [
         (byDetail?.digitalId ?? null) === null, JSON.stringify(byDetail?.digitalId));
     },
   },
+  {
+    id: 'undo-delete-dismiss',
+    // The reported defect was that this message never went away. It is held for the session on
+    // purpose, because a timer would take the way back while the reader was still deciding, so
+    // what is checked here is that holding it and being able to close it are both true at once.
+    title: 'the message left by a delete follows the reader, and closes when they say so',
+    async run(page, t) {
+      await importOrder(page);
+      const listName = CATALOG.lists[0].name;
+
+      await deleteActiveList(page);
+      await page.waitForSelector('#app-report .notice', { timeout: 15000 });
+
+      const readNotice = () => page.evaluate(() => {
+        const n = document.querySelector('#app-report .notice');
+        if (!n) return null;
+        return {
+          msg: n.querySelector('.grow')?.textContent.trim() ?? '',
+          buttons: [...n.querySelectorAll('button')].map((b) => b.textContent.trim()),
+        };
+      });
+
+      const offered = await readNotice();
+      t.check('the delete is reported with the progress promise', offered.msg === `Deleted ${listName}. Reading progress was kept.`, JSON.stringify(offered.msg));
+      t.check('the way back is offered first', offered.buttons[0] === 'Undo delete', JSON.stringify(offered.buttons));
+      t.check('and a way to close the message beside it', offered.buttons[1] === 'Dismiss', JSON.stringify(offered.buttons));
+      t.check('the message offers exactly those two', offered.buttons.length === 2, JSON.stringify(offered.buttons));
+
+      // The behaviour the reader complained about, pinned rather than removed: the offer outlives
+      // the screen it was made on, because that is the only thing keeping the undo reachable.
+      await click(page, '[data-view="catalog"]');
+      await page.waitForSelector('#catalog-results .result', { timeout: 15000 });
+      const elsewhere = await readNotice();
+      t.check('it is still there after the reader changes screen', elsewhere?.buttons.join('/') === 'Undo delete/Dismiss', JSON.stringify(elsewhere));
+
+      await clickNoticeButton(page, 'Dismiss');
+      await page.waitForFunction(() => !document.querySelector('#app-report .notice'), { timeout: 15000 });
+      t.check('dismissing takes the message away', (await readNotice()) === null, 'a notice is still on screen');
+
+      // Removing the pressed button drops focus to <body>, which is the silent landing BL-054 was
+      // filed for. Dismissing has to leave the reader somewhere they can navigate from.
+      const landed = await page.evaluate(() => ({
+        tag: document.activeElement?.tagName ?? null,
+        id: document.activeElement?.id ?? null,
+      }));
+      t.check('focus lands on the heading of the screen being read, not on the body', landed.tag !== 'BODY' && landed.id === 'catalog-h', JSON.stringify(landed));
+
+      const afterDismiss = await readState(page);
+      t.check('dismissing does not put the list back', Object.keys(afterDismiss?.lists ?? {}).length === 0, JSON.stringify(Object.keys(afterDismiss?.lists ?? {})));
+
+      // Dismissing spends the undo rather than hiding it, so the offer must not come back on its
+      // own. A live buffer behind a closed message would raise a fresh notice from somewhere else.
+      await click(page, '.brand[data-view="home"]');
+      t.check('and the offer does not reappear on the next screen', (await readNotice()) === null, 'the dismissed notice came back');
+
+      // The way back still works for a reader who takes it, which is what dismissing must not cost.
+      await importOrder(page);
+      await deleteActiveList(page);
+      await page.waitForSelector('#app-report .notice', { timeout: 15000 });
+      await clickNoticeButton(page, 'Undo delete');
+      await page.waitForFunction(() => !document.querySelector('#app-report .notice'), { timeout: 15000 });
+
+      const afterUndo = await readState(page);
+      const names = Object.values(afterUndo?.lists ?? {}).map((l) => l.name);
+      t.check('undo still puts the list back', names.includes(listName), JSON.stringify(names));
+    },
+  },
 ];
 
 // ------------------------------------------------------------------ page helpers
@@ -1133,6 +1236,27 @@ async function importOrder(page) {
   await click(page, IMPORT_BUTTON);
   await page.waitForSelector('#full', { timeout: 15000 });
   await openFullOrder(page);
+}
+
+// The delete is guarded by the app's own dialog rather than confirm(), which matters here: a
+// native one is auto-dismissed by the driver and the deletion would never happen at all.
+async function deleteActiveList(page) {
+  await click(page, '#btn-delete-list');
+  await page.waitForFunction(() => document.querySelector('#ask')?.open === true, { timeout: 15000 });
+  await click(page, '#ask-ok');
+  await page.waitForFunction(() => document.querySelector('#ask')?.open !== true, { timeout: 15000 });
+}
+
+// Found by its label rather than by position, so a check that the buttons are in a given order
+// cannot be the same assertion as a check that pressing one of them works.
+async function clickNoticeButton(page, label) {
+  await page.waitForFunction((want) => [...document.querySelectorAll('#app-report .notice button')]
+    .some((b) => b.textContent.trim() === want), { timeout: 15000 }, label);
+  await page.evaluate((want) => {
+    [...document.querySelectorAll('#app-report .notice button')]
+      .find((b) => b.textContent.trim() === want)
+      .click();
+  }, label);
 }
 
 // The full order lives inside a <details> that starts closed, and main.js deliberately builds no

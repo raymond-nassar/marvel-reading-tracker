@@ -14,6 +14,29 @@ quote in a bug report.
 
 ## Unreleased
 
+### The message left after deleting a reading list can now be closed
+
+In plain English: deleting a reading list puts a message at the top of every screen offering to put
+it back, and until now nothing made that message go away except taking the offer. Delete something in
+the morning and the banner was still there in the afternoon. There is now a "Dismiss" button next to
+"Undo delete", and pressing it clears the message for good.
+
+The offer itself still lasts as long as it did, which is the rest of the session rather than a few
+seconds. That was a deliberate choice and it stands: deleting the list you were reading moves you to
+another screen, and a message that vanished after ten seconds would take the only way back while you
+were still working out whether you wanted it. What changed is who ends it. Pressing "Dismiss" gives
+up the undo along with the message, so the app will not raise it again later.
+
+Every message this feature produces can now be closed, not only the one with the offer in it. Three
+of the four just report something that already happened, and those had no button at all.
+
+Nothing you have saved is affected, and your reading progress was never involved either way.
+
+For maintainers: the committed browser check gains a scenario for this journey, and two mutations
+that prove it can fail. One reproduces the notice as it shipped, with no way to close it; the other
+closes the message without giving up the undo, which looks correct until the next screen paints the
+message again.
+
 ### The readme now shows the catalog instead of only describing it
 
 In plain English: the project page opens with a picture of the screen you pick a reading order
