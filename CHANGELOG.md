@@ -14,6 +14,16 @@ quote in a bug report.
 
 ## Unreleased
 
+### The readme now shows the catalog instead of only describing it
+
+In plain English: the project page opens with a picture of the screen you pick a reading order
+from, so you can see what the app looks like before deciding whether to download it. Nothing about
+the app itself changed.
+
+The shot is the catalog with no reading lists imported yet, which is what a new arrival actually
+sees. Cover art is switched off before the page is opened, so the file cannot contain any comic
+artwork; the catalog draws no covers either way, so the picture matches the app as it ships.
+
 ### The catalog shelf now says which half of it you are looking at
 
 In plain English: the list of reading orders is now split under two headings, "The shared story" and
