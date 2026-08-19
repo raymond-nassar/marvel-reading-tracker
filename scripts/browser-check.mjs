@@ -272,6 +272,14 @@ const MUTATIONS = [
     },
   },
   {
+    id: 'type-flatten',
+    breaks: 'shelf-sections',
+    why: 'every order arrives typed as one kind, so a shelf that still draws two headings is dividing on something other than the rule it claims to divide on',
+    script: () => {
+      window.__mrtMutation = 'type-flatten';
+    },
+  },
+  {
     id: 'import-fail',
     breaks: 'import',
     why: 'the order file cannot be fetched, so an import that reports success is reporting nothing',
@@ -1178,6 +1186,12 @@ async function preparePage(page, origin, mutation) {
           if (window.__mrtMutation === 'path-strip') return Promise.resolve(json({ ...catalog, paths: [] }));
           if (window.__mrtMutation === 'group-strip') {
             return Promise.resolve(json({ ...catalog, lists: catalog.lists.map((l) => ({ ...l, groupName: null })) }));
+          }
+          // Aimed at the section rule through its input rather than at the function, which the page
+          // cannot reach. One type everywhere puts every story on one side, so the empty section is
+          // dropped and the shelf paints a single heading.
+          if (window.__mrtMutation === 'type-flatten') {
+            return Promise.resolve(json({ ...catalog, lists: catalog.lists.map((l) => ({ ...l, type: 'era' })) }));
           }
           return Promise.resolve(json(catalog));
         }

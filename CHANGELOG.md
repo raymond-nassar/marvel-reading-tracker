@@ -26,6 +26,11 @@ there. Nothing you have saved is affected.
 A heading with nothing under it is dropped, so filtering or searching the shelf down to one kind of
 reading still names the kind you are seeing rather than leaving a bare heading behind.
 
+For the same reason, the shared story's heading only mentions the "Start here" badge when the order
+carrying that badge is one of the ones on screen. Filter the shelf down to events, or search it, and
+the heading still says what the half is for but stops pointing at a badge you would not be able to
+find.
+
 The division deliberately keeps every stop of the numbered reading path on one side. The item that
 asked for this change said the path ran through character runs; measuring the shipped catalog showed
 it does not, and that the one creator run on the shelf is stop 8 of the path. Splitting it off as the

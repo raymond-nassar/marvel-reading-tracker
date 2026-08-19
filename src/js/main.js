@@ -3436,7 +3436,10 @@ async function renderCatalog() {
   // path is the same work nineteen times, and the answer cannot differ between them.
   const placements = pathPlacements(catalog.paths, catalog.lists);
   for (const section of shelfSections(stories)) {
-    box.append(shelfSectionHead(section));
+    // Whether the badge this section's blurb points at is actually being drawn, asked of the same
+    // placements the rows are drawn from rather than of the rule that produced them.
+    const hasFirstStop = section.stories.some((s) => placements.get(s.key)?.previous === null);
+    box.append(shelfSectionHead(section, hasFirstStop));
     for (const story of section.stories) box.append(catalogRow(story, placements.get(story.key)));
   }
 
@@ -3452,10 +3455,13 @@ async function renderCatalog() {
 // reader needs here is navigable: the view titles itself with an h1 and every row titles itself with
 // an h3, so h2 is both the honest level and the one that closes a heading skip that was already
 // there before the sections were.
-function shelfSectionHead(section) {
+function shelfSectionHead(section, showRoute) {
+  const blurb = showRoute && section.routeBlurb
+    ? `${section.blurb} ${section.routeBlurb}`
+    : section.blurb;
   return el('div', { class: 'shelf-section' }, [
     el('h2', { class: 'shelf-section-title', text: section.heading }),
-    el('p', { class: 'shelf-section-blurb', text: section.blurb }),
+    el('p', { class: 'shelf-section-blurb', text: blurb }),
   ]);
 }
 

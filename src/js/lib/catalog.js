@@ -571,7 +571,13 @@ export const SHELF_SECTIONS = [
   {
     key: 'story',
     heading: 'The shared story',
-    blurb: 'Events and eras in the order they happened. These build on each other, so if you want a route through them, look for the Start here badge and follow the steps from there.',
+    blurb: 'Events and eras in the order they happened. These build on each other, so reading them front to back is the surest way through.',
+    // Held apart from the blurb because it is a claim about the screen rather than about the
+    // section. It names a badge, and the badge is drawn on one story only. Measured against the
+    // shipped catalog, three of the eight facet chips and most searches keep rows in this section
+    // while dropping that story, so a blurb that always said this would point at nothing on screen
+    // in exactly the states a lost reader is most likely to have reached.
+    routeBlurb: 'One of them below is marked Start here, and each stop names the one to read next.',
   },
   {
     key: 'spotlight',

@@ -822,8 +822,36 @@ test('every section carries a heading and a blurb a new reader can act on', () =
   for (const section of SHELF_SECTIONS) {
     assert.ok(section.heading.length, `${section.key} has a heading`);
     assert.ok(section.blurb.length > 40, `${section.key} explains itself`);
-    assert.ok(!/[\u2013\u2014]/.test(section.heading + section.blurb), `${section.key} copy has no long dashes`);
+    const copy = section.heading + section.blurb + (section.routeBlurb ?? '');
+    assert.ok(!/[\u2013\u2014]/.test(copy), `${section.key} copy has no long dashes`);
   }
+});
+
+// The blurb a section always shows must not name something the page only sometimes draws. The
+// "Start here" badge is drawn on one story, and filtering can leave the section full of rows with
+// that story gone, so the sentence naming the badge is held apart from the one that is always true.
+test('only the conditional half of the blurb names the Start here badge', () => {
+  const story = SHELF_SECTIONS.find((s) => s.key === 'story');
+  assert.ok(story.routeBlurb, 'the shared story carries a conditional sentence');
+  assert.ok(/start here/i.test(story.routeBlurb), 'and that sentence is the one naming the badge');
+  for (const section of SHELF_SECTIONS) {
+    assert.ok(!/start here/i.test(section.blurb), `${section.key}'s unconditional blurb promises no badge`);
+  }
+});
+
+// The state the finding was about, measured rather than asserted: a facet that keeps rows in the
+// shared story while dropping the story the badge is drawn on.
+test('a facet can leave the shared story populated with the first stop gone', async () => {
+  const raw = JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8'));
+  const catalog = parseCatalog(raw);
+  const placed = pathPlacements(catalog.paths, catalog.lists);
+  const events = groupCatalog(catalog.lists.filter((l) => l.type === 'event'));
+  const shown = shelfSections(events);
+  assert.ok(shown.length && shown[0].key === 'story', 'events alone still fill the shared story');
+  assert.ok(
+    !shown[0].stories.some((s) => placed.get(s.key)?.previous === null),
+    'and the first stop is not among them, so the badge sentence would point at nothing',
+  );
 });
 
 // The acceptance criterion the division exists to respect, checked against the shipped catalog
