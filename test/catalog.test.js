@@ -832,6 +832,7 @@ test('every section carries a heading and a blurb a new reader can act on', () =
 // that story gone, so the sentence naming the badge is held apart from the one that is always true.
 test('only the conditional half of the blurb names the Start here badge', () => {
   const story = SHELF_SECTIONS.find((s) => s.key === 'story');
+  assert.ok(story, 'the shared story section exists to carry the sentence');
   assert.ok(story.routeBlurb, 'the shared story carries a conditional sentence');
   assert.ok(/start here/i.test(story.routeBlurb), 'and that sentence is the one naming the badge');
   for (const section of SHELF_SECTIONS) {
