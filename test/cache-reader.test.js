@@ -5,6 +5,7 @@ import {
 } from '../src/js/lib/cachePolicy.js';
 import { READER_PREFIX, readerUrl, detailUrl, launchUrl, isLaunchable } from '../src/js/reader.js';
 import { digitalIdFromUrl } from '../src/js/lib/markdown.js';
+import { manualDetailUrl } from '../src/js/main.js';
 import { createEmptyState, addIssuesToList, createList } from '../src/js/lib/model.js';
 
 // ------------------------------------------------------------------ cache policy
@@ -222,7 +223,7 @@ test('a hand-added issue keeps its pasted book id and launches at the reader', (
   state = addIssuesToList(state, listId, [{
     issueId,
     title: 'All-New Spider-Gwen: The Ghost-Spider (2026) #9',
-    url: 'https://read.marvel.com/#/book/129648',
+    url: manualDetailUrl('https://read.marvel.com/#/book/129648', digitalId),
     digitalId,
     source: 'manual',
     hydrated: true,
@@ -231,6 +232,15 @@ test('a hand-added issue keeps its pasted book id and launches at the reader', (
   const stored = state.issues[issueId];
   assert.equal(stored.digitalId, 129648, 'storage must not drop the one field that makes Read work');
   assert.equal(isLaunchable(stored), true, 'a negative id alone is not launchable, so this proves the book id carried');
+  // Read reaches the reader, and Info offers nothing rather than offering the same place again
+  // under a name that says marvel.com. Keeping the pasted address as the detail url is what makes
+  // that happen, so the rule is exercised here rather than assumed.
+  assert.equal(detailUrl(stored), null, 'a reader address must not be dressed up as a detail page');
+  assert.equal(
+    detailUrl({ issueId, url: 'https://read.marvel.com/#/book/129648' }),
+    'https://read.marvel.com/#/book/129648',
+    'and this is why: the detail check accepts a reader address, so the form must not store one',
+  );
 
   const u = new URL(launchUrl(stored, 'http://127.0.0.1:8787'));
   assert.equal(u.searchParams.get('d'), '129648');

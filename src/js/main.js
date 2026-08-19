@@ -3092,6 +3092,16 @@ function unresolvedRow(entry, listId) {
   return row;
 }
 
+// A reader address is not a detail page, so it is not kept as one. Stored as the issue url it
+// would satisfy the detail check in the reader module and light up the Info control, which names
+// itself "<title> on marvel.com" and would open the very reader the Read button already opens.
+// The row would then offer one destination twice under two names, one of them wrong. With no url
+// and a synthetic negative id there is no detail link at all, which is the honest answer: nothing
+// here knows a marvel.com page for an issue this new.
+export function manualDetailUrl(url, digitalId) {
+  return digitalId ? null : (url || null);
+}
+
 function doManual() {
   const title = $('#manual-title').value.trim();
   const url = $('#manual-url').value.trim();
@@ -3109,6 +3119,7 @@ function doManual() {
   // marvel.com page. Taking the id from the address the reader is already looking at needs no key,
   // no account and no request to anyone.
   const digitalId = digitalIdFromUrl(url);
+  const detail = manualDetailUrl(url, digitalId);
   const listId = ensureList('My reading order');
   if (!listId) return notify('#manual-report', 'Could not create a list, so nothing was added.', 'error');
 
@@ -3120,7 +3131,7 @@ function doManual() {
     const res = addIssuesToList(s, listId, [{
       issueId,
       title,
-      url: url || null,
+      url: detail,
       digitalId,
       source: 'manual',
       hydrated: true,
