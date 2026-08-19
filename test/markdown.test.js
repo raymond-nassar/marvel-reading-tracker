@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   parseChecklist, parseTitleList, serializeChecklist, issueIdFromUrl,
-  isSafeMarvelUrl, normalizeTitle, resolveUniqueExact, stripInlineMarkdown,
+  digitalIdFromUrl, isSafeMarvelUrl, normalizeTitle, resolveUniqueExact, stripInlineMarkdown,
 } from '../src/js/lib/markdown.js';
 
 test('parses the upstream checklist format', () => {
@@ -86,6 +86,51 @@ test('issueIdFromUrl accepts real shapes and rejects lookalikes', () => {
   assert.equal(issueIdFromUrl('https://www.marvel.com.evil.com/comics/issue/1/x'), null);
   assert.equal(issueIdFromUrl('not a url'), null);
   assert.equal(issueIdFromUrl(null), null);
+});
+
+test('digitalIdFromUrl reads the book id off a Marvel Unlimited reader address', () => {
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/129648'), 129648);
+  assert.equal(digitalIdFromUrl('  https://read.marvel.com/#/book/1067  '), 1067);
+  // The reader appends its own page state to the hash while you read, so the address a
+  // subscriber copies is rarely the bare one.
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/71158/page/4'), 71158);
+});
+
+test('digitalIdFromUrl refuses anything that would build a dead reader link', () => {
+  // A lookalike host is the one that matters: it would otherwise hand an attacker-chosen
+  // number straight to the launcher.
+  assert.equal(digitalIdFromUrl('https://read.marvel.com.evil.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('https://evil.com/#/book/5'), null);
+  // A marvel.com issue address is a valid thing to paste and carries an issue id, not a book id.
+  // Reading one as the other would open somebody else's comic.
+  assert.equal(digitalIdFromUrl('https://www.marvel.com/comics/issue/6482/x'), null);
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/0'), null);
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/series/1234'), null);
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/'), null);
+  assert.equal(digitalIdFromUrl('not a url'), null);
+  assert.equal(digitalIdFromUrl(null), null);
+});
+
+test('digitalIdFromUrl refuses every scheme its sibling refuses', () => {
+  // The sibling check in this module and the private copy in the reader module both refuse
+  // anything outside http and https. This function did not, so the same address answered two
+  // ways depending on which of the three you happened to ask.
+  assert.equal(digitalIdFromUrl('ftp://read.marvel.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('file://read.marvel.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('javascript://read.marvel.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('foo://read.marvel.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/5'), 5, 'and still answers the two it allows');
+  assert.equal(digitalIdFromUrl('http://read.marvel.com/#/book/5'), 5);
+});
+
+test('digitalIdFromUrl stops at the twelve digits the launcher will accept', () => {
+  // The launcher refuses more than twelve digits before it will build a reader address, so an id
+  // longer than that would store here and be rejected at the point of use, which is the dead Read
+  // button this function's own comment says it prevents.
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/123456789012'), 123456789012,
+    'twelve is the last one the launcher will take');
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/1234567890123'), null);
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/1234567890123456'), null);
 });
 
 test('isSafeMarvelUrl rejects other hosts and dangerous schemes', () => {

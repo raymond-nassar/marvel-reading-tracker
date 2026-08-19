@@ -11,7 +11,7 @@ import {
   setOverride, pendingIssueIds, coverUrl, listForCatalogId, SCHEMA_VERSION,
   setIssueNote, setListNote, MAX_BACKUP_BYTES, orderGapSentences,
 } from './lib/model.js';
-import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
+import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, digitalIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { LIBRARY_VIEWS } from './lib/library.js';
 import { availability, describe, localDayString, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
@@ -19,6 +19,7 @@ import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
   catalogCoverUrl, readingTimeLabel, collectionsLabel, pickPath, countStories,
+  pathPlacements, timelineLabel, shelfSections,
 } from './lib/catalog.js';
 import { Store, KEY as STATE_KEY } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -30,6 +31,7 @@ import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
 import { shortcutAllowed } from './lib/shortcuts.js';
+import { lookupIssue } from './lib/wiki.js';
 import { READING_FILTERS, DEFAULT_FILTER, matchesReadingFilter } from './lib/readingFilters.js';
 import { DEFAULT_THEME, themeAttribute, normaliseTheme } from './lib/theme.js';
 import { VIEWS, formatRoute, parseRoute } from './lib/route.js';
@@ -1075,12 +1077,21 @@ function wireHome() {
 
   // The whole point of "See all" is that it is the same view of the same catalog, so the
   // filter and the search box travel with the reader rather than resetting under them.
-  $('#home-see-all').addEventListener('click', () => {
+  //
+  // Two controls, one behaviour. The header button is the conventional place to look before
+  // reading; the one under the grid is the only one that is on screen at the moment the reader
+  // runs out of cards. Measured in Edge at 1280x900 with 19 orders: the grid ends at y=1526 and
+  // the header button sits at y=134, so the affordance was 1,392px behind the reader, more than
+  // one and a half viewports, and what remained in view was a sentence stating the shortfall
+  // with nothing to click. That is why "there is no way to see more" was the honest reading.
+  const seeAll = () => {
     catalogFacet = homeFacet;
     catalogQuery = homeQuery;
     $('#catalog-q').value = homeQuery;
     showView('catalog', { push: true });
-  });
+  };
+  $('#home-see-all').addEventListener('click', seeAll);
+  $('#home-more').addEventListener('click', seeAll);
 
   $('#btn-chero-read').addEventListener('click', (e) => {
     const issue = upNext(store.state, activeListId());
@@ -1184,6 +1195,24 @@ function renderYours(populated) {
   }));
 }
 
+// Whether the landing grid is hiding anything, and the two ways of saying so. One rule rather
+// than two: the count line and both controls used to derive "is there more" from different
+// expressions, `rest <= 0` in one place and `matched.length <= HOME_GRID_CAP` in another. Those
+// agree today only because `shown` is exactly the cap, so a later change to the slice would have
+// left a control offering to reveal nothing, or a count claiming a shortfall with no way out.
+//
+// The action names the whole number rather than the remainder, because it navigates to the
+// catalog rather than appending to this grid. "Show the other 7" would describe a thing the
+// button does not do.
+export function overflowState(matched, shown) {
+  const hidden = matched <= shown;
+  return {
+    hidden,
+    count: hidden ? '' : `Showing ${shown} of ${matched} reading orders.`,
+    action: hidden ? '' : `See all ${matched} reading orders →`,
+  };
+}
+
 async function renderHomeCatalog({ announceCount = false } = {}) {
   const grid = $('#home-grid');
   // Every other route into this function rebuilds the grid while focus is outside it, on the
@@ -1220,6 +1249,10 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
     $('#form-home-q').hidden = true;
     $('#home-see-all').hidden = true;
     $('#home-overflow').hidden = true;
+    // Named here rather than left to the markup's initial attribute. This branch returns before
+    // the block that owns these three, so every control that block reveals has to be put away
+    // again by hand, and relying on the attribute only works while nothing has rendered yet.
+    $('#home-more').hidden = true;
     grid.replaceChildren(el('li', { class: 'rail-hint', text: 'No curated reading orders are bundled with this build.' }));
     return;
   }
@@ -1240,7 +1273,6 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
   // stories while both X-Men orders fell off the end.
   const matched = groupCatalog(searchCatalog(filterByFacet(all, homeFacet), homeQuery));
   const shown = matched.slice(0, HOME_GRID_CAP);
-  const rest = matched.length - shown.length;
 
   grid.replaceChildren(...shown.map(orderCard));
 
@@ -1256,12 +1288,13 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
 
   // The overflow is stated as a number rather than an ellipsis, so the reader knows how much
   // catalog they have not seen before deciding whether to go looking.
-  $('#home-overflow').hidden = rest <= 0;
-  $('#home-overflow').textContent = rest > 0
-    ? `Showing ${shown.length} of ${matched.length} reading orders.`
-    : '';
-  $('#home-see-all').hidden = matched.length <= HOME_GRID_CAP;
-  $('#home-see-all').textContent = `See all ${matched.length} orders →`;
+  const overflow = overflowState(matched.length, shown.length);
+  $('#home-overflow').hidden = overflow.hidden;
+  $('#home-overflow').textContent = overflow.count;
+  $('#home-see-all').hidden = overflow.hidden;
+  $('#home-see-all').textContent = overflow.action;
+  $('#home-more').hidden = overflow.hidden;
+  $('#home-more').textContent = overflow.action;
   restoreFocus(held, { primary: 'main' });
   // Only when the reader narrowed something. Announcing on every render would let a routine
   // count overwrite the confirmation that an order had just been added, which is the message
@@ -2738,6 +2771,16 @@ function wireAdd() {
 
   $('#form-import').addEventListener('submit', (e) => { e.preventDefault(); doImport(); });
   $('#form-manual').addEventListener('submit', (e) => { e.preventDefault(); doManual(); });
+  $('#btn-manual-lookup').addEventListener('click', () => { doManualLookup(); });
+  // An accepted match describes one specific comic. Once the title no longer names that comic the
+  // offer has stopped making sense, so it is withdrawn here rather than refused at Add time, and
+  // the reader is told why while the box is still in front of them.
+  $('#manual-title').addEventListener('input', () => {
+    if (manualMatch && $('#manual-title').value.trim() !== manualMatch.title) {
+      clearManualMatch();
+      notify('#manual-candidates', 'The title changed, so the details from the wiki were dropped. Look it up again to fill them in.', 'warn');
+    }
+  });
 }
 
 const NAME_SEARCH_LIMIT = 40;
@@ -3061,6 +3104,120 @@ function unresolvedRow(entry, listId) {
   return row;
 }
 
+// The metadata snapshot stops in 2025, so for anything newer this form is the only way in and a
+// bare title is all it can carry. The Marvel Fandom wiki holds the release date, the page count,
+// the credits and Marvel's own issue id for comics well past that boundary, and reading them at
+// the moment the reader asks turns a bare row into an entry that looks like every other one.
+//
+// The issue id is not a route into Marvel Unlimited and nothing here should read as though it
+// were. It builds the official marvel.com page for the comic, which is live for issues the
+// snapshot has never heard of: 129648 answers 200 and an invented id answers 404, measured on
+// 2026-08-19. So Info gains a destination it does not have today, because detailUrl returns null
+// for the negative synthetic id a hand entry otherwise carries, and Read reaches that same page
+// through the launcher's existing fallback. Opening the comic itself still needs the digital book
+// id, and the address box below remains the only thing that supplies one.
+//
+// Held here rather than written anywhere: a lookup the reader walks away from leaves nothing
+// behind, and the tracker is unchanged until Add issue is pressed.
+let manualMatch = null;
+
+function clearManualMatch() {
+  manualMatch = null;
+  $('#manual-candidates').replaceChildren();
+}
+
+function factsSummary(facts) {
+  const credits = facts.creators?.length ?? 0;
+  return [
+    facts.onSale ? `released ${ymd(facts.onSale)}` : null,
+    facts.pageCount ? `${facts.pageCount} pages` : null,
+    credits ? `${credits} credit${credits === 1 ? '' : 's'}` : null,
+  ].filter(Boolean).join(', ');
+}
+
+function acceptManualMatch(candidate) {
+  const facts = {
+    onSale: candidate.onSale,
+    pageCount: candidate.pageCount,
+    seriesName: candidate.seriesName,
+    number: candidate.number,
+    creators: candidate.creators.length ? candidate.creators : null,
+  };
+  manualMatch = { title: candidate.title, marvelIssueId: candidate.marvelIssueId, facts };
+  // The box shows exactly what will be stored, and it is still editable, so a wiki title the
+  // reader does not care for is theirs to change before anything is saved.
+  $('#manual-title').value = candidate.title;
+  const summary = factsSummary(facts);
+  notify(
+    '#manual-candidates',
+    summary
+      ? `Filled from “${candidate.title}” on the wiki: ${summary}. Press Add issue to keep it.`
+      : `“${candidate.title}” carried no release date, page count or credits, so only the title was filled.`,
+    summary ? 'ok' : 'warn',
+    '#manual-candidates',
+    { label: 'Discard', onClick: () => { clearManualMatch(); announce('Details from the wiki discarded.'); } },
+  );
+}
+
+async function doManualLookup() {
+  const phrase = $('#manual-title').value.trim();
+  if (!phrase) return notify('#manual-report', 'Type a title first, then look it up.', 'warn');
+
+  const btn = $('#btn-manual-lookup');
+  btn.disabled = true;
+  clearManualMatch();
+  try {
+    const found = await lookupIssue(phrase);
+    if (!found.length) {
+      return notify(
+        '#manual-candidates',
+        `Nothing on the wiki matched “${phrase}”. Its pages are named like “X-Men Vol 7 26”, so the series and the issue number usually find it. You can still add the issue without any details.`,
+        'warn',
+      );
+    }
+    // Never picked automatically. The search is fuzzy: asking it for one issue routinely returns
+    // the series page and the issue before it above the one that was meant, so choosing the top
+    // hit would quietly file the wrong comic's release date against this entry.
+    const choices = el('div', { class: 'results' }, [
+      el('p', { class: 'rail-hint', text: 'Pick the issue you meant. Nothing is added until you press Add issue.' }),
+    ]);
+    for (const candidate of found) {
+      choices.append(el('div', { class: 'result' }, [
+        el('div', { class: 'result-main' }, [
+          el('div', { class: 'result-title', text: candidate.title }),
+          el('div', {
+            class: 'result-meta',
+            text: factsSummary(candidate) || 'No release date, page count or credits on that page',
+          }),
+        ]),
+        el('button', { type: 'button', class: 'btn', onclick: () => acceptManualMatch(candidate) }, 'Use this'),
+      ]));
+    }
+    $('#manual-candidates').replaceChildren(choices);
+    announce(`${found.length} match${found.length === 1 ? '' : 'es'} from the wiki. Pick the issue you meant.`);
+  } catch (err) {
+    // Naming what was not sent matters as much as naming the failure: the reader agreed to a
+    // request about a title, and a failed request must not leave them wondering what else went.
+    notify(
+      '#manual-candidates',
+      `Could not reach the wiki, so nothing was filled in. ${friendly(err)} Nothing about your lists was sent, and your entry is unchanged.`,
+      'error',
+    );
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// A reader address is not a detail page, so it is not kept as one. Stored as the issue url it
+// would satisfy the detail check in the reader module and light up the Info control, which names
+// itself "<title> on marvel.com" and would open the very reader the Read button already opens.
+// The row would then offer one destination twice under two names, one of them wrong. With no url
+// and a synthetic negative id there is no detail link at all, which is the honest answer: nothing
+// here knows a marvel.com page for an issue this new.
+export function manualDetailUrl(url, digitalId) {
+  return digitalId ? null : (url || null);
+}
+
 function doManual() {
   const title = $('#manual-title').value.trim();
   const url = $('#manual-url').value.trim();
@@ -3069,9 +3226,61 @@ function doManual() {
     return notify('#manual-report', 'That URL is not a marvel.com address. Leave it blank if you do not have one.', 'error');
   }
 
+  const wikiId = manualMatch?.marvelIssueId ?? null;
   // A negative synthetic id for entries with no marvel.com URL; namespaced away from real
   // Marvel ids so the two can never collide.
-  const issueId = issueIdFromUrl(url) ?? -Date.now();
+  const issueId = issueIdFromUrl(url) ?? wikiId ?? -Date.now();
+
+  // Facts from a wiki lookup are refused when the tracker already holds the issue they would be
+  // written against, and the entry is refused with them. addIssuesToList merges into state.issues
+  // BEFORE it decides whether the list already had the id, so a collision overwrites the held
+  // issue's title, series, release date, page count and credits whether or not anything is added
+  // to a list. Measured against a curated issue: seven fields replaced while the call reported
+  // added=0 skipped=1, so the reader is told "already in that list, so nothing was added" at the
+  // exact moment that sentence stops being true.
+  //
+  // The test is the id that will actually be WRITTEN, not the id the wiki supplied. Those differ:
+  // a pasted address outranks the wiki id on the line above, and the accepted match's facts are
+  // spread into the payload either way. Guarding the wiki id alone therefore left this route open:
+  // look up one comic, press Use this, then paste an address naming another, and that other issue
+  // is what gets rewritten.
+  //
+  // There is no escape from that sequence once it starts, which is what makes it worth guarding
+  // rather than merely worth noting. What withdraws an accepted match is the title box changing,
+  // and acceptManualMatch sets that box programmatically, which fires no input event. So the
+  // listener is unreachable on this path and no keystroke anywhere in the sequence can withdraw
+  // the match.
+  //
+  // Gated on there being an accepted match rather than on where the id came from, which keeps the
+  // deliberate exemption intact: a pasted address with no lookup behind it names one specific
+  // issue the reader chose to point at, so merging into it is what they asked for. What can never
+  // happen is facts produced by a fuzzy search this code ran landing on something already held.
+  //
+  // Refusing rather than adding under a synthetic id follows what this form already does when the
+  // list holds the issue, and it is the recoverable choice: nothing is lost and the reader is told
+  // something true, where a second row for a comic they already track would sit in the reading
+  // list for good.
+  if (manualMatch && store.state.issues?.[issueId]) {
+    const holders = Object.values(store.state.lists ?? {})
+      .filter((l) => l.itemIds?.includes(issueId))
+      .map((l) => l.name)
+      .filter(Boolean);
+    return notify(
+      '#manual-report',
+      holders.length
+        ? `That is the issue you already have in ${holders.join(', ')}, so nothing was added and nothing was changed.`
+        : 'The tracker already holds that issue, so nothing was added and nothing was changed.',
+      'warn',
+    );
+  }
+
+  // The reader address carries the digital book id, and that id is the only thing that makes the
+  // Read button work. A hand-added issue is by definition newer than the metadata snapshot, so the
+  // lookup /open.html would otherwise perform has nothing to find and the launch degrades to the
+  // marvel.com page. Taking the id from the address the reader is already looking at needs no key,
+  // no account and no request to anyone.
+  const digitalId = digitalIdFromUrl(url);
+  const detail = manualDetailUrl(url, digitalId);
   const listId = ensureList('My reading order');
   if (!listId) return notify('#manual-report', 'Could not create a list, so nothing was added.', 'error');
 
@@ -3079,13 +3288,16 @@ function doManual() {
   // "Added" even when the entry had been silently discarded.
   let added = 0;
   let skipped = 0;
+  const filled = manualMatch ? factsSummary(manualMatch.facts) : '';
   store.update((s) => {
     const res = addIssuesToList(s, listId, [{
       issueId,
       title,
-      url: url || null,
+      url: detail,
+      digitalId,
       source: 'manual',
       hydrated: true,
+      ...(manualMatch?.facts ?? {}),
     }], {});
     added = res.added;
     skipped = res.skipped;
@@ -3104,7 +3316,28 @@ function doManual() {
 
   $('#manual-title').value = '';
   $('#manual-url').value = '';
-  notify('#manual-report', `Added “${title}”. Availability shows as unknown because it is not in the metadata snapshot.`, 'ok');
+  clearManualMatch();
+  // Three different outcomes that used to read as two. Whether Read will reach Marvel Unlimited is
+  // decided entirely by which address was pasted, and that is the one thing the reader cannot see
+  // from the row afterwards, so it is said here rather than left to be discovered by clicking. An
+  // entry that took the wiki's issue id now has a Read button where it had none, and saying it
+  // opens marvel.com is the difference between a working link and a disappointment.
+  notify(
+    '#manual-report',
+    [
+      `Added “${title}”.`,
+      digitalId
+        ? 'Read opens it in Marvel Unlimited.'
+        : wikiId
+          ? 'Read has no Marvel Unlimited link to use, so it opens the issue page on marvel.com instead. Paste the reader address above to change that.'
+          : null,
+      filled ? `Filled from the wiki: ${filled}.` : null,
+      digitalId
+        ? 'Availability still shows as unknown, because that is a separate field the metadata snapshot would have supplied.'
+        : 'Availability shows as unknown because it is not in the metadata snapshot.',
+    ].filter(Boolean).join(' '),
+    'ok',
+  );
 }
 
 // ------------------------------------------------------------------ curated orders
@@ -3199,7 +3432,16 @@ async function renderCatalog() {
   }
 
   const stories = groupCatalog(shown);
-  for (const story of stories) box.append(catalogRow(story));
+  // Resolved once for the whole shelf rather than per row: nineteen rows each searching every
+  // path is the same work nineteen times, and the answer cannot differ between them.
+  const placements = pathPlacements(catalog.paths, catalog.lists);
+  for (const section of shelfSections(stories)) {
+    // Whether the badge this section's blurb points at is actually being drawn, asked of the same
+    // placements the rows are drawn from rather than of the rule that produced them.
+    const hasFirstStop = section.stories.some((s) => placements.get(s.key)?.previous === null);
+    box.append(shelfSectionHead(section, hasFirstStop));
+    for (const story of section.stories) box.append(catalogRow(story, placements.get(story.key)));
+  }
 
   // The dropped-entry warning already announced itself; a second announcement would replace it.
   if (!catalog.dropped) {
@@ -3209,10 +3451,24 @@ async function renderCatalog() {
   }
 }
 
+// The divider over one half of the shelf. A heading rather than a styled line, because the thing a
+// reader needs here is navigable: the view titles itself with an h1 and every row titles itself with
+// an h3, so h2 is both the honest level and the one that closes a heading skip that was already
+// there before the sections were.
+function shelfSectionHead(section, showRoute) {
+  const blurb = showRoute && section.routeBlurb
+    ? `${section.blurb} ${section.routeBlurb}`
+    : section.blurb;
+  return el('div', { class: 'shelf-section' }, [
+    el('h2', { class: 'shelf-section-title', text: section.heading }),
+    el('p', { class: 'shelf-section-blurb', text: blurb }),
+  ]);
+}
+
 // One row per story. A story read several ways used to be a heading with a row under it for each
 // path, which read as several things to decide between; it is one thing to decide, with a choice
 // inside it, so the row carries the chooser and describes whichever path is selected.
-function catalogRow(story) {
+function catalogRow(story, placement) {
   const title = story.name ?? story.lists[0].name;
   const meta = el('div', { class: 'result-meta' });
   const desc = el('div', { class: 'result-meta' });
@@ -3228,6 +3484,7 @@ function catalogRow(story) {
     // does not need hedging.
     meta.textContent = [
       typeLabel(list.type),
+      timelineLabel(list),
       `${list.count} issue${list.count === 1 ? '' : 's'}`,
       collectionsLabel(list),
     ].filter(Boolean).join(' · ');
@@ -3262,11 +3519,48 @@ function catalogRow(story) {
       el('h3', { class: 'result-title', text: title }),
       pathChooser(story, 'catalog', paint),
       meta,
+      // Above the description on purpose. It is the line that answers "can I start here", which
+      // is the question a reader who does not know where to begin is actually asking, and a
+      // reader who has already decided to read the blurb has stopped asking it.
+      pathLine(placement),
       desc,
       depth,
       source,
     ]),
     act,
+  ]);
+}
+
+// Where this story sits on a named reading path, when it sits on one. Built outside `paint`
+// because it is keyed on the story rather than on the reading the chooser has selected: House of
+// M is the third stop whichever of its two readings a reader picks, so repainting the row must
+// not be able to recompute it into a different answer.
+//
+// The badge on the first stop reads "Start here" rather than "Step 1 of 10". A reader who does
+// not know where to begin is the entire reason this exists, and a position only answers them if
+// something on the shelf is the answer at a glance rather than after reading a sentence.
+//
+// It does not say what comes before. The shelf is sorted by year, so a stop's predecessor is
+// almost always the row directly above it, and printing it made the longest element on the line
+// a restatement of the previous one. What a reader cannot get by looking up is what comes next.
+//
+// No aria-label: every word of it is already on screen, and `aria-label` on a <p> has no role to
+// attach to, so it is the kind of markup that reads correctly in a review and is dropped by the
+// accessibility tree.
+function pathLine(placement) {
+  if (!placement) return null;
+  const first = placement.previous === null;
+  const rest = [
+    placement.pathName,
+    first ? `Step 1 of ${placement.total}` : null,
+    placement.next ? `Next: ${placement.next.name}` : 'Last stop',
+  ].filter(Boolean).join(' · ');
+  return el('p', { class: 'result-meta path-step' }, [
+    el('span', {
+      class: first ? 'pill pill-start' : 'pill',
+      text: first ? 'Start here' : `Step ${placement.position} of ${placement.total}`,
+    }),
+    rest,
   ]);
 }
 

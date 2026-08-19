@@ -13,7 +13,32 @@ Marvel Unlimited to read the next one.
 It does not contain any comics, and it is not made by Marvel. You still need your own Marvel
 Unlimited subscription to read.
 
+![The Reading list catalog screen. A sidebar down the left lists your reading orders, library views
+and ways to add issues. The main panel has a search box and a row of chips that filter the list, then
+a section headed "The shared story", described as events and eras in the order they happened. Its
+first entry, Essential Avengers, carries a green "Start here" badge beside a line reading "The Modern
+Avengers, step 1 of 10, next: Avengers Disassembled", and below it Avengers Disassembled is step 2 of
+10. Each order says what it covers, who compiled it and where it came from, and has an Import
+button.](docs/screenshots/catalog-shelf-1280.png)
+
+The catalog is where you pick something to read. Every order shown ships inside the app, so
+importing one needs no internet connection, and the one to read first is marked.
+
 ## Start here
+
+### On Windows
+
+**[Download the tracker](https://github.com/raymond-nassar/marvel-reading-tracker/releases/latest/download/marvel-reading-tracker-windows.zip)**, unzip it, and double-click **Start on
+Windows.cmd** inside.
+
+That is the whole thing. There is nothing to install, and no account to make. The download is
+about 34 MB because everything the tracker needs to run is inside it.
+
+Windows may warn you once, because the file came from the internet. On the unzipped folder, or on
+the first run, choose **More info** and then **Run anyway**. That prompt is expected, and
+[what it is](#the-first-run-warning) is explained below.
+
+### On a Mac, or if you would rather build it yourself
 
 Three things, once. After that, starting the app is one double-click.
 
@@ -25,10 +50,15 @@ Three things, once. After that, starting the app is one double-click.
 3. **Double-click the start file** inside the folder you just unzipped: **Start on
    Windows.cmd** on Windows, or **Start on macOS.command** on a Mac.
 
+### Either way
+
 A small window opens and stays open, and your browser opens the app by itself. That window is
 the app running, so leave it alone until you are finished. To stop, click that window and
 press **Ctrl+C**. Your reading progress is kept by your browser, so stopping the app never
 loses it.
+
+Both routes open the app at the same address, so they are the same app with the same reading
+progress. You can start with the download and switch to the source later without losing anything.
 
 Once the app is open, your browser will offer to
 [install it](#optional-install-it-as-an-app), which gives the tracker its own icon and its own
@@ -36,6 +66,20 @@ window. After that the icon opens the tracker whether or not the app is running.
 
 The longer version of all this, with what to do when a step goes wrong, is in
 [Run it on your computer](#run-it-on-your-computer) below.
+
+### The first run warning
+
+Whichever route you took, Windows or macOS may ask you to confirm the first time, because the
+files arrived from the internet. This is expected, and it is not a sign anything is wrong.
+
+On Windows, choose **More info** and then **Run anyway**. On a Mac, if double-clicking does
+nothing or the file opens in a text editor instead, right-click it, choose **Open**, and confirm.
+
+The warning is the operating system saying it cannot vouch for who wrote a file, which is true of
+anything not signed by a paying software company. Nothing here is hidden from you: every line of
+this app is on this page, and the runtime inside the Windows download is the official one from
+[nodejs.org](https://nodejs.org), fetched and checked against its published checksum when the
+download is built.
 
 ## What it does
 
@@ -68,6 +112,13 @@ makes when it loads any web page. Those requests do reveal which issues you are 
 asking for an issue's details or its cover picture is exactly what they are. Turning cover art off
 stops the covers being requested at all. What is never sent is your reading progress, your notes,
 or anything identifying you.
+
+One other site is contacted, and only if you ask it to be. Adding an issue by hand sends the words
+in the title box to the Marvel Fandom wiki, a community site Marvel does not run, and it does that
+only when you press the lookup button. It is there because the comics database this app reads stops
+at October 2025, so for a newer comic the wiki is the only place a release date, a page count or a
+list of credits can be found. That wiki sees the title you searched for; your lists, your progress
+and your notes are no part of the request, and no picture is fetched from it.
 
 ## Run it on your computer
 
@@ -421,11 +472,13 @@ trusting a release.
 npm run browser
 ```
 
-Drives installed Microsoft Edge through the six journeys the app exists for: importing a
+Drives installed Microsoft Edge through the eight journeys the app exists for: importing a
 curated order, moving between views with the address bar and the Back button, keeping progress
 across a reload, meeting unreadable saved data with an offer rather than a wipe, opening the
-reader tab inside the click that asked for it, and counting a synopsis run by what arrived rather
-than by what it asked for. It makes 35 assertions across those six and takes about 3 seconds.
+reader tab inside the click that asked for it, counting a synopsis run by what arrived rather
+than by what it asked for, filling a hand entry from the wiki while refusing an issue already
+held, and turning a pasted reader address into a working Read button. It makes 53 assertions
+across those eight and takes about 6 seconds.
 
 It needs two things that are not installed for you. The first is a browser driver, which is
 **deliberately not a dependency of this repository** and must not become one: nothing the app
@@ -454,11 +507,11 @@ stubbed with a three-issue fixture, so no vendored file is read and no network r
 npm run browser:prove
 ```
 
-Runs each of the six scenarios again under ten injected faults, and checks that each fault turns
-the scenario aimed at it red. A check that has never been seen to fail is not evidence, and this is
-where that is demonstrated rather than asserted: it reports the named assertion each fault breaks.
-It takes about three minutes, nearly all of it waiting out the timeouts a broken app produces, so
-it is a thing to run when the scenarios change rather than on every commit.
+Runs each of the seven scenarios again under eleven injected faults, and checks that each fault
+turns the scenario aimed at it red. A check that has never been seen to fail is not evidence, and
+this is where that is demonstrated rather than asserted: it reports the named assertion each fault
+breaks. It takes about three minutes, nearly all of it waiting out the timeouts a broken app
+produces, so it is a thing to run when the scenarios change rather than on every commit.
 
 ### Reviewing an update to a pinned action
 
@@ -528,6 +581,7 @@ Each entry needs:
 | `sourceLicense` | An SPDX expression, or `null` when no licence is conveyed with the order. Not a place for prose |
 | `out` | Plain `*.json` file name to write into `src/data/` |
 | `characters`, `keywords` | Extra terms the catalog search should match |
+| `timeline` | Optional whole year of 1939 or later: where the *story* starts, not when it was published. It orders the catalog, and the shelf prints it as "Starts 1963". Leave it out for an order that ranges across the timeline rather than sitting on it, such as a best-of |
 | `group`, `groupName`, `variant` | Optional. Ties this order to a story that has more than one reading path, so the catalog groups the versions under `groupName` and labels each with its `variant` |
 | `expect` | Optional expected issue count; a mismatch is reported |
 
@@ -542,7 +596,44 @@ A checklist line with no Marvel link becomes a placeholder: an entry you can see
 but not open, because there is nothing to open. Keeping it means the reading order stays complete
 rather than quietly losing an issue, and the import notice says how many there are.
 
-#### Orders grouped by collected edition
+#### Reading paths
+
+`group` says two orders are two readings of one story. Nothing said that one story is read *after*
+another, which is the question a reader who has never read a Marvel comic actually asks. A reading
+path answers it: a named, ordered sequence of stories, declared once beside the lists.
+
+```json
+"paths": [
+  {
+    "id": "modern-avengers",
+    "name": "The Modern Avengers",
+    "description": "What the shelf says the path is for.",
+    "sourceOrigin": "Compiled for this project. Seven stops follow ...",
+    "steps": ["essential-avengers", "avengers-disassembled", "house-of-m"]
+  }
+]
+```
+
+Each step is a list `id`, not a story key. The id namespace is already checked for uniqueness, so a
+typo is caught rather than resolved to the wrong thing; naming the order also records which reading
+the source chose; and a story key is an internal shape that has no business being typed into
+hand-authored data. The app resolves each step to its story, so a stop is shown under the name the
+shelf uses. Naming either reading of House of M places the House of M row, not one version of it.
+
+An array rather than a `follows` field on each entry, and that is the whole design: an array cannot
+contain a cycle, its next stop is the next element, and it starts where it starts.
+
+`sourceOrigin` is required. A path is a claim this repository makes about how stories connect, and
+no upstream publishes one in this form, so the shelf has to be able to say who compiled it and from
+what. The vendor run refuses a path with a step naming no list, two steps in one story, fewer than
+two steps, or a duplicate `id`.
+
+Nothing checks that the stops do not overlap, because nothing can: two orders sharing an issue is
+legitimate everywhere else in the catalog. What keeps the shipped path honest is a test that reads
+every order behind every stop and asserts no two stories share an issue, at any reading depth. Add
+a stop that overlaps another and that test fails with the pair named.
+
+
 
 A checklist may divide its issues with `##` sub-headings. Each one names a collected edition, and
 the issues beneath it are the issues that edition collects. The reading view then shows the
@@ -641,18 +732,30 @@ progress lives only in the reader's own browser, and nothing can migrate it for 
 
 To cut a release:
 
-1. Write the entry in [CHANGELOG.md](CHANGELOG.md) under the new version number, and commit it.
-2. Run `npm version <major|minor|patch>`. This bumps `package.json` and the lock file, rewrites
-   `APP_VERSION` to match, commits the lot, and creates the `v<version>` tag.
-3. Push with `git push --follow-tags`.
+1. Write the entry in [CHANGELOG.md](CHANGELOG.md) under the new version number.
+2. Run `npm version <major|minor|patch> --no-git-tag-version`. This bumps `package.json` and the
+   lock file and rewrites `APP_VERSION` to match, without creating a tag.
+3. Commit, open a pull request, and merge it.
+4. Build the archive with `npm run pack`, then create the release from the merged commit with that
+   archive attached. Creating the release is what creates the `v<version>` tag.
+
+The tag is deliberately not created locally, which is why step 2 passes `--no-git-tag-version`.
+Branches here are squash-merged, so a tag made before the merge points at a branch commit that
+never reaches the default branch, and the release would name a commit nobody can check out from
+it. Creating the tag from the merged commit instead is what `v1.1.0` did, and its tag resolves to
+the squash commit on the default branch rather than to the branch it was written on.
 
 Step 2 rewrites the constant through [`scripts/sync-version.mjs`](scripts/sync-version.mjs),
-wired to npm's `version` lifecycle so it runs after the bump but before the commit. That
+wired to npm's `version` lifecycle so it runs as part of the bump rather than after it. That
 ordering matters: it means the number the browser reads and the number npm recorded agree in
 every commit, rather than disagreeing in the gap between two of them. The constant is
 hand-written rather than generated because the app has no build step, and
 [`test/version.test.js`](test/version.test.js) fails if the two ever drift, so a mismatch
 cannot reach the default branch.
+
+The download link in [Start here](#start-here) points at the latest release rather than at a
+version, so publishing a release is also what replaces the file a reader downloads. A fix that is
+merged but not released is not a fix any reader has.
 
 ## Disclaimer
 

@@ -36,12 +36,12 @@ const ORDERS_DIR = join(DATA_DIR, 'orders');
 // A manifest that cannot be read in full is a maintainer error: vendoring the valid subset
 // would quietly ship a catalog missing a list nobody noticed was broken.
 async function loadOrders() {
-  const { entries, errors } = parseManifest(JSON.parse(await readFile(MANIFEST, 'utf8')));
+  const { entries, paths, errors } = parseManifest(JSON.parse(await readFile(MANIFEST, 'utf8')));
   if (errors.length) {
     throw new Error(`curated-lists.json is not valid:\n  - ${errors.join('\n  - ')}`);
   }
   if (!entries.length) throw new Error('curated-lists.json defines no reading lists');
-  return entries;
+  return { entries, paths };
 }
 
 const { getJson } = createJsonFetcher();
@@ -171,7 +171,7 @@ function catalogEntry(order, payload) {
 }
 
 async function main() {
-  const orders = await loadOrders();
+  const { entries: orders, paths } = await loadOrders();
   const only = parseOnly(process.argv.slice(2));
   // The catalog carries editorial metadata — descriptions, keywords, beginner, the cover
   // issue — that changes without any reading order changing. Rebuilding it from the pinned
@@ -354,7 +354,10 @@ async function main() {
   if (checked.dropped) throw new Error(`${checked.dropped} catalog entries are not valid; catalog.json not written`);
   await writeFile(
     join(DATA_DIR, 'catalog.json'),
-    JSON.stringify({ generatedAt: new Date().toISOString(), lists: catalog }, null, 2) + '\n',
+    // Paths are copied through rather than derived, because a path is editorial: which stories
+    // connect, and in what order, is not something the issue data can be asked. They are written
+    // after the lists so a hand-read diff of a catalog rebuild shows them together at the end.
+    JSON.stringify({ generatedAt: new Date().toISOString(), lists: catalog, paths }, null, 2) + '\n',
     'utf8',
   );
 

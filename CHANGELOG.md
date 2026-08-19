@@ -14,6 +14,245 @@ quote in a bug report.
 
 ## Unreleased
 
+### The readme now shows the catalog instead of only describing it
+
+In plain English: the project page opens with a picture of the screen you pick a reading order
+from, so you can see what the app looks like before deciding whether to download it. Nothing about
+the app itself changed.
+
+The shot is the catalog with no reading lists imported yet, which is what a new arrival actually
+sees. Cover art is switched off before the page is opened, so the file cannot contain any comic
+artwork; the catalog draws no covers either way, so the picture matches the app as it ships.
+
+### The catalog shelf now says which half of it you are looking at
+
+In plain English: the list of reading orders is now split under two headings, "The shared story" and
+"Character spotlights", each with a sentence saying what it is for. Nothing moved. The list was
+already in that order, because the orders that follow one character carry no start year and so
+always sorted to the bottom, but nothing on the page ever said so and it read as an accident. Now it
+reads as a choice: read the shared story in order, or pick a character you already like and start
+there. Nothing you have saved is affected.
+
+A heading with nothing under it is dropped, so filtering or searching the shelf down to one kind of
+reading still names the kind you are seeing rather than leaving a bare heading behind.
+
+For the same reason, the shared story's heading only mentions the "Start here" badge when the order
+carrying that badge is one of the ones on screen. Filter the shelf down to events, or search it, and
+the heading still says what the half is for but stops pointing at a badge you would not be able to
+find.
+
+The division deliberately keeps every stop of the numbered reading path on one side. The item that
+asked for this change said the path ran through character runs; measuring the shipped catalog showed
+it does not, and that the one creator run on the shelf is stop 8 of the path. Splitting it off as the
+original wording implied would have cut the route in half. A test now holds the path inside one
+section against the real catalog, so the mistake cannot be reintroduced quietly.
+
+### Fill in a new issue's details from the Marvel Fandom wiki
+
+In plain English: adding an issue by hand no longer means typing a title and getting nothing else.
+There is a Look up details button beside the title box, and pressing it offers you the release date,
+the page count and the creator credits for that comic, ready to be saved with it. It is there
+because the comics database this app reads stopped in October 2025, so for anything published since
+then the app has never had any of that.
+
+Nothing happens until you press the button, and nothing is saved until you press Add issue. The
+button sends the words in the title box to the Marvel Fandom wiki, a community site Marvel does not
+run, and it sends nothing else: not your lists, not your progress, not your notes. It fetches no
+pictures. The wiki's search is loose, so you are shown the matches and you pick the one you meant
+rather than the app guessing.
+
+Picking a match also fills in Marvel's own number for that comic, and that is worth more than it
+sounds. Until now an issue you added by hand had no link at all to its official page on marvel.com,
+because the tracker had no number to build one from. Now it does, and Read opens that page. To be
+clear about what this is not: it does not open the comic in Marvel Unlimited. That still needs the
+reader address you paste, which is a separate thing and unchanged.
+
+If the details you looked up would land on a comic you already track, the tracker declines to add a
+second copy of it and tells you which of your lists has it. Nothing you have already saved is
+overwritten.
+
+### Read the Marvel Unlimited book id off an address you paste
+
+In plain English: you can now open a brand new issue in Marvel Unlimited from this tracker. Before,
+you could add a 2026 issue by hand and tick it off, but the Read button could not take you to it,
+because the source this app gets its issue data from stopped in October 2025 and there is nothing
+newer in it to look up.
+
+The way around it turns out to be sitting on your own screen. When you are reading something in
+Marvel Unlimited, the web address in your browser ends in a number, and that number is how the
+reader identifies the book. Paste that address into the Add an issue by hand form and the tracker
+keeps the number, so Read takes you straight there afterwards. It works for anything Marvel
+Unlimited has, including issues far newer than this app's own data.
+
+A marvel.com address still works and still does what it always did, but for a recent issue it
+cannot produce a working Read link, so the form now says which address to prefer and the
+confirmation tells you which of the two you gave it. One thing has not changed: the availability
+badge on a hand-added issue still reads as unknown, because that is a different piece of
+information and the address you paste does not carry it.
+
+Nothing you have already saved is affected, and nothing was uploaded anywhere to make this work.
+The number comes from a page you were already looking at.
+
+One detail changed after a review. An entry added from a Marvel Unlimited address no longer also
+offers an Info link, because that link announced itself as going to marvel.com and went to the
+reader instead, which is the same place the Read button already goes. An entry added from a
+marvel.com address still offers it, since that one really is an information page. The address box
+now also points a screen reader at the paragraph explaining which of the two addresses gets you a
+working Read button.
+
+### Say which order to read after this one
+
+In plain English: the catalog shows nineteen curated stories, and until now nothing on it
+said that any one of them was read after any other. Someone who was shown the app and wanted to
+start reading Marvel comics could see every option and still not know which to open first. Ten of
+those stories are one continuous Avengers run stretching from 1963 to 2018, and the shelf was already
+putting them in the right order without ever saying it was.
+
+Each of those ten rows now carries a line saying which reading path it belongs to, where it sits on
+it, and which order comes next. The first one says **Start here**. Every row that has a start year
+now shows it, which the shelf was already sorting by but never printed.
+
+Nothing you have saved is affected, and nothing you have already imported changes. This adds a line
+to the catalog and nothing else.
+
+The ten stops share no issues at all, which is checked by a test rather than asserted here: 99 pairs
+of stories across 821 issues, nothing counted twice. The path says where it came from, on every row
+that shows it, for the same reason every order in the catalog does.
+
+### Stop collapsing the sidebar from blanking every pill in the catalog
+
+In plain English: collapsing the sidebar to its narrow strip is supposed to shrink the two little
+status labels at the bottom of it into dots. It was shrinking every small label on the page instead,
+including the ones in the catalog, so folding the sidebar away made a piece of text on each reading
+order vanish while still taking up its space. Only the sidebar's own labels shrink now.
+
+This has been wrong since the collapsed sidebar shipped. It was found while checking that the new
+**Start here** badge survived being collapsed, which it did not.
+
+## 1.1.1
+
+A correction to the download, and the reason it needed one is worth stating: the fault below was
+found by starting the packaged archive rather than by reading the code, so it could not have been
+caught before 1.1.0 existed to be started. This is a PATCH because it changes what the tracker says
+when it cannot start, and nothing about what it stores or how it looks. Upgrading needs no backup,
+and there is nothing to migrate.
+
+The 1.1.0 download carries the old wording. Replacing the download is the whole point of this
+release.
+
+### Stop the startup failure messages naming a tool the download does not carry
+
+In plain English: if you start the tracker while it is already running, it tells you so. It used to
+finish by suggesting you start it on a different address instead, which was bad advice for two
+reasons. That suggestion involved a developer tool that is not inside the download at all, so most
+people could not have followed it. And anyone who did would have opened an app with nothing in it,
+because your reading is saved against the address you read it at, and a different address is a
+different shelf. It now says to open the tracker you already have running, tells you what to do if
+something else is using the address, and says plainly why moving is not the way out.
+
+Nothing you have saved is affected, and this text only ever appears when the tracker cannot start.
+
+Found by starting the packaged download against an occupied address rather than by reading the
+code. The launcher handled it correctly; the message underneath it did not.
+
+The advice was written when cloning the repository was the only way to run this, and it was sound
+then. The packaged archive changed who reads it: it carries a runtime, the app and the launcher and
+no `package.json`, verified by extracting the built archive, 100 files with no `package.json` among
+them. Advice naming a tool absent from the download cannot be followed by the reader it is shown to.
+
+The second half matters more. Reading progress is stored by the browser against the exact origin it
+was saved at, so a reader following the old advice to 8788 would have found an empty app while
+their reading sat at 8787. `test/launcher.test.js:77` already forbids the launcher from setting
+`MRT_PORT` for precisely this reason. The rule was enforced on the launcher and not on the message
+printed beside it.
+
+Both messages moved out of the error branch into `server.mjs:214-235` and are returned as lines
+rather than printed, for the same reason `browserCommand` is a table: a branch that runs only when
+a socket is taken is a branch nobody reads. `test/startup-messages.test.js` checks the words without
+binding a port. Five of its seven assertions were run against the shipped strings and fail on them.
+The other two are regression guards, and one of those caught the replacement copy at 88 characters,
+which is wider than the console window the launcher opens.
+
+### Correct the release procedure, which described a tag this project does not create that way
+
+In plain English: nothing here affects the app. This is a note for whoever cuts the next release.
+
+The written procedure said to let npm create the version tag and then push it. That is not how the
+only release so far was actually made, and following it would leave the tag naming a commit that no
+longer exists on the default branch, because branches here are squashed when they merge. Anyone
+clicking through from the release would land on a commit they cannot check out.
+
+The procedure now says to bump the version without a tag, merge, and then create the release from
+the merged commit, which is what makes the tag. Checked against the tag that exists: `v1.1.0`
+resolves to the squash commit on the default branch, not to the branch commit it was written on.
+
+A step was also added for building and attaching the archive, and a sentence recording why it is not
+optional. The download link points at the latest release rather than at a version, so the merge is
+not what reaches a reader. The release is.
+
+## 1.1.0
+
+The first release with a download. Everything below had accumulated in the tree since 1.0.0 without
+a number against it, which made the version the app reports useless in a bug report: it said 1.0.0
+while running something considerably later. This entry gives that work a number, and it is a MINOR
+because it adds features and leaves stored data readable by the previous build. Nothing here changes
+how reading progress is saved, so upgrading needs no backup and loses nothing.
+
+### Offer the tracker as one download that needs nothing installed
+
+In plain English: on Windows there is now a single download that contains everything, so there is
+nothing to install first. Unzip it, double-click the start file inside, and the tracker opens. The
+old way still works if you prefer it, and both open the tracker at the same address, so your saved
+reading progress is the same either way and nothing you have already saved is affected.
+
+Getting the tracker running used to take three separate steps before you saw anything: install a
+runtime from one website, find the project on another, then work out which item in a menu written
+for programmers gives you the code. Each one of those is a place someone stops. The download removes
+all three.
+
+- **Added** `npm run pack`, which builds the Windows archive. It fetches the official Windows x64
+  runtime from nodejs.org and checks it against the published checksum rather than copying the one
+  on the machine doing the build. That distinction matters here: this project is developed on an
+  ARM64 machine, so an archive built from the local binary would run for the author and fail for
+  nearly everyone else, which is the one fault the author cannot reproduce.
+- **Added** a release asset, so a single link replaces the download instructions.
+- **Changed** the Windows start file to prefer a runtime sitting beside it and to fall back to the
+  one on your machine, so the same file works whether you took the download or the source.
+- **Changed** the message shown when no runtime is found, which now points at the download first,
+  because someone who has just proved they have no runtime is the last person to send to install
+  one.
+- **Added** the runtime's own licence to the archive, whole. Its grant is MIT, but the file that
+  travels with the distribution names 47 bundled components, so a one-word summary would
+  under-attribute what is inside it.
+- **Added** `test/packaging.test.js`, which holds the packaging contract: the runtime is fetched
+  rather than copied, the bundled version is one the test suite actually runs on, the archive
+  carries the app and the licences and none of the project's working papers, the start file prefers
+  what shipped with it, the build output cannot be committed by accident, and nothing about any of
+  it moves the address the tracker opens on.
+- **Changed** the README to lead with the download, and to explain the first-run warning Windows
+  shows for anything that arrived from the internet.
+
+### Put a way out of the reading order grid where you actually run out of it
+
+In plain English: the front page shows twelve reading orders and there are nineteen. It said so, and
+it had a "See all" link, but that link was up beside the heading, so by the time you had scrolled
+past twelve cards it was a long way above you and off the screen. All you could see at the bottom
+was a sentence telling you there were more, with nothing to click. There is now a button right under
+the last card. Nothing you have saved is affected.
+
+Measured in Edge at 1280x900: the grid ends 1,392 pixels below the only control, which is more than
+one and a half screens. Scrolled to the end of the grid, the button was off screen and the sentence
+was not something you could press. The limit of twelve is deliberate and stays, because it keeps the
+page one you can take in at a glance however many orders get added, and the catalog page already
+shows all of them with filters and a search box. What was missing was the door, not the room.
+
+- **Added** a control below the grid carrying the same action as the one in the header.
+- **Changed** the wording in both places to come from one function rather than being written twice,
+  because they previously decided "is there more" from two different expressions that agreed only by
+  coincidence.
+- **Added** `test/home-overflow.test.js`, including a check that there is something operable below
+  the grid and not only above it.
+
 ### Record two ways a routine command can quietly destroy uncommitted work
 
 In plain English: nothing about the app changes, and nothing you have saved is affected. This adds

@@ -33,10 +33,10 @@ Three things follow from ranking this way, and all three are deliberate:
   deleted, so the argument survives and does not have to be had again from scratch.
 
 Each item also records a constraint check against the standing product constraints, which are the
-things this project will not trade away. Measured on 2026-08-17: of the 124 items with a detail
-block, 120 carry that check, and the only four without one are the four that were dropped. They were
-dropped for different reasons, one of them for breaching a constraint before it was ever scored,
-and none of them is missing a check that somebody forgot to run. [The contributing
+things this project will not trade away. Measured on 2026-08-19: of the 136 items with a detail
+block, 131 carry that check, and the only five without one are the five that were dropped. They were
+dropped for different reasons, one for breaching a constraint before it was ever scored, and none of
+them is missing a check that somebody forgot to run. [The contributing
 guide](CONTRIBUTING.md) lists the constraints in the form a contributor needs.
 
 ## What ships, and when

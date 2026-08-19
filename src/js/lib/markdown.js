@@ -20,6 +20,40 @@ export function issueIdFromUrl(url) {
   return m ? Number(m[1]) : null;
 }
 
+// The digital book id read off the Marvel Unlimited reader's own address bar.
+//
+// This is the only remaining route to a working reader link for a recent issue. The metadata
+// service that supplied digitalId stopped at 2025-10-29, and no other catalogue reachable from a
+// browser carries the field at all: it was checked against Comic Vine, Metron, the Grand Comics
+// Database, Wikidata and the Marvel Fandom wiki on 2026-08-18 and is absent from every one. So a
+// subscriber pasting the address of a book they already have open is not a convenience, it is the
+// whole supply.
+export function digitalIdFromUrl(url) {
+  if (typeof url !== 'string') return null;
+  let u;
+  try {
+    u = new URL(url.trim());
+  } catch {
+    return null;
+  }
+  // Its sibling below and the private copy in the reader module both refuse anything outside http
+  // and https, and this function had no such check. Probed with crafted addresses, ftp, file,
+  // javascript and data URLs naming read.marvel.com every one yielded a book id here while being
+  // rejected there. Nothing could reach it, because the caller gates on the sibling first, but two
+  // functions answering the same question differently is a contract waiting to be relied on.
+  if (u.protocol !== 'https:' && u.protocol !== 'http:') return null;
+  if (u.hostname.toLowerCase() !== 'read.marvel.com') return null;
+  const m = /^#\/book\/(\d+)/.exec(u.hash);
+  if (!m) return null;
+  const n = Number(m[1]);
+  // Rejects 0 and anything past the safe integer range. Both would build a reader URL that loads
+  // nothing, and a dead Read button is worse than a missing one because it looks like it worked.
+  // Twelve digits is that same rule: it is the ceiling the launcher in src/open.js enforces before
+  // it will build a reader address, so a longer id accepted here would store and then be refused
+  // there, which is precisely the dead button this comment rules out.
+  return Number.isSafeInteger(n) && n > 0 && String(n).length <= 12 ? n : null;
+}
+
 export function isSafeMarvelUrl(url) {
   if (typeof url !== 'string') return false;
   let u;

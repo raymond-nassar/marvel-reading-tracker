@@ -2,7 +2,7 @@
 //
 // The backlog and the UX study rest on browser verification that was real but unrepeatable: the
 // scripts lived outside the tree, so a clean clone could rerun none of it. This file is that
-// evidence, committed. It drives installed Edge through the six journeys the app is for, and it
+// evidence, committed. It drives installed Edge through the eight journeys the app is for, and it
 // is the only place where a claim about what the interface does in a browser can be checked
 // rather than argued.
 //
@@ -159,28 +159,61 @@ const ORDER = {
   ],
 };
 
+// A shelf entry, with only the fields a row reads. Written as a factory because the path needs
+// five of them and repeating twenty fields five times would bury the two that differ per stop.
+const shelfEntry = (id, name, extra = {}) => ({
+  id,
+  file: ORDER_FILE,
+  name,
+  description: `A fixture order used only by the browser check.`,
+  type: 'event',
+  depth: 'complete',
+  count: 3,
+  collections: 0,
+  characters: [],
+  keywords: [],
+  group: null,
+  groupName: null,
+  variant: null,
+  beginner: false,
+  cover: null,
+  source: null,
+  sourceOrigin: 'Fixture',
+  sourceLicense: null,
+  updatedAt: '2026-01-01T00:00:00.000Z',
+  timeline: null,
+  ...extra,
+});
+
+// Five entries make four stories, three of them on a path and one off it. The third stop is a
+// story read two ways, which is the case the shelf and the path disagree about most easily: the
+// path step names one reading, the shelf draws one row for the story, and the stop has to be
+// named the way the row is or it points at something not on screen.
+//
+// The off-path entry is the one character run, which makes it the only row on the spotlight side of
+// the shelf. That is deliberate: a fixture in which every entry lands in one section would paint a
+// single heading and let a broken division pass.
 const CATALOG = {
   lists: [
+    shelfEntry('browser-check', 'Browser Check Order', { timeline: 1963 }),
+    shelfEntry('browser-check-two', 'Second Stop', { timeline: 2004 }),
+    shelfEntry('browser-check-three-main', 'Third Stop: The Long Way', {
+      group: 'bc-third', groupName: 'Third Stop', variant: 'Complete', timeline: 2006,
+    }),
+    shelfEntry('browser-check-three-short', 'Third Stop: The Short Way', {
+      group: 'bc-third', groupName: 'Third Stop', variant: 'Essential', depth: 'essential', timeline: 2006,
+    }),
+    shelfEntry('browser-check-off', 'Off The Path', { type: 'character-run' }),
+  ],
+  paths: [
     {
-      id: 'browser-check',
-      file: ORDER_FILE,
-      name: 'Browser Check Order',
-      description: 'A fixture order used only by the browser check.',
-      type: 'event',
-      depth: 'complete',
-      count: 3,
-      collections: 0,
-      characters: [],
-      keywords: [],
-      group: null,
-      groupName: null,
-      variant: null,
-      beginner: false,
-      cover: null,
-      source: null,
+      id: 'bc-path',
+      name: 'The Fixture Path',
+      description: 'A fixture path used only by the browser check.',
       sourceOrigin: 'Fixture',
-      sourceLicense: null,
-      updatedAt: '2026-01-01T00:00:00.000Z',
+      // The last step names the *short* reading on purpose, so a row that echoed the step rather
+      // than resolving it to the story would read "Third Stop: The Short Way" and be caught.
+      steps: ['browser-check', 'browser-check-two', 'browser-check-three-short'],
     },
   ],
 };
@@ -196,6 +229,56 @@ const EXPECTED_TITLES = ORDER.items.map((i) => i.title);
 // are injected into the page rather than edited into a source file, so a killed run cannot leave
 // the tree modified, which is a failure mode a file-editing harness has and this one cannot.
 const MUTATIONS = [
+  {
+    id: 'rail-bleed',
+    breaks: 'rail-collapse',
+    why: 'the collapsed-sidebar rule is unscoped again, exactly as it shipped, so it reaches every pill in the shelf',
+    script: () => {
+      addEventListener('load', () => {
+        // Through the CSSOM, not as an injected <style>. The app sends `style-src 'self'`, which
+        // drops an injected stylesheet in silence, and the first shape of this mutation was
+        // dropped that way: --prove reported it breaking nothing, which reads as a scenario that
+        // cannot fail rather than as a mutation that never ran.
+        const sheet = [...document.styleSheets].find((s) => s.href?.endsWith('styles.css'));
+        sheet.insertRule('.railed .pill { width: 10px; height: 10px; padding: 0; color: transparent; }', sheet.cssRules.length);
+      });
+    },
+  },
+  {
+    id: 'rail-unscoped',
+    breaks: 'rail-collapse',
+    why: 'the rule is scoped away from the rail as well, so the sidebar keeps a full-width pill in a lane too narrow for it',
+    script: () => {
+      addEventListener('load', () => {
+        const sheet = [...document.styleSheets].find((s) => s.href?.endsWith('styles.css'));
+        sheet.insertRule('.railed .rail-foot .pill { width: auto; height: auto; padding: .2rem .6rem; }', sheet.cssRules.length);
+      });
+    },
+  },
+  {
+    id: 'path-strip',
+    breaks: 'reading-path',
+    why: 'the catalog arrives with no paths, so a shelf that still shows a reading order is showing one it was not given',
+    script: () => {
+      window.__mrtMutation = 'path-strip';
+    },
+  },
+  {
+    id: 'group-strip',
+    breaks: 'reading-path',
+    why: 'a story read two ways loses its shared name, so a stop naming the story rather than one reading of it cannot be resolving anything',
+    script: () => {
+      window.__mrtMutation = 'group-strip';
+    },
+  },
+  {
+    id: 'type-flatten',
+    breaks: 'shelf-sections',
+    why: 'every order arrives typed as one kind, so a shelf that still draws two headings is dividing on something other than the rule it claims to divide on',
+    script: () => {
+      window.__mrtMutation = 'type-flatten';
+    },
+  },
   {
     id: 'import-fail',
     breaks: 'import',
@@ -303,6 +386,36 @@ const MUTATIONS = [
     },
   },
   {
+    id: 'keep-reader-url',
+    breaks: 'manual-book-id',
+    why: 'the pasted reader address is written back as the issue url, which is the mislabelled Info link, an entry offering one destination twice under two names',
+    script: () => {
+      const real = Storage.prototype.setItem;
+      Storage.prototype.setItem = function setItem(key, value) {
+        if (key !== 'mrt.state.v2') return real.call(this, key, value);
+        try {
+          const parsed = JSON.parse(value);
+          for (const issue of Object.values(parsed?.issues ?? {})) {
+            if (issue?.digitalId && !issue.url) issue.url = `https://read.marvel.com/#/book/${issue.digitalId}`;
+          }
+          return real.call(this, key, JSON.stringify(parsed));
+        } catch {
+          return real.call(this, key, value);
+        }
+      };
+    },
+  },
+  {
+    id: 'unlink-hint',
+    breaks: 'manual-book-id',
+    why: 'the address field stops naming its explanation, so the one line saying which of the two addresses yields a working Read button is reachable only by reading past the field',
+    script: () => {
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#manual-url')?.removeAttribute('aria-describedby');
+      });
+    },
+  },
+  {
     id: 'open-async',
     breaks: 'handoff',
     why: 'the tab is opened after an await, which is the shape constraint 7 says gets popup blocked',
@@ -312,6 +425,38 @@ const MUTATIONS = [
         Promise.resolve().then(() => real(...args));
         return null;
       };
+    },
+  },
+  {
+    id: 'wiki-collide',
+    breaks: 'wiki-lookup',
+    why: 'a second hand entry for an issue already held rewrites it, which is the merge the collision guard exists to refuse',
+    script: () => {
+      // The guard lives in a module the page cannot reach, and hooking the write cannot reproduce
+      // its absence either: a refused add performs no write, so there is nothing to intercept. The
+      // first attempt did exactly that and turned nothing red. What is reproduced instead is the
+      // hazard's signature, the state carrying the second lookup's facts at the moment the reader
+      // is told nothing was added. Keyed on the flag only the wiki scenario sets.
+      document.addEventListener('DOMContentLoaded', () => {
+        const report = document.querySelector('#manual-report');
+        if (!report) return;
+        const collide = () => {
+          if (window.__mrtWikiAlt !== true) return;
+          if (!/nothing was added/.test(report.textContent ?? '')) return;
+          try {
+            const parsed = JSON.parse(localStorage.getItem('mrt.state.v2') ?? 'null');
+            const held = parsed?.issues?.['129648'];
+            if (!held) return;
+            held.onSale = '2026-07-01';
+            held.pageCount = 99;
+            held.creators = [{ name: 'Replacement Writer', role: 'writer' }];
+            localStorage.setItem('mrt.state.v2', JSON.stringify(parsed));
+          } catch {
+            // A malformed payload is not this mutation's business to repair.
+          }
+        };
+        new MutationObserver(collide).observe(report, { childList: true, characterData: true, subtree: true });
+      });
     },
   },
   {
@@ -348,6 +493,154 @@ const MUTATIONS = [
 // they run in cannot matter. A scenario that passed only because the one before it left the right
 // state behind is not evidence either.
 const SCENARIOS = [
+  {
+    id: 'shelf-sections',
+    title: 'the shelf says which half of it a reader is looking at',
+    async run(page, t) {
+      await open(page, '/');
+      await click(page, '[data-view="catalog"]');
+      await page.waitForSelector('#catalog-results .result', { timeout: 15000 });
+
+      // Read headings and rows in one pass, in document order, so "which heading is this row under"
+      // is answered by the page as painted rather than by re-deriving the rule that painted it.
+      const readShelf = () => page.$$eval('#catalog-results > *', (els) => els.map((e) => (
+        e.classList.contains('shelf-section')
+          ? {
+            kind: 'head',
+            level: e.querySelector('h1, h2, h3, h4')?.tagName ?? null,
+            heading: e.querySelector('.shelf-section-title')?.textContent.trim() ?? '',
+            blurb: e.querySelector('.shelf-section-blurb')?.textContent.trim() ?? '',
+          }
+          : {
+            kind: 'row',
+            title: e.querySelector('.result-title')?.textContent.trim() ?? '',
+            step: e.querySelector('.path-step')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
+          }
+      )));
+
+      const shelf = await readShelf();
+      const heads = shelf.filter((x) => x.kind === 'head');
+
+      t.check('the shelf is divided in two', heads.length === 2, heads.map((h) => h.heading).join(' / '));
+      t.check('the shared story is named first', heads[0]?.heading === 'The shared story', JSON.stringify(heads[0]?.heading));
+      t.check('and the character spotlights second', heads[1]?.heading === 'Character spotlights', JSON.stringify(heads[1]?.heading));
+      t.check('each heading says what its half is for', heads.every((h) => h.blurb.length > 40), JSON.stringify(heads.map((h) => h.blurb.length)));
+
+      // The view titles itself with an h1 and every row titles itself with an h3, so h2 is the level
+      // that makes the shelf navigable by heading instead of a skip a screen reader has to guess at.
+      t.check('the headings are real headings at the level between the two', heads.every((h) => h.level === 'H2'), JSON.stringify(heads.map((h) => h.level)));
+
+      // The acceptance criterion, read off the page rather than off the model. A route whose steps
+      // straddle a heading is a route the heading is telling the reader not to follow.
+      let head = null;
+      const under = new Map();
+      for (const x of shelf) {
+        if (x.kind === 'head') head = x.heading;
+        else if (x.step) under.set(x.title, head);
+      }
+      t.check('every stop of the path is on the shelf', under.size === 3, JSON.stringify([...under]));
+      t.check('and every one of them sits under the shared story', [...under.values()].every((h) => h === 'The shared story'), JSON.stringify([...under]));
+
+      // Named rather than dereferenced, because findIndex returns -1 when the heading is absent and
+      // slice(-1) is the last row rather than no rows. That is the type-flatten state exactly, so
+      // the assertion below read the one row it happened to land on and passed while the section it
+      // names was not drawn at all.
+      const spotlightAt = shelf.findIndex((x) => x.heading === 'Character spotlights');
+      const spotlight = spotlightAt < 0 ? [] : shelf.slice(spotlightAt).filter((x) => x.kind === 'row');
+      t.check('the character reading is the one under the spotlights', spotlight.map((r) => r.title).join('/') === 'Off The Path', spotlight.map((r) => r.title).join('/'));
+
+      // A heading over nothing tells a reader a kind of reading exists and then withholds it, so a
+      // search that reaches only one half has to drop the other rather than head an empty list.
+      await page.type('#catalog-q', 'Off The Path');
+      await page.waitForFunction(() => document.querySelectorAll('#catalog-results .result').length === 1, { timeout: 15000 });
+      const narrowed = await readShelf();
+      const narrowedHeads = narrowed.filter((x) => x.kind === 'head');
+      t.check('a search that reaches one half heads only that half', narrowedHeads.length === 1, narrowedHeads.map((h) => h.heading).join(' / '));
+      t.check('and still names the kind of reading it is showing', narrowedHeads[0]?.heading === 'Character spotlights', JSON.stringify(narrowedHeads[0]?.heading));
+    },
+  },
+  {
+    id: 'reading-path',
+    title: 'the shelf says where a story sits in a reading order',
+    async run(page, t) {
+      await open(page, '/');
+      await click(page, '[data-view="catalog"]');
+      await page.waitForSelector('#catalog-results .result', { timeout: 15000 });
+
+      const rows = await page.$$eval('#catalog-results .result', (els) => els.map((e) => ({
+        title: e.querySelector('.result-title')?.textContent.trim() ?? '',
+        meta: e.querySelector('.result-meta')?.textContent.trim() ?? '',
+        step: e.querySelector('.path-step')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
+      })));
+
+      const row = (name) => rows.find((r) => r.title === name);
+      const first = row('Browser Check Order');
+      const middle = row('Second Stop');
+      const last = row('Third Stop');
+      const off = row('Off The Path');
+
+      t.check('the shelf draws one row per story, not one per reading', rows.length === 4, `${rows.length} rows: ${rows.map((r) => r.title).join(' / ')}`);
+      t.check('a story read two ways is on the shelf under its own name', Boolean(last), rows.map((r) => r.title).join(' / '));
+
+      t.check('the first stop is badged so a reader can find it at a glance', first?.step?.startsWith('Start here') === true, JSON.stringify(first?.step));
+      t.check('and still says how long the path is', first?.step?.includes('Step 1 of 3') === true, JSON.stringify(first?.step));
+      t.check('and names the path it belongs to', first?.step?.includes('The Fixture Path') === true, JSON.stringify(first?.step));
+
+      t.check('a middle stop is numbered', middle?.step?.startsWith('Step 2 of 3') === true, JSON.stringify(middle?.step));
+      // Deliberately absent. The shelf is sorted by year, so the previous stop is the row above,
+      // and printing it made the longest thing on the line a copy of the line before it.
+      t.check('and does not restate the stop above it', middle?.step?.includes('Browser Check Order') === false, JSON.stringify(middle?.step));
+      // The step named the short reading; the shelf row is the story. If the app echoed the step
+      // this would read "Next: Third Stop: The Short Way" and point at a row nobody can see.
+      t.check('and names the next stop by its story, not by one reading of it', middle?.step?.includes('Next: Third Stop') === true && !middle.step.includes('Short Way'), JSON.stringify(middle?.step));
+
+      t.check('the last stop says the path ends there', last?.step?.includes('Last stop') === true, JSON.stringify(last?.step));
+      t.check('and is numbered last', last?.step?.includes('Step 3 of 3') === true, JSON.stringify(last?.step));
+      t.check('and offers no next stop to go to', last?.step?.includes('Next:') === false, JSON.stringify(last?.step));
+
+      t.check('a story on no path says nothing about one', off !== undefined && off.step === null, JSON.stringify(off?.step));
+
+      // The start year is the other half of the same question, and it is the half that reaches
+      // every row rather than only the ten on a path.
+      t.check('a dated order says when its reading starts', first?.meta?.includes('Starts 1963') === true, JSON.stringify(first?.meta));
+      t.check('and an undated one claims no year at all', off?.meta?.includes('Starts') === false, JSON.stringify(off?.meta));
+    },
+  },
+  {
+    id: 'rail-collapse',
+    title: 'collapsing the sidebar does not reach into the shelf',
+    async run(page, t) {
+      await open(page, '/');
+      await click(page, '[data-view="catalog"]');
+      await page.waitForSelector('#catalog-results .path-step .pill', { timeout: 15000 });
+
+      const read = () => page.evaluate(() => {
+        const box = (e) => {
+          if (!e) return null;
+          const r = e.getBoundingClientRect();
+          return { w: Math.round(r.width), colour: getComputedStyle(e).color };
+        };
+        return {
+          badge: box(document.querySelector('#catalog-results .path-step .pill')),
+          status: box(document.querySelector('#api-status')),
+        };
+      });
+
+      const before = await read();
+      // Set directly rather than through the toggle: what is under test is the stylesheet, and
+      // the toggle also persists a preference this check has no business writing.
+      await page.evaluate(() => document.querySelector('#shell').classList.add('railed'));
+      const after = await read();
+
+      const invisible = (c) => /rgba\(\d+, \d+, \d+, 0\)/.test(c ?? '');
+      t.check('the start badge is a badge to begin with', (before.badge?.w ?? 0) > 20, JSON.stringify(before.badge));
+      t.check('and is still that size once the sidebar is collapsed', after.badge?.w === before.badge?.w, `${before.badge?.w} then ${after.badge?.w}`);
+      t.check('and its text is still painted', !invisible(after.badge?.colour), JSON.stringify(after.badge?.colour));
+      // The other half of the same claim. A fix that scoped the rule away entirely would pass the
+      // three above and quietly cost the rail the dot it is supposed to collapse to.
+      t.check('while the rail status pill still collapses to a dot', (after.status?.w ?? 99) <= 12, JSON.stringify(after.status));
+    },
+  },
   {
     id: 'import',
     title: 'a curated order can be imported from the catalog',
@@ -452,7 +745,7 @@ const SCENARIOS = [
       //
       // checkVisibility() with no argument answers a narrower question than it looks like it does:
       // it defaults every option off and so returns true for both `visibility: hidden` and
-      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:649` hides the row
+      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:666` hides the row
       // actions with exactly `opacity: 0`, so it is this stylesheet's established way of putting a
       // control out of reach, and the defaults are blind to it. Measured in the same Edge this
       // drives: with the two buttons faded that way both rows passed while nothing sat under the
@@ -609,6 +902,202 @@ const SCENARIOS = [
       t.check('the fetch button comes back once the run is stopped', after.fetchHidden === false, JSON.stringify(after));
     },
   },
+  {
+    id: 'wiki-lookup',
+    title: 'a hand entry can take facts and an issue id from the wiki, and refuses one it already holds',
+    async run(page, t) {
+      // Set before the first navigation, so the stub is in place before any code reads it.
+      await page.evaluateOnNewDocument(() => { window.__mrtWiki = 'ok'; });
+      await open(page, '/');
+      await click(page, '[data-view="add"][data-open="sec-manual"]');
+      await page.waitForSelector('#btn-manual-lookup', { visible: true, timeout: 15000 });
+
+      await page.evaluate(() => { document.querySelector('#manual-title').value = 'Fixture Vol 7 26'; });
+      await click(page, '#btn-manual-lookup');
+      await page.waitForFunction(
+        () => document.querySelectorAll('#manual-candidates .result').length > 0,
+        { timeout: 15000 },
+      );
+
+      const offered = await page.evaluate(() => Array.from(
+        document.querySelectorAll('#manual-candidates .result'),
+        (row) => ({
+          title: row.querySelector('.result-title')?.textContent ?? '',
+          meta: row.querySelector('.result-meta')?.textContent ?? '',
+        }),
+      ));
+      // The series page is in the search results and must not be in the chooser. The search is
+      // fuzzy enough to return one for almost any issue query, and a series page carries no
+      // release date, so a chooser that offered it would offer a row that fills nothing.
+      t.check('the chooser drops the series page and keeps the issue',
+        offered.length === 1 && offered[0].title === 'Fixture Vol 7 26', JSON.stringify(offered));
+      t.check('and shows the facts it would fill in',
+        /2026-03-04/.test(offered[0]?.meta ?? '') && /32 pages/.test(offered[0]?.meta ?? ''), JSON.stringify(offered));
+      // The allowlist is the whole of the licence position, so it is checked where a reader would
+      // see it break rather than only in a unit test.
+      t.check('and no prose from the page reaches the form',
+        !/must never reach/i.test(JSON.stringify(offered)), JSON.stringify(offered));
+
+      await click(page, '#manual-candidates .result .btn');
+      await page.waitForFunction(
+        () => document.querySelector('#manual-title')?.value === 'Fixture Vol 7 26',
+        { timeout: 15000 },
+      );
+
+      await click(page, '#form-manual button[type="submit"]');
+      await page.waitForFunction(
+        () => (document.querySelector('#manual-report')?.textContent ?? '').includes('Added'),
+        { timeout: 15000 },
+      );
+
+      const stored = await readState(page);
+      const kept = stored?.issues?.['129648'] ?? null;
+      t.check("the entry is stored under Marvel's own issue id", !!kept, JSON.stringify(Object.keys(stored?.issues ?? {})));
+      t.check('carrying the release date, the page count and the credits',
+        kept?.onSale === '2026-03-04' && kept?.pageCount === 32 && (kept?.creators ?? []).length === 2,
+        JSON.stringify(kept));
+
+      // The point of taking the id at all. A hand entry on a synthetic negative id has no link to
+      // the comic's own page, because the launcher refuses to build one for an id Marvel does not
+      // use. This is that absence being filled, and it is checked through the same helper the
+      // Read button uses rather than by matching a string this scenario made up.
+      const link = await page.evaluate(async () => {
+        const mod = await import('/js/reader.js');
+        const state = JSON.parse(localStorage.getItem('mrt.state.v2'));
+        return mod.detailUrl(state.issues['129648']);
+      });
+      t.check('so the launcher can build the official page for it',
+        link === 'https://www.marvel.com/comics/issue/129648/', JSON.stringify(link));
+
+      // Same id, second time. addIssuesToList merges into state.issues before it decides whether
+      // the list already held the id, so an unguarded collision would rewrite the entry above
+      // while reporting that nothing was added.
+      await page.evaluate(() => {
+        window.__mrtWikiAlt = true;
+        document.querySelector('#manual-title').value = 'Fixture Vol 7 26 again';
+        document.querySelector('#manual-report').replaceChildren();
+      });
+      await click(page, '#btn-manual-lookup');
+      await page.waitForFunction(
+        () => document.querySelectorAll('#manual-candidates .result').length > 0,
+        { timeout: 15000 },
+      );
+      await click(page, '#manual-candidates .result .btn');
+      await click(page, '#form-manual button[type="submit"]');
+      await page.waitForFunction(
+        () => (document.querySelector('#manual-report')?.textContent ?? '').length > 0,
+        { timeout: 15000 },
+      );
+
+      const after2 = await page.evaluate(() => document.querySelector('#manual-report')?.textContent ?? '');
+      t.check('a second entry for an issue already held is refused, and says so',
+        /nothing was added and nothing was changed/.test(after2), JSON.stringify(after2));
+
+      const end = await readState(page);
+      // The second answer carries a different date, a different page count and a different writer
+      // for the same id. Without the guard the merge lands before the list membership check, so
+      // these three would already have been replaced by the time the reader was told that nothing
+      // was added.
+      t.check('and the entry it would have overwritten is untouched',
+        end?.issues?.['129648']?.onSale === '2026-03-04'
+        && end?.issues?.['129648']?.pageCount === 32
+        && (end?.issues?.['129648']?.creators ?? []).some((c) => c.name === 'Fixture Writer')
+        && Object.keys(end?.issues ?? {}).length === Object.keys(stored?.issues ?? {}).length,
+        JSON.stringify(end?.issues?.['129648']));
+
+      // The same collision reached by the other door. A guard keyed on the wiki's id does not close
+      // this one, because a pasted address outranks that id while the accepted match's facts are
+      // written regardless, so the facts land on an issue the guard never examined. Measured on the
+      // unguarded build: seven fields of a held issue replaced while the call reported added=0 and
+      // skipped=1, so the reader was told nothing was added at the moment it stopped being true.
+      const beforeCross = JSON.stringify(end?.issues?.['129648'] ?? null);
+      await page.evaluate(() => {
+        window.__mrtWikiId = 777001;
+        document.querySelector('#manual-title').value = 'Fixture Vol 7 26 elsewhere';
+        document.querySelector('#manual-url').value = '';
+        document.querySelector('#manual-report').replaceChildren();
+      });
+      await click(page, '#btn-manual-lookup');
+      await page.waitForFunction(
+        () => document.querySelectorAll('#manual-candidates .result').length > 0,
+        { timeout: 15000 },
+      );
+      await click(page, '#manual-candidates .result .btn');
+      // Filled after the match is accepted, which is the whole of why this is reachable: what
+      // withdraws an accepted match is the title box changing, so the address box can be pointed at
+      // a different comic with the first comic's facts still held and ready to be written.
+      await page.evaluate(() => {
+        document.querySelector('#manual-url').value = 'https://www.marvel.com/comics/issue/129648/';
+      });
+      await click(page, '#form-manual button[type="submit"]');
+      await page.waitForFunction(
+        () => (document.querySelector('#manual-report')?.textContent ?? '').length > 0,
+        { timeout: 15000 },
+      );
+
+      const cross = await page.evaluate(() => document.querySelector('#manual-report')?.textContent ?? '');
+      t.check('facts steered onto a held issue by a pasted address are refused as well',
+        /nothing was added and nothing was changed/.test(cross), JSON.stringify(cross));
+
+      const endCross = await readState(page);
+      t.check('and that issue is byte for byte what it was, with nothing new stored',
+        JSON.stringify(endCross?.issues?.['129648'] ?? null) === beforeCross
+        && Object.keys(endCross?.issues ?? {}).length === Object.keys(end?.issues ?? {}).length,
+        JSON.stringify(endCross?.issues?.['129648']));
+    },
+  },
+  {
+    id: 'manual-book-id',
+    title: 'a pasted reader address becomes a working Read button, and a marvel.com address says so',
+    async run(page, t) {
+      await open(page, '/');
+      await click(page, '[data-view="add"][data-open="sec-manual"]');
+      await page.evaluate(() => {
+        const d = document.querySelector('#sec-manual');
+        if (d && !d.open) d.open = true;
+      });
+      await page.waitForSelector('#manual-url', { timeout: 15000 });
+
+      // The hint is the only place that says which of the two addresses gets you a working Read
+      // button, and the field points at it, so a screen reader reaches that from the field rather
+      // than only by reading past it. This is the first aria-describedby in the page.
+      const hint = await page.evaluate(() => {
+        const input = document.querySelector('#manual-url');
+        const id = input?.getAttribute('aria-describedby') ?? null;
+        const p = id ? document.getElementById(id) : null;
+        return { id, text: (p?.textContent ?? '').replace(/\s+/g, ' ').trim() };
+      });
+      t.check('the address field names its own explanation', hint.id === 'manual-url-hint', JSON.stringify(hint.id));
+      t.check('and that explanation says where to get the address',
+        hint.text.includes('paste the address'), hint.text.slice(0, 100));
+
+      await addByHand(page, 'All-New Spider-Gwen: The Ghost-Spider (2026) #9', 'https://read.marvel.com/#/book/129648');
+      const readerSaid = await manualReport(page);
+      t.check('a reader address is reported as reaching Marvel Unlimited',
+        readerSaid.includes('Read opens it in Marvel Unlimited'), readerSaid);
+
+      const afterReader = await readState(page);
+      const byReader = Object.values(afterReader?.issues ?? {}).find((i) => i.digitalId === 129648) ?? null;
+      t.check('the book id was read off the address and saved', Boolean(byReader),
+        JSON.stringify(Object.values(afterReader?.issues ?? {}).map((i) => i.digitalId)));
+      // A reader address kept as the issue url would light up Info, which says marvel.com and
+      // would open the reader the Read button already opens. Nothing offers it, so nothing to see.
+      t.check('and the reader address was not kept as a detail page',
+        (byReader?.url ?? null) === null, JSON.stringify(byReader?.url));
+
+      await addByHand(page, 'Secret Wars (2015) #1', 'https://www.marvel.com/comics/issue/52447/secret_wars');
+      const detailSaid = await manualReport(page);
+      t.check('a marvel.com address is reported without promising the reader',
+        detailSaid.includes('Availability shows as unknown') && !detailSaid.includes('Read opens it'), detailSaid);
+
+      const afterDetail = await readState(page);
+      const byDetail = afterDetail?.issues?.['52447'] ?? null;
+      t.check('that one keeps the marvel.com address it was given',
+        String(byDetail?.url ?? '').includes('/comics/issue/52447'), JSON.stringify(byDetail?.url));
+      t.check('and carries no book id, because none was stated',
+        (byDetail?.digitalId ?? null) === null, JSON.stringify(byDetail?.digitalId));
+    },
+  },
 ];
 
 // ------------------------------------------------------------------ page helpers
@@ -657,6 +1146,31 @@ async function openFullOrder(page) {
   await page.waitForSelector('#rows .row', { timeout: 15000 });
 }
 
+// The report line is cleared before submitting rather than after, because the second hand entry
+// would otherwise read the first one's answer: waiting for the line to be non-empty is satisfied
+// the moment it is asked, and the check would pass against a form that did nothing at all.
+async function addByHand(page, title, url) {
+  await page.evaluate(() => {
+    const report = document.querySelector('#manual-report');
+    if (report) report.textContent = '';
+  });
+  await page.evaluate((t, u) => {
+    document.querySelector('#manual-title').value = t;
+    document.querySelector('#manual-url').value = u;
+  }, title, url);
+  await page.evaluate(() => document.querySelector('#form-manual').requestSubmit());
+  await page.waitForFunction(
+    () => (document.querySelector('#manual-report')?.textContent ?? '').trim().length > 0,
+    { timeout: 15000 },
+  );
+}
+
+async function manualReport(page) {
+  return page.evaluate(
+    () => (document.querySelector('#manual-report')?.textContent ?? '').replace(/\s+/g, ' ').trim(),
+  );
+}
+
 // The stub is installed with evaluateOnNewDocument rather than after load, because the catalog is
 // memoized on first read: a stub installed afterwards is a stub the app has already gone past.
 async function preparePage(page, origin, mutation) {
@@ -671,11 +1185,62 @@ async function preparePage(page, origin, mutation) {
       });
       window.fetch = (input, init) => {
         const url = typeof input === 'string' ? input : input?.url ?? '';
-        if (url.endsWith('data/catalog.json')) return Promise.resolve(json(catalog));
+        if (url.endsWith('data/catalog.json')) {
+          // Two mutations aimed at the reading path, both applied to the catalog rather than to
+          // the app, because the app resolves the path from this payload and nothing else.
+          if (window.__mrtMutation === 'path-strip') return Promise.resolve(json({ ...catalog, paths: [] }));
+          if (window.__mrtMutation === 'group-strip') {
+            return Promise.resolve(json({ ...catalog, lists: catalog.lists.map((l) => ({ ...l, groupName: null })) }));
+          }
+          // Aimed at the section rule through its input rather than at the function, which the page
+          // cannot reach. One type everywhere puts every story on one side, so the empty section is
+          // dropped and the shelf paints a single heading.
+          if (window.__mrtMutation === 'type-flatten') {
+            return Promise.resolve(json({ ...catalog, lists: catalog.lists.map((l) => ({ ...l, type: 'era' })) }));
+          }
+          return Promise.resolve(json(catalog));
+        }
         if (url.endsWith(`data/${orderFile}`)) {
           if (window.__mrtMutation === 'import-fail') return Promise.resolve(json({ error: 'mutation' }, 500));
           return Promise.resolve(json(order));
         }
+        // Guarded by a flag for the same reason as the synopsis stub below: only the wiki
+        // scenario sets it, so every other scenario sees the stub it saw before this existed. The
+        // wikitext is written here rather than copied from a page, because Fandom prose is
+        // share-alike licensed and a fixture is the one place a copy would become permanent.
+        if (window.__mrtWiki && url.includes('marvel.fandom.com/api.php')) {
+          if (window.__mrtWiki === 'refuse') return Promise.reject(new TypeError('Failed to fetch'));
+          const q = new URL(url).searchParams;
+          if (q.get('list') === 'search') {
+            return Promise.resolve(json({
+              query: { search: [{ title: 'Fixture Vol 7' }, { title: 'Fixture Vol 7 26' }] },
+            }));
+          }
+          const id = window.__mrtWikiId ?? 129648;
+          // The second lookup in the scenario asks for the same page and gets different facts,
+          // which is what makes an overwrite visible. Answering identically both times would let
+          // a missing collision guard rewrite the entry with the same values and pass.
+          const alt = window.__mrtWikiAlt === true;
+          const comic = [
+            '{{Marvel Database:Comic Template',
+            `| ReleaseDate = ${alt ? '[[July 1]], [[2026]]' : '[[March 4]], [[2026]]'}`,
+            `| Pages = ${alt ? 99 : 32}`,
+            `| MarvelUnlimitedID = ${id}`,
+            `| Writer1_1 = [[${alt ? 'Replacement Writer' : 'Fixture Writer'}]]`,
+            '| Penciler1_1 = [[Fixture Penciler]]',
+            '| Quotation = A line of prose that must never reach the form.',
+            '}}',
+          ].join('\n');
+          return Promise.resolve(json({
+            query: {
+              pages: {
+                11: { title: 'Fixture Vol 7', revisions: [{ slots: { main: { '*': '{{Marvel Database:Volume Template\n| Publisher = Marvel\n}}' } } }] },
+                12: { title: 'Fixture Vol 7 26', revisions: [{ slots: { main: { '*': comic } } }] },
+              },
+            },
+          }));
+        }
+
         // Only the synopsis scenario sets the flag, and it sets it before the first navigation.
         // Left unset this line is reached by no request any other scenario makes, so what they
         // see is the stub they saw before it was added.
@@ -871,10 +1436,12 @@ async function main() {
     // the scenario it is aimed at, on the assertion that carries the claim. A mutation that turns
     // nothing red means the scenario it was written for is not asserting what it claims to.
     //
-    // Two of the ten redden every scenario, and that is not loose aim. Every scenario imports the
-    // fixture order first, so a mutation of the import or of the write that import performs is
-    // upstream of all of them by construction. What distinguishes aim is the named assertion that
-    // fails in the aimed-at scenario, which is why it is printed rather than a bare scenario id.
+    // One of the eleven reddens every scenario and a second reddens six of the seven, and that is
+    // not loose aim. Every scenario but the wiki lookup imports the fixture order first, so a
+    // mutation of that import is upstream of all of those by construction, and a mutation of the
+    // write the app performs is upstream of the wiki lookup as well. What distinguishes aim is the
+    // named assertion that fails in the aimed-at scenario, which is why it is printed rather than
+    // a bare scenario id.
     console.log('\nproving each scenario can fail:');
     let unproved = 0;
     for (const mutation of MUTATIONS) {
