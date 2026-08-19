@@ -4639,7 +4639,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:10807-10809` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:10826-10828` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4649,11 +4649,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10826-10830`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10845-10849`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10641-10643` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10660-10662` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -10381,7 +10381,7 @@ line the test defends.
 
 **BL-150: Fill in what the metadata snapshot cannot, from the one catalogue a browser can reach**
 
-- [ ] Establish what the Marvel Fandom wiki can and cannot supply for a post-snapshot issue
+- [x] Establish what the Marvel Fandom wiki can and cannot supply for a post-snapshot issue
 - [ ] Decide whether anything derived from it is used at runtime only or written into the tree
 - [ ] Weigh the share-alike obligation that vendoring its text would attach to this repository
 - [ ] Decide whether covers are worth widening the pinned image host for, or are better left out
@@ -10417,6 +10417,25 @@ from a title and not backwards from an id this app already holds. The content is
 have to be parsed. And the text is share-alike licensed, so writing it into these files attaches an
 attribution and licensing obligation to a repository that currently has none, which is the decision
 in the second and third tasks rather than an implementation detail.
+
+The reverse lookup is closed by the wiki's own configuration rather than by the search index alone.
+Neither Cargo nor Semantic MediaWiki is installed, so there is no table to select a page from by
+field value: `action=cargoquery` answers `badvalue`. Building an id to page index would mean
+enumerating and fetching every page, which is a maintenance job rather than a lookup.
+
+The forward route was measured on 2026-08-18 and it works. A typed title finds the page through the
+ordinary search list, with the right page as the first hit for all three phrasings tried, including
+one for a 2026 issue. Wikitext can be fetched for many titles in a single request rather than one
+at a time. `Category:Comics Released in March, 2026` enumerates that month's comics, where the bare
+year and month category mixes in television episodes. Every one of those calls takes `origin=*` and
+comes back with a permissive cross-origin header, no key and no account.
+
+Worth recording so the question is not reopened: five other catalogues were checked on the same day
+for the digital book id, and none of them holds it. Not the Grand Comics Database, which is CC0 and
+would otherwise be the ideal source. Not Metron, not Wikidata, which has Marvel properties for
+characters and creators and none for issues, not the price and review aggregators, and no public
+dump of the retired Marvel API was found to have preserved it. The field appears to exist nowhere
+outside Marvel's own systems, which is why BL-149 takes it from the reader's address bar instead.
 
 Covers are a separate question from text and are listed apart for that reason. Fandom serves them
 from its own host, and this app pins the cover host to Marvel's CDN in one constant and again in the
