@@ -4639,7 +4639,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:10798-10800` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:10807-10809` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4649,11 +4649,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10817-10821`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:10826-10830`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10632-10634` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:10641-10643` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -10391,16 +10391,25 @@ decide the shape: no image bytes, no accounts, and no runtime dependency.
 
 Of the five catalogues checked on 2026-08-18, the Marvel Fandom wiki is the only one a browser can
 call at all. It answers with a permissive cross-origin header, needs no key and no account, and it
-covers 2026: a June 2026 cover date category enumerates, and a April 2026 issue returns a fully
+covers 2026: a June 2026 cover date category enumerates, and an April 2026 issue returns a fully
 populated record with a page count, a release date and creator credits by role.
 
-It also carries Marvel's own issue id, which is worth more than it first appears, because that id
-is what the rest of this app is keyed on. The field is called `MarvelUnlimitedID`, and the name is
+It also carries Marvel's own issue id, which is worth having because that id is what the rest of
+this app is keyed on. The field is called `MarvelUnlimitedID`, and the name is
 misleading enough to be a trap: it is not the digital book id. It was checked against this
 repository's own vendored data twice. Amazing Spider-Man Vol 1 1 reports 6482, which is the issue
 id; the digital book id for that issue is 1067. Ultimate Wolverine Vol 1 1 reports 121270, matching
 the vendored issue id exactly, with a release date matching the vendored on-sale date. Anyone
-reading that field as a Unlimited id will produce reader links to the wrong comics.
+reading that field as an Unlimited id will produce reader links to the wrong comics.
+
+What that id cannot do is close the gap, and this was measured rather than assumed. An issue id
+becomes a reader link only by way of `/v1/issues/{id}` on the metadata service, which is the lookup
+the launch page performs. Asked for the April 2026 issue the wiki supplies, that service answers
+404. Asked for 121270 and 6482 it answers 200, with digital ids 71158 and 1067. The chain breaks at
+exactly the point the gap begins, and for the same reason the gap exists. So this item is scoped to
+what a reader sees written down, not to what the Read button does. The reader link for a
+post-snapshot issue has one measured route, which is BL-149, and it works precisely because the id
+comes from the reader rather than from a catalogue.
 
 Three limits are known before any work starts. There is no reverse lookup: three search forms that
 would find a page from a Marvel issue id all returned nothing, so the wiki can be read forwards
