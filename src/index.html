@@ -504,8 +504,8 @@
                 <label for="manual-title">Title</label>
                 <input type="text" id="manual-title" required placeholder="e.g. The Amazing Spider-Man (2025) #12" />
                 <label for="manual-url">marvel.com or Marvel Unlimited address (optional)</label>
-                <input type="url" id="manual-url" placeholder="https://read.marvel.com/#/book/…" />
-                <p class="rail-hint">
+                <input type="url" id="manual-url" aria-describedby="manual-url-hint" placeholder="https://read.marvel.com/#/book/…" />
+                <p class="rail-hint" id="manual-url-hint">
                   Open the issue in Marvel Unlimited and paste the address from your browser. That
                   address carries the reader's own id for the book, which is what lets Read take you
                   straight there. A www.marvel.com issue address works too, but for anything newer
