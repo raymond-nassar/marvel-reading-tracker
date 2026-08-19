@@ -12,6 +12,30 @@ upgrading across a MAJOR.
 Releases are tagged `v<version>`. The version shown under **About this app** is the one to
 quote in a bug report.
 
+## Unreleased
+
+### Read the Marvel Unlimited book id off an address you paste
+
+In plain English: you can now open a brand new issue in Marvel Unlimited from this tracker. Before,
+you could add a 2026 issue by hand and tick it off, but the Read button could not take you to it,
+because the source this app gets its issue data from stopped in October 2025 and there is nothing
+newer in it to look up.
+
+The way around it turns out to be sitting on your own screen. When you are reading something in
+Marvel Unlimited, the web address in your browser ends in a number, and that number is how the
+reader identifies the book. Paste that address into the Add an issue by hand form and the tracker
+keeps the number, so Read takes you straight there afterwards. It works for anything Marvel
+Unlimited has, including issues far newer than this app's own data.
+
+A marvel.com address still works and still does what it always did, but for a recent issue it
+cannot produce a working Read link, so the form now says which address to prefer and the
+confirmation tells you which of the two you gave it. One thing has not changed: the availability
+badge on a hand-added issue still reads as unknown, because that is a different piece of
+information and the address you paste does not carry it.
+
+Nothing you have already saved is affected, and nothing was uploaded anywhere to make this work.
+The number comes from a page you were already looking at.
+
 ## 1.1.1
 
 A correction to the download, and the reason it needed one is worth stating: the fault below was
