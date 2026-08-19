@@ -14,8 +14,8 @@
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
   },
-  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|PRODUCT_BACKLOG.md:6329|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6329",
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|PRODUCT_BACKLOG.md:6330|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6330",
     "fp": "f4841c60d18d401f",
     "head": "`package.json:27-37`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file invent"
   },
@@ -249,8 +249,8 @@
     "fp": "4fe337c262402dbd",
     "head": "**It draws no legal conclusion, and it is not legal advice.** Whether the tree as a whole may be"
   },
-  "docs/PUBLICATION_RUNBOOK.md|settings-that-only-become-available-on-the-day|PRODUCT_BACKLOG.md:6986-6990|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6986-6990",
+  "docs/PUBLICATION_RUNBOOK.md|settings-that-only-become-available-on-the-day|PRODUCT_BACKLOG.md:6987-6991|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6987-6991",
     "fp": "a6ceb97902e6f2c0",
     "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
   },
@@ -319,48 +319,48 @@
     "fp": "9c0bba462139bd28",
     "head": "remote rather than on the tree, for the reasons recorded in their blocks. Eight remain open on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6338-6351|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6338-6351",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6339-6352|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6339-6352",
     "fp": "5a16aa8c31c583fe",
     "head": "Secret scanning is the task left unticked, and the clause \"where the repository plan supports them\""
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6749-6752|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6749-6752",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6750-6753|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6750-6753",
     "fp": "a0372835c1f1a259",
     "head": "Shipped, with the third task deliberately left open. It cannot be done yet, and that was measured"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6815-6817|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6815-6817",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6816-6818|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6816-6818",
     "fp": "4e89601fade35e5b",
     "head": "above records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6838-6842|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6838-6842",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6839-6843|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6839-6843",
     "fp": "49e2abcfaf9f8113",
     "head": "The framing is the part worth defending. Nobody outside this repository can see it, open an issue or"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6845-6851|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6845-6851",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6846-6852|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6846-6852",
     "fp": "85a655f4b40673f2",
     "head": "The code of conduct is written for this project rather than adopted from a template, and it names"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6912-6918|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6912-6918",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6913-6919|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6913-6919",
     "fp": "b72eadfcd70292d3",
     "head": "Shipped, with the fifth task open and recorded as a blocker rather than ticked, in the shape BL-099"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6943-6948|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6943-6948",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6944-6949|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6944-6949",
     "fp": "6863c064dec49090",
     "head": "Blank issues stay enabled, and that is a promise the security policy already made rather than a"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6986-6990|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6986-6990",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6987-6991|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6987-6991",
     "fp": "a6ceb97902e6f2c0",
     "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:9090-9095|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9090-9095",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:9091-9096|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9091-9096",
     "fp": "38d80111ac4d6ef8",
     "head": "Three settings are the actionable half: secret scanning with push protection behind it, private"
   },
@@ -434,13 +434,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11000|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11000",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11036|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11036",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:380-381|0": {
-    "anchor": "PRODUCT_BACKLOG.md:380-381",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:381-382|0": {
+    "anchor": "PRODUCT_BACKLOG.md:381-382",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
@@ -1139,23 +1139,23 @@
     "fp": "a64dc944f3b68444",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:10974-10976|0": {
-    "anchor": "PRODUCT_BACKLOG.md:10974-10976",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11010-11012|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11010-11012",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11140-11142|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11140-11142",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11176-11178|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11176-11178",
     "fp": "c0931d62be589b2e",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11159-11163|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11159-11163",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11195-11199|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11195-11199",
     "fp": "74995e9f6a8b1fa8",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1437-1438|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1437-1438",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1438-1439|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1438-1439",
     "fp": "064a4e42aaa6afa0",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
@@ -1179,28 +1179,28 @@
     "fp": "ae02072879fb9465",
     "head": "`Status` is `Ready` for an item still to be picked up and `Shipped` for one delivered since this"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2533|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2533",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2534|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2534",
     "fp": "2a31d6a4f8340417",
     "head": "how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2809-2812|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2809-2812",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2810-2813|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2810-2813",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4768-4771|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4768-4771",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4769-4772|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4769-4772",
     "fp": "5f70e71a6ffb659a",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4768-4776|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4768-4776",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4769-4777|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4769-4777",
     "fp": "c21e48cf7e7cc497",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4773-4774|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4773-4774",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4774-4775|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4774-4775",
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
@@ -3009,6 +3009,11 @@
     "fp": "041e549f4f8de028",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);"
   },
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:369|0": {
+    "anchor": "src/styles.css:369",
+    "fp": "a0a2ee142c72ecd9",
+    "head": ".pill-start { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }"
+  },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:397|0": {
     "anchor": "src/styles.css:397",
     "fp": "c05f099c43c67496",
@@ -3904,8 +3909,8 @@
     "fp": "eba7d4f1731c86ac",
     "head": "export function checkLedger(d) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:3945-3948|0": {
-    "anchor": "PRODUCT_BACKLOG.md:3945-3948",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:3946-3949|0": {
+    "anchor": "PRODUCT_BACKLOG.md:3946-3949",
     "fp": "90f2aa6431ce6b0c",
     "head": "by measuring the one draft it was filed from. Counting every repeated blank-free window within each"
   },
@@ -3969,8 +3974,8 @@
     "fp": "bd0da58f7569ec11",
     "head": "- name: Check publication boundary"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1437-1438|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1437-1438",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1438-1439|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1438-1439",
     "fp": "064a4e42aaa6afa0",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
@@ -4114,6 +4119,11 @@
     "fp": "c55d571f46037a8e",
     "head": "function pathLine(placement) {"
   },
+  "PRODUCT_BACKLOG.md|the-backlog#BL-156|src/styles.css:369|0": {
+    "anchor": "src/styles.css:369",
+    "fp": "a0a2ee142c72ecd9",
+    "head": ".pill-start { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }"
+  },
   "scripts/browser-check.mjs|preamble|src/styles.css:666|0": {
     "anchor": "src/styles.css:666",
     "fp": "188826f8749bd3bc",
@@ -4139,8 +4149,8 @@
     "fp": "24fc4e0169a550e3",
     "head": "if (this.controller !== controller) return;"
   },
-  "scripts/check-counts.mjs|preamble|PRODUCT_BACKLOG.md:2533|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2533",
+  "scripts/check-counts.mjs|preamble|PRODUCT_BACKLOG.md:2534|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2534",
     "fp": "2a31d6a4f8340417",
     "head": "how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting"
   },
