@@ -354,8 +354,8 @@ app renders that state today rather than hypothetically. Those 675 do not render
 606 carry a series or digital id and get the sentence saying no synopsis is recorded, while 69 hold
 neither and get the sentence saying the snapshot has no record of the issue at all, which is the
 distinction drawn further up this document and worth keeping in view. The field reaches the
-interface in exactly one place, at `src/js/main.js:2108`, and the function behind it already
-answers for the absence at `src/js/main.js:2292-2301`, with a test asserting the sentence it
+interface in exactly one place, at `src/js/main.js:2109`, and the function behind it already
+answers for the absence at `src/js/main.js:2293-2302`, with a test asserting the sentence it
 returns. It is also reversible: the project this repository fetched from still serves the field,
 the contract check having run on 2026-08-15 with 33 of 33 assumptions holding, so the vendoring
 script can fetch it again if a review comes back permissive.
@@ -424,3 +424,44 @@ from at the moment they ask for it.
 This changes nothing about the open question above. Marvel's rights in that prose are unaffected by
 where it is displayed, and the service the app fetches from does not hold them either. What it changes
 is what this repository distributes, which is the only variable on this side of the boundary.
+
+## A second read-time source, under a share-alike licence
+
+BL-150 added the only host this app contacts that is neither Marvel nor the metadata service. The
+hand-entry form can ask the Marvel Fandom wiki about a title, and it asks only when the reader
+presses the lookup button.
+
+It exists because of the boundary recorded above. The snapshot stops at 2025-10-29, and the mirror
+answers a query for the following year with a total of zero, so for a comic published since then
+there is no release date, no page count and no credit list anywhere in this app. The wiki has all
+three for issues well past that date, and it answers an anonymous cross-origin read with no key and
+no account.
+
+The licence position is not the same as the metadata service's, and the difference is the whole
+reason this subsection exists. Fandom text is CC BY-SA 3.0, which is share-alike: prose taken from
+it carries an obligation onto whatever it lands in, and committing any into this repository would
+attach that obligation to the tree. A release date, a page count and a person's name in a credit
+role are not prose. They are facts, and facts are not copyrightable, so reading them at run time
+and showing them carries nothing with it.
+
+The mechanism that keeps those two apart is an allowlist. The parser in `src/js/lib/wikitext.js`
+admits a field only if the field is asked for by name, so a page can carry any amount of prose and
+the parser will not notice it exists. The quotation, the appearance list and the story titles on a
+real page are dropped because they are not on the list, not because anything names them for
+exclusion, and a test asserts that none of them reaches a caller. Nothing from the wiki is written
+to this repository, and the fixtures the parser is tested against are synthetic wikitext written
+here with real field names and invented values, so no wiki text enters the tree even as test data.
+
+Two things are deliberately not taken. No image is fetched from the wiki: its pictures are served
+from a host this app does not pin, and the standing rule is that no comic image bytes are hosted,
+proxied, cached or stored. And no prose is taken at all, which is the same position BL-134 reached
+about synopses by a different route: that prose is fetched from the service that holds it and shown
+without being kept, while this prose is not fetched in the first place.
+
+One field needs its name saying plainly, because its name misleads. `MarvelUnlimitedID` on a wiki
+page is Marvel's issue id, not the digital book id that the reader uses. Measured on 2026-08-19: the
+issue id builds an official marvel.com page that answers 200 for an issue published in April 2026,
+while an invented id answers 404, so the page is real rather than a soft failure; the service that
+converts an issue id into a book id answers 404 for that same issue. So the id is worth taking, and
+it reaches the comic's official page and never the reader. Opening the comic itself still requires
+the book id out of an address the reader pastes.

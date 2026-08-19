@@ -30,6 +30,7 @@ import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
 import { shortcutAllowed } from './lib/shortcuts.js';
+import { lookupIssue } from './lib/wiki.js';
 import { READING_FILTERS, DEFAULT_FILTER, matchesReadingFilter } from './lib/readingFilters.js';
 import { DEFAULT_THEME, themeAttribute, normaliseTheme } from './lib/theme.js';
 import { VIEWS, formatRoute, parseRoute } from './lib/route.js';
@@ -2769,6 +2770,16 @@ function wireAdd() {
 
   $('#form-import').addEventListener('submit', (e) => { e.preventDefault(); doImport(); });
   $('#form-manual').addEventListener('submit', (e) => { e.preventDefault(); doManual(); });
+  $('#btn-manual-lookup').addEventListener('click', () => { doManualLookup(); });
+  // An accepted match describes one specific comic. Once the title no longer names that comic the
+  // offer has stopped making sense, so it is withdrawn here rather than refused at Add time, and
+  // the reader is told why while the box is still in front of them.
+  $('#manual-title').addEventListener('input', () => {
+    if (manualMatch && $('#manual-title').value.trim() !== manualMatch.title) {
+      clearManualMatch();
+      notify('#manual-candidates', 'The title changed, so the details from the wiki were dropped. Look it up again to fill them in.', 'warn');
+    }
+  });
 }
 
 const NAME_SEARCH_LIMIT = 40;
@@ -3092,6 +3103,110 @@ function unresolvedRow(entry, listId) {
   return row;
 }
 
+// The metadata snapshot stops in 2025, so for anything newer this form is the only way in and a
+// bare title is all it can carry. The Marvel Fandom wiki holds the release date, the page count,
+// the credits and Marvel's own issue id for comics well past that boundary, and reading them at
+// the moment the reader asks turns a bare row into an entry that looks like every other one.
+//
+// The issue id is not a route into Marvel Unlimited and nothing here should read as though it
+// were. It builds the official marvel.com page for the comic, which is live for issues the
+// snapshot has never heard of: 129648 answers 200 and an invented id answers 404, measured on
+// 2026-08-19. So Info gains a destination it does not have today, because detailUrl returns null
+// for the negative synthetic id a hand entry otherwise carries, and Read reaches that same page
+// through the launcher's existing fallback. Opening the comic itself still needs the digital book
+// id, and the address box below remains the only thing that supplies one.
+//
+// Held here rather than written anywhere: a lookup the reader walks away from leaves nothing
+// behind, and the tracker is unchanged until Add issue is pressed.
+let manualMatch = null;
+
+function clearManualMatch() {
+  manualMatch = null;
+  $('#manual-candidates').replaceChildren();
+}
+
+function factsSummary(facts) {
+  const credits = facts.creators?.length ?? 0;
+  return [
+    facts.onSale ? `released ${ymd(facts.onSale)}` : null,
+    facts.pageCount ? `${facts.pageCount} pages` : null,
+    credits ? `${credits} credit${credits === 1 ? '' : 's'}` : null,
+  ].filter(Boolean).join(', ');
+}
+
+function acceptManualMatch(candidate) {
+  const facts = {
+    onSale: candidate.onSale,
+    pageCount: candidate.pageCount,
+    seriesName: candidate.seriesName,
+    number: candidate.number,
+    creators: candidate.creators.length ? candidate.creators : null,
+  };
+  manualMatch = { title: candidate.title, marvelIssueId: candidate.marvelIssueId, facts };
+  // The box shows exactly what will be stored, and it is still editable, so a wiki title the
+  // reader does not care for is theirs to change before anything is saved.
+  $('#manual-title').value = candidate.title;
+  const summary = factsSummary(facts);
+  notify(
+    '#manual-candidates',
+    summary
+      ? `Filled from “${candidate.title}” on the wiki: ${summary}. Press Add issue to keep it.`
+      : `“${candidate.title}” carried no release date, page count or credits, so only the title was filled.`,
+    summary ? 'ok' : 'warn',
+    '#manual-candidates',
+    { label: 'Discard', onClick: () => { clearManualMatch(); announce('Details from the wiki discarded.'); } },
+  );
+}
+
+async function doManualLookup() {
+  const phrase = $('#manual-title').value.trim();
+  if (!phrase) return notify('#manual-report', 'Type a title first, then look it up.', 'warn');
+
+  const btn = $('#btn-manual-lookup');
+  btn.disabled = true;
+  clearManualMatch();
+  try {
+    const found = await lookupIssue(phrase);
+    if (!found.length) {
+      return notify(
+        '#manual-candidates',
+        `Nothing on the wiki matched “${phrase}”. Its pages are named like “X-Men Vol 7 26”, so the series and the issue number usually find it. You can still add the issue without any details.`,
+        'warn',
+      );
+    }
+    // Never picked automatically. The search is fuzzy: asking it for one issue routinely returns
+    // the series page and the issue before it above the one that was meant, so choosing the top
+    // hit would quietly file the wrong comic's release date against this entry.
+    const choices = el('div', { class: 'results' }, [
+      el('p', { class: 'rail-hint', text: 'Pick the issue you meant. Nothing is added until you press Add issue.' }),
+    ]);
+    for (const candidate of found) {
+      choices.append(el('div', { class: 'result' }, [
+        el('div', { class: 'result-main' }, [
+          el('div', { class: 'result-title', text: candidate.title }),
+          el('div', {
+            class: 'result-meta',
+            text: factsSummary(candidate) || 'No release date, page count or credits on that page',
+          }),
+        ]),
+        el('button', { type: 'button', class: 'btn', onclick: () => acceptManualMatch(candidate) }, 'Use this'),
+      ]));
+    }
+    $('#manual-candidates').replaceChildren(choices);
+    announce(`${found.length} match${found.length === 1 ? '' : 'es'} from the wiki. Pick the issue you meant.`);
+  } catch (err) {
+    // Naming what was not sent matters as much as naming the failure: the reader agreed to a
+    // request about a title, and a failed request must not leave them wondering what else went.
+    notify(
+      '#manual-candidates',
+      `Could not reach the wiki, so nothing was filled in. ${friendly(err)} Nothing about your lists was sent, and your entry is unchanged.`,
+      'error',
+    );
+  } finally {
+    btn.disabled = false;
+  }
+}
+
 function doManual() {
   const title = $('#manual-title').value.trim();
   const url = $('#manual-url').value.trim();
@@ -3100,9 +3215,40 @@ function doManual() {
     return notify('#manual-report', 'That URL is not a marvel.com address. Leave it blank if you do not have one.', 'error');
   }
 
+  // The wiki's issue id is refused when the tracker already holds that issue, and the entry is
+  // refused with it. addIssuesToList merges into state.issues BEFORE it decides whether the list
+  // already had the id, so a collision overwrites the held issue's title, series, release date,
+  // page count and credits whether or not anything is added to a list. The reader would see
+  // "already in that list" and would not see that a curated issue's metadata had just been
+  // replaced by this form's.
+  //
+  // Refusing rather than adding under a synthetic id follows what this form already does when the
+  // list holds the issue, and it is the recoverable choice: nothing is lost and the reader is told
+  // something true, where a second row for a comic they already track would sit in the reading
+  // list for good.
+  //
+  // Only the wiki's id is guarded, not an id read from a pasted address. A pasted address names
+  // one specific issue the reader chose to point at, so merging into it is what they asked for. A
+  // wiki id comes from a fuzzy search this code ran, and a search that returns the wrong page must
+  // never be able to rewrite something the tracker already holds.
+  const wikiId = manualMatch?.marvelIssueId ?? null;
+  if (wikiId != null && store.state.issues?.[wikiId]) {
+    const holders = Object.values(store.state.lists ?? {})
+      .filter((l) => l.itemIds?.includes(wikiId))
+      .map((l) => l.name)
+      .filter(Boolean);
+    return notify(
+      '#manual-report',
+      holders.length
+        ? `That is the issue you already have in ${holders.join(', ')}, so nothing was added and nothing was changed.`
+        : 'The tracker already holds that issue, so nothing was added and nothing was changed.',
+      'warn',
+    );
+  }
+
   // A negative synthetic id for entries with no marvel.com URL; namespaced away from real
   // Marvel ids so the two can never collide.
-  const issueId = issueIdFromUrl(url) ?? -Date.now();
+  const issueId = issueIdFromUrl(url) ?? wikiId ?? -Date.now();
   // The reader address carries the digital book id, and that id is the only thing that makes the
   // Read button work. A hand-added issue is by definition newer than the metadata snapshot, so the
   // lookup /open.html would otherwise perform has nothing to find and the launch degrades to the
@@ -3116,6 +3262,7 @@ function doManual() {
   // "Added" even when the entry had been silently discarded.
   let added = 0;
   let skipped = 0;
+  const filled = manualMatch ? factsSummary(manualMatch.facts) : '';
   store.update((s) => {
     const res = addIssuesToList(s, listId, [{
       issueId,
@@ -3124,6 +3271,7 @@ function doManual() {
       digitalId,
       source: 'manual',
       hydrated: true,
+      ...(manualMatch?.facts ?? {}),
     }], {});
     added = res.added;
     skipped = res.skipped;
@@ -3142,14 +3290,26 @@ function doManual() {
 
   $('#manual-title').value = '';
   $('#manual-url').value = '';
-  // Two different outcomes that used to read the same. Whether Read will reach Marvel Unlimited is
+  clearManualMatch();
+  // Three different outcomes that used to read as two. Whether Read will reach Marvel Unlimited is
   // decided entirely by which address was pasted, and that is the one thing the reader cannot see
-  // from the row afterwards, so it is said here rather than left to be discovered by clicking.
+  // from the row afterwards, so it is said here rather than left to be discovered by clicking. An
+  // entry that took the wiki's issue id now has a Read button where it had none, and saying it
+  // opens marvel.com is the difference between a working link and a disappointment.
   notify(
     '#manual-report',
-    digitalId
-      ? `Added “${title}”. Read opens it in Marvel Unlimited. Availability still shows as unknown, because that is a separate field the metadata snapshot would have supplied.`
-      : `Added “${title}”. Availability shows as unknown because it is not in the metadata snapshot.`,
+    [
+      `Added “${title}”.`,
+      digitalId
+        ? 'Read opens it in Marvel Unlimited.'
+        : wikiId
+          ? 'Read has no Marvel Unlimited link to use, so it opens the issue page on marvel.com instead. Paste the reader address above to change that.'
+          : null,
+      filled ? `Filled from the wiki: ${filled}.` : null,
+      digitalId
+        ? 'Availability still shows as unknown, because that is a separate field the metadata snapshot would have supplied.'
+        : 'Availability shows as unknown because it is not in the metadata snapshot.',
+    ].filter(Boolean).join(' '),
     'ok',
   );
 }
