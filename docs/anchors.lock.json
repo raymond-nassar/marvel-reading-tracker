@@ -816,7 +816,7 @@
   },
   "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-37|0": {
     "anchor": "package.json:1-37",
-    "fp": "5a950505a8ccded9",
+    "fp": "15d4c99cbacd50e1",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:1046-1077|0": {
@@ -1116,7 +1116,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|package-lock.json:1-22|0": {
     "anchor": "package-lock.json:1-22",
-    "fp": "2692aa4268cfa8f9",
+    "fp": "8090257df2c4a379",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:14-15|0": {
@@ -1126,7 +1126,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:27-37|0": {
     "anchor": "package.json:27-37",
-    "fp": "929d1a333f413d4d",
+    "fp": "6fbfef3584a043a4",
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:29-31|0": {
@@ -1136,7 +1136,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:33-36|0": {
     "anchor": "package.json:33-36",
-    "fp": "a64dc944f3b68444",
+    "fp": "b8ee79f8da29f420",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11045-11047|0": {
@@ -3496,12 +3496,12 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-37|0": {
     "anchor": "package.json:1-37",
-    "fp": "5a950505a8ccded9",
+    "fp": "15d4c99cbacd50e1",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:32-37|0": {
     "anchor": "package.json:32-37",
-    "fp": "71ce9f59d9cbefcb",
+    "fp": "4436eb6fb334ce0a",
     "head": "\"devDependencies\": {"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:27|0": {
@@ -3556,7 +3556,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-37|0": {
     "anchor": "package.json:1-37",
-    "fp": "5a950505a8ccded9",
+    "fp": "15d4c99cbacd50e1",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:12|0": {
@@ -4256,7 +4256,7 @@
   },
   "SECURITY.md|what-this-project-is-because-it-decides-what-a-v|package.json:33-36|0": {
     "anchor": "package.json:33-36",
-    "fp": "a64dc944f3b68444",
+    "fp": "b8ee79f8da29f420",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },
   "src/js/main.js|preamble|src/js/storage.js:329-332|0": {
