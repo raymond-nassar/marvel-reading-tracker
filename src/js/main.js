@@ -11,7 +11,7 @@ import {
   setOverride, pendingIssueIds, coverUrl, listForCatalogId, SCHEMA_VERSION,
   setIssueNote, setListNote, MAX_BACKUP_BYTES, orderGapSentences,
 } from './lib/model.js';
-import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, digitalIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
+import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { LIBRARY_VIEWS } from './lib/library.js';
 import { availability, describe, localDayString, SHORT, STATE } from './lib/availability.js';
 import { compareIssues } from './lib/sort.js';
@@ -3103,12 +3103,6 @@ function doManual() {
   // A negative synthetic id for entries with no marvel.com URL; namespaced away from real
   // Marvel ids so the two can never collide.
   const issueId = issueIdFromUrl(url) ?? -Date.now();
-  // The reader address carries the digital book id, and that id is the only thing that makes the
-  // Read button work. A hand-added issue is by definition newer than the metadata snapshot, so the
-  // lookup /open.html would otherwise perform has nothing to find and the launch degrades to the
-  // marvel.com page. Taking the id from the address the reader is already looking at needs no key,
-  // no account and no request to anyone.
-  const digitalId = digitalIdFromUrl(url);
   const listId = ensureList('My reading order');
   if (!listId) return notify('#manual-report', 'Could not create a list, so nothing was added.', 'error');
 
@@ -3121,7 +3115,6 @@ function doManual() {
       issueId,
       title,
       url: url || null,
-      digitalId,
       source: 'manual',
       hydrated: true,
     }], {});
@@ -3142,16 +3135,7 @@ function doManual() {
 
   $('#manual-title').value = '';
   $('#manual-url').value = '';
-  // Two different outcomes that used to read the same. Whether Read will reach Marvel Unlimited is
-  // decided entirely by which address was pasted, and that is the one thing the reader cannot see
-  // from the row afterwards, so it is said here rather than left to be discovered by clicking.
-  notify(
-    '#manual-report',
-    digitalId
-      ? `Added “${title}”. Read opens it in Marvel Unlimited. Availability still shows as unknown, because that is a separate field the metadata snapshot would have supplied.`
-      : `Added “${title}”. Availability shows as unknown because it is not in the metadata snapshot.`,
-    'ok',
-  );
+  notify('#manual-report', `Added “${title}”. Availability shows as unknown because it is not in the metadata snapshot.`, 'ok');
 }
 
 // ------------------------------------------------------------------ curated orders

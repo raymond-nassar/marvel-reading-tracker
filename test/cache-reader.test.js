@@ -4,8 +4,6 @@ import {
   ttlFor, isExpired, selectEvictions, cacheKey, sizeOf, TTL, DEFAULT_BUDGET_BYTES,
 } from '../src/js/lib/cachePolicy.js';
 import { READER_PREFIX, readerUrl, detailUrl, launchUrl, isLaunchable } from '../src/js/reader.js';
-import { digitalIdFromUrl } from '../src/js/lib/markdown.js';
-import { createEmptyState, addIssuesToList, createList } from '../src/js/lib/model.js';
 
 // ------------------------------------------------------------------ cache policy
 
@@ -206,34 +204,4 @@ test('an issue with neither id is not launchable', () => {
   assert.equal(isLaunchable({ issueId: 0 }), false);
   assert.equal(isLaunchable({ issueId: 1 }), true);
   assert.equal(isLaunchable({ digitalId: 1 }), true);
-});
-
-// The whole point of reading the book id off the reader's address. An issue newer than the
-// metadata snapshot has no record upstream, so the synthetic id is all the app would otherwise
-// hold, and a synthetic id resolves to nothing. This walks the same three steps the hand-entry
-// form walks, because each one alone can silently drop the field.
-test('a hand-added issue keeps its pasted book id and launches at the reader', () => {
-  const digitalId = digitalIdFromUrl('https://read.marvel.com/#/book/129648');
-  assert.equal(digitalId, 129648);
-
-  const issueId = -1755000000000;
-  let state = createList(createEmptyState(), { name: 'My reading order' });
-  const listId = state.listOrder[state.listOrder.length - 1];
-  state = addIssuesToList(state, listId, [{
-    issueId,
-    title: 'All-New Spider-Gwen: The Ghost-Spider (2026) #9',
-    url: 'https://read.marvel.com/#/book/129648',
-    digitalId,
-    source: 'manual',
-    hydrated: true,
-  }], {}).state;
-
-  const stored = state.issues[issueId];
-  assert.equal(stored.digitalId, 129648, 'storage must not drop the one field that makes Read work');
-  assert.equal(isLaunchable(stored), true, 'a negative id alone is not launchable, so this proves the book id carried');
-
-  const u = new URL(launchUrl(stored, 'http://127.0.0.1:8787'));
-  assert.equal(u.searchParams.get('d'), '129648');
-  assert.equal(u.searchParams.get('i'), null, 'a synthetic id must not be sent to a lookup that cannot resolve it');
-  assert.equal(readerUrl(stored.digitalId), 'https://read.marvel.com/#/book/129648');
 });
