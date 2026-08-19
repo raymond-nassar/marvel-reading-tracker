@@ -60,6 +60,13 @@ information and the address you paste does not carry it.
 Nothing you have already saved is affected, and nothing was uploaded anywhere to make this work.
 The number comes from a page you were already looking at.
 
+One detail changed after a review. An entry added from a Marvel Unlimited address no longer also
+offers an Info link, because that link announced itself as going to marvel.com and went to the
+reader instead, which is the same place the Read button already goes. An entry added from a
+marvel.com address still offers it, since that one really is an information page. The address box
+now also points a screen reader at the paragraph explaining which of the two addresses gets you a
+working Read button.
+
 ## 1.1.1
 
 A correction to the download, and the reason it needed one is worth stating: the fault below was

@@ -2,7 +2,7 @@
 //
 // The backlog and the UX study rest on browser verification that was real but unrepeatable: the
 // scripts lived outside the tree, so a clean clone could rerun none of it. This file is that
-// evidence, committed. It drives installed Edge through the seven journeys the app is for, and it
+// evidence, committed. It drives installed Edge through the eight journeys the app is for, and it
 // is the only place where a claim about what the interface does in a browser can be checked
 // rather than argued.
 //
@@ -300,6 +300,36 @@ const MUTATIONS = [
         if (String(key).startsWith('mrt.state.salvage')) this.removeItem('mrt.state.v2');
         return out;
       };
+    },
+  },
+  {
+    id: 'keep-reader-url',
+    breaks: 'manual-book-id',
+    why: 'the pasted reader address is written back as the issue url, which is the mislabelled Info link, an entry offering one destination twice under two names',
+    script: () => {
+      const real = Storage.prototype.setItem;
+      Storage.prototype.setItem = function setItem(key, value) {
+        if (key !== 'mrt.state.v2') return real.call(this, key, value);
+        try {
+          const parsed = JSON.parse(value);
+          for (const issue of Object.values(parsed?.issues ?? {})) {
+            if (issue?.digitalId && !issue.url) issue.url = `https://read.marvel.com/#/book/${issue.digitalId}`;
+          }
+          return real.call(this, key, JSON.stringify(parsed));
+        } catch {
+          return real.call(this, key, value);
+        }
+      };
+    },
+  },
+  {
+    id: 'unlink-hint',
+    breaks: 'manual-book-id',
+    why: 'the address field stops naming its explanation, so the one line saying which of the two addresses yields a working Read button is reachable only by reading past the field',
+    script: () => {
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#manual-url')?.removeAttribute('aria-describedby');
+      });
     },
   },
   {
@@ -785,6 +815,58 @@ const SCENARIOS = [
         JSON.stringify(endCross?.issues?.['129648']));
     },
   },
+  {
+    id: 'manual-book-id',
+    title: 'a pasted reader address becomes a working Read button, and a marvel.com address says so',
+    async run(page, t) {
+      await open(page, '/');
+      await click(page, '[data-view="add"][data-open="sec-manual"]');
+      await page.evaluate(() => {
+        const d = document.querySelector('#sec-manual');
+        if (d && !d.open) d.open = true;
+      });
+      await page.waitForSelector('#manual-url', { timeout: 15000 });
+
+      // The hint is the only place that says which of the two addresses gets you a working Read
+      // button, and the field points at it, so a screen reader reaches that from the field rather
+      // than only by reading past it. This is the first aria-describedby in the page.
+      const hint = await page.evaluate(() => {
+        const input = document.querySelector('#manual-url');
+        const id = input?.getAttribute('aria-describedby') ?? null;
+        const p = id ? document.getElementById(id) : null;
+        return { id, text: (p?.textContent ?? '').replace(/\s+/g, ' ').trim() };
+      });
+      t.check('the address field names its own explanation', hint.id === 'manual-url-hint', JSON.stringify(hint.id));
+      t.check('and that explanation says where to get the address',
+        hint.text.includes('paste the address'), hint.text.slice(0, 100));
+
+      await addByHand(page, 'All-New Spider-Gwen: The Ghost-Spider (2026) #9', 'https://read.marvel.com/#/book/129648');
+      const readerSaid = await manualReport(page);
+      t.check('a reader address is reported as reaching Marvel Unlimited',
+        readerSaid.includes('Read opens it in Marvel Unlimited'), readerSaid);
+
+      const afterReader = await readState(page);
+      const byReader = Object.values(afterReader?.issues ?? {}).find((i) => i.digitalId === 129648) ?? null;
+      t.check('the book id was read off the address and saved', Boolean(byReader),
+        JSON.stringify(Object.values(afterReader?.issues ?? {}).map((i) => i.digitalId)));
+      // A reader address kept as the issue url would light up Info, which says marvel.com and
+      // would open the reader the Read button already opens. Nothing offers it, so nothing to see.
+      t.check('and the reader address was not kept as a detail page',
+        (byReader?.url ?? null) === null, JSON.stringify(byReader?.url));
+
+      await addByHand(page, 'Secret Wars (2015) #1', 'https://www.marvel.com/comics/issue/52447/secret_wars');
+      const detailSaid = await manualReport(page);
+      t.check('a marvel.com address is reported without promising the reader',
+        detailSaid.includes('Availability shows as unknown') && !detailSaid.includes('Read opens it'), detailSaid);
+
+      const afterDetail = await readState(page);
+      const byDetail = afterDetail?.issues?.['52447'] ?? null;
+      t.check('that one keeps the marvel.com address it was given',
+        String(byDetail?.url ?? '').includes('/comics/issue/52447'), JSON.stringify(byDetail?.url));
+      t.check('and carries no book id, because none was stated',
+        (byDetail?.digitalId ?? null) === null, JSON.stringify(byDetail?.digitalId));
+    },
+  },
 ];
 
 // ------------------------------------------------------------------ page helpers
@@ -831,6 +913,31 @@ async function openFullOrder(page) {
     if (d && !d.open) d.open = true;
   });
   await page.waitForSelector('#rows .row', { timeout: 15000 });
+}
+
+// The report line is cleared before submitting rather than after, because the second hand entry
+// would otherwise read the first one's answer: waiting for the line to be non-empty is satisfied
+// the moment it is asked, and the check would pass against a form that did nothing at all.
+async function addByHand(page, title, url) {
+  await page.evaluate(() => {
+    const report = document.querySelector('#manual-report');
+    if (report) report.textContent = '';
+  });
+  await page.evaluate((t, u) => {
+    document.querySelector('#manual-title').value = t;
+    document.querySelector('#manual-url').value = u;
+  }, title, url);
+  await page.evaluate(() => document.querySelector('#form-manual').requestSubmit());
+  await page.waitForFunction(
+    () => (document.querySelector('#manual-report')?.textContent ?? '').trim().length > 0,
+    { timeout: 15000 },
+  );
+}
+
+async function manualReport(page) {
+  return page.evaluate(
+    () => (document.querySelector('#manual-report')?.textContent ?? '').replace(/\s+/g, ' ').trim(),
+  );
 }
 
 // The stub is installed with evaluateOnNewDocument rather than after load, because the catalog is
@@ -892,7 +999,8 @@ async function preparePage(page, origin, mutation) {
         // Only the synopsis scenario sets the flag, and it sets it before the first navigation.
         // Left unset this line is reached by no request any other scenario makes, so what they
         // see is the stub they saw before it was added.
-        const issue = window.__mrtSynopsis ? /\/issues\/(\d+)(?:\?|$)/.exec(url) : null;        if (issue) {
+        const issue = window.__mrtSynopsis ? /\/issues\/(\d+)(?:\?|$)/.exec(url) : null;
+        if (issue) {
           const answers = window.__mrtSynopsis === 'answer';
           // Delayed on purpose, and this is the whole reason the scenario can make its claim. An
           // immediate refusal empties a three issue queue before a click on stop can land, and

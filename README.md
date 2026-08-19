@@ -461,12 +461,13 @@ trusting a release.
 npm run browser
 ```
 
-Drives installed Microsoft Edge through the seven journeys the app exists for: importing a
+Drives installed Microsoft Edge through the eight journeys the app exists for: importing a
 curated order, moving between views with the address bar and the Back button, keeping progress
 across a reload, meeting unreadable saved data with an offer rather than a wipe, opening the
 reader tab inside the click that asked for it, counting a synopsis run by what arrived rather
-than by what it asked for, and filling a hand entry from the wiki while refusing an issue already
-held. It makes 45 assertions across those seven and takes about 4 seconds.
+than by what it asked for, filling a hand entry from the wiki while refusing an issue already
+held, and turning a pasted reader address into a working Read button. It makes 53 assertions
+across those eight and takes about 6 seconds.
 
 It needs two things that are not installed for you. The first is a browser driver, which is
 **deliberately not a dependency of this repository** and must not become one: nothing the app
