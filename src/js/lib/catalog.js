@@ -216,7 +216,11 @@ export function parseCatalog(raw) {
   // Sorted here rather than in each view, because the home grid shows only the first handful and
   // the catalog shows them all: two call sites ordering differently would mean the shelf a reader
   // skims and the shelf they search were not the same shelf.
-  return { lists: sortCatalog(lists), dropped };
+  //
+  // Paths are passed through unvalidated because `pathPlacements` resolves them against the lists
+  // that survived, and a path naming an entry this function just dropped is one it will skip. The
+  // manifest is where a path is checked; by the time it is in the generated catalog it has been.
+  return { lists: sortCatalog(lists), paths: Array.isArray(raw?.paths) ? raw.paths : [], dropped };
 }
 
 // Categories are derived from the lists themselves, so a category never appears with nothing
@@ -287,11 +291,21 @@ export function catalogFacets(lists) {
 
 // How many stories a set of orders amounts to. The shelf shows one card per story, so a chip
 // counting orders would promise more cards than the grid then holds: eight events, six cards.
-// A story with no group is its own story, which is why the key falls back to the list's id.
 export function countStories(lists) {
   const keys = new Set();
-  for (const list of Array.isArray(lists) ? lists : []) keys.add(list.group ?? `list:${list.id}`);
+  for (const list of Array.isArray(lists) ? lists : []) keys.add(storyKey(list));
   return keys.size;
+}
+
+// The identity of the story an order is a path through. A story with no group is its own story,
+// which is why the key falls back to the list's id, and the prefix keeps a list id from colliding
+// with a group name that happens to match it.
+//
+// Shared rather than written out at each site because three places now depend on two orders
+// agreeing about whether they are the same story: the story count, the shelf's grouping, and the
+// reading path's placement. Two copies of this expression is two chances for them to disagree.
+export function storyKey(list) {
+  return list?.group ?? `list:${list?.id}`;
 }
 
 export function filterByFacet(lists, key) {
@@ -402,7 +416,7 @@ export function groupCatalog(lists) {
   for (const list of lists) {
     const key = list.group;
     if (!key) {
-      groups.push({ key: `list:${list.id}`, name: null, lists: [list] });
+      groups.push({ key: storyKey(list), name: null, lists: [list] });
       continue;
     }
     const existing = byKey.get(key);
@@ -461,4 +475,77 @@ export function pickPath(group, chosenId, owns) {
 // list's own name, so a variant is never presented as an unlabelled duplicate.
 export function variantLabel(list) {
   return list.variant ?? depthLabel(list.depth) ?? list.name;
+}
+
+// ------------------------------------------------------------------ reading paths
+
+// Where each story sits on a named reading path. A path is the one thing the catalog could not
+// say before: `group` records two orders as two readings of the *same* story, which is the
+// opposite relationship, so nothing stated that one story is read after another.
+//
+// Returns a map keyed by story rather than answering one story at a time, because the shelf draws
+// nineteen rows and resolving each one against every path would be the same work nineteen times.
+//
+// Keyed on the story, not the order, so switching between two readings of one story cannot change
+// the answer. That is what makes the placement safe to compute once, outside the row's repaint:
+// House of M is step three whichever of its two readings the reader picks.
+export function pathPlacements(paths, lists) {
+  const placements = new Map();
+  const all = Array.isArray(lists) ? lists : [];
+  if (!Array.isArray(paths) || !all.length) return placements;
+
+  const storyName = new Map();
+  const storyOfOrder = new Map();
+  for (const list of all) {
+    const key = storyKey(list);
+    // The story's name, taken the way the shelf takes it, so a stop reads "House of M" rather
+    // than naming one particular reading of it.
+    if (!storyName.has(key)) storyName.set(key, list.groupName ?? list.name);
+    storyOfOrder.set(list.id, key);
+  }
+
+  for (const path of paths) {
+    const id = str(path?.id);
+    const name = str(path?.name);
+    if (!id || !name) continue;
+
+    // A step naming an order the catalog dropped resolves to nothing and is skipped, and the
+    // remaining stops are numbered over what survived. `parseCatalog` drops entries it cannot
+    // use, so a path valid when it was written can arrive here with a hole in it. Telling a
+    // reader they are at step 4 of 10 when the app can only show nine of them states a total it
+    // cannot account for; showing 4 of 9 is at least a shelf they can count.
+    const stops = [];
+    for (const step of Array.isArray(path?.steps) ? path.steps : []) {
+      const key = storyOfOrder.get(str(step));
+      if (!key || stops.some((s) => s.key === key)) continue;
+      stops.push({ key, name: storyName.get(key) });
+    }
+    // One stop is not a sequence, and the reader learns nothing from "step 1 of 1".
+    if (stops.length < 2) continue;
+
+    stops.forEach((stop, i) => {
+      // A story reachable from two paths keeps the first that names it. Arbitrary, but stable,
+      // and the alternative is a row whose position changes with the manifest's ordering.
+      if (placements.has(stop.key)) return;
+      placements.set(stop.key, {
+        pathId: id,
+        pathName: name,
+        position: i + 1,
+        total: stops.length,
+        previous: i > 0 ? stops[i - 1] : null,
+        next: i < stops.length - 1 ? stops[i + 1] : null,
+      });
+    });
+  }
+
+  return placements;
+}
+
+// The year an order's reading starts, as a phrase. Null means the order ranges across the
+// timeline rather than sitting on it, which is what a best-of does, so it yields nothing rather
+// than "unknown": seven of the 26 bundled orders are in that state and none of them is undated by
+// accident.
+export function timelineLabel(list) {
+  const year = list?.timeline;
+  return Number.isInteger(year) ? `Starts ${year}` : null;
 }

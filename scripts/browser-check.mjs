@@ -159,28 +159,57 @@ const ORDER = {
   ],
 };
 
+// A shelf entry, with only the fields a row reads. Written as a factory because the path needs
+// five of them and repeating twenty fields five times would bury the two that differ per stop.
+const shelfEntry = (id, name, extra = {}) => ({
+  id,
+  file: ORDER_FILE,
+  name,
+  description: `A fixture order used only by the browser check.`,
+  type: 'event',
+  depth: 'complete',
+  count: 3,
+  collections: 0,
+  characters: [],
+  keywords: [],
+  group: null,
+  groupName: null,
+  variant: null,
+  beginner: false,
+  cover: null,
+  source: null,
+  sourceOrigin: 'Fixture',
+  sourceLicense: null,
+  updatedAt: '2026-01-01T00:00:00.000Z',
+  timeline: null,
+  ...extra,
+});
+
+// Five entries make four stories, three of them on a path and one off it. The third stop is a
+// story read two ways, which is the case the shelf and the path disagree about most easily: the
+// path step names one reading, the shelf draws one row for the story, and the stop has to be
+// named the way the row is or it points at something not on screen.
 const CATALOG = {
   lists: [
+    shelfEntry('browser-check', 'Browser Check Order', { timeline: 1963 }),
+    shelfEntry('browser-check-two', 'Second Stop', { timeline: 2004 }),
+    shelfEntry('browser-check-three-main', 'Third Stop: The Long Way', {
+      group: 'bc-third', groupName: 'Third Stop', variant: 'Complete', timeline: 2006,
+    }),
+    shelfEntry('browser-check-three-short', 'Third Stop: The Short Way', {
+      group: 'bc-third', groupName: 'Third Stop', variant: 'Essential', depth: 'essential', timeline: 2006,
+    }),
+    shelfEntry('browser-check-off', 'Off The Path'),
+  ],
+  paths: [
     {
-      id: 'browser-check',
-      file: ORDER_FILE,
-      name: 'Browser Check Order',
-      description: 'A fixture order used only by the browser check.',
-      type: 'event',
-      depth: 'complete',
-      count: 3,
-      collections: 0,
-      characters: [],
-      keywords: [],
-      group: null,
-      groupName: null,
-      variant: null,
-      beginner: false,
-      cover: null,
-      source: null,
+      id: 'bc-path',
+      name: 'The Fixture Path',
+      description: 'A fixture path used only by the browser check.',
       sourceOrigin: 'Fixture',
-      sourceLicense: null,
-      updatedAt: '2026-01-01T00:00:00.000Z',
+      // The last step names the *short* reading on purpose, so a row that echoed the step rather
+      // than resolving it to the story would read "Third Stop: The Short Way" and be caught.
+      steps: ['browser-check', 'browser-check-two', 'browser-check-three-short'],
     },
   ],
 };
@@ -196,6 +225,48 @@ const EXPECTED_TITLES = ORDER.items.map((i) => i.title);
 // are injected into the page rather than edited into a source file, so a killed run cannot leave
 // the tree modified, which is a failure mode a file-editing harness has and this one cannot.
 const MUTATIONS = [
+  {
+    id: 'rail-bleed',
+    breaks: 'rail-collapse',
+    why: 'the collapsed-sidebar rule is unscoped again, exactly as it shipped, so it reaches every pill in the shelf',
+    script: () => {
+      addEventListener('load', () => {
+        // Through the CSSOM, not as an injected <style>. The app sends `style-src 'self'`, which
+        // drops an injected stylesheet in silence, and the first shape of this mutation was
+        // dropped that way: --prove reported it breaking nothing, which reads as a scenario that
+        // cannot fail rather than as a mutation that never ran.
+        const sheet = [...document.styleSheets].find((s) => s.href?.endsWith('styles.css'));
+        sheet.insertRule('.railed .pill { width: 10px; height: 10px; padding: 0; color: transparent; }', sheet.cssRules.length);
+      });
+    },
+  },
+  {
+    id: 'rail-unscoped',
+    breaks: 'rail-collapse',
+    why: 'the rule is scoped away from the rail as well, so the sidebar keeps a full-width pill in a lane too narrow for it',
+    script: () => {
+      addEventListener('load', () => {
+        const sheet = [...document.styleSheets].find((s) => s.href?.endsWith('styles.css'));
+        sheet.insertRule('.railed .rail-foot .pill { width: auto; height: auto; padding: .2rem .6rem; }', sheet.cssRules.length);
+      });
+    },
+  },
+  {
+    id: 'path-strip',
+    breaks: 'reading-path',
+    why: 'the catalog arrives with no paths, so a shelf that still shows a reading order is showing one it was not given',
+    script: () => {
+      window.__mrtMutation = 'path-strip';
+    },
+  },
+  {
+    id: 'group-strip',
+    breaks: 'reading-path',
+    why: 'a story read two ways loses its shared name, so a stop naming the story rather than one reading of it cannot be resolving anything',
+    script: () => {
+      window.__mrtMutation = 'group-strip';
+    },
+  },
   {
     id: 'import-fail',
     breaks: 'import',
@@ -349,6 +420,88 @@ const MUTATIONS = [
 // state behind is not evidence either.
 const SCENARIOS = [
   {
+    id: 'reading-path',
+    title: 'the shelf says where a story sits in a reading order',
+    async run(page, t) {
+      await open(page, '/');
+      await click(page, '[data-view="catalog"]');
+      await page.waitForSelector('#catalog-results .result', { timeout: 15000 });
+
+      const rows = await page.$$eval('#catalog-results .result', (els) => els.map((e) => ({
+        title: e.querySelector('.result-title')?.textContent.trim() ?? '',
+        meta: e.querySelector('.result-meta')?.textContent.trim() ?? '',
+        step: e.querySelector('.path-step')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
+      })));
+
+      const row = (name) => rows.find((r) => r.title === name);
+      const first = row('Browser Check Order');
+      const middle = row('Second Stop');
+      const last = row('Third Stop');
+      const off = row('Off The Path');
+
+      t.check('the shelf draws one row per story, not one per reading', rows.length === 4, `${rows.length} rows: ${rows.map((r) => r.title).join(' / ')}`);
+      t.check('a story read two ways is on the shelf under its own name', Boolean(last), rows.map((r) => r.title).join(' / '));
+
+      t.check('the first stop is badged so a reader can find it at a glance', first?.step?.startsWith('Start here') === true, JSON.stringify(first?.step));
+      t.check('and still says how long the path is', first?.step?.includes('Step 1 of 3') === true, JSON.stringify(first?.step));
+      t.check('and names the path it belongs to', first?.step?.includes('The Fixture Path') === true, JSON.stringify(first?.step));
+
+      t.check('a middle stop is numbered', middle?.step?.startsWith('Step 2 of 3') === true, JSON.stringify(middle?.step));
+      // Deliberately absent. The shelf is sorted by year, so the previous stop is the row above,
+      // and printing it made the longest thing on the line a copy of the line before it.
+      t.check('and does not restate the stop above it', middle?.step?.includes('Browser Check Order') === false, JSON.stringify(middle?.step));
+      // The step named the short reading; the shelf row is the story. If the app echoed the step
+      // this would read "Next: Third Stop: The Short Way" and point at a row nobody can see.
+      t.check('and names the next stop by its story, not by one reading of it', middle?.step?.includes('Next: Third Stop') === true && !middle.step.includes('Short Way'), JSON.stringify(middle?.step));
+
+      t.check('the last stop says the path ends there', last?.step?.includes('Last stop') === true, JSON.stringify(last?.step));
+      t.check('and is numbered last', last?.step?.includes('Step 3 of 3') === true, JSON.stringify(last?.step));
+      t.check('and offers no next stop to go to', last?.step?.includes('Next:') === false, JSON.stringify(last?.step));
+
+      t.check('a story on no path says nothing about one', off !== undefined && off.step === null, JSON.stringify(off?.step));
+
+      // The start year is the other half of the same question, and it is the half that reaches
+      // every row rather than only the ten on a path.
+      t.check('a dated order says when its reading starts', first?.meta?.includes('Starts 1963') === true, JSON.stringify(first?.meta));
+      t.check('and an undated one claims no year at all', off?.meta?.includes('Starts') === false, JSON.stringify(off?.meta));
+    },
+  },
+  {
+    id: 'rail-collapse',
+    title: 'collapsing the sidebar does not reach into the shelf',
+    async run(page, t) {
+      await open(page, '/');
+      await click(page, '[data-view="catalog"]');
+      await page.waitForSelector('#catalog-results .path-step .pill', { timeout: 15000 });
+
+      const read = () => page.evaluate(() => {
+        const box = (e) => {
+          if (!e) return null;
+          const r = e.getBoundingClientRect();
+          return { w: Math.round(r.width), colour: getComputedStyle(e).color };
+        };
+        return {
+          badge: box(document.querySelector('#catalog-results .path-step .pill')),
+          status: box(document.querySelector('#api-status')),
+        };
+      });
+
+      const before = await read();
+      // Set directly rather than through the toggle: what is under test is the stylesheet, and
+      // the toggle also persists a preference this check has no business writing.
+      await page.evaluate(() => document.querySelector('#shell').classList.add('railed'));
+      const after = await read();
+
+      const invisible = (c) => /rgba\(\d+, \d+, \d+, 0\)/.test(c ?? '');
+      t.check('the start badge is a badge to begin with', (before.badge?.w ?? 0) > 20, JSON.stringify(before.badge));
+      t.check('and is still that size once the sidebar is collapsed', after.badge?.w === before.badge?.w, `${before.badge?.w} then ${after.badge?.w}`);
+      t.check('and its text is still painted', !invisible(after.badge?.colour), JSON.stringify(after.badge?.colour));
+      // The other half of the same claim. A fix that scoped the rule away entirely would pass the
+      // three above and quietly cost the rail the dot it is supposed to collapse to.
+      t.check('while the rail status pill still collapses to a dot', (after.status?.w ?? 99) <= 12, JSON.stringify(after.status));
+    },
+  },
+  {
     id: 'import',
     title: 'a curated order can be imported from the catalog',
     async run(page, t) {
@@ -452,7 +605,7 @@ const SCENARIOS = [
       //
       // checkVisibility() with no argument answers a narrower question than it looks like it does:
       // it defaults every option off and so returns true for both `visibility: hidden` and
-      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:649` hides the row
+      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:664` hides the row
       // actions with exactly `opacity: 0`, so it is this stylesheet's established way of putting a
       // control out of reach, and the defaults are blind to it. Measured in the same Edge this
       // drives: with the two buttons faded that way both rows passed while nothing sat under the
@@ -671,7 +824,15 @@ async function preparePage(page, origin, mutation) {
       });
       window.fetch = (input, init) => {
         const url = typeof input === 'string' ? input : input?.url ?? '';
-        if (url.endsWith('data/catalog.json')) return Promise.resolve(json(catalog));
+        if (url.endsWith('data/catalog.json')) {
+          // Two mutations aimed at the reading path, both applied to the catalog rather than to
+          // the app, because the app resolves the path from this payload and nothing else.
+          if (window.__mrtMutation === 'path-strip') return Promise.resolve(json({ ...catalog, paths: [] }));
+          if (window.__mrtMutation === 'group-strip') {
+            return Promise.resolve(json({ ...catalog, lists: catalog.lists.map((l) => ({ ...l, groupName: null })) }));
+          }
+          return Promise.resolve(json(catalog));
+        }
         if (url.endsWith(`data/${orderFile}`)) {
           if (window.__mrtMutation === 'import-fail') return Promise.resolve(json({ error: 'mutation' }, 500));
           return Promise.resolve(json(order));

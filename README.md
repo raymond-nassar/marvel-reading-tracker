@@ -561,6 +561,7 @@ Each entry needs:
 | `sourceLicense` | An SPDX expression, or `null` when no licence is conveyed with the order. Not a place for prose |
 | `out` | Plain `*.json` file name to write into `src/data/` |
 | `characters`, `keywords` | Extra terms the catalog search should match |
+| `timeline` | Optional whole year of 1939 or later: where the *story* starts, not when it was published. It orders the catalog, and the shelf prints it as "Starts 1963". Leave it out for an order that ranges across the timeline rather than sitting on it, such as a best-of |
 | `group`, `groupName`, `variant` | Optional. Ties this order to a story that has more than one reading path, so the catalog groups the versions under `groupName` and labels each with its `variant` |
 | `expect` | Optional expected issue count; a mismatch is reported |
 
@@ -575,7 +576,44 @@ A checklist line with no Marvel link becomes a placeholder: an entry you can see
 but not open, because there is nothing to open. Keeping it means the reading order stays complete
 rather than quietly losing an issue, and the import notice says how many there are.
 
-#### Orders grouped by collected edition
+#### Reading paths
+
+`group` says two orders are two readings of one story. Nothing said that one story is read *after*
+another, which is the question a reader who has never read a Marvel comic actually asks. A reading
+path answers it: a named, ordered sequence of stories, declared once beside the lists.
+
+```json
+"paths": [
+  {
+    "id": "modern-avengers",
+    "name": "The Modern Avengers",
+    "description": "What the shelf says the path is for.",
+    "sourceOrigin": "Compiled for this project. Seven stops follow ...",
+    "steps": ["essential-avengers", "avengers-disassembled", "house-of-m"]
+  }
+]
+```
+
+Each step is a list `id`, not a story key. The id namespace is already checked for uniqueness, so a
+typo is caught rather than resolved to the wrong thing; naming the order also records which reading
+the source chose; and a story key is an internal shape that has no business being typed into
+hand-authored data. The app resolves each step to its story, so a stop is shown under the name the
+shelf uses. Naming either reading of House of M places the House of M row, not one version of it.
+
+An array rather than a `follows` field on each entry, and that is the whole design: an array cannot
+contain a cycle, its next stop is the next element, and it starts where it starts.
+
+`sourceOrigin` is required. A path is a claim this repository makes about how stories connect, and
+no upstream publishes one in this form, so the shelf has to be able to say who compiled it and from
+what. The vendor run refuses a path with a step naming no list, two steps in one story, fewer than
+two steps, or a duplicate `id`.
+
+Nothing checks that the stops do not overlap, because nothing can: two orders sharing an issue is
+legitimate everywhere else in the catalog. What keeps the shipped path honest is a test that reads
+every order behind every stop and asserts no two stories share an issue, at any reading depth. Add
+a stop that overlaps another and that test fails with the pair named.
+
+
 
 A checklist may divide its issues with `##` sub-headings. Each one names a collected edition, and
 the issues beneath it are the issues that edition collects. The reading view then shows the

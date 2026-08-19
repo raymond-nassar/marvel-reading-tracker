@@ -14,7 +14,7 @@
 // reason rather than dropped: silently vendoring a shorter catalog is how a list goes missing
 // without anyone noticing.
 
-import { LIST_TYPES, READING_DEPTHS, safeFile, safeOrderFile } from './catalog.js';
+import { LIST_TYPES, READING_DEPTHS, safeFile, safeOrderFile, storyKey } from './catalog.js';
 
 const str = (v) => (typeof v === 'string' && v.trim() ? v.trim() : null);
 
@@ -143,11 +143,72 @@ function checkEntry(raw, index, seen) {
   };
 }
 
+// A named ordered reading path through the catalog: the stops a reader works through, in the
+// order they read them. It is the one relationship the manifest could not express, because
+// `group` says two orders are two readings of the *same* story, which is the opposite claim.
+//
+// A step names an order id rather than a story key. The id namespace is the one this file
+// already checks for uniqueness, so there is no second namespace to keep in step; naming the
+// order records which reading the source actually chose, which a story key would discard; and a
+// story key is an internal shape that has no business being typed into hand-authored data.
+//
+// The path is an array rather than a `follows` field on each entry, and that is the whole design.
+// A pairwise field has to detect cycles, has to answer "what comes next" by searching backwards,
+// and has to decide which entry starts the chain. An array cannot contain a cycle, its next stop
+// is the next element, and it starts where it starts. The only structural mistake left is landing
+// on the same story twice, which is checked below.
+function checkPath(raw, index, seen, storiesById) {
+  const errors = [];
+  const at = (msg) => errors.push(`path ${index}: ${msg}`);
+
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
+    return { path: null, errors: [`path ${index}: is not an object`] };
+  }
+
+  const id = str(raw.id);
+  const name = str(raw.name);
+  const description = str(raw.description);
+  const sourceOrigin = str(raw.sourceOrigin);
+
+  if (!id) at('has no id');
+  else if (seen.has(id)) at(`duplicate id "${id}"`);
+  if (!name) at('has no name');
+  if (!description) at('has no description');
+  // Required rather than optional, unlike on an entry where it is also required. A path is a
+  // claim this project makes about how stories connect, and no upstream published it in this
+  // form, so the surface has to be able to say who compiled it and from what.
+  if (!sourceOrigin) at('has no sourceOrigin; a path is this project\'s own claim and must say where it came from');
+
+  const steps = Array.isArray(raw.steps) ? raw.steps.map(str) : null;
+  if (!steps) at('has no steps array');
+  else if (steps.length < 2) at('needs at least two steps; one stop is not a sequence');
+  else if (steps.some((s) => !s)) at('has a step that is not a non-empty string');
+  else {
+    const storiesSeen = new Map();
+    steps.forEach((step, i) => {
+      const story = storiesById.get(step);
+      if (!story) {
+        at(`step ${i} names "${step}", which is not a list in this manifest`);
+        return;
+      }
+      // Two steps in one story would number the same shelf row twice. It is a real mistake to
+      // make: `civil-war` and `civil-war-avengers` are separate ids in the same story, and a
+      // path naming both reads as two stops that are one.
+      const first = storiesSeen.get(story);
+      if (first != null) at(`step ${i} names "${step}", which is the same story as step ${first}`);
+      else storiesSeen.set(story, i);
+    });
+  }
+
+  if (errors.length) return { path: null, errors };
+  return { path: { id, name, description, sourceOrigin, steps }, errors: [] };
+}
+
 // Returns every valid entry plus every reason an entry was rejected. Callers decide whether a
 // partial manifest is acceptable; the vendor script refuses it.
 export function parseManifest(raw) {
   const list = Array.isArray(raw?.lists) ? raw.lists : null;
-  if (!list) return { entries: [], errors: ['manifest has no "lists" array'] };
+  if (!list) return { entries: [], paths: [], errors: ['manifest has no "lists" array'] };
 
   const entries = [];
   const errors = [];
@@ -162,5 +223,26 @@ export function parseManifest(raw) {
     }
   });
 
-  return { entries, errors };
+  // Paths are checked in a second pass because a step names another entry, and an entry cannot
+  // be validated against ids that have not been read yet.
+  const paths = [];
+  if (raw.paths != null) {
+    if (!Array.isArray(raw.paths)) {
+      errors.push('manifest "paths" is not an array');
+    } else {
+      const storiesById = new Map(entries.map((e) => [e.id, storyKey(e)]));
+      const seenPaths = new Set();
+      raw.paths.forEach((item, i) => {
+        const { path, errors: bad } = checkPath(item, i, seenPaths, storiesById);
+        if (path) {
+          seenPaths.add(path.id);
+          paths.push(path);
+        } else {
+          errors.push(...bad);
+        }
+      });
+    }
+  }
+
+  return { entries, paths, errors };
 }

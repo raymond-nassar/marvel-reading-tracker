@@ -86,8 +86,11 @@ test('unknown type and depth values become null instead of being displayed', () 
 });
 
 test('a missing or malformed catalog yields an empty list, not a crash', () => {
-  assert.deepEqual(parseCatalog(undefined), { lists: [], dropped: 0 });
-  assert.deepEqual(parseCatalog({ lists: 'nope' }), { lists: [], dropped: 0 });
+  assert.deepEqual(parseCatalog(undefined), { lists: [], paths: [], dropped: 0 });
+  assert.deepEqual(parseCatalog({ lists: 'nope' }), { lists: [], paths: [], dropped: 0 });
+  // A catalog written before paths existed still parses; the section is absent, not empty-invalid.
+  assert.deepEqual(parseCatalog({ lists: [] }).paths, []);
+  assert.deepEqual(parseCatalog({ lists: [], paths: 'nope' }).paths, []);
 });
 
 test('the bundled catalog is valid and its counts match the vendored orders', async () => {

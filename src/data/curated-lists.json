@@ -978,5 +978,25 @@
       "expect": 59,
       "timeline": 2018
     }
+  ],
+  "paths": [
+    {
+      "id": "modern-avengers",
+      "name": "The Modern Avengers",
+      "description": "The shared Avengers story from the Silver Age through to the Fresh Start era, as a sequence of stops. Each stop is a story you can read at whichever depth you prefer; no two stops share an issue, so nothing is read twice.",
+      "sourceOrigin": "Compiled for this project. Seven stops follow Comic Book Herald's Avengers guide; three are placed by their start year.",
+      "steps": [
+        "essential-avengers",
+        "avengers-disassembled",
+        "house-of-m",
+        "civil-war-avengers",
+        "secret-invasion",
+        "dark-reign-avengers",
+        "heroic-age-avengers",
+        "hickman-minimal",
+        "all-new-all-different-avengers",
+        "marvel-fresh-start-avengers"
+      ]
+    }
   ]
 }

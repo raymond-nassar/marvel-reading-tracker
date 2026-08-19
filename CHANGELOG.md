@@ -12,7 +12,37 @@ upgrading across a MAJOR.
 Releases are tagged `v<version>`. The version shown under **About this app** is the one to
 quote in a bug report.
 
-## 1.1.1
+## Unreleased
+
+### Say which order to read after this one
+
+In plain English: the catalog shows nineteen curated reading orders, and until now nothing on it
+said that any one of them was read after any other. Someone who was shown the app and wanted to
+start reading Marvel comics could see every option and still not know which to open first. Ten of
+those orders are one continuous Avengers story running from 2004 to 2015, and the shelf was already
+putting them in the right order without ever saying it was.
+
+Each of those ten rows now carries a line saying which reading path it belongs to, where it sits on
+it, and which order comes next. The first one says **Start here**. Every row that has a start year
+now shows it, which the shelf was already sorting by but never printed.
+
+Nothing you have saved is affected, and nothing you have already imported changes. This adds a line
+to the catalog and nothing else.
+
+The ten stops share no issues at all, which is checked by a test rather than asserted here: 99 pairs
+of stories across 821 issues, nothing counted twice. The path says where it came from, on every row
+that shows it, for the same reason every order in the catalog does.
+
+### Stop collapsing the sidebar from blanking every pill in the catalog
+
+In plain English: collapsing the sidebar to its narrow strip is supposed to shrink the two little
+status labels at the bottom of it into dots. It was shrinking every small label on the page instead,
+including the ones in the catalog, so folding the sidebar away made a piece of text on each reading
+order vanish while still taking up its space. Only the sidebar's own labels shrink now.
+
+This has been wrong since the collapsed sidebar shipped. It was found while checking that the new
+**Start here** badge survived being collapsed, which it did not.
+
 
 A correction to the download, and the reason it needed one is worth stating: the fault below was
 found by starting the packaged archive rather than by reading the code, so it could not have been
