@@ -14,6 +14,39 @@ quote in a bug report.
 
 ## Unreleased
 
+### The readme now shows the catalog instead of only describing it
+
+In plain English: the project page opens with a picture of the screen you pick a reading order
+from, so you can see what the app looks like before deciding whether to download it. Nothing about
+the app itself changed.
+
+The shot is the catalog with no reading lists imported yet, which is what a new arrival actually
+sees. Cover art is switched off before the page is opened, so the file cannot contain any comic
+artwork; the catalog draws no covers either way, so the picture matches the app as it ships.
+
+### The catalog shelf now says which half of it you are looking at
+
+In plain English: the list of reading orders is now split under two headings, "The shared story" and
+"Character spotlights", each with a sentence saying what it is for. Nothing moved. The list was
+already in that order, because the orders that follow one character carry no start year and so
+always sorted to the bottom, but nothing on the page ever said so and it read as an accident. Now it
+reads as a choice: read the shared story in order, or pick a character you already like and start
+there. Nothing you have saved is affected.
+
+A heading with nothing under it is dropped, so filtering or searching the shelf down to one kind of
+reading still names the kind you are seeing rather than leaving a bare heading behind.
+
+For the same reason, the shared story's heading only mentions the "Start here" badge when the order
+carrying that badge is one of the ones on screen. Filter the shelf down to events, or search it, and
+the heading still says what the half is for but stops pointing at a badge you would not be able to
+find.
+
+The division deliberately keeps every stop of the numbered reading path on one side. The item that
+asked for this change said the path ran through character runs; measuring the shipped catalog showed
+it does not, and that the one creator run on the shelf is stop 8 of the path. Splitting it off as the
+original wording implied would have cut the route in half. A test now holds the path inside one
+section against the real catalog, so the mistake cannot be reintroduced quietly.
+
 ### Fill in a new issue's details from the Marvel Fandom wiki
 
 In plain English: adding an issue by hand no longer means typing a title and getting nothing else.

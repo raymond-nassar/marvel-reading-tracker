@@ -19,7 +19,7 @@ import {
   parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,
   searchCatalog, groupCatalog, variantLabel, sourceLink, sourceLabel, updatedLabel,
   catalogCoverUrl, readingTimeLabel, collectionsLabel, pickPath, countStories,
-  pathPlacements, timelineLabel,
+  pathPlacements, timelineLabel, shelfSections,
 } from './lib/catalog.js';
 import { Store, KEY as STATE_KEY } from './storage.js';
 import { MarvelApi, DEFAULT_BASE } from './api.js';
@@ -3435,7 +3435,13 @@ async function renderCatalog() {
   // Resolved once for the whole shelf rather than per row: nineteen rows each searching every
   // path is the same work nineteen times, and the answer cannot differ between them.
   const placements = pathPlacements(catalog.paths, catalog.lists);
-  for (const story of stories) box.append(catalogRow(story, placements.get(story.key)));
+  for (const section of shelfSections(stories)) {
+    // Whether the badge this section's blurb points at is actually being drawn, asked of the same
+    // placements the rows are drawn from rather than of the rule that produced them.
+    const hasFirstStop = section.stories.some((s) => placements.get(s.key)?.previous === null);
+    box.append(shelfSectionHead(section, hasFirstStop));
+    for (const story of section.stories) box.append(catalogRow(story, placements.get(story.key)));
+  }
 
   // The dropped-entry warning already announced itself; a second announcement would replace it.
   if (!catalog.dropped) {
@@ -3443,6 +3449,20 @@ async function renderCatalog() {
     const match = catalogQuery ? ` matching “${catalogQuery}”` : '';
     announceCatalog(`Catalog shows ${stories.length} reading ${stories.length === 1 ? 'list' : 'lists'}${match}${where}.`);
   }
+}
+
+// The divider over one half of the shelf. A heading rather than a styled line, because the thing a
+// reader needs here is navigable: the view titles itself with an h1 and every row titles itself with
+// an h3, so h2 is both the honest level and the one that closes a heading skip that was already
+// there before the sections were.
+function shelfSectionHead(section, showRoute) {
+  const blurb = showRoute && section.routeBlurb
+    ? `${section.blurb} ${section.routeBlurb}`
+    : section.blurb;
+  return el('div', { class: 'shelf-section' }, [
+    el('h2', { class: 'shelf-section-title', text: section.heading }),
+    el('p', { class: 'shelf-section-blurb', text: blurb }),
+  ]);
 }
 
 // One row per story. A story read several ways used to be a heading with a row under it for each

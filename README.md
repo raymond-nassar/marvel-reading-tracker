@@ -13,6 +13,17 @@ Marvel Unlimited to read the next one.
 It does not contain any comics, and it is not made by Marvel. You still need your own Marvel
 Unlimited subscription to read.
 
+![The Reading list catalog screen. A sidebar down the left lists your reading orders, library views
+and ways to add issues. The main panel has a search box and a row of chips that filter the list, then
+a section headed "The shared story", described as events and eras in the order they happened. Its
+first entry, Essential Avengers, carries a green "Start here" badge beside a line reading "The Modern
+Avengers, step 1 of 10, next: Avengers Disassembled", and below it Avengers Disassembled is step 2 of
+10. Each order says what it covers, who compiled it and where it came from, and has an Import
+button.](docs/screenshots/catalog-shelf-1280.png)
+
+The catalog is where you pick something to read. Every order shown ships inside the app, so
+importing one needs no internet connection, and the one to read first is marked.
+
 ## Start here
 
 ### On Windows

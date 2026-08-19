@@ -549,3 +549,60 @@ export function timelineLabel(list) {
   const year = list?.timeline;
   return Number.isInteger(year) ? `Starts ${year}` : null;
 }
+
+// ------------------------------------------------------------------ shelf sections
+
+// The shelf's two halves. A reader who does not know where to start is choosing between two
+// different kinds of reading, and until now the shelf offered them as one undifferentiated list
+// whose boundary was real but unexplained: the year sort already puts every character run last,
+// because none of them carries a year, and nothing on the page said why they sat together.
+//
+// Keyed on `type` rather than on whether an order carries a `timeline` year. Today those two rules
+// produce the same split, but that is a property of the data as it stands rather than a rule
+// anything enforces, and a dated character run would silently land in the shared story.
+//
+// `creator-run` sits with the shared story rather than with the character runs, on the evidence
+// rather than on the label. Both bundled creator-run orders are one story, Hickman's Avengers, and
+// that story is stop 8 of the modern Avengers path. Filing it under the spotlights would take a
+// stop out of the middle of the sequence and put it in the half the sequence does not run through.
+const SPOTLIGHT_TYPES = new Set(['character-run']);
+
+export const SHELF_SECTIONS = [
+  {
+    key: 'story',
+    heading: 'The shared story',
+    blurb: 'Events and eras in the order they happened. These build on each other, so reading them front to back is the surest way through.',
+    // Held apart from the blurb because it is a claim about the screen rather than about the
+    // section. It names a badge, and the badge is drawn on one story only. Measured against the
+    // shipped catalog, three of the eight facet chips and most searches keep rows in this section
+    // while dropping that story, so a blurb that always said this would point at nothing on screen
+    // in exactly the states a lost reader is most likely to have reached.
+    routeBlurb: 'One of them below is marked Start here, and each stop names the one to read next.',
+  },
+  {
+    key: 'spotlight',
+    heading: 'Character spotlights',
+    blurb: 'Everything worth reading about one hero or team, in one place. These stand on their own, so you can begin with whichever character you already like.',
+  },
+];
+
+// Which half a story belongs to. Every one of its readings has to be a spotlight, not merely one of
+// them: a story carrying even one shared-universe order stays in the shared story, which is the
+// side that cannot cut a reading path in two. No bundled story mixes types today, so the rule
+// decides nothing yet. It decides what happens the first time one does.
+export function sectionKey(story) {
+  const lists = Array.isArray(story?.lists) ? story.lists : [];
+  return lists.length && lists.every((l) => SPOTLIGHT_TYPES.has(l?.type)) ? 'spotlight' : 'story';
+}
+
+// The shelf, divided, in the order the sections are declared and with each section's own order left
+// exactly as it arrived. Sorting already placed the rows; this only says where the boundary is.
+//
+// An empty section is dropped rather than rendered with a heading and nothing under it, so a search
+// or a facet that narrows the shelf to one kind of reading still names the kind it is showing.
+export function shelfSections(stories) {
+  const all = Array.isArray(stories) ? stories : [];
+  return SHELF_SECTIONS
+    .map((section) => ({ ...section, stories: all.filter((s) => sectionKey(s) === section.key) }))
+    .filter((section) => section.stories.length);
+}

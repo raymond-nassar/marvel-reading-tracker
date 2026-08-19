@@ -189,6 +189,10 @@ const shelfEntry = (id, name, extra = {}) => ({
 // story read two ways, which is the case the shelf and the path disagree about most easily: the
 // path step names one reading, the shelf draws one row for the story, and the stop has to be
 // named the way the row is or it points at something not on screen.
+//
+// The off-path entry is the one character run, which makes it the only row on the spotlight side of
+// the shelf. That is deliberate: a fixture in which every entry lands in one section would paint a
+// single heading and let a broken division pass.
 const CATALOG = {
   lists: [
     shelfEntry('browser-check', 'Browser Check Order', { timeline: 1963 }),
@@ -199,7 +203,7 @@ const CATALOG = {
     shelfEntry('browser-check-three-short', 'Third Stop: The Short Way', {
       group: 'bc-third', groupName: 'Third Stop', variant: 'Essential', depth: 'essential', timeline: 2006,
     }),
-    shelfEntry('browser-check-off', 'Off The Path'),
+    shelfEntry('browser-check-off', 'Off The Path', { type: 'character-run' }),
   ],
   paths: [
     {
@@ -265,6 +269,14 @@ const MUTATIONS = [
     why: 'a story read two ways loses its shared name, so a stop naming the story rather than one reading of it cannot be resolving anything',
     script: () => {
       window.__mrtMutation = 'group-strip';
+    },
+  },
+  {
+    id: 'type-flatten',
+    breaks: 'shelf-sections',
+    why: 'every order arrives typed as one kind, so a shelf that still draws two headings is dividing on something other than the rule it claims to divide on',
+    script: () => {
+      window.__mrtMutation = 'type-flatten';
     },
   },
   {
@@ -481,6 +493,72 @@ const MUTATIONS = [
 // they run in cannot matter. A scenario that passed only because the one before it left the right
 // state behind is not evidence either.
 const SCENARIOS = [
+  {
+    id: 'shelf-sections',
+    title: 'the shelf says which half of it a reader is looking at',
+    async run(page, t) {
+      await open(page, '/');
+      await click(page, '[data-view="catalog"]');
+      await page.waitForSelector('#catalog-results .result', { timeout: 15000 });
+
+      // Read headings and rows in one pass, in document order, so "which heading is this row under"
+      // is answered by the page as painted rather than by re-deriving the rule that painted it.
+      const readShelf = () => page.$$eval('#catalog-results > *', (els) => els.map((e) => (
+        e.classList.contains('shelf-section')
+          ? {
+            kind: 'head',
+            level: e.querySelector('h1, h2, h3, h4')?.tagName ?? null,
+            heading: e.querySelector('.shelf-section-title')?.textContent.trim() ?? '',
+            blurb: e.querySelector('.shelf-section-blurb')?.textContent.trim() ?? '',
+          }
+          : {
+            kind: 'row',
+            title: e.querySelector('.result-title')?.textContent.trim() ?? '',
+            step: e.querySelector('.path-step')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
+          }
+      )));
+
+      const shelf = await readShelf();
+      const heads = shelf.filter((x) => x.kind === 'head');
+
+      t.check('the shelf is divided in two', heads.length === 2, heads.map((h) => h.heading).join(' / '));
+      t.check('the shared story is named first', heads[0]?.heading === 'The shared story', JSON.stringify(heads[0]?.heading));
+      t.check('and the character spotlights second', heads[1]?.heading === 'Character spotlights', JSON.stringify(heads[1]?.heading));
+      t.check('each heading says what its half is for', heads.every((h) => h.blurb.length > 40), JSON.stringify(heads.map((h) => h.blurb.length)));
+
+      // The view titles itself with an h1 and every row titles itself with an h3, so h2 is the level
+      // that makes the shelf navigable by heading instead of a skip a screen reader has to guess at.
+      t.check('the headings are real headings at the level between the two', heads.every((h) => h.level === 'H2'), JSON.stringify(heads.map((h) => h.level)));
+
+      // The acceptance criterion, read off the page rather than off the model. A route whose steps
+      // straddle a heading is a route the heading is telling the reader not to follow.
+      let head = null;
+      const under = new Map();
+      for (const x of shelf) {
+        if (x.kind === 'head') head = x.heading;
+        else if (x.step) under.set(x.title, head);
+      }
+      t.check('every stop of the path is on the shelf', under.size === 3, JSON.stringify([...under]));
+      t.check('and every one of them sits under the shared story', [...under.values()].every((h) => h === 'The shared story'), JSON.stringify([...under]));
+
+      // Named rather than dereferenced, because findIndex returns -1 when the heading is absent and
+      // slice(-1) is the last row rather than no rows. That is the type-flatten state exactly, so
+      // the assertion below read the one row it happened to land on and passed while the section it
+      // names was not drawn at all.
+      const spotlightAt = shelf.findIndex((x) => x.heading === 'Character spotlights');
+      const spotlight = spotlightAt < 0 ? [] : shelf.slice(spotlightAt).filter((x) => x.kind === 'row');
+      t.check('the character reading is the one under the spotlights', spotlight.map((r) => r.title).join('/') === 'Off The Path', spotlight.map((r) => r.title).join('/'));
+
+      // A heading over nothing tells a reader a kind of reading exists and then withholds it, so a
+      // search that reaches only one half has to drop the other rather than head an empty list.
+      await page.type('#catalog-q', 'Off The Path');
+      await page.waitForFunction(() => document.querySelectorAll('#catalog-results .result').length === 1, { timeout: 15000 });
+      const narrowed = await readShelf();
+      const narrowedHeads = narrowed.filter((x) => x.kind === 'head');
+      t.check('a search that reaches one half heads only that half', narrowedHeads.length === 1, narrowedHeads.map((h) => h.heading).join(' / '));
+      t.check('and still names the kind of reading it is showing', narrowedHeads[0]?.heading === 'Character spotlights', JSON.stringify(narrowedHeads[0]?.heading));
+    },
+  },
   {
     id: 'reading-path',
     title: 'the shelf says where a story sits in a reading order',
@@ -1113,6 +1191,12 @@ async function preparePage(page, origin, mutation) {
           if (window.__mrtMutation === 'path-strip') return Promise.resolve(json({ ...catalog, paths: [] }));
           if (window.__mrtMutation === 'group-strip') {
             return Promise.resolve(json({ ...catalog, lists: catalog.lists.map((l) => ({ ...l, groupName: null })) }));
+          }
+          // Aimed at the section rule through its input rather than at the function, which the page
+          // cannot reach. One type everywhere puts every story on one side, so the empty section is
+          // dropped and the shelf paints a single heading.
+          if (window.__mrtMutation === 'type-flatten') {
+            return Promise.resolve(json({ ...catalog, lists: catalog.lists.map((l) => ({ ...l, type: 'era' })) }));
           }
           return Promise.resolve(json(catalog));
         }

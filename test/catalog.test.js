@@ -8,7 +8,7 @@ import {
   safeOrderFile, LIST_TYPES, READING_DEPTHS, UNCATEGORIZED,
   catalogFacets, filterByFacet, facetLabel, isShortOrder, catalogCoverUrl,
   readingTimeLabel, MINUTES_PER_ISSUE, SHORT_ORDER_MAX, collectionsLabel, isTradeOrder, sortCatalog,
-  countStories,
+  countStories, sectionKey, shelfSections, SHELF_SECTIONS, pathPlacements,
 } from '../src/js/lib/catalog.js';
 
 test('safeOrderFile accepts a plain markdown name and nothing that escapes the orders folder', () => {
@@ -765,4 +765,114 @@ test('every reading path through one story starts in the same year', async () =>
     else assert.equal(list.timeline ?? null, seen, `${list.id} starts in a different year from the rest of ${list.group}`);
   }
   assert.ok(byGroup.size >= 1, 'the manifest has at least one grouped story');
+});
+
+// ------------------------------------------------------------------ shelf sections
+
+test('a story whose every reading is a character run is a spotlight', () => {
+  assert.equal(sectionKey({ lists: [{ type: 'character-run' }, { type: 'character-run' }] }), 'spotlight');
+});
+
+test('a story with any shared-universe reading stays in the shared story', () => {
+  assert.equal(sectionKey({ lists: [{ type: 'event' }] }), 'story');
+  assert.equal(sectionKey({ lists: [{ type: 'era' }] }), 'story');
+  // The conservative half of the rule. One shared-universe reading is enough, because that is the
+  // side a reading path can run through and a path must not be cut in two by the division.
+  assert.equal(sectionKey({ lists: [{ type: 'character-run' }, { type: 'event' }] }), 'story');
+});
+
+// The fact BL-154's own write-up got wrong. Both bundled creator runs are Hickman's Avengers, and
+// that story is a stop on the modern Avengers path, so filing creator runs with the character runs
+// would take a stop out of the middle of the sequence.
+test('a creator run belongs to the shared story, not the spotlights', () => {
+  assert.equal(sectionKey({ lists: [{ type: 'creator-run' }] }), 'story');
+});
+
+test('a story with no readings at all does not become a spotlight', () => {
+  assert.equal(sectionKey({ lists: [] }), 'story');
+  assert.equal(sectionKey({}), 'story');
+  assert.equal(sectionKey(null), 'story');
+});
+
+test('shelfSections divides the shelf without reordering either half', () => {
+  const stories = [
+    { key: 'a', lists: [{ type: 'event' }] },
+    { key: 'b', lists: [{ type: 'character-run' }] },
+    { key: 'c', lists: [{ type: 'era' }] },
+    { key: 'd', lists: [{ type: 'character-run' }] },
+  ];
+  const sections = shelfSections(stories);
+  assert.equal(sections.length, 2);
+  assert.equal(sections[0].key, 'story');
+  assert.deepEqual(sections[0].stories.map((s) => s.key), ['a', 'c']);
+  assert.deepEqual(sections[1].stories.map((s) => s.key), ['b', 'd']);
+});
+
+// A heading over nothing tells a reader a kind of reading exists and then withholds it. Dropping the
+// empty section is also what lets a narrowed shelf still name the one kind it is showing.
+test('shelfSections drops a section with no rows and keeps the one that has them', () => {
+  const only = shelfSections([{ key: 'a', lists: [{ type: 'character-run' }] }]);
+  assert.equal(only.length, 1);
+  assert.equal(only[0].key, 'spotlight');
+  assert.equal(shelfSections([]).length, 0);
+  assert.equal(shelfSections(null).length, 0);
+});
+
+test('every section carries a heading and a blurb a new reader can act on', () => {
+  for (const section of SHELF_SECTIONS) {
+    assert.ok(section.heading.length, `${section.key} has a heading`);
+    assert.ok(section.blurb.length > 40, `${section.key} explains itself`);
+    const copy = section.heading + section.blurb + (section.routeBlurb ?? '');
+    assert.ok(!/[\u2013\u2014]/.test(copy), `${section.key} copy has no long dashes`);
+  }
+});
+
+// The blurb a section always shows must not name something the page only sometimes draws. The
+// "Start here" badge is drawn on one story, and filtering can leave the section full of rows with
+// that story gone, so the sentence naming the badge is held apart from the one that is always true.
+test('only the conditional half of the blurb names the Start here badge', () => {
+  const story = SHELF_SECTIONS.find((s) => s.key === 'story');
+  assert.ok(story, 'the shared story section exists to carry the sentence');
+  assert.ok(story.routeBlurb, 'the shared story carries a conditional sentence');
+  assert.ok(/start here/i.test(story.routeBlurb), 'and that sentence is the one naming the badge');
+  for (const section of SHELF_SECTIONS) {
+    assert.ok(!/start here/i.test(section.blurb), `${section.key}'s unconditional blurb promises no badge`);
+  }
+});
+
+// The state the finding was about, measured rather than asserted: a facet that keeps rows in the
+// shared story while dropping the story the badge is drawn on.
+test('a facet can leave the shared story populated with the first stop gone', async () => {
+  const raw = JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8'));
+  const catalog = parseCatalog(raw);
+  const placed = pathPlacements(catalog.paths, catalog.lists);
+  const events = groupCatalog(catalog.lists.filter((l) => l.type === 'event'));
+  const shown = shelfSections(events);
+  assert.ok(shown.length && shown[0].key === 'story', 'events alone still fill the shared story');
+  assert.ok(
+    !shown[0].stories.some((s) => placed.get(s.key)?.previous === null),
+    'and the first stop is not among them, so the badge sentence would point at nothing',
+  );
+});
+
+// The acceptance criterion the division exists to respect, checked against the shipped catalog
+// rather than a fixture: the reading path must stay inside one section, because a route whose steps
+// straddle a heading is a route the heading tells the reader not to follow.
+test('the reading path stays wholly inside the shared story section', async () => {
+  const raw = JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8'));
+  const catalog = parseCatalog(raw);
+  const placed = pathPlacements(catalog.paths, catalog.lists);
+  const stories = groupCatalog(catalog.lists);
+  const onPath = stories.filter((s) => placed.has(s.key));
+  assert.ok(onPath.length >= 2, 'the catalog ships a reading path');
+  for (const story of onPath) {
+    assert.equal(sectionKey(story), 'story', `${story.key} is a path stop and must sit in the shared story`);
+  }
+});
+
+test('both sections have rows in the shipped catalog', async () => {
+  const raw = JSON.parse(await readFile(new URL('../src/data/catalog.json', import.meta.url), 'utf8'));
+  const sections = shelfSections(groupCatalog(parseCatalog(raw).lists));
+  assert.deepEqual(sections.map((s) => s.key), ['story', 'spotlight']);
+  for (const section of sections) assert.ok(section.stories.length, `${section.key} is not empty`);
 });
