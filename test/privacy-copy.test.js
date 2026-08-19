@@ -130,6 +130,20 @@ const REQUESTS = [
     'the requests disclose which issues',
     /(?:sees?|reveals?|discloses?)[^.]*(?:which issues|issues you are looking at|issue numbers)/i,
   ],
+  // Added with BL-150, which put the first request to a host that is not Marvel and not the
+  // metadata service anywhere in the app. A surface that enumerates the requests and omits an
+  // entirely new third party is the same defect as omitting the largest one, so it is held by a
+  // rule rather than left as prose. Both halves are required: naming the wiki without saying the
+  // request waits for a press describes something automatic, which is not what was built and not
+  // what Constraint 3 would allow.
+  [
+    'the hand-entry lookup sends the typed title to the Marvel Fandom wiki',
+    /sends?[^.;]*(?:title|typed)[^.;]*Marvel Fandom wiki/i,
+  ],
+  [
+    'that lookup happens only when the reader asks for it',
+    /only (?:when|if) you press/i,
+  ],
 ];
 
 test('every surface that makes the privacy claim keeps the promises and names the requests', () => {

@@ -503,9 +503,18 @@
               <form id="form-manual" class="stack">
                 <label for="manual-title">Title</label>
                 <input type="text" id="manual-title" required placeholder="e.g. The Amazing Spider-Man (2025) #12" />
-                <label for="manual-url">marvel.com or Marvel Unlimited address (optional)</label>
-                <input type="url" id="manual-url" placeholder="https://read.marvel.com/#/book/…" />
+                <button type="button" class="btn btn-g" id="btn-manual-lookup">Look up details</button>
                 <p class="rail-hint">
+                  Optional, and nothing happens until you press it. It sends the words in the Title
+                  box to the Marvel Fandom wiki, a community site Marvel does not run, and offers
+                  you the release date, page count and credits the snapshot cannot supply. Nothing
+                  about your lists or your reading progress goes with it, no cover image is
+                  fetched, and nothing is saved until you press Add issue.
+                </p>
+                <div id="manual-candidates" class="results"></div>
+                <label for="manual-url">marvel.com or Marvel Unlimited address (optional)</label>
+                <input type="url" id="manual-url" aria-describedby="manual-url-hint" placeholder="https://read.marvel.com/#/book/…" />
+                <p class="rail-hint" id="manual-url-hint">
                   Open the issue in Marvel Unlimited and paste the address from your browser. That
                   address carries the reader's own id for the book, which is what lets Read take you
                   straight there. A www.marvel.com issue address works too, but for anything newer
@@ -679,6 +688,11 @@
                 Opening an issue asks the metadata API for the reader link
                 when this copy does not already have it, then hands that one issue to Marvel's
                 reader, or to marvel.com whenever no reader link can be resolved.
+                Adding an issue by hand sends the words in the title box to the Marvel Fandom
+                wiki, a community site Marvel does not run, and it does that only when you press
+                the lookup button. That wiki then sees the title you searched for; your lists,
+                your progress and your notes are no part of the request, and no picture is
+                fetched from it.
               </p>
 
               <h3>This build</h3>

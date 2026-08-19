@@ -32,6 +32,30 @@ it does not, and that the one creator run on the shelf is stop 8 of the path. Sp
 original wording implied would have cut the route in half. A test now holds the path inside one
 section against the real catalog, so the mistake cannot be reintroduced quietly.
 
+### Fill in a new issue's details from the Marvel Fandom wiki
+
+In plain English: adding an issue by hand no longer means typing a title and getting nothing else.
+There is a Look up details button beside the title box, and pressing it offers you the release date,
+the page count and the creator credits for that comic, ready to be saved with it. It is there
+because the comics database this app reads stopped in October 2025, so for anything published since
+then the app has never had any of that.
+
+Nothing happens until you press the button, and nothing is saved until you press Add issue. The
+button sends the words in the title box to the Marvel Fandom wiki, a community site Marvel does not
+run, and it sends nothing else: not your lists, not your progress, not your notes. It fetches no
+pictures. The wiki's search is loose, so you are shown the matches and you pick the one you meant
+rather than the app guessing.
+
+Picking a match also fills in Marvel's own number for that comic, and that is worth more than it
+sounds. Until now an issue you added by hand had no link at all to its official page on marvel.com,
+because the tracker had no number to build one from. Now it does, and Read opens that page. To be
+clear about what this is not: it does not open the comic in Marvel Unlimited. That still needs the
+reader address you paste, which is a separate thing and unchanged.
+
+If the details you looked up would land on a comic you already track, the tracker declines to add a
+second copy of it and tells you which of your lists has it. Nothing you have already saved is
+overwritten.
+
 ### Read the Marvel Unlimited book id off an address you paste
 
 In plain English: you can now open a brand new issue in Marvel Unlimited from this tracker. Before,
@@ -53,6 +77,13 @@ information and the address you paste does not carry it.
 
 Nothing you have already saved is affected, and nothing was uploaded anywhere to make this work.
 The number comes from a page you were already looking at.
+
+One detail changed after a review. An entry added from a Marvel Unlimited address no longer also
+offers an Info link, because that link announced itself as going to marvel.com and went to the
+reader instead, which is the same place the Read button already goes. An entry added from a
+marvel.com address still offers it, since that one really is an information page. The address box
+now also points a screen reader at the paragraph explaining which of the two addresses gets you a
+working Read button.
 
 ### Say which order to read after this one
 

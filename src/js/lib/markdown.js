@@ -36,13 +36,22 @@ export function digitalIdFromUrl(url) {
   } catch {
     return null;
   }
+  // Its sibling below and the private copy in the reader module both refuse anything outside http
+  // and https, and this function had no such check. Probed with crafted addresses, ftp, file,
+  // javascript and data URLs naming read.marvel.com every one yielded a book id here while being
+  // rejected there. Nothing could reach it, because the caller gates on the sibling first, but two
+  // functions answering the same question differently is a contract waiting to be relied on.
+  if (u.protocol !== 'https:' && u.protocol !== 'http:') return null;
   if (u.hostname.toLowerCase() !== 'read.marvel.com') return null;
   const m = /^#\/book\/(\d+)/.exec(u.hash);
   if (!m) return null;
   const n = Number(m[1]);
   // Rejects 0 and anything past the safe integer range. Both would build a reader URL that loads
   // nothing, and a dead Read button is worse than a missing one because it looks like it worked.
-  return Number.isSafeInteger(n) && n > 0 ? n : null;
+  // Twelve digits is that same rule: it is the ceiling the launcher in src/open.js enforces before
+  // it will build a reader address, so a longer id accepted here would store and then be refused
+  // there, which is precisely the dead button this comment rules out.
+  return Number.isSafeInteger(n) && n > 0 && String(n).length <= 12 ? n : null;
 }
 
 export function isSafeMarvelUrl(url) {

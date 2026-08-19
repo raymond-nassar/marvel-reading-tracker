@@ -111,6 +111,28 @@ test('digitalIdFromUrl refuses anything that would build a dead reader link', ()
   assert.equal(digitalIdFromUrl(null), null);
 });
 
+test('digitalIdFromUrl refuses every scheme its sibling refuses', () => {
+  // The sibling check in this module and the private copy in the reader module both refuse
+  // anything outside http and https. This function did not, so the same address answered two
+  // ways depending on which of the three you happened to ask.
+  assert.equal(digitalIdFromUrl('ftp://read.marvel.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('file://read.marvel.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('javascript://read.marvel.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('foo://read.marvel.com/#/book/5'), null);
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/5'), 5, 'and still answers the two it allows');
+  assert.equal(digitalIdFromUrl('http://read.marvel.com/#/book/5'), 5);
+});
+
+test('digitalIdFromUrl stops at the twelve digits the launcher will accept', () => {
+  // The launcher refuses more than twelve digits before it will build a reader address, so an id
+  // longer than that would store here and be rejected at the point of use, which is the dead Read
+  // button this function's own comment says it prevents.
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/123456789012'), 123456789012,
+    'twelve is the last one the launcher will take');
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/1234567890123'), null);
+  assert.equal(digitalIdFromUrl('https://read.marvel.com/#/book/1234567890123456'), null);
+});
+
 test('isSafeMarvelUrl rejects other hosts and dangerous schemes', () => {
   assert.ok(isSafeMarvelUrl('https://www.marvel.com/comics/issue/1/x'));
   assert.ok(isSafeMarvelUrl('https://read.marvel.com/#/book/123'));
