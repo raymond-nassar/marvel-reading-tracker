@@ -541,7 +541,12 @@ const SCENARIOS = [
       t.check('every stop of the path is on the shelf', under.size === 3, JSON.stringify([...under]));
       t.check('and every one of them sits under the shared story', [...under.values()].every((h) => h === 'The shared story'), JSON.stringify([...under]));
 
-      const spotlight = shelf.slice(shelf.findIndex((x) => x.heading === 'Character spotlights')).filter((x) => x.kind === 'row');
+      // Named rather than dereferenced, because findIndex returns -1 when the heading is absent and
+      // slice(-1) is the last row rather than no rows. That is the type-flatten state exactly, so
+      // the assertion below read the one row it happened to land on and passed while the section it
+      // names was not drawn at all.
+      const spotlightAt = shelf.findIndex((x) => x.heading === 'Character spotlights');
+      const spotlight = spotlightAt < 0 ? [] : shelf.slice(spotlightAt).filter((x) => x.kind === 'row');
       t.check('the character reading is the one under the spotlights', spotlight.map((r) => r.title).join('/') === 'Off The Path', spotlight.map((r) => r.title).join('/'));
 
       // A heading over nothing tells a reader a kind of reading exists and then withholds it, so a
