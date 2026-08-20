@@ -12,7 +12,14 @@ upgrading across a MAJOR.
 Releases are tagged `v<version>`. The version shown under **About this app** is the one to
 quote in a bug report.
 
-## Unreleased
+## 1.2.0
+
+A feature release, and the one that makes every release after it reachable. Until now nothing in the
+app ever said that a newer version existed, so a reader who downloaded it once stayed on that build
+until they next happened to visit the repository. This is a MINOR because it adds features and
+changes the interface while leaving saved data readable by the previous build. Upgrading needs no
+backup and there is nothing to migrate. Reading progress is kept by the browser rather than inside
+the app folder, so the old folder can be deleted once the new one has been opened.
 
 ### The app now tells readers when a newer release is available
 
@@ -29,6 +36,12 @@ For maintainers: the release check is a small browser-side module with unit cove
 comparison, daily scheduling, failure handling and request shape. The real-browser harness now stubs
 the GitHub release request, checks the notice and the explicit button, and includes aimed mutations
 for the update journey.
+
+Cutting this release also found a fault in that coverage. The comparison test named `v1.2.0` as the
+newer release, so it passed only while the app had not reached 1.2.0, and the bump for this release
+turned it red for a reason that had nothing to do with the comparison it guards. Both neighbours are
+now derived from the shipped version, and the rewritten test was checked against a comparison made
+lexical again to confirm it still fails when the behaviour breaks.
 
 ### A committed check now drives the upgrade that notice recommends
 

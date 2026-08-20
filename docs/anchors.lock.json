@@ -304,13 +304,13 @@
     "fp": "e9a1e74dee2c791e",
     "head": "// The publication gate answered a question that only gets asked once, and it was asked on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2016-2019|0": {
-    "anchor": "CHANGELOG.md:2016-2019",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2029-2032|0": {
+    "anchor": "CHANGELOG.md:2029-2032",
     "fp": "a1bbc9d008c99c4d",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2028-2031|0": {
-    "anchor": "CHANGELOG.md:2028-2031",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2041-2044|0": {
+    "anchor": "CHANGELOG.md:2041-2044",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -816,7 +816,7 @@
   },
   "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "425f7ff4f7e4cc2c",
+    "fp": "f0745f658aab26f5",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:1046-1077|0": {
@@ -1064,8 +1064,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2892-2901|0": {
-    "anchor": "CHANGELOG.md:2892-2901",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2905-2914|0": {
+    "anchor": "CHANGELOG.md:2905-2914",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1116,7 +1116,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|package-lock.json:1-22|0": {
     "anchor": "package-lock.json:1-22",
-    "fp": "8090257df2c4a379",
+    "fp": "d836679ed3fd9616",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:14-15|0": {
@@ -3576,7 +3576,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "425f7ff4f7e4cc2c",
+    "fp": "f0745f658aab26f5",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:34-39|0": {
@@ -3591,13 +3591,13 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:3|0": {
     "anchor": "package.json:3",
-    "fp": "3d0d28dddedfa25c",
-    "head": "\"version\": \"1.1.1\","
+    "fp": "c152f5ab64c95a5f",
+    "head": "\"version\": \"1.2.0\","
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:3|1": {
     "anchor": "package.json:3",
-    "fp": "3d0d28dddedfa25c",
-    "head": "\"version\": \"1.1.1\","
+    "fp": "c152f5ab64c95a5f",
+    "head": "\"version\": \"1.2.0\","
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/lib/model.js:1046-1077|0": {
     "anchor": "src/js/lib/model.js:1046-1077",
@@ -3636,7 +3636,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "425f7ff4f7e4cc2c",
+    "fp": "f0745f658aab26f5",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:12|0": {
@@ -3726,8 +3726,8 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-043|package.json:3|0": {
     "anchor": "package.json:3",
-    "fp": "3d0d28dddedfa25c",
-    "head": "\"version\": \"1.1.1\","
+    "fp": "c152f5ab64c95a5f",
+    "head": "\"version\": \"1.2.0\","
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-044|server.mjs:129-139|0": {
     "anchor": "server.mjs:129-139",
