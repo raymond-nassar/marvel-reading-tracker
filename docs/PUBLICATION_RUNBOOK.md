@@ -138,11 +138,11 @@ that must not be rewritten, for the same reason the dated tracking artifacts are
 - `PRODUCT_BACKLOG.md:6342-6355`, why secret scanning was left unticked, and what push protection
   does when asked for without it.
 - `PRODUCT_BACKLOG.md:6753-6756`, why the private reporting task was left open.
-- `PRODUCT_BACKLOG.md:6819-6821`, what the changelog entry beside it was corrected to say.
-- `PRODUCT_BACKLOG.md:6842-6846`, why the contribution guide is written in the future tense.
+- `PRODUCT_BACKLOG.md:6818-6820`, what the changelog entry beside it was corrected to say.
+- `PRODUCT_BACKLOG.md:6841-6845`, why the contribution guide is written in the future tense.
 - `PRODUCT_BACKLOG.md:6849-6855`, why the code of conduct offers no private channel.
 - `PRODUCT_BACKLOG.md:6916-6922`, why the branch rules task was left open and could not be read.
-- `PRODUCT_BACKLOG.md:6947-6952`, why blank issues stay enabled.
+- `PRODUCT_BACKLOG.md:6946-6951`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:6990-6994`, why `required: true` collects nothing today.
 - `PRODUCT_BACKLOG.md:9094-9099`, the three settings named as refused on this repository today.
 - `CHANGELOG.md:1961-1964`, the released note that secret scanning cannot be turned on.
