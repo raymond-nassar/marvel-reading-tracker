@@ -2,7 +2,7 @@
 //
 // The backlog and the UX study rest on browser verification that was real but unrepeatable: the
 // scripts lived outside the tree, so a clean clone could rerun none of it. This file is that
-// evidence, committed. It drives installed Edge through the eight journeys the app is for, and it
+// evidence, committed. It drives installed Edge through the journeys the app is for, and it
 // is the only place where a claim about what the interface does in a browser can be checked
 // rather than argued.
 //
@@ -26,10 +26,15 @@
 // check fast, deterministic and immune to a catalog edit that has nothing to do with it.
 
 import { createStaticServer, HOST } from '../server.mjs';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+
+import { APP_VERSION } from '../src/js/lib/version.js';
+import {
+  LATEST_RELEASE_API_URL, UPDATE_DOWNLOAD_URL, UPDATE_RELEASE_NOTES_URL,
+} from '../src/js/lib/updateCheck.js';
 
 // Exit 2 rather than 1 for a missing prerequisite. A failed assertion and an uninstalled browser
 // driver are different answers to different questions, and a caller that cannot tell them apart
@@ -520,6 +525,71 @@ const MUTATIONS = [
         btn.closest('.notice').remove();
       }, true);
     },
+  },
+  {
+    id: 'update-default-newer',
+    breaks: 'updates',
+    why: 'the default release answer becomes newer, so an unchanged app would start warning every scenario',
+    script: () => {
+      window.__mrtUpdate = 'newer';
+    },
+  },
+  {
+    id: 'update-suppressed',
+    breaks: 'updates',
+    why: 'the update endpoint keeps reporting the running version, so the newer-release assertion has to notice the missing offer',
+    script: () => {
+      window.__mrtUpdate = 'current';
+    },
+  },
+  {
+    id: 'update-download-wrong',
+    breaks: 'updates',
+    why: 'the primary action is pointed at the release page instead of the stable zip download',
+    script: () => {
+      document.addEventListener('DOMContentLoaded', () => {
+        const rewrite = () => {
+          const target = 'https://github.com/raymond-nassar/marvel-reading-tracker/releases/latest';
+          for (const link of document.querySelectorAll('#app-report .notice a')) {
+            if (/Download version/.test(link.textContent ?? '')) {
+              if (link.href !== target) link.href = target;
+            }
+          }
+        };
+        new MutationObserver(rewrite).observe(document.body, { childList: true, subtree: true });
+        rewrite();
+      });
+    },
+  },
+  {
+    id: 'update-notes-missing',
+    breaks: 'updates',
+    why: 'the secondary release-notes link is removed while the download stays present',
+    script: () => {
+      document.addEventListener('DOMContentLoaded', () => {
+        const remove = () => {
+          for (const link of document.querySelectorAll('#app-report .notice a')) {
+            if ((link.textContent ?? '').trim() === 'What changed') link.remove();
+          }
+        };
+        new MutationObserver(remove).observe(document.body, { childList: true, subtree: true });
+        remove();
+      });
+    },
+  },
+  {
+    id: 'update-await',
+    breaks: 'updates',
+    why: 'the boot path waits for the update check, so a hanging release request keeps the app from drawing',
+    script: () => {
+      document.addEventListener('DOMContentLoaded', () => {
+        if (sessionStorage.getItem('mrt.update.stub') !== 'hang') return;
+        for (const view of document.querySelectorAll('.view')) view.hidden = true;
+      });
+    },
+    rewriteMain: (source) => source
+      .replace('export function boot() {', 'export async function boot() {')
+      .replace('  void runAutomaticUpdateCheck();', '  await runAutomaticUpdateCheck();'),
   },
 ];
 
@@ -1201,6 +1271,76 @@ const SCENARIOS = [
       t.check('undo still puts the list back', names.includes(listName), JSON.stringify(names));
     },
   },
+  {
+    id: 'updates',
+    title: 'a release notice offers the zip without blocking startup',
+    async run(page, t) {
+      await open(page, '/');
+      const currentAsked = await page.waitForFunction(() => (window.__mrtUpdateRequests ?? 0) >= 1, { timeout: 15000 })
+        .then(() => true, () => false);
+      const current = await readUpdateNotice(page);
+      t.check('the running version makes one local stub request and paints no update notice',
+        currentAsked && current.notice === null, JSON.stringify(current));
+
+      await click(page, '[data-view="about"]');
+      await click(page, '#btn-check-updates');
+      const currentReportReady = await page.waitForFunction(
+        () => /This is the latest version/.test(document.querySelector('#update-check-report')?.textContent ?? ''),
+        { timeout: 15000 },
+      ).then(() => true, () => false);
+      const currentReport = await readUpdateReport(page);
+      t.check('the explicit check says the running version is current',
+        currentReportReady && currentReport.text.includes(`You have ${APP_VERSION}`), JSON.stringify(currentReport));
+
+      await setUpdateMode(page, 'newer');
+      await open(page, '/');
+      const appeared = await page.waitForSelector('#app-report .notice', { timeout: 15000 })
+        .then(() => true, () => false);
+      const newer = await readUpdateNotice(page);
+      t.check('a newer release paints the update notice', appeared && newer.notice !== null, JSON.stringify(newer));
+      t.check('the update notice names both versions',
+        newer.text.includes('Version 9.9.9 is available') && newer.text.includes(`You have ${APP_VERSION}`),
+        JSON.stringify(newer.text));
+      t.check('the update notice download uses the stable zip link',
+        newer.download === UPDATE_DOWNLOAD_URL, JSON.stringify(newer.links));
+      t.check('the release notes link is present',
+        newer.notes === UPDATE_RELEASE_NOTES_URL, JSON.stringify(newer.links));
+      t.check('the copy says reading progress stays in the browser',
+        /reading progress is saved by your browser/.test(newer.text), JSON.stringify(newer.text));
+      t.check('the copy says the old folder can be deleted',
+        /delete the old folder/.test(newer.text), JSON.stringify(newer.text));
+
+      await setUpdateMode(page, 'newer', { updateChecks: false });
+      await open(page, '/');
+      const off = await readUpdateNotice(page);
+      t.check('switching automatic checks off prevents the boot request',
+        off.requests === 0 && off.updateChecked === false && off.notice === null, JSON.stringify(off));
+
+      await click(page, '[data-view="about"]');
+      await click(page, '#btn-check-updates');
+      const manualReady = await page.waitForFunction(
+        () => /Version 9\.9\.9 is available/.test(document.querySelector('#update-check-report')?.textContent ?? ''),
+        { timeout: 15000 },
+      ).then(() => true, () => false);
+      const manual = await readUpdateReport(page);
+      t.check('the explicit check still works when automatic checks are off',
+        manualReady && manual.download === UPDATE_DOWNLOAD_URL && manual.notes === UPDATE_RELEASE_NOTES_URL,
+        JSON.stringify(manual));
+
+      await setUpdateMode(page, 'hang');
+      await open(page, '/');
+      const rendered = await page.waitForSelector('#view-home:not([hidden])', { timeout: 4000 })
+        .then(() => true, () => false);
+      t.check('a hanging update check still lets the app render', rendered, await visibleView(page));
+
+      let navigated = false;
+      if (rendered) {
+        await click(page, '[data-view="about"]');
+        navigated = await visibleView(page) === 'view-about';
+      }
+      t.check('and the rendered app remains usable while the request is unsettled', navigated, await visibleView(page));
+    },
+  },
 ];
 
 // ------------------------------------------------------------------ page helpers
@@ -1302,13 +1442,70 @@ async function manualReport(page) {
   );
 }
 
+async function setUpdateMode(page, mode, settings = { updateChecks: true, updateCheckedAt: 0 }) {
+  await page.evaluate((nextMode, nextSettings) => {
+    sessionStorage.setItem('mrt.update.stub', nextMode);
+    localStorage.setItem('mrt.settings', JSON.stringify(nextSettings));
+  }, mode, settings);
+}
+
+async function readUpdateNotice(page) {
+  return page.evaluate(() => {
+    const notice = document.querySelector('#app-report .notice');
+    const links = [...document.querySelectorAll('#app-report .notice a')].map((a) => ({
+      label: a.textContent.trim(),
+      href: a.href,
+    }));
+    return {
+      requests: window.__mrtUpdateRequests ?? 0,
+      updateChecked: document.querySelector('#opt-update-checks')?.checked ?? null,
+      notice: notice ? notice.textContent.replace(/\s+/g, ' ').trim() : null,
+      text: notice?.querySelector('.grow')?.textContent.replace(/\s+/g, ' ').trim() ?? '',
+      links,
+      download: links.find((a) => /^Download version /.test(a.label))?.href ?? null,
+      notes: links.find((a) => a.label === 'What changed')?.href ?? null,
+    };
+  });
+}
+
+async function readUpdateReport(page) {
+  return page.evaluate(() => {
+    const report = document.querySelector('#update-check-report');
+    const links = [...document.querySelectorAll('#update-check-report a')].map((a) => ({
+      label: a.textContent.trim(),
+      href: a.href,
+    }));
+    return {
+      text: report?.textContent.replace(/\s+/g, ' ').trim() ?? '',
+      links,
+      download: links.find((a) => /^Download version /.test(a.label))?.href ?? null,
+      notes: links.find((a) => a.label === 'What changed')?.href ?? null,
+    };
+  });
+}
+
 // The stub is installed with evaluateOnNewDocument rather than after load, because the catalog is
 // memoized on first read: a stub installed afterwards is a stub the app has already gone past.
 async function preparePage(page, origin, mutation) {
   page.__origin = origin;
+  if (mutation?.rewriteMain) {
+    await page.setRequestInterception(true);
+    page.on('request', async (request) => {
+      if (request.url() === `${origin}/js/main.js`) {
+        const source = readFileSync(new URL('../src/js/main.js', import.meta.url), 'utf8');
+        await request.respond({
+          status: 200,
+          contentType: 'application/javascript; charset=utf-8',
+          body: mutation.rewriteMain(source),
+        });
+        return;
+      }
+      await request.continue();
+    });
+  }
   await page.setViewport({ width: 1280, height: 900 });
   await page.evaluateOnNewDocument(
-    (catalog, order, orderFile) => {
+    (catalog, order, orderFile, appVersion, updateApiUrl) => {
       const real = window.fetch.bind(window);
       const json = (body, status = 200) => new Response(JSON.stringify(body), {
         status,
@@ -1334,6 +1531,14 @@ async function preparePage(page, origin, mutation) {
         if (url.endsWith(`data/${orderFile}`)) {
           if (window.__mrtMutation === 'import-fail') return Promise.resolve(json({ error: 'mutation' }, 500));
           return Promise.resolve(json(order));
+        }
+        if (url === updateApiUrl) {
+          window.__mrtUpdateRequests = (window.__mrtUpdateRequests ?? 0) + 1;
+          const mode = window.__mrtUpdate ?? sessionStorage.getItem('mrt.update.stub') ?? 'current';
+          if (mode === 'hang') return new Promise(() => {});
+          if (mode === 'newer') return Promise.resolve(json({ tag_name: 'v9.9.9' }));
+          if (mode === 'older') return Promise.resolve(json({ tag_name: 'v1.0.0' }));
+          return Promise.resolve(json({ tag_name: `v${appVersion}` }));
         }
         // Guarded by a flag for the same reason as the synopsis stub below: only the wiki
         // scenario sets it, so every other scenario sees the stub it saw before this existed. The
@@ -1420,12 +1625,14 @@ async function preparePage(page, origin, mutation) {
     CATALOG,
     ORDER,
     ORDER_FILE,
+    APP_VERSION,
+    LATEST_RELEASE_API_URL,
   );
   // Handed to puppeteer as a function rather than stringified and passed to `new Function`, which
   // the app's own CSP refuses: server.mjs sends `script-src 'self'` with no 'unsafe-eval'. A
   // debugger-injected script is not subject to that, so this is both simpler and the only form
   // that runs. The first shape written here failed on every mutation for exactly that reason.
-  if (mutation) await page.evaluateOnNewDocument(mutation.script);
+  if (mutation?.script) await page.evaluateOnNewDocument(mutation.script);
 }
 
 // ------------------------------------------------------------------ running
@@ -1567,8 +1774,8 @@ async function main() {
     // the scenario it is aimed at, on the assertion that carries the claim. A mutation that turns
     // nothing red means the scenario it was written for is not asserting what it claims to.
     //
-    // One of the eleven reddens every scenario and a second reddens six of the seven, and that is
-    // not loose aim. Every scenario but the wiki lookup imports the fixture order first, so a
+    // Some mutations redden more than the scenario they name, and that is not loose aim. Every
+    // scenario but the wiki lookup imports the fixture order first, so a
     // mutation of that import is upstream of all of those by construction, and a mutation of the
     // write the app performs is upstream of the wiki lookup as well. What distinguishes aim is the
     // named assertion that fails in the aimed-at scenario, which is why it is printed rather than

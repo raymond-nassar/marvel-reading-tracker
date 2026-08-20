@@ -110,7 +110,8 @@ export default [
     // defined for them and for nothing else in the file. Linting it as Node alone reported 38
     // undefined globals for code that is correct, and linting it as browser alone would hide a
     // real mistake in the Node half. Both sets is the honest description of what the file is.
-    files: ['scripts/browser-check.mjs'],
+    // The upgrade check is the same shape for the same reason.
+    files: ['scripts/browser-check.mjs', 'scripts/upgrade-check.mjs'],
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
   },
 ];

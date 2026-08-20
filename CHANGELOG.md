@@ -14,6 +14,47 @@ quote in a bug report.
 
 ## Unreleased
 
+### The app now tells readers when a newer release is available
+
+In plain English: the app now checks GitHub once a day for the latest version number. If there is a
+newer release, it shows a notice with a direct download link, a link to what changed, and a reminder
+that reading progress is saved by the browser rather than in the app folder. Nothing you have saved
+is moved or changed.
+
+The check is on by default because otherwise the people who need the notice would never see it. It
+can be turned off under Backup & settings, and the About screen still has a button for checking by
+hand. The app never downloads, installs or replaces files by itself.
+
+For maintainers: the release check is a small browser-side module with unit coverage for version
+comparison, daily scheduling, failure handling and request shape. The real-browser harness now stubs
+the GitHub release request, checks the notice and the explicit button, and includes aimed mutations
+for the update journey.
+
+### A committed check now drives the upgrade that notice recommends
+
+In plain English: the notice tells you that your reading progress is kept by the browser rather than
+in the app folder, so replacing the folder keeps everything and the old one is safe to delete.
+Nothing had ever tested that sentence, and it is the one standing between you and deleting a folder
+you believe is disposable. It is now driven from end to end: one copy of the app saves a reading
+order, that copy stops, a second copy takes over the same address, and the order has to still be
+there and still be drawn on the screen. It is. Nothing about the app itself changed.
+
+For maintainers: `npm run upgrade` installs two real copies of the app under the system temporary
+directory, serves each with the real server on ephemeral ports, and makes ten assertions across the
+swap. The last is a control that serves the same new copy at a second address and requires the
+progress to be absent there. Without it the check would pass just as happily if progress were being
+read out of the folder, which is the opposite of what the notice claims. `npm run upgrade:prove`
+breaks four things on purpose and reports which assertion each one reddens, at four of four. Neither
+is part of CI, for the same reason the browser check is not: both need Edge and a driver that is
+deliberately not a dependency of this repository.
+
+Writing it turned up a trap worth recording. Navigating to a URL that differs from the current one
+only in its fragment is a same-document navigation, so the browser moves the address and re-runs
+nothing. The first version of the check swapped the served directory and then navigated by fragment,
+so the code still in memory was the old copy's. It reported the old version number after the upgrade
+while every storage assertion passed, which reads as a serious finding about the app and was in fact
+a check that had never once loaded the new copy.
+
 ### A shortcut into Marvel Unlimited was investigated and ruled out
 
 In plain English: another fan project links its reading lists into Marvel Unlimited using a kind of
