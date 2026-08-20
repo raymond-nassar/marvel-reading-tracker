@@ -14,6 +14,25 @@ quote in a bug report.
 
 ## Unreleased
 
+### Record a way of counting a file's lines that quietly comes up short
+
+In plain English: nothing about the app changes, and nothing you have saved is affected. This adds a
+warning to the notes that contributors work from.
+
+The project checks that every reference to a line of code still points at what it claims, so when
+code moves, those references have to move with it. Working out how far each one shifted is sometimes
+the only check available, because the report printed at the end cannot show a reference that has
+slipped by a single line.
+
+The most natural way to ask this computer how long a file is turns out to ignore every empty line in
+it, so on a large file it answers a few hundred short and never suggests anything is wrong. The
+notes now say so, name two ways of asking that answer correctly, and record two details found while
+measuring it: a line of spaces is counted while a truly empty one is not, and the same tool is right
+when handed the whole file at once rather than a line at a time.
+
+It was caught by comparing two independent ways of measuring the same shift, which these notes
+already ask for, rather than by anyone noticing that a number looked wrong.
+
 ### The message left after deleting a reading list can now be closed
 
 In plain English: deleting a reading list puts a message at the top of every screen offering to put
