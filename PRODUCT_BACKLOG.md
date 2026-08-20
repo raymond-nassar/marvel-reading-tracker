@@ -4703,7 +4703,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:11559-11561` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:11565-11567` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4713,11 +4713,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11578-11582`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11584-11588`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11393-11395` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11399-11401` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -11100,6 +11100,12 @@ drawing an SVG adds no dependency. Constraint 11 is checked by the dash scan.
 The icon is a red rounded square carrying a bold white capital M. It is declared twice, as a data
 URI at `src/index.html:13` and as the two exported sizes under `src/icons/`. That is the
 construction of Marvel's own logo, which is a red field carrying white letterforms.
+
+The red is not the app's own colour either, which makes this cheaper than it looks. `#e23636` was
+measured at 4.36:1 and 4.33:1 against the two jobs a single red would have to do, and retired from
+the stylesheet for failing both, at `src/styles.css:68-72`. The icon kept it. So the mark is drawn
+in a colour the product itself already rejected, and redrawing it settles no palette question that
+has not been settled once already.
 
 This ranks above the naming question, and it is worth saying why, because the intuition runs the
 other way. Using a mark's word to describe the thing that mark names has a recognised defence. The
