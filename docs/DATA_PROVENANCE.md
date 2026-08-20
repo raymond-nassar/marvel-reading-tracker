@@ -276,6 +276,61 @@ settle the third question and no other: the maintainer holds nothing over Marvel
 nothing they say reaches the first or second question, and the first is the one this repository's
 own removal work was aimed at.
 
+### What was asked of the guide writers, and the one answer received
+
+The fourth question has a half that nothing in this repository can settle: whose a reading order is
+when the selection was not made here. Twelve of the twenty-six shipped lists name Comic Book Herald
+on the card and link back to the guide they follow, and the only other lists whose selection was
+made elsewhere are the two vendored checklists in the table above. Two guide writers have now been
+written to, and one of them has answered.
+
+**Comic Book Herald was written to on 2026-08-19**, at the address published on its contact page. It
+asked two things: whether more orders could be built from its guides, credited and linked back as
+the twelve already are, and whether the site would treat this app as a companion for readers who use
+Marvel Unlimited. It is unanswered at the time of writing. The sent message is not committed here,
+so this paragraph records its substance rather than its wording. Two things about it bind whatever
+comes back. The twelve were built before the question was asked, so a yes would be retrospective
+rather than permissive; and the message offered to withdraw them if the answer is no. That offer was
+made and is recorded here so a later reader does not have to take it on trust.
+
+**Comic Book Reading Orders answered on 2026-08-20**, through the contact form at
+[comicbookreadingorders.com](https://comicbookreadingorders.com/), and granted what the same request
+had asked for. The reply is quoted rather than summarised, because its exceptions are the whole of
+the point:
+
+> Yes I am fine with you building reading orders from my site, credited and linked as described. I
+> would ask two exceptions to this; the Marvel Master Reading Order and any reading orders that are
+> Patreon exclusives.
+
+"As described" refers to the request, which offered to credit Comic Book Reading Orders on the
+catalog card of any list built from one of its guides and to link that card back to the guide page
+the list follows, in the way the twelve Comic Book Herald lists already do. So the grant carries two
+conditions and two exclusions:
+
+- Credit the site on the card of every list built from it.
+- Link that card back to the exact order page the list follows.
+- Build nothing from the Marvel Master Reading Order.
+- Build nothing from any reading order that site keeps behind its Patreon.
+
+No list in this repository comes from that site today, so this is permission for work not yet done
+rather than a cure for anything already shipped. The site publishes no terms of use, which makes the
+reply the only statement of its position that exists.
+
+What the grant does not reach is the same thing no correspondence reaches. Comic Book Reading Orders
+holds nothing over Marvel's material, so its yes covers its own selection and arrangement and stops
+there. It answers the second half of the fourth question for lists built from that site, the same
+way this document already answers it for the two vendored checklists, and it touches none of the
+other three.
+
+**[continuityguide.net](https://www.continuityguide.net/) was examined on 2026-08-20 and not written
+to.** It publishes no terms of use and no privacy policy: the pages that would hold them are absent,
+and the site's own configuration reports both as unset. The only statement it makes about itself is
+a footer disclaiming any Marvel or DC affiliation, which says nothing about reuse of its own work.
+Its robots file disallows a list of named AI crawlers, which is neither a licence nor a rule binding
+a person who reads the site, but it is the only signal the site gives and it points away from bulk
+reuse. It was not written to because its only published contact route is a Discord server whose
+owner does not take direct messages. That is recorded so the route is not worked out a second time.
+
 ### What the first hand's own terms said
 
 Those terms can no longer be read from Marvel. The terms page and the attribution page both answer

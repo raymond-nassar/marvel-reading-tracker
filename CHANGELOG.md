@@ -14,6 +14,30 @@ quote in a bug report.
 
 ## Unreleased
 
+### Where the reading lists come from now records who has been asked, and what they said
+
+In plain English: the project keeps a document explaining where every reading list came from. It now
+also records who has been asked whether their work may be used, and what they answered. One site,
+Comic Book Reading Orders, has said yes. Its condition is that each list built from it credits the
+site and links back to the guide it follows, and it asked for two exceptions: its Marvel Master
+Reading Order, and any reading order it keeps behind its Patreon.
+
+Nothing has been built from that site yet, so this is permission for later work rather than a change
+to anything you can open today. The same record notes that Comic Book Herald was asked the same
+question a day earlier and has not replied, that the twelve lists already built from its guides were
+built before the question was asked, and that the message offered to withdraw them if the answer
+turns out to be no.
+
+It also records why a third site was looked at and deliberately not written to: it publishes no terms
+of use at all, its only way to reach the owner is a chat server where he does not take private
+messages, and its crawler file turns away automated readers.
+
+Nothing you have saved is affected, and no reading list changed.
+
+For maintainers: a yes reaches only what the person saying it holds. This one covers that site's own
+selection and arrangement of issues and stops there, so it closes none of the four open questions the
+provenance document lists, and it says nothing about Marvel's own material.
+
 ### The message left after deleting a reading list can now be closed
 
 In plain English: deleting a reading list puts a message at the top of every screen offering to put
