@@ -27,9 +27,16 @@ test('release versions are normalised from tags and rejected when they are not n
 });
 
 test('version comparison is numeric by segment', () => {
-  assert.equal(compareVersions('v1.2.0', APP_VERSION), 1);
+  // Both neighbours are derived from the shipped version rather than written as literals.
+  // This assertion used to name v1.2.0 as the newer release, which stopped being true the
+  // moment 1.2.0 was cut: the test failed on the release rather than on the comparison it
+  // exists to guard. The major segment is the one moved because it cannot carry.
+  const [major, minor, patch] = APP_VERSION.split('.').map(Number);
+  assert.ok(major >= 1, 'the older neighbour below is only older while the major is at least 1');
+
+  assert.equal(compareVersions(`v${major + 1}.${minor}.${patch}`, APP_VERSION), 1);
   assert.equal(compareVersions(`v${APP_VERSION}`, APP_VERSION), 0);
-  assert.equal(compareVersions('v1.0.9', APP_VERSION), -1);
+  assert.equal(compareVersions(`v${major - 1}.${minor}.${patch}`, APP_VERSION), -1);
   assert.equal(compareVersions('1.10.0', '1.9.0'), 1);
   assert.equal(compareVersions('not-a-version', APP_VERSION), null);
 });
