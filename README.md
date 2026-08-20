@@ -64,6 +64,19 @@ Once the app is open, your browser will offer to
 [install it](#optional-install-it-as-an-app), which gives the tracker its own icon and its own
 window. After that the icon opens the tracker whether or not the app is running.
 
+### Getting updates
+
+The app checks GitHub once a day by default to ask for the latest version number. That request sends
+no reading list, progress, note or identifier. If a newer version exists, the app shows a notice with
+a direct download link and a link to what changed.
+
+The app never downloads or installs an update by itself. You download the new zip, unzip it and start
+the new copy. Your reading progress carries over because it is saved by your browser at the same app
+address, not inside the folder you replace.
+
+If you do not want the daily check, open **Backup & settings**, find **Update checks**, and switch off
+**Check for updates automatically**. The button under **About this app** still lets you check by hand.
+
 The longer version of all this, with what to do when a step goes wrong, is in
 [Run it on your computer](#run-it-on-your-computer) below.
 
@@ -113,12 +126,15 @@ asking for an issue's details or its cover picture is exactly what they are. Tur
 stops the covers being requested at all. What is never sent is your reading progress, your notes,
 or anything identifying you.
 
-One other site is contacted, and only if you ask it to be. Adding an issue by hand sends the words
-in the title box to the Marvel Fandom wiki, a community site Marvel does not run, and it does that
-only when you press the lookup button. It is there because the comics database this app reads stops
-at October 2025, so for a newer comic the wiki is the only place a release date, a page count or a
-list of credits can be found. That wiki sees the title you searched for; your lists, your progress
-and your notes are no part of the request, and no picture is fetched from it.
+GitHub is contacted once a day by default to ask for the latest release version, and you can switch
+that off under **Backup & settings**. The request sends no reading data, no note and no identifier.
+
+One other site is contacted, and only if you ask it to be. Adding an issue by hand sends the words in
+the title box to the Marvel Fandom wiki, a community site Marvel does not run, and it does that
+only when you press the lookup button. It is there because the comics database this app reads stops at
+October 2025, so for a newer comic the wiki is the only place a release date, a page count or a list
+of credits can be found. That wiki sees the title you searched for; your lists, your progress and
+your notes are no part of the request, and no picture is fetched from it.
 
 ## Run it on your computer
 
@@ -512,6 +528,40 @@ turns the scenario aimed at it red. A check that has never been seen to fail is 
 this is where that is demonstrated rather than asserted: it reports the named assertion each fault
 breaks. It takes about three minutes, nearly all of it waiting out the timeouts a broken app
 produces, so it is a thing to run when the scenarios change rather than on every commit.
+
+### The upgrade check
+
+```
+npm run upgrade
+```
+
+Drives the upgrade that the in-app update notice tells you to perform. The notice says your reading
+progress is kept by the browser rather than in the app folder, so replacing the folder keeps
+everything and the old folder can be deleted. That sentence is the only thing standing between you
+and deleting a directory you believe is disposable, so it is driven rather than reasoned about. Two
+copies of the app are installed under the system temporary directory at different version numbers,
+each served by the real server, an order is imported into the first, that copy stops, and the second
+takes the address the first was using. Ten assertions cover which build is actually being served
+after the swap, the saved order surviving it by identity and by issue order, and the upgraded copy
+drawing that order and its progress. It takes about 8 seconds.
+
+The last of the ten is a control. The same new copy is served at a second address, where the
+progress has to be absent. Without it the check would pass just as happily if the progress were
+being read out of the folder, which is the opposite of what the notice claims.
+
+It needs the same two things the browser check needs, answers a missing one the same way with exit
+**2**, and is left out of CI for the same reason. It writes nothing outside the system temporary
+directory and deletes both copies when it finishes, and it serves on ephemeral ports rather than
+8787, so it cannot reach your reading progress.
+
+```
+npm run upgrade:prove
+```
+
+Runs the check four more times with one thing deliberately broken in each, and reports which
+assertion each break turns red. It takes about 32 seconds. One of the four starts the upgraded copy
+on a different port, which is the one way that following this advice really can lose everything, and
+is [Always open the same address](#always-open-the-same-address) seen from the other side.
 
 ### Reviewing an update to a pinned action
 

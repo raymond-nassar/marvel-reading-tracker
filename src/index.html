@@ -563,6 +563,16 @@
             </div>
 
             <div class="card card-static">
+              <h2>Update checks</h2>
+              <p class="rail-hint">
+                Once a day, the app can ask GitHub for the latest version number. That request sends
+                no reading list, progress, note or identifier. If a newer version exists, the app shows
+                a link to download it, but it never downloads or installs anything by itself.
+              </p>
+              <label class="checkbox"><input type="checkbox" id="opt-update-checks" /> Check for updates automatically</label>
+            </div>
+
+            <div class="card card-static">
               <h2>Theme</h2>
               <p class="rail-hint">
                 Follow your system setting, or pick one and keep it. The choice is stored in this
@@ -704,6 +714,10 @@
                 A change to the data format means an older build cannot read data saved by this one,
                 so export a backup before upgrading across one.
               </p>
+              <div class="field-row">
+                <button type="button" id="btn-check-updates" class="quiet">Check for updates</button>
+              </div>
+              <div id="update-check-report" class="results" aria-live="polite"></div>
             </div>
           </section>
 
