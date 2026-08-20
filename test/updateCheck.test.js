@@ -141,11 +141,26 @@ test('network and response failures return a silent failure result', async () =>
 // versioned URL survived the entire suite of 1205 tests, because every other assertion here
 // compares the result against this same constant, so both sides moved together and agreed with
 // each other while the button pointed at nothing. Reading the route the README actually publishes
-// is what makes the check independent, and the second assertion pins the versionless form so that
+// is what makes the check independent, and the versionless form is pinned separately so that
 // changing both places in the same wrong direction still fails.
+//
+// The packer is the third place and is the one that decides what the asset is really called, so it
+// is read rather than trusted. A rename there alone leaves the constant and the README agreeing
+// with each other about a file no release contains, and the button 404s with nothing red.
 test('the in-app download link is the same route the README publishes', () => {
-  const readme = readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'README.md'), 'utf8');
-  const published = readme.match(/https:\/\/github\.com\/\S*?marvel-reading-tracker-windows\.zip/);
+  const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+  const packer = readFileSync(join(root, 'scripts', 'pack-windows.mjs'), 'utf8');
+  const archive = packer.match(/join\(DIST, '([^']+\.zip)'\)/);
+
+  assert.ok(archive, 'the packer no longer names its archive in a form this test can read');
+  assert.ok(
+    UPDATE_DOWNLOAD_URL.endsWith(`/${archive[1]}`),
+    `the download link does not name the file the packer writes (${archive[1]})`,
+  );
+
+  const escaped = archive[1].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const readme = readFileSync(join(root, 'README.md'), 'utf8');
+  const published = readme.match(new RegExp(`https://github\\.com/\\S*?${escaped}`));
 
   assert.ok(published, 'the README no longer publishes a download link for the Windows zip');
   assert.equal(UPDATE_DOWNLOAD_URL, published[0]);
