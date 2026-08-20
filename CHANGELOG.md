@@ -14,6 +14,25 @@ quote in a bug report.
 
 ## Unreleased
 
+### A shortcut into Marvel Unlimited was investigated and ruled out
+
+In plain English: another fan project links its reading lists into Marvel Unlimited using a kind of
+issue address this app has never used, and it was worth checking whether that address was better
+than the one we already use. It is not usable here. The service this app gets its issue information
+from does not supply that address, and there is no way to work one out from what it does supply, so
+the app could never build such a link for an issue you are actually reading.
+
+Nothing about the app changed. Your reading progress is untouched, and the button that opens an
+issue in the reader works exactly as it did.
+
+The reason this is written down at all is so nobody spends the afternoon on it twice. The project's
+list of planned improvements now carries the question, the measurements that answered it, and two
+early readings of the evidence that turned out to be wrong when the numbers were taken.
+
+For maintainers: filed as a parked, dropped item with its measurements recorded inline rather than
+by reference, because the working notes behind it are session evidence and stay on the machine that
+wrote them. It carries no score; it was closed by measurement before it reached scoring.
+
 ### Record a way of counting a file's lines that quietly comes up short
 
 In plain English: nothing about the app changes, and nothing you have saved is affected. This adds a
