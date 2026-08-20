@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import {
   LATEST_RELEASE_API_URL,
@@ -127,4 +130,24 @@ test('network and response failures return a silent failure result', async () =>
     assert.equal(result.available, false);
     assert.equal(result.checkedAt, 7000);
   }
+});
+
+// The download link has to be a constant, because the release asset carries no version in its
+// name: the packer writes marvel-reading-tracker-windows.zip and the README publishes it through
+// the releases/latest/download route. A link built from the version the check just reported would
+// be a dead link on every release.
+//
+// Nothing held those two places to each other, and it showed. Rewriting the constant into a
+// versioned URL survived the entire suite of 1205 tests, because every other assertion here
+// compares the result against this same constant, so both sides moved together and agreed with
+// each other while the button pointed at nothing. Reading the route the README actually publishes
+// is what makes the check independent, and the second assertion pins the versionless form so that
+// changing both places in the same wrong direction still fails.
+test('the in-app download link is the same route the README publishes', () => {
+  const readme = readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'README.md'), 'utf8');
+  const published = readme.match(/https:\/\/github\.com\/\S*?marvel-reading-tracker-windows\.zip/);
+
+  assert.ok(published, 'the README no longer publishes a download link for the Windows zip');
+  assert.equal(UPDATE_DOWNLOAD_URL, published[0]);
+  assert.match(UPDATE_DOWNLOAD_URL, /\/releases\/latest\/download\//);
 });
