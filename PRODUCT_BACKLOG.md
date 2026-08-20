@@ -234,7 +234,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | ID | Title | Type | Epic | Relationship | V | TC | RE | Size | WSJF | P | Basis | Status | Evidence |
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-149 | Read the Marvel Unlimited book id off an address the reader pastes | Story | EP-03 | Leaves alone | 8 | 8 | 3 | 1 | 19.0 | none | Measured | Shipped | src/js/reader.js:50-55 |
+| BL-161 | Redraw the app icon so it stops echoing Marvel's trade dress | Debt | EP-12 | Follows BL-100 | 5 | 5 | 8 | 1 | 18.0 | none | Measured | Ready | src/index.html:13 |
+| BL-164 | Carry a rename without breaking the download link installed copies use | Enabler | EP-12 | Follows BL-162 | 5 | 5 | 8 | 1 | 18.0 | none | Measured | Ready | src/js/lib/updateCheck.js:4 |
 | BL-128 | Correct the provenance record's description count and record its placeholder shape | Debt | EP-12 | Extends BL-099 | 5 | 5 | 3 | 1 | 13.0 | none | Measured | Shipped | docs/DATA_PROVENANCE.md:88-97 |
+| BL-163 | Say where the metadata came from, instead of borrowing Marvel's API attribution | Debt | EP-12 | Extends BL-099 | 3 | 3 | 5 | 1 | 11.0 | none | Measured | Ready | src/index.html:248 |
 | BL-140 | Give the tracker a file a non-engineer can double-click to start it | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 1 | 10.0 | none | Observed | Shipped | absent: any way to start the app that is not a terminal command, read of the README's step 2 and a listing of the repository root |
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:588-597 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
@@ -248,6 +251,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
 | BL-132 | Measure what the day-of rewrites cost the anchors gate, before they are made | Enabler | EP-12 | Extends BL-129 | 3 | 8 | 5 | 2 | 8.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:175-181 |
+| BL-162 | Decide the published name before a store listing exists | Enabler | EP-12 | Follows BL-100 | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Ready | developer.marvel.com/terms section 5, read from the 2025-10-08 archive snapshot on 2026-08-20 |
 | BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:103-105 |
 | BL-134 | Fetch a synopsis at read time instead of shipping one | Feature | EP-05 | Follows BL-130 | 8 | 5 | 8 | 3 | 7.0 | none | Measured | Shipped | src/js/synopsis.js:89 |
 | BL-151 | Carry a pasted reader address through export and back in again | Defect | EP-03 | Follows BL-149 | 3 | 2 | 2 | 1 | 7.0 | none | Measured | Ready | src/js/lib/markdown.js:140-145 |
@@ -272,14 +276,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4001-4004 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4005-4008 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-143 | Shelve the catalog in reading order rather than in the order the manifest happens to list | Story | EP-01 | Extends BL-142 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any field on a manifest entry saying when its reading starts, and any sort between parsing the catalog and rendering it |
 | BL-154 | Shelve the events apart from the character runs, and say why the runs sit last | Story | EP-01 | Follows BL-152 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Shipped | `src/js/lib/catalog.js:593-596` |
 | BL-156 | Make the Start here badge carry more weight than a colour change | Story | EP-01 | Follows BL-154 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Ready | `src/styles.css:369` |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1493-1494 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1497-1498 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
@@ -3163,7 +3167,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2865-2868`.
+`PRODUCT_BACKLOG.md:2869-2872`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4700,7 +4704,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:11444-11446` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:11641-11643` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4710,11 +4714,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11463-11467`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11660-11664`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11278-11280` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11475-11477` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4922,7 +4926,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2905-2914` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2946-2955` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:193-197` and
 `PRODUCT_BACKLOG.md:203-205` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6531,7 +6535,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2589`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2593`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -8403,7 +8407,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4824-4832`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4828-4836`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8418,7 +8422,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:4327`, `src/js/main.js:4251` and `src/js/main.js:4272`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1493-1494`.
+`PRODUCT_BACKLOG.md:1497-1498`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8504,7 +8508,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4829-4830`.
+at `PRODUCT_BACKLOG.md:4833-4834`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8670,7 +8674,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4824-4827` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4828-4831` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -11084,6 +11088,199 @@ memory were still the old copy's. It reported the old version after the upgrade 
 assertion passed, which reads as a serious finding about the app and was in fact a check that had
 never once loaded the thing it was testing.
 
+**BL-161: Redraw the app icon so it stops echoing Marvel's trade dress**
+
+- [ ] Replace the red-square-with-white-M mark in the inline favicon and in both PNG sizes
+- [ ] Keep the app's own identity dominant, so the mark identifies this app and not a publisher
+- [ ] Check the result against the palette gate rather than judging the contrast by eye
+
+Constraint gate: checked 1 to 11, none breached. Constraint 1 is untouched because an icon drawn
+here is this project's own artwork and not comic image bytes. Constraint 4 is satisfied because
+drawing an SVG adds no dependency. Constraint 11 is checked by the dash scan.
+
+The icon is a red rounded square carrying a bold white capital M. It is declared twice, as a data
+URI at `src/index.html:13` and as the two exported sizes under `src/icons/`. That is the
+construction of Marvel's own logo, which is a red field carrying white letterforms.
+
+The red is not the app's own colour either, which makes this cheaper than it looks. `#e23636` was
+measured at 4.36:1 and 4.33:1 against the two jobs a single red would have to do, and retired from
+the stylesheet for failing both, at `src/styles.css:68-72`. The icon kept it. So the mark is drawn
+in a colour the product itself already rejected, and redrawing it settles no palette question that
+has not been settled once already.
+
+This ranks above the naming question, and it is worth saying why, because the intuition runs the
+other way. Using a mark's word to describe the thing that mark names has a recognised defence. The
+nominative fair use test set out in New Kids on the Block v. News America Publishing, 971 F.2d 302
+(9th Cir. 1992), asks first whether the product can be identified at all without the mark, and a
+Marvel reading order cannot be. The second and third parts are where a borrowed logo fails: only so
+much of the mark as is reasonably necessary may be used, and nothing may suggest sponsorship. The
+court's own application of it turned on the defendant having used no "distinctive logo". A red box
+with a white letter is not necessary to identify anything, so it takes the weaker half of the test
+while adding nothing the word had not already established.
+
+It also reaches past this repository. Microsoft Store policy 11.2 requires all content "and
+associated metadata" to be originally created, appropriately licensed, used as permitted by the
+rights holder, or used as otherwise permitted by law, and the section preamble defines that
+metadata to include the product icon. Read from the [Store
+policies](https://learn.microsoft.com/en-us/windows/apps/publish/store-policies), document version
+7.19, on 2026-08-20. So the icon is assessed at certification whether or not anyone complains.
+
+Sized 1 because it is one drawing and two exports. It is ranked first of the three because it is
+the cheapest of them and the only one that needs no decision taken before the work can start.
+
+**BL-162: Decide the published name before a store listing exists**
+
+- [ ] Carry the decided name into the web manifest and the listing, so the two cannot disagree
+- [ ] Keep the descriptive reference to Marvel in the description, where it does referential work
+- [ ] Re-check the name is still clear immediately before reserving it, since a reservation lapses
+- [ ] Say plainly which risk the decision accepts, rather than recording only the choice
+
+Constraint gate: checked 1 to 11, none breached. Constraint 10 is the live consideration: this is a
+naming decision taken for legal exposure and not a market-facing one, and nothing in it proposes
+segments, positioning or growth. Constraint 3 is untouched. Constraint 11 is checked by the dash
+scan.
+
+Two documents bear on the name, and they are independent of one another.
+
+The first is Marvel's own stated position. Section 5 of the Marvel API terms says a developer may
+"not create derivatives of Marvel Property, or use the 'Marvel' name or any other Marvel Marks in
+the title of your App without Marvel's prior written approval", read from the [2025-10-08 archive
+snapshot](https://web.archive.org/web/20251008063626/http://developer.marvel.com/terms) on
+2026-08-20 because the live page answers 403. That clause binds users of the Marvel API, and
+`docs/DATA_PROVENANCE.md` records that this project never called it, so the clause is evidence of
+Marvel's posture rather than a term this repository agreed to. It remains the clearest statement
+Marvel has published about third-party naming, and it names the title slot specifically.
+
+The second is Microsoft's, and it does not depend on Marvel at all. Store policy 10.1.1 requires
+that a product "must not in any way attempt to mislead customers as to its actual features,
+functionality, or relationship to other products", that a product title "must not contain marketing
+or descriptive text, including extraneous use of keywords", and that a product "must not claim to
+be from a company, government body, or other entity if you do not have permission to make that
+representation". Same source and date as BL-161. A reviewer can decline the listing under any of
+those three without Marvel being involved at all, which makes it the likelier of the two to be met
+first.
+
+What comparable apps are called is the most useful evidence available, because it records what
+survived rather than what anyone argued. The established comic trackers take arbitrary names and
+mention Marvel in the description instead: Comic Geeks, CLZ Comics, iCollect Comic Books and
+ComicsTracker, listings read on 2026-08-20. Riot, TMDB and Letterboxd each publish a third-party
+policy saying the same thing in their own words, which is to keep the mark out of the title, say
+the product is unofficial, and keep the developer's own branding dominant.
+
+The app already carries the disclaimer half of that pattern, at `src/index.html:633-637`, and it is
+better written than most. It is the title slot alone that diverges.
+
+Decided on 2026-08-20: the published name is Recap Page, and it does not lead with the Marvel mark.
+A recap page is the page at the front of a comic that catches a reader up on the story so far, so
+the name says what the app does in the reader's own vocabulary without borrowing anyone else's.
+
+The clearance is the part worth trusting, rather than the name. USPTO's register returns nothing for
+the phrase, on an exact-phrase search and on a both-words search, checked 2026-08-20. The bare word
+RECAP is crowded in class 9, where Autodesk, the Free Law Project, Saluda Medical and Tangent
+Systems each hold a live registration, and a crowded field narrows what any one owner can reach.
+None of them is in comics, books or reading. The App Store returns nothing, npm holds neither
+`recap-page` nor `recappage`, no Microsoft Store product carries the name, and `recappage.com`,
+`.app` and `.io` were all unregistered.
+
+What the decision accepts: a recap page is a term of art, so the name is descriptive and would be
+weak to register as a mark. That is the trade. It buys freedom to use and gives up the ability to
+stop anyone else using it, which is the right way round for an app that will never police a mark.
+
+The candidate this beat is worth recording, because it failed for a reason that was invisible
+without checking. Pull List is the term the audience actually uses, and Marvel Characters, Inc.
+holds two live registrations for it: 6122684 in class 9 for downloadable media in the field of
+comics, and 6122685 in class 41 for the service, both filed 2019-08-09 and registered 2020-08-11,
+read from USPTO's own record on 2026-08-20. Class 9 is where a downloadable app sits, the field is
+comics, and the mark is being actively maintained, since a combined section 8 and 15 filing was
+received on 2026-07-09 to renew it and ask for incontestability. Choosing it would have moved this
+project from a name Marvel objects to on principle to one Marvel owns outright.
+
+The two candidates already in the tree were considered and set aside. `Reading Tracker`, the web
+manifest's short name, is descriptive to the point of being unfindable, and Longbox, recorded in
+`design/mockups/5-longbox-focus.html`, names a storage box rather than a reading order.
+
+Registration is not a prerequisite for any of this. Microsoft reserves a store name first come,
+first served and asks for no proof of rights, and the [name reservation
+page](https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msi/reserve-your-apps-name)
+read on 2026-08-20 puts the obligation the other way round: do not use a name trademarked by someone
+else, because they can report it and the app is pulled from the Store until every instance of the
+name has been changed in the app, its content and its listing. That penalty is the reason the
+clearance came before the choice rather than after it.
+
+Sized 2 and ranked below the icon because nothing here is urgent while distribution is a zip on a
+releases page. The exposure changes when a searchable storefront listing exists, not before.
+
+**BL-163: Say where the metadata came from, instead of borrowing Marvel's API attribution**
+
+- [ ] Replace the API attribution string with one describing the chain the data actually came down
+- [ ] Keep an attribution to Marvel as the origin of the underlying facts
+- [ ] Check the replacement against `docs/DATA_PROVENANCE.md`, so the two records cannot disagree
+
+Constraint gate: checked 1 to 11, none breached. Constraint 3 is untouched because this is display
+text that sends nothing anywhere. Constraint 11 is checked by the dash scan.
+
+The home screen renders "Data provided by Marvel." with a copyright line beside it, at
+`src/index.html:248`. That is the wording Marvel's attribution page requires of API users, and
+`docs/DATA_PROVENANCE.md` establishes in the same breath that this project never called that API:
+the metadata was fetched from the third hand in the chain, under terms this repository is recorded
+as never having agreed to.
+
+Displaying it anyway was the cautious choice, and as a claim about origin it is defensible, since
+the facts did begin with Marvel. The problem is narrower than that and runs the other way. The
+string is the official one, so it reads as attribution given under an agreement, which is the one
+impression the rest of this repository works to avoid. Under the endorsement question that BL-161
+and BL-162 both turn on, borrowed official wording is a liability rather than a mitigation.
+
+Two smaller things go with it. The required text is literally "Data provided by Marvel. © 2014
+Marvel", with the year hard-coded by Marvel and never templated, read from the [attribution
+page](https://web.archive.org/web/20251008073256/https://developer.marvel.com/documentation/attribution)
+on 2026-08-20, so the current line does not match the string it imitates in any case. And the
+sources the data did come from are already named accurately further down the same screen, which is
+where the replacement wording should take its lead rather than being drafted fresh.
+
+**BL-164: Carry a rename without breaking the download link installed copies use**
+
+- [ ] Hold the release asset filename fixed across the rename, whatever the repository comes to be called
+- [ ] Change the three baked URLs together, or establish on evidence that they need no change
+- [ ] Leave the storage key alone, and say in the item why it is the one thing that must not move
+- [ ] Check an installed copy still finds the update afterwards, rather than assuming a redirect covers it
+
+Constraint gate: checked 1 to 11, none breached. Constraint 5 is the live one and it is not
+breached: a rename touches neither origin nor port, and this item holds the storage key fixed
+rather than proposing to move it. Constraint 11 is checked by the dash scan.
+
+Renaming the repository is nearly free, and the one place it is not free is the place easiest to
+miss. GitHub redirects a renamed repository, so an installed copy's update check survives.
+Measured on 2026-08-20 against a repository that really was renamed, the API call answers 301 and
+then 200 once the redirect is followed, and `checkForUpdate` passes no redirect option to `fetch`,
+so it follows by default.
+
+The download link does not have that property, because GitHub redirects repository names and not
+asset names. Measured the same day: a release asset requested under its real filename answers 200,
+the same asset requested under a renamed filename answers 404, and the repository page itself
+answers 200. So the trap is not the repository name at all. It is `src/js/lib/updateCheck.js:4`,
+which bakes the asset filename into the download URL. An installed copy would be told correctly
+that an update exists and then sent to a 404.
+
+The mitigation is to leave the asset filename alone. It never had to match the repository name,
+nothing a user sees displays it, and renaming it to match a new project name is the single change
+that would break the link while buying nothing.
+
+One thing must not move under any circumstances. `src/js/storage.js:9` holds the key every reading
+list is stored under, and the temporary, pre-restore and salvage keys are derived beside it.
+Renaming those loses every user's progress silently, and the recovery paths that would otherwise
+salvage it are keyed on the same prefix, so they would be looking in the wrong place too. The
+prefix is internal and never displayed, so there is no reason to touch it.
+
+The backup file records the project slug at `src/js/lib/model.js:1119`. Nothing reads it back:
+import validates the shape of the payload and never compares that field, so it is a label rather
+than a check. It can change or stay, and either way an older backup still imports. Worth knowing
+before someone changes it defensively, or refuses to on the assumption it is load-bearing.
+
+Sized 1 because the whole of it is one filename left alone and one key left alone. Ranked beside
+the icon because it is cheap, and because getting it wrong is only discoverable after the rename
+has shipped, when the users it strands are the ones who installed earliest.
+
 
 
 
@@ -11614,12 +11811,12 @@ again, because a swap can lift a row above a third one it also outscores. Nothin
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
 resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
-### Case 1: BL-026 is labelled P0 but ranks sixty-eighth
+### Case 1: BL-026 is labelled P0 but ranks seventy-second
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 68 of 134.
+- Calculated: WSJF 3.67, rank 72 of 138.
 - Driver: job size, not value. Its Cost of Delay of 11 is the tenth highest figure in the backlog.
-  It is outranked by sixty-seven items, sixty-four of them sized 1, 2 or 3 whose Cost of Delay
+  It is outranked by seventy-one items, sixty-eight of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
   costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
@@ -11639,7 +11836,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 128 of 134, below a hundred and twenty-four unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 132 of 138, below a hundred and twenty-eight unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -11697,9 +11894,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 86 of 134. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 70 of 134. Mid-table.
-- BL-017, P2, rank 133 of 134. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 90 of 138. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 74 of 138. Mid-table.
+- BL-017, P2, rank 137 of 138. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
