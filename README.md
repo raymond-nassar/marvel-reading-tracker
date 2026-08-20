@@ -529,6 +529,40 @@ this is where that is demonstrated rather than asserted: it reports the named as
 breaks. It takes about three minutes, nearly all of it waiting out the timeouts a broken app
 produces, so it is a thing to run when the scenarios change rather than on every commit.
 
+### The upgrade check
+
+```
+npm run upgrade
+```
+
+Drives the upgrade that the in-app update notice tells you to perform. The notice says your reading
+progress is kept by the browser rather than in the app folder, so replacing the folder keeps
+everything and the old folder can be deleted. That sentence is the only thing standing between you
+and deleting a directory you believe is disposable, so it is driven rather than reasoned about. Two
+copies of the app are installed under the system temporary directory at different version numbers,
+each served by the real server, an order is imported into the first, that copy stops, and the second
+takes the address the first was using. Ten assertions cover which build is actually being served
+after the swap, the saved order surviving it by identity and by issue order, and the upgraded copy
+drawing that order and its progress. It takes about 8 seconds.
+
+The last of the ten is a control. The same new copy is served at a second address, where the
+progress has to be absent. Without it the check would pass just as happily if the progress were
+being read out of the folder, which is the opposite of what the notice claims.
+
+It needs the same two things the browser check needs, answers a missing one the same way with exit
+**2**, and is left out of CI for the same reason. It writes nothing outside the system temporary
+directory and deletes both copies when it finishes, and it serves on ephemeral ports rather than
+8787, so it cannot reach your reading progress.
+
+```
+npm run upgrade:prove
+```
+
+Runs the check four more times with one thing deliberately broken in each, and reports which
+assertion each break turns red. It takes about 32 seconds. One of the four starts the upgraded copy
+on a different port, which is the one way that following this advice really can lose everything, and
+is [Always open the same address](#always-open-the-same-address) seen from the other side.
+
 ### Reviewing an update to a pinned action
 
 The workflow calls each third-party action by a full commit revision rather than by a tag,

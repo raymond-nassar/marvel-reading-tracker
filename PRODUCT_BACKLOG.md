@@ -2709,14 +2709,14 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:704-715`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:738-749`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
 one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:574-578`, as fetching a list once and committing what came back. `depth` gained a gloss
+`README.md:608-612`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -4700,7 +4700,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:11416-11418` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:11444-11446` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4710,11 +4710,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11435-11439`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11463-11467`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11250-11252` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11278-11280` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4922,7 +4922,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2829-2838` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2854-2863` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:193-197` and
 `PRODUCT_BACKLOG.md:203-205` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6368,7 +6368,7 @@ here because it described the tags this item replaced.
 
 Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
 `.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:74-108`,
-`test/ci-supply-chain.test.js:124-142`, `README.md:532-567`.
+`test/ci-supply-chain.test.js:124-142`, `README.md:566-601`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -6382,7 +6382,7 @@ Constraint gate: checked 1 to 11, none breached.
 The current lockfile audited with zero known vulnerabilities, but GitHub reported Dependabot alerts
 and secret scanning disabled. No committed update configuration or advisory gate repeats the check.
 Development dependencies execute in CI even though they never reach the browser. Evidence:
-`package.json:27-37`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file inventory`.
+`package.json:29-39`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file inventory`.
 
 Shipped, with the second task deliberately left open. Both halves of the monitoring were off before
 this: asking whether vulnerability alerts were enabled answered 404, and automated security fixes
@@ -6884,7 +6884,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:415-770`,
+are valuable history and are not a concise public policy. Evidence: `README.md:415-804`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 Shipped as four documents, a test that keeps them honest, and one correction to the README that the
@@ -8283,7 +8283,7 @@ package added here is development tooling that never reaches the browser.
 The grouped dev-tooling proposal had been open and red since it was raised. Its lint job failed at
 `eslint.config.mjs:13`, the line that imports the recommended rule set, with the module not found
 and exit 2. Nothing was wrong with the configuration: ESLint 10 stopped bundling `@eslint/js`, so a
-config that imports it needs it declared. Evidence: `package.json:33-36`, `eslint.config.mjs:13`.
+config that imports it needs it declared. Evidence: `package.json:35-38`, `eslint.config.mjs:13`.
 
 Two things about that fix were assumed and both were wrong, which is the reason this has a record of
 its own rather than a line in a merge. The first is cheap and immediate: the obvious version does not
@@ -10237,7 +10237,7 @@ first. The upstream figure was confirmed byte for byte by the build, which is th
 estimate that had to be exact.
 
 The version to bundle is chosen by the test matrix, not by the engines floor alone.
-`package.json:29-31` asks for Node 20 or newer, which every current line satisfies, so the floor
+`package.json:31-33` asks for Node 20 or newer, which every current line satisfies, so the floor
 narrows nothing. `.github/workflows/ci.yml:40` does: the suite runs on 20 and 24 and on nothing
 else, so bundling any other line would hand the reader a runtime this project never runs its own
 tests against. That picks 24, which is also the newest LTS line and the one the app is developed on.
@@ -11013,6 +11013,7 @@ an oversight, and it is recorded here so nobody reads the browser figures as cov
 - [x] Let the reader switch automatic checks off without disabling a manual check
 - [x] Offer the stable release zip as the primary action and the release notes as the secondary link
 - [x] Say that reading progress stays in the browser and that the old folder can be deleted
+- [x] Drive that upgrade against two real installs, so the sentence is verified rather than asserted
 - [x] Keep the browser harness deterministic by stubbing the release request and proving the scenario
 
 Constraint gate: checked 1 to 11, none breached. Constraint 3 is satisfied because the request asks
@@ -11055,6 +11056,33 @@ The targeted run reported twelve update assertions passing. Five update mutation
 `scripts/browser-check.mjs:530-586`: one makes the default answer newer, one suppresses a newer
 answer, one corrupts the download link, one removes the release-notes link, and one rewrites the
 delivered module so boot waits for the update check.
+
+The sentence telling the reader to delete the old folder was the one claim in the notice that
+nothing exercised, and it is the one whose failure loses an entire reading history. `npm run upgrade`
+drives it against two real installs. `scripts/upgrade-check.mjs:277-301` is the heart of it: after a
+second directory takes the address the first was using, the check reads which build is being served,
+that the saved order survived by identity and by issue order, and that the upgraded copy draws the
+order and its progress. `scripts/upgrade-check.mjs:303-322` is the control, serving the same new copy
+at a second address and requiring the progress to be absent there. Without the control the check
+would pass just as happily if progress were being read out of the folder, which is the opposite of
+what the notice claims.
+
+`npm run upgrade:prove` broke four things on purpose, at `scripts/upgrade-check.mjs:40-67`, and each
+one reddened the assertion it was aimed at: four of four in 32 seconds. Freezing the new copy's
+version number breaks only the claim that the new build is being served. Renaming the state key
+breaks only the painting assertion, because the reader's data survives untouched under the old name
+while their shelf comes up empty, which is the distinction between storage agreeing and a reader
+seeing their progress. Starting the upgraded copy on a different port breaks the survival assertions,
+and is the one way a reader following this advice really can lose everything. Pointing the control at
+the origin it is supposed to differ from breaks the control. Neither command runs in CI, for the same
+reason `npm run browser` does not.
+
+The first version of the check was itself the finding, and it is recorded at
+`scripts/upgrade-check.mjs:194-206`. Navigating to a URL that differs only in its fragment is a
+same-document navigation, so it swapped the served directory and then re-ran nothing: the modules in
+memory were still the old copy's. It reported the old version after the upgrade while every storage
+assertion passed, which reads as a serious finding about the app and was in fact a check that had
+never once loaded the thing it was testing.
 
 
 
@@ -11350,7 +11378,7 @@ No gap. Co-existence is a non-issue for a single local process, and interoperabi
 both directions: JSON backup for round-tripping and Markdown export for reading elsewhere. Zero
 runtime dependencies and plain ES modules mean nothing to reconcile with a host application.
 
-Evidence: `package.json:1-37` (no `dependencies` key at all, `engines.node >= 20`),
+Evidence: `package.json:1-39` (no `dependencies` key at all, `engines.node >= 20`),
 `src/js/lib/model.js:1046-1077` (validated backup shape).
 
 The fixed `127.0.0.1:8787` origin is a deliberate storage-bucket decision rather than a
@@ -11449,13 +11477,13 @@ The clearest debt in the repository, and it is concentrated in one file.
 Swept in full rather than dispositioned.
 
 - Installability: good, and suited to an app cloned and run by hand. `npm start` runs the server
-  with no install step, because there is nothing to install. Evidence: `package.json:8-27`.
+  with no install step, because there is nothing to install. Evidence: `package.json:8-29`.
   Changed since: `BL-040` added three devDependencies and a tracked `package-lock.json`, so linting
   now needs `npm install` first, and `BL-115` took that to four. Running the app still does not, and
   runtime dependencies are still zero.
 - Adaptability: good. Plain ES modules with no build step and no bundler mean a Node upgrade
   changes nothing about the client, and `engines.node >= 20` states the floor.
-  Evidence: `package.json:29-31`.
+  Evidence: `package.json:31-33`.
 - Replaceability: good. The metadata API base URL is user-configurable and validated, the cache is
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
@@ -11484,13 +11512,13 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:4590-4593`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:129-139`. Resolved: `BL-030` shipped both, assembled at `server.mjs:53-64` and sent at `server.mjs:134` and `server.mjs:137`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:52-67` and onto the read out of storage at `src/js/main.js:533-565`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:4278-4279`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
-| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-37` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
+| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-39` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:213-216`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is not fixed and will not be: BL-028 is parked, because phone and tablet reading is served by Marvel's own apps. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
 | Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. Partly changed: the suite is 235 after this pass, but the three modules still have no test file, so the gap itself is unchanged. |
 | CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request, and on demand for any ref. |
-| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version at `package.json:3`, to `1.0.0` as audited, added `CHANGELOG.md`, and wired a `version` script at `package.json:27` that syncs the version the app reports. |
-| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-37` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:32-37` and a tracked `package-lock.json`, and `BL-115` took that to four, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
+| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version at `package.json:3`, to `1.0.0` as audited, added `CHANGELOG.md`, and wired a `version` script at `package.json:29` that syncs the version the app reports. |
+| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-39` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:34-39` and a tracked `package-lock.json`, and `BL-115` took that to four, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
 | Licensing | No gap. The project is MIT, and every vendored order records its upstream source and licence rather than absorbing it silently. Evidence: `LICENSE`, `src/data/catalog.json` (`source` and `sourceLicense` per list), `src/js/main.js:3834-3854` (attribution rendered in the UI before import). |
 
 ### 2026-08-10 assurance and open-source delta

@@ -30,6 +30,31 @@ comparison, daily scheduling, failure handling and request shape. The real-brows
 the GitHub release request, checks the notice and the explicit button, and includes aimed mutations
 for the update journey.
 
+### A committed check now drives the upgrade that notice recommends
+
+In plain English: the notice tells you that your reading progress is kept by the browser rather than
+in the app folder, so replacing the folder keeps everything and the old one is safe to delete.
+Nothing had ever tested that sentence, and it is the one standing between you and deleting a folder
+you believe is disposable. It is now driven from end to end: one copy of the app saves a reading
+order, that copy stops, a second copy takes over the same address, and the order has to still be
+there and still be drawn on the screen. It is. Nothing about the app itself changed.
+
+For maintainers: `npm run upgrade` installs two real copies of the app under the system temporary
+directory, serves each with the real server on ephemeral ports, and makes ten assertions across the
+swap. The last is a control that serves the same new copy at a second address and requires the
+progress to be absent there. Without it the check would pass just as happily if progress were being
+read out of the folder, which is the opposite of what the notice claims. `npm run upgrade:prove`
+breaks four things on purpose and reports which assertion each one reddens, at four of four. Neither
+is part of CI, for the same reason the browser check is not: both need Edge and a driver that is
+deliberately not a dependency of this repository.
+
+Writing it turned up a trap worth recording. Navigating to a URL that differs from the current one
+only in its fragment is a same-document navigation, so the browser moves the address and re-runs
+nothing. The first version of the check swapped the served directory and then navigated by fragment,
+so the code still in memory was the old copy's. It reported the old version number after the upgrade
+while every storage assertion passed, which reads as a serious finding about the app and was in fact
+a check that had never once loaded the new copy.
+
 ### The message left after deleting a reading list can now be closed
 
 In plain English: deleting a reading list puts a message at the top of every screen offering to put

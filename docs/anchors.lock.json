@@ -16,8 +16,8 @@
   },
   ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|PRODUCT_BACKLOG.md:6385|0": {
     "anchor": "PRODUCT_BACKLOG.md:6385",
-    "fp": "f4841c60d18d401f",
-    "head": "`package.json:27-37`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file invent"
+    "fp": "c875c812039f7bb3",
+    "head": "`package.json:29-39`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file invent"
   },
   ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:206-209|0": {
     "anchor": "scripts/check-anchors.mjs:206-209",
@@ -304,13 +304,13 @@
     "fp": "e9a1e74dee2c791e",
     "head": "// The publication gate answered a question that only gets asked once, and it was asked on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1953-1956|0": {
-    "anchor": "CHANGELOG.md:1953-1956",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1978-1981|0": {
+    "anchor": "CHANGELOG.md:1978-1981",
     "fp": "a1bbc9d008c99c4d",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1965-1968|0": {
-    "anchor": "CHANGELOG.md:1965-1968",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:1990-1993|0": {
+    "anchor": "CHANGELOG.md:1990-1993",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -434,8 +434,8 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11276|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11276",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11304|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11304",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -814,9 +814,9 @@
     "fp": "179d485d49b3bd60",
     "head": "const store = new Store({"
   },
-  "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-37|0": {
-    "anchor": "package.json:1-37",
-    "fp": "15d4c99cbacd50e1",
+  "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-39|0": {
+    "anchor": "package.json:1-39",
+    "fp": "425f7ff4f7e4cc2c",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:1046-1077|0": {
@@ -929,14 +929,14 @@
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|package.json:29-31|0": {
-    "anchor": "package.json:29-31",
+  "PRODUCT_BACKLOG.md|8-flexibility|package.json:31-33|0": {
+    "anchor": "package.json:31-33",
     "fp": "049db722764e6552",
     "head": "\"engines\": {"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|package.json:8-27|0": {
-    "anchor": "package.json:8-27",
-    "fp": "6907a2c39a2e26b5",
+  "PRODUCT_BACKLOG.md|8-flexibility|package.json:8-29|0": {
+    "anchor": "package.json:8-29",
+    "fp": "d8f24a5ce3eb937f",
     "head": "\"scripts\": {"
   },
   "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/cachePolicy.js:16-20|0": {
@@ -1064,8 +1064,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2829-2838|0": {
-    "anchor": "CHANGELOG.md:2829-2838",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2854-2863|0": {
+    "anchor": "CHANGELOG.md:2854-2863",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1124,33 +1124,33 @@
     "fp": "0476ef7e99533066",
     "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
   },
-  "PRODUCT_BACKLOG.md|item-details|package.json:27-37|0": {
-    "anchor": "package.json:27-37",
+  "PRODUCT_BACKLOG.md|item-details|package.json:29-39|0": {
+    "anchor": "package.json:29-39",
     "fp": "6fbfef3584a043a4",
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
-  "PRODUCT_BACKLOG.md|item-details|package.json:29-31|0": {
-    "anchor": "package.json:29-31",
+  "PRODUCT_BACKLOG.md|item-details|package.json:31-33|0": {
+    "anchor": "package.json:31-33",
     "fp": "049db722764e6552",
     "head": "\"engines\": {"
   },
-  "PRODUCT_BACKLOG.md|item-details|package.json:33-36|0": {
-    "anchor": "package.json:33-36",
+  "PRODUCT_BACKLOG.md|item-details|package.json:35-38|0": {
+    "anchor": "package.json:35-38",
     "fp": "b8ee79f8da29f420",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11250-11252|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11250-11252",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11278-11280|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11278-11280",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11416-11418|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11416-11418",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11444-11446|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11444-11446",
     "fp": "6f8183228e69f5a8",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11435-11439|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11435-11439",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11463-11467|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11463-11467",
     "fp": "74995e9f6a8b1fa8",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -1219,23 +1219,23 @@
     "fp": "d3da7d60a7417412",
     "head": "internet. On a Mac, if double-clicking does nothing or the file opens in a text editor"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:415-770|0": {
-    "anchor": "README.md:415-770",
-    "fp": "027614a0ec556b28",
+  "PRODUCT_BACKLOG.md|item-details|README.md:415-804|0": {
+    "anchor": "README.md:415-804",
+    "fp": "97e72fc8f2a197a1",
     "head": "## For contributors"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:532-567|0": {
-    "anchor": "README.md:532-567",
+  "PRODUCT_BACKLOG.md|item-details|README.md:566-601|0": {
+    "anchor": "README.md:566-601",
     "fp": "3eae5484d412a37e",
     "head": "### Reviewing an update to a pinned action"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:574-578|0": {
-    "anchor": "README.md:574-578",
+  "PRODUCT_BACKLOG.md|item-details|README.md:608-612|0": {
+    "anchor": "README.md:608-612",
     "fp": "01978a99e58bc8ac",
     "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:704-715|0": {
-    "anchor": "README.md:704-715",
+  "PRODUCT_BACKLOG.md|item-details|README.md:738-749|0": {
+    "anchor": "README.md:738-749",
     "fp": "b93a929635fd5479",
     "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
   },
@@ -1634,6 +1634,26 @@
     "fp": "b00b1254dcc2dcbf",
     "head": "if (err?.status === 404) refused.add(id);"
   },
+  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:194-206|0": {
+    "anchor": "scripts/upgrade-check.mjs:194-206",
+    "fp": "2eff489847b65b2b",
+    "head": "async function boot(page, origin, hash = '') {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:277-301|0": {
+    "anchor": "scripts/upgrade-check.mjs:277-301",
+    "fp": "9810678f223c5e96",
+    "head": "await boot(page, upgradeOrigin, '#/catalog');"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:303-322|0": {
+    "anchor": "scripts/upgrade-check.mjs:303-322",
+    "fp": "d3a5021f898f9c8e",
+    "head": "// The control, and without it none of the above means what it says. The same new install is"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:40-67|0": {
+    "anchor": "scripts/upgrade-check.mjs:40-67",
+    "fp": "fe8c492e875e3e9c",
+    "head": "const MUTATIONS = ["
+  },
   "PRODUCT_BACKLOG.md|item-details|scripts/vendor-index.mjs:38|0": {
     "anchor": "scripts/vendor-index.mjs:38",
     "fp": "2c3648b8f1356780",
@@ -1676,7 +1696,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|SECURITY.md:6-9|0": {
     "anchor": "SECURITY.md:6-9",
-    "fp": "b16f0a95e16c6e07",
+    "fp": "1a80867a9c803424",
     "head": "attack, no account to take over and no database holding anyone else's data. The app has no runtime"
   },
   "PRODUCT_BACKLOG.md|item-details|server.mjs:103-113|0": {
@@ -3554,18 +3574,18 @@
     "fp": "fc2e7b4023138c1b",
     "head": "notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error', im"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-37|0": {
-    "anchor": "package.json:1-37",
-    "fp": "15d4c99cbacd50e1",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-39|0": {
+    "anchor": "package.json:1-39",
+    "fp": "425f7ff4f7e4cc2c",
     "head": "{"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:32-37|0": {
-    "anchor": "package.json:32-37",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:34-39|0": {
+    "anchor": "package.json:34-39",
     "fp": "4436eb6fb334ce0a",
     "head": "\"devDependencies\": {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:27|0": {
-    "anchor": "package.json:27",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:29|0": {
+    "anchor": "package.json:29",
     "fp": "10904b7f9645e3f0",
     "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
@@ -3614,9 +3634,9 @@
     "fp": "c4badc70c9aad76e",
     "head": "detailsBadge(item),"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-37|0": {
-    "anchor": "package.json:1-37",
-    "fp": "15d4c99cbacd50e1",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-39|0": {
+    "anchor": "package.json:1-39",
+    "fp": "425f7ff4f7e4cc2c",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:12|0": {
@@ -4314,8 +4334,8 @@
     "fp": "3e2c4d78c29c3429",
     "head": "//   MAJOR  changes the stored data in a way an older build cannot read. Anyone who has"
   },
-  "SECURITY.md|what-this-project-is-because-it-decides-what-a-v|package.json:33-36|0": {
-    "anchor": "package.json:33-36",
+  "SECURITY.md|what-this-project-is-because-it-decides-what-a-v|package.json:35-38|0": {
+    "anchor": "package.json:35-38",
     "fp": "b8ee79f8da29f420",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },
