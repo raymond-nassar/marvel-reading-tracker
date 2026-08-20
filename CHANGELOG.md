@@ -12,6 +12,25 @@ upgrading across a MAJOR.
 Releases are tagged `v<version>`. The version shown under **About this app** is the one to
 quote in a bug report.
 
+## Unreleased
+
+### Recorded three naming and branding risks ahead of any app store listing
+
+In plain English: nothing about the app itself changed, and nothing you have saved is affected. The
+project's list of planned improvements gained three entries about how the app presents itself, all
+written down after reading the actual rules rather than guessing at them.
+
+The first is the app's icon, which is a red square with a white letter on it and is close enough to
+Marvel's own logo to be worth redrawing. The second is the app's name, which is fine for a project
+shared on a code-hosting site but sits awkwardly against both Marvel's published position on
+third-party apps and the store's own rules about what a product may be called. The third is a line
+on the home screen that credits Marvel using wording meant for apps that connect to Marvel's own
+data service, which this app has never done.
+
+None of the three is urgent while the app is downloaded as a zip file. All three matter before it
+could ever be listed in a store, and they are recorded now so the reasoning does not have to be
+worked out a second time.
+
 ## 1.2.0
 
 A feature release, and the one that makes every release after it reachable. Until now nothing in the
