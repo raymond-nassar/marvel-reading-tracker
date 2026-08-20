@@ -31,6 +31,28 @@ None of the three is urgent while the app is downloaded as a zip file. All three
 could ever be listed in a store, and they are recorded now so the reasoning does not have to be
 worked out a second time.
 
+### Settled on the name Recap Page, and wrote down what a rename would break
+
+In plain English: the app will be renamed to Recap Page. Nothing about how it works changed here and
+nothing you have saved is affected. The new name is not carried into the app yet, so this only
+settles which name to carry.
+
+The choice was deliberately left open before. What closed it was checking the two shortlisted names
+against the United States trademark register instead of assuming. Pull List turned out to be
+registered twice by Marvel, and one of those two sits in the same category a downloadable app is
+listed under. Both were renewed about six weeks ago, so somebody is actively looking after them.
+Recap Page returned nothing there at all, and nothing in the Windows store, the Android store or the
+main code-hosting site uses it either. Registering a name is not a condition of publishing to the
+Windows store, but using somebody else's registered name is grounds for being pulled from it, which
+is why the check came first.
+
+The second entry is about what a rename costs afterwards. The app asks a fixed web address once a
+day whether a newer version exists. Renaming the project keeps that question answerable, because the
+site forwards the old address to the new one. The download file the answer points at is named after
+the project, though, and that forwarding does not reach inside it, so installed copies would be told
+an update exists and then fail to fetch it. The fix is to leave that one filename alone, which is
+much easier to know before the rename than after.
+
 ## 1.2.0
 
 A feature release, and the one that makes every release after it reachable. Until now nothing in the
