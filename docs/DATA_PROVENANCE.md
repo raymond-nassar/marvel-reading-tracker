@@ -282,16 +282,32 @@ The fourth question has a half that nothing in this repository can settle: whose
 when the selection was not made here. Twelve of the twenty-six shipped lists name Comic Book Herald
 on the card and link back to the guide they follow, and the only other lists whose selection was
 made elsewhere are the two vendored checklists in the table above. Two guide writers have now been
-written to, and one of them has answered.
+written to, and both have answered.
 
 **Comic Book Herald was written to on 2026-08-19**, at the address published on its contact page. It
 asked two things: whether more orders could be built from its guides, credited and linked back as
 the twelve already are, and whether the site would treat this app as a companion for readers who use
-Marvel Unlimited. It is unanswered at the time of writing. The sent message is not committed here,
-so this paragraph records its substance rather than its wording. Two things about it bind whatever
-comes back. The twelve were built before the question was asked, so a yes would be retrospective
-rather than permissive; and the message offered to withdraw them if the answer is no. That offer was
-made and is recorded here so a later reader does not have to take it on trust.
+Marvel Unlimited. It was answered on 2026-08-20 by Dave Buesing, the founder and editor-in-chief:
+
+> Hi Raymond,
+>
+> Thanks for connecting. This looks like a very cool project! I appreciate that you have credited
+> CBH for reading order work, and have no problem with you continuing to do so. Thank you for
+> asking! That's more than AI would do :)
+>
+> I'll give it all a look as I have time to consider sharing out!
+> Thanks!
+> Dave
+> --
+> Dave Buesing
+> Founder, Editor-In-Chief
+> Site: comicbookherald.com
+
+That is a yes to the exact pattern already in use on the twelve lists and a no to the idea that the
+project would need to go back and rewrite them. It confirms the credit-and-link method, and it does
+not grant a broader licence over Marvel's material or over the site's own editorial work. The reply
+is recorded here because the sent email is not committed to this repository, and the message itself
+is narrower than the broad grant that later arrived from Comic Book Reading Orders.
 
 **Comic Book Reading Orders answered on 2026-08-20**, through the contact form at
 [comicbookreadingorders.com](https://comicbookreadingorders.com/), and granted what the same request
