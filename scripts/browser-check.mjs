@@ -1249,13 +1249,20 @@ async function deleteActiveList(page) {
 
 // Found by its label rather than by position, so a check that the buttons are in a given order
 // cannot be the same assertion as a check that pressing one of them works.
+//
+// Focused before it is pressed, because a synthetic click does not focus its target and the focus
+// move being checked here only exists for what happens to a *focused* node when it leaves the
+// document. Without this the pressed button never holds focus, removing it cannot drop focus to
+// <body>, and the assertion about where focus lands is satisfied by whatever the view switch left
+// behind whether the app moves focus or not: green against a tree with the move deleted.
 async function clickNoticeButton(page, label) {
   await page.waitForFunction((want) => [...document.querySelectorAll('#app-report .notice button')]
     .some((b) => b.textContent.trim() === want), { timeout: 15000 }, label);
   await page.evaluate((want) => {
-    [...document.querySelectorAll('#app-report .notice button')]
-      .find((b) => b.textContent.trim() === want)
-      .click();
+    const btn = [...document.querySelectorAll('#app-report .notice button')]
+      .find((b) => b.textContent.trim() === want);
+    btn.focus();
+    btn.click();
   }, label);
 }
 

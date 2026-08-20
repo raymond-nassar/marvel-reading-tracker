@@ -71,7 +71,7 @@ test('the way out sits after the offer, not in front of it', () => {
   assert.match(second.className, /notice-dismiss/);
 });
 
-// Three of the four messages under this key report something that has already happened and offer
+// Two of the four messages under this key report something that has already happened and offer
 // nothing to do about it. Those are the ones a reader is most likely to want gone, and they used to
 // be the ones with no control at all, so the layout that makes room for a button has to reach them.
 test('a message with nothing to offer is still closable, and still laid out for a button', () => {
@@ -97,6 +97,43 @@ test('pressing the way out runs the handler it was given', () => {
     delete globalThis.document;
   }
   assert.equal(closed, 1);
+});
+
+// Dismissing destroys the button that had focus, and a focused node leaving the document drops
+// focus to <body> at the top of the page. The landing is the heading of the view being read, except
+// inside an open dialog, where the page behind is inert and focus() on it does nothing.
+//
+// The guard has to be asked before the click, because closing the notice detaches the button and
+// closest() on a detached node walks up to null. The stub detaches as the handler runs, which is
+// what clearing a notice does, so a guard read in the wrong order answers "not in a dialog" here.
+// That is the answer it must never give, and it is the one answer it could give every time.
+function pressDismiss({ inDialog }) {
+  const aimedAt = [];
+  globalThis.document = stubDocument();
+  globalThis.document.querySelector = (sel) => { aimedAt.push(sel); return null; };
+  try {
+    let attached = true;
+    const p = noticeEl({
+      msg: 'Essential Avengers is back from the catalog.',
+      kind: 'ok',
+      action: null,
+      dismiss: { label: 'Dismiss', onClick: () => { attached = false; } },
+    });
+    const btn = buttons(p)[0];
+    btn.closest = (sel) => (attached && inDialog && sel === 'dialog[open]' ? { tag: 'dialog' } : null);
+    btn.handlers.click({ currentTarget: btn });
+  } finally {
+    delete globalThis.document;
+  }
+  return aimedAt;
+}
+
+test('closing a notice puts the reader on the heading of the view they are looking at', () => {
+  assert.deepEqual(pressDismiss({ inDialog: false }), ['#view-read']);
+});
+
+test('closing one inside an open dialog leaves focus where the dialog keeps it', () => {
+  assert.deepEqual(pressDismiss({ inDialog: true }), []);
 });
 
 // A button nobody is told about is a button a screen reader user cannot know to look for, which is
@@ -144,15 +181,65 @@ function callsTo(text, name) {
   return found;
 }
 
+// Split a call at its top-level commas, so an object literal or a template string holding one
+// cannot be read as an argument boundary. Position is the whole point here: a way out handed to
+// the fifth argument still sits last in the call and still reads as "the call mentions it".
+function argsOf(call) {
+  const inner = call.slice(call.indexOf('(') + 1, -1);
+  const parts = [];
+  let depth = 0;
+  let quote = null;
+  let start = 0;
+  for (let i = 0; i < inner.length; i += 1) {
+    const ch = inner[i];
+    if (quote) {
+      if (ch === '\\') i += 1;
+      else if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'" || ch === '`') quote = ch;
+    else if (ch === '(' || ch === '[' || ch === '{') depth += 1;
+    else if (ch === ')' || ch === ']' || ch === '}') depth -= 1;
+    else if (ch === ',' && !depth) { parts.push(inner.slice(start, i).trim()); start = i + 1; }
+  }
+  parts.push(inner.slice(start).trim());
+  return parts;
+}
+
 // The defect was never in one message. It was in the key: everything raised under it outlives the
 // screen it was raised on, and a fifth message added later with no way out puts the reader back
 // where they started. Asserted against the calls rather than against a count, so adding one is what
 // turns this red rather than forgetting to update a number.
+//
+// The argument position is asserted, not merely the name. `dismiss` is the sixth parameter and
+// `action` the fifth, so a way out written into the fifth is accepted by the call, sits last in it,
+// and is wrong twice over: it draws as the primary control without the class that marks it
+// secondary, and it fills the `action` slot placeNotices reads to decide whether a notice may
+// follow the reader into an open dialog.
+const WAYS_OUT = new Set(['dismissUndoDelete', 'giveUpUndoDelete']);
+const wayOutOf = (call) => argsOf(call)[5] ?? '';
+
 test('every message held above the views carries the way out of it', () => {
   const calls = callsTo(source, 'notify').filter((c) => c.includes('UNDO_DELETE'));
   assert.ok(calls.length >= 4, `expected the undo family to raise at least four messages, saw ${calls.length}`);
-  const silent = calls.filter((c) => !c.includes('dismissUndoDelete'));
-  assert.deepEqual(silent, [], `raised with no way to close it: ${silent.join(' | ')}`);
+  const silent = calls.filter((c) => !WAYS_OUT.has(wayOutOf(c)));
+  assert.deepEqual(silent, [], `raised with no way to close it, or with one in the wrong argument: ${silent.join(' | ')}`);
+});
+
+// A word that promises to clear the screen must not also spend the last copy of a list. The reader
+// looking at this message has already pressed Undo, so the buffer behind the retry is the only
+// place that list still exists, and closing the message throws it away. Every other message under
+// the key reports something already settled, where one word can honestly carry both.
+test('the message offering a retry names what its way out costs', () => {
+  const [failed] = callsTo(source, 'notify')
+    .filter((c) => c.includes('UNDO_DELETE') && c.includes('could not be put back'));
+  assert.ok(failed, 'the message raised when a restore fails has moved or gone');
+  assert.equal(wayOutOf(failed), 'giveUpUndoDelete', 'a recoverable failure is closed by a word that promises only to close it');
+
+  const control = source.match(/const giveUpUndoDelete = \{[^}]*\}/);
+  assert.ok(control, 'the way out of a failed restore has moved or gone');
+  assert.doesNotMatch(control[0], /label: 'Dismiss'/, 'the two ways out are named the same and cannot be told apart');
+  assert.match(control[0], /onClick: forgetDeleted\b/, 'giving up leaves the deleted list buffered behind it');
 });
 
 // Hiding the words while the buffer lives on is the failure mode that looks fixed. The offer would

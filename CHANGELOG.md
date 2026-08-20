@@ -27,8 +27,13 @@ another screen, and a message that vanished after ten seconds would take the onl
 were still working out whether you wanted it. What changed is who ends it. Pressing "Dismiss" gives
 up the undo along with the message, so the app will not raise it again later.
 
-Every message this feature produces can now be closed, not only the one with the offer in it. Three
-of the four just report something that already happened, and those had no button at all.
+Every message this feature produces can now be closed, not only the one with the offer in it. Two of
+the four just report something that already happened, and those had no button at all.
+
+The fourth is the one shown when putting a list back fails. Its button says "Give up" rather than
+"Dismiss", because at that point the copy held in the message is the only copy of the list left, and
+closing it really does throw it away. A button that reads like tidying up should not quietly discard
+something.
 
 Nothing you have saved is affected, and your reading progress was never involved either way.
 

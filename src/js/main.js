@@ -441,7 +441,16 @@ export function noticeEl({ msg, kind, action, dismiss }) {
     ...controls.map((c) => el('button', {
       type: 'button',
       class: c === dismiss ? 'quiet notice-dismiss' : 'quiet',
-      onclick: (e) => { c.onClick(); if (c === dismiss) focusAfterDismiss(e.currentTarget); },
+      onclick: (e) => {
+        const closing = c === dismiss;
+        // Where this button sits is asked before the click runs, not after. Closing a notice
+        // detaches the button from the document, and closest() on a detached node walks up to
+        // null, so a guard asked afterwards can never see the dialog it exists for: the one case
+        // it is written to skip would be the one case it could never detect.
+        const inDialog = closing && e.currentTarget.closest('dialog[open]') !== null;
+        c.onClick();
+        if (closing) focusAfterDismiss(inDialog);
+      },
     }, c.label)),
   ]);
 }
@@ -451,8 +460,8 @@ export function noticeEl({ msg, kind, action, dismiss }) {
 // was filed for, so the reader is put where showView puts them: on the heading of the view they are
 // looking at. Inside an open dialog the page behind is inert, focus() on it does nothing, and the
 // dialog keeps focus itself, so that case is left alone rather than aimed somewhere it cannot go.
-function focusAfterDismiss(btn) {
-  if (btn.closest('dialog[open]')) return;
+function focusAfterDismiss(inDialog) {
+  if (inDialog) return;
   focusViewHeading(view);
 }
 
@@ -1977,6 +1986,14 @@ let lastDeleted = null;
 // the same way out. Built here rather than written at each call so the four cannot drift apart.
 const dismissUndoDelete = { label: 'Dismiss', onClick: forgetDeleted };
 
+// The same withdrawal under an honest name, for the one message that is not settled. A reader
+// looking at "could not be put back" has already asked for the list, and the buffer behind the
+// retry is the only copy of it left. "Dismiss" there would name closing an error while spending
+// that copy, which is a destructive act wearing the label of a tidy-up. The other three report
+// something already finished, where being done with the message and being done with the offer are
+// the same sentence and one word can carry both.
+const giveUpUndoDelete = { label: 'Give up', onClick: forgetDeleted };
+
 function offerUndoDelete(deleted) {
   lastDeleted = deleted;
   notify('#app-report', `Deleted ${deleted.list.name}. Reading progress was kept.`, 'ok', UNDO_DELETE, {
@@ -2037,12 +2054,13 @@ function undoDelete() {
   if (!store.lastUpdateOk) {
     // The buffer is deliberately kept, and the notice keeps a button, because a write that failed
     // for want of space can succeed after the reader frees some. Dropping the offer here would
-    // make a recoverable failure permanent. Dismissing does drop it, which is not the same thing:
-    // that is the reader saying the retry is not wanted, rather than the app deciding for them.
+    // make a recoverable failure permanent. Giving up does drop it, which is not the same thing:
+    // that is the reader saying the retry is not wanted, rather than the app deciding for them,
+    // and the word says so rather than promising only to take the message away.
     notify('#app-report', `${list.name} could not be put back: that change could not be saved.`, 'error', UNDO_DELETE, {
       label: 'Try again',
       onClick: undoDelete,
-    }, dismissUndoDelete);
+    }, giveUpUndoDelete);
     return;
   }
   forgetDeleted();
