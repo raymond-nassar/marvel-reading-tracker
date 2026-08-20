@@ -395,7 +395,9 @@ function placeNotices() {
     // A notice carrying a control stays in its own pane. Moving a message into the modal makes it
     // readable where the reader is looking; moving a button there makes it pressable in a context
     // that has nothing to do with it, and acting on it can navigate the inert page behind the
-    // dialog to a view the reader never asked for.
+    // dialog to a view the reader never asked for. A dismiss button is not that kind of control:
+    // it closes the message it sits in and touches nothing else, so a notice whose only control is
+    // a dismiss still travels, and the reader can be rid of it from wherever they read it.
     if (modalPane && !note.action) box = modalPane;
     // offsetParent is null only under a display:none ancestor, which is how a view that is not
     // the current one is hidden.
@@ -423,11 +425,44 @@ function placeNotices() {
 // A notice with an action is a paragraph with a button in it rather than a message and a separate
 // control, so that the offer is announced with the words that explain it and so that re-rendering
 // the notice cannot leave the button behind in a pane the message has left.
-function noticeEl({ msg, kind, action }) {
-  return el('p', { class: `notice notice-${kind}${action ? ' notice-act' : ''}` }, [
+//
+// `dismiss` is a second control and not a variant of the first. An action is what the message
+// offers; dismissing is the reader saying they are finished with the message, which is a different
+// sentence and has to be a different button. It carries visible text rather than a bare glyph
+// because the notice already holds a text button, and a word beside a word reads as a choice
+// between two things where a symbol beside a word reads as decoration.
+// Exported for the test that holds the shape of a notice's controls, which is a rule about what a
+// reader is offered rather than about how a paragraph is built, and which no headless run can reach
+// through notify() because that needs a document.
+export function noticeEl({ msg, kind, action, dismiss }) {
+  const controls = [action, dismiss].filter(Boolean);
+  return el('p', { class: `notice notice-${kind}${controls.length ? ' notice-act' : ''}` }, [
     el('span', { class: 'grow', text: msg }),
-    action ? el('button', { type: 'button', class: 'quiet', onclick: action.onClick }, action.label) : null,
+    ...controls.map((c) => el('button', {
+      type: 'button',
+      class: c === dismiss ? 'quiet notice-dismiss' : 'quiet',
+      onclick: (e) => {
+        const closing = c === dismiss;
+        // Where this button sits is asked before the click runs, not after. Closing a notice
+        // detaches the button from the document, and closest() on a detached node walks up to
+        // null, so a guard asked afterwards can never see the dialog it exists for: the one case
+        // it is written to skip would be the one case it could never detect.
+        const inDialog = closing && e.currentTarget.closest('dialog[open]') !== null;
+        c.onClick();
+        if (closing) focusAfterDismiss(inDialog);
+      },
+    }, c.label)),
   ]);
+}
+
+// Dismissing removes the button that was pressed, and the browser drops focus to <body> when a
+// focused node leaves the document. That is the same silent landing at the top of the page BL-054
+// was filed for, so the reader is put where showView puts them: on the heading of the view they are
+// looking at. Inside an open dialog the page behind is inert, focus() on it does nothing, and the
+// dialog keeps focus itself, so that case is left alone rather than aimed somewhere it cannot go.
+function focusAfterDismiss(inDialog) {
+  if (inDialog) return;
+  focusViewHeading(view);
 }
 
 // The key is what a notice is cleared by, and it defaults to the pane so that most callers need
@@ -435,8 +470,10 @@ function noticeEl({ msg, kind, action }) {
 // a catalog load, can be cleared wherever it ended up.
 //
 // `action` puts a button in the notice, for a message that offers a way back such as the undo
-// after a delete.
-function notify(sel, msg, kind = 'ok', key = sel, action = null) {
+// after a delete. `dismiss` puts a second one there for a message the reader can be finished with
+// before anything replaces it, which is the only way a notice under a long-lived key ever leaves
+// the screen: these panes hold what they are given until something clears them.
+function notify(sel, msg, kind = 'ok', key = sel, action = null, dismiss = null) {
   const own = $(sel);
   if (!own) return;
   // Only the general notice panes move. #save-report sits above every view and is assertive
@@ -444,25 +481,29 @@ function notify(sel, msg, kind = 'ok', key = sel, action = null) {
   // form that filled them, so relocating either would lose the context that makes it actionable
   // and would quietly change which channel it goes out on.
   if (!own.classList.contains('report')) {
-    own.replaceChildren(noticeEl({ msg, kind, action }));
-    if (!isLive(own)) announce(spoken(msg, action));
+    own.replaceChildren(noticeEl({ msg, kind, action, dismiss }));
+    if (!isLive(own)) announce(spoken(msg, action, dismiss));
     return;
   }
   // Re-inserted rather than overwritten in place, because a Map keeps a key at its original
   // position and arrival order is what decides the newest message.
   notices.delete(key);
-  notices.set(key, { sel, msg, kind, action });
+  notices.set(key, { sel, msg, kind, action, dismiss });
   const box = placeNotices().get(sel) ?? own;
   // Nothing else scrolls a pane into view, and "nearest" is a no-op once it is fully visible, so
   // this moves the page only when the message would otherwise be missed.
   box.scrollIntoView?.({ block: 'nearest' });
-  if (!isLive(box)) announce(spoken(msg, action));
+  if (!isLive(box)) announce(spoken(msg, action, dismiss));
 }
 
 // A button that is never spoken is a button a screen reader user cannot know to look for, and the
-// undo is the whole point of the message it sits in.
-function spoken(msg, action) {
-  return action ? `${msg} ${action.label} is available.` : msg;
+// undo is the whole point of the message it sits in. The same argument reaches the dismiss, for the
+// opposite reason: a message that stays until it is closed is one a reader has to be told they can
+// close, and a notice held for a whole session is exactly the one where not knowing costs the most.
+export function spoken(msg, action, dismiss) {
+  const labels = [action, dismiss].filter(Boolean).map((c) => c.label);
+  if (!labels.length) return msg;
+  return `${msg} ${labels.join(' and ')} ${labels.length > 1 ? 'are' : 'is'} available.`;
 }
 
 function clearNotice(key) {
@@ -997,12 +1038,18 @@ function showView(next, { focus = true, push = false } = {}) {
   syncHash({ push });
 
   if (!focus) return;
-  const section = $(`#view-${next}`);
-  const heading = document.getElementById(section.getAttribute('aria-labelledby'));
-  if (heading) {
-    heading.setAttribute('tabindex', '-1');
-    heading.focus({ preventScroll: true });
-  }
+  focusViewHeading(next);
+}
+
+// Where a view puts the reader when it arrives. Separate because dismissing a notice destroys the
+// button that had focus without navigating anywhere, and the honest landing for that is the same
+// heading: it names the screen the reader is on and sits above everything they can do next.
+function focusViewHeading(name) {
+  const section = $(`#view-${name}`);
+  const heading = section && document.getElementById(section.getAttribute('aria-labelledby'));
+  if (!heading) return;
+  heading.setAttribute('tabindex', '-1');
+  heading.focus({ preventScroll: true });
 }
 
 // ------------------------------------------------------------------ rail
@@ -1919,17 +1966,40 @@ function wireReading() {
 // notice sits above the views because deleting the list you were reading moves you elsewhere,
 // and a timer would take the only way back at the moment the reader was still deciding.
 //
+// What a timer was doing badly, though, still needed doing. Nothing withdrew the offer except
+// taking it, so a reader who had moved on kept the banner on every screen for as long as the tab
+// stayed open: reported here after hours of it. The answer is to let the reader end it rather than
+// to let a clock end it for them. The undo lives exactly as long as it did, and the reader decides
+// when that is over, which is the one judgement a timer was never in a position to make.
+//
+// Dismissing spends the undo rather than only hiding the words, because a live buffer behind a
+// notice the reader has closed is an offer they can no longer see and cannot take, and it would
+// still speak up later: putting the same order back from the catalog raises a message about a
+// deletion they had already finished with.
+//
 // Only the most recent delete is held. Keeping every one would offer to restore a list the
 // reader has since deliberately replaced, and nothing here can tell those two cases apart.
 const UNDO_DELETE = 'undo-delete';
 let lastDeleted = null;
+
+// Every message under this key outlives the screen it was raised on, so every one of them carries
+// the same way out. Built here rather than written at each call so the four cannot drift apart.
+const dismissUndoDelete = { label: 'Dismiss', onClick: forgetDeleted };
+
+// The same withdrawal under an honest name, for the one message that is not settled. A reader
+// looking at "could not be put back" has already asked for the list, and the buffer behind the
+// retry is the only copy of it left. "Dismiss" there would name closing an error while spending
+// that copy, which is a destructive act wearing the label of a tidy-up. The other three report
+// something already finished, where being done with the message and being done with the offer are
+// the same sentence and one word can carry both.
+const giveUpUndoDelete = { label: 'Give up', onClick: forgetDeleted };
 
 function offerUndoDelete(deleted) {
   lastDeleted = deleted;
   notify('#app-report', `Deleted ${deleted.list.name}. Reading progress was kept.`, 'ok', UNDO_DELETE, {
     label: 'Undo delete',
     onClick: undoDelete,
-  });
+  }, dismissUndoDelete);
 }
 
 // Wholesale replacements of the state, erasing and restoring, drop the offer rather than
@@ -1963,7 +2033,7 @@ function forgetDeletedFor(catalogId, orderName) {
   forgetDeleted();
   const mine = name === orderName ? 'The copy you deleted' : `Your copy, ${name},`;
   const msg = `${orderName} is back from the catalog. ${mine} with any changes you had made to it, cannot be put back now.`;
-  notify('#app-report', msg, 'ok', UNDO_DELETE);
+  notify('#app-report', msg, 'ok', UNDO_DELETE, null, dismissUndoDelete);
   return msg;
 }
 
@@ -1977,18 +2047,20 @@ function undoDelete() {
   const blocker = store.state.lists[list.id] ?? listForCatalogId(store.state, list.catalogId);
   if (blocker) {
     forgetDeleted();
-    notify('#app-report', `${list.name} was not put back: ${blocker.name} is in your sidebar already.`, 'ok', UNDO_DELETE);
+    notify('#app-report', `${list.name} was not put back: ${blocker.name} is in your sidebar already.`, 'ok', UNDO_DELETE, null, dismissUndoDelete);
     return;
   }
   store.update((s) => restoreList(s, list, { index, active: wasActive }));
   if (!store.lastUpdateOk) {
     // The buffer is deliberately kept, and the notice keeps a button, because a write that failed
     // for want of space can succeed after the reader frees some. Dropping the offer here would
-    // make a recoverable failure permanent.
+    // make a recoverable failure permanent. Giving up does drop it, which is not the same thing:
+    // that is the reader saying the retry is not wanted, rather than the app deciding for them,
+    // and the word says so rather than promising only to take the message away.
     notify('#app-report', `${list.name} could not be put back: that change could not be saved.`, 'error', UNDO_DELETE, {
       label: 'Try again',
       onClick: undoDelete,
-    });
+    }, giveUpUndoDelete);
     return;
   }
   forgetDeleted();
