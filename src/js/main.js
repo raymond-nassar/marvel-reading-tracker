@@ -29,6 +29,9 @@ import { Hydrator } from './hydrate.js';
 import { NO_SYNOPSIS, SessionSynopsis, SynopsisRunner } from './synopsis.js';
 import { openIssue as openIssueTab, detailUrl } from './reader.js';
 import { APP_VERSION } from './lib/version.js';
+import {
+  UPDATE_DOWNLOAD_URL, UPDATE_RELEASE_NOTES_URL, checkForUpdate, compareVersions, normaliseReleaseVersion,
+} from './lib/updateCheck.js';
 import { isAllowedApiBase } from './lib/apiBase.js';
 import { shortcutAllowed } from './lib/shortcuts.js';
 import { lookupIssue } from './lib/wiki.js';
@@ -57,6 +60,8 @@ const HERO_NO_ISSUE = 'Nothing up next';
 // The same for the landing page's continue card, whose heading also names its section. Both
 // have to match the text index.html starts out holding.
 const CONTINUE_NO_LIST = 'Continue reading';
+const UPDATE_NOTICE_KEY = 'update-available';
+const UPDATE_CHECK_BUTTON_TEXT = 'Check for updates';
 
 const $ = (sel) => document.querySelector(sel);
 // Read on use rather than at module load. This one query was the only thing this module did to
@@ -107,6 +112,8 @@ globalThis.addEventListener?.('storage', (event) => {
 // Its restored value is applied in wireReading(), which runs before the first render.
 let filter = DEFAULT_FILTER;
 let view = 'read';
+let updateNoticeDismissed = false;
+let updateCheckInFlight = false;
 
 // ------------------------------------------------------------------ unreadable-data recovery
 
@@ -434,24 +441,36 @@ function placeNotices() {
 // Exported for the test that holds the shape of a notice's controls, which is a rule about what a
 // reader is offered rather than about how a paragraph is built, and which no headless run can reach
 // through notify() because that needs a document.
-export function noticeEl({ msg, kind, action, dismiss }) {
-  const controls = [action, dismiss].filter(Boolean);
+function noticeControlEl(control, dismiss) {
+  const closing = control === dismiss;
+  const props = {
+    class: closing ? 'quiet notice-dismiss' : 'quiet',
+  };
+  if (control.href) {
+    return el('a', {
+      ...props,
+      href: control.href,
+      target: control.target ?? '_blank',
+      rel: control.rel ?? 'noopener noreferrer',
+      onclick: control.onClick,
+    }, control.label);
+  }
+  return el('button', {
+    ...props,
+    type: 'button',
+    onclick: (e) => {
+      const inDialog = closing && e.currentTarget.closest('dialog[open]') !== null;
+      control.onClick();
+      if (closing) focusAfterDismiss(inDialog);
+    },
+  }, control.label);
+}
+
+export function noticeEl({ msg, kind, action, dismiss, links = [] }) {
+  const controls = [action, ...links, dismiss].filter(Boolean);
   return el('p', { class: `notice notice-${kind}${controls.length ? ' notice-act' : ''}` }, [
     el('span', { class: 'grow', text: msg }),
-    ...controls.map((c) => el('button', {
-      type: 'button',
-      class: c === dismiss ? 'quiet notice-dismiss' : 'quiet',
-      onclick: (e) => {
-        const closing = c === dismiss;
-        // Where this button sits is asked before the click runs, not after. Closing a notice
-        // detaches the button from the document, and closest() on a detached node walks up to
-        // null, so a guard asked afterwards can never see the dialog it exists for: the one case
-        // it is written to skip would be the one case it could never detect.
-        const inDialog = closing && e.currentTarget.closest('dialog[open]') !== null;
-        c.onClick();
-        if (closing) focusAfterDismiss(inDialog);
-      },
-    }, c.label)),
+    ...controls.map((c) => noticeControlEl(c, dismiss)),
   ]);
 }
 
@@ -473,7 +492,7 @@ function focusAfterDismiss(inDialog) {
 // after a delete. `dismiss` puts a second one there for a message the reader can be finished with
 // before anything replaces it, which is the only way a notice under a long-lived key ever leaves
 // the screen: these panes hold what they are given until something clears them.
-function notify(sel, msg, kind = 'ok', key = sel, action = null, dismiss = null) {
+function notify(sel, msg, kind = 'ok', key = sel, action = null, dismiss = null, links = []) {
   const own = $(sel);
   if (!own) return;
   // Only the general notice panes move. #save-report sits above every view and is assertive
@@ -481,27 +500,27 @@ function notify(sel, msg, kind = 'ok', key = sel, action = null, dismiss = null)
   // form that filled them, so relocating either would lose the context that makes it actionable
   // and would quietly change which channel it goes out on.
   if (!own.classList.contains('report')) {
-    own.replaceChildren(noticeEl({ msg, kind, action, dismiss }));
-    if (!isLive(own)) announce(spoken(msg, action, dismiss));
+    own.replaceChildren(noticeEl({ msg, kind, action, dismiss, links }));
+    if (!isLive(own)) announce(spoken(msg, action, dismiss, links));
     return;
   }
   // Re-inserted rather than overwritten in place, because a Map keeps a key at its original
   // position and arrival order is what decides the newest message.
   notices.delete(key);
-  notices.set(key, { sel, msg, kind, action, dismiss });
+  notices.set(key, { sel, msg, kind, action, dismiss, links });
   const box = placeNotices().get(sel) ?? own;
   // Nothing else scrolls a pane into view, and "nearest" is a no-op once it is fully visible, so
   // this moves the page only when the message would otherwise be missed.
   box.scrollIntoView?.({ block: 'nearest' });
-  if (!isLive(box)) announce(spoken(msg, action, dismiss));
+  if (!isLive(box)) announce(spoken(msg, action, dismiss, links));
 }
 
 // A button that is never spoken is a button a screen reader user cannot know to look for, and the
 // undo is the whole point of the message it sits in. The same argument reaches the dismiss, for the
 // opposite reason: a message that stays until it is closed is one a reader has to be told they can
 // close, and a notice held for a whole session is exactly the one where not knowing costs the most.
-export function spoken(msg, action, dismiss) {
-  const labels = [action, dismiss].filter(Boolean).map((c) => c.label);
+export function spoken(msg, action, dismiss, links = []) {
+  const labels = [action, ...links, dismiss].filter(Boolean).map((c) => c.label);
   if (!labels.length) return msg;
   return `${msg} ${labels.join(' and ')} ${labels.length > 1 ? 'are' : 'is'} available.`;
 }
@@ -539,10 +558,23 @@ function loadSettings() {
       // written by a newer build downgrades safely: an unreadable or absent value reads as 0, which
       // means "purge again", and purging twice costs a slower first session rather than data.
       cachePurge: purgeMarkOf(raw),
+      updateChecks: raw.updateChecks !== false,
+      updateCheckedAt: updateCheckedAtOf(raw),
+      updateSeenVersion: normaliseReleaseVersion(raw.updateSeenVersion) ?? '',
       rejectedApiBase: ok ? null : stored,
     };
   } catch {
-    return { apiBase: DEFAULT_BASE, covers: true, theme: DEFAULT_THEME, filter: 'all', cachePurge: 0, rejectedApiBase: null };
+    return {
+      apiBase: DEFAULT_BASE,
+      covers: true,
+      theme: DEFAULT_THEME,
+      filter: 'all',
+      cachePurge: 0,
+      updateChecks: true,
+      updateCheckedAt: 0,
+      updateSeenVersion: '',
+      rejectedApiBase: null,
+    };
   }
 }
 
@@ -555,6 +587,11 @@ function loadSettings() {
 function purgeMarkOf(raw) {
   const n = Number(raw?.cachePurge);
   return Number.isInteger(n) && n > 0 ? n : 0;
+}
+
+function updateCheckedAtOf(raw) {
+  const n = Number(raw?.updateCheckedAt);
+  return Number.isFinite(n) && n > 0 ? n : 0;
 }
 
 function storedPurgeMark() {
@@ -578,8 +615,21 @@ function saveSettings() {
   // Merged rather than written from this tab's snapshot. See purgeMarkOf.
   const cachePurge = Math.max(settings.cachePurge ?? 0, storedPurgeMark());
   settings.cachePurge = cachePurge;
+  const updateCheckedAt = updateCheckedAtOf(settings);
+  settings.updateCheckedAt = updateCheckedAt;
+  const updateSeenVersion = normaliseReleaseVersion(settings.updateSeenVersion) ?? '';
+  settings.updateSeenVersion = updateSeenVersion;
   try {
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, covers: settings.covers, theme: settings.theme, filter: settings.filter, cachePurge }));
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify({
+      apiBase,
+      covers: settings.covers,
+      theme: settings.theme,
+      filter: settings.filter,
+      cachePurge,
+      updateChecks: settings.updateChecks !== false,
+      updateCheckedAt,
+      updateSeenVersion,
+    }));
   } catch { /* non-fatal */ }
 }
 
@@ -705,6 +755,147 @@ function setCovers(on) {
   renderReading();
   renderHome();
   announce(settings.covers ? 'Cover art on.' : 'Cover art off. Covers are shown as text tiles.');
+}
+
+function applyUpdateCheckSetting() {
+  const opt = $('#opt-update-checks');
+  if (opt) opt.checked = settings.updateChecks !== false;
+}
+
+function setUpdateChecks(on) {
+  settings.updateChecks = Boolean(on);
+  saveSettings();
+  applyUpdateCheckSetting();
+  if (!settings.updateChecks) {
+    updateNoticeDismissed = true;
+    clearNotice(UPDATE_NOTICE_KEY);
+  }
+  announce(settings.updateChecks
+    ? 'Update checks on. The app will ask GitHub once a day for the latest version number.'
+    : 'Update checks off. The app will not ask GitHub for updates unless you press Check for updates.');
+}
+
+function updateIsNewer(version) {
+  return compareVersions(version, APP_VERSION) > 0;
+}
+
+function updateNoticeMessage(latestVersion) {
+  return `Version ${latestVersion} is available. You have ${APP_VERSION}. Unzip it anywhere and double-click "Start on Windows.cmd" inside. Your reading progress is saved by your browser rather than in this folder, so it will all still be here. Once the new version opens, you can delete the old folder.`;
+}
+
+function updateLinks(latestVersion) {
+  return {
+    action: { label: `Download version ${latestVersion}`, href: UPDATE_DOWNLOAD_URL },
+    links: [{ label: 'What changed', href: UPDATE_RELEASE_NOTES_URL }],
+  };
+}
+
+function dismissUpdateNotice() {
+  updateNoticeDismissed = true;
+  clearNotice(UPDATE_NOTICE_KEY);
+}
+
+function showUpdateNotice(latestVersion) {
+  if (updateNoticeDismissed || !updateIsNewer(latestVersion)) return;
+  const { action, links } = updateLinks(latestVersion);
+  notify(
+    '#app-report',
+    updateNoticeMessage(latestVersion),
+    'warn',
+    UPDATE_NOTICE_KEY,
+    action,
+    { label: 'Dismiss', onClick: dismissUpdateNotice },
+    links,
+  );
+}
+
+function renderUpdateReport(note, { announceIt = true } = {}) {
+  const box = $('#update-check-report');
+  if (!box) return;
+  if (!note) {
+    box.replaceChildren();
+    return;
+  }
+  box.replaceChildren(noticeEl(note));
+  if (announceIt) announce(spoken(note.msg, note.action, note.dismiss, note.links));
+}
+
+function showStoredUpdateResult({ announceReport = false, notice = true } = {}) {
+  const latestVersion = settings.updateSeenVersion;
+  if (!updateIsNewer(latestVersion)) return;
+  const { action, links } = updateLinks(latestVersion);
+  const note = { msg: updateNoticeMessage(latestVersion), kind: 'warn', action, links, dismiss: null };
+  renderUpdateReport(note, { announceIt: announceReport });
+  if (notice) showUpdateNotice(latestVersion);
+}
+
+function rememberUpdateResult(result) {
+  if (result.status === 'not-due') return;
+  if (Number.isFinite(result.checkedAt) && result.checkedAt > 0) settings.updateCheckedAt = result.checkedAt;
+  if (result.latestVersion) settings.updateSeenVersion = result.latestVersion;
+  saveSettings();
+}
+
+async function runAutomaticUpdateCheck() {
+  if (settings.updateChecks === false) return;
+  const result = await checkForUpdate({
+    fetchImpl: globalThis.fetch?.bind(globalThis),
+    now: () => Date.now(),
+    lastCheckedAt: settings.updateCheckedAt,
+  });
+  rememberUpdateResult(result);
+  if (result.available) {
+    showStoredUpdateResult({ announceReport: false, notice: true });
+  }
+}
+
+function updateFailureNote() {
+  return {
+    msg: 'The update check could not be completed. You can visit the releases page directly.',
+    kind: 'warn',
+    action: { label: 'Open releases', href: UPDATE_RELEASE_NOTES_URL },
+    links: [],
+    dismiss: null,
+  };
+}
+
+async function runExplicitUpdateCheck() {
+  if (updateCheckInFlight) return;
+  const button = $('#btn-check-updates');
+  updateCheckInFlight = true;
+  if (button) {
+    button.disabled = true;
+    button.textContent = 'Checking...';
+  }
+  renderUpdateReport({ msg: 'Checking GitHub for the latest version...', kind: 'ok', action: null, links: [], dismiss: null });
+  try {
+    const result = await checkForUpdate({
+      fetchImpl: globalThis.fetch?.bind(globalThis),
+      now: () => Date.now(),
+      lastCheckedAt: settings.updateCheckedAt,
+      force: true,
+    });
+    rememberUpdateResult(result);
+    if (result.available) {
+      showStoredUpdateResult({ announceReport: true, notice: false });
+    } else if (result.status === 'current') {
+      renderUpdateReport({
+        msg: `This is the latest version. You have ${APP_VERSION}.`,
+        kind: 'ok',
+        action: null,
+        links: [],
+        dismiss: null,
+      });
+    } else {
+      renderUpdateReport(updateFailureNote());
+    }
+  } finally {
+    updateCheckInFlight = false;
+    if (button) {
+      button.disabled = false;
+      button.textContent = UPDATE_CHECK_BUTTON_TEXT;
+    }
+  }
 }
 
 // ------------------------------------------------------------------ theme
@@ -4023,7 +4214,9 @@ export function eraseOutcome(snapshotKept, copies) {
 function wireData() {
   $('#api-base').value = settings.apiBase;
   $('#opt-covers').addEventListener('change', (e) => setCovers(e.target.checked));
+  $('#opt-update-checks').addEventListener('change', (e) => setUpdateChecks(e.target.checked));
   $('#opt-theme').addEventListener('change', (e) => setTheme(e.target.value));
+  $('#btn-check-updates').addEventListener('click', runExplicitUpdateCheck);
 
   $('#btn-export-json').addEventListener('click', () => {
     download('marvel-reading-tracker-backup.json', JSON.stringify(exportBackup(store.state), null, 2), 'application/json');
@@ -4456,9 +4649,11 @@ function renderAll() {
 // not hoist the way function declarations do.
 export function boot() {
   setInterval(renderQueue, 1000);
+  void runAutomaticUpdateCheck();
 
   store.load();
   applyCoversSetting();
+  applyUpdateCheckSetting();
   applyThemeSetting();
   wireSidebar();
   wireNav();
@@ -4529,4 +4724,5 @@ export function boot() {
   // has touched anything.
   $('#about-version').textContent = APP_VERSION;
   $('#about-schema').textContent = String(SCHEMA_VERSION);
+  showStoredUpdateResult({ announceReport: false, notice: true });
 }

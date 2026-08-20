@@ -14,6 +14,22 @@ quote in a bug report.
 
 ## Unreleased
 
+### The app now tells readers when a newer release is available
+
+In plain English: the app now checks GitHub once a day for the latest version number. If there is a
+newer release, it shows a notice with a direct download link, a link to what changed, and a reminder
+that reading progress is saved by the browser rather than in the app folder. Nothing you have saved
+is moved or changed.
+
+The check is on by default because otherwise the people who need the notice would never see it. It
+can be turned off under Backup & settings, and the About screen still has a button for checking by
+hand. The app never downloads, installs or replaces files by itself.
+
+For maintainers: the release check is a small browser-side module with unit coverage for version
+comparison, daily scheduling, failure handling and request shape. The real-browser harness now stubs
+the GitHub release request, checks the notice and the explicit button, and includes aimed mutations
+for the update journey.
+
 ### The message left after deleting a reading list can now be closed
 
 In plain English: deleting a reading list puts a message at the top of every screen offering to put
