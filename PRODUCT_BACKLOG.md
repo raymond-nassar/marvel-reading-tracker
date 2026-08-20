@@ -271,14 +271,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:3948-3951 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4000-4003 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-143 | Shelve the catalog in reading order rather than in the order the manifest happens to list | Story | EP-01 | Extends BL-142 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any field on a manifest entry saying when its reading starts, and any sort between parsing the catalog and rendering it |
 | BL-154 | Shelve the events apart from the character runs, and say why the runs sit last | Story | EP-01 | Follows BL-152 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Shipped | `src/js/lib/catalog.js:593-596` |
 | BL-156 | Make the Start here badge carry more weight than a colour change | Story | EP-01 | Follows BL-154 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Ready | `src/styles.css:369` |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1440-1441 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1492-1493 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
@@ -375,6 +375,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-028 | Make the reading view usable on a phone | Story | EP-07 | Leaves alone | 8 | 5 | 5 | 5 | 3.6 | P1 | Measured | Dropped | src/styles.css:213-216 |
 | BL-060 | Commit the prompt that is the only source of the eleven Repository Constraints | Enabler | EP-12 | Leaves alone | 5 | 5 | 8 | 3 | 6.0 | none | Measured | Dropped | absent: .github/prompts/product-backlog-ux-study.prompt.md from git ls-files, enumeration of tracked markdown against the working tree |
 | BL-148 | Hydrate post-2025 issues from the Comic Vine API | Feature | EP-03 | Leaves alone | 5 | 8 | 3 | 5 | 3.2 | none | Measured | Dropped | comicvine.gamespot.com/api/ terms of use, read in full on 2026-08-18 |
+| BL-159 | Deep-link into the reader with Marvel's drn identifier instead of digitalId | Enabler | EP-05 | Leaves alone | not scored | not scored | not scored | not scored | not scored | none | Measured | Dropped | marvel.emreparker.com/v1/issues/6482 field set, read on 2026-08-19 |
 
 **BL-025: Optional synchronization between devices**
 
@@ -481,6 +482,57 @@ than a gate result. It was scored before it was parked and its numbers are left 
 the record of what was given up. The question it was raised to answer, where post-2025 issue data
 can come from at all, is answered across BL-149 and BL-150: BL-149 for the one field no catalogue
 carries, and BL-150 for the rest.
+
+**BL-159: Deep-link into the reader with Marvel's drn identifier instead of digitalId**
+
+Parked reason: the identifier is real and current, and there is no interface this app may use that
+will hand one over for an issue we hold.
+
+Raised from a third-party project, `RoXuS/continuityguide`, which links its reading orders into
+Marvel Unlimited with URLs carrying an identifier of the form `drn:src:marvel:unison::prod:` and a
+UUID. Two hosts serve them, `share.marvel.com` under a `/sharing/issue/` path and
+`marvel.smart.link` under a query string. The identifier is genuinely Marvel's rather than that
+project's invention: its importer only keeps an anchor whose host is one of those two, so the
+values were authored upstream, and the same form appears on the open web from unrelated sources.
+The question worth asking was whether it is a better deep-link target than the `digitalId` this app
+resolves today.
+
+It is not reachable, and three independent measurements taken on 2026-08-19 close it. First, a read
+only request to `marvel.emreparker.com/v1/issues/6482`, which is the API this app actually calls,
+returned fifteen fields and none of them is a `drn`: searching the whole payload for `drn`,
+`unison`, `share.marvel` and `smart.link` matched nothing. So no `drn` is being dropped by our
+mapper; the source has never carried one. Second, the integer sitting beside the identifier in the
+`marvel.smart.link` form is not our `digitalId`. Joining that project's citation titles against our
+vendored catalogs on exact title gives 61 issues held by both, and the two integers agree on 0 of
+61, with theirs larger in all 61. Third, it is not derivable either: sorting those 61 pairs by our
+`digitalId` leaves 17 inversions across 60 adjacent comparisons, which rules out an offset, a ratio
+and any order-preserving remapping. Consecutive issues of one series do stay consecutive in both
+spaces, so the two are locally ordered and globally unrelated, and a bridge between them could only
+be a lookup table obtained from Marvel.
+
+Two readings of those URLs were formed on the way and both were wrong, which is recorded because
+either would have survived unchallenged if the numbers had not been taken. The two hosts were
+assumed to wrap one shared link table; they share no identifier at all, 0 of 5482 distinct values
+across 5607 links. And the `sourceId` parameter was read as affiliate or campaign attribution,
+which carried the further claim that adopting these links would route this project's traffic
+through somebody else's credit. It is per issue, not per publisher: 2079 distinct values across
+2080 links. That objection is withdrawn. The objections that survive are provenance, and a join
+built by matching a display string with a regular expression, which fails silently in the only
+direction that matters, since a mis-join attaches a working link to the wrong issue and nothing in
+that design can notice.
+
+No repository constraint was breached, so this is a product decision in the shape of BL-028 rather
+than a gate result. It was never scored, because the measurements closed it before it reached
+scoring, and the row above records that rather than a number nobody derived. Constraint 2 does
+bound one question that stays open: where `share.marvel.com` redirects a browser was not tested,
+because testing it means issuing a request to a `marvel.com` host. That question is not decisive in
+any case, since a favourable answer would still leave this project unable to construct such a URL
+for an arbitrary issue.
+
+One thing this item must not be read as saying. A second live identifier namespace is not evidence
+that `digitalId` is being retired. The same request that found no `drn` returned a `digitalId`, and
+the reader launch was verified against a live subscription when it was built. Both namespaces are
+current at once, and nothing here is a deprecation signal for the launch path in `src/js/reader.js`.
 
 ## Item details
 
@@ -3110,7 +3162,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2812-2815`.
+`PRODUCT_BACKLOG.md:2864-2867`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4647,7 +4699,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:11313-11315` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:11365-11367` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4657,11 +4709,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11332-11336`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11384-11388`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11147-11149` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11199-11201` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4869,7 +4921,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2832-2841` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2851-2860` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:193-197` and
 `PRODUCT_BACKLOG.md:203-205` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6478,7 +6530,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2536`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2588`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -8350,7 +8402,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4771-4779`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4823-4831`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8365,7 +8417,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:4134`, `src/js/main.js:4058` and `src/js/main.js:4079`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1440-1441`.
+`PRODUCT_BACKLOG.md:1492-1493`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8451,7 +8503,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4776-4777`.
+at `PRODUCT_BACKLOG.md:4828-4829`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8617,7 +8669,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4771-4774` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4823-4826` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
