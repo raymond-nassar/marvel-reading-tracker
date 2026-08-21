@@ -75,13 +75,19 @@ test('the list tools are demoted by moving the border to the strip, not by hidin
 test('the shelf wraps, so no upcoming issue is off the right edge', () => {
   // Measured at 1280x900 before the change: the eighth tile was clipped by the scroller.
   const shelf = css.match(/\n\.shelf \{[^}]*\}/)[0];
-  assert.match(shelf, /display: grid/);
+  assert.match(shelf, /flex-wrap: wrap/);
   assert.equal(/overflow-x: auto/.test(shelf), false, 'the shelf is a horizontal scroller again');
-  assert.match(css, /\.tile \{[^}]*max-width: 168px/);
+  // An auto-fit grid wraps too, and it was the first shape tried. It is excluded by name because it
+  // hands the space of each collapsed track to the survivors, which put four remaining tiles a
+  // measured 80px apart on a declared 14.4px gap. A cap on the tile does not cap the track.
+  assert.equal(/auto-fit/.test(shelf), false, 'the shelf stretches its tracks again');
+  assert.match(css, /\.tile \{[^}]*flex: 1 1 112px[^}]*max-width: 168px/);
 });
 
 test('the current row is marked by more than a tint, and the rows carry a rule between them', () => {
-  assert.match(css, /\.row \+ \.row \{ border-top-color: var\(--line\); \}/);
+  // The separator is later in the file than `.row.now` at equal specificity, so it has to exclude
+  // the marked row by name or it wins that row's top edge back and outlines it on three sides.
+  assert.match(css, /\.row \+ \.row:not\(:hover\):not\(\.now\) \{ border-top-color: var\(--line\); \}/);
   assert.match(css, /\.row\.now \{ box-shadow: inset 3px 0 0 var\(--accent-text\); \}/);
 });
 

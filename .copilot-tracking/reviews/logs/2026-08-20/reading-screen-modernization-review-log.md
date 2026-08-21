@@ -45,9 +45,9 @@
 | P01 and P01-T01 through P01-T02 | Let the reading view use the desktop, and state progress in words | Reconciled | The view takes the existing wide opt-out and the ring's figure left its `title` for on-screen text |
 | P02 and P02-T01 through P02-T02 | Strengthen the hero | Reconciled | Cover, title and one dominant action all grew; the third action is drawn as a link |
 | P03 and P03-T01 | Demote list management without hiding it | Reconciled | The border moved from five buttons to the strip; nothing left the DOM or the tab order |
-| P04 and P04-T01 | Stop the Coming Up shelf clipping | Reconciled | A wrapping grid with a capped tile replaces the horizontal scroller |
+| P04 and P04-T01 | Stop the Coming Up shelf clipping | Reconciled | A wrapping flex row with a capped tile replaces the horizontal scroller |
 | P05 and P05-T01 through P05-T03 | Make the full order scannable | Reconciled | Separator, larger thumbnail, larger title, current-row bar, sticky filters and a positive count on a finished volume |
-| P06 and P06-T01 through P06-T05 | Prove it and record it | Reconciled | Nine failing-first unit assertions, thirteen browser assertions, the backlog row and block, the changelog entry and two corrections the change forced |
+| P06 and P06-T01 through P06-T05 | Prove it and record it | Reconciled | Nine failing-first unit assertions, sixteen browser assertions, the backlog row and block, the changelog entry and two corrections the change forced |
 | Anchors budget | Held in place rather than planned as a task | Reconciled | Both citation-dense files still hold their original line counts; all new declarations went to the end of the stylesheet |
 
 ## Completed Work Assessment
@@ -57,9 +57,9 @@
 | P01-T01 through P01-T02 | src/index.html, src/styles.css, src/js/main.js | The view opts into the wide shell; the ring grew and its figure became text | 876px at both widths becomes 964px and 1296px; `title="0 / 8"` becomes `0 of 8 read` and `8 to go · 0%` | Unit and browser assertions, both themes | Reconciled |
 | P02-T01 through P02-T02 | src/index.html, src/styles.css | One dominant call to action, a larger cover and a clearer title | Cover 176x264 becomes 248x372; hero title 30.4px becomes 35.2px; the primary button measures larger than the secondary and the third has no fill | Browser assertions at both widths | Reconciled |
 | P03-T01 | src/styles.css | Five outlined pills became one bounded strip | The strip reports a border, all five tools are present and every one is still focusable | Browser assertion on names and reachability; the global focus ring is unchanged | Reconciled |
-| P04-T01 | src/styles.css | The shelf wraps instead of scrolling | 62px of overflow at both widths becomes 0px; eight tiles land on one row at 2560 | Browser assertions at both widths | Reconciled |
+| P04-T01 | src/styles.css | The shelf wraps instead of scrolling | 62px of overflow at both widths becomes 0px; eight tiles land on two rows of 125px at 1280 and one row of 149px at 2560, with the widest gap between tiles at the declared gap on a full shelf and on a nearly finished one | Browser assertions at both widths and after reading down | Reconciled |
 | P05-T01 through P05-T03 | src/styles.css | Rows separated, enlarged and marked | Thumbnail 34px becomes 44px; row title 14.24px becomes 15.04px | Unit assertions on the declarations; visual inspection in both themes | Reconciled |
-| P06-T01 through P06-T05 | test/reading-screen.test.js, scripts/browser-check.mjs, PRODUCT_BACKLOG.md, CHANGELOG.md, GOVERNANCE.md | Proof and record | Nine unit assertions, thirteen browser assertions, BL-169 row and block, an Unreleased entry | Every gate green | Reconciled |
+| P06-T01 through P06-T05 | test/reading-screen.test.js, scripts/browser-check.mjs, PRODUCT_BACKLOG.md, CHANGELOG.md, GOVERNANCE.md | Proof and record | Nine unit assertions, sixteen browser assertions, BL-169 row and block, an Unreleased entry | Every gate green | Reconciled |
 
 ## Implementation-Time Plan and Detail Update Assessment
 
@@ -85,20 +85,29 @@
 
 ## Findings
 
-* None material. Three observations, none of which changes the shipped result:
-  * A current row that is not the first row now takes the separator colour on its top edge rather
-    than the accent tint, because the adjacent-sibling rule is later in the file at equal
-    specificity. The current row is marked by its inset bar, its background wash and its remaining
-    three edges, so the state stays legible and the separator stays continuous. Accepted.
+* Two material defects, both found by an independent review of the opened pull request and both
+  fixed in this change. They are recorded under Defects.
+* Three observations, none of which changes the shipped result:
   * CR-004 stands as recorded: at 2560px the per-row action cluster sits up to 1296px from the
     title it acts on. Right-aligned row actions are the ordinary pattern and the alternative is a
     DOM change the anchors budget rules out.
   * CR-005 stands as recorded: the hero description is capped at 58 characters, so a very wide hero
     leaves air to the right of the text.
+  * Both defects below were shaped the same way: a rule that was correct for the state both gates
+    happened to import, and wrong for the state a reader spends most of an order in. The gates were
+    extended to drive the app into that state rather than to assert the rule statically.
 
 ## Defects
 
-* None.
+| Defect | What was wrong | How it was found | Fix and proof |
+|---|---|---|---|
+| The current row lost its top edge | `.row.now` and the separator rule both weigh 0-2-0, so the later separator took the top border of whichever row it landed on. The current row is the first *unread* row, so it is preceded by a read row in any order with progress in it. Measured: top `rgb(42, 42, 55)` against `rgba(138, 83, 225, 0.3)` on the other three | Independent review of the pull request. This log had recorded it as an accepted observation, which was wrong: it is not the first row for the whole of an order except at import, and import is the only state either gate had looked at | The separator now stands down for a row that is hovered or current. A browser assertion marks issues read until the current row follows another row, then reads all four border colours. It fails on the old rule with exactly the measured signature |
+| The shelf stranded its last covers | `auto-fit` collapses empty tracks and gives their width to the survivors, and a capped tile inside a stretched track is placed at the track's start. Measured: 487px between two tiles on a shelf with two left, against a declared 14.4px gap | The same review, then confirmed in a screenshot of a partially read order at 1280 before the review's reasoning was read | The shelf is a wrapping flex row with `flex: 1 1 112px` and the same cap. It reproduces both full-shelf measurements exactly, 125px over two rows at 1280 and 149px over one at 2560, and packs a partial shelf from the left. Both gates now measure the widest gap between tiles sharing a row, at a full shelf and after reading down to three or fewer |
+
+Both defects were live in the branch when the pull request was opened and CI was green, which is the
+useful part of the record: three gates, nine unit assertions and thirteen browser assertions all
+passed over a shelf that was visibly broken and an outline that was visibly incomplete. What every
+one of them had in common is that it measured an order at import.
 
 ## Routed Findings
 
@@ -130,8 +139,10 @@ Later implementation of a routed finding does not require another Review.
 | npm run sizes | Repository claims | Passed | 7 stated sizes agree |
 | npm run palette | Dark and light themes | Passed | 88 pairs, 0 new below the floor |
 | npm run publication | Reachable history | Passed | 2 protected roots, 0 content findings |
-| npm run browser | Running app | Passed | 116 assertions across 14 scenarios |
+| npm run browser | Running app | Passed | 119 assertions across 14 scenarios |
 | Failing-first proof | test/reading-screen.test.js | Passed | 8 of 9 assertions fail on the stashed tree; the ninth fails when the ring constant is mutated |
+| Failing-first proof, second round | scripts/browser-check.mjs | Passed | Both shelf-gap assertions fail on the auto-fit stylesheet, at 487px; the outline assertion fails on the ungated separator with the top edge at the line colour and the other three at the accent |
+| Independent review | The opened pull request | Two defects | Both fixed in this change and recorded under Defects; everything else it examined it verified clean |
 | Measurement in Edge | 1280x900 and 2560x1080 | Passed | View 876 to 964 and 1296; cover 176x264 to 248x372; shelf overflow 62px to 0px at both widths |
 | Screenshot inspection | Dark, light, covers off, forced colours | Passed | All four render correctly; the narrow rail seen in one capture was reproduced as a full-page capture artifact and disproved by probing the live grid |
 | Added-line dash scan | Full diff | Passed | 0 en or em dashes |
@@ -144,13 +155,15 @@ Later implementation of a routed finding does not require another Review.
   item on the preservation list is either untouched in the source or covered by a passing
   assertion, all nine critique findings carry a recorded and honoured disposition, the anchors
   round closed at 0 drifted, 0 new and 0 removed after every pairing was read, and the full gate
-  set is green.
+  set is green. The two defects an independent review found are fixed inside this change rather
+  than routed, because both are in the code the change itself added and neither widens its scope.
+  Each is now covered by a browser assertion that was watched to fail on the rule it replaces.
 
 ## Closeout Routing Record
 
 | Finding class | Destination | Owner or next action |
 |---|---|---|
-| Implementation defect | None | No action |
+| Implementation defect | Fixed in this change | Two, both found by an independent review of the opened pull request; each carries a browser assertion watched to fail on the rule it replaces |
 | Decision gap or invalid assumption | None | No action |
 | Material evidence gap | None | No action |
 | Non-blocking residual work | None | No action |

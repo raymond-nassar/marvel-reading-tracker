@@ -548,13 +548,17 @@ kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) /
 .sec-h h2 { font-size: .95rem; margin: 0; font-weight: 600; }
 .sec-h span { color: var(--muted); font-size: .8rem; }
 
-/* A wrapping grid rather than a horizontal scroller. Measured at 1280x900 the scroller clipped the
+/* A wrapping row rather than a horizontal scroller. Measured at 1280x900 the scroller clipped the
    eighth tile at the right edge, and a shelf whose last item is off screen is a shelf that answers
-   "what is coming up" with seven eighths of the truth. `auto-fit` collapses the tracks it does not
-   need, so a wide desktop puts all eight on one row; the cap stops a nearly finished list from
-   painting two enormous covers across the width. */
-.shelf { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 1.15rem .9rem; padding: 0; margin: 0; list-style: none; }
-.tile { min-width: 0; max-width: 168px; }
+   "what is coming up" with seven eighths of the truth. Wrapping flex rather than an auto-fit grid:
+   auto-fit gives the space of every track it collapses to the survivors, and a cap on the tile does
+   not cap the track, so four tiles left in an order sat a measured 80px apart on a declared 14.4px
+   gap. Growing each tile to that cap instead packs them, and leaves the slack at the end of the row
+   where it belongs. Measured after: eight tiles land on one 149px row at 2560 and wrap to two rows
+   at 1280, and one tile left is one 168px tile at the left rather than a cover the width of the
+   screen. */
+.shelf { display: flex; flex-wrap: wrap; gap: 1.15rem .9rem; padding: 0; margin: 0; list-style: none; }
+.tile { flex: 1 1 112px; min-width: 0; max-width: 168px; }
 .tile button { display: block; width: 100%; background: none; border: 0; padding: 0; text-align: left; color: inherit; border-radius: 8px; }
 .tile img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: block; }
 body.nocovers .tile img, .tile img[hidden] { display: none; }
@@ -1175,8 +1179,10 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 /* A rule between rows, and a bar down the one you are on. The separator is the adjacent-sibling
    pair rather than every row, so a collected-edition heading is not followed by two lines, and it
    is the row's own top border rather than a new box so that hover and the current row still take
-   the whole outline over. */
-.row + .row { border-top-color: var(--line); }
+   the whole outline over. Both are excluded by name: this rule is later in the file at equal
+   specificity, so without the exclusion it would win the top edge of the accent outline back off
+   `.row.now` and leave the row you are on outlined on three sides. */
+.row + .row:not(:hover):not(.now) { border-top-color: var(--line); }
 .row.now { box-shadow: inset 3px 0 0 var(--accent-text); }
 
 /* The filters stay in reach while a long order scrolls past. Scoped by id: three other fieldsets

@@ -36,7 +36,7 @@ themes, forced colors, reduced motion and every accessibility behaviour are unch
 * What changed and why: The reading view takes the existing wide-shell opt-out; the progress ring
   grew and its figure moved out of a `title` and onto the screen; the hero cover, title and primary
   action grew while the third action became a link; the list-management strip lost its five borders
-  and gained one bound; the shelf became a wrapping grid; and the rows gained a separator, a larger
+  and gained one bound; the shelf became a wrapping row; and the rows gained a separator, a larger
   thumbnail and a current-row marker.
 * Completion evidence: Measured in Edge. The reading view goes from 876px at both widths to 964px
   and 1296px. The hero cover goes from 176x264 to 248x372. The shelf goes from 62px of overflow at
@@ -90,6 +90,27 @@ themes, forced colors, reduced motion and every accessibility behaviour are unch
   own record was left as written, because it is a true account of what that change measured.
 * Completion evidence: The prose measure is unchanged and the views that carry prose still sit on it.
 * Validation: Measured at both widths.
+
+### Fix two defects an independent review found in the opened pull request
+
+* Related phase or task: P04-T01 and P05-T01, both reopened after the branch was pushed.
+* Files: src/styles.css, test/reading-screen.test.js, and scripts/browser-check.mjs
+* What changed and why: The shelf's `auto-fit` track list collapsed its empty tracks and handed
+  their width to the survivors, so a partly read order held its remaining covers hundreds of pixels
+  apart. It is now a wrapping flex row with `flex: 1 1 112px` and the same cap. Separately, the row
+  separator and the current row's accent outline both weigh 0-2-0, and the later separator took the
+  top edge of the current row whenever a read row sat above it, which is every state except import.
+  The separator now stands down for a hovered or current row.
+* Completion evidence: The shelf measures 487px between two remaining tiles before the fix and the
+  declared gap after it, with the full-shelf figures unchanged at 125px over two rows at 1280 and
+  149px over one row at 2560. The current row's four border colours go from one line colour and
+  three accent to four accent.
+* Validation: Three browser assertions were added and each was watched to fail on the rule it
+  replaces. The two edited unit assertions fail on the stashed stylesheet. Suite 1225 pass, 0 fail;
+  browser 119 assertions across 14 scenarios; every other gate green.
+* What made them survive the first pass: both gates and both hand measurements looked at an order at
+  import, and both rules are correct there. The added assertions drive the app into a partly read
+  order first, which is where a reader spends all but the first moment of an order.
 
 ## Divergences from the plan
 

@@ -241,7 +241,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-166 | Move the app's identity off Marvel's red and onto its own purple | Debt | EP-12 | Follows BL-161 | 8 | 8 | 8 | 2 | 12.0 | none | Measured | Shipped | src/styles.css:42 |
 | BL-163 | Say where the metadata came from, instead of borrowing Marvel's API attribution | Debt | EP-12 | Extends BL-099 | 3 | 3 | 5 | 1 | 11.0 | none | Measured | Shipped | src/index.html:279 |
 | BL-140 | Give the tracker a file a non-engineer can double-click to start it | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 1 | 10.0 | none | Observed | Shipped | absent: any way to start the app that is not a terminal command, read of the README's step 2 and a listing of the repository root |
-| BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:643-652 |
+| BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:647-656 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
 | BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/main.js:2630-2639 |
 | BL-133 | Turn on the three settings publication unlocks, and make the conditional prose true | Enabler | EP-12 | Follows BL-132 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | SECURITY.md:135-141 |
@@ -269,7 +269,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-099 | Clarify the license and provenance boundary for committed data | Debt | EP-12 | Leaves alone | 8 | 8 | 13 | 5 | 5.8 | none | Measured | Shipped | src/data/curated-lists.json:82-123 |
 | BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/index.html:563 |
-| BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Dropped | src/styles.css:957-960 |
+| BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Dropped | src/styles.css:961-964 |
 | BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/js/main.js:4389-4426 |
 | BL-158 | Let the reader close the undo notice a deleted list leaves on every screen | Defect | EP-07 | Follows BL-035 | 5 | 3 | 3 | 2 | 5.5 | none | Observed | Shipped | absent: any control that closes a notice, read of all four messages raised under the undo key and of the element that draws them |
 | BL-160 | Tell readers when a newer release is available | Feature | EP-10 | Extends BL-145 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | absent: any release check in the app, and the stable release zip route already published in README.md |
@@ -301,8 +301,8 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/CODEOWNERS:1-51 |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:2304-2333 |
-| BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:748-764 |
-| BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:716 |
+| BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:752-768 |
+| BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:720 |
 | BL-061 | Take the two em dashes out of the copy the app puts on screen | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 1 | 4.0 | none | Measured | Shipped | eslint.config.mjs:56-67 |
 | BL-068 | Stop the model reading a list id that names a prototype member | Defect | EP-12 | Leaves alone | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/lib/model.js:996 |
 | BL-090 | Announce passive service, cache and hydration status changes once | Defect | EP-07 | Extends BL-027 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:4610-4673 |
@@ -329,7 +329,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:501-535 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:4111-4145 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:710 |
-| BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:1129 |
+| BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:1133 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Shipped | src/index.html:151-152 |
 | BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Shipped | src/js/storage.js:107 |
 | BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:137-147 |
@@ -871,15 +871,15 @@ Constraint gate: checked 1 to 11, none breached. Constraint 6 was the live consi
 state must not be styled in a way that collapses the availability badge distinctions.
 
 Shipped. `opacity: .48` on the row was replaced with a `--read-fg` foreground plus a
-strikethrough, at `src/styles.css:649-650`; the strikethrough is the non-colour indicator. The
-only opacity left on a read row is the cover image at `src/styles.css:652`, which carries no
+strikethrough, at `src/styles.css:653-654`; the strikethrough is the non-colour indicator. The
+only opacity left on a read row is the cover image at `src/styles.css:656`, which carries no
 text. Verified with six rows actually in the read state rather than by reading the stylesheet:
 every descendant now computes `opacity: 1`, and axe-core 4.13.0 reported 0 contrast violations.
 
 On the badge check, the 2.75:1 figure this task was written against was the opacity multiplying
 the badge, and that cause is gone: a badge now renders identically whether or not its row is
 read, which is what the task was asking for. Measuring the composited border anyway put
-`.badge-expected` at 1.58:1, but that is unconditional design at `src/styles.css:716` rather than
+`.badge-expected` at 1.58:1, but that is unconditional design at `src/styles.css:720` rather than
 anything the read state does, and the badge's meaning is carried by its text label, which passes.
 Raised separately as BL-049 rather than folded into this item.
 
@@ -2242,8 +2242,8 @@ end to end with `fetch` stubbed to serve one 503 and then a two-record page: it 
 
 Constraint gate: checked 1 to 11, none breached. No constraint is engaged.
 
-Shipped. The form row is now `.field-row` at `src/styles.css:748-764` and the reading row keeps
-`.row`, so the thirteen rules that describe a reading row, from `src/styles.css:635-638` down to the
+Shipped. The form row is now `.field-row` at `src/styles.css:752-768` and the reading row keeps
+`.row`, so the thirteen rules that describe a reading row, from `src/styles.css:639-642` down to the
 hover rule on its action buttons, can no longer reach a form. The form row was the side that moved
 because it had one rule against those thirteen, and the empty `.row { }` that sat between them is
 gone.
@@ -2260,7 +2260,7 @@ Six sit inside a `.stack`, where nothing sets either, so for those the original 
 two at `src/index.html:569` and `src/index.html:576` are direct children of a `.card card-static`,
 where `.card > *:not(summary)` at 0,1,1 and `.card > *:last-child` at 0,2,0 can both reach them and
 both now out-rank `.field-row` at 0,1,0. What holds their padding at zero is the `!important` on
-`.card-static > *` at `src/styles.css:741`, which the old rule's 0,2,0 had been masking. Measured
+`.card-static > *` at `src/styles.css:745`, which the old rule's 0,2,0 had been masking. Measured
 rather than reasoned about: neutralise that one declaration in the live page and both rows go from
 0 to 17.6px of side padding.
 
@@ -2327,7 +2327,7 @@ clear 3:1 in the read state, and the answer turned out to be that the read state
 governs them. The 2.75:1 figure that task was written against came from the blanket row opacity,
 which is gone; a badge now renders identically whether or not its row is read. Measuring the
 composited border anyway put `.badge-expected` at 1.58:1 against the 3:1 floor, but that is
-unconditional design at `src/styles.css:716`, where the border is 25 percent alpha teal.
+unconditional design at `src/styles.css:720`, where the border is 25 percent alpha teal.
 
 Shipped as a decision rather than a change: the borders are decoration, the 3:1 floor does not
 govern them, and the colours were deliberately left alone. The third task is therefore closed
@@ -2363,7 +2363,7 @@ And because the five states are named in words rather than only tinted, 1.4.1 Us
 without the border too, so Constraint 6 is not resting on the outline either. Both the text
 colours and the state distinctions are untouched, which is what the fourth task asked for.
 
-The reasoning is recorded at `src/styles.css:690-714`, directly above the rules it governs, along
+The reasoning is recorded at `src/styles.css:694-718`, directly above the rules it governs, along
 with the two conditions that would overturn it. One is these labels being cut back to the bare
 glyphs in `SHORT`, which would make the outline the state indicator and put it under the 3:1
 floor. The other is a second palette: every figure here is composited against the dark theme, so
@@ -2398,7 +2398,7 @@ that every tab stop carries a 3 pixel focus outline had come to cite `body`, the
 leftover empty `.row` rule had come to cite the checkbox, and the description of the reading row
 itself had come to cite the cover-tile rules. The three that started this now point at the
 progress-ring transition at `src/styles.css:439` and the preference queries at
-`src/styles.css:1077-1084`.
+`src/styles.css:1081-1088`.
 
 Those stale numbers are written above without the usual anchor backticks on purpose. They are a
 historical citation rather than live evidence, and in the anchor form a checker would resolve them
@@ -3128,7 +3128,7 @@ a dash, and over-reporting is the safe direction here: a false positive gets loo
 negative ships.
 
 **CSS `content` does count as shipped copy, and the proof is already in the tree.**
-`src/styles.css:735` sets `content` to a right-pointing angle glyph on the card summary marker. It
+`src/styles.css:739` sets `content` to a right-pointing angle glyph on the card summary marker. It
 reaches the screen with no text node behind it, so the reader sees it and Constraint 11 governs it.
 The comment-stripped sweep covers it with no special handling, because the value is a string literal
 in the text that survives. Recorded rather than built, which is what the task asked for.
@@ -3145,7 +3145,7 @@ unterminated comment marker matches nothing and so strips nothing, a stray closi
 nothing, and the pattern being chosen by file extension can only leave a comment standing. The
 exception is a CSS comment opener inside one string literal closing against a marker inside a later
 one, which would blank the copy between them. It cannot fire today, since the only glyph-bearing
-`content` in the stylesheets is the one at `src/styles.css:735`. Closing it would need a tokenizer
+`content` in the stylesheets is the one at `src/styles.css:739`. Closing it would need a tokenizer
 that skips string literals, which is scope this item did not earn.
 
 Scope is walked rather than listed. `server.mjs:13` resolves the served root to `src/`, so `src/` is
@@ -4655,7 +4655,7 @@ have overstated it by 0.65. It is therefore two pairs, the rail and the tinted i
 the brand mark and the skip link are what share the 4.00 and 4.41.
 
 **The blocked banner: the gate learned to resolve it.** Two buttons render inside a banner whose
-background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles.css:1105`. The choice
+background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles.css:1109`. The choice
 this block left open was between teaching the gate that form and recording the pair as deliberately
 unmeasured. Teaching it won, because the same mechanism was needed anyway for the accent bar above,
 and a gate with two unmeasured holes in it is a gate that will grow a third. `SURFACES` at
@@ -4712,7 +4712,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:11876-11878` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:11896-11898` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4722,11 +4722,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:204-206`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11895-11899`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11915-11919`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11710-11712` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11730-11732` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -6682,7 +6682,7 @@ the reason this paragraph exists. `checkVisibility()` called with no argument an
 question than the name suggests: every option defaults to off, so it reports only `display: none`,
 `content-visibility: hidden` and the `hidden` attribute. It returns true for `visibility: hidden`
 and true for `opacity: 0`, and the second is not a hypothetical hiding style, it is this
-stylesheet's own. `src/styles.css:721` puts the per-row actions out of reach with exactly
+stylesheet's own. `src/styles.css:725` puts the per-row actions out of reach with exactly
 `opacity: 0`. Measured in the same Edge: both offer rows passed with the two buttons faded to
 nothing and `pointer-events: none`, with nothing under the pointer at either button's centre. The
 three options are passed explicitly now, and `fade-recovery` hides the buttons that way and is
@@ -11068,7 +11068,7 @@ check without awaiting it, and `src/js/main.js:4723-4744` shows that the boot pa
 normal load, settings and render work without waiting for GitHub.
 
 The browser harness had to change with the feature. Its request stub now intercepts the update endpoint
-at `scripts/browser-check.mjs:1583-1590`, and the update scenario at
+at `scripts/browser-check.mjs:1642-1649`, and the update scenario at
 `scripts/browser-check.mjs:1275-1341` verifies the default current-release response, the explicit
 About button, the newer-release notice, the off switch, and a release request that never settles.
 The targeted run reported twelve update assertions passing. Five update mutations were added at
@@ -11487,9 +11487,20 @@ identical to the first, because the reading screen sat on the prose measure at e
 
 The shelf was the clearest defect and the easiest to prove. On an order with eight issues still to
 come, the old flex row overflowed its own box by 62px at 1280 and by 62px again at 2560, so the
-eighth issue was cut in half and no width fixed it. The shelf is now a grid that wraps: 0px of
-overflow at both widths, eight tiles over two rows at 1280 and eight across one row at 2560, at
-149px each. Nothing scrolls sideways at either width.
+eighth issue was cut in half and no width fixed it. The shelf now wraps: 0px of overflow at both
+widths, eight tiles over two rows of 125px at 1280 and eight across one row of 149px at 2560.
+Nothing scrolls sideways at either width.
+
+It wraps as a flex row rather than as a grid, and the grid it started as is worth recording because
+it passed every gate while being wrong. An `auto-fit` track list collapses its empty tracks and hands
+their width to the survivors, and a tile with a capped width inside a stretched track is placed at
+the track's start, so the shelf held its tiles at the declared gap only when it was full. A review
+measured 487px between two tiles on a shelf with two left on it. That is the ordinary end of every
+order, since the shelf shows what is still to come and empties as the order is read, and neither the
+unit test nor the browser check had ever looked at a shelf with fewer tiles than it had room for. A
+flex row with `flex: 1 1 112px` and the same cap reproduces the full-shelf measurements exactly and
+packs a partial shelf from the left, and both gates now measure the widest gap between two tiles
+sharing a row, at a full shelf and again after reading down to three or fewer.
 
 Progress was carried by a 36px ring whose only figure, `0 / 8`, was a tooltip on the ring's wrapper.
 A tooltip is not available to touch, is not read out on focus, and takes a hover and a pause on a
@@ -11505,6 +11516,15 @@ group of secondary actions rather than five competing offers. Every button keeps
 place in the DOM and its tab stop, and the border returns on `:focus-visible`, so keyboard use is if
 anything clearer than before. Under forced colors the strip and each button take a system border,
 which is correct: the demotion is a visual hierarchy the user's own colours are entitled to discard.
+
+The current issue is marked in the full order by an accent outline rather than by a tint alone, and
+that outline was for a while drawn on three sides. Rows are separated by a top border on every row
+after the first, and both rules weigh the same, so the later one took the top edge of whichever row
+it landed on. The current issue is the first *unread* row, so in any order with progress in it that
+row is preceded by a read one and lost its top edge every time; only an untouched order, which is
+what both gates imported, showed it whole. The separator now stands down for the rows that have
+something of their own to say, and the browser check reads the four border colours of the current
+row after marking an issue read.
 
 This partly overtakes BL-165's second task, "hold every prose view at the width it already had". That
 task was right about the landing page and about prose, and the reading order screen is neither: it is
@@ -11827,7 +11847,7 @@ sub-characteristic level, because the characteristic-level answer would hide the
   touch device they are invisible until tapped. This was BL-028's third task and is dropped with
   it, on the ground that phones and tablets are out of scope. It is recorded as an accepted gap
   rather than a closed one, because a desktop touchscreen still meets it. Evidence:
-  `src/styles.css:721-722`.
+  `src/styles.css:725-726`.
 - User error protection: no gap, closed by BL-034 and BL-035. Deleting a list is confirmed in the
   page rather than by a native `confirm()`, and it can now be undone for the rest of the session,
   which is the same affordance restoring a backup already had. Evidence:
@@ -11898,8 +11918,8 @@ The clearest debt in the repository, and it is concentrated in one file.
   call. There were three copies rather than the two counted here, and the evidence above points at
   the replacement, whose header records what was duplicated and what it was hiding.
 - Minor analysability gap: the `.row` class carries two unrelated meanings, a reading row and a form
-  row, and a leftover empty rule sits between them. Evidence: `src/styles.css:635-638`,
-  `src/styles.css:748-764`.
+  row, and a leftover empty rule sits between them. Evidence: `src/styles.css:639-642`,
+  `src/styles.css:752-768`.
   Resolved: `BL-047` renamed the form row to `.field-row` and deleted the empty rule, so the two
   meanings no longer share a class. The evidence above now points at the replacement, which records
   what the collision was.

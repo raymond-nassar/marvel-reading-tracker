@@ -851,7 +851,7 @@ const SCENARIOS = [
       //
       // checkVisibility() with no argument answers a narrower question than it looks like it does:
       // it defaults every option off and so returns true for both `visibility: hidden` and
-      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:721` hides the row
+      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:725` hides the row
       // actions with exactly `opacity: 0`, so it is this stylesheet's established way of putting a
       // control out of reach, and the defaults are blind to it. Measured in the same Edge this
       // drives: with the two buttons faded that way both rows passed while nothing sat under the
@@ -1360,6 +1360,17 @@ const SCENARIOS = [
           shelfOverflow: shelf ? shelf.scrollWidth - shelf.clientWidth : 999,
           tiles: tiles.length,
           rows: new Set(tiles.map((el) => Math.round(el.getBoundingClientRect().top))).size,
+          // The widest gap between two tiles sharing a row. It is the figure that catches a shelf
+          // whose empty space went into the tracks instead of to the end of the row.
+          widestGap: (() => {
+            const r = tiles.map((el) => el.getBoundingClientRect());
+            let worst = 0;
+            for (let i = 1; i < r.length; i += 1) {
+              if (Math.round(r[i].top) !== Math.round(r[i - 1].top)) continue;
+              worst = Math.max(worst, Math.round(r[i].left - r[i - 1].right));
+            }
+            return worst;
+          })(),
           label: document.querySelector('#ring-label')?.textContent ?? '',
           sub: document.querySelector('#ring-sub')?.textContent ?? '',
           ringTitle: document.querySelector('#ring-wrap')?.getAttribute('title'),
@@ -1394,6 +1405,54 @@ const SCENARIOS = [
       t.check('a wider display gives the reading view more room', wide.view > narrow.view, `${narrow.view}px then ${wide.view}px`);
       t.check('and the whole shelf lands on one row', wide.tiles > 0 && wide.rows === 1, `${wide.tiles} tiles over ${wide.rows} row(s)`);
       t.check('with nothing clipped there either', wide.shelfOverflow <= 1, `${wide.shelfOverflow}px of overflow`);
+
+      // A nearly finished order is the ordinary end state, and it is the one an auto-fit grid got
+      // wrong: the collapsed tracks handed their width to the survivors, so the last tiles sat a
+      // measured 487px apart on a declared 14.4px gap. Read down to a short shelf and measure it.
+      // The declared gap is .9rem, so anything past about 20px is space that went into a track.
+      const GAP = 20;
+      t.check('a full shelf sits at its declared gap', wide.widestGap <= GAP, `${wide.widestGap}px`);
+
+      // The row separator and the current row's accent outline compete for one top edge, and they
+      // only meet when the current row directly follows another row. An untouched order puts the
+      // current row first, and this order renders a list per series, so the current row starts a
+      // list every time it crosses into a new one. Mark issues read until it is mid-list, which is
+      // the state a reader is in for most of an order, then read all four edges.
+      const currentRowEdges = () => page.evaluate(() => {
+        const el = document.querySelector('.rows .row.now');
+        if (!el) return null;
+        const s = getComputedStyle(el);
+        const prev = el.previousElementSibling;
+        return {
+          afterRow: !!prev && prev.classList.contains('row'),
+          colors: [s.borderTopColor, s.borderRightColor, s.borderBottomColor, s.borderLeftColor],
+        };
+      });
+      const markRead = async () => {
+        const was = await page.$eval('#hero-title', (el) => el.textContent);
+        await page.evaluate(() => document.querySelector('#btn-hero-done')?.click());
+        await page.waitForFunction(
+          (t) => document.querySelector('#hero-title')?.textContent !== t, { timeout: 15000 }, was,
+        );
+      };
+      let edges = await currentRowEdges();
+      for (let guard = 0; guard < 10 && edges && !edges.afterRow; guard += 1) {
+        await markRead();
+        edges = await currentRowEdges();
+      }
+      t.check('the current issue keeps a whole outline once there are read issues above it',
+        edges !== null && edges.afterRow && new Set(edges.colors).size === 1,
+        edges ? `after a row: ${edges.afterRow}, edges ${edges.colors.join(' / ')}` : 'no current row');
+
+      for (let guard = 0; guard < 100; guard += 1) {
+        const left = await page.$$eval('#shelf .tile', (els) => els.length);
+        if (left <= 3) break;
+        await markRead();
+      }
+      const few = await measure();
+      t.check('and so does a nearly finished one, rather than stranding its last covers',
+        few.tiles > 0 && few.tiles <= 3 && few.widestGap <= GAP,
+        `${few.tiles} tiles, widest gap ${few.widestGap}px`);
     },
   },
 ];
