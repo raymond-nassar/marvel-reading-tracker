@@ -1,0 +1,310 @@
+{
+  "id": "messiah-war",
+  "name": "X-Men: Messiah War",
+  "description": "Ten chapters following Cable, Hope, and X-Force through the future-set Messiah War crossover.",
+  "source": "https://www.comicbookherald.com/cable-reading-order/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.184Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 10,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 23667,
+      "title": "X-Men: The Times and Life of Lucas Bishop (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23667/x-men_the_times_and_life_of_lucas_bishop_2009_1",
+      "seriesId": 43538,
+      "seriesName": "X-Men: The Times and Life of Lucas Bishop (2009 - Present)",
+      "onSale": "2009-02-04T00:00:00+0000",
+      "mu": "2009-02-04T00:00:00+0000",
+      "digitalId": 21545,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/90/5e012ebac581b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Larry Stroman",
+          "role": "penciler"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23848,
+      "title": "X-Men: The Times and Life of Lucas Bishop (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/23848/x-men_the_times_and_life_of_lucas_bishop_2009_2",
+      "seriesId": 43538,
+      "seriesName": "X-Men: The Times and Life of Lucas Bishop (2009 - Present)",
+      "onSale": "2009-03-25T00:00:00+0000",
+      "mu": "2009-03-25T00:00:00+0000",
+      "digitalId": 13187,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/5e0223fb3a846",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Larry Stroman",
+          "role": "penciler"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24054,
+      "title": "X-Men: The Times and Life of Lucas Bishop (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/24054/x-men_the_times_and_life_of_lucas_bishop_2009_3",
+      "seriesId": 43538,
+      "seriesName": "X-Men: The Times and Life of Lucas Bishop (2009 - Present)",
+      "onSale": "2009-04-22T00:00:00+0000",
+      "mu": "2009-04-22T00:00:00+0000",
+      "digitalId": 15240,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/5e022e14c86a6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Robert Stull",
+          "role": "cover artist"
+        },
+        {
+          "name": "Larry Stroman",
+          "role": "penciler"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27620,
+      "title": "X-FORCE/CABLE: MESSIAH WAR 1 (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/27620/x-forcecable_messiah_war_1_2009_1",
+      "seriesId": 7002,
+      "seriesName": "X-FORCE/CABLE: MESSIAH WAR 1 (2009)",
+      "onSale": "2009-03-25T00:00:00+0000",
+      "mu": "2009-03-25T00:00:00+0000",
+      "digitalId": 13177,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/52c5d057533be",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Dave Wilkins",
+          "role": "penciler"
+        },
+        {
+          "name": "Kaare Andrews",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23971,
+      "title": "Cable (2008) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/23971/cable_2008_13",
+      "seriesId": 4002,
+      "seriesName": "Cable (2008 - 2010)",
+      "onSale": "2009-04-01T00:00:00+0000",
+      "mu": "2009-04-01T00:00:00+0000",
+      "digitalId": 15547,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/4ea19c8c0760d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23969,
+      "title": "X-Force (2008) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/23969/x-force_2008_14",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2009-04-22T00:00:00+0000",
+      "mu": "2009-04-22T00:00:00+0000",
+      "digitalId": 14096,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/52c5d0511e73d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24171,
+      "title": "Cable (2008) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/24171/cable_2008_14",
+      "seriesId": 4002,
+      "seriesName": "Cable (2008 - 2010)",
+      "onSale": "2009-05-06T00:00:00+0000",
+      "mu": "2009-05-06T00:00:00+0000",
+      "digitalId": 15606,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/4ea1b32b48e75",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24170,
+      "title": "X-Force (2008) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/24170/x-force_2008_15",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2009-05-28T00:00:00+0000",
+      "mu": "2010-01-01T00:00:00+0000",
+      "digitalId": 12490,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/60/52c5d043c2501",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24631,
+      "title": "Cable (2008) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/24631/cable_2008_15",
+      "seriesId": 4002,
+      "seriesName": "Cable (2008 - 2010)",
+      "onSale": "2009-06-17T00:00:00+0000",
+      "mu": "2009-06-17T00:00:00+0000",
+      "digitalId": 12637,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/f0/4ea1ba4b5cb88",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27253,
+      "title": "X-Force (2008) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/27253/x-force_2008_16",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2009-06-24T00:00:00+0000",
+      "digitalId": 12733,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/52c5d03c38ad7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

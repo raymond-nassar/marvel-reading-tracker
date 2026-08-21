@@ -1,0 +1,529 @@
+{
+  "id": "messiah-complex",
+  "inventoryId": "civil-war-to-secret-invasion",
+  "sourceUrl": "https://www.comicbookherald.com/herald-guided-tour-x-men-messiah-complex/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 13,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 16600,
+      "title": "X-Men: Messiah Complex",
+      "issueTitle": "X-Men: Messiah Complex (2007) #1",
+      "seriesTitle": "X-Men: Messiah Complex",
+      "apiSeriesName": "X-Men: Messiah Complex (2007 - 2008)",
+      "seriesId": 2901,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16600/x-men_messiah_complex_2007_1",
+      "onSaleDate": "2007-10-31T00:00:00+0000"
+    },
+    {
+      "id": 17206,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #492",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "492",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17206/uncanny_x-men_1963_492",
+      "onSaleDate": "2007-11-07T00:00:00+0000"
+    },
+    {
+      "id": 17241,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #25",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "25",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17241/x-factor_2005_25",
+      "onSaleDate": "2007-11-14T00:00:00+0000"
+    },
+    {
+      "id": 17223,
+      "title": "New X-Men",
+      "issueTitle": "New X-Men (2004) #44",
+      "seriesTitle": "New X-Men",
+      "apiSeriesName": "New X-Men (2004 - 2008)",
+      "seriesId": 749,
+      "issueNumber": "44",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17223/new_x-men_2004_44",
+      "onSaleDate": "2007-11-21T00:00:00+0000"
+    },
+    {
+      "id": 17205,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2004) #205",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2004 - 2007)",
+      "seriesId": 403,
+      "issueNumber": "205",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17205/x-men_2004_205",
+      "onSaleDate": "2007-11-28T00:00:00+0000"
+    },
+    {
+      "id": 17336,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #493",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "493",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17336/uncanny_x-men_1963_493",
+      "onSaleDate": "2007-12-05T00:00:00+0000"
+    },
+    {
+      "id": 21915,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #26",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "26",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21915/x-factor_2005_26",
+      "onSaleDate": "2007-12-12T00:00:00+0000"
+    },
+    {
+      "id": 17356,
+      "title": "New X-Men",
+      "issueTitle": "New X-Men (2004) #45",
+      "seriesTitle": "New X-Men",
+      "apiSeriesName": "New X-Men (2004 - 2008)",
+      "seriesId": 749,
+      "issueNumber": "45",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17356/new_x-men_2004_45",
+      "onSaleDate": "2007-12-19T00:00:00+0000"
+    },
+    {
+      "id": 17334,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2004) #206",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2004 - 2007)",
+      "seriesId": 403,
+      "issueNumber": "206",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17334/x-men_2004_206",
+      "onSaleDate": "2007-12-28T00:00:00+0000"
+    },
+    {
+      "id": 17576,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #494",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "494",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17576/uncanny_x-men_1963_494",
+      "onSaleDate": "2008-01-04T00:00:00+0000"
+    },
+    {
+      "id": 17615,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #27",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "27",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17615/x-factor_2005_27",
+      "onSaleDate": "2008-01-09T00:00:00+0000"
+    },
+    {
+      "id": 17595,
+      "title": "New X-Men",
+      "issueTitle": "New X-Men (2004) #46",
+      "seriesTitle": "New X-Men",
+      "apiSeriesName": "New X-Men (2004 - 2008)",
+      "seriesId": 749,
+      "issueNumber": "46",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17595/new_x-men_2004_46",
+      "onSaleDate": "2008-01-16T00:00:00+0000"
+    },
+    {
+      "id": 17575,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2004) #207",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2004 - 2007)",
+      "seriesId": 403,
+      "issueNumber": "207",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17575/x-men_2004_207",
+      "onSaleDate": "2008-01-23T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "X-Men: Messiah Complex (one-shot)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Messiah Complex",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2901,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16600"
+      ],
+      "selectedIssueId": 16600,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16600/x-men_messiah_complex_2007_1",
+      "resolvedIssueTitle": "X-Men: Messiah Complex (2007) #1",
+      "note": "Marvel series 2901 (X-Men: Messiah Complex (2007 - 2008)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16600
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Uncanny X-Men #492",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "492",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17206"
+      ],
+      "selectedIssueId": 17206,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17206/uncanny_x-men_1963_492",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #492",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17206
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "X-Factor #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "25",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17241"
+      ],
+      "selectedIssueId": 17241,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17241/x-factor_2005_25",
+      "resolvedIssueTitle": "X-Factor (2005) #25",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17241
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "New X-Men #44",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "44",
+      "seriesId": 749,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17223"
+      ],
+      "selectedIssueId": 17223,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17223/new_x-men_2004_44",
+      "resolvedIssueTitle": "New X-Men (2004) #44",
+      "note": "Marvel series 749 (New X-Men (2004 - 2008)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17223
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "X-Men #205",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "205",
+      "seriesId": 403,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17205"
+      ],
+      "selectedIssueId": 17205,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17205/x-men_2004_205",
+      "resolvedIssueTitle": "X-Men (2004) #205",
+      "note": "Marvel series 403 (X-Men (2004 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17205
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Uncanny X-Men #493",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "493",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17336"
+      ],
+      "selectedIssueId": 17336,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17336/uncanny_x-men_1963_493",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #493",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17336
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "X-Factor #26",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "26",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21915"
+      ],
+      "selectedIssueId": 21915,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21915/x-factor_2005_26",
+      "resolvedIssueTitle": "X-Factor (2005) #26",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21915
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "New X-Men #45",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "45",
+      "seriesId": 749,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17356"
+      ],
+      "selectedIssueId": 17356,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17356/new_x-men_2004_45",
+      "resolvedIssueTitle": "New X-Men (2004) #45",
+      "note": "Marvel series 749 (New X-Men (2004 - 2008)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17356
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "X-Men #206",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "206",
+      "seriesId": 403,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17334"
+      ],
+      "selectedIssueId": 17334,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17334/x-men_2004_206",
+      "resolvedIssueTitle": "X-Men (2004) #206",
+      "note": "Marvel series 403 (X-Men (2004 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17334
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Uncanny #494",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "494",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17576"
+      ],
+      "selectedIssueId": 17576,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17576/uncanny_x-men_1963_494",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #494",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17576
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "X-Factor #27",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "27",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17615"
+      ],
+      "selectedIssueId": 17615,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17615/x-factor_2005_27",
+      "resolvedIssueTitle": "X-Factor (2005) #27",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17615
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "New X-men #46",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "46",
+      "seriesId": 749,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17595"
+      ],
+      "selectedIssueId": 17595,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17595/new_x-men_2004_46",
+      "resolvedIssueTitle": "New X-Men (2004) #46",
+      "note": "Marvel series 749 (New X-Men (2004 - 2008)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17595
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "X-Men #207",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "207",
+      "seriesId": 403,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17575"
+      ],
+      "selectedIssueId": 17575,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17575/x-men_2004_207",
+      "resolvedIssueTitle": "X-Men (2004) #207",
+      "note": "Marvel series 403 (X-Men (2004 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17575
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "messiah-complex",
+    "name": "X-Men: Messiah Complex",
+    "description": "Thirteen alternating chapters following the race to find the first mutant born after M-Day.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "messiah-complex.md",
+    "sourcePage": "https://www.comicbookherald.com/herald-guided-tour-x-men-messiah-complex/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "messiah_complex.json",
+    "characters": [
+      "X-Men",
+      "Cable",
+      "Hope Summers",
+      "Cyclops"
+    ],
+    "keywords": [
+      "Messiah Complex",
+      "Hope Summers",
+      "Cable",
+      "X-Men"
+    ],
+    "expect": 13,
+    "timeline": 2007,
+    "coverIssueId": 16600,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "X-Men: Messiah Complex (one-shot)"
+  }
+}

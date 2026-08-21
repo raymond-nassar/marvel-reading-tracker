@@ -10,7 +10,7 @@ file. The parent persisted the accepted evidence here without granting the worke
 
 | Candidate | Source shape | Current overlap | Main hazard | Evidence | Parent-use ranking |
 |---|---|---|---|---|---:|
-| World War Hulk: Aftersmash | 26 flat issue lines | No exact shipped collision found in the relevant current orders | Yearless series names and one-shots need exact Marvel issue resolution | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-10-wwh-aftersmash/, retrieved 2026-08-20; src/data/curated-lists.json:342-381,843-907 | 1 |
+| World War Hulk: Aftersmash | 26 flat issue lines | No exact shipped collision found in the relevant current orders | Yearless series names and one-shots need exact Marvel issue resolution | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-10-wwh-aftersmash/, retrieved 2026-08-20; src/data/curated-lists.json:372-411,905-1127 | 1 |
 | X-Men Extermination | 14 lines across prelude, core, and epilogue sections | No exact shipped collision found | Repository headings mean collected editions, so narrative sections must be flattened or handled by a pre-approved rule | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-fresh-start-reading-order/x-men-extermination/, retrieved 2026-08-20; README.md:714-718 | 2 |
 | Siege | 39 issue-like rows, of which two are not mechanically stable issue references | At least 13 issues already occur in dark-reign-avengers | Ambiguous records and exact overlap require an editorial disposition | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-13-siege-checklist/, retrieved 2026-08-20; src/data/orders/dark-reign-avengers.md:41-46,82-88,112-117 | 3 |
 

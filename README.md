@@ -108,11 +108,11 @@ download is built.
 ### Modern Marvel guide intake stays build-time only
 
 This repository tracks a build-time intake program for modern Marvel continuity guides. Its first
-approved batch adds ten ordinary catalog orders, while the maintained inventory, source mappings,
-resolver, and overlap reports stay outside the browser. Only the authored checklists and their
-vendored issue data ship with the app. The flow adds no runtime dependency, credits Comic Book
-Herald on every resulting card, links each card to the exact guide followed, and blocks a candidate
-instead of guessing when issue identity or overlap is unresolved.
+two approved batches add twenty ordinary catalog orders containing 416 distinct issues, while the
+maintained inventory, source mappings, resolver, and overlap reports stay outside the browser. Only
+the authored checklists and their vendored issue data ship with the app. The flow adds no runtime
+dependency, credits Comic Book Herald on every resulting card, links each card to the exact guide
+followed, and blocks a candidate instead of guessing when issue identity or overlap is unresolved.
 
 ### Your data stays with you
 

@@ -1,0 +1,568 @@
+{
+  "id": "necrosha",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-x-men-reading-order-guide-modern-marvel-comics-era/#xmen5",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 14,
+  "excludedSourceReferences": [
+    "New X-Men #32 and X-Force #11 build-up references outside the explicit Reading Order"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 29945,
+      "title": "X Necrosha: The Gathering",
+      "issueTitle": "X Necrosha: The Gathering (2009) #1",
+      "seriesTitle": "X Necrosha: The Gathering",
+      "apiSeriesName": "X Necrosha: The Gathering (2009)",
+      "seriesId": 9177,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29945/x_necrosha_the_gathering_2009_1",
+      "onSaleDate": "2009-12-09T00:00:00+0000"
+    },
+    {
+      "id": 28103,
+      "title": "X Necrosha",
+      "issueTitle": "X Necrosha (2009) #1",
+      "seriesTitle": "X Necrosha",
+      "apiSeriesName": "X Necrosha (2009)",
+      "seriesId": 9070,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28103/x_necrosha_2009_1",
+      "onSaleDate": "2009-10-28T00:00:00+0000"
+    },
+    {
+      "id": 26055,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #6",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "6",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26055/new_mutants_2009_6",
+      "onSaleDate": "2009-10-28T00:00:00+0000"
+    },
+    {
+      "id": 27259,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #21",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "21",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27259/x-force_2008_21",
+      "onSaleDate": "2009-11-11T00:00:00+0000"
+    },
+    {
+      "id": 26056,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #7",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "7",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26056/new_mutants_2009_7",
+      "onSaleDate": "2009-11-25T00:00:00+0000"
+    },
+    {
+      "id": 27260,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #22",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "22",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27260/x-force_2008_22",
+      "onSaleDate": "2009-12-16T00:00:00+0000"
+    },
+    {
+      "id": 26057,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #8",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "8",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26057/new_mutants_2009_8",
+      "onSaleDate": "2009-12-23T00:00:00+0000"
+    },
+    {
+      "id": 27348,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #231",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "231",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27348/x-men_legacy_2008_231",
+      "onSaleDate": "2009-12-23T00:00:00+0000"
+    },
+    {
+      "id": 27261,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #23",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "23",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27261/x-force_2008_23",
+      "onSaleDate": "2010-01-27T00:00:00+0000"
+    },
+    {
+      "id": 28415,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #232",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "232",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28415/x-men_legacy_2008_232",
+      "onSaleDate": "2010-01-27T00:00:00+0000"
+    },
+    {
+      "id": 27262,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #24",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "24",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27262/x-force_2008_24",
+      "onSaleDate": "2010-02-24T00:00:00+0000"
+    },
+    {
+      "id": 30700,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #233",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "233",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30700/x-men_legacy_2008_233",
+      "onSaleDate": "2010-02-24T00:00:00+0000"
+    },
+    {
+      "id": 30671,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #25",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "25",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30671/x-force_2008_25",
+      "onSaleDate": "2010-03-31T00:00:00+0000"
+    },
+    {
+      "id": 30701,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #234",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "234",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30701/x-men_legacy_2008_234",
+      "onSaleDate": "2010-03-17T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "X-Necrosha: The Gathering #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X Necrosha: The Gathering",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 9177,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29945"
+      ],
+      "selectedIssueId": 29945,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29945/x_necrosha_the_gathering_2009_1",
+      "resolvedIssueTitle": "X Necrosha: The Gathering (2009) #1",
+      "note": "Marvel series 9177 (X Necrosha: The Gathering (2009)) is the reviewed metadata series for this source reference. The source hyphenates X-Necrosha; Marvel metadata uses a space.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29945
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "X-Necrosha #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X Necrosha",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 9070,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28103"
+      ],
+      "selectedIssueId": 28103,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28103/x_necrosha_2009_1",
+      "resolvedIssueTitle": "X Necrosha (2009) #1",
+      "note": "Marvel series 9070 (X Necrosha (2009)) is the reviewed metadata series for this source reference. The source hyphenates X-Necrosha; Marvel metadata uses a space.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28103
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "New Mutants #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "6",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26055"
+      ],
+      "selectedIssueId": 26055,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26055/new_mutants_2009_6",
+      "resolvedIssueTitle": "New Mutants (2009) #6",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26055
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "X-Force Vol 3 #21",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "21",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27259"
+      ],
+      "selectedIssueId": 27259,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27259/x-force_2008_21",
+      "resolvedIssueTitle": "X-Force (2008) #21",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27259
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "New Mutants #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "7",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26056"
+      ],
+      "selectedIssueId": 26056,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26056/new_mutants_2009_7",
+      "resolvedIssueTitle": "New Mutants (2009) #7",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26056
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Force Vol 3 #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "22",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27260"
+      ],
+      "selectedIssueId": 27260,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27260/x-force_2008_22",
+      "resolvedIssueTitle": "X-Force (2008) #22",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27260
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "New Mutants #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "8",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26057"
+      ],
+      "selectedIssueId": 26057,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26057/new_mutants_2009_8",
+      "resolvedIssueTitle": "New Mutants (2009) #8",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26057
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "X-Men Legacy #231",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "231",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27348"
+      ],
+      "selectedIssueId": 27348,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27348/x-men_legacy_2008_231",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #231",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27348
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "X-Force Vol 3 #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "23",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27261"
+      ],
+      "selectedIssueId": 27261,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27261/x-force_2008_23",
+      "resolvedIssueTitle": "X-Force (2008) #23",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27261
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-Men Legacy #232",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "232",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28415"
+      ],
+      "selectedIssueId": 28415,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28415/x-men_legacy_2008_232",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #232",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28415
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "X-Force Vol 3 #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "24",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27262"
+      ],
+      "selectedIssueId": 27262,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27262/x-force_2008_24",
+      "resolvedIssueTitle": "X-Force (2008) #24",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27262
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "X-Men Legacy #233",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "233",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30700"
+      ],
+      "selectedIssueId": 30700,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30700/x-men_legacy_2008_233",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #233",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30700
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "X-Force Vol 3 #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "25",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30671"
+      ],
+      "selectedIssueId": 30671,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30671/x-force_2008_25",
+      "resolvedIssueTitle": "X-Force (2008) #25",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30671
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "X-Men Legacy #234",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "234",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30701"
+      ],
+      "selectedIssueId": 30701,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30701/x-men_legacy_2008_234",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #234",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30701
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "necrosha",
+    "name": "X-Men: Necrosha",
+    "description": "Fourteen alternating chapters from The Gathering through X-Force, New Mutants, and X-Men Legacy.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "necrosha.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-x-men-reading-order-guide-modern-marvel-comics-era/#xmen5",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "necrosha.json",
+    "characters": [
+      "X-Men",
+      "X-Force",
+      "Selene",
+      "Warpath"
+    ],
+    "keywords": [
+      "Necrosha",
+      "Selene",
+      "X-Force",
+      "New Mutants"
+    ],
+    "expect": 14,
+    "timeline": 2009,
+    "coverIssueId": 28103,
+    "coverSourcePosition": 2,
+    "coverSourceReference": "X-Necrosha #1"
+  }
+}

@@ -1,0 +1,1062 @@
+{
+  "id": "realm-of-kings",
+  "inventoryId": "marvel-cosmic",
+  "sourceUrl": "https://www.comicbookherald.com/marvel-cosmic-reading-order/realm-of-kings/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 28,
+  "excludedSourceReferences": [
+    "Nova #36, which appears only in the broader omnibus description on the bridge page",
+    "The Thanos Imperative, maintained as a separate proposed order"
+  ],
+  "reviewStatus": "pending-independent-review",
+  "proposedManifest": {
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "variant": null,
+    "timeline": 2009,
+    "coverSourceReference": "Realm of Kings #1"
+  },
+  "candidateMetadata": [
+    {
+      "id": 29292,
+      "title": "Realm of Kings",
+      "issueTitle": "Realm of Kings (2009) #1",
+      "seriesTitle": "Realm of Kings",
+      "apiSeriesName": "Realm of Kings (2009)",
+      "seriesId": 9088,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29292/realm_of_kings_2009_1",
+      "onSaleDate": "2009-11-18T00:00:00+0000"
+    },
+    {
+      "id": 25308,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #20",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "20",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/25308/guardians_of_the_galaxy_2008_20",
+      "onSaleDate": "2009-11-25T00:00:00+0000"
+    },
+    {
+      "id": 25309,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #21",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "21",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/25309/guardians_of_the_galaxy_2008_21",
+      "onSaleDate": "2009-12-23T00:00:00+0000"
+    },
+    {
+      "id": 29022,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #22",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "22",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29022/guardians_of_the_galaxy_2008_22",
+      "onSaleDate": "2010-01-27T00:00:00+0000"
+    },
+    {
+      "id": 29009,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #23",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "23",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29009/guardians_of_the_galaxy_2008_23",
+      "onSaleDate": "2010-02-17T00:00:00+0000"
+    },
+    {
+      "id": 29010,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #24",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "24",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29010/guardians_of_the_galaxy_2008_24",
+      "onSaleDate": "2010-03-17T00:00:00+0000"
+    },
+    {
+      "id": 32551,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #25",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "25",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32551/guardians_of_the_galaxy_2008_25",
+      "onSaleDate": "2010-04-21T00:00:00+0000"
+    },
+    {
+      "id": 28701,
+      "title": "Realm of Kings Inhumans",
+      "issueTitle": "Realm of Kings Inhumans (2009) #1",
+      "seriesTitle": "Realm of Kings Inhumans",
+      "apiSeriesName": "Realm of Kings Inhumans (2009 - 2010)",
+      "seriesId": 9053,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28701/realm_of_kings_inhumans_2009_1",
+      "onSaleDate": "2009-11-18T00:00:00+0000"
+    },
+    {
+      "id": 28702,
+      "title": "Realm of Kings Inhumans",
+      "issueTitle": "Realm of Kings Inhumans (2009) #2",
+      "seriesTitle": "Realm of Kings Inhumans",
+      "apiSeriesName": "Realm of Kings Inhumans (2009 - 2010)",
+      "seriesId": 9053,
+      "issueNumber": "2",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28702/realm_of_kings_inhumans_2009_2",
+      "onSaleDate": "2009-12-16T00:00:00+0000"
+    },
+    {
+      "id": 28703,
+      "title": "Realm of Kings Inhumans",
+      "issueTitle": "Realm of Kings Inhumans (2009) #3",
+      "seriesTitle": "Realm of Kings Inhumans",
+      "apiSeriesName": "Realm of Kings Inhumans (2009 - 2010)",
+      "seriesId": 9053,
+      "issueNumber": "3",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28703/realm_of_kings_inhumans_2009_3",
+      "onSaleDate": "2010-01-20T00:00:00+0000"
+    },
+    {
+      "id": 28704,
+      "title": "Realm of Kings Inhumans",
+      "issueTitle": "Realm of Kings Inhumans (2009) #4",
+      "seriesTitle": "Realm of Kings Inhumans",
+      "apiSeriesName": "Realm of Kings Inhumans (2009 - 2010)",
+      "seriesId": 9053,
+      "issueNumber": "4",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28704/realm_of_kings_inhumans_2009_4",
+      "onSaleDate": "2010-02-24T00:00:00+0000"
+    },
+    {
+      "id": 28705,
+      "title": "Realm of Kings Inhumans",
+      "issueTitle": "Realm of Kings Inhumans (2009) #5",
+      "seriesTitle": "Realm of Kings Inhumans",
+      "apiSeriesName": "Realm of Kings Inhumans (2009 - 2010)",
+      "seriesId": 9053,
+      "issueNumber": "5",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28705/realm_of_kings_inhumans_2009_5",
+      "onSaleDate": "2010-03-31T00:00:00+0000"
+    },
+    {
+      "id": 28697,
+      "title": "Realm of Kings Imperial Guard",
+      "issueTitle": "Realm of Kings Imperial Guard (2009) #1",
+      "seriesTitle": "Realm of Kings Imperial Guard",
+      "apiSeriesName": "Realm of Kings Imperial Guard (2009 - 2010)",
+      "seriesId": 9052,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28697/realm_of_kings_imperial_guard_2009_1",
+      "onSaleDate": "2009-11-11T00:00:00+0000"
+    },
+    {
+      "id": 28698,
+      "title": "Realm of Kings Imperial Guard",
+      "issueTitle": "Realm of Kings Imperial Guard (2009) #2",
+      "seriesTitle": "Realm of Kings Imperial Guard",
+      "apiSeriesName": "Realm of Kings Imperial Guard (2009 - 2010)",
+      "seriesId": 9052,
+      "issueNumber": "2",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28698/realm_of_kings_imperial_guard_2009_2",
+      "onSaleDate": "2009-12-09T00:00:00+0000"
+    },
+    {
+      "id": 28699,
+      "title": "Realm of Kings Imperial Guard",
+      "issueTitle": "Realm of Kings Imperial Guard (2009) #3",
+      "seriesTitle": "Realm of Kings Imperial Guard",
+      "apiSeriesName": "Realm of Kings Imperial Guard (2009 - 2010)",
+      "seriesId": 9052,
+      "issueNumber": "3",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28699/realm_of_kings_imperial_guard_2009_3",
+      "onSaleDate": "2010-01-13T00:00:00+0000"
+    },
+    {
+      "id": 28700,
+      "title": "Realm of Kings Imperial Guard",
+      "issueTitle": "Realm of Kings Imperial Guard (2009) #4",
+      "seriesTitle": "Realm of Kings Imperial Guard",
+      "apiSeriesName": "Realm of Kings Imperial Guard (2009 - 2010)",
+      "seriesId": 9052,
+      "issueNumber": "4",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28700/realm_of_kings_imperial_guard_2009_4",
+      "onSaleDate": "2010-02-10T00:00:00+0000"
+    },
+    {
+      "id": 28717,
+      "title": "Realm of Kings Imperial Guard",
+      "issueTitle": "Realm of Kings Imperial Guard (2009) #5",
+      "seriesTitle": "Realm of Kings Imperial Guard",
+      "apiSeriesName": "Realm of Kings Imperial Guard (2009 - 2010)",
+      "seriesId": 9052,
+      "issueNumber": "5",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28717/realm_of_kings_imperial_guard_2009_5",
+      "onSaleDate": "2010-03-17T00:00:00+0000"
+    },
+    {
+      "id": 30782,
+      "title": "Realm of Kings: Son of Hulk",
+      "issueTitle": "Realm of Kings: Son of Hulk (2010) #1",
+      "seriesTitle": "Realm of Kings: Son of Hulk",
+      "apiSeriesName": "Realm of Kings: Son of Hulk (2010)",
+      "seriesId": 9252,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30782/realm_of_kings_son_of_hulk_2010_1",
+      "onSaleDate": "2010-02-03T00:00:00+0000"
+    },
+    {
+      "id": 29724,
+      "title": "Realm of Kings: Son of Hulk",
+      "issueTitle": "Realm of Kings: Son of Hulk (2010) #2",
+      "seriesTitle": "Realm of Kings: Son of Hulk",
+      "apiSeriesName": "Realm of Kings: Son of Hulk (2010)",
+      "seriesId": 9252,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29724/realm_of_kings_son_of_hulk_2010_2",
+      "onSaleDate": "2010-03-03T00:00:00+0000"
+    },
+    {
+      "id": 29725,
+      "title": "Realm of Kings: Son of Hulk",
+      "issueTitle": "Realm of Kings: Son of Hulk (2010) #3",
+      "seriesTitle": "Realm of Kings: Son of Hulk",
+      "apiSeriesName": "Realm of Kings: Son of Hulk (2010)",
+      "seriesId": 9252,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29725/realm_of_kings_son_of_hulk_2010_3",
+      "onSaleDate": "2010-04-07T00:00:00+0000"
+    },
+    {
+      "id": 29726,
+      "title": "Realm of Kings: Son of Hulk",
+      "issueTitle": "Realm of Kings: Son of Hulk (2010) #4",
+      "seriesTitle": "Realm of Kings: Son of Hulk",
+      "apiSeriesName": "Realm of Kings: Son of Hulk (2010)",
+      "seriesId": 9252,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29726/realm_of_kings_son_of_hulk_2010_4",
+      "onSaleDate": "2010-05-05T00:00:00+0000"
+    },
+    {
+      "id": 26094,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #29",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "29",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26094/nova_2007_29",
+      "onSaleDate": "2009-09-23T00:00:00+0000"
+    },
+    {
+      "id": 26095,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #30",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "30",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26095/nova_2007_30",
+      "onSaleDate": "2009-10-28T00:00:00+0000"
+    },
+    {
+      "id": 26096,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #31",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "31",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26096/nova_2007_31",
+      "onSaleDate": "2009-11-04T00:00:00+0000"
+    },
+    {
+      "id": 26097,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #32",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "32",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26097/nova_2007_32",
+      "onSaleDate": "2009-12-03T00:00:00+0000"
+    },
+    {
+      "id": 29025,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #33",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "33",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29025/nova_2007_33",
+      "onSaleDate": "2010-01-20T00:00:00+0000"
+    },
+    {
+      "id": 29026,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #34",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "34",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29026/nova_2007_34",
+      "onSaleDate": "2010-02-03T00:00:00+0000"
+    },
+    {
+      "id": 29027,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #35",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "35",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29027/nova_2007_35",
+      "onSaleDate": "2010-03-17T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Realm of Kings #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Realm of Kings",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 9088,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29292"
+      ],
+      "selectedIssueId": 29292,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29292/realm_of_kings_2009_1",
+      "resolvedIssueTitle": "Realm of Kings (2009) #1",
+      "note": "Marvel series 9088 (Realm of Kings (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29292
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Guardians of the Galaxy #20",
+      "sourceRangeReference": "Guardians of the Galaxy #20-25",
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "20",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "25308"
+      ],
+      "selectedIssueId": 25308,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/25308/guardians_of_the_galaxy_2008_20",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #20",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        25308
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Guardians of the Galaxy #21",
+      "sourceRangeReference": "Guardians of the Galaxy #20-25",
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "21",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "25309"
+      ],
+      "selectedIssueId": 25309,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/25309/guardians_of_the_galaxy_2008_21",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #21",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        25309
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Guardians of the Galaxy #22",
+      "sourceRangeReference": "Guardians of the Galaxy #20-25",
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "22",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29022"
+      ],
+      "selectedIssueId": 29022,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29022/guardians_of_the_galaxy_2008_22",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #22",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29022
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Guardians of the Galaxy #23",
+      "sourceRangeReference": "Guardians of the Galaxy #20-25",
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "23",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29009"
+      ],
+      "selectedIssueId": 29009,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29009/guardians_of_the_galaxy_2008_23",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #23",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29009
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Guardians of the Galaxy #24",
+      "sourceRangeReference": "Guardians of the Galaxy #20-25",
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "24",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29010"
+      ],
+      "selectedIssueId": 29010,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29010/guardians_of_the_galaxy_2008_24",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #24",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29010
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Guardians of the Galaxy #25",
+      "sourceRangeReference": "Guardians of the Galaxy #20-25",
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "25",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32551"
+      ],
+      "selectedIssueId": 32551,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32551/guardians_of_the_galaxy_2008_25",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #25",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32551
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Realm of Kings Inhumans #1",
+      "sourceRangeReference": "Realm of Kings: Inhumans #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Inhumans",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 9053,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28701"
+      ],
+      "selectedIssueId": 28701,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28701/realm_of_kings_inhumans_2009_1",
+      "resolvedIssueTitle": "Realm of Kings Inhumans (2009) #1",
+      "note": "Marvel series 9053 (Realm of Kings Inhumans (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28701
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Realm of Kings Inhumans #2",
+      "sourceRangeReference": "Realm of Kings: Inhumans #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Inhumans",
+      "seriesYear": 2009,
+      "issueNumber": "2",
+      "seriesId": 9053,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28702"
+      ],
+      "selectedIssueId": 28702,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28702/realm_of_kings_inhumans_2009_2",
+      "resolvedIssueTitle": "Realm of Kings Inhumans (2009) #2",
+      "note": "Marvel series 9053 (Realm of Kings Inhumans (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28702
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Realm of Kings Inhumans #3",
+      "sourceRangeReference": "Realm of Kings: Inhumans #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Inhumans",
+      "seriesYear": 2009,
+      "issueNumber": "3",
+      "seriesId": 9053,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28703"
+      ],
+      "selectedIssueId": 28703,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28703/realm_of_kings_inhumans_2009_3",
+      "resolvedIssueTitle": "Realm of Kings Inhumans (2009) #3",
+      "note": "Marvel series 9053 (Realm of Kings Inhumans (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28703
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Realm of Kings Inhumans #4",
+      "sourceRangeReference": "Realm of Kings: Inhumans #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Inhumans",
+      "seriesYear": 2009,
+      "issueNumber": "4",
+      "seriesId": 9053,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28704"
+      ],
+      "selectedIssueId": 28704,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28704/realm_of_kings_inhumans_2009_4",
+      "resolvedIssueTitle": "Realm of Kings Inhumans (2009) #4",
+      "note": "Marvel series 9053 (Realm of Kings Inhumans (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28704
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Realm of Kings Inhumans #5",
+      "sourceRangeReference": "Realm of Kings: Inhumans #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Inhumans",
+      "seriesYear": 2009,
+      "issueNumber": "5",
+      "seriesId": 9053,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28705"
+      ],
+      "selectedIssueId": 28705,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28705/realm_of_kings_inhumans_2009_5",
+      "resolvedIssueTitle": "Realm of Kings Inhumans (2009) #5",
+      "note": "Marvel series 9053 (Realm of Kings Inhumans (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28705
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Realm of Kings Imperial Guard #1",
+      "sourceRangeReference": "Realm of Kings: Imperial Guard #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Imperial Guard",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 9052,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28697"
+      ],
+      "selectedIssueId": 28697,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28697/realm_of_kings_imperial_guard_2009_1",
+      "resolvedIssueTitle": "Realm of Kings Imperial Guard (2009) #1",
+      "note": "Marvel series 9052 (Realm of Kings Imperial Guard (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28697
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Realm of Kings Imperial Guard #2",
+      "sourceRangeReference": "Realm of Kings: Imperial Guard #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Imperial Guard",
+      "seriesYear": 2009,
+      "issueNumber": "2",
+      "seriesId": 9052,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28698"
+      ],
+      "selectedIssueId": 28698,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28698/realm_of_kings_imperial_guard_2009_2",
+      "resolvedIssueTitle": "Realm of Kings Imperial Guard (2009) #2",
+      "note": "Marvel series 9052 (Realm of Kings Imperial Guard (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28698
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Realm of Kings Imperial Guard #3",
+      "sourceRangeReference": "Realm of Kings: Imperial Guard #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Imperial Guard",
+      "seriesYear": 2009,
+      "issueNumber": "3",
+      "seriesId": 9052,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28699"
+      ],
+      "selectedIssueId": 28699,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28699/realm_of_kings_imperial_guard_2009_3",
+      "resolvedIssueTitle": "Realm of Kings Imperial Guard (2009) #3",
+      "note": "Marvel series 9052 (Realm of Kings Imperial Guard (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28699
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Realm of Kings Imperial Guard #4",
+      "sourceRangeReference": "Realm of Kings: Imperial Guard #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Imperial Guard",
+      "seriesYear": 2009,
+      "issueNumber": "4",
+      "seriesId": 9052,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28700"
+      ],
+      "selectedIssueId": 28700,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28700/realm_of_kings_imperial_guard_2009_4",
+      "resolvedIssueTitle": "Realm of Kings Imperial Guard (2009) #4",
+      "note": "Marvel series 9052 (Realm of Kings Imperial Guard (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28700
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Realm of Kings Imperial Guard #5",
+      "sourceRangeReference": "Realm of Kings: Imperial Guard #1-5",
+      "normalizedSeriesTitle": "Realm of Kings Imperial Guard",
+      "seriesYear": 2009,
+      "issueNumber": "5",
+      "seriesId": 9052,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28717"
+      ],
+      "selectedIssueId": 28717,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28717/realm_of_kings_imperial_guard_2009_5",
+      "resolvedIssueTitle": "Realm of Kings Imperial Guard (2009) #5",
+      "note": "Marvel series 9052 (Realm of Kings Imperial Guard (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28717
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Realm of Kings: Son of Hulk #1",
+      "sourceRangeReference": "Realm of Kings: Son of Hulk #1-4",
+      "normalizedSeriesTitle": "Realm of Kings: Son of Hulk",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9252,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30782"
+      ],
+      "selectedIssueId": 30782,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30782/realm_of_kings_son_of_hulk_2010_1",
+      "resolvedIssueTitle": "Realm of Kings: Son of Hulk (2010) #1",
+      "note": "Marvel series 9252 (Realm of Kings: Son of Hulk (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30782
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Realm of Kings: Son of Hulk #2",
+      "sourceRangeReference": "Realm of Kings: Son of Hulk #1-4",
+      "normalizedSeriesTitle": "Realm of Kings: Son of Hulk",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 9252,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29724"
+      ],
+      "selectedIssueId": 29724,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29724/realm_of_kings_son_of_hulk_2010_2",
+      "resolvedIssueTitle": "Realm of Kings: Son of Hulk (2010) #2",
+      "note": "Marvel series 9252 (Realm of Kings: Son of Hulk (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29724
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Realm of Kings: Son of Hulk #3",
+      "sourceRangeReference": "Realm of Kings: Son of Hulk #1-4",
+      "normalizedSeriesTitle": "Realm of Kings: Son of Hulk",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 9252,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29725"
+      ],
+      "selectedIssueId": 29725,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29725/realm_of_kings_son_of_hulk_2010_3",
+      "resolvedIssueTitle": "Realm of Kings: Son of Hulk (2010) #3",
+      "note": "Marvel series 9252 (Realm of Kings: Son of Hulk (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29725
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Realm of Kings: Son of Hulk #4",
+      "sourceRangeReference": "Realm of Kings: Son of Hulk #1-4",
+      "normalizedSeriesTitle": "Realm of Kings: Son of Hulk",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 9252,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29726"
+      ],
+      "selectedIssueId": 29726,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29726/realm_of_kings_son_of_hulk_2010_4",
+      "resolvedIssueTitle": "Realm of Kings: Son of Hulk (2010) #4",
+      "note": "Marvel series 9252 (Realm of Kings: Son of Hulk (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29726
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Nova #29",
+      "sourceRangeReference": "Nova #29-35",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "29",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26094"
+      ],
+      "selectedIssueId": 26094,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26094/nova_2007_29",
+      "resolvedIssueTitle": "Nova (2007) #29",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26094
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Nova #30",
+      "sourceRangeReference": "Nova #29-35",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "30",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26095"
+      ],
+      "selectedIssueId": 26095,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26095/nova_2007_30",
+      "resolvedIssueTitle": "Nova (2007) #30",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26095
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Nova #31",
+      "sourceRangeReference": "Nova #29-35",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "31",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26096"
+      ],
+      "selectedIssueId": 26096,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26096/nova_2007_31",
+      "resolvedIssueTitle": "Nova (2007) #31",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26096
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Nova #32",
+      "sourceRangeReference": "Nova #29-35",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "32",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26097"
+      ],
+      "selectedIssueId": 26097,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26097/nova_2007_32",
+      "resolvedIssueTitle": "Nova (2007) #32",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26097
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Nova #33",
+      "sourceRangeReference": "Nova #29-35",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "33",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29025"
+      ],
+      "selectedIssueId": 29025,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29025/nova_2007_33",
+      "resolvedIssueTitle": "Nova (2007) #33",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29025
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Nova #34",
+      "sourceRangeReference": "Nova #29-35",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "34",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29026"
+      ],
+      "selectedIssueId": 29026,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29026/nova_2007_34",
+      "resolvedIssueTitle": "Nova (2007) #34",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29026
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Nova #35",
+      "sourceRangeReference": "Nova #29-35",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "35",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29027"
+      ],
+      "selectedIssueId": 29027,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29027/nova_2007_35",
+      "resolvedIssueTitle": "Nova (2007) #35",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29027
+      ]
+    }
+  ]
+}
