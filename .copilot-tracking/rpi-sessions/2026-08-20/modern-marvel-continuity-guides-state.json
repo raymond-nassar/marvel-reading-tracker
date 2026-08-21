@@ -6,6 +6,37 @@
   "active_phase": "Implement",
   "status": "active",
   "session_status": "running",
+  "production_batch": {
+    "target_count": 10,
+    "selection_rule": "ascending position in scripts/data/cbh-modern-inventory.json, filtering to first eligible new-order event or aftermath records; skip commerce, excluded, deferred/recent-source, path-source, fast-track, broad-era/bridge work, reuse-existing records, and anything blocked by exact-resolution or overlap gates",
+    "selected_ids": [
+      "secret-war",
+      "decimation",
+      "spider-man-the-other",
+      "world-war-hulk",
+      "world-war-hulk-aftersmash",
+      "fall-of-the-hulks",
+      "shadowland",
+      "chaos-war",
+      "fear-itself",
+      "avengers-vs-x-men"
+    ],
+    "source_order_anchored": true,
+    "merge_resync": {
+      "status": "complete",
+      "source": "origin/main",
+      "non_destructive_strategy": "merge origin/main into the feature branch without resetting or rewriting the worktree"
+    },
+    "duplicate_guard": {
+      "enabled": true,
+      "rules": [
+        "No batch id or source URL may duplicate a shipped order or a peer guide.",
+        "No exact selected issue sequence may duplicate a shipped order or a peer guide.",
+        "No catalog id may duplicate a shipped order or a peer guide.",
+        "Title similarity is a prompt to investigate, not proof of equivalence."
+      ]
+    }
+  },
   "artifact_paths": {
     "research": ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md",
     "plan": ".copilot-tracking/plans/2026-08-20/modern-marvel-continuity-guides-plan.md",
@@ -54,9 +85,14 @@
       "decision": "P01 is the only implementation-ready boundary.",
       "status": "confirmed by finalized plan",
       "evidence": ".copilot-tracking/plans/2026-08-20/modern-marvel-continuity-guides-plan.md"
+    },
+    {
+      "decision": "The next production batch targets 10 eligible historical event or aftermath orders, selected by ascending inventory position and filtered by exact-resolution and overlap gates.",
+      "status": "confirmed by user, frozen before authoring",
+      "evidence": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md"
     }
   ],
   "blockers": [],
-  "next_action": "P01-T01",
+  "next_action": "P02-T01: freeze the 10-guide packet and packet review before vendor authoring",
   "prioritized_follow_ups": []
 }

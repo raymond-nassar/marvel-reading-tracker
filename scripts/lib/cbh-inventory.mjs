@@ -34,6 +34,61 @@ function assertField(name, value, predicate, message) {
   }
 }
 
+export function validateBatchNoDuplicates(batchRecords = [], existingRecords = [], peerRecords = []) {
+  const allRecords = [...batchRecords, ...existingRecords, ...peerRecords];
+  const seenIds = new Set();
+  const seenUrls = new Set();
+  const seenIssueSequences = new Set();
+  const seenCatalogIds = new Set();
+
+  for (const record of allRecords) {
+    if (!record || typeof record !== 'object') {
+      continue;
+    }
+
+    const recordId = record.id != null ? String(record.id) : null;
+    if (recordId) {
+      if (seenIds.has(recordId)) {
+        throw new Error(`Duplicate batch id: ${recordId}`);
+      }
+      seenIds.add(recordId);
+    }
+
+    const sourceUrl = record.url != null ? String(record.url) : null;
+    if (sourceUrl) {
+      if (seenUrls.has(sourceUrl)) {
+        throw new Error(`Duplicate source URL: ${sourceUrl}`);
+      }
+      seenUrls.add(sourceUrl);
+    }
+
+    const selectedIssueIds = Array.isArray(record.selectedIssueIds)
+      ? record.selectedIssueIds.map((entry) => String(entry))
+      : (Array.isArray(record.issueIds)
+        ? record.issueIds.map((entry) => String(entry))
+        : (record.selectedIssueId != null ? [String(record.selectedIssueId)] : []));
+    if (selectedIssueIds.length > 0) {
+      const sequenceKey = selectedIssueIds.join('|');
+      if (seenIssueSequences.has(sequenceKey)) {
+        throw new Error(`Duplicate selected issue sequence: ${sequenceKey}`);
+      }
+      seenIssueSequences.add(sequenceKey);
+    }
+
+    const catalogIds = Array.isArray(record.catalogIds)
+      ? record.catalogIds.map((entry) => String(entry))
+      : (record.catalogId != null ? [String(record.catalogId)] : []);
+    for (const catalogId of catalogIds) {
+      if (seenCatalogIds.has(catalogId)) {
+        throw new Error(`Duplicate catalog id: ${catalogId}`);
+      }
+      seenCatalogIds.add(catalogId);
+    }
+  }
+
+  return true;
+}
+
 export function validateInventory(records) {
   if (!Array.isArray(records)) {
     throw new Error('The inventory must be an array');

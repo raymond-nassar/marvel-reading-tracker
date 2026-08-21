@@ -70,6 +70,14 @@ test('generated payload roots do not overwrite real item issue ids', () => {
   assert.deepEqual(report.comparisons[0].sharedIds, []);
 });
 
+test('buildComparisonReport rejects duplicate selected issue sequences across candidate and peer orders', () => {
+  assert.throws(() => buildComparisonReport({
+    candidateIds: ['10', '11'],
+    orders: [{ orderId: 'existing', issueIds: ['10', '11'] }],
+    peerOrders: [{ orderId: 'peer', issueIds: ['10', '11'] }],
+  }), /Duplicate selected issue sequence/i);
+});
+
 test('buildReportForMapping rejects unresolved mappings before writing a report', async () => {
   const tempDir = mkdtempSync(path.join(os.tmpdir(), 'cbh-overlap-'));
   const mappingPath = path.join(tempDir, 'mapping.json');

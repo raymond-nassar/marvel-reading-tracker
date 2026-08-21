@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateInventory, validateLiveInventory } from '../scripts/lib/cbh-inventory.mjs';
+import { validateBatchNoDuplicates, validateInventory, validateLiveInventory } from '../scripts/lib/cbh-inventory.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const inventoryPath = path.join(root, 'scripts', 'data', 'cbh-modern-inventory.json');
@@ -37,6 +37,62 @@ test('the maintained inventory matches the P01 contract', () => {
   assert.ok(inventory.every((record) => Array.isArray(record.catalogIds) && record.catalogIds.length === 0));
   assert.ok(inventory.filter((record) => record.disposition === 'new-order').every((record) => record.deliveryStatus === 'pending'));
   assert.ok(inventory.filter((record) => record.disposition !== 'new-order').every((record) => record.deliveryStatus === 'not-applicable'));
+});
+
+test('batch duplicate guard rejects repeated ids, URLs, issue sequences, and catalog ids', () => {
+  const existing = [{
+    id: 'existing-guide',
+    url: 'https://example.com/existing-guide',
+    selectedIssueIds: ['1000', '1001'],
+    catalogIds: ['catalog-1'],
+  }];
+  const peer = [{
+    id: 'peer-guide',
+    url: 'https://example.com/peer-guide',
+    selectedIssueIds: ['2000', '2001'],
+    catalogIds: ['catalog-2'],
+  }];
+
+  assert.doesNotThrow(() => validateBatchNoDuplicates([
+    {
+      id: 'new-guide',
+      url: 'https://example.com/new-guide',
+      selectedIssueIds: ['3000', '3001'],
+      catalogIds: ['catalog-3'],
+    },
+  ], existing, peer));
+
+  const duplicateIdBatch = [{
+    id: 'existing-guide',
+    url: 'https://example.com/brand-new',
+    selectedIssueIds: ['4000', '4001'],
+    catalogIds: ['catalog-4'],
+  }];
+  assert.throws(() => validateBatchNoDuplicates(duplicateIdBatch, existing, peer), /Duplicate batch id/i);
+
+  const duplicateUrlBatch = [{
+    id: 'duplicate-url-guide',
+    url: 'https://example.com/existing-guide',
+    selectedIssueIds: ['5000', '5001'],
+    catalogIds: ['catalog-5'],
+  }];
+  assert.throws(() => validateBatchNoDuplicates(duplicateUrlBatch, existing, peer), /Duplicate source URL/i);
+
+  const duplicateSequenceBatch = [{
+    id: 'duplicate-sequence-guide',
+    url: 'https://example.com/duplicate-sequence',
+    selectedIssueIds: ['1000', '1001'],
+    catalogIds: ['catalog-6'],
+  }];
+  assert.throws(() => validateBatchNoDuplicates(duplicateSequenceBatch, existing, peer), /Duplicate selected issue sequence/i);
+
+  const duplicateCatalogBatch = [{
+    id: 'duplicate-catalog-guide',
+    url: 'https://example.com/duplicate-catalog',
+    selectedIssueIds: ['6000', '6001'],
+    catalogIds: ['catalog-1'],
+  }];
+  assert.throws(() => validateBatchNoDuplicates(duplicateCatalogBatch, existing, peer), /Duplicate catalog id/i);
 });
 
 test('live inventory validation accepts a guarded lifecycle and rejects invalid transitions', () => {

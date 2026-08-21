@@ -15,15 +15,17 @@
 ## Executive Summary
 
 Create a repeatable build-time intake system for Comic Book Herald's 86 modern Earth-616 source
-links, prove it with World War Hulk: Aftersmash, then add clean historical events one guide at a
-time. Broad eras, bridges, fast tracks, ambiguous overlaps, and post-snapshot material remain
-visible in the inventory but do not enter the first delivery lane.
+links, prove it with a 10-order first production batch anchored by World War Hulk: Aftersmash,
+and keep expanding only within the approved historical-event batch. Broad eras, bridges, fast
+tracks, ambiguous overlaps, post-snapshot material, and unrelated family paths remain visible in the
+inventory but do not enter the active production lane unless a reviewer approves them as part of the
+same batch.
 
-The first implementation pull request is only the intake foundation: a maintained inventory,
-deterministic issue-reference resolver, complete pairwise overlap report, tests, and contributor
-instructions. It does not add a reading guide. The second pull request uses that foundation to
-resolve and ship the Aftersmash pilot. This split keeps one major feature per pull request and lets
-the pilot prove the workflow rather than hide tooling assumptions inside a data change.
+The execution boundary is now a single production batch: one maintained inventory, deterministic
+source-to-issue resolution, complete pairwise overlap reporting, and a frozen 10-order packet that
+keeps the PR's major feature coherent without imposing the old one-list limitation. The first PR can
+ship a real batch once the packet is frozen and the pack-level overlap and scope checks pass, while
+future PRs keep the same production gate rather than reintroducing a one-guide bottleneck.
 
 ### Confirmed User Decisions
 
@@ -32,6 +34,18 @@ the pilot prove the workflow rather than hide tooling assumptions inside a data 
 * Make tasks executable by a lower-capability model.
 * Prioritize discrete events and aftermaths before broad eras and bridges.
 * Launch implementation in a nested session using an MAI model after this plan is complete.
+* The next production PR targets a 10-order batch, not a one-list or two-list limit. The batch is
+  the PR's major feature, and the packet is frozen by source order and stop conditions before any
+  order is authored.
+* Select the first 10 eligible `new-order` event or aftermath records by ascending `position` in
+  `scripts/data/cbh-modern-inventory.json`, skipping commerce, excluded, deferred/recent-source,
+  path-source, fast-track, broad-era or bridge work, reuse-existing items, and any record blocked by
+  exact-resolution or overlap gates; backfill only with the next eligible record without reordering.
+* After the merge from `origin/main`, duplicate prevention is an active invariant in the packet gate:
+  no batch id, source URL, exact selected issue sequence, or catalog id may duplicate an existing
+  shipped order or the other nine peer guides. Title similarity is a prompt to investigate, never a
+  proof of equivalence, and any duplicate match is skipped with evidence before the next eligible
+  record is considered.
 
 ### Important Boundaries
 
@@ -48,8 +62,10 @@ the pilot prove the workflow rather than hide tooling assumptions inside a data 
 * Preserve all 86 source records in one maintained, machine-checkable inventory.
 * Make source-reference resolution deterministic and reviewable.
 * Detect overlap against every shipped order before a new order is authored.
-* Prove the process with one flat historical pilot.
-* Deliver historical event guides in conservative, independently reviewable batches.
+* Prove the process with a 10-order historical batch in source order, anchored by the first eligible
+  event records and not by a one-list limit.
+* Deliver historical event guides in independently reviewable batches that match the queue and guard
+  rails rather than a smaller default.
 * Keep era, bridge, family-path, and recent-source work explicit without mixing it into event work.
 
 ## Non-Goals
@@ -145,14 +161,24 @@ reading path, overlap treatment, approved count, ambiguous identity, or a thresh
 
 ### Batch contract
 
-* Default: one guide per pull request.
-* Maximum two guides only when both are flat, unambiguous, in one story family, and no more than
-  40 combined approved issue rows.
-* Maximum one complex guide with no more than 60 approved issue rows.
-* Soft generated-data ceiling: approximately 70 KB per pull request.
-* Split or escalate when a limit is exceeded, any ambiguity remains, families mix, or overlap is
-  not pre-approved.
-* These are review limits, not correctness guarantees.
+* Default target and normal review unit: 10 eligible historical event or aftermath orders per pull
+  request.
+* One coherent batch is the PR's major feature and is reviewed as a single packet.
+* The batch is selected only from the first eligible `new-order` event or aftermath records by
+  ascending `position` in `scripts/data/cbh-modern-inventory.json`; commerce, excluded,
+  deferred/recent-source, path-source, fast-track, broad era or bridge work, reuse-existing items, and
+  any record blocked by exact-resolution or overlap gates are skipped and recorded before the next
+  eligible record is considered.
+* Backfill only with the next eligible record without reordering. The packet stops at 10 or at the
+  last eligible record, whichever comes first, and any stop condition blocks that record without
+  weakening the repository gate.
+* Duplicate prevention stays active across the whole packet: a candidate whose batch id, source URL,
+  exact selected issue sequence, or catalog id matches a shipped order or any peer guide is not
+  eligible for this batch and is skipped with the exact evidence before the next eligible record is
+  considered.
+* Soft generated-data ceiling and total scope remain subject to repository size gates and per-guide
+  correctness, not to a one-list default. The batch remains reviewable only so long as the packet is
+  coherent and every guide keeps the exact-resolution and overlap gates.
 
 ## Validation Contract
 
@@ -231,35 +257,44 @@ reading path, overlap treatment, approved count, ambiguous identity, or a thresh
   the inventory remains build-time only, and no reading guide is added.
 
 <!-- rpi:phase id=P02 -->
-### [ ] P02: Prove World War Hulk: Aftersmash end to end
+### [ ] P02: Freeze and ship the first 10-order event batch
 
-* Intent: Use the foundation on the flat 26-reference historical pilot.
-* Pull request boundary: One pilot guide plus its mapping, overlap report, generated data, tests,
-  product records, and direct workflow corrections.
+* Intent: Use the foundation on the earliest eligible production packet in source order, not a
+  one-guide pilot.
+* Pull request boundary: The first 10 eligible `new-order` event or aftermath records by ascending
+  inventory position, plus their mappings, overlap reports, generated data, tests, product records,
+  and direct workflow corrections.
 * Dependencies: P01 merged or present on the implementation branch.
+* Selected packet: `secret-war`, `decimation`, `spider-man-the-other`, `world-war-hulk`,
+  `world-war-hulk-aftersmash`, `fall-of-the-hulks`, `shadowland`, `chaos-war`, `fear-itself`,
+  and `avengers-vs-x-men`.
 
 <!-- rpi:task id=P02-T01 -->
-#### [ ] P02-T01: Refresh and freeze the pilot intake
+#### [ ] P02-T01: Refresh and freeze the production packet
 
-* Inputs: Inventory id `world-war-hulk-aftersmash` and its exact source page.
-* Exact outputs: Updated inventory review date, reviewed 26-row mapping, overlap report, approved
-  manifest field block, and recorded first, middle, and final source checks.
-* Pass conditions: 26 source rows reconcile, zero ambiguity and approved exceptions remain, no
-  unapproved overlap exists, the record moves to `ready`, and the source has not changed in a way
-  that invalidates pilot suitability.
-* Stop conditions: Count changes, ambiguity remains, overlap needs a new disposition, or generated
-  data would cross a batch threshold.
+* Inputs: The 10 eligible inventory ids above, their exact source pages, and their current metadata
+  rows.
+* Exact outputs: Updated inventory review dates, 10 reviewed mappings, 10 overlap reports, approved
+  manifest field blocks, and recorded first, middle, and final checks for each guide.
+* Pass conditions: Each selected guide resolves to exact issue ids with zero ambiguity and no
+  approved exceptions, no unapproved overlap exists within the batch or against shipped orders, the
+  selected packet remains the earliest eligible record set under the position-order rule, and every
+  selected record moves to `ready` before vendor output.
+* Stop conditions: A candidate is not eligible under the source-order rule, exact resolution fails,
+  overlap is not pre-approved, or a later record still meets the rule while an earlier record remains
+  skipped without a recorded blocker.
 
 <!-- rpi:task id=P02-T02 -->
-#### [ ] P02-T02: Author and vendor the pilot
+#### [ ] P02-T02: Author and vendor the batch
 
-* Inputs: Approved P02-T01 mapping and manifest fields.
-* Exact outputs: `src/data/orders/world-war-hulk-aftersmash.md`, one manifest entry,
-  `src/data/world_war_hulk_aftersmash.json`, rebuilt catalog data, focused assertions, backlog,
-  changelog, provenance, and contributor updates directly required by observed failures.
-* Pass conditions: Exact 26-id order, correct credit and source link, zero placeholders and warnings,
-  all gates pass, live contract passes, browser check passes, and each new semantic check has a
-  smallest-revert failure proof. The inventory record then moves to `shipped` with its catalog id.
+* Inputs: Approved P02-T01 packet and manifest fields for all 10 guides.
+* Exact outputs: Ordered Markdown files, one manifest entry per list, generated JSON outputs, focused
+  assertions, backlog, changelog, provenance, and contributor updates directly required by observed
+  failures.
+* Pass conditions: Every selected guide keeps the exact issue-id sequence from its reviewed mapping,
+  zero placeholders and warnings remain, all gates pass, live contract passes for all added issue ids,
+  browser checks pass, and each new semantic check has a smallest-revert failure proof. The selected
+  inventory records then move to `shipped` with their catalog ids.
 
 <!-- rpi:phase id=P03 -->
 ### [ ] P03: Deliver historical event batches

@@ -64,6 +64,13 @@ export function buildComparisonReport({ candidateIds, orders, peerOrders = [] })
     throw new Error('Duplicate candidate issue ids cannot be compared');
   }
 
+  const seenSequenceKeys = new Set();
+  const candidateSequenceKey = normalizedCandidateIds.join('|');
+  if (seenSequenceKeys.has(candidateSequenceKey)) {
+    throw new Error('Duplicate selected issue sequence across the candidate batch');
+  }
+  seenSequenceKeys.add(candidateSequenceKey);
+
   const allOrders = [...orders, ...peerOrders];
   const comparisons = allOrders.map((order) => {
     const existingIds = issueIdsFromValue(order.issueIds ?? order.items ?? order.issues ?? []);
@@ -73,6 +80,12 @@ export function buildComparisonReport({ candidateIds, orders, peerOrders = [] })
     if (new Set(existingIds).size !== existingIds.length) {
       throw new Error(`Duplicate comparison issue ids in order ${order.orderId ?? order.id ?? 'unknown'}`);
     }
+    const sequenceKey = existingIds.join('|');
+    if (seenSequenceKeys.has(sequenceKey)) {
+      throw new Error(`Duplicate selected issue sequence across the candidate and compared batch: ${sequenceKey}`);
+    }
+    seenSequenceKeys.add(sequenceKey);
+
     const outcome = compareIssueSets(normalizedCandidateIds, existingIds);
     return {
       orderId: order.orderId ?? order.id ?? 'unknown',

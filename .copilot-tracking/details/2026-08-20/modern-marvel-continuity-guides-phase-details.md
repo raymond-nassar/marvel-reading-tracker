@@ -24,15 +24,22 @@
 8. Do not expose new inventory, mapping, overlap data, or new build modules to browser runtime code.
    Build scripts must reuse suitable exported pure helpers from `src/js/lib/`.
 9. Use ASCII punctuation in authored copy.
-10. Add or update the backlog and changelog for each user- or maintainer-visible implementation pull
-    request.
+10. The next production PR targets 10 eligible records by source-order position, not a one-guide or
+   two-guide default. Skip and record all non-eligible records before backfilling, and keep every
+   source-order rule visible in the changes record.
+11. After the merge from `origin/main`, reject any candidate whose batch id, source URL, exact selected
+   issue sequence, or catalog id duplicates a shipped order or a peer guide. Treat title similarity as
+   a prompt to investigate, never as proof, and backfill from the next eligible position without
+   reordering.
+12. Add or update the backlog and changelog for each user- or maintainer-visible implementation pull
+   request.
 
 ## Phase Index
 
 | Phase | Purpose | Implementation status |
 |---|---|---|
 | P01 | Build maintained inventory, resolver, and overlap report | Ready after critique |
-| P02 | Resolve and ship Aftersmash pilot | Blocked by P01 |
+| P02 | Resolve and ship the first 10-order historical batch in source order | Blocked by P01 |
 | P03 | Repeat one historical event batch at a time | Blocked by P02 |
 | P04 | Create separate plans for deferred families and recent material | Blocked by rollout evidence |
 
@@ -334,88 +341,110 @@ Run the three focused P01 test files together, then `npm run lint`, `npm test`, 
 `npm run sizes`, `npm run palette`, `npm run publication`, and the full anchors workflow.
 
 <!-- rpi:phase id=P02 -->
-## P02: Prove World War Hulk: Aftersmash end to end
+## P02: Freeze and ship the first 10-order event batch
 
 ### Phase Boundary
 
-This is a separate pull request after P01. It adds one guide only. It may correct P01 workflow
-defects exposed by the pilot, but it may not add a second guide or an unrelated catalog feature.
+This is a separate pull request after P01. It targets the first 10 eligible `new-order` event or
+aftermath records by ascending inventory position, selected from `scripts/data/cbh-modern-inventory.json`
+without reordering and without widening the batch. It may correct P01 workflow defects exposed by the
+batch, but it may not add a different packet or an unrelated catalog feature.
+
+Selected packet before implementation:
+
+- `secret-war`
+- `decimation`
+- `spider-man-the-other`
+- `world-war-hulk`
+- `world-war-hulk-aftersmash`
+- `fall-of-the-hulks`
+- `shadowland`
+- `chaos-war`
+- `fear-itself`
+- `avengers-vs-x-men`
+
+The packet is frozen only after the higher-capability reviewer confirms the selected ten are the
+earliest eligible records under the source-order rule and that each guide satisfies the exact
+resolution, overlap, and repository gate requirements.
 
 <!-- rpi:task id=P02-T01 -->
-### P02-T01: Refresh and freeze the pilot intake
+### P02-T01: Refresh and freeze the production packet
 
 #### Fixed Editorial Input
 
+For each selected record, the following fields remain frozen before vendor output unless a reviewer
+explicitly approves a change:
+
 | Field | Value |
 |---|---|
-| Inventory id | `world-war-hulk-aftersmash` |
-| Source page | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-10-wwh-aftersmash/ |
-| Expected baseline rows | 26 |
-| `type` | `event` |
+| Inventory selection rule | earliest eligible `new-order` event or aftermath records by ascending `position` |
+| Batch size | 10 |
+| Source-order basis | `scripts/data/cbh-modern-inventory.json` |
+| `type` | `event` or sub-guide aftermath depending on the record |
 | `depth` | `full` |
 | `beginner` | `false` |
 | Group and variant | none |
-| Reading path | none in the pilot |
+| Reading path | none in the packet |
 | Source origin | `Compiled for this project from Comic Book Herald's guide` |
 | Source license | null |
 
-Timeline and cover issue id are not delegated. A higher-capability reviewer must freeze them in the
-mapping packet before P02-T02.
+Timeline and cover issue ids are not delegated. A higher-capability reviewer must freeze them for
+both the per-guide mapping packets and the packet-level readiness check before P02-T02.
 
 #### Allowed Files
 
-* Update the Aftersmash inventory record.
-* Add `scripts/data/cbh-mappings/world-war-hulk-aftersmash.json`.
-* Add `scripts/data/cbh-overlaps/world-war-hulk-aftersmash.json`.
+* Update each selected inventory record.
+* Add one mapping file per selected guide under `scripts/data/cbh-mappings/`.
+* Add one overlap report per selected guide under `scripts/data/cbh-overlaps/`.
 * Update the changes record.
 
 #### Mechanical Steps
 
-1. Retrieve the exact source page and record the date.
+1. Retrieve each exact source page and record the date.
 2. Copy only issue-bearing references in source order.
 3. Expand every source range to one row per issue.
 4. Record any narrative sections as source notes, not Markdown headings.
-5. Run the resolver.
-6. Stop if the approved count is not 26 or any row is ambiguous or unmatched.
+5. Run the resolver for each guide.
+6. Stop if the approved count is not the frozen source count or any row is ambiguous or unmatched.
 7. Stop if any row is an `approved-exception`; MRT-004 does not define omission or placeholder
    behavior.
-8. Run the overlap report.
+8. Run the overlap report for each guide.
 9. Stop on any non-none relationship not already approved in the inventory.
 10. Populate `overlapIds` only from non-none relationships in the committed report.
-11. Have a higher-capability reviewer freeze timeline, cover issue id, approved count, source spot
-   checks, and any exception.
-12. After the packet is approved, set delivery status to `ready`.
+11. Have a higher-capability reviewer freeze timeline, cover issue ids, approved counts, source spot
+   checks, and any exception for the full packet.
+12. After the packet is approved, set each delivery status to `ready`.
 
 #### Validation
 
-Run the focused inventory, resolver, and overlap tests plus the two CLI commands for Aftersmash.
+Run the focused inventory, resolver, and overlap tests plus the CLI commands for each packet item.
 
 <!-- rpi:task id=P02-T02 -->
-### P02-T02: Author and vendor the pilot
+### P02-T02: Author and vendor the batch
 
 #### Allowed Files
 
-* Add `src/data/orders/world-war-hulk-aftersmash.md`.
-* Update `src/data/curated-lists.json`.
-* Generate `src/data/world_war_hulk_aftersmash.json` and rebuild `src/data/catalog.json`.
+* Add one Markdown file under `src/data/orders/` for each selected guide.
+* Update `src/data/curated-lists.json` for each selected guide.
+* Generate each `src/data/*.json` output and rebuild `src/data/catalog.json`.
 * Add or update only directly owning focused test blocks.
-* Update README, provenance, backlog, changelog, and changes record only as required by the pilot.
+* Update README, provenance, backlog, changelog, and changes record only as required by the batch.
 
 #### Mechanical Steps
 
-1. Generate the checklist from selected mapping rows without reordering.
+1. Generate each checklist from its selected mapping rows without reordering.
 2. Use one Markdown issue line per row with an exact Marvel issue URL.
 3. Add no `##` heading unless P02-T01 explicitly approved a collected-edition group.
-4. Add the frozen manifest row and `expect: 26`.
-5. Vendor only the pilot id.
+4. Add the frozen manifest row and expected count for each guide.
+5. Vendor each guide only after its packet is approved.
 6. Treat every duplicate, count, placeholder, and unresolved warning as failure.
-7. Assert generated id sequence equals mapping id sequence.
-8. Assert catalog provenance and editorial fields equal the frozen packet.
-9. Compare source rows 1, 13, and 26 plus every exception-adjacent row.
-10. Run offline gates, live contract, and browser check.
+7. Assert generated id sequence equals mapping id sequence for each guide.
+8. Assert catalog provenance and editorial fields equal the frozen packet for each guide.
+9. Compare source rows at the first, middle, and final positions plus every exception-adjacent row.
+10. Run offline gates, live contract, and browser checks for the batch.
 11. Prove each new semantic assertion fails under its smallest revert.
-12. After every check passes, set delivery status to `shipped` and add the manifest id to
-    `catalogIds`.
+12. After every check passes, set each delivery status to `shipped` and add each manifest id to the
+   current order list.
 
 #### Stop Conditions
 
@@ -435,7 +464,7 @@ A higher-capability planner creates this packet before delegating a batch:
 
 | Required field | Rule |
 |---|---|
-| Inventory ids | One by default; two only under the plan exception |
+| Inventory ids | Exactly the first 10 eligible `new-order` event or aftermath records by ascending `position` |
 | Source retrieval dates | Current for this batch |
 | Mapping paths | Fully resolved and reviewed |
 | Overlap report paths | Complete and disposition-compatible |
@@ -443,15 +472,17 @@ A higher-capability planner creates this packet before delegating a batch:
 | Approved counts | Exact integers |
 | Source spot checks | First, middle, final, and every exception boundary |
 | Allowed files | Complete explicit list |
-| Threshold result | Guide count, issue count, family, and generated-size estimate pass |
+| Threshold result | Packet is coherent, every guide passes exact-resolution and overlap gates, and total scope remains within the maintained batch rule |
 
 <!-- rpi:task id=P03-T01 -->
 ### P03-T01: Prepare one batch packet
 
-1. Select the lowest-position `new-order` record whose delivery status is `pending`.
-2. Refresh only that source and its inventory record.
-3. Create and resolve its mapping.
-4. Create its overlap report.
+1. Select the earliest eligible `new-order` records in source order while skipping commerce, excluded,
+   deferred/recent-source, path-source, fast-track, broad-era or bridge work, reuse-existing items,
+   and any record blocked by exact-resolution or overlap gates.
+2. Refresh only the chosen source records and their inventory entries.
+3. Create and resolve each mapping.
+4. Create each overlap report.
 5. Freeze all editorial fields and allowed paths.
 6. Reject a packet containing `approved-exception`.
 7. Set delivery status to `ready` only when the packet is complete.
