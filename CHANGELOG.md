@@ -14,6 +14,17 @@ quote in a bug report.
 
 ## Unreleased
 
+### The library and progress views now show a summary before the rows
+
+In plain English: the three screens that list what you have read now put a short summary above the
+list, so you can see how much you have read without counting the rows yourself. Everything read is
+now grouped by when you read it, under headings like Today and In the past week. The rows carry
+small cover pictures, which makes an issue much quicker to recognise than a line of text. And all
+three screens now use the full width of a wide monitor instead of staying in a narrow column.
+
+Nothing you have saved is affected. Your reading progress is untouched. Only the way these screens
+are laid out has changed.
+
 ### The reading screen tells you where you are, and fills the screen it is given
 
 In plain English: the screen you use while working through a reading order now says how far along you

@@ -1178,3 +1178,61 @@ function dedupe(arr) {
 function clamp(n, lo, hi) {
   return Math.min(hi, Math.max(lo, n));
 }
+
+// ---------------------------------------------------------------- progress
+
+export function completionState(read, total) {
+  const nRead = Number(read) || 0;
+  const nTotal = Number(total) || 0;
+  if (nTotal > 0 && nRead >= nTotal) return 'done';
+  if (nRead === 0) return 'unstarted';
+  return 'active';
+}
+
+export function seriesWord(state) {
+  return state === 'done' ? 'Fully read' : state === 'active' ? 'Reading' : state === 'unstarted' ? 'Not started' : '';
+}
+
+export function orderWord(state) {
+  return state === 'done' ? 'Finished' : state === 'active' ? 'Reading' : state === 'unstarted' ? 'Not started' : '';
+}
+
+export function progressSummary(rows) {
+  const list = Array.isArray(rows) ? rows : [];
+  let read = 0;
+  let tracked = 0;
+  let done = 0;
+  for (const row of list) {
+    read += Number(row?.read) || 0;
+    tracked += Number(row?.tracked) || 0;
+    if (completionState(row?.read, row?.tracked) === 'done') done += 1;
+  }
+  return { series: list.length, read, tracked, done };
+}
+
+export function progressGroups(rows) {
+  const list = Array.isArray(rows) ? rows : [];
+  const groups = new Map([
+    ['active', { key: 'active', label: 'In progress', rows: [] }],
+    ['unstarted', { key: 'unstarted', label: 'Not started', rows: [] }],
+    ['done', { key: 'done', label: 'Fully read', rows: [] }],
+  ]);
+  for (const row of list) {
+    groups.get(completionState(row?.read, row?.tracked)).rows.push(row);
+  }
+  return [...groups.values()].filter((group) => group.rows.length > 0);
+}
+
+export function orderStates(entries) {
+  const list = Array.isArray(entries) ? entries : [];
+  let active = 0;
+  let done = 0;
+  let unstarted = 0;
+  for (const entry of list) {
+    const state = completionState(entry?.read, entry?.total);
+    if (state === 'done') done += 1;
+    else if (state === 'unstarted') unstarted += 1;
+    else active += 1;
+  }
+  return { orders: list.length, active, done, unstarted };
+}

@@ -1205,3 +1205,89 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
   .row.now { border: 2px solid Highlight; box-shadow: none; }
   #reading-filters { background: Canvas; }
 }
+
+/* ============================================================ library and progress shape
+
+   MRT-005. The library and progress screens gained a summary band, grouped sections, covers and
+   state chips, so a reader sees the shape of a screen before reading its rows one by one. Every
+   colour is a token or a tint of one, every state carries a word or a shape besides its hue, and
+   the block closes with its own forced-colours overrides so those shape distinctions survive when
+   the reader's own colours replace ours. Nothing here moves, so there is no transition to switch
+   off under reduced motion. */
+
+/* The band of counts above a grouped list. auto-fit lays the three cells across the wide canvas
+   and the query below drops them to one column on a phone, where three cells abreast are unreadable.
+   Each cell sits on a card so the figures read as a panel rather than as loose text. */
+.sumbar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin: .2rem 0 1.1rem; }
+@media (max-width: 640px) { .sumbar { grid-template-columns: 1fr; } }
+.sumcell { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: .7rem .85rem; }
+.sumfig { font-size: 1.5rem; font-weight: 680; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: var(--text); line-height: 1.1; }
+.sumlab { color: var(--muted); font-size: .78rem; margin-top: .15rem; }
+
+/* A group heading is a real h2 under the view's h1, separated from its rows by a hairline rather
+   than by weight alone, and its count is quieter and lighter so the label stays a plain heading a
+   reader can jump between. The group is a grid so the heading and its rows share the .4rem rhythm. */
+.lgroup { display: grid; gap: .4rem; margin: 0 0 1.3rem; }
+.lgroup-h { margin: 0; padding-bottom: .4rem; border-bottom: 1px solid var(--line); font-size: .95rem; font-weight: 600; color: var(--text); }
+.lgroup-n { color: var(--muted); font-size: .8rem; font-weight: 400; margin-left: .4rem; }
+
+/* A library row with a cover. Its own grid rather than .result's flex line, so a fixed cover column
+   leads the existing main column. The cover is the size and shape the reading rows already use, and
+   its fallback follows the reading row's bordered tile, not the larger gradient ones. */
+.result-cov { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: .8rem; align-items: center; }
+.rcov { position: relative; width: 44px; }
+.rcov-i { width: 44px; aspect-ratio: 2/3; object-fit: cover; border-radius: 5px; border: 1px solid var(--line); display: block; }
+body.nocovers .rcov-i, .rcov-i[hidden] { display: none; }
+.rcov-f {
+  display: none; width: 44px; aspect-ratio: 2/3; border-radius: 5px;
+  border: 1px solid var(--line-2); align-items: center; justify-content: center;
+  font-size: .66rem; font-weight: 700; color: var(--text);
+}
+body.nocovers .rcov-f, .rcov-f.show { display: flex; }
+
+/* The empty-state rule is reused as it stands; only the glyph needs a size, scoped to its own class
+   so the shared .empty-state on the all-read panel is untouched. */
+.empty-state .empty-glyph { font-size: 2rem; line-height: 1; margin-bottom: .4rem; }
+
+/* State chips. Shape carries the state as well as colour: a dashed edge for the two absence states
+   and a solid teal edge for the complete one, whose tick glyph is supplied in the markup. */
+.badge-done { color: var(--teal); border-color: rgb(var(--teal-line) / 25.098%); border-style: solid; }
+.badge-none { border-style: dashed; border-color: var(--line-2); }
+
+/* Three cover cells, a recognition strip on a saved-order tile. The fallback uses the gradient
+   tokens and the per-series `--h` in the shape .ocard-art .of does, so a cell with no cover still
+   distinguishes its order. Fixed cells keep the tile a constant height whatever the data holds. */
+.mosaic { display: flex; gap: .25rem; }
+.mosaic-c { flex: 0 0 auto; width: 30px; }
+.mosaic-i { width: 30px; aspect-ratio: 2/3; object-fit: cover; border-radius: 5px; border: 1px solid var(--line); display: block; }
+body.nocovers .mosaic-i, .mosaic-i[hidden] { display: none; }
+.mosaic-f {
+  display: none; width: 30px; aspect-ratio: 2/3; border-radius: 5px;
+  border: 1px solid var(--line-2);
+  --h: 0;
+  background: linear-gradient(155deg, var(--fallback-a), var(--fallback-b));
+}
+body.nocovers .mosaic-f, .mosaic-f.show { display: flex; }
+
+/* A quiet row above the reading filters, holding the whole-order bar and its reading. The bar takes
+   the space it can up to a cap so the row does not run the width of the canvas. */
+.order-strip { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin: .2rem 0 .1rem; }
+.order-strip[hidden] { display: none; }
+.order-strip .pbar { flex: 1 1 12rem; min-width: 8rem; max-width: 24rem; }
+.order-pct { color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; }
+.order-shown { color: var(--muted); font-size: .78rem; }
+
+/* The summary beside the shelf heading. It wraps under the heading on a narrow canvas rather than
+   crowding it, which .sec-h's baseline row would otherwise not allow. */
+.sec-note { color: var(--muted); font-size: .8rem; text-align: right; }
+
+@media (forced-colors: active) {
+  /* The raised surfaces and tinted edges all flatten here, so every bordered element takes a system
+     border and every chip keeps a visible outline, and the dashed and solid edges stay distinct so
+     the states are still told apart by shape and not by a colour the mode has replaced. */
+  .sumcell { border: 1px solid CanvasText; }
+  .lgroup-h { border-bottom: 1px solid CanvasText; }
+  .rcov-i, .rcov-f, .mosaic-i, .mosaic-f { border: 1px solid CanvasText; }
+  .badge-done { border: 1px solid CanvasText; }
+  .badge-none { border: 1px dashed CanvasText; }
+}
