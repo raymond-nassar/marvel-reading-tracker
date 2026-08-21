@@ -511,7 +511,6 @@
         "size_claims": 7,
         "palette_pairs": 88,
         "palette_new_failures": 0,
-        "publication_blobs": 2321,
         "publication_findings": 0,
         "anchors": 993,
         "repository_contract": "33/33",
@@ -525,7 +524,7 @@
         "overlap_hash_changes": 0
       },
       "delivery": {
-        "status": "commit-and-pull-request-pending",
+        "status": "validated-delivery-in-progress",
         "review_agent_passes": "waived by parent instruction",
         "agent_merge": "required after pull request creation"
       }

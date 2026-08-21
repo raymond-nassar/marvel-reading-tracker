@@ -361,8 +361,7 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 * Full suite: 1,293 tests passed with 0 failed.
 * Offline gates: lint reported 0; 156 ranked backlog rows, 5 parked rows, and 161 detail blocks all
   agree; all 7 stated file sizes agree; 88 palette pairs produced 0 new failures; publication
-  scanned 2,321 blobs and found 0 content findings; and all 993 anchors are unchanged after the
-  reviewed 46-citation re-aim.
+  found 0 content findings; and all 993 anchors are unchanged after the reviewed citation re-aims.
 * Live gates: The repository contract passed 33 of 33 assumptions across 17 requests. The added
   packet contract passed 178 of 178 issue identities.
 * Browser gate: Installed Edge passed 119 assertions across 14 scenarios.
