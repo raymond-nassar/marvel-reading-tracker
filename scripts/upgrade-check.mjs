@@ -33,6 +33,7 @@ const OLD_VERSION = OLD_REF.slice(1);
 const NEW_VERSION = JSON.parse(await readFile(join(REPO, 'package.json'), 'utf8')).version;
 const STATE_KEY = 'mrt.state.v2';
 const execFileAsync = promisify(execFile);
+const HISTORICAL_GIT_ENV = Object.freeze({ ...process.env, GIT_NO_LAZY_FETCH: '1' });
 
 // ------------------------------------------------------------------ mutations
 
@@ -123,11 +124,17 @@ export async function installHistorical({ repo, ref, dest }) {
   await execFileAsync('git', ['rev-parse', '--verify', `${ref}^{commit}`], {
     cwd: repo,
     encoding: 'utf8',
+    env: HISTORICAL_GIT_ENV,
   });
   const { stdout } = await execFileAsync(
     'git',
     ['ls-tree', '-r', '-z', '--name-only', ref, '--', 'src', 'server.mjs'],
-    { cwd: repo, encoding: 'utf8', maxBuffer: 100 * 1024 * 1024 },
+    {
+      cwd: repo,
+      encoding: 'utf8',
+      env: HISTORICAL_GIT_ENV,
+      maxBuffer: 100 * 1024 * 1024,
+    },
   );
   const paths = stdout.split('\0').filter(Boolean);
   if (!paths.includes('server.mjs') || !paths.some((path) => path.startsWith('src/'))) {
@@ -145,6 +152,7 @@ export async function installHistorical({ repo, ref, dest }) {
     const { stdout: bytes } = await execFileAsync('git', ['show', `${ref}:${path}`], {
       cwd: repo,
       encoding: 'buffer',
+      env: HISTORICAL_GIT_ENV,
       maxBuffer: 100 * 1024 * 1024,
     });
     await writeFile(target, bytes);

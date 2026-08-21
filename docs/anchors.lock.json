@@ -224,6 +224,136 @@
     "fp": "357cc6fc85edf292",
     "head": "| Authoring the curated manifest and orders | `scripts/vendor-orders.mjs`, `src/js/lib/curated.js`, "
   },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c1|CHANGELOG.md:5-10|0": {
+    "anchor": "CHANGELOG.md:5-10",
+    "fp": "1e9ed36434487155",
+    "head": "The version number is explained in [`src/js/lib/version.js`](src/js/lib/version.js) and is"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c1|src/js/lib/version.js:3-16|0": {
+    "anchor": "src/js/lib/version.js:3-16",
+    "fp": "4bcbad00f75d43d2",
+    "head": "// What the number means, since a version is worthless if nobody knows what it promises:"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c10|README.md:82-95|0": {
+    "anchor": "README.md:82-95",
+    "fp": "33e345565ec90a76",
+    "head": "## Upgrade without losing progress"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c11|README.md:97-107|0": {
+    "anchor": "README.md:97-107",
+    "fp": "d7eecfa2b2d7d507",
+    "head": "## Learn more"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c12|docs/MAINTAINING.md:68-387|0": {
+    "anchor": "docs/MAINTAINING.md:68-387",
+    "fp": "1803db0b98450997",
+    "head": "## Run the browser check"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c2|package.json:3|0": {
+    "anchor": "package.json:3",
+    "fp": "59ef10a560a7a635",
+    "head": "\"version\": \"1.3.0\","
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c3|CHANGELOG.md:17-274|0": {
+    "anchor": "CHANGELOG.md:17-274",
+    "fp": "ebce048a7737aea8",
+    "head": "## 1.3.0"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c4|src/data/catalog.json:3|0": {
+    "anchor": "src/data/catalog.json:3",
+    "fp": "ec8c1d18d68b512a",
+    "head": "\"lists\": ["
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c5|src/js/lib/model.js:12|0": {
+    "anchor": "src/js/lib/model.js:12",
+    "fp": "d66d703756839bee",
+    "head": "export const SCHEMA_VERSION = 2;"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c6|CHANGELOG.md:206-208|0": {
+    "anchor": "CHANGELOG.md:206-208",
+    "fp": "ac23128387bcc39b",
+    "head": "Installed copies still look for the same Windows download, saved reading progress stays under the"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c7|README.md:1-118|0": {
+    "anchor": "README.md:1-118",
+    "fp": "c92a36d83a1d6b06",
+    "head": "# Recap Page"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c8|CONTRIBUTING.md:51-213|0": {
+    "anchor": "CONTRIBUTING.md:51-213",
+    "fp": "02b0bab7ebe87a14",
+    "head": "## Before you write anything"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c9|CONTRIBUTING.md:59-62|0": {
+    "anchor": "CONTRIBUTING.md:59-62",
+    "fp": "dd7e301c25d4373b",
+    "head": "Then read, in this order: what the app is trying to do, in the first half of the README; how it is"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c9|GOVERNANCE.md:66-70|0": {
+    "anchor": "GOVERNANCE.md:66-70",
+    "fp": "a380e46d0ae43c40",
+    "head": "The maintainer decides when to cut one. The mechanics are in"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-docs-research.md|codebase-evidence#c9|SUPPORT.md:8-18|0": {
+    "anchor": "SUPPORT.md:8-18",
+    "fp": "829bed8a4b589083",
+    "head": "Most problems people hit are one of five, and all five are answered in"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md|codebase-evidence#c1|scripts/upgrade-check.mjs:101-110|0": {
+    "anchor": "scripts/upgrade-check.mjs:101-110",
+    "fp": "a70830d25465e517",
+    "head": "// A copy of the whole app, which is what unzipping a release produces, with only the reported"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md|codebase-evidence#c1|scripts/upgrade-check.mjs:216-220|0": {
+    "anchor": "scripts/upgrade-check.mjs:216-220",
+    "fp": "f745f71aa5914615",
+    "head": "const base = await mkdtemp(join(tmpdir(), 'mrt-upgrade-'));"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md|codebase-evidence#c2|scripts/upgrade-check.mjs:248-305|0": {
+    "anchor": "scripts/upgrade-check.mjs:248-305",
+    "fp": "7f21f381e74a4458",
+    "head": "// Navigation is by hash throughout. Nothing here may alter the origin, the port included."
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md|codebase-evidence#c3|scripts/browser-check.mjs:1864-1876|0": {
+    "anchor": "scripts/browser-check.mjs:1864-1876",
+    "fp": "431a331f9d0bf667",
+    "head": "async function main() {"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md|codebase-evidence#c3|scripts/browser-check.mjs:53-89|0": {
+    "anchor": "scripts/browser-check.mjs:53-89",
+    "fp": "954db2b8cbcff5b0",
+    "head": "function driverCandidates() {"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md|codebase-evidence#c4|scripts/upgrade-check.mjs:436-437|0": {
+    "anchor": "scripts/upgrade-check.mjs:436-437",
+    "fp": "b50a045b28c5e655",
+    "head": "async function main() {"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md|codebase-evidence#c5|.copilot-tracking/reviews/logs/2026-08-21/major-release-docs-review.md:118-125|0": {
+    "anchor": ".copilot-tracking/reviews/logs/2026-08-21/major-release-docs-review.md:118-125",
+    "fp": "ae9b247b348ebee1",
+    "head": "### RV-003 [Medium]: Canonical maintainer commands do not match the runners"
+  },
+  ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md|codebase-evidence#c6|.github/workflows/ci.yml:26-140|0": {
+    "anchor": ".github/workflows/ci.yml:26-140",
+    "fp": "d2f9aede81f5242f",
+    "head": "jobs:"
+  },
+  ".copilot-tracking/research/2026-08-21/offline-git-proof-research.md|questions-and-evidence#c1|scripts/upgrade-check.mjs:123-149|0": {
+    "anchor": "scripts/upgrade-check.mjs:123-149",
+    "fp": "09eba0ec9ee2e811",
+    "head": "await execFileAsync('git', ['rev-parse', '--verify', `${ref}^{commit}`], {"
+  },
+  ".copilot-tracking/research/2026-08-21/offline-git-proof-research.md|questions-and-evidence#c2|.copilot-tracking/reviews/logs/2026-08-21/major-release-proof-corrections-review.md:89-96|0": {
+    "anchor": ".copilot-tracking/reviews/logs/2026-08-21/major-release-proof-corrections-review.md:89-96",
+    "fp": "db5d55a5c6d48fb3",
+    "head": "* Evidence: scripts/upgrade-check.mjs invokes `git rev-parse`, `git ls-tree`, and `git show` with th"
+  },
+  ".copilot-tracking/research/2026-08-21/offline-git-proof-research.md|questions-and-evidence#c3|test/upgrade-check.test.js:1-50|0": {
+    "anchor": "test/upgrade-check.test.js:1-50",
+    "fp": "1b7fbd3be551058b",
+    "head": "import test from 'node:test';"
+  },
   ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|lower-model-normalization-contract|scripts/vendor-orders.mjs:270-323|0": {
     "anchor": "scripts/vendor-orders.mjs:270-323",
     "fp": "442d0840b0e45b52",
@@ -2309,23 +2439,23 @@
     "fp": "b00b1254dcc2dcbf",
     "head": "if (err?.status === 404) refused.add(id);"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:245-257|0": {
-    "anchor": "scripts/upgrade-check.mjs:245-257",
+  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:253-265|0": {
+    "anchor": "scripts/upgrade-check.mjs:253-265",
     "fp": "2eff489847b65b2b",
     "head": "async function boot(page, origin, hash = '') {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:347-382|0": {
-    "anchor": "scripts/upgrade-check.mjs:347-382",
+  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:355-390|0": {
+    "anchor": "scripts/upgrade-check.mjs:355-390",
     "fp": "36c23d67f634923f",
     "head": "// The upgrade itself. The old install stops serving and a different directory takes the same"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:384-407|0": {
-    "anchor": "scripts/upgrade-check.mjs:384-407",
+  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:392-415|0": {
+    "anchor": "scripts/upgrade-check.mjs:392-415",
     "fp": "9f364d659ab7a8e2",
     "head": "// The control, and without it none of the above means what it says. The same new install is"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:45-82|0": {
-    "anchor": "scripts/upgrade-check.mjs:45-82",
+  "PRODUCT_BACKLOG.md|item-details|scripts/upgrade-check.mjs:46-83|0": {
+    "anchor": "scripts/upgrade-check.mjs:46-83",
     "fp": "44ec7512e4dd14f8",
     "head": "const MUTATIONS = ["
   },

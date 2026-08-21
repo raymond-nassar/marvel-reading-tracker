@@ -53,6 +53,13 @@ test('the upgrade journey owns historical source and nonzero read progress', asy
   const source = await readFile(new URL('../scripts/upgrade-check.mjs', import.meta.url), 'utf8');
 
   assert.match(source, /installHistorical\(\{\s*repo:\s*REPO,\s*ref:\s*OLD_REF,\s*dest:\s*oldDir,?\s*\}\)/);
+  assert.match(
+    source,
+    /const HISTORICAL_GIT_ENV = Object\.freeze\(\{\s*\.\.\.process\.env,\s*GIT_NO_LAZY_FETCH: '1',?\s*\}\);/,
+  );
+  const historicalGitCalls = [...source.matchAll(/execFileAsync\(\s*'git',[\s\S]*?\);/g)];
+  assert.equal(historicalGitCalls.length, 3);
+  for (const [call] of historicalGitCalls) assert.match(call, /env: HISTORICAL_GIT_ENV/);
   assert.match(source, /#btn-hero-done/);
   assert.match(source, /readIds/);
   assert.match(source, /progressPainted\(paintedBefore,\s*1,\s*before\.itemIds\.length\)/);

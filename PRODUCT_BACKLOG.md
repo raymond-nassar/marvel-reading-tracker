@@ -11104,15 +11104,15 @@ delivered module so boot waits for the update check.
 
 The sentence telling the reader to delete the old folder was the one claim in the notice that
 nothing exercised, and it is the one whose failure loses an entire reading history. `npm run upgrade`
-drives it against two real installs. `scripts/upgrade-check.mjs:347-382` is the heart of it: after a
+drives it against two real installs. `scripts/upgrade-check.mjs:355-390` is the heart of it: after a
 second directory takes the address the first was using, the check reads which build is being served,
 that the saved order survived by identity and by issue order, and that the upgraded copy draws the
-order and its progress. `scripts/upgrade-check.mjs:384-407` is the control, serving the same new copy
+order and its progress. `scripts/upgrade-check.mjs:392-415` is the control, serving the same new copy
 at a second address and requiring the progress to be absent there. Without the control the check
 would pass just as happily if progress were being read out of the folder, which is the opposite of
 what the notice claims.
 
-`npm run upgrade:prove` broke five things on purpose, at `scripts/upgrade-check.mjs:45-82`, and each
+`npm run upgrade:prove` broke five things on purpose, at `scripts/upgrade-check.mjs:46-83`, and each
 one reddened the assertion it was aimed at: five of five. Freezing the new copy's
 version number breaks only the claim that the new build is being served. Renaming the state key
 breaks only the painting assertion, because the reader's data survives untouched under the old name
@@ -11124,7 +11124,7 @@ it is supposed to differ from breaks the control. Neither command runs in CI, fo
 `npm run browser` does not.
 
 The first version of the check was itself the finding, and it is recorded at
-`scripts/upgrade-check.mjs:245-257`. Navigating to a URL that differs only in its fragment is a
+`scripts/upgrade-check.mjs:253-265`. Navigating to a URL that differs only in its fragment is a
 same-document navigation, so it swapped the served directory and then re-ran nothing: the modules in
 memory were still the old copy's. It reported the old version after the upgrade while every storage
 assertion passed, which reads as a serious finding about the app and was in fact a check that had

@@ -89,7 +89,7 @@
 | C1 | Both disposable installs copy current `src` and differ only by a patched displayed version. | scripts/upgrade-check.mjs:101-110; scripts/upgrade-check.mjs:216-220 | high |
 | C2 | The check imports an order and expects zero read issues before and after the swap. | scripts/upgrade-check.mjs:248-305 | high |
 | C3 | The browser runner accepts MRT_PUPPETEER, MRT_EDGE, and `--only=`. | scripts/browser-check.mjs:53-89; scripts/browser-check.mjs:1864-1876 | high |
-| C4 | The upgrade runner accepts `--prove` and no scenario selector. | scripts/upgrade-check.mjs:352-365 | high |
+| C4 | The upgrade runner accepts `--prove`; no scenario selector exists. | scripts/upgrade-check.mjs:436-437; absent: any `--only` or scenario selector in scripts/upgrade-check.mjs, full-file search | high |
 | C5 | The maintainer guide named different variables and `--scenario`, claimed port 8787 and committed upgrade snapshots, and said pull requests run browser journeys before this correction. | .copilot-tracking/reviews/logs/2026-08-21/major-release-docs-review.md:118-125 | high |
 | C6 | CI runs deterministic Node checks but no installed-browser journey. | .github/workflows/ci.yml:26-140 | high |
 
