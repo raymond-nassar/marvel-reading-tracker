@@ -851,7 +851,7 @@ const SCENARIOS = [
       //
       // checkVisibility() with no argument answers a narrower question than it looks like it does:
       // it defaults every option off and so returns true for both `visibility: hidden` and
-      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:716` hides the row
+      // `opacity: 0`. The second is not hypothetical here. `src/styles.css:721` hides the row
       // actions with exactly `opacity: 0`, so it is this stylesheet's established way of putting a
       // control out of reach, and the defaults are blind to it. Measured in the same Edge this
       // drives: with the two buttons faded that way both rows passed while nothing sat under the
@@ -1339,6 +1339,61 @@ const SCENARIOS = [
         navigated = await visibleView(page) === 'view-about';
       }
       t.check('and the rendered app remains usable while the request is unsettled', navigated, await visibleView(page));
+    },
+  },
+  {
+    id: 'reading-screen',
+    title: 'the reading screen uses the desktop it is given and states progress in words',
+    async run(page, t) {
+      await importOrder(page);
+      await openFullOrder(page);
+
+      await page.setViewport({ width: 1280, height: 900 });
+      const measure = () => page.evaluate(() => {
+        const px = (el) => (el ? Math.round(el.getBoundingClientRect().width) : 0);
+        const shelf = document.querySelector('#shelf');
+        const tiles = [...document.querySelectorAll('#shelf .tile')];
+        const size = (el) => (el ? parseFloat(getComputedStyle(el).fontSize) : 0);
+        return {
+          view: px(document.querySelector('#view-read')),
+          art: px(document.querySelector('.hero .art')),
+          shelfOverflow: shelf ? shelf.scrollWidth - shelf.clientWidth : 999,
+          tiles: tiles.length,
+          rows: new Set(tiles.map((el) => Math.round(el.getBoundingClientRect().top))).size,
+          label: document.querySelector('#ring-label')?.textContent ?? '',
+          sub: document.querySelector('#ring-sub')?.textContent ?? '',
+          ringTitle: document.querySelector('#ring-wrap')?.getAttribute('title'),
+          primary: size(document.querySelector('#btn-hero-read')),
+          secondary: size(document.querySelector('#btn-hero-done')),
+          linkFill: getComputedStyle(document.querySelector('#btn-hero-info')).backgroundColor,
+          strip: getComputedStyle(document.querySelector('.list-tools')).borderTopWidth,
+          toolNames: [...document.querySelectorAll('.list-tools .quiet')]
+            .filter((el) => !el.hidden).map((el) => el.textContent.trim()),
+          reachable: [...document.querySelectorAll('.list-tools .quiet')]
+            .every((el) => el.tabIndex >= 0 && !el.disabled),
+        };
+      });
+
+      const narrow = await measure();
+      // The prose measure is 876. A reading view still sitting on it is one the wrapper's extra
+      // width never reached, which is the state this change was opened against.
+      t.check('the reading view is wider than the prose measure', narrow.view > 876, `${narrow.view}px`);
+      t.check('the hero cover is the largest thing on the screen', narrow.art >= 200, `${narrow.art}px`);
+      t.check('no upcoming issue is clipped off the shelf', narrow.shelfOverflow <= 1, `${narrow.shelfOverflow}px of overflow`);
+      t.check('the progress count is readable text', /^\d+ of \d+ read$/.test(narrow.label), JSON.stringify(narrow.label));
+      t.check('and what is left of the order is said beside it', /to go|All read|Nothing in this list/.test(narrow.sub), JSON.stringify(narrow.sub));
+      t.check('the percentage is no longer hidden in a tooltip', narrow.ringTitle === null, JSON.stringify(narrow.ringTitle));
+      t.check('one call to action is larger than the rest', narrow.primary > narrow.secondary, `${narrow.primary} vs ${narrow.secondary}`);
+      t.check('the way out of the app is drawn as a link, not a button', /, 0\)$/.test(narrow.linkFill), narrow.linkFill);
+      t.check('the demoted tools keep a bounding edge', parseFloat(narrow.strip) > 0, narrow.strip);
+      t.check('and every one of them is still there and still reachable',
+        narrow.toolNames.length >= 5 && narrow.reachable, narrow.toolNames.join(' / '));
+
+      await page.setViewport({ width: 2560, height: 1080 });
+      const wide = await measure();
+      t.check('a wider display gives the reading view more room', wide.view > narrow.view, `${narrow.view}px then ${wide.view}px`);
+      t.check('and the whole shelf lands on one row', wide.tiles > 0 && wide.rows === 1, `${wide.tiles} tiles over ${wide.rows} row(s)`);
+      t.check('with nothing clipped there either', wide.shelfOverflow <= 1, `${wide.shelfOverflow}px of overflow`);
     },
   },
 ];

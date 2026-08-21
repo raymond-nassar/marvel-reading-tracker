@@ -14,6 +14,28 @@ quote in a bug report.
 
 ## Unreleased
 
+### The reading screen tells you where you are, and fills the screen it is given
+
+In plain English: the screen you use while working through a reading order now says how far along you
+are in words. It used to draw a small ring and hide the actual figure in a tooltip, so you had to rest
+the mouse on it and wait, and on a touchscreen you could not get at it at all. It now reads "0 of 8
+read" with "8 to go" beneath it, in text, all the time.
+
+The next issue to read is bigger and clearer. Its cover is about half again as large, the title is
+larger, and the one button that matters, the one that opens the issue in Marvel Unlimited, is now the
+biggest thing beside it. Marking it read stays where it was, and the link out to the issue's own page
+is now drawn as a link rather than as a third button competing with the other two.
+
+The strip of list housekeeping, renaming, notes, duplicating, exporting and deleting, is quieter. All
+five are still there, still in the same order, and still reachable by keyboard, but they no longer look
+as important as the reading buttons above them. The row of upcoming issues no longer cuts the last one
+in half: it wraps onto a second line on a normal screen and stretches across a single line on a wide
+one. The full order below is easier to run your eye down, with larger covers and a clear mark against
+the issue you are on.
+
+Nothing you have saved is affected, the filters, notes, availability marks and collected-edition
+grouping all work exactly as before, and turning cover art off still works.
+
 ### The landing page now suggests where to start, and uses the whole desktop
 
 In plain English: open the app for the first time and it names one reading order and offers to start
@@ -25,7 +47,7 @@ searching.
 
 The page itself now grows with the window instead of stopping at a fixed width, so a wide screen
 shows four reading orders per row rather than three, and the cover art is larger. Pages that are
-mostly words, such as the reading list and the settings, are unchanged: text that stretches across a
+mostly words, such as the settings and the disclaimers, are unchanged: text that stretches across a
 wide monitor is harder to read, not easier.
 
 If you already have a reading order on the go, nothing about your home screen changes. Continue
