@@ -154,11 +154,12 @@ test('the generated SVG is the favicon and rail mark, from the same source as th
   assert.match(html, /<link rel="icon" href="\.\/icons\/icon\.svg" type="image\/svg\+xml"/);
   assert.match(html, /<img class="mark" src="\.\/icons\/icon\.svg" alt="" aria-hidden="true"/);
   assert.equal([...html.matchAll(/\.\/icons\/icon\.svg/g)].length, 2);
-  assert.match(SVG_CONTENT, /<polygon points="7,5 20,5 25,10 25,27 7,27"/);
-  assert.match(SVG_CONTENT, /fill="#d43333"/);
+  assert.match(SVG_CONTENT, /<rect x="8" y="5\.5" width="16" height="7\.5" rx="1\.625" fill="#ffffff"/);
+  assert.match(SVG_CONTENT, /<polygon points="8,15\.5 16,15\.5 13\.25,26\.5 8,26\.5" fill="#ffffff"/);
+  assert.match(SVG_CONTENT, /<polygon points="18,15\.5 24,15\.5 24,26\.5 15\.75,26\.5" fill="#9e71e6"/);
 });
 
-test('the folded page, recap lines, and progress line are drawn inside transparent corners', () => {
+test('the approved purple page mark is drawn inside transparent corners', () => {
   const size = 192;
   const pixels = drawIcon(size);
   const at = (x, y) => pixels.subarray((y * size + x) * 4, (y * size + x) * 4 + 4);
@@ -167,11 +168,9 @@ test('the folded page, recap lines, and progress line are drawn inside transpare
   assert.equal(at(size / 2, size / 2)[3], 255, 'the middle of the mark is not opaque');
 
   const wanted = new Map([
-    ['23,26,32', 0],
-    ['238,241,246', 0],
-    ['198,205,218', 0],
-    ['102,108,116', 0],
-    ['212,51,51', 0],
+    ['109,40,217', 0],
+    ['255,255,255', 0],
+    ['158,113,230', 0],
   ]);
   for (let i = 0; i < size * size; i++) {
     const [r, g, b, a] = pixels.subarray(i * 4, i * 4 + 4);

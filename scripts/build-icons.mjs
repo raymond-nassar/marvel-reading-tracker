@@ -21,26 +21,20 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const ICON_DIR = join(ROOT, 'src', 'icons');
 
-// Fixed copies of the established dark palette keep the icon stable outside the themed document.
-// The accent uses --red rather than the retired --red-line value the old mark retained.
-const CARD = [0x17, 0x1a, 0x20];
-const PAPER = [0xee, 0xf1, 0xf6];
-const FOLD = [0xc6, 0xcd, 0xda];
-const INK = [0x66, 0x6c, 0x74];
-const RED = [0xd4, 0x33, 0x33];
+// Fixed brand colors keep the approved mark stable outside the themed document.
+const PURPLE = [0x6d, 0x28, 0xd9];
+const WHITE = [0xff, 0xff, 0xff];
+const LILAC = [0x9e, 0x71, 0xe6];
 
 // Everything below is in a 32 by 32 space, the favicon's viewBox, and scaled to the size being
 // drawn. Working in the small space is what keeps the two sizes the same picture rather than
 // two pictures that happen to look alike.
 const VIEW = 32;
-const CORNER = 6;
-const PAGE = [[7, 5], [20, 5], [25, 10], [25, 27], [7, 27]];
-const PAGE_FOLD = [[20, 5], [20, 10], [25, 10]];
-const RECAP_LINES = [
-  [10, 13, 22, 15],
-  [10, 18, 22, 20],
-];
-const PROGRESS = [10, 23, 20, 25];
+const CORNER = 7;
+const HEADER = [8, 5.5, 24, 13];
+const HEADER_CORNER = 1.625;
+const LEFT_PAGE = [[8, 15.5], [16, 15.5], [13.25, 26.5], [8, 26.5]];
+const RIGHT_PAGE = [[18, 15.5], [24, 15.5], [24, 26.5], [15.75, 26.5]];
 
 function inPolygon(px, py, poly) {
   let inside = false;
@@ -63,17 +57,21 @@ function inRoundedSquare(x, y) {
 
 const SAMPLES = 4;
 
-function inRect(x, y, [left, top, right, bottom]) {
-  return x >= left && x <= right && y >= top && y <= bottom;
+function inRoundedRect(x, y, [left, top, right, bottom], radius) {
+  if (x < left || y < top || x > right || y > bottom) return false;
+  const cx = Math.min(Math.max(x, left + radius), right - radius);
+  const cy = Math.min(Math.max(y, top + radius), bottom - radius);
+  const dx = x - cx;
+  const dy = y - cy;
+  return dx * dx + dy * dy <= radius * radius;
 }
 
 function colourAt(x, y) {
   if (!inRoundedSquare(x, y)) return null;
-  if (inRect(x, y, PROGRESS)) return RED;
-  if (RECAP_LINES.some((line) => inRect(x, y, line))) return INK;
-  if (inPolygon(x, y, PAGE_FOLD)) return FOLD;
-  if (inPolygon(x, y, PAGE)) return PAPER;
-  return CARD;
+  if (inRoundedRect(x, y, HEADER, HEADER_CORNER)) return WHITE;
+  if (inPolygon(x, y, LEFT_PAGE)) return WHITE;
+  if (inPolygon(x, y, RIGHT_PAGE)) return LILAC;
+  return PURPLE;
 }
 
 export function drawIcon(size) {
@@ -108,13 +106,10 @@ const points = (polygon) => polygon.map((point) => point.join(',')).join(' ');
 
 export const SVG_CONTENT = [
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">',
-  `  <rect width="32" height="32" rx="${CORNER}" fill="${hex(CARD)}"/>`,
-  `  <polygon points="${points(PAGE)}" fill="${hex(PAPER)}"/>`,
-  `  <polygon points="${points(PAGE_FOLD)}" fill="${hex(FOLD)}"/>`,
-  ...RECAP_LINES.map(([x1, y1, x2, y2]) => (
-    `  <rect x="${x1}" y="${y1}" width="${x2 - x1}" height="${y2 - y1}" fill="${hex(INK)}"/>`
-  )),
-  `  <rect x="${PROGRESS[0]}" y="${PROGRESS[1]}" width="${PROGRESS[2] - PROGRESS[0]}" height="${PROGRESS[3] - PROGRESS[1]}" fill="${hex(RED)}"/>`,
+  `  <rect width="32" height="32" rx="${CORNER}" fill="${hex(PURPLE)}"/>`,
+  `  <rect x="${HEADER[0]}" y="${HEADER[1]}" width="${HEADER[2] - HEADER[0]}" height="${HEADER[3] - HEADER[1]}" rx="${HEADER_CORNER}" fill="${hex(WHITE)}"/>`,
+  `  <polygon points="${points(LEFT_PAGE)}" fill="${hex(WHITE)}"/>`,
+  `  <polygon points="${points(RIGHT_PAGE)}" fill="${hex(LILAC)}"/>`,
   '</svg>',
   '',
 ].join('\n');

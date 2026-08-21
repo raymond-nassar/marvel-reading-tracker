@@ -4630,7 +4630,7 @@ unmeasured are now measured on every run, and the pair count goes from 72 to 78.
 
 **Red on the rail, three painters and not one.** The first draft of this block named only the skip
 link at `src/index.html:20`, which is the least of them: it is invisible until focused. Before
-BL-161, the brand mark was the other permanent red painter; it now loads the folded-page SVG at
+BL-161, the brand mark was the other permanent red painter; it now loads the purple page SVG at
 `src/index.html:38`. `.ri[aria-current]::before` at `src/styles.css:290` remains the 3px bar marking
 the current destination, which the comment at `src/styles.css:283-284` names as part of the selected
 state. Writing the reason string as "the skip link" would have gated a state indicator under the
@@ -9815,7 +9815,7 @@ another port, which is the same defect the README's warning about the address is
 The icons were the part with a real decision in them. Chromium will not offer an install unless the
 manifest names PNG icons at 192 and 512 pixels, so the inline SVG the tab icon uses cannot serve
 here, and a committed PNG is a file no reviewer can read and nobody can regenerate. So the mark is
-written as geometry at `scripts/build-icons.mjs:35-43` and the bytes are produced from it, which
+written as geometry at `scripts/build-icons.mjs:29-37` and the bytes are produced from it, which
 makes the two images a build output with a source in the same way the vendored indexes are. The
 test redraws both and compares pixels rather than file bytes, because the compressed form depends
 on the zlib the build ran against and the suite runs on two Node versions, so a byte comparison
@@ -11098,10 +11098,10 @@ Constraint gate: checked 1 to 11, none breached. Constraint 1 is untouched becau
 here is this project's own artwork and not comic image bytes. Constraint 4 is satisfied because
 drawing an SVG adds no dependency. Constraint 11 is checked by the dash scan.
 
-Implemented on 2026-08-20. A Node-only generator now owns a folded-page mark with recap lines and a
-red progress line, writes one SVG plus the two install PNGs, and supplies the SVG to both the
-favicon and rail. The focused icon suite binds all three generated files to that source and the
-palette gate reports no new below-floor pair.
+Implemented on 2026-08-20. A Node-only generator now owns the approved purple page mark, writes one
+SVG plus the two install PNGs, and supplies the SVG to both the favicon and rail. The focused icon
+suite binds all three generated files to that source and the palette gate reports no new
+below-floor pair.
 
 The replaced icon was a red rounded square carrying a bold white capital M. It was declared as an
 inline data URI and as the two exported sizes under `src/icons/`. That was the construction of
