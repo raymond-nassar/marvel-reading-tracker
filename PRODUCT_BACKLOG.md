@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-A hundred and thirty-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred and thirty-seven items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -20,7 +20,8 @@ BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, 
 BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
 BL-129, BL-130, BL-131, BL-132, BL-133, BL-134, BL-139, BL-140, BL-141, BL-142, BL-143, BL-144,
 BL-145, BL-146, BL-147, BL-149, BL-150, BL-152, BL-153, BL-154, BL-157, BL-158, BL-160, BL-161, BL-163,
-BL-164, BL-165, BL-166, BL-167, BL-169, BL-170, BL-171, BL-174, BL-175, BL-176, BL-181, BL-182 and BL-183.
+BL-164, BL-165, BL-166, BL-167, BL-169, BL-170, BL-171, BL-174, BL-175, BL-176, BL-181, BL-182,
+BL-183 and BL-184.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -298,18 +299,18 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4037-4039 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4040-4042 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-143 | Shelve the catalog in reading order rather than in the order the manifest happens to list | Story | EP-01 | Extends BL-142 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any field on a manifest entry saying when its reading starts, and any sort between parsing the catalog and rendering it |
 | BL-154 | Shelve the events apart from the character runs, and say why the runs sit last | Story | EP-01 | Follows BL-152 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Shipped | `src/js/lib/catalog.js:593-596` |
 | BL-156 | Make the Start here badge carry more weight than a colour change | Story | EP-01 | Follows BL-154 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Ready | `src/styles.css:392-394` |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1527-1528 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1529-1530 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:671-704 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:202-214 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:203-215 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-124 | Stop the rate-limit backoff saying the same wait twice, and say it grammatically | Defect | EP-07 | Extends BL-090 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | src/js/main.js:4717-4720 |
@@ -317,6 +318,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-089 | Turn on repository security and dependency monitoring | Enabler | EP-12 | Extends BL-040 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/dependabot.yml:34-71 |
 | BL-098 | Define review ownership and contribution intake | Enabler | EP-12 | Follows BL-097 | 3 | 3 | 8 | 3 | 4.67 | none | Measured | Shipped | .github/CODEOWNERS:1-51 |
 | BL-056 | Fail the build when a derived count in the backlog disagrees with the table it is derived from | Enabler | EP-12 | Leaves alone | 3 | 1 | 5 | 2 | 4.5 | none | Measured | Shipped | absent: any recomputation of a stated count, read of the package.json scripts block and .github/workflows/ci.yml |
+| BL-184 | Turn the root project page into a focused reader landing page | Chore | EP-12 | Extends BL-051 | 5 | 3 | 5 | 3 | 4.33 | none | Measured | Shipped | README.md:1-118 |
 | BL-035 | Offer an undo after a list is deleted | Story | EP-11 | Leaves alone | 5 | 2 | 5 | 3 | 4.0 | none | Observed | Shipped | src/js/main.js:2304-2333 |
 | BL-047 | Split the two meanings of the row class | Debt | EP-12 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Observed | Shipped | src/styles.css:771-787 |
 | BL-049 | Decide whether the faint badge borders need to meet the 3:1 non-text minimum | Defect | EP-08 | Leaves alone | 1 | 1 | 2 | 1 | 4.0 | none | Measured | Shipped | src/styles.css:720 |
@@ -327,7 +329,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-113 | Decide whether erasing everything reaches the salvage copies | Defect | EP-06 | Follows BL-101 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/storage.js:329-332 |
 | BL-110 | Count the issues an order imported empty, and say so | Defect | EP-05 | Extends BL-009 | 3 | 2 | 3 | 2 | 4.0 | none | Measured | Shipped | src/js/main.js:4077 |
 | BL-026 | Make every action reachable and repeatable from the keyboard | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P0 | Measured | Shipped | src/js/lib/shortcuts.js:26-60 |
-| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Shipped | README.md:415-482 |
+| BL-097 | Publish contribution, conduct, support and maintainer governance | Chore | EP-12 | Extends BL-052 | 3 | 3 | 5 | 3 | 3.67 | none | Observed | Shipped | CONTRIBUTING.md:1-213 |
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:497-518 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:340-375 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
@@ -2742,15 +2744,16 @@ imprecise reading when the item was written rather than something that changed u
 task text is left as it was written, and corrected here, because a task rewritten to match what
 was found is no longer evidence of what was asked.
 
-So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:745-762`, and the four sentences over 40 words are now none: the longest
-is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
-just its length, because it was carrying three separate arguments at once: where the catalogue
-comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
+So the work was done against the measurement rather than the wording. That 138-word paragraph was
+split into three at the time, and its source-evidence procedure now lives at
+`docs/MAINTAINING.md:198-210`. The four sentences over 40 words became none: the longest was 36 and
+the mean was 17.3. The audit paragraph was the one worth splitting on its own merits, not just its
+length, because it was carrying three separate arguments at once: where the catalogue comes from,
+why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
 
 The vocabulary was handled by defining all four terms, and by removing an earlier undefined use of
-one of them. `vendor` is defined in the paragraph immediately after the word first appears, at
-`README.md:608-612`, as fetching a list once and committing what came back. `depth` gained a gloss
+one of them. `vendor` remains defined in the curated-order procedure, at
+`docs/MAINTAINING.md:177-179`, as fetching a list once and committing what came back. `depth` gained a gloss
 in the field table, which had listed its three values without ever saying what the field meant.
 `placeholder` is defined inline at its only remaining use. `snapshot` is defined at its remaining
 first use, as recording what upstream held on the day the file was built, and the earlier sentence
@@ -3199,7 +3202,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2899-2902`.
+`PRODUCT_BACKLOG.md:2902-2905`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4736,21 +4739,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:12346-12348` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:12375-12377` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:212-214`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:213-215`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:12367-12369`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:12396-12398`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:12144-12146` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:12147-12149` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4958,9 +4961,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:3147-3156` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:202-206` and
-`PRODUCT_BACKLOG.md:212-214` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:3166-3175` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:203-207` and
+`PRODUCT_BACKLOG.md:213-215` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -5780,7 +5783,7 @@ Constraint gate: checked 1 to 11, none breached.
 The README says correctly that reading data stays local while metadata and covers are downloaded.
 The app itself says nothing is uploaded. Search text and requested issue identifiers do cross the
 machine boundary, and image hosts receive ordinary requests. Reading progress, notes and identity
-remain local or absent. Evidence: `README.md:117-136`, `src/index.html:566-644`,
+remain local or absent. Evidence: `README.md:36-52`, `src/index.html:566-644`,
 `src/js/api.js:137-149`.
 
 Shipped. Four destinations were enumerated from the code rather than from the copy, because the
@@ -6404,7 +6407,7 @@ here because it described the tags this item replaced.
 
 Evidence: `.github/workflows/ci.yml:68-73`, `.github/workflows/ci.yml:120-125`,
 `.github/workflows/ci.yml:85-91`, `test/ci-supply-chain.test.js:74-108`,
-`test/ci-supply-chain.test.js:124-142`, `README.md:566-601`.
+`test/ci-supply-chain.test.js:124-142`, `docs/MAINTAINING.md:149-166`.
 
 **BL-089: Turn on repository security and dependency monitoring**
 
@@ -6567,7 +6570,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2623`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2625`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -6918,13 +6921,12 @@ says what the policy says.
 
 Constraint gate: checked 1 to 11, none breached.
 
-The README explains tools and data generation well, but it does not define contribution scope,
-conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:415-822`,
-`absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
+The root now routes contribution, conduct, support and maintainer governance to concise public
+documents instead of duplicating their policy. Evidence: `README.md:97-107`,
+`CONTRIBUTING.md:1-213`, `SUPPORT.md:1-87` and `GOVERNANCE.md:1-95`.
 
 Shipped as four documents, a test that keeps them honest, and one correction to the README that the
-work turned up. `CONTRIBUTING.md` is 213 lines, `GOVERNANCE.md` 94, `SUPPORT.md` 87 and
+work turned up. `CONTRIBUTING.md` is 213 lines, `GOVERNANCE.md` 95, `SUPPORT.md` 87 and
 `CODE_OF_CONDUCT.md` 61.
 
 The framing is the part worth defending. Nobody outside this repository can see it, open an issue or
@@ -8439,7 +8441,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4860-4868`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4863-4871`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8454,7 +8456,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:4454`, `src/js/main.js:4378` and `src/js/main.js:4399`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1527-1528`.
+`PRODUCT_BACKLOG.md:1529-1530`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8540,7 +8542,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4865-4868`.
+at `PRODUCT_BACKLOG.md:4868-4871`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8673,7 +8675,7 @@ The count of open rows moved twice while this was being written, and no gate cau
 first read fifteen, which was true of the tree the measurement was taken against and false of the
 tree it was written into, because shipping this item took its own row out of the population the
 figure counts. It then read fourteen, which counts the one `Proposed` row beside the `Ready` ones,
-where the status key at `PRODUCT_BACKLOG.md:238` defines an item still to be picked up as `Ready`.
+where the status key at `PRODUCT_BACKLOG.md:239` defines an item still to be picked up as `Ready`.
 Thirteen was the figure under the document's own definition when this shipped, against eighty-six
 that were not. Nothing derives either number: the counts gate prints the status tallies on every run,
 and reading that print back against the sentence is a habit rather than a check. Both pairs survive
@@ -8706,7 +8708,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4860-4863` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4863-4866` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -10304,7 +10306,7 @@ machine runs. A single executable is its base binary plus the injected payload, 
 It was rejected either way, and the reason is narrower than the first draft of this item claimed.
 
 That draft said the executable meets a warning and the archive meets none. Half of it was wrong, and
-this repository's own README says so at `README.md:190-200`, where the reader is already told their
+the running guide says so at `docs/RUNNING.md:41-55`, where the reader is already told their
 computer may ask them to confirm because the file arrived from the internet. So it was checked. A
 zip was marked the way a browser marks a download, `ZoneId=3`, then extracted through the same shell
 interface File Explorer drives, and the extracted launcher carried the mark through, referrer and
@@ -10325,7 +10327,7 @@ at all: that reader wants a link, a link means hosting, and hosting moves the or
 reading progress with it. And it does not cover the Mac, although BL-140 shipped a launcher for
 both. Every measurement above is a Windows one, and the Mac is the harder case rather than a copy of
 this one, because a binary that arrives quarantined there without notarization is refused rather
-than merely questioned. `README.md:198-200` already carries a workaround for the milder version of
+than merely questioned. `docs/RUNNING.md:46-55` already carries a workaround for the milder version of
 that. Sizing this at 3 is sizing the Windows archive alone, so the Mac needs its own item with its
 own measurements rather than a line in this one.
 
@@ -11102,26 +11104,27 @@ delivered module so boot waits for the update check.
 
 The sentence telling the reader to delete the old folder was the one claim in the notice that
 nothing exercised, and it is the one whose failure loses an entire reading history. `npm run upgrade`
-drives it against two real installs. `scripts/upgrade-check.mjs:277-301` is the heart of it: after a
+drives it against two real installs. `scripts/upgrade-check.mjs:347-382` is the heart of it: after a
 second directory takes the address the first was using, the check reads which build is being served,
 that the saved order survived by identity and by issue order, and that the upgraded copy draws the
-order and its progress. `scripts/upgrade-check.mjs:303-322` is the control, serving the same new copy
+order and its progress. `scripts/upgrade-check.mjs:384-407` is the control, serving the same new copy
 at a second address and requiring the progress to be absent there. Without the control the check
 would pass just as happily if progress were being read out of the folder, which is the opposite of
 what the notice claims.
 
-`npm run upgrade:prove` broke four things on purpose, at `scripts/upgrade-check.mjs:40-67`, and each
-one reddened the assertion it was aimed at: four of four in 32 seconds. Freezing the new copy's
+`npm run upgrade:prove` broke five things on purpose, at `scripts/upgrade-check.mjs:45-82`, and each
+one reddened the assertion it was aimed at: five of five. Freezing the new copy's
 version number breaks only the claim that the new build is being served. Renaming the state key
 breaks only the painting assertion, because the reader's data survives untouched under the old name
 while their shelf comes up empty, which is the distinction between storage agreeing and a reader
-seeing their progress. Starting the upgraded copy on a different port breaks the survival assertions,
-and is the one way a reader following this advice really can lose everything. Pointing the control at
-the origin it is supposed to differ from breaks the control. Neither command runs in CI, for the same
-reason `npm run browser` does not.
+seeing their progress. Discarding read state leaves the order in place but returns visible progress
+to zero. Starting the upgraded copy on a different port breaks the survival assertions, and is the
+one way a reader following this advice really can lose everything. Pointing the control at the origin
+it is supposed to differ from breaks the control. Neither command runs in CI, for the same reason
+`npm run browser` does not.
 
 The first version of the check was itself the finding, and it is recorded at
-`scripts/upgrade-check.mjs:194-206`. Navigating to a URL that differs only in its fragment is a
+`scripts/upgrade-check.mjs:245-257`. Navigating to a URL that differs only in its fragment is a
 same-document navigation, so it swapped the served directory and then re-ran nothing: the modules in
 memory were still the old copy's. It reported the old version after the upgrade while every storage
 assertion passed, which reads as a serious finding about the app and was in fact a check that had
@@ -12181,6 +12184,32 @@ reads, while preserving the existing lock identity and comparison model. The imp
 one blame result per dated artifact and each source plus path read, and the complete repository
 corpus resolves in under ten seconds.
 
+**BL-184: Turn the root project page into a focused reader landing page**
+
+- [x] Keep the product description, screenshot, reader benefits, and qualified privacy disclosure
+- [x] Keep the stable Windows download, source startup, exact origin, and safe upgrade path
+- [x] Move detailed reader operations into a focused running guide
+- [x] Move checks, data authoring, and release procedures into a focused maintainer guide
+- [x] Route support, contribution, and governance documents to the new canonical sections
+- [x] Keep the root project page at or below 250 lines
+
+Constraint gate: checked 1 to 11, none breached. Constraint 3 remains explicit in the root privacy
+section, including every direct request the app makes. Constraint 4 remains intact because the two
+guides add no runtime or development dependency. Constraint 5 is more prominent in the short run and
+upgrade paths. Constraint 11 is checked by the added-line dash scan.
+
+Implemented on 2026-08-21. The root project page fell from 849 lines to 118 while keeping the
+reader-facing product story, privacy contract, stable Windows download, source startup, exact
+`127.0.0.1:8787` origin, safe upgrade sequence, disclaimer, and license. Detailed startup,
+installation, restart, port, and troubleshooting procedures now live in one running guide.
+Repository checks, live API verification, browser and upgrade proof modes, workflow pin review, data
+authoring, generated indexes, and merge-before-tag release mechanics now live in one maintainer
+guide.
+
+Sized 3 because the change moved four document roles without changing runtime behavior, then
+reconnected support, contribution, governance, semantic tests, and evidence anchors to the new
+ownership boundary.
+
 ## Suggested delivery order
 
 The original order below described the catalog expansion, which has now shipped. It is kept as the
@@ -12475,7 +12504,7 @@ counted, and wrong outright in resting the decision on all of them having shippe
 Adjacency is also the wrong unit for the rows that have not shipped. A reader choosing what to
 do next reads the rows still to be picked up and skips the rest, so a shipped row sitting between two
 open rows hides an inversion from a scan of neighbours. Six rows carry `Ready`, which is what
-the status key at `PRODUCT_BACKLOG.md:238` means by an item still to be picked up. Measured over
+the status key at `PRODUCT_BACKLOG.md:239` means by an item still to be picked up. Measured over
 those six alone there is one inversion: BL-120 at 2.5 sits below BL-119 at 2.0, one place down with
 nothing between them. Counting the one `Proposed` row alongside them, the only other row neither
 shipped nor dropped, moves the population to seven and leaves that pair exactly as it is.
@@ -12516,10 +12545,10 @@ again, because a swap can lift a row above a third one it also outscores. Nothin
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
 resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
-### Case 1: BL-026 is labelled P0 but ranks eighty-fifth
+### Case 1: BL-026 is labelled P0 but ranks eighty-sixth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 85 of 157.
+- Calculated: WSJF 3.67, rank 86 of 158.
 - Driver: job size, not value. Its Cost of Delay of 11 is the thirteenth-highest distinct figure in
   the backlog. It is outranked by eighty-four items, seventy-nine of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -12541,7 +12570,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 151 of 157, below a hundred and forty-seven unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 152 of 158, below a hundred and forty-eight unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -12599,9 +12628,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 107 of 157. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 87 of 157. Mid-table.
-- BL-017, P2, rank 156 of 157. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 108 of 158. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 88 of 158. Mid-table.
+- BL-017, P2, rank 157 of 158. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
