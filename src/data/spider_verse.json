@@ -1,0 +1,1033 @@
+{
+  "id": "spider-verse",
+  "name": "Spider-Verse",
+  "description": "Thirty-five issues from Edge of Spider-Verse through the main Amazing Spider-Man event and its team books.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-spider-verse-reading-order/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T09:58:39.873Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 35,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 45803,
+      "title": "The Amazing Spider-Man (2014) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/45803/the_amazing_spider-man_2014_4",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2014-07-23T00:00:00+0000",
+      "mu": "2015-01-19T00:00:00+0000",
+      "digitalId": 34261,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/03/53c424e569105",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45804,
+      "title": "The Amazing Spider-Man (2014) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/45804/the_amazing_spider-man_2014_5",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2014-08-13T00:00:00+0000",
+      "mu": "2015-02-02T00:00:00+0000",
+      "digitalId": 34603,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/53dbe3834297d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45805,
+      "title": "The Amazing Spider-Man (2014) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/45805/the_amazing_spider-man_2014_6",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2014-09-10T00:00:00+0000",
+      "mu": "2015-03-09T00:00:00+0000",
+      "digitalId": 34760,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/80/540776d646868",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50924,
+      "title": "Superior Spider-Man (2013) #32",
+      "number": "32",
+      "url": "https://www.marvel.com/comics/issue/50924/superior_spider-man_2013_32",
+      "seriesId": 17554,
+      "seriesName": "Superior Spider-Man (2013 - 2014)",
+      "onSale": "2014-08-06T00:00:00+0000",
+      "mu": "2015-02-02T00:00:00+0000",
+      "digitalId": 34601,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/53da9b744d937",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50954,
+      "title": "Edge of Spider-Verse (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50954/edge_of_spider-verse_2014_1",
+      "seriesId": 19075,
+      "seriesName": "Edge of Spider-Verse (2014)",
+      "onSale": "2014-09-10T00:00:00+0000",
+      "mu": "2015-03-09T00:00:00+0000",
+      "digitalId": 34833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/54077c53eb597",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Richard Isanove",
+          "role": "penciler"
+        },
+        {
+          "name": "David Hine",
+          "role": "writer"
+        },
+        {
+          "name": "Fabrice Sapolsky",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50960,
+      "title": "Superior Spider-Man (2013) #33",
+      "number": "33",
+      "url": "https://www.marvel.com/comics/issue/50960/superior_spider-man_2013_33",
+      "seriesId": 17554,
+      "seriesName": "Superior Spider-Man (2013 - 2014)",
+      "onSale": "2014-09-17T00:00:00+0000",
+      "mu": "2015-03-23T00:00:00+0000",
+      "digitalId": 34846,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/90/541204ca14924",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50955,
+      "title": "Edge of Spider-Verse (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/50955/edge_of_spider-verse_2014_2",
+      "seriesId": 19075,
+      "seriesName": "Edge of Spider-Verse (2014)",
+      "onSale": "2014-09-17T00:00:00+0000",
+      "mu": "2015-03-16T00:00:00+0000",
+      "digitalId": 34834,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/54109754c5bd4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jason Latour",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50956,
+      "title": "Edge of Spider-Verse (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/50956/edge_of_spider-verse_2014_3",
+      "seriesId": 19075,
+      "seriesName": "Edge of Spider-Verse (2014)",
+      "onSale": "2014-09-24T00:00:00+0000",
+      "mu": "2015-03-30T00:00:00+0000",
+      "digitalId": 34835,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/541730e2e3216",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50962,
+      "title": "Edge of Spider-Verse (2014) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/50962/edge_of_spider-verse_2014_4",
+      "seriesId": 19075,
+      "seriesName": "Edge of Spider-Verse (2014)",
+      "onSale": "2014-10-01T00:00:00+0000",
+      "mu": "2015-04-06T00:00:00+0000",
+      "digitalId": 34919,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/5421de2443130",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Garry Brown",
+          "role": "penciler"
+        },
+        {
+          "name": "Clay Mcleod Chapman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45806,
+      "title": "The Amazing Spider-Man (2014) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/45806/the_amazing_spider-man_2014_7",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2014-10-08T00:00:00+0000",
+      "mu": "2015-04-06T00:00:00+0000",
+      "digitalId": 34914,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/54298bbf3eb62",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50963,
+      "title": "Edge of Spider-Verse (2014) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/50963/edge_of_spider-verse_2014_5",
+      "seriesId": 19075,
+      "seriesName": "Edge of Spider-Verse (2014)",
+      "onSale": "2014-10-15T00:00:00+0000",
+      "mu": "2015-04-13T00:00:00+0000",
+      "digitalId": 34920,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/54341fb346055",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jake Wyatt",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerard Way",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50545,
+      "title": "Spider-Man 2099 (2014) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/50545/spider-man_2099_2014_5",
+      "seriesId": 18891,
+      "seriesName": "Spider-Man 2099 (2014 - 2015)",
+      "onSale": "2014-10-15T00:00:00+0000",
+      "mu": "2015-04-20T00:00:00+0000",
+      "digitalId": 34973,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/a0/54343c0d6a701",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45807,
+      "title": "The Amazing Spider-Man (2014) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/45807/the_amazing_spider-man_2014_8",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2014-10-22T00:00:00+0000",
+      "mu": "2015-04-20T00:00:00+0000",
+      "digitalId": 34917,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/543832fa96b3b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45808,
+      "title": "The Amazing Spider-Man (2014) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/45808/the_amazing_spider-man_2014_9",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2014-11-05T00:00:00+0000",
+      "mu": "2015-05-04T00:00:00+0000",
+      "digitalId": 35347,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/544018036c563",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50554,
+      "title": "Spider-Verse (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50554/spider-verse_2014_1",
+      "seriesId": 18892,
+      "seriesName": "Spider-Verse (2014 - 2015)",
+      "onSale": "2014-11-12T00:00:00+0000",
+      "mu": "2015-05-11T00:00:00+0000",
+      "digitalId": 35428,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/545d017cdbb04",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        },
+        {
+          "name": "Katie Cook",
+          "role": "writer"
+        },
+        {
+          "name": "Robbie Thompson",
+          "role": "writer"
+        },
+        {
+          "name": "Skottie Young",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50555,
+      "title": "Spider-Verse Team-Up (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50555/spider-verse_team-up_2014_1",
+      "seriesId": 18893,
+      "seriesName": "Spider-Verse Team-Up (2014 - 2015)",
+      "onSale": "2014-11-05T00:00:00+0000",
+      "mu": "2015-05-04T00:00:00+0000",
+      "digitalId": 35378,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/30/5447fa3500c75",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David a. Williams",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Roger Stern",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45809,
+      "title": "The Amazing Spider-Man (2014) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/45809/the_amazing_spider-man_2014_10",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-11T00:00:00+0000",
+      "digitalId": 35346,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/546220a7a879a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50537,
+      "title": "Scarlet Spiders (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50537/scarlet_spiders_2014_1",
+      "seriesId": 18889,
+      "seriesName": "Scarlet Spiders (2014 - 2015)",
+      "onSale": "2014-11-26T00:00:00+0000",
+      "mu": "2015-05-25T00:00:00+0000",
+      "digitalId": 35390,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/546d053fade9d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Nakayama",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Costa",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50561,
+      "title": "Spider-Woman (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50561/spider-woman_2014_1",
+      "seriesId": 18894,
+      "seriesName": "Spider-Woman (2014 - 2015)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2014-11-19T00:00:00+0000",
+      "digitalId": 35387,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/5bb4df6192f3c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50546,
+      "title": "Spider-Man 2099 (2014) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/50546/spider-man_2099_2014_6",
+      "seriesId": 18891,
+      "seriesName": "Spider-Man 2099 (2014 - 2015)",
+      "onSale": "2014-11-26T00:00:00+0000",
+      "mu": "2015-05-25T00:00:00+0000",
+      "digitalId": 35452,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/546d0a295a5e3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45810,
+      "title": "The Amazing Spider-Man (2014) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/45810/the_amazing_spider-man_2014_11",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2014-12-10T00:00:00+0000",
+      "mu": "2015-06-01T00:00:00+0000",
+      "digitalId": 35762,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/5481e4efac784",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50556,
+      "title": "Spider-Verse Team-Up (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/50556/spider-verse_team-up_2014_2",
+      "seriesId": 18893,
+      "seriesName": "Spider-Verse Team-Up (2014 - 2015)",
+      "onSale": "2014-12-10T00:00:00+0000",
+      "mu": "2015-06-08T00:00:00+0000",
+      "digitalId": 35775,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/548609b2af091",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dave Williams",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Gerry Conway",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50538,
+      "title": "Scarlet Spiders (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/50538/scarlet_spiders_2014_2",
+      "seriesId": 18889,
+      "seriesName": "Scarlet Spiders (2014 - 2015)",
+      "onSale": "2014-12-17T00:00:00+0000",
+      "mu": "2014-12-17T00:00:00+0000",
+      "digitalId": 35778,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/548f0e2345c4d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paco Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Nakayama",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Costa",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50562,
+      "title": "Spider-Woman (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/50562/spider-woman_2014_2",
+      "seriesId": 18894,
+      "seriesName": "Spider-Woman (2014 - 2015)",
+      "onSale": "2014-12-17T00:00:00+0000",
+      "mu": "2014-12-17T00:00:00+0000",
+      "digitalId": 35789,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/5491a2cb86d43",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 53336,
+      "title": "Spider-Verse (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/53336/spider-verse_2014_2",
+      "seriesId": 18892,
+      "seriesName": "Spider-Verse (2014 - 2015)",
+      "onSale": "2015-01-14T00:00:00+0000",
+      "mu": "2015-01-14T00:00:00+0000",
+      "digitalId": 36320,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/90/55b6423472961",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alvaro Lopez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Francisco Herrera",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kris Anka",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ty Templeton",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Lafuente",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        },
+        {
+          "name": "Enrique Puig",
+          "role": "writer"
+        },
+        {
+          "name": "Jed Mackay",
+          "role": "writer"
+        },
+        {
+          "name": "Kathryn Immonen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45811,
+      "title": "The Amazing Spider-Man (2014) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/45811/the_amazing_spider-man_2014_12",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2015-01-07T00:00:00+0000",
+      "mu": "2015-07-06T00:00:00+0000",
+      "digitalId": 35764,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/54a17618be321",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50547,
+      "title": "Spider-Man 2099 (2014) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/50547/spider-man_2099_2014_7",
+      "seriesId": 18891,
+      "seriesName": "Spider-Man 2099 (2014 - 2015)",
+      "onSale": "2015-01-07T00:00:00+0000",
+      "mu": "2015-07-06T00:00:00+0000",
+      "digitalId": 36170,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/54a2cd44d8076",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50539,
+      "title": "Scarlet Spiders (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/50539/scarlet_spiders_2014_3",
+      "seriesId": 18889,
+      "seriesName": "Scarlet Spiders (2014 - 2015)",
+      "onSale": "2015-01-21T00:00:00+0000",
+      "mu": "2015-07-27T00:00:00+0000",
+      "digitalId": 36368,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/54b57dd8249f0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Nakayama",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Costa",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50350,
+      "title": "The Amazing Spider-Man (2014) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/50350/the_amazing_spider-man_2014_13",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2015-01-21T00:00:00+0000",
+      "mu": "2015-07-20T00:00:00+0000",
+      "digitalId": 35765,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/03/54b431983083b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Olivier Coipel",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 49504,
+      "title": "Spider-Woman (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/49504/spider-woman_2014_3",
+      "seriesId": 18894,
+      "seriesName": "Spider-Woman (2014 - 2015)",
+      "onSale": "2015-01-21T00:00:00+0000",
+      "mu": "2015-07-27T00:00:00+0000",
+      "digitalId": 36363,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/54b80f58c36a5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50557,
+      "title": "Spider-Verse Team-Up (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/50557/spider-verse_team-up_2014_3",
+      "seriesId": 18893,
+      "seriesName": "Spider-Verse Team-Up (2014 - 2015)",
+      "onSale": "2015-01-21T00:00:00+0000",
+      "mu": "2015-07-27T00:00:00+0000",
+      "digitalId": 36364,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/54b5861aec4bc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jamal Campbell",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Tom Defalco",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50548,
+      "title": "Spider-Man 2099 (2014) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/50548/spider-man_2099_2014_8",
+      "seriesId": 18891,
+      "seriesName": "Spider-Man 2099 (2014 - 2015)",
+      "onSale": "2015-01-28T00:00:00+0000",
+      "mu": "2015-07-27T00:00:00+0000",
+      "digitalId": 36383,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/f0/54be7ca2bbfd3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51320,
+      "title": "The Amazing Spider-Man (2014) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/51320/the_amazing_spider-man_2014_14",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2015-02-11T00:00:00+0000",
+      "mu": "2015-08-03T00:00:00+0000",
+      "digitalId": 36588,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/54cbf2d706709",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 49511,
+      "title": "Spider-Woman (2014) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/49511/spider-woman_2014_4",
+      "seriesId": 18894,
+      "seriesName": "Spider-Woman (2014 - 2015)",
+      "onSale": "2015-02-11T00:00:00+0000",
+      "mu": "2015-08-17T00:00:00+0000",
+      "digitalId": 36688,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/54cfc182556c0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51324,
+      "title": "The Amazing Spider-Man (2014) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/51324/the_amazing_spider-man_2014_15",
+      "seriesId": 17285,
+      "seriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "onSale": "2015-02-25T00:00:00+0000",
+      "mu": "2015-08-17T00:00:00+0000",
+      "digitalId": 36717,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/54e36dc309b16",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

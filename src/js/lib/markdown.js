@@ -218,7 +218,7 @@ function quoteNote(note) {
 // The backslash must be escaped first, or escaping "]" would corrupt any title that already
 // contained a backslash: "a\" + "]" would emit "a\\]", which reads back as a literal backslash
 // followed by an unescaped "]" and terminates the link early.
-function escapeLinkText(s) {
+export function escapeLinkText(s) {
   return String(s).replace(/\\/g, '\\\\').replace(/\]/g, '\\]');
 }
 

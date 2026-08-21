@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T07:33:27.964Z",
+  "generatedAt": "2026-08-21T12:53:39.491Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -1171,6 +1171,363 @@
       "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
       "sourceLicense": null,
       "updatedAt": "2026-08-17T04:10:56.801Z"
+    },
+    {
+      "id": "secret-war",
+      "file": "secret_war.json",
+      "name": "Secret War",
+      "description": "The five-issue 2004 Secret War miniseries in the exact sequence given by Comic Book Herald.",
+      "type": "event",
+      "depth": "complete",
+      "count": 5,
+      "collections": 0,
+      "characters": [
+        "Nick Fury",
+        "Spider-Man",
+        "Captain America",
+        "Wolverine",
+        "Daredevil"
+      ],
+      "keywords": [
+        "Secret War",
+        "Nick Fury",
+        "Latveria"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2004,
+      "coverIssueId": 104,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/583cae868a052",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/secret-war-marvel-reading-order/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.860Z"
+    },
+    {
+      "id": "spider-man-the-other",
+      "file": "spider_man_the_other.json",
+      "name": "Spider-Man: The Other",
+      "description": "The twelve-part crossover alternating Friendly Neighborhood Spider-Man, Marvel Knights Spider-Man, and Amazing Spider-Man.",
+      "type": "event",
+      "depth": "complete",
+      "count": 12,
+      "collections": 0,
+      "characters": [
+        "Spider-Man",
+        "Peter Parker",
+        "Morlun"
+      ],
+      "keywords": [
+        "The Other",
+        "Friendly Neighborhood Spider-Man",
+        "Marvel Knights Spider-Man"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2005,
+      "coverIssueId": 2453,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/5bbb7117eb56f",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/amazing-spider-man-reading-order-modern-marvel-era/#theother",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.862Z"
+    },
+    {
+      "id": "world-war-hulk-aftersmash",
+      "file": "world_war_hulk_aftersmash.json",
+      "name": "World War Hulk: Aftersmash",
+      "description": "Twenty-six aftermath issues spanning Damage Control, Incredible Hercules, Warbound, Red Hulk, Skaar, and the next Hulk stories.",
+      "type": "event",
+      "depth": "complete",
+      "count": 26,
+      "collections": 0,
+      "characters": [
+        "Hulk",
+        "Hercules",
+        "Skaar",
+        "Red Hulk"
+      ],
+      "keywords": [
+        "World War Hulk",
+        "Aftersmash",
+        "Warbound",
+        "Damage Control"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2007,
+      "coverIssueId": 17231,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/40/4f6756d455960",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-10-wwh-aftersmash/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.863Z"
+    },
+    {
+      "id": "shadowland",
+      "file": "shadowland.json",
+      "name": "Shadowland",
+      "description": "Twenty-nine issues following the core Shadowland series through Daredevil and its street-level tie-ins.",
+      "type": "event",
+      "depth": "complete",
+      "count": 29,
+      "collections": 0,
+      "characters": [
+        "Daredevil",
+        "Elektra",
+        "Moon Knight",
+        "Spider-Man",
+        "Ghost Rider"
+      ],
+      "keywords": [
+        "Shadowland",
+        "The Hand",
+        "Daredevil"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2010,
+      "coverIssueId": 29703,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/59710e7c8f90a",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/daredevil-shadowland-reading-order/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.866Z"
+    },
+    {
+      "id": "chaos-war",
+      "file": "chaos_war.json",
+      "name": "Chaos War",
+      "description": "Nineteen issues combining the five-part event with Hercules, Thor, Alpha Flight, X-Men, and Incredible Hulks tie-ins.",
+      "type": "event",
+      "depth": "complete",
+      "count": 19,
+      "collections": 0,
+      "characters": [
+        "Hercules",
+        "Thor",
+        "Hulk",
+        "Alpha Flight",
+        "X-Men"
+      ],
+      "keywords": [
+        "Chaos War",
+        "Chaos King",
+        "God Squad",
+        "Dead Avengers"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2010,
+      "coverIssueId": 34517,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/50b38ae22fa8e",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/chaos-war-checklist/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.872Z"
+    },
+    {
+      "id": "axis",
+      "file": "axis.json",
+      "name": "Avengers & X-Men: Axis",
+      "description": "Fifty-five issues from the March to Axis prelude through the nine-part event and its immediate tie-ins.",
+      "type": "event",
+      "depth": "complete",
+      "count": 55,
+      "collections": 0,
+      "characters": [
+        "Avengers",
+        "X-Men",
+        "Red Skull",
+        "Magneto",
+        "Loki",
+        "Deadpool"
+      ],
+      "keywords": [
+        "Axis",
+        "March to Axis",
+        "Inversion",
+        "Uncanny Avengers"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2014,
+      "coverIssueId": 50599,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/54299cd54cb79",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/axis-reading-order/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.872Z"
+    },
+    {
+      "id": "spider-verse",
+      "file": "spider_verse.json",
+      "name": "Spider-Verse",
+      "description": "Thirty-five issues from Edge of Spider-Verse through the main Amazing Spider-Man event and its team books.",
+      "type": "event",
+      "depth": "complete",
+      "count": 35,
+      "collections": 0,
+      "characters": [
+        "Spider-Man",
+        "Spider-Woman",
+        "Spider-Gwen",
+        "Spider-Man 2099"
+      ],
+      "keywords": [
+        "Spider-Verse",
+        "Edge of Spider-Verse",
+        "Inheritors",
+        "Spider-Totems"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2014,
+      "coverIssueId": 45808,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/544018036c563",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-spider-verse-reading-order/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.873Z"
+    },
+    {
+      "id": "apocalypse-wars",
+      "file": "apocalypse_wars.json",
+      "name": "X-Men: Apocalypse Wars",
+      "description": "Thirteen alternating chapters from Extraordinary X-Men, Uncanny X-Men, and All-New X-Men.",
+      "type": "event",
+      "depth": "complete",
+      "count": 13,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Apocalypse"
+      ],
+      "keywords": [
+        "Apocalypse Wars",
+        "Extraordinary X-Men",
+        "All-New X-Men"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2016,
+      "coverIssueId": 55440,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/56e3335193a8c",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-apocalypse-wars/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.875Z"
+    },
+    {
+      "id": "clone-conspiracy",
+      "file": "clone_conspiracy.json",
+      "name": "Spider-Man: The Clone Conspiracy",
+      "description": "Twenty-four issues combining the five-part event with Amazing Spider-Man, Silk, Prowler, and the Omega conclusion.",
+      "type": "event",
+      "depth": "complete",
+      "count": 24,
+      "collections": 0,
+      "characters": [
+        "Spider-Man",
+        "Prowler",
+        "Silk",
+        "The Jackal"
+      ],
+      "keywords": [
+        "Clone Conspiracy",
+        "Dead No More",
+        "Prowler",
+        "Silk"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2016,
+      "coverIssueId": 61713,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/57f550d6687aa",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-clone-conspiracy/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T09:58:39.876Z"
+    },
+    {
+      "id": "inhumans-vs-x-men",
+      "file": "inhumans_vs_x_men.json",
+      "name": "Inhumans vs. X-Men",
+      "description": "Twenty chapters alternating the seven-part event with X-Men, Inhumans, and Mercs for Money tie-ins.",
+      "type": "event",
+      "depth": "complete",
+      "count": 20,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Inhumans",
+        "Medusa",
+        "Black Bolt"
+      ],
+      "keywords": [
+        "Inhumans vs. X-Men",
+        "IvX",
+        "Terrigen"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2016,
+      "coverIssueId": 61594,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/5846e31c21619",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/inhumans-vs-x-men/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T12:53:39.465Z"
     }
   ],
   "paths": [

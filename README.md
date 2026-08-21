@@ -105,14 +105,14 @@ download is built.
 - **Duplicate a list** to try a different path through an event, keeping shared read progress
 - Export to Markdown / JSON, and restore from backup
 
-### Modern Marvel continuity intake stays build-time only
+### Modern Marvel guide intake stays build-time only
 
-This repository also tracks a build-time intake program for modern Marvel continuity guides. The
-maintained source inventory lives under `scripts/data/cbh-modern-inventory.json`, and the resolver
-and overlap tools under `scripts/resolve-cbh-order.mjs` and `scripts/report-order-overlap.mjs`
-compare issue references against local data without adding a runtime dependency or shipping that
-inventory to the browser. The permission to use Comic Book Herald's guide is kept in the
-provenance notes, and the intake flow rejects ambiguity or unapproved overlap rather than guessing.
+This repository tracks a build-time intake program for modern Marvel continuity guides. Its first
+approved batch adds ten ordinary catalog orders, while the maintained inventory, source mappings,
+resolver, and overlap reports stay outside the browser. Only the authored checklists and their
+vendored issue data ship with the app. The flow adds no runtime dependency, credits Comic Book
+Herald on every resulting card, links each card to the exact guide followed, and blocks a candidate
+instead of guessing when issue identity or overlap is unresolved.
 
 ### Your data stays with you
 
@@ -650,6 +650,23 @@ definition does not ship as a quietly shorter catalog.
 `npm run vendor -- --only=<id>` rebuilds a single list. Re-vendoring everything to add one costs
 hundreds of API calls, and it restamps the date on files whose contents did not change. Skipped
 lists keep the JSON already committed for them, and their catalog entries are rebuilt from it.
+
+#### Building a Comic Book Herald continuity packet
+
+The maintained program begins with `npm run cbh:prepare`, which refreshes deterministic issue
+candidates for the declared source pages and leaves ambiguous or unmatched rows blocked. Every
+authorable mapping then needs a complete report from `npm run orders:overlap`, an independent review
+of its source count, issue sequence, timeline, cover and provenance, and an explicit approved state.
+Approved mappings are left untouched. `--refresh-approved` updates their resolver evidence only when
+the selected sequence and manifest fields are unchanged; `--force-approved` deliberately returns
+them to pending review.
+
+`node scripts/author-cbh-packet.mjs` writes Markdown and manifest entries only from those approved
+mappings. It drops mapping-only review fields, preserves the reviewed issue order, and refuses any
+non-`none` overlap. Vendor only the approved ids afterwards. Every resulting card must credit Comic
+Book Herald, link to the exact guide followed, use
+`Compiled for this project from Comic Book Herald's guide` as `sourceOrigin`, and keep
+`sourceLicense` null.
 
 A checklist line with no Marvel link becomes a placeholder: an entry you can see and tick off,
 but not open, because there is nothing to open. Keeping it means the reading order stays complete

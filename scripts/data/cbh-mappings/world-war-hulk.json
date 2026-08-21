@@ -1,0 +1,1466 @@
+{
+  "id": "world-war-hulk",
+  "inventoryId": "world-war-hulk",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/world-war-hulk/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 39,
+  "excludedSourceReferences": [],
+  "reviewStatus": "pending-independent-review",
+  "proposedManifest": {
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "variant": null,
+    "timeline": 2007,
+    "coverSourceReference": "World War Hulk #1"
+  },
+  "candidateMetadata": [
+    {
+      "id": 13426,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #106",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "106",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/13426/hulk_1999_106",
+      "onSaleDate": "2007-05-02T00:00:00+0000"
+    },
+    {
+      "id": 13507,
+      "title": "World War Hulk Prologue: World Breaker",
+      "issueTitle": "World War Hulk Prologue: World Breaker (2007) #1",
+      "seriesTitle": "World War Hulk Prologue: World Breaker",
+      "apiSeriesName": "World War Hulk Prologue: World Breaker (2007)",
+      "seriesId": 2220,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/13507/world_war_hulk_prologue_world_breaker_2007_1",
+      "onSaleDate": "2007-05-02T00:00:00+0000"
+    },
+    {
+      "id": 15873,
+      "title": "World War Hulk",
+      "issueTitle": "World War Hulk (2007) #1",
+      "seriesTitle": "World War Hulk",
+      "apiSeriesName": "World War Hulk (2007)",
+      "seriesId": 2400,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15873/world_war_hulk_2007_1",
+      "onSaleDate": "2007-06-13T00:00:00+0000"
+    },
+    {
+      "id": 15850,
+      "title": "Ghost Rider",
+      "issueTitle": "Ghost Rider (2006) #12",
+      "seriesTitle": "Ghost Rider",
+      "apiSeriesName": "Ghost Rider (2006 - 2009)",
+      "seriesId": 1104,
+      "issueNumber": "12",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15850/ghost_rider_2006_12",
+      "onSaleDate": "2007-06-20T00:00:00+0000"
+    },
+    {
+      "id": 15825,
+      "title": "The Invincible Iron Man",
+      "issueTitle": "The Invincible Iron Man (2004) #19",
+      "seriesTitle": "The Invincible Iron Man",
+      "apiSeriesName": "The Invincible Iron Man (2004 - 2007)",
+      "seriesId": 835,
+      "issueNumber": "19",
+      "seriesYear": 2004,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/15825/the_invincible_iron_man_2004_19",
+      "onSaleDate": "2007-06-20T00:00:00+0000"
+    },
+    {
+      "id": 15807,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #107",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "107",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/15807/hulk_1999_107",
+      "onSaleDate": "2007-06-20T00:00:00+0000"
+    },
+    {
+      "id": 15879,
+      "title": "World War Hulk: Front Line",
+      "issueTitle": "World War Hulk: Front Line (2007) #1",
+      "seriesTitle": "World War Hulk: Front Line",
+      "apiSeriesName": "World War Hulk: Front Line (2007)",
+      "seriesId": 2407,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15879/world_war_hulk_front_line_2007_1",
+      "onSaleDate": "2007-06-27T00:00:00+0000"
+    },
+    {
+      "id": 15889,
+      "title": "World War Hulk: X-Men",
+      "issueTitle": "World War Hulk: X-Men (2007) #1",
+      "seriesTitle": "World War Hulk: X-Men",
+      "apiSeriesName": "World War Hulk: X-Men (2007)",
+      "seriesId": 2418,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15889/world_war_hulk_x-men_2007_1",
+      "onSaleDate": "2007-06-27T00:00:00+0000"
+    },
+    {
+      "id": 15950,
+      "title": "The Irredeemable Ant-Man",
+      "issueTitle": "The Irredeemable Ant-Man (2006) #10",
+      "seriesTitle": "The Irredeemable Ant-Man",
+      "apiSeriesName": "The Irredeemable Ant-Man (2006 - 2007)",
+      "seriesId": 977,
+      "issueNumber": "10",
+      "seriesYear": 2006,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/15950/the_irredeemable_ant-man_2006_10",
+      "onSaleDate": "2007-07-04T00:00:00+0000"
+    },
+    {
+      "id": 16006,
+      "title": "World War Hulk: Gamma Corps",
+      "issueTitle": "World War Hulk: Gamma Corps (2007) #1",
+      "seriesTitle": "World War Hulk: Gamma Corps",
+      "apiSeriesName": "World War Hulk: Gamma Corps (2007)",
+      "seriesId": 2538,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16006/world_war_hulk_gamma_corps_2007_1",
+      "onSaleDate": "2007-07-11T00:00:00+0000"
+    },
+    {
+      "id": 15984,
+      "title": "World War Hulk",
+      "issueTitle": "World War Hulk (2007) #2",
+      "seriesTitle": "World War Hulk",
+      "apiSeriesName": "World War Hulk (2007)",
+      "seriesId": 2400,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15984/world_war_hulk_2007_2",
+      "onSaleDate": "2007-07-18T00:00:00+0000"
+    },
+    {
+      "id": 15988,
+      "title": "World War Hulk: Front Line",
+      "issueTitle": "World War Hulk: Front Line (2007) #2",
+      "seriesTitle": "World War Hulk: Front Line",
+      "apiSeriesName": "World War Hulk: Front Line (2007)",
+      "seriesId": 2407,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15988/world_war_hulk_front_line_2007_2",
+      "onSaleDate": "2007-07-18T00:00:00+0000"
+    },
+    {
+      "id": 15976,
+      "title": "Avengers: The Initiative",
+      "issueTitle": "Avengers: The Initiative (2007) #4",
+      "seriesTitle": "Avengers: The Initiative",
+      "apiSeriesName": "Avengers: The Initiative (2007 - 2010)",
+      "seriesId": 1945,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15976/avengers_the_initiative_2007_4",
+      "onSaleDate": "2007-07-18T00:00:00+0000"
+    },
+    {
+      "id": 15960,
+      "title": "Ghost Rider",
+      "issueTitle": "Ghost Rider (2006) #13",
+      "seriesTitle": "Ghost Rider",
+      "apiSeriesName": "Ghost Rider (2006 - 2009)",
+      "seriesId": 1104,
+      "issueNumber": "13",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15960/ghost_rider_2006_13",
+      "onSaleDate": "2007-07-18T00:00:00+0000"
+    },
+    {
+      "id": 15999,
+      "title": "World War Hulk: X-Men",
+      "issueTitle": "World War Hulk: X-Men (2007) #2",
+      "seriesTitle": "World War Hulk: X-Men",
+      "apiSeriesName": "World War Hulk: X-Men (2007)",
+      "seriesId": 2418,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15999/world_war_hulk_x-men_2007_2",
+      "onSaleDate": "2007-07-18T00:00:00+0000"
+    },
+    {
+      "id": 15853,
+      "title": "Heroes for Hire",
+      "issueTitle": "Heroes for Hire (2006) #11",
+      "seriesTitle": "Heroes for Hire",
+      "apiSeriesName": "Heroes for Hire (2006 - 2007)",
+      "seriesId": 1121,
+      "issueNumber": "11",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15853/heroes_for_hire_2006_11",
+      "onSaleDate": "2007-06-20T00:00:00+0000"
+    },
+    {
+      "id": 15963,
+      "title": "Heroes for Hire",
+      "issueTitle": "Heroes for Hire (2006) #12",
+      "seriesTitle": "Heroes for Hire",
+      "apiSeriesName": "Heroes for Hire (2006 - 2007)",
+      "seriesId": 1121,
+      "issueNumber": "12",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15963/heroes_for_hire_2006_12",
+      "onSaleDate": "2007-07-25T00:00:00+0000"
+    },
+    {
+      "id": 15942,
+      "title": "The Invincible Iron Man",
+      "issueTitle": "The Invincible Iron Man (2004) #20",
+      "seriesTitle": "The Invincible Iron Man",
+      "apiSeriesName": "The Invincible Iron Man (2004 - 2007)",
+      "seriesId": 835,
+      "issueNumber": "20",
+      "seriesYear": 2004,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/15942/the_invincible_iron_man_2004_20",
+      "onSaleDate": "2007-07-25T00:00:00+0000"
+    },
+    {
+      "id": 15925,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #108",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "108",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/15925/hulk_1999_108",
+      "onSaleDate": "2007-07-25T00:00:00+0000"
+    },
+    {
+      "id": 16168,
+      "title": "World War Hulk",
+      "issueTitle": "World War Hulk (2007) #3",
+      "seriesTitle": "World War Hulk",
+      "apiSeriesName": "World War Hulk (2007)",
+      "seriesId": 2400,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16168/world_war_hulk_2007_3",
+      "onSaleDate": "2007-08-01T00:00:00+0000"
+    },
+    {
+      "id": 16173,
+      "title": "World War Hulk: Front Line",
+      "issueTitle": "World War Hulk: Front Line (2007) #3",
+      "seriesTitle": "World War Hulk: Front Line",
+      "apiSeriesName": "World War Hulk: Front Line (2007)",
+      "seriesId": 2407,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16173/world_war_hulk_front_line_2007_3",
+      "onSaleDate": "2007-08-08T00:00:00+0000"
+    },
+    {
+      "id": 16107,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #109",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "109",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/16107/hulk_1999_109",
+      "onSaleDate": "2007-08-08T00:00:00+0000"
+    },
+    {
+      "id": 16189,
+      "title": "World War Hulk: Gamma Corps",
+      "issueTitle": "World War Hulk: Gamma Corps (2007) #2",
+      "seriesTitle": "World War Hulk: Gamma Corps",
+      "apiSeriesName": "World War Hulk: Gamma Corps (2007)",
+      "seriesId": 2538,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16189/world_war_hulk_gamma_corps_2007_2",
+      "onSaleDate": "2007-08-22T00:00:00+0000"
+    },
+    {
+      "id": 16183,
+      "title": "World War Hulk: X-Men",
+      "issueTitle": "World War Hulk: X-Men (2007) #3",
+      "seriesTitle": "World War Hulk: X-Men",
+      "apiSeriesName": "World War Hulk: X-Men (2007)",
+      "seriesId": 2418,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16183/world_war_hulk_x-men_2007_3",
+      "onSaleDate": "2007-08-29T00:00:00+0000"
+    },
+    {
+      "id": 16162,
+      "title": "Avengers: The Initiative",
+      "issueTitle": "Avengers: The Initiative (2007) #5",
+      "seriesTitle": "Avengers: The Initiative",
+      "apiSeriesName": "Avengers: The Initiative (2007 - 2010)",
+      "seriesId": 1945,
+      "issueNumber": "5",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16162/avengers_the_initiative_2007_5",
+      "onSaleDate": "2007-08-29T00:00:00+0000"
+    },
+    {
+      "id": 16448,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #110",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "110",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/16448/hulk_1999_110",
+      "onSaleDate": "2007-09-05T00:00:00+0000"
+    },
+    {
+      "id": 16148,
+      "title": "Heroes for Hire",
+      "issueTitle": "Heroes for Hire (2006) #13",
+      "seriesTitle": "Heroes for Hire",
+      "apiSeriesName": "Heroes for Hire (2006 - 2007)",
+      "seriesId": 1121,
+      "issueNumber": "13",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16148/heroes_for_hire_2006_13",
+      "onSaleDate": "2007-09-12T00:00:00+0000"
+    },
+    {
+      "id": 16596,
+      "title": "World War Hulk: Gamma Corps",
+      "issueTitle": "World War Hulk: Gamma Corps (2007) #3",
+      "seriesTitle": "World War Hulk: Gamma Corps",
+      "apiSeriesName": "World War Hulk: Gamma Corps (2007)",
+      "seriesId": 2538,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16596/world_war_hulk_gamma_corps_2007_3",
+      "onSaleDate": "2007-09-19T00:00:00+0000"
+    },
+    {
+      "id": 16557,
+      "title": "World War Hulk",
+      "issueTitle": "World War Hulk (2007) #4",
+      "seriesTitle": "World War Hulk",
+      "apiSeriesName": "World War Hulk (2007)",
+      "seriesId": 2400,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16557/world_war_hulk_2007_4",
+      "onSaleDate": "2007-09-19T00:00:00+0000"
+    },
+    {
+      "id": 16174,
+      "title": "World War Hulk: Front Line",
+      "issueTitle": "World War Hulk: Front Line (2007) #4",
+      "seriesTitle": "World War Hulk: Front Line",
+      "apiSeriesName": "World War Hulk: Front Line (2007)",
+      "seriesId": 2407,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16174/world_war_hulk_front_line_2007_4",
+      "onSaleDate": "2007-09-19T00:00:00+0000"
+    },
+    {
+      "id": 16569,
+      "title": "World War Hulk: Front Line",
+      "issueTitle": "World War Hulk: Front Line (2007) #5",
+      "seriesTitle": "World War Hulk: Front Line",
+      "apiSeriesName": "World War Hulk: Front Line (2007)",
+      "seriesId": 2407,
+      "issueNumber": "5",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16569/world_war_hulk_front_line_2007_5",
+      "onSaleDate": "2007-10-10T00:00:00+0000"
+    },
+    {
+      "id": 16514,
+      "title": "Punisher War Journal",
+      "issueTitle": "Punisher War Journal (2006) #12",
+      "seriesTitle": "Punisher War Journal",
+      "apiSeriesName": "Punisher War Journal (2006 - 2009)",
+      "seriesId": 1112,
+      "issueNumber": "12",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16514/punisher_war_journal_2006_12",
+      "onSaleDate": "2007-10-10T00:00:00+0000"
+    },
+    {
+      "id": 16515,
+      "title": "Heroes for Hire",
+      "issueTitle": "Heroes for Hire (2006) #14",
+      "seriesTitle": "Heroes for Hire",
+      "apiSeriesName": "Heroes for Hire (2006 - 2007)",
+      "seriesId": 1121,
+      "issueNumber": "14",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16515/heroes_for_hire_2006_14",
+      "onSaleDate": "2007-10-10T00:00:00+0000"
+    },
+    {
+      "id": 16516,
+      "title": "Heroes for Hire",
+      "issueTitle": "Heroes for Hire (2006) #15",
+      "seriesTitle": "Heroes for Hire",
+      "apiSeriesName": "Heroes for Hire (2006 - 2007)",
+      "seriesId": 1121,
+      "issueNumber": "15",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16516/heroes_for_hire_2006_15",
+      "onSaleDate": "2007-11-21T00:00:00+0000"
+    },
+    {
+      "id": 16597,
+      "title": "World War Hulk: Gamma Corps",
+      "issueTitle": "World War Hulk: Gamma Corps (2007) #4",
+      "seriesTitle": "World War Hulk: Gamma Corps",
+      "apiSeriesName": "World War Hulk: Gamma Corps (2007)",
+      "seriesId": 2538,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16597/world_war_hulk_gamma_corps_2007_4",
+      "onSaleDate": "2007-11-07T00:00:00+0000"
+    },
+    {
+      "id": 16449,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #111",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "111",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/16449/hulk_1999_111",
+      "onSaleDate": "2007-11-21T00:00:00+0000"
+    },
+    {
+      "id": 16560,
+      "title": "World War Hulk",
+      "issueTitle": "World War Hulk (2007) #5",
+      "seriesTitle": "World War Hulk",
+      "apiSeriesName": "World War Hulk (2007)",
+      "seriesId": 2400,
+      "issueNumber": "5",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16560/world_war_hulk_2007_5",
+      "onSaleDate": "2007-11-14T00:00:00+0000"
+    },
+    {
+      "id": 16570,
+      "title": "World War Hulk: Front Line",
+      "issueTitle": "World War Hulk: Front Line (2007) #6",
+      "seriesTitle": "World War Hulk: Front Line",
+      "apiSeriesName": "World War Hulk: Front Line (2007)",
+      "seriesId": 2407,
+      "issueNumber": "6",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16570/world_war_hulk_front_line_2007_6",
+      "onSaleDate": "2007-11-29T00:00:00+0000"
+    },
+    {
+      "id": 17231,
+      "title": "WORLD WAR HULK: AFTERSMASH 1",
+      "issueTitle": "WORLD WAR HULK: AFTERSMASH 1 (2007) #1",
+      "seriesTitle": "WORLD WAR HULK: AFTERSMASH 1",
+      "apiSeriesName": "WORLD WAR HULK: AFTERSMASH 1 (2007)",
+      "seriesId": 3020,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/17231/world_war_hulk_aftersmash_1_2007_1",
+      "onSaleDate": "2007-12-05T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Incredible Hulk #106",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "106",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "13426"
+      ],
+      "selectedIssueId": 13426,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/13426/hulk_1999_106",
+      "resolvedIssueTitle": "Hulk (1999) #106",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        13426
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "World War Hulk Prologue: World Breaker #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk Prologue: World Breaker",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2220,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "13507"
+      ],
+      "selectedIssueId": 13507,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/13507/world_war_hulk_prologue_world_breaker_2007_1",
+      "resolvedIssueTitle": "World War Hulk Prologue: World Breaker (2007) #1",
+      "note": "Marvel series 2220 (World War Hulk Prologue: World Breaker (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        13507
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "World War Hulk #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2400,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15873"
+      ],
+      "selectedIssueId": 15873,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15873/world_war_hulk_2007_1",
+      "resolvedIssueTitle": "World War Hulk (2007) #1",
+      "note": "Marvel series 2400 (World War Hulk (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15873
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Ghost Rider #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Ghost Rider",
+      "seriesYear": 2006,
+      "issueNumber": "12",
+      "seriesId": 1104,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15850"
+      ],
+      "selectedIssueId": 15850,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15850/ghost_rider_2006_12",
+      "resolvedIssueTitle": "Ghost Rider (2006) #12",
+      "note": "Marvel series 1104 (Ghost Rider (2006 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15850
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Iron Man: Director of S.H.I.E.L.D. #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Iron Man: Director of S.H.I.E.L.D.",
+      "seriesYear": 2004,
+      "issueNumber": "19",
+      "seriesId": 835,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15825"
+      ],
+      "selectedIssueId": 15825,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15825/the_invincible_iron_man_2004_19",
+      "resolvedIssueTitle": "The Invincible Iron Man (2004) #19",
+      "note": "Marvel series 835 (The Invincible Iron Man (2004 - 2007)) is the reviewed metadata series for this source reference. The source title is Iron Man: Director of S.H.I.E.L.D.; Marvel names the selected series The Invincible Iron Man. Marvel keeps these Director of S.H.I.E.L.D. issues in The Invincible Iron Man series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15825
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Incredible Hulk #107",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "107",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15807"
+      ],
+      "selectedIssueId": 15807,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15807/hulk_1999_107",
+      "resolvedIssueTitle": "Hulk (1999) #107",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15807
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "World War Hulk: Front Line #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Front Line",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15879"
+      ],
+      "selectedIssueId": 15879,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15879/world_war_hulk_front_line_2007_1",
+      "resolvedIssueTitle": "World War Hulk: Front Line (2007) #1",
+      "note": "Marvel series 2407 (World War Hulk: Front Line (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15879
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "World War Hulk: X-Men #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: X-Men",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2418,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15889"
+      ],
+      "selectedIssueId": 15889,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15889/world_war_hulk_x-men_2007_1",
+      "resolvedIssueTitle": "World War Hulk: X-Men (2007) #1",
+      "note": "Marvel series 2418 (World War Hulk: X-Men (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15889
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Irredeemable Ant-Man #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Irredeemable Ant-Man",
+      "seriesYear": 2006,
+      "issueNumber": "10",
+      "seriesId": 977,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15950"
+      ],
+      "selectedIssueId": 15950,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15950/the_irredeemable_ant-man_2006_10",
+      "resolvedIssueTitle": "The Irredeemable Ant-Man (2006) #10",
+      "note": "Marvel series 977 (The Irredeemable Ant-Man (2006 - 2007)) is the reviewed metadata series for this source reference. The source title is Irredeemable Ant-Man; Marvel names the selected series The Irredeemable Ant-Man. Marvel adds the leading article in The Irredeemable Ant-Man.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15950
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "World War Hulk: Gamma Corps #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Gamma Corps",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2538,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16006"
+      ],
+      "selectedIssueId": 16006,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16006/world_war_hulk_gamma_corps_2007_1",
+      "resolvedIssueTitle": "World War Hulk: Gamma Corps (2007) #1",
+      "note": "Marvel series 2538 (World War Hulk: Gamma Corps (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16006
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "World War Hulk #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 2400,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15984"
+      ],
+      "selectedIssueId": 15984,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15984/world_war_hulk_2007_2",
+      "resolvedIssueTitle": "World War Hulk (2007) #2",
+      "note": "Marvel series 2400 (World War Hulk (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15984
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "World War Hulk: Front Line #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Front Line",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 2407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15988"
+      ],
+      "selectedIssueId": 15988,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15988/world_war_hulk_front_line_2007_2",
+      "resolvedIssueTitle": "World War Hulk: Front Line (2007) #2",
+      "note": "Marvel series 2407 (World War Hulk: Front Line (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15988
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Avengers: The Initiative #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers: The Initiative",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 1945,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15976"
+      ],
+      "selectedIssueId": 15976,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15976/avengers_the_initiative_2007_4",
+      "resolvedIssueTitle": "Avengers: The Initiative (2007) #4",
+      "note": "Marvel series 1945 (Avengers: The Initiative (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15976
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Ghost Rider #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Ghost Rider",
+      "seriesYear": 2006,
+      "issueNumber": "13",
+      "seriesId": 1104,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15960"
+      ],
+      "selectedIssueId": 15960,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15960/ghost_rider_2006_13",
+      "resolvedIssueTitle": "Ghost Rider (2006) #13",
+      "note": "Marvel series 1104 (Ghost Rider (2006 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15960
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "World War Hulk: X-Men #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: X-Men",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 2418,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15999"
+      ],
+      "selectedIssueId": 15999,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15999/world_war_hulk_x-men_2007_2",
+      "resolvedIssueTitle": "World War Hulk: X-Men (2007) #2",
+      "note": "Marvel series 2418 (World War Hulk: X-Men (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15999
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Heroes for Hire #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Heroes for Hire",
+      "seriesYear": 2006,
+      "issueNumber": "11",
+      "seriesId": 1121,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15853"
+      ],
+      "selectedIssueId": 15853,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15853/heroes_for_hire_2006_11",
+      "resolvedIssueTitle": "Heroes for Hire (2006) #11",
+      "note": "Marvel series 1121 (Heroes for Hire (2006 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15853
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Heroes for Hire #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Heroes for Hire",
+      "seriesYear": 2006,
+      "issueNumber": "12",
+      "seriesId": 1121,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15963"
+      ],
+      "selectedIssueId": 15963,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15963/heroes_for_hire_2006_12",
+      "resolvedIssueTitle": "Heroes for Hire (2006) #12",
+      "note": "Marvel series 1121 (Heroes for Hire (2006 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15963
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Iron Man: Director of S.H.I.E.L.D. #20",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Iron Man: Director of S.H.I.E.L.D.",
+      "seriesYear": 2004,
+      "issueNumber": "20",
+      "seriesId": 835,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15942"
+      ],
+      "selectedIssueId": 15942,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15942/the_invincible_iron_man_2004_20",
+      "resolvedIssueTitle": "The Invincible Iron Man (2004) #20",
+      "note": "Marvel series 835 (The Invincible Iron Man (2004 - 2007)) is the reviewed metadata series for this source reference. The source title is Iron Man: Director of S.H.I.E.L.D.; Marvel names the selected series The Invincible Iron Man. Marvel keeps these Director of S.H.I.E.L.D. issues in The Invincible Iron Man series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15942
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Incredible Hulk #108",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "108",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15925"
+      ],
+      "selectedIssueId": 15925,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15925/hulk_1999_108",
+      "resolvedIssueTitle": "Hulk (1999) #108",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15925
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "World War Hulk #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 2400,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16168"
+      ],
+      "selectedIssueId": 16168,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16168/world_war_hulk_2007_3",
+      "resolvedIssueTitle": "World War Hulk (2007) #3",
+      "note": "Marvel series 2400 (World War Hulk (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16168
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "World War Hulk: Front Line #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Front Line",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 2407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16173"
+      ],
+      "selectedIssueId": 16173,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16173/world_war_hulk_front_line_2007_3",
+      "resolvedIssueTitle": "World War Hulk: Front Line (2007) #3",
+      "note": "Marvel series 2407 (World War Hulk: Front Line (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16173
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Incredible Hulk #109",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "109",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16107"
+      ],
+      "selectedIssueId": 16107,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16107/hulk_1999_109",
+      "resolvedIssueTitle": "Hulk (1999) #109",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16107
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "World War Hulk: Gamma Corps #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Gamma Corps",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 2538,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16189"
+      ],
+      "selectedIssueId": 16189,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16189/world_war_hulk_gamma_corps_2007_2",
+      "resolvedIssueTitle": "World War Hulk: Gamma Corps (2007) #2",
+      "note": "Marvel series 2538 (World War Hulk: Gamma Corps (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16189
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "World War Hulk: X-Men #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: X-Men",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 2418,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16183"
+      ],
+      "selectedIssueId": 16183,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16183/world_war_hulk_x-men_2007_3",
+      "resolvedIssueTitle": "World War Hulk: X-Men (2007) #3",
+      "note": "Marvel series 2418 (World War Hulk: X-Men (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16183
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Avengers: The Initiative #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers: The Initiative",
+      "seriesYear": 2007,
+      "issueNumber": "5",
+      "seriesId": 1945,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16162"
+      ],
+      "selectedIssueId": 16162,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16162/avengers_the_initiative_2007_5",
+      "resolvedIssueTitle": "Avengers: The Initiative (2007) #5",
+      "note": "Marvel series 1945 (Avengers: The Initiative (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16162
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Incredible Hulk #110",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "110",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16448"
+      ],
+      "selectedIssueId": 16448,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16448/hulk_1999_110",
+      "resolvedIssueTitle": "Hulk (1999) #110",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16448
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Heroes for Hire #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Heroes for Hire",
+      "seriesYear": 2006,
+      "issueNumber": "13",
+      "seriesId": 1121,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16148"
+      ],
+      "selectedIssueId": 16148,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16148/heroes_for_hire_2006_13",
+      "resolvedIssueTitle": "Heroes for Hire (2006) #13",
+      "note": "Marvel series 1121 (Heroes for Hire (2006 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16148
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "World War Hulk: Gamma Corps #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Gamma Corps",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 2538,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16596"
+      ],
+      "selectedIssueId": 16596,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16596/world_war_hulk_gamma_corps_2007_3",
+      "resolvedIssueTitle": "World War Hulk: Gamma Corps (2007) #3",
+      "note": "Marvel series 2538 (World War Hulk: Gamma Corps (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16596
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "World War Hulk #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 2400,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16557"
+      ],
+      "selectedIssueId": 16557,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16557/world_war_hulk_2007_4",
+      "resolvedIssueTitle": "World War Hulk (2007) #4",
+      "note": "Marvel series 2400 (World War Hulk (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16557
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "World War Hulk: Front Line #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Front Line",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 2407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16174"
+      ],
+      "selectedIssueId": 16174,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16174/world_war_hulk_front_line_2007_4",
+      "resolvedIssueTitle": "World War Hulk: Front Line (2007) #4",
+      "note": "Marvel series 2407 (World War Hulk: Front Line (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16174
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "World War Hulk: Front Line #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Front Line",
+      "seriesYear": 2007,
+      "issueNumber": "5",
+      "seriesId": 2407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16569"
+      ],
+      "selectedIssueId": 16569,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16569/world_war_hulk_front_line_2007_5",
+      "resolvedIssueTitle": "World War Hulk: Front Line (2007) #5",
+      "note": "Marvel series 2407 (World War Hulk: Front Line (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16569
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "Punisher War Journal #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Punisher War Journal",
+      "seriesYear": 2006,
+      "issueNumber": "12",
+      "seriesId": 1112,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16514"
+      ],
+      "selectedIssueId": 16514,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16514/punisher_war_journal_2006_12",
+      "resolvedIssueTitle": "Punisher War Journal (2006) #12",
+      "note": "Marvel series 1112 (Punisher War Journal (2006 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16514
+      ]
+    },
+    {
+      "sourcePosition": 33,
+      "sourceIssueReference": "Heroes for Hire #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Heroes for Hire",
+      "seriesYear": 2006,
+      "issueNumber": "14",
+      "seriesId": 1121,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16515"
+      ],
+      "selectedIssueId": 16515,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16515/heroes_for_hire_2006_14",
+      "resolvedIssueTitle": "Heroes for Hire (2006) #14",
+      "note": "Marvel series 1121 (Heroes for Hire (2006 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16515
+      ]
+    },
+    {
+      "sourcePosition": 34,
+      "sourceIssueReference": "Heroes for Hire #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Heroes for Hire",
+      "seriesYear": 2006,
+      "issueNumber": "15",
+      "seriesId": 1121,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16516"
+      ],
+      "selectedIssueId": 16516,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16516/heroes_for_hire_2006_15",
+      "resolvedIssueTitle": "Heroes for Hire (2006) #15",
+      "note": "Marvel series 1121 (Heroes for Hire (2006 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16516
+      ]
+    },
+    {
+      "sourcePosition": 35,
+      "sourceIssueReference": "World War Hulk: Gamma Corps #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Gamma Corps",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 2538,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16597"
+      ],
+      "selectedIssueId": 16597,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16597/world_war_hulk_gamma_corps_2007_4",
+      "resolvedIssueTitle": "World War Hulk: Gamma Corps (2007) #4",
+      "note": "Marvel series 2538 (World War Hulk: Gamma Corps (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16597
+      ]
+    },
+    {
+      "sourcePosition": 36,
+      "sourceIssueReference": "Incredible Hulk #111",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "111",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16449"
+      ],
+      "selectedIssueId": 16449,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16449/hulk_1999_111",
+      "resolvedIssueTitle": "Hulk (1999) #111",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16449
+      ]
+    },
+    {
+      "sourcePosition": 37,
+      "sourceIssueReference": "World War Hulk #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk",
+      "seriesYear": 2007,
+      "issueNumber": "5",
+      "seriesId": 2400,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16560"
+      ],
+      "selectedIssueId": 16560,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16560/world_war_hulk_2007_5",
+      "resolvedIssueTitle": "World War Hulk (2007) #5",
+      "note": "Marvel series 2400 (World War Hulk (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16560
+      ]
+    },
+    {
+      "sourcePosition": 38,
+      "sourceIssueReference": "World War Hulk: Front Line #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Front Line",
+      "seriesYear": 2007,
+      "issueNumber": "6",
+      "seriesId": 2407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16570"
+      ],
+      "selectedIssueId": 16570,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16570/world_war_hulk_front_line_2007_6",
+      "resolvedIssueTitle": "World War Hulk: Front Line (2007) #6",
+      "note": "Marvel series 2407 (World War Hulk: Front Line (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16570
+      ]
+    },
+    {
+      "sourcePosition": 39,
+      "sourceIssueReference": "World War Hulk: Aftersmash #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Aftersmash",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 3020,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17231"
+      ],
+      "selectedIssueId": 17231,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17231/world_war_hulk_aftersmash_1_2007_1",
+      "resolvedIssueTitle": "WORLD WAR HULK: AFTERSMASH 1 (2007) #1",
+      "note": "Marvel series 3020 (WORLD WAR HULK: AFTERSMASH 1 (2007)) is the reviewed metadata series for this source reference. The source title is World War Hulk: Aftersmash; Marvel names the selected series WORLD WAR HULK: AFTERSMASH 1. The source omits #1; Marvel names a one-issue series WORLD WAR HULK: AFTERSMASH 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17231
+      ]
+    }
+  ]
+}

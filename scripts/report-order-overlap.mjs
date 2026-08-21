@@ -80,19 +80,6 @@ export async function buildReportForMapping(mappingPath, peerPaths = []) {
     throw new Error('Duplicate candidate issue ids in the mapping');
   }
 
-  const manifest = await loadManifest(path.join(rootDir, 'src', 'data', 'curated-lists.json'));
-  const orders = await Promise.all(manifest.map(async (item) => {
-    const filePath = path.join(rootDir, 'src', 'data', item.out || `${item.id}.json`);
-    let payload;
-    try {
-      payload = JSON.parse(await readFile(filePath, 'utf8'));
-    } catch (error) {
-      throw new Error(`Missing generated payload for ${item.id}: ${error.message}`, { cause: error });
-    }
-    const issueIds = issueIdsFromValue(payload);
-    return { orderId: item.id, issueIds };
-  }));
-
   const peers = await Promise.all(peerPaths.map(async (peerPath) => {
     const peer = JSON.parse(await readFile(peerPath, 'utf8'));
     const peerRows = Array.isArray(peer.rows) ? peer.rows : [];
@@ -108,6 +95,23 @@ export async function buildReportForMapping(mappingPath, peerPaths = []) {
     }
     return { orderId: peer.id ?? path.basename(peerPath, path.extname(peerPath)), issueIds: ids };
   }));
+
+  const candidateOrderId = String(mapping.id ?? path.basename(mappingPath, path.extname(mappingPath)));
+  const peerOrderIds = new Set(peers.map((peer) => String(peer.orderId)));
+  const manifest = await loadManifest(path.join(rootDir, 'src', 'data', 'curated-lists.json'));
+  const orders = await Promise.all(manifest
+    .filter((item) => item.id !== candidateOrderId && !peerOrderIds.has(String(item.id)))
+    .map(async (item) => {
+      const filePath = path.join(rootDir, 'src', 'data', item.out || `${item.id}.json`);
+      let payload;
+      try {
+        payload = JSON.parse(await readFile(filePath, 'utf8'));
+      } catch (error) {
+        throw new Error(`Missing generated payload for ${item.id}: ${error.message}`, { cause: error });
+      }
+      const issueIds = issueIdsFromValue(payload);
+      return { orderId: item.id, issueIds };
+    }));
 
   return buildComparisonReport({ candidateIds, orders, peerOrders: peers });
 }

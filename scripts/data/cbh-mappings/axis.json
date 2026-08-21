@@ -1,0 +1,2085 @@
+{
+  "id": "axis",
+  "inventoryId": "axis",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/axis-reading-order/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 55,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 48921,
+      "title": "Magneto",
+      "issueTitle": "Magneto (2014) #9",
+      "seriesTitle": "Magneto",
+      "apiSeriesName": "Magneto (2014 - 2015)",
+      "seriesId": 18407,
+      "issueNumber": "9",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48921/magneto_2014_9",
+      "onSaleDate": "2014-09-10T00:00:00+0000"
+    },
+    {
+      "id": 49227,
+      "title": "Uncanny Avengers",
+      "issueTitle": "Uncanny Avengers (2012) #24",
+      "seriesTitle": "Uncanny Avengers",
+      "apiSeriesName": "Uncanny Avengers (2012 - 2014)",
+      "seriesId": 16414,
+      "issueNumber": "24",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49227/uncanny_avengers_2012_24",
+      "onSaleDate": "2014-09-17T00:00:00+0000"
+    },
+    {
+      "id": 48922,
+      "title": "Magneto",
+      "issueTitle": "Magneto (2014) #10",
+      "seriesTitle": "Magneto",
+      "apiSeriesName": "Magneto (2014 - 2015)",
+      "seriesId": 18407,
+      "issueNumber": "10",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48922/magneto_2014_10",
+      "onSaleDate": "2014-09-24T00:00:00+0000"
+    },
+    {
+      "id": 48589,
+      "title": "Captain America",
+      "issueTitle": "Captain America (2012) #22",
+      "seriesTitle": "Captain America",
+      "apiSeriesName": "Captain America (2012 - 2014)",
+      "seriesId": 16516,
+      "issueNumber": "22",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48589/captain_america_2012_22",
+      "onSaleDate": "2014-07-02T00:00:00+0000"
+    },
+    {
+      "id": 48590,
+      "title": "Captain America",
+      "issueTitle": "Captain America (2012) #23",
+      "seriesTitle": "Captain America",
+      "apiSeriesName": "Captain America (2012 - 2014)",
+      "seriesId": 16516,
+      "issueNumber": "23",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48590/captain_america_2012_23",
+      "onSaleDate": "2014-08-13T00:00:00+0000"
+    },
+    {
+      "id": 48591,
+      "title": "Captain America",
+      "issueTitle": "Captain America (2012) #24",
+      "seriesTitle": "Captain America",
+      "apiSeriesName": "Captain America (2012 - 2014)",
+      "seriesId": 16516,
+      "issueNumber": "24",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48591/captain_america_2012_24",
+      "onSaleDate": "2014-09-03T00:00:00+0000"
+    },
+    {
+      "id": 48519,
+      "title": "Loki: Agent of Asgard",
+      "issueTitle": "Loki: Agent of Asgard (2014) #6",
+      "seriesTitle": "Loki: Agent of Asgard",
+      "apiSeriesName": "Loki: Agent of Asgard (2014 - 2015)",
+      "seriesId": 18340,
+      "issueNumber": "6",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48519/loki_agent_of_asgard_2014_6",
+      "onSaleDate": "2014-09-24T00:00:00+0000"
+    },
+    {
+      "id": 49228,
+      "title": "Uncanny Avengers",
+      "issueTitle": "Uncanny Avengers (2012) #25",
+      "seriesTitle": "Uncanny Avengers",
+      "apiSeriesName": "Uncanny Avengers (2012 - 2014)",
+      "seriesId": 16414,
+      "issueNumber": "25",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49228/uncanny_avengers_2012_25",
+      "onSaleDate": "2014-10-01T00:00:00+0000"
+    },
+    {
+      "id": 48592,
+      "title": "Captain America",
+      "issueTitle": "Captain America (2012) #25",
+      "seriesTitle": "Captain America",
+      "apiSeriesName": "Captain America (2012 - 2014)",
+      "seriesId": 16516,
+      "issueNumber": "25",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48592/captain_america_2012_25",
+      "onSaleDate": "2014-10-01T00:00:00+0000"
+    },
+    {
+      "id": 50599,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #1",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50599/avengers_x-men_axis_2014_1",
+      "onSaleDate": "2014-10-08T00:00:00+0000"
+    },
+    {
+      "id": 50982,
+      "title": "Axis: Revolutions",
+      "issueTitle": "Axis: Revolutions (2014) #1",
+      "seriesTitle": "Axis: Revolutions",
+      "apiSeriesName": "Axis: Revolutions (2014)",
+      "seriesId": 19086,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50982/axis_revolutions_2014_1",
+      "onSaleDate": "2014-10-29T00:00:00+0000"
+    },
+    {
+      "id": 50601,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #2",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50601/avengers_x-men_axis_2014_2",
+      "onSaleDate": "2014-10-15T00:00:00+0000"
+    },
+    {
+      "id": 50715,
+      "title": "Loki: Agent of Asgard",
+      "issueTitle": "Loki: Agent of Asgard (2014) #7",
+      "seriesTitle": "Loki: Agent of Asgard",
+      "apiSeriesName": "Loki: Agent of Asgard (2014 - 2015)",
+      "seriesId": 18340,
+      "issueNumber": "7",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50715/loki_agent_of_asgard_2014_7",
+      "onSaleDate": "2014-10-15T00:00:00+0000"
+    },
+    {
+      "id": 48923,
+      "title": "Magneto",
+      "issueTitle": "Magneto (2014) #11",
+      "seriesTitle": "Magneto",
+      "apiSeriesName": "Magneto (2014 - 2015)",
+      "seriesId": 18407,
+      "issueNumber": "11",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48923/magneto_2014_11",
+      "onSaleDate": "2014-10-15T00:00:00+0000"
+    },
+    {
+      "id": 50602,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #3",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50602/avengers_x-men_axis_2014_3",
+      "onSaleDate": "2014-10-22T00:00:00+0000"
+    },
+    {
+      "id": 48924,
+      "title": "Magneto",
+      "issueTitle": "Magneto (2014) #12",
+      "seriesTitle": "Magneto",
+      "apiSeriesName": "Magneto (2014 - 2015)",
+      "seriesId": 18407,
+      "issueNumber": "12",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48924/magneto_2014_12",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 50977,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #36",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "36",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50977/deadpool_2012_36",
+      "onSaleDate": "2014-10-22T00:00:00+0000"
+    },
+    {
+      "id": 47976,
+      "title": "All-New X-Factor",
+      "issueTitle": "All-New X-Factor (2014) #15",
+      "seriesTitle": "All-New X-Factor",
+      "apiSeriesName": "All-New X-Factor (2014 - 2015)",
+      "seriesId": 18136,
+      "issueNumber": "15",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47976/all-new_x-factor_2014_15",
+      "onSaleDate": "2014-10-22T00:00:00+0000"
+    },
+    {
+      "id": 47977,
+      "title": "All-New X-Factor",
+      "issueTitle": "All-New X-Factor (2014) #16",
+      "seriesTitle": "All-New X-Factor",
+      "apiSeriesName": "All-New X-Factor (2014 - 2015)",
+      "seriesId": 18136,
+      "issueNumber": "16",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47977/all-new_x-factor_2014_16",
+      "onSaleDate": "2014-11-05T00:00:00+0000"
+    },
+    {
+      "id": 47818,
+      "title": "Inhuman",
+      "issueTitle": "Inhuman (2014) #9",
+      "seriesTitle": "Inhuman",
+      "apiSeriesName": "Inhuman (2014 - 2015)",
+      "seriesId": 18065,
+      "issueNumber": "9",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47818/inhuman_2014_9",
+      "onSaleDate": "2014-12-03T00:00:00+0000"
+    },
+    {
+      "id": 47819,
+      "title": "Inhuman",
+      "issueTitle": "Inhuman (2014) #10",
+      "seriesTitle": "Inhuman",
+      "apiSeriesName": "Inhuman (2014 - 2015)",
+      "seriesId": 18065,
+      "issueNumber": "10",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47819/inhuman_2014_10",
+      "onSaleDate": "2014-12-17T00:00:00+0000"
+    },
+    {
+      "id": 50603,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #4",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50603/avengers_x-men_axis_2014_4",
+      "onSaleDate": "2014-11-05T00:00:00+0000"
+    },
+    {
+      "id": 51062,
+      "title": "Superior Iron Man",
+      "issueTitle": "Superior Iron Man (2014) #1",
+      "seriesTitle": "Superior Iron Man",
+      "apiSeriesName": "Superior Iron Man (2014 - 2015)",
+      "seriesId": 19164,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51062/superior_iron_man_2014_1",
+      "onSaleDate": "2014-11-12T00:00:00+0000"
+    },
+    {
+      "id": 50976,
+      "title": "Axis: Hobgoblin",
+      "issueTitle": "Axis: Hobgoblin (2014) #1",
+      "seriesTitle": "Axis: Hobgoblin",
+      "apiSeriesName": "Axis: Hobgoblin (2014)",
+      "seriesId": 19084,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50976/axis_hobgoblin_2014_1",
+      "onSaleDate": "2014-10-22T00:00:00+0000"
+    },
+    {
+      "id": 51055,
+      "title": "Axis: Hobgoblin",
+      "issueTitle": "Axis: Hobgoblin (2014) #2",
+      "seriesTitle": "Axis: Hobgoblin",
+      "apiSeriesName": "Axis: Hobgoblin (2014)",
+      "seriesId": 19084,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51055/axis_hobgoblin_2014_2",
+      "onSaleDate": "2014-11-12T00:00:00+0000"
+    },
+    {
+      "id": 51155,
+      "title": "Axis: Hobgoblin",
+      "issueTitle": "Axis: Hobgoblin (2014) #3",
+      "seriesTitle": "Axis: Hobgoblin",
+      "apiSeriesName": "Axis: Hobgoblin (2014)",
+      "seriesId": 19084,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51155/axis_hobgoblin_2014_3",
+      "onSaleDate": "2014-12-17T00:00:00+0000"
+    },
+    {
+      "id": 50980,
+      "title": "Axis: Carnage",
+      "issueTitle": "Axis: Carnage (2014) #1",
+      "seriesTitle": "Axis: Carnage",
+      "apiSeriesName": "Axis: Carnage (2014)",
+      "seriesId": 19085,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50980/axis_carnage_2014_1",
+      "onSaleDate": "2014-10-29T00:00:00+0000"
+    },
+    {
+      "id": 51064,
+      "title": "Axis: Carnage",
+      "issueTitle": "Axis: Carnage (2014) #2",
+      "seriesTitle": "Axis: Carnage",
+      "apiSeriesName": "Axis: Carnage (2014)",
+      "seriesId": 19085,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51064/axis_carnage_2014_2",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 51511,
+      "title": "Axis: Carnage",
+      "issueTitle": "Axis: Carnage (2014) #3",
+      "seriesTitle": "Axis: Carnage",
+      "apiSeriesName": "Axis: Carnage (2014)",
+      "seriesId": 19085,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51511/axis_carnage_2014_3",
+      "onSaleDate": "2014-12-10T00:00:00+0000"
+    },
+    {
+      "id": 51049,
+      "title": "Captain America & the Mighty Avengers",
+      "issueTitle": "Captain America & the Mighty Avengers (2014) #1",
+      "seriesTitle": "Captain America & the Mighty Avengers",
+      "apiSeriesName": "Captain America & the Mighty Avengers (2014 - 2015)",
+      "seriesId": 19160,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51049/captain_america_the_mighty_avengers_2014_1",
+      "onSaleDate": "2014-11-12T00:00:00+0000"
+    },
+    {
+      "id": 51550,
+      "title": "Captain America & the Mighty Avengers",
+      "issueTitle": "Captain America & the Mighty Avengers (2014) #2",
+      "seriesTitle": "Captain America & the Mighty Avengers",
+      "apiSeriesName": "Captain America & the Mighty Avengers (2014 - 2015)",
+      "seriesId": 19160,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51550/captain_america_the_mighty_avengers_2014_2",
+      "onSaleDate": "2014-11-26T00:00:00+0000"
+    },
+    {
+      "id": 51158,
+      "title": "Captain America & the Mighty Avengers",
+      "issueTitle": "Captain America & the Mighty Avengers (2014) #3",
+      "seriesTitle": "Captain America & the Mighty Avengers",
+      "apiSeriesName": "Captain America & the Mighty Avengers (2014 - 2015)",
+      "seriesId": 19160,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51158/captain_america_the_mighty_avengers_2014_3",
+      "onSaleDate": "2014-12-24T00:00:00+0000"
+    },
+    {
+      "id": 51067,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #37",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "37",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51067/deadpool_2012_37",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 47978,
+      "title": "All-New X-Factor",
+      "issueTitle": "All-New X-Factor (2014) #17",
+      "seriesTitle": "All-New X-Factor",
+      "apiSeriesName": "All-New X-Factor (2014 - 2015)",
+      "seriesId": 18136,
+      "issueNumber": "17",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47978/all-new_x-factor_2014_17",
+      "onSaleDate": "2014-12-03T00:00:00+0000"
+    },
+    {
+      "id": 51147,
+      "title": "Amazing X-Men",
+      "issueTitle": "Amazing X-Men (2013) #14",
+      "seriesTitle": "Amazing X-Men",
+      "apiSeriesName": "Amazing X-Men (2013 - 2015)",
+      "seriesId": 18142,
+      "issueNumber": "14",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51147/amazing_x-men_2013_14",
+      "onSaleDate": "2014-12-10T00:00:00+0000"
+    },
+    {
+      "id": 50604,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #5",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "5",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50604/avengers_x-men_axis_2014_5",
+      "onSaleDate": "2014-11-12T00:00:00+0000"
+    },
+    {
+      "id": 51060,
+      "title": "Nova",
+      "issueTitle": "Nova (2013) #23",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2013 - 2015)",
+      "seriesId": 16411,
+      "issueNumber": "23",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51060/nova_2013_23",
+      "onSaleDate": "2014-11-12T00:00:00+0000"
+    },
+    {
+      "id": 51086,
+      "title": "Nova",
+      "issueTitle": "Nova (2013) #24",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2013 - 2015)",
+      "seriesId": 16411,
+      "issueNumber": "24",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51086/nova_2013_24",
+      "onSaleDate": "2014-11-26T00:00:00+0000"
+    },
+    {
+      "id": 51063,
+      "title": "Avengers World",
+      "issueTitle": "Avengers World (2014) #15",
+      "seriesTitle": "Avengers World",
+      "apiSeriesName": "Avengers World (2014 - 2015)",
+      "seriesId": 18398,
+      "issueNumber": "15",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51063/avengers_world_2014_15",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 51444,
+      "title": "Avengers World",
+      "issueTitle": "Avengers World (2014) #16",
+      "seriesTitle": "Avengers World",
+      "apiSeriesName": "Avengers World (2014 - 2015)",
+      "seriesId": 18398,
+      "issueNumber": "16",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51444/avengers_world_2014_16",
+      "onSaleDate": "2014-12-10T00:00:00+0000"
+    },
+    {
+      "id": 51065,
+      "title": "Axis: Revolutions",
+      "issueTitle": "Axis: Revolutions (2014) #2",
+      "seriesTitle": "Axis: Revolutions",
+      "apiSeriesName": "Axis: Revolutions (2014)",
+      "seriesId": 19086,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51065/axis_revolutions_2014_2",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 51137,
+      "title": "Axis: Revolutions",
+      "issueTitle": "Axis: Revolutions (2014) #3",
+      "seriesTitle": "Axis: Revolutions",
+      "apiSeriesName": "Axis: Revolutions (2014)",
+      "seriesId": 19086,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51137/axis_revolutions_2014_3",
+      "onSaleDate": "2014-12-03T00:00:00+0000"
+    },
+    {
+      "id": 51519,
+      "title": "Axis: Revolutions",
+      "issueTitle": "Axis: Revolutions (2014) #4",
+      "seriesTitle": "Axis: Revolutions",
+      "apiSeriesName": "Axis: Revolutions (2014)",
+      "seriesId": 19086,
+      "issueNumber": "4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51519/axis_revolutions_2014_4",
+      "onSaleDate": "2014-12-17T00:00:00+0000"
+    },
+    {
+      "id": 51078,
+      "title": "Loki: Agent of Asgard",
+      "issueTitle": "Loki: Agent of Asgard (2014) #8",
+      "seriesTitle": "Loki: Agent of Asgard",
+      "apiSeriesName": "Loki: Agent of Asgard (2014 - 2015)",
+      "seriesId": 18340,
+      "issueNumber": "8",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51078/loki_agent_of_asgard_2014_8",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 50605,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #6",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "6",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50605/avengers_x-men_axis_2014_6",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 51087,
+      "title": "Superior Iron Man",
+      "issueTitle": "Superior Iron Man (2014) #2",
+      "seriesTitle": "Superior Iron Man",
+      "apiSeriesName": "Superior Iron Man (2014 - 2015)",
+      "seriesId": 19164,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51087/superior_iron_man_2014_2",
+      "onSaleDate": "2014-11-26T00:00:00+0000"
+    },
+    {
+      "id": 51174,
+      "title": "Superior Iron Man",
+      "issueTitle": "Superior Iron Man (2014) #3",
+      "seriesTitle": "Superior Iron Man",
+      "apiSeriesName": "Superior Iron Man (2014 - 2015)",
+      "seriesId": 19164,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51174/superior_iron_man_2014_3",
+      "onSaleDate": "2014-12-24T00:00:00+0000"
+    },
+    {
+      "id": 48907,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2014) #12",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2014)",
+      "seriesId": 18406,
+      "issueNumber": "12",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48907/wolverine_the_x-men_2014_12",
+      "onSaleDate": "2014-11-26T00:00:00+0000"
+    },
+    {
+      "id": 51143,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #38",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "38",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51143/deadpool_2012_38",
+      "onSaleDate": "2014-12-03T00:00:00+0000"
+    },
+    {
+      "id": 50606,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #7",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "7",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50606/avengers_x-men_axis_2014_7",
+      "onSaleDate": "2014-12-10T00:00:00+0000"
+    },
+    {
+      "id": 50607,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #8",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "8",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50607/avengers_x-men_axis_2014_8",
+      "onSaleDate": "2014-12-17T00:00:00+0000"
+    },
+    {
+      "id": 51168,
+      "title": "Avengers & X-Men: Axis",
+      "issueTitle": "Avengers & X-Men: Axis (2014) #9",
+      "seriesTitle": "Avengers & X-Men: Axis",
+      "apiSeriesName": "Avengers & X-Men: Axis (2014)",
+      "seriesId": 18904,
+      "issueNumber": "9",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51168/avengers_x-men_axis_2014_9",
+      "onSaleDate": "2014-12-24T00:00:00+0000"
+    },
+    {
+      "id": 51159,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #39",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "39",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51159/deadpool_2012_39",
+      "onSaleDate": "2014-12-24T00:00:00+0000"
+    },
+    {
+      "id": 51170,
+      "title": "Loki: Agent of Asgard",
+      "issueTitle": "Loki: Agent of Asgard (2014) #9",
+      "seriesTitle": "Loki: Agent of Asgard",
+      "apiSeriesName": "Loki: Agent of Asgard (2014 - 2015)",
+      "seriesId": 18340,
+      "issueNumber": "9",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51170/loki_agent_of_asgard_2014_9",
+      "onSaleDate": "2014-12-24T00:00:00+0000"
+    },
+    {
+      "id": 51173,
+      "title": "Nova",
+      "issueTitle": "Nova (2013) #25",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2013 - 2015)",
+      "seriesId": 16411,
+      "issueNumber": "25",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/51173/nova_2013_25",
+      "onSaleDate": "2014-12-24T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Magneto #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Magneto",
+      "seriesYear": 2014,
+      "issueNumber": "9",
+      "seriesId": 18407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48921"
+      ],
+      "selectedIssueId": 48921,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48921/magneto_2014_9",
+      "resolvedIssueTitle": "Magneto (2014) #9",
+      "note": "Marvel series 18407 (Magneto (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48921
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Uncanny Avengers #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "24",
+      "seriesId": 16414,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49227"
+      ],
+      "selectedIssueId": 49227,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49227/uncanny_avengers_2012_24",
+      "resolvedIssueTitle": "Uncanny Avengers (2012) #24",
+      "note": "Marvel series 16414 (Uncanny Avengers (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49227
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Magneto #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Magneto",
+      "seriesYear": 2014,
+      "issueNumber": "10",
+      "seriesId": 18407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48922"
+      ],
+      "selectedIssueId": 48922,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48922/magneto_2014_10",
+      "resolvedIssueTitle": "Magneto (2014) #10",
+      "note": "Marvel series 18407 (Magneto (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48922
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Captain America #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain America",
+      "seriesYear": 2012,
+      "issueNumber": "22",
+      "seriesId": 16516,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48589"
+      ],
+      "selectedIssueId": 48589,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48589/captain_america_2012_22",
+      "resolvedIssueTitle": "Captain America (2012) #22",
+      "note": "Marvel series 16516 (Captain America (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48589
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Captain America #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain America",
+      "seriesYear": 2012,
+      "issueNumber": "23",
+      "seriesId": 16516,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48590"
+      ],
+      "selectedIssueId": 48590,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48590/captain_america_2012_23",
+      "resolvedIssueTitle": "Captain America (2012) #23",
+      "note": "Marvel series 16516 (Captain America (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48590
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Captain America #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain America",
+      "seriesYear": 2012,
+      "issueNumber": "24",
+      "seriesId": 16516,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48591"
+      ],
+      "selectedIssueId": 48591,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48591/captain_america_2012_24",
+      "resolvedIssueTitle": "Captain America (2012) #24",
+      "note": "Marvel series 16516 (Captain America (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48591
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Loki: Agent of Asgard #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Loki: Agent of Asgard",
+      "seriesYear": 2014,
+      "issueNumber": "6",
+      "seriesId": 18340,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48519"
+      ],
+      "selectedIssueId": 48519,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48519/loki_agent_of_asgard_2014_6",
+      "resolvedIssueTitle": "Loki: Agent of Asgard (2014) #6",
+      "note": "Marvel series 18340 (Loki: Agent of Asgard (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48519
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Uncanny Avengers #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "25",
+      "seriesId": 16414,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49228"
+      ],
+      "selectedIssueId": 49228,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49228/uncanny_avengers_2012_25",
+      "resolvedIssueTitle": "Uncanny Avengers (2012) #25",
+      "note": "Marvel series 16414 (Uncanny Avengers (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49228
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Captain America #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain America",
+      "seriesYear": 2012,
+      "issueNumber": "25",
+      "seriesId": 16516,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48592"
+      ],
+      "selectedIssueId": 48592,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48592/captain_america_2012_25",
+      "resolvedIssueTitle": "Captain America (2012) #25",
+      "note": "Marvel series 16516 (Captain America (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48592
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Avengers & X-Men: Axis #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50599"
+      ],
+      "selectedIssueId": 50599,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50599/avengers_x-men_axis_2014_1",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #1",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50599
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Axis: Revolutions #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Revolutions",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50982"
+      ],
+      "selectedIssueId": 50982,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50982/axis_revolutions_2014_1",
+      "resolvedIssueTitle": "Axis: Revolutions (2014) #1",
+      "note": "Marvel series 19086 (Axis: Revolutions (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50982
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Avengers & X-Men: Axis #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50601"
+      ],
+      "selectedIssueId": 50601,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50601/avengers_x-men_axis_2014_2",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #2",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50601
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Loki: Agent of Asgard #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Loki: Agent of Asgard",
+      "seriesYear": 2014,
+      "issueNumber": "7",
+      "seriesId": 18340,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50715"
+      ],
+      "selectedIssueId": 50715,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50715/loki_agent_of_asgard_2014_7",
+      "resolvedIssueTitle": "Loki: Agent of Asgard (2014) #7",
+      "note": "Marvel series 18340 (Loki: Agent of Asgard (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50715
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Magneto #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Magneto",
+      "seriesYear": 2014,
+      "issueNumber": "11",
+      "seriesId": 18407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48923"
+      ],
+      "selectedIssueId": 48923,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48923/magneto_2014_11",
+      "resolvedIssueTitle": "Magneto (2014) #11",
+      "note": "Marvel series 18407 (Magneto (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48923
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Avengers & X-Men: Axis #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50602"
+      ],
+      "selectedIssueId": 50602,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50602/avengers_x-men_axis_2014_3",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #3",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50602
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Magneto #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Magneto",
+      "seriesYear": 2014,
+      "issueNumber": "12",
+      "seriesId": 18407,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48924"
+      ],
+      "selectedIssueId": 48924,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48924/magneto_2014_12",
+      "resolvedIssueTitle": "Magneto (2014) #12",
+      "note": "Marvel series 18407 (Magneto (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48924
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Deadpool #36",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "36",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50977"
+      ],
+      "selectedIssueId": 50977,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50977/deadpool_2012_36",
+      "resolvedIssueTitle": "Deadpool (2012) #36",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50977
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "All-New X-Factor #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Factor",
+      "seriesYear": 2014,
+      "issueNumber": "15",
+      "seriesId": 18136,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47976"
+      ],
+      "selectedIssueId": 47976,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47976/all-new_x-factor_2014_15",
+      "resolvedIssueTitle": "All-New X-Factor (2014) #15",
+      "note": "Marvel series 18136 (All-New X-Factor (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47976
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "All-New X-Factor #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Factor",
+      "seriesYear": 2014,
+      "issueNumber": "16",
+      "seriesId": 18136,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47977"
+      ],
+      "selectedIssueId": 47977,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47977/all-new_x-factor_2014_16",
+      "resolvedIssueTitle": "All-New X-Factor (2014) #16",
+      "note": "Marvel series 18136 (All-New X-Factor (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47977
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Inhuman #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhuman",
+      "seriesYear": 2014,
+      "issueNumber": "9",
+      "seriesId": 18065,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47818"
+      ],
+      "selectedIssueId": 47818,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47818/inhuman_2014_9",
+      "resolvedIssueTitle": "Inhuman (2014) #9",
+      "note": "Marvel series 18065 (Inhuman (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47818
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Inhuman #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhuman",
+      "seriesYear": 2014,
+      "issueNumber": "10",
+      "seriesId": 18065,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47819"
+      ],
+      "selectedIssueId": 47819,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47819/inhuman_2014_10",
+      "resolvedIssueTitle": "Inhuman (2014) #10",
+      "note": "Marvel series 18065 (Inhuman (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47819
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Avengers & X-Men: Axis #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "4",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50603"
+      ],
+      "selectedIssueId": 50603,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50603/avengers_x-men_axis_2014_4",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #4",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50603
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Superior Iron Man #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Superior Iron Man",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19164,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51062"
+      ],
+      "selectedIssueId": 51062,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51062/superior_iron_man_2014_1",
+      "resolvedIssueTitle": "Superior Iron Man (2014) #1",
+      "note": "Marvel series 19164 (Superior Iron Man (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51062
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Axis: Hobgoblin #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Hobgoblin",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19084,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50976"
+      ],
+      "selectedIssueId": 50976,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50976/axis_hobgoblin_2014_1",
+      "resolvedIssueTitle": "Axis: Hobgoblin (2014) #1",
+      "note": "Marvel series 19084 (Axis: Hobgoblin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50976
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Axis: Hobgoblin #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Hobgoblin",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 19084,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51055"
+      ],
+      "selectedIssueId": 51055,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51055/axis_hobgoblin_2014_2",
+      "resolvedIssueTitle": "Axis: Hobgoblin (2014) #2",
+      "note": "Marvel series 19084 (Axis: Hobgoblin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51055
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Axis: Hobgoblin #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Hobgoblin",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 19084,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51155"
+      ],
+      "selectedIssueId": 51155,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51155/axis_hobgoblin_2014_3",
+      "resolvedIssueTitle": "Axis: Hobgoblin (2014) #3",
+      "note": "Marvel series 19084 (Axis: Hobgoblin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51155
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Axis: Carnage #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Carnage",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50980"
+      ],
+      "selectedIssueId": 50980,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50980/axis_carnage_2014_1",
+      "resolvedIssueTitle": "Axis: Carnage (2014) #1",
+      "note": "Marvel series 19085 (Axis: Carnage (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50980
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Axis: Carnage #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Carnage",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 19085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51064"
+      ],
+      "selectedIssueId": 51064,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51064/axis_carnage_2014_2",
+      "resolvedIssueTitle": "Axis: Carnage (2014) #2",
+      "note": "Marvel series 19085 (Axis: Carnage (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51064
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "Axis: Carnage #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Carnage",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 19085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51511"
+      ],
+      "selectedIssueId": 51511,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51511/axis_carnage_2014_3",
+      "resolvedIssueTitle": "Axis: Carnage (2014) #3",
+      "note": "Marvel series 19085 (Axis: Carnage (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51511
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "Captain America & The Mighty Avengers #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain America & The Mighty Avengers",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19160,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51049"
+      ],
+      "selectedIssueId": 51049,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51049/captain_america_the_mighty_avengers_2014_1",
+      "resolvedIssueTitle": "Captain America & the Mighty Avengers (2014) #1",
+      "note": "Marvel series 19160 (Captain America & the Mighty Avengers (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51049
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "Captain America & The Mighty Avengers #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain America & The Mighty Avengers",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 19160,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51550"
+      ],
+      "selectedIssueId": 51550,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51550/captain_america_the_mighty_avengers_2014_2",
+      "resolvedIssueTitle": "Captain America & the Mighty Avengers (2014) #2",
+      "note": "Marvel series 19160 (Captain America & the Mighty Avengers (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51550
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "Captain America & The Mighty Avengers #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain America & The Mighty Avengers",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 19160,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51158"
+      ],
+      "selectedIssueId": 51158,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51158/captain_america_the_mighty_avengers_2014_3",
+      "resolvedIssueTitle": "Captain America & the Mighty Avengers (2014) #3",
+      "note": "Marvel series 19160 (Captain America & the Mighty Avengers (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51158
+      ]
+    },
+    {
+      "sourcePosition": 33,
+      "sourceIssueReference": "Deadpool #37",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "37",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51067"
+      ],
+      "selectedIssueId": 51067,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51067/deadpool_2012_37",
+      "resolvedIssueTitle": "Deadpool (2012) #37",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51067
+      ]
+    },
+    {
+      "sourcePosition": 34,
+      "sourceIssueReference": "All-New X-Factor #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Factor",
+      "seriesYear": 2014,
+      "issueNumber": "17",
+      "seriesId": 18136,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47978"
+      ],
+      "selectedIssueId": 47978,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47978/all-new_x-factor_2014_17",
+      "resolvedIssueTitle": "All-New X-Factor (2014) #17",
+      "note": "Marvel series 18136 (All-New X-Factor (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47978
+      ]
+    },
+    {
+      "sourcePosition": 35,
+      "sourceIssueReference": "Amazing X-Men #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing X-Men",
+      "seriesYear": 2013,
+      "issueNumber": "14",
+      "seriesId": 18142,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51147"
+      ],
+      "selectedIssueId": 51147,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51147/amazing_x-men_2013_14",
+      "resolvedIssueTitle": "Amazing X-Men (2013) #14",
+      "note": "Marvel series 18142 (Amazing X-Men (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51147
+      ]
+    },
+    {
+      "sourcePosition": 36,
+      "sourceIssueReference": "Avengers & X-Men: Axis #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "5",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50604"
+      ],
+      "selectedIssueId": 50604,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50604/avengers_x-men_axis_2014_5",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #5",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50604
+      ]
+    },
+    {
+      "sourcePosition": 37,
+      "sourceIssueReference": "Nova #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2013,
+      "issueNumber": "23",
+      "seriesId": 16411,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51060"
+      ],
+      "selectedIssueId": 51060,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51060/nova_2013_23",
+      "resolvedIssueTitle": "Nova (2013) #23",
+      "note": "Marvel series 16411 (Nova (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51060
+      ]
+    },
+    {
+      "sourcePosition": 38,
+      "sourceIssueReference": "Nova #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2013,
+      "issueNumber": "24",
+      "seriesId": 16411,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51086"
+      ],
+      "selectedIssueId": 51086,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51086/nova_2013_24",
+      "resolvedIssueTitle": "Nova (2013) #24",
+      "note": "Marvel series 16411 (Nova (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51086
+      ]
+    },
+    {
+      "sourcePosition": 39,
+      "sourceIssueReference": "Avengers World #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers World",
+      "seriesYear": 2014,
+      "issueNumber": "15",
+      "seriesId": 18398,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51063"
+      ],
+      "selectedIssueId": 51063,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51063/avengers_world_2014_15",
+      "resolvedIssueTitle": "Avengers World (2014) #15",
+      "note": "Marvel series 18398 (Avengers World (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51063
+      ]
+    },
+    {
+      "sourcePosition": 40,
+      "sourceIssueReference": "Avengers World #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers World",
+      "seriesYear": 2014,
+      "issueNumber": "16",
+      "seriesId": 18398,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51444"
+      ],
+      "selectedIssueId": 51444,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51444/avengers_world_2014_16",
+      "resolvedIssueTitle": "Avengers World (2014) #16",
+      "note": "Marvel series 18398 (Avengers World (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51444
+      ]
+    },
+    {
+      "sourcePosition": 41,
+      "sourceIssueReference": "Axis: Revolutions #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Revolutions",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 19086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51065"
+      ],
+      "selectedIssueId": 51065,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51065/axis_revolutions_2014_2",
+      "resolvedIssueTitle": "Axis: Revolutions (2014) #2",
+      "note": "Marvel series 19086 (Axis: Revolutions (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51065
+      ]
+    },
+    {
+      "sourcePosition": 42,
+      "sourceIssueReference": "Axis: Revolutions #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Revolutions",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 19086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51137"
+      ],
+      "selectedIssueId": 51137,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51137/axis_revolutions_2014_3",
+      "resolvedIssueTitle": "Axis: Revolutions (2014) #3",
+      "note": "Marvel series 19086 (Axis: Revolutions (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51137
+      ]
+    },
+    {
+      "sourcePosition": 43,
+      "sourceIssueReference": "Axis: Revolutions #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Axis: Revolutions",
+      "seriesYear": 2014,
+      "issueNumber": "4",
+      "seriesId": 19086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51519"
+      ],
+      "selectedIssueId": 51519,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51519/axis_revolutions_2014_4",
+      "resolvedIssueTitle": "Axis: Revolutions (2014) #4",
+      "note": "Marvel series 19086 (Axis: Revolutions (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51519
+      ]
+    },
+    {
+      "sourcePosition": 44,
+      "sourceIssueReference": "Loki: Agent of Axis #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Loki: Agent of Asgard",
+      "seriesYear": 2014,
+      "issueNumber": "8",
+      "seriesId": 18340,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51078"
+      ],
+      "selectedIssueId": 51078,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51078/loki_agent_of_asgard_2014_8",
+      "resolvedIssueTitle": "Loki: Agent of Asgard (2014) #8",
+      "note": "Marvel series 18340 (Loki: Agent of Asgard (2014 - 2015)) is the reviewed metadata series for this source reference. The source prints Agent of Axis; Marvel metadata identifies the series as Loki: Agent of Asgard.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51078
+      ]
+    },
+    {
+      "sourcePosition": 45,
+      "sourceIssueReference": "Avengers & X-Men: Axis #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "6",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50605"
+      ],
+      "selectedIssueId": 50605,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50605/avengers_x-men_axis_2014_6",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #6",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50605
+      ]
+    },
+    {
+      "sourcePosition": 46,
+      "sourceIssueReference": "Superior Iron Man #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Superior Iron Man",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 19164,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51087"
+      ],
+      "selectedIssueId": 51087,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51087/superior_iron_man_2014_2",
+      "resolvedIssueTitle": "Superior Iron Man (2014) #2",
+      "note": "Marvel series 19164 (Superior Iron Man (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51087
+      ]
+    },
+    {
+      "sourcePosition": 47,
+      "sourceIssueReference": "Superior Iron Man #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Superior Iron Man",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 19164,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51174"
+      ],
+      "selectedIssueId": 51174,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51174/superior_iron_man_2014_3",
+      "resolvedIssueTitle": "Superior Iron Man (2014) #3",
+      "note": "Marvel series 19164 (Superior Iron Man (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51174
+      ]
+    },
+    {
+      "sourcePosition": 48,
+      "sourceIssueReference": "Wolverine & the X-Men #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & the X-Men",
+      "seriesYear": 2014,
+      "issueNumber": "12",
+      "seriesId": 18406,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48907"
+      ],
+      "selectedIssueId": 48907,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48907/wolverine_the_x-men_2014_12",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2014) #12",
+      "note": "Marvel series 18406 (Wolverine & the X-Men (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48907
+      ]
+    },
+    {
+      "sourcePosition": 49,
+      "sourceIssueReference": "Deadpool #38",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "38",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51143"
+      ],
+      "selectedIssueId": 51143,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51143/deadpool_2012_38",
+      "resolvedIssueTitle": "Deadpool (2012) #38",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51143
+      ]
+    },
+    {
+      "sourcePosition": 50,
+      "sourceIssueReference": "Avengers & X-Men: Axis #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "7",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50606"
+      ],
+      "selectedIssueId": 50606,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50606/avengers_x-men_axis_2014_7",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #7",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50606
+      ]
+    },
+    {
+      "sourcePosition": 51,
+      "sourceIssueReference": "Avengers & X-Men: Axis #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "8",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50607"
+      ],
+      "selectedIssueId": 50607,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50607/avengers_x-men_axis_2014_8",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #8",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50607
+      ]
+    },
+    {
+      "sourcePosition": 52,
+      "sourceIssueReference": "Avengers & X-Men: Axis #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers & X-Men: Axis",
+      "seriesYear": 2014,
+      "issueNumber": "9",
+      "seriesId": 18904,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51168"
+      ],
+      "selectedIssueId": 51168,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51168/avengers_x-men_axis_2014_9",
+      "resolvedIssueTitle": "Avengers & X-Men: Axis (2014) #9",
+      "note": "Marvel series 18904 (Avengers & X-Men: Axis (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51168
+      ]
+    },
+    {
+      "sourcePosition": 53,
+      "sourceIssueReference": "Deadpool #39",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "39",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51159"
+      ],
+      "selectedIssueId": 51159,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51159/deadpool_2012_39",
+      "resolvedIssueTitle": "Deadpool (2012) #39",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51159
+      ]
+    },
+    {
+      "sourcePosition": 54,
+      "sourceIssueReference": "Loki: Agent of Asgard #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Loki: Agent of Asgard",
+      "seriesYear": 2014,
+      "issueNumber": "9",
+      "seriesId": 18340,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51170"
+      ],
+      "selectedIssueId": 51170,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51170/loki_agent_of_asgard_2014_9",
+      "resolvedIssueTitle": "Loki: Agent of Asgard (2014) #9",
+      "note": "Marvel series 18340 (Loki: Agent of Asgard (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51170
+      ]
+    },
+    {
+      "sourcePosition": 55,
+      "sourceIssueReference": "Nova #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2013,
+      "issueNumber": "25",
+      "seriesId": 16411,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51173"
+      ],
+      "selectedIssueId": 51173,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51173/nova_2013_25",
+      "resolvedIssueTitle": "Nova (2013) #25",
+      "note": "Marvel series 16411 (Nova (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51173
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "axis",
+    "name": "Avengers & X-Men: Axis",
+    "description": "Fifty-five issues from the March to Axis prelude through the nine-part event and its immediate tie-ins.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "axis.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/axis-reading-order/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "axis.json",
+    "characters": [
+      "Avengers",
+      "X-Men",
+      "Red Skull",
+      "Magneto",
+      "Loki",
+      "Deadpool"
+    ],
+    "keywords": [
+      "Axis",
+      "March to Axis",
+      "Inversion",
+      "Uncanny Avengers"
+    ],
+    "expect": 55,
+    "timeline": 2014,
+    "coverIssueId": 50599,
+    "coverSourcePosition": 10,
+    "coverSourceReference": "Avengers & X-Men: Axis #1"
+  }
+}

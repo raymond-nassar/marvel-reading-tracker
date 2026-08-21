@@ -3,16 +3,192 @@
   "task_slug": "modern-marvel-continuity-guides",
   "parent_task": null,
   "mode": "manual",
-  "active_phase": "Implement",
+  "active_phase": "Review",
   "status": "active",
   "session_status": "running",
+  "production_batch": {
+    "target_count": 10,
+    "selection_rule": "ascending position in scripts/data/cbh-modern-inventory.json, filtering to first eligible new-order event or aftermath records; skip commerce, excluded, deferred/recent-source, path-source, fast-track, broad-era/bridge work, reuse-existing records, and anything blocked by exact-resolution or overlap gates",
+    "initial_selected_ids": [
+      "secret-war",
+      "decimation",
+      "spider-man-the-other",
+      "world-war-hulk",
+      "world-war-hulk-aftersmash",
+      "fall-of-the-hulks",
+      "shadowland",
+      "chaos-war",
+      "fear-itself",
+      "avengers-vs-x-men"
+    ],
+    "selected_ids": [
+      "secret-war",
+      "spider-man-the-other",
+      "world-war-hulk-aftersmash",
+      "shadowland",
+      "chaos-war",
+      "axis",
+      "spider-verse",
+      "apocalypse-wars",
+      "clone-conspiracy",
+      "inhumans-vs-x-men"
+    ],
+    "selection_status": "Ten exact, zero-overlap packets authored, vendored, and shipped",
+    "packet_review": {
+      "status": "approved",
+      "date": "2026-08-21",
+      "artifact": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+      "verified_rows": 238,
+      "verified_comparisons": 350
+    },
+    "blocked_candidates": [
+      {
+        "id": "decimation",
+        "position": 6,
+        "gate": "exact resolution",
+        "evidence": "Generation M #1-5 are absent from repository metadata"
+      },
+      {
+        "id": "world-war-hulk",
+        "position": 14,
+        "gate": "overlap",
+        "evidence": "2 issues overlap civil-war-avengers and 1 overlaps the final Aftersmash peer"
+      },
+      {
+        "id": "fall-of-the-hulks",
+        "position": 20,
+        "gate": "exact resolution",
+        "evidence": "Fall of the Hulks: MODOK #1 is absent from repository metadata"
+      },
+      {
+        "id": "fear-itself",
+        "position": 28,
+        "gate": "overlap",
+        "evidence": "15 issues overlap heroic-age-avengers"
+      },
+      {
+        "id": "avengers-vs-x-men",
+        "position": 30,
+        "gate": "overlap",
+        "evidence": "17 issues overlap heroic-age-avengers"
+      },
+      {
+        "id": "age-of-ultron",
+        "position": 33,
+        "gate": "overlap",
+        "evidence": "1 issue overlaps heroic-age-avengers and 1 overlaps spider-man-best-of"
+      },
+      {
+        "id": "infinity",
+        "position": 34,
+        "gate": "exact resolution",
+        "evidence": "2 Against the Tide rows are absent and the unnumbered Thanos epilogue has 6 candidates"
+      },
+      {
+        "id": "original-sin",
+        "position": 35,
+        "gate": "overlap",
+        "evidence": "6 issues overlap each Hickman order and 2 overlap the final Spider-Verse peer"
+      },
+      {
+        "id": "death-of-wolverine",
+        "position": 36,
+        "gate": "source boundary",
+        "evidence": "The source ends with Wolverines #1 to present and exposes 20 candidates"
+      },
+      {
+        "id": "black-vortex",
+        "position": 39,
+        "gate": "source retrieval",
+        "evidence": "The exact source page returned HTTP 404 on 2026-08-21"
+      },
+      {
+        "id": "avengers-standoff",
+        "position": 43,
+        "gate": "overlap",
+        "evidence": "2 issues overlap all-new-all-different-avengers"
+      },
+      {
+        "id": "civil-war-ii",
+        "position": 45,
+        "gate": "exact resolution",
+        "evidence": "9 source rows are absent from repository metadata"
+      }
+    ],
+    "source_order_anchored": true,
+    "merge_resync": {
+      "status": "complete",
+      "source": "origin/main",
+      "non_destructive_strategy": "merge origin/main into the feature branch without resetting or rewriting the worktree"
+    },
+    "duplicate_guard": {
+      "enabled": true,
+      "rules": [
+        "No batch id or source URL may duplicate a shipped order or a peer guide.",
+        "No exact selected issue sequence may duplicate a shipped order or a peer guide.",
+        "No catalog id may duplicate a shipped order or a peer guide.",
+        "Title similarity is a prompt to investigate, not proof of equivalence."
+      ]
+    },
+    "implementation": {
+      "status": "complete",
+      "authored_guides": 10,
+      "authored_rows": 238,
+      "catalog_entries": 36,
+      "focused_tests": 104,
+      "post_pr_focused_tests": 43,
+      "full_tests": 1288,
+      "live_issue_checks": 238,
+      "browser_assertions": 119
+    },
+    "implementation_review": {
+      "status": "resolved",
+      "material_findings": 3,
+      "open_material_findings": 0,
+      "result": "Idempotent authoring, approved-mapping preservation, and explicit manual series approval verified"
+    },
+    "post_pr_review": {
+      "status": "resolved",
+      "pull_request": 159,
+      "material_findings": 3,
+      "open_material_findings": 0,
+      "failure_proofs": 3,
+      "shipped_overlap_hashes_unchanged": 10,
+      "result": "Complete overlap identity validation, shipped-report regeneration, and issue-zero preservation verified"
+    },
+    "agent_merge": {
+      "status": "in_progress",
+      "pull_request": 159,
+      "observed_head": "1ef6de303cc88627479fb500249ab890b425b364",
+      "launch_attempts": 3,
+      "authorization": {
+        "status": "received",
+        "authorized_actions": [
+          "address review comments",
+          "fix CI",
+          "resolve conflicts"
+        ]
+      },
+      "conflict_resolution": {
+        "status": "complete",
+        "base_commit": "74d1f450eef691e82f55f41474309244d28f9626",
+        "backlog_id": "BL-181",
+        "ranked_rows": 155,
+        "parked_rows": 5,
+        "detail_blocks": 160,
+        "full_tests": 1288,
+        "anchors": 993,
+        "browser_assertions": 119
+      }
+    }
+  },
   "artifact_paths": {
     "research": ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md",
     "plan": ".copilot-tracking/plans/2026-08-20/modern-marvel-continuity-guides-plan.md",
     "details": ".copilot-tracking/details/2026-08-20/modern-marvel-continuity-guides-phase-details.md",
     "critique": ".copilot-tracking/reviews/plans/2026-08-20/modern-marvel-continuity-guides-plan-critique.md",
     "changes": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
-    "review": null
+    "review": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md"
   },
   "confirmed_decisions": [
     {
@@ -54,9 +230,14 @@
       "decision": "P01 is the only implementation-ready boundary.",
       "status": "confirmed by finalized plan",
       "evidence": ".copilot-tracking/plans/2026-08-20/modern-marvel-continuity-guides-plan.md"
+    },
+    {
+      "decision": "The next production batch targets 10 eligible historical event or aftermath orders, selected by ascending inventory position and filtered by exact-resolution and overlap gates.",
+      "status": "confirmed by user, frozen before authoring",
+      "evidence": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md"
     }
   ],
   "blockers": [],
-  "next_action": "P01-T01",
+  "next_action": "Push the authorized merge resolution and wait for required checks and GitHub approval state",
   "prioritized_follow_ups": []
 }

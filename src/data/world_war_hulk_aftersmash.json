@@ -1,0 +1,997 @@
+{
+  "id": "world-war-hulk-aftersmash",
+  "name": "World War Hulk: Aftersmash",
+  "description": "Twenty-six aftermath issues spanning Damage Control, Incredible Hercules, Warbound, Red Hulk, Skaar, and the next Hulk stories.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-10-wwh-aftersmash/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T09:58:39.863Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 26,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 17231,
+      "title": "WORLD WAR HULK: AFTERSMASH 1 (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/17231/world_war_hulk_aftersmash_1_2007_1",
+      "seriesId": 3020,
+      "seriesName": "WORLD WAR HULK: AFTERSMASH 1 (2007)",
+      "onSale": "2007-12-05T00:00:00+0000",
+      "mu": "2007-12-05T00:00:00+0000",
+      "digitalId": 8808,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/40/4f6756d455960",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 64,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Vicente Cifuentes",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Giarrusso",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17661,
+      "title": "Wwh Aftersmash: Damage Control (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/17661/wwh_aftersmash_damage_control_2008_1",
+      "seriesId": 3422,
+      "seriesName": "Wwh Aftersmash: Damage Control (2008)",
+      "onSale": "2008-01-23T00:00:00+0000",
+      "mu": "2008-01-23T00:00:00+0000",
+      "digitalId": 10037,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/59404d6a5607a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Salva Espin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nic Klein",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Dwayne Mcduffie",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20708,
+      "title": "Wwh Aftersmash: Damage Control (2008) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/20708/wwh_aftersmash_damage_control_2008_2",
+      "seriesId": 3422,
+      "seriesName": "Wwh Aftersmash: Damage Control (2008)",
+      "onSale": "2008-02-27T00:00:00+0000",
+      "mu": "2008-02-27T00:00:00+0000",
+      "digitalId": 12141,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/59404dd86af4a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salva Espin",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Dwayne Mcduffie",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20901,
+      "title": "Wwh Aftersmash: Damage Control (2008) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/20901/wwh_aftersmash_damage_control_2008_3",
+      "seriesId": 3422,
+      "seriesName": "Wwh Aftersmash: Damage Control (2008)",
+      "onSale": "2008-03-26T00:00:00+0000",
+      "mu": "2008-03-26T00:00:00+0000",
+      "digitalId": 12142,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/03/59404e3704d57",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salva Espin",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Sr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Dwayne Mcduffie",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17212,
+      "title": "Hulk (1999) #112",
+      "number": "112",
+      "url": "https://www.marvel.com/comics/issue/17212/hulk_1999_112",
+      "seriesId": 465,
+      "seriesName": "Hulk (1999 - 2008)",
+      "onSale": "2007-12-19T00:00:00+0000",
+      "mu": "2007-12-19T00:00:00+0000",
+      "digitalId": 8260,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/03/5b439352e9623",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Khoi Pham",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23067,
+      "title": "Incredible Hercules (2008) #113",
+      "number": "113",
+      "url": "https://www.marvel.com/comics/issue/23067/incredible_hercules_2008_113",
+      "seriesId": 3762,
+      "seriesName": "Incredible Hercules (2008 - 2010)",
+      "onSale": "2008-01-16T00:00:00+0000",
+      "mu": "2008-01-16T00:00:00+0000",
+      "digitalId": 10628,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/90/5c36325318269",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paul Neary",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20636,
+      "title": "Incredible Hercules (2008) #114",
+      "number": "114",
+      "url": "https://www.marvel.com/comics/issue/20636/incredible_hercules_2008_114",
+      "seriesId": 3762,
+      "seriesName": "Incredible Hercules (2008 - 2010)",
+      "onSale": "2008-02-20T00:00:00+0000",
+      "mu": "2008-02-20T00:00:00+0000",
+      "digitalId": 10559,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/5c364729cf213",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Neary",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20827,
+      "title": "Incredible Hercules (2008) #115",
+      "number": "115",
+      "url": "https://www.marvel.com/comics/issue/20827/incredible_hercules_2008_115",
+      "seriesId": 3762,
+      "seriesName": "Incredible Hercules (2008 - 2010)",
+      "onSale": "2008-03-19T00:00:00+0000",
+      "mu": "2008-10-16T00:00:00+0000",
+      "digitalId": 10575,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/5c36510462b29",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Neary",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23911,
+      "title": "Hulk Vs. Hercules: When Titans Collide (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23911/hulk_vs_hercules_when_titans_collide_2008_1",
+      "seriesId": 7078,
+      "seriesName": "Hulk Vs. Hercules: When Titans Collide (2008)",
+      "onSale": "2008-06-01T00:00:00+0000",
+      "mu": "2009-03-27T00:00:00+0000",
+      "digitalId": 12134,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/4bb583d038fe5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bill Everett",
+          "role": "penciler"
+        },
+        {
+          "name": "Bob Layton",
+          "role": "penciler"
+        },
+        {
+          "name": "Carlos Cuevas",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis Calero",
+          "role": "penciler"
+        },
+        {
+          "name": "Eric Nguyen",
+          "role": "penciler"
+        },
+        {
+          "name": "Guru-eFX",
+          "role": "penciler"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Neary",
+          "role": "penciler"
+        },
+        {
+          "name": "Reilly Brown",
+          "role": "penciler"
+        },
+        {
+          "name": "Terry Pallot",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17361,
+      "title": "World War Hulk: Warbound (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/17361/world_war_hulk_warbound_2007_1",
+      "seriesId": 3171,
+      "seriesName": "World War Hulk: Warbound (2007)",
+      "onSale": "2007-12-19T00:00:00+0000",
+      "mu": "2008-07-10T00:00:00+0000",
+      "digitalId": 8823,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/593ed5207fdc8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Leonard Kirk",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roger Bonet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23232,
+      "title": "World War Hulk: Warbound (2007) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/23232/world_war_hulk_warbound_2007_2",
+      "seriesId": 3171,
+      "seriesName": "World War Hulk: Warbound (2007)",
+      "onSale": "2008-03-01T00:00:00+0000",
+      "mu": "2008-12-05T00:00:00+0000",
+      "digitalId": 12008,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/59414acd477df",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Roger Bonet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23233,
+      "title": "World War Hulk: Warbound (2007) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/23233/world_war_hulk_warbound_2007_3",
+      "seriesId": 3171,
+      "seriesName": "World War Hulk: Warbound (2007)",
+      "onSale": "2008-04-01T00:00:00+0000",
+      "mu": "2009-01-30T00:00:00+0000",
+      "digitalId": 12009,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/60/59415471643d0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Roger Bonet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23234,
+      "title": "World War Hulk: Warbound (2007) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/23234/world_war_hulk_warbound_2007_4",
+      "seriesId": 3171,
+      "seriesName": "World War Hulk: Warbound (2007)",
+      "onSale": "2008-05-01T00:00:00+0000",
+      "mu": "2010-02-12T00:00:00+0000",
+      "digitalId": 12010,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/c0/5846f1868099e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": []
+    },
+    {
+      "issueId": 23235,
+      "title": "World War Hulk: Warbound (2007) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/23235/world_war_hulk_warbound_2007_5",
+      "seriesId": 3171,
+      "seriesName": "World War Hulk: Warbound (2007)",
+      "onSale": "2008-06-16T00:00:00+0000",
+      "mu": "2008-01-01T00:00:00+0000",
+      "digitalId": 12011,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/40/59415ff9b4e5f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Gary Martin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Leonard Kirk",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17623,
+      "title": "Hulk (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/17623/hulk_2008_1",
+      "seriesId": 3374,
+      "seriesName": "Hulk (2008 - 2012)",
+      "onSale": "2008-01-09T00:00:00+0000",
+      "mu": "2008-01-09T00:00:00+0000",
+      "digitalId": 10309,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/10/519684406e84d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeph Loeb",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20668,
+      "title": "Hulk (2008) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/20668/hulk_2008_2",
+      "seriesId": 3374,
+      "seriesName": "Hulk (2008 - 2012)",
+      "onSale": "2008-02-20T00:00:00+0000",
+      "mu": "2008-02-20T00:00:00+0000",
+      "digitalId": 9890,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/d0/5109aaaa09682",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeph Loeb",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20863,
+      "title": "Hulk (2008) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/20863/hulk_2008_3",
+      "seriesId": 3374,
+      "seriesName": "Hulk (2008 - 2012)",
+      "onSale": "2008-04-23T00:00:00+0000",
+      "mu": "2009-03-13T00:00:00+0000",
+      "digitalId": 10797,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5109ab5908cce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeph Loeb",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20999,
+      "title": "Hulk (2008) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/20999/hulk_2008_4",
+      "seriesId": 3374,
+      "seriesName": "Hulk (2008 - 2012)",
+      "onSale": "2008-06-25T00:00:00+0000",
+      "mu": "2008-06-25T00:00:00+0000",
+      "digitalId": 10798,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/b0/4f689f1b9e8f4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Audrey Loeb",
+          "role": "writer"
+        },
+        {
+          "name": "Jeph Loeb",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21535,
+      "title": "Hulk (2008) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/21535/hulk_2008_5",
+      "seriesId": 3374,
+      "seriesName": "Hulk (2008 - 2012)",
+      "onSale": "2008-08-06T00:00:00+0000",
+      "mu": "2008-08-06T00:00:00+0000",
+      "digitalId": 10799,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/5109ac25b9434",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Audrey Loeb",
+          "role": "writer"
+        },
+        {
+          "name": "Jeph Loeb",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21968,
+      "title": "Hulk (2008) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/21968/hulk_2008_6",
+      "seriesId": 3374,
+      "seriesName": "Hulk (2008 - 2012)",
+      "onSale": "2008-09-24T00:00:00+0000",
+      "mu": "2008-09-24T00:00:00+0000",
+      "digitalId": 10800,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/4f673a20e358c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Audrey Loeb",
+          "role": "writer"
+        },
+        {
+          "name": "Jeph Loeb",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24268,
+      "title": "PLANET SKAAR PROLOGUE 1 (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/24268/planet_skaar_prologue_1_2009_1",
+      "seriesId": 7461,
+      "seriesName": "PLANET SKAAR PROLOGUE 1 (2009)",
+      "onSale": "2009-05-20T00:00:00+0000",
+      "mu": "2009-05-20T00:00:00+0000",
+      "digitalId": 15464,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/5cae433c90348",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Dan Panosian",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Garner",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24168,
+      "title": "Skaar: Son of Hulk (2008) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/24168/skaar_son_of_hulk_2008_11",
+      "seriesId": 5002,
+      "seriesName": "Skaar: Son of Hulk (2008 - 2010)",
+      "onSale": "2009-06-03T00:00:00+0000",
+      "mu": "2011-04-22T00:00:00+0000",
+      "digitalId": 12533,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/00/5cadfd92b4f10",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Cory Hamscher",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dan Panosian",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Adams",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Travis Charest",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26314,
+      "title": "Skaar: Son of Hulk (2008) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/26314/skaar_son_of_hulk_2008_12",
+      "seriesId": 5002,
+      "seriesName": "Skaar: Son of Hulk (2008 - 2010)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2011-04-22T00:00:00+0000",
+      "digitalId": 12728,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/e0/5cae02fcf1913",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Dexter Vines",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Adams",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Rodney Buchemi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27569,
+      "title": "Incredible Hulks (2010) #600",
+      "number": "600",
+      "url": "https://www.marvel.com/comics/issue/27569/incredible_hulks_2010_600",
+      "seriesId": 8842,
+      "seriesName": "Incredible Hulks (2010 - 2011)",
+      "onSale": "2009-07-22T00:00:00+0000",
+      "mu": "2011-02-01T11:23:37+0000",
+      "digitalId": 15846,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/4f634e633fc47",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 104,
+      "creators": [
+        {
+          "name": "Al Vey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salva Espin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dynamite Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Ryan",
+          "role": "penciler"
+        },
+        {
+          "name": "Rodney Buchemi",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Scott",
+          "role": "penciler"
+        },
+        {
+          "name": "Audrey Loeb",
+          "role": "writer"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Jeph Loeb",
+          "role": "writer"
+        },
+        {
+          "name": "Stan Lee",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27645,
+      "title": "Incredible Hulks (2010) #601",
+      "number": "601",
+      "url": "https://www.marvel.com/comics/issue/27645/incredible_hulks_2010_601",
+      "seriesId": 8842,
+      "seriesName": "Incredible Hulks (2010 - 2011)",
+      "onSale": "2009-08-26T00:00:00+0000",
+      "mu": "2010-02-20T00:00:00+0000",
+      "digitalId": 13791,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/5ba505eb76b2d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Ryan",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20812,
+      "title": "What If? Planet Hulk (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/20812/what_if_planet_hulk_2007_1",
+      "seriesId": 3915,
+      "seriesName": "What If? Planet Hulk (2007)",
+      "onSale": "2007-10-24T00:00:00+0000",
+      "mu": "2008-09-26T00:00:00+0000",
+      "digitalId": 8754,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/4bb662074659a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Gary Martin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Leonard Kirk",
+          "role": "cover artist"
+        },
+        {
+          "name": "Fred Hembeck",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Carlo Pagulayan",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

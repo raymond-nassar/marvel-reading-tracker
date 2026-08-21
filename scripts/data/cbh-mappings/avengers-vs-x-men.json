@@ -1,0 +1,2761 @@
+{
+  "id": "avengers-vs-x-men",
+  "inventoryId": "avengers-vs-x-men",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-16-avengers-vs-x-men/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 74,
+  "excludedSourceReferences": [],
+  "reviewStatus": "pending-independent-review",
+  "proposedManifest": {
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "variant": null,
+    "timeline": 2012,
+    "coverSourceReference": "Avengers vs. X-Men #1"
+  },
+  "candidateMetadata": [
+    {
+      "id": 39772,
+      "title": "Avengers: X-Sanction",
+      "issueTitle": "Avengers: X-Sanction (2011) #1",
+      "seriesTitle": "Avengers: X-Sanction",
+      "apiSeriesName": "Avengers: X-Sanction (2011 - 2012)",
+      "seriesId": 14703,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39772/avengers_x-sanction_2011_1",
+      "onSaleDate": "2011-12-14T00:00:00+0000"
+    },
+    {
+      "id": 39771,
+      "title": "Avengers: X-Sanction",
+      "issueTitle": "Avengers: X-Sanction (2011) #2",
+      "seriesTitle": "Avengers: X-Sanction",
+      "apiSeriesName": "Avengers: X-Sanction (2011 - 2012)",
+      "seriesId": 14703,
+      "issueNumber": "2",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39771/avengers_x-sanction_2011_2",
+      "onSaleDate": "2012-01-04T00:00:00+0000"
+    },
+    {
+      "id": 39770,
+      "title": "Avengers: X-Sanction",
+      "issueTitle": "Avengers: X-Sanction (2011) #3",
+      "seriesTitle": "Avengers: X-Sanction",
+      "apiSeriesName": "Avengers: X-Sanction (2011 - 2012)",
+      "seriesId": 14703,
+      "issueNumber": "3",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39770/avengers_x-sanction_2011_3",
+      "onSaleDate": "2012-02-01T00:00:00+0000"
+    },
+    {
+      "id": 40249,
+      "title": "Avengers Academy",
+      "issueTitle": "Avengers Academy (2010) #26",
+      "seriesTitle": "Avengers Academy",
+      "apiSeriesName": "Avengers Academy (2010 - 2012)",
+      "seriesId": 9086,
+      "issueNumber": "26",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40249/avengers_academy_2010_26",
+      "onSaleDate": "2012-02-22T00:00:00+0000"
+    },
+    {
+      "id": 35232,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2010) #24",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2010 - 2012)",
+      "seriesId": 9085,
+      "issueNumber": "24",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35232/avengers_2010_24",
+      "onSaleDate": "2012-03-14T00:00:00+0000"
+    },
+    {
+      "id": 39769,
+      "title": "Avengers: X-Sanction",
+      "issueTitle": "Avengers: X-Sanction (2011) #4",
+      "seriesTitle": "Avengers: X-Sanction",
+      "apiSeriesName": "Avengers: X-Sanction (2011 - 2012)",
+      "seriesId": 14703,
+      "issueNumber": "4",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39769/avengers_x-sanction_2011_4",
+      "onSaleDate": "2012-03-21T00:00:00+0000"
+    },
+    {
+      "id": 42332,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012)",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "0",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42332/avengers_vs_x-men_2012",
+      "onSaleDate": "2012-03-28T00:00:00+0000"
+    },
+    {
+      "id": 41188,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #1",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "1",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41188/avengers_vs_x-men_2012_1",
+      "onSaleDate": "2012-04-04T00:00:00+0000"
+    },
+    {
+      "id": 40163,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #10",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "10",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40163/uncanny_x-men_2011_10",
+      "onSaleDate": "2012-04-11T00:00:00+0000"
+    },
+    {
+      "id": 38585,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #9",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "9",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38585/wolverine_the_x-men_2011_9",
+      "onSaleDate": "2012-04-18T00:00:00+0000"
+    },
+    {
+      "id": 40405,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2010) #25",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2010 - 2012)",
+      "seriesId": 9085,
+      "issueNumber": "25",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40405/avengers_2010_25",
+      "onSaleDate": "2012-04-18T00:00:00+0000"
+    },
+    {
+      "id": 35241,
+      "title": "New Avengers",
+      "issueTitle": "New Avengers (2010) #24",
+      "seriesTitle": "New Avengers",
+      "apiSeriesName": "New Avengers (2010 - 2012)",
+      "seriesId": 9922,
+      "issueNumber": "24",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35241/new_avengers_2010_24",
+      "onSaleDate": "2012-04-11T00:00:00+0000"
+    },
+    {
+      "id": 41191,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #2",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "2",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41191/avengers_vs_x-men_2012_2",
+      "onSaleDate": "2012-04-18T00:00:00+0000"
+    },
+    {
+      "id": 42492,
+      "title": "Avengers Vs. X-Men: Versus",
+      "issueTitle": "Avengers Vs. X-Men: Versus (2011) #1",
+      "seriesTitle": "Avengers Vs. X-Men: Versus",
+      "apiSeriesName": "Avengers Vs. X-Men: Versus (2011 - 2012)",
+      "seriesId": 16230,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42492/avengers_vs_x-men_versus_2011_1",
+      "onSaleDate": "2012-04-25T00:00:00+0000"
+    },
+    {
+      "id": 40160,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #11",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "11",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40160/uncanny_x-men_2011_11",
+      "onSaleDate": "2012-04-25T00:00:00+0000"
+    },
+    {
+      "id": 40706,
+      "title": "Secret Avengers",
+      "issueTitle": "Secret Avengers (2010) #26",
+      "seriesTitle": "Secret Avengers",
+      "apiSeriesName": "Secret Avengers (2010 - 2012)",
+      "seriesId": 9799,
+      "issueNumber": "26",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40706/secret_avengers_2010_26",
+      "onSaleDate": "2012-04-25T00:00:00+0000"
+    },
+    {
+      "id": 40738,
+      "title": "New Avengers",
+      "issueTitle": "New Avengers (2010) #25",
+      "seriesTitle": "New Avengers",
+      "apiSeriesName": "New Avengers (2010 - 2012)",
+      "seriesId": 9922,
+      "issueNumber": "25",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40738/new_avengers_2010_25",
+      "onSaleDate": "2012-04-25T00:00:00+0000"
+    },
+    {
+      "id": 40251,
+      "title": "Avengers Academy",
+      "issueTitle": "Avengers Academy (2010) #29",
+      "seriesTitle": "Avengers Academy",
+      "apiSeriesName": "Avengers Academy (2010 - 2012)",
+      "seriesId": 9086,
+      "issueNumber": "29",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40251/avengers_academy_2010_29",
+      "onSaleDate": "2012-05-02T00:00:00+0000"
+    },
+    {
+      "id": 41187,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #3",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "3",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41187/avengers_vs_x-men_2012_3",
+      "onSaleDate": "2012-05-02T00:00:00+0000"
+    },
+    {
+      "id": 38583,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #10",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "10",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38583/wolverine_the_x-men_2011_10",
+      "onSaleDate": "2012-05-09T00:00:00+0000"
+    },
+    {
+      "id": 40737,
+      "title": "New Avengers",
+      "issueTitle": "New Avengers (2010) #26",
+      "seriesTitle": "New Avengers",
+      "apiSeriesName": "New Avengers (2010 - 2012)",
+      "seriesId": 9922,
+      "issueNumber": "26",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40737/new_avengers_2010_26",
+      "onSaleDate": "2012-05-09T00:00:00+0000"
+    },
+    {
+      "id": 40155,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #12",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "12",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40155/uncanny_x-men_2011_12",
+      "onSaleDate": "2012-05-16T00:00:00+0000"
+    },
+    {
+      "id": 40250,
+      "title": "Avengers Academy",
+      "issueTitle": "Avengers Academy (2010) #30",
+      "seriesTitle": "Avengers Academy",
+      "apiSeriesName": "Avengers Academy (2010 - 2012)",
+      "seriesId": 9086,
+      "issueNumber": "30",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40250/avengers_academy_2010_30",
+      "onSaleDate": "2012-05-16T00:00:00+0000"
+    },
+    {
+      "id": 40410,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2010) #26",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2010 - 2012)",
+      "seriesId": 9085,
+      "issueNumber": "26",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40410/avengers_2010_26",
+      "onSaleDate": "2012-05-16T00:00:00+0000"
+    },
+    {
+      "id": 40406,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2010) #27",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2010 - 2012)",
+      "seriesId": 9085,
+      "issueNumber": "27",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40406/avengers_2010_27",
+      "onSaleDate": "2012-06-13T00:00:00+0000"
+    },
+    {
+      "id": 41193,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #4",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "4",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41193/avengers_vs_x-men_2012_4",
+      "onSaleDate": "2012-05-16T00:00:00+0000"
+    },
+    {
+      "id": 42491,
+      "title": "Avengers Vs. X-Men: Versus",
+      "issueTitle": "Avengers Vs. X-Men: Versus (2011) #2",
+      "seriesTitle": "Avengers Vs. X-Men: Versus",
+      "apiSeriesName": "Avengers Vs. X-Men: Versus (2011 - 2012)",
+      "seriesId": 16230,
+      "issueNumber": "2",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42491/avengers_vs_x-men_versus_2011_2",
+      "onSaleDate": "2012-05-16T00:00:00+0000"
+    },
+    {
+      "id": 38580,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #11",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "11",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38580/wolverine_the_x-men_2011_11",
+      "onSaleDate": "2012-05-30T00:00:00+0000"
+    },
+    {
+      "id": 40705,
+      "title": "Secret Avengers",
+      "issueTitle": "Secret Avengers (2010) #27",
+      "seriesTitle": "Secret Avengers",
+      "apiSeriesName": "Secret Avengers (2010 - 2012)",
+      "seriesId": 9799,
+      "issueNumber": "27",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40705/secret_avengers_2010_27",
+      "onSaleDate": "2012-05-23T00:00:00+0000"
+    },
+    {
+      "id": 40841,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #266",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "266",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40841/x-men_legacy_2008_266",
+      "onSaleDate": "2012-05-09T00:00:00+0000"
+    },
+    {
+      "id": 40843,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #267",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "267",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40843/x-men_legacy_2008_267",
+      "onSaleDate": "2012-05-30T00:00:00+0000"
+    },
+    {
+      "id": 40152,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #13",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "13",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40152/uncanny_x-men_2011_13",
+      "onSaleDate": "2012-06-06T00:00:00+0000"
+    },
+    {
+      "id": 40253,
+      "title": "Avengers Academy",
+      "issueTitle": "Avengers Academy (2010) #31",
+      "seriesTitle": "Avengers Academy",
+      "apiSeriesName": "Avengers Academy (2010 - 2012)",
+      "seriesId": 9086,
+      "issueNumber": "31",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40253/avengers_academy_2010_31",
+      "onSaleDate": "2012-06-06T00:00:00+0000"
+    },
+    {
+      "id": 41190,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #5",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "5",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41190/avengers_vs_x-men_2012_5",
+      "onSaleDate": "2012-06-06T00:00:00+0000"
+    },
+    {
+      "id": 42490,
+      "title": "Avengers Vs. X-Men: Versus",
+      "issueTitle": "Avengers Vs. X-Men: Versus (2011) #3",
+      "seriesTitle": "Avengers Vs. X-Men: Versus",
+      "apiSeriesName": "Avengers Vs. X-Men: Versus (2011 - 2012)",
+      "seriesId": 16230,
+      "issueNumber": "3",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42490/avengers_vs_x-men_versus_2011_3",
+      "onSaleDate": "2012-06-13T00:00:00+0000"
+    },
+    {
+      "id": 40847,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #268",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "268",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40847/x-men_legacy_2008_268",
+      "onSaleDate": "2012-06-13T00:00:00+0000"
+    },
+    {
+      "id": 40153,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #14",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "14",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40153/uncanny_x-men_2011_14",
+      "onSaleDate": "2012-06-20T00:00:00+0000"
+    },
+    {
+      "id": 40254,
+      "title": "Avengers Academy",
+      "issueTitle": "Avengers Academy (2010) #32",
+      "seriesTitle": "Avengers Academy",
+      "apiSeriesName": "Avengers Academy (2010 - 2012)",
+      "seriesId": 9086,
+      "issueNumber": "32",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40254/avengers_academy_2010_32",
+      "onSaleDate": "2012-06-20T00:00:00+0000"
+    },
+    {
+      "id": 40709,
+      "title": "Secret Avengers",
+      "issueTitle": "Secret Avengers (2010) #28",
+      "seriesTitle": "Secret Avengers",
+      "apiSeriesName": "Secret Avengers (2010 - 2012)",
+      "seriesId": 9799,
+      "issueNumber": "28",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40709/secret_avengers_2010_28",
+      "onSaleDate": "2012-06-20T00:00:00+0000"
+    },
+    {
+      "id": 40740,
+      "title": "New Avengers",
+      "issueTitle": "New Avengers (2010) #27",
+      "seriesTitle": "New Avengers",
+      "apiSeriesName": "New Avengers (2010 - 2012)",
+      "seriesId": 9922,
+      "issueNumber": "27",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40740/new_avengers_2010_27",
+      "onSaleDate": "2012-06-20T00:00:00+0000"
+    },
+    {
+      "id": 41189,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #6",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "6",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41189/avengers_vs_x-men_2012_6",
+      "onSaleDate": "2012-06-20T00:00:00+0000"
+    },
+    {
+      "id": 42489,
+      "title": "Avengers Vs. X-Men: Versus",
+      "issueTitle": "Avengers Vs. X-Men: Versus (2011) #4",
+      "seriesTitle": "Avengers Vs. X-Men: Versus",
+      "apiSeriesName": "Avengers Vs. X-Men: Versus (2011 - 2012)",
+      "seriesId": 16230,
+      "issueNumber": "4",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42489/avengers_vs_x-men_versus_2011_4",
+      "onSaleDate": "2012-07-11T00:00:00+0000"
+    },
+    {
+      "id": 40404,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2010) #28",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2010 - 2012)",
+      "seriesId": 9085,
+      "issueNumber": "28",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40404/avengers_2010_28",
+      "onSaleDate": "2012-07-25T00:00:00+0000"
+    },
+    {
+      "id": 40151,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #15",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "15",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40151/uncanny_x-men_2011_15",
+      "onSaleDate": "2012-07-04T00:00:00+0000"
+    },
+    {
+      "id": 38578,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #12",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "12",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38578/wolverine_the_x-men_2011_12",
+      "onSaleDate": "2012-06-27T00:00:00+0000"
+    },
+    {
+      "id": 40409,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2010) #29",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2010 - 2012)",
+      "seriesId": 9085,
+      "issueNumber": "29",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40409/avengers_2010_29",
+      "onSaleDate": "2012-08-15T00:00:00+0000"
+    },
+    {
+      "id": 41192,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #7",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "7",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41192/avengers_vs_x-men_2012_7",
+      "onSaleDate": "2012-07-04T00:00:00+0000"
+    },
+    {
+      "id": 42488,
+      "title": "Avengers Vs. X-Men: Versus",
+      "issueTitle": "Avengers Vs. X-Men: Versus (2011) #5",
+      "seriesTitle": "Avengers Vs. X-Men: Versus",
+      "apiSeriesName": "Avengers Vs. X-Men: Versus (2011 - 2012)",
+      "seriesId": 16230,
+      "issueNumber": "5",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42488/avengers_vs_x-men_versus_2011_5",
+      "onSaleDate": "2012-08-29T00:00:00+0000"
+    },
+    {
+      "id": 40150,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #16",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "16",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40150/uncanny_x-men_2011_16",
+      "onSaleDate": "2012-07-18T00:00:00+0000"
+    },
+    {
+      "id": 40149,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #17",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "17",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40149/uncanny_x-men_2011_17",
+      "onSaleDate": "2012-08-22T00:00:00+0000"
+    },
+    {
+      "id": 40088,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #13",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "13",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40088/wolverine_the_x-men_2011_13",
+      "onSaleDate": "2012-07-11T00:00:00+0000"
+    },
+    {
+      "id": 40739,
+      "title": "New Avengers",
+      "issueTitle": "New Avengers (2010) #28",
+      "seriesTitle": "New Avengers",
+      "apiSeriesName": "New Avengers (2010 - 2012)",
+      "seriesId": 9922,
+      "issueNumber": "28",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40739/new_avengers_2010_28",
+      "onSaleDate": "2012-07-11T00:00:00+0000"
+    },
+    {
+      "id": 40741,
+      "title": "New Avengers",
+      "issueTitle": "New Avengers (2010) #29",
+      "seriesTitle": "New Avengers",
+      "apiSeriesName": "New Avengers (2010 - 2012)",
+      "seriesId": 9922,
+      "issueNumber": "29",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40741/new_avengers_2010_29",
+      "onSaleDate": "2012-08-08T00:00:00+0000"
+    },
+    {
+      "id": 40089,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #14",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "14",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40089/wolverine_the_x-men_2011_14",
+      "onSaleDate": "2012-07-25T00:00:00+0000"
+    },
+    {
+      "id": 41275,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #8",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "8",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41275/avengers_vs_x-men_2012_8",
+      "onSaleDate": "2012-07-17T00:00:00+0000"
+    },
+    {
+      "id": 40264,
+      "title": "Avengers Academy",
+      "issueTitle": "Avengers Academy (2010) #33",
+      "seriesTitle": "Avengers Academy",
+      "apiSeriesName": "Avengers Academy (2010 - 2012)",
+      "seriesId": 9086,
+      "issueNumber": "33",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40264/avengers_academy_2010_33",
+      "onSaleDate": "2012-07-18T00:00:00+0000"
+    },
+    {
+      "id": 40258,
+      "title": "Avengers Academy",
+      "issueTitle": "Avengers Academy (2010) #34",
+      "seriesTitle": "Avengers Academy",
+      "apiSeriesName": "Avengers Academy (2010 - 2012)",
+      "seriesId": 9086,
+      "issueNumber": "34",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40258/avengers_academy_2010_34",
+      "onSaleDate": "2012-08-01T00:00:00+0000"
+    },
+    {
+      "id": 41277,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #9",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "9",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41277/avengers_vs_x-men_2012_9",
+      "onSaleDate": "2012-08-01T00:00:00+0000"
+    },
+    {
+      "id": 41276,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #10",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "10",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41276/avengers_vs_x-men_2012_10",
+      "onSaleDate": "2012-08-15T00:00:00+0000"
+    },
+    {
+      "id": 40085,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #15",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "15",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40085/wolverine_the_x-men_2011_15",
+      "onSaleDate": "2012-08-29T00:00:00+0000"
+    },
+    {
+      "id": 40084,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #16",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "16",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40084/wolverine_the_x-men_2011_16",
+      "onSaleDate": "2012-09-12T00:00:00+0000"
+    },
+    {
+      "id": 41279,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #11",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "11",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41279/avengers_vs_x-men_2012_11",
+      "onSaleDate": "2012-09-12T00:00:00+0000"
+    },
+    {
+      "id": 40736,
+      "title": "New Avengers",
+      "issueTitle": "New Avengers (2010) #30",
+      "seriesTitle": "New Avengers",
+      "apiSeriesName": "New Avengers (2010 - 2012)",
+      "seriesId": 9922,
+      "issueNumber": "30",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40736/new_avengers_2010_30",
+      "onSaleDate": "2012-09-12T00:00:00+0000"
+    },
+    {
+      "id": 41278,
+      "title": "Avengers Vs. X-Men",
+      "issueTitle": "Avengers Vs. X-Men (2012) #12",
+      "seriesTitle": "Avengers Vs. X-Men",
+      "apiSeriesName": "Avengers Vs. X-Men (2012)",
+      "seriesId": 15305,
+      "issueNumber": "12",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41278/avengers_vs_x-men_2012_12",
+      "onSaleDate": "2012-10-03T00:00:00+0000"
+    },
+    {
+      "id": 40087,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #18",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "18",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40087/wolverine_the_x-men_2011_18",
+      "onSaleDate": "2012-10-10T00:00:00+0000"
+    },
+    {
+      "id": 42487,
+      "title": "Avengers Vs. X-Men: Versus",
+      "issueTitle": "Avengers Vs. X-Men: Versus (2011) #6",
+      "seriesTitle": "Avengers Vs. X-Men: Versus",
+      "apiSeriesName": "Avengers Vs. X-Men: Versus (2011 - 2012)",
+      "seriesId": 16230,
+      "issueNumber": "6",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42487/avengers_vs_x-men_versus_2011_6",
+      "onSaleDate": "2012-10-03T00:00:00+0000"
+    },
+    {
+      "id": 40148,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #18",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "18",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40148/uncanny_x-men_2011_18",
+      "onSaleDate": "2012-09-12T00:00:00+0000"
+    },
+    {
+      "id": 42342,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #19",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "19",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42342/uncanny_x-men_2011_19",
+      "onSaleDate": "2012-10-03T00:00:00+0000"
+    },
+    {
+      "id": 40400,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2010) #30",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2010 - 2012)",
+      "seriesId": 9085,
+      "issueNumber": "30",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40400/avengers_2010_30",
+      "onSaleDate": "2012-09-19T00:00:00+0000"
+    },
+    {
+      "id": 44526,
+      "title": "Avx: Consequences",
+      "issueTitle": "Avx: Consequences (2012) #1",
+      "seriesTitle": "Avx: Consequences",
+      "apiSeriesName": "Avx: Consequences (2012)",
+      "seriesId": 16510,
+      "issueNumber": "1",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/44526/avx_consequences_2012_1",
+      "onSaleDate": "2012-10-10T00:00:00+0000"
+    },
+    {
+      "id": 45721,
+      "title": "Avx: Consequences",
+      "issueTitle": "Avx: Consequences (2012) #2",
+      "seriesTitle": "Avx: Consequences",
+      "apiSeriesName": "Avx: Consequences (2012)",
+      "seriesId": 16510,
+      "issueNumber": "2",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45721/avx_consequences_2012_2",
+      "onSaleDate": "2012-10-17T00:00:00+0000"
+    },
+    {
+      "id": 45724,
+      "title": "Avx: Consequences",
+      "issueTitle": "Avx: Consequences (2012) #3",
+      "seriesTitle": "Avx: Consequences",
+      "apiSeriesName": "Avx: Consequences (2012)",
+      "seriesId": 16510,
+      "issueNumber": "3",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45724/avx_consequences_2012_3",
+      "onSaleDate": "2012-10-24T00:00:00+0000"
+    },
+    {
+      "id": 45935,
+      "title": "Avx: Consequences",
+      "issueTitle": "Avx: Consequences (2012) #4",
+      "seriesTitle": "Avx: Consequences",
+      "apiSeriesName": "Avx: Consequences (2012)",
+      "seriesId": 16510,
+      "issueNumber": "4",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45935/avx_consequences_2012_4",
+      "onSaleDate": "2012-10-31T00:00:00+0000"
+    },
+    {
+      "id": 43696,
+      "title": "Avx: Consequences",
+      "issueTitle": "Avx: Consequences (2012) #5",
+      "seriesTitle": "Avx: Consequences",
+      "apiSeriesName": "Avx: Consequences (2012)",
+      "seriesId": 16510,
+      "issueNumber": "5",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43696/avx_consequences_2012_5",
+      "onSaleDate": "2012-11-07T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Avengers: X-Sanction #1",
+      "sourceRangeReference": "Avengers: X-Sanction #1-3",
+      "normalizedSeriesTitle": "Avengers: X-Sanction",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 14703,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39772"
+      ],
+      "selectedIssueId": 39772,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39772/avengers_x-sanction_2011_1",
+      "resolvedIssueTitle": "Avengers: X-Sanction (2011) #1",
+      "note": "Marvel series 14703 (Avengers: X-Sanction (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39772
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Avengers: X-Sanction #2",
+      "sourceRangeReference": "Avengers: X-Sanction #1-3",
+      "normalizedSeriesTitle": "Avengers: X-Sanction",
+      "seriesYear": 2011,
+      "issueNumber": "2",
+      "seriesId": 14703,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39771"
+      ],
+      "selectedIssueId": 39771,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39771/avengers_x-sanction_2011_2",
+      "resolvedIssueTitle": "Avengers: X-Sanction (2011) #2",
+      "note": "Marvel series 14703 (Avengers: X-Sanction (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39771
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Avengers: X-Sanction #3",
+      "sourceRangeReference": "Avengers: X-Sanction #1-3",
+      "normalizedSeriesTitle": "Avengers: X-Sanction",
+      "seriesYear": 2011,
+      "issueNumber": "3",
+      "seriesId": 14703,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39770"
+      ],
+      "selectedIssueId": 39770,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39770/avengers_x-sanction_2011_3",
+      "resolvedIssueTitle": "Avengers: X-Sanction (2011) #3",
+      "note": "Marvel series 14703 (Avengers: X-Sanction (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39770
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Avengers Academy #26",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Academy",
+      "seriesYear": 2010,
+      "issueNumber": "26",
+      "seriesId": 9086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40249"
+      ],
+      "selectedIssueId": 40249,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40249/avengers_academy_2010_26",
+      "resolvedIssueTitle": "Avengers Academy (2010) #26",
+      "note": "Marvel series 9086 (Avengers Academy (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40249
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Avengers #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "24",
+      "seriesId": 9085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35232"
+      ],
+      "selectedIssueId": 35232,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35232/avengers_2010_24",
+      "resolvedIssueTitle": "Avengers (2010) #24",
+      "note": "Marvel series 9085 (Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35232
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Avengers: X-Sanction #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers: X-Sanction",
+      "seriesYear": 2011,
+      "issueNumber": "4",
+      "seriesId": 14703,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39769"
+      ],
+      "selectedIssueId": 39769,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39769/avengers_x-sanction_2011_4",
+      "resolvedIssueTitle": "Avengers: X-Sanction (2011) #4",
+      "note": "Marvel series 14703 (Avengers: X-Sanction (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39769
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Avengers vs. X-Men #0",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "0",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42332"
+      ],
+      "selectedIssueId": 42332,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42332/avengers_vs_x-men_2012",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012)",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42332
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Avengers vs. X-Men #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "1",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41188"
+      ],
+      "selectedIssueId": 41188,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41188/avengers_vs_x-men_2012_1",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #1",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41188
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Uncanny X-Men #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "10",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40163"
+      ],
+      "selectedIssueId": 40163,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40163/uncanny_x-men_2011_10",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #10",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40163
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Wolverine & The X-Men #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "9",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38585"
+      ],
+      "selectedIssueId": 38585,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38585/wolverine_the_x-men_2011_9",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #9",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38585
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Avengers #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "25",
+      "seriesId": 9085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40405"
+      ],
+      "selectedIssueId": 40405,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40405/avengers_2010_25",
+      "resolvedIssueTitle": "Avengers (2010) #25",
+      "note": "Marvel series 9085 (Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40405
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "New Avengers #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "24",
+      "seriesId": 9922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35241"
+      ],
+      "selectedIssueId": 35241,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35241/new_avengers_2010_24",
+      "resolvedIssueTitle": "New Avengers (2010) #24",
+      "note": "Marvel series 9922 (New Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35241
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Avengers vs. X-Men #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "2",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41191"
+      ],
+      "selectedIssueId": 41191,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41191/avengers_vs_x-men_2012_2",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #2",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41191
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Avengers vs. X-Men: Versus #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men: Versus",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 16230,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42492"
+      ],
+      "selectedIssueId": 42492,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42492/avengers_vs_x-men_versus_2011_1",
+      "resolvedIssueTitle": "Avengers Vs. X-Men: Versus (2011) #1",
+      "note": "Marvel series 16230 (Avengers Vs. X-Men: Versus (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42492
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Uncanny X-Men #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "11",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40160"
+      ],
+      "selectedIssueId": 40160,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40160/uncanny_x-men_2011_11",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #11",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40160
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Secret Avengers #26",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Secret Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "26",
+      "seriesId": 9799,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40706"
+      ],
+      "selectedIssueId": 40706,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40706/secret_avengers_2010_26",
+      "resolvedIssueTitle": "Secret Avengers (2010) #26",
+      "note": "Marvel series 9799 (Secret Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40706
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "New Avengers #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "25",
+      "seriesId": 9922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40738"
+      ],
+      "selectedIssueId": 40738,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40738/new_avengers_2010_25",
+      "resolvedIssueTitle": "New Avengers (2010) #25",
+      "note": "Marvel series 9922 (New Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40738
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Avengers Academy #29",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Academy",
+      "seriesYear": 2010,
+      "issueNumber": "29",
+      "seriesId": 9086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40251"
+      ],
+      "selectedIssueId": 40251,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40251/avengers_academy_2010_29",
+      "resolvedIssueTitle": "Avengers Academy (2010) #29",
+      "note": "Marvel series 9086 (Avengers Academy (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40251
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Avengers vs. X-Men #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "3",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41187"
+      ],
+      "selectedIssueId": 41187,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41187/avengers_vs_x-men_2012_3",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #3",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41187
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Wolverine & The X-Men #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "10",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38583"
+      ],
+      "selectedIssueId": 38583,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38583/wolverine_the_x-men_2011_10",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #10",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38583
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "New Avengers #26",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "26",
+      "seriesId": 9922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40737"
+      ],
+      "selectedIssueId": 40737,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40737/new_avengers_2010_26",
+      "resolvedIssueTitle": "New Avengers (2010) #26",
+      "note": "Marvel series 9922 (New Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40737
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Uncanny X-Men #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "12",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40155"
+      ],
+      "selectedIssueId": 40155,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40155/uncanny_x-men_2011_12",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #12",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40155
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Avengers Academy #30",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Academy",
+      "seriesYear": 2010,
+      "issueNumber": "30",
+      "seriesId": 9086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40250"
+      ],
+      "selectedIssueId": 40250,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40250/avengers_academy_2010_30",
+      "resolvedIssueTitle": "Avengers Academy (2010) #30",
+      "note": "Marvel series 9086 (Avengers Academy (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40250
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Avengers #26",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "26",
+      "seriesId": 9085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40410"
+      ],
+      "selectedIssueId": 40410,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40410/avengers_2010_26",
+      "resolvedIssueTitle": "Avengers (2010) #26",
+      "note": "Marvel series 9085 (Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40410
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Avengers #27",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "27",
+      "seriesId": 9085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40406"
+      ],
+      "selectedIssueId": 40406,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40406/avengers_2010_27",
+      "resolvedIssueTitle": "Avengers (2010) #27",
+      "note": "Marvel series 9085 (Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40406
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Avengers vs. X-Men #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "4",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41193"
+      ],
+      "selectedIssueId": 41193,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41193/avengers_vs_x-men_2012_4",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #4",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41193
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Avengers vs. X-Men: Versus #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men: Versus",
+      "seriesYear": 2011,
+      "issueNumber": "2",
+      "seriesId": 16230,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42491"
+      ],
+      "selectedIssueId": 42491,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42491/avengers_vs_x-men_versus_2011_2",
+      "resolvedIssueTitle": "Avengers Vs. X-Men: Versus (2011) #2",
+      "note": "Marvel series 16230 (Avengers Vs. X-Men: Versus (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42491
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Wolverine & The X-Men #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "11",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38580"
+      ],
+      "selectedIssueId": 38580,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38580/wolverine_the_x-men_2011_11",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #11",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38580
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "Secret Avengers #27",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Secret Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "27",
+      "seriesId": 9799,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40705"
+      ],
+      "selectedIssueId": 40705,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40705/secret_avengers_2010_27",
+      "resolvedIssueTitle": "Secret Avengers (2010) #27",
+      "note": "Marvel series 9799 (Secret Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40705
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "X-Men Legacy #266",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "266",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40841"
+      ],
+      "selectedIssueId": 40841,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40841/x-men_legacy_2008_266",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #266",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40841
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "X-Men Legacy #267",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "267",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40843"
+      ],
+      "selectedIssueId": 40843,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40843/x-men_legacy_2008_267",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #267",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40843
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "Uncanny X-Men #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "13",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40152"
+      ],
+      "selectedIssueId": 40152,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40152/uncanny_x-men_2011_13",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #13",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40152
+      ]
+    },
+    {
+      "sourcePosition": 33,
+      "sourceIssueReference": "Avengers Academy #31",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Academy",
+      "seriesYear": 2010,
+      "issueNumber": "31",
+      "seriesId": 9086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40253"
+      ],
+      "selectedIssueId": 40253,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40253/avengers_academy_2010_31",
+      "resolvedIssueTitle": "Avengers Academy (2010) #31",
+      "note": "Marvel series 9086 (Avengers Academy (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40253
+      ]
+    },
+    {
+      "sourcePosition": 34,
+      "sourceIssueReference": "Avengers vs. X-Men #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "5",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41190"
+      ],
+      "selectedIssueId": 41190,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41190/avengers_vs_x-men_2012_5",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #5",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41190
+      ]
+    },
+    {
+      "sourcePosition": 35,
+      "sourceIssueReference": "Avengers vs. X-Men: Versus #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men: Versus",
+      "seriesYear": 2011,
+      "issueNumber": "3",
+      "seriesId": 16230,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42490"
+      ],
+      "selectedIssueId": 42490,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42490/avengers_vs_x-men_versus_2011_3",
+      "resolvedIssueTitle": "Avengers Vs. X-Men: Versus (2011) #3",
+      "note": "Marvel series 16230 (Avengers Vs. X-Men: Versus (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42490
+      ]
+    },
+    {
+      "sourcePosition": 36,
+      "sourceIssueReference": "X-Men Legacy #268",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "268",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40847"
+      ],
+      "selectedIssueId": 40847,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40847/x-men_legacy_2008_268",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #268",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40847
+      ]
+    },
+    {
+      "sourcePosition": 37,
+      "sourceIssueReference": "Uncanny X-Men #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "14",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40153"
+      ],
+      "selectedIssueId": 40153,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40153/uncanny_x-men_2011_14",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #14",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40153
+      ]
+    },
+    {
+      "sourcePosition": 38,
+      "sourceIssueReference": "Avengers Academy #32",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Academy",
+      "seriesYear": 2010,
+      "issueNumber": "32",
+      "seriesId": 9086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40254"
+      ],
+      "selectedIssueId": 40254,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40254/avengers_academy_2010_32",
+      "resolvedIssueTitle": "Avengers Academy (2010) #32",
+      "note": "Marvel series 9086 (Avengers Academy (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40254
+      ]
+    },
+    {
+      "sourcePosition": 39,
+      "sourceIssueReference": "Secret Avengers #28",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Secret Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "28",
+      "seriesId": 9799,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40709"
+      ],
+      "selectedIssueId": 40709,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40709/secret_avengers_2010_28",
+      "resolvedIssueTitle": "Secret Avengers (2010) #28",
+      "note": "Marvel series 9799 (Secret Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40709
+      ]
+    },
+    {
+      "sourcePosition": 40,
+      "sourceIssueReference": "New Avengers #27",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "27",
+      "seriesId": 9922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40740"
+      ],
+      "selectedIssueId": 40740,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40740/new_avengers_2010_27",
+      "resolvedIssueTitle": "New Avengers (2010) #27",
+      "note": "Marvel series 9922 (New Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40740
+      ]
+    },
+    {
+      "sourcePosition": 41,
+      "sourceIssueReference": "Avengers vs. X-Men #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "6",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41189"
+      ],
+      "selectedIssueId": 41189,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41189/avengers_vs_x-men_2012_6",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #6",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41189
+      ]
+    },
+    {
+      "sourcePosition": 42,
+      "sourceIssueReference": "Avengers vs. X-Men: Versus #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men: Versus",
+      "seriesYear": 2011,
+      "issueNumber": "4",
+      "seriesId": 16230,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42489"
+      ],
+      "selectedIssueId": 42489,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42489/avengers_vs_x-men_versus_2011_4",
+      "resolvedIssueTitle": "Avengers Vs. X-Men: Versus (2011) #4",
+      "note": "Marvel series 16230 (Avengers Vs. X-Men: Versus (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42489
+      ]
+    },
+    {
+      "sourcePosition": 43,
+      "sourceIssueReference": "Avengers #28",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "28",
+      "seriesId": 9085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40404"
+      ],
+      "selectedIssueId": 40404,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40404/avengers_2010_28",
+      "resolvedIssueTitle": "Avengers (2010) #28",
+      "note": "Marvel series 9085 (Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40404
+      ]
+    },
+    {
+      "sourcePosition": 44,
+      "sourceIssueReference": "Uncanny X-Men #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "15",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40151"
+      ],
+      "selectedIssueId": 40151,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40151/uncanny_x-men_2011_15",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #15",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40151
+      ]
+    },
+    {
+      "sourcePosition": 45,
+      "sourceIssueReference": "Wolverine & The X-Men #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "12",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38578"
+      ],
+      "selectedIssueId": 38578,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38578/wolverine_the_x-men_2011_12",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #12",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38578
+      ]
+    },
+    {
+      "sourcePosition": 46,
+      "sourceIssueReference": "Avengers #29",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "29",
+      "seriesId": 9085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40409"
+      ],
+      "selectedIssueId": 40409,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40409/avengers_2010_29",
+      "resolvedIssueTitle": "Avengers (2010) #29",
+      "note": "Marvel series 9085 (Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40409
+      ]
+    },
+    {
+      "sourcePosition": 47,
+      "sourceIssueReference": "Avengers vs. X-Men #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "7",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41192"
+      ],
+      "selectedIssueId": 41192,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41192/avengers_vs_x-men_2012_7",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #7",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41192
+      ]
+    },
+    {
+      "sourcePosition": 48,
+      "sourceIssueReference": "Avengers vs. X-Men: Versus #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men: Versus",
+      "seriesYear": 2011,
+      "issueNumber": "5",
+      "seriesId": 16230,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42488"
+      ],
+      "selectedIssueId": 42488,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42488/avengers_vs_x-men_versus_2011_5",
+      "resolvedIssueTitle": "Avengers Vs. X-Men: Versus (2011) #5",
+      "note": "Marvel series 16230 (Avengers Vs. X-Men: Versus (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42488
+      ]
+    },
+    {
+      "sourcePosition": 49,
+      "sourceIssueReference": "Uncanny X-Men #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "16",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40150"
+      ],
+      "selectedIssueId": 40150,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40150/uncanny_x-men_2011_16",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #16",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40150
+      ]
+    },
+    {
+      "sourcePosition": 50,
+      "sourceIssueReference": "Uncanny X-Men #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "17",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40149"
+      ],
+      "selectedIssueId": 40149,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40149/uncanny_x-men_2011_17",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #17",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40149
+      ]
+    },
+    {
+      "sourcePosition": 51,
+      "sourceIssueReference": "Wolverine & The X-Men #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "13",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40088"
+      ],
+      "selectedIssueId": 40088,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40088/wolverine_the_x-men_2011_13",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #13",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40088
+      ]
+    },
+    {
+      "sourcePosition": 52,
+      "sourceIssueReference": "New Avengers #28",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "28",
+      "seriesId": 9922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40739"
+      ],
+      "selectedIssueId": 40739,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40739/new_avengers_2010_28",
+      "resolvedIssueTitle": "New Avengers (2010) #28",
+      "note": "Marvel series 9922 (New Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40739
+      ]
+    },
+    {
+      "sourcePosition": 53,
+      "sourceIssueReference": "New Avengers #29",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "29",
+      "seriesId": 9922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40741"
+      ],
+      "selectedIssueId": 40741,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40741/new_avengers_2010_29",
+      "resolvedIssueTitle": "New Avengers (2010) #29",
+      "note": "Marvel series 9922 (New Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40741
+      ]
+    },
+    {
+      "sourcePosition": 54,
+      "sourceIssueReference": "Wolverine & The X-Men #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "14",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40089"
+      ],
+      "selectedIssueId": 40089,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40089/wolverine_the_x-men_2011_14",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #14",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40089
+      ]
+    },
+    {
+      "sourcePosition": 55,
+      "sourceIssueReference": "Avengers vs. X-Men #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "8",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41275"
+      ],
+      "selectedIssueId": 41275,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41275/avengers_vs_x-men_2012_8",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #8",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41275
+      ]
+    },
+    {
+      "sourcePosition": 56,
+      "sourceIssueReference": "Avengers Academy #33",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Academy",
+      "seriesYear": 2010,
+      "issueNumber": "33",
+      "seriesId": 9086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40264"
+      ],
+      "selectedIssueId": 40264,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40264/avengers_academy_2010_33",
+      "resolvedIssueTitle": "Avengers Academy (2010) #33",
+      "note": "Marvel series 9086 (Avengers Academy (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40264
+      ]
+    },
+    {
+      "sourcePosition": 57,
+      "sourceIssueReference": "Avengers Academy #34",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Academy",
+      "seriesYear": 2010,
+      "issueNumber": "34",
+      "seriesId": 9086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40258"
+      ],
+      "selectedIssueId": 40258,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40258/avengers_academy_2010_34",
+      "resolvedIssueTitle": "Avengers Academy (2010) #34",
+      "note": "Marvel series 9086 (Avengers Academy (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40258
+      ]
+    },
+    {
+      "sourcePosition": 58,
+      "sourceIssueReference": "Avengers vs. X-Men #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "9",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41277"
+      ],
+      "selectedIssueId": 41277,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41277/avengers_vs_x-men_2012_9",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #9",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41277
+      ]
+    },
+    {
+      "sourcePosition": 59,
+      "sourceIssueReference": "Avengers vs. X-Men #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "10",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41276"
+      ],
+      "selectedIssueId": 41276,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41276/avengers_vs_x-men_2012_10",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #10",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41276
+      ]
+    },
+    {
+      "sourcePosition": 60,
+      "sourceIssueReference": "Wolverine & The X-Men #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "15",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40085"
+      ],
+      "selectedIssueId": 40085,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40085/wolverine_the_x-men_2011_15",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #15",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40085
+      ]
+    },
+    {
+      "sourcePosition": 61,
+      "sourceIssueReference": "Wolverine & The X-Men #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "16",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40084"
+      ],
+      "selectedIssueId": 40084,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40084/wolverine_the_x-men_2011_16",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #16",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40084
+      ]
+    },
+    {
+      "sourcePosition": 62,
+      "sourceIssueReference": "Avengers vs. X-Men #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "11",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41279"
+      ],
+      "selectedIssueId": 41279,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41279/avengers_vs_x-men_2012_11",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #11",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41279
+      ]
+    },
+    {
+      "sourcePosition": 63,
+      "sourceIssueReference": "New Avengers #30",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "30",
+      "seriesId": 9922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40736"
+      ],
+      "selectedIssueId": 40736,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40736/new_avengers_2010_30",
+      "resolvedIssueTitle": "New Avengers (2010) #30",
+      "note": "Marvel series 9922 (New Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40736
+      ]
+    },
+    {
+      "sourcePosition": 64,
+      "sourceIssueReference": "Avengers vs. X-Men #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "12",
+      "seriesId": 15305,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41278"
+      ],
+      "selectedIssueId": 41278,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41278/avengers_vs_x-men_2012_12",
+      "resolvedIssueTitle": "Avengers Vs. X-Men (2012) #12",
+      "note": "Marvel series 15305 (Avengers Vs. X-Men (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41278
+      ]
+    },
+    {
+      "sourcePosition": 65,
+      "sourceIssueReference": "Wolverine & The X-Men #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "18",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40087"
+      ],
+      "selectedIssueId": 40087,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40087/wolverine_the_x-men_2011_18",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #18",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40087
+      ]
+    },
+    {
+      "sourcePosition": 66,
+      "sourceIssueReference": "Avengers vs. X-Men: Versus #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers vs. X-Men: Versus",
+      "seriesYear": 2011,
+      "issueNumber": "6",
+      "seriesId": 16230,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42487"
+      ],
+      "selectedIssueId": 42487,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42487/avengers_vs_x-men_versus_2011_6",
+      "resolvedIssueTitle": "Avengers Vs. X-Men: Versus (2011) #6",
+      "note": "Marvel series 16230 (Avengers Vs. X-Men: Versus (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42487
+      ]
+    },
+    {
+      "sourcePosition": 67,
+      "sourceIssueReference": "Uncanny X-Men #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "18",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40148"
+      ],
+      "selectedIssueId": 40148,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40148/uncanny_x-men_2011_18",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #18",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40148
+      ]
+    },
+    {
+      "sourcePosition": 68,
+      "sourceIssueReference": "Uncanny X-Men #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "19",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42342"
+      ],
+      "selectedIssueId": 42342,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42342/uncanny_x-men_2011_19",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #19",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42342
+      ]
+    },
+    {
+      "sourcePosition": 69,
+      "sourceIssueReference": "Avengers #30",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "30",
+      "seriesId": 9085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40400"
+      ],
+      "selectedIssueId": 40400,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40400/avengers_2010_30",
+      "resolvedIssueTitle": "Avengers (2010) #30",
+      "note": "Marvel series 9085 (Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40400
+      ]
+    },
+    {
+      "sourcePosition": 70,
+      "sourceIssueReference": "AvX: Consequences #1",
+      "sourceRangeReference": "AvX: Consequences #1-#5",
+      "normalizedSeriesTitle": "AvX: Consequences",
+      "seriesYear": 2012,
+      "issueNumber": "1",
+      "seriesId": 16510,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "44526"
+      ],
+      "selectedIssueId": 44526,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/44526/avx_consequences_2012_1",
+      "resolvedIssueTitle": "Avx: Consequences (2012) #1",
+      "note": "Marvel series 16510 (Avx: Consequences (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        44526
+      ]
+    },
+    {
+      "sourcePosition": 71,
+      "sourceIssueReference": "AvX: Consequences #2",
+      "sourceRangeReference": "AvX: Consequences #1-#5",
+      "normalizedSeriesTitle": "AvX: Consequences",
+      "seriesYear": 2012,
+      "issueNumber": "2",
+      "seriesId": 16510,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45721"
+      ],
+      "selectedIssueId": 45721,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45721/avx_consequences_2012_2",
+      "resolvedIssueTitle": "Avx: Consequences (2012) #2",
+      "note": "Marvel series 16510 (Avx: Consequences (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45721
+      ]
+    },
+    {
+      "sourcePosition": 72,
+      "sourceIssueReference": "AvX: Consequences #3",
+      "sourceRangeReference": "AvX: Consequences #1-#5",
+      "normalizedSeriesTitle": "AvX: Consequences",
+      "seriesYear": 2012,
+      "issueNumber": "3",
+      "seriesId": 16510,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45724"
+      ],
+      "selectedIssueId": 45724,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45724/avx_consequences_2012_3",
+      "resolvedIssueTitle": "Avx: Consequences (2012) #3",
+      "note": "Marvel series 16510 (Avx: Consequences (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45724
+      ]
+    },
+    {
+      "sourcePosition": 73,
+      "sourceIssueReference": "AvX: Consequences #4",
+      "sourceRangeReference": "AvX: Consequences #1-#5",
+      "normalizedSeriesTitle": "AvX: Consequences",
+      "seriesYear": 2012,
+      "issueNumber": "4",
+      "seriesId": 16510,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45935"
+      ],
+      "selectedIssueId": 45935,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45935/avx_consequences_2012_4",
+      "resolvedIssueTitle": "Avx: Consequences (2012) #4",
+      "note": "Marvel series 16510 (Avx: Consequences (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45935
+      ]
+    },
+    {
+      "sourcePosition": 74,
+      "sourceIssueReference": "AvX: Consequences #5",
+      "sourceRangeReference": "AvX: Consequences #1-#5",
+      "normalizedSeriesTitle": "AvX: Consequences",
+      "seriesYear": 2012,
+      "issueNumber": "5",
+      "seriesId": 16510,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43696"
+      ],
+      "selectedIssueId": 43696,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43696/avx_consequences_2012_5",
+      "resolvedIssueTitle": "Avx: Consequences (2012) #5",
+      "note": "Marvel series 16510 (Avx: Consequences (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43696
+      ]
+    }
+  ]
+}

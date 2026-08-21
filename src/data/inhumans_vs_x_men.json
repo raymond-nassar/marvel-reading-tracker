@@ -1,0 +1,632 @@
+{
+  "id": "inhumans-vs-x-men",
+  "name": "Inhumans vs. X-Men",
+  "description": "Twenty chapters alternating the seven-part event with X-Men, Inhumans, and Mercs for Money tie-ins.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/inhumans-vs-x-men/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T12:53:39.465Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 20,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 61593,
+      "title": "Ivx (2016)",
+      "number": "0",
+      "url": "https://www.marvel.com/comics/issue/61593/ivx_2016",
+      "seriesId": 22644,
+      "seriesName": "Ivx (2016 - 2017)",
+      "onSale": "2016-11-30T00:00:00+0000",
+      "mu": "2017-06-05T00:00:00+0000",
+      "digitalId": 43273,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/5835bf2c8d876",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Kenneth Rocafort",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61594,
+      "title": "Ivx (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/61594/ivx_2016_1",
+      "seriesId": 22644,
+      "seriesName": "Ivx (2016 - 2017)",
+      "onSale": "2016-12-14T00:00:00+0000",
+      "mu": "2017-06-19T00:00:00+0000",
+      "digitalId": 43427,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/5846e31c21619",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56064,
+      "title": "Uncanny X-Men (2016) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/56064/uncanny_x-men_2016_16",
+      "seriesId": 20612,
+      "seriesName": "Uncanny X-Men (2016 - 2017)",
+      "onSale": "2016-12-21T00:00:00+0000",
+      "mu": "2017-06-26T00:00:00+0000",
+      "digitalId": 43397,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/584ed53bbfa42",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Edgar Salazar",
+          "role": "penciler"
+        },
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55449,
+      "title": "Extraordinary X-Men (2015) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/55449/extraordinary_x-men_2015_17",
+      "seriesId": 20460,
+      "seriesName": "Extraordinary X-Men (2015 - 2017)",
+      "onSale": "2016-12-28T00:00:00+0000",
+      "mu": "2017-07-03T00:00:00+0000",
+      "digitalId": 43418,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/585aa488da86f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Eric Koda",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61595,
+      "title": "Ivx (2016) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/61595/ivx_2016_2",
+      "seriesId": 22644,
+      "seriesName": "Ivx (2016 - 2017)",
+      "onSale": "2017-01-11T00:00:00+0000",
+      "mu": "2017-07-17T00:00:00+0000",
+      "digitalId": 43814,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/586eba47396cf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 60862,
+      "title": "Uncanny X-Men (2016) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/60862/uncanny_x-men_2016_17",
+      "seriesId": 20612,
+      "seriesName": "Uncanny X-Men (2016 - 2017)",
+      "onSale": "2017-01-11T00:00:00+0000",
+      "mu": "2017-07-17T00:00:00+0000",
+      "digitalId": 43859,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/586ebf8b4183b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61108,
+      "title": "Uncanny Inhumans (2015) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/61108/uncanny_inhumans_2015_18",
+      "seriesId": 19780,
+      "seriesName": "Uncanny Inhumans (2015 - 2017)",
+      "onSale": "2017-01-18T00:00:00+0000",
+      "mu": "2017-07-24T00:00:00+0000",
+      "digitalId": 43858,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/58750d950cf80",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Frazer Irving",
+          "role": "penciler"
+        },
+        {
+          "name": "Kim Jacinto",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 60518,
+      "title": "All-New X-Men (2015) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/60518/all-new_x-men_2015_17",
+      "seriesId": 20622,
+      "seriesName": "All-New X-Men (2015 - 2017)",
+      "onSale": "2017-01-18T00:00:00+0000",
+      "mu": "2017-07-24T00:00:00+0000",
+      "digitalId": 43739,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5873ed1435ef1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62508,
+      "title": "Deadpool & the Mercs for Money (2016) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/62508/deadpool_the_mercs_for_money_2016_7",
+      "seriesId": 21942,
+      "seriesName": "Deadpool & the Mercs for Money (2016 - 2017)",
+      "onSale": "2017-01-18T00:00:00+0000",
+      "mu": "2017-07-24T00:00:00+0000",
+      "digitalId": 43889,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/5873fbabb6317",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Iban Coello",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55450,
+      "title": "Extraordinary X-Men (2015) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/55450/extraordinary_x-men_2015_18",
+      "seriesId": 20460,
+      "seriesName": "Extraordinary X-Men (2015 - 2017)",
+      "onSale": "2017-01-25T00:00:00+0000",
+      "mu": "2017-07-31T00:00:00+0000",
+      "digitalId": 43805,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/5878fd1002ff9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Ibanez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61596,
+      "title": "Ivx (2016) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/61596/ivx_2016_3",
+      "seriesId": 22644,
+      "seriesName": "Ivx (2016 - 2017)",
+      "onSale": "2017-01-25T00:00:00+0000",
+      "mu": "2017-07-31T00:00:00+0000",
+      "digitalId": 43815,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/58823370ef0df",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Javier Garron",
+          "role": "penciler"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62586,
+      "title": "Deadpool & the Mercs for Money (2016) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/62586/deadpool_the_mercs_for_money_2016_8",
+      "seriesId": 21942,
+      "seriesName": "Deadpool & the Mercs for Money (2016 - 2017)",
+      "onSale": "2017-02-01T00:00:00+0000",
+      "mu": "2017-08-07T00:00:00+0000",
+      "digitalId": 44145,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/588bd3efe7531",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Iban Coello",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 60519,
+      "title": "All-New X-Men (2015) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/60519/all-new_x-men_2015_18",
+      "seriesId": 20622,
+      "seriesName": "All-New X-Men (2015 - 2017)",
+      "onSale": "2017-02-01T00:00:00+0000",
+      "mu": "2017-08-07T00:00:00+0000",
+      "digitalId": 44034,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/588b65df633ab",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61597,
+      "title": "Ivx (2016) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/61597/ivx_2016_4",
+      "seriesId": 22644,
+      "seriesName": "Ivx (2016 - 2017)",
+      "onSale": "2017-02-08T00:00:00+0000",
+      "mu": "2017-08-14T00:00:00+0000",
+      "digitalId": 44062,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/588fb41a1a4c6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Javier Garron",
+          "role": "penciler"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61109,
+      "title": "Uncanny Inhumans (2015) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/61109/uncanny_inhumans_2015_19",
+      "seriesId": 19780,
+      "seriesName": "Uncanny Inhumans (2015 - 2017)",
+      "onSale": "2017-02-15T00:00:00+0000",
+      "mu": "2017-08-21T00:00:00+0000",
+      "digitalId": 44099,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/a0/589decdddaba7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Frazer Irving",
+          "role": "penciler"
+        },
+        {
+          "name": "Kim Jacinto",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 60863,
+      "title": "Uncanny X-Men (2016) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/60863/uncanny_x-men_2016_18",
+      "seriesId": 20612,
+      "seriesName": "Uncanny X-Men (2016 - 2017)",
+      "onSale": "2017-02-15T00:00:00+0000",
+      "mu": "2017-08-21T00:00:00+0000",
+      "digitalId": 44100,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/589decb557b03",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Edgar Salazar",
+          "role": "penciler"
+        },
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61598,
+      "title": "Ivx (2016) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/61598/ivx_2016_5",
+      "seriesId": 22644,
+      "seriesName": "Ivx (2016 - 2017)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44118,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/58a22d70a1f71",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Javier Garron",
+          "role": "penciler"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55451,
+      "title": "Extraordinary X-Men (2015) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/55451/extraordinary_x-men_2015_19",
+      "seriesId": 20460,
+      "seriesName": "Extraordinary X-Men (2015 - 2017)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44113,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/50/58a2145890009",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Eric Koda",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61982,
+      "title": "Ivx (2016) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/61982/ivx_2016_6",
+      "seriesId": 22644,
+      "seriesName": "Ivx (2016 - 2017)",
+      "onSale": "2017-03-08T00:00:00+0000",
+      "mu": "2017-09-11T00:00:00+0000",
+      "digitalId": 44291,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/58b7431bad568",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Gerry Alanguilan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "cover artist"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61110,
+      "title": "Uncanny Inhumans (2015) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/61110/uncanny_inhumans_2015_20",
+      "seriesId": 19780,
+      "seriesName": "Uncanny Inhumans (2015 - 2017)",
+      "onSale": "2017-03-22T00:00:00+0000",
+      "mu": "2017-09-25T00:00:00+0000",
+      "digitalId": 44330,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/58cc008a8a12d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Ario Anindito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kim Jacinto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Frazer Irving",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

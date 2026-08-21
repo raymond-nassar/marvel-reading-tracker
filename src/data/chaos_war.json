@@ -1,0 +1,691 @@
+{
+  "id": "chaos-war",
+  "name": "Chaos War",
+  "description": "Nineteen issues combining the five-part event with Hercules, Thor, Alpha Flight, X-Men, and Incredible Hulks tie-ins.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/chaos-war-checklist/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T09:58:39.872Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 19,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 34517,
+      "title": "Chaos War (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/34517/chaos_war_2010_1",
+      "seriesId": 11854,
+      "seriesName": "Chaos War (2010 - 2011)",
+      "onSale": "2010-09-01T00:00:00+0000",
+      "mu": "2011-10-12T00:00:00+0000",
+      "digitalId": 16542,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/50b38ae22fa8e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": []
+    },
+    {
+      "issueId": 36280,
+      "title": "Chaos War (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/36280/chaos_war_2010_2",
+      "seriesId": 11854,
+      "seriesName": "Chaos War (2010 - 2011)",
+      "onSale": "2010-10-20T00:00:00+0000",
+      "mu": "2011-10-13T00:00:00+0000",
+      "digitalId": 16831,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/51e05d99c62b8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brandon Peterson",
+          "role": "penciler"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34535,
+      "title": "Chaos War (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/34535/chaos_war_2010_3",
+      "seriesId": 11854,
+      "seriesName": "Chaos War (2010 - 2011)",
+      "onSale": "2010-11-03T00:00:00+0000",
+      "mu": "2011-11-09T00:00:00+0000",
+      "digitalId": 17258,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/51e05e85a8135",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jae Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Neary",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "penciler"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37062,
+      "title": "Chaos War: Thor (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37062/chaos_war_thor_2010_1",
+      "seriesId": 13253,
+      "seriesName": "Chaos War: Thor (2010)",
+      "onSale": "2010-11-10T00:00:00+0000",
+      "mu": "2011-11-10T00:00:00+0000",
+      "digitalId": 17528,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/51e6f4217e177",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Ketcham",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Ching",
+          "role": "penciler"
+        },
+        {
+          "name": "Tommy Lee Edwards",
+          "role": "penciler"
+        },
+        {
+          "name": "J. M. DeMatteis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37068,
+      "title": "Chaos War: Chaos King (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37068/chaos_war_chaos_king_2010_1",
+      "seriesId": 13261,
+      "seriesName": "Chaos War: Chaos King (2010)",
+      "onSale": "2010-11-17T00:00:00+0000",
+      "mu": "2011-11-02T00:00:00+0000",
+      "digitalId": 17832,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/52166e65d7e16",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Michael Kaluta",
+          "role": "penciler"
+        },
+        {
+          "name": "Brandon Montclare",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37064,
+      "title": "Chaos War: Dead Avengers (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37064/chaos_war_dead_avengers_2010_1",
+      "seriesId": 13257,
+      "seriesName": "Chaos War: Dead Avengers (2010)",
+      "onSale": "2010-11-17T00:00:00+0000",
+      "mu": "2011-11-03T00:00:00+0000",
+      "digitalId": 17769,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/60/4f68c30100312",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Cory Hamscher",
+          "role": "cover artist"
+        },
+        {
+          "name": "Danny Miki - Crimelab",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Ho",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Ketcham",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Ching",
+          "role": "penciler"
+        },
+        {
+          "name": "Ivan Rodriguez",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Segovia",
+          "role": "penciler"
+        },
+        {
+          "name": "Tom Grummett",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "J.M. DeMatteis",
+          "role": "writer"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37067,
+      "title": "Chaos War: Alpha Flight (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37067/chaos_war_alpha_flight_2010_1",
+      "seriesId": 13260,
+      "seriesName": "Chaos War: Alpha Flight (2010)",
+      "onSale": "2010-11-24T00:00:00+0000",
+      "mu": "2011-10-31T00:00:00+0000",
+      "digitalId": 17909,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/51e061516c45e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Terry Pallot",
+          "role": "cover artist"
+        },
+        {
+          "name": "Reilly Brown",
+          "role": "penciler"
+        },
+        {
+          "name": "Salva Espin",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Mccann",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37065,
+      "title": "Chaos War: God Squad (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37065/chaos_war_god_squad_2010_1",
+      "seriesId": 13258,
+      "seriesName": "Chaos War: God Squad (2010)",
+      "onSale": "2010-12-02T00:00:00+0000",
+      "mu": "2011-11-04T00:00:00+0000",
+      "digitalId": 18122,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/51e068e86c76d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dan Panosian",
+          "role": "penciler"
+        },
+        {
+          "name": "Marc Sumerak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34523,
+      "title": "Chaos War (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/34523/chaos_war_2010_4",
+      "seriesId": 11854,
+      "seriesName": "Chaos War (2010 - 2011)",
+      "onSale": "2010-12-15T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 18232,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/51e05fc66a9ef",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": []
+    },
+    {
+      "issueId": 31236,
+      "title": "Incredible Hulks (2010) #618",
+      "number": "618",
+      "url": "https://www.marvel.com/comics/issue/31236/incredible_hulks_2010_618",
+      "seriesId": 8842,
+      "seriesName": "Incredible Hulks (2010 - 2011)",
+      "onSale": "2010-12-08T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 18248,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/52c5b58c47334",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlo Pagulayan",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37066,
+      "title": "Chaos War: Ares (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37066/chaos_war_ares_2010_1",
+      "seriesId": 13259,
+      "seriesName": "Chaos War: Ares (2010)",
+      "onSale": "2010-12-08T00:00:00+0000",
+      "mu": "2013-04-08T15:31:02+0000",
+      "digitalId": 18312,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/80/51e0627329519",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Segovia",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Avon Oeming",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37060,
+      "title": "Chaos War: Thor (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/37060/chaos_war_thor_2010_2",
+      "seriesId": 13253,
+      "seriesName": "Chaos War: Thor (2010)",
+      "onSale": "2010-12-15T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 18464,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/51e6f50e6154d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Ketcham",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Ching",
+          "role": "penciler"
+        },
+        {
+          "name": "J. M. DeMatteis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37085,
+      "title": "Chaos War: Dead Avengers (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/37085/chaos_war_dead_avengers_2010_2",
+      "seriesId": 13257,
+      "seriesName": "Chaos War: Dead Avengers (2010)",
+      "onSale": "2010-12-22T00:00:00+0000",
+      "mu": "2010-12-22T00:00:00+0000",
+      "digitalId": 18556,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/51e066367ac8e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Cory Hamscher",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Grummett",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34050,
+      "title": "Incredible Hulks (2010) #619",
+      "number": "619",
+      "url": "https://www.marvel.com/comics/issue/34050/incredible_hulks_2010_619",
+      "seriesId": 8842,
+      "seriesName": "Incredible Hulks (2010 - 2011)",
+      "onSale": "2010-12-22T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 18552,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/52c5b57d98070",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlo Pagulayan",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37881,
+      "title": "Chaos War: X-Men (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37881/chaos_war_x-men_2010_1",
+      "seriesId": 13588,
+      "seriesName": "Chaos War: X-Men (2010)",
+      "onSale": "2010-12-29T00:00:00+0000",
+      "mu": "2013-04-08T15:36:49+0000",
+      "digitalId": 18656,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/70/51e6f67fe66b9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Chris Claremont",
+          "role": "writer"
+        },
+        {
+          "name": "Louise Simonson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34021,
+      "title": "Incredible Hulks (2010) #620",
+      "number": "620",
+      "url": "https://www.marvel.com/comics/issue/34021/incredible_hulks_2010_620",
+      "seriesId": 8842,
+      "seriesName": "Incredible Hulks (2010 - 2011)",
+      "onSale": "2011-01-12T00:00:00+0000",
+      "mu": "2011-12-16T00:00:00+0000",
+      "digitalId": 18867,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/4f58d13c5c70c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlo Pagulayan",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37084,
+      "title": "Chaos War: Dead Avengers (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/37084/chaos_war_dead_avengers_2010_3",
+      "seriesId": 13257,
+      "seriesName": "Chaos War: Dead Avengers (2010)",
+      "onSale": "2011-01-12T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 18856,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/51e0671a9e7b7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Cory Hamscher",
+          "role": "cover artist"
+        },
+        {
+          "name": "Danny Miki - Crimelab",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Ho",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Ketcham",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Ching",
+          "role": "penciler"
+        },
+        {
+          "name": "Ivan Rodriguez",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Segovia",
+          "role": "penciler"
+        },
+        {
+          "name": "Tom Grummett",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "J.M. DeMatteis",
+          "role": "writer"
+        },
+        {
+          "name": "Michael Avon Oeming",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37882,
+      "title": "Chaos War: X-Men (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/37882/chaos_war_x-men_2010_2",
+      "seriesId": 13588,
+      "seriesName": "Chaos War: X-Men (2010)",
+      "onSale": "2011-01-26T00:00:00+0000",
+      "mu": "2013-04-08T00:00:00+0000",
+      "digitalId": 18989,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/51e6f7441e4d8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Doug Braithwaite",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Claremont",
+          "role": "writer"
+        },
+        {
+          "name": "Louise Simonson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36278,
+      "title": "Chaos War (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/36278/chaos_war_2010_5",
+      "seriesId": 11854,
+      "seriesName": "Chaos War (2010 - 2011)",
+      "onSale": "2011-01-26T00:00:00+0000",
+      "mu": "2011-12-09T00:00:00+0000",
+      "digitalId": 18988,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/4f57d7051d323",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1121 @@
+{
+  "id": "shadowland",
+  "inventoryId": "shadowland",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/daredevil-shadowland-reading-order/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 29,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 29703,
+      "title": "Shadowland",
+      "issueTitle": "Shadowland (2010) #1",
+      "seriesTitle": "Shadowland",
+      "apiSeriesName": "Shadowland (2010)",
+      "seriesId": 9934,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29703/shadowland_2010_1",
+      "onSaleDate": "2010-07-08T00:00:00+0000"
+    },
+    {
+      "id": 30367,
+      "title": "Daredevil",
+      "issueTitle": "Daredevil (1998) #508",
+      "seriesTitle": "Daredevil",
+      "apiSeriesName": "Daredevil (1998 - 2011)",
+      "seriesId": 449,
+      "issueNumber": "508",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30367/daredevil_1998_508",
+      "onSaleDate": "2010-07-14T00:00:00+0000"
+    },
+    {
+      "id": 30368,
+      "title": "Daredevil",
+      "issueTitle": "Daredevil (1998) #509",
+      "seriesTitle": "Daredevil",
+      "apiSeriesName": "Daredevil (1998 - 2011)",
+      "seriesId": 449,
+      "issueNumber": "509",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30368/daredevil_1998_509",
+      "onSaleDate": "2010-08-11T00:00:00+0000"
+    },
+    {
+      "id": 33889,
+      "title": "Shadowland: Blood on the Streets",
+      "issueTitle": "Shadowland: Blood on the Streets (2010) #1",
+      "seriesTitle": "Shadowland: Blood on the Streets",
+      "apiSeriesName": "Shadowland: Blood on the Streets (2010)",
+      "seriesId": 10922,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33889/shadowland_blood_on_the_streets_2010_1",
+      "onSaleDate": "2010-08-11T00:00:00+0000"
+    },
+    {
+      "id": 34341,
+      "title": "Shadowland: Moon Knight",
+      "issueTitle": "Shadowland: Moon Knight (2010) #1",
+      "seriesTitle": "Shadowland: Moon Knight",
+      "apiSeriesName": "Shadowland: Moon Knight (2010)",
+      "seriesId": 11712,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34341/shadowland_moon_knight_2010_1",
+      "onSaleDate": "2010-08-25T00:00:00+0000"
+    },
+    {
+      "id": 33871,
+      "title": "Shadowland: Power Man",
+      "issueTitle": "Shadowland: Power Man (2010) #1",
+      "seriesTitle": "Shadowland: Power Man",
+      "apiSeriesName": "Shadowland: Power Man (2010)",
+      "seriesId": 10913,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33871/shadowland_power_man_2010_1",
+      "onSaleDate": "2010-08-18T00:00:00+0000"
+    },
+    {
+      "id": 33883,
+      "title": "Shadowland: Power Man",
+      "issueTitle": "Shadowland: Power Man (2010) #2",
+      "seriesTitle": "Shadowland: Power Man",
+      "apiSeriesName": "Shadowland: Power Man (2010)",
+      "seriesId": 10913,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33883/shadowland_power_man_2010_2",
+      "onSaleDate": "2010-09-15T00:00:00+0000"
+    },
+    {
+      "id": 29704,
+      "title": "Shadowland",
+      "issueTitle": "Shadowland (2010) #2",
+      "seriesTitle": "Shadowland",
+      "apiSeriesName": "Shadowland (2010)",
+      "seriesId": 9934,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29704/shadowland_2010_2",
+      "onSaleDate": "2010-08-04T00:00:00+0000"
+    },
+    {
+      "id": 36190,
+      "title": "Shadowland: Daughters of the Shadow",
+      "issueTitle": "Shadowland: Daughters of the Shadow (2010) #1",
+      "seriesTitle": "Shadowland: Daughters of the Shadow",
+      "apiSeriesName": "Shadowland: Daughters of the Shadow (2010)",
+      "seriesId": 12206,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36190/shadowland_daughters_of_the_shadow_2010_1",
+      "onSaleDate": "2010-08-18T00:00:00+0000"
+    },
+    {
+      "id": 36189,
+      "title": "Shadowland: Daughters of the Shadow",
+      "issueTitle": "Shadowland: Daughters of the Shadow (2010) #2",
+      "seriesTitle": "Shadowland: Daughters of the Shadow",
+      "apiSeriesName": "Shadowland: Daughters of the Shadow (2010)",
+      "seriesId": 12206,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36189/shadowland_daughters_of_the_shadow_2010_2",
+      "onSaleDate": "2010-09-22T00:00:00+0000"
+    },
+    {
+      "id": 34918,
+      "title": "Shadowland: Daughters of the Shadow",
+      "issueTitle": "Shadowland: Daughters of the Shadow (2010) #3",
+      "seriesTitle": "Shadowland: Daughters of the Shadow",
+      "apiSeriesName": "Shadowland: Daughters of the Shadow (2010)",
+      "seriesId": 12206,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34918/shadowland_daughters_of_the_shadow_2010_3",
+      "onSaleDate": "2010-11-10T00:00:00+0000"
+    },
+    {
+      "id": 30369,
+      "title": "Daredevil",
+      "issueTitle": "Daredevil (1998) #510",
+      "seriesTitle": "Daredevil",
+      "apiSeriesName": "Daredevil (1998 - 2011)",
+      "seriesId": 449,
+      "issueNumber": "510",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30369/daredevil_1998_510",
+      "onSaleDate": "2010-09-09T00:00:00+0000"
+    },
+    {
+      "id": 33587,
+      "title": "Shadowland: Elektra",
+      "issueTitle": "Shadowland: Elektra (2010) #1",
+      "seriesTitle": "Shadowland: Elektra",
+      "apiSeriesName": "Shadowland: Elektra (2010)",
+      "seriesId": 11291,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33587/shadowland_elektra_2010_1",
+      "onSaleDate": "2010-09-01T00:00:00+0000"
+    },
+    {
+      "id": 29705,
+      "title": "Shadowland",
+      "issueTitle": "Shadowland (2010) #3",
+      "seriesTitle": "Shadowland",
+      "apiSeriesName": "Shadowland (2010)",
+      "seriesId": 9934,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29705/shadowland_2010_3",
+      "onSaleDate": "2010-09-01T00:00:00+0000"
+    },
+    {
+      "id": 34342,
+      "title": "Shadowland: Moon Knight",
+      "issueTitle": "Shadowland: Moon Knight (2010) #2",
+      "seriesTitle": "Shadowland: Moon Knight",
+      "apiSeriesName": "Shadowland: Moon Knight (2010)",
+      "seriesId": 11712,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34342/shadowland_moon_knight_2010_2",
+      "onSaleDate": "2010-09-22T00:00:00+0000"
+    },
+    {
+      "id": 34338,
+      "title": "Shadowland: Moon Knight",
+      "issueTitle": "Shadowland: Moon Knight (2010) #3",
+      "seriesTitle": "Shadowland: Moon Knight",
+      "apiSeriesName": "Shadowland: Moon Knight (2010)",
+      "seriesId": 11712,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34338/shadowland_moon_knight_2010_3",
+      "onSaleDate": "2010-10-27T00:00:00+0000"
+    },
+    {
+      "id": 33881,
+      "title": "Shadowland: Blood on the Streets",
+      "issueTitle": "Shadowland: Blood on the Streets (2010) #2",
+      "seriesTitle": "Shadowland: Blood on the Streets",
+      "apiSeriesName": "Shadowland: Blood on the Streets (2010)",
+      "seriesId": 10922,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33881/shadowland_blood_on_the_streets_2010_2",
+      "onSaleDate": "2010-09-09T00:00:00+0000"
+    },
+    {
+      "id": 33585,
+      "title": "Shadowland: Spider-Man",
+      "issueTitle": "Shadowland: Spider-Man (2010) #1",
+      "seriesTitle": "Shadowland: Spider-Man",
+      "apiSeriesName": "Shadowland: Spider-Man (2010)",
+      "seriesId": 11287,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33585/shadowland_spider-man_2010_1",
+      "onSaleDate": "2010-10-06T00:00:00+0000"
+    },
+    {
+      "id": 33888,
+      "title": "Shadowland: Blood on the Streets",
+      "issueTitle": "Shadowland: Blood on the Streets (2010) #3",
+      "seriesTitle": "Shadowland: Blood on the Streets",
+      "apiSeriesName": "Shadowland: Blood on the Streets (2010)",
+      "seriesId": 10922,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33888/shadowland_blood_on_the_streets_2010_3",
+      "onSaleDate": "2010-11-03T00:00:00+0000"
+    },
+    {
+      "id": 29867,
+      "title": "Thunderbolts",
+      "issueTitle": "Thunderbolts (2006) #148",
+      "seriesTitle": "Thunderbolts",
+      "apiSeriesName": "Thunderbolts (2006 - 2012)",
+      "seriesId": 18527,
+      "issueNumber": "148",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29867/thunderbolts_2006_148",
+      "onSaleDate": "2010-09-15T00:00:00+0000"
+    },
+    {
+      "id": 29868,
+      "title": "Thunderbolts",
+      "issueTitle": "Thunderbolts (2006) #149",
+      "seriesTitle": "Thunderbolts",
+      "apiSeriesName": "Thunderbolts (2006 - 2012)",
+      "seriesId": 18527,
+      "issueNumber": "149",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29868/thunderbolts_2006_149",
+      "onSaleDate": "2010-10-27T00:00:00+0000"
+    },
+    {
+      "id": 33586,
+      "title": "Shadowland: Ghost Rider",
+      "issueTitle": "Shadowland: Ghost Rider (2010) #1",
+      "seriesTitle": "Shadowland: Ghost Rider",
+      "apiSeriesName": "Shadowland: Ghost Rider (2010)",
+      "seriesId": 11288,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33586/shadowland_ghost_rider_2010_1",
+      "onSaleDate": "2010-09-15T00:00:00+0000"
+    },
+    {
+      "id": 33879,
+      "title": "Shadowland: Power Man",
+      "issueTitle": "Shadowland: Power Man (2010) #3",
+      "seriesTitle": "Shadowland: Power Man",
+      "apiSeriesName": "Shadowland: Power Man (2010)",
+      "seriesId": 10913,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33879/shadowland_power_man_2010_3",
+      "onSaleDate": "2010-10-20T00:00:00+0000"
+    },
+    {
+      "id": 29706,
+      "title": "Shadowland",
+      "issueTitle": "Shadowland (2010) #4",
+      "seriesTitle": "Shadowland",
+      "apiSeriesName": "Shadowland (2010)",
+      "seriesId": 9934,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29706/shadowland_2010_4",
+      "onSaleDate": "2010-10-13T00:00:00+0000"
+    },
+    {
+      "id": 33892,
+      "title": "Shadowland: Blood on the Streets",
+      "issueTitle": "Shadowland: Blood on the Streets (2010) #4",
+      "seriesTitle": "Shadowland: Blood on the Streets",
+      "apiSeriesName": "Shadowland: Blood on the Streets (2010)",
+      "seriesId": 10922,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33892/shadowland_blood_on_the_streets_2010_4",
+      "onSaleDate": "2010-11-24T00:00:00+0000"
+    },
+    {
+      "id": 30370,
+      "title": "Daredevil",
+      "issueTitle": "Daredevil (1998) #511",
+      "seriesTitle": "Daredevil",
+      "apiSeriesName": "Daredevil (1998 - 2011)",
+      "seriesId": 449,
+      "issueNumber": "511",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30370/daredevil_1998_511",
+      "onSaleDate": "2010-10-20T00:00:00+0000"
+    },
+    {
+      "id": 33700,
+      "title": "Shadowland",
+      "issueTitle": "Shadowland (2010) #5",
+      "seriesTitle": "Shadowland",
+      "apiSeriesName": "Shadowland (2010)",
+      "seriesId": 9934,
+      "issueNumber": "5",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33700/shadowland_2010_5",
+      "onSaleDate": "2010-12-01T00:00:00+0000"
+    },
+    {
+      "id": 33877,
+      "title": "Shadowland: Power Man",
+      "issueTitle": "Shadowland: Power Man (2010) #4",
+      "seriesTitle": "Shadowland: Power Man",
+      "apiSeriesName": "Shadowland: Power Man (2010)",
+      "seriesId": 10913,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33877/shadowland_power_man_2010_4",
+      "onSaleDate": "2010-11-24T00:00:00+0000"
+    },
+    {
+      "id": 37059,
+      "title": "SHADOWLAND: AFTER THE FALL 1",
+      "issueTitle": "SHADOWLAND: AFTER THE FALL 1 (2010) #1",
+      "seriesTitle": "SHADOWLAND: AFTER THE FALL 1",
+      "apiSeriesName": "SHADOWLAND: AFTER THE FALL 1 (2010)",
+      "seriesId": 13252,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/37059/shadowland_after_the_fall_1_2010_1",
+      "onSaleDate": "2010-12-08T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Shadowland #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9934,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29703"
+      ],
+      "selectedIssueId": 29703,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29703/shadowland_2010_1",
+      "resolvedIssueTitle": "Shadowland (2010) #1",
+      "note": "Marvel series 9934 (Shadowland (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29703
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Daredevil #508",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Daredevil",
+      "seriesYear": 1998,
+      "issueNumber": "508",
+      "seriesId": 449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30367"
+      ],
+      "selectedIssueId": 30367,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30367/daredevil_1998_508",
+      "resolvedIssueTitle": "Daredevil (1998) #508",
+      "note": "Marvel series 449 (Daredevil (1998 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30367
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Daredevil #509",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Daredevil",
+      "seriesYear": 1998,
+      "issueNumber": "509",
+      "seriesId": 449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30368"
+      ],
+      "selectedIssueId": 30368,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30368/daredevil_1998_509",
+      "resolvedIssueTitle": "Daredevil (1998) #509",
+      "note": "Marvel series 449 (Daredevil (1998 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30368
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Shadowland: Blood on the Streets #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Blood on the Streets",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 10922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33889"
+      ],
+      "selectedIssueId": 33889,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33889/shadowland_blood_on_the_streets_2010_1",
+      "resolvedIssueTitle": "Shadowland: Blood on the Streets (2010) #1",
+      "note": "Marvel series 10922 (Shadowland: Blood on the Streets (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33889
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Shadowland: Moon Knight #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Moon Knight",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 11712,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34341"
+      ],
+      "selectedIssueId": 34341,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34341/shadowland_moon_knight_2010_1",
+      "resolvedIssueTitle": "Shadowland: Moon Knight (2010) #1",
+      "note": "Marvel series 11712 (Shadowland: Moon Knight (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34341
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Shadowland: Power Man #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Power Man",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 10913,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33871"
+      ],
+      "selectedIssueId": 33871,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33871/shadowland_power_man_2010_1",
+      "resolvedIssueTitle": "Shadowland: Power Man (2010) #1",
+      "note": "Marvel series 10913 (Shadowland: Power Man (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33871
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Shadowland: Power Man #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Power Man",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 10913,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33883"
+      ],
+      "selectedIssueId": 33883,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33883/shadowland_power_man_2010_2",
+      "resolvedIssueTitle": "Shadowland: Power Man (2010) #2",
+      "note": "Marvel series 10913 (Shadowland: Power Man (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33883
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Shadowland #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 9934,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29704"
+      ],
+      "selectedIssueId": 29704,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29704/shadowland_2010_2",
+      "resolvedIssueTitle": "Shadowland (2010) #2",
+      "note": "Marvel series 9934 (Shadowland (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29704
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Shadowland: Daughters of the Shadow #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Daughters of the Shadow",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 12206,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36190"
+      ],
+      "selectedIssueId": 36190,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36190/shadowland_daughters_of_the_shadow_2010_1",
+      "resolvedIssueTitle": "Shadowland: Daughters of the Shadow (2010) #1",
+      "note": "Marvel series 12206 (Shadowland: Daughters of the Shadow (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36190
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Shadowland: Daughters of the Shadow #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Daughters of the Shadow",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 12206,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36189"
+      ],
+      "selectedIssueId": 36189,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36189/shadowland_daughters_of_the_shadow_2010_2",
+      "resolvedIssueTitle": "Shadowland: Daughters of the Shadow (2010) #2",
+      "note": "Marvel series 12206 (Shadowland: Daughters of the Shadow (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36189
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Shadowland: Daughters of the Shadow #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Daughters of the Shadow",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 12206,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34918"
+      ],
+      "selectedIssueId": 34918,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34918/shadowland_daughters_of_the_shadow_2010_3",
+      "resolvedIssueTitle": "Shadowland: Daughters of the Shadow (2010) #3",
+      "note": "Marvel series 12206 (Shadowland: Daughters of the Shadow (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34918
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Daredevil #510",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Daredevil",
+      "seriesYear": 1998,
+      "issueNumber": "510",
+      "seriesId": 449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30369"
+      ],
+      "selectedIssueId": 30369,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30369/daredevil_1998_510",
+      "resolvedIssueTitle": "Daredevil (1998) #510",
+      "note": "Marvel series 449 (Daredevil (1998 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30369
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Shadowland: Elektra #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Elektra",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 11291,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33587"
+      ],
+      "selectedIssueId": 33587,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33587/shadowland_elektra_2010_1",
+      "resolvedIssueTitle": "Shadowland: Elektra (2010) #1",
+      "note": "Marvel series 11291 (Shadowland: Elektra (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33587
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Shadowland #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 9934,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29705"
+      ],
+      "selectedIssueId": 29705,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29705/shadowland_2010_3",
+      "resolvedIssueTitle": "Shadowland (2010) #3",
+      "note": "Marvel series 9934 (Shadowland (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29705
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Shadowland: Moon Knight #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Moon Knight",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 11712,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34342"
+      ],
+      "selectedIssueId": 34342,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34342/shadowland_moon_knight_2010_2",
+      "resolvedIssueTitle": "Shadowland: Moon Knight (2010) #2",
+      "note": "Marvel series 11712 (Shadowland: Moon Knight (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34342
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Shadowland: Moon Knight #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Moon Knight",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 11712,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34338"
+      ],
+      "selectedIssueId": 34338,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34338/shadowland_moon_knight_2010_3",
+      "resolvedIssueTitle": "Shadowland: Moon Knight (2010) #3",
+      "note": "Marvel series 11712 (Shadowland: Moon Knight (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34338
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Shadowland: Blood on the Streets #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Blood on the Streets",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 10922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33881"
+      ],
+      "selectedIssueId": 33881,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33881/shadowland_blood_on_the_streets_2010_2",
+      "resolvedIssueTitle": "Shadowland: Blood on the Streets (2010) #2",
+      "note": "Marvel series 10922 (Shadowland: Blood on the Streets (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33881
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Shadowland: Spider-Man #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Spider-Man",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 11287,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33585"
+      ],
+      "selectedIssueId": 33585,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33585/shadowland_spider-man_2010_1",
+      "resolvedIssueTitle": "Shadowland: Spider-Man (2010) #1",
+      "note": "Marvel series 11287 (Shadowland: Spider-Man (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33585
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Shadowland: Blood on the Streets #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Blood on the Streets",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 10922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33888"
+      ],
+      "selectedIssueId": 33888,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33888/shadowland_blood_on_the_streets_2010_3",
+      "resolvedIssueTitle": "Shadowland: Blood on the Streets (2010) #3",
+      "note": "Marvel series 10922 (Shadowland: Blood on the Streets (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33888
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Thunderbolts #148",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Thunderbolts",
+      "seriesYear": 2006,
+      "issueNumber": "148",
+      "seriesId": 18527,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29867"
+      ],
+      "selectedIssueId": 29867,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29867/thunderbolts_2006_148",
+      "resolvedIssueTitle": "Thunderbolts (2006) #148",
+      "note": "Marvel series 18527 (Thunderbolts (2006 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29867
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Thunderbolts #149",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Thunderbolts",
+      "seriesYear": 2006,
+      "issueNumber": "149",
+      "seriesId": 18527,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29868"
+      ],
+      "selectedIssueId": 29868,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29868/thunderbolts_2006_149",
+      "resolvedIssueTitle": "Thunderbolts (2006) #149",
+      "note": "Marvel series 18527 (Thunderbolts (2006 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29868
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Shadowland: Ghost Rider #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Ghost Rider",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 11288,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33586"
+      ],
+      "selectedIssueId": 33586,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33586/shadowland_ghost_rider_2010_1",
+      "resolvedIssueTitle": "Shadowland: Ghost Rider (2010) #1",
+      "note": "Marvel series 11288 (Shadowland: Ghost Rider (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33586
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Shadowland: Power Man #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Power Man",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 10913,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33879"
+      ],
+      "selectedIssueId": 33879,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33879/shadowland_power_man_2010_3",
+      "resolvedIssueTitle": "Shadowland: Power Man (2010) #3",
+      "note": "Marvel series 10913 (Shadowland: Power Man (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33879
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Shadowland #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 9934,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29706"
+      ],
+      "selectedIssueId": 29706,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29706/shadowland_2010_4",
+      "resolvedIssueTitle": "Shadowland (2010) #4",
+      "note": "Marvel series 9934 (Shadowland (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29706
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Shadowland: Blood on the Streets #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Blood on the Streets",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 10922,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33892"
+      ],
+      "selectedIssueId": 33892,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33892/shadowland_blood_on_the_streets_2010_4",
+      "resolvedIssueTitle": "Shadowland: Blood on the Streets (2010) #4",
+      "note": "Marvel series 10922 (Shadowland: Blood on the Streets (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33892
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Daredevil #511",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Daredevil",
+      "seriesYear": 1998,
+      "issueNumber": "511",
+      "seriesId": 449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30370"
+      ],
+      "selectedIssueId": 30370,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30370/daredevil_1998_511",
+      "resolvedIssueTitle": "Daredevil (1998) #511",
+      "note": "Marvel series 449 (Daredevil (1998 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30370
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Shadowland #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland",
+      "seriesYear": 2010,
+      "issueNumber": "5",
+      "seriesId": 9934,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33700"
+      ],
+      "selectedIssueId": 33700,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33700/shadowland_2010_5",
+      "resolvedIssueTitle": "Shadowland (2010) #5",
+      "note": "Marvel series 9934 (Shadowland (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33700
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Shadowland: Power Man #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: Power Man",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 10913,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33877"
+      ],
+      "selectedIssueId": 33877,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33877/shadowland_power_man_2010_4",
+      "resolvedIssueTitle": "Shadowland: Power Man (2010) #4",
+      "note": "Marvel series 10913 (Shadowland: Power Man (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33877
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "Shadowland: After the Fall #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Shadowland: After the Fall",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13252,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37059"
+      ],
+      "selectedIssueId": 37059,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37059/shadowland_after_the_fall_1_2010_1",
+      "resolvedIssueTitle": "SHADOWLAND: AFTER THE FALL 1 (2010) #1",
+      "note": "Marvel series 13252 (SHADOWLAND: AFTER THE FALL 1 (2010)) is the reviewed metadata series for this source reference. The source title is Shadowland: After the Fall; Marvel names the selected series SHADOWLAND: AFTER THE FALL 1. Marvel names the one-issue series SHADOWLAND: AFTER THE FALL 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37059
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "shadowland",
+    "name": "Shadowland",
+    "description": "Twenty-nine issues following the core Shadowland series through Daredevil and its street-level tie-ins.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "shadowland.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/daredevil-shadowland-reading-order/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "shadowland.json",
+    "characters": [
+      "Daredevil",
+      "Elektra",
+      "Moon Knight",
+      "Spider-Man",
+      "Ghost Rider"
+    ],
+    "keywords": [
+      "Shadowland",
+      "The Hand",
+      "Daredevil"
+    ],
+    "expect": 29,
+    "timeline": 2010,
+    "coverIssueId": 29703,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Shadowland #1"
+  }
+}

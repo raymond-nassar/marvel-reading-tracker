@@ -186,9 +186,9 @@ test('every pinned order file states the same origin and licence as the manifest
 });
 
 // BL-099 acceptance: locally compiled orders need a reviewable derivation record. Every order
-// under src/data/orders is authored here, and eight of the ten are written by a script, which
-// puts the trail in by construction. The other two carry one only if somebody wrote it, which
-// is exactly the kind of thing that rots, so all ten are checked rather than trusted.
+// under src/data/orders is authored here, and eighteen are written by committed scripts, which
+// put the trail in by construction. The other sixteen carry one only if somebody wrote it, which
+// is exactly the kind of thing that rots, so all files are checked rather than trusted.
 //
 // The check is not keyed on which files are which. Naming the two by hand would be an
 // enumeration somebody has to keep complete, and the eleventh order is the one it would miss.

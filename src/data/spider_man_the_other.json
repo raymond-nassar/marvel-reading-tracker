@@ -1,0 +1,372 @@
+{
+  "id": "spider-man-the-other",
+  "name": "Spider-Man: The Other",
+  "description": "The twelve-part crossover alternating Friendly Neighborhood Spider-Man, Marvel Knights Spider-Man, and Amazing Spider-Man.",
+  "source": "https://www.comicbookherald.com/amazing-spider-man-reading-order-modern-marvel-era/#theother",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T09:58:39.862Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 12,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 2453,
+      "title": "Friendly Neighborhood Spider-Man (2005) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/2453/friendly_neighborhood_spider-man_2005_1",
+      "seriesId": 877,
+      "seriesName": "Friendly Neighborhood Spider-Man (2005 - 2007)",
+      "onSale": "2005-10-12T00:00:00+0000",
+      "mu": "2005-10-12T00:00:00+0000",
+      "digitalId": 78,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/5bbb7117eb56f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Karl Kesel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Wieringo",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2559,
+      "title": "Marvel Knights Spider-Man (2004) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/2559/marvel_knights_spider-man_2004_19",
+      "seriesId": 721,
+      "seriesName": "Marvel Knights Spider-Man (2004 - 2006)",
+      "onSale": "2005-12-01T00:00:00+0000",
+      "mu": "2005-12-01T00:00:00+0000",
+      "digitalId": 2174,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/57ae4971ac231",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pat Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 2452,
+      "title": "Amazing Spider-Man (1999) #525",
+      "number": "525",
+      "url": "https://www.marvel.com/comics/issue/2452/amazing_spider-man_1999_525",
+      "seriesId": 454,
+      "seriesName": "Amazing Spider-Man (1999 - 2013)",
+      "onSale": "2005-10-26T00:00:00+0000",
+      "mu": "2005-10-26T00:00:00+0000",
+      "digitalId": 1420,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/56cde7f22df30",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Pimentel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3021,
+      "title": "Friendly Neighborhood Spider-Man (2005) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/3021/friendly_neighborhood_spider-man_2005_2",
+      "seriesId": 877,
+      "seriesName": "Friendly Neighborhood Spider-Man (2005 - 2007)",
+      "onSale": "2005-11-09T00:00:00+0000",
+      "mu": "2005-11-09T00:00:00+0000",
+      "digitalId": 1910,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/56a8f84d6bc30",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Karl Kesel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Wieringo",
+          "role": "penciler"
+        },
+        {
+          "name": "Reginald Hudlin",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3087,
+      "title": "Marvel Knights Spider-Man (2004) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/3087/marvel_knights_spider-man_2004_20",
+      "seriesId": 721,
+      "seriesName": "Marvel Knights Spider-Man (2004 - 2006)",
+      "onSale": "2006-01-01T00:00:00+0000",
+      "mu": "2006-01-01T00:00:00+0000",
+      "digitalId": 2176,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/57ae48bf2666b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pat Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Reginald Hudlin",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3020,
+      "title": "Amazing Spider-Man (1999) #526",
+      "number": "526",
+      "url": "https://www.marvel.com/comics/issue/3020/amazing_spider-man_1999_526",
+      "seriesId": 454,
+      "seriesName": "Amazing Spider-Man (1999 - 2013)",
+      "onSale": "2005-11-23T00:00:00+0000",
+      "mu": "2005-11-23T00:00:00+0000",
+      "digitalId": 1421,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/f0/56cde874f3fad",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Pimentel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Reginald Hudlin",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3133,
+      "title": "Friendly Neighborhood Spider-Man (2005) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/3133/friendly_neighborhood_spider-man_2005_3",
+      "seriesId": 877,
+      "seriesName": "Friendly Neighborhood Spider-Man (2005 - 2007)",
+      "onSale": "2005-12-07T00:00:00+0000",
+      "mu": "2005-12-07T00:00:00+0000",
+      "digitalId": 1911,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/70/56a8eff76c638",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Dell",
+          "role": "cover artist"
+        },
+        {
+          "name": "Karl Kesel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Wieringo",
+          "role": "penciler"
+        },
+        {
+          "name": "J. Michael Straczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3192,
+      "title": "Marvel Knights Spider-Man (2004) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/3192/marvel_knights_spider-man_2004_21",
+      "seriesId": 721,
+      "seriesName": "Marvel Knights Spider-Man (2004 - 2006)",
+      "onSale": "2006-01-11T00:00:00+0000",
+      "mu": "2006-02-01T00:00:00+0000",
+      "digitalId": 2177,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/57ae4886e455d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Pat Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "J. Michael Straczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3132,
+      "title": "Amazing Spider-Man (1999) #527",
+      "number": "527",
+      "url": "https://www.marvel.com/comics/issue/3132/amazing_spider-man_1999_527",
+      "seriesId": 454,
+      "seriesName": "Amazing Spider-Man (1999 - 2013)",
+      "onSale": "2005-12-28T00:00:00+0000",
+      "mu": "2005-12-28T00:00:00+0000",
+      "digitalId": 1422,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/57f7fb63e1df5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Joe Pimentel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "J. Michael Straczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3361,
+      "title": "Friendly Neighborhood Spider-Man (2005) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/3361/friendly_neighborhood_spider-man_2005_4",
+      "seriesId": 877,
+      "seriesName": "Friendly Neighborhood Spider-Man (2005 - 2007)",
+      "onSale": "2006-01-18T00:00:00+0000",
+      "mu": "2006-01-18T00:00:00+0000",
+      "digitalId": 3352,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/56a8efcc13407",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Karl Kesel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Wieringo",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3398,
+      "title": "Marvel Knights Spider-Man (2004) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/3398/marvel_knights_spider-man_2004_22",
+      "seriesId": 721,
+      "seriesName": "Marvel Knights Spider-Man (2004 - 2006)",
+      "onSale": "2006-01-18T00:00:00+0000",
+      "mu": "2006-01-18T00:00:00+0000",
+      "digitalId": 3401,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/57ae48d5c04d8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Reginald Hudlin",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 3360,
+      "title": "Amazing Spider-Man (1999) #528",
+      "number": "528",
+      "url": "https://www.marvel.com/comics/issue/3360/amazing_spider-man_1999_528",
+      "seriesId": 454,
+      "seriesName": "Amazing Spider-Man (1999 - 2013)",
+      "onSale": "2006-01-25T00:00:00+0000",
+      "mu": "2006-01-25T00:00:00+0000",
+      "digitalId": 3268,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/57f806e1ce09d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Joe Pimentel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "J. Michael Straczynski",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

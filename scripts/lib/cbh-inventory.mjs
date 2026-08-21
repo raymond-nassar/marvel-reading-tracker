@@ -34,6 +34,69 @@ function assertField(name, value, predicate, message) {
   }
 }
 
+export function validateBatchNoDuplicates(batchRecords = [], existingRecords = [], peerRecords = []) {
+  const seenIds = new Set();
+  const seenUrls = new Set();
+  const seenIssueSequences = new Set();
+  const seenCatalogIds = new Set();
+
+  const keysFor = (record) => {
+    if (!record || typeof record !== 'object') {
+      return null;
+    }
+    const recordId = record.id != null ? String(record.id) : null;
+    const sourceUrl = record.url != null ? String(record.url) : null;
+    const selectedIssueIds = Array.isArray(record.selectedIssueIds)
+      ? record.selectedIssueIds.map((entry) => String(entry))
+      : (Array.isArray(record.issueIds)
+        ? record.issueIds.map((entry) => String(entry))
+        : (record.selectedIssueId != null ? [String(record.selectedIssueId)] : []));
+    const catalogIds = Array.isArray(record.catalogIds)
+      ? record.catalogIds.map((entry) => String(entry))
+      : (record.catalogId != null ? [String(record.catalogId)] : []);
+    return {
+      recordId,
+      sourceUrl,
+      sequenceKey: selectedIssueIds.length > 0 ? selectedIssueIds.join('|') : null,
+      catalogIds,
+    };
+  };
+
+  for (const record of existingRecords) {
+    const keys = keysFor(record);
+    if (!keys) continue;
+    if (keys.recordId) seenIds.add(keys.recordId);
+    if (keys.sourceUrl) seenUrls.add(keys.sourceUrl);
+    if (keys.sequenceKey) seenIssueSequences.add(keys.sequenceKey);
+    for (const catalogId of keys.catalogIds) seenCatalogIds.add(catalogId);
+  }
+
+  for (const record of [...batchRecords, ...peerRecords]) {
+    const keys = keysFor(record);
+    if (!keys) continue;
+    if (keys.recordId && seenIds.has(keys.recordId)) {
+      throw new Error(`Duplicate batch id: ${keys.recordId}`);
+    }
+    if (keys.recordId) seenIds.add(keys.recordId);
+    if (keys.sourceUrl && seenUrls.has(keys.sourceUrl)) {
+      throw new Error(`Duplicate source URL: ${keys.sourceUrl}`);
+    }
+    if (keys.sourceUrl) seenUrls.add(keys.sourceUrl);
+    if (keys.sequenceKey && seenIssueSequences.has(keys.sequenceKey)) {
+      throw new Error(`Duplicate selected issue sequence: ${keys.sequenceKey}`);
+    }
+    if (keys.sequenceKey) seenIssueSequences.add(keys.sequenceKey);
+    for (const catalogId of keys.catalogIds) {
+      if (seenCatalogIds.has(catalogId)) {
+        throw new Error(`Duplicate catalog id: ${catalogId}`);
+      }
+      seenCatalogIds.add(catalogId);
+    }
+  }
+
+  return true;
+}
+
 export function validateInventory(records) {
   if (!Array.isArray(records)) {
     throw new Error('The inventory must be an array');
@@ -85,20 +148,18 @@ export function validateInventory(records) {
 
     counts[record.guideType] += 1;
 
-    if (record.disposition === 'new-order' && record.deliveryStatus !== 'pending') {
-      throw new Error(`new-order record ${record.id} must use deliveryStatus 'pending'`);
-    }
-    if (record.disposition !== 'new-order' && record.deliveryStatus !== 'not-applicable') {
-      throw new Error(`non-new-order record ${record.id} must use deliveryStatus 'not-applicable'`);
-    }
+    validateInventoryRecord(record);
     if (record.guideType === 'commerce' && record.disposition !== 'excluded') {
       throw new Error(`commerce record ${record.id} must be excluded`);
     }
     if (record.id === 'armageddon-2026' && record.disposition !== 'deferred') {
       throw new Error('armageddon-2026 must remain deferred');
     }
-    if (record.overlapIds.length !== 0 || record.catalogIds.length !== 0) {
-      throw new Error(`Baseline record ${record.id} must keep overlapIds and catalogIds empty`);
+    if (new Set(record.overlapIds).size !== record.overlapIds.length) {
+      throw new Error(`Record ${record.id} contains duplicate overlap ids`);
+    }
+    if (new Set(record.catalogIds).size !== record.catalogIds.length) {
+      throw new Error(`Record ${record.id} contains duplicate catalog ids`);
     }
   }
 

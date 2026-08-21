@@ -1,0 +1,1025 @@
+{
+  "id": "shadowland",
+  "name": "Shadowland",
+  "description": "Twenty-nine issues following the core Shadowland series through Daredevil and its street-level tie-ins.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/daredevil-shadowland-reading-order/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T09:58:39.866Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 29,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 29703,
+      "title": "Shadowland (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/29703/shadowland_2010_1",
+      "seriesId": 9934,
+      "seriesName": "Shadowland (2010)",
+      "onSale": "2010-07-08T00:00:00+0000",
+      "mu": "2011-05-19T00:00:00+0000",
+      "digitalId": 15162,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/59710e7c8f90a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Batt",
+          "role": "cover artist"
+        },
+        {
+          "name": "Laura Martin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Diggle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30367,
+      "title": "Daredevil (1998) #508",
+      "number": "508",
+      "url": "https://www.marvel.com/comics/issue/30367/daredevil_1998_508",
+      "seriesId": 449,
+      "seriesName": "Daredevil (1998 - 2011)",
+      "onSale": "2010-07-14T00:00:00+0000",
+      "mu": "2011-06-09T00:00:00+0000",
+      "digitalId": 15209,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/572d151fa748a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 30368,
+      "title": "Daredevil (1998) #509",
+      "number": "509",
+      "url": "https://www.marvel.com/comics/issue/30368/daredevil_1998_509",
+      "seriesId": 449,
+      "seriesName": "Daredevil (1998 - 2011)",
+      "onSale": "2010-08-11T00:00:00+0000",
+      "mu": "2011-07-18T00:00:00+0000",
+      "digitalId": 15633,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/572d14fb846e1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": []
+    },
+    {
+      "issueId": 33889,
+      "title": "Shadowland: Blood on the Streets (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/33889/shadowland_blood_on_the_streets_2010_1",
+      "seriesId": 10922,
+      "seriesName": "Shadowland: Blood on the Streets (2010)",
+      "onSale": "2010-08-11T00:00:00+0000",
+      "mu": "2011-07-25T00:00:00+0000",
+      "digitalId": 15625,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/b0/60aeb265a8b22",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Nelson Pereira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wellington Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Antony Johnston",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34341,
+      "title": "Shadowland: Moon Knight (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/34341/shadowland_moon_knight_2010_1",
+      "seriesId": 11712,
+      "seriesName": "Shadowland: Moon Knight (2010)",
+      "onSale": "2010-08-25T00:00:00+0000",
+      "mu": "2011-07-06T00:00:00+0000",
+      "digitalId": 15805,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/598a2361709fc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Bong Dazo",
+          "role": "penciler"
+        },
+        {
+          "name": "Gregg Hurwitz",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33871,
+      "title": "Shadowland: Power Man (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/33871/shadowland_power_man_2010_1",
+      "seriesId": 10913,
+      "seriesName": "Shadowland: Power Man (2010)",
+      "onSale": "2010-08-18T00:00:00+0000",
+      "mu": "2011-07-05T00:00:00+0000",
+      "digitalId": 15726,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/50/598b37c6ddfb9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33883,
+      "title": "Shadowland: Power Man (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/33883/shadowland_power_man_2010_2",
+      "seriesId": 10913,
+      "seriesName": "Shadowland: Power Man (2010)",
+      "onSale": "2010-09-15T00:00:00+0000",
+      "mu": "2011-08-15T00:00:00+0000",
+      "digitalId": 16096,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/598b55bc969c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29704,
+      "title": "Shadowland (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/29704/shadowland_2010_2",
+      "seriesId": 9934,
+      "seriesName": "Shadowland (2010)",
+      "onSale": "2010-08-04T00:00:00+0000",
+      "mu": "2014-02-25T08:23:27+0000",
+      "digitalId": 15520,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/c0/5971fc6b7e888",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Diggle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36190,
+      "title": "Shadowland: Daughters of the Shadow (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/36190/shadowland_daughters_of_the_shadow_2010_1",
+      "seriesId": 12206,
+      "seriesName": "Shadowland: Daughters of the Shadow (2010)",
+      "onSale": "2010-08-18T00:00:00+0000",
+      "mu": "2011-07-27T00:00:00+0000",
+      "digitalId": 15760,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/58d2ea64182c5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ivan Rodriguez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Henderson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36189,
+      "title": "Shadowland: Daughters of the Shadow (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/36189/shadowland_daughters_of_the_shadow_2010_2",
+      "seriesId": 12206,
+      "seriesName": "Shadowland: Daughters of the Shadow (2010)",
+      "onSale": "2010-09-22T00:00:00+0000",
+      "mu": "2010-09-22T00:00:00+0000",
+      "digitalId": 16169,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/58d2ea467ca35",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ivan Rodriguez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jean-Baptiste Andreae",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Henderson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34918,
+      "title": "Shadowland: Daughters of the Shadow (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/34918/shadowland_daughters_of_the_shadow_2010_3",
+      "seriesId": 12206,
+      "seriesName": "Shadowland: Daughters of the Shadow (2010)",
+      "onSale": "2010-11-10T00:00:00+0000",
+      "mu": "2010-11-10T00:00:00+0000",
+      "digitalId": 17583,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/58d2ea29d2c73",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ivan Rodriguez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jean-Baptiste Andreae",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Jason Henderson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30369,
+      "title": "Daredevil (1998) #510",
+      "number": "510",
+      "url": "https://www.marvel.com/comics/issue/30369/daredevil_1998_510",
+      "seriesId": 449,
+      "seriesName": "Daredevil (1998 - 2011)",
+      "onSale": "2010-09-09T00:00:00+0000",
+      "mu": "2011-09-26T00:00:00+0000",
+      "digitalId": 16001,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/572d14deb1b42",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 33587,
+      "title": "Shadowland: Elektra (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/33587/shadowland_elektra_2010_1",
+      "seriesId": 11291,
+      "seriesName": "Shadowland: Elektra (2010)",
+      "onSale": "2010-09-01T00:00:00+0000",
+      "mu": "2011-09-19T00:00:00+0000",
+      "digitalId": 15920,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/50/4c0fc123a0ebf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Amilton Santos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Emma Rios",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ivan Rodriguez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paulo Siqueira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roland Paris",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sandu Florea",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sana Takeda",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        },
+        {
+          "name": "Jason Henderson",
+          "role": "writer"
+        },
+        {
+          "name": "John Layman",
+          "role": "writer"
+        },
+        {
+          "name": "Rob Williams",
+          "role": "writer"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29705,
+      "title": "Shadowland (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/29705/shadowland_2010_3",
+      "seriesId": 9934,
+      "seriesName": "Shadowland (2010)",
+      "onSale": "2010-09-01T00:00:00+0000",
+      "mu": "2010-09-01T00:00:00+0000",
+      "digitalId": 15921,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/5971feddc010e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Billy Tan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Diggle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34342,
+      "title": "Shadowland: Moon Knight (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/34342/shadowland_moon_knight_2010_2",
+      "seriesId": 11712,
+      "seriesName": "Shadowland: Moon Knight (2010)",
+      "onSale": "2010-09-22T00:00:00+0000",
+      "mu": "2011-09-19T00:00:00+0000",
+      "digitalId": 16173,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/598b14f7a1a39",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jose Pimentel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bong Dazo",
+          "role": "penciler"
+        },
+        {
+          "name": "Gregg Hurwitz",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34338,
+      "title": "Shadowland: Moon Knight (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/34338/shadowland_moon_knight_2010_3",
+      "seriesId": 11712,
+      "seriesName": "Shadowland: Moon Knight (2010)",
+      "onSale": "2010-10-27T00:00:00+0000",
+      "mu": "2011-10-06T00:00:00+0000",
+      "digitalId": 17042,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/598b200b5a6c7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jose Pimentel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bong Dazo",
+          "role": "penciler"
+        },
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Gregg Hurwitz",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33881,
+      "title": "Shadowland: Blood on the Streets (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/33881/shadowland_blood_on_the_streets_2010_2",
+      "seriesId": 10922,
+      "seriesName": "Shadowland: Blood on the Streets (2010)",
+      "onSale": "2010-09-09T00:00:00+0000",
+      "mu": "2011-08-22T00:00:00+0000",
+      "digitalId": 15994,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/4c0fd86a3d19b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wellington Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Antony Johnston",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33585,
+      "title": "Shadowland: Spider-Man (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/33585/shadowland_spider-man_2010_1",
+      "seriesId": 11287,
+      "seriesName": "Shadowland: Spider-Man (2010)",
+      "onSale": "2010-10-06T00:00:00+0000",
+      "mu": "2011-10-10T00:00:00+0000",
+      "digitalId": 16540,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/594c120307af7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "ART & COMICS INT'L",
+          "role": "cover artist"
+        },
+        {
+          "name": "Amilton Santos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Emma Rios",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ivan Rodriguez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roland Paris",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sandu Florea",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paulo Siqueira",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephanie Hans",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        },
+        {
+          "name": "Jason Henderson",
+          "role": "writer"
+        },
+        {
+          "name": "John Layman",
+          "role": "writer"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33888,
+      "title": "Shadowland: Blood on the Streets (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/33888/shadowland_blood_on_the_streets_2010_3",
+      "seriesId": 10922,
+      "seriesName": "Shadowland: Blood on the Streets (2010)",
+      "onSale": "2010-11-03T00:00:00+0000",
+      "mu": "2011-10-06T00:00:00+0000",
+      "digitalId": 16697,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/4c44aab873c2b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wellington Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Antony Johnston",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29867,
+      "title": "Thunderbolts (2006) #148",
+      "number": "148",
+      "url": "https://www.marvel.com/comics/issue/29867/thunderbolts_2006_148",
+      "seriesId": 18527,
+      "seriesName": "Thunderbolts (2006 - 2012)",
+      "onSale": "2010-09-15T00:00:00+0000",
+      "mu": "2011-08-25T00:00:00+0000",
+      "digitalId": 16107,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/50/5c253c610bbbb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jeff Parker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29868,
+      "title": "Thunderbolts (2006) #149",
+      "number": "149",
+      "url": "https://www.marvel.com/comics/issue/29868/thunderbolts_2006_149",
+      "seriesId": 18527,
+      "seriesName": "Thunderbolts (2006 - 2012)",
+      "onSale": "2010-10-27T00:00:00+0000",
+      "mu": "2011-10-20T00:00:00+0000",
+      "digitalId": 16989,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/5c254471d8e72",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jeff Parker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33586,
+      "title": "Shadowland: Ghost Rider (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/33586/shadowland_ghost_rider_2010_1",
+      "seriesId": 11288,
+      "seriesName": "Shadowland: Ghost Rider (2010)",
+      "onSale": "2010-09-15T00:00:00+0000",
+      "mu": "2011-09-19T00:00:00+0000",
+      "digitalId": 16090,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/e0/4c0fe81dd7739",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Amilton Santos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Emma Rios",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ivan Rodriguez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paulo Siqueira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roland Paris",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sandu Florea",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        },
+        {
+          "name": "Jason Henderson",
+          "role": "writer"
+        },
+        {
+          "name": "John Layman",
+          "role": "writer"
+        },
+        {
+          "name": "Rob Williams",
+          "role": "writer"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33879,
+      "title": "Shadowland: Power Man (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/33879/shadowland_power_man_2010_3",
+      "seriesId": 10913,
+      "seriesName": "Shadowland: Power Man (2010)",
+      "onSale": "2010-10-20T00:00:00+0000",
+      "mu": "2011-10-06T00:00:00+0000",
+      "digitalId": 16832,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/598b5e7e9ada6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29706,
+      "title": "Shadowland (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/29706/shadowland_2010_4",
+      "seriesId": 9934,
+      "seriesName": "Shadowland (2010)",
+      "onSale": "2010-10-13T00:00:00+0000",
+      "mu": "2011-10-06T00:00:00+0000",
+      "digitalId": 16747,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/597206cedac4d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Diggle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33892,
+      "title": "Shadowland: Blood on the Streets (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/33892/shadowland_blood_on_the_streets_2010_4",
+      "seriesId": 10922,
+      "seriesName": "Shadowland: Blood on the Streets (2010)",
+      "onSale": "2010-11-24T00:00:00+0000",
+      "mu": "2011-10-31T00:00:00+0000",
+      "digitalId": 17924,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/4c65c218d89b7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Wellington Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Antony Johnston",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30370,
+      "title": "Daredevil (1998) #511",
+      "number": "511",
+      "url": "https://www.marvel.com/comics/issue/30370/daredevil_1998_511",
+      "seriesId": 449,
+      "seriesName": "Daredevil (1998 - 2011)",
+      "onSale": "2010-10-20T00:00:00+0000",
+      "mu": "2011-10-24T00:00:00+0000",
+      "digitalId": 16833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/70/574f471c8d786",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": []
+    },
+    {
+      "issueId": 33700,
+      "title": "Shadowland (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/33700/shadowland_2010_5",
+      "seriesId": 9934,
+      "seriesName": "Shadowland (2010)",
+      "onSale": "2010-12-01T00:00:00+0000",
+      "mu": "2010-12-01T00:00:00+0000",
+      "digitalId": 18172,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/59720a6d0175e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "John Cassaday",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Diggle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33877,
+      "title": "Shadowland: Power Man (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/33877/shadowland_power_man_2010_4",
+      "seriesId": 10913,
+      "seriesName": "Shadowland: Power Man (2010)",
+      "onSale": "2010-11-24T00:00:00+0000",
+      "mu": "2011-10-31T00:00:00+0000",
+      "digitalId": 18053,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/598b64caa14e8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Ketcham",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Perkins",
+          "role": "penciler"
+        },
+        {
+          "name": "Ray-Anthony Height",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37059,
+      "title": "SHADOWLAND: AFTER THE FALL 1 (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37059/shadowland_after_the_fall_1_2010_1",
+      "seriesId": 13252,
+      "seriesName": "SHADOWLAND: AFTER THE FALL 1 (2010)",
+      "onSale": "2010-12-08T00:00:00+0000",
+      "mu": "2010-12-08T00:00:00+0000",
+      "digitalId": 18255,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/4c91292e26db5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Marco Checchetto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roberto De La Torre",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Antony Johnston",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

@@ -35,6 +35,18 @@ Nothing you have saved is affected, and nothing has moved on screen. Text sizes 
 sixth of a pixel, which was checked by comparing the measured position and size of every element on
 every screen, before and after, rather than by eye.
 
+### Added ten modern Marvel event reading orders
+
+In plain English: the catalog now includes ten more event and crossover guides, from Secret War and
+World War Hulk: Aftersmash through Axis, Spider-Verse, Apocalypse Wars, Clone Conspiracy, and
+Inhumans vs. X-Men. Each card credits Comic Book Herald and links to the exact guide followed.
+Nothing you have saved is changed.
+
+For maintainers: the batch contains 238 distinct issues across ten exact source mappings. Twelve
+earlier candidates were blocked rather than duplicated or guessed, and the final ten have zero
+issue overlap with the existing catalog or one another. Vendoring produced zero unresolved rows,
+placeholders, missing digital ids, missing covers, duplicate warnings, or count warnings.
+
 ### The settings screen is grouped, and each control confirms in its own place
 
 In plain English: the screen for backing up and changing settings used to be one long stack of cards

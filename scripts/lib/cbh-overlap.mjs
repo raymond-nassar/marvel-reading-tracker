@@ -64,18 +64,40 @@ export function buildComparisonReport({ candidateIds, orders, peerOrders = [] })
     throw new Error('Duplicate candidate issue ids cannot be compared');
   }
 
+  const seenSequenceKeys = new Set();
+  const candidateSequenceKey = normalizedCandidateIds.join('|');
+  if (seenSequenceKeys.has(candidateSequenceKey)) {
+    throw new Error('Duplicate selected issue sequence across the candidate batch');
+  }
+  seenSequenceKeys.add(candidateSequenceKey);
+
   const allOrders = [...orders, ...peerOrders];
+  const seenOrderIds = new Set();
   const comparisons = allOrders.map((order) => {
+    const orderId = String(order.orderId ?? order.id ?? '').trim();
+    if (!orderId) {
+      throw new Error('Compared order is missing an order id');
+    }
+    if (seenOrderIds.has(orderId)) {
+      throw new Error(`Duplicate compared order id: ${orderId}`);
+    }
+    seenOrderIds.add(orderId);
     const existingIds = issueIdsFromValue(order.issueIds ?? order.items ?? order.issues ?? []);
     if (existingIds.length === 0) {
-      throw new Error(`Order ${order.orderId ?? order.id ?? 'unknown'} is missing shipped payload issue ids`);
+      throw new Error(`Order ${orderId} is missing shipped payload issue ids`);
     }
     if (new Set(existingIds).size !== existingIds.length) {
-      throw new Error(`Duplicate comparison issue ids in order ${order.orderId ?? order.id ?? 'unknown'}`);
+      throw new Error(`Duplicate comparison issue ids in order ${orderId}`);
     }
+    const sequenceKey = existingIds.join('|');
+    if (seenSequenceKeys.has(sequenceKey)) {
+      throw new Error(`Duplicate selected issue sequence across the candidate and compared batch: ${sequenceKey}`);
+    }
+    seenSequenceKeys.add(sequenceKey);
+
     const outcome = compareIssueSets(normalizedCandidateIds, existingIds);
     return {
-      orderId: order.orderId ?? order.id ?? 'unknown',
+      orderId,
       sharedCount: outcome.sharedCount,
       sharedIds: outcome.sharedIds,
       relationship: outcome.relationship,

@@ -31,7 +31,22 @@ export function exactMatchesForRow(row, candidates) {
   return rows.filter((candidate) => {
     if (!candidateHasExactMetadata(candidate)) return false;
     const candidateTitle = normalizeTitle(candidate?.title ?? candidate?.seriesTitle ?? candidate?.normalizedSeriesTitle ?? '');
-    if (!candidateTitle || candidateTitle !== rowTitle) return false;
+    const candidateSeriesId = candidate?.seriesId ?? candidate?.series_id ?? null;
+    const rowSeriesId = row?.seriesId ?? row?.series_id ?? null;
+    if (rowSeriesId != null && (candidateSeriesId == null || String(candidateSeriesId) !== String(rowSeriesId))) {
+      return false;
+    }
+    const manualSeriesSelection = (
+      candidate?.manualSeriesSelection === true
+      && candidate?.manualSeriesSelectionApproved === true
+      && row?.manualSeriesSelectionApproved === true
+      && rowSeriesId != null
+      && candidateSeriesId != null
+      && String(candidateSeriesId) === String(rowSeriesId)
+      && typeof row?.note === 'string'
+      && row.note.trim().length > 0
+    );
+    if (!candidateTitle || (candidateTitle !== rowTitle && !manualSeriesSelection)) return false;
 
     const rowNumber = row?.issueNumber ?? row?.number ?? row?.issue ?? null;
     const candidateNumber = candidate?.issueNumber ?? candidate?.number ?? candidate?.issue ?? null;
@@ -65,8 +80,9 @@ export function resolveRow(row, candidates = []) {
   const exact = exactMatchesForRow(row, list);
   const title = normalisedTitleForRow(row);
   const unique = resolveUniqueExact(title, exact.map((candidate) => ({ title: candidate?.title ?? candidate?.seriesTitle ?? candidate?.normalizedSeriesTitle ?? '' })));
+  const reviewedManualSelection = exact.length === 1 && exact[0]?.manualSeriesSelection === true;
 
-  if (unique.status === 'resolved' && exact.length === 1) {
+  if (exact.length === 1 && (unique.status === 'resolved' || reviewedManualSelection)) {
     const selectedIssueId = toIssueId(exact[0]);
     return {
       status: 'exact',
