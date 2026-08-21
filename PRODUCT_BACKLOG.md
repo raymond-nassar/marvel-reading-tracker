@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-A hundred and thirty-four items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred and thirty-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -20,7 +20,7 @@ BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, 
 BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
 BL-129, BL-130, BL-131, BL-132, BL-133, BL-134, BL-139, BL-140, BL-141, BL-142, BL-143, BL-144,
 BL-145, BL-146, BL-147, BL-149, BL-150, BL-152, BL-153, BL-154, BL-157, BL-158, BL-160, BL-161, BL-163,
-BL-164, BL-165, BL-166, BL-167, BL-169, BL-170, BL-171, BL-174, BL-175, BL-176 and BL-181.
+BL-164, BL-165, BL-166, BL-167, BL-169, BL-170, BL-171, BL-174, BL-175, BL-176, BL-181 and BL-182.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -291,20 +291,21 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-085 | Bound backup restore before parsing and persistence | Enabler | EP-06 | Extends BL-022 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Shipped | src/js/main.js:4355-4383 |
 | BL-135 | Refuse an issue synopsis at the boundary that writes, not only at the one that reads | Enabler | EP-05 | Extends BL-134 | 5 | 3 | 8 | 3 | 5.33 | none | Measured | Ready | src/js/lib/model.js:1120 |
 | BL-152 | Say which order to read after this one, for a reader who has read none of them | Story | EP-01 | Extends BL-143 | 8 | 3 | 5 | 3 | 5.33 | none | Measured | Shipped | absent: any field, prose or rendering that puts two orders in sequence, read of the manifest field set and of every line the catalog row draws |
+| BL-182 | Keep dated evidence anchored to the repository state it recorded | Enabler | EP-12 | Extends BL-070 | 3 | 5 | 8 | 3 | 5.33 | none | Measured | Shipped | `scripts/check-anchors.mjs:279-386` |
 | BL-084 | Prevent one tab from overwriting another tab's progress | Defect | EP-06 | Leaves BL-075 alone | 8 | 5 | 13 | 5 | 5.2 | none | Measured | Shipped | src/js/storage.js:426-450 |
 | BL-138 | Bring the rest of the synopsis browser evidence into the committed check | Enabler | EP-12 | Follows BL-134 | 3 | 2 | 5 | 2 | 5.0 | none | Measured | Ready | scripts/browser-check.mjs:3-7 |
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4035-4037 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4036-4038 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-143 | Shelve the catalog in reading order rather than in the order the manifest happens to list | Story | EP-01 | Extends BL-142 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any field on a manifest entry saying when its reading starts, and any sort between parsing the catalog and rendering it |
 | BL-154 | Shelve the events apart from the character runs, and say why the runs sit last | Story | EP-01 | Follows BL-152 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Shipped | `src/js/lib/catalog.js:593-596` |
 | BL-156 | Make the Start here badge carry more weight than a colour change | Story | EP-01 | Follows BL-154 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Ready | `src/styles.css:392-394` |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1525-1526 |
-| BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1526-1527 |
+| BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:654-687 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
 | BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:202-214 |
@@ -347,16 +348,16 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:62-78 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:501-535 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:4120-4167 |
-| BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:710 |
+| BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:853 |
 | BL-072 | Give the recovery banner's two actions different weights | Story | EP-11 | Leaves alone | 3 | 3 | 2 | 2 | 4.0 | none | Measured | Shipped | src/styles.css:1174 |
 | BL-073 | Say the recovery instructions once instead of twice | Debt | EP-11 | Leaves alone | 2 | 2 | 2 | 2 | 3.0 | none | Observed | Shipped | src/index.html:151-152 |
 | BL-075 | Keep the reason saving is paused where the reader can still see it | Debt | EP-11 | Leaves alone | 3 | 2 | 2 | 2 | 3.5 | none | Measured | Shipped | src/js/storage.js:107 |
 | BL-076 | Stop a reload during a second incident writing another dated salvage copy | Defect | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:137-147 |
-| BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:238 |
-| BL-077 | Bring relative citations under the anchors gate, or stop writing them | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:328-343 |
-| BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:1215 |
-| BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:317 |
-| BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1316 |
+| BL-071 | Bring the citations in code comments under the anchors gate | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 3 | 2.0 | none | Measured | Shipped | scripts/check-anchors.mjs:260 |
+| BL-077 | Bring relative citations under the anchors gate, or stop writing them | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:471-486 |
+| BL-078 | Print a first-time citation at bless time, since it has nothing to be compared against | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:1403 |
+| BL-079 | Teach the gate the comment syntax of every file it already reads | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:460 |
+| BL-080 | Pair a citation whose scope alone was renamed, rather than report a loss and an addition | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | scripts/check-anchors.mjs:1504 |
 | BL-081 | Let the repetition check see a copy that is not next to its original | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:593-631 |
 | BL-082 | Give the salvage copies a life beyond the incident that wrote them | Debt | EP-06 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | src/js/storage.js:291-314 |
 | BL-125 | Fail the build when a stated line count disagrees with the file it counts | Enabler | EP-12 | Extends BL-056 | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-sizes.mjs:31 |
@@ -3173,7 +3174,7 @@ string literals, which is scope this item did not earn.
 Scope is walked rather than listed. `server.mjs:13` resolves the served root to `src/`, so `src/` is
 what shipped means, and the walk finds whatever is there. The six files are not written down anywhere
 in the check, because a seventh added later is precisely what a written list would miss, which is the
-argument `scripts/check-anchors.mjs:206-209` makes about the anchors gate. The `design/mockups/`
+argument `scripts/check-anchors.mjs:227-231` makes about the anchors gate. The `design/mockups/`
 pages are outside that root and are not served, so they stay out of scope.
 
 Every assertion was proved able to fail before it was trusted. A dash injected into an HTML text
@@ -3197,7 +3198,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2897-2900`.
+`PRODUCT_BACKLOG.md:2898-2901`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -3214,7 +3215,7 @@ could not see this case, because a block that states its own paragraph twice sti
 and one row, so every enumeration agreed the document was sound.
 
 Deliberately not scoped to detail blocks. Copy and paste does not respect a section boundary, and an
-enumeration of where to look is the thing `scripts/check-anchors.mjs:206-209` argues against, having
+enumeration of where to look is the thing `scripts/check-anchors.mjs:227-231` argues against, having
 found that every anchor defect the gate exists to catch came from exactly that.
 
 Four tests cover it and all four were proved able to fail. Neutering the check to return nothing
@@ -3462,11 +3463,11 @@ argues in `src/js/lib/model.js` and in BL-068's own scan test that a discipline 
 remember at every site is the defect rather than the fix.
 
 The structural version is close to free, which is why this is Debt rather than a Proposed idea.
-`scripts/check-anchors.mjs:710` already slices the prose immediately preceding each citation into a
-`claim` field, and the bless path at `scripts/check-anchors.mjs:1215` then writes only the anchor,
+`scripts/check-anchors.mjs:853` already slices the prose immediately preceding each citation into a
+`claim` field, and the bless path at `scripts/check-anchors.mjs:1403` then writes only the anchor,
 fingerprint and head, discarding it. So the script already holds both halves of the pairing that step
 3 asks a person to make by hand, and printing them together on the run that re-aims them is the whole
-change. `reportNearMisses` at `scripts/check-anchors.mjs:1044` is the precedent for the script
+change. `reportNearMisses` at `scripts/check-anchors.mjs:1188` is the precedent for the script
 printing a notice of this kind.
 
 Shipped as written. `--bless` now prints one record per citation whose blessed line is changing,
@@ -3545,7 +3546,7 @@ gate's own test, one of them naming a line past the end of its file on purpose s
 path has something to resolve to nothing. Gating that one would require the fixture to resolve,
 which is the single thing it exists not to do.
 
-So outside Markdown only the backticked form is collected, at `scripts/check-anchors.mjs:361-373`.
+So outside Markdown only the backticked form is collected, at `scripts/check-anchors.mjs:504-516`.
 That is the opposite call from the one Markdown makes, and it is made for the same reason rather
 than in spite of it: collect the form that asserts something. In Markdown both forms do, because the
 backlog's Evidence column is written bare. In code the two separate by role, and measured across the
@@ -3554,11 +3555,11 @@ backticked to say what they had always meant. Fourteen citations enrolled: twelv
 `src/styles.css` and one in `test/shipped-copy.test.js`.
 
 The objection this item was filed against is the lock excluding itself by name, since the script
-argues in its own comment at `scripts/check-anchors.mjs:206-209` that an enumeration is exactly the
+argues in its own comment at `scripts/check-anchors.mjs:227-231` that an enumeration is exactly the
 defect it exists to catch, and "skip the lock file" is an enumeration of one. It is excluded
-structurally at `scripts/check-anchors.mjs:238`, by the same `LOCK` constant that says where the
+structurally at `scripts/check-anchors.mjs:260`, by the same `LOCK` constant that says where the
 output is written, so the rule is that the gate does not read its own output and nothing has to be
-kept in step. Binary files are dropped the same way, by a NUL byte at `scripts/check-anchors.mjs:133`
+kept in step. Binary files are dropped the same way, by a NUL byte at `scripts/check-anchors.mjs:142`
 rather than by an extension list, which matters more than it sounds: 43 tracked PNGs would otherwise
 have had to be named.
 
@@ -3577,7 +3578,7 @@ repository already has that rule for a wrong line described in prose, and it app
 One thing had to be repaired rather than merely widened. The claim printed beside each line at bless
 time, which is all BL-070 shipped, degrades badly in code: comment markers splice `//` into the
 middle of a sentence, and a citation that opens a comment printed a claim of `//` and nothing else.
-`claimBefore` at `scripts/check-anchors.mjs:573-599` now strips the marker outside prose, stops at
+`claimBefore` at `scripts/check-anchors.mjs:716-742` now strips the marker outside prose, stops at
 the first line that is not a comment so a comment cannot absorb the code above it, and reads forward
 from the citation when almost nothing precedes it.
 
@@ -3600,7 +3601,7 @@ One near miss came with the split and is reported rather than accepted. A bare c
 prose is a string literal in the ordinary case and correctly ignored, but a bare citation inside a
 comment is a claim, and would have been ungated in the same silence the item exists to end. Being
 in a comment is the only signal the text carries, so that is where `nearMisses` draws the
-line, at `scripts/check-anchors.mjs:1025-1040`, and it prints a notice rather than failing, because
+line, at `scripts/check-anchors.mjs:1169-1184`, and it prints a notice rather than failing, because
 prose may legitimately name a file.
 
 The sharp edge is worth stating, because the first draft of the tests hit it. A backticked citation
@@ -3655,11 +3656,11 @@ the lock is excluded from the population: the known one, the one in this block, 
 comment. Three of those four were in prose about the defect rather than in code committing it, which
 is the honest shape of the thing and the reason the rule cannot be illustrated by example.
 
-The check runs before the bless path rather than beside it, at `scripts/check-anchors.mjs:1082-1116`,
+The check runs before the bless path rather than beside it, at `scripts/check-anchors.mjs:1270-1304`,
 because blessing a tree that holds one of these records a lock that looks complete and is not.
 Where it counts follows the split BL-071 drew: every line of a Markdown file is addressed to a
 reader, so a relative citation anywhere in one is a claim, while in code only a comment is, at
-`scripts/check-anchors.mjs:328-343`. That is not a nicety. This gate's own test builds its fixtures
+`scripts/check-anchors.mjs:471-486`. That is not a nicety. This gate's own test builds its fixtures
 out of exactly this shape, so a rule that read string literals would have failed on the tests
 written to prove the rule.
 
@@ -3670,7 +3671,7 @@ a past revision is to ask whether it would have caught a past breakage. Measured
 `--ref HEAD` exited 0 while `--ref origin/main` exited 2 with nothing said about drift. The remedy it
 printed, to write the path in full, is also unactionable against a revision, because a commit that
 has shipped cannot be edited to satisfy a rule adopted after it. The distinction now has one
-definition, at `scripts/check-anchors.mjs:352-355`, and two tests hold the two halves apart, because
+definition, at `scripts/check-anchors.mjs:495-498`, and two tests hold the two halves apart, because
 a policy that lives inside a conditional in `main` can only be checked by running the whole gate.
 
 Both citations in the paragraph above were wrong when first written, by nineteen lines and by
@@ -3728,7 +3729,7 @@ there is no previous fingerprint to compare, so the bless records whatever the c
 point at and reports no drift, correctly, because nothing drifted. The reader is the only check, and
 the print gives the reader nothing to read.
 
-The evidence is the bless path itself at `scripts/check-anchors.mjs:1215`, which writes the anchor,
+The evidence is the bless path itself at `scripts/check-anchors.mjs:1403`, which writes the anchor,
 the fingerprint and the head line into the lock with no reference to a previous entry. Everything
 needed is already computed: `collect` carries the prose before each citation, and comparing against
 the committed lock is one read of `git show HEAD:docs/anchors.lock.json`.
@@ -3821,12 +3822,12 @@ now fail ten times between them across nine distinct tests.
 Constraint gate: checked 1 to 11, none breached.
 
 Filed out of BL-077's review. The gate reads every tracked file, because `docs()` deliberately passes
-no pathspec at `scripts/check-anchors.mjs:228-230`, and binary content is dropped by the reader
+no pathspec at `scripts/check-anchors.mjs:250-252`, and binary content is dropped by the reader
 rather than by extension. So the corpus holds YAML, CSS and HTML as well as JavaScript. But every
 place that asked whether a line is a comment asked it in JavaScript only, with
 `/^\s*(?:\/\/|\/\*|\*)/` written out at each. Those three places are the ones that now consult a
-syntax instead, at `scripts/check-anchors.mjs:337`, `scripts/check-anchors.mjs:604` and
-`scripts/check-anchors.mjs:1035`. A YAML comment opens with a hash, an HTML comment with an angle
+syntax instead, at `scripts/check-anchors.mjs:480`, `scripts/check-anchors.mjs:747` and
+`scripts/check-anchors.mjs:1179`. A YAML comment opens with a hash, an HTML comment with an angle
 bracket, and neither was recognised anywhere.
 
 The predicate was character-identical at all three, so this was one rule written out three times and
@@ -3909,8 +3910,8 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-078 and BL-079 pass, where two people hit it independently within the same hour and
 reasoned their way out of it identically both times. The gate already pairs one addition against one
 loss and prints the result as a re-aim, and it refuses that pairing unless a single bucket holds
-exactly one of each, at `scripts/check-anchors.mjs:1348-1354`. The bucket carries the scope, at
-`scripts/check-anchors.mjs:1316`, so a citation whose scope slug is renamed while its anchor and its
+exactly one of each, at `scripts/check-anchors.mjs:1536-1542`. The bucket carries the scope, at
+`scripts/check-anchors.mjs:1504`, so a citation whose scope slug is renamed while its anchor and its
 content both stay put drops out of the pairing and prints as an unrelated addition beside an unrelated
 loss.
 
@@ -3940,11 +3941,11 @@ rename absorbed silently would let a real loss hide behind a real rename in the 
 shape of every defect this gate has caught so far. Printing it as its own kind while still exiting 1
 spares the reader the reasoning without sparing them the reading.
 
-Delivered as `scopeRenames` at `scripts/check-anchors.mjs:875-921`, exported so a test can hold its
+Delivered as `scopeRenames` at `scripts/check-anchors.mjs:1019-1065`, exported so a test can hold its
 shape rather than reach it through a run of the whole gate. It pairs on document, anchor, ordinal and
 fingerprint together, keeps the existing count of one on each side, and refuses two anchors that both
 resolve to nothing, since those are not equal but unreadable. The renames are taken out before the
-re-aim buckets are built, at `scripts/check-anchors.mjs:1327`, or a renamed pair could be the second
+re-aim buckets are built, at `scripts/check-anchors.mjs:1515`, or a renamed pair could be the second
 entry that tips a bucket past one and silently suppresses a genuine re-aim beside it. Both sides stay
 in the counts the exit code is computed from, so a run holding a rename still fails, as decided above.
 
@@ -3971,7 +3972,7 @@ Eleven tests cover it. One holds the pairing itself. Four hold the refusals and 
 that pairs on the anchor alone: changed content, two unresolvable anchors, two candidates on one side,
 and a loss in one document explained by an addition in another. Six more were added after review.
 Three hold the falsifier, built on the collision this change's own delivery notes create, since
-`scripts/check-anchors.mjs:1316` is now cited under two headings with the same ordinal and the same
+`scripts/check-anchors.mjs:1504` is now cited under two headings with the same ordinal and the same
 fingerprint; they separate a heading that vanished from one that did not, and keep the check per
 document so a shared slug elsewhere cannot block a real rename. Three more hold the verdict, which is
 now a named function rather than an expression so the decision that a rename still fails a run can be
@@ -4734,7 +4735,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:12278-12280` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:12315-12317` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4744,11 +4745,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:212-214`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:12299-12301`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:12336-12338`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:12112-12114` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:12113-12115` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4859,7 +4860,7 @@ Not closed by this item. The gate reads four claim forms, and the block above na
 that are derived from the table and remain unchecked: the count of items above a given row, stated as
 "outranked by N items sized 1, 2 or 3" and "below N unlabelled items", and the
 Cost of Delay orderings. Both are stated in prose too varied to match without inventing a pattern per
-sentence, which is the enumeration anti-pattern `scripts/check-anchors.mjs:206-209` argues against in
+sentence, which is the enumeration anti-pattern `scripts/check-anchors.mjs:227-231` argues against in
 this repository's own words. They are recorded here rather than filed, because the cost of a bespoke
 matcher exceeds the cost of the figure being wrong. The two are quoted by shape rather than by their
 values, which had already drifted twice by the time anyone read this sentence again, and quoting a
@@ -4956,7 +4957,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:3124-3133` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:3135-3144` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:202-206` and
 `PRODUCT_BACKLOG.md:212-214` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6565,7 +6566,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2621`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2622`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -7170,7 +7171,7 @@ tracking root and the prompts root, and the paragraph above those two lines says
 git ignores have no effect on a file that is already tracked, so the six committed artifacts of the
 first task keep working while everything a later session writes is held out by construction. The
 alternative was an allowlist of filenames, which is the enumeration this repository has twice been
-bitten by, and the reason is written into `scripts/check-anchors.mjs:206-209` for the same class of
+bitten by, and the reason is written into `scripts/check-anchors.mjs:227-231` for the same class of
 defect.
 
 That citation of the ignore file was the one claim in this block the evidence gate was not
@@ -8437,7 +8438,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4858-4866`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4859-4867`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8452,7 +8453,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:4454`, `src/js/main.js:4378` and `src/js/main.js:4399`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1525-1526`.
+`PRODUCT_BACKLOG.md:1526-1527`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8514,7 +8515,7 @@ Constraint gate: checked 1 to 11, none breached.
 and its block records why every gate stayed green: both citations named a real line whose content
 matched the claim, so the anchors gate had nothing to fingerprint differently. The gate's collision
 notice did fire, and correctly declined to fail, because sharing an anchor is ordinary and it says
-so at `scripts/check-anchors.mjs:808-810`. Read on 2026-08-14, 159 of the lock's 466 distinct
+so at `scripts/check-anchors.mjs:952-954`. Read on 2026-08-14, 159 of the lock's 466 distinct
 anchors are cited more than once, and 43 of those repeats fall inside a single scope. The figures in
 that comment, 92 and 17, were read when it was written and are quoted here as its reasoning rather
 than as the population today.
@@ -8538,7 +8539,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4863-4866`.
+at `PRODUCT_BACKLOG.md:4864-4867`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8546,23 +8547,23 @@ suite pinning that each job's deadline exceeds the sum of its steps' would have 
 for a check measured in milliseconds.
 
 Three functions, following the shape of the relative-citation rule that already lives there.
-`proseRuns` at `scripts/check-anchors.mjs:412-454` groups consecutive prose lines into the unit a
+`proseRuns` at `scripts/check-anchors.mjs:555-597` groups consecutive prose lines into the unit a
 sentence is read inside, so a sentence may wrap and still be read whole. `repeatedCitations` at
-`scripts/check-anchors.mjs:511-544` splits each run on sentence punctuation and reports any anchor
-named twice within one sentence. `repeatVerdict` at `scripts/check-anchors.mjs:550-553` refuses
+`scripts/check-anchors.mjs:654-687` splits each run on sentence punctuation and reports any anchor
+named twice within one sentence. `repeatVerdict` at `scripts/check-anchors.mjs:693-696` refuses
 against the working tree and merely names under `--ref`, which is the split the relative rule draws
 and for the reason given there: a shipped revision cannot be rewritten to satisfy a rule adopted
-after it. The wiring sits at `scripts/check-anchors.mjs:1122-1130`, before the bless path, because
+after it. The wiring sits at `scripts/check-anchors.mjs:1310-1318`, before the bless path, because
 blessing a repeat records both copies and from then on the lock itself asserts the pairing.
 
 Seven shapes bound a run and each earns its place. A blank line is the obvious one. A table row is
-the one the filing predicted, at `scripts/check-anchors.mjs:428`, and it removes the single false
+the one the filing predicted, at `scripts/check-anchors.mjs:571`, and it removes the single false
 positive in the measurement. A heading is a third, and it is not covered by the blank-line rule,
 because a heading carries no full stop and a splitter reading punctuation alone runs the paragraph
-above it into the one below. A thematic break at `scripts/check-anchors.mjs:433` is a fourth, and it
+above it into the one below. A thematic break at `scripts/check-anchors.mjs:576` is a fourth, and it
 matters twice over, because the same three characters underline a setext heading and so decide
 whether the line above is a heading at all. An HTML comment on its own line is a fifth, at
-`scripts/check-anchors.mjs:442`, and it is a real shape here rather than a hypothetical one, because
+`scripts/check-anchors.mjs:585`, and it is a real shape here rather than a hypothetical one, because
 this repository's plan artifacts carry their phase and task markers in exactly that form. A fenced
 block is skipped entirely rather than bounded. A list item starts a run, because two bullets are two
 claims and the blank line between them is optional in Markdown and usually absent here.
@@ -8573,7 +8574,7 @@ artifacts, and no run crosses one today. Those artifacts are a historical record
 re-aimed to satisfy a gate, so a false positive among them would be a refusal in a file nobody is
 allowed to edit in order to clear it.
 
-The sentence split itself is at `scripts/check-anchors.mjs:483-486`, and it errs towards splitting: a
+The sentence split itself is at `scripts/check-anchors.mjs:626-629`, and it errs towards splitting: a
 missed repeat leaves the tree where it already is, while an invented one fails a build over correct
 prose, which is how a gate teaches people to bless past it. It accepts a lowercase word as the start
 of a sentence, which is not the obvious choice and was settled by measurement rather than by taste.
@@ -8589,13 +8590,13 @@ the gate only because they live at three different ranges. Give any two of them 
 and the record fails the rule it documents, with no way out, because the refusal runs before the
 bless and so blocks the bless as well as the check. The cost of accepting a lowercase opener is that
 an abbreviation's full stop then looks like the end of a sentence, so the named ones are excluded at
-`scripts/check-anchors.mjs:480`, and that list does not have to be complete: one missing from it
+`scripts/check-anchors.mjs:623`, and that list does not have to be complete: one missing from it
 splits a sentence and loses a hit, which is the direction this rule is content to fail in.
 
 The proof is the fourth task and it is the reason to believe any of this. Run against the revision
 before `BL-121` landed, the check reports exactly one hit across every tracked file, and it is the
 defect, named at line 1368 of the backlog as it then stood. Run against this tree it reports none.
-The fixture form is held in a test at `test/check-anchors.test.js:854-858`.
+The fixture form is held in a test at `test/check-anchors.test.js:860-864`.
 
 Nineteen tests were added, and then measured rather than trusted. Seventeen mutations, each breaking
 one guard and nothing else, are every one of them named by at least one failing test. That pass, and
@@ -8704,7 +8705,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4858-4861` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4859-4862` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -11477,7 +11478,7 @@ standalone splash and the browser's own chrome. BL-166 corrected both by hand, w
 mechanism this item exists to replace.
 
 The shape of the defect is the one this repository keeps meeting: a check whose scope is an
-enumeration somebody has to remember to extend. `scripts/check-anchors.mjs:206-209` states the same
+enumeration somebody has to remember to extend. `scripts/check-anchors.mjs:227-231` states the same
 argument for the anchors gate and resolves it by walking every tracked file instead of a list. The
 palette gate should reach the same way, discovering the files that paint rather than being told.
 
@@ -12113,6 +12114,42 @@ app's own notice system in others, and one destructive action can be undone whil
 tests at all, every view lives in one 1,566 line file, and there is no linter, no changelog and no
 release version to name a build by.
 
+**BL-182: Keep dated evidence anchored to the repository state it recorded**
+
+- [x] Recognise every dated tracking artifact structurally rather than by a list of current files
+- [x] Resolve each committed citation line from the Git commit that last authored that line
+- [x] Keep current documents, edited lines and new ignored artifacts on the active tree
+- [x] Preserve historical extensionless targets through source-specific repository membership
+- [x] Refuse shallow history, missing provenance, missing source targets and malformed range ends
+- [x] Prove the behavior in disposable repositories without changing application dependencies
+
+Constraint gate: checked 1 to 11, none breached. Constraint 3 is untouched because the mechanism
+reads local Git objects and uploads nothing. Constraint 4 is untouched because runtime dependencies
+stay at zero and no development dependency was added. Constraint 11 is checked by the added-line
+dash scan.
+
+Implemented on 2026-08-21. Dated tracking records now select a target tree for each citation
+occurrence from that document line's Git provenance. A record can therefore contain lines authored
+in several commits, and each keeps the repository state it actually recorded. Current product
+documents still use the working tree or named revision, while an edited or new historical line uses
+the active tree until it has a real source commit.
+
+The corpus remains structural and complete. The checker still walks every tracked file, also enrolls
+new dated artifacts hidden by the tracking-root ignore rule, and derives extensionless membership
+from the same source tree used for fingerprinting. It does not exclude historical filenames, search
+for repeated head text, fall back to current content, or keep a list of affected citations.
+
+Five semantic process tests cover mixed historical and current sources, multiple source commits in
+one artifact, direct and nested date paths, working lines, deleted extensionless targets, malformed
+ranges, full and shallow clones, missing historical targets, and named revisions. All five failed
+against the live-only checker and all pass with provenance enabled. A sixth test pins the existing
+full-history checkout and was observed failing when that checkout was made shallow.
+
+Sized 3 because the behavior crosses document discovery, Git history, citation membership and target
+reads, while preserving the existing lock identity and comparison model. The implementation caches
+one blame result per dated artifact and each source plus path read, and the complete repository
+corpus resolves in under ten seconds.
+
 ## Suggested delivery order
 
 The original order below described the catalog expansion, which has now shipped. It is kept as the
@@ -12448,10 +12485,10 @@ again, because a swap can lift a row above a third one it also outscores. Nothin
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
 resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
-### Case 1: BL-026 is labelled P0 but ranks eighty-third
+### Case 1: BL-026 is labelled P0 but ranks eighty-fourth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 83 of 155.
+- Calculated: WSJF 3.67, rank 84 of 156.
 - Driver: job size, not value. Its Cost of Delay of 11 is the thirteenth-highest distinct figure in
   the backlog. It is outranked by eighty-two items, seventy-eight of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -12473,7 +12510,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 149 of 155, below a hundred and forty-five unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 150 of 156, below a hundred and forty-six unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -12531,9 +12568,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 105 of 155. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 85 of 155. Mid-table.
-- BL-017, P2, rank 154 of 155. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 106 of 156. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 86 of 156. Mid-table.
+- BL-017, P2, rank 155 of 156. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

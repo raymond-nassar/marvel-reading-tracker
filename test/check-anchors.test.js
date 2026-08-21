@@ -12,10 +12,16 @@
 // aimed at that: a report of citations must never be keyed by the thing that collapsed.
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-import { PROSE, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, failing, firstTime, nearMisses, pairingLines, pairings, proseRuns, relativeCitations, relativeVerdict, repeatVerdict, repeatedCitations, scopeRenames } from '../scripts/check-anchors.mjs';
+import { PROSE, blameSources, blankEdgeOf, citations, claimBefore, collisions, commentSyntax, failing, firstTime, nearMisses, pairingLines, pairings, proseRuns, relativeCitations, relativeVerdict, repeatVerdict, repeatedCitations, scopeRenames } from '../scripts/check-anchors.mjs';
 
 const JS = commentSyntax('a.mjs');
+const ROOT = fileURLToPath(new URL('../', import.meta.url));
 
 // The two citations as the lock actually held them, ordinals and all. `fp` matches on
 // both because they cite the same line, which is the whole difficulty.
@@ -936,6 +942,213 @@ test('a repeat counts in prose and not in code', () => {
 
   assert.equal(repeatedCitations(text, PROSE).length, 1);
   assert.equal(repeatedCitations(text, JS).length, 0);
+});
+
+function anchorRepo() {
+  const root = mkdtempSync(join(tmpdir(), 'mrt-anchors-'));
+  const git = (args, options = {}) => execFileSync(
+    'git',
+    ['-c', 'user.email=anchors@example.invalid', '-c', 'user.name=anchors', ...args],
+    { cwd: root, encoding: 'utf8', ...options },
+  );
+  const write = (path, text) => {
+    const full = join(root, ...path.split('/'));
+    mkdirSync(join(full, '..'), { recursive: true });
+    writeFileSync(full, text);
+  };
+  const commit = (message) => {
+    git(['add', '-A']);
+    git(['commit', '--quiet', '-m', message]);
+  };
+  const checker = (...args) => spawnSync(
+    process.execPath,
+    ['scripts/check-anchors.mjs', ...args],
+    { cwd: root, encoding: 'utf8' },
+  );
+
+  git(['init', '--quiet']);
+  write('.gitignore', '.copilot-tracking/\nscripts/check-anchors.mjs\n');
+  write('docs/.keep', '');
+  write('target.js', 'old target\nsame head\nsame head\n');
+  write('.copilot-tracking/research/2026-08-21/direct.md', `Direct claim ${cite('target.js:1-2')}\n`);
+  write('.copilot-tracking/research/subagents/2026-08-21/nested.md', `Nested claim ${cite('target.js:1')}\n`);
+  write('.copilot-tracking/notes.md', `Undated claim ${cite('target.js:1')}\n`);
+  write('CURRENT.md', `Current claim ${cite('target.js:1')}\n`);
+  git(['add', '-f', '.copilot-tracking']);
+  commit('source');
+  mkdirSync(join(root, 'scripts'), { recursive: true });
+  cpSync(join(ROOT, 'scripts', 'check-anchors.mjs'), join(root, 'scripts', 'check-anchors.mjs'));
+  return { root, git, write, commit, checker };
+}
+
+function disposeAnchorRepo(repo) {
+  rmSync(repo.root, { recursive: true, force: true });
+}
+
+// The historical records use both direct and nested dated layouts. The undated tracking note is a
+// control: treating every path below the root as historical would make it pass for the wrong reason.
+// The named-ref run has a second control in the working file, whose old contents must not override
+// the revision being queried.
+test('dated artifact lines use their source commit while current claims use the selected tree', () => {
+  // Every physical line needs an explicit source. Sparse arrays skip holes during Array iteration,
+  // so both an interior omission and the trailing split sentinel are pinned before the process case.
+  const source = 'a'.repeat(40);
+  const incomplete = `${source} 1 1 1\n${source} 3 3 1\n`;
+  assert.throws(
+    () => blameSources('first\nsecond\nthird\n', incomplete, 'artifact.md'),
+    /incomplete line provenance for artifact\.md/,
+  );
+  const complete = `${source} 1 1\n${source} 2 2\n`;
+  assert.deepEqual(blameSources('first\nsecond\n', complete, 'artifact.md'), [source, source, null]);
+
+  const repo = anchorRepo();
+  try {
+    assert.equal(repo.checker('--bless').status, 0);
+    repo.commit('lock');
+    repo.write('target.js', 'new target\nsame head\nsame head\n');
+    repo.commit('move target');
+    repo.write(
+      '.copilot-tracking/research/2026-08-21/direct.md',
+      `Direct claim ${cite('target.js:1-2')}\nLater claim ${cite('target.js:1')}\n`,
+    );
+    repo.commit('second source line');
+    repo.write('target.js', 'old target\nsame head\nsame head\n');
+
+    const run = repo.checker('--ref', 'HEAD');
+    const output = `${run.stdout}\n${run.stderr}`;
+    assert.equal(run.status, 1);
+    assert.match(output, /DRIFT\s+CURRENT\.md\|/);
+    assert.match(output, /DRIFT\s+\.copilot-tracking\/notes\.md\|/);
+    assert.doesNotMatch(output, /DRIFT\s+\.copilot-tracking\/research\//);
+    assert.match(output, /NEW\s+\.copilot-tracking\/research\/2026-08-21\/direct\.md\|[\s\S]*new target/);
+
+    repo.write(
+      '.copilot-tracking/research/2026-08-21/direct.md',
+      `Working claim ${cite('future.js:1')}\n`,
+    );
+    repo.write('future.js', 'working target\n');
+    const working = repo.checker();
+    assert.equal(working.status, 1);
+    assert.match(`${working.stdout}\n${working.stderr}`, /NEW\s+[\s\S]*future\.js:1[\s\S]*working target/);
+  } finally {
+    disposeAnchorRepo(repo);
+  }
+});
+
+// Membership has to come from the same source as the target read. Otherwise an extensionless target
+// deleted later disappears before fingerprinting and is reported as a lost citation.
+test('an extensionless historical target remains collected after deletion', () => {
+  const repo = anchorRepo();
+  try {
+    repo.write('NOTICE', 'historical notice\n');
+    repo.write('.copilot-tracking/research/2026-08-21/direct.md', `Notice claim ${cite('NOTICE:1')}\n`);
+    repo.git(['add', '-f', '.copilot-tracking']);
+    repo.commit('extensionless source');
+    assert.equal(repo.checker('--bless').status, 0);
+    repo.commit('extensionless lock');
+    repo.git(['rm', '--quiet', 'NOTICE']);
+    repo.commit('delete extensionless target');
+
+    const run = repo.checker();
+    assert.equal(run.status, 0, `${run.stdout}\n${run.stderr}`);
+  } finally {
+    disposeAnchorRepo(repo);
+  }
+});
+
+// New evidence is ignored by repository policy until somebody deliberately stages it, so discovery
+// must include ignored untracked dated artifacts. The malformed half protects the opposite edge: a
+// citation-shaped token must not disappear merely because its range end is not numeric.
+test('new dated artifacts are enrolled and malformed ranges are refused', () => {
+  const fresh = anchorRepo();
+  try {
+    fresh.write('.copilot-tracking/research/2026-08-22/new.md', `New claim ${cite('target.js:1')}\n`);
+    const bless = fresh.checker('--bless');
+    assert.equal(bless.status, 0, `${bless.stdout}\n${bless.stderr}`);
+    const lock = JSON.parse(readFileSync(join(fresh.root, 'docs', 'anchors.lock.json'), 'utf8'));
+    assert.ok(Object.keys(lock).some((key) => key.startsWith('.copilot-tracking/research/2026-08-22/new.md|')));
+  } finally {
+    disposeAnchorRepo(fresh);
+  }
+
+  const malformed = anchorRepo();
+  try {
+    assert.equal(malformed.checker('--bless').status, 0);
+    malformed.commit('lock');
+    malformed.write('NOTICE', 'notice\n');
+    malformed.write(
+      'BROKEN.md',
+      `Broken claim ${cite('target.js:1-' + 'null')} and ${cite('NOTICE:1-' + 'null')}\n`,
+    );
+    malformed.write(
+      'BROKEN.js',
+      `const value = 1; // Broken claim ${cite('target.js:1-' + 'null')}\n`,
+    );
+    malformed.commit('malformed range');
+    for (const args of [[], ['--bless']]) {
+      const run = malformed.checker(...args);
+      const output = `${run.stdout}\n${run.stderr}`;
+      assert.equal(run.status, 2);
+      assert.match(output, /malformed evidence citation.*target\.js:1-null/is);
+      assert.match(output, /NOTICE:1-null/);
+      assert.match(output, /BROKEN\.js:1\s+target\.js:1-null/);
+    }
+  } finally {
+    disposeAnchorRepo(malformed);
+  }
+});
+
+// A shallow boundary is a plausible blame source, so the only safe behavior is to refuse it before
+// it can be mistaken for provenance. The full repository using the same tree remains answerable.
+test('historical provenance passes with full history and refuses a shallow clone', () => {
+  const repo = anchorRepo();
+  let clone = null;
+  try {
+    assert.equal(repo.checker('--bless').status, 0);
+    repo.commit('lock');
+    repo.write('unrelated.txt', 'second commit\n');
+    repo.commit('tip');
+    assert.equal(repo.checker().status, 0);
+
+    clone = join(tmpdir(), `mrt-anchors-shallow-${process.pid}-${Date.now()}`);
+    execFileSync('git', ['clone', '--quiet', '--depth', '1', new URL(`file:///${repo.root.replaceAll('\\', '/')}`).href, clone]);
+    mkdirSync(join(clone, 'scripts'), { recursive: true });
+    cpSync(join(ROOT, 'scripts', 'check-anchors.mjs'), join(clone, 'scripts', 'check-anchors.mjs'));
+    const run = spawnSync(process.execPath, ['scripts/check-anchors.mjs'], { cwd: clone, encoding: 'utf8' });
+    assert.equal(run.status, 2);
+    assert.match(`${run.stdout}\n${run.stderr}`, /shallow.*full history/is);
+  } finally {
+    if (clone) rmSync(clone, { recursive: true, force: true });
+    disposeAnchorRepo(repo);
+  }
+});
+
+// A target created after the citation line is not historical evidence for that line. Falling back
+// to the active tree would make the claim look resolvable even though its selected source lacks it.
+test('a target missing from the citation source is not read from the live tree', () => {
+  const repo = anchorRepo();
+  try {
+    repo.write('.copilot-tracking/research/2026-08-21/direct.md', `Future claim ${cite('future.js:1')}\n`);
+    repo.git(['add', '-f', '.copilot-tracking']);
+    repo.commit('claim before target');
+    repo.write('future.js', 'future target\n');
+    repo.commit('target arrives');
+
+    const run = repo.checker('--bless');
+    assert.equal(run.status, 2);
+    assert.match(`${run.stdout}\n${run.stderr}`, /future\.js:1.*file missing/is);
+  } finally {
+    disposeAnchorRepo(repo);
+  }
+});
+
+test('the CI job that runs anchors checks out full history', () => {
+  const yml = readFileSync(new URL('../.github/workflows/ci.yml', import.meta.url), 'utf8');
+  const jobs = yml.split(/\r?\n(?= {2}[A-Za-z0-9_-]+:\r?\n)/);
+  const owners = jobs.filter((block) => block.includes('npm run anchors'));
+  assert.equal(owners.length, 1);
+  assert.ok(owners[0].includes('actions/checkout'));
+  assert.match(owners[0], /fetch-depth:\s*0/);
 });
 
 // A claim about a line that is gone is entitled to name it twice for the same reason it is

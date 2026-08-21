@@ -87,9 +87,9 @@
 * Evidence: scripts/check-anchors.mjs:31-40 collects only numeric starts and ends.
   scripts/check-anchors.mjs:95-123 names selected near-miss shapes but has no general malformed
   range detector. test/check-anchors.test.js:190-445 tests valid citations, extensionless forms,
-  relative forms, and blank range edges, not a malformed end token. The plan nevertheless assigns
-  malformed forms to existing tests at
-  .copilot-tracking/plans/2026-08-21/historical-anchor-support-plan.md:147-169.
+  relative forms, and blank range edges, not a malformed end token. The candidate nevertheless
+  assigned malformed forms to existing tests. That exact pre-correction candidate was not committed
+  separately, so this finding is the durable record of the missing ownership it observed.
 * Concern: A range whose end is not numeric can disappear from both collection and coverage without
   drift, loss, or an instrument failure.
 * Impact: One caller-named failure state remains silently outside the corpus, directly contradicting
@@ -109,9 +109,9 @@
 ### PC-003 [Medium]: Whole-revision and CI history dependencies lack executable ownership
 
 * Related IDs: Functional Requirements for `--ref`; C7, C8, C14; P00-T02, P01-T03
-* Evidence: The plan requires dated artifacts under `--ref` to use reachable line-origin commits at
-  .copilot-tracking/plans/2026-08-21/historical-anchor-support-plan.md:113-116, but P00-T02 names
-  working, new, shallow, and missing-target cases only. test/check-anchors.test.js contains pure
+* Evidence: The candidate required dated artifacts under `--ref` to use reachable line-origin
+  commits, but P00-T02 named working, new, shallow, and missing-target cases only. That exact
+  pre-correction candidate was not committed separately. test/check-anchors.test.js contains pure
   verdict assertions for a ref but no subprocess execution of the checker. The required full-depth
   checkout exists in the anchor-owning job at .github/workflows/ci.yml:107-156, while the supplied
   workflow ownership test in test/publication-gate.test.js:220-232 pins publication, not anchors.
@@ -158,10 +158,9 @@
 ### PC-005 [Medium]: Full validation occurs after the lock is blessed
 
 * Related IDs: Caller required lint, test, anchors inspect, bless, final workflow; P02-T02, P02-T03
-* Evidence: P02-T02 performs inspect, bless, and final anchors at
-  .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md:380-413.
-  P02-T03 runs full lint and tests only afterward at
-  .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md:419-451.
+* Evidence: The candidate put inspect, bless, and final anchors in P02-T02, then put full lint and
+  tests afterward in P02-T03. That exact pre-correction candidate was not committed separately, so
+  this ordered finding is the durable record of the planning gap it observed.
 * Concern: A full-suite or lint failure discovered after bless can require a source or record edit,
   invalidating the inspected pairings and generated lock. The plan has no dependency that sends such
   an edit back through inspect and bless.

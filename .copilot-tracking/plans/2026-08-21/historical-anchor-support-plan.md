@@ -276,7 +276,7 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * Detail section: P01-T03 in .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md
 
 <!-- rpi:phase id=P02 -->
-### [ ] P02: Reconcile the evidence record and gates
+### [x] P02: Reconcile the evidence record and gates
 
 * Intent: Record the infrastructure change, deliberately regenerate historical fingerprints, and
   verify the whole repository.
@@ -301,7 +301,7 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * Detail section: P02-T02 in .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md
 
 <!-- rpi:task id=P02-T03 -->
-#### [ ] P02-T03: Inspect and bless the source-aware lock
+#### [x] P02-T03: Inspect and bless the source-aware lock
 
 * Requirement and evidence: Historical fingerprints will deliberately change source even when their
   citation text does not.
@@ -310,7 +310,7 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * Detail section: P02-T03 in .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md
 
 <!-- rpi:task id=P02-T04 -->
-#### [ ] P02-T04: Repeat complete validation on the unchanged tree
+#### [x] P02-T04: Repeat complete validation on the unchanged tree
 
 * Requirement and evidence: Repository instructions define lint, tests, anchors, and added-line dash
   scanning as completion gates.

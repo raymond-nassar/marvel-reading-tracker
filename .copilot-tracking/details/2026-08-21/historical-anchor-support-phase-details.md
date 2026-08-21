@@ -14,7 +14,7 @@
 |---|---|---|---|
 | P00 | Prove the behavior at the process boundary | Complete | P00, P00-T01, P00-T02 |
 | P01 | Resolve historical targets from line provenance | Complete | P01, P01-T01, P01-T02, P01-T03 |
-| P02 | Reconcile the evidence record and gates | In progress, P02-T01 and P02-T02 complete | P02, P02-T01, P02-T02, P02-T03, P02-T04 |
+| P02 | Reconcile the evidence record and gates | Complete | P02, P02-T01, P02-T02, P02-T03, P02-T04 |
 
 <!-- rpi:phase id=P00 -->
 ## P00: Prove the behavior at the process boundary
@@ -176,8 +176,9 @@ comparison semantics.
 
 ### Completion Evidence
 
-* Process tests cover committed lines from multiple commits, uncommitted and new lines, active and
-  named trees, deleted extensionless targets, missing source targets, and shallow history refusal.
+* Every physical blame line is explicitly accounted for, the synthetic trailing split line is marked
+  active, and collection has no missing-slot fallback. Malformed refusal uses the same fixed-extension
+  and source-member path classes as collection on prose and code lines.
 
 ### Unresolved Items
 
@@ -226,7 +227,8 @@ matches them.
 #### Completion Evidence
 
 * One mixed-source test distinguishes two committed line origins, an edited line, and a new target;
-  a separate ignored-artifact assertion covers a new document before staging.
+  a separate ignored-artifact assertion covers a new document before staging. The same test directly
+  proves an interior blame hole is fatal and the trailing split sentinel is active.
 
 #### Unresolved Items
 
@@ -269,8 +271,9 @@ Read exact target coordinates from the selected tree and preserve all existing v
 
 #### Completion Evidence
 
-* Process tests cover historical success, malformed refusal in both modes, source-target failure,
-  ranges, repeated heads, and source-specific extensionless membership.
+* Process tests cover historical success, malformed refusal in check and bless modes for fixed
+  extensions, extensionless paths, and inline code, source-target failure, ranges, repeated heads,
+  and source-specific extensionless membership.
 
 #### Unresolved Items
 
@@ -361,7 +364,8 @@ complete repository.
 
 ### Completion Evidence
 
-* Exact commands, results, pairing review, performance, and dash scan are recorded in changes.
+* The complete anchor workflow and required gates repeated on the corrected tree after RV-001 and
+  RV-002.
 
 ### Unresolved Items
 
@@ -476,7 +480,12 @@ Use the repository's inspect, bless, and final-check sequence without editing hi
 
 #### Completion Evidence
 
-* Pairing count and final coverage are recorded.
+* All 108 first-pass pairings were read. Four unsupported new critique citations were removed after
+  that read exposed their missing candidate-plan provenance, validation repeated, and the second
+  bless removed those entries without changing any surviving pairing. Final coverage is 1,017
+  unchanged anchors with zero drift, additions, or removals. After Review corrections, 48 changed
+  pairings were read, including 47 current-document re-aims and one containing-range fingerprint,
+  then the same 1,017-entry lock passed with zero drift, additions, or removals.
 
 #### Unresolved Items
 
@@ -515,8 +524,9 @@ Verify implementation, records, and generated evidence together after the lock i
 
 #### Completion Evidence
 
-* Final repeated validation summary in the changes and review artifacts, with the unchanged-tree
-  condition stated.
+* On the staged post-bless tree, lint reported zero problems, all 1,294 tests passed, all derived
+  counts agreed, anchors reported 1,017 unchanged with zero drift, additions, or removals, and the
+  added-line scan found zero forbidden dashes.
 
 #### Unresolved Items
 

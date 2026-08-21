@@ -14,6 +14,17 @@ quote in a bug report.
 
 ## Unreleased
 
+### Dated evidence keeps the repository state it recorded
+
+For maintainers: dated research, plans, and review records now resolve each evidence citation
+against the commit that authored that line. Later code and documentation rewrites can move or
+delete the original target without forcing a historical record to be rewritten or excluded from
+the evidence check.
+
+Current documents and new evidence still resolve against the tree being checked. Missing source
+history, missing historical targets, and malformed ranges fail explicitly, and shallow clones are
+directed to fetch full history. Nothing in the app or in saved reading progress is affected.
+
 ### One type and corner scale across the app, bigger click targets, and dialogs give focus back
 
 In plain English: over many separate pieces of work the app had quietly collected 13 slightly

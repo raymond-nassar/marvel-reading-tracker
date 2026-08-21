@@ -58,6 +58,14 @@ const BARE = /(?<![`\w])([A-Za-z0-9_./-]+\.(?:js|mjs|css|html|json|yml|md)):(\d+
 const NAMED = /`([A-Za-z0-9_./-]+):(\d+)(?:-(\d+))?`/g;
 const NAMED_BARE = /(?<![`\w])([A-Za-z0-9_./-]+):(\d+)(?:-(\d+))?(?![\d`-])/g;
 
+// A range whose end is not numeric does not match any collector above. Without a
+// separate refusal it disappears from both coverage and the lock, which makes a
+// broken generated citation look like no citation at all. These two shapes mirror
+// the collector: backticked paths everywhere, and bare paths only in prose.
+const CITED_EXTENSION = /\.(?:js|mjs|css|html|json|yml|md)$/;
+const MALFORMED_TICKED = /`([A-Za-z0-9_./-]+):(\d+)-([^`\s|,.;:)\]}]*)`?/g;
+const MALFORMED_BARE = /(?<![`\w])([A-Za-z0-9_./-]+):(\d+)-([^`\s|,.;:)\]}]*)/g;
+
 // A line number written with no path in front of it, as a backticked colon and digits,
 // leaning on a full citation earlier in the sentence to say which file it means. Neither
 // regex above collects it, because both begin at a filename, so a comment could name a
@@ -126,39 +134,52 @@ const NEAR_MISS = [
 const args = process.argv.slice(2);
 const bless = args.includes('--bless');
 const ref = args.includes('--ref') ? args[args.indexOf('--ref') + 1] : null;
+const ACTIVE_SOURCE = ref;
 
 // A NUL byte means the file is not text, which is how git itself decides. Deciding by
 // extension instead would be the enumeration `docs` above refuses, and it would have
 // to be kept in step with whatever gets committed next.
 const isBinary = (text) => text.includes('\0');
 
-const read = (path) => {
-  if (ref === null) {
+const sourceKey = (source) => source === null ? '<working-tree>' : source;
+
+const readCache = new Map();
+const read = (path, source = ACTIVE_SOURCE) => {
+  const key = `${sourceKey(source)}\0${path}`;
+  if (readCache.has(key)) return readCache.get(key);
+
+  let text;
+  if (source === null) {
     try {
-      const text = readFileSync(path, 'utf8');
-      return isBinary(text) ? null : text;
+      const value = readFileSync(path, 'utf8');
+      text = isBinary(value) ? null : value;
     } catch {
-      return null;
+      text = null;
+    }
+  } else {
+    try {
+      const value = execFileSync('git', ['show', `${source}:${path}`], {
+        encoding: 'utf8',
+        maxBuffer: 64 * 1024 * 1024,
+        stdio: ['ignore', 'pipe', 'ignore'],
+      });
+      text = isBinary(value) ? null : value;
+    } catch {
+      text = null;
     }
   }
-  try {
-    const text = execFileSync('git', ['show', `${ref}:${path}`], {
-      encoding: 'utf8',
-      maxBuffer: 64 * 1024 * 1024,
-    });
-    return isBinary(text) ? null : text;
-  } catch {
-    return null;
-  }
+  readCache.set(key, text);
+  return text;
 };
 
 const cache = new Map();
-const linesOf = (path) => {
-  if (!cache.has(path)) {
-    const text = read(path);
-    cache.set(path, text === null ? null : text.split(/\r?\n/));
+const linesOf = (path, source = ACTIVE_SOURCE) => {
+  const key = `${sourceKey(source)}\0${path}`;
+  if (!cache.has(key)) {
+    const text = read(path, source);
+    cache.set(key, text === null ? null : text.split(/\r?\n/));
   }
-  return cache.get(path);
+  return cache.get(key);
 };
 
 // Whether a range begins or ends on a blank line, which is the one defect in a range
@@ -186,8 +207,8 @@ export function blankEdgeOf(lines, start, end) {
 // `tail` and `blankEdge` are computed for printing and refusal only. Neither is written
 // to the lock: the lock already holds every field a comparison needs, and adding one
 // would rewrite all of it for a value nothing compares against.
-function fingerprint(file, start, end) {
-  const lines = linesOf(file);
+function fingerprint(file, start, end, source = ACTIVE_SOURCE) {
+  const lines = linesOf(file, source);
   if (lines === null) return { fp: null, why: 'file missing' };
   if (end > lines.length) return { fp: null, why: `out of range, file has ${lines.length} lines` };
   const body = lines.slice(start - 1, end).map((s) => s.trim()).filter(Boolean).join('\n');
@@ -203,10 +224,11 @@ function fingerprint(file, start, end) {
 
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
 
-// Every tracked file, listed by git rather than by this script. Membership in the
+// Every tracked file, listed by git rather than by this script, plus new dated evidence
+// that the tracking-root ignore rule otherwise hides until staging. Membership in the
 // population must not depend on a name written here: an enumeration is a list someone
-// has to keep complete, and the anchor defects this gate exists to catch were all
-// caused by exactly that.
+// has to keep complete, and the anchor defects this gate exists to catch were all caused
+// by exactly that.
 //
 // The one exclusion is this gate's own lock, and it is structural rather than named.
 // LOCK is the path this script writes, so the rule is that the gate does not read its
@@ -232,15 +254,136 @@ function docs() {
     ? ['ls-files']
     : ['ls-tree', '-r', '--name-only', ref];
   try {
-    listed = execFileSync('git', cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
+    const paths = execFileSync('git', cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
       .split('\n')
       .map((s) => s.trim())
-      .filter((s) => s.length > 0 && s !== LOCK)
-      .sort();
+      .filter((s) => s.length > 0 && s !== LOCK);
+    if (ref === null) {
+      const ignored = execFileSync(
+        'git',
+        ['ls-files', '--others', '--ignored', '--exclude-standard', '--', '.copilot-tracking'],
+        { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 },
+      )
+        .split('\n')
+        .map((s) => s.trim())
+        .filter((s) => isHistoricalArtifact(s));
+      paths.push(...ignored);
+    }
+    listed = [...new Set(paths)].sort();
   } catch {
     listed = [];
   }
   return listed;
+}
+
+function isHistoricalArtifact(path) {
+  const parts = path.replaceAll('\\', '/').split('/');
+  const root = parts.indexOf('.copilot-tracking');
+  if (root === -1) return false;
+  return parts.slice(root + 1, -1).some((part) => {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(part);
+    if (!match) return false;
+    const date = new Date(`${part}T00:00:00Z`);
+    return date.getUTCFullYear() === Number(match[1])
+      && date.getUTCMonth() + 1 === Number(match[2])
+      && date.getUTCDate() === Number(match[3]);
+  });
+}
+
+const sourceFilesCache = new Map();
+function sourceFiles(source = ACTIVE_SOURCE) {
+  const key = sourceKey(source);
+  if (sourceFilesCache.has(key)) return sourceFilesCache.get(key);
+
+  let files;
+  if (source === null) {
+    files = new Set(docs());
+  } else {
+    try {
+      files = new Set(
+        execFileSync('git', ['ls-tree', '-r', '--name-only', source], {
+          encoding: 'utf8',
+          maxBuffer: 64 * 1024 * 1024,
+          stdio: ['ignore', 'pipe', 'ignore'],
+        })
+          .split('\n')
+          .map((s) => s.trim())
+          .filter(Boolean),
+      );
+    } catch {
+      throw new Error(`cannot enumerate source ${source}`);
+    }
+  }
+  sourceFilesCache.set(key, files);
+  return files;
+}
+
+const provenanceCache = new Map();
+export function blameSources(text, output, doc) {
+  const lines = text.split('\n');
+  const sources = new Array(lines.length);
+  for (const line of output.split('\n')) {
+    const match = /^\^?([0-9a-f]{40,64}) \d+ (\d+)(?: \d+)?$/.exec(line);
+    if (!match) continue;
+    sources[Number(match[2]) - 1] = /^0+$/.test(match[1]) ? ACTIVE_SOURCE : match[1];
+  }
+  const physicalLines = text === '' ? 0 : lines.length - (text.endsWith('\n') ? 1 : 0);
+  for (let i = 0; i < physicalLines; i += 1) {
+    if (!Object.hasOwn(sources, i)) throw new Error(`incomplete line provenance for ${doc}`);
+  }
+  for (let i = physicalLines; i < lines.length; i += 1) sources[i] = ACTIVE_SOURCE;
+  return sources;
+}
+
+function lineSources(doc, text) {
+  if (!isHistoricalArtifact(doc)) return text.split('\n').map(() => ACTIVE_SOURCE);
+  if (provenanceCache.has(doc)) return provenanceCache.get(doc);
+
+  const selectedTree = ref ?? 'HEAD';
+  if (!sourceFiles(selectedTree).has(doc)) {
+    const current = text.split('\n').map(() => ACTIVE_SOURCE);
+    provenanceCache.set(doc, current);
+    return current;
+  }
+
+  const cmd = ref === null
+    ? ['blame', '--line-porcelain', '--contents', doc, 'HEAD', '--', doc]
+    : ['blame', '--line-porcelain', ref, '--', doc];
+  let output;
+  try {
+    output = execFileSync('git', cmd, {
+      encoding: 'utf8',
+      maxBuffer: 64 * 1024 * 1024,
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+  } catch {
+    throw new Error(`cannot establish line provenance for ${doc}`);
+  }
+
+  const sources = blameSources(text, output, doc);
+  provenanceCache.set(doc, sources);
+  return sources;
+}
+
+function malformedRanges(text, syntax = PROSE, knownForLine = () => null) {
+  const out = [];
+  text.split('\n').forEach((line, i) => {
+    const known = knownForLine(i);
+    const patterns = syntax.prose ? [MALFORMED_TICKED, MALFORMED_BARE] : [MALFORMED_TICKED];
+    for (const pattern of patterns) {
+      for (const match of line.matchAll(pattern)) {
+        if (/^\d+$/.test(match[3])) continue;
+        if (!CITED_EXTENSION.test(match[1]) && !(known?.has(match[1]) ?? false)) continue;
+        out.push({ line: i + 1, anchor: `${match[1]}:${match[2]}-${match[3]}` });
+      }
+    }
+  });
+  return out;
+}
+
+function hasCommittedHistory() {
+  const selectedTree = ref ?? 'HEAD';
+  return docs().some((doc) => isHistoricalArtifact(doc) && sourceFiles(selectedTree).has(doc));
 }
 
 // Whether a citation is a claim about a past state. The marker's reach is the
@@ -654,7 +797,6 @@ export function claimBefore(lines, i, at, syntax = PROSE) {
 function collect() {
   const found = [];
   const coverage = [];
-  const known = new Set(docs());
   let exempted = 0;
 
   for (const doc of docs()) {
@@ -666,13 +808,10 @@ function collect() {
     const syntax = commentSyntax(doc);
     const ranges = exemptRanges(text);
     const exempt = (at) => ranges.some(([from, to]) => at >= from && at < to);
-
-    // Counted over the whole file, independently of the line walk below, so any
-    // walker bug shows up as a shortfall instead of as a clean pass.
-    const scanned = citations(text, syntax, known).filter((c) => !exempt(c.at)).length;
-    if (scanned === 0) continue;
+    const sources = lineSources(doc, text);
 
     let heading = 'preamble';
+    let scanned = 0;
     let captured = 0;
     let offset = 0;
     const ordinals = new Map();
@@ -684,6 +823,10 @@ function collect() {
       if (h) heading = slug(h[1]);
 
       const scope = line.startsWith('|') ? rowScope(line, heading) : heading;
+      const source = sources[i];
+      if (source === undefined) throw new Error(`incomplete line provenance for ${doc}`);
+      const known = sourceFiles(source);
+      scanned += citations(line, syntax, known).filter((c) => !exempt(offset + c.at)).length;
 
       for (const c of citations(line, syntax, known)) {
         if (exempt(offset + c.at)) {
@@ -708,11 +851,12 @@ function collect() {
           key: `${bucket}|${ordinal}`,
           anchor,
           claim: claimBefore(lines, i, c.at, syntax),
-          ...fingerprint(c.file, c.start, c.end),
+          ...fingerprint(c.file, c.start, c.end, source),
         });
       }
       offset += line.length + 1;
     }
+    if (scanned === 0) continue;
     coverage.push({ doc, scanned, captured });
   }
   return { found, coverage, exempted };
@@ -1077,7 +1221,51 @@ function priorLock() {
 }
 
 function main() {
-  const { found, coverage, exempted } = collect();
+  try {
+    const shallow = execFileSync('git', ['rev-parse', '--is-shallow-repository'], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim() === 'true';
+    if (shallow && hasCommittedHistory()) {
+      console.error('FATAL: a shallow clone cannot establish historical evidence provenance; use full history.');
+      process.exit(2);
+    }
+  } catch (error) {
+    if (error?.status === 2) throw error;
+    console.error(`FATAL: cannot establish repository history: ${error.message}`);
+    process.exit(2);
+  }
+
+  const malformed = [];
+  try {
+    for (const doc of docs()) {
+      const raw = read(doc);
+      if (raw === null) continue;
+      const text = raw.replace(/\r\n/g, '\n');
+      const sources = lineSources(doc, text);
+      for (const hit of malformedRanges(text, commentSyntax(doc), (i) => sourceFiles(sources[i]))) {
+        malformed.push(`  ${doc}:${hit.line}  ${hit.anchor}`);
+      }
+    }
+  } catch (error) {
+    console.error(`FATAL: ${error.message}`);
+    process.exit(2);
+  }
+  if (malformed.length) {
+    console.error(`FATAL: malformed evidence citation range${malformed.length === 1 ? '' : 's'}:`);
+    for (const hit of malformed) console.error(hit);
+    console.error('Range ends must be numeric so every citation remains in the checked corpus.');
+    process.exit(2);
+  }
+
+  let result;
+  try {
+    result = collect();
+  } catch (error) {
+    console.error(`FATAL: ${error.message}`);
+    process.exit(2);
+  }
+  const { found, coverage, exempted } = result;
 
   // Before anything else, and before the bless path in particular. A relative citation is a
   // claim the gate cannot check, so blessing a tree that holds one records a lock that looks
