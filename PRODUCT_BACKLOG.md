@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-A hundred and thirty-five items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred and thirty-six items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -12516,12 +12516,12 @@ again, because a swap can lift a row above a third one it also outscores. Nothin
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
 resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
-### Case 1: BL-026 is labelled P0 but ranks eighty-fourth
+### Case 1: BL-026 is labelled P0 but ranks eighty-fifth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 84 of 156.
+- Calculated: WSJF 3.67, rank 85 of 157.
 - Driver: job size, not value. Its Cost of Delay of 11 is the thirteenth-highest distinct figure in
-  the backlog. It is outranked by eighty-two items, seventy-eight of them sized 1, 2 or 3 whose Cost of Delay
+  the backlog. It is outranked by eighty-four items, seventy-nine of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
   costs 3 will always sit below a cheap fix that costs 1.
 - What a human should settle: whether "Foundation" here means "must be finished before anything
@@ -12541,7 +12541,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 150 of 156, below a hundred and forty-six unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 151 of 157, below a hundred and forty-seven unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -12599,9 +12599,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 106 of 156. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 86 of 156. Mid-table.
-- BL-017, P2, rank 155 of 156. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 107 of 157. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 87 of 157. Mid-table.
+- BL-017, P2, rank 156 of 157. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.
