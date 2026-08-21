@@ -11,7 +11,7 @@ being a description and was switched on the same day. Nothing here is aspiration
 standard itself, which is applied to every change already.
 
 If you only want to read comics with the app, you do not need any of this. Start at
-[Run it on your computer](README.md#run-it-on-your-computer) instead.
+[the running guide](docs/RUNNING.md) instead.
 
 ## What this project is trying to be
 
@@ -57,9 +57,9 @@ rest rather than judged on the day it arrives. Some things on that list have bee
 on purpose.
 
 Then read, in this order: what the app is trying to do, in the first half of the README; how it is
-put together, in [the architecture record](docs/ARCHITECTURE.md); and the contributor sections at
-[For contributors](README.md#for-contributors), which cover running the checks, reviewing a pinned
-action, adding a curated reading list and cutting a release.
+put together, in [the architecture record](docs/ARCHITECTURE.md); and the
+[maintainer guide](docs/MAINTAINING.md), which covers running the checks, reviewing a pinned action,
+adding a curated reading list and cutting a release.
 
 ## How a change is judged
 
@@ -179,7 +179,7 @@ Covers are addresses, never bytes. Marvel's own pages are linked, never scraped.
 for this project carries a source trail that someone else could follow.
 
 The mechanics of adding a curated list, including the manifest fields and the scripts that build
-one, are in [Adding a curated reading list](README.md#adding-a-curated-reading-list).
+one, are in [Add a curated reading order](docs/MAINTAINING.md#add-a-curated-reading-order).
 
 ## Dependencies
 
@@ -189,8 +189,8 @@ what it does and why the thing it checks is worth checking automatically.
 
 Anything the workflow calls is pinned to a full commit revision rather than a tag, because a tag is
 a pointer its owner can move and calling one means agreeing in advance to run whatever they publish
-next. [Reviewing an update to a pinned action](README.md#reviewing-an-update-to-a-pinned-action)
-explains what to check before merging one of those.
+next. [Review pinned GitHub Actions](docs/MAINTAINING.md#review-pinned-github-actions) explains what
+to check before merging one of those.
 
 ## Reporting problems
 

@@ -14,6 +14,25 @@ quote in a bug report.
 
 ## Unreleased
 
+## 1.3.0
+
+A flagship feature release that turns the tracker into Recap Page, expands the catalog from 26 to
+46 reading orders, and redesigns every major reading workflow. This is a MINOR release because saved
+data remains readable by the previous build. No migration is required: keep using the exact same
+browser address, and export a backup as a routine precaution before replacing the old copy.
+
+### A faster front door, with focused guides when you need the details
+
+In plain English: the project page now gets a new reader from "what is this?" to a working tracker
+in 118 lines instead of asking them to navigate an 849-line handbook. It keeps the product story,
+privacy boundary, download, source startup, and safe upgrade path in one place.
+
+Detailed setup, troubleshooting, maintenance, data authoring, and release procedures now live in
+two focused guides. Nothing in the app or in saved reading progress is affected.
+
+For maintainers: the release check now runs the actual v1.2.0 app, marks an issue read, and proves the
+same order and nonzero progress survive the folder swap into 1.3.0.
+
 ### Added ten more early modern Marvel event reading orders
 
 In plain English: the catalog now fills ten earlier gaps in Marvel continuity, starting with Maximum
@@ -25,6 +44,17 @@ For maintainers: the batch contains 178 distinct issues across ten exact source 
 Realm of Kings, and World War Hulk were blocked instead of guessed or duplicated, and Messiah War,
 Necrosha, and Second Coming filled the three open slots in chronological order. All 450 comparisons
 against the 36 existing orders and nine batch peers have zero shared issues.
+
+### Dated evidence keeps the repository state it recorded
+
+For maintainers: dated research, plans, and review records now resolve each evidence citation
+against the commit that authored that line. Later code and documentation rewrites can move or
+delete the original target without forcing a historical record to be rewritten or excluded from
+the evidence check.
+
+Current documents and new evidence still resolve against the tree being checked. Missing source
+history, missing historical targets, and malformed ranges fail explicitly, and shallow clones are
+directed to fetch full history. Nothing in the app or in saved reading progress is affected.
 
 ### One type and corner scale across the app, bigger click targets, and dialogs give focus back
 

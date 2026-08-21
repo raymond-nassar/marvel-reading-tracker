@@ -16,18 +16,24 @@
 // a puppeteer-core installed outside this tree. Run it by hand before trusting a release that moves
 // the update notice or anything it says.
 
-import { cp, mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';
-import { spawn } from 'node:child_process';
+import {
+  cp, mkdir, mkdtemp, readFile, writeFile, rm,
+} from 'node:fs/promises';
+import { execFile, spawn } from 'node:child_process';
 import { createServer } from 'node:net';
 import { existsSync } from 'node:fs';
 import { homedir, tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { promisify } from 'node:util';
 
 const REPO = process.cwd();
-const OLD_VERSION = '1.0.0';
-const NEW_VERSION = '9.9.9';
+const OLD_REF = 'v1.2.0';
+const OLD_VERSION = OLD_REF.slice(1);
+const NEW_VERSION = JSON.parse(await readFile(join(REPO, 'package.json'), 'utf8')).version;
 const STATE_KEY = 'mrt.state.v2';
+const execFileAsync = promisify(execFile);
+const HISTORICAL_GIT_ENV = Object.freeze({ ...process.env, GIT_NO_LAZY_FETCH: '1' });
 
 // ------------------------------------------------------------------ mutations
 
@@ -50,6 +56,16 @@ const MUTATIONS = [
     breaks: 'new-paints',
     why: 'the new build reads a differently named key, so the reader opens the upgraded app to an empty shelf while their data sits untouched under the old name',
     patchNew: (source) => source.replace(`'${STATE_KEY}'`, `'${STATE_KEY}.renamed'`),
+    patchNewPath: join('src', 'js', 'storage.js'),
+  },
+  {
+    id: 'read-state-lost',
+    breaks: 'new-paints',
+    why: 'the new build discards every read marker while loading, so the order survives but its progress returns to zero',
+    patchNew: (source) => source.replace(
+      'this.state = raw ? migrate(JSON.parse(raw)) : createEmptyState();',
+      'this.state = raw ? { ...migrate(JSON.parse(raw)), read: {} } : createEmptyState();',
+    ),
     patchNewPath: join('src', 'js', 'storage.js'),
   },
   {
@@ -98,16 +114,49 @@ function freePort() {
   });
 }
 
-// A copy of the whole app, which is what unzipping a release produces, with only the reported
-// version changed.
-async function install(dest, version) {
+// A copy of the whole app, which is what unzipping the candidate produces.
+export async function installCurrent(dest) {
   await cp(join(REPO, 'src'), join(dest, 'src'), { recursive: true });
   await cp(join(REPO, 'server.mjs'), join(dest, 'server.mjs'));
-  const path = join(dest, 'src', 'js', 'lib', 'version.js');
-  const before = await readFile(path, 'utf8');
-  const after = before.replace(/(APP_VERSION = ')[^']*(')/, `$1${version}$2`);
-  if (after === before) throw new Error(`version.js was not patched in ${dest}`);
-  await writeFile(path, after);
+}
+
+export async function installHistorical({ repo, ref, dest }) {
+  await execFileAsync('git', ['rev-parse', '--verify', `${ref}^{commit}`], {
+    cwd: repo,
+    encoding: 'utf8',
+    env: HISTORICAL_GIT_ENV,
+  });
+  const { stdout } = await execFileAsync(
+    'git',
+    ['ls-tree', '-r', '-z', '--name-only', ref, '--', 'src', 'server.mjs'],
+    {
+      cwd: repo,
+      encoding: 'utf8',
+      env: HISTORICAL_GIT_ENV,
+      maxBuffer: 100 * 1024 * 1024,
+    },
+  );
+  const paths = stdout.split('\0').filter(Boolean);
+  if (!paths.includes('server.mjs') || !paths.some((path) => path.startsWith('src/'))) {
+    throw new Error(`${ref} does not contain the complete app tree`);
+  }
+
+  for (const path of paths) {
+    const parts = path.split('/');
+    const allowed = path === 'server.mjs' || path.startsWith('src/');
+    if (!allowed || parts.some((part) => part === '' || part === '.' || part === '..')) {
+      throw new Error(`${ref} contains an unsafe app path: ${path}`);
+    }
+    const target = join(dest, ...parts);
+    await mkdir(dirname(target), { recursive: true });
+    const { stdout: bytes } = await execFileAsync('git', ['show', `${ref}:${path}`], {
+      cwd: repo,
+      encoding: 'buffer',
+      env: HISTORICAL_GIT_ENV,
+      maxBuffer: 100 * 1024 * 1024,
+    });
+    await writeFile(target, bytes);
+  }
 }
 
 async function applyMutation(dir, mutation) {
@@ -176,7 +225,11 @@ const OFFLINE_STUB = () => {
 
 const summarise = (page, key) => page.evaluate((stateKey) => {
   const raw = localStorage.getItem(stateKey);
-  if (!raw) return { present: false, listCount: 0, listId: null, listName: null, itemIds: [] };
+  if (!raw) {
+    return {
+      present: false, listCount: 0, listId: null, listName: null, itemIds: [], readIds: [],
+    };
+  }
   const state = JSON.parse(raw);
   const ids = Object.keys(state.lists ?? {});
   const first = ids.length ? state.lists[ids[0]] : null;
@@ -186,10 +239,16 @@ const summarise = (page, key) => page.evaluate((stateKey) => {
     listId: first?.id ?? null,
     listName: first?.name ?? null,
     itemIds: first?.itemIds ?? [],
+    readIds: Object.keys(state.read ?? {}).sort(),
   };
 }, key);
 
 const painted = (page) => page.evaluate(() => document.querySelector('main')?.innerText ?? '');
+const progressPainted = (text, read, total) =>
+  new RegExp(`${read} of ${total}(?: issues?)? read`).test(text)
+  || new RegExp(`${total - read} unread`).test(text);
+const readLines = (text) =>
+  text.split('\n').map((line) => line.trim()).filter((line) => /read/i.test(line)).slice(0, 8).join(' | ');
 
 async function boot(page, origin, hash = '') {
   // Cleared to about:blank first, and the reason is the whole check. Navigating to a URL that
@@ -216,8 +275,10 @@ async function runUpgrade({ puppeteer, edge, mutation }) {
   const base = await mkdtemp(join(tmpdir(), 'mrt-upgrade-'));
   const oldDir = join(base, 'MarvelReadingTracker-old');
   const newDir = join(base, 'MarvelReadingTracker-new');
-  await install(oldDir, OLD_VERSION);
-  await install(newDir, NEW_VERSION);
+  await installHistorical({
+    repo: REPO, ref: OLD_REF, dest: oldDir,
+  });
+  await installCurrent(newDir);
   await applyMutation(newDir, mutation);
 
   const port = await freePort();
@@ -257,16 +318,38 @@ async function runUpgrade({ puppeteer, edge, mutation }) {
       return raw && Object.keys(JSON.parse(raw).lists ?? {}).length > 0;
     }, { timeout: 20000 }, STATE_KEY);
 
-    const before = await summarise(page, STATE_KEY);
-    check('old-saved', 'the old install saved a reading order', before.listCount === 1, `${before.listCount} list(s)`);
-    check('old-items', 'the saved order carries its issues', before.itemIds.length === 8, `${before.itemIds.length} issue(s)`);
+    const imported = await summarise(page, STATE_KEY);
+    check('old-saved', 'the old install saved a reading order', imported.listCount === 1, `${imported.listCount} list(s)`);
+    check('old-items', 'the saved order carries its issues', imported.itemIds.length === 8, `${imported.itemIds.length} issue(s)`);
 
+    // Catalog cards no longer repeat progress after the landing redesign. Open the saved order so
+    // both sides prove the reading surface a returning reader actually relies on.
+    await boot(page, origin, `#/read/${imported.listId}`);
+    await page.waitForSelector('#btn-hero-done', { timeout: 20000 });
+    await page.evaluate(() => document.querySelector('#btn-hero-done').click());
+    await page.waitForFunction(
+      (stateKey) => {
+        const raw = localStorage.getItem(stateKey);
+        return raw && Object.keys(JSON.parse(raw).read ?? {}).length === 1;
+      },
+      { timeout: 20000 },
+      STATE_KEY,
+    );
+
+    const before = await summarise(page, STATE_KEY);
+    const readId = before.readIds[0] ?? null;
+    check(
+      'old-read',
+      'the old install saved one read marker',
+      before.readIds.length === 1 && before.itemIds.map(String).includes(readId),
+      `read ids ${JSON.stringify(before.readIds)}`,
+    );
     const paintedBefore = await painted(page);
     check(
       'old-paints',
       'the old install paints the order and its progress',
-      paintedBefore.includes(before.listName) && /0 \/ 8/.test(paintedBefore),
-      `named ${paintedBefore.includes(before.listName)}, progress ${/0 \/ 8/.test(paintedBefore)}`,
+      paintedBefore.includes(before.listName) && progressPainted(paintedBefore, 1, before.itemIds.length),
+      `named ${paintedBefore.includes(before.listName)}, progress ${progressPainted(paintedBefore, 1, before.itemIds.length)}; read lines: ${readLines(paintedBefore)}`,
     );
 
     // The upgrade itself. The old install stops serving and a different directory takes the same
@@ -287,6 +370,12 @@ async function runUpgrade({ puppeteer, edge, mutation }) {
       after.itemIds.length > 0 && after.itemIds.join(',') === before.itemIds.join(','),
       `${before.itemIds.length} then ${after.itemIds.length}`,
     );
+    check(
+      'read-survives',
+      'the issue marked read by the old install survived',
+      after.readIds.join(',') === before.readIds.join(','),
+      `${JSON.stringify(before.readIds)} then ${JSON.stringify(after.readIds)}`,
+    );
 
     // Storage agreeing is not the same as a reader seeing their progress. A build that parsed the
     // saved state and then failed to paint it would satisfy every assertion above and still read
@@ -296,8 +385,8 @@ async function runUpgrade({ puppeteer, edge, mutation }) {
     check(
       'new-paints',
       'the new install paints the order a reader saved on the old one',
-      paintedAfter.includes(before.listName) && /0 \/ 8/.test(paintedAfter),
-      `named ${paintedAfter.includes(before.listName)}, progress ${/0 \/ 8/.test(paintedAfter)}`,
+      paintedAfter.includes(before.listName) && progressPainted(paintedAfter, 1, after.itemIds.length),
+      `named ${paintedAfter.includes(before.listName)}, progress ${progressPainted(paintedAfter, 1, after.itemIds.length)}; read lines: ${readLines(paintedAfter)}`,
     );
 
     // The control, and without it none of the above means what it says. The same new install is
@@ -394,7 +483,9 @@ async function main() {
 // Without this an unexpected throw leaves an unhandled rejection, which Node reports as a bare
 // stack and exits 1 on. Exit 1 is this check's word for "an assertion failed", so an internal fault
 // would otherwise be read as a finding about the app.
-main().then((code) => process.exit(code)).catch((err) => {
-  console.error(`\nThe check itself failed before it could report on the app:\n${err?.stack ?? err}`);
-  process.exit(2);
-});
+if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) {
+  main().then((code) => process.exit(code)).catch((err) => {
+    console.error(`\nThe check itself failed before it could report on the app:\n${err?.stack ?? err}`);
+    process.exit(2);
+  });
+}

@@ -1,0 +1,101 @@
+{
+  "task_id": "MRT-002-F01",
+  "task_slug": "major-release-proof-corrections",
+  "parent_task": {
+    "task_id": "MRT-002",
+    "task_slug": "major-release-docs"
+  },
+  "mode": "automatic",
+  "active_phase": "Follow-up",
+  "status": "completed",
+  "session_status": "running",
+  "artifact_paths": {
+    "research": ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md",
+    "plan": ".copilot-tracking/plans/2026-08-21/major-release-proof-corrections-plan.md",
+    "details": ".copilot-tracking/details/2026-08-21/major-release-proof-corrections-phase-details.md",
+    "critique": null,
+    "changes": ".copilot-tracking/changes/2026-08-21/major-release-proof-corrections-changes.md",
+    "review": ".copilot-tracking/reviews/logs/2026-08-21/major-release-proof-corrections-review.md"
+  },
+  "confirmed_decisions": [
+    {
+      "decision": "Resolve RV-001 through RV-003 together as the recommended automatic follow-up.",
+      "status": "confirmed",
+      "evidence": "User unavailable response delegated autonomous judgment; parent ranked follow-up 1"
+    },
+    {
+      "decision": "Research disposition: reused; Planning Readiness: Ready.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/research/2026-08-21/major-release-proof-corrections-research.md"
+    },
+    {
+      "decision": "Final-candidate plan created with locked tests, targets, acceptance evidence, and publication exclusion.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/plans/2026-08-21/major-release-proof-corrections-plan.md"
+    },
+    {
+      "decision": "Exactly one final-candidate critique completed with verdict Revise and PC-001 Medium.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/reviews/plans/2026-08-21/major-release-proof-corrections-plan-critique.md"
+    },
+    {
+      "decision": "PC-001 resolved by sequencing a behavior-preserving import seam and green baseline before the behavioral red proof.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/plans/2026-08-21/major-release-proof-corrections-plan.md and phase details"
+    },
+    {
+      "decision": "Full-plan implementation started with P01-T01.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/changes/2026-08-21/major-release-proof-corrections-changes.md"
+    },
+    {
+      "decision": "P01, P02, and P03-T01 completed with four red proofs, 11 focused tests, 12 upgrade assertions, and five aimed mutations.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/changes/2026-08-21/major-release-proof-corrections-changes.md"
+    },
+    {
+      "decision": "P03-T02 complete release validation started.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/plans/2026-08-21/major-release-proof-corrections-plan.md"
+    },
+    {
+      "decision": "Full-plan implementation completed and reconciled for the child task's single Review.",
+      "status": "completed",
+      "evidence": "1,303 tests, 33 contract assumptions, 119 browser assertions, 12 upgrade assertions, five proof mutations, and packaging passed"
+    },
+    {
+      "decision": "Child task single Review started over the complete correction boundary.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/changes/2026-08-21/major-release-proof-corrections-changes.md"
+    },
+    {
+      "decision": "Child Review completed once with outcome Defects found and one Medium finding.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/reviews/logs/2026-08-21/major-release-proof-corrections-review.md; RV-001"
+    },
+    {
+      "decision": "Autonomous direction selects the only release-blocking follow-up.",
+      "status": "active",
+      "evidence": "User unavailable response directed autonomous good judgment"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "RV-001",
+      "summary": "Partial clones may lazily fetch missing historical Git objects.",
+      "resolution": "Set GIT_NO_LAZY_FETCH=1 for every historical Git subprocess and pin it with a focused test."
+    }
+  ],
+  "next_action": {
+    "phase": "Research",
+    "action": "Start the selected offline Git proof follow-up."
+  },
+  "prioritized_follow_ups": [
+    {
+      "rank": 1,
+      "task": "Disable lazy Git fetching in historical release materialization.",
+      "rationale": "This is the only remaining publication blocker and is a small, high-leverage reliability correction.",
+      "evidence": "RV-001 in .copilot-tracking/reviews/logs/2026-08-21/major-release-proof-corrections-review.md"
+    }
+  ]
+}
