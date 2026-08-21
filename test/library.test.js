@@ -36,8 +36,18 @@ test('the list the rail buttons and sections are built from has to be self-consi
   assert.equal(libraryView('nope'), null);
 });
 
+test('every view declares how to summarise and group its own rows', () => {
+  // The renderer reads these two off the view rather than branching on the value, so a view that
+  // shipped without them would render its heading and then throw when the band or the groups were
+  // reached. Asserted here because the loader only fails the app on it, and a test names it sooner.
+  for (const v of LIBRARY_VIEWS) {
+    assert.equal(typeof v.summarise, 'function', `${v.value} has no summarise function`);
+    assert.equal(typeof v.group, 'function', `${v.value} has no group function`);
+  }
+});
+
 test('a Library view that cannot produce a section id or a page is reported, not accepted', () => {
-  const ok = { value: 'library-read', label: 'L', sub: 'S', empty: 'E', markHandAdded: true, select: () => [] };
+  const ok = { value: 'library-read', label: 'L', sub: 'S', empty: 'E', markHandAdded: true, select: () => [], summarise: () => [], group: () => [] };
   assert.deepEqual(libraryViewProblems([]), ['The Library view list is empty.']);
   assert.deepEqual(
     libraryViewProblems([ok, { ...ok, value: 'library read' }]),
@@ -51,6 +61,16 @@ test('a Library view that cannot produce a section id or a page is reported, not
   assert.deepEqual(
     libraryViewProblems([{ ...ok, select: null }]),
     ['Library view 0 has no select function.'],
+  );
+  // The renderer reaches for both on every view, so a section missing either is reported the
+  // same way a missing selector is, rather than throwing on the first render.
+  assert.deepEqual(
+    libraryViewProblems([{ ...ok, summarise: null }]),
+    ['Library view 0 has no summarise function.'],
+  );
+  assert.deepEqual(
+    libraryViewProblems([{ ...ok, group: 'nope' }]),
+    ['Library view 0 has no group function.'],
   );
   // false is a meaningful answer, so the check has to be for presence and not for truth.
   assert.deepEqual(libraryViewProblems([{ ...ok, markHandAdded: false }]), []);

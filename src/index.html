@@ -289,7 +289,7 @@
           </section>
 
           <!-- ---------------------------------------- reading view -->
-          <section id="view-read" class="view" hidden aria-labelledby="order-name">
+          <section id="view-read" class="view view-wide" hidden aria-labelledby="order-name">
             <div class="head">
               <div class="head-left">
                 <h1 id="order-name">Recap Page</h1>
@@ -300,13 +300,13 @@
                   <span class="sw" aria-hidden="true"></span><span class="covers-label" id="covers-label">Cover art on</span>
                 </button>
                 <div class="ring" id="ring-wrap" hidden>
-                  <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                    <circle class="ring-track" cx="18" cy="18" r="15" fill="none" stroke="#2a2a37" stroke-width="4" />
-                    <circle class="ring-arc" id="ring-arc" cx="18" cy="18" r="15" fill="none" stroke="#b694ec"
-                            stroke-width="4" stroke-linecap="round"
-                            stroke-dasharray="94.2" stroke-dashoffset="94.2" />
+                  <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+                    <circle class="ring-track" cx="22" cy="22" r="19" fill="none" stroke="#2a2a37" stroke-width="5" />
+                    <circle class="ring-arc" id="ring-arc" cx="22" cy="22" r="19" fill="none" stroke="#b694ec"
+                            stroke-width="5" stroke-linecap="round"
+                            stroke-dasharray="119.4" stroke-dashoffset="119.4" />
                   </svg>
-                  <span id="ring-label"></span>
+                  <span class="ring-text"><b id="ring-label"></b><span id="ring-sub"></span></span>
                 </div>
               </div>
             </div>
@@ -360,13 +360,13 @@
                     <p class="desc" id="hero-desc"></p>
                     <dl class="facts" id="hero-facts"></dl>
                     <div class="cta">
-                      <button type="button" class="btn" id="btn-hero-read">
+                      <button type="button" class="btn btn-lg" id="btn-hero-read">
                         Open in Marvel Unlimited <kbd>↵</kbd>
                       </button>
                       <button type="button" class="btn btn-g" id="btn-hero-done">
                         Done, next <kbd>D</kbd>
                       </button>
-                      <a class="btn btn-g" id="btn-hero-info" target="_blank" rel="noopener noreferrer">
+                      <a class="btn btn-link" id="btn-hero-info" target="_blank" rel="noopener noreferrer">
                         Issue page ↗
                       </a>
                     </div>
@@ -375,6 +375,7 @@
               </section>
 
               <div id="all-read" class="empty-state" hidden>
+                <div class="empty-glyph" aria-hidden="true">✓</div>
                 <h2 id="all-read-h" tabindex="-1">That is the whole order, read.</h2>
                 <p>Every issue in this list is ticked off. Pick another order, or start a new list.</p>
               </div>
@@ -409,7 +410,7 @@
           </section>
 
           <!-- ---------------------------------------- progress view -->
-          <section id="view-progress" class="view" hidden aria-labelledby="progress-h">
+          <section id="view-progress" class="view view-wide" hidden aria-labelledby="progress-h">
             <div class="head"><div class="head-left"><h1 id="progress-h">Progress by series</h1>
               <div class="sub" id="progress-sub">Counted over unique issues across every list, so an issue in two lists counts once.</div>
             </div></div>
@@ -426,14 +427,14 @@
           <!-- Headings, subtitles and empty text are all rendered from LIBRARY_VIEWS in
                src/js/lib/library.js. They are left out of the markup rather than duplicated
                here, so there is nothing to keep in step. -->
-          <section id="view-library-read" class="view" hidden aria-labelledby="library-read-h">
+          <section id="view-library-read" class="view view-wide" hidden aria-labelledby="library-read-h">
             <div class="head"><div class="head-left"><h1 id="library-read-h"></h1>
               <div class="sub"></div>
             </div></div>
             <div class="results"></div>
           </section>
 
-          <section id="view-library-manual" class="view" hidden aria-labelledby="library-manual-h">
+          <section id="view-library-manual" class="view view-wide" hidden aria-labelledby="library-manual-h">
             <div class="head"><div class="head-left"><h1 id="library-manual-h"></h1>
               <div class="sub"></div>
             </div></div>
@@ -465,8 +466,8 @@
               <div class="sub" id="add-target"></div>
             </div></div>
 
-            <details class="card" id="sec-search" open>
-              <summary><h2>Search for issues</h2></summary>
+            <section class="card card-static addpri" id="sec-search">
+              <h2>Search for issues</h2>
               <form id="form-search" class="stack">
                 <label for="search-q">Search issue titles</label>
                 <div class="field-row">
@@ -481,80 +482,85 @@
                 summary is the one channel. See the note on notify() in js/main.js.
               -->
               <div id="search-results" class="results"></div>
-            </details>
+            </section>
 
-            <details class="card" id="sec-series">
-              <summary><h2>Add a whole series</h2></summary>
-              <form id="form-series" class="stack">
-                <label for="series-q">Find a series</label>
-                <div class="field-row">
-                  <input type="search" id="series-q" placeholder="e.g. New Avengers (2013)" autocomplete="off" />
-                  <button type="submit" class="btn">Find</button>
-                </div>
-              </form>
-              <div id="series-results" class="results"></div>
-            </details>
+            <section id="add-more" class="add-more">
+              <h2>Other ways to add</h2>
+              <p class="rail-hint">Use these for bulk additions and issues that search cannot reach.</p>
 
-            <details class="card" id="sec-creator">
-              <summary><h2>Browse a creator</h2></summary>
-              <form id="form-creator" class="stack">
-                <label for="creator-q">Find a creator</label>
-                <div class="field-row">
-                  <input type="search" id="creator-q" placeholder="e.g. Hickman" autocomplete="off" />
-                  <button type="submit" class="btn">Find</button>
-                </div>
-              </form>
-              <div id="creator-results" class="results"></div>
-            </details>
+              <details class="card" id="sec-series">
+                <summary><h3>Add a whole series</h3><span class="card-why">Every issue of one series, oldest first.</span></summary>
+                <form id="form-series" class="stack">
+                  <label for="series-q">Find a series</label>
+                  <div class="field-row">
+                    <input type="search" id="series-q" placeholder="e.g. New Avengers (2013)" autocomplete="off" />
+                    <button type="submit" class="btn">Find</button>
+                  </div>
+                </form>
+                <div id="series-results" class="results"></div>
+              </details>
 
-            <details class="card" id="sec-import">
-              <summary><h2>Paste a reading order</h2></summary>
-              <p class="rail-hint">
-                Accepts Markdown checklists
-                (<code>- [ ] [Title](https://www.marvel.com/comics/issue/123/slug)</code>)
-                or one title per line. Lines ticked <code>- [x]</code> import as already read.
-              </p>
-              <form id="form-import" class="stack">
-                <label for="import-text">Reading order</label>
-                <textarea id="import-text" rows="8" spellcheck="false"></textarea>
-                <div class="field-row">
-                  <button type="submit" class="btn">Import</button>
-                  <label class="checkbox"><input type="checkbox" id="import-new-list" checked /> Into a new list</label>
-                </div>
-              </form>
-              <div id="import-report" class="results"></div>
-            </details>
+              <details class="card" id="sec-creator">
+                <summary><h3>Browse a creator</h3><span class="card-why">Every issue credited to one writer or artist.</span></summary>
+                <form id="form-creator" class="stack">
+                  <label for="creator-q">Find a creator</label>
+                  <div class="field-row">
+                    <input type="search" id="creator-q" placeholder="e.g. Hickman" autocomplete="off" />
+                    <button type="submit" class="btn">Find</button>
+                  </div>
+                </form>
+                <div id="creator-results" class="results"></div>
+              </details>
 
-            <details class="card" id="sec-manual">
-              <summary><h2>Add an issue by hand</h2></summary>
-              <p class="rail-hint">
-                The metadata snapshot ends in 2025, so anything newer will not be found by search.
-                Add it by hand and it still tracks; availability just shows as unknown.
-              </p>
-              <form id="form-manual" class="stack">
-                <label for="manual-title">Title</label>
-                <input type="text" id="manual-title" required placeholder="e.g. The Amazing Spider-Man (2025) #12" />
-                <button type="button" class="btn btn-g" id="btn-manual-lookup">Look up details</button>
+              <details class="card" id="sec-import">
+                <summary><h3>Paste a reading order</h3><span class="card-why">A Markdown checklist or one title per line.</span></summary>
                 <p class="rail-hint">
-                  Optional, and nothing happens until you press it. It sends the words in the Title
-                  box to the Marvel Fandom wiki, a community site Marvel does not run, and offers
-                  you the release date, page count and credits the snapshot cannot supply. Nothing
-                  about your lists or your reading progress goes with it, no cover image is
-                  fetched, and nothing is saved until you press Add issue.
+                  Accepts Markdown checklists
+                  (<code>- [ ] [Title](https://www.marvel.com/comics/issue/123/slug)</code>)
+                  or one title per line. Lines ticked <code>- [x]</code> import as already read.
                 </p>
-                <div id="manual-candidates" class="results"></div>
-                <label for="manual-url">marvel.com or Marvel Unlimited address (optional)</label>
-                <input type="url" id="manual-url" aria-describedby="manual-url-hint" placeholder="https://read.marvel.com/#/book/…" />
-                <p class="rail-hint" id="manual-url-hint">
-                  Open the issue in Marvel Unlimited and paste the address from your browser. That
-                  address carries the reader's own id for the book, which is what lets Read take you
-                  straight there. A www.marvel.com issue address works too, but for anything newer
-                  than the snapshot it cannot be turned into a working Read link.
+                <form id="form-import" class="stack">
+                  <label for="import-text">Reading order</label>
+                  <textarea id="import-text" rows="8" spellcheck="false"></textarea>
+                  <div class="field-row">
+                    <button type="submit" class="btn">Import</button>
+                    <label class="checkbox"><input type="checkbox" id="import-new-list" checked /> Into a new list</label>
+                  </div>
+                </form>
+                <div id="import-report" class="results"></div>
+              </details>
+
+              <details class="card" id="sec-manual">
+                <summary><h3>Add an issue by hand</h3><span class="card-why">Anything the 2025 metadata snapshot does not have.</span></summary>
+                <p class="rail-hint">
+                  The metadata snapshot ends in 2025, so anything newer will not be found by search.
+                  Add it by hand and it still tracks; availability just shows as unknown.
                 </p>
-                <button type="submit" class="btn">Add issue</button>
-              </form>
-              <div id="manual-report" class="results"></div>
-            </details>
+                <form id="form-manual" class="stack">
+                  <label for="manual-title">Title</label>
+                  <input type="text" id="manual-title" required placeholder="e.g. The Amazing Spider-Man (2025) #12" />
+                  <button type="button" class="btn btn-g" id="btn-manual-lookup">Look up details</button>
+                  <p class="rail-hint">
+                    Optional, and nothing happens until you press it. It sends the words in the Title
+                    box to the Marvel Fandom wiki, a community site Marvel does not run, and offers
+                    you the release date, page count and credits the snapshot cannot supply. Nothing
+                    about your lists or your reading progress goes with it, no cover image is
+                    fetched, and nothing is saved until you press Add issue.
+                  </p>
+                  <div id="manual-candidates" class="results"></div>
+                  <label for="manual-url">marvel.com or Marvel Unlimited address (optional)</label>
+                  <input type="url" id="manual-url" aria-describedby="manual-url-hint" placeholder="https://read.marvel.com/#/book/…" />
+                  <p class="rail-hint" id="manual-url-hint">
+                    Open the issue in Marvel Unlimited and paste the address from your browser. That
+                    address carries the reader's own id for the book, which is what lets Read take you
+                    straight there. A www.marvel.com issue address works too, but for anything newer
+                    than the snapshot it cannot be turned into a working Read link.
+                  </p>
+                  <button type="submit" class="btn">Add issue</button>
+                </form>
+                <div id="manual-report" class="results"></div>
+              </details>
+            </section>
           </section>
 
           <!-- ---------------------------------------- data view -->
@@ -563,90 +569,106 @@
               <div class="sub">Your reading progress lives in this browser, at this exact address, and is never sent anywhere.</div>
             </div></div>
 
-            <div class="card card-static">
-              <h2>Backup and restore</h2>
-              <p class="rail-hint">Export regularly. Clearing site data for this address erases your progress.</p>
-              <div class="field-row">
-                <button type="button" id="btn-export-json" class="btn">Download JSON backup</button>
-                <button type="button" id="btn-export-md-2" class="btn btn-g">Export current list as Markdown</button>
+            <section class="setgroup">
+              <h2>Data safety</h2>
+              <div class="card card-static addpri">
+                <h3>Backup and restore</h3>
+                <p class="rail-hint">Export regularly. Clearing site data for this address erases your progress.</p>
+                <div class="field-row">
+                  <button type="button" id="btn-export-json" class="btn">Download JSON backup</button>
+                  <button type="button" id="btn-export-md-2" class="btn btn-g">Export current list as Markdown</button>
+                </div>
+
+                <h4>Restore from a backup</h4>
+                <p class="rail-hint">A snapshot of your current data is kept, so a restore can be undone once.</p>
+                <div class="field-row">
+                  <input type="file" id="restore-file" accept="application/json,.json" aria-label="Backup file to restore" />
+                  <button type="button" id="btn-undo-restore" class="quiet" hidden>Undo last restore</button>
+                </div>
+                <div id="restore-report" class="results"></div>
               </div>
 
-              <h3>Restore from a backup</h3>
-              <p class="rail-hint">A snapshot of your current data is kept, so a restore can be undone once.</p>
-              <div class="field-row">
-                <input type="file" id="restore-file" accept="application/json,.json" aria-label="Backup file to restore" />
-                <button type="button" id="btn-undo-restore" class="quiet" hidden>Undo last restore</button>
-              </div>
-              <div id="restore-report" class="results"></div>
-            </div>
-
-            <div class="card card-static">
-              <h2>Cover art</h2>
-              <p class="rail-hint">
-                Covers are loaded straight from Marvel's own image servers, and from nowhere else.
-                The metadata service reports each address, but one naming any other host is refused
-                before a request is made, so a service that had been tampered with cannot have this
-                browser contact a server of its choosing. This app stores only the address, never the
-                image itself, and never proxies or re-hosts artwork. Switch covers off and every cover
-                becomes a plain typographic tile, and no cover is requested at all.
-              </p>
-              <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
-            </div>
-
-            <div class="card card-static">
-              <h2>Update checks</h2>
-              <p class="rail-hint">
-                Once a day, the app can ask GitHub for the latest version number. That request sends
-                no reading list, progress, note or identifier. If a newer version exists, the app shows
-                a link to download it, but it never downloads or installs anything by itself.
-              </p>
-              <label class="checkbox"><input type="checkbox" id="opt-update-checks" /> Check for updates automatically</label>
-            </div>
-
-            <div class="card card-static">
-              <h2>Theme</h2>
-              <p class="rail-hint">
-                Follow your system setting, or pick one and keep it. The choice is stored in this
-                browser alongside your other settings and is never sent anywhere. High contrast mode
-                and reduced motion are still honoured whichever you pick.
-              </p>
-              <label for="opt-theme">Colour theme</label>
-              <select id="opt-theme">
-                <option value="system">Follow my system setting</option>
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-              </select>
-            </div>
-
-            <div class="card card-static">
-              <h2>Metadata source</h2>
-              <form id="form-settings" class="stack">
-                <label for="api-base">Metadata API base URL</label>
-                <input type="url" id="api-base" />
+              <div class="card card-static">
+                <h3>Copies kept after a failed read</h3>
                 <p class="rail-hint">
-                  The default is the community API this was built against. If it disappears the
-                  upstream is self-hostable, so you can point this at your own copy.
+                  If the app ever cannot read your saved data, it sets a copy of that data aside before
+                  it does anything else, so nothing is lost while you decide what to do. Those copies
+                  are kept until you remove them here, and they sit in the same browser storage as your
+                  lists and progress.
                 </p>
-                <button type="submit" class="btn btn-g">Save API URL</button>
-              </form>
+                <div id="salvage-list"></div>
+                <div id="salvage-report" class="results"></div>
+              </div>
+            </section>
 
-              <h3>Cached metadata</h3>
-              <p id="cache-usage" class="rail-hint">Checking cache size…</p>
-              <button type="button" id="btn-clear-cache" class="quiet">Clear cached metadata</button>
-              <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
-            </div>
+            <section class="setgroup">
+              <h2>Personalization</h2>
+              <div class="card card-static">
+                <h3>Cover art</h3>
+                <p class="rail-hint">
+                  Covers are loaded straight from Marvel's own image servers, and from nowhere else.
+                  The metadata service reports each address, but one naming any other host is refused
+                  before a request is made, so a service that had been tampered with cannot have this
+                  browser contact a server of its choosing. This app stores only the address, never the
+                  image itself, and never proxies or re-hosts artwork. Switch covers off and every cover
+                  becomes a plain typographic tile, and no cover is requested at all.
+                </p>
+                <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
+              </div>
 
-            <div class="card card-static">
-              <h2>Copies kept after a failed read</h2>
-              <p class="rail-hint">
-                If the app ever cannot read your saved data, it sets a copy of that data aside before
-                it does anything else, so nothing is lost while you decide what to do. Those copies
-                are kept until you remove them here, and they sit in the same browser storage as your
-                lists and progress.
-              </p>
-              <div id="salvage-list"></div>
-              <div id="salvage-report" class="results"></div>
-            </div>
+              <div class="card card-static">
+                <h3>Theme</h3>
+                <p class="rail-hint">
+                  Follow your system setting, or pick one and keep it. The choice is stored in this
+                  browser alongside your other settings and is never sent anywhere. High contrast mode
+                  and reduced motion are still honoured whichever you pick.
+                </p>
+                <label for="opt-theme">Colour theme</label>
+                <select id="opt-theme">
+                  <option value="system">Follow my system setting</option>
+                  <option value="dark">Dark</option>
+                  <option value="light">Light</option>
+                </select>
+              </div>
+            </section>
+
+            <section class="setgroup">
+              <h2>Connectivity</h2>
+              <div class="card card-static">
+                <h3>Metadata source</h3>
+                <form id="form-settings" class="stack">
+                  <label for="api-base">Metadata API base URL</label>
+                  <input type="url" id="api-base" />
+                  <p class="rail-hint">
+                    The default is the community API this was built against. If it disappears the
+                    upstream is self-hostable, so you can point this at your own copy.
+                  </p>
+                  <button type="submit" class="btn btn-g">Save API URL</button>
+                </form>
+                <div id="api-report" class="results"></div>
+              </div>
+
+              <div class="card card-static">
+                <h3>Update checks</h3>
+                <p class="rail-hint">
+                  Once a day, the app can ask GitHub for the latest version number. That request sends
+                  no reading list, progress, note or identifier. If a newer version exists, the app shows
+                  a link to download it, but it never downloads or installs anything by itself.
+                </p>
+                <label class="checkbox"><input type="checkbox" id="opt-update-checks" /> Check for updates automatically</label>
+              </div>
+            </section>
+
+            <section class="setgroup">
+              <h2>Advanced</h2>
+              <div class="card card-static">
+                <h3>Cached metadata</h3>
+                <p id="cache-usage" class="rail-hint">Checking cache size…</p>
+                <button type="button" id="btn-clear-cache" class="quiet">Clear cached metadata</button>
+                <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
+                <div id="cache-report" class="results"></div>
+              </div>
+            </section>
 
             <div class="card card-static card-danger">
               <h2>Danger zone</h2>

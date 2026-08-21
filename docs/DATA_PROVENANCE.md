@@ -189,7 +189,7 @@ The consequence is already committed. 63 of the 2,889 curated items across the t
 a record carrying nothing beyond the issue's id, title, number and marvel.com link, with every other
 field of the thirteen listed above null or empty. All 63 are in the two Ultimate universe orders,
 and because those two overlap they are 34 distinct issues rather than 63. The twelve orders added in
-BL-141 and the ten added in BL-169 added none, because every issue in them was on sale before the
+BL-141 and the ten added in BL-176 added none, because every issue in them was on sale before the
 portal closed.
 
 The six placeholders are not among those 63, and the two are worth keeping apart because they fail

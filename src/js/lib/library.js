@@ -21,6 +21,7 @@
 // writes anything.
 
 import { readIssues, manualIssues } from './model.js';
+import { readSummary, manualSummary, readGroups, titleGroups } from './librarySummary.js';
 
 // Display order is the order the adopted direction lists them in, with the existing Progress by
 // series between them, which is why the two are not adjacent in the rail.
@@ -36,6 +37,20 @@ export const LIBRARY_VIEWS = [
     // A hand-added issue is otherwise indistinguishable from a curated one here, and it is the
     // one row on this page whose details will never arrive from anywhere.
     markHandAdded: true,
+    // The band reads as three sentences with their figures, "128 issues read", "31 series",
+    // "4 in no list", so the labels are lower case and are not headings. The last count is the
+    // one nothing else can show: an issue read inside a since-deleted order belongs to no list.
+    summarise: (rows) => {
+      const { issues, series, orphans } = readSummary(rows);
+      return [
+        { figure: issues, label: 'issues read' },
+        { figure: series, label: 'series' },
+        { figure: orphans, label: 'in no list' },
+      ];
+    },
+    // Read date decides the section, so the same issue drifts from "Today" downwards as time
+    // passes, which is why the grouper is given the clock rather than reading it itself.
+    group: readGroups,
     select: readIssues,
   },
   {
@@ -46,6 +61,17 @@ export const LIBRARY_VIEWS = [
     // Every row here is hand-added, so the badge would mark nothing out and would repeat itself
     // down the whole page.
     markHandAdded: false,
+    summarise: (rows) => {
+      const { issues, read, orphans } = manualSummary(rows);
+      return [
+        { figure: issues, label: 'added by hand' },
+        { figure: read, label: 'read' },
+        { figure: orphans, label: 'in no list' },
+      ];
+    },
+    // Grouped by first letter, which has no time in it, so the clock the renderer passes both
+    // views is taken and dropped here rather than reaching a grouper that has no use for it.
+    group: (rows) => titleGroups(rows),
     select: manualIssues,
   },
 ];
@@ -79,6 +105,10 @@ export function libraryViewProblems(views) {
     // that simply forgot to answer would otherwise be read as having said no.
     if (!v || typeof v.markHandAdded !== 'boolean') problems.push(`${where} does not say whether to mark hand-added rows.`);
     if (!v || typeof v.select !== 'function') problems.push(`${where} has no select function.`);
+    // A view now carries its own summary and grouping, so a section that forgot either would
+    // render its heading and then throw the moment the renderer reached for the missing one.
+    if (!v || typeof v.summarise !== 'function') problems.push(`${where} has no summarise function.`);
+    if (!v || typeof v.group !== 'function') problems.push(`${where} has no group function.`);
   }
   return problems;
 }

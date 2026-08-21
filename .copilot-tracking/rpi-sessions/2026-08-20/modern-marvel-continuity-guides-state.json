@@ -136,9 +136,9 @@
       "authored_rows": 238,
       "catalog_entries": 36,
       "focused_tests": 104,
-      "full_tests": 1237,
+      "full_tests": 1277,
       "live_issue_checks": 238,
-      "browser_assertions": 103
+      "browser_assertions": 119
     },
     "implementation_review": {
       "status": "resolved",

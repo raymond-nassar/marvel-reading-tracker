@@ -147,7 +147,7 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   guide. A second checks all 238 packet ids against every shipped order and every peer. Changing one
   generated id made the exact-sequence test fail; changing it to shipped issue 2092 made the aggregate
   overlap test fail. Restoring the one value returned both tests to green.
-* Product records: README contributor guidance, provenance totals, Unreleased changelog, and BL-169
+* Product records: README contributor guidance, provenance totals, Unreleased changelog, and BL-176
   now describe the shipped packet and its build-time boundary with re-derived counts.
 * Lifecycle transition: The ten approved records moved from `ready` to `shipped` and each now records
   its catalog id. The 12 rejected candidates remain `blocked`.
@@ -187,15 +187,15 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 | Vendor run | P02-T02 | Passed | 10 orders, 238 issues, and zero unresolved, placeholder, count, duplicate, digital-id, or cover warnings. |
 | Authored packet tests | P02-T02 | Passed | 104 focused catalog, manifest, provenance, inventory, exact-sequence, and aggregate-overlap tests. |
 | Semantic failure proofs | P02-T02 | Passed | One changed id failed exact sequence; one shipped id failed aggregate overlap; both passed after restoration. |
-| Full test suite | P02-T02 | Passed | 1,237 tests, 0 failed. |
+| Full test suite | P02-T02 | Passed | 1,277 tests, 0 failed on the current merged tree. |
 | Lint | P02-T02 | Passed | ESLint reported 0 errors. |
-| Counts | P02-T02 | Passed | 143 ranked rows, 5 parked, and 148 detail blocks; every stated figure agrees. |
+| Counts | P02-T02 | Passed | 150 ranked rows, 5 parked, and 155 detail blocks; every stated figure agrees. |
 | Sizes | P02-T02 | Passed | All 7 stated file sizes agree. |
 | Palette | P02-T02 | Passed | 88 pairs measured, 5 recorded below the floor, and 0 new failures. |
-| Evidence anchors | P02-T02 | Passed | 986 unchanged, 0 drifted, 0 new, and 0 removed after reading all 53 changed pairings. |
+| Evidence anchors | P02-T02 | Passed | 993 unchanged, 0 drifted, 0 new, and 0 removed after the current-main merge. |
 | Repository live contract | P02-T02 | Passed | 33 of 33 assumptions hold across 17 requests. |
 | Added-issue live contract | P02-T02 | Passed | 238 of 238 generated issues match their approved mapping and live issue record. |
-| Edge browser scenarios | P02-T02 | Passed | 103 assertions, 0 failed, across 13 scenarios. |
+| Edge browser scenarios | P02-T02 | Passed | 119 assertions, 0 failed, across 14 scenarios on the current merged tree. |
 | Implementation review | Review | Resolved | 3 medium regeneration findings fixed; 0 material findings remain open. |
 | Author rerun | Review | Passed | 10 Markdown files and the 36-entry manifest retained identical SHA-256 hashes. |
 | Prepare rerun | Review | Passed | 0 of 10 approved mapping hashes changed; blocked mappings retained their blockers. |

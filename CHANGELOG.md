@@ -26,6 +26,73 @@ earlier candidates were blocked rather than duplicated or guessed, and the final
 issue overlap with the existing catalog or one another. Vendoring produced zero unresolved rows,
 placeholders, missing digital ids, missing covers, duplicate warnings, or count warnings.
 
+### The settings screen is grouped, and each control confirms in its own place
+
+In plain English: the screen for backing up and changing settings used to be one long stack of cards
+with no grouping, so making a backup sat at the same level as a technical readout of how much space
+the app was using. The screen is now sorted into four labelled groups, and backing up and restoring
+comes first, because it is the thing worth finding quickly.
+
+When you change a setting, the message confirming it now appears next to the control you used, in the
+same card, instead of at the top of the screen where you might not see it. One knock-on of the old
+shared message area is gone too: clearing the cache no longer wipes out a restore message you had not
+finished reading.
+
+The small status messages are now told apart by a shape as well as a colour, a tick, a triangle, a
+cross or a dot, so they still read for you if your system is set to high contrast, where colour alone
+is dropped.
+
+Nothing you have saved is affected. Your reading progress is untouched, and every setting still does
+what it did before; only the layout and the wording around it have changed.
+
+### Adding issues now leads with search, and groups the other ways together
+
+In plain English: the screen for adding issues used to show five ways to add, all folded shut and all
+looking equally important, with searching for a title tucked in among them. Search is now open and
+ready at the top of the screen, and the other four ways sit together lower down under a heading
+"Other ways to add", each with a short line telling you what it is for before you open it.
+
+When you search, the results now begin with a line telling you how many were found, how many are
+already in your library, and which reading order they will be added to. Any issue you already have is
+marked "Already in your library", so you are not left adding the same one twice. The series and
+creator searches name the destination reading order now too, which they never did before.
+
+Nothing you have saved is affected. Every way to add issues is still there and still works as before;
+only their arrangement and the wording around them has changed.
+
+### The library and progress views now show a summary before the rows
+
+In plain English: the three screens that list what you have read now put a short summary above the
+list, so you can see how much you have read without counting the rows yourself. Everything read is
+now grouped by when you read it, under headings like Today and In the past week. The rows carry
+small cover pictures, which makes an issue much quicker to recognise than a line of text. And all
+three screens now use the full width of a wide monitor instead of staying in a narrow column.
+
+Nothing you have saved is affected. Your reading progress is untouched. Only the way these screens
+are laid out has changed.
+
+### The reading screen tells you where you are, and fills the screen it is given
+
+In plain English: the screen you use while working through a reading order now says how far along you
+are in words. It used to draw a small ring and hide the actual figure in a tooltip, so you had to rest
+the mouse on it and wait, and on a touchscreen you could not get at it at all. It now reads "0 of 8
+read" with "8 to go" beneath it, in text, all the time.
+
+The next issue to read is bigger and clearer. Its cover is about half again as large, the title is
+larger, and the one button that matters, the one that opens the issue in Marvel Unlimited, is now the
+biggest thing beside it. Marking it read stays where it was, and the link out to the issue's own page
+is now drawn as a link rather than as a third button competing with the other two.
+
+The strip of list housekeeping, renaming, notes, duplicating, exporting and deleting, is quieter. All
+five are still there, still in the same order, and still reachable by keyboard, but they no longer look
+as important as the reading buttons above them. The row of upcoming issues no longer cuts the last one
+in half: it wraps onto a second line on a normal screen and stretches across a single line on a wide
+one. The full order below is easier to run your eye down, with larger covers and a clear mark against
+the issue you are on.
+
+Nothing you have saved is affected, the filters, notes, availability marks and collected-edition
+grouping all work exactly as before, and turning cover art off still works.
+
 ### Added the build-time Marvel continuity intake foundation
 
 In plain English: the project now keeps a maintained inventory of 86 Comic Book Herald source records, resolves issue references deterministically, and emits overlap reports against shipped orders without adding a browser runtime dependency or shipping a new reader guide. Nothing you have saved is affected.
@@ -43,7 +110,7 @@ searching.
 
 The page itself now grows with the window instead of stopping at a fixed width, so a wide screen
 shows four reading orders per row rather than three, and the cover art is larger. Pages that are
-mostly words, such as the reading list and the settings, are unchanged: text that stretches across a
+mostly words, such as the settings and the disclaimers, are unchanged: text that stretches across a
 wide monitor is harder to read, not easier.
 
 If you already have a reading order on the go, nothing about your home screen changes. Continue
