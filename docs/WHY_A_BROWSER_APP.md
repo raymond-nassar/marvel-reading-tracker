@@ -1,6 +1,6 @@
 # Why a web app and not an Android emulator
 
-This records why Marvel Reading Tracker is a browser companion rather than a way to run
+This records why Recap Page is a browser companion rather than a way to run
 Marvel's own Android app on a PC. It is kept so nobody spends another weekend retrying the
 emulator route.
 

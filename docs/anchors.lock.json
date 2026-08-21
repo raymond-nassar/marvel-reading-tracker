@@ -241,8 +241,8 @@
   },
   "docs/DATA_PROVENANCE.md|what-the-first-hand-s-own-terms-said|src/index.html:248|0": {
     "anchor": "src/index.html:248",
-    "fp": "99752d48d7623fcc",
-    "head": "<p class=\"rail-hint attribution\">Data provided by Marvel. <span id=\"marvel-copyright\">© MARVEL</span"
+    "fp": "8245ce630a324ccd",
+    "head": "<p class=\"rail-hint attribution\">Marvel metadata via marvel.emreparker.com. <span id=\"marvel-copyrig"
   },
   "docs/PUBLICATION_RUNBOOK.md|before-anything-is-flipped|docs/DATA_PROVENANCE.md:11-13|0": {
     "anchor": "docs/DATA_PROVENANCE.md:11-13",
@@ -304,13 +304,13 @@
     "fp": "e9a1e74dee2c791e",
     "head": "// The publication gate answered a question that only gets asked once, and it was asked on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2070-2073|0": {
-    "anchor": "CHANGELOG.md:2070-2073",
-    "fp": "a1bbc9d008c99c4d",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2082-2084|0": {
+    "anchor": "CHANGELOG.md:2082-2084",
+    "fp": "0df22047747866e2",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2082-2085|0": {
-    "anchor": "CHANGELOG.md:2082-2085",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2094-2097|0": {
+    "anchor": "CHANGELOG.md:2094-2097",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -434,8 +434,8 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11501|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11501",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11520|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11520",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
@@ -761,8 +761,8 @@
   },
   "docs/UX_STUDY.md|which-direction-was-adopted|src/styles.css:1-4|0": {
     "anchor": "src/styles.css:1-4",
-    "fp": "d74d77b0c8c4dd9a",
-    "head": "/* Marvel Reading Tracker: \"Longbox Focus\""
+    "fp": "6e81d4674b5d83ac",
+    "head": "/* Recap Page: \"Longbox Focus\""
   },
   "PRODUCT_BACKLOG.md|1-functional-suitability|package.json:10|0": {
     "anchor": "package.json:10",
@@ -816,7 +816,7 @@
   },
   "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "f0745f658aab26f5",
+    "fp": "c313160fe702d835",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:1046-1077|0": {
@@ -1064,8 +1064,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2946-2955|0": {
-    "anchor": "CHANGELOG.md:2946-2955",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:2958-2967|0": {
+    "anchor": "CHANGELOG.md:2958-2967",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1116,7 +1116,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|package-lock.json:1-22|0": {
     "anchor": "package-lock.json:1-22",
-    "fp": "d836679ed3fd9616",
+    "fp": "8e399ab411904879",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:14-15|0": {
@@ -1139,18 +1139,18 @@
     "fp": "b8ee79f8da29f420",
     "head": "\"@eslint/js\": \"^10.0.1\","
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11475-11477|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11475-11477",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11494-11496|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11494-11496",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11641-11643|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11641-11643",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11660-11662|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11660-11662",
     "fp": "6f8183228e69f5a8",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11660-11664|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11660-11664",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11679-11683|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11679-11683",
     "fp": "74995e9f6a8b1fa8",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
@@ -1266,7 +1266,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/browser-check.mjs:530-586|0": {
     "anchor": "scripts/browser-check.mjs:530-586",
-    "fp": "e2beb8bd7425a111",
+    "fp": "9f8f69da570c8aee",
     "head": "id: 'update-default-newer',"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/build-event-order.mjs:209|0": {
@@ -1284,10 +1284,10 @@
     "fp": "0229604f80988ee1",
     "head": "`# ${event.name}: ${essential ? 'Main Series Reading Checklist' : 'Issue-by-Issue Reading Checklist'"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/build-icons.mjs:49-54|0": {
-    "anchor": "scripts/build-icons.mjs:49-54",
-    "fp": "79b7d7563792dbde",
-    "head": "const GLYPH = ["
+  "PRODUCT_BACKLOG.md|item-details|scripts/build-icons.mjs:35-43|0": {
+    "anchor": "scripts/build-icons.mjs:35-43",
+    "fp": "5698793263f46e6e",
+    "head": "const VIEW = 32;"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1025-1040|0": {
     "anchor": "scripts/check-anchors.mjs:1025-1040",
@@ -1549,13 +1549,13 @@
     "fp": "5017b96a772fea8b",
     "head": "// (`src/styles.css:611` and `src/styles.css:613`), which is 2.30:1 in the dark theme. It is"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:152-175|0": {
-    "anchor": "scripts/check-palette.mjs:152-175",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:149-172|0": {
+    "anchor": "scripts/check-palette.mjs:149-172",
     "fp": "c5320ab663a8259a",
     "head": "export const SURFACES = {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:203-223|0": {
-    "anchor": "scripts/check-palette.mjs:203-223",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:200-220|0": {
+    "anchor": "scripts/check-palette.mjs:200-220",
     "fp": "b6895a31841079f2",
     "head": "export function resolveSurface(name, tokens, seen = new Set(), surfaces = SURFACES) {"
   },
@@ -1801,13 +1801,8 @@
   },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:13|0": {
     "anchor": "src/index.html:13",
-    "fp": "ef1fae9054bc3b83",
-    "head": "<link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 "
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:13|1": {
-    "anchor": "src/index.html:13",
-    "fp": "ef1fae9054bc3b83",
-    "head": "<link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 "
+    "fp": "64870eea790390f0",
+    "head": "<link rel=\"icon\" href=\"./icons/icon.svg\" type=\"image/svg+xml\" />"
   },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:136|0": {
     "anchor": "src/index.html:136",
@@ -1839,11 +1834,6 @@
     "fp": "75391d0a544d10fc",
     "head": "<a class=\"skip-link\" href=\"#main\">Skip to main content</a>"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:248|0": {
-    "anchor": "src/index.html:248",
-    "fp": "99752d48d7623fcc",
-    "head": "<p class=\"rail-hint attribution\">Data provided by Marvel. <span id=\"marvel-copyright\">© MARVEL</span"
-  },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:269|0": {
     "anchor": "src/index.html:269",
     "fp": "c3b2146ff469aea8",
@@ -1858,6 +1848,11 @@
     "anchor": "src/index.html:361",
     "fp": "48f6d7f0661e8699",
     "head": "<details class=\"full\" id=\"full\">"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:38|0": {
+    "anchor": "src/index.html:38",
+    "fp": "c7cdd8884071c09b",
+    "head": "<img class=\"mark\" src=\"./icons/icon.svg\" alt=\"\" aria-hidden=\"true\" />"
   },
   "PRODUCT_BACKLOG.md|item-details|src/index.html:383|0": {
     "anchor": "src/index.html:383",
@@ -2156,8 +2151,8 @@
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:1119|0": {
     "anchor": "src/js/lib/model.js:1119",
-    "fp": "7f1120f88811f660",
-    "head": "app: 'marvel-reading-tracker',"
+    "fp": "944b4703a1e8dca7",
+    "head": "app: 'recap-page',"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/model.js:1120|0": {
     "anchor": "src/js/lib/model.js:1120",
@@ -2326,13 +2321,13 @@
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/updateCheck.js:3-4|0": {
     "anchor": "src/js/lib/updateCheck.js:3-4",
-    "fp": "4281b916cc931beb",
-    "head": "export const LATEST_RELEASE_API_URL = 'https://api.github.com/repos/raymond-nassar/marvel-reading-tr"
+    "fp": "14908896cd03ce43",
+    "head": "export const LATEST_RELEASE_API_URL = 'https://api.github.com/repos/raymond-nassar/recap-page/releas"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/updateCheck.js:4|0": {
     "anchor": "src/js/lib/updateCheck.js:4",
-    "fp": "d9ce3defcd06a741",
-    "head": "export const UPDATE_DOWNLOAD_URL = 'https://github.com/raymond-nassar/marvel-reading-tracker/release"
+    "fp": "907a6336435cb8d1",
+    "head": "export const UPDATE_DOWNLOAD_URL = 'https://github.com/raymond-nassar/recap-page/releases/latest/dow"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/lib/updateCheck.js:55-95|0": {
     "anchor": "src/js/lib/updateCheck.js:55-95",
@@ -3099,11 +3094,6 @@
     "fp": "973645583ac99fd4",
     "head": ":root {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:253|0": {
-    "anchor": "src/styles.css:253",
-    "fp": "28fc0d5fe1881ddc",
-    "head": "width: 28px; height: 28px; border-radius: 8px; background: var(--red);"
-  },
   "PRODUCT_BACKLOG.md|item-details|src/styles.css:283-284|0": {
     "anchor": "src/styles.css:283-284",
     "fp": "ad1792470ae8c477",
@@ -3294,8 +3284,8 @@
     "fp": "328e3f6ff424474e",
     "head": "assert.ok(Date.now() - started < 1000, 'parsing must not blow up on unterminated link text');"
   },
-  "PRODUCT_BACKLOG.md|item-details|test/shipped-copy.test.js:47-63|0": {
-    "anchor": "test/shipped-copy.test.js:47-63",
+  "PRODUCT_BACKLOG.md|item-details|test/shipped-copy.test.js:62-78|0": {
+    "anchor": "test/shipped-copy.test.js:62-78",
     "fp": "39a38dfa1bd1a54f",
     "head": "test('no en or em dash reaches the screen through markup or styling', () => {"
   },
@@ -3611,7 +3601,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "f0745f658aab26f5",
+    "fp": "c313160fe702d835",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:34-39|0": {
@@ -3671,7 +3661,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "f0745f658aab26f5",
+    "fp": "c313160fe702d835",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:12|0": {
@@ -3819,8 +3809,8 @@
     "fp": "f4afe1e1bd4826b8",
     "head": "export function checkRepeats(text) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-063|test/shipped-copy.test.js:47-63|0": {
-    "anchor": "test/shipped-copy.test.js:47-63",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-063|test/shipped-copy.test.js:62-78|0": {
+    "anchor": "test/shipped-copy.test.js:62-78",
     "fp": "39a38dfa1bd1a54f",
     "head": "test('no en or em dash reaches the screen through markup or styling', () => {"
   },
@@ -4174,8 +4164,8 @@
     "fp": "d209628920e07a5b",
     "head": "const NODE_VERSION = 'v24.19.0';"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-145|test/packaging.test.js:105-114|0": {
-    "anchor": "test/packaging.test.js:105-114",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-145|test/packaging.test.js:108-117|0": {
+    "anchor": "test/packaging.test.js:108-117",
     "fp": "b05058bc5167a4b8",
     "head": "test('the launcher prefers the runtime beside it over whatever is on PATH', () => {"
   },
@@ -4241,18 +4231,18 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-161|src/index.html:13|0": {
     "anchor": "src/index.html:13",
-    "fp": "ef1fae9054bc3b83",
-    "head": "<link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 "
+    "fp": "64870eea790390f0",
+    "head": "<link rel=\"icon\" href=\"./icons/icon.svg\" type=\"image/svg+xml\" />"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-163|src/index.html:248|0": {
     "anchor": "src/index.html:248",
-    "fp": "99752d48d7623fcc",
-    "head": "<p class=\"rail-hint attribution\">Data provided by Marvel. <span id=\"marvel-copyright\">© MARVEL</span"
+    "fp": "8245ce630a324ccd",
+    "head": "<p class=\"rail-hint attribution\">Marvel metadata via marvel.emreparker.com. <span id=\"marvel-copyrig"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-164|src/js/lib/updateCheck.js:4|0": {
     "anchor": "src/js/lib/updateCheck.js:4",
-    "fp": "d9ce3defcd06a741",
-    "head": "export const UPDATE_DOWNLOAD_URL = 'https://github.com/raymond-nassar/marvel-reading-tracker/release"
+    "fp": "907a6336435cb8d1",
+    "head": "export const UPDATE_DOWNLOAD_URL = 'https://github.com/raymond-nassar/recap-page/releases/latest/dow"
   },
   "scripts/browser-check.mjs|preamble|src/styles.css:666|0": {
     "anchor": "src/styles.css:666",
@@ -4313,11 +4303,6 @@
     "anchor": "src/styles.css:1016",
     "fp": "1eef54d530f1e5d5",
     "head": ".blocked .btn-g { border-color: var(--muted); }"
-  },
-  "scripts/check-palette.mjs|preamble|src/styles.css:253|0": {
-    "anchor": "src/styles.css:253",
-    "fp": "28fc0d5fe1881ddc",
-    "head": "width: 28px; height: 28px; border-radius: 8px; background: var(--red);"
   },
   "scripts/check-palette.mjs|preamble|src/styles.css:286|0": {
     "anchor": "src/styles.css:286",

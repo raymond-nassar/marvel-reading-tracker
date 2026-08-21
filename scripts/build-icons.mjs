@@ -21,37 +21,26 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const ICON_DIR = join(ROOT, 'src', 'icons');
 
-// The favicon's colours, so the installed icon and the tab icon are the same mark. The red is
-// the literal in the `rel="icon"` data URL in src/index.html rather than a stylesheet token:
-// the icon is not part of the themed surface and never sits behind text, so no palette pair
-// covers it and taking `--red` would silently redraw it the next time that token moves.
-const RED = [0xe2, 0x36, 0x36];
-const WHITE = [0xff, 0xff, 0xff];
+// Fixed copies of the established dark palette keep the icon stable outside the themed document.
+// The accent uses --red rather than the retired --red-line value the old mark retained.
+const CARD = [0x17, 0x1a, 0x20];
+const PAPER = [0xee, 0xf1, 0xf6];
+const FOLD = [0xc6, 0xcd, 0xda];
+const INK = [0x66, 0x6c, 0x74];
+const RED = [0xd4, 0x33, 0x33];
 
 // Everything below is in a 32 by 32 space, the favicon's viewBox, and scaled to the size being
 // drawn. Working in the small space is what keeps the two sizes the same picture rather than
 // two pictures that happen to look alike.
 const VIEW = 32;
-const CORNER = 7;
-
-// The M, as four quadrilaterals: two uprights and two diagonals meeting at a vee. The favicon
-// draws a system-ui glyph, which cannot be reproduced here without embedding a font, so this is
-// a geometric M tuned to sit in the same place at the same weight. Coordinates are corners in
-// draw order, so a fill test can walk edges pairwise.
-const STROKE = 3.7;
-const LEFT = 8.5;
-const RIGHT = 23.5;
-const TOP = 9.5;
-const BOTTOM = 23;
-const MID_X = (LEFT + RIGHT) / 2;
-const VEE_Y = TOP + (BOTTOM - TOP) * 0.62;
-
-const GLYPH = [
-  [[LEFT, TOP], [LEFT + STROKE, TOP], [LEFT + STROKE, BOTTOM], [LEFT, BOTTOM]],
-  [[RIGHT - STROKE, TOP], [RIGHT, TOP], [RIGHT, BOTTOM], [RIGHT - STROKE, BOTTOM]],
-  [[LEFT, TOP], [LEFT + STROKE, TOP], [MID_X + STROKE / 2, VEE_Y], [MID_X - STROKE / 2, VEE_Y]],
-  [[RIGHT - STROKE, TOP], [RIGHT, TOP], [MID_X + STROKE / 2, VEE_Y], [MID_X - STROKE / 2, VEE_Y]],
+const CORNER = 6;
+const PAGE = [[7, 5], [20, 5], [25, 10], [25, 27], [7, 27]];
+const PAGE_FOLD = [[20, 5], [20, 10], [25, 10]];
+const RECAP_LINES = [
+  [10, 13, 22, 15],
+  [10, 18, 22, 20],
 ];
+const PROGRESS = [10, 23, 20, 25];
 
 function inPolygon(px, py, poly) {
   let inside = false;
@@ -63,9 +52,6 @@ function inPolygon(px, py, poly) {
   return inside;
 }
 
-// A rounded square, tested by distance from the nearest corner centre rather than by drawing
-// arcs. Outside it the pixel is transparent, which is what lets the platform put the icon on
-// whatever background it likes.
 function inRoundedSquare(x, y) {
   if (x < 0 || y < 0 || x > VIEW || y > VIEW) return false;
   const cx = Math.min(Math.max(x, CORNER), VIEW - CORNER);
@@ -75,41 +61,63 @@ function inRoundedSquare(x, y) {
   return dx * dx + dy * dy <= CORNER * CORNER;
 }
 
-// Four by four supersampling. The mark is a hard-edged shape at 192 pixels and an unsampled
-// edge on a diagonal reads as a staircase at that size, which is the size the taskbar shows.
 const SAMPLES = 4;
 
-// Straight RGBA rather than premultiplied, because that is what PNG stores. The glyph is only
-// drawn where the tile is solid, so an edge pixel carries the tile's colour at partial alpha
-// and never a fringe of white against nothing.
+function inRect(x, y, [left, top, right, bottom]) {
+  return x >= left && x <= right && y >= top && y <= bottom;
+}
+
+function colourAt(x, y) {
+  if (!inRoundedSquare(x, y)) return null;
+  if (inRect(x, y, PROGRESS)) return RED;
+  if (RECAP_LINES.some((line) => inRect(x, y, line))) return INK;
+  if (inPolygon(x, y, PAGE_FOLD)) return FOLD;
+  if (inPolygon(x, y, PAGE)) return PAPER;
+  return CARD;
+}
+
 export function drawIcon(size) {
   const scale = VIEW / size;
   const pixels = Buffer.alloc(size * size * 4);
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
-      let tile = 0;
-      let ink = 0;
+      let painted = 0;
+      const channels = [0, 0, 0];
       for (let sy = 0; sy < SAMPLES; sy++) {
         for (let sx = 0; sx < SAMPLES; sx++) {
           const px = (x + (sx + 0.5) / SAMPLES) * scale;
           const py = (y + (sy + 0.5) / SAMPLES) * scale;
-          if (!inRoundedSquare(px, py)) continue;
-          tile++;
-          if (GLYPH.some((poly) => inPolygon(px, py, poly))) ink++;
+          const colour = colourAt(px, py);
+          if (!colour) continue;
+          painted++;
+          for (let c = 0; c < 3; c++) channels[c] += colour[c];
         }
       }
       const total = SAMPLES * SAMPLES;
       const at = (y * size + x) * 4;
-      if (tile === 0) continue;
-      const inkShare = ink / tile;
-      for (let c = 0; c < 3; c++) {
-        pixels[at + c] = Math.round(RED[c] * (1 - inkShare) + WHITE[c] * inkShare);
-      }
-      pixels[at + 3] = Math.round((tile / total) * 255);
+      if (painted === 0) continue;
+      for (let c = 0; c < 3; c++) pixels[at + c] = Math.round(channels[c] / painted);
+      pixels[at + 3] = Math.round((painted / total) * 255);
     }
   }
   return pixels;
 }
+
+const hex = (colour) => `#${colour.map((channel) => channel.toString(16).padStart(2, '0')).join('')}`;
+const points = (polygon) => polygon.map((point) => point.join(',')).join(' ');
+
+export const SVG_CONTENT = [
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">',
+  `  <rect width="32" height="32" rx="${CORNER}" fill="${hex(CARD)}"/>`,
+  `  <polygon points="${points(PAGE)}" fill="${hex(PAPER)}"/>`,
+  `  <polygon points="${points(PAGE_FOLD)}" fill="${hex(FOLD)}"/>`,
+  ...RECAP_LINES.map(([x1, y1, x2, y2]) => (
+    `  <rect x="${x1}" y="${y1}" width="${x2 - x1}" height="${y2 - y1}" fill="${hex(INK)}"/>`
+  )),
+  `  <rect x="${PROGRESS[0]}" y="${PROGRESS[1]}" width="${PROGRESS[2] - PROGRESS[0]}" height="${PROGRESS[3] - PROGRESS[1]}" fill="${hex(RED)}"/>`,
+  '</svg>',
+  '',
+].join('\n');
 
 const CRC_TABLE = (() => {
   const table = new Int32Array(256);
@@ -163,9 +171,12 @@ export function encodePng(size, pixels) {
 // nobody looks at and one more thing for the manifest to disagree with.
 export const SIZES = [192, 512];
 export const iconPath = (size) => join(ICON_DIR, `icon-${size}.png`);
+export const svgPath = join(ICON_DIR, 'icon.svg');
 
 function build() {
   mkdirSync(ICON_DIR, { recursive: true });
+  writeFileSync(svgPath, SVG_CONTENT);
+  console.log(`wrote ${svgPath}`);
   for (const size of SIZES) {
     const file = iconPath(size);
     writeFileSync(file, encodePng(size, drawIcon(size)));

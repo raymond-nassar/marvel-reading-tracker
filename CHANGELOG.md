@@ -1,6 +1,6 @@
 # Changelog
 
-Every notable change to Marvel Reading Tracker, newest first.
+Every notable change to Recap Page, newest first.
 
 The version number is explained in [`src/js/lib/version.js`](src/js/lib/version.js) and is
 summarised here: **MAJOR** means an older build cannot read data saved by this one, **MINOR**
@@ -13,6 +13,18 @@ Releases are tagged `v<version>`. The version shown under **About this app** is 
 quote in a bug report.
 
 ## Unreleased
+
+### Rebranded the app as Recap Page
+
+In plain English: the app now has its own name and folded-page icon instead of a Marvel-like red
+tile. The home screen also says where its Marvel metadata actually came from.
+
+Installed copies still look for the same Windows download, saved reading progress stays under the
+same browser keys, and backups made under the old name still import. The repository moved with the
+app, while old repository links continue through the host's redirects.
+
+Microsoft Store reservation and listing work remains separate. Nothing is being submitted to the
+Store as part of this change.
 
 ### Recorded three naming and branding risks ahead of any app store listing
 
@@ -3134,4 +3146,4 @@ Data format version 2.
 - The comment describing issue availability said there were four states when the code has
   five.
 
-[1.0.0]: https://github.com/raymond-nassar/marvel-reading-tracker/releases/tag/v1.0.0
+[1.0.0]: https://github.com/raymond-nassar/recap-page/releases/tag/v1.0.0

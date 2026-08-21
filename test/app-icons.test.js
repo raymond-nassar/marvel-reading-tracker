@@ -7,7 +7,7 @@ import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { HOST, createStaticServer } from '../server.mjs';
-import { SIZES, drawIcon, iconPath } from '../scripts/build-icons.mjs';
+import { SIZES, SVG_CONTENT, drawIcon, iconPath, svgPath } from '../scripts/build-icons.mjs';
 
 // The manifest is what makes the browser offer to install this, and every claim in it is about a
 // file or an origin rather than about taste. A manifest that names an icon which is not there, or
@@ -94,11 +94,10 @@ test('the page asks the browser to install it', () => {
 });
 
 test('the manifest carries what Chromium requires before it offers an install', () => {
-  assert.equal(typeof manifest.name, 'string');
-  assert.ok(manifest.name.length > 0, 'a manifest with no name is not installable');
+  assert.equal(manifest.name, 'Recap Page');
   // short_name is what a Start menu or Dock label shows, where the full name does not fit. It is
   // required to be shorter than the name, or it is not doing the one job it has.
-  assert.ok(manifest.short_name.length > 0, 'a manifest with no short_name has nothing to label the icon with');
+  assert.equal(manifest.short_name, 'Recap');
   assert.ok(manifest.short_name.length < manifest.name.length, 'short_name is no shorter than name');
   assert.equal(manifest.display, 'standalone');
 
@@ -114,6 +113,7 @@ test('the manifest carries what Chromium requires before it offers an install', 
 });
 
 test('nothing in the manifest pins an origin, so an installed window follows the port it was installed from', () => {
+  assert.deepEqual([manifest.id, manifest.start_url, manifest.scope], ['/', '/', '/']);
   const paths = [manifest.id, manifest.start_url, manifest.scope, ...manifest.icons.map((i) => i.src)];
   for (const path of paths) {
     assert.ok(path.startsWith('/'), `${path} is not origin-relative`);
@@ -148,27 +148,40 @@ test('the committed icons are what the generator draws', () => {
   }
 });
 
-test('the mark is drawn rather than left blank, and its corners are transparent', () => {
+test('the generated SVG is the favicon and rail mark, from the same source as the PNGs', () => {
+  const html = readFileSync(join(SRC, 'index.html'), 'utf8');
+  assert.equal(readFileSync(svgPath, 'utf8').replace(/\r\n/g, '\n'), SVG_CONTENT);
+  assert.match(html, /<link rel="icon" href="\.\/icons\/icon\.svg" type="image\/svg\+xml"/);
+  assert.match(html, /<img class="mark" src="\.\/icons\/icon\.svg" alt="" aria-hidden="true"/);
+  assert.equal([...html.matchAll(/\.\/icons\/icon\.svg/g)].length, 2);
+  assert.match(SVG_CONTENT, /<polygon points="7,5 20,5 25,10 25,27 7,27"/);
+  assert.match(SVG_CONTENT, /fill="#d43333"/);
+});
+
+test('the folded page, recap lines, and progress line are drawn inside transparent corners', () => {
   const size = 192;
   const pixels = drawIcon(size);
   const at = (x, y) => pixels.subarray((y * size + x) * 4, (y * size + x) * 4 + 4);
 
   assert.deepEqual([...at(0, 0)], [0, 0, 0, 0], 'the top left corner is not transparent');
-  assert.equal(at(size / 2, size / 2)[3], 255, 'the middle of the tile is not opaque');
+  assert.equal(at(size / 2, size / 2)[3], 255, 'the middle of the mark is not opaque');
 
-  // The white of the glyph and the red of the tile both have to be present, or the icon is a
-  // plain square and nothing says so. A count rather than a sampled point, because a sampled
-  // point moves the moment the geometry is tuned.
-  let white = 0;
-  let red = 0;
+  const wanted = new Map([
+    ['23,26,32', 0],
+    ['238,241,246', 0],
+    ['198,205,218', 0],
+    ['102,108,116', 0],
+    ['212,51,51', 0],
+  ]);
   for (let i = 0; i < size * size; i++) {
     const [r, g, b, a] = pixels.subarray(i * 4, i * 4 + 4);
     if (a !== 255) continue;
-    if (r === 255 && g === 255 && b === 255) white++;
-    if (r === 0xe2 && g === 0x36 && b === 0x36) red++;
+    const key = `${r},${g},${b}`;
+    if (wanted.has(key)) wanted.set(key, wanted.get(key) + 1);
   }
-  assert.ok(white > 1000, `the glyph covers only ${white} pixels`);
-  assert.ok(red > white, `the tile shows through on only ${red} pixels`);
+  for (const [colour, count] of wanted) {
+    assert.ok(count > 100, `${colour} covers only ${count} pixels`);
+  }
 });
 
 test('the server hands the manifest and the icons back as themselves', async () => {

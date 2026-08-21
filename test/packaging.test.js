@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { NODE_VERSION, NODE_ARCH, appFiles } from '../scripts/pack-windows.mjs';
+import { NODE_VERSION, NODE_ARCH, PAYLOAD_NAME, appFiles, readMe } from '../scripts/pack-windows.mjs';
 
 // The packaging contract, checked here because the person it is for cannot diagnose it.
 //
@@ -84,10 +84,13 @@ test('the whole runtime licence travels with the runtime', () => {
 // project's working papers, and it carries our licence beside the runtime's.
 test('the archive holds what the app runs and the licences, derived from git rather than a list', () => {
   const files = appFiles();
+  assert.equal(PAYLOAD_NAME, 'recap-page');
+  assert.equal(readMe.split(/\r?\n/)[0], 'Recap Page');
   assert.ok(files.includes('server.mjs'), 'the server is missing');
   assert.ok(files.includes(WINDOWS), 'the launcher is missing');
   assert.ok(files.includes('LICENSE'), 'this project\'s own licence is missing');
   assert.ok(files.filter((path) => path.startsWith('src/')).length > 50, 'the app itself is missing');
+  assert.ok(files.includes('src/icons/icon.svg'), 'the shared SVG icon is missing');
 
   for (const unwanted of ['test/', 'scripts/', 'docs/', '.github/', 'design/']) {
     assert.deepEqual(

@@ -1,7 +1,7 @@
 # Jobs-to-be-Done: Landing Page
 
 ## Job Statement
-When I open Marvel Reading Tracker and my library is empty, I want to see the
+When I open Recap Page and my library is empty, I want to see the
 curated reading orders that ship with the app, so I can start reading in one
 click instead of hunting through a navigation menu.
 

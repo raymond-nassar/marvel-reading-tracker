@@ -549,7 +549,7 @@ const MUTATIONS = [
     script: () => {
       document.addEventListener('DOMContentLoaded', () => {
         const rewrite = () => {
-          const target = 'https://github.com/raymond-nassar/marvel-reading-tracker/releases/latest';
+          const target = 'https://github.com/raymond-nassar/recap-page/releases/latest';
           for (const link of document.querySelectorAll('#app-report .notice a')) {
             if (/Download version/.test(link.textContent ?? '')) {
               if (link.href !== target) link.href = target;

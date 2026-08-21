@@ -577,12 +577,18 @@ test('validateBackup rejects junk without touching anything', () => {
 test('a well-formed backup round-trips', () => {
   const { state, id } = withList([1, 2, 3]);
   const s = markRead(setOverride(state, 2, 'unavailable'), 1, true);
-  const res = validateBackup(JSON.parse(JSON.stringify(exportBackup(s))));
+  const exported = JSON.parse(JSON.stringify(exportBackup(s)));
+  const res = validateBackup(exported);
 
+  assert.equal(exported.app, 'recap-page');
   assert.ok(res.ok, res.errors.join(' '));
   assert.deepEqual(res.state.lists[id].itemIds, [1, 2, 3]);
   assert.ok(isRead(res.state, 1));
   assert.equal(res.state.overrides[2], 'unavailable');
+
+  const oldLabel = validateBackup({ ...exported, app: 'marvel-reading-tracker' });
+  assert.ok(oldLabel.ok, oldLabel.errors.join(' '));
+  assert.deepEqual(oldLabel.state.lists[id].itemIds, [1, 2, 3]);
 });
 
 test('coercion drops corrupt entries instead of failing the whole restore', () => {

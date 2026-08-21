@@ -44,6 +44,21 @@ function stripComments(text, file) {
 
 const DASH = /[\u2013\u2014]/;
 
+test('current shipped identity and short attribution use Recap Page', () => {
+  const html = readFileSync(join(SHIPPED, 'index.html'), 'utf8');
+  const manifest = JSON.parse(readFileSync(join(SHIPPED, 'manifest.webmanifest'), 'utf8'));
+  const main = readFileSync(join(SHIPPED, 'js', 'main.js'), 'utf8');
+
+  assert.match(html, /<title>Recap Page<\/title>/);
+  assert.match(html, /<b class="lbl">Recap&nbsp;Page<\/b>/);
+  assert.match(html, /<h1 id="order-name">Recap Page<\/h1>/);
+  assert.equal(manifest.name, 'Recap Page');
+  assert.equal(manifest.short_name, 'Recap');
+  assert.equal([...html.matchAll(/Marvel metadata via marvel\.emreparker\.com\./g)].length, 2);
+  assert.match(main, /download\('recap-page-backup\.json'/);
+  assert.match(main, /textContent = 'Recap Page'/);
+});
+
 test('no en or em dash reaches the screen through markup or styling', () => {
   const files = walk(SHIPPED);
   // A walk that finds nothing would pass this test while checking nothing at all.

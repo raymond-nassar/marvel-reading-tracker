@@ -108,19 +108,16 @@ export const PAIRS = [
   // Each was measured in Edge by hit testing what is actually behind the element rather than by
   // assuming, and all three clear the floor, so this is coverage rather than a repair.
   //
-  // The rail entry names two painters and not one. The first draft named only the skip link, which
-  // is the least of them because it is invisible until focused, and would have gated a permanent
-  // state indicator under the name of a transient link. `.brand .mark` at `src/styles.css:253` is
-  // the red square at the top of the rail, and the hit test settled where the skip link lands:
-  // absolutely positioned at the top left with `z-index: 100`, it comes down on the rail rather
-  // than on the page. Those two share one surface, at 4.00 and 4.41.
+  // The skip link is absolutely positioned at the top left with `z-index: 100`, so it lands on the
+  // rail rather than on the page. The folded-page brand mark is now a generated image and has its
+  // own fixed palette, leaving this pair to describe the skip link alone.
   //
-  // The accent bar is the third painter and is deliberately not on that entry. `.ri[aria-current]`
+  // The accent bar is deliberately not on that entry. `.ri[aria-current]`
   // sets its own background at `src/styles.css:286`, a tint over the rail, and the bar at
   // `src/styles.css:290` is its `::before`, so it can only ever land on the tint. It reads 3.35 and
   // 3.68. Putting it on `--rail` with the other two would have overstated it by 0.65, which is the
   // mistake hit testing was for.
-  ['--red', '--rail', LARGE, 'the brand mark, and the skip link when focused, both on the rail'],
+  ['--red', '--rail', LARGE, 'the skip link when focused on the rail'],
   ['--red', 'the selected rail item', LARGE, 'the accent bar marking the current destination'],
   ['--red', 'the unreadable-data banner', LARGE, 'the fill of the download button in the blocked banner'],
 

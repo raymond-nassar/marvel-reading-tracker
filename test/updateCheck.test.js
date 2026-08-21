@@ -172,4 +172,7 @@ test('the in-app download link is the same route the README publishes', () => {
   assert.ok(published, 'the README no longer publishes a download link for the Windows zip');
   assert.equal(UPDATE_DOWNLOAD_URL, published[0]);
   assert.match(UPDATE_DOWNLOAD_URL, /\/releases\/latest\/download\//);
+  assert.equal(new URL(LATEST_RELEASE_API_URL).pathname, '/repos/raymond-nassar/recap-page/releases/latest');
+  assert.equal(new URL(UPDATE_RELEASE_NOTES_URL).pathname, '/raymond-nassar/recap-page/releases/latest');
+  assert.equal(new URL(UPDATE_DOWNLOAD_URL).pathname.split('/').at(-1), 'marvel-reading-tracker-windows.zip');
 });

@@ -8,9 +8,9 @@
          explicit override is deferred, so a value of "dark" here would give a reader who prefers
          light a dark scrollbar against a light page until it ran. -->
     <meta name="color-scheme" content="dark light" />
-    <title>Marvel Reading Tracker</title>
+    <title>Recap Page</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e23636'/%3E%3Ctext x='16' y='23' font-family='system-ui' font-size='20' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
     <!-- Lets the browser install this as an app, so it gets a Start menu or Dock entry and its
          own window. Every path inside the manifest is origin-relative, which is what keeps an
          installed window on the one origin the reading progress is stored under. -->
@@ -35,8 +35,8 @@
         </button>
 
         <button type="button" class="brand" data-view="home">
-          <span class="mark" aria-hidden="true">M</span>
-          <b class="lbl">Reading&nbsp;Tracker</b>
+          <img class="mark" src="./icons/icon.svg" alt="" aria-hidden="true" />
+          <b class="lbl">Recap&nbsp;Page</b>
         </button>
 
         <nav id="sidebar-nav" aria-label="Main">
@@ -245,7 +245,7 @@
                    A reader who has scrolled past twelve cards is more than a viewport below the
                    header, so the header copy is not an escape hatch for them; it is off screen. -->
               <button type="button" class="btn btn-g home-more" id="home-more" hidden></button>
-              <p class="rail-hint attribution">Data provided by Marvel. <span id="marvel-copyright">© MARVEL</span></p>
+              <p class="rail-hint attribution">Marvel metadata via marvel.emreparker.com. <span id="marvel-copyright">© MARVEL</span></p>
             </section>
 
             <!-- The power-user paths, kept quiet so they never compete with the catalog. -->
@@ -261,7 +261,7 @@
           <section id="view-read" class="view" hidden aria-labelledby="order-name">
             <div class="head">
               <div class="head-left">
-                <h1 id="order-name">Marvel Reading Tracker</h1>
+                <h1 id="order-name">Recap Page</h1>
                 <div class="sub" id="order-sub">Curated reading orders, tracked locally.</div>
               </div>
               <div class="headright">
@@ -762,7 +762,7 @@
       <div class="preview-foot">
         <div id="preview-add"></div>
         <span class="grow"></span>
-        <span class="rail-hint">Data provided by Marvel.</span>
+        <span class="rail-hint">Marvel metadata via marvel.emreparker.com.</span>
       </div>
     </dialog>
 

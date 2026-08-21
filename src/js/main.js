@@ -156,7 +156,7 @@ function wireBlockedBanner() {
     const raw = store.salvagedRaw();
     if (!raw) return notify('#save-report', 'There was nothing left to download.', 'warn');
     const when = new Date().toISOString().slice(0, 10);
-    download(`marvel-reading-tracker-unreadable-${when}.json`, raw, 'application/json');
+    download(`recap-page-unreadable-${when}.json`, raw, 'application/json');
     downloadedSalvage = true;
     announce('Downloaded a copy of the unreadable data.');
   });
@@ -2291,7 +2291,7 @@ function renderReading() {
   if (!list) {
     // Reaching the reading view with no list means the last one was just deleted. The
     // landing page is the honest place to be, so hand over rather than sit on an empty frame.
-    $('#order-name').textContent = 'Marvel Reading Tracker';
+    $('#order-name').textContent = 'Recap Page';
     $('#order-sub').textContent = 'Curated reading orders, tracked locally, linked into the Unlimited reader.';
     if (view === 'read') showView('home');
     return;
@@ -4219,7 +4219,7 @@ function wireData() {
   $('#btn-check-updates').addEventListener('click', runExplicitUpdateCheck);
 
   $('#btn-export-json').addEventListener('click', () => {
-    download('marvel-reading-tracker-backup.json', JSON.stringify(exportBackup(store.state), null, 2), 'application/json');
+    download('recap-page-backup.json', JSON.stringify(exportBackup(store.state), null, 2), 'application/json');
     announce('Backup downloaded.');
   });
 
@@ -4485,7 +4485,7 @@ function wireSalvage() {
       // arrive as one name and a browser-appended (1), leaving the reader unable to tell which is
       // which after the screen that could have told them is closed.
       const stamp = copy.at === null ? 'undated' : new Date(copy.at).toISOString().slice(0, 19).replace(/:/g, '-');
-      download(`marvel-reading-tracker-unreadable-${stamp}.json`, raw, 'application/json');
+      download(`recap-page-unreadable-${stamp}.json`, raw, 'application/json');
       return notify('#salvage-report', `Downloaded the copy ${named}. It is still being kept here as well.`, 'ok');
     }
 

@@ -1,4 +1,4 @@
-# Marvel Reading Tracker Expansion Backlog
+# Recap Page Expansion Backlog
 
 This backlog describes the next product improvements in plain English. It is intended
 for review before implementation. The goal is to make the tracker useful for many
@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-A hundred and twenty-one items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred and twenty-four items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -19,7 +19,7 @@ BL-088, BL-089, BL-090, BL-093, BL-094, BL-095, BL-096, BL-097, BL-098, BL-099, 
 BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, BL-113, BL-114,
 BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
 BL-129, BL-130, BL-131, BL-132, BL-133, BL-134, BL-139, BL-140, BL-141, BL-142, BL-143, BL-144,
-BL-145, BL-146, BL-147, BL-149, BL-150, BL-152, BL-153, BL-154, BL-157, BL-158 and BL-160.
+BL-145, BL-146, BL-147, BL-149, BL-150, BL-152, BL-153, BL-154, BL-157, BL-158, BL-160, BL-161, BL-163 and BL-164.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -234,10 +234,10 @@ existed. Each shipped item's detail block below says what changed and how it was
 | ID | Title | Type | Epic | Relationship | V | TC | RE | Size | WSJF | P | Basis | Status | Evidence |
 |----|-------|------|------|--------------|---|----|----|------|------|---|-------|--------|----------|
 | BL-149 | Read the Marvel Unlimited book id off an address the reader pastes | Story | EP-03 | Leaves alone | 8 | 8 | 3 | 1 | 19.0 | none | Measured | Shipped | src/js/reader.js:50-55 |
-| BL-161 | Redraw the app icon so it stops echoing Marvel's trade dress | Debt | EP-12 | Follows BL-100 | 5 | 5 | 8 | 1 | 18.0 | none | Measured | Ready | src/index.html:13 |
-| BL-164 | Carry a rename without breaking the download link installed copies use | Enabler | EP-12 | Follows BL-162 | 5 | 5 | 8 | 1 | 18.0 | none | Measured | Ready | src/js/lib/updateCheck.js:4 |
+| BL-161 | Redraw the app icon so it stops echoing Marvel's trade dress | Debt | EP-12 | Follows BL-100 | 5 | 5 | 8 | 1 | 18.0 | none | Measured | Shipped | src/index.html:13 |
+| BL-164 | Carry a rename without breaking the download link installed copies use | Enabler | EP-12 | Follows BL-162 | 5 | 5 | 8 | 1 | 18.0 | none | Measured | Shipped | src/js/lib/updateCheck.js:4 |
 | BL-128 | Correct the provenance record's description count and record its placeholder shape | Debt | EP-12 | Extends BL-099 | 5 | 5 | 3 | 1 | 13.0 | none | Measured | Shipped | docs/DATA_PROVENANCE.md:88-97 |
-| BL-163 | Say where the metadata came from, instead of borrowing Marvel's API attribution | Debt | EP-12 | Extends BL-099 | 3 | 3 | 5 | 1 | 11.0 | none | Measured | Ready | src/index.html:248 |
+| BL-163 | Say where the metadata came from, instead of borrowing Marvel's API attribution | Debt | EP-12 | Extends BL-099 | 3 | 3 | 5 | 1 | 11.0 | none | Measured | Shipped | src/index.html:248 |
 | BL-140 | Give the tracker a file a non-engineer can double-click to start it | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 1 | 10.0 | none | Observed | Shipped | absent: any way to start the app that is not a terminal command, read of the README's step 2 and a listing of the repository root |
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:588-597 |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
@@ -313,14 +313,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Shipped | server.mjs:89-101 |
 | BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/main.js:722-726 |
 | BL-136 | Decide what happens to the prose in copies kept for recovery | Debt | EP-06 | Follows BL-134 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/storage.js:547 |
-| BL-145 | Ship the tracker to Windows as one archive that needs nothing installed | Story | EP-10 | Extends BL-140 | 5 | 2 | 3 | 3 | 3.33 | none | Measured | Shipped | `scripts/pack-windows.mjs:26-27`, `test/packaging.test.js:105-114` |
+| BL-145 | Ship the tracker to Windows as one archive that needs nothing installed | Story | EP-10 | Extends BL-140 | 5 | 2 | 3 | 3 | 3.33 | none | Measured | Shipped | `scripts/pack-windows.mjs:26-27`, `test/packaging.test.js:108-117` |
 | BL-146 | Put a way out of the capped landing grid where the reader runs out of it | Defect | EP-10 | Follows BL-145 | 3 | 1 | 2 | 2 | 3.0 | none | Measured | Shipped | `src/index.html:247`, `src/js/main.js:1445-1452` |
 | BL-147 | Stop the startup failure messages naming a tool the download does not carry | Defect | EP-10 | Follows BL-145 | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | `server.mjs:223-235`, `test/startup-messages.test.js:23-27` |
 | BL-150 | Fill in what the metadata snapshot cannot, from the one catalogue a browser can reach | Feature | EP-03 | Follows BL-149 | 5 | 5 | 5 | 5 | 3.0 | none | Measured | Shipped | `src/js/lib/wikitext.js:38-42`, `src/js/main.js:3526-3538`, `absent: any record newer than 2025-10-29 upstream, measured by asking the metadata service for 2026 and being told the total is zero` |
 | BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | `scripts/browser-check.mjs:1-7`, `package.json:25-26` |
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | src/js/lib/model.js:215 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:52-67 |
-| BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:47-63 |
+| BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:62-78 |
 | BL-062 | Delete the paragraph that BL-054's block states twice over | Debt | EP-12 | Leaves alone | 1 | 1 | 1 | 1 | 3.0 | none | Measured | Shipped | scripts/check-counts.mjs:501-535 |
 | BL-014 | Count series progress for the list being read | Story | EP-04 | Leaves alone | 5 | 2 | 2 | 3 | 3.0 | P1 | Observed | Shipped | src/js/main.js:4038-4072 |
 | BL-070 | Print each citation's claim beside its line at bless time | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Shipped | scripts/check-anchors.mjs:710 |
@@ -975,8 +975,8 @@ system colour keywords only, so they are palette-independent by construction, an
 confirms forced-colors still wins over both palettes.
 
 One surface cannot follow the theme and is left alone deliberately. The favicon at
-`src/index.html:13` is a data URI with its colours baked in, and a document's icon is chosen before
-any stylesheet applies, so no token can reach it.
+`src/index.html:13` loads an SVG with its colours baked in, and a document's icon is chosen before
+any stylesheet applies, so no theme token can reach it.
 
 Verified: 403 tests, 19 new, and 10 of 10 mutations caught. 16 of 16 browser checks in Edge, with
 the system preference emulated through CDP, and 4 of 4 browser mutations caught after the fourth
@@ -3096,7 +3096,7 @@ shape of defect this repository has been caught by twice: BL-058 found a dash sc
 fail, and BL-056 was filed because the anchors gate reports a sentence as sound however wrong the
 numbers inside it are.
 
-**The mechanism is a test, at `test/shipped-copy.test.js:47-63`, not a second ESLint rule.** ESLint
+**The mechanism is a test, at `test/shipped-copy.test.js:62-78`, not a second ESLint rule.** ESLint
 cannot read HTML or CSS without a parser plugin for each, which is two new tools for 1,626 lines in a
 repository that carried three devDependencies in total. A test needs neither: `npm test` already runs
 in CI on Node 20 and 24, so nothing new had to be wired up, and reading a shipped file from a test
@@ -4629,10 +4629,10 @@ boundary is one nobody will notice moving. Nothing on screen changes. Three boun
 unmeasured are now measured on every run, and the pair count goes from 72 to 78.
 
 **Red on the rail, three painters and not one.** The first draft of this block named only the skip
-link at `src/index.html:20`, which is the least of them: it is invisible until focused. The other
-two are on screen in every view. `.brand .mark` at `src/styles.css:253` is the 28px red square at the
-top of the rail, and `.ri[aria-current]::before` at `src/styles.css:290` is the 3px bar marking the
-current destination, which the comment at `src/styles.css:283-284` names as part of the selected
+link at `src/index.html:20`, which is the least of them: it is invisible until focused. Before
+BL-161, the brand mark was the other permanent red painter; it now loads the folded-page SVG at
+`src/index.html:38`. `.ri[aria-current]::before` at `src/styles.css:290` remains the 3px bar marking
+the current destination, which the comment at `src/styles.css:283-284` names as part of the selected
 state. Writing the reason string as "the skip link" would have gated a state indicator under the
 name of a transient link. That is the "named one painter, missed the others" pattern this whole item
 exists to close, and the draft reproduced it inside the item about it.
@@ -4651,8 +4651,8 @@ background is `color-mix(in srgb, var(--warn) 12%, var(--panel))` at `src/styles
 this block left open was between teaching the gate that form and recording the pair as deliberately
 unmeasured. Teaching it won, because the same mechanism was needed anyway for the accent bar above,
 and a gate with two unmeasured holes in it is a gate that will grow a third. `SURFACES` at
-`scripts/check-palette.mjs:152-175` names a derived background as a fraction of one token over
-another, and `resolveSurface` at `scripts/check-palette.mjs:203-223` computes it. One mechanism
+`scripts/check-palette.mjs:149-172` names a derived background as a fraction of one token over
+another, and `resolveSurface` at `scripts/check-palette.mjs:200-220` computes it. One mechanism
 covers both CSS forms because they are the same arithmetic: laying a translucent layer over an
 opaque backdrop and mixing two opaque colours in sRGB are both a straight interpolation of the gamma
 encoded channels. The tokens are still read out of the stylesheet, so changing `--rail`, `--panel` or
@@ -4704,7 +4704,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:11641-11643` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:11660-11662` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4714,11 +4714,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11660-11664`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11679-11683`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11475-11477` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11494-11496` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4926,7 +4926,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:2946-2955` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:2958-2967` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:193-197` and
 `PRODUCT_BACKLOG.md:203-205` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -9815,7 +9815,7 @@ another port, which is the same defect the README's warning about the address is
 The icons were the part with a real decision in them. Chromium will not offer an install unless the
 manifest names PNG icons at 192 and 512 pixels, so the inline SVG the tab icon uses cannot serve
 here, and a committed PNG is a file no reviewer can read and nobody can regenerate. So the mark is
-written as geometry at `scripts/build-icons.mjs:49-54` and the bytes are produced from it, which
+written as geometry at `scripts/build-icons.mjs:35-43` and the bytes are produced from it, which
 makes the two images a build output with a source in the same way the vendored indexes are. The
 test redraws both and compares pixels rather than file bytes, because the compressed form depends
 on the zlib the build ran against and the suite runs on two Node versions, so a byte comparison
@@ -11090,17 +11090,22 @@ never once loaded the thing it was testing.
 
 **BL-161: Redraw the app icon so it stops echoing Marvel's trade dress**
 
-- [ ] Replace the red-square-with-white-M mark in the inline favicon and in both PNG sizes
-- [ ] Keep the app's own identity dominant, so the mark identifies this app and not a publisher
-- [ ] Check the result against the palette gate rather than judging the contrast by eye
+- [x] Replace the red-square-with-white-M mark in the inline favicon and in both PNG sizes
+- [x] Keep the app's own identity dominant, so the mark identifies this app and not a publisher
+- [x] Check the result against the palette gate rather than judging the contrast by eye
 
 Constraint gate: checked 1 to 11, none breached. Constraint 1 is untouched because an icon drawn
 here is this project's own artwork and not comic image bytes. Constraint 4 is satisfied because
 drawing an SVG adds no dependency. Constraint 11 is checked by the dash scan.
 
-The icon is a red rounded square carrying a bold white capital M. It is declared twice, as a data
-URI at `src/index.html:13` and as the two exported sizes under `src/icons/`. That is the
-construction of Marvel's own logo, which is a red field carrying white letterforms.
+Implemented on 2026-08-20. A Node-only generator now owns a folded-page mark with recap lines and a
+red progress line, writes one SVG plus the two install PNGs, and supplies the SVG to both the
+favicon and rail. The focused icon suite binds all three generated files to that source and the
+palette gate reports no new below-floor pair.
+
+The replaced icon was a red rounded square carrying a bold white capital M. It was declared as an
+inline data URI and as the two exported sizes under `src/icons/`. That was the construction of
+Marvel's own logo, which is a red field carrying white letterforms.
 
 The red is not the app's own colour either, which makes this cheaper than it looks. `#e23636` was
 measured at 4.36:1 and 4.33:1 against the two jobs a single red would have to do, and retired from
@@ -11139,6 +11144,11 @@ Constraint gate: checked 1 to 11, none breached. Constraint 10 is the live consi
 naming decision taken for legal exposure and not a market-facing one, and nothing in it proposes
 segments, positioning or growth. Constraint 3 is untouched. Constraint 11 is checked by the dash
 scan.
+
+Partially implemented on 2026-08-20. The app, web manifest, package, backup label, Windows package,
+current documentation, and repository adopt Recap Page. Microsoft Store name reservation and
+listing remain intentionally separate, so this item stays Ready until the listing carries the same
+name and the reservation-time clearance check is recorded.
 
 Two documents bear on the name, and they are independent of one another.
 
@@ -11212,15 +11222,19 @@ releases page. The exposure changes when a searchable storefront listing exists,
 
 **BL-163: Say where the metadata came from, instead of borrowing Marvel's API attribution**
 
-- [ ] Replace the API attribution string with one describing the chain the data actually came down
-- [ ] Keep an attribution to Marvel as the origin of the underlying facts
-- [ ] Check the replacement against `docs/DATA_PROVENANCE.md`, so the two records cannot disagree
+- [x] Replace the API attribution string with one describing the chain the data actually came down
+- [x] Keep an attribution to Marvel as the origin of the underlying facts
+- [x] Check the replacement against `docs/DATA_PROVENANCE.md`, so the two records cannot disagree
 
 Constraint gate: checked 1 to 11, none breached. Constraint 3 is untouched because this is display
 text that sends nothing anywhere. Constraint 11 is checked by the dash scan.
 
-The home screen renders "Data provided by Marvel." with a copyright line beside it, at
-`src/index.html:248`. That is the wording Marvel's attribution page requires of API users, and
+Implemented on 2026-08-20. Both short surfaces now read "Marvel metadata via
+marvel.emreparker.com." The sentence names Marvel as the origin and the community endpoint as the
+route, matching the detailed About copy and the provenance record.
+
+Before this item shipped, the home screen rendered "Data provided by Marvel." with a copyright
+line beside it. That is the wording Marvel's attribution page requires of API users, and
 `docs/DATA_PROVENANCE.md` establishes in the same breath that this project never called that API:
 the metadata was fetched from the third hand in the chain, under terms this repository is recorded
 as never having agreed to.
@@ -11240,14 +11254,19 @@ where the replacement wording should take its lead rather than being drafted fre
 
 **BL-164: Carry a rename without breaking the download link installed copies use**
 
-- [ ] Hold the release asset filename fixed across the rename, whatever the repository comes to be called
-- [ ] Change the three baked URLs together, or establish on evidence that they need no change
-- [ ] Leave the storage key alone, and say in the item why it is the one thing that must not move
-- [ ] Check an installed copy still finds the update afterwards, rather than assuming a redirect covers it
+- [x] Hold the release asset filename fixed across the rename, whatever the repository comes to be called
+- [x] Change the three baked URLs together, or establish on evidence that they need no change
+- [x] Leave the storage key alone, and say in the item why it is the one thing that must not move
+- [x] Check an installed copy still finds the update afterwards, rather than assuming a redirect covers it
 
 Constraint gate: checked 1 to 11, none breached. Constraint 5 is the live one and it is not
 breached: a rename touches neither origin nor port, and this item holds the storage key fixed
 rather than proposing to move it. Constraint 11 is checked by the dash scan.
+
+Implemented on 2026-08-20. A live installed-copy check reached release v1.2.0 from the new API route.
+Old and new API, release-page, and fixed-asset URLs all answered 200 after redirects; old and new
+clone routes resolved the same commit, and a clean clone completed a no-write fetch. The versionless
+Windows archive filename and every `mrt.*` key remain fixed.
 
 Renaming the repository is nearly free, and the one place it is not free is the place easiest to
 miss. GitHub redirects a renamed repository, so an installed copy's update check survives.

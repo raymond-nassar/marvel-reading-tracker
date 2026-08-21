@@ -1,5 +1,5 @@
 @echo off
-rem Marvel Reading Tracker - start the local app.
+rem Recap Page - start the local app.
 rem Always launched on the same origin (http://127.0.0.1:8787) so browser storage,
 rem and therefore your reading progress, stays in one place.
 
@@ -14,7 +14,7 @@ if errorlevel 1 (
   exit /b 1
 )
 
-echo Starting Marvel Reading Tracker...
+echo Starting Recap Page...
 node server.mjs
 if errorlevel 1 pause
 endlocal

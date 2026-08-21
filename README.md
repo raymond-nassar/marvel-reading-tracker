@@ -1,4 +1,4 @@
-# Marvel Reading Tracker
+# Recap Page
 
 A free checklist app for people who read Marvel comics on **Marvel Unlimited**, Marvel's
 comic subscription service. It runs on your own computer, in your web browser.
@@ -28,7 +28,7 @@ importing one needs no internet connection, and the one to read first is marked.
 
 ### On Windows
 
-**[Download the tracker](https://github.com/raymond-nassar/marvel-reading-tracker/releases/latest/download/marvel-reading-tracker-windows.zip)**, unzip it, and double-click **Start on
+**[Download the tracker](https://github.com/raymond-nassar/recap-page/releases/latest/download/marvel-reading-tracker-windows.zip)**, unzip it, and double-click **Start on
 Windows.cmd** inside.
 
 That is the whole thing. There is nothing to install, and no account to make. The download is
@@ -167,8 +167,8 @@ instead see "not recognized" or "command not found", Node.js is not installed ye
 This copies the project into a new folder and then moves you into that folder.
 
 ```
-git clone https://github.com/raymond-nassar/marvel-reading-tracker.git
-cd marvel-reading-tracker
+git clone https://github.com/raymond-nassar/recap-page.git
+cd recap-page
 ```
 
 You should now see a lot of file names scroll past, ending with your prompt sitting in the
@@ -200,7 +200,7 @@ npm start
 Either way, you should see exactly this:
 
 ```
-Marvel Reading Tracker running at http://127.0.0.1:8787/
+Recap Page running at http://127.0.0.1:8787/
 Always use this exact address. Other addresses are separate browser storage.
 Press Ctrl+C to stop.
 ```
@@ -273,7 +273,7 @@ To start it again another day, double-click the same file you used in step 2, or
 terminal, go back to the folder, and start it again:
 
 ```
-cd marvel-reading-tracker
+cd recap-page
 npm start
 ```
 
