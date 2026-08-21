@@ -24,6 +24,14 @@ function makeElement(extra = {}) {
     value: '',
     required: false,
     selected: 0,
+    isConnected: true,
+    disabled: false,
+    inert: false,
+    focusCalls: 0,
+    focus() {
+      this.focusCalls += 1;
+      globalThis.document.activeElement = this;
+    },
     select() {
       this.selected += 1;
     },
@@ -51,6 +59,7 @@ function makeDialog() {
       this.showModalCalls += 1;
       if (this.isOpen) throw new Error('dialog is already open');
       this.isOpen = true;
+      globalThis.document.activeElement = this;
     },
     close(value) {
       if (value !== undefined) this.returnValue = value;
@@ -77,7 +86,7 @@ function installDom({ withDialog = true } = {}) {
     'ask-ok': makeElement(),
     'ask-cancel': makeElement(),
   };
-  globalThis.document = { getElementById: (id) => parts[id] ?? null };
+  globalThis.document = { activeElement: null, getElementById: (id) => parts[id] ?? null };
   return parts;
 }
 
@@ -128,6 +137,140 @@ test('the Cancel button backs out without the caller wiring anything per questio
     parts['ask-cancel'].fire('click');
     assert.equal(dlg.isOpen, false);
     assert.equal(await within(answer, 'answer to settle'), false);
+  } finally {
+    clearDom();
+  }
+});
+
+test('Escape returns focus to the opener', async () => {
+  try {
+    const { askConfirm, dlg } = await wired();
+    const opener = makeElement();
+    globalThis.document.activeElement = opener;
+
+    const answer = askConfirm({ title: 'Start fresh?', confirmLabel: 'Start fresh' });
+    assert.equal(globalThis.document.activeElement, dlg, 'the double did not move focus when the dialog opened');
+    dlg.pressEscape();
+
+    assert.equal(await within(answer, 'answer to settle'), false);
+    assert.equal(opener.focusCalls, 1);
+    assert.equal(globalThis.document.activeElement, opener);
+  } finally {
+    clearDom();
+  }
+});
+
+test('Cancel returns focus to the opener', async () => {
+  try {
+    const { askConfirm, parts } = await wired();
+    const opener = makeElement();
+    globalThis.document.activeElement = opener;
+
+    const answer = askConfirm({ title: 'Start fresh?', confirmLabel: 'Start fresh' });
+    parts['ask-cancel'].fire('click');
+
+    assert.equal(await within(answer, 'answer to settle'), false);
+    assert.equal(opener.focusCalls, 1);
+    assert.equal(globalThis.document.activeElement, opener);
+  } finally {
+    clearDom();
+  }
+});
+
+test('an opener removed before close leaves focus untouched by this code', async () => {
+  try {
+    const { askConfirm, dlg } = await wired();
+    const usable = makeElement();
+    globalThis.document.activeElement = usable;
+    const first = askConfirm({ title: 'First', confirmLabel: 'Continue' });
+    dlg.close('');
+    await within(first, 'first to settle');
+    assert.equal(usable.focusCalls, 1, 'the focus spy cannot observe a usable opener');
+
+    const removed = makeElement();
+    globalThis.document.activeElement = removed;
+    const answer = askConfirm({ title: 'Second', confirmLabel: 'Continue' });
+    removed.isConnected = false;
+    dlg.close('');
+
+    assert.equal(await within(answer, 'answer to settle'), false);
+    assert.equal(removed.focusCalls, 0);
+    assert.equal(globalThis.document.activeElement, dlg);
+  } finally {
+    clearDom();
+  }
+});
+
+test('an opener disabled before close leaves focus untouched by this code', async () => {
+  try {
+    const { askConfirm, dlg } = await wired();
+    const usable = makeElement();
+    globalThis.document.activeElement = usable;
+    const first = askConfirm({ title: 'First', confirmLabel: 'Continue' });
+    dlg.close('');
+    await within(first, 'first to settle');
+    assert.equal(usable.focusCalls, 1, 'the focus spy cannot observe a usable opener');
+
+    const disabled = makeElement();
+    globalThis.document.activeElement = disabled;
+    const answer = askConfirm({ title: 'Second', confirmLabel: 'Continue' });
+    disabled.disabled = true;
+    dlg.close('');
+
+    assert.equal(await within(answer, 'answer to settle'), false);
+    assert.equal(disabled.focusCalls, 0);
+    assert.equal(globalThis.document.activeElement, dlg);
+  } finally {
+    clearDom();
+  }
+});
+
+test('questions in sequence return focus to their own openers', async () => {
+  try {
+    const { askConfirm, dlg } = await wired();
+    const firstOpener = makeElement();
+    const secondOpener = makeElement();
+
+    globalThis.document.activeElement = firstOpener;
+    const first = askConfirm({ title: 'First', confirmLabel: 'Continue' });
+    dlg.close('');
+    await within(first, 'first to settle');
+
+    globalThis.document.activeElement = secondOpener;
+    const second = askConfirm({ title: 'Second', confirmLabel: 'Continue' });
+    dlg.close('');
+    await within(second, 'second to settle');
+
+    assert.equal(firstOpener.focusCalls, 1);
+    assert.equal(secondOpener.focusCalls, 1);
+    assert.equal(globalThis.document.activeElement, secondOpener);
+  } finally {
+    clearDom();
+  }
+});
+
+test('a failed open does not change where the next close sends focus', async () => {
+  try {
+    const { askConfirm, dlg } = await wired();
+    const failedOpener = makeElement();
+    dlg.isOpen = true;
+    globalThis.document.activeElement = failedOpener;
+
+    assert.equal(
+      await within(askConfirm({ title: 'Cannot open', confirmLabel: 'Continue' }), 'failed open to settle'),
+      false,
+    );
+    dlg.close('');
+    assert.equal(failedOpener.focusCalls, 0, 'the failed question left its opener behind');
+
+    const nextOpener = makeElement();
+    globalThis.document.activeElement = nextOpener;
+    const next = askConfirm({ title: 'Next', confirmLabel: 'Continue' });
+    dlg.close('');
+
+    assert.equal(await within(next, 'next to settle'), false);
+    assert.equal(nextOpener.focusCalls, 1);
+    assert.equal(globalThis.document.activeElement, nextOpener);
   } finally {
     clearDom();
   }

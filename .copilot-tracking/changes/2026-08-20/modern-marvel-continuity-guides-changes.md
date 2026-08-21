@@ -10,13 +10,13 @@
 
 ## Execution Status
 
-* Status: Blocked at merge automation
+* Status: Complete
 * Declared invocation scope: P02
 * Completed scope markers: P02, P02-T01, and P02-T02
 * Active scope markers: None
 * Status basis: The source-order packet is approved, authored, vendored, validated, and reconciled.
-  The pull request is open and its three post-publication review findings are fixed. Agent Merge
-  cannot act because the app did not inject its required authorization state.
+  The pull request is open, its three post-publication review findings are fixed, and Agent Merge
+  resolved the current-main conflict against the fully validated merged tree.
 
 ## Execution Summary
 
@@ -148,7 +148,7 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   guide. A second checks all 238 packet ids against every shipped order and every peer. Changing one
   generated id made the exact-sequence test fail; changing it to shipped issue 2092 made the aggregate
   overlap test fail. Restoring the one value returned both tests to green.
-* Product records: README contributor guidance, provenance totals, Unreleased changelog, and BL-176
+* Product records: README contributor guidance, provenance totals, Unreleased changelog, and BL-181
   now describe the shipped packet and its build-time boundary with re-derived counts.
 * Lifecycle transition: The ten approved records moved from `ready` to `shipped` and each now records
   its catalog id. The 12 rejected candidates remain `blocked`.
@@ -190,7 +190,7 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   both the packet test and packet contract fail at source position 1. Each isolated mutation was
   removed through the staged stash before the passing rerun.
 
-### CHG-008: Record the unavailable Agent Merge authorization tick
+### CHG-008: Close the unavailable Agent Merge authorization tick
 
 * Related phase or task: None; this is an external delivery blocker after the pull request opened.
 * Required state: Agent Merge permits no top-level action until the app injects an
@@ -202,9 +202,24 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 * Safety result: Both sessions correctly made no repository or GitHub mutation without authorization.
 * Last read-only PR state: Pull request 159 is open at `1ef6de303cc88627479fb500249ab890b425b364`;
   GitHub reports `CONFLICTING` and `DIRTY`, with no status checks or reviews in the fetched summary.
-* Required external action: The app must start an Agent Merge tick for pull request 159 and inject its
-  evaluated state. The protocol then authorizes the agent to resolve the current-main conflict and
-  drive the pull request to merge-ready without merging it.
+* Resolution: The app injected the required state on 2026-08-21 with authorization to address review
+  comments, fix CI, and resolve conflicts. The prior blocker is closed.
+
+### CHG-009: Reconcile the batch with current main under Agent Merge
+
+* Related phase or task: None; this is the authorized conflict resolution for pull request 159.
+* Base change: Merged `origin/main` at `74d1f45`, preserving its cohesion and accessibility work
+  together with all ten guides and the post-publication review corrections.
+* Identifier reconciliation: Current main assigned `BL-176` to its type and corner scale work. This
+  batch moved to the next free id, `BL-181`, in the ranked table, detail block, provenance record, and
+  implementation record. No duplicate backlog id remains.
+* Combined backlog: 155 ranked rows, 5 parked rows, and 160 detail blocks: 134 Shipped, 19 Ready,
+  6 Dropped, and 1 Proposed. Every derived count and rank agrees.
+* Evidence reconciliation: All 72 changed anchor pairings were read against their claims. The final
+  lock holds 993 unchanged citations with 0 drifted, new, or removed.
+* Merged validation: 1,288 tests passed; lint reported 0; all 7 size claims agree; 88 palette pairs
+  produced 0 new failures; both live contracts passed at 33 of 33 and 238 of 238; and all 119 Edge
+  assertions passed across 14 scenarios.
 
 ## Validation Record
 
@@ -223,9 +238,9 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 | Vendor run | P02-T02 | Passed | 10 orders, 238 issues, and zero unresolved, placeholder, count, duplicate, digital-id, or cover warnings. |
 | Authored packet tests | P02-T02 | Passed | 104 focused catalog, manifest, provenance, inventory, exact-sequence, and aggregate-overlap tests. |
 | Semantic failure proofs | P02-T02 | Passed | One changed id failed exact sequence; one shipped id failed aggregate overlap; both passed after restoration. |
-| Full test suite | P02-T02 and Review | Passed | 1,279 tests, 0 failed on the post-review tree. |
+| Full test suite | P02-T02 and Review | Passed | 1,288 tests, 0 failed on the current merged tree. |
 | Lint | P02-T02 | Passed | ESLint reported 0 errors. |
-| Counts | P02-T02 | Passed | 150 ranked rows, 5 parked, and 155 detail blocks; every stated figure agrees. |
+| Counts | P02-T02 | Passed | 155 ranked rows, 5 parked, and 160 detail blocks; every stated figure agrees. |
 | Sizes | P02-T02 | Passed | All 7 stated file sizes agree. |
 | Palette | P02-T02 | Passed | 88 pairs measured, 5 recorded below the floor, and 0 new failures. |
 | Evidence anchors | P02-T02 | Passed | 993 unchanged, 0 drifted, 0 new, and 0 removed after the current-main merge. |
@@ -241,15 +256,16 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 | Author rerun | Review | Passed | 10 Markdown files and the 36-entry manifest retained identical SHA-256 hashes. |
 | Prepare rerun | Review | Passed | 0 of 10 approved mapping hashes changed; blocked mappings retained their blockers. |
 | Explicit series approvals | Review | Passed | All 36 final title mismatches carry independently declared approval; 0 automatic bypasses remain. |
+| Agent Merge authorization | Review | Resolved | The app supplied the required authorization state after three earlier launch paths could not. |
+| Current-main reconciliation | Review | Passed | Main's 5 backlog items and UI changes coexist with this batch under unique ids; all merged gates pass. |
 
 ## Blockers
 
-* Agent Merge state injection is unavailable from this session. The skill cannot resolve the
-  current-main conflict without the app-provided authorization line recorded in CHG-008.
+* None.
 
 ## Remaining Work
 
-* Start an app-authorized Agent Merge tick for pull request 159 and let it reach merge-ready.
+* Push the authorized merge resolution and wait for required checks and GitHub's approval state.
 
 ## Follow-Up Items
 

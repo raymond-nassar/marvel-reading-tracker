@@ -252,7 +252,7 @@ h2[tabindex="-1"]:focus {
 }
 
 .rail-toggle {
-  width: 40px; height: 40px; min-height: 40px; border: 0; border-radius: 9px;
+  width: 40px; height: 40px; min-height: 40px; border: 0; border-radius: 8px;
   background: none; color: var(--muted); display: grid; place-items: center;
   margin: 0 0 .5rem;
 }
@@ -262,7 +262,7 @@ h2[tabindex="-1"]:focus {
 .brand {
   display: flex; align-items: center; gap: .6rem; margin: 0 0 1rem;
   background: none; border: 0; color: inherit; text-align: left;
-  padding: .3rem .4rem; border-radius: 9px; width: 100%; min-height: 44px;
+  padding: .3rem .4rem; border-radius: 8px; width: 100%; min-height: 44px;
 }
 .brand:hover { background: rgb(var(--tint-base) / 3.922%); }
 .brand .mark {
@@ -291,7 +291,7 @@ h2[tabindex="-1"]:focus {
   position: relative;
   display: flex; align-items: center; gap: .6rem;
   width: 100%; text-align: left; background: none; border: 0;
-  color: var(--muted); padding: .5rem .6rem; border-radius: 9px; font-size: .875rem;
+  color: var(--muted); padding: .5rem .6rem; border-radius: 8px; font-size: .875rem;
   min-height: 44px;
 }
 .ri:hover { background: rgb(var(--tint-base) / 4%); color: var(--text); }
@@ -306,11 +306,11 @@ h2[tabindex="-1"]:focus {
   width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--accent);
 }
 .ri .lbl { display: block; min-width: 0; flex: 1 1 auto; }
-.ri-sub { display: block; font-size: .74rem; color: var(--muted); }
+.ri-sub { display: block; font-size: .75rem; color: var(--muted); }
 .ri-action { color: var(--dim); }
 
 .ri .t { display: flex; justify-content: space-between; gap: .5rem; }
-.ri .n { font-variant-numeric: tabular-nums; font-size: .76rem; color: var(--muted); }
+.ri .n { font-variant-numeric: tabular-nums; font-size: .75rem; color: var(--muted); }
 .ri .bar { display: block; height: 3px; background: var(--track); border-radius: 2px; margin-top: .45rem; overflow: hidden; }
 .ri .bar i { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
 
@@ -456,7 +456,7 @@ body.nocovers .tgl .sw::after { left: 2px; }
 
 .quiet {
   border: 1px solid var(--line-2); background: none; color: var(--muted);
-  border-radius: 8px; padding: .3rem .7rem; font-size: .8rem;
+  border-radius: 8px; padding: .3rem .7rem; font-size: .8rem; min-height: 24px;
 }
 .quiet:hover { color: var(--text); background: rgb(var(--tint-base) / 5.098%); }
 .quiet-danger:hover { color: var(--red-fg); border-color: rgb(var(--red-line) / 40%); background: rgb(var(--red-line) / 7.059%); }
@@ -505,36 +505,36 @@ body.nocovers .art img, .art img[hidden] { display: none; }
   color: var(--fallback-fg);
 }
 body.nocovers .fallback, .fallback.show { display: flex; }
-.fallback .fs { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; opacity: .85; line-height: 1.35; }
+.fallback .fs { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; opacity: .85; line-height: 1.35; }
 .fallback .fn { font-size: 2.4rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
 
 .eyebrow { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-text); font-weight: 800; margin: 0; }
-.hero h2 { font-size: 2.2rem; line-height: 1.1; margin: .45rem 0 .35rem; letter-spacing: -.028em; font-weight: 660; text-wrap: balance; }
+.hero h2 { font-size: 2.2rem; line-height: 1.1; margin: .45rem 0 .35rem; letter-spacing: -.028em; font-weight: 700; text-wrap: balance; }
 .byline { color: var(--dim); margin: 0 0 .9rem; font-size: .95rem; }
-.desc { color: var(--dim); font-size: .93rem; margin: 0 0 1.1rem; max-width: 58ch; }
+.desc { color: var(--dim); font-size: .92rem; margin: 0 0 1.1rem; max-width: 58ch; }
 
 .facts { display: flex; gap: 1.6rem; flex-wrap: wrap; margin: 0 0 1.2rem; }
 .facts > div { min-width: 0; }
 .facts dt { font-size: .66rem; letter-spacing: .11em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-.facts dd { margin: .12rem 0 0; font-size: .92rem; font-weight: 560; }
+.facts dd { margin: .12rem 0 0; font-size: .92rem; font-weight: 600; }
 .facts dd.ok { color: var(--teal); }
 .facts dd.warn { color: var(--amber); }
 
 .cta { display: flex; gap: .55rem; flex-wrap: wrap; }
 .btn {
-  border: 1px solid transparent; border-radius: 11px; padding: .68rem 1.25rem;
-  background: var(--accent); color: var(--on-accent); font-weight: 620; font-size: .92rem;
+  border: 1px solid transparent; border-radius: 12px; padding: .68rem 1.25rem;
+  background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: .92rem;
   display: inline-flex; align-items: center; gap: .5rem; text-decoration: none;
 }
 /* display:inline-flex would otherwise defeat the hidden attribute. */
 .btn[hidden] { display: none; }
 .btn:hover { filter: brightness(1.1); }
 .btn:disabled { opacity: .5; cursor: default; filter: none; }
-.btn-g { background: rgb(var(--tint-base) / 5.882%); color: var(--text); border-color: var(--line-2); font-weight: 500; }
+.btn-g { background: rgb(var(--tint-base) / 5.882%); color: var(--text); border-color: var(--line-2); font-weight: 600; }
 /* No opacity here. The shortcut hint sits on the primary button, and dimming it to
    75% took it to a measured 3.03:1. It is set apart by its border and its size
    instead, both of which cost nothing in contrast. */
-kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-radius: 4px; padding: 0 .28rem; }
+kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) / 30.196%); border-radius: 6px; padding: 0 .28rem; }
 
 /* Version and data-format numbers in About. Monospaced so a digit cannot be misread
    when someone copies the build number into a bug report. No colour change, because
@@ -571,7 +571,7 @@ body.nocovers .tile .tf, .tile .tf.show { display: flex; }
 .tile .tf .s { font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; opacity: .85; line-height: 1.3; }
 .tile .tf .n { font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em; }
 .tile .lab { font-size: .75rem; margin-top: .4rem; color: var(--muted); line-height: 1.35; }
-.tile .lab b { color: var(--text); font-weight: 540; display: block; }
+.tile .lab b { color: var(--text); font-weight: 600; display: block; }
 .tile button:hover .lab b { color: var(--accent-text); }
 
 /* ============================================================ full order */
@@ -618,7 +618,7 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 .paths { border: 0; padding: 0; margin: 0 0 .45rem; }
 .paths legend { padding: 0; color: var(--muted); font-size: .72rem; margin-bottom: .3rem; }
 .paths .path { margin: 0 .3rem .3rem 0; }
-.paths .path span { font-size: .74rem; }
+.paths .path span { font-size: .75rem; }
 .result .paths { margin: .35rem 0 .4rem; }
 #preview-paths .paths { margin: .55rem 0 .2rem; }
 
@@ -632,13 +632,13 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
   border-bottom: 1px solid var(--line);
 }
 .row-group:first-child { margin-top: .1rem; }
-.rg-name { margin: 0; font-size: .92rem; font-weight: 650; letter-spacing: .01em; }
+.rg-name { margin: 0; font-size: .92rem; font-weight: 600; letter-spacing: .01em; }
 .rg-count { color: var(--muted); font-size: .78rem; }
 .row-group progress { width: 90px; }
 .row-group.is-done .rg-name { color: var(--read-fg); }
 .row {
   display: grid; grid-template-columns: 26px 44px minmax(0, 1fr) auto; gap: .8rem;
-  align-items: center; padding: .55rem .6rem; border-radius: 9px; border: 1px solid transparent;
+  align-items: center; padding: .55rem .6rem; border-radius: 8px; border: 1px solid transparent;
 }
 .row:hover { background: rgb(var(--tint-base) / 2.745%); border-color: var(--line); }
 /* The row you are on. Selection, not danger, though until `--accent-line` existed it was drawn in
@@ -656,23 +656,23 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 .row.is-read img { opacity: .5; }
 
 .row .thumb { position: relative; }
-.row img { width: 44px; aspect-ratio: 2/3; object-fit: cover; border-radius: 5px; border: 1px solid var(--line); display: block; }
+.row img { width: 44px; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); display: block; }
 body.nocovers .row img, .row img[hidden] { display: none; }
 .row .rf {
-  display: none; width: 44px; aspect-ratio: 2/3; border-radius: 5px;
+  display: none; width: 44px; aspect-ratio: 2/3; border-radius: 6px;
   border: 1px solid var(--line-2); align-items: center; justify-content: center;
   font-size: .66rem; font-weight: 700;
 }
 body.nocovers .row .rf, .row .rf.show { display: flex; }
 
 .cb {
-  width: 17px; height: 17px; border-radius: 5px; border: 1.5px solid var(--cb-line);
+  width: 17px; height: 17px; border-radius: 6px; border: 1.5px solid var(--cb-line);
   background: none; display: grid; place-items: center; color: var(--on-accent); font-size: .65rem; padding: 0;
 }
 .row.is-read .cb { background: var(--teal); border-color: var(--teal); }
 
-.rt { font-size: .94rem; font-weight: 560; letter-spacing: -.005em; }
-.rm { color: var(--muted); font-size: .76rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .05rem; }
+.rt { font-size: .94rem; font-weight: 600; letter-spacing: -.005em; }
+.rm { color: var(--muted); font-size: .75rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .05rem; }
 
 /* The note control is a button that reads as text, because it is both the note and the way to
    edit it. Clamped to three lines so a long note cannot push the rest of the list off screen;
@@ -680,7 +680,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
    a centred paragraph of prose reads as a label rather than as the reader's own writing. */
 .rnote {
   margin-top: .25rem; padding: .15rem 0; border: 0; background: none;
-  color: var(--muted); font: inherit; font-size: .76rem; text-align: left; cursor: pointer;
+  color: var(--muted); font: inherit; font-size: .75rem; text-align: left; cursor: pointer;
   max-width: 60ch; white-space: pre-wrap;
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
 }
@@ -726,7 +726,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 .row:hover .ract, .row:focus-within .ract { opacity: 1; }
 .mini {
   border: 1px solid var(--line-2); background: none; color: var(--muted);
-  border-radius: 6px; padding: .16rem .45rem; font-size: .74rem; text-decoration: none;
+  border-radius: 6px; padding: .16rem .45rem; font-size: .75rem; text-decoration: none;
 }
 .mini:hover { color: var(--text); background: rgb(var(--tint-base) / 5.098%); }
 .mini-danger:hover { color: var(--red-fg); }
@@ -757,7 +757,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 #view-data .card-static h4 { font-size: .85rem; margin: 1.3rem 0 .4rem; font-weight: 600; }
 .setgroup { margin-bottom: 1.4rem; }
 #view-data .setgroup > h2 {
-  font-size: 1rem; font-weight: 650; margin: 1.7rem .1rem .75rem; padding-bottom: .35rem;
+  font-size: 1rem; font-weight: 600; margin: 1.7rem .1rem .75rem; padding-bottom: .35rem;
 }
 .card-danger { border-color: rgb(var(--red-line) / 20%); }
 .addpri { border-color: rgb(var(--tint-base) / 20%); background: rgb(var(--tint-base) / 3.922%); }
@@ -791,19 +791,19 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
    the pair `.rail-hint` already uses on this background, so no new boundary is introduced. */
 .salvage-row {
   display: flex; align-items: center; justify-content: space-between; gap: .8rem; flex-wrap: wrap;
-  padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 10px; background: var(--card-2);
+  padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 12px; background: var(--card-2);
 }
 .salvage-what { display: grid; gap: .1rem; }
 .salvage-when { font-size: .86rem; }
 .salvage-size { color: var(--muted); font-size: .78rem; }
 input[type="search"], input[type="text"], input[type="url"], textarea {
   background: var(--card-2); border: 1px solid var(--line-2); color: var(--text);
-  border-radius: 9px; padding: .5rem .7rem; min-width: 0; flex: 1 1 16rem;
+  border-radius: 8px; padding: .5rem .7rem; min-width: 0; flex: 1 1 16rem;
 }
 textarea { flex: 1 1 auto; width: 100%; resize: vertical; font-family: ui-monospace, "Cascadia Mono", monospace; font-size: .85rem; }
-input[type="file"] { color: var(--muted); font-size: .82rem; }
-.checkbox { display: inline-flex; align-items: center; gap: .4rem; font-size: .84rem; color: var(--dim); }
-code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: .05rem .3rem; font-size: .85em; }
+input[type="file"] { color: var(--muted); font-size: .82rem; min-height: 24px; }
+.checkbox { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--dim); min-height: 24px; }
+code { background: rgb(var(--tint-base) / 5.098%); border-radius: 6px; padding: .05rem .3rem; font-size: .85em; }
 
 .results { display: grid; gap: .4rem; margin-top: .7rem; }
 .res-head {
@@ -817,16 +817,16 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
    margin above it and stacking the two pushed the shelf below the fold on a laptop. */
 .shelf-section { margin: 1rem 0 0; }
 .shelf-section:first-child { margin-top: 0; }
-.shelf-section-title { font-size: .93rem; font-weight: 600; margin: 0; letter-spacing: .01em; }
+.shelf-section-title { font-size: .92rem; font-weight: 600; margin: 0; letter-spacing: .01em; }
 .shelf-section-blurb { color: var(--muted); font-size: .78rem; margin: .2rem 0 0; max-width: 64ch; }
 
 .result {
   display: flex; align-items: center; gap: .8rem; padding: .55rem .7rem;
-  border: 1px solid var(--line); border-radius: 10px; background: var(--card-2);
+  border: 1px solid var(--line); border-radius: 12px; background: var(--card-2);
 }
 .result-main { flex: 1 1 auto; min-width: 0; }
-.result-title { font-size: .87rem; font-weight: 520; margin: 0; }
-.result-meta { color: var(--muted); font-size: .76rem; }
+.result-title { font-size: .87rem; font-weight: 600; margin: 0; }
+.result-meta { color: var(--muted); font-size: .75rem; }
 .result progress { width: 120px; }
 .result-source { margin: .2rem 0 0; }
 .result-source a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
@@ -842,7 +842,7 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
 }
 .pill-held::before { content: "✓ "; }
 
-.notice { border-radius: 9px; padding: .55rem .75rem; font-size: .84rem; margin: 0; border: 1px solid var(--line); }
+.notice { border-radius: 8px; padding: .55rem .75rem; font-size: .85rem; margin: 0; border: 1px solid var(--line); }
 .notice-ok { color: var(--teal); border-color: rgb(var(--teal-line) / 25.098%); background: rgb(var(--teal-line) / 5.882%); }
 .notice-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); background: rgb(var(--amber-line) / 5.882%); }
 .notice-error { color: var(--red-fg-2); border-color: rgb(var(--red-line) / 33.333%); background: rgb(var(--red-line) / 7.059%); }
@@ -897,17 +897,17 @@ progress { accent-color: var(--accent); height: 6px; }
    reader is being asked to decide something. */
 .chero-in { display: grid; grid-template-columns: 132px 1fr; gap: 1.4rem; align-items: start; }
 @media (max-width: 620px) { .chero-in { grid-template-columns: 1fr; } .chero-in .art { max-width: 132px; } }
-.chero h2 { font-size: 1.35rem; margin: .3rem 0 .7rem; font-weight: 640; letter-spacing: -.02em; }
-.chero .art img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
+.chero h2 { font-size: 1.35rem; margin: .3rem 0 .7rem; font-weight: 600; letter-spacing: -.02em; }
+.chero .art img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); display: block; }
 body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 /* The shared fallback is sized for the reading view's larger cover, so it is scaled down
    here rather than being duplicated. */
-.chero .art .fallback { padding: .55rem; border-radius: 10px; }
+.chero .art .fallback { padding: .55rem; border-radius: 12px; }
 .chero .art .fallback .fs { font-size: .58rem; letter-spacing: .06em; }
 .chero .art .fallback .fn { font-size: 1.5rem; }
 .chero-count { color: var(--dim); font-size: .85rem; margin: .4rem 0 0; font-variant-numeric: tabular-nums; }
 .chero-next { color: var(--muted); font-size: .88rem; margin: .15rem 0 1rem; }
-.chero-next b { color: var(--text); font-weight: 560; }
+.chero-next b { color: var(--text); font-weight: 600; }
 
 /* The fill is a width, and the count beneath it repeats the same numbers as text, so the
    bar is never the only way to read the progress. */
@@ -917,7 +917,7 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 .yours { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
 .yours button {
   width: 100%; text-align: left; background: var(--card); border: 1px solid var(--line-2);
-  border-radius: 10px; padding: .6rem .8rem; color: var(--text); min-height: 44px;
+  border-radius: 12px; padding: .6rem .8rem; color: var(--text); min-height: 44px;
   display: grid; gap: .35rem;
 }
 .yours button:hover { background: var(--card-2); }
@@ -940,10 +940,10 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 .feature[hidden] { display: none; }
 .feature-in { display: grid; grid-template-columns: 132px 1fr; gap: 1.6rem; align-items: start; }
 @media (max-width: 620px) { .feature-in { grid-template-columns: 1fr; } .feature-in .art { max-width: 132px; } }
-.feature h2 { font-size: 1.5rem; margin: .3rem 0 .55rem; font-weight: 640; letter-spacing: -.02em; }
-.feature .art img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
+.feature h2 { font-size: 1.5rem; margin: .3rem 0 .55rem; font-weight: 600; letter-spacing: -.02em; }
+.feature .art img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); display: block; }
 body.nocovers .feature .art img, .feature .art img[hidden] { display: none; }
-.feature .art .fallback { padding: .55rem; border-radius: 10px; }
+.feature .art .fallback { padding: .55rem; border-radius: 12px; }
 .feature .art .fallback .fs { font-size: .58rem; letter-spacing: .06em; }
 .feature .art .fallback .fn { font-size: 1.5rem; }
 .feature-why { color: var(--dim); font-size: .92rem; line-height: 1.55; margin: 0 0 .8rem; max-width: 62ch; }
@@ -1004,14 +1004,14 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
    description stays laid out and in the accessibility tree after hidden is set. Every bundled
    order has a description today, but the normaliser accepts one without. */
 .ocard-desc[hidden] { display: none; }
-.ocard-meta { color: var(--muted); font-size: .74rem; margin: 0 0 .35rem; }
+.ocard-meta { color: var(--muted); font-size: .75rem; margin: 0 0 .35rem; }
 /* The card's whole account of a story that can be read more than one way: that there is a choice,
    and how many ways there are. Quiet, one line, and no wider than the meta line above it, because
    the choice itself is not made here. It is underlined rather than only coloured so it reads as
    something to press without depending on colour. */
 .ocard-ways { margin: 0 0 .35rem; }
 .ocard-ways .ways {
-  background: none; border: 0; font: inherit; font-size: .74rem;
+  background: none; border: 0; font: inherit; font-size: .75rem;
   color: var(--blue); text-decoration: underline; text-underline-offset: 2px;
   /* Padding rather than a bare inline run, so the target clears the 24px floor that WCAG 2.2
      asks for at AA. Measured at .74rem it lands at 26px. */
@@ -1082,13 +1082,13 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .preview-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; counter-reset: pv; }
 .preview-list li {
   display: flex; gap: .6rem; align-items: baseline; padding: .3rem .1rem;
-  border-bottom: 1px solid rgb(var(--tint-base) / 5%); font-size: .84rem;
+  border-bottom: 1px solid rgb(var(--tint-base) / 5%); font-size: .85rem;
 }
 .preview-list li:last-child { border-bottom: 0; }
-.preview-list .pn { color: var(--muted); font-size: .74rem; font-variant-numeric: tabular-nums; min-width: 2.2rem; }
+.preview-list .pn { color: var(--muted); font-size: .75rem; font-variant-numeric: tabular-nums; min-width: 2.2rem; }
 .preview-list .preview-group { border-bottom: 0; padding: .7rem 0 .15rem; }
 .preview-list .preview-group:first-child { padding-top: 0; }
-.preview-list .preview-group h4 { margin: 0; font-size: .82rem; font-weight: 650; }
+.preview-list .preview-group h4 { margin: 0; font-size: .82rem; font-weight: 600; }
 .preview-foot { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: .9rem; }
 .preview-foot .btn { min-height: 44px; }
 
@@ -1192,16 +1192,16 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
    lines of real text now: the count, and what is left of the order beside the percentage. */
 .ring-text { display: flex; flex-direction: column; line-height: 1.3; }
 .ring-text b { color: var(--text); font-weight: 600; font-size: .85rem; }
-#ring-sub { color: var(--muted); font-size: .74rem; }
+#ring-sub { color: var(--muted); font-size: .75rem; }
 
 /* One dominant action. The three calls to action were a primary button and two ghost buttons of
    the same size, which is three things of nearly equal weight where the screen has exactly one
    job. The Unlimited button grows, `Done, next` stays a ghost because it is an action, and the
    issue page becomes a link because that is what it is: a way out of the app. */
 .hero .cta { gap: .7rem; align-items: center; }
-.btn-lg { padding: .85rem 1.5rem; font-size: 1rem; font-weight: 660; border-radius: 13px; }
+.btn-lg { padding: .85rem 1.5rem; font-size: 1rem; font-weight: 700; border-radius: 12px; }
 .btn-link {
-  background: none; color: var(--blue); border-color: transparent; font-weight: 560;
+  background: none; color: var(--blue); border-color: transparent; font-weight: 600;
   padding: .68rem .6rem; text-decoration: underline; text-underline-offset: 3px;
 }
 .btn-link:hover { filter: none; text-decoration-thickness: 2px; }
@@ -1261,8 +1261,8 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
    Each cell sits on a card so the figures read as a panel rather than as loose text. */
 .sumbar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin: .2rem 0 1.1rem; }
 @media (max-width: 640px) { .sumbar { grid-template-columns: 1fr; } }
-.sumcell { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: .7rem .85rem; }
-.sumfig { font-size: 1.5rem; font-weight: 680; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: var(--text); line-height: 1.1; }
+.sumcell { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: .7rem .85rem; }
+.sumfig { font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: var(--text); line-height: 1.1; }
 .sumlab { color: var(--muted); font-size: .78rem; margin-top: .15rem; }
 
 /* A group heading is a real h2 under the view's h1, separated from its rows by a hairline rather
@@ -1277,10 +1277,10 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
    its fallback follows the reading row's bordered tile, not the larger gradient ones. */
 .result-cov { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: .8rem; align-items: center; }
 .rcov { position: relative; width: 44px; }
-.rcov-i { width: 44px; aspect-ratio: 2/3; object-fit: cover; border-radius: 5px; border: 1px solid var(--line); display: block; }
+.rcov-i { width: 44px; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); display: block; }
 body.nocovers .rcov-i, .rcov-i[hidden] { display: none; }
 .rcov-f {
-  display: none; width: 44px; aspect-ratio: 2/3; border-radius: 5px;
+  display: none; width: 44px; aspect-ratio: 2/3; border-radius: 6px;
   border: 1px solid var(--line-2); align-items: center; justify-content: center;
   font-size: .66rem; font-weight: 700; color: var(--text);
 }
@@ -1300,10 +1300,10 @@ body.nocovers .rcov-f, .rcov-f.show { display: flex; }
    distinguishes its order. Fixed cells keep the tile a constant height whatever the data holds. */
 .mosaic { display: flex; gap: .25rem; }
 .mosaic-c { flex: 0 0 auto; width: 30px; }
-.mosaic-i { width: 30px; aspect-ratio: 2/3; object-fit: cover; border-radius: 5px; border: 1px solid var(--line); display: block; }
+.mosaic-i { width: 30px; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); display: block; }
 body.nocovers .mosaic-i, .mosaic-i[hidden] { display: none; }
 .mosaic-f {
-  display: none; width: 30px; aspect-ratio: 2/3; border-radius: 5px;
+  display: none; width: 30px; aspect-ratio: 2/3; border-radius: 6px;
   border: 1px solid var(--line-2);
   --h: 0;
   background: linear-gradient(155deg, var(--fallback-a), var(--fallback-b));
