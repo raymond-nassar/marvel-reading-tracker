@@ -14,6 +14,42 @@ quote in a bug report.
 
 ## Unreleased
 
+### The landing page now suggests where to start, and uses the whole desktop
+
+In plain English: open the app for the first time and it names one reading order and offers to start
+it, instead of showing nineteen and leaving the choice to you. It picks the shortest beginner-friendly
+order in the catalog, tells you how many issues that is and roughly how long it takes, and offers a
+look at the issue list before you commit to anything. The suggestion disappears the moment you have
+answered the question yourself, whether that is by adding a reading order, by filtering, or by
+searching.
+
+The page itself now grows with the window instead of stopping at a fixed width, so a wide screen
+shows four reading orders per row rather than three, and the cover art is larger. Pages that are
+mostly words, such as the reading list and the settings, are unchanged: text that stretches across a
+wide monitor is harder to read, not easier.
+
+If you already have a reading order on the go, nothing about your home screen changes. Continue
+Reading is still the first thing on it, and the suggestion is not shown to you at all. Nothing you
+have saved is affected.
+
+### The app has its own colour instead of a borrowed one
+
+In plain English: the accent colour throughout the app is now the purple from its own icon rather
+than a Marvel-like red. Red is kept for one job only, which is warning you that something is about to
+be deleted or has gone wrong, so a warning now stands out instead of blending into the decoration.
+Links are blue, finished and available things are teal, and cautions are amber.
+
+All 88 colour combinations the project checks were measured against the readability standard in both
+the light and the dark theme before this shipped. Nothing that used to be readable enough stopped
+being so: 52 improved, 30 came down slightly, and none of them crossed the line. Five combinations
+were already below the line before this change and still are, all of them shapes rather than words,
+and one of those five, the tick drawn inside a ticked-off issue, is now fainter against its own
+background than it was. That was already a known and recorded compromise and this change makes it a
+little worse rather than introducing it. Two places outside the main stylesheet were still wearing the
+old red: the small page that appears while a comic is opening, and the colour Windows paints around
+the app window when it is installed. Both now match the rest. The high-contrast Windows mode and the
+reduced-motion setting behave exactly as they did.
+
 ### Rebranded the app as Recap Page
 
 In plain English: the app now has its own name and purple page icon instead of a Marvel-like red

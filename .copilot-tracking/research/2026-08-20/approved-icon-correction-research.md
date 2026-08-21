@@ -147,8 +147,8 @@
 |---|---|---|---|---|---|
 | C1 | The generator owns fixed brand colors and normalized geometry as the canonical icon source. | scripts/build-icons.mjs:24-37 | read | high | This is the correct source for the visual correction. |
 | C2 | Focused tests bind SVG and PNG consumers to the generator and explicitly require canonical geometry and colors. | test/app-icons.test.js:139-184 | read | high | Tests must change with the corrected design rather than be bypassed. |
-| C3 | The backlog implementation record owns the shipped icon description and its one-source contract. | PRODUCT_BACKLOG.md:11091-11104 | read | high | Current product evidence must describe the corrected mark. |
-| C4 | The current changelog tells users which icon the rebrand introduced. | CHANGELOG.md:17-20 | read | high | This current claim must remain accurate. |
+| C3 | The backlog implementation record owns the shipped icon description and its one-source contract. | PRODUCT_BACKLOG.md:11105-11118 | read | high | Current product evidence must describe the corrected mark. |
+| C4 | The current changelog tells users which icon the rebrand introduced. | CHANGELOG.md:53-56 | read | high | This current claim must remain accurate. |
 | C5 | The favicon and rail both load the generated SVG, while the README loads the captured catalog screenshot. | src/index.html:11-39; README.md:16-22 | read | high | Regenerating source and recapturing the screenshot completes current visible surfaces. |
 
 ### External Evidence
