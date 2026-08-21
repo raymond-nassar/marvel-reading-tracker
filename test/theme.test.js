@@ -160,18 +160,17 @@ test('every measured pair names a real place it is rendered', () => {
 
 test('a declared surface resolves to what the browser resolves it to', () => {
   // The two surfaces this file computes are the two it cannot read, so agreeing with itself proves
-  // nothing. These four values came out of `getComputedStyle` in Edge: the banner resolves to
-  // `color(srgb 0.171137 0.137098 0.116863)`, and the selected rail item was composited by walking
-  // its ancestor chain and laying each translucent layer over the one behind it. Pinning them is
-  // what stops the arithmetic being quietly replaced by something that merely passes.
+  // nothing. These six values were sampled from the painted pixels of the real app in Edge at
+  // 1280x900, the rail on the catalog view and the banner reached by writing unreadable bytes into
+  // the storage key before load. Pinning them is what stops the arithmetic being quietly replaced
+  // by something that merely passes.
   const expected = {
-    'the selected rail item': { dark: '#1f2023', light: '#dfe0e4' },
-    'the unreadable-data banner': { dark: '#2c231e', light: '#f1eae1' },
-    // Read off the painted pixels rather than off `getComputedStyle`, which returns
-    // `rgba(255,255,255,0.06)` here: the value before compositing, so reading it back would have
-    // confirmed the stylesheet and not the render. Sampled from a screenshot of the real recovery
-    // banner, reached by writing unreadable bytes into the storage key before load.
-    'the ghost button on the unreadable-data banner': { dark: '#38302b', light: '#e3dcd4' },
+    'the selected rail item': { dark: '#1f1f24', light: '#dfdfe5' },
+    'the unreadable-data banner': { dark: '#2d2220', light: '#f1eae1' },
+    // Sampling matters most here. `getComputedStyle` returns `rgba(255,255,255,0.06)` for this
+    // button: the value before compositing, so reading it back would have confirmed the stylesheet
+    // and not the render.
+    'the ghost button on the unreadable-data banner': { dark: '#392f2d', light: '#e3dcd4' },
   };
   const hex = (c) => `#${c.map((v) => v.toString(16).padStart(2, '0')).join('')}`;
   for (const [selector, theme] of [[DARK, 'dark'], [LIGHT_ATTR, 'light']]) {
@@ -372,30 +371,35 @@ test('a control boundary is measured against every surface it is drawn on, not j
   // card in the reading hero and on the rail in the per-list bars, and listing only the card hid a
   // real degradation when the dark trough was darkened.
   //
-  // `--red` and `--track-2` were added later still, by review of BL-067, and their absence is what
+  // `--accent` and `--track-2` were added later still, by review of BL-067, and their absence is what
   // let that change gate the cover-art switch's off state while leaving the on state of the same
   // control on the same background unmeasured. This assertion is the thing that was supposed to
   // force the question and could not, because it said nothing about the two tokens the change was
   // about. A foreground that gains a surface without this line moving is the defect, so the line
   // moves with it deliberately.
-  // `--red` gained three more surfaces in BL-069, and two of them are not tokens. That is the point
+  // `--accent` gained three more surfaces in BL-069, and two of them are not tokens. That is the point
   // of listing them here: the rail carries the brand mark and the focused skip link, the selected
   // rail item carries the accent bar that marks the current destination, and the unreadable-data
-  // banner carries both of its buttons. None of the three was measured anywhere before, so `--red`
+  // banner carries both of its buttons. None of the three was measured anywhere before, so `--accent`
   // could have gone invisible on any of them without this file moving.
-  // `--green` gained `--card-2` when the reading path put a "Start here" badge on a catalog row.
+  // `--teal` gained `--card-2` when the reading path put a "Start here" badge on a catalog row.
   // The gap is the whole reason this line is here: the badge reused `.pill-ok`'s exact two values,
   // so it looked covered by the two green pairs already recorded, and neither of them is the
   // surface a catalog row actually draws. Reusing a colour is not the same as reusing a
   // measurement, and a review found this one rather than the gate.
+  // `--red-fg` gained `--bg` and `--card-2` when the brand moved off red: danger text on the page
+  // had been gated through the brand token that used to share the hue, and once the two separated
+  // that pair covered nothing danger was actually drawn on. The salvage row's Remove button, which
+  // is danger on a raised card, had never been measured at all.
   const surfaces = (fg) => PAIRS.filter((p) => p[0] === fg).map((p) => p[1]).sort();
   assert.deepEqual(surfaces('--line-2'), ['--bg', '--card', '--card-2']);
   assert.deepEqual(surfaces('--cb-line'), ['--bg', '--card']);
   assert.deepEqual(surfaces('--track'), ['--card', '--rail']);
-  assert.deepEqual(surfaces('--green'), ['--bg', '--card', '--card-2']);
-  assert.deepEqual(surfaces('--red'), ['--bg', '--card', '--card-2', '--rail', '--track', 'the selected rail item', 'the unreadable-data banner']);
+  assert.deepEqual(surfaces('--teal'), ['--bg', '--card', '--card-2']);
+  assert.deepEqual(surfaces('--red-fg'), ['--bg', '--card', '--card-2']);
+  assert.deepEqual(surfaces('--accent'), ['--bg', '--card', '--card-2', '--rail', '--track', 'the selected rail item', 'the unreadable-data banner']);
   assert.deepEqual(surfaces('--track-2'), ['--bg']);
-  assert.deepEqual(surfaces('--on-accent'), ['--green', '--red', '--track-2']);
+  assert.deepEqual(surfaces('--on-accent'), ['--accent', '--teal', '--track-2']);
 });
 
 // Every class this app puts on something a reader operates, found by reading the markup and the
@@ -441,15 +445,15 @@ test('nothing a reader operates is bordered with the ungated hairline token', ()
 });
 
 test('a progress bar is measured where it carries its value, fill against trough', () => {
-  // `--track` on `--card` cannot reach 3:1 while the `--red` fill still reads as the filled part,
+  // `--track` on `--card` cannot reach 3:1 while the `--accent` fill still reads as the filled part,
   // so it stays recorded and this pair is measured in its place. Dropping it would leave the bar
   // with no gated contrast at all, which is worse than the ratio that is recorded.
-  const pair = PAIRS.find(([fg, bg]) => fg === '--red' && bg === '--track');
+  const pair = PAIRS.find(([fg, bg]) => fg === '--accent' && bg === '--track');
   assert.ok(pair, 'the fill of a progress bar is no longer measured against its trough');
   assert.equal(pair[2], 3);
   for (const [selector, name] of [[DARK, 'dark'], [LIGHT_ATTR, 'light']]) {
     const tokens = tokensIn(css, selector);
-    const r = ratio(parseHex(tokens.get('--red')), parseHex(tokens.get('--track')));
+    const r = ratio(parseHex(tokens.get('--accent')), parseHex(tokens.get('--track')));
     assert.ok(r >= 3, `the ${name} progress fill measures ${r.toFixed(2)}:1 against its own trough`);
   }
 });

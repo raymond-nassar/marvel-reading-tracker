@@ -12,25 +12,33 @@
    is invisible. Each rule keeps its own alpha, because the alphas are deliberately different
    and collapsing them into a named ramp would flatten distinctions that were tuned.
 
-   `--shadow-alpha` scales every drop shadow, because a shadow tuned to read against #0f1115
-   is a smear against #fbfcfe.
+   `--shadow-alpha` scales every drop shadow, because a shadow tuned to read against #111117
+   is a smear against #fafaff.
 
    Colours that are the same in both themes stay in the shared block. Only what genuinely
    differs is restated, so the light theme is 25 declarations rather than a second palette. */
 
 :root {
   --r: 14px;
+  /* See the note above `.wrap`. Two widths because "how wide may the page be" and "how wide may a
+     line of text be" are different questions, and answering both with one number is what pinned
+     the app to 940 on every display. */
+  --canvas: 1360px;
+  --column: 876px;
 
-  /* Brand and status hues are shared. They are chosen to clear 4.5:1 on both themes, which is
-     what `npm run palette` checks; a hue that could only manage it on one would have to split
-     into two tokens the way `--red` and `--red-text` already did. */
-  --red: #d43333;
-  --green-line: 67 192 136;
+  /* Status hues are shared. They are chosen to clear 4.5:1 on both themes, which is
+     what `npm run palette` checks; a hue that could only manage it on one has to split
+     into per-theme tokens, which `--teal` and now `--accent` both do. */
+  --teal-line: 63 207 187;
   --amber-line: 234 182 84;
-  /* The retired red. `--red` replaced it as a surface and `--red-text` as text, per the note
-     below, but it stayed in use as the tint behind danger states, where it never had to meet a
-     contrast floor and so was never revisited. It is named here rather than left as five loose
-     literals; whether the tints should move to `--red` is a visual decision, not a rename. */
+  /* The brand purple as a triple, for the tints and hairlines that mark selection: the row you
+     are on, the filter you have chosen, the panel being featured. Selection is not danger, and
+     until this token existed it was drawn in `--red-line`, which is why the row you were reading
+     used to carry a faint red wash. */
+  --accent-line: 138 83 225;
+  /* Danger, and only danger. The tint behind a destructive state, where it never has to meet a
+     contrast floor. It is named here rather than left as loose literals. It used to paint
+     selection too; that job moved to `--accent-line` above. */
   --red-line: 226 54 54;
   --on-accent: #fff;
 
@@ -47,42 +55,48 @@
   color-scheme: dark;
   --tint-base: 255 255 255;
   --shadow-alpha: 1;
-  --bg: #0f1115;
-  --rail: #0b0d10;
-  --card: #171a20;
-  --card-line: 23 26 32;
-  --card-2: #1c2028;
-  --line: #242932;
-  --line-2: #666c74;
-  --text: #eef1f6;
-  --dim: #c6cdda;
-  --muted: #8d95a6;
-  --track: #232731;
-  --track-2: #616e8b;
-  --cb-line: #5f6774;
-  --panel: #14161c;
+  --bg: #111117;
+  --rail: #0c0c11;
+  --card: #191925;
+  --card-line: 25 25 37;
+  --card-2: #1f1f2f;
+  --line: #2a2a37;
+  --line-2: #6a6a7e;
+  --text: #f2f2f8;
+  --dim: #c7c7d8;
+  --muted: #9191a4;
+  --track: #242434;
+  --track-2: #696985;
+  --cb-line: #67677e;
+  --panel: #15151e;
   --warn: #d9822b;
   /* The foreground for a row that has been read. Dim enough to recede, but a
      real colour rather than an opacity, so it keeps its own contrast ratio. */
-  --read-fg: #9aa2b2;
-  /* Two reds, because one cannot serve both jobs on a dark page. `--red` is a
-     SURFACE that white text sits on, so it has to be dark enough for white to
-     clear 4.5:1. `--red-text` is red used AS text on the page background, so it
-     has to be light enough to clear 4.5:1 the other way. The old single
-     #e23636 measured 4.36:1 and 4.33:1 respectively, failing both.
-     `--red-text` is set for the lightest background it ever lands on, which is
-     the hero panel, not `--bg`. Measured 4.81:1 against the hero's bounded
-     worst case and 5.70:1 against `--bg`. */
-  --red-text: #eb5f5f;
+  --read-fg: #9b9baf;
+  /* Two purples, because one cannot serve both jobs on a dark page. `--accent` is a
+     SURFACE that white text sits on, so it has to be dark enough for white to clear
+     4.5:1. `--accent-text` is the brand used AS text on the page, so it has to be
+     light enough to clear 4.5:1 the other way. This is the same split `--accent` and
+     `--accent-text` carried before the brand moved off red, and the reason for the split
+     has not changed: the single #e23636 the app shipped with measured 4.36:1 and 4.33:1
+     against those two jobs and failed both.
+     `--accent` is the brand mixed 20% toward white, and that ratio was searched rather
+     than picked: the brand itself measures 2.14:1 against `--track`, so a purple dark
+     enough to be recognisably the icon fails five of its eight pairs on a dark page.
+     20% is the least white that clears all eight, at 4.77:1 for white on it.
+     `--accent-text` is set for the lightest background it ever lands on, which is the
+     hero panel, not `--bg`. */
+  --accent: #8a53e1;
+  --accent-text: #b694ec;
   /* Danger used as emphasis rather than as body text: a hover, a badge, a notice heading.
-     Lighter than `--red-text` because it lands on the tinted danger surfaces. */
+     Lighter than the body danger token because it lands on the tinted danger surfaces. */
   --red-fg: #ff8a8a;
   --red-fg-2: #ff9d9d;
-  --green: #43c088;
+  --teal: #3fcfbb;
   --amber: #eab654;
   --blue: #7fb3ff;
   /* The placeholder shown where a cover has not loaded. The hue comes from the series name at
-     `src/js/main.js:695-696`, so only saturation and lightness are the theme's to set. */
+     `src/js/main.js:697-698`, so only saturation and lightness are the theme's to set. */
   --fallback-a: hsl(var(--h) 42% 26%);
   --fallback-b: hsl(calc(var(--h) + 40) 38% 14%);
   --fallback-fg: hsl(var(--h) 60% 88%);
@@ -99,26 +113,27 @@
   color-scheme: light;
   --tint-base: 0 0 0;
   --shadow-alpha: .34;
-  --bg: #fbfcfe;
-  --rail: #f2f4f8;
+  --bg: #fafaff;
+  --rail: #f2f2f8;
   --card: #ffffff;
   --card-line: 255 255 255;
-  --card-2: #f6f8fb;
-  --line: #dde2ea;
-  --line-2: #8a8f97;
-  --text: #12151b;
-  --dim: #3d4450;
-  --muted: #5c6472;
-  --track: #dbe0e9;
-  --track-2: #7b8aa2;
-  --cb-line: #8a92a1;
+  --card-2: #f6f6fb;
+  --line: #e0e0ef;
+  --line-2: #888898;
+  --text: #13131b;
+  --dim: #3d3d4d;
+  --muted: #5c5c6e;
+  --track: #d9d9eb;
+  --track-2: #7b7b93;
+  --cb-line: #8a8a9e;
   --panel: #ffffff;
   --warn: #8a4d09;
-  --read-fg: #626a79;
-  --red-text: #b3241f;
+  --read-fg: #616175;
+  --accent: #6d28d9;
+  --accent-text: #5c22b8;
   --red-fg: #9c1c18;
   --red-fg-2: #9c1c18;
-  --green: #1c6b45;
+  --teal: #12695f;
   --amber: #6d4e08;
   --blue: #17509c;
   --fallback-a: hsl(var(--h) 34% 82%);
@@ -131,26 +146,27 @@
     color-scheme: light;
     --tint-base: 0 0 0;
     --shadow-alpha: .34;
-    --bg: #fbfcfe;
-    --rail: #f2f4f8;
+    --bg: #fafaff;
+    --rail: #f2f2f8;
     --card: #ffffff;
     --card-line: 255 255 255;
-    --card-2: #f6f8fb;
-    --line: #dde2ea;
-    --line-2: #8a8f97;
-    --text: #12151b;
-    --dim: #3d4450;
-    --muted: #5c6472;
-    --track: #dbe0e9;
-    --track-2: #7b8aa2;
-    --cb-line: #8a92a1;
+    --card-2: #f6f6fb;
+    --line: #e0e0ef;
+    --line-2: #888898;
+    --text: #13131b;
+    --dim: #3d3d4d;
+    --muted: #5c5c6e;
+    --track: #d9d9eb;
+    --track-2: #7b7b93;
+    --cb-line: #8a8a9e;
     --panel: #ffffff;
     --warn: #8a4d09;
-    --read-fg: #626a79;
-    --red-text: #b3241f;
+    --read-fg: #616175;
+    --accent: #6d28d9;
+    --accent-text: #5c22b8;
     --red-fg: #9c1c18;
     --red-fg-2: #9c1c18;
-    --green: #1c6b45;
+    --teal: #12695f;
     --amber: #6d4e08;
     --blue: #17509c;
     --fallback-a: hsl(var(--h) 34% 82%);
@@ -194,7 +210,7 @@ h2[tabindex="-1"]:focus {
 
 .skip-link {
   position: absolute; left: -999px; top: 0; z-index: 100;
-  background: var(--red); color: var(--on-accent); padding: .6rem 1rem; border-radius: 0 0 8px 0;
+  background: var(--accent); color: var(--on-accent); padding: .6rem 1rem; border-radius: 0 0 8px 0;
 }
 .skip-link:focus { left: 0; }
 
@@ -280,14 +296,14 @@ h2[tabindex="-1"]:focus {
 }
 .ri:hover { background: rgb(var(--tint-base) / 4%); color: var(--text); }
 
-/* The selected state is a red accent bar AND a raised surface AND a heavier label, so it
+/* The selected state is a purple accent bar AND a raised surface AND a heavier label, so it
    never depends on colour alone. */
 .ri[aria-current], .ri.on {
   background: rgb(var(--tint-base) / 8%); color: var(--text); font-weight: 600;
 }
 .ri[aria-current]::before, .ri.on::before {
   content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-  width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--red);
+  width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--accent);
 }
 .ri .lbl { display: block; min-width: 0; flex: 1 1 auto; }
 .ri-sub { display: block; font-size: .74rem; color: var(--muted); }
@@ -296,7 +312,7 @@ h2[tabindex="-1"]:focus {
 .ri .t { display: flex; justify-content: space-between; gap: .5rem; }
 .ri .n { font-variant-numeric: tabular-nums; font-size: .76rem; color: var(--muted); }
 .ri .bar { display: block; height: 3px; background: var(--track); border-radius: 2px; margin-top: .45rem; overflow: hidden; }
-.ri .bar i { display: block; height: 100%; background: var(--red); border-radius: 2px; }
+.ri .bar i { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
 
 /* A reading order has no glyph of its own, so its initial stands in for one in rail mode. */
 .ri .init {
@@ -346,7 +362,7 @@ h2[tabindex="-1"]:focus {
    path's "Start here" badge into a 10px dot. Measured in Edge at 1280x900. */
 .railed .rail-foot .pill { width: 10px; height: 10px; padding: 0; border-radius: 50%; overflow: hidden;
   color: transparent; border-width: 2px; justify-self: center; }
-.railed .rail-foot .pill-ok { background: var(--green); border-color: var(--green); }
+.railed .rail-foot .pill-ok { background: var(--teal); border-color: var(--teal); }
 .railed .rail-foot .pill-warn { background: var(--amber); border-color: var(--amber); }
 .railed .rail-foot .pill-muted { background: var(--muted); border-color: var(--muted); }
 
@@ -357,16 +373,26 @@ h2[tabindex="-1"]:focus {
   font-size: .72rem; border-radius: 999px; padding: .2rem .6rem;
   border: 1px solid var(--line); color: var(--muted); justify-self: start;
 }
-.pill-ok { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
+.pill-ok { color: var(--teal); border-color: rgb(var(--teal-line) / 25.098%); }
 .pill-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); }
 
-/* The badge on the first stop of a reading path. Deliberately the same two values as `.pill-ok`
-   rather than a new colour, so that adding it introduced no new hue to defend. It does sit on a
-   surface the palette gate had never measured: a catalog row is `--card-2`, not `--card`, and the
-   gate carried --green only against --bg and --card. That pair is now measured too, at 7.10:1 in
-   the dark theme and 6.10:1 in the light one against a 4.5:1 floor.
-   It is named separately so that changing what "ok" means cannot silently restyle "start here". */
-.pill-start { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
+/* Two badges, one treatment. The first stop of a reading path and a beginner-friendly order are
+   different claims and keep different names, so changing what one means cannot silently restyle
+   the other, but both are the answer to "where do I start" and there is no reason for a reader to
+   learn two looks for that.
+   They sit on a surface the palette gate had never measured: a catalog row is `--card-2`, not
+   `--card`, and the gate carried --teal only against --bg and --card. That pair is now measured
+   too, at 8.38:1 in the dark theme and 6.07:1 in the light one against a 4.5:1 floor.
+   They carry more weight than `.pill-ok`, and they earn it with a tint rather than a fill. A fill
+   is not available here: --teal flips polarity between themes, light on a dark page and dark on a
+   light one, so no single foreground can sit on it. Measured, the theme's own --text on a filled
+   badge is 2.83:1 in the light theme and 1.73:1 in the dark one, and a fixed dark glyph fares no
+   better across the pair, reading 9.55:1 on the dark fill and 2.83:1 on the light one. The tint
+   measures 7.16:1 dark and 6.02:1 light on --card, and 7.89:1 and 5.81:1 on --bg. */
+.pill-start, .pill-beginner {
+  color: var(--teal); border-color: rgb(var(--teal-line) / 33.333%);
+  background: rgb(var(--teal-line) / 12%); font-weight: 700;
+}
 
 /* The badge and its sentence share a baseline and wrap together, so a narrow window breaks the
    line after the badge instead of stranding it on a row of its own. */
@@ -375,8 +401,24 @@ h2[tabindex="-1"]:focus {
 /* ============================================================ main */
 
 main { min-width: 0; }
-.wrap { max-width: 940px; margin: 0 auto; padding: 1.6rem 2rem 3rem; }
+
+/* Two widths, not one. `--canvas` is how wide the page furniture may get; `--column` is how wide a
+   line of prose may get, and they are different questions. The wrapper used to answer both with
+   940, which on a 2560 display left two thirds of the screen empty for the sake of a text measure
+   that only the reading view needs.
+   `--column` is 876 and not 940 because sizing is border-box: the old 940 always included the
+   wrapper's 64 of horizontal padding, so 876 is the measure a reader has actually been getting.
+   Setting 940 here would have widened every prose view while claiming to preserve it. */
+.wrap { max-width: var(--canvas); margin: 0 auto; padding: 1.6rem 2rem 3rem; }
 @media (max-width: 620px) { .wrap { padding: 1.2rem 1rem 3rem; } }
+
+/* Views are prose and stay at the reading measure, centred, so the width the wrapper gained
+   appears as margin on both sides rather than as a long line or as a left-hugging column.
+   The furniture that lives outside the views takes the same treatment for the same reason. */
+.view, #save-report, #app-report, #blocked-banner, .wrap > footer { max-width: var(--column); margin-inline: auto; }
+/* The opt-out, for a view that is a browsing surface rather than a document. Home is the only one:
+   its catalog is a grid, and a grid gains a column from width where a paragraph gains nothing. */
+.view.view-wide { max-width: none; }
 
 .head {
   display: flex; justify-content: space-between; align-items: center;
@@ -393,7 +435,7 @@ main { min-width: 0; }
    replaced it, which is what a colour kept outside the palette does. CSS wins over a presentation
    attribute, so the markup keeps a stroke only as the value shown before the stylesheet loads. */
 .ring .ring-track { stroke: var(--line); }
-.ring .ring-arc { stroke: var(--red-text); }
+.ring .ring-arc { stroke: var(--accent-text); }
 #ring-arc { transition: stroke-dashoffset .35s ease; }
 
 .tgl {
@@ -402,7 +444,7 @@ main { min-width: 0; }
   border-radius: 999px; padding: .3rem .7rem;
 }
 .tgl:hover { color: var(--text); }
-.tgl .sw { width: 26px; height: 15px; border-radius: 999px; background: var(--red); position: relative; transition: background .15s; }
+.tgl .sw { width: 26px; height: 15px; border-radius: 999px; background: var(--accent); position: relative; transition: background .15s; }
 .tgl .sw::after {
   content: ""; position: absolute; top: 2px; left: 13px; width: 11px; height: 11px;
   border-radius: 50%; background: var(--on-accent); transition: left .15s;
@@ -466,7 +508,7 @@ body.nocovers .fallback, .fallback.show { display: flex; }
 .fallback .fs { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; opacity: .85; line-height: 1.35; }
 .fallback .fn { font-size: 2.4rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
 
-.eyebrow { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red-text); font-weight: 800; margin: 0; }
+.eyebrow { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-text); font-weight: 800; margin: 0; }
 .hero h2 { font-size: 1.9rem; line-height: 1.14; margin: .4rem 0 .3rem; letter-spacing: -.025em; font-weight: 640; }
 .byline { color: var(--muted); margin: 0 0 .8rem; font-size: .9rem; }
 .desc { color: var(--dim); font-size: .93rem; margin: 0 0 1.1rem; max-width: 58ch; }
@@ -475,13 +517,13 @@ body.nocovers .fallback, .fallback.show { display: flex; }
 .facts > div { min-width: 0; }
 .facts dt { font-size: .66rem; letter-spacing: .11em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .facts dd { margin: .12rem 0 0; font-size: .92rem; font-weight: 560; }
-.facts dd.ok { color: var(--green); }
+.facts dd.ok { color: var(--teal); }
 .facts dd.warn { color: var(--amber); }
 
 .cta { display: flex; gap: .55rem; flex-wrap: wrap; }
 .btn {
   border: 1px solid transparent; border-radius: 11px; padding: .68rem 1.25rem;
-  background: var(--red); color: var(--on-accent); font-weight: 620; font-size: .92rem;
+  background: var(--accent); color: var(--on-accent); font-weight: 620; font-size: .92rem;
   display: inline-flex; align-items: center; gap: .5rem; text-decoration: none;
 }
 /* display:inline-flex would otherwise defeat the hidden attribute. */
@@ -521,7 +563,7 @@ body.nocovers .tile .tf, .tile .tf.show { display: flex; }
 .tile .tf .n { font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em; }
 .tile .lab { font-size: .75rem; margin-top: .4rem; color: var(--muted); line-height: 1.35; }
 .tile .lab b { color: var(--text); font-weight: 540; display: block; }
-.tile button:hover .lab b { color: var(--red-text); }
+.tile button:hover .lab b { color: var(--accent-text); }
 
 /* ============================================================ full order */
 
@@ -545,10 +587,16 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
   padding: .26rem .75rem; font-size: .8rem; display: inline-block;
 }
 .fp:hover span { color: var(--text); }
-/* The checked pill no longer differs by border, because every filter pill now carries the boundary
-   that clears 3:1. The state is still carried by the tint and by the label going from `--muted` to
-   `--text`, and by the radio underneath it, which is what a screen reader reads. */
-.fp input:checked + span { background: rgb(var(--tint-base) / 6.275%); color: var(--text); }
+/* The checked pill carries the brand, because choosing a filter is selection and selection is
+   purple. Its border becomes `--accent-text` rather than a tint of the accent: that token is
+   already gated at 4.5:1 against the page, so the boundary clears the 3:1 the unchecked pills get
+   from `--line-2` with room to spare, and the state does not rest on colour alone because the
+   label also goes from `--muted` to the brand and the radio underneath it is what a screen reader
+   reads. */
+.fp input:checked + span {
+  background: rgb(var(--accent-line) / 10%); color: var(--accent-text);
+  border-color: var(--accent-text);
+}
 .fp input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: 2px; }
 
 /* The choice between reading paths through one story, in the catalog list and in the preview
@@ -584,7 +632,9 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
   align-items: center; padding: .42rem .55rem; border-radius: 9px; border: 1px solid transparent;
 }
 .row:hover { background: rgb(var(--tint-base) / 2.745%); border-color: var(--line); }
-.row.now { background: rgb(var(--red-line) / 7.059%); border-color: rgb(var(--red-line) / 25.098%); }
+/* The row you are on. Selection, not danger, though until `--accent-line` existed it was drawn in
+   the danger tint and the row you were reading carried a faint red wash for it. */
+.row.now { background: rgb(var(--accent-line) / 8%); border-color: rgb(var(--accent-line) / 30%); }
 /* A read row recedes through a dimmer title colour, a strikethrough and a filled
    checkbox. It deliberately does NOT use `opacity` on the row: opacity multiplies
    every descendant against the page, and at .48 that dropped the meta line and the
@@ -610,7 +660,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
   width: 17px; height: 17px; border-radius: 5px; border: 1.5px solid var(--cb-line);
   background: none; display: grid; place-items: center; color: var(--on-accent); font-size: .65rem; padding: 0;
 }
-.row.is-read .cb { background: var(--green); border-color: var(--green); }
+.row.is-read .cb { background: var(--teal); border-color: var(--teal); }
 
 .rt { font-size: .89rem; font-weight: 500; }
 .rm { color: var(--muted); font-size: .76rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .05rem; }
@@ -658,7 +708,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
    the measurement would have to be redone per theme. Measured twice now, for BL-030 and
    BL-049. */
 .badge { font-size: .68rem; border: 1px solid var(--line); border-radius: 999px; padding: .02rem .42rem; white-space: nowrap; }
-.badge-expected, .badge-override-available { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); }
+.badge-expected, .badge-override-available { color: var(--teal); border-color: rgb(var(--teal-line) / 25.098%); }
 .badge-scheduled { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); }
 .badge-unknown, .badge-pending, .badge-norecord { color: var(--muted); }
 .badge-override-unavailable { color: var(--red-fg); border-color: rgb(var(--red-line) / 33.333%); }
@@ -751,7 +801,7 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
 .result-source a:hover { color: var(--text); }
 
 .notice { border-radius: 9px; padding: .55rem .75rem; font-size: .84rem; margin: 0; border: 1px solid var(--line); }
-.notice-ok { color: var(--green); border-color: rgb(var(--green-line) / 25.098%); background: rgb(var(--green-line) / 5.882%); }
+.notice-ok { color: var(--teal); border-color: rgb(var(--teal-line) / 25.098%); background: rgb(var(--teal-line) / 5.882%); }
 .notice-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); background: rgb(var(--amber-line) / 5.882%); }
 .notice-error { color: var(--red-fg-2); border-color: rgb(var(--red-line) / 33.333%); background: rgb(var(--red-line) / 7.059%); }
 
@@ -773,7 +823,7 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
 .notice-dismiss { border-color: transparent; }
 .notice-dismiss:hover, .notice-dismiss:focus-visible { border-color: var(--line-2); }
 
-progress { accent-color: var(--red); height: 6px; }
+progress { accent-color: var(--accent); height: 6px; }
 
 .app-footer {
   border-top: 1px solid var(--line); margin-top: 2.6rem; padding-top: 1rem;
@@ -796,8 +846,10 @@ progress { accent-color: var(--red); height: 6px; }
   border: 1px solid var(--line); border-radius: 20px; background: var(--card);
   padding: 1.4rem 1.6rem; margin-bottom: 1.8rem;
 }
-.chero-in { display: grid; grid-template-columns: 106px 1fr; gap: 1.4rem; align-items: start; }
-@media (max-width: 620px) { .chero-in { grid-template-columns: 1fr; } .chero-in .art { max-width: 106px; } }
+/* 132 rather than 106, for the same reason the catalog cover grew: this is the other place a
+   reader is being asked to decide something. */
+.chero-in { display: grid; grid-template-columns: 132px 1fr; gap: 1.4rem; align-items: start; }
+@media (max-width: 620px) { .chero-in { grid-template-columns: 1fr; } .chero-in .art { max-width: 132px; } }
 .chero h2 { font-size: 1.35rem; margin: .3rem 0 .7rem; font-weight: 640; letter-spacing: -.02em; }
 .chero .art img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
 body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
@@ -813,7 +865,7 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 /* The fill is a width, and the count beneath it repeats the same numbers as text, so the
    bar is never the only way to read the progress. */
 .pbar { height: 8px; border-radius: 999px; background: var(--track); overflow: hidden; max-width: 32rem; }
-.pbar i { display: block; height: 100%; background: var(--red); border-radius: 999px; }
+.pbar i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
 
 .yours { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
 .yours button {
@@ -825,7 +877,39 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 .yours .yt { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
 .yours .yours-name { color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
-/* ---------------------------------------------------------- catalog cards */
+/* ---------------------------------------------------------- featured journey
+
+   The answer to "where do I start", shown only on a genuine first run: an empty library, no facet
+   chosen and no query typed. It sits above the grid rather than taking a slot in it, because the
+   grid is capped at twelve with an overflow count that a test holds, and taking a slot would make
+   that count wrong.
+   Amber, per the brief's role for it: this is editorial guidance rather than a status or an
+   action. The action inside it is purple, and it is the one filled primary on the page. */
+.feature {
+  border: 1px solid var(--line); border-left: 4px solid var(--amber);
+  border-radius: 20px; background: var(--card);
+  padding: 1.4rem 1.6rem; margin-bottom: 1.6rem;
+}
+.feature[hidden] { display: none; }
+.feature-in { display: grid; grid-template-columns: 132px 1fr; gap: 1.6rem; align-items: start; }
+@media (max-width: 620px) { .feature-in { grid-template-columns: 1fr; } .feature-in .art { max-width: 132px; } }
+.feature h2 { font-size: 1.5rem; margin: .3rem 0 .55rem; font-weight: 640; letter-spacing: -.02em; }
+.feature .art img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
+body.nocovers .feature .art img, .feature .art img[hidden] { display: none; }
+.feature .art .fallback { padding: .55rem; border-radius: 10px; }
+.feature .art .fallback .fs { font-size: .58rem; letter-spacing: .06em; }
+.feature .art .fallback .fn { font-size: 1.5rem; }
+.feature-why { color: var(--dim); font-size: .92rem; line-height: 1.55; margin: 0 0 .8rem; max-width: 62ch; }
+/* The commitment, stated rather than implied. Every fact a reader needs before saying yes: how
+   many issues, how long, whether it ends, and whether anything has to be read first. */
+.feature-facts { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1rem; padding: 0; }
+.feature-facts li {
+  border: 1px solid var(--line-2); color: var(--dim); border-radius: 999px;
+  padding: .26rem .75rem; font-size: .8rem;
+}
+.feature-act { display: flex; flex-wrap: wrap; gap: .6rem; }
+.feature-act .btn { min-height: 44px; }
+
 
 .ogrid {
   list-style: none; margin: .9rem 0 0; padding: 0;
@@ -838,14 +922,19 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 }
 .ocard:hover { border-color: var(--line-2); }
 .ocard-body { display: flex; gap: .8rem; align-items: flex-start; padding: .85rem .85rem .6rem; }
-.ocard-art { flex: 0 0 58px; }
+/* 92 rather than 58, because choosing between stories is the one place cover art is doing work and
+   at 58 it was a thumbnail beside the text rather than the thing you look at first. Bounded by the
+   narrowest case rather than the widest: the track is 312 at a 1280 viewport and 313 on the full
+   canvas, leaving a 180 text column, but at the narrowest two-column band the track falls to 275
+   and the text column to 143, which is what stops this going further. */
+.ocard-art { flex: 0 0 92px; }
 .ocard-art img {
-  width: 58px; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px;
+  width: 92px; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px;
   border: 1px solid var(--line); display: block;
 }
 body.nocovers .ocard-art img, .ocard-art img[hidden] { display: none; }
 .ocard-art .of {
-  display: none; width: 58px; aspect-ratio: 2/3; border-radius: 6px;
+  display: none; width: 92px; aspect-ratio: 2/3; border-radius: 6px;
   border: 1px solid var(--line-2); padding: .35rem;
   flex-direction: column; justify-content: flex-end; gap: .1rem;
   --h: 0;
@@ -876,7 +965,7 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .ocard-ways { margin: 0 0 .35rem; }
 .ocard-ways .ways {
   background: none; border: 0; font: inherit; font-size: .74rem;
-  color: var(--muted); text-decoration: underline; text-underline-offset: 2px;
+  color: var(--blue); text-decoration: underline; text-underline-offset: 2px;
   /* Padding rather than a bare inline run, so the target clears the 24px floor that WCAG 2.2
      asks for at AA. Measured at .74rem it lands at 26px. */
   display: inline-block; padding: .3rem 0; min-height: 24px;
@@ -892,12 +981,22 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
   padding: 0 .85rem .85rem; margin-top: auto;
 }
 .ocard-foot .btn { width: 100%; justify-content: center; min-height: 44px; }
+/* An outline, not the filled primary. Eight filled primaries down a grid make nothing primary:
+   purple stops meaning "this is the action" and becomes the colour the page happens to be. The
+   page keeps one filled primary, in the featured panel, and every card offers an outline. The
+   exclusion keeps `.btn-added`, which is a state rather than an action, on its own footing. */
+.ocard-foot .btn:not(.btn-added) {
+  background: none; color: var(--text); border-color: var(--line-2); font-weight: 600;
+}
+.ocard-foot .btn:not(.btn-added):hover {
+  border-color: var(--accent-text); background: rgb(var(--accent-line) / 8%);
+}
 /* The preview covers the whole card, so the body is a large secondary target without the
    heading and the description being nested inside a button, which is not valid content for
    one and would flatten the card into a single unreadable label. The primary button is
    raised above the overlay so it stays a separate, unambiguous action. */
 .ocard-preview {
-  min-height: 44px; background: none; border: 1px solid transparent; color: var(--muted);
+  min-height: 44px; background: none; border: 1px solid transparent; color: var(--blue);
   font: inherit; font-size: .78rem; border-radius: 8px; text-align: center;
 }
 .ocard-preview::after { content: ''; position: absolute; inset: 0; border-radius: var(--r); }
@@ -905,7 +1004,7 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .ocard-foot .btn { position: relative; z-index: 1; }
 .ocard:focus-within { border-color: var(--line-2); }
 /* "In library" is a state, so it is named in the label as well as coloured. */
-.btn-added { background: rgb(var(--tint-base) / 5.882%); color: var(--green); border-color: rgb(var(--green-line) / 33.333%); font-weight: 600; }
+.btn-added { background: rgb(var(--tint-base) / 5.882%); color: var(--teal); border-color: rgb(var(--teal-line) / 33.333%); font-weight: 600; }
 
 .home-q { max-width: 32rem; margin-top: .8rem; }
 #home-overflow { margin: .9rem .1rem .55rem; }
@@ -984,6 +1083,15 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
   .pbar { border: 1px solid CanvasText; }
   .pbar i { background: Highlight; }
   .rail-tip { border: 1px solid CanvasText; background: Canvas; }
+  /* The featured panel is distinguished only by a tinted edge, and forced colours discard both the
+     tint and the raised surface, so without this it is an unmarked block of text above the grid. */
+  .feature { border: 1px solid CanvasText; }
+  .feature-facts li { border: 1px solid CanvasText; }
+  /* Both the beginner badge and the selected filter carry their state in colour plus a tinted
+     border, and only the border survives here, at whatever weight the mode assigns it. Marking the
+     selected filter with Highlight is what the rail already does for the selected view. */
+  .pill-start, .pill-beginner { border: 1px solid CanvasText; }
+  .fp input:checked + span { border: 2px solid Highlight; }
 }
 
 /* Unreadable-data recovery. Deliberately loud: saving is paused and the user must choose. */
@@ -999,17 +1107,17 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .blocked-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 
 /* BL-072. The ghost border is calibrated for the page and the card. On this banner the ghost's own
-   fill sits closer in luminance to `--line-2` than either of those does, warmer and lighter in dark
-   but warmer and darker in light, so the direction differs by theme while the squeeze does not.
+   fill sits closer in luminance to `--line-2` than either of those does, so the boundary is
+   squeezed in both themes even though the two themes approach it from opposite sides.
    Measured against that fill, which is what the reader actually sees the border against, `--line-2`
-   falls to 2.44:1 dark and 2.39:1 light, under the 3:1 a control boundary needs. `--muted` is the
-   quietest token that clears there, at 4.29 and 4.39, and staying quiet is the entire point of
-   making the button a ghost. `--warn` clears too, at 4.42 and 4.91, and was rejected for the
+   falls to 2.46:1 dark and 2.57:1 light, under the 3:1 a control boundary needs. `--muted` is the
+   quietest token that clears there, at 4.20 and 4.81, and staying quiet is the entire point of
+   making the button a ghost. `--warn` clears too, at 4.44 and 4.91, and was rejected for the
    opposite reason: it is the banner's own alarm colour and would pull the eye towards the action
    the paragraph above says to take second.
 
    The figures are quoted against the button's fill rather than the banner deliberately. Against the
-   banner itself `--line-2` reads 2.90 and 2.73 and `--muted` reads 5.11 and 5.00, which would
+   banner itself `--line-2` reads 2.92 in both themes and `--muted` reads 4.99 and 5.48, which would
    overstate both. A ghost button is a tint over whatever it is dropped onto, so its border is a
    boundary on that tint, not on the surface underneath. This is the same misattribution BL-069
    recorded one surface earlier. */

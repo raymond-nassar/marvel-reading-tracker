@@ -1,20 +1,27 @@
 /* Styles for the Marvel Unlimited launch page.
    Kept in its own file rather than an inline <style> so the app can serve a
    Content-Security-Policy with a strict `style-src 'self'`, which is what stops
-   injected markup from carrying its own styling. */
+   injected markup from carrying its own styling.
+
+   The literals below are the app's shipped dark tokens written out, because this document is opened
+   in its own tab and never loads the stylesheet that defines them. BL-166 repainted them by hand for
+   that reason, and it is the reason to be careful: the palette gate reads `src/styles.css` alone, so
+   nothing here is watched and this page sat in the retired red for one commit after the rest of the
+   app had moved. Measured against the page fill, the body text reads 16.87:1, the caption 6.08:1 and
+   the link 8.77:1, and white on the brand mark reads 4.77:1. */
 
 body {
   margin: 0; min-height: 100vh; display: grid; place-items: center;
-  background: #0f1115; color: #eef1f6;
+  background: #111117; color: #f2f2f8;
   font: 15px/1.6 system-ui, "Segoe UI", sans-serif; text-align: center; padding: 2rem;
 }
 .box { max-width: 44ch; }
 .mark {
-  width: 34px; height: 34px; border-radius: 9px; background: #d43333; color: #fff;
+  width: 34px; height: 34px; border-radius: 9px; background: #8a53e1; color: #fff;
   display: grid; place-items: center; font-weight: 800; margin: 0 auto 1.2rem;
 }
 h1 { font-size: 1.05rem; font-weight: 600; margin: 0 0 .4rem; }
-p { color: #8d95a6; font-size: .87rem; margin: .4rem 0; }
+p { color: #9191a4; font-size: .87rem; margin: .4rem 0; }
 a { color: #7fb3ff; }
 @media (prefers-reduced-motion: no-preference) {
   .mark { animation: pulse 1.4s ease-in-out infinite; }

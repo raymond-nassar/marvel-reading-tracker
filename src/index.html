@@ -168,7 +168,7 @@
             "Continue reading" and demotes the catalog to "Discover more".
             See docs/ux/landing-page-flow.md.
           -->
-          <section id="view-home" class="view" hidden aria-labelledby="home-h">
+          <section id="view-home" class="view view-wide" hidden aria-labelledby="home-h">
             <div class="head">
               <div class="head-left">
                 <h1 id="home-h">Pick something to read</h1>
@@ -182,6 +182,37 @@
                 </button>
               </div>
             </div>
+
+            <!-- State A only: the answer to "where do I start", shown above the catalog on a
+                 genuine first run and withdrawn the moment the reader has a library, picks a
+                 filter or types a query. Deliberately not a card in the grid below: the grid is
+                 capped at twelve with an overflow count that a test holds, so taking a slot would
+                 make that count wrong. renderFeatured fills every id here. -->
+            <section id="home-featured" class="feature" hidden aria-labelledby="feature-h">
+              <div class="feature-in">
+                <div class="art">
+                  <img id="feature-img" alt="" />
+                  <div class="fallback" id="feature-fb" aria-hidden="true">
+                    <span class="fs" id="feature-fs"></span>
+                    <span class="fn" id="feature-fn"></span>
+                  </div>
+                </div>
+                <div class="feature-body">
+                  <p class="eyebrow">Featured journey</p>
+                  <!-- Given text for the same reason #chero-h is: this heading names its own
+                       section, so an empty one would leave the section unnamed too. -->
+                  <h2 id="feature-h">A place to start</h2>
+                  <p class="feature-why" id="feature-why"></p>
+                  <ul class="feature-facts" id="feature-facts"></ul>
+                  <div class="feature-act">
+                    <!-- The one filled primary on the page. Its accessible name carries the order,
+                         so it is not the eighth identical "Start reading" a screen reader hears. -->
+                    <button type="button" class="btn" id="btn-feature-start">Start reading</button>
+                    <button type="button" class="btn btn-g" id="btn-feature-preview">See the issues</button>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             <!-- State B only: where the reader left off. -->
             <section id="home-continue" class="chero" hidden aria-labelledby="chero-h">
@@ -270,8 +301,8 @@
                 </button>
                 <div class="ring" id="ring-wrap" hidden>
                   <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                    <circle class="ring-track" cx="18" cy="18" r="15" fill="none" stroke="#242932" stroke-width="4" />
-                    <circle class="ring-arc" id="ring-arc" cx="18" cy="18" r="15" fill="none" stroke="#eb5f5f"
+                    <circle class="ring-track" cx="18" cy="18" r="15" fill="none" stroke="#2a2a37" stroke-width="4" />
+                    <circle class="ring-arc" id="ring-arc" cx="18" cy="18" r="15" fill="none" stroke="#b694ec"
                             stroke-width="4" stroke-linecap="round"
                             stroke-dasharray="94.2" stroke-dashoffset="94.2" />
                   </svg>
