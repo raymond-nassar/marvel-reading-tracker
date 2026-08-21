@@ -136,7 +136,8 @@
       "authored_rows": 238,
       "catalog_entries": 36,
       "focused_tests": 104,
-      "full_tests": 1277,
+      "post_pr_focused_tests": 43,
+      "full_tests": 1279,
       "live_issue_checks": 238,
       "browser_assertions": 119
     },
@@ -145,6 +146,15 @@
       "material_findings": 3,
       "open_material_findings": 0,
       "result": "Idempotent authoring, approved-mapping preservation, and explicit manual series approval verified"
+    },
+    "post_pr_review": {
+      "status": "resolved",
+      "pull_request": 159,
+      "material_findings": 3,
+      "open_material_findings": 0,
+      "failure_proofs": 3,
+      "shipped_overlap_hashes_unchanged": 10,
+      "result": "Complete overlap identity validation, shipped-report regeneration, and issue-zero preservation verified"
     }
   },
   "artifact_paths": {
@@ -203,6 +213,6 @@
     }
   ],
   "blockers": [],
-  "next_action": "Publish: commit the reviewed implementation and open the pull request",
+  "next_action": "Commit and publish the resolved post-PR review corrections, update pull request 159, then start Agent Merge",
   "prioritized_follow_ups": []
 }

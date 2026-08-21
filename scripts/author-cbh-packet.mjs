@@ -77,8 +77,18 @@ export function selectedIssueIds(mapping) {
     assert(Number.isInteger(Number(row.selectedIssueId)), `${mapping.id} row ${index + 1} has no selected issue id`);
     assert(/^https:\/\/www\.marvel\.com\/comics\/issue\/\d+\//.test(String(row.marvelIssueUrl)), `${mapping.id} row ${index + 1} has no exact Marvel issue URL`);
     assert(typeof row.resolvedIssueTitle === 'string' && row.resolvedIssueTitle.trim(), `${mapping.id} row ${index + 1} has no resolved title`);
+    assert(String(row.issueNumber ?? '').trim(), `${mapping.id} row ${index + 1} has no reviewed issue number`);
     return String(row.selectedIssueId);
   });
+}
+
+function checklistTitleForRow(row) {
+  const title = row.resolvedIssueTitle.trim();
+  const issueNumber = String(row.issueNumber).trim();
+  const escapedNumber = issueNumber.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`#\\s*${escapedNumber}(?=\\s|$)`, 'i').test(title)
+    ? title
+    : `${title} #${issueNumber}`;
 }
 
 export function buildMarkdown(mapping) {
@@ -91,7 +101,7 @@ export function buildMarkdown(mapping) {
     'See [the data provenance record](../../../docs/DATA_PROVENANCE.md) for the permission boundary and review method.',
   ].join('\n');
   const checklist = mapping.rows.map((row) => (
-    `- [ ] [${escapeLinkText(row.resolvedIssueTitle)}](${row.marvelIssueUrl})`
+    `- [ ] [${escapeLinkText(checklistTitleForRow(row))}](${row.marvelIssueUrl})`
   ));
   return `# ${manifest.name}: Issue-by-Issue Reading Checklist\n\n${trail}\n\n${checklist.join('\n')}\n`;
 }
@@ -101,6 +111,39 @@ function assertNoDuplicates(values, label) {
   for (const value of values) {
     if (seen.has(value)) throw new Error(`Duplicate ${label}: ${value}`);
     seen.add(value);
+  }
+}
+
+export function assertCompleteOverlapReport(report, {
+  candidateId,
+  candidateCount,
+  expectedOrderIds,
+}) {
+  assert(report && typeof report === 'object', `${candidateId} overlap report is missing`);
+  assert(report.candidateCount === candidateCount, `${candidateId} overlap count differs from its mapping`);
+  const expectedIds = expectedOrderIds.map((value) => String(value));
+  assertNoDuplicates(expectedIds, `${candidateId} expected overlap order id`);
+  const comparisons = Array.isArray(report.comparisons) ? report.comparisons : [];
+  const actualIds = comparisons.map((comparison) => String(comparison?.orderId ?? '').trim());
+  const expectedSet = new Set(expectedIds);
+  const actualSet = new Set(actualIds);
+  const missing = expectedIds.filter((id) => !actualSet.has(id));
+  const unexpected = actualIds.filter((id) => !expectedSet.has(id));
+  const complete = Array.isArray(report.comparisons)
+    && report.comparisonCount === expectedIds.length
+    && comparisons.length === expectedIds.length
+    && actualIds.every(Boolean)
+    && actualSet.size === actualIds.length
+    && missing.length === 0
+    && unexpected.length === 0;
+  assert(complete,
+    `${candidateId} overlap report is incomplete; missing ${missing.join(', ') || 'none'}, unexpected ${unexpected.join(', ') || 'none'}`);
+
+  for (const comparison of comparisons) {
+    assert(comparison.relationship === 'none', `${candidateId} has an unapproved overlap with ${comparison.orderId}`);
+    assert(comparison.sharedCount === 0, `${candidateId} overlap count is nonzero for ${comparison.orderId}`);
+    assert(Array.isArray(comparison.sharedIds) && comparison.sharedIds.length === 0,
+      `${candidateId} overlap ids are nonempty for ${comparison.orderId}`);
   }
 }
 
@@ -123,9 +166,14 @@ export async function authorPacket() {
     assert(mapping.id === id, `${id} mapping id changed`);
     const ids = selectedIssueIds(mapping);
     assert(new Set(ids).size === ids.length, `${id} contains a duplicate selected issue id`);
-    assert(report.candidateCount === ids.length, `${id} overlap count differs from its mapping`);
-    assert(report.comparisonCount === existing.length + PACKET_IDS.length - 1, `${id} overlap report is incomplete`);
-    assert(report.comparisons.every((comparison) => comparison.relationship === 'none'), `${id} has an unapproved overlap`);
+    assertCompleteOverlapReport(report, {
+      candidateId: id,
+      candidateCount: ids.length,
+      expectedOrderIds: [
+        ...existing.map((entry) => entry.id),
+        ...PACKET_IDS.filter((peerId) => peerId !== id),
+      ],
+    });
     mappings.push(mapping);
     entries.push(manifestEntryForMapping(mapping));
     issueIds.push(...ids);

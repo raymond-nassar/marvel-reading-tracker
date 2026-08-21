@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   PACKET_IDS,
+  assertCompleteOverlapReport,
   existingEntriesForPacket,
   manifestEntryForMapping,
 } from '../scripts/author-cbh-packet.mjs';
@@ -69,12 +70,56 @@ test('the approved Comic Book Herald packet stays exact through every generated 
     assert.equal(generated.count, expectedIds.length);
     assert.equal(generated.placeholders, 0);
     assert.deepEqual(generated.unresolved, []);
+    assert.deepEqual(
+      generated.items.map((item) => String(item.number)),
+      mapping.rows.map((row) => String(row.issueNumber)),
+      `${id} generated issue numbers differ from the approved mapping`,
+    );
     assert.equal(catalogEntry.count, expectedIds.length);
     assert.equal(catalogEntry.source, mapping.sourceUrl);
     assert.equal(catalogEntry.sourceOrigin, "Compiled for this project from Comic Book Herald's guide");
     assert.equal(catalogEntry.sourceLicense, null);
     assert.equal(catalogEntry.coverIssueId, approved.coverIssueId);
   }
+});
+
+test('authoring requires one clean overlap row for every expected order identity', () => {
+  const expectedOrderIds = ['existing-order', 'packet-peer'];
+  const valid = {
+    candidateCount: 1,
+    comparisonCount: 2,
+    comparisons: expectedOrderIds.map((orderId) => ({
+      orderId,
+      relationship: 'none',
+      sharedCount: 0,
+      sharedIds: [],
+    })),
+  };
+
+  assert.doesNotThrow(() => assertCompleteOverlapReport(valid, {
+    candidateId: 'candidate',
+    candidateCount: 1,
+    expectedOrderIds,
+  }));
+  assert.throws(() => assertCompleteOverlapReport({
+    ...valid,
+    comparisons: [],
+  }, {
+    candidateId: 'candidate',
+    candidateCount: 1,
+    expectedOrderIds,
+  }), /overlap report is incomplete/i);
+  assert.throws(() => assertCompleteOverlapReport({
+    ...valid,
+    comparisons: [
+      valid.comparisons[0],
+      { ...valid.comparisons[1], orderId: 'unexpected-order' },
+    ],
+  }, {
+    candidateId: 'candidate',
+    candidateCount: 1,
+    expectedOrderIds,
+  }), /overlap report is incomplete/i);
 });
 
 test('the authored packet has no aggregate identity, sequence, or issue overlap', async () => {

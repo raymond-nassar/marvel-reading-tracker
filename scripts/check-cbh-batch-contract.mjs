@@ -32,7 +32,12 @@ async function main() {
     if (mappedIds.join('|') !== payloadIds.join('|')) {
       throw new Error(`${entry.id} generated sequence differs from its approved mapping`);
     }
-    for (const row of mapping.rows) expectedById.set(Number(row.selectedIssueId), row);
+    for (const [index, row] of mapping.rows.entries()) {
+      if (String(payload.items[index]?.number) !== String(row.issueNumber)) {
+        throw new Error(`${entry.id} generated issue number differs at source position ${index + 1}`);
+      }
+      expectedById.set(Number(row.selectedIssueId), row);
+    }
     items.push(...payload.items);
   }
   if (items.length !== 238 || new Set(items.map((item) => item.issueId)).size !== 238) {

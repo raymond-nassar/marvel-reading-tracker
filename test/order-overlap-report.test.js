@@ -3,8 +3,11 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
+import { fileURLToPath } from 'node:url';
 import { buildComparisonReport, compareIssueSets, issueIdsFromValue } from '../scripts/lib/cbh-overlap.mjs';
 import { buildReportForMapping } from '../scripts/report-order-overlap.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 test('relationship classification matches the contract', () => {
   assert.deepEqual(compareIssueSets([1, 2, 3], [3, 4]), {
@@ -108,4 +111,19 @@ test('buildReportForMapping rejects unresolved mappings before writing a report'
   const report = await buildReportForMapping(validPath);
   assert.equal(report.candidateCount, 1);
   assert.ok(report.comparisons.length > 0);
+});
+
+test('buildReportForMapping regenerates shipped reports without duplicate self or peer comparisons', async () => {
+  const mappingsDir = path.join(root, 'scripts', 'data', 'cbh-mappings');
+  const report = await buildReportForMapping(
+    path.join(mappingsDir, 'secret-war.json'),
+    [path.join(mappingsDir, 'spider-man-the-other.json')],
+  );
+  const comparedIds = report.comparisons.map((comparison) => comparison.orderId);
+
+  assert.equal(report.candidateCount, 5);
+  assert.equal(report.comparisonCount, 35);
+  assert.equal(new Set(comparedIds).size, 35);
+  assert.equal(comparedIds.includes('secret-war'), false);
+  assert.equal(comparedIds.filter((id) => id === 'spider-man-the-other').length, 1);
 });

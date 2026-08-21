@@ -15,7 +15,8 @@
 * Completed scope markers: P02, P02-T01, and P02-T02
 * Active scope markers: None
 * Status basis: The source-order packet is approved, authored, vendored, validated, and reconciled.
-  The ten selected inventory records are `shipped`; implementation review and PR publication follow.
+  The pull request is open; its three post-publication review findings are fixed and merge automation
+  follows.
 
 ## Execution Summary
 
@@ -170,6 +171,25 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 * Focused evidence: 16 inventory, resolver, packet, and approval-preservation tests passed; lint
   reported 0. The ten exact mappings still contain the same 238 selected ids.
 
+### CHG-007: Resolve all material post-publication review findings
+
+* Related phase or task: None; this is the required fresh review of the open pull request.
+* Review result: Three medium findings, all fixed with no material finding left open.
+* Complete overlap evidence: Authoring now requires the report to contain one unique comparison row
+  for every expected shipped or packet-peer id, not only a claimed count. Each row must also record
+  `none`, zero shared issues, and an empty shared-id list.
+* Reproducible shipped reports: Overlap generation excludes the candidate and any supplied peers from
+  the manifest comparison set before adding the peers. All ten shipped reports regenerated with
+  unchanged SHA-256 hashes; the peer-argument regression also retained exactly 35 unique comparisons.
+* Issue-zero preservation: The authored Inhumans vs. X-Men checklist now names `#0`, vendoring falls
+  back to the checklist number when Marvel's display title omits it, and the pinned item records
+  `number: "0"`. Packet tests and the live packet contract compare every generated number with the
+  approved mapping.
+* Failure proofs: A count-only report made the new authoring test fail; restoring self-comparison made
+  shipped report regeneration fail on the duplicate sequence; restoring the null issue number made
+  both the packet test and packet contract fail at source position 1. Each isolated mutation was
+  removed through the staged stash before the passing rerun.
+
 ## Validation Record
 
 | Check | Scope | Status | Evidence or reason |
@@ -187,7 +207,7 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 | Vendor run | P02-T02 | Passed | 10 orders, 238 issues, and zero unresolved, placeholder, count, duplicate, digital-id, or cover warnings. |
 | Authored packet tests | P02-T02 | Passed | 104 focused catalog, manifest, provenance, inventory, exact-sequence, and aggregate-overlap tests. |
 | Semantic failure proofs | P02-T02 | Passed | One changed id failed exact sequence; one shipped id failed aggregate overlap; both passed after restoration. |
-| Full test suite | P02-T02 | Passed | 1,277 tests, 0 failed on the current merged tree. |
+| Full test suite | P02-T02 and Review | Passed | 1,279 tests, 0 failed on the post-review tree. |
 | Lint | P02-T02 | Passed | ESLint reported 0 errors. |
 | Counts | P02-T02 | Passed | 150 ranked rows, 5 parked, and 155 detail blocks; every stated figure agrees. |
 | Sizes | P02-T02 | Passed | All 7 stated file sizes agree. |
@@ -197,6 +217,11 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 | Added-issue live contract | P02-T02 | Passed | 238 of 238 generated issues match their approved mapping and live issue record. |
 | Edge browser scenarios | P02-T02 | Passed | 119 assertions, 0 failed, across 14 scenarios on the current merged tree. |
 | Implementation review | Review | Resolved | 3 medium regeneration findings fixed; 0 material findings remain open. |
+| Post-publication review | Review | Resolved | 3 medium findings fixed; 0 material findings remain open. |
+| Post-review focused suite | Review | Passed | 43 packet, inventory, resolver, manifest, provenance, and overlap tests passed. |
+| Post-review failure proofs | Review | Passed | 3 isolated broken states failed the new guards before restoration. |
+| Shipped overlap rerun | Review | Passed | All 10 reviewed report hashes stayed unchanged; the peer-argument regression retained 35 unique comparisons. |
+| Issue-zero regeneration | Review | Passed | The checklist and pinned payload retain issue number 0; the 238-issue live contract passed. |
 | Author rerun | Review | Passed | 10 Markdown files and the 36-entry manifest retained identical SHA-256 hashes. |
 | Prepare rerun | Review | Passed | 0 of 10 approved mapping hashes changed; blocked mappings retained their blockers. |
 | Explicit series approvals | Review | Passed | All 36 final title mismatches carry independently declared approval; 0 automatic bypasses remain. |
@@ -207,7 +232,7 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 
 ## Remaining Work
 
-* Commit and publish the pull request.
+* Commit and publish the review corrections, then start Agent Merge and reach merge-ready.
 
 ## Follow-Up Items
 

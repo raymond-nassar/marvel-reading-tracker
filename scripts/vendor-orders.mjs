@@ -229,7 +229,7 @@ async function main() {
         item: {
           issueId: e.issueId,
           title: cleanText(d.title ?? e.title),
-          number: parseIssueNumber(d.title ?? e.title),
+          number: parseIssueNumber(d.title) ?? parseIssueNumber(e.title),
           url: d.detailUrl ?? e.url,
           seriesId: d.seriesId ?? null,
           seriesName: d.seriesName == null ? null : cleanText(d.seriesName),

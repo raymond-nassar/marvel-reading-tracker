@@ -5,7 +5,7 @@ The mapping transcribes only issue-bearing references from Comic Book Herald's e
 No source commentary or images are copied. Issue identities, titles, and exact links come from Marvel metadata after the packet resolution and overlap gates passed.
 See [the data provenance record](../../../docs/DATA_PROVENANCE.md) for the permission boundary and review method.
 
-- [ ] [Ivx (2016)](https://www.marvel.com/comics/issue/61593/ivx_2016)
+- [ ] [Ivx (2016) #0](https://www.marvel.com/comics/issue/61593/ivx_2016)
 - [ ] [Ivx (2016) #1](https://www.marvel.com/comics/issue/61594/ivx_2016_1)
 - [ ] [Uncanny X-Men (2016) #16](https://www.marvel.com/comics/issue/56064/uncanny_x-men_2016_16)
 - [ ] [Extraordinary X-Men (2015) #17](https://www.marvel.com/comics/issue/55449/extraordinary_x-men_2015_17)

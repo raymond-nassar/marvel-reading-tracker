@@ -5,7 +5,7 @@
   "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/inhumans-vs-x-men/",
   "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
   "sourceLicense": null,
-  "generatedAt": "2026-08-21T09:58:39.876Z",
+  "generatedAt": "2026-08-21T12:53:39.465Z",
   "apiBase": "https://marvel.emreparker.com/v1",
   "count": 20,
   "collections": 0,
@@ -15,7 +15,7 @@
     {
       "issueId": 61593,
       "title": "Ivx (2016)",
-      "number": null,
+      "number": "0",
       "url": "https://www.marvel.com/comics/issue/61593/ivx_2016",
       "seriesId": 22644,
       "seriesName": "Ivx (2016 - 2017)",

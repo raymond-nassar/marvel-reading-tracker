@@ -76,7 +76,7 @@
   },
   ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c3|scripts/vendor-orders.mjs:173-360|0": {
     "anchor": "scripts/vendor-orders.mjs:173-360",
-    "fp": "4fad811d654b9284",
+    "fp": "ae17002d3a3803eb",
     "head": "async function main() {"
   },
   ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c4|scripts/vendor-orders.mjs:300-307|0": {
@@ -176,7 +176,7 @@
   },
   ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:194-360|0": {
     "anchor": "scripts/vendor-orders.mjs:194-360",
-    "fp": "8abd046ee1d4d764",
+    "fp": "3ca24add763c5cb1",
     "head": "const parsed = [];"
   },
   ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:327-368|0": {
@@ -2216,7 +2216,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:222-268|0": {
     "anchor": "scripts/vendor-orders.mjs:222-268",
-    "fp": "ea0fe6808a198f71",
+    "fp": "f8370049608b752b",
     "head": "const issueItems = entries.map((e) => {"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:253-259|0": {
@@ -3926,7 +3926,7 @@
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:197-322|0": {
     "anchor": "scripts/vendor-orders.mjs:197-322",
-    "fp": "61f15b01e7bafd1a",
+    "fp": "a9cb7b21a7637f4e",
     "head": "const { entries, unresolved } = parseChecklist(md);"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/lib/markdown.js:70-149|0": {
