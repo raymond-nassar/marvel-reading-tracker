@@ -9,7 +9,7 @@ import {
   createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
   setOverride, pendingIssueIds, coverUrl, listForCatalogId, SCHEMA_VERSION,
-  setIssueNote, setListNote, MAX_BACKUP_BYTES, orderGapSentences,
+  setIssueNote, setListNote, MAX_BACKUP_BYTES, orderGapSentences, progressSummary, progressGroups, completionState, orderWord, orderStates,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, digitalIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { LIBRARY_VIEWS } from './lib/library.js';
@@ -750,12 +750,12 @@ function setCovers(on) {
   settings.covers = Boolean(on);
   saveSettings();
   applyCoversSetting();
-  // renderHome early-returns when its view is hidden, so calling it from the reading view is
-  // cheap. renderReading has no such check and repaints regardless, which is what this needs:
-  // showView never re-renders the reading view, so a check there would leave it blank until the
-  // next store write. Covers skipped while the setting was off were never fetched, so it repaints.
+  // renderReading has no hidden-view check and repaints regardless, which covers the reading rows;
+  // renderHome repaints the landing mosaics. renderLibrary is added because a library row now holds
+  // a cover too, and paintCoverUrl set no src while covers were off, so those rows need repainting.
   renderReading();
   renderHome();
+  renderLibrary();
   announce(settings.covers ? 'Cover art on.' : 'Cover art off. Covers are shown as text tiles.');
 }
 
@@ -1414,24 +1414,24 @@ function renderYours(populated) {
   sec.hidden = !populated;
   if (sec.hidden) return;
 
+  // The section heading gains a one line summary of the whole shelf: how many orders there are
+  // and how far along they are, written once beside the heading before the tiles are read.
+  writeYoursSummary(sec, store.state);
+
   const box = $('#home-yours-list');
   box.replaceChildren(...store.state.listOrder.map((id) => {
     const list = store.state.lists[id];
     const { read, total } = listProgress(store.state, id);
-    const pct = total ? (read / total) * 100 : 0;
-    // The tile prints the count as "3 / 20" and the old name said "3 of 20", so the inserted word
-    // split the run the tile shows. The name is built from the painted text for that reason.
+    // The tile prints the count as "3 / 20" and the old name said "3 of 20", so the inserted
+    // word split the run the tile shows. The name is built from that painted text, and gains
+    // the state word now painted on the tile, which is what a visible label must also carry.
     const count = `${read} / ${total}`;
+    const context = `issues read, ${orderWord(completionState(read, total))}. Open this list`;
     return el('li', {}, el('button', {
       type: 'button',
-      'aria-label': labelledName(`${list.name} ${count}`, 'issues read. Open this list'),
+      'aria-label': labelledName(`${list.name} ${count}`, context),
       onclick: () => { store.update((s) => setActive(s, id)); showView('read', { push: true }); },
-    }, [
-      el('span', { class: 'yours-name', text: list.name }),
-      el('span', { class: 'pbar', 'aria-hidden': true }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
-      // Repeated as text because a bar alone conveys progress by shape only.
-      el('span', { class: 'yours-count', text: count }),
-    ]));
+    }, yoursTile(list, store.state, read, total, count)));
   }));
 }
 
@@ -2672,7 +2672,7 @@ function renderRows() {
     const unread = all.length - all.filter((it) => it.read).length;
     // The count lives in the <summary>, which is on screen whether or not the order below it is,
     // so it is written before the early return rather than alongside the rows it counts.
-    $('#full-count').textContent = `${unread} unread`;
+    $('#full-count').textContent = fullCountText(all, unread);
 
     // The full order is inside a <details> that starts closed, so on a first visit every one of
     // these rows is built for a container the reader has not opened. Measured in Edge on the 219
@@ -2680,7 +2680,7 @@ function renderRows() {
     // rows that were never shown. Reopening the details renders them, so nothing is lost by
     // waiting until then.
     if (!$('#full').open) { rowsPending = true; return; }
-    rowsPending = false;
+    rowsPending = false; writeOrderStrip($('#full'), all, filter);
 
     const currentId = upNext(store.state, id)?.issueId ?? null;
     // Read once per render and passed in rather than defaulted per call, so that every row in one
@@ -4127,21 +4127,34 @@ function renderProgress() {
     : 'Counted over unique issues across every list, so an issue in two lists counts once.';
 
   const rows = scoped ? seriesProgress(store.state, activeListId()) : seriesProgress(store.state);
-  box.replaceChildren();
-  if (!rows.length) {
-    box.append(el('p', { class: 'rail-hint', text: 'Nothing tracked yet.' }));
-    return;
-  }
-  for (const r of rows) {
-    const pct = r.tracked ? Math.round((r.read / r.tracked) * 100) : 0;
-    box.append(el('div', { class: 'result' }, [
-      el('div', { class: 'result-main' }, [
-        el('div', { class: 'result-title', text: r.seriesName }),
-        el('div', { class: 'result-meta', text: `${r.read} of ${r.tracked} tracked issues read (${pct}%)` }),
-      ]),
-      el('progress', { max: String(Math.max(1, r.tracked)), value: String(r.read) }),
+  // Both the scope and the active list are in the key. One number would let expanding All lists
+  // carry into This list, and one list's expansion onto the next list opened under the same scope,
+  // so switching either restarts at the cap, which is what a reader expects when the list changes.
+  const key = `${progressScope}:${activeListId()}`;
+  let countLine = null;
+  preservingFocus(box, () => {
+    box.replaceChildren();
+    if (!rows.length) {
+      box.append(el('p', { class: 'rail-hint', text: 'Nothing tracked yet.' }));
+      return;
+    }
+    const shown = Math.min(listShown.get(key) ?? LIBRARY_CAP, rows.length);
+    const slice = rows.slice(0, shown);
+    const sum = progressSummary(rows);
+    // "of" between the two figures is the same phrasing the rows use, so the band and a row cannot
+    // read as counting different things. "fully read" not "complete": the app knows only what the
+    // reader tracks, never whether a series has ended.
+    box.append(summaryBand([
+      { figure: sum.series, label: 'series' },
+      { figure: `${sum.read.toLocaleString()} of ${sum.tracked.toLocaleString()}`, label: 'tracked issues read' },
+      { figure: sum.done, label: 'series fully read' },
     ]));
-  }
+    if (rows.length > LIBRARY_CAP) countLine = box.appendChild(shownLine(shown, rows.length));
+    for (const group of progressGroups(slice)) {
+      box.append(groupSection(group, (r) => progressRow(r, group.key)));
+    }
+    if (shown < rows.length) box.append(moreButton(key, rows.length - shown, renderProgress));
+  }, { primary: 'more', fallback: () => countLine });
 }
 
 // ------------------------------------------------------------------ library sub-views
@@ -4157,15 +4170,34 @@ function renderLibrary() {
 
     const box = section.querySelector('.results');
     const rows = v.select(store.state);
-    box.replaceChildren();
-    if (!rows.length) {
-      box.append(el('p', { class: 'rail-hint', text: v.empty }));
-      continue;
-    }
-    // The count is on screen because it is the number a reader has no other way to get: the
-    // progress view counts what is in a list, and the whole point of these two is what is not.
-    box.append(el('p', { class: 'rail-hint', text: `${rows.length} issue${rows.length === 1 ? '' : 's'}.` }));
-    for (const row of rows) box.append(libraryRow(row, v));
+    // These views gained the first focusable control they have ever held, the show-more button, so
+    // the whole-container rebuild that ran silently until now can drop focus to the body. The pair
+    // it restores by is written onto the button below; without it a press would lose the reader.
+    let countLine = null;
+    preservingFocus(box, () => {
+      box.replaceChildren();
+      if (!rows.length) {
+        // .empty-state is reused rather than a second rule written: its dashed edge is a shape
+        // difference, not a colour one, so the view reads as deliberately empty under forced colours.
+        box.append(el('div', { class: 'empty-state' }, [
+          el('div', { class: 'empty-glyph', 'aria-hidden': 'true', text: '☐' }),
+          el('p', { text: v.empty }),
+        ]));
+        return;
+      }
+      const shown = Math.min(listShown.get(v.value) ?? LIBRARY_CAP, rows.length);
+      const slice = rows.slice(0, shown);
+      box.append(summaryBand(v.summarise(rows)));
+      if (rows.length > LIBRARY_CAP) countLine = box.appendChild(shownLine(shown, rows.length));
+      if (rows.length < GROUP_MIN) {
+        for (const row of slice) box.append(libraryRow(row, v));
+      } else {
+        for (const group of v.group(slice, Date.now())) {
+          box.append(groupSection(group, (row) => libraryRow(row, v)));
+        }
+      }
+      if (shown < rows.length) box.append(moreButton(v.value, rows.length - shown, renderLibrary));
+    }, { primary: 'more', fallback: () => countLine });
   }
 }
 
@@ -4188,10 +4220,23 @@ function libraryRow(row, v) {
     ? [' ', el('span', { class: 'badge badge-unknown' }, 'by hand')]
     : [];
 
-  return el('div', { class: 'result' }, el('div', { class: 'result-main' }, [
-    el('div', { class: 'result-title', text: row.title }),
-    el('div', { class: 'result-meta' }, [el('span', { text: meta }), ...badge]),
-  ]));
+  // No chip repeats this. The meta line already says "In no list" in words, so a chip saying it
+  // again is heard twice by a screen reader and, on the hand-added view where every row is in no
+  // list, prints a column that distinguishes nothing.
+
+  // The variant the reading rows already request, so no new image size enters the cache, and the
+  // fallback is the reading row's bordered tile rather than the larger gradient ones.
+  const img = el('img', { class: 'rcov-i', alt: '', loading: 'lazy', decoding: 'async' });
+  const fb = el('div', { class: 'rcov-f', text: row.number ? `#${row.number}` : '?' });
+  paintCover(img, fb, row, 'portrait_incredible');
+
+  return el('div', { class: 'result result-cov' }, [
+    el('div', { class: 'rcov' }, [img, fb]),
+    el('div', { class: 'result-main' }, [
+      el('div', { class: 'result-title', text: row.title }),
+      el('div', { class: 'result-meta' }, [el('span', { text: meta }), ...badge]),
+    ]),
+  ]);
 }
 
 // ------------------------------------------------------------------ data view
@@ -4798,4 +4843,179 @@ export function boot() {
   $('#about-version').textContent = APP_VERSION;
   $('#about-schema').textContent = String(SCHEMA_VERSION);
   showStoredUpdateResult({ announceReport: false, notice: true });
+}
+
+// ------------------------------------------------------------------ library and progress bands
+
+// The cap and its counter are shared by both library sub-views and the progress view. A const at
+// the end of the module is not hoisted, but it is only read inside functions that run long after
+// the module has finished evaluating, so it may live here beside the functions that read it.
+//
+// 120 is a page a reader can scan without the list itself becoming the work. Below it nothing is
+// held back and no control appears; above it the list is sliced and a show-more button reveals the
+// next 120, so a several-hundred issue read history opens instantly rather than laying out at once.
+const LIBRARY_CAP = 120;
+
+// Below this, the rows are rendered in one run with no headings. The library groupings are derived
+// buckets rather than states: by date read, and by first letter. On a short collection they degrade
+// into a heading per row, which is not a grouping, it is the same list with twice the vertical
+// space and a count of 1 printed beside every entry. Measured on the hand-added view with four
+// entries: four headings, four counts, all of them 1. The progress groupings are deliberately not
+// subject to this, because there the group is the state itself and "Not started" is worth saying
+// about one series.
+const GROUP_MIN = 12;
+
+// Keyed by the view value for the library, and by "scope:listId" for progress, which cannot
+// collide because a library value is never of that shape. The count is not persisted: a fresh
+// visit to a long list starts at the cap, which is the honest default for a glance.
+const listShown = new Map();
+
+// A cell's figure is a count unless it is already a phrase, as the progress band's "read of
+// tracked" cell is, so a number is given its thousands separator and a string is left alone.
+function summaryBand(cells) {
+  return el('div', { class: 'sumbar' }, cells.map((cell) => el('div', { class: 'sumcell' }, [
+    el('div', { class: 'sumfig', text: typeof cell.figure === 'number' ? cell.figure.toLocaleString() : String(cell.figure) }),
+    el('div', { class: 'sumlab', text: cell.label }),
+  ])));
+}
+
+// Carries tabindex="-1" so it can take focus when the last show-more press removes the button that
+// had it. It is the honest landing: the reader was expanding the list and this line reports the
+// result of that, whereas the summary band above counts something they were not acting on.
+function shownLine(shown, total) {
+  return el('p', {
+    class: 'rail-hint',
+    tabindex: '-1',
+    text: `Showing ${shown.toLocaleString()} of ${total.toLocaleString()}.`,
+  });
+}
+
+// The act and key pair is what restoreFocus matches on, so a button that survives its own press is
+// re-focused in the rebuilt DOM rather than dropping focus to the body. rerender is passed in so
+// the one builder serves both views, each re-rendering itself.
+function moreButton(key, rest, rerender) {
+  return el('button', {
+    type: 'button',
+    class: 'btn btn-g',
+    dataset: { act: 'more', key },
+    text: `Show ${Math.min(LIBRARY_CAP, rest).toLocaleString()} more`,
+    onclick: () => {
+      listShown.set(key, (listShown.get(key) ?? LIBRARY_CAP) + LIBRARY_CAP);
+      rerender();
+    },
+  });
+}
+
+// A real h2 under the view's h1, so the screen-reader outline gains a level rather than losing one.
+// The count sits in its own span so the label stays a plain heading a reader can jump between.
+function groupSection(group, renderRow) {
+  return el('section', { class: 'lgroup' }, [
+    el('h2', { class: 'lgroup-h' }, [
+      group.label,
+      ' ',
+      el('span', { class: 'lgroup-n', text: String(group.rows.length) }),
+    ]),
+    ...group.rows.map(renderRow),
+  ]);
+}
+
+// One progress row. The chip repeats what the bar and figures already imply, for a reader scanning
+// rather than reading each line, and it names the two ends the bar cannot: a full bar could be a
+// series finished or one issue of one tracked, and an empty one could be nothing read or nothing
+// tracked. An active row gets no chip, because its bar is between the ends and already says so. The
+// word is "Fully read" not "Finished": a series is not a fixed list, so the app cannot claim it ends.
+function progressRow(r, state) {
+  const pct = r.tracked ? Math.round((r.read / r.tracked) * 100) : 0;
+  const chip = state === 'done'
+    ? [' ', el('span', { class: 'badge badge-done' }, [el('span', { 'aria-hidden': 'true', text: '✓' }), ' Fully read'])]
+    : state === 'unstarted'
+      ? [' ', el('span', { class: 'badge badge-none', text: 'Not started' })]
+      : [];
+  return el('div', { class: 'result' }, [
+    el('div', { class: 'result-main' }, [
+      el('div', { class: 'result-title' }, [el('span', { text: r.seriesName }), ...chip]),
+      el('div', { class: 'result-meta', text: `${r.read} of ${r.tracked} tracked issues read (${pct}%)` }),
+    ]),
+    el('progress', { max: String(Math.max(1, r.tracked)), value: String(r.read) }),
+  ]);
+}
+
+// ------------------------------------------------------------------ landing page order tiles
+
+// A restrained three cover mosaic, then the name, bar, count and a state word. The mosaic is
+// recognition rather than information, so it is aria-hidden and the tile's own name carries every
+// word. Always three cells, so a tile does not change height with the data: a list of fewer than
+// three issues, or covers switched off, shows the fallback tile in the spare cells rather than a gap.
+function yoursTile(list, state, read, total, count) {
+  const pct = total ? (read / total) * 100 : 0;
+  const ids = list.itemIds.slice(0, 3);
+  const cells = [0, 1, 2].map((i) => {
+    const issue = state.issues[ids[i]] ?? null;
+    const img = el('img', { class: 'mosaic-i', alt: '', loading: 'lazy', decoding: 'async' });
+    const fb = el('span', { class: 'mosaic-f' });
+    // paintCover tolerates a null issue and a coverless one alike, yielding no URL for both, which is
+    // the no-cover state a spare cell needs: it hides the image and shows the fallback tile instead.
+    paintCover(img, fb, issue, 'portrait_incredible');
+    return el('span', { class: 'mosaic-c' }, [img, fb]);
+  });
+  const cstate = completionState(read, total);
+  return [
+    el('span', { class: 'mosaic', 'aria-hidden': 'true' }, cells),
+    el('span', { class: 'yours-name', text: list.name }),
+    el('span', { class: 'pbar', 'aria-hidden': 'true' }, el('i', { style: { width: `${pct.toFixed(1)}%` } })),
+    el('span', { class: 'yours-count', text: count }),
+    el('span', { class: `badge${cstate === 'done' ? ' badge-done' : cstate === 'unstarted' ? ' badge-none' : ''}`, text: orderWord(cstate) }),
+  ];
+}
+
+// The one line beside the shelf heading. orderStates is written as a middle dot separated sentence:
+// the order count always, then each non-zero state, so a shelf of finished orders carries no zeroes.
+// The span is created once and its text rewritten, because the heading it sits in is static markup
+// the render leaves in place, and appending a fresh note on every render would stack them.
+function writeYoursSummary(sec, state) {
+  const head = sec.querySelector('.sec-h');
+  const note = head.querySelector('.sec-note') ?? head.appendChild(el('span', { class: 'sec-note' }));
+  const s = orderStates(state.listOrder.map((id) => listProgress(state, id)));
+  const parts = [`${s.orders} ${s.orders === 1 ? 'order' : 'orders'}`];
+  if (s.active) parts.push(`${s.active} in progress`);
+  if (s.done) parts.push(`${s.done} finished`);
+  if (s.unstarted) parts.push(`${s.unstarted} not started`);
+  note.textContent = parts.join(' · ');
+}
+
+// The full order summary in its <summary>, on screen whether or not the order is open. An empty
+// order is said plainly rather than as "0 of 0 read", which reads as a fault, not as the fact it is.
+function fullCountText(all, unread) {
+  if (!all.length) return 'No issues yet';
+  const read = all.length - unread;
+  return `${read} of ${all.length} read · ${unread} unread`;
+}
+
+// A quiet row above the reading filters: a bar for the whole order and its percentage, and, when a
+// filter is set, how much of the order it is showing. The percentage is of the whole order and not
+// of the filtered rows, for the same reason a collected-edition heading counts its whole run: a
+// figure that changes meaning when a filter is set is a second filter the reader never chose. The
+// node is built once and its children rewritten, because it sits outside the container
+// preservingFocus watches and holds nothing focusable, so an insert on every render would be churn.
+function writeOrderStrip(details, all, activeFilter) {
+  const filters = details.querySelector('#reading-filters');
+  let strip = details.querySelector('.order-strip');
+  if (!strip) strip = details.insertBefore(el('div', { class: 'order-strip' }), filters);
+  const total = all.length;
+  // No denominator when the order is empty: the percentage would be NaN, and the summary above
+  // already says "No issues yet", which is the whole of what there is to say.
+  if (!total) { strip.hidden = true; return; }
+  strip.hidden = false;
+  const read = all.filter((it) => it.read).length;
+  const pct = Math.round((read / total) * 100);
+  const children = [
+    el('span', { class: 'pbar', 'aria-hidden': 'true' }, el('i', { style: { width: `${pct}%` } })),
+    el('span', { class: 'order-pct', text: `${pct}% read` }),
+  ];
+  // The all-issues filter is removed rather than left saying something trivially true.
+  if (activeFilter !== DEFAULT_FILTER) {
+    const shown = all.filter((it) => matchesReadingFilter(activeFilter, it)).length;
+    children.push(el('span', { class: 'order-shown', text: `Showing ${shown} of ${total} issues.` }));
+  }
+  strip.replaceChildren(...children);
 }
