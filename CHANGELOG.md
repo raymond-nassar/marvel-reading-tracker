@@ -14,6 +14,12 @@ quote in a bug report.
 
 ## Unreleased
 
+### Added the build-time Marvel continuity intake foundation
+
+In plain English: the project now keeps a maintained inventory of 86 Comic Book Herald source records, resolves issue references deterministically, and emits overlap reports against shipped orders without adding a browser runtime dependency or shipping a new reader guide. Nothing you have saved is affected.
+
+For maintainers: the intake foundation adds `scripts/data/cbh-modern-inventory.json`, the `cbh:resolve` and `orders:overlap` CLI commands, and focused tests that fail under the smallest protected revert before the resolver and overlap logic are accepted.
+
 ### Rebranded the app as Recap Page
 
 In plain English: the app now has its own name and purple page icon instead of a Marvel-like red

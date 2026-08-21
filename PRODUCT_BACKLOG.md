@@ -72,6 +72,14 @@ is `Shipped` rather than `Ready` because the measurement that produced it was al
 its fix needed. That is the one case where filing and fixing in the same change keeps a concern
 whole instead of splitting it: the item and the evidence for it are the same measurement.
 
+### BL-165: Modern Marvel continuity intake foundation
+
+**Status:** Shipped
+
+The project now keeps a maintained inventory of 86 source links for modern Marvel continuity, resolves item references deterministically from local build-time data, and writes pairwise overlap reports against shipped orders before a guide is authored. The intake stays out of the browser and uses no runtime dependency, so the app's saved reading progress and shipped catalog remain untouched.
+
+The foundation deliberately stops at the intake pipeline. It does not add a reading guide, a new source family, or a broader era or bridge lane, and it leaves later Aftersmash or recent-source work to their own task.
+
 ## Product direction
 
 Users should be able to discover, import, follow, and customize reading lists for
@@ -250,7 +258,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:27-35 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
-| BL-132 | Measure what the day-of rewrites cost the anchors gate, before they are made | Enabler | EP-12 | Extends BL-129 | 3 | 8 | 5 | 2 | 8.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:175-181 |
+| BL-132 | Measure what the day-of rewrites cost the anchors gate, before they are made | Enabler | EP-12 | Extends BL-129 | 3 | 8 | 5 | 2 | 8.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:174-180 |
 | BL-162 | Decide the published name before a store listing exists | Enabler | EP-12 | Follows BL-100 | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Ready | developer.marvel.com/terms section 5, read from the 2025-10-08 archive snapshot on 2026-08-20 |
 | BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:103-105 |
 | BL-134 | Fetch a synopsis at read time instead of shipping one | Feature | EP-05 | Follows BL-130 | 8 | 5 | 8 | 3 | 7.0 | none | Measured | Shipped | src/js/synopsis.js:89 |
@@ -4710,7 +4718,7 @@ the gap, which made the understated figure an understatement of the debt.
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:203-205`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:204-206`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
@@ -4718,7 +4726,7 @@ outright. Appendix A does the same thing in its own idiom, correcting a miscount
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11494-11496` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11495-11496` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4927,8 +4935,8 @@ property of the change and does not when it is a property of the tree, because o
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
 `CHANGELOG.md:2982-2991` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:193-197` and
-`PRODUCT_BACKLOG.md:203-205` do each carry a live value and are marked as needing re-derivation, so
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:204-206` and
+`PRODUCT_BACKLOG.md:211-213` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -10272,7 +10280,7 @@ machine runs. A single executable is its base binary plus the injected payload, 
 It was rejected either way, and the reason is narrower than the first draft of this item claimed.
 
 That draft said the executable meets a warning and the archive meets none. Half of it was wrong, and
-this repository's own README says so at `README.md:189-191`, where the reader is already told their
+this repository's own README says so at `README.md:190-200`, where the reader is already told their
 computer may ask them to confirm because the file arrived from the internet. So it was checked. A
 zip was marked the way a browser marks a download, `ZoneId=3`, then extracted through the same shell
 interface File Explorer drives, and the extracted launcher carried the mark through, referrer and
@@ -10293,7 +10301,7 @@ at all: that reader wants a link, a link means hosting, and hosting moves the or
 reading progress with it. And it does not cover the Mac, although BL-140 shipped a launcher for
 both. Every measurement above is a Windows one, and the Mac is the harder case rather than a copy of
 this one, because a binary that arrives quarantined there without notarization is refused rather
-than merely questioned. `README.md:190-191` already carries a workaround for the milder version of
+than merely questioned. `README.md:198-200` already carries a workaround for the milder version of
 that. Sizing this at 3 is sizing the Windows archive alone, so the Mac needs its own item with its
 own measurements rather than a line in this one.
 

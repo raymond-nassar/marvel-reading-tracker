@@ -105,6 +105,15 @@ download is built.
 - **Duplicate a list** to try a different path through an event, keeping shared read progress
 - Export to Markdown / JSON, and restore from backup
 
+### Modern Marvel continuity intake stays build-time only
+
+This repository also tracks a build-time intake program for modern Marvel continuity guides. The
+maintained source inventory lives under `scripts/data/cbh-modern-inventory.json`, and the resolver
+and overlap tools under `scripts/resolve-cbh-order.mjs` and `scripts/report-order-overlap.mjs`
+compare issue references against local data without adding a runtime dependency or shipping that
+inventory to the browser. The permission to use Comic Book Herald's guide is kept in the
+provenance notes, and the intake flow rejects ambiguity or unapproved overlap rather than guessing.
+
 ### Your data stays with you
 
 There are no accounts to create and nothing to sign in to. Your reading progress is saved by
