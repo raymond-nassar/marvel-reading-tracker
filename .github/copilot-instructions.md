@@ -144,7 +144,7 @@ Every `path:line` citation in every tracked file, this one included, is fingerpr
 the **content** of the lines it names, not by the numbers. Editing code moves lines and breaks
 fingerprints. That is the gate working.
 
-Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:227-231` explains why in the
+Do not narrow that to a list of filenames. `scripts/check-anchors.mjs:227-232` explains why in the
 script itself: an enumeration is a list someone has to keep complete, and every anchor defect the
 gate exists to catch was caused by exactly that.
 
@@ -188,7 +188,7 @@ by a review on 2026-08-17, after it had already survived a full anchors cycle:
   12 of the workflow file", never in the citation form.
 - **The `absent:` exemption reaches past its own clause, and what it swallows is dropped in
   silence.** A backticked `absent:` token exempts only itself, but an unbackticked table cell
-  beginning with the marker exempts the **whole cell**, at `scripts/check-anchors.mjs:410`. So a
+  beginning with the marker exempts the **whole cell**, at `scripts/check-anchors.mjs:427`. So a
   live citation written after an absence clause in the same cell is not drifted and not lost. It is
   never enrolled at all, and the run reports 0 drifted, 0 new and 0 removed while the claim is
   watched by nothing. BL-145's evidence row was written that way and passed a complete cycle before

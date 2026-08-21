@@ -195,6 +195,23 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
   and the added-line dash scan. Any edit after pairing inspection invalidates that inspection and
   returns the task to the inspect step.
 
+## Integration Contract Revision
+
+The parent integration supplied a local ignored dated artifact after HAS-001 was complete. Its
+citations were valid, but blessing them into the tracked lock made that lock depend on a file no clone
+or CI checkout receives. The accepted general contract is:
+
+* Ignored untracked dated artifacts remain part of local validation before staging.
+* Their citations use active-tree source and membership rules and still receive malformed, range,
+  target, duplicate, relative, repeated, and coverage checks.
+* They do not participate in canonical lock comparison or bless output until deliberately tracked.
+* A successful run reports how many local-only citations were validated and states that the lock
+  excludes them until tracked.
+* Once an artifact is tracked, every citation becomes a normal canonical lock member.
+
+This revision supersedes only the earlier expectation that every untracked dated citation appears as
+new or blessed. It does not change committed historical provenance or any tracked-file behavior.
+
 ## Implementation Context Record
 
 | Context item | Current artifact or record |
@@ -317,6 +334,38 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * Expected result: All gates pass again after bless, performance remains inside the CI deadline, and
   no excluded file or release surface changed. Any intervening edit returns to P02-T02 and P02-T03.
 * Detail section: P02-T04 in .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md
+
+<!-- rpi:phase id=P03 -->
+### [x] P03: Keep local-only evidence out of the canonical lock
+
+* Intent: Validate ignored local dated artifacts without making the tracked lock depend on them.
+* Dependencies: P02 and the accepted integration contract revision.
+
+<!-- rpi:task id=P03-T01 -->
+#### [x] P03-T01: Prove the portable lock boundary
+
+* Requirement and evidence: The parent reproduced 13 local-only additions followed by 13 removals in
+  a clean checkout.
+* Expected result: The existing ignored-artifact process test fails before the correction and proves
+  validation, clean local checks, bless exclusion, tracked promotion, and clone portability.
+* Detail section: P03-T01 in .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md
+
+<!-- rpi:task id=P03-T02 -->
+#### [x] P03-T02: Separate validation-only and canonical occurrences
+
+* Requirement and evidence: One document walk is still required so ignored evidence cannot disappear
+  from syntax or target validation.
+* Expected result: Collection identifies local-only occurrences after full fingerprinting, while lock
+  comparison and writing receive canonical occurrences only.
+* Detail section: P03-T02 in .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md
+
+<!-- rpi:task id=P03-T03 -->
+#### [x] P03-T03: Reconcile and validate the integration fix
+
+* Requirement and evidence: The correction changes checker output and documentation anchors.
+* Expected result: Records are current, targeted and full gates pass, the anchor workflow is complete,
+  and no parent task artifact or README.md changes.
+* Detail section: P03-T03 in .copilot-tracking/details/2026-08-21/historical-anchor-support-phase-details.md
 
 ## Dependencies
 

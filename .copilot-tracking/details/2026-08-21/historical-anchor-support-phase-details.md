@@ -15,6 +15,7 @@
 | P00 | Prove the behavior at the process boundary | Complete | P00, P00-T01, P00-T02 |
 | P01 | Resolve historical targets from line provenance | Complete | P01, P01-T01, P01-T02, P01-T03 |
 | P02 | Reconcile the evidence record and gates | Complete | P02, P02-T01, P02-T02, P02-T03, P02-T04 |
+| P03 | Keep local-only evidence out of the canonical lock | Complete | P03, P03-T01, P03-T02, P03-T03 |
 
 <!-- rpi:phase id=P00 -->
 ## P00: Prove the behavior at the process boundary
@@ -55,6 +56,104 @@ Create a small disposable-repository harness and lock the semantic contract befo
   with provenance enabled. The workflow ownership test also failed when full history was removed.
 
 ### Unresolved Items
+
+* None.
+
+<!-- rpi:phase id=P03 -->
+## P03: Keep local-only evidence out of the canonical lock
+
+### Context
+
+An ignored dated artifact exists only in one working tree. The first implementation validated it and
+also wrote its citations into the tracked lock, so the next clean checkout necessarily reported every
+one removed.
+
+### Intent
+
+Preserve full local validation without letting untracked document identity enter portable state.
+
+### Boundaries
+
+* Included: Ignored dated artifacts, canonical lock membership, success reporting, promotion after
+  tracking, process proof, records, and required gates.
+* Excluded: Committed provenance, current product-document behavior, parent task artifacts, README.md,
+  and a second Review mode.
+
+### Likely Targets
+
+* `scripts/check-anchors.mjs`: Document inventory and canonical comparison boundary.
+* `test/check-anchors.test.js`: Existing ignored-artifact process case.
+
+### Dependencies
+
+* P02 complete and parent integration reproduction supplied.
+
+### Validation Expectations
+
+* The existing process case fails before the correction.
+* Valid local-only citations resolve and report success without entering the lock.
+* Invalid local-only citations remain fatal.
+* Tracking the artifact promotes its citations into normal lock comparison.
+* A clean clone passes with the portable lock.
+
+### Completion Evidence
+
+* The existing ignored-artifact process case proves validation, exclusion, clone portability,
+  missing-target refusal, and promotion after tracking. The checker now keeps one document inventory
+  with canonical, local-only, and combined views. All 96 anchor tests and all 1,294 repository tests
+  pass, and the portable lock finishes with 1,017 unchanged canonical entries.
+
+### Unresolved Items
+
+* None.
+
+<!-- rpi:task id=P03-T01 -->
+### P03-T01: Prove the portable lock boundary
+
+#### Intent
+
+Extend the existing ignored-artifact process case before changing collection.
+
+#### Completion Evidence
+
+* Before the checker correction, the focused process test failed because bless wrote the local-only
+  citation into the lock and did not report its exclusion. After the correction, that test passed.
+
+#### Unresolved Items
+
+* None.
+
+<!-- rpi:task id=P03-T02 -->
+### P03-T02: Separate validation-only and canonical occurrences
+
+#### Intent
+
+Fingerprint every local-only occurrence, then keep it outside canonical comparison and lock writing.
+
+#### Completion Evidence
+
+* Every document remains in syntax, source, fingerprint, coverage, relative, repeated, duplicate,
+  collision, blank-edge, and missing-target validation. Only canonical occurrences reach lock
+  comparison and writing, and successful runs state the local-only count and exclusion.
+
+#### Unresolved Items
+
+* None.
+
+<!-- rpi:task id=P03-T03 -->
+### P03-T03: Reconcile and validate the integration fix
+
+#### Intent
+
+Update the durable record and run the complete required gates on the final staged tree.
+
+#### Completion Evidence
+
+* Lint reports zero problems, all 1,294 tests pass, all stated counts agree, and the added-line dash
+  scan reports zero. The anchor workflow re-aimed 46 current citations, read all 47 changed bless
+  pairings, and finishes with 1,017 unchanged, zero drifted, zero new, and zero removed.
+
+#### Unresolved Items
 
 * None.
 

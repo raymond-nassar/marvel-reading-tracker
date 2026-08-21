@@ -1056,18 +1056,46 @@ test('an extensionless historical target remains collected after deletion', () =
   }
 });
 
-// New evidence is ignored by repository policy until somebody deliberately stages it, so discovery
-// must include ignored untracked dated artifacts. The malformed half protects the opposite edge: a
-// citation-shaped token must not disappear merely because its range end is not numeric.
-test('new dated artifacts are enrolled and malformed ranges are refused', () => {
+// New evidence is ignored by repository policy until somebody deliberately stages it. It still
+// needs full validation, but a tracked lock cannot name a document that clean clones never receive.
+// The malformed half protects the opposite edge: validation-only must never mean silently omitted.
+test('local-only dated artifacts validate portably and malformed ranges are refused', () => {
   const fresh = anchorRepo();
+  let clone = null;
   try {
-    fresh.write('.copilot-tracking/research/2026-08-22/new.md', `New claim ${cite('target.js:1')}\n`);
+    const local = '.copilot-tracking/research/2026-08-22/new.md';
+    fresh.write(local, `New claim ${cite('target.js:1')}\n`);
     const bless = fresh.checker('--bless');
     assert.equal(bless.status, 0, `${bless.stdout}\n${bless.stderr}`);
+    assert.match(`${bless.stdout}\n${bless.stderr}`, /validated 1 local-only citation.*excluded.*lock until tracked/is);
     const lock = JSON.parse(readFileSync(join(fresh.root, 'docs', 'anchors.lock.json'), 'utf8'));
-    assert.ok(Object.keys(lock).some((key) => key.startsWith('.copilot-tracking/research/2026-08-22/new.md|')));
+    assert.ok(!Object.keys(lock).some((key) => key.startsWith(`${local}|`)));
+
+    const localCheck = fresh.checker();
+    assert.equal(localCheck.status, 0, `${localCheck.stdout}\n${localCheck.stderr}`);
+    assert.match(`${localCheck.stdout}\n${localCheck.stderr}`, /validated 1 local-only citation/is);
+
+    fresh.commit('portable lock');
+    clone = join(tmpdir(), `mrt-anchors-portable-${process.pid}-${Date.now()}`);
+    execFileSync('git', ['clone', '--quiet', fresh.root, clone]);
+    mkdirSync(join(clone, 'scripts'), { recursive: true });
+    cpSync(join(ROOT, 'scripts', 'check-anchors.mjs'), join(clone, 'scripts', 'check-anchors.mjs'));
+    const clean = spawnSync(process.execPath, ['scripts/check-anchors.mjs'], { cwd: clone, encoding: 'utf8' });
+    assert.equal(clean.status, 0, `${clean.stdout}\n${clean.stderr}`);
+
+    fresh.write('.copilot-tracking/research/2026-08-22/bad.md', `Bad claim ${cite('missing.js:1')}\n`);
+    const invalid = fresh.checker();
+    assert.equal(invalid.status, 2);
+    assert.match(`${invalid.stdout}\n${invalid.stderr}`, /local-only.*missing\.js:1.*file missing/is);
+    rmSync(join(fresh.root, '.copilot-tracking', 'research', '2026-08-22', 'bad.md'));
+
+    fresh.git(['add', '-f', local]);
+    fresh.commit('track local evidence');
+    const promoted = fresh.checker();
+    assert.equal(promoted.status, 1);
+    assert.match(`${promoted.stdout}\n${promoted.stderr}`, new RegExp(`NEW\\s+${local.replaceAll('.', '\\.')}\\|`));
   } finally {
+    if (clone) rmSync(clone, { recursive: true, force: true });
     disposeAnchorRepo(fresh);
   }
 

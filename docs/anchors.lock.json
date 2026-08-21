@@ -674,13 +674,13 @@
     "fp": "e1a5d1c42772f713",
     "head": "`package.json:37-41`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file invent"
   },
-  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:227-231|0": {
-    "anchor": "scripts/check-anchors.mjs:227-231",
-    "fp": "098077db0b028da6",
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:227-232|0": {
+    "anchor": "scripts/check-anchors.mjs:227-232",
+    "fp": "a17aa09a758524f0",
     "head": "// Every tracked file, listed by git rather than by this script, plus new dated evidence"
   },
-  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:410|0": {
-    "anchor": "scripts/check-anchors.mjs:410",
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:427|0": {
+    "anchor": "scripts/check-anchors.mjs:427",
     "fp": "6db2dec2e99dd8a3",
     "head": "if (/^\\s*absent:/.test(cell)) ranges.push([offset + from, offset + from + cell.length]);"
   },
@@ -1851,7 +1851,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4859-4867|0": {
     "anchor": "PRODUCT_BACKLOG.md:4859-4867",
-    "fp": "69bd6b22a935e430",
+    "fp": "5e0f5efb50840fc0",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4864-4867|0": {
@@ -1944,108 +1944,108 @@
     "fp": "4e3144775613472c",
     "head": "// Everything below is in a 32 by 32 space, the favicon's viewBox, and scaled to the size being"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1019-1065|0": {
-    "anchor": "scripts/check-anchors.mjs:1019-1065",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1038-1084|0": {
+    "anchor": "scripts/check-anchors.mjs:1038-1084",
     "fp": "1e8c08864276e37f",
     "head": "export function scopeRenames(unkeyed, gone, lock, liveScopes = null) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1169-1184|0": {
-    "anchor": "scripts/check-anchors.mjs:1169-1184",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1188-1203|0": {
+    "anchor": "scripts/check-anchors.mjs:1188-1203",
     "fp": "a803afb540b17fb1",
     "head": "// Widening the population past Markdown created a third near miss, and leaving it"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1179|0": {
-    "anchor": "scripts/check-anchors.mjs:1179",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1198|0": {
+    "anchor": "scripts/check-anchors.mjs:1198",
     "fp": "2ed4c83265d83333",
     "head": "if (!syntax.open.test(lines[i])) continue;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1188|0": {
-    "anchor": "scripts/check-anchors.mjs:1188",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1207|0": {
+    "anchor": "scripts/check-anchors.mjs:1207",
     "fp": "82d76e7ed94dfdf4",
     "head": "function reportNearMisses(exempted) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1270-1304|0": {
-    "anchor": "scripts/check-anchors.mjs:1270-1304",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1299-1333|0": {
+    "anchor": "scripts/check-anchors.mjs:1299-1333",
     "fp": "c0ce026f923c4d6d",
     "head": "// Before anything else, and before the bless path in particular. A relative citation is a"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1310-1318|0": {
-    "anchor": "scripts/check-anchors.mjs:1310-1318",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1339-1347|0": {
+    "anchor": "scripts/check-anchors.mjs:1339-1347",
     "fp": "7477b3de9c4ec002",
     "head": "const repeats = [];"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1403|0": {
-    "anchor": "scripts/check-anchors.mjs:1403",
-    "fp": "9cb52e9dbec90feb",
-    "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
-  },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1403|1": {
-    "anchor": "scripts/check-anchors.mjs:1403",
-    "fp": "9cb52e9dbec90feb",
-    "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:142|0": {
     "anchor": "scripts/check-anchors.mjs:142",
     "fp": "dc0f54892037a5a6",
     "head": "const isBinary = (text) => text.includes('\\0');"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1504|0": {
-    "anchor": "scripts/check-anchors.mjs:1504",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1442|0": {
+    "anchor": "scripts/check-anchors.mjs:1442",
+    "fp": "9cb52e9dbec90feb",
+    "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1442|1": {
+    "anchor": "scripts/check-anchors.mjs:1442",
+    "fp": "9cb52e9dbec90feb",
+    "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
+  },
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1547|0": {
+    "anchor": "scripts/check-anchors.mjs:1547",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1504|1": {
-    "anchor": "scripts/check-anchors.mjs:1504",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1547|1": {
+    "anchor": "scripts/check-anchors.mjs:1547",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1515|0": {
-    "anchor": "scripts/check-anchors.mjs:1515",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1558|0": {
+    "anchor": "scripts/check-anchors.mjs:1558",
     "fp": "20b9af2aa5430e31",
     "head": "const renamed = scopeRenames(unkeyed, gone, lock, liveScopes);"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1536-1542|0": {
-    "anchor": "scripts/check-anchors.mjs:1536-1542",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1579-1585|0": {
+    "anchor": "scripts/check-anchors.mjs:1579-1585",
     "fp": "0f3e96ed0e6e42d8",
     "head": "for (const [b, ns] of newBy) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-231|0": {
-    "anchor": "scripts/check-anchors.mjs:227-231",
-    "fp": "098077db0b028da6",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-232|0": {
+    "anchor": "scripts/check-anchors.mjs:227-232",
+    "fp": "a17aa09a758524f0",
     "head": "// Every tracked file, listed by git rather than by this script, plus new dated evidence"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-231|1": {
-    "anchor": "scripts/check-anchors.mjs:227-231",
-    "fp": "098077db0b028da6",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-232|1": {
+    "anchor": "scripts/check-anchors.mjs:227-232",
+    "fp": "a17aa09a758524f0",
     "head": "// Every tracked file, listed by git rather than by this script, plus new dated evidence"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-231|2": {
-    "anchor": "scripts/check-anchors.mjs:227-231",
-    "fp": "098077db0b028da6",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-232|2": {
+    "anchor": "scripts/check-anchors.mjs:227-232",
+    "fp": "a17aa09a758524f0",
     "head": "// Every tracked file, listed by git rather than by this script, plus new dated evidence"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-231|3": {
-    "anchor": "scripts/check-anchors.mjs:227-231",
-    "fp": "098077db0b028da6",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-232|3": {
+    "anchor": "scripts/check-anchors.mjs:227-232",
+    "fp": "a17aa09a758524f0",
     "head": "// Every tracked file, listed by git rather than by this script, plus new dated evidence"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-231|4": {
-    "anchor": "scripts/check-anchors.mjs:227-231",
-    "fp": "098077db0b028da6",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-232|4": {
+    "anchor": "scripts/check-anchors.mjs:227-232",
+    "fp": "a17aa09a758524f0",
     "head": "// Every tracked file, listed by git rather than by this script, plus new dated evidence"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-231|5": {
-    "anchor": "scripts/check-anchors.mjs:227-231",
-    "fp": "098077db0b028da6",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:227-232|5": {
+    "anchor": "scripts/check-anchors.mjs:227-232",
+    "fp": "a17aa09a758524f0",
     "head": "// Every tracked file, listed by git rather than by this script, plus new dated evidence"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:250-252|0": {
-    "anchor": "scripts/check-anchors.mjs:250-252",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:251-253|0": {
+    "anchor": "scripts/check-anchors.mjs:251-253",
     "fp": "c9e7e9a264fdf5b6",
     "head": "// No pathspec. `ls-tree` and `ls-files` do not agree on how a bare pathspec matches"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:260|0": {
-    "anchor": "scripts/check-anchors.mjs:260",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:261|0": {
+    "anchor": "scripts/check-anchors.mjs:261",
     "fp": "f94694921cabfa0d",
     "head": ".filter((s) => s.length > 0 && s !== LOCK);"
   },
@@ -2054,83 +2054,83 @@
     "fp": "dda7109a4205f5b2",
     "head": "const ANCHOR = /`([A-Za-z0-9_./-]+\\.(?:js|mjs|css|html|json|yml|md)):(\\d+)(?:-(\\d+))?`/g;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:471-486|0": {
-    "anchor": "scripts/check-anchors.mjs:471-486",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:488-503|0": {
+    "anchor": "scripts/check-anchors.mjs:488-503",
     "fp": "0bfa4a558f67527c",
     "head": "// Where the relative form counts, which is the same split BL-071 drew and for the same reason."
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:480|0": {
-    "anchor": "scripts/check-anchors.mjs:480",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:497|0": {
+    "anchor": "scripts/check-anchors.mjs:497",
     "fp": "c429ed0edb9e7b6b",
     "head": "if (!syntax.prose && !(syntax.open?.test(line) ?? false)) return;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:495-498|0": {
-    "anchor": "scripts/check-anchors.mjs:495-498",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:512-515|0": {
+    "anchor": "scripts/check-anchors.mjs:512-515",
     "fp": "279e053febd9af8a",
     "head": "export function relativeVerdict(count, ref = null) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:504-516|0": {
-    "anchor": "scripts/check-anchors.mjs:504-516",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:521-533|0": {
+    "anchor": "scripts/check-anchors.mjs:521-533",
     "fp": "867a8c3bf79a2cb4",
     "head": "// Outside prose only the backticked form is collected. That is the opposite call from"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:555-597|0": {
-    "anchor": "scripts/check-anchors.mjs:555-597",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:572-614|0": {
+    "anchor": "scripts/check-anchors.mjs:572-614",
     "fp": "7e90b84bdc57fe79",
     "head": "export function proseRuns(text) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:571|0": {
-    "anchor": "scripts/check-anchors.mjs:571",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:588|0": {
+    "anchor": "scripts/check-anchors.mjs:588",
     "fp": "b1c529be7dc8d21f",
     "head": "|| /^\\s*\\|/.test(line)"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:576|0": {
-    "anchor": "scripts/check-anchors.mjs:576",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:593|0": {
+    "anchor": "scripts/check-anchors.mjs:593",
     "fp": "0a610d90e432b666",
     "head": "|| /^\\s*(?:-{3,}|={3,}|\\*{3,}|_{3,})\\s*$/.test(line)"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:585|0": {
-    "anchor": "scripts/check-anchors.mjs:585",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:602|0": {
+    "anchor": "scripts/check-anchors.mjs:602",
     "fp": "48da53177e6e1bb6",
     "head": "|| /^\\s*<!--/.test(line);"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:623|0": {
-    "anchor": "scripts/check-anchors.mjs:623",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:640|0": {
+    "anchor": "scripts/check-anchors.mjs:640",
     "fp": "d3986debade1da53",
     "head": "const ABBREVIATION = String.raw`e\\.g|i\\.e|cf|etc|vs|approx|fig|vol|pp|al|no|Dr|Mr|Mrs|Ms|Jr|Sr|St|In"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:626-629|0": {
-    "anchor": "scripts/check-anchors.mjs:626-629",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:643-646|0": {
+    "anchor": "scripts/check-anchors.mjs:643-646",
     "fp": "7e025668c75f6ee7",
     "head": "const SENTENCE_BREAK = new RegExp("
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:654-687|0": {
-    "anchor": "scripts/check-anchors.mjs:654-687",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:671-704|0": {
+    "anchor": "scripts/check-anchors.mjs:671-704",
     "fp": "1f49cb516abe3fde",
     "head": "export function repeatedCitations(text, syntax = PROSE, known = null) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:693-696|0": {
-    "anchor": "scripts/check-anchors.mjs:693-696",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:710-713|0": {
+    "anchor": "scripts/check-anchors.mjs:710-713",
     "fp": "c8a7d8d65c835a06",
     "head": "export function repeatVerdict(count, ref = null) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:716-742|0": {
-    "anchor": "scripts/check-anchors.mjs:716-742",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:733-759|0": {
+    "anchor": "scripts/check-anchors.mjs:733-759",
     "fp": "8bd270ad19cf1ae6",
     "head": "// The prose immediately before a citation, which is what the reader has to weigh the"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:747|0": {
-    "anchor": "scripts/check-anchors.mjs:747",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:764|0": {
+    "anchor": "scripts/check-anchors.mjs:764",
     "fp": "4b80dfe5a50e2da3",
     "head": "const marked = (s) => syntax.open?.test(s) ?? false;"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:853|0": {
-    "anchor": "scripts/check-anchors.mjs:853",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:871|0": {
+    "anchor": "scripts/check-anchors.mjs:871",
     "fp": "48c96e3374e4aff6",
     "head": "claim: claimBefore(lines, i, c.at, syntax),"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:952-954|0": {
-    "anchor": "scripts/check-anchors.mjs:952-954",
+  "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:971-973|0": {
+    "anchor": "scripts/check-anchors.mjs:971-973",
     "fp": "cfb1a6c69abcd7ab",
     "head": "// Narrowed to one scope and one anchor, because sharing an anchor across the document"
   },
@@ -4499,13 +4499,13 @@
     "fp": "1a189415f7ffa207",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--accent);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:853|0": {
-    "anchor": "scripts/check-anchors.mjs:853",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-070|scripts/check-anchors.mjs:871|0": {
+    "anchor": "scripts/check-anchors.mjs:871",
     "fp": "48c96e3374e4aff6",
     "head": "claim: claimBefore(lines, i, c.at, syntax),"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:260|0": {
-    "anchor": "scripts/check-anchors.mjs:260",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-071|scripts/check-anchors.mjs:261|0": {
+    "anchor": "scripts/check-anchors.mjs:261",
     "fp": "f94694921cabfa0d",
     "head": ".filter((s) => s.length > 0 && s !== LOCK);"
   },
@@ -4529,23 +4529,23 @@
     "fp": "8a51ad8622832a60",
     "head": "// The main slot is asked directly rather than through the walk, so that a storage which"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-077|scripts/check-anchors.mjs:471-486|0": {
-    "anchor": "scripts/check-anchors.mjs:471-486",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-077|scripts/check-anchors.mjs:488-503|0": {
+    "anchor": "scripts/check-anchors.mjs:488-503",
     "fp": "0bfa4a558f67527c",
     "head": "// Where the relative form counts, which is the same split BL-071 drew and for the same reason."
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-078|scripts/check-anchors.mjs:1403|0": {
-    "anchor": "scripts/check-anchors.mjs:1403",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-078|scripts/check-anchors.mjs:1442|0": {
+    "anchor": "scripts/check-anchors.mjs:1442",
     "fp": "9cb52e9dbec90feb",
     "head": "lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-079|scripts/check-anchors.mjs:460|0": {
-    "anchor": "scripts/check-anchors.mjs:460",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-079|scripts/check-anchors.mjs:477|0": {
+    "anchor": "scripts/check-anchors.mjs:477",
     "fp": "18f94cbda3c2e5ec",
     "head": "export function commentSyntax(path) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-080|scripts/check-anchors.mjs:1504|0": {
-    "anchor": "scripts/check-anchors.mjs:1504",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-080|scripts/check-anchors.mjs:1547|0": {
+    "anchor": "scripts/check-anchors.mjs:1547",
     "fp": "faf3811c0e2fac2d",
     "head": "const bucketOf = (k, file) => `${k.split('|')[0]}|${k.split('|')[1]}|${file}`;"
   },
@@ -4744,8 +4744,8 @@
     "fp": "f4a5889386402303",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:654-687|0": {
-    "anchor": "scripts/check-anchors.mjs:654-687",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:671-704|0": {
+    "anchor": "scripts/check-anchors.mjs:671-704",
     "fp": "1f49cb516abe3fde",
     "head": "export function repeatedCitations(text, syntax = PROSE, known = null) {"
   },
@@ -4919,8 +4919,8 @@
     "fp": "449eb465c31b734e",
     "head": "const css = readFileSync(join(ROOT, 'src', 'styles.css'), 'utf8');"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-182|scripts/check-anchors.mjs:279-386|0": {
-    "anchor": "scripts/check-anchors.mjs:279-386",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-182|scripts/check-anchors.mjs:296-403|0": {
+    "anchor": "scripts/check-anchors.mjs:296-403",
     "fp": "dedbae7d99bf4018",
     "head": "function isHistoricalArtifact(path) {"
   },

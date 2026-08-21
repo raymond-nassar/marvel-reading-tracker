@@ -10,21 +10,22 @@
 
 ## Execution Status
 
-* Status: Complete after Review
+* Status: Complete after parent integration correction
 * Declared invocation scope: Full plan
 * Completed scope markers: P00, P00-T01, P00-T02, P01-T01, P01-T02, P01-T03, P01, P02-T01,
-  P02-T02, P02-T03, P02-T04, P02
-* All remaining active-plan markers: none
-* Status basis: Review completed with RV-001 and RV-002, both High implementation defects within the
-  approved design. Both are corrected and every reopened validation marker is complete.
+  P02-T02, P02-T03, P02-T04, P02, P03-T01, P03-T02, P03-T03, P03
+* All remaining active-plan markers: None
+* Status basis: P03 now validates ignored local artifacts without admitting them to the portable lock,
+  and all required gates pass on the reconciled tree.
 
 ## Execution Summary
 
 The checker now selects target content per citation occurrence. Committed lines in dated tracking
 artifacts read targets from their Git origin commits, while current documents and uncommitted lines
 use the active tree. Source-specific path membership preserves extensionless historical targets,
-ignored new dated artifacts enter the corpus before staging, and missing or incomplete provenance
-fails instead of falling back.
+ignored new dated artifacts enter local validation before staging, and missing or incomplete
+provenance fails instead of falling back. Local-only occurrences now complete every validation step
+without entering canonical lock comparison or writing.
 
 ## Completed Work
 
@@ -187,6 +188,22 @@ fails instead of falling back.
   reports zero drift, additions, or removals.
 * Planning and critique state: Expected completion work within P02.
 
+### Correcting local-only lock portability
+
+* Affected plan area or markers: Integration contract revision and P03.
+* What changed: The parent blessed 13 valid citations from one intentionally ignored local artifact.
+  A clean checkout cannot contain that artifact, so the same lock reports 13 removals.
+* Why: Validation scope and portable lock membership are different contracts. An untracked document
+  has no clone-stable identity to store in tracked output.
+* Triggering evidence: Parent integration after commits 57f0e97 and 68bf9bc.
+* User answer or decision: Validate every local-only citation, exclude it from comparison and bless
+  until tracked, report the exclusion, and preserve committed historical provenance.
+* Reconciliation performed: Added the explicit integration contract and P03 before source edits. No
+  second critique or Review mode will run. One inventory now carries canonical and local-only
+  membership through a shared validation walk, then separates occurrences before lock operations.
+* Planning and critique state: Accepted caller correction within HAS-001; implementation complete
+  and final validation active.
+
 ## Validation Record
 
 | Check | Scope | Status | Evidence or reason |
@@ -215,14 +232,22 @@ fails instead of falling back.
 | Post-bless complete test suite | Unchanged staged tree | Passed | 1,294 passed, zero failed |
 | Final anchors | Unchanged staged tree | Passed | 1,017 unchanged, zero drifted, zero new, zero removed |
 | Added-line dash scan | Diff from origin/main | Passed | Zero em dash or en dash additions |
+| P03 red-without-fix proof | Ignored-artifact process case | Passed | Focused test failed before the checker correction because bless enrolled the local-only citation |
+| P03 focused regression | Ignored-artifact process case | Passed | One passed, zero failed |
+| P03 complete anchor owner | Anchor checker tests | Passed | 96 passed, zero failed |
+| P03 targeted lint | Checker and test owner | Passed | Zero problems |
+| P03 lint | Reconciled tree | Passed | Zero problems |
+| P03 complete tests | Reconciled tree | Passed | 1,294 passed, zero failed |
+| P03 derived counts | Backlog and prose records | Passed | 156 ranked rows, 161 blocks, every stated figure agrees |
+| P03 anchor workflow | Current citations and canonical lock | Passed | 46 current citations re-aimed; all 47 changed pairings read; final result 1,017 unchanged and zero drifted, new, or removed |
+| P03 added-line dash scan | Diff from origin/main | Passed | Zero em dash or en dash additions |
 
 ## Post-Review Reconciliation
 
-* Plan markers and phase details: Every P00 through P02 marker is complete.
-* Completed-work evidence and handoff prose: Current through the routed Review corrections and
-  repeated gates.
-* Validation, blockers, remaining work, and follow-up items: Current below.
-* Review readiness: Review complete; both routed findings resolved without a second review.
+* Plan markers and phase details: P00 through P03 are complete.
+* Completed-work evidence and handoff prose: Current through the validated integration fix.
+* Validation, blockers, remaining work, and follow-up items: Complete below.
+* Review readiness: Review remains complete; this integration correction will not start another.
 
 ## Blockers
 
@@ -230,7 +255,7 @@ fails instead of falling back.
 
 ## Remaining Work
 
-* None in the implementation plan.
+* None.
 
 ## Follow-Up Items
 
@@ -240,13 +265,14 @@ fails instead of falling back.
 
 ## Return-to-Caller State
 
-* Implementation execution status: Complete after Review
-* Declared scope and markers: Full plan; every P00 through P02 marker complete.
-* Validation coverage: Review red proofs, 96 targeted tests, zero lint problems, 1,294 complete
-  tests, derived counts, 1,017 unchanged anchors, and zero forbidden dashes.
-* Blockers: none.
+* Implementation execution status: Complete after parent integration correction
+* Declared scope and markers: Full plan; P00 through P03 complete.
+* Validation coverage: Focused regression, all 96 anchor tests, all 1,294 repository tests, lint,
+  counts, anchor workflow, and dash scan pass.
+* Blockers: None.
 * Current plan and detail updates: PC-001 through PC-005 resolved before source work.
 * Planning and critique state: Ready after exactly one critique.
 * Follow-up items: none.
-* Review readiness or no-handoff reason: Review is complete and both routed findings are resolved.
-* Continuation owner: Confirmed automatic RPI Agent.
+* Review readiness or no-handoff reason: Review remains complete; the caller directed no second
+  Review mode for P03.
+* Continuation owner: Parent integration after the fix commit is available.

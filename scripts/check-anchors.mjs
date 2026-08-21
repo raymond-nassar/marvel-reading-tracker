@@ -225,10 +225,11 @@ function fingerprint(file, start, end, source = ACTIVE_SOURCE) {
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
 
 // Every tracked file, listed by git rather than by this script, plus new dated evidence
-// that the tracking-root ignore rule otherwise hides until staging. Membership in the
-// population must not depend on a name written here: an enumeration is a list someone
-// has to keep complete, and the anchor defects this gate exists to catch were all caused
-// by exactly that.
+// that the tracking-root ignore rule otherwise hides until staging. The latter is local
+// validation input, not portable lock input: a tracked lock cannot name a document that
+// no clean checkout receives. Membership in either population must not depend on a name
+// written here: an enumeration is a list someone has to keep complete, and the anchor
+// defects this gate exists to catch were all caused by exactly that.
 //
 // The one exclusion is this gate's own lock, and it is structural rather than named.
 // LOCK is the path this script writes, so the rule is that the gate does not read its
@@ -244,9 +245,9 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g
 // Memoised because the list is now read four times in a run rather than three, the fourth
 // being the membership test the extensionless collector makes. `ref` is fixed for the
 // process, so the answer cannot change under the cache.
-let listed = null;
-function docs() {
-  if (listed !== null) return listed;
+let inventory = null;
+function documentInventory() {
+  if (inventory !== null) return inventory;
   // No pathspec. `ls-tree` and `ls-files` do not agree on how a bare pathspec matches
   // nested paths, and filtering in one place here is one fewer behaviour that can
   // differ between the working tree and a historical ref.
@@ -254,12 +255,13 @@ function docs() {
     ? ['ls-files']
     : ['ls-tree', '-r', '--name-only', ref];
   try {
-    const paths = execFileSync('git', cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
+    const canonical = execFileSync('git', cmd, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
       .split('\n')
       .map((s) => s.trim())
       .filter((s) => s.length > 0 && s !== LOCK);
+    let localOnly = [];
     if (ref === null) {
-      const ignored = execFileSync(
+      localOnly = execFileSync(
         'git',
         ['ls-files', '--others', '--ignored', '--exclude-standard', '--', '.copilot-tracking'],
         { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 },
@@ -267,13 +269,28 @@ function docs() {
         .split('\n')
         .map((s) => s.trim())
         .filter((s) => isHistoricalArtifact(s));
-      paths.push(...ignored);
     }
-    listed = [...new Set(paths)].sort();
+    inventory = {
+      canonical: [...new Set(canonical)].sort(),
+      localOnly: new Set(localOnly),
+      all: [...new Set([...canonical, ...localOnly])].sort(),
+    };
   } catch {
-    listed = [];
+    inventory = { canonical: [], localOnly: new Set(), all: [] };
   }
-  return listed;
+  return inventory;
+}
+
+function docs() {
+  return documentInventory().all;
+}
+
+function canonicalDocs() {
+  return documentInventory().canonical;
+}
+
+function isLocalOnlyDocument(path) {
+  return documentInventory().localOnly.has(path);
 }
 
 function isHistoricalArtifact(path) {
@@ -796,6 +813,7 @@ export function claimBefore(lines, i, at, syntax = PROSE) {
 // inversion is what stops a new row shape from silently leaving anchors uncovered.
 function collect() {
   const found = [];
+  const localOnly = [];
   const coverage = [];
   let exempted = 0;
 
@@ -847,19 +865,20 @@ function collect() {
         const ordinal = ordinals.get(bucket) ?? 0;
         ordinals.set(bucket, ordinal + 1);
         captured += 1;
-        found.push({
+        const occurrence = {
           key: `${bucket}|${ordinal}`,
           anchor,
           claim: claimBefore(lines, i, c.at, syntax),
           ...fingerprint(c.file, c.start, c.end, source),
-        });
+        };
+        (isLocalOnlyDocument(doc) ? localOnly : found).push(occurrence);
       }
       offset += line.length + 1;
     }
     if (scanned === 0) continue;
-    coverage.push({ doc, scanned, captured });
+    coverage.push({ doc, scanned, captured, localOnly: isLocalOnlyDocument(doc) });
   }
-  return { found, coverage, exempted };
+  return { found, localOnly, coverage, exempted };
 }
 
 // Every citation whose blessed line is about to change, one record per citation.
@@ -1220,6 +1239,15 @@ function priorLock() {
   }
 }
 
+function reportLocalOnly(found) {
+  if (!found.length) return;
+  const documents = new Set(found.map((f) => f.key.split('|')[0])).size;
+  console.log(
+    `Validated ${found.length} local-only citation${found.length === 1 ? '' : 's'} across ` +
+    `${documents} document${documents === 1 ? '' : 's'}; excluded from the canonical lock until tracked.`,
+  );
+}
+
 function main() {
   try {
     const shallow = execFileSync('git', ['rev-parse', '--is-shallow-repository'], {
@@ -1265,7 +1293,8 @@ function main() {
     console.error(`FATAL: ${error.message}`);
     process.exit(2);
   }
-  const { found, coverage, exempted } = result;
+  const { found, localOnly, coverage, exempted } = result;
+  const allFound = [...found, ...localOnly];
 
   // Before anything else, and before the bless path in particular. A relative citation is a
   // claim the gate cannot check, so blessing a tree that holds one records a lock that looks
@@ -1358,16 +1387,26 @@ function main() {
 
   // A collector that silently matches nothing reports a clean pass, which is exactly
   // the failure this gate exists to prevent. Refuse to run rather than reassure.
-  if (found.length === 0) {
+  if (allFound.length === 0) {
     console.error(`FATAL: found 0 anchors${ref ? ` at ${ref}` : ''}.`);
     console.error('The collector matched nothing. That is a broken instrument, not a clean result.');
     process.exit(2);
   }
 
-  const dupes = found.map((f) => f.key).filter((k, i, all) => all.indexOf(k) !== i);
+  const dupes = allFound.map((f) => f.key).filter((k, i, all) => all.indexOf(k) !== i);
   if (dupes.length) {
     console.error(`FATAL: ${dupes.length} duplicate key(s), so the lock cannot be trusted:`);
     for (const k of new Set(dupes)) console.error(`  ${k}`);
+    process.exit(2);
+  }
+
+  const invalidLocal = localOnly.filter((f) => f.fp === null || f.blankEdge);
+  if (invalidLocal.length) {
+    const each = invalidLocal.length === 1 ? 'citation does' : 'citations do';
+    console.error(`FATAL: ${invalidLocal.length} local-only ${each} not resolve or have blank edges:`);
+    for (const f of invalidLocal) {
+      console.error(`  ${f.key}  ${f.anchor}  (${f.blankEdge ?? f.why})`);
+    }
     process.exit(2);
   }
 
@@ -1396,15 +1435,17 @@ function main() {
     const prior = priorLock();
     const fresh = new Set(firstTime(found, prior).map((f) => f.key));
     printPairings(pairings(found, prior), fresh);
-    printCollisions(collisions(found, prior));
+    printCollisions(collisions(allFound, prior));
 
     const lock = {};
     for (const f of found) {
       lock[f.key] = { anchor: f.anchor, fp: f.fp, head: f.head };
     }
     writeFileSync(LOCK, `${JSON.stringify(lock, null, 2)}\n`);
-    const cov = coverage.map((c) => `${c.doc} ${c.captured}`).join(', ');
-    console.log(`Blessed ${found.length} anchors across ${coverage.length} docs (${cov}) -> ${LOCK}`);
+    const canonicalCoverage = coverage.filter((c) => !c.localOnly);
+    const cov = canonicalCoverage.map((c) => `${c.doc} ${c.captured}`).join(', ');
+    console.log(`Blessed ${found.length} anchors across ${canonicalCoverage.length} docs (${cov}) -> ${LOCK}`);
+    reportLocalOnly(localOnly);
     reportNearMisses(exempted);
     process.exit(0);
   }
@@ -1480,7 +1521,7 @@ function main() {
   // Which losses matter is deliberately not judged here. Failing only when a whole
   // document disappears would be a heuristic about significance, and heuristics about
   // which anchors are worth counting are exactly how this gate once covered 37 of 193.
-  const corpus = new Set(docs());
+  const corpus = new Set(canonicalDocs());
   const goneByDoc = new Map();
   for (const k of gone) {
     const doc = k.split('|')[0];
@@ -1488,7 +1529,9 @@ function main() {
     goneByDoc.get(doc).push(k);
   }
 
-  const cov = coverage.map((c) => `${c.doc} ${c.captured}/${c.scanned}`).join(', ');
+  const cov = coverage
+    .map((c) => `${c.doc} ${c.captured}/${c.scanned}${c.localOnly ? ' local-only' : ''}`)
+    .join(', ');
 
   // An anchor that was re-aimed appears as one addition and one loss, because the anchor
   // text is part of the key. Reported as two unrelated events that is true but illegible:
@@ -1552,6 +1595,8 @@ function main() {
     console.log(`of which ${reaimed.length} pair as re-aimed anchors, one addition against one loss`);
   }
   console.log(`coverage: ${cov}\n`);
+  reportLocalOnly(localOnly);
+  if (localOnly.length) console.log('');
 
   // Printed as its own kind, and still counted as an addition and a loss so the gate
   // exits 1. A rename absorbed silently would let a real loss hide behind a real rename
@@ -1630,7 +1675,7 @@ function main() {
     console.log(`NOTICE: ${edged.length} range(s) above are in a past revision and cannot be narrowed.`);
   }
 
-  printCollisions(collisions(found, lock));
+  printCollisions(collisions(allFound, lock));
 
   if (drifted.length || unkeyed.length) {
     console.log('Re-read the cited lines and confirm they still say what the claim says.');
