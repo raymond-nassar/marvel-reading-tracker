@@ -10,13 +10,13 @@
 
 ## Execution Status
 
-* Status: Complete
+* Status: Blocked at merge automation
 * Declared invocation scope: P02
 * Completed scope markers: P02, P02-T01, and P02-T02
 * Active scope markers: None
 * Status basis: The source-order packet is approved, authored, vendored, validated, and reconciled.
-  The pull request is open; its three post-publication review findings are fixed and merge automation
-  follows.
+  The pull request is open and its three post-publication review findings are fixed. Agent Merge
+  cannot act because the app did not inject its required authorization state.
 
 ## Execution Summary
 
@@ -190,6 +190,22 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   both the packet test and packet contract fail at source position 1. Each isolated mutation was
   removed through the staged stash before the passing rerun.
 
+### CHG-008: Record the unavailable Agent Merge authorization tick
+
+* Related phase or task: None; this is an external delivery blocker after the pull request opened.
+* Required state: Agent Merge permits no top-level action until the app injects an
+  `<agent_merge_state>` block carrying `Authorized actions this run:`.
+* Attempts: Two new PR-linked sessions were launched, first with the default agent and then with the
+  dedicated `agent-merge` agent. A direct `/agent-merge` invocation was also sent to the dedicated
+  session. All three paths loaded the Agent Merge skill context but none received the required state
+  block or authorization line.
+* Safety result: Both sessions correctly made no repository or GitHub mutation without authorization.
+* Last read-only PR state: Pull request 159 is open at `1ef6de303cc88627479fb500249ab890b425b364`;
+  GitHub reports `CONFLICTING` and `DIRTY`, with no status checks or reviews in the fetched summary.
+* Required external action: The app must start an Agent Merge tick for pull request 159 and inject its
+  evaluated state. The protocol then authorizes the agent to resolve the current-main conflict and
+  drive the pull request to merge-ready without merging it.
+
 ## Validation Record
 
 | Check | Scope | Status | Evidence or reason |
@@ -228,11 +244,12 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
 
 ## Blockers
 
-* None.
+* Agent Merge state injection is unavailable from this session. The skill cannot resolve the
+  current-main conflict without the app-provided authorization line recorded in CHG-008.
 
 ## Remaining Work
 
-* Commit and publish the review corrections, then start Agent Merge and reach merge-ready.
+* Start an app-authorized Agent Merge tick for pull request 159 and let it reach merge-ready.
 
 ## Follow-Up Items
 

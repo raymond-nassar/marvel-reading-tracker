@@ -4,8 +4,8 @@
   "parent_task": null,
   "mode": "manual",
   "active_phase": "Review",
-  "status": "active",
-  "session_status": "running",
+  "status": "blocked",
+  "session_status": "blocked",
   "production_batch": {
     "target_count": 10,
     "selection_rule": "ascending position in scripts/data/cbh-modern-inventory.json, filtering to first eligible new-order event or aftermath records; skip commerce, excluded, deferred/recent-source, path-source, fast-track, broad-era/bridge work, reuse-existing records, and anything blocked by exact-resolution or overlap gates",
@@ -155,6 +155,20 @@
       "failure_proofs": 3,
       "shipped_overlap_hashes_unchanged": 10,
       "result": "Complete overlap identity validation, shipped-report regeneration, and issue-zero preservation verified"
+    },
+    "agent_merge": {
+      "status": "blocked",
+      "pull_request": 159,
+      "observed_head": "1ef6de303cc88627479fb500249ab890b425b364",
+      "launch_attempts": 3,
+      "reason": "The PR-linked sessions loaded the Agent Merge skill but the app did not inject an agent_merge_state block or Authorized actions this run line.",
+      "last_read_only_state": {
+        "mergeable": "CONFLICTING",
+        "merge_state_status": "DIRTY",
+        "checks": 0,
+        "reviews": 0
+      },
+      "required_external_action": "Start an app-authorized Agent Merge tick for pull request 159 so the evaluated state and authorized actions are injected."
     }
   },
   "artifact_paths": {
@@ -212,7 +226,14 @@
       "evidence": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md"
     }
   ],
-  "blockers": [],
-  "next_action": "Commit and publish the resolved post-PR review corrections, update pull request 159, then start Agent Merge",
+  "blockers": [
+    {
+      "id": "agent-merge-state-missing",
+      "status": "external",
+      "evidence": "Three launch paths loaded the skill context without the mandatory agent_merge_state authorization block.",
+      "resolution": "The app must invoke an authorized Agent Merge tick for pull request 159."
+    }
+  ],
+  "next_action": "Wait for the app to invoke an authorized Agent Merge tick for pull request 159",
   "prioritized_follow_ups": []
 }
