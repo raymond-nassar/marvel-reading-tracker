@@ -118,7 +118,7 @@ test('blank issues stay enabled, because the security policy sends reporters thr
 test('every contact link into this repository names a file that is still there', () => {
   const links = [...issueConfig.matchAll(/^\s*url:\s*(\S+)\s*$/gm)].map((match) => match[1]);
   assert.ok(links.length > 0, 'no contact links found, so this check would pass vacuously');
-  const prefix = 'https://github.com/raymond-nassar/marvel-reading-tracker/blob/main/';
+  const prefix = 'https://github.com/raymond-nassar/recap-page/blob/main/';
   let checked = 0;
   for (const url of links) {
     if (!url.startsWith(prefix)) continue;

@@ -17,6 +17,8 @@ import { CSP, DEFAULT_PORT, HOST, browserCommand, createStaticServer, parsePort,
 // is not listening, so each test binds an ephemeral loopback port of its own and gives it back.
 
 const source = readFileSync(new URL('../server.mjs', import.meta.url), 'utf8');
+const packageName = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).name;
+assert.ok(packageName, 'package.json has no name, so the leak assertion would check an empty marker');
 
 // Binds 127.0.0.1:0, so the operating system picks a free port and nothing collides with a tracker
 // the developer already has running on 8787. Always closed, including when the body throws.
@@ -341,7 +343,7 @@ test('no traversal shape serves a file from outside the served directory', async
     for (const target of targets) {
       const res = await rawRequest(port, `GET ${target}`);
       assert.ok([403, 404].includes(res.status), `${target} answered ${res.status}`);
-      assert.equal(/"name": "marvel-reading-tracker"/.test(res.text), false, `${target} leaked package.json`);
+      assert.equal(res.text.includes(`"name": "${packageName}"`), false, `${target} leaked package.json`);
     }
   });
 });

@@ -1,4 +1,4 @@
-/* Marvel Reading Tracker: "Longbox Focus"
+/* Recap Page: "Longbox Focus"
    A cover-forward shell (rail, blurred hero backdrop, cover shelf) wrapped around a calm,
    single-column reading flow. Every cover rule has a `body.nocovers` counterpart so the
    layout holds together with artwork switched off.
@@ -250,8 +250,8 @@ h2[tabindex="-1"]:focus {
 }
 .brand:hover { background: rgb(var(--tint-base) / 3.922%); }
 .brand .mark {
-  width: 28px; height: 28px; border-radius: 8px; background: var(--red);
-  display: grid; place-items: center; font-weight: 800; font-size: .9rem; color: var(--on-accent);
+  width: 28px; height: 28px;
+  display: block;
   flex: 0 0 auto;
 }
 .brand b { font-size: .94rem; font-weight: 600; }

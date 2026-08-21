@@ -2,7 +2,7 @@
 
 ## What this project is, because it decides what a vulnerability can be here
 
-Marvel Reading Tracker is a static site that runs from your own machine. There is no server to
+Recap Page is a static site that runs from your own machine. There is no server to
 attack, no account to take over and no database holding anyone else's data. The app has no runtime
 dependencies at all, so nothing in `package.json` reaches the browser. Everything it declares is
 development tooling: the four packages listed at `package.json:35-38` are the linter and the three

@@ -1116,7 +1116,7 @@ export function exportBackup(state) {
   return {
     schemaVersion: SCHEMA_VERSION,
     exportedAt: new Date().toISOString(),
-    app: 'marvel-reading-tracker',
+    app: 'recap-page',
     issues: state.issues,
     read: state.read,
     overrides: state.overrides,

@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "Marvel Reading Tracker",
-  "short_name": "Reading Tracker",
+  "name": "Recap Page",
+  "short_name": "Recap",
   "description": "A private checklist for Marvel reading orders, kept on your own computer.",
   "start_url": "/",
   "scope": "/",

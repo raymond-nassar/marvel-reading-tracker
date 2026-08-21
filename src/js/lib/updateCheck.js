@@ -1,8 +1,8 @@
 import { APP_VERSION } from './version.js';
 
-export const LATEST_RELEASE_API_URL = 'https://api.github.com/repos/raymond-nassar/marvel-reading-tracker/releases/latest';
-export const UPDATE_DOWNLOAD_URL = 'https://github.com/raymond-nassar/marvel-reading-tracker/releases/latest/download/marvel-reading-tracker-windows.zip';
-export const UPDATE_RELEASE_NOTES_URL = 'https://github.com/raymond-nassar/marvel-reading-tracker/releases/latest';
+export const LATEST_RELEASE_API_URL = 'https://api.github.com/repos/raymond-nassar/recap-page/releases/latest';
+export const UPDATE_DOWNLOAD_URL = 'https://github.com/raymond-nassar/recap-page/releases/latest/download/marvel-reading-tracker-windows.zip';
+export const UPDATE_RELEASE_NOTES_URL = 'https://github.com/raymond-nassar/recap-page/releases/latest';
 export const UPDATE_CHECK_INTERVAL_MS = 24 * 60 * 60 * 1000;
 
 export function normaliseReleaseVersion(value) {

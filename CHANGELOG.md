@@ -1,6 +1,6 @@
 # Changelog
 
-Every notable change to Marvel Reading Tracker, newest first.
+Every notable change to Recap Page, newest first.
 
 The version number is explained in [`src/js/lib/version.js`](src/js/lib/version.js) and is
 summarised here: **MAJOR** means an older build cannot read data saved by this one, **MINOR**
@@ -13,6 +13,18 @@ Releases are tagged `v<version>`. The version shown under **About this app** is 
 quote in a bug report.
 
 ## Unreleased
+
+### Rebranded the app as Recap Page
+
+In plain English: the app now has its own name and folded-page icon instead of a Marvel-like red
+tile. The home screen also says where its Marvel metadata actually came from.
+
+Installed copies still look for the same Windows download, saved reading progress stays under the
+same browser keys, and backups made under the old name still import. The repository moved with the
+app, while old repository links continue through the host's redirects.
+
+Microsoft Store reservation and listing work remains separate. Nothing is being submitted to the
+Store as part of this change.
 
 ### Where the reading lists come from now records who has been asked, and what they said
 
@@ -37,6 +49,139 @@ Nothing you have saved is affected, and no reading list changed.
 For maintainers: a yes reaches only what the person saying it holds. This one covers that site's own
 selection and arrangement of issues and stops there, so it closes none of the four open questions the
 provenance document lists, and it says nothing about Marvel's own material.
+
+### Recorded three naming and branding risks ahead of any app store listing
+
+In plain English: nothing about the app itself changed, and nothing you have saved is affected. The
+project's list of planned improvements gained three entries about how the app presents itself, all
+written down after reading the actual rules rather than guessing at them.
+
+The first is the app's icon, which is a red square with a white letter on it and is close enough to
+Marvel's own logo to be worth redrawing. The second is the app's name, which is fine for a project
+shared on a code-hosting site but sits awkwardly against both Marvel's published position on
+third-party apps and the store's own rules about what a product may be called. The third is a line
+on the home screen that credits Marvel using wording meant for apps that connect to Marvel's own
+data service, which this app has never done.
+
+None of the three is urgent while the app is downloaded as a zip file. All three matter before it
+could ever be listed in a store, and they are recorded now so the reasoning does not have to be
+worked out a second time.
+
+### Settled on the name Recap Page, and wrote down what a rename would break
+
+In plain English: the app will be renamed to Recap Page. Nothing about how it works changed here and
+nothing you have saved is affected. The new name is not carried into the app yet, so this only
+settles which name to carry.
+
+The choice was deliberately left open before. What closed it was checking the two shortlisted names
+against the United States trademark register instead of assuming. Pull List turned out to be
+registered twice by Marvel, and one of those two sits in the same category a downloadable app is
+listed under. Both were renewed about six weeks ago, so somebody is actively looking after them.
+Recap Page returned nothing there at all, and nothing in the Windows store, the Android store or the
+main code-hosting site uses it either. Registering a name is not a condition of publishing to the
+Windows store, but using somebody else's registered name is grounds for being pulled from it, which
+is why the check came first.
+
+The second entry is about what a rename costs afterwards. The app asks a fixed web address once a
+day whether a newer version exists. Renaming the project keeps that question answerable, because the
+site forwards the old address to the new one. The download file the answer points at is named after
+the project, though, and that forwarding does not reach inside it, so installed copies would be told
+an update exists and then fail to fetch it. The fix is to leave that one filename alone, which is
+much easier to know before the rename than after.
+
+## 1.2.0
+
+A feature release, and the one that makes every release after it reachable. Until now nothing in the
+app ever said that a newer version existed, so a reader who downloaded it once stayed on that build
+until they next happened to visit the repository. This is a MINOR because it adds features and
+changes the interface while leaving saved data readable by the previous build. Upgrading needs no
+backup and there is nothing to migrate. Reading progress is kept by the browser rather than inside
+the app folder, so the old folder can be deleted once the new one has been opened.
+
+### The app now tells readers when a newer release is available
+
+In plain English: the app now checks GitHub once a day for the latest version number. If there is a
+newer release, it shows a notice with a direct download link, a link to what changed, and a reminder
+that reading progress is saved by the browser rather than in the app folder. Nothing you have saved
+is moved or changed.
+
+The check is on by default because otherwise the people who need the notice would never see it. It
+can be turned off under Backup & settings, and the About screen still has a button for checking by
+hand. The app never downloads, installs or replaces files by itself.
+
+For maintainers: the release check is a small browser-side module with unit coverage for version
+comparison, daily scheduling, failure handling and request shape. The real-browser harness now stubs
+the GitHub release request, checks the notice and the explicit button, and includes aimed mutations
+for the update journey.
+
+Cutting this release also found a fault in that coverage. The comparison test named `v1.2.0` as the
+newer release, so it passed only while the app had not reached 1.2.0, and the bump for this release
+turned it red for a reason that had nothing to do with the comparison it guards. Both neighbours are
+now derived from the shipped version, and the rewritten test was checked against a comparison made
+lexical again to confirm it still fails when the behaviour breaks.
+
+### A committed check now drives the upgrade that notice recommends
+
+In plain English: the notice tells you that your reading progress is kept by the browser rather than
+in the app folder, so replacing the folder keeps everything and the old one is safe to delete.
+Nothing had ever tested that sentence, and it is the one standing between you and deleting a folder
+you believe is disposable. It is now driven from end to end: one copy of the app saves a reading
+order, that copy stops, a second copy takes over the same address, and the order has to still be
+there and still be drawn on the screen. It is. Nothing about the app itself changed.
+
+For maintainers: `npm run upgrade` installs two real copies of the app under the system temporary
+directory, serves each with the real server on ephemeral ports, and makes ten assertions across the
+swap. The last is a control that serves the same new copy at a second address and requires the
+progress to be absent there. Without it the check would pass just as happily if progress were being
+read out of the folder, which is the opposite of what the notice claims. `npm run upgrade:prove`
+breaks four things on purpose and reports which assertion each one reddens, at four of four. Neither
+is part of CI, for the same reason the browser check is not: both need Edge and a driver that is
+deliberately not a dependency of this repository.
+
+Writing it turned up a trap worth recording. Navigating to a URL that differs from the current one
+only in its fragment is a same-document navigation, so the browser moves the address and re-runs
+nothing. The first version of the check swapped the served directory and then navigated by fragment,
+so the code still in memory was the old copy's. It reported the old version number after the upgrade
+while every storage assertion passed, which reads as a serious finding about the app and was in fact
+a check that had never once loaded the new copy.
+
+### A shortcut into Marvel Unlimited was investigated and ruled out
+
+In plain English: another fan project links its reading lists into Marvel Unlimited using a kind of
+issue address this app has never used, and it was worth checking whether that address was better
+than the one we already use. It is not usable here. The service this app gets its issue information
+from does not supply that address, and there is no way to work one out from what it does supply, so
+the app could never build such a link for an issue you are actually reading.
+
+Nothing about the app changed. Your reading progress is untouched, and the button that opens an
+issue in the reader works exactly as it did.
+
+The reason this is written down at all is so nobody spends the afternoon on it twice. The project's
+list of planned improvements now carries the question, the measurements that answered it, and two
+early readings of the evidence that turned out to be wrong when the numbers were taken.
+
+For maintainers: filed as a parked, dropped item with its measurements recorded inline rather than
+by reference, because the working notes behind it are session evidence and stay on the machine that
+wrote them. It carries no score; it was closed by measurement before it reached scoring.
+
+### Record a way of counting a file's lines that quietly comes up short
+
+In plain English: nothing about the app changes, and nothing you have saved is affected. This adds a
+warning to the notes that contributors work from.
+
+The project checks that every reference to a line of code still points at what it claims, so when
+code moves, those references have to move with it. Working out how far each one shifted is sometimes
+the only check available, because the report printed at the end cannot show a reference that has
+slipped by a single line.
+
+The most natural way to ask this computer how long a file is turns out to ignore every empty line in
+it, so on a large file it answers a few hundred short and never suggests anything is wrong. The
+notes now say so, name two ways of asking that answer correctly, and record two details found while
+measuring it: a line of spaces is counted while a truly empty one is not, and the same tool is right
+when handed the whole file at once rather than a line at a time.
+
+It was caught by comparing two independent ways of measuring the same shift, which these notes
+already ask for, rather than by anyone noticing that a number looked wrong.
 
 ### The message left after deleting a reading list can now be closed
 
@@ -3025,4 +3170,4 @@ Data format version 2.
 - The comment describing issue availability said there were four states when the code has
   five.
 
-[1.0.0]: https://github.com/raymond-nassar/marvel-reading-tracker/releases/tag/v1.0.0
+[1.0.0]: https://github.com/raymond-nassar/recap-page/releases/tag/v1.0.0

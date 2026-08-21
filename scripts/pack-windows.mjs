@@ -29,6 +29,7 @@ const NODE_ARCH = 'win-x64';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
 const ARCHIVE = join(DIST, 'marvel-reading-tracker-windows.zip');
+const PAYLOAD_NAME = 'recap-page';
 
 const base = `https://nodejs.org/dist/${NODE_VERSION}`;
 const runtimeZip = `node-${NODE_VERSION}-${NODE_ARCH}.zip`;
@@ -99,7 +100,7 @@ function appFiles() {
 // The reader has just extracted a folder and is looking at it. This is the only thing in the
 // archive written to be read before anything is run.
 const readMe = [
-  'Marvel Reading Tracker',
+  'Recap Page',
   '',
   'To start: double-click "Start on Windows.cmd" in this folder.',
   '',
@@ -125,7 +126,7 @@ async function main() {
   // Staged outside the repository on purpose. A copy of src/ inside the tree would be walked by
   // the licence boundary test, which counts item-bearing files across everything that is not
   // node_modules, .git or .copilot-tracking, and its count is exact rather than a floor.
-  const payload = join(staging, 'marvel-reading-tracker');
+  const payload = join(staging, PAYLOAD_NAME);
   const runtimeOut = join(payload, 'runtime');
 
   try {
@@ -176,4 +177,4 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   await main();
 }
 
-export { NODE_VERSION, NODE_ARCH, appFiles, ARCHIVE, readMe };
+export { NODE_VERSION, NODE_ARCH, PAYLOAD_NAME, appFiles, ARCHIVE, readMe };

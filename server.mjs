@@ -253,7 +253,7 @@ function start() {
   // Loopback only. This server is never exposed to the network.
   server.listen(PORT, HOST, () => {
     const url = `http://${HOST}:${PORT}/`;
-    console.log(`Marvel Reading Tracker running at ${url}`);
+    console.log(`Recap Page running at ${url}`);
     console.log('Always use this exact address. Other addresses are separate browser storage.');
     console.log('Press Ctrl+C to stop.');
     if (process.env.MRT_NO_OPEN !== '1') openBrowser(url);
