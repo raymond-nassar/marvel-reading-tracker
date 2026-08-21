@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateInventory } from '../scripts/lib/cbh-inventory.mjs';
+import { validateInventory, validateLiveInventory } from '../scripts/lib/cbh-inventory.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const inventoryPath = path.join(root, 'scripts', 'data', 'cbh-modern-inventory.json');
@@ -37,4 +37,74 @@ test('the maintained inventory matches the P01 contract', () => {
   assert.ok(inventory.every((record) => Array.isArray(record.catalogIds) && record.catalogIds.length === 0));
   assert.ok(inventory.filter((record) => record.disposition === 'new-order').every((record) => record.deliveryStatus === 'pending'));
   assert.ok(inventory.filter((record) => record.disposition !== 'new-order').every((record) => record.deliveryStatus === 'not-applicable'));
+});
+
+test('live inventory validation accepts a guarded lifecycle and rejects invalid transitions', () => {
+  const liveRecords = [
+    {
+      position: 1,
+      id: 'ready-order',
+      title: 'Ready Order',
+      url: 'https://example.com/ready',
+      guideType: 'event',
+      window: 'Q1',
+      disposition: 'new-order',
+      reason: 'Awaiting approval',
+      sourceRetrievedAt: '2026-08-20',
+      overlapIds: ['101'],
+      catalogIds: ['catalog-1'],
+      deliveryStatus: 'ready',
+    },
+    {
+      position: 2,
+      id: 'shipped-order',
+      title: 'Shipped Order',
+      url: 'https://example.com/shipped',
+      guideType: 'event',
+      window: 'Q1',
+      disposition: 'new-order',
+      reason: 'Approved and published',
+      sourceRetrievedAt: '2026-08-20',
+      overlapIds: ['101', '102'],
+      catalogIds: ['catalog-1', 'catalog-2'],
+      deliveryStatus: 'shipped',
+    },
+    {
+      position: 3,
+      id: 'blocked-order',
+      title: 'Blocked Order',
+      url: 'https://example.com/blocked',
+      guideType: 'event',
+      window: 'Q1',
+      disposition: 'new-order',
+      reason: 'Blocked by unresolved overlap',
+      sourceRetrievedAt: '2026-08-20',
+      overlapIds: [],
+      catalogIds: ['catalog-3'],
+      deliveryStatus: 'blocked',
+    },
+    {
+      position: 4,
+      id: 'reused-order',
+      title: 'Reused Order',
+      url: 'https://example.com/reused',
+      guideType: 'era',
+      window: 'Q2',
+      disposition: 'reuse-existing',
+      reason: 'Already published',
+      sourceRetrievedAt: '2026-08-20',
+      overlapIds: [],
+      catalogIds: [],
+      deliveryStatus: 'not-applicable',
+    },
+  ];
+
+  assert.doesNotThrow(() => validateLiveInventory(liveRecords));
+
+  const invalid = {
+    ...liveRecords[0],
+    deliveryStatus: 'not-applicable',
+    disposition: 'new-order',
+  };
+  assert.throws(() => validateLiveInventory([invalid]), /deliveryStatus/i);
 });

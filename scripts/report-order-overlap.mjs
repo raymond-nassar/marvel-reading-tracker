@@ -5,6 +5,58 @@ import { buildComparisonReport, issueIdsFromValue } from './lib/cbh-overlap.mjs'
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
+function normalizeIssueId(value) {
+  if (value == null) return null;
+  const string = String(value).trim();
+  return string.length === 0 ? null : string;
+}
+
+function validateMappingRows(rows, label) {
+  if (!Array.isArray(rows)) {
+    throw new Error(`${label} must contain a rows array`);
+  }
+
+  const seenIds = new Set();
+  for (const [index, row] of rows.entries()) {
+    if (!row || typeof row !== 'object') {
+      throw new Error(`${label} row ${index + 1} is not an object`);
+    }
+
+    const status = row.resolutionStatus ?? row.status ?? null;
+    const selectedIssueId = normalizeIssueId(row.selectedIssueId ?? row.issueId ?? null);
+    if (status === 'approved-exception' || row.status === 'approved-exception') {
+      throw new Error(`${label} row ${index + 1} uses an approved exception, which MRT-004 rejects`);
+    }
+
+    if (status === 'exact') {
+      if (!selectedIssueId) {
+        throw new Error(`${label} row ${index + 1} is exact but has no selected issue id`);
+      }
+      if (seenIds.has(selectedIssueId)) {
+        throw new Error(`Duplicate selected issue id in ${label}: ${selectedIssueId}`);
+      }
+      seenIds.add(selectedIssueId);
+      continue;
+    }
+
+    if (status === 'ambiguous' || status === 'unmatched') {
+      throw new Error(`${label} row ${index + 1} is unresolved (${status}) and cannot produce a report`);
+    }
+
+    if (status != null && !['exact', 'ambiguous', 'unmatched', 'approved-exception'].includes(status)) {
+      throw new Error(`${label} row ${index + 1} has an invalid resolution status: ${status}`);
+    }
+
+    if (selectedIssueId != null && status == null) {
+      throw new Error(`${label} row ${index + 1} is missing a resolution status`);
+    }
+
+    if (status == null && selectedIssueId == null) {
+      throw new Error(`${label} row ${index + 1} is missing both a selected issue id and a resolution status`);
+    }
+  }
+}
+
 export async function loadManifest(manifestPath) {
   const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
   const lists = Array.isArray(manifest.lists) ? manifest.lists : [];
@@ -14,10 +66,15 @@ export async function loadManifest(manifestPath) {
 export async function buildReportForMapping(mappingPath, peerPaths = []) {
   const mapping = JSON.parse(await readFile(mappingPath, 'utf8'));
   const rows = Array.isArray(mapping.rows) ? mapping.rows : [];
+  validateMappingRows(rows, 'candidate mapping');
+
   const candidateIds = rows
-    .map((row) => row.selectedIssueId ?? row.issueId ?? null)
-    .filter((value) => value != null)
-    .map(String);
+    .map((row) => normalizeIssueId(row.selectedIssueId ?? row.issueId ?? null))
+    .filter((value) => value != null);
+
+  if (candidateIds.length === 0) {
+    throw new Error('Candidate mapping is empty or has no exact selected issue ids');
+  }
 
   if (new Set(candidateIds).size !== candidateIds.length) {
     throw new Error('Duplicate candidate issue ids in the mapping');
@@ -39,7 +96,16 @@ export async function buildReportForMapping(mappingPath, peerPaths = []) {
   const peers = await Promise.all(peerPaths.map(async (peerPath) => {
     const peer = JSON.parse(await readFile(peerPath, 'utf8'));
     const peerRows = Array.isArray(peer.rows) ? peer.rows : [];
-    const ids = peerRows.map((row) => row.selectedIssueId ?? row.issueId ?? null).filter((value) => value != null).map(String);
+    validateMappingRows(peerRows, `peer mapping ${path.basename(peerPath)}`);
+    const ids = peerRows
+      .map((row) => normalizeIssueId(row.selectedIssueId ?? row.issueId ?? null))
+      .filter((value) => value != null);
+    if (ids.length === 0) {
+      throw new Error(`Peer mapping ${path.basename(peerPath)} is empty or has no exact selected issue ids`);
+    }
+    if (new Set(ids).size !== ids.length) {
+      throw new Error(`Duplicate comparison ids in peer mapping ${path.basename(peerPath)}`);
+    }
     return { orderId: peer.id ?? path.basename(peerPath, path.extname(peerPath)), issueIds: ids };
   }));
 

@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildComparisonReport, compareIssueSets } from '../scripts/lib/cbh-overlap.mjs';
+import { mkdtempSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import { buildComparisonReport, compareIssueSets, issueIdsFromValue } from '../scripts/lib/cbh-overlap.mjs';
+import { buildReportForMapping } from '../scripts/report-order-overlap.mjs';
 
 test('relationship classification matches the contract', () => {
   assert.deepEqual(compareIssueSets([1, 2, 3], [3, 4]), {
@@ -47,4 +51,53 @@ test('comparison records preserve candidate order and sort by compared order id'
   assert.deepEqual(report.comparisons.map((entry) => entry.orderId), ['a', 'b', 'c']);
   assert.equal(report.comparisons[0].relationship, 'partial');
   assert.deepEqual(report.comparisons[0].sharedIds, ['10', '12']);
+});
+
+test('generated payload roots do not overwrite real item issue ids', () => {
+  const payload = {
+    id: 101,
+    items: [{ issueId: 202 }, { issueId: 303 }],
+  };
+
+  assert.deepEqual(issueIdsFromValue(payload), ['202', '303']);
+
+  const report = buildComparisonReport({
+    candidateIds: ['101'],
+    orders: [{ orderId: 'generated', issueIds: payload }],
+  });
+
+  assert.equal(report.comparisons[0].relationship, 'none');
+  assert.deepEqual(report.comparisons[0].sharedIds, []);
+});
+
+test('buildReportForMapping rejects unresolved mappings before writing a report', async () => {
+  const tempDir = mkdtempSync(path.join(os.tmpdir(), 'cbh-overlap-'));
+  const mappingPath = path.join(tempDir, 'mapping.json');
+  writeFileSync(mappingPath, JSON.stringify({
+    rows: [{
+      selectedIssueId: null,
+      resolutionStatus: 'unmatched',
+      candidateIssueIds: ['9001'],
+      normalizedSeriesTitle: 'Ghosted',
+      issueNumber: '2',
+      seriesYear: '2015',
+    }],
+  }, null, 2), 'utf8');
+
+  await assert.rejects(() => buildReportForMapping(mappingPath), /unresolved|exact|status/i);
+
+  const validPath = path.join(tempDir, 'valid.json');
+  writeFileSync(validPath, JSON.stringify({
+    rows: [{
+      selectedIssueId: 101,
+      resolutionStatus: 'exact',
+      candidateIssueIds: ['101'],
+      normalizedSeriesTitle: 'House of M',
+      issueNumber: '1',
+      seriesYear: '2005',
+    }],
+  }, null, 2), 'utf8');
+  const report = await buildReportForMapping(validPath);
+  assert.equal(report.candidateCount, 1);
+  assert.ok(report.comparisons.length > 0);
 });

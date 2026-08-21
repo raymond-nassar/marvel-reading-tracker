@@ -8,6 +8,17 @@ function toIssueId(candidate) {
   return null;
 }
 
+export function candidateHasExactMetadata(candidate) {
+  if (!candidate || typeof candidate !== 'object') return false;
+  const id = toIssueId(candidate);
+  if (!id) return false;
+  const title = normalizeTitle(candidate?.title ?? candidate?.seriesTitle ?? candidate?.normalizedSeriesTitle ?? '');
+  if (!title) return false;
+  const issueNumber = candidate?.issueNumber ?? candidate?.number ?? candidate?.issue ?? null;
+  if (issueNumber == null || String(issueNumber).trim() === '') return false;
+  return true;
+}
+
 export function normalisedTitleForRow(row) {
   return normalizeTitle(row?.normalizedSeriesTitle ?? row?.seriesTitle ?? row?.title ?? '');
 }
@@ -18,24 +29,28 @@ export function exactMatchesForRow(row, candidates) {
   if (!rowTitle) return [];
 
   return rows.filter((candidate) => {
+    if (!candidateHasExactMetadata(candidate)) return false;
     const candidateTitle = normalizeTitle(candidate?.title ?? candidate?.seriesTitle ?? candidate?.normalizedSeriesTitle ?? '');
     if (!candidateTitle || candidateTitle !== rowTitle) return false;
+
     const rowNumber = row?.issueNumber ?? row?.number ?? row?.issue ?? null;
     const candidateNumber = candidate?.issueNumber ?? candidate?.number ?? candidate?.issue ?? null;
-    if (rowNumber != null && candidateNumber != null && String(rowNumber) !== String(candidateNumber)) {
-      return false;
+    if (rowNumber != null) {
+      if (candidateNumber == null || String(rowNumber) !== String(candidateNumber)) return false;
     }
+
     const rowYear = row?.seriesYear ?? row?.year ?? null;
     const candidateYear = candidate?.seriesYear ?? candidate?.year ?? null;
-    if (rowYear != null && candidateYear != null && String(rowYear) !== String(candidateYear)) {
-      return false;
+    if (rowYear != null) {
+      if (candidateYear == null || String(rowYear) !== String(candidateYear)) return false;
     }
+
     return true;
   });
 }
 
 export function resolveRow(row, candidates = []) {
-  const list = Array.isArray(candidates) ? candidates : [];
+  const list = Array.isArray(candidates) ? candidates.filter(candidateHasExactMetadata) : [];
   if (row?.resolutionStatus === 'approved-exception') {
     return {
       status: 'approved-exception',

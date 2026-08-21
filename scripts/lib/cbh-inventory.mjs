@@ -129,3 +129,58 @@ export async function readInventory(sourcePath) {
   validateInventory(records);
   return records;
 }
+
+function validateInventoryRecord(record, { baseline = false } = {}) {
+  const position = record?.position ?? 'unknown';
+  assertField(`Record ${position}`, record && typeof record === 'object', Boolean, 'must be an object');
+  assertField(`Record ${position} id`, record.id, (value) => typeof value === 'string' && value.trim().length > 0, 'must be a non-empty string');
+  assertField(`Record ${position} title`, record.title, (value) => typeof value === 'string' && value.trim().length > 0, 'must be a non-empty string');
+  assertField(`Record ${position} url`, record.url, (value) => typeof value === 'string' && /^https?:\/\//.test(value.trim()), 'must be an absolute URL');
+  assertField(`Record ${position} guideType`, record.guideType, (value) => GUIDE_TYPES.includes(value), 'must be a known guide type');
+  assertField(`Record ${position} window`, record.window, (value) => /^Q[1-7]$/.test(value), 'must use Q1 through Q7');
+  assertField(`Record ${position} disposition`, record.disposition, (value) => DISPOSITIONS.includes(value), 'must be a known disposition');
+  assertField(`Record ${position} reason`, record.reason, (value) => typeof value === 'string' && value.trim().length > 0, 'must be a non-empty string');
+  assertField(`Record ${position} sourceRetrievedAt`, record.sourceRetrievedAt, (value) => /^\d{4}-\d{2}-\d{2}$/.test(String(value)), 'must be a YYYY-MM-DD date string');
+  assertField(`Record ${position} overlapIds`, record.overlapIds, (value) => Array.isArray(value) && value.every((entry) => typeof entry === 'string'), 'must be an array of strings');
+  assertField(`Record ${position} catalogIds`, record.catalogIds, (value) => Array.isArray(value) && value.every((entry) => typeof entry === 'string'), 'must be an array of strings');
+  assertField(`Record ${position} deliveryStatus`, record.deliveryStatus, (value) => DELIVERY_STATUSES.includes(value), 'must be a known delivery status');
+
+  if (baseline) {
+    if (record.disposition === 'new-order' && record.deliveryStatus !== 'pending') {
+      throw new Error(`new-order record ${record.id} must use deliveryStatus 'pending'`);
+    }
+    if (record.disposition !== 'new-order' && record.deliveryStatus !== 'not-applicable') {
+      throw new Error(`non-new-order record ${record.id} must use deliveryStatus 'not-applicable'`);
+    }
+    if (record.overlapIds.length !== 0 || record.catalogIds.length !== 0) {
+      throw new Error(`Baseline record ${record.id} must keep overlapIds and catalogIds empty`);
+    }
+    return;
+  }
+
+  if (record.disposition === 'new-order' && !['pending', 'ready', 'shipped', 'blocked'].includes(record.deliveryStatus)) {
+    throw new Error(`new-order record ${record.id} has an invalid deliveryStatus: ${record.deliveryStatus}`);
+  }
+  if (record.disposition !== 'new-order' && !['not-applicable', 'blocked', 'ready', 'shipped'].includes(record.deliveryStatus)) {
+    throw new Error(`Record ${record.id} has a deliveryStatus that does not fit its disposition: ${record.deliveryStatus}`);
+  }
+  if (record.deliveryStatus === 'blocked' && !record.reason?.trim()) {
+    throw new Error(`Blocked record ${record.id} must include a blocker reason`);
+  }
+}
+
+export function validateInventoryState(records) {
+  if (!Array.isArray(records)) {
+    throw new Error('The inventory must be an array');
+  }
+  const counts = {};
+  for (const record of records) {
+    validateInventoryRecord(record, { baseline: false });
+    const key = record.guideType;
+    counts[key] = (counts[key] ?? 0) + 1;
+  }
+  return counts;
+}
+
+export const validateLiveInventory = validateInventoryState;
+export const validateInventorySchema = validateInventoryState;

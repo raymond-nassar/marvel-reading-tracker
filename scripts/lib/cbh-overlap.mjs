@@ -5,24 +5,25 @@ export function issueIdsFromValue(value) {
   if (Array.isArray(value)) {
     return value.flatMap((entry) => issueIdsFromValue(entry));
   }
-  if (value && typeof value === 'object') {
-    if (typeof value.issueId === 'number' || typeof value.issueId === 'string') {
-      return [String(value.issueId)];
-    }
-    if (typeof value.id === 'number' || typeof value.id === 'string') {
-      return [String(value.id)];
-    }
-    if (Array.isArray(value.items)) {
-      return issueIdsFromValue(value.items);
-    }
-    if (Array.isArray(value.issues)) {
-      return issueIdsFromValue(value.issues);
-    }
-    if (Array.isArray(value.rows)) {
-      return issueIdsFromValue(value.rows);
+  if (!value || typeof value !== 'object') {
+    return [];
+  }
+
+  const knownContainers = ['items', 'issues', 'rows', 'issueIds'];
+  for (const key of knownContainers) {
+    if (Array.isArray(value[key])) {
+      return issueIdsFromValue(value[key]);
     }
   }
-  return [];
+
+  if (typeof value.issueId === 'number' || typeof value.issueId === 'string') {
+    return [String(value.issueId)];
+  }
+  if (typeof value.id === 'number' || typeof value.id === 'string') {
+    return [String(value.id)];
+  }
+
+  return Object.values(value).flatMap((entry) => issueIdsFromValue(entry));
 }
 
 export function compareIssueSets(candidateIds, existingIds) {
@@ -55,10 +56,24 @@ export function compareIssueSets(candidateIds, existingIds) {
 }
 
 export function buildComparisonReport({ candidateIds, orders, peerOrders = [] }) {
+  const normalizedCandidateIds = Array.isArray(candidateIds) ? candidateIds.map(String) : [];
+  if (normalizedCandidateIds.length === 0) {
+    throw new Error('Cannot build an overlap report without candidate issue ids');
+  }
+  if (new Set(normalizedCandidateIds).size !== normalizedCandidateIds.length) {
+    throw new Error('Duplicate candidate issue ids cannot be compared');
+  }
+
   const allOrders = [...orders, ...peerOrders];
   const comparisons = allOrders.map((order) => {
     const existingIds = issueIdsFromValue(order.issueIds ?? order.items ?? order.issues ?? []);
-    const outcome = compareIssueSets(candidateIds, existingIds);
+    if (existingIds.length === 0) {
+      throw new Error(`Order ${order.orderId ?? order.id ?? 'unknown'} is missing shipped payload issue ids`);
+    }
+    if (new Set(existingIds).size !== existingIds.length) {
+      throw new Error(`Duplicate comparison issue ids in order ${order.orderId ?? order.id ?? 'unknown'}`);
+    }
+    const outcome = compareIssueSets(normalizedCandidateIds, existingIds);
     return {
       orderId: order.orderId ?? order.id ?? 'unknown',
       sharedCount: outcome.sharedCount,
@@ -68,7 +83,7 @@ export function buildComparisonReport({ candidateIds, orders, peerOrders = [] })
   }).sort((left, right) => left.orderId.localeCompare(right.orderId));
 
   return {
-    candidateCount: candidateIds.length,
+    candidateCount: normalizedCandidateIds.length,
     comparisonCount: comparisons.length,
     comparisons,
   };
