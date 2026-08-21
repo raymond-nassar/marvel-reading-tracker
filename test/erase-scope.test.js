@@ -144,7 +144,7 @@ test('a storage that will not enumerate is reported as not having said, in the m
 // check is the other half of the same claim, because the dialog says "above".
 test('the heading the wording names is the heading the page has, and it is above the button', () => {
   const html = readFileSync(new URL('../src/index.html', import.meta.url), 'utf8');
-  const heading = html.indexOf(`<h2>${HEADING}</h2>`);
+  const heading = html.indexOf(`<h3>${HEADING}</h3>`);
   const button = html.indexOf('id="btn-wipe"');
   assert.ok(heading !== -1, `the page must carry the heading the dialog names: ${HEADING}`);
   assert.ok(button !== -1, 'and the button whose dialog names it');

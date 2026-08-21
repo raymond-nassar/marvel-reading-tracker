@@ -14,13 +14,13 @@
     "fp": "fced5be35c69483b",
     "head": "test('the committed icons are what the generator draws', () => {"
   },
-  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c3|PRODUCT_BACKLOG.md:11120-11133|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11120-11133",
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c3|PRODUCT_BACKLOG.md:11122-11135|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11122-11135",
     "fp": "1e910ad0a8efc7f4",
     "head": "**BL-161: Redraw the app icon so it stops echoing Marvel's trade dress**"
   },
-  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c4|CHANGELOG.md:107-110|0": {
-    "anchor": "CHANGELOG.md:107-110",
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c4|CHANGELOG.md:126-129|0": {
+    "anchor": "CHANGELOG.md:126-129",
     "fp": "de300ca1c425986d",
     "head": "### Rebranded the app as Recap Page"
   },
@@ -114,9 +114,9 @@
     "fp": "f509dff5715b91f3",
     "head": ".view, #save-report, #app-report, #blocked-banner, .wrap > footer { max-width: var(--column); margin"
   },
-  ".copilot-tracking/research/2026-08-20/reading-screen-modernization-research.md|what-the-screen-is-made-of|src/index.html:291-409|0": {
-    "anchor": "src/index.html:291-409",
-    "fp": "f5d7de38bc402a0e",
+  ".copilot-tracking/research/2026-08-20/reading-screen-modernization-research.md|what-the-screen-is-made-of|src/index.html:291-410|0": {
+    "anchor": "src/index.html:291-410",
+    "fp": "47af097595388a69",
     "head": "<!-- ---------------------------------------- reading view -->"
   },
   ".copilot-tracking/research/2026-08-20/reading-screen-modernization-research.md|what-the-screen-is-made-of|src/js/main.js:2357-2370|0": {
@@ -554,8 +554,8 @@
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
   },
-  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|PRODUCT_BACKLOG.md:6411|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6411",
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|PRODUCT_BACKLOG.md:6413|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6413",
     "fp": "c875c812039f7bb3",
     "head": "`package.json:29-39`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file invent"
   },
@@ -679,8 +679,8 @@
     "fp": "0c6537943c08c527",
     "head": "<script type=\"module\" src=\"./dev-faults.js\"></script>"
   },
-  "docs/ARCHITECTURE.md|the-three-entry-points|src/index.html:838|0": {
-    "anchor": "src/index.html:838",
+  "docs/ARCHITECTURE.md|the-three-entry-points|src/index.html:855|0": {
+    "anchor": "src/index.html:855",
     "fp": "9f74c3a9fa356fa2",
     "head": "<script type=\"module\" src=\"./js/app.js\"></script>"
   },
@@ -789,8 +789,8 @@
     "fp": "4fe337c262402dbd",
     "head": "**It draws no legal conclusion, and it is not legal advice.** Whether the tree as a whole may be"
   },
-  "docs/PUBLICATION_RUNBOOK.md|settings-that-only-become-available-on-the-day|PRODUCT_BACKLOG.md:7068-7072|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7068-7072",
+  "docs/PUBLICATION_RUNBOOK.md|settings-that-only-become-available-on-the-day|PRODUCT_BACKLOG.md:7070-7074|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7070-7074",
     "fp": "a6ceb97902e6f2c0",
     "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
   },
@@ -844,13 +844,13 @@
     "fp": "e9a1e74dee2c791e",
     "head": "// The publication gate answered a question that only gets asked once, and it was asked on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2196-2199|0": {
-    "anchor": "CHANGELOG.md:2196-2199",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2215-2218|0": {
+    "anchor": "CHANGELOG.md:2215-2218",
     "fp": "a1bbc9d008c99c4d",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2208-2211|0": {
-    "anchor": "CHANGELOG.md:2208-2211",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2227-2230|0": {
+    "anchor": "CHANGELOG.md:2227-2230",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -859,48 +859,48 @@
     "fp": "9c0bba462139bd28",
     "head": "remote rather than on the tree, for the reasons recorded in their blocks. Eight remain open on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6420-6433|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6420-6433",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6422-6435|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6422-6435",
     "fp": "5a16aa8c31c583fe",
     "head": "Secret scanning is the task left unticked, and the clause \"where the repository plan supports them\""
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6831-6834|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6831-6834",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6833-6836|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6833-6836",
     "fp": "a0372835c1f1a259",
     "head": "Shipped, with the third task deliberately left open. It cannot be done yet, and that was measured"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6897-6899|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6897-6899",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6899-6901|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6899-6901",
     "fp": "4e89601fade35e5b",
     "head": "above records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6920-6924|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6920-6924",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6922-6926|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6922-6926",
     "fp": "49e2abcfaf9f8113",
     "head": "The framing is the part worth defending. Nobody outside this repository can see it, open an issue or"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6927-6933|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6927-6933",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6929-6935|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6929-6935",
     "fp": "85a655f4b40673f2",
     "head": "The code of conduct is written for this project rather than adopted from a template, and it names"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6994-7000|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6994-7000",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6996-7002|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6996-7002",
     "fp": "b72eadfcd70292d3",
     "head": "Shipped, with the fifth task open and recorded as a blocker rather than ticked, in the shape BL-099"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7025-7030|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7025-7030",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7027-7032|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7027-7032",
     "fp": "6863c064dec49090",
     "head": "Blank issues stay enabled, and that is a promise the security policy already made rather than a"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7068-7072|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7068-7072",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7070-7074|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7070-7074",
     "fp": "a6ceb97902e6f2c0",
     "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:9172-9177|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9172-9177",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:9174-9179|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9174-9179",
     "fp": "38d80111ac4d6ef8",
     "head": "Three settings are the actionable half: secret scanning with push protection behind it, private"
   },
@@ -909,8 +909,8 @@
     "fp": "b49d224a819dbd31",
     "head": "test('blank issues stay enabled, because the security policy sends reporters through one', () => {"
   },
-  "docs/UX_STUDY.md|as-is-journey-map#checking-progress|src/index.html:413-415|0": {
-    "anchor": "src/index.html:413-415",
+  "docs/UX_STUDY.md|as-is-journey-map#checking-progress|src/index.html:414-416|0": {
+    "anchor": "src/index.html:414-416",
     "fp": "b55b83b7f56cfa67",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
@@ -934,13 +934,13 @@
     "fp": "a628208c2b24bcfe",
     "head": "Done, next <kbd>D</kbd>"
   },
-  "docs/UX_STUDY.md|job-stories|src/index.html:413-415|0": {
-    "anchor": "src/index.html:413-415",
+  "docs/UX_STUDY.md|job-stories|src/index.html:414-416|0": {
+    "anchor": "src/index.html:414-416",
     "fp": "b55b83b7f56cfa67",
     "head": "<div class=\"head\"><div class=\"head-left\"><h1 id=\"progress-h\">Progress by series</h1>"
   },
-  "docs/UX_STUDY.md|job-stories|src/index.html:416-420|0": {
-    "anchor": "src/index.html:416-420",
+  "docs/UX_STUDY.md|job-stories|src/index.html:417-421|0": {
+    "anchor": "src/index.html:417-421",
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
@@ -974,13 +974,13 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11923|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11923",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11999|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11999",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:407-408|0": {
-    "anchor": "PRODUCT_BACKLOG.md:407-408",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:409-410|0": {
+    "anchor": "PRODUCT_BACKLOG.md:409-410",
     "fp": "539875df9040cb38",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
@@ -1024,8 +1024,8 @@
     "fp": "8b3c07e445e71673",
     "head": "<!-- Shown only when saved data could not be read. Saving stays paused until the"
   },
-  "docs/UX_STUDY.md|sweep-result|src/index.html:449-455|0": {
-    "anchor": "src/index.html:449-455",
+  "docs/UX_STUDY.md|sweep-result|src/index.html:450-456|0": {
+    "anchor": "src/index.html:450-456",
     "fp": "90461cc45716fa24",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
@@ -1034,8 +1034,8 @@
     "fp": "9b9575dc8a81cd13",
     "head": "function wireCatalogSearch() {"
   },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css:1110-1112|0": {
-    "anchor": "src/styles.css:1110-1112",
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:1119-1121|0": {
+    "anchor": "src/styles.css:1119-1121",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -1054,8 +1054,8 @@
     "fp": "3cbc7d76b21e95fa",
     "head": "// Generated from src/data/hickman_full.json - real issues and real covers. The synopses this"
   },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:1110-1112|0": {
-    "anchor": "src/styles.css:1110-1112",
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:1119-1121|0": {
+    "anchor": "src/styles.css:1119-1121",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -1124,8 +1124,8 @@
     "fp": "59235d10bc8a1e1c",
     "head": "<div id=\"announcer\" class=\"visually-hidden\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"></di"
   },
-  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html:483|0": {
-    "anchor": "src/index.html:483",
+  "docs/UX_STUDY.md|ux-a-006-status-messages-are-announced-twice|src/index.html:484|0": {
+    "anchor": "src/index.html:484",
     "fp": "7a1f8a1e2c6321e7",
     "head": "<div id=\"search-results\" class=\"results\"></div>"
   },
@@ -1159,8 +1159,8 @@
     "fp": "e3ff49812c2ea71d",
     "head": "for (const btn of document.querySelectorAll('.ri[data-view]')) {"
   },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:1110-1117|0": {
-    "anchor": "src/styles.css:1110-1117",
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:1119-1126|0": {
+    "anchor": "src/styles.css:1119-1126",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -1254,8 +1254,8 @@
     "fp": "a628208c2b24bcfe",
     "head": "Done, next <kbd>D</kbd>"
   },
-  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/index.html:704-711|0": {
-    "anchor": "src/index.html:704-711",
+  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/index.html:721-728|0": {
+    "anchor": "src/index.html:721-728",
     "fp": "f21f2347bb142e12",
     "head": "<h3>Keyboard shortcuts</h3>"
   },
@@ -1319,8 +1319,8 @@
     "fp": "3e5f719a1c4ee23f",
     "head": "console.log(`Marvel metadata API contract check\\nbase: ${BASE}\\n`);"
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/index.html:414|0": {
-    "anchor": "src/index.html:414",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/index.html:415|0": {
+    "anchor": "src/index.html:415",
     "fp": "4fa15a7cc8430788",
     "head": "<div class=\"sub\" id=\"progress-sub\">Counted over unique issues across every list, so an issue in two "
   },
@@ -1464,8 +1464,8 @@
     "fp": "b024936d528cb51f",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:765-781|0": {
-    "anchor": "src/styles.css:765-781",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:771-787|0": {
+    "anchor": "src/styles.css:771-787",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -1496,7 +1496,7 @@
   },
   "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:4402-4435|0": {
     "anchor": "src/js/main.js:4402-4435",
-    "fp": "64546f9dcb9a81ea",
+    "fp": "148fb23eb9d1aeb8",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
   "PRODUCT_BACKLOG.md|appendix-b-priority-disagreements|PRODUCT_BACKLOG.md:238|0": {
@@ -1604,8 +1604,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:3072-3081|0": {
-    "anchor": "CHANGELOG.md:3072-3081",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:3091-3100|0": {
+    "anchor": "CHANGELOG.md:3091-3100",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1679,23 +1679,23 @@
     "fp": "9c781f3a31e296f9",
     "head": "},"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11897-11899|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11897-11899",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11973-11975|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11973-11975",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12063-12065|0": {
-    "anchor": "PRODUCT_BACKLOG.md:12063-12065",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12139-12141|0": {
+    "anchor": "PRODUCT_BACKLOG.md:12139-12141",
     "fp": "e0f59f42a3b80348",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12082-12086|0": {
-    "anchor": "PRODUCT_BACKLOG.md:12082-12086",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12158-12162|0": {
+    "anchor": "PRODUCT_BACKLOG.md:12158-12162",
     "fp": "74995e9f6a8b1fa8",
     "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1517-1518|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1517-1518",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1519-1520|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1519-1520",
     "fp": "f4a5889386402303",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
@@ -1719,28 +1719,28 @@
     "fp": "ae02072879fb9465",
     "head": "`Status` is `Ready` for an item still to be picked up and `Shipped` for one delivered since this"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2613|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2613",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2615|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2615",
     "fp": "2a31d6a4f8340417",
     "head": "how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2889-2892|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2889-2892",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2891-2894|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2891-2894",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4850-4853|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4850-4853",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4852-4855|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4852-4855",
     "fp": "5f70e71a6ffb659a",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4850-4858|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4850-4858",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4852-4860|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4852-4860",
     "fp": "c21e48cf7e7cc497",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4855-4856|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4855-4856",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4857-4858|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4857-4858",
     "fp": "2ad4882c21a2f44c",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
@@ -2096,7 +2096,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:151-179|0": {
     "anchor": "scripts/check-palette.mjs:151-179",
-    "fp": "ae06837a67af63c8",
+    "fp": "9a0e54855761aa4b",
     "head": "export const SURFACES = {"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:207-227|0": {
@@ -2389,8 +2389,8 @@
     "fp": "c3b2146ff469aea8",
     "head": "<span class=\"sw\" aria-hidden=\"true\"></span><span class=\"covers-label\" id=\"covers-label\">Cover art on"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:378|0": {
-    "anchor": "src/index.html:378",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:379|0": {
+    "anchor": "src/index.html:379",
     "fp": "b35601db90ee5898",
     "head": "<h2 id=\"all-read-h\" tabindex=\"-1\">That is the whole order, read.</h2>"
   },
@@ -2399,83 +2399,83 @@
     "fp": "c7cdd8884071c09b",
     "head": "<img class=\"mark\" src=\"./icons/icon.svg\" alt=\"\" aria-hidden=\"true\" />"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:392|0": {
-    "anchor": "src/index.html:392",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:393|0": {
+    "anchor": "src/index.html:393",
     "fp": "48f6d7f0661e8699",
     "head": "<details class=\"full\" id=\"full\">"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:414|0": {
-    "anchor": "src/index.html:414",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:415|0": {
+    "anchor": "src/index.html:415",
     "fp": "4fa15a7cc8430788",
     "head": "<div class=\"sub\" id=\"progress-sub\">Counted over unique issues across every list, so an issue in two "
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:414|1": {
-    "anchor": "src/index.html:414",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:415|1": {
+    "anchor": "src/index.html:415",
     "fp": "4fa15a7cc8430788",
     "head": "<div class=\"sub\" id=\"progress-sub\">Counted over unique issues across every list, so an issue in two "
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:416-420|0": {
-    "anchor": "src/index.html:416-420",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:417-421|0": {
+    "anchor": "src/index.html:417-421",
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:429-441|0": {
-    "anchor": "src/index.html:429-441",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:430-442|0": {
+    "anchor": "src/index.html:430-442",
     "fp": "32386e5ca25f028d",
     "head": "<section id=\"view-library-read\" class=\"view view-wide\" hidden aria-labelledby=\"library-read-h\">"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:565-633|0": {
-    "anchor": "src/index.html:565-633",
-    "fp": "9cbbdd44bbee36c0",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:566-644|0": {
+    "anchor": "src/index.html:566-644",
+    "fp": "91c2228dcff25e4a",
     "head": "<!-- ---------------------------------------- data view -->"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:574|0": {
-    "anchor": "src/index.html:574",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:577|0": {
+    "anchor": "src/index.html:577",
     "fp": "44de7b4587c61ce4",
     "head": "<div class=\"field-row\">"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:581|0": {
-    "anchor": "src/index.html:581",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:584|0": {
+    "anchor": "src/index.html:584",
     "fp": "44de7b4587c61ce4",
     "head": "<div class=\"field-row\">"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:591-596|0": {
-    "anchor": "src/index.html:591-596",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:609-614|0": {
+    "anchor": "src/index.html:609-614",
     "fp": "68a69a82def77711",
     "head": "Covers are loaded straight from Marvel's own image servers, and from nowhere else."
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:601-608|0": {
-    "anchor": "src/index.html:601-608",
-    "fp": "e5a2fcccdff6066b",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:651-658|0": {
+    "anchor": "src/index.html:651-658",
+    "fp": "cbf7d6bdfc61dd3c",
     "head": "<div class=\"card card-static\">"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:669-673|0": {
-    "anchor": "src/index.html:669-673",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:686-690|0": {
+    "anchor": "src/index.html:686-690",
     "fp": "11db6968f8e41ff6",
     "head": "<h2>An unofficial fan project</h2>"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:678-682|0": {
-    "anchor": "src/index.html:678-682",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:695-699|0": {
+    "anchor": "src/index.html:695-699",
     "fp": "d8e960194798d576",
     "head": "No comic content is stored, copied, proxied, or served. The app tracks which issues you"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:704-711|0": {
-    "anchor": "src/index.html:704-711",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:721-728|0": {
+    "anchor": "src/index.html:721-728",
     "fp": "f21f2347bb142e12",
     "head": "<h3>Keyboard shortcuts</h3>"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:753-756|0": {
-    "anchor": "src/index.html:753-756",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:770-773|0": {
+    "anchor": "src/index.html:770-773",
     "fp": "e7944b0cef45c66c",
     "head": "<div class=\"field-row\">"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:832|0": {
-    "anchor": "src/index.html:832",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:849|0": {
+    "anchor": "src/index.html:849",
     "fp": "a724fcaa0ccb7e53",
     "head": "<button type=\"button\" class=\"btn btn-g\" id=\"ask-cancel\">Cancel</button>"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/index.html:838|0": {
-    "anchor": "src/index.html:838",
+  "PRODUCT_BACKLOG.md|item-details|src/index.html:855|0": {
+    "anchor": "src/index.html:855",
     "fp": "9f74c3a9fa356fa2",
     "head": "<script type=\"module\" src=\"./js/app.js\"></script>"
   },
@@ -3341,7 +3341,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4405-4406|0": {
     "anchor": "src/js/main.js:4405-4406",
-    "fp": "64a12686aef1eb48",
+    "fp": "2924a87434a010b4",
     "head": "if (!isAllowedApiBase(value)) {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4417-4419|0": {
@@ -3639,13 +3639,13 @@
     "fp": "f11048af33b11a24",
     "head": "if (!isAllowedApiBase(base)) return null;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:1110-1117|0": {
-    "anchor": "src/styles.css:1110-1117",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:1119-1126|0": {
+    "anchor": "src/styles.css:1119-1126",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:1139|0": {
-    "anchor": "src/styles.css:1139",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:1150|0": {
+    "anchor": "src/styles.css:1150",
     "fp": "3a5c838f7187d084",
     "head": "background: color-mix(in srgb, var(--warn) 12%, var(--panel));"
   },
@@ -3759,8 +3759,8 @@
     "fp": "ba9fc4d401e78741",
     "head": "/* Two purples, because one cannot serve both jobs on a dark page. `--accent` is a"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:765-781|0": {
-    "anchor": "src/styles.css:765-781",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:771-787|0": {
+    "anchor": "src/styles.css:771-787",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -3884,8 +3884,8 @@
     "fp": "96936b331b79013f",
     "head": "function catalogRow(story, placement) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-002|src/index.html:456-458|0": {
-    "anchor": "src/index.html:456-458",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-002|src/index.html:457-459|0": {
+    "anchor": "src/index.html:457-459",
     "fp": "1af46f8f91b297cc",
     "head": "<fieldset class=\"filters\" id=\"catalog-filters\" hidden>"
   },
@@ -3894,8 +3894,8 @@
     "fp": "f97d7eb626217aa3",
     "head": "parseCatalog, typeLabel, depthLabel, depthHint, catalogFacets, filterByFacet, facetLabel,"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/index.html:449-455|0": {
-    "anchor": "src/index.html:449-455",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/index.html:450-456|0": {
+    "anchor": "src/index.html:450-456",
     "fp": "90461cc45716fa24",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
@@ -3969,8 +3969,8 @@
     "fp": "e98c533f3d0705b9",
     "head": "function renderRail() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/index.html:416-420|0": {
-    "anchor": "src/index.html:416-420",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/index.html:417-421|0": {
+    "anchor": "src/index.html:417-421",
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
@@ -4116,7 +4116,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:4405-4406|0": {
     "anchor": "src/js/main.js:4405-4406",
-    "fp": "64a12686aef1eb48",
+    "fp": "2924a87434a010b4",
     "head": "if (!isAllowedApiBase(value)) {"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:535-567|0": {
@@ -4314,8 +4314,8 @@
     "fp": "e4a4f256115bd4c7",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:765-781|0": {
-    "anchor": "src/styles.css:765-781",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:771-787|0": {
+    "anchor": "src/styles.css:771-787",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -4394,8 +4394,8 @@
     "fp": "e6cb2cb5ab856c46",
     "head": ".filter((s) => s.length > 0 && s !== LOCK)"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-072|src/styles.css:1163|0": {
-    "anchor": "src/styles.css:1163",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-072|src/styles.css:1174|0": {
+    "anchor": "src/styles.css:1174",
     "fp": "1eef54d530f1e5d5",
     "head": ".blocked .btn-g { border-color: var(--muted); }"
   },
@@ -4464,8 +4464,8 @@
     "fp": "dbae5dbb94ca6e23",
     "head": "if (!raw) return null;"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-087|src/index.html:568|0": {
-    "anchor": "src/index.html:568",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-087|src/index.html:569|0": {
+    "anchor": "src/index.html:569",
     "fp": "a3e0d9532cd93c68",
     "head": "<div class=\"sub\">Your reading progress lives in this browser, at this exact address, and is never se"
   },
@@ -4484,8 +4484,8 @@
     "fp": "ee245f132cd8352f",
     "head": "async function checkHealth() {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-091|src/styles.css:990-993|0": {
-    "anchor": "src/styles.css:990-993",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-091|src/styles.css:999-1002|0": {
+    "anchor": "src/styles.css:999-1002",
     "fp": "1007f39ebdc4e6b4",
     "head": ".ocard-desc {"
   },
@@ -4559,8 +4559,8 @@
     "fp": "eba7d4f1731c86ac",
     "head": "export function checkLedger(d) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:4027-4030|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4027-4030",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:4029-4032|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4029-4032",
     "fp": "90f2aa6431ce6b0c",
     "head": "by measuring the one draft it was filed from. Counting every repeated blank-free window within each"
   },
@@ -4624,8 +4624,8 @@
     "fp": "bd0da58f7569ec11",
     "head": "- name: Check publication boundary"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1517-1518|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1517-1518",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1519-1520|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1519-1520",
     "fp": "f4a5889386402303",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
@@ -4829,8 +4829,8 @@
     "fp": "24fc4e0169a550e3",
     "head": "if (this.controller !== controller) return;"
   },
-  "scripts/check-counts.mjs|preamble|PRODUCT_BACKLOG.md:2613|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2613",
+  "scripts/check-counts.mjs|preamble|PRODUCT_BACKLOG.md:2615|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2615",
     "fp": "2a31d6a4f8340417",
     "head": "how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting"
   },
@@ -4859,13 +4859,13 @@
     "fp": "3a90f9bd69dfcf96",
     "head": "el('span', { class: 'yours-count', text: count }),"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:1139|0": {
-    "anchor": "src/styles.css:1139",
+  "scripts/check-palette.mjs|preamble|src/styles.css:1150|0": {
+    "anchor": "src/styles.css:1150",
     "fp": "3a5c838f7187d084",
     "head": "background: color-mix(in srgb, var(--warn) 12%, var(--panel));"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:1163|0": {
-    "anchor": "src/styles.css:1163",
+  "scripts/check-palette.mjs|preamble|src/styles.css:1174|0": {
+    "anchor": "src/styles.css:1174",
     "fp": "1eef54d530f1e5d5",
     "head": ".blocked .btn-g { border-color: var(--muted); }"
   },

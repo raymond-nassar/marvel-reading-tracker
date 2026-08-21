@@ -14,6 +14,25 @@ quote in a bug report.
 
 ## Unreleased
 
+### The settings screen is grouped, and each control confirms in its own place
+
+In plain English: the screen for backing up and changing settings used to be one long stack of cards
+with no grouping, so making a backup sat at the same level as a technical readout of how much space
+the app was using. The screen is now sorted into four labelled groups, and backing up and restoring
+comes first, because it is the thing worth finding quickly.
+
+When you change a setting, the message confirming it now appears next to the control you used, in the
+same card, instead of at the top of the screen where you might not see it. One knock-on of the old
+shared message area is gone too: clearing the cache no longer wipes out a restore message you had not
+finished reading.
+
+The small status messages are now told apart by a shape as well as a colour, a tick, a triangle, a
+cross or a dot, so they still read for you if your system is set to high contrast, where colour alone
+is dropped.
+
+Nothing you have saved is affected. Your reading progress is untouched, and every setting still does
+what it did before; only the layout and the wording around it have changed.
+
 ### Adding issues now leads with search, and groups the other ways together
 
 In plain English: the screen for adding issues used to show five ways to add, all folded shut and all

@@ -753,9 +753,15 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 .card-static > * { padding: 0 !important; }
 .card-static h2 { font-size: .95rem; margin: 0 0 .5rem; font-weight: 600; }
 .card-static h3 { font-size: .85rem; margin: 1.3rem 0 .4rem; font-weight: 600; }
+#view-data .card-static h3 { font-size: .95rem; margin: 0 0 .5rem; font-weight: 600; }
+#view-data .card-static h4 { font-size: .85rem; margin: 1.3rem 0 .4rem; font-weight: 600; }
+.setgroup { margin-bottom: 1.4rem; }
+#view-data .setgroup > h2 {
+  font-size: 1rem; font-weight: 650; margin: 1.7rem .1rem .75rem; padding-bottom: .35rem;
+}
 .card-danger { border-color: rgb(var(--red-line) / 20%); }
 .addpri { border-color: rgb(var(--tint-base) / 20%); background: rgb(var(--tint-base) / 3.922%); }
-.addpri h2 { font-size: 1.15rem; }
+.addpri h2, #view-data .addpri h3 { font-size: 1.15rem; }
 .addpri .field-row input[type="search"] { flex: 1 1 24rem; min-height: 44px; }
 .add-more > h2 { font-size: 1rem; margin: 1.35rem .1rem 0; }
 .add-more > .rail-hint { margin: .2rem .1rem .75rem; max-width: 64ch; }
@@ -841,6 +847,9 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
 .notice-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); background: rgb(var(--amber-line) / 5.882%); }
 .notice-error { color: var(--red-fg-2); border-color: rgb(var(--red-line) / 33.333%); background: rgb(var(--red-line) / 7.059%); }
 .notice-busy { color: var(--muted); }
+.notice-ok::before { content: "✓"; margin-right: .45rem; }
+.notice-warn::before { content: "▲"; margin-right: .45rem; }
+.notice-error::before { content: "×"; margin-right: .45rem; }
 .notice-busy::before { content: "•"; margin-right: .45rem; }
 
 /* A notice that carries an action, such as the undo offered after a list is deleted. The
@@ -1130,6 +1139,8 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
      selected filter with Highlight is what the rail already does for the selected view. */
   .pill-start, .pill-beginner { border: 1px solid CanvasText; }
   .addpri, .pill-held, .res-head { border-color: CanvasText; }
+  #view-data .setgroup > h2 { border-bottom: 1px solid CanvasText; }
+  .notice { border: 1px solid CanvasText; }
   .fp input:checked + span { border: 2px solid Highlight; }
 }
 

@@ -89,7 +89,7 @@ function claimSites() {
   return [
     ...surfaces(),
     ['the Backup and settings subtitle', section(html, '<h1 id="data-h">', '</div></div>')],
-    ['the Cover art card', section(html, '<h2>Cover art</h2>', '</div>')],
+    ['the Cover art card', section(html, '<h3>Cover art</h3>', '</div>')],
     ['the metadata and links card', section(html, '<h3>Metadata and links only</h3>', '</p>')],
   ];
 }
@@ -674,7 +674,7 @@ test('no surface reinstates an unqualified claim that nothing is sent', () => {
 // claim, which is the failure it exists to prevent.
 test('a promise about one thing may still be absolute, and one still is', () => {
   const html = read('src/index.html');
-  const theme = section(html, '<h2>Theme</h2>', '<h2>Metadata source</h2>');
+  const theme = section(html, '<h3>Theme</h3>', '<h3>Metadata source</h3>');
   assert.match(theme, /never sent anywhere/i, 'the theme setting genuinely never leaves');
   assert.doesNotMatch(theme, /nothing is uploaded/i, 'but it is a promise about the setting only');
 });

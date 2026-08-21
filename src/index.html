@@ -375,6 +375,7 @@
               </section>
 
               <div id="all-read" class="empty-state" hidden>
+                <div class="empty-glyph" aria-hidden="true">✓</div>
                 <h2 id="all-read-h" tabindex="-1">That is the whole order, read.</h2>
                 <p>Every issue in this list is ticked off. Pick another order, or start a new list.</p>
               </div>
@@ -568,90 +569,106 @@
               <div class="sub">Your reading progress lives in this browser, at this exact address, and is never sent anywhere.</div>
             </div></div>
 
-            <div class="card card-static">
-              <h2>Backup and restore</h2>
-              <p class="rail-hint">Export regularly. Clearing site data for this address erases your progress.</p>
-              <div class="field-row">
-                <button type="button" id="btn-export-json" class="btn">Download JSON backup</button>
-                <button type="button" id="btn-export-md-2" class="btn btn-g">Export current list as Markdown</button>
+            <section class="setgroup">
+              <h2>Data safety</h2>
+              <div class="card card-static addpri">
+                <h3>Backup and restore</h3>
+                <p class="rail-hint">Export regularly. Clearing site data for this address erases your progress.</p>
+                <div class="field-row">
+                  <button type="button" id="btn-export-json" class="btn">Download JSON backup</button>
+                  <button type="button" id="btn-export-md-2" class="btn btn-g">Export current list as Markdown</button>
+                </div>
+
+                <h4>Restore from a backup</h4>
+                <p class="rail-hint">A snapshot of your current data is kept, so a restore can be undone once.</p>
+                <div class="field-row">
+                  <input type="file" id="restore-file" accept="application/json,.json" aria-label="Backup file to restore" />
+                  <button type="button" id="btn-undo-restore" class="quiet" hidden>Undo last restore</button>
+                </div>
+                <div id="restore-report" class="results"></div>
               </div>
 
-              <h3>Restore from a backup</h3>
-              <p class="rail-hint">A snapshot of your current data is kept, so a restore can be undone once.</p>
-              <div class="field-row">
-                <input type="file" id="restore-file" accept="application/json,.json" aria-label="Backup file to restore" />
-                <button type="button" id="btn-undo-restore" class="quiet" hidden>Undo last restore</button>
-              </div>
-              <div id="restore-report" class="results"></div>
-            </div>
-
-            <div class="card card-static">
-              <h2>Cover art</h2>
-              <p class="rail-hint">
-                Covers are loaded straight from Marvel's own image servers, and from nowhere else.
-                The metadata service reports each address, but one naming any other host is refused
-                before a request is made, so a service that had been tampered with cannot have this
-                browser contact a server of its choosing. This app stores only the address, never the
-                image itself, and never proxies or re-hosts artwork. Switch covers off and every cover
-                becomes a plain typographic tile, and no cover is requested at all.
-              </p>
-              <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
-            </div>
-
-            <div class="card card-static">
-              <h2>Update checks</h2>
-              <p class="rail-hint">
-                Once a day, the app can ask GitHub for the latest version number. That request sends
-                no reading list, progress, note or identifier. If a newer version exists, the app shows
-                a link to download it, but it never downloads or installs anything by itself.
-              </p>
-              <label class="checkbox"><input type="checkbox" id="opt-update-checks" /> Check for updates automatically</label>
-            </div>
-
-            <div class="card card-static">
-              <h2>Theme</h2>
-              <p class="rail-hint">
-                Follow your system setting, or pick one and keep it. The choice is stored in this
-                browser alongside your other settings and is never sent anywhere. High contrast mode
-                and reduced motion are still honoured whichever you pick.
-              </p>
-              <label for="opt-theme">Colour theme</label>
-              <select id="opt-theme">
-                <option value="system">Follow my system setting</option>
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-              </select>
-            </div>
-
-            <div class="card card-static">
-              <h2>Metadata source</h2>
-              <form id="form-settings" class="stack">
-                <label for="api-base">Metadata API base URL</label>
-                <input type="url" id="api-base" />
+              <div class="card card-static">
+                <h3>Copies kept after a failed read</h3>
                 <p class="rail-hint">
-                  The default is the community API this was built against. If it disappears the
-                  upstream is self-hostable, so you can point this at your own copy.
+                  If the app ever cannot read your saved data, it sets a copy of that data aside before
+                  it does anything else, so nothing is lost while you decide what to do. Those copies
+                  are kept until you remove them here, and they sit in the same browser storage as your
+                  lists and progress.
                 </p>
-                <button type="submit" class="btn btn-g">Save API URL</button>
-              </form>
+                <div id="salvage-list"></div>
+                <div id="salvage-report" class="results"></div>
+              </div>
+            </section>
 
-              <h3>Cached metadata</h3>
-              <p id="cache-usage" class="rail-hint">Checking cache size…</p>
-              <button type="button" id="btn-clear-cache" class="quiet">Clear cached metadata</button>
-              <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
-            </div>
+            <section class="setgroup">
+              <h2>Personalization</h2>
+              <div class="card card-static">
+                <h3>Cover art</h3>
+                <p class="rail-hint">
+                  Covers are loaded straight from Marvel's own image servers, and from nowhere else.
+                  The metadata service reports each address, but one naming any other host is refused
+                  before a request is made, so a service that had been tampered with cannot have this
+                  browser contact a server of its choosing. This app stores only the address, never the
+                  image itself, and never proxies or re-hosts artwork. Switch covers off and every cover
+                  becomes a plain typographic tile, and no cover is requested at all.
+                </p>
+                <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
+              </div>
 
-            <div class="card card-static">
-              <h2>Copies kept after a failed read</h2>
-              <p class="rail-hint">
-                If the app ever cannot read your saved data, it sets a copy of that data aside before
-                it does anything else, so nothing is lost while you decide what to do. Those copies
-                are kept until you remove them here, and they sit in the same browser storage as your
-                lists and progress.
-              </p>
-              <div id="salvage-list"></div>
-              <div id="salvage-report" class="results"></div>
-            </div>
+              <div class="card card-static">
+                <h3>Theme</h3>
+                <p class="rail-hint">
+                  Follow your system setting, or pick one and keep it. The choice is stored in this
+                  browser alongside your other settings and is never sent anywhere. High contrast mode
+                  and reduced motion are still honoured whichever you pick.
+                </p>
+                <label for="opt-theme">Colour theme</label>
+                <select id="opt-theme">
+                  <option value="system">Follow my system setting</option>
+                  <option value="dark">Dark</option>
+                  <option value="light">Light</option>
+                </select>
+              </div>
+            </section>
+
+            <section class="setgroup">
+              <h2>Connectivity</h2>
+              <div class="card card-static">
+                <h3>Metadata source</h3>
+                <form id="form-settings" class="stack">
+                  <label for="api-base">Metadata API base URL</label>
+                  <input type="url" id="api-base" />
+                  <p class="rail-hint">
+                    The default is the community API this was built against. If it disappears the
+                    upstream is self-hostable, so you can point this at your own copy.
+                  </p>
+                  <button type="submit" class="btn btn-g">Save API URL</button>
+                </form>
+                <div id="api-report" class="results"></div>
+              </div>
+
+              <div class="card card-static">
+                <h3>Update checks</h3>
+                <p class="rail-hint">
+                  Once a day, the app can ask GitHub for the latest version number. That request sends
+                  no reading list, progress, note or identifier. If a newer version exists, the app shows
+                  a link to download it, but it never downloads or installs anything by itself.
+                </p>
+                <label class="checkbox"><input type="checkbox" id="opt-update-checks" /> Check for updates automatically</label>
+              </div>
+            </section>
+
+            <section class="setgroup">
+              <h2>Advanced</h2>
+              <div class="card card-static">
+                <h3>Cached metadata</h3>
+                <p id="cache-usage" class="rail-hint">Checking cache size…</p>
+                <button type="button" id="btn-clear-cache" class="quiet">Clear cached metadata</button>
+                <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
+                <div id="cache-report" class="results"></div>
+              </div>
+            </section>
 
             <div class="card card-static card-danger">
               <h2>Danger zone</h2>
