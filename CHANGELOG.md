@@ -14,6 +14,27 @@ quote in a bug report.
 
 ## Unreleased
 
+### One type and corner scale across the app, bigger click targets, and dialogs give focus back
+
+In plain English: over many separate pieces of work the app had quietly collected 13 slightly
+different text weights, 33 slightly different text sizes and 17 different corner roundings. Almost
+nobody would name any one of them, but together they were why two buttons sitting side by side in
+the same panel could have visibly different corners. Those now come from one small shared set, and
+the two buttons match.
+
+Six small controls were shorter than the 24 pixel minimum a target is meant to have, including both
+of the buttons that delete things on the settings screen. All six are now tall enough to hit
+reliably, which matters most if you use a touchscreen or have a less steady hand.
+
+When you closed a confirmation box, with either the Escape key or the Cancel button, the app used to
+drop you back at the top of the page. If you were working through a long list with the keyboard, or
+listening to a screen reader, you lost your place every time. It now puts you back on the control
+you opened the box from.
+
+Nothing you have saved is affected, and nothing has moved on screen. Text sizes changed by at most a
+sixth of a pixel, which was checked by comparing the measured position and size of every element on
+every screen, before and after, rather than by eye.
+
 ### The settings screen is grouped, and each control confirms in its own place
 
 In plain English: the screen for backing up and changing settings used to be one long stack of cards

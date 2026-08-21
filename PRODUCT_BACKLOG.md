@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-A hundred and thirty-one items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred and thirty-three items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -20,7 +20,7 @@ BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, 
 BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
 BL-129, BL-130, BL-131, BL-132, BL-133, BL-134, BL-139, BL-140, BL-141, BL-142, BL-143, BL-144,
 BL-145, BL-146, BL-147, BL-149, BL-150, BL-152, BL-153, BL-154, BL-157, BL-158, BL-160, BL-161, BL-163,
-BL-164, BL-165, BL-166, BL-167, BL-169, BL-170, BL-171 and BL-174.
+BL-164, BL-165, BL-166, BL-167, BL-169, BL-170, BL-171, BL-174, BL-175 and BL-176.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -250,6 +250,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-163 | Say where the metadata came from, instead of borrowing Marvel's API attribution | Debt | EP-12 | Extends BL-099 | 3 | 3 | 5 | 1 | 11.0 | none | Measured | Shipped | src/index.html:279 |
 | BL-140 | Give the tracker a file a non-engineer can double-click to start it | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 1 | 10.0 | none | Observed | Shipped | absent: any way to start the app that is not a terminal command, read of the README's step 2 and a listing of the repository root |
 | BL-030 | Stop dimming read rows with a blanket opacity | Defect | EP-08 | Leaves alone | 5 | 3 | 2 | 1 | 10.0 | none | Measured | Shipped | src/styles.css:647-656 |
+| BL-179 | Announce the two rail destinations that currently move focus in silence | Defect | EP-08 | Follows BL-176 | 3 | 2 | 5 | 1 | 10.0 | none | Measured | Ready | absent: any announcement on two of the rail navigations, measured against the four declared live regions with import, marking an issue read, catalog navigation and a settings toggle all announcing correctly |
 | BL-083 | Make backup restore truthful under every write failure | Defect | EP-06 | Follows BL-023 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/storage.js:495-571 |
 | BL-130 | Shrink the open licence question before publication | Enabler | EP-12 | Extends BL-099 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | src/js/main.js:2630-2639 |
 | BL-133 | Turn on the three settings publication unlocks, and make the conditional prose true | Enabler | EP-12 | Follows BL-132 | 8 | 8 | 13 | 3 | 9.67 | none | Measured | Shipped | SECURITY.md:135-141 |
@@ -266,7 +267,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-132 | Measure what the day-of rewrites cost the anchors gate, before they are made | Enabler | EP-12 | Extends BL-129 | 3 | 8 | 5 | 2 | 8.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:174-180 |
 | BL-162 | Decide the published name before a store listing exists | Enabler | EP-12 | Follows BL-100 | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Ready | developer.marvel.com/terms section 5, read from the 2025-10-08 archive snapshot on 2026-08-20 |
 | BL-171 | Make search the default way to add issues and group the other four paths | Story | EP-07 | Follows BL-170 | 8 | 3 | 5 | 2 | 8.0 | none | Measured | Shipped | absent: any default or summary in the Add view, the search collapsed among five equal disclosures with no purpose line on any of them, and no held marker on a result row, read across the whole view in Edge before this change |
-| BL-175 | Return focus to the control that opened a dialog | Defect | EP-07 | Follows BL-174 | 5 | 5 | 5 | 2 | 7.5 | none | Measured | Ready | absent: any return of focus to the control that opened a confirm dialog, focus landing on the view h1 after both Escape and a Cancel click, measured identically on the change's base commit and its changed tree |
+| BL-175 | Return focus to the control that opened a dialog | Defect | EP-07 | Follows BL-174 | 5 | 5 | 5 | 2 | 7.5 | none | Measured | Shipped | absent: any return of focus to the control that opened a confirm dialog, focus landing on the view h1 after both Escape and a Cancel click, measured identically on the change's base commit and its changed tree |
 | BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:103-105 |
 | BL-134 | Fetch a synopsis at read time instead of shipping one | Feature | EP-05 | Follows BL-130 | 8 | 5 | 8 | 3 | 7.0 | none | Measured | Shipped | src/js/synopsis.js:89 |
 | BL-151 | Carry a pasted reader address through export and back in again | Defect | EP-03 | Follows BL-149 | 3 | 2 | 2 | 1 | 7.0 | none | Measured | Ready | src/js/lib/markdown.js:140-145 |
@@ -275,6 +276,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-174 | Group the settings screen and give each control its own confirmation | Story | EP-07 | Follows BL-171 | 5 | 3 | 5 | 2 | 6.5 | none | Measured | Shipped | absent: any grouping on the flat run of seven settings cards, and one shared report pane in the Backup card into which the metadata source, restore and cache controls all wrote, so a metadata source confirmation landed 905px above its button in another card and a cache clear overwrote an unread restore refusal |
 | BL-088 | Pin and harden workflow actions for untrusted contributions | Enabler | EP-12 | Extends BL-039 | 3 | 2 | 8 | 2 | 6.5 | none | Observed | Shipped | .github/workflows/ci.yml:68-91 |
 | BL-112 | Let a speech user say what a button says | Defect | EP-07 | Replaces BL-091 | 5 | 3 | 5 | 2 | 6.5 | none | Measured | Shipped | absent: any accessible name built out of its control's visible label, read of all 21 aria-label sites in src/js/main.js and an audit of 303 rendered controls in Edge |
+| BL-176 | Put type weight, size and corner radius on one shared scale and lift every target to 24 pixels | Story | EP-08 | Follows BL-175 | 5 | 3 | 5 | 2 | 6.50 | none | Measured | Shipped | absent: any shared scale behind the stylesheet, 13 declared font weights, 33 declared rem sizes and 17 declared corner radii outside the token blocks, and six controls rendering under 24 pixels tall, all counted across the nine views in Edge before this change |
 | BL-167 | Answer "where do I start" on the first screen, with one order named | Story | EP-01 | Follows BL-156 | 8 | 8 | 3 | 3 | 6.33 | none | Observed | Shipped | absent: any named starting point on the first-run landing page |
 | BL-044 | Send a content security policy and frame options from the dev server | Enabler | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | server.mjs:129-139 |
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
@@ -293,14 +295,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4029-4032 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4034-4037 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-143 | Shelve the catalog in reading order rather than in the order the manifest happens to list | Story | EP-01 | Extends BL-142 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any field on a manifest entry saying when its reading starts, and any sort between parsing the catalog and rendering it |
 | BL-154 | Shelve the events apart from the character runs, and say why the runs sit last | Story | EP-01 | Follows BL-152 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Shipped | `src/js/lib/catalog.js:593-596` |
 | BL-156 | Make the Start here badge carry more weight than a colour change | Story | EP-01 | Follows BL-154 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Ready | `src/styles.css:392-394` |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1519-1520 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1524-1525 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
@@ -326,12 +328,15 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-027 | Announce each change once, in a way a screen reader can use | Story | EP-07 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | P1 | Measured | Shipped | src/js/main.js:497-518 |
 | BL-031 | Put a scrim behind hero text so its contrast stops depending on the cover | Defect | EP-08 | Leaves alone | 5 | 3 | 3 | 3 | 3.67 | none | Measured | Shipped | src/index.html:340-375 |
 | BL-051 | Make the README enough for a non-engineer to run the app | Chore | EP-12 | Leaves alone | 3 | 1 | 3 | 2 | 3.5 | none | Observed | Shipped | absent: any address, prerequisite, success indicator or troubleshooting section in README.md, read of README.md and a literal run of npm start in a fresh clone |
+| BL-178 | Decide the type scale for the two size bands that cannot be consolidated invisibly | Chore | EP-08 | Follows BL-176 | 2 | 2 | 3 | 2 | 3.50 | none | Measured | Ready | absent: any decision on the band holding 0.86, 0.87, 0.875, 0.88, 0.89 and 0.9, or on the heading band holding 0.92, 0.94 and 0.95, both left as written because collapsing either resizes visible text |
 | BL-086 | Keep cover requests inside the stated trust boundary | Defect | EP-05 | Extends BL-044 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/lib/model.js:226-241 |
 | BL-094 | Test the local host and launcher contract | Enabler | EP-12 | Extends BL-041 | 3 | 2 | 5 | 3 | 3.33 | none | Observed | Shipped | server.mjs:89-101 |
 | BL-108 | Make the cover art switch stop the cover requests it hides | Defect | EP-05 | Follows BL-087 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Shipped | src/js/main.js:724-728 |
 | BL-136 | Decide what happens to the prose in copies kept for recovery | Debt | EP-06 | Follows BL-134 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | src/js/storage.js:547 |
 | BL-145 | Ship the tracker to Windows as one archive that needs nothing installed | Story | EP-10 | Extends BL-140 | 5 | 2 | 3 | 3 | 3.33 | none | Measured | Shipped | `scripts/pack-windows.mjs:26-27`, `test/packaging.test.js:108-117` |
 | BL-172 | Let the reader stop a long series or creator load once it has started | Story | EP-03 | Follows BL-171 | 5 | 2 | 3 | 3 | 3.33 | none | Measured | Ready | absent: any way to halt a series or creator add once it is running, the two cancellable loaders the app already has both wired into the reading view rather than the Add view |
+| BL-177 | Give spacing a token scale, as colour and radius already have | Chore | EP-08 | Follows BL-176 | 3 | 2 | 5 | 3 | 3.33 | none | Measured | Ready | absent: any spacing token, counted as 257 margin and padding declarations holding 51 distinct values, 19 of them used exactly once |
+| BL-180 | Let a row in Everything read open the issue it names | Story | EP-07 | Follows BL-176 | 5 | 2 | 3 | 3 | 3.33 | none | Measured | Ready | absent: any control on an Everything read row, the whole row rendering as static text with no button, link or key handler |
 | BL-146 | Put a way out of the capped landing grid where the reader runs out of it | Defect | EP-10 | Follows BL-145 | 3 | 1 | 2 | 2 | 3.0 | none | Measured | Shipped | `src/index.html:278`, `src/js/main.js:1447-1454` |
 | BL-147 | Stop the startup failure messages naming a tool the download does not carry | Defect | EP-10 | Follows BL-145 | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | `server.mjs:223-235`, `test/startup-messages.test.js:23-27` |
 | BL-150 | Fill in what the metadata snapshot cannot, from the one catalogue a browser can reach | Feature | EP-03 | Follows BL-149 | 5 | 5 | 5 | 5 | 3.0 | none | Measured | Shipped | `src/js/lib/wikitext.js:38-42`, `src/js/main.js:3608-3620`, `absent: any record newer than 2025-10-29 upstream, measured by asking the metadata service for 2026 and being told the total is zero` |
@@ -357,7 +362,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-139 | Let the browser install the tracker, so it has a window and an icon of its own | Story | EP-10 | Leaves alone | 3 | 1 | 2 | 2 | 3.0 | none | Observed | Shipped | absent: any web app manifest or app icon, read of the head of src/index.html and a listing of src/ |
 | BL-168 | Measure every file that paints a colour, not only the stylesheet | Debt | EP-08 | Extends BL-065 | 2 | 1 | 3 | 2 | 3.0 | none | Measured | Ready | scripts/check-palette.mjs:426 |
 | BL-074 | Draw the architecture and data flow the code already has | Chore | EP-12 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | absent: any architecture or data flow diagram, read of docs/ and every tracked Markdown file |
-| BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:35-47 |
+| BL-034 | Replace the native dialogs with the app's own notice system | Debt | EP-11 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Observed | Shipped | src/js/ask.js:36-52 |
 | BL-054 | Put focus back where it was when the shelf and the full order rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:264 |
 | BL-058 | Keep focus on the home grid and the rail when their lists rebuild | Debt | EP-07 | Leaves alone | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | absent: any capture of the focused control before importCurated disables it, read of addFromCatalog and renderRail |
 | BL-114 | Bound what a single render paints, not just what a restore builds | Enabler | EP-06 | Follows BL-085 | 3 | 2 | 3 | 3 | 2.67 | none | Measured | Shipped | src/js/main.js:1422 |
@@ -1355,13 +1360,13 @@ from `availability`, from `describe`, and the read of the day itself.
 Constraint gate: checked 1 to 11, none breached. Constraint 11 applies to the new copy, which must
 carry no em dashes.
 
-Shipped. One `<dialog>` at `src/js/ask.js:51-93` answers every question, because the focus trap,
+Shipped. One `<dialog>` at `src/js/ask.js:56-100` answers every question, because the focus trap,
 the Escape key and returning focus to whatever opened it are the browser's job, which is the same
 reason the curated-order preview is built this way. `askConfirm` and `askText` wrap it, and the
 five callers that used to reach for a native dialog now await one of those two.
 
 The close listener is registered once at start-up rather than per question, at
-`src/js/ask.js:35-47`. Per-question listeners let a question answered twice, by submitting as
+`src/js/ask.js:36-52`. Per-question listeners let a question answered twice, by submitting as
 Escape is pressed, resolve twice. The typed value is read while the dialog is closing rather than
 by the caller after it has awaited, because the field is shared and the next question would
 otherwise be able to overwrite an answer that had not been read yet.
@@ -3191,7 +3196,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2891-2894`.
+`PRODUCT_BACKLOG.md:2896-2899`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4728,7 +4733,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:12139-12141` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:12248-12250` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4738,11 +4743,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:212-214`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:12158-12162`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:12267-12271`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11973-11975` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:12082-12084` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4950,7 +4955,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:3091-3100` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:3112-3121` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:202-206` and
 `PRODUCT_BACKLOG.md:212-214` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -6559,7 +6564,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2615`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2620`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -8431,7 +8436,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4852-4860`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4857-4865`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8446,7 +8451,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:4454`, `src/js/main.js:4378` and `src/js/main.js:4399`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1519-1520`.
+`PRODUCT_BACKLOG.md:1524-1525`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8532,7 +8537,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4857-4858`.
+at `PRODUCT_BACKLOG.md:4862-4863`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8698,7 +8703,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4852-4855` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4857-4860` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -11760,9 +11765,9 @@ Constraint gate: checked 1 to 11, none breached.
 
 **BL-175: Return focus to the control that opened a dialog**
 
-- [ ] Return focus to the control that opened a confirm dialog when it closes
-- [ ] Cover both routes out of the dialog, the Escape key and a Cancel click
-- [ ] Fix it in the dialog behaviour rather than in any one view's layout
+- [x] Return focus to the control that opened a confirm dialog when it closes
+- [x] Cover both routes out of the dialog, the Escape key and a Cancel click
+- [x] Fix it in the dialog behaviour rather than in any one view's layout
 
 Found while measuring the settings grouping, and deliberately left for its own change. When a confirm
 dialog closes, focus does not return to the control that opened it: it lands on the view's h1 heading
@@ -11776,6 +11781,110 @@ dropped at the top of the view rather than back where they were working. The fix
 behaviour, which is one shared seam, rather than with the settings layout, which is why it is filed
 here rather than folded into BL-174. Scored V5, TC5, RE5 over Size2 for a WSJF of 7.5, and left Ready
 under the standing rule of one feature to a change.
+
+Constraint gate: checked 1 to 11, none breached.
+
+**BL-176: Put type weight, size and corner radius on one shared scale and lift every target to 24 pixels**
+
+- [x] Reduce the declared font weights outside the token blocks to a named, deliberate set
+- [x] Remove the near duplicate rem sizes that no reader could tell apart
+- [x] Put the corner radii on a small ladder so sibling controls stop disagreeing
+- [x] Give every control a 24 pixel minimum height without changing what it does
+- [x] Prove the consolidation is invisible rather than assuming it
+
+The stylesheet had grown 13 declared font weights, 33 declared rem sizes and 17 declared corner
+radii outside its token blocks. Colour and radius already had tokens; type never got them, so
+values arrived one surface at a time and drifted. Two sibling buttons in the same hero carried 13
+and 11 pixel corners. Six controls rendered under 24 pixels tall, which is the target size floor,
+and two of them were the destructive buttons in the settings screen.
+
+Weights now land on 400, 600, 700 and 800. The fourth survives on purpose: its three sites are the
+large fallback numeral, the tile numeral and the tracked uppercase eyebrow, all display type where
+800 is a deliberate choice and folding it into 700 would be seen. Radii land on 6, 8, 12, 14 and 20
+pixels plus the pill and the token, taking the declared count from 17 to 11, and the two hero
+buttons now agree. Sizes fall from 33 to 29.
+
+The size map is deliberately smaller than a snap to a ladder, and the reason is the useful part of
+this item. Bounding each value's own movement does not bound the movement between two values: two
+sizes a hundredth of a rem apart can sit either side of a rung midpoint and be pushed in opposite
+directions, which a nearest rung snap did to 120 pairs here. The map that shipped is the largest
+subset under which no near pair is pushed apart. It was then cut again during implementation, when a
+geometry census over 987 elements showed two of its rows shrinking section headings by 3.2 per cent
+and cascading into 35 pixels of reflow. Those rows were withdrawn, and the bar that replaced them is
+the stronger one: no declaration moves by more than a hundredth of a rem.
+
+Verified by that census, which compares every element's position, size, weight, radius and line
+height across all nine views and was itself checked by comparing two runs of the unchanged tree,
+where it reported nothing changed. Afterwards every element's own box moves by under a pixel except
+the six controls that were meant to grow, which land at 24 pixels exactly. Controls under 24 pixels
+fall from 6 to 0 with covers on and off, horizontal overflow stays at 0 across nine views and five
+widths, all 90 tab stops keep their focus ring, and no line in the diff changes a colour token, so
+contrast is untouched in both themes by construction rather than by measurement.
+
+Constraint gate: checked 1 to 11, none breached.
+
+**BL-177: Give spacing a token scale, as colour and radius already have**
+
+- [ ] Count what the spacing values actually are before proposing a scale
+- [ ] Agree a small ladder and move the one-off values onto it
+- [ ] Accept that this one reflows the page, and plan the visual check accordingly
+
+Measured while consolidating type: 257 margin and padding declarations hold 51 distinct values, 19
+of them used exactly once, and there is no spacing token anywhere. It is the same drift that type
+had, in the one dimension that was never given tokens.
+
+It is filed separately rather than folded into BL-176 because it cannot be done the same way.
+Consolidating a spacing value moves boxes by construction, so the invisibility proof that governed
+the type work is unavailable here and the change needs its own visual review. Doing it inside a pass
+whose whole claim was that nothing moved would have made that claim untrue.
+
+Constraint gate: checked 1 to 11, none breached.
+
+**BL-178: Decide the type scale for the two size bands that cannot be consolidated invisibly**
+
+- [ ] Decide what the small label band should be, rather than leaving six values in it
+- [ ] Decide one size for the section heading band
+- [ ] Treat it as a type decision, with a visual review, not as a defect fix
+
+Two bands were left exactly as written by BL-176 because collapsing either resizes text a reader
+would see. The small label band holds 0.86, 0.87, 0.875, 0.88, 0.89 and 0.9. The heading band holds
+0.92, 0.94 and 0.95, and its 0.95 sites are all section headings: the section header, the open card
+summary heading, the static card heading and its data view variant, and the library group heading.
+
+An earlier draft did collapse the heading band and it was withdrawn on measurement. It shrank 17
+rendered elements by 3.2 per cent, and shrinking every section heading is the wrong direction for a
+pass whose purpose is accessibility. Choosing one size for these bands is a type decision worth
+making deliberately, with a designer's eye on the result.
+
+Constraint gate: checked 1 to 11, none breached.
+
+**BL-179: Announce the two rail destinations that currently move focus in silence**
+
+- [ ] Announce the destination on the two rail navigations that say nothing
+- [ ] Keep the announcement consistent with the ones that already work
+
+The application declares four live regions and uses them well in most places: importing a list,
+marking an issue read, moving through the catalog and changing a setting all announce. Two of the
+rail navigations do not, so a screen reader user moving there is given a new view and no word about
+it.
+
+Left out of BL-176 because adding an announcement is new behaviour rather than the removal of an
+inconsistency, and that pass was scoped to changes it could prove nobody would see.
+
+Constraint gate: checked 1 to 11, none breached.
+
+**BL-180: Let a row in Everything read open the issue it names**
+
+- [ ] Make a row reach the issue it names
+- [ ] Keep the row a single target rather than several competing ones
+
+Every row in Everything read is static text. It names an issue, the series, the date it was read and
+the list it belongs to, and none of that is reachable: there is no button, no link and no key
+handler on the row. A reader who spots something they want to revisit has to go and find it again by
+another route.
+
+Filed from the cohesion pass rather than fixed in it, because giving a row an action is a feature
+and that pass was a defect removal.
 
 Constraint gate: checked 1 to 11, none breached.
 
@@ -12309,10 +12418,10 @@ again, because a swap can lift a row above a third one it also outscores. Nothin
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
 resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
-### Case 1: BL-026 is labelled P0 but ranks eightieth
+### Case 1: BL-026 is labelled P0 but ranks eighty-second
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 80 of 149.
+- Calculated: WSJF 3.67, rank 82 of 154.
 - Driver: job size, not value. Its Cost of Delay of 11 is the tenth highest figure in the backlog.
   It is outranked by seventy-two items, sixty-eight of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -12334,7 +12443,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 143 of 149, below a hundred and thirty-two unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 148 of 154, below a hundred and thirty-seven unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -12392,9 +12501,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 99 of 149. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 82 of 149. Mid-table.
-- BL-017, P2, rank 148 of 149. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 104 of 154. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 84 of 154. Mid-table.
+- BL-017, P2, rank 153 of 154. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

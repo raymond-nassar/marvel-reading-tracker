@@ -97,7 +97,7 @@ in which case a rename silently does nothing.
 Recommendation: move naming and confirmation into the page using the existing notice and dialog
 patterns, and route import failures through `notify()` like every other path
 Backlog item: BL-034
-Resolved: naming and confirmation moved into one `<dialog>` at `src/js/ask.js:51-93`, and the
+Resolved: naming and confirmation moved into one `<dialog>` at `src/js/ask.js:56-100`, and the
 three `alert()` calls in `importCurated` now write to a pane the caller names. The Evidence
 anchors name the code as it now stands; the Impact above describes the native dialogs it
 replaced. The suppression case in particular is closed: a browser that blocks dialogs can no
@@ -805,7 +805,7 @@ evidence value and the cheapest question that would confirm or kill it.
 | Primary device while reading | Desktop or laptop, with the tracker beside the reader | Moderate. The reflow and rail defects would be intolerable if a phone were the main device, and they shipped. `docs/ux-artifacts/viewport-sweep-reading.json` | On the last five reading sessions, what was the tracker open on? |
 | Reading style | Follows a long curated order end to end rather than dipping in | Strong. The product is built around order, resume and next-unread rather than around browsing. `src/index.html:340-375` | When a list is abandoned partway, what caused it? |
 | Tolerance for missing metadata | High, provided the app admits what it does not know | Strong. Pending and by-hand states are surfaced rather than hidden, and this was a deliberate decision. `src/js/main.js:2785-2786` | Would you rather see a guess or a clearly marked gap? |
-| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:409-410`, `PRODUCT_BACKLOG.md:11999` | If sync existed and was opt-in, would you turn it on? |
+| Attitude to cloud services | Actively prefers local-only and treats that as the point | Strong. Recorded as a product constraint and stated in the backlog's own out-of-scope list. `PRODUCT_BACKLOG.md:414-415`, `PRODUCT_BACKLOG.md:12108` | If sync existed and was opt-in, would you turn it on? |
 | Accessibility needs | None known, and unasked | Weak. This is an assumption by absence. No accessibility requirement appears anywhere in the repository, and the shipped contrast and target sizes are consistent with nobody having needed otherwise. | Do you use any system accessibility setting, including text size, contrast or reduced motion? |
 
 Any other user type is speculative: a second reader would most plausibly be someone handed a

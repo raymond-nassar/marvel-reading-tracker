@@ -1,0 +1,185 @@
+{
+  "task_id": "MRT-008",
+  "task_slug": "cohesion-and-accessibility",
+  "parent_task": null,
+  "mode": "automatic",
+  "active_phase": "Review",
+  "status": "completed",
+  "session_status": "running",
+  "artifact_paths": {
+    "research": ".copilot-tracking/research/2026-08-21/cohesion-and-accessibility-research.md",
+    "plan": ".copilot-tracking/plans/2026-08-21/cohesion-and-accessibility-plan.md",
+    "details": ".copilot-tracking/details/2026-08-21/cohesion-and-accessibility-details.md",
+    "critique": ".copilot-tracking/reviews/plans/2026-08-21/cohesion-and-accessibility-plan-critique.md",
+    "changes": ".copilot-tracking/changes/2026-08-21/cohesion-and-accessibility-changes.md",
+    "review": null
+  },
+  "confirmed_decisions": [
+    {
+      "decision": "Research disposition is executed. Five instruments written and run against base commit faefca7.",
+      "status": "recorded",
+      "evidence": "Research artifact section Method."
+    },
+    {
+      "decision": "Planning readiness is Ready.",
+      "status": "recorded",
+      "evidence": "Research artifact section Planning readiness."
+    },
+    {
+      "decision": "Ten of eleven accessibility checks pass with nothing to fix, recorded as measured negatives so the phase does not touch them.",
+      "status": "recorded",
+      "evidence": "Research artifact section What is already sound."
+    },
+    {
+      "decision": "Focus indicators are uniform across 90 Tab stops. Do not add or alter focus styling.",
+      "status": "recorded",
+      "evidence": "Research artifact refuted hypotheses, first entry."
+    },
+    {
+      "decision": "The quiet button class is not systemically undersized. Ten of twelve clear 24px. Fix is a floor on the class, not a restyle.",
+      "status": "recorded",
+      "evidence": "Research artifact Finding A and refuted hypotheses, second entry."
+    },
+    {
+      "decision": "Forced colours has zero real defects. All eight probe hits refuted. Do not add forced-colours rules.",
+      "status": "recorded",
+      "evidence": "Research artifact refuted hypotheses, third entry."
+    },
+    {
+      "decision": "Stylesheet edits must preserve line count wherever possible. 77 anchors point into the file across lines 1 to 1150; only 154 of 1334 lines are watched.",
+      "status": "recorded",
+      "evidence": "Research artifact section The constraint that shapes scope."
+    },
+    {
+      "decision": "Scope is Finding A in full, Finding B in full, Finding C bounded to line-count-preserving invisible substitutions.",
+      "status": "recorded",
+      "evidence": "Research artifact section Planning readiness."
+    },
+    {
+      "decision": "Rendering and stylesheet work is delegated to GPT-5.6 by standing user instruction. Research and planning stay on the strongest model.",
+      "status": "recorded",
+      "evidence": "User instruction carried across phases 4, 5 and 6."
+    },
+    {
+      "decision": "Non-interactive everything-read rows are routed to the backlog as a feature question, not fixed here.",
+      "status": "recorded",
+      "evidence": "Research artifact section Follow-ups."
+    },
+    {
+      "status": "complete",
+      "evidence": "Critique artifact, severity counts section.",
+      "decision": "Plan critique executed once on claude-opus-4.8. Verdict Revise, 14 findings, 0 blocking, 8 medium, 6 low."
+    },
+    {
+      "status": "applied",
+      "evidence": "Details P01-T02.",
+      "decision": "PC-001 accepted. Opener is captured to a local and committed to module scope only after the show call returns, so a throwing open cannot clobber an earlier opener."
+    },
+    {
+      "status": "applied",
+      "evidence": "Details P01-T02 and P01-T03.",
+      "decision": "PC-002 accepted. Restore guard skips missing, detached, disabled, hidden and inert openers, not only detached ones. Test added for a disabled opener."
+    },
+    {
+      "status": "applied",
+      "evidence": "Details P01-T03.",
+      "decision": "PC-003 accepted. The test double gains an active element, an isConnected flag, a disabled flag and a focus spy, without which the focus tests would pass vacuously."
+    },
+    {
+      "status": "applied",
+      "evidence": "Details P02-T01.",
+      "decision": "PC-004 accepted. 650 resolves to 600 with a stated reason, all three sites being body scale. The 660 site at 2.2rem is named as the at-risk case and the T01 outcome defers to the T04 visual gate."
+    },
+    {
+      "status": "applied",
+      "evidence": "Details P02-T02, measured by the safe-snap instrument.",
+      "decision": "PC-005 accepted and strengthened. A nearest-rung snap pushes 120 near pairs apart by up to 1.12px. Map narrowed to the largest provably safe subset: 6 values, 25 declarations, 33 to 27 distinct, 0 pairs pushed apart."
+    },
+    {
+      "status": "applied",
+      "evidence": "Details P02-T03, measured from the geometry census.",
+      "decision": "PC-006 measured. Only four nested radius pairs shift and two are height-capped pills. The two real cases are the key badges in the hero buttons, whose parents currently mismatch at 13px and 11px and both land on 12px, which is a cohesion gain."
+    },
+    {
+      "status": "applied",
+      "evidence": "Research artifact, axes measured after the critique.",
+      "decision": "PC-007 measured. Spacing carries 257 declarations, 51 distinct values, 19 used once and no tokens. Consolidation moves boxes by construction so it cannot be invisible. Routed to the backlog as a detail block."
+    },
+    {
+      "status": "applied",
+      "evidence": "Research artifact, axes measured after the critique.",
+      "decision": "PC-008 measured and passing. WCAG text spacing override causes no new overflow and no new clipping. Required a CSP bypass in the harness first, because the server policy silently dropped the override and made the instrument report a pass for every page."
+    },
+    {
+      "status": "applied",
+      "evidence": "Research artifact, axes measured after the critique.",
+      "decision": "PC-009 measured. Four live regions; import, mark read, catalog and setting toggle all announce. Two rail navigations do not. Routed as a Ready row, not fixed here."
+    },
+    {
+      "status": "applied",
+      "evidence": "Research artifact, axes measured after the critique.",
+      "decision": "PC-010 measured. No icon set exists: one inline vector, four images, one emoji. Not applicable, axis closed."
+    },
+    {
+      "status": "applied",
+      "evidence": "Plan P03-T01.",
+      "decision": "PC-011 accepted. Two full detail blocks, each carrying a constraint gate line, so both governance figures move by two and are re-derived from the finished backlog. Three further items filed as plain Ready rows with no gate line."
+    },
+    {
+      "status": "applied",
+      "evidence": "Plan P03-T02.",
+      "decision": "PC-012 accepted. For each of the six watched lines whose value changes, the citing prose is checked for an assertion of the old value and corrected, not merely re-aimed."
+    },
+    {
+      "status": "refuted",
+      "evidence": "Research artifact refuted hypotheses; file target instrument.",
+      "decision": "PC-013 refuted by measurement. The whole 241 by 22 file input box opens the picker, including 234 pixels clear of the button sub-part, so the minimum height grows the real target."
+    },
+    {
+      "status": "applied",
+      "evidence": "Plan P02 acceptance and details P02-T04.",
+      "decision": "PC-014 accepted. P02-T01, T02 and T03 each carry a declared-count acceptance. The rendered radius count is explicitly not an acceptance figure because pill and percentage radii resolve per element."
+    },
+    {
+      "status": "recorded",
+      "evidence": "Details, verification instruments.",
+      "decision": "Geometry census instrument validated with a negative control: two independent launches of the unchanged tree compare 987 elements with nothing moved or restyled."
+    },
+    {
+      "decision": "The font-size substitution map was withdrawn after the geometry census refuted it. Pair ordering held, but .95rem folding to .92rem shrank seventeen section headings by 3.2 per cent and cascaded 35 pixels of reflow. The eight declarations at .94rem and .95rem were reverted.",
+      "status": "applied",
+      "evidence": "Acceptance moved from 33 to 27 down to 33 to 29, and the replacement bar is no declaration moving by more than 0.01rem. Recorded as an amendment in the plan and details artifacts and as CHG-002."
+    },
+    {
+      "decision": "Declared font weights resolve to 4 rather than 3. The survivor is 800.",
+      "status": "applied",
+      "evidence": "Carried by .fallback .fn at 2.4rem, .tile .tf .n at 1.5rem and the tracked uppercase .eyebrow, all display type. The P02-T04 acceptance already permitted 4 with the survivor named."
+    },
+    {
+      "decision": "The row reading controls at 17 by 17 and 22 by 26 are left unchanged. They pass 2.5.8 through the spacing exception and the item that scored them is parked as a product decision.",
+      "status": "applied",
+      "evidence": "UX-A-004 in docs/UX_STUDY.md, backlog item BL-028. Raising them is a density change to the primary reading surface, outside a defect-removal pass."
+    },
+    {
+      "decision": "The plan critique was converted to the prose citation style the other seven committed critiques use, and given the same explanatory banner.",
+      "status": "applied",
+      "evidence": "32 citations converted, 19 of which named a file with no directory and one of which was a bare token the gate rejects outright. Recorded as CHG-005."
+    },
+    {
+      "decision": "The previous phase tracking artifacts dated 2026-08-20 were left untracked rather than committed alongside this change.",
+      "status": "applied",
+      "evidence": "They belong to a merged phase, so adding them here would widen the scope of this pull request."
+    },
+    {
+      "decision": "Review executed. Every repository gate passes and the implementation was independently verified against the plan rather than accepted on the implementing agent report.",
+      "status": "conformant",
+      "evidence": "lint 0, test 1279 pass 0 fail, sizes, counts, palette, publication and anchors all exit 0. Anchors finished 993 unchanged, 0 drifted, 0 new, 0 removed with the exempt count unchanged at 2."
+    }
+  ],
+  "blockers": [],
+  "next_action": {
+    "phase": "Follow-up",
+    "action": "Commit, open the pull request, and merge once CI job conclusions are green."
+  },
+  "prioritized_follow_ups": null
+}

@@ -5,13 +5,14 @@
 // has been told to suppress them returns false from confirm() without asking, so a destructive
 // action would quietly fail rather than be confirmed.
 //
-// One <dialog> serves every question. The focus trap, the Escape key and returning focus to
-// whatever opened it are the browser's job, which is the same reason the curated-order preview
-// is built this way.
+// One <dialog> serves every question. Measured in Edge, Escape and Cancel moved focus to the
+// view heading rather than the control that opened it, making a reader lose their place.
+// The curated-order preview uses the same dialog pattern.
 
 const OK = 'ok';
 
 let pending = null;
+let opener = null;
 
 function parts() {
   return {
@@ -43,6 +44,10 @@ export function wireAsk() {
     // after it has awaited: the field is shared, so the next question would otherwise be able
     // to overwrite an answer that had not been read yet.
     if (settle) settle({ ok: dlg.returnValue === OK, value: input.value, area: area ? area.value : '' });
+    const restore = opener;
+    opener = null;
+    if (restore && restore.isConnected && !restore.disabled && !restore.hidden && !restore.inert
+      && typeof restore.focus === 'function') restore.focus();
   });
 }
 
@@ -79,6 +84,7 @@ function open({ title, body, confirmLabel, prefill = null, inputLabel = '', mult
   dlg.returnValue = '';
 
   const answered = new Promise((resolve) => { pending = resolve; });
+  const nextOpener = document.activeElement;
   try {
     dlg.showModal();
   } catch {
@@ -87,6 +93,7 @@ function open({ title, body, confirmLabel, prefill = null, inputLabel = '', mult
     pending = null;
     return Promise.resolve({ ok: false, value: '', area: '' });
   }
+  opener = nextOpener;
   if (asksForText) input.select();
   if (asksForNote) area.select();
   return answered;
