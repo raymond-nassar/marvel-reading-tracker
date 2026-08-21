@@ -1,0 +1,1216 @@
+{
+  "id": "war-of-kings",
+  "name": "War of Kings",
+  "description": "Thirty-two chapters interleaving the six-part Kree and Shi'ar war with Nova, Guardians of the Galaxy, Darkhawk, and Ascension.",
+  "source": "https://www.comicbookherald.com/marvel-cosmic-reading-order/war-of-kings/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.182Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 32,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 27075,
+      "title": "War of Kings: Warriors (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/27075/war_of_kings_warriors_2009_1",
+      "seriesId": 8595,
+      "seriesName": "War of Kings: Warriors (2009)",
+      "onSale": "2009-07-08T00:00:00+0000",
+      "mu": "2009-07-08T00:00:00+0000",
+      "digitalId": 12802,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/566f23d7c4935",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jeffrey Huet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Norman Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Magno",
+          "role": "penciler"
+        },
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27614,
+      "title": "War of Kings: Warriors (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/27614/war_of_kings_warriors_2009_2",
+      "seriesId": 8595,
+      "seriesName": "War of Kings: Warriors (2009)",
+      "onSale": "2009-08-05T00:00:00+0000",
+      "mu": "2009-08-05T00:00:00+0000",
+      "digitalId": 16418,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/03/566f23813d790",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mariah Benes",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ramon K. Perez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adriana Melo",
+          "role": "penciler"
+        },
+        {
+          "name": "Jay Faerber",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23649,
+      "title": "War of Kings: Darkhawk (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23649/war_of_kings_darkhawk_2009_1",
+      "seriesId": 6797,
+      "seriesName": "War of Kings: Darkhawk (2009)",
+      "onSale": "2009-02-04T00:00:00+0000",
+      "mu": "2009-02-04T00:00:00+0000",
+      "digitalId": 13151,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/90/55df511413230",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Harvey Tolibao",
+          "role": "cover artist"
+        },
+        {
+          "name": "Joe Pimentel",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bong Dazo",
+          "role": "penciler"
+        },
+        {
+          "name": "C.B. Cebulski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23766,
+      "title": "Nova (2007) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/23766/nova_2007_23",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-03-25T00:00:00+0000",
+      "mu": "2009-03-25T00:00:00+0000",
+      "digitalId": 13090,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/5790da7e928d4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Juan Doe",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23813,
+      "title": "War of Kings: Darkhawk (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/23813/war_of_kings_darkhawk_2009_2",
+      "seriesId": 6797,
+      "seriesName": "War of Kings: Darkhawk (2009)",
+      "onSale": "2009-03-25T00:00:00+0000",
+      "mu": "2009-03-25T00:00:00+0000",
+      "digitalId": 20609,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/55df63bc7413c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Harvey Tolibao",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brandon Peterson",
+          "role": "penciler"
+        },
+        {
+          "name": "Paolo Pantalena",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "C.B. Cebulski",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23814,
+      "title": "War of Kings (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23814/war_of_kings_2009_1",
+      "seriesId": 6972,
+      "seriesName": "War of Kings (2009)",
+      "onSale": "2009-03-04T00:00:00+0000",
+      "mu": "2009-03-04T00:00:00+0000",
+      "digitalId": 12350,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/59359ef0c8f10",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brandon Peterson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23966,
+      "title": "Nova (2007) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/23966/nova_2007_24",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-04-29T00:00:00+0000",
+      "mu": "2009-04-29T00:00:00+0000",
+      "digitalId": 18740,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/5790df71aa91c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Acuna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24006,
+      "title": "War of Kings (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/24006/war_of_kings_2009_2",
+      "seriesId": 6972,
+      "seriesName": "War of Kings (2009)",
+      "onSale": "2009-04-01T00:00:00+0000",
+      "mu": "2009-04-01T00:00:00+0000",
+      "digitalId": 13540,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/d0/5935a7c99c958",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Brandon Peterson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23986,
+      "title": "Guardians of the Galaxy (2008) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/23986/guardians_of_the_galaxy_2008_13",
+      "seriesId": 4885,
+      "seriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "onSale": "2009-04-22T00:00:00+0000",
+      "mu": "2009-04-22T00:00:00+0000",
+      "digitalId": 13565,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/03/517ad59261332",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Salvador Larroca",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brad Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24188,
+      "title": "Guardians of the Galaxy (2008) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/24188/guardians_of_the_galaxy_2008_14",
+      "seriesId": 4885,
+      "seriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "onSale": "2009-05-28T00:00:00+0000",
+      "mu": "2010-08-05T00:00:00+0000",
+      "digitalId": 12493,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/517ad5840ecf8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Salvador Larroca",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brad Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24165,
+      "title": "Nova (2007) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/24165/nova_2007_25",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-05-28T00:00:00+0000",
+      "mu": "2010-02-09T00:00:00+0000",
+      "digitalId": 12501,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/b0/5790e881c7e79",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jeffrey Huet",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nelson Pereira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kevin Sharpe",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24212,
+      "title": "War of Kings (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/24212/war_of_kings_2009_3",
+      "seriesId": 6972,
+      "seriesName": "War of Kings (2009)",
+      "onSale": "2009-05-06T00:00:00+0000",
+      "mu": "2009-05-06T00:00:00+0000",
+      "digitalId": 15679,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/5935af08d930d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brandon Peterson",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25303,
+      "title": "Guardians of the Galaxy (2008) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/25303/guardians_of_the_galaxy_2008_15",
+      "seriesId": 4885,
+      "seriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2009-06-24T00:00:00+0000",
+      "digitalId": 12696,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/517ad57e4a6e4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Livesay",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brad Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26245,
+      "title": "WAR OF KINGS: SAVAGE WORLD OF SKAAR 1 (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/26245/war_of_kings_savage_world_of_skaar_1_2009_1",
+      "seriesId": 8238,
+      "seriesName": "WAR OF KINGS: SAVAGE WORLD OF SKAAR 1 (2009)",
+      "onSale": "2009-06-10T00:00:00+0000",
+      "mu": "2009-06-10T00:00:00+0000",
+      "digitalId": 18109,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/5936d3f0dfefd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Nelson Decastro",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roland Paris",
+          "role": "cover artist"
+        },
+        {
+          "name": "Graham Nolan",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Reilly Brown",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23914,
+      "title": "War of Kings: Ascension (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23914/war_of_kings_ascension_2009_1",
+      "seriesId": 7081,
+      "seriesName": "War of Kings: Ascension (2009)",
+      "onSale": "2009-04-08T00:00:00+0000",
+      "mu": "2009-04-08T00:00:00+0000",
+      "digitalId": 15568,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/5935b5b31ae54",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brandon Peterson",
+          "role": "penciler"
+        },
+        {
+          "name": "Wellinton Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24267,
+      "title": "War of Kings: Ascension (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/24267/war_of_kings_ascension_2009_2",
+      "seriesId": 7081,
+      "seriesName": "War of Kings: Ascension (2009)",
+      "onSale": "2009-05-13T00:00:00+0000",
+      "mu": "2009-05-13T00:00:00+0000",
+      "digitalId": 15719,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/5935bd297842b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Nelson Pereira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brandon Peterson",
+          "role": "penciler"
+        },
+        {
+          "name": "Wellinton Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26091,
+      "title": "Nova (2007) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/26091/nova_2007_26",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-06-24T00:00:00+0000",
+      "mu": "2010-11-04T00:00:00+0000",
+      "digitalId": 14977,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/5790ee7eb07b8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27059,
+      "title": "War of Kings (2009) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/27059/war_of_kings_2009_4",
+      "seriesId": 6972,
+      "seriesName": "War of Kings (2009)",
+      "onSale": "2009-06-03T00:00:00+0000",
+      "mu": "2009-06-03T00:00:00+0000",
+      "digitalId": 12519,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/d0/5935b5d863989",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brandon Peterson",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27070,
+      "title": "War of Kings: Ascension (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/27070/war_of_kings_ascension_2009_3",
+      "seriesId": 7081,
+      "seriesName": "War of Kings: Ascension (2009)",
+      "onSale": "2009-06-17T00:00:00+0000",
+      "mu": "2009-06-17T00:00:00+0000",
+      "digitalId": 12643,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/03/5935c1546e390",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Nelson Pereira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wellinton Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26092,
+      "title": "Nova (2007) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/26092/nova_2007_27",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-07-22T00:00:00+0000",
+      "mu": "2009-07-22T00:00:00+0000",
+      "digitalId": 15851,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/03/5790f5a308360",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27061,
+      "title": "War of Kings (2009) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/27061/war_of_kings_2009_5",
+      "seriesId": 6972,
+      "seriesName": "War of Kings (2009)",
+      "onSale": "2009-07-01T00:00:00+0000",
+      "mu": "2009-07-01T00:00:00+0000",
+      "digitalId": 12756,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/5935be2ac0771",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brandon Peterson",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27071,
+      "title": "War of Kings: Ascension (2009) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/27071/war_of_kings_ascension_2009_4",
+      "seriesId": 7081,
+      "seriesName": "War of Kings: Ascension (2009)",
+      "onSale": "2009-07-29T00:00:00+0000",
+      "mu": "2009-07-29T00:00:00+0000",
+      "digitalId": 15967,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/5936b1c6ce92e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wellinton Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25304,
+      "title": "Guardians of the Galaxy (2008) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/25304/guardians_of_the_galaxy_2008_16",
+      "seriesId": 4885,
+      "seriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "onSale": "2009-07-22T00:00:00+0000",
+      "mu": "2009-07-22T00:00:00+0000",
+      "digitalId": 15958,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/517ad6ab06469",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pasqual Ferry",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wes Craig",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27063,
+      "title": "War of Kings (2009) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/27063/war_of_kings_2009_6",
+      "seriesId": 6972,
+      "seriesName": "War of Kings (2009)",
+      "onSale": "2009-08-05T00:00:00+0000",
+      "mu": "2009-08-05T00:00:00+0000",
+      "digitalId": 16399,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/03/5935c48412a13",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brandon Peterson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25305,
+      "title": "Guardians of the Galaxy (2008) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/25305/guardians_of_the_galaxy_2008_17",
+      "seriesId": 4885,
+      "seriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "onSale": "2009-08-26T00:00:00+0000",
+      "mu": "2013-10-16T08:48:34+0000",
+      "digitalId": 16599,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/517ad6a215852",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brad Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26093,
+      "title": "Nova (2007) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/26093/nova_2007_28",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-08-26T00:00:00+0000",
+      "mu": "2010-11-18T00:00:00+0000",
+      "digitalId": 16771,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/5790ccf4e0262",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 28101,
+      "title": "War of Kings: Who Will Rule? One-Shot (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/28101/war_of_kings_who_will_rule_one-shot_2009_1",
+      "seriesId": 9033,
+      "seriesName": "War of Kings: Who Will Rule? One-Shot (2009)",
+      "onSale": "2009-09-10T00:00:00+0000",
+      "mu": "2015-05-28T11:02:52+0000",
+      "digitalId": 16921,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5425e5bb30df8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Pelletier",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25306,
+      "title": "Guardians of the Galaxy (2008) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/25306/guardians_of_the_galaxy_2008_18",
+      "seriesId": 4885,
+      "seriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "onSale": "2009-09-23T00:00:00+0000",
+      "mu": "2009-10-06T00:00:00+0000",
+      "digitalId": 13459,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/517ad697b2fb5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pasqual Ferry",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wes Craig",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 25307,
+      "title": "Guardians of the Galaxy (2008) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/25307/guardians_of_the_galaxy_2008_19",
+      "seriesId": 4885,
+      "seriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2013-10-16T08:48:52+0000",
+      "digitalId": 17002,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/517ad68eb623e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Serge Lapointe",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wes Craig",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26094,
+      "title": "Nova (2007) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/26094/nova_2007_29",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-09-23T00:00:00+0000",
+      "mu": "2010-07-01T00:00:00+0000",
+      "digitalId": 13620,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/5790d6608e5bf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Nelson Pereira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kevin Sharpe",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26095,
+      "title": "Nova (2007) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/26095/nova_2007_30",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2010-11-25T00:00:00+0000",
+      "digitalId": 13621,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/30/5790d8afe7c65",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Nelson Pereira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kevin Sharpe",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26096,
+      "title": "Nova (2007) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/26096/nova_2007_31",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2009-11-04T00:00:00+0000",
+      "mu": "2011-03-10T00:00:00+0000",
+      "digitalId": 17695,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/5669fc7db03d3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrea DI Vito",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

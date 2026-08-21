@@ -14,6 +14,18 @@ quote in a bug report.
 
 ## Unreleased
 
+### Added ten more early modern Marvel event reading orders
+
+In plain English: the catalog now fills ten earlier gaps in Marvel continuity, starting with Maximum
+Security and Planet Hulk, continuing through the modern cosmic events and the mutant Messiah story,
+and ending with Second Coming and The Thanos Imperative. Every new card credits Comic Book Herald
+and opens the exact guide section followed. Nothing you have saved is changed.
+
+For maintainers: the batch contains 178 distinct issues across ten exact source mappings. Decimation,
+Realm of Kings, and World War Hulk were blocked instead of guessed or duplicated, and Messiah War,
+Necrosha, and Second Coming filled the three open slots in chronological order. All 450 comparisons
+against the 36 existing orders and nine batch peers have zero shared issues.
+
 ### Dated evidence keeps the repository state it recorded
 
 For maintainers: dated research, plans, and review records now resolve each evidence citation

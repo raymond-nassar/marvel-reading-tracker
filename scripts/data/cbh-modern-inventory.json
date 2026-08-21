@@ -6,12 +6,14 @@
     "url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/knights-until-avengers-disassembled/",
     "guideType": "era",
     "window": "Q1",
-    "disposition": "deferred",
-    "reason": "Broad era with collections, options, and nested guides",
-    "sourceRetrievedAt": "2026-08-20",
+    "disposition": "grouped-variant",
+    "reason": "Shipped split: Maximum Security; the remaining era readings stay deferred",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "catalogIds": [
+      "maximum-security"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 2,
@@ -79,9 +81,11 @@
     "guideType": "event",
     "window": "Q1",
     "disposition": "new-order",
-    "reason": "Blocked: Generation M #1-5 are absent from repository metadata, so exact resolution failed",
+    "reason": "Blocked: Generation M #1-5 are absent from repository metadata and the Day After one-shot overlaps house-of-m",
     "sourceRetrievedAt": "2026-08-21",
-    "overlapIds": [],
+    "overlapIds": [
+      "house-of-m"
+    ],
     "catalogIds": [],
     "deliveryStatus": "blocked"
   },
@@ -92,12 +96,14 @@
     "url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-between-house-of-m-civil-war/",
     "guideType": "bridge",
     "window": "Q1",
-    "disposition": "path-source",
-    "reason": "Chronology source for later bridge review",
-    "sourceRetrievedAt": "2026-08-20",
+    "disposition": "grouped-variant",
+    "reason": "Shipped split: Planet Hulk; the remaining bridge readings stay deferred",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "catalogIds": [
+      "planet-hulk"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 8,
@@ -136,12 +142,18 @@
     "url": "https://www.comicbookherald.com/marvel-cosmic-reading-order/",
     "guideType": "era",
     "window": "Q1",
-    "disposition": "deferred",
-    "reason": "Broad family guide that contains multiple events",
-    "sourceRetrievedAt": "2026-08-20",
-    "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "disposition": "grouped-variant",
+    "reason": "Shipped splits: Annihilation Conquest, War of Kings, and The Thanos Imperative; Realm of Kings remains blocked by three shared Nova issues",
+    "sourceRetrievedAt": "2026-08-21",
+    "overlapIds": [
+      "war-of-kings"
+    ],
+    "catalogIds": [
+      "annihilation-conquest",
+      "war-of-kings",
+      "thanos-imperative"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 11,
@@ -164,12 +176,15 @@
     "url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-civil-war-to-secret-invasion/",
     "guideType": "bridge",
     "window": "Q2",
-    "disposition": "path-source",
-    "reason": "Chronology source for later bridge review",
-    "sourceRetrievedAt": "2026-08-20",
+    "disposition": "grouped-variant",
+    "reason": "Shipped splits: Silent War and X-Men: Messiah Complex; the remaining bridge readings stay deferred",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "catalogIds": [
+      "silent-war",
+      "messiah-complex"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 13,
@@ -225,12 +240,16 @@
     "url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
     "guideType": "fast-track",
     "window": "Q2",
-    "disposition": "deferred",
-    "reason": "Alternate family path, not an early standalone order",
-    "sourceRetrievedAt": "2026-08-20",
+    "disposition": "grouped-variant",
+    "reason": "Shipped splits: X-Men: Messiah War, X-Men: Necrosha, and X-Men: Second Coming; the remaining fast-track events stay deferred",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "catalogIds": [
+      "messiah-war",
+      "necrosha",
+      "second-coming"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 17,

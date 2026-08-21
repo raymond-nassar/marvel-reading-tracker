@@ -1,0 +1,284 @@
+{
+  "id": "thanos-imperative",
+  "name": "The Thanos Imperative",
+  "description": "The eight-part cosmic finale from Ignition through the six-issue event and Devastation.",
+  "source": "https://www.comicbookherald.com/marvel-cosmic-reading-order/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.189Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 8,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 32983,
+      "title": "The Thanos Imperative: Ignition (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/32983/the_thanos_imperative_ignition_2010_1",
+      "seriesId": 9803,
+      "seriesName": "The Thanos Imperative: Ignition (2010)",
+      "onSale": "2010-05-26T00:00:00+0000",
+      "mu": "2011-02-01T00:00:00+0000",
+      "digitalId": 14769,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/51f6a0aba4608",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler"
+        },
+        {
+          "name": "Brad Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32970,
+      "title": "The Thanos Imperative (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/32970/the_thanos_imperative_2010_1",
+      "seriesId": 9950,
+      "seriesName": "The Thanos Imperative (2010)",
+      "onSale": "2010-06-03T00:00:00+0000",
+      "mu": "2011-03-04T00:00:00+0000",
+      "digitalId": 14855,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/90/51f69eaebaa8f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler"
+        },
+        {
+          "name": "Miguel Angel Sepulveda",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32973,
+      "title": "The Thanos Imperative (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/32973/the_thanos_imperative_2010_2",
+      "seriesId": 9950,
+      "seriesName": "The Thanos Imperative (2010)",
+      "onSale": "2010-07-14T00:00:00+0000",
+      "mu": "2011-05-19T00:00:00+0000",
+      "digitalId": 15205,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/51f69ebdb65b5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Miguel Angel Sepulveda",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32975,
+      "title": "The Thanos Imperative (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/32975/the_thanos_imperative_2010_3",
+      "seriesId": 9950,
+      "seriesName": "The Thanos Imperative (2010)",
+      "onSale": "2010-08-11T00:00:00+0000",
+      "mu": "2011-08-04T00:00:00+0000",
+      "digitalId": 15640,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/60/51f69ed97290f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Miguel Angel Sepulveda",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32977,
+      "title": "The Thanos Imperative (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/32977/the_thanos_imperative_2010_4",
+      "seriesId": 9950,
+      "seriesName": "The Thanos Imperative (2010)",
+      "onSale": "2010-09-09T00:00:00+0000",
+      "mu": "2011-08-25T00:00:00+0000",
+      "digitalId": 16015,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/51f69ee272dc9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Miguel Angel Sepulveda",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32979,
+      "title": "The Thanos Imperative (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/32979/the_thanos_imperative_2010_5",
+      "seriesId": 9950,
+      "seriesName": "The Thanos Imperative (2010)",
+      "onSale": "2010-10-13T00:00:00+0000",
+      "mu": "2011-10-21T00:00:00+0000",
+      "digitalId": 16749,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/51f69ef06c1d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Miguel Angel Sepulveda",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32980,
+      "title": "The Thanos Imperative (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/32980/the_thanos_imperative_2010_6",
+      "seriesId": 9950,
+      "seriesName": "The Thanos Imperative (2010)",
+      "onSale": "2010-11-10T00:00:00+0000",
+      "mu": "2010-11-10T00:00:00+0000",
+      "digitalId": 17524,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/51f69efae406d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Miguel Sepulveda",
+          "role": "cover artist"
+        },
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37979,
+      "title": "THE THANOS IMPERATIVE: DEVASTATION 1 (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37979/the_thanos_imperative_devastation_1_2010_1",
+      "seriesId": 13604,
+      "seriesName": "THE THANOS IMPERATIVE: DEVASTATION 1 (2010)",
+      "onSale": "2011-01-05T00:00:00+0000",
+      "mu": "2011-01-05T00:00:00+0000",
+      "digitalId": 18826,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/51f6a004dc19c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Miguel Sepulveda",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Garner",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

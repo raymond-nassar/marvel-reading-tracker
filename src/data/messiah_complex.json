@@ -1,0 +1,511 @@
+{
+  "id": "messiah-complex",
+  "name": "X-Men: Messiah Complex",
+  "description": "Thirteen alternating chapters following the race to find the first mutant born after M-Day.",
+  "source": "https://www.comicbookherald.com/herald-guided-tour-x-men-messiah-complex/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.177Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 13,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 16600,
+      "title": "X-Men: Messiah Complex (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/16600/x-men_messiah_complex_2007_1",
+      "seriesId": 2901,
+      "seriesName": "X-Men: Messiah Complex (2007 - 2008)",
+      "onSale": "2007-10-31T00:00:00+0000",
+      "mu": "2008-05-09T00:00:00+0000",
+      "digitalId": 8872,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/513a8972c747e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Marc Silvestri",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17206,
+      "title": "Uncanny X-Men (1963) #492",
+      "number": "492",
+      "url": "https://www.marvel.com/comics/issue/17206/uncanny_x-men_1963_492",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2007-11-07T00:00:00+0000",
+      "mu": "2008-10-22T00:00:00+0000",
+      "digitalId": 8739,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/60/513a8aca3046a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17241,
+      "title": "X-Factor (2005) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/17241/x-factor_2005_25",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2007-11-14T00:00:00+0000",
+      "mu": "2007-11-14T00:00:00+0000",
+      "digitalId": 8834,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/594c12c30075d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Dell",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Scot Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17223,
+      "title": "New X-Men (2004) #44",
+      "number": "44",
+      "url": "https://www.marvel.com/comics/issue/17223/new_x-men_2004_44",
+      "seriesId": 749,
+      "seriesName": "New X-Men (2004 - 2008)",
+      "onSale": "2007-11-21T00:00:00+0000",
+      "mu": "2008-10-22T00:00:00+0000",
+      "digitalId": 8468,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/a0/5702b0d1c25a9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Carlos Cuevas",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17205,
+      "title": "X-Men (2004) #205",
+      "number": "205",
+      "url": "https://www.marvel.com/comics/issue/17205/x-men_2004_205",
+      "seriesId": 403,
+      "seriesName": "X-Men (2004 - 2007)",
+      "onSale": "2007-11-28T00:00:00+0000",
+      "mu": "2007-11-28T00:00:00+0000",
+      "digitalId": 8868,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/513a8e8643b9c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17336,
+      "title": "Uncanny X-Men (1963) #493",
+      "number": "493",
+      "url": "https://www.marvel.com/comics/issue/17336/uncanny_x-men_1963_493",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2007-12-05T00:00:00+0000",
+      "mu": "2010-03-25T00:00:00+0000",
+      "digitalId": 8742,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/513a8ad8d71c6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21915,
+      "title": "X-Factor (2005) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/21915/x-factor_2005_26",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2007-12-12T00:00:00+0000",
+      "mu": "2007-12-12T00:00:00+0000",
+      "digitalId": 13878,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/513a8cf40e190",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Dell",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Scot Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17356,
+      "title": "New X-Men (2004) #45",
+      "number": "45",
+      "url": "https://www.marvel.com/comics/issue/17356/new_x-men_2004_45",
+      "seriesId": 749,
+      "seriesName": "New X-Men (2004 - 2008)",
+      "onSale": "2007-12-19T00:00:00+0000",
+      "mu": "2007-12-19T00:00:00+0000",
+      "digitalId": 8471,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/5702b0f88e8a7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Carlos Cuevas",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17334,
+      "title": "X-Men (2004) #206",
+      "number": "206",
+      "url": "https://www.marvel.com/comics/issue/17334/x-men_2004_206",
+      "seriesId": 403,
+      "seriesName": "X-Men (2004 - 2007)",
+      "onSale": "2007-12-28T00:00:00+0000",
+      "mu": "2008-09-17T00:00:00+0000",
+      "digitalId": 8869,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/513a8e94daa72",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17576,
+      "title": "Uncanny X-Men (1963) #494",
+      "number": "494",
+      "url": "https://www.marvel.com/comics/issue/17576/uncanny_x-men_1963_494",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-01-04T00:00:00+0000",
+      "mu": "2010-03-26T00:00:00+0000",
+      "digitalId": 11737,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/513a8ae845ffb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17615,
+      "title": "X-Factor (2005) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/17615/x-factor_2005_27",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2008-01-09T00:00:00+0000",
+      "mu": "2008-01-09T00:00:00+0000",
+      "digitalId": 11818,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/513a8cb43b657",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dave Meikis",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Dell",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Scot Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17595,
+      "title": "New X-Men (2004) #46",
+      "number": "46",
+      "url": "https://www.marvel.com/comics/issue/17595/new_x-men_2004_46",
+      "seriesId": 749,
+      "seriesName": "New X-Men (2004 - 2008)",
+      "onSale": "2008-01-16T00:00:00+0000",
+      "mu": "2008-01-16T00:00:00+0000",
+      "digitalId": 11377,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/c0/5702b0a846e03",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Cuevas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dave Meikis",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17575,
+      "title": "X-Men (2004) #207",
+      "number": "207",
+      "url": "https://www.marvel.com/comics/issue/17575/x-men_2004_207",
+      "seriesId": 403,
+      "seriesName": "X-Men (2004 - 2007)",
+      "onSale": "2008-01-23T00:00:00+0000",
+      "mu": "2008-01-23T00:00:00+0000",
+      "digitalId": 12024,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/513a8ea81c01f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Al Vey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jonathan Sibal",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

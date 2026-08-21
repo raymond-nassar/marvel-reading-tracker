@@ -49,7 +49,9 @@ test('the maintained inventory matches the current lifecycle contract', () => {
   assert.ok(inventory.filter((record) => record.deliveryStatus === 'blocked').every((record) => (
     record.reason.startsWith('Blocked:')
   )));
-  assert.ok(inventory.filter((record) => record.disposition !== 'new-order').every((record) => record.deliveryStatus === 'not-applicable'));
+  assert.ok(inventory.filter((record) => record.disposition !== 'new-order').every((record) => (
+    ['not-applicable', 'ready', 'shipped', 'blocked'].includes(record.deliveryStatus)
+  )));
 });
 
 test('batch duplicate guard rejects repeated ids, URLs, issue sequences, and catalog ids', () => {
@@ -181,6 +183,20 @@ test('live inventory validation accepts a guarded lifecycle and rejects invalid 
       overlapIds: [],
       catalogIds: [],
       deliveryStatus: 'not-applicable',
+    },
+    {
+      position: 5,
+      id: 'grouped-order',
+      title: 'Grouped Order',
+      url: 'https://example.com/grouped',
+      guideType: 'era',
+      window: 'Q2',
+      disposition: 'grouped-variant',
+      reason: 'Published as discrete child orders',
+      sourceRetrievedAt: '2026-08-20',
+      overlapIds: [],
+      catalogIds: ['catalog-4'],
+      deliveryStatus: 'shipped',
     },
   ];
 

@@ -391,3 +391,80 @@ reading path, overlap treatment, approved count, ambiguous identity, or a thresh
 * Implementation session: A nested worktree session based on this branch, using an MAI model.
 * Child scope: Execute P01, not P02 through P04.
 * Remaining blocker: None for P01.
+
+## P03 Batch Two Proposal Addendum
+
+* Proposal date: 2026-08-21
+* Status: Approved for autonomous P03-T01 execution by the parent session on 2026-08-21.
+* First-batch baseline: Pull request 159 is merged at commit
+  `19d92d7d2c955ec3572b90116e9bb5f9435c1094`.
+* Scope correction: The next ten pending `new-order` records are not automatically the next batch.
+  The early master sequence contains distinct events inside deferred era and path-source records.
+  The proposal therefore closes at master position 14 instead of jumping to position 49.
+* Approval record: The user was unavailable. The parent session approved autonomous continuation
+  under the user's autopilot instruction. This is parent approval, not an explicit user response.
+* Review direction: A later parent instruction waived separate review-subagent passes for this
+  release. Exact mappings, source boundaries, covers, timelines, and substitutions still require a
+  complete self-review and every machine gate before delivery.
+
+### Proposed ten reading orders
+
+The proposal follows the master sequence first, then the order of distinct event links inside a
+shared source. The row total is an estimate for selection only. It is not an approved packet count.
+
+| Slot | Master position and inventory source | Proposed reading order | Period | Exact Comic Book Herald source | Current disposition and status | Existing coverage or issue overlap | Estimated rows and complexity | Decision or blocker before mapping |
+|---:|---|---|---|---|---|---|---|---|
+| 1 | 1, `early-2000s-until-disassembled`, Early 2000s Until Avengers Disassembled | `maximum-security` | 2000-2001 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/maximum-security/ | `deferred`, `not-applicable` | No exact issue from the 28-row source list appears in a shipped order | 28, medium | Approve splitting one discrete crossover from the deferred era source |
+| 2 | 6, `decimation`, Decimation and Tie-Ins | `decimation` | 2005-2007 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-5-decimation/ | `new-order`, `blocked` | `house-of-m` already contains issue 3095, the Day After one-shot | 57, high | Five Generation M rows remain absent from repository metadata, and the one shared issue needs an overlap disposition |
+| 3 | 7, `house-of-m-to-civil-war`, Comics Getting You From House of M to Civil War | `planet-hulk` | 2006-2007 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-between-house-of-m-civil-war/ | `path-source`, `not-applicable` | No exact issue in the 15-row event spine appears in a shipped order | 15, low to medium | Approve extracting the explicit Planet Hulk spine from a path source |
+| 4 | 10, `marvel-cosmic`, What about Marvel Cosmic? | `annihilation-conquest` | 2007-2008 | https://www.comicbookherald.com/marvel-cosmic-reading-order/annihilation-conquest/ | `deferred`, `not-applicable` | No exact issue appears in a shipped order; the existing `annihilation` order is the prior event | 29 core or 38 page-wide, high | Freeze whether Nova 1-3 and Guardians 1-6 are adjacent material or part of this order |
+| 5 | 10, `marvel-cosmic`, What about Marvel Cosmic? | `war-of-kings` | 2008-2009 | https://www.comicbookherald.com/marvel-cosmic-reading-order/war-of-kings/ | `deferred`, `not-applicable` | No shipped overlap; a literal peer comparison shares Nova 29-31 with Realm of Kings | 32 core, high | Assign Nova 29-31 to one peer before both can pass the zero-overlap gate |
+| 6 | 10, `marvel-cosmic`, What about Marvel Cosmic? | `realm-of-kings` | 2009-2010 | https://www.comicbookherald.com/marvel-cosmic-reading-order/realm-of-kings/ | `deferred`, `not-applicable` | No shipped overlap; Nova 29-31 are peer overlaps with War of Kings, issue ids 26094-26096 | 28 or 29, high | Resolve the source disagreement between Nova 29-35 and the bridge collection's Nova 29-36, then resolve the peer overlap |
+| 7 | 10, `marvel-cosmic`, What about Marvel Cosmic? | `thanos-imperative` | 2010 | https://www.comicbookherald.com/marvel-cosmic-reading-order/ | `deferred`, `not-applicable` | No shipped or proposed-core issue overlap found | 8, medium | The source gives an exact eight-issue spine but no dedicated Comic Book Herald event page; approve the umbrella-page boundary |
+| 8 | 12, `civil-war-to-secret-invasion`, Comics Getting You From Civil War to Secret Invasion | `silent-war` | 2007 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-civil-war-to-secret-invasion/ | `path-source`, `not-applicable`; position 13 is an excluded commerce pointer | No exact issue appears in a shipped order | 6, low | Approve the issue-bearing bridge page as the source while leaving the commerce record excluded |
+| 9 | 12, `civil-war-to-secret-invasion`, Comics Getting You From Civil War to Secret Invasion | `messiah-complex` | 2007-2008 | https://www.comicbookherald.com/herald-guided-tour-x-men-messiah-complex/ | `path-source`, `not-applicable` | No exact issue appears in a shipped order | 13, medium | Approve splitting the dedicated crossover linked by the bridge and fast-track sources |
+| 10 | 14, `world-war-hulk`, World War Hulk and Tie-Ins | `world-war-hulk` | 2007-2008 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/world-war-hulk/ | `new-order`, `blocked` | Three exact overlaps: issue ids 15976 and 16162 in `civil-war-avengers`, and 17231 in `world-war-hulk-aftersmash` | 39, high | Requires an explicit overlap disposition; the distinct event scope alone cannot bypass the zero-overlap gate |
+
+Estimated core total: 255 rows. The total cannot be frozen until the Conquest and Realm boundaries
+and the War of Kings to Realm of Kings peer overlap are decided.
+
+### Earlier positions not proposed as new orders
+
+| Position | Inventory source | Reason for not proposing another order |
+|---:|---|---|
+| 2 | `avengers-disassembled` | The source has a broader 34-row tie-in order, but the shipped five-issue order is an exact existing subset. This is a variant decision, not a distinct event. |
+| 3 | `secret-war` | The exact five-issue source sequence is already shipped. |
+| 4 | `disassembled-to-house-of-m` | Its only discrete event is Secret War, already shipped; the remaining material is a continuity path of ongoing runs. |
+| 5 | `house-of-m` | The source is broader than the shipped variants, but it shares the complete eight-issue main series and many branded tie-ins. A new row would require a variant and overlap decision. |
+| 8 | `iron-man-extremis-commerce` | The master link is commerce-only and the material is a single story arc rather than a distinct event order. |
+| 9 | `spider-man-the-other` | The exact 12-issue source block is already shipped. |
+| 11 | `civil-war` | Three shipped readings already cover the event, including the complete seven-issue main series. The larger source is an overlapping variant, not a new event. |
+| 13 | `silent-war-commerce` | The product link remains excluded. Slot 8 uses the issue-bearing Comic Book Herald bridge page instead. |
+
+Selected-source residuals remain out of scope: position 1 keeps its other runs and arcs deferred;
+position 7 already has shipped Spider-Man: The Other and Annihilation coverage; position 10 does not
+reopen the shipped Annihilation core; and position 12 does not duplicate Planet Hulk, Conquest, or
+World War Hulk.
+
+### Final packet reconciliation
+
+Three approved candidates stopped without an exception:
+
+| Approved candidate | Blocking evidence | Chronological replacement |
+|---|---|---|
+| `decimation` | Generation M #1-5 have no repository metadata, and issue 3095 overlaps `house-of-m` | `messiah-war` |
+| `realm-of-kings` | Nova #29-31, issue ids 26094-26096, overlap `war-of-kings` | `necrosha` |
+| `world-war-hulk` | Issue ids 15976, 16162, and 17231 overlap two shipped orders | `second-coming` |
+
+Utopia was not used because Dark Avengers #7-8 already ship in the Dark Reign Avengers order. Fall
+of the Hulks still lacks its MODOK issue identity. Siege overlaps thirteen issues in the same shipped
+Avengers order. The replacements are therefore the first later missing events that pass both gates.
+
+The final packet holds 178 exact and distinct issue ids. Each guide has 45 complete comparisons
+against 36 shipped orders and nine peers, for 450 `none` relationships and zero shared issues.
+
+Catalog placement is separate from the approved intake queue. The frozen catalog order is Maximum
+Security, Planet Hulk, Silent War, Annihilation: Conquest, Messiah Complex, War of Kings, Messiah
+War, Necrosha, Second Coming, and The Thanos Imperative. Live metadata independently fixes their
+first on-sale dates to 2000-10-01, 2006-02-08, 2007-01-24, 2007-06-20, 2007-10-31, 2009-02-04,
+2009-02-04, 2009-10-28, 2010-02-24, and 2010-05-26.

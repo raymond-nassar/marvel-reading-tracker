@@ -1,0 +1,1126 @@
+{
+  "id": "annihilation-conquest",
+  "inventoryId": "marvel-cosmic",
+  "sourceUrl": "https://www.comicbookherald.com/marvel-cosmic-reading-order/annihilation-conquest/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 29,
+  "excludedSourceReferences": [
+    "Nova #1-3, identified by the source as Annihilation epilogue",
+    "Guardians of the Galaxy #1-6, identified by the source as post-event epilogue",
+    "Duplicate Nova #4-7 listing in the second trade block"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 15891,
+      "title": "ANNIHILATION: CONQUEST PROLOGUE 1",
+      "issueTitle": "ANNIHILATION: CONQUEST PROLOGUE 1 (2007) #1",
+      "seriesTitle": "ANNIHILATION: CONQUEST PROLOGUE 1",
+      "apiSeriesName": "ANNIHILATION: CONQUEST PROLOGUE 1 (2007)",
+      "seriesId": 2420,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15891/annihilation_conquest_prologue_1_2007_1",
+      "onSaleDate": "2007-06-20T00:00:00+0000"
+    },
+    {
+      "id": 16009,
+      "title": "Annihilation: Conquest - Starlord",
+      "issueTitle": "Annihilation: Conquest - Starlord (2007) #1",
+      "seriesTitle": "Annihilation: Conquest - Starlord",
+      "apiSeriesName": "Annihilation: Conquest - Starlord (2007)",
+      "seriesId": 2541,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16009/annihilation_conquest_-_starlord_2007_1",
+      "onSaleDate": "2007-07-25T00:00:00+0000"
+    },
+    {
+      "id": 16191,
+      "title": "Annihilation: Conquest - Starlord",
+      "issueTitle": "Annihilation: Conquest - Starlord (2007) #2",
+      "seriesTitle": "Annihilation: Conquest - Starlord",
+      "apiSeriesName": "Annihilation: Conquest - Starlord (2007)",
+      "seriesId": 2541,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16191/annihilation_conquest_-_starlord_2007_2",
+      "onSaleDate": "2007-08-22T00:00:00+0000"
+    },
+    {
+      "id": 16598,
+      "title": "Annihilation: Conquest - Starlord",
+      "issueTitle": "Annihilation: Conquest - Starlord (2007) #3",
+      "seriesTitle": "Annihilation: Conquest - Starlord",
+      "apiSeriesName": "Annihilation: Conquest - Starlord (2007)",
+      "seriesId": 2541,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16598/annihilation_conquest_-_starlord_2007_3",
+      "onSaleDate": "2007-09-26T00:00:00+0000"
+    },
+    {
+      "id": 16599,
+      "title": "Annihilation: Conquest - Starlord",
+      "issueTitle": "Annihilation: Conquest - Starlord (2007) #4",
+      "seriesTitle": "Annihilation: Conquest - Starlord",
+      "apiSeriesName": "Annihilation: Conquest - Starlord (2007)",
+      "seriesId": 2541,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16599/annihilation_conquest_-_starlord_2007_4",
+      "onSaleDate": "2007-11-07T00:00:00+0000"
+    },
+    {
+      "id": 15992,
+      "title": "Annihilation: Conquest - Quasar",
+      "issueTitle": "Annihilation: Conquest - Quasar (2007) #1",
+      "seriesTitle": "Annihilation: Conquest - Quasar",
+      "apiSeriesName": "Annihilation: Conquest - Quasar (2007)",
+      "seriesId": 2524,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15992/annihilation_conquest_-_quasar_2007_1",
+      "onSaleDate": "2007-07-18T00:00:00+0000"
+    },
+    {
+      "id": 16176,
+      "title": "Annihilation: Conquest - Quasar",
+      "issueTitle": "Annihilation: Conquest - Quasar (2007) #2",
+      "seriesTitle": "Annihilation: Conquest - Quasar",
+      "apiSeriesName": "Annihilation: Conquest - Quasar (2007)",
+      "seriesId": 2524,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16176/annihilation_conquest_-_quasar_2007_2",
+      "onSaleDate": "2007-08-15T00:00:00+0000"
+    },
+    {
+      "id": 16573,
+      "title": "Annihilation: Conquest - Quasar",
+      "issueTitle": "Annihilation: Conquest - Quasar (2007) #3",
+      "seriesTitle": "Annihilation: Conquest - Quasar",
+      "apiSeriesName": "Annihilation: Conquest - Quasar (2007)",
+      "seriesId": 2524,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16573/annihilation_conquest_-_quasar_2007_3",
+      "onSaleDate": "2007-09-19T00:00:00+0000"
+    },
+    {
+      "id": 16574,
+      "title": "Annihilation: Conquest - Quasar",
+      "issueTitle": "Annihilation: Conquest - Quasar (2007) #4",
+      "seriesTitle": "Annihilation: Conquest - Quasar",
+      "apiSeriesName": "Annihilation: Conquest - Quasar (2007)",
+      "seriesId": 2524,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16574/annihilation_conquest_-_quasar_2007_4",
+      "onSaleDate": "2007-10-31T00:00:00+0000"
+    },
+    {
+      "id": 15972,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #4",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15972/nova_2007_4",
+      "onSaleDate": "2007-07-11T00:00:00+0000"
+    },
+    {
+      "id": 16157,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #5",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "5",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16157/nova_2007_5",
+      "onSaleDate": "2007-08-08T00:00:00+0000"
+    },
+    {
+      "id": 16532,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #6",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "6",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16532/nova_2007_6",
+      "onSaleDate": "2007-09-12T00:00:00+0000"
+    },
+    {
+      "id": 16533,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #7",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "7",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16533/nova_2007_7",
+      "onSaleDate": "2007-10-10T00:00:00+0000"
+    },
+    {
+      "id": 16000,
+      "title": "Annihilation: Conquest - Wraith",
+      "issueTitle": "Annihilation: Conquest - Wraith (2007) #1",
+      "seriesTitle": "Annihilation: Conquest - Wraith",
+      "apiSeriesName": "Annihilation: Conquest - Wraith (2007)",
+      "seriesId": 2532,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16000/annihilation_conquest_-_wraith_2007_1",
+      "onSaleDate": "2007-07-11T00:00:00+0000"
+    },
+    {
+      "id": 16184,
+      "title": "Annihilation: Conquest - Wraith",
+      "issueTitle": "Annihilation: Conquest - Wraith (2007) #2",
+      "seriesTitle": "Annihilation: Conquest - Wraith",
+      "apiSeriesName": "Annihilation: Conquest - Wraith (2007)",
+      "seriesId": 2532,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16184/annihilation_conquest_-_wraith_2007_2",
+      "onSaleDate": "2007-08-08T00:00:00+0000"
+    },
+    {
+      "id": 16585,
+      "title": "Annihilation: Conquest - Wraith",
+      "issueTitle": "Annihilation: Conquest - Wraith (2007) #3",
+      "seriesTitle": "Annihilation: Conquest - Wraith",
+      "apiSeriesName": "Annihilation: Conquest - Wraith (2007)",
+      "seriesId": 2532,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16585/annihilation_conquest_-_wraith_2007_3",
+      "onSaleDate": "2007-09-05T00:00:00+0000"
+    },
+    {
+      "id": 16586,
+      "title": "Annihilation: Conquest - Wraith",
+      "issueTitle": "Annihilation: Conquest - Wraith (2007) #4",
+      "seriesTitle": "Annihilation: Conquest - Wraith",
+      "apiSeriesName": "Annihilation: Conquest - Wraith (2007)",
+      "seriesId": 2532,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16586/annihilation_conquest_-_wraith_2007_4",
+      "onSaleDate": "2007-10-24T00:00:00+0000"
+    },
+    {
+      "id": 17271,
+      "title": "Annihilation: Conquest",
+      "issueTitle": "Annihilation: Conquest (2007) #1",
+      "seriesTitle": "Annihilation: Conquest",
+      "apiSeriesName": "Annihilation: Conquest (2007)",
+      "seriesId": 3061,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17271/annihilation_conquest_2007_1",
+      "onSaleDate": "2007-11-07T00:00:00+0000"
+    },
+    {
+      "id": 17405,
+      "title": "Annihilation: Conquest",
+      "issueTitle": "Annihilation: Conquest (2007) #2",
+      "seriesTitle": "Annihilation: Conquest",
+      "apiSeriesName": "Annihilation: Conquest (2007)",
+      "seriesId": 3061,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17405/annihilation_conquest_2007_2",
+      "onSaleDate": "2007-12-05T00:00:00+0000"
+    },
+    {
+      "id": 17257,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #8",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "8",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17257/nova_2007_8",
+      "onSaleDate": "2007-11-14T00:00:00+0000"
+    },
+    {
+      "id": 17391,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #9",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "9",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17391/nova_2007_9",
+      "onSaleDate": "2007-12-12T00:00:00+0000"
+    },
+    {
+      "id": 17634,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #10",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "10",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17634/nova_2007_10",
+      "onSaleDate": "2008-01-09T00:00:00+0000"
+    },
+    {
+      "id": 20713,
+      "title": "Nova Annual",
+      "issueTitle": "Nova Annual (2008) #1",
+      "seriesTitle": "Nova Annual",
+      "apiSeriesName": "Nova Annual (2008)",
+      "seriesId": 3848,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20713/nova_annual_2008_1",
+      "onSaleDate": "2008-02-13T00:00:00+0000"
+    },
+    {
+      "id": 17645,
+      "title": "Annihilation: Conquest",
+      "issueTitle": "Annihilation: Conquest (2007) #3",
+      "seriesTitle": "Annihilation: Conquest",
+      "apiSeriesName": "Annihilation: Conquest (2007)",
+      "seriesId": 3061,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17645/annihilation_conquest_2007_3",
+      "onSaleDate": "2008-01-02T00:00:00+0000"
+    },
+    {
+      "id": 20686,
+      "title": "Annihilation: Conquest",
+      "issueTitle": "Annihilation: Conquest (2007) #4",
+      "seriesTitle": "Annihilation: Conquest",
+      "apiSeriesName": "Annihilation: Conquest (2007)",
+      "seriesId": 3061,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20686/annihilation_conquest_2007_4",
+      "onSaleDate": "2008-02-06T00:00:00+0000"
+    },
+    {
+      "id": 20885,
+      "title": "Annihilation: Conquest",
+      "issueTitle": "Annihilation: Conquest (2007) #5",
+      "seriesTitle": "Annihilation: Conquest",
+      "apiSeriesName": "Annihilation: Conquest (2007)",
+      "seriesId": 3061,
+      "issueNumber": "5",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20885/annihilation_conquest_2007_5",
+      "onSaleDate": "2008-03-12T00:00:00+0000"
+    },
+    {
+      "id": 20873,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #11",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "11",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20873/nova_2007_11",
+      "onSaleDate": "2008-03-12T00:00:00+0000"
+    },
+    {
+      "id": 21007,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #12",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "12",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21007/nova_2007_12",
+      "onSaleDate": "2008-04-09T00:00:00+0000"
+    },
+    {
+      "id": 21016,
+      "title": "Annihilation: Conquest",
+      "issueTitle": "Annihilation: Conquest (2007) #6",
+      "seriesTitle": "Annihilation: Conquest",
+      "apiSeriesName": "Annihilation: Conquest (2007)",
+      "seriesId": 3061,
+      "issueNumber": "6",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21016/annihilation_conquest_2007_6",
+      "onSaleDate": "2008-04-16T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Annihilation: Conquest Prologue #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "ANNIHILATION: CONQUEST PROLOGUE 1",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2420,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15891"
+      ],
+      "selectedIssueId": 15891,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15891/annihilation_conquest_prologue_1_2007_1",
+      "resolvedIssueTitle": "ANNIHILATION: CONQUEST PROLOGUE 1 (2007) #1",
+      "note": "Marvel series 2420 (ANNIHILATION: CONQUEST PROLOGUE 1 (2007)) is the reviewed metadata series for this source reference. The source shortens Marvel metadata's capitalized one-issue series name.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15891
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Annihilation: Conquest - Starlord #1",
+      "sourceRangeReference": "Annihilation: Conquest - Starlord #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Starlord",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2541,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16009"
+      ],
+      "selectedIssueId": 16009,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16009/annihilation_conquest_-_starlord_2007_1",
+      "resolvedIssueTitle": "Annihilation: Conquest - Starlord (2007) #1",
+      "note": "Marvel series 2541 (Annihilation: Conquest - Starlord (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16009
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Annihilation: Conquest - Starlord #2",
+      "sourceRangeReference": "Annihilation: Conquest - Starlord #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Starlord",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 2541,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16191"
+      ],
+      "selectedIssueId": 16191,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16191/annihilation_conquest_-_starlord_2007_2",
+      "resolvedIssueTitle": "Annihilation: Conquest - Starlord (2007) #2",
+      "note": "Marvel series 2541 (Annihilation: Conquest - Starlord (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16191
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Annihilation: Conquest - Starlord #3",
+      "sourceRangeReference": "Annihilation: Conquest - Starlord #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Starlord",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 2541,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16598"
+      ],
+      "selectedIssueId": 16598,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16598/annihilation_conquest_-_starlord_2007_3",
+      "resolvedIssueTitle": "Annihilation: Conquest - Starlord (2007) #3",
+      "note": "Marvel series 2541 (Annihilation: Conquest - Starlord (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16598
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Annihilation: Conquest - Starlord #4",
+      "sourceRangeReference": "Annihilation: Conquest - Starlord #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Starlord",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 2541,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16599"
+      ],
+      "selectedIssueId": 16599,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16599/annihilation_conquest_-_starlord_2007_4",
+      "resolvedIssueTitle": "Annihilation: Conquest - Starlord (2007) #4",
+      "note": "Marvel series 2541 (Annihilation: Conquest - Starlord (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16599
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Annihilation: Conquest - Quasar #1",
+      "sourceRangeReference": "Annihilation: Conquest - Quasar #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Quasar",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2524,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15992"
+      ],
+      "selectedIssueId": 15992,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15992/annihilation_conquest_-_quasar_2007_1",
+      "resolvedIssueTitle": "Annihilation: Conquest - Quasar (2007) #1",
+      "note": "Marvel series 2524 (Annihilation: Conquest - Quasar (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15992
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Annihilation: Conquest - Quasar #2",
+      "sourceRangeReference": "Annihilation: Conquest - Quasar #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Quasar",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 2524,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16176"
+      ],
+      "selectedIssueId": 16176,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16176/annihilation_conquest_-_quasar_2007_2",
+      "resolvedIssueTitle": "Annihilation: Conquest - Quasar (2007) #2",
+      "note": "Marvel series 2524 (Annihilation: Conquest - Quasar (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16176
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Annihilation: Conquest - Quasar #3",
+      "sourceRangeReference": "Annihilation: Conquest - Quasar #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Quasar",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 2524,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16573"
+      ],
+      "selectedIssueId": 16573,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16573/annihilation_conquest_-_quasar_2007_3",
+      "resolvedIssueTitle": "Annihilation: Conquest - Quasar (2007) #3",
+      "note": "Marvel series 2524 (Annihilation: Conquest - Quasar (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16573
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Annihilation: Conquest - Quasar #4",
+      "sourceRangeReference": "Annihilation: Conquest - Quasar #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Quasar",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 2524,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16574"
+      ],
+      "selectedIssueId": 16574,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16574/annihilation_conquest_-_quasar_2007_4",
+      "resolvedIssueTitle": "Annihilation: Conquest - Quasar (2007) #4",
+      "note": "Marvel series 2524 (Annihilation: Conquest - Quasar (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16574
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Nova #4",
+      "sourceRangeReference": "Nova #4-7",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15972"
+      ],
+      "selectedIssueId": 15972,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15972/nova_2007_4",
+      "resolvedIssueTitle": "Nova (2007) #4",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15972
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Nova #5",
+      "sourceRangeReference": "Nova #4-7",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "5",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16157"
+      ],
+      "selectedIssueId": 16157,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16157/nova_2007_5",
+      "resolvedIssueTitle": "Nova (2007) #5",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16157
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Nova #6",
+      "sourceRangeReference": "Nova #4-7",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "6",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16532"
+      ],
+      "selectedIssueId": 16532,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16532/nova_2007_6",
+      "resolvedIssueTitle": "Nova (2007) #6",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16532
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Nova #7",
+      "sourceRangeReference": "Nova #4-7",
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "7",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16533"
+      ],
+      "selectedIssueId": 16533,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16533/nova_2007_7",
+      "resolvedIssueTitle": "Nova (2007) #7",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16533
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Annihilation: Conquest - Wraith #1",
+      "sourceRangeReference": "Annihilation: Conquest - Wraith #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Wraith",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 2532,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16000"
+      ],
+      "selectedIssueId": 16000,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16000/annihilation_conquest_-_wraith_2007_1",
+      "resolvedIssueTitle": "Annihilation: Conquest - Wraith (2007) #1",
+      "note": "Marvel series 2532 (Annihilation: Conquest - Wraith (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16000
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Annihilation: Conquest - Wraith #2",
+      "sourceRangeReference": "Annihilation: Conquest - Wraith #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Wraith",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 2532,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16184"
+      ],
+      "selectedIssueId": 16184,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16184/annihilation_conquest_-_wraith_2007_2",
+      "resolvedIssueTitle": "Annihilation: Conquest - Wraith (2007) #2",
+      "note": "Marvel series 2532 (Annihilation: Conquest - Wraith (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16184
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Annihilation: Conquest - Wraith #3",
+      "sourceRangeReference": "Annihilation: Conquest - Wraith #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Wraith",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 2532,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16585"
+      ],
+      "selectedIssueId": 16585,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16585/annihilation_conquest_-_wraith_2007_3",
+      "resolvedIssueTitle": "Annihilation: Conquest - Wraith (2007) #3",
+      "note": "Marvel series 2532 (Annihilation: Conquest - Wraith (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16585
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Annihilation: Conquest - Wraith #4",
+      "sourceRangeReference": "Annihilation: Conquest - Wraith #1-4",
+      "normalizedSeriesTitle": "Annihilation: Conquest - Wraith",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 2532,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16586"
+      ],
+      "selectedIssueId": 16586,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16586/annihilation_conquest_-_wraith_2007_4",
+      "resolvedIssueTitle": "Annihilation: Conquest - Wraith (2007) #4",
+      "note": "Marvel series 2532 (Annihilation: Conquest - Wraith (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16586
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Annihilation: Conquest #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Annihilation: Conquest",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 3061,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17271"
+      ],
+      "selectedIssueId": 17271,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17271/annihilation_conquest_2007_1",
+      "resolvedIssueTitle": "Annihilation: Conquest (2007) #1",
+      "note": "Marvel series 3061 (Annihilation: Conquest (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17271
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Annihilation: Conquest #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Annihilation: Conquest",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 3061,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17405"
+      ],
+      "selectedIssueId": 17405,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17405/annihilation_conquest_2007_2",
+      "resolvedIssueTitle": "Annihilation: Conquest (2007) #2",
+      "note": "Marvel series 3061 (Annihilation: Conquest (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17405
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Nova #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "8",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17257"
+      ],
+      "selectedIssueId": 17257,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17257/nova_2007_8",
+      "resolvedIssueTitle": "Nova (2007) #8",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17257
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Nova #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "9",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17391"
+      ],
+      "selectedIssueId": 17391,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17391/nova_2007_9",
+      "resolvedIssueTitle": "Nova (2007) #9",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17391
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Nova #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "10",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17634"
+      ],
+      "selectedIssueId": 17634,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17634/nova_2007_10",
+      "resolvedIssueTitle": "Nova (2007) #10",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17634
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Nova Annual #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova Annual",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 3848,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20713"
+      ],
+      "selectedIssueId": 20713,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20713/nova_annual_2008_1",
+      "resolvedIssueTitle": "Nova Annual (2008) #1",
+      "note": "Marvel series 3848 (Nova Annual (2008)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20713
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Annihilation: Conquest #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Annihilation: Conquest",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 3061,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17645"
+      ],
+      "selectedIssueId": 17645,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17645/annihilation_conquest_2007_3",
+      "resolvedIssueTitle": "Annihilation: Conquest (2007) #3",
+      "note": "Marvel series 3061 (Annihilation: Conquest (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17645
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Annihilation: Conquest #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Annihilation: Conquest",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 3061,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20686"
+      ],
+      "selectedIssueId": 20686,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20686/annihilation_conquest_2007_4",
+      "resolvedIssueTitle": "Annihilation: Conquest (2007) #4",
+      "note": "Marvel series 3061 (Annihilation: Conquest (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20686
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Annihilation: Conquest #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Annihilation: Conquest",
+      "seriesYear": 2007,
+      "issueNumber": "5",
+      "seriesId": 3061,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20885"
+      ],
+      "selectedIssueId": 20885,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20885/annihilation_conquest_2007_5",
+      "resolvedIssueTitle": "Annihilation: Conquest (2007) #5",
+      "note": "Marvel series 3061 (Annihilation: Conquest (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20885
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Nova #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "11",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20873"
+      ],
+      "selectedIssueId": 20873,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20873/nova_2007_11",
+      "resolvedIssueTitle": "Nova (2007) #11",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20873
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Nova #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "12",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21007"
+      ],
+      "selectedIssueId": 21007,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21007/nova_2007_12",
+      "resolvedIssueTitle": "Nova (2007) #12",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21007
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "Annihilation: Conquest #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Annihilation: Conquest",
+      "seriesYear": 2007,
+      "issueNumber": "6",
+      "seriesId": 3061,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21016"
+      ],
+      "selectedIssueId": 21016,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21016/annihilation_conquest_2007_6",
+      "resolvedIssueTitle": "Annihilation: Conquest (2007) #6",
+      "note": "Marvel series 3061 (Annihilation: Conquest (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21016
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "annihilation-conquest",
+    "name": "Annihilation: Conquest",
+    "description": "Twenty-nine chapters combining the prologue, lead-in mini-series, Nova, and the six-part cosmic event.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "annihilation-conquest.md",
+    "sourcePage": "https://www.comicbookherald.com/marvel-cosmic-reading-order/annihilation-conquest/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "annihilation_conquest.json",
+    "characters": [
+      "Star-Lord",
+      "Nova",
+      "Quasar",
+      "Wraith",
+      "Ultron"
+    ],
+    "keywords": [
+      "Annihilation Conquest",
+      "Phalanx",
+      "Nova",
+      "Star-Lord"
+    ],
+    "expect": 29,
+    "timeline": 2007,
+    "coverIssueId": 15891,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Annihilation: Conquest Prologue #1"
+  }
+}

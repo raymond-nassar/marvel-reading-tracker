@@ -1,0 +1,605 @@
+{
+  "id": "planet-hulk",
+  "inventoryId": "house-of-m-to-civil-war",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-between-house-of-m-civil-war/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 15,
+  "excludedSourceReferences": [
+    "Incredible Hulk #87-91 prelude",
+    "Every non-Planet Hulk run on the bridge page"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 3530,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #92",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "92",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/3530/hulk_1999_92",
+      "onSaleDate": "2006-02-08T00:00:00+0000"
+    },
+    {
+      "id": 3955,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #93",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "93",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/3955/hulk_1999_93",
+      "onSaleDate": "2006-03-22T00:00:00+0000"
+    },
+    {
+      "id": 4081,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #94",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "94",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/4081/hulk_1999_94",
+      "onSaleDate": "2006-04-26T00:00:00+0000"
+    },
+    {
+      "id": 4195,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #95",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "95",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/4195/hulk_1999_95",
+      "onSaleDate": "2006-05-31T00:00:00+0000"
+    },
+    {
+      "id": 4338,
+      "title": "GIANT-SIZE HULK 1",
+      "issueTitle": "GIANT-SIZE HULK 1 (2006) #1",
+      "seriesTitle": "GIANT-SIZE HULK 1",
+      "apiSeriesName": "GIANT-SIZE HULK 1 (2006)",
+      "seriesId": 1108,
+      "issueNumber": "1",
+      "seriesYear": 2006,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/4338/giant-size_hulk_1_2006_1",
+      "onSaleDate": "2006-06-21T00:00:00+0000"
+    },
+    {
+      "id": 4446,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #96",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "96",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/4446/hulk_1999_96",
+      "onSaleDate": "2006-07-05T00:00:00+0000"
+    },
+    {
+      "id": 4764,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #97",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "97",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/4764/hulk_1999_97",
+      "onSaleDate": "2006-08-09T00:00:00+0000"
+    },
+    {
+      "id": 5055,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #98",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "98",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/5055/hulk_1999_98",
+      "onSaleDate": "2006-09-13T00:00:00+0000"
+    },
+    {
+      "id": 5207,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #99",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "99",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/5207/hulk_1999_99",
+      "onSaleDate": "2006-10-04T00:00:00+0000"
+    },
+    {
+      "id": 5414,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #100",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "100",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/5414/hulk_1999_100",
+      "onSaleDate": "2006-11-01T00:00:00+0000"
+    },
+    {
+      "id": 5671,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #101",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "101",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/5671/hulk_1999_101",
+      "onSaleDate": "2006-12-06T00:00:00+0000"
+    },
+    {
+      "id": 5811,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #102",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "102",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/5811/hulk_1999_102",
+      "onSaleDate": "2007-01-03T00:00:00+0000"
+    },
+    {
+      "id": 27399,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #103",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "103",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/27399/hulk_1999_103",
+      "onSaleDate": "2007-02-07T00:00:00+0000"
+    },
+    {
+      "id": 6099,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #104",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "104",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/6099/hulk_1999_104",
+      "onSaleDate": "2007-03-07T00:00:00+0000"
+    },
+    {
+      "id": 6245,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #105",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "105",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/6245/hulk_1999_105",
+      "onSaleDate": "2007-04-04T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Incredible Hulk #92",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "92",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3530"
+      ],
+      "selectedIssueId": 3530,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3530/hulk_1999_92",
+      "resolvedIssueTitle": "Hulk (1999) #92",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3530
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Incredible Hulk #93",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "93",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3955"
+      ],
+      "selectedIssueId": 3955,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3955/hulk_1999_93",
+      "resolvedIssueTitle": "Hulk (1999) #93",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3955
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Incredible Hulk #94",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "94",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "4081"
+      ],
+      "selectedIssueId": 4081,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/4081/hulk_1999_94",
+      "resolvedIssueTitle": "Hulk (1999) #94",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        4081
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Incredible Hulk #95",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "95",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "4195"
+      ],
+      "selectedIssueId": 4195,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/4195/hulk_1999_95",
+      "resolvedIssueTitle": "Hulk (1999) #95",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        4195
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Giant-Size Hulk #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "GIANT-SIZE HULK 1",
+      "seriesYear": 2006,
+      "issueNumber": "1",
+      "seriesId": 1108,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "4338"
+      ],
+      "selectedIssueId": 4338,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/4338/giant-size_hulk_1_2006_1",
+      "resolvedIssueTitle": "GIANT-SIZE HULK 1 (2006) #1",
+      "note": "Marvel series 1108 (GIANT-SIZE HULK 1 (2006)) is the reviewed metadata series for this source reference. The source shortens Marvel metadata's capitalized one-issue series name.",
+      "status": "exact",
+      "selectedIssueIds": [
+        4338
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Incredible Hulk #96",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "96",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "4446"
+      ],
+      "selectedIssueId": 4446,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/4446/hulk_1999_96",
+      "resolvedIssueTitle": "Hulk (1999) #96",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        4446
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Incredible Hulk #97",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "97",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "4764"
+      ],
+      "selectedIssueId": 4764,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/4764/hulk_1999_97",
+      "resolvedIssueTitle": "Hulk (1999) #97",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        4764
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Incredible Hulk #98",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "98",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "5055"
+      ],
+      "selectedIssueId": 5055,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/5055/hulk_1999_98",
+      "resolvedIssueTitle": "Hulk (1999) #98",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        5055
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Incredible Hulk #99",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "99",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "5207"
+      ],
+      "selectedIssueId": 5207,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/5207/hulk_1999_99",
+      "resolvedIssueTitle": "Hulk (1999) #99",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        5207
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Incredible Hulk #100",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "100",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "5414"
+      ],
+      "selectedIssueId": 5414,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/5414/hulk_1999_100",
+      "resolvedIssueTitle": "Hulk (1999) #100",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        5414
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Incredible Hulk #101",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "101",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "5671"
+      ],
+      "selectedIssueId": 5671,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/5671/hulk_1999_101",
+      "resolvedIssueTitle": "Hulk (1999) #101",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        5671
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Incredible Hulk #102",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "102",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "5811"
+      ],
+      "selectedIssueId": 5811,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/5811/hulk_1999_102",
+      "resolvedIssueTitle": "Hulk (1999) #102",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        5811
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Incredible Hulk #103",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "103",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27399"
+      ],
+      "selectedIssueId": 27399,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27399/hulk_1999_103",
+      "resolvedIssueTitle": "Hulk (1999) #103",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27399
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Incredible Hulk #104",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "104",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "6099"
+      ],
+      "selectedIssueId": 6099,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/6099/hulk_1999_104",
+      "resolvedIssueTitle": "Hulk (1999) #104",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        6099
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Incredible Hulk #105",
+      "sourceRangeReference": "Incredible Hulk #92-105",
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "105",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "6245"
+      ],
+      "selectedIssueId": 6245,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/6245/hulk_1999_105",
+      "resolvedIssueTitle": "Hulk (1999) #105",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        6245
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "planet-hulk",
+    "name": "Planet Hulk",
+    "description": "Fifteen chapters taking Hulk from his arrival on Sakaar through the complete Planet Hulk storyline.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "planet-hulk.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-between-house-of-m-civil-war/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "planet_hulk.json",
+    "characters": [
+      "Hulk",
+      "Caiera",
+      "Korg",
+      "Miek"
+    ],
+    "keywords": [
+      "Planet Hulk",
+      "Sakaar",
+      "Warbound"
+    ],
+    "expect": 15,
+    "timeline": 2006,
+    "coverIssueId": 3530,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Incredible Hulk #92"
+  }
+}

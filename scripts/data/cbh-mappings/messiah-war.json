@@ -1,0 +1,420 @@
+{
+  "id": "messiah-war",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/cable-reading-order/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 10,
+  "excludedSourceReferences": [
+    "Cable #11-12 and every surrounding Cable reading outside the explicit Messiah War Reading Order"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 23667,
+      "title": "X-Men: The Times and Life of Lucas Bishop",
+      "issueTitle": "X-Men: The Times and Life of Lucas Bishop (2009) #1",
+      "seriesTitle": "X-Men: The Times and Life of Lucas Bishop",
+      "apiSeriesName": "X-Men: The Times and Life of Lucas Bishop (2009 - Present)",
+      "seriesId": 43538,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23667/x-men_the_times_and_life_of_lucas_bishop_2009_1",
+      "onSaleDate": "2009-02-04T00:00:00+0000"
+    },
+    {
+      "id": 23848,
+      "title": "X-Men: The Times and Life of Lucas Bishop",
+      "issueTitle": "X-Men: The Times and Life of Lucas Bishop (2009) #2",
+      "seriesTitle": "X-Men: The Times and Life of Lucas Bishop",
+      "apiSeriesName": "X-Men: The Times and Life of Lucas Bishop (2009 - Present)",
+      "seriesId": 43538,
+      "issueNumber": "2",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23848/x-men_the_times_and_life_of_lucas_bishop_2009_2",
+      "onSaleDate": "2009-03-25T00:00:00+0000"
+    },
+    {
+      "id": 24054,
+      "title": "X-Men: The Times and Life of Lucas Bishop",
+      "issueTitle": "X-Men: The Times and Life of Lucas Bishop (2009) #3",
+      "seriesTitle": "X-Men: The Times and Life of Lucas Bishop",
+      "apiSeriesName": "X-Men: The Times and Life of Lucas Bishop (2009 - Present)",
+      "seriesId": 43538,
+      "issueNumber": "3",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24054/x-men_the_times_and_life_of_lucas_bishop_2009_3",
+      "onSaleDate": "2009-04-22T00:00:00+0000"
+    },
+    {
+      "id": 27620,
+      "title": "X-FORCE/CABLE: MESSIAH WAR 1",
+      "issueTitle": "X-FORCE/CABLE: MESSIAH WAR 1 (2009) #1",
+      "seriesTitle": "X-FORCE/CABLE: MESSIAH WAR 1",
+      "apiSeriesName": "X-FORCE/CABLE: MESSIAH WAR 1 (2009)",
+      "seriesId": 7002,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27620/x-forcecable_messiah_war_1_2009_1",
+      "onSaleDate": "2009-03-25T00:00:00+0000"
+    },
+    {
+      "id": 23971,
+      "title": "Cable",
+      "issueTitle": "Cable (2008) #13",
+      "seriesTitle": "Cable",
+      "apiSeriesName": "Cable (2008 - 2010)",
+      "seriesId": 4002,
+      "issueNumber": "13",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23971/cable_2008_13",
+      "onSaleDate": "2009-04-01T00:00:00+0000"
+    },
+    {
+      "id": 23969,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #14",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "14",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23969/x-force_2008_14",
+      "onSaleDate": "2009-04-22T00:00:00+0000"
+    },
+    {
+      "id": 24171,
+      "title": "Cable",
+      "issueTitle": "Cable (2008) #14",
+      "seriesTitle": "Cable",
+      "apiSeriesName": "Cable (2008 - 2010)",
+      "seriesId": 4002,
+      "issueNumber": "14",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24171/cable_2008_14",
+      "onSaleDate": "2009-05-06T00:00:00+0000"
+    },
+    {
+      "id": 24170,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #15",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "15",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24170/x-force_2008_15",
+      "onSaleDate": "2009-05-28T00:00:00+0000"
+    },
+    {
+      "id": 24631,
+      "title": "Cable",
+      "issueTitle": "Cable (2008) #15",
+      "seriesTitle": "Cable",
+      "apiSeriesName": "Cable (2008 - 2010)",
+      "seriesId": 4002,
+      "issueNumber": "15",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24631/cable_2008_15",
+      "onSaleDate": "2009-06-17T00:00:00+0000"
+    },
+    {
+      "id": 27253,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #16",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "16",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27253/x-force_2008_16",
+      "onSaleDate": "2009-06-24T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "X-Men: The Times and Life of Lucas Bishop #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: The Times and Life of Lucas Bishop",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 43538,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23667"
+      ],
+      "selectedIssueId": 23667,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23667/x-men_the_times_and_life_of_lucas_bishop_2009_1",
+      "resolvedIssueTitle": "X-Men: The Times and Life of Lucas Bishop (2009) #1",
+      "note": "Marvel series 43538 (X-Men: The Times and Life of Lucas Bishop (2009 - Present)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23667
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "X-Men: The Times and Life of Lucas Bishop #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: The Times and Life of Lucas Bishop",
+      "seriesYear": 2009,
+      "issueNumber": "2",
+      "seriesId": 43538,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23848"
+      ],
+      "selectedIssueId": 23848,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23848/x-men_the_times_and_life_of_lucas_bishop_2009_2",
+      "resolvedIssueTitle": "X-Men: The Times and Life of Lucas Bishop (2009) #2",
+      "note": "Marvel series 43538 (X-Men: The Times and Life of Lucas Bishop (2009 - Present)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23848
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "X-Men: The Times and Life of Lucas Bishop #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: The Times and Life of Lucas Bishop",
+      "seriesYear": 2009,
+      "issueNumber": "3",
+      "seriesId": 43538,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24054"
+      ],
+      "selectedIssueId": 24054,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24054/x-men_the_times_and_life_of_lucas_bishop_2009_3",
+      "resolvedIssueTitle": "X-Men: The Times and Life of Lucas Bishop (2009) #3",
+      "note": "Marvel series 43538 (X-Men: The Times and Life of Lucas Bishop (2009 - Present)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24054
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "X-Men Messiah War One-Shot",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-FORCE/CABLE: MESSIAH WAR 1",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 7002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27620"
+      ],
+      "selectedIssueId": 27620,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27620/x-forcecable_messiah_war_1_2009_1",
+      "resolvedIssueTitle": "X-FORCE/CABLE: MESSIAH WAR 1 (2009) #1",
+      "note": "Marvel series 7002 (X-FORCE/CABLE: MESSIAH WAR 1 (2009)) is the reviewed metadata series for this source reference. The source calls the one-shot X-Men Messiah War; Marvel metadata names it X-Force/Cable: Messiah War 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27620
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Cable #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Cable",
+      "seriesYear": 2008,
+      "issueNumber": "13",
+      "seriesId": 4002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23971"
+      ],
+      "selectedIssueId": 23971,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23971/cable_2008_13",
+      "resolvedIssueTitle": "Cable (2008) #13",
+      "note": "Marvel series 4002 (Cable (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23971
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Force #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "14",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23969"
+      ],
+      "selectedIssueId": 23969,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23969/x-force_2008_14",
+      "resolvedIssueTitle": "X-Force (2008) #14",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23969
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Cable #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Cable",
+      "seriesYear": 2008,
+      "issueNumber": "14",
+      "seriesId": 4002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24171"
+      ],
+      "selectedIssueId": 24171,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24171/cable_2008_14",
+      "resolvedIssueTitle": "Cable (2008) #14",
+      "note": "Marvel series 4002 (Cable (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24171
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "X-Force #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "15",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24170"
+      ],
+      "selectedIssueId": 24170,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24170/x-force_2008_15",
+      "resolvedIssueTitle": "X-Force (2008) #15",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24170
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Cable #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Cable",
+      "seriesYear": 2008,
+      "issueNumber": "15",
+      "seriesId": 4002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24631"
+      ],
+      "selectedIssueId": 24631,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24631/cable_2008_15",
+      "resolvedIssueTitle": "Cable (2008) #15",
+      "note": "Marvel series 4002 (Cable (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24631
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-Force #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "16",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27253"
+      ],
+      "selectedIssueId": 27253,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27253/x-force_2008_16",
+      "resolvedIssueTitle": "X-Force (2008) #16",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27253
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "messiah-war",
+    "name": "X-Men: Messiah War",
+    "description": "Ten chapters following Cable, Hope, and X-Force through the future-set Messiah War crossover.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "messiah-war.md",
+    "sourcePage": "https://www.comicbookherald.com/cable-reading-order/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "messiah_war.json",
+    "characters": [
+      "Cable",
+      "Hope Summers",
+      "X-Force",
+      "Bishop"
+    ],
+    "keywords": [
+      "Messiah War",
+      "Cable",
+      "Hope Summers",
+      "X-Force"
+    ],
+    "expect": 10,
+    "timeline": 2009,
+    "coverIssueId": 27620,
+    "coverSourcePosition": 4,
+    "coverSourceReference": "X-Men Messiah War One-Shot"
+  }
+}
