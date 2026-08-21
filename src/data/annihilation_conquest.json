@@ -1,0 +1,1091 @@
+{
+  "id": "annihilation-conquest",
+  "name": "Annihilation: Conquest",
+  "description": "Twenty-nine chapters combining the prologue, lead-in mini-series, Nova, and the six-part cosmic event.",
+  "source": "https://www.comicbookherald.com/marvel-cosmic-reading-order/annihilation-conquest/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.175Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 29,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 15891,
+      "title": "ANNIHILATION: CONQUEST PROLOGUE 1 (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/15891/annihilation_conquest_prologue_1_2007_1",
+      "seriesId": 2420,
+      "seriesName": "ANNIHILATION: CONQUEST PROLOGUE 1 (2007)",
+      "onSale": "2007-06-20T00:00:00+0000",
+      "mu": "2007-06-20T00:00:00+0000",
+      "digitalId": 7932,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/513a75867ca5d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 16009,
+      "title": "Annihilation: Conquest - Starlord (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/16009/annihilation_conquest_-_starlord_2007_1",
+      "seriesId": 2541,
+      "seriesName": "Annihilation: Conquest - Starlord (2007)",
+      "onSale": "2007-07-25T00:00:00+0000",
+      "mu": "2007-07-25T00:00:00+0000",
+      "digitalId": 7937,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/51df25c64725e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Timothy Green II",
+          "role": "penciler"
+        },
+        {
+          "name": "Nic Klein",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16191,
+      "title": "Annihilation: Conquest - Starlord (2007) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/16191/annihilation_conquest_-_starlord_2007_2",
+      "seriesId": 2541,
+      "seriesName": "Annihilation: Conquest - Starlord (2007)",
+      "onSale": "2007-08-22T00:00:00+0000",
+      "mu": "2007-08-22T00:00:00+0000",
+      "digitalId": 7938,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/51df26f6f3ec3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Timothy Green II",
+          "role": "penciler"
+        },
+        {
+          "name": "Nic Klein",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16598,
+      "title": "Annihilation: Conquest - Starlord (2007) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/16598/annihilation_conquest_-_starlord_2007_3",
+      "seriesId": 2541,
+      "seriesName": "Annihilation: Conquest - Starlord (2007)",
+      "onSale": "2007-09-26T00:00:00+0000",
+      "mu": "2007-09-26T00:00:00+0000",
+      "digitalId": 7939,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/51df288b4fbaf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Timothy Green II",
+          "role": "penciler"
+        },
+        {
+          "name": "Nic Klein",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16599,
+      "title": "Annihilation: Conquest - Starlord (2007) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/16599/annihilation_conquest_-_starlord_2007_4",
+      "seriesId": 2541,
+      "seriesName": "Annihilation: Conquest - Starlord (2007)",
+      "onSale": "2007-11-07T00:00:00+0000",
+      "mu": "2007-11-07T00:00:00+0000",
+      "digitalId": 7940,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/51df29e9e311d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Timothy Green II",
+          "role": "penciler"
+        },
+        {
+          "name": "Nic Klein",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Keith Giffen",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 15992,
+      "title": "Annihilation: Conquest - Quasar (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/15992/annihilation_conquest_-_quasar_2007_1",
+      "seriesId": 2524,
+      "seriesName": "Annihilation: Conquest - Quasar (2007)",
+      "onSale": "2007-07-18T00:00:00+0000",
+      "mu": "2007-07-18T00:00:00+0000",
+      "digitalId": 7933,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/20/51df02ba8e64e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bob Almond",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matt Wilson",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Lilly",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16176,
+      "title": "Annihilation: Conquest - Quasar (2007) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/16176/annihilation_conquest_-_quasar_2007_2",
+      "seriesId": 2524,
+      "seriesName": "Annihilation: Conquest - Quasar (2007)",
+      "onSale": "2007-08-15T00:00:00+0000",
+      "mu": "2007-08-15T00:00:00+0000",
+      "digitalId": 7934,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/80/51df0dcded20a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bob Almond",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Lilly",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Wilson",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16573,
+      "title": "Annihilation: Conquest - Quasar (2007) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/16573/annihilation_conquest_-_quasar_2007_3",
+      "seriesId": 2524,
+      "seriesName": "Annihilation: Conquest - Quasar (2007)",
+      "onSale": "2007-09-19T00:00:00+0000",
+      "mu": "2007-09-19T00:00:00+0000",
+      "digitalId": 7935,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/51df10f1c8f8d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bob Almond",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Lilly",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Wilson",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16574,
+      "title": "Annihilation: Conquest - Quasar (2007) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/16574/annihilation_conquest_-_quasar_2007_4",
+      "seriesId": 2524,
+      "seriesName": "Annihilation: Conquest - Quasar (2007)",
+      "onSale": "2007-10-31T00:00:00+0000",
+      "mu": "2007-10-31T00:00:00+0000",
+      "digitalId": 7936,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/51df11e2482bb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bob Almond",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Mckenna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roland Paris",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Lilly",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Wilson",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 15972,
+      "title": "Nova (2007) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/15972/nova_2007_4",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2007-07-11T00:00:00+0000",
+      "mu": "2007-07-11T00:00:00+0000",
+      "digitalId": 8485,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/578e841c9535a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Denham",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16157,
+      "title": "Nova (2007) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/16157/nova_2007_5",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2007-08-08T00:00:00+0000",
+      "mu": "2007-08-08T00:00:00+0000",
+      "digitalId": 8486,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/30/578e8ce1cfd47",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Denham",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16532,
+      "title": "Nova (2007) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/16532/nova_2007_6",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2007-09-12T00:00:00+0000",
+      "mu": "2007-09-12T00:00:00+0000",
+      "digitalId": 8487,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/52c5d44533c73",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Denham",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16533,
+      "title": "Nova (2007) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/16533/nova_2007_7",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2007-10-10T00:00:00+0000",
+      "mu": "2007-10-10T00:00:00+0000",
+      "digitalId": 8488,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/578f7d527a4e4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brian Denham",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16000,
+      "title": "Annihilation: Conquest - Wraith (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/16000/annihilation_conquest_-_wraith_2007_1",
+      "seriesId": 2532,
+      "seriesName": "Annihilation: Conquest - Wraith (2007)",
+      "onSale": "2007-07-11T00:00:00+0000",
+      "mu": "2007-07-11T00:00:00+0000",
+      "digitalId": 7941,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/51df15c67c6f5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kyle Hotz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clint Langley",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Javier Grillo-Marxuach",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16184,
+      "title": "Annihilation: Conquest - Wraith (2007) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/16184/annihilation_conquest_-_wraith_2007_2",
+      "seriesId": 2532,
+      "seriesName": "Annihilation: Conquest - Wraith (2007)",
+      "onSale": "2007-08-08T00:00:00+0000",
+      "mu": "2007-08-08T00:00:00+0000",
+      "digitalId": 7942,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/51df1d517b118",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kyle Hotz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clint Langley",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Javier Grillo-Marxuach",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16585,
+      "title": "Annihilation: Conquest - Wraith (2007) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/16585/annihilation_conquest_-_wraith_2007_3",
+      "seriesId": 2532,
+      "seriesName": "Annihilation: Conquest - Wraith (2007)",
+      "onSale": "2007-09-05T00:00:00+0000",
+      "mu": "2007-09-05T00:00:00+0000",
+      "digitalId": 7943,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/51df21946b56d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kyle Hotz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clint Langley",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Javier Grillo-Marxuach",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16586,
+      "title": "Annihilation: Conquest - Wraith (2007) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/16586/annihilation_conquest_-_wraith_2007_4",
+      "seriesId": 2532,
+      "seriesName": "Annihilation: Conquest - Wraith (2007)",
+      "onSale": "2007-10-24T00:00:00+0000",
+      "mu": "2007-10-24T00:00:00+0000",
+      "digitalId": 7944,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/51df233443e8c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kyle Hotz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clint Langley",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Javier Grillo-Marxuach",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17271,
+      "title": "Annihilation: Conquest (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/17271/annihilation_conquest_2007_1",
+      "seriesId": 3061,
+      "seriesName": "Annihilation: Conquest (2007)",
+      "onSale": "2007-11-07T00:00:00+0000",
+      "mu": "2007-11-07T00:00:00+0000",
+      "digitalId": 7930,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/30/4e8381b35e231",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Raney",
+          "role": "penciler"
+        },
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17405,
+      "title": "Annihilation: Conquest (2007) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/17405/annihilation_conquest_2007_2",
+      "seriesId": 3061,
+      "seriesName": "Annihilation: Conquest (2007)",
+      "onSale": "2007-12-05T00:00:00+0000",
+      "mu": "2007-12-05T00:00:00+0000",
+      "digitalId": 7931,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/4e8384c84cd95",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Raney",
+          "role": "penciler"
+        },
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17257,
+      "title": "Nova (2007) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/17257/nova_2007_8",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2007-11-14T00:00:00+0000",
+      "mu": "2007-11-14T00:00:00+0000",
+      "digitalId": 8489,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/b0/578f7dcbaff2a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wellinton Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17391,
+      "title": "Nova (2007) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/17391/nova_2007_9",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2007-12-12T00:00:00+0000",
+      "mu": "2007-12-12T00:00:00+0000",
+      "digitalId": 8490,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/578f8521dba0d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Nelson Pereira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wellington Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Wellinton Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17634,
+      "title": "Nova (2007) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/17634/nova_2007_10",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2008-01-09T00:00:00+0000",
+      "mu": "2008-01-09T00:00:00+0000",
+      "digitalId": 11382,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/40/578f89d998505",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Nelson Pereira",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wellington Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wellinton Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20713,
+      "title": "Nova Annual (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/20713/nova_annual_2008_1",
+      "seriesId": 3848,
+      "seriesName": "Nova Annual (2008)",
+      "onSale": "2008-02-13T00:00:00+0000",
+      "mu": "2008-12-15T00:00:00+0000",
+      "digitalId": 11393,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/5c6324ba25a1f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Nic Klein",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17645,
+      "title": "Annihilation: Conquest (2007) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/17645/annihilation_conquest_2007_3",
+      "seriesId": 3061,
+      "seriesName": "Annihilation: Conquest (2007)",
+      "onSale": "2008-01-02T00:00:00+0000",
+      "mu": "2008-01-02T00:00:00+0000",
+      "digitalId": 10630,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/4e83867ba1c87",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Raney",
+          "role": "penciler"
+        },
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20686,
+      "title": "Annihilation: Conquest (2007) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/20686/annihilation_conquest_2007_4",
+      "seriesId": 3061,
+      "seriesName": "Annihilation: Conquest (2007)",
+      "onSale": "2008-02-06T00:00:00+0000",
+      "mu": "2008-02-06T00:00:00+0000",
+      "digitalId": 10631,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/b0/4e83879785c16",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Raney",
+          "role": "penciler"
+        },
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20885,
+      "title": "Annihilation: Conquest (2007) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/20885/annihilation_conquest_2007_5",
+      "seriesId": 3061,
+      "seriesName": "Annihilation: Conquest (2007)",
+      "onSale": "2008-03-12T00:00:00+0000",
+      "mu": "2008-03-12T00:00:00+0000",
+      "digitalId": 10633,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/90/4e8389572567c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Raney",
+          "role": "penciler"
+        },
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20873,
+      "title": "Nova (2007) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/20873/nova_2007_11",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2008-03-12T00:00:00+0000",
+      "mu": "2009-02-19T00:00:00+0000",
+      "digitalId": 11383,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/40/578f9152b9f07",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21007,
+      "title": "Nova (2007) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/21007/nova_2007_12",
+      "seriesId": 2504,
+      "seriesName": "Nova (2007 - 2010)",
+      "onSale": "2008-04-09T00:00:00+0000",
+      "mu": "2009-12-10T00:00:00+0000",
+      "digitalId": 11384,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/579120814b061",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Rick Magyar",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Maleev",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21016,
+      "title": "Annihilation: Conquest (2007) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/21016/annihilation_conquest_2007_6",
+      "seriesId": 3061,
+      "seriesName": "Annihilation: Conquest (2007)",
+      "onSale": "2008-04-16T00:00:00+0000",
+      "mu": "2008-04-16T00:00:00+0000",
+      "digitalId": 10635,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/50/4e81eebde62e0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Raney",
+          "role": "penciler"
+        },
+        {
+          "name": "Wellinton Alves",
+          "role": "penciler"
+        },
+        {
+          "name": "Aleksi Briclot",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Andy Lanning",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Abnett",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

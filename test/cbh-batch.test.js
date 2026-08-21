@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  PACKET_IDS,
+  FIRST_PACKET_IDS,
   assertCompleteOverlapReport,
   existingEntriesForPacket,
   manifestEntryForMapping,
@@ -16,6 +16,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = path.join(root, 'src', 'data');
 const mappingsDir = path.join(root, 'scripts', 'data', 'cbh-mappings');
 const overlapsDir = path.join(root, 'scripts', 'data', 'cbh-overlaps');
+const PACKET_IDS = FIRST_PACKET_IDS;
 
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, 'utf8'));
@@ -29,7 +30,7 @@ test('the approved Comic Book Herald packet stays exact through every generated 
   const manifest = await readJson(path.join(dataDir, 'curated-lists.json'));
   const catalog = await readJson(path.join(dataDir, 'catalog.json'));
   const inventory = await readJson(path.join(root, 'scripts', 'data', 'cbh-modern-inventory.json'));
-  assert.equal(existingEntriesForPacket(manifest.lists).length, 26);
+  assert.equal(existingEntriesForPacket(manifest.lists, PACKET_IDS).length, 36);
 
   for (const id of PACKET_IDS) {
     const mapping = await readJson(path.join(mappingsDir, `${id}.json`));

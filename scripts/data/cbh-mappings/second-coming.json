@@ -1,0 +1,902 @@
+{
+  "id": "second-coming",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-x-men-reading-order-guide-modern-marvel-comics-era/#xmen6",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 23,
+  "excludedSourceReferences": [
+    "The grouped Issues summary and every surrounding X-Men reading outside the explicit Reading Order"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 32475,
+      "title": "X-Men: Hope",
+      "issueTitle": "X-Men: Hope (2010) #1",
+      "seriesTitle": "X-Men: Hope",
+      "apiSeriesName": "X-Men: Hope (2010)",
+      "seriesId": 9344,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32475/x-men_hope_2010_1",
+      "onSaleDate": "2010-03-03T00:00:00+0000"
+    },
+    {
+      "id": 33554,
+      "title": "Second Coming: Prepare",
+      "issueTitle": "Second Coming: Prepare (2010) #1",
+      "seriesTitle": "Second Coming: Prepare",
+      "apiSeriesName": "Second Coming: Prepare (2010)",
+      "seriesId": 9851,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33554/second_coming_prepare_2010_1",
+      "onSaleDate": "2010-02-24T00:00:00+0000"
+    },
+    {
+      "id": 30274,
+      "title": "X-Men: Second Coming",
+      "issueTitle": "X-Men: Second Coming (2010) #1",
+      "seriesTitle": "X-Men: Second Coming",
+      "apiSeriesName": "X-Men: Second Coming (2010)",
+      "seriesId": 9359,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30274/x-men_second_coming_2010_1",
+      "onSaleDate": "2010-03-31T00:00:00+0000"
+    },
+    {
+      "id": 32564,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #523",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "523",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32564/uncanny_x-men_1963_523",
+      "onSaleDate": "2010-04-07T00:00:00+0000"
+    },
+    {
+      "id": 32552,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #12",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "12",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32552/new_mutants_2009_12",
+      "onSaleDate": "2010-04-14T00:00:00+0000"
+    },
+    {
+      "id": 32598,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #235",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "235",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32598/x-men_legacy_2008_235",
+      "onSaleDate": "2010-04-21T00:00:00+0000"
+    },
+    {
+      "id": 32583,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #26",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "26",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32583/x-force_2008_26",
+      "onSaleDate": "2010-04-28T00:00:00+0000"
+    },
+    {
+      "id": 32571,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #204",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "204",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32571/x-factor_2005_204",
+      "onSaleDate": "2010-04-21T00:00:00+0000"
+    },
+    {
+      "id": 30621,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #524",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "524",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30621/uncanny_x-men_1963_524",
+      "onSaleDate": "2010-05-05T00:00:00+0000"
+    },
+    {
+      "id": 32987,
+      "title": "X-Men: Hellbound",
+      "issueTitle": "X-Men: Hellbound (2010) #1",
+      "seriesTitle": "X-Men: Hellbound",
+      "apiSeriesName": "X-Men: Hellbound (2010)",
+      "seriesId": 9981,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32987/x-men_hellbound_2010_1",
+      "onSaleDate": "2010-05-05T00:00:00+0000"
+    },
+    {
+      "id": 30486,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #13",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "13",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30486/new_mutants_2009_13",
+      "onSaleDate": "2010-05-12T00:00:00+0000"
+    },
+    {
+      "id": 32984,
+      "title": "X-Men: Second Coming - Revelations: Blind Science",
+      "issueTitle": "X-Men: Second Coming - Revelations: Blind Science (2010) #1",
+      "seriesTitle": "X-Men: Second Coming - Revelations: Blind Science",
+      "apiSeriesName": "X-Men: Second Coming - Revelations: Blind Science (2010)",
+      "seriesId": 9808,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32984/x-men_second_coming_-_revelations_blind_science_2010_1",
+      "onSaleDate": "2010-05-26T00:00:00+0000"
+    },
+    {
+      "id": 30703,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #236",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "236",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30703/x-men_legacy_2008_236",
+      "onSaleDate": "2010-05-19T00:00:00+0000"
+    },
+    {
+      "id": 30673,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #27",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "27",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30673/x-force_2008_27",
+      "onSaleDate": "2010-05-26T00:00:00+0000"
+    },
+    {
+      "id": 30660,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #205",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "205",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30660/x-factor_2005_205",
+      "onSaleDate": "2010-05-19T00:00:00+0000"
+    },
+    {
+      "id": 30622,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #525",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "525",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30622/uncanny_x-men_1963_525",
+      "onSaleDate": "2010-06-09T00:00:00+0000"
+    },
+    {
+      "id": 30487,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #14",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "14",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30487/new_mutants_2009_14",
+      "onSaleDate": "2010-06-16T00:00:00+0000"
+    },
+    {
+      "id": 30704,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #237",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "237",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30704/x-men_legacy_2008_237",
+      "onSaleDate": "2010-06-23T00:00:00+0000"
+    },
+    {
+      "id": 30674,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #28",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "28",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30674/x-force_2008_28",
+      "onSaleDate": "2010-07-08T00:00:00+0000"
+    },
+    {
+      "id": 30661,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #206",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "206",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30661/x-factor_2005_206",
+      "onSaleDate": "2010-06-23T00:00:00+0000"
+    },
+    {
+      "id": 32988,
+      "title": "X-Men: Hellbound",
+      "issueTitle": "X-Men: Hellbound (2010) #2",
+      "seriesTitle": "X-Men: Hellbound",
+      "apiSeriesName": "X-Men: Hellbound (2010)",
+      "seriesId": 9981,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32988/x-men_hellbound_2010_2",
+      "onSaleDate": "2010-06-09T00:00:00+0000"
+    },
+    {
+      "id": 33166,
+      "title": "X-Men: Second Coming",
+      "issueTitle": "X-Men: Second Coming (2010) #2",
+      "seriesTitle": "X-Men: Second Coming",
+      "apiSeriesName": "X-Men: Second Coming (2010)",
+      "seriesId": 9359,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33166/x-men_second_coming_2010_2",
+      "onSaleDate": "2010-07-14T00:00:00+0000"
+    },
+    {
+      "id": 32991,
+      "title": "X-Men: Hellbound",
+      "issueTitle": "X-Men: Hellbound (2010) #3",
+      "seriesTitle": "X-Men: Hellbound",
+      "apiSeriesName": "X-Men: Hellbound (2010)",
+      "seriesId": 9981,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32991/x-men_hellbound_2010_3",
+      "onSaleDate": "2010-07-14T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "X-Men: Hope #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Hope",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9344,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32475"
+      ],
+      "selectedIssueId": 32475,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32475/x-men_hope_2010_1",
+      "resolvedIssueTitle": "X-Men: Hope (2010) #1",
+      "note": "Marvel series 9344 (X-Men: Hope (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32475
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "X-Men Second Coming: Prepare",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Second Coming: Prepare",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9851,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33554"
+      ],
+      "selectedIssueId": 33554,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33554/second_coming_prepare_2010_1",
+      "resolvedIssueTitle": "Second Coming: Prepare (2010) #1",
+      "note": "Marvel series 9851 (Second Coming: Prepare (2010)) is the reviewed metadata series for this source reference. The source adds an X-Men prefix that Marvel metadata omits.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33554
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Second Coming #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Second Coming",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9359,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30274"
+      ],
+      "selectedIssueId": 30274,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30274/x-men_second_coming_2010_1",
+      "resolvedIssueTitle": "X-Men: Second Coming (2010) #1",
+      "note": "Marvel series 9359 (X-Men: Second Coming (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30274
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Uncanny X-Men #523",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "523",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32564"
+      ],
+      "selectedIssueId": 32564,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32564/uncanny_x-men_1963_523",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #523",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32564
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "New Mutants #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "12",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32552"
+      ],
+      "selectedIssueId": 32552,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32552/new_mutants_2009_12",
+      "resolvedIssueTitle": "New Mutants (2009) #12",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32552
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Men Legacy #235",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "235",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32598"
+      ],
+      "selectedIssueId": 32598,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32598/x-men_legacy_2008_235",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #235",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32598
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "X-Force #26",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "26",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32583"
+      ],
+      "selectedIssueId": 32583,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32583/x-force_2008_26",
+      "resolvedIssueTitle": "X-Force (2008) #26",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32583
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "X-Factor #204",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "204",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32571"
+      ],
+      "selectedIssueId": 32571,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32571/x-factor_2005_204",
+      "resolvedIssueTitle": "X-Factor (2005) #204",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32571
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Uncanny X-Men #524",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "524",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30621"
+      ],
+      "selectedIssueId": 30621,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30621/uncanny_x-men_1963_524",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #524",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30621
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-Men: Hellbound #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Hellbound",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9981,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32987"
+      ],
+      "selectedIssueId": 32987,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32987/x-men_hellbound_2010_1",
+      "resolvedIssueTitle": "X-Men: Hellbound (2010) #1",
+      "note": "Marvel series 9981 (X-Men: Hellbound (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32987
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "New Mutants #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "13",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30486"
+      ],
+      "selectedIssueId": 30486,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30486/new_mutants_2009_13",
+      "resolvedIssueTitle": "New Mutants (2009) #13",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30486
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "X-Men: Blind Science #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Second Coming - Revelations: Blind Science",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9808,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32984"
+      ],
+      "selectedIssueId": 32984,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32984/x-men_second_coming_-_revelations_blind_science_2010_1",
+      "resolvedIssueTitle": "X-Men: Second Coming - Revelations: Blind Science (2010) #1",
+      "note": "Marvel series 9808 (X-Men: Second Coming - Revelations: Blind Science (2010)) is the reviewed metadata series for this source reference. The source shortens the one-shot title to X-Men: Blind Science.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32984
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "X-Men Legacy #236",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "236",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30703"
+      ],
+      "selectedIssueId": 30703,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30703/x-men_legacy_2008_236",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #236",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30703
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "X-Force #27",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "27",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30673"
+      ],
+      "selectedIssueId": 30673,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30673/x-force_2008_27",
+      "resolvedIssueTitle": "X-Force (2008) #27",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30673
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "X-Factor #205",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "205",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30660"
+      ],
+      "selectedIssueId": 30660,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30660/x-factor_2005_205",
+      "resolvedIssueTitle": "X-Factor (2005) #205",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30660
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Uncanny X-Men #525",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "525",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30622"
+      ],
+      "selectedIssueId": 30622,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30622/uncanny_x-men_1963_525",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #525",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30622
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "New Mutants #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "14",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30487"
+      ],
+      "selectedIssueId": 30487,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30487/new_mutants_2009_14",
+      "resolvedIssueTitle": "New Mutants (2009) #14",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30487
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "X-Men Legacy #237",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "237",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30704"
+      ],
+      "selectedIssueId": 30704,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30704/x-men_legacy_2008_237",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #237",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30704
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "X-Force #28",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "28",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30674"
+      ],
+      "selectedIssueId": 30674,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30674/x-force_2008_28",
+      "resolvedIssueTitle": "X-Force (2008) #28",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30674
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "X-Factor #206",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "206",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30661"
+      ],
+      "selectedIssueId": 30661,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30661/x-factor_2005_206",
+      "resolvedIssueTitle": "X-Factor (2005) #206",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30661
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "X-Men: Hellbound #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Hellbound",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 9981,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32988"
+      ],
+      "selectedIssueId": 32988,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32988/x-men_hellbound_2010_2",
+      "resolvedIssueTitle": "X-Men: Hellbound (2010) #2",
+      "note": "Marvel series 9981 (X-Men: Hellbound (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32988
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Second Coming #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Second Coming",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 9359,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33166"
+      ],
+      "selectedIssueId": 33166,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33166/x-men_second_coming_2010_2",
+      "resolvedIssueTitle": "X-Men: Second Coming (2010) #2",
+      "note": "Marvel series 9359 (X-Men: Second Coming (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33166
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "X-Men: Hellbound #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Hellbound",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 9981,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32991"
+      ],
+      "selectedIssueId": 32991,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32991/x-men_hellbound_2010_3",
+      "resolvedIssueTitle": "X-Men: Hellbound (2010) #3",
+      "note": "Marvel series 9981 (X-Men: Hellbound (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32991
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "second-coming",
+    "name": "X-Men: Second Coming",
+    "description": "Twenty-three chapters combining the main event with X-Force, X-Factor, New Mutants, Legacy, and Revelations.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "second-coming.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-x-men-reading-order-guide-modern-marvel-comics-era/#xmen6",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "second_coming.json",
+    "characters": [
+      "X-Men",
+      "Hope Summers",
+      "Cable",
+      "Cyclops",
+      "X-Force"
+    ],
+    "keywords": [
+      "Second Coming",
+      "Hope Summers",
+      "X-Men",
+      "Messiah"
+    ],
+    "expect": 23,
+    "timeline": 2010,
+    "coverIssueId": 30274,
+    "coverSourcePosition": 3,
+    "coverSourceReference": "Second Coming #1"
+  }
+}

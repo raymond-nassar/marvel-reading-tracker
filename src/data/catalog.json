@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T12:53:39.491Z",
+  "generatedAt": "2026-08-21T16:26:50.413Z",
   "lists": [
     {
       "id": "hickman-minimal",
@@ -257,6 +257,41 @@
       "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
       "sourceLicense": null,
       "updatedAt": "2026-08-08T03:24:47.183Z"
+    },
+    {
+      "id": "planet-hulk",
+      "file": "planet_hulk.json",
+      "name": "Planet Hulk",
+      "description": "Fifteen chapters taking Hulk from his arrival on Sakaar through the complete Planet Hulk storyline.",
+      "type": "event",
+      "depth": "complete",
+      "count": 15,
+      "collections": 0,
+      "characters": [
+        "Hulk",
+        "Caiera",
+        "Korg",
+        "Miek"
+      ],
+      "keywords": [
+        "Planet Hulk",
+        "Sakaar",
+        "Warbound"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2006,
+      "coverIssueId": 3530,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/b0/4f6a2316f20a4",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-between-house-of-m-civil-war/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.169Z"
     },
     {
       "id": "civil-war",
@@ -914,6 +949,43 @@
       "updatedAt": "2026-08-17T04:10:56.795Z"
     },
     {
+      "id": "maximum-security",
+      "file": "maximum_security.json",
+      "name": "Maximum Security",
+      "description": "Twenty-eight issues following the 2000 cosmic invasion from Dangerous Planet through the three-part event and its tie-ins.",
+      "type": "event",
+      "depth": "complete",
+      "count": 28,
+      "collections": 0,
+      "characters": [
+        "Avengers",
+        "X-Men",
+        "Iron Man",
+        "Thor",
+        "Black Panther"
+      ],
+      "keywords": [
+        "Maximum Security",
+        "cosmic",
+        "Avengers",
+        "X-Men"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2000,
+      "coverIssueId": 10284,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/664cec887a07e",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/maximum-security/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.157Z"
+    },
+    {
       "id": "avengers-disassembled",
       "file": "avengers_disassembled.json",
       "name": "Avengers Disassembled",
@@ -1039,6 +1111,188 @@
       "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
       "sourceLicense": null,
       "updatedAt": "2026-08-17T04:10:56.798Z"
+    },
+    {
+      "id": "war-of-kings",
+      "file": "war_of_kings.json",
+      "name": "War of Kings",
+      "description": "Thirty-two chapters interleaving the six-part Kree and Shi'ar war with Nova, Guardians of the Galaxy, Darkhawk, and Ascension.",
+      "type": "event",
+      "depth": "complete",
+      "count": 32,
+      "collections": 0,
+      "characters": [
+        "Black Bolt",
+        "Vulcan",
+        "Nova",
+        "Guardians of the Galaxy",
+        "Darkhawk"
+      ],
+      "keywords": [
+        "War of Kings",
+        "Kree",
+        "Shi'ar",
+        "Inhumans"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2009,
+      "coverIssueId": 23814,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/59359ef0c8f10",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/marvel-cosmic-reading-order/war-of-kings/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.182Z"
+    },
+    {
+      "id": "messiah-war",
+      "file": "messiah_war.json",
+      "name": "X-Men: Messiah War",
+      "description": "Ten chapters following Cable, Hope, and X-Force through the future-set Messiah War crossover.",
+      "type": "event",
+      "depth": "complete",
+      "count": 10,
+      "collections": 0,
+      "characters": [
+        "Cable",
+        "Hope Summers",
+        "X-Force",
+        "Bishop"
+      ],
+      "keywords": [
+        "Messiah War",
+        "Cable",
+        "Hope Summers",
+        "X-Force"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2009,
+      "coverIssueId": 27620,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/52c5d057533be",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/cable-reading-order/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.184Z"
+    },
+    {
+      "id": "necrosha",
+      "file": "necrosha.json",
+      "name": "X-Men: Necrosha",
+      "description": "Fourteen alternating chapters from The Gathering through X-Force, New Mutants, and X-Men Legacy.",
+      "type": "event",
+      "depth": "complete",
+      "count": 14,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "X-Force",
+        "Selene",
+        "Warpath"
+      ],
+      "keywords": [
+        "Necrosha",
+        "Selene",
+        "X-Force",
+        "New Mutants"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2009,
+      "coverIssueId": 28103,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/57680fa66ae27",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-x-men-reading-order-guide-modern-marvel-comics-era/#xmen5",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.185Z"
+    },
+    {
+      "id": "second-coming",
+      "file": "second_coming.json",
+      "name": "X-Men: Second Coming",
+      "description": "Twenty-three chapters combining the main event with X-Force, X-Factor, New Mutants, Legacy, and Revelations.",
+      "type": "event",
+      "depth": "complete",
+      "count": 23,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Hope Summers",
+        "Cable",
+        "Cyclops",
+        "X-Force"
+      ],
+      "keywords": [
+        "Second Coming",
+        "Hope Summers",
+        "X-Men",
+        "Messiah"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2010,
+      "coverIssueId": 30274,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/513a6ca9481a8",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-x-men-reading-order-guide-modern-marvel-comics-era/#xmen6",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.187Z"
+    },
+    {
+      "id": "thanos-imperative",
+      "file": "thanos_imperative.json",
+      "name": "The Thanos Imperative",
+      "description": "The eight-part cosmic finale from Ignition through the six-issue event and Devastation.",
+      "type": "event",
+      "depth": "complete",
+      "count": 8,
+      "collections": 0,
+      "characters": [
+        "Thanos",
+        "Nova",
+        "Star-Lord",
+        "Guardians of the Galaxy"
+      ],
+      "keywords": [
+        "Thanos Imperative",
+        "Cancerverse",
+        "Nova",
+        "Star-Lord"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2010,
+      "coverIssueId": 32983,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/51f6a0aba4608",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/marvel-cosmic-reading-order/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.189Z"
     },
     {
       "id": "heroic-age-avengers",
@@ -1241,6 +1495,114 @@
       "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
       "sourceLicense": null,
       "updatedAt": "2026-08-21T09:58:39.862Z"
+    },
+    {
+      "id": "silent-war",
+      "file": "silent_war.json",
+      "name": "Silent War",
+      "description": "The six-issue conflict between the Inhumans and the United States after Son of M.",
+      "type": "event",
+      "depth": "complete",
+      "count": 6,
+      "collections": 0,
+      "characters": [
+        "Black Bolt",
+        "Medusa",
+        "Quicksilver",
+        "Inhumans"
+      ],
+      "keywords": [
+        "Silent War",
+        "Inhumans",
+        "Terrigen"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2007,
+      "coverIssueId": 5861,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/03/5351924a683f7",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-civil-war-to-secret-invasion/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.172Z"
+    },
+    {
+      "id": "annihilation-conquest",
+      "file": "annihilation_conquest.json",
+      "name": "Annihilation: Conquest",
+      "description": "Twenty-nine chapters combining the prologue, lead-in mini-series, Nova, and the six-part cosmic event.",
+      "type": "event",
+      "depth": "complete",
+      "count": 29,
+      "collections": 0,
+      "characters": [
+        "Star-Lord",
+        "Nova",
+        "Quasar",
+        "Wraith",
+        "Ultron"
+      ],
+      "keywords": [
+        "Annihilation Conquest",
+        "Phalanx",
+        "Nova",
+        "Star-Lord"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2007,
+      "coverIssueId": 15891,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/513a75867ca5d",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/marvel-cosmic-reading-order/annihilation-conquest/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.175Z"
+    },
+    {
+      "id": "messiah-complex",
+      "file": "messiah_complex.json",
+      "name": "X-Men: Messiah Complex",
+      "description": "Thirteen alternating chapters following the race to find the first mutant born after M-Day.",
+      "type": "event",
+      "depth": "complete",
+      "count": 13,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Cable",
+        "Hope Summers",
+        "Cyclops"
+      ],
+      "keywords": [
+        "Messiah Complex",
+        "Hope Summers",
+        "Cable",
+        "X-Men"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2007,
+      "coverIssueId": 16600,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/513a8972c747e",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/herald-guided-tour-x-men-messiah-complex/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-21T15:16:57.177Z"
     },
     {
       "id": "world-war-hulk-aftersmash",

@@ -1,0 +1,756 @@
+{
+  "id": "second-coming",
+  "name": "X-Men: Second Coming",
+  "description": "Twenty-three chapters combining the main event with X-Force, X-Factor, New Mutants, Legacy, and Revelations.",
+  "source": "https://www.comicbookherald.com/the-complete-x-men-reading-order-guide-modern-marvel-comics-era/#xmen6",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.187Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 23,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 32475,
+      "title": "X-Men: Hope (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/32475/x-men_hope_2010_1",
+      "seriesId": 9344,
+      "seriesName": "X-Men: Hope (2010)",
+      "onSale": "2010-03-03T00:00:00+0000",
+      "mu": "2010-08-25T00:00:00+0000",
+      "digitalId": 13998,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/60/5966439e35b9c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Steve Dillon",
+          "role": "cover artist"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33554,
+      "title": "Second Coming: Prepare (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/33554/second_coming_prepare_2010_1",
+      "seriesId": 9851,
+      "seriesName": "Second Coming: Prepare (2010)",
+      "onSale": "2010-02-24T00:00:00+0000",
+      "mu": "2018-06-18T00:00:00+0000",
+      "digitalId": 14072,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/5b22f0a399d75",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Michel Lacombe",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Acuna",
+          "role": "penciler"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeph York",
+          "role": "writer"
+        },
+        {
+          "name": "John Rhett Thomas",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30274,
+      "title": "X-Men: Second Coming (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/30274/x-men_second_coming_2010_1",
+      "seriesId": 9359,
+      "seriesName": "X-Men: Second Coming (2010)",
+      "onSale": "2010-03-31T00:00:00+0000",
+      "mu": "2010-12-28T00:00:00+0000",
+      "digitalId": 14225,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/513a6ca9481a8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32564,
+      "title": "Uncanny X-Men (1963) #523",
+      "number": "523",
+      "url": "https://www.marvel.com/comics/issue/32564/uncanny_x-men_1963_523",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2010-04-07T00:00:00+0000",
+      "mu": "2010-12-29T00:00:00+0000",
+      "digitalId": 14265,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/513a7978b26f8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Perkins",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32552,
+      "title": "New Mutants (2009) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/32552/new_mutants_2009_12",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2010-04-14T00:00:00+0000",
+      "mu": "2010-12-28T00:00:00+0000",
+      "digitalId": 14285,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/513a7c0c95ef2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ibraim Roberson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32598,
+      "title": "X-Men Legacy (2008) #235",
+      "number": "235",
+      "url": "https://www.marvel.com/comics/issue/32598/x-men_legacy_2008_235",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2010-04-21T00:00:00+0000",
+      "mu": "2010-12-28T00:00:00+0000",
+      "digitalId": 14364,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/51a4e1962afed",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32583,
+      "title": "X-Force (2008) #26",
+      "number": "26",
+      "url": "https://www.marvel.com/comics/issue/32583/x-force_2008_26",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2010-04-28T00:00:00+0000",
+      "mu": "2010-12-27T00:00:00+0000",
+      "digitalId": 14439,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/90/513a7fb1b065a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32571,
+      "title": "X-Factor (2005) #204",
+      "number": "204",
+      "url": "https://www.marvel.com/comics/issue/32571/x-factor_2005_204",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2010-04-21T00:00:00+0000",
+      "mu": "2010-04-21T00:00:00+0000",
+      "digitalId": 14365,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/10/595cfcce2a0bd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pat Davidson",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Valentine De Landro",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30621,
+      "title": "Uncanny X-Men (1963) #524",
+      "number": "524",
+      "url": "https://www.marvel.com/comics/issue/30621/uncanny_x-men_1963_524",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2010-05-05T00:00:00+0000",
+      "mu": "2011-01-26T00:00:00+0000",
+      "digitalId": 14490,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/513f531a53d38",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32987,
+      "title": "X-Men: Hellbound (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/32987/x-men_hellbound_2010_1",
+      "seriesId": 9981,
+      "seriesName": "X-Men: Hellbound (2010)",
+      "onSale": "2010-05-05T00:00:00+0000",
+      "mu": "2011-02-02T00:00:00+0000",
+      "digitalId": 14494,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/40/58c802213a3f9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Harvey Tolibao",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30486,
+      "title": "New Mutants (2009) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/30486/new_mutants_2009_13",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2010-05-12T00:00:00+0000",
+      "mu": "2011-08-16T14:02:30+0000",
+      "digitalId": 14581,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/40/513a7c5897288",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Ibraim Roberson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32984,
+      "title": "X-Men: Second Coming - Revelations: Blind Science (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/32984/x-men_second_coming_-_revelations_blind_science_2010_1",
+      "seriesId": 9808,
+      "seriesName": "X-Men: Second Coming - Revelations: Blind Science (2010)",
+      "onSale": "2010-05-26T00:00:00+0000",
+      "mu": "2011-01-27T00:00:00+0000",
+      "digitalId": 14738,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/57ae27b943372",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Gerald Parel",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Davidson",
+          "role": "penciler"
+        },
+        {
+          "name": "Simon Spurrier",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30703,
+      "title": "X-Men Legacy (2008) #236",
+      "number": "236",
+      "url": "https://www.marvel.com/comics/issue/30703/x-men_legacy_2008_236",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2010-05-19T00:00:00+0000",
+      "mu": "2011-01-12T00:00:00+0000",
+      "digitalId": 14637,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/51a4e3470585f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30673,
+      "title": "X-Force (2008) #27",
+      "number": "27",
+      "url": "https://www.marvel.com/comics/issue/30673/x-force_2008_27",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2010-05-26T00:00:00+0000",
+      "mu": "2011-01-12T00:00:00+0000",
+      "digitalId": 14751,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/513a7fc0379fe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Sonia Oback",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30660,
+      "title": "X-Factor (2005) #205",
+      "number": "205",
+      "url": "https://www.marvel.com/comics/issue/30660/x-factor_2005_205",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2010-05-19T00:00:00+0000",
+      "mu": "2011-08-16T13:57:10+0000",
+      "digitalId": 14652,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/595d04486eddb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pat Davidson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Valentine De Landro",
+          "role": "penciler"
+        },
+        {
+          "name": "Valentine Delandro",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30622,
+      "title": "Uncanny X-Men (1963) #525",
+      "number": "525",
+      "url": "https://www.marvel.com/comics/issue/30622/uncanny_x-men_1963_525",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2010-06-09T00:00:00+0000",
+      "mu": "2011-02-02T00:00:00+0000",
+      "digitalId": 14902,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/03/513a787314f79",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30487,
+      "title": "New Mutants (2009) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/30487/new_mutants_2009_14",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2010-06-16T00:00:00+0000",
+      "mu": "2011-02-02T00:00:00+0000",
+      "digitalId": 14949,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/b0/513a7ccc0a375",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ibraim Roberson",
+          "role": "penciler"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30704,
+      "title": "X-Men Legacy (2008) #237",
+      "number": "237",
+      "url": "https://www.marvel.com/comics/issue/30704/x-men_legacy_2008_237",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2010-06-23T00:00:00+0000",
+      "mu": "2011-03-09T00:00:00+0000",
+      "digitalId": 15019,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/4c1b7963bc901",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30674,
+      "title": "X-Force (2008) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/30674/x-force_2008_28",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2010-07-08T00:00:00+0000",
+      "mu": "2011-04-20T00:00:00+0000",
+      "digitalId": 15146,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/513a7fcf6b198",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30661,
+      "title": "X-Factor (2005) #206",
+      "number": "206",
+      "url": "https://www.marvel.com/comics/issue/30661/x-factor_2005_206",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2010-06-23T00:00:00+0000",
+      "mu": "2011-02-02T00:00:00+0000",
+      "digitalId": 15018,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/595d0ab8aa349",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pat Davidson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Valentine De Landro",
+          "role": "penciler"
+        },
+        {
+          "name": "Valentine Delandro",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32988,
+      "title": "X-Men: Hellbound (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/32988/x-men_hellbound_2010_2",
+      "seriesId": 9981,
+      "seriesName": "X-Men: Hellbound (2010)",
+      "onSale": "2010-06-09T00:00:00+0000",
+      "mu": "2011-03-09T00:00:00+0000",
+      "digitalId": 14903,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/58c80ad79e7fa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Harvey Tolibao",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Tom Raney",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 33166,
+      "title": "X-Men: Second Coming (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/33166/x-men_second_coming_2010_2",
+      "seriesId": 9359,
+      "seriesName": "X-Men: Second Coming (2010)",
+      "onSale": "2010-07-14T00:00:00+0000",
+      "mu": "2011-06-15T00:00:00+0000",
+      "digitalId": 15215,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/10/4c35eaa5efd60",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": []
+    },
+    {
+      "issueId": 32991,
+      "title": "X-Men: Hellbound (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/32991/x-men_hellbound_2010_3",
+      "seriesId": 9981,
+      "seriesName": "X-Men: Hellbound (2010)",
+      "onSale": "2010-07-14T00:00:00+0000",
+      "mu": "2011-04-06T00:00:00+0000",
+      "digitalId": 15222,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/58c80d6c4a96a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Harvey Tolibao",
+          "role": "penciler"
+        },
+        {
+          "name": "Tom Raney",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

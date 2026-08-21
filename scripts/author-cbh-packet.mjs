@@ -12,7 +12,7 @@ const OVERLAPS_DIR = path.join(ROOT, 'scripts', 'data', 'cbh-overlaps');
 const ORDERS_DIR = path.join(ROOT, 'src', 'data', 'orders');
 const MANIFEST_PATH = path.join(ROOT, 'src', 'data', 'curated-lists.json');
 
-export const PACKET_IDS = Object.freeze([
+export const FIRST_PACKET_IDS = Object.freeze([
   'secret-war',
   'spider-man-the-other',
   'world-war-hulk-aftersmash',
@@ -24,6 +24,58 @@ export const PACKET_IDS = Object.freeze([
   'clone-conspiracy',
   'inhumans-vs-x-men',
 ]);
+
+export const APPROVED_SELECTION_IDS = Object.freeze([
+  'maximum-security',
+  'decimation',
+  'planet-hulk',
+  'annihilation-conquest',
+  'war-of-kings',
+  'realm-of-kings',
+  'thanos-imperative',
+  'silent-war',
+  'messiah-complex',
+  'world-war-hulk',
+]);
+
+export const BLOCKED_SELECTION_IDS = Object.freeze([
+  'decimation',
+  'realm-of-kings',
+  'world-war-hulk',
+]);
+
+export const SUBSTITUTION_IDS = Object.freeze([
+  'messiah-war',
+  'necrosha',
+  'second-coming',
+]);
+
+// Catalog order follows each guide's verified first on-sale date, not the intake queue.
+export const PACKET_IDS = Object.freeze([
+  'maximum-security',
+  'planet-hulk',
+  'silent-war',
+  'annihilation-conquest',
+  'messiah-complex',
+  'war-of-kings',
+  'messiah-war',
+  'necrosha',
+  'second-coming',
+  'thanos-imperative',
+]);
+
+const INSERT_BEFORE = Object.freeze({
+  'maximum-security': 'avengers-disassembled',
+  'planet-hulk': 'civil-war',
+  'silent-war': 'world-war-hulk-aftersmash',
+  'annihilation-conquest': 'world-war-hulk-aftersmash',
+  'messiah-complex': 'world-war-hulk-aftersmash',
+  'war-of-kings': 'heroic-age-avengers',
+  'messiah-war': 'heroic-age-avengers',
+  necrosha: 'heroic-age-avengers',
+  'second-coming': 'heroic-age-avengers',
+  'thanos-imperative': 'heroic-age-avengers',
+});
 
 const MANIFEST_FIELDS = new Set([
   'id',
@@ -95,7 +147,7 @@ export function buildMarkdown(mapping) {
   const manifest = manifestEntryForMapping(mapping);
   selectedIssueIds(mapping);
   const trail = [
-    `Generated for this project by scripts/author-cbh-packet.mjs from the independently reviewed ${mapping.id} issue mapping.`,
+    `Generated for this project by scripts/author-cbh-packet.mjs from the reviewed and frozen ${mapping.id} issue mapping.`,
     `The mapping transcribes only issue-bearing references from Comic Book Herald's exact guide, expands its ranges, and preserves its source order.`,
     'No source commentary or images are copied. Issue identities, titles, and exact links come from Marvel metadata after the packet resolution and overlap gates passed.',
     'See [the data provenance record](../../../docs/DATA_PROVENANCE.md) for the permission boundary and review method.',
@@ -147,9 +199,20 @@ export function assertCompleteOverlapReport(report, {
   }
 }
 
-export function existingEntriesForPacket(lists) {
-  const packetIds = new Set(PACKET_IDS);
-  return (Array.isArray(lists) ? lists : []).filter((entry) => !packetIds.has(entry.id));
+export function existingEntriesForPacket(lists, packetIds = PACKET_IDS) {
+  const packetIdsSet = new Set(packetIds);
+  return (Array.isArray(lists) ? lists : []).filter((entry) => !packetIdsSet.has(entry.id));
+}
+
+export function mergePacketEntries(existing, entries) {
+  const merged = [...existing];
+  for (const entry of entries) {
+    const anchorId = INSERT_BEFORE[entry.id];
+    const anchor = merged.findIndex((candidate) => candidate.id === anchorId);
+    assert(anchor >= 0, `${entry.id} catalog chronology anchor ${anchorId} is missing`);
+    merged.splice(anchor, 0, entry);
+  }
+  return merged;
 }
 
 export async function authorPacket() {
@@ -196,7 +259,7 @@ export async function authorPacket() {
     assert(!existingSources.has(entry.sourceFile), `${entry.id} duplicates a shipped source file`);
   }
 
-  const nextManifest = { ...current, lists: [...existing, ...entries] };
+  const nextManifest = { ...current, lists: mergePacketEntries(existing, entries) };
   const parsed = parseManifest(nextManifest);
   assert(parsed.errors.length === 0, `Authored manifest is invalid:\n${parsed.errors.join('\n')}`);
   assert(parsed.entries.length === existing.length + PACKET_IDS.length, 'Authored manifest lost an order');

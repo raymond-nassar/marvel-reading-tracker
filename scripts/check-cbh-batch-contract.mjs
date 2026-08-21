@@ -24,10 +24,12 @@ async function main() {
 
   const items = [];
   const expectedById = new Map();
+  let expectedTotal = 0;
   for (const entry of entries) {
     const payload = JSON.parse(await readFile(path.join(ROOT, 'src', 'data', entry.out), 'utf8'));
     const mapping = JSON.parse(await readFile(path.join(ROOT, 'scripts', 'data', 'cbh-mappings', `${entry.id}.json`), 'utf8'));
     const mappedIds = mapping.rows.map((row) => String(row.selectedIssueId));
+    expectedTotal += mappedIds.length;
     const payloadIds = payload.items.map((item) => String(item.issueId));
     if (mappedIds.join('|') !== payloadIds.join('|')) {
       throw new Error(`${entry.id} generated sequence differs from its approved mapping`);
@@ -40,8 +42,8 @@ async function main() {
     }
     items.push(...payload.items);
   }
-  if (items.length !== 238 || new Set(items.map((item) => item.issueId)).size !== 238) {
-    throw new Error(`Expected 238 distinct packet issues, found ${items.length}`);
+  if (items.length !== expectedTotal || new Set(items.map((item) => item.issueId)).size !== expectedTotal) {
+    throw new Error(`Expected ${expectedTotal} distinct packet issues, found ${items.length}`);
   }
 
   const { getJson } = createJsonFetcher();

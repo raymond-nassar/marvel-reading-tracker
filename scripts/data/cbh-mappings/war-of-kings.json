@@ -1,0 +1,1235 @@
+{
+  "id": "war-of-kings",
+  "inventoryId": "marvel-cosmic",
+  "sourceUrl": "https://www.comicbookherald.com/marvel-cosmic-reading-order/war-of-kings/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 32,
+  "excludedSourceReferences": [
+    "Trade and background-reading blocks above the explicit War of Kings Reading List"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 27075,
+      "title": "War of Kings: Warriors",
+      "issueTitle": "War of Kings: Warriors (2009) #1",
+      "seriesTitle": "War of Kings: Warriors",
+      "apiSeriesName": "War of Kings: Warriors (2009)",
+      "seriesId": 8595,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27075/war_of_kings_warriors_2009_1",
+      "onSaleDate": "2009-07-08T00:00:00+0000"
+    },
+    {
+      "id": 27614,
+      "title": "War of Kings: Warriors",
+      "issueTitle": "War of Kings: Warriors (2009) #2",
+      "seriesTitle": "War of Kings: Warriors",
+      "apiSeriesName": "War of Kings: Warriors (2009)",
+      "seriesId": 8595,
+      "issueNumber": "2",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27614/war_of_kings_warriors_2009_2",
+      "onSaleDate": "2009-08-05T00:00:00+0000"
+    },
+    {
+      "id": 23649,
+      "title": "War of Kings: Darkhawk",
+      "issueTitle": "War of Kings: Darkhawk (2009) #1",
+      "seriesTitle": "War of Kings: Darkhawk",
+      "apiSeriesName": "War of Kings: Darkhawk (2009)",
+      "seriesId": 6797,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23649/war_of_kings_darkhawk_2009_1",
+      "onSaleDate": "2009-02-04T00:00:00+0000"
+    },
+    {
+      "id": 23766,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #23",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "23",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23766/nova_2007_23",
+      "onSaleDate": "2009-03-25T00:00:00+0000"
+    },
+    {
+      "id": 23813,
+      "title": "War of Kings: Darkhawk",
+      "issueTitle": "War of Kings: Darkhawk (2009) #2",
+      "seriesTitle": "War of Kings: Darkhawk",
+      "apiSeriesName": "War of Kings: Darkhawk (2009)",
+      "seriesId": 6797,
+      "issueNumber": "2",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23813/war_of_kings_darkhawk_2009_2",
+      "onSaleDate": "2009-03-25T00:00:00+0000"
+    },
+    {
+      "id": 23814,
+      "title": "War of Kings",
+      "issueTitle": "War of Kings (2009) #1",
+      "seriesTitle": "War of Kings",
+      "apiSeriesName": "War of Kings (2009)",
+      "seriesId": 6972,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23814/war_of_kings_2009_1",
+      "onSaleDate": "2009-03-04T00:00:00+0000"
+    },
+    {
+      "id": 23966,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #24",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "24",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23966/nova_2007_24",
+      "onSaleDate": "2009-04-29T00:00:00+0000"
+    },
+    {
+      "id": 24006,
+      "title": "War of Kings",
+      "issueTitle": "War of Kings (2009) #2",
+      "seriesTitle": "War of Kings",
+      "apiSeriesName": "War of Kings (2009)",
+      "seriesId": 6972,
+      "issueNumber": "2",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24006/war_of_kings_2009_2",
+      "onSaleDate": "2009-04-01T00:00:00+0000"
+    },
+    {
+      "id": 23986,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #13",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "13",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23986/guardians_of_the_galaxy_2008_13",
+      "onSaleDate": "2009-04-22T00:00:00+0000"
+    },
+    {
+      "id": 24188,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #14",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "14",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24188/guardians_of_the_galaxy_2008_14",
+      "onSaleDate": "2009-05-28T00:00:00+0000"
+    },
+    {
+      "id": 24165,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #25",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "25",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24165/nova_2007_25",
+      "onSaleDate": "2009-05-28T00:00:00+0000"
+    },
+    {
+      "id": 24212,
+      "title": "War of Kings",
+      "issueTitle": "War of Kings (2009) #3",
+      "seriesTitle": "War of Kings",
+      "apiSeriesName": "War of Kings (2009)",
+      "seriesId": 6972,
+      "issueNumber": "3",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24212/war_of_kings_2009_3",
+      "onSaleDate": "2009-05-06T00:00:00+0000"
+    },
+    {
+      "id": 25303,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #15",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "15",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/25303/guardians_of_the_galaxy_2008_15",
+      "onSaleDate": "2009-06-24T00:00:00+0000"
+    },
+    {
+      "id": 26245,
+      "title": "WAR OF KINGS: SAVAGE WORLD OF SKAAR 1",
+      "issueTitle": "WAR OF KINGS: SAVAGE WORLD OF SKAAR 1 (2009) #1",
+      "seriesTitle": "WAR OF KINGS: SAVAGE WORLD OF SKAAR 1",
+      "apiSeriesName": "WAR OF KINGS: SAVAGE WORLD OF SKAAR 1 (2009)",
+      "seriesId": 8238,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26245/war_of_kings_savage_world_of_skaar_1_2009_1",
+      "onSaleDate": "2009-06-10T00:00:00+0000"
+    },
+    {
+      "id": 23914,
+      "title": "War of Kings: Ascension",
+      "issueTitle": "War of Kings: Ascension (2009) #1",
+      "seriesTitle": "War of Kings: Ascension",
+      "apiSeriesName": "War of Kings: Ascension (2009)",
+      "seriesId": 7081,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23914/war_of_kings_ascension_2009_1",
+      "onSaleDate": "2009-04-08T00:00:00+0000"
+    },
+    {
+      "id": 24267,
+      "title": "War of Kings: Ascension",
+      "issueTitle": "War of Kings: Ascension (2009) #2",
+      "seriesTitle": "War of Kings: Ascension",
+      "apiSeriesName": "War of Kings: Ascension (2009)",
+      "seriesId": 7081,
+      "issueNumber": "2",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24267/war_of_kings_ascension_2009_2",
+      "onSaleDate": "2009-05-13T00:00:00+0000"
+    },
+    {
+      "id": 26091,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #26",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "26",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26091/nova_2007_26",
+      "onSaleDate": "2009-06-24T00:00:00+0000"
+    },
+    {
+      "id": 27059,
+      "title": "War of Kings",
+      "issueTitle": "War of Kings (2009) #4",
+      "seriesTitle": "War of Kings",
+      "apiSeriesName": "War of Kings (2009)",
+      "seriesId": 6972,
+      "issueNumber": "4",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27059/war_of_kings_2009_4",
+      "onSaleDate": "2009-06-03T00:00:00+0000"
+    },
+    {
+      "id": 27070,
+      "title": "War of Kings: Ascension",
+      "issueTitle": "War of Kings: Ascension (2009) #3",
+      "seriesTitle": "War of Kings: Ascension",
+      "apiSeriesName": "War of Kings: Ascension (2009)",
+      "seriesId": 7081,
+      "issueNumber": "3",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27070/war_of_kings_ascension_2009_3",
+      "onSaleDate": "2009-06-17T00:00:00+0000"
+    },
+    {
+      "id": 26092,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #27",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "27",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26092/nova_2007_27",
+      "onSaleDate": "2009-07-22T00:00:00+0000"
+    },
+    {
+      "id": 27061,
+      "title": "War of Kings",
+      "issueTitle": "War of Kings (2009) #5",
+      "seriesTitle": "War of Kings",
+      "apiSeriesName": "War of Kings (2009)",
+      "seriesId": 6972,
+      "issueNumber": "5",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27061/war_of_kings_2009_5",
+      "onSaleDate": "2009-07-01T00:00:00+0000"
+    },
+    {
+      "id": 27071,
+      "title": "War of Kings: Ascension",
+      "issueTitle": "War of Kings: Ascension (2009) #4",
+      "seriesTitle": "War of Kings: Ascension",
+      "apiSeriesName": "War of Kings: Ascension (2009)",
+      "seriesId": 7081,
+      "issueNumber": "4",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27071/war_of_kings_ascension_2009_4",
+      "onSaleDate": "2009-07-29T00:00:00+0000"
+    },
+    {
+      "id": 25304,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #16",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "16",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/25304/guardians_of_the_galaxy_2008_16",
+      "onSaleDate": "2009-07-22T00:00:00+0000"
+    },
+    {
+      "id": 27063,
+      "title": "War of Kings",
+      "issueTitle": "War of Kings (2009) #6",
+      "seriesTitle": "War of Kings",
+      "apiSeriesName": "War of Kings (2009)",
+      "seriesId": 6972,
+      "issueNumber": "6",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27063/war_of_kings_2009_6",
+      "onSaleDate": "2009-08-05T00:00:00+0000"
+    },
+    {
+      "id": 25305,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #17",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "17",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/25305/guardians_of_the_galaxy_2008_17",
+      "onSaleDate": "2009-08-26T00:00:00+0000"
+    },
+    {
+      "id": 26093,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #28",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "28",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26093/nova_2007_28",
+      "onSaleDate": "2009-08-26T00:00:00+0000"
+    },
+    {
+      "id": 28101,
+      "title": "War of Kings: Who Will Rule? One-Shot",
+      "issueTitle": "War of Kings: Who Will Rule? One-Shot (2009) #1",
+      "seriesTitle": "War of Kings: Who Will Rule? One-Shot",
+      "apiSeriesName": "War of Kings: Who Will Rule? One-Shot (2009)",
+      "seriesId": 9033,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/28101/war_of_kings_who_will_rule_one-shot_2009_1",
+      "onSaleDate": "2009-09-10T00:00:00+0000"
+    },
+    {
+      "id": 25306,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #18",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "18",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/25306/guardians_of_the_galaxy_2008_18",
+      "onSaleDate": "2009-09-23T00:00:00+0000"
+    },
+    {
+      "id": 25307,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2008) #19",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2008 - 2010)",
+      "seriesId": 4885,
+      "issueNumber": "19",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/25307/guardians_of_the_galaxy_2008_19",
+      "onSaleDate": "2009-10-28T00:00:00+0000"
+    },
+    {
+      "id": 26094,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #29",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "29",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26094/nova_2007_29",
+      "onSaleDate": "2009-09-23T00:00:00+0000"
+    },
+    {
+      "id": 26095,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #30",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "30",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26095/nova_2007_30",
+      "onSaleDate": "2009-10-28T00:00:00+0000"
+    },
+    {
+      "id": 26096,
+      "title": "Nova",
+      "issueTitle": "Nova (2007) #31",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2007 - 2010)",
+      "seriesId": 2504,
+      "issueNumber": "31",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26096/nova_2007_31",
+      "onSaleDate": "2009-11-04T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "War of Kings: Warriors #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Warriors",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 8595,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27075"
+      ],
+      "selectedIssueId": 27075,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27075/war_of_kings_warriors_2009_1",
+      "resolvedIssueTitle": "War of Kings: Warriors (2009) #1",
+      "note": "Marvel series 8595 (War of Kings: Warriors (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27075
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "War of Kings: Warriors #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Warriors",
+      "seriesYear": 2009,
+      "issueNumber": "2",
+      "seriesId": 8595,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27614"
+      ],
+      "selectedIssueId": 27614,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27614/war_of_kings_warriors_2009_2",
+      "resolvedIssueTitle": "War of Kings: Warriors (2009) #2",
+      "note": "Marvel series 8595 (War of Kings: Warriors (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27614
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "War of Kings: Darkhawk #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Darkhawk",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 6797,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23649"
+      ],
+      "selectedIssueId": 23649,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23649/war_of_kings_darkhawk_2009_1",
+      "resolvedIssueTitle": "War of Kings: Darkhawk (2009) #1",
+      "note": "Marvel series 6797 (War of Kings: Darkhawk (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23649
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Nova #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "23",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23766"
+      ],
+      "selectedIssueId": 23766,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23766/nova_2007_23",
+      "resolvedIssueTitle": "Nova (2007) #23",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23766
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "War of Kings: Darkhawk #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Darkhawk",
+      "seriesYear": 2009,
+      "issueNumber": "2",
+      "seriesId": 6797,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23813"
+      ],
+      "selectedIssueId": 23813,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23813/war_of_kings_darkhawk_2009_2",
+      "resolvedIssueTitle": "War of Kings: Darkhawk (2009) #2",
+      "note": "Marvel series 6797 (War of Kings: Darkhawk (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23813
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "War of Kings #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 6972,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23814"
+      ],
+      "selectedIssueId": 23814,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23814/war_of_kings_2009_1",
+      "resolvedIssueTitle": "War of Kings (2009) #1",
+      "note": "Marvel series 6972 (War of Kings (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23814
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Nova #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "24",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23966"
+      ],
+      "selectedIssueId": 23966,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23966/nova_2007_24",
+      "resolvedIssueTitle": "Nova (2007) #24",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23966
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "War of Kings #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings",
+      "seriesYear": 2009,
+      "issueNumber": "2",
+      "seriesId": 6972,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24006"
+      ],
+      "selectedIssueId": 24006,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24006/war_of_kings_2009_2",
+      "resolvedIssueTitle": "War of Kings (2009) #2",
+      "note": "Marvel series 6972 (War of Kings (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24006
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Guardians of the Galaxy #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "13",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23986"
+      ],
+      "selectedIssueId": 23986,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23986/guardians_of_the_galaxy_2008_13",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #13",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23986
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Guardians of the Galaxy #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "14",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24188"
+      ],
+      "selectedIssueId": 24188,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24188/guardians_of_the_galaxy_2008_14",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #14",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24188
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Nova #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "25",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24165"
+      ],
+      "selectedIssueId": 24165,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24165/nova_2007_25",
+      "resolvedIssueTitle": "Nova (2007) #25",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24165
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "War of Kings #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings",
+      "seriesYear": 2009,
+      "issueNumber": "3",
+      "seriesId": 6972,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24212"
+      ],
+      "selectedIssueId": 24212,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24212/war_of_kings_2009_3",
+      "resolvedIssueTitle": "War of Kings (2009) #3",
+      "note": "Marvel series 6972 (War of Kings (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24212
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Guardians of the Galaxy #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "15",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "25303"
+      ],
+      "selectedIssueId": 25303,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/25303/guardians_of_the_galaxy_2008_15",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #15",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        25303
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "War of Kings: Savage Sword of Skaar #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "WAR OF KINGS: SAVAGE WORLD OF SKAAR 1",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 8238,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26245"
+      ],
+      "selectedIssueId": 26245,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26245/war_of_kings_savage_world_of_skaar_1_2009_1",
+      "resolvedIssueTitle": "WAR OF KINGS: SAVAGE WORLD OF SKAAR 1 (2009) #1",
+      "note": "Marvel series 8238 (WAR OF KINGS: SAVAGE WORLD OF SKAAR 1 (2009)) is the reviewed metadata series for this source reference. The source writes Savage Sword where Marvel metadata writes Savage World and adds a trailing 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26245
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "War of Kings: Ascension #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Ascension",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 7081,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23914"
+      ],
+      "selectedIssueId": 23914,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23914/war_of_kings_ascension_2009_1",
+      "resolvedIssueTitle": "War of Kings: Ascension (2009) #1",
+      "note": "Marvel series 7081 (War of Kings: Ascension (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23914
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "War of Kings: Ascension #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Ascension",
+      "seriesYear": 2009,
+      "issueNumber": "2",
+      "seriesId": 7081,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24267"
+      ],
+      "selectedIssueId": 24267,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24267/war_of_kings_ascension_2009_2",
+      "resolvedIssueTitle": "War of Kings: Ascension (2009) #2",
+      "note": "Marvel series 7081 (War of Kings: Ascension (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24267
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Nova #26",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "26",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26091"
+      ],
+      "selectedIssueId": 26091,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26091/nova_2007_26",
+      "resolvedIssueTitle": "Nova (2007) #26",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26091
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "War of Kings #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings",
+      "seriesYear": 2009,
+      "issueNumber": "4",
+      "seriesId": 6972,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27059"
+      ],
+      "selectedIssueId": 27059,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27059/war_of_kings_2009_4",
+      "resolvedIssueTitle": "War of Kings (2009) #4",
+      "note": "Marvel series 6972 (War of Kings (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27059
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "War of Kings: Ascension #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Ascension",
+      "seriesYear": 2009,
+      "issueNumber": "3",
+      "seriesId": 7081,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27070"
+      ],
+      "selectedIssueId": 27070,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27070/war_of_kings_ascension_2009_3",
+      "resolvedIssueTitle": "War of Kings: Ascension (2009) #3",
+      "note": "Marvel series 7081 (War of Kings: Ascension (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27070
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Nova #27",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "27",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26092"
+      ],
+      "selectedIssueId": 26092,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26092/nova_2007_27",
+      "resolvedIssueTitle": "Nova (2007) #27",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26092
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "War of Kings #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings",
+      "seriesYear": 2009,
+      "issueNumber": "5",
+      "seriesId": 6972,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27061"
+      ],
+      "selectedIssueId": 27061,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27061/war_of_kings_2009_5",
+      "resolvedIssueTitle": "War of Kings (2009) #5",
+      "note": "Marvel series 6972 (War of Kings (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27061
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "War of Kings: Ascension #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Ascension",
+      "seriesYear": 2009,
+      "issueNumber": "4",
+      "seriesId": 7081,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27071"
+      ],
+      "selectedIssueId": 27071,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27071/war_of_kings_ascension_2009_4",
+      "resolvedIssueTitle": "War of Kings: Ascension (2009) #4",
+      "note": "Marvel series 7081 (War of Kings: Ascension (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27071
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Guardians of the Galaxy #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "16",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "25304"
+      ],
+      "selectedIssueId": 25304,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/25304/guardians_of_the_galaxy_2008_16",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #16",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        25304
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "War of Kings #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings",
+      "seriesYear": 2009,
+      "issueNumber": "6",
+      "seriesId": 6972,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27063"
+      ],
+      "selectedIssueId": 27063,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27063/war_of_kings_2009_6",
+      "resolvedIssueTitle": "War of Kings (2009) #6",
+      "note": "Marvel series 6972 (War of Kings (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27063
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Guardians of the Galaxy #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "17",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "25305"
+      ],
+      "selectedIssueId": 25305,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/25305/guardians_of_the_galaxy_2008_17",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #17",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        25305
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Nova #28",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "28",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26093"
+      ],
+      "selectedIssueId": 26093,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26093/nova_2007_28",
+      "resolvedIssueTitle": "Nova (2007) #28",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26093
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "War of Kings: Who will rule?",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "War of Kings: Who Will Rule? One-Shot",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 9033,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "28101"
+      ],
+      "selectedIssueId": 28101,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/28101/war_of_kings_who_will_rule_one-shot_2009_1",
+      "resolvedIssueTitle": "War of Kings: Who Will Rule? One-Shot (2009) #1",
+      "note": "Marvel series 9033 (War of Kings: Who Will Rule? One-Shot (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        28101
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Guardians of the Galaxy #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "18",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "25306"
+      ],
+      "selectedIssueId": 25306,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/25306/guardians_of_the_galaxy_2008_18",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #18",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        25306
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "Guardians of the Galaxy #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2008,
+      "issueNumber": "19",
+      "seriesId": 4885,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "25307"
+      ],
+      "selectedIssueId": 25307,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/25307/guardians_of_the_galaxy_2008_19",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2008) #19",
+      "note": "Marvel series 4885 (Guardians of the Galaxy (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        25307
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "Nova #29",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "29",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26094"
+      ],
+      "selectedIssueId": 26094,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26094/nova_2007_29",
+      "resolvedIssueTitle": "Nova (2007) #29",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26094
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "Nova #30",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "30",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26095"
+      ],
+      "selectedIssueId": 26095,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26095/nova_2007_30",
+      "resolvedIssueTitle": "Nova (2007) #30",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26095
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "Nova #31",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2007,
+      "issueNumber": "31",
+      "seriesId": 2504,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26096"
+      ],
+      "selectedIssueId": 26096,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26096/nova_2007_31",
+      "resolvedIssueTitle": "Nova (2007) #31",
+      "note": "Marvel series 2504 (Nova (2007 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26096
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "war-of-kings",
+    "name": "War of Kings",
+    "description": "Thirty-two chapters interleaving the six-part Kree and Shi'ar war with Nova, Guardians of the Galaxy, Darkhawk, and Ascension.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "war-of-kings.md",
+    "sourcePage": "https://www.comicbookherald.com/marvel-cosmic-reading-order/war-of-kings/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "war_of_kings.json",
+    "characters": [
+      "Black Bolt",
+      "Vulcan",
+      "Nova",
+      "Guardians of the Galaxy",
+      "Darkhawk"
+    ],
+    "keywords": [
+      "War of Kings",
+      "Kree",
+      "Shi'ar",
+      "Inhumans"
+    ],
+    "expect": 32,
+    "timeline": 2009,
+    "coverIssueId": 23814,
+    "coverSourcePosition": 6,
+    "coverSourceReference": "War of Kings #1"
+  }
+}

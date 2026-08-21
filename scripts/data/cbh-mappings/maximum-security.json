@@ -1,0 +1,1087 @@
+{
+  "id": "maximum-security",
+  "inventoryId": "early-2000s-until-disassembled",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/maximum-security/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 28,
+  "excludedSourceReferences": [
+    "Trade collection summary above the issue-by-issue order"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 19032,
+      "title": "MAXIMUM SECURITY: DANGEROUS PLANET 1",
+      "issueTitle": "MAXIMUM SECURITY: DANGEROUS PLANET 1 (2000) #1",
+      "seriesTitle": "MAXIMUM SECURITY: DANGEROUS PLANET 1",
+      "apiSeriesName": "MAXIMUM SECURITY: DANGEROUS PLANET 1 (2000)",
+      "seriesId": 3706,
+      "issueNumber": "1",
+      "seriesYear": 2000,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/19032/maximum_security_dangerous_planet_1_2000_1",
+      "onSaleDate": "2000-10-01T00:00:00+0000"
+    },
+    {
+      "id": 48445,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #22",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "22",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48445/amazing_spider-man_1999_22",
+      "onSaleDate": "2000-10-01T00:00:00+0000"
+    },
+    {
+      "id": 48446,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #23",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "23",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48446/amazing_spider-man_1999_23",
+      "onSaleDate": "2000-11-01T00:00:00+0000"
+    },
+    {
+      "id": 48520,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #24",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "24",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48520/amazing_spider-man_1999_24",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 19906,
+      "title": "Iron Man",
+      "issueTitle": "Iron Man (1998) #33",
+      "seriesTitle": "Iron Man",
+      "apiSeriesName": "Iron Man (1998 - 2004)",
+      "seriesId": 2572,
+      "issueNumber": "33",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/19906/iron_man_1998_33",
+      "onSaleDate": "2000-10-01T00:00:00+0000"
+    },
+    {
+      "id": 19907,
+      "title": "Iron Man",
+      "issueTitle": "Iron Man (1998) #34",
+      "seriesTitle": "Iron Man",
+      "apiSeriesName": "Iron Man (1998 - 2004)",
+      "seriesId": 2572,
+      "issueNumber": "34",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/19907/iron_man_1998_34",
+      "onSaleDate": "2000-11-01T00:00:00+0000"
+    },
+    {
+      "id": 10532,
+      "title": "Peter Parker: Spider-Man",
+      "issueTitle": "Peter Parker: Spider-Man (1999) #23",
+      "seriesTitle": "Peter Parker: Spider-Man",
+      "apiSeriesName": "Peter Parker: Spider-Man (1999 - 2003)",
+      "seriesId": 2060,
+      "issueNumber": "23",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/10532/peter_parker_spider-man_1999_23",
+      "onSaleDate": "2000-11-01T00:00:00+0000"
+    },
+    {
+      "id": 10533,
+      "title": "Peter Parker: Spider-Man",
+      "issueTitle": "Peter Parker: Spider-Man (1999) #24",
+      "seriesTitle": "Peter Parker: Spider-Man",
+      "apiSeriesName": "Peter Parker: Spider-Man (1999 - 2003)",
+      "seriesId": 2060,
+      "issueNumber": "24",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/10533/peter_parker_spider-man_1999_24",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 12796,
+      "title": "Captain America",
+      "issueTitle": "Captain America (1998) #36",
+      "seriesTitle": "Captain America",
+      "apiSeriesName": "Captain America (1998 - 2002)",
+      "seriesId": 1997,
+      "issueNumber": "36",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/12796/captain_america_1998_36",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 10284,
+      "title": "Maximum Security",
+      "issueTitle": "Maximum Security (2000) #1",
+      "seriesTitle": "Maximum Security",
+      "apiSeriesName": "Maximum Security (2000 - 2001)",
+      "seriesId": 2049,
+      "issueNumber": "1",
+      "seriesYear": 2000,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/10284/maximum_security_2000_1",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 18654,
+      "title": "Thor",
+      "issueTitle": "Thor (1998) #30",
+      "seriesTitle": "Thor",
+      "apiSeriesName": "Thor (1998 - 2004)",
+      "seriesId": 581,
+      "issueNumber": "30",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/18654/thor_1998_30",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 13928,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #387",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "387",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/13928/uncanny_x-men_1963_387",
+      "onSaleDate": "2000-10-01T00:00:00+0000"
+    },
+    {
+      "id": 12592,
+      "title": "Black Panther",
+      "issueTitle": "Black Panther (1998) #25",
+      "seriesTitle": "Black Panther",
+      "apiSeriesName": "Black Panther (1998 - 2003)",
+      "seriesId": 2115,
+      "issueNumber": "25",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/12592/black_panther_1998_25",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 20541,
+      "title": "Captain Marvel",
+      "issueTitle": "Captain Marvel (2000) #12",
+      "seriesTitle": "Captain Marvel",
+      "apiSeriesName": "Captain Marvel (2000 - 2002)",
+      "seriesId": 690,
+      "issueNumber": "12",
+      "seriesYear": 2000,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20541/captain_marvel_2000_12",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 20542,
+      "title": "Captain Marvel",
+      "issueTitle": "Captain Marvel (2000) #13",
+      "seriesTitle": "Captain Marvel",
+      "apiSeriesName": "Captain Marvel (2000 - 2002)",
+      "seriesId": 690,
+      "issueNumber": "13",
+      "seriesYear": 2000,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20542/captain_marvel_2000_13",
+      "onSaleDate": "2001-01-01T00:00:00+0000"
+    },
+    {
+      "id": 14421,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #21",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "21",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/14421/hulk_1999_21",
+      "onSaleDate": "2000-11-01T00:00:00+0000"
+    },
+    {
+      "id": 19908,
+      "title": "Iron Man",
+      "issueTitle": "Iron Man (1998) #35",
+      "seriesTitle": "Iron Man",
+      "apiSeriesName": "Iron Man (1998 - 2004)",
+      "seriesId": 2572,
+      "issueNumber": "35",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/19908/iron_man_1998_35",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 20615,
+      "title": "Bishop: The Last X-Man",
+      "issueTitle": "Bishop: The Last X-Man (1999) #15",
+      "seriesTitle": "Bishop: The Last X-Man",
+      "apiSeriesName": "Bishop: The Last X-Man (1999 - 2001)",
+      "seriesId": 3753,
+      "issueNumber": "15",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20615/bishop_the_last_x-man_1999_15",
+      "onSaleDate": "2000-12-10T00:00:00+0000"
+    },
+    {
+      "id": 10285,
+      "title": "Maximum Security",
+      "issueTitle": "Maximum Security (2000) #2",
+      "seriesTitle": "Maximum Security",
+      "apiSeriesName": "Maximum Security (2000 - 2001)",
+      "seriesId": 2049,
+      "issueNumber": "2",
+      "seriesYear": 2000,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/10285/maximum_security_2000_2",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 15350,
+      "title": "Thunderbolts",
+      "issueTitle": "Thunderbolts (1997) #45",
+      "seriesTitle": "Thunderbolts",
+      "apiSeriesName": "Thunderbolts (1997 - 2003)",
+      "seriesId": 2296,
+      "issueNumber": "45",
+      "seriesYear": 1997,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15350/thunderbolts_1997_45",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 15351,
+      "title": "Thunderbolts",
+      "issueTitle": "Thunderbolts (1997) #46",
+      "seriesTitle": "Thunderbolts",
+      "apiSeriesName": "Thunderbolts (1997 - 2003)",
+      "seriesId": 2296,
+      "issueNumber": "46",
+      "seriesYear": 1997,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15351/thunderbolts_1997_46",
+      "onSaleDate": "2001-01-01T00:00:00+0000"
+    },
+    {
+      "id": 15352,
+      "title": "Thunderbolts",
+      "issueTitle": "Thunderbolts (1997) #47",
+      "seriesTitle": "Thunderbolts",
+      "apiSeriesName": "Thunderbolts (1997 - 2003)",
+      "seriesId": 2296,
+      "issueNumber": "47",
+      "seriesYear": 1997,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15352/thunderbolts_1997_47",
+      "onSaleDate": "2001-02-01T00:00:00+0000"
+    },
+    {
+      "id": 16066,
+      "title": "Marvel Knights",
+      "issueTitle": "Marvel Knights (2000) #6",
+      "seriesTitle": "Marvel Knights",
+      "apiSeriesName": "Marvel Knights (2000 - 2001)",
+      "seriesId": 2576,
+      "issueNumber": "6",
+      "seriesYear": 2000,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/16066/marvel_knights_2000_6",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 59693,
+      "title": "Gambit",
+      "issueTitle": "Gambit (1999) #23",
+      "seriesTitle": "Gambit",
+      "apiSeriesName": "Gambit (1999 - 2001)",
+      "seriesId": 21593,
+      "issueNumber": "23",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/59693/gambit_1999_23",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 14290,
+      "title": "X-Men",
+      "issueTitle": "X-Men (1991) #107",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (1991 - 2001)",
+      "seriesId": 2265,
+      "issueNumber": "107",
+      "seriesYear": 1991,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/14290/x-men_1991_107",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 18131,
+      "title": "X-Men Unlimited",
+      "issueTitle": "X-Men Unlimited (1993) #29",
+      "seriesTitle": "X-Men Unlimited",
+      "apiSeriesName": "X-Men Unlimited (1993 - 2003)",
+      "seriesId": 3637,
+      "issueNumber": "29",
+      "seriesYear": 1993,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/18131/x-men_unlimited_1993_29",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 17518,
+      "title": "Avengers",
+      "issueTitle": "Avengers (1998) #35",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (1998 - 2004)",
+      "seriesId": 354,
+      "issueNumber": "35",
+      "seriesYear": 1998,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17518/avengers_1998_35",
+      "onSaleDate": "2000-12-01T00:00:00+0000"
+    },
+    {
+      "id": 10286,
+      "title": "Maximum Security",
+      "issueTitle": "Maximum Security (2000) #3",
+      "seriesTitle": "Maximum Security",
+      "apiSeriesName": "Maximum Security (2000 - 2001)",
+      "seriesId": 2049,
+      "issueNumber": "3",
+      "seriesYear": 2000,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/10286/maximum_security_2000_3",
+      "onSaleDate": "2001-01-01T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Maximum Security: Dangerous Planet #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "MAXIMUM SECURITY: DANGEROUS PLANET 1",
+      "seriesYear": 2000,
+      "issueNumber": "1",
+      "seriesId": 3706,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "19032"
+      ],
+      "selectedIssueId": 19032,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/19032/maximum_security_dangerous_planet_1_2000_1",
+      "resolvedIssueTitle": "MAXIMUM SECURITY: DANGEROUS PLANET 1 (2000) #1",
+      "note": "Marvel series 3706 (MAXIMUM SECURITY: DANGEROUS PLANET 1 (2000)) is the reviewed metadata series for this source reference. The source shortens Marvel metadata's capitalized one-issue series name.",
+      "status": "exact",
+      "selectedIssueIds": [
+        19032
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Amazing Spider-Man #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "22",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48445"
+      ],
+      "selectedIssueId": 48445,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48445/amazing_spider-man_1999_22",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #22",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48445
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Amazing Spider-Man #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "23",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48446"
+      ],
+      "selectedIssueId": 48446,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48446/amazing_spider-man_1999_23",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #23",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48446
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Amazing Spider-Man #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "24",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48520"
+      ],
+      "selectedIssueId": 48520,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48520/amazing_spider-man_1999_24",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #24",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48520
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Iron Man #33",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Iron Man",
+      "seriesYear": 1998,
+      "issueNumber": "33",
+      "seriesId": 2572,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "19906"
+      ],
+      "selectedIssueId": 19906,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/19906/iron_man_1998_33",
+      "resolvedIssueTitle": "Iron Man (1998) #33",
+      "note": "Marvel series 2572 (Iron Man (1998 - 2004)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        19906
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Iron Man #34",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Iron Man",
+      "seriesYear": 1998,
+      "issueNumber": "34",
+      "seriesId": 2572,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "19907"
+      ],
+      "selectedIssueId": 19907,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/19907/iron_man_1998_34",
+      "resolvedIssueTitle": "Iron Man (1998) #34",
+      "note": "Marvel series 2572 (Iron Man (1998 - 2004)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        19907
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Peter Parker, Spider-Man #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Peter Parker: Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "23",
+      "seriesId": 2060,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "10532"
+      ],
+      "selectedIssueId": 10532,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/10532/peter_parker_spider-man_1999_23",
+      "resolvedIssueTitle": "Peter Parker: Spider-Man (1999) #23",
+      "note": "Marvel series 2060 (Peter Parker: Spider-Man (1999 - 2003)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        10532
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Peter Parker, Spider-Man #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Peter Parker: Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "24",
+      "seriesId": 2060,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "10533"
+      ],
+      "selectedIssueId": 10533,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/10533/peter_parker_spider-man_1999_24",
+      "resolvedIssueTitle": "Peter Parker: Spider-Man (1999) #24",
+      "note": "Marvel series 2060 (Peter Parker: Spider-Man (1999 - 2003)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        10533
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Captain America #36",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain America",
+      "seriesYear": 1998,
+      "issueNumber": "36",
+      "seriesId": 1997,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "12796"
+      ],
+      "selectedIssueId": 12796,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/12796/captain_america_1998_36",
+      "resolvedIssueTitle": "Captain America (1998) #36",
+      "note": "Marvel series 1997 (Captain America (1998 - 2002)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        12796
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Maximum Security #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Maximum Security",
+      "seriesYear": 2000,
+      "issueNumber": "1",
+      "seriesId": 2049,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "10284"
+      ],
+      "selectedIssueId": 10284,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/10284/maximum_security_2000_1",
+      "resolvedIssueTitle": "Maximum Security (2000) #1",
+      "note": "Marvel series 2049 (Maximum Security (2000 - 2001)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        10284
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Thor #30",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Thor",
+      "seriesYear": 1998,
+      "issueNumber": "30",
+      "seriesId": 581,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "18654"
+      ],
+      "selectedIssueId": 18654,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/18654/thor_1998_30",
+      "resolvedIssueTitle": "Thor (1998) #30",
+      "note": "Marvel series 581 (Thor (1998 - 2004)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        18654
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Uncanny X-Men #387",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "387",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "13928"
+      ],
+      "selectedIssueId": 13928,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/13928/uncanny_x-men_1963_387",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #387",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        13928
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Black Panther #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Black Panther",
+      "seriesYear": 1998,
+      "issueNumber": "25",
+      "seriesId": 2115,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "12592"
+      ],
+      "selectedIssueId": 12592,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/12592/black_panther_1998_25",
+      "resolvedIssueTitle": "Black Panther (1998) #25",
+      "note": "Marvel series 2115 (Black Panther (1998 - 2003)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        12592
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Captain Marvel #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain Marvel",
+      "seriesYear": 2000,
+      "issueNumber": "12",
+      "seriesId": 690,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20541"
+      ],
+      "selectedIssueId": 20541,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20541/captain_marvel_2000_12",
+      "resolvedIssueTitle": "Captain Marvel (2000) #12",
+      "note": "Marvel series 690 (Captain Marvel (2000 - 2002)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20541
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Captain Marvel #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain Marvel",
+      "seriesYear": 2000,
+      "issueNumber": "13",
+      "seriesId": 690,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20542"
+      ],
+      "selectedIssueId": 20542,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20542/captain_marvel_2000_13",
+      "resolvedIssueTitle": "Captain Marvel (2000) #13",
+      "note": "Marvel series 690 (Captain Marvel (2000 - 2002)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20542
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Incredible Hulk #21",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulk",
+      "seriesYear": 1999,
+      "issueNumber": "21",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "14421"
+      ],
+      "selectedIssueId": 14421,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/14421/hulk_1999_21",
+      "resolvedIssueTitle": "Hulk (1999) #21",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hulk; Marvel names the selected series Hulk. Marvel indexes the 1999 to 2008 Incredible Hulk run under the shorter series name Hulk.",
+      "status": "exact",
+      "selectedIssueIds": [
+        14421
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Iron Man #35",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Iron Man",
+      "seriesYear": 1998,
+      "issueNumber": "35",
+      "seriesId": 2572,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "19908"
+      ],
+      "selectedIssueId": 19908,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/19908/iron_man_1998_35",
+      "resolvedIssueTitle": "Iron Man (1998) #35",
+      "note": "Marvel series 2572 (Iron Man (1998 - 2004)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        19908
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Bishop the Last X-Man #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Bishop: The Last X-Man",
+      "seriesYear": 1999,
+      "issueNumber": "15",
+      "seriesId": 3753,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20615"
+      ],
+      "selectedIssueId": 20615,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20615/bishop_the_last_x-man_1999_15",
+      "resolvedIssueTitle": "Bishop: The Last X-Man (1999) #15",
+      "note": "Marvel series 3753 (Bishop: The Last X-Man (1999 - 2001)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20615
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Maximum Security #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Maximum Security",
+      "seriesYear": 2000,
+      "issueNumber": "2",
+      "seriesId": 2049,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "10285"
+      ],
+      "selectedIssueId": 10285,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/10285/maximum_security_2000_2",
+      "resolvedIssueTitle": "Maximum Security (2000) #2",
+      "note": "Marvel series 2049 (Maximum Security (2000 - 2001)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        10285
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Thunderbolts #45",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Thunderbolts",
+      "seriesYear": 1997,
+      "issueNumber": "45",
+      "seriesId": 2296,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15350"
+      ],
+      "selectedIssueId": 15350,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15350/thunderbolts_1997_45",
+      "resolvedIssueTitle": "Thunderbolts (1997) #45",
+      "note": "Marvel series 2296 (Thunderbolts (1997 - 2003)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15350
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Thunderbolts #46",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Thunderbolts",
+      "seriesYear": 1997,
+      "issueNumber": "46",
+      "seriesId": 2296,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15351"
+      ],
+      "selectedIssueId": 15351,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15351/thunderbolts_1997_46",
+      "resolvedIssueTitle": "Thunderbolts (1997) #46",
+      "note": "Marvel series 2296 (Thunderbolts (1997 - 2003)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15351
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Thunderbolts #47",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Thunderbolts",
+      "seriesYear": 1997,
+      "issueNumber": "47",
+      "seriesId": 2296,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15352"
+      ],
+      "selectedIssueId": 15352,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15352/thunderbolts_1997_47",
+      "resolvedIssueTitle": "Thunderbolts (1997) #47",
+      "note": "Marvel series 2296 (Thunderbolts (1997 - 2003)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15352
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Marvel Knights #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Marvel Knights",
+      "seriesYear": 2000,
+      "issueNumber": "6",
+      "seriesId": 2576,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "16066"
+      ],
+      "selectedIssueId": 16066,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/16066/marvel_knights_2000_6",
+      "resolvedIssueTitle": "Marvel Knights (2000) #6",
+      "note": "Marvel series 2576 (Marvel Knights (2000 - 2001)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        16066
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Gambit #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Gambit",
+      "seriesYear": 1999,
+      "issueNumber": "23",
+      "seriesId": 21593,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "59693"
+      ],
+      "selectedIssueId": 59693,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/59693/gambit_1999_23",
+      "resolvedIssueTitle": "Gambit (1999) #23",
+      "note": "Marvel series 21593 (Gambit (1999 - 2001)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        59693
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "X-Men #107",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 1991,
+      "issueNumber": "107",
+      "seriesId": 2265,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "14290"
+      ],
+      "selectedIssueId": 14290,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/14290/x-men_1991_107",
+      "resolvedIssueTitle": "X-Men (1991) #107",
+      "note": "Marvel series 2265 (X-Men (1991 - 2001)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        14290
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "X-Men Unlimited #29",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Unlimited",
+      "seriesYear": 1993,
+      "issueNumber": "29",
+      "seriesId": 3637,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "18131"
+      ],
+      "selectedIssueId": 18131,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/18131/x-men_unlimited_1993_29",
+      "resolvedIssueTitle": "X-Men Unlimited (1993) #29",
+      "note": "Marvel series 3637 (X-Men Unlimited (1993 - 2003)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        18131
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Avengers #35",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 1998,
+      "issueNumber": "35",
+      "seriesId": 354,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17518"
+      ],
+      "selectedIssueId": 17518,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17518/avengers_1998_35",
+      "resolvedIssueTitle": "Avengers (1998) #35",
+      "note": "Marvel series 354 (Avengers (1998 - 2004)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17518
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Maximum Security #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Maximum Security",
+      "seriesYear": 2000,
+      "issueNumber": "3",
+      "seriesId": 2049,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "10286"
+      ],
+      "selectedIssueId": 10286,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/10286/maximum_security_2000_3",
+      "resolvedIssueTitle": "Maximum Security (2000) #3",
+      "note": "Marvel series 2049 (Maximum Security (2000 - 2001)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        10286
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "maximum-security",
+    "name": "Maximum Security",
+    "description": "Twenty-eight issues following the 2000 cosmic invasion from Dangerous Planet through the three-part event and its tie-ins.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "maximum-security.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/maximum-security/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "maximum_security.json",
+    "characters": [
+      "Avengers",
+      "X-Men",
+      "Iron Man",
+      "Thor",
+      "Black Panther"
+    ],
+    "keywords": [
+      "Maximum Security",
+      "cosmic",
+      "Avengers",
+      "X-Men"
+    ],
+    "expect": 28,
+    "timeline": 2000,
+    "coverIssueId": 10284,
+    "coverSourcePosition": 10,
+    "coverSourceReference": "Maximum Security #1"
+  }
+}

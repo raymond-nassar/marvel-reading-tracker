@@ -1,0 +1,346 @@
+{
+  "id": "thanos-imperative",
+  "inventoryId": "marvel-cosmic",
+  "sourceUrl": "https://www.comicbookherald.com/marvel-cosmic-reading-order/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 8,
+  "excludedSourceReferences": [
+    "Every cosmic reading outside the exact Ignition, The Thanos Imperative #1-6, Devastation spine"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 32983,
+      "title": "The Thanos Imperative: Ignition",
+      "issueTitle": "The Thanos Imperative: Ignition (2010) #1",
+      "seriesTitle": "The Thanos Imperative: Ignition",
+      "apiSeriesName": "The Thanos Imperative: Ignition (2010)",
+      "seriesId": 9803,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32983/the_thanos_imperative_ignition_2010_1",
+      "onSaleDate": "2010-05-26T00:00:00+0000"
+    },
+    {
+      "id": 32970,
+      "title": "The Thanos Imperative",
+      "issueTitle": "The Thanos Imperative (2010) #1",
+      "seriesTitle": "The Thanos Imperative",
+      "apiSeriesName": "The Thanos Imperative (2010)",
+      "seriesId": 9950,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32970/the_thanos_imperative_2010_1",
+      "onSaleDate": "2010-06-03T00:00:00+0000"
+    },
+    {
+      "id": 32973,
+      "title": "The Thanos Imperative",
+      "issueTitle": "The Thanos Imperative (2010) #2",
+      "seriesTitle": "The Thanos Imperative",
+      "apiSeriesName": "The Thanos Imperative (2010)",
+      "seriesId": 9950,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32973/the_thanos_imperative_2010_2",
+      "onSaleDate": "2010-07-14T00:00:00+0000"
+    },
+    {
+      "id": 32975,
+      "title": "The Thanos Imperative",
+      "issueTitle": "The Thanos Imperative (2010) #3",
+      "seriesTitle": "The Thanos Imperative",
+      "apiSeriesName": "The Thanos Imperative (2010)",
+      "seriesId": 9950,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32975/the_thanos_imperative_2010_3",
+      "onSaleDate": "2010-08-11T00:00:00+0000"
+    },
+    {
+      "id": 32977,
+      "title": "The Thanos Imperative",
+      "issueTitle": "The Thanos Imperative (2010) #4",
+      "seriesTitle": "The Thanos Imperative",
+      "apiSeriesName": "The Thanos Imperative (2010)",
+      "seriesId": 9950,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32977/the_thanos_imperative_2010_4",
+      "onSaleDate": "2010-09-09T00:00:00+0000"
+    },
+    {
+      "id": 32979,
+      "title": "The Thanos Imperative",
+      "issueTitle": "The Thanos Imperative (2010) #5",
+      "seriesTitle": "The Thanos Imperative",
+      "apiSeriesName": "The Thanos Imperative (2010)",
+      "seriesId": 9950,
+      "issueNumber": "5",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32979/the_thanos_imperative_2010_5",
+      "onSaleDate": "2010-10-13T00:00:00+0000"
+    },
+    {
+      "id": 32980,
+      "title": "The Thanos Imperative",
+      "issueTitle": "The Thanos Imperative (2010) #6",
+      "seriesTitle": "The Thanos Imperative",
+      "apiSeriesName": "The Thanos Imperative (2010)",
+      "seriesId": 9950,
+      "issueNumber": "6",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32980/the_thanos_imperative_2010_6",
+      "onSaleDate": "2010-11-10T00:00:00+0000"
+    },
+    {
+      "id": 37979,
+      "title": "THE THANOS IMPERATIVE: DEVASTATION 1",
+      "issueTitle": "THE THANOS IMPERATIVE: DEVASTATION 1 (2010) #1",
+      "seriesTitle": "THE THANOS IMPERATIVE: DEVASTATION 1",
+      "apiSeriesName": "THE THANOS IMPERATIVE: DEVASTATION 1 (2010)",
+      "seriesId": 13604,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37979/the_thanos_imperative_devastation_1_2010_1",
+      "onSaleDate": "2011-01-05T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "The Thanos Imperative: Ignition #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "The Thanos Imperative: Ignition",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9803,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32983"
+      ],
+      "selectedIssueId": 32983,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32983/the_thanos_imperative_ignition_2010_1",
+      "resolvedIssueTitle": "The Thanos Imperative: Ignition (2010) #1",
+      "note": "Marvel series 9803 (The Thanos Imperative: Ignition (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32983
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "The Thanos Imperative #1",
+      "sourceRangeReference": "The Thanos Imperative #1-6",
+      "normalizedSeriesTitle": "The Thanos Imperative",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9950,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32970"
+      ],
+      "selectedIssueId": 32970,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32970/the_thanos_imperative_2010_1",
+      "resolvedIssueTitle": "The Thanos Imperative (2010) #1",
+      "note": "Marvel series 9950 (The Thanos Imperative (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32970
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "The Thanos Imperative #2",
+      "sourceRangeReference": "The Thanos Imperative #1-6",
+      "normalizedSeriesTitle": "The Thanos Imperative",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 9950,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32973"
+      ],
+      "selectedIssueId": 32973,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32973/the_thanos_imperative_2010_2",
+      "resolvedIssueTitle": "The Thanos Imperative (2010) #2",
+      "note": "Marvel series 9950 (The Thanos Imperative (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32973
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "The Thanos Imperative #3",
+      "sourceRangeReference": "The Thanos Imperative #1-6",
+      "normalizedSeriesTitle": "The Thanos Imperative",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 9950,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32975"
+      ],
+      "selectedIssueId": 32975,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32975/the_thanos_imperative_2010_3",
+      "resolvedIssueTitle": "The Thanos Imperative (2010) #3",
+      "note": "Marvel series 9950 (The Thanos Imperative (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32975
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "The Thanos Imperative #4",
+      "sourceRangeReference": "The Thanos Imperative #1-6",
+      "normalizedSeriesTitle": "The Thanos Imperative",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 9950,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32977"
+      ],
+      "selectedIssueId": 32977,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32977/the_thanos_imperative_2010_4",
+      "resolvedIssueTitle": "The Thanos Imperative (2010) #4",
+      "note": "Marvel series 9950 (The Thanos Imperative (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32977
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "The Thanos Imperative #5",
+      "sourceRangeReference": "The Thanos Imperative #1-6",
+      "normalizedSeriesTitle": "The Thanos Imperative",
+      "seriesYear": 2010,
+      "issueNumber": "5",
+      "seriesId": 9950,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32979"
+      ],
+      "selectedIssueId": 32979,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32979/the_thanos_imperative_2010_5",
+      "resolvedIssueTitle": "The Thanos Imperative (2010) #5",
+      "note": "Marvel series 9950 (The Thanos Imperative (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32979
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "The Thanos Imperative #6",
+      "sourceRangeReference": "The Thanos Imperative #1-6",
+      "normalizedSeriesTitle": "The Thanos Imperative",
+      "seriesYear": 2010,
+      "issueNumber": "6",
+      "seriesId": 9950,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32980"
+      ],
+      "selectedIssueId": 32980,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32980/the_thanos_imperative_2010_6",
+      "resolvedIssueTitle": "The Thanos Imperative (2010) #6",
+      "note": "Marvel series 9950 (The Thanos Imperative (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32980
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "The Thanos Imperative: Devastation #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "THE THANOS IMPERATIVE: DEVASTATION 1",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13604,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37979"
+      ],
+      "selectedIssueId": 37979,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37979/the_thanos_imperative_devastation_1_2010_1",
+      "resolvedIssueTitle": "THE THANOS IMPERATIVE: DEVASTATION 1 (2010) #1",
+      "note": "Marvel series 13604 (THE THANOS IMPERATIVE: DEVASTATION 1 (2010)) is the reviewed metadata series for this source reference. The source shortens Marvel metadata's capitalized one-issue series name.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37979
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "thanos-imperative",
+    "name": "The Thanos Imperative",
+    "description": "The eight-part cosmic finale from Ignition through the six-issue event and Devastation.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "thanos-imperative.md",
+    "sourcePage": "https://www.comicbookherald.com/marvel-cosmic-reading-order/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "thanos_imperative.json",
+    "characters": [
+      "Thanos",
+      "Nova",
+      "Star-Lord",
+      "Guardians of the Galaxy"
+    ],
+    "keywords": [
+      "Thanos Imperative",
+      "Cancerverse",
+      "Nova",
+      "Star-Lord"
+    ],
+    "expect": 8,
+    "timeline": 2010,
+    "coverIssueId": 32983,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "The Thanos Imperative: Ignition #1"
+  }
+}

@@ -1,0 +1,963 @@
+{
+  "id": "maximum-security",
+  "name": "Maximum Security",
+  "description": "Twenty-eight issues following the 2000 cosmic invasion from Dangerous Planet through the three-part event and its tie-ins.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/maximum-security/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.157Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 28,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 19032,
+      "title": "MAXIMUM SECURITY: DANGEROUS PLANET 1 (2000) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/19032/maximum_security_dangerous_planet_1_2000_1",
+      "seriesId": 3706,
+      "seriesName": "MAXIMUM SECURITY: DANGEROUS PLANET 1 (2000)",
+      "onSale": "2000-10-01T00:00:00+0000",
+      "mu": "2000-10-01T00:00:00+0000",
+      "digitalId": 6473,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/4c3627ef1ee2d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Paul Ryan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Will Blyberg",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jerry Ordway",
+          "role": "penciler"
+        },
+        {
+          "name": "Kurt Busiek",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48445,
+      "title": "Amazing Spider-Man (1999) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/48445/amazing_spider-man_1999_22",
+      "seriesId": 454,
+      "seriesName": "Amazing Spider-Man (1999 - 2013)",
+      "onSale": "2000-10-01T00:00:00+0000",
+      "mu": "2000-10-01T00:00:00+0000",
+      "digitalId": 30153,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/40/57e2af8a45968",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Howard Mackie",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48446,
+      "title": "Amazing Spider-Man (1999) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/48446/amazing_spider-man_1999_23",
+      "seriesId": 454,
+      "seriesName": "Amazing Spider-Man (1999 - 2013)",
+      "onSale": "2000-11-01T00:00:00+0000",
+      "mu": "2000-11-01T00:00:00+0000",
+      "digitalId": 30154,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/57e2c33f35174",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Howard Mackie",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48520,
+      "title": "Amazing Spider-Man (1999) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/48520/amazing_spider-man_1999_24",
+      "seriesId": 454,
+      "seriesName": "Amazing Spider-Man (1999 - 2013)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 30204,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/57e2cc24ad357",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Randy Elliott",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Romita Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Howard Mackie",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 19906,
+      "title": "Iron Man (1998) #33",
+      "number": "33",
+      "url": "https://www.marvel.com/comics/issue/19906/iron_man_1998_33",
+      "seriesId": 2572,
+      "seriesName": "Iron Man (1998 - 2004)",
+      "onSale": "2000-10-01T00:00:00+0000",
+      "mu": "2000-10-01T00:00:00+0000",
+      "digitalId": 16580,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/50b528d3a8242",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Alitha E. Martinez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Robert Hunter",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rodney Ramos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Frank Tieri",
+          "role": "writer"
+        },
+        {
+          "name": "Joe Quesada",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 19907,
+      "title": "Iron Man (1998) #34",
+      "number": "34",
+      "url": "https://www.marvel.com/comics/issue/19907/iron_man_1998_34",
+      "seriesId": 2572,
+      "seriesName": "Iron Man (1998 - 2004)",
+      "onSale": "2000-11-01T00:00:00+0000",
+      "mu": "2000-11-01T00:00:00+0000",
+      "digitalId": 16677,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/52ab955854c2c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Derek Mei",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Ryan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Robert Hunter",
+          "role": "cover artist"
+        },
+        {
+          "name": "Robert Stull",
+          "role": "cover artist"
+        },
+        {
+          "name": "Frank Tieri",
+          "role": "writer"
+        },
+        {
+          "name": "Joe Quesada",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 10532,
+      "title": "Peter Parker: Spider-Man (1999) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/10532/peter_parker_spider-man_1999_23",
+      "seriesId": 2060,
+      "seriesName": "Peter Parker: Spider-Man (1999 - 2003)",
+      "onSale": "2000-11-01T00:00:00+0000",
+      "mu": "2000-11-01T00:00:00+0000",
+      "digitalId": 43901,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/70/5cacb7439eb5e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Dan Green",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rodney Ramos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Buckingham",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Jenkins",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 10533,
+      "title": "Peter Parker: Spider-Man (1999) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/10533/peter_parker_spider-man_1999_24",
+      "seriesId": 2060,
+      "seriesName": "Peter Parker: Spider-Man (1999 - 2003)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 50325,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/5cacb79294603",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Rodney Ramos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Buckingham",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Jenkins",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 12796,
+      "title": "Captain America (1998) #36",
+      "number": "36",
+      "url": "https://www.marvel.com/comics/issue/12796/captain_america_1998_36",
+      "seriesId": 1997,
+      "seriesName": "Captain America (1998 - 2002)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 20517,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/4e8caca6c9017",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Art Thibert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dan Jurgens",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 10284,
+      "title": "Maximum Security (2000) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/10284/maximum_security_2000_1",
+      "seriesId": 2049,
+      "seriesName": "Maximum Security (2000 - 2001)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 2214,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/664cec887a07e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Al Vey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Ivy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Ryan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Will Blyberg",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jerry Ordway",
+          "role": "penciler"
+        },
+        {
+          "name": "Kurt Busiek",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 18654,
+      "title": "Thor (1998) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/18654/thor_1998_30",
+      "seriesId": 581,
+      "seriesName": "Thor (1998 - 2004)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 18749,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/59cab271b1783",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andy Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Jurgens",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 13928,
+      "title": "Uncanny X-Men (1963) #387",
+      "number": "387",
+      "url": "https://www.marvel.com/comics/issue/13928/uncanny_x-men_1963_387",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2000-10-01T00:00:00+0000",
+      "mu": "2014-08-08T11:25:02+0000",
+      "digitalId": 21850,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/591a158b037ea",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Carlson",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Claremont",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 12592,
+      "title": "Black Panther (1998) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/12592/black_panther_1998_25",
+      "seriesId": 2115,
+      "seriesName": "Black Panther (1998 - 2003)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 10371,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/e0/56ddef102bec2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Bob Almond",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Velluto",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Priest",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20541,
+      "title": "Captain Marvel (2000) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/20541/captain_marvel_2000_12",
+      "seriesId": 690,
+      "seriesName": "Captain Marvel (2000 - 2002)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 5446,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/30/4bb6584942857",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Anibal Rodriguez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Cross",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20542,
+      "title": "Captain Marvel (2000) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/20542/captain_marvel_2000_13",
+      "seriesId": 690,
+      "seriesName": "Captain Marvel (2000 - 2002)",
+      "onSale": "2001-01-01T00:00:00+0000",
+      "mu": "2001-01-01T00:00:00+0000",
+      "digitalId": 5447,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/4bb65591d6461",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Anibal Rodriguez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Cross",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 14421,
+      "title": "Hulk (1999) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/14421/hulk_1999_21",
+      "seriesId": 465,
+      "seriesName": "Hulk (1999 - 2008)",
+      "onSale": "2000-11-01T00:00:00+0000",
+      "mu": "2000-11-01T00:00:00+0000",
+      "digitalId": 46131,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/59824b4e7e6d1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Eric Powell",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kyle Hotz",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Jenkins",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 19908,
+      "title": "Iron Man (1998) #35",
+      "number": "35",
+      "url": "https://www.marvel.com/comics/issue/19908/iron_man_1998_35",
+      "seriesId": 2572,
+      "seriesName": "Iron Man (1998 - 2004)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 16366,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/50b3a7b66f2c4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Robert Hunter",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alitha E. Martinez",
+          "role": "penciler"
+        },
+        {
+          "name": "Frank Tieri",
+          "role": "writer"
+        },
+        {
+          "name": "Joe Quesada",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20615,
+      "title": "Bishop: The Last X-Man (1999) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/20615/bishop_the_last_x-man_1999_15",
+      "seriesId": 3753,
+      "seriesName": "Bishop: The Last X-Man (1999 - 2001)",
+      "onSale": "2000-12-10T00:00:00+0000",
+      "mu": "2017-03-06T00:00:00+0000",
+      "digitalId": 42420,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/a0/58b8459a49378",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Jason Martin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nathan Massengill",
+          "role": "cover artist"
+        },
+        {
+          "name": "Georges Jeanty",
+          "role": "penciler"
+        },
+        {
+          "name": "Joseph Harris",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 10285,
+      "title": "Maximum Security (2000) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/10285/maximum_security_2000_2",
+      "seriesId": 2049,
+      "seriesName": "Maximum Security (2000 - 2001)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 6471,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/30/664cec887b7c4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Paul Ryan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walden Wong",
+          "role": "cover artist"
+        },
+        {
+          "name": "Will Blyberg",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jerry Ordway",
+          "role": "penciler"
+        },
+        {
+          "name": "Kurt Busiek",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 15350,
+      "title": "Thunderbolts (1997) #45",
+      "number": "45",
+      "url": "https://www.marvel.com/comics/issue/15350/thunderbolts_1997_45",
+      "seriesId": 2296,
+      "seriesName": "Thunderbolts (1997 - 2003)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 42521,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/03/5c2536957184b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Walden Wong",
+          "role": "cover artist"
+        },
+        {
+          "name": "Patch Zircher",
+          "role": "penciler"
+        },
+        {
+          "name": "Fabian Nicieza",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 15351,
+      "title": "Thunderbolts (1997) #46",
+      "number": "46",
+      "url": "https://www.marvel.com/comics/issue/15351/thunderbolts_1997_46",
+      "seriesId": 2296,
+      "seriesName": "Thunderbolts (1997 - 2003)",
+      "onSale": "2001-01-01T00:00:00+0000",
+      "mu": "2001-01-01T00:00:00+0000",
+      "digitalId": 42522,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/5c25367040166",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Greg Adams",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Fabian Nicieza",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 15352,
+      "title": "Thunderbolts (1997) #47",
+      "number": "47",
+      "url": "https://www.marvel.com/comics/issue/15352/thunderbolts_1997_47",
+      "seriesId": 2296,
+      "seriesName": "Thunderbolts (1997 - 2003)",
+      "onSale": "2001-02-01T00:00:00+0000",
+      "mu": "2001-02-01T00:00:00+0000",
+      "digitalId": 42523,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/5c253684b694e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Greg Adams",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Fabian Nicieza",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 16066,
+      "title": "Marvel Knights (2000) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/16066/marvel_knights_2000_6",
+      "seriesId": 2576,
+      "seriesName": "Marvel Knights (2000 - 2001)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 3919,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/60/4bc36a03c46aa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Klaus Janson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Eduardo Barreto",
+          "role": "penciler"
+        },
+        {
+          "name": "Chuck Dixon",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 59693,
+      "title": "Gambit (1999) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/59693/gambit_1999_23",
+      "seriesId": 21593,
+      "seriesName": "Gambit (1999 - 2001)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 42421,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/b0/59554281263f2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "John Stanisci",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sean Parsons",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yanick Paquette",
+          "role": "penciler"
+        },
+        {
+          "name": "Fabian Nicieza",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 14290,
+      "title": "X-Men (1991) #107",
+      "number": "107",
+      "url": "https://www.marvel.com/comics/issue/14290/x-men_1991_107",
+      "seriesId": 2265,
+      "seriesName": "X-Men (1991 - 2001)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2015-05-26T13:17:54+0000",
+      "digitalId": 21859,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/50b3a8599a424",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mark Morales",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Elmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Claremont",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 18131,
+      "title": "X-Men Unlimited (1993) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/18131/x-men_unlimited_1993_29",
+      "seriesId": 3637,
+      "seriesName": "X-Men Unlimited (1993 - 2003)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2019-11-25T00:00:00+0000",
+      "digitalId": 42436,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/5dd844b92024f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Cully Hamner",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sal Regla",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sandu Florea",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brett Booth",
+          "role": "penciler"
+        },
+        {
+          "name": "Joe Pruett",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 17518,
+      "title": "Avengers (1998) #35",
+      "number": "35",
+      "url": "https://www.marvel.com/comics/issue/17518/avengers_1998_35",
+      "seriesId": 354,
+      "seriesName": "Avengers (1998 - 2004)",
+      "onSale": "2000-12-01T00:00:00+0000",
+      "mu": "2000-12-01T00:00:00+0000",
+      "digitalId": 4114,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/585c2daa42560",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": []
+    },
+    {
+      "issueId": 10286,
+      "title": "Maximum Security (2000) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/10286/maximum_security_2000_3",
+      "seriesId": 2049,
+      "seriesName": "Maximum Security (2000 - 2001)",
+      "onSale": "2001-01-01T00:00:00+0000",
+      "mu": "2001-01-01T00:00:00+0000",
+      "digitalId": 6472,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/664cf8de0f158",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mark Mckenna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Ryan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Will Blyberg",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jerry Ordway",
+          "role": "penciler"
+        },
+        {
+          "name": "Kurt Busiek",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

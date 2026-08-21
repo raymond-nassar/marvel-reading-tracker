@@ -1,0 +1,198 @@
+{
+  "id": "silent-war",
+  "name": "Silent War",
+  "description": "The six-issue conflict between the Inhumans and the United States after Son of M.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-civil-war-to-secret-invasion/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.172Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 6,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 5861,
+      "title": "Silent War (2007) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/5861/silent_war_2007_1",
+      "seriesId": 1134,
+      "seriesName": "Silent War (2007)",
+      "onSale": "2007-01-24T00:00:00+0000",
+      "mu": "2007-01-24T00:00:00+0000",
+      "digitalId": 8568,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/03/5351924a683f7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Frazer Irving",
+          "role": "penciler"
+        },
+        {
+          "name": "John Watson",
+          "role": "penciler"
+        },
+        {
+          "name": "David Hine",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 6011,
+      "title": "Silent War (2007) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/6011/silent_war_2007_2",
+      "seriesId": 1134,
+      "seriesName": "Silent War (2007)",
+      "onSale": "2007-02-21T00:00:00+0000",
+      "mu": "2007-02-21T00:00:00+0000",
+      "digitalId": 8569,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/5351925915deb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Frazer Irving",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Watson",
+          "role": "penciler"
+        },
+        {
+          "name": "David Hine",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 6185,
+      "title": "Silent War (2007) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/6185/silent_war_2007_3",
+      "seriesId": 1134,
+      "seriesName": "Silent War (2007)",
+      "onSale": "2007-03-28T00:00:00+0000",
+      "mu": "2007-03-28T00:00:00+0000",
+      "digitalId": 8570,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/535192655e33d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Frazer Irving",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Watson",
+          "role": "penciler"
+        },
+        {
+          "name": "David Hine",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 6331,
+      "title": "Silent War (2007) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/6331/silent_war_2007_4",
+      "seriesId": 1134,
+      "seriesName": "Silent War (2007)",
+      "onSale": "2007-04-25T00:00:00+0000",
+      "mu": "2007-04-25T00:00:00+0000",
+      "digitalId": 8571,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/53519276c8d1f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Frazer Irving",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Watson",
+          "role": "penciler"
+        },
+        {
+          "name": "David Hine",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 13480,
+      "title": "Silent War (2007) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/13480/silent_war_2007_5",
+      "seriesId": 1134,
+      "seriesName": "Silent War (2007)",
+      "onSale": "2007-05-30T00:00:00+0000",
+      "mu": "2007-05-30T00:00:00+0000",
+      "digitalId": 8572,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/03/5351928345ce5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Frazer Irving",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Watson",
+          "role": "penciler"
+        },
+        {
+          "name": "David Hine",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 15857,
+      "title": "Silent War (2007) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/15857/silent_war_2007_6",
+      "seriesId": 1134,
+      "seriesName": "Silent War (2007)",
+      "onSale": "2007-06-27T00:00:00+0000",
+      "mu": "2007-06-27T00:00:00+0000",
+      "digitalId": 8573,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/40/5351928e85d48",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "John Watson",
+          "role": "penciler"
+        },
+        {
+          "name": "David Hine",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

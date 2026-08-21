@@ -1,6 +1,6 @@
 {
   "candidateCount": 39,
-  "comparisonCount": 36,
+  "comparisonCount": 46,
   "comparisons": [
     {
       "orderId": "all-new-all-different-avengers",
@@ -10,6 +10,12 @@
     },
     {
       "orderId": "annihilation",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
+      "orderId": "annihilation-conquest",
       "sharedCount": 0,
       "sharedIds": [],
       "relationship": "none"
@@ -138,6 +144,30 @@
       "relationship": "none"
     },
     {
+      "orderId": "maximum-security",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
+      "orderId": "messiah-complex",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
+      "orderId": "messiah-war",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
+      "orderId": "necrosha",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
       "orderId": "new-ultimate-universe",
       "sharedCount": 0,
       "sharedIds": [],
@@ -150,7 +180,19 @@
       "relationship": "none"
     },
     {
+      "orderId": "planet-hulk",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
       "orderId": "scarlet-witch-best-of",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
+      "orderId": "second-coming",
       "sharedCount": 0,
       "sharedIds": [],
       "relationship": "none"
@@ -180,6 +222,12 @@
       "relationship": "none"
     },
     {
+      "orderId": "silent-war",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
       "orderId": "spider-man-best-of",
       "sharedCount": 0,
       "sharedIds": [],
@@ -198,7 +246,19 @@
       "relationship": "none"
     },
     {
+      "orderId": "thanos-imperative",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
       "orderId": "thor-best-of",
+      "sharedCount": 0,
+      "sharedIds": [],
+      "relationship": "none"
+    },
+    {
+      "orderId": "war-of-kings",
       "sharedCount": 0,
       "sharedIds": [],
       "relationship": "none"

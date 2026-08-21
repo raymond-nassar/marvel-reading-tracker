@@ -1,0 +1,271 @@
+{
+  "id": "silent-war",
+  "inventoryId": "civil-war-to-secret-invasion",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-civil-war-to-secret-invasion/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 6,
+  "excludedSourceReferences": [
+    "Every bridge-page reading outside the Silent War #1-6 block"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 5861,
+      "title": "Silent War",
+      "issueTitle": "Silent War (2007) #1",
+      "seriesTitle": "Silent War",
+      "apiSeriesName": "Silent War (2007)",
+      "seriesId": 1134,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/5861/silent_war_2007_1",
+      "onSaleDate": "2007-01-24T00:00:00+0000"
+    },
+    {
+      "id": 6011,
+      "title": "Silent War",
+      "issueTitle": "Silent War (2007) #2",
+      "seriesTitle": "Silent War",
+      "apiSeriesName": "Silent War (2007)",
+      "seriesId": 1134,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/6011/silent_war_2007_2",
+      "onSaleDate": "2007-02-21T00:00:00+0000"
+    },
+    {
+      "id": 6185,
+      "title": "Silent War",
+      "issueTitle": "Silent War (2007) #3",
+      "seriesTitle": "Silent War",
+      "apiSeriesName": "Silent War (2007)",
+      "seriesId": 1134,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/6185/silent_war_2007_3",
+      "onSaleDate": "2007-03-28T00:00:00+0000"
+    },
+    {
+      "id": 6331,
+      "title": "Silent War",
+      "issueTitle": "Silent War (2007) #4",
+      "seriesTitle": "Silent War",
+      "apiSeriesName": "Silent War (2007)",
+      "seriesId": 1134,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/6331/silent_war_2007_4",
+      "onSaleDate": "2007-04-25T00:00:00+0000"
+    },
+    {
+      "id": 13480,
+      "title": "Silent War",
+      "issueTitle": "Silent War (2007) #5",
+      "seriesTitle": "Silent War",
+      "apiSeriesName": "Silent War (2007)",
+      "seriesId": 1134,
+      "issueNumber": "5",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/13480/silent_war_2007_5",
+      "onSaleDate": "2007-05-30T00:00:00+0000"
+    },
+    {
+      "id": 15857,
+      "title": "Silent War",
+      "issueTitle": "Silent War (2007) #6",
+      "seriesTitle": "Silent War",
+      "apiSeriesName": "Silent War (2007)",
+      "seriesId": 1134,
+      "issueNumber": "6",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/15857/silent_war_2007_6",
+      "onSaleDate": "2007-06-27T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Silent War #1",
+      "sourceRangeReference": "Silent War #1-6",
+      "normalizedSeriesTitle": "Silent War",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 1134,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "5861"
+      ],
+      "selectedIssueId": 5861,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/5861/silent_war_2007_1",
+      "resolvedIssueTitle": "Silent War (2007) #1",
+      "note": "Marvel series 1134 (Silent War (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        5861
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Silent War #2",
+      "sourceRangeReference": "Silent War #1-6",
+      "normalizedSeriesTitle": "Silent War",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 1134,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "6011"
+      ],
+      "selectedIssueId": 6011,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/6011/silent_war_2007_2",
+      "resolvedIssueTitle": "Silent War (2007) #2",
+      "note": "Marvel series 1134 (Silent War (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        6011
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Silent War #3",
+      "sourceRangeReference": "Silent War #1-6",
+      "normalizedSeriesTitle": "Silent War",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 1134,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "6185"
+      ],
+      "selectedIssueId": 6185,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/6185/silent_war_2007_3",
+      "resolvedIssueTitle": "Silent War (2007) #3",
+      "note": "Marvel series 1134 (Silent War (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        6185
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Silent War #4",
+      "sourceRangeReference": "Silent War #1-6",
+      "normalizedSeriesTitle": "Silent War",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 1134,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "6331"
+      ],
+      "selectedIssueId": 6331,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/6331/silent_war_2007_4",
+      "resolvedIssueTitle": "Silent War (2007) #4",
+      "note": "Marvel series 1134 (Silent War (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        6331
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Silent War #5",
+      "sourceRangeReference": "Silent War #1-6",
+      "normalizedSeriesTitle": "Silent War",
+      "seriesYear": 2007,
+      "issueNumber": "5",
+      "seriesId": 1134,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "13480"
+      ],
+      "selectedIssueId": 13480,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/13480/silent_war_2007_5",
+      "resolvedIssueTitle": "Silent War (2007) #5",
+      "note": "Marvel series 1134 (Silent War (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        13480
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Silent War #6",
+      "sourceRangeReference": "Silent War #1-6",
+      "normalizedSeriesTitle": "Silent War",
+      "seriesYear": 2007,
+      "issueNumber": "6",
+      "seriesId": 1134,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "15857"
+      ],
+      "selectedIssueId": 15857,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/15857/silent_war_2007_6",
+      "resolvedIssueTitle": "Silent War (2007) #6",
+      "note": "Marvel series 1134 (Silent War (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        15857
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "silent-war",
+    "name": "Silent War",
+    "description": "The six-issue conflict between the Inhumans and the United States after Son of M.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "silent-war.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-civil-war-to-secret-invasion/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "silent_war.json",
+    "characters": [
+      "Black Bolt",
+      "Medusa",
+      "Quicksilver",
+      "Inhumans"
+    ],
+    "keywords": [
+      "Silent War",
+      "Inhumans",
+      "Terrigen"
+    ],
+    "expect": 6,
+    "timeline": 2007,
+    "coverIssueId": 5861,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Silent War #1"
+  }
+}

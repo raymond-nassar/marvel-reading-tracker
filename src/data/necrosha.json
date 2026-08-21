@@ -1,0 +1,502 @@
+{
+  "id": "necrosha",
+  "name": "X-Men: Necrosha",
+  "description": "Fourteen alternating chapters from The Gathering through X-Force, New Mutants, and X-Men Legacy.",
+  "source": "https://www.comicbookherald.com/the-complete-x-men-reading-order-guide-modern-marvel-comics-era/#xmen5",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T15:16:57.185Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 14,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 29945,
+      "title": "X Necrosha: The Gathering (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/29945/x_necrosha_the_gathering_2009_1",
+      "seriesId": 9177,
+      "seriesName": "X Necrosha: The Gathering (2009)",
+      "onSale": "2009-12-09T00:00:00+0000",
+      "mu": "2011-05-10T08:49:06+0000",
+      "digitalId": 20636,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/5768037ad8ed4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Ibraim Roberson",
+          "role": "penciler"
+        },
+        {
+          "name": "Kalman Andrasofszky",
+          "role": "penciler"
+        },
+        {
+          "name": "Leonardo Manco",
+          "role": "penciler"
+        },
+        {
+          "name": "Mateus Santolouco",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 28103,
+      "title": "X Necrosha (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/28103/x_necrosha_2009_1",
+      "seriesId": 9070,
+      "seriesName": "X Necrosha (2009)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2010-09-02T00:00:00+0000",
+      "digitalId": 13921,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/d0/57680fa66ae27",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ibraim Roberson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26055,
+      "title": "New Mutants (2009) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/26055/new_mutants_2009_6",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2009-10-28T00:00:00+0000",
+      "mu": "2010-11-16T00:00:00+0000",
+      "digitalId": 17206,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/5a0608c1627f7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Edgar Tadeo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dio Neves",
+          "role": "penciler"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27259,
+      "title": "X-Force (2008) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/27259/x-force_2008_21",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2009-11-11T00:00:00+0000",
+      "mu": "2011-03-02T00:00:00+0000",
+      "digitalId": 17696,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/5768031f8e2a8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlo Barberi",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26056,
+      "title": "New Mutants (2009) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/26056/new_mutants_2009_7",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2009-11-25T00:00:00+0000",
+      "mu": "2011-05-10T09:14:18+0000",
+      "digitalId": 18632,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/5a060a6286ec8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Edgar Tadeo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dio Neves",
+          "role": "penciler"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27260,
+      "title": "X-Force (2008) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/27260/x-force_2008_22",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2009-12-16T00:00:00+0000",
+      "mu": "2011-03-02T00:00:00+0000",
+      "digitalId": 17697,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/5768039110700",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Steve Dillon",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26057,
+      "title": "New Mutants (2009) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/26057/new_mutants_2009_8",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2009-12-23T00:00:00+0000",
+      "mu": "2011-05-10T09:16:56+0000",
+      "digitalId": 17641,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/a0/5a060c98c3003",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Edgar Tadeo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dio Neves",
+          "role": "penciler"
+        },
+        {
+          "name": "Zeb Wells",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27348,
+      "title": "X-Men Legacy (2008) #231",
+      "number": "231",
+      "url": "https://www.marvel.com/comics/issue/27348/x-men_legacy_2008_231",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2009-12-23T00:00:00+0000",
+      "mu": "2011-02-16T00:00:00+0000",
+      "digitalId": 17709,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/d0/58bec8e94eae0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Clay Mann",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27261,
+      "title": "X-Force (2008) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/27261/x-force_2008_23",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2010-01-27T00:00:00+0000",
+      "mu": "2011-04-13T00:00:00+0000",
+      "digitalId": 13719,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/5768036419fcb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 28415,
+      "title": "X-Men Legacy (2008) #232",
+      "number": "232",
+      "url": "https://www.marvel.com/comics/issue/28415/x-men_legacy_2008_232",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2010-01-27T00:00:00+0000",
+      "mu": "2011-02-23T00:00:00+0000",
+      "digitalId": 13723,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/60/51a4e1aa04284",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Allen Martinez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clay Mann",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27262,
+      "title": "X-Force (2008) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/27262/x-force_2008_24",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2010-02-24T00:00:00+0000",
+      "mu": "2010-12-08T00:00:00+0000",
+      "digitalId": 13928,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/30/5768032575c96",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30700,
+      "title": "X-Men Legacy (2008) #233",
+      "number": "233",
+      "url": "https://www.marvel.com/comics/issue/30700/x-men_legacy_2008_233",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2010-02-24T00:00:00+0000",
+      "mu": "2010-02-24T00:00:00+0000",
+      "digitalId": 13952,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/60/51a4e27c40a31",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clay Mann",
+          "role": "penciler"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30671,
+      "title": "X-Force (2008) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/30671/x-force_2008_25",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2010-03-31T00:00:00+0000",
+      "mu": "2010-12-22T00:00:00+0000",
+      "digitalId": 14227,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/57680353d6b2e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30701,
+      "title": "X-Men Legacy (2008) #234",
+      "number": "234",
+      "url": "https://www.marvel.com/comics/issue/30701/x-men_legacy_2008_234",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2010-03-17T00:00:00+0000",
+      "mu": "2010-12-22T00:00:00+0000",
+      "digitalId": 14116,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/51a4e19cc7896",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Michel Lacombe",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yanick Paquette",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}
