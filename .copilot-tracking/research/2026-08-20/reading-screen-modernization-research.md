@@ -19,7 +19,7 @@ themes, forced colors, reduced motion, and the accessibility behaviour.
 
 The view is one section of markup, three renderers and three style sections.
 
-- Markup lives in `src/index.html:291-409`: a `.head` carrying the order name, the cover-art switch
+- Markup lives in `src/index.html:291-410`: a `.head` carrying the order name, the cover-art switch
   and the progress ring; a `.list-tools` row; the note; the hero; the Coming Up shelf; and a
   `details` element holding the filters and the rows.
 - `renderReading` drives the whole view and hides the progress ring when no list is open, at

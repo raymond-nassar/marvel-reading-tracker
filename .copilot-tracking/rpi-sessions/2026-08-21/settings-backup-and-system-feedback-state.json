@@ -1,0 +1,137 @@
+{
+  "task_id": "MRT-007",
+  "task_slug": "settings-backup-and-system-feedback",
+  "parent_task": {
+    "task_id": "MRT-006",
+    "task_slug": "add-issues-progressive-disclosure"
+  },
+  "mode": "automatic",
+  "active_phase": "Review",
+  "status": "active",
+  "session_status": "running",
+  "artifact_paths": {
+    "research": ".copilot-tracking/research/2026-08-21/settings-backup-and-system-feedback-research.md",
+    "plan": ".copilot-tracking/plans/2026-08-21/settings-backup-and-system-feedback-plan.md",
+    "details": null,
+    "critique": ".copilot-tracking/reviews/plans/2026-08-21/settings-backup-and-system-feedback-plan-critique.md",
+    "changes": ".copilot-tracking/changes/2026-08-21/settings-backup-and-system-feedback-changes.md",
+    "review": ".copilot-tracking/reviews/logs/2026-08-21/settings-backup-and-system-feedback-review.md"
+  },
+  "confirmed_decisions": [
+    {
+      "decision": "Research disposition",
+      "status": "executed",
+      "evidence": ".copilot-tracking/research/2026-08-21/settings-backup-and-system-feedback-research.md, three waves, two defects measured in Edge and one reading-derived claim refuted by measurement"
+    },
+    {
+      "decision": "Planning readiness",
+      "status": "Ready",
+      "evidence": "Both defects measured rather than reasoned about; remedies demonstrated elsewhere in the same codebase; grouping maps onto existing cards without inventing or removing a setting"
+    },
+    {
+      "decision": "Rendering work is delegated to GPT-5.6 by standing owner instruction",
+      "status": "confirmed",
+      "evidence": "Owner message queuing phases 4 to 6: 'Anything related to rendering should be given to GPT-5.6.'"
+    },
+    {
+      "decision": "Dialogs are already standardized and will be verified rather than changed",
+      "status": "confirmed",
+      "evidence": "Measured in Edge: #ask and #preview share an identical box treatment, Cancel renders first in every confirmation, focus enters on Cancel and returns to the opener, Escape resolves negative"
+    },
+    {
+      "decision": "src/js/storage.js is not modified by this phase",
+      "status": "confirmed",
+      "evidence": "The recovery layer's safeguards are behavioural and out of scope for a presentation phase; the phase is presentational plus the notice-routing fix in main.js"
+    },
+    {
+      "decision": "Plan critique execution",
+      "status": "executed, one pass, complete finding set",
+      "evidence": ".copilot-tracking/reviews/plans/2026-08-21/settings-backup-and-system-feedback-plan-critique.md, 6 findings: 2 Major, 3 Minor, 1 Note"
+    },
+    {
+      "decision": "Plan critique verdict",
+      "status": "Revise, all findings applied directly to the plan; no further critique for this task",
+      "evidence": "CR-001 privacy-copy.test.js delimiters now P05-T02; CR-002 heading sizes re-homed in P01-T03 under new rule R7; CR-003 P01-T01 reworded so only Restore from a backup is demoted; CR-004 tick citation corrected to src/styles.css:837; CR-005 P06-T01 extended to stated file sizes"
+    },
+    {
+      "decision": "CR-006 anchor-sweep scope, the one finding marked user-decision",
+      "status": "decided in automatic mode: P04 empty-state work is retained",
+      "evidence": "The owner's brief asks in terms for empty treatments built from simple shapes, so P04 is requested work rather than polish. The ~70-citation sweep is done once after all source edits are final, using the three-derivation procedure whose exact-fingerprint step proved 481 of 486 re-aims mechanically in MRT-006."
+    },
+    {
+      "decision": "npm run browser is a required check for this phase",
+      "status": "confirmed by baseline measurement",
+      "evidence": "Not in CI, so easy to miss, but 119 assertions across 14 scenarios green before this work began, and one scenario drives a blocked store against #btn-download-salvage and #btn-start-fresh, which is this phase highest-risk surface. Runs on an ephemeral port so saved progress is untouched."
+    },
+    {
+      "decision": "Heading rules are scoped to #view-data, never to .card-static",
+      "status": "confirmed by measurement, recorded as binding rule R7",
+      "evidence": ".card-static is worn by src/index.html:468 (Add search card), the seven settings cards, and src/index.html:668 (About), whose title is an h2 and whose six sub-headings are plain h3 at src/index.html:676-744. Rewriting .card-static h2 or h3 would silently restyle a view this phase does not touch."
+    },
+    {
+      "decision": "Review executed once, post-implementation, over the full P01 to P06 boundary",
+      "status": "Complete",
+      "evidence": ".copilot-tracking/reviews/logs/2026-08-21/settings-backup-and-system-feedback-review.md"
+    },
+    {
+      "decision": "Review outcome conformant for the assessed boundary, no material finding open",
+      "status": "Conformant",
+      "evidence": "Six plan phases reconciled; recovery, undo and data-loss surfaces assessed separately"
+    },
+    {
+      "decision": "CR-005 predicted a stated file size failure that did not occur; recorded as not occurred rather than dropped",
+      "status": "Closed",
+      "evidence": "src/js/main.js took three in-argument substitutions and is still exactly 5030 lines; sizes gate reports 7 stated sizes agree"
+    },
+    {
+      "decision": "Plan, research and critique de-cited rather than re-aimed, following MRT-006 precedent",
+      "status": "Applied",
+      "evidence": "103 first-time citations enrolled green while pointing at stale lines; MRT-006 artifacts carry zero citations"
+    },
+    {
+      "decision": "Dialog focus defect measured identical on base commit f683c87, so routed rather than fixed",
+      "status": "Routed",
+      "evidence": "BL-175, Ready"
+    },
+    {
+      "decision": "The Cost of Delay worked example in Appendix B was checked and left alone. Cost of Delay 11 is the thirteenth highest distinct figure both with and without the two new rows, so the wording is pre-existing and unchanged in truth value by this change, and Appendix B is a dated record of one ranking pass rather than a live claim.",
+      "status": "Checked and left",
+      "evidence": "Measured over 152 rows with the new rows and 150 without; identical result"
+    },
+    {
+      "decision": "The second new backlog item shipped without its Constraint gate line. The suite caught it through the governance figure derived from the backlog. The line was added and the governance sentence moved from 152 blocks and 146 checks to 154 and 148.",
+      "status": "Fixed",
+      "evidence": "CHG-007; governance-docs test now 7 pass, 0 fail"
+    },
+    {
+      "decision": "Adding those two lines moved four backlog citations a second time by 4 each. Derived twice, by blessed head search and by insertion arithmetic, agreeing at 4 with one unambiguous hit each, then blessed after reading all four pairings. Total against the base commit is still 72 because those four were already among the 30 the records round moved.",
+      "status": "Verified",
+      "evidence": "993 anchors, 0 drifted, 0 new, 0 removed, 2 exempt, 0 range edge defects, 0 malformed"
+    }
+  ],
+  "blockers": [],
+  "next_action": {
+    "phase": "Review",
+    "action": "Commit with the co-author trailer, open the pull request with the plain English summary first, watch job conclusions rather than the run conclusion, merge, then begin Phase 6 cohesion and accessibility"
+  },
+  "prioritized_follow_ups": [
+    {
+      "rank": 1,
+      "task": "Phase 6: cohesion and accessibility review across every view",
+      "rationale": "The owner queued it explicitly as the last phase, it is bounded to measurable inconsistencies and accessibility defects, and every earlier phase has now merged so the shared system is finally complete enough to audit as one thing",
+      "evidence": "The owner's phase brief; MRT-005, MRT-006 and MRT-007 all shipped"
+    },
+    {
+      "rank": 2,
+      "task": "BL-175 Return focus to the control that opened a dialog",
+      "rationale": "Small, well understood, and a WCAG 2.4.3 concern, but it belongs with dialog behaviour and would be a natural catch inside the Phase 6 accessibility pass rather than a change of its own",
+      "evidence": "Measured identical on f683c87 and on the changed tree, after both Escape and Cancel"
+    },
+    {
+      "rank": 3,
+      "task": "BL-172 Let the reader stop a long series or creator load once it has started",
+      "rationale": "Still Ready from MRT-006 and the highest-value unshipped Add item, but it adds a control and a cancellation path rather than removing an inconsistency, so it sits behind the queued phase work",
+      "evidence": "PRODUCT_BACKLOG.md BL-172, Ready"
+    }
+  ]
+}

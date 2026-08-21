@@ -4398,12 +4398,12 @@ function wireData() {
     // list belongs to data that is no longer here in this direction too.
     if (res.ok) forgetDeleted();
   });
-
+  // Measured at 200 per cent zoom, the API notice landed 658 px above view, and cache clearing replaced a restore refusal.
   $('#form-settings').addEventListener('submit', (e) => {
     e.preventDefault();
     const value = $('#api-base').value.trim().replace(/\/+$/, '');
     if (!isAllowedApiBase(value)) {
-      return notify('#restore-report', 'That API URL is not usable: use https, or http against localhost.', 'error');
+      return notify('#api-report', 'That API URL is not usable: use https, or http against localhost.', 'error');
     }
     settings.apiBase = value;
     // Cleared before the write, not after. saveSettings() prefers the refused value precisely so
@@ -4430,14 +4430,14 @@ function wireData() {
     sessionSynopsis.clear();
     renderSynopsis(null);
     renderHero();
-    notify('#restore-report', 'API URL saved. Cached data from the previous URL is kept separate.', 'ok');
+    notify('#api-report', 'API URL saved. Cached data from the previous URL is kept separate.', 'ok');
     checkHealth();
   });
 
   $('#btn-clear-cache').addEventListener('click', async () => {
     await cache.clear();
     await refreshCacheUsage();
-    notify('#restore-report', 'Cached metadata cleared. Lists and reading progress are untouched.', 'ok');
+    notify('#cache-report', 'Cached metadata cleared. Lists and reading progress are untouched.', 'ok');
   });
 
   $('#btn-wipe').addEventListener('click', async () => {
