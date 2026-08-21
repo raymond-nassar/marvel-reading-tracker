@@ -110,7 +110,6 @@ One thing changes with nobody touching it. Every `required: true` in the issue f
 the repository is private and starts being enforced on publication, which is recorded with its
 reasoning at `PRODUCT_BACKLOG.md:7053-7057`. The forms do not need editing. It is listed here
 because a form that suddenly rejects a submission looks like a regression to whoever hits it first.
-
 ## The prose that stops being true
 
 Each of these was a live statement about the present rather than a record of the past. The right
@@ -135,12 +134,12 @@ exception. Ten of the twenty-one are in `PRODUCT_BACKLOG.md` and two more are in
 Eleven of those twelve say what was true when a piece of work was delivered, and they are history
 that must not be rewritten, for the same reason the dated tracking artifacts are not re-aimed:
 
-- `PRODUCT_BACKLOG.md:6405-6418`, why secret scanning was left unticked, and what push protection
+- `PRODUCT_BACKLOG.md:6406-6418`, why secret scanning was left unticked, and what push protection
   does when asked for without it.
-- `PRODUCT_BACKLOG.md:6816-6819`, why the private reporting task was left open.
+- `PRODUCT_BACKLOG.md:6817-6819`, why the private reporting task was left open.
 - `PRODUCT_BACKLOG.md:6882-6884`, what the changelog entry beside it was corrected to say.
 - `PRODUCT_BACKLOG.md:6905-6909`, why the contribution guide is written in the future tense.
-- `PRODUCT_BACKLOG.md:6912-6918`, why the code of conduct offers no private channel.
+- `PRODUCT_BACKLOG.md:6913-6918`, why the code of conduct offers no private channel.
 - `PRODUCT_BACKLOG.md:6979-6985`, why the branch rules task was left open and could not be read.
 - `PRODUCT_BACKLOG.md:7010-7015`, why blank issues stay enabled.
 - `PRODUCT_BACKLOG.md:7053-7057`, why `required: true` collects nothing today.

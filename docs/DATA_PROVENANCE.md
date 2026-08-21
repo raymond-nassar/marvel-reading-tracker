@@ -13,6 +13,18 @@ redistributed is an open question recorded at the end, and it is what held this 
 unpublished until 2026-08-16. What else would have to change on the day that question is answered is
 collected in [the publication runbook](PUBLICATION_RUNBOOK.md).
 
+## Modern Marvel continuity intake
+
+The modern Marvel continuity program is a build-time intake flow only. It stores the 86 Comic Book
+Herald source links in [`scripts/data/cbh-modern-inventory.json`](../scripts/data/cbh-modern-inventory.json),
+keeps their review status and empty overlap and catalog arrays there, and resolves issue references
+with local build scripts rather than a browser runtime dependency. The baseline remains a source
+inventory, not a published reading guide, and it never adds browser-side data for the intake tool.
+
+`sourceLicense` stays `null` for these records, and the project records the permission boundary in
+`sourceOrigin` as `Compiled for this project from Comic Book Herald's guide` so the project remains
+clear about what it has and has not been granted.
+
 ## What the MIT licence covers
 
 [`LICENSE`](../LICENSE) is a grant made by this repository's copyright holder over the material

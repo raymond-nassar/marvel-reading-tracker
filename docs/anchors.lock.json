@@ -9,15 +9,15 @@
     "fp": "fced5be35c69483b",
     "head": "test('the committed icons are what the generator draws', () => {"
   },
-  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c3|PRODUCT_BACKLOG.md:11105-11118|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11105-11118",
-    "fp": "1e910ad0a8efc7f4",
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c3|PRODUCT_BACKLOG.md:11113-11117|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11113-11117",
+    "fp": "3a44320086cd6527",
     "head": "**BL-161: Redraw the app icon so it stops echoing Marvel's trade dress**"
   },
   ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c4|CHANGELOG.md:53-56|0": {
     "anchor": "CHANGELOG.md:53-56",
-    "fp": "de300ca1c425986d",
-    "head": "### Rebranded the app as Recap Page"
+    "fp": "73168532be0e46d7",
+    "head": "background than it was. That was already a known and recorded compromise and this change makes it a"
   },
   ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c5|README.md:16-22|0": {
     "anchor": "README.md:16-22",
@@ -28,6 +28,476 @@
     "anchor": "src/index.html:11-39",
     "fp": "4d2b3f12e677a462",
     "head": "<title>Recap Page</title>"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c1|src/data/curated-lists.json:1-146|0": {
+    "anchor": "src/data/curated-lists.json:1-146",
+    "fp": "63443bd34b548769",
+    "head": "{"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c10|package.json:8-29|0": {
+    "anchor": "package.json:8-29",
+    "fp": "00069391923ece31",
+    "head": "\"scripts\": {"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c11|src/js/lib/markdown.js:225-244|0": {
+    "anchor": "src/js/lib/markdown.js:225-244",
+    "fp": "7435d4ca3e1e3d73",
+    "head": "// Normalization used only for exact-match title resolution. Deliberately strict:"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c12|src/js/main.js:3299-3355|0": {
+    "anchor": "src/js/main.js:3299-3355",
+    "fp": "d5cb39f54cbfdd4d",
+    "head": "} catch (err) {"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c13|scripts/build-event-order.mjs:295-373|0": {
+    "anchor": "scripts/build-event-order.mjs:295-373",
+    "fp": "658ec0a6737da5f6",
+    "head": "// PR #4 adds a byte-faithful src/data/series-index.json covering all 6,990 series; once that"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c14|test/reading-path.test.js:213-248|0": {
+    "anchor": "test/reading-path.test.js:213-248",
+    "fp": "5228ad71b1e75acf",
+    "head": "// The chain is only honest if a reader who works through it is never sent the same issue twice,"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c15|docs/DATA_PROVENANCE.md:163-177|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:163-177",
+    "fp": "2f7d9aba4ed137d6",
+    "head": "| Field | Holds |"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c2|src/js/lib/markdown.js:70-148|0": {
+    "anchor": "src/js/lib/markdown.js:70-148",
+    "fp": "d31ca73cc50278f8",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c3|scripts/vendor-orders.mjs:173-360|0": {
+    "anchor": "scripts/vendor-orders.mjs:173-360",
+    "fp": "4fad811d654b9284",
+    "head": "async function main() {"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c4|scripts/vendor-orders.mjs:300-307|0": {
+    "anchor": "scripts/vendor-orders.mjs:300-307",
+    "fp": "f45e52c1b90fe41a",
+    "head": "const dupes = new Set();"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c5|src/js/lib/curated.js:146-205|0": {
+    "anchor": "src/js/lib/curated.js:146-205",
+    "fp": "09e36c41f0dc86af",
+    "head": "// A named ordered reading path through the catalog: the stops a reader works through, in the"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c6|README.md:603-647|0": {
+    "anchor": "README.md:603-647",
+    "fp": "0dbc68a8c8de4d3f",
+    "head": "it deliberately. That is the reason these are pinned to the current major rather than to"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c7|src/data/curated-lists.json:149-423|0": {
+    "anchor": "src/data/curated-lists.json:149-423",
+    "fp": "ccff78b6b378a175",
+    "head": "\"id\": \"house-of-m\","
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c8|src/data/curated-lists.json:552-980|0": {
+    "anchor": "src/data/curated-lists.json:552-980",
+    "fp": "d8d543a29c2b7116",
+    "head": "\"id\": \"captain-america-best-of\","
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c9|docs/DATA_PROVENANCE.md:287-310|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:287-310",
+    "fp": "5d3de56298d865b7",
+    "head": "settle the third question and no other: the maintainer holds nothing over Marvel's material, so"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|lower-model-normalization-contract|scripts/vendor-orders.mjs:270-323|0": {
+    "anchor": "scripts/vendor-orders.mjs:270-323",
+    "fp": "442d0840b0e45b52",
+    "head": "const placeholderItems = unresolved.map((u) => ({"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|lower-model-normalization-contract|src/js/lib/curated.js:39-143|0": {
+    "anchor": "src/js/lib/curated.js:39-143",
+    "fp": "9a17071704b6ca52",
+    "head": "function checkEntry(raw, index, seen) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|lower-model-normalization-contract|src/js/lib/markdown.js:70-148|0": {
+    "anchor": "src/js/lib/markdown.js:70-148",
+    "fp": "d31ca73cc50278f8",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|pilot-comparison#siege|src/data/orders/dark-reign-avengers.md:41-46|0": {
+    "anchor": "src/data/orders/dark-reign-avengers.md:41-46",
+    "fp": "b155b06bc164ec83",
+    "head": "## Dark Avengers, Volume 3"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|pilot-comparison#world-war-hulk-aftersmash|src/data/curated-lists.json:342-381|0": {
+    "anchor": "src/data/curated-lists.json:342-381",
+    "fp": "e7245dd7a3007d02",
+    "head": "\"id\": \"secret-invasion\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|pilot-comparison#x-men-extermination|README.md:688-700|0": {
+    "anchor": "README.md:688-700",
+    "fp": "cf46441869230342",
+    "head": "two steps, or a duplicate `id`."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:194-360|0": {
+    "anchor": "scripts/vendor-orders.mjs:194-360",
+    "fp": "8abd046ee1d4d764",
+    "head": "const parsed = [];"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:327-368|0": {
+    "anchor": "scripts/vendor-orders.mjs:327-368",
+    "fp": "c5e09135386a7e50",
+    "head": "summary.push({"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:36-45|0": {
+    "anchor": "scripts/vendor-orders.mjs:36-45",
+    "fp": "3fd2445a00d250e7",
+    "head": "// A manifest that cannot be read in full is a maintainer error: vendoring the valid subset"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:55-59|0": {
+    "anchor": "scripts/vendor-orders.mjs:55-59",
+    "fp": "0f48abb7d9c3e5b6",
+    "head": "// An order comes from exactly one place; the manifest has already guaranteed which."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/data/catalog.json:1176-1194|0": {
+    "anchor": "src/data/catalog.json:1176-1194",
+    "fp": "850060bee9dc3b0f",
+    "head": "\"paths\": ["
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/data/curated-lists.json:982-1000|0": {
+    "anchor": "src/data/curated-lists.json:982-1000",
+    "fp": "850060bee9dc3b0f",
+    "head": "\"paths\": ["
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/catalog.js:126-224|0": {
+    "anchor": "src/js/lib/catalog.js:126-224",
+    "fp": "947a2e97e85830d7",
+    "head": "function normalizeEntry(raw) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/catalog.js:265-309|0": {
+    "anchor": "src/js/lib/catalog.js:265-309",
+    "fp": "9a868995af85f852",
+    "head": "export function catalogFacets(lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/catalog.js:412-472|0": {
+    "anchor": "src/js/lib/catalog.js:412-472",
+    "fp": "e8c65d8459512aec",
+    "head": "export function groupCatalog(lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/catalog.js:482-541|0": {
+    "anchor": "src/js/lib/catalog.js:482-541",
+    "fp": "94da725e9a5c6df5",
+    "head": "// Where each story sits on a named reading path. A path is the one thing the catalog could not"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:146-205|0": {
+    "anchor": "src/js/lib/curated.js:146-205",
+    "fp": "09e36c41f0dc86af",
+    "head": "// A named ordered reading path through the catalog: the stops a reader works through, in the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:207-248|0": {
+    "anchor": "src/js/lib/curated.js:207-248",
+    "fp": "953bc223ac21954c",
+    "head": "// Returns every valid entry plus every reason an entry was rejected. Callers decide whether a"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:23-26|0": {
+    "anchor": "src/js/lib/curated.js:23-26",
+    "fp": "fc3f245261cd4c02",
+    "head": "// An SPDX expression: identifiers of letters, digits, dot, plus and hyphen, optionally joined by"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:3-15|0": {
+    "anchor": "src/js/lib/curated.js:3-15",
+    "fp": "4e420ea149044257",
+    "head": "// A curated reading list is defined entirely by data: `src/data/curated-lists.json` names the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:39-143|0": {
+    "anchor": "src/js/lib/curated.js:39-143",
+    "fp": "9a17071704b6ca52",
+    "head": "function checkEntry(raw, index, seen) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/markdown.js:175-184|0": {
+    "anchor": "src/js/lib/markdown.js:175-184",
+    "fp": "ab1fa16f5b973d3e",
+    "head": "// Serializes a list back to the same format it can be re-imported from."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/markdown.js:2-11|0": {
+    "anchor": "src/js/lib/markdown.js:2-11",
+    "fp": "01fb452f9f8dd3e7",
+    "head": "// Upstream format: - [ ] [Title](https://www.marvel.com/comics/issue/<id>/<slug>)"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/markdown.js:70-148|0": {
+    "anchor": "src/js/lib/markdown.js:70-148",
+    "fp": "d31ca73cc50278f8",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#authoring-the-curated-manifest-and-orders|README.md:603-679|0": {
+    "anchor": "README.md:603-679",
+    "fp": "ac2a67a52e80ca39",
+    "head": "it deliberately. That is the reason these are pinned to the current major rather than to"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#authoring-the-curated-manifest-and-orders|src/js/lib/curated.js:39-143|0": {
+    "anchor": "src/js/lib/curated.js:39-143",
+    "fp": "9a17071704b6ca52",
+    "head": "function checkEntry(raw, index, seen) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#authoring-the-curated-manifest-and-orders|src/js/lib/markdown.js:70-148|0": {
+    "anchor": "src/js/lib/markdown.js:70-148",
+    "fp": "d31ca73cc50278f8",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#browser-behavior|README.md:500-520|0": {
+    "anchor": "README.md:500-520",
+    "fp": "6e50ea7181cd986c",
+    "head": "Drives installed Microsoft Edge through the eight journeys the app exists for: importing a"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#browser-behavior|README.md:522-529|0": {
+    "anchor": "README.md:522-529",
+    "fp": "ad5ba2d639d97b12",
+    "head": "It is not part of CI, because CI has neither Edge nor the driver."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#browser-behavior|scripts/browser-check.mjs:1-26|0": {
+    "anchor": "scripts/browser-check.mjs:1-26",
+    "fp": "1b92e3b4b03db03a",
+    "head": "// Real-browser regression evidence, made reproducible."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#browser-behavior|scripts/browser-check.mjs:99-260|0": {
+    "anchor": "scripts/browser-check.mjs:99-260",
+    "fp": "27555423e31fd878",
+    "head": "// ------------------------------------------------------------------ fixtures"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|src/js/lib/catalog.js:177-224|0": {
+    "anchor": "src/js/lib/catalog.js:177-224",
+    "fp": "59bc865d96e705fe",
+    "head": "// The catalog is a shelf, and a shelf has an order. Left to the manifest's own, it is the order"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|src/js/lib/catalog.js:412-541|0": {
+    "anchor": "src/js/lib/catalog.js:412-541",
+    "fp": "64456003c06ad4df",
+    "head": "export function groupCatalog(lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|src/js/lib/catalog.js:544-608|0": {
+    "anchor": "src/js/lib/catalog.js:544-608",
+    "fp": "89641819798222f5",
+    "head": "// The year an order's reading starts, as a phrase. Null means the order ranges across the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|test/catalog.test.js:377-519|0": {
+    "anchor": "test/catalog.test.js:377-519",
+    "fp": "450a2b6cf95b6265",
+    "head": "test('orders for the same event are grouped together under the event name', () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|test/catalog.test.js:536-878|0": {
+    "anchor": "test/catalog.test.js:536-878",
+    "fp": "9134ce4d34d8e09f",
+    "head": "// The shelf shows one card per story, so a chip promising \"Events (8)\" that opens onto six cards"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#counts|scripts/check-counts.mjs:1-23|0": {
+    "anchor": "scripts/check-counts.mjs:1-23",
+    "fp": "978ebe6613f132b7",
+    "head": "// A count stated in prose is an evidence claim with nothing behind it. The anchors"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#counts|scripts/check-counts.mjs:128-179|0": {
+    "anchor": "scripts/check-counts.mjs:128-179",
+    "fp": "19b988dceb511053",
+    "head": "export function derive(text) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#counts|test/check-counts.test.js:84-136|0": {
+    "anchor": "test/check-counts.test.js:84-136",
+    "fp": "733724fa49f338b7",
+    "head": "test('the real backlog agrees with the table every figure is derived from', () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#generated-data-parity|test/catalog.test.js:641-754|0": {
+    "anchor": "test/catalog.test.js:641-754",
+    "fp": "091729448ec3205e",
+    "head": "test('every bundled catalog entry carries attribution and a last-updated date', async () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#generated-data-parity|test/catalog.test.js:96-125|0": {
+    "anchor": "test/catalog.test.js:96-125",
+    "fp": "80b70a54efc47f76",
+    "head": "test('the bundled catalog is valid and its counts match the vendored orders', async () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#generated-data-parity|test/curated.test.js:135-185|0": {
+    "anchor": "test/curated.test.js:135-185",
+    "fp": "d03b83481df6d136",
+    "head": "test('the bundled manifest is valid and describes exactly the bundled catalog', async () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#generated-data-parity|test/reading-path.test.js:192-248|0": {
+    "anchor": "test/reading-path.test.js:192-248",
+    "fp": "e87503423b41d019",
+    "head": "test('the shipped manifest declares a path that resolves end to end', async () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#provenance|docs/DATA_PROVENANCE.md:279-333|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:279-333",
+    "fp": "3f08272a368f1ae4",
+    "head": "its `data/` directory as well as its Python source, whether the maintainer would add the MIT text as"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#provenance|docs/DATA_PROVENANCE.md:350-383|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:350-383",
+    "fp": "9f36bc13b2df4a78",
+    "head": "way this document already answers it for the two vendored checklists, and it touches none of the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#provenance|docs/DATA_PROVENANCE.md:71-125|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:71-125",
+    "fp": "f0936a02ee62690a",
+    "head": "That states an intention; it does not convey the licence text, which MIT itself requires to"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#provenance|src/js/lib/catalog.js:61-90|0": {
+    "anchor": "src/js/lib/catalog.js:61-90",
+    "fp": "a9a43f5ddc529004",
+    "head": "// Attribution is only trustworthy if the reader can follow it, and only safe if what we"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#schema-and-normalization|src/js/lib/catalog.js:109-224|0": {
+    "anchor": "src/js/lib/catalog.js:109-224",
+    "fp": "bd396a396fc308ba",
+    "head": "// A curated file is fetched from our own origin by name, so it must stay a plain file name."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#schema-and-normalization|src/js/lib/curated.js:39-143|0": {
+    "anchor": "src/js/lib/curated.js:39-143",
+    "fp": "9a17071704b6ca52",
+    "head": "function checkEntry(raw, index, seen) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands|scripts/vendor-orders.mjs:327-368|0": {
+    "anchor": "scripts/vendor-orders.mjs:327-368",
+    "fp": "c5e09135386a7e50",
+    "head": "summary.push({"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands|src/data/curated-lists.json:982-1000|0": {
+    "anchor": "src/data/curated-lists.json:982-1000",
+    "fp": "850060bee9dc3b0f",
+    "head": "\"paths\": ["
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands|src/js/lib/curated.js:119-120|0": {
+    "anchor": "src/js/lib/curated.js:119-120",
+    "fp": "d64176633a05b7a8",
+    "head": "sourcePage: httpsUrl(raw.sourcePage) ?? sourceUrl,"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands|src/js/lib/curated.js:67-73|0": {
+    "anchor": "src/js/lib/curated.js:67-73",
+    "fp": "ddbdf02d819f1272",
+    "head": "if (!str(raw.sourceOrigin)) at('has no sourceOrigin');"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|4-comic-book-herald-permission-and-attribution|docs/DATA_PROVENANCE.md:284-289|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:284-289",
+    "fp": "e874c1bb44a8fa22",
+    "head": "It is unanswered at the time of writing, and this document does not assume an answer. The licence"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|4-comic-book-herald-permission-and-attribution|docs/DATA_PROVENANCE.md:291-299|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:291-299",
+    "fp": "143471b19f6222ff",
+    "head": "### What was asked of the guide writers, and the one answer received"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|4-comic-book-herald-permission-and-attribution|docs/DATA_PROVENANCE.md:306-310|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:306-310",
+    "fp": "c9e89deb74ffd4e5",
+    "head": "> Thanks for connecting. This looks like a very cool project! I appreciate that you have credited"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|4-comic-book-herald-permission-and-attribution|docs/DATA_PROVENANCE.md:321-333|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:321-333",
+    "fp": "b03e3c9776afd98e",
+    "head": "is recorded here because the sent email is not committed to this repository, and the message itself"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|5-batch-sizing-and-gap-assessment|src/data/curated-lists.json:113-146|0": {
+    "anchor": "src/data/curated-lists.json:113-146",
+    "fp": "da4ff34c92b35cf6",
+    "head": "\"id\": \"new-ultimate-universe-trades\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|README.md:481-483|0": {
+    "anchor": "README.md:481-483",
+    "fp": "6d0551b19ea1d54c",
+    "head": "how many lines a file has, recounting the file it names. `npm run palette` checks colour contrast"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|README.md:682-688|0": {
+    "anchor": "README.md:682-688",
+    "fp": "dfd06844a2e4e81e",
+    "head": "An array rather than a `follows` field on each entry, and that is the whole design: an array cannot"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/build-event-order.mjs:209-243|0": {
+    "anchor": "scripts/build-event-order.mjs:209-243",
+    "fp": "f02c8c966c16a289",
+    "head": "const { getJson } = createJsonFetcher();"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/build-event-order.mjs:34-36|0": {
+    "anchor": "scripts/build-event-order.mjs:34-36",
+    "fp": "f3716d71bad4c513",
+    "head": "const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/vendor-orders.mjs:205-212|0": {
+    "anchor": "scripts/vendor-orders.mjs:205-212",
+    "fp": "13d5124fc5694d17",
+    "head": "const { meta, refused } = await lookupIssues(ids, {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/vendor-orders.mjs:300-307|0": {
+    "anchor": "scripts/vendor-orders.mjs:300-307",
+    "fp": "f45e52c1b90fe41a",
+    "head": "const dupes = new Set();"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/vendor-orders.mjs:31|0": {
+    "anchor": "scripts/vendor-orders.mjs:31",
+    "fp": "c74becb4aff486d5",
+    "head": "const API = 'https://marvel.emreparker.com/v1';"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|src/data/curated-lists.json:982-1000|0": {
+    "anchor": "src/data/curated-lists.json:982-1000",
+    "fp": "850060bee9dc3b0f",
+    "head": "\"paths\": ["
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|src/js/lib/catalog.js:292-309|0": {
+    "anchor": "src/js/lib/catalog.js:292-309",
+    "fp": "a309684c11e40cc7",
+    "head": "// How many stories a set of orders amounts to. The shelf shows one card per story, so a chip"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|src/js/lib/catalog.js:412-472|0": {
+    "anchor": "src/js/lib/catalog.js:412-472",
+    "fp": "e8c65d8459512aec",
+    "head": "export function groupCatalog(lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|src/js/lib/catalog.js:492-541|0": {
+    "anchor": "src/js/lib/catalog.js:492-541",
+    "fp": "140d4377bd7cf6da",
+    "head": "export function pathPlacements(paths, lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|boundary-notes|src/data/curated-lists.json:464-549|0": {
+    "anchor": "src/data/curated-lists.json:464-549",
+    "fp": "1d2a7cdd5b8253ef",
+    "head": "\"id\": \"xmen-claremont\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|boundary-notes|src/data/curated-lists.json:78-146|0": {
+    "anchor": "src/data/curated-lists.json:78-146",
+    "fp": "502f7775091555b1",
+    "head": "\"id\": \"new-ultimate-universe\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#civil-war|src/data/curated-lists.json:227-304|0": {
+    "anchor": "src/data/curated-lists.json:227-304",
+    "fp": "c636ffc561e955ab",
+    "head": "\"id\": \"civil-war\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#civil-war|src/data/curated-lists.json:805-841|0": {
+    "anchor": "src/data/curated-lists.json:805-841",
+    "fp": "302eac6c750456cf",
+    "head": "\"id\": \"civil-war-avengers\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#hickman-secret-wars|src/data/curated-lists.json:1-76|0": {
+    "anchor": "src/data/curated-lists.json:1-76",
+    "fp": "e106027c2e858674",
+    "head": "{"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#house-of-m|src/data/curated-lists.json:149-225|0": {
+    "anchor": "src/data/curated-lists.json:149-225",
+    "fp": "70c05f2cb71b21d6",
+    "head": "\"id\": \"house-of-m\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#secret-invasion|src/data/curated-lists.json:342-423|0": {
+    "anchor": "src/data/curated-lists.json:342-423",
+    "fp": "05ea3b31b01ddb49",
+    "head": "\"id\": \"secret-invasion\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|thematic-only-or-partial-overlap#avengers-shelf|src/data/curated-lists.json:738-980|0": {
+    "anchor": "src/data/curated-lists.json:738-980",
+    "fp": "14ccff719148390a",
+    "head": "\"id\": \"essential-avengers\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|thematic-only-or-partial-overlap#cbh-character-guides|src/data/curated-lists.json:552-735|0": {
+    "anchor": "src/data/curated-lists.json:552-735",
+    "fp": "24e212b28d08224d",
+    "head": "\"id\": \"captain-america-best-of\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|thematic-only-or-partial-overlap#standalone-events|src/data/curated-lists.json:306-462|0": {
+    "anchor": "src/data/curated-lists.json:306-462",
+    "fp": "f995bfa949f71c71",
+    "head": "\"id\": \"annihilation\","
   },
   ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:915-917|0": {
     "anchor": "docs/UX_STUDY.md:915-917",
@@ -46,8 +516,8 @@
   },
   ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|PRODUCT_BACKLOG.md:6396|0": {
     "anchor": "PRODUCT_BACKLOG.md:6396",
-    "fp": "c875c812039f7bb3",
-    "head": "`package.json:29-39`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file invent"
+    "fp": "dee77d17ad788c65",
+    "head": "- [x] Decide and document an advisory threshold for the development graph"
   },
   ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|scripts/check-anchors.mjs:206-209|0": {
     "anchor": "scripts/check-anchors.mjs:206-209",
@@ -281,8 +751,8 @@
   },
   "docs/PUBLICATION_RUNBOOK.md|settings-that-only-become-available-on-the-day|PRODUCT_BACKLOG.md:7053-7057|0": {
     "anchor": "PRODUCT_BACKLOG.md:7053-7057",
-    "fp": "a6ceb97902e6f2c0",
-    "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
+    "fp": "a48333d1ee79979d",
+    "head": "flagged a quoted colon would be switched off by the first person it inconvenienced."
   },
   "docs/PUBLICATION_RUNBOOK.md|settings-that-only-become-available-on-the-day|SECURITY.md:135-141|0": {
     "anchor": "SECURITY.md:135-141",
@@ -336,63 +806,63 @@
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2142-2145|0": {
     "anchor": "CHANGELOG.md:2142-2145",
-    "fp": "a1bbc9d008c99c4d",
-    "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
+    "fp": "e091767b1155fe38",
+    "head": "affected, because none of the packages involved reaches your browser: they are the tools used to"
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2154-2157|0": {
     "anchor": "CHANGELOG.md:2154-2157",
-    "fp": "f6d971f298b3d32e",
-    "head": "and the deliberately destructive testing page that warns you before every button. The private"
+    "fp": "911546e03120620e",
+    "head": "vulnerability rather than an issue anyone can read.** Nothing about the app changes and nothing"
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:27-39|0": {
     "anchor": "PRODUCT_BACKLOG.md:27-39",
     "fp": "9c0bba462139bd28",
     "head": "remote rather than on the tree, for the reasons recorded in their blocks. Eight remain open on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6405-6418|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6405-6418",
-    "fp": "5a16aa8c31c583fe",
-    "head": "Secret scanning is the task left unticked, and the clause \"where the repository plan supports them\""
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6406-6418|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6406-6418",
+    "fp": "d8a384e6e0be2059",
+    "head": "Shipped, with the second task deliberately left open. Both halves of the monitoring were off before"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6816-6819|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6816-6819",
-    "fp": "a0372835c1f1a259",
-    "head": "Shipped, with the third task deliberately left open. It cannot be done yet, and that was measured"
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6817-6819|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6817-6819",
+    "fp": "f626ad9581c3f1b0",
+    "head": "Constraint gate: checked 1 to 11, none breached."
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6882-6884|0": {
     "anchor": "PRODUCT_BACKLOG.md:6882-6884",
-    "fp": "4e89601fade35e5b",
-    "head": "above records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as"
+    "fp": "c16c3dc88b6e9a1f",
+    "head": "answers, an issue asking for a channel with no detail in it."
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6905-6909|0": {
     "anchor": "PRODUCT_BACKLOG.md:6905-6909",
-    "fp": "49e2abcfaf9f8113",
-    "head": "The framing is the part worth defending. Nobody outside this repository can see it, open an issue or"
+    "fp": "688378fe6bddb638",
+    "head": "conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6912-6918|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6912-6918",
-    "fp": "85a655f4b40673f2",
-    "head": "The code of conduct is written for this project rather than adopted from a template, and it names"
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6913-6918|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6913-6918",
+    "fp": "689b1e6e9a7ed6b5",
+    "head": "The framing is the part worth defending. Nobody outside this repository can see it, open an issue or"
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6979-6985|0": {
     "anchor": "PRODUCT_BACKLOG.md:6979-6985",
-    "fp": "b72eadfcd70292d3",
-    "head": "Shipped, with the fifth task open and recorded as a blocker rather than ticked, in the shape BL-099"
+    "fp": "57e7bd43514f9412",
+    "head": "Constraint gate: checked 1 to 11, none breached."
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7010-7015|0": {
     "anchor": "PRODUCT_BACKLOG.md:7010-7015",
-    "fp": "6863c064dec49090",
-    "head": "Blank issues stay enabled, and that is a promise the security policy already made rather than a"
+    "fp": "d483b93b7c420530",
+    "head": "number describes stored data rather than features, so getting it wrong tells a reader their backup"
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7053-7057|0": {
     "anchor": "PRODUCT_BACKLOG.md:7053-7057",
-    "fp": "a6ceb97902e6f2c0",
-    "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
+    "fp": "a48333d1ee79979d",
+    "head": "flagged a quoted colon would be switched off by the first person it inconvenienced."
   },
   "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:9157-9162|0": {
     "anchor": "PRODUCT_BACKLOG.md:9157-9162",
-    "fp": "38d80111ac4d6ef8",
-    "head": "Three settings are the actionable half: secret scanning with push protection behind it, private"
+    "fp": "f224e3ce19b45270",
+    "head": "they can, and this item is the second time that difference was paid for rather than argued."
   },
   "docs/PUBLICATION_RUNBOOK.md|what-the-rewrites-cost-the-evidence-anchors-gate|test/intake-config.test.js:109-115|0": {
     "anchor": "test/intake-config.test.js:109-115",
@@ -464,15 +934,15 @@
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11682|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11682",
-    "fp": "feb71ffdf55c404d",
-    "head": "- Requiring accounts or cloud services for the core tracker experience."
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:11685-11690|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11685-11690",
+    "fp": "008d5e1320cf403b",
+    "head": "## Out of scope for the next expansion"
   },
   "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:394-395|0": {
     "anchor": "PRODUCT_BACKLOG.md:394-395",
-    "fp": "539875df9040cb38",
-    "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
+    "fp": "37d8488a34e2172c",
+    "head": "| BL-060 | Commit the prompt that is the only source of the eleven Repository Constraints | Enabler "
   },
   "docs/UX_STUDY.md|proto-persona#reading-style|src/index.html:340-375|0": {
     "anchor": "src/index.html:340-375",
@@ -846,7 +1316,7 @@
   },
   "PRODUCT_BACKLOG.md|3-compatibility|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "c313160fe702d835",
+    "fp": "d891b5ebcd6353a0",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|3-compatibility|src/js/lib/model.js:1046-1077|0": {
@@ -961,12 +1431,12 @@
   },
   "PRODUCT_BACKLOG.md|8-flexibility|package.json:31-33|0": {
     "anchor": "package.json:31-33",
-    "fp": "049db722764e6552",
-    "head": "\"engines\": {"
+    "fp": "8b07073decd05294",
+    "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
   "PRODUCT_BACKLOG.md|8-flexibility|package.json:8-29|0": {
     "anchor": "package.json:8-29",
-    "fp": "d8f24a5ce3eb937f",
+    "fp": "00069391923ece31",
     "head": "\"scripts\": {"
   },
   "PRODUCT_BACKLOG.md|8-flexibility|src/js/lib/cachePolicy.js:16-20|0": {
@@ -991,8 +1461,8 @@
   },
   "PRODUCT_BACKLOG.md|appendix-b-priority-disagreements|PRODUCT_BACKLOG.md:230|0": {
     "anchor": "PRODUCT_BACKLOG.md:230",
-    "fp": "ae02072879fb9465",
-    "head": "`Status` is `Ready` for an item still to be picked up and `Shipped` for one delivered since this"
+    "fp": "10f1ecf3cd44bfbb",
+    "head": "created and confirmed writable before use."
   },
   "PRODUCT_BACKLOG.md|appendix-b-priority-disagreements|scripts/check-counts.mjs:180-212|0": {
     "anchor": "scripts/check-counts.mjs:180-212",
@@ -1096,8 +1566,8 @@
   },
   "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:3018-3027|0": {
     "anchor": "CHANGELOG.md:3018-3027",
-    "fp": "9536555cba42e8dc",
-    "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
+    "fp": "308ac5a9880d1ab2",
+    "head": "the app accepts, four lost a list. Identifiers now count upwards from a random starting point"
   },
   "PRODUCT_BACKLOG.md|item-details|docs/ARCHITECTURE.md:108|0": {
     "anchor": "docs/ARCHITECTURE.md:108",
@@ -1111,8 +1581,8 @@
   },
   "PRODUCT_BACKLOG.md|item-details|docs/DATA_PROVENANCE.md:106|0": {
     "anchor": "docs/DATA_PROVENANCE.md:106",
-    "fp": "d9bd0ae1ed027f3c",
-    "head": "| Compiled for this project | 16 | The whole sequence, by hand. See the trail at the top of each fil"
+    "fp": "99112a7bcf9ec79d",
+    "head": "one written into an order compiled in this repository, so nothing in those six was fetched at all."
   },
   "PRODUCT_BACKLOG.md|item-details|docs/UX_STUDY.md:842-845|0": {
     "anchor": "docs/UX_STUDY.md:842-845",
@@ -1151,123 +1621,123 @@
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:14-15|0": {
     "anchor": "package.json:14-15",
-    "fp": "0476ef7e99533066",
-    "head": "\"anchors\": \"node scripts/check-anchors.mjs\","
+    "fp": "d04c6efe58bb65d5",
+    "head": "\"cbh:resolve\": \"node scripts/resolve-cbh-order.mjs\","
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:29-39|0": {
     "anchor": "package.json:29-39",
-    "fp": "6fbfef3584a043a4",
-    "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
+    "fp": "11ec1187c81166e2",
+    "head": "\"upgrade\": \"node scripts/upgrade-check.mjs\","
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:31-33|0": {
     "anchor": "package.json:31-33",
-    "fp": "049db722764e6552",
-    "head": "\"engines\": {"
+    "fp": "8b07073decd05294",
+    "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
   },
   "PRODUCT_BACKLOG.md|item-details|package.json:35-38|0": {
     "anchor": "package.json:35-38",
-    "fp": "b8ee79f8da29f420",
-    "head": "\"@eslint/js\": \"^10.0.1\","
+    "fp": "9c781f3a31e296f9",
+    "head": "},"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11656-11658|0": {
-    "anchor": "PRODUCT_BACKLOG.md:11656-11658",
-    "fp": "2622e3ad2443790b",
-    "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11657-11658|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11657-11658",
+    "fp": "a1311cf056a1cb31",
+    "head": "Naming, confirming and failing are handled by native browser dialogs in some paths and by the"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11822-11824|0": {
     "anchor": "PRODUCT_BACKLOG.md:11822-11824",
-    "fp": "1cc756c9fa87b7a1",
-    "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
+    "fp": "84cf783b80fda89b",
+    "head": "Resolved: `BL-030` shipped both. The policy is assembled at `server.mjs:53-64` and sent at"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:11841-11845|0": {
     "anchor": "PRODUCT_BACKLOG.md:11841-11845",
-    "fp": "74995e9f6a8b1fa8",
-    "head": "- Modifiability gap: the retry and backoff logic is duplicated between the two vendoring scripts."
+    "fp": "dabf79896cf28fff",
+    "head": "- Testability gap: `src/js/cache.js`, `src/js/hydrate.js` and `src/js/main.js` have no test file,"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1504-1505|0": {
     "anchor": "PRODUCT_BACKLOG.md:1504-1505",
-    "fp": "8ec706c3f8b630eb",
-    "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
+    "fp": "a8d56d8fa0a0c049",
+    "head": "`spoken()` at `src/js/main.js:520-528` appends \"Undo delete is available.\" A button that is never"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:194-198|0": {
     "anchor": "PRODUCT_BACKLOG.md:194-198",
-    "fp": "ddfa30825469156f",
-    "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
+    "fp": "4a3815ed29593748",
+    "head": "| 6.3 | BL-024 | P1 | Export as Markdown ships as a list tool, confirmed in the live DOM at `docs/ux"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:204-206|0": {
-    "anchor": "PRODUCT_BACKLOG.md:204-206",
-    "fp": "df4dfba7b3a40359",
-    "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:205-206|0": {
+    "anchor": "PRODUCT_BACKLOG.md:205-206",
+    "fp": "58c0c476cb1d41f0",
+    "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last <!-"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:204-206|1": {
-    "anchor": "PRODUCT_BACKLOG.md:204-206",
-    "fp": "df4dfba7b3a40359",
-    "head": "* The test count is 224 passing, not the 119 recorded in `.copilot-tracking/changes/`. Evidence:"
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:205-206|1": {
+    "anchor": "PRODUCT_BACKLOG.md:205-206",
+    "fp": "58c0c476cb1d41f0",
+    "head": "* `src/js/main.js` is 1,566 lines, not 1,543, by `(Get-Content).Count` and confirmed by the last <!-"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:230|0": {
     "anchor": "PRODUCT_BACKLOG.md:230",
-    "fp": "ae02072879fb9465",
-    "head": "`Status` is `Ready` for an item still to be picked up and `Shipped` for one delivered since this"
+    "fp": "10f1ecf3cd44bfbb",
+    "head": "created and confirmed writable before use."
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2600|0": {
     "anchor": "PRODUCT_BACKLOG.md:2600",
-    "fp": "2a31d6a4f8340417",
-    "head": "how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting"
+    "fp": "430551983656d75e",
+    "head": "PRODUCT_BACKLOG.md 146/146` and exited 0. Renaming it is the plausible version and it also passed"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2876-2879|0": {
     "anchor": "PRODUCT_BACKLOG.md:2876-2879",
-    "fp": "11ccb83f4582ed29",
-    "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
+    "fp": "0ea2dee3e5f73e4a",
+    "head": "control; a shelf tile survives a rebuild it did not cause; a row filtered away by the act performed"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4835-4838|0": {
     "anchor": "PRODUCT_BACKLOG.md:4835-4838",
-    "fp": "5f70e71a6ffb659a",
-    "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
+    "fp": "cc2b151e73e263b6",
+    "head": "which is the obvious way to write it and is blind to an id written twice: a duplicate is in neither"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4835-4843|0": {
     "anchor": "PRODUCT_BACKLOG.md:4835-4843",
-    "fp": "c21e48cf7e7cc497",
-    "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
+    "fp": "851ac8840d1ef2ed",
+    "head": "which is the obvious way to write it and is blind to an id written twice: a duplicate is in neither"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4840-4841|0": {
     "anchor": "PRODUCT_BACKLOG.md:4840-4841",
-    "fp": "2ad4882c21a2f44c",
-    "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
+    "fp": "068f34cc840278db",
+    "head": "and the lesson is that a set comparison answers \"which members differ\" and was being asked \"do these"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:108-127|0": {
     "anchor": "README.md:108-127",
-    "fp": "ed521d6d8fec6b44",
-    "head": "### Your data stays with you"
+    "fp": "62708d22af240496",
+    "head": "### Modern Marvel continuity intake stays build-time only"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:189-191|0": {
-    "anchor": "README.md:189-191",
+  "PRODUCT_BACKLOG.md|item-details|README.md:190-200|0": {
+    "anchor": "README.md:190-200",
+    "fp": "29c2cde283786137",
+    "head": "**Double-click a file.** In the folder from step 1, double-click:"
+  },
+  "PRODUCT_BACKLOG.md|item-details|README.md:198-200|0": {
+    "anchor": "README.md:198-200",
     "fp": "e4e406f943f0cfd9",
     "head": "The first time, your computer may ask you to confirm, because the file arrived from the"
   },
-  "PRODUCT_BACKLOG.md|item-details|README.md:190-191|0": {
-    "anchor": "README.md:190-191",
-    "fp": "d3da7d60a7417412",
-    "head": "internet. On a Mac, if double-clicking does nothing or the file opens in a text editor"
-  },
   "PRODUCT_BACKLOG.md|item-details|README.md:415-804|0": {
     "anchor": "README.md:415-804",
-    "fp": "97e72fc8f2a197a1",
-    "head": "## For contributors"
+    "fp": "2f9f72f134c94baa",
+    "head": "you can point it at your own copy."
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:566-601|0": {
     "anchor": "README.md:566-601",
-    "fp": "3eae5484d412a37e",
-    "head": "### Reviewing an update to a pinned action"
+    "fp": "dd332f442f085da9",
+    "head": "```"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:608-612|0": {
     "anchor": "README.md:608-612",
-    "fp": "01978a99e58bc8ac",
-    "head": "To vendor a list is to fetch it once and commit what came back. The app then reads a file in this"
+    "fp": "8008d55b83f21999",
+    "head": "keeps its credentials, no install step runs dependency lifecycle scripts, and nothing runs the"
   },
   "PRODUCT_BACKLOG.md|item-details|README.md:738-749|0": {
     "anchor": "README.md:738-749",
-    "fp": "b93a929635fd5479",
-    "head": "The audit needs the whole catalogue to work from. It reads that from the committed"
+    "fp": "25ffcf02f1f95b58",
+    "head": "the same day the main series is listed first, so it is never read after the tie-in that reacts to"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/browser-check.mjs:1-7|0": {
     "anchor": "scripts/browser-check.mjs:1-7",
@@ -3641,18 +4111,18 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "c313160fe702d835",
+    "fp": "d891b5ebcd6353a0",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-040|package.json:34-39|0": {
     "anchor": "package.json:34-39",
-    "fp": "4436eb6fb334ce0a",
-    "head": "\"devDependencies\": {"
+    "fp": "cd4aff061cdfef4c",
+    "head": "\"node\": \">=20\""
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:29|0": {
     "anchor": "package.json:29",
-    "fp": "10904b7f9645e3f0",
-    "head": "\"version\": \"node scripts/sync-version.mjs && git add src/js/lib/version.js\""
+    "fp": "5e712d0ca195bcc3",
+    "head": "\"upgrade\": \"node scripts/upgrade-check.mjs\","
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#BL-043|package.json:3|0": {
     "anchor": "package.json:3",
@@ -3701,7 +4171,7 @@
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#privacy|package.json:1-39|0": {
     "anchor": "package.json:1-39",
-    "fp": "c313160fe702d835",
+    "fp": "d891b5ebcd6353a0",
     "head": "{"
   },
   "PRODUCT_BACKLOG.md|table-stakes-categories#schema-migration|src/js/lib/model.js:12|0": {
@@ -3836,8 +4306,8 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:194-206|0": {
     "anchor": "PRODUCT_BACKLOG.md:194-206",
-    "fp": "ad6f5584c6f09ca9",
-    "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
+    "fp": "49cd72138e4c1388",
+    "head": "| 6.3 | BL-024 | P1 | Export as Markdown ships as a list tool, confirmed in the live DOM at `docs/ux"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
     "anchor": "eslint.config.mjs:56-67",
@@ -3991,8 +4461,8 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-093|package.json:25-26|0": {
     "anchor": "package.json:25-26",
-    "fp": "fd0fdcf6b0084af0",
-    "head": "\"browser\": \"node scripts/browser-check.mjs\","
+    "fp": "71b2d6cd4f3f677f",
+    "head": "\"icons\": \"node scripts/build-icons.mjs\","
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-093|scripts/browser-check.mjs:1-7|0": {
     "anchor": "scripts/browser-check.mjs:1-7",
@@ -4016,8 +4486,8 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-097|README.md:415-482|0": {
     "anchor": "README.md:415-482",
-    "fp": "cc500f111733e65e",
-    "head": "## For contributors"
+    "fp": "01d04e33711d58cf",
+    "head": "you can point it at your own copy."
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-098|.github/CODEOWNERS:1-51|0": {
     "anchor": ".github/CODEOWNERS:1-51",
@@ -4056,8 +4526,8 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:4012-4015|0": {
     "anchor": "PRODUCT_BACKLOG.md:4012-4015",
-    "fp": "90f2aa6431ce6b0c",
-    "head": "by measuring the one draft it was filed from. Counting every repeated blank-free window within each"
+    "fp": "c1a9bb4e523afcb8",
+    "head": "longest blank-free run in this document was 59 and not 41 when this shipped, so the derived"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-108|src/js/main.js:724-728|0": {
     "anchor": "src/js/main.js:724-728",
@@ -4121,8 +4591,8 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1504-1505|0": {
     "anchor": "PRODUCT_BACKLOG.md:1504-1505",
-    "fp": "8ec706c3f8b630eb",
-    "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
+    "fp": "a8d56d8fa0a0c049",
+    "head": "`spoken()` at `src/js/main.js:520-528` appends \"Undo delete is available.\" A button that is never"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:511-544|0": {
     "anchor": "scripts/check-anchors.mjs:511-544",
@@ -4146,8 +4616,8 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-128|docs/DATA_PROVENANCE.md:88-97|0": {
     "anchor": "docs/DATA_PROVENANCE.md:88-97",
-    "fp": "db1d1bd19c9865ab",
-    "head": "Six records copy nothing, and they are the only place the sentence above does not hold. Two sit in"
+    "fp": "762b8c09d510d8ec",
+    "head": "covering 2,043 distinct issues. Each record copies from the upstream API: `issueId`, `title`,"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-129|docs/PUBLICATION_RUNBOOK.md:99-107|0": {
     "anchor": "docs/PUBLICATION_RUNBOOK.md:99-107",
@@ -4164,8 +4634,8 @@
     "fp": "2578b87e98aa8d5c",
     "head": "The second was found on 2026-08-15 while removing Marvel's description text under BL-130, and it is"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-132|docs/PUBLICATION_RUNBOOK.md:175-181|0": {
-    "anchor": "docs/PUBLICATION_RUNBOOK.md:175-181",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-132|docs/PUBLICATION_RUNBOOK.md:174-180|0": {
+    "anchor": "docs/PUBLICATION_RUNBOOK.md:174-180",
     "fp": "7a23edca6650a1c3",
     "head": "- 14 name a range overlapping a passage being rewritten. These break however careful anyone is,"
   },
@@ -4326,8 +4796,8 @@
   },
   "scripts/check-counts.mjs|preamble|PRODUCT_BACKLOG.md:2600|0": {
     "anchor": "PRODUCT_BACKLOG.md:2600",
-    "fp": "2a31d6a4f8340417",
-    "head": "how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting"
+    "fp": "430551983656d75e",
+    "head": "PRODUCT_BACKLOG.md 146/146` and exited 0. Renaming it is the plausible version and it also passed"
   },
   "scripts/check-counts.mjs|preamble|scripts/check-publication.mjs:140-144|0": {
     "anchor": "scripts/check-publication.mjs:140-144",
@@ -4426,8 +4896,8 @@
   },
   "SECURITY.md|what-this-project-is-because-it-decides-what-a-v|package.json:35-38|0": {
     "anchor": "package.json:35-38",
-    "fp": "b8ee79f8da29f420",
-    "head": "\"@eslint/js\": \"^10.0.1\","
+    "fp": "9c781f3a31e296f9",
+    "head": "},"
   },
   "src/js/main.js|preamble|src/js/storage.js:329-332|0": {
     "anchor": "src/js/storage.js:329-332",
