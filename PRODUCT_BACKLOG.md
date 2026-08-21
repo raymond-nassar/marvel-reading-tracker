@@ -73,6 +73,14 @@ is `Shipped` rather than `Ready` because the measurement that produced it was al
 its fix needed. That is the one case where filing and fixing in the same change keeps a concern
 whole instead of splitting it: the item and the evidence for it are the same measurement.
 
+### BL-165: Modern Marvel continuity intake foundation
+
+**Status:** Shipped
+
+The project now keeps a maintained inventory of 86 source links for modern Marvel continuity, resolves item references deterministically from local build-time data, and writes pairwise overlap reports against shipped orders before a guide is authored. The intake stays out of the browser and uses no runtime dependency, so the app's saved reading progress and shipped catalog remain untouched.
+
+The foundation deliberately stops at the intake pipeline. It does not add a reading guide, a new source family, or a broader era or bridge lane, and it leaves later Aftersmash or recent-source work to their own task.
+
 ## Product direction
 
 Users should be able to discover, import, follow, and customize reading lists for
@@ -254,7 +262,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-029 | Raise the red accent so white text on it clears 4.5:1 | Defect | EP-08 | Leaves alone | 8 | 5 | 3 | 2 | 8.0 | none | Measured | Shipped | src/styles.css:83-89 |
 | BL-039 | Run the test suite automatically on every change | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Observed | Shipped | absent: .github/workflows, directory listing of repository root and .github |
 | BL-050 | Fail the build when an evidence anchor stops naming the code it claims | Enabler | EP-12 | Leaves alone | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Shipped | absent: any check of anchor identity, read of .github/workflows/ci.yml and the package.json scripts block |
-| BL-132 | Measure what the day-of rewrites cost the anchors gate, before they are made | Enabler | EP-12 | Extends BL-129 | 3 | 8 | 5 | 2 | 8.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:175-181 |
+| BL-132 | Measure what the day-of rewrites cost the anchors gate, before they are made | Enabler | EP-12 | Extends BL-129 | 3 | 8 | 5 | 2 | 8.0 | none | Measured | Shipped | docs/PUBLICATION_RUNBOOK.md:174-180 |
 | BL-162 | Decide the published name before a store listing exists | Enabler | EP-12 | Follows BL-100 | 5 | 3 | 8 | 2 | 8.0 | none | Measured | Ready | developer.marvel.com/terms section 5, read from the 2025-10-08 archive snapshot on 2026-08-20 |
 | BL-095 | Put explicit deadlines on CI jobs | Chore | EP-12 | Extends BL-039 | 2 | 2 | 3 | 1 | 7.0 | none | Measured | Shipped | .github/workflows/ci.yml:103-105 |
 | BL-134 | Fetch a synopsis at read time instead of shipping one | Feature | EP-05 | Follows BL-130 | 8 | 5 | 8 | 3 | 7.0 | none | Measured | Shipped | src/js/synopsis.js:89 |
@@ -281,18 +289,18 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4013-4016 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4021-4024 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-143 | Shelve the catalog in reading order rather than in the order the manifest happens to list | Story | EP-01 | Extends BL-142 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any field on a manifest entry saying when its reading starts, and any sort between parsing the catalog and rendering it |
 | BL-154 | Shelve the events apart from the character runs, and say why the runs sit last | Story | EP-01 | Follows BL-152 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Shipped | `src/js/lib/catalog.js:593-596` |
 | BL-156 | Make the Start here badge carry more weight than a colour change | Story | EP-01 | Follows BL-154 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Ready | `src/styles.css:392-394` |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1505-1506 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1513-1514 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
-| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:194-206 |
+| BL-055 | Record the drift in the audited figures instead of letting them go stale | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:202-214 |
 | BL-059 | Stop the changelog entry that explains stale figures from carrying two of its own | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any current line count or test count in the entry, read of the audited-figures entry in CHANGELOG.md |
 | BL-057 | Write the detail block BL-050 never got, which two sentences promise a reader | Debt | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: any **BL-050:** block, enumeration of every bold BL heading against every table row |
 | BL-124 | Stop the rate-limit backoff saying the same wait twice, and say it grammatically | Defect | EP-07 | Extends BL-090 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | src/js/main.js:4663-4666 |
@@ -3175,7 +3183,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2877-2880`.
+`PRODUCT_BACKLOG.md:2885-2888`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4712,21 +4720,21 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:11896-11898` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:11904-11906` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
 because this document already has a convention for the case and applies it in the third bullet of
 the same list: the audited figure is preserved and the drift is recorded beside it, as "224 is the
-figure as audited" at `PRODUCT_BACKLOG.md:204-206`. The clause is quoted only as far as its fixed
+figure as audited" at `PRODUCT_BACKLOG.md:212-214`. The clause is quoted only as far as its fixed
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11915-11919`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11923-11927`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11730-11732` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11738-11740` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4934,9 +4942,9 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:3040-3049` that says so and points at the backlog clause instead. That clause was
-checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:194-198` and
-`PRODUCT_BACKLOG.md:204-206` do each carry a live value and are marked as needing re-derivation, so
+`CHANGELOG.md:3046-3055` that says so and points at the backlog clause instead. That clause was
+checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:202-206` and
+`PRODUCT_BACKLOG.md:212-214` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
 
 The same entry carried a third figure of the same kind that the item had not named, in the sentence
@@ -6543,7 +6551,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2601`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2609`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -8415,7 +8423,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4836-4844`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4844-4852`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8430,7 +8438,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:4400`, `src/js/main.js:4324` and `src/js/main.js:4345`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1505-1506`.
+`PRODUCT_BACKLOG.md:1513-1514`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8516,7 +8524,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4841-4842`.
+at `PRODUCT_BACKLOG.md:4849-4850`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8649,7 +8657,7 @@ The count of open rows moved twice while this was being written, and no gate cau
 first read fifteen, which was true of the tree the measurement was taken against and false of the
 tree it was written into, because shipping this item took its own row out of the population the
 figure counts. It then read fourteen, which counts the one `Proposed` row beside the `Ready` ones,
-where the status key at `PRODUCT_BACKLOG.md:230` defines an item still to be picked up as `Ready`.
+where the status key at `PRODUCT_BACKLOG.md:238` defines an item still to be picked up as `Ready`.
 Thirteen was the figure under the document's own definition when this shipped, against eighty-six
 that were not. Nothing derives either number: the counts gate prints the status tallies on every run,
 and reading that print back against the sentence is a habit rather than a check. Both pairs survive
@@ -8682,7 +8690,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4836-4839` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4844-4847` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -10280,7 +10288,7 @@ machine runs. A single executable is its base binary plus the injected payload, 
 It was rejected either way, and the reason is narrower than the first draft of this item claimed.
 
 That draft said the executable meets a warning and the archive meets none. Half of it was wrong, and
-this repository's own README says so at `README.md:189-191`, where the reader is already told their
+this repository's own README says so at `README.md:190-200`, where the reader is already told their
 computer may ask them to confirm because the file arrived from the internet. So it was checked. A
 zip was marked the way a browser marks a download, `ZoneId=3`, then extracted through the same shell
 interface File Explorer drives, and the extracted launcher carried the mark through, referrer and
@@ -10301,7 +10309,7 @@ at all: that reader wants a link, a link means hosting, and hosting moves the or
 reading progress with it. And it does not cover the Mac, although BL-140 shipped a launcher for
 both. Every measurement above is a Windows one, and the Mac is the harder case rather than a copy of
 this one, because a binary that arrives quarantined there without notarization is refused rather
-than merely questioned. `README.md:190-191` already carries a workaround for the milder version of
+than merely questioned. `README.md:198-200` already carries a workaround for the milder version of
 that. Sizing this at 3 is sizing the Windows archive alone, so the Mac needs its own item with its
 own measurements rather than a line in this one.
 
@@ -12025,7 +12033,7 @@ counted, and wrong outright in resting the decision on all of them having shippe
 Adjacency is also the wrong unit for the rows that have not shipped. A reader choosing what to
 do next reads the rows still to be picked up and skips the rest, so a shipped row sitting between two
 open rows hides an inversion from a scan of neighbours. Six rows carry `Ready`, which is what
-the status key at `PRODUCT_BACKLOG.md:230` means by an item still to be picked up. Measured over
+the status key at `PRODUCT_BACKLOG.md:238` means by an item still to be picked up. Measured over
 those six alone there is one inversion: BL-120 at 2.5 sits below BL-119 at 2.0, one place down with
 nothing between them. Counting the one `Proposed` row alongside them, the only other row neither
 shipped nor dropped, moves the population to seven and leaves that pair exactly as it is.

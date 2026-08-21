@@ -36,6 +36,12 @@ the issue you are on.
 Nothing you have saved is affected, the filters, notes, availability marks and collected-edition
 grouping all work exactly as before, and turning cover art off still works.
 
+### Added the build-time Marvel continuity intake foundation
+
+In plain English: the project now keeps a maintained inventory of 86 Comic Book Herald source records, resolves issue references deterministically, and emits overlap reports against shipped orders without adding a browser runtime dependency or shipping a new reader guide. Nothing you have saved is affected.
+
+For maintainers: the intake foundation adds `scripts/data/cbh-modern-inventory.json`, the `cbh:resolve` and `orders:overlap` CLI commands, and focused tests that fail under the smallest protected revert before the resolver and overlap logic are accepted.
+
 ### The landing page now suggests where to start, and uses the whole desktop
 
 In plain English: open the app for the first time and it names one reading order and offers to start
